@@ -19,13 +19,13 @@ class TProcuraConstrutiva;
 typedef TProcuraConstrutiva* TNo;
 
 // nomes dos parâmetros fixos na procura construtiva, e outras listas
-enum { algoritmo = 0, nivelDebug, verAcoes, seed, limiteTempo, limite, estadosRepetidos, 
+enum EParametrosConstrutiva { algoritmo = 0, nivelDebug, verAcoes, seed, limiteTempo, limite, estadosRepetidos, 
 	pesoAStar, ruidoHeur, baralharSuc, parametrosConstrutivas };
-enum { ignorados = 1, ascendentes, gerados };
-enum { gravar = 0, ler };
+enum EEstadosGerados { ignorados = 1, ascendentes, gerados };
+enum EOperacao { gravar = 0, ler };
 
 // estrutura para parâmetros
-typedef struct { 
+typedef struct SParametro { 
 	int valor, min, max; // valor atual, e mínimo/máximo
 	// descritivo, opcionais mas aconselhado nos parâmetros específicos
 	const char* nome; // nome do parâmetro
@@ -35,7 +35,7 @@ typedef struct {
 } TParametro;
 
 // resultado de uma corrida, para testes empíricos 
-typedef struct { 
+typedef struct SResultado { 
 	int instancia, custo, expansoes, geracoes, avaliacoes, configuracao; 
 	clock_t tempo; 
 } TResultado;
@@ -278,7 +278,7 @@ protected:
 
 // estrutura para índice a fazer a função de lista (em vetor), de modo a reduzir custos de inserção ordenada 
 // utilizado em CListaNo
-typedef struct {
+typedef struct SIndice {
 	TNo estado; // elemento na lista
 	int prox; // próximo elemento da lista, pela ordem mantida (de custo)
 	int proxDistinto; // próximo elemento da lista com custo distinto

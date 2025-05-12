@@ -19,7 +19,7 @@ public:
 
 	// dados da instância
 	static int maxRamificacao, minRamificacao; // valores mínimos e máximos para a ramificação
-	static int minSolucao, maxSolucao; // valores mínimos e máximos para a localização da solução
+	static int minObjetivo, maxObjetivo; // valores mínimos e máximos para a localização da solução
 	static int raridadeObjetivo; // 1 em raridadeObjetivo estados, serão estados objetivo
 	static int maxCusto; // custo máximo de uma ação, mínimo é 1
 	static int raridadeRepetidos; // 1 em cada raridadeRepetidos serão estados já gerados anteriormente
@@ -28,12 +28,14 @@ public:
 	// ver como simular heurísticas: obter o valor ótimo para simular diferentes níveis de informação?
 
 	// estrutura de dados (suficiente um inteiro)
-	int estado; // número arbitrário para representar este estado, será o ID do estado, incremental
+	unsigned int id; // número arbitrário para representar este estado, será o ID do estado, gerado aleatóriamente
+	int nivel; // nível a que o estado foi gerado
 
 	// Metodos virtuais redefinidos
 	TProcuraConstrutiva* Duplicar(void);
 	void Copiar(TProcuraConstrutiva*objecto) {
-		estado = ((CProblemaArtificial*)objecto)->estado;
+		id = ((CProblemaArtificial*)objecto)->id;
+		nivel = ((CProblemaArtificial*)objecto)->nivel;
 	}
 	void SolucaoVazia(void);
 	void Sucessores(TVector<TNo>& sucessores);
@@ -43,5 +45,13 @@ public:
 	bool Distinto(TNo estado);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
 	int Heuristica(void);
+	void ResetParametros();
+
+	const char* Acao(TProcuraConstrutiva* sucessor);
+
+
+private:
+	// carrega uma instância, das previamente definidas
+	void CarregaInstancia();
 };
 
