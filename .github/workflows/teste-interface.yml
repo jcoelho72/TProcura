@@ -19,10 +19,5 @@ jobs:
       run: make
     - name: Executar testes
       run: make check
-    - name: Upload test output
-      uses: actions/upload-artifact@v3
-      with:
-        name: output_obtido
-        path: Teste/CasosTeste/output_obtido.txt
     - name: make distcheck
       run: make distcheck
