@@ -13,14 +13,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: make
+    - name: Instalar dependências
+      run: sudo apt-get update && sudo apt-get install -y g++
+    - name: Compilar
       run: make
-    - name: List files before make check
-      run: ls -R      
-    - name: make check
+    - name: Executar testes
       run: make check
-    - name: List files before make check
-      run: ls -R
     - name: Upload test output
       uses: actions/upload-artifact@v3
       with:
