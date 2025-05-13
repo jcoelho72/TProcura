@@ -1,7 +1,7 @@
 # Variáveis
 CC = g++               # Compilador
 CFLAGS = -Wall -g      # Flags de compilação
-TARGET = testePConstrutiva      # Executável gerado
+TARGET = TProcuraConstrutiva      # Executável gerado
 SRC = TProcuraConstrutiva.cpp TRand.cpp Teste/ProblemaArtificial.cpp Teste/teste.cpp    # Ficheiros fonte
 FTeste = Teste/CasosTeste/input.txt Teste/CasosTeste/output_esperado.txt
 
@@ -25,6 +25,7 @@ check: $(TARGET)
 # Regra para validação completa (executada com `make distcheck`)
 distcheck: check
 	@echo "Validando distribuição..."
+	@echo "Valor de TARGET: $(TARGET)"
 	@tar czf $(TARGET).tar.gz $(SRC) Makefile 
 	@echo "Distribuição validada: $(TARGET).tar.gz"
 
