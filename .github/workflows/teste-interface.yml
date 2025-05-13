@@ -15,7 +15,16 @@ jobs:
     - uses: actions/checkout@v4
     - name: make
       run: make
+    - name: List files before make check
+      run: ls -R      
     - name: make check
       run: make check
+    - name: List files before make check
+      run: ls -R
+    - name: Upload test output
+      uses: actions/upload-artifact@v3
+      with:
+        name: output_obtido
+        path: Teste/CasosTeste/output_obtido.txt
     - name: make distcheck
       run: make distcheck
