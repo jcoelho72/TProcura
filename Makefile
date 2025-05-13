@@ -25,7 +25,6 @@ check: $(TARGET)
 # Regra para validação completa (executada com `make distcheck`)
 distcheck: check
 	@echo "Validando distribuição..."
-	@echo "Valor de TARGET: $(TARGET)"
 	@tar czf $(TARGET).tar.gz $(SRC) Makefile $(FTeste)
 	@echo "Distribuição validada: $(TARGET).tar.gz"
 
