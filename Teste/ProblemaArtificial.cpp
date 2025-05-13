@@ -31,6 +31,7 @@ void CProblemaArtificial::SolucaoVazia(void)
 
 	nivel = 0;
 	id = 1; 
+	heur = 0;
 
 	tamanhoCodificado = 1; 
 }
