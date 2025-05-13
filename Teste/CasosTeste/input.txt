@@ -1,0 +1,121 @@
+1 vamos começar por inicializar uma instância
+1 temos 10 instâncias, vamos começar com a instância 1. As instâncias são artificiais, mas cada uma tem diferentes características
+2 a segunda opção permite explorar o espaço de estados
+1 as instâncias são artificiais, e cada estado é identificado por um número aleatório. O estado inicial é o número 1. Vamos mudar para primeiro sucessor
+a2877823625 avançamos para o sucessor escolhido. A cada momento é visível o estado atual e sucessores. Vamos avançar agora escolhendo uma ação, que no caso deste problema artificial é a letra A seguido do ID do estado. Num problema real a ação indica o que muda no estado.
+exe podemos também mandar o algoritmo atual resolver o problema a partir do ponto atual
+3 O problema está resolvido. Podemos ver que o estado atual termina com 0, o que no caso desta instância significa que é um estado objetivo. Vamos ver a solução / caminho do estado inicial até este estado. 
+1 podemos ver a sequência de estados até ao estado atual. Vamos agora reinicializar o problema, para o resolver com o algoritmo atual 
+0 não é preciso escrever nada para aceitar a opção atual
+5 com a opção 5 executamos o algoritmo atual, cujas configurações estão em cima. É a procura em largura.
+3 o resultado foi 5 de custo, houve 21 expansões e 42 gerações. Vamos ver o caminho.
+4 vamos agora ver os parâmetros que podemos alterar, para assim controlar a execução
+2 o Debug dá o nível de informação sobre a procura. 
+4 vamos colocar no máximo. Todos os parâmetros podem ser alterados pelo utilizador, incluindo o algoritmo que também é um parâmetro.
+0 Vamos sair por agora destes parâmetros, e ver o resultado da mesma procura a visualizar nível de debug
+1 inicializar a instância
+1
+5 O algoritmo executa mostrando o passo a passo detalhado da procura em largura. Mostra os estados expendidos por ordem.
+4 vamos agora ver o algoritmo em profundidade primeiro
+1
+3
+0
+1
+1
+5 o resultado foram várias procuras em diferentes níveis, o método iterativo, dado que o limite=0. 
+4 vamos colocar o limite aberto, para ter a profundidade ilimitada
+9 o parâmetro limite é para os algoritmos. Se for -1 significa que a profundidade é ilimitada, 0 é iterativo
+-1 vamos colocar ilimitado para ver a procura completa
+0
+1
+1
+5 vemos agora a procura em profundidade ilimitada nesta instância, que por sorte vai direto à solução
+1 vamos mudar para a instância 2
+2 nesta instância os estados podem repetir-se
+2 vamos explorar para ver com é
+2 temos os estados todos com 1 ou 2 dígitos. Há apenas 100 estados no máximo, alguns irão ser repetidos, ficando a árvore em grafo
+1 vamos mover um bocado, mas ao encontrar um estado que já tenha sido gerado, os sucessores serão os mesmos e há o risco de andarmos às voltas
+
+1
+2
+5 esta instância é pequena, e lá encontramos um estado objetivo sem grande problema. O custo é 6, não sabemos se é o melhor.
+4 vamos mudar para a procura em largura
+1
+1
+0
+1
+2
+5 vemos que afinal há uma solução de custo 2
+3 ao ver a solução podemos ver a sequência de estados que liga o estado inicial ao objetivo
+1 avançamos para a instância 4 que tem custos não unitários em cada ação
+4
+5 o resultado é 16, mas a procura em largura não garante a solução ótima se os custos forem variáveis. 
+4 vamos escolher o custo uniforme para saber se é a solução ótima
+1
+2
+2 vamos colocar o Debug no nível 3
+0
+1
+4
+5 o resultado é de facto 16
+3 vendo a solução podemos ver que cada ação tem diferentes custos. A primeira ação teve logo 6 de custo, e no total das 4 ações o custo é 16
+4 vamos ver o algoritmo IDA*
+1
+6
+0
+1
+4
+5 este algoritmo faz uma procura iterativa, em cada momento limitada ao menor custo conhecido até ao momento
+4 vamos agora ver o Branch-and-Bound
+1
+7
+0
+1
+4
+5 Podemos ver que este algoritmo funciona de forma distinta. Encontra primeiro uma solução de custo 18, passando a cortar soluções iguais ou superiores a partir desse momento. Após encontrar a solução 16, continua para garantir que é óptima.
+1 vamos agora ver uma instância mais complicada, a instância 5, que tem profundidade a nível 20
+5
+4 vamos colocar o detalhe a nível 1, já que a procura é maior
+2
+1
+0
+5 podemos ver que o Branch-and-bound encontra uma solução 25, e vai melhorando até que chega a 22, terminando de seguida com a solução ótima. Gerou mais de 100.000 estados.
+4 vamos ver o melhor primeiro neste problema. Deverá ter o mesmo comportamento que o Branch-and-Bound, mas parar na primeira solução
+1
+4
+0
+1
+5
+5 confirma-se, termina com a solução 25, a primeira que o Branch-and-Bound encontra.
+4 vamos agora escolher o A*
+1
+5
+0
+1
+5
+5 o A* terminou também com a solução ótima, de custo 22. O A* tem comportamento nesta instância igual ao custo uniforme, dado que os problemas artificiais não têm heurística
+3 podemos ver a solução, constituída por 20 passos, confirmando que estes métodos conseguem resolver problemas de média dimensão
+4 vamos nesta instancia testar o IDA*
+1
+6
+0
+1
+5
+5 vemos que há várias iterações, mas acaba por encontrar a solução. 
+0 terminamos a demonstração e saímos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

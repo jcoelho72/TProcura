@@ -45,7 +45,7 @@ void CProblemaArtificial::Sucessores(TVector<TNo>&sucessores)
 		// para garantir que a árvore é gerada da mesma forma, a semente aleatória tem de ser reinicializada
 		// depende de ID do pai, e do seed da instância
 		// utilizar sequência 1 de TRand, para não perturbar sequência aleatória do algoritmo base
-		TRand::srand(id ^ (espaco.sementeAleatoria << 32), 1);
+		TRand::srand(id ^ (espaco.sementeAleatoria << 8 | espaco.sementeAleatoria), 1);
 
 		if (espaco.maxRamificacao > espaco.minRamificacao)
 			ramificacao = TRand::rand(1) % (espaco.maxRamificacao - espaco.minRamificacao) + espaco.minRamificacao;

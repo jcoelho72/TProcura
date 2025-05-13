@@ -834,7 +834,7 @@ void TProcuraConstrutiva::EditarParametros() {
 	int opcao = 0, valor;
 	while(1) {
 		MostraParametros(2);
-		if ((opcao = NovoValor("\nParametro:")) == NAO_LIDO)
+		if ((opcao = NovoValor("\nParametro:")) == NAO_LIDO || opcao == 0)
 			return;
 		opcao = Dominio(opcao, 1, parametro.Count() + 1);
 		// mostrar descrição se existir
@@ -853,7 +853,7 @@ void TProcuraConstrutiva::EditarParametros() {
 			printf("\nP%d (atual %d): ", opcao, parametro[opcao - 1].valor);
 		// solicitar valor
 		valor = NovoValor("");
-		if (valor != NAO_LIDO)
+		if (valor != NAO_LIDO || valor == 0)
 			parametro[opcao - 1].valor = Dominio(
 				valor,
 				parametro[opcao - 1].min,
@@ -955,9 +955,9 @@ void TProcuraConstrutiva::TesteEmpirico(int inicio, int fim, bool mostrarSolucoe
 	TVector<TResultado> resultados; // guarda as soluções obtidas
 	TVector<int> atual;
 	int backupID = instancia.valor;
-	if (inicio == NAO_LIDO)
+	if (inicio == NAO_LIDO || inicio == 0)
 		inicio = instancia.min;
-	if (fim == NAO_LIDO)
+	if (fim == NAO_LIDO || fim == 0)
 		fim = instancia.max;
 	Dominio(inicio, instancia.min, instancia.max);
 	Dominio(fim, instancia.min, instancia.max);
@@ -1182,7 +1182,7 @@ void TProcuraConstrutiva::SolicitaInstancia() {
 			instancia.valor,
 			instancia.min,
 			instancia.max);
-		if ((resultado = NovoValor("")) != NAO_LIDO) {
+		if ((resultado = NovoValor("")) != NAO_LIDO && resultado != 0) {
 			instancia.valor = resultado;
 			Dominio(instancia.valor, instancia.min, instancia.max);
 		}
