@@ -16,7 +16,9 @@ $(TARGET): $(SRC)
 check: $(TARGET)
 	@echo "Executando testes..."
 	@./$(TARGET) < Teste/CasosTeste/input.txt > Teste/CasosTeste/output_obtido.txt
-	@diff --ignore-matching-lines='^Resultado: [0-9]+ \([0-9]+,[0-9]+s\)$' Teste/CasosTeste/output_obtido.txt Teste/CasosTeste/output_esperado.txt || (echo "Testes falharam"; exit 1)
+	sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_obtido.txt > Teste/CasosTeste/normalized_obtido.txt
+	sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_esperado.txt > Teste/CasosTeste/normalized_esperado.txt
+	@diff Teste/CasosTeste/normalized_obtido.txt Teste/CasosTeste/normalized_esperado.txt || (echo "Testes falharam"; exit 1)
 	@echo "Todos os testes passaram!"
 
 # Regra para validação completa (executada com `make distcheck`)
