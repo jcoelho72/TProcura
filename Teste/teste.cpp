@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <locale>
 
-#include "..\TProcuraConstrutiva.h"
+#include "../TProcuraConstrutiva.h"
 #include "ProblemaArtificial.h"
 
 int main(int argc, char* argv[])

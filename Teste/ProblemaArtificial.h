@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "..\TProcuraConstrutiva.h"
+#include "../TProcuraConstrutiva.h"
 
 // estrutura para caracterização do espaço de procura
 typedef struct SParametrosEspaco {

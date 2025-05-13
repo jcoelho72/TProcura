@@ -44,7 +44,7 @@ int TProcuraConstrutiva::custoHT[TAMANHO_HASHTABLE]; // hashtable / custo do est
 uint64_t TProcuraConstrutiva::estadoCodHT[OBJETO_HASHTABLE]; // elemento codificado
 
 
-TProcuraConstrutiva::TProcuraConstrutiva(void) : pai(NULL), heuristica(0), custo(1) {
+TProcuraConstrutiva::TProcuraConstrutiva(void) : pai(NULL), custo(1), heuristica(0) {
 }
 
 void TProcuraConstrutiva::ResetParametros() 
@@ -1144,9 +1144,9 @@ int TProcuraConstrutiva::MelhorResultado(TResultado base, TResultado alternativa
 	if (base.custo == alternativa.custo && 10 * abs(base.tempo - alternativa.tempo) / CLOCKS_PER_SEC == 0)
 		return 0;
 	// primeiro custo (ou não resolvido, -2)
-	if (base.custo == -2 && alternativa.custo > -2 || alternativa.custo > 0 && base.custo > alternativa.custo)
+	if ((base.custo == -2 && alternativa.custo > -2) || (alternativa.custo > 0 && base.custo > alternativa.custo))
 		return -1;
-	if (base.custo > -2 && alternativa.custo == -2 || base.custo > 0 && alternativa.custo > base.custo)
+	if ((base.custo > -2 && alternativa.custo == -2) || (base.custo > 0 && alternativa.custo > base.custo))
 		return 1;
 	// agora o tempo
 	return base.tempo < alternativa.tempo ? 1 : -1;
