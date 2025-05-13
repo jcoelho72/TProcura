@@ -4,6 +4,8 @@
 #include <string.h>
 #include <ctype.h>
 
+#define BUFFER_SIZE 1024
+
 
 // numero de geracaes de estados
 int TProcuraConstrutiva::geracoes = 0;
@@ -77,6 +79,12 @@ void TProcuraConstrutiva::ResetParametros()
 	parametro.Add({ 1,1,1000000, "Seed","Semente aleatória para inicializar a sequência de números pseudo-aleatórios. Alterar para garantir diferentes números.",NULL });
 	// limite tempo
 	parametro.Add({ 10,1,3600, "Tempo","Tempo limite em segundos. Caso seja ultrapassado, o algoritmo pára.",NULL });
+	// máximo de gerações
+	parametro.Add({ 0,0,1000000000, "Gerações","Número de gerações máximo (0 não há limite). Caso seja ultrapassado, o algoritmo pára.", NULL });
+	// máximo de expansões
+	parametro.Add({ 0,0,1000000000, "Expansões","Número de expansões máximo (0 não há limite). Caso seja ultrapassado, o algoritmo pára.",NULL });
+	// máximo de avaliacoes
+	parametro.Add({ 0,0,1000000000, "Avaliações","Número de avaliações máximo (0 não há limite). Caso seja ultrapassado, o algoritmo pára.",NULL });
 	// limite (algoritmo)
 	parametro.Add({ 0,-1,1000000, "Limite",
 		"Valor dependente do algoritmo. \n\
@@ -792,24 +800,26 @@ _______________________________________________________________________________\
 	}
 }
 
-void TProcuraConstrutiva::MostraParametros(int detalhe) {
+void TProcuraConstrutiva::MostraParametros(int detalhe, TVector<int>* idParametros) {
+	int nElementos = (idParametros == NULL ? parametro.Count() : idParametros->Count());
 	printf("\n");
-	for (int i = 0; i < parametro.Count(); i++) {
+	for (int i = 0; i < nElementos; i++) {
+		int parID = (idParametros == NULL ? i : (*idParametros)[i]);
 		// identificação do parâmetro
-		if (detalhe == 0 || parametro[i].nome == NULL)
-			printf("P%d:", i + 1);
+		if (detalhe == 0 || parametro[parID].nome == NULL)
+			printf("P%d:", parID + 1);
 		else
-			printf("P%d(%s): ", i + 1, parametro[i].nome);
+			printf("P%d(%s): ", parID + 1, parametro[parID].nome);
 		// valor do parâmetro
-		if(detalhe==0|| parametro[i].nomeValores == NULL)
-			printf("%d", parametro[i].valor);
+		if(detalhe==0|| parametro[parID].nomeValores == NULL)
+			printf("%d", parametro[parID].valor);
 		else
-			printf("%s", parametro[i].nomeValores[parametro[i].valor - parametro[i].min]);
+			printf("%s", parametro[parID].nomeValores[parametro[parID].valor - parametro[parID].min]);
 		// mostrar intervalo permitido
 		if(detalhe>1)
-			printf(" (%d a %d)", parametro[i].min, parametro[i].max);
+			printf(" (%d a %d)", parametro[parID].min, parametro[parID].max);
 		// separador/mudança de linha
-		if (i < parametro.Count() - 1) {
+		if (i < nElementos - 1) {
 			if (detalhe > 1 || (i + 1) % (detalhe == 0 ? 10 : 4) == 0)
 				printf("\n");
 			else if (detalhe > 0)
@@ -897,13 +907,28 @@ void TProcuraConstrutiva::EditarConfiguracoes() {
 }
 
 void TProcuraConstrutiva::MostrarConfiguracoes(int detalhe, int atual) {
+	TVector<int> comum, distinto;
+	// identificar parametros comuns e distintos entre as parametrizações
+	for (int i = 0; i < configuracoes.First().Count(); i++) {
+		bool igual = true;
+		for (int j = 1; j < configuracoes.Count() && igual; j++) 
+			igual = (configuracoes.First()[i] == configuracoes[j][i]);
+		if (igual)
+			comum.Add(i);
+		else
+			distinto.Add(i);
+	}
+	// mostra parametros comuns, evitando repetição em cada configuração
+	printf("\nParametros comuns a %d configurações:", configuracoes.Count());
+	MostraParametros(detalhe, &comum);
+
 	// visualizar configurações atuais, assinalando a atualmente escolhida
 	for (int i = 0; i < configuracoes.Count(); i++) {
-		printf("\nConfiguração %d", i + 1);
+		printf("\n--- Configuração %d", i + 1);
 		if (i == atual)
 			printf(" --- atual");
 		ConfiguracaoAtual(configuracoes[i], gravar);
-		MostraParametros(detalhe);
+		MostraParametros(detalhe, &distinto);
 	}
 }
 
@@ -1142,9 +1167,9 @@ void TProcuraConstrutiva::FinalizarCorrida(clock_t inicio)
 }
 
 int TProcuraConstrutiva::NovoValor(const char* prompt) {
-	char str[256];
+	char str[BUFFER_SIZE];
 	printf("%s", prompt);
-	fgets(str, 256, stdin);
+	fgets(str, BUFFER_SIZE, stdin);
 	if (strlen(str) > 1)
 		return atoi(str);
 	return NAO_LIDO;
@@ -1189,9 +1214,9 @@ void TProcuraConstrutiva::ExplorarSucessores(bool jogo) {
 			opcao = 0;
 		}
 		else {
-			char str[256];
+			char str[BUFFER_SIZE];
 			printf("\nSucessor [1-%d, ação, exe]:", sucessores.Count());
-			fgets(str, 256, stdin);
+			fgets(str, BUFFER_SIZE, stdin);
 			opcao = atoi(str); 
 			if (opcao == 0 && strlen(str)>1) {
 				char* token;

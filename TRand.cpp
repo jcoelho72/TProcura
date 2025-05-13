@@ -23,8 +23,8 @@
 #define TEMPERING_SHIFT_T(y)  (y << 15)
 #define TEMPERING_SHIFT_L(y)  (y >> 18)
 
-static unsigned int mt[N]; /* the array for the state vector  */
-static int mti=N+1; /* mti==N+1 means mt[N] is not initialized */
+static unsigned int mt[N][2]; /* the array for the state vector  */
+static int mti[2] = { N + 1, N + 1 }; /* mti==N+1 means mt[N] is not initialized */
 
 
 //////////////////////////////////////////////////////////////////////
@@ -41,47 +41,51 @@ TRand::~TRand()
 
 }
 
-void TRand::srand(unsigned int seed)
+void TRand::srand(unsigned int seed, int seq)
 {
     /* setting initial seeds to mt[N] using         */
     /* the generator Line 25 of Table 1 in          */
     /* [KNUTH 1981, The Art of Computer Programming */
     /*    Vol. 2 (2nd Ed.), pp102]                  */
 
-	if(seed==0) seed=(unsigned int) clock();
+    seq &= 1;
 
-    mt[0]= seed & 0xffffffff;
-    for (mti=1; mti<N; mti++)
-        mt[mti] = (69069 * mt[mti-1]) & 0xffffffff;
+    if (seed == 0)
+        seed = (unsigned int)clock();
+
+    mt[0][seq] = seed & 0xffffffff;
+    for (mti[seq] = 1; mti[seq] < N; mti[seq]++)
+        mt[mti[seq]][seq] = (69069 * mt[mti[seq] - 1][seq]) & 0xffffffff;
 }
 
-unsigned int TRand::rand()
+unsigned int TRand::rand(int seq)
 {
     unsigned int y;
     static unsigned int mag01[2]={0x0, MATRIX_A};
     /* mag01[x] = x * MATRIX_A  for x=0,1 */
+    seq &= 1;
 
-    if (mti >= N) { /* generate N words at one time */
+    if (mti[seq] >= N) { /* generate N words at one time */
         int kk;
 
-        if (mti == N+1)   /* if sgenrand() has not been called, */
-            srand(0); /* a default initial seed is used   */
+        if (mti[seq] == N+1)   /* if sgenrand() has not been called, */
+            srand(0, seq); /* a default initial seed is used   */
 
-        for (kk=0;kk<N-M;kk++) {
-            y = (mt[kk]&UPPER_MASK)|(mt[kk+1]&LOWER_MASK);
-            mt[kk] = mt[kk+M] ^ (y >> 1) ^ mag01[y & 0x1];
+        for (kk = 0; kk < N - M; kk++) {
+            y = (mt[kk][seq] & UPPER_MASK) | (mt[kk + 1][seq] & LOWER_MASK);
+            mt[kk][seq] = mt[kk + M][seq] ^ (y >> 1) ^ mag01[y & 0x1];
         }
-        for (;kk<N-1;kk++) {
-            y = (mt[kk]&UPPER_MASK)|(mt[kk+1]&LOWER_MASK);
-            mt[kk] = mt[kk+(M-N)] ^ (y >> 1) ^ mag01[y & 0x1];
+        for (; kk < N - 1; kk++) {
+            y = (mt[kk][seq] & UPPER_MASK) | (mt[kk + 1][seq] & LOWER_MASK);
+            mt[kk][seq] = mt[kk + (M - N)][seq] ^ (y >> 1) ^ mag01[y & 0x1];
         }
-        y = (mt[N-1]&UPPER_MASK)|(mt[0]&LOWER_MASK);
-        mt[N-1] = mt[M-1] ^ (y >> 1) ^ mag01[y & 0x1];
+        y = (mt[N - 1][seq] & UPPER_MASK) | (mt[0][seq] & LOWER_MASK);
+        mt[N-1][seq] = mt[M-1][seq] ^ (y >> 1) ^ mag01[y & 0x1];
 
-        mti = 0;
+        mti[seq] = 0;
     }
 
-    y = mt[mti++];
+    y = mt[mti[seq]++][seq];
     y ^= TEMPERING_SHIFT_U(y);
     y ^= TEMPERING_SHIFT_S(y) & TEMPERING_MASK_B;
     y ^= TEMPERING_SHIFT_T(y) & TEMPERING_MASK_C;
@@ -89,3 +93,15 @@ unsigned int TRand::rand()
 
 	return y;
 }
+
+#undef N 
+#undef M 
+#undef MATRIX_A
+#undef UPPER_MASK
+#undef LOWER_MASK
+#undef TEMPERING_MASK_B 
+#undef TEMPERING_MASK_C 
+#undef TEMPERING_SHIFT_U
+#undef TEMPERING_SHIFT_S
+#undef TEMPERING_SHIFT_T
+#undef TEMPERING_SHIFT_L

@@ -19,8 +19,9 @@ class TProcuraConstrutiva;
 typedef TProcuraConstrutiva* TNo;
 
 // nomes dos parâmetros fixos na procura construtiva, e outras listas
-enum EParametrosConstrutiva { algoritmo = 0, nivelDebug, verAcoes, seed, limiteTempo, limite, estadosRepetidos, 
-	pesoAStar, ruidoHeur, baralharSuc, parametrosConstrutivas };
+enum EParametrosConstrutiva { algoritmo = 0, nivelDebug, verAcoes, seed, 
+	limiteTempo, limiteGeracoes, limiteExpansoes, limiteAvaliacoes, 
+	limite, estadosRepetidos, pesoAStar, ruidoHeur, baralharSuc, parametrosConstrutivas };
 enum EEstadosGerados { ignorados = 1, ascendentes, gerados };
 enum EOperacao { gravar = 0, ler };
 
@@ -108,7 +109,9 @@ public:
 	// Redefinir para colocar parameterização de omissão para um problema específico
 	virtual void TesteManual(const char* nome);
 	// Verifica se é altura de parar
-	virtual bool Parar(void) { return TempoExcedido() || memoriaEsgotada; }
+	virtual bool Parar(void) { 
+		return TempoExcedido() || ExpansoesExcedido() || GeracoesExcedido() || AvaliacoesExcedido() || memoriaEsgotada; 
+	}
 	// Método para inicializar os parâmetros (redefinir se forem inicializados ou adicionados parâmetros)
 	virtual void ResetParametros();
 
@@ -251,8 +254,17 @@ protected:
 	void MostrarConfiguracoes(int detalhe, int atual = -1);
 	void SolicitaInstancia();
 	bool TempoExcedido() { return instanteFinal < clock(); }
+	bool GeracoesExcedido() {
+		return parametro[limiteGeracoes].valor > 0 && parametro[limiteGeracoes].valor < geracoes;
+	}
+	bool ExpansoesExcedido() {
+		return parametro[limiteExpansoes].valor > 0 && parametro[limiteExpansoes].valor < expansoes;
+	}
+	bool AvaliacoesExcedido() {
+		return parametro[limiteAvaliacoes].valor > 0 && parametro[limiteAvaliacoes].valor < avaliacoes;
+	}
 	void MostrarCaminho();
-	void MostraParametros(int detalhe = 1);
+	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL);
 	void MostraRelatorio(TVector<TResultado>& resultados);
 	int Dominio(int& variavel, int min = INT_MIN, int max = INT_MAX);
 	virtual int ExecutaAlgoritmo();

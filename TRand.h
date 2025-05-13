@@ -12,8 +12,9 @@
 class TRand
 {
 public:
-	static unsigned int rand();
-	static void srand(unsigned int seed);
+	// seq 0 ou 1, para permitir duas sequências aleatórias independentes
+	static unsigned int rand(int seq = 0); 
+	static void srand(unsigned int seed, int seq = 0);
 	TRand();
 	virtual ~TRand();
 

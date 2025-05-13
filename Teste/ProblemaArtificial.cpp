@@ -2,23 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
-// valores mínimos e máximos para a ramificação
-int CProblemaArtificial::maxRamificacao;
-int CProblemaArtificial::minRamificacao;
-// valores mínimos e máximos para a localização da solução
-int CProblemaArtificial::minObjetivo;
-int CProblemaArtificial::maxObjetivo;
-// 1 em raridadeObjetivo estados, serão estados objetivo
-int CProblemaArtificial::raridadeObjetivo;
-// custo máximo de uma ação, mínimo é 1
-int CProblemaArtificial::maxCusto;
-// 1 em cada raridadeRepetidos serão estados já gerados anteriormente
-int CProblemaArtificial::raridadeRepetidos;
-// 1 em cada raridadeRepetidosNivel serão estados já gerados no mesmo nível
-int CProblemaArtificial::raridadeRepetidosNivel;
-// semente aleatória, definindo esta instância (para poder reproduzir a árvore de procura)
-int CProblemaArtificial::seed;
 
+TParametrosEspaco CProblemaArtificial::espaco;
 
 CProblemaArtificial::CProblemaArtificial(void) 
 {
@@ -45,7 +30,7 @@ void CProblemaArtificial::SolucaoVazia(void)
 	CarregaInstancia();
 
 	nivel = 0;
-	id = 1; // não pode ser 0
+	id = 1; 
 
 	tamanhoCodificado = 1; 
 }
@@ -53,30 +38,40 @@ void CProblemaArtificial::SolucaoVazia(void)
 // gerar os sucessores de acordo com a instância, de forma aleatória
 void CProblemaArtificial::Sucessores(TVector<TNo>&sucessores)
 {
-	CProblemaArtificial* sucessor;
-	int ramificacao;
-
 	// valores após o nível máximo, são becos sem saída
-	if (nivel < maxObjetivo) {
+	if (nivel < espaco.maxNivel) {
+		CProblemaArtificial* sucessor;
+		int ramificacao;
 		// para garantir que a árvore é gerada da mesma forma, a semente aleatória tem de ser reinicializada
 		// depende de ID do pai, e do seed da instância
-		// não utilizar TRand, para não perturbar sequência aleatória do algoritmo
-		srand(id ^ (seed << 32));
+		// utilizar sequência 1 de TRand, para não perturbar sequência aleatória do algoritmo base
+		TRand::srand(id ^ (espaco.sementeAleatoria << 32), 1);
 
-		if (maxRamificacao > minRamificacao)
-			ramificacao = rand() % (maxRamificacao - minRamificacao) + minRamificacao;
+		if (espaco.maxRamificacao > espaco.minRamificacao)
+			ramificacao = TRand::rand(1) % (espaco.maxRamificacao - espaco.minRamificacao) + espaco.minRamificacao;
 		else
-			ramificacao = minRamificacao;
+			ramificacao = espaco.minRamificacao;
 
 		for (int i = 0; i < ramificacao; i++) {
 			sucessores.Add(sucessor = (CProblemaArtificial*)Duplicar());
 			sucessor->nivel++;
-			// ID tem de ser dependente do pai e da semente, para poder ser o mesmo em qualquer altura
-			sucessor->id = rand();
-			// ver custos
-			if (maxCusto > 1) 
-				sucessor->custo = 1 + rand() % maxCusto;
-			// trocar o ID para ser igual a um já gerado, mediante uma probabilidade
+			// ID tem de ser dependente do pai e da semente, para poder serem gerados os mesmos sucessores,
+			//    independente da ordem de expansão que o algoritmo utilizar
+			// caso possam ser repetidos globalmente, utilizar o resto da divisão pela quantidade de estados
+			// caso possam ser repetidos no mesmo nível, mas não em níveis distintos, 
+			//   utilizar o resto da divisão pela quantidade de estados no nível e concatenar o nível
+			if (espaco.maxEstadosNivel > 0)
+				sucessor->id = sucessor->nivel * espaco.maxEstadosNivel + TRand::rand(1) % espaco.maxEstadosNivel;
+			else if (espaco.maxEstados > 0)
+				sucessor->id = TRand::rand(1) % espaco.maxEstados;
+			else
+				sucessor->id = TRand::rand(1);
+
+			// custos
+			sucessor->custo = 1 + (espaco.maxCusto > 1 ? TRand::rand(1) % espaco.maxCusto : 0);
+
+			// heuristica
+			sucessor->heur = 0; 
 		}
 	}
 
@@ -87,7 +82,7 @@ void CProblemaArtificial::Sucessores(TVector<TNo>&sucessores)
 const char* CProblemaArtificial::Acao(TProcuraConstrutiva* sucessor) {
 	static char str[256];
 	// dado que os estados são aleatórios independentes, colocar na ação o número
-	sprintf(str, "%u", ((CProblemaArtificial*)sucessor)->id);
+	sprintf(str, "a%u", ((CProblemaArtificial*)sucessor)->id);
 	return str; 
 }
 
@@ -95,13 +90,13 @@ const char* CProblemaArtificial::Acao(TProcuraConstrutiva* sucessor) {
 void CProblemaArtificial::Debug(void)
 {
 	NovaLinha();
-	printf("[%u]", id);
+	printf("--<([%u])>--", id);
 }
 
 bool CProblemaArtificial::SolucaoCompleta(void)
 {
 	// solução completa se o estado estiver num nível compativel, e o resto da divisão por raridadeObjeto for 0
-	return (nivel >= minObjetivo && nivel <= maxObjetivo && (id % raridadeObjetivo) == 0); 
+	return (nivel >= espaco.minNivelObjetivo && (id % espaco.objetivo) == 0);
 }
 
 
@@ -117,6 +112,8 @@ void CProblemaArtificial::ResetParametros()
 	TProcuraConstrutiva::ResetParametros();
 	// ação e estado é o mesmo neste problema artificial, já que um estado muda completamente do pai para o filho
 	parametro[verAcoes].valor = 1; 
+	// limitar as gerações, para que a paragem por tempo não ocorra
+	parametro[limiteGeracoes].valor = 1000000;
 }
 
 
@@ -126,128 +123,43 @@ bool CProblemaArtificial::Distinto(TNo estado) {
 
 // o problema artificial, simular heurística com diferentes características:
 int CProblemaArtificial::Heuristica(void) {
-	
-	return 0;
+	heuristica = heur;
+	return TProcuraConstrutiva::Heuristica();
 }
 
 
 // método para lidar com estados repetidos
 void CProblemaArtificial::Codifica(uint64_t estado[OBJETO_HASHTABLE])
 {
-	int i, index;
 	TProcuraConstrutiva::Codifica(estado);
-	estado[0] = id ^ (nivel << 32);
+	estado[0] = id;
 }
 
+
+/*
+TParametrosEspaco:
+int minRamificacao, maxRamificacao; // valores mínimos e máximos para a ramificação
+int minNivelObjetivo; // valor mínimo do nível para um estado poder ser objetivo
+int maxNivel; // valor máximo de nível de um estado (se atingido, não gera sucessores)
+int objetivo; // se ID módulo objetivo for nulo, e o nível mínimo for respeitado, o estado é objetivo
+int maxCusto; // custo máximo de uma ação, mínimo é 1
+int maxEstados; // os IDs dos estados ficam em módulo de maxEstados, de modo a poderem ser repetidos (0 não repete)
+int maxEstadosNivel; // IDs dos estados ficam em módulo de maxEstadosNivel, concatenado com o nível para não haver colisões entre níveis (0 não repete)
+unsigned int sementeAleatoria; // semente aleatória, definindo esta instância (para poder reproduzir a árvore de procura)
+*/
 void CProblemaArtificial::CarregaInstancia() {
-	switch (instancia.valor) {
-	case 1: // pequena instância, ramificação baixa 
-		maxRamificacao = minRamificacao = 2;
-		minObjetivo = 4;
-		maxObjetivo = 5;
-		raridadeObjetivo = 10;
-		maxCusto = 1;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 2;
-		break;
-	case 2: // custos não unitários, ramificação variável
-		minRamificacao = 1;
-		maxRamificacao = 3;
-		minObjetivo = 4;
-		maxObjetivo = 7;
-		raridadeObjetivo = 10;
-		maxCusto = 10;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 3;
-		break;
-	case 3: // profundidade elevada, solução a nível fixo
-		minRamificacao = 1;
-		maxRamificacao = 3;
-		minObjetivo = 20;
-		maxObjetivo = 20;
-		raridadeObjetivo = 10;
-		maxCusto = 10;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 4;
-		break;
-	case 4: // ramificação média, profundidade média
-		minRamificacao = 10;
-		maxRamificacao = 20;
-		minObjetivo = 10;
-		maxObjetivo = 20;
-		raridadeObjetivo = 10;
-		maxCusto = 10;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 5;
-		break;
-	case 5: // ramificação elevada, profundidade elevada
-		minRamificacao = 20;
-		maxRamificacao = 100;
-		minObjetivo = 40;
-		maxObjetivo = 60;
-		raridadeObjetivo = 10;
-		maxCusto = 1;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 6;
-		break;
-	case 6: // pequena instância, ramificação baixa, raridade alta
-		maxRamificacao = minRamificacao = 2;
-		minObjetivo = 4;
-		maxObjetivo = 5;
-		raridadeObjetivo = 100;
-		maxCusto = 1;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 7;
-		break;
-	case 7: // custos não unitários, ramificação variável, raridade alta
-		minRamificacao = 1;
-		maxRamificacao = 3;
-		minObjetivo = 4;
-		maxObjetivo = 7;
-		raridadeObjetivo = 100;
-		maxCusto = 10;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 8;
-		break;
-	case 8: // profundidade elevada, solução a nível fixo, raridade alta
-		minRamificacao = 1;
-		maxRamificacao = 3;
-		minObjetivo = 20;
-		maxObjetivo = 20;
-		raridadeObjetivo = 100;
-		maxCusto = 10;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 9;
-		break;
-	case 9: // ramificação média, profundidade média, raridade alta
-		minRamificacao = 10;
-		maxRamificacao = 20;
-		minObjetivo = 10;
-		maxObjetivo = 20;
-		raridadeObjetivo = 100;
-		maxCusto = 10;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 10;
-		break;
-	case 10: // ramificação elevada, profundidade elevada, raridade alta
-		minRamificacao = 20;
-		maxRamificacao = 100;
-		minObjetivo = 40;
-		maxObjetivo = 60;
-		raridadeObjetivo = 100;
-		maxCusto = 1;
-		raridadeRepetidos = 0;
-		raridadeRepetidosNivel = 0;
-		seed = 11;
-		break;
-	}
+	TParametrosEspaco instancias[] = {
+		{2,2,4,5,10,1,0,0,1}, // pequena instância, ramificação baixa, profundidade baixa, objetivo 1 em 10 (termina em 0)
+		{4,4,1,6,10,1,100,0,2}, // ramificação média, estados máximos 100 (repetem-se, resto da divisão por 100). minNivelObjetivo tem de ser 1 sempre que maxEstados>0
+		{6,6,5,7,10,1,0,100,3}, // estados máximos em cada nível 100 (repetem-se, resto da divisão por 100, mas sem colisões entre níveis)
+		{1,4,4,7,10,10,0,0,4}, // custos não unitários (até 10), ramificação variável baixa
+		{1,4,20,20,100,2,0,0,5}, // profundidade média, solução no último nível apenas, custos variáveis mas menos, objetivo 1 em 100 (termina em 00)
+		{1,4,1,20,100,2,10000,0,6}, // máximo número de estados 10K (minNivelObjetivo tem de ser 1 sempre que maxEstados>0)
+		{1,4,20,20,100,2,0,1000,7}, // máximo número de estados num nível 1K
+		{10,20,10,20,100,1,0,0,8}, // ramificação média, profundidade média, solução variável, custo fixo
+		{10,20,1,20,100,1,10000,0,9}, // máximo número de estados 10K (minNivelObjetivo tem de ser 1 sempre que maxEstados>0)
+		{20,100,40,60,100,2,0,0,10}, // ramificação elevada, profundidade elevada, 
+	};
+
+	espaco = instancias[instancia.valor - 1];
 }
