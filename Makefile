@@ -22,7 +22,7 @@ check: $(TARGET)
 # Regra para validação completa (executada com `make distcheck`)
 distcheck: check
 	@echo "Validando distribuição..."
-	@tar czf $(TARGET).tar.gz $(SRC) Makefile  &(FTeste)
+	@tar czf $(TARGET).tar.gz $(SRC) Makefile  $(FTeste)
 	@echo "Distribuição validada: $(TARGET).tar.gz"
 
 # Limpar ficheiros gerados (executada com `make clean`)
