@@ -1,197 +1,180 @@
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estat√≠sticas] expans√µes 0 | gera√ß√µes 0 | avalia√ß√µes 0
---<([1])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1 vamos come√ßar por inicializar uma inst√¢ncia
-
-Nova inst√¢ncia (atual 1) [1-10]: 1 temos 10 inst√¢ncias, vamos come√ßar com a inst√¢ncia 1. As inst√¢ncias s√£o artificiais, mas cada uma tem diferentes caracter√≠sticas
 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 0 | gera√ß√µes 0 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 0 | geraÁıes 0 | avaliaÁıes 0 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 2 a segunda op√ß√£o permite explorar o espa√ßo de estados
-g:0 1|2|3
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 1) [1-10]: 
+Problema artificial (TProcuraConstrutiva)
+P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0
+[EstatÌsticas] expansıes 0 | geraÁıes 0 | avaliaÁıes 0 
+--<([1])>--
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: g:0 1|2|3
 --<([1])>--
   +#1 g:1 1|2|3 a2715811231
   |--<([2715811231])>--
   +#2 g:1 1|2|3 a3810139872
    --<([3810139872])>--
-Sucessor [1-2, a√ß√£o, exe]:1 as inst√¢ncias s√£o artificiais, e cada estado √© identificado por um n√∫mero aleat√≥rio. O estado inicial √© o n√∫mero 1. Vamos mudar para primeiro sucessor
-g:0 2|4|6
+Sucessor [1-2, aÁ„o, exe]:g:0 2|4|6
 --<([2715811231])>--
   +#1 g:1 2|4|6 a83408230
   |--<([83408230])>--
   +#2 g:1 2|4|6 a3304292189
    --<([3304292189])>--
-Sucessor [1-2, a√ß√£o, exe]:a2877823625 avan√ßamos para o sucessor escolhido. A cada momento √© vis√≠vel o estado atual e sucessores. Vamos avan√ßar agora escolhendo uma a√ß√£o, que no caso deste problema artificial √© a letra A seguido do ID do estado. Num problema real a a√ß√£o indica o que muda no estado.
-A√ß√£o a2877823625 inv√°lida.
+Sucessor [1-2, aÁ„o, exe]:AÁ„o a2877823625 inv·lida.
 g:0 4|8|9
 --<([2715811231])>--
   +#1 g:1 4|8|9 a83408230
   |--<([83408230])>--
   +#2 g:1 4|8|9 a3304292189
    --<([3304292189])>--
-Sucessor [1-2, a√ß√£o, exe]:exe podemos tamb√©m mandar o algoritmo atual resolver o problema a partir do ponto atual
-Resolvido (4)
+Sucessor [1-2, aÁ„o, exe]:Resolvido (4)
 g:0 9|16|1
 --<([569745480])>--
 Sem sucessores.
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 9 | gera√ß√µes 16 | avalia√ß√µes 1
+[EstatÌsticas] expansıes 9 | geraÁıes 16 | avaliaÁıes 1 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 3 O problema est√° resolvido. Podemos ver que o estado atual termina com 0, o que no caso desta inst√¢ncia significa que √© um estado objetivo. Vamos ver a solu√ß√£o / caminho do estado inicial at√© este estado.
-
---<([1])>-- (g:0)
---<([2715811231])>-- (g:1)
---<([2715811231])>-- (g:0)
---<([83408230])>-- (g:1)
---<([133476390])>-- (g:2)
---<([2286212455])>-- (g:3)
---<([569745480])>-- (g:4)
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+--<([1])>-- (g:0) 
+--<([2715811231])>-- (g:1) 
+--<([2715811231])>-- (g:0) 
+--<([83408230])>-- (g:1) 
+--<([133476390])>-- (g:2) 
+--<([2286212455])>-- (g:3) 
+--<([569745480])>-- (g:4) 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 9 | gera√ß√µes 16 | avalia√ß√µes 1
+[EstatÌsticas] expansıes 9 | geraÁıes 16 | avaliaÁıes 1 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1 podemos ver a sequ√™ncia de estados at√© ao estado atual. Vamos agora reinicializar o problema, para o resolver com o algoritmo atual
-
-Nova inst√¢ncia (atual 1) [1-10]: 0 n√£o √© preciso escrever nada para aceitar a op√ß√£o atual
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 1) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 9 | gera√ß√µes 16 | avalia√ß√µes 1
+[EstatÌsticas] expansıes 9 | geraÁıes 16 | avaliaÁıes 1 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 com a op√ß√£o 5 executamos o algoritmo atual, cujas configura√ß√µes est√£o em cima. √â a procura em largura.
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1:1 P2:0 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 5 (0,003s)
+Resultado: 5 (0,000s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 16 | gera√ß√µes 32 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 16 | geraÁıes 32 | avaliaÁıes 0 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 3 o resultado foi 5 de custo, houve 21 expans√µes e 42 gera√ß√µes. Vamos ver o caminho.
-
---<([1])>-- (g:0)
---<([2715811231])>-- (g:1)
---<([83408230])>-- (g:2)
---<([133476390])>-- (g:3)
---<([2286212455])>-- (g:4)
---<([569745480])>-- (g:5)
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+--<([1])>-- (g:0) 
+--<([2715811231])>-- (g:1) 
+--<([83408230])>-- (g:2) 
+--<([133476390])>-- (g:3) 
+--<([2286212455])>-- (g:4) 
+--<([569745480])>-- (g:5) 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 16 | gera√ß√µes 32 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 16 | geraÁıes 32 | avaliaÁıes 0 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos agora ver os par√¢metros que podemos alterar, para assim controlar a execu√ß√£o
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:2 o Debug d√° o n√≠vel de informa√ß√£o sobre a procura.
-
-N√≠vel de debug, desde reduzido a completo.
+Parametro:
+NÌvel de debug, desde reduzido a completo.
 0: nada
 1: atividade
 2: passos
 3: detalhe
 4: completo
-Debug (atual 0): 4 vamos colocar no m√°ximo. Todos os par√¢metros podem ser alterados pelo utilizador, incluindo o algoritmo que tamb√©m √© um par√¢metro.
-
+Debug (atual 0): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0 Vamos sair por agora destes par√¢metros, e ver o resultado da mesma procura a visualizar n√≠vel de debug
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 16 | gera√ß√µes 32 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 16 | geraÁıes 32 | avaliaÁıes 0 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1 inicializar a inst√¢ncia
-
-Nova inst√¢ncia (atual 1) [1-10]: 1
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 1) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 16 | gera√ß√µes 32 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 16 | geraÁıes 32 | avaliaÁıes 0 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 O algoritmo executa mostrando o passo a passo detalhado da procura em largura. Mostra os estados expendidos por ordem.
-
-g:0
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+g:0 
 --<([1])>--
   +#1 g:1 1|2 a2715811231
   |--<([2715811231])>--
@@ -282,38 +265,36 @@ g:3 14|28
   +#2 g:4 15|30 a1421485048
    --<([1421485048])>--
 g:4 15|30
---<([2286212455])>-- Solu√ß√£o encontrada!
+--<([2286212455])>-- SoluÁ„o encontrada!
 --<([569745480])>--(g:5)
 P1:1 P2:4 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 5 (0,063s)
+Resultado: 5 (0,001s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 16 | gera√ß√µes 32 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 16 | geraÁıes 32 | avaliaÁıes 0 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos agora ver o algoritmo em profundidade primeiro
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -322,65 +303,60 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 1): 3
-
+Algoritmo (atual 1): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 16 | gera√ß√µes 32 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 16 | geraÁıes 32 | avaliaÁıes 0 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1
-
-Nova inst√¢ncia (atual 1) [1-10]: 1
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 1) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 16 | gera√ß√µes 32 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 16 | geraÁıes 32 | avaliaÁıes 0 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 o resultado foram v√°rias procuras em diferentes n√≠veis, o m√©todo iterativo, dado que o limite=0.
-g:0
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: g:0 
 --<([1])>--
 
-Itera√ß√£o 1: (expans√µes 0, gera√ß√µes 0, avalia√ß√µes 0)
-g:0
+IteraÁ„o 1: (expansıes 0, geraÁıes 0, avaliaÁıes 0)
+g:0 
 --<([1])>--
 
-Itera√ß√£o 2: (expans√µes 0, gera√ß√µes 0, avalia√ß√µes 0)
-g:0
+IteraÁ„o 2: (expansıes 0, geraÁıes 0, avaliaÁıes 0)
+g:0 
 --<([1])>--
   +g:1 1|2 a2715811231
   |--<([2715811231])>--
   |
   +g:1 1|2 a3810139872
    --<([3810139872])>--
-
-Itera√ß√£o 3: (expans√µes 1, gera√ß√µes 2, avalia√ß√µes 0)
+   
+IteraÁ„o 3: (expansıes 1, geraÁıes 2, avaliaÁıes 0)
 g:0 1|2
 --<([1])>--
   +g:1 2|4 a2715811231
@@ -390,7 +366,7 @@ g:0 1|2
   |  |
   |  +g:2 3|6 a3304292189
   |   --<([3304292189])>--
-  |
+  |   
   +g:1 3|6 a3810139872
    --<([3810139872])>--
      +g:2 4|8 a4122472136
@@ -398,8 +374,8 @@ g:0 1|2
      |
      +g:2 4|8 a121856739
       --<([121856739])>--
-
-Itera√ß√£o 4: (expans√µes 4, gera√ß√µes 8, avalia√ß√µes 0)
+      
+IteraÁ„o 4: (expansıes 4, geraÁıes 8, avaliaÁıes 0)
 g:0 4|8
 --<([1])>--
   +g:1 5|10 a2715811231
@@ -411,7 +387,7 @@ g:0 4|8
   |  |  |
   |  |  +g:3 7|14 a2633502549
   |  |   --<([2633502549])>--
-  |  |
+  |  |   
   |  +g:2 7|14 a3304292189
   |   --<([3304292189])>--
   |     +g:3 8|16 a1571863460
@@ -419,7 +395,7 @@ g:0 4|8
   |     |
   |     +g:3 8|16 a4004707490
   |      --<([4004707490])>--
-  |
+  |      
   +g:1 8|16 a3810139872
    --<([3810139872])>--
      +g:2 9|18 a4122472136
@@ -429,7 +405,7 @@ g:0 4|8
      |  |
      |  +g:3 10|20 a351905935
      |   --<([351905935])>--
-     |
+     |   
      +g:2 10|20 a121856739
       --<([121856739])>--
         +g:3 11|22 a3167673582
@@ -437,8 +413,8 @@ g:0 4|8
         |
         +g:3 11|22 a1196313867
          --<([1196313867])>--
-
-Itera√ß√£o 5: (expans√µes 11, gera√ß√µes 22, avalia√ß√µes 0)
+         
+IteraÁ„o 5: (expansıes 11, geraÁıes 22, avaliaÁıes 0)
 g:0 11|22
 --<([1])>--
   +g:1 12|24 a2715811231
@@ -452,7 +428,7 @@ g:0 11|22
   |  |  |  |
   |  |  |  +g:4 15|30 a1183613525
   |  |  |   --<([1183613525])>--
-  |  |  |
+  |  |  |   
   |  |  +g:3 15|30 a2633502549
   |  |   --<([2633502549])>--
   |  |     +g:4 16|32 a2087016448
@@ -460,7 +436,7 @@ g:0 11|22
   |  |     |
   |  |     +g:4 16|32 a1392630028
   |  |      --<([1392630028])>--
-  |  |
+  |  |      
   |  +g:2 16|32 a3304292189
   |   --<([3304292189])>--
   |     +g:3 17|34 a1571863460
@@ -470,7 +446,7 @@ g:0 11|22
   |     |  |
   |     |  +g:4 18|36 a4134187428
   |     |   --<([4134187428])>--
-  |     |
+  |     |   
   |     +g:3 18|36 a4004707490
   |      --<([4004707490])>--
   |        +g:4 19|38 a1136161046
@@ -478,7 +454,7 @@ g:0 11|22
   |        |
   |        +g:4 19|38 a2052173069
   |         --<([2052173069])>--
-  |
+  |         
   +g:1 19|38 a3810139872
    --<([3810139872])>--
      +g:2 20|40 a4122472136
@@ -490,7 +466,7 @@ g:0 11|22
      |  |  |
      |  |  +g:4 22|44 a2647232866
      |  |   --<([2647232866])>--
-     |  |
+     |  |   
      |  +g:3 22|44 a351905935
      |   --<([351905935])>--
      |     +g:4 23|46 a3482515819
@@ -498,7 +474,7 @@ g:0 11|22
      |     |
      |     +g:4 23|46 a3421977228
      |      --<([3421977228])>--
-     |
+     |      
      +g:2 23|46 a121856739
       --<([121856739])>--
         +g:3 24|48 a3167673582
@@ -508,7 +484,7 @@ g:0 11|22
         |  |
         |  +g:4 25|50 a3406425564
         |   --<([3406425564])>--
-        |
+        |   
         +g:3 25|50 a1196313867
          --<([1196313867])>--
            +g:4 26|52 a3170544065
@@ -516,8 +492,8 @@ g:0 11|22
            |
            +g:4 26|52 a1421485048
             --<([1421485048])>--
-
-Itera√ß√£o 6: (expans√µes 26, gera√ß√µes 52, avalia√ß√µes 0)
+            
+IteraÁ„o 6: (expansıes 26, geraÁıes 52, avaliaÁıes 0)
 g:0 26|52
 --<([1])>--
   +g:1 27|54 a2715811231
@@ -530,84 +506,77 @@ g:0 26|52
   |  |  |  |--<([2286212455])>--
   |  |  |  |  +g:5 31|62 a569745480
   |  |  |  |  |--<([569745480])>--
-  |  |  |  |  | Solu√ß√£o encontrada!
+  |  |  |  |  | SoluÁ„o encontrada!
 --<([569745480])>--(g:5)
 P1:3 P2:4 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 5 (0,131s)
+Resultado: 5 (0,001s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 31 | gera√ß√µes 62 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 31 | geraÁıes 62 | avaliaÁıes 0 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos colocar o limite aberto, para ter a profundidade ilimitada
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:9 o par√¢metro limite √© para os algoritmos. Se for -1 significa que a profundidade √© ilimitada, 0 √© iterativo
-
-Valor dependente do algoritmo.
-Largura: 0 sem limite, >0 n√∫mero m√°ximo de estados gerados n√£o expandidos.
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 n˙mero m·ximo de estados gerados n„o expandidos. 
 Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
-Limite (atual 0): -1 vamos colocar ilimitado para ver a procura completa
-
+Limite (atual 0): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): -1 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 31 | gera√ß√µes 62 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 31 | geraÁıes 62 | avaliaÁıes 0 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1
-
-Nova inst√¢ncia (atual 1) [1-10]: 1
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 1) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 31 | gera√ß√µes 62 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 31 | geraÁıes 62 | avaliaÁıes 0 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 vemos agora a procura em profundidade ilimitada nesta inst√¢ncia, que por sorte vai direto √† solu√ß√£o
-g:0
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: g:0 
 --<([1])>--
   +g:1 1|2 a2715811231
   |--<([2715811231])>--
@@ -619,37 +588,34 @@ g:0
   |  |  |  |--<([2286212455])>--
   |  |  |  |  +g:5 5|10 a569745480
   |  |  |  |  |--<([569745480])>--
-  |  |  |  |  | Solu√ß√£o encontrada!
+  |  |  |  |  | SoluÁ„o encontrada!
 --<([569745480])>--(g:5)
 P1:3 P2:4 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:-1 P10:1
 P11:100 P12:0 P13:0
-Resultado: 5 (0,018s)
+Resultado: 5 (0,000s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 5 | gera√ß√µes 10 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 5 | geraÁıes 10 | avaliaÁıes 0 
 --<([569745480])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1 vamos mudar para a inst√¢ncia 2
-
-Nova inst√¢ncia (atual 1) [1-10]: 2 nesta inst√¢ncia os estados podem repetir-se
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 1) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 5 | gera√ß√µes 10 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 5 | geraÁıes 10 | avaliaÁıes 0 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 2 vamos explorar para ver com √©
-g:0 1|4|5
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: g:0 1|4|5
 --<([1])>--
   +#1 g:1 1|4|5 a19
   |--<([19])>--
@@ -659,8 +625,7 @@ g:0 1|4|5
   |--<([35])>--
   +#4 g:1 1|4|5 a91
    --<([91])>--
-Sucessor [1-4, a√ß√£o, exe]:2 temos os estados todos com 1 ou 2 d√≠gitos. H√° apenas 100 estados no m√°ximo, alguns ir√£o ser repetidos, ficando a √°rvore em grafo
-g:0 2|8|10
+Sucessor [1-4, aÁ„o, exe]:g:0 2|8|10
 --<([8])>--
   +#1 g:1 2|8|10 a27
   |--<([27])>--
@@ -670,8 +635,7 @@ g:0 2|8|10
   |--<([57])>--
   +#4 g:1 2|8|10 a0
    --<([0])>--
-Sucessor [1-4, a√ß√£o, exe]:1 vamos mover um bocado, mas ao encontrar um estado que j√° tenha sido gerado, os sucessores ser√£o os mesmos e h√° o risco de andarmos √†s voltas
-g:0 3|12|15
+Sucessor [1-4, aÁ„o, exe]:g:0 3|12|15
 --<([27])>--
   +#1 g:1 3|12|15 a52
   |--<([52])>--
@@ -681,34 +645,30 @@ g:0 3|12|15
   |--<([36])>--
   +#4 g:1 3|12|15 a32
    --<([32])>--
-Sucessor [1-4, a√ß√£o, exe]:
-
+Sucessor [1-4, aÁ„o, exe]:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 3 | gera√ß√µes 12 | avalia√ß√µes 15
+[EstatÌsticas] expansıes 3 | geraÁıes 12 | avaliaÁıes 15 
 --<([27])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1
-
-Nova inst√¢ncia (atual 2) [1-10]: 2
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 2) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 3 | gera√ß√µes 12 | avalia√ß√µes 15
+[EstatÌsticas] expansıes 3 | geraÁıes 12 | avaliaÁıes 15 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 esta inst√¢ncia √© pequena, e l√° encontramos um estado objetivo sem grande problema. O custo √© 6, n√£o sabemos se √© o melhor.
-g:0
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: g:0 
 --<([1])>--
   +g:1 1|4 a19
   |--<([19])>--
@@ -728,38 +688,36 @@ g:0
   |  |  |  |  |  |
   |  |  |  |  |  +g:6 8|24 a30
   |  |  |  |  |  |--<([30])>--
-  |  |  |  |  |  | Solu√ß√£o encontrada!
+  |  |  |  |  |  | SoluÁ„o encontrada!
 --<([30])>--(g:6)
 P1:3 P2:4 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:-1 P10:1
 P11:100 P12:0 P13:0
-Resultado: 6 (0,021s)
+Resultado: 6 (0,000s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 8 | gera√ß√µes 24 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 8 | geraÁıes 24 | avaliaÁıes 0 
 --<([30])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos mudar para a procura em largura
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): -1 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -768,50 +726,45 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 3): 1
-
+Algoritmo (atual 3): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): -1 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 8 | gera√ß√µes 24 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 8 | geraÁıes 24 | avaliaÁıes 0 
 --<([30])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1
-
-Nova inst√¢ncia (atual 2) [1-10]: 2
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 2) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 8 | gera√ß√µes 24 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 8 | geraÁıes 24 | avaliaÁıes 0 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 vemos que afinal h√° uma solu√ß√£o de custo 2
-
-g:0
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+g:0 
 --<([1])>--
   +#1 g:1 1|4 a19
   |--<([19])>--
@@ -822,53 +775,49 @@ g:0
   +#4 g:1 1|4 a91
    --<([91])>--
 g:1 1|4
---<([19])>-- Solu√ß√£o encontrada!
+--<([19])>-- SoluÁ„o encontrada!
 --<([20])>--(g:2)
 P1:1 P2:4 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 2 (0,008s)
+Resultado: 2 (0,001s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 2 | gera√ß√µes 8 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 2 | geraÁıes 8 | avaliaÁıes 0 
 --<([20])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 3 ao ver a solu√ß√£o podemos ver a sequ√™ncia de estados que liga o estado inicial ao objetivo
-
---<([1])>-- (g:0)
---<([19])>-- (g:1)
---<([20])>-- (g:2)
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+--<([1])>-- (g:0) 
+--<([19])>-- (g:1) 
+--<([20])>-- (g:2) 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 2 | gera√ß√µes 8 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 2 | geraÁıes 8 | avaliaÁıes 0 
 --<([20])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1 avan√ßamos para a inst√¢ncia 4 que tem custos n√£o unit√°rios em cada a√ß√£o
-
-Nova inst√¢ncia (atual 2) [1-10]: 4
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 2) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 2 | gera√ß√µes 8 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 2 | geraÁıes 8 | avaliaÁıes 0 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 o resultado √© 16, mas a procura em largura n√£o garante a solu√ß√£o √≥tima se os custos forem vari√°veis.
-
-g:0
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+g:0 
 --<([1])>--
   +#1 g:6 1|1 a4064520327
    --<([4064520327])>--
@@ -901,38 +850,36 @@ g:19 5|9
   +#1 g:24 6|10 a3490207519
    --<([3490207519])>--
 g:15 6|10
---<([1479643398])>-- Solu√ß√£o encontrada!
+--<([1479643398])>-- SoluÁ„o encontrada!
 --<([3583864740])>--(g:16)
 P1:1 P2:4 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 16 (0,024s)
+Resultado: 16 (0,000s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gera√ß√µes): 1000000 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 10 | P6(GeraÁıes): 1000000 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 7 | gera√ß√µes 11 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 7 | geraÁıes 11 | avaliaÁıes 0 
 --<([3583864740])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos escolher o custo uniforme para saber se √© a solu√ß√£o √≥tima
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -941,46 +888,42 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 1): 2
-
+Algoritmo (atual 1): 
 P1(Algoritmo): Custo Uniforme (1 a 7)
 P2(Debug): completo (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:2 vamos colocar o Debug no n√≠vel 3
-
-N√≠vel de debug, desde reduzido a completo.
+Parametro:
+NÌvel de debug, desde reduzido a completo.
 0: nada
 1: atividade
 2: passos
 3: detalhe
 4: completo
-Debug (atual 4): 0
-
+Debug (atual 4): 
 P1(Algoritmo): Custo Uniforme (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -989,77 +932,69 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 2): 4
-
+Algoritmo (atual 2): 
 P1(Algoritmo): Melhor Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 10 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:5 o resultado √© de facto 16
-
-Tempo limite em segundos. Caso seja ultrapassado, o algoritmo p√°ra.
-Tempo (atual 10): 3 vendo a solu√ß√£o podemos ver que cada a√ß√£o tem diferentes custos. A primeira a√ß√£o teve logo 6 de custo, e no total das 4 a√ß√µes o custo √© 16
-
+Parametro:
+Tempo limite em segundos. Caso seja ultrapassado, o algoritmo p·ra.
+Tempo (atual 10): 
 P1(Algoritmo): Melhor Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 3 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:4 vamos ver o algoritmo IDA*
-
-Semente aleat√≥ria para inicializar a sequ√™ncia de n√∫meros pseudo-aleat√≥rios. Alterar para garantir diferentes n√∫meros.
-Seed (atual 1): 1
-
+Parametro:
+Semente aleatÛria para inicializar a sequÍncia de n˙meros pseudo-aleatÛrios. Alterar para garantir diferentes n˙meros.
+Seed (atual 1): 
 P1(Algoritmo): Melhor Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 3 (1 a 3600)
-P6(Gera√ß√µes): 1000000 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 1000000 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:6
-
-N√∫mero de gera√ß√µes m√°ximo (0 n√£o h√° limite). Caso seja ultrapassado, o algoritmo p√°ra.
-Gera√ß√µes (atual 1000000): 0
-
+Parametro:
+N˙mero de geraÁıes m·ximo (0 n„o h· limite). Caso seja ultrapassado, o algoritmo p·ra.
+GeraÁıes (atual 1000000): 
 P1(Algoritmo): Melhor Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 3 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -1068,41 +1003,37 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 4): 4
-
+Algoritmo (atual 4): 
 P1(Algoritmo): Melhor Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 3 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:5 este algoritmo faz uma procura iterativa, em cada momento limitada ao menor custo conhecido at√© ao momento
-
-Tempo limite em segundos. Caso seja ultrapassado, o algoritmo p√°ra.
-Tempo (atual 3): 4 vamos agora ver o Branch-and-Bound
-
+Parametro:
+Tempo limite em segundos. Caso seja ultrapassado, o algoritmo p·ra.
+Tempo (atual 3): 
 P1(Algoritmo): Melhor Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -1111,162 +1042,148 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 4): 7
-
+Algoritmo (atual 4): 
 P1(Algoritmo): Branch and Bound (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Branch and Bound | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 7 | gera√ß√µes 11 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 7 | geraÁıes 11 | avaliaÁıes 0 
 --<([3583864740])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1
-
-Nova inst√¢ncia (atual 4) [1-10]: 4
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 4) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Branch and Bound | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 7 | gera√ß√µes 11 | avalia√ß√µes 0
+[EstatÌsticas] expansıes 7 | geraÁıes 11 | avaliaÁıes 0 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 Podemos ver que este algoritmo funciona de forma distinta. Encontra primeiro uma solu√ß√£o de custo 18, passando a cortar solu√ß√µes iguais ou superiores a partir desse momento. Ap√≥s encontrar a solu√ß√£o 16, continua para garantir que √© √≥ptima.
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1:7 P2:0 P3:1 P4:1 P5:4 P6:0 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 16 (0,003s)
+Resultado: 16 (0,000s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Branch and Bound | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 7 | gera√ß√µes 15 | avalia√ß√µes 15
+[EstatÌsticas] expansıes 7 | geraÁıes 15 | avaliaÁıes 15 
 --<([3583864740])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1 vamos agora ver uma inst√¢ncia mais complicada, a inst√¢ncia 5, que tem profundidade a n√≠vel 20
-
-Nova inst√¢ncia (atual 4) [1-10]: 5
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 4) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Branch and Bound | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 7 | gera√ß√µes 15 | avalia√ß√µes 15
+[EstatÌsticas] expansıes 7 | geraÁıes 15 | avaliaÁıes 15 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos colocar o detalhe a n√≠vel 1, j√° que a procura √© maior
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): Branch and Bound (1 a 7)
 P2(Debug): nada (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:2
-
-N√≠vel de debug, desde reduzido a completo.
+Parametro:
+NÌvel de debug, desde reduzido a completo.
 0: nada
 1: atividade
 2: passos
 3: detalhe
 4: completo
-Debug (atual 0): 1
-
+Debug (atual 0): 
 P1(Algoritmo): Branch and Bound (1 a 7)
 P2(Debug): atividade (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Branch and Bound | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 7 | gera√ß√µes 15 | avalia√ß√µes 15
+[EstatÌsticas] expansıes 7 | geraÁıes 15 | avaliaÁıes 15 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 podemos ver que o Branch-and-bound encontra uma solu√ß√£o 25, e vai melhorando at√© que chega a 22, terminando de seguida com a solu√ß√£o √≥tima. Gerou mais de 100.000 estados.
-# Solu√ß√£o encontrada!
---<([1996762300])>--(g:25)### Solu√ß√£o encontrada!
---<([2976231800])>--(g:24) Solu√ß√£o encontrada!
---<([1269236600])>--(g:23)## Solu√ß√£o encontrada!
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: # SoluÁ„o encontrada!
+--<([1996762300])>--(g:25)### SoluÁ„o encontrada!
+--<([2976231800])>--(g:24) SoluÁ„o encontrada!
+--<([1269236600])>--(g:23)## SoluÁ„o encontrada!
 --<([2487234000])>--(g:22)#################################################
 P1:7 P2:1 P3:1 P4:1 P5:4 P6:0 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 22 (0,125s)
+Resultado: 22 (0,097s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Branch and Bound | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 54807 | gera√ß√µes 109512 | avalia√ß√µes 109512
+[EstatÌsticas] expansıes 54807 | geraÁıes 109512 | avaliaÁıes 109512 
 --<([2487234000])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos ver o melhor primeiro neste problema. Dever√° ter o mesmo comportamento que o Branch-and-Bound, mas parar na primeira solu√ß√£o
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): Branch and Bound (1 a 7)
 P2(Debug): atividade (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -1275,80 +1192,73 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 7): 4
-
+Algoritmo (atual 7): 
 P1(Algoritmo): Melhor Primeiro (1 a 7)
 P2(Debug): atividade (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Melhor Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 54807 | gera√ß√µes 109512 | avalia√ß√µes 109512
+[EstatÌsticas] expansıes 54807 | geraÁıes 109512 | avaliaÁıes 109512 
 --<([2487234000])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1
-
-Nova inst√¢ncia (atual 5) [1-10]: 5
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 5) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Melhor Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 54807 | gera√ß√µes 109512 | avalia√ß√µes 109512
+[EstatÌsticas] expansıes 54807 | geraÁıes 109512 | avaliaÁıes 109512 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 confirma-se, termina com a solu√ß√£o 25, a primeira que o Branch-and-Bound encontra.
-# Solu√ß√£o encontrada!
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: # SoluÁ„o encontrada!
 --<([1996762300])>--(g:25)
 P1:4 P2:1 P3:1 P4:1 P5:4 P6:0 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 25 (0,005s)
+Resultado: 25 (0,000s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Melhor Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 85 | gera√ß√µes 104 | avalia√ß√µes 104
+[EstatÌsticas] expansıes 85 | geraÁıes 104 | avaliaÁıes 104 
 --<([1996762300])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos agora escolher o A*
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): Melhor Primeiro (1 a 7)
 P2(Debug): atividade (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -1357,113 +1267,105 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 4): 5
-
+Algoritmo (atual 4): 
 P1(Algoritmo): A* (1 a 7)
 P2(Debug): atividade (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): A* | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 85 | gera√ß√µes 104 | avalia√ß√µes 104
+[EstatÌsticas] expansıes 85 | geraÁıes 104 | avaliaÁıes 104 
 --<([1996762300])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1
-
-Nova inst√¢ncia (atual 5) [1-10]: 5
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 5) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): A* | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 85 | gera√ß√µes 104 | avalia√ß√µes 104
+[EstatÌsticas] expansıes 85 | geraÁıes 104 | avaliaÁıes 104 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 o A* terminou tamb√©m com a solu√ß√£o √≥tima, de custo 22. O A* tem comportamento nesta inst√¢ncia igual ao custo uniforme, dado que os problemas artificiais n√£o t√™m heur√≠stica
-############################################################ Solu√ß√£o encontrada!
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: ############################################################ SoluÁ„o encontrada!
 --<([2384372100])>--(g:22)
 P1:5 P2:1 P3:1 P4:1 P5:4 P6:0 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 22 (0,183s)
+Resultado: 22 (0,152s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): A* | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 59854 | gera√ß√µes 119675 | avalia√ß√µes 119675
+[EstatÌsticas] expansıes 59854 | geraÁıes 119675 | avaliaÁıes 119675 
 --<([2384372100])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 3 podemos ver a solu√ß√£o, constitu√≠da por 20 passos, confirmando que estes m√©todos conseguem resolver problemas de m√©dia dimens√£o
-
---<([1])>-- (g:0)
---<([1196152545])>-- (g:1)
---<([1530018791])>-- (g:2)
---<([2927693984])>-- (g:3)
---<([2830230893])>-- (g:4)
---<([985514406])>-- (g:6)
---<([3221538913])>-- (g:7)
---<([2745645811])>-- (g:8)
---<([3404710992])>-- (g:9)
---<([991958003])>-- (g:10)
---<([662134930])>-- (g:11)
---<([2587852469])>-- (g:12)
---<([738092235])>-- (g:13)
---<([2943307906])>-- (g:14)
---<([2744605836])>-- (g:15)
---<([2803767836])>-- (g:16)
---<([290759428])>-- (g:17)
---<([2042024318])>-- (g:19)
---<([3075258617])>-- (g:20)
---<([2825107575])>-- (g:21)
---<([2384372100])>-- (g:22)
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+--<([1])>-- (g:0) 
+--<([1196152545])>-- (g:1) 
+--<([1530018791])>-- (g:2) 
+--<([2927693984])>-- (g:3) 
+--<([2830230893])>-- (g:4) 
+--<([985514406])>-- (g:6) 
+--<([3221538913])>-- (g:7) 
+--<([2745645811])>-- (g:8) 
+--<([3404710992])>-- (g:9) 
+--<([991958003])>-- (g:10) 
+--<([662134930])>-- (g:11) 
+--<([2587852469])>-- (g:12) 
+--<([738092235])>-- (g:13) 
+--<([2943307906])>-- (g:14) 
+--<([2744605836])>-- (g:15) 
+--<([2803767836])>-- (g:16) 
+--<([290759428])>-- (g:17) 
+--<([2042024318])>-- (g:19) 
+--<([3075258617])>-- (g:20) 
+--<([2825107575])>-- (g:21) 
+--<([2384372100])>-- (g:22) 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): A* | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 59854 | gera√ß√µes 119675 | avalia√ß√µes 119675
+[EstatÌsticas] expansıes 59854 | geraÁıes 119675 | avaliaÁıes 119675 
 --<([2384372100])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 4 vamos nesta instancia testar o IDA*
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
 P1(Algoritmo): A* (1 a 7)
 P2(Debug): atividade (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:1
-
+Parametro:
 Escolha do algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -1472,49 +1374,44 @@ Escolha do algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 5): 6
-
+Algoritmo (atual 5): 
 P1(Algoritmo): IDA* (1 a 7)
 P2(Debug): atividade (0 a 4)
 P3(Ver): 1 (1 a 100)
 P4(Seed): 1 (1 a 1000000)
 P5(Tempo): 4 (1 a 3600)
-P6(Gera√ß√µes): 0 (0 a 1000000000)
-P7(Expans√µes): 0 (0 a 1000000000)
-P8(Avalia√ß√µes): 0 (0 a 1000000000)
+P6(GeraÁıes): 0 (0 a 1000000000)
+P7(Expansıes): 0 (0 a 1000000000)
+P8(AvaliaÁıes): 0 (0 a 1000000000)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:0
-
+Parametro:
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): IDA* | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 59854 | gera√ß√µes 119675 | avalia√ß√µes 119675
+[EstatÌsticas] expansıes 59854 | geraÁıes 119675 | avaliaÁıes 119675 
 --<([2384372100])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 1
-
-Nova inst√¢ncia (atual 5) [1-10]: 5
-
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
+Nova inst‚ncia (atual 5) [1-10]: 
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): IDA* | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 59854 | gera√ß√µes 119675 | avalia√ß√µes 119675
+[EstatÌsticas] expansıes 59854 | geraÁıes 119675 | avaliaÁıes 119675 
 --<([1])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 5 vemos que h√° v√°rias itera√ß√µes, mas acaba por encontrar a solu√ß√£o.
-#
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: #
 #
 
 
@@ -1536,19 +1433,19 @@ Op√ß√£o: 5 vemos que h√° v√°rias itera√ß√µes, mas acaba por encontrar a solu√ß√£
 ####################
 ###############################
 ###################################################
-#### Solu√ß√£o encontrada!
+#### SoluÁ„o encontrada!
 --<([2487234000])>--(g:22)
 P1:6 P2:1 P3:1 P4:1 P5:4 P6:0 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 22 (0,367s)
+Resultado: 22 (0,260s)
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): IDA* | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 4 | P6(Gera√ß√µes): 0 | P7(Expans√µes): 0 | P8(Avalia√ß√µes): 0
+P5(Tempo): 4 | P6(GeraÁıes): 0 | P7(Expansıes): 0 | P8(AvaliaÁıes): 0
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
-[Estat√≠sticas] expans√µes 137615 | gera√ß√µes 275534 | avalia√ß√µes 275535
+[EstatÌsticas] expansıes 137615 | geraÁıes 275534 | avaliaÁıes 275535 
 --<([2487234000])>--
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solu√ß√£o/Caminho |
-| 4 - Par√¢metros  | 5 - Executar | 6 - Configura√ß√µes   | 7 - Teste
-Op√ß√£o: 0 terminamos a demonstra√ß√£o e sa√≠mos.
+| 1 - Inicializar | 2 - Explorar | 3 - SoluÁ„o/Caminho |
+| 4 - Par‚metros  | 5 - Executar | 6 - ConfiguraÁıes   | 7 - Teste
+OpÁ„o: 
