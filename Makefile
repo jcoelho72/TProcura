@@ -16,10 +16,8 @@ $(TARGET): $(SRC)
 check: $(TARGET)
 	@echo "Executando testes..."
 	@./$(TARGET) < Teste/CasosTeste/input.txt > Teste/CasosTeste/output_obtido.txt
-	# Remover o BOM e normalizar arquivos obtidos e esperados
-	sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_obtido.txt | tr -d '\r' | tr '[:upper:]' '[:lower:]' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_obtido.txt
-	sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_esperado.txt | tr -d '\r' | tr '[:upper:]' '[:lower:]' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_esperado.txt
-	# Comparar os arquivos normalizados
+	@sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_obtido.txt | tr -d '\r' | tr '[:upper:]' '[:lower:]' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_obtido.txt
+	@sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_esperado.txt | tr -d '\r' | tr '[:upper:]' '[:lower:]' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_esperado.txt
 	@diff Teste/CasosTeste/normalized_obtido.txt Teste/CasosTeste/normalized_esperado.txt || (echo "Testes falharam"; exit 1)
 	@echo "Todos os testes passaram!"
 
@@ -27,7 +25,7 @@ check: $(TARGET)
 # Regra para validação completa (executada com `make distcheck`)
 distcheck: check
 	@echo "Validando distribuição..."
-	@tar czf $(TARGET).tar.gz $(SRC) Makefile  $(FTeste)
+	@tar czf $(TARGET).tar.gz $(SRC) Makefile Teste/CasosTeste
 	@echo "Distribuição validada: $(TARGET).tar.gz"
 
 # Limpar ficheiros gerados (executada com `make clean`)
