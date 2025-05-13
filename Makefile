@@ -1,8 +1,8 @@
 # Variáveis
-CC = g++               # Compilador
-CFLAGS = -Wall -g      # Flags de compilação
-TARGET = TProcuraConstrutiva      # Executável gerado
-SRC = TProcuraConstrutiva.cpp TRand.cpp Teste/ProblemaArtificial.cpp Teste/teste.cpp    # Ficheiros fonte
+CC = g++
+CFLAGS = -Wall -g
+TARGET = TProcuraConstrutiva
+SRC = TProcuraConstrutiva.cpp TRand.cpp Teste/ProblemaArtificial.cpp Teste/teste.cpp
 FTeste = Teste/CasosTeste/input.txt Teste/CasosTeste/output_esperado.txt
 
 # Regra padrão (executada com `make` sem argumentos)
@@ -26,7 +26,7 @@ check: $(TARGET)
 distcheck: check
 	@echo "Validando distribuição..."
 	@echo "Valor de TARGET: $(TARGET)"
-	@tar czf $(TARGET).tar.gz $(SRC) Makefile 
+	@tar czf $(TARGET).tar.gz $(SRC) Makefile $(FTeste)
 	@echo "Distribuição validada: $(TARGET).tar.gz"
 
 # Limpar ficheiros gerados (executada com `make clean`)
