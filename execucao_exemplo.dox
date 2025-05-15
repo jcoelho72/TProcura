@@ -4,7 +4,9 @@
     com base na implementação CProblemaArtificial, que implementa espaços de procura artificiais.
 
     ## Entrada
+
 @verbatim
+
 Problema artificial (TProcuraConstrutiva)
 P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
 P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
@@ -16,7 +18,9 @@ _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 Opção: **1**
+
 @endverbatim
+
 
     Esta é a informação apresentada no teste manual. Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais.
     Podemos ver que o primeiro parametro é o algoritmo, e está selecionado de omissão a Largura Primeiro.
