@@ -25,15 +25,16 @@
 var NAVTREE =
 [
   [ "TProcuraConstrutiva", "index.html", [
-    [ "Sumário", "index.html#autotoc_md1", null ],
-    [ "Sobre o Projeto", "index.html#autotoc_md2", null ],
-    [ "Estado do Projeto", "index.html#autotoc_md3", null ],
-    [ "Funcionalidades", "index.html#autotoc_md4", null ],
-    [ "Instalação e Uso", "index.html#autotoc_md5", null ],
-    [ "Exploração do Espaço de Estados e Testes", "index.html#autotoc_md6", [
-      [ "Clonando o Repositório", "index.html#autotoc_md7", null ]
+    [ "Sumário", "index.html#autotoc_md2", null ],
+    [ "Sobre o Projeto", "index.html#autotoc_md3", null ],
+    [ "Estado do Projeto", "index.html#autotoc_md4", null ],
+    [ "Funcionalidades", "index.html#autotoc_md5", null ],
+    [ "Instalação e Uso", "index.html#autotoc_md6", null ],
+    [ "Exploração do Espaço de Estados e Testes", "index.html#autotoc_md7", [
+      [ "Clonando o Repositório", "index.html#autotoc_md8", null ]
     ] ],
-    [ "Licença", "index.html#autotoc_md8", null ],
+    [ "Licença", "index.html#autotoc_md9", null ],
+    [ "Execu��o Interativa", "execucao_interativa.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
