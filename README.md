@@ -54,4 +54,4 @@ git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
 
 ## Licença
 
-Distribuído sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais informações.
+Distribuído sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/jcoelho72/TProcuraConstrutiva/blob/main/LICENSE) para mais informações.
