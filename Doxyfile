@@ -1,7 +1,7 @@
 PROJECT_NAME           = "TProcuraConstrutiva"
 PROJECT_BRIEF          = "Algoritmos de procura para problemas de otimização"
-OUTPUT_DIRECTORY       = docs
-HTML_OUTPUT            = html
+OUTPUT_DIRECTORY       = docs/html
+HTML_OUTPUT            = .
 
 # Definir diretórios de entrada
 INPUT                  = . README.md
