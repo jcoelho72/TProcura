@@ -48,7 +48,10 @@ Apresenta a implementação de algoritmos voltados para [procuras construtivas](
 - [Git](https://git-scm.com/) para controle de versão
 
 ### Clonando o Repositório
-
 ```bash
 git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
-cd TProcuraConstrutiva
+```
+
+## Licença
+
+Distribuído sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais informações.
