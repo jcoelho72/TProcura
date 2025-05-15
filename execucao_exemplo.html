@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('execucao_exemplo.html',''); initResiza
 <div class="contents">
 <div class="textblock"><p>Esta página mostra a execução de exemplo, demonstrando parcialmente os algoritmos na superclasse <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, com base na implementação <a class="el" href="classCProblemaArtificial.html">CProblemaArtificial</a>, que implementa espaços de procura artificiais.</p>
 <h2><a class="anchor" id="autotoc_md0"></a>
-Entrada</h2>
+1. Inicializar</h2>
 <div class="fragment"><div class="line">Problema artificial (TProcuraConstrutiva)</div>
 <div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1</div>
 <div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
@@ -108,38 +108,37 @@ Entrada</h2>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
 <div class="line">Opção: **1**</div>
 </div><!-- fragment --><p>Esta é a informação apresentada no teste manual. Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais. Podemos ver que o primeiro parametro é o algoritmo, e está selecionado de omissão a Largura Primeiro. Em termos de Debug está selecionado o valor nada, ou seja, não é mostrada informação de debug. Seguem-se outros parametros, os quais alguns serão apresentados ao longo desta execução.</p>
-<p>Vamos começar por inicializar uma instância</p>
-<div class="fragment"><div class="line">Nova instância (atual 1) [1-10]: </div>
-<div class="line">Problema artificial (TProcuraConstrutiva)</div>
-<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">[Estatísticas] expansões 0 | gerações 0 | avaliações 0 </div>
-<div class="line">--&lt;([1])&gt;--</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
-<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-<div class="line">Opção: g:0 h:4 1|2|3</div>
+<p>Termina com a linha que tem estatísticas sobre a última execução efetuadal. Após esta linha está o estado atual, que tem uma visualização dependente do problema. Temos um problema artificial em que cada estado tem um número inteiro positivo. O primeiro estado é o número 1. Após o estado temos o menu, com as opções de inicializar numa nova instância, explorar o espaço de estados, ver a solução/caminho atual, alterar parametros, executar o algoritmo selecionado com os parametros atuais, gravar configuração e executar um teste empírico.</p>
+<p>Vamos começar por inicializar uma instância, com a opção 1. Vamos colocar entre ** e ** toda a entrada de texto do utilizador. Vamos também omitir a repetição dos menus entre entrada de dados, a não ser que exista uma alteração.</p>
+<div class="fragment"><div class="line">Nova instância (atual 1) [1-10]: **1**</div>
+</div><!-- fragment --><p> Temos 10 instâncias, vamos começar com a instância 1. As instâncias são artificiais, mas cada uma tem diferentes características </p><pre class="fragment">## 2. Explorar
+</pre><p> A segunda opção permite explorar o espaço de estados.</p>
+<p>As instâncias são artificiais, e cada estado é identificado por um número aleatório. O estado inicial é o número 1. Vamos mudar para primeiro sucessor.</p>
+<div class="fragment"><div class="line">Opção: **2**</div>
+<div class="line">g:0 h:4 1|2|3</div>
 <div class="line">--&lt;([1])&gt;--</div>
 <div class="line">  +#1 g:1 h:3 1|2|3 a2715811231</div>
 <div class="line">  |--&lt;([2715811231])&gt;--</div>
 <div class="line">  +#2 g:1 h:3 1|2|3 a3810139872</div>
 <div class="line">   --&lt;([3810139872])&gt;--</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:g:0 h:3 2|4|6</div>
+<div class="line">Sucessor [1-2, ação(ões), exe]: **1**</div>
+<div class="line">g:0 h:3 2|4|6</div>
 <div class="line">--&lt;([2715811231])&gt;--</div>
 <div class="line">  +#1 g:1 h:2 2|4|6 a83408230</div>
 <div class="line">  |--&lt;([83408230])&gt;--</div>
 <div class="line">  +#2 g:1 h:2 2|4|6 a3304292189</div>
 <div class="line">   --&lt;([3304292189])&gt;--</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:Ação a2877823625 inválida.</div>
+</div><!-- fragment --><p> Avançamos para o sucessor escolhido. A cada momento é visível o estado atual e sucessores. Vamos avançar agora escolhendo uma ação, que no caso deste problema artificial é a letra A seguido do ID do estado. Num problema real a ação indica o que muda no estado.</p>
+<div class="fragment"><div class="line">Sucessor [1-2, ação(ões), exe]:</div>
+<div class="line">Ação a2877823625 inválida.</div>
 <div class="line">g:0 h:3 4|8|9</div>
 <div class="line">--&lt;([2715811231])&gt;--</div>
 <div class="line">  +#1 g:1 h:2 4|8|9 a83408230</div>
 <div class="line">  |--&lt;([83408230])&gt;--</div>
 <div class="line">  +#2 g:1 h:2 4|8|9 a3304292189</div>
 <div class="line">   --&lt;([3304292189])&gt;--</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:Resolvido (4)</div>
+</div><!-- fragment --><p> Podemos também mandar o algoritmo atual resolver o problema a partir do ponto atual </p><div class="fragment"><div class="line">Sucessor [1-2, ação(ões), exe]:**exe**</div>
+<div class="line">Resolvido (4)</div>
 <div class="line">g:0 9|16|1</div>
 <div class="line">--&lt;([569745480])&gt;--</div>
 <div class="line">Sem sucessores.</div>
@@ -153,7 +152,9 @@ Entrada</h2>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-<div class="line">Opção: </div>
+</div><!-- fragment --> <pre class="fragment">## 3. Solução/Caminho
+</pre><p> O problema está resolvido. Podemos ver que o estado atual termina com 0, o que no caso desta instância significa que é um estado objetivo. Vamos ver a solução / caminho do estado inicial até este estado.</p>
+<div class="fragment"><div class="line">Opção: **3**</div>
 <div class="line">--&lt;([1])&gt;-- (g:0) </div>
 <div class="line">--&lt;([2715811231])&gt;-- (g:1) </div>
 <div class="line">--&lt;([2715811231])&gt;-- (g:0) </div>
@@ -161,18 +162,8 @@ Entrada</h2>
 <div class="line">--&lt;([133476390])&gt;-- (g:2) </div>
 <div class="line">--&lt;([2286212455])&gt;-- (g:3) </div>
 <div class="line">--&lt;([569745480])&gt;-- (g:4) </div>
-<div class="line">Problema artificial (TProcuraConstrutiva)</div>
-<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">[Estatísticas] expansões 9 | gerações 16 | avaliações 1 </div>
-<div class="line">--&lt;([569745480])&gt;--</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
-<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-<div class="line">Opção: </div>
-<div class="line">Nova instância (atual 1) [1-10]: </div>
+</div><!-- fragment --><p> Podemos ver a sequência de estados até ao estado atual. Vamos agora reinicializar o problema, para o resolver com o algoritmo atual </p><div class="fragment"><div class="line">Opção: **1**</div>
+<div class="line">Nova instância (atual 1) [1-10]: **0**</div>
 <div class="line">Problema artificial (TProcuraConstrutiva)</div>
 <div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1</div>
 <div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
@@ -183,7 +174,9 @@ Entrada</h2>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-<div class="line">Opção: </div>
+</div><!-- fragment --><p>Não é preciso escrever nada para aceitar a opção atual. </p><pre class="fragment">## 5. Executar
+</pre><p> Com a opção 5 executamos o algoritmo atual, cujas configurações estão em cima. É a procura em largura.</p>
+<div class="fragment"><div class="line">Opção: **5**</div>
 <div class="line">P1:1 P2:0 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1</div>
 <div class="line">P11:100 P12:0 P13:0</div>
 <div class="line">Resultado: 5 (0,000s)</div>
@@ -197,24 +190,20 @@ Entrada</h2>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-<div class="line">Opção: </div>
+</div><!-- fragment --><p> O resultado foi 5 de custo, houve 16 expansões e 32 gerações. Vamos ver o caminho.</p>
+<div class="fragment"><div class="line">Opção: **3**</div>
 <div class="line">--&lt;([1])&gt;-- (g:0) </div>
 <div class="line">--&lt;([2715811231])&gt;-- (g:1) </div>
 <div class="line">--&lt;([83408230])&gt;-- (g:2) </div>
 <div class="line">--&lt;([133476390])&gt;-- (g:3) </div>
 <div class="line">--&lt;([2286212455])&gt;-- (g:4) </div>
 <div class="line">--&lt;([569745480])&gt;-- (g:5) </div>
-<div class="line">Problema artificial (TProcuraConstrutiva)</div>
-<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">[Estatísticas] expansões 16 | gerações 32 | avaliações 0 </div>
-<div class="line">--&lt;([569745480])&gt;--</div>
+<div class="line">...</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-<div class="line">Opção: </div>
+</div><!-- fragment --> <pre class="fragment">## 4. Parâmetros
+</pre><p> Vamos agora ver os parâmetros que podemos alterar, para assim controlar a execução </p><div class="fragment"><div class="line">Opção: **4**</div>
 <div class="line">P1(Algoritmo): Largura Primeiro (1 a 7)</div>
 <div class="line">P2(Debug): nada (0 a 4)</div>
 <div class="line">P3(Ver): 1 (1 a 100)</div>

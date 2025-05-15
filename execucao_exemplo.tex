@@ -1,6 +1,6 @@
 \chapter{Execução de exemplo}
 \hypertarget{execucao_exemplo}{}\label{execucao_exemplo}\index{Execução de exemplo@{Execução de exemplo}}
-Esta página mostra a execução de exemplo, demonstrando parcialmente os algoritmos na superclasse \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, com base na implementação \doxylink{classCProblemaArtificial}{CProblema\+Artificial}, que implementa espaços de procura artificiais.\hypertarget{execucao_exemplo_autotoc_md0}{}\doxysubsection{\texorpdfstring{Entrada}{Entrada}}\label{execucao_exemplo_autotoc_md0}
+Esta página mostra a execução de exemplo, demonstrando parcialmente os algoritmos na superclasse \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, com base na implementação \doxylink{classCProblemaArtificial}{CProblema\+Artificial}, que implementa espaços de procura artificiais.\hypertarget{execucao_exemplo_autotoc_md0}{}\doxysubsection{\texorpdfstring{1. Inicializar}{1. Inicializar}}\label{execucao_exemplo_autotoc_md0}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
@@ -20,41 +20,57 @@ Esta página mostra a execução de exemplo, demonstrando parcialmente os algori
 
 Esta é a informação apresentada no teste manual. Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais. Podemos ver que o primeiro parametro é o algoritmo, e está selecionado de omissão a Largura Primeiro. Em termos de Debug está selecionado o valor nada, ou seja, não é mostrada informação de debug. Seguem-\/se outros parametros, os quais alguns serão apresentados ao longo desta execução.
 
-Vamos começar por inicializar uma instância
+Termina com a linha que tem estatísticas sobre a última execução efetuadal. Após esta linha está o estado atual, que tem uma visualização dependente do problema. Temos um problema artificial em que cada estado tem um número inteiro positivo. O primeiro estado é o número 1. Após o estado temos o menu, com as opções de inicializar numa nova instância, explorar o espaço de estados, ver a solução/caminho atual, alterar parametros, executar o algoritmo selecionado com os parametros atuais, gravar configuração e executar um teste empírico.
+
+Vamos começar por inicializar uma instância, com a opção 1. Vamos colocar entre \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} e \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} toda a entrada de texto do utilizador. Vamos também omitir a repetição dos menus entre entrada de dados, a não ser que exista uma alteração.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 0\ |\ gerações\ 0\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([1])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ g:0\ h:4\ 1|2|3}
+\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ **1**}
+
+\end{DoxyCode}
+ Temos 10 instâncias, vamos começar com a instância 1. As instâncias são artificiais, mas cada uma tem diferentes características \begin{DoxyVerb}## 2. Explorar
+\end{DoxyVerb}
+ A segunda opção permite explorar o espaço de estados.
+
+As instâncias são artificiais, e cada estado é identificado por um número aleatório. O estado inicial é o número 1. Vamos mudar para primeiro sucessor.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **2**}
+\DoxyCodeLine{g:0\ h:4\ 1|2|3}
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:1\ h:3\ 1|2|3\ a2715811231}
 \DoxyCodeLine{\ \ |-\/-\/<([2715811231])>-\/-\/}
 \DoxyCodeLine{\ \ +\#2\ g:1\ h:3\ 1|2|3\ a3810139872}
 \DoxyCodeLine{\ \ \ -\/-\/<([3810139872])>-\/-\/}
-\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:g:0\ h:3\ 2|4|6}
+\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:\ **1**}
+\DoxyCodeLine{g:0\ h:3\ 2|4|6}
 \DoxyCodeLine{-\/-\/<([2715811231])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:1\ h:2\ 2|4|6\ a83408230}
 \DoxyCodeLine{\ \ |-\/-\/<([83408230])>-\/-\/}
 \DoxyCodeLine{\ \ +\#2\ g:1\ h:2\ 2|4|6\ a3304292189}
 \DoxyCodeLine{\ \ \ -\/-\/<([3304292189])>-\/-\/}
-\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:Ação\ a2877823625\ inválida.}
+
+\end{DoxyCode}
+ Avançamos para o sucessor escolhido. A cada momento é visível o estado atual e sucessores. Vamos avançar agora escolhendo uma ação, que no caso deste problema artificial é a letra A seguido do ID do estado. Num problema real a ação indica o que muda no estado.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:}
+\DoxyCodeLine{Ação\ a2877823625\ inválida.}
 \DoxyCodeLine{g:0\ h:3\ 4|8|9}
 \DoxyCodeLine{-\/-\/<([2715811231])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:1\ h:2\ 4|8|9\ a83408230}
 \DoxyCodeLine{\ \ |-\/-\/<([83408230])>-\/-\/}
 \DoxyCodeLine{\ \ +\#2\ g:1\ h:2\ 4|8|9\ a3304292189}
 \DoxyCodeLine{\ \ \ -\/-\/<([3304292189])>-\/-\/}
-\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:Resolvido\ (4)}
+
+\end{DoxyCode}
+ Podemos também mandar o algoritmo atual resolver o problema a partir do ponto atual 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:**exe**}
+\DoxyCodeLine{Resolvido\ (4)}
 \DoxyCodeLine{g:0\ 9|16|1}
 \DoxyCodeLine{-\/-\/<([569745480])>-\/-\/}
 \DoxyCodeLine{Sem\ sucessores.}
@@ -68,7 +84,15 @@ Vamos começar por inicializar uma instância
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+ \begin{DoxyVerb}## 3. Solução/Caminho
+\end{DoxyVerb}
+ O problema está resolvido. Podemos ver que o estado atual termina com 0, o que no caso desta instância significa que é um estado objetivo. Vamos ver a solução / caminho do estado inicial até este estado.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **3**}
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/\ (g:0)\ }
 \DoxyCodeLine{-\/-\/<([2715811231])>-\/-\/\ (g:1)\ }
 \DoxyCodeLine{-\/-\/<([2715811231])>-\/-\/\ (g:0)\ }
@@ -76,18 +100,12 @@ Vamos começar por inicializar uma instância
 \DoxyCodeLine{-\/-\/<([133476390])>-\/-\/\ (g:2)\ }
 \DoxyCodeLine{-\/-\/<([2286212455])>-\/-\/\ (g:3)\ }
 \DoxyCodeLine{-\/-\/<([569745480])>-\/-\/\ (g:4)\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 9\ |\ gerações\ 16\ |\ avaliações\ 1\ }
-\DoxyCodeLine{-\/-\/<([569745480])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ }
+
+\end{DoxyCode}
+ Podemos ver a sequência de estados até ao estado atual. Vamos agora reinicializar o problema, para o resolver com o algoritmo atual 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **1**}
+\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ **0**}
 \DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
 \DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
 \DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
@@ -98,7 +116,17 @@ Vamos começar por inicializar uma instância
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+
+
+Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5. Executar
+\end{DoxyVerb}
+ Com a opção 5 executamos o algoritmo atual, cujas configurações estão em cima. É a procura em largura.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **5**}
 \DoxyCodeLine{P1:1\ P2:0\ P3:1\ P4:1\ P5:10\ P6:1000000\ P7:0\ P8:0\ P9:0\ P10:1}
 \DoxyCodeLine{P11:100\ P12:0\ P13:0}
 \DoxyCodeLine{Resultado:\ 5\ (0,000s)}
@@ -112,24 +140,30 @@ Vamos começar por inicializar uma instância
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+ O resultado foi 5 de custo, houve 16 expansões e 32 gerações. Vamos ver o caminho.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **3**}
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/\ (g:0)\ }
 \DoxyCodeLine{-\/-\/<([2715811231])>-\/-\/\ (g:1)\ }
 \DoxyCodeLine{-\/-\/<([83408230])>-\/-\/\ (g:2)\ }
 \DoxyCodeLine{-\/-\/<([133476390])>-\/-\/\ (g:3)\ }
 \DoxyCodeLine{-\/-\/<([2286212455])>-\/-\/\ (g:4)\ }
 \DoxyCodeLine{-\/-\/<([569745480])>-\/-\/\ (g:5)\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 16\ |\ gerações\ 32\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([569745480])>-\/-\/}
+\DoxyCodeLine{...}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+ \begin{DoxyVerb}## 4. Parâmetros
+\end{DoxyVerb}
+ Vamos agora ver os parâmetros que podemos alterar, para assim controlar a execução 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **4**}
 \DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
 \DoxyCodeLine{P2(Debug):\ nada\ (0\ a\ 4)}
 \DoxyCodeLine{P3(Ver):\ 1\ (1\ a\ 100)}
