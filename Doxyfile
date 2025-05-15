@@ -3,6 +3,11 @@ PROJECT_BRIEF          = "Algoritmos de procura para problemas de otimização"
 OUTPUT_DIRECTORY       = docs/html
 HTML_OUTPUT            = .
 
+HTML_COLORSTYLE_HUE = 220
+HTML_COLORSTYLE_SAT = 180
+HTML_COLORSTYLE_GAMMA = 120
+
+
 # Definir diretórios de entrada
 INPUT                  = . README.md execucao_exemplo.dox
 RECURSIVE              = YES
