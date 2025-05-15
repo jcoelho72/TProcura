@@ -57,7 +57,7 @@ As instâncias são artificiais, e cada estado é identificado por um número al
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:}
+\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:**a2877823625**}
 \DoxyCodeLine{Ação\ a2877823625\ inválida.}
 \DoxyCodeLine{g:0\ h:3\ 4|8|9}
 \DoxyCodeLine{-\/-\/<([2715811231])>-\/-\/}
@@ -161,7 +161,7 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \end{DoxyCode}
  \begin{DoxyVerb}## 4. Parâmetros
 \end{DoxyVerb}
- Vamos agora ver os parâmetros que podemos alterar, para assim controlar a execução 
+ Vamos agora ver os parâmetros que podemos alterar, para assim controlar a execução. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Opção:\ **4**}
 \DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
@@ -177,51 +177,38 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{P11(pesoAStar):\ 100\ (0\ a\ 10000)}
 \DoxyCodeLine{P12(ruido):\ 0\ (-\/100\ a\ 100)}
 \DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
-\DoxyCodeLine{Parametro:}
+
+\end{DoxyCode}
+ O Debug dá o nível de informação sobre a procura. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Parametro:**2**}
 \DoxyCodeLine{Nível\ de\ debug,\ de\ reduzido\ a\ completo.}
 \DoxyCodeLine{0:\ nada}
 \DoxyCodeLine{1:\ atividade}
 \DoxyCodeLine{2:\ passos}
 \DoxyCodeLine{3:\ detalhe}
 \DoxyCodeLine{4:\ completo}
-\DoxyCodeLine{Debug\ (atual\ 0):\ }
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
-\DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
-\DoxyCodeLine{P3(Ver):\ 1\ (1\ a\ 100)}
-\DoxyCodeLine{P4(Seed):\ 1\ (1\ a\ 1000000)}
-\DoxyCodeLine{P5(Tempo):\ 10\ (1\ a\ 3600)}
-\DoxyCodeLine{P6(Gerações):\ 1000000\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P7(Expansões):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P8(Avaliações):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P9(Limite):\ 0\ (-\/1\ a\ 1000000)}
-\DoxyCodeLine{P10(Repetidos):\ ignorar\ (1\ a\ 3)}
-\DoxyCodeLine{P11(pesoAStar):\ 100\ (0\ a\ 10000)}
-\DoxyCodeLine{P12(ruido):\ 0\ (-\/100\ a\ 100)}
-\DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
-\DoxyCodeLine{Parametro:}
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 16\ |\ gerações\ 32\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([569745480])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 16\ |\ gerações\ 32\ |\ avaliações\ 0\ }
+
+\end{DoxyCode}
+ Vamos colocar no máximo. Todos os parâmetros podem ser alterados pelo utilizador, incluindo o algoritmo que também é um parâmetro. Vamos sair por agora destes parâmetros, e ver o resultado da mesma procura a visualizar nível de debug Inicializar a instância 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Debug\ (atual\ 0):\ **4**}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Parametro:**0**}
+\DoxyCodeLine{Opção:\ **1**}
+\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ **1**}
+\DoxyCodeLine{...}
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+\DoxyCodeLine{Opção:\ **5**}
+
+\end{DoxyCode}
+ O algoritmo executa mostrando o passo a passo detalhado da procura em largura. Mostra os estados expendidos por ordem.
+
+
+\begin{DoxyCode}{0}
 \DoxyCodeLine{g:0\ }
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:1\ 1|2\ a2715811231}
@@ -328,21 +315,14 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+ Vamos agora ver o algoritmo em profundidade primeiro 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **4**}
 \DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
-\DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
-\DoxyCodeLine{P3(Ver):\ 1\ (1\ a\ 100)}
-\DoxyCodeLine{P4(Seed):\ 1\ (1\ a\ 1000000)}
-\DoxyCodeLine{P5(Tempo):\ 10\ (1\ a\ 3600)}
-\DoxyCodeLine{P6(Gerações):\ 1000000\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P7(Expansões):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P8(Avaliações):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P9(Limite):\ 0\ (-\/1\ a\ 1000000)}
-\DoxyCodeLine{P10(Repetidos):\ ignorar\ (1\ a\ 3)}
-\DoxyCodeLine{P11(pesoAStar):\ 100\ (0\ a\ 10000)}
-\DoxyCodeLine{P12(ruido):\ 0\ (-\/100\ a\ 100)}
-\DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
-\DoxyCodeLine{Parametro:}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Parametro:**1**}
 \DoxyCodeLine{Algoritmo\ base\ a\ executar.}
 \DoxyCodeLine{1:\ Largura\ Primeiro}
 \DoxyCodeLine{2:\ Custo\ Uniforme}
@@ -351,44 +331,23 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{5:\ A*}
 \DoxyCodeLine{6:\ IDA*}
 \DoxyCodeLine{7:\ Branch\ and\ Bound}
-\DoxyCodeLine{Algoritmo\ (atual\ 1):\ }
+\DoxyCodeLine{Algoritmo\ (atual\ 1):\ **3**}
 \DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ (1\ a\ 7)}
-\DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
-\DoxyCodeLine{P3(Ver):\ 1\ (1\ a\ 100)}
-\DoxyCodeLine{P4(Seed):\ 1\ (1\ a\ 1000000)}
-\DoxyCodeLine{P5(Tempo):\ 10\ (1\ a\ 3600)}
-\DoxyCodeLine{P6(Gerações):\ 1000000\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P7(Expansões):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P8(Avaliações):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P9(Limite):\ 0\ (-\/1\ a\ 1000000)}
-\DoxyCodeLine{P10(Repetidos):\ ignorar\ (1\ a\ 3)}
-\DoxyCodeLine{P11(pesoAStar):\ 100\ (0\ a\ 10000)}
-\DoxyCodeLine{P12(ruido):\ 0\ (-\/100\ a\ 100)}
-\DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
-\DoxyCodeLine{Parametro:}
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 16\ |\ gerações\ 32\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([569745480])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 16\ |\ gerações\ 32\ |\ avaliações\ 0\ }
+\DoxyCodeLine{...}
+\DoxyCodeLine{Parametro:**0**}
+\DoxyCodeLine{Opção:\ **1**}
+\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ **1**}
+\DoxyCodeLine{...}
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ g:0\ }
+\DoxyCodeLine{Opção:\ **5**}
+
+\end{DoxyCode}
+ O resultado foram várias procuras em diferentes níveis, o método iterativo, dado que o limite=0. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g:0\ }
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{}
 \DoxyCodeLine{Iteração\ 1:\ (expansões\ 0,\ gerações\ 0,\ avaliações\ 0)}
@@ -569,62 +528,28 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+ Vamos colocar o limite aberto, para ter a profundidade ilimitada O parâmetro limite é para os algoritmos. Se for -\/1 significa que a profundidade é ilimitada, 0 é iterativo -\/1 vamos colocar ilimitado para ver a procura completa 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **4**}
 \DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ (1\ a\ 7)}
-\DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
-\DoxyCodeLine{P3(Ver):\ 1\ (1\ a\ 100)}
-\DoxyCodeLine{P4(Seed):\ 1\ (1\ a\ 1000000)}
-\DoxyCodeLine{P5(Tempo):\ 10\ (1\ a\ 3600)}
-\DoxyCodeLine{P6(Gerações):\ 1000000\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P7(Expansões):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P8(Avaliações):\ 0\ (0\ a\ 1000000000)}
+\DoxyCodeLine{...}
 \DoxyCodeLine{P9(Limite):\ 0\ (-\/1\ a\ 1000000)}
-\DoxyCodeLine{P10(Repetidos):\ ignorar\ (1\ a\ 3)}
-\DoxyCodeLine{P11(pesoAStar):\ 100\ (0\ a\ 10000)}
-\DoxyCodeLine{P12(ruido):\ 0\ (-\/100\ a\ 100)}
-\DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
-\DoxyCodeLine{Parametro:}
+\DoxyCodeLine{Parametro:**9**}
 \DoxyCodeLine{Valor\ dependente\ do\ algoritmo.\ }
 \DoxyCodeLine{Largura:\ 0\ sem\ limite,\ >0\ número\ máximo\ de\ estados\ gerados\ não\ expandidos.\ }
 \DoxyCodeLine{Profundidade:\ >0\ limite\ de\ profundidade,\ =0\ iterativo,\ <0\ sem\ limite.}
-\DoxyCodeLine{Limite\ (atual\ 0):\ }
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ (1\ a\ 7)}
-\DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
-\DoxyCodeLine{P3(Ver):\ 1\ (1\ a\ 100)}
-\DoxyCodeLine{P4(Seed):\ 1\ (1\ a\ 1000000)}
-\DoxyCodeLine{P5(Tempo):\ 10\ (1\ a\ 3600)}
-\DoxyCodeLine{P6(Gerações):\ 1000000\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P7(Expansões):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P8(Avaliações):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P9(Limite):\ -\/1\ (-\/1\ a\ 1000000)}
-\DoxyCodeLine{P10(Repetidos):\ ignorar\ (1\ a\ 3)}
-\DoxyCodeLine{P11(pesoAStar):\ 100\ (0\ a\ 10000)}
-\DoxyCodeLine{P12(ruido):\ 0\ (-\/100\ a\ 100)}
-\DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
-\DoxyCodeLine{Parametro:}
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ -\/1\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 31\ |\ gerações\ 62\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([569745480])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ -\/1\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 31\ |\ gerações\ 62\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([1])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ g:0\ }
+\DoxyCodeLine{Limite\ (atual\ 0):\ **-\/1**}
+\DoxyCodeLine{Parametro:**0**}
+\DoxyCodeLine{Opção:\ **1**}
+\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ **1**}
+\DoxyCodeLine{Opção:**5**}
+
+\end{DoxyCode}
+ Vemos agora a procura em profundidade ilimitada nesta instância, que por sorte vai direto à solução 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g:0\ }
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\ \ +g:1\ 1|2\ a2715811231}
 \DoxyCodeLine{\ \ |-\/-\/<([2715811231])>-\/-\/}
@@ -648,22 +573,23 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{P13(baralhar):\ 0}
 \DoxyCodeLine{[Estatísticas]\ expansões\ 5\ |\ gerações\ 10\ |\ avaliações\ 0\ }
 \DoxyCodeLine{-\/-\/<([569745480])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ -\/1\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 5\ |\ gerações\ 10\ |\ avaliações\ 0\ }
+
+\end{DoxyCode}
+ Vamos mudar para a instância 2. Nesta instância os estados podem repetir-\/se. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **1**}
+\DoxyCodeLine{Nova\ instância\ (atual\ 1)\ [1-\/10]:\ **2**}
+\DoxyCodeLine{...}
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ g:0\ h:1\ 1|4|5}
+\DoxyCodeLine{Opção:\ **2**}
+
+\end{DoxyCode}
+ Vamos explorar para ver com é. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g:0\ h:1\ 1|4|5}
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:1\ 1|4|5\ a19}
 \DoxyCodeLine{\ \ |-\/-\/<([19])>-\/-\/}
@@ -673,7 +599,12 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{\ \ |-\/-\/<([35])>-\/-\/}
 \DoxyCodeLine{\ \ +\#4\ g:1\ 1|4|5\ a91}
 \DoxyCodeLine{\ \ \ -\/-\/<([91])>-\/-\/}
-\DoxyCodeLine{Sucessor\ [1-\/4,\ ação(ões),\ exe]:g:0\ 2|8|10}
+\DoxyCodeLine{Sucessor\ [1-\/4,\ ação(ões),\ exe]:**2**}
+
+\end{DoxyCode}
+ Temos os estados todos com 1 ou 2 dígitos. Há apenas 100 estados no máximo, alguns irão ser repetidos, ficando a árvore em grafo 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g:0\ 2|8|10}
 \DoxyCodeLine{-\/-\/<([8])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:1\ 2|8|10\ a27}
 \DoxyCodeLine{\ \ |-\/-\/<([27])>-\/-\/}
@@ -683,7 +614,12 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{\ \ |-\/-\/<([57])>-\/-\/}
 \DoxyCodeLine{\ \ +\#4\ g:1\ 2|8|10\ a0}
 \DoxyCodeLine{\ \ \ -\/-\/<([0])>-\/-\/}
-\DoxyCodeLine{Sucessor\ [1-\/4,\ ação(ões),\ exe]:g:0\ 3|12|15}
+\DoxyCodeLine{Sucessor\ [1-\/4,\ ação(ões),\ exe]:**1**}
+
+\end{DoxyCode}
+ Vamos mover um bocado, mas ao encontrar um estado que já tenha sido gerado, os sucessores serão os mesmos e há o risco de andarmos às voltas 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g:0\ 3|12|15}
 \DoxyCodeLine{-\/-\/<([27])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:1\ 3|12|15\ a52}
 \DoxyCodeLine{\ \ |-\/-\/<([52])>-\/-\/}
@@ -693,30 +629,19 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{\ \ |-\/-\/<([36])>-\/-\/}
 \DoxyCodeLine{\ \ +\#4\ g:1\ 3|12|15\ a32}
 \DoxyCodeLine{\ \ \ -\/-\/<([32])>-\/-\/}
-\DoxyCodeLine{Sucessor\ [1-\/4,\ ação(ões),\ exe]:}
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ -\/1\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{Sucessor\ [1-\/4,\ ação(ões),\ exe]:**0**}
+\DoxyCodeLine{...}
 \DoxyCodeLine{[Estatísticas]\ expansões\ 3\ |\ gerações\ 12\ |\ avaliações\ 15\ }
 \DoxyCodeLine{-\/-\/<([27])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{Nova\ instância\ (atual\ 2)\ [1-\/10]:\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ -\/1\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 3\ |\ gerações\ 12\ |\ avaliações\ 15\ }
-\DoxyCodeLine{-\/-\/<([1])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ g:0\ }
+\DoxyCodeLine{...}
+\DoxyCodeLine{Opção:\ **1**}
+\DoxyCodeLine{Nova\ instância\ (atual\ 2)\ [1-\/10]:\ **2**}
+\DoxyCodeLine{Opção:\ **5**}
+
+\end{DoxyCode}
+ Esta instância é pequena, e lá encontramos um estado objetivo sem grande problema. O custo é 6, não sabemos se é o melhor. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{g:0\ }
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\ \ +g:1\ 1|4\ a19}
 \DoxyCodeLine{\ \ |-\/-\/<([19])>-\/-\/}
@@ -751,67 +676,21 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ (1\ a\ 7)}
-\DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
-\DoxyCodeLine{P3(Ver):\ 1\ (1\ a\ 100)}
-\DoxyCodeLine{P4(Seed):\ 1\ (1\ a\ 1000000)}
-\DoxyCodeLine{P5(Tempo):\ 10\ (1\ a\ 3600)}
-\DoxyCodeLine{P6(Gerações):\ 1000000\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P7(Expansões):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P8(Avaliações):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P9(Limite):\ -\/1\ (-\/1\ a\ 1000000)}
-\DoxyCodeLine{P10(Repetidos):\ ignorar\ (1\ a\ 3)}
-\DoxyCodeLine{P11(pesoAStar):\ 100\ (0\ a\ 10000)}
-\DoxyCodeLine{P12(ruido):\ 0\ (-\/100\ a\ 100)}
-\DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
-\DoxyCodeLine{Parametro:}
-\DoxyCodeLine{Algoritmo\ base\ a\ executar.}
-\DoxyCodeLine{1:\ Largura\ Primeiro}
-\DoxyCodeLine{2:\ Custo\ Uniforme}
-\DoxyCodeLine{3:\ Profundidade\ Primeiro}
-\DoxyCodeLine{4:\ Melhor\ Primeiro}
-\DoxyCodeLine{5:\ A*}
-\DoxyCodeLine{6:\ IDA*}
-\DoxyCodeLine{7:\ Branch\ and\ Bound}
-\DoxyCodeLine{Algoritmo\ (atual\ 3):\ }
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
-\DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
-\DoxyCodeLine{P3(Ver):\ 1\ (1\ a\ 100)}
-\DoxyCodeLine{P4(Seed):\ 1\ (1\ a\ 1000000)}
-\DoxyCodeLine{P5(Tempo):\ 10\ (1\ a\ 3600)}
-\DoxyCodeLine{P6(Gerações):\ 1000000\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P7(Expansões):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P8(Avaliações):\ 0\ (0\ a\ 1000000000)}
-\DoxyCodeLine{P9(Limite):\ -\/1\ (-\/1\ a\ 1000000)}
-\DoxyCodeLine{P10(Repetidos):\ ignorar\ (1\ a\ 3)}
-\DoxyCodeLine{P11(pesoAStar):\ 100\ (0\ a\ 10000)}
-\DoxyCodeLine{P12(ruido):\ 0\ (-\/100\ a\ 100)}
-\DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
-\DoxyCodeLine{Parametro:}
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ -\/1\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 8\ |\ gerações\ 24\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([30])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{Nova\ instância\ (atual\ 2)\ [1-\/10]:\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ -\/1\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 8\ |\ gerações\ 24\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([1])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+ Vamos mudar para a procura em largura 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **4**}
+\DoxyCodeLine{Parametro:\ **1**}
+\DoxyCodeLine{Algoritmo\ (atual\ 3):\ **1**}
+\DoxyCodeLine{Parametro:\ **0**}
+\DoxyCodeLine{Opção:\ **1**}
+\DoxyCodeLine{Nova\ instância\ (atual\ 2)\ [1-\/10]:\ **2**}
+\DoxyCodeLine{Opção:\ **5**}
+
+\end{DoxyCode}
+ Vemos que afinal há uma solução de custo 2 
+\begin{DoxyCode}{0}
 \DoxyCodeLine{g:0\ }
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:1\ 1|4\ a19}
@@ -838,33 +717,25 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+ ao ver a solução podemos ver a sequência de estados que liga o estado inicial ao objetivo 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **3**}
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/\ (g:0)\ }
 \DoxyCodeLine{-\/-\/<([19])>-\/-\/\ (g:1)\ }
 \DoxyCodeLine{-\/-\/<([20])>-\/-\/\ (g:2)\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 2\ |\ gerações\ 8\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([20])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
-\DoxyCodeLine{Nova\ instância\ (atual\ 2)\ [1-\/10]:\ }
-\DoxyCodeLine{Problema\ artificial\ (TProcuraConstrutiva)}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 2\ |\ gerações\ 8\ |\ avaliações\ 0\ }
-\DoxyCodeLine{-\/-\/<([1])>-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
-\DoxyCodeLine{Opção:\ }
+
+\end{DoxyCode}
+ Avançamos para a instância 4 que tem custos não unitários em cada ação 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ **1**}
+\DoxyCodeLine{Nova\ instância\ (atual\ 2)\ [1-\/10]:\ **4**}
+\DoxyCodeLine{Opção:\ **5**}
+
+\end{DoxyCode}
+ O resultado é 16, mas a procura em largura não garante a solução ótima se os custos forem variáveis. 
+\begin{DoxyCode}{0}
 \DoxyCodeLine{g:0\ }
 \DoxyCodeLine{-\/-\/<([1])>-\/-\/}
 \DoxyCodeLine{\ \ +\#1\ g:6\ 1|1\ a4064520327}
@@ -913,6 +784,10 @@ Não é preciso escrever nada para aceitar a opção atual. \begin{DoxyVerb}## 5
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+
+\end{DoxyCode}
+ .........vamos escolher o custo uniforme para saber se é a solução ótima 
+\begin{DoxyCode}{0}
 \DoxyCodeLine{Opção:\ }
 \DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
 \DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
