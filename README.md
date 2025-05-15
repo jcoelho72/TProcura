@@ -31,13 +31,12 @@ Apresenta a implementação de algoritmos voltados para [procuras construtivas](
 
 ## Funcionalidades
 
-- Implementação de algoritmos de procura construtiva.
-- Modularidade para permitir a implementação de novos problemas, e utilizar algoritmos construtivos.
-- Permite a exploração do espaço de estados, execução de algoritmos.
-- Simplifica a excução de testes empíricos com várias instâncias, comparando diferenets algoritmos e/ou parametrizações 
-- Casos de testes automatizados.
-- Geração automática de documentação via Doxygen.
-- Publicação via GitHub Pages para consulta online.
+- Implementação de algoritmos de procura construtiva na superclasse.
+- A redefinição da classe, permite implementação de novos problemas, e utilizar algoritmos construtivos.
+- Possibilita a exploração do espaço de estados manualmente
+- Permite a execução de algoritmos cegos: Procura em Largura, Profundidade Primeiro, Custo Uniforme
+- Permite a execução de algoritmos informados: Melhor Primeiro, AStar, IDAStar, Branch-and-Bound
+- Executar tanto testes manuais, como testes empíricos (utilizando várias instâncias e comparando vários algoritmos e parametrizações).
 
 ## Instalação e Uso
 
