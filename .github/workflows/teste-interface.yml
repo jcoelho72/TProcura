@@ -14,10 +14,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Instalar dependências
-      run: sudo apt-get update && sudo apt-get install -y g++
+      run: sudo apt-get update && sudo apt-get install -y g++ doxygen
     - name: Compilar
       run: make
     - name: Executar testes
       run: make check
     - name: make distcheck
       run: make distcheck
+    - name: Gerar documentação
+      run: doxygen Doxyfile
+    - name: Publicar documentação no GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+          branch: gh-pages
+          folder: docs/html
