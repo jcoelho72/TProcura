@@ -66,7 +66,7 @@ g:0 h:3 2|4|6
 Avançamos para o sucessor escolhido. A cada momento é visível o estado atual e sucessores. Vamos avançar agora escolhendo uma ação, que no caso deste problema artificial é a letra A seguido do ID do estado. Num problema real a ação indica o que muda no estado.
 
 ```entrada
-Sucessor [1-2, ação(ões), exe]:
+Sucessor [1-2, ação(ões), exe]:**a2877823625**
 Ação a2877823625 inválida.
 g:0 h:3 4|8|9
 --<([2715811231])>--
@@ -164,7 +164,7 @@ _______________________________________________________________________________
 
     ## 4. Parâmetros
 
-Vamos agora ver os parâmetros que podemos alterar, para assim controlar a execução
+Vamos agora ver os parâmetros que podemos alterar, para assim controlar a execução.
 ```entrada
 Opção: **4**
 P1(Algoritmo): Largura Primeiro (1 a 7)
@@ -180,51 +180,36 @@ P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
-Parametro:
+```
+O Debug dá o nível de informação sobre a procura. 
+```entrada
+Parametro:**2**
 Nível de debug, de reduzido a completo.
 0: nada
 1: atividade
 2: passos
 3: detalhe
 4: completo
-Debug (atual 0): 
-P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 1000000 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
-P9(Limite): 0 (-1 a 1000000)
-P10(Repetidos): ignorar (1 a 3)
-P11(pesoAStar): 100 (0 a 10000)
-P12(ruido): 0 (-100 a 100)
-P13(baralhar): 0 (0 a 1)
-Parametro:
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 16 | gerações 32 | avaliações 0 
---<([569745480])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
-Nova instância (atual 1) [1-10]: 
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 16 | gerações 32 | avaliações 0 
+```
+Vamos colocar no máximo. Todos os parâmetros podem ser alterados pelo utilizador, incluindo o algoritmo que também é um parâmetro.
+Vamos sair por agora destes parâmetros, e ver o resultado da mesma procura a visualizar nível de debug
+Inicializar a instância
+```entrada
+Debug (atual 0): **4**
+...
+Parametro:**0**
+Opção: **1**
+Nova instância (atual 1) [1-10]: **1**
+...
 --<([1])>--
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
+Opção: **5**
+```
+O algoritmo executa mostrando o passo a passo detalhado da procura em largura. Mostra os estados expendidos por ordem.
+
+```entrada
 g:0 
 --<([1])>--
   +#1 g:1 1|2 a2715811231
@@ -331,21 +316,13 @@ P13(baralhar): 0
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
+```
+Vamos agora ver o algoritmo em profundidade primeiro
+```entrada
+Opção: **4**
 P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 1000000 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
-P9(Limite): 0 (-1 a 1000000)
-P10(Repetidos): ignorar (1 a 3)
-P11(pesoAStar): 100 (0 a 10000)
-P12(ruido): 0 (-100 a 100)
-P13(baralhar): 0 (0 a 1)
-Parametro:
+...
+Parametro:**1**
 Algoritmo base a executar.
 1: Largura Primeiro
 2: Custo Uniforme
@@ -354,44 +331,22 @@ Algoritmo base a executar.
 5: A*
 6: IDA*
 7: Branch and Bound
-Algoritmo (atual 1): 
+Algoritmo (atual 1): **3**
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 1000000 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
-P9(Limite): 0 (-1 a 1000000)
-P10(Repetidos): ignorar (1 a 3)
-P11(pesoAStar): 100 (0 a 10000)
-P12(ruido): 0 (-100 a 100)
-P13(baralhar): 0 (0 a 1)
-Parametro:
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 16 | gerações 32 | avaliações 0 
---<([569745480])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
-Nova instância (atual 1) [1-10]: 
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 16 | gerações 32 | avaliações 0 
+...
+Parametro:**0**
+Opção: **1**
+Nova instância (atual 1) [1-10]: **1**
+...
 --<([1])>--
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: g:0 
+Opção: **5**
+```
+O resultado foram várias procuras em diferentes níveis, o método iterativo, dado que o limite=0. 
+```entrada
+g:0 
 --<([1])>--
 
 Iteração 1: (expansões 0, gerações 0, avaliações 0)
@@ -572,62 +527,28 @@ P13(baralhar): 0
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
+```
+Vamos colocar o limite aberto, para ter a profundidade ilimitada
+O parâmetro limite é para os algoritmos. Se for -1 significa que a profundidade é ilimitada, 0 é iterativo
+-1 vamos colocar ilimitado para ver a procura completa
+```entrada
+Opção: **4**
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 1000000 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+...
 P9(Limite): 0 (-1 a 1000000)
-P10(Repetidos): ignorar (1 a 3)
-P11(pesoAStar): 100 (0 a 10000)
-P12(ruido): 0 (-100 a 100)
-P13(baralhar): 0 (0 a 1)
-Parametro:
+Parametro:**9**
 Valor dependente do algoritmo. 
 Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
 Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
-Limite (atual 0): 
-P1(Algoritmo): Profundidade Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 1000000 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
-P9(Limite): -1 (-1 a 1000000)
-P10(Repetidos): ignorar (1 a 3)
-P11(pesoAStar): 100 (0 a 10000)
-P12(ruido): 0 (-100 a 100)
-P13(baralhar): 0 (0 a 1)
-Parametro:
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 31 | gerações 62 | avaliações 0 
---<([569745480])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
-Nova instância (atual 1) [1-10]: 
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 31 | gerações 62 | avaliações 0 
---<([1])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: g:0 
+Limite (atual 0): **-1**
+Parametro:**0**
+Opção: **1**
+Nova instância (atual 1) [1-10]: **1**
+Opção:**5**
+```
+Vemos agora a procura em profundidade ilimitada nesta instância, que por sorte vai direto à solução
+```entrada
+g:0 
 --<([1])>--
   +g:1 1|2 a2715811231
   |--<([2715811231])>--
@@ -651,22 +572,21 @@ P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 10 | avaliações 0 
 --<([569745480])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
-Nova instância (atual 1) [1-10]: 
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 5 | gerações 10 | avaliações 0 
+```
+Vamos mudar para a instância 2. Nesta instância os estados podem repetir-se.
+```entrada
+Opção: **1**
+Nova instância (atual 1) [1-10]: **2**
+...
 --<([1])>--
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: g:0 h:1 1|4|5
+Opção: **2**
+```
+Vamos explorar para ver com é.
+```entrada
+g:0 h:1 1|4|5
 --<([1])>--
   +#1 g:1 1|4|5 a19
   |--<([19])>--
@@ -676,7 +596,11 @@ Opção: g:0 h:1 1|4|5
   |--<([35])>--
   +#4 g:1 1|4|5 a91
    --<([91])>--
-Sucessor [1-4, ação(ões), exe]:g:0 2|8|10
+Sucessor [1-4, ação(ões), exe]:**2**
+```
+Temos os estados todos com 1 ou 2 dígitos. Há apenas 100 estados no máximo, alguns irão ser repetidos, ficando a árvore em grafo
+```entrada
+g:0 2|8|10
 --<([8])>--
   +#1 g:1 2|8|10 a27
   |--<([27])>--
@@ -686,7 +610,11 @@ Sucessor [1-4, ação(ões), exe]:g:0 2|8|10
   |--<([57])>--
   +#4 g:1 2|8|10 a0
    --<([0])>--
-Sucessor [1-4, ação(ões), exe]:g:0 3|12|15
+Sucessor [1-4, ação(ões), exe]:**1**
+```
+Vamos mover um bocado, mas ao encontrar um estado que já tenha sido gerado, os sucessores serão os mesmos e há o risco de andarmos às voltas
+```entrada
+g:0 3|12|15
 --<([27])>--
   +#1 g:1 3|12|15 a52
   |--<([52])>--
@@ -696,30 +624,18 @@ Sucessor [1-4, ação(ões), exe]:g:0 3|12|15
   |--<([36])>--
   +#4 g:1 3|12|15 a32
    --<([32])>--
-Sucessor [1-4, ação(ões), exe]:
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
+Sucessor [1-4, ação(ões), exe]:**0**
+...
 [Estatísticas] expansões 3 | gerações 12 | avaliações 15 
 --<([27])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
-Nova instância (atual 2) [1-10]: 
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 3 | gerações 12 | avaliações 15 
---<([1])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: g:0 
+...
+Opção: **1**
+Nova instância (atual 2) [1-10]: **2**
+Opção: **5**
+```
+Esta instância é pequena, e lá encontramos um estado objetivo sem grande problema. O custo é 6, não sabemos se é o melhor.
+```entrada
+g:0 
 --<([1])>--
   +g:1 1|4 a19
   |--<([19])>--
@@ -754,67 +670,19 @@ P13(baralhar): 0
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
-P1(Algoritmo): Profundidade Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 1000000 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
-P9(Limite): -1 (-1 a 1000000)
-P10(Repetidos): ignorar (1 a 3)
-P11(pesoAStar): 100 (0 a 10000)
-P12(ruido): 0 (-100 a 100)
-P13(baralhar): 0 (0 a 1)
-Parametro:
-Algoritmo base a executar.
-1: Largura Primeiro
-2: Custo Uniforme
-3: Profundidade Primeiro
-4: Melhor Primeiro
-5: A*
-6: IDA*
-7: Branch and Bound
-Algoritmo (atual 3): 
-P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 1000000 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
-P9(Limite): -1 (-1 a 1000000)
-P10(Repetidos): ignorar (1 a 3)
-P11(pesoAStar): 100 (0 a 10000)
-P12(ruido): 0 (-100 a 100)
-P13(baralhar): 0 (0 a 1)
-Parametro:
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 8 | gerações 24 | avaliações 0 
---<([30])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
-Nova instância (atual 2) [1-10]: 
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 8 | gerações 24 | avaliações 0 
---<([1])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
+```
+Vamos mudar para a procura em largura
+```entrada
+Opção: **4**
+Parametro: **1**
+Algoritmo (atual 3): **1**
+Parametro: **0**
+Opção: **1**
+Nova instância (atual 2) [1-10]: **2**
+Opção: **5**
+```
+Vemos que afinal há uma solução de custo 2
+```entrada
 g:0 
 --<([1])>--
   +#1 g:1 1|4 a19
@@ -841,33 +709,22 @@ P13(baralhar): 0
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
+```
+ao ver a solução podemos ver a sequência de estados que liga o estado inicial ao objetivo
+```entrada
+Opção: **3**
 --<([1])>-- (g:0) 
 --<([19])>-- (g:1) 
 --<([20])>-- (g:2) 
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 2 | gerações 8 | avaliações 0 
---<([20])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
-Nova instância (atual 2) [1-10]: 
-Problema artificial (TProcuraConstrutiva)
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 2 | gerações 8 | avaliações 0 
---<([1])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
-Opção: 
+```
+Avançamos para a instância 4 que tem custos não unitários em cada ação
+```entrada
+Opção: **1**
+Nova instância (atual 2) [1-10]: **4**
+Opção: **5**
+```
+O resultado é 16, mas a procura em largura não garante a solução ótima se os custos forem variáveis. 
+```entrada
 g:0 
 --<([1])>--
   +#1 g:6 1|1 a4064520327
@@ -916,6 +773,9 @@ P13(baralhar): 0
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+```
+.........vamos escolher o custo uniforme para saber se é a solução ótima
+```entrada
 Opção: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
