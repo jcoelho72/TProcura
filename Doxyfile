@@ -29,7 +29,7 @@ USE_MDFILE_AS_MAINPAGE = README.md
 SEARCHENGINE           = YES
 
 # Configuração de saída
-HTML_OUTPUT           = docs/html
+HTML_OUTPUT           = .
 LATEX_OUTPUT          = docs/latex
 GENERATE_TREEVIEW     = YES
 DISABLE_INDEX         = NO
