@@ -209,7 +209,7 @@ public:
 	/// @brief Estimativa para o custo até um estado objetivo, se disponível.
 	int heuristica;
 
-	/** @} */ // Fim do grupo VariaveisEstado 
+	/** @} */ // Fim do grupo VariaveisEstado
 
 
 	/**
