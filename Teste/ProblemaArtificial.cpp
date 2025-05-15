@@ -13,7 +13,7 @@ CProblemaArtificial::~CProblemaArtificial(void)
 {
 }
 
-TProcuraConstrutiva* CProblemaArtificial::Duplicar(void)
+TNo CProblemaArtificial::Duplicar(void)
 {
 	CProblemaArtificial* clone = new CProblemaArtificial;
 	if(clone!=NULL)
@@ -104,7 +104,7 @@ bool CProblemaArtificial::SolucaoCompleta(void)
 void CProblemaArtificial::TesteManual(const char* nome)
 {
 	// definir as instâncias
-	instancia = { 1,1,10, "Problema", "Caracteristicas dos problemas", NULL };
+	instancia = { "Problema", 1,1,10, "Caracteristicas dos problemas", NULL };
 	TProcuraConstrutiva::TesteManual(nome);
 }
 

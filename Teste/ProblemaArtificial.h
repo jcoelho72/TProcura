@@ -45,9 +45,11 @@ public:
 
 	// Metodos virtuais redefinidos
 	TProcuraConstrutiva* Duplicar(void);
-	void Copiar(TProcuraConstrutiva*objecto) {
-		id = ((CProblemaArtificial*)objecto)->id;
-		nivel = ((CProblemaArtificial*)objecto)->nivel;
+	void Copiar(TNo objecto) {
+		CProblemaArtificial& obj = *((CProblemaArtificial*)objecto);
+		id = obj.id;
+		nivel = obj.nivel;
+		heur = obj.heur;
 	}
 	void SolucaoVazia(void);
 	void Sucessores(TVector<TNo>& sucessores);

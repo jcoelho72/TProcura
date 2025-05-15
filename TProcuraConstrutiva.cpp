@@ -29,7 +29,7 @@ clock_t TProcuraConstrutiva::instanteFinal = 0;
 // flag de problemas de memória esgotada
 bool TProcuraConstrutiva::memoriaEsgotada = false;
 // ID da instância atual (problemas com várias instâncias, a utilizar em SolucaoVazia())
-TParametro TProcuraConstrutiva::instancia = { 1,1,1, NULL, NULL, NULL };
+TParametro TProcuraConstrutiva::instancia = { NULL,1,1,1, NULL, NULL };
 // adicionar parâmetros específicos, se necessário
 TVector<TParametro> TProcuraConstrutiva::parametro;
 
@@ -70,38 +70,38 @@ void TProcuraConstrutiva::ResetParametros()
 	// definir parametros base
 	parametro.Count(0);
 	// algoritmos
-	parametro.Add({ 1,1,7,"Algoritmo","Escolha do algoritmo base a executar.", nomesAlgoritmos });
+	parametro.Add({ "Algoritmo",1,1,7,"Algoritmo base a executar.", nomesAlgoritmos });
 	// nivel de debug
-	parametro.Add({ 0,0,4,"Debug","Nível de debug, desde reduzido a completo.",nomesDebug });
+	parametro.Add({ "Debug",0,0,4,"Nível de debug, de reduzido a completo.",nomesDebug });
 	// ver Acoes (ou apenas estados completos)
-	parametro.Add({ 4,1,100,"Ver","Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.",NULL });
+	parametro.Add({ "Ver",4,1,100,"Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.",NULL });
 	// seed 
-	parametro.Add({ 1,1,1000000, "Seed","Semente aleatória para inicializar a sequência de números pseudo-aleatórios. Alterar para garantir diferentes números.",NULL });
+	parametro.Add({ "Seed",1,1,1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios.",NULL });
 	// limite tempo
-	parametro.Add({ 10,1,3600, "Tempo","Tempo limite em segundos. Caso seja ultrapassado, o algoritmo pára.",NULL });
+	parametro.Add({ "Tempo",10,1,3600, "Tempo limite em segundos. ",NULL });
 	// máximo de gerações
-	parametro.Add({ 0,0,1000000000, "Gerações","Número de gerações máximo (0 não há limite). Caso seja ultrapassado, o algoritmo pára.", NULL });
+	parametro.Add({ "Gerações",0,0,1000000000, "Número de gerações máximo (0 não há limite). ", NULL });
 	// máximo de expansões
-	parametro.Add({ 0,0,1000000000, "Expansões","Número de expansões máximo (0 não há limite). Caso seja ultrapassado, o algoritmo pára.",NULL });
+	parametro.Add({ "Expansões",0,0,1000000000, "Número de expansões máximo (0 não há limite). ",NULL });
 	// máximo de avaliacoes
-	parametro.Add({ 0,0,1000000000, "Avaliações","Número de avaliações máximo (0 não há limite). Caso seja ultrapassado, o algoritmo pára.",NULL });
+	parametro.Add({ "Avaliações",0,0,1000000000, "Número de avaliações máximo (0 não há limite). ",NULL });
 	// limite (algoritmo)
-	parametro.Add({ 0,-1,1000000, "Limite",
+	parametro.Add({ "Limite",0,-1,1000000,
 		"Valor dependente do algoritmo. \n\
 Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. \n\
 Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL });
 	// estados repetidos
-	parametro.Add({ 1,1,3, "Repetidos", "Forma de lidar com os estados repetidos",
+	parametro.Add({ "Repetidos", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).",
 			nomesRepetidos });
 	// pesoAStar 
-	parametro.Add({ 100,0,10000, "pesoAStar",
-		"Utilizado no A*. Se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.",NULL });
+	parametro.Add({ "pesoAStar",100,0,10000,
+		"Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.",NULL });
 	// ruido heuristica
-	parametro.Add({ 0,-100,100, "ruido",
-		"Ruído a adicionar à heurística. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",NULL });
+	parametro.Add({ "ruido",0,-100,100,
+		"Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",NULL });
 	// baralhar sucessores
-	parametro.Add({ 0,0,1, "baralhar",
-		"Baralhar a ordem dos sucessores.",NULL });
+	parametro.Add({ "baralhar",0,0,1,
+		"Baralhar os sucessores ao expandir.",NULL });
 
 	// colocar as configurações vazias (podem ser inicializadas se existirem configurações de omissão)
 	configuracoes.Count(0);
@@ -201,7 +201,7 @@ int TProcuraConstrutiva::LarguraPrimeiro(int limite)
 			}
 		}
 
-		if(parametro[nivelDebug].valor > 3)
+		if(parametro[nivelDebug].valor > detalhe)
 			lista[i]->DebugSucessores(sucessores);
 
 		// Nao se pode libertar estados ja expandidos porque nao se sabe se
@@ -285,7 +285,7 @@ int TProcuraConstrutiva::CustoUniforme(int limite)
 		lista.Estado()->Sucessores(sucessores);
 		// insere por ordem de custo, e não apenas no final
 		lista.Inserir(sucessores);
-		if (parametro[nivelDebug].valor > 3)
+		if (parametro[nivelDebug].valor > detalhe)
 			lista.Estado()->DebugSucessores(sucessores);
 	}
 	return -1; // falhou
@@ -531,7 +531,7 @@ int TProcuraConstrutiva::AStar(int limite)
 		CalcularHeuristicas(sucessores);
 		// insere por ordem de custo, e não apenas no final
 		lista.Inserir(sucessores);
-		if (parametro[nivelDebug].valor > 3)
+		if (parametro[nivelDebug].valor > detalhe)
 			lista.Estado()->DebugSucessores(sucessores);
 	}
 
@@ -557,23 +557,23 @@ int TProcuraConstrutiva::Heuristica(void) {
 // (utilizar variavel TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
 void TProcuraConstrutiva::Debug(void)
 {
-	if(parametro[nivelDebug].valor > 0)
+	if(parametro[nivelDebug].valor > nada)
 		printf("\nTProcuraConstrutiva::Debug() não definido.");
 }
 
 // Metodo para ser chamado antes de analisar cada sucessor
 void TProcuraConstrutiva::DebugExpansao(int sucessor, int sucessores, bool duplo)
 {
-	if(parametro[nivelDebug].valor >= 2) {
+	if(parametro[nivelDebug].valor >= passos) {
 		if(sucessor > 0) 
 			NovaLinha(false);
 
 		if (sucessor == 0 && sucessores == 1) { // só um ramo
-			DebugRamo(parametro[nivelDebug].valor < 4 ? '-' : ' ', duplo ? '#' : '+');
+			DebugRamo(parametro[nivelDebug].valor < completo ? '-' : ' ', duplo ? '#' : '+');
 			ramo.Add(' '); // a ser impresso nesta posição nas linhas seguintes
 		}
 		else if (sucessor == 0) { // início e continua
-			DebugRamo(parametro[nivelDebug].valor < 4 ? '-' : ' ', duplo ? '#' : '+');
+			DebugRamo(parametro[nivelDebug].valor < completo ? '-' : ' ', duplo ? '#' : '+');
 			ramo.Add(duplo ? '/' : '|'); // a ser impresso nesta posição nas linhas seguintes
 		}
 		else if (sucessor > 0 && sucessor < sucessores - 1) { // no meio e continua
@@ -597,20 +597,20 @@ void TProcuraConstrutiva::DebugRamo(char ramo, char folha) {
 // Metodo para ser chamado quando nao ha sucessores ou ha um corte de profundidade
 void TProcuraConstrutiva::DebugCorte(int sucessores,bool duplo)
 {
-	if(parametro[nivelDebug].valor >= 2) {
+	if(parametro[nivelDebug].valor >= passos) {
 		if(sucessores<0) {
-			if (parametro[nivelDebug].valor < 4) {
+			if (parametro[nivelDebug].valor < completo) {
 				printf("%c ", '='); // corte de profundidade  
 				DebugEstado();
-				if (parametro[nivelDebug].valor >= 3)
+				if (parametro[nivelDebug].valor >= detalhe)
 					Debug();
 			}
 		} else if(sucessores>0)
 			ramo.Pop();
-		else if(parametro[nivelDebug].valor < 4) { // ramo em que nao e possivel continuar
+		else if(parametro[nivelDebug].valor < completo) { // ramo em que nao e possivel continuar
 			printf("%c ", '&');
 			DebugEstado();
-			if(parametro[nivelDebug].valor >= 3)
+			if(parametro[nivelDebug].valor >= detalhe)
 				Debug();
 		}
 	}
@@ -619,16 +619,16 @@ void TProcuraConstrutiva::DebugCorte(int sucessores,bool duplo)
 // Encontrou uma solucao
 void TProcuraConstrutiva::DebugSolucao(bool continuar)
 {
-	if(parametro[nivelDebug].valor > 0 && SolucaoCompleta()) {
+	if(parametro[nivelDebug].valor > nada && SolucaoCompleta()) {
 		printf(" Solução encontrada!");
 		if(!continuar)
 			ramo.Count(0);
 		Debug();
 		printf("(g:%d)", custo);
 	} else {
-		if(parametro[nivelDebug].valor > 1)
+		if(parametro[nivelDebug].valor > atividade)
 			Debug();
-		if(parametro[nivelDebug].valor >= 2 && !continuar)
+		if(parametro[nivelDebug].valor >= passos && !continuar)
 			ramo.Pop();
 	}
 }
@@ -636,9 +636,9 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 // Informacao de debug na chamada ao metodo recursivo
 void TProcuraConstrutiva::DebugChamada(void)
 {
-	if (parametro[nivelDebug].valor == 1 && expansoes % 1000 == 0)
+	if (parametro[nivelDebug].valor == atividade && expansoes % 1000 == 0)
 		printf("#");
-	if (parametro[nivelDebug].valor > 3) {
+	if (parametro[nivelDebug].valor > detalhe) {
 		// neste nível, cada estado expandido é visualizado, não apenas os estados folha
 		DebugEstado();
 		if(pai!=NULL)
@@ -660,13 +660,13 @@ void TProcuraConstrutiva::NovaLinha(bool tudo)
 // Passo no algoritmo em largura
 void TProcuraConstrutiva::DebugPasso(void)
 {
-	if (parametro[nivelDebug].valor == 1 && expansoes % 1000 == 0)
+	if (parametro[nivelDebug].valor == atividade && expansoes % 1000 == 0)
 		printf("#");
-	if (parametro[nivelDebug].valor >= 2) {
+	if (parametro[nivelDebug].valor >= passos) {
 		printf("\n");
 		DebugEstado();
 	}
-	if (parametro[nivelDebug].valor > 2)
+	if (parametro[nivelDebug].valor > passos)
 		Debug();
 }
 // Mostrar sucessores
@@ -703,11 +703,11 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 
 // uma nova iteração de um algoritmo iterativo
 void TProcuraConstrutiva::DebugIteracao(int iteracao) {
-	if (parametro[nivelDebug].valor == 1)
+	if (parametro[nivelDebug].valor == atividade)
 		printf("\n");
-	if (parametro[nivelDebug].valor > 1) {
+	if (parametro[nivelDebug].valor > atividade) {
 		printf("\nIteração %d:", iteracao);
-		if (parametro[nivelDebug].valor > 2)
+		if (parametro[nivelDebug].valor > passos)
 			printf(" (expansões %d, gerações %d, avaliações %d)\n", expansoes, geracoes, avaliacoes);
 		else
 			printf("\n");
