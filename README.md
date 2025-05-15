@@ -3,7 +3,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/jcoelho72/TProcuraConstrutiva.svg)](https://github.com/jcoelho72/TProcuraConstrutiva/issues)
 [![GitHub forks](https://img.shields.io/github/forks/jcoelho72/TProcuraConstrutiva.svg)](https://github.com/jcoelho72/TProcuraConstrutiva/network)
 [![GitHub stars](https://img.shields.io/github/stars/jcoelho72/TProcuraConstrutiva.svg)](https://github.com/jcoelho72/TProcuraConstrutiva/stargazers)
-[![GitHub license](https://img.shields.io/github/license/jcoelho72/TProcuraConstrutiva.svg)](https://github.com/jcoelho72/TProcuraConstrutiva/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/jcoelho72/TProcuraConstrutiva.svg)](https://github.com/jcoelho72/TProcuraConstrutiva/LICENSE)
 
 Uma coleção de algoritmos e implementações para **procuras e otimizações** em problemas complexos.
 
@@ -54,4 +54,4 @@ git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
 
 ## Licença
 
-Distribuído sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/jcoelho72/TProcuraConstrutiva/blob/main/LICENSE) para mais informações.
+Distribuído sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/jcoelho72/TProcuraConstrutiva/LICENSE) para mais informações.
