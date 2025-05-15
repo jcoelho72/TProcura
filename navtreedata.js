@@ -29,8 +29,8 @@ var NAVTREE =
     [ "Sobre o Projeto", "index.html#autotoc_md2", null ],
     [ "Estado do Projeto", "index.html#autotoc_md3", null ],
     [ "Funcionalidades", "index.html#autotoc_md4", null ],
-    [ "Instalação e Uso", "index.html#autotoc_md5", [
-      [ "Pré-requisitos", "index.html#autotoc_md6", null ],
+    [ "Instalação e Uso", "index.html#autotoc_md5", null ],
+    [ "Exploração do Espaço de Estados e Testes", "index.html#autotoc_md6", [
       [ "Clonando o Repositório", "index.html#autotoc_md7", null ]
     ] ],
     [ "Licença", "index.html#autotoc_md8", null ],

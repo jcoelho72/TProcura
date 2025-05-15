@@ -11,7 +11,7 @@ Uma coleção de algoritmos e implementações para {\bfseries{procuras e otimiz
 \item Estado do Projeto
 \item Funcionalidades
 \item Instalação e Uso
-\item Documentação
+\item Exploração do Espaço de Estados e Testes
 \item Exemplos
 \item Contribuindo
 \item Licença
@@ -26,19 +26,42 @@ Apresenta a implementação de algoritmos voltados para "{}"{} "{}procuras const
 
 \begin{DoxyItemize}
 \item Implementação de algoritmos de procura construtiva na superclasse.
-\item A redefinição da classe, permite implementação de novos problemas, e utilizar algoritmos construtivos.
-\item Possibilita a exploração do espaço de estados manualmente
-\item Permite a execução de algoritmos cegos\+: Procura em Largura, Profundidade Primeiro, Custo Uniforme
-\item Permite a execução de algoritmos informados\+: Melhor Primeiro, AStar, IDAStar, Branch-\/and-\/\+Bound
-\item Executar tanto testes manuais, como testes empíricos (utilizando várias instâncias e comparando vários algoritmos e parametrizações).
+\item Exploração do espaço de estados de forma manual
+\item Execução de algoritmos cegos\+: Procura em Largura, Profundidade Primeiro, Custo Uniforme
+\item Execução de algoritmos informados\+: Melhor Primeiro, AStar, IDAStar, Branch-\/and-\/\+Bound
+\item Executar de testes manuais e testes empíricos (várias instâncias e vários algoritmos/parametrizações).
 \end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Instalação e Uso}{Instalação e Uso}}\label{index_autotoc_md5}
-\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Pré-\/requisitos}{Pré-requisitos}}\label{index_autotoc_md6}
+Clonar o projeto, compilar e executar. Teste a classe com problemas artificiais.
+
+Para implementar um novo problema, redefina a superclasse \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, implementando os seguintes métodos de \href{https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html}{\texttt{ Redefinição Mandatória}}\+:
+
 
 \begin{DoxyItemize}
-\item Compilador de C++
-\item \href{http://www.doxygen.nl/}{\texttt{ Doxygen}} para gerar a documentação
-\item \href{https://git-scm.com/}{\texttt{ Git}} para controle de versão
-\end{DoxyItemize}\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Clonando o Repositório}{Clonando o Repositório}}\label{index_autotoc_md7}
+\item Duplicar()\+: Cria um objecto que é uma cópia deste.
+\item Copiar()\+: Fica com uma cópia do objecto.
+\item Solucao\+Vazia()\+: Coloca o objecto no estado inicial da procura.
+\item Sucessores()\+: Coloca em sucessores a lista de estados sucessores.
+\item Solucao\+Completa()\+: Verifica se o estado actual é objectivo (é uma solução completa)
+\item Teste\+Manual()\+: Inicializa a interação com o utilizador.
+\end{DoxyItemize}
+
+Essas implementações podem utilizar os modelos existentes na documentação. Estes métodos permitem a execução dos algoritmos de procura construtivos.
+
+Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-\/se também implementar os \href{https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html}{\texttt{ Métodos Sugeridos}}. Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{Exploração do Espaço de Estados e Testes}{Exploração do Espaço de Estados e Testes}}\label{index_autotoc_md6}
+Após implementar os métodos obrigatórios (e, se possível, os sugeridos), você poderá explorar e testar os algoritmos de procura construtiva. No teste manual, as opções disponíveis são\+:
+
+
+\begin{DoxyEnumerate}
+\item Inicializar – Define o estado inicial utilizando uma instância concreta do problema.
+\item Explorar – Navega, de forma interativa, pelo espaço de estados, permitindo executar ações válidas e testar resoluções manuais.
+\item Solução/\+Caminho – Exibe a solução completa ou o caminho atual para a solução, seja obtido manualmente ou por um algoritmo.
+\item Parâmetros – Mostra todos os parâmetros configuráveis e permite alterar seus valores, tanto os definidos pela superclasse quanto os específicos do problema.
+\item Executar – Executa o algoritmo com os parâmetros atualmente configurados; isso inclui os limites de execução, tempo e a seleção do algoritmo.
+\item Configurações – Permite adicionar a configuração atual como um novo cenário ou apagar configurações existentes, as quais são utilizadas no teste empírico.
+\item Teste – Executa testes empíricos sobre um conjunto de instâncias e configurações, possibilitando comparações entre diferentes algoritmos e/ou parâmetros.
+\end{DoxyEnumerate}
+
+Essa abordagem de testes empíricos permite analisar o desempenho de algoritmos em diversos cenários, considerando a diversidade e o grau de dificuldade das instâncias de teste.\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Clonando o Repositório}{Clonando o Repositório}}\label{index_autotoc_md7}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{git\ clone\ https://github.com/jcoelho72/TProcuraConstrutiva.git}

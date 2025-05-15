@@ -102,7 +102,7 @@ Sumário</h1>
 <li>Estado do Projeto</li>
 <li>Funcionalidades</li>
 <li>Instalação e Uso</li>
-<li>Documentação</li>
+<li>Exploração do Espaço de Estados e Testes</li>
 <li>Exemplos</li>
 <li>Contribuindo</li>
 <li>Licença</li>
@@ -122,21 +122,38 @@ Estado do Projeto</h1>
 Funcionalidades</h1>
 <ul>
 <li>Implementação de algoritmos de procura construtiva na superclasse.</li>
-<li>A redefinição da classe, permite implementação de novos problemas, e utilizar algoritmos construtivos.</li>
-<li>Possibilita a exploração do espaço de estados manualmente</li>
-<li>Permite a execução de algoritmos cegos: Procura em Largura, Profundidade Primeiro, Custo Uniforme</li>
-<li>Permite a execução de algoritmos informados: Melhor Primeiro, AStar, IDAStar, Branch-and-Bound</li>
-<li>Executar tanto testes manuais, como testes empíricos (utilizando várias instâncias e comparando vários algoritmos e parametrizações).</li>
+<li>Exploração do espaço de estados de forma manual</li>
+<li>Execução de algoritmos cegos: Procura em Largura, Profundidade Primeiro, Custo Uniforme</li>
+<li>Execução de algoritmos informados: Melhor Primeiro, AStar, IDAStar, Branch-and-Bound</li>
+<li>Executar de testes manuais e testes empíricos (várias instâncias e vários algoritmos/parametrizações).</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md5"></a>
 Instalação e Uso</h1>
-<h2><a class="anchor" id="autotoc_md6"></a>
-Pré-requisitos</h2>
+<p>Clonar o projeto, compilar e executar. Teste a classe com problemas artificiais.</p>
+<p>Para implementar um novo problema, redefina a superclasse <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, implementando os seguintes métodos de <a href="https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html">Redefinição Mandatória</a>:</p>
 <ul>
-<li>Compilador de C++</li>
-<li><a href="http://www.doxygen.nl/">Doxygen</a> para gerar a documentação</li>
-<li><a href="https://git-scm.com/">Git</a> para controle de versão</li>
+<li>Duplicar(): Cria um objecto que é uma cópia deste.</li>
+<li>Copiar(): Fica com uma cópia do objecto.</li>
+<li>SolucaoVazia(): Coloca o objecto no estado inicial da procura.</li>
+<li>Sucessores(): Coloca em sucessores a lista de estados sucessores.</li>
+<li>SolucaoCompleta(): Verifica se o estado actual é objectivo (é uma solução completa)</li>
+<li>TesteManual(): Inicializa a interação com o utilizador.</li>
 </ul>
+<p>Essas implementações podem utilizar os modelos existentes na documentação. Estes métodos permitem a execução dos algoritmos de procura construtivos.</p>
+<p>Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-se também implementar os <a href="https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html">Métodos Sugeridos</a>. Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Exploração do Espaço de Estados e Testes</h1>
+<p>Após implementar os métodos obrigatórios (e, se possível, os sugeridos), você poderá explorar e testar os algoritmos de procura construtiva. No teste manual, as opções disponíveis são:</p>
+<ol type="1">
+<li>Inicializar – Define o estado inicial utilizando uma instância concreta do problema.</li>
+<li>Explorar – Navega, de forma interativa, pelo espaço de estados, permitindo executar ações válidas e testar resoluções manuais.</li>
+<li>Solução/Caminho – Exibe a solução completa ou o caminho atual para a solução, seja obtido manualmente ou por um algoritmo.</li>
+<li>Parâmetros – Mostra todos os parâmetros configuráveis e permite alterar seus valores, tanto os definidos pela superclasse quanto os específicos do problema.</li>
+<li>Executar – Executa o algoritmo com os parâmetros atualmente configurados; isso inclui os limites de execução, tempo e a seleção do algoritmo.</li>
+<li>Configurações – Permite adicionar a configuração atual como um novo cenário ou apagar configurações existentes, as quais são utilizadas no teste empírico.</li>
+<li>Teste – Executa testes empíricos sobre um conjunto de instâncias e configurações, possibilitando comparações entre diferentes algoritmos e/ou parâmetros.</li>
+</ol>
+<p>Essa abordagem de testes empíricos permite analisar o desempenho de algoritmos em diversos cenários, considerando a diversidade e o grau de dificuldade das instâncias de teste.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Clonando o Repositório</h2>
 <div class="fragment"><div class="line">git clone https://github.com/jcoelho72/TProcuraConstrutiva.git</div>
