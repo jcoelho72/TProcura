@@ -13,7 +13,7 @@ Uma coleção de algoritmos e implementações para **procuras e otimizações**
 - [Estado do Projeto](#estado-do-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Instalação e Uso](#instalação-e-uso)
-- [Documentação](#documentação)
+- [Exploração do Espaço de Estados e Testes](#exploração-do-espaço-de-estados-e-testes)
 - [Exemplos](#exemplos)
 - [Contribuindo](#contribuindo)
 - [Licença](#licença)
@@ -32,19 +32,42 @@ Apresenta a implementação de algoritmos voltados para [procuras construtivas](
 ## Funcionalidades
 
 - Implementação de algoritmos de procura construtiva na superclasse.
-- A redefinição da classe, permite implementação de novos problemas, e utilizar algoritmos construtivos.
-- Possibilita a exploração do espaço de estados manualmente
-- Permite a execução de algoritmos cegos: Procura em Largura, Profundidade Primeiro, Custo Uniforme
-- Permite a execução de algoritmos informados: Melhor Primeiro, AStar, IDAStar, Branch-and-Bound
-- Executar tanto testes manuais, como testes empíricos (utilizando várias instâncias e comparando vários algoritmos e parametrizações).
+- Exploração do espaço de estados de forma manual
+- Execução de algoritmos cegos: Procura em Largura, Profundidade Primeiro, Custo Uniforme
+- Execução de algoritmos informados: Melhor Primeiro, AStar, IDAStar, Branch-and-Bound
+- Executar de testes manuais e testes empíricos (várias instâncias e vários algoritmos/parametrizações).
 
 ## Instalação e Uso
 
-### Pré-requisitos
+Clonar o projeto, compilar e executar. Teste a classe com problemas artificiais. 
 
-- Compilador de C++
-- [Doxygen](http://www.doxygen.nl/) para gerar a documentação
-- [Git](https://git-scm.com/) para controle de versão
+Para implementar um novo problema, redefina a superclasse TProcuraConstrutiva, implementando os seguintes métodos de [Redefinição Mandatória](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html):
+
+- Duplicar(): Cria um objecto que é uma cópia deste.
+- Copiar(): Fica com uma cópia do objecto.
+- SolucaoVazia(): Coloca o objecto no estado inicial da procura.
+- Sucessores(): Coloca em sucessores a lista de estados sucessores.
+- SolucaoCompleta(): Verifica se o estado actual é objectivo (é uma solução completa)
+- TesteManual(): Inicializa a interação com o utilizador.
+
+Essas implementações podem utilizar os modelos existentes na documentação. Estes métodos permitem a execução dos algoritmos de procura construtivos. 
+
+Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-se também implementar os 
+[Métodos Sugeridos](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html). Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.
+
+## Exploração do Espaço de Estados e Testes
+
+Após implementar os métodos obrigatórios (e, se possível, os sugeridos), você poderá explorar e testar os algoritmos de procura construtiva. No teste manual, as opções disponíveis são:
+
+1. Inicializar – Define o estado inicial utilizando uma instância concreta do problema.
+2. Explorar – Navega, de forma interativa, pelo espaço de estados, permitindo executar ações válidas e testar resoluções manuais.
+3. Solução/Caminho – Exibe a solução completa ou o caminho atual para a solução, seja obtido manualmente ou por um algoritmo.
+4. Parâmetros – Mostra todos os parâmetros configuráveis e permite alterar seus valores, tanto os definidos pela superclasse quanto os específicos do problema.
+5. Executar – Executa o algoritmo com os parâmetros atualmente configurados; isso inclui os limites de execução, tempo e a seleção do algoritmo.
+6. Configurações – Permite adicionar a configuração atual como um novo cenário ou apagar configurações existentes, as quais são utilizadas no teste empírico.
+7. Teste – Executa testes empíricos sobre um conjunto de instâncias e configurações, possibilitando comparações entre diferentes algoritmos e/ou parâmetros.
+
+Essa abordagem de testes empíricos permite analisar o desempenho de algoritmos em diversos cenários, considerando a diversidade e o grau de dificuldade das instâncias de teste.
 
 ### Clonando o Repositório
 ```bash
