@@ -124,7 +124,10 @@ bool CProblemaArtificial::Distinto(TNo estado) {
 
 // o problema artificial, simular heurística com diferentes características:
 int CProblemaArtificial::Heuristica(void) {
-	heuristica = heur;
+	heuristica = heur = 0;
+	// utilizar apenas a distância até ao nível mínimo onde pode estar a solução
+	if(nivel < espaco.minNivelObjetivo)
+		heuristica = heur = espaco.minNivelObjetivo - nivel;
 	return TProcuraConstrutiva::Heuristica();
 }
 

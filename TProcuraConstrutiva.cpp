@@ -1215,7 +1215,7 @@ void TProcuraConstrutiva::ExplorarSucessores(bool jogo) {
 		}
 		else {
 			char str[BUFFER_SIZE];
-			printf("\nSucessor [1-%d, ação, exe]:", sucessores.Count());
+			printf("\nSucessor [1-%d, ação(ões), exe]:", sucessores.Count());
 			fgets(str, BUFFER_SIZE, stdin);
 			opcao = atoi(str); 
 			if (opcao == 0 && strlen(str)>1) {
@@ -1252,8 +1252,22 @@ void TProcuraConstrutiva::ExplorarSucessores(bool jogo) {
 						else
 							caminho = backup;
 					}
-				} else if(!Acao(token)) // executar a ação
-					printf("Ação %s inválida.\n", token);
+				}
+				else {
+					int nAcoes = 0;
+					do {
+						// executar a ação
+						if (Acao(token))
+							nAcoes++;
+						else {
+							printf("Ação %s inválida.\n", token);
+							break;
+						}
+						token = strtok(NULL, " \t\n\r");
+					} while (token != NULL);
+					if (nAcoes > 0)
+						printf("Executadas %d ações com sucesso.\n", nAcoes);					
+				}
 			}
 		}
 		if (opcao > 0 && opcao <= sucessores.Count()) 
