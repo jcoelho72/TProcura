@@ -1,15 +1,16 @@
 PROJECT_NAME           = "TProcuraConstrutiva"
 PROJECT_BRIEF          = "Algoritmos de procura para problemas de otimização"
 OUTPUT_DIRECTORY       = docs
+HTML_OUTPUT            = html
 
 # Definir diretórios de entrada
-INPUT                  = src README.md
+INPUT                  = . README.md
 RECURSIVE              = YES
 
 # Gerar documentação em diferentes formatos
 GENERATE_HTML          = YES
 GENERATE_LATEX         = YES
-GENERATE_PDF           = YES  # PDF via LaTeX
+# GENERATE_PDF           = YES  # PDF via LaTeX
 GENERATE_MAN           = NO
 GENERATE_XML           = NO
 
@@ -17,7 +18,7 @@ GENERATE_XML           = NO
 HAVE_DOT              = YES
 DOT_IMAGE_FORMAT      = svg
 UML_LOOK              = YES
-CLASS_DIAGRAMS        = YES
+# CLASS_DIAGRAMS        = YES
 CALL_GRAPH            = YES
 CALLER_GRAPH          = YES
 GRAPHICAL_HIERARCHY   = YES
