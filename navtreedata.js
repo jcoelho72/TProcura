@@ -25,6 +25,14 @@
 var NAVTREE =
 [
   [ "TProcuraConstrutiva", "index.html", [
+    [ "Sumário", "index.html#autotoc_md1", null ],
+    [ "Sobre o Projeto", "index.html#autotoc_md2", null ],
+    [ "Estado do Projeto", "index.html#autotoc_md3", null ],
+    [ "Funcionalidades", "index.html#autotoc_md4", null ],
+    [ "Instalação e Uso", "index.html#autotoc_md5", [
+      [ "Pré-requisitos", "index.html#autotoc_md6", null ],
+      [ "Clonando o Repositório", "index.html#autotoc_md7", null ]
+    ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -53,7 +61,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ProblemaArtificial_8cpp.html",
-"structSIndice.html#a73252f0c7664a14f1a43e683f3d6b5b5"
+"index.html#autotoc_md5"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
