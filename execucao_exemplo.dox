@@ -19,7 +19,7 @@ _______________________________________________________________________________
 Opção: **1**
 ```
 
-    Esta é a informação apresentada no teste manual. Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais.
+Esta é a informação apresentada no teste manual. Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais.
     Podemos ver que o primeiro parametro é o algoritmo, e está selecionado de omissão a Largura Primeiro.
     Em termos de Debug está selecionado o valor nada, ou seja, não é mostrada informação de debug.
     Seguem-se outros parametros, os quais alguns serão apresentados ao longo desta execução.
