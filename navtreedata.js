@@ -33,6 +33,7 @@ var NAVTREE =
       [ "Pré-requisitos", "index.html#autotoc_md6", null ],
       [ "Clonando o Repositório", "index.html#autotoc_md7", null ]
     ] ],
+    [ "Licença", "index.html#autotoc_md8", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
