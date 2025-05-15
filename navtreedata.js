@@ -34,7 +34,7 @@ var NAVTREE =
       [ "Clonando o Repositório", "index.html#autotoc_md8", null ]
     ] ],
     [ "Licença", "index.html#autotoc_md9", null ],
-    [ "Execu��o Interativa", "execucao_interativa.html", null ],
+    [ "Execução de exemplo", "execucao_exemplo.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
