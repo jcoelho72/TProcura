@@ -1,0 +1,24 @@
+/** @page execucao_interativa Execução Interativa
+
+    Esta página mostra uma execução típica do programa, destacando a interação do utilizador e os resultados gerados.
+
+    ## Exemplo de Entrada e Saída
+
+    Aqui está um exemplo de interação com o sistema:
+
+    ```
+    Inicializando estado...
+    Estado inicial definido: [posição 0]
+    
+    > Executar ação 1
+    Ação aplicada! Novo estado: [posição 1]
+    
+    > Executar ação 2
+    Estado atualizado: [posição 2]
+    
+    > Ver solução
+    Solução encontrada: [posição inicial -> posição final]
+    ```
+
+    Para executar esse teste no seu ambiente, siga as instruções de instalação e execução disponíveis na documentação principal.
+*/
