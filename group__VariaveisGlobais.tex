@@ -1,0 +1,226 @@
+\doxysection{Variáveis globais à classe}
+\hypertarget{group__VariaveisGlobais}{}\label{group__VariaveisGlobais}\index{Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{TProcura\+Construtiva\+::instancia}} = \{ NULL,1,1,1, NULL, NULL \}
+\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em \doxylink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{TProcura\+Construtiva\+::parametro}}
+\begin{DoxyCompactList}\small\item\em Parâmetros a serem utilizados na configuração atual. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga80c8e869e8ac8d64820ce8570e44cc8e}{TProcura\+Construtiva\+::configuracoes}}
+\begin{DoxyCompactList}\small\item\em Conjuntos de configurações para teste empírico. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga6185647765b723a3581b5541722e496f}{TProcura\+Construtiva\+::geracoes}} = 0
+\begin{DoxyCompactList}\small\item\em Número total de gerações realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga198a1f8ed90785a1c3f112a3468a2d74}{TProcura\+Construtiva\+::expansoes}} =0
+\begin{DoxyCompactList}\small\item\em Número total de expansões realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga1ce9b620e165ff360003cf0c21101470}{TProcura\+Construtiva\+::avaliacoes}} =0
+\begin{DoxyCompactList}\small\item\em Número total de avaliações realizadas na procura. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{TProcura\+Construtiva\+::caminho}}
+\begin{DoxyCompactList}\small\item\em Solução retornada pela procura (os estados devem ser libertados). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{TProcura\+Construtiva\+::memoria\+Esgotada}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicando problemas de memória esgotada. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisGlobais_gadb0d41114016ec069543b3494b0e0196}{TProcura\+Construtiva\+::solucao}} =NULL
+\begin{DoxyCompactList}\small\item\em Estado objetivo encontrado, retornado pela procura (deve ser libertado). \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga1af840b6ec9c04ce7d4c8849346441bd}{TProcura\+Construtiva\+::lower\+Bound}} = 0
+\begin{DoxyCompactList}\small\item\em Valor mínimo que a solução pode apresentar, obtido pela procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{TProcura\+Construtiva\+::tamanho\+Codificado}} = \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}
+\begin{DoxyCompactList}\small\item\em Número de inteiros de 64 bits utilizados para codificar um objeto (≤ OBJETO\+\_\+\+HASHTABLE). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ unsigned char $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{TProcura\+Construtiva\+::ramo}}
+\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}{TProcura\+Construtiva\+::espacos\+Ramo}} =2
+\item 
+static clock\+\_\+t \mbox{\hyperlink{group__VariaveisGlobais_gaf7efa04a418f94ee4bad1392e69e357d}{TProcura\+Construtiva\+::instante\+Final}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Essas variáveis são compartilhadas por todas as execuções do algoritmo. O fato de serem globais evita cópias desnecessárias, mas impede a execução simultânea de múltiplas corridas. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{group__VariaveisGlobais_ga1ce9b620e165ff360003cf0c21101470}\label{group__VariaveisGlobais_ga1ce9b620e165ff360003cf0c21101470} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!avaliacoes@{avaliacoes}}
+\index{avaliacoes@{avaliacoes}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{avaliacoes}{avaliacoes}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::avaliacoes =0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número total de avaliações realizadas na procura. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00914}{914}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}\label{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!caminho@{caminho}}
+\index{caminho@{caminho}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{caminho}{caminho}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ TProcura\+Construtiva\+::caminho\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Solução retornada pela procura (os estados devem ser libertados). 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00916}{916}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_ga80c8e869e8ac8d64820ce8570e44cc8e}\label{group__VariaveisGlobais_ga80c8e869e8ac8d64820ce8570e44cc8e} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!configuracoes@{configuracoes}}
+\index{configuracoes@{configuracoes}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{configuracoes}{configuracoes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ TProcura\+Construtiva\+::configuracoes\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Conjuntos de configurações para teste empírico. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00908}{908}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}\label{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!espacosRamo@{espacosRamo}}
+\index{espacosRamo@{espacosRamo}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{espacosRamo}{espacosRamo}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::espacos\+Ramo =2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00929}{929}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_ga198a1f8ed90785a1c3f112a3468a2d74}\label{group__VariaveisGlobais_ga198a1f8ed90785a1c3f112a3468a2d74} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!expansoes@{expansoes}}
+\index{expansoes@{expansoes}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{expansoes}{expansoes}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::expansoes =0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número total de expansões realizadas na procura. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00912}{912}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_ga6185647765b723a3581b5541722e496f}\label{group__VariaveisGlobais_ga6185647765b723a3581b5541722e496f} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!geracoes@{geracoes}}
+\index{geracoes@{geracoes}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{geracoes}{geracoes}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::geracoes = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número total de gerações realizadas na procura. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00910}{910}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}\label{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!instancia@{instancia}}
+\index{instancia@{instancia}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{instancia}{instancia}}
+{\footnotesize\ttfamily \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} TProcura\+Construtiva\+::instancia = \{ NULL,1,1,1, NULL, NULL \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+ID da instância atual, a ser utilizado em \doxylink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{Solucao\+Vazia()}. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00032}{32}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_gaf7efa04a418f94ee4bad1392e69e357d}\label{group__VariaveisGlobais_gaf7efa04a418f94ee4bad1392e69e357d} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!instanteFinal@{instanteFinal}}
+\index{instanteFinal@{instanteFinal}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{instanteFinal}{instanteFinal}}
+{\footnotesize\ttfamily clock\+\_\+t TProcura\+Construtiva\+::instante\+Final = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00931}{931}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_ga1af840b6ec9c04ce7d4c8849346441bd}\label{group__VariaveisGlobais_ga1af840b6ec9c04ce7d4c8849346441bd} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!lowerBound@{lowerBound}}
+\index{lowerBound@{lowerBound}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{lowerBound}{lowerBound}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::lower\+Bound = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Valor mínimo que a solução pode apresentar, obtido pela procura. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00922}{922}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}\label{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!memoriaEsgotada@{memoriaEsgotada}}
+\index{memoriaEsgotada@{memoriaEsgotada}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{memoriaEsgotada}{memoriaEsgotada}}
+{\footnotesize\ttfamily bool TProcura\+Construtiva\+::memoria\+Esgotada = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Flag indicando problemas de memória esgotada. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00918}{918}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}\label{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!parametro@{parametro}}
+\index{parametro@{parametro}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{parametro}{parametro}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ TProcura\+Construtiva\+::parametro\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parâmetros a serem utilizados na configuração atual. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00906}{906}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}\label{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!ramo@{ramo}}
+\index{ramo@{ramo}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{ramo}{ramo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ unsigned char $>$ TProcura\+Construtiva\+::ramo\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00927}{927}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_gadb0d41114016ec069543b3494b0e0196}\label{group__VariaveisGlobais_gadb0d41114016ec069543b3494b0e0196} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!solucao@{solucao}}
+\index{solucao@{solucao}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{solucao}{solucao}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*} TProcura\+Construtiva\+::solucao =NULL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Estado objetivo encontrado, retornado pela procura (deve ser libertado). 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00920}{920}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}\label{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b} 
+\index{Variáveis globais à classe@{Variáveis globais à classe}!tamanhoCodificado@{tamanhoCodificado}}
+\index{tamanhoCodificado@{tamanhoCodificado}!Variáveis globais à classe@{Variáveis globais à classe}}
+\doxysubsubsection{\texorpdfstring{tamanhoCodificado}{tamanhoCodificado}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::tamanho\+Codificado = \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número de inteiros de 64 bits utilizados para codificar um objeto (≤ OBJETO\+\_\+\+HASHTABLE). 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00924}{924}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+

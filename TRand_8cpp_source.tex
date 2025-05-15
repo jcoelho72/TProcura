@@ -1,0 +1,109 @@
+\doxysection{TRand.\+cpp}
+\hypertarget{TRand_8cpp_source}{}\label{TRand_8cpp_source}\mbox{\hyperlink{TRand_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00001}00001\ \textcolor{comment}{//\ TRand.cpp:\ implementation\ of\ the\ TRand\ class.}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00002}00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TRand_8h}{TRand.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00009}00009\ \textcolor{comment}{/*\ Period\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00010}00010\ \textcolor{comment}{//\#define\ N\ 624}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00011}00011\ \textcolor{comment}{//\#define\ M\ 397}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00012}\mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{00012}}\ \textcolor{preprocessor}{\#define\ N\ 27}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00013}\mbox{\hyperlink{TRand_8cpp_a52037c938e3c1b126c6277da5ca689d0}{00013}}\ \textcolor{preprocessor}{\#define\ M\ 7}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00014}\mbox{\hyperlink{TRand_8cpp_a376c3581bae3c2367fc9ce694e5a8949}{00014}}\ \textcolor{preprocessor}{\#define\ MATRIX\_A\ 0x9908b0df\ \ \ }\textcolor{comment}{/*\ constant\ vector\ a\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00015}\mbox{\hyperlink{TRand_8cpp_a39bc458849360f8f371b54c4365d397f}{00015}}\ \textcolor{preprocessor}{\#define\ UPPER\_MASK\ 0x80000000\ }\textcolor{comment}{/*\ most\ significant\ w-\/r\ bits\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00016}\mbox{\hyperlink{TRand_8cpp_a4ddd8cab3564b7a86a4b0e52ba08f70e}{00016}}\ \textcolor{preprocessor}{\#define\ LOWER\_MASK\ 0x7fffffff\ }\textcolor{comment}{/*\ least\ significant\ r\ bits\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00018}00018\ \textcolor{comment}{/*\ Tempering\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00019}\mbox{\hyperlink{TRand_8cpp_ad823db99ec38ec810124406bd3dfeeae}{00019}}\ \textcolor{preprocessor}{\#define\ TEMPERING\_MASK\_B\ 0x9d2c5680}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00020}\mbox{\hyperlink{TRand_8cpp_ae1c7a72f80707458249c99a6f37e7d3e}{00020}}\ \textcolor{preprocessor}{\#define\ TEMPERING\_MASK\_C\ 0xefc60000}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00021}\mbox{\hyperlink{TRand_8cpp_a238852cd6380d77bd700e95d0a7d90c9}{00021}}\ \textcolor{preprocessor}{\#define\ TEMPERING\_SHIFT\_U(y)\ \ (y\ >>\ 11)}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00022}\mbox{\hyperlink{TRand_8cpp_adce59eadb4013bb06a059dedf69c282d}{00022}}\ \textcolor{preprocessor}{\#define\ TEMPERING\_SHIFT\_S(y)\ \ (y\ <<\ 7)}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00023}\mbox{\hyperlink{TRand_8cpp_a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3}{00023}}\ \textcolor{preprocessor}{\#define\ TEMPERING\_SHIFT\_T(y)\ \ (y\ <<\ 15)}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00024}\mbox{\hyperlink{TRand_8cpp_a15f821dd6f1a65b3ecf672718aa6273c}{00024}}\ \textcolor{preprocessor}{\#define\ TEMPERING\_SHIFT\_L(y)\ \ (y\ >>\ 18)}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00026}00026\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ mt[\mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}][2];\ \textcolor{comment}{/*\ the\ array\ for\ the\ state\ vector\ \ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00027}00027\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ mti[2]\ =\ \{\ \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}\ +\ 1,\ \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}\ +\ 1\ \};\ \textcolor{comment}{/*\ mti==N+1\ means\ mt[N]\ is\ not\ initialized\ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00031}00031\ \textcolor{comment}{//\ Construction/Destruction}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00034}\mbox{\hyperlink{classTRand_a07a93194afa80ce940fe16a4bd7b68d9}{00034}}\ \mbox{\hyperlink{classTRand_a07a93194afa80ce940fe16a4bd7b68d9}{TRand::TRand}}()}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00035}00035\ \{}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00039}\mbox{\hyperlink{classTRand_aa94554553535dc1a1c0f0e31c494c5c3}{00039}}\ \mbox{\hyperlink{classTRand_aa94554553535dc1a1c0f0e31c494c5c3}{TRand::\string~TRand}}()}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00044}\mbox{\hyperlink{classTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{00044}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{TRand::srand}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869}{seed}},\ \textcolor{keywordtype}{int}\ seq)}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{comment}{/*\ setting\ initial\ seeds\ to\ mt[N]\ using\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{comment}{/*\ the\ generator\ Line\ 25\ of\ Table\ 1\ in\ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{comment}{/*\ [KNUTH\ 1981,\ The\ Art\ of\ Computer\ Programming\ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{/*\ \ \ \ Vol.\ 2\ (2nd\ Ed.),\ pp102]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00051}00051\ \ \ \ \ seq\ \&=\ 1;}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869}{seed}}\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869}{seed}}\ =\ (\textcolor{keywordtype}{unsigned}\ int)clock();}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00056}00056\ \ \ \ \ mt[0][seq]\ =\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869}{seed}}\ \&\ 0xffffffff;}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (mti[seq]\ =\ 1;\ mti[seq]\ <\ \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}};\ mti[seq]++)}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ mt[mti[seq]][seq]\ =\ (69069\ *\ mt[mti[seq]\ -\/\ 1][seq])\ \&\ 0xffffffff;}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00061}\mbox{\hyperlink{classTRand_a8f8ec155d796c5586198ac75eb966d4f}{00061}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTRand_a8f8ec155d796c5586198ac75eb966d4f}{TRand::rand}}(\textcolor{keywordtype}{int}\ seq)}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00062}00062\ \{}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ mag01[2]=\{0x0,\ \mbox{\hyperlink{TRand_8cpp_a376c3581bae3c2367fc9ce694e5a8949}{MATRIX\_A}}\};}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{comment}{/*\ mag01[x]\ =\ x\ *\ MATRIX\_A\ \ for\ x=0,1\ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00066}00066\ \ \ \ \ seq\ \&=\ 1;}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (mti[seq]\ >=\ \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}})\ \{\ \textcolor{comment}{/*\ generate\ N\ words\ at\ one\ time\ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ kk;}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mti[seq]\ ==\ \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}+1)\ \ \ \textcolor{comment}{/*\ if\ sgenrand()\ has\ not\ been\ called,\ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{srand}}(0,\ seq);\ \textcolor{comment}{/*\ a\ default\ initial\ seed\ is\ used\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (kk\ =\ 0;\ kk\ <\ \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}\ -\/\ \mbox{\hyperlink{TRand_8cpp_a52037c938e3c1b126c6277da5ca689d0}{M}};\ kk++)\ \{}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ (mt[kk][seq]\ \&\ \mbox{\hyperlink{TRand_8cpp_a39bc458849360f8f371b54c4365d397f}{UPPER\_MASK}})\ |\ (mt[kk\ +\ 1][seq]\ \&\ \mbox{\hyperlink{TRand_8cpp_a4ddd8cab3564b7a86a4b0e52ba08f70e}{LOWER\_MASK}});}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ mt[kk][seq]\ =\ mt[kk\ +\ \mbox{\hyperlink{TRand_8cpp_a52037c938e3c1b126c6277da5ca689d0}{M}}][seq]\ \string^\ (y\ >>\ 1)\ \string^\ mag01[y\ \&\ 0x1];}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ kk\ <\ \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}\ -\/\ 1;\ kk++)\ \{}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ y\ =\ (mt[kk][seq]\ \&\ \mbox{\hyperlink{TRand_8cpp_a39bc458849360f8f371b54c4365d397f}{UPPER\_MASK}})\ |\ (mt[kk\ +\ 1][seq]\ \&\ \mbox{\hyperlink{TRand_8cpp_a4ddd8cab3564b7a86a4b0e52ba08f70e}{LOWER\_MASK}});}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ mt[kk][seq]\ =\ mt[kk\ +\ (\mbox{\hyperlink{TRand_8cpp_a52037c938e3c1b126c6277da5ca689d0}{M}}\ -\/\ \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}})][seq]\ \string^\ (y\ >>\ 1)\ \string^\ mag01[y\ \&\ 0x1];}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ y\ =\ (mt[\mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}\ -\/\ 1][seq]\ \&\ \mbox{\hyperlink{TRand_8cpp_a39bc458849360f8f371b54c4365d397f}{UPPER\_MASK}})\ |\ (mt[0][seq]\ \&\ \mbox{\hyperlink{TRand_8cpp_a4ddd8cab3564b7a86a4b0e52ba08f70e}{LOWER\_MASK}});}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ mt[\mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}-\/1][seq]\ =\ mt[\mbox{\hyperlink{TRand_8cpp_a52037c938e3c1b126c6277da5ca689d0}{M}}-\/1][seq]\ \string^\ (y\ >>\ 1)\ \string^\ mag01[y\ \&\ 0x1];}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ mti[seq]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00088}00088\ \ \ \ \ y\ =\ mt[mti[seq]++][seq];}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00089}00089\ \ \ \ \ y\ \string^=\ \mbox{\hyperlink{TRand_8cpp_a238852cd6380d77bd700e95d0a7d90c9}{TEMPERING\_SHIFT\_U}}(y);}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00090}00090\ \ \ \ \ y\ \string^=\ \mbox{\hyperlink{TRand_8cpp_adce59eadb4013bb06a059dedf69c282d}{TEMPERING\_SHIFT\_S}}(y)\ \&\ \mbox{\hyperlink{TRand_8cpp_ad823db99ec38ec810124406bd3dfeeae}{TEMPERING\_MASK\_B}};}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00091}00091\ \ \ \ \ y\ \string^=\ \mbox{\hyperlink{TRand_8cpp_a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3}{TEMPERING\_SHIFT\_T}}(y)\ \&\ \mbox{\hyperlink{TRand_8cpp_ae1c7a72f80707458249c99a6f37e7d3e}{TEMPERING\_MASK\_C}};}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00092}00092\ \ \ \ \ y\ \string^=\ \mbox{\hyperlink{TRand_8cpp_a15f821dd6f1a65b3ecf672718aa6273c}{TEMPERING\_SHIFT\_L}}(y);}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{return}\ y;}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00097}00097\ \textcolor{preprocessor}{\#undef\ N\ }}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00098}00098\ \textcolor{preprocessor}{\#undef\ M\ }}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00099}00099\ \textcolor{preprocessor}{\#undef\ MATRIX\_A}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00100}00100\ \textcolor{preprocessor}{\#undef\ UPPER\_MASK}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00101}00101\ \textcolor{preprocessor}{\#undef\ LOWER\_MASK}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00102}00102\ \textcolor{preprocessor}{\#undef\ TEMPERING\_MASK\_B\ }}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00103}00103\ \textcolor{preprocessor}{\#undef\ TEMPERING\_MASK\_C\ }}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00104}00104\ \textcolor{preprocessor}{\#undef\ TEMPERING\_SHIFT\_U}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00105}00105\ \textcolor{preprocessor}{\#undef\ TEMPERING\_SHIFT\_S}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00106}00106\ \textcolor{preprocessor}{\#undef\ TEMPERING\_SHIFT\_T}}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00107}00107\ \textcolor{preprocessor}{\#undef\ TEMPERING\_SHIFT\_L}}
+
+\end{DoxyCode}

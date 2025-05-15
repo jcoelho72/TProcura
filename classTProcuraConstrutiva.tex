@@ -1,0 +1,912 @@
+\doxysection{TProcura\+Construtiva Class Reference}
+\hypertarget{classTProcuraConstrutiva}{}\label{classTProcuraConstrutiva}\index{TProcuraConstrutiva@{TProcuraConstrutiva}}
+
+
+Representa um estado no espaço de estados.  
+
+
+
+
+{\ttfamily \#include $<$TProcura\+Construtiva.\+h$>$}
+
+
+
+Inheritance diagram for TProcura\+Construtiva\+:
+% FIG 0
+
+
+Collaboration diagram for TProcura\+Construtiva\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcuraConstrutiva_a13799910c11d9ab8585bec576becc8a5}{TProcura\+Construtiva}} (void)
+\item 
+virtual \mbox{\hyperlink{classTProcuraConstrutiva_aa19cbee6023bd0ff01c61c6d6db2e2ae}{\texorpdfstring{$\sim$}{\string~}\+TProcura\+Construtiva}} (void)
+\item 
+virtual \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{Duplicar}} (void)=0
+\begin{DoxyCompactList}\small\item\em Cria um objecto que é uma cópia deste. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} objecto)
+\begin{DoxyCompactList}\small\item\em Fica com uma cópia do objecto. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{Solucao\+Vazia}} (void)
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}{Solucao\+Completa}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica se o estado actual é objectivo (é uma solução completa) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{Teste\+Manual}} (const char \texorpdfstring{$\ast$}{*}nome)
+\begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__RedefinicaoSugerida_gacbc6e34f3a403d26d806f37b5cd739f6}{Acao}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} sucessor)
+\begin{DoxyCompactList}\small\item\em Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica}} (uint64\+\_\+t estado\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Codifica o estado para um vetor de inteiros de 64 bits. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{group__RedefinicaoSugerida_ga0e8bb1bd33683545dc4f8f6329548b40}{Heuristica}} (void)
+\begin{DoxyCompactList}\small\item\em Função para calcular quanto falta para o final, o valor da heurística. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoSugerida_ga6bb2ece76e931695c9e32df7ca7143aa}{Debug}} (void)
+\begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoSugerida_gacb15562d8776f4d162001d385ebc13a0}{Reset\+Parametros}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa os parametros. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_gacccf4fbb52126ba19bfc456c0c6d5214}{Acao}} (const char \texorpdfstring{$\ast$}{*}acao)
+\begin{DoxyCompactList}\small\item\em Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_gaed4543b865993696a193d101e925b5b1}{Parar}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_ga1cf2a30e496ea869e85a9d60b4d469e9}{Distinto}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado)
+\begin{DoxyCompactList}\small\item\em Verifica se o estado actual distinto do fornecido. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoOpcional_ga74b4c5766a2b65bdb4c3019523c1508f}{Mostrar\+Solucao}} (void)
+\begin{DoxyCompactList}\small\item\em Mostrar solução, seja um caminho ou o próprio estado. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo}} ()
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoOpcional_gab2fca28035f165ce7c1d40acbfc8c971}{Teste\+Empirico}} (int inicio=-\/1, int fim=-\/1, bool mostrar\+Solucoes=true)
+\begin{DoxyCompactList}\small\item\em Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura em largura primeiro, algoritmo cego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura por custo uniforme, algoritmo cego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{Profundidade\+Primeiro}} (int nivel=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura em profundidade primeiro, algoritmo cego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro}} (int nivel=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura melhor primeiro, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{AStar}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura A\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}{IDAStar}} (int upper\+Bound=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound}} (int upper\+Bound=0)
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{Limpar\+Estatisticas}} (clock\+\_\+t \&inicio)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_af2fbc46bcca99f48e42cdbc62eecc1fd}{Finalizar\+Corrida}} (clock\+\_\+t inicio)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}{Lower\+Bound}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha}} (bool tudo=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df}{Libertar\+Vector}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&vector, int excepto=-\/1, int maior\+Que=-\/1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisEstado_ga70de69abaeaa64262d4bd042ef01e62c}{pai}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o estado pai, na árvore de procura. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}}
+\begin{DoxyCompactList}\small\item\em Custo total acumulado desde o estado inicial. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}
+\begin{DoxyCompactList}\small\item\em Estimativa para o custo até um estado objetivo, se disponível. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}} = \{ NULL,1,1,1, NULL, NULL \}
+\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em \doxylink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}
+\begin{DoxyCompactList}\small\item\em Parâmetros a serem utilizados na configuração atual. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga80c8e869e8ac8d64820ce8570e44cc8e}{configuracoes}}
+\begin{DoxyCompactList}\small\item\em Conjuntos de configurações para teste empírico. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga6185647765b723a3581b5541722e496f}{geracoes}} = 0
+\begin{DoxyCompactList}\small\item\em Número total de gerações realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}} =0
+\begin{DoxyCompactList}\small\item\em Número total de expansões realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga1ce9b620e165ff360003cf0c21101470}{avaliacoes}} =0
+\begin{DoxyCompactList}\small\item\em Número total de avaliações realizadas na procura. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}
+\begin{DoxyCompactList}\small\item\em Solução retornada pela procura (os estados devem ser libertados). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoria\+Esgotada}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicando problemas de memória esgotada. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisGlobais_gadb0d41114016ec069543b3494b0e0196}{solucao}} =NULL
+\begin{DoxyCompactList}\small\item\em Estado objetivo encontrado, retornado pela procura (deve ser libertado). \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga1af840b6ec9c04ce7d4c8849346441bd}{lower\+Bound}} = 0
+\begin{DoxyCompactList}\small\item\em Valor mínimo que a solução pode apresentar, obtido pela procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanho\+Codificado}} = \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}
+\begin{DoxyCompactList}\small\item\em Número de inteiros de 64 bits utilizados para codificar um objeto (≤ OBJETO\+\_\+\+HASHTABLE). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ unsigned char $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}
+\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}{espacos\+Ramo}} =2
+\item 
+static clock\+\_\+t \mbox{\hyperlink{group__VariaveisGlobais_gaf7efa04a418f94ee4bad1392e69e357d}{instante\+Final}} = 0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ad02feccb0f347d9a475ed1b883cc12aa}{Debug\+Expansao}} (int sucessor, int sucessores, bool duplo=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a042ab47715ba45d53a86413415ea95fd}{Debug\+Corte}} (int sucessores=-\/1, bool duplo=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a3cb063790a46d8fac87044c7c68c53b3}{Debug\+Solucao}} (bool continuar=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a6962c0cf7350a211ae74b00768d9c232}{Debug\+Chamada}} (void)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a8a25d942dd9c34c27ad92e3e36177f2f}{Debug\+Passo}} (void)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a08aa14ddc895426b2ce3df4d763cbbd7}{Debug\+Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ae464aeb16628493409e4d88cede9a9e7}{Debug\+Iteracao}} (int iteracao)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a3c5b2743566153ca9d45e875106e548b}{Debug\+Estado}} (int id=-\/1, int \mbox{\hyperlink{group__VariaveisEstado_ga70de69abaeaa64262d4bd042ef01e62c}{pai}}=-\/1)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a1784cd5198a6cb0ae7ad763af9982120}{Debug\+Ramo}} (char \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}, char folha)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a8e7879e0ac12522e0eedf3d3d365e51c}{Objetivo\+Alcancado}} (int item, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&lista)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a18331ff4fccaf78df8bd3656357e9e75}{Objetivo\+Alcancado}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado, bool completa=true)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a2f648df694a20e7fcb688c9979f763fd}{Solucao\+Encontrada}} (bool continuar=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ab3d3ef92421595428a27deef2c3bb668}{Calcula\+Caminho}} (bool completa=true)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_aec0a667a7fda1ebe565ba13d6b02805a}{Verifica\+Limites}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}, int por\+Processar, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a640e74c9b6cd340761db671438ad679e}{Calcular\+Heuristicas}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores, \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}id=NULL, bool sort\+LB=false)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937}{Solucao\+Parcial}} (int i, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a47abc151fcdd67c126b99672870d7dca}{Novo\+Valor}} (const char \texorpdfstring{$\ast$}{*}prompt)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ab5639efca5e48b564a8bdd9ec23a8955}{Explorar\+Sucessores}} (bool jogo=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_aa2c53163dbc3e394abbd2bfbf70e29ca}{Editar\+Parametros}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a7e5329143aa8df478b68741d47fa6a7f}{Editar\+Configuracoes}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a9d4bc5b86186bcba9cbee82588ada2fb}{Mostrar\+Configuracoes}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}, int atual=-\/1)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a0729129ac5c4791ebd251bdd28e4a137}{Solicita\+Instancia}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_a1d844f9591ce201c48e38024a92887f4}{Tempo\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_a210ebf6bc971e86c845f7bbade1ca4c6}{Geracoes\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_ab0c0a5578bb6fce9ea175f1646871212}{Expansoes\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_ae69f7bb250c61cd3b73d85a3a2305600}{Avaliacoes\+Excedido}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9}{Mostrar\+Caminho}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_af74795a981510f72e0c7865cd758ab3b}{Mostra\+Parametros}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}=1, \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}id\+Parametros=NULL)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ac7e1356d8cd516f18380d4f4c5730c2b}{Mostra\+Relatorio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56}{Dominio}} (int \&variavel, int min=INT\+\_\+\+MIN, int max=INT\+\_\+\+MAX)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a4c50b21dc4dc6a689af754dfce6e272f}{Configuracao\+Atual}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \&parametros, int operacao)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a8f3b2ddaa879df23c5c9921cdfff0dd8}{Melhor\+Resultado}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} base, \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} alternativa)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a589640c821d42dbcc476971995b511bf}{Calcula\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a12b8afb0fe836f489ada61cb33eb5dee}{Mostrar\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \&torneio, bool jogo=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a555a752a4e2bf6a0e5ba1454eeb16e38}{Barra\+Torneio}} (bool nomes)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_adc31f777cf89c56571baedd4a48cea47}{Extrair\+Configuracao}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&extracao, int configuracao)
+\item 
+unsigned int \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{Hash}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c}{Limpar\+HT}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{Existe\+HT}} ()
+\item 
+virtual void \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{Substituir\+HT}} (int indice)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static uint64\+\_\+t \mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementos\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\+\_\+\+HASHTABLE}}\mbox{]}\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]}
+\item 
+static int \mbox{\hyperlink{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}{custo\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\+\_\+\+HASHTABLE}}\mbox{]}
+\item 
+static uint64\+\_\+t \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estado\+Cod\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um estado no espaço de estados. 
+
+Esta classe base deve ser redefinida com um problema concreto, permitindo a execução de procuras construtivas.
+
+Para utilizar a classe, é necessário\+:
+\begin{DoxyItemize}
+\item Redefinir os métodos de duplicação e cópia de estados (\doxylink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{Duplicar()} e \doxylink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar()}).
+\item Implementar funções essenciais de procura\+: \doxylink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{Solucao\+Vazia()}, \doxylink{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}{Solucao\+Completa()}, \doxylink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{Sucessores()} e \doxylink{group__RedefinicaoSugerida_ga6bb2ece76e931695c9e32df7ca7143aa}{Debug()}.
+\end{DoxyItemize}
+
+Permite execução dos algoritmos\+:
+\begin{DoxyItemize}
+\item {\bfseries{Cegos}}\+: \doxylink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro()}, \doxylink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme()}, \doxylink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{Profundidade\+Primeiro()}
+\item {\bfseries{Informados}}\+: \doxylink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro()}, \doxylink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{AStar()}, \doxylink{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}{IDAStar()}, \doxylink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound()}
+\item {\bfseries{Testes e avaliação}}\+: \doxylink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{Teste\+Manual()}, \doxylink{group__RedefinicaoOpcional_gab2fca28035f165ce7c1d40acbfc8c971}{Teste\+Empirico()}
+\end{DoxyItemize}
+
+{\bfseries{Observação\+:}} Alguns métodos e parâmetros terão efeito apenas se determinados métodos forem redefinidos na subclasse. 
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00192}{192}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTProcuraConstrutiva_a13799910c11d9ab8585bec576becc8a5}\label{classTProcuraConstrutiva_a13799910c11d9ab8585bec576becc8a5} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{TProcuraConstrutiva()}{TProcuraConstrutiva()}}
+{\footnotesize\ttfamily TProcura\+Construtiva\+::\+TProcura\+Construtiva (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+\Hypertarget{classTProcuraConstrutiva_aa19cbee6023bd0ff01c61c6d6db2e2ae}\label{classTProcuraConstrutiva_aa19cbee6023bd0ff01c61c6d6db2e2ae} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!````~TProcuraConstrutiva@{\texorpdfstring{$\sim$}{\string~}TProcuraConstrutiva}}
+\index{````~TProcuraConstrutiva@{\texorpdfstring{$\sim$}{\string~}TProcuraConstrutiva}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TProcuraConstrutiva()}{\string~TProcuraConstrutiva()}}
+{\footnotesize\ttfamily virtual TProcura\+Construtiva\+::\texorpdfstring{$\sim$}{\string~}\+TProcura\+Construtiva (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00196}{196}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTProcuraConstrutiva_ae69f7bb250c61cd3b73d85a3a2305600}\label{classTProcuraConstrutiva_ae69f7bb250c61cd3b73d85a3a2305600} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!AvaliacoesExcedido@{AvaliacoesExcedido}}
+\index{AvaliacoesExcedido@{AvaliacoesExcedido}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{AvaliacoesExcedido()}{AvaliacoesExcedido()}}
+{\footnotesize\ttfamily bool TProcura\+Construtiva\+::\+Avaliacoes\+Excedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00989}{989}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{classTProcuraConstrutiva_a555a752a4e2bf6a0e5ba1454eeb16e38}\label{classTProcuraConstrutiva_a555a752a4e2bf6a0e5ba1454eeb16e38} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!BarraTorneio@{BarraTorneio}}
+\index{BarraTorneio@{BarraTorneio}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{BarraTorneio()}{BarraTorneio()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Barra\+Torneio (\begin{DoxyParamCaption}\item[{bool}]{nomes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01128}{1128}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{classTProcuraConstrutiva_ab3d3ef92421595428a27deef2c3bb668}\label{classTProcuraConstrutiva_ab3d3ef92421595428a27deef2c3bb668} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!CalculaCaminho@{CalculaCaminho}}
+\index{CalculaCaminho@{CalculaCaminho}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{CalculaCaminho()}{CalculaCaminho()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Calcula\+Caminho (\begin{DoxyParamCaption}\item[{bool}]{completa = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00233}{233}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{classTProcuraConstrutiva_a640e74c9b6cd340761db671438ad679e}\label{classTProcuraConstrutiva_a640e74c9b6cd340761db671438ad679e} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!CalcularHeuristicas@{CalcularHeuristicas}}
+\index{CalcularHeuristicas@{CalcularHeuristicas}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{CalcularHeuristicas()}{CalcularHeuristicas()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Calcular\+Heuristicas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores,  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{id = {\ttfamily NULL},  }\item[{bool}]{sort\+LB = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00500}{500}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{classTProcuraConstrutiva_a589640c821d42dbcc476971995b511bf}\label{classTProcuraConstrutiva_a589640c821d42dbcc476971995b511bf} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!CalculaTorneio@{CalculaTorneio}}
+\index{CalculaTorneio@{CalculaTorneio}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{CalculaTorneio()}{CalculaTorneio()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Calcula\+Torneio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&}]{resultados }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01067}{1067}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\Hypertarget{classTProcuraConstrutiva_a4c50b21dc4dc6a689af754dfce6e272f}\label{classTProcuraConstrutiva_a4c50b21dc4dc6a689af754dfce6e272f} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!ConfiguracaoAtual@{ConfiguracaoAtual}}
+\index{ConfiguracaoAtual@{ConfiguracaoAtual}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{ConfiguracaoAtual()}{ConfiguracaoAtual()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Configuracao\+Atual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \&}]{parametros,  }\item[{int}]{operacao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00865}{865}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\Hypertarget{classTProcuraConstrutiva_a6962c0cf7350a211ae74b00768d9c232}\label{classTProcuraConstrutiva_a6962c0cf7350a211ae74b00768d9c232} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugChamada@{DebugChamada}}
+\index{DebugChamada@{DebugChamada}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugChamada()}{DebugChamada()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Chamada (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00637}{637}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+\Hypertarget{classTProcuraConstrutiva_a042ab47715ba45d53a86413415ea95fd}\label{classTProcuraConstrutiva_a042ab47715ba45d53a86413415ea95fd} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugCorte@{DebugCorte}}
+\index{DebugCorte@{DebugCorte}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugCorte()}{DebugCorte()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Corte (\begin{DoxyParamCaption}\item[{int}]{sucessores = {\ttfamily -\/1},  }\item[{bool}]{duplo = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00598}{598}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 15
+Here is the caller graph for this function\+:
+% FIG 16
+\Hypertarget{classTProcuraConstrutiva_a3c5b2743566153ca9d45e875106e548b}\label{classTProcuraConstrutiva_a3c5b2743566153ca9d45e875106e548b} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugEstado@{DebugEstado}}
+\index{DebugEstado@{DebugEstado}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugEstado()}{DebugEstado()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Estado (\begin{DoxyParamCaption}\item[{int}]{id = {\ttfamily -\/1},  }\item[{int}]{pai = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00718}{718}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 17
+\Hypertarget{classTProcuraConstrutiva_ad02feccb0f347d9a475ed1b883cc12aa}\label{classTProcuraConstrutiva_ad02feccb0f347d9a475ed1b883cc12aa} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugExpansao@{DebugExpansao}}
+\index{DebugExpansao@{DebugExpansao}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugExpansao()}{DebugExpansao()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Expansao (\begin{DoxyParamCaption}\item[{int}]{sucessor,  }\item[{int}]{sucessores,  }\item[{bool}]{duplo = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00565}{565}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 18
+Here is the caller graph for this function\+:
+% FIG 19
+\Hypertarget{classTProcuraConstrutiva_ae464aeb16628493409e4d88cede9a9e7}\label{classTProcuraConstrutiva_ae464aeb16628493409e4d88cede9a9e7} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugIteracao@{DebugIteracao}}
+\index{DebugIteracao@{DebugIteracao}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugIteracao()}{DebugIteracao()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Iteracao (\begin{DoxyParamCaption}\item[{int}]{iteracao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00705}{705}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 20
+\Hypertarget{classTProcuraConstrutiva_a8a25d942dd9c34c27ad92e3e36177f2f}\label{classTProcuraConstrutiva_a8a25d942dd9c34c27ad92e3e36177f2f} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugPasso@{DebugPasso}}
+\index{DebugPasso@{DebugPasso}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugPasso()}{DebugPasso()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Passo (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00661}{661}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 21
+Here is the caller graph for this function\+:
+% FIG 22
+\Hypertarget{classTProcuraConstrutiva_a1784cd5198a6cb0ae7ad763af9982120}\label{classTProcuraConstrutiva_a1784cd5198a6cb0ae7ad763af9982120} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugRamo@{DebugRamo}}
+\index{DebugRamo@{DebugRamo}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugRamo()}{DebugRamo()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Ramo (\begin{DoxyParamCaption}\item[{char}]{ramo,  }\item[{char}]{folha }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00590}{590}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 23
+\Hypertarget{classTProcuraConstrutiva_a3cb063790a46d8fac87044c7c68c53b3}\label{classTProcuraConstrutiva_a3cb063790a46d8fac87044c7c68c53b3} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugSolucao@{DebugSolucao}}
+\index{DebugSolucao@{DebugSolucao}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugSolucao()}{DebugSolucao()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Solucao (\begin{DoxyParamCaption}\item[{bool}]{continuar = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00620}{620}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 24
+Here is the caller graph for this function\+:
+% FIG 25
+\Hypertarget{classTProcuraConstrutiva_a08aa14ddc895426b2ce3df4d763cbbd7}\label{classTProcuraConstrutiva_a08aa14ddc895426b2ce3df4d763cbbd7} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!DebugSucessores@{DebugSucessores}}
+\index{DebugSucessores@{DebugSucessores}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{DebugSucessores()}{DebugSucessores()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Debug\+Sucessores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00673}{673}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 26
+Here is the caller graph for this function\+:
+% FIG 27
+\Hypertarget{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56}\label{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!Dominio@{Dominio}}
+\index{Dominio@{Dominio}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{Dominio()}{Dominio()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Dominio (\begin{DoxyParamCaption}\item[{int \&}]{variavel,  }\item[{int}]{min = {\ttfamily INT\+\_\+MIN},  }\item[{int}]{max = {\ttfamily INT\+\_\+MAX} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01345}{1345}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 28
+\Hypertarget{classTProcuraConstrutiva_a7e5329143aa8df478b68741d47fa6a7f}\label{classTProcuraConstrutiva_a7e5329143aa8df478b68741d47fa6a7f} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!EditarConfiguracoes@{EditarConfiguracoes}}
+\index{EditarConfiguracoes@{EditarConfiguracoes}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{EditarConfiguracoes()}{EditarConfiguracoes()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Editar\+Configuracoes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00878}{878}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 29
+Here is the caller graph for this function\+:
+% FIG 30
+\Hypertarget{classTProcuraConstrutiva_aa2c53163dbc3e394abbd2bfbf70e29ca}\label{classTProcuraConstrutiva_aa2c53163dbc3e394abbd2bfbf70e29ca} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!EditarParametros@{EditarParametros}}
+\index{EditarParametros@{EditarParametros}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{EditarParametros()}{EditarParametros()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Editar\+Parametros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00833}{833}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 31
+Here is the caller graph for this function\+:
+% FIG 32
+\Hypertarget{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}\label{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!ExisteHT@{ExisteHT}}
+\index{ExisteHT@{ExisteHT}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{ExisteHT()}{ExisteHT()}}
+{\footnotesize\ttfamily bool TProcura\+Construtiva\+::\+Existe\+HT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01308}{1308}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 33
+Here is the caller graph for this function\+:
+% FIG 34
+\Hypertarget{classTProcuraConstrutiva_ab0c0a5578bb6fce9ea175f1646871212}\label{classTProcuraConstrutiva_ab0c0a5578bb6fce9ea175f1646871212} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!ExpansoesExcedido@{ExpansoesExcedido}}
+\index{ExpansoesExcedido@{ExpansoesExcedido}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{ExpansoesExcedido()}{ExpansoesExcedido()}}
+{\footnotesize\ttfamily bool TProcura\+Construtiva\+::\+Expansoes\+Excedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00986}{986}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 35
+\Hypertarget{classTProcuraConstrutiva_ab5639efca5e48b564a8bdd9ec23a8955}\label{classTProcuraConstrutiva_ab5639efca5e48b564a8bdd9ec23a8955} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!ExplorarSucessores@{ExplorarSucessores}}
+\index{ExplorarSucessores@{ExplorarSucessores}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{ExplorarSucessores()}{ExplorarSucessores()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Explorar\+Sucessores (\begin{DoxyParamCaption}\item[{bool}]{jogo = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01194}{1194}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 36
+Here is the caller graph for this function\+:
+% FIG 37
+\Hypertarget{classTProcuraConstrutiva_adc31f777cf89c56571baedd4a48cea47}\label{classTProcuraConstrutiva_adc31f777cf89c56571baedd4a48cea47} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!ExtrairConfiguracao@{ExtrairConfiguracao}}
+\index{ExtrairConfiguracao@{ExtrairConfiguracao}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{ExtrairConfiguracao()}{ExtrairConfiguracao()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Extrair\+Configuracao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&}]{resultados,  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&}]{extracao,  }\item[{int}]{configuracao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01119}{1119}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 38
+Here is the caller graph for this function\+:
+% FIG 39
+\Hypertarget{classTProcuraConstrutiva_af2fbc46bcca99f48e42cdbc62eecc1fd}\label{classTProcuraConstrutiva_af2fbc46bcca99f48e42cdbc62eecc1fd} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!FinalizarCorrida@{FinalizarCorrida}}
+\index{FinalizarCorrida@{FinalizarCorrida}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{FinalizarCorrida()}{FinalizarCorrida()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Finalizar\+Corrida (\begin{DoxyParamCaption}\item[{clock\+\_\+t}]{inicio }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01155}{1155}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 40
+Here is the caller graph for this function\+:
+% FIG 41
+\Hypertarget{classTProcuraConstrutiva_a210ebf6bc971e86c845f7bbade1ca4c6}\label{classTProcuraConstrutiva_a210ebf6bc971e86c845f7bbade1ca4c6} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!GeracoesExcedido@{GeracoesExcedido}}
+\index{GeracoesExcedido@{GeracoesExcedido}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{GeracoesExcedido()}{GeracoesExcedido()}}
+{\footnotesize\ttfamily bool TProcura\+Construtiva\+::\+Geracoes\+Excedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00983}{983}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 42
+\Hypertarget{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}\label{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!Hash@{Hash}}
+\index{Hash@{Hash}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{Hash()}{Hash()}}
+{\footnotesize\ttfamily unsigned int TProcura\+Construtiva\+::\+Hash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01279}{1279}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 43
+Here is the caller graph for this function\+:
+% FIG 44
+\Hypertarget{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df}\label{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!LibertarVector@{LibertarVector}}
+\index{LibertarVector@{LibertarVector}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{LibertarVector()}{LibertarVector()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Libertar\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{vector,  }\item[{int}]{excepto = {\ttfamily -\/1},  }\item[{int}]{maior\+Que = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 45
+Here is the caller graph for this function\+:
+% FIG 46
+\Hypertarget{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}\label{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!LimparEstatisticas@{LimparEstatisticas}}
+\index{LimparEstatisticas@{LimparEstatisticas}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{LimparEstatisticas()}{LimparEstatisticas()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Limpar\+Estatisticas (\begin{DoxyParamCaption}\item[{clock\+\_\+t \&}]{inicio }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00739}{739}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 47
+Here is the caller graph for this function\+:
+% FIG 48
+\Hypertarget{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c}\label{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!LimparHT@{LimparHT}}
+\index{LimparHT@{LimparHT}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{LimparHT()}{LimparHT()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Limpar\+HT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01298}{1298}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 49
+Here is the caller graph for this function\+:
+% FIG 50
+\Hypertarget{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}\label{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!LowerBound@{LowerBound}}
+\index{LowerBound@{LowerBound}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{LowerBound()}{LowerBound()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00940}{940}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 51
+\Hypertarget{classTProcuraConstrutiva_a8f3b2ddaa879df23c5c9921cdfff0dd8}\label{classTProcuraConstrutiva_a8f3b2ddaa879df23c5c9921cdfff0dd8} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!MelhorResultado@{MelhorResultado}}
+\index{MelhorResultado@{MelhorResultado}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{MelhorResultado()}{MelhorResultado()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Melhor\+Resultado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}}}]{base,  }\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}}}]{alternativa }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01139}{1139}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 52
+\Hypertarget{classTProcuraConstrutiva_af74795a981510f72e0c7865cd758ab3b}\label{classTProcuraConstrutiva_af74795a981510f72e0c7865cd758ab3b} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!MostraParametros@{MostraParametros}}
+\index{MostraParametros@{MostraParametros}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{MostraParametros()}{MostraParametros()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Mostra\+Parametros (\begin{DoxyParamCaption}\item[{int}]{detalhe = {\ttfamily 1},  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{id\+Parametros = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00803}{803}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 53
+Here is the caller graph for this function\+:
+% FIG 54
+\Hypertarget{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9}\label{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!MostrarCaminho@{MostrarCaminho}}
+\index{MostrarCaminho@{MostrarCaminho}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{MostrarCaminho()}{MostrarCaminho()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Mostrar\+Caminho (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00362}{362}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 55
+Here is the caller graph for this function\+:
+% FIG 56
+\Hypertarget{classTProcuraConstrutiva_a9d4bc5b86186bcba9cbee82588ada2fb}\label{classTProcuraConstrutiva_a9d4bc5b86186bcba9cbee82588ada2fb} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!MostrarConfiguracoes@{MostrarConfiguracoes}}
+\index{MostrarConfiguracoes@{MostrarConfiguracoes}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{MostrarConfiguracoes()}{MostrarConfiguracoes()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Mostrar\+Configuracoes (\begin{DoxyParamCaption}\item[{int}]{detalhe,  }\item[{int}]{atual = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00909}{909}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 57
+Here is the caller graph for this function\+:
+% FIG 58
+\Hypertarget{classTProcuraConstrutiva_ac7e1356d8cd516f18380d4f4c5730c2b}\label{classTProcuraConstrutiva_ac7e1356d8cd516f18380d4f4c5730c2b} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!MostraRelatorio@{MostraRelatorio}}
+\index{MostraRelatorio@{MostraRelatorio}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{MostraRelatorio()}{MostraRelatorio()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Mostra\+Relatorio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&}]{resultados }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01019}{1019}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 59
+Here is the caller graph for this function\+:
+% FIG 60
+\Hypertarget{classTProcuraConstrutiva_a12b8afb0fe836f489ada61cb33eb5dee}\label{classTProcuraConstrutiva_a12b8afb0fe836f489ada61cb33eb5dee} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!MostrarTorneio@{MostrarTorneio}}
+\index{MostrarTorneio@{MostrarTorneio}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{MostrarTorneio()}{MostrarTorneio()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Mostrar\+Torneio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \&}]{torneio,  }\item[{bool}]{jogo = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01089}{1089}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 61
+Here is the caller graph for this function\+:
+% FIG 62
+\Hypertarget{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}\label{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!NovaLinha@{NovaLinha}}
+\index{NovaLinha@{NovaLinha}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{NovaLinha()}{NovaLinha()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Nova\+Linha (\begin{DoxyParamCaption}\item[{bool}]{tudo = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00653}{653}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 63
+Here is the caller graph for this function\+:
+% FIG 64
+\Hypertarget{classTProcuraConstrutiva_a47abc151fcdd67c126b99672870d7dca}\label{classTProcuraConstrutiva_a47abc151fcdd67c126b99672870d7dca} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!NovoValor@{NovoValor}}
+\index{NovoValor@{NovoValor}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{NovoValor()}{NovoValor()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Novo\+Valor (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{prompt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01169}{1169}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 65
+\Hypertarget{classTProcuraConstrutiva_a8e7879e0ac12522e0eedf3d3d365e51c}\label{classTProcuraConstrutiva_a8e7879e0ac12522e0eedf3d3d365e51c} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!ObjetivoAlcancado@{ObjetivoAlcancado}}
+\index{ObjetivoAlcancado@{ObjetivoAlcancado}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{ObjetivoAlcancado()}{ObjetivoAlcancado()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Objetivo\+Alcancado (\begin{DoxyParamCaption}\item[{int}]{item,  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{lista }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 66
+Here is the caller graph for this function\+:
+% FIG 67
+\Hypertarget{classTProcuraConstrutiva_a18331ff4fccaf78df8bd3656357e9e75}\label{classTProcuraConstrutiva_a18331ff4fccaf78df8bd3656357e9e75} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!ObjetivoAlcancado@{ObjetivoAlcancado}}
+\index{ObjetivoAlcancado@{ObjetivoAlcancado}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{ObjetivoAlcancado()}{ObjetivoAlcancado()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Objetivo\+Alcancado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}]{estado,  }\item[{bool}]{completa = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00217}{217}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 68
+\Hypertarget{classTProcuraConstrutiva_a0729129ac5c4791ebd251bdd28e4a137}\label{classTProcuraConstrutiva_a0729129ac5c4791ebd251bdd28e4a137} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!SolicitaInstancia@{SolicitaInstancia}}
+\index{SolicitaInstancia@{SolicitaInstancia}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{SolicitaInstancia()}{SolicitaInstancia()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Solicita\+Instancia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01178}{1178}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 69
+Here is the caller graph for this function\+:
+% FIG 70
+\Hypertarget{classTProcuraConstrutiva_a2f648df694a20e7fcb688c9979f763fd}\label{classTProcuraConstrutiva_a2f648df694a20e7fcb688c9979f763fd} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!SolucaoEncontrada@{SolucaoEncontrada}}
+\index{SolucaoEncontrada@{SolucaoEncontrada}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{SolucaoEncontrada()}{SolucaoEncontrada()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Solucao\+Encontrada (\begin{DoxyParamCaption}\item[{bool}]{continuar = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00344}{344}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 71
+Here is the caller graph for this function\+:
+% FIG 72
+\Hypertarget{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937}\label{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!SolucaoParcial@{SolucaoParcial}}
+\index{SolucaoParcial@{SolucaoParcial}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{SolucaoParcial()}{SolucaoParcial()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Solucao\+Parcial (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00355}{355}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 73
+Here is the caller graph for this function\+:
+% FIG 74
+\Hypertarget{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}\label{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!SubstituirHT@{SubstituirHT}}
+\index{SubstituirHT@{SubstituirHT}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{SubstituirHT()}{SubstituirHT()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Substituir\+HT (\begin{DoxyParamCaption}\item[{int}]{indice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l01328}{1328}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 75
+\Hypertarget{classTProcuraConstrutiva_a1d844f9591ce201c48e38024a92887f4}\label{classTProcuraConstrutiva_a1d844f9591ce201c48e38024a92887f4} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!TempoExcedido@{TempoExcedido}}
+\index{TempoExcedido@{TempoExcedido}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{TempoExcedido()}{TempoExcedido()}}
+{\footnotesize\ttfamily bool TProcura\+Construtiva\+::\+Tempo\+Excedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00982}{982}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 76
+\Hypertarget{classTProcuraConstrutiva_aec0a667a7fda1ebe565ba13d6b02805a}\label{classTProcuraConstrutiva_aec0a667a7fda1ebe565ba13d6b02805a} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!VerificaLimites@{VerificaLimites}}
+\index{VerificaLimites@{VerificaLimites}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{VerificaLimites()}{VerificaLimites()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Verifica\+Limites (\begin{DoxyParamCaption}\item[{int}]{limite,  }\item[{int}]{por\+Processar,  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 77
+Here is the caller graph for this function\+:
+% FIG 78
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}\label{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!custoHT@{custoHT}}
+\index{custoHT@{custoHT}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{custoHT}{custoHT}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::custo\+HT\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l01005}{1005}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}\label{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!elementosHT@{elementosHT}}
+\index{elementosHT@{elementosHT}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{elementosHT}{elementosHT}}
+{\footnotesize\ttfamily uint64\+\_\+t TProcura\+Construtiva\+::elementos\+HT\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l01004}{1004}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}\label{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999} 
+\index{TProcuraConstrutiva@{TProcuraConstrutiva}!estadoCodHT@{estadoCodHT}}
+\index{estadoCodHT@{estadoCodHT}!TProcuraConstrutiva@{TProcuraConstrutiva}}
+\doxysubsubsection{\texorpdfstring{estadoCodHT}{estadoCodHT}}
+{\footnotesize\ttfamily uint64\+\_\+t TProcura\+Construtiva\+::estado\+Cod\+HT\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l01006}{1006}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TProcuraConstrutiva_8h}{TProcura\+Construtiva.\+h}}\item 
+\mbox{\hyperlink{TProcuraConstrutiva_8cpp}{TProcura\+Construtiva.\+cpp}}\end{DoxyCompactItemize}

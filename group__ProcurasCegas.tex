@@ -1,0 +1,118 @@
+\doxysection{Algoritmos de Procura Cega}
+\hypertarget{group__ProcurasCegas}{}\label{group__ProcurasCegas}\index{Algoritmos de Procura Cega@{Algoritmos de Procura Cega}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{TProcura\+Construtiva\+::\+Largura\+Primeiro}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura em largura primeiro, algoritmo cego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{TProcura\+Construtiva\+::\+Custo\+Uniforme}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura por custo uniforme, algoritmo cego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{TProcura\+Construtiva\+::\+Profundidade\+Primeiro}} (int nivel=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura em profundidade primeiro, algoritmo cego. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Métodos que executam algoritmos de procura sem utilização de heurística. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}\label{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b} 
+\index{Algoritmos de Procura Cega@{Algoritmos de Procura Cega}!CustoUniforme@{CustoUniforme}}
+\index{CustoUniforme@{CustoUniforme}!Algoritmos de Procura Cega@{Algoritmos de Procura Cega}}
+\doxysubsubsection{\texorpdfstring{CustoUniforme()}{CustoUniforme()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Custo\+Uniforme (\begin{DoxyParamCaption}\item[{int}]{limite = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Executa a procura por custo uniforme, algoritmo cego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em limite} & Com valor 0, executa sem limite. Se maior que 0, limita os estados gerados não expandidos a esse valor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o valor da solução, ou -\/1 em caso de falha.
+\end{DoxyReturn}
+Semelhante à procura em largura, mas os estados são ordenados pelo custo. Dessa forma, os estados de menor custo são expandidos antes dos de custo maior, o que preserva a optimalidade mesmo quando os custos são variáveis.
+
+\begin{DoxyNote}{Note}
+Se o limite de número de estados for atingido, os estados gerados mais recentemente são removidos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro()}, \doxylink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}, \doxylink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo()}; 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00273}{273}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 0
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}\label{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0} 
+\index{Algoritmos de Procura Cega@{Algoritmos de Procura Cega}!LarguraPrimeiro@{LarguraPrimeiro}}
+\index{LarguraPrimeiro@{LarguraPrimeiro}!Algoritmos de Procura Cega@{Algoritmos de Procura Cega}}
+\doxysubsubsection{\texorpdfstring{LarguraPrimeiro()}{LarguraPrimeiro()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Largura\+Primeiro (\begin{DoxyParamCaption}\item[{int}]{limite = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Executa a procura em largura primeiro, algoritmo cego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em limite} & Com valor 0, executa sem limite. Se maior que 0, os estados não expandidos são limitados a este valor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o valor da solução, ou -\/1 em caso de falha.
+\end{DoxyReturn}
+O algoritmo expande primeiro os estados mais antigos. Assim, somente após todos os estados de nível K serem expandidos, os estados de nível K+1 começam a ser expandidos.
+
+Caso o custo de cada ação seja unitário, o algoritmo retorna a solução ótima. Se o custo for variável, pode não retornar a solução ótima.
+
+\begin{DoxyNote}{Note}
+Se o limite de número de estados for atingido, os estados gerados mais recentemente são removidos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}, \doxylink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo()}; 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00181}{181}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}\label{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228} 
+\index{Algoritmos de Procura Cega@{Algoritmos de Procura Cega}!ProfundidadePrimeiro@{ProfundidadePrimeiro}}
+\index{ProfundidadePrimeiro@{ProfundidadePrimeiro}!Algoritmos de Procura Cega@{Algoritmos de Procura Cega}}
+\doxysubsubsection{\texorpdfstring{ProfundidadePrimeiro()}{ProfundidadePrimeiro()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Profundidade\+Primeiro (\begin{DoxyParamCaption}\item[{int}]{nivel = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Executa a procura em profundidade primeiro, algoritmo cego. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nivel} & Se -\/1, efetua a procura em profundidade sem limite. Se 0, efetua a procura iterativa, incrementando o nível a cada iteração. Se um valor positivo, efetua a procura limitada a esse nível de profundidade. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o valor da solução, ou -\/1 em caso de falha.
+\end{DoxyReturn}
+O algoritmo expande os estados mais recentes primeiro, explorando em profundidade antes de avaliar os estados vizinhos. Não garante a solução ótima e está implementada na versão recursiva.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}, \doxylink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo()}; 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00300}{300}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5

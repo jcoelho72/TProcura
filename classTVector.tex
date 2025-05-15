@@ -1,0 +1,520 @@
+\doxysection{TVector\texorpdfstring{$<$}{<} Item \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classTVector}{}\label{classTVector}\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+
+
+{\ttfamily \#include $<$TVector.\+h$>$}
+
+
+
+Collaboration diagram for TVector\texorpdfstring{$<$}{<} Item \texorpdfstring{$>$}{>}\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTVector_af101f2c096078779fb2569bb82303216}{TVector}} (int size=0)
+\item 
+\mbox{\hyperlink{classTVector_ae7c66dcf639a5f1c65ca4cfe4c7786f1}{TVector}} (int size, Item const \texorpdfstring{$\ast$}{*}init)
+\item 
+virtual \mbox{\hyperlink{classTVector_a929164b69e7759a845af1854bbb9f49f}{\texorpdfstring{$\sim$}{\string~}\+TVector}} ()
+\item 
+void \mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}} (Item a)
+\item 
+void \mbox{\hyperlink{classTVector_a1f3acd8ef761fbd3f20eb7ffa9dcb137}{Insert}} (Item a, int index=0)
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector_a509e5566cc15eb723566f318479e3bc0}{Insert}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v, int index=0)
+\item 
+void \mbox{\hyperlink{classTVector_ad9c1fb99a2d0d4f060c4746e6ce97d0f}{Push}} (Item a)
+\item 
+Item \& \mbox{\hyperlink{classTVector_a3249913626d54e46b07e168ce1f05d87}{Pop}} ()
+\item 
+Item \& \mbox{\hyperlink{classTVector_a372a42fd7c4a94fee43db36d6a339b33}{operator\mbox{[}$\,$\mbox{]}}} (int i)
+\item 
+Item \& \mbox{\hyperlink{classTVector_a05f29646493d42f3c77081b6031d70e5}{First}} ()
+\item 
+Item \& \mbox{\hyperlink{classTVector_aa304d639c79ef2842f9951846c6292e3}{Last}} ()
+\item 
+int \mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}} ()
+\item 
+void \mbox{\hyperlink{classTVector_aeb1c1431c384b44d8f28ea38b10135ec}{Count}} (int value)
+\item 
+Item \& \mbox{\hyperlink{classTVector_a769c6a55b72a463fd2313fbd638c7234}{Random}} ()
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector_acc78b25f8f4b07861a4b6e2eb2acec9d}{operator=}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v)
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector_a925d5f893626dcd6a1f6b2330c913354}{operator+=}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v)
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector_a084d0ab4f7ea5451716f734e649950f6}{Be\+ASet}} ()
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector_a66382974113835538618976d3f43e6b3}{Union}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v)
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector_adb0d3bbcfe5bd331d6c73709b146b233}{Intersection}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v)
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector_a22eca6fa7555ef9a19ff08a56a22aa2a}{Difference}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v)
+\item 
+bool \mbox{\hyperlink{classTVector_a7d85501c7c293a9aaa2beffa8a7f9c6f}{Equal}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v)
+\item 
+bool \mbox{\hyperlink{classTVector_a18bd3d664640de4df58f15e0bd8955ce}{Contained}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v)
+\item 
+void \mbox{\hyperlink{classTVector_a1520b4878aa655442babf702646abd7f}{Delete}} (int i)
+\item 
+void \mbox{\hyperlink{classTVector_a8b6dd0098ec1c4f1291e003665eeeee8}{Remove}} (Item const \&i)
+\item 
+int \mbox{\hyperlink{classTVector_ae72a4965eaa055d38204da07d6092feb}{Find}} (Item \&i, bool binary=false, int left=0, int right=-\/1)
+\item 
+void \mbox{\hyperlink{classTVector_a4a036a722efb403abd16c48d1d5dabdb}{Replace}} (Item const \&iold, Item const \&inew)
+\item 
+void \mbox{\hyperlink{classTVector_ab5f765b4c8271e597e2005757ed52138}{Sort}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}idxvect=NULL)
+\item 
+void \mbox{\hyperlink{classTVector_ab9e1e15b247dcbc2d9c4b2a08104700e}{Sort}} (int start, int end=-\/1)
+\item 
+void \mbox{\hyperlink{classTVector_a747a4587a9dc84f7ac16331df242471f}{Random\+Order}} ()
+\item 
+void \mbox{\hyperlink{classTVector_a9364da12ea22d6e7d3ef45f81c182d65}{Invert}} ()
+\item 
+void \mbox{\hyperlink{classTVector_a760d08c7094ac5563f8d969f9d9e32a4}{Reset}} (Item const \&i)
+\item 
+int \mbox{\hyperlink{classTVector_a8cbf0dc0b674640bda4e81e6d6be0f55}{Distance}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&v, int type=0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Item \mbox{\hyperlink{classTVector_a1443a09e75c00296460bc3678da000cb}{erro}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Item$>$\newline
+class TVector$<$ Item $>$}
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00026}{26}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTVector_af101f2c096078779fb2569bb82303216}\label{classTVector_af101f2c096078779fb2569bb82303216} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!TVector@{TVector}}
+\index{TVector@{TVector}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\mbox{\hyperlink{classTVector}{\+::\+TVector}} (\begin{DoxyParamCaption}\item[{int}]{size = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00049}{49}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+\Hypertarget{classTVector_ae7c66dcf639a5f1c65ca4cfe4c7786f1}\label{classTVector_ae7c66dcf639a5f1c65ca4cfe4c7786f1} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!TVector@{TVector}}
+\index{TVector@{TVector}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\mbox{\hyperlink{classTVector}{\+::\+TVector}} (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{Item const \texorpdfstring{$\ast$}{*}}]{init }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00123}{123}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+\Hypertarget{classTVector_a929164b69e7759a845af1854bbb9f49f}\label{classTVector_a929164b69e7759a845af1854bbb9f49f} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!````~TVector@{\texorpdfstring{$\sim$}{\string~}TVector}}
+\index{````~TVector@{\texorpdfstring{$\sim$}{\string~}TVector}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TVector()}{\string~TVector()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\texorpdfstring{$\sim$}{\string~}\mbox{\hyperlink{classTVector}{TVector}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00136}{136}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTVector_a21e44df6bc9513d711e2047abc5abf3d}\label{classTVector_a21e44df6bc9513d711e2047abc5abf3d} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Add@{Add}}
+\index{Add@{Add}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Add (\begin{DoxyParamCaption}\item[{Item}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00054}{54}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{classTVector_a084d0ab4f7ea5451716f734e649950f6}\label{classTVector_a084d0ab4f7ea5451716f734e649950f6} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!BeASet@{BeASet}}
+\index{BeASet@{BeASet}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{BeASet()}{BeASet()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Be\+ASet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00360}{360}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+\Hypertarget{classTVector_a18bd3d664640de4df58f15e0bd8955ce}\label{classTVector_a18bd3d664640de4df58f15e0bd8955ce} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Contained@{Contained}}
+\index{Contained@{Contained}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Contained()}{Contained()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+bool \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Contained (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00446}{446}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{classTVector_a427bf294df0ee2bf96e30d278c08389f}\label{classTVector_a427bf294df0ee2bf96e30d278c08389f} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Count@{Count}}
+\index{Count@{Count}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+int \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00070}{70}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{classTVector_aeb1c1431c384b44d8f28ea38b10135ec}\label{classTVector_aeb1c1431c384b44d8f28ea38b10135ec} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Count@{Count}}
+\index{Count@{Count}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Count (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00071}{71}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+\Hypertarget{classTVector_a1520b4878aa655442babf702646abd7f}\label{classTVector_a1520b4878aa655442babf702646abd7f} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Delete@{Delete}}
+\index{Delete@{Delete}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Delete (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00326}{326}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{classTVector_a22eca6fa7555ef9a19ff08a56a22aa2a}\label{classTVector_a22eca6fa7555ef9a19ff08a56a22aa2a} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Difference@{Difference}}
+\index{Difference@{Difference}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Difference()}{Difference()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Difference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00411}{411}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+\Hypertarget{classTVector_a8cbf0dc0b674640bda4e81e6d6be0f55}\label{classTVector_a8cbf0dc0b674640bda4e81e6d6be0f55} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Distance@{Distance}}
+\index{Distance@{Distance}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Distance()}{Distance()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+int \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v,  }\item[{int}]{type = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00502}{502}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+\Hypertarget{classTVector_a7d85501c7c293a9aaa2beffa8a7f9c6f}\label{classTVector_a7d85501c7c293a9aaa2beffa8a7f9c6f} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Equal@{Equal}}
+\index{Equal@{Equal}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Equal()}{Equal()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+bool \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Equal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00435}{435}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+\Hypertarget{classTVector_ae72a4965eaa055d38204da07d6092feb}\label{classTVector_ae72a4965eaa055d38204da07d6092feb} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Find@{Find}}
+\index{Find@{Find}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Find()}{Find()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+int \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Find (\begin{DoxyParamCaption}\item[{Item \&}]{i,  }\item[{bool}]{binary = {\ttfamily false},  }\item[{int}]{left = {\ttfamily 0},  }\item[{int}]{right = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00146}{146}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\Hypertarget{classTVector_a05f29646493d42f3c77081b6031d70e5}\label{classTVector_a05f29646493d42f3c77081b6031d70e5} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!First@{First}}
+\index{First@{First}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{First()}{First()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+First (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00068}{68}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\Hypertarget{classTVector_a1f3acd8ef761fbd3f20eb7ffa9dcb137}\label{classTVector_a1f3acd8ef761fbd3f20eb7ffa9dcb137} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Insert@{Insert}}
+\index{Insert@{Insert}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Insert()}{Insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Insert (\begin{DoxyParamCaption}\item[{Item}]{a,  }\item[{int}]{index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00478}{478}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+\Hypertarget{classTVector_a509e5566cc15eb723566f318479e3bc0}\label{classTVector_a509e5566cc15eb723566f318479e3bc0} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Insert@{Insert}}
+\index{Insert@{Insert}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Insert()}{Insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v,  }\item[{int}]{index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00459}{459}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+\Hypertarget{classTVector_adb0d3bbcfe5bd331d6c73709b146b233}\label{classTVector_adb0d3bbcfe5bd331d6c73709b146b233} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Intersection@{Intersection}}
+\index{Intersection@{Intersection}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Intersection()}{Intersection()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Intersection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00396}{396}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+\Hypertarget{classTVector_a9364da12ea22d6e7d3ef45f81c182d65}\label{classTVector_a9364da12ea22d6e7d3ef45f81c182d65} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Invert@{Invert}}
+\index{Invert@{Invert}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Invert()}{Invert()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Invert (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00495}{495}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+\Hypertarget{classTVector_aa304d639c79ef2842f9951846c6292e3}\label{classTVector_aa304d639c79ef2842f9951846c6292e3} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Last@{Last}}
+\index{Last@{Last}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Last()}{Last()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Last (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00069}{69}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 13
+\Hypertarget{classTVector_a925d5f893626dcd6a1f6b2330c913354}\label{classTVector_a925d5f893626dcd6a1f6b2330c913354} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::operator+= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00348}{348}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 14
+\Hypertarget{classTVector_acc78b25f8f4b07861a4b6e2eb2acec9d}\label{classTVector_acc78b25f8f4b07861a4b6e2eb2acec9d} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00337}{337}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 15
+\Hypertarget{classTVector_a372a42fd7c4a94fee43db36d6a339b33}\label{classTVector_a372a42fd7c4a94fee43db36d6a339b33} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00063}{63}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 16
+\Hypertarget{classTVector_a3249913626d54e46b07e168ce1f05d87}\label{classTVector_a3249913626d54e46b07e168ce1f05d87} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Pop@{Pop}}
+\index{Pop@{Pop}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00061}{61}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 17
+\Hypertarget{classTVector_ad9c1fb99a2d0d4f060c4746e6ce97d0f}\label{classTVector_ad9c1fb99a2d0d4f060c4746e6ce97d0f} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Push@{Push}}
+\index{Push@{Push}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Push (\begin{DoxyParamCaption}\item[{Item}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00059}{59}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 18
+\Hypertarget{classTVector_a769c6a55b72a463fd2313fbd638c7234}\label{classTVector_a769c6a55b72a463fd2313fbd638c7234} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Random@{Random}}
+\index{Random@{Random}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Random()}{Random()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Random (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00076}{76}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 19
+\Hypertarget{classTVector_a747a4587a9dc84f7ac16331df242471f}\label{classTVector_a747a4587a9dc84f7ac16331df242471f} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!RandomOrder@{RandomOrder}}
+\index{RandomOrder@{RandomOrder}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{RandomOrder()}{RandomOrder()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Random\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00289}{289}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 20
+Here is the caller graph for this function\+:
+% FIG 21
+\Hypertarget{classTVector_a8b6dd0098ec1c4f1291e003665eeeee8}\label{classTVector_a8b6dd0098ec1c4f1291e003665eeeee8} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Remove@{Remove}}
+\index{Remove@{Remove}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Remove (\begin{DoxyParamCaption}\item[{Item const \&}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00297}{297}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 22
+\Hypertarget{classTVector_a4a036a722efb403abd16c48d1d5dabdb}\label{classTVector_a4a036a722efb403abd16c48d1d5dabdb} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Replace@{Replace}}
+\index{Replace@{Replace}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Replace()}{Replace()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Replace (\begin{DoxyParamCaption}\item[{Item const \&}]{iold,  }\item[{Item const \&}]{inew }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00317}{317}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+\Hypertarget{classTVector_a760d08c7094ac5563f8d969f9d9e32a4}\label{classTVector_a760d08c7094ac5563f8d969f9d9e32a4} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Reset@{Reset}}
+\index{Reset@{Reset}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Reset (\begin{DoxyParamCaption}\item[{Item const \&}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00309}{309}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 23
+\Hypertarget{classTVector_ab9e1e15b247dcbc2d9c4b2a08104700e}\label{classTVector_ab9e1e15b247dcbc2d9c4b2a08104700e} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Sort@{Sort}}
+\index{Sort@{Sort}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Sort()}{Sort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Sort (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{int}]{end = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00189}{189}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+\Hypertarget{classTVector_ab5f765b4c8271e597e2005757ed52138}\label{classTVector_ab5f765b4c8271e597e2005757ed52138} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Sort@{Sort}}
+\index{Sort@{Sort}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Sort()}{Sort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+void \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{idxvect = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00172}{172}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 24
+Here is the caller graph for this function\+:
+% FIG 25
+\Hypertarget{classTVector_a66382974113835538618976d3f43e6b3}\label{classTVector_a66382974113835538618976d3f43e6b3} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Union@{Union}}
+\index{Union@{Union}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{Union()}{Union()}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Union (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00382}{382}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 26
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTVector_a1443a09e75c00296460bc3678da000cb}\label{classTVector_a1443a09e75c00296460bc3678da000cb} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!erro@{erro}}
+\index{erro@{erro}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{erro}{erro}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+Item \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::erro\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00045}{45}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TVector_8h}{TVector.\+h}}\end{DoxyCompactItemize}

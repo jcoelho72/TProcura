@@ -1,0 +1,24 @@
+digraph "TProcuraConstrutiva::ProfundidadePrimeiro"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="TProcuraConstrutiva\l::ProfundidadePrimeiro",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executa a procura em profundidade primeiro, algoritmo cego."];
+  Node1 -> Node2 [id="edge10_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node2 -> Node3 [id="edge11_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TProcuraConstrutiva\l::ExplorarSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ab5639efca5e48b564a8bdd9ec23a8955",tooltip=" "];
+  Node3 -> Node4 [id="edge12_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="TProcuraConstrutiva\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga843a501e25cbaff7eb51d8d29995be3a",tooltip="Inicializa a interação com o utilizador."];
+  Node4 -> Node5 [id="edge13_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
+  Node5 -> Node6 [id="edge14_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node2 -> Node7 [id="edge15_Node000002_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="TProcuraConstrutiva\l::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gab2fca28035f165ce7c1d40acbfc8c971",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node7 -> Node4 [id="edge16_Node000007_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node4 [id="edge17_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node1 [id="edge18_Node000001_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

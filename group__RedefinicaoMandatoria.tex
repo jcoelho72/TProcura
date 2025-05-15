@@ -1,0 +1,319 @@
+\doxysection{Métodos para redefinir mandatórios}
+\hypertarget{group__RedefinicaoMandatoria}{}\label{group__RedefinicaoMandatoria}\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{TProcura\+Construtiva\+::\+Duplicar}} (void)=0
+\begin{DoxyCompactList}\small\item\em Cria um objecto que é uma cópia deste. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{TProcura\+Construtiva\+::\+Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} objecto)
+\begin{DoxyCompactList}\small\item\em Fica com uma cópia do objecto. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{TProcura\+Construtiva\+::\+Solucao\+Vazia}} (void)
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcura\+Construtiva\+::\+Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}{TProcura\+Construtiva\+::\+Solucao\+Completa}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica se o estado actual é objectivo (é uma solução completa) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{TProcura\+Construtiva\+::\+Teste\+Manual}} (const char \texorpdfstring{$\ast$}{*}nome)
+\begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Métodos de redefinição obrigatória no problema 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}\label{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642} 
+\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!Copiar@{Copiar}}
+\index{Copiar@{Copiar}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
+\doxysubsubsection{\texorpdfstring{Copiar()}{Copiar()}}
+{\footnotesize\ttfamily virtual void TProcura\+Construtiva\+::\+Copiar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}]{objecto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Fica com uma cópia do objecto. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método tem de ser criado na subclasse, de modo a um estado poder ficar igual a outro. As variáveis de estado, devem ser todas copiadas.
+
+Deve garantir que as variáveis copiadas sejam suficientes para reconstruir o estado corretamente. No entanto, uma instância pode ter dados que não mudam em cada estado. Essas variáveis não precisam de estar no estado, e podem ser alocadas de forma estática na subclasse, não sendo necessário copiar nesta função.
+
+A não ser que exista uma estrutura de dados completa, o modelo de código em baixo pode ser facilmente reproduzido para qualquer subclasse.
+
+\begin{DoxyNote}{Note}
+Não é preciso copiar as variáveis da classe \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, pai, custo, heuristica. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{Sucessores()} e \doxylink{group__RedefinicaoSugerida_ga0e8bb1bd33683545dc4f8f6329548b40}{Heuristica()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubClasse::Copiar(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ objecto)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ CSubProblema\&\ obj\ =\ *((CSubProblema*)objecto);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ copiar\ todas\ as\ variáveis\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ variavel\ =\ obj.variavel;}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCProblemaArtificial_aeaf471b3eb04012d800593df6a0c9e45}{CProblema\+Artificial}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00276}{276}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\Hypertarget{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}\label{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623} 
+\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!Duplicar@{Duplicar}}
+\index{Duplicar@{Duplicar}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
+\doxysubsubsection{\texorpdfstring{Duplicar()}{Duplicar()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} TProcura\+Construtiva\+::\+Duplicar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cria um objecto que é uma cópia deste. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método tem de ser criado na subclasse, de modo a criar uma cópia do mesmo tipo. O código da subclasse geralmente segue um padrão e pode utilizar o modelo abaixo, aproveitando o método \doxylink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar()}. É especialmente útil na função de \doxylink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{Sucessores()}, na geração de um novo estado.
+
+\begin{DoxyReturn}{Returns}
+Retorna o novo estado, acabado de gerar.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Caso exista falha de memória, colocar a variável memoria\+Esgotada a true, para tentativa de terminar a execução de forma graciosa.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ CSubClasse::Duplicar(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ CSubClasse*\ clone\ =\ \textcolor{keyword}{new}\ CSubClasse;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(clone!=NULL)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ clone-\/>\mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ clone;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implemented in \mbox{\hyperlink{classCProblemaArtificial_ada920ffe8fe97913ef87196864618a48}{CProblema\+Artificial}}.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}\label{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304} 
+\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!SolucaoCompleta@{SolucaoCompleta}}
+\index{SolucaoCompleta@{SolucaoCompleta}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
+\doxysubsubsection{\texorpdfstring{SolucaoCompleta()}{SolucaoCompleta()}}
+{\footnotesize\ttfamily virtual bool TProcura\+Construtiva\+::\+Solucao\+Completa (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Verifica se o estado actual é objectivo (é uma solução completa) 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se é um estado objetivo, ou falso caso contrário.
+\end{DoxyReturn}
+Este método verifica se o estado atual é objetivo, e portanto temos uma solução completa. A complexidade da verificação depende do problema, podendo ser um teste simples ou envolver múltiplas condições.
+
+\begin{DoxyNote}{Note}
+Este método será chamado pelos algoritmos de procura no momento adequado, {\bfseries{não necessariamente na geração de sucessores}}. Por isso, deve ser implementado separadamente de {\ttfamily \doxylink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{Sucessores()}}, garantindo que a avaliação do objetivo seja feita apenas quando necessário.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ CSubProblema::SolucaoCompleta(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ pode\ ser\ um\ simples\ teste,\ ou\ algo\ mais\ complexo,\ dependente\ do\ problema}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ verificar\ se\ as\ condições\ pretendidas\ estão\ satisfeitas}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ variavel\ >\ 1000;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCProblemaArtificial_a7f6dc20d490103e630797f8d6cfac76b}{CProblema\+Artificial}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00370}{370}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}\label{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3} 
+\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!SolucaoVazia@{SolucaoVazia}}
+\index{SolucaoVazia@{SolucaoVazia}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
+\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
+{\footnotesize\ttfamily virtual void TProcura\+Construtiva\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Coloca o objecto no estado inicial da procura. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método inicializa as variáveis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer ação ser realizada na procura. Caso existam dados de instância, deve neste método carregar a instância. A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
+
+\begin{DoxyNote}{Note}
+A variável instancia.\+valor, tem o ID da instância que deve ser carregada. 
+
+Se a função \doxylink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica()} estiver implementada, o tamanho do estado codificado deve ser determinado após o carregamento da instância, pois diferentes instâncias podem exigir tamanhos distintos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::SolucaoVazia(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{TProcuraConstrutiva::SolucaoVazia}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ variavel\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCProblemaArtificial_ab8e6af484d17e145363d152536057697}{CProblema\+Artificial}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00307}{307}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}\label{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c} 
+\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!Sucessores@{Sucessores}}
+\index{Sucessores@{Sucessores}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
+\doxysubsubsection{\texorpdfstring{Sucessores()}{Sucessores()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Sucessores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Coloca em sucessores a lista de estados sucessores. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em sucessores} & -\/ variável com a lista de estados sucessores a retornar.\\
+\hline
+\end{DoxyParams}
+Este é o método principal, que define a árvore de procura. Para o estado atual, duplicar o estado por cada ação / estado que seja sucessor. Alterar as variáveis de estado para corresponderem à ação efetuada no estado sucessor. Caso o custo não seja unitário, definir o custo da ação. Chamar o método da superclasse no final, já que irá atualizar estatísticas, bem como eliminar estados que sejam repetidos, dependendo da parametrização.
+
+\begin{DoxyNote}{Note}
+O custo da ação deve ser definido aqui, mas ao chamar \doxylink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{Sucessores()} da superclasse, ele será acumulado para representar o custo total desde o estado inicial. 
+
+O método \doxylink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{Duplicar()} já coloca as variáveis de estado iguais ao estado atual. Apenas modifique as variáveis de estado que precisam refletir a ação i. 
+
+Caso seja feita uma verificação e a ação afinal não é válida, apagar o estado. 
+
+Não é preciso considerar estados repetidos, a verificação será feita na superclasse.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Sucessores(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&sucessores)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ CSubProblema*\ novo;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numeroAcoes;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sucessores.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(novo\ =\ (CSubProblema*)\mbox{\hyperlink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{Duplicar}}());}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ aplicar\ a\ ação\ i\ nas\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ novo-\/>variavel\ =\ i;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ se\ o\ custo\ não\ for\ unitário,\ indicar\ o\ custo\ da\ ação}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ novo-\/>custo\ =\ 1\ +\ i\ /\ 10;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Caso\ o\ estado\ gerado\ não\ seja\ válido,\ remova-\/o\ da\ lista\ e\ liberte\ a\ memória:}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo-\/>EstadoValido())\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ verificar\ a\ validade}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ sucessores.\mbox{\hyperlink{classTVector_a3249913626d54e46b07e168ce1f05d87}{Pop}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcuraConstrutiva::Sucessores}}(sucessores);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c}{CProblema\+Artificial}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}\label{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a} 
+\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!TesteManual@{TesteManual}}
+\index{TesteManual@{TesteManual}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
+\doxysubsubsection{\texorpdfstring{TesteManual()}{TesteManual()}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Teste\+Manual (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Inicializa a interação com o utilizador. 
+
+\begin{DoxyNote}{Note}
+Redefinição necessária para definir as instancias existentes.
+\end{DoxyNote}
+Esta função arranca com o teste manual, orientada para o programador. A interface permite\+:
+\begin{DoxyItemize}
+\item visualizar e trocar de instância
+\item explorar o espaço de estados nessa instancia, executando ações
+\item ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)
+\item ver e editar qualquer parametro de execução
+\item o algoritmo é também um parametro, podendo naturalmente ser alterado
+\item há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
+\item executar o algoritmo com a configuração atual
+\item adicionar a configuração atual a um conjunto de configurações de teste
+\item executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas
+\end{DoxyItemize}
+
+Esta função deve ser redefinida para inicializar a variável com informação dos IDs das instâncias disponíveis. Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
+
+\begin{DoxyNote}{Note}
+A instância selecionada irá ser carregada em \doxylink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{Solucao\+Vazia()}, utilizando o valor atual. 
+
+Esta função deve ser o ponto de entrada, a executar no main.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::TesteManual(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ indicar\ que\ há\ 10\ instâncias,\ sendo\ a\ instância\ inicial\ a\ 1}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}Características\ dos\ problemas"{}},\ NULL\ \};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{TProcuraConstrutiva::TesteManual}}(nome);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ exemplo\ do\ main}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{teste_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ CSubProblema\ problema;}
+\DoxyCodeLine{\ \ \ \ problema.TesteManual(\textcolor{stringliteral}{"{}CSubProblema"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{CProblema\+Artificial}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00756}{756}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7

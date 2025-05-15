@@ -1,0 +1,462 @@
+\doxysection{TProcura\+Construtiva.\+h File Reference}
+\hypertarget{TProcuraConstrutiva_8h}{}\label{TProcuraConstrutiva_8h}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+{\ttfamily \#include "{}TVector.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+Include dependency graph for TProcura\+Construtiva.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSParametro}{SParametro}}
+\begin{DoxyCompactList}\small\item\em Estrutura para registo de um parâmetro. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structSResultado}{SResultado}}
+\item 
+class \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}
+\begin{DoxyCompactList}\small\item\em Representa um estado no espaço de estados. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structSIndice}{SIndice}}
+\item 
+class \mbox{\hyperlink{classCListaNo}{CLista\+No}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{TProcuraConstrutiva_8h_af08ec37a8c99d747fb60fa15bc28678b}{\+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}}
+\item 
+\#define \mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\+\_\+\+HASHTABLE}}~1000000
+\item 
+\#define \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}~4
+\item 
+\#define \mbox{\hyperlink{TProcuraConstrutiva_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\+\_\+\+LIDO}}~-\/1000000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}
+\begin{DoxyCompactList}\small\item\em Representa um nó na árvore de busca, apontando para um estado. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structSParametro}{SParametro}} \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}}
+\begin{DoxyCompactList}\small\item\em Estrutura para registo de um parâmetro. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structSResultado}{SResultado}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}}
+\item 
+typedef struct \mbox{\hyperlink{structSIndice}{SIndice}} \mbox{\hyperlink{TProcuraConstrutiva_8h_ab36c38cf51167abfb5e867bb7b242c7b}{TIndice}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva}} \{ \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058aeabc5187dd423c46d6dc096c37b01136}{algoritmo}} = 0
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivel\+Debug}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1}{ver\+Acoes}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869}{seed}}
+, \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab9b7a997847b4af852b600ac955c9245}{limite\+Tempo}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ad12ebb828f2b226a21ac1472d0eeebfa}{limite\+Geracoes}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ada8cabf08fbdfada7b4c7bb0063c7f74}{limite\+Expansoes}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4e659740f4db252369b21a5998487906}{limite\+Avaliacoes}}
+, \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5}{estados\+Repetidos}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a301297462c3762b42e1ec439be22af98}{peso\+AStar}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2b7583be54d4abb36af6972683134789}{ruido\+Heur}}
+, \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ad2126792378161b062dfd8598996995d}{baralhar\+Suc}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540}{parametros\+Construtivas}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identifica um parâmetro específico no código. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}} \{ \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6caa7119d8453f4029f15ea59fa1063d1a6}{largura\+Primeiro}} = 1
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6ca5beec59c012aa51b2ff4e7b5afec885d}{custo\+Uniforme}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6caecb0560a7ce374aec3dfdf3fb91c4dd7}{profundidade\+Primeiro}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6ca51c17d8d39e5ec31669d7144e70a68f6}{melhor\+Primeiro}}
+, \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cab7da1d3a25097669e595089206898b5e}{a\+Star}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cac9073284c32f95ec860a3cd9a4666ee7}{id\+AStar}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cafc8a346b24b84cb15777a79bcfcbc626}{branch\+And\+Bound}}
+ \}
+\begin{DoxyCompactList}\small\item\em Algoritmos disponíveis para procura construtiva. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} \{ \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11}{nada}} = 0
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}{atividade}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}
+, \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f}{completo}}
+ \}
+\begin{DoxyCompactList}\small\item\em Níveis de detalhamento para debug. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88}{EEstados\+Repetidos}} \{ \mbox{\hyperlink{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a954296a7afe750d9db00a4e20f25312e}{ignorados}} = 1
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a108490c84e0c9531ca7c3d10979350d7}{ascendentes}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a}{gerados}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerado com os valores possíveis do parametro estados\+Repetidos. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3}{EOperacao}} \{ \mbox{\hyperlink{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}{gravar}} = 0
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678}{ler}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define o sentido da operação de entrada/saída de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{TProcuraConstrutiva_8h_af08ec37a8c99d747fb60fa15bc28678b}\label{TProcuraConstrutiva_8h_af08ec37a8c99d747fb60fa15bc28678b} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}}
+\index{\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{\_CRT\_SECURE\_NO\_WARNINGS}{\_CRT\_SECURE\_NO\_WARNINGS}}
+{\footnotesize\ttfamily \#define \+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00003}{3}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{TProcuraConstrutiva_8h_a41963e9c6730c8172ca4f219b79feba7}\label{TProcuraConstrutiva_8h_a41963e9c6730c8172ca4f219b79feba7} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!NAO\_LIDO@{NAO\_LIDO}}
+\index{NAO\_LIDO@{NAO\_LIDO}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{NAO\_LIDO}{NAO\_LIDO}}
+{\footnotesize\ttfamily \#define NAO\+\_\+\+LIDO~-\/1000000}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00015}{15}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}\label{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!OBJETO\_HASHTABLE@{OBJETO\_HASHTABLE}}
+\index{OBJETO\_HASHTABLE@{OBJETO\_HASHTABLE}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{OBJETO\_HASHTABLE}{OBJETO\_HASHTABLE}}
+{\footnotesize\ttfamily \#define OBJETO\+\_\+\+HASHTABLE~4}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00013}{13}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}\label{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!TAMANHO\_HASHTABLE@{TAMANHO\_HASHTABLE}}
+\index{TAMANHO\_HASHTABLE@{TAMANHO\_HASHTABLE}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{TAMANHO\_HASHTABLE}{TAMANHO\_HASHTABLE}}
+{\footnotesize\ttfamily \#define TAMANHO\+\_\+\+HASHTABLE~1000000}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00011}{11}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{TProcuraConstrutiva_8h_ab36c38cf51167abfb5e867bb7b242c7b}\label{TProcuraConstrutiva_8h_ab36c38cf51167abfb5e867bb7b242c7b} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!TIndice@{TIndice}}
+\index{TIndice@{TIndice}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{TIndice}{TIndice}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structSIndice}{SIndice}} \mbox{\hyperlink{TProcuraConstrutiva_8h_ab36c38cf51167abfb5e867bb7b242c7b}{TIndice}}}
+
+\Hypertarget{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}\label{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!TNo@{TNo}}
+\index{TNo@{TNo}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{TNo}{TNo}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}
+
+
+
+Representa um nó na árvore de busca, apontando para um estado. 
+
+\begin{DoxyNote}{Note}
+É um alias para {\ttfamily TProcura\+Construtiva\texorpdfstring{$\ast$}{*}}, facilitando a leitura e uso. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00024}{24}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}\label{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!TParametro@{TParametro}}
+\index{TParametro@{TParametro}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{TParametro}{TParametro}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structSParametro}{SParametro}} \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}}}
+
+
+
+Estrutura para registo de um parâmetro. 
+
+Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.
+
+\begin{DoxyNote}{Note}
+Existe uma vetor de parametros declarada de forma estática, de modo a aceder a qualquer parametro de forma global no código. A ordem dos parametros estão de acordo com o tipo enumerado EParametros\+Construtiva
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva} e Reset\+Parametros()
+\end{DoxySeeAlso}
+Exemplo\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})\ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
+
+\end{DoxyCode}
+ \Hypertarget{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}\label{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!TResultado@{TResultado}}
+\index{TResultado@{TResultado}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{TResultado}{TResultado}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structSResultado}{SResultado}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}\label{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!EAlgoritmo@{EAlgoritmo}}
+\index{EAlgoritmo@{EAlgoritmo}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{EAlgoritmo}{EAlgoritmo}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}}}
+
+
+
+Algoritmos disponíveis para procura construtiva. 
+
+Estes algoritmos utilizam diferentes estratégias de expansão de estados e podem ser ajustados conforme os parâmetros de execução.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{larguraPrimeiro@{larguraPrimeiro}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!larguraPrimeiro@{larguraPrimeiro}}}\Hypertarget{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6caa7119d8453f4029f15ea59fa1063d1a6}\label{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6caa7119d8453f4029f15ea59fa1063d1a6} 
+largura\+Primeiro&Executa a procura em largura primeiro, algoritmo cego. \begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{TProcura\+Construtiva\+::\+Largura\+Primeiro()} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{custoUniforme@{custoUniforme}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!custoUniforme@{custoUniforme}}}\Hypertarget{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6ca5beec59c012aa51b2ff4e7b5afec885d}\label{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6ca5beec59c012aa51b2ff4e7b5afec885d} 
+custo\+Uniforme&Executa a procura por custo uniforme, algoritmo cego. \begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{TProcura\+Construtiva\+::\+Custo\+Uniforme()} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{profundidadePrimeiro@{profundidadePrimeiro}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!profundidadePrimeiro@{profundidadePrimeiro}}}\Hypertarget{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6caecb0560a7ce374aec3dfdf3fb91c4dd7}\label{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6caecb0560a7ce374aec3dfdf3fb91c4dd7} 
+profundidade\+Primeiro&Executa a procura em profundidade primeiro, algoritmo cego. \begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{TProcura\+Construtiva\+::\+Profundidade\+Primeiro()} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{melhorPrimeiro@{melhorPrimeiro}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!melhorPrimeiro@{melhorPrimeiro}}}\Hypertarget{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6ca51c17d8d39e5ec31669d7144e70a68f6}\label{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6ca51c17d8d39e5ec31669d7144e70a68f6} 
+melhor\+Primeiro&Executa a procura melhor primeiro, algoritmo informado. \begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{TProcura\+Construtiva\+::\+Melhor\+Primeiro()} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{aStar@{aStar}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!aStar@{aStar}}}\Hypertarget{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cab7da1d3a25097669e595089206898b5e}\label{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cab7da1d3a25097669e595089206898b5e} 
+a\+Star&Executa a procura A\texorpdfstring{$\ast$}{*}, algoritmo informado. \begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{TProcura\+Construtiva\+::\+AStar()} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{idAStar@{idAStar}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!idAStar@{idAStar}}}\Hypertarget{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cac9073284c32f95ec860a3cd9a4666ee7}\label{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cac9073284c32f95ec860a3cd9a4666ee7} 
+id\+AStar&Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. \begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}{TProcura\+Construtiva\+::\+IDAStar()} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{branchAndBound@{branchAndBound}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!branchAndBound@{branchAndBound}}}\Hypertarget{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cafc8a346b24b84cb15777a79bcfcbc626}\label{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6cafc8a346b24b84cb15777a79bcfcbc626} 
+branch\+And\+Bound&Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{TProcura\+Construtiva\+::\+Branch\+And\+Bound()} 
+\end{DoxySeeAlso}
+\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00070}{70}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88}\label{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!EEstadosRepetidos@{EEstadosRepetidos}}
+\index{EEstadosRepetidos@{EEstadosRepetidos}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{EEstadosRepetidos}{EEstadosRepetidos}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88}{EEstados\+Repetidos}}}
+
+
+
+Enumerado com os valores possíveis do parametro estados\+Repetidos. 
+
+Os estados gerados que sejam repetidos, podem não ser removidos, ou podem ser removidos se existir um ascendente igual, ou ainda serem guardados numa hashtable de modo a serem removidos todos os estados gerados que sejam repetidos.
+
+\begin{DoxySeeAlso}{See also}
+Sucessores(), \doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5}{estados\+Repetidos} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ignorados@{ignorados}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!ignorados@{ignorados}}}\Hypertarget{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a954296a7afe750d9db00a4e20f25312e}\label{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a954296a7afe750d9db00a4e20f25312e} 
+ignorados&ignorados os estados gerados repetidos \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ascendentes@{ascendentes}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!ascendentes@{ascendentes}}}\Hypertarget{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a108490c84e0c9531ca7c3d10979350d7}\label{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a108490c84e0c9531ca7c3d10979350d7} 
+ascendentes&estados são comparados com ascendentes, e se forem repetidos são removidos \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gerados@{gerados}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!gerados@{gerados}}}\Hypertarget{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a}\label{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a} 
+gerados&estados são comparados com todos os gerados, e se forem repetidos são removidos \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00109}{109}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}\label{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!ENivelDebug@{ENivelDebug}}
+\index{ENivelDebug@{ENivelDebug}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{ENivelDebug}{ENivelDebug}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}}}
+
+
+
+Níveis de detalhamento para debug. 
+
+Controla a quantidade de informações exibidas durante a execução do algoritmo.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivel\+Debug}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
+
+\end{DoxyCode}
+ \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nada@{nada}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!nada@{nada}}}\Hypertarget{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11}\label{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11} 
+nada&Sem informações de debug. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{atividade@{atividade}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!atividade@{atividade}}}\Hypertarget{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}\label{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524} 
+atividade&Apenas eventos principais. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{passos@{passos}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!passos@{passos}}}\Hypertarget{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}\label{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0} 
+passos&Exibe passos intermediários. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{detalhe@{detalhe}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!detalhe@{detalhe}}}\Hypertarget{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}\label{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0} 
+detalhe&Debug detalhada sobre estados e decisões. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{completo@{completo}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!completo@{completo}}}\Hypertarget{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f}\label{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f} 
+completo&Mostra toda a execução detalhadamente. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00092}{92}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3}\label{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!EOperacao@{EOperacao}}
+\index{EOperacao@{EOperacao}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{EOperacao}{EOperacao}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3}{EOperacao}}}
+
+
+
+Define o sentido da operação de entrada/saída de dados. 
+
+\begin{DoxyNote}{Note}
+Utilizado em funções que requerem distinção entre operação de leitura e gravação. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gravar@{gravar}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!gravar@{gravar}}}\Hypertarget{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}\label{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd} 
+gravar&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ler@{ler}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!ler@{ler}}}\Hypertarget{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678}\label{TProcuraConstrutiva_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678} 
+ler&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00120}{120}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058} 
+\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!EParametrosConstrutiva@{EParametrosConstrutiva}}
+\index{EParametrosConstrutiva@{EParametrosConstrutiva}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}
+\doxysubsubsection{\texorpdfstring{EParametrosConstrutiva}{EParametrosConstrutiva}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva}}}
+
+
+
+Identifica um parâmetro específico no código. 
+
+Permite aceder a cada parâmetro sem precisar saber seu código numérico. Índice do vetor de parametros, na classe \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}.
+
+\begin{DoxyNote}{Note}
+O último elemento ({\ttfamily parametros\+Construtivas}) não representa um parâmetro real. Existe para permitir a criação de uma enumeração adicional em subclasses, caso seja necessário adicionar parâmetros específicos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}, Executa\+Algoritmo()
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
+
+\end{DoxyCode}
+ \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{algoritmo@{algoritmo}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!algoritmo@{algoritmo}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058aeabc5187dd423c46d6dc096c37b01136}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058aeabc5187dd423c46d6dc096c37b01136} 
+algoritmo&Algoritmo base a executar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nivelDebug@{nivelDebug}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!nivelDebug@{nivelDebug}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8} 
+nivel\+Debug&Nível de debug, de reduzido a completo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{verAcoes@{verAcoes}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!verAcoes@{verAcoes}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1} 
+ver\+Acoes&Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{seed@{seed}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!seed@{seed}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869} 
+seed&Semente aleatória para inicializar a sequência de números pseudo-\/aleatórios. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limiteTempo@{limiteTempo}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!limiteTempo@{limiteTempo}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab9b7a997847b4af852b600ac955c9245}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab9b7a997847b4af852b600ac955c9245} 
+limite\+Tempo&Tempo limite em segundos. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limiteGeracoes@{limiteGeracoes}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!limiteGeracoes@{limiteGeracoes}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ad12ebb828f2b226a21ac1472d0eeebfa}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ad12ebb828f2b226a21ac1472d0eeebfa} 
+limite\+Geracoes&Número máximo de gerações (0 significa sem limite). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limiteExpansoes@{limiteExpansoes}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!limiteExpansoes@{limiteExpansoes}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ada8cabf08fbdfada7b4c7bb0063c7f74}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ada8cabf08fbdfada7b4c7bb0063c7f74} 
+limite\+Expansoes&Número máximo de expansões (0 significa sem limite). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limiteAvaliacoes@{limiteAvaliacoes}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!limiteAvaliacoes@{limiteAvaliacoes}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4e659740f4db252369b21a5998487906}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4e659740f4db252369b21a5998487906} 
+limite\+Avaliacoes&Número máximo de avaliações (0 significa sem limite). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limite@{limite}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!limite@{limite}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f} 
+limite&Valor dependente do algoritmo. Exemplo\+: Profundidade limitada. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{estadosRepetidos@{estadosRepetidos}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!estadosRepetidos@{estadosRepetidos}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5} 
+estados\+Repetidos&Forma de lidar com estados repetidos (ignorá-\/los, ascendentes, gerados). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{pesoAStar@{pesoAStar}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!pesoAStar@{pesoAStar}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a301297462c3762b42e1ec439be22af98}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a301297462c3762b42e1ec439be22af98} 
+peso\+AStar&Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ruidoHeur@{ruidoHeur}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!ruidoHeur@{ruidoHeur}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2b7583be54d4abb36af6972683134789}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2b7583be54d4abb36af6972683134789} 
+ruido\+Heur&Ruído a adicionar à heurística para testes de robustez. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{baralharSuc@{baralharSuc}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!baralharSuc@{baralharSuc}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ad2126792378161b062dfd8598996995d}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ad2126792378161b062dfd8598996995d} 
+baralhar\+Suc&Baralhar os sucessores ao expandir. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{parametrosConstrutivas@{parametrosConstrutivas}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!parametrosConstrutivas@{parametrosConstrutivas}}}\Hypertarget{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540}\label{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540} 
+parametros\+Construtivas&Marcador para permitir a extensão do enum em subclasses. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00044}{44}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+

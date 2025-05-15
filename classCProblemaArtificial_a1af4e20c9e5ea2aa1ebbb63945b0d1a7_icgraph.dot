@@ -1,0 +1,13 @@
+digraph "CProblemaArtificial::CProblemaArtificial"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="CProblemaArtificial\l::CProblemaArtificial",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge3_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="CProblemaArtificial\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#ada920ffe8fe97913ef87196864618a48",tooltip="Cria um objecto que é uma cópia deste."];
+  Node2 -> Node3 [id="edge4_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CProblemaArtificial\l::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#a8ecd3995c8ce751d5da10cc20709175c",tooltip="Coloca em sucessores a lista de estados sucessores."];
+}

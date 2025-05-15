@@ -1,0 +1,160 @@
+\doxysection{Algoritmos de Procura Informada}
+\hypertarget{group__ProcurasInformadas}{}\label{group__ProcurasInformadas}\index{Algoritmos de Procura Informada@{Algoritmos de Procura Informada}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{TProcura\+Construtiva\+::\+Melhor\+Primeiro}} (int nivel=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura melhor primeiro, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{TProcura\+Construtiva\+::\+AStar}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura A\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}{TProcura\+Construtiva\+::\+IDAStar}} (int upper\+Bound=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{TProcura\+Construtiva\+::\+Branch\+And\+Bound}} (int upper\+Bound=0)
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Métodos que executam algoritmos de procura utilizando heurística para orientar a procura. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}\label{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4} 
+\index{Algoritmos de Procura Informada@{Algoritmos de Procura Informada}!AStar@{AStar}}
+\index{AStar@{AStar}!Algoritmos de Procura Informada@{Algoritmos de Procura Informada}}
+\doxysubsubsection{\texorpdfstring{AStar()}{AStar()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+AStar (\begin{DoxyParamCaption}\item[{int}]{limite = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Executa a procura A\texorpdfstring{$\ast$}{*}, algoritmo informado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em limite} & Com valor 0, executa sem limite. Se maior que 0, limita o número de estados gerados não expandidos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o valor da solução, ou -\/1 em caso de falha.
+\end{DoxyReturn}
+Este algoritmo é semelhante ao Custo Uniforme, mas os estados são ordenados pelo lower bound, definido como o custo acumulado somado à heurística, ou seja, o mínimo custo ótimo da instância. Dessa forma, os estados com menor lower bound são expandidos primeiro, o que preserva a propriedade de optimalidade.
+
+\begin{DoxyNote}{Note}
+Se o limite do número de estados for atingido, os estados gerados com maior lower bound serão removidos. 
+
+O parâmetro parametro\mbox{[}peso\+AStar\mbox{]}.valor, com valor padrão 100, indica o peso (em percentagem) que a heurística terá no cálculo do lower bound. Se esse valor for reduzido, a heurística terá menor peso (pode chegar a 0, fazendo com que o algoritmo se comporte como o Custo Uniforme). Se for aumentado acima de 100, a heurística terá mais influência, aproximando a estratégia do Melhor Primeiro. Dessa forma, esse parâmetro permite modelar uma gama de estratégias entre Custo Uniforme, A\texorpdfstring{$\ast$}{*} e Melhor Primeiro, o que pode resultar em melhor desempenho para determinados problemas.
+
+Se a procura for interrompida, é possível extrair um lower bound, embora isso não permita a obtenção de uma solução.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme()}, \doxylink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro()}, \doxylink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}, \doxylink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo()}; 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00518}{518}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 0
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}\label{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd} 
+\index{Algoritmos de Procura Informada@{Algoritmos de Procura Informada}!BranchAndBound@{BranchAndBound}}
+\index{BranchAndBound@{BranchAndBound}!Algoritmos de Procura Informada@{Algoritmos de Procura Informada}}
+\doxysubsubsection{\texorpdfstring{BranchAndBound()}{BranchAndBound()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Branch\+And\+Bound (\begin{DoxyParamCaption}\item[{int}]{upper\+Bound = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em upper\+Bound} & Se 0, executa a procura sem limite. Se for um valor positivo, efetua a procura limitada por esse upper bound. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o valor da solução, ou -\/1 em caso de falha.
+\end{DoxyReturn}
+Este algoritmo opera de forma semelhante ao Melhor Primeiro, mas, após encontrar uma solução, continua a explorar, eliminando todos os ramos cujo lower bound indique que não há possibilidade de melhorar a solução atual.
+
+Se o algoritmo iniciar com um upper\+Bound definido, funcionará como se essa solução já tivesse sido encontrada, descartando todos os ramos que possam levar a soluções de custo igual ou superior. Embora isso possa resultar na exclusão de ramos muito longos, também podem remover ramos que eventualmente pudessem conduzir à solução. Caso o algoritmo retorne sem uma solução, não se pode afirmar com certeza que ela não exista.
+
+\begin{DoxyNote}{Note}
+Se a procura for interrompida, é possível extrair um upper bound, apesar de não haver garantia de que seja o ótimo.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro()}, \doxylink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}, \doxylink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo()}; 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00471}{471}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\Hypertarget{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}\label{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8} 
+\index{Algoritmos de Procura Informada@{Algoritmos de Procura Informada}!IDAStar@{IDAStar}}
+\index{IDAStar@{IDAStar}!Algoritmos de Procura Informada@{Algoritmos de Procura Informada}}
+\doxysubsubsection{\texorpdfstring{IDAStar()}{IDAStar()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+IDAStar (\begin{DoxyParamCaption}\item[{int}]{upper\+Bound = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em upper\+Bound} & Se 0, executa a procura iterativa. Se for um valor positivo, efetua a procura limitada por esse upper bound. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o valor da solução, ou -\/1 em caso de falha.
+\end{DoxyReturn}
+Este algoritmo funciona similarmente ao Melhor Primeiro, mas limita a expansão da árvore com base no lower bound atual (custo acumulado mais heurística), em vez de limitar a profundidade. Trata-\/se de uma versão iterativa cuja nova limitação é determinada pelo melhor valor (mais baixo) dentre os estados descartados na iteração anterior, garantindo a obtenção da solução ótima.
+
+A ordem de expansão dos estados é a mesma do A\texorpdfstring{$\ast$}{*}, pois utiliza o mesmo critério de lower bound. Porém, por ser um algoritmo de procura em profundidade, não sofre problemas de memória.
+
+\begin{DoxyNote}{Note}
+Se a procura for interrompida, é possível extrair um lower bound, embora isso não permita a obtenção de uma solução.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro()}, \doxylink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{AStar()}, \doxylink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}, \doxylink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo()}; 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00417}{417}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\Hypertarget{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}\label{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa} 
+\index{Algoritmos de Procura Informada@{Algoritmos de Procura Informada}!MelhorPrimeiro@{MelhorPrimeiro}}
+\index{MelhorPrimeiro@{MelhorPrimeiro}!Algoritmos de Procura Informada@{Algoritmos de Procura Informada}}
+\doxysubsubsection{\texorpdfstring{MelhorPrimeiro()}{MelhorPrimeiro()}}
+{\footnotesize\ttfamily int TProcura\+Construtiva\+::\+Melhor\+Primeiro (\begin{DoxyParamCaption}\item[{int}]{nivel = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Executa a procura melhor primeiro, algoritmo informado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nivel} & Se 0 ou menor, efetua a procura em profundidade sem limite. Se um valor positivo, efetua a procura limitada a esse nível de profundidade. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna o valor da solução, ou -\/1 em caso de falha.
+\end{DoxyReturn}
+Este algoritmo funciona similarmente à procura em profundidade primeiro, mas os sucessores são ordenados de acordo com o valor da heurística. Assim, os estados com menor valor de heurística em cada nível são explorados primeiramente. Note que não garante a solução ótima e a implementação é recursiva.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{Profundidade\+Primeiro()}, \doxylink{TProcuraConstrutiva_8h_a80645d45a22bcc4a9a5a384051349d6c}{EAlgoritmo}, \doxylink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo()}; 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00388}{388}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7

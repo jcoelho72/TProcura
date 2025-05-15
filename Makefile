@@ -1,34 +1,27 @@
-# Variáveis
-CC = g++
-CFLAGS = -Wall -g
-TARGET = TProcuraConstrutiva
-SRC = TProcuraConstrutiva.cpp TRand.cpp Teste/ProblemaArtificial.cpp Teste/teste.cpp
-FTeste = Teste/CasosTeste/input.txt Teste/CasosTeste/output_esperado.txt
+LATEX_CMD?=pdflatex
+MKIDX_CMD?=makeindex
+BIBTEX_CMD?=bibtex
+LATEX_COUNT?=8
+MANUAL_FILE?=refman
 
-# Regra padrão (executada com `make` sem argumentos)
-all: $(TARGET)
+all: $(MANUAL_FILE).pdf
 
-# Regra para compilar o programa
-$(TARGET): $(SRC)
-	$(CC) $(CFLAGS) -o $@ $^
+pdf: $(MANUAL_FILE).pdf
 
-# Regra para testes (executada com `make check`)
-check: $(TARGET)
-	@echo "Executando testes..."
-	@./$(TARGET) < Teste/CasosTeste/input.txt > Teste/CasosTeste/output_obtido.txt
-	@sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_obtido.txt | tr -d '\r' | sed -e '$a\' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_obtido.txt
-	@sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_esperado.txt | tr -d '\r' | sed -e '$a\' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_esperado.txt
-	@diff Teste/CasosTeste/normalized_obtido.txt Teste/CasosTeste/normalized_esperado.txt || (echo "Testes falharam"; exit 1)
-	@echo "Todos os testes passaram!"
+$(MANUAL_FILE).pdf: clean $(MANUAL_FILE).tex
+	$(LATEX_CMD) $(MANUAL_FILE)
+	$(MKIDX_CMD) $(MANUAL_FILE).idx
+	$(LATEX_CMD) $(MANUAL_FILE)
+	latex_count=$(LATEX_COUNT) ; \
+	while grep -E -s 'Rerun (LaTeX|to get cross-references right|to get bibliographical references right)' $(MANUAL_FILE).log && [ $$latex_count -gt 0 ] ;\
+	    do \
+	      echo "Rerunning latex...." ;\
+	      $(LATEX_CMD) $(MANUAL_FILE) ;\
+	      latex_count=`expr $$latex_count - 1` ;\
+	    done
+	$(MKIDX_CMD) $(MANUAL_FILE).idx
+	$(LATEX_CMD) $(MANUAL_FILE)
 
 
-# Regra para validação completa (executada com `make distcheck`)
-distcheck: check
-	@echo "Validando distribuição..."
-	@tar czf $(TARGET).tar.gz $(SRC) Makefile $(FTeste)
-	@echo "Distribuição validada: $(TARGET).tar.gz"
-
-# Limpar ficheiros gerados (executada com `make clean`)
 clean:
-	@echo "Limpando ficheiros..."
-	@rm -f $(TARGET) Teste/CasosTeste/output_obtido.txt $(TARGET).tar.gz
+	rm -f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log *.out *.brf *.blg *.bbl $(MANUAL_FILE).pdf

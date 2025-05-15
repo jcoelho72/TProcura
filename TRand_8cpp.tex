@@ -1,0 +1,144 @@
+\doxysection{TRand.\+cpp File Reference}
+\hypertarget{TRand_8cpp}{}\label{TRand_8cpp}\index{TRand.cpp@{TRand.cpp}}
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}TRand.\+h"{}}\newline
+Include dependency graph for TRand.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}{N}}~27
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_a52037c938e3c1b126c6277da5ca689d0}{M}}~7
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_a376c3581bae3c2367fc9ce694e5a8949}{MATRIX\+\_\+A}}~0x9908b0df   /\texorpdfstring{$\ast$}{*} constant vector a \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_a39bc458849360f8f371b54c4365d397f}{UPPER\+\_\+\+MASK}}~0x80000000 /\texorpdfstring{$\ast$}{*} most significant w-\/r bits \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_a4ddd8cab3564b7a86a4b0e52ba08f70e}{LOWER\+\_\+\+MASK}}~0x7fffffff /\texorpdfstring{$\ast$}{*} least significant r bits \texorpdfstring{$\ast$}{*}/
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_ad823db99ec38ec810124406bd3dfeeae}{TEMPERING\+\_\+\+MASK\+\_\+B}}~0x9d2c5680
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_ae1c7a72f80707458249c99a6f37e7d3e}{TEMPERING\+\_\+\+MASK\+\_\+C}}~0xefc60000
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_a238852cd6380d77bd700e95d0a7d90c9}{TEMPERING\+\_\+\+SHIFT\+\_\+U}}(y)~(y $>$$>$ 11)
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_adce59eadb4013bb06a059dedf69c282d}{TEMPERING\+\_\+\+SHIFT\+\_\+S}}(y)~(y $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3}{TEMPERING\+\_\+\+SHIFT\+\_\+T}}(y)~(y $<$$<$ 15)
+\item 
+\#define \mbox{\hyperlink{TRand_8cpp_a15f821dd6f1a65b3ecf672718aa6273c}{TEMPERING\+\_\+\+SHIFT\+\_\+L}}(y)~(y $>$$>$ 18)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{TRand_8cpp_a4ddd8cab3564b7a86a4b0e52ba08f70e}\label{TRand_8cpp_a4ddd8cab3564b7a86a4b0e52ba08f70e} 
+\index{TRand.cpp@{TRand.cpp}!LOWER\_MASK@{LOWER\_MASK}}
+\index{LOWER\_MASK@{LOWER\_MASK}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{LOWER\_MASK}{LOWER\_MASK}}
+{\footnotesize\ttfamily \#define LOWER\+\_\+\+MASK~0x7fffffff /\texorpdfstring{$\ast$}{*} least significant r bits \texorpdfstring{$\ast$}{*}/}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_a52037c938e3c1b126c6277da5ca689d0}\label{TRand_8cpp_a52037c938e3c1b126c6277da5ca689d0} 
+\index{TRand.cpp@{TRand.cpp}!M@{M}}
+\index{M@{M}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{M}{M}}
+{\footnotesize\ttfamily \#define M~7}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_a376c3581bae3c2367fc9ce694e5a8949}\label{TRand_8cpp_a376c3581bae3c2367fc9ce694e5a8949} 
+\index{TRand.cpp@{TRand.cpp}!MATRIX\_A@{MATRIX\_A}}
+\index{MATRIX\_A@{MATRIX\_A}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{MATRIX\_A}{MATRIX\_A}}
+{\footnotesize\ttfamily \#define MATRIX\+\_\+A~0x9908b0df   /\texorpdfstring{$\ast$}{*} constant vector a \texorpdfstring{$\ast$}{*}/}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4}\label{TRand_8cpp_a0240ac851181b84ac374872dc5434ee4} 
+\index{TRand.cpp@{TRand.cpp}!N@{N}}
+\index{N@{N}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily \#define N~27}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_ad823db99ec38ec810124406bd3dfeeae}\label{TRand_8cpp_ad823db99ec38ec810124406bd3dfeeae} 
+\index{TRand.cpp@{TRand.cpp}!TEMPERING\_MASK\_B@{TEMPERING\_MASK\_B}}
+\index{TEMPERING\_MASK\_B@{TEMPERING\_MASK\_B}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{TEMPERING\_MASK\_B}{TEMPERING\_MASK\_B}}
+{\footnotesize\ttfamily \#define TEMPERING\+\_\+\+MASK\+\_\+B~0x9d2c5680}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_ae1c7a72f80707458249c99a6f37e7d3e}\label{TRand_8cpp_ae1c7a72f80707458249c99a6f37e7d3e} 
+\index{TRand.cpp@{TRand.cpp}!TEMPERING\_MASK\_C@{TEMPERING\_MASK\_C}}
+\index{TEMPERING\_MASK\_C@{TEMPERING\_MASK\_C}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{TEMPERING\_MASK\_C}{TEMPERING\_MASK\_C}}
+{\footnotesize\ttfamily \#define TEMPERING\+\_\+\+MASK\+\_\+C~0xefc60000}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_a15f821dd6f1a65b3ecf672718aa6273c}\label{TRand_8cpp_a15f821dd6f1a65b3ecf672718aa6273c} 
+\index{TRand.cpp@{TRand.cpp}!TEMPERING\_SHIFT\_L@{TEMPERING\_SHIFT\_L}}
+\index{TEMPERING\_SHIFT\_L@{TEMPERING\_SHIFT\_L}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{TEMPERING\_SHIFT\_L}{TEMPERING\_SHIFT\_L}}
+{\footnotesize\ttfamily \#define TEMPERING\+\_\+\+SHIFT\+\_\+L(\begin{DoxyParamCaption}\item[{}]{y }\end{DoxyParamCaption})~(y $>$$>$ 18)}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_adce59eadb4013bb06a059dedf69c282d}\label{TRand_8cpp_adce59eadb4013bb06a059dedf69c282d} 
+\index{TRand.cpp@{TRand.cpp}!TEMPERING\_SHIFT\_S@{TEMPERING\_SHIFT\_S}}
+\index{TEMPERING\_SHIFT\_S@{TEMPERING\_SHIFT\_S}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{TEMPERING\_SHIFT\_S}{TEMPERING\_SHIFT\_S}}
+{\footnotesize\ttfamily \#define TEMPERING\+\_\+\+SHIFT\+\_\+S(\begin{DoxyParamCaption}\item[{}]{y }\end{DoxyParamCaption})~(y $<$$<$ 7)}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3}\label{TRand_8cpp_a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3} 
+\index{TRand.cpp@{TRand.cpp}!TEMPERING\_SHIFT\_T@{TEMPERING\_SHIFT\_T}}
+\index{TEMPERING\_SHIFT\_T@{TEMPERING\_SHIFT\_T}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{TEMPERING\_SHIFT\_T}{TEMPERING\_SHIFT\_T}}
+{\footnotesize\ttfamily \#define TEMPERING\+\_\+\+SHIFT\+\_\+T(\begin{DoxyParamCaption}\item[{}]{y }\end{DoxyParamCaption})~(y $<$$<$ 15)}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_a238852cd6380d77bd700e95d0a7d90c9}\label{TRand_8cpp_a238852cd6380d77bd700e95d0a7d90c9} 
+\index{TRand.cpp@{TRand.cpp}!TEMPERING\_SHIFT\_U@{TEMPERING\_SHIFT\_U}}
+\index{TEMPERING\_SHIFT\_U@{TEMPERING\_SHIFT\_U}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{TEMPERING\_SHIFT\_U}{TEMPERING\_SHIFT\_U}}
+{\footnotesize\ttfamily \#define TEMPERING\+\_\+\+SHIFT\+\_\+U(\begin{DoxyParamCaption}\item[{}]{y }\end{DoxyParamCaption})~(y $>$$>$ 11)}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+\Hypertarget{TRand_8cpp_a39bc458849360f8f371b54c4365d397f}\label{TRand_8cpp_a39bc458849360f8f371b54c4365d397f} 
+\index{TRand.cpp@{TRand.cpp}!UPPER\_MASK@{UPPER\_MASK}}
+\index{UPPER\_MASK@{UPPER\_MASK}!TRand.cpp@{TRand.cpp}}
+\doxysubsubsection{\texorpdfstring{UPPER\_MASK}{UPPER\_MASK}}
+{\footnotesize\ttfamily \#define UPPER\+\_\+\+MASK~0x80000000 /\texorpdfstring{$\ast$}{*} most significant w-\/r bits \texorpdfstring{$\ast$}{*}/}
+
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
