@@ -30,7 +30,7 @@ SEARCHENGINE           = YES
 
 # Configuração de saída
 HTML_OUTPUT           = .
-LATEX_OUTPUT          = docs/latex
+LATEX_OUTPUT          = .
 GENERATE_TREEVIEW     = YES
 DISABLE_INDEX         = NO
 
