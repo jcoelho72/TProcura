@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['problemaartificial_2ecpp_0',['ProblemaArtificial.cpp',['../ProblemaArtificial_8cpp.html',1,'']]],
-  ['problemaartificial_2eh_1',['ProblemaArtificial.h',['../ProblemaArtificial_8h.html',1,'']]]
+  ['aspirador_2ecpp_0',['Aspirador.cpp',['../Aspirador_8cpp.html',1,'']]],
+  ['aspirador_2eh_1',['Aspirador.h',['../Aspirador_8h.html',1,'']]]
 ];

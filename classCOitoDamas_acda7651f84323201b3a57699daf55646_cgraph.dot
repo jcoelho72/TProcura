@@ -1,0 +1,16 @@
+digraph "COitoDamas::MostrarSolucao"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="COitoDamas::MostrarSolucao",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Mostrar solução, seja um caminho ou o próprio estado."];
+  Node1 -> Node2 [id="edge5_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="COitoDamas::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a8c4dfb787a9f0d8f2a8c88e682aaeb78",tooltip="Mostra o estado no ecrã, para debug."];
+  Node2 -> Node3 [id="edge6_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a427bf294df0ee2bf96e30d278c08389f",tooltip=" "];
+  Node2 -> Node4 [id="edge7_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="TProcuraConstrutiva\l::NovaLinha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32",tooltip=" "];
+  Node4 -> Node3 [id="edge8_Node000004_Node000003",color="steelblue1",style="solid",tooltip=" "];
+}

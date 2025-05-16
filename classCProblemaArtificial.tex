@@ -2,6 +2,11 @@
 \hypertarget{classCProblemaArtificial}{}\label{classCProblemaArtificial}\index{CProblemaArtificial@{CProblemaArtificial}}
 
 
+Representa um estado num problema artificial.  
+
+
+
+
 {\ttfamily \#include $<$Problema\+Artificial.\+h$>$}
 
 
@@ -15,33 +20,33 @@ Collaboration diagram for CProblema\+Artificial\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classCProblemaArtificial_a1af4e20c9e5ea2aa1ebbb63945b0d1a7}{CProblema\+Artificial}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}})
+\mbox{\hyperlink{classCProblemaArtificial_a1af4e20c9e5ea2aa1ebbb63945b0d1a7}{CProblema\+Artificial}} (void)
 \item 
-\mbox{\hyperlink{classCProblemaArtificial_a5a3353d4f263cdaa090237fe245f532a}{\texorpdfstring{$\sim$}{\string~}\+CProblema\+Artificial}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}})
+\mbox{\hyperlink{classCProblemaArtificial_a5a3353d4f263cdaa090237fe245f532a}{\texorpdfstring{$\sim$}{\string~}\+CProblema\+Artificial}} (void)
 \item 
-\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCProblemaArtificial_ada920ffe8fe97913ef87196864618a48}{Duplicar}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}})
+\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCProblemaArtificial_ada920ffe8fe97913ef87196864618a48}{Duplicar}} (void)
 \begin{DoxyCompactList}\small\item\em Cria um objecto que é uma cópia deste. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} \mbox{\hyperlink{classCProblemaArtificial_aeaf471b3eb04012d800593df6a0c9e45}{Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{objecto}})
+void \mbox{\hyperlink{classCProblemaArtificial_aeaf471b3eb04012d800593df6a0c9e45}{Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} objecto)
 \begin{DoxyCompactList}\small\item\em Fica com uma cópia do objecto. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} \mbox{\hyperlink{classCProblemaArtificial_ab8e6af484d17e145363d152536057697}{Solucao\+Vazia}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}})
+void \mbox{\hyperlink{classCProblemaArtificial_ab8e6af484d17e145363d152536057697}{Solucao\+Vazia}} (void)
 \begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} \mbox{\hyperlink{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c}{Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{sucessores}})
+void \mbox{\hyperlink{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c}{Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
 \begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{bool}} \mbox{\hyperlink{classCProblemaArtificial_a7f6dc20d490103e630797f8d6cfac76b}{Solucao\+Completa}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}})
+bool \mbox{\hyperlink{classCProblemaArtificial_a7f6dc20d490103e630797f8d6cfac76b}{Solucao\+Completa}} (void)
 \begin{DoxyCompactList}\small\item\em Verifica se o estado actual é objectivo (é uma solução completa) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} \mbox{\hyperlink{classCProblemaArtificial_a17e7a8290910ffd1fe8a370228c6024b}{Debug}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}})
+void \mbox{\hyperlink{classCProblemaArtificial_a17e7a8290910ffd1fe8a370228c6024b}{Debug}} (void)
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{Teste\+Manual}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{const}} \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{char}} \texorpdfstring{$\ast$}{*}nome)
+void \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{Teste\+Manual}} (const char \texorpdfstring{$\ast$}{*}nome)
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{bool}} \mbox{\hyperlink{classCProblemaArtificial_a5243c313f30ce2fe40f0d9d274cd5d8a}{Distinto}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado)
+bool \mbox{\hyperlink{classCProblemaArtificial_a5243c313f30ce2fe40f0d9d274cd5d8a}{Distinto}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado)
 \begin{DoxyCompactList}\small\item\em Verifica se o estado actual distinto do fornecido. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} \mbox{\hyperlink{classCProblemaArtificial_ab8d1a6b1cac40764804e09a3ff110b6e}{Codifica}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{uint64\+\_\+t}} estado\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]})
+void \mbox{\hyperlink{classCProblemaArtificial_ab8d1a6b1cac40764804e09a3ff110b6e}{Codifica}} (uint64\+\_\+t estado\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]})
 \begin{DoxyCompactList}\small\item\em Codifica o estado para um vetor de inteiros de 64 bits. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{int}} \mbox{\hyperlink{classCProblemaArtificial_acefa1963a1703a5f092c391a13b37ff5}{Heuristica}} (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}})
+int \mbox{\hyperlink{classCProblemaArtificial_acefa1963a1703a5f092c391a13b37ff5}{Heuristica}} (void)
 \begin{DoxyCompactList}\small\item\em Função para calcular quanto falta para o final, o valor da heurística. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{Reset\+Parametros}} ()
+void \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{Reset\+Parametros}} ()
 \begin{DoxyCompactList}\small\item\em Inicializa os parametros. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{const}} \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCProblemaArtificial_ae20eec965380aa787641d406b6cafe81}{Acao}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{sucessor}})
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCProblemaArtificial_ae20eec965380aa787641d406b6cafe81}{Acao}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}sucessor)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
 \begin{DoxyCompactItemize}
@@ -87,11 +92,11 @@ void \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{unsigned}} \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{int}} \mbox{\hyperlink{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}{id}}
+unsigned int \mbox{\hyperlink{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}{id}}
 \item 
 int \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nivel}}
 \item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{int}} \mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{heur}}
+int \mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{heur}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
 \begin{DoxyCompactItemize}
@@ -105,7 +110,7 @@ int \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{static}} \mbox{\hyperlink{ProblemaArtificial_8h_a165f5335ed3a7555912f3cc11f54d00d}{TParametros\+Espaco}} \mbox{\hyperlink{classCProblemaArtificial_afbedcdbf9cecd121f162699d5f028a73}{espaco}}
+static \mbox{\hyperlink{ProblemaArtificial_8h_a165f5335ed3a7555912f3cc11f54d00d}{TParametros\+Espaco}} \mbox{\hyperlink{classCProblemaArtificial_afbedcdbf9cecd121f162699d5f028a73}{espaco}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
 \begin{DoxyCompactItemize}
@@ -143,6 +148,8 @@ static clock\+\_\+t \mbox{\hyperlink{group__VariaveisGlobais_gaf7efa04a418f94ee4
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df}{Libertar\+Vector}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&vector, int excepto=-\/1, int maior\+Que=-\/1)
+\item 
+static int \mbox{\hyperlink{classTProcuraConstrutiva_a47abc151fcdd67c126b99672870d7dca}{Novo\+Valor}} (const char \texorpdfstring{$\ast$}{*}prompt)
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
 \begin{DoxyCompactItemize}
@@ -178,8 +185,6 @@ void \mbox{\hyperlink{classTProcuraConstrutiva_aec0a667a7fda1ebe565ba13d6b02805a
 void \mbox{\hyperlink{classTProcuraConstrutiva_a640e74c9b6cd340761db671438ad679e}{Calcular\+Heuristicas}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores, \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}id=NULL, bool sort\+LB=false)
 \item 
 int \mbox{\hyperlink{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937}{Solucao\+Parcial}} (int i, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
-\item 
-int \mbox{\hyperlink{classTProcuraConstrutiva_a47abc151fcdd67c126b99672870d7dca}{Novo\+Valor}} (const char \texorpdfstring{$\ast$}{*}prompt)
 \item 
 void \mbox{\hyperlink{classTProcuraConstrutiva_ab5639efca5e48b564a8bdd9ec23a8955}{Explorar\+Sucessores}} (bool jogo=false)
 \item 
@@ -239,9 +244,11 @@ static uint64\+\_\+t \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027ea
 
 
 \doxysubsection{Detailed Description}
+Representa um estado num problema artificial. 
 
+Neste problema um estado é um número inteiro, sendo abstrato. O número poderia representar um estado de um problema real. Pretende-\/se atingir estados múltiplos de um dado valor, tipicamente 10 ou 100, ficando os dígitos menos significativos a 0 Cada instância define características do espaço de estados como ramificação, nível mímimo em que está a solução, ou mesmo a profundidade máxima. Podemos observar o comportamento dos algoritmos em espaços de cada tipo de características. 
 
-Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00031}{31}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
+Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00030}{30}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
 
 
 
@@ -250,7 +257,7 @@ Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00031}{31}} of
 \index{CProblemaArtificial@{CProblemaArtificial}!CProblemaArtificial@{CProblemaArtificial}}
 \index{CProblemaArtificial@{CProblemaArtificial}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{CProblemaArtificial()}{CProblemaArtificial()}}
-{\footnotesize\ttfamily CProblema\+Artificial\+::\+CProblema\+Artificial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily CProblema\+Artificial\+::\+CProblema\+Artificial (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -262,7 +269,7 @@ Here is the caller graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!````~CProblemaArtificial@{\texorpdfstring{$\sim$}{\string~}CProblemaArtificial}}
 \index{````~CProblemaArtificial@{\texorpdfstring{$\sim$}{\string~}CProblemaArtificial}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CProblemaArtificial()}{\string~CProblemaArtificial()}}
-{\footnotesize\ttfamily CProblema\+Artificial\+::\texorpdfstring{$\sim$}{\string~}\+CProblema\+Artificial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily CProblema\+Artificial\+::\texorpdfstring{$\sim$}{\string~}\+CProblema\+Artificial (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -275,7 +282,7 @@ Definition at line \mbox{\hyperlink{ProblemaArtificial_8cpp_source_l00012}{12}} 
 \index{CProblemaArtificial@{CProblemaArtificial}!Acao@{Acao}}
 \index{Acao@{Acao}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{Acao()}{Acao()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{const}} \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{char}} \texorpdfstring{$\ast$}{*} CProblema\+Artificial\+::\+Acao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}}]{sucessor }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} CProblema\+Artificial\+::\+Acao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}}]{sucessor }\end{DoxyParamCaption})}
 
 
 
@@ -285,7 +292,7 @@ Definition at line \mbox{\hyperlink{ProblemaArtificial_8cpp_source_l00083}{83}} 
 \index{CProblemaArtificial@{CProblemaArtificial}!Codifica@{Codifica}}
 \index{Codifica@{Codifica}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{Codifica()}{Codifica()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} CProblema\+Artificial\+::\+Codifica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{uint64\+\_\+t}}}]{estado\mbox{[}\+OBJETO\+\_\+\+HASHTABLE\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CProblema\+Artificial\+::\+Codifica (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{estado\mbox{[}\+OBJETO\+\_\+\+HASHTABLE\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -310,14 +317,14 @@ a variável tamanho\+Codificado tem de ter o número de variáveis de 64 bits ut
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Codifica(\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{uint64\_t}}\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}])}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Codifica(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}])}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{Vector<int>}}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{vetor}};\ \textcolor{comment}{//\ assumindo\ neste\ exemplo\ que\ o\ estado\ é\ um\ vetor\ de\ inteiros\ pequenos}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{Normalizar}}(\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{vetor}});\ \textcolor{comment}{//\ o\ vetor\ tem\ várias\ formas,\ e\ agora\ é\ normalizado\ por\ uma\ função\ de\ CSubProblema}}
+\DoxyCodeLine{\ \ \ \ Vector<int>\ vetor;\ \textcolor{comment}{//\ assumindo\ neste\ exemplo\ que\ o\ estado\ é\ um\ vetor\ de\ inteiros\ pequenos}}
+\DoxyCodeLine{\ \ \ \ Normalizar(vetor);\ \textcolor{comment}{//\ o\ vetor\ tem\ várias\ formas,\ e\ agora\ é\ normalizado\ por\ uma\ função\ de\ CSubProblema}}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{TProcuraConstrutiva::Codifica}}(estado);\ \textcolor{comment}{//\ chamar\ a\ superclasse\ após\ normalizar\ o\ estado}}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ codificar\ números\ de\ 4\ bits,\ assumindo\ que\ os\ inteiros\ pequenos\ cabem\ em\ 4\ bits}}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}}\ =\ 0,\ index\ =\ 0;\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}}\ <\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{vetor}}.Count();\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}}++,\ index\ +=\ 4)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ estado[index\ >>\ 6]\ |=\ (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{uint64\_t}})\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{vetor}}[\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}}]\ <<\ (index\ \&\ 63);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ index\ =\ 0;\ i\ <\ vetor.Count();\ i++,\ index\ +=\ 4)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ estado[index\ >>\ 6]\ |=\ (uint64\_t)vetor[i]\ <<\ (index\ \&\ 63);}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
@@ -335,7 +342,7 @@ Here is the call graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!Copiar@{Copiar}}
 \index{Copiar@{Copiar}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{Copiar()}{Copiar()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} CProblema\+Artificial\+::\+Copiar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}]{objecto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CProblema\+Artificial\+::\+Copiar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}]{objecto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -354,14 +361,14 @@ A não ser que exista uma estrutura de dados completa, o modelo de código em ba
 Não é preciso copiar as variáveis da classe \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, pai, custo, heuristica. 
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
-\doxylink{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c}{Sucessores()} \doxylink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{e} \doxylink{classCProblemaArtificial_acefa1963a1703a5f092c391a13b37ff5}{Heuristica()}
+\doxylink{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c}{Sucessores()} e \doxylink{classCProblemaArtificial_acefa1963a1703a5f092c391a13b37ff5}{Heuristica()}
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubClasse::Copiar(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{objecto}})\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubProblema}}\&\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{obj}}\ =\ *((\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubProblema}}*)\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{objecto}});}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubClasse::Copiar(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ objecto)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ CSubProblema\&\ obj\ =\ *((CSubProblema*)objecto);}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ copiar\ todas\ as\ variáveis\ do\ estado}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{variavel}}\ =\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{obj}}.variavel;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ variavel\ =\ obj.variavel;}
 \DoxyCodeLine{\ \ \ \ \}}
 
 \end{DoxyCode}
@@ -371,7 +378,7 @@ Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a
 
 
 
-Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00048}{48}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
+Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00047}{47}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 4
@@ -379,7 +386,7 @@ Here is the caller graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!Debug@{Debug}}
 \index{Debug@{Debug}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{Debug()}{Debug()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} CProblema\+Artificial\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CProblema\+Artificial\+::\+Debug (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -405,7 +412,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfa
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é\ apenas\ um\ número}}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ <=\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}{atividade}})}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{printf}}(\textcolor{stringliteral}{"{}-\/-\/<([\%d])>-\/-\/"{}},\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{variavel}});\ \textcolor{comment}{//\ versão\ compacta\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/<([\%d])>-\/-\/"{}},\ variavel);\ \textcolor{comment}{//\ versão\ compacta\ do\ estado}}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}\ \{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ versão\ mais\ elaborada\ do\ estado}}
 \DoxyCodeLine{\ \ \ \ \}}
@@ -426,7 +433,7 @@ Here is the call graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!Distinto@{Distinto}}
 \index{Distinto@{Distinto}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{Distinto()}{Distinto()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{bool}} CProblema\+Artificial\+::\+Distinto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}]{estado }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool CProblema\+Artificial\+::\+Distinto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}]{estado }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -446,9 +453,9 @@ Se a verificação de estados repetidos for baseada na análise de ascendentes, 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keywordtype}{bool}\ CSubProblema::Distinto(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ estado)\ \{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubProblema}}\&\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{outro}}\ =\ *((\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubProblema}}*)estado);}
+\DoxyCodeLine{\ \ \ \ CSubProblema\&\ outro\ =\ *((CSubProblema*)estado);}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ verificar\ todas\ as\ variáveis\ de\ estado}}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{variavel}}\ !=\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{outro}}.variavel;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ variavel\ !=\ outro.variavel;}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
@@ -464,7 +471,7 @@ Definition at line \mbox{\hyperlink{ProblemaArtificial_8cpp_source_l00121}{121}}
 \index{CProblemaArtificial@{CProblemaArtificial}!Duplicar@{Duplicar}}
 \index{Duplicar@{Duplicar}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{Duplicar()}{Duplicar()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} CProblema\+Artificial\+::\+Duplicar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} CProblema\+Artificial\+::\+Duplicar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -485,12 +492,12 @@ Caso exista falha de memória, colocar a variável memoria\+Esgotada a true, par
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ CSubClasse::Duplicar(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubClasse}}*\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{clone}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubClasse}};}
-\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{clone}}!=\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{NULL}})}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{clone}}-\/>\mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ CSubClasse*\ clone\ =\ \textcolor{keyword}{new}\ CSubClasse;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(clone!=NULL)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ clone-\/>\mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}}(\textcolor{keyword}{this});}
 \DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{clone}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ clone;}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
@@ -510,7 +517,7 @@ Here is the caller graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!Heuristica@{Heuristica}}
 \index{Heuristica@{Heuristica}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{Heuristica()}{Heuristica()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{int}} CProblema\+Artificial\+::\+Heuristica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily int CProblema\+Artificial\+::\+Heuristica (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -539,7 +546,7 @@ Uma heurística pode resultar de um relaxamento do problema. Verifique se o prob
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}\ =\ 0;\ \textcolor{comment}{//\ ponto\ de\ partida,\ há\ 0\ de\ custo}}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ utilizar\ neste\ exemplo\ a\ distância\ até\ 1000,\ local\ onde\ estará\ o\ objetivo}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}\ =\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{abs}}(\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{variavel}}\ -\/\ 1000);\ \ }
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}\ =\ abs(variavel\ -\/\ 1000);\ \ }
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ a\ função\ heurística\ da\ superclass}}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__RedefinicaoSugerida_ga0e8bb1bd33683545dc4f8f6329548b40}{TProcuraConstrutiva::Heuristica}}();}
 \DoxyCodeLine{\}}
@@ -559,7 +566,7 @@ Here is the call graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!ResetParametros@{ResetParametros}}
 \index{ResetParametros@{ResetParametros}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{ResetParametros()}{ResetParametros()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} CProblema\+Artificial\+::\+Reset\+Parametros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CProblema\+Artificial\+::\+Reset\+Parametros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -585,10 +592,10 @@ Ao adicionar novos parâmetros, é recomendável manter a enumeração sincroniz
 Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros. 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{comment}{//\ continuação\ da\ enumeração\ EParametrosConstrutiva}}
-\DoxyCodeLine{\textcolor{keyword}{enum}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{ESubProblema}}\ \{\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{opcaoHeur}}\ =\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540}{parametrosConstrutivas}},\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{opcaoSuc}}\ \};}
+\DoxyCodeLine{\textcolor{keyword}{enum}\ ESubProblema\ \{\ opcaoHeur\ =\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540}{parametrosConstrutivas}},\ opcaoSuc\ \};}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::ResetParametros(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nomesSuc}}[]\ =\ \{\ \textcolor{stringliteral}{"{}todas"{}},\ \textcolor{stringliteral}{"{}contributo"{}}\ \};\ \textcolor{comment}{//\ nomes\ para\ os\ valores\ de\ opcaoSuc}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomesSuc[]\ =\ \{\ \textcolor{stringliteral}{"{}todas"{}},\ \textcolor{stringliteral}{"{}contributo"{}}\ \};\ \textcolor{comment}{//\ nomes\ para\ os\ valores\ de\ opcaoSuc}}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ primeiro\ o\ método\ na\ superclasse}}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoSugerida_gacb15562d8776f4d162001d385ebc13a0}{TProcuraConstrutiva::ResetParametros}}();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ considerou-\/se\ que\ se\ pretende\ ver\ apenas\ estados\ completos,\ ignorando\ ações}}
@@ -596,10 +603,10 @@ Exemplo com a alteração do valor de omissão de um parametro, e adição de do
 \DoxyCodeLine{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ função\ Heuristica()}}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Opção\ Heurística"{}},\ 0,0,10,}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}explicação\ do\ que\ acontece\ na\ heuristica,\ com\ este\ parametro\ entre\ 0\ e\ 10"{}},\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{NULL}}\ \});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}explicação\ do\ que\ acontece\ na\ heuristica,\ com\ este\ parametro\ entre\ 0\ e\ 10"{}},NULL\ \});}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ função\ Sucessores()}}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Opção\ Sucessores"{}},\ 0,0,1,}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}0\ gera\ todas\ as\ ações;\ 1\ gera\ apenas\ ações\ que\ tenham\ um\ contributo\ para\ a\ solução."{}},\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nomesSuc}}\ \});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}0\ gera\ todas\ as\ ações;\ 1\ gera\ apenas\ ações\ que\ tenham\ um\ contributo\ para\ a\ solução."{}},nomesSuc\ \});}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
@@ -617,7 +624,7 @@ Here is the call graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!SolucaoCompleta@{SolucaoCompleta}}
 \index{SolucaoCompleta@{SolucaoCompleta}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{SolucaoCompleta()}{SolucaoCompleta()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{bool}} CProblema\+Artificial\+::\+Solucao\+Completa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool CProblema\+Artificial\+::\+Solucao\+Completa (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -639,7 +646,7 @@ Este método será chamado pelos algoritmos de procura no momento adequado, {\bf
 \DoxyCodeLine{\textcolor{keywordtype}{bool}\ CSubProblema::SolucaoCompleta(\textcolor{keywordtype}{void})\ \{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ pode\ ser\ um\ simples\ teste,\ ou\ algo\ mais\ complexo,\ dependente\ do\ problema}}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ verificar\ se\ as\ condições\ pretendidas\ estão\ satisfeitas}}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{variavel}}\ >\ 1000;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ variavel\ >\ 1000;}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
@@ -655,7 +662,7 @@ Definition at line \mbox{\hyperlink{ProblemaArtificial_8cpp_source_l00097}{97}} 
 \index{CProblemaArtificial@{CProblemaArtificial}!SolucaoVazia@{SolucaoVazia}}
 \index{SolucaoVazia@{SolucaoVazia}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} CProblema\+Artificial\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CProblema\+Artificial\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -682,7 +689,7 @@ Se a função \doxylink{classCProblemaArtificial_ab8d1a6b1cac40764804e09a3ff110b
 \DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
 \DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{variavel}}\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ variavel\ =\ 0;}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
 \DoxyCodeLine{\}}
@@ -702,7 +709,7 @@ Here is the call graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!Sucessores@{Sucessores}}
 \index{Sucessores@{Sucessores}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{Sucessores()}{Sucessores()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} CProblema\+Artificial\+::\+Sucessores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CProblema\+Artificial\+::\+Sucessores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -729,20 +736,20 @@ Não é preciso considerar estados repetidos, a verificação será feita na sup
 \end{DoxyNote}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Sucessores(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{sucessores}})}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Sucessores(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&sucessores)}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubProblema}}*\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{novo}};}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}}\ =\ 0;\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}}\ <\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{numeroAcoes}};\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}}++)\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{sucessores}}.Add(\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{novo}}\ =\ (\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubProblema}}*)\mbox{\hyperlink{classCProblemaArtificial_ada920ffe8fe97913ef87196864618a48}{Duplicar}}());}
+\DoxyCodeLine{\ \ \ \ CSubProblema*\ novo;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numeroAcoes;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sucessores.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(novo\ =\ (CSubProblema*)\mbox{\hyperlink{classCProblemaArtificial_ada920ffe8fe97913ef87196864618a48}{Duplicar}}());}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ aplicar\ a\ ação\ i\ nas\ variáveis\ de\ estado}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{novo}}-\/>variavel\ =\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ novo-\/>variavel\ =\ i;}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ se\ o\ custo\ não\ for\ unitário,\ indicar\ o\ custo\ da\ ação}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{novo}}-\/>custo\ =\ 1\ +\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{i}}\ /\ 10;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ novo-\/>custo\ =\ 1\ +\ i\ /\ 10;}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Caso\ o\ estado\ gerado\ não\ seja\ válido,\ remova-\/o\ da\ lista\ e\ liberte\ a\ memória:}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{novo}}-\/>EstadoValido())\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ verificar\ a\ validade}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{sucessores}}.Pop();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo-\/>EstadoValido())\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ verificar\ a\ validade}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ sucessores.\mbox{\hyperlink{classTVector_a3249913626d54e46b07e168ce1f05d87}{Pop}}();}
 \DoxyCodeLine{\ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcuraConstrutiva::Sucessores}}(\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{sucessores}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcuraConstrutiva::Sucessores}}(sucessores);}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
@@ -760,7 +767,7 @@ Here is the call graph for this function\+:
 \index{CProblemaArtificial@{CProblemaArtificial}!TesteManual@{TesteManual}}
 \index{TesteManual@{TesteManual}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{TesteManual()}{TesteManual()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{void}} CProblema\+Artificial\+::\+Teste\+Manual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{const}} \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{char}} \texorpdfstring{$\ast$}{*}}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void CProblema\+Artificial\+::\+Teste\+Manual (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
@@ -797,15 +804,15 @@ Esta função deve ser o ponto de entrada, a executar no main.
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::TesteManual(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ indicar\ que\ há\ 10\ instâncias,\ sendo\ a\ instância\ inicial\ a\ 1}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}Características\ dos\ problemas"{}},\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{NULL}}\ \};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}Características\ dos\ problemas"{}},\ NULL\ \};}
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{TProcuraConstrutiva::TesteManual}}(nome);}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//\ exemplo\ do\ main}}
 \DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{teste_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}()}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{CSubProblema}}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{problema}};}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{problema}}.TesteManual(\textcolor{stringliteral}{"{}CSubProblema"{}});}
+\DoxyCodeLine{\ \ \ \ CSubProblema\ problema;}
+\DoxyCodeLine{\ \ \ \ problema.TesteManual(\textcolor{stringliteral}{"{}CSubProblema"{}});}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
@@ -832,27 +839,27 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00039}{39}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
+Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00038}{38}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
 
 \Hypertarget{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}\label{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407} 
 \index{CProblemaArtificial@{CProblemaArtificial}!heur@{heur}}
 \index{heur@{heur}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{heur}{heur}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{int}} CProblema\+Artificial\+::heur}
+{\footnotesize\ttfamily int CProblema\+Artificial\+::heur}
 
 
 
-Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00044}{44}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
+Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00043}{43}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
 
 \Hypertarget{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}\label{classCProblemaArtificial_a14306822eb3720451bed5666d518b629} 
 \index{CProblemaArtificial@{CProblemaArtificial}!id@{id}}
 \index{id@{id}!CProblemaArtificial@{CProblemaArtificial}}
 \doxysubsubsection{\texorpdfstring{id}{id}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{unsigned}} \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{int}} CProblema\+Artificial\+::id}
+{\footnotesize\ttfamily unsigned int CProblema\+Artificial\+::id}
 
 
 
-Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00042}{42}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
+Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00041}{41}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
 
 \Hypertarget{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}\label{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f} 
 \index{CProblemaArtificial@{CProblemaArtificial}!nivel@{nivel}}
@@ -862,7 +869,7 @@ Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00042}{42}} of
 
 
 
-Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00043}{43}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
+Definition at line \mbox{\hyperlink{ProblemaArtificial_8h_source_l00042}{42}} of file \mbox{\hyperlink{ProblemaArtificial_8h_source}{Problema\+Artificial.\+h}}.
 
 
 

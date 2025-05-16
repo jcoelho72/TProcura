@@ -6,10 +6,22 @@ digraph "TProcuraConstrutiva::TesteEmpirico"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
   Node1 [id="Node000001",label="TProcuraConstrutiva\l::TesteEmpirico",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
-  Node1 -> Node2 [id="edge4_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge12_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraConstrutiva\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga843a501e25cbaff7eb51d8d29995be3a",tooltip="Inicializa a interação com o utilizador."];
-  Node2 -> Node3 [id="edge5_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
-  Node3 -> Node4 [id="edge6_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge13_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CAspirador::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCAspirador.html#a718c8187439940dec18a46a9e9e024e3",tooltip="Inicializa a interação com o utilizador."];
+  Node3 -> Node4 [id="edge14_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node2 -> Node5 [id="edge15_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="COitoDamas::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a0fb443165d257ac17fc8cf5bc870404d",tooltip="Inicializa a interação com o utilizador."];
+  Node5 -> Node4 [id="edge16_Node000005_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node6 [id="edge17_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip="Inicializa a interação com o utilizador."];
+  Node6 -> Node4 [id="edge18_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node7 [id="edge19_Node000002_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
+  Node7 -> Node4 [id="edge20_Node000007_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node8 [id="edge21_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="CPuzzle8::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a06d2a8f5d7e3670eb6ee75d7a72b0265",tooltip="Inicializa a interação com o utilizador."];
+  Node8 -> Node4 [id="edge22_Node000008_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -53,7 +53,6 @@ var classTProcuraConstrutiva =
     [ "MostrarSolucao", "group__RedefinicaoOpcional.html#ga74b4c5766a2b65bdb4c3019523c1508f", null ],
     [ "MostrarTorneio", "classTProcuraConstrutiva.html#a12b8afb0fe836f489ada61cb33eb5dee", null ],
     [ "NovaLinha", "classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32", null ],
-    [ "NovoValor", "classTProcuraConstrutiva.html#a47abc151fcdd67c126b99672870d7dca", null ],
     [ "ObjetivoAlcancado", "classTProcuraConstrutiva.html#a8e7879e0ac12522e0eedf3d3d365e51c", null ],
     [ "ObjetivoAlcancado", "classTProcuraConstrutiva.html#a18331ff4fccaf78df8bd3656357e9e75", null ],
     [ "Parar", "group__RedefinicaoOpcional.html#gaed4543b865993696a193d101e925b5b1", null ],

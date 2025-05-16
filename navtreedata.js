@@ -25,23 +25,25 @@
 var NAVTREE =
 [
   [ "TProcuraConstrutiva", "index.html", [
-    [ "Sumário", "index.html#autotoc_md6", null ],
-    [ "Sobre o Projeto", "index.html#autotoc_md7", null ],
-    [ "Estado do Projeto", "index.html#autotoc_md8", null ],
-    [ "Funcionalidades", "index.html#autotoc_md9", null ],
-    [ "Instalação e Uso", "index.html#autotoc_md10", null ],
-    [ "Exploração do Espaço de Estados e Testes", "index.html#autotoc_md11", [
-      [ "Clonando o Repositório", "index.html#autotoc_md12", null ]
+    [ "Sumário", "index.html#autotoc_md26", null ],
+    [ "Sobre o Projeto", "index.html#autotoc_md27", null ],
+    [ "Estado do Projeto", "index.html#autotoc_md28", null ],
+    [ "Funcionalidades", "index.html#autotoc_md29", null ],
+    [ "Instalação e Uso", "index.html#autotoc_md30", null ],
+    [ "Exploração do Espaço de Estados e Testes", "index.html#autotoc_md31", [
+      [ "Clonando o Repositório", "index.html#autotoc_md32", null ]
     ] ],
-    [ "Licença", "index.html#autotoc_md13", null ],
+    [ "Licença", "index.html#autotoc_md33", null ],
     [ "Execução de exemplo", "execucao_exemplo.html", null ],
+    [ "Teste 1 - Exploração do problema artificial", "teste1.html", null ],
+    [ "Teste Aspirador", "teste_aspirador.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
@@ -62,8 +64,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"ProblemaArtificial_8cpp.html",
-"index.html#autotoc_md12"
+"Aspirador_8cpp.html",
+"classTVector.html#a7d85501c7c293a9aaa2beffa8a7f9c6f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

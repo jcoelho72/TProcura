@@ -1,0 +1,125 @@
+\doxysection{Particao.\+h}
+\hypertarget{Particao_8h_source}{}\label{Particao_8h_source}\index{Teste/Particao.h@{Teste/Particao.h}}
+\mbox{\hyperlink{Particao_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../TProcuraConstrutiva.h"{}}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00011}\mbox{\hyperlink{classCParticao}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCParticao}{CParticao}}\ :}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00014}00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00015}00015\ \ \ \ \ \mbox{\hyperlink{classCParticao_acf81ec08aa6e2c81adbc6e8c3c8ecf79}{CParticao}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{classCParticao_a28e058d1acef74690ec638cc69e968d1}{\string~CParticao}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ estrutura\ de\ dados\ (números\ a\ colocar,\ números\ colocados\ em\ cada\ lado,\ e\ total\ de\ cada\ lado)}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00019}\mbox{\hyperlink{classCParticao_afce654c064d563f0cb92d180a84bdcaf}{00019}}\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ \mbox{\hyperlink{classCParticao_a5a49aee7966f84ac5456041a359aab89}{numeros}},\ \mbox{\hyperlink{classCParticao_a17bdce6d6c592f7139309cbe315e70c1}{esquerda}},\ \mbox{\hyperlink{classCParticao_afce654c064d563f0cb92d180a84bdcaf}{direita}};}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00020}\mbox{\hyperlink{classCParticao_a8c4d8befbbe3703930b6922b7182b30c}{00020}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCParticao_ac8e1d8b71df06957820ecde534d22bd9}{totalEsquerda}},\ \mbox{\hyperlink{classCParticao_a8c4d8befbbe3703930b6922b7182b30c}{totalDireita}};}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Metodos\ virtuais\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*\ \mbox{\hyperlink{classCParticao_aa50c7d31c22b1baa8ecb15b2841e2854}{Duplicar}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00024}\mbox{\hyperlink{classCParticao_a3588b257c61040424c7c78b8140b2bed}{00024}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_a3588b257c61040424c7c78b8140b2bed}{Copiar}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*objecto)\ \{}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{TProcuraConstrutiva::Copiar}}(objecto);}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCParticao_a5a49aee7966f84ac5456041a359aab89}{numeros}}\ =\ ((\mbox{\hyperlink{classCParticao}{CParticao}}*)objecto)-\/>numeros;}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCParticao_a17bdce6d6c592f7139309cbe315e70c1}{esquerda}}\ =\ ((\mbox{\hyperlink{classCParticao}{CParticao}}*)objecto)-\/>esquerda;}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCParticao_afce654c064d563f0cb92d180a84bdcaf}{direita}}\ =\ ((\mbox{\hyperlink{classCParticao}{CParticao}}*)objecto)-\/>direita;}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCParticao_ac8e1d8b71df06957820ecde534d22bd9}{totalEsquerda}}\ =\ ((\mbox{\hyperlink{classCParticao}{CParticao}}*)objecto)-\/>totalEsquerda;}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCParticao_a8c4d8befbbe3703930b6922b7182b30c}{totalDireita}}\ =\ ((\mbox{\hyperlink{classCParticao}{CParticao}}*)objecto)-\/>totalDireita;}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_ac7bddec07a5f2d637785c13b32f2a4c5}{SolucaoVazia}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_a5c6104354972acf2f6ed3d8ff7a8b98c}{Sucessores}}(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&\ sucessores);}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00034}\mbox{\hyperlink{classCParticao_a8f49dd653c0b56e3da7ec3664611cd5f}{00034}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCParticao_a8f49dd653c0b56e3da7ec3664611cd5f}{SolucaoCompleta}}(\textcolor{keywordtype}{void})\ \{\ }
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCParticao_a5a49aee7966f84ac5456041a359aab89}{numeros}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ ==\ 0\ \&\&\ \mbox{\hyperlink{classCParticao_ac8e1d8b71df06957820ecde534d22bd9}{totalEsquerda}}\ ==\ \mbox{\hyperlink{classCParticao_a8c4d8befbbe3703930b6922b7182b30c}{totalDireita}};}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_aa33970025179d4c6e3177c0fd518dadb}{Debug}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00038}\mbox{\hyperlink{classCParticao_a9a3087a5b0bd33ff2fabf2aef66c73a9}{00038}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_a9a3087a5b0bd33ff2fabf2aef66c73a9}{MostrarSolucao}}(\textcolor{keywordtype}{void})\ \{\ \mbox{\hyperlink{classCParticao_aa33970025179d4c6e3177c0fd518dadb}{Debug}}();\ \}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classCParticao_a1cd10748ebedbe43fc5e18969a112448}{Acao}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*\ sucessor);}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_aa4d328b9944991f3fc52ce0726111865}{TesteManual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome);}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_a51dc6a3cb2696010714aec34a42df97d}{Codifica}}(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}]);}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00042}00042\ \};}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00044}00044\ \textcolor{comment}{/*\ Testes\ nas\ procuras\ cegas\ (instâncias\ 20\ a\ 29)}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00045}00045\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00046}00046\ \textcolor{comment}{\ ID\ |conf|\ custo(g)\ |\ \ expansões\ |\ \ gerações\ |\ avaliações\ |\ tempo(s)\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00047}00047\ \textcolor{comment}{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00048}00048\ \textcolor{comment}{\ 20\ |\ \ 1\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ 163979\ |\ \ \ \ 228706\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,249s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00049}00049\ \textcolor{comment}{\ 21\ |\ \ 1\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ 97485\ |\ \ \ \ 129560\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,134s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00050}00050\ \textcolor{comment}{\ 22\ |\ \ 1\ |\ \ \ \ \ \ \ 21\ |\ \ \ \ \ 179777\ |\ \ \ \ 243832\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,231s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00051}00051\ \textcolor{comment}{\ 23\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ 384627\ |\ \ \ \ 384626\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,374s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00052}00052\ \textcolor{comment}{\ 24\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ 1226523\ |\ \ \ 1226522\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 1,398s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00053}00053\ \textcolor{comment}{\ 25\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ 3461151\ |\ \ \ 3461150\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 4,136s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00054}00054\ \textcolor{comment}{\ 26\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ 3731307\ |\ \ \ 3731306\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 4,743s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00055}00055\ \textcolor{comment}{\ 27\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ 8559764\ |\ \ 11039290\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 15,341s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00056}00056\ \textcolor{comment}{\ 28\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ 7480665\ |\ \ \ 9616932\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 14,188s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00057}00057\ \textcolor{comment}{\ 29\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ 7859585\ |\ \ 10463074\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 14,493s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00058}00058\ \textcolor{comment}{\ 20\ |\ \ 2\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ 432100\ |\ \ \ \ 660794\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,408s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00059}00059\ \textcolor{comment}{\ 21\ |\ \ 2\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ 274472\ |\ \ \ \ 404018\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,244s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00060}00060\ \textcolor{comment}{\ 22\ |\ \ 2\ |\ \ \ \ \ \ \ 21\ |\ \ \ \ \ 521564\ |\ \ \ \ 765382\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,504s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00061}00061\ \textcolor{comment}{\ 23\ |\ \ 2\ |\ não\ res.\ |\ \ \ 13574376\ |\ \ 13958958\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 10,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00062}00062\ \textcolor{comment}{\ 24\ |\ \ 2\ |\ não\ res.\ |\ \ \ 13623338\ |\ \ 14849840\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 10,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00063}00063\ \textcolor{comment}{\ 25\ |\ \ 2\ |\ não\ res.\ |\ \ \ 11727455\ |\ \ 15188590\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 10,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00064}00064\ \textcolor{comment}{\ 26\ |\ \ 2\ |\ não\ res.\ |\ \ \ 11099210\ |\ \ 14830500\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 10,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00065}00065\ \textcolor{comment}{\ 27\ |\ \ 2\ |\ não\ res.\ |\ \ \ \ 9276509\ |\ \ 15074684\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 10,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00066}00066\ \textcolor{comment}{\ 28\ |\ \ 2\ |\ não\ res.\ |\ \ \ \ 9712819\ |\ \ 15076786\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 10,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00067}00067\ \textcolor{comment}{\ 29\ |\ \ 2\ |\ não\ res.\ |\ \ \ \ 9693709\ |\ \ 14481126\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 10,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00068}00068\ \textcolor{comment}{\ 20\ |\ \ 3\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ \ \ 184\ |\ \ \ \ \ \ \ 192\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00069}00069\ \textcolor{comment}{\ 21\ |\ \ 3\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ \ \ \ 33\ |\ \ \ \ \ \ \ \ 40\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00070}00070\ \textcolor{comment}{\ 22\ |\ \ 3\ |\ \ \ \ \ \ \ 21\ |\ \ \ \ \ \ \ \ \ 34\ |\ \ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00071}00071\ \textcolor{comment}{\ 23\ |\ \ 3\ |\ sem\ sol.\ |\ \ \ \ \ 384627\ |\ \ \ \ 384626\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,218s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00072}00072\ \textcolor{comment}{\ 24\ |\ \ 3\ |\ sem\ sol.\ |\ \ \ \ 1226523\ |\ \ \ 1226522\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,814s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00073}00073\ \textcolor{comment}{\ 25\ |\ \ 3\ |\ sem\ sol.\ |\ \ \ \ 3461151\ |\ \ \ 3461150\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 2,372s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00074}00074\ \textcolor{comment}{\ 26\ |\ \ 3\ |\ sem\ sol.\ |\ \ \ \ 3731307\ |\ \ \ 3731306\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 2,658s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00075}00075\ \textcolor{comment}{\ 27\ |\ \ 3\ |\ \ \ \ \ \ \ 27\ |\ \ \ \ \ \ \ \ \ 45\ |\ \ \ \ \ \ \ \ 54\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00076}00076\ \textcolor{comment}{\ 28\ |\ \ 3\ |\ \ \ \ \ \ \ 27\ |\ \ \ \ \ \ \ \ \ 86\ |\ \ \ \ \ \ \ \ 96\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00077}00077\ \textcolor{comment}{\ 29\ |\ \ 3\ |\ \ \ \ \ \ \ 29\ |\ \ \ \ \ \ \ \ \ 50\ |\ \ \ \ \ \ \ \ 58\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00078}00078\ \textcolor{comment}{\ 20\ |\ \ 4\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ \ \ 148\ |\ \ \ \ \ \ \ 155\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00079}00079\ \textcolor{comment}{\ 21\ |\ \ 4\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ \ \ \ 33\ |\ \ \ \ \ \ \ \ 39\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00080}00080\ \textcolor{comment}{\ 22\ |\ \ 4\ |\ \ \ \ \ \ \ 21\ |\ \ \ \ \ \ \ \ \ 34\ |\ \ \ \ \ \ \ \ 41\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00081}00081\ \textcolor{comment}{\ 23\ |\ \ 4\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1008\ |\ \ \ \ \ \ 1007\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,002s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00082}00082\ \textcolor{comment}{\ 24\ |\ \ 4\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1389\ |\ \ \ \ \ \ 1388\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00083}00083\ \textcolor{comment}{\ 25\ |\ \ 4\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1874\ |\ \ \ \ \ \ 1873\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,004s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00084}00084\ \textcolor{comment}{\ 26\ |\ \ 4\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1473\ |\ \ \ \ \ \ 1472\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,002s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00085}00085\ \textcolor{comment}{\ 27\ |\ \ 4\ |\ \ \ \ \ \ \ 27\ |\ \ \ \ \ \ \ \ \ 45\ |\ \ \ \ \ \ \ \ 53\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00086}00086\ \textcolor{comment}{\ 28\ |\ \ 4\ |\ \ \ \ \ \ \ 27\ |\ \ \ \ \ \ \ \ \ 81\ |\ \ \ \ \ \ \ \ 90\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00087}00087\ \textcolor{comment}{\ 29\ |\ \ 4\ |\ \ \ \ \ \ \ 29\ |\ \ \ \ \ \ \ \ \ 50\ |\ \ \ \ \ \ \ \ 57\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00088}00088\ \textcolor{comment}{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\ resolvidas}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00089}00089\ \textcolor{comment}{Total\ \ 1\ |\ \ \ \ \ \ \ 61\ |\ \ \ 33144863\ |\ \ 40524998\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 55,287s\ |\ \ \ 7}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00090}00090\ \textcolor{comment}{Total\ \ 2\ |\ \ \ \ \ \ \ 61\ |\ \ \ 79935552\ |\ 105290678\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 71,163s\ |\ \ \ 3}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00091}00091\ \textcolor{comment}{Total\ \ 3\ |\ \ \ \ \ \ 144\ |\ \ \ \ 8804040\ |\ \ \ 8804086\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 6,064s\ |\ \ 10}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00092}00092\ \textcolor{comment}{Total\ \ 4\ |\ \ \ \ \ \ 144\ |\ \ \ \ \ \ \ 6135\ |\ \ \ \ \ \ 6175\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,009s\ |\ \ 10}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00093}00093\ \textcolor{comment}{Torneio\ (\#instâncias\ melhores):}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00094}00094\ \textcolor{comment}{\ |-\/01-\/|-\/02-\/|-\/03-\/|-\/04-\/|}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00095}00095\ \textcolor{comment}{\ 1\ \ \ \ |\ \ 7\ |-\/10\ |-\/10\ |-\/13}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00096}00096\ \textcolor{comment}{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00097}00097\ \textcolor{comment}{\ 2\ -\/7\ |\ \ \ \ |-\/10\ |-\/10\ |-\/27}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00098}00098\ \textcolor{comment}{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00099}00099\ \textcolor{comment}{\ 3\ 10\ |\ 10\ |\ \ \ \ |\ -\/4\ |\ 16}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00100}00100\ \textcolor{comment}{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00101}00101\ \textcolor{comment}{\ 4\ 10\ |\ 10\ |\ \ 4\ |\ \ \ \ |\ 24}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00102}00102\ \textcolor{comment}{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00103}00103\ \textcolor{comment}{Configuração\ 1}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00104}00104\ \textcolor{comment}{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00105}00105\ \textcolor{comment}{P5(Tempo):\ 10\ |\ P6(Limite):\ 0\ |\ P7(Repetidos):\ ignorar\ |\ P8(pesoAStar):\ 100}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00106}00106\ \textcolor{comment}{P9(ruido):\ 0\ |\ P10(baralhar):\ 0\ |\ P11(Max.\ Avaliações):\ 1000000\ |\ P12(Move\ Primeiro):\ Sim}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00107}00107\ \textcolor{comment}{P13(População):\ 20\ |\ P14(Prob.\ Mutação):\ 50\ |\ P15(Dist.\ Mínima):\ 0}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00108}00108\ \textcolor{comment}{Configuração\ 2}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00109}00109\ \textcolor{comment}{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00110}00110\ \textcolor{comment}{P5(Tempo):\ 10\ |\ P6(Limite):\ 0\ |\ P7(Repetidos):\ ignorar\ |\ P8(pesoAStar):\ 100}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00111}00111\ \textcolor{comment}{P9(ruido):\ 0\ |\ P10(baralhar):\ 0\ |\ P11(Max.\ Avaliações):\ 1000000\ |\ P12(Move\ Primeiro):\ Sim}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00112}00112\ \textcolor{comment}{P13(População):\ 20\ |\ P14(Prob.\ Mutação):\ 50\ |\ P15(Dist.\ Mínima):\ 0}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00113}00113\ \textcolor{comment}{Configuração\ 3}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00114}00114\ \textcolor{comment}{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00115}00115\ \textcolor{comment}{P5(Tempo):\ 10\ |\ P6(Limite):\ -\/1\ |\ P7(Repetidos):\ ignorar\ |\ P8(pesoAStar):\ 100}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00116}00116\ \textcolor{comment}{P9(ruido):\ 0\ |\ P10(baralhar):\ 0\ |\ P11(Max.\ Avaliações):\ 1000000\ |\ P12(Move\ Primeiro):\ Sim}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00117}00117\ \textcolor{comment}{P13(População):\ 20\ |\ P14(Prob.\ Mutação):\ 50\ |\ P15(Dist.\ Mínima):\ 0}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00118}00118\ \textcolor{comment}{Configuração\ 4}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00119}00119\ \textcolor{comment}{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00120}00120\ \textcolor{comment}{P5(Tempo):\ 10\ |\ P6(Limite):\ -\/1\ |\ P7(Repetidos):\ gerados\ |\ P8(pesoAStar):\ 100}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00121}00121\ \textcolor{comment}{P9(ruido):\ 0\ |\ P10(baralhar):\ 0\ |\ P11(Max.\ Avaliações):\ 1000000\ |\ P12(Move\ Primeiro):\ Sim}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00122}00122\ \textcolor{comment}{P13(População):\ 20\ |\ P14(Prob.\ Mutação):\ 50\ |\ P15(Dist.\ Mínima):\ 0}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00123}00123\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00124}00124\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Particao_8h_source_l00125}00125\ \textcolor{comment}{*/}}
+
+\end{DoxyCode}

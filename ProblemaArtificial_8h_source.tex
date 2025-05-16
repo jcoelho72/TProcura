@@ -23,52 +23,46 @@
 \DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ \ \ nesse\ caso\ a\ heurística\ não\ pode\ ultrapassar\ o\ custo\ desse\ filho}}
 \DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00020}\mbox{\hyperlink{ProblemaArtificial_8h_a165f5335ed3a7555912f3cc11f54d00d}{00020}}\ \}\ \mbox{\hyperlink{ProblemaArtificial_8h_a165f5335ed3a7555912f3cc11f54d00d}{TParametrosEspaco}};}
 \DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00024}00024\ \textcolor{comment}{//\ \ CProblemaArtificial\ class}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00026}00026\ \textcolor{comment}{//\ \ Author:\ Jose\ Coelho}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00027}00027\ \textcolor{comment}{//\ \ Last\ revision:\ 2025-\/05-\/12}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00028}00028\ \textcolor{comment}{//\ \ Description:}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00029}00029\ \textcolor{comment}{//\ \ \ \ Implementa\ um\ problema\ artificial,\ para\ teste\ da\ procura\ construtiva}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00031}\mbox{\hyperlink{classCProblemaArtificial}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCProblemaArtificial}{CProblemaArtificial}}\ :}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00033}00033\ \{}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00034}00034\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a1af4e20c9e5ea2aa1ebbb63945b0d1a7}{CProblemaArtificial}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a5a3353d4f263cdaa090237fe245f532a}{\string~CProblemaArtificial}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ dados\ da\ instância}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00039}\mbox{\hyperlink{classCProblemaArtificial_afbedcdbf9cecd121f162699d5f028a73}{00039}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structSParametrosEspaco}{TParametrosEspaco}}\ \mbox{\hyperlink{classCProblemaArtificial_afbedcdbf9cecd121f162699d5f028a73}{espaco}};}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ estrutura\ de\ dados\ (suficiente\ um\ inteiro)}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00042}\mbox{\hyperlink{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}{00042}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}{id}};\ \textcolor{comment}{//\ número\ arbitrário\ para\ representar\ este\ estado,\ será\ o\ ID\ do\ estado,\ gerado\ aleatóriamente}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00043}\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{00043}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nivel}};\ \textcolor{comment}{//\ nível\ a\ que\ o\ estado\ foi\ gerado}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00044}\mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{00044}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{heur}};\ \textcolor{comment}{//\ valor\ gerado\ para\ a\ heurística,\ conforme\ os\ parâmetros\ da\ instância}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ Metodos\ virtuais\ redefinidos}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*\ \mbox{\hyperlink{classCProblemaArtificial_ada920ffe8fe97913ef87196864618a48}{Duplicar}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00048}\mbox{\hyperlink{classCProblemaArtificial_aeaf471b3eb04012d800593df6a0c9e45}{00048}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_aeaf471b3eb04012d800593df6a0c9e45}{Copiar}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ objecto)\ \{}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial}{CProblemaArtificial}}\&\ obj\ =\ *((\mbox{\hyperlink{classCProblemaArtificial}{CProblemaArtificial}}*)objecto);}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ obj.\mbox{\hyperlink{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}{id}};}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nivel}}\ =\ obj.\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nivel}};}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{heur}}\ =\ obj.\mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{heur}};}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00053}00053\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_ab8e6af484d17e145363d152536057697}{SolucaoVazia}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c}{Sucessores}}(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&\ sucessores);}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCProblemaArtificial_a7f6dc20d490103e630797f8d6cfac76b}{SolucaoCompleta}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_a17e7a8290910ffd1fe8a370228c6024b}{Debug}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{TesteManual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome);}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCProblemaArtificial_a5243c313f30ce2fe40f0d9d274cd5d8a}{Distinto}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ estado);}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_ab8d1a6b1cac40764804e09a3ff110b6e}{Codifica}}(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}]);}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_acefa1963a1703a5f092c391a13b37ff5}{Heuristica}}(\textcolor{keywordtype}{void});}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{ResetParametros}}();}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classCProblemaArtificial_ae20eec965380aa787641d406b6cafe81}{Acao}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*\ sucessor);}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00030}\mbox{\hyperlink{classCProblemaArtificial}{00030}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCProblemaArtificial}{CProblemaArtificial}}\ :}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00033}00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a1af4e20c9e5ea2aa1ebbb63945b0d1a7}{CProblemaArtificial}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a5a3353d4f263cdaa090237fe245f532a}{\string~CProblemaArtificial}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ dados\ da\ instância}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00038}\mbox{\hyperlink{classCProblemaArtificial_afbedcdbf9cecd121f162699d5f028a73}{00038}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structSParametrosEspaco}{TParametrosEspaco}}\ \mbox{\hyperlink{classCProblemaArtificial_afbedcdbf9cecd121f162699d5f028a73}{espaco}};}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ estrutura\ de\ dados\ (suficiente\ um\ inteiro)}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00041}\mbox{\hyperlink{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}{00041}}\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}{id}};\ \textcolor{comment}{//\ número\ arbitrário\ para\ representar\ este\ estado,\ será\ o\ ID\ do\ estado,\ gerado\ aleatóriamente}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00042}\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{00042}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nivel}};\ \textcolor{comment}{//\ nível\ a\ que\ o\ estado\ foi\ gerado}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00043}\mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{00043}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{heur}};\ \textcolor{comment}{//\ valor\ gerado\ para\ a\ heurística,\ conforme\ os\ parâmetros\ da\ instância}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ Metodos\ virtuais\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*\ \mbox{\hyperlink{classCProblemaArtificial_ada920ffe8fe97913ef87196864618a48}{Duplicar}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00047}\mbox{\hyperlink{classCProblemaArtificial_aeaf471b3eb04012d800593df6a0c9e45}{00047}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_aeaf471b3eb04012d800593df6a0c9e45}{Copiar}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ objecto)\ \{}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial}{CProblemaArtificial}}\&\ obj\ =\ *((\mbox{\hyperlink{classCProblemaArtificial}{CProblemaArtificial}}*)objecto);}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ obj.\mbox{\hyperlink{classCProblemaArtificial_a14306822eb3720451bed5666d518b629}{id}};}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nivel}}\ =\ obj.\mbox{\hyperlink{classCProblemaArtificial_a43f8923ae24ecd1e2349e2379e66d51f}{nivel}};}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{heur}}\ =\ obj.\mbox{\hyperlink{classCProblemaArtificial_a35a30f5e4d76e045daca3d81abd9b407}{heur}};}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_ab8e6af484d17e145363d152536057697}{SolucaoVazia}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c}{Sucessores}}(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&\ sucessores);}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCProblemaArtificial_a7f6dc20d490103e630797f8d6cfac76b}{SolucaoCompleta}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_a17e7a8290910ffd1fe8a370228c6024b}{Debug}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{TesteManual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome);}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCProblemaArtificial_a5243c313f30ce2fe40f0d9d274cd5d8a}{Distinto}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ estado);}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_ab8d1a6b1cac40764804e09a3ff110b6e}{Codifica}}(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}]);}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCProblemaArtificial_acefa1963a1703a5f092c391a13b37ff5}{Heuristica}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{ResetParametros}}();}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00063}00063\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classCProblemaArtificial_ae20eec965380aa787641d406b6cafe81}{Acao}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*\ sucessor);}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00064}00064\ }
 \DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00067}00067\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00068}00068\ \ \ \ \ \textcolor{comment}{//\ carrega\ uma\ instância,\ das\ previamente\ definidas}}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{void}\ CarregaInstancia();}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00070}00070\ \};}
-\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00066}00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ carrega\ uma\ instância,\ das\ previamente\ definidas}}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00068}00068\ \ \ \ \ \textcolor{keywordtype}{void}\ CarregaInstancia();}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00069}00069\ \};}
+\DoxyCodeLine{\Hypertarget{ProblemaArtificial_8h_source_l00070}00070\ }
 
 \end{DoxyCode}

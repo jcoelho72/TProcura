@@ -6,5 +6,5 @@ var searchData=
   ['remove_3',['Remove',['../classTVector.html#a8b6dd0098ec1c4f1291e003665eeeee8',1,'TVector']]],
   ['replace_4',['Replace',['../classTVector.html#a4a036a722efb403abd16c48d1d5dabdb',1,'TVector']]],
   ['reset_5',['Reset',['../classTVector.html#a760d08c7094ac5563f8d969f9d9e32a4',1,'TVector']]],
-  ['resetparametros_6',['resetparametros',['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../group__RedefinicaoSugerida.html#gacb15562d8776f4d162001d385ebc13a0',1,'TProcuraConstrutiva::ResetParametros()']]]
+  ['resetparametros_6',['resetparametros',['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3',1,'CPuzzle8::ResetParametros()'],['../group__RedefinicaoSugerida.html#gacb15562d8776f4d162001d385ebc13a0',1,'TProcuraConstrutiva::ResetParametros()']]]
 ];

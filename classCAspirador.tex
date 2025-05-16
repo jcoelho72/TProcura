@@ -1,0 +1,768 @@
+\doxysection{CAspirador Class Reference}
+\hypertarget{classCAspirador}{}\label{classCAspirador}\index{CAspirador@{CAspirador}}
+
+
+Representa um estado no problema do Aspirador.  
+
+
+
+
+{\ttfamily \#include $<$Aspirador.\+h$>$}
+
+
+
+Inheritance diagram for CAspirador\+:
+% FIG 0
+
+
+Collaboration diagram for CAspirador\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCAspirador_a52673724fb2175563cc6838e6ec8f0a5}{CAspirador}} (void)
+\item 
+\mbox{\hyperlink{classCAspirador_aa2b3375bd71b340d7834978e8c8ed951}{\texorpdfstring{$\sim$}{\string~}\+CAspirador}} (void)
+\item 
+\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCAspirador_a3c9571f17ca0cbb074943ddd9bd27587}{Duplicar}} (void)
+\begin{DoxyCompactList}\small\item\em Cria um objecto que é uma cópia deste. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCAspirador_a3785ad3b80ecc08711a70d9920e0bcb9}{Copiar}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}objecto)
+\item 
+void \mbox{\hyperlink{classCAspirador_afc7cdfece73d364d74bca6bab1c899c1}{Solucao\+Vazia}} (void)
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCAspirador_ac28dba7dd58b76f9d16f44ebac66fab8}{Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCAspirador_a80fca067d471172af5111b16e3880bf3}{Solucao\+Completa}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica se o estado actual é objectivo (é uma solução completa) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}{Debug}} (void)
+\begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCAspirador_a602bee168dd45c680b2a10bdef57a5a4}{Acao}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}sucessor)
+\item 
+void \mbox{\hyperlink{classCAspirador_a718c8187439940dec18a46a9e9e024e3}{Teste\+Manual}} (const char \texorpdfstring{$\ast$}{*}nome)
+\begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCAspirador_a9279c18880569e58bc26932979d58058}{Distinto}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado)
+\begin{DoxyCompactList}\small\item\em Verifica se o estado actual distinto do fornecido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCAspirador_a856e23c30c70be5345f56979b27fdc1d}{Codifica}} (uint64\+\_\+t estado\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Codifica o estado para um vetor de inteiros de 64 bits. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCAspirador_ada888731b2cca0a8bfa410e9bf4d188a}{Heuristica}} (void)
+\begin{DoxyCompactList}\small\item\em Função para calcular quanto falta para o final, o valor da heurística. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcuraConstrutiva_a13799910c11d9ab8585bec576becc8a5}{TProcura\+Construtiva}} (void)
+\item 
+virtual \mbox{\hyperlink{classTProcuraConstrutiva_aa19cbee6023bd0ff01c61c6d6db2e2ae}{\texorpdfstring{$\sim$}{\string~}\+TProcura\+Construtiva}} (void)
+\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} objecto)
+\begin{DoxyCompactList}\small\item\em Fica com uma cópia do objecto. \end{DoxyCompactList}\item 
+virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__RedefinicaoSugerida_gacbc6e34f3a403d26d806f37b5cd739f6}{Acao}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} sucessor)
+\begin{DoxyCompactList}\small\item\em Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoSugerida_gacb15562d8776f4d162001d385ebc13a0}{Reset\+Parametros}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa os parametros. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_gacccf4fbb52126ba19bfc456c0c6d5214}{Acao}} (const char \texorpdfstring{$\ast$}{*}acao)
+\begin{DoxyCompactList}\small\item\em Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_gaed4543b865993696a193d101e925b5b1}{Parar}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoOpcional_ga74b4c5766a2b65bdb4c3019523c1508f}{Mostrar\+Solucao}} (void)
+\begin{DoxyCompactList}\small\item\em Mostrar solução, seja um caminho ou o próprio estado. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo}} ()
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{group__RedefinicaoOpcional_gab2fca28035f165ce7c1d40acbfc8c971}{Teste\+Empirico}} (int inicio=-\/1, int fim=-\/1, bool mostrar\+Solucoes=true)
+\begin{DoxyCompactList}\small\item\em Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura em largura primeiro, algoritmo cego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura por custo uniforme, algoritmo cego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{Profundidade\+Primeiro}} (int nivel=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura em profundidade primeiro, algoritmo cego. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro}} (int nivel=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura melhor primeiro, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{AStar}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura A\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}{IDAStar}} (int upper\+Bound=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound}} (int upper\+Bound=0)
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{Limpar\+Estatisticas}} (clock\+\_\+t \&inicio)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_af2fbc46bcca99f48e42cdbc62eecc1fd}{Finalizar\+Corrida}} (clock\+\_\+t inicio)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}{Lower\+Bound}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha}} (bool tudo=true)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ char $>$ \mbox{\hyperlink{classCAspirador_ac118e781b7b1296f09d5aec94560b00e}{salas}}
+\item 
+int \mbox{\hyperlink{classCAspirador_a6b4d9d1a1657ada0d888d23392c9826b}{aspirador}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisEstado_ga70de69abaeaa64262d4bd042ef01e62c}{pai}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o estado pai, na árvore de procura. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}}
+\begin{DoxyCompactList}\small\item\em Custo total acumulado desde o estado inicial. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}
+\begin{DoxyCompactList}\small\item\em Estimativa para o custo até um estado objetivo, se disponível. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df}{Libertar\+Vector}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&vector, int excepto=-\/1, int maior\+Que=-\/1)
+\item 
+static int \mbox{\hyperlink{classTProcuraConstrutiva_a47abc151fcdd67c126b99672870d7dca}{Novo\+Valor}} (const char \texorpdfstring{$\ast$}{*}prompt)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}} = \{ NULL,1,1,1, NULL, NULL \}
+\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em \doxylink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}
+\begin{DoxyCompactList}\small\item\em Parâmetros a serem utilizados na configuração atual. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga80c8e869e8ac8d64820ce8570e44cc8e}{configuracoes}}
+\begin{DoxyCompactList}\small\item\em Conjuntos de configurações para teste empírico. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga6185647765b723a3581b5541722e496f}{geracoes}} = 0
+\begin{DoxyCompactList}\small\item\em Número total de gerações realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}} =0
+\begin{DoxyCompactList}\small\item\em Número total de expansões realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga1ce9b620e165ff360003cf0c21101470}{avaliacoes}} =0
+\begin{DoxyCompactList}\small\item\em Número total de avaliações realizadas na procura. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}
+\begin{DoxyCompactList}\small\item\em Solução retornada pela procura (os estados devem ser libertados). \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoria\+Esgotada}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicando problemas de memória esgotada. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisGlobais_gadb0d41114016ec069543b3494b0e0196}{solucao}} =NULL
+\begin{DoxyCompactList}\small\item\em Estado objetivo encontrado, retornado pela procura (deve ser libertado). \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga1af840b6ec9c04ce7d4c8849346441bd}{lower\+Bound}} = 0
+\begin{DoxyCompactList}\small\item\em Valor mínimo que a solução pode apresentar, obtido pela procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanho\+Codificado}} = \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}
+\begin{DoxyCompactList}\small\item\em Número de inteiros de 64 bits utilizados para codificar um objeto (≤ OBJETO\+\_\+\+HASHTABLE). \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ unsigned char $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}
+\item 
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}{espacos\+Ramo}} =2
+\item 
+static clock\+\_\+t \mbox{\hyperlink{group__VariaveisGlobais_gaf7efa04a418f94ee4bad1392e69e357d}{instante\+Final}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ad02feccb0f347d9a475ed1b883cc12aa}{Debug\+Expansao}} (int sucessor, int sucessores, bool duplo=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a042ab47715ba45d53a86413415ea95fd}{Debug\+Corte}} (int sucessores=-\/1, bool duplo=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a3cb063790a46d8fac87044c7c68c53b3}{Debug\+Solucao}} (bool continuar=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a6962c0cf7350a211ae74b00768d9c232}{Debug\+Chamada}} (void)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a8a25d942dd9c34c27ad92e3e36177f2f}{Debug\+Passo}} (void)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a08aa14ddc895426b2ce3df4d763cbbd7}{Debug\+Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ae464aeb16628493409e4d88cede9a9e7}{Debug\+Iteracao}} (int iteracao)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a3c5b2743566153ca9d45e875106e548b}{Debug\+Estado}} (int id=-\/1, int \mbox{\hyperlink{group__VariaveisEstado_ga70de69abaeaa64262d4bd042ef01e62c}{pai}}=-\/1)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a1784cd5198a6cb0ae7ad763af9982120}{Debug\+Ramo}} (char \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}, char folha)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a8e7879e0ac12522e0eedf3d3d365e51c}{Objetivo\+Alcancado}} (int item, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&lista)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a18331ff4fccaf78df8bd3656357e9e75}{Objetivo\+Alcancado}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado, bool completa=true)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a2f648df694a20e7fcb688c9979f763fd}{Solucao\+Encontrada}} (bool continuar=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ab3d3ef92421595428a27deef2c3bb668}{Calcula\+Caminho}} (bool completa=true)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_aec0a667a7fda1ebe565ba13d6b02805a}{Verifica\+Limites}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}, int por\+Processar, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a640e74c9b6cd340761db671438ad679e}{Calcular\+Heuristicas}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores, \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}id=NULL, bool sort\+LB=false)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937}{Solucao\+Parcial}} (int i, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ab5639efca5e48b564a8bdd9ec23a8955}{Explorar\+Sucessores}} (bool jogo=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_aa2c53163dbc3e394abbd2bfbf70e29ca}{Editar\+Parametros}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a7e5329143aa8df478b68741d47fa6a7f}{Editar\+Configuracoes}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a9d4bc5b86186bcba9cbee82588ada2fb}{Mostrar\+Configuracoes}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}, int atual=-\/1)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a0729129ac5c4791ebd251bdd28e4a137}{Solicita\+Instancia}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_a1d844f9591ce201c48e38024a92887f4}{Tempo\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_a210ebf6bc971e86c845f7bbade1ca4c6}{Geracoes\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_ab0c0a5578bb6fce9ea175f1646871212}{Expansoes\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_ae69f7bb250c61cd3b73d85a3a2305600}{Avaliacoes\+Excedido}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9}{Mostrar\+Caminho}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_af74795a981510f72e0c7865cd758ab3b}{Mostra\+Parametros}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}=1, \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}id\+Parametros=NULL)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_ac7e1356d8cd516f18380d4f4c5730c2b}{Mostra\+Relatorio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56}{Dominio}} (int \&variavel, int min=INT\+\_\+\+MIN, int max=INT\+\_\+\+MAX)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a4c50b21dc4dc6a689af754dfce6e272f}{Configuracao\+Atual}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \&parametros, int operacao)
+\item 
+int \mbox{\hyperlink{classTProcuraConstrutiva_a8f3b2ddaa879df23c5c9921cdfff0dd8}{Melhor\+Resultado}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} base, \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} alternativa)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a589640c821d42dbcc476971995b511bf}{Calcula\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a12b8afb0fe836f489ada61cb33eb5dee}{Mostrar\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \&torneio, bool jogo=false)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a555a752a4e2bf6a0e5ba1454eeb16e38}{Barra\+Torneio}} (bool nomes)
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_adc31f777cf89c56571baedd4a48cea47}{Extrair\+Configuracao}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&extracao, int configuracao)
+\item 
+unsigned int \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{Hash}} ()
+\item 
+void \mbox{\hyperlink{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c}{Limpar\+HT}} ()
+\item 
+bool \mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{Existe\+HT}} ()
+\item 
+virtual void \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{Substituir\+HT}} (int indice)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+static uint64\+\_\+t \mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementos\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\+\_\+\+HASHTABLE}}\mbox{]}\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]}
+\item 
+static int \mbox{\hyperlink{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}{custo\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\+\_\+\+HASHTABLE}}\mbox{]}
+\item 
+static uint64\+\_\+t \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estado\+Cod\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um estado no problema do Aspirador. 
+
+Este problema consiste ter salas vizinhas, que podem estar sujas ou limpas. Pretende-\/se ter todas as salas limpas, sendo as ações de mover para a sala do lado, ou aspirar. 
+
+Definition at line \mbox{\hyperlink{Aspirador_8h_source_l00011}{11}} of file \mbox{\hyperlink{Aspirador_8h_source}{Aspirador.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCAspirador_a52673724fb2175563cc6838e6ec8f0a5}\label{classCAspirador_a52673724fb2175563cc6838e6ec8f0a5} 
+\index{CAspirador@{CAspirador}!CAspirador@{CAspirador}}
+\index{CAspirador@{CAspirador}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{CAspirador()}{CAspirador()}}
+{\footnotesize\ttfamily CAspirador\+::\+CAspirador (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{classCAspirador_aa2b3375bd71b340d7834978e8c8ed951}\label{classCAspirador_aa2b3375bd71b340d7834978e8c8ed951} 
+\index{CAspirador@{CAspirador}!````~CAspirador@{\texorpdfstring{$\sim$}{\string~}CAspirador}}
+\index{````~CAspirador@{\texorpdfstring{$\sim$}{\string~}CAspirador}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CAspirador()}{\string~CAspirador()}}
+{\footnotesize\ttfamily CAspirador\+::\texorpdfstring{$\sim$}{\string~}\+CAspirador (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCAspirador_a602bee168dd45c680b2a10bdef57a5a4}\label{classCAspirador_a602bee168dd45c680b2a10bdef57a5a4} 
+\index{CAspirador@{CAspirador}!Acao@{Acao}}
+\index{Acao@{Acao}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{Acao()}{Acao()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} CAspirador\+::\+Acao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}}]{sucessor }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+\Hypertarget{classCAspirador_a856e23c30c70be5345f56979b27fdc1d}\label{classCAspirador_a856e23c30c70be5345f56979b27fdc1d} 
+\index{CAspirador@{CAspirador}!Codifica@{Codifica}}
+\index{Codifica@{Codifica}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{Codifica()}{Codifica()}}
+{\footnotesize\ttfamily void CAspirador\+::\+Codifica (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{estado\mbox{[}\+OBJETO\+\_\+\+HASHTABLE\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Codifica o estado para um vetor de inteiros de 64 bits. 
+
+\begin{DoxyNote}{Note}
+Redefinição opcional. Necessário para identificação de estados repetidos por hashtable.
+\end{DoxyNote}
+As variáveis de estado devem ser compactadas no vetor de inteiros de 64 bits. Todos os estados codificados têm de ser distintos de 0. Estados distintos, têm de ficar com codificações distintas.
+
+Em diversos problemas, um mesmo estado pode ter múltiplas representações equivalentes. Por exemplo, se um conjunto de inteiros for um estado, este pode ser representado em vetor. No entanto a ordem é irrelevante, dado que é um conjunto. Assim não faz sentido guardar vários estados que sejam representações do mesmo estado. Há que normalizar o estado antes de o guardar, de modo a que seja dado como estado repetido, se uma das duas formas já tiver sido gerada. O exemplo do conjunto de inteiros, a normalização pode ser a ordenação do vetor, constituindo assim um estado único entre todas as formas que o conjunto pode ser representado em vetor. Problemas de tabuleiro, há simetrias que podem gerar várias versões da mesma posição.
+
+\begin{DoxyNote}{Note}
+Se a verificação de estados repetidos for baseada em hashtables, a superclasse chama este método dentro de {\ttfamily \doxylink{classCAspirador_ac28dba7dd58b76f9d16f44ebac66fab8}{Sucessores()}}. 
+
+Para otimizar o consumo de memória, são utilizadas hashtables com perdas. Se necessário pode alterar o tamanho da hashtable editando a macro TAMANHO\+\_\+\+HASHTABLE 
+
+a variável tamanho\+Codificado tem de ter o número de variáveis de 64 bits utilizadas, garantindo que o vetor estado\mbox{[}\mbox{]} não é acedido na posição tamanho\+Codificado ou superior.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCAspirador_afc7cdfece73d364d74bca6bab1c899c1}{Solucao\+Vazia()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Codifica(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ Vector<int>\ vetor;\ \textcolor{comment}{//\ assumindo\ neste\ exemplo\ que\ o\ estado\ é\ um\ vetor\ de\ inteiros\ pequenos}}
+\DoxyCodeLine{\ \ \ \ Normalizar(vetor);\ \textcolor{comment}{//\ o\ vetor\ tem\ várias\ formas,\ e\ agora\ é\ normalizado\ por\ uma\ função\ de\ CSubProblema}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{TProcuraConstrutiva::Codifica}}(estado);\ \textcolor{comment}{//\ chamar\ a\ superclasse\ após\ normalizar\ o\ estado}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ codificar\ números\ de\ 4\ bits,\ assumindo\ que\ os\ inteiros\ pequenos\ cabem\ em\ 4\ bits}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0,\ index\ =\ 0;\ i\ <\ vetor.Count();\ i++,\ index\ +=\ 4)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ estado[index\ >>\ 6]\ |=\ (uint64\_t)vetor[i]\ <<\ (index\ \&\ 63);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{classCAspirador_a3785ad3b80ecc08711a70d9920e0bcb9}\label{classCAspirador_a3785ad3b80ecc08711a70d9920e0bcb9} 
+\index{CAspirador@{CAspirador}!Copiar@{Copiar}}
+\index{Copiar@{Copiar}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{Copiar()}{Copiar()}}
+{\footnotesize\ttfamily void CAspirador\+::\+Copiar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}}]{objecto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8h_source_l00024}{24}} of file \mbox{\hyperlink{Aspirador_8h_source}{Aspirador.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}\label{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5} 
+\index{CAspirador@{CAspirador}!Debug@{Debug}}
+\index{Debug@{Debug}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{Debug()}{Debug()}}
+{\footnotesize\ttfamily void CAspirador\+::\+Debug (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Mostra o estado no ecrã, para debug. 
+
+\begin{DoxyNote}{Note}
+Redefinição opcional. Necessário para visualizar a procura, e explorar o espaço manualmente.
+\end{DoxyNote}
+Esta função deverá mostrar claramente o estado atual, em texto mas da forma mais confortável possível. O formato texto destina-\/se principalmente a quem implementa o problema, e não utilizadores finais. É importante poder explorar o espaço de estados, para verificar a correta implementação dos sucessores, como também possa ver a árvore de procura dos algoritmos, para árvores pequenas, e assim detectar bugs.
+
+\begin{DoxyNote}{Note}
+Antes de cada linha, chame a função \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}. Dependendo do contexto, {\ttfamily \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}} pode imprimir caracteres que representam os ramos da árvore de procura, criando uma visualização textual que simula a estrutura da procura.
+
+A exibição do estado pode variar conforme o nível de debug definido em {\ttfamily parametro\mbox{[}nivel\+Debug\mbox{]}.valor}. Um nível menor pode mostrar informações mais sucintas, enquanto um nível maior pode detalhar todas as variáveis do estado.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é\ apenas\ um\ número}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ <=\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}{atividade}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/<([\%d])>-\/-\/"{}},\ variavel);\ \textcolor{comment}{//\ versão\ compacta\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ versão\ mais\ elaborada\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_ga6bb2ece76e931695c9e32df7ca7143aa}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\Hypertarget{classCAspirador_a9279c18880569e58bc26932979d58058}\label{classCAspirador_a9279c18880569e58bc26932979d58058} 
+\index{CAspirador@{CAspirador}!Distinto@{Distinto}}
+\index{Distinto@{Distinto}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{Distinto()}{Distinto()}}
+{\footnotesize\ttfamily bool CAspirador\+::\+Distinto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}]{estado }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Verifica se o estado actual distinto do fornecido. 
+
+\begin{DoxyNote}{Note}
+Redefinição opcional. Necessário para identificação de estados repetidos por teste de ascendentes. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se o estado é distinto, e falso se é igual
+\end{DoxyReturn}
+Compara as variáveis de estado para determinar se dois estados são iguais ou diferentes.
+
+\begin{DoxyNote}{Note}
+Se a verificação de estados repetidos for baseada na análise de ascendentes, a superclasse chama este método dentro de {\ttfamily \doxylink{classCAspirador_ac28dba7dd58b76f9d16f44ebac66fab8}{Sucessores()}}.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ CSubProblema::Distinto(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ estado)\ \{}
+\DoxyCodeLine{\ \ \ \ CSubProblema\&\ outro\ =\ *((CSubProblema*)estado);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ verificar\ todas\ as\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ variavel\ !=\ outro.variavel;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoOpcional_ga1cf2a30e496ea869e85a9d60b4d469e9}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00092}{92}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+\Hypertarget{classCAspirador_a3c9571f17ca0cbb074943ddd9bd27587}\label{classCAspirador_a3c9571f17ca0cbb074943ddd9bd27587} 
+\index{CAspirador@{CAspirador}!Duplicar@{Duplicar}}
+\index{Duplicar@{Duplicar}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{Duplicar()}{Duplicar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*} CAspirador\+::\+Duplicar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cria um objecto que é uma cópia deste. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método tem de ser criado na subclasse, de modo a criar uma cópia do mesmo tipo. O código da subclasse geralmente segue um padrão e pode utilizar o modelo abaixo, aproveitando o método \doxylink{classCAspirador_a3785ad3b80ecc08711a70d9920e0bcb9}{Copiar()}. É especialmente útil na função de \doxylink{classCAspirador_ac28dba7dd58b76f9d16f44ebac66fab8}{Sucessores()}, na geração de um novo estado.
+
+\begin{DoxyReturn}{Returns}
+Retorna o novo estado, acabado de gerar.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Caso exista falha de memória, colocar a variável memoria\+Esgotada a true, para tentativa de terminar a execução de forma graciosa.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ CSubClasse::Duplicar(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ CSubClasse*\ clone\ =\ \textcolor{keyword}{new}\ CSubClasse;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(clone!=NULL)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ clone-\/>\mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ clone;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{classCAspirador_ada888731b2cca0a8bfa410e9bf4d188a}\label{classCAspirador_ada888731b2cca0a8bfa410e9bf4d188a} 
+\index{CAspirador@{CAspirador}!Heuristica@{Heuristica}}
+\index{Heuristica@{Heuristica}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{Heuristica()}{Heuristica()}}
+{\footnotesize\ttfamily int CAspirador\+::\+Heuristica (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Função para calcular quanto falta para o final, o valor da heurística. 
+
+\begin{DoxyNote}{Note}
+Redefinição opcional. Necessário para utilizar os algoritmos informados. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Retorna a melhor estimativa, sem ultrapassar a real, do custo do estado atual até ao objetivo.
+\end{DoxyReturn}
+A função heurística é crítica para utilizar os algoritmos informados. Deve devolver uma estimativa sem ultrapassar o custo real, do custo que falta para atingir o estado objetivo mais próximo do estado atual. Se a estimativa não ultrapassar o custo real, a heurística será {\bfseries{admissível}}. No entanto, em alguns casos, heurísticas {\bfseries{não admissíveis}} podem ser utilizadas, podendo acelerar a procura, mesmo que ocasionalmente levem a resultados subótimos.
+
+No final, chame a função heurística da superclasse para atualizar as estatísticas e o número de avaliações. Se estiver configurado, esse processo também pode introduzir ruído na heurística, o que pode impactar certos algoritmos de procura.
+
+Esta função pretende-\/se rápida, e o mais próxima possível do valor real, sem ultrapassar.
+
+\begin{DoxyNote}{Note}
+Num problema, existindo alternativas, umas mais rápidas menos precisas, outras mais lentas mais precisas, é aconselhada a criação de um ou mais parametros para que a heurística possa ser calculada de acordo com o parametro definido. Em fase de testes logo se averigua qual a versão que adiciona mais vantagem à procura.
+
+Uma heurística pode resultar de um relaxamento do problema. Verifique se o problema sem uma das restrições (fazendo batota), se consegue resolver mais facilmente. Utilize como heurística o custo de resolver o problema sem essa restrição.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Heuristica(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}\ =\ 0;\ \textcolor{comment}{//\ ponto\ de\ partida,\ há\ 0\ de\ custo}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ utilizar\ neste\ exemplo\ a\ distância\ até\ 1000,\ local\ onde\ estará\ o\ objetivo}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}\ =\ abs(variavel\ -\/\ 1000);\ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ a\ função\ heurística\ da\ superclass}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__RedefinicaoSugerida_ga0e8bb1bd33683545dc4f8f6329548b40}{TProcuraConstrutiva::Heuristica}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_ga0e8bb1bd33683545dc4f8f6329548b40}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 9
+\Hypertarget{classCAspirador_a80fca067d471172af5111b16e3880bf3}\label{classCAspirador_a80fca067d471172af5111b16e3880bf3} 
+\index{CAspirador@{CAspirador}!SolucaoCompleta@{SolucaoCompleta}}
+\index{SolucaoCompleta@{SolucaoCompleta}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{SolucaoCompleta()}{SolucaoCompleta()}}
+{\footnotesize\ttfamily bool CAspirador\+::\+Solucao\+Completa (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Verifica se o estado actual é objectivo (é uma solução completa) 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se é um estado objetivo, ou falso caso contrário.
+\end{DoxyReturn}
+Este método verifica se o estado atual é objetivo, e portanto temos uma solução completa. A complexidade da verificação depende do problema, podendo ser um teste simples ou envolver múltiplas condições.
+
+\begin{DoxyNote}{Note}
+Este método será chamado pelos algoritmos de procura no momento adequado, {\bfseries{não necessariamente na geração de sucessores}}. Por isso, deve ser implementado separadamente de {\ttfamily \doxylink{classCAspirador_ac28dba7dd58b76f9d16f44ebac66fab8}{Sucessores()}}, garantindo que a avaliação do objetivo seja feita apenas quando necessário.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ CSubProblema::SolucaoCompleta(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ pode\ ser\ um\ simples\ teste,\ ou\ algo\ mais\ complexo,\ dependente\ do\ problema}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ verificar\ se\ as\ condições\ pretendidas\ estão\ satisfeitas}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ variavel\ >\ 1000;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+\Hypertarget{classCAspirador_afc7cdfece73d364d74bca6bab1c899c1}\label{classCAspirador_afc7cdfece73d364d74bca6bab1c899c1} 
+\index{CAspirador@{CAspirador}!SolucaoVazia@{SolucaoVazia}}
+\index{SolucaoVazia@{SolucaoVazia}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
+{\footnotesize\ttfamily void CAspirador\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Coloca o objecto no estado inicial da procura. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método inicializa as variáveis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer ação ser realizada na procura. Caso existam dados de instância, deve neste método carregar a instância. A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
+
+\begin{DoxyNote}{Note}
+A variável instancia.\+valor, tem o ID da instância que deve ser carregada. 
+
+Se a função \doxylink{classCAspirador_a856e23c30c70be5345f56979b27fdc1d}{Codifica()} estiver implementada, o tamanho do estado codificado deve ser determinado após o carregamento da instância, pois diferentes instâncias podem exigir tamanhos distintos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCAspirador_a856e23c30c70be5345f56979b27fdc1d}{Codifica()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::SolucaoVazia(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{TProcuraConstrutiva::SolucaoVazia}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ variavel\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+\Hypertarget{classCAspirador_ac28dba7dd58b76f9d16f44ebac66fab8}\label{classCAspirador_ac28dba7dd58b76f9d16f44ebac66fab8} 
+\index{CAspirador@{CAspirador}!Sucessores@{Sucessores}}
+\index{Sucessores@{Sucessores}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{Sucessores()}{Sucessores()}}
+{\footnotesize\ttfamily void CAspirador\+::\+Sucessores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Coloca em sucessores a lista de estados sucessores. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em sucessores} & -\/ variável com a lista de estados sucessores a retornar.\\
+\hline
+\end{DoxyParams}
+Este é o método principal, que define a árvore de procura. Para o estado atual, duplicar o estado por cada ação / estado que seja sucessor. Alterar as variáveis de estado para corresponderem à ação efetuada no estado sucessor. Caso o custo não seja unitário, definir o custo da ação. Chamar o método da superclasse no final, já que irá atualizar estatísticas, bem como eliminar estados que sejam repetidos, dependendo da parametrização.
+
+\begin{DoxyNote}{Note}
+O custo da ação deve ser definido aqui, mas ao chamar \doxylink{classCAspirador_ac28dba7dd58b76f9d16f44ebac66fab8}{Sucessores()} da superclasse, ele será acumulado para representar o custo total desde o estado inicial. 
+
+O método \doxylink{classCAspirador_a3c9571f17ca0cbb074943ddd9bd27587}{Duplicar()} já coloca as variáveis de estado iguais ao estado atual. Apenas modifique as variáveis de estado que precisam refletir a ação i. 
+
+Caso seja feita uma verificação e a ação afinal não é válida, apagar o estado. 
+
+Não é preciso considerar estados repetidos, a verificação será feita na superclasse.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Sucessores(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&sucessores)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ CSubProblema*\ novo;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numeroAcoes;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ sucessores.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(novo\ =\ (CSubProblema*)\mbox{\hyperlink{classCAspirador_a3c9571f17ca0cbb074943ddd9bd27587}{Duplicar}}());}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ aplicar\ a\ ação\ i\ nas\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ novo-\/>variavel\ =\ i;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ se\ o\ custo\ não\ for\ unitário,\ indicar\ o\ custo\ da\ ação}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ novo-\/>custo\ =\ 1\ +\ i\ /\ 10;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Caso\ o\ estado\ gerado\ não\ seja\ válido,\ remova-\/o\ da\ lista\ e\ liberte\ a\ memória:}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!novo-\/>EstadoValido())\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ verificar\ a\ validade}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ sucessores.\mbox{\hyperlink{classTVector_a3249913626d54e46b07e168ce1f05d87}{Pop}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcuraConstrutiva::Sucessores}}(sucessores);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+\Hypertarget{classCAspirador_a718c8187439940dec18a46a9e9e024e3}\label{classCAspirador_a718c8187439940dec18a46a9e9e024e3} 
+\index{CAspirador@{CAspirador}!TesteManual@{TesteManual}}
+\index{TesteManual@{TesteManual}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{TesteManual()}{TesteManual()}}
+{\footnotesize\ttfamily void CAspirador\+::\+Teste\+Manual (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Inicializa a interação com o utilizador. 
+
+\begin{DoxyNote}{Note}
+Redefinição necessária para definir as instancias existentes.
+\end{DoxyNote}
+Esta função arranca com o teste manual, orientada para o programador. A interface permite\+:
+\begin{DoxyItemize}
+\item visualizar e trocar de instância
+\item explorar o espaço de estados nessa instancia, executando ações
+\item ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)
+\item ver e editar qualquer parametro de execução
+\item o algoritmo é também um parametro, podendo naturalmente ser alterado
+\item há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
+\item executar o algoritmo com a configuração atual
+\item adicionar a configuração atual a um conjunto de configurações de teste
+\item executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas
+\end{DoxyItemize}
+
+Esta função deve ser redefinida para inicializar a variável com informação dos IDs das instâncias disponíveis. Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
+
+\begin{DoxyNote}{Note}
+A instância selecionada irá ser carregada em \doxylink{classCAspirador_afc7cdfece73d364d74bca6bab1c899c1}{Solucao\+Vazia()}, utilizando o valor atual. 
+
+Esta função deve ser o ponto de entrada, a executar no main.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::TesteManual(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ indicar\ que\ há\ 10\ instâncias,\ sendo\ a\ instância\ inicial\ a\ 1}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}Características\ dos\ problemas"{}},\ NULL\ \};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{TProcuraConstrutiva::TesteManual}}(nome);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ exemplo\ do\ main}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{teste_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ CSubProblema\ problema;}
+\DoxyCodeLine{\ \ \ \ problema.TesteManual(\textcolor{stringliteral}{"{}CSubProblema"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{Aspirador_8cpp_source}{Aspirador.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCAspirador_a6b4d9d1a1657ada0d888d23392c9826b}\label{classCAspirador_a6b4d9d1a1657ada0d888d23392c9826b} 
+\index{CAspirador@{CAspirador}!aspirador@{aspirador}}
+\index{aspirador@{aspirador}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{aspirador}{aspirador}}
+{\footnotesize\ttfamily int CAspirador\+::aspirador}
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8h_source_l00020}{20}} of file \mbox{\hyperlink{Aspirador_8h_source}{Aspirador.\+h}}.
+
+\Hypertarget{classCAspirador_ac118e781b7b1296f09d5aec94560b00e}\label{classCAspirador_ac118e781b7b1296f09d5aec94560b00e} 
+\index{CAspirador@{CAspirador}!salas@{salas}}
+\index{salas@{salas}!CAspirador@{CAspirador}}
+\doxysubsubsection{\texorpdfstring{salas}{salas}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$char$>$ CAspirador\+::salas}
+
+
+
+Definition at line \mbox{\hyperlink{Aspirador_8h_source_l00019}{19}} of file \mbox{\hyperlink{Aspirador_8h_source}{Aspirador.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Teste/\mbox{\hyperlink{Aspirador_8h}{Aspirador.\+h}}\item 
+Teste/\mbox{\hyperlink{Aspirador_8cpp}{Aspirador.\+cpp}}\end{DoxyCompactItemize}

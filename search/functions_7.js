@@ -1,5 +1,5 @@
 var searchData=
 [
   ['hash_0',['Hash',['../classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c',1,'TProcuraConstrutiva']]],
-  ['heuristica_1',['heuristica',['../classCProblemaArtificial.html#acefa1963a1703a5f092c391a13b37ff5',1,'CProblemaArtificial::Heuristica()'],['../group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40',1,'TProcuraConstrutiva::Heuristica()']]]
+  ['heuristica_1',['heuristica',['../classCAspirador.html#ada888731b2cca0a8bfa410e9bf4d188a',1,'CAspirador::Heuristica()'],['../classCProblemaArtificial.html#acefa1963a1703a5f092c391a13b37ff5',1,'CProblemaArtificial::Heuristica()'],['../classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27',1,'CPuzzle8::Heuristica()'],['../group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40',1,'TProcuraConstrutiva::Heuristica()']]]
 ];
