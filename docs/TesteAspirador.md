@@ -13,9 +13,9 @@ Problema:
 Opção: 1
 ```
 
-![Aspirador](docs/imagens/aspirador.png)
+![Aspirador](docs/images/aspirador.png)
 
-Selecione o problema do Aspirador: **1.*
+Selecione o problema do Aspirador: **1.**
 
 A versão deste problema foi generalizada no código para poderem existir N salas, uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.
 
@@ -180,7 +180,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 ```
 Podemos ver todos os os parâmetros e valores mínimos e máximos. 
-Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colcoar a 1.
+Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1.
+Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição.
 Introduza: **3; 1; *vazio*; 3.**
 
 ```entrada
@@ -227,7 +228,7 @@ Vemos agora a solução, o caminho com todos os estados intermédios do estado i
 
 ## Ação 4 - Efetuer uma procura em Largura
 
-![Aspirador](docs/imagens/aspirador_largura.png)
+![Aspirador](docs/images/aspirador_largura.png)
 
 Primeiro, na instância inicial, número 2, com nível de debug máximo: **1; 2; 11; 4; 4.**
 
@@ -307,10 +308,13 @@ o que poderá não ser problemático em alguns problemas.
 
 Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?
 
-@brief Resposta
-@details Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20.
-@details Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução
-@details A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos.
+<details>
+  <summary>Resposta:</summary>
+Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20.
+Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução
+A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos.
+</details>
+
 
 ## Ação 9 - Procura em Profundidade
 
@@ -396,8 +400,11 @@ Pergunta final: Lembra-se de algo dado na procura em largura, que impede ciclos 
 
 Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?
 
-@brief Resposta
-@details Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore de procura. Evitam também ciclos infinitos. 
-@detains Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias.
+<details>
+  <summary>Resposta</summary>
+Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore de procura. Evitam também ciclos infinitos. 
+Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias.
+</details>
+
 
 
