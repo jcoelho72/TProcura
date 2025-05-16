@@ -14,6 +14,6 @@ var searchData=
   ['repositório_11',['Clonando o Repositório',['../index.html#autotoc_md32',1,'']]],
   ['reset_12',['Reset',['../classTVector.html#a760d08c7094ac5563f8d969f9d9e32a4',1,'TVector']]],
   ['resetparametros_13',['resetparametros',['../group__RedefinicaoSugerida.html#gacb15562d8776f4d162001d385ebc13a0',1,'TProcuraConstrutiva::ResetParametros()'],['../classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3',1,'CPuzzle8::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()']]],
-  ['resolver_20outra_20instância_14',['Ação 7 - Resolver outra instância',['../teste_aspirador.html#autotoc_md17',1,'']]],
+  ['resolver_20outra_20instância_14',['Ação 8 - Resolver outra instância',['../teste_aspirador.html#autotoc_md17',1,'']]],
   ['ruidoheur_15',['ruidoHeur',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2b7583be54d4abb36af6972683134789',1,'TProcuraConstrutiva.h']]]
 ];

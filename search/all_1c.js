@@ -5,7 +5,7 @@ var searchData=
   ['variáveis_20globais_20à_20classe_2',['Variáveis globais à classe',['../group__VariaveisGlobais.html',1,'']]],
   ['ver_20a_20alterar_20um_20parâmetro_3',['Ação 4 - Ver a alterar um parâmetro',['../teste_aspirador.html#autotoc_md13',1,'']]],
   ['ver_20a_20solução_20caminho_20realizada_20manualmente_4',['Ação 3 - Ver a solução/caminho realizada manualmente',['../teste_aspirador.html#autotoc_md12',1,'']]],
-  ['ver_20uma_20árvore_20de_20procura_20maior_5',['Ação 11 - Ver uma árvore de procura maior',['../teste_aspirador.html#autotoc_md21',1,'']]],
+  ['ver_20uma_20árvore_20de_20procura_20maior_5',['Ação 12 - Ver uma árvore de procura maior',['../teste_aspirador.html#autotoc_md21',1,'']]],
   ['veracoes_6',['verAcoes',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1',1,'TProcuraConstrutiva.h']]],
   ['verificalimites_7',['VerificaLimites',['../classTProcuraConstrutiva.html#aec0a667a7fda1ebe565ba13d6b02805a',1,'TProcuraConstrutiva']]]
 ];

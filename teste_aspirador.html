@@ -104,8 +104,11 @@ $(document).ready(function(){initNavTree('teste_aspirador.html',''); initResizab
 <div class="line">  4 - Partição</div>
 <div class="line">  5 - Artificial</div>
 <div class="line">Opção: 1</div>
-</div><!-- fragment --><p><img src="docs/images/aspirador.png" alt="Aspirador" class="inline"/></p>
-<p>Selecione o problema do Aspirador: <b>1.</b></p>
+</div><!-- fragment --><div class="image">
+<img src="aspirador.png" alt=""/>
+<div class="caption">
+Aspirador</div></div>
+    <p>Selecione o problema do Aspirador: <b>1.</b></p>
 <p>A versão deste problema foi generalizada no código para poderem existir N salas, uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.</p>
 <div class="fragment"><div class="line">Aspirador</div>
 <div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
@@ -250,9 +253,12 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
 </div><!-- fragment --><p> Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.</p>
 <h2><a class="anchor" id="autotoc_md14"></a>
-Ação 4 - Efetuer uma procura em Largura</h2>
-<p><img src="docs/images/aspirador_largura.png" alt="Aspirador" class="inline"/></p>
-<p>Primeiro, na instância inicial, número 2, com nível de debug máximo: <b>1; 2; 11; 4; 4.</b></p>
+Ação 5 - Efetuer uma procura em Largura</h2>
+<div class="image">
+<img src="aspirador_largura.png" alt=""/>
+<div class="caption">
+Aspirador</div></div>
+    <p>Primeiro, na instância inicial, número 2, com nível de debug máximo: <b>1; 2; 11; 4; 4.</b></p>
 <p>A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 11 serve para escolher o nível de debug. Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa. A opção 4 executa o algoritmo de largura primeiro.</p>
 <ul>
 <li>Verificar que o número de expansões é 12 e gerações é 24. O resultado da procura é 3, o que significa que a procura encontrou uma solução de comprimento 3.</li>
@@ -269,26 +275,26 @@ Ação 4 - Efetuer uma procura em Largura</h2>
 <li>Verificar se o estado a ser gerado, não foi já gerado mesmo em outro ramo, desde que no mesmo nível ou anterior. Nesse caso o estado pode ser excluído, já que já terá sido tratado nesse outro ramo - para ter esta opção, é preciso implementar a função Codificar() que coloca o estado num vetor de bits - o código utiliza uma hashtable com perdas, para verificar se o estado já foi criado em tempo constante, não existindo problemas de memória mesmo em execuções longas devido às perdas.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md15"></a>
-Ação 5 - Editar opções A</h2>
+Ação 6 - Editar opções A</h2>
 <p>Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3: <b>1; 2; 14; 1; 11; 3; 4.</b></p><ul>
 <li>Verificar que o número de expansões é 6 e gerações é 7, uma grande melhoria. O resultado da procura mantém-se em 3.</li>
 </ul>
 <div class="fragment"></div><!-- fragment --><p>Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
-Ação 6 - Editar opções B</h2>
+Ação 7 - Editar opções B</h2>
 <p>Alterar a opção para remover os repetidos com base nos gerados, e altear o debug para nível 2: <b>1; 2; 14; 2; 11; 2; 4.</b></p>
 <div class="fragment"></div><!-- fragment --><p> Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números: expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.</p>
 <p>É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.</p>
 <p>O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.</p>
 <h2><a class="anchor" id="autotoc_md17"></a>
-Ação 7 - Resolver outra instância</h2>
+Ação 8 - Resolver outra instância</h2>
 <p>Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior: <b>1; 8; 14; 0; 11; 1; 4.</b></p>
 <p>Houve um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados: <br  />
 </p>
 <div class="fragment"></div><!-- fragment --><p> Podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.</p>
 <p>A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.</p>
 <h2><a class="anchor" id="autotoc_md18"></a>
-Ação 8 - Desafio Procura em Largura</h2>
+Ação 9 - Desafio Procura em Largura</h2>
 <p>Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?</p>
 <details >
 <summary >
@@ -296,32 +302,35 @@ Resposta:</summary>
 <p>Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20. Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos. </p>
 </details>
 <h2><a class="anchor" id="autotoc_md19"></a>
-Ação 9 - Procura em Profundidade</h2>
-<p><img src="docs/images/aspirador_profundidade.png" alt="Aspirador" class="inline"/></p>
-<p>Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.</p>
+Ação 10 - Procura em Profundidade</h2>
+<div class="image">
+<img src="aspirador_profundidade.png" alt=""/>
+<div class="caption">
+Aspirador</div></div>
+    <p>Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.</p>
 <h2><a class="anchor" id="autotoc_md20"></a>
-Ação 10 - Efetuar uma procura em Profundidade Primeiro</h2>
+Ação 11 - Efetuar uma procura em Profundidade Primeiro</h2>
 <p>Utilizar a instância número 2, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos: <b>1; 2; 11; 4; 14; 0; 12; 3; 6.</b></p>
 <p>A opção 12 permite alterar o limite. Na procura em largura o limite servia para limitar o número de estados gerados mas não expandidos. Aqui serve para limitar o nível de profundidade, que é fixado a 3. A opção 6 executa o algoritmo de Procura em Profundidade.</p>
 <div class="fragment"></div><!-- fragment --><p>Podemos ver todos os estados gerados. A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -1. Este resultado pode ser utilizado para saber que não há nenhuma solução de comprimento inferior a 3, ou seja, é um lower bound.</p>
 <p>Esta visualização da árvore da procura é interessante para pequenos problemas, mas naturalmente que procuras maiores torna-se impraticável. Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.</p>
 <h2><a class="anchor" id="autotoc_md21"></a>
-Ação 11 - Ver uma árvore de procura maior</h2>
+Ação 12 - Ver uma árvore de procura maior</h2>
 <p>Colocar a profundidade a 10, e o nível de debug a 3: <b>1; 2; 11; 3; 14; 0; 12; 10; 6.</b></p>
 <div class="fragment"></div><!-- fragment --><p> Com o nível debug a 3 vemos a árvore de procura apenas os estados folha, mas não os estados expandidos. A informação é mais reduzida, mas poderá ser uma boa forma de analisar os estados em que o algoritmo volta para trás, já que podem ter alguma característica relevante, ainda não implementada. A solução não é óptima, tem comprimento 9! Podemos visualizar a solução: </p><div class="fragment"></div><!-- fragment --><p>Como o algoritmo é cego, segue a ordem dos sucessores. Neste caso está sempre a trocar de posição antes de aspirar. Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.</p>
 <h2><a class="anchor" id="autotoc_md22"></a>
-Ação 12 - Profundidade Iterativa</h2>
+Ação 13 - Profundidade Iterativa</h2>
 <p>Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: <b>1; 2; 11; 2; 14; 0; 12; 0; 6.</b></p>
 <div class="fragment"></div><!-- fragment --><p>Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solução ótima. Fez várias iterações que não serviram para nada, antes de executar na iteração 4 com limite a 4. Mas essas árvores de procura são muito mais pequenas, pelo que o peso de executar essas procuras extra não é muito relevante.</p>
 <p>Podemos ver também a versão compactada da árvore de procura, contendo apenas informação do estado, tal como na procura em largura, mas desta vez com informação de onde o estado veio. Pela observação da árvore é possível verificar que a maior parte das ramificações são de dois sucessores, o que é natural dado que este problema tem apenas duas salas.</p>
 <p>Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-1</p>
 <h2><a class="anchor" id="autotoc_md23"></a>
-Ação 10 - Profundidade ilimitada</h2>
+Ação 14 - Profundidade ilimitada</h2>
 <p>Colocar a profundidade ilimitada (limite a -1), e o nível de debug a 1: <b>1; 2; 11; 1; 14; 0; 12; -1; 6.</b></p>
 <div class="fragment"></div><!-- fragment --><p>Temos um crash do programa. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10.</p>
 <p>Pergunta final: Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?</p>
 <h2><a class="anchor" id="autotoc_md24"></a>
-Ação 10 - Desafio Procura Profundidade</h2>
+Ação 15 - Desafio Procura Profundidade</h2>
 <p>Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?</p>
 <details >
 <summary >

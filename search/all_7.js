@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['8_20desafio_20procura_20em_20largura_0',['Ação 8 - Desafio Procura em Largura',['../teste_aspirador.html#autotoc_md18',1,'']]]
+  ['8_20resolver_20outra_20instância_0',['Ação 8 - Resolver outra instância',['../teste_aspirador.html#autotoc_md17',1,'']]]
 ];
