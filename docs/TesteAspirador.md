@@ -100,26 +100,25 @@ Ações: dir asp
 Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. 
 Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. 
 Os sucessores são visualizados pelas suas ações, existindo três possíveis ações: esq, dir, asp.
+Para indicar o número do sucessor, é preciso ver, já que o número 1 é para a primeira ação válida, na lista de sucessores. 
+No entanto, as ações são unívocas. Podemos indicar várias ações de uma só vez.
+
 Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. 
 Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores.
-Utilize desta vez o nome das ações e não número. Introduza: **dir; asp; *ENTER*.**
+Utilize desta vez o nome das ações e não número, introduzido duas ações de uma vez. Introduza: **dir asp; *ENTER*.**
+Note que "dir asp" podem ser introduzidas de uma vez.
 
 ```entrada
-Sucessor [1-2, ação(ões), exe]:dir
-Executadas 1 ações com sucesso.
-g:0 h:1 5|10
- . [*]
-Ações: esq asp
-Sucessor [1-2, ação(ões), exe]:asp
-Executadas 1 ações com sucesso.
-g:0 7|14
+Sucessor [1-2, ação(ões), exe]:dir asp
+Executadas 2 ações com sucesso.
+g:0 6|12
  . [.]
 Ações: esq asp
 Sucessor [1-2, ação(ões), exe]:
 
 Aspirador
 ...
-[Estatísticas] expansões 7 | gerações 14 | avaliações 0
+[Estatísticas] expansões 6 | gerações 12 | avaliações 0
  . [.]
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
@@ -230,7 +229,7 @@ Vemos agora a solução, o caminho com todos os estados intermédios do estado i
 
 ![Procura em Largura - expande primeiro os estados menos profundos](docs/images/aspirador_largura.png)
 
-Primeiro, na instância inicial, número 2, com nível de debug máximo: **1; 2; 4; 2; *ENTER*; 5.**
+Coloque na instância inicial, número 2, com nível de debug máximo: **1; 2; 4; 2; 4; *ENTER*; 5.**
 
 A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 4 vamos alterar neste caso o parâmetro nível de debug. 
 Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa. 

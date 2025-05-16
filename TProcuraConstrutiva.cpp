@@ -1264,6 +1264,16 @@ void TProcuraConstrutiva::ExplorarSucessores(bool jogo) {
 							break;
 						}
 						token = strtok(NULL, " \t\n\r");
+
+						if (token != NULL) {
+							// há outra ação, é preciso atualizar o caminho
+							caminho.Add(Duplicar());
+							if (caminho.Count() > 1)
+								caminho.Last()->custo += caminho[caminho.Count() - 2]->custo;
+							else
+								caminho.Last()->custo = 0;
+						}
+
 					} while (token != NULL);
 					if (nAcoes > 0)
 						printf("Executadas %d ações com sucesso.\n", nAcoes);					

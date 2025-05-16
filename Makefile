@@ -15,9 +15,9 @@ $(TARGET): $(SRC)
 # Regra para testes (executada com `make check`)
 check: $(TARGET)
 	@echo "Executando testes..."
-	@./$(TARGET) < Teste/CasosTeste/input.txt > Teste/CasosTeste/output_obtido.txt
+	@./$(TARGET) < Teste/CasosTeste/inputAspirador.txt > Teste/CasosTeste/output_obtido.txt
 	@sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_obtido.txt | tr -d '\r' | sed -e '$a\' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_obtido.txt
-	@sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/output_esperado.txt | tr -d '\r' | sed -e '$a\' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_esperado.txt
+	@sed 's/[0-9]\+[,.][0-9]\+s//g' Teste/CasosTeste/outputAspirador.txt | tr -d '\r' | sed -e '$a\' | sed '1s/^\xEF\xBB\xBF//' > Teste/CasosTeste/normalized_esperado.txt
 	@diff Teste/CasosTeste/normalized_obtido.txt Teste/CasosTeste/normalized_esperado.txt || (echo "Testes falharam"; exit 1)
 	@echo "Todos os testes passaram!"
 
