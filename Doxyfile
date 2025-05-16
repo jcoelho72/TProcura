@@ -4,7 +4,7 @@ OUTPUT_DIRECTORY       = docs/html
 HTML_OUTPUT            = .
 
 # Definir diretórios de entrada
-INPUT                  = . README.md docs/Teste1.md
+INPUT                  = . README.md docs/
 RECURSIVE              = YES
 
 # Gerar documentação em diferentes formatos
@@ -38,3 +38,14 @@ DISABLE_INDEX         = NO
 EXTRACT_ALL           = YES
 SOURCE_BROWSER        = YES
 VERBATIM_HEADERS      = YES
+
+# doxygen-awesome.css
+GENERATE_TREEVIEW      = YES # optional. Also works without treeview
+DISABLE_INDEX = NO
+FULL_SIDEBAR = NO
+HTML_EXTRA_STYLESHEET = styles/doxygen-awesome.css \
+                        styles/doxygen-awesome-sidebar-only.css
+HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
+HTML_EXTRA_FILES = styles/doxygen-awesome-darkmode-toggle.js \
+                   styles/doxygen-awesome-fragment-copy-button.js \
+                   styles/doxygen-awesome-interactive-toc.js
