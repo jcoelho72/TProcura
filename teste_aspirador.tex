@@ -19,7 +19,7 @@ Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste
  
 \begin{DoxyImage}
 \includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{aspirador.png}
-\doxyfigcaption{Aspirador}
+\doxyfigcaption{Aspirador -\/ espaço de estados para 2 salas}
 \end{DoxyImage}
    
 
@@ -93,7 +93,7 @@ A partir do estado atual, introduza\+: {\bfseries{2; 1; 2.}}
 \end{DoxyCode}
 
 
-Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações\+: esq, dir, asp. Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número. Introduza\+: {\bfseries{dir; asp; {\itshape vazio}.}}
+Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações\+: esq, dir, asp. Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número. Introduza\+: {\bfseries{dir; asp; {\itshape ENTER}.}}
 
 
 \begin{DoxyCode}{0}
@@ -164,7 +164,7 @@ Introduza\+: {\bfseries{4}}
 \DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
 
 \end{DoxyCode}
- Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1. Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição. Introduza\+: {\bfseries{3; 1; {\itshape vazio}; 3.}}
+ Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1. Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição. Introduza\+: {\bfseries{3; 1; {\itshape ENTER}; 3.}}
 
 
 \begin{DoxyCode}{0}
@@ -212,19 +212,128 @@ Introduza\+: {\bfseries{4}}
  
 \begin{DoxyImage}
 \includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{aspirador_largura.png}
-\doxyfigcaption{Aspirador}
+\doxyfigcaption{Procura em Largura -\/ expande primeiro os estados menos profundos}
 \end{DoxyImage}
    
 
-Primeiro, na instância inicial, número 2, com nível de debug máximo\+: {\bfseries{1; 2; 11; 4; 4.}}
+Primeiro, na instância inicial, número 2, com nível de debug máximo\+: {\bfseries{1; 2; 4; 2; {\itshape ENTER}; 5.}}
 
-A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 11 serve para escolher o nível de debug. Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa. A opção 4 executa o algoritmo de largura primeiro.
+A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 4 vamos alterar neste caso o parâmetro nível de debug. Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa.
 
 
-\begin{DoxyItemize}
-\item Verificar que o número de expansões é 12 e gerações é 24. O resultado da procura é 3, o que significa que a procura encontrou uma solução de comprimento 3.
-\item Podemos ver a solução com 3 -\/ Solução/\+Caminho. Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.
-\end{DoxyItemize}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 1}
+\DoxyCodeLine{}
+\DoxyCodeLine{Nova\ instância\ (atual\ 2)\ [2-\/50]:\ 2}
+\DoxyCodeLine{}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{...}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{Opção:\ 4}
+\DoxyCodeLine{}
+\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
+\DoxyCodeLine{P2(Debug):\ nada\ (0\ a\ 4)}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Parametro:2}
+\DoxyCodeLine{}
+\DoxyCodeLine{Nível\ de\ debug,\ de\ reduzido\ a\ completo.}
+\DoxyCodeLine{0:\ nada}
+\DoxyCodeLine{1:\ atividade}
+\DoxyCodeLine{2:\ passos}
+\DoxyCodeLine{3:\ detalhe}
+\DoxyCodeLine{4:\ completo}
+\DoxyCodeLine{Debug\ (atual\ 0):\ 4}
+\DoxyCodeLine{}
+\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
+\DoxyCodeLine{P2(Debug):\ completo\ (0\ a\ 4)}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Parametro:}
+\DoxyCodeLine{...}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 0\ |\ gerações\ 0\ |\ avaliações\ 0}
+\DoxyCodeLine{\ *\ [*]}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+
+\end{DoxyCode}
+ A opção 5 executa o algoritmo selecionado, que é a Largura Primeiro.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 5}
+\DoxyCodeLine{}
+\DoxyCodeLine{g:0}
+\DoxyCodeLine{\ *\ [*]}
+\DoxyCodeLine{\ \ +\#1\ g:1\ 1|2\ esq}
+\DoxyCodeLine{\ \ |[*]\ *}
+\DoxyCodeLine{\ \ +\#2\ g:1\ 1|2\ asp}
+\DoxyCodeLine{\ \ \ \ *\ [.]}
+\DoxyCodeLine{g:1\ 1|2}
+\DoxyCodeLine{[*]\ *}
+\DoxyCodeLine{\ \ +\#1\ g:2\ 2|4\ dir}
+\DoxyCodeLine{\ \ |\ *\ [*]}
+\DoxyCodeLine{\ \ +\#2\ g:2\ 2|4\ asp}
+\DoxyCodeLine{\ \ \ [.]\ *}
+\DoxyCodeLine{g:1\ 2|4}
+\DoxyCodeLine{\ *\ [.]}
+\DoxyCodeLine{\ \ +\#1\ g:2\ 3|6\ esq}
+\DoxyCodeLine{\ \ |[*]\ .}
+\DoxyCodeLine{\ \ +\#2\ g:2\ 3|6\ asp}
+\DoxyCodeLine{\ \ \ \ *\ [.]}
+\DoxyCodeLine{g:2\ 3|6}
+\DoxyCodeLine{\ *\ [*]}
+\DoxyCodeLine{\ \ +\#1\ g:3\ 4|8\ esq}
+\DoxyCodeLine{\ \ |[*]\ *}
+\DoxyCodeLine{\ \ +\#2\ g:3\ 4|8\ asp}
+\DoxyCodeLine{\ \ \ \ *\ [.]}
+\DoxyCodeLine{g:2\ 4|8}
+\DoxyCodeLine{[.]\ *}
+\DoxyCodeLine{\ \ +\#1\ g:3\ 5|10\ dir}
+\DoxyCodeLine{\ \ |\ .\ [*]}
+\DoxyCodeLine{\ \ +\#2\ g:3\ 5|10\ asp}
+\DoxyCodeLine{\ \ \ [.]\ *}
+\DoxyCodeLine{g:2\ 5|10}
+\DoxyCodeLine{[*]\ .\ \ Solução\ encontrada!}
+\DoxyCodeLine{[.]\ .\ (g:3)}
+\DoxyCodeLine{P1:1\ P2:4\ P3:1\ P4:1\ P5:10\ P6:0\ P7:0\ P8:0\ P9:0\ P10:1}
+\DoxyCodeLine{P11:100\ P12:0\ P13:0}
+\DoxyCodeLine{Resultado:\ 3\ (0,019s)}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
+\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
+\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
+\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 6\ |\ gerações\ 12\ |\ avaliações\ 0}
+\DoxyCodeLine{[.]\ .}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+
+\end{DoxyCode}
+
+
+Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, o que significa que a procura encontrou uma solução de comprimento 3. Podemos ver a solução. Introduza\+: {\bfseries{3.}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 3}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ *\ [*]\ (g:0)}
+\DoxyCodeLine{\ *\ [.]\ (g:1)}
+\DoxyCodeLine{[*]\ .\ \ (g:2)}
+\DoxyCodeLine{[.]\ .\ \ (g:3)}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{...}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 6\ |\ gerações\ 12\ |\ avaliações\ 0}
+\DoxyCodeLine{[.]\ .}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+
+\end{DoxyCode}
+ Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.
 
 A árvore da procura em largura não é desenhada na visualização textual, apenas na procura em profundidade. Nesta procura o que podemos ver é cada estado expandido e respetivos sucessores gerados. Cada estado irá aparecer pela primeira vez quando é gerado, e uma segunda vez quando é expandido. Na procura em largura, expandimos sempre o estado gerado há mais tempo.
 
@@ -232,12 +341,6 @@ A árvore da procura em largura não é desenhada na visualização textual, ape
 \begin{DoxyItemize}
 \item Verificar que o segundo estado expandido, é o primeiro sucessor do primeiro estado expandido. O terceiro estado expandido é o segundo sucessor do primeiro estado expandido. Poder-\/se-\/ia continuar, o estado expandido seguinte é sempre o gerado há mais tempo.
 \end{DoxyItemize}
-
-
-\begin{DoxyCode}{0}
-
-\end{DoxyCode}
-
 
 Temos no entanto o mesmo estado inicial a ser gerado. De facto, o primeiro sucessor na segunda expansão, é o primeiro estado que é gerado novamente.
 
@@ -248,22 +351,71 @@ Podemos lidar com estados repetidos de duas formas\+:
 \item Verificar se o estado a ser gerado, não tem já um ascendente -\/ neste caso é preciso implementar a função Distinto() -\/ Para fazer esta validação, o código tem de seguir pelos pais, e testar se são diferentes do atual.
 \item Verificar se o estado a ser gerado, não foi já gerado mesmo em outro ramo, desde que no mesmo nível ou anterior. Nesse caso o estado pode ser excluído, já que já terá sido tratado nesse outro ramo -\/ para ter esta opção, é preciso implementar a função Codificar() que coloca o estado num vetor de bits -\/ o código utiliza uma hashtable com perdas, para verificar se o estado já foi criado em tempo constante, não existindo problemas de memória mesmo em execuções longas devido às perdas.
 \end{DoxyItemize}\hypertarget{teste_aspirador_autotoc_md15}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Editar opções A}{Ação 6 - Editar opções A}}\label{teste_aspirador_autotoc_md15}
-Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3\+: {\bfseries{1; 2; 14; 1; 11; 3; 4.}}
+Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3\+: {\bfseries{1; 2; 4; 10; 2; 2; 3; {\itshape ENTER}; 5.}}
+
+
 \begin{DoxyItemize}
-\item Verificar que o número de expansões é 6 e gerações é 7, uma grande melhoria. O resultado da procura mantém-\/se em 3.
+\item Verificar que o número de expansões é 5 e gerações é 6, uma melhoria. O resultado da procura mantém-\/se em 3.
 \end{DoxyItemize}
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 5}
+\DoxyCodeLine{}
+\DoxyCodeLine{g:0}
+\DoxyCodeLine{\ *\ [*]}
+\DoxyCodeLine{g:1\ 1|2}
+\DoxyCodeLine{[*]\ *}
+\DoxyCodeLine{g:1\ 2|3}
+\DoxyCodeLine{\ *\ [.]}
+\DoxyCodeLine{g:2\ 3|4}
+\DoxyCodeLine{[.]\ *}
+\DoxyCodeLine{g:2\ 4|5}
+\DoxyCodeLine{[*]\ .\ \ Solução\ encontrada!}
+\DoxyCodeLine{[.]\ .\ (g:3)}
+\DoxyCodeLine{P1:1\ P2:3\ P3:1\ P4:1\ P5:10\ P6:0\ P7:0\ P8:0\ P9:0\ P10:2}
+\DoxyCodeLine{P11:100\ P12:0\ P13:0}
+\DoxyCodeLine{Resultado:\ 3\ (0,013s)}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ detalhe\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
+\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
+\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ascendentes\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
+\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 5\ |\ gerações\ 6\ |\ avaliações\ 0}
+\DoxyCodeLine{[.]\ .}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
 
 \end{DoxyCode}
-
+ A interação de troca de parâmetro não é mais mostrada para não saturar o texto. Caso esteja a reproduzir o teste, confirme que tem os parâmetros iguais aos valores atuais, visiveis na interface.
 
 Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.\hypertarget{teste_aspirador_autotoc_md16}{}\doxysubsection{\texorpdfstring{Ação 7 -\/ Editar opções B}{Ação 7 - Editar opções B}}\label{teste_aspirador_autotoc_md16}
-Alterar a opção para remover os repetidos com base nos gerados, e altear o debug para nível 2\+: {\bfseries{1; 2; 14; 2; 11; 2; 4.}}
+Alterar a opção para remover os repetidos com base nos gerados, e alterar o debug para nível 2\+: {\bfseries{1; 2; 4; 10; 3; 2; 2; {\itshape ENTER}; 5.}}
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 5}
+\DoxyCodeLine{}
+\DoxyCodeLine{g:0}
+\DoxyCodeLine{g:1\ 1|2}
+\DoxyCodeLine{g:1\ 2|3}
+\DoxyCodeLine{g:2\ 3|4}
+\DoxyCodeLine{g:2\ 4|5\ Solução\ encontrada!}
+\DoxyCodeLine{[.]\ .\ (g:3)}
+\DoxyCodeLine{P1:1\ P2:2\ P3:1\ P4:1\ P5:10\ P6:0\ P7:0\ P8:0\ P9:0\ P10:3}
+\DoxyCodeLine{P11:100\ P12:0\ P13:0}
+\DoxyCodeLine{Resultado:\ 3\ (0,013s)}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ passos\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
+\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
+\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ gerados\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
+\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 5\ |\ gerações\ 6\ |\ avaliações\ 0}
+\DoxyCodeLine{[.]\ .}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
 
 \end{DoxyCode}
  Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números\+: expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.
@@ -271,16 +423,68 @@ Alterar a opção para remover os repetidos com base nos gerados, e altear o deb
 É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.
 
 O nível de debug 1 insere um \# por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.\hypertarget{teste_aspirador_autotoc_md17}{}\doxysubsection{\texorpdfstring{Ação 8 -\/ Resolver outra instância}{Ação 8 - Resolver outra instância}}\label{teste_aspirador_autotoc_md17}
-Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior\+: {\bfseries{1; 8; 14; 0; 11; 1; 4.}}
+Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior\+: {\bfseries{1; 8; 4; 10; 1; 2; 1; {\itshape ENTER}; 5.}}
 
-Houve um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados\+: ~\newline
+Pode haver um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados\+: ~\newline
 
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ atividade\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
+\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
+\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
+\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 5\ |\ gerações\ 6\ |\ avaliações\ 0}
+\DoxyCodeLine{\ *\ \ *\ [.]\ .\ \ *\ \ *\ \ *\ \ *}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{Opção:\ 5}
+\DoxyCodeLine{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ Solução\ encontrada!}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [.](g:15)}
+\DoxyCodeLine{P1:1\ P2:1\ P3:1\ P4:1\ P5:10\ P6:0\ P7:0\ P8:0\ P9:0\ P10:1}
+\DoxyCodeLine{P11:100\ P12:0\ P13:0}
+\DoxyCodeLine{Resultado:\ 15\ (5,351s)}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ atividade\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
+\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
+\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
+\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 1681451\ |\ gerações\ 4840697\ |\ avaliações\ 0}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [.]}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
 
 \end{DoxyCode}
- Podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.
+ São demasiados estados gerados, quase 5 milhões, e 5 segundos. Há um \# que é colocado no output a cada 1000 expansões. Se desconfiamos que com tanto estado, dificilmente a solução pode ser óptima, podemos ver a solução. Introduza\+: {\bfseries{3}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 3}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ *\ \ *\ [.]\ .\ \ *\ \ *\ \ *\ \ *\ \ (g:0)}
+\DoxyCodeLine{\ *\ [*]\ .\ \ .\ \ *\ \ *\ \ *\ \ *\ \ (g:1)}
+\DoxyCodeLine{[*]\ *\ \ .\ \ .\ \ *\ \ *\ \ *\ \ *\ \ (g:2)}
+\DoxyCodeLine{[.]\ *\ \ .\ \ .\ \ *\ \ *\ \ *\ \ *\ \ (g:3)}
+\DoxyCodeLine{\ .\ [*]\ .\ \ .\ \ *\ \ *\ \ *\ \ *\ \ (g:4)}
+\DoxyCodeLine{\ .\ [.]\ .\ \ .\ \ *\ \ *\ \ *\ \ *\ \ (g:5)}
+\DoxyCodeLine{\ .\ \ .\ [.]\ .\ \ *\ \ *\ \ *\ \ *\ \ (g:6)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ [.]\ *\ \ *\ \ *\ \ *\ \ (g:7)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ [*]\ *\ \ *\ \ *\ \ (g:8)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ [.]\ *\ \ *\ \ *\ \ (g:9)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ [*]\ *\ \ *\ \ (g:10)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ [.]\ *\ \ *\ \ (g:11)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [*]\ *\ \ (g:12)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [.]\ *\ \ (g:13)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [*]\ (g:14)}
+\DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [.]\ (g:15)}
+
+\end{DoxyCode}
+ Não houve desperdício visivel nestga solução. O algoritmo procura em largura garante-\/nos que esta solução é ótima, dado que o custo de cada ação é unitário.
+
+Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.
 
 A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-\/se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.\hypertarget{teste_aspirador_autotoc_md18}{}\doxysubsection{\texorpdfstring{Ação 9 -\/ Desafio Procura em Largura}{Ação 9 - Desafio Procura em Largura}}\label{teste_aspirador_autotoc_md18}
 Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?
@@ -288,22 +492,72 @@ Com a procura em largura, até que tamanho consegue obter a solução ótima do 
 
 
 {\bfseries{Resposta\+:}}\begin{adjustwidth}{1em}{0em}
-Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20. Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-\/se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos. \end{adjustwidth}
+Depende das condições de execução, vamos colocar na resposta o VPL com a 512MB. Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20. Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-\/se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos. \end{adjustwidth}
 \hypertarget{teste_aspirador_autotoc_md19}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Procura em Profundidade}{Ação 10 - Procura em Profundidade}}\label{teste_aspirador_autotoc_md19}
  
 \begin{DoxyImage}
 \includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{aspirador_profundidade.png}
-\doxyfigcaption{Aspirador}
+\doxyfigcaption{Profundidade Primeiro -\/ expande primeiro os estados mais profundos}
 \end{DoxyImage}
    
 
 Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.\hypertarget{teste_aspirador_autotoc_md20}{}\doxysubsection{\texorpdfstring{Ação 11 -\/ Efetuar uma procura em Profundidade Primeiro}{Ação 11 - Efetuar uma procura em Profundidade Primeiro}}\label{teste_aspirador_autotoc_md20}
-Utilizar a instância número 2, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos\+: {\bfseries{1; 2; 11; 4; 14; 0; 12; 3; 6.}}
+Utilizar a instância número 2, o algoritmo profundidade primeiro, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos\+: {\bfseries{1; 2; 4; 1; 3; 9; 3; 2; 4; 10; 1; {\itshape ENTER}; 5.}}
 
-A opção 12 permite alterar o limite. Na procura em largura o limite servia para limitar o número de estados gerados mas não expandidos. Aqui serve para limitar o nível de profundidade, que é fixado a 3. A opção 6 executa o algoritmo de Procura em Profundidade.
+O parâmetro 1 é o algoritmo, em que o 3 é a profundidade primeiro.
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{Algoritmo\ base\ a\ executar.}
+\DoxyCodeLine{1:\ Largura\ Primeiro}
+\DoxyCodeLine{2:\ Custo\ Uniforme}
+\DoxyCodeLine{3:\ Profundidade\ Primeiro}
+\DoxyCodeLine{4:\ Melhor\ Primeiro}
+\DoxyCodeLine{5:\ A*}
+\DoxyCodeLine{6:\ IDA*}
+\DoxyCodeLine{7:\ Branch\ and\ Bound}
+\DoxyCodeLine{Algoritmo\ (atual\ 1):}
+
+\end{DoxyCode}
+
+
+O parâmetro 9 é o limite, com diferentes interpretações conforme o algoritmo. ~\newline
+ Na procura em largura o limite servia para limitar o número de estados gerados mas não expandidos. Aqui serve para limitar o nível de profundidade, que é fixado a 3.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 5}
+\DoxyCodeLine{g:0}
+\DoxyCodeLine{\ *\ [*]}
+\DoxyCodeLine{\ \ +g:1\ 1|2\ esq}
+\DoxyCodeLine{\ \ |[*]\ *}
+\DoxyCodeLine{\ \ |\ \ +g:2\ 2|4\ dir}
+\DoxyCodeLine{\ \ |\ \ |\ *\ [*]}
+\DoxyCodeLine{\ \ |\ \ |}
+\DoxyCodeLine{\ \ |\ \ +g:2\ 2|4\ asp}
+\DoxyCodeLine{\ \ |\ \ \ [.]\ *}
+\DoxyCodeLine{\ \ |}
+\DoxyCodeLine{\ \ +g:1\ 2|4\ asp}
+\DoxyCodeLine{\ \ \ \ *\ [.]}
+\DoxyCodeLine{\ \ \ \ \ +g:2\ 3|6\ esq}
+\DoxyCodeLine{\ \ \ \ \ |[*]\ .}
+\DoxyCodeLine{\ \ \ \ \ |}
+\DoxyCodeLine{\ \ \ \ \ +g:2\ 3|6\ asp}
+\DoxyCodeLine{\ \ \ \ \ \ \ *\ [.]}
+\DoxyCodeLine{}
+\DoxyCodeLine{P1:3\ P2:4\ P3:1\ P4:1\ P5:10\ P6:0\ P7:0\ P8:0\ P9:3\ P10:1}
+\DoxyCodeLine{P11:100\ P12:0\ P13:0}
+\DoxyCodeLine{Resultado:\ -\/1\ (0,012s)}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ completo\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
+\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
+\DoxyCodeLine{P9(Limite):\ 3\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
+\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 3\ |\ gerações\ 6\ |\ avaliações\ 0}
+\DoxyCodeLine{\ *\ [*]}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
 
 \end{DoxyCode}
 
@@ -311,23 +565,92 @@ A opção 12 permite alterar o limite. Na procura em largura o limite servia par
 Podemos ver todos os estados gerados. A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -\/1. Este resultado pode ser utilizado para saber que não há nenhuma solução de comprimento inferior a 3, ou seja, é um lower bound.
 
 Esta visualização da árvore da procura é interessante para pequenos problemas, mas naturalmente que procuras maiores torna-\/se impraticável. Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.\hypertarget{teste_aspirador_autotoc_md21}{}\doxysubsection{\texorpdfstring{Ação 12 -\/ Ver uma árvore de procura maior}{Ação 12 - Ver uma árvore de procura maior}}\label{teste_aspirador_autotoc_md21}
-Colocar a profundidade a 10, e o nível de debug a 3\+: {\bfseries{1; 2; 11; 3; 14; 0; 12; 10; 6.}}
+Colocar a profundidade a 10, e o nível de debug a 3\+: {\bfseries{1; 2; 4; 9; 10; 2; 3; {\itshape ENTER}; 5.}}
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 5}
+\DoxyCodeLine{-\/-\/+-\/-\/+-\/-\/+-\/-\/+-\/-\/+-\/-\/+-\/-\/+-\/-\/+-\/-\/+=\ g:9\ 9|18}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |[*]\ *}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ +=\ g:9\ 9|18}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ \ \ *\ [.]}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ +-\/-\/+=\ g:9\ 10|20}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ \ \ \ |\ .\ [*]}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ \ \ \ +=\ g:9\ 10|20}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ \ \ \ \ [.]\ *}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ +-\/-\/+-\/-\/+=\ g:9\ 12|24}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ \ \ \ |\ \ |\ *\ [.]}
+\DoxyCodeLine{\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ \ \ \ |\ \ +\ Solução\ encontrada!}
+\DoxyCodeLine{[.]\ .\ (g:9)}
+\DoxyCodeLine{P1:3\ P2:3\ P3:1\ P4:1\ P5:10\ P6:0\ P7:0\ P8:0\ P9:10\ P10:1}
+\DoxyCodeLine{P11:100\ P12:0\ P13:0}
+\DoxyCodeLine{Resultado:\ 9\ (0,021s)}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ detalhe\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
+\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
+\DoxyCodeLine{P9(Limite):\ 10\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
+\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 12\ |\ gerações\ 24\ |\ avaliações\ 0}
+\DoxyCodeLine{[.]\ .}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
 
 \end{DoxyCode}
- Com o nível debug a 3 vemos a árvore de procura apenas os estados folha, mas não os estados expandidos. A informação é mais reduzida, mas poderá ser uma boa forma de analisar os estados em que o algoritmo volta para trás, já que podem ter alguma característica relevante, ainda não implementada. A solução não é óptima, tem comprimento 9! Podemos visualizar a solução\+: 
+ Com o nível debug a 3 vemos a árvore de procura apenas os estados folha, mas não os estados expandidos. A informação é mais reduzida, mas poderá ser uma boa forma de analisar os estados em que o algoritmo volta para trás, já que podem ter alguma característica relevante, ainda não implementada. A solução não é óptima, tem comprimento 9! Podemos visualizar a solução, introduza\+: {\bfseries{3.}} 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 3}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ *\ [*]\ (g:0)}
+\DoxyCodeLine{[*]\ *\ \ (g:1)}
+\DoxyCodeLine{\ *\ [*]\ (g:2)}
+\DoxyCodeLine{[*]\ *\ \ (g:3)}
+\DoxyCodeLine{\ *\ [*]\ (g:4)}
+\DoxyCodeLine{[*]\ *\ \ (g:5)}
+\DoxyCodeLine{\ *\ [*]\ (g:6)}
+\DoxyCodeLine{\ *\ [.]\ (g:7)}
+\DoxyCodeLine{[*]\ .\ \ (g:8)}
+\DoxyCodeLine{[.]\ .\ \ (g:9)}
 
 \end{DoxyCode}
 
 
 Como o algoritmo é cego, segue a ordem dos sucessores. Neste caso está sempre a trocar de posição antes de aspirar. Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.\hypertarget{teste_aspirador_autotoc_md22}{}\doxysubsection{\texorpdfstring{Ação 13 -\/ Profundidade Iterativa}{Ação 13 - Profundidade Iterativa}}\label{teste_aspirador_autotoc_md22}
-Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2\+: {\bfseries{1; 2; 11; 2; 14; 0; 12; 0; 6.}}
+Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2\+: {\bfseries{1; 2; 4; 9; 0; 2; 2; {\itshape ENTER}; 5.}}
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{Iteração\ 1:}
+\DoxyCodeLine{=\ g:0}
+\DoxyCodeLine{Iteração\ 2:}
+\DoxyCodeLine{-\/-\/+=\ g:1\ 1|2}
+\DoxyCodeLine{\ \ +=\ g:1\ 1|2}
+\DoxyCodeLine{Iteração\ 3:}
+\DoxyCodeLine{-\/-\/+-\/-\/+=\ g:2\ 3|6}
+\DoxyCodeLine{\ \ |\ \ +=\ g:2\ 3|6}
+\DoxyCodeLine{\ \ +-\/-\/+=\ g:2\ 4|8}
+\DoxyCodeLine{\ \ \ \ \ +=\ g:2\ 4|8}
+\DoxyCodeLine{Iteração\ 4:}
+\DoxyCodeLine{-\/-\/+-\/-\/+-\/-\/+=\ g:3\ 7|14}
+\DoxyCodeLine{\ \ |\ \ |\ \ +=\ g:3\ 7|14}
+\DoxyCodeLine{\ \ |\ \ +-\/-\/+=\ g:3\ 8|16}
+\DoxyCodeLine{\ \ |\ \ \ \ \ +=\ g:3\ 8|16}
+\DoxyCodeLine{\ \ +-\/-\/+-\/-\/+=\ g:3\ 10|20}
+\DoxyCodeLine{\ \ \ \ \ |\ \ +\ Solução\ encontrada!}
+\DoxyCodeLine{[.]\ .\ (g:3)}
+\DoxyCodeLine{P1:3\ P2:2\ P3:1\ P4:1\ P5:10\ P6:0\ P7:0\ P8:0\ P9:0\ P10:1}
+\DoxyCodeLine{P11:100\ P12:0\ P13:0}
+\DoxyCodeLine{Resultado:\ 3\ (0,016s)}
+\DoxyCodeLine{Aspirador}
+\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ passos\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
+\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
+\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
+\DoxyCodeLine{P13(baralhar):\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 10\ |\ gerações\ 20\ |\ avaliações\ 0}
+\DoxyCodeLine{[.]\ .}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
+\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
 
 \end{DoxyCode}
 
@@ -337,20 +660,23 @@ Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solu�
 Podemos ver também a versão compactada da árvore de procura, contendo apenas informação do estado, tal como na procura em largura, mas desta vez com informação de onde o estado veio. Pela observação da árvore é possível verificar que a maior parte das ramificações são de dois sucessores, o que é natural dado que este problema tem apenas duas salas.
 
 Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-\/1\hypertarget{teste_aspirador_autotoc_md23}{}\doxysubsection{\texorpdfstring{Ação 14 -\/ Profundidade ilimitada}{Ação 14 - Profundidade ilimitada}}\label{teste_aspirador_autotoc_md23}
-Colocar a profundidade ilimitada (limite a -\/1), e o nível de debug a 1\+: {\bfseries{1; 2; 11; 1; 14; 0; 12; -\/1; 6.}}
+Colocar a profundidade ilimitada (limite a -\/1), e o nível de debug a 1\+: {\bfseries{1; 2; 4; 9; -\/1; 2; 1; {\itshape ENTER}; 5.}}
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{Opção:\ 5}
+\DoxyCodeLine{\#\#\#\#\#\#\#\#}
 
 \end{DoxyCode}
 
 
-Temos um crash do programa. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-\/se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10.
-
-Pergunta final\+: Lembra-\/se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?\hypertarget{teste_aspirador_autotoc_md24}{}\doxysubsection{\texorpdfstring{Ação 15 -\/ Desafio Procura Profundidade}{Ação 15 - Desafio Procura Profundidade}}\label{teste_aspirador_autotoc_md24}
+Temos um crash do programa, e bem cedo. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-\/se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10.\hypertarget{teste_aspirador_autotoc_md24}{}\doxysubsection{\texorpdfstring{Ação 15 -\/ Desafio Procura Profundidade}{Ação 15 - Desafio Procura Profundidade}}\label{teste_aspirador_autotoc_md24}
 Lembra-\/se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?
 
 
 
 {\bfseries{Resposta}}\begin{adjustwidth}{1em}{0em}
 Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore de procura. Evitam também ciclos infinitos. Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias. \end{adjustwidth}
+
+
+Está terminado esta execução de exemplo. Fica para execuções de outros problemas o teste de algoritmos informados, bem como o custo uniforme e os testes empíricos, com as opções 6 e 7 do menu dos testes manuais. 

@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('teste_aspirador.html',''); initResizab
 </div><!-- fragment --><div class="image">
 <img src="aspirador.png" alt=""/>
 <div class="caption">
-Aspirador</div></div>
+Aspirador - espaço de estados para 2 salas</div></div>
     <p>Selecione o problema do Aspirador: <b>1.</b></p>
 <p>A versão deste problema foi generalizada no código para poderem existir N salas, uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.</p>
 <div class="fragment"><div class="line">Aspirador</div>
@@ -157,7 +157,7 @@ Ação 2 - Explorar os sucessores</h2>
 <div class="line">g:0 h:2 3|6</div>
 <div class="line">[.] *</div>
 <div class="line">Ações: dir asp</div>
-</div><!-- fragment --><p>Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações: esq, dir, asp. Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número. Introduza: <b>dir; asp; <em>vazio</em>.</b></p>
+</div><!-- fragment --><p>Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações: esq, dir, asp. Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número. Introduza: <b>dir; asp; <em>ENTER</em>.</b></p>
 <div class="fragment"><div class="line">Sucessor [1-2, ação(ões), exe]:dir</div>
 <div class="line">Executadas 1 ações com sucesso.</div>
 <div class="line">g:0 h:1 5|10</div>
@@ -212,7 +212,7 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <div class="line">P11(pesoAStar): 100 (0 a 10000)</div>
 <div class="line">P12(ruido): 0 (-100 a 100)</div>
 <div class="line">P13(baralhar): 0 (0 a 1)</div>
-</div><!-- fragment --><p> Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1. Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição. Introduza: <b>3; 1; <em>vazio</em>; 3.</b></p>
+</div><!-- fragment --><p> Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1. Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição. Introduza: <b>3; 1; <em>ENTER</em>; 3.</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
 <div class="line">P1(Algoritmo): Largura Primeiro (1 a 7)</div>
@@ -257,18 +257,112 @@ Ação 5 - Efetuer uma procura em Largura</h2>
 <div class="image">
 <img src="aspirador_largura.png" alt=""/>
 <div class="caption">
-Aspirador</div></div>
-    <p>Primeiro, na instância inicial, número 2, com nível de debug máximo: <b>1; 2; 11; 4; 4.</b></p>
-<p>A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 11 serve para escolher o nível de debug. Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa. A opção 4 executa o algoritmo de largura primeiro.</p>
-<ul>
-<li>Verificar que o número de expansões é 12 e gerações é 24. O resultado da procura é 3, o que significa que a procura encontrou uma solução de comprimento 3.</li>
-<li>Podemos ver a solução com 3 - Solução/Caminho. Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.</li>
-</ul>
+Procura em Largura - expande primeiro os estados menos profundos</div></div>
+    <p>Primeiro, na instância inicial, número 2, com nível de debug máximo: <b>1; 2; 4; 2; <em>ENTER</em>; 5.</b></p>
+<p>A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 4 vamos alterar neste caso o parâmetro nível de debug. Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa.</p>
+<div class="fragment"><div class="line">Opção: 1</div>
+<div class="line"> </div>
+<div class="line">Nova instância (atual 2) [2-50]: 2</div>
+<div class="line"> </div>
+<div class="line">Aspirador</div>
+<div class="line">...</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+<div class="line">Opção: 4</div>
+<div class="line"> </div>
+<div class="line">P1(Algoritmo): Largura Primeiro (1 a 7)</div>
+<div class="line">P2(Debug): nada (0 a 4)</div>
+<div class="line">...</div>
+<div class="line">Parametro:2</div>
+<div class="line"> </div>
+<div class="line">Nível de debug, de reduzido a completo.</div>
+<div class="line">0: nada</div>
+<div class="line">1: atividade</div>
+<div class="line">2: passos</div>
+<div class="line">3: detalhe</div>
+<div class="line">4: completo</div>
+<div class="line">Debug (atual 0): 4</div>
+<div class="line"> </div>
+<div class="line">P1(Algoritmo): Largura Primeiro (1 a 7)</div>
+<div class="line">P2(Debug): completo (0 a 4)</div>
+<div class="line">...</div>
+<div class="line">Parametro:</div>
+<div class="line">...</div>
+<div class="line">[Estatísticas] expansões 0 | gerações 0 | avaliações 0</div>
+<div class="line"> * [*]</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p> A opção 5 executa o algoritmo selecionado, que é a Largura Primeiro.</p>
+<div class="fragment"><div class="line">Opção: 5</div>
+<div class="line"> </div>
+<div class="line">g:0</div>
+<div class="line"> * [*]</div>
+<div class="line">  +#1 g:1 1|2 esq</div>
+<div class="line">  |[*] *</div>
+<div class="line">  +#2 g:1 1|2 asp</div>
+<div class="line">    * [.]</div>
+<div class="line">g:1 1|2</div>
+<div class="line">[*] *</div>
+<div class="line">  +#1 g:2 2|4 dir</div>
+<div class="line">  | * [*]</div>
+<div class="line">  +#2 g:2 2|4 asp</div>
+<div class="line">   [.] *</div>
+<div class="line">g:1 2|4</div>
+<div class="line"> * [.]</div>
+<div class="line">  +#1 g:2 3|6 esq</div>
+<div class="line">  |[*] .</div>
+<div class="line">  +#2 g:2 3|6 asp</div>
+<div class="line">    * [.]</div>
+<div class="line">g:2 3|6</div>
+<div class="line"> * [*]</div>
+<div class="line">  +#1 g:3 4|8 esq</div>
+<div class="line">  |[*] *</div>
+<div class="line">  +#2 g:3 4|8 asp</div>
+<div class="line">    * [.]</div>
+<div class="line">g:2 4|8</div>
+<div class="line">[.] *</div>
+<div class="line">  +#1 g:3 5|10 dir</div>
+<div class="line">  | . [*]</div>
+<div class="line">  +#2 g:3 5|10 asp</div>
+<div class="line">   [.] *</div>
+<div class="line">g:2 5|10</div>
+<div class="line">[*] .  Solução encontrada!</div>
+<div class="line">[.] . (g:3)</div>
+<div class="line">P1:1 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: 3 (0,019s)</div>
+<div class="line">Aspirador</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 6 | gerações 12 | avaliações 0</div>
+<div class="line">[.] .</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p>Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, o que significa que a procura encontrou uma solução de comprimento 3. Podemos ver a solução. Introduza: <b>3.</b></p>
+<div class="fragment"><div class="line">Opção: 3</div>
+<div class="line"> </div>
+<div class="line"> * [*] (g:0)</div>
+<div class="line"> * [.] (g:1)</div>
+<div class="line">[*] .  (g:2)</div>
+<div class="line">[.] .  (g:3)</div>
+<div class="line">Aspirador</div>
+<div class="line">...</div>
+<div class="line">[Estatísticas] expansões 6 | gerações 12 | avaliações 0</div>
+<div class="line">[.] .</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p> Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.</p>
 <p>A árvore da procura em largura não é desenhada na visualização textual, apenas na procura em profundidade. Nesta procura o que podemos ver é cada estado expandido e respetivos sucessores gerados. Cada estado irá aparecer pela primeira vez quando é gerado, e uma segunda vez quando é expandido. Na procura em largura, expandimos sempre o estado gerado há mais tempo.</p>
 <ul>
 <li>Verificar que o segundo estado expandido, é o primeiro sucessor do primeiro estado expandido. O terceiro estado expandido é o segundo sucessor do primeiro estado expandido. Poder-se-ia continuar, o estado expandido seguinte é sempre o gerado há mais tempo.</li>
 </ul>
-<div class="fragment"></div><!-- fragment --><p>Temos no entanto o mesmo estado inicial a ser gerado. De facto, o primeiro sucessor na segunda expansão, é o primeiro estado que é gerado novamente.</p>
+<p>Temos no entanto o mesmo estado inicial a ser gerado. De facto, o primeiro sucessor na segunda expansão, é o primeiro estado que é gerado novamente.</p>
 <p>Podemos lidar com estados repetidos de duas formas:</p>
 <ul>
 <li>Verificar se o estado a ser gerado, não tem já um ascendente - neste caso é preciso implementar a função Distinto() - Para fazer esta validação, o código tem de seguir pelos pais, e testar se são diferentes do atual.</li>
@@ -276,22 +370,117 @@ Aspirador</div></div>
 </ul>
 <h2><a class="anchor" id="autotoc_md15"></a>
 Ação 6 - Editar opções A</h2>
-<p>Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3: <b>1; 2; 14; 1; 11; 3; 4.</b></p><ul>
-<li>Verificar que o número de expansões é 6 e gerações é 7, uma grande melhoria. O resultado da procura mantém-se em 3.</li>
+<p>Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3: <b>1; 2; 4; 10; 2; 2; 3; <em>ENTER</em>; 5.</b></p>
+<ul>
+<li>Verificar que o número de expansões é 5 e gerações é 6, uma melhoria. O resultado da procura mantém-se em 3.</li>
 </ul>
-<div class="fragment"></div><!-- fragment --><p>Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.</p>
+<div class="fragment"><div class="line">Opção: 5</div>
+<div class="line"> </div>
+<div class="line">g:0</div>
+<div class="line"> * [*]</div>
+<div class="line">g:1 1|2</div>
+<div class="line">[*] *</div>
+<div class="line">g:1 2|3</div>
+<div class="line"> * [.]</div>
+<div class="line">g:2 3|4</div>
+<div class="line">[.] *</div>
+<div class="line">g:2 4|5</div>
+<div class="line">[*] .  Solução encontrada!</div>
+<div class="line">[.] . (g:3)</div>
+<div class="line">P1:1 P2:3 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:2</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: 3 (0,013s)</div>
+<div class="line">Aspirador</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 5 | gerações 6 | avaliações 0</div>
+<div class="line">[.] .</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p> A interação de troca de parâmetro não é mais mostrada para não saturar o texto. Caso esteja a reproduzir o teste, confirme que tem os parâmetros iguais aos valores atuais, visiveis na interface.</p>
+<p>Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
 Ação 7 - Editar opções B</h2>
-<p>Alterar a opção para remover os repetidos com base nos gerados, e altear o debug para nível 2: <b>1; 2; 14; 2; 11; 2; 4.</b></p>
-<div class="fragment"></div><!-- fragment --><p> Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números: expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.</p>
+<p>Alterar a opção para remover os repetidos com base nos gerados, e alterar o debug para nível 2: <b>1; 2; 4; 10; 3; 2; 2; <em>ENTER</em>; 5.</b></p>
+<div class="fragment"><div class="line">Opção: 5</div>
+<div class="line"> </div>
+<div class="line">g:0</div>
+<div class="line">g:1 1|2</div>
+<div class="line">g:1 2|3</div>
+<div class="line">g:2 3|4</div>
+<div class="line">g:2 4|5 Solução encontrada!</div>
+<div class="line">[.] . (g:3)</div>
+<div class="line">P1:1 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:3</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: 3 (0,013s)</div>
+<div class="line">Aspirador</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 5 | gerações 6 | avaliações 0</div>
+<div class="line">[.] .</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p> Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números: expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.</p>
 <p>É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.</p>
 <p>O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.</p>
 <h2><a class="anchor" id="autotoc_md17"></a>
 Ação 8 - Resolver outra instância</h2>
-<p>Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior: <b>1; 8; 14; 0; 11; 1; 4.</b></p>
-<p>Houve um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados: <br  />
+<p>Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior: <b>1; 8; 4; 10; 1; 2; 1; <em>ENTER</em>; 5.</b></p>
+<p>Pode haver um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados: <br  />
 </p>
-<div class="fragment"></div><!-- fragment --><p> Podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.</p>
+<div class="fragment"><div class="line">Aspirador</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 5 | gerações 6 | avaliações 0</div>
+<div class="line"> *  * [.] .  *  *  *  *</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+<div class="line">Opção: 5</div>
+<div class="line">################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################## Solução encontrada!</div>
+<div class="line"> .  .  .  .  .  .  . [.](g:15)</div>
+<div class="line">P1:1 P2:1 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: 15 (5,351s)</div>
+<div class="line">Aspirador</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 1681451 | gerações 4840697 | avaliações 0</div>
+<div class="line"> .  .  .  .  .  .  . [.]</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p> São demasiados estados gerados, quase 5 milhões, e 5 segundos. Há um # que é colocado no output a cada 1000 expansões. Se desconfiamos que com tanto estado, dificilmente a solução pode ser óptima, podemos ver a solução. Introduza: <b>3</b></p>
+<div class="fragment"><div class="line">Opção: 3</div>
+<div class="line"> </div>
+<div class="line"> *  * [.] .  *  *  *  *  (g:0)</div>
+<div class="line"> * [*] .  .  *  *  *  *  (g:1)</div>
+<div class="line">[*] *  .  .  *  *  *  *  (g:2)</div>
+<div class="line">[.] *  .  .  *  *  *  *  (g:3)</div>
+<div class="line"> . [*] .  .  *  *  *  *  (g:4)</div>
+<div class="line"> . [.] .  .  *  *  *  *  (g:5)</div>
+<div class="line"> .  . [.] .  *  *  *  *  (g:6)</div>
+<div class="line"> .  .  . [.] *  *  *  *  (g:7)</div>
+<div class="line"> .  .  .  . [*] *  *  *  (g:8)</div>
+<div class="line"> .  .  .  . [.] *  *  *  (g:9)</div>
+<div class="line"> .  .  .  .  . [*] *  *  (g:10)</div>
+<div class="line"> .  .  .  .  . [.] *  *  (g:11)</div>
+<div class="line"> .  .  .  .  .  . [*] *  (g:12)</div>
+<div class="line"> .  .  .  .  .  . [.] *  (g:13)</div>
+<div class="line"> .  .  .  .  .  .  . [*] (g:14)</div>
+<div class="line"> .  .  .  .  .  .  . [.] (g:15)</div>
+</div><!-- fragment --><p> Não houve desperdício visivel nestga solução. O algoritmo procura em largura garante-nos que esta solução é ótima, dado que o custo de cada ação é unitário.</p>
+<p>Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.</p>
 <p>A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.</p>
 <h2><a class="anchor" id="autotoc_md18"></a>
 Ação 9 - Desafio Procura em Largura</h2>
@@ -299,36 +488,149 @@ Ação 9 - Desafio Procura em Largura</h2>
 <details >
 <summary >
 Resposta:</summary>
-<p>Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20. Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos. </p>
+<p>Depende das condições de execução, vamos colocar na resposta o VPL com a 512MB. Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20. Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos. </p>
 </details>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Ação 10 - Procura em Profundidade</h2>
 <div class="image">
 <img src="aspirador_profundidade.png" alt=""/>
 <div class="caption">
-Aspirador</div></div>
+Profundidade Primeiro - expande primeiro os estados mais profundos</div></div>
     <p>Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.</p>
 <h2><a class="anchor" id="autotoc_md20"></a>
 Ação 11 - Efetuar uma procura em Profundidade Primeiro</h2>
-<p>Utilizar a instância número 2, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos: <b>1; 2; 11; 4; 14; 0; 12; 3; 6.</b></p>
-<p>A opção 12 permite alterar o limite. Na procura em largura o limite servia para limitar o número de estados gerados mas não expandidos. Aqui serve para limitar o nível de profundidade, que é fixado a 3. A opção 6 executa o algoritmo de Procura em Profundidade.</p>
-<div class="fragment"></div><!-- fragment --><p>Podemos ver todos os estados gerados. A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -1. Este resultado pode ser utilizado para saber que não há nenhuma solução de comprimento inferior a 3, ou seja, é um lower bound.</p>
+<p>Utilizar a instância número 2, o algoritmo profundidade primeiro, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos: <b>1; 2; 4; 1; 3; 9; 3; 2; 4; 10; 1; <em>ENTER</em>; 5.</b></p>
+<p>O parâmetro 1 é o algoritmo, em que o 3 é a profundidade primeiro.</p>
+<div class="fragment"><div class="line">Algoritmo base a executar.</div>
+<div class="line">1: Largura Primeiro</div>
+<div class="line">2: Custo Uniforme</div>
+<div class="line">3: Profundidade Primeiro</div>
+<div class="line">4: Melhor Primeiro</div>
+<div class="line">5: A*</div>
+<div class="line">6: IDA*</div>
+<div class="line">7: Branch and Bound</div>
+<div class="line">Algoritmo (atual 1):</div>
+</div><!-- fragment --><p>O parâmetro 9 é o limite, com diferentes interpretações conforme o algoritmo. <br  />
+ Na procura em largura o limite servia para limitar o número de estados gerados mas não expandidos. Aqui serve para limitar o nível de profundidade, que é fixado a 3.</p>
+<div class="fragment"><div class="line">Opção: 5</div>
+<div class="line">g:0</div>
+<div class="line"> * [*]</div>
+<div class="line">  +g:1 1|2 esq</div>
+<div class="line">  |[*] *</div>
+<div class="line">  |  +g:2 2|4 dir</div>
+<div class="line">  |  | * [*]</div>
+<div class="line">  |  |</div>
+<div class="line">  |  +g:2 2|4 asp</div>
+<div class="line">  |   [.] *</div>
+<div class="line">  |</div>
+<div class="line">  +g:1 2|4 asp</div>
+<div class="line">    * [.]</div>
+<div class="line">     +g:2 3|6 esq</div>
+<div class="line">     |[*] .</div>
+<div class="line">     |</div>
+<div class="line">     +g:2 3|6 asp</div>
+<div class="line">       * [.]</div>
+<div class="line"> </div>
+<div class="line">P1:3 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: -1 (0,012s)</div>
+<div class="line">Aspirador</div>
+<div class="line">P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 3 | gerações 6 | avaliações 0</div>
+<div class="line"> * [*]</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p>Podemos ver todos os estados gerados. A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -1. Este resultado pode ser utilizado para saber que não há nenhuma solução de comprimento inferior a 3, ou seja, é um lower bound.</p>
 <p>Esta visualização da árvore da procura é interessante para pequenos problemas, mas naturalmente que procuras maiores torna-se impraticável. Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.</p>
 <h2><a class="anchor" id="autotoc_md21"></a>
 Ação 12 - Ver uma árvore de procura maior</h2>
-<p>Colocar a profundidade a 10, e o nível de debug a 3: <b>1; 2; 11; 3; 14; 0; 12; 10; 6.</b></p>
-<div class="fragment"></div><!-- fragment --><p> Com o nível debug a 3 vemos a árvore de procura apenas os estados folha, mas não os estados expandidos. A informação é mais reduzida, mas poderá ser uma boa forma de analisar os estados em que o algoritmo volta para trás, já que podem ter alguma característica relevante, ainda não implementada. A solução não é óptima, tem comprimento 9! Podemos visualizar a solução: </p><div class="fragment"></div><!-- fragment --><p>Como o algoritmo é cego, segue a ordem dos sucessores. Neste caso está sempre a trocar de posição antes de aspirar. Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.</p>
+<p>Colocar a profundidade a 10, e o nível de debug a 3: <b>1; 2; 4; 9; 10; 2; 3; <em>ENTER</em>; 5.</b></p>
+<div class="fragment"><div class="line">Opção: 5</div>
+<div class="line">--+--+--+--+--+--+--+--+--+= g:9 9|18</div>
+<div class="line">  |  |  |  |  |  |  |  |  |[*] *</div>
+<div class="line">  |  |  |  |  |  |  |  |  += g:9 9|18</div>
+<div class="line">  |  |  |  |  |  |  |  |    * [.]</div>
+<div class="line">  |  |  |  |  |  |  |  +--+= g:9 10|20</div>
+<div class="line">  |  |  |  |  |  |  |     | . [*]</div>
+<div class="line">  |  |  |  |  |  |  |     += g:9 10|20</div>
+<div class="line">  |  |  |  |  |  |  |      [.] *</div>
+<div class="line">  |  |  |  |  |  |  +--+--+= g:9 12|24</div>
+<div class="line">  |  |  |  |  |  |     |  | * [.]</div>
+<div class="line">  |  |  |  |  |  |     |  + Solução encontrada!</div>
+<div class="line">[.] . (g:9)</div>
+<div class="line">P1:3 P2:3 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:10 P10:1</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: 9 (0,021s)</div>
+<div class="line">Aspirador</div>
+<div class="line">P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 10 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 12 | gerações 24 | avaliações 0</div>
+<div class="line">[.] .</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p> Com o nível debug a 3 vemos a árvore de procura apenas os estados folha, mas não os estados expandidos. A informação é mais reduzida, mas poderá ser uma boa forma de analisar os estados em que o algoritmo volta para trás, já que podem ter alguma característica relevante, ainda não implementada. A solução não é óptima, tem comprimento 9! Podemos visualizar a solução, introduza: <b>3.</b> </p><div class="fragment"><div class="line">Opção: 3</div>
+<div class="line"> </div>
+<div class="line"> * [*] (g:0)</div>
+<div class="line">[*] *  (g:1)</div>
+<div class="line"> * [*] (g:2)</div>
+<div class="line">[*] *  (g:3)</div>
+<div class="line"> * [*] (g:4)</div>
+<div class="line">[*] *  (g:5)</div>
+<div class="line"> * [*] (g:6)</div>
+<div class="line"> * [.] (g:7)</div>
+<div class="line">[*] .  (g:8)</div>
+<div class="line">[.] .  (g:9)</div>
+</div><!-- fragment --><p>Como o algoritmo é cego, segue a ordem dos sucessores. Neste caso está sempre a trocar de posição antes de aspirar. Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.</p>
 <h2><a class="anchor" id="autotoc_md22"></a>
 Ação 13 - Profundidade Iterativa</h2>
-<p>Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: <b>1; 2; 11; 2; 14; 0; 12; 0; 6.</b></p>
-<div class="fragment"></div><!-- fragment --><p>Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solução ótima. Fez várias iterações que não serviram para nada, antes de executar na iteração 4 com limite a 4. Mas essas árvores de procura são muito mais pequenas, pelo que o peso de executar essas procuras extra não é muito relevante.</p>
+<p>Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: <b>1; 2; 4; 9; 0; 2; 2; <em>ENTER</em>; 5.</b></p>
+<div class="fragment"><div class="line">Iteração 1:</div>
+<div class="line">= g:0</div>
+<div class="line">Iteração 2:</div>
+<div class="line">--+= g:1 1|2</div>
+<div class="line">  += g:1 1|2</div>
+<div class="line">Iteração 3:</div>
+<div class="line">--+--+= g:2 3|6</div>
+<div class="line">  |  += g:2 3|6</div>
+<div class="line">  +--+= g:2 4|8</div>
+<div class="line">     += g:2 4|8</div>
+<div class="line">Iteração 4:</div>
+<div class="line">--+--+--+= g:3 7|14</div>
+<div class="line">  |  |  += g:3 7|14</div>
+<div class="line">  |  +--+= g:3 8|16</div>
+<div class="line">  |     += g:3 8|16</div>
+<div class="line">  +--+--+= g:3 10|20</div>
+<div class="line">     |  + Solução encontrada!</div>
+<div class="line">[.] . (g:3)</div>
+<div class="line">P1:3 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: 3 (0,016s)</div>
+<div class="line">Aspirador</div>
+<div class="line">P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 10 | gerações 20 | avaliações 0</div>
+<div class="line">[.] .</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p>Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solução ótima. Fez várias iterações que não serviram para nada, antes de executar na iteração 4 com limite a 4. Mas essas árvores de procura são muito mais pequenas, pelo que o peso de executar essas procuras extra não é muito relevante.</p>
 <p>Podemos ver também a versão compactada da árvore de procura, contendo apenas informação do estado, tal como na procura em largura, mas desta vez com informação de onde o estado veio. Pela observação da árvore é possível verificar que a maior parte das ramificações são de dois sucessores, o que é natural dado que este problema tem apenas duas salas.</p>
 <p>Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-1</p>
 <h2><a class="anchor" id="autotoc_md23"></a>
 Ação 14 - Profundidade ilimitada</h2>
-<p>Colocar a profundidade ilimitada (limite a -1), e o nível de debug a 1: <b>1; 2; 11; 1; 14; 0; 12; -1; 6.</b></p>
-<div class="fragment"></div><!-- fragment --><p>Temos um crash do programa. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10.</p>
-<p>Pergunta final: Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?</p>
+<p>Colocar a profundidade ilimitada (limite a -1), e o nível de debug a 1: <b>1; 2; 4; 9; -1; 2; 1; <em>ENTER</em>; 5.</b></p>
+<div class="fragment"><div class="line">Opção: 5</div>
+<div class="line">########</div>
+</div><!-- fragment --><p>Temos um crash do programa, e bem cedo. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10.</p>
 <h2><a class="anchor" id="autotoc_md24"></a>
 Ação 15 - Desafio Procura Profundidade</h2>
 <p>Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?</p>
@@ -337,6 +639,7 @@ Ação 15 - Desafio Procura Profundidade</h2>
 Resposta</summary>
 <p>Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore de procura. Evitam também ciclos infinitos. Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias. </p>
 </details>
+<p>Está terminado esta execução de exemplo. Fica para execuções de outros problemas o teste de algoritmos informados, bem como o custo uniforme e os testes empíricos, com as opções 6 e 7 do menu dos testes manuais. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
