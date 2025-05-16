@@ -2,7 +2,7 @@
 CC = g++
 CFLAGS = -Wall -g
 TARGET = TProcuraConstrutiva
-SRC = TProcuraConstrutiva.cpp TRand.cpp Teste/ProblemaArtificial.cpp Teste/teste.cpp
+SRC = TProcuraConstrutiva.cpp TRand.cpp Teste/ProblemaArtificial.cpp Teste/teste.cpp Teste/Aspirador.cpp Teste/OitoDamas.cpp Teste/Particao.cpp Teste/Puzzle8.cpp
 FTeste = Teste/CasosTeste/input.txt Teste/CasosTeste/output_esperado.txt
 
 # Regra padrão (executada com `make` sem argumentos)
