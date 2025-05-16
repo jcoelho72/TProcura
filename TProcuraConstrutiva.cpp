@@ -762,7 +762,7 @@ void TProcuraConstrutiva::TesteManual(const char *nome)
 	SolucaoVazia();
 	LimparEstatisticas(inicio);
 	while(true) {
-		printf("\n%s (TProcuraConstrutiva)", nome);
+		printf("\n%s", nome);
 		MostraParametros();
 		printf("\n[Estatísticas] expansões %d | gerações %d | avaliações %d ",
 			expansoes, geracoes, avaliacoes);

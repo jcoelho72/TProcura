@@ -1,4 +1,4 @@
-@page teste1 Teste 1 - Exploração do problema artificial
+@page execucao_exemplo Execução de exemplo
 
 Esta página mostra a execução de exemplo, demonstrando parcialmente os algoritmos na superclasse TProcuraConstrutiva, 
 com base na implementação CProblemaArtificial, que implementa espaços de procura artificiais.

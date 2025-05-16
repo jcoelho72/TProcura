@@ -19,15 +19,14 @@ typedef struct SParametrosEspaco {
 	//   nesse caso a heurística não pode ultrapassar o custo desse filho
 } TParametrosEspaco;
 
-
-///////////////////////////////////////////////////////////////////////////////
-//	CProblemaArtificial class
-///////////////////////////////////////////////////////////////////////////////
-//	Author: Jose Coelho
-//	Last revision: 2025-05-12
-//	Description:
-//    Implementa um problema artificial, para teste da procura construtiva
-///////////////////////////////////////////////////////////////////////////////
+/**
+ * @brief Representa um estado num problema artificial
+ *
+ * Neste problema um estado é um número inteiro, sendo abstrato. O número poderia representar um estado de um problema real. 
+ * Pretende-se atingir estados múltiplos de um dado valor, tipicamente 10 ou 100, ficando os dígitos menos significativos a 0
+ * Cada instância define características do espaço de estados como ramificação, nível mímimo em que está a solução, ou
+ * mesmo a profundidade máxima. Podemos observar o comportamento dos algoritmos em espaços de cada tipo de características.
+ */
 class CProblemaArtificial :
 	public TProcuraConstrutiva
 {

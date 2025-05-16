@@ -943,6 +943,9 @@ public:
 	// Chamar sempre que se quer uma nova linha com a árvore em baixo
 	void NovaLinha(bool tudo = true);
 
+	// ler um número, ou retorna NAO_LIDO
+	static int NovoValor(const char* prompt); 
+
 protected:
 
 	// Métodos para visualizar a procura
@@ -973,7 +976,6 @@ protected:
 	void VerificaLimites(int limite, int porProcessar, TVector<TNo>& sucessores);
 	void CalcularHeuristicas(TVector<TNo>& sucessores, TVector<int>* id = NULL, bool sortLB = false);
 	int SolucaoParcial(int i, TVector<TNo>& sucessores);
-	int NovoValor(const char* prompt); // ler um número, ou retorna NAO_LIDO
 	void ExplorarSucessores(bool jogo=false);
 	void EditarParametros();
 	void EditarConfiguracoes();

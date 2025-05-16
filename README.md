@@ -22,7 +22,15 @@ Uma coleção de algoritmos e implementações para **procuras e otimizações**
 ## Sobre o Projeto
 
 Apresenta a implementação de algoritmos voltados para [procuras construtivas](#), com foco em explorar soluções de otimização e problemas práticos.  
-*A ideia é que este projeto sirva como repositório central para procuras construtivas, enquanto projetos derivados possam contemplar procuras melhorativas e procuras adversas. Estes três projetos podem servir de base para a implementação de problemas concretos, sendo criado também um porjeto para  exemplos de problemas implementados.*
+
+*Pretende-se que sirva como repositório central para procuras construtivas, enquanto projetos derivados possam contemplar procuras melhorativas e procuras adversas. 
+Estes três projetos podem servir de base para a implementação de problemas concretos, sendo criado também um porjeto para  exemplos de problemas implementados.*
+
+Recursos utilizados na UC de [Introdução à Inteligência Artificial](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/), 
+da [Licenciatura em Engenharia Informática](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/) da [Universidade Aberta](https://portal.uab.pt/)
+
+Bibliografia da UC, e base teórica para o projeto: 
+Russell, S. J., & Norvig, P. (2021). Artificial Intelligence: A Modern Approach (4th ed.). Pearson.
 
 ## Estado do Projeto
 
