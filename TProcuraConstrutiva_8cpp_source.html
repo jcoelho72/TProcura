@@ -1460,260 +1460,270 @@ $(document).ready(function(){initNavTree('TProcuraConstrutiva_8cpp_source.html',
 <div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span>                            <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span>                        }</div>
 <div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span>                        token = strtok(NULL, <span class="stringliteral">&quot; \t\n\r&quot;</span>);</div>
-<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span>                    } <span class="keywordflow">while</span> (token != NULL);</div>
-<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span>                    <span class="keywordflow">if</span> (nAcoes &gt; 0)</div>
-<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"> 1269</span>                        printf(<span class="stringliteral">&quot;Executadas %d ações com sucesso.\n&quot;</span>, nAcoes);                   </div>
-<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>                }</div>
-<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span>            }</div>
-<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span>        }</div>
-<div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>        <span class="keywordflow">if</span> (opcao &gt; 0 &amp;&amp; opcao &lt;= sucessores.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>()) </div>
-<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>            <a class="code hl_function" href="group__RedefinicaoMandatoria.html#ga92eb7af76e68a20fe542afb459e7d642">Copiar</a>(sucessores[opcao - 1]);</div>
-<div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span>        <a class="code hl_function" href="classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df">LibertarVector</a>(sucessores);</div>
-<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"> 1276</span>    } <span class="keywordflow">while</span> (opcao != 0);</div>
-<div class="line"><a id="l01277" name="l01277"></a><span class="lineno"> 1277</span>}</div>
+<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span> </div>
+<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span>                        <span class="keywordflow">if</span> (token != NULL) {</div>
+<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"> 1269</span>                            <span class="comment">// há outra ação, é preciso atualizar o caminho</span></div>
+<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>                            <a class="code hl_variable" href="group__VariaveisGlobais.html#ga6dad497973fb467e2b2224f134b90443">caminho</a>.Add(<a class="code hl_function" href="group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623">Duplicar</a>());</div>
+<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span>                            <span class="keywordflow">if</span> (<a class="code hl_variable" href="group__VariaveisGlobais.html#ga6dad497973fb467e2b2224f134b90443">caminho</a>.Count() &gt; 1)</div>
+<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span>                                <a class="code hl_variable" href="group__VariaveisGlobais.html#ga6dad497973fb467e2b2224f134b90443">caminho</a>.Last()-&gt;custo += <a class="code hl_variable" href="group__VariaveisGlobais.html#ga6dad497973fb467e2b2224f134b90443">caminho</a>[<a class="code hl_variable" href="group__VariaveisGlobais.html#ga6dad497973fb467e2b2224f134b90443">caminho</a>.Count() - 2]-&gt;custo;</div>
+<div class="line"><a id="l01273" name="l01273"></a><span class="lineno"> 1273</span>                            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span>                                <a class="code hl_variable" href="group__VariaveisGlobais.html#ga6dad497973fb467e2b2224f134b90443">caminho</a>.Last()-&gt;custo = 0;</div>
+<div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span>                        }</div>
+<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"> 1276</span> </div>
+<div class="line"><a id="l01277" name="l01277"></a><span class="lineno"> 1277</span>                    } <span class="keywordflow">while</span> (token != NULL);</div>
+<div class="line"><a id="l01278" name="l01278"></a><span class="lineno"> 1278</span>                    <span class="keywordflow">if</span> (nAcoes &gt; 0)</div>
+<div class="line"><a id="l01279" name="l01279"></a><span class="lineno"> 1279</span>                        printf(<span class="stringliteral">&quot;Executadas %d ações com sucesso.\n&quot;</span>, nAcoes);                   </div>
+<div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span>                }</div>
+<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span>            }</div>
+<div class="line"><a id="l01282" name="l01282"></a><span class="lineno"> 1282</span>        }</div>
+<div class="line"><a id="l01283" name="l01283"></a><span class="lineno"> 1283</span>        <span class="keywordflow">if</span> (opcao &gt; 0 &amp;&amp; opcao &lt;= sucessores.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>()) </div>
+<div class="line"><a id="l01284" name="l01284"></a><span class="lineno"> 1284</span>            <a class="code hl_function" href="group__RedefinicaoMandatoria.html#ga92eb7af76e68a20fe542afb459e7d642">Copiar</a>(sucessores[opcao - 1]);</div>
+<div class="line"><a id="l01285" name="l01285"></a><span class="lineno"> 1285</span>        <a class="code hl_function" href="classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df">LibertarVector</a>(sucessores);</div>
+<div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span>    } <span class="keywordflow">while</span> (opcao != 0);</div>
+<div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span>}</div>
 </div>
-<div class="line"><a id="l01278" name="l01278"></a><span class="lineno"> 1278</span> </div>
-<div class="foldopen" id="foldopen01279" data-start="{" data-end="}">
-<div class="line"><a id="l01279" name="l01279"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c"> 1279</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c">TProcuraConstrutiva::Hash</a>() {</div>
-<div class="line"><a id="l01280" name="l01280"></a><span class="lineno"> 1280</span>    <span class="comment">// utilizando FNV-1 hash (http://www.isthe.com/chongo/tech/comp/fnv/)</span></div>
-<div class="line"><a id="l01281" name="l01281"></a><span class="lineno"> 1281</span>    uint32_t h = 2166136261;</div>
-<div class="line"><a id="l01282" name="l01282"></a><span class="lineno"> 1282</span>    <a class="code hl_function" href="group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11">Codifica</a>(<a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>);</div>
-<div class="line"><a id="l01283" name="l01283"></a><span class="lineno"> 1283</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526">OBJETO_HASHTABLE</a> &amp;&amp; <a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>[i]; i++) {</div>
-<div class="line"><a id="l01284" name="l01284"></a><span class="lineno"> 1284</span>        uint64_t valor = <a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>[i];</div>
-<div class="line"><a id="l01285" name="l01285"></a><span class="lineno"> 1285</span>        <span class="comment">// processar cada octeto </span></div>
-<div class="line"><a id="l01286" name="l01286"></a><span class="lineno"> 1286</span>        <span class="comment">// quando o valor fica 0, já não interessa</span></div>
-<div class="line"><a id="l01287" name="l01287"></a><span class="lineno"> 1287</span>        <span class="comment">// já que existindo dados, são distintos de 0</span></div>
-<div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 8 &amp;&amp; valor; i++) {</div>
-<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"> 1289</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> octeto = valor &amp; 255;</div>
-<div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span>            valor &gt;&gt;= 8;</div>
-<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span>            h *= 16777619;</div>
-<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>            h ^= octeto;</div>
-<div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span>        }</div>
-<div class="line"><a id="l01294" name="l01294"></a><span class="lineno"> 1294</span>    }</div>
-<div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span>    <span class="keywordflow">return</span> h % <a class="code hl_define" href="TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0">TAMANHO_HASHTABLE</a>;</div>
-<div class="line"><a id="l01296" name="l01296"></a><span class="lineno"> 1296</span>}</div>
-</div>
-<div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span> </div>
-<div class="foldopen" id="foldopen01298" data-start="{" data-end="}">
-<div class="line"><a id="l01298" name="l01298"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c"> 1298</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c">TProcuraConstrutiva::LimparHT</a>() {</div>
-<div class="line"><a id="l01299" name="l01299"></a><span class="lineno"> 1299</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="group__VariaveisGlobais.html#gaa214272b03812529f77ebdf9f745c97d">parametro</a>[<a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5">estadosRepetidos</a>].valor == <a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a">gerados</a>) {</div>
-<div class="line"><a id="l01300" name="l01300"></a><span class="lineno"> 1300</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0">TAMANHO_HASHTABLE</a>; i++)</div>
-<div class="line"><a id="l01301" name="l01301"></a><span class="lineno"> 1301</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b">tamanhoCodificado</a>; j++)</div>
-<div class="line"><a id="l01302" name="l01302"></a><span class="lineno"> 1302</span>                <a class="code hl_variable" href="classTProcuraConstrutiva.html#a601336388070f0aee00e9615b1097205">elementosHT</a>[i][j] = 0;</div>
-<div class="line"><a id="l01303" name="l01303"></a><span class="lineno"> 1303</span>        <span class="comment">// coloca o estado atual na hasttable, para não ser gerado</span></div>
-<div class="line"><a id="l01304" name="l01304"></a><span class="lineno"> 1304</span>        <a class="code hl_function" href="classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac">ExisteHT</a>();</div>
-<div class="line"><a id="l01305" name="l01305"></a><span class="lineno"> 1305</span>    }</div>
+<div class="line"><a id="l01288" name="l01288"></a><span class="lineno"> 1288</span> </div>
+<div class="foldopen" id="foldopen01289" data-start="{" data-end="}">
+<div class="line"><a id="l01289" name="l01289"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c"> 1289</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c">TProcuraConstrutiva::Hash</a>() {</div>
+<div class="line"><a id="l01290" name="l01290"></a><span class="lineno"> 1290</span>    <span class="comment">// utilizando FNV-1 hash (http://www.isthe.com/chongo/tech/comp/fnv/)</span></div>
+<div class="line"><a id="l01291" name="l01291"></a><span class="lineno"> 1291</span>    uint32_t h = 2166136261;</div>
+<div class="line"><a id="l01292" name="l01292"></a><span class="lineno"> 1292</span>    <a class="code hl_function" href="group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11">Codifica</a>(<a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>);</div>
+<div class="line"><a id="l01293" name="l01293"></a><span class="lineno"> 1293</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526">OBJETO_HASHTABLE</a> &amp;&amp; <a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>[i]; i++) {</div>
+<div class="line"><a id="l01294" name="l01294"></a><span class="lineno"> 1294</span>        uint64_t valor = <a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>[i];</div>
+<div class="line"><a id="l01295" name="l01295"></a><span class="lineno"> 1295</span>        <span class="comment">// processar cada octeto </span></div>
+<div class="line"><a id="l01296" name="l01296"></a><span class="lineno"> 1296</span>        <span class="comment">// quando o valor fica 0, já não interessa</span></div>
+<div class="line"><a id="l01297" name="l01297"></a><span class="lineno"> 1297</span>        <span class="comment">// já que existindo dados, são distintos de 0</span></div>
+<div class="line"><a id="l01298" name="l01298"></a><span class="lineno"> 1298</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 8 &amp;&amp; valor; i++) {</div>
+<div class="line"><a id="l01299" name="l01299"></a><span class="lineno"> 1299</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> octeto = valor &amp; 255;</div>
+<div class="line"><a id="l01300" name="l01300"></a><span class="lineno"> 1300</span>            valor &gt;&gt;= 8;</div>
+<div class="line"><a id="l01301" name="l01301"></a><span class="lineno"> 1301</span>            h *= 16777619;</div>
+<div class="line"><a id="l01302" name="l01302"></a><span class="lineno"> 1302</span>            h ^= octeto;</div>
+<div class="line"><a id="l01303" name="l01303"></a><span class="lineno"> 1303</span>        }</div>
+<div class="line"><a id="l01304" name="l01304"></a><span class="lineno"> 1304</span>    }</div>
+<div class="line"><a id="l01305" name="l01305"></a><span class="lineno"> 1305</span>    <span class="keywordflow">return</span> h % <a class="code hl_define" href="TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0">TAMANHO_HASHTABLE</a>;</div>
 <div class="line"><a id="l01306" name="l01306"></a><span class="lineno"> 1306</span>}</div>
 </div>
 <div class="line"><a id="l01307" name="l01307"></a><span class="lineno"> 1307</span> </div>
 <div class="foldopen" id="foldopen01308" data-start="{" data-end="}">
-<div class="line"><a id="l01308" name="l01308"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac"> 1308</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac">TProcuraConstrutiva::ExisteHT</a>() {</div>
-<div class="line"><a id="l01309" name="l01309"></a><span class="lineno"> 1309</span>    <span class="comment">// caso não exista, retorna falso e insere</span></div>
-<div class="line"><a id="l01310" name="l01310"></a><span class="lineno"> 1310</span>    <span class="comment">// se existe retorna verdade, e estiver lá outro elemento, substitui</span></div>
-<div class="line"><a id="l01311" name="l01311"></a><span class="lineno"> 1311</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> original = <a class="code hl_function" href="classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c">Hash</a>();</div>
-<div class="line"><a id="l01312" name="l01312"></a><span class="lineno"> 1312</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> indice = original % <a class="code hl_define" href="TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0">TAMANHO_HASHTABLE</a>;</div>
-<div class="line"><a id="l01313" name="l01313"></a><span class="lineno"> 1313</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b">tamanhoCodificado</a>; i++)</div>
-<div class="line"><a id="l01314" name="l01314"></a><span class="lineno"> 1314</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classTProcuraConstrutiva.html#a601336388070f0aee00e9615b1097205">elementosHT</a>[indice][i] != <a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>[i]) {</div>
-<div class="line"><a id="l01315" name="l01315"></a><span class="lineno"> 1315</span>            <a class="code hl_function" href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057">SubstituirHT</a>(indice);</div>
-<div class="line"><a id="l01316" name="l01316"></a><span class="lineno"> 1316</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// não existia</span></div>
-<div class="line"><a id="l01317" name="l01317"></a><span class="lineno"> 1317</span>        }</div>
-<div class="line"><a id="l01318" name="l01318"></a><span class="lineno"> 1318</span>    <span class="comment">// elemento é igual, mas se o custo for mais alto, não conta</span></div>
-<div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>    <span class="comment">// já que este elemento com custo mais baixo, pode conduzir à solução ou melhores soluções</span></div>
-<div class="line"><a id="l01320" name="l01320"></a><span class="lineno"> 1320</span>    <span class="comment">// neste caso substitui e retorna que o estado não existe</span></div>
-<div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classTProcuraConstrutiva.html#af40b12ca395037ca10b1be13c4f5e5ab">custoHT</a>[indice] &gt; <a class="code hl_variable" href="group__VariaveisEstado.html#ga2ee0de16d01f9520b20807f900bf69d0">custo</a>) {</div>
-<div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>        <a class="code hl_function" href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057">SubstituirHT</a>(indice);</div>
-<div class="line"><a id="l01323" name="l01323"></a><span class="lineno"> 1323</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// existe mas com um custo mais alto</span></div>
-<div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>    }</div>
-<div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// igual, estado já analisado</span></div>
-<div class="line"><a id="l01326" name="l01326"></a><span class="lineno"> 1326</span>}</div>
+<div class="line"><a id="l01308" name="l01308"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c"> 1308</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c">TProcuraConstrutiva::LimparHT</a>() {</div>
+<div class="line"><a id="l01309" name="l01309"></a><span class="lineno"> 1309</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="group__VariaveisGlobais.html#gaa214272b03812529f77ebdf9f745c97d">parametro</a>[<a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5">estadosRepetidos</a>].valor == <a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a">gerados</a>) {</div>
+<div class="line"><a id="l01310" name="l01310"></a><span class="lineno"> 1310</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0">TAMANHO_HASHTABLE</a>; i++)</div>
+<div class="line"><a id="l01311" name="l01311"></a><span class="lineno"> 1311</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b">tamanhoCodificado</a>; j++)</div>
+<div class="line"><a id="l01312" name="l01312"></a><span class="lineno"> 1312</span>                <a class="code hl_variable" href="classTProcuraConstrutiva.html#a601336388070f0aee00e9615b1097205">elementosHT</a>[i][j] = 0;</div>
+<div class="line"><a id="l01313" name="l01313"></a><span class="lineno"> 1313</span>        <span class="comment">// coloca o estado atual na hasttable, para não ser gerado</span></div>
+<div class="line"><a id="l01314" name="l01314"></a><span class="lineno"> 1314</span>        <a class="code hl_function" href="classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac">ExisteHT</a>();</div>
+<div class="line"><a id="l01315" name="l01315"></a><span class="lineno"> 1315</span>    }</div>
+<div class="line"><a id="l01316" name="l01316"></a><span class="lineno"> 1316</span>}</div>
 </div>
-<div class="line"><a id="l01327" name="l01327"></a><span class="lineno"> 1327</span> </div>
-<div class="foldopen" id="foldopen01328" data-start="{" data-end="}">
-<div class="line"><a id="l01328" name="l01328"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057"> 1328</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057">TProcuraConstrutiva::SubstituirHT</a>(<span class="keywordtype">int</span> indice) </div>
-<div class="line"><a id="l01329" name="l01329"></a><span class="lineno"> 1329</span>{</div>
-<div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span>    <span class="comment">// substituir elemento</span></div>
-<div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b">tamanhoCodificado</a>; i++)</div>
-<div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>        <a class="code hl_variable" href="classTProcuraConstrutiva.html#a601336388070f0aee00e9615b1097205">elementosHT</a>[indice][i] = <a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>[i];</div>
-<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>    <a class="code hl_variable" href="classTProcuraConstrutiva.html#af40b12ca395037ca10b1be13c4f5e5ab">custoHT</a>[indice] = <a class="code hl_variable" href="group__VariaveisEstado.html#ga2ee0de16d01f9520b20807f900bf69d0">custo</a>;</div>
-<div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>}</div>
+<div class="line"><a id="l01317" name="l01317"></a><span class="lineno"> 1317</span> </div>
+<div class="foldopen" id="foldopen01318" data-start="{" data-end="}">
+<div class="line"><a id="l01318" name="l01318"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac"> 1318</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac">TProcuraConstrutiva::ExisteHT</a>() {</div>
+<div class="line"><a id="l01319" name="l01319"></a><span class="lineno"> 1319</span>    <span class="comment">// caso não exista, retorna falso e insere</span></div>
+<div class="line"><a id="l01320" name="l01320"></a><span class="lineno"> 1320</span>    <span class="comment">// se existe retorna verdade, e estiver lá outro elemento, substitui</span></div>
+<div class="line"><a id="l01321" name="l01321"></a><span class="lineno"> 1321</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> original = <a class="code hl_function" href="classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c">Hash</a>();</div>
+<div class="line"><a id="l01322" name="l01322"></a><span class="lineno"> 1322</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> indice = original % <a class="code hl_define" href="TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0">TAMANHO_HASHTABLE</a>;</div>
+<div class="line"><a id="l01323" name="l01323"></a><span class="lineno"> 1323</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b">tamanhoCodificado</a>; i++)</div>
+<div class="line"><a id="l01324" name="l01324"></a><span class="lineno"> 1324</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classTProcuraConstrutiva.html#a601336388070f0aee00e9615b1097205">elementosHT</a>[indice][i] != <a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>[i]) {</div>
+<div class="line"><a id="l01325" name="l01325"></a><span class="lineno"> 1325</span>            <a class="code hl_function" href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057">SubstituirHT</a>(indice);</div>
+<div class="line"><a id="l01326" name="l01326"></a><span class="lineno"> 1326</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// não existia</span></div>
+<div class="line"><a id="l01327" name="l01327"></a><span class="lineno"> 1327</span>        }</div>
+<div class="line"><a id="l01328" name="l01328"></a><span class="lineno"> 1328</span>    <span class="comment">// elemento é igual, mas se o custo for mais alto, não conta</span></div>
+<div class="line"><a id="l01329" name="l01329"></a><span class="lineno"> 1329</span>    <span class="comment">// já que este elemento com custo mais baixo, pode conduzir à solução ou melhores soluções</span></div>
+<div class="line"><a id="l01330" name="l01330"></a><span class="lineno"> 1330</span>    <span class="comment">// neste caso substitui e retorna que o estado não existe</span></div>
+<div class="line"><a id="l01331" name="l01331"></a><span class="lineno"> 1331</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classTProcuraConstrutiva.html#af40b12ca395037ca10b1be13c4f5e5ab">custoHT</a>[indice] &gt; <a class="code hl_variable" href="group__VariaveisEstado.html#ga2ee0de16d01f9520b20807f900bf69d0">custo</a>) {</div>
+<div class="line"><a id="l01332" name="l01332"></a><span class="lineno"> 1332</span>        <a class="code hl_function" href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057">SubstituirHT</a>(indice);</div>
+<div class="line"><a id="l01333" name="l01333"></a><span class="lineno"> 1333</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// existe mas com um custo mais alto</span></div>
+<div class="line"><a id="l01334" name="l01334"></a><span class="lineno"> 1334</span>    }</div>
+<div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// igual, estado já analisado</span></div>
+<div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span>}</div>
 </div>
-<div class="line"><a id="l01335" name="l01335"></a><span class="lineno"> 1335</span> </div>
-<div class="line"><a id="l01336" name="l01336"></a><span class="lineno"> 1336</span><span class="comment">// estados repetidos: verificar todos os gerados</span></div>
-<div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span><span class="comment">// implementar para utilizar hashtables com perdas</span></div>
-<div class="line"><a id="l01338" name="l01338"></a><span class="lineno"> 1338</span><span class="comment">// converte o estado atual para a variável estado, utilizando o menor espaço possível</span></div>
-<div class="line"><a id="l01339" name="l01339"></a><span class="lineno"> 1339</span><span class="comment">// caso existam simetrias, normalizar o estado antes de codificar, para considerar exploradas todas as versões</span></div>
-<div class="foldopen" id="foldopen01340" data-start="{" data-end="}">
-<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"><a class="line" href="group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11"> 1340</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11">TProcuraConstrutiva::Codifica</a>(uint64_t estado[<a class="code hl_define" href="TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526">OBJETO_HASHTABLE</a>]) {</div>
+<div class="line"><a id="l01337" name="l01337"></a><span class="lineno"> 1337</span> </div>
+<div class="foldopen" id="foldopen01338" data-start="{" data-end="}">
+<div class="line"><a id="l01338" name="l01338"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057"> 1338</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057">TProcuraConstrutiva::SubstituirHT</a>(<span class="keywordtype">int</span> indice) </div>
+<div class="line"><a id="l01339" name="l01339"></a><span class="lineno"> 1339</span>{</div>
+<div class="line"><a id="l01340" name="l01340"></a><span class="lineno"> 1340</span>    <span class="comment">// substituir elemento</span></div>
 <div class="line"><a id="l01341" name="l01341"></a><span class="lineno"> 1341</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b">tamanhoCodificado</a>; i++)</div>
-<div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>        estado[i] = 0;</div>
-<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>}</div>
+<div class="line"><a id="l01342" name="l01342"></a><span class="lineno"> 1342</span>        <a class="code hl_variable" href="classTProcuraConstrutiva.html#a601336388070f0aee00e9615b1097205">elementosHT</a>[indice][i] = <a class="code hl_variable" href="classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999">estadoCodHT</a>[i];</div>
+<div class="line"><a id="l01343" name="l01343"></a><span class="lineno"> 1343</span>    <a class="code hl_variable" href="classTProcuraConstrutiva.html#af40b12ca395037ca10b1be13c4f5e5ab">custoHT</a>[indice] = <a class="code hl_variable" href="group__VariaveisEstado.html#ga2ee0de16d01f9520b20807f900bf69d0">custo</a>;</div>
+<div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span>}</div>
 </div>
-<div class="line"><a id="l01344" name="l01344"></a><span class="lineno"> 1344</span> </div>
-<div class="foldopen" id="foldopen01345" data-start="{" data-end="}">
-<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#a6dc1daad843c50560a5f3dd8bbe23f56"> 1345</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#a6dc1daad843c50560a5f3dd8bbe23f56">TProcuraConstrutiva::Dominio</a>(<span class="keywordtype">int</span>&amp; variavel, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max) {</div>
-<div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span>    <span class="keywordflow">if</span> (variavel &lt; min)</div>
-<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span>        variavel = min;</div>
-<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span>    <span class="keywordflow">if</span> (variavel &gt; max)</div>
-<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span>        variavel = max;</div>
-<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"> 1350</span>    <span class="keywordflow">return</span> variavel;</div>
-<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>}</div>
+<div class="line"><a id="l01345" name="l01345"></a><span class="lineno"> 1345</span> </div>
+<div class="line"><a id="l01346" name="l01346"></a><span class="lineno"> 1346</span><span class="comment">// estados repetidos: verificar todos os gerados</span></div>
+<div class="line"><a id="l01347" name="l01347"></a><span class="lineno"> 1347</span><span class="comment">// implementar para utilizar hashtables com perdas</span></div>
+<div class="line"><a id="l01348" name="l01348"></a><span class="lineno"> 1348</span><span class="comment">// converte o estado atual para a variável estado, utilizando o menor espaço possível</span></div>
+<div class="line"><a id="l01349" name="l01349"></a><span class="lineno"> 1349</span><span class="comment">// caso existam simetrias, normalizar o estado antes de codificar, para considerar exploradas todas as versões</span></div>
+<div class="foldopen" id="foldopen01350" data-start="{" data-end="}">
+<div class="line"><a id="l01350" name="l01350"></a><span class="lineno"><a class="line" href="group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11"> 1350</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11">TProcuraConstrutiva::Codifica</a>(uint64_t estado[<a class="code hl_define" href="TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526">OBJETO_HASHTABLE</a>]) {</div>
+<div class="line"><a id="l01351" name="l01351"></a><span class="lineno"> 1351</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b">tamanhoCodificado</a>; i++)</div>
+<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span>        estado[i] = 0;</div>
+<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"> 1353</span>}</div>
 </div>
-<div class="line"><a id="l01352" name="l01352"></a><span class="lineno"> 1352</span> </div>
-<div class="foldopen" id="foldopen01353" data-start="{" data-end="}">
-<div class="line"><a id="l01353" name="l01353"></a><span class="lineno"><a class="line" href="classCListaNo.html#a9b86dffe0ec5192bdb6dd45c5d0dc580"> 1353</a></span><a class="code hl_function" href="classCListaNo.html#a9b86dffe0ec5192bdb6dd45c5d0dc580">CListaNo::~CListaNo</a>() {</div>
-<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span>    <span class="comment">// não libertar o primeiro elemento</span></div>
-<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"> 1355</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; indice.Count(); i++)</div>
-<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span>        <span class="keywordflow">if</span> (indice[i].estado != NULL)</div>
-<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>            <span class="keyword">delete</span> indice[i].estado;</div>
-<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>}</div>
+<div class="line"><a id="l01354" name="l01354"></a><span class="lineno"> 1354</span> </div>
+<div class="foldopen" id="foldopen01355" data-start="{" data-end="}">
+<div class="line"><a id="l01355" name="l01355"></a><span class="lineno"><a class="line" href="classTProcuraConstrutiva.html#a6dc1daad843c50560a5f3dd8bbe23f56"> 1355</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classTProcuraConstrutiva.html#a6dc1daad843c50560a5f3dd8bbe23f56">TProcuraConstrutiva::Dominio</a>(<span class="keywordtype">int</span>&amp; variavel, <span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max) {</div>
+<div class="line"><a id="l01356" name="l01356"></a><span class="lineno"> 1356</span>    <span class="keywordflow">if</span> (variavel &lt; min)</div>
+<div class="line"><a id="l01357" name="l01357"></a><span class="lineno"> 1357</span>        variavel = min;</div>
+<div class="line"><a id="l01358" name="l01358"></a><span class="lineno"> 1358</span>    <span class="keywordflow">if</span> (variavel &gt; max)</div>
+<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span>        variavel = max;</div>
+<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span>    <span class="keywordflow">return</span> variavel;</div>
+<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span>}</div>
 </div>
-<div class="line"><a id="l01359" name="l01359"></a><span class="lineno"> 1359</span> </div>
-<div class="line"><a id="l01360" name="l01360"></a><span class="lineno"> 1360</span><span class="comment">// retorna o índice onde foi inserido</span></div>
-<div class="line"><a id="l01361" name="l01361"></a><span class="lineno"> 1361</span><span class="keywordtype">int</span> CListaNo::NovoElemento(<a class="code hl_class" href="classTProcuraConstrutiva.html">TNo</a> elemento) {</div>
-<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span>    <span class="keywordtype">int</span> <span class="keywordtype">id</span> = -1;</div>
-<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"> 1363</span>    <span class="keywordflow">if</span> (limite == 0 || indice.Count() &lt; 2 * limite) { </div>
-<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>        <span class="comment">// adicionar, há espaço</span></div>
-<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>        indice.Add({ elemento, 1, 1 });</div>
-<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>        <span class="keywordtype">id</span> = indice.Count() - 1;</div>
-<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>    }</div>
-<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>    <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span>        <span class="comment">// limite de estados atingido, gerar o espaço</span></div>
-<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span>        <span class="keywordflow">if</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() == 0)</div>
-<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span>            <span class="comment">// não há livres, libertar metade</span></div>
-<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>            LibertarLista();</div>
-<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>        </div>
-<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>        <span class="comment">// utilizar o primeiro livre</span></div>
-<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>        indice[<span class="keywordtype">id</span> = livre.<a class="code hl_function" href="classTVector.html#a3249913626d54e46b07e168ce1f05d87">Pop</a>()] = { elemento, 1, 1 };</div>
-<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span>    }</div>
-<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>    <span class="keywordflow">return</span> id;</div>
-<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>}</div>
-<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span> </div>
-<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span><span class="keywordtype">void</span> CListaNo::LibertarLista() {</div>
-<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span>    <span class="keywordtype">bool</span> jaProcessados = <span class="keyword">false</span>; <span class="comment">// libertar primeiro estados já processados (anteriores a atual)</span></div>
-<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span>    <span class="comment">// parar assim que existam &quot;limite&quot; estados livres</span></div>
-<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span>    completa = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span>    <span class="keywordflow">while</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite) {</div>
-<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>        <span class="keywordflow">if</span> (!jaProcessados) {</div>
-<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>            jaProcessados = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>            <span class="comment">// apagar elementos após o estado inicial</span></div>
-<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span>            <span class="keywordflow">while</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite &amp;&amp; <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(0) != <a class="code hl_variable" href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">atual</a>)</div>
-<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span>                LibertarSeguinte(0);</div>
-<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span>        }</div>
-<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>        <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>            <span class="keywordtype">int</span> anteriorID = -1, piorID = -1;</div>
-<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">atual</a>; <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i) != 1; i = <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i)) {</div>
-<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>                piorID = <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i);</div>
-<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>                anteriorID = i;</div>
-<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>            }</div>
-<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>            <span class="keywordflow">if</span> (piorID &lt; 0) {</div>
-<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>                <span class="comment">// valores todos iguais após atual, apagar o seguinte ao atual</span></div>
-<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span>                <span class="keywordflow">while</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite)</div>
-<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span>                    LibertarSeguinte(<a class="code hl_variable" href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">atual</a>);</div>
-<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>            }</div>
-<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>                <span class="comment">// começar por libertar todos após o primeiro elemento com o pior ID</span></div>
-<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span>                <span class="keywordflow">while</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite &amp;&amp; <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(piorID) != 1)</div>
-<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>                    LibertarSeguinte(piorID);</div>
-<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span>                <span class="keywordflow">if</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite) {</div>
-<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span>                    <span class="comment">// tem de se eliminar o primeiro elemento com o pior valor</span></div>
-<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>                    <span class="comment">// o que implica atualizar o proxDistinto de todos os anteriores</span></div>
-<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span>                    <span class="keywordflow">while</span> (<a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(anteriorID) != piorID) {</div>
-<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span>                        indice[anteriorID].proxDistinto = 1; <span class="comment">// último elemento</span></div>
-<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span>                        anteriorID = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(anteriorID);</div>
-<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span>                    }</div>
-<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>                    LibertarSeguinte(anteriorID);</div>
-<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>                }</div>
-<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>                <span class="comment">// tudo liberto com este valor, se ainda não é suficiente, seguir para o próximo</span></div>
-<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>            }</div>
-<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>        }</div>
-<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>    }</div>
-<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>}</div>
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span> </div>
-<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span><span class="keywordtype">void</span> CListaNo::LibertarSeguinte(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
-<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>    <span class="keywordtype">int</span> i = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(<span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>    livre.<a class="code hl_function" href="classTVector.html#ad9c1fb99a2d0d4f060c4746e6ce97d0f">Push</a>(i);</div>
-<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>    <span class="keywordflow">if</span> (indice[i].estado != NULL) {</div>
-<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>        <span class="keyword">delete</span> indice[i].estado;</div>
-<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>        indice[i].estado = NULL;</div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>    }</div>
-<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>    indice[id].prox = indice[i].prox;</div>
-<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>    indice[id].proxDistinto = indice[i].proxDistinto;</div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>}</div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span> </div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span><span class="comment">// insere por ordem de LB</span></div>
-<div class="foldopen" id="foldopen01433" data-start="{" data-end="}">
-<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"><a class="line" href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981"> 1433</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981">CListaNo::Inserir</a>(<a class="code hl_class" href="classTProcuraConstrutiva.html">TNo</a> elemento, <span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
-<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>    <span class="keywordtype">int</span> valor, valorI;</div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>    <span class="keywordtype">int</span> idNovo = NovoElemento(elemento);</div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>    <span class="keywordflow">if</span> (idNovo == 0) {</div>
-<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>        <span class="comment">// primeiro elemento, inserir um elemento final</span></div>
-<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>        indice.Add({ NULL,-1,-1 });</div>
-<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>    }</div>
-<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>    valor = <a class="code hl_function" href="classCListaNo.html#aef59a51e58231841d16fa45aa7582328">Valor</a>(idNovo);</div>
-<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>    <span class="comment">// atualizar índice</span></div>
-<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <span class="keywordtype">id</span>, j = -1; i &gt;= 0; i = <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i)) {</div>
-<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>        valorI = <a class="code hl_function" href="classCListaNo.html#aef59a51e58231841d16fa45aa7582328">Valor</a>(i);</div>
-<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span>        <span class="keywordflow">if</span> (valorI == valor) {</div>
-<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span>            <span class="comment">// inserir logo a seguir, já que assim nada mais altera</span></div>
-<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span>            indice[idNovo].prox = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(i);</div>
-<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span>            indice[idNovo].proxDistinto = <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i);</div>
-<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span>            indice[i].prox = idNovo;</div>
-<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span>            <span class="keywordflow">return</span> i;</div>
-<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>        }</div>
-<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (valorI &lt; valor)</div>
-<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>            j = i; <span class="comment">// mantem o primeiro elemento anterior</span></div>
-<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>        <span class="keywordflow">else</span> { <span class="comment">// valor atual já é superior, valor novo</span></div>
-<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>            <span class="keywordflow">if</span> (j &lt; 0) { </div>
-<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>                <span class="comment">// heurística não consistente, </span></div>
-<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>                <span class="comment">// e agora está a gerar um estado com menor valor que o pai</span></div>
-<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>                <span class="comment">// i, novo, i.prox, ...</span></div>
-<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span>                <span class="comment">// o i fica com o próximo distinto em novo, o que não é verdade mas mais vale assim</span></div>
-<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>                indice[idNovo].prox = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(i);</div>
-<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>                indice[idNovo].proxDistinto = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(i);</div>
-<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>                indice[i].prox = idNovo;</div>
-<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>                indice[i].proxDistinto = idNovo;</div>
-<div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>                <span class="keywordflow">return</span> idNovo;</div>
-<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span>            }</div>
-<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span>            <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span>                <span class="comment">// utilizar o índice de j, anterior, colocando antes de i</span></div>
-<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span>                <span class="comment">// j, ... , novo, i</span></div>
-<div class="line"><a id="l01469" name="l01469"></a><span class="lineno"> 1469</span>                <span class="comment">// atualizar o proxDistinto de j, passa a novo</span></div>
-<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span>                indice[idNovo].prox = i;</div>
-<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span>                indice[idNovo].proxDistinto = i;</div>
-<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"> 1472</span>                <span class="keywordflow">while</span> (j != idNovo) {</div>
-<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"> 1473</span>                    indice[j].proxDistinto = idNovo;</div>
-<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span>                    <span class="keywordflow">if</span> (<a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(j) == i || <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(j) == j)</div>
-<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"> 1475</span>                        indice[j].prox = idNovo;</div>
-<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span>                    j = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(j);</div>
-<div class="line"><a id="l01477" name="l01477"></a><span class="lineno"> 1477</span>                }</div>
-<div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span>                <span class="keywordflow">return</span> idNovo;</div>
-<div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span>            }</div>
-<div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span>        }</div>
-<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span>    }</div>
-<div class="line"><a id="l01482" name="l01482"></a><span class="lineno"> 1482</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span>}</div>
+<div class="line"><a id="l01362" name="l01362"></a><span class="lineno"> 1362</span> </div>
+<div class="foldopen" id="foldopen01363" data-start="{" data-end="}">
+<div class="line"><a id="l01363" name="l01363"></a><span class="lineno"><a class="line" href="classCListaNo.html#a9b86dffe0ec5192bdb6dd45c5d0dc580"> 1363</a></span><a class="code hl_function" href="classCListaNo.html#a9b86dffe0ec5192bdb6dd45c5d0dc580">CListaNo::~CListaNo</a>() {</div>
+<div class="line"><a id="l01364" name="l01364"></a><span class="lineno"> 1364</span>    <span class="comment">// não libertar o primeiro elemento</span></div>
+<div class="line"><a id="l01365" name="l01365"></a><span class="lineno"> 1365</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; indice.Count(); i++)</div>
+<div class="line"><a id="l01366" name="l01366"></a><span class="lineno"> 1366</span>        <span class="keywordflow">if</span> (indice[i].estado != NULL)</div>
+<div class="line"><a id="l01367" name="l01367"></a><span class="lineno"> 1367</span>            <span class="keyword">delete</span> indice[i].estado;</div>
+<div class="line"><a id="l01368" name="l01368"></a><span class="lineno"> 1368</span>}</div>
 </div>
-<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span> </div>
-<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"> 1485</span><span class="comment">// inserir todos os elementos por ordem</span></div>
-<div class="foldopen" id="foldopen01486" data-start="{" data-end="}">
-<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"><a class="line" href="classCListaNo.html#a487ec70de88cd34f0f4356b5d0144c72"> 1486</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981">CListaNo::Inserir</a>(<a class="code hl_class" href="classTVector.html">TVector&lt;TNo&gt;</a>&amp; elementos) {</div>
-<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span>    <a class="code hl_class" href="classTVector.html">TVector&lt;int&gt;</a> lbElementos, idElementos;</div>
-<div class="line"><a id="l01488" name="l01488"></a><span class="lineno"> 1488</span>    <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code hl_variable" href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">atual</a>;</div>
-<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"> 1489</span> </div>
-<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"> 1490</span>    <span class="comment">// 1. Ordenar elementos, complexidaded O(N log(N))</span></div>
-<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; elementos.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>(); j++)</div>
-<div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span>        lbElementos.<a class="code hl_function" href="classTVector.html#a21e44df6bc9513d711e2047abc5abf3d">Add</a>(elementos[j]-&gt;LowerBound());</div>
-<div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span>    lbElementos.<a class="code hl_function" href="classTVector.html#ab5f765b4c8271e597e2005757ed52138">Sort</a>(&amp;idElementos);</div>
+<div class="line"><a id="l01369" name="l01369"></a><span class="lineno"> 1369</span> </div>
+<div class="line"><a id="l01370" name="l01370"></a><span class="lineno"> 1370</span><span class="comment">// retorna o índice onde foi inserido</span></div>
+<div class="line"><a id="l01371" name="l01371"></a><span class="lineno"> 1371</span><span class="keywordtype">int</span> CListaNo::NovoElemento(<a class="code hl_class" href="classTProcuraConstrutiva.html">TNo</a> elemento) {</div>
+<div class="line"><a id="l01372" name="l01372"></a><span class="lineno"> 1372</span>    <span class="keywordtype">int</span> <span class="keywordtype">id</span> = -1;</div>
+<div class="line"><a id="l01373" name="l01373"></a><span class="lineno"> 1373</span>    <span class="keywordflow">if</span> (limite == 0 || indice.Count() &lt; 2 * limite) { </div>
+<div class="line"><a id="l01374" name="l01374"></a><span class="lineno"> 1374</span>        <span class="comment">// adicionar, há espaço</span></div>
+<div class="line"><a id="l01375" name="l01375"></a><span class="lineno"> 1375</span>        indice.Add({ elemento, 1, 1 });</div>
+<div class="line"><a id="l01376" name="l01376"></a><span class="lineno"> 1376</span>        <span class="keywordtype">id</span> = indice.Count() - 1;</div>
+<div class="line"><a id="l01377" name="l01377"></a><span class="lineno"> 1377</span>    }</div>
+<div class="line"><a id="l01378" name="l01378"></a><span class="lineno"> 1378</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01379" name="l01379"></a><span class="lineno"> 1379</span>        <span class="comment">// limite de estados atingido, gerar o espaço</span></div>
+<div class="line"><a id="l01380" name="l01380"></a><span class="lineno"> 1380</span>        <span class="keywordflow">if</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() == 0)</div>
+<div class="line"><a id="l01381" name="l01381"></a><span class="lineno"> 1381</span>            <span class="comment">// não há livres, libertar metade</span></div>
+<div class="line"><a id="l01382" name="l01382"></a><span class="lineno"> 1382</span>            LibertarLista();</div>
+<div class="line"><a id="l01383" name="l01383"></a><span class="lineno"> 1383</span>        </div>
+<div class="line"><a id="l01384" name="l01384"></a><span class="lineno"> 1384</span>        <span class="comment">// utilizar o primeiro livre</span></div>
+<div class="line"><a id="l01385" name="l01385"></a><span class="lineno"> 1385</span>        indice[<span class="keywordtype">id</span> = livre.<a class="code hl_function" href="classTVector.html#a3249913626d54e46b07e168ce1f05d87">Pop</a>()] = { elemento, 1, 1 };</div>
+<div class="line"><a id="l01386" name="l01386"></a><span class="lineno"> 1386</span>    }</div>
+<div class="line"><a id="l01387" name="l01387"></a><span class="lineno"> 1387</span>    <span class="keywordflow">return</span> id;</div>
+<div class="line"><a id="l01388" name="l01388"></a><span class="lineno"> 1388</span>}</div>
+<div class="line"><a id="l01389" name="l01389"></a><span class="lineno"> 1389</span> </div>
+<div class="line"><a id="l01390" name="l01390"></a><span class="lineno"> 1390</span><span class="keywordtype">void</span> CListaNo::LibertarLista() {</div>
+<div class="line"><a id="l01391" name="l01391"></a><span class="lineno"> 1391</span>    <span class="keywordtype">bool</span> jaProcessados = <span class="keyword">false</span>; <span class="comment">// libertar primeiro estados já processados (anteriores a atual)</span></div>
+<div class="line"><a id="l01392" name="l01392"></a><span class="lineno"> 1392</span>    <span class="comment">// parar assim que existam &quot;limite&quot; estados livres</span></div>
+<div class="line"><a id="l01393" name="l01393"></a><span class="lineno"> 1393</span>    completa = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01394" name="l01394"></a><span class="lineno"> 1394</span>    <span class="keywordflow">while</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite) {</div>
+<div class="line"><a id="l01395" name="l01395"></a><span class="lineno"> 1395</span>        <span class="keywordflow">if</span> (!jaProcessados) {</div>
+<div class="line"><a id="l01396" name="l01396"></a><span class="lineno"> 1396</span>            jaProcessados = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01397" name="l01397"></a><span class="lineno"> 1397</span>            <span class="comment">// apagar elementos após o estado inicial</span></div>
+<div class="line"><a id="l01398" name="l01398"></a><span class="lineno"> 1398</span>            <span class="keywordflow">while</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite &amp;&amp; <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(0) != <a class="code hl_variable" href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">atual</a>)</div>
+<div class="line"><a id="l01399" name="l01399"></a><span class="lineno"> 1399</span>                LibertarSeguinte(0);</div>
+<div class="line"><a id="l01400" name="l01400"></a><span class="lineno"> 1400</span>        }</div>
+<div class="line"><a id="l01401" name="l01401"></a><span class="lineno"> 1401</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01402" name="l01402"></a><span class="lineno"> 1402</span>            <span class="keywordtype">int</span> anteriorID = -1, piorID = -1;</div>
+<div class="line"><a id="l01403" name="l01403"></a><span class="lineno"> 1403</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">atual</a>; <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i) != 1; i = <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i)) {</div>
+<div class="line"><a id="l01404" name="l01404"></a><span class="lineno"> 1404</span>                piorID = <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i);</div>
+<div class="line"><a id="l01405" name="l01405"></a><span class="lineno"> 1405</span>                anteriorID = i;</div>
+<div class="line"><a id="l01406" name="l01406"></a><span class="lineno"> 1406</span>            }</div>
+<div class="line"><a id="l01407" name="l01407"></a><span class="lineno"> 1407</span>            <span class="keywordflow">if</span> (piorID &lt; 0) {</div>
+<div class="line"><a id="l01408" name="l01408"></a><span class="lineno"> 1408</span>                <span class="comment">// valores todos iguais após atual, apagar o seguinte ao atual</span></div>
+<div class="line"><a id="l01409" name="l01409"></a><span class="lineno"> 1409</span>                <span class="keywordflow">while</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite)</div>
+<div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span>                    LibertarSeguinte(<a class="code hl_variable" href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">atual</a>);</div>
+<div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span>            }</div>
+<div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>                <span class="comment">// começar por libertar todos após o primeiro elemento com o pior ID</span></div>
+<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>                <span class="keywordflow">while</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite &amp;&amp; <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(piorID) != 1)</div>
+<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>                    LibertarSeguinte(piorID);</div>
+<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>                <span class="keywordflow">if</span> (livre.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>() &lt; limite) {</div>
+<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>                    <span class="comment">// tem de se eliminar o primeiro elemento com o pior valor</span></div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>                    <span class="comment">// o que implica atualizar o proxDistinto de todos os anteriores</span></div>
+<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>                    <span class="keywordflow">while</span> (<a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(anteriorID) != piorID) {</div>
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>                        indice[anteriorID].proxDistinto = 1; <span class="comment">// último elemento</span></div>
+<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span>                        anteriorID = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(anteriorID);</div>
+<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>                    }</div>
+<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span>                    LibertarSeguinte(anteriorID);</div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span>                }</div>
+<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>                <span class="comment">// tudo liberto com este valor, se ainda não é suficiente, seguir para o próximo</span></div>
+<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>            }</div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>        }</div>
+<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>    }</div>
+<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>}</div>
+<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span> </div>
+<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span><span class="keywordtype">void</span> CListaNo::LibertarSeguinte(<span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>    <span class="keywordtype">int</span> i = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>    livre.<a class="code hl_function" href="classTVector.html#ad9c1fb99a2d0d4f060c4746e6ce97d0f">Push</a>(i);</div>
+<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>    <span class="keywordflow">if</span> (indice[i].estado != NULL) {</div>
+<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>        <span class="keyword">delete</span> indice[i].estado;</div>
+<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>        indice[i].estado = NULL;</div>
+<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>    }</div>
+<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>    indice[id].prox = indice[i].prox;</div>
+<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>    indice[id].proxDistinto = indice[i].proxDistinto;</div>
+<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>}</div>
+<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span> </div>
+<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span><span class="comment">// insere por ordem de LB</span></div>
+<div class="foldopen" id="foldopen01443" data-start="{" data-end="}">
+<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"><a class="line" href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981"> 1443</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981">CListaNo::Inserir</a>(<a class="code hl_class" href="classTProcuraConstrutiva.html">TNo</a> elemento, <span class="keywordtype">int</span> <span class="keywordtype">id</span>) {</div>
+<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>    <span class="keywordtype">int</span> valor, valorI;</div>
+<div class="line"><a id="l01445" name="l01445"></a><span class="lineno"> 1445</span>    <span class="keywordtype">int</span> idNovo = NovoElemento(elemento);</div>
+<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span>    <span class="keywordflow">if</span> (idNovo == 0) {</div>
+<div class="line"><a id="l01447" name="l01447"></a><span class="lineno"> 1447</span>        <span class="comment">// primeiro elemento, inserir um elemento final</span></div>
+<div class="line"><a id="l01448" name="l01448"></a><span class="lineno"> 1448</span>        indice.Add({ NULL,-1,-1 });</div>
+<div class="line"><a id="l01449" name="l01449"></a><span class="lineno"> 1449</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l01450" name="l01450"></a><span class="lineno"> 1450</span>    }</div>
+<div class="line"><a id="l01451" name="l01451"></a><span class="lineno"> 1451</span>    valor = <a class="code hl_function" href="classCListaNo.html#aef59a51e58231841d16fa45aa7582328">Valor</a>(idNovo);</div>
+<div class="line"><a id="l01452" name="l01452"></a><span class="lineno"> 1452</span>    <span class="comment">// atualizar índice</span></div>
+<div class="line"><a id="l01453" name="l01453"></a><span class="lineno"> 1453</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <span class="keywordtype">id</span>, j = -1; i &gt;= 0; i = <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i)) {</div>
+<div class="line"><a id="l01454" name="l01454"></a><span class="lineno"> 1454</span>        valorI = <a class="code hl_function" href="classCListaNo.html#aef59a51e58231841d16fa45aa7582328">Valor</a>(i);</div>
+<div class="line"><a id="l01455" name="l01455"></a><span class="lineno"> 1455</span>        <span class="keywordflow">if</span> (valorI == valor) {</div>
+<div class="line"><a id="l01456" name="l01456"></a><span class="lineno"> 1456</span>            <span class="comment">// inserir logo a seguir, já que assim nada mais altera</span></div>
+<div class="line"><a id="l01457" name="l01457"></a><span class="lineno"> 1457</span>            indice[idNovo].prox = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(i);</div>
+<div class="line"><a id="l01458" name="l01458"></a><span class="lineno"> 1458</span>            indice[idNovo].proxDistinto = <a class="code hl_function" href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">ProximoDistinto</a>(i);</div>
+<div class="line"><a id="l01459" name="l01459"></a><span class="lineno"> 1459</span>            indice[i].prox = idNovo;</div>
+<div class="line"><a id="l01460" name="l01460"></a><span class="lineno"> 1460</span>            <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l01461" name="l01461"></a><span class="lineno"> 1461</span>        }</div>
+<div class="line"><a id="l01462" name="l01462"></a><span class="lineno"> 1462</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (valorI &lt; valor)</div>
+<div class="line"><a id="l01463" name="l01463"></a><span class="lineno"> 1463</span>            j = i; <span class="comment">// mantem o primeiro elemento anterior</span></div>
+<div class="line"><a id="l01464" name="l01464"></a><span class="lineno"> 1464</span>        <span class="keywordflow">else</span> { <span class="comment">// valor atual já é superior, valor novo</span></div>
+<div class="line"><a id="l01465" name="l01465"></a><span class="lineno"> 1465</span>            <span class="keywordflow">if</span> (j &lt; 0) { </div>
+<div class="line"><a id="l01466" name="l01466"></a><span class="lineno"> 1466</span>                <span class="comment">// heurística não consistente, </span></div>
+<div class="line"><a id="l01467" name="l01467"></a><span class="lineno"> 1467</span>                <span class="comment">// e agora está a gerar um estado com menor valor que o pai</span></div>
+<div class="line"><a id="l01468" name="l01468"></a><span class="lineno"> 1468</span>                <span class="comment">// i, novo, i.prox, ...</span></div>
+<div class="line"><a id="l01469" name="l01469"></a><span class="lineno"> 1469</span>                <span class="comment">// o i fica com o próximo distinto em novo, o que não é verdade mas mais vale assim</span></div>
+<div class="line"><a id="l01470" name="l01470"></a><span class="lineno"> 1470</span>                indice[idNovo].prox = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(i);</div>
+<div class="line"><a id="l01471" name="l01471"></a><span class="lineno"> 1471</span>                indice[idNovo].proxDistinto = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(i);</div>
+<div class="line"><a id="l01472" name="l01472"></a><span class="lineno"> 1472</span>                indice[i].prox = idNovo;</div>
+<div class="line"><a id="l01473" name="l01473"></a><span class="lineno"> 1473</span>                indice[i].proxDistinto = idNovo;</div>
+<div class="line"><a id="l01474" name="l01474"></a><span class="lineno"> 1474</span>                <span class="keywordflow">return</span> idNovo;</div>
+<div class="line"><a id="l01475" name="l01475"></a><span class="lineno"> 1475</span>            }</div>
+<div class="line"><a id="l01476" name="l01476"></a><span class="lineno"> 1476</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01477" name="l01477"></a><span class="lineno"> 1477</span>                <span class="comment">// utilizar o índice de j, anterior, colocando antes de i</span></div>
+<div class="line"><a id="l01478" name="l01478"></a><span class="lineno"> 1478</span>                <span class="comment">// j, ... , novo, i</span></div>
+<div class="line"><a id="l01479" name="l01479"></a><span class="lineno"> 1479</span>                <span class="comment">// atualizar o proxDistinto de j, passa a novo</span></div>
+<div class="line"><a id="l01480" name="l01480"></a><span class="lineno"> 1480</span>                indice[idNovo].prox = i;</div>
+<div class="line"><a id="l01481" name="l01481"></a><span class="lineno"> 1481</span>                indice[idNovo].proxDistinto = i;</div>
+<div class="line"><a id="l01482" name="l01482"></a><span class="lineno"> 1482</span>                <span class="keywordflow">while</span> (j != idNovo) {</div>
+<div class="line"><a id="l01483" name="l01483"></a><span class="lineno"> 1483</span>                    indice[j].proxDistinto = idNovo;</div>
+<div class="line"><a id="l01484" name="l01484"></a><span class="lineno"> 1484</span>                    <span class="keywordflow">if</span> (<a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(j) == i || <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(j) == j)</div>
+<div class="line"><a id="l01485" name="l01485"></a><span class="lineno"> 1485</span>                        indice[j].prox = idNovo;</div>
+<div class="line"><a id="l01486" name="l01486"></a><span class="lineno"> 1486</span>                    j = <a class="code hl_function" href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">Proximo</a>(j);</div>
+<div class="line"><a id="l01487" name="l01487"></a><span class="lineno"> 1487</span>                }</div>
+<div class="line"><a id="l01488" name="l01488"></a><span class="lineno"> 1488</span>                <span class="keywordflow">return</span> idNovo;</div>
+<div class="line"><a id="l01489" name="l01489"></a><span class="lineno"> 1489</span>            }</div>
+<div class="line"><a id="l01490" name="l01490"></a><span class="lineno"> 1490</span>        }</div>
+<div class="line"><a id="l01491" name="l01491"></a><span class="lineno"> 1491</span>    }</div>
+<div class="line"><a id="l01492" name="l01492"></a><span class="lineno"> 1492</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l01493" name="l01493"></a><span class="lineno"> 1493</span>}</div>
+</div>
 <div class="line"><a id="l01494" name="l01494"></a><span class="lineno"> 1494</span> </div>
-<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span>    <span class="comment">// 2. inserir por ordem, tirando partido do local onde já está o último elemento</span></div>
-<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"> 1496</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; idElementos.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>(); j++) </div>
-<div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span>        <span class="keywordtype">id</span> = <a class="code hl_function" href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981">Inserir</a>(elementos[idElementos[j]], <span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span> </div>
-<div class="line"><a id="l01499" name="l01499"></a><span class="lineno"> 1499</span>}</div>
+<div class="line"><a id="l01495" name="l01495"></a><span class="lineno"> 1495</span><span class="comment">// inserir todos os elementos por ordem</span></div>
+<div class="foldopen" id="foldopen01496" data-start="{" data-end="}">
+<div class="line"><a id="l01496" name="l01496"></a><span class="lineno"><a class="line" href="classCListaNo.html#a487ec70de88cd34f0f4356b5d0144c72"> 1496</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981">CListaNo::Inserir</a>(<a class="code hl_class" href="classTVector.html">TVector&lt;TNo&gt;</a>&amp; elementos) {</div>
+<div class="line"><a id="l01497" name="l01497"></a><span class="lineno"> 1497</span>    <a class="code hl_class" href="classTVector.html">TVector&lt;int&gt;</a> lbElementos, idElementos;</div>
+<div class="line"><a id="l01498" name="l01498"></a><span class="lineno"> 1498</span>    <span class="keywordtype">int</span> <span class="keywordtype">id</span> = <a class="code hl_variable" href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">atual</a>;</div>
+<div class="line"><a id="l01499" name="l01499"></a><span class="lineno"> 1499</span> </div>
+<div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span>    <span class="comment">// 1. Ordenar elementos, complexidaded O(N log(N))</span></div>
+<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; elementos.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>(); j++)</div>
+<div class="line"><a id="l01502" name="l01502"></a><span class="lineno"> 1502</span>        lbElementos.<a class="code hl_function" href="classTVector.html#a21e44df6bc9513d711e2047abc5abf3d">Add</a>(elementos[j]-&gt;LowerBound());</div>
+<div class="line"><a id="l01503" name="l01503"></a><span class="lineno"> 1503</span>    lbElementos.<a class="code hl_function" href="classTVector.html#ab5f765b4c8271e597e2005757ed52138">Sort</a>(&amp;idElementos);</div>
+<div class="line"><a id="l01504" name="l01504"></a><span class="lineno"> 1504</span> </div>
+<div class="line"><a id="l01505" name="l01505"></a><span class="lineno"> 1505</span>    <span class="comment">// 2. inserir por ordem, tirando partido do local onde já está o último elemento</span></div>
+<div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; idElementos.<a class="code hl_function" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a>(); j++) </div>
+<div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span>        <span class="keywordtype">id</span> = <a class="code hl_function" href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981">Inserir</a>(elementos[idElementos[j]], <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span> </div>
+<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>}</div>
 </div>
-<div class="line"><a id="l01500" name="l01500"></a><span class="lineno"> 1500</span> </div>
-<div class="line"><a id="l01501" name="l01501"></a><span class="lineno"> 1501</span> </div>
+<div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span> </div>
+<div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span> </div>
 <div class="ttc" id="aTProcuraConstrutiva_8cpp_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="TProcuraConstrutiva_8cpp.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00007">TProcuraConstrutiva.cpp:7</a></div></div>
 <div class="ttc" id="aTProcuraConstrutiva_8h_html"><div class="ttname"><a href="TProcuraConstrutiva_8h.html">TProcuraConstrutiva.h</a></div></div>
 <div class="ttc" id="aTProcuraConstrutiva_8h_html_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678"><div class="ttname"><a href="TProcuraConstrutiva_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678">ler</a></div><div class="ttdeci">@ ler</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00120">TProcuraConstrutiva.h:120</a></div></div>
@@ -1741,8 +1751,8 @@ $(document).ready(function(){initNavTree('TProcuraConstrutiva_8cpp_source.html',
 <div class="ttc" id="aclassCListaNo_html_a1895f082c5a47855d4cb6236b66fd8a0"><div class="ttname"><a href="classCListaNo.html#a1895f082c5a47855d4cb6236b66fd8a0">CListaNo::Completa</a></div><div class="ttdeci">bool Completa()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l01046">TProcuraConstrutiva.h:1046</a></div></div>
 <div class="ttc" id="aclassCListaNo_html_a41eb61b9b842b0052c119fe44b789ba8"><div class="ttname"><a href="classCListaNo.html#a41eb61b9b842b0052c119fe44b789ba8">CListaNo::Estado</a></div><div class="ttdeci">TNo Estado(int i=-1)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l01073">TProcuraConstrutiva.h:1073</a></div></div>
 <div class="ttc" id="aclassCListaNo_html_a6074c0df152d3e84e9d187f3e980e647"><div class="ttname"><a href="classCListaNo.html#a6074c0df152d3e84e9d187f3e980e647">CListaNo::atual</a></div><div class="ttdeci">int atual</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l01044">TProcuraConstrutiva.h:1044</a></div></div>
-<div class="ttc" id="aclassCListaNo_html_a7f8ea2bd2165fba49823cc35146f7981"><div class="ttname"><a href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981">CListaNo::Inserir</a></div><div class="ttdeci">int Inserir(TNo elemento, int id=0)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01433">TProcuraConstrutiva.cpp:1433</a></div></div>
-<div class="ttc" id="aclassCListaNo_html_a9b86dffe0ec5192bdb6dd45c5d0dc580"><div class="ttname"><a href="classCListaNo.html#a9b86dffe0ec5192bdb6dd45c5d0dc580">CListaNo::~CListaNo</a></div><div class="ttdeci">~CListaNo()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01353">TProcuraConstrutiva.cpp:1353</a></div></div>
+<div class="ttc" id="aclassCListaNo_html_a7f8ea2bd2165fba49823cc35146f7981"><div class="ttname"><a href="classCListaNo.html#a7f8ea2bd2165fba49823cc35146f7981">CListaNo::Inserir</a></div><div class="ttdeci">int Inserir(TNo elemento, int id=0)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01443">TProcuraConstrutiva.cpp:1443</a></div></div>
+<div class="ttc" id="aclassCListaNo_html_a9b86dffe0ec5192bdb6dd45c5d0dc580"><div class="ttname"><a href="classCListaNo.html#a9b86dffe0ec5192bdb6dd45c5d0dc580">CListaNo::~CListaNo</a></div><div class="ttdeci">~CListaNo()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01363">TProcuraConstrutiva.cpp:1363</a></div></div>
 <div class="ttc" id="aclassCListaNo_html_a9f8eef005ec0d5fae8d5075892d19273"><div class="ttname"><a href="classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273">CListaNo::ProximoDistinto</a></div><div class="ttdeci">int ProximoDistinto(int i=-1)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l01065">TProcuraConstrutiva.h:1065</a></div></div>
 <div class="ttc" id="aclassCListaNo_html_ac0247e41530a14c23afb3279fa15bbfa"><div class="ttname"><a href="classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa">CListaNo::Proximo</a></div><div class="ttdeci">int Proximo(int i=-1)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l01057">TProcuraConstrutiva.h:1057</a></div></div>
 <div class="ttc" id="aclassCListaNo_html_aef59a51e58231841d16fa45aa7582328"><div class="ttname"><a href="classCListaNo.html#aef59a51e58231841d16fa45aa7582328">CListaNo::Valor</a></div><div class="ttdeci">int Valor(int i)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l01049">TProcuraConstrutiva.h:1049</a></div></div>
@@ -1767,23 +1777,23 @@ $(document).ready(function(){initNavTree('TProcuraConstrutiva_8cpp_source.html',
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a640e74c9b6cd340761db671438ad679e"><div class="ttname"><a href="classTProcuraConstrutiva.html#a640e74c9b6cd340761db671438ad679e">TProcuraConstrutiva::CalcularHeuristicas</a></div><div class="ttdeci">void CalcularHeuristicas(TVector&lt; TNo &gt; &amp;sucessores, TVector&lt; int &gt; *id=NULL, bool sortLB=false)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00500">TProcuraConstrutiva.cpp:500</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a6962c0cf7350a211ae74b00768d9c232"><div class="ttname"><a href="classTProcuraConstrutiva.html#a6962c0cf7350a211ae74b00768d9c232">TProcuraConstrutiva::DebugChamada</a></div><div class="ttdeci">void DebugChamada(void)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00637">TProcuraConstrutiva.cpp:637</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a6bc5ce68c35bb341173421200dec2937"><div class="ttname"><a href="classTProcuraConstrutiva.html#a6bc5ce68c35bb341173421200dec2937">TProcuraConstrutiva::SolucaoParcial</a></div><div class="ttdeci">int SolucaoParcial(int i, TVector&lt; TNo &gt; &amp;sucessores)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00355">TProcuraConstrutiva.cpp:355</a></div></div>
-<div class="ttc" id="aclassTProcuraConstrutiva_html_a6dc1daad843c50560a5f3dd8bbe23f56"><div class="ttname"><a href="classTProcuraConstrutiva.html#a6dc1daad843c50560a5f3dd8bbe23f56">TProcuraConstrutiva::Dominio</a></div><div class="ttdeci">int Dominio(int &amp;variavel, int min=INT_MIN, int max=INT_MAX)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01345">TProcuraConstrutiva.cpp:1345</a></div></div>
-<div class="ttc" id="aclassTProcuraConstrutiva_html_a70375188a6ee7775bc842a3e64f8e35c"><div class="ttname"><a href="classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c">TProcuraConstrutiva::Hash</a></div><div class="ttdeci">unsigned int Hash()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01279">TProcuraConstrutiva.cpp:1279</a></div></div>
+<div class="ttc" id="aclassTProcuraConstrutiva_html_a6dc1daad843c50560a5f3dd8bbe23f56"><div class="ttname"><a href="classTProcuraConstrutiva.html#a6dc1daad843c50560a5f3dd8bbe23f56">TProcuraConstrutiva::Dominio</a></div><div class="ttdeci">int Dominio(int &amp;variavel, int min=INT_MIN, int max=INT_MAX)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01355">TProcuraConstrutiva.cpp:1355</a></div></div>
+<div class="ttc" id="aclassTProcuraConstrutiva_html_a70375188a6ee7775bc842a3e64f8e35c"><div class="ttname"><a href="classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c">TProcuraConstrutiva::Hash</a></div><div class="ttdeci">unsigned int Hash()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01289">TProcuraConstrutiva.cpp:1289</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a7426b2abb333f77ef5d00ae46d5f2d32"><div class="ttname"><a href="classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32">TProcuraConstrutiva::NovaLinha</a></div><div class="ttdeci">void NovaLinha(bool tudo=true)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00653">TProcuraConstrutiva.cpp:653</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a7e5329143aa8df478b68741d47fa6a7f"><div class="ttname"><a href="classTProcuraConstrutiva.html#a7e5329143aa8df478b68741d47fa6a7f">TProcuraConstrutiva::EditarConfiguracoes</a></div><div class="ttdeci">void EditarConfiguracoes()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00878">TProcuraConstrutiva.cpp:878</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a8a25d942dd9c34c27ad92e3e36177f2f"><div class="ttname"><a href="classTProcuraConstrutiva.html#a8a25d942dd9c34c27ad92e3e36177f2f">TProcuraConstrutiva::DebugPasso</a></div><div class="ttdeci">void DebugPasso(void)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00661">TProcuraConstrutiva.cpp:661</a></div></div>
-<div class="ttc" id="aclassTProcuraConstrutiva_html_a8b500987c88352d27a68200454cc3c8c"><div class="ttname"><a href="classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c">TProcuraConstrutiva::LimparHT</a></div><div class="ttdeci">void LimparHT()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01298">TProcuraConstrutiva.cpp:1298</a></div></div>
+<div class="ttc" id="aclassTProcuraConstrutiva_html_a8b500987c88352d27a68200454cc3c8c"><div class="ttname"><a href="classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c">TProcuraConstrutiva::LimparHT</a></div><div class="ttdeci">void LimparHT()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01308">TProcuraConstrutiva.cpp:1308</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a8e7879e0ac12522e0eedf3d3d365e51c"><div class="ttname"><a href="classTProcuraConstrutiva.html#a8e7879e0ac12522e0eedf3d3d365e51c">TProcuraConstrutiva::ObjetivoAlcancado</a></div><div class="ttdeci">int ObjetivoAlcancado(int item, TVector&lt; TNo &gt; &amp;lista)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00226">TProcuraConstrutiva.cpp:226</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a8f3b2ddaa879df23c5c9921cdfff0dd8"><div class="ttname"><a href="classTProcuraConstrutiva.html#a8f3b2ddaa879df23c5c9921cdfff0dd8">TProcuraConstrutiva::MelhorResultado</a></div><div class="ttdeci">int MelhorResultado(TResultado base, TResultado alternativa)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01139">TProcuraConstrutiva.cpp:1139</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a976f17b2b53ce9ffc7d1795d291262df"><div class="ttname"><a href="classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df">TProcuraConstrutiva::LibertarVector</a></div><div class="ttdeci">static void LibertarVector(TVector&lt; TNo &gt; &amp;vector, int excepto=-1, int maiorQue=-1)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00168">TProcuraConstrutiva.cpp:168</a></div></div>
-<div class="ttc" id="aclassTProcuraConstrutiva_html_a99b7a74f16f5a1b63b12bf629b902057"><div class="ttname"><a href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057">TProcuraConstrutiva::SubstituirHT</a></div><div class="ttdeci">virtual void SubstituirHT(int indice)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01328">TProcuraConstrutiva.cpp:1328</a></div></div>
+<div class="ttc" id="aclassTProcuraConstrutiva_html_a99b7a74f16f5a1b63b12bf629b902057"><div class="ttname"><a href="classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057">TProcuraConstrutiva::SubstituirHT</a></div><div class="ttdeci">virtual void SubstituirHT(int indice)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01338">TProcuraConstrutiva.cpp:1338</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_a9d4bc5b86186bcba9cbee82588ada2fb"><div class="ttname"><a href="classTProcuraConstrutiva.html#a9d4bc5b86186bcba9cbee82588ada2fb">TProcuraConstrutiva::MostrarConfiguracoes</a></div><div class="ttdeci">void MostrarConfiguracoes(int detalhe, int atual=-1)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00909">TProcuraConstrutiva.cpp:909</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_aa2c53163dbc3e394abbd2bfbf70e29ca"><div class="ttname"><a href="classTProcuraConstrutiva.html#aa2c53163dbc3e394abbd2bfbf70e29ca">TProcuraConstrutiva::EditarParametros</a></div><div class="ttdeci">void EditarParametros()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00833">TProcuraConstrutiva.cpp:833</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_ab3d3ef92421595428a27deef2c3bb668"><div class="ttname"><a href="classTProcuraConstrutiva.html#ab3d3ef92421595428a27deef2c3bb668">TProcuraConstrutiva::CalculaCaminho</a></div><div class="ttdeci">void CalculaCaminho(bool completa=true)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00233">TProcuraConstrutiva.cpp:233</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_ab5639efca5e48b564a8bdd9ec23a8955"><div class="ttname"><a href="classTProcuraConstrutiva.html#ab5639efca5e48b564a8bdd9ec23a8955">TProcuraConstrutiva::ExplorarSucessores</a></div><div class="ttdeci">void ExplorarSucessores(bool jogo=false)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01194">TProcuraConstrutiva.cpp:1194</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_ac7e1356d8cd516f18380d4f4c5730c2b"><div class="ttname"><a href="classTProcuraConstrutiva.html#ac7e1356d8cd516f18380d4f4c5730c2b">TProcuraConstrutiva::MostraRelatorio</a></div><div class="ttdeci">void MostraRelatorio(TVector&lt; TResultado &gt; &amp;resultados)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01019">TProcuraConstrutiva.cpp:1019</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_ad02feccb0f347d9a475ed1b883cc12aa"><div class="ttname"><a href="classTProcuraConstrutiva.html#ad02feccb0f347d9a475ed1b883cc12aa">TProcuraConstrutiva::DebugExpansao</a></div><div class="ttdeci">void DebugExpansao(int sucessor, int sucessores, bool duplo=false)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00565">TProcuraConstrutiva.cpp:565</a></div></div>
-<div class="ttc" id="aclassTProcuraConstrutiva_html_ad7857beab462b4b09a37e70cc9c787ac"><div class="ttname"><a href="classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac">TProcuraConstrutiva::ExisteHT</a></div><div class="ttdeci">bool ExisteHT()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01308">TProcuraConstrutiva.cpp:1308</a></div></div>
+<div class="ttc" id="aclassTProcuraConstrutiva_html_ad7857beab462b4b09a37e70cc9c787ac"><div class="ttname"><a href="classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac">TProcuraConstrutiva::ExisteHT</a></div><div class="ttdeci">bool ExisteHT()</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01318">TProcuraConstrutiva.cpp:1318</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_adc31f777cf89c56571baedd4a48cea47"><div class="ttname"><a href="classTProcuraConstrutiva.html#adc31f777cf89c56571baedd4a48cea47">TProcuraConstrutiva::ExtrairConfiguracao</a></div><div class="ttdeci">void ExtrairConfiguracao(TVector&lt; TResultado &gt; &amp;resultados, TVector&lt; TResultado &gt; &amp;extracao, int configuracao)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01119">TProcuraConstrutiva.cpp:1119</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_ae254bbde1b2e36391d575fc2836fea7f"><div class="ttname"><a href="classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f">TProcuraConstrutiva::LimparEstatisticas</a></div><div class="ttdeci">void LimparEstatisticas(clock_t &amp;inicio)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00739">TProcuraConstrutiva.cpp:739</a></div></div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html_ae464aeb16628493409e4d88cede9a9e7"><div class="ttname"><a href="classTProcuraConstrutiva.html#ae464aeb16628493409e4d88cede9a9e7">TProcuraConstrutiva::DebugIteracao</a></div><div class="ttdeci">void DebugIteracao(int iteracao)</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00705">TProcuraConstrutiva.cpp:705</a></div></div>
@@ -1825,7 +1835,7 @@ $(document).ready(function(){initNavTree('TProcuraConstrutiva_8cpp_source.html',
 <div class="ttc" id="agroup__RedefinicaoOpcional_html_gae52871eb18c8ae656a2174acf43b3bb3"><div class="ttname"><a href="group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3">TProcuraConstrutiva::ExecutaAlgoritmo</a></div><div class="ttdeci">virtual int ExecutaAlgoritmo()</div><div class="ttdoc">Executa o algoritmo com os parametros atuais.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00937">TProcuraConstrutiva.cpp:937</a></div></div>
 <div class="ttc" id="agroup__RedefinicaoOpcional_html_gaed4543b865993696a193d101e925b5b1"><div class="ttname"><a href="group__RedefinicaoOpcional.html#gaed4543b865993696a193d101e925b5b1">TProcuraConstrutiva::Parar</a></div><div class="ttdeci">virtual bool Parar(void)</div><div class="ttdoc">Verifica se a procura deve ser interrompida.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00660">TProcuraConstrutiva.h:660</a></div></div>
 <div class="ttc" id="agroup__RedefinicaoSugerida_html_ga0e8bb1bd33683545dc4f8f6329548b40"><div class="ttname"><a href="group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40">TProcuraConstrutiva::Heuristica</a></div><div class="ttdeci">virtual int Heuristica(void)</div><div class="ttdoc">Função para calcular quanto falta para o final, o valor da heurística.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00546">TProcuraConstrutiva.cpp:546</a></div></div>
-<div class="ttc" id="agroup__RedefinicaoSugerida_html_ga5ff46e85c8f1394c2502f17025284c11"><div class="ttname"><a href="group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11">TProcuraConstrutiva::Codifica</a></div><div class="ttdeci">virtual void Codifica(uint64_t estado[OBJETO_HASHTABLE])</div><div class="ttdoc">Codifica o estado para um vetor de inteiros de 64 bits.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01340">TProcuraConstrutiva.cpp:1340</a></div></div>
+<div class="ttc" id="agroup__RedefinicaoSugerida_html_ga5ff46e85c8f1394c2502f17025284c11"><div class="ttname"><a href="group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11">TProcuraConstrutiva::Codifica</a></div><div class="ttdeci">virtual void Codifica(uint64_t estado[OBJETO_HASHTABLE])</div><div class="ttdoc">Codifica o estado para um vetor de inteiros de 64 bits.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01350">TProcuraConstrutiva.cpp:1350</a></div></div>
 <div class="ttc" id="agroup__RedefinicaoSugerida_html_ga6bb2ece76e931695c9e32df7ca7143aa"><div class="ttname"><a href="group__RedefinicaoSugerida.html#ga6bb2ece76e931695c9e32df7ca7143aa">TProcuraConstrutiva::Debug</a></div><div class="ttdeci">virtual void Debug(void)</div><div class="ttdoc">Mostra o estado no ecrã, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00558">TProcuraConstrutiva.cpp:558</a></div></div>
 <div class="ttc" id="agroup__RedefinicaoSugerida_html_gacb15562d8776f4d162001d385ebc13a0"><div class="ttname"><a href="group__RedefinicaoSugerida.html#gacb15562d8776f4d162001d385ebc13a0">TProcuraConstrutiva::ResetParametros</a></div><div class="ttdeci">virtual void ResetParametros()</div><div class="ttdoc">Inicializa os parametros.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00050">TProcuraConstrutiva.cpp:50</a></div></div>
 <div class="ttc" id="agroup__RedefinicaoSugerida_html_gacbc6e34f3a403d26d806f37b5cd739f6"><div class="ttname"><a href="group__RedefinicaoSugerida.html#gacbc6e34f3a403d26d806f37b5cd739f6">TProcuraConstrutiva::Acao</a></div><div class="ttdeci">virtual const char * Acao(TNo sucessor)</div><div class="ttdoc">Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00452">TProcuraConstrutiva.h:452</a></div></div>

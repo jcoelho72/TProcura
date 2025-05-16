@@ -47,7 +47,7 @@ Esta é a informação apresentada no teste manual. Na zona superior aparece o n
 
 Termina com a linha que tem estatísticas sobre a última execução efetuadal. Após esta linha está o estado atual, que tem uma visualização dependente do problema.
 
-Após o estado temos o menu, com as opções de inicializar numa nova instância, explorar o espaço de estados, ver a solução/caminho atual, alterar parametros, executar o algoritmo selecionado com os parametros atuais, gravar configuração e executar um teste empírico.\hypertarget{teste_aspirador_autotoc_md10}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Trocar de instância}{Ação 1 - Trocar de instância}}\label{teste_aspirador_autotoc_md10}
+Após o estado temos o menu, com as opções de inicializar numa nova instância, explorar o espaço de estados, ver a solução/caminho atual, alterar parametros, executar o algoritmo selecionado com os parametros atuais, gravar configuração e executar um teste empírico.\hypertarget{teste_aspirador_autotoc_md5}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Trocar de instância}{Ação 1 - Trocar de instância}}\label{teste_aspirador_autotoc_md5}
 Escreva os seguintes números separados por Enter\+: {\bfseries{1; 2}}
 
 Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na terceira sala, estando as duas primeiras sujas\+:
@@ -72,7 +72,7 @@ Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na tercei
 \end{DoxyCode}
 
 
-Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda\+: A representação do estado é algo que é implementado na sub-\/classe (neste caso em \doxylink{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}{CAspirador\+::\+Debug()}), de modo a se poder visualizar o estado em que estamos. Ao chamar a Solucao\+Vazia podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro, sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.\hypertarget{teste_aspirador_autotoc_md11}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Explorar os sucessores}{Ação 2 - Explorar os sucessores}}\label{teste_aspirador_autotoc_md11}
+Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda\+: A representação do estado é algo que é implementado na sub-\/classe (neste caso em \doxylink{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}{CAspirador\+::\+Debug()}), de modo a se poder visualizar o estado em que estamos. Ao chamar a Solucao\+Vazia podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro, sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.\hypertarget{teste_aspirador_autotoc_md6}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Explorar os sucessores}{Ação 2 - Explorar os sucessores}}\label{teste_aspirador_autotoc_md6}
 A partir do estado atual, introduza\+: {\bfseries{2; 1; 2.}}
 
 
@@ -93,25 +93,22 @@ A partir do estado atual, introduza\+: {\bfseries{2; 1; 2.}}
 \end{DoxyCode}
 
 
-Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações\+: esq, dir, asp. Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número. Introduza\+: {\bfseries{dir; asp; {\itshape ENTER}.}}
+Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações\+: esq, dir, asp. Para indicar o número do sucessor, é preciso ver, já que o número 1 é para a primeira ação válida, na lista de sucessores. No entanto, as ações são unívocas. Podemos indicar várias ações de uma só vez.
+
+Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número, introduzido duas ações de uma vez. Introduza\+: {\bfseries{dir asp; {\itshape ENTER}.}} Note que "{}dir asp"{} podem ser introduzidas de uma vez.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:dir}
-\DoxyCodeLine{Executadas\ 1\ ações\ com\ sucesso.}
-\DoxyCodeLine{g:0\ h:1\ 5|10}
-\DoxyCodeLine{\ .\ [*]}
-\DoxyCodeLine{Ações:\ esq\ asp}
-\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:asp}
-\DoxyCodeLine{Executadas\ 1\ ações\ com\ sucesso.}
-\DoxyCodeLine{g:0\ 7|14}
+\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:dir\ asp}
+\DoxyCodeLine{Executadas\ 2\ ações\ com\ sucesso.}
+\DoxyCodeLine{g:0\ 6|12}
 \DoxyCodeLine{\ .\ [.]}
 \DoxyCodeLine{Ações:\ esq\ asp}
 \DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:}
 \DoxyCodeLine{}
 \DoxyCodeLine{Aspirador}
 \DoxyCodeLine{...}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 7\ |\ gerações\ 14\ |\ avaliações\ 0}
+\DoxyCodeLine{[Estatísticas]\ expansões\ 6\ |\ gerações\ 12\ |\ avaliações\ 0}
 \DoxyCodeLine{\ .\ [.]}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
@@ -120,7 +117,7 @@ Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a s
 \end{DoxyCode}
 
 
-Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas. Tem duas vantagens\+: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra foram lhe passariam desapercebidas.\hypertarget{teste_aspirador_autotoc_md12}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Ver a solução/caminho realizada manualmente}{Ação 3 - Ver a solução/caminho realizada manualmente}}\label{teste_aspirador_autotoc_md12}
+Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas. Tem duas vantagens\+: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra foram lhe passariam desapercebidas.\hypertarget{teste_aspirador_autotoc_md7}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Ver a solução/caminho realizada manualmente}{Ação 3 - Ver a solução/caminho realizada manualmente}}\label{teste_aspirador_autotoc_md7}
 Introduza\+: {\bfseries{3.}}
 
 
@@ -142,7 +139,7 @@ Introduza\+: {\bfseries{3.}}
 
 Neste problema uma solução é um conjunto de ações, o caminho desde o estado inicial até ao estado final. É mostrado esse caminho visualizando as ações a partir do estado inicial. Foram 4 movimentos, mas houve um desperdício. No primeiro movimento, poderíamos ter logo aspirado. Em outros problemas, a solução pode ser apenas o estado final. Notar ainda na letra g, seguida de um número. Esta letra representa o custo g(n) no manual, e sempre que ocorra significa o custo desde o estado inicial até esse estado. Neste problema o custo não foi definido, pelo que é adoptado o valor de 1 unidade por cada movimento.
 
-A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os estados também. Para isso é preciso alterar o parâmetro P3(\+Ver).\hypertarget{teste_aspirador_autotoc_md13}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Ver a alterar um parâmetro}{Ação 4 - Ver a alterar um parâmetro}}\label{teste_aspirador_autotoc_md13}
+A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os estados também. Para isso é preciso alterar o parâmetro P3(\+Ver).\hypertarget{teste_aspirador_autotoc_md8}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Ver a alterar um parâmetro}{Ação 4 - Ver a alterar um parâmetro}}\label{teste_aspirador_autotoc_md8}
 Introduza\+: {\bfseries{4}}
 
 
@@ -208,7 +205,7 @@ Introduza\+: {\bfseries{4}}
 \DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
 
 \end{DoxyCode}
- Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.\hypertarget{teste_aspirador_autotoc_md14}{}\doxysubsection{\texorpdfstring{Ação 5 -\/ Efetuer uma procura em Largura}{Ação 5 - Efetuer uma procura em Largura}}\label{teste_aspirador_autotoc_md14}
+ Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.\hypertarget{teste_aspirador_autotoc_md9}{}\doxysubsection{\texorpdfstring{Ação 5 -\/ Efetuer uma procura em Largura}{Ação 5 - Efetuer uma procura em Largura}}\label{teste_aspirador_autotoc_md9}
  
 \begin{DoxyImage}
 \includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{aspirador_largura.png}
@@ -216,7 +213,7 @@ Introduza\+: {\bfseries{4}}
 \end{DoxyImage}
    
 
-Primeiro, na instância inicial, número 2, com nível de debug máximo\+: {\bfseries{1; 2; 4; 2; {\itshape ENTER}; 5.}}
+Coloque na instância inicial, número 2, com nível de debug máximo\+: {\bfseries{1; 2; 4; 2; 4; {\itshape ENTER}; 5.}}
 
 A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 4 vamos alterar neste caso o parâmetro nível de debug. Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa.
 
@@ -350,7 +347,7 @@ Podemos lidar com estados repetidos de duas formas\+:
 \begin{DoxyItemize}
 \item Verificar se o estado a ser gerado, não tem já um ascendente -\/ neste caso é preciso implementar a função Distinto() -\/ Para fazer esta validação, o código tem de seguir pelos pais, e testar se são diferentes do atual.
 \item Verificar se o estado a ser gerado, não foi já gerado mesmo em outro ramo, desde que no mesmo nível ou anterior. Nesse caso o estado pode ser excluído, já que já terá sido tratado nesse outro ramo -\/ para ter esta opção, é preciso implementar a função Codificar() que coloca o estado num vetor de bits -\/ o código utiliza uma hashtable com perdas, para verificar se o estado já foi criado em tempo constante, não existindo problemas de memória mesmo em execuções longas devido às perdas.
-\end{DoxyItemize}\hypertarget{teste_aspirador_autotoc_md15}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Editar opções A}{Ação 6 - Editar opções A}}\label{teste_aspirador_autotoc_md15}
+\end{DoxyItemize}\hypertarget{teste_aspirador_autotoc_md10}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Editar opções A}{Ação 6 - Editar opções A}}\label{teste_aspirador_autotoc_md10}
 Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3\+: {\bfseries{1; 2; 4; 10; 2; 2; 3; {\itshape ENTER}; 5.}}
 
 
@@ -390,7 +387,7 @@ Altere a opção para remover os repetidos com base nos ascendentes, e o debug p
 \end{DoxyCode}
  A interação de troca de parâmetro não é mais mostrada para não saturar o texto. Caso esteja a reproduzir o teste, confirme que tem os parâmetros iguais aos valores atuais, visiveis na interface.
 
-Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.\hypertarget{teste_aspirador_autotoc_md16}{}\doxysubsection{\texorpdfstring{Ação 7 -\/ Editar opções B}{Ação 7 - Editar opções B}}\label{teste_aspirador_autotoc_md16}
+Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.\hypertarget{teste_aspirador_autotoc_md11}{}\doxysubsection{\texorpdfstring{Ação 7 -\/ Editar opções B}{Ação 7 - Editar opções B}}\label{teste_aspirador_autotoc_md11}
 Alterar a opção para remover os repetidos com base nos gerados, e alterar o debug para nível 2\+: {\bfseries{1; 2; 4; 10; 3; 2; 2; {\itshape ENTER}; 5.}}
 
 
@@ -422,7 +419,7 @@ Alterar a opção para remover os repetidos com base nos gerados, e alterar o de
 
 É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.
 
-O nível de debug 1 insere um \# por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.\hypertarget{teste_aspirador_autotoc_md17}{}\doxysubsection{\texorpdfstring{Ação 8 -\/ Resolver outra instância}{Ação 8 - Resolver outra instância}}\label{teste_aspirador_autotoc_md17}
+O nível de debug 1 insere um \# por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.\hypertarget{teste_aspirador_autotoc_md12}{}\doxysubsection{\texorpdfstring{Ação 8 -\/ Resolver outra instância}{Ação 8 - Resolver outra instância}}\label{teste_aspirador_autotoc_md12}
 Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior\+: {\bfseries{1; 8; 4; 10; 1; 2; 1; {\itshape ENTER}; 5.}}
 
 Pode haver um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados\+: ~\newline
@@ -486,14 +483,14 @@ Pode haver um problema de memória. A instância é demasiado grande, e sem remo
 
 Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.
 
-A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-\/se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.\hypertarget{teste_aspirador_autotoc_md18}{}\doxysubsection{\texorpdfstring{Ação 9 -\/ Desafio Procura em Largura}{Ação 9 - Desafio Procura em Largura}}\label{teste_aspirador_autotoc_md18}
+A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-\/se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.\hypertarget{teste_aspirador_autotoc_md13}{}\doxysubsection{\texorpdfstring{Ação 9 -\/ Desafio Procura em Largura}{Ação 9 - Desafio Procura em Largura}}\label{teste_aspirador_autotoc_md13}
 Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?
 
 
 
 {\bfseries{Resposta\+:}}\begin{adjustwidth}{1em}{0em}
 Depende das condições de execução, vamos colocar na resposta o VPL com a 512MB. Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20. Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-\/se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos. \end{adjustwidth}
-\hypertarget{teste_aspirador_autotoc_md19}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Procura em Profundidade}{Ação 10 - Procura em Profundidade}}\label{teste_aspirador_autotoc_md19}
+\hypertarget{teste_aspirador_autotoc_md14}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Procura em Profundidade}{Ação 10 - Procura em Profundidade}}\label{teste_aspirador_autotoc_md14}
  
 \begin{DoxyImage}
 \includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{aspirador_profundidade.png}
@@ -501,7 +498,7 @@ Depende das condições de execução, vamos colocar na resposta o VPL com a 512
 \end{DoxyImage}
    
 
-Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.\hypertarget{teste_aspirador_autotoc_md20}{}\doxysubsection{\texorpdfstring{Ação 11 -\/ Efetuar uma procura em Profundidade Primeiro}{Ação 11 - Efetuar uma procura em Profundidade Primeiro}}\label{teste_aspirador_autotoc_md20}
+Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.\hypertarget{teste_aspirador_autotoc_md15}{}\doxysubsection{\texorpdfstring{Ação 11 -\/ Efetuar uma procura em Profundidade Primeiro}{Ação 11 - Efetuar uma procura em Profundidade Primeiro}}\label{teste_aspirador_autotoc_md15}
 Utilizar a instância número 2, o algoritmo profundidade primeiro, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos\+: {\bfseries{1; 2; 4; 1; 3; 9; 3; 2; 4; 10; 1; {\itshape ENTER}; 5.}}
 
 O parâmetro 1 é o algoritmo, em que o 3 é a profundidade primeiro.
@@ -564,7 +561,7 @@ O parâmetro 9 é o limite, com diferentes interpretações conforme o algoritmo
 
 Podemos ver todos os estados gerados. A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -\/1. Este resultado pode ser utilizado para saber que não há nenhuma solução de comprimento inferior a 3, ou seja, é um lower bound.
 
-Esta visualização da árvore da procura é interessante para pequenos problemas, mas naturalmente que procuras maiores torna-\/se impraticável. Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.\hypertarget{teste_aspirador_autotoc_md21}{}\doxysubsection{\texorpdfstring{Ação 12 -\/ Ver uma árvore de procura maior}{Ação 12 - Ver uma árvore de procura maior}}\label{teste_aspirador_autotoc_md21}
+Esta visualização da árvore da procura é interessante para pequenos problemas, mas naturalmente que procuras maiores torna-\/se impraticável. Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.\hypertarget{teste_aspirador_autotoc_md16}{}\doxysubsection{\texorpdfstring{Ação 12 -\/ Ver uma árvore de procura maior}{Ação 12 - Ver uma árvore de procura maior}}\label{teste_aspirador_autotoc_md16}
 Colocar a profundidade a 10, e o nível de debug a 3\+: {\bfseries{1; 2; 4; 9; 10; 2; 3; {\itshape ENTER}; 5.}}
 
 
@@ -615,7 +612,7 @@ Colocar a profundidade a 10, e o nível de debug a 3\+: {\bfseries{1; 2; 4; 9; 1
 \end{DoxyCode}
 
 
-Como o algoritmo é cego, segue a ordem dos sucessores. Neste caso está sempre a trocar de posição antes de aspirar. Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.\hypertarget{teste_aspirador_autotoc_md22}{}\doxysubsection{\texorpdfstring{Ação 13 -\/ Profundidade Iterativa}{Ação 13 - Profundidade Iterativa}}\label{teste_aspirador_autotoc_md22}
+Como o algoritmo é cego, segue a ordem dos sucessores. Neste caso está sempre a trocar de posição antes de aspirar. Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.\hypertarget{teste_aspirador_autotoc_md17}{}\doxysubsection{\texorpdfstring{Ação 13 -\/ Profundidade Iterativa}{Ação 13 - Profundidade Iterativa}}\label{teste_aspirador_autotoc_md17}
 Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2\+: {\bfseries{1; 2; 4; 9; 0; 2; 2; {\itshape ENTER}; 5.}}
 
 
@@ -659,7 +656,7 @@ Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solu�
 
 Podemos ver também a versão compactada da árvore de procura, contendo apenas informação do estado, tal como na procura em largura, mas desta vez com informação de onde o estado veio. Pela observação da árvore é possível verificar que a maior parte das ramificações são de dois sucessores, o que é natural dado que este problema tem apenas duas salas.
 
-Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-\/1\hypertarget{teste_aspirador_autotoc_md23}{}\doxysubsection{\texorpdfstring{Ação 14 -\/ Profundidade ilimitada}{Ação 14 - Profundidade ilimitada}}\label{teste_aspirador_autotoc_md23}
+Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-\/1\hypertarget{teste_aspirador_autotoc_md18}{}\doxysubsection{\texorpdfstring{Ação 14 -\/ Profundidade ilimitada}{Ação 14 - Profundidade ilimitada}}\label{teste_aspirador_autotoc_md18}
 Colocar a profundidade ilimitada (limite a -\/1), e o nível de debug a 1\+: {\bfseries{1; 2; 4; 9; -\/1; 2; 1; {\itshape ENTER}; 5.}}
 
 
@@ -670,7 +667,7 @@ Colocar a profundidade ilimitada (limite a -\/1), e o nível de debug a 1\+: {\b
 \end{DoxyCode}
 
 
-Temos um crash do programa, e bem cedo. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-\/se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10.\hypertarget{teste_aspirador_autotoc_md24}{}\doxysubsection{\texorpdfstring{Ação 15 -\/ Desafio Procura Profundidade}{Ação 15 - Desafio Procura Profundidade}}\label{teste_aspirador_autotoc_md24}
+Temos um crash do programa, e bem cedo. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-\/se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10.\hypertarget{teste_aspirador_autotoc_md19}{}\doxysubsection{\texorpdfstring{Ação 15 -\/ Desafio Procura Profundidade}{Ação 15 - Desafio Procura Profundidade}}\label{teste_aspirador_autotoc_md19}
 Lembra-\/se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?
 
 

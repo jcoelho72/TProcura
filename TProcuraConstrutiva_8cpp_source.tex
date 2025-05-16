@@ -1260,240 +1260,250 @@
 \DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01264}01264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01265}01265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01266}01266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ token\ =\ strtok(NULL,\ \textcolor{stringliteral}{"{}\ \(\backslash\)t\(\backslash\)n\(\backslash\)r"{}});}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01267}01267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (token\ !=\ NULL);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01268}01268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nAcoes\ >\ 0)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01269}01269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Executadas\ \%d\ ações\ com\ sucesso.\(\backslash\)n"{}},\ nAcoes);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01270}01270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01271}01271\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01272}01272\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01273}01273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opcao\ >\ 0\ \&\&\ opcao\ <=\ sucessores.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}())\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01274}01274\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}}(sucessores[opcao\ -\/\ 1]);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01275}01275\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df}{LibertarVector}}(sucessores);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01276}01276\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (opcao\ !=\ 0);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01277}01277\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01278}01278\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01279}\mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{01279}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{TProcuraConstrutiva::Hash}}()\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01280}01280\ \ \ \ \ \textcolor{comment}{//\ utilizando\ FNV-\/1\ hash\ (http://www.isthe.com/chongo/tech/comp/fnv/)}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01281}01281\ \ \ \ \ uint32\_t\ h\ =\ 2166136261;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01282}01282\ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica}}(\mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}});}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01283}01283\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}\ \&\&\ \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}}[i];\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01284}01284\ \ \ \ \ \ \ \ \ uint64\_t\ valor\ =\ \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}}[i];}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01285}01285\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ processar\ cada\ octeto\ }}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01286}01286\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ quando\ o\ valor\ fica\ 0,\ já\ não\ interessa}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01287}01287\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ já\ que\ existindo\ dados,\ são\ distintos\ de\ 0}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01288}01288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 8\ \&\&\ valor;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01289}01289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ octeto\ =\ valor\ \&\ 255;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01290}01290\ \ \ \ \ \ \ \ \ \ \ \ \ valor\ >>=\ 8;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01291}01291\ \ \ \ \ \ \ \ \ \ \ \ \ h\ *=\ 16777619;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01292}01292\ \ \ \ \ \ \ \ \ \ \ \ \ h\ \string^=\ octeto;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01293}01293\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01294}01294\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01295}01295\ \ \ \ \ \textcolor{keywordflow}{return}\ h\ \%\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\_HASHTABLE}};}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01296}01296\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01297}01297\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01298}\mbox{\hyperlink{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c}{01298}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c}{TProcuraConstrutiva::LimparHT}}()\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01299}01299\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5}{estadosRepetidos}}].valor\ ==\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a}{gerados}})\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01300}01300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\_HASHTABLE}};\ i++)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01301}01301\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}};\ j++)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01302}01302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementosHT}}[i][j]\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01303}01303\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ coloca\ o\ estado\ atual\ na\ hasttable,\ para\ não\ ser\ gerado}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01304}01304\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{ExisteHT}}();}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01305}01305\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01267}01267\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01268}01268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (token\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01269}01269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ há\ outra\ ação,\ é\ preciso\ atualizar\ o\ caminho}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01270}01270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}.Add(\mbox{\hyperlink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{Duplicar}}());}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01271}01271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}.Count()\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01272}01272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}.Last()-\/>custo\ +=\ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}[\mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}.Count()\ -\/\ 2]-\/>custo;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01273}01273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01274}01274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}.Last()-\/>custo\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01275}01275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01276}01276\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01277}01277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (token\ !=\ NULL);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01278}01278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nAcoes\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01279}01279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Executadas\ \%d\ ações\ com\ sucesso.\(\backslash\)n"{}},\ nAcoes);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01280}01280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01281}01281\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01282}01282\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01283}01283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (opcao\ >\ 0\ \&\&\ opcao\ <=\ sucessores.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}())\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01284}01284\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}}(sucessores[opcao\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01285}01285\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df}{LibertarVector}}(sucessores);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01286}01286\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (opcao\ !=\ 0);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01287}01287\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01288}01288\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01289}\mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{01289}}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{TProcuraConstrutiva::Hash}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01290}01290\ \ \ \ \ \textcolor{comment}{//\ utilizando\ FNV-\/1\ hash\ (http://www.isthe.com/chongo/tech/comp/fnv/)}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01291}01291\ \ \ \ \ uint32\_t\ h\ =\ 2166136261;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01292}01292\ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica}}(\mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}});}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01293}01293\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}\ \&\&\ \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}}[i];\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01294}01294\ \ \ \ \ \ \ \ \ uint64\_t\ valor\ =\ \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}}[i];}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01295}01295\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ processar\ cada\ octeto\ }}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01296}01296\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ quando\ o\ valor\ fica\ 0,\ já\ não\ interessa}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01297}01297\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ já\ que\ existindo\ dados,\ são\ distintos\ de\ 0}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01298}01298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 8\ \&\&\ valor;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01299}01299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ octeto\ =\ valor\ \&\ 255;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01300}01300\ \ \ \ \ \ \ \ \ \ \ \ \ valor\ >>=\ 8;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01301}01301\ \ \ \ \ \ \ \ \ \ \ \ \ h\ *=\ 16777619;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01302}01302\ \ \ \ \ \ \ \ \ \ \ \ \ h\ \string^=\ octeto;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01303}01303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01304}01304\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01305}01305\ \ \ \ \ \textcolor{keywordflow}{return}\ h\ \%\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\_HASHTABLE}};}
 \DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01306}01306\ \}}
 \DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01307}01307\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01308}\mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{01308}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{TProcuraConstrutiva::ExisteHT}}()\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01309}01309\ \ \ \ \ \textcolor{comment}{//\ caso\ não\ exista,\ retorna\ falso\ e\ insere}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01310}01310\ \ \ \ \ \textcolor{comment}{//\ se\ existe\ retorna\ verdade,\ e\ estiver\ lá\ outro\ elemento,\ substitui}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01311}01311\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ original\ =\ \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{Hash}}();}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01312}01312\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ indice\ =\ original\ \%\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\_HASHTABLE}};}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01313}01313\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}};\ i++)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01314}01314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementosHT}}[indice][i]\ !=\ \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}}[i])\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01315}01315\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{SubstituirHT}}(indice);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01316}01316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ não\ existia}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01317}01317\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01318}01318\ \ \ \ \ \textcolor{comment}{//\ elemento\ é\ igual,\ mas\ se\ o\ custo\ for\ mais\ alto,\ não\ conta}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01319}01319\ \ \ \ \ \textcolor{comment}{//\ já\ que\ este\ elemento\ com\ custo\ mais\ baixo,\ pode\ conduzir\ à\ solução\ ou\ melhores\ soluções}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01320}01320\ \ \ \ \ \textcolor{comment}{//\ neste\ caso\ substitui\ e\ retorna\ que\ o\ estado\ não\ existe}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01321}01321\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}{custoHT}}[indice]\ >\ \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}})\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01322}01322\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{SubstituirHT}}(indice);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01323}01323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ existe\ mas\ com\ um\ custo\ mais\ alto}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01324}01324\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01325}01325\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ igual,\ estado\ já\ analisado}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01326}01326\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01327}01327\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01328}\mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{01328}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{TProcuraConstrutiva::SubstituirHT}}(\textcolor{keywordtype}{int}\ indice)\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01329}01329\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01330}01330\ \ \ \ \ \textcolor{comment}{//\ substituir\ elemento}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01331}01331\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}};\ i++)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01332}01332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementosHT}}[indice][i]\ =\ \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}}[i];}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01333}01333\ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}{custoHT}}[indice]\ =\ \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}};}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01334}01334\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01335}01335\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01336}01336\ \textcolor{comment}{//\ estados\ repetidos:\ verificar\ todos\ os\ gerados}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01337}01337\ \textcolor{comment}{//\ implementar\ para\ utilizar\ hashtables\ com\ perdas}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01338}01338\ \textcolor{comment}{//\ converte\ o\ estado\ atual\ para\ a\ variável\ estado,\ utilizando\ o\ menor\ espaço\ possível}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01339}01339\ \textcolor{comment}{//\ caso\ existam\ simetrias,\ normalizar\ o\ estado\ antes\ de\ codificar,\ para\ considerar\ exploradas\ todas\ as\ versões}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01340}\mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{01340}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{TProcuraConstrutiva::Codifica}}(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}])\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01308}\mbox{\hyperlink{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c}{01308}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c}{TProcuraConstrutiva::LimparHT}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01309}01309\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5}{estadosRepetidos}}].valor\ ==\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a}{gerados}})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01310}01310\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\_HASHTABLE}};\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01311}01311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}};\ j++)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01312}01312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementosHT}}[i][j]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01313}01313\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ coloca\ o\ estado\ atual\ na\ hasttable,\ para\ não\ ser\ gerado}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01314}01314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{ExisteHT}}();}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01315}01315\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01316}01316\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01317}01317\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01318}\mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{01318}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{TProcuraConstrutiva::ExisteHT}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01319}01319\ \ \ \ \ \textcolor{comment}{//\ caso\ não\ exista,\ retorna\ falso\ e\ insere}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01320}01320\ \ \ \ \ \textcolor{comment}{//\ se\ existe\ retorna\ verdade,\ e\ estiver\ lá\ outro\ elemento,\ substitui}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01321}01321\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ original\ =\ \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{Hash}}();}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01322}01322\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ indice\ =\ original\ \%\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\_HASHTABLE}};}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01323}01323\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}};\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01324}01324\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementosHT}}[indice][i]\ !=\ \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}}[i])\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01325}01325\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{SubstituirHT}}(indice);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01326}01326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ não\ existia}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01327}01327\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01328}01328\ \ \ \ \ \textcolor{comment}{//\ elemento\ é\ igual,\ mas\ se\ o\ custo\ for\ mais\ alto,\ não\ conta}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01329}01329\ \ \ \ \ \textcolor{comment}{//\ já\ que\ este\ elemento\ com\ custo\ mais\ baixo,\ pode\ conduzir\ à\ solução\ ou\ melhores\ soluções}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01330}01330\ \ \ \ \ \textcolor{comment}{//\ neste\ caso\ substitui\ e\ retorna\ que\ o\ estado\ não\ existe}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01331}01331\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}{custoHT}}[indice]\ >\ \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01332}01332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{SubstituirHT}}(indice);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01333}01333\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ existe\ mas\ com\ um\ custo\ mais\ alto}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01334}01334\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01335}01335\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \textcolor{comment}{//\ igual,\ estado\ já\ analisado}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01336}01336\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01337}01337\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01338}\mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{01338}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{TProcuraConstrutiva::SubstituirHT}}(\textcolor{keywordtype}{int}\ indice)\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01339}01339\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01340}01340\ \ \ \ \ \textcolor{comment}{//\ substituir\ elemento}}
 \DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01341}01341\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}};\ i++)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01342}01342\ \ \ \ \ \ \ \ \ estado[i]\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01343}01343\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01344}01344\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01345}\mbox{\hyperlink{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56}{01345}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56}{TProcuraConstrutiva::Dominio}}(\textcolor{keywordtype}{int}\&\ variavel,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01346}01346\ \ \ \ \ \textcolor{keywordflow}{if}\ (variavel\ <\ min)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01347}01347\ \ \ \ \ \ \ \ \ variavel\ =\ min;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01348}01348\ \ \ \ \ \textcolor{keywordflow}{if}\ (variavel\ >\ max)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01349}01349\ \ \ \ \ \ \ \ \ variavel\ =\ max;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01350}01350\ \ \ \ \ \textcolor{keywordflow}{return}\ variavel;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01351}01351\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01352}01352\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01353}\mbox{\hyperlink{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580}{01353}}\ \mbox{\hyperlink{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580}{CListaNo::\string~CListaNo}}()\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01354}01354\ \ \ \ \ \textcolor{comment}{//\ não\ libertar\ o\ primeiro\ elemento}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01355}01355\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ indice.Count();\ i++)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01356}01356\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indice[i].estado\ !=\ NULL)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01357}01357\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ indice[i].estado;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01358}01358\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01359}01359\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01360}01360\ \textcolor{comment}{//\ retorna\ o\ índice\ onde\ foi\ inserido}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01361}01361\ \textcolor{keywordtype}{int}\ CListaNo::NovoElemento(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ elemento)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01362}01362\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ -\/1;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01363}01363\ \ \ \ \ \textcolor{keywordflow}{if}\ (limite\ ==\ 0\ ||\ indice.Count()\ <\ 2\ *\ limite)\ \{\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01364}01364\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ adicionar,\ há\ espaço}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01365}01365\ \ \ \ \ \ \ \ \ indice.Add(\{\ elemento,\ 1,\ 1\ \});}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01366}01366\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ indice.Count()\ -\/\ 1;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01367}01367\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01368}01368\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01369}01369\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ limite\ de\ estados\ atingido,\ gerar\ o\ espaço}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01370}01370\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01371}01371\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ não\ há\ livres,\ libertar\ metade}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01372}01372\ \ \ \ \ \ \ \ \ \ \ \ \ LibertarLista();}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01373}01373\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01374}01374\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ utilizar\ o\ primeiro\ livre}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01375}01375\ \ \ \ \ \ \ \ \ indice[\textcolor{keywordtype}{id}\ =\ livre.\mbox{\hyperlink{classTVector_a3249913626d54e46b07e168ce1f05d87}{Pop}}()]\ =\ \{\ elemento,\ 1,\ 1\ \};}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01376}01376\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01377}01377\ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01378}01378\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01379}01379\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01380}01380\ \textcolor{keywordtype}{void}\ CListaNo::LibertarLista()\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01381}01381\ \ \ \ \ \textcolor{keywordtype}{bool}\ jaProcessados\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ libertar\ primeiro\ estados\ já\ processados\ (anteriores\ a\ atual)}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01382}01382\ \ \ \ \ \textcolor{comment}{//\ parar\ assim\ que\ existam\ "{}limite"{}\ estados\ livres}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01383}01383\ \ \ \ \ completa\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01384}01384\ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01385}01385\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!jaProcessados)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01386}01386\ \ \ \ \ \ \ \ \ \ \ \ \ jaProcessados\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01387}01387\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ apagar\ elementos\ após\ o\ estado\ inicial}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01388}01388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite\ \&\&\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(0)\ !=\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}})}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01389}01389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(0);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01390}01390\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01391}01391\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01392}01392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ anteriorID\ =\ -\/1,\ piorID\ =\ -\/1;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01393}01393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}};\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i)\ !=\ 1;\ i\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i))\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01394}01394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ piorID\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01395}01395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anteriorID\ =\ i;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01396}01396\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01397}01397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (piorID\ <\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01398}01398\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ valores\ todos\ iguais\ após\ atual,\ apagar\ o\ seguinte\ ao\ atual}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01399}01399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01400}01400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(\mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}});}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01401}01401\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01402}01402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01403}01403\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ começar\ por\ libertar\ todos\ após\ o\ primeiro\ elemento\ com\ o\ pior\ ID}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01404}01404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite\ \&\&\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(piorID)\ !=\ 1)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01405}01405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(piorID);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01406}01406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01407}01407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tem\ de\ se\ eliminar\ o\ primeiro\ elemento\ com\ o\ pior\ valor}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01408}01408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o\ que\ implica\ atualizar\ o\ proxDistinto\ de\ todos\ os\ anteriores}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01409}01409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(anteriorID)\ !=\ piorID)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01410}01410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[anteriorID].proxDistinto\ =\ 1;\ \textcolor{comment}{//\ último\ elemento}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01411}01411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anteriorID\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(anteriorID);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01412}01412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01413}01413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(anteriorID);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01414}01414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01415}01415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tudo\ liberto\ com\ este\ valor,\ se\ ainda\ não\ é\ suficiente,\ seguir\ para\ o\ próximo}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01416}01416\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01417}01417\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01418}01418\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01419}01419\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01420}01420\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01421}01421\ \textcolor{keywordtype}{void}\ CListaNo::LibertarSeguinte(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01422}01422\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01423}01423\ \ \ \ \ livre.\mbox{\hyperlink{classTVector_ad9c1fb99a2d0d4f060c4746e6ce97d0f}{Push}}(i);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01424}01424\ \ \ \ \ \textcolor{keywordflow}{if}\ (indice[i].estado\ !=\ NULL)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01425}01425\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ indice[i].estado;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01426}01426\ \ \ \ \ \ \ \ \ indice[i].estado\ =\ NULL;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01427}01427\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01428}01428\ \ \ \ \ indice[id].prox\ =\ indice[i].prox;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01429}01429\ \ \ \ \ indice[id].proxDistinto\ =\ indice[i].proxDistinto;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01430}01430\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01431}01431\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01432}01432\ \textcolor{comment}{//\ insere\ por\ ordem\ de\ LB}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01433}\mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{01433}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{CListaNo::Inserir}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ elemento,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01434}01434\ \ \ \ \ \textcolor{keywordtype}{int}\ valor,\ valorI;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01435}01435\ \ \ \ \ \textcolor{keywordtype}{int}\ idNovo\ =\ NovoElemento(elemento);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01436}01436\ \ \ \ \ \textcolor{keywordflow}{if}\ (idNovo\ ==\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01437}01437\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ primeiro\ elemento,\ inserir\ um\ elemento\ final}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01438}01438\ \ \ \ \ \ \ \ \ indice.Add(\{\ NULL,-\/1,-\/1\ \});}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01439}01439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01440}01440\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01441}01441\ \ \ \ \ valor\ =\ \mbox{\hyperlink{classCListaNo_aef59a51e58231841d16fa45aa7582328}{Valor}}(idNovo);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01442}01442\ \ \ \ \ \textcolor{comment}{//\ atualizar\ índice}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01443}01443\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \textcolor{keywordtype}{id},\ j\ =\ -\/1;\ i\ >=\ 0;\ i\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i))\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01444}01444\ \ \ \ \ \ \ \ \ valorI\ =\ \mbox{\hyperlink{classCListaNo_aef59a51e58231841d16fa45aa7582328}{Valor}}(i);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01445}01445\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valorI\ ==\ valor)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01446}01446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ inserir\ logo\ a\ seguir,\ já\ que\ assim\ nada\ mais\ altera}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01447}01447\ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01448}01448\ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01449}01449\ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].prox\ =\ idNovo;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01450}01450\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01451}01451\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01452}01452\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (valorI\ <\ valor)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01453}01453\ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ i;\ \textcolor{comment}{//\ mantem\ o\ primeiro\ elemento\ anterior}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01454}01454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ valor\ atual\ já\ é\ superior,\ valor\ novo}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01455}01455\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ <\ 0)\ \{\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01456}01456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ heurística\ não\ consistente,\ }}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01457}01457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ e\ agora\ está\ a\ gerar\ um\ estado\ com\ menor\ valor\ que\ o\ pai}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01458}01458\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ i,\ novo,\ i.prox,\ ...}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01459}01459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o\ i\ fica\ com\ o\ próximo\ distinto\ em\ novo,\ o\ que\ não\ é\ verdade\ mas\ mais\ vale\ assim}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01460}01460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01461}01461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01462}01462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].prox\ =\ idNovo;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01463}01463\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].proxDistinto\ =\ idNovo;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01464}01464\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idNovo;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01465}01465\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01466}01466\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01467}01467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ utilizar\ o\ índice\ de\ j,\ anterior,\ colocando\ antes\ de\ i}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01468}01468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ j,\ ...\ ,\ novo,\ i}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01469}01469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ atualizar\ o\ proxDistinto\ de\ j,\ passa\ a\ novo}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01470}01470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ i;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01471}01471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ i;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01472}01472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ !=\ idNovo)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01473}01473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[j].proxDistinto\ =\ idNovo;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01474}01474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j)\ ==\ i\ ||\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j)\ ==\ j)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01475}01475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[j].prox\ =\ idNovo;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01476}01476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j);}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01477}01477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01478}01478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idNovo;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01479}01479\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01480}01480\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01481}01481\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01482}01482\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01483}01483\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01484}01484\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01485}01485\ \textcolor{comment}{//\ inserir\ todos\ os\ elementos\ por\ ordem}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01486}\mbox{\hyperlink{classCListaNo_a487ec70de88cd34f0f4356b5d0144c72}{01486}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{CListaNo::Inserir}}(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&\ elementos)\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01487}01487\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ lbElementos,\ idElementos;}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01488}01488\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}};}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01489}01489\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01490}01490\ \ \ \ \ \textcolor{comment}{//\ 1.\ Ordenar\ elementos,\ complexidaded\ O(N\ log(N))}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01491}01491\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ elementos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01492}01492\ \ \ \ \ \ \ \ \ lbElementos.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(elementos[j]-\/>LowerBound());}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01493}01493\ \ \ \ \ lbElementos.\mbox{\hyperlink{classTVector_ab5f765b4c8271e597e2005757ed52138}{Sort}}(\&idElementos);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01342}01342\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementosHT}}[indice][i]\ =\ \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estadoCodHT}}[i];}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01343}01343\ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}{custoHT}}[indice]\ =\ \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}};}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01344}01344\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01345}01345\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01346}01346\ \textcolor{comment}{//\ estados\ repetidos:\ verificar\ todos\ os\ gerados}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01347}01347\ \textcolor{comment}{//\ implementar\ para\ utilizar\ hashtables\ com\ perdas}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01348}01348\ \textcolor{comment}{//\ converte\ o\ estado\ atual\ para\ a\ variável\ estado,\ utilizando\ o\ menor\ espaço\ possível}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01349}01349\ \textcolor{comment}{//\ caso\ existam\ simetrias,\ normalizar\ o\ estado\ antes\ de\ codificar,\ para\ considerar\ exploradas\ todas\ as\ versões}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01350}\mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{01350}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{TProcuraConstrutiva::Codifica}}(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}])\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01351}01351\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}};\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01352}01352\ \ \ \ \ \ \ \ \ estado[i]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01353}01353\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01354}01354\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01355}\mbox{\hyperlink{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56}{01355}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56}{TProcuraConstrutiva::Dominio}}(\textcolor{keywordtype}{int}\&\ variavel,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01356}01356\ \ \ \ \ \textcolor{keywordflow}{if}\ (variavel\ <\ min)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01357}01357\ \ \ \ \ \ \ \ \ variavel\ =\ min;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01358}01358\ \ \ \ \ \textcolor{keywordflow}{if}\ (variavel\ >\ max)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01359}01359\ \ \ \ \ \ \ \ \ variavel\ =\ max;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01360}01360\ \ \ \ \ \textcolor{keywordflow}{return}\ variavel;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01361}01361\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01362}01362\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01363}\mbox{\hyperlink{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580}{01363}}\ \mbox{\hyperlink{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580}{CListaNo::\string~CListaNo}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01364}01364\ \ \ \ \ \textcolor{comment}{//\ não\ libertar\ o\ primeiro\ elemento}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01365}01365\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ indice.Count();\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01366}01366\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indice[i].estado\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01367}01367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ indice[i].estado;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01368}01368\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01369}01369\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01370}01370\ \textcolor{comment}{//\ retorna\ o\ índice\ onde\ foi\ inserido}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01371}01371\ \textcolor{keywordtype}{int}\ CListaNo::NovoElemento(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ elemento)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01372}01372\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01373}01373\ \ \ \ \ \textcolor{keywordflow}{if}\ (limite\ ==\ 0\ ||\ indice.Count()\ <\ 2\ *\ limite)\ \{\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01374}01374\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ adicionar,\ há\ espaço}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01375}01375\ \ \ \ \ \ \ \ \ indice.Add(\{\ elemento,\ 1,\ 1\ \});}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01376}01376\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ indice.Count()\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01377}01377\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01378}01378\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01379}01379\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ limite\ de\ estados\ atingido,\ gerar\ o\ espaço}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01380}01380\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01381}01381\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ não\ há\ livres,\ libertar\ metade}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01382}01382\ \ \ \ \ \ \ \ \ \ \ \ \ LibertarLista();}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01383}01383\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01384}01384\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ utilizar\ o\ primeiro\ livre}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01385}01385\ \ \ \ \ \ \ \ \ indice[\textcolor{keywordtype}{id}\ =\ livre.\mbox{\hyperlink{classTVector_a3249913626d54e46b07e168ce1f05d87}{Pop}}()]\ =\ \{\ elemento,\ 1,\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01386}01386\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01387}01387\ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01388}01388\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01389}01389\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01390}01390\ \textcolor{keywordtype}{void}\ CListaNo::LibertarLista()\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01391}01391\ \ \ \ \ \textcolor{keywordtype}{bool}\ jaProcessados\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ libertar\ primeiro\ estados\ já\ processados\ (anteriores\ a\ atual)}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01392}01392\ \ \ \ \ \textcolor{comment}{//\ parar\ assim\ que\ existam\ "{}limite"{}\ estados\ livres}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01393}01393\ \ \ \ \ completa\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01394}01394\ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01395}01395\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!jaProcessados)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01396}01396\ \ \ \ \ \ \ \ \ \ \ \ \ jaProcessados\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01397}01397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ apagar\ elementos\ após\ o\ estado\ inicial}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01398}01398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite\ \&\&\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(0)\ !=\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}})}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01399}01399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(0);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01400}01400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01401}01401\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01402}01402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ anteriorID\ =\ -\/1,\ piorID\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01403}01403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}};\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i)\ !=\ 1;\ i\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i))\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01404}01404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ piorID\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01405}01405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anteriorID\ =\ i;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01406}01406\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01407}01407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (piorID\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01408}01408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ valores\ todos\ iguais\ após\ atual,\ apagar\ o\ seguinte\ ao\ atual}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01409}01409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01410}01410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(\mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}});}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01411}01411\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01412}01412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01413}01413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ começar\ por\ libertar\ todos\ após\ o\ primeiro\ elemento\ com\ o\ pior\ ID}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01414}01414\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite\ \&\&\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(piorID)\ !=\ 1)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01415}01415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(piorID);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01416}01416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01417}01417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tem\ de\ se\ eliminar\ o\ primeiro\ elemento\ com\ o\ pior\ valor}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01418}01418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o\ que\ implica\ atualizar\ o\ proxDistinto\ de\ todos\ os\ anteriores}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01419}01419\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(anteriorID)\ !=\ piorID)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01420}01420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[anteriorID].proxDistinto\ =\ 1;\ \textcolor{comment}{//\ último\ elemento}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01421}01421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anteriorID\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(anteriorID);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01422}01422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01423}01423\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(anteriorID);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01424}01424\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01425}01425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tudo\ liberto\ com\ este\ valor,\ se\ ainda\ não\ é\ suficiente,\ seguir\ para\ o\ próximo}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01426}01426\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01427}01427\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01428}01428\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01429}01429\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01430}01430\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01431}01431\ \textcolor{keywordtype}{void}\ CListaNo::LibertarSeguinte(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01432}01432\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01433}01433\ \ \ \ \ livre.\mbox{\hyperlink{classTVector_ad9c1fb99a2d0d4f060c4746e6ce97d0f}{Push}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01434}01434\ \ \ \ \ \textcolor{keywordflow}{if}\ (indice[i].estado\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01435}01435\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ indice[i].estado;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01436}01436\ \ \ \ \ \ \ \ \ indice[i].estado\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01437}01437\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01438}01438\ \ \ \ \ indice[id].prox\ =\ indice[i].prox;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01439}01439\ \ \ \ \ indice[id].proxDistinto\ =\ indice[i].proxDistinto;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01440}01440\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01441}01441\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01442}01442\ \textcolor{comment}{//\ insere\ por\ ordem\ de\ LB}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01443}\mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{01443}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{CListaNo::Inserir}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ elemento,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01444}01444\ \ \ \ \ \textcolor{keywordtype}{int}\ valor,\ valorI;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01445}01445\ \ \ \ \ \textcolor{keywordtype}{int}\ idNovo\ =\ NovoElemento(elemento);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01446}01446\ \ \ \ \ \textcolor{keywordflow}{if}\ (idNovo\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01447}01447\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ primeiro\ elemento,\ inserir\ um\ elemento\ final}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01448}01448\ \ \ \ \ \ \ \ \ indice.Add(\{\ NULL,-\/1,-\/1\ \});}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01449}01449\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01450}01450\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01451}01451\ \ \ \ \ valor\ =\ \mbox{\hyperlink{classCListaNo_aef59a51e58231841d16fa45aa7582328}{Valor}}(idNovo);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01452}01452\ \ \ \ \ \textcolor{comment}{//\ atualizar\ índice}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01453}01453\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \textcolor{keywordtype}{id},\ j\ =\ -\/1;\ i\ >=\ 0;\ i\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i))\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01454}01454\ \ \ \ \ \ \ \ \ valorI\ =\ \mbox{\hyperlink{classCListaNo_aef59a51e58231841d16fa45aa7582328}{Valor}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01455}01455\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valorI\ ==\ valor)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01456}01456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ inserir\ logo\ a\ seguir,\ já\ que\ assim\ nada\ mais\ altera}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01457}01457\ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01458}01458\ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01459}01459\ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].prox\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01460}01460\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01461}01461\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01462}01462\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (valorI\ <\ valor)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01463}01463\ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ i;\ \textcolor{comment}{//\ mantem\ o\ primeiro\ elemento\ anterior}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01464}01464\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ valor\ atual\ já\ é\ superior,\ valor\ novo}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01465}01465\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ <\ 0)\ \{\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01466}01466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ heurística\ não\ consistente,\ }}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01467}01467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ e\ agora\ está\ a\ gerar\ um\ estado\ com\ menor\ valor\ que\ o\ pai}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01468}01468\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ i,\ novo,\ i.prox,\ ...}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01469}01469\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o\ i\ fica\ com\ o\ próximo\ distinto\ em\ novo,\ o\ que\ não\ é\ verdade\ mas\ mais\ vale\ assim}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01470}01470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01471}01471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01472}01472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].prox\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01473}01473\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].proxDistinto\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01474}01474\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idNovo;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01475}01475\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01476}01476\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01477}01477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ utilizar\ o\ índice\ de\ j,\ anterior,\ colocando\ antes\ de\ i}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01478}01478\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ j,\ ...\ ,\ novo,\ i}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01479}01479\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ atualizar\ o\ proxDistinto\ de\ j,\ passa\ a\ novo}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01480}01480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ i;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01481}01481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ i;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01482}01482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ !=\ idNovo)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01483}01483\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[j].proxDistinto\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01484}01484\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j)\ ==\ i\ ||\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j)\ ==\ j)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01485}01485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[j].prox\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01486}01486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01487}01487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01488}01488\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idNovo;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01489}01489\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01490}01490\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01491}01491\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01492}01492\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01493}01493\ \}}
 \DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01494}01494\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01495}01495\ \ \ \ \ \textcolor{comment}{//\ 2.\ inserir\ por\ ordem,\ tirando\ partido\ do\ local\ onde\ já\ está\ o\ último\ elemento}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01496}01496\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ idElementos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01497}01497\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{Inserir}}(elementos[idElementos[j]],\ \textcolor{keywordtype}{id});}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01498}01498\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01499}01499\ \}}
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01500}01500\ }
-\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01501}01501\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01495}01495\ \textcolor{comment}{//\ inserir\ todos\ os\ elementos\ por\ ordem}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01496}\mbox{\hyperlink{classCListaNo_a487ec70de88cd34f0f4356b5d0144c72}{01496}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{CListaNo::Inserir}}(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&\ elementos)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01497}01497\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ lbElementos,\ idElementos;}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01498}01498\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}};}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01499}01499\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01500}01500\ \ \ \ \ \textcolor{comment}{//\ 1.\ Ordenar\ elementos,\ complexidaded\ O(N\ log(N))}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01501}01501\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ elementos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01502}01502\ \ \ \ \ \ \ \ \ lbElementos.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(elementos[j]-\/>LowerBound());}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01503}01503\ \ \ \ \ lbElementos.\mbox{\hyperlink{classTVector_ab5f765b4c8271e597e2005757ed52138}{Sort}}(\&idElementos);}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01504}01504\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01505}01505\ \ \ \ \ \textcolor{comment}{//\ 2.\ inserir\ por\ ordem,\ tirando\ partido\ do\ local\ onde\ já\ está\ o\ último\ elemento}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01506}01506\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ idElementos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01507}01507\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{Inserir}}(elementos[idElementos[j]],\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01508}01508\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01509}01509\ \}}
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01510}01510\ }
+\DoxyCodeLine{\Hypertarget{TProcuraConstrutiva_8cpp_source_l01511}01511\ }
 
 \end{DoxyCode}

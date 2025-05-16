@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_0',['Ação 7 - Editar opções B',['../teste_aspirador.html#autotoc_md16',1,'']]],
+  ['b_0',['Ação 7 - Editar opções B',['../teste_aspirador.html#autotoc_md11',1,'']]],
   ['baralharsuc_1',['baralharSuc',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ad2126792378161b062dfd8598996995d',1,'TProcuraConstrutiva.h']]],
   ['barratorneio_2',['BarraTorneio',['../classTProcuraConstrutiva.html#a555a752a4e2bf6a0e5ba1454eeb16e38',1,'TProcuraConstrutiva']]],
   ['beaset_3',['BeASet',['../classTVector.html#a084d0ab4f7ea5451716f734e649950f6',1,'TVector']]],
