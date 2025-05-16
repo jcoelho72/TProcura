@@ -95,8 +95,7 @@ $(document).ready(function(){initNavTree('teste_aspirador.html',''); initResizab
   <div class="headertitle"><div class="title">Teste Aspirador</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Resposta.</p>
-<p>Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.</p>
+<div class="textblock"><p>Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.</p>
 <div class="fragment"><div class="line">Teste TProcurasConstrutivas</div>
 <div class="line">Problema:</div>
 <div class="line">  1 - Aspirador</div>
@@ -105,8 +104,8 @@ $(document).ready(function(){initNavTree('teste_aspirador.html',''); initResizab
 <div class="line">  4 - Partição</div>
 <div class="line">  5 - Artificial</div>
 <div class="line">Opção: 1</div>
-</div><!-- fragment --><p><img src="docs/imagens/aspirador.png" alt="Aspirador" class="inline"/></p>
-<p>Selecione o problema do Aspirador: **1.*</p>
+</div><!-- fragment --><p><img src="docs/images/aspirador.png" alt="Aspirador" class="inline"/></p>
+<p>Selecione o problema do Aspirador: <b>1.</b></p>
 <p>A versão deste problema foi generalizada no código para poderem existir N salas, uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.</p>
 <div class="fragment"><div class="line">Aspirador</div>
 <div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
@@ -210,7 +209,7 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <div class="line">P11(pesoAStar): 100 (0 a 10000)</div>
 <div class="line">P12(ruido): 0 (-100 a 100)</div>
 <div class="line">P13(baralhar): 0 (0 a 1)</div>
-</div><!-- fragment --><p> Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colcoar a 1. Introduza: <b>3; 1; <em>vazio</em>; 3.</b></p>
+</div><!-- fragment --><p> Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1. Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição. Introduza: <b>3; 1; <em>vazio</em>; 3.</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
 <div class="line">P1(Algoritmo): Largura Primeiro (1 a 7)</div>
@@ -252,7 +251,7 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 </div><!-- fragment --><p> Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.</p>
 <h2><a class="anchor" id="autotoc_md14"></a>
 Ação 4 - Efetuer uma procura em Largura</h2>
-<p><img src="docs/imagens/aspirador_largura.png" alt="Aspirador" class="inline"/></p>
+<p><img src="docs/images/aspirador_largura.png" alt="Aspirador" class="inline"/></p>
 <p>Primeiro, na instância inicial, número 2, com nível de debug máximo: <b>1; 2; 11; 4; 4.</b></p>
 <p>A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 11 serve para escolher o nível de debug. Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa. A opção 4 executa o algoritmo de largura primeiro.</p>
 <ul>
@@ -291,9 +290,11 @@ Ação 7 - Resolver outra instância</h2>
 <h2><a class="anchor" id="autotoc_md18"></a>
 Ação 8 - Desafio Procura em Largura</h2>
 <p>Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?</p>
-<p>Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20.</p>
-<p>Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução</p>
-<p>A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos.</p>
+<details >
+<summary >
+Resposta:</summary>
+<p>Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20. Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos. </p>
+</details>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Ação 9 - Procura em Profundidade</h2>
 <p><img src="docs/images/aspirador_profundidade.png" alt="Aspirador" class="inline"/></p>
@@ -322,8 +323,11 @@ Ação 10 - Profundidade ilimitada</h2>
 <h2><a class="anchor" id="autotoc_md24"></a>
 Ação 10 - Desafio Procura Profundidade</h2>
 <p>Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?</p>
-<p>Resposta</p>
-<p>Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore de procura. Evitam também ciclos infinitos. @detains Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias. </p>
+<details >
+<summary >
+Resposta</summary>
+<p>Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore de procura. Evitam também ciclos infinitos. Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias. </p>
+</details>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

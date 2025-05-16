@@ -1,7 +1,5 @@
 \chapter{Teste Aspirador}
 \hypertarget{teste_aspirador}{}\label{teste_aspirador}\index{Teste Aspirador@{Teste Aspirador}}
-Resposta.
-
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
 
 
@@ -20,7 +18,7 @@ Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste
 
 
 
-Selecione o problema do Aspirador\+: \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}1.\texorpdfstring{$\ast$}{*}
+Selecione o problema do Aspirador\+: {\bfseries{1.}}
 
 A versão deste problema foi generalizada no código para poderem existir N salas, uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.
 
@@ -161,7 +159,7 @@ Introduza\+: {\bfseries{4}}
 \DoxyCodeLine{P13(baralhar):\ 0\ (0\ a\ 1)}
 
 \end{DoxyCode}
- Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colcoar a 1. Introduza\+: {\bfseries{3; 1; {\itshape vazio}; 3.}}
+ Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1. Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição. Introduza\+: {\bfseries{3; 1; {\itshape vazio}; 3.}}
 
 
 \begin{DoxyCode}{0}
@@ -277,11 +275,11 @@ Houve um problema de memória. A instância é demasiado grande, e sem remover r
 A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-\/se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.\hypertarget{teste_aspirador_autotoc_md18}{}\doxysubsection{\texorpdfstring{Ação 8 -\/ Desafio Procura em Largura}{Ação 8 - Desafio Procura em Largura}}\label{teste_aspirador_autotoc_md18}
 Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?
 
-Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20.
 
-Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução
 
-A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-\/se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos.\hypertarget{teste_aspirador_autotoc_md19}{}\doxysubsection{\texorpdfstring{Ação 9 -\/ Procura em Profundidade}{Ação 9 - Procura em Profundidade}}\label{teste_aspirador_autotoc_md19}
+{\bfseries{Resposta\+:}}\begin{adjustwidth}{1em}{0em}
+Consegue resolver com replicados gerados, até à instância 19, existindo problema de memória na instância 20. Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-\/se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos. \end{adjustwidth}
+\hypertarget{teste_aspirador_autotoc_md19}{}\doxysubsection{\texorpdfstring{Ação 9 -\/ Procura em Profundidade}{Ação 9 - Procura em Profundidade}}\label{teste_aspirador_autotoc_md19}
 
 
 Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.\hypertarget{teste_aspirador_autotoc_md20}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Efetuar uma procura em Profundidade Primeiro}{Ação 10 - Efetuar uma procura em Profundidade Primeiro}}\label{teste_aspirador_autotoc_md20}
@@ -337,6 +335,7 @@ Temos um crash do programa. Como a procura em profundidade está implementada de
 Pergunta final\+: Lembra-\/se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?\hypertarget{teste_aspirador_autotoc_md24}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Desafio Procura Profundidade}{Ação 10 - Desafio Procura Profundidade}}\label{teste_aspirador_autotoc_md24}
 Lembra-\/se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?
 
-Resposta
 
-Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore de procura. Evitam também ciclos infinitos. @detains Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias. 
+
+{\bfseries{Resposta}}\begin{adjustwidth}{1em}{0em}
+Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore de procura. Evitam também ciclos infinitos. Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias. \end{adjustwidth}
