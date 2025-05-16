@@ -4,7 +4,7 @@ OUTPUT_DIRECTORY       = docs/html
 HTML_OUTPUT            = .
 
 # Definir diretórios de entrada
-INPUT                  = . README.md execucao_exemplo.dox
+INPUT                  = . README.md docs/Teste1.md
 RECURSIVE              = YES
 
 # Gerar documentação em diferentes formatos
