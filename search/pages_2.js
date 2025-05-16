@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['execução_20de_20exemplo_0',['Execução de exemplo',['../execucao_exemplo.html',1,'']]],
-  ['exemplo_1',['Execução de exemplo',['../execucao_exemplo.html',1,'']]]
+  ['8_0',['Teste Puzzle 8',['../teste_puzzle8.html',1,'']]],
+  ['8_20damas_1',['Teste 8 Damas',['../teste_8damas.html',1,'']]]
 ];
