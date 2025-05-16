@@ -226,7 +226,7 @@ _______________________________________________________________________________
 ```
 Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.
 
-## Ação 4 - Efetuer uma procura em Largura
+## Ação 5 - Efetuer uma procura em Largura
 
 ![Aspirador](docs/images/aspirador_largura.png)
 
@@ -259,7 +259,7 @@ Podemos lidar com estados repetidos de duas formas:
 - Verificar se o estado a ser gerado, não tem já um ascendente - neste caso é preciso implementar a função Distinto() - Para fazer esta validação, o código tem de seguir pelos pais, e testar se são diferentes do atual.
 - Verificar se o estado a ser gerado, não foi já gerado mesmo em outro ramo, desde que no mesmo nível ou anterior. Nesse caso o estado pode ser excluído, já que já terá sido tratado nesse outro ramo - para ter esta opção, é preciso implementar a função Codificar() que coloca o estado num vetor de bits - o código utiliza uma hashtable com perdas, para verificar se o estado já foi criado em tempo constante, não existindo problemas de memória mesmo em execuções longas devido às perdas. 
 
-## Ação 5 - Editar opções A
+## Ação 6 - Editar opções A
 
 Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3: **1; 2; 14; 1; 11; 3; 4.**
 - Verificar que o número de expansões é 6 e gerações é 7, uma grande melhoria.  O resultado da procura mantém-se em 3.
@@ -270,7 +270,7 @@ Altere a opção para remover os repetidos com base nos ascendentes, e o debug p
 Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. 
 Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.
 
-## Ação 6 - Editar opções B
+## Ação 7 - Editar opções B
 
 Alterar a  opção para remover os repetidos com base nos gerados, e altear o debug para nível 2: **1; 2; 14; 2; 11; 2; 4.**
 
@@ -287,7 +287,7 @@ lidar com os estados repetidos seja distinta.
 O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, 
 e o nível 0 não dá qualquer informação. 
 
-## Ação 7 - Resolver outra instância 
+## Ação 8 - Resolver outra instância 
 
 Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior: **1; 8; 14; 0; 11; 1; 4.**
 
@@ -304,7 +304,7 @@ Esta abordagem perde a optimalidade, e também a garantia de construir um caminh
 o que poderá não ser problemático em alguns problemas.
 
 
-## Ação 8 - Desafio Procura em Largura
+## Ação 9 - Desafio Procura em Largura
 
 Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?
 
@@ -316,7 +316,7 @@ A utilização de repetidos com base nos ascendentes, permite também resolver o
 </details>
 
 
-## Ação 9 - Procura em Profundidade
+## Ação 10 - Procura em Profundidade
 
 ![Aspirador](docs/images/aspirador_profundidade.png)
 
@@ -325,7 +325,7 @@ Neste caso temos neste algoritmo diversas estratégias.
 Podemos executar esta procura com um limite de profundidade. 
 Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.
 
-## Ação 10 - Efetuar uma procura em Profundidade Primeiro
+## Ação 11 - Efetuar uma procura em Profundidade Primeiro
 
 Utilizar a instância número 2, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos: **1; 2; 11; 4; 14; 0; 12; 3; 6.**
 
@@ -344,7 +344,7 @@ Esta visualização da árvore da procura é interessante para pequenos problema
 mas naturalmente que procuras maiores torna-se impraticável. 
 Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.
 
-## Ação 11 - Ver uma árvore de procura maior
+## Ação 12 - Ver uma árvore de procura maior
 
 Colocar a profundidade a 10, e o nível de debug a 3: **1; 2; 11; 3; 14; 0; 12; 10; 6.**
 
@@ -364,7 +364,7 @@ Se tivéssemos escolhido uma profundidade menor, a solução obtida seria també
 Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. 
 É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.
 
-## Ação 12 - Profundidade Iterativa
+## Ação 13 - Profundidade Iterativa
 
 Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: **1; 2; 11; 2; 14; 0; 12; 0; 6.**
 
@@ -382,7 +382,7 @@ o que é natural dado que este problema tem apenas duas salas.
 
 Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-1
 
-## Ação 10 - Profundidade ilimitada
+## Ação 14 - Profundidade ilimitada
 
 Colocar a profundidade ilimitada (limite a -1), e o nível de debug a 1: **1; 2; 11; 1; 14; 0; 12; -1; 6.**
 
@@ -396,7 +396,7 @@ Entrou-se num ramo infinito, mesmo neste pequeno problema, como aliás é possí
 
 Pergunta final: Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?
 
-## Ação 10 - Desafio Procura Profundidade
+## Ação 15 - Desafio Procura Profundidade
 
 Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?
 

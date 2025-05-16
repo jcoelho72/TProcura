@@ -6,6 +6,7 @@ HTML_OUTPUT            = .
 # Definir diretórios de entrada
 INPUT                  = . README.md docs/
 RECURSIVE              = YES
+IMAGE_PATH = docs/images
 
 # Gerar documentação em diferentes formatos
 GENERATE_HTML          = YES
