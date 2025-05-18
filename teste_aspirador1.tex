@@ -1,6 +1,6 @@
 \chapter{Teste Aspirador -\/ Parte 1/2}
 \hypertarget{teste_aspirador1}{}\label{teste_aspirador1}\index{Teste Aspirador -\/ Parte 1/2@{Teste Aspirador -\/ Parte 1/2}}
-\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}
+\texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_aspirador1_autotoc_md19}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_aspirador1_autotoc_md19}
 
@@ -270,7 +270,6 @@ A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 4 vamos 
 \DoxyCodeLine{...}
 \DoxyCodeLine{Parametro:}
 \DoxyCodeLine{...}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 0\ |\ gerações\ 0\ |\ avaliações\ 0}
 \DoxyCodeLine{\ *\ [*]}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
@@ -333,7 +332,11 @@ A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 4 vamos 
 \end{DoxyCode}
 
 
-Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, o que significa que a procura encontrou uma solução de comprimento 3. Podemos ver a solução. Introduza\+: {\bfseries{3.}}
+Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, o que significa que a procura encontrou uma solução de comprimento 3.
+
+No caso de não ter os resultados iguais aos da linha das estatísticas, confirme se todos os parâmetros estão iguais.
+
+Podemos ver a solução, tendo ficado guardada, tal como na resolução manual. Introduza\+: {\bfseries{3.}}
 
 
 \begin{DoxyCode}{0}
@@ -345,11 +348,8 @@ Verificar que o número de expansões é 6 e gerações é 12. O resultado da pr
 \DoxyCodeLine{[.]\ .\ \ (g:3)}
 \DoxyCodeLine{Aspirador}
 \DoxyCodeLine{...}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 6\ |\ gerações\ 12\ |\ avaliações\ 0}
 \DoxyCodeLine{[.]\ .}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{...}
 
 \end{DoxyCode}
  Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.
@@ -406,12 +406,10 @@ Altere a opção para remover os repetidos com base nos ascendentes, e o debug p
 \DoxyCodeLine{P13(baralhar):\ 0}
 \DoxyCodeLine{[Estatísticas]\ expansões\ 5\ |\ gerações\ 6\ |\ avaliações\ 0}
 \DoxyCodeLine{[.]\ .}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{...}
 
 \end{DoxyCode}
- A interação de troca de parâmetro não é mais mostrada para não saturar o texto. Caso esteja a reproduzir o teste, confirme que tem os parâmetros iguais aos valores atuais, visiveis na interface.
+ A interação de troca de parâmetro não é mais mostrada para não saturar o texto.
 
 Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.
 
@@ -440,9 +438,7 @@ Alterar a opção para remover os repetidos com base nos gerados, e alterar o de
 \DoxyCodeLine{P13(baralhar):\ 0}
 \DoxyCodeLine{[Estatísticas]\ expansões\ 5\ |\ gerações\ 6\ |\ avaliações\ 0}
 \DoxyCodeLine{[.]\ .}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{...}
 
 \end{DoxyCode}
  Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números\+: expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.
@@ -462,17 +458,11 @@ Pode haver um problema de memória. A instância é demasiado grande, e sem remo
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Aspirador}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ atividade\ |\ P3(Ver):\ 1\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 5\ |\ gerações\ 6\ |\ avaliações\ 0}
-\DoxyCodeLine{\ *\ \ *\ [.]\ .\ \ *\ \ *\ \ *\ \ *}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{...}
+\DoxyCodeLine{*\ \ *\ [.]\ .\ \ *\ \ *\ \ *\ \ *}
+\DoxyCodeLine{...}
 \DoxyCodeLine{Opção:\ 5}
-\DoxyCodeLine{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\ Solução\ encontrada!}
+\DoxyCodeLine{\#\#\#\#\#\#\#...\#\#\#\#\#\ Solução\ encontrada!}
 \DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [.](g:15)}
 \DoxyCodeLine{P1:1\ P2:1\ P3:1\ P4:1\ P5:10\ P6:0\ P7:0\ P8:0\ P9:0\ P10:1}
 \DoxyCodeLine{P11:100\ P12:0\ P13:0}
@@ -484,9 +474,7 @@ Pode haver um problema de memória. A instância é demasiado grande, e sem remo
 \DoxyCodeLine{P13(baralhar):\ 0}
 \DoxyCodeLine{[Estatísticas]\ expansões\ 1681451\ |\ gerações\ 4840697\ |\ avaliações\ 0}
 \DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [.]}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{...}
 
 \end{DoxyCode}
  São demasiados estados gerados, quase 5 milhões, e 5 segundos. Há um \# que é colocado no output a cada 1000 expansões. Se desconfiamos que com tanto estado, dificilmente a solução pode ser óptima, podemos ver a solução. Introduza\+: {\bfseries{3}}
@@ -513,7 +501,9 @@ Pode haver um problema de memória. A instância é demasiado grande, e sem remo
 \DoxyCodeLine{\ .\ \ .\ \ .\ \ .\ \ .\ \ .\ \ .\ [.]\ (g:15)}
 
 \end{DoxyCode}
- Não houve desperdício visivel nestga solução. O algoritmo procura em largura garante-\/nos que esta solução é ótima, dado que o custo de cada ação é unitário.
+
+
+Não houve desperdício visivel nestga solução. O algoritmo procura em largura garante-\/nos que esta solução é ótima, dado que o custo de cada ação é unitário.
 
 Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.
 
