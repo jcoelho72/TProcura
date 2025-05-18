@@ -4,17 +4,17 @@ Execução de exemplo com base no problema artificial. Pode acompanhar o teste e
 
 ## Sumário
 
-- [Ação 1 - Ver instâncias](#ver-instâncias)
-- [Ação 2 - Resolver manualmente](resolver-manualmente#)
-- [Ação 3 - Procura em Largura](#procura-em-largura)
-- [Ação 4 - Procura em Profundidade](#procura-em-profundidade)
-- [Ação 5 - Heurística](#heurística)
-- [Ação 6 - Melhor Primeiro](#melhor-primeiro)
-- [Ação 7 - AStar](#astar)
-- [Ação 8 - IDAStar](#idastar)
-- [Ação 9 - Branch-and-Bound](#branch-and-bound)
-- [Ação 10 - Configurações](#configurações)
-- [Ação 11 - Testes Empíricos](#testes-empíricos)
+- [Ação 1 - Ver instâncias](#artificia-a1)
+- [Ação 2 - Resolver manualmente](#artificia-a2)
+- [Ação 3 - Procura em Largura](#artificia-a3)
+- [Ação 4 - Procura em Profundidade](#artificia-a4)
+- [Ação 5 - Heurística](#artificia-a5)
+- [Ação 6 - Melhor Primeiro](#artificia-a6)
+- [Ação 7 - AStar](#artificia-a7)
+- [Ação 8 - IDAStar](#artificia-a8)
+- [Ação 9 - Branch-and-Bound](#artificia-a9)
+- [Ação 10 - Configurações](#artificia-a10)
+- [Ação 11 - Testes Empíricos](#artificia-a11)
 
 
 ```entrada
@@ -28,25 +28,35 @@ Problema:
 Opção: 5
 ```
 
-
+\anchor artificia-a1
 ## Ação 1 - Ver instâncias
 
+\anchor artificia-a2
 ## Ação 2 - Resolver manualmente
 
+\anchor artificia-a3
 ## Ação 3 - Procura em Largura
 
+\anchor artificia-a4
 ## Ação 4 - Custo Uniforme
 
+\anchor artificia-a5
 ## Ação 5 - Procura em Profundidade
 
+\anchor artificia-a6
 ## Ação 6 - Heurística
 
+\anchor artificia-a7
 ## Ação 7 - Melhor Primeiro
 
+\anchor artificia-a8
 ## Ação 8 - AStar
 
+\anchor artificia-a9
 ## Ação 9 - IDAStar
 
+\anchor artificia-a10
 ## Ação 10 - Branch-and-Bound
 
+\anchor artificia-a11
 ## Ação 11 - Testes Empíricos

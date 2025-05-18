@@ -4,12 +4,12 @@ Execução de exemplo com base no problema da Partição. Pode acompanhar o test
 
 ## Sumário
 
-- [Ação 1 - Ver instâncias](#a1)
-- [Ação 2 - Resolver manualmente](#a2)
-- [Ação 3 - Procura em Largura](#a3)
-- [Ação 4 - Procura em Profundidade](#a4)
-- [Ação 5 - Heurística](#a5)
-- [Ação 6 - Testes Empíricos](#a6)
+- [Ação 1 - Ver instâncias](#particao-a1)
+- [Ação 2 - Resolver manualmente](#particao-a2)
+- [Ação 3 - Procura em Largura](#particao-a3)
+- [Ação 4 - Procura em Profundidade](#particao-a4)
+- [Ação 5 - Heurística](#particao-a5)
+- [Ação 6 - Testes Empíricos](#particao-a6)
 
 
 ```entrada
@@ -26,21 +26,21 @@ Opção: 4
 ![Partição - separe os números em duas partes iguais](docs/images/particao.png)
 
 
-\anchor a1
+\anchor particao-a1
 ## Ação 1 - Ver instâncias
 
-\anchor a2
+\anchor particao-a2
 ## Ação 2 - Resolver manualmente
 
-\anchor a3
+\anchor particao-a3
 ## Ação 3 - Procura em Largura
 
-\anchor a4
+\anchor particao-a4
 ## Ação 4 - Procura em Profundidade
 
-\anchor a5
+\anchor particao-a5
 ## Ação 5 - Heurística
 
-\anchor a6
+\anchor particao-a6
 ## Ação 6 - Testes Empíricos
 

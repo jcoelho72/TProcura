@@ -1,15 +1,15 @@
-@page teste_aspirador2 Teste Aspirador - Parte 2/3
+@page teste_aspirador2 Teste Aspirador - Parte 2/2
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
 
-- [Ação 10 - Procura em Profundidade](#a10)
-- [Ação 11 - Efetuar uma procura em Profundidade Primeiro](#a11)
-- [Ação 12 - Ver uma árvore de procura maior](#a12)
-- [Ação 13 - Profundidade Iterativa](#a13)
-- [Ação 14 - Profundidade ilimitada](#a14)
-- [Ação 15 - Desafio Procura Profundidade](#a15)
+- [Ação 10 - Procura em Profundidade](#aspirador-a10)
+- [Ação 11 - Efetuar uma procura em Profundidade Primeiro](#aspirador-a11)
+- [Ação 12 - Ver uma árvore de procura maior](#aspirador-a12)
+- [Ação 13 - Profundidade Iterativa](#aspirador-a13)
+- [Ação 14 - Profundidade ilimitada](#aspirador-a14)
+- [Ação 15 - Desafio Procura Profundidade](#aspirador-a15)
 
 ```entrada
 Teste TProcurasConstrutivas
@@ -25,7 +25,7 @@ Opção: 1
 Selecione o problema do Aspirador: **1.**
 
 
-\anchor a10
+\anchor aspirador-a10
 ## Ação 10 - Procura em Profundidade
 
 ![Profundidade Primeiro - expande primeiro os estados mais profundos](docs/images/aspirador_profundidade.png)
@@ -35,7 +35,7 @@ Neste caso temos neste algoritmo diversas estratégias.
 Podemos executar esta procura com um limite de profundidade. 
 Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.
 
-\anchor a11
+\anchor aspirador-a11
 ## Ação 11 - Efetuar uma procura em Profundidade Primeiro
 
 Utilizar a instância número 2, o algoritmo profundidade primeiro, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos: 
@@ -102,7 +102,7 @@ Esta visualização da árvore da procura é interessante para pequenos problema
 mas naturalmente que procuras maiores torna-se impraticável. 
 Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.
 
-\anchor a12
+\anchor aspirador-a12
 ## Ação 12 - Ver uma árvore de procura maior
 
 Colocar a profundidade a 10, e o nível de debug a 3: **1; 2; 4; 9; 10; 2; 3; *ENTER*; 5.**
@@ -161,7 +161,7 @@ Se tivéssemos escolhido uma profundidade menor, a solução obtida seria també
 Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. 
 É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.
 
-\anchor a13
+\anchor aspirador-a13
 ## Ação 13 - Profundidade Iterativa
 
 Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: **1; 2; 4; 9; 0; 2; 2; *ENTER*; 5.**
@@ -211,7 +211,7 @@ o que é natural dado que este problema tem apenas duas salas.
 
 Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-1
 
-\anchor a14
+\anchor aspirador-a14
 ## Ação 14 - Profundidade ilimitada
 
 Colocar a profundidade ilimitada (limite a -1), e o nível de debug a 1: 
@@ -227,7 +227,7 @@ Como a procura em profundidade está implementada de forma recursiva, houve um p
 Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. 
 Entrou-se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10. 
 
-\anchor a15
+\anchor aspirador-a15
 ## Ação 15 - Desafio Procura Profundidade
 
 Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?

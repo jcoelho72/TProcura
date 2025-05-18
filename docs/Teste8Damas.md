@@ -4,12 +4,12 @@ Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste 
 
 ## Sumário
 
-- [Ação 1 - Ver instâncias](#a1)
-- [Ação 2 - Resolver manualmente](#a2)
-- [Ação 3 - Procura em Largura](#a3)
-- [Ação 4 - Procura em Profundidade](#a4)
-- [Ação 5 - Heurística](#a5)
-- [Ação 6 - Testes Empíricos](#a6)
+- [Ação 1 - Ver instâncias](#8damas-a1)
+- [Ação 2 - Resolver manualmente](#8damas-a2)
+- [Ação 3 - Procura em Largura](#8damas-a3)
+- [Ação 4 - Procura em Profundidade](#8damas-a4)
+- [Ação 5 - Heurística](#8damas-a5)
+- [Ação 6 - Testes Empíricos](#8damas-a6)
 
 
 ```entrada
@@ -26,20 +26,20 @@ Opção: 3
 ![8 Damas - colocar 8 damas no tabuleiro sem que se ataquem mutuamente](docs/images/8damas.png)
 
 
-\anchor a1
+\anchor 8damas-a1
 ## Ação 1 - Ver instâncias
 
-\anchor a2
+\anchor 8damas-a2
 ## Ação 2 - Resolver manualmente
 
-\anchor a3
+\anchor 8damas-a3
 ## Ação 3 - Procura em Largura
 
-\anchor a4
+\anchor 8damas-a4
 ## Ação 4 - Procura em Profundidade
 
-\anchor a5
+\anchor 8damas-a5
 ## Ação 5 - Heurística
 
-\anchor a6
+\anchor 8damas-a6
 ## Ação 6 - Testes Empíricos

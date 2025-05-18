@@ -10,11 +10,11 @@ Uma coleção de algoritmos e implementações para **procuras e otimizações**
 ## Sumário
 
 - [Sobre o Projeto](#s1)
-- [Estado do Projeto](s2)
+- [Estado do Projeto](#s2)
 - [Funcionalidades](#s3)
 - [Instalação e Uso](#s4)
 - [Exemplos](#s5)
-- [Clonando o Repositório](#s6)
+- [Clonar o Repositório](#s6)
 - [Licença](#s7)
 
 \anchor s1
@@ -77,7 +77,7 @@ Estão implementados alguns problemas, tendo sido realizados testes de modo a ex
 5. [Artificial](teste_artificial.html)
 
 \anchor s6
-### Clonando o Repositório
+### Clonar o Repositório
 ```bash
 git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
 ```
