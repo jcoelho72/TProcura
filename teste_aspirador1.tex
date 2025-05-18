@@ -1,6 +1,6 @@
 \chapter{Teste Aspirador -\/ Parte 1/2}
 \hypertarget{teste_aspirador1}{}\label{teste_aspirador1}\index{Teste Aspirador -\/ Parte 1/2@{Teste Aspirador -\/ Parte 1/2}}
-\texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|}
+\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}-\/-\/-\/-\/-\/-\/-\/-\/-\/---\texorpdfstring{$\vert$}{|}
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_aspirador1_autotoc_md19}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_aspirador1_autotoc_md19}
 
@@ -143,7 +143,7 @@ Para um problema novo, é sempre importante que explore os sucessores, nomeadame
 \label{teste_aspirador1_aspirador-a3}%
 \Hypertarget{teste_aspirador1_aspirador-a3}%
 \hypertarget{teste_aspirador1_autotoc_md22}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Ver a solução/caminho realizada manualmente}{Ação 3 - Ver a solução/caminho realizada manualmente}}\label{teste_aspirador1_autotoc_md22}
-Introduza\+: {\bfseries{3.}}
+O resultado da resolução manual da ação anterior, é visualizar apenas o último estado. No entanto houve um caminho, que ficou guardado. Introduza\+: {\bfseries{3.}}
 
 
 \begin{DoxyCode}{0}
@@ -153,7 +153,6 @@ Introduza\+: {\bfseries{3.}}
 \DoxyCodeLine{\ .\ [.]\ (g:4)}
 \DoxyCodeLine{Aspirador}
 \DoxyCodeLine{...}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 7\ |\ gerações\ 14\ |\ avaliações\ 0}
 \DoxyCodeLine{\ .\ [.]}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
@@ -169,7 +168,7 @@ A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os e
 \label{teste_aspirador1_aspirador-a4}%
 \Hypertarget{teste_aspirador1_aspirador-a4}%
 \hypertarget{teste_aspirador1_autotoc_md23}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Ver a alterar um parâmetro}{Ação 4 - Ver a alterar um parâmetro}}\label{teste_aspirador1_autotoc_md23}
-Introduza\+: {\bfseries{4}}
+Vamos editar o parâmetro P3(\+Ver). Introduza\+: {\bfseries{4}}
 
 
 \begin{DoxyCode}{0}
@@ -194,12 +193,6 @@ Introduza\+: {\bfseries{4}}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Opção:\ 4}
-\DoxyCodeLine{}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
-\DoxyCodeLine{P2(Debug):\ nada\ (0\ a\ 4)}
-\DoxyCodeLine{P3(Ver):\ 4\ (1\ a\ 100)}
-\DoxyCodeLine{...}
 \DoxyCodeLine{Parametro:3}
 \DoxyCodeLine{}
 \DoxyCodeLine{Mostra\ estado\ a\ cada\ K\ ações.\ Se\ 1\ mostra\ sempre\ estados\ e\ nunca\ ações.}
@@ -213,11 +206,8 @@ Introduza\+: {\bfseries{4}}
 \DoxyCodeLine{}
 \DoxyCodeLine{Aspirador}
 \DoxyCodeLine{...}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 7\ |\ gerações\ 14\ |\ avaliações\ 0}
 \DoxyCodeLine{\ .\ [.]}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{...}
 \DoxyCodeLine{Opção:\ 3}
 \DoxyCodeLine{}
 \DoxyCodeLine{\ *\ [*]\ (g:0)}
@@ -227,7 +217,6 @@ Introduza\+: {\bfseries{4}}
 \DoxyCodeLine{\ .\ [.]\ (g:4)}
 \DoxyCodeLine{Aspirador}
 \DoxyCodeLine{...}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 7\ |\ gerações\ 14\ |\ avaliações\ 0}
 \DoxyCodeLine{\ .\ [.]}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}

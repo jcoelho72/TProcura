@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('teste_aspirador1.html',''); initResiza
   <div class="headertitle"><div class="title">Teste Aspirador - Parte 1/2</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
+<div class="textblock"><p>|----------&mdash;|----------&mdash;|-------&mdash;|------&mdash;|-------&mdash;|---------&mdash;| | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | |----------&mdash;|----------&mdash;|-------&mdash;|------&mdash;|-------&mdash;|---------&mdash;|</p>
 <p>Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Sumário</h2>
@@ -190,14 +190,13 @@ Ação 2 - Explorar os sucessores</h2>
 <p><a class="anchor" id="aspirador-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md22"></a>
 Ação 3 - Ver a solução/caminho realizada manualmente</h2>
-<p>Introduza: <b>3.</b></p>
+<p>O resultado da resolução manual da ação anterior, é visualizar apenas o último estado. No entanto houve um caminho, que ficou guardado. Introduza: <b>3.</b></p>
 <div class="fragment"><div class="line">Opção: 3</div>
 <div class="line"> </div>
 <div class="line"> * [*] (g:0)  esq asp dir asp</div>
 <div class="line"> . [.] (g:4)</div>
 <div class="line">Aspirador</div>
 <div class="line">...</div>
-<div class="line">[Estatísticas] expansões 7 | gerações 14 | avaliações 0</div>
 <div class="line"> . [.]</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
@@ -207,7 +206,7 @@ Ação 3 - Ver a solução/caminho realizada manualmente</h2>
 <p><a class="anchor" id="aspirador-a4"></a></p>
 <h2><a class="anchor" id="autotoc_md23"></a>
 Ação 4 - Ver a alterar um parâmetro</h2>
-<p>Introduza: <b>4</b></p>
+<p>Vamos editar o parâmetro P3(Ver). Introduza: <b>4</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
 <div class="line">P1(Algoritmo): Largura Primeiro (1 a 7)</div>
@@ -224,13 +223,7 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <div class="line">P12(ruido): 0 (-100 a 100)</div>
 <div class="line">P13(baralhar): 0 (0 a 1)</div>
 </div><!-- fragment --><p> Podemos ver todos os os parâmetros e valores mínimos e máximos. Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1. Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição. Introduza: <b>3; 1; <em>ENTER</em>; 3.</b></p>
-<div class="fragment"><div class="line">Opção: 4</div>
-<div class="line"> </div>
-<div class="line">P1(Algoritmo): Largura Primeiro (1 a 7)</div>
-<div class="line">P2(Debug): nada (0 a 4)</div>
-<div class="line">P3(Ver): 4 (1 a 100)</div>
-<div class="line">...</div>
-<div class="line">Parametro:3</div>
+<div class="fragment"><div class="line">Parametro:3</div>
 <div class="line"> </div>
 <div class="line">Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.</div>
 <div class="line">Ver (atual 4): 1</div>
@@ -243,11 +236,8 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <div class="line"> </div>
 <div class="line">Aspirador</div>
 <div class="line">...</div>
-<div class="line">[Estatísticas] expansões 7 | gerações 14 | avaliações 0</div>
 <div class="line"> . [.]</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
-<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+<div class="line">...</div>
 <div class="line">Opção: 3</div>
 <div class="line"> </div>
 <div class="line"> * [*] (g:0)</div>
@@ -257,7 +247,6 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <div class="line"> . [.] (g:4)</div>
 <div class="line">Aspirador</div>
 <div class="line">...</div>
-<div class="line">[Estatísticas] expansões 7 | gerações 14 | avaliações 0</div>
 <div class="line"> . [.]</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
