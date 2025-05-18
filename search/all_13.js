@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['largura_0',['largura',['../teste_puzzle8.html#autotoc_md46',1,'Ação 3 - Procura em Largura'],['../teste_particao.html#autotoc_md39',1,'Ação 3 - Procura em Largura'],['../teste_artificial.html#autotoc_md10',1,'Ação 3 - Procura em Largura'],['../teste_8damas.html#autotoc_md3',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md24',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md28',1,'Ação 9 - Desafio Procura em Largura']]],
+  ['largura_0',['largura',['../teste_puzzle8.html#autotoc_md35',1,'Ação 3 - Procura em Largura'],['../teste_8damas.html#autotoc_md3',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md16',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md20',1,'Ação 9 - Desafio Procura em Largura']]],
   ['larguraprimeiro_1',['larguraprimeiro',['../group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0',1,'TProcuraConstrutiva::LarguraPrimeiro()'],['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6caa7119d8453f4029f15ea59fa1063d1a6',1,'larguraPrimeiro:&#160;TProcuraConstrutiva.h']]],
   ['last_2',['Last',['../classTVector.html#aa304d639c79ef2842f9951846c6292e3',1,'TVector']]],
   ['ler_3',['ler',['../TProcuraConstrutiva_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678',1,'TProcuraConstrutiva.h']]],
   ['libertarvector_4',['LibertarVector',['../classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df',1,'TProcuraConstrutiva']]],
-  ['licença_5',['Licença',['../index.html#autotoc_md63',1,'']]],
+  ['licença_5',['Licença',['../index.html#autotoc_md52',1,'']]],
   ['limite_6',['limite',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f',1,'TProcuraConstrutiva.h']]],
   ['limiteavaliacoes_7',['limiteAvaliacoes',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a4e659740f4db252369b21a5998487906',1,'TProcuraConstrutiva.h']]],
   ['limiteexpansoes_8',['limiteExpansoes',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ada8cabf08fbdfada7b4c7bb0063c7f74',1,'TProcuraConstrutiva.h']]],

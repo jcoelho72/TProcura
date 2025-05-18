@@ -95,9 +95,9 @@ $(document).ready(function(){initNavTree('teste_puzzle8.html',''); initResizable
   <div class="headertitle"><div class="title">Teste Puzzle 8</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
+<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste excutando as ações localmente.</p>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a1">Ação 1 - Ver instâncias</a></li>
@@ -125,7 +125,7 @@ Sumário</h2>
 <div class="caption">
 Puzzle 8 - movimentar uma das peças para o espaço vazio</div></div>
     <p><a class="anchor" id="puzzle8-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no problema Puzzle 8, introduza: <b>2.</b></p>
 <div class="fragment"><div class="line">Puzzle 8</div>
@@ -153,7 +153,7 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p>Estavamos na instância 40, e existem instâncias de 1 a 1000. Como as instâncias são construídas com base em movimentos aleatórios em quantidade igual ao ID da instância, ao escolher um ID de 4 garantimos que estamos a uma distância de 4 ou menos da solução.</p>
 <p><a class="anchor" id="puzzle8-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos então resolver a instância manualmente. Introduza: <b>2; baixo dir dir baixo; <em>ENTER</em>.</b></p>
 <div class="fragment"><div class="line">Opção: 2</div>
@@ -193,7 +193,7 @@ Ação 2 - Resolver manualmente</h2>
 </div><!-- fragment --><p> Vemos agora a solução num formato compacto. Num só tabuleiro, vemos as peças que mudam. Ou se se quiser, vemos o percurso do espaço. Existe uma só parte, com as ações que demos manualmente. Caso o caminho intersecte, existiriam mais partes.</p>
 <p>Esta forma de ver soluções é específica do Puzzle 8 porque foi redefinido o método MostrarSolucao(). Assim temos uma forma compacta mais cómuda de ver soluções.</p>
 <p><a class="anchor" id="puzzle8-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md46"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Ação 3 - Procura em Largura</h2>
 <p>Começamos pela procura em largura nesta instãncia, colocando debug a 4. Introduza: <b>1; 4; 4; 2; 4; <em>ENTER</em>; 5</b></p>
 <div class="fragment"><div class="line">g:0</div>
@@ -267,7 +267,7 @@ Ação 3 - Procura em Largura</h2>
 <div class="line"> 6  7  8</div>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> Foi encontrada uma solução de distância 4. Podemos ver a ordem das expansões, houve estados expandidos que em nada contribuiam para a solução, mas serviram para garantir que não havia outra solução mais curta.</p>
-<p>Esta instância éra fácil, mas e a instância inicial? Vamos ver, mas reduzindo o debug para 2. Introduza: **1; 40; 4; 2; 2; <em>ENTER</em>; 5</p>
+<p>Esta instância era fácil, mas e a instância inicial? Vamos ver, mas reduzindo o debug para 2. Introduza: **1; 40; 4; 2; 2; <em>ENTER</em>; 5</p>
 <div class="fragment"><div class="line">g:0</div>
 <div class="line">g:1 1|2</div>
 <div class="line">g:1 2|4</div>
@@ -314,7 +314,7 @@ Ação 3 - Procura em Largura</h2>
 </div><!-- fragment --><p>Nesta instância, foram precisas 3 partes para mostrar a solução com 10 ações.</p>
 <p>Embora o estado inicial tenha sido obtido por 40 movimentos aleatórios desde o estado objetivo, alguns dos movimentos acabaram por se inverter resultando numa instância à distãncia 10 do objetivo.</p>
 <p><a class="anchor" id="puzzle8-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Ação 4 - Procura em Profundidade</h2>
 <p>Vamos ver a procura em profundidade na instância 40, que sabemos ter uma solução de 10. Vamos alterar o algoritmo, colocar a profundidade a 4, debug a completo e visualização a 1, para ser ver todos os estados. Introduza: <b>1; 40; 4; 1; 3; 9; 4; 2; 4; 3; 1; <em>ENTER</em>; 5.</b></p>
 <div class="fragment"><div class="line">g:0</div>
@@ -538,7 +538,7 @@ Resposta</summary>
 <p>A procura não retorna, crasha devido a entrar num ciclo infinito. </p>
 </details>
 <p><a class="anchor" id="puzzle8-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 Ação 5 - Heurística</h2>
 <p>Neste problema foi implementada a heurística com a distância na horizontal e vertical, de cada peça até à sua posição final. Esta heurística relaxa a situação de apenas ser possível mover para o local onde está o espaço, e retorna o valor que seria o correto caso cada peça pudesse mover-se por cima das outras. É implementada no problema ao redefinir <a class="el" href="classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27" title="Função para calcular quanto falta para o final, o valor da heurística.">CPuzzle8::Heuristica()</a>.</p>
 <p>Vamos começar por ver (notar que P3(Ver): 1). Introduza: <b>1; 40; 2; esq esq; <em>ENTER</em>.</b></p>
@@ -583,12 +583,12 @@ Ação 5 - Heurística</h2>
 </ul>
 <p>Vamos ver como esta heurística guia os diferentes algoritmos informados.</p>
 <p><a class="anchor" id="puzzle8-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md49"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
 Ação 6 - Melhor Primeiro</h2>
 <p>Vamos executar o primeiro algoritmo informado, o melhor primeiro, que segue sempre pelo ramo com menor heurística, ou seja, mais perto do objetivo, daí o nome de melhor primeiro.</p>
 <p>Este é um algoritmo em profundidade pelo que vamos deixar a configuração de remoção de estados repetidos gerados, de modo a observar o desempenho deste algoritmo nas melhores condições.</p>
 <p>Neste e em outras execuções das procuras informadas, vamos limitar o número de avaliações a 1000000, de modo a ter um critério de paragem independente do tempo.</p>
-<p>Introduza: **1; 40; 4; 1; 4; 2; 3; 8; 1000000; 10; 3; <em>ENTER</em>; 5.</p>
+<p>Introduza: <b>1; 40; 4; 1; 4; 2; 3; 8; 1000000; 10; 3; <em>ENTER</em>; 5.</b></p>
 <div class="fragment"><div class="line">--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+&amp; g:30 h:4 31|56|56</div>
 <div class="line">  |  |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     | 6  4  2</div>
 <div class="line">  |  |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     | 3  1  5</div>
@@ -613,7 +613,7 @@ Ação 6 - Melhor Primeiro</h2>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> Conseguimos uma solução de 44 ações, utilizando 45 expansões. O resultado em termos de esforço computacional é muito reduzido, pelo que a informação dada pela heurística foi útil. No entanto, a qualidade da solução baixa, já que fica com 44 de custo, quando sabemos existir uma solução de custo 10.</p>
 <p><a class="anchor" id="puzzle8-a7"></a></p>
-<h2><a class="anchor" id="autotoc_md50"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Ação 7 - AStar</h2>
 <p>Vamos agora ver o comportamento do AStar, que garante a solução ótima.</p>
 <p>Introduza: <b>1; 40; 4; 1; 2; 4; 3; 4; 5; <em>ENTER</em>; 5.</b></p>
@@ -714,7 +714,7 @@ Ação 7 - AStar</h2>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> Foram utilizadas 15 expansões para obter a solução ótima de 10 movimentos. Esta é portanto uma instância simples para este algoritmo.</p>
 <p><a class="anchor" id="puzzle8-a8"></a></p>
-<h2><a class="anchor" id="autotoc_md51"></a>
+<h2><a class="anchor" id="autotoc_md40"></a>
 Ação 8 - IDAStar</h2>
 <p>O AStar pode ter problemas de memória em instâncias complexas, existindo o IDAStar que permite a mesma ordem de expansão, mas sem o problema de memória, em troca de algum tempo de CPU extra, gasto ao expandir multiplas vezes os mesmos estados. Vamas ver como se comporta nesta instância.</p>
 <p>Introduza: <b>1; 40; 4; 1; 6; <em>ENTER</em>; 5.</b></p>
@@ -804,7 +804,7 @@ Ação 8 - IDAStar</h2>
 </div><!-- fragment --><p> Podemos ver que em termos de iterações, ao contrário da procura em profundidade iterativa, tem menos iterações. O limite da iteração seguinte é determinado pelo menor valor dos estados cortados, avançando mais que uma unidade de cada vez. Acabou por ter apenas 30 expansões, enquanto que o AStar utilizou 15 expansões.</p>
 <p>Pode-se considerar que é o dobro, mas é um pequeno preço a pagar por não ter problemas de memória.</p>
 <p><a class="anchor" id="puzzle8-a9"></a></p>
-<h2><a class="anchor" id="autotoc_md52"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Ação 9 - Branch-and-Bound</h2>
 <p>Vamos agora ver como se comporta o Branch-and-Bound, o último algoritmo informado. Este algoritmo pode ser visto como o Melhor Primeiro que continua a procura após a primeira solução. No entanto restringe o espaço de procura apenas aos estados que melhoram a solução atual.</p>
 <p>É um algoritmo em profundidade, pelo que não tem problemas de memória originados na procura em largura. Vamos baixar o nível de debug para 1.</p>
@@ -852,7 +852,7 @@ Ação 9 - Branch-and-Bound</h2>
 <p>Não o fazer, ficariamos com a informação da performance dos algoritmos numa só instância, não necessariamente representativa de todas as instâncias.</p>
 <p>É para melhor medir o desempenho de algoritmos e configurações, que existem os testes empíricos, permitindo assim comparar algoritmos e/ou configurações num leque alargado de instâncias.</p>
 <p><a class="anchor" id="puzzle8-a10"></a></p>
-<h2><a class="anchor" id="autotoc_md53"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Ação 10 - Configurações</h2>
 <p>Podemos adicionar configurações para o teste. Para o fazer basta alterar os parametros, e entrar no menu 6. Vamos começar por colocar a procura em largura, com todos os parametros nos valores de teste.</p>
 <p>Vamos querer para teste que: debug=0, avaliações=1000000, tempo=10s; repetidos=gerados.</p>
@@ -897,7 +897,7 @@ Ação 10 - Configurações</h2>
 <div class="line">P1:7</div>
 </div><!-- fragment --><p> Temos 6 configurações preparadas para serem testadas. Estamos em condições de fazer um teste empírico, em que todos os algoritmos estão nas mesmas condições de execução, excepto a troca de algoritmo.</p>
 <p><a class="anchor" id="puzzle8-a11"></a></p>
-<h2><a class="anchor" id="autotoc_md54"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 Ação 11 - Testes Empíricos</h2>
 <p>Com as configurações efetuadas na Ação 10, vamos agora fazer um teste empírico. Falta definir as instâncias. A instância atual e seu estado não têm impacto para este teste.</p>
 <p>É preciso apenas saber se se pretende ver as soluções, instância inicial e final. Não vamos querer ver as soluções, apenas visualizar os resultados. Naturalmente que num problema novo, é de toda a conveniência observar as soluções e verificá-las, para remover eventuais bugs.</p>
@@ -1099,7 +1099,7 @@ Ação 11 - Testes Empíricos</h2>
 <div class="line">...</div>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p>Podemos observar aqui uma vantagem para o AStar e IDAStar, comparativamente com o Branch-and-Bound. O Melhor Primeiro e os algoritmos cegos, estão claramente a trás. Note-se no entanto que o limite no número de avaliações não afeta os algoritmos cegos, pelo que um limite no numero de gerações poderia permitir observar vantagem do Melhor Primeiro sobre os algoritmos cegos.</p>
-<p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
+<p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('teste_8damas.html',''); initResizable(
   <div class="headertitle"><div class="title">Teste 8 Damas</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
+<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md0"></a>
 Sumário</h2>
@@ -119,25 +119,375 @@ Sumário</h2>
 <img src="8damas.png" alt=""/>
 <div class="caption">
 8 Damas - colocar 8 damas no tabuleiro sem que se ataquem mutuamente</div></div>
-    <p><a class="anchor" id="invalid"></a></p>
+    <p>Vamos entrar no problema das 8 damas. Introduza: <b>3.</b></p>
+<div class="fragment"><div class="line">8 Damas</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 0 | gerações 0 | avaliações 0</div>
+<div class="line">::  ::  ::  ::</div>
+<div class="line">  ::  ::  ::  ::</div>
+<div class="line">::  ::  ::  ::</div>
+<div class="line">  ::  ::  ::  ::</div>
+<div class="line">::  ::  ::  ::</div>
+<div class="line">  ::  ::  ::  ::</div>
+<div class="line">::  ::  ::  ::</div>
+<div class="line">  ::  ::  ::  ::</div>
+<div class="line">_______________________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
+<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+</div><!-- fragment --><p> Este estado vazio é um tabuleiro de 8x8. O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.</p>
+<p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md1"></a>
 Ação 1 - Ver instâncias</h2>
+<p>Vamos ver que instâncias temos. Introduza: <b>1; 4.</b></p>
+<div class="fragment"><div class="line">Nova instância (atual 8) [4-40]: 4</div>
+<div class="line"> </div>
+<div class="line">8 Damas</div>
+<div class="line">...</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">_______________________________________________________________________________</div>
+</div><!-- fragment --><p>O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md2"></a>
 Ação 2 - Resolver manualmente</h2>
+<p>Há várias formas de se colocar damas no tabuleiro. Está implementada a colocação de uma dama, na linha superior que não esteja atacada.</p>
+<p>Poder-se-ia permitir a colocação de uma dama em qualquer posição. No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia. Caso tivessem feito diferentes opções, seria adicionado um parametro, e os sucessores seria distinto.</p>
+<p>Vamos resolver esta instância manualmente, para explorar o espaço de estados. Introduza: <b>2; d1; d4; d3.</b></p>
+<div class="fragment"><div class="line">g:0 1|4|5</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d1 d2 d3 d4</div>
+<div class="line">Sucessor [1-4, ação(ões), exe]:d1</div>
+<div class="line">Executadas 1 ações com sucesso.</div>
+<div class="line">g:0 3|10|8</div>
+<div class="line">##  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d3 d4</div>
+<div class="line">Sucessor [1-2, ação(ões), exe]:d4</div>
+<div class="line">Executadas 1 ações com sucesso.</div>
+<div class="line">g:0 5|13|10</div>
+<div class="line">##  ::</div>
+<div class="line">  ::  ##</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d2</div>
+<div class="line">Sucessor [1-1, ação(ões), exe]:d2</div>
+<div class="line">Executadas 1 ações com sucesso.</div>
+<div class="line">g:0 7|14|11</div>
+<div class="line">##  ::</div>
+<div class="line">  ::  ##</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações:</div>
+<div class="line">Sem sucessores.</div>
+<div class="line">8 Damas</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 7 | gerações 14 | avaliações 11</div>
+<div class="line">##  ::</div>
+<div class="line">  ::  ##</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ::</div>
+<div class="line">_______________________________________________________________________________</div>
+</div><!-- fragment --><p> Esta resolução correu mal, e chegamos a um beco sem saida. Não há nenhuma coluna onde possa ser colocada a quarta dama, sem que esteja atacada.</p>
+<p>A escolha na primeira ação por d2 (ou d3), é crítica para obter a solução.</p>
+<p>Neste problema a solução em sempre o mesmo número de ações, igual a N.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Ação 3 - Procura em Largura</h2>
+<p>Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. Vamos deixar desde já fixado o limite no número de gerações a 1000000. Introduza: <b>1; 4; 2; 4; 6; 1000000; <em>ENTER</em>; 5.</b></p>
+<div class="fragment"><div class="line">g:0</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d1 d2 d3 d4</div>
+<div class="line">g:1 1|4</div>
+<div class="line">##  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d3 d4</div>
+<div class="line">g:1 2|6</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d4</div>
+<div class="line">g:1 3|7</div>
+<div class="line">::  ##</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d1</div>
+<div class="line">g:1 4|8</div>
+<div class="line">::  ::##</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d1 d2</div>
+<div class="line">g:2 5|10</div>
+<div class="line">##  ::</div>
+<div class="line">  ::##::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações:</div>
+<div class="line">g:2 6|10</div>
+<div class="line">##  ::</div>
+<div class="line">  ::  ##</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d2</div>
+<div class="line">g:2 7|11</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ##</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d1</div>
+<div class="line">g:2 8|12</div>
+<div class="line">::  ##</div>
+<div class="line">##::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d4</div>
+<div class="line">g:2 9|13</div>
+<div class="line">::  ::##</div>
+<div class="line">##::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações: d3</div>
+<div class="line">g:2 10|14</div>
+<div class="line">::  ::##</div>
+<div class="line">  ##  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações:</div>
+<div class="line">g:3 11|14</div>
+<div class="line">##  ::</div>
+<div class="line">  ::  ##</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ::</div>
+<div class="line">Ações:</div>
+<div class="line">g:3 12|14</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ##</div>
+<div class="line">##  ::</div>
+<div class="line">  ::  :: Solução encontrada!</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ##</div>
+<div class="line">##  ::</div>
+<div class="line">  ::##::(g:4)</div>
+<div class="line">P1:1 P2:4 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: 4 (0,038s)</div>
+<div class="line">8 Damas</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 4 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 13 | gerações 15 | avaliações 0</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ##</div>
+<div class="line">##  ::</div>
+<div class="line">  ::##::</div>
+<div class="line">_______________________________________________________________________________</div>
+</div><!-- fragment --><p> A solução foi encontrada. No entanto, o algoritmo explora todos os estados do nível 3 antes de ver o primeiro do nível 4. Neste problema, como a solução está no nível 4, acaba por não ser muito interessante esta procura. Não só este algoritmo gasta muito tempo nos níveis inferiores, a explorar completamente, como a procura em profundidade ilimitada não tem problema, já que não existem ciclos infinitos.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Ação 4 - Procura em Profundidade</h2>
+<p>Vamos executar a mesma instância com a procura em profundidade ilimitada. Introduza: <b>1; 4; 4; 1; 3; 9; -1; <em>ENTER</em>; 5.</b></p>
+<div class="fragment"><div class="line">g:0</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">::  ::</div>
+<div class="line">  ::  ::</div>
+<div class="line">  +g:1 1|4 d1</div>
+<div class="line">  |  +g:2 2|6 d3</div>
+<div class="line">  |  |</div>
+<div class="line">  |  +g:2 3|6 d4</div>
+<div class="line">  |     +g:3 4|7 d2</div>
+<div class="line">  |</div>
+<div class="line">  +g:1 5|7 d2</div>
+<div class="line">  |  +g:2 6|8 d4</div>
+<div class="line">  |     +g:3 7|9 d1</div>
+<div class="line">  |        +g:4 8|10 d3</div>
+<div class="line">  |          Solução encontrada!</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ##</div>
+<div class="line">##  ::</div>
+<div class="line">  ::##::(g:4)</div>
+<div class="line">P1:3 P2:4 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:-1 P10:1</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">Resultado: 4 (0,014s)</div>
+<div class="line">8 Damas</div>
+<div class="line">P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 4 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
+<div class="line">P13(baralhar): 0</div>
+<div class="line">[Estatísticas] expansões 8 | gerações 10 | avaliações 0</div>
+<div class="line">::##::</div>
+<div class="line">  ::  ##</div>
+<div class="line">##  ::</div>
+<div class="line">  ::##::</div>
+<div class="line">_______________________________________________________________________________</div>
+</div><!-- fragment --><p>Podemos observar que o algoritmo em profundidade fez o mesmo erro que nós fizemos, ao escolher d1. No entanto, após ver que não é possível, testa a opção de d2 e encontra a solução.</p>
+<p>Neste caso fez 8 expansões, contra 13 da procura em largura. Mas evidentemente que não será esta pequena instância que irá suportar as nossas conclusões. Temos um teste empírico na ação 6, com mais instâncias.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Ação 5 - Heurística</h2>
+<p>Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações tivessem custo variável, faria sentido uma heurística para estimar o custo. Sendo o custo fixo, apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas com a abordagem construtiva.</p>
+<p>Poder-se-ia ter no entanto opções que melhorariam a abordagem construiva. Uma das possibilidades é considerar ou não os estados repetidos. Neste problema temos 3 eixos de simetria. Significa que a mesma posição pode ao ser refletida em cada eixo, transformar-se numa das outras, num total de 8 posições simétricas. Ao anular as simetrias por normalização do estado, e remoção de repetidos, o espaço de estados reduz-se. As simetrias estão implementadas, pelo que vamos testar na próxima ação.</p>
+<p>Outra possibilidade não implementada neste código, é a verificação se há linhas/colunas vazias, que estejam totalmente atacadas. Ao colocar duas ou três damas, estas podem cobrir a totalidade das casas da última linha. Esta implementação causa também mais peso, mas invalida estados antecipadamente.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Ação 6 - Testes Empíricos</h2>
-<p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
+<p>Vamos começar por comparar a procura em largura, com a procura em profundidade ilimitada, e respetivas versões com eliminação de estados repetidos. Introduza: <b>4; 1; 1; 2; 0; 6; 1000000; 9; 0; 10; 1; <em>ENTER</em>; 6; <em>ENTER</em>.</b></p>
+<div class="fragment"><div class="line">Parametros comuns a 1 configurações:</div>
+<div class="line">P1:1 P2:0 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1</div>
+<div class="line">P11:100 P12:0 P13:0</div>
+<div class="line">--- Configuração 1 --- atual</div>
+</div><!-- fragment --><p> Colocação das restantes configurações:</p><ul>
+<li><b>4; 10; 3; <em>ENTER</em>; 6; <em>ENTER</em>.</b></li>
+<li><b>4; 10; 1; 1; 3; 9; -1; <em>ENTER</em>; 6; <em>ENTER</em>.</b></li>
+<li><b>4; 10; 3; <em>ENTER</em>; 6; <em>ENTER</em>.</b></li>
+</ul>
+<div class="fragment"><div class="line">Parametros comuns a 4 configurações:</div>
+<div class="line">P2:0 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P11:100 P12:0 P13:0</div>
+<div class="line">--- Configuração 1</div>
+<div class="line">P1:1 P9:0 P10:1</div>
+<div class="line">--- Configuração 2</div>
+<div class="line">P1:1 P9:0 P10:3</div>
+<div class="line">--- Configuração 3</div>
+<div class="line">P1:3 P9:-1 P10:1</div>
+<div class="line">--- Configuração 4 --- atual</div>
+<div class="line">P1:3 P9:-1 P10:3</div>
+</div><!-- fragment --><p> Vamos agora executar o teste para as primeiras 10 instâncias: <b>7; 0; 13; 4.</b></p>
+<div class="fragment"><div class="line"> ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |</div>
+<div class="line">----|----|----------|------------|-----------|------------|----------|</div>
+<div class="line">  4 |  1 |        4 |         13 |        15 |          0 |   0,000s |</div>
+<div class="line">  5 |  1 |        5 |         33 |        44 |          0 |   0,000s |</div>
+<div class="line">  6 |  1 |        6 |        114 |       149 |          0 |   0,000s |</div>
+<div class="line">  7 |  1 |        7 |        419 |       512 |          0 |   0,000s |</div>
+<div class="line">  8 |  1 |        8 |       1665 |      1965 |          0 |   0,001s |</div>
+<div class="line">  9 |  1 |        9 |       6977 |      8042 |          0 |   0,004s |</div>
+<div class="line"> 10 |  1 |       10 |      30779 |     34815 |          0 |   0,020s |</div>
+<div class="line"> 11 |  1 |       11 |     149131 |    164246 |          0 |   0,115s |</div>
+<div class="line"> 12 |  1 |       12 |     773731 |    841989 |          0 |   0,631s |</div>
+<div class="line"> 13 |  1 | não res. |     393490 |   1000002 |          0 |   0,478s |</div>
+<div class="line">  4 |  2 |        4 |          8 |         8 |          0 |   0,000s |</div>
+<div class="line">  5 |  2 |        5 |         18 |        23 |          0 |   0,000s |</div>
+<div class="line">  6 |  2 |        6 |         60 |        75 |          0 |   0,000s |</div>
+<div class="line">  7 |  2 |        7 |        211 |       257 |          0 |   0,000s |</div>
+<div class="line">  8 |  2 |        8 |        839 |       983 |          0 |   0,002s |</div>
+<div class="line">  9 |  2 |        9 |       3490 |      4022 |          0 |   0,007s |</div>
+<div class="line"> 10 |  2 |       10 |      15392 |     17408 |          0 |   0,033s |</div>
+<div class="line"> 11 |  2 |       11 |      74567 |     82124 |          0 |   0,180s |</div>
+<div class="line"> 12 |  2 |       12 |     386869 |    420995 |          0 |   1,082s |</div>
+<div class="line"> 13 |  2 | não res. |     517151 |   1000001 |          0 |   2,481s |</div>
+<div class="line">  4 |  3 |        4 |          8 |        10 |          0 |   0,000s |</div>
+<div class="line">  5 |  3 |        5 |          5 |        11 |          0 |   0,000s |</div>
+<div class="line">  6 |  3 |        6 |         31 |        39 |          0 |   0,000s |</div>
+<div class="line">  7 |  3 |        7 |          9 |        22 |          0 |   0,000s |</div>
+<div class="line">  8 |  3 |        8 |        113 |       124 |          0 |   0,001s |</div>
+<div class="line">  9 |  3 |        9 |         41 |        60 |          0 |   0,000s |</div>
+<div class="line"> 10 |  3 |       10 |        102 |       124 |          0 |   0,001s |</div>
+<div class="line"> 11 |  3 |       11 |         52 |        83 |          0 |   0,000s |</div>
+<div class="line"> 12 |  3 |       12 |        261 |       295 |          0 |   0,001s |</div>
+<div class="line"> 13 |  3 |       13 |        111 |       154 |          0 |   0,000s |</div>
+<div class="line">  4 |  4 |        4 |          8 |         8 |          0 |   0,000s |</div>
+<div class="line">  5 |  4 |        5 |          5 |         9 |          0 |   0,000s |</div>
+<div class="line">  6 |  4 |        6 |         31 |        36 |          0 |   0,000s |</div>
+<div class="line">  7 |  4 |        7 |          9 |        19 |          0 |   0,000s |</div>
+<div class="line">  8 |  4 |        8 |        113 |       120 |          0 |   0,000s |</div>
+<div class="line">  9 |  4 |        9 |         41 |        56 |          0 |   0,000s |</div>
+<div class="line"> 10 |  4 |       10 |        102 |       119 |          0 |   0,000s |</div>
+<div class="line"> 11 |  4 |       11 |         52 |        78 |          0 |   0,000s |</div>
+<div class="line"> 12 |  4 |       12 |        261 |       289 |          0 |   0,000s |</div>
+<div class="line"> 13 |  4 |       13 |        111 |       148 |          0 |   0,001s |</div>
+<div class="line">----|----|----------|------------|-----------|------------|----------| resolvidas</div>
+<div class="line">Total  1 |       72 |    1356352 |   2051779 |          0 |   1,249s |   9</div>
+<div class="line">Total  2 |       72 |     998605 |   1525896 |          0 |   3,785s |   9</div>
+<div class="line">Total  3 |       85 |        733 |       922 |          0 |   0,003s |  10</div>
+<div class="line">Total  4 |       85 |        733 |       882 |          0 |   0,001s |  10</div>
+<div class="line">Torneio (#instâncias melhores):</div>
+<div class="line"> |-01-|-02-|-03-|-04-|</div>
+<div class="line"> 1    |  1 | -3 | -3 | -5</div>
+<div class="line"> |----|----|----|----|</div>
+<div class="line"> 2 -1 |    | -3 | -3 | -7</div>
+<div class="line"> |----|----|----|----|</div>
+<div class="line"> 3  3 |  3 |    |  0 |  6</div>
+<div class="line"> |----|----|----|----|</div>
+<div class="line"> 4  3 |  3 |  0 |    |  6</div>
+<div class="line"> |----|----|----|----|</div>
+<div class="line">Parametros comuns a 4 configurações:</div>
+<div class="line">P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 10</div>
+<div class="line">P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0 | P11(pesoAStar): 100</div>
+<div class="line">P12(ruido): 0 | P13(baralhar): 0</div>
+<div class="line">--- Configuração 1</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P9(Limite): 0 | P10(Repetidos): ignorar</div>
+<div class="line">--- Configuração 2</div>
+<div class="line">P1(Algoritmo): Largura Primeiro | P9(Limite): 0 | P10(Repetidos): gerados</div>
+<div class="line">--- Configuração 3</div>
+<div class="line">P1(Algoritmo): Profundidade Primeiro | P9(Limite): -1 | P10(Repetidos): ignorar</div>
+<div class="line">--- Configuração 4</div>
+<div class="line">P1(Algoritmo): Profundidade Primeiro | P9(Limite): -1 | P10(Repetidos): gerados</div>
+</div><!-- fragment --><p>Podemos ver a clara superioridade da procura em profundidade ilimitada. A procura em largura nem resolve a instância 13 dentro dos critérios de paragem.</p>
+<p>Não é possível com estas instâncias, observar diferença entre repetidos ignorando ou gerados, mas gastando tempo com a normalização. Há apenas uma ligeira diferença nos estados gerados.</p>
+<p>Para observar diferença, vamos retirar as duas primeiras configurações do teste, para poder executar instâncias maiores.</p>
+<p>Introduza: **6; -1; 6; -1; 7; 0; 23; 14.</p>
+<div class="fragment"><div class="line"> ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |</div>
+<div class="line">----|----|----------|------------|-----------|------------|----------|</div>
+<div class="line"> 14 |  1 |       14 |       1899 |      1944 |          0 |   0,002s |</div>
+<div class="line"> 15 |  1 |       15 |       1359 |      1414 |          0 |   0,001s |</div>
+<div class="line"> 16 |  1 |       16 |      10052 |     10112 |          0 |   0,009s |</div>
+<div class="line"> 17 |  1 |       17 |       5374 |      5449 |          0 |   0,005s |</div>
+<div class="line"> 18 |  1 |       18 |      41299 |     41377 |          0 |   0,051s |</div>
+<div class="line"> 19 |  1 |       19 |       2545 |      2642 |          0 |   0,008s |</div>
+<div class="line"> 20 |  1 |       20 |     199635 |    199733 |          0 |   0,264s |</div>
+<div class="line"> 21 |  1 |       21 |       8562 |      8676 |          0 |   0,011s |</div>
+<div class="line"> 22 |  1 | não res. |     999877 |   1000001 |          0 |   1,426s |</div>
+<div class="line"> 23 |  1 |       23 |      25428 |     25566 |          0 |   0,038s |</div>
+<div class="line"> 14 |  2 |       14 |       1899 |      1937 |          0 |   0,005s |</div>
+<div class="line"> 15 |  2 |       15 |       1359 |      1407 |          0 |   0,003s |</div>
+<div class="line"> 16 |  2 |       16 |       2850 |      2896 |          0 |   0,010s |</div>
+<div class="line"> 17 |  2 |       17 |       5206 |      5258 |          0 |   0,019s |</div>
+<div class="line"> 18 |  2 |       18 |      28605 |     28659 |          0 |   0,127s |</div>
+<div class="line"> 19 |  2 |       19 |       4656 |      4733 |          0 |   0,021s |</div>
+<div class="line"> 20 |  2 |       20 |     112596 |    112672 |          0 |   0,539s |</div>
+<div class="line"> 21 |  2 |       21 |      20208 |     20295 |          0 |   0,091s |</div>
+<div class="line"> 22 |  2 |       22 |     425154 |    425243 |          0 |   2,397s |</div>
+<div class="line"> 23 |  2 |       23 |     250250 |    250347 |          0 |   1,455s |</div>
+<div class="line">----|----|----------|------------|-----------|------------|----------| resolvidas</div>
+<div class="line">Total  1 |      163 |    1296030 |   1296914 |          0 |   1,815s |   9</div>
+<div class="line">Total  2 |      185 |     852783 |    853447 |          0 |   4,667s |  10</div>
+<div class="line">Torneio (#instâncias melhores):</div>
+<div class="line"> |-01-|-02-|</div>
+<div class="line"> 1    |  1 |  1</div>
+<div class="line"> |----|----|</div>
+<div class="line"> 2 -1 |    | -1</div>
+<div class="line"> |----|----|</div>
+<div class="line">Parametros comuns a 2 configurações:</div>
+<div class="line">P1(Algoritmo): Profundidade Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
+<div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
+<div class="line">P9(Limite): -1 | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0</div>
+<div class="line">--- Configuração 1</div>
+<div class="line">P10(Repetidos): ignorar</div>
+<div class="line">--- Configuração 2</div>
+<div class="line">P10(Repetidos): gerados</div>
+</div><!-- fragment --><p> Embora uma das instâncias não tenha sido resolvida devido ao limite das gerações, a configuração em que ignora os repetidos, revela-se mais rápida em termos de tempo, embora com cerca de mais 50% de estados gerados e expandidos.</p>
+<p>Dos resultados pode-se também conjeturar que as instâncias pares são mais complexas que as ímpares.</p>
+<p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
