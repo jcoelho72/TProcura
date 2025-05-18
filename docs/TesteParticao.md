@@ -1,11 +1,12 @@
 @page teste_particao Teste Particao
 
-[![Aspirador 1](https://img.shields.io/badge/Aspirador-1-blue)](teste_aspirador1.html)
-[![Aspirador 2](https://img.shields.io/badge/Aspirador-2-blue)](teste_aspirador1.html)
-[![Puzzle 8](https://img.shields.io/badge/Puzzle-8-blue)](teste_puzzle8.html)
-[![8 Damas](https://img.shields.io/badge/8-Damas-blue)](teste_8damas.html)
-[![Partição](https://img.shields.io/badge/Partição-blue)](teste_particao.html)
-[![Artificial](https://img.shields.io/badge/Artificial-blue)](teste_artificial.html)
+[![Aspirador 1](https://img.shields.io/badge/Aspirador-1)](teste_aspirador1.html)
+[![Aspirador 2](https://img.shields.io/badge/Aspirador-2)](teste_aspirador2.html)
+[![Puzzle 8](https://img.shields.io/badge/Puzzle-8)](teste_puzzle8.html)
+[![8 Damas](https://img.shields.io/badge/8-Damas)](teste_8damas.html)
+[![Partição](https://img.shields.io/badge/Partição)](teste_particao.html)
+[![Artificial](https://img.shields.io/badge/Artificial)](teste_artificial.html)
+
 
 
 Execução de exemplo com base no problema da Partição. Pode acompanhar o teste excutando as ações localmente.
