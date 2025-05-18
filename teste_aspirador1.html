@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('teste_aspirador1.html',''); initResiza
   <div class="headertitle"><div class="title">Teste Aspirador - Parte 1/2</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="teste_aspirador1.html"><img src="https://img.shields.io/badge/Aspirador-1-lightgray" alt="Aspirador 1" class="inline"/></a> <a href="teste_aspirador2.html"><img src="https://img.shields.io/badge/Aspirador-2-lightgray" alt="Aspirador 2" class="inline"/></a> <a href="teste_puzzle8.html"><img src="https://img.shields.io/badge/Puzzle-8-lightgray" alt="Puzzle 8" class="inline"/></a> <a href="teste_8damas.html"><img src="https://img.shields.io/badge/8-Damas-lightgray" alt="8 Damas" class="inline"/></a> <a href="teste_particao.html"><img src="https://img.shields.io/badge/Partição-lightgray" alt="Partição" class="inline"/></a> <a href="teste_artificial.html"><img src="https://img.shields.io/badge/Artificial-lightgray" alt="Artificial" class="inline"/></a></p>
+<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Sumário</h2>
@@ -153,7 +153,7 @@ Ação 1 - Trocar de instância</h2>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-</div><!-- fragment --><p>Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda: A representação do estado é algo que é implementado na sub-classe (neste caso em <a class="el" href="classCAspirador.html#a06c5ae19d38939c0eb949bb2d8e86ea5" title="Mostra o estado no ecrã, para debug.">CAspirador::Debug()</a>), de modo a se poder visualizar o estado em que estamos. Ao chamar a SolucaoVazia podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro, sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.</p>
+</div><!-- fragment --><p>Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda: A representação do estado é algo que é implementado na sub-classe (neste caso em <a class="el" href="classCAspirador.html#a06c5ae19d38939c0eb949bb2d8e86ea5" title="Mostra o estado no ecrã, para debug.">CAspirador::Debug()</a>), de modo a se poder visualizar o estado em que estamos. Ao chamar a SolucaoVazia podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro (P4(Seed): 1), sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.</p>
 <p><a class="anchor" id="aspirador-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md21"></a>
 Ação 2 - Explorar os sucessores</h2>
@@ -181,12 +181,12 @@ Ação 2 - Explorar os sucessores</h2>
 <div class="line"> </div>
 <div class="line">Aspirador</div>
 <div class="line">...</div>
-<div class="line">[Estatísticas] expansões 6 | gerações 12 | avaliações 0</div>
 <div class="line"> . [.]</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-</div><!-- fragment --><p>Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas. Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra foram lhe passariam desapercebidas.</p>
+</div><!-- fragment --><p>Ao receber as duas ações, estas foram executadas e indicado o número de ações executados com sucesso. Se fosse uma solução completa, todas as ações até ao estado final, esta operação seria uma verificação da solução. Caso exista alguma ação inválida, a ação é rejeitada e o estado atual fica na primeira ação inválida. Assim, é possível verificar ou identificar erros em soluções obtidas por métodos externos, sendo apresentada a evidência de falha.</p>
+<p>Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas. Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra forma lhe passariam desapercebidas.</p>
 <p><a class="anchor" id="aspirador-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md22"></a>
 Ação 3 - Ver a solução/caminho realizada manualmente</h2>

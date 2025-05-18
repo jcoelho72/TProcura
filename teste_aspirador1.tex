@@ -1,6 +1,6 @@
 \chapter{Teste Aspirador -\/ Parte 1/2}
 \hypertarget{teste_aspirador1}{}\label{teste_aspirador1}\index{Teste Aspirador -\/ Parte 1/2@{Teste Aspirador -\/ Parte 1/2}}
-\href{teste_aspirador1.html}{\texttt{ }} \href{teste_aspirador2.html}{\texttt{ }} \href{teste_puzzle8.html}{\texttt{ }} \href{teste_8damas.html}{\texttt{ }} \href{teste_particao.html}{\texttt{ }} \href{teste_artificial.html}{\texttt{ }}
+\texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|}
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_aspirador1_autotoc_md19}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_aspirador1_autotoc_md19}
 
@@ -88,7 +88,7 @@ Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na tercei
 \end{DoxyCode}
 
 
-Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda\+: A representação do estado é algo que é implementado na sub-\/classe (neste caso em \doxylink{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}{CAspirador\+::\+Debug()}), de modo a se poder visualizar o estado em que estamos. Ao chamar a Solucao\+Vazia podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro, sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.
+Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda\+: A representação do estado é algo que é implementado na sub-\/classe (neste caso em \doxylink{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}{CAspirador\+::\+Debug()}), de modo a se poder visualizar o estado em que estamos. Ao chamar a Solucao\+Vazia podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro (P4(\+Seed)\+: 1), sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.
 
 \label{teste_aspirador1_aspirador-a2}%
 \Hypertarget{teste_aspirador1_aspirador-a2}%
@@ -128,7 +128,6 @@ Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direi
 \DoxyCodeLine{}
 \DoxyCodeLine{Aspirador}
 \DoxyCodeLine{...}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 6\ |\ gerações\ 12\ |\ avaliações\ 0}
 \DoxyCodeLine{\ .\ [.]}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 \DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
@@ -137,7 +136,9 @@ Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direi
 \end{DoxyCode}
 
 
-Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas. Tem duas vantagens\+: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra foram lhe passariam desapercebidas.
+Ao receber as duas ações, estas foram executadas e indicado o número de ações executados com sucesso. Se fosse uma solução completa, todas as ações até ao estado final, esta operação seria uma verificação da solução. Caso exista alguma ação inválida, a ação é rejeitada e o estado atual fica na primeira ação inválida. Assim, é possível verificar ou identificar erros em soluções obtidas por métodos externos, sendo apresentada a evidência de falha.
+
+Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas. Tem duas vantagens\+: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra forma lhe passariam desapercebidas.
 
 \label{teste_aspirador1_aspirador-a3}%
 \Hypertarget{teste_aspirador1_aspirador-a3}%
