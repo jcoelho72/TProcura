@@ -11,16 +11,13 @@ Uma coleção de algoritmos e implementações para {\bfseries{procuras e otimiz
 \item Estado do Projeto
 \item Funcionalidades
 \item Instalação e Uso
-\item Exploração do Espaço de Estados e Testes
 \item Exemplos
-\item Contribuindo
 \item Licença
-\item Contato
 \end{DoxyItemize}\hypertarget{index_autotoc_md57}{}\doxysection{\texorpdfstring{Sobre o Projeto}{Sobre o Projeto}}\label{index_autotoc_md57}
 Apresenta a implementação de algoritmos voltados para "{}"{} "{}procuras construtivas"{}, com foco em explorar soluções de otimização e problemas práticos. ~\newline
 
 
-{\itshape Pretende-\/se que sirva como repositório central para procuras construtivas, enquanto projetos derivados possam contemplar procuras melhorativas e procuras adversas. Estes três projetos podem servir de base para a implementação de problemas concretos, sendo criado também um porjeto para exemplos de problemas implementados.}
+{\itshape Pretende-\/se que sirva como repositório central para procuras construtivas, enquanto projetos derivados possam contemplar procuras melhorativas e procuras adversas. Estes três projetos podem servir de base para a implementação de problemas concretos, sendo criado também um projeto para mais exemplos de problemas.}
 
 Recursos utilizados na UC de \href{https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/}{\texttt{ Introdução à Inteligência Artificial}}, da \href{https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/}{\texttt{ Licenciatura em Engenharia Informática}} da \href{https://portal.uab.pt/}{\texttt{ Universidade Aberta}}
 
@@ -37,7 +34,7 @@ Bibliografia da UC, e base teórica para o projeto\+: Russell, S. J., \& Norvig,
 \item Execução de algoritmos informados\+: Melhor Primeiro, AStar, IDAStar, Branch-\/and-\/\+Bound
 \item Executar de testes manuais e testes empíricos (várias instâncias e vários algoritmos/parametrizações).
 \end{DoxyItemize}\hypertarget{index_autotoc_md60}{}\doxysection{\texorpdfstring{Instalação e Uso}{Instalação e Uso}}\label{index_autotoc_md60}
-Clonar o projeto, compilar e executar. Teste a classe com problemas artificiais.
+Clonar o projeto, compilar e executar. Teste a classe com problemas implementados.
 
 Para implementar um novo problema, redefina a superclasse \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, implementando os seguintes métodos de \href{https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html}{\texttt{ Redefinição Mandatória}}\+:
 
@@ -53,21 +50,17 @@ Para implementar um novo problema, redefina a superclasse \doxylink{classTProcur
 
 Essas implementações podem utilizar os modelos existentes na documentação. Estes métodos permitem a execução dos algoritmos de procura construtivos.
 
-Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-\/se também implementar os \href{https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html}{\texttt{ Métodos Sugeridos}}. Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.\hypertarget{index_autotoc_md61}{}\doxysection{\texorpdfstring{Exploração do Espaço de Estados e Testes}{Exploração do Espaço de Estados e Testes}}\label{index_autotoc_md61}
-Após implementar os métodos obrigatórios (e, se possível, os sugeridos), você poderá explorar e testar os algoritmos de procura construtiva. No teste manual, as opções disponíveis são\+:
+Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-\/se também implementar os \href{https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html}{\texttt{ Métodos Sugeridos}}. Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.\hypertarget{index_autotoc_md61}{}\doxysection{\texorpdfstring{Exemplos}{Exemplos}}\label{index_autotoc_md61}
+Estão implementados alguns problemas, tendo sido realizados testes de modo a exemplificar o funcionamento da classe \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}\+:
 
 
 \begin{DoxyEnumerate}
-\item Inicializar – Define o estado inicial utilizando uma instância concreta do problema.
-\item Explorar – Navega, de forma interativa, pelo espaço de estados, permitindo executar ações válidas e testar resoluções manuais.
-\item Solução/\+Caminho – Exibe a solução completa ou o caminho atual para a solução, seja obtido manualmente ou por um algoritmo.
-\item Parâmetros – Mostra todos os parâmetros configuráveis e permite alterar seus valores, tanto os definidos pela superclasse quanto os específicos do problema.
-\item Executar – Executa o algoritmo com os parâmetros atualmente configurados; isso inclui os limites de execução, tempo e a seleção do algoritmo.
-\item Configurações – Permite adicionar a configuração atual como um novo cenário ou apagar configurações existentes, as quais são utilizadas no teste empírico.
-\item Teste – Executa testes empíricos sobre um conjunto de instâncias e configurações, possibilitando comparações entre diferentes algoritmos e/ou parâmetros.
-\end{DoxyEnumerate}
-
-Essa abordagem de testes empíricos permite analisar o desempenho de algoritmos em diversos cenários, considerando a diversidade e o grau de dificuldade das instâncias de teste.\hypertarget{index_autotoc_md62}{}\doxysubsection{\texorpdfstring{Clonando o Repositório}{Clonando o Repositório}}\label{index_autotoc_md62}
+\item Aspirador (\mbox{[}parte 1\mbox{]}(teste\+\_\+aspirador1), \mbox{[}parte 2\mbox{]}(teste\+\_\+aspirador2))
+\item \mbox{[}Puzzle 8\mbox{]}(teste\+\_\+puzzle8)
+\item \mbox{[}8 Damas\mbox{]}(teste\+\_\+8damas)
+\item \mbox{[}Partição\mbox{]}(teste\+\_\+particao)
+\item \mbox{[}Artificial\mbox{]}(teste\+\_\+artificial)
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md62}{}\doxysubsection{\texorpdfstring{Clonando o Repositório}{Clonando o Repositório}}\label{index_autotoc_md62}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{git\ clone\ https://github.com/jcoelho72/TProcuraConstrutiva.git}
