@@ -1,9 +1,8 @@
 @page teste_aspirador1 Teste Aspirador - Parte 1/2
 
+| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 |-------------|-------------|----------|---------|----------|------------|
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html)
-[Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
-|-------------|-------------|----------|---------|----------|------------|
+
 
 Execução de exemplo com base no problema do Aspirador. 
 Pode acompanhar o teste excutando as ações localmente.
@@ -259,7 +258,8 @@ Vemos agora a solução, o caminho com todos os estados intermédios do estado i
 
 Coloque na instância inicial, número 2, com nível de debug máximo: **1; 2; 4; 2; 4; *ENTER*; 5.**
 
-A opção 1 já sabemos, inicia uma instância, neste caso 2. A opção 4 vamos alterar neste caso o parâmetro nível de debug. 
+A opção 1 já sabemos, inicia uma instância, neste caso 2. 
+A opção 4 vamos alterar neste caso o parâmetro nível de debug. 
 Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa. 
 
 ```entrada
@@ -292,7 +292,6 @@ P2(Debug): completo (0 a 4)
 ...
 Parametro:
 ...
-[Estatísticas] expansões 0 | gerações 0 | avaliações 0
  * [*]
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
@@ -352,7 +351,10 @@ _______________________________________________________________________________
 ```
 
 Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, o que significa que a procura encontrou uma solução de comprimento 3.
-Podemos ver a solução. Introduza: **3.**
+
+No caso de não ter os resultados iguais aos da linha das estatísticas, confirme se todos os parâmetros estão iguais.
+
+Podemos ver a solução, tendo ficado guardada, tal como na resolução manual. Introduza: **3.**
 
 ```entrada
 Opção: 3
@@ -363,11 +365,8 @@ Opção: 3
 [.] .  (g:3)
 Aspirador
 ...
-[Estatísticas] expansões 6 | gerações 12 | avaliações 0
 [.] .
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+...
 ```
 Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.
 
@@ -379,7 +378,6 @@ Na procura em largura, expandimos sempre o estado gerado há mais tempo.
 - Verificar que o segundo estado expandido, é o primeiro sucessor do primeiro estado expandido. 
 O terceiro estado expandido é o segundo sucessor do primeiro estado expandido. 
 Poder-se-ia continuar, o estado expandido seguinte é sempre o gerado há mais tempo.
-
 
 Temos no entanto o mesmo estado inicial a ser gerado. De facto, o primeiro sucessor na segunda expansão, 
 é o primeiro estado que é gerado novamente.
@@ -420,12 +418,9 @@ P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0
 [.] .
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+...
 ```
 A interação de troca de parâmetro não é mais mostrada para não saturar o texto. 
-Caso esteja a reproduzir o teste, confirme que tem os parâmetros iguais aos valores atuais, visiveis na interface.
 
 Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. 
 Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.
@@ -455,9 +450,7 @@ P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0
 [.] .
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+...
 ```
 Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números: 
 expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, 
@@ -465,7 +458,8 @@ mas em outros problemas estes dois níveis de debug podem fazer diferença.
 Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para 
 lidar com os estados repetidos seja distinta.
 
-É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.
+É importante observar a procura em instâncias pequenas, para poder observar ineficiências, 
+como os estados repetidos, ou mesmo bugs.
 
 O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, 
 e o nível 0 não dá qualquer informação. 
@@ -476,21 +470,16 @@ e o nível 0 não dá qualquer informação.
 Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior: 
 **1; 8; 4; 10; 1; 2; 1; *ENTER*; 5.**
 
-Pode haver um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados:  
+Pode haver um problema de memória. 
+A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados:  
 
 ```entrada
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 5 | gerações 6 | avaliações 0
- *  * [.] .  *  *  *  *
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+...
+*  * [.] .  *  *  *  *
+...
 Opção: 5
-################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################## Solução encontrada!
+#######...##### Solução encontrada!
  .  .  .  .  .  .  . [.](g:15)
 P1:1 P2:1 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1
 P11:100 P12:0 P13:0
@@ -502,9 +491,7 @@ P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 1681451 | gerações 4840697 | avaliações 0
  .  .  .  .  .  .  . [.]
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+...
 ```
 São demasiados estados gerados, quase 5 milhões, e 5 segundos. 
 Há um # que é colocado no output a cada 1000 expansões. 
@@ -531,13 +518,16 @@ Opção: 3
  .  .  .  .  .  .  . [*] (g:14)
  .  .  .  .  .  .  . [.] (g:15)
  ```
- Não houve desperdício visivel nestga solução. 
- O algoritmo procura em largura garante-nos que esta solução é ótima, dado que o custo de cada ação é unitário.
 
-Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.
+Não houve desperdício visivel nestga solução. 
+O algoritmo procura em largura garante-nos que esta solução é ótima, dado que o custo de cada ação é unitário.
+
+Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, 
+fixando a 100 ou 1000 estados, mas perdendo a optimalidade.
 
 A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. 
-Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, 
+Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, 
+poderá ser uma opção, 
 mantendo-se apenas um determinado número limitado de estados gerados não expandidos. 
 Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, 
 o que poderá não ser problemático em alguns problemas.

@@ -1,9 +1,9 @@
 @page teste_aspirador2 Teste Aspirador - Parte 2/2
 
+| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 |-------------|-------------|----------|---------|----------|------------|
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html)
-[Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
-|-------------|-------------|----------|---------|----------|------------|
+
+
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
 
