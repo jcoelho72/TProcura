@@ -77,7 +77,7 @@ Estão implementados alguns problemas, tendo sido realizados testes de modo a ex
 5. [Artificial](teste_artificial.html)
 
 \anchor s6
-### Clonar o Repositório
+## Clonar o Repositório
 ```bash
 git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
 ```
