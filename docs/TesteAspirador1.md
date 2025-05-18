@@ -1,4 +1,4 @@
-@page teste_aspirador1 Teste Aspirador - Parte 1/1
+@page teste_aspirador1 Teste Aspirador - Parte 1/2
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
 
