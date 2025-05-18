@@ -1,14 +1,14 @@
-\chapter{Teste Aspirador -\/ Parte 2/3}
-\hypertarget{teste_aspirador2}{}\label{teste_aspirador2}\index{Teste Aspirador -\/ Parte 2/3@{Teste Aspirador -\/ Parte 2/3}}
+\chapter{Teste Aspirador -\/ Parte 2/2}
+\hypertarget{teste_aspirador2}{}\label{teste_aspirador2}\index{Teste Aspirador -\/ Parte 2/2@{Teste Aspirador -\/ Parte 2/2}}
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_aspirador2_autotoc_md29}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_aspirador2_autotoc_md29}
 
 \begin{DoxyItemize}
-\item \doxylink{teste_puzzle8_a10}{Ação 10 -\/ Procura em Profundidade}
-\item \doxylink{teste_puzzle8_a11}{Ação 11 -\/ Efetuar uma procura em Profundidade Primeiro}
-\item \doxylink{teste_aspirador2_a12}{Ação 12 -\/ Ver uma árvore de procura maior}
-\item \doxylink{teste_aspirador2_a13}{Ação 13 -\/ Profundidade Iterativa}
-\item \doxylink{teste_aspirador2_a14}{Ação 14 -\/ Profundidade ilimitada}
-\item \doxylink{teste_aspirador2_a15}{Ação 15 -\/ Desafio Procura Profundidade}
+\item \doxylink{teste_aspirador2_aspirador-a10}{Ação 10 -\/ Procura em Profundidade}
+\item \doxylink{teste_aspirador2_aspirador-a11}{Ação 11 -\/ Efetuar uma procura em Profundidade Primeiro}
+\item \doxylink{teste_aspirador2_aspirador-a12}{Ação 12 -\/ Ver uma árvore de procura maior}
+\item \doxylink{teste_aspirador2_aspirador-a13}{Ação 13 -\/ Profundidade Iterativa}
+\item \doxylink{teste_aspirador2_aspirador-a14}{Ação 14 -\/ Profundidade ilimitada}
+\item \doxylink{teste_aspirador2_aspirador-a15}{Ação 15 -\/ Desafio Procura Profundidade}
 \end{DoxyItemize}
 
 
@@ -27,8 +27,8 @@ Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste
 
 Selecione o problema do Aspirador\+: {\bfseries{1.}}
 
-\label{teste_puzzle8_a10}%
-\Hypertarget{teste_puzzle8_a10}%
+\label{teste_aspirador2_aspirador-a10}%
+\Hypertarget{teste_aspirador2_aspirador-a10}%
 \hypertarget{teste_aspirador2_autotoc_md30}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Procura em Profundidade}{Ação 10 - Procura em Profundidade}}\label{teste_aspirador2_autotoc_md30}
  
 \begin{DoxyImage}
@@ -39,8 +39,8 @@ Selecione o problema do Aspirador\+: {\bfseries{1.}}
 
 Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.
 
-\label{teste_puzzle8_a11}%
-\Hypertarget{teste_puzzle8_a11}%
+\label{teste_aspirador2_aspirador-a11}%
+\Hypertarget{teste_aspirador2_aspirador-a11}%
 \hypertarget{teste_aspirador2_autotoc_md31}{}\doxysubsection{\texorpdfstring{Ação 11 -\/ Efetuar uma procura em Profundidade Primeiro}{Ação 11 - Efetuar uma procura em Profundidade Primeiro}}\label{teste_aspirador2_autotoc_md31}
 Utilizar a instância número 2, o algoritmo profundidade primeiro, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos\+: {\bfseries{1; 2; 4; 1; 3; 9; 3; 2; 4; 10; 1; {\itshape ENTER}; 5.}}
 
@@ -106,8 +106,8 @@ Podemos ver todos os estados gerados. A árvore tendo 3 níveis, permite dois mo
 
 Esta visualização da árvore da procura é interessante para pequenos problemas, mas naturalmente que procuras maiores torna-\/se impraticável. Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.
 
-\label{teste_aspirador2_a12}%
-\Hypertarget{teste_aspirador2_a12}%
+\label{teste_aspirador2_aspirador-a12}%
+\Hypertarget{teste_aspirador2_aspirador-a12}%
 \hypertarget{teste_aspirador2_autotoc_md32}{}\doxysubsection{\texorpdfstring{Ação 12 -\/ Ver uma árvore de procura maior}{Ação 12 - Ver uma árvore de procura maior}}\label{teste_aspirador2_autotoc_md32}
 Colocar a profundidade a 10, e o nível de debug a 3\+: {\bfseries{1; 2; 4; 9; 10; 2; 3; {\itshape ENTER}; 5.}}
 
@@ -161,8 +161,8 @@ Colocar a profundidade a 10, e o nível de debug a 3\+: {\bfseries{1; 2; 4; 9; 1
 
 Como o algoritmo é cego, segue a ordem dos sucessores. Neste caso está sempre a trocar de posição antes de aspirar. Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.
 
-\label{teste_aspirador2_a13}%
-\Hypertarget{teste_aspirador2_a13}%
+\label{teste_aspirador2_aspirador-a13}%
+\Hypertarget{teste_aspirador2_aspirador-a13}%
 \hypertarget{teste_aspirador2_autotoc_md33}{}\doxysubsection{\texorpdfstring{Ação 13 -\/ Profundidade Iterativa}{Ação 13 - Profundidade Iterativa}}\label{teste_aspirador2_autotoc_md33}
 Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2\+: {\bfseries{1; 2; 4; 9; 0; 2; 2; {\itshape ENTER}; 5.}}
 
@@ -209,8 +209,8 @@ Podemos ver também a versão compactada da árvore de procura, contendo apenas 
 
 Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-\/1
 
-\label{teste_aspirador2_a14}%
-\Hypertarget{teste_aspirador2_a14}%
+\label{teste_aspirador2_aspirador-a14}%
+\Hypertarget{teste_aspirador2_aspirador-a14}%
 \hypertarget{teste_aspirador2_autotoc_md34}{}\doxysubsection{\texorpdfstring{Ação 14 -\/ Profundidade ilimitada}{Ação 14 - Profundidade ilimitada}}\label{teste_aspirador2_autotoc_md34}
 Colocar a profundidade ilimitada (limite a -\/1), e o nível de debug a 1\+: {\bfseries{1; 2; 4; 9; -\/1; 2; 1; {\itshape ENTER}; 5.}}
 
@@ -224,8 +224,8 @@ Colocar a profundidade ilimitada (limite a -\/1), e o nível de debug a 1\+: {\b
 
 Temos um crash do programa, e bem cedo. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-\/se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10.
 
-\label{teste_aspirador2_a15}%
-\Hypertarget{teste_aspirador2_a15}%
+\label{teste_aspirador2_aspirador-a15}%
+\Hypertarget{teste_aspirador2_aspirador-a15}%
 \hypertarget{teste_aspirador2_autotoc_md35}{}\doxysubsection{\texorpdfstring{Ação 15 -\/ Desafio Procura Profundidade}{Ação 15 - Desafio Procura Profundidade}}\label{teste_aspirador2_autotoc_md35}
 Lembra-\/se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?
 

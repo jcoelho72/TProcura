@@ -1,7 +1,7 @@
 var searchData=
 [
   ['o_20projeto_0',['Sobre o Projeto',['../index.html#autotoc_md57',1,'']]],
-  ['o_20repositório_1',['Clonando o Repositório',['../index.html#autotoc_md62',1,'']]],
+  ['o_20repositório_1',['Clonar o Repositório',['../index.html#autotoc_md62',1,'']]],
   ['objetivo_2',['objetivo',['../structSParametrosEspaco.html#ab14626a36f514fb7b02baaa1cde43e7f',1,'SParametrosEspaco']]],
   ['objetivoalcancado_3',['objetivoalcancado',['../classTProcuraConstrutiva.html#a8e7879e0ac12522e0eedf3d3d365e51c',1,'TProcuraConstrutiva::ObjetivoAlcancado(int item, TVector&lt; TNo &gt; &amp;lista)'],['../classTProcuraConstrutiva.html#a18331ff4fccaf78df8bd3656357e9e75',1,'TProcuraConstrutiva::ObjetivoAlcancado(TNo estado, bool completa=true)']]],
   ['objeto_5fhashtable_4',['OBJETO_HASHTABLE',['../TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526',1,'TProcuraConstrutiva.h']]],

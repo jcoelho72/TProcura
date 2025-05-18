@@ -31,15 +31,16 @@ var NAVTREE =
     [ "Funcionalidades", "index.html#autotoc_md59", null ],
     [ "Instalação e Uso", "index.html#autotoc_md60", null ],
     [ "Exemplos", "index.html#autotoc_md61", [
-      [ "Clonando o Repositório", "index.html#autotoc_md62", null ]
+      [ "Clonar o Repositório", "index.html#autotoc_md62", null ]
     ] ],
     [ "Licença", "index.html#autotoc_md63", null ],
     [ "Teste 8 Damas", "teste_8damas.html", null ],
     [ "Teste Artificial", "teste_artificial.html", null ],
-    [ "Teste Aspirador - Parte 1/3", "teste_aspirador1.html", null ],
-    [ "Teste Aspirador - Parte 2/3", "teste_aspirador2.html", null ],
+    [ "Teste Aspirador - Parte 1/1", "teste_aspirador1.html", null ],
+    [ "Teste Aspirador - Parte 2/2", "teste_aspirador2.html", null ],
     [ "Teste Particao", "teste_particao.html", null ],
     [ "Teste Puzzle 8", "teste_puzzle8.html", null ],
+    [ "Testes", "testes.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

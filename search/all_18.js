@@ -11,7 +11,7 @@ var searchData=
   ['redefinir_20sugeridos_8',['Métodos para redefinir, sugeridos',['../group__RedefinicaoSugerida.html',1,'']]],
   ['remove_9',['Remove',['../classTVector.html#a8b6dd0098ec1c4f1291e003665eeeee8',1,'TVector']]],
   ['replace_10',['Replace',['../classTVector.html#a4a036a722efb403abd16c48d1d5dabdb',1,'TVector']]],
-  ['repositório_11',['Clonando o Repositório',['../index.html#autotoc_md62',1,'']]],
+  ['repositório_11',['Clonar o Repositório',['../index.html#autotoc_md62',1,'']]],
   ['reset_12',['Reset',['../classTVector.html#a760d08c7094ac5563f8d969f9d9e32a4',1,'TVector']]],
   ['resetparametros_13',['resetparametros',['../group__RedefinicaoSugerida.html#gacb15562d8776f4d162001d385ebc13a0',1,'TProcuraConstrutiva::ResetParametros()'],['../classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3',1,'CPuzzle8::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()']]],
   ['resolver_20manualmente_14',['resolver manualmente',['../teste_8damas.html#autotoc_md2',1,'Ação 2 - Resolver manualmente'],['../teste_artificial.html#autotoc_md9',1,'Ação 2 - Resolver manualmente'],['../teste_particao.html#autotoc_md38',1,'Ação 2 - Resolver manualmente'],['../teste_puzzle8.html#autotoc_md45',1,'Ação 2 - Resolver manualmente']]],

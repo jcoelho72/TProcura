@@ -9,7 +9,7 @@ var searchData=
   ['cega_6',['Algoritmos de Procura Cega',['../group__ProcurasCegas.html',1,'']]],
   ['classe_7',['Variáveis globais à classe',['../group__VariaveisGlobais.html',1,'']]],
   ['clistano_8',['clistano',['../classCListaNo.html',1,'CListaNo'],['../classCListaNo.html#a59d3a16d38befa0eac15777568b49708',1,'CListaNo::CListaNo()']]],
-  ['clonando_20o_20repositório_9',['Clonando o Repositório',['../index.html#autotoc_md62',1,'']]],
+  ['clonar_20o_20repositório_9',['Clonar o Repositório',['../index.html#autotoc_md62',1,'']]],
   ['codifica_10',['codifica',['../classCOitoDamas.html#a0e4d6e25bdbccb703b39604d286e62bf',1,'COitoDamas::Codifica()'],['../classCParticao.html#a51dc6a3cb2696010714aec34a42df97d',1,'CParticao::Codifica()'],['../classCProblemaArtificial.html#ab8d1a6b1cac40764804e09a3ff110b6e',1,'CProblemaArtificial::Codifica()'],['../classCPuzzle8.html#a611b043ab56407d684e27508ef9287fa',1,'CPuzzle8::Codifica()'],['../group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11',1,'TProcuraConstrutiva::Codifica()'],['../classCAspirador.html#a856e23c30c70be5345f56979b27fdc1d',1,'CAspirador::Codifica()']]],
   ['coitodamas_11',['coitodamas',['../classCOitoDamas.html',1,'COitoDamas'],['../classCOitoDamas.html#aedfd3924d0c950ba73a6342dda5cc467',1,'COitoDamas::COitoDamas()']]],
   ['completa_12',['Completa',['../classCListaNo.html#a1895f082c5a47855d4cb6236b66fd8a0',1,'CListaNo']]],
