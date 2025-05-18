@@ -546,3 +546,4 @@ A utilização de repetidos com base nos ascendentes, permite também resolver o
 </details>
 
 
+| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |

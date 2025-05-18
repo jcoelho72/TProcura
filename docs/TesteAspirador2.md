@@ -248,3 +248,5 @@ encontra a solução ótima sem nunca se enganar. Iremos em outros problemas tes
 
 O custo de cada ação é sempre unitário, pelo que, o custo uniforme será mostrado num problema em que cada ação possa ter custo variável.
 Deixamos também as configurações e os testes empíricos, com as opções 6 e 7 do menu dos testes manuais, para outros problemas. 
+
+| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
