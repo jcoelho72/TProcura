@@ -4,15 +4,15 @@ Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste
 
 ## Sumário
 
-- [Ação 1 - Trocar de instância](#)
-- [Ação 2 - Explorar os sucessores](#)
-- [Ação 3 - Ver a solução/caminho realizada manualmente](#)
-- [Ação 4 - Ver a alterar um parâmetro](#)
-- [Ação 5 - Efetuer uma procura em Largura](#)
-- [Ação 6 - Editar opções A](#)
-- [Ação 7 - Editar opções B](#)
-- [Ação 8 - Resolver outra instância](#)
-- [Ação 9 - Desafio Procura em Largura](#)
+- [Ação 1 - Trocar de instância](#a1)
+- [Ação 2 - Explorar os sucessores](#a2)
+- [Ação 3 - Ver a solução/caminho realizada manualmente](#a3)
+- [Ação 4 - Ver a alterar um parâmetro](#a4)
+- [Ação 5 - Efetuer uma procura em Largura](#a5)
+- [Ação 6 - Editar opções A](#a6)
+- [Ação 7 - Editar opções B](#a7)
+- [Ação 8 - Resolver outra instância](#a8)
+- [Ação 9 - Desafio Procura em Largura](#a8)
 
 
 ```entrada
@@ -60,6 +60,7 @@ explorar o espaço de estados, ver a solução/caminho atual, alterar parametros
 executar o algoritmo selecionado com os parametros atuais, gravar configuração
 e executar um teste empírico.
 
+\anchor a1
 ## Ação 1 - Trocar de instância
 
 Escreva os seguintes números separados por Enter: **1; 2**
@@ -91,6 +92,7 @@ A sujidade das casas é gerada aleatoriamente.
 No entanto a semente aleatória é um parâmetro, sendo sempre a mesma caso não se altere, 
 garantindo assim que podemos obter a mesma instância mais tarde.
 
+\anchor a2
 ## Ação 2 - Explorar os sucessores
 
 A partir do estado atual, introduza: **2; 1; 2.**
@@ -142,6 +144,7 @@ Para um problema novo, é sempre importante que explore os sucessores, nomeadame
 Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, 
 que lhe poderá levar a identificar optimizações que de outra foram lhe passariam desapercebidas.
 
+\anchor a3
 ## Ação 3 - Ver a solução/caminho realizada manualmente
 
 Introduza: **3.**
@@ -170,6 +173,7 @@ Neste problema o custo não foi definido, pelo que é adoptado o valor de 1 unid
 A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os estados também.
 Para isso é preciso alterar o parâmetro P3(Ver).
 
+\anchor a4
 ## Ação 4 - Ver a alterar um parâmetro
 
 Introduza: **4**
@@ -238,6 +242,7 @@ _______________________________________________________________________________
 ```
 Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.
 
+\anchor a5
 ## Ação 5 - Efetuer uma procura em Largura
 
 ![Procura em Largura - expande primeiro os estados menos profundos](docs/images/aspirador_largura.png)
@@ -374,6 +379,7 @@ Podemos lidar com estados repetidos de duas formas:
 - Verificar se o estado a ser gerado, não tem já um ascendente - neste caso é preciso implementar a função Distinto() - Para fazer esta validação, o código tem de seguir pelos pais, e testar se são diferentes do atual.
 - Verificar se o estado a ser gerado, não foi já gerado mesmo em outro ramo, desde que no mesmo nível ou anterior. Nesse caso o estado pode ser excluído, já que já terá sido tratado nesse outro ramo - para ter esta opção, é preciso implementar a função Codificar() que coloca o estado num vetor de bits - o código utiliza uma hashtable com perdas, para verificar se o estado já foi criado em tempo constante, não existindo problemas de memória mesmo em execuções longas devido às perdas. 
 
+\anchor a6
 ## Ação 6 - Editar opções A
 
 Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3: **1; 2; 4; 10; 2; 2; 3; *ENTER*; 5.**
@@ -414,6 +420,7 @@ Caso esteja a reproduzir o teste, confirme que tem os parâmetros iguais aos val
 Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. 
 Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.
 
+\anchor a7
 ## Ação 7 - Editar opções B
 
 Alterar a  opção para remover os repetidos com base nos gerados, e alterar o debug para nível 2: 
@@ -453,6 +460,7 @@ lidar com os estados repetidos seja distinta.
 O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, 
 e o nível 0 não dá qualquer informação. 
 
+\anchor a8
 ## Ação 8 - Resolver outra instância 
 
 Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior: 
@@ -525,6 +533,7 @@ Esta abordagem perde a optimalidade, e também a garantia de construir um caminh
 o que poderá não ser problemático em alguns problemas.
 
 
+\anchor a9
 ## Ação 9 - Desafio Procura em Largura
 
 Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?

@@ -9,13 +9,15 @@ Uma coleção de algoritmos e implementações para **procuras e otimizações**
 
 ## Sumário
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Estado do Projeto](#estado-do-projeto)
-- [Funcionalidades](#funcionalidades)
-- [Instalação e Uso](#instalação-e-uso)
-- [Exemplos](#exemplos)
-- [Licença](#licença)
+- [Sobre o Projeto](#s1)
+- [Estado do Projeto](s2)
+- [Funcionalidades](#s3)
+- [Instalação e Uso](#s4)
+- [Exemplos](#s5)
+- [Clonando o Repositório](#s6)
+- [Licença](#s7)
 
+\anchor s1
 ## Sobre o Projeto
 
 Apresenta a implementação de algoritmos voltados para [procuras construtivas](#), com foco em explorar soluções de otimização e problemas práticos.  
@@ -29,11 +31,13 @@ da [Licenciatura em Engenharia Informática](https://guiadoscursos.uab.pt/ucs/in
 Bibliografia da UC, e base teórica para o projeto: 
 Russell, S. J., & Norvig, P. (2021). Artificial Intelligence: A Modern Approach (4th ed.). Pearson.
 
+\anchor s2
 ## Estado do Projeto
 
 > :warning: Este projeto ainda está em desenvolvimento.  
 > Atualizações frequentes e melhorias estão sendo implementadas.
 
+\anchor s3
 ## Funcionalidades
 
 - Implementação de algoritmos de procura construtiva na superclasse.
@@ -42,6 +46,7 @@ Russell, S. J., & Norvig, P. (2021). Artificial Intelligence: A Modern Approach 
 - Execução de algoritmos informados: Melhor Primeiro, AStar, IDAStar, Branch-and-Bound
 - Executar de testes manuais e testes empíricos (várias instâncias e vários algoritmos/parametrizações).
 
+\anchor s4
 ## Instalação e Uso
 
 Clonar o projeto, compilar e executar. Teste a classe com problemas implementados. 
@@ -60,21 +65,24 @@ Essas implementações podem utilizar os modelos existentes na documentação. E
 Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-se também implementar os 
 [Métodos Sugeridos](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html). Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.
 
+\anchor s5
 ## Exemplos
 
 Estão implementados alguns problemas, tendo sido realizados testes de modo a exemplificar o funcionamento da classe TProcuraConstrutiva: 
 
-1. Aspirador ([parte 1](teste_aspirador1), [parte 2](teste_aspirador2))
-2. [Puzzle 8](teste_puzzle8)
-3. [8 Damas](teste_8damas)
-4. [Partição](teste_particao)
-5. [Artificial](teste_artificial)
+1. Aspirador ([parte 1](teste_aspirador1.html), [parte 2](teste_aspirador2.html))
+2. [Puzzle 8](teste_puzzle8.html)
+3. [8 Damas](teste_8damas.html)
+4. [Partição](teste_particao.html)
+5. [Artificial](teste_artificial.html)
 
+\anchor s6
 ### Clonando o Repositório
 ```bash
 git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
 ```
 
+\anchor s7
 ## Licença
 Distribuído sob a licença MIT. Veja o arquivo [LICENSE](https://jcoelho72.github.io/TProcuraConstrutiva/LICENSE.txt) para mais informações.
 
