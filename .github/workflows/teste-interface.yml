@@ -23,6 +23,11 @@ jobs:
       run: make distcheck
     - name: Gerar documentação
       run: doxygen Doxyfile
+    - name: Gerar layout.xml se não existir
+      run: |
+        if [ ! -f layout.xml ]; then
+          doxygen -l layout.xml
+        fi
     - name: Publicar documentação no GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:

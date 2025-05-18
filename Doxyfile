@@ -7,7 +7,6 @@ HTML_OUTPUT            = .
 INPUT                  = . README.md docs/
 RECURSIVE              = YES
 IMAGE_PATH = docs/images
-EXCLUDE_PATTERNS = */docs/Teste*.md
 
 
 # Gerar documentação em diferentes formatos
