@@ -1,7 +1,7 @@
 @page teste_8damas Teste 8 Damas
 
 | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
-|-------------|-------------|----------|---------|----------|------------|
+
 
 Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste excutando as ações localmente.
 

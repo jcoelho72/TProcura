@@ -1,7 +1,6 @@
 @page teste_aspirador1 Teste Aspirador - Parte 1/2
 
 | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
-|-------------|-------------|----------|---------|----------|------------|
 
 
 Execução de exemplo com base no problema do Aspirador. 
@@ -366,7 +365,7 @@ Opção: 3
 Aspirador
 ...
 [.] .
-...
+_______________________________________________________________________________
 ```
 Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.
 
@@ -418,7 +417,7 @@ P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0
 [.] .
-...
+_______________________________________________________________________________
 ```
 A interação de troca de parâmetro não é mais mostrada para não saturar o texto. 
 
@@ -450,7 +449,7 @@ P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0
 [.] .
-...
+_______________________________________________________________________________
 ```
 Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números: 
 expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, 
@@ -477,7 +476,7 @@ A instância é demasiado grande, e sem remover repetidos, rapidamente gera dema
 Aspirador
 ...
 *  * [.] .  *  *  *  *
-...
+_______________________________________________________________________________
 Opção: 5
 #######...##### Solução encontrada!
  .  .  .  .  .  .  . [.](g:15)
@@ -491,7 +490,7 @@ P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 1681451 | gerações 4840697 | avaliações 0
  .  .  .  .  .  .  . [.]
-...
+_______________________________________________________________________________
 ```
 São demasiados estados gerados, quase 5 milhões, e 5 segundos. 
 Há um # que é colocado no output a cada 1000 expansões. 

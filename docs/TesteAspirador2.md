@@ -1,7 +1,6 @@
 @page teste_aspirador2 Teste Aspirador - Parte 2/2
 
 | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
-|-------------|-------------|----------|---------|----------|------------|
 
 
 
@@ -43,7 +42,8 @@ Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.
 \anchor aspirador-a11
 ## Ação 11 - Efetuar uma procura em Profundidade Primeiro
 
-Utilizar a instância número 2, o algoritmo profundidade primeiro, com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos: 
+Utilizar a instância número 2, o algoritmo profundidade primeiro, 
+com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos: 
 **1; 2; 4; 1; 3; 9; 3; 2; 4; 10; 1; *ENTER*; 5.**
 
 O parâmetro 1 é o algoritmo, em que o 3 é a profundidade primeiro.
@@ -101,7 +101,8 @@ _______________________________________________________________________________
 
 Podemos ver todos os estados gerados. 
 A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -1. 
-Este resultado pode ser utilizado para saber que não há nenhuma solução de comprimento inferior a 3, ou seja, é um lower bound.
+Este resultado pode ser utilizado para saber que não há nenhuma solução 
+de comprimento inferior a 3, ou seja, é um lower bound.
 
 Esta visualização da árvore da procura é interessante para pequenos problemas, 
 mas naturalmente que procuras maiores torna-se impraticável. 
@@ -137,13 +138,13 @@ P13(baralhar): 0
 [Estatísticas] expansões 12 | gerações 24 | avaliações 0
 [.] .
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 ```
 Com o nível debug a 3 vemos a árvore de procura apenas os estados folha, mas não os estados expandidos. 
-A informação é mais reduzida, mas poderá ser uma boa forma de analisar os estados em que o algoritmo volta para trás, 
+A informação é mais reduzida, mas poderá ser uma boa forma de analisar 
+os estados em que o algoritmo volta para trás, 
 já que podem ter alguma característica relevante, ainda não implementada. 
 A solução não é óptima, tem comprimento 9! Podemos visualizar a solução, introduza: **3.**
+
 ```entrada
 Opção: 3
 
@@ -164,7 +165,8 @@ Neste caso está sempre a trocar de posição antes de aspirar.
 Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. 
 Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. 
 Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. 
-É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.
+É com base nesse dilema que surge a procura em profundidade iterativa, 
+no caso deste código é executada com o limite=0.
 
 \anchor aspirador-a13
 ## Ação 13 - Profundidade Iterativa
@@ -201,8 +203,6 @@ P13(baralhar): 0
 [Estatísticas] expansões 10 | gerações 20 | avaliações 0
 [.] .
 _______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 ```
 
 Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solução ótima. 
