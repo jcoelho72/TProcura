@@ -1,14 +1,15 @@
 @page teste_aspirador1 Teste Aspirador - Parte 1/2
 
-[![Aspirador 1](https://img.shields.io/badge/Aspirador-1-blue)](teste_aspirador1.html)
-[![Aspirador 2](https://img.shields.io/badge/Aspirador-2-blue)](teste_aspirador2.html)
-[![Puzzle 8](https://img.shields.io/badge/Puzzle-8-blue)](teste_puzzle8.html)
-[![8 Damas](https://img.shields.io/badge/8-Damas-blue)](teste_8damas.html)
-[![Partição](https://img.shields.io/badge/Partição-blue)](teste_particao.html)
-[![Artificial](https://img.shields.io/badge/Artificial-blue)](teste_artificial.html)
+[![Aspirador 1](https://img.shields.io/badge/Aspirador-1-lightgray)](teste_aspirador1.html)
+[![Aspirador 2](https://img.shields.io/badge/Aspirador-2-lightgray)](teste_aspirador2.html)
+[![Puzzle 8](https://img.shields.io/badge/Puzzle-8-lightgray)](teste_puzzle8.html)
+[![8 Damas](https://img.shields.io/badge/8-Damas-lightgray)](teste_8damas.html)
+[![Partição](https://img.shields.io/badge/Partição-lightgray)](teste_particao.html)
+[![Artificial](https://img.shields.io/badge/Artificial-lightgray)](teste_artificial.html)
 
 
-Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
+Execução de exemplo com base no problema do Aspirador. 
+Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
 
@@ -38,7 +39,8 @@ Opção: 1
 
 Selecione o problema do Aspirador: **1.**
 
-A versão deste problema foi generalizada no código para poderem existir N salas, uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.
+A versão deste problema foi generalizada no código para poderem existir N salas, 
+uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.
 
 
 ```entrada
@@ -68,12 +70,16 @@ explorar o espaço de estados, ver a solução/caminho atual, alterar parametros
 executar o algoritmo selecionado com os parametros atuais, gravar configuração
 e executar um teste empírico.
 
+Tanto os parâmetros, como a linha das estatísticas, e o menu, repetem-se em cada interação.
+Para evitar repetição na documentação, o output é cortado sempre que não existam ambiguidades.
+
 \anchor aspirador-a1
 ## Ação 1 - Trocar de instância
 
 Escreva os seguintes números separados por Enter: **1; 2**
 
-Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na terceira sala, estando as duas primeiras sujas:
+Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na terceira sala, 
+estando as duas primeiras sujas:
 
 ```entrada
 Opção: 1
@@ -81,11 +87,7 @@ Opção: 1
 Nova instância (atual 4) [2-50]: 2
 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 0 | gerações 0 | avaliações 0
+...
  * [*]
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
@@ -93,9 +95,11 @@ _______________________________________________________________________________
 ```
 
 Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda:
-A representação do estado é algo que é implementado na sub-classe (neste caso em CAspirador::Debug()), de modo a se poder visualizar o estado em que estamos. 
+A representação do estado é algo que é implementado na sub-classe 
+(neste caso em CAspirador::Debug()), de modo a se poder visualizar o estado em que estamos. 
 Ao chamar a SolucaoVazia podemos trocar o ID da instância. 
-Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. 
+Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos 
+escolher em ter uma instância maior ou menor. 
 A sujidade das casas é gerada aleatoriamente. 
 No entanto a semente aleatória é um parâmetro, sendo sempre a mesma caso não se altere, 
 garantindo assim que podemos obter a mesma instância mais tarde.
@@ -120,7 +124,8 @@ g:0 h:2 3|6
 Ações: dir asp
 ```
 
-Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. 
+Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda,
+ou aspirar a sala atual. 
 Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. 
 Os sucessores são visualizados pelas suas ações, existindo três possíveis ações: esq, dir, asp.
 Para indicar o número do sucessor, é preciso ver, já que o número 1 é para a primeira ação válida, na lista de sucessores. 
