@@ -1,28 +1,7 @@
 var searchData=
 [
-  ['e_20uso_0',['Instalação e Uso',['../index.html#autotoc_md5',1,'']]],
-  ['ealgoritmo_1',['EAlgoritmo',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6c',1,'TProcuraConstrutiva.h']]],
-  ['editarconfiguracoes_2',['EditarConfiguracoes',['../classTProcuraConstrutiva.html#a7e5329143aa8df478b68741d47fa6a7f',1,'TProcuraConstrutiva']]],
-  ['editarparametros_3',['EditarParametros',['../classTProcuraConstrutiva.html#aa2c53163dbc3e394abbd2bfbf70e29ca',1,'TProcuraConstrutiva']]],
-  ['eestadosrepetidos_4',['EEstadosRepetidos',['../TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88',1,'TProcuraConstrutiva.h']]],
-  ['elementosht_5',['elementosHT',['../classTProcuraConstrutiva.html#a601336388070f0aee00e9615b1097205',1,'TProcuraConstrutiva']]],
-  ['eniveldebug_6',['ENivelDebug',['../TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8',1,'TProcuraConstrutiva.h']]],
-  ['eoperacao_7',['EOperacao',['../TProcuraConstrutiva_8h.html#a10f5ddbb9232fda16b29e31829ac51d3',1,'TProcuraConstrutiva.h']]],
-  ['eparametrosconstrutiva_8',['EParametrosConstrutiva',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058',1,'TProcuraConstrutiva.h']]],
-  ['equal_9',['Equal',['../classTVector.html#a7d85501c7c293a9aaa2beffa8a7f9c6f',1,'TVector']]],
-  ['erro_10',['erro',['../classTVector.html#a1443a09e75c00296460bc3678da000cb',1,'TVector']]],
-  ['espaco_11',['espaco',['../classCProblemaArtificial.html#afbedcdbf9cecd121f162699d5f028a73',1,'CProblemaArtificial']]],
-  ['espacosramo_12',['espacosRamo',['../group__VariaveisGlobais.html#ga95c939d457c63d60ff3b1a0eb9e47da4',1,'TProcuraConstrutiva']]],
-  ['esquerda_13',['esquerda',['../classCParticao.html#a17bdce6d6c592f7139309cbe315e70c1',1,'CParticao']]],
-  ['estado_14',['estado',['../structSIndice.html#a71d6cd112fe2f89c710603ad37ded5bf',1,'SIndice::estado'],['../classCListaNo.html#a41eb61b9b842b0052c119fe44b789ba8',1,'CListaNo::Estado()'],['../group__VariaveisEstado.html',1,'Variáveis de estado']]],
-  ['estado_20do_20projeto_15',['Estado do Projeto',['../index.html#autotoc_md3',1,'']]],
-  ['estadocodht_16',['estadoCodHT',['../classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999',1,'TProcuraConstrutiva']]],
-  ['estadosrepetidos_17',['estadosRepetidos',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5',1,'TProcuraConstrutiva.h']]],
-  ['executaalgoritmo_18',['ExecutaAlgoritmo',['../group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3',1,'TProcuraConstrutiva']]],
-  ['exemplos_19',['Exemplos',['../index.html#autotoc_md6',1,'']]],
-  ['existeht_20',['ExisteHT',['../classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac',1,'TProcuraConstrutiva']]],
-  ['expansoes_21',['expansoes',['../group__VariaveisGlobais.html#ga198a1f8ed90785a1c3f112a3468a2d74',1,'TProcuraConstrutiva::expansoes'],['../structSResultado.html#a4c6edab2b9295991eafa03f86e2c6f22',1,'SResultado::expansoes']]],
-  ['expansoesexcedido_22',['ExpansoesExcedido',['../classTProcuraConstrutiva.html#ab0c0a5578bb6fce9ea175f1646871212',1,'TProcuraConstrutiva']]],
-  ['explorarsucessores_23',['ExplorarSucessores',['../classTProcuraConstrutiva.html#ab5639efca5e48b564a8bdd9ec23a8955',1,'TProcuraConstrutiva']]],
-  ['extrairconfiguracao_24',['ExtrairConfiguracao',['../classTProcuraConstrutiva.html#adc31f777cf89c56571baedd4a48cea47',1,'TProcuraConstrutiva']]]
+  ['6_20editar_20opções_20a_0',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md25',1,'']]],
+  ['6_20heurística_1',['Ação 6 - Heurística',['../teste_artificial.html#autotoc_md13',1,'']]],
+  ['6_20melhor_20primeiro_2',['Ação 6 - Melhor Primeiro',['../teste_puzzle8.html#autotoc_md49',1,'']]],
+  ['6_20testes_20empíricos_3',['6 testes empíricos',['../teste_8damas.html#autotoc_md6',1,'Ação 6 - Testes Empíricos'],['../teste_particao.html#autotoc_md42',1,'Ação 6 - Testes Empíricos']]]
 ];

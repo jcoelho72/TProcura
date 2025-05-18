@@ -25,14 +25,20 @@
 var NAVTREE =
 [
   [ "TProcuraConstrutiva", "index.html", [
-    [ "Sumário", "index.html#autotoc_md1", null ],
-    [ "Sobre o Projeto", "index.html#autotoc_md2", null ],
-    [ "Estado do Projeto", "index.html#autotoc_md3", null ],
-    [ "Funcionalidades", "index.html#autotoc_md4", null ],
-    [ "Instalação e Uso", "index.html#autotoc_md5", null ],
-    [ "Exemplos", "index.html#autotoc_md6", null ],
-    [ "Clonar o Repositório", "index.html#autotoc_md7", null ],
-    [ "Licença", "index.html#autotoc_md8", null ],
+    [ "Sumário", "index.html#autotoc_md56", null ],
+    [ "Sobre o Projeto", "index.html#autotoc_md57", null ],
+    [ "Estado do Projeto", "index.html#autotoc_md58", null ],
+    [ "Funcionalidades", "index.html#autotoc_md59", null ],
+    [ "Instalação e Uso", "index.html#autotoc_md60", null ],
+    [ "Exemplos", "index.html#autotoc_md61", null ],
+    [ "Clonar o Repositório", "index.html#autotoc_md62", null ],
+    [ "Licença", "index.html#autotoc_md63", null ],
+    [ "Teste 8 Damas", "teste_8damas.html", null ],
+    [ "Teste Artificial", "teste_artificial.html", null ],
+    [ "Teste Aspirador - Parte 1/2", "teste_aspirador1.html", null ],
+    [ "Teste Aspirador - Parte 2/2", "teste_aspirador2.html", null ],
+    [ "Teste Particao", "teste_particao.html", null ],
+    [ "Teste Puzzle 8", "teste_puzzle8.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

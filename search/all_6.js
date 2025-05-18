@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['finalizarcorrida_0',['FinalizarCorrida',['../classTProcuraConstrutiva.html#af2fbc46bcca99f48e42cdbc62eecc1fd',1,'TProcuraConstrutiva']]],
-  ['find_1',['Find',['../classTVector.html#ae72a4965eaa055d38204da07d6092feb',1,'TVector']]],
-  ['first_2',['First',['../classTVector.html#a05f29646493d42f3c77081b6031d70e5',1,'TVector']]],
-  ['funcionalidades_3',['Funcionalidades',['../index.html#autotoc_md4',1,'']]]
+  ['7_20astar_0',['Ação 7 - AStar',['../teste_puzzle8.html#autotoc_md50',1,'']]],
+  ['7_20editar_20opções_20b_1',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md26',1,'']]],
+  ['7_20melhor_20primeiro_2',['Ação 7 - Melhor Primeiro',['../teste_artificial.html#autotoc_md14',1,'']]]
 ];
