@@ -1,6 +1,5 @@
 var files_dup =
 [
-    [ "docs", "dir_49e56c817e5e54854c35e136979f97ca.html", null ],
     [ "Teste", "dir_267a6dbd51c8b0430c0130d887946ad8.html", "dir_267a6dbd51c8b0430c0130d887946ad8" ],
     [ "TProcuraConstrutiva.cpp", "TProcuraConstrutiva_8cpp.html", "TProcuraConstrutiva_8cpp" ],
     [ "TProcuraConstrutiva.h", "TProcuraConstrutiva_8h.html", "TProcuraConstrutiva_8h" ],

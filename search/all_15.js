@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['n_0',['N',['../TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4',1,'TRand.cpp']]],
-  ['nada_1',['nada',['../TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11',1,'TProcuraConstrutiva.h']]],
-  ['nao_5flido_2',['NAO_LIDO',['../TProcuraConstrutiva_8h.html#a41963e9c6730c8172ca4f219b79feba7',1,'TProcuraConstrutiva.h']]],
-  ['ndamas_3',['nDamas',['../classCOitoDamas.html#ad6d1169f379024c488c2ba8c2a27573a',1,'COitoDamas']]],
-  ['nivel_4',['nivel',['../classCProblemaArtificial.html#a43f8923ae24ecd1e2349e2379e66d51f',1,'CProblemaArtificial']]],
-  ['niveldebug_5',['nivelDebug',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8',1,'TProcuraConstrutiva.h']]],
-  ['nome_6',['nome',['../structSParametro.html#aa25ae60ffa1acbaeb51bdf0e5312c349',1,'SParametro']]],
-  ['nomevalores_7',['nomeValores',['../structSParametro.html#aae8aa852643edec8af4d1c3c42ede0b2',1,'SParametro']]],
-  ['novalinha_8',['NovaLinha',['../classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32',1,'TProcuraConstrutiva']]],
-  ['novovalor_9',['NovoValor',['../classTProcuraConstrutiva.html#a47abc151fcdd67c126b99672870d7dca',1,'TProcuraConstrutiva']]],
-  ['numeros_10',['numeros',['../classCParticao.html#a5a49aee7966f84ac5456041a359aab89',1,'CParticao']]]
+  ['_7ecaspirador_0',['~CAspirador',['../classCAspirador.html#aa2b3375bd71b340d7834978e8c8ed951',1,'CAspirador']]],
+  ['_7eclistano_1',['~CListaNo',['../classCListaNo.html#a9b86dffe0ec5192bdb6dd45c5d0dc580',1,'CListaNo']]],
+  ['_7ecoitodamas_2',['~COitoDamas',['../classCOitoDamas.html#ab77af0c222eed335045cf1cc4cbc8ff6',1,'COitoDamas']]],
+  ['_7ecparticao_3',['~CParticao',['../classCParticao.html#a28e058d1acef74690ec638cc69e968d1',1,'CParticao']]],
+  ['_7ecproblemaartificial_4',['~CProblemaArtificial',['../classCProblemaArtificial.html#a5a3353d4f263cdaa090237fe245f532a',1,'CProblemaArtificial']]],
+  ['_7ecpuzzle8_5',['~CPuzzle8',['../classCPuzzle8.html#a05a4b0712e7ff5cea28b6a76b5f9557f',1,'CPuzzle8']]],
+  ['_7etprocuraconstrutiva_6',['~TProcuraConstrutiva',['../classTProcuraConstrutiva.html#aa19cbee6023bd0ff01c61c6d6db2e2ae',1,'TProcuraConstrutiva']]],
+  ['_7etrand_7',['~TRand',['../classTRand.html#aa94554553535dc1a1c0f0e31c494c5c3',1,'TRand']]],
+  ['_7etvector_8',['~TVector',['../classTVector.html#a929164b69e7759a845af1854bbb9f49f',1,'TVector']]]
 ];
