@@ -1,6 +1,15 @@
-@page teste_aspirador2 Teste Aspirador - Parte 2/2
+@page teste_aspirador2 Teste Aspirador - Parte 2/3
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
+
+## Sumário
+
+- [Ação 10 - Procura em Profundidade](#)
+- [Ação 11 - Efetuar uma procura em Profundidade Primeiro](#)
+- [Ação 12 - Ver uma árvore de procura maior](#)
+- [Ação 13 - Profundidade Iterativa](#)
+- [Ação 14 - Profundidade ilimitada](#)
+- [Ação 15 - Desafio Procura Profundidade](#)
 
 ```entrada
 Teste TProcurasConstrutivas
@@ -12,8 +21,6 @@ Problema:
   5 - Artificial
 Opção: 1
 ```
-
-![Aspirador - espaço de estados para 2 salas](docs/images/aspirador.png)
 
 Selecione o problema do Aspirador: **1.**
 
@@ -225,24 +232,8 @@ Sim, não ignorar os estados repetidos não servem apenas para reduzir a árvore
 Com repetidos nos ascendentes ou gerados, consegue resolver com a procura em profundidade ilimitada, qualquer uma das 50 instâncias.
 </details>
 
-## Ação 16 - Procura Informada
-
-## Ação 17 - Heurística
-
-## Ação 18 - Melhor Primeiro
-
-## Ação 20 - AStar
-
-## Ação 21 - IDAStar
-
-## Ação 22 - Branch-and-Bound
-
-
-XX --- ou implementar uma má heurística, como o número de casas sujas, para ver a diferença e 
-XX --- colocar AF3b, p1, mostrando o Melhor Primeiro --- teste para qualquer tamanho
-
 Está terminado esta execução de exemplo. Este problema tem uma heurística perfeita, pelo que, qualquer algoritmo informado 
-encontra a solução ótima sem nunca se enganar. Iremos em outros problemas testar os algoritmos informados
+encontra a solução ótima sem nunca se enganar. Iremos em outros problemas testar os algoritmos informados.
 
 O custo de cada ação é sempre unitário, pelo que, o custo uniforme será mostrado num problema em que cada ação possa ter custo variável.
 Deixamos também as configurações e os testes empíricos, com as opções 6 e 7 do menu dos testes manuais, para outros problemas. 

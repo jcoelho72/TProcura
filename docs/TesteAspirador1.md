@@ -1,6 +1,19 @@
-@page teste_aspirador1 Teste Aspirador - Parte 1/2
+@page teste_aspirador1 Teste Aspirador - Parte 1/3
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
+
+## Sumário
+
+- [Ação 1 - Trocar de instância](#)
+- [Ação 2 - Explorar os sucessores](#)
+- [Ação 3 - Ver a solução/caminho realizada manualmente](#)
+- [Ação 4 - Ver a alterar um parâmetro](#)
+- [Ação 5 - Efetuer uma procura em Largura](#)
+- [Ação 6 - Editar opções A](#)
+- [Ação 7 - Editar opções B](#)
+- [Ação 8 - Resolver outra instância](#)
+- [Ação 9 - Desafio Procura em Largura](#)
+
 
 ```entrada
 Teste TProcurasConstrutivas

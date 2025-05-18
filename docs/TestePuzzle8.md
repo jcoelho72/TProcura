@@ -2,6 +2,21 @@
 
 Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste excutando as ações localmente.
 
+## Sumário
+
+- [Ação 1 - Ver instâncias](#ver-instâncias)
+- [Ação 2 - Resolver manualmente](resolver-manualmente#)
+- [Ação 3 - Procura em Largura](#procura-em-largura)
+- [Ação 4 - Procura em Profundidade](#procura-em-profundidade)
+- [Ação 5 - Heurística](#heurística)
+- [Ação 6 - Melhor Primeiro](#melhor-primeiro)
+- [Ação 7 - AStar](#astar)
+- [Ação 8 - IDAStar](#idastar)
+- [Ação 9 - Branch-and-Bound](#branch-and-bound)
+- [Ação 10 - Configurações](#configurações)
+- [Ação 11 - Testes Empíricos](#testes-empíricos)
+
+
 ```entrada
 Teste TProcurasConstrutivas
 Problema:

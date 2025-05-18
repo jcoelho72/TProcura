@@ -2,6 +2,16 @@
 
 Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste excutando as ações localmente.
 
+## Sumário
+
+- [Ação 1 - Ver instâncias](#ver-instâncias)
+- [Ação 2 - Resolver manualmente](resolver-manualmente#)
+- [Ação 3 - Procura em Largura](#procura-em-largura)
+- [Ação 4 - Procura em Profundidade](#procura-em-profundidade)
+- [Ação 5 - Heurística](#heurística)
+- [Ação 6 - Testes Empíricos](#testes-empíricos)
+
+
 ```entrada
 Teste TProcurasConstrutivas
 Problema:

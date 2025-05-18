@@ -13,18 +13,15 @@ Uma coleção de algoritmos e implementações para **procuras e otimizações**
 - [Estado do Projeto](#estado-do-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Instalação e Uso](#instalação-e-uso)
-- [Exploração do Espaço de Estados e Testes](#exploração-do-espaço-de-estados-e-testes)
 - [Exemplos](#exemplos)
-- [Contribuindo](#contribuindo)
 - [Licença](#licença)
-- [Contato](#contato)
 
 ## Sobre o Projeto
 
 Apresenta a implementação de algoritmos voltados para [procuras construtivas](#), com foco em explorar soluções de otimização e problemas práticos.  
 
 *Pretende-se que sirva como repositório central para procuras construtivas, enquanto projetos derivados possam contemplar procuras melhorativas e procuras adversas. 
-Estes três projetos podem servir de base para a implementação de problemas concretos, sendo criado também um porjeto para  exemplos de problemas implementados.*
+Estes três projetos podem servir de base para a implementação de problemas concretos, sendo criado também um projeto para mais exemplos de problemas.*
 
 Recursos utilizados na UC de [Introdução à Inteligência Artificial](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/), 
 da [Licenciatura em Engenharia Informática](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/) da [Universidade Aberta](https://portal.uab.pt/)
@@ -47,7 +44,7 @@ Russell, S. J., & Norvig, P. (2021). Artificial Intelligence: A Modern Approach 
 
 ## Instalação e Uso
 
-Clonar o projeto, compilar e executar. Teste a classe com problemas artificiais. 
+Clonar o projeto, compilar e executar. Teste a classe com problemas implementados. 
 
 Para implementar um novo problema, redefina a superclasse TProcuraConstrutiva, implementando os seguintes métodos de [Redefinição Mandatória](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html):
 
@@ -63,19 +60,15 @@ Essas implementações podem utilizar os modelos existentes na documentação. E
 Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-se também implementar os 
 [Métodos Sugeridos](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html). Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.
 
-## Exploração do Espaço de Estados e Testes
+## Exemplos
 
-Após implementar os métodos obrigatórios (e, se possível, os sugeridos), você poderá explorar e testar os algoritmos de procura construtiva. No teste manual, as opções disponíveis são:
+Estão implementados alguns problemas, tendo sido realizados testes de modo a exemplificar o funcionamento da classe TProcuraConstrutiva: 
 
-1. Inicializar – Define o estado inicial utilizando uma instância concreta do problema.
-2. Explorar – Navega, de forma interativa, pelo espaço de estados, permitindo executar ações válidas e testar resoluções manuais.
-3. Solução/Caminho – Exibe a solução completa ou o caminho atual para a solução, seja obtido manualmente ou por um algoritmo.
-4. Parâmetros – Mostra todos os parâmetros configuráveis e permite alterar seus valores, tanto os definidos pela superclasse quanto os específicos do problema.
-5. Executar – Executa o algoritmo com os parâmetros atualmente configurados; isso inclui os limites de execução, tempo e a seleção do algoritmo.
-6. Configurações – Permite adicionar a configuração atual como um novo cenário ou apagar configurações existentes, as quais são utilizadas no teste empírico.
-7. Teste – Executa testes empíricos sobre um conjunto de instâncias e configurações, possibilitando comparações entre diferentes algoritmos e/ou parâmetros.
-
-Essa abordagem de testes empíricos permite analisar o desempenho de algoritmos em diversos cenários, considerando a diversidade e o grau de dificuldade das instâncias de teste.
+1. Aspirador ([parte 1](teste_aspirador1), [parte 2](teste_aspirador2))
+2. [Puzzle 8](teste_puzzle8)
+3. [8 Damas](teste_8damas)
+4. [Partição](teste_particao)
+5. [Artificial](teste_artificial)
 
 ### Clonando o Repositório
 ```bash
@@ -84,3 +77,4 @@ git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
 
 ## Licença
 Distribuído sob a licença MIT. Veja o arquivo [LICENSE](https://jcoelho72.github.io/TProcuraConstrutiva/LICENSE.txt) para mais informações.
+
