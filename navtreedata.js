@@ -36,11 +36,10 @@ var NAVTREE =
     [ "Licença", "index.html#autotoc_md63", null ],
     [ "Teste 8 Damas", "teste_8damas.html", null ],
     [ "Teste Artificial", "teste_artificial.html", null ],
-    [ "Teste Aspirador - Parte 1/1", "teste_aspirador1.html", null ],
+    [ "Teste Aspirador - Parte 1/2", "teste_aspirador1.html", null ],
     [ "Teste Aspirador - Parte 2/2", "teste_aspirador2.html", null ],
     [ "Teste Particao", "teste_particao.html", null ],
     [ "Teste Puzzle 8", "teste_puzzle8.html", null ],
-    [ "Testes", "testes.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
