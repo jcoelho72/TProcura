@@ -1,7 +1,9 @@
 @page teste_aspirador1 Teste Aspirador - Parte 1/2
 
+|-------------|-------------|----------|---------|----------|------------|
 | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html)
 [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+|-------------|-------------|----------|---------|----------|------------|
 
 Execução de exemplo com base no problema do Aspirador. 
 Pode acompanhar o teste excutando as ações localmente.
@@ -164,7 +166,8 @@ forma lhe passariam desapercebidas.
 \anchor aspirador-a3
 ## Ação 3 - Ver a solução/caminho realizada manualmente
 
-Introduza: **3.**
+O resultado da resolução manual da ação anterior, é visualizar apenas o último estado. 
+No entanto houve um caminho, que ficou guardado. Introduza: **3.**
 
 ```entrada
 Opção: 3
@@ -173,7 +176,6 @@ Opção: 3
  . [.] (g:4)
 Aspirador
 ...
-[Estatísticas] expansões 7 | gerações 14 | avaliações 0
  . [.]
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
@@ -193,7 +195,7 @@ Para isso é preciso alterar o parâmetro P3(Ver).
 \anchor aspirador-a4
 ## Ação 4 - Ver a alterar um parâmetro
 
-Introduza: **4**
+Vamos editar o parâmetro P3(Ver). Introduza: **4**
 
 ```entrada
 Opção: 4
@@ -213,17 +215,12 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 ```
 Podemos ver todos os os parâmetros e valores mínimos e máximos. 
-Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, tem o valor 4, e pretendemos colocar a 1.
+Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 3, 
+tem o valor 4, e pretendemos colocar a 1.
 Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição.
 Introduza: **3; 1; *ENTER*; 3.**
 
 ```entrada
-Opção: 4
-
-P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): nada (0 a 4)
-P3(Ver): 4 (1 a 100)
-...
 Parametro:3
 
 Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.
@@ -237,11 +234,8 @@ Parametro:
 
 Aspirador
 ...
-[Estatísticas] expansões 7 | gerações 14 | avaliações 0
  . [.]
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+...
 Opção: 3
 
  * [*] (g:0)
@@ -251,7 +245,6 @@ Opção: 3
  . [.] (g:4)
 Aspirador
 ...
-[Estatísticas] expansões 7 | gerações 14 | avaliações 0
  . [.]
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
