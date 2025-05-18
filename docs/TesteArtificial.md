@@ -56,7 +56,7 @@ dos problemas, ou testar em situações extermas, mesmo antes de ter um problema
 \anchor artificia-a1
 ## Ação 1 - Ver instâncias
 
-Introduza: **1; 1.*
+Introduza: **1; 1.**
 
 ```entrada
 Nova instância (atual 1) [1-10]:1
@@ -101,7 +101,7 @@ uma solução, mas seria sempre uma procura à sorte.
 \anchor artificia-a3
 ## Ação 3 - Testes Empíricos
 
-Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos.
+Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos por ação.
 Vamos portanto comparar resultados da procura em largura, custo uniforme e procura em profundidade iterativa,
 atendendo a que desconhecemos a profundidade máxima das instâncias. 
 Vamos colocar dos algoritmos informados o Branch-and-Bound e o A*, dado que embora não exista heurística, 
