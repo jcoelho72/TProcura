@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('teste_aspirador1.html',''); initResiza
   <div class="headertitle"><div class="title">Teste Aspirador - Parte 1/2</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | |----------&mdash;|----------&mdash;|-------&mdash;|------&mdash;|-------&mdash;|---------&mdash;|</p>
+<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Sumário</h2>
@@ -355,7 +355,7 @@ Procura em Largura - expande primeiro os estados menos profundos</div></div>
 <div class="line">Aspirador</div>
 <div class="line">...</div>
 <div class="line">[.] .</div>
-<div class="line">...</div>
+<div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.</p>
 <p>A árvore da procura em largura não é desenhada na visualização textual, apenas na procura em profundidade. Nesta procura o que podemos ver é cada estado expandido e respetivos sucessores gerados. Cada estado irá aparecer pela primeira vez quando é gerado, e uma segunda vez quando é expandido. Na procura em largura, expandimos sempre o estado gerado há mais tempo.</p>
 <ul>
@@ -397,7 +397,7 @@ Ação 6 - Editar opções A</h2>
 <div class="line">P13(baralhar): 0</div>
 <div class="line">[Estatísticas] expansões 5 | gerações 6 | avaliações 0</div>
 <div class="line">[.] .</div>
-<div class="line">...</div>
+<div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> A interação de troca de parâmetro não é mais mostrada para não saturar o texto.</p>
 <p>Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.</p>
 <p><a class="anchor" id="aspirador-a7"></a></p>
@@ -422,7 +422,7 @@ Ação 7 - Editar opções B</h2>
 <div class="line">P13(baralhar): 0</div>
 <div class="line">[Estatísticas] expansões 5 | gerações 6 | avaliações 0</div>
 <div class="line">[.] .</div>
-<div class="line">...</div>
+<div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números: expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.</p>
 <p>É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.</p>
 <p>O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.</p>
@@ -435,7 +435,7 @@ Ação 8 - Resolver outra instância</h2>
 <div class="fragment"><div class="line">Aspirador</div>
 <div class="line">...</div>
 <div class="line">*  * [.] .  *  *  *  *</div>
-<div class="line">...</div>
+<div class="line">_______________________________________________________________________________</div>
 <div class="line">Opção: 5</div>
 <div class="line">#######...##### Solução encontrada!</div>
 <div class="line"> .  .  .  .  .  .  . [.](g:15)</div>
@@ -449,7 +449,7 @@ Ação 8 - Resolver outra instância</h2>
 <div class="line">P13(baralhar): 0</div>
 <div class="line">[Estatísticas] expansões 1681451 | gerações 4840697 | avaliações 0</div>
 <div class="line"> .  .  .  .  .  .  . [.]</div>
-<div class="line">...</div>
+<div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> São demasiados estados gerados, quase 5 milhões, e 5 segundos. Há um # que é colocado no output a cada 1000 expansões. Se desconfiamos que com tanto estado, dificilmente a solução pode ser óptima, podemos ver a solução. Introduza: <b>3</b></p>
 <div class="fragment"><div class="line">Opção: 3</div>
 <div class="line"> </div>
