@@ -27,14 +27,12 @@ jobs:
       run: |
         if [ ! -f layout.xml ]; then
           doxygen -l layout.xml
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add layout.xml
+          git commit -m "Adicionar layout.xml gerado automaticamente"
+          git push
         fi
-    - name: Comitar layout.xml ao repositório
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        git add layout.xml
-        git commit -m "Adicionar layout.xml gerado automaticamente"
-        git push
     - name: Publicar documentação no GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
