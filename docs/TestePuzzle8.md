@@ -1,6 +1,6 @@
 @page teste_puzzle8 Teste Puzzle 8
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 
 Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste excutando as ações localmente.
@@ -208,7 +208,7 @@ _______________________________________________________________________________
 Foi encontrada uma solução de distância 4. Podemos ver a ordem das expansões, houve estados expandidos 
 que em nada contribuiam para a solução, mas serviram para garantir que não havia outra solução mais curta.
 
-Esta instância éra fácil, mas e a instância inicial?
+Esta instância era fácil, mas e a instância inicial?
 Vamos ver, mas reduzindo o debug para 2. Introduza: **1; 40; 4; 2; 2; *ENTER*; 5
 
 ```entrada
@@ -593,7 +593,7 @@ repetidos gerados, de modo a observar o desempenho deste algoritmo nas melhores 
 Neste e em outras execuções das procuras informadas, vamos limitar o número de avaliações a 1000000, 
 de modo a ter um critério de paragem independente do tempo.
 
-Introduza: **1; 40; 4; 1; 4; 2; 3; 8; 1000000; 10; 3; *ENTER*; 5.
+Introduza: **1; 40; 4; 1; 4; 2; 3; 8; 1000000; 10; 3; *ENTER*; 5.**
 
 ```entrada
 --+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+& g:30 h:4 31|56|56
@@ -1200,4 +1200,4 @@ O Melhor Primeiro e os algoritmos cegos, estão claramente a trás.
 Note-se no entanto que o limite no número de avaliações não afeta os algoritmos cegos, pelo que um limite no 
 numero de gerações poderia permitir observar vantagem do Melhor Primeiro sobre os algoritmos cegos.
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
