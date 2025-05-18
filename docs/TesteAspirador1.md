@@ -1,12 +1,7 @@
 @page teste_aspirador1 Teste Aspirador - Parte 1/2
 
-[![Aspirador 1](https://img.shields.io/badge/Aspirador-1-lightgray)](teste_aspirador1.html)
-[![Aspirador 2](https://img.shields.io/badge/Aspirador-2-lightgray)](teste_aspirador2.html)
-[![Puzzle 8](https://img.shields.io/badge/Puzzle-8-lightgray)](teste_puzzle8.html)
-[![8 Damas](https://img.shields.io/badge/8-Damas-lightgray)](teste_8damas.html)
-[![Partição](https://img.shields.io/badge/Partição-lightgray)](teste_particao.html)
-[![Artificial](https://img.shields.io/badge/Artificial-lightgray)](teste_artificial.html)
-
+| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html)
+[Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 Execução de exemplo com base no problema do Aspirador. 
 Pode acompanhar o teste excutando as ações localmente.
@@ -101,7 +96,7 @@ Ao chamar a SolucaoVazia podemos trocar o ID da instância.
 Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos 
 escolher em ter uma instância maior ou menor. 
 A sujidade das casas é gerada aleatoriamente. 
-No entanto a semente aleatória é um parâmetro, sendo sempre a mesma caso não se altere, 
+No entanto a semente aleatória é um parâmetro (P4(Seed): 1), sendo sempre a mesma caso não se altere, 
 garantindo assim que podemos obter a mesma instância mais tarde.
 
 \anchor aspirador-a2
@@ -128,12 +123,14 @@ Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a s
 ou aspirar a sala atual. 
 Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. 
 Os sucessores são visualizados pelas suas ações, existindo três possíveis ações: esq, dir, asp.
-Para indicar o número do sucessor, é preciso ver, já que o número 1 é para a primeira ação válida, na lista de sucessores. 
+Para indicar o número do sucessor, é preciso ver, 
+já que o número 1 é para a primeira ação válida, na lista de sucessores. 
 No entanto, as ações são unívocas. Podemos indicar várias ações de uma só vez.
 
 Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. 
 Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores.
-Utilize desta vez o nome das ações e não número, introduzido duas ações de uma vez. Introduza: **dir asp; *ENTER*.**
+Utilize desta vez o nome das ações e não número, introduzido duas ações de uma vez. 
+Introduza: **dir asp; *ENTER*.**
 Note que "dir asp" podem ser introduzidas de uma vez.
 
 ```entrada
@@ -146,16 +143,23 @@ Sucessor [1-2, ação(ões), exe]:
 
 Aspirador
 ...
-[Estatísticas] expansões 6 | gerações 12 | avaliações 0
  . [.]
 _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 ```
 
-Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas. 
-Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, 
-que lhe poderá levar a identificar optimizações que de outra foram lhe passariam desapercebidas.
+Ao receber as duas ações, estas foram executadas e indicado o número de ações executados com sucesso.
+Se fosse uma solução completa, todas as ações até ao estado final, esta operação seria uma verificação da solução.
+Caso exista alguma ação inválida, a ação é rejeitada e o estado atual fica na primeira ação inválida.
+Assim, é possível verificar ou identificar erros em soluções obtidas por métodos externos, sendo apresentada
+a evidência de falha.
+
+Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver 
+instâncias pequenas. 
+Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre 
+o problema em questão, que lhe poderá levar a identificar optimizações que de outra 
+forma lhe passariam desapercebidas.
 
 \anchor aspirador-a3
 ## Ação 3 - Ver a solução/caminho realizada manualmente
