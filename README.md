@@ -16,18 +16,17 @@ A documentação completa está disponível em:
 - [Sobre o Projeto](#s1)
 - [Estado do Projeto](#s2)
 - [Funcionalidades](#s3)
-- [Instalação e Uso](#s4)
-- [Exemplos](#s5)
-- [Clonar o Repositório](#s6)
+- [Instalação](#s4)
+- [Uso](#s5)
+- [Exemplos](#s6)
 - [Licença](#s7)
 
 \anchor s1
 ## Sobre o Projeto
 
-Apresenta a implementação de algoritmos voltados para [procuras construtivas](#), com foco em explorar soluções de otimização e problemas práticos.  
-
-*Pretende-se que sirva como repositório central para procuras construtivas, enquanto projetos derivados possam contemplar procuras melhorativas e procuras adversas. 
-Estes três projetos podem servir de base para a implementação de problemas concretos, sendo criado também um projeto para mais exemplos de problemas.*
+Uma coleção de algoritmos e implementações para [procuras construtivas](#), 
+criada como ponto de partida para a implementação de novos problemas e estratégias de procura. 
+Esse repositório serve como base para explorar e desenvolver soluções em problemas de otimização.
 
 Recursos utilizados na UC de [Introdução à Inteligência Artificial](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/), 
 da [Licenciatura em Engenharia Informática](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/) da [Universidade Aberta](https://portal.uab.pt/)
@@ -51,12 +50,41 @@ Russell, S. J., & Norvig, P. (2021). Artificial Intelligence: A Modern Approach 
 - Executar de testes manuais e testes empíricos (várias instâncias e vários algoritmos/parametrizações).
 
 \anchor s4
-## Instalação e Uso
+## Instalação e Execução
 
-Clonar o projeto, compilar e executar. Teste a classe com problemas implementados. 
+Clonar o projeto, compilar e executar. 
 
-Para implementar um novo problema, redefina a superclasse TProcuraConstrutiva, implementando os seguintes métodos de [Redefinição Mandatória](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html):
+### Opção 1 - Clonar o Repositório 
+```bash
+git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
+```
+### Opção 2 - Download Manual
 
+Aceder a [página do repositório](https://github.com/jcoelho72/TProcuraConstrutiva/) e clique em **"Code" → "Download ZIP"**.
+
+Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme seu ambiente).
+
+### Opção 3 - Utilizar como Submódulo
+
+Para integrar o TProcuraConstrutiva como parte de outro projeto, utilize um submódulo:
+
+```bash
+git submodule add https://github.com/jcoelho72/TProcuraConstrutiva.git
+```
+Essa opção é útil se pretender manter o código atualizado.
+
+Teste a classe com problemas implementados. 
+
+\anchor s5
+## Uso
+
+Para implementar um novo problema utilizando o TProcuraConstrutiva, pode:
+- redefinir a superclasse TProcuraConstrutiva de raiz;
+- readaptar um problema similar e adaptá-lo.
+
+### Redefinição Mandatória
+
+Ao redefinir a superclasse, é essencial que sejam implementados os seguintes métodos: 
 - Duplicar(): Cria um objecto que é uma cópia deste.
 - Copiar(): Fica com uma cópia do objecto.
 - SolucaoVazia(): Coloca o objecto no estado inicial da procura.
@@ -64,27 +92,25 @@ Para implementar um novo problema, redefina a superclasse TProcuraConstrutiva, i
 - SolucaoCompleta(): Verifica se o estado actual é objectivo (é uma solução completa)
 - TesteManual(): Inicializa a interação com o utilizador.
 
-Essas implementações podem utilizar os modelos existentes na documentação. Estes métodos permitem a execução dos algoritmos de procura construtivos. 
+[Documentação dos métodos de Redefinição Mandatória](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html):
 
-Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-se também implementar os 
-[Métodos Sugeridos](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html). Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.
+### Métodos Sugeridos
 
-\anchor s5
+Para otimizar a execução e enriquecer as funcionalidades, recomenda-se também a implementação dos 
+[Métodos Sugeridos](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html). 
+Estes métodos adicionais podem fornecer suporte a funções avançadas e melhorar a exploração do espaço de estados.
+
+\anchor s6
 ## Exemplos
 
-Estão implementados alguns problemas, tendo sido realizados testes de modo a exemplificar o funcionamento da classe TProcuraConstrutiva: 
-
+Alguns problemas estão implementados para demonstrar o funcionamento da classe TProcuraConstrutiva:
 1. Aspirador ([parte 1](teste_aspirador1.html), [parte 2](teste_aspirador2.html))
 2. [Puzzle 8](teste_puzzle8.html)
 3. [8 Damas](teste_8damas.html)
 4. [Partição](teste_particao.html)
 5. [Artificial](teste_artificial.html)
 
-\anchor s6
-## Clonar o Repositório
-```bash
-git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
-```
+Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações.
 
 \anchor s7
 ## Licença

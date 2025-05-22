@@ -836,7 +836,7 @@ void TProcuraConstrutiva::EditarParametros() {
 		MostraParametros(2);
 		if ((opcao = NovoValor("\nParametro:")) == NAO_LIDO || opcao == 0)
 			return;
-		opcao = Dominio(opcao, 1, parametro.Count() + 1);
+		opcao = Dominio(opcao, 1, parametro.Count());
 		// mostrar descrição se existir
 		if (parametro[opcao - 1].descricao != NULL)
 			printf("\n%s", parametro[opcao - 1].descricao);
