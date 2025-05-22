@@ -105,17 +105,15 @@ Sumário</h1>
 <li><a class="el" href="index.html#s1">Sobre o Projeto</a></li>
 <li><a class="el" href="index.html#s2">Estado do Projeto</a></li>
 <li><a class="el" href="index.html#s3">Funcionalidades</a></li>
-<li><a class="el" href="index.html#s4">Instalação e Uso</a></li>
-<li><a class="el" href="index.html#s5">Exemplos</a></li>
-<li><a class="el" href="index.html#s6">Clonar o Repositório</a></li>
+<li><a class="el" href="index.html#s4">Instalação</a></li>
+<li><a class="el" href="index.html#s5">Uso</a></li>
+<li><a class="el" href="index.html#s6">Exemplos</a></li>
 <li><a class="el" href="index.html#s7">Licença</a></li>
 </ul>
 <p><a class="anchor" id="s1"></a></p>
 <h1><a class="anchor" id="autotoc_md46"></a>
 Sobre o Projeto</h1>
-<p>Apresenta a implementação de algoritmos voltados para "" "procuras construtivas", com foco em explorar soluções de otimização e problemas práticos. <br  />
-</p>
-<p><em>Pretende-se que sirva como repositório central para procuras construtivas, enquanto projetos derivados possam contemplar procuras melhorativas e procuras adversas. Estes três projetos podem servir de base para a implementação de problemas concretos, sendo criado também um projeto para mais exemplos de problemas.</em></p>
+<p>Uma coleção de algoritmos e implementações para "" "procuras construtivas", criada como ponto de partida para a implementação de novos problemas e estratégias de procura. Esse repositório serve como base para explorar e desenvolver soluções em problemas de otimização.</p>
 <p>Recursos utilizados na UC de <a href="https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/">Introdução à Inteligência Artificial</a>, da <a href="https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/">Licenciatura em Engenharia Informática</a> da <a href="https://portal.uab.pt/">Universidade Aberta</a></p>
 <p>Bibliografia da UC, e base teórica para o projeto: Russell, S. J., &amp; Norvig, P. (2021). Artificial Intelligence: A Modern Approach (4th ed.). Pearson.</p>
 <p><a class="anchor" id="s2"></a></p>
@@ -137,10 +135,31 @@ Funcionalidades</h1>
 </ul>
 <p><a class="anchor" id="s4"></a></p>
 <h1><a class="anchor" id="autotoc_md49"></a>
-Instalação e Uso</h1>
-<p>Clonar o projeto, compilar e executar. Teste a classe com problemas implementados.</p>
-<p>Para implementar um novo problema, redefina a superclasse <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, implementando os seguintes métodos de <a href="https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html">Redefinição Mandatória</a>:</p>
-<ul>
+Instalação e Execução</h1>
+<p>Clonar o projeto, compilar e executar.</p>
+<h2><a class="anchor" id="autotoc_md50"></a>
+Opção 1 - Clonar o Repositório</h2>
+<div class="fragment"><div class="line">git clone https://github.com/jcoelho72/TProcuraConstrutiva.git</div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md51"></a>
+Opção 2 - Download Manual</h2>
+<p>Aceder a <a href="https://github.com/jcoelho72/TProcuraConstrutiva/">página do repositório</a> e clique em **"Code" → "Download ZIP"**.</p>
+<p>Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme seu ambiente).</p>
+<h2><a class="anchor" id="autotoc_md52"></a>
+Opção 3 - Utilizar como Submódulo</h2>
+<p>Para integrar o <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a> como parte de outro projeto, utilize um submódulo:</p>
+<div class="fragment"><div class="line">git submodule add https://github.com/jcoelho72/TProcuraConstrutiva.git</div>
+</div><!-- fragment --><p> Essa opção é útil se pretender manter o código atualizado.</p>
+<p>Teste a classe com problemas implementados.</p>
+<p><a class="anchor" id="s5"></a></p>
+<h1><a class="anchor" id="autotoc_md53"></a>
+Uso</h1>
+<p>Para implementar um novo problema utilizando o <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, pode:</p><ul>
+<li>redefinir a superclasse <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a> de raiz;</li>
+<li>readaptar um problema similar e adaptá-lo.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md54"></a>
+Redefinição Mandatória</h2>
+<p>Ao redefinir a superclasse, é essencial que sejam implementados os seguintes métodos:</p><ul>
 <li>Duplicar(): Cria um objecto que é uma cópia deste.</li>
 <li>Copiar(): Fica com uma cópia do objecto.</li>
 <li>SolucaoVazia(): Coloca o objecto no estado inicial da procura.</li>
@@ -148,25 +167,23 @@ Instalação e Uso</h1>
 <li>SolucaoCompleta(): Verifica se o estado actual é objectivo (é uma solução completa)</li>
 <li>TesteManual(): Inicializa a interação com o utilizador.</li>
 </ul>
-<p>Essas implementações podem utilizar os modelos existentes na documentação. Estes métodos permitem a execução dos algoritmos de procura construtivos.</p>
-<p>Para optimizar a execução dos algoritmos e enriquecer a sua funcionalidade, recomenda-se também implementar os <a href="https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html">Métodos Sugeridos</a>. Esses métodos adicionais podem oferecer suporte a funcionalidades avançadas e contribuir para uma melhor exploração do espaço de estados.</p>
-<p><a class="anchor" id="s5"></a></p>
-<h1><a class="anchor" id="autotoc_md50"></a>
+<p><a href="https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html">Documentação dos métodos de Redefinição Mandatória</a>:</p>
+<h2><a class="anchor" id="autotoc_md55"></a>
+Métodos Sugeridos</h2>
+<p>Para otimizar a execução e enriquecer as funcionalidades, recomenda-se também a implementação dos <a href="https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html">Métodos Sugeridos</a>. Estes métodos adicionais podem fornecer suporte a funções avançadas e melhorar a exploração do espaço de estados.</p>
+<p><a class="anchor" id="s6"></a></p>
+<h1><a class="anchor" id="autotoc_md56"></a>
 Exemplos</h1>
-<p>Estão implementados alguns problemas, tendo sido realizados testes de modo a exemplificar o funcionamento da classe <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>:</p>
-<ol type="1">
+<p>Alguns problemas estão implementados para demonstrar o funcionamento da classe <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>:</p><ol type="1">
 <li>Aspirador (<a href="teste_aspirador1.html">parte 1</a>, <a href="teste_aspirador2.html">parte 2</a>)</li>
 <li><a href="teste_puzzle8.html">Puzzle 8</a></li>
 <li><a href="teste_8damas.html">8 Damas</a></li>
 <li><a href="teste_particao.html">Partição</a></li>
 <li><a href="teste_artificial.html">Artificial</a></li>
 </ol>
-<p><a class="anchor" id="s6"></a></p>
-<h1><a class="anchor" id="autotoc_md51"></a>
-Clonar o Repositório</h1>
-<div class="fragment"><div class="line">git clone https://github.com/jcoelho72/TProcuraConstrutiva.git</div>
-</div><!-- fragment --><p><a class="anchor" id="s7"></a></p>
-<h1><a class="anchor" id="autotoc_md52"></a>
+<p>Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações.</p>
+<p><a class="anchor" id="s7"></a></p>
+<h1><a class="anchor" id="autotoc_md57"></a>
 Licença</h1>
 <p>Distribuído sob a licença MIT. Veja o arquivo <a href="https://jcoelho72.github.io/TProcuraConstrutiva/LICENSE.txt">LICENSE</a> para mais informações. </p>
 </div></div><!-- PageDoc -->

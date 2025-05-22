@@ -6,5 +6,6 @@ var searchData=
   ['uma_20procura_20em_20profundidade_20primeiro_3',['Ação 11 - Efetuar uma procura em Profundidade Primeiro',['../teste_aspirador2.html#autotoc_md23',1,'']]],
   ['union_4',['Union',['../classTVector.html#a66382974113835538618976d3f43e6b3',1,'TVector']]],
   ['upper_5fmask_5',['UPPER_MASK',['../TRand_8cpp.html#a39bc458849360f8f371b54c4365d397f',1,'TRand.cpp']]],
-  ['uso_6',['Instalação e Uso',['../index.html#autotoc_md49',1,'']]]
+  ['uso_6',['Uso',['../index.html#autotoc_md53',1,'']]],
+  ['utilizar_20como_20submódulo_7',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md52',1,'']]]
 ];
