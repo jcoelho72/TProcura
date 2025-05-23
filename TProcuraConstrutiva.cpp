@@ -42,7 +42,7 @@ int TProcuraConstrutiva::tamanhoCodificado = OBJETO_HASHTABLE;
 uint64_t TProcuraConstrutiva::elementosHT[TAMANHO_HASHTABLE][OBJETO_HASHTABLE]; // hashtable0
 int TProcuraConstrutiva::custoHT[TAMANHO_HASHTABLE]; // hashtable / custo do estado que foi gerado
 uint64_t TProcuraConstrutiva::estadoCodHT[OBJETO_HASHTABLE]; // elemento codificado
-
+int TProcuraConstrutiva::colocadosHT = 0; // número de elementos colocados na HT
 
 TProcuraConstrutiva::TProcuraConstrutiva(void) : pai(NULL), custo(1), heuristica(0) {
 }
@@ -1307,9 +1307,29 @@ unsigned int TProcuraConstrutiva::Hash() {
 
 void TProcuraConstrutiva::LimparHT() {
 	if (parametro[estadosRepetidos].valor == gerados) {
-		for (int i = 0; i < TAMANHO_HASHTABLE; i++)
-			for (int j = 0; j < tamanhoCodificado; j++)
-				elementosHT[i][j] = 0;
+		if (parametro[nivelDebug].valor >= 1) {
+			int usado = 0; // contar para calcular taxa de ocupação
+			for (int i = 0; i < TAMANHO_HASHTABLE; i++) {
+				bool limpo = true;
+				for (int j = 0; j < tamanhoCodificado; j++)
+					if (elementosHT[i][j] != 0) {
+						limpo = false;
+						elementosHT[i][j] = 0;
+					}
+				if (!limpo)
+					usado++;
+			}
+			// reportar estatísticas se existir muito reuso
+			if (usado > 0 && usado * 2 <= colocadosHT) {
+				printf("\nHT: utilização %d%%, reuso: %.2f vezes",
+					usado * 100 / TAMANHO_HASHTABLE,
+					1.0 * colocadosHT / usado);
+			}
+		} else
+			for (int i = 0; i < TAMANHO_HASHTABLE; i++)
+				for (int j = 0; j < tamanhoCodificado; j++)
+					elementosHT[i][j] = 0;
+		colocadosHT = 0;
 		// coloca o estado atual na hasttable, para não ser gerado
 		ExisteHT();
 	}
@@ -1323,6 +1343,7 @@ bool TProcuraConstrutiva::ExisteHT() {
 	for (int i = 0; i < tamanhoCodificado; i++)
 		if (elementosHT[indice][i] != estadoCodHT[i]) {
 			SubstituirHT(indice);
+			colocadosHT++;
 			return false; // não existia
 		}
 	// elemento é igual, mas se o custo for mais alto, não conta

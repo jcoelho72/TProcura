@@ -1006,6 +1006,7 @@ protected:
 	static uint64_t elementosHT[TAMANHO_HASHTABLE][OBJETO_HASHTABLE]; // hashtable
 	static int custoHT[TAMANHO_HASHTABLE]; // hashtable / custo do estado que foi gerado
 	static uint64_t estadoCodHT[OBJETO_HASHTABLE]; // elemento codificado
+	static int colocadosHT; // número de elementos colocados na HT
 	unsigned int Hash(); // retorna um valor hash do estado atual, após codificado
 	void LimparHT();
 	// caso o estado não exista, retorna falso e insere para que não seja gerado novamente
