@@ -10,7 +10,7 @@
 // número de elementos na hashtable com perdas
 #define TAMANHO_HASHTABLE 1000000
 // tamanho máximo de um objecto, em unidades de 64 bits
-#define OBJETO_HASHTABLE 4
+#define OBJETO_HASHTABLE 5
 // código para número não lido (não deve ser utilizado num parâmetro)
 #define NAO_LIDO -1000000
 
