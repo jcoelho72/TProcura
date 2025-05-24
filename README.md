@@ -58,6 +58,10 @@ Clonar o projeto, compilar e executar.
 ```bash
 git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
 ```
+ou 
+
+Aceder a [página do repositório](https://github.com/jcoelho72/TProcuraConstrutiva/) e clique em **"Code" → "Open with Visual Studio"**.
+
 ### Opção 2 - Download Manual
 
 Aceder a [página do repositório](https://github.com/jcoelho72/TProcuraConstrutiva/) e clique em **"Code" → "Download ZIP"**.
