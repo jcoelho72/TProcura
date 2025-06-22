@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
 
 	printf("\nTeste TProcurasConstrutivas\nProblema:\n\
   1 - Aspirador\n  2 - Puzzle 8\n  3 - 8 Damas\n  4 - Partição\n  5 - Artificial\nOpção: ");
-	switch(TProcuraConstrutiva::NovoValor("")) {
+	switch(TProcura::NovoValor("")) {
 	case 1:	aspirador.TesteManual("Aspirador"); break;
 	case 2:	puzzle8.TesteManual("Puzzle 8"); break;
 	case 3:	damas.TesteManual("8 Damas"); break;

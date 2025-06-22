@@ -8,8 +8,8 @@ Problema:
   5 - Artificial
 Opção: 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 0 | gerações 0 | avaliações 0 
@@ -20,8 +20,8 @@ _______________________________________________________________________________
 Opção: 
 Nova instância (atual 4) [2-50]: 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 0 | gerações 0 | avaliações 0 
@@ -44,8 +44,8 @@ g:0 6|12
 Ações: esq asp 
 Sucessor [1-2, ação(ões), exe]:
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -54,11 +54,11 @@ _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 Opção: 
- * [*] (g:0)  esq asp dir
- . [.] (g:3) 
+ * [*] (g:0)  esq asp dir asp
+ . [.] (g:4) 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -69,28 +69,28 @@ _______________________________________________________________________________
 Opção: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
-P3(Ver): 4 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
 P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
-Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.
-Ver (atual 4): 
+Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
+Seed (atual 1): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -98,8 +98,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -108,13 +108,11 @@ _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 Opção: 
- * [*] (g:0) 
-[*] *  (g:1) 
-[.] *  (g:2) 
- . [.] (g:3) 
+ * [*] (g:0)  esq asp dir asp
+ . [.] (g:4) 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -125,8 +123,8 @@ _______________________________________________________________________________
 Opção: 
 Nova instância (atual 2) [2-50]: 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -137,12 +135,12 @@ _______________________________________________________________________________
 Opção: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): nada (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -158,12 +156,12 @@ Nível de debug, de reduzido a completo.
 Debug (atual 0): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -171,8 +169,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -183,43 +181,28 @@ _______________________________________________________________________________
 Opção: 
 g:0 
  * [*]
-  +#1 g:1 1|2 esq
-  |[*] * 
-  +#2 g:1 1|2 asp
-    * [.]
+Ações: esq asp 
 g:1 1|2
 [*] * 
-  +#1 g:2 2|4 dir
-  | * [*]
-  +#2 g:2 2|4 asp
-   [.] * 
+Ações: dir asp 
 g:1 2|4
  * [.]
-  +#1 g:2 3|6 esq
-  |[*] . 
-  +#2 g:2 3|6 asp
-    * [.]
+Ações: esq asp 
 g:2 3|6
  * [*]
-  +#1 g:3 4|8 esq
-  |[*] * 
-  +#2 g:3 4|8 asp
-    * [.]
+Ações: esq asp 
 g:2 4|8
 [.] * 
-  +#1 g:3 5|10 dir
-  | . [*]
-  +#2 g:3 5|10 asp
-   [.] * 
+Ações: dir asp 
 g:2 5|10
 [*] .  Solução encontrada!
 [.] . (g:3)
-P1:1 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1
+P1:1 P2:4 P3:1 P4:10 P5:0 P6:0 P7:0 P8:4 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 3 (0,001s)
+Resultado: 3 (0,000s)
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -228,13 +211,11 @@ _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 Opção: 
- * [*] (g:0) 
- * [.] (g:1) 
-[*] .  (g:2) 
+ * [*] (g:0)  asp esq asp
 [.] .  (g:3) 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -245,8 +226,8 @@ _______________________________________________________________________________
 Opção: 
 Nova instância (atual 2) [2-50]: 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -257,12 +238,12 @@ _______________________________________________________________________________
 Opção: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -276,12 +257,12 @@ Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).
 Repetidos (atual 1): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ascendentes (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -297,12 +278,12 @@ Nível de debug, de reduzido a completo.
 Debug (atual 4): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): detalhe (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ascendentes (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -310,8 +291,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): detalhe | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 6 | gerações 12 | avaliações 0 
@@ -331,12 +312,12 @@ g:2 3|4
 g:2 4|5
 [*] .  Solução encontrada!
 [.] . (g:3)
-P1:1 P2:3 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:2
+P1:1 P2:3 P3:1 P4:10 P5:0 P6:0 P7:0 P8:4 P9:0 P10:2
 P11:100 P12:0 P13:0
 Resultado: 3 (0,000s)
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): detalhe | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0 
@@ -347,8 +328,8 @@ _______________________________________________________________________________
 Opção: 
 Nova instância (atual 2) [2-50]: 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): detalhe | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0 
@@ -359,12 +340,12 @@ _______________________________________________________________________________
 Opção: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): detalhe (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ascendentes (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -378,12 +359,12 @@ Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).
 Repetidos (atual 2): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): detalhe (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): gerados (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -399,12 +380,12 @@ Nível de debug, de reduzido a completo.
 Debug (atual 3): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): passos (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): gerados (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -412,8 +393,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0 
@@ -428,12 +409,12 @@ g:1 2|3
 g:2 3|4
 g:2 4|5 Solução encontrada!
 [.] . (g:3)
-P1:1 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:3
+P1:1 P2:2 P3:1 P4:10 P5:0 P6:0 P7:0 P8:4 P9:0 P10:3
 P11:100 P12:0 P13:0
-Resultado: 3 (0,000s)
+Resultado: 3 (0,018s)
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0 
@@ -444,8 +425,8 @@ _______________________________________________________________________________
 Opção: 
 Nova instância (atual 2) [2-50]: 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0 
@@ -456,12 +437,12 @@ _______________________________________________________________________________
 Opção: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): passos (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): gerados (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -475,12 +456,12 @@ Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).
 Repetidos (atual 3): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): passos (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -496,12 +477,12 @@ Nível de debug, de reduzido a completo.
 Debug (atual 2): 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): atividade (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -509,8 +490,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 5 | gerações 6 | avaliações 0 
@@ -520,12 +501,12 @@ _______________________________________________________________________________
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 Opção: ################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################## Solução encontrada!
  .  .  .  .  .  .  . [.](g:15)
-P1:1 P2:1 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1
+P1:1 P2:1 P3:1 P4:10 P5:0 P6:0 P7:0 P8:4 P9:0 P10:1
 P11:100 P12:0 P13:0
-Resultado: 15 (4,930s)
+Resultado: 15 (5,474s)
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 1681451 | gerações 4840697 | avaliações 0 
@@ -534,25 +515,14 @@ _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 Opção: 
- *  * [.] .  *  *  *  *  (g:0) 
- * [*] .  .  *  *  *  *  (g:1) 
-[*] *  .  .  *  *  *  *  (g:2) 
-[.] *  .  .  *  *  *  *  (g:3) 
- . [*] .  .  *  *  *  *  (g:4) 
- . [.] .  .  *  *  *  *  (g:5) 
- .  . [.] .  *  *  *  *  (g:6) 
- .  .  . [.] *  *  *  *  (g:7) 
- .  .  .  . [*] *  *  *  (g:8) 
- .  .  .  . [.] *  *  *  (g:9) 
- .  .  .  .  . [*] *  *  (g:10) 
- .  .  .  .  . [.] *  *  (g:11) 
- .  .  .  .  .  . [*] *  (g:12) 
- .  .  .  .  .  . [.] *  (g:13) 
- .  .  .  .  .  .  . [*] (g:14) 
+ *  * [.] .  *  *  *  *  (g:0)  esq esq asp dir
+ . [*] .  .  *  *  *  *  (g:4)  asp dir dir dir
+ .  .  .  . [*] *  *  *  (g:8)  asp dir asp dir
+ .  .  .  .  .  . [*] *  (g:12)  asp dir asp
  .  .  .  .  .  .  . [.] (g:15) 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 1681451 | gerações 4840697 | avaliações 0 
@@ -563,8 +533,8 @@ _______________________________________________________________________________
 Opção: 
 Nova instância (atual 8) [2-50]: 
 Aspirador
-P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Largura Primeiro | P2(Debug): atividade | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 1681451 | gerações 4840697 | avaliações 0 
@@ -575,12 +545,12 @@ _______________________________________________________________________________
 Opção: 
 P1(Algoritmo): Largura Primeiro (1 a 7)
 P2(Debug): atividade (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -598,12 +568,12 @@ Algoritmo base a executar.
 Algoritmo (atual 1): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): atividade (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -616,12 +586,12 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
 Limite (atual 0): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): atividade (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 3 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -637,12 +607,12 @@ Nível de debug, de reduzido a completo.
 Debug (atual 1): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 3 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -656,12 +626,12 @@ Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).
 Repetidos (atual 1): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 3 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -669,8 +639,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 1681451 | gerações 4840697 | avaliações 0 
@@ -681,27 +651,21 @@ _______________________________________________________________________________
 Opção: g:0 
  * [*]
   +g:1 1|2 esq
-  |[*] * 
   |  +g:2 2|4 dir
-  |  | * [*]
   |  |
   |  +g:2 2|4 asp
-  |   [.] * 
   |   
   +g:1 2|4 asp
-    * [.]
      +g:2 3|6 esq
-     |[*] . 
      |
      +g:2 3|6 asp
-       * [.]
       
-P1:3 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P1:3 P2:4 P3:1 P4:10 P5:0 P6:0 P7:0 P8:4 P9:3 P10:1
 P11:100 P12:0 P13:0
 Resultado: -1 (0,000s)
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 3 | gerações 6 | avaliações 0 
@@ -712,8 +676,8 @@ _______________________________________________________________________________
 Opção: 
 Nova instância (atual 2) [2-50]: 
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 3 | gerações 6 | avaliações 0 
@@ -724,12 +688,12 @@ _______________________________________________________________________________
 Opção: 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 3 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -742,12 +706,12 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
 Limite (atual 3): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): completo (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 10 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -763,12 +727,12 @@ Nível de debug, de reduzido a completo.
 Debug (atual 4): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): detalhe (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 10 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -776,8 +740,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 10 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 3 | gerações 6 | avaliações 0 
@@ -797,12 +761,12 @@ Opção: --+--+--+--+--+--+--+--+--+= g:9 9|18
   |  |  |  |  |  |     |  | * [.]
   |  |  |  |  |  |     |  + Solução encontrada!
 [.] . (g:9)
-P1:3 P2:3 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:10 P10:1
+P1:3 P2:3 P3:1 P4:10 P5:0 P6:0 P7:0 P8:4 P9:10 P10:1
 P11:100 P12:0 P13:0
-Resultado: 9 (0,001s)
+Resultado: 9 (0,000s)
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 10 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 12 | gerações 24 | avaliações 0 
@@ -811,19 +775,13 @@ _______________________________________________________________________________
 | 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
 | 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
 Opção: 
- * [*] (g:0) 
-[*] *  (g:1) 
- * [*] (g:2) 
-[*] *  (g:3) 
- * [*] (g:4) 
-[*] *  (g:5) 
- * [*] (g:6) 
- * [.] (g:7) 
-[*] .  (g:8) 
+ * [*] (g:0)  esq dir esq dir
+ * [*] (g:4)  esq dir asp esq
+[*] .  (g:8)  asp
 [.] .  (g:9) 
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 10 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 12 | gerações 24 | avaliações 0 
@@ -834,8 +792,8 @@ _______________________________________________________________________________
 Opção: 
 Nova instância (atual 2) [2-50]: 
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 10 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 12 | gerações 24 | avaliações 0 
@@ -846,12 +804,12 @@ _______________________________________________________________________________
 Opção: 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): detalhe (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 10 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -864,12 +822,12 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
 Limite (atual 10): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): detalhe (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -885,12 +843,12 @@ Nível de debug, de reduzido a completo.
 Debug (atual 3): 
 P1(Algoritmo): Profundidade Primeiro (1 a 7)
 P2(Debug): passos (0 a 4)
-P3(Ver): 1 (1 a 100)
-P4(Seed): 1 (1 a 1000000)
-P5(Tempo): 10 (1 a 3600)
-P6(Gerações): 0 (0 a 1000000000)
-P7(Expansões): 0 (0 a 1000000000)
-P8(Avaliações): 0 (0 a 1000000000)
+P3(Seed): 1 (1 a 1000000)
+P4(Tempo): 10 (1 a 3600)
+P5(Gerações): 0 (0 a 1000000000)
+P6(Expansões): 0 (0 a 1000000000)
+P7(Avaliações): 0 (0 a 1000000000)
+P8(Ver): 4 (1 a 100)
 P9(Limite): 0 (-1 a 1000000)
 P10(Repetidos): ignorar (1 a 3)
 P11(pesoAStar): 100 (0 a 10000)
@@ -898,8 +856,8 @@ P12(ruido): 0 (-100 a 100)
 P13(baralhar): 0 (0 a 1)
 Parametro:
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 12 | gerações 24 | avaliações 0 
@@ -926,12 +884,12 @@ Iteração 4:
   +--+--+= g:3 10|20
      |  + Solução encontrada!
 [.] . (g:3)
-P1:3 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1
+P1:3 P2:2 P3:1 P4:10 P5:0 P6:0 P7:0 P8:4 P9:0 P10:1
 P11:100 P12:0 P13:0
 Resultado: 3 (0,000s)
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Seed): 1 | P4(Tempo): 10
+P5(Gerações): 0 | P6(Expansões): 0 | P7(Avaliações): 0 | P8(Ver): 4
 P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
 P13(baralhar): 0
 [Estatísticas] expansões 10 | gerações 20 | avaliações 0 

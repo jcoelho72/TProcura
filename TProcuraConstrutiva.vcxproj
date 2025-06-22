@@ -127,22 +127,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CListaNo.h" />
     <ClInclude Include="Teste\Aspirador.h" />
     <ClInclude Include="Teste\OitoDamas.h" />
     <ClInclude Include="Teste\Particao.h" />
     <ClInclude Include="Teste\ProblemaArtificial.h" />
     <ClInclude Include="Teste\Puzzle8.h" />
+    <ClInclude Include="TProcura.h" />
     <ClInclude Include="TProcuraConstrutiva.h" />
     <ClInclude Include="TRand.h" />
     <ClInclude Include="TVector.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CListaNo.cpp" />
     <ClCompile Include="Teste\Aspirador.cpp" />
     <ClCompile Include="Teste\OitoDamas.cpp" />
     <ClCompile Include="Teste\Particao.cpp" />
     <ClCompile Include="Teste\ProblemaArtificial.cpp" />
     <ClCompile Include="Teste\Puzzle8.cpp" />
     <ClCompile Include="Teste\teste.cpp" />
+    <ClCompile Include="TProcura.cpp" />
     <ClCompile Include="TProcuraConstrutiva.cpp" />
     <ClCompile Include="TRand.cpp" />
   </ItemGroup>

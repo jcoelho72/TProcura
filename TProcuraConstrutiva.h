@@ -3,16 +3,14 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "TVector.h"
+#include "TProcura.h"
 #include <stdint.h>
-#include <time.h>
 #include <limits.h>
 
 // número de elementos na hashtable com perdas
 #define TAMANHO_HASHTABLE 1000000
 // tamanho máximo de um objecto, em unidades de 64 bits
 #define OBJETO_HASHTABLE 5
-// código para número não lido (não deve ser utilizado num parâmetro)
-#define NAO_LIDO -1000000
 
 class TProcuraConstrutiva;
 
@@ -22,6 +20,8 @@ class TProcuraConstrutiva;
  * @note É um alias para `TProcuraConstrutiva*`, facilitando a leitura e uso.
  */
 typedef TProcuraConstrutiva* TNo;
+
+
 
 /**
  * @enum EParametrosConstrutiva
@@ -42,14 +42,7 @@ typedef TProcuraConstrutiva* TNo;
  * @endcode
  */
 enum EParametrosConstrutiva {
-	algoritmo = 0,         ///< Algoritmo base a executar.
-	nivelDebug,            ///< Nível de debug, de reduzido a completo.
-	verAcoes,              ///< Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações.
-	seed,                  ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
-	limiteTempo,           ///< Tempo limite em segundos. 
-	limiteGeracoes,        ///< Número máximo de gerações (0 significa sem limite).
-	limiteExpansoes,       ///< Número máximo de expansões (0 significa sem limite).
-	limiteAvaliacoes,      ///< Número máximo de avaliações (0 significa sem limite).
+	verAcoes = parametrosProcura, ///< Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações.
 	limite,                ///< Valor dependente do algoritmo. Exemplo: Profundidade limitada.
 	estadosRepetidos,      ///< Forma de lidar com estados repetidos (ignorá-los, ascendentes, gerados).
 	pesoAStar,             ///< Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. 
@@ -77,25 +70,6 @@ enum EAlgoritmo {
 	branchAndBound       ///< Executa o algoritmo Branch-and-Bound, um algoritmo informado. @see TProcuraConstrutiva::BranchAndBound()
 };
 
-/**
- * @brief Níveis de detalhamento para debug.
- *
- * Controla a quantidade de informações exibidas durante a execução do algoritmo.
- *
- * @see nivelDebug
- * 
- * @code
- * if(parametro[nivelDebug].valor > passos)
- *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
- * @endcode
- */
-enum ENivelDebug {
-	nada = 0,  ///< Sem informações de debug.
-	atividade, ///< Apenas eventos principais.
-	passos,    ///< Exibe passos intermediários.
-	detalhe,   ///< Debug detalhada sobre estados e decisões.
-	completo   ///< Mostra toda a execução detalhadamente.
-};
 
 /**
  * @brief Enumerado com os valores possíveis do parametro estadosRepetidos
@@ -112,63 +86,6 @@ enum EEstadosRepetidos {
 	gerados        ///< estados são comparados com todos os gerados, e se forem repetidos são removidos
 };
 
-/**
- * @brief Define o sentido da operação de entrada/saída de dados.
- *
- * @note Utilizado em funções que requerem distinção entre operação de leitura e gravação.
- */
-enum EOperacao { gravar = 0, ler };
-
-/**
- * @brief Estrutura para registo de um parâmetro
- *
- * Permite registrar um parâmetro, armazenando seu valor, 
- * limites máximo e mínimo, além de nome e descrição.
- * Cada valor pode ter também um nome, em vez de ser um número.
- * Podem e devem ser adicionados parâmetros específicos de cada problema, 
- * de modo a poderem ser testados no teste empírico.
- * 
- * @note
- * Existe uma vetor de parametros declarada de forma estática, 
- * de modo a aceder a qualquer parametro de forma global no código.
- * A ordem dos parametros estão de acordo com o tipo enumerado EParametrosConstrutiva
- * 
- * @see EParametrosConstrutiva e ResetParametros()
- * 
- * Exemplo:
- * @code
- * if(parametro[nivelDebug].valor > passos) 
- *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
- * @endcode
- */
-typedef struct SParametro { 
-	/// @brief nome do parametro, opcional mas aconselhado nos parâmetros específicos
-	const char* nome;
-	/// @brief valor do parametro
-	int valor;
-	/// @brief valor mínimo que o parametro pode tomar
-	int min;
-	/// @brief valor máximo que o parametro pode tomar
-	int max; 
-	/// @brief descrição do parametro, opcional 
-	const char* descricao; 
-	/// @brief Nome associado a cada valor do parâmetro, útil para variáveis categóricas.
-	/// @note Especialmente relevante quando os valores não seguem uma sequência ordenada.
-	const char** nomeValores;
-} TParametro;
-
-
-/**
- * @internal
- * @brief Estrutura para guardar o resultado de uma execução
- *
- * Permite registar informação para testes empíricos, de modo a avaliar
- * o desempenho de algoritmos e respetivas parametrizações.
- */
-typedef struct SResultado {
-	int instancia, custo, expansoes, geracoes, avaliacoes, configuracao; 
-	clock_t tempo; 
-} TResultado;
 
 /**
  * @brief Representa um estado no espaço de estados.
@@ -189,7 +106,7 @@ typedef struct SResultado {
  * **Observação:** Alguns métodos e parâmetros terão efeito apenas se determinados métodos forem
  * redefinidos na subclasse.
  */
-class TProcuraConstrutiva
+class TProcuraConstrutiva : public TProcura
 {
 public:
 	TProcuraConstrutiva(void);
@@ -304,7 +221,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void SolucaoVazia(void) { custo = 0; }
+	void SolucaoVazia(void) { custo = 0; }
 
 	/**
 	 * @brief Coloca em sucessores a lista de estados sucessores
@@ -369,47 +286,53 @@ public:
 	 */
 	virtual bool SolucaoCompleta(void) { return false; }
 
+
 	/**
-	 * @brief Inicializa a interação com o utilizador
-	 * @note Redefinição necessária para definir as instancias existentes.
+	 * @brief Inicializa os parametros
+	 * @note Redefinição necessária se forem adicionados novos parametros, ou for alterado
+	 * o valor de omissão de parametros existentes.
 	 *
-	 * Esta função arranca com o teste manual, orientada para o programador.
-	 * A interface permite:
-	 * - visualizar e trocar de instância
-	 * - explorar o espaço de estados nessa instancia, executando ações
-	 * - ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)
-	 * - ver e editar qualquer parametro de execução
-	 * - o algoritmo é também um parametro, podendo naturalmente ser alterado
-	 * - há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
-	 * - executar o algoritmo com a configuração atual
-	 * - adicionar a configuração atual a um conjunto de configurações de teste
-	 * - executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas
+	 * Nesta função, a primeira instrução deverá ser a chamada da função da superclasse,
+	 * para que sejam criados os parametros da superclasse antes de qualquer outra instrução.
 	 *
-	 * Esta função deve ser redefinida para inicializar a variável com informação dos IDs das instâncias disponíveis.
-	 * Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
+	 * Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos.
+	 * Nesta função, podem ser definidos estes valores de omissão, que se não forem alterados,
+	 * irá executar a configuração mais genérica.
 	 *
-	 * @note A instância selecionada irá ser carregada em SolucaoVazia(), utilizando o valor atual.
-	 * @note Esta função deve ser o ponto de entrada, a executar no main.
+	 * Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema.
+	 * Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar
+	 * em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
+	 *
+	 * @note Na criação de um novo parametro, dar uma estrutura TParametro.
+	 *
+	 * @note Ao adicionar novos parâmetros, é recomendável manter a enumeração sincronizada
+	 * com a da superclasse. O primeiro elemento deve ser `parametrosConstrutivos`,
+	 * garantindo que novas adições na superclasse sejam automaticamente refletidas aqui.
 	 *
 	 * @see TParametro
 	 *
+	 * Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros.
 	 * @code
-	 * void CSubProblema::TesteManual(const char* nome)
+	 * // continuação da enumeração EParametrosConstrutiva
+	 * enum ESubProblema { opcaoHeur = parametrosConstrutivas, opcaoSuc };
+	 * void CSubProblema::ResetParametros(void)
 	 * {
-	 *     // indicar que há 10 instâncias, sendo a instância inicial a 1
-	 * 	   instancia = { "Problema", 1,1,10, "Características dos problemas", NULL };
-	 * 	   TProcuraConstrutiva::TesteManual(nome);
-	 * }
+	 *     static const char* nomesSuc[] = { "todas", "contributo" }; // nomes para os valores de opcaoSuc
+	 *     // chamar primeiro o método na superclasse
+	 *     TProcuraConstrutiva::ResetParametros();
+	 *     // neste exemplo considerou-se que se pretende ver apenas estados completos, ignorando ações
+	 *     parametro[verAcoes].valor = 1;
 	 *
-	 * // exemplo do main
-	 * int main()
-	 * {
-	 *     CSubProblema problema;
-	 *     problema.TesteManual("CSubProblema");
+	 *     // novo parametro para utilizar na função Heuristica()
+	 *     parametro.Add({ "Opção Heurística", 0,0,10,
+	 *         "explicação do que acontece na heuristica, com este parametro entre 0 e 10",NULL });
+	 *     // novo parametro para utilizar na função Sucessores()
+	 *     parametro.Add({ "Opção Sucessores", 0,0,1,
+	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc });
 	 * }
 	 * @endcode
 	 */
-	virtual void TesteManual(const char* nome);
+	void ResetParametros();
 
 	 /** @} */ // Fim do grupo RedefinicaoMandatoria
 
@@ -532,89 +455,6 @@ public:
 	 */
 	virtual int Heuristica(void);
 
-	/**
-	 * @brief Mostra o estado no ecrã, para debug.
-	 * @note Redefinição opcional. Necessário para visualizar a procura, e explorar o espaço manualmente.
-	 *
-	 * Esta função deverá mostrar claramente o estado atual, em texto mas da forma mais confortável possível.
-	 * O formato texto destina-se principalmente a quem implementa o problema, e não utilizadores
-	 * finais.
-	 * É importante poder explorar o espaço de estados, para verificar a correta implementação
-	 * dos sucessores, como também possa ver a árvore de procura dos algoritmos, para árvores pequenas,
-	 * e assim detectar bugs.
-	 *
-	 * @note Antes de cada linha, chame a função NovaLinha(). Dependendo do contexto, `NovaLinha()` pode
-	 * imprimir caracteres que representam os ramos da árvore de procura, criando uma visualização textual
-	 * que simula a estrutura da procura.
-	 *
-	 * @note A exibição do estado pode variar conforme o nível de debug definido
-	 * em `parametro[nivelDebug].valor`. Um nível menor pode mostrar informações mais sucintas,
-	 * enquanto um nível maior pode detalhar todas as variáveis do estado.
-	 *
-	 * @see NovaLinha()
-	 *
-	 * @code
-	 * void CSubProblema::Debug(void)
-	 * {
-	 * 	   NovaLinha();
-	 *     // neste exemplo o estado é apenas um número
-	 *     if(parametro[nivelDebug].valor <= atividade)
-	 * 	       printf("--<([%d])>--", variavel); // versão compacta do estado
-	 *     else {
-	 *         // versão mais elaborada do estado
-	 *     }
-	 * }
-	 * @endcode
-	 */
-	virtual void Debug(void);
-
-	/**
-	 * @brief Inicializa os parametros
-	 * @note Redefinição necessária se forem adicionados novos parametros, ou for alterado
-	 * o valor de omissão de parametros existentes.
-	 *
-	 * Nesta função, a primeira instrução deverá ser a chamada da função da superclasse,
-	 * para que sejam criados os parametros da superclasse antes de qualquer outra instrução.
-	 *
-	 * Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos.
-	 * Nesta função, podem ser definidos estes valores de omissão, que se não forem alterados,
-	 * irá executar a configuração mais genérica.
-	 *
-	 * Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema.
-	 * Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar
-	 * em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
-	 *
-	 * @note Na criação de um novo parametro, dar uma estrutura TParametro.
-	 *
-	 * @note Ao adicionar novos parâmetros, é recomendável manter a enumeração sincronizada
-	 * com a da superclasse. O primeiro elemento deve ser `parametrosConstrutivos`,
-	 * garantindo que novas adições na superclasse sejam automaticamente refletidas aqui.
-	 *
-	 * @see TParametro
-	 *
-	 * Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros.
-	 * @code
-	 * // continuação da enumeração EParametrosConstrutiva
-	 * enum ESubProblema { opcaoHeur = parametrosConstrutivas, opcaoSuc };
-	 * void CSubProblema::ResetParametros(void)
-	 * {
-	 *     static const char* nomesSuc[] = { "todas", "contributo" }; // nomes para os valores de opcaoSuc
-	 *     // chamar primeiro o método na superclasse
-	 *     TProcuraConstrutiva::ResetParametros();
-	 *     // neste exemplo considerou-se que se pretende ver apenas estados completos, ignorando ações
-	 *     parametro[verAcoes].valor = 1;
-	 *
-	 *     // novo parametro para utilizar na função Heuristica()
-	 *     parametro.Add({ "Opção Heurística", 0,0,10,
-	 *         "explicação do que acontece na heuristica, com este parametro entre 0 e 10",NULL });
-	 *     // novo parametro para utilizar na função Sucessores()
-	 *     parametro.Add({ "Opção Sucessores", 0,0,1,
-	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc });
-	 * }
-	 * @endcode
-	 */
-	virtual void ResetParametros();
-
 
 	 /** @} */ // Fim do grupo RedefinicaoSugerida
 
@@ -638,28 +478,7 @@ public:
 	 */
 	virtual bool Acao(const char* acao);
 
-	/**
-	 * @brief Verifica se a procura deve ser interrompida
-	 * @note A redefinição é opcional e deve ser feita apenas se houver necessidade de critérios 
-	 * de paragem adicionais, além dos já estabelecidos.
-	 * @return Retorna verdadeiro se a procura deve parar de imediato
-	 *
-	 * O critério de paragem pode ser especificado em limite de tempo, expansões, gerações e avaliações.
-	 * Caso exista uma falha na alocação de memória de um estado, em chamadas futuras irá retornar verdadeiro.
-	 *
-	 * @note Redefinir apenas se o critério de paragem não puder ser contemplado nestes pontos. 
-	 * @note Esta função deve manter a eficiência elevada, dado que é chamada em ciclos internos 
-	 * dos algoritmos de procura.
-	 *
-	 * @code
-	 * bool CSubProblema::Parar(void) {
-     *     return TProcuraConstrutiva::Parar() || CriterioParagem(); // critério de paragem definido em CSubProblema
-	 * }
-	 * @endcode
-	 */
-	virtual bool Parar(void) {
-		return TempoExcedido() || ExpansoesExcedido() || GeracoesExcedido() || AvaliacoesExcedido() || memoriaEsgotada;
-	}
+
 
 	/**
 	 * @brief Verifica se o estado actual distinto do fornecido
@@ -710,7 +529,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void MostrarSolucao(void) { MostrarCaminho(); }
+	void MostrarSolucao(void) { MostrarCaminho(); }
 
 	/**
 	 * @brief Executa o algoritmo com os parametros atuais
@@ -723,28 +542,8 @@ public:
 	 * @see TesteManual(), EParametrosConstrutiva, LarguraPrimeiro(), CustoUniforme(), ProfundidadePrimeiro()
 	 * @see MelhorPrimeiro(), AStar(), IDAStar(), BranchAndBound()
 	 */
-	virtual int ExecutaAlgoritmo();
+	int ExecutaAlgoritmo();
 
-	/**
-	 * @brief Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas
-	 * @note Redefinição não é necessária
-	 * @param inicio - ID da primeira instância no teste (ou -1 para a primeira)
-	 * @param fim - ID da última instância no teste (ou -1 para a última)
-	 * @param mostrarSolucoes - se true, mostra a solução após cada execução, c.c. indica apenas a instância em processamento.
-	 *
-	 * Esta função é chamada de TesteManual() para executar testes empíricos.
-	 * A função apresenta-se como método virtual, atendendo a que será redefinida nas 
-	 * procuras adversas. É genérica e não se prevê outras situações que seja necessário 
-	 * redefini-la.
-	 * 
-	 * @note Pode ser chamada diretamente do código, e nesse caso é necessário que a variável 
-	 * estática 'configuracoes' tenha as configurações em teste. 
-	 * Se `configuracoes` estiver vazia, o teste empírico será executado apenas 
-	 * com a configuração atual, avaliando seu desempenho isoladamente, sem comparação com outras configurações.
-	 *
-	 * @see TesteManual()
-	 */
-	virtual void TesteEmpirico(int inicio = -1, int fim = -1, bool mostrarSolucoes = true);
 
 	/** @} */ // Fim do grupo RedefinicaoOpcional
 
@@ -899,23 +698,8 @@ public:
 	 * @{
 	 */
 
-	 /// @brief ID da instância atual, a ser utilizado em SolucaoVazia().
-	static TParametro instancia;
-	/// @brief Parâmetros a serem utilizados na configuração atual.
-	/// @see EParametrosConstrutiva
-	static TVector<TParametro> parametro;
-	/// @brief Conjuntos de configurações para teste empírico.
-	static TVector<TVector<int>> configuracoes;
-	/// @brief Número total de gerações realizadas na procura.
-	static int geracoes;
-	/// @brief Número total de expansões realizadas na procura.
-	static int expansoes;
-	/// @brief Número total de avaliações realizadas na procura.
-	static int avaliacoes;
 	/// @brief Solução retornada pela procura (os estados devem ser libertados).
 	static TVector<TNo> caminho;
-	/// @brief Flag indicando problemas de memória esgotada.
-	static bool memoriaEsgotada;
 	/// @brief Estado objetivo encontrado, retornado pela procura (deve ser libertado).
 	static TNo solucao;
 	/// @brief Valor mínimo que a solução pode apresentar, obtido pela procura.
@@ -927,8 +711,6 @@ public:
 	static TVector<unsigned char> ramo;
 	/// @internal Espaçamento entre os ramos na árvore de debug.
 	static int espacosRamo;
-	/// @internal Instante final (deadline) da corrida atual.
-	static clock_t instanteFinal;
 
 	/** @} */ // Fim do grupo VariaveisGlobais
 
@@ -943,8 +725,6 @@ public:
 	// Chamar sempre que se quer uma nova linha com a árvore em baixo
 	void NovaLinha(bool tudo = true);
 
-	// ler um número, ou retorna NAO_LIDO
-	static int NovoValor(const char* prompt); 
 
 protected:
 
@@ -976,31 +756,8 @@ protected:
 	void VerificaLimites(int limite, int porProcessar, TVector<TNo>& sucessores);
 	void CalcularHeuristicas(TVector<TNo>& sucessores, TVector<int>* id = NULL, bool sortLB = false);
 	int SolucaoParcial(int i, TVector<TNo>& sucessores);
-	void ExplorarSucessores(bool jogo=false);
-	void EditarParametros();
-	void EditarConfiguracoes();
-	void MostrarConfiguracoes(int detalhe, int atual = -1);
-	void SolicitaInstancia();
-	bool TempoExcedido() { return instanteFinal < clock(); }
-	bool GeracoesExcedido() {
-		return parametro[limiteGeracoes].valor > 0 && parametro[limiteGeracoes].valor < geracoes;
-	}
-	bool ExpansoesExcedido() {
-		return parametro[limiteExpansoes].valor > 0 && parametro[limiteExpansoes].valor < expansoes;
-	}
-	bool AvaliacoesExcedido() {
-		return parametro[limiteAvaliacoes].valor > 0 && parametro[limiteAvaliacoes].valor < avaliacoes;
-	}
+	void ExplorarSucessores();
 	void MostrarCaminho();
-	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL);
-	void MostraRelatorio(TVector<TResultado>& resultados);
-	int Dominio(int& variavel, int min = INT_MIN, int max = INT_MAX);
-	void ConfiguracaoAtual(TVector<int>& parametros, int operacao); // gravar (ou ler) a configuração atual
-	int MelhorResultado(TResultado base, TResultado alternativa);
-	void CalculaTorneio(TVector<TResultado>& resultados);
-	void MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo=false);
-	void BarraTorneio(bool nomes);
-	void ExtrairConfiguracao(TVector<TResultado>& resultados, TVector<TResultado>& extracao, int configuracao);
 
 	// variáveis da hashtable com perdas, se existir uma colisão, substitui
 	static uint64_t elementosHT[TAMANHO_HASHTABLE][OBJETO_HASHTABLE]; // hashtable
@@ -1016,75 +773,3 @@ protected:
 	virtual void SubstituirHT(int indice);
 };
 
-// estrutura para índice a fazer a função de lista (em vetor), de modo a reduzir custos de inserção ordenada 
-// utilizado em CListaNo
-typedef struct SIndice {
-	TNo estado; // elemento na lista
-	int prox; // próximo elemento da lista, pela ordem mantida (de custo)
-	int proxDistinto; // próximo elemento da lista com custo distinto
-} TIndice;
-
-// classe para manter lista ordenada de estados (CustoUniforme e AStar)
-class CListaNo {
-private:
-	int limite; // tamanho da lista, se !=0 --- tamanho vai até ao dobro, após o qual é limpa para metade dos elementos
-	TVector<TIndice> indice; // índice com a estrutura de lista
-	TVector<int> livre; // índices da lista apagados, que estão livres e podem ser utilizados
-	bool completa; // se verdade, nunca foi limpa, pelo que a lista é completa
-public:
-	CListaNo(int limite = 0) : 
-		limite(limite), 
-		indice(2*limite), 
-		livre(limite), 
-		completa(true), 
-		atual(0) {}
-	~CListaNo();
-
-	// elemento a ser processado 
-	// (anteriores a este, excepto o primeiro, podem ser apagados, quando há falta de espaço)
-	int atual; 
-
-	bool Completa() { return completa; }
-
-	// retorna o valor de um elemento
-	int Valor(int i) {
-		TNo estado;
-		if ((estado = Estado(i)) != NULL)
-			return estado->LowerBound();
-		return INT_MAX;
-	}
-
-	// retorna o próximo elemento, ou -1 se não há mais
-	int Proximo(int i = -1) { 
-		if (i < 0)
-			return indice[atual].prox;
-		if(i>=0 && i<indice.Count())
-			return indice[i].prox; 
-		return -1;
-	}
-	// este passo é crítico para poder inserir rapido numa lista ordenada com muitos elementos iguais
-	int ProximoDistinto(int i = -1) {
-		if (i < 0)
-			return indice[atual].proxDistinto;
-		if (i >= 0 && i < indice.Count())
-			return indice[i].proxDistinto;
-		return -1;
-	}
-	// retorna o estado deste elemento
-	TNo Estado(int i = -1) {
-		if (i < 0)
-			return indice[atual].estado;
-		if (i >= 0 && i < indice.Count())
-			return indice[i].estado;
-		return NULL;
-	}
-	
-	int Inserir(TNo elemento, int id = 0); // insere por ordem de LB, retorna o primeiro elemento com o mesmo valor
-	void Inserir(TVector<TNo>& elementos); // inserir todos os elementos por ordem (não alterar atual)
-
-private:
-	int NovoElemento(TNo elemento); // retorna o índice onde foi inserido
-	void LibertarLista();
-	void LibertarSeguinte(int id);
-
-};
