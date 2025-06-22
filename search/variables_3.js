@@ -7,5 +7,5 @@ var searchData=
   ['esquerda_4',['esquerda',['../classCParticao.html#a17bdce6d6c592f7139309cbe315e70c1',1,'CParticao']]],
   ['estado_5',['estado',['../structSIndice.html#a71d6cd112fe2f89c710603ad37ded5bf',1,'SIndice']]],
   ['estadocodht_6',['estadoCodHT',['../classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999',1,'TProcuraConstrutiva']]],
-  ['expansoes_7',['expansoes',['../structSResultado.html#a4c6edab2b9295991eafa03f86e2c6f22',1,'SResultado::expansoes'],['../group__VariaveisGlobais.html#ga198a1f8ed90785a1c3f112a3468a2d74',1,'TProcuraConstrutiva::expansoes']]]
+  ['expansoes_7',['expansoes',['../structSResultado.html#a4c6edab2b9295991eafa03f86e2c6f22',1,'SResultado::expansoes'],['../classTProcura.html#a264d55f8948e71bc41856e98a438de93',1,'TProcura::expansoes']]]
 ];

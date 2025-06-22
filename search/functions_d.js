@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parar_0',['Parar',['../group__RedefinicaoOpcional.html#gaed4543b865993696a193d101e925b5b1',1,'TProcuraConstrutiva']]],
+  ['parar_0',['Parar',['../classTProcura.html#a7952e187e1b0ae0ca52edab157223179',1,'TProcura']]],
   ['pop_1',['Pop',['../classTVector.html#a3249913626d54e46b07e168ce1f05d87',1,'TVector']]],
   ['profundidadeprimeiro_2',['ProfundidadePrimeiro',['../group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228',1,'TProcuraConstrutiva']]],
   ['proximo_3',['Proximo',['../classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa',1,'CListaNo']]],

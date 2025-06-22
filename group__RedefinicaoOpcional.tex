@@ -5,16 +5,12 @@
 \item 
 virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_gacccf4fbb52126ba19bfc456c0c6d5214}{TProcura\+Construtiva\+::\+Acao}} (const char \texorpdfstring{$\ast$}{*}acao)
 \begin{DoxyCompactList}\small\item\em Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_gaed4543b865993696a193d101e925b5b1}{TProcura\+Construtiva\+::\+Parar}} (void)
-\begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_ga1cf2a30e496ea869e85a9d60b4d469e9}{TProcura\+Construtiva\+::\+Distinto}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado)
 \begin{DoxyCompactList}\small\item\em Verifica se o estado actual distinto do fornecido. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{group__RedefinicaoOpcional_ga74b4c5766a2b65bdb4c3019523c1508f}{TProcura\+Construtiva\+::\+Mostrar\+Solucao}} (void)
+void \mbox{\hyperlink{group__RedefinicaoOpcional_ga1fdecf86b41c94a1656c17495f9b5b93}{TProcura\+Construtiva\+::\+Mostrar\+Solucao}} (void)
 \begin{DoxyCompactList}\small\item\em Mostrar solução, seja um caminho ou o próprio estado. \end{DoxyCompactList}\item 
-virtual int \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{TProcura\+Construtiva\+::\+Executa\+Algoritmo}} ()
-\begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{group__RedefinicaoOpcional_gab2fca28035f165ce7c1d40acbfc8c971}{TProcura\+Construtiva\+::\+Teste\+Empirico}} (int inicio=-\/1, int fim=-\/1, bool mostrar\+Solucoes=true)
-\begin{DoxyCompactList}\small\item\em Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{TProcura\+Construtiva\+::\+Executa\+Algoritmo}} ()
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -47,7 +43,7 @@ A implementação gera os sucessores, e vê qual o que corresponde à ação for
 \end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 0
@@ -87,7 +83,7 @@ Reimplemented in \mbox{\hyperlink{classCAspirador_a9279c18880569e58bc26932979d58
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00682}{682}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00499}{499}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 1
@@ -104,26 +100,30 @@ Executa o algoritmo com os parametros atuais.
 \begin{DoxyNote}{Note}
 Redefinição necessária no caso de se alterar os algoritmos disponíveis.
 \end{DoxyNote}
-No caso de adicionar algum algoritmo, chame o algoritmo com base em parametro\mbox{[}algoritmo\mbox{]}.valor Se {\ttfamily \doxylink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{Teste\+Manual()}} não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente.
+No caso de adicionar algum algoritmo, chame o algoritmo com base em parametro\mbox{[}algoritmo\mbox{]}.valor Se {\ttfamily \doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()}} não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente.
 
 \begin{DoxySeeAlso}{See also}
-\doxylink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{Teste\+Manual()}, \doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva}, \doxylink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro()}, \doxylink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme()}, \doxylink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{Profundidade\+Primeiro()} 
+\doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()}, \doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva}, \doxylink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro()}, \doxylink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme()}, \doxylink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{Profundidade\+Primeiro()} 
 
 \doxylink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro()}, \doxylink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{AStar()}, \doxylink{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}{IDAStar()}, \doxylink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound()} 
 \end{DoxySeeAlso}
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00937}{937}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a1297806db02da2a44794883a6f427965}{TProcura}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00709}{709}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 2
 Here is the caller graph for this function\+:
 % FIG 3
-\Hypertarget{group__RedefinicaoOpcional_ga74b4c5766a2b65bdb4c3019523c1508f}\label{group__RedefinicaoOpcional_ga74b4c5766a2b65bdb4c3019523c1508f} 
+\Hypertarget{group__RedefinicaoOpcional_ga1fdecf86b41c94a1656c17495f9b5b93}\label{group__RedefinicaoOpcional_ga1fdecf86b41c94a1656c17495f9b5b93} 
 \index{Métodos desnecessários redefinir@{Métodos desnecessários redefinir}!MostrarSolucao@{MostrarSolucao}}
 \index{MostrarSolucao@{MostrarSolucao}!Métodos desnecessários redefinir@{Métodos desnecessários redefinir}}
 \doxysubsubsection{\texorpdfstring{MostrarSolucao()}{MostrarSolucao()}}
-{\footnotesize\ttfamily virtual void TProcura\+Construtiva\+::\+Mostrar\+Solucao (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Mostrar\+Solucao (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -137,7 +137,7 @@ Esta função exibe a solução, mostrando um estado a cada X ações e exibindo
 \begin{DoxyNote}{Note}
 Em problemas onde seja simples de seguir a ação, pode-\/se utilizar valores maiores, sem ser necessário mostrar muitos estados completos. Em problemas que as ações sejam mais complexas, ou alterem mais o estado, poderá ser até preferível colocar este valor a 1, para que o estado seja sempre mostrado em cada ação.
 
-Há problemas em que o estado é já a solução. Neste caso pode-\/se redefinir esta função chamando a função \doxylink{group__RedefinicaoSugerida_ga6bb2ece76e931695c9e32df7ca7143aa}{Debug()}.
+Há problemas em que o estado é já a solução. Neste caso pode-\/se redefinir esta função chamando a função \doxylink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{Debug()}.
 
 Em situações particulares, poderá ser possível construir a solução de forma mais compacta, num único estado com as ações todas codificadas, por exemplo um caminho num mapa. Nesse caso há que redefinir este método, implementando a visualização da solução de raiz.
 \end{DoxyNote}
@@ -146,96 +146,18 @@ Em situações particulares, poderá ser possível construir a solução de form
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::MostrarSolucao(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ caso\ o\ estado\ final\ seja\ a\ solução,\ simplesmente\ mostrar\ o\ estado\ atual}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoSugerida_ga6bb2ece76e931695c9e32df7ca7143aa}{Debug}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{Debug}}();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ caso\ seja\ um\ caminho\ do\ estado\ inicial\ ao\ final,\ não\ redefinir}}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
  
 
-Reimplemented in \mbox{\hyperlink{classCOitoDamas_acda7651f84323201b3a57699daf55646}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_a9a3087a5b0bd33ff2fabf2aef66c73a9}{CParticao}}, and \mbox{\hyperlink{classCPuzzle8_a251d6029c7b33366a000ce84aee4d2ed}{CPuzzle8}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_afc2ed3d82bfd70cf50e188798b75331b}{TProcura}}.
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00713}{713}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00530}{530}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 4
-Here is the caller graph for this function\+:
-% FIG 5
-\Hypertarget{group__RedefinicaoOpcional_gaed4543b865993696a193d101e925b5b1}\label{group__RedefinicaoOpcional_gaed4543b865993696a193d101e925b5b1} 
-\index{Métodos desnecessários redefinir@{Métodos desnecessários redefinir}!Parar@{Parar}}
-\index{Parar@{Parar}!Métodos desnecessários redefinir@{Métodos desnecessários redefinir}}
-\doxysubsubsection{\texorpdfstring{Parar()}{Parar()}}
-{\footnotesize\ttfamily virtual bool TProcura\+Construtiva\+::\+Parar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
-
-Verifica se a procura deve ser interrompida. 
-
-\begin{DoxyNote}{Note}
-A redefinição é opcional e deve ser feita apenas se houver necessidade de critérios de paragem adicionais, além dos já estabelecidos. 
-\end{DoxyNote}
-\begin{DoxyReturn}{Returns}
-Retorna verdadeiro se a procura deve parar de imediato
-\end{DoxyReturn}
-O critério de paragem pode ser especificado em limite de tempo, expansões, gerações e avaliações. Caso exista uma falha na alocação de memória de um estado, em chamadas futuras irá retornar verdadeiro.
-
-\begin{DoxyNote}{Note}
-Redefinir apenas se o critério de paragem não puder ser contemplado nestes pontos. 
-
-Esta função deve manter a eficiência elevada, dado que é chamada em ciclos internos dos algoritmos de procura.
-\end{DoxyNote}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{bool}\ CSubProblema::Parar(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__RedefinicaoOpcional_gaed4543b865993696a193d101e925b5b1}{TProcuraConstrutiva::Parar}}()\ ||\ CriterioParagem();\ \textcolor{comment}{//\ critério\ de\ paragem\ definido\ em\ CSubProblema}}
-\DoxyCodeLine{\}}
-
-\end{DoxyCode}
- 
-
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00660}{660}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
-
-Here is the call graph for this function\+:
-% FIG 6
-Here is the caller graph for this function\+:
-% FIG 7
-\Hypertarget{group__RedefinicaoOpcional_gab2fca28035f165ce7c1d40acbfc8c971}\label{group__RedefinicaoOpcional_gab2fca28035f165ce7c1d40acbfc8c971} 
-\index{Métodos desnecessários redefinir@{Métodos desnecessários redefinir}!TesteEmpirico@{TesteEmpirico}}
-\index{TesteEmpirico@{TesteEmpirico}!Métodos desnecessários redefinir@{Métodos desnecessários redefinir}}
-\doxysubsubsection{\texorpdfstring{TesteEmpirico()}{TesteEmpirico()}}
-{\footnotesize\ttfamily void TProcura\+Construtiva\+::\+Teste\+Empirico (\begin{DoxyParamCaption}\item[{int}]{inicio = {\ttfamily -\/1},  }\item[{int}]{fim = {\ttfamily -\/1},  }\item[{bool}]{mostrar\+Solucoes = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. 
-
-\begin{DoxyNote}{Note}
-Redefinição não é necessária 
-\end{DoxyNote}
-
-\begin{DoxyParams}{Parameters}
-{\em inicio} & -\/ ID da primeira instância no teste (ou -\/1 para a primeira) \\
-\hline
-{\em fim} & -\/ ID da última instância no teste (ou -\/1 para a última) \\
-\hline
-{\em mostrar\+Solucoes} & -\/ se true, mostra a solução após cada execução, c.\+c. indica apenas a instância em processamento.\\
-\hline
-\end{DoxyParams}
-Esta função é chamada de \doxylink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{Teste\+Manual()} para executar testes empíricos. A função apresenta-\/se como método virtual, atendendo a que será redefinida nas procuras adversas. É genérica e não se prevê outras situações que seja necessário redefini-\/la.
-
-\begin{DoxyNote}{Note}
-Pode ser chamada diretamente do código, e nesse caso é necessário que a variável estática \textquotesingle{}configuracoes\textquotesingle{} tenha as configurações em teste. Se {\ttfamily configuracoes} estiver vazia, o teste empírico será executado apenas com a configuração atual, avaliando seu desempenho isoladamente, sem comparação com outras configurações.
-\end{DoxyNote}
-\begin{DoxySeeAlso}{See also}
-\doxylink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{Teste\+Manual()} 
-\end{DoxySeeAlso}
-
-
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00954}{954}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
-
-Here is the call graph for this function\+:
-% FIG 8
-Here is the caller graph for this function\+:
-% FIG 9

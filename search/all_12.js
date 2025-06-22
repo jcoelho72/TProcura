@@ -10,8 +10,8 @@ var searchData=
   ['instância_7',['instância',['../teste_aspirador1.html#autotoc_md12',1,'Ação 1 - Trocar de instância'],['../teste_aspirador1.html#autotoc_md19',1,'Ação 8 - Resolver outra instância']]],
   ['instâncias_8',['instâncias',['../teste_puzzle8.html#autotoc_md33',1,'Ação 1 - Ver instâncias'],['../teste_particao.html#autotoc_md29',1,'Ação 1 - Ver instâncias'],['../teste_8damas.html#autotoc_md1',1,'Ação 1 - Ver instâncias'],['../teste_artificial.html#autotoc_md8',1,'Ação 1 - Ver instâncias']]],
   ['instalação_20e_20execução_9',['Instalação e Execução',['../index.html#autotoc_md49',1,'']]],
-  ['instancia_10',['instancia',['../group__VariaveisGlobais.html#gaf66ca5293e862decb3fa33ac0cbe9264',1,'TProcuraConstrutiva::instancia'],['../structSResultado.html#abcf1163e39d1d92069afb8b6063114f9',1,'SResultado::instancia']]],
-  ['instantefinal_11',['instanteFinal',['../group__VariaveisGlobais.html#gaf7efa04a418f94ee4bad1392e69e357d',1,'TProcuraConstrutiva']]],
+  ['instancia_10',['instancia',['../classTProcura.html#ac54b5d632d3efd448b51bfca6cb6a238',1,'TProcura::instancia'],['../structSResultado.html#abcf1163e39d1d92069afb8b6063114f9',1,'SResultado::instancia']]],
+  ['instantefinal_11',['instanteFinal',['../classTProcura.html#aad1d62f5db16f77742bb291b6ef342f6',1,'TProcura']]],
   ['intersection_12',['Intersection',['../classTVector.html#adb0d3bbcfe5bd331d6c73709b146b233',1,'TVector']]],
   ['invert_13',['Invert',['../classTVector.html#a9364da12ea22d6e7d3ef45f81c182d65',1,'TVector']]],
   ['iterativa_14',['Ação 13 - Profundidade Iterativa',['../teste_aspirador2.html#autotoc_md25',1,'']]]

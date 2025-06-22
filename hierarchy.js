@@ -5,12 +5,14 @@ var hierarchy =
     [ "SParametro", "structSParametro.html", null ],
     [ "SParametrosEspaco", "structSParametrosEspaco.html", null ],
     [ "SResultado", "structSResultado.html", null ],
-    [ "TProcuraConstrutiva", "classTProcuraConstrutiva.html", [
-      [ "CAspirador", "classCAspirador.html", null ],
-      [ "COitoDamas", "classCOitoDamas.html", null ],
-      [ "CParticao", "classCParticao.html", null ],
-      [ "CProblemaArtificial", "classCProblemaArtificial.html", null ],
-      [ "CPuzzle8", "classCPuzzle8.html", null ]
+    [ "TProcura", "classTProcura.html", [
+      [ "TProcuraConstrutiva", "classTProcuraConstrutiva.html", [
+        [ "CAspirador", "classCAspirador.html", null ],
+        [ "COitoDamas", "classCOitoDamas.html", null ],
+        [ "CParticao", "classCParticao.html", null ],
+        [ "CProblemaArtificial", "classCProblemaArtificial.html", null ],
+        [ "CPuzzle8", "classCPuzzle8.html", null ]
+      ] ]
     ] ],
     [ "TRand", "classTRand.html", null ],
     [ "TVector< Item >", "classTVector.html", null ],

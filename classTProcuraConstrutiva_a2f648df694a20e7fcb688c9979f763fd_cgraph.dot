@@ -17,7 +17,7 @@ digraph "TProcuraConstrutiva::SolucaoEncontrada"
   Node5 -> Node6 [id="edge14_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a427bf294df0ee2bf96e30d278c08389f",tooltip=" "];
   Node5 -> Node7 [id="edge15_Node000005_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="TProcuraConstrutiva\l::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga6bb2ece76e931695c9e32df7ca7143aa",tooltip="Mostra o estado no ecrÃ£, para debug."];
+  Node7 [id="Node000007",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0",tooltip="Mostra o estado no ecrã, para debug."];
   Node5 -> Node8 [id="edge16_Node000005_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TVector::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
   Node5 -> Node9 [id="edge17_Node000005_Node000009",color="steelblue1",style="solid",tooltip=" "];

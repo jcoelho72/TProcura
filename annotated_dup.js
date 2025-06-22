@@ -10,6 +10,7 @@ var annotated_dup =
     [ "SParametro", "structSParametro.html", "structSParametro" ],
     [ "SParametrosEspaco", "structSParametrosEspaco.html", "structSParametrosEspaco" ],
     [ "SResultado", "structSResultado.html", "structSResultado" ],
+    [ "TProcura", "classTProcura.html", "classTProcura" ],
     [ "TProcuraConstrutiva", "classTProcuraConstrutiva.html", "classTProcuraConstrutiva" ],
     [ "TRand", "classTRand.html", "classTRand" ],
     [ "TVector", "classTVector.html", "classTVector" ]

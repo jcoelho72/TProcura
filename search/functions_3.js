@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['debug_0',['debug',['../classCOitoDamas.html#a8c4dfb787a9f0d8f2a8c88e682aaeb78',1,'COitoDamas::Debug()'],['../classCParticao.html#aa33970025179d4c6e3177c0fd518dadb',1,'CParticao::Debug()'],['../classCProblemaArtificial.html#a17e7a8290910ffd1fe8a370228c6024b',1,'CProblemaArtificial::Debug()'],['../classCPuzzle8.html#a8ecb37cf08f1fe64bba96834370afa35',1,'CPuzzle8::Debug()'],['../group__RedefinicaoSugerida.html#ga6bb2ece76e931695c9e32df7ca7143aa',1,'TProcuraConstrutiva::Debug()'],['../classCAspirador.html#a06c5ae19d38939c0eb949bb2d8e86ea5',1,'CAspirador::Debug()']]],
+  ['debug_0',['debug',['../classCOitoDamas.html#a8c4dfb787a9f0d8f2a8c88e682aaeb78',1,'COitoDamas::Debug()'],['../classCParticao.html#aa33970025179d4c6e3177c0fd518dadb',1,'CParticao::Debug()'],['../classCProblemaArtificial.html#a17e7a8290910ffd1fe8a370228c6024b',1,'CProblemaArtificial::Debug()'],['../classCPuzzle8.html#a8ecb37cf08f1fe64bba96834370afa35',1,'CPuzzle8::Debug()'],['../classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0',1,'TProcura::Debug()'],['../classCAspirador.html#a06c5ae19d38939c0eb949bb2d8e86ea5',1,'CAspirador::Debug()']]],
   ['debugchamada_1',['DebugChamada',['../classTProcuraConstrutiva.html#a6962c0cf7350a211ae74b00768d9c232',1,'TProcuraConstrutiva']]],
   ['debugcorte_2',['DebugCorte',['../classTProcuraConstrutiva.html#a042ab47715ba45d53a86413415ea95fd',1,'TProcuraConstrutiva']]],
   ['debugestado_3',['DebugEstado',['../classTProcuraConstrutiva.html#a3c5b2743566153ca9d45e875106e548b',1,'TProcuraConstrutiva']]],
@@ -13,7 +13,7 @@ var searchData=
   ['delete_10',['Delete',['../classTVector.html#a1520b4878aa655442babf702646abd7f',1,'TVector']]],
   ['difference_11',['Difference',['../classTVector.html#a22eca6fa7555ef9a19ff08a56a22aa2a',1,'TVector']]],
   ['distance_12',['Distance',['../classTVector.html#a8cbf0dc0b674640bda4e81e6d6be0f55',1,'TVector']]],
-  ['distinto_13',['distinto',['../classCAspirador.html#a9279c18880569e58bc26932979d58058',1,'CAspirador::Distinto()'],['../classCProblemaArtificial.html#a5243c313f30ce2fe40f0d9d274cd5d8a',1,'CProblemaArtificial::Distinto()'],['../classCPuzzle8.html#aa66512563951c5f94b6b0dcf7d7ea86b',1,'CPuzzle8::Distinto()'],['../group__RedefinicaoOpcional.html#ga1cf2a30e496ea869e85a9d60b4d469e9',1,'TProcuraConstrutiva::Distinto(TNo estado)']]],
-  ['dominio_14',['Dominio',['../classTProcuraConstrutiva.html#a6dc1daad843c50560a5f3dd8bbe23f56',1,'TProcuraConstrutiva']]],
+  ['distinto_13',['distinto',['../classCAspirador.html#a9279c18880569e58bc26932979d58058',1,'CAspirador::Distinto()'],['../classCProblemaArtificial.html#a5243c313f30ce2fe40f0d9d274cd5d8a',1,'CProblemaArtificial::Distinto()'],['../classCPuzzle8.html#aa66512563951c5f94b6b0dcf7d7ea86b',1,'CPuzzle8::Distinto()'],['../group__RedefinicaoOpcional.html#ga1cf2a30e496ea869e85a9d60b4d469e9',1,'TProcuraConstrutiva::Distinto()']]],
+  ['dominio_14',['Dominio',['../classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf',1,'TProcura']]],
   ['duplicar_15',['duplicar',['../classCAspirador.html#a3c9571f17ca0cbb074943ddd9bd27587',1,'CAspirador::Duplicar()'],['../classCOitoDamas.html#ad9ce9bd26af98392515937e9aff10e5a',1,'COitoDamas::Duplicar()'],['../classCParticao.html#aa50c7d31c22b1baa8ecb15b2841e2854',1,'CParticao::Duplicar()'],['../classCProblemaArtificial.html#ada920ffe8fe97913ef87196864618a48',1,'CProblemaArtificial::Duplicar()'],['../classCPuzzle8.html#ad0638a270ace9056ffba040d2479fd5a',1,'CPuzzle8::Duplicar()'],['../group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623',1,'TProcuraConstrutiva::Duplicar()']]]
 ];

@@ -101,9 +101,7 @@ $(document).ready(function(){initNavTree('TProcuraConstrutiva_8h.html',''); init
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="TVector_8h_source.html">TVector.h</a>&quot;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &lt;time.h&gt;</code><br />
-<code>#include &lt;limits.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="TProcura_8h_source.html">TProcura.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TProcuraConstrutiva.h:</div>
 <div class="dyncontent">
@@ -119,17 +117,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSParametro.html">SParametro</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura para registo de um parâmetro.  <a href="structSParametro.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSResultado.html">SResultado</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um estado no espaço de estados.  <a href="classTProcuraConstrutiva.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSIndice.html">SIndice</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCListaNo.html">CListaNo</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -140,41 +129,23 @@ Macros</h2></td></tr>
 <tr class="separator:a8895513761bdfeec201d14cb01ed86f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1114b0f3993c53d8c5d61ecc3434526" id="r_ad1114b0f3993c53d8c5d61ecc3434526"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526">OBJETO_HASHTABLE</a>&#160;&#160;&#160;5</td></tr>
 <tr class="separator:ad1114b0f3993c53d8c5d61ecc3434526"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41963e9c6730c8172ca4f219b79feba7" id="r_a41963e9c6730c8172ca4f219b79feba7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#a41963e9c6730c8172ca4f219b79feba7">NAO_LIDO</a>&#160;&#160;&#160;-1000000</td></tr>
-<tr class="separator:a41963e9c6730c8172ca4f219b79feba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a510f7055614397eeab21f50df58cc9b8" id="r_a510f7055614397eeab21f50df58cc9b8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#a510f7055614397eeab21f50df58cc9b8">TNo</a></td></tr>
 <tr class="memdesc:a510f7055614397eeab21f50df58cc9b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representa um nó na árvore de busca, apontando para um estado.  <br /></td></tr>
 <tr class="separator:a510f7055614397eeab21f50df58cc9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac9b452041c04268ab8dafdc7542dbf0" id="r_aac9b452041c04268ab8dafdc7542dbf0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structSParametro.html">SParametro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#aac9b452041c04268ab8dafdc7542dbf0">TParametro</a></td></tr>
-<tr class="memdesc:aac9b452041c04268ab8dafdc7542dbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura para registo de um parâmetro.  <br /></td></tr>
-<tr class="separator:aac9b452041c04268ab8dafdc7542dbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4428af995799ff246df4a39dfb58d0e9" id="r_a4428af995799ff246df4a39dfb58d0e9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structSResultado.html">SResultado</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#a4428af995799ff246df4a39dfb58d0e9">TResultado</a></td></tr>
-<tr class="separator:a4428af995799ff246df4a39dfb58d0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab36c38cf51167abfb5e867bb7b242c7b" id="r_ab36c38cf51167abfb5e867bb7b242c7b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structSIndice.html">SIndice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#ab36c38cf51167abfb5e867bb7b242c7b">TIndice</a></td></tr>
-<tr class="separator:ab36c38cf51167abfb5e867bb7b242c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a3c6c902bf1e6a69c702caca172718058" id="r_a3c6c902bf1e6a69c702caca172718058"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058">EParametrosConstrutiva</a> { <br />
-&#160;&#160;<a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058aeabc5187dd423c46d6dc096c37b01136">algoritmo</a> = 0
-, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>
-, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1">verAcoes</a>
-, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869">seed</a>
-, <br />
-&#160;&#160;<a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ab9b7a997847b4af852b600ac955c9245">limiteTempo</a>
-, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ad12ebb828f2b226a21ac1472d0eeebfa">limiteGeracoes</a>
-, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ada8cabf08fbdfada7b4c7bb0063c7f74">limiteExpansoes</a>
-, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a4e659740f4db252369b21a5998487906">limiteAvaliacoes</a>
-, <br />
-&#160;&#160;<a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f">limite</a>
+&#160;&#160;<a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1">verAcoes</a> = parametrosProcura
+, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f">limite</a>
 , <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5">estadosRepetidos</a>
 , <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a301297462c3762b42e1ec439be22af98">pesoAStar</a>
-, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2b7583be54d4abb36af6972683134789">ruidoHeur</a>
 , <br />
-&#160;&#160;<a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ad2126792378161b062dfd8598996995d">baralharSuc</a>
+&#160;&#160;<a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2b7583be54d4abb36af6972683134789">ruidoHeur</a>
+, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ad2126792378161b062dfd8598996995d">baralharSuc</a>
 , <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540">parametrosConstrutivas</a>
 <br />
  }</td></tr>
@@ -193,28 +164,12 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a80645d45a22bcc4a9a5a384051349d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algoritmos disponíveis para procura construtiva.  <a href="TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6c">More...</a><br /></td></tr>
 <tr class="separator:a80645d45a22bcc4a9a5a384051349d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f2d53e364b23f725c2b357d0fd5eaf8" id="r_a9f2d53e364b23f725c2b357d0fd5eaf8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8">ENivelDebug</a> { <br />
-&#160;&#160;<a class="el" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11">nada</a> = 0
-, <a class="el" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524">atividade</a>
-, <a class="el" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>
-, <a class="el" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0">detalhe</a>
-, <br />
-&#160;&#160;<a class="el" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f">completo</a>
-<br />
- }</td></tr>
-<tr class="memdesc:a9f2d53e364b23f725c2b357d0fd5eaf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Níveis de detalhamento para debug.  <a href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8">More...</a><br /></td></tr>
-<tr class="separator:a9f2d53e364b23f725c2b357d0fd5eaf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72cc367d2463c44be31f085f2ff5fa88" id="r_a72cc367d2463c44be31f085f2ff5fa88"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88">EEstadosRepetidos</a> { <a class="el" href="TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88a954296a7afe750d9db00a4e20f25312e">ignorados</a> = 1
 , <a class="el" href="TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88a108490c84e0c9531ca7c3d10979350d7">ascendentes</a>
 , <a class="el" href="TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a">gerados</a>
  }</td></tr>
 <tr class="memdesc:a72cc367d2463c44be31f085f2ff5fa88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerado com os valores possíveis do parametro estadosRepetidos.  <a href="TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88">More...</a><br /></td></tr>
 <tr class="separator:a72cc367d2463c44be31f085f2ff5fa88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10f5ddbb9232fda16b29e31829ac51d3" id="r_a10f5ddbb9232fda16b29e31829ac51d3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraConstrutiva_8h.html#a10f5ddbb9232fda16b29e31829ac51d3">EOperacao</a> { <a class="el" href="TProcuraConstrutiva_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd">gravar</a> = 0
-, <a class="el" href="TProcuraConstrutiva_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678">ler</a>
- }</td></tr>
-<tr class="memdesc:a10f5ddbb9232fda16b29e31829ac51d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define o sentido da operação de entrada/saída de dados.  <a href="TProcuraConstrutiva_8h.html#a10f5ddbb9232fda16b29e31829ac51d3">More...</a><br /></td></tr>
-<tr class="separator:a10f5ddbb9232fda16b29e31829ac51d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="af08ec37a8c99d747fb60fa15bc28678b" name="af08ec37a8c99d747fb60fa15bc28678b"></a>
@@ -233,22 +188,6 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
-<a id="a41963e9c6730c8172ca4f219b79feba7" name="a41963e9c6730c8172ca4f219b79feba7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41963e9c6730c8172ca4f219b79feba7">&#9670;&#160;</a></span>NAO_LIDO</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define NAO_LIDO&#160;&#160;&#160;-1000000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00015">15</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
-
-</div>
-</div>
 <a id="ad1114b0f3993c53d8c5d61ecc3434526" name="ad1114b0f3993c53d8c5d61ecc3434526"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1114b0f3993c53d8c5d61ecc3434526">&#9670;&#160;</a></span>OBJETO_HASHTABLE</h2>
 
@@ -261,7 +200,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00013">13</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00011">11</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -277,25 +216,11 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00011">11</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00009">9</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ab36c38cf51167abfb5e867bb7b242c7b" name="ab36c38cf51167abfb5e867bb7b242c7b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab36c38cf51167abfb5e867bb7b242c7b">&#9670;&#160;</a></span>TIndice</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structSIndice.html">SIndice</a> <a class="el" href="TProcuraConstrutiva_8h.html#ab36c38cf51167abfb5e867bb7b242c7b">TIndice</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a510f7055614397eeab21f50df58cc9b8" name="a510f7055614397eeab21f50df58cc9b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a510f7055614397eeab21f50df58cc9b8">&#9670;&#160;</a></span>TNo</h2>
 
@@ -311,44 +236,7 @@ Enumerations</h2></td></tr>
 <p>Representa um nó na árvore de busca, apontando para um estado. </p>
 <dl class="section note"><dt>Note</dt><dd>É um alias para <code>TProcuraConstrutiva*</code>, facilitando a leitura e uso. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00024">24</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
-
-</div>
-</div>
-<a id="aac9b452041c04268ab8dafdc7542dbf0" name="aac9b452041c04268ab8dafdc7542dbf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac9b452041c04268ab8dafdc7542dbf0">&#9670;&#160;</a></span>TParametro</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structSParametro.html">SParametro</a> <a class="el" href="TProcuraConstrutiva_8h.html#aac9b452041c04268ab8dafdc7542dbf0">TParametro</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Estrutura para registo de um parâmetro. </p>
-<p>Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.</p>
-<dl class="section note"><dt>Note</dt><dd>Existe uma vetor de parametros declarada de forma estática, de modo a aceder a qualquer parametro de forma global no código. A ordem dos parametros estão de acordo com o tipo enumerado EParametrosConstrutiva</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058" title="Identifica um parâmetro específico no código.">EParametrosConstrutiva</a> e ResetParametros()</dd></dl>
-<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(parametro[<a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>].valor &gt; <a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>) </div>
-<div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
-<div class="ttc" id="aTProcuraConstrutiva_8h_html_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8"><div class="ttname"><a href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a></div><div class="ttdeci">@ nivelDebug</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00046">TProcuraConstrutiva.h:46</a></div></div>
-<div class="ttc" id="aTProcuraConstrutiva_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0"><div class="ttname"><a href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a></div><div class="ttdeci">@ passos</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00095">TProcuraConstrutiva.h:95</a></div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="a4428af995799ff246df4a39dfb58d0e9" name="a4428af995799ff246df4a39dfb58d0e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4428af995799ff246df4a39dfb58d0e9">&#9670;&#160;</a></span>TResultado</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structSResultado.html">SResultado</a> <a class="el" href="TProcuraConstrutiva_8h.html#a4428af995799ff246df4a39dfb58d0e9">TResultado</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00020">20</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -392,7 +280,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00070">70</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00061">61</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -420,64 +308,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00109">109</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
-
-</div>
-</div>
-<a id="a9f2d53e364b23f725c2b357d0fd5eaf8" name="a9f2d53e364b23f725c2b357d0fd5eaf8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f2d53e364b23f725c2b357d0fd5eaf8">&#9670;&#160;</a></span>ENivelDebug</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8">ENivelDebug</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Níveis de detalhamento para debug. </p>
-<p>Controla a quantidade de informações exibidas durante a execução do algoritmo.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8" title="Nível de debug, de reduzido a completo.">nivelDebug</a></dd></dl>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span>(parametro[<a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>].valor &gt; <a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>)</div>
-<div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
-</div><!-- fragment --> <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11" name="a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11"></a>nada&#160;</td><td class="fielddoc"><p>Sem informações de debug. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524" name="a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524"></a>atividade&#160;</td><td class="fielddoc"><p>Apenas eventos principais. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0" name="a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0"></a>passos&#160;</td><td class="fielddoc"><p>Exibe passos intermediários. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0" name="a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0"></a>detalhe&#160;</td><td class="fielddoc"><p>Debug detalhada sobre estados e decisões. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f" name="a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f"></a>completo&#160;</td><td class="fielddoc"><p>Mostra toda a execução detalhadamente. </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00092">92</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
-
-</div>
-</div>
-<a id="a10f5ddbb9232fda16b29e31829ac51d3" name="a10f5ddbb9232fda16b29e31829ac51d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10f5ddbb9232fda16b29e31829ac51d3">&#9670;&#160;</a></span>EOperacao</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="TProcuraConstrutiva_8h.html#a10f5ddbb9232fda16b29e31829ac51d3">EOperacao</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Define o sentido da operação de entrada/saída de dados. </p>
-<dl class="section note"><dt>Note</dt><dd>Utilizado em funções que requerem distinção entre operação de leitura e gravação. </dd></dl>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd" name="a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd"></a>gravar&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678" name="a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678"></a>ler&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00120">120</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00081">81</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -496,25 +327,13 @@ Enumerations</h2></td></tr>
 <p>Identifica um parâmetro específico no código. </p>
 <p>Permite aceder a cada parâmetro sem precisar saber seu código numérico. Índice do vetor de parametros, na classe <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>O último elemento (<code>parametrosConstrutivas</code>) não representa um parâmetro real. Existe para permitir a criação de uma enumeração adicional em subclasses, caso seja necessário adicionar parâmetros específicos.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcuraConstrutiva_8h.html#aac9b452041c04268ab8dafdc7542dbf0" title="Estrutura para registo de um parâmetro.">TParametro</a>, ExecutaAlgoritmo()</dd></dl>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span>(parametro[<a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>].valor &gt; <a class="code hl_enumvalue" href="TProcuraConstrutiva_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>)</div>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0" title="Estrutura para registo de um par�metro.">TParametro</a>, ExecutaAlgoritmo()</dd></dl>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span>(parametro[<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>].valor &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>)</div>
 <div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
+<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a></div><div class="ttdeci">@ passos</div><div class="ttdoc">Exibe passos intermedi�rios.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00059">TProcura.h:59</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a></div><div class="ttdeci">@ nivelDebug</div><div class="ttdoc">N�vel de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00035">TProcura.h:35</a></div></div>
 </div><!-- fragment --> <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058aeabc5187dd423c46d6dc096c37b01136" name="a3c6c902bf1e6a69c702caca172718058aeabc5187dd423c46d6dc096c37b01136"></a>algoritmo&#160;</td><td class="fielddoc"><p>Algoritmo base a executar. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8" name="a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8"></a>nivelDebug&#160;</td><td class="fielddoc"><p>Nível de debug, de reduzido a completo. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1" name="a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1"></a>verAcoes&#160;</td><td class="fielddoc"><p>Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869" name="a3c6c902bf1e6a69c702caca172718058a9342e081acd3acb727f5dd3c5dab0869"></a>seed&#160;</td><td class="fielddoc"><p>Semente aleatória para inicializar a sequência de números pseudo-aleatórios. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058ab9b7a997847b4af852b600ac955c9245" name="a3c6c902bf1e6a69c702caca172718058ab9b7a997847b4af852b600ac955c9245"></a>limiteTempo&#160;</td><td class="fielddoc"><p>Tempo limite em segundos. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058ad12ebb828f2b226a21ac1472d0eeebfa" name="a3c6c902bf1e6a69c702caca172718058ad12ebb828f2b226a21ac1472d0eeebfa"></a>limiteGeracoes&#160;</td><td class="fielddoc"><p>Número máximo de gerações (0 significa sem limite). </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058ada8cabf08fbdfada7b4c7bb0063c7f74" name="a3c6c902bf1e6a69c702caca172718058ada8cabf08fbdfada7b4c7bb0063c7f74"></a>limiteExpansoes&#160;</td><td class="fielddoc"><p>Número máximo de expansões (0 significa sem limite). </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058a4e659740f4db252369b21a5998487906" name="a3c6c902bf1e6a69c702caca172718058a4e659740f4db252369b21a5998487906"></a>limiteAvaliacoes&#160;</td><td class="fielddoc"><p>Número máximo de avaliações (0 significa sem limite). </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1" name="a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1"></a>verAcoes&#160;</td><td class="fielddoc"><p>Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f" name="a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f"></a>limite&#160;</td><td class="fielddoc"><p>Valor dependente do algoritmo. Exemplo: Profundidade limitada. </p>
 </td></tr>
@@ -530,7 +349,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00044">44</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00042">42</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>

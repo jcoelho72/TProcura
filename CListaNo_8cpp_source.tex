@@ -1,0 +1,154 @@
+\doxysection{CLista\+No.\+cpp}
+\hypertarget{CListaNo_8cpp_source}{}\label{CListaNo_8cpp_source}\mbox{\hyperlink{CListaNo_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{CListaNo_8h}{CListaNo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00003}\mbox{\hyperlink{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580}{00003}}\ \mbox{\hyperlink{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580}{CListaNo::\string~CListaNo}}()\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{comment}{//\ não libertar\ o\ primeiro\ elemento}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <\ indice.Count();\ i++)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (indice[i].estado\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00007}00007\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ indice[i].estado;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00008}00008\ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00010}00010\ \textcolor{comment}{//\ retorna\ o\ índice\ onde\ foi\ inserido}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00011}00011\ \textcolor{keywordtype}{int}\ CListaNo::NovoElemento(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ elemento)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (limite\ ==\ 0\ ||\ indice.Count()\ <\ 2\ *\ limite)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ adicionar,\ há espaço}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ indice.Add(\{\ elemento,\ 1,\ 1\ \});}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ indice.Count()\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ limite\ de\ estados\ atingido,\ gerar\ o\ espaço}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ não há livres,\ libertar\ metade}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ LibertarLista();}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ utilizar\ o\ primeiro\ livre}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ indice[\textcolor{keywordtype}{id}\ =\ livre.\mbox{\hyperlink{classTVector_a3249913626d54e46b07e168ce1f05d87}{Pop}}()]\ =\ \{\ elemento,\ 1,\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{return}\ id;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00030}00030\ \textcolor{keywordtype}{void}\ CListaNo::LibertarLista()\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ jaProcessados\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ libertar\ primeiro\ estados\ já processados\ (anteriores\ a\ atual)}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ parar\ assim\ que\ existam\ "{}limite"{}\ estados\ livres}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00033}00033\ \ \ \ \ completa\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!jaProcessados)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ jaProcessados\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ apagar\ elementos\ após o\ estado\ inicial}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite\ \&\&\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(0)\ !=\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}})}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(0);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ anteriorID\ =\ -\/1,\ piorID\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}};\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i)\ !=\ 1;\ i\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i))\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ piorID\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anteriorID\ =\ i;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (piorID\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ valores\ todos\ iguais\ após atual,\ apagar\ o\ seguinte\ ao\ atual}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(\mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}});}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ começar\ por\ libertar\ todos\ após o\ primeiro\ elemento\ com\ o\ pior\ ID}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite\ \&\&\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(piorID)\ !=\ 1)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(piorID);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (livre.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ <\ limite)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tem\ de\ se\ eliminar\ o\ primeiro\ elemento\ com\ o\ pior\ valor}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o\ que\ implica\ atualizar\ o\ proxDistinto\ de\ todos\ os\ anteriores}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(anteriorID)\ !=\ piorID)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[anteriorID].proxDistinto\ =\ 1;\ \textcolor{comment}{//\ último\ elemento}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ anteriorID\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(anteriorID);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LibertarSeguinte(anteriorID);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ tudo\ liberto\ com\ este\ valor,\ se\ ainda\ não é suficiente,\ seguir\ para\ o\ próximo}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00071}00071\ \textcolor{keywordtype}{void}\ CListaNo::LibertarSeguinte(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00073}00073\ \ \ \ \ livre.\mbox{\hyperlink{classTVector_ad9c1fb99a2d0d4f060c4746e6ce97d0f}{Push}}(i);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (indice[i].estado\ !=\ NULL)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ indice[i].estado;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ indice[i].estado\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00078}00078\ \ \ \ \ indice[id].prox\ =\ indice[i].prox;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00079}00079\ \ \ \ \ indice[id].proxDistinto\ =\ indice[i].proxDistinto;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00082}00082\ \textcolor{comment}{//\ insere\ por\ ordem\ de\ LB}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00083}\mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{00083}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{CListaNo::Inserir}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ elemento,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordtype}{int}\ valor,\ valorI;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{int}\ idNovo\ =\ NovoElemento(elemento);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (idNovo\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ primeiro\ elemento,\ inserir\ um\ elemento\ final}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ indice.Add(\{\ NULL,-\/1,-\/1\ \});}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00091}00091\ \ \ \ \ valor\ =\ \mbox{\hyperlink{classCListaNo_aef59a51e58231841d16fa45aa7582328}{Valor}}(idNovo);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{comment}{//\ atualizar\ índice}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \textcolor{keywordtype}{id},\ j\ =\ -\/1;\ i\ >=\ 0;\ i\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i))\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ valorI\ =\ \mbox{\hyperlink{classCListaNo_aef59a51e58231841d16fa45aa7582328}{Valor}}(i);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valorI\ ==\ valor)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ inserir\ logo\ a\ seguir,\ já que\ assim\ nada\ mais\ altera}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{ProximoDistinto}}(i);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].prox\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (valorI\ <\ valor)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ i;\ \textcolor{comment}{//\ mantem\ o\ primeiro\ elemento\ anterior}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{\ \textcolor{comment}{//\ valor\ atual\ já é\ superior,\ valor\ novo}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (j\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ heurística\ não consistente,\ }}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ e\ agora\ está a\ gerar\ um\ estado\ com\ menor\ valor\ que\ o\ pai}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ i,\ novo,\ i.prox,\ ...}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ o\ i\ fica\ com\ o\ próximo\ distinto\ em\ novo,\ o\ que\ não é verdade\ mas\ mais\ vale\ assim}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(i);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].prox\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[i].proxDistinto\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idNovo;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ utilizar\ o\ índice\ de\ j,\ anterior,\ colocando\ antes\ de\ i}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ j,\ ...\ ,\ novo,\ i}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ atualizar\ o\ proxDistinto\ de\ j,\ passa\ a\ novo}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].prox\ =\ i;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[idNovo].proxDistinto\ =\ i;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ !=\ idNovo)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[j].proxDistinto\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j)\ ==\ i\ ||\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j)\ ==\ j)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ indice[j].prox\ =\ idNovo;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(j);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ idNovo;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00135}00135\ \textcolor{comment}{//\ inserir\ todos\ os\ elementos\ por\ ordem}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00136}\mbox{\hyperlink{classCListaNo_a487ec70de88cd34f0f4356b5d0144c72}{00136}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{CListaNo::Inserir}}(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&\ elementos)\ \{}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00137}00137\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ lbElementos,\ idElementos;}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}};}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//\ 1.\ Ordenar\ elementos,\ complexidaded\ O(N\ log(N))}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ elementos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ lbElementos.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(elementos[j]-\/>LowerBound());}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00143}00143\ \ \ \ \ lbElementos.\mbox{\hyperlink{classTVector_ab5f765b4c8271e597e2005757ed52138}{Sort}}(\&idElementos);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//\ 2.\ inserir\ por\ ordem,\ tirando\ partido\ do\ local\ onde\ já está o\ último\ elemento}}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ idElementos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{Inserir}}(elementos[idElementos[j]],\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00149}00149\ \}}
+
+\end{DoxyCode}

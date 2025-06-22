@@ -1,0 +1,508 @@
+\doxysection{TProcura.\+cpp}
+\hypertarget{TProcura_8cpp_source}{}\label{TProcura_8cpp_source}\mbox{\hyperlink{TProcura_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TProcura_8h}{TProcura.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <ctype.h>}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00007}\mbox{\hyperlink{TProcura_8cpp_a6b20d41d6252e9871430c242cb1a56e7}{00007}}\ \textcolor{preprocessor}{\#define\ BUFFER\_SIZE\ 1024}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00009}00009\ \textcolor{comment}{//\ numero\ de\ geracaes\ de\ estados}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00010}00010\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}{TProcura::geracoes}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00011}00011\ \textcolor{comment}{//\ numero\ de\ expansoes\ de\ estados}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00012}00012\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a264d55f8948e71bc41856e98a438de93}{TProcura::expansoes}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00013}00013\ \textcolor{comment}{//\ numero\ de\ chamadas\ a\ funcao\ heuristica}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00014}00014\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a81f881250464f75899082c0fe681e234}{TProcura::avaliacoes}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00016}00016\ \textcolor{comment}{//\ deadline\ da\ corrida\ atual}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00017}00017\ clock\_t\ \mbox{\hyperlink{classTProcura_aad1d62f5db16f77742bb291b6ef342f6}{TProcura::instanteFinal}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00018}00018\ \textcolor{comment}{//\ flag\ de\ problemas\ de\ memória\ esgotada}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00019}00019\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{TProcura::memoriaEsgotada}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00020}00020\ \textcolor{comment}{//\ ID\ da\ instância\ atual\ (problemas\ com\ várias\ instâncias,\ a\ utilizar\ em\ SolucaoVazia())}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00021}00021\ \mbox{\hyperlink{structSParametro}{TParametro}}\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{TProcura::instancia}}\ =\ \{\ NULL,1,1,1,\ NULL,\ NULL\ \};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00022}00022\ \textcolor{comment}{//\ adicionar\ parâmetros\ específicos,\ se\ necessário}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00023}00023\ \mbox{\hyperlink{classTVector}{TVector<TParametro>}}\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{TProcura::parametro}};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00025}00025\ \textcolor{comment}{//\ conjuntos\ de\ valores\ de\ parâmetros,\ para\ teste}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00026}00026\ \mbox{\hyperlink{classTVector}{TVector<TVector<int>}}>\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{TProcura::configuracoes}};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00029}\mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}{TProcura::ResetParametros}}()}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomesAlgoritmos[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Não definido"{}}\ \};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomesDebug[]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}nada"{}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}atividade"{}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}passos"{}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}detalhe"{}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}completo"{}}\ \};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ definir\ parametros\ base}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(0);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ algoritmos}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Algoritmo"{}},1,1,1,\textcolor{stringliteral}{"{}Algoritmo\ base\ a\ executar."{}},\ nomesAlgoritmos\ \});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ nivel\ de\ debug}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Debug"{}},0,0,4,\textcolor{stringliteral}{"{}Nível\ de\ debug,\ de\ reduzido\ a\ completo."{}},nomesDebug\ \});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ seed\ }}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Seed"{}},1,1,1000000,\ \textcolor{stringliteral}{"{}Semente\ aleatória\ para\ inicializar\ a\ sequência\ de\ números\ pseudo-\/aleatórios."{}},NULL\ \});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ limite\ tempo}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Tempo"{}},10,1,3600,\ \textcolor{stringliteral}{"{}Tempo\ limite\ em\ segundos.\ "{}},NULL\ \});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ máximo\ de\ gerações}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Gerações"{}},0,0,1000000000,\ \textcolor{stringliteral}{"{}Número\ de\ gerações\ máximo\ (0\ não há limite).\ "{}},\ NULL\ \});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ máximo\ de\ expansões}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Expansões"{}},0,0,1000000000,\ \textcolor{stringliteral}{"{}Número\ de\ expansões máximo\ (0\ não há limite).\ "{}},NULL\ \});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//\ máximo\ de\ avaliacoes}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00054}00054\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Avaliações"{}},0,0,1000000000,\ \textcolor{stringliteral}{"{}Número\ de\ avaliações\ máximo\ (0\ não há limite).\ "{}},NULL\ \});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ colocar\ as\ configurações\ vazias\ (podem\ ser\ inicializadas\ se\ existirem\ configurações\ de\ omissão)}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(0);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00061}00061\ \textcolor{comment}{//\ Escrever\ informacao\ de\ debug\ sobre\ o\ objecto\ atual}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00062}\mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{00062}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{TProcura::Debug}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00063}00063\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11}{nada}})}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nTProcura::Debug()\ não definido."{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00070}00070\ \textcolor{comment}{//\ Chamar\ antes\ de\ iniciar\ uma\ procura}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00071}\mbox{\hyperlink{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6}{00071}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6}{TProcura::LimparEstatisticas}}(clock\_t\&\ inicio)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00072}00072\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{classTProcura_a264d55f8948e71bc41856e98a438de93}{expansoes}}\ =\ \mbox{\hyperlink{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}{geracoes}}\ =\ \mbox{\hyperlink{classTProcura_a81f881250464f75899082c0fe681e234}{avaliacoes}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00074}00074\ \ \ \ \ inicio\ =\ clock();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{classTProcura_aad1d62f5db16f77742bb291b6ef342f6}{instanteFinal}}\ =\ inicio\ +\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245}{limiteTempo}}].valor\ *\ CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoriaEsgotada}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00079}00079\ \textcolor{comment}{//\ Metodo\ para\ teste\ manual\ do\ objecto\ (chamadas\ aos\ algoritmos,\ construcao\ de\ uma\ solucao\ manual)}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00080}00080\ \textcolor{comment}{//\ Este\ metodo\ destina-\/se\ a\ testes\ preliminares,\ e\ deve\ ser\ redefinido\ apenas\ se\ forem\ definidos\ novos\ algoritmos}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00081}\mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{00081}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcura::TesteManual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00082}00082\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{int}\ selecao,\ resultado;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00084}00084\ \ \ \ \ clock\_t\ inicio;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00085}00085\ \ \ \ \ \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}{ResetParametros}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00086}00086\ \ \ \ \ \mbox{\hyperlink{classTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{TRand::srand}}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}].valor);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{SolucaoVazia}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6}{LimparEstatisticas}}(inicio);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\%s"{}},\ nome);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{MostraParametros}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n[Estatísticas]\ expansões \%d\ |\ gerações\ \%d\ |\ avaliações\ \%d\ "{}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a264d55f8948e71bc41856e98a438de93}{expansoes}},\ \mbox{\hyperlink{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}{geracoes}},\ \mbox{\hyperlink{classTProcura_a81f881250464f75899082c0fe681e234}{avaliacoes}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{Debug}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00096}00096\ \textcolor{stringliteral}{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00097}00097\ \textcolor{stringliteral}{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |\(\backslash\)n\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00098}00098\ \textcolor{stringliteral}{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((selecao\ =\ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{NovoValor}}(\textcolor{stringliteral}{"{}\(\backslash\)nOpção:\ "{}}))\ ==\ \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\_LIDO}})}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}}(selecao,\ 0,\ 8))\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 0:\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:\ \mbox{\hyperlink{classTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{TRand::srand}}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}].valor);\ \mbox{\hyperlink{classTProcura_ae9f0b921a171a110e6a6fcc209332635}{SolicitaInstancia}}();\ \mbox{\hyperlink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{SolucaoVazia}}();\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:\ \mbox{\hyperlink{classTProcura_ac1e91215d86bdb10176b3c180fe1fe3f}{ExplorarSucessores}}();\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:\ \mbox{\hyperlink{classTProcura_afc2ed3d82bfd70cf50e188798b75331b}{MostrarSolucao}}();\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:\ \mbox{\hyperlink{classTProcura_ab044dca559e3c04e5cec68647af2c7c4}{EditarParametros}}();\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ executar\ um\ algoritmo\ }}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6}{LimparEstatisticas}}(inicio);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ resultado\ =\ \mbox{\hyperlink{classTProcura_a1297806db02da2a44794883a6f427965}{ExecutaAlgoritmo}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{MostraParametros}}(0);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nResultado:\ \%d"{}},\ resultado);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_af134643c9ebc0ec02aa002360ad26b97}{FinalizarCorrida}}(inicio);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:\ \mbox{\hyperlink{classTProcura_ae559b54c7ff363280df914fec988794f}{EditarConfiguracoes}}();\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a69a9049e7378841d7c94db3db8eda96b}{TesteEmpirico}}(}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{NovoValor}}(\textcolor{stringliteral}{"{}Instância\ inicial:\ "{}}),}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{NovoValor}}(\textcolor{stringliteral}{"{}Instancia\ final:\ "{}}),}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{NovoValor}}(\textcolor{stringliteral}{"{}Mostrar\ soluções?\ "{}}));}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 8:\ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:\ printf(\textcolor{stringliteral}{"{}\(\backslash\)nOpção\ não definida."{}});\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00128}\mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{00128}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{TProcura::MostraParametros}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}},\ \mbox{\hyperlink{classTVector}{TVector<int>}}*\ idParametros)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{int}\ nElementos\ =\ (idParametros\ ==\ NULL\ ?\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ :\ idParametros-\/>\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}());}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00130}00130\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ nElementos;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ parID\ =\ (idParametros\ ==\ NULL\ ?\ i\ :\ (*idParametros)[i]);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ identificação\ do\ parâmetro}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}\ ==\ 0\ ||\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].nome\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}P\%d:"{}},\ parID\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}P\%d(\%s):\ "{}},\ parID\ +\ 1,\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].nome);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ valor\ do\ parâmetro}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}\ ==\ 0\ ||\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].nomeValores\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d"{}},\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].valor);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].nomeValores[\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].valor\ -\/\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].min]);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mostrar\ intervalo\ permitido}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ (\%d\ a\ \%d)"{}},\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].min,\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[parID].max);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ separador/mudança de\ linha}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ nElementos\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}\ >\ 1\ ||\ (i\ +\ 1)\ \%\ (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}\ ==\ 0\ ?\ 10\ :\ 4)\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ |\ "{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ "{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00156}00156\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00158}\mbox{\hyperlink{classTProcura_ab044dca559e3c04e5cec68647af2c7c4}{00158}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_ab044dca559e3c04e5cec68647af2c7c4}{TProcura::EditarParametros}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordtype}{int}\ opcao\ =\ 0,\ valor;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{MostraParametros}}(2);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((opcao\ =\ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{NovoValor}}(\textcolor{stringliteral}{"{}\(\backslash\)nParametro:"{}}))\ ==\ \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\_LIDO}}\ ||\ opcao\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ opcao\ =\ \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}}(opcao,\ 1,\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Count());}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mostrar\ descrição\ se\ existir}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].descricao\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\%s"{}},\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].descricao);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ mostrar\ textos\ dos\ valores\ possíveis,\ caso\ existam}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].nomeValores\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].min;\ i\ <=\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].max;\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\%d:\ \%s"{}},\ i,}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].nomeValores[i\ -\/\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].min]);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ valor\ atual}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].nome\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\%s\ (atual\ \%d):\ "{}},\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].nome,\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].valor);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nP\%d\ (atual\ \%d):\ "{}},\ opcao,\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].valor);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ solicitar\ valor}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ valor\ =\ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{NovoValor}}(\textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valor\ !=\ \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\_LIDO}}\ ||\ valor\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].valor\ =\ \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}}(}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valor,}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].min,}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[opcao\ -\/\ 1].max);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00186}00186\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00187}00187\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00189}00189\ \textcolor{comment}{//\ gravar\ (ou\ ler)\ a\ configuração\ atual}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00190}\mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{00190}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{TProcura::ConfiguracaoAtual}}(\mbox{\hyperlink{classTVector}{TVector<int>}}\&\ parametros,\ \textcolor{keywordtype}{int}\ operacao)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00191}00191\ \ \ \ \ \textcolor{keywordflow}{if}\ (operacao\ ==\ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}{gravar}})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Count()\ \&\&\ i\ <\ parametros.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[i].valor\ =\ parametros[i];}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (operacao\ ==\ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678}{ler}})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ parametros.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(0);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Count();\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ parametros.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[i].valor);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00199}00199\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00203}\mbox{\hyperlink{classTProcura_ae559b54c7ff363280df914fec988794f}{00203}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_ae559b54c7ff363280df914fec988794f}{TProcura::EditarConfiguracoes}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00204}00204\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ atual;\ \textcolor{comment}{//\ parâmetros\ atuais}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00207}00207\ \ \ \ \ \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{ConfiguracaoAtual}}(atual,\ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678}{ler}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00209}00209\ \ \ \ \ \textcolor{comment}{//\ procurar\ a\ configuração\ atual}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ \&\&\ \textcolor{keywordtype}{id}\ <\ 0;\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}[i].Equal(atual))}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ i;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00213}00213\ \ \ \ \ \textcolor{comment}{//\ caso\ a\ configuração\ atual\ não exista,\ adicionar}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_aa304d639c79ef2842f9951846c6292e3}{Last}}()\ =\ atual;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00220}00220\ \ \ \ \ \mbox{\hyperlink{classTProcura_a3332047124784be2fc7af575a5f7f8b5}{MostrarConfiguracoes}}(0,\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{NovoValor}}(\textcolor{stringliteral}{"{}\(\backslash\)nSelecionar\ configuração\ (negativo\ apaga):\ "{}}))\ !=\ \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\_LIDO}})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}}(\textcolor{keywordtype}{id},\ -\/\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ -\/\ 1,\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ <\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a1520b4878aa655442babf702646abd7f}{Delete}}(-\/\textcolor{keywordtype}{id}\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ atual\ =\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}[\textcolor{keywordtype}{id}\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00230}00230\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00231}00231\ \ \ \ \ \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{ConfiguracaoAtual}}(atual,\ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}{gravar}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00232}00232\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00234}\mbox{\hyperlink{classTProcura_a3332047124784be2fc7af575a5f7f8b5}{00234}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a3332047124784be2fc7af575a5f7f8b5}{TProcura::MostrarConfiguracoes}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}},\ \textcolor{keywordtype}{int}\ atual)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00235}00235\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ comum,\ distinto;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00236}00236\ \ \ \ \ \textcolor{comment}{//\ identificar\ parametros\ comuns\ e\ distintos\ entre\ as\ parametrizações}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a05f29646493d42f3c77081b6031d70e5}{First}}().Count();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ igual\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 1;\ j\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ \&\&\ igual;\ j++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ igual\ =\ (\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a05f29646493d42f3c77081b6031d70e5}{First}}()[i]\ ==\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}[j][i]);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (igual)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ comum.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ distinto.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(i);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00245}00245\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00246}00246\ \ \ \ \ \textcolor{comment}{//\ mostra\ parametros\ comuns,\ evitando\ repetição\ em\ cada\ configuração}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00247}00247\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nParametros\ comuns\ a\ \%d\ configurações:"{}},\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}());}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00248}00248\ \ \ \ \ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{MostraParametros}}(\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}},\ \&comum);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{comment}{//\ visualizar\ configurações\ atuais,\ assinalando\ a\ atualmente\ escolhida}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Configuração\ \%d"{}},\ i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ atual)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ -\/-\/-\/\ atual"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{ConfiguracaoAtual}}(\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}[i],\ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}{gravar}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{MostraParametros}}(\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}},\ \&distinto);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00257}00257\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00258}00258\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00261}00261\ \textcolor{comment}{//\ utilizar\ para\ executar\ testes\ empíricos,\ utilizando\ todas\ as\ instãncias,}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00262}00262\ \textcolor{comment}{//\ com\ o\ último\ algoritmo\ executado\ e\ configurações\ existentes}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00263}\mbox{\hyperlink{classTProcura_a69a9049e7378841d7c94db3db8eda96b}{00263}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a69a9049e7378841d7c94db3db8eda96b}{TProcura::TesteEmpirico}}(\textcolor{keywordtype}{int}\ inicio,\ \textcolor{keywordtype}{int}\ fim,\ \textcolor{keywordtype}{bool}\ mostrarSolucoes)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00264}00264\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<TResultado>}}\ resultados;\ \textcolor{comment}{//\ guarda\ as\ soluções\ obtidas}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00265}00265\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ atual;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordtype}{int}\ backupID\ =\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{if}\ (inicio\ ==\ \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\_LIDO}}\ ||\ inicio\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ inicio\ =\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{if}\ (fim\ ==\ \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\_LIDO}}\ ||\ fim\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ fim\ =\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00271}00271\ \ \ \ \ \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}}(inicio,\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}},\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00272}00272\ \ \ \ \ \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}}(fim,\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}},\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00273}00273\ \ \ \ \ \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{ConfiguracaoAtual}}(atual,\ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678}{ler}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ não foram\ feitas\ configurações,\ utilizar\ a\ atual}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_aa304d639c79ef2842f9951846c6292e3}{Last}}()\ =\ atual;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00278}00278\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00279}00279\ \ \ \ \ \textcolor{comment}{//\ percorrer\ todas\ as\ instâncias}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00280}00280\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ configuracao\ =\ 0;\ configuracao\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ configuracao++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{ConfiguracaoAtual}}(\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}[configuracao],\ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}{gravar}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{MostraParametros}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}\ =\ inicio;\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}\ <=\ fim;\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ resultado\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ clock\_t\ inicioCorrida;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{TRand::srand}}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}].valor);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ carregar\ instância}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{SolucaoVazia}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ executar\ um\ algoritmo\ }}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nInstância\ \%d:\ "{}},\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ inicioCorrida\ =\ clock();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6}{LimparEstatisticas}}(inicioCorrida);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ resultado\ =\ \mbox{\hyperlink{classTProcura_a1297806db02da2a44794883a6f427965}{ExecutaAlgoritmo}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ resultados.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(\{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultado,}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a264d55f8948e71bc41856e98a438de93}{expansoes}},\mbox{\hyperlink{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}{geracoes}},\mbox{\hyperlink{classTProcura_a81f881250464f75899082c0fe681e234}{avaliacoes}},configuracao,}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clock()\ -\/\ inicioCorrida\ \});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resultado\ >=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mostrarSolucoes)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_afc2ed3d82bfd70cf50e188798b75331b}{MostrarSolucao}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_a7952e187e1b0ae0ca52edab157223179}{Parar}}())}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Não resolvido.\ "{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_afa3015ac104b603930d3f60a34c09fff}{TempoExcedido}}())}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Tempo\ excedido.\ "{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoriaEsgotada}})}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Memória\ esgotada.\ "{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resultado\ <\ 0\ \&\&\ !\mbox{\hyperlink{classTProcura_a7952e187e1b0ae0ca52edab157223179}{Parar}}())}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Instância\ Impossível!\ (se\ algoritmo\ completo)\ "{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ não resolvido,\ cancelar\ resultados\ }}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultados.\mbox{\hyperlink{classTVector_aa304d639c79ef2842f9951846c6292e3}{Last}}().custo\ =\ -\/2;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}DONE."{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00317}00317\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00318}00318\ \ \ \ \ \mbox{\hyperlink{classTProcura_aff6618af81271b5ff13076365fcc0042}{MostraRelatorio}}(resultados);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00319}00319\ \ \ \ \ \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{ConfiguracaoAtual}}(atual,\ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}{gravar}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00320}00320\ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}\ =\ backupID;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00321}00321\ \ \ \ \ \mbox{\hyperlink{classTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{TRand::srand}}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}].valor);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00322}00322\ \ \ \ \ \mbox{\hyperlink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{SolucaoVazia}}();}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00323}00323\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00325}\mbox{\hyperlink{classTProcura_aff6618af81271b5ff13076365fcc0042}{00325}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_aff6618af81271b5ff13076365fcc0042}{TProcura::MostraRelatorio}}(\mbox{\hyperlink{classTVector}{TVector<TResultado>}}\&\ resultados)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00326}00326\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00327}00327\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<TResultado>}}\ total;\ \textcolor{comment}{//\ totais\ por\ cada\ configuração}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00328}00328\ \ \ \ \ total.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}());}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00329}00329\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ total.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00330}00330\ \ \ \ \ \ \ \ \ total[i]\ =\ \{\ 0,0,0,0,0,0,0\ \};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00331}00331\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00332}00332\ \ \ \ \ \textcolor{comment}{//\ mostrar\ os\ resultados}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00333}00333\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\ ID\ |conf|\ custo(g)\ |\ \ expansões |\ \ gerações\ |\ avaliações\ |\ tempo(s)\ |"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00334}00334\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00335}00335\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ resultados.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resultados[i].custo\ >=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ total[resultados[i].configuracao].instancia++;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\%3d\ |\%3d\ |"{}},\ resultados[i].\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}},\ resultados[i].configuracao\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resultados[i].custo\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \%8s\ |"{}},\ resultados[i].custo\ <\ -\/1\ ?\ \textcolor{stringliteral}{"{}não res."{}}\ :\ \textcolor{stringliteral}{"{}sem\ sol."{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \%8d\ |"{}},\ resultados[i].custo);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \%10d\ |\ \%9d\ |\ \%10d\ |\ \%7.3fs\ |"{}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ resultados[i].\mbox{\hyperlink{classTProcura_a264d55f8948e71bc41856e98a438de93}{expansoes}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ resultados[i].\mbox{\hyperlink{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}{geracoes}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ resultados[i].\mbox{\hyperlink{classTProcura_a81f881250464f75899082c0fe681e234}{avaliacoes}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ 1.\ *\ resultados[i].tempo\ /\ CLOCKS\_PER\_SEC);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resultados[i].custo\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ total[resultados[i].configuracao].custo\ +=\ resultados[i].custo;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ total[resultados[i].configuracao].expansoes\ +=\ resultados[i].expansoes;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ total[resultados[i].configuracao].geracoes\ +=\ resultados[i].geracoes;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ total[resultados[i].configuracao].avaliacoes\ +=\ resultados[i].avaliacoes;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ total[resultados[i].configuracao].tempo\ +=\ resultados[i].tempo;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00354}00354\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00355}00355\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\ resolvidas"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00356}00356\ \ \ \ \ \textcolor{comment}{//\ tabela\ com\ os\ totais\ por\ configuração}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00357}00357\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ total.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nTotal\%3d\ |"{}},\ i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \%8d\ |\ \%10d\ |\ \%9d\ |\ \%10d\ |\ \%7.3fs\ |\ \%3d"{}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ total[i].custo,}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ total[i].\mbox{\hyperlink{classTProcura_a264d55f8948e71bc41856e98a438de93}{expansoes}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ total[i].\mbox{\hyperlink{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}{geracoes}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ total[i].\mbox{\hyperlink{classTProcura_a81f881250464f75899082c0fe681e234}{avaliacoes}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ 1.\ *\ total[i].tempo\ /\ CLOCKS\_PER\_SEC,}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ total[i].\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00366}00366\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00367}00367\ \ \ \ \ \textcolor{comment}{//\ mostrar\ torneio\ entre\ configurações}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00368}00368\ \ \ \ \ \mbox{\hyperlink{classTProcura_ac1beda871dff742fdb49ae150cda24e3}{CalculaTorneio}}(resultados);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00369}00369\ \ \ \ \ \mbox{\hyperlink{classTProcura_a3332047124784be2fc7af575a5f7f8b5}{MostrarConfiguracoes}}(1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00370}00370\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00371}00371\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00372}00372\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00373}\mbox{\hyperlink{classTProcura_ac1beda871dff742fdb49ae150cda24e3}{00373}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_ac1beda871dff742fdb49ae150cda24e3}{TProcura::CalculaTorneio}}(\mbox{\hyperlink{classTVector}{TVector<TResultado>}}\&\ resultados)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00374}00374\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<TVector<int>}}>\ torneio;\ \textcolor{comment}{//\ pares\ de\ configurações:\ 1\ melhor,\ 0\ igual\ -\/1\ pior}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00375}00375\ \ \ \ \ torneio.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}());}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00376}00376\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ torneio[i].\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(\mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}());}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00378}00378\ \ \ \ \ \ \ \ \ torneio[i].\mbox{\hyperlink{classTVector_a760d08c7094ac5563f8d969f9d9e32a4}{Reset}}(0);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00379}00379\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00380}00380\ \ \ \ \ \textcolor{comment}{//\ registar\ resultados\ mediante\ o\ melhor\ resultado}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00381}00381\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ j)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<TResultado>}}\ configuracaoI,\ configuracaoJ;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a5f88e5d2158a6e5bb400db591c0de246}{ExtrairConfiguracao}}(resultados,\ configuracaoI,\ i);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a5f88e5d2158a6e5bb400db591c0de246}{ExtrairConfiguracao}}(resultados,\ configuracaoJ,\ j);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ configuracaoI.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}()\ \&\&\ k\ <\ configuracaoJ.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ k++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (configuracaoI[k].\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}\ ==\ configuracaoJ[k].\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}})}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ torneio[i][j]\ +=\ \mbox{\hyperlink{classTProcura_abd92370cf06d23e878f9426aed34e39c}{MelhorResultado}}(configuracaoI[k],\ configuracaoJ[k]);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00391}00391\ \ \ \ \ \mbox{\hyperlink{classTProcura_a325f6cfdb9d0ee31cdecc72e738b144a}{MostrarTorneio}}(torneio);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00392}00392\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00395}\mbox{\hyperlink{classTProcura_a325f6cfdb9d0ee31cdecc72e738b144a}{00395}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a325f6cfdb9d0ee31cdecc72e738b144a}{TProcura::MostrarTorneio}}(\mbox{\hyperlink{classTVector}{TVector}}<\mbox{\hyperlink{classTVector}{TVector<int>}}>\&\ torneio,\ \textcolor{keywordtype}{bool}\ jogo)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00396}00396\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00397}00397\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ pontos;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00398}00398\ \ \ \ \ pontos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(torneio.Count());}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00399}00399\ \ \ \ \ pontos.\mbox{\hyperlink{classTVector_a760d08c7094ac5563f8d969f9d9e32a4}{Reset}}(0);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00400}00400\ \ \ \ \ \textcolor{comment}{//\ registar\ resultados\ mediante\ o\ melhor\ resultado}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00401}00401\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ torneio.Count();\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ torneio.Count();\ j++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ j)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pontos[i]\ +=\ torneio[i][j];}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (jogo)\ \textcolor{comment}{//\ contar\ pontos\ perdidos\ de\ pretas}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pontos[j]\ -\/=\ torneio[i][j];}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00409}00409\ \ \ \ \ \textcolor{comment}{//\ mostrar\ tabela\ do\ torneio}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00410}00410\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nTorneio\ (\#instâncias\ melhores):"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00411}00411\ \ \ \ \ \mbox{\hyperlink{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094}{BarraTorneio}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00412}00412\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ pontos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\%2d"{}},\ i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ pontos.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ j)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ \ \ \ |"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%3d\ |"{}},\ torneio[i][j]);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ no\ final\ colocar\ os\ pontos\ totais}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%3d"{}},\ pontos[i]);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094}{BarraTorneio}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00422}00422\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00423}00423\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00425}\mbox{\hyperlink{classTProcura_a5f88e5d2158a6e5bb400db591c0de246}{00425}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a5f88e5d2158a6e5bb400db591c0de246}{TProcura::ExtrairConfiguracao}}(\mbox{\hyperlink{classTVector}{TVector<TResultado>}}\&\ resultados,\ \mbox{\hyperlink{classTVector}{TVector<TResultado>}}\&\ extracao,\ \textcolor{keywordtype}{int}\ configuracao)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00426}00426\ \ \ \ \ extracao.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(0);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00427}00427\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}};\ i\ <=\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}};\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ resultados.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ j++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (resultados[j].\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}\ ==\ i\ \&\&\ resultados[j].configuracao\ ==\ configuracao)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ extracao.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(resultados[j]);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00431}00431\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00432}00432\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00434}\mbox{\hyperlink{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094}{00434}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094}{TProcura::BarraTorneio}}(\textcolor{keywordtype}{bool}\ nomes)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00435}00435\ \ \ \ \ \textcolor{comment}{//\ barra\ inical/final:\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00436}00436\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\ |"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00437}00437\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nomes)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/\%02d-\/|"{}},\ i\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/-\/-\/|"{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00442}00442\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00445}\mbox{\hyperlink{classTProcura_abd92370cf06d23e878f9426aed34e39c}{00445}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_abd92370cf06d23e878f9426aed34e39c}{TProcura::MelhorResultado}}(\mbox{\hyperlink{structSResultado}{TResultado}}\ base,\ \mbox{\hyperlink{structSResultado}{TResultado}}\ alternativa)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00446}00446\ \ \ \ \ \textcolor{comment}{//\ se\ não resolvido\ por\ ambos,\ retornar\ igualdade}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00447}00447\ \ \ \ \ \textcolor{keywordflow}{if}\ (base.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ ==\ -\/2\ \&\&\ alternativa.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ ==\ -\/2)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00448}00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00449}00449\ \ \ \ \ \textcolor{comment}{//\ se\ igual\ no\ custo\ e\ o\ tempo\ menor\ que\ 0.1,\ retornar\ igualdade}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00450}00450\ \ \ \ \ \textcolor{keywordflow}{if}\ (base.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ ==\ alternativa.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ \&\&\ 10\ *\ abs(base.\mbox{\hyperlink{structSResultado_a09da76704f0e86ab31de795caa2163b4}{tempo}}\ -\/\ alternativa.\mbox{\hyperlink{structSResultado_a09da76704f0e86ab31de795caa2163b4}{tempo}})\ /\ CLOCKS\_PER\_SEC\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00452}00452\ \ \ \ \ \textcolor{comment}{//\ primeiro\ custo\ (ou\ não resolvido,\ -\/2)}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00453}00453\ \ \ \ \ \textcolor{keywordflow}{if}\ ((base.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ ==\ -\/2\ \&\&\ alternativa.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ >\ -\/2)\ ||\ (alternativa.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ >\ 0\ \&\&\ base.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ >\ alternativa.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}))}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00455}00455\ \ \ \ \ \textcolor{keywordflow}{if}\ ((base.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ >\ -\/2\ \&\&\ alternativa.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ ==\ -\/2)\ ||\ (base.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ >\ 0\ \&\&\ alternativa.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}\ >\ base.\mbox{\hyperlink{structSResultado_acf4e3cc238660d5ab1ae933d9813b79c}{custo}}))}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00456}00456\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00457}00457\ \ \ \ \ \textcolor{comment}{//\ agora\ o\ tempo}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00458}00458\ \ \ \ \ \textcolor{keywordflow}{return}\ base.\mbox{\hyperlink{structSResultado_a09da76704f0e86ab31de795caa2163b4}{tempo}}\ <\ alternativa.\mbox{\hyperlink{structSResultado_a09da76704f0e86ab31de795caa2163b4}{tempo}}\ ?\ 1\ :\ -\/1;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00459}00459\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00460}00460\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00461}\mbox{\hyperlink{classTProcura_af134643c9ebc0ec02aa002360ad26b97}{00461}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_af134643c9ebc0ec02aa002360ad26b97}{TProcura::FinalizarCorrida}}(clock\_t\ inicio)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00462}00462\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00463}00463\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ (\%.3fs)"{}},\ 1.0\ *\ (clock()\ -\/\ inicio)\ /\ CLOCKS\_PER\_SEC);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00464}00464\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_afa3015ac104b603930d3f60a34c09fff}{TempoExcedido}}())}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ Tempo\ excedido."{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00466}00466\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoriaEsgotada}})}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ Memória\ esgotada."{}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00468}00468\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00469}00469\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00470}00470\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00471}\mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{00471}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{TProcura::NovoValor}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ prompt)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00472}00472\ \ \ \ \ \textcolor{keywordtype}{char}\ str[\mbox{\hyperlink{TProcura_8cpp_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}}];}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00473}00473\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%s"{}},\ prompt);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00474}00474\ \ \ \ \ fgets(str,\ \mbox{\hyperlink{TProcura_8cpp_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\_SIZE}},\ stdin);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00475}00475\ \ \ \ \ \textcolor{keywordflow}{if}\ (strlen(str)\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ atoi(str);}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00477}00477\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\_LIDO}};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00478}00478\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00479}00479\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00480}\mbox{\hyperlink{classTProcura_ae9f0b921a171a110e6a6fcc209332635}{00480}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcura_ae9f0b921a171a110e6a6fcc209332635}{TProcura::SolicitaInstancia}}()\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00481}00481\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}}\ !=\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}})\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00482}00482\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ resultado;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nNova\ instância\ (atual\ \%d)\ [\%d-\/\%d]:\ "{}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}},}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00487}00487\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((resultado\ =\ \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{NovoValor}}(\textcolor{stringliteral}{"{}"{}}))\ !=\ \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\_LIDO}}\ \&\&\ resultado\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}\ =\ resultado;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}}(\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}},\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}},\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}});}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00490}00490\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00491}00491\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00492}00492\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00493}00493\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}\ =\ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}};}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00494}00494\ \}}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00495}00495\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00496}00496\ }
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00497}\mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{00497}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{TProcura::Dominio}}(\textcolor{keywordtype}{int}\&\ variavel,\ \textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)\ \{}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00498}00498\ \ \ \ \ \textcolor{keywordflow}{if}\ (variavel\ <\ min)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00499}00499\ \ \ \ \ \ \ \ \ variavel\ =\ min;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00500}00500\ \ \ \ \ \textcolor{keywordflow}{if}\ (variavel\ >\ max)}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ variavel\ =\ max;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00502}00502\ \ \ \ \ \textcolor{keywordflow}{return}\ variavel;}
+\DoxyCodeLine{\Hypertarget{TProcura_8cpp_source_l00503}00503\ \}}
+
+\end{DoxyCode}

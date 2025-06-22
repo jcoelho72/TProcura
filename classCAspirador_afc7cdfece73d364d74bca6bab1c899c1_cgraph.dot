@@ -13,5 +13,5 @@ digraph "CAspirador::SolucaoVazia"
   Node3 -> Node4 [id="edge7_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip=" "];
   Node1 -> Node5 [id="edge8_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraConstrutiva\l::SolucaoVazia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga687ad49ea5304ae8e2c3782f470c4ad3",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node5 [id="Node000005",label="TProcuraConstrutiva\l::SolucaoVazia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga89a0b35ca2c5c77d2c5175af6b9ca62a",tooltip="Coloca o objecto no estado inicial da procura."];
 }

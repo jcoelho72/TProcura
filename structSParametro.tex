@@ -2,12 +2,12 @@
 \hypertarget{structSParametro}{}\label{structSParametro}\index{SParametro@{SParametro}}
 
 
-Estrutura para registo de um parÃ¢metro.  
+Estrutura para registo de um parâmetro.  
 
 
 
 
-{\ttfamily \#include $<$TProcura\+Construtiva.\+h$>$}
+{\ttfamily \#include $<$TProcura.\+h$>$}
 
 
 
@@ -17,39 +17,39 @@ Collaboration diagram for SParametro\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{const}} \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structSParametro_aa25ae60ffa1acbaeb51bdf0e5312c349}{nome}}
-\begin{DoxyCompactList}\small\item\em nome do parametro, opcional mas aconselhado nos parÃ¢metros especÃ­ficos \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em nome do parametro, opcional mas aconselhado nos parâmetros específicos \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{int}} \mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}
 \begin{DoxyCompactList}\small\item\em valor do parametro \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{int}} \mbox{\hyperlink{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}{min}}
-\begin{DoxyCompactList}\small\item\em valor mÃ­nimo que o parametro pode tomar \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em valor mínimo que o parametro pode tomar \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}}
-\begin{DoxyCompactList}\small\item\em valor mÃ¡ximo que o parametro pode tomar \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em valor máximo que o parametro pode tomar \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{const}} \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structSParametro_a4ddb9b7f1ca63ca57878f7a5c588c928}{descricao}}
-\begin{DoxyCompactList}\small\item\em descriÃ§Ã£o do parametro, opcional \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em descrição do parametro, opcional \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{const}} \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structSParametro_aae8aa852643edec8af4d1c3c42ede0b2}{nome\+Valores}}
-\begin{DoxyCompactList}\small\item\em Nome associado a cada valor do parÃ¢metro, Ãºtil para variÃ¡veis categÃ³ricas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Nome associado a cada valor do parâmetro, útil para variáveis categóricas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Estrutura para registo de um parÃ¢metro. 
+Estrutura para registo de um parâmetro. 
 
-Permite registrar um parÃ¢metro, armazenando seu valor, limites mÃ¡ximo e mÃ­nimo, alÃ©m de nome e descriÃ§Ã£o. Cada valor pode ter tambÃ©m um nome, em vez de ser um nÃºmero. Podem e devem ser adicionados parÃ¢metros especÃ­ficos de cada problema, de modo a poderem ser testados no teste empÃ­rico.
+Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.
 
 \begin{DoxyNote}{Note}
-Existe uma vetor de parametros declarada de forma estÃ¡tica, de modo a aceder a qualquer parametro de forma global no cÃ³digo. A ordem dos parametros estÃ£o de acordo com o tipo enumerado EParametros\+Construtiva
+Existe uma vetor de parametros declarada de forma estática, de modo a aceder a qualquer parametro de forma global no código. A ordem dos parametros estão de acordo com o tipo enumerado EParametros\+Construtiva
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
-\doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva} \doxylink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{e} Reset\+Parametros()
+\doxylink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6}{EParametros\+Procura} \doxylink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{e} Reset\+Parametros()
 \end{DoxySeeAlso}
 Exemplo\+: 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}\ >\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})\ }
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informaÃ§Ã£o\ de\ debug\ correspondendo\ ao\ nÃ­vel\ detalhe\ ou\ superior}}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}}\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
 
 \end{DoxyCode}
  
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00144}{144}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00093}{93}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 
 
@@ -62,11 +62,11 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00144}{144}} 
 
 
 
-descriÃ§Ã£o do parametro, opcional 
+descrição do parametro, opcional 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00154}{154}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00103}{103}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}\label{structSParametro_aa6d52b4df1268ca83929f85df2a491fa} 
 \index{SParametro@{SParametro}!max@{max}}
@@ -76,11 +76,11 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00154}{154}} 
 
 
 
-valor mÃ¡ximo que o parametro pode tomar 
+valor máximo que o parametro pode tomar 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00152}{152}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00101}{101}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}\label{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff} 
 \index{SParametro@{SParametro}!min@{min}}
@@ -90,11 +90,11 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00152}{152}} 
 
 
 
-valor mÃ­nimo que o parametro pode tomar 
+valor mínimo que o parametro pode tomar 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00150}{150}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00099}{99}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_aa25ae60ffa1acbaeb51bdf0e5312c349}\label{structSParametro_aa25ae60ffa1acbaeb51bdf0e5312c349} 
 \index{SParametro@{SParametro}!nome@{nome}}
@@ -104,11 +104,11 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00150}{150}} 
 
 
 
-nome do parametro, opcional mas aconselhado nos parÃ¢metros especÃ­ficos 
+nome do parametro, opcional mas aconselhado nos parâmetros específicos 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00146}{146}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00095}{95}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_aae8aa852643edec8af4d1c3c42ede0b2}\label{structSParametro_aae8aa852643edec8af4d1c3c42ede0b2} 
 \index{SParametro@{SParametro}!nomeValores@{nomeValores}}
@@ -118,14 +118,14 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00146}{146}} 
 
 
 
-Nome associado a cada valor do parÃ¢metro, Ãºtil para variÃ¡veis categÃ³ricas. 
+Nome associado a cada valor do parâmetro, útil para variáveis categóricas. 
 
 \begin{DoxyNote}{Note}
-Especialmente relevante quando os valores nÃ£o seguem uma sequÃªncia ordenada. 
+Especialmente relevante quando os valores não seguem uma sequência ordenada. 
 \end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00157}{157}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00106}{106}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}\label{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33} 
 \index{SParametro@{SParametro}!valor@{valor}}
@@ -139,10 +139,10 @@ valor do parametro
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00148}{148}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00097}{97}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{TProcuraConstrutiva_8h}{TProcura\+Construtiva.\+h}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{TProcura_8h}{TProcura.\+h}}\end{DoxyCompactItemize}

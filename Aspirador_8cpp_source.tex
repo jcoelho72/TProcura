@@ -21,14 +21,14 @@
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{if}(clone!=NULL)}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ clone-\/>\mbox{\hyperlink{classCAspirador_a3785ad3b80ecc08711a70d9920e0bcb9}{Copiar}}(\textcolor{keyword}{this});}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{return}\ clone;}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00022}00022\ \}}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00023}00023\ }
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00024}\mbox{\hyperlink{classCAspirador_afc7cdfece73d364d74bca6bab1c899c1}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAspirador_afc7cdfece73d364d74bca6bab1c899c1}{CAspirador::SolucaoVazia}}(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00025}00025\ \{}
-\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{TProcuraConstrutiva::SolucaoVazia}}();}
-\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classCAspirador_ac118e781b7b1296f09d5aec94560b00e}{salas}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(\mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}});}
+\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a}{TProcuraConstrutiva::SolucaoVazia}}();}
+\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{classCAspirador_ac118e781b7b1296f09d5aec94560b00e}{salas}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}(\mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}.\mbox{\hyperlink{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}{valor}});}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classCAspirador_ac118e781b7b1296f09d5aec94560b00e}{salas}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();\ i++)\ }
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCAspirador_ac118e781b7b1296f09d5aec94560b00e}{salas}}[i]\ =\ (\mbox{\hyperlink{classTRand_a8f8ec155d796c5586198ac75eb966d4f}{TRand::rand}}()\ \%\ 2\ ?\ \textcolor{charliteral}{'.'}\ :\ \textcolor{charliteral}{'*'});}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{classCAspirador_a6b4d9d1a1657ada0d888d23392c9826b}{aspirador}}\ =\ \mbox{\hyperlink{classTRand_a8f8ec155d796c5586198ac75eb966d4f}{TRand::rand}}()\ \%\ \mbox{\hyperlink{classCAspirador_ac118e781b7b1296f09d5aec94560b00e}{salas}}.\mbox{\hyperlink{classTVector_a427bf294df0ee2bf96e30d278c08389f}{Count}}();}
@@ -49,7 +49,7 @@
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ limpar}}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00046}00046\ \ \ \ \ sucessores.\mbox{\hyperlink{classTVector_a21e44df6bc9513d711e2047abc5abf3d}{Add}}(sucessor\ =\ (\mbox{\hyperlink{classCAspirador}{CAspirador}}*)\mbox{\hyperlink{classCAspirador_a3c9571f17ca0cbb074943ddd9bd27587}{Duplicar}}());}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00047}00047\ \ \ \ \ sucessor-\/>\mbox{\hyperlink{classCAspirador_ac118e781b7b1296f09d5aec94560b00e}{salas}}[\mbox{\hyperlink{classCAspirador_a6b4d9d1a1657ada0d888d23392c9826b}{aspirador}}]\ =\ \textcolor{charliteral}{'.'};}
-\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoriaEsgotada}})}
+\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoriaEsgotada}})}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcuraConstrutiva::Sucessores}}(sucessores);}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00051}00051\ \}}
@@ -89,8 +89,8 @@
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00085}00085\ }
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00086}\mbox{\hyperlink{classCAspirador_a718c8187439940dec18a46a9e9e024e3}{00086}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCAspirador_a718c8187439940dec18a46a9e9e024e3}{CAspirador::TesteManual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00087}00087\ \{}
-\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}}\ =\ \{\ NULL,\ 4,2,50,\ NULL,\ NULL\ \};}
-\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{TProcuraConstrutiva::TesteManual}}(nome);}
+\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}\ =\ \{\ NULL,\ 4,2,50,\ NULL,\ NULL\ \};}
+\DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcuraConstrutiva::TesteManual}}(nome);}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00090}00090\ \}}
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00091}00091\ }
 \DoxyCodeLine{\Hypertarget{Aspirador_8cpp_source_l00092}\mbox{\hyperlink{classCAspirador_a9279c18880569e58bc26932979d58058}{00092}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCAspirador_a9279c18880569e58bc26932979d58058}{CAspirador::Distinto}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ estado)\ \{}

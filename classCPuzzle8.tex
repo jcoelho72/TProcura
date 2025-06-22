@@ -35,13 +35,13 @@ void \mbox{\hyperlink{classCPuzzle8_a65dd2ff8c163c5542a12b2213c2fd12a}{Sucessore
 bool \mbox{\hyperlink{classCPuzzle8_a1dcc5a3f7af851b00d523958abbdfd4d}{Solucao\+Completa}} (void)
 \begin{DoxyCompactList}\small\item\em Verifica se o estado actual √© objectivo (√© uma solu√ß√£o completa) \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCPuzzle8_a8ecb37cf08f1fe64bba96834370afa35}{Debug}} (void)
-\begin{DoxyCompactList}\small\item\em Mostra o estado no ecr√£, para debug. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Mostra o estado no ecr„, para debug. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCPuzzle8_a251d6029c7b33366a000ce84aee4d2ed}{Mostrar\+Solucao}} (void)
-\begin{DoxyCompactList}\small\item\em Mostrar solu√ß√£o, seja um caminho ou o pr√≥prio estado. \end{DoxyCompactList}\item 
+\item 
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCPuzzle8_a6e6634ceac73ff4eb3ffa10978eb1126}{Acao}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}sucessor)
 \item 
 void \mbox{\hyperlink{classCPuzzle8_a06d2a8f5d7e3670eb6ee75d7a72b0265}{Teste\+Manual}} (const char \texorpdfstring{$\ast$}{*}nome)
-\begin{DoxyCompactList}\small\item\em Inicializa a intera√ß√£o com o utilizador. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inicializa a interaÁ„o com o utilizador. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCPuzzle8_acb9cf571531e2ac8581bfe407b6a01b3}{Reset\+Parametros}} ()
 \begin{DoxyCompactList}\small\item\em Inicializa os parametros. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCPuzzle8_a273bc37daab41bce1aab45517e800d27}{Heuristica}} (void)
@@ -59,18 +59,20 @@ virtual \mbox{\hyperlink{classTProcuraConstrutiva_aa19cbee6023bd0ff01c61c6d6db2e
 \item 
 virtual void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} objecto)
 \begin{DoxyCompactList}\small\item\em Fica com uma c√≥pia do objecto. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a}{Solucao\+Vazia}} (void)
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__RedefinicaoMandatoria_gacb15562d8776f4d162001d385ebc13a0}{Reset\+Parametros}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa os parametros. \end{DoxyCompactList}\item 
 virtual const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__RedefinicaoSugerida_gacbc6e34f3a403d26d806f37b5cd739f6}{Acao}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} sucessor)
 \begin{DoxyCompactList}\small\item\em Retorna a a√ß√£o (movimento, passo, jogada, lance, etc.) que gerou o sucessor. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_gacccf4fbb52126ba19bfc456c0c6d5214}{Acao}} (const char \texorpdfstring{$\ast$}{*}acao)
 \begin{DoxyCompactList}\small\item\em Executa a a√ß√£o (movimento, passo, jogada, lance, etc.) no estado atual. \end{DoxyCompactList}\item 
-virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_gaed4543b865993696a193d101e925b5b1}{Parar}} (void)
-\begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
 virtual bool \mbox{\hyperlink{group__RedefinicaoOpcional_ga1cf2a30e496ea869e85a9d60b4d469e9}{Distinto}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado)
 \begin{DoxyCompactList}\small\item\em Verifica se o estado actual distinto do fornecido. \end{DoxyCompactList}\item 
-virtual int \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo}} ()
+void \mbox{\hyperlink{group__RedefinicaoOpcional_ga1fdecf86b41c94a1656c17495f9b5b93}{Mostrar\+Solucao}} (void)
+\begin{DoxyCompactList}\small\item\em Mostrar solu√ß√£o, seja um caminho ou o pr√≥prio estado. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo}} ()
 \begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
-virtual void \mbox{\hyperlink{group__RedefinicaoOpcional_gab2fca28035f165ce7c1d40acbfc8c971}{Teste\+Empirico}} (int inicio=-\/1, int fim=-\/1, bool mostrar\+Solucoes=true)
-\begin{DoxyCompactList}\small\item\em Executa testes emp√≠ricos, em todas as configura√ß√µes guardadas, nas inst√¢ncias selecionadas. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
 \begin{DoxyCompactList}\small\item\em Executa a procura em largura primeiro, algoritmo cego. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
@@ -93,6 +95,25 @@ int \mbox{\hyperlink{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}
 \item 
 void \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha}} (bool tudo=true)
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a72975c17835fa9ce5783db63221b0637}{TProcura}} (void)
+\item 
+virtual \mbox{\hyperlink{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0}{\texorpdfstring{$\sim$}{\string~}\+TProcura}} (void)
+\item 
+virtual bool \mbox{\hyperlink{classTProcura_a7952e187e1b0ae0ca52edab157223179}{Parar}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTProcura_a69a9049e7378841d7c94db3db8eda96b}{Teste\+Empirico}} (int inicio=-\/1, int fim=-\/1, bool mostrar\+Solucoes=true)
+\begin{DoxyCompactList}\small\item\em Executa testes empÌricos, em todas as configuraÁıes guardadas, nas inst‚ncias selecionadas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTProcura_afa3015ac104b603930d3f60a34c09fff}{Tempo\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcura_ab9ea7758032fbdc9f22bfed9f76b6fdf}{Geracoes\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcura_a476a43ad056a18e8fb6e0a3e19499843}{Expansoes\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcura_a22a7b22938205606fb7c3c8e29411d07}{Avaliacoes\+Excedido}} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -114,29 +135,18 @@ int \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df}{Libertar\+Vector}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&vector, int excepto=-\/1, int maior\+Que=-\/1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
 \item 
-static int \mbox{\hyperlink{classTProcuraConstrutiva_a47abc151fcdd67c126b99672870d7dca}{Novo\+Valor}} (const char \texorpdfstring{$\ast$}{*}prompt)
+static int \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{Novo\+Valor}} (const char \texorpdfstring{$\ast$}{*}prompt)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
 \begin{DoxyCompactItemize}
 \item 
-static \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}} = \{ NULL,1,1,1, NULL, NULL \}
-\begin{DoxyCompactList}\small\item\em ID da inst√¢ncia atual, a ser utilizado em \doxylink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}
-\begin{DoxyCompactList}\small\item\em Par√¢metros a serem utilizados na configura√ß√£o atual. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga80c8e869e8ac8d64820ce8570e44cc8e}{configuracoes}}
-\begin{DoxyCompactList}\small\item\em Conjuntos de configura√ß√µes para teste emp√≠rico. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{group__VariaveisGlobais_ga6185647765b723a3581b5541722e496f}{geracoes}} = 0
-\begin{DoxyCompactList}\small\item\em N√∫mero total de gera√ß√µes realizadas na procura. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{group__VariaveisGlobais_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}} =0
-\begin{DoxyCompactList}\small\item\em N√∫mero total de expans√µes realizadas na procura. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{group__VariaveisGlobais_ga1ce9b620e165ff360003cf0c21101470}{avaliacoes}} =0
-\begin{DoxyCompactList}\small\item\em N√∫mero total de avalia√ß√µes realizadas na procura. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}
 \begin{DoxyCompactList}\small\item\em Solu√ß√£o retornada pela procura (os estados devem ser libertados). \end{DoxyCompactList}\item 
-static bool \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoria\+Esgotada}} = false
-\begin{DoxyCompactList}\small\item\em Flag indicando problemas de mem√≥ria esgotada. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisGlobais_gadb0d41114016ec069543b3494b0e0196}{solucao}} =NULL
+static \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisGlobais_gadb0d41114016ec069543b3494b0e0196}{solucao}} = NULL
 \begin{DoxyCompactList}\small\item\em Estado objetivo encontrado, retornado pela procura (deve ser libertado). \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{group__VariaveisGlobais_ga1af840b6ec9c04ce7d4c8849346441bd}{lower\+Bound}} = 0
 \begin{DoxyCompactList}\small\item\em Valor m√≠nimo que a solu√ß√£o pode apresentar, obtido pela procura. \end{DoxyCompactList}\item 
@@ -144,10 +154,27 @@ static int \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c99
 \begin{DoxyCompactList}\small\item\em N√∫mero de inteiros de 64 bits utilizados para codificar um objeto (‚â§ OBJETO\+\_\+\+HASHTABLE). \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classTVector}{TVector}}$<$ unsigned char $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}
 \item 
-static int \mbox{\hyperlink{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}{espacos\+Ramo}} =2
-\item 
-static clock\+\_\+t \mbox{\hyperlink{group__VariaveisGlobais_gaf7efa04a418f94ee4bad1392e69e357d}{instante\+Final}} = 0
+static int \mbox{\hyperlink{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}{espacos\+Ramo}} = 2
 \end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}} = \{ NULL,1,1,1, NULL, NULL \}
+\begin{DoxyCompactList}\small\item\em ID da inst‚ncia atual, a ser utilizado em \doxylink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}
+\begin{DoxyCompactList}\small\item\em Par‚metros a serem utilizados na configuraÁ„o atual. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}
+\begin{DoxyCompactList}\small\item\em Conjuntos de configuraÁıes para teste empÌrico. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}{geracoes}} = 0
+\begin{DoxyCompactList}\small\item\em N˙mero total de geraÁıes realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classTProcura_a264d55f8948e71bc41856e98a438de93}{expansoes}} = 0
+\begin{DoxyCompactList}\small\item\em N˙mero total de expansıes realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classTProcura_a81f881250464f75899082c0fe681e234}{avaliacoes}} = 0
+\begin{DoxyCompactList}\small\item\em N˙mero total de avaliaÁıes realizadas na procura. \end{DoxyCompactList}\item 
+static clock\+\_\+t \mbox{\hyperlink{classTProcura_aad1d62f5db16f77742bb291b6ef342f6}{instante\+Final}} = 0
+\begin{DoxyCompactList}\small\item\em Instante final (deadline) da corrida atual. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoria\+Esgotada}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicando problemas de memÛria esgotada. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -183,43 +210,9 @@ void \mbox{\hyperlink{classTProcuraConstrutiva_a640e74c9b6cd340761db671438ad679e
 \item 
 int \mbox{\hyperlink{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937}{Solucao\+Parcial}} (int i, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&sucessores)
 \item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_ab5639efca5e48b564a8bdd9ec23a8955}{Explorar\+Sucessores}} (bool jogo=false)
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_aa2c53163dbc3e394abbd2bfbf70e29ca}{Editar\+Parametros}} ()
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_a7e5329143aa8df478b68741d47fa6a7f}{Editar\+Configuracoes}} ()
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_a9d4bc5b86186bcba9cbee82588ada2fb}{Mostrar\+Configuracoes}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}, int atual=-\/1)
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_a0729129ac5c4791ebd251bdd28e4a137}{Solicita\+Instancia}} ()
-\item 
-bool \mbox{\hyperlink{classTProcuraConstrutiva_a1d844f9591ce201c48e38024a92887f4}{Tempo\+Excedido}} ()
-\item 
-bool \mbox{\hyperlink{classTProcuraConstrutiva_a210ebf6bc971e86c845f7bbade1ca4c6}{Geracoes\+Excedido}} ()
-\item 
-bool \mbox{\hyperlink{classTProcuraConstrutiva_ab0c0a5578bb6fce9ea175f1646871212}{Expansoes\+Excedido}} ()
-\item 
-bool \mbox{\hyperlink{classTProcuraConstrutiva_ae69f7bb250c61cd3b73d85a3a2305600}{Avaliacoes\+Excedido}} ()
+void \mbox{\hyperlink{classTProcuraConstrutiva_a9fda19c96c9cd874fa45578bcc30f607}{Explorar\+Sucessores}} ()
 \item 
 void \mbox{\hyperlink{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9}{Mostrar\+Caminho}} ()
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_af74795a981510f72e0c7865cd758ab3b}{Mostra\+Parametros}} (int \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}=1, \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}id\+Parametros=NULL)
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_ac7e1356d8cd516f18380d4f4c5730c2b}{Mostra\+Relatorio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
-\item 
-int \mbox{\hyperlink{classTProcuraConstrutiva_a6dc1daad843c50560a5f3dd8bbe23f56}{Dominio}} (int \&variavel, int min=INT\+\_\+\+MIN, int max=INT\+\_\+\+MAX)
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_a4c50b21dc4dc6a689af754dfce6e272f}{Configuracao\+Atual}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \&parametros, int operacao)
-\item 
-int \mbox{\hyperlink{classTProcuraConstrutiva_a8f3b2ddaa879df23c5c9921cdfff0dd8}{Melhor\+Resultado}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} base, \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} alternativa)
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_a589640c821d42dbcc476971995b511bf}{Calcula\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_a12b8afb0fe836f489ada61cb33eb5dee}{Mostrar\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \&torneio, bool jogo=false)
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_a555a752a4e2bf6a0e5ba1454eeb16e38}{Barra\+Torneio}} (bool nomes)
-\item 
-void \mbox{\hyperlink{classTProcuraConstrutiva_adc31f777cf89c56571baedd4a48cea47}{Extrair\+Configuracao}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&extracao, int configuracao)
 \item 
 unsigned int \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{Hash}} ()
 \item 
@@ -228,6 +221,38 @@ void \mbox{\hyperlink{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c
 bool \mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{Existe\+HT}} ()
 \item 
 virtual void \mbox{\hyperlink{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}{Substituir\+HT}} (int indice)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{Mostra\+Parametros}} (int \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}=1, \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}id\+Parametros=NULL)
+\item 
+void \mbox{\hyperlink{classTProcura_a3332047124784be2fc7af575a5f7f8b5}{Mostrar\+Configuracoes}} (int \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}, int atual=-\/1)
+\item 
+void \mbox{\hyperlink{classTProcura_ab044dca559e3c04e5cec68647af2c7c4}{Editar\+Parametros}} ()
+\item 
+void \mbox{\hyperlink{classTProcura_ae559b54c7ff363280df914fec988794f}{Editar\+Configuracoes}} ()
+\item 
+void \mbox{\hyperlink{classTProcura_aff6618af81271b5ff13076365fcc0042}{Mostra\+Relatorio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
+\item 
+void \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{Configuracao\+Atual}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \&parametros, int operacao)
+\item 
+int \mbox{\hyperlink{classTProcura_abd92370cf06d23e878f9426aed34e39c}{Melhor\+Resultado}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} base, \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} alternativa)
+\item 
+void \mbox{\hyperlink{classTProcura_ac1beda871dff742fdb49ae150cda24e3}{Calcula\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
+\item 
+void \mbox{\hyperlink{classTProcura_a325f6cfdb9d0ee31cdecc72e738b144a}{Mostrar\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \&torneio, bool jogo=false)
+\item 
+void \mbox{\hyperlink{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094}{Barra\+Torneio}} (bool nomes)
+\item 
+void \mbox{\hyperlink{classTProcura_a5f88e5d2158a6e5bb400db591c0de246}{Extrair\+Configuracao}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&extracao, int configuracao)
+\item 
+void \mbox{\hyperlink{classTProcura_ae9f0b921a171a110e6a6fcc209332635}{Solicita\+Instancia}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}} (int \&variavel, int min=INT\+\_\+\+MIN, int max=INT\+\_\+\+MAX)
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
 \begin{DoxyCompactItemize}
@@ -359,17 +384,17 @@ Here is the caller graph for this function\+:
 
 
 
-Mostra o estado no ecr√£, para debug. 
+Mostra o estado no ecr„, para debug. 
 
 \begin{DoxyNote}{Note}
-Redefini√ß√£o opcional. Necess√°rio para visualizar a procura, e explorar o espa√ßo manualmente.
+RedefiniÁ„o opcional. Necess·rio para visualizar a procura, e explorar o espaÁo manualmente.
 \end{DoxyNote}
-Esta fun√ß√£o dever√° mostrar claramente o estado atual, em texto mas da forma mais confort√°vel poss√≠vel. O formato texto destina-\/se principalmente a quem implementa o problema, e n√£o utilizadores finais. √â importante poder explorar o espa√ßo de estados, para verificar a correta implementa√ß√£o dos sucessores, como tamb√©m possa ver a √°rvore de procura dos algoritmos, para √°rvores pequenas, e assim detectar bugs.
+Esta funÁ„o dever· mostrar claramente o estado atual, em texto mas da forma mais confort·vel possÌvel. O formato texto destina-\/se principalmente a quem implementa o problema, e n„o utilizadores finais. … importante poder explorar o espaÁo de estados, para verificar a correta implementaÁ„o dos sucessores, como tambÈm possa ver a ·rvore de procura dos algoritmos, para ·rvores pequenas, e assim detectar bugs.
 
 \begin{DoxyNote}{Note}
-Antes de cada linha, chame a fun√ß√£o \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}. Dependendo do contexto, {\ttfamily \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}} pode imprimir caracteres que representam os ramos da √°rvore de procura, criando uma visualiza√ß√£o textual que simula a estrutura da procura.
+Antes de cada linha, chame a funÁ„o \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}. Dependendo do contexto, {\ttfamily \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}} pode imprimir caracteres que representam os ramos da ·rvore de procura, criando uma visualizaÁ„o textual que simula a estrutura da procura.
 
-A exibi√ß√£o do estado pode variar conforme o n√≠vel de debug definido em {\ttfamily parametro\mbox{[}nivel\+Debug\mbox{]}.valor}. Um n√≠vel menor pode mostrar informa√ß√µes mais sucintas, enquanto um n√≠vel maior pode detalhar todas as vari√°veis do estado.
+A exibiÁ„o do estado pode variar conforme o nÌvel de debug definido em {\ttfamily parametro\mbox{[}nivel\+Debug\mbox{]}.valor}. Um nÌvel menor pode mostrar informaÁıes mais sucintas, enquanto um nÌvel maior pode detalhar todas as vari·veis do estado.
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
 \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}
@@ -379,18 +404,18 @@ A exibi√ß√£o do estado pode variar conforme o n√≠vel de debug definido em {\ttfa
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ √©\ apenas\ um\ n√∫mero}}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ <=\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}{atividade}})}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/<([\%d])>-\/-\/"{}},\ variavel);\ \textcolor{comment}{//\ vers√£o\ compacta\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ È apenas\ um\ n˙mero}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ <=\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}{atividade}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/<([\%d])>-\/-\/"{}},\ variavel);\ \textcolor{comment}{//\ vers„o compacta\ do\ estado}}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ vers√£o\ mais\ elaborada\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ vers„o mais\ elaborada\ do\ estado}}
 \DoxyCodeLine{\ \ \ \ \}}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_ga6bb2ece76e931695c9e32df7ca7143aa}{TProcura\+Construtiva}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{TProcura}}.
 
 
 
@@ -437,7 +462,7 @@ Caso exista falha de mem√≥ria, colocar a vari√°vel memoria\+Esgotada a true, par
 \DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(clone!=NULL)}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ clone-\/>\mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}}(\textcolor{keyword}{this});}
 \DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga3f3d8c2ba303e27335a5b4c424b0ffc5}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ clone;}
 \DoxyCodeLine{\}}
 
@@ -511,33 +536,7 @@ Here is the call graph for this function\+:
 
 
 
-Mostrar solu√ß√£o, seja um caminho ou o pr√≥prio estado. 
-
-\begin{DoxyNote}{Note}
-Redefini√ß√£o opcional.
-\end{DoxyNote}
-Esta fun√ß√£o exibe a solu√ß√£o, mostrando um estado a cada X a√ß√µes e exibindo as a√ß√µes entre os estados. O valor padr√£o de {\ttfamily X} √© 4, ajust√°vel pelo par√¢metro {\ttfamily parametro\mbox{[}ver\+Acoes\mbox{]}.valor}.
-
-\begin{DoxyNote}{Note}
-Em problemas onde seja simples de seguir a a√ß√£o, pode-\/se utilizar valores maiores, sem ser necess√°rio mostrar muitos estados completos. Em problemas que as a√ß√µes sejam mais complexas, ou alterem mais o estado, poder√° ser at√© prefer√≠vel colocar este valor a 1, para que o estado seja sempre mostrado em cada a√ß√£o.
-
-H√° problemas em que o estado √© j√° a solu√ß√£o. Neste caso pode-\/se redefinir esta fun√ß√£o chamando a fun√ß√£o \doxylink{classCPuzzle8_a8ecb37cf08f1fe64bba96834370afa35}{Debug()}.
-
-Em situa√ß√µes particulares, poder√° ser poss√≠vel construir a solu√ß√£o de forma mais compacta, num √∫nico estado com as a√ß√µes todas codificadas, por exemplo um caminho num mapa. Nesse caso h√° que redefinir este m√©todo, implementando a visualiza√ß√£o da solu√ß√£o de raiz.
-\end{DoxyNote}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::MostrarSolucao(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ caso\ o\ estado\ final\ seja\ a\ solu√ß√£o,\ simplesmente\ mostrar\ o\ estado\ atual}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classCPuzzle8_a8ecb37cf08f1fe64bba96834370afa35}{Debug}}();}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ caso\ seja\ um\ caminho\ do\ estado\ inicial\ ao\ final,\ n√£o\ redefinir}}
-\DoxyCodeLine{\}}
-
-\end{DoxyCode}
- 
-
-Reimplemented from \mbox{\hyperlink{group__RedefinicaoOpcional_ga74b4c5766a2b65bdb4c3019523c1508f}{TProcura\+Construtiva}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_afc2ed3d82bfd70cf50e188798b75331b}{TProcura}}.
 
 
 
@@ -556,46 +555,46 @@ Here is the call graph for this function\+:
 Inicializa os parametros. 
 
 \begin{DoxyNote}{Note}
-Redefini√ß√£o necess√°ria se forem adicionados novos parametros, ou for alterado o valor de omiss√£o de parametros existentes.
+RedefiniÁ„o necess·ria se forem adicionados novos parametros, ou for alterado o valor de omiss„o de parametros existentes.
 \end{DoxyNote}
-Nesta fun√ß√£o, a primeira instru√ß√£o dever√° ser a chamada da fun√ß√£o da superclasse, para que sejam criados os parametros da superclasse antes de qualquer outra instru√ß√£o.
+Nesta funÁ„o, a primeira instruÁ„o dever· ser a chamada da funÁ„o da superclasse, para que sejam criados os parametros da superclasse antes de qualquer outra instruÁ„o.
 
-Cada problema pode ter um algoritmo e configura√ß√µes padr√£o que funcionam bem na maioria dos casos. Nesta fun√ß√£o, podem ser definidos estes valores de omiss√£o, que se n√£o forem alterados, ir√° executar a configura√ß√£o mais gen√©rica.
+Cada problema pode ter um algoritmo e configuraÁıes padr„o que funcionam bem na maioria dos casos. Nesta funÁ„o, podem ser definidos estes valores de omiss„o, que se n„o forem alterados, ir· executar a configuraÁ„o mais genÈrica.
 
-Novos par√¢metros podem ser adicionados conforme necess√°rio para atender √†s particularidades do problema. Estes parametros podem depois ser selecionados ou inclu√≠dos num teste emp√≠rico, de modo a averiguar em fase de testes, qual a melhor configura√ß√£o, evitando escolhas arbitr√°rias ou n√£o fundamentadas.
+Novos par‚metros podem ser adicionados conforme necess·rio para atender ‡s particularidades do problema. Estes parametros podem depois ser selecionados ou incluÌdos num teste empÌrico, de modo a averiguar em fase de testes, qual a melhor configuraÁ„o, evitando escolhas arbitr·rias ou n„o fundamentadas.
 
 \begin{DoxyNote}{Note}
-Na cria√ß√£o de um novo parametro, dar uma estrutura TParametro.
+Na criaÁ„o de um novo parametro, dar uma estrutura TParametro.
 
-Ao adicionar novos par√¢metros, √© recomend√°vel manter a enumera√ß√£o sincronizada com a da superclasse. O primeiro elemento deve ser {\ttfamily parametros\+Construtivos}, garantindo que novas adi√ß√µes na superclasse sejam automaticamente refletidas aqui.
+Ao adicionar novos par‚metros, È recomend·vel manter a enumeraÁ„o sincronizada com a da superclasse. O primeiro elemento deve ser {\ttfamily parametros\+Construtivos}, garantindo que novas adiÁıes na superclasse sejam automaticamente refletidas aqui.
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
-\doxylink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
+\doxylink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
 \end{DoxySeeAlso}
-Exemplo com a altera√ß√£o do valor de omiss√£o de um parametro, e adi√ß√£o de dois novos parametros. 
+Exemplo com a alteraÁ„o do valor de omiss„o de um parametro, e adiÁ„o de dois novos parametros. 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{comment}{//\ continua√ß√£o\ da\ enumera√ß√£o\ EParametrosConstrutiva}}
+\DoxyCodeLine{\textcolor{comment}{//\ continuaÁ„o\ da\ enumeraÁ„o\ EParametrosConstrutiva}}
 \DoxyCodeLine{\textcolor{keyword}{enum}\ ESubProblema\ \{\ opcaoHeur\ =\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540}{parametrosConstrutivas}},\ opcaoSuc\ \};}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::ResetParametros(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomesSuc[]\ =\ \{\ \textcolor{stringliteral}{"{}todas"{}},\ \textcolor{stringliteral}{"{}contributo"{}}\ \};\ \textcolor{comment}{//\ nomes\ para\ os\ valores\ de\ opcaoSuc}}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ primeiro\ o\ m√©todo\ na\ superclasse}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoSugerida_gacb15562d8776f4d162001d385ebc13a0}{TProcuraConstrutiva::ResetParametros}}();}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ considerou-\/se\ que\ se\ pretende\ ver\ apenas\ estados\ completos,\ ignorando\ a√ß√µes}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1}{verAcoes}}].valor\ =\ 1;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ primeiro\ o\ mÈtodo\ na\ superclasse}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_gacb15562d8776f4d162001d385ebc13a0}{TProcuraConstrutiva::ResetParametros}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ considerou-\/se\ que\ se\ pretende\ ver\ apenas\ estados\ completos,\ ignorando\ aÁıes}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1}{verAcoes}}].valor\ =\ 1;}
 \DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ fun√ß√£o\ Heuristica()}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Op√ß√£o\ Heur√≠stica"{}},\ 0,0,10,}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}explica√ß√£o\ do\ que\ acontece\ na\ heuristica,\ com\ este\ parametro\ entre\ 0\ e\ 10"{}},NULL\ \});}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ fun√ß√£o\ Sucessores()}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaa214272b03812529f77ebdf9f745c97d}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Op√ß√£o\ Sucessores"{}},\ 0,0,1,}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}0\ gera\ todas\ as\ a√ß√µes;\ 1\ gera\ apenas\ a√ß√µes\ que\ tenham\ um\ contributo\ para\ a\ solu√ß√£o."{}},nomesSuc\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ funÁ„o\ Heuristica()}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}OpÁ„o\ HeurÌstica"{}},\ 0,0,10,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}explicaÁ„o\ do\ que\ acontece\ na\ heuristica,\ com\ este\ parametro\ entre\ 0\ e\ 10"{}},NULL\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ funÁ„o\ Sucessores()}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}OpÁ„o\ Sucessores"{}},\ 0,0,1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}0\ gera\ todas\ as\ aÁıes;\ 1\ gera\ apenas\ aÁıes\ que\ tenham\ um\ contributo\ para\ a\ soluÁ„o."{}},nomesSuc\ \});}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_gacb15562d8776f4d162001d385ebc13a0}{TProcura\+Construtiva}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}{TProcura}}.
 
 
 
@@ -652,14 +651,14 @@ Definition at line \mbox{\hyperlink{Puzzle8_8cpp_source_l00065}{65}} of file \mb
 Coloca o objecto no estado inicial da procura. 
 
 \begin{DoxyNote}{Note}
-Obrigat√≥ria a redefini√ß√£o.
+ObrigatÛria a redefiniÁ„o.
 \end{DoxyNote}
-Este m√©todo inicializa as vari√°veis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer a√ß√£o ser realizada na procura. Caso existam dados de inst√¢ncia, deve neste m√©todo carregar a inst√¢ncia. A primeira instru√ß√£o dever√° chamar o m√©todo da superclasse, conforme modelo em baixo.
+Este mÈtodo inicializa as vari·veis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer aÁ„o ser realizada na procura. Caso existam dados de inst‚ncia, deve neste mÈtodo carregar a inst‚ncia. A primeira instruÁ„o dever· chamar o mÈtodo da superclasse, conforme modelo em baixo.
 
 \begin{DoxyNote}{Note}
-A vari√°vel instancia.\+valor, tem o ID da inst√¢ncia que deve ser carregada. 
+A vari·vel instancia.\+valor, tem o ID da inst‚ncia que deve ser carregada. 
 
-Se a fun√ß√£o \doxylink{classCPuzzle8_a611b043ab56407d684e27508ef9287fa}{Codifica()} estiver implementada, o tamanho do estado codificado deve ser determinado ap√≥s o carregamento da inst√¢ncia, pois diferentes inst√¢ncias podem exigir tamanhos distintos.
+Se a funÁ„o \doxylink{classCPuzzle8_a611b043ab56407d684e27508ef9287fa}{Codifica()} estiver implementada, o tamanho do estado codificado deve ser determinado apÛs o carregamento da inst‚ncia, pois diferentes inst‚ncias podem exigir tamanhos distintos.
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
 \doxylink{classCPuzzle8_a611b043ab56407d684e27508ef9287fa}{Codifica()}
@@ -668,19 +667,19 @@ Se a fun√ß√£o \doxylink{classCPuzzle8_a611b043ab56407d684e27508ef9287fa}{Codific
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::SolucaoVazia(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{TProcuraConstrutiva::SolucaoVazia}}();}
-\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ vari√°veis\ est√°ticas,\ com\ a\ inst√¢ncia\ (ID:\ instancia.valor)}}
-\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ m√©todo\ em\ CSubProblema\ para\ carregar\ uma\ inst√¢ncia}}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ vari√°veis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{TProcura::SolucaoVazia}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ vari·veis\ est·ticas,\ com\ a\ inst‚ncia\ (ID:\ instancia.valor)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ mÈtodo\ em\ CSubProblema\ para\ carregar\ uma\ inst‚ncia}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ vari·veis\ de\ estado}}
 \DoxyCodeLine{\ \ \ \ \ \ \ variavel\ =\ 0;}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ m√°ximo\ do\ estado\ codificado,\ se\ aplic√°vel}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ m·ximo\ do\ estado\ codificado,\ se\ aplic·vel}}
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga687ad49ea5304ae8e2c3782f470c4ad3}{TProcura\+Construtiva}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{TProcura}}.
 
 
 
@@ -756,41 +755,41 @@ Here is the caller graph for this function\+:
 
 
 
-Inicializa a intera√ß√£o com o utilizador. 
+Inicializa a interaÁ„o com o utilizador. 
 
 \begin{DoxyNote}{Note}
-Redefini√ß√£o necess√°ria para definir as instancias existentes.
+RedefiniÁ„o necess·ria para definir as instancias existentes.
 \end{DoxyNote}
-Esta fun√ß√£o arranca com o teste manual, orientada para o programador. A interface permite\+:
+Esta funÁ„o arranca com o teste manual, orientada para o programador. A interface permite\+:
 \begin{DoxyItemize}
-\item visualizar e trocar de inst√¢ncia
-\item explorar o espa√ßo de estados nessa instancia, executando a√ß√µes
-\item ver um caminho que esteja gravado (por explora√ß√£o manual ou por execu√ß√£o de um algoritmo)
-\item ver e editar qualquer parametro de execu√ß√£o
-\item o algoritmo √© tamb√©m um parametro, podendo naturalmente ser alterado
-\item h√° parametros sobre limites de execu√ß√£o, informa√ß√£o de debug, op√ß√µes de implementa√ß√£o e op√ß√µes de algoritmos
-\item executar o algoritmo com a configura√ß√£o atual
-\item adicionar a configura√ß√£o atual a um conjunto de configura√ß√µes de teste
-\item executar um teste emp√≠rico, executando todas as configura√ß√µes de teste, no conjunto de inst√¢ncias selecionadas
+\item visualizar e trocar de inst‚ncia
+\item explorar o espaÁo de estados nessa instancia, executando aÁıes
+\item ver um caminho que esteja gravado (por exploraÁ„o manual ou por execuÁ„o de um algoritmo)
+\item ver e editar qualquer parametro de execuÁ„o
+\item o algoritmo È tambÈm um parametro, podendo naturalmente ser alterado
+\item h· parametros sobre limites de execuÁ„o, informaÁ„o de debug, opÁıes de implementaÁ„o e opÁıes de algoritmos
+\item executar o algoritmo com a configuraÁ„o atual
+\item adicionar a configuraÁ„o atual a um conjunto de configuraÁıes de teste
+\item executar um teste empÌrico, executando todas as configuraÁıes de teste, no conjunto de inst‚ncias selecionadas
 \end{DoxyItemize}
 
-Esta fun√ß√£o deve ser redefinida para inicializar a vari√°vel com informa√ß√£o dos IDs das inst√¢ncias dispon√≠veis. Essa vari√°vel √© do tipo TParametro, mas n√£o est√° na lista de parametros, devendo ser inicializada aqui.
+Esta funÁ„o deve ser redefinida para inicializar a vari·vel com informaÁ„o dos IDs das inst‚ncias disponÌveis. Essa vari·vel È do tipo TParametro, mas n„o est· na lista de parametros, devendo ser inicializada aqui.
 
 \begin{DoxyNote}{Note}
-A inst√¢ncia selecionada ir√° ser carregada em \doxylink{classCPuzzle8_a9cf95b2a057f5368736e503565fad846}{Solucao\+Vazia()}, utilizando o valor atual. 
+A inst‚ncia selecionada ir· ser carregada em \doxylink{classCPuzzle8_a9cf95b2a057f5368736e503565fad846}{Solucao\+Vazia()}, utilizando o valor atual. 
 
-Esta fun√ß√£o deve ser o ponto de entrada, a executar no main.
+Esta funÁ„o deve ser o ponto de entrada, a executar no main.
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
-\doxylink{TProcuraConstrutiva_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
+\doxylink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::TesteManual(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
 \DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ indicar\ que\ h√°\ 10\ inst√¢ncias,\ sendo\ a\ inst√¢ncia\ inicial\ a\ 1}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_gaf66ca5293e862decb3fa33ac0cbe9264}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}Caracter√≠sticas\ dos\ problemas"{}},\ NULL\ \};}
-\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{TProcuraConstrutiva::TesteManual}}(nome);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ indicar\ que\ h· 10\ inst‚ncias,\ sendo\ a\ inst‚ncia\ inicial\ a\ 1}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}CaracterÌsticas\ dos\ problemas"{}},\ NULL\ \};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcuraConstrutiva::TesteManual}}(nome);}
 \DoxyCodeLine{\}}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{comment}{//\ exemplo\ do\ main}}
@@ -803,7 +802,7 @@ Esta fun√ß√£o deve ser o ponto de entrada, a executar no main.
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga843a501e25cbaff7eb51d8d29995be3a}{TProcura\+Construtiva}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcura}}.
 
 
 

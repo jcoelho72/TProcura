@@ -1,0 +1,256 @@
+\doxysection{TProcura.\+h File Reference}
+\hypertarget{TProcura_8h}{}\label{TProcura_8h}\index{TProcura.h@{TProcura.h}}
+{\ttfamily \#include "{}TVector.\+h"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+Include dependency graph for TProcura.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSParametro}{SParametro}}
+\begin{DoxyCompactList}\small\item\em Estrutura para registo de um parâmetro. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structSResultado}{SResultado}}
+\item 
+class \mbox{\hyperlink{classTProcura}{TProcura}}
+\begin{DoxyCompactList}\small\item\em Classe base para todas as procuras. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{TProcura_8h_af08ec37a8c99d747fb60fa15bc28678b}{\+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}}
+\item 
+\#define \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\+\_\+\+LIDO}}~-\/1000000
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structSParametro}{SParametro}} \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}}
+\begin{DoxyCompactList}\small\item\em Estrutura para registo de um parâmetro. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structSResultado}{SResultado}} \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6}{EParametros\+Procura}} \{ \newline
+\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6aeabc5187dd423c46d6dc096c37b01136}{algoritmo}} = 0
+, \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivel\+Debug}}
+, \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}
+, \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245}{limite\+Tempo}}
+, \newline
+\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ad12ebb828f2b226a21ac1472d0eeebfa}{limite\+Geracoes}}
+, \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ada8cabf08fbdfada7b4c7bb0063c7f74}{limite\+Expansoes}}
+, \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a4e659740f4db252369b21a5998487906}{limite\+Avaliacoes}}
+, \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35}{parametros\+Procura}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identifica um parâmetro específico no código. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} \{ \newline
+\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11}{nada}} = 0
+, \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}{atividade}}
+, \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}}
+, \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}
+, \newline
+\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f}{completo}}
+ \}
+\begin{DoxyCompactList}\small\item\em Níveis de detalhamento para debug. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3}{EOperacao}} \{ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}{gravar}} = 0
+, \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678}{ler}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define o sentido da operação de entrada/saída de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{TProcura_8h_af08ec37a8c99d747fb60fa15bc28678b}\label{TProcura_8h_af08ec37a8c99d747fb60fa15bc28678b} 
+\index{TProcura.h@{TProcura.h}!\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}}
+\index{\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{\_CRT\_SECURE\_NO\_WARNINGS}{\_CRT\_SECURE\_NO\_WARNINGS}}
+{\footnotesize\ttfamily \#define \+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00003}{3}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}\label{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7} 
+\index{TProcura.h@{TProcura.h}!NAO\_LIDO@{NAO\_LIDO}}
+\index{NAO\_LIDO@{NAO\_LIDO}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{NAO\_LIDO}{NAO\_LIDO}}
+{\footnotesize\ttfamily \#define NAO\+\_\+\+LIDO~-\/1000000}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00012}{12}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}\label{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0} 
+\index{TProcura.h@{TProcura.h}!TParametro@{TParametro}}
+\index{TParametro@{TParametro}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{TParametro}{TParametro}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structSParametro}{SParametro}} \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}}}
+
+
+
+Estrutura para registo de um parâmetro. 
+
+Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.
+
+\begin{DoxyNote}{Note}
+Existe uma vetor de parametros declarada de forma estática, de modo a aceder a qualquer parametro de forma global no código. A ordem dos parametros estão de acordo com o tipo enumerado EParametros\+Construtiva
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6}{EParametros\+Procura} e Reset\+Parametros()
+\end{DoxySeeAlso}
+Exemplo\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
+
+\end{DoxyCode}
+ \Hypertarget{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}\label{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9} 
+\index{TProcura.h@{TProcura.h}!TResultado@{TResultado}}
+\index{TResultado@{TResultado}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{TResultado}{TResultado}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structSResultado}{SResultado}} \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}\label{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8} 
+\index{TProcura.h@{TProcura.h}!ENivelDebug@{ENivelDebug}}
+\index{ENivelDebug@{ENivelDebug}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{ENivelDebug}{ENivelDebug}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}}}
+
+
+
+Níveis de detalhamento para debug. 
+
+Controla a quantidade de informações exibidas durante a execução do algoritmo.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivel\+Debug}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
+
+\end{DoxyCode}
+ \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nada@{nada}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!nada@{nada}}}\Hypertarget{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11}\label{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11} 
+nada&Sem informações de debug. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{atividade@{atividade}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!atividade@{atividade}}}\Hypertarget{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}\label{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524} 
+atividade&Apenas eventos principais. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{passos@{passos}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!passos@{passos}}}\Hypertarget{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}\label{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0} 
+passos&Exibe passos intermediários. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{detalhe@{detalhe}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!detalhe@{detalhe}}}\Hypertarget{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}\label{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0} 
+detalhe&Debug detalhada sobre estados e decisões. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{completo@{completo}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!completo@{completo}}}\Hypertarget{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f}\label{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f} 
+completo&Mostra toda a execução detalhadamente. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00056}{56}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3}\label{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3} 
+\index{TProcura.h@{TProcura.h}!EOperacao@{EOperacao}}
+\index{EOperacao@{EOperacao}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{EOperacao}{EOperacao}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3}{EOperacao}}}
+
+
+
+Define o sentido da operação de entrada/saída de dados. 
+
+\begin{DoxyNote}{Note}
+Utilizado em funções que requerem distinção entre operação de leitura e gravação. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gravar@{gravar}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!gravar@{gravar}}}\Hypertarget{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd}\label{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd} 
+gravar&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ler@{ler}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!ler@{ler}}}\Hypertarget{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678}\label{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678} 
+ler&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00069}{69}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6} 
+\index{TProcura.h@{TProcura.h}!EParametrosProcura@{EParametrosProcura}}
+\index{EParametrosProcura@{EParametrosProcura}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{EParametrosProcura}{EParametrosProcura}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6}{EParametros\+Procura}}}
+
+
+
+Identifica um parâmetro específico no código. 
+
+Permite aceder a cada parâmetro sem precisar saber seu código numérico. Índice do vetor de parametros, na classe \doxylink{classTProcura}{TProcura}.
+
+\begin{DoxyNote}{Note}
+O último elemento ({\ttfamily parametros\+Procura}) não representa um parâmetro real. Existe para permitir a criação de uma enumeração adicional em subclasses, caso seja necessário adicionar parâmetros específicos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}, Executa\+Algoritmo()
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
+
+\end{DoxyCode}
+ \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{algoritmo@{algoritmo}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!algoritmo@{algoritmo}}}\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6aeabc5187dd423c46d6dc096c37b01136}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6aeabc5187dd423c46d6dc096c37b01136} 
+algoritmo&Algoritmo base a executar. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nivelDebug@{nivelDebug}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!nivelDebug@{nivelDebug}}}\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8} 
+nivel\+Debug&Nível de debug, de reduzido a completo. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{seed@{seed}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!seed@{seed}}}\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869} 
+seed&Semente aleatória para inicializar a sequência de números pseudo-\/aleatórios. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limiteTempo@{limiteTempo}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!limiteTempo@{limiteTempo}}}\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245} 
+limite\+Tempo&Tempo limite em segundos. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limiteGeracoes@{limiteGeracoes}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!limiteGeracoes@{limiteGeracoes}}}\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ad12ebb828f2b226a21ac1472d0eeebfa}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ad12ebb828f2b226a21ac1472d0eeebfa} 
+limite\+Geracoes&Número máximo de gerações (0 significa sem limite). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limiteExpansoes@{limiteExpansoes}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!limiteExpansoes@{limiteExpansoes}}}\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ada8cabf08fbdfada7b4c7bb0063c7f74}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ada8cabf08fbdfada7b4c7bb0063c7f74} 
+limite\+Expansoes&Número máximo de expansões (0 significa sem limite). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{limiteAvaliacoes@{limiteAvaliacoes}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!limiteAvaliacoes@{limiteAvaliacoes}}}\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a4e659740f4db252369b21a5998487906}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a4e659740f4db252369b21a5998487906} 
+limite\+Avaliacoes&Número máximo de avaliações (0 significa sem limite). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{parametrosProcura@{parametrosProcura}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!parametrosProcura@{parametrosProcura}}}\Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35} 
+parametros\+Procura&Marcador para permitir a extensão do enum em subclasses. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00033}{33}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+

@@ -9,5 +9,5 @@ digraph "COitoDamas::SolucaoVazia"
   Node1 -> Node2 [id="edge3_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a427bf294df0ee2bf96e30d278c08389f",tooltip=" "];
   Node1 -> Node3 [id="edge4_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraConstrutiva\l::SolucaoVazia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga687ad49ea5304ae8e2c3782f470c4ad3",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node3 [id="Node000003",label="TProcuraConstrutiva\l::SolucaoVazia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga89a0b35ca2c5c77d2c5175af6b9ca62a",tooltip="Coloca o objecto no estado inicial da procura."];
 }

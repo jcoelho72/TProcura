@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['valor_0',['valor',['../structSParametro.html#a6e6c4623e2bbfac2be3ec7a9d39e4d33',1,'SParametro::valor'],['../classCListaNo.html#aef59a51e58231841d16fa45aa7582328',1,'CListaNo::Valor()']]],
+  ['valor_0',['valor',['../classCListaNo.html#aef59a51e58231841d16fa45aa7582328',1,'CListaNo::Valor()'],['../structSParametro.html#a6e6c4623e2bbfac2be3ec7a9d39e4d33',1,'SParametro::valor']]],
   ['variáveis_20de_20estado_1',['Variáveis de estado',['../group__VariaveisEstado.html',1,'']]],
   ['variáveis_20globais_20à_20classe_2',['Variáveis globais à classe',['../group__VariaveisGlobais.html',1,'']]],
   ['ver_20a_20alterar_20um_20parâmetro_3',['Ação 4 - Ver a alterar um parâmetro',['../teste_aspirador1.html#autotoc_md15',1,'']]],

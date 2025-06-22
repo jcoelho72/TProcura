@@ -1,0 +1,895 @@
+\doxysection{TProcura Class Reference}
+\hypertarget{classTProcura}{}\label{classTProcura}\index{TProcura@{TProcura}}
+
+
+Classe base para todas as procuras.  
+
+
+
+
+{\ttfamily \#include $<$TProcura.\+h$>$}
+
+
+
+Inheritance diagram for TProcura\+:
+% FIG 0
+
+
+Collaboration diagram for TProcura\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a72975c17835fa9ce5783db63221b0637}{TProcura}} (void)
+\item 
+virtual \mbox{\hyperlink{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0}{\texorpdfstring{$\sim$}{\string~}\+TProcura}} (void)
+\item 
+virtual void \mbox{\hyperlink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{Solucao\+Vazia}} (void)
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classTProcura_a1297806db02da2a44794883a6f427965}{Executa\+Algoritmo}} ()
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{Debug}} (void)
+\begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}{Reset\+Parametros}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa os parametros. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTProcura_a7952e187e1b0ae0ca52edab157223179}{Parar}} (void)
+\begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual}} (const char \texorpdfstring{$\ast$}{*}nome)
+\begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTProcura_a69a9049e7378841d7c94db3db8eda96b}{Teste\+Empirico}} (int inicio=-\/1, int fim=-\/1, bool mostrar\+Solucoes=true)
+\begin{DoxyCompactList}\small\item\em Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6}{Limpar\+Estatisticas}} (clock\+\_\+t \&inicio)
+\item 
+virtual void \mbox{\hyperlink{classTProcura_af134643c9ebc0ec02aa002360ad26b97}{Finalizar\+Corrida}} (clock\+\_\+t inicio)
+\item 
+virtual void \mbox{\hyperlink{classTProcura_ac1e91215d86bdb10176b3c180fe1fe3f}{Explorar\+Sucessores}} ()
+\item 
+virtual void \mbox{\hyperlink{classTProcura_afc2ed3d82bfd70cf50e188798b75331b}{Mostrar\+Solucao}} ()
+\item 
+bool \mbox{\hyperlink{classTProcura_afa3015ac104b603930d3f60a34c09fff}{Tempo\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcura_ab9ea7758032fbdc9f22bfed9f76b6fdf}{Geracoes\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcura_a476a43ad056a18e8fb6e0a3e19499843}{Expansoes\+Excedido}} ()
+\item 
+bool \mbox{\hyperlink{classTProcura_a22a7b22938205606fb7c3c8e29411d07}{Avaliacoes\+Excedido}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{Novo\+Valor}} (const char \texorpdfstring{$\ast$}{*}prompt)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}} = \{ NULL,1,1,1, NULL, NULL \}
+\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em \doxylink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}
+\begin{DoxyCompactList}\small\item\em Parâmetros a serem utilizados na configuração atual. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}
+\begin{DoxyCompactList}\small\item\em Conjuntos de configurações para teste empírico. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}{geracoes}} = 0
+\begin{DoxyCompactList}\small\item\em Número total de gerações realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classTProcura_a264d55f8948e71bc41856e98a438de93}{expansoes}} = 0
+\begin{DoxyCompactList}\small\item\em Número total de expansões realizadas na procura. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classTProcura_a81f881250464f75899082c0fe681e234}{avaliacoes}} = 0
+\begin{DoxyCompactList}\small\item\em Número total de avaliações realizadas na procura. \end{DoxyCompactList}\item 
+static clock\+\_\+t \mbox{\hyperlink{classTProcura_aad1d62f5db16f77742bb291b6ef342f6}{instante\+Final}} = 0
+\begin{DoxyCompactList}\small\item\em Instante final (deadline) da corrida atual. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoria\+Esgotada}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicando problemas de memória esgotada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{Mostra\+Parametros}} (int \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}=1, \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}id\+Parametros=NULL)
+\item 
+void \mbox{\hyperlink{classTProcura_a3332047124784be2fc7af575a5f7f8b5}{Mostrar\+Configuracoes}} (int \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}, int atual=-\/1)
+\item 
+void \mbox{\hyperlink{classTProcura_ab044dca559e3c04e5cec68647af2c7c4}{Editar\+Parametros}} ()
+\item 
+void \mbox{\hyperlink{classTProcura_ae559b54c7ff363280df914fec988794f}{Editar\+Configuracoes}} ()
+\item 
+void \mbox{\hyperlink{classTProcura_aff6618af81271b5ff13076365fcc0042}{Mostra\+Relatorio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
+\item 
+void \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{Configuracao\+Atual}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \&parametros, int operacao)
+\item 
+int \mbox{\hyperlink{classTProcura_abd92370cf06d23e878f9426aed34e39c}{Melhor\+Resultado}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} base, \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} alternativa)
+\item 
+void \mbox{\hyperlink{classTProcura_ac1beda871dff742fdb49ae150cda24e3}{Calcula\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados)
+\item 
+void \mbox{\hyperlink{classTProcura_a325f6cfdb9d0ee31cdecc72e738b144a}{Mostrar\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \&torneio, bool jogo=false)
+\item 
+void \mbox{\hyperlink{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094}{Barra\+Torneio}} (bool nomes)
+\item 
+void \mbox{\hyperlink{classTProcura_a5f88e5d2158a6e5bb400db591c0de246}{Extrair\+Configuracao}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&resultados, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&extracao, int configuracao)
+\item 
+void \mbox{\hyperlink{classTProcura_ae9f0b921a171a110e6a6fcc209332635}{Solicita\+Instancia}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}} (int \&variavel, int min=INT\+\_\+\+MIN, int max=INT\+\_\+\+MAX)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe base para todas as procuras. 
+
+Esta classe base para procuras... (separação de TProcuras\+Construtivas, em curso). pretende-\/se que depois as sub-\/classes tipo TProcura\+Melhorativa, possa herdar de \doxylink{classTProcura}{TProcura}, não ficando com partes da procura construtiva que são desnecessárias
+
+{\bfseries{Observação\+:}} Alguns métodos e parâmetros terão efeito apenas se determinados métodos forem redefinidos na subclasse. 
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00134}{134}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classTProcura_a72975c17835fa9ce5783db63221b0637}\label{classTProcura_a72975c17835fa9ce5783db63221b0637} 
+\index{TProcura@{TProcura}!TProcura@{TProcura}}
+\index{TProcura@{TProcura}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{TProcura()}{TProcura()}}
+{\footnotesize\ttfamily TProcura\+::\+TProcura (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00137}{137}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0}\label{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0} 
+\index{TProcura@{TProcura}!````~TProcura@{\texorpdfstring{$\sim$}{\string~}TProcura}}
+\index{````~TProcura@{\texorpdfstring{$\sim$}{\string~}TProcura}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}TProcura()}{\string~TProcura()}}
+{\footnotesize\ttfamily virtual TProcura\+::\texorpdfstring{$\sim$}{\string~}\+TProcura (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00138}{138}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classTProcura_a22a7b22938205606fb7c3c8e29411d07}\label{classTProcura_a22a7b22938205606fb7c3c8e29411d07} 
+\index{TProcura@{TProcura}!AvaliacoesExcedido@{AvaliacoesExcedido}}
+\index{AvaliacoesExcedido@{AvaliacoesExcedido}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{AvaliacoesExcedido()}{AvaliacoesExcedido()}}
+{\footnotesize\ttfamily bool TProcura\+::\+Avaliacoes\+Excedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00385}{385}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094}\label{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094} 
+\index{TProcura@{TProcura}!BarraTorneio@{BarraTorneio}}
+\index{BarraTorneio@{BarraTorneio}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{BarraTorneio()}{BarraTorneio()}}
+{\footnotesize\ttfamily void TProcura\+::\+Barra\+Torneio (\begin{DoxyParamCaption}\item[{bool}]{nomes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00434}{434}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{classTProcura_ac1beda871dff742fdb49ae150cda24e3}\label{classTProcura_ac1beda871dff742fdb49ae150cda24e3} 
+\index{TProcura@{TProcura}!CalculaTorneio@{CalculaTorneio}}
+\index{CalculaTorneio@{CalculaTorneio}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{CalculaTorneio()}{CalculaTorneio()}}
+{\footnotesize\ttfamily void TProcura\+::\+Calcula\+Torneio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&}]{resultados }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00373}{373}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\Hypertarget{classTProcura_ac1d9f06b12765a02290050af15463186}\label{classTProcura_ac1d9f06b12765a02290050af15463186} 
+\index{TProcura@{TProcura}!ConfiguracaoAtual@{ConfiguracaoAtual}}
+\index{ConfiguracaoAtual@{ConfiguracaoAtual}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{ConfiguracaoAtual()}{ConfiguracaoAtual()}}
+{\footnotesize\ttfamily void TProcura\+::\+Configuracao\+Atual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \&}]{parametros,  }\item[{int}]{operacao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00190}{190}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\Hypertarget{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}\label{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0} 
+\index{TProcura@{TProcura}!Debug@{Debug}}
+\index{Debug@{Debug}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{Debug()}{Debug()}}
+{\footnotesize\ttfamily void TProcura\+::\+Debug (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Mostra o estado no ecrã, para debug. 
+
+\begin{DoxyNote}{Note}
+Redefinição opcional. Necessário para visualizar a procura, e explorar o espaço manualmente.
+\end{DoxyNote}
+Esta função deverá mostrar claramente o estado atual, em texto mas da forma mais confortável possível. O formato texto destina-\/se principalmente a quem implementa o problema, e não utilizadores finais. É importante poder explorar o espaço de estados, para verificar a correta implementação dos sucessores, como também possa ver a árvore de procura dos algoritmos, para árvores pequenas, e assim detectar bugs.
+
+\begin{DoxyNote}{Note}
+Antes de cada linha, chame a função Nova\+Linha(). Dependendo do contexto, {\ttfamily Nova\+Linha()} pode imprimir caracteres que representam os ramos da árvore de procura, criando uma visualização textual que simula a estrutura da procura.
+
+A exibição do estado pode variar conforme o nível de debug definido em {\ttfamily parametro\mbox{[}nivel\+Debug\mbox{]}.valor}. Um nível menor pode mostrar informações mais sucintas, enquanto um nível maior pode detalhar todas as variáveis do estado.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+Nova\+Linha()
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ NovaLinha();}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é apenas\ um\ número}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ <=\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}{atividade}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}-\/-\/<([\%d])>-\/-\/"{}},\ variavel);\ \textcolor{comment}{//\ versão compacta\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ versão mais\ elaborada\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}{CAspirador}}, \mbox{\hyperlink{classCOitoDamas_a8c4dfb787a9f0d8f2a8c88e682aaeb78}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_aa33970025179d4c6e3177c0fd518dadb}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_a17e7a8290910ffd1fe8a370228c6024b}{CProblema\+Artificial}}, and \mbox{\hyperlink{classCPuzzle8_a8ecb37cf08f1fe64bba96834370afa35}{CPuzzle8}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\Hypertarget{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}\label{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf} 
+\index{TProcura@{TProcura}!Dominio@{Dominio}}
+\index{Dominio@{Dominio}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{Dominio()}{Dominio()}}
+{\footnotesize\ttfamily int TProcura\+::\+Dominio (\begin{DoxyParamCaption}\item[{int \&}]{variavel,  }\item[{int}]{min = {\ttfamily INT\+\_\+MIN},  }\item[{int}]{max = {\ttfamily INT\+\_\+MAX} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00497}{497}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\Hypertarget{classTProcura_ae559b54c7ff363280df914fec988794f}\label{classTProcura_ae559b54c7ff363280df914fec988794f} 
+\index{TProcura@{TProcura}!EditarConfiguracoes@{EditarConfiguracoes}}
+\index{EditarConfiguracoes@{EditarConfiguracoes}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{EditarConfiguracoes()}{EditarConfiguracoes()}}
+{\footnotesize\ttfamily void TProcura\+::\+Editar\+Configuracoes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00203}{203}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+Here is the caller graph for this function\+:
+% FIG 12
+\Hypertarget{classTProcura_ab044dca559e3c04e5cec68647af2c7c4}\label{classTProcura_ab044dca559e3c04e5cec68647af2c7c4} 
+\index{TProcura@{TProcura}!EditarParametros@{EditarParametros}}
+\index{EditarParametros@{EditarParametros}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{EditarParametros()}{EditarParametros()}}
+{\footnotesize\ttfamily void TProcura\+::\+Editar\+Parametros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
+\Hypertarget{classTProcura_a1297806db02da2a44794883a6f427965}\label{classTProcura_a1297806db02da2a44794883a6f427965} 
+\index{TProcura@{TProcura}!ExecutaAlgoritmo@{ExecutaAlgoritmo}}
+\index{ExecutaAlgoritmo@{ExecutaAlgoritmo}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{ExecutaAlgoritmo()}{ExecutaAlgoritmo()}}
+{\footnotesize\ttfamily virtual int TProcura\+::\+Executa\+Algoritmo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Executa o algoritmo com os parametros atuais. 
+
+\begin{DoxyNote}{Note}
+Redefinição necessária
+\end{DoxyNote}
+No caso de adicionar algum algoritmo, chame o algoritmo com base em parametro\mbox{[}algoritmo\mbox{]}.valor Se {\ttfamily \doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()}} não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente. 
+
+Reimplemented in \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00180}{180}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 15
+\Hypertarget{classTProcura_a476a43ad056a18e8fb6e0a3e19499843}\label{classTProcura_a476a43ad056a18e8fb6e0a3e19499843} 
+\index{TProcura@{TProcura}!ExpansoesExcedido@{ExpansoesExcedido}}
+\index{ExpansoesExcedido@{ExpansoesExcedido}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{ExpansoesExcedido()}{ExpansoesExcedido()}}
+{\footnotesize\ttfamily bool TProcura\+::\+Expansoes\+Excedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00382}{382}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 16
+\Hypertarget{classTProcura_ac1e91215d86bdb10176b3c180fe1fe3f}\label{classTProcura_ac1e91215d86bdb10176b3c180fe1fe3f} 
+\index{TProcura@{TProcura}!ExplorarSucessores@{ExplorarSucessores}}
+\index{ExplorarSucessores@{ExplorarSucessores}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{ExplorarSucessores()}{ExplorarSucessores()}}
+{\footnotesize\ttfamily virtual void TProcura\+::\+Explorar\+Sucessores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_a9fda19c96c9cd874fa45578bcc30f607}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00356}{356}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 17
+\Hypertarget{classTProcura_a5f88e5d2158a6e5bb400db591c0de246}\label{classTProcura_a5f88e5d2158a6e5bb400db591c0de246} 
+\index{TProcura@{TProcura}!ExtrairConfiguracao@{ExtrairConfiguracao}}
+\index{ExtrairConfiguracao@{ExtrairConfiguracao}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{ExtrairConfiguracao()}{ExtrairConfiguracao()}}
+{\footnotesize\ttfamily void TProcura\+::\+Extrair\+Configuracao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&}]{resultados,  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&}]{extracao,  }\item[{int}]{configuracao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00425}{425}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 18
+Here is the caller graph for this function\+:
+% FIG 19
+\Hypertarget{classTProcura_af134643c9ebc0ec02aa002360ad26b97}\label{classTProcura_af134643c9ebc0ec02aa002360ad26b97} 
+\index{TProcura@{TProcura}!FinalizarCorrida@{FinalizarCorrida}}
+\index{FinalizarCorrida@{FinalizarCorrida}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{FinalizarCorrida()}{FinalizarCorrida()}}
+{\footnotesize\ttfamily void TProcura\+::\+Finalizar\+Corrida (\begin{DoxyParamCaption}\item[{clock\+\_\+t}]{inicio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_af2fbc46bcca99f48e42cdbc62eecc1fd}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00461}{461}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 20
+Here is the caller graph for this function\+:
+% FIG 21
+\Hypertarget{classTProcura_ab9ea7758032fbdc9f22bfed9f76b6fdf}\label{classTProcura_ab9ea7758032fbdc9f22bfed9f76b6fdf} 
+\index{TProcura@{TProcura}!GeracoesExcedido@{GeracoesExcedido}}
+\index{GeracoesExcedido@{GeracoesExcedido}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{GeracoesExcedido()}{GeracoesExcedido()}}
+{\footnotesize\ttfamily bool TProcura\+::\+Geracoes\+Excedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00379}{379}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 22
+\Hypertarget{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6}\label{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6} 
+\index{TProcura@{TProcura}!LimparEstatisticas@{LimparEstatisticas}}
+\index{LimparEstatisticas@{LimparEstatisticas}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{LimparEstatisticas()}{LimparEstatisticas()}}
+{\footnotesize\ttfamily void TProcura\+::\+Limpar\+Estatisticas (\begin{DoxyParamCaption}\item[{clock\+\_\+t \&}]{inicio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 23
+\Hypertarget{classTProcura_abd92370cf06d23e878f9426aed34e39c}\label{classTProcura_abd92370cf06d23e878f9426aed34e39c} 
+\index{TProcura@{TProcura}!MelhorResultado@{MelhorResultado}}
+\index{MelhorResultado@{MelhorResultado}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{MelhorResultado()}{MelhorResultado()}}
+{\footnotesize\ttfamily int TProcura\+::\+Melhor\+Resultado (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}}}]{base,  }\item[{\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}}}]{alternativa }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00445}{445}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 24
+\Hypertarget{classTProcura_a6fb8a8658085b349818e46835868c564}\label{classTProcura_a6fb8a8658085b349818e46835868c564} 
+\index{TProcura@{TProcura}!MostraParametros@{MostraParametros}}
+\index{MostraParametros@{MostraParametros}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{MostraParametros()}{MostraParametros()}}
+{\footnotesize\ttfamily void TProcura\+::\+Mostra\+Parametros (\begin{DoxyParamCaption}\item[{int}]{detalhe = {\ttfamily 1},  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \texorpdfstring{$\ast$}{*}}]{id\+Parametros = {\ttfamily NULL} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00128}{128}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 25
+Here is the caller graph for this function\+:
+% FIG 26
+\Hypertarget{classTProcura_a3332047124784be2fc7af575a5f7f8b5}\label{classTProcura_a3332047124784be2fc7af575a5f7f8b5} 
+\index{TProcura@{TProcura}!MostrarConfiguracoes@{MostrarConfiguracoes}}
+\index{MostrarConfiguracoes@{MostrarConfiguracoes}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{MostrarConfiguracoes()}{MostrarConfiguracoes()}}
+{\footnotesize\ttfamily void TProcura\+::\+Mostrar\+Configuracoes (\begin{DoxyParamCaption}\item[{int}]{detalhe,  }\item[{int}]{atual = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00234}{234}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 27
+Here is the caller graph for this function\+:
+% FIG 28
+\Hypertarget{classTProcura_aff6618af81271b5ff13076365fcc0042}\label{classTProcura_aff6618af81271b5ff13076365fcc0042} 
+\index{TProcura@{TProcura}!MostraRelatorio@{MostraRelatorio}}
+\index{MostraRelatorio@{MostraRelatorio}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{MostraRelatorio()}{MostraRelatorio()}}
+{\footnotesize\ttfamily void TProcura\+::\+Mostra\+Relatorio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&}]{resultados }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00325}{325}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 29
+Here is the caller graph for this function\+:
+% FIG 30
+\Hypertarget{classTProcura_afc2ed3d82bfd70cf50e188798b75331b}\label{classTProcura_afc2ed3d82bfd70cf50e188798b75331b} 
+\index{TProcura@{TProcura}!MostrarSolucao@{MostrarSolucao}}
+\index{MostrarSolucao@{MostrarSolucao}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{MostrarSolucao()}{MostrarSolucao()}}
+{\footnotesize\ttfamily virtual void TProcura\+::\+Mostrar\+Solucao (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classCOitoDamas_acda7651f84323201b3a57699daf55646}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_a9a3087a5b0bd33ff2fabf2aef66c73a9}{CParticao}}, \mbox{\hyperlink{classCPuzzle8_a251d6029c7b33366a000ce84aee4d2ed}{CPuzzle8}}, and \mbox{\hyperlink{group__RedefinicaoOpcional_ga1fdecf86b41c94a1656c17495f9b5b93}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00358}{358}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 31
+\Hypertarget{classTProcura_a325f6cfdb9d0ee31cdecc72e738b144a}\label{classTProcura_a325f6cfdb9d0ee31cdecc72e738b144a} 
+\index{TProcura@{TProcura}!MostrarTorneio@{MostrarTorneio}}
+\index{MostrarTorneio@{MostrarTorneio}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{MostrarTorneio()}{MostrarTorneio()}}
+{\footnotesize\ttfamily void TProcura\+::\+Mostrar\+Torneio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ \&}]{torneio,  }\item[{bool}]{jogo = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00395}{395}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 32
+Here is the caller graph for this function\+:
+% FIG 33
+\Hypertarget{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}\label{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e} 
+\index{TProcura@{TProcura}!NovoValor@{NovoValor}}
+\index{NovoValor@{NovoValor}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{NovoValor()}{NovoValor()}}
+{\footnotesize\ttfamily int TProcura\+::\+Novo\+Valor (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{prompt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00471}{471}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 34
+\Hypertarget{classTProcura_a7952e187e1b0ae0ca52edab157223179}\label{classTProcura_a7952e187e1b0ae0ca52edab157223179} 
+\index{TProcura@{TProcura}!Parar@{Parar}}
+\index{Parar@{Parar}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{Parar()}{Parar()}}
+{\footnotesize\ttfamily virtual bool TProcura\+::\+Parar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Verifica se a procura deve ser interrompida. 
+
+\begin{DoxyNote}{Note}
+A redefinição é opcional e deve ser feita apenas se houver necessidade de critérios de paragem adicionais, além dos já estabelecidos. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se a procura deve parar de imediato
+\end{DoxyReturn}
+O critério de paragem pode ser especificado em limite de tempo, expansões, gerações e avaliações. Caso exista uma falha na alocação de memória de um estado, em chamadas futuras irá retornar verdadeiro.
+
+\begin{DoxyNote}{Note}
+Redefinir apenas se o critério de paragem não puder ser contemplado nestes pontos. 
+
+Esta função deve manter a eficiência elevada, dado que é chamada em ciclos internos dos algoritmos de procura.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ CSubProblema::Parar(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTProcura_a7952e187e1b0ae0ca52edab157223179}{TProcuraConstrutiva::Parar}}()\ ||\ CriterioParagem();\ \textcolor{comment}{//\ critério\ de\ paragem\ definido\ em\ CSubProblema}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00284}{284}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 35
+Here is the caller graph for this function\+:
+% FIG 36
+\Hypertarget{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}\label{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871} 
+\index{TProcura@{TProcura}!ResetParametros@{ResetParametros}}
+\index{ResetParametros@{ResetParametros}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{ResetParametros()}{ResetParametros()}}
+{\footnotesize\ttfamily void TProcura\+::\+Reset\+Parametros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Inicializa os parametros. 
+
+\begin{DoxyNote}{Note}
+Redefinição necessária se forem adicionados novos parametros, ou for alterado o valor de omissão de parametros existentes.
+\end{DoxyNote}
+Nesta função, a primeira instrução deverá ser a chamada da função da superclasse, para que sejam criados os parametros da superclasse antes de qualquer outra instrução.
+
+Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos. Nesta função, podem ser definidos estes valores de omissão, que se não forem alterados, irá executar a configuração mais genérica.
+
+Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema. Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
+
+\begin{DoxyNote}{Note}
+Na criação de um novo parametro, dar uma estrutura TParametro.
+
+Ao adicionar novos parâmetros, é recomendável manter a enumeração sincronizada com a da superclasse. O primeiro elemento deve ser {\ttfamily parametros\+Construtivos}, garantindo que novas adições na superclasse sejam automaticamente refletidas aqui.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
+\end{DoxySeeAlso}
+Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ continuação\ da\ enumeração\ EParametrosConstrutiva}}
+\DoxyCodeLine{\textcolor{keyword}{enum}\ ESubProblema\ \{\ opcaoHeur\ =\ \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540}{parametrosConstrutivas}},\ opcaoSuc\ \};}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::ResetParametros(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nomesSuc[]\ =\ \{\ \textcolor{stringliteral}{"{}todas"{}},\ \textcolor{stringliteral}{"{}contributo"{}}\ \};\ \textcolor{comment}{//\ nomes\ para\ os\ valores\ de\ opcaoSuc}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ primeiro\ o\ método\ na\ superclasse}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_gacb15562d8776f4d162001d385ebc13a0}{TProcuraConstrutiva::ResetParametros}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ considerou-\/se\ que\ se\ pretende\ ver\ apenas\ estados\ completos,\ ignorando\ ações}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1}{verAcoes}}].valor\ =\ 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ função\ Heuristica()}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Opção\ Heurística"{}},\ 0,0,10,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}explicação\ do\ que\ acontece\ na\ heuristica,\ com\ este\ parametro\ entre\ 0\ e\ 10"{}},NULL\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ função\ Sucessores()}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Opção\ Sucessores"{}},\ 0,0,1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}0\ gera\ todas\ as\ ações;\ 1\ gera\ apenas\ ações\ que\ tenham\ um\ contributo\ para\ a\ solução."{}},nomesSuc\ \});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{CProblema\+Artificial}}, \mbox{\hyperlink{classCPuzzle8_acb9cf571531e2ac8581bfe407b6a01b3}{CPuzzle8}}, and \mbox{\hyperlink{group__RedefinicaoMandatoria_gacb15562d8776f4d162001d385ebc13a0}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 37
+Here is the caller graph for this function\+:
+% FIG 38
+\Hypertarget{classTProcura_ae9f0b921a171a110e6a6fcc209332635}\label{classTProcura_ae9f0b921a171a110e6a6fcc209332635} 
+\index{TProcura@{TProcura}!SolicitaInstancia@{SolicitaInstancia}}
+\index{SolicitaInstancia@{SolicitaInstancia}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{SolicitaInstancia()}{SolicitaInstancia()}}
+{\footnotesize\ttfamily void TProcura\+::\+Solicita\+Instancia (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00480}{480}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 39
+Here is the caller graph for this function\+:
+% FIG 40
+\Hypertarget{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}\label{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751} 
+\index{TProcura@{TProcura}!SolucaoVazia@{SolucaoVazia}}
+\index{SolucaoVazia@{SolucaoVazia}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
+{\footnotesize\ttfamily virtual void TProcura\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Coloca o objecto no estado inicial da procura. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método inicializa as variáveis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer ação ser realizada na procura. Caso existam dados de instância, deve neste método carregar a instância. A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
+
+\begin{DoxyNote}{Note}
+A variável instancia.\+valor, tem o ID da instância que deve ser carregada. 
+
+Se a função Codifica() estiver implementada, o tamanho do estado codificado deve ser determinado após o carregamento da instância, pois diferentes instâncias podem exigir tamanhos distintos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+Codifica()
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::SolucaoVazia(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{TProcura::SolucaoVazia}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ variavel\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
+\DoxyCodeLine{\ \ \ \ \ \ \ tamanhoCodificado\ =\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCAspirador_afc7cdfece73d364d74bca6bab1c899c1}{CAspirador}}, \mbox{\hyperlink{classCOitoDamas_ab4686ec4d08c2df261fd74c9a1b274df}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_ac7bddec07a5f2d637785c13b32f2a4c5}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_ab8e6af484d17e145363d152536057697}{CProblema\+Artificial}}, \mbox{\hyperlink{classCPuzzle8_a9cf95b2a057f5368736e503565fad846}{CPuzzle8}}, and \mbox{\hyperlink{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00169}{169}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 41
+\Hypertarget{classTProcura_afa3015ac104b603930d3f60a34c09fff}\label{classTProcura_afa3015ac104b603930d3f60a34c09fff} 
+\index{TProcura@{TProcura}!TempoExcedido@{TempoExcedido}}
+\index{TempoExcedido@{TempoExcedido}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{TempoExcedido()}{TempoExcedido()}}
+{\footnotesize\ttfamily bool TProcura\+::\+Tempo\+Excedido (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00378}{378}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+Here is the caller graph for this function\+:
+% FIG 42
+\Hypertarget{classTProcura_a69a9049e7378841d7c94db3db8eda96b}\label{classTProcura_a69a9049e7378841d7c94db3db8eda96b} 
+\index{TProcura@{TProcura}!TesteEmpirico@{TesteEmpirico}}
+\index{TesteEmpirico@{TesteEmpirico}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{TesteEmpirico()}{TesteEmpirico()}}
+{\footnotesize\ttfamily void TProcura\+::\+Teste\+Empirico (\begin{DoxyParamCaption}\item[{int}]{inicio = {\ttfamily -\/1},  }\item[{int}]{fim = {\ttfamily -\/1},  }\item[{bool}]{mostrar\+Solucoes = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. 
+
+\begin{DoxyNote}{Note}
+Redefinição não é necessária 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em inicio} & -\/ ID da primeira instância no teste (ou -\/1 para a primeira) \\
+\hline
+{\em fim} & -\/ ID da última instância no teste (ou -\/1 para a última) \\
+\hline
+{\em mostrar\+Solucoes} & -\/ se true, mostra a solução após cada execução, c.\+c. indica apenas a instância em processamento.\\
+\hline
+\end{DoxyParams}
+Esta função é chamada de \doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()} para executar testes empíricos. A função apresenta-\/se como método virtual, atendendo a que será redefinida nas procuras adversas. É genérica e não se prevê outras situações que seja necessário redefini-\/la.
+
+\begin{DoxyNote}{Note}
+Pode ser chamada diretamente do código, e nesse caso é necessário que a variável estática \textquotesingle{}configuracoes\textquotesingle{} tenha as configurações em teste. Se {\ttfamily configuracoes} estiver vazia, o teste empírico será executado apenas com a configuração atual, avaliando seu desempenho isoladamente, sem comparação com outras configurações.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00263}{263}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 43
+Here is the caller graph for this function\+:
+% FIG 44
+\Hypertarget{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}\label{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af} 
+\index{TProcura@{TProcura}!TesteManual@{TesteManual}}
+\index{TesteManual@{TesteManual}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{TesteManual()}{TesteManual()}}
+{\footnotesize\ttfamily void TProcura\+::\+Teste\+Manual (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Inicializa a interação com o utilizador. 
+
+\begin{DoxyNote}{Note}
+Redefinição necessária para definir as instancias existentes.
+\end{DoxyNote}
+Esta função arranca com o teste manual, orientada para o programador. A interface permite\+:
+\begin{DoxyItemize}
+\item visualizar e trocar de instância
+\item explorar o espaço de estados nessa instancia, executando ações
+\item ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)
+\item ver e editar qualquer parametro de execução
+\item o algoritmo é também um parametro, podendo naturalmente ser alterado
+\item há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
+\item executar o algoritmo com a configuração atual
+\item adicionar a configuração atual a um conjunto de configurações de teste
+\item executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas
+\end{DoxyItemize}
+
+Esta função deve ser redefinida para inicializar a variável com informação dos IDs das instâncias disponíveis. Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
+
+\begin{DoxyNote}{Note}
+A instância selecionada irá ser carregada em \doxylink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{Solucao\+Vazia()}, utilizando o valor atual. 
+
+Esta função deve ser o ponto de entrada, a executar no main.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::TesteManual(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ indicar\ que\ há 10\ instâncias,\ sendo\ a\ instância\ inicial\ a\ 1}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}Características\ dos\ problemas"{}},\ NULL\ \};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcuraConstrutiva::TesteManual}}(nome);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ exemplo\ do\ main}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{teste_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ CSubProblema\ problema;}
+\DoxyCodeLine{\ \ \ \ problema.TesteManual(\textcolor{stringliteral}{"{}CSubProblema"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented in \mbox{\hyperlink{classCAspirador_a718c8187439940dec18a46a9e9e024e3}{CAspirador}}, \mbox{\hyperlink{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_aa4d328b9944991f3fc52ce0726111865}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{CProblema\+Artificial}}, and \mbox{\hyperlink{classCPuzzle8_a06d2a8f5d7e3670eb6ee75d7a72b0265}{CPuzzle8}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 45
+Here is the caller graph for this function\+:
+% FIG 46
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classTProcura_a81f881250464f75899082c0fe681e234}\label{classTProcura_a81f881250464f75899082c0fe681e234} 
+\index{TProcura@{TProcura}!avaliacoes@{avaliacoes}}
+\index{avaliacoes@{avaliacoes}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{avaliacoes}{avaliacoes}}
+{\footnotesize\ttfamily int TProcura\+::avaliacoes = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número total de avaliações realizadas na procura. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00372}{372}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}\label{classTProcura_a1fc535c07c89cbd74793b7d64ca82912} 
+\index{TProcura@{TProcura}!configuracoes@{configuracoes}}
+\index{configuracoes@{configuracoes}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{configuracoes}{configuracoes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ $>$ TProcura\+::configuracoes\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Conjuntos de configurações para teste empírico. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00366}{366}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_a264d55f8948e71bc41856e98a438de93}\label{classTProcura_a264d55f8948e71bc41856e98a438de93} 
+\index{TProcura@{TProcura}!expansoes@{expansoes}}
+\index{expansoes@{expansoes}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{expansoes}{expansoes}}
+{\footnotesize\ttfamily int TProcura\+::expansoes = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número total de expansões realizadas na procura. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00370}{370}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc}\label{classTProcura_a849fe6a3ce6ef5dba66c550be6652adc} 
+\index{TProcura@{TProcura}!geracoes@{geracoes}}
+\index{geracoes@{geracoes}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{geracoes}{geracoes}}
+{\footnotesize\ttfamily int TProcura\+::geracoes = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Número total de gerações realizadas na procura. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00368}{368}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}\label{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238} 
+\index{TProcura@{TProcura}!instancia@{instancia}}
+\index{instancia@{instancia}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{instancia}{instancia}}
+{\footnotesize\ttfamily \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} TProcura\+::instancia = \{ NULL,1,1,1, NULL, NULL \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+ID da instância atual, a ser utilizado em \doxylink{classTProcura_ab3d1e667ee7b23575acd8c83fad1c751}{Solucao\+Vazia()}. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00021}{21}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_aad1d62f5db16f77742bb291b6ef342f6}\label{classTProcura_aad1d62f5db16f77742bb291b6ef342f6} 
+\index{TProcura@{TProcura}!instanteFinal@{instanteFinal}}
+\index{instanteFinal@{instanteFinal}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{instanteFinal}{instanteFinal}}
+{\footnotesize\ttfamily clock\+\_\+t TProcura\+::instante\+Final = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instante final (deadline) da corrida atual. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00374}{374}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_a0603a12d645bdc6ff66a454c8614014d}\label{classTProcura_a0603a12d645bdc6ff66a454c8614014d} 
+\index{TProcura@{TProcura}!memoriaEsgotada@{memoriaEsgotada}}
+\index{memoriaEsgotada@{memoriaEsgotada}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{memoriaEsgotada}{memoriaEsgotada}}
+{\footnotesize\ttfamily bool TProcura\+::memoria\+Esgotada = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Flag indicando problemas de memória esgotada. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00376}{376}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}\label{classTProcura_ad60c9c327ddddd054d9ff499ef53532f} 
+\index{TProcura@{TProcura}!parametro@{parametro}}
+\index{parametro@{parametro}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{parametro}{parametro}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ TProcura\+::parametro\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parâmetros a serem utilizados na configuração atual. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva} 
+\end{DoxySeeAlso}
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00364}{364}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TProcura_8h}{TProcura.\+h}}\item 
+\mbox{\hyperlink{TProcura_8cpp}{TProcura.\+cpp}}\end{DoxyCompactItemize}
