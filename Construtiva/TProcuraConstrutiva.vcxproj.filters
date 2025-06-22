@@ -18,12 +18,6 @@
     <ClInclude Include="TProcuraConstrutiva.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="TRand.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="TVector.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
     <ClInclude Include="Teste\ProblemaArtificial.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -39,10 +33,16 @@
     <ClInclude Include="Teste\Puzzle8.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="TProcura.h">
+    <ClInclude Include="CListaNo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="CListaNo.h">
+    <ClInclude Include="..\TProcura.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TRand.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="..\TVector.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -54,9 +54,6 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="TProcuraConstrutiva.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="TRand.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="Teste\Aspirador.cpp">
@@ -71,11 +68,14 @@
     <ClCompile Include="Teste\Puzzle8.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="TProcura.cpp">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClCompile>
     <ClCompile Include="CListaNo.cpp">
-      <Filter>Arquivos de Cabeçalho</Filter>
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\TProcura.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\TRand.cpp">
+      <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

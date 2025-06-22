@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{52569aae-f400-44bd-b31f-35067d3baf5d}</ProjectGuid>
-    <RootNamespace>TProcuraConstrutiva</RootNamespace>
+    <ProjectGuid>{92744f5b-33cc-4d6a-b1e1-c168518e1ba4}</ProjectGuid>
+    <RootNamespace>TProcuraMelhorativa</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,28 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CListaNo.h" />
-    <ClInclude Include="Teste\Aspirador.h" />
-    <ClInclude Include="Teste\OitoDamas.h" />
-    <ClInclude Include="Teste\Particao.h" />
-    <ClInclude Include="Teste\ProblemaArtificial.h" />
-    <ClInclude Include="Teste\Puzzle8.h" />
-    <ClInclude Include="TProcura.h" />
-    <ClInclude Include="TProcuraConstrutiva.h" />
-    <ClInclude Include="TRand.h" />
-    <ClInclude Include="TVector.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="CListaNo.cpp" />
-    <ClCompile Include="Teste\Aspirador.cpp" />
+    <ClCompile Include="..\TProcura.cpp" />
+    <ClCompile Include="..\TRand.cpp" />
     <ClCompile Include="Teste\OitoDamas.cpp" />
     <ClCompile Include="Teste\Particao.cpp" />
     <ClCompile Include="Teste\ProblemaArtificial.cpp" />
-    <ClCompile Include="Teste\Puzzle8.cpp" />
     <ClCompile Include="Teste\teste.cpp" />
-    <ClCompile Include="TProcura.cpp" />
-    <ClCompile Include="TProcuraConstrutiva.cpp" />
-    <ClCompile Include="TRand.cpp" />
+    <ClCompile Include="TProcuraMelhorativa.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\TProcura.h" />
+    <ClInclude Include="..\TRand.h" />
+    <ClInclude Include="..\TVector.h" />
+    <ClInclude Include="Teste\OitoDamas.h" />
+    <ClInclude Include="Teste\Particao.h" />
+    <ClInclude Include="Teste\ProblemaArtificial.h" />
+    <ClInclude Include="TProcuraMelhorativa.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

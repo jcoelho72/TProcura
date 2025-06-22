@@ -1,0 +1,2591 @@
+﻿
+Teste TProcurasAdversas
+Problema:
+  1 - Jogo do Galo
+  2 - Jogo Em Linha
+Opção: 
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 0 | gerações 0 | avaliações 0 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 0 | gerações 0 | avaliações 0 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: g:0 1|9|4
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+Ações: c2 b3 a3 c1 a2 c3 b2 a1 b1 
+Sucessor [1-9, ação(ões), exe]:Executadas 1 ações com sucesso.
+g:0 3|26|9
+  A B C
+1 . . . 1 
+2 x . . 2 
+3 . . . 3 
+  A B C
+Ações: c2 b1 a3 c3 b2 c1 b3 a1 
+Sucessor [1-8, ação(ões), exe]:Executadas 1 ações com sucesso.
+g:0 5|41|13
+  A B C
+1 . . . 1 
+2 x o . 2 
+3 . . . 3 
+  A B C
+Ações: c3 a1 c2 c1 b1 b3 a3 
+Sucessor [1-7, ação(ões), exe]:Executadas 3 ações com sucesso.
+g:0 h:-1000 8|59|14
+  A B C
+1 x . o 1 
+2 x o . 2 
+3 x . . 3 
+  A B C
+Ações: 
+Sem sucessores.
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 8 | gerações 59 | avaliações 14 
+  A B C
+1 x . o 1 
+2 x o . 2 
+3 x . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 8 | gerações 59 | avaliações 14 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 4 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 0 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.
+Ordenar (atual 2): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 4 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 0 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 8 | gerações 59 | avaliações 14 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1:1 P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,083s)
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 2996 | gerações 12197 | avaliações 916 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . x . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 4 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 0 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.
+Ver (atual 4): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 0 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 2996 | gerações 12197 | avaliações 916 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . x . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1:1 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,057s)
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 2322 | gerações 8936 | avaliações 718 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . x o 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 0 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Nível de debug, de reduzido a completo.
+0: nada
+1: atividade
+2: passos
+3: detalhe
+4: completo
+Debug (atual 0): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): passos (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 0 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 0): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): passos (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 2322 | gerações 8936 | avaliações 718 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . x o 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 718 718--#--+= g:2 2|13|7 0
+  /  |(0)
+  /  += g:2 2|13|8 0
+  /  += g:2 2|13|9 0
+  /  += g:2 2|13|10 0
+  /  += g:2 2|13|11 0
+  /  += g:2 2|13|12 0
+  /(0)
+  #--+= g:2 3|19|13 0
+  /  |(0)
+  /  += g:2 3|19|14 0
+  /  += g:2 3|19|15 0
+  /  += g:2 3|19|16 0
+  /  += g:2 3|19|17 0
+  /  += g:2 3|19|18 0
+  #--+= g:2 4|25|19 0
+  /  |(0)
+  /  += g:2 4|25|20 0
+  /  += g:2 4|25|21 0
+  /  += g:2 4|25|22 0
+  /  += g:2 4|25|23 0
+  /  += g:2 4|25|24 0
+  #--+= g:2 5|31|25 0
+  /  |(0)
+  /  += g:2 5|31|26 0
+  /  += g:2 5|31|27 0
+  /  += g:2 5|31|28 0
+  /  +
+  /  +
+  #--+= g:2 6|37|29 0
+  /  |(0)
+  /  += g:2 6|37|30 0
+  /  += g:2 6|37|31 0
+  /  +
+  /  += g:2 6|37|32 0
+  /  += g:2 6|37|33 0
+  #--+= g:2 7|43|34 0
+  /  |(0)
+  /  += g:2 7|43|35 0
+  /  += g:2 7|43|36 0
+  /  += g:2 7|43|37 0
+  /  +
+  /  += g:2 7|43|38 0
+  #--+= g:2 8|49|39 0
+     |(0)
+     += g:2 8|49|40 0
+     += g:2 8|49|41 0
+     += g:2 8|49|42 0
+     += g:2 8|49|43 0
+     += g:2 8|49|44 0
+P1:1 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 8 | gerações 49 | avaliações 45 
+  A B C
+1 . . . 1 
+2 . x . 2 
+3 . x o 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 46 46--+--#= g:2 2|11|6 0
+  |  /(0)
+  |  #= g:2 2|11|7 -998
+  |  /(-998)
+  |(-998)
+  +--#= g:2 3|16|8 0
+  |  /(0)
+  |  #= g:2 3|16|9 0
+  |  #= g:2 3|16|10 0
+  |  #= g:2 3|16|11 0
+  |  #= g:2 3|16|12 0
+  |(0)
+  +--#= g:2 4|21|13 0
+  |  /(0)
+  |  #= g:2 4|21|14 -998
+  |  /(-998)
+  +--#
+  |  /(0)
+  |  #= g:2 5|26|15 0
+  |  #= g:2 5|26|16 0
+  |  #= g:2 5|26|17 -998
+  |  /(-998)
+  +--#= g:2 6|31|18 0
+  |  /(0)
+  |  #= g:2 6|31|19 -998
+  |  /(-998)
+  +--#= g:2 7|36|20 0
+     /(0)
+     #= g:2 7|36|21 0
+     #= g:2 7|36|22 0
+     #= g:2 7|36|23 0
+     #= g:2 7|36|24 -998
+      (-998)
+P1:1 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 7 | gerações 36 | avaliações 25 
+  A B C
+1 . o . 1 
+2 . x . 2 
+3 . x o 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 26 26--#--+= g:2 2|9|5 0
+  /  |(0)
+  /  += g:2 2|9|6 0
+  /  += g:2 2|9|7 0
+  /  += g:2 2|9|8 0
+  /(0)
+  #--+= g:2 3|13|9 0
+  /  |(0)
+  /  += g:2 3|13|10 0
+  /  += g:2 3|13|11 0
+  /  += g:2 3|13|12 0
+  #--+= g:2 4|17|13 0
+  /  |(0)
+  /  += g:2 4|17|14 0
+  /  += g:2 4|17|15 0
+  /  +
+  #--+= g:2 5|21|16 0
+  /  |(0)
+  /  += g:2 5|21|17 0
+  /  += g:2 5|21|18 0
+  /  += g:2 5|21|19 0
+  #--+= g:2 6|25|20 0
+     |(0)
+     += g:2 6|25|21 0
+     +
+     += g:2 6|25|22 0
+P1:1 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 6 | gerações 25 | avaliações 23 
+  A B C
+1 . o . 1 
+2 . x . 2 
+3 x x o 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): passos (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Nível de debug, de reduzido a completo.
+0: nada
+1: atividade
+2: passos
+3: detalhe
+4: completo
+Debug (atual 2): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): completo (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 6 | gerações 25 | avaliações 23 
+  A B C
+1 . o . 1 
+2 . x . 2 
+3 x x o 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 24 24g:0 
+  A B C
+1 . o . 1 
+2 . x . 2 
+3 x x o 3 
+  A B C
+  +g:1 1|4|4 c2
+  |  A B C
+  |1 . o . 1 
+  |2 . x o 2 
+  |3 x x o 3 
+  |  A B C
+  |  #g:2 2|7|4 c1
+  |  /  A B C
+  |  /1 . o x 1 
+  |  /2 . x o 2 
+  |  /3 x x o 3 
+  |  /  A B C
+  |  / -998
+  |  /(-998)
+  |(-998)
+  +g:1 2|7|5 a1
+  |  A B C
+  |1 o o . 1 
+  |2 . x . 2 
+  |3 x x o 3 
+  |  A B C
+  |  #g:2 3|10|5 c2
+  |  /  A B C
+  |  /1 o o . 1 
+  |  /2 . x x 2 
+  |  /3 x x o 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  #g:2 3|10|6 c1
+  |  /  A B C
+  |  /1 o o x 1 
+  |  /2 . x . 2 
+  |  /3 x x o 3 
+  |  /  A B C
+  |  / -998
+  |  /(-998)
+  +g:1 3|10|7 c1
+  |  A B C
+  |1 . o o 1 
+  |2 . x . 2 
+  |3 x x o 3 
+  |  A B C
+  |  #g:2 4|13|7 c2
+  |  /  A B C
+  |  /1 . o o 1 
+  |  /2 . x x 2 
+  |  /3 x x o 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  #g:2 4|13|8 a2
+  |  /  A B C
+  |  /1 . o o 1 
+  |  /2 x x . 2 
+  |  /3 x x o 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 4|13|9 a1
+  |     A B C
+  |   1 x o o 1 
+  |   2 . x . 2 
+  |   3 x x o 3 
+  |     A B C
+  |    0
+  |(0)
+  +g:1 4|13|10 a2
+     A B C
+   1 . o . 1 
+   2 o x . 2 
+   3 x x o 3 
+     A B C
+     #g:2 5|16|10 c2
+     /  A B C
+     /1 . o . 1 
+     /2 o x x 2 
+     /3 x x o 3 
+     /  A B C
+     / 0
+     /(0)
+     #g:2 5|16|11 a1
+     /  A B C
+     /1 x o . 1 
+     /2 o x . 2 
+     /3 x x o 3 
+     /  A B C
+     / 0
+     #g:2 5|16|12 c1
+        A B C
+      1 . o x 1 
+      2 o x . 2 
+      3 x x o 3 
+        A B C
+       -998
+      (-998)
+P1:1 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 5 | gerações 16 | avaliações 13 
+  A B C
+1 . o o 1 
+2 . x . 2 
+3 x x o 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 5 | gerações 16 | avaliações 13 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): completo (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Seleção do algoritmo de procura adversa base.
+1: MiniMax
+2: MiniMax alfa/beta
+Algoritmo (atual 1): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): completo (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Nível de debug, de reduzido a completo.
+0: nada
+1: atividade
+2: passos
+3: detalhe
+4: completo
+Debug (atual 4): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): completo (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.
+Ver (atual 1): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): completo (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 3): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): completo (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 5 | gerações 16 | avaliações 13 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 14 14g:0 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+  #g:1 1|9|3 c2
+  /  A B C
+  /1 . . . 1 
+  /2 . . x 2 
+  /3 . . . 3 
+  /  A B C
+  /  +g:2 2|17|3 a3
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 . . x 2 
+  /  |3 o . . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  +g:2 2|17|4 b2
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 . o x 2 
+  /  |3 . . . 3 
+  /  |  A B C
+  /  | 0
+  /  +
+  /  +g:2 2|17|5 a2
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 o . x 2 
+  /  |3 . . . 3 
+  /  |  A B C
+  /  | 0
+  /  +g:2 2|17|6 c3
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 . . x 2 
+  /  |3 . . o 3 
+  /  |  A B C
+  /  | 0
+  /  +g:2 2|17|7 b3
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 . . x 2 
+  /  |3 . o . 3 
+  /  |  A B C
+  /  | 0
+  /  +
+  /  +
+  /(0)
+  #g:1 2|17|8 b2
+  /  A B C
+  /1 . . . 1 
+  /2 . x . 2 
+  /3 . . . 3 
+  /  A B C
+  /  +g:2 3|25|8 b1
+  /  |  A B C
+  /  |1 . o . 1 
+  /  |2 . x . 2 
+  /  |3 . . . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 3|25|9 c3
+  /  A B C
+  /1 . . . 1 
+  /2 . . . 2 
+  /3 . . x 3 
+  /  A B C
+  /  +g:2 4|33|9 b3
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 . . . 2 
+  /  |3 . o x 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 4|33|10 a1
+  /  A B C
+  /1 x . . 1 
+  /2 . . . 2 
+  /3 . . . 3 
+  /  A B C
+  /  +g:2 5|41|10 c3
+  /  |  A B C
+  /  |1 x . . 1 
+  /  |2 . . . 2 
+  /  |3 . . o 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #
+  #g:1 5|41|11 a3
+  /  A B C
+  /1 . . . 1 
+  /2 . . . 2 
+  /3 x . . 3 
+  /  A B C
+  /  +g:2 6|49|11 b3
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 . . . 2 
+  /  |3 x o . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #
+  #g:1 6|49|11 c1
+  /  A B C
+  /1 . . x 1 
+  /2 . . . 2 
+  /3 . . . 3 
+  /  A B C
+  /  +g:2 7|57|11 b3
+  /  |  A B C
+  /  |1 . . x 1 
+  /  |2 . . . 2 
+  /  |3 . o . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #
+P1:2 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 7 | gerações 57 | avaliações 12 
+  A B C
+1 . . . 1 
+2 . . x 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 13 13g:0 
+  A B C
+1 . . . 1 
+2 . . x 2 
+3 . . . 3 
+  A B C
+  +g:1 1|8|5 a3
+  |  A B C
+  |1 . . . 1 
+  |2 . . x 2 
+  |3 o . . 3 
+  |  A B C
+  |  #g:2 2|15|5 c3
+  |  /  A B C
+  |  /1 . . . 1 
+  |  /2 . . x 2 
+  |  /3 o . x 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  #g:2 2|15|6 c1
+  |  /  A B C
+  |  /1 . . x 1 
+  |  /2 . . x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 2|15|7 b1
+  |  /  A B C
+  |  /1 . x . 1 
+  |  /2 . . x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 2|15|8 a2
+  |  /  A B C
+  |  /1 . . . 1 
+  |  /2 x . x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 2|15|9 b3
+  |  /  A B C
+  |  /1 . . . 1 
+  |  /2 . . x 2 
+  |  /3 o x . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 2|15|10 b2
+  |  /  A B C
+  |  /1 . . . 1 
+  |  /2 . x x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 2|15|11 a1
+  |     A B C
+  |   1 x . . 1 
+  |   2 . . x 2 
+  |   3 o . . 3 
+  |     A B C
+  |    0
+  |(0)
+  +g:1 2|15|12 b1
+  |  A B C
+  |1 . o . 1 
+  |2 . . x 2 
+  |3 . . . 3 
+  |  A B C
+  |  #g:2 3|22|12 a3
+  |  /  A B C
+  |  /1 . o . 1 
+  |  /2 . . x 2 
+  |  /3 x . . 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  > alfa(0)
+  +
+  +g:1 3|22|13 c3
+  |  A B C
+  |1 . . . 1 
+  |2 . . x 2 
+  |3 . . o 3 
+  |  A B C
+  |  #g:2 4|29|13 b2
+  |  /  A B C
+  |  /1 . . . 1 
+  |  /2 . x x 2 
+  |  /3 . . o 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  > alfa(0)
+  +g:1 4|29|14 a2
+  |  A B C
+  |1 . . . 1 
+  |2 o . x 2 
+  |3 . . . 3 
+  |  A B C
+  |  #g:2 5|36|14 b1
+  |  /  A B C
+  |  /1 . x . 1 
+  |  /2 o . x 2 
+  |  /3 . . . 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  > alfa(0)
+  +g:1 5|36|15 b2
+  |  A B C
+  |1 . . . 1 
+  |2 . o x 2 
+  |3 . . . 3 
+  |  A B C
+  |  #g:2 6|43|15 a1
+  |  /  A B C
+  |  /1 x . . 1 
+  |  /2 . o x 2 
+  |  /3 . . . 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  > alfa(0)
+  +
+  +
+P1:2 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 6 | gerações 43 | avaliações 16 
+  A B C
+1 . . . 1 
+2 . . x 2 
+3 o . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 17 17g:0 
+  A B C
+1 . . . 1 
+2 . . x 2 
+3 o . . 3 
+  A B C
+  #g:1 1|7|7 b1
+  /  A B C
+  /1 . x . 1 
+  /2 . . x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 2|13|7 b2
+  /  |  A B C
+  /  |1 . x . 1 
+  /  |2 . o x 2 
+  /  |3 o . . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  +g:2 2|13|8 c3
+  /  |  A B C
+  /  |1 . x . 1 
+  /  |2 . . x 2 
+  /  |3 o . o 3 
+  /  |  A B C
+  /  | 0
+  /  +g:2 2|13|9 c1
+  /  |  A B C
+  /  |1 . x o 1 
+  /  |2 . . x 2 
+  /  |3 o . . 3 
+  /  |  A B C
+  /  | 0
+  /  +g:2 2|13|10 b3
+  /  |  A B C
+  /  |1 . x . 1 
+  /  |2 . . x 2 
+  /  |3 o o . 3 
+  /  |  A B C
+  /  | 0
+  /  +
+  /  +
+  /(0)
+  #g:1 2|13|11 b2
+  /  A B C
+  /1 . . . 1 
+  /2 . x x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 3|19|11 a2
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 o x x 2 
+  /  |3 o . . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 3|19|12 a2
+  /  A B C
+  /1 . . . 1 
+  /2 x . x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 4|25|12 c3
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 x . x 2 
+  /  |3 o . o 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 4|25|13 a1
+  /  A B C
+  /1 x . . 1 
+  /2 . . x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 5|31|13 c1
+  /  |  A B C
+  /  |1 x . o 1 
+  /  |2 . . x 2 
+  /  |3 o . . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 5|31|14 c3
+  /  A B C
+  /1 . . . 1 
+  /2 . . x 2 
+  /3 o . x 3 
+  /  A B C
+  /  +g:2 6|37|14 b2
+  /  |  A B C
+  /  |1 . . . 1 
+  /  |2 . o x 2 
+  /  |3 o . x 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 6|37|15 c1
+  /  A B C
+  /1 . . x 1 
+  /2 . . x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 7|43|15 b3
+  /  |  A B C
+  /  |1 . . x 1 
+  /  |2 . . x 2 
+  /  |3 o o . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 7|43|16 b3
+     A B C
+   1 . . . 1 
+   2 . . x 2 
+   3 o x . 3 
+     A B C
+     +g:2 8|49|16 a1
+     |  A B C
+     |1 o . . 1 
+     |2 . . x 2 
+     |3 o x . 3 
+     |  A B C
+     | 0
+     |(0)
+     > beta(0)
+P1:2 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,004s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 8 | gerações 49 | avaliações 16 
+  A B C
+1 . x . 1 
+2 . . x 2 
+3 o . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 17 17g:0 
+  A B C
+1 . x . 1 
+2 . . x 2 
+3 o . . 3 
+  A B C
+  +g:1 1|6|4 a1
+  |  A B C
+  |1 o x . 1 
+  |2 . . x 2 
+  |3 o . . 3 
+  |  A B C
+  |  #g:2 2|11|4 c3
+  |  /  A B C
+  |  /1 o x . 1 
+  |  /2 . . x 2 
+  |  /3 o . x 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  #g:2 2|11|5 b3
+  |  /  A B C
+  |  /1 o x . 1 
+  |  /2 . . x 2 
+  |  /3 o x . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 2|11|6 b2
+  |  /  A B C
+  |  /1 o x . 1 
+  |  /2 . x x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 2|11|7 c1
+  |  /  A B C
+  |  /1 o x x 1 
+  |  /2 . . x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 2|11|8 a2
+  |     A B C
+  |   1 o x . 1 
+  |   2 x . x 2 
+  |   3 o . . 3 
+  |     A B C
+  |    0
+  |(0)
+  +g:1 2|11|9 b3
+  |  A B C
+  |1 . x . 1 
+  |2 . . x 2 
+  |3 o o . 3 
+  |  A B C
+  |  #g:2 3|16|9 a1
+  |  /  A B C
+  |  /1 x x . 1 
+  |  /2 . . x 2 
+  |  /3 o o . 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  > alfa(0)
+  +
+  +g:1 3|16|10 b2
+  |  A B C
+  |1 . x . 1 
+  |2 . o x 2 
+  |3 o . . 3 
+  |  A B C
+  |  #g:2 4|21|10 a2
+  |  /  A B C
+  |  /1 . x . 1 
+  |  /2 x o x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  > alfa(0)
+  +g:1 4|21|11 c1
+  |  A B C
+  |1 . x o 1 
+  |2 . . x 2 
+  |3 o . . 3 
+  |  A B C
+  |  #g:2 5|26|11 a1
+  |  /  A B C
+  |  /1 x x o 1 
+  |  /2 . . x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  > alfa(0)
+  +
+P1:2 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 5 | gerações 26 | avaliações 12 
+  A B C
+1 o x . 1 
+2 . . x 2 
+3 o . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 13 13g:0 
+  A B C
+1 o x . 1 
+2 . . x 2 
+3 o . . 3 
+  A B C
+  #g:1 1|5|5 a2
+  /  A B C
+  /1 o x . 1 
+  /2 x . x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 2|9|5 b2
+  /  |  A B C
+  /  |1 o x . 1 
+  /  |2 x o x 2 
+  /  |3 o . . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  +g:2 2|9|6 c3
+  /  |  A B C
+  /  |1 o x . 1 
+  /  |2 x . x 2 
+  /  |3 o . o 3 
+  /  |  A B C
+  /  | 0
+  /  +g:2 2|9|7 c1
+  /  |  A B C
+  /  |1 o x o 1 
+  /  |2 x . x 2 
+  /  |3 o . . 3 
+  /  |  A B C
+  /  | 0
+  /  +g:2 2|9|8 b3
+  /     A B C
+  /   1 o x . 1 
+  /   2 x . x 2 
+  /   3 o o . 3 
+  /     A B C
+  /    0
+  /(0)
+  #g:1 2|9|9 b3
+  /  A B C
+  /1 o x . 1 
+  /2 . . x 2 
+  /3 o x . 3 
+  /  A B C
+  /  +g:2 3|13|9 c3
+  /  |  A B C
+  /  |1 o x . 1 
+  /  |2 . . x 2 
+  /  |3 o x o 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 3|13|9 b2
+  /  A B C
+  /1 o x . 1 
+  /2 . x x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 4|17|9 a2
+  /  |  A B C
+  /  |1 o x . 1 
+  /  |2 o x x 2 
+  /  |3 o . . 3 
+  /  |  A B C
+  /  | 998
+  /  |(998)
+  #g:1 4|17|10 c1
+  /  A B C
+  /1 o x x 1 
+  /2 . . x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 5|21|10 c3
+  /  |  A B C
+  /  |1 o x x 1 
+  /  |2 . . x 2 
+  /  |3 o . o 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  > beta(0)
+  #g:1 5|21|11 c3
+     A B C
+   1 o x . 1 
+   2 . . x 2 
+   3 o . x 3 
+     A B C
+     +g:2 6|25|11 b2
+     |  A B C
+     |1 o x . 1 
+     |2 . o x 2 
+     |3 o . x 3 
+     |  A B C
+     | 0
+     |(0)
+     > beta(0)
+P1:2 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 6 | gerações 25 | avaliações 12 
+  A B C
+1 o x . 1 
+2 x . x 2 
+3 o . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 13 13g:0 
+  A B C
+1 o x . 1 
+2 x . x 2 
+3 o . . 3 
+  A B C
+  +g:1 1|4|4 b3
+  |  A B C
+  |1 o x . 1 
+  |2 x . x 2 
+  |3 o o . 3 
+  |  A B C
+  |  #g:2 2|7|4 c3
+  |  /  A B C
+  |  /1 o x . 1 
+  |  /2 x . x 2 
+  |  /3 o o x 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  #g:2 2|7|5 b2
+  |  /  A B C
+  |  /1 o x . 1 
+  |  /2 x x x 2 
+  |  /3 o o . 3 
+  |  /  A B C
+  |  / -998
+  |  /(-998)
+  |(-998)
+  +g:1 2|7|6 c1
+  |  A B C
+  |1 o x o 1 
+  |2 x . x 2 
+  |3 o . . 3 
+  |  A B C
+  |  #g:2 3|10|6 c3
+  |  /  A B C
+  |  /1 o x o 1 
+  |  /2 x . x 2 
+  |  /3 o . x 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  #g:2 3|10|7 b2
+  |  /  A B C
+  |  /1 o x o 1 
+  |  /2 x x x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / -998
+  |  /(-998)
+  +g:1 3|10|8 b2
+  |  A B C
+  |1 o x . 1 
+  |2 x o x 2 
+  |3 o . . 3 
+  |  A B C
+  |  #g:2 4|13|8 b3
+  |  /  A B C
+  |  /1 o x . 1 
+  |  /2 x o x 2 
+  |  /3 o x . 3 
+  |  /  A B C
+  |  / 0
+  |  /(0)
+  |  #g:2 4|13|9 c1
+  |  /  A B C
+  |  /1 o x x 1 
+  |  /2 x o x 2 
+  |  /3 o . . 3 
+  |  /  A B C
+  |  / 0
+  |  #g:2 4|13|10 c3
+  |     A B C
+  |   1 o x . 1 
+  |   2 x o x 2 
+  |   3 o . x 3 
+  |     A B C
+  |    0
+  |(0)
+  +g:1 4|13|11 c3
+     A B C
+   1 o x . 1 
+   2 x . x 2 
+   3 o . o 3 
+     A B C
+     #g:2 5|16|11 b2
+     /  A B C
+     /1 o x . 1 
+     /2 x x x 2 
+     /3 o . o 3 
+     /  A B C
+     / -998
+     /(-998)
+P1:2 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 0 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 5 | gerações 16 | avaliações 12 
+  A B C
+1 o x . 1 
+2 x o x 2 
+3 o . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+HT: utilização 0%, reuso: 1,00 vezes 13 13g:0 
+  A B C
+1 o x . 1 
+2 x o x 2 
+3 o . . 3 
+  A B C
+  #g:1 1|3|3 c1
+  /  A B C
+  /1 o x x 1 
+  /2 x o x 2 
+  /3 o . . 3 
+  /  A B C
+  /  +g:2 2|5|3 b3
+  /  |  A B C
+  /  |1 o x x 1 
+  /  |2 x o x 2 
+  /  |3 o o . 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  +g:2 2|5|4 c3
+  /     A B C
+  /   1 o x x 1 
+  /   2 x o x 2 
+  /   3 o . o 3 
+  /     A B C
+  /    998
+  /   (998)
+  /(998)
+  #g:1 2|5|5 c3
+  /  A B C
+  /1 o x . 1 
+  /2 x o x 2 
+  /3 o . x 3 
+  /  A B C
+  /  +g:2 3|7|5 b3
+  /  |  A B C
+  /  |1 o x . 1 
+  /  |2 x o x 2 
+  /  |3 o o x 3 
+  /  |  A B C
+  /  | 0
+  /  |(0)
+  /  +g:2 3|7|6 c1
+  /     A B C
+  /   1 o x o 1 
+  /   2 x o x 2 
+  /   3 o . x 3 
+  /     A B C
+  /    998
+  /   (998)
+  #g:1 3|7|7 b3
+     A B C
+   1 o x . 1 
+   2 x o x 2 
+   3 o x . 3 
+     A B C
+     +g:2 4|9|7 c3
+     |  A B C
+     |1 o x . 1 
+     |2 x o x 2 
+     |3 o x o 3 
+     |  A B C
+     | 998
+     |(998)
+P1:2 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
+P11:100 P12:0 P13:1 P14:2 P15:0 P16:0
+Resultado: 998 (0,003s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 4 | gerações 9 | avaliações 8 
+  A B C
+1 o x x 1 
+2 x o x 2 
+3 o . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 1 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 4 | gerações 9 | avaliações 8 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): completo (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Seleção do algoritmo de procura adversa base.
+1: MiniMax
+2: MiniMax alfa/beta
+Algoritmo (atual 2): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): completo (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Nível de debug, de reduzido a completo.
+0: nada
+1: atividade
+2: passos
+3: detalhe
+4: completo
+Debug (atual 4): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 1 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Baralhar os sucessores ao expandir.
+baralhar (atual 1): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 3): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.
+Ordenar (atual 2): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 4 | gerações 9 | avaliações 8 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1:1 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:20 P10:1
+P11:100 P12:0 P13:0 P14:0 P15:0 P16:0
+Resultado: 0 (0,463s)
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 155758 | gerações 318517 | avaliações 113416 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 155758 | gerações 318517 | avaliações 113416 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 20): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.
+Ordenar (atual 0): 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 155758 | gerações 318517 | avaliações 113416 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1:1 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:20 P10:1
+P11:100 P12:0 P13:0 P14:2 P15:0 P16:0
+Resultado: 0 (0,020s)
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 624 | gerações 2299 | avaliações 826 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Jogo do Galo
+P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 624 | gerações 2299 | avaliações 826 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Seleção do algoritmo de procura adversa base.
+1: MiniMax
+2: MiniMax alfa/beta
+Algoritmo (atual 1): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 20): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.
+Ordenar (atual 2): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 624 | gerações 2299 | avaliações 826 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1:2 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:20 P10:1
+P11:100 P12:0 P13:0 P14:0 P15:0 P16:0
+Resultado: 0 (0,037s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 11750 | gerações 27362 | avaliações 7848 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 11750 | gerações 27362 | avaliações 7848 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Seleção do algoritmo de procura adversa base.
+1: MiniMax
+2: MiniMax alfa/beta
+Algoritmo (atual 2): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 20): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.
+Ordenar (atual 0): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 11750 | gerações 27362 | avaliações 7848 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1:2 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:20 P10:1
+P11:100 P12:0 P13:0 P14:2 P15:0 P16:0
+Resultado: 0 (0,044s)
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Seleção do algoritmo de procura adversa base.
+1: MiniMax
+2: MiniMax alfa/beta
+Algoritmo (atual 2): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 20): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 2 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.
+Ordenar (atual 2): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Parametros comuns a 1 configurações:
+P1:2 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:20 P10:1
+P11:100 P12:0 P13:0 P14:0 P15:0 P16:0
+--- Configuração 1 --- atual
+
+Selecionar configuração (negativo apaga): 
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 20 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 20 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 20): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 7 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 7 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Parametros comuns a 2 configurações:
+P1:2 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P10:1 P11:100
+P12:0 P13:0 P14:0 P15:0 P16:0
+--- Configuração 1
+P9:20
+--- Configuração 2 --- atual
+P9:7
+Selecionar configuração (negativo apaga): 
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 7 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 7 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 7): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 5 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 5 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Parametros comuns a 3 configurações:
+P1:2 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P10:1 P11:100
+P12:0 P13:0 P14:0 P15:0 P16:0
+--- Configuração 1
+P9:20
+--- Configuração 2
+P9:7
+--- Configuração 3 --- atual
+P9:5
+Selecionar configuração (negativo apaga): 
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 5 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 5 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+Limite (atual 5): 
+P1(Algoritmo): MiniMax alfa/beta (1 a 2)
+P2(Debug): nada (0 a 4)
+P3(Ver): 1 (1 a 100)
+P4(Seed): 1 (1 a 1000000)
+P5(Tempo): 10 (1 a 3600)
+P6(Gerações): 0 (0 a 1000000000)
+P7(Expansões): 0 (0 a 1000000000)
+P8(Avaliações): 0 (0 a 1000000000)
+P9(Limite): 3 (-1 a 1000000)
+P10(Repetidos): ignorar (1 a 3)
+P11(pesoAStar): 100 (0 a 10000)
+P12(ruido): 0 (-100 a 100)
+P13(baralhar): 0 (0 a 1)
+P14(Ordenar): 0 (0 a 2)
+P15(PodaHeuristica): 0 (0 a 1000)
+P16(PodaCega): 0 (0 a 10000)
+Parametro:
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 
+Parametros comuns a 4 configurações:
+P1:2 P2:0 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P10:1 P11:100
+P12:0 P13:0 P14:0 P15:0 P16:0
+--- Configuração 1
+P9:20
+--- Configuração 2
+P9:7
+--- Configuração 3
+P9:5
+--- Configuração 4 --- atual
+P9:3
+Selecionar configuração (negativo apaga): 
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1212 | gerações 3633 | avaliações 806 
+  A B C
+1 x . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: Mostrar soluções? Instancia final: Instância inicial: 
+Match 1 vs 2:
+ Instância 1:  Empate
+Match 1 vs 3:
+ Instância 1:  Vitória Branca
+Match 1 vs 4:
+ Instância 1:  Vitória Branca
+Match 2 vs 1:
+ Instância 1:  Empate
+Match 2 vs 3:
+ Instância 1:  Vitória Branca
+Match 2 vs 4:
+ Instância 1:  Vitória Branca
+Match 3 vs 1:
+ Instância 1:  Empate
+Match 3 vs 2:
+ Instância 1:  Empate
+Match 3 vs 4:
+ Instância 1:  Vitória Branca
+Match 4 vs 1:
+ Instância 1:  Empate
+Match 4 vs 2:
+ Instância 1:  Empate
+Match 4 vs 3:
+ Instância 1:  Empate
+Torneio (#instâncias melhores):
+ |-01-|-02-|-03-|-04-|
+ 1    |  0 |  1 |  1 |  2
+ |----|----|----|----|
+ 2  0 |    |  1 |  1 |  2
+ |----|----|----|----|
+ 3  0 |  0 |    |  1 | -1
+ |----|----|----|----|
+ 4  0 |  0 |  0 |    | -3
+ |----|----|----|----|
+Parametros comuns a 4 configurações:
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0
+P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+--- Configuração 1
+P9(Limite): 20
+--- Configuração 2
+P9(Limite): 7
+--- Configuração 3
+P9(Limite): 5
+--- Configuração 4
+P9(Limite): 3
+
+Jogo do Galo
+P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
+P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
+P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
+P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
+[Estatísticas] expansões 1 | gerações 1 | avaliações 1 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+_______________________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
+| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+Opção: 

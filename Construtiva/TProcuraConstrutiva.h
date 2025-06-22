@@ -2,8 +2,8 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-#include "TVector.h"
-#include "TProcura.h"
+#include "../TVector.h"
+#include "../TProcura.h"
 
 // número de elementos na hashtable com perdas
 #define TAMANHO_HASHTABLE 1000000
@@ -185,7 +185,7 @@ public:
 	 * 		CSubProblema& obj = *((CSubProblema*)objecto);
 	 * 		// copiar todas as variáveis do estado
 	 * 		variavel = obj.variavel;
-	 * 	}
+	 * }
 	 * @endcode
 	 */
 	virtual void Copiar(TNo objecto) { }
