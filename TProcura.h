@@ -4,6 +4,8 @@
 
 #include "TVector.h"
 #include <time.h>
+#include <stdint.h>
+#include <limits.h>
 
 
 // código para número não lido (não deve ser utilizado num parâmetro)

@@ -4,8 +4,6 @@
 
 #include "TVector.h"
 #include "TProcura.h"
-#include <stdint.h>
-#include <limits.h>
 
 // número de elementos na hashtable com perdas
 #define TAMANHO_HASHTABLE 1000000
