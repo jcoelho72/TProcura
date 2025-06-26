@@ -6,6 +6,7 @@
 #include <time.h>
 #include <stdint.h>
 #include <limits.h>
+#include <stdio.h>
 
 
 // código para número não lido (não deve ser utilizado num parâmetro)
@@ -365,7 +366,7 @@ public:
 	 *
 	 * @see TesteManual()
 	 */
-	virtual void TesteEmpirico(int inicio = -1, int fim = -1, bool mostrarSolucoes = true);
+	virtual void TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes = true, char* ficheiro = NULL);
 
 	// LimparEstatisticas: Chamar antes da corrida
 	virtual void LimparEstatisticas(clock_t& inicio);
@@ -384,6 +385,7 @@ public:
 	/// @brief Indicadores que podem ser calculados após a execução, quer com informação da instãncia, quer com resultado da última corrida.
 	/// @see Indicador()
 	static TVector<TIndicador> indicador;
+	static TVector<int> indAtivo; // lista por ordem dos indicadores a utilizar
 	/// @brief Conjuntos de configurações para teste empírico.
 	static TVector<TVector<int>> configuracoes;
 	/// @brief Resultado retornado pelo algoritmo na última execução.
@@ -403,6 +405,8 @@ public:
 	}
 	// ler um número, ou retorna NAO_LIDO
 	static int NovoValor(const char* prompt);
+	// ler uma string
+	static char *NovoTexto(const char* prompt);
 
 protected:
 
@@ -422,8 +426,11 @@ protected:
 	void CalculaTorneio(TVector<TResultado>& resultados);
 	void MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo = false);
 	void BarraTorneio(bool nomes);
-	void ExtrairConfiguracao(TVector<TResultado>& resultados, TVector<TResultado>& extracao, int configuracao);
+	TVector<TResultado> ExtrairConfiguracao(TVector<TResultado>& resultados, int configuracao);
 	void SolicitaInstancia();
+	TVector<int> SolicitaInstancias();
+
+	void RelatorioCSV(TVector<TResultado>& resultados, FILE *f);
 
 	TVector<int> ExtraiLista(char *str);
 	void InserirConfiguracoes(char* str, TVector<int>& base);

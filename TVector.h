@@ -20,9 +20,10 @@ template <class Item>
 class TVector
 {
 private:
-	TVector<int> *idx;
-	Item *v;
-	int sz,count;
+	TVector<int> *idx = NULL;
+	Item *v = NULL;
+	int sz = 0;
+	int count = 0;
 	void Size(int size);
 	// sort methods in vector
 	void QuickSort(int start,int end);
@@ -36,7 +37,7 @@ public:
 	static Item erro;
 
 	// constructors
-	TVector(int size = 0) { v = NULL; idx = NULL; count = sz = 0; if (size > 0) Size(size); }
+	TVector(int size = 0) { if (size > 0) Size(size); }
 	TVector(int size,Item const *init);
 	virtual ~TVector() noexcept { delete [] v; }
 
@@ -108,7 +109,7 @@ public:
 	inline Item& Last() { if(count>0) return v[count-1]; else { return TVector<Item>::erro; } } // O(1) - last element of the vector (2007/04/17: added extra check)
 	int Count() const { return count; } // O(1) - return the number of elements in the vector
 	void Count(int value) { // O(N) - set the vector to a fixed size (the elements are not initializated)
-		if(value>=sz) Size(value);
+		if(value>sz) Size(value);
 		count=value;
 	}
 	// 2007/04/17: return an element at random
