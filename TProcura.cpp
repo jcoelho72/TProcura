@@ -6,12 +6,12 @@
 
 #define BUFFER_SIZE 1024
 
-// numero de geracaes de estados
-int TProcura::geracoes = 0;
-// numero de expansoes de estados
-int TProcura::expansoes = 0;
-// numero de chamadas a funcao heuristica
-int TProcura::avaliacoes = 0;
+// Resultado retornado pelo algoritmo na última execução.
+int TProcura::resultado = 0;
+// tempo consumido na última execução.
+int TProcura::tempo = 0;
+// numero de iterações, conforme definido no algoritmo
+int TProcura::iteracoes = 0;
 
 // deadline da corrida atual
 clock_t TProcura::instanteFinal = 0;
@@ -21,6 +21,8 @@ bool TProcura::memoriaEsgotada = false;
 TParametro TProcura::instancia = { NULL,1,1,1, NULL, NULL };
 // adicionar parâmetros específicos, se necessário
 TVector<TParametro> TProcura::parametro;
+// adicionar indicadores conforme a necessidade
+TVector<TIndicador> TProcura::indicador;
 
 // conjuntos de valores de parâmetros, para teste
 TVector<TVector<int>> TProcura::configuracoes;
@@ -36,6 +38,14 @@ void TProcura::ResetParametros()
 		"passos",
 		"detalhe",
 		"completo" };
+
+	// definir indicadores base
+	indicador.Count(0);
+	indicador.Add({ "Resultado","Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", 0 });
+	indicador.Add({ "Tempo(ms)","Tempo em milisegundos da execução (medida de esforço computacional).", 1 });
+	indicador.Add({ "Iterações","Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).", 2 });
+
+
 	// definir parametros base
 	parametro.Count(0);
 	// algoritmos
@@ -46,17 +56,25 @@ void TProcura::ResetParametros()
 	parametro.Add({ "Seed",1,1,1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios.",NULL });
 	// limite tempo
 	parametro.Add({ "Tempo",10,1,3600, "Tempo limite em segundos. ",NULL });
-	// máximo de gerações
-	parametro.Add({ "Gerações",0,0,1000000000, "Número de gerações máximo (0 não há limite). ", NULL });
-	// máximo de expansões
-	parametro.Add({ "Expansões",0,0,1000000000, "Número de expansões máximo (0 não há limite). ",NULL });
-	// máximo de avaliacoes
-	parametro.Add({ "Avaliações",0,0,1000000000, "Número de avaliações máximo (0 não há limite). ",NULL });
+	// máximo de iterações
+	parametro.Add({ "Iterações",0,0,1000000000, "Número de iterações máximo (0 não há limite). ",NULL });
 
 	// colocar as configurações vazias (podem ser inicializadas se existirem configurações de omissão)
 	configuracoes.Count(0);
 }
 
+// retorna o valor do indicador[id]
+int TProcura::Indicador(int id) {
+	switch (id) {
+	case indResultado:
+		return resultado;
+	case indTempo:
+		return tempo;
+	case indIteracoes:
+		return iteracoes;
+	}
+	return 0;
+}
 
 // Escrever informacao de debug sobre o objecto atual
 void TProcura::Debug(void)
@@ -70,7 +88,7 @@ void TProcura::Debug(void)
 // Chamar antes de iniciar uma procura
 void TProcura::LimparEstatisticas(clock_t& inicio)
 {
-	expansoes = geracoes = avaliacoes = 0;
+	resultado = tempo = iteracoes = 0;
 	inicio = clock();
 	instanteFinal = inicio + parametro[limiteTempo].valor * CLOCKS_PER_SEC;
 	memoriaEsgotada = false;
@@ -80,46 +98,49 @@ void TProcura::LimparEstatisticas(clock_t& inicio)
 // Este metodo destina-se a testes preliminares, e deve ser redefinido apenas se forem definidos novos algoritmos
 void TProcura::TesteManual(const char* nome)
 {
-	int selecao, resultado;
+	int selecao;
 	clock_t inicio;
+	TVector<TResultado> resultados;
 	ResetParametros();
 	TRand::srand(parametro[seed].valor);
-	SolucaoVazia();
+	Inicializar();
 	LimparEstatisticas(inicio);
 	while (true) {
 		printf("\n%s", nome);
 		MostraParametros();
-		printf("\n[Estatísticas] expansões %d | gerações %d | avaliações %d ",
-			expansoes, geracoes, avaliacoes);
 		Debug();
+		MostraRelatorio(resultados, true);
 		printf("\n\
-_______________________________________________________________________________\n\
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |\n\
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste");
+____________________________________________________________________\n\
+| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |\n\
+| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |");
 		if ((selecao = NovoValor("\nOpção: ")) == NAO_LIDO)
 			return;
-		switch (Dominio(selecao, 0, 8)) {
+		switch (Dominio(selecao, 0, 9)) {
 		case 0: return;
-		case 1: TRand::srand(parametro[seed].valor); SolicitaInstancia(); SolucaoVazia(); break;
+		case 1: TRand::srand(parametro[seed].valor); SolicitaInstancia(); Inicializar(); break;
 		case 2: ExplorarSucessores(); break;
-		case 3: MostrarSolucao(); break;
-		case 4: EditarParametros(); break;
-		case 5:
+		case 3: EditarParametros(); break;
+		case 4: MostrarSolucao(); break;
+		case 5: if (EditarIndicadores())
+			resultados.Count(0);
+			break;
+		case 6:
 			// executar um algoritmo 
 			LimparEstatisticas(inicio);
 			resultado = ExecutaAlgoritmo();
 			MostraParametros(0);
-			printf("\nResultado: %d", resultado);
 			FinalizarCorrida(inicio);
+			InserirRegisto(resultados, instancia.valor, 0);
 			break;
-		case 6: EditarConfiguracoes(); break;
-		case 7:
+		case 7: EditarConfiguracoes(); break;
+		case 8:
 			TesteEmpirico(
 				NovoValor("Instância inicial: "),
 				NovoValor("Instancia final: "),
 				NovoValor("Mostrar soluções? "));
 			break;
-		case 8: return;
+		case 9: return;
 		default: printf("\nOpção não definida."); break;
 		}
 	}
@@ -127,12 +148,12 @@ _______________________________________________________________________________\
 
 void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 	int nElementos = (idParametros == NULL ? parametro.Count() : idParametros->Count());
-	printf("\n");
+	printf("\n ");
 	for (int i = 0; i < nElementos; i++) {
 		int parID = (idParametros == NULL ? i : (*idParametros)[i]);
 		// identificação do parâmetro
 		if (detalhe == 0 || parametro[parID].nome == NULL)
-			printf("P%d:", parID + 1);
+			printf("P%d=", parID + 1);
 		else
 			printf("P%d(%s): ", parID + 1, parametro[parID].nome);
 		// valor do parâmetro
@@ -145,7 +166,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 			printf(" (%d a %d)", parametro[parID].min, parametro[parID].max);
 		// separador/mudança de linha
 		if (i < nElementos - 1) {
-			if (detalhe > 1 || (i + 1) % (detalhe == 0 ? 10 : 4) == 0)
+			if (detalhe > 1 || (i + 1) % (detalhe == 0 ? 10 : 5) == 0)
 				printf("\n");
 			else if (detalhe > 0)
 				printf(" | ");
@@ -153,6 +174,32 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 				printf(" ");
 		}
 	}
+}
+
+bool TProcura::EditarIndicadores() {
+	int opcao = 0;
+	bool editado = false;
+	while (1) {
+		MostraIndicadores();
+		if ((opcao = NovoValor("\nAlterar indicador: ")) == NAO_LIDO || opcao == 0)
+			return editado;
+		opcao = Dominio(opcao, 1, indicador.Count());
+		if (indicador[opcao - 1].indice >= 0) {
+			for (int i = 0; i < indicador.Count(); i++)
+				if (i != opcao - 1 && indicador[i].indice > indicador[opcao - 1].indice)
+					indicador[i].indice--;
+			indicador[opcao - 1].indice = -1;
+		}
+		else {
+			indicador[opcao - 1].indice = 0;
+			for (int i = 0; i < indicador.Count(); i++)
+				if (i != opcao - 1 && indicador[i].indice >= indicador[opcao - 1].indice)
+					indicador[opcao - 1].indice = indicador[i].indice + 1;
+		}
+		// invalidar resultados atuais
+		editado = true;
+	}
+	return editado;
 }
 
 void TProcura::EditarParametros() {
@@ -186,6 +233,22 @@ void TProcura::EditarParametros() {
 	}
 }
 
+int TProcura::NovaConfiguracao(TVector<int>& parametros)
+{
+	int id = -1;
+	// procurar pela configuração
+	for (int i = 0; i < configuracoes.Count() && id < 0; i++)
+		if (configuracoes[i].Equal(parametros))
+			id = i;
+	if (id < 0) {
+		configuracoes.Count(configuracoes.Count() + 1);
+		configuracoes.Last() = parametros;
+		return configuracoes.Count() - 1;
+	}
+	return id;
+}
+
+
 // gravar (ou ler) a configuração atual
 void TProcura::ConfiguracaoAtual(TVector<int>& parametros, int operacao) {
 	if (operacao == gravar) {
@@ -199,36 +262,182 @@ void TProcura::ConfiguracaoAtual(TVector<int>& parametros, int operacao) {
 	}
 }
 
+void TProcura::InserirRegisto(TVector<TResultado>& resultados, int inst, int conf)
+{
+	resultados.Add({ inst, conf });
+	// os primeiros indicadores são fixos
+	for (int i = 0; i < indicador.Count(); i++)
+		if (indicador[i].indice >= 0)
+			resultados.Last().valor[indicador[i].indice] = Indicador(i);
+}
+
+int TProcura::Registo(TResultado& resultado, int id)
+{
+	if (id >= 0 && id < indicador.Count() && indicador[id].indice >= 0)
+		return resultado.valor[indicador[id].indice];
+	return 0;
+}
+
+void TProcura::Registo(TResultado& resultado, int id, int valor)
+{
+	if (id >= 0 && id < indicador.Count() && indicador[id].indice >= 0)
+		resultado.valor[indicador[id].indice] = valor;
+}
+
+// Sintaxe de <lista> (apenas inteiros, sem espaços):
+//   A ou A,B,C   - único valor ou enumeração
+//   A:B ou A:B:C - intervalo A a B, ou com passo C
+TVector<int> TProcura::ExtraiLista(char* str) {
+	TVector<int> lista;
+	char* pt;
+
+	if (!str || *str == '\0')
+		return lista;
+
+	// separar por vírgulas
+	if (pt = strchr(str, ',')) {
+		*pt = 0;
+		lista = ExtraiLista(str);
+		do {
+			str = pt + 1;
+			if (pt = strchr(str, ','))
+				*pt = 0;
+			lista += ExtraiLista(str);
+		} while (pt);
+	}
+	else {
+		// procurar por : (intervalo)
+		if (pt = strchr(str, ':')) {
+			char* pt2;
+			*pt = 0;
+			int A = atoi(str);
+			int C = 1;
+			A = atoi(str);
+			if (pt2 = strchr(pt + 1, ':')) { // A:B:C
+				*pt2 = 0;
+				if ((C = atoi(pt2 + 1)) <= 0)
+					C = 1;
+			} // c.c. A:B
+			int B = atoi(pt + 1);
+			if (A > B) { // ordem não interessa
+				int aux = A;
+				A = B;
+				B = aux;
+			}
+			for (int i = A; i <= B; i += C)
+				lista.Add(i);
+		}
+		else // inteiro apenas
+			lista.Add(atoi(str));
+	}
+	lista.BeASet();
+	return lista;
+}
+
 
 void TProcura::EditarConfiguracoes() {
 	TVector<int> atual; // parâmetros atuais
-	int id = -1;
+	int id = -1, auxID;
+	char str[BUFFER_SIZE];
 
 	ConfiguracaoAtual(atual, ler);
 
-	// procurar a configuração atual
-	for (int i = 0; i < configuracoes.Count() && id < 0; i++)
-		if (configuracoes[i].Equal(atual))
-			id = i;
-	// caso a configuração atual não exista, adicionar
-	if (id < 0) {
-		configuracoes.Count(configuracoes.Count() + 1);
-		configuracoes.Last() = atual;
-		id = configuracoes.Count() - 1;
-	}
+	id = NovaConfiguracao(atual);
 
-	MostrarConfiguracoes(0, id);
+	do {
+		MostrarConfiguracoes(0, id);
 
-	if ((id = NovoValor("\nSelecionar configuração (negativo apaga): ")) != NAO_LIDO) {
-		id = Dominio(id, -configuracoes.Count() - 1, configuracoes.Count() + 1);
-		if (id < 0) {
-			configuracoes.Delete(-id - 1);
+		printf("\nSintaxe comando:\n\
+  id / -id     - Seleciona configuração como atual ou apaga 'id'\n\
+  Pk=<lista>   - Varia Pk na configuração atual (gera N configurações)\n\
+  Pk=<lista> x Pw=<lista> - produto externo de Pk e Pw (gera NxM configurações)\n\
+Sintaxe de <lista> (apenas inteiros, sem espaços):\n\
+  A ou A,B,C   - único valor ou enumeração\n\
+  A:B ou A:B:C - intervalo A a B, ou com passo C\n\
+Comando: ");
+		fgets(str, BUFFER_SIZE, stdin);
+		if (strlen(str) <= 1)
+			break;
+
+		if ((auxID = atoi(str)) != 0) {
+			id = auxID;
+			id = Dominio(id, -configuracoes.Count(), configuracoes.Count());
+			if (id < 0) {
+				id++;
+				configuracoes.Delete(-id);
+			}
+			else if (id > 0) {
+				id--;
+				atual = configuracoes[id];
+			}
 		}
-		else if (id > 0) {
-			atual = configuracoes[id - 1];
-		}
-	}
+		else
+			InserirConfiguracoes(str, atual);
+	} while (1);
 	ConfiguracaoAtual(atual, gravar);
+}
+
+void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
+	char* pt;
+	TVector<int> currente, produto;
+	TVector<TVector<int>> valores;
+
+	// processar todos os itens a iniciar em P, obtendo informação entre quais existe x
+	pt = strtok(str, " \n\t\r");
+	while (pt != NULL) {
+		if (*pt == 'P') {
+			char* pt2;
+			int param;
+			if (pt2 = strchr(pt + 1, '=')) {
+				*pt2 = 0;
+				param = atoi(pt + 1);
+				if (param > 0 && param <= parametro.Count()) {
+					valores.Count(valores.Count() + 1);
+					valores.Last().Add(param); // primeiro valor é ID do parâmetro
+					valores.Last() += ExtraiLista(pt2 + 1); // valores para o parâmetro tomar
+				}
+			}
+		}
+		else if (*pt == 'x') {
+			valores.Count(valores.Count() + 1);
+			valores.Last().Add(0); // produto externo
+		}
+		pt = strtok(NULL, " \n\t\r");
+	}
+	// inserir configurações de acordo com o pretendido (produto externo, ou apenas à configuração base)
+	produto.Count(0);
+	for (int i = 0; i < valores.Count(); i++)
+		if (valores[i].First() > 0) { // c.c. é o operador produto externo
+			if (i == valores.Count() - 1 || valores[i + 1].First() != 0) { // não há outro produto externo, colocar na configuração atual
+				produto.Add(i);
+				InserirConfiguracoes(base, produto, valores);
+				produto.Count(0);
+			}
+			else
+				produto.Add(i);
+		}
+}
+
+void TProcura::InserirConfiguracoes(TVector<int>& base, TVector<int>& produto, TVector<TVector<int>>& valores)
+{
+	// inserir os valores do último elemento de forma recursiva
+	int idLista = produto.Pop();
+	TVector<int> backup = base;
+	TVector<int>& lista = valores[idLista];
+	int param = lista.First();
+
+	for (int i = 1; i < lista.Count(); i++)
+		if (lista[i] >= parametro[param - 1].min &&
+			lista[i] <= parametro[param - 1].max)
+		{
+			base[param - 1] = lista[i];
+			if (produto.Count() == 0)
+				NovaConfiguracao(base);
+			else
+				InserirConfiguracoes(base, produto, valores);
+		}
+	base = backup;
+	produto.Push(idLista);
 }
 
 void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
@@ -244,16 +453,17 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 			distinto.Add(i);
 	}
 	// mostra parametros comuns, evitando repetição em cada configuração
-	printf("\nParametros comuns a %d configurações:", configuracoes.Count());
+	printf("\nParâmetros comuns:");
 	MostraParametros(detalhe, &comum);
 
 	// visualizar configurações atuais, assinalando a atualmente escolhida
+	printf("\n- Configurações geradas (total: %d) -", configuracoes.Count());
 	for (int i = 0; i < configuracoes.Count(); i++) {
-		printf("\n--- Configuração %d", i + 1);
-		if (i == atual)
-			printf(" --- atual");
 		ConfiguracaoAtual(configuracoes[i], gravar);
 		MostraParametros(detalhe, &distinto);
+		printf(" [%d]", i + 1);
+		if (i == atual)
+			printf(" --- atual");
 	}
 }
 
@@ -281,21 +491,18 @@ void TProcura::TesteEmpirico(int inicio, int fim, bool mostrarSolucoes) {
 		ConfiguracaoAtual(configuracoes[configuracao], gravar);
 		MostraParametros();
 		for (instancia.valor = inicio; instancia.valor <= fim; instancia.valor++) {
-			int resultado = -1;
 			clock_t inicioCorrida;
 			TRand::srand(parametro[seed].valor);
 			// carregar instância
-			SolucaoVazia();
+			Inicializar();
 			// executar um algoritmo 
 			printf("\nInstância %d: ", instancia.valor);
 			inicioCorrida = clock();
 			LimparEstatisticas(inicioCorrida);
 			resultado = ExecutaAlgoritmo();
-			resultados.Add({
-				instancia.valor,
-				resultado,
-				expansoes,geracoes,avaliacoes,configuracao,
-				clock() - inicioCorrida });
+			tempo = clock() - inicioCorrida;
+			InserirRegisto(resultados, instancia.valor, configuracao);
+
 			if (resultado >= 0) {
 				if (mostrarSolucoes)
 					MostrarSolucao();
@@ -310,7 +517,7 @@ void TProcura::TesteEmpirico(int inicio, int fim, bool mostrarSolucoes) {
 				if (resultado < 0 && !Parar())
 					printf("Instância Impossível! (se algoritmo completo) ");
 				else // não resolvido, cancelar resultados 
-					resultados.Last().custo = -2;
+					resultados.Last().valor.First() = -2;
 			}
 			printf("DONE.");
 		}
@@ -319,49 +526,69 @@ void TProcura::TesteEmpirico(int inicio, int fim, bool mostrarSolucoes) {
 	ConfiguracaoAtual(atual, gravar);
 	instancia.valor = backupID;
 	TRand::srand(parametro[seed].valor);
-	SolucaoVazia();
+	Inicializar();
 }
 
-void TProcura::MostraRelatorio(TVector<TResultado>& resultados)
+void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 {
+	if (ultimo) {
+		if (resultados.Count() > 0) {
+			int elementos = 0;
+			for (int i = 0; i < indicador.Count(); i++)
+				for (int j = 0; j < indicador.Count(); j++)
+					if (indicador[j].indice == i) {
+						if (elementos > 0)
+							printf(" | ");
+						if (elementos % 5 == 0)
+							printf("\n");
+						printf("I%d(%s): %d", j + 1, indicador[j].nome, Registo(resultados.Last(), j));
+						elementos++;
+					}
+		}
+		return;
+	}
+
 	TVector<TResultado> total; // totais por cada configuração
 	total.Count(configuracoes.Count());
-	for (int i = 0; i < total.Count(); i++)
-		total[i] = { 0,0,0,0,0,0,0 };
+	for (int i = 0; i < total.Count(); i++) {
+		total[i].instancia = total[i].configuracao = 0;
+		total[i].valor.Count(indicador.Count());
+		total[i].valor.Reset(0);
+	}
 
 	// mostrar os resultados
-	printf("\n ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |");
-	printf("\n----|----|----------|------------|-----------|------------|----------|");
+	printf("\n ID |conf| resultado|  iterações | tempo(s) |");
+	printf("\n----|----|----------|------------|----------|");
 	for (int i = 0; i < resultados.Count(); i++) {
-		if (resultados[i].custo >= -1)
+		if (Registo(resultados[i], indResultado) >= -1)
 			total[resultados[i].configuracao].instancia++;
 		printf("\n%3d |%3d |", resultados[i].instancia, resultados[i].configuracao + 1);
-		if (resultados[i].custo < 0)
-			printf(" %8s |", resultados[i].custo < -1 ? "não res." : "sem sol.");
+		if (Registo(resultados[i], indResultado) < 0)
+			printf(" %8s |", Registo(resultados[i], indResultado) < -1 ? "não res." : "sem sol.");
 		else
-			printf(" %8d |", resultados[i].custo);
-		printf(" %10d | %9d | %10d | %7.3fs |",
-			resultados[i].expansoes,
-			resultados[i].geracoes,
-			resultados[i].avaliacoes,
-			1. * resultados[i].tempo / CLOCKS_PER_SEC);
-		if (resultados[i].custo > 0)
-			total[resultados[i].configuracao].custo += resultados[i].custo;
-		total[resultados[i].configuracao].expansoes += resultados[i].expansoes;
-		total[resultados[i].configuracao].geracoes += resultados[i].geracoes;
-		total[resultados[i].configuracao].avaliacoes += resultados[i].avaliacoes;
-		total[resultados[i].configuracao].tempo += resultados[i].tempo;
+			printf(" %8d |", Registo(resultados[i], indResultado));
+		printf(" %10d | %7.3fs |",
+			Registo(resultados[i], indIteracoes),
+			1. * Registo(resultados[i], indTempo) / 1000);
+		if (Registo(resultados[i], indResultado) > 0)
+			Registo(total[resultados[i].configuracao], indResultado,
+				Registo(total[resultados[i].configuracao], indResultado) +
+				Registo(resultados[i], indResultado));
+
+		for (int i = 1; i < indicador.Count(); i++)
+			if (indicador[i].indice >= 0)
+				Registo(total[resultados[i].configuracao], i,
+					Registo(total[resultados[i].configuracao], i) +
+					Registo(resultados[i], i));
 	}
-	printf("\n----|----|----------|------------|-----------|------------|----------| resolvidas");
+	printf("\n----|----|----------|------------|----------| resolvidas");
 	// tabela com os totais por configuração
 	for (int i = 0; i < total.Count(); i++) {
 		printf("\nTotal%3d |", i + 1);
-		printf(" %8d | %10d | %9d | %10d | %7.3fs | %3d",
-			total[i].custo,
-			total[i].expansoes,
-			total[i].geracoes,
-			total[i].avaliacoes,
-			1. * total[i].tempo / CLOCKS_PER_SEC,
+		printf(" %8d | %10d | %7.3fs | %3d",
+			Registo(total[i], indResultado),
+			Registo(total[i], indIteracoes),
+			1. * Registo(total[i], indTempo) / 1000,
 			total[i].instancia);
 	}
 	// mostrar torneio entre configurações
@@ -389,6 +616,19 @@ void TProcura::CalculaTorneio(TVector<TResultado>& resultados) {
 						torneio[i][j] += MelhorResultado(configuracaoI[k], configuracaoJ[k]);
 			}
 	MostrarTorneio(torneio);
+}
+
+void TProcura::MostraIndicadores()
+{
+	printf("\n");
+	for (int i = 0; i < indicador.Count(); i++) {
+		printf("\nI%d(%s): ", i + 1, indicador[i].nome);
+		if (indicador[i].indice < 0)
+			printf("inativo ");
+		else
+			printf("%dº lugar ", indicador[i].indice + 1);
+		printf("(%s)", indicador[i].descricao);
+	}
 }
 
 
@@ -444,23 +684,30 @@ void TProcura::BarraTorneio(bool nomes) {
 
 int TProcura::MelhorResultado(TResultado base, TResultado alternativa) {
 	// se não resolvido por ambos, retornar igualdade
-	if (base.custo == -2 && alternativa.custo == -2)
+	if (base.valor[indResultado] == -2 && alternativa.valor[indResultado] == -2)
 		return 0;
 	// se igual no custo e o tempo menor que 0.1, retornar igualdade
-	if (base.custo == alternativa.custo && 10 * abs(base.tempo - alternativa.tempo) / CLOCKS_PER_SEC == 0)
+	if (base.valor[indResultado] == alternativa.valor[indResultado] &&
+		abs(base.valor[indTempo] - alternativa.valor[indTempo]) / 100 == 0)
 		return 0;
 	// primeiro custo (ou não resolvido, -2)
-	if ((base.custo == -2 && alternativa.custo > -2) || (alternativa.custo > 0 && base.custo > alternativa.custo))
+	if ((base.valor[indResultado] == -2 &&
+		alternativa.valor[indResultado] > -2) ||
+		(alternativa.valor[indResultado] > 0 &&
+			base.valor[indResultado] > alternativa.valor[indResultado]))
 		return -1;
-	if ((base.custo > -2 && alternativa.custo == -2) || (base.custo > 0 && alternativa.custo > base.custo))
+	if ((base.valor[indResultado] > -2 &&
+		alternativa.valor[indResultado] == -2) ||
+		(base.valor[indResultado] > 0 &&
+			alternativa.valor[indResultado] > base.valor[indResultado]))
 		return 1;
 	// agora o tempo
-	return base.tempo < alternativa.tempo ? 1 : -1;
+	return base.valor[indTempo] < alternativa.valor[indTempo] ? 1 : -1;
 }
 
 void TProcura::FinalizarCorrida(clock_t inicio)
 {
-	printf(" (%.3fs)", 1.0 * (clock() - inicio) / CLOCKS_PER_SEC);
+	tempo = (int)(1000.0 * (clock() - inicio) / CLOCKS_PER_SEC);
 	if (TempoExcedido())
 		printf(" Tempo excedido.");
 	else if (memoriaEsgotada)

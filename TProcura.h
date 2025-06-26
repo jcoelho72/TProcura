@@ -12,6 +12,13 @@
 #define NAO_LIDO -1000000
 
 
+enum EIndicadoresProcura {
+	indResultado = 0, ///< resultado do algoritmo
+	indTempo,         ///< tempo em milisegundos consumidos
+	indIteracoes,     ///< número de iterações consumidas
+	indProcura        ///< Marcador para permitir a extensão do enum em subclasses.
+};
+
 /**
  * @enum EParametrosProcura
  * @brief Identifica um parâmetro específico no código.
@@ -35,9 +42,7 @@ enum EParametrosProcura {
 	nivelDebug,            ///< Nível de debug, de reduzido a completo.
 	seed,                  ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
 	limiteTempo,           ///< Tempo limite em segundos. 
-	limiteGeracoes,        ///< Número máximo de gerações (0 significa sem limite).
-	limiteExpansoes,       ///< Número máximo de expansões (0 significa sem limite).
-	limiteAvaliacoes,      ///< Número máximo de avaliações (0 significa sem limite).
+	limiteIteracoes,      ///< Número máximo de iterações (0 significa sem limite).
 	parametrosProcura      ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
@@ -67,6 +72,17 @@ enum ENivelDebug {
  * @note Utilizado em funções que requerem distinção entre operação de leitura e gravação.
  */
 enum EOperacao { gravar = 0, ler };
+
+
+// identificação de todos os indicadores definidos
+typedef struct SIndicador {
+	/// @brief nome do indicador
+	const char* nome;
+	/// @brief descrição do indicador, opcional 
+	const char* descricao;
+	/// @brief indice onde aparece o indicador nos resultados, c.c. -1 para não aparecer 
+	int indice;
+} TIndicador;
 
 /**
  * @brief Estrutura para registo de um parâmetro
@@ -115,8 +131,8 @@ typedef struct SParametro {
  * o desempenho de algoritmos e respetivas parametrizações.
  */
 typedef struct SResultado {
-	int instancia, custo, expansoes, geracoes, avaliacoes, configuracao;
-	clock_t tempo;
+	int instancia, configuracao;
+	TVector<int> valor; // valor para cada indicador selecionado (fixos os EIndicadoresProcura, resultado, tempo, iterações)
 } TResultado;
 
 
@@ -154,9 +170,9 @@ public:
 	 * @see Codifica()
 	 *
 	 * @code
-	 * void CSubProblema::SolucaoVazia(void)
+	 * void CSubProblema::Inicializar(void)
 	 * {
-	 *     TProcura::SolucaoVazia();
+	 *     TProcura::Inicializar();
 	 * 	   // acertar as variáveis estáticas, com a instância (ID: instancia.valor)
 	 * 	   CarregaInstancia(); // exemplo de método em CSubProblema para carregar uma instância
 	 *     // inicializar todas as variáveis de estado
@@ -166,7 +182,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void SolucaoVazia(void) { }
+	virtual void Inicializar(void) { }
 
 
 	/**
@@ -178,6 +194,9 @@ public:
 	 * desde que os parâmetros necessários já estejam configurados corretamente.
 	 */
 	virtual int ExecutaAlgoritmo() { return -1; }
+
+	// retorna o valor do indicador[id]
+	virtual int Indicador(int id);
 
 	/**
 	 * @brief Mostra o estado no ecrã, para debug.
@@ -247,7 +266,7 @@ public:
 	 * {
 	 *     static const char* nomesSuc[] = { "todas", "contributo" }; // nomes para os valores de opcaoSuc
 	 *     // chamar primeiro o método na superclasse
-	 *     TProcuraConstrutiva::ResetParametros();
+	 *     TProcura::ResetParametros();
 	 *     // neste exemplo considerou-se que se pretende ver apenas estados completos, ignorando ações
 	 *     parametro[verAcoes].valor = 1;
 	 *
@@ -282,7 +301,7 @@ public:
 	 * @endcode
 	 */
 	virtual bool Parar(void) {
-		return TempoExcedido() || ExpansoesExcedido() || GeracoesExcedido() || AvaliacoesExcedido() || memoriaEsgotada;
+		return TempoExcedido() || IteracoesExcedido() || memoriaEsgotada;
 	}
 
 	/**
@@ -362,46 +381,53 @@ public:
 	/// @brief Parâmetros a serem utilizados na configuração atual.
 	/// @see EParametrosConstrutiva
 	static TVector<TParametro> parametro;
+	/// @brief Indicadores que podem ser calculados após a execução, quer com informação da instãncia, quer com resultado da última corrida.
+	/// @see Indicador()
+	static TVector<TIndicador> indicador;
 	/// @brief Conjuntos de configurações para teste empírico.
 	static TVector<TVector<int>> configuracoes;
-	/// @brief Número total de gerações realizadas na procura.
-	static int geracoes;
-	/// @brief Número total de expansões realizadas na procura.
-	static int expansoes;
-	/// @brief Número total de avaliações realizadas na procura.
-	static int avaliacoes;
+	/// @brief Resultado retornado pelo algoritmo na última execução.
+	static int resultado;
+	/// @brief tempo consumido na última execução.
+	static int tempo;
+	/// @brief Número total de iterações realizadas na última execução.
+	static int iteracoes;
 	/// @brief Instante final (deadline) da corrida atual.
 	static clock_t instanteFinal;
 	/// @brief Flag indicando problemas de memória esgotada.
 	static bool memoriaEsgotada;
 
 	bool TempoExcedido() { return instanteFinal < clock(); }
-	bool GeracoesExcedido() {
-		return parametro[limiteGeracoes].valor > 0 && parametro[limiteGeracoes].valor < geracoes;
-	}
-	bool ExpansoesExcedido() {
-		return parametro[limiteExpansoes].valor > 0 && parametro[limiteExpansoes].valor < expansoes;
-	}
-	bool AvaliacoesExcedido() {
-		return parametro[limiteAvaliacoes].valor > 0 && parametro[limiteAvaliacoes].valor < avaliacoes;
+	bool IteracoesExcedido() {
+		return parametro[limiteIteracoes].valor > 0 && parametro[limiteIteracoes].valor < iteracoes;
 	}
 	// ler um número, ou retorna NAO_LIDO
 	static int NovoValor(const char* prompt);
 
 protected:
 
+	void InserirRegisto(TVector<TResultado> &resultados, int inst, int conf);
+	int Registo(TResultado &resultado, int id); // retorna id caso esteja no registo
+	void Registo(TResultado& resultado, int id, int valor); // retorna id caso esteja no registo
 	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL);
+	void MostraIndicadores();
 	void MostrarConfiguracoes(int detalhe, int atual = -1);
+	bool EditarIndicadores();
 	void EditarParametros();
 	void EditarConfiguracoes();
-	void MostraRelatorio(TVector<TResultado>& resultados);
+	void MostraRelatorio(TVector<TResultado>& resultados, bool ultimo=false);
 	void ConfiguracaoAtual(TVector<int>& parametros, int operacao); // gravar (ou ler) a configuração atual
+	int NovaConfiguracao(TVector<int>& parametros);
 	int MelhorResultado(TResultado base, TResultado alternativa);
 	void CalculaTorneio(TVector<TResultado>& resultados);
 	void MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo = false);
 	void BarraTorneio(bool nomes);
 	void ExtrairConfiguracao(TVector<TResultado>& resultados, TVector<TResultado>& extracao, int configuracao);
 	void SolicitaInstancia();
+
+	TVector<int> ExtraiLista(char *str);
+	void InserirConfiguracoes(char* str, TVector<int>& base);
+	void InserirConfiguracoes(TVector<int>& base, TVector<int> &produto, TVector<TVector<int>> &valores);
 
 
 	static int Dominio(int& variavel, int min = INT_MIN, int max = INT_MAX);

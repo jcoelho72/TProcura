@@ -12,15 +12,9 @@
 #include <stdlib.h>
 #include "TRand.h"
 
-
 ///////////////////////////////////////////////////////////////////////////////
 //	TVector class
 ///////////////////////////////////////////////////////////////////////////////
-//	Author: Jose Coelho
-//	Last revision: 2007-04-17
-//	Description: template vector class, to avoid the need to alloc/dealloc arrays
-///////////////////////////////////////////////////////////////////////////////
-
 
 template <class Item>
 class TVector
@@ -39,16 +33,56 @@ private:
 	void ExchIdx(int i, int j) { int a=(*idx)[i]; (*idx)[i]=(*idx)[j]; (*idx)[j]=a; }
 public:
 
-
-
-	// ****************** alteração JM **************//
 	static Item erro;
-	// **********************************************//
 
 	// constructors
 	TVector(int size = 0) { v = NULL; idx = NULL; count = sz = 0; if (size > 0) Size(size); }
 	TVector(int size,Item const *init);
-	virtual ~TVector();
+	virtual ~TVector() noexcept { delete [] v; }
+
+
+	// Copy-ctor: 
+	TVector(TVector const& o) { *this = o; }
+	// Copy-assign
+	TVector& operator=(TVector const& o) { 
+		if (this != &o) {
+			Count(o.count);
+			for(int i=0;i<o.count;i++)
+				v[i]=o.v[i];
+		}
+		return *this; 
+	}
+	// Move-ctor
+	TVector(TVector&& o) noexcept {
+		v=o.v;
+		sz=o.sz;
+		count=o.count;
+		o.v = NULL;
+		o.sz = o.count = 0;
+	}
+	// Move-assign
+	TVector& operator=(TVector&& o) noexcept {
+		if (this != &o) {
+			delete[] v;
+			v = o.v;
+			sz = o.sz;
+			count = o.count;
+			o.v = NULL;
+			o.sz = o.count = 0;
+		}
+		return *this;
+	}
+	TVector<Item>& operator+=(const TVector<Item>& o) { // O(N) - add vector v to this vector
+		int w = count;
+		Count(w + o.count);
+		for (int k = o.count - 1; k >= 0; k--)
+			v[w + k] = o.v[k];
+		return *this;
+	}
+	friend TVector<Item> operator+(TVector<Item> a, const TVector<Item>& b) {
+		a += b;
+		return a;
+	}
 
 	// access methods
 	inline void Add(Item a) { operator[](count)=a; } // O(1) - add an item in the end of the vector
@@ -65,19 +99,20 @@ public:
 		if(i>=count) count=i+1;
 		return v[i];
 	}
+	const Item& operator[](int i) const { // O(1) - acess operator, const so will realocate
+		if(i<0 || i>=count)
+			return TVector<Item>::erro;
+		return v[i];
+	}
 	inline Item& First() { if(count>0) return v[0]; else { return TVector<Item>::erro; } } // O(1) - first element of the vector (2007/04/17: added extra check)
 	inline Item& Last() { if(count>0) return v[count-1]; else { return TVector<Item>::erro; } } // O(1) - last element of the vector (2007/04/17: added extra check)
-	int Count() { return count; } // O(1) - return the number of elements in the vector
+	int Count() const { return count; } // O(1) - return the number of elements in the vector
 	void Count(int value) { // O(N) - set the vector to a fixed size (the elements are not initializated)
 		if(value>=sz) Size(value);
 		count=value;
 	}
 	// 2007/04/17: return an element at random
 	Item& Random() { if(count>0) return operator[](TRand::rand()%count); else { return TVector<Item>::erro; } }
-
-	// vector methods
-	TVector<Item>& operator=(TVector<Item>&v); // O(N) - reset this vector to vector v
-	TVector<Item>& operator+=(TVector<Item>&v); // O(N) - add vector v to this vector
 
 	// set methods
 	TVector<Item>& BeASet(); // remove duplicates and sort
@@ -101,10 +136,8 @@ public:
 };
 // O(N)
 
-// **** JM 29/03/2018 *******
 template <class Item>
 Item TVector<Item>::erro;
-// **************************
 
 template <class Item>
 void TVector<Item>::Size(int size)
@@ -130,11 +163,6 @@ TVector<Item>::TVector(int size,Item const *init)
 		for(k=0;k<size;k++)
 			operator[](k)=init[k];
 	}
-}
-
-template <class Item>
-TVector<Item>::~TVector() {
-	if(v!=NULL) delete [] v;
 }
 
 
@@ -330,29 +358,6 @@ void TVector<Item>::Delete(int i)
 		v[k]=v[k+1];
 	}
 	count--;
-}
-
-// O(N)
-template <class Item>
-TVector<Item>& TVector<Item>::operator=(TVector<Item>&v)
-{
-	int k;
-	Count(v.Count());
-	for(k=v.Count()-1;k>=0;k--)
-		operator[](k)=v[k];
-	return *this;
-}
-
-// O(N)
-template <class Item>
-TVector<Item>& TVector<Item>::operator+=(TVector<Item>&v)
-{
-	int k,w;
-	w=Count();
-	Count(w+v.Count());
-	for(k=v.Count()-1;k>=0;k--)
-		operator[](w+k)=v[k];
-	return *this;
 }
 
 // set methods
