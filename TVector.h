@@ -80,18 +80,14 @@ public:
 			v[w + k] = o.v[k];
 		return *this;
 	}
-	friend TVector<Item> operator+(TVector<Item> a, const TVector<Item>& b) {
-		a += b;
-		return a;
-	}
 
 	// access methods
-	inline void Add(Item a) { operator[](count)=a; } // O(1) - add an item in the end of the vector
-	void Insert(Item a,int index=0); // O(N) - insert an element a at index
+	inline TVector<Item>& Add(Item a) { operator[](count)=a; return *this; } // O(1) - add an item in the end of the vector
+	TVector<Item>& Insert(Item a,int index=0); // O(N) - insert an element a at index
 	TVector<Item>& Insert(TVector<Item>&v,int index=0); // O(N) - insert elements of v starting at index
 
 	// 2007/04/17: push is the same as Add method
-	inline void Push(Item a) { Add(a); }
+	inline TVector<Item>& Push(Item a) { return Add(a); }
 	// 2007/04/17: pop is the same as Last(), but the element returned is removed from the vector
 	inline Item& Pop() { if(count>0) return v[--count]; else { return TVector<Item>::erro; } }
 
@@ -108,32 +104,47 @@ public:
 	inline Item& First() { if(count>0) return v[0]; else { return TVector<Item>::erro; } } // O(1) - first element of the vector (2007/04/17: added extra check)
 	inline Item& Last() { if(count>0) return v[count-1]; else { return TVector<Item>::erro; } } // O(1) - last element of the vector (2007/04/17: added extra check)
 	int Count() const { return count; } // O(1) - return the number of elements in the vector
-	void Count(int value) { // O(N) - set the vector to a fixed size (the elements are not initializated)
+	TVector<Item>& Count(int value) { // O(N) - set the vector to a fixed size (the elements are not initializated)
 		if(value>sz) Size(value);
 		count=value;
+		return *this;
 	}
 	// 2007/04/17: return an element at random
 	Item& Random() { if(count>0) return operator[](TRand::rand()%count); else { return TVector<Item>::erro; } }
 
 	// set methods
 	TVector<Item>& BeASet(); // remove duplicates and sort
-	TVector<Item>& Union(TVector<Item>&v); // join elements of two sets
-	TVector<Item>& Intersection(TVector<Item>&v); // intersects elements of two sets
-	TVector<Item>& Difference(TVector<Item>&v); // subtract the elements of v (bug fixed in 2007/03/26)
-	bool Equal(TVector<Item>&v); // return true if v is equal (assume sorted elements)
-	bool Contained(TVector<Item>&v); // return true if it is contained in v or equal (assume sorted elements)
+	TVector<Item>& Union(const TVector<Item>&v); // join elements of two sets
+	TVector<Item>& Intersection(const TVector<Item>&v); // intersects elements of two sets
+	TVector<Item>& Difference(const TVector<Item>&v); // subtract the elements of v (bug fixed in 2007/03/26)
+	bool Equal(const TVector<Item>&v) const; // return true if v is equal (assume sorted elements)
+	bool Contained(const TVector<Item>&v) const; // return true if it is contained in v or equal (assume sorted elements)
 
 	// operations methods
-	void Delete(int i); // O(N) - delete item i
-	void Remove(Item const &i); // O(N) - remove all itens i
+	TVector<Item>& Delete(int i); // O(N) - delete item i
+	TVector<Item>& Remove(Item const &i); // O(N) - remove all itens i
 	int Find(Item &i,bool binary=false,int left=0,int right=-1); // return -1 if item not found (note: use binary sort only if itens are sorted)
-	void Replace(Item const &iold,Item const &inew); // O(N) - replace iold by inew
-	void Sort(TVector<int>*idxvect=NULL); // O(N.log(N)) - sort idx and not the vector (bug fixed in 2006/06/04)
+	TVector<Item>& Replace(Item const &iold,Item const &inew); // O(N) - replace iold by inew
+	TVector<Item>& Sort(TVector<int>*idxvect=NULL); // O(N.log(N)) - sort idx and not the vector (bug fixed in 2006/06/04)
 	void Sort(int start,int end=-1); // sort only from start to end
-    void RandomOrder(); // O(N) - put the actual vector in an random order
-	void Invert(); // O(N) - invert the current element order
-	void Reset(Item const &i); // O(N) - reset all itens to i
+	TVector<Item>& RandomOrder(); // O(N) - put the actual vector in an random order
+	TVector<Item>& Invert(); // O(N) - invert the current element order
+	TVector<Item>& Reset(Item const &i); // O(N) - reset all itens to i
 	int Distance(TVector<Item>&v,int type=0); // distance types: 0 - exact match - O(N); 1 - deviation distance - O(N); 2 - R-type distance - O(N^2); 3 - edit distance - O(N^2)
+
+	// allowing range-for: TVector<Item> v; for(auto& x : v) {...use item x from v }
+	Item* begin()       noexcept { return v; }
+	Item* end()         noexcept { return v + count; }
+	const Item* begin() const noexcept { return v; }
+	const Item* end()   const noexcept { return v + count; }
+
+	// Add with +=
+	TVector<Item>& operator+=(const Item& x) { Add(x); return *this; }
+	// Remove with -=
+	TVector<Item>& operator-=(const Item& x) { Remove(x); return *this;	}
+	friend TVector<Item> operator+(TVector<Item> a, const TVector<Item>& b) { a += b; return a;	}
+	friend bool operator==(const TVector<Item>& a, const TVector<Item>& b) { return a.Equal(b); }
+	friend bool operator!=(const TVector<Item>& a, const TVector<Item>& b) { return !a.Equal(b); }
 };
 // O(N)
 
@@ -198,7 +209,7 @@ int TVector<Item>::Find(Item &i,bool binary, int left, int right)
 /////////////////////////////////////////////////////////////////
 
 template <class Item>
-void TVector<Item>::Sort(TVector<int>*idxvect) // quicksort & insertion
+TVector<Item>& TVector<Item>::Sort(TVector<int>*idxvect) // quicksort & insertion
 {
 	if(idxvect==NULL) { // just sort this vector
 		QuickSort(0,count-1); // make numbers more or less sorted
@@ -212,6 +223,7 @@ void TVector<Item>::Sort(TVector<int>*idxvect) // quicksort & insertion
 			(*idx)[k]=k;
 		QuickSortIdx(0,count-1);
 	}
+	return *this;
 }
 
 template <class Item>
@@ -315,15 +327,16 @@ void TVector<Item>::QuickSortIdx(int start,int end) // quicksort
 
 // O(N)
 template <class Item>
-void TVector<Item>::RandomOrder() // put the vector in an random order
+TVector<Item>& TVector<Item>::RandomOrder() // put the vector in an random order
 {
     for(int k=count-1;k>0;k--) // select a random possition to k
         Exch(k,TRand::rand()%(k+1));
+	return *this;
 }
 
 // O(N)
 template <class Item>
-void TVector<Item>::Remove(Item const &i)
+TVector<Item>& TVector<Item>::Remove(Item const &i)
 {
 	int k,w;
 	for(w=0,k=0;w<count;w++) { // O(N)
@@ -331,34 +344,38 @@ void TVector<Item>::Remove(Item const &i)
 		if(v[w]!=i) k++;
 	}
 	count=k;
+	return *this;
 }
 
 // O(N)
 template <class Item>
-void TVector<Item>::Reset(Item const &i)
+TVector<Item>& TVector<Item>::Reset(Item const &i)
 {
 	for(int j=0;j<count;j++)
 		v[j]=i;
+	return *this;
 }
 
 // O(N)
 template <class Item>
-void TVector<Item>::Replace(Item const &iold,Item const &inew)
+TVector<Item>& TVector<Item>::Replace(Item const &iold,Item const &inew)
 {
 	for(int k=0;k<count;k++)
 		if(v[k]==iold)  // O(N)
 			v[k]=inew;
+	return *this;
 }
 
 // O(N)
 template <class Item>
-void TVector<Item>::Delete(int i)
+TVector<Item>& TVector<Item>::Delete(int i)
 {
 	int k;
 	for(k=i;k<count-1;k++) { // O(N)
 		v[k]=v[k+1];
 	}
 	count--;
+	return *this;
 }
 
 // set methods
@@ -385,7 +402,7 @@ TVector<Item>& TVector<Item>::BeASet() { // remove duplicates and sort
 }
 
 template <class Item>
-TVector<Item>& TVector<Item>::Union(TVector<Item>&v) { // join elements of two sets
+TVector<Item>& TVector<Item>::Union(const TVector<Item>&v) { // join elements of two sets
 	int k=0,w=0,s=Count();
 	while(k<v.Count()) {
 		while(w<s && operator[](w)<v[k]) w++; // see if v[k] is in the vector
@@ -399,7 +416,7 @@ TVector<Item>& TVector<Item>::Union(TVector<Item>&v) { // join elements of two s
 }
 
 template <class Item>
-TVector<Item>& TVector<Item>::Intersection(TVector<Item>&v) { // intersects elements of two sets
+TVector<Item>& TVector<Item>::Intersection(const TVector<Item>&v) { // intersects elements of two sets
 	int k=0,w=0,z=0;
 	while(k<v.Count()) {
 		while(w<Count() && operator[](w)<v[k]) w++; // see if v[k] is in the vector
@@ -414,7 +431,7 @@ TVector<Item>& TVector<Item>::Intersection(TVector<Item>&v) { // intersects elem
 
 // bug found in 2007/03/26
 template <class Item>
-TVector<Item>& TVector<Item>::Difference(TVector<Item>&v) { // subtract the elements of v
+TVector<Item>& TVector<Item>::Difference(const TVector<Item>&v) { // subtract the elements of v
 	int k=0,w=0,z=0;
 	while(k<v.Count()) { // process all elements of v
 		while(w<Count() && operator[](w)<v[k])   // w - process all elements of this vector
@@ -438,7 +455,7 @@ TVector<Item>& TVector<Item>::Difference(TVector<Item>&v) { // subtract the elem
 
 // O(N)
 template <class Item>
-bool TVector<Item>::Equal(TVector<Item>&v) { // return true if v is equal (assume sorted elements)
+bool TVector<Item>::Equal(const TVector<Item>&v) const { // return true if v is equal (assume sorted elements)
 	if(count==v.Count()) {
 		int k;
 		for(k=0;k<count && operator[](k)==v[k];k++);
@@ -449,7 +466,7 @@ bool TVector<Item>::Equal(TVector<Item>&v) { // return true if v is equal (assum
 
 // O(N)
 template <class Item>
-bool TVector<Item>::Contained(TVector<Item>&v) { // return true if it is contained in v or equal (assume sorted elements)
+bool TVector<Item>::Contained(const TVector<Item>&v) const { // return true if it is contained in v or equal (assume sorted elements)
 	if(count<=v.Count()) {
 		int k,k2;
 		for(k=0,k2=0;k<count && k2<v.Count();k++)
@@ -481,7 +498,7 @@ TVector<Item>& TVector<Item>::Insert(TVector<Item>&v,int index) { // insert elem
 
 // O(N)
 template <class Item>
-void TVector<Item>::Insert(Item a,int index) { // insert an element a at index
+TVector<Item>& TVector<Item>::Insert(Item a,int index) { // insert an element a at index
 	int k,z;
 	if(index<0) index=Count();
 
@@ -494,14 +511,16 @@ void TVector<Item>::Insert(Item a,int index) { // insert an element a at index
 		operator[](k+1)=operator[](k);
 	// copy element into this position
 	operator[](index)=a;
+	return *this;
 }
 
 // O(N)
 template <class Item>
-void TVector<Item>::Invert() { // invert the current order
+TVector<Item>& TVector<Item>::Invert() { // invert the current order
 	if(count>1)
 		for(int k=count/2-1;k>=0;k--)
 			Exch(k,count-1-k);
+	return *this;
 }
 
 template <class Item>

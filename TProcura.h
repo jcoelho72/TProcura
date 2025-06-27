@@ -176,6 +176,7 @@ public:
 	 *     TProcura::Inicializar();
 	 * 	   // acertar as variáveis estáticas, com a instância (ID: instancia.valor)
 	 * 	   CarregaInstancia(); // exemplo de método em CSubProblema para carregar uma instância
+	 *     // pode utilizar variável "ficheiroInstancia" concatenado com instancia.valor, com o ID da instância
 	 *     // inicializar todas as variáveis de estado
 	 * 	   variavel = 0;
 	 *     // Determinar o tamanho máximo do estado codificado, se aplicável
@@ -368,6 +369,9 @@ public:
 	 */
 	virtual void TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes = true, char* ficheiro = NULL);
 
+	// processa os argumentos da função main
+	virtual void main(int argc, char* argv[], const char*nome);
+
 	// LimparEstatisticas: Chamar antes da corrida
 	virtual void LimparEstatisticas(clock_t& inicio);
 	// FinalizarCorrida: Chamar após a corrida
@@ -375,10 +379,19 @@ public:
 	// ExplorarSucessores: definir para explorar manualmente o espaço
 	virtual void ExplorarSucessores() {}
 	// MostrarSolucao: definir para visualizar a solução
-	virtual void MostrarSolucao() {}
+	virtual void MostrarSolucao();
+	// CodificarSolucao: retorna um vetor de inteiros com a codifciação da solução (registar nos resultados)
+	virtual TVector<int> CodificarSolucao() { return TVector<int>(); }
 
 	/// @brief ID da instância atual, a ser utilizado em SolucaoVazia().
 	static TParametro instancia;
+	/// @brief nome do ficheiro de uma instância - editado pelo utilizador 
+	///        (utilizar como prefixo, concatenando com ID da instância)
+	///        pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo 
+	///        que é chamado após a execução (pode gravar a solução para ficheiro também, mas essa é mais facilmente
+	///        gravada em CVS codificada em inteiros, onde fica associada à configuração utilizada para a gerar)
+	/// @see Inicializar()
+	static char ficheiroInstancia[256];
 	/// @brief Parâmetros a serem utilizados na configuração atual.
 	/// @see EParametrosConstrutiva
 	static TVector<TParametro> parametro;
@@ -436,6 +449,7 @@ protected:
 	void InserirConfiguracoes(char* str, TVector<int>& base);
 	void InserirConfiguracoes(TVector<int>& base, TVector<int> &produto, TVector<TVector<int>> &valores);
 
+	void AjudaUtilizacao(const char* programa);
 
 	static int Dominio(int& variavel, int min = INT_MIN, int max = INT_MAX);
 };

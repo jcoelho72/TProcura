@@ -19,6 +19,9 @@ clock_t TProcura::instanteFinal = 0;
 bool TProcura::memoriaEsgotada = false;
 // ID da instância atual (problemas com várias instâncias, a utilizar em SolucaoVazia())
 TParametro TProcura::instancia = { NULL,1,1,1, NULL, NULL };
+// nome do ficheiro de uma instância (utilizar como prefixo, concatenando com ID da instância)
+char TProcura::ficheiroInstancia[256] = "instancia_";
+
 // adicionar parâmetros específicos, se necessário
 TVector<TParametro> TProcura::parametro;
 // adicionar indicadores conforme a necessidade
@@ -273,6 +276,8 @@ void TProcura::InserirRegisto(TVector<TResultado>& resultados, int inst, int con
 	resultados.Add({ inst, conf });
 	for (int i = 0; i < indAtivo.Count(); i++)
 		Registo(resultados.Last(), indAtivo[i], Indicador(indAtivo[i]));
+	// adicionar no final a solução codificada em inteíros
+	resultados.Last().valor += CodificarSolucao();
 }
 
 int TProcura::Registo(TResultado& resultado, int id)
@@ -368,9 +373,9 @@ void TProcura::EditarConfiguracoes() {
 
 		str = NovoTexto("\nSintaxe comando:\n\
   id / -id     - Seleciona configuração como atual ou apaga 'id'\n\
-  Pk=<lista>   - Varia Pk na configuração atual (gera N configurações)\n\
-  Pk=<lista> x Pw=<lista> - produto externo de Pk e Pw (gera NxM configurações)\n\
-Sintaxe de <lista> (apenas inteiros, sem espaços):\n\
+  Pk=<conj.>   - Varia Pk na configuração atual (gera N configurações)\n\
+  Pk=<conj.> x Pw=<conj.> - produto externo de Pk e Pw (gera NxM configurações)\n\
+Sintaxe de <conj.> (apenas inteiros, sem espaços):\n\
   A ou A,B,C   - único valor ou enumeração\n\
   A:B ou A:B:C - intervalo A a B, ou com passo C\n\
 Comando: ");
@@ -389,8 +394,11 @@ Comando: ");
 				atual = configuracoes[id];
 			}
 		}
-		else
+		else {
 			InserirConfiguracoes(str, atual);
+			configuracoes[id] = atual; // alterar atual se necessário
+			ConfiguracaoAtual(atual, gravar);
+		}
 	} while (1);
 	ConfiguracaoAtual(atual, gravar);
 }
@@ -411,8 +419,19 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 				param = atoi(pt + 1);
 				if (param > 0 && param <= parametro.Count()) {
 					valores.Count(valores.Count() + 1);
+					valores.Last().Count(0);
 					valores.Last().Add(param); // primeiro valor é ID do parâmetro
 					valores.Last() += ExtraiLista(pt2 + 1); // valores para o parâmetro tomar
+					if (valores.Last().Count() == 2) {
+						// apenas um elemento, altera a configuração atual 
+						// (se fosse para alternar, colocava o valor base masi o valor a alternar)
+						int valor = valores.Last().Last();
+						if (valor >= parametro[param - 1].min &&
+							valor <= parametro[param - 1].max)
+							base[param - 1] = valor;
+					}
+					if (valores.Last().Count() <= 2)
+						valores.Count(valores.Count() - 1);
 				}
 			}
 		}
@@ -566,6 +585,93 @@ void TProcura::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes, char
 	Inicializar();
 }
 
+// processa os argumentos da função main
+void TProcura::main(int argc, char* argv[], const char* nome) {
+	if (argc <= 1) {
+		TesteManual(nome);
+	}
+	else {
+		TVector<int> instancias;
+		bool mostrarSolucoes=false;
+		char fichResultados[256];
+		char argParametros[BUFFER_SIZE];
+		strcpy(fichResultados, "resultados");
+
+		if (strcmp(argv[1], "-h") == 0) {
+			AjudaUtilizacao(argv[0]);
+			return;
+		}
+
+		ResetParametros();
+
+		// 1:10  --- conjunto de instâncias (idêntico ao interativo)
+		instancias = ExtraiLista(argv[1]);
+		if (instancias.Count() == 0) {
+			AjudaUtilizacao(argv[0]);
+			return; 
+		}
+
+		// opcionais:
+		// -R resultados --- ficheiro de resultados em CSV (adicionada extensão .csv)
+		// -F instancia_ --- prefixo dos ficheiros de instâncias
+		// -I 2,1,3 --- indicadores selecionados por ordem 
+		// -P P1=1:3 x P2=0:2 --- formatação de parâmetros (idêntico ao interativo)
+		for (int i = 2; i < argc; i++) {
+			if (strcmp(argv[i], "-R") == 0 && i + 1 < argc) {
+				strcpy(fichResultados, argv[i + 1]);
+			}
+			else if (strcmp(argv[i], "-F") == 0 && i + 1 < argc) {
+				strcpy(ficheiroInstancia, argv[i + 1]);
+			}
+			else if (strcmp(argv[i], "-S") == 0) {
+				mostrarSolucoes=true;
+			}
+			else if (strcmp(argv[i], "-I") == 0 && i + 1 < argc) {
+				char* pt = strtok(argv[i + 1], ",");
+				indAtivo.Count(0);
+				while (pt != NULL) {
+					indAtivo.Add(atoi(pt) - 1);
+					indicador[indAtivo.Last()].indice = indAtivo.Count() - 1;
+					pt = strtok(NULL, ",");
+				}
+			}
+			else if (strcmp(argv[i], "-P") == 0 && i + 1 < argc) {
+				TVector<int> base;
+				// o resto é para concatenar e enviar
+				strcpy(argParametros, "");
+				while (++i < argc) {
+					strcat(argParametros, " ");
+					strcat(argParametros, argv[i]);
+				}
+				ConfiguracaoAtual(base, ler);
+				InserirConfiguracoes(argParametros, base);
+				ConfiguracaoAtual(base, gravar);
+				break;
+			}
+		}
+		MostrarConfiguracoes(0, -1);
+		TesteEmpirico(instancias, mostrarSolucoes, fichResultados);
+	}
+}
+
+void TProcura::AjudaUtilizacao(const char* programa) {
+	printf(
+		"Uso: %s <instâncias> [opções]\n"
+		"  <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]\n"
+		"Opções:\n"
+		"  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)\n"
+		"  -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)\n"
+		"  -I <ind>        Lista de indicadores (e.g. 2,1,3)\n"
+		"  -S              Mostrar soluções durante a execução\n"
+		"  -h              Esta ajuda\n"
+		"  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo\n"
+		"Exemplo: %s 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2 \n"
+		"   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores\n",
+		programa, programa
+	);
+}
+
+
 void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
 	// cabeçalho: instância, parametros, indicadores
 	// TODO: poder-se selecionar parametros a mostrar
@@ -579,7 +685,7 @@ void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
 	for (int i = 0; i < resultados.Count(); i++) {
 		fprintf(f, "%d;", resultados[i].instancia);
 		for (int j = 0; j < parametro.Count(); j++)
-			if(parametro[j].nomeValores==NULL)
+			if (parametro[j].nomeValores == NULL)
 				fprintf(f, "%d;", configuracoes[resultados[i].configuracao][j]);
 			else
 				fprintf(f, "%s;", parametro[j].nomeValores[configuracoes[resultados[i].configuracao][j] - parametro[j].min]);
@@ -773,6 +879,15 @@ void TProcura::FinalizarCorrida(clock_t inicio)
 		printf(" Memória esgotada.");
 }
 
+// MostrarSolucao: definir para visualizar a solução
+void TProcura::MostrarSolucao() {
+	TVector<int> solucao = CodificarSolucao();
+	printf("\nSolução: ");
+	for (auto& x : solucao)
+		printf("%d ", x);
+	printf(".");
+}
+
 
 int TProcura::NovoValor(const char* prompt) {
 	char str[BUFFER_SIZE];
@@ -795,13 +910,21 @@ char* TProcura::NovoTexto(const char* prompt) {
 void TProcura::SolicitaInstancia() {
 	if (instancia.max != instancia.min) {
 		int resultado;
-		printf("\nNova instância (atual %d) [%d-%d]: ",
-			instancia.valor,
-			instancia.min,
-			instancia.max);
-		if ((resultado = NovoValor("")) != NAO_LIDO && resultado != 0) {
+		char* texto;
+		printf("\nID atual: %d  Intervalo: [%d–%d]  ",
+			instancia.valor, instancia.min, instancia.max);
+		printf("Prefixo atual: '%s' ", ficheiroInstancia);
+		printf("\nNovo ID (ENTER mantém) ou novo prefixo (texto): ");
+
+		texto = NovoTexto("");
+		resultado = atoi(texto);
+		if (resultado != 0) {
 			instancia.valor = resultado;
 			Dominio(instancia.valor, instancia.min, instancia.max);
+		}
+		else if (strlen(texto) < 256) {
+			char* pt = strtok(texto, " \n\t\r");
+			strcpy(ficheiroInstancia, pt);
 		}
 	}
 	else
