@@ -1,122 +1,179 @@
-# TProcuraConstrutiva
+# TProcura
 
-[![GitHub issues](https://img.shields.io/github/issues/jcoelho72/TProcuraConstrutiva.svg)](https://github.com/jcoelho72/TProcuraConstrutiva/issues)
-[![GitHub forks](https://img.shields.io/github/forks/jcoelho72/TProcuraConstrutiva.svg)](https://github.com/jcoelho72/TProcuraConstrutiva/network)
-[![GitHub stars](https://img.shields.io/github/stars/jcoelho72/TProcuraConstrutiva.svg)](https://github.com/jcoelho72/TProcuraConstrutiva/stargazers)
-[![GitHub license](https://img.shields.io/github/license/jcoelho72/TProcuraConstrutiva.svg)](https://jcoelho72.github.io/TProcuraConstrutiva/LICENSE.txt)
+[![GitHub issues](https://img.shields.io/github/issues/jcoelho72/TProcura.svg)](https://github.com/jcoelho72/TProcura/issues)
+[![GitHub forks](https://img.shields.io/github/forks/jcoelho72/TProcura.svg)](https://github.com/jcoelho72/TProcura/network)
+[![GitHub stars](https://img.shields.io/github/stars/jcoelho72/TProcura.svg)](https://github.com/jcoelho72/TProcura/stargazers)
+[![GitHub license](https://img.shields.io/github/license/jcoelho72/TProcura.svg)](https://jcoelho72.github.io/TProcura/LICENSE.txt)
 
-Uma coleção de algoritmos e implementações para **procuras e otimizações** em problemas complexos.
+Biblioteca em C++ para **testes paramétricos** de algoritmos, e coleção de algoritmos de procura e otimização:
+- procuras construtivas  
+- procuras melhorativas (evolutivas e locais)  
+- procuras adversas (minimax, alfa-beta, iterativo)
 
-A documentação completa está disponível em:  
-👉 [TProcuraConstrutiva - Documentação](https://jcoelho72.github.io/TProcuraConstrutiva/index.html)
+> Documentação completa em:  
+> 👉 [TProcura - Documentação](https://jcoelho72.github.io/TProcura/index.html)
 
+---
 
-## Sumário
+## 📑 SSumário
 
 - [Sobre o Projeto](#s1)
-- [Estado do Projeto](#s2)
-- [Funcionalidades](#s3)
+- [Funcionalidades](#s2)
+- [Hierarquia de Classes](#s3)
 - [Instalação](#s4)
 - [Uso](#s5)
 - [Exemplos](#s6)
-- [Licença](#s7)
+- [Bibliografia](#s7)
+- [Licença](#s8)
+
+---
 
 \anchor s1
 ## Sobre o Projeto
 
-Uma coleção de algoritmos e implementações para [procuras construtivas](#), 
-criada como ponto de partida para a implementação de novos problemas e estratégias de procura. 
-Esse repositório serve como base para explorar e desenvolver soluções em problemas de otimização.
+O **TProcura** nasceu para unificar testes paramétricos e implementação genérica de algoritmos de procura.  
+Em vez de alterar `#define` e recompilar a cada mudança de parâmetro, o framework:
 
-Recursos utilizados na UC de [Introdução à Inteligência Artificial](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/), 
-da [Licenciatura em Engenharia Informática](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/) da [Universidade Aberta](https://portal.uab.pt/)
+- Propõe uma estrutura para uma lista de parametros, gerida na superclasse 
+- Gera automaticamente todas as combinações que o utilizador desejar 
+- Executa instâncias para cada combinação de parametros, e recolhe indicadores definidos  
+- Exporta resultados em CSV para análises em Excel, R ou Python  
 
-Bibliografia da UC, e base teórica para o projeto: 
-Russell, S. J., & Norvig, P. (2021). Artificial Intelligence: A Modern Approach (4th ed.). Pearson.
+A arquitetura baseia-se em superclasses que já implementam algoritmos de procura. O utilizador só precisa de:
+
+1. Herdar a classe adequada  
+2. Redefinir métodos de geração de sucessores, avaliação ou operadores, para o problema concreto, conforme adequado  
+3. Declarar novos parâmetros e indicadores, se desejar  
+
+Este projeto é usado na UC de [Introdução à Inteligência Artificial](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/) da Universidade Aberta.
+
+---
 
 \anchor s2
-## Estado do Projeto
-
-> :warning: Este projeto ainda está em desenvolvimento.  
-> Atualizações frequentes e melhorias estão sendo implementadas.
-
-\anchor s3
 ## Funcionalidades
 
-- Implementação de algoritmos de procura construtiva na superclasse.
-- Exploração do espaço de estados de forma manual
-- Execução de algoritmos cegos: Procura em Largura, Profundidade Primeiro, Custo Uniforme
-- Execução de algoritmos informados: Melhor Primeiro, AStar, IDAStar, Branch-and-Bound
-- Executar de testes manuais e testes empíricos (várias instâncias e vários algoritmos/parametrizações).
+1. Modo interativo, linha de comando ou MPI (futuro)  
+2. Geração automática de combinações de parâmetros  
+3. Recolha de indicadores (tempo, custo, iterações, etc.)  
+4. Exportação de resultados em CSV  
+5. Procuras cegas:  
+   - Largura 
+   - Profundidade 
+   - Custo uniforme  
+6. Procuras informadas:  
+   - Melhor-primeiro  
+   - A\* / IDA\*  
+   - Branch-and-Bound  
+7. Procuras melhorativas:  
+   - Algoritmos genéticos - (futuro: algoritmos evolutivos)
+   - Escalada do Monte 
+   - (futuro: Scatter Search, sistemas artificiais imunes, inteligência de enxames, pesquisa tabu, arrefecimento simulado, GRASP, procura com vizinhança variável e muito alargada.) 
+8. Procuras adversas:  
+   - Minimax, Minimax iterativo  
+   - Alfa-beta  
+   - Hash-table de estados explorados  
+   - (futuro: MCTS)  
+
+---
+
+\anchor s3
+## 📦 Estrutura de superclasses
+
+```text
+TProcura
+├─ TProcuraConstrutiva        # métodos de sucessores e heurística
+│  └─ TProcuraAdversa 
+└─ TProcuraMelhorativa        # solução inicial, mutação, cruzamento, avaliação
+   ├─ TRepresentacaoBinaria
+   ├─ TRepresentacaoInteira
+   ├─ TRepresentacaoReal
+   ├─ TRepresentacaoPermutacao
+   └─ TRepresentacaoArvore
+```
 
 \anchor s4
-## Instalação e Execução
+## Instalação
 
 Clonar o projeto, compilar e executar. 
 
 ### Opção 1 - Clonar o Repositório 
 ```bash
-git clone https://github.com/jcoelho72/TProcuraConstrutiva.git
+git clone https://github.com/jcoelho72/TProcura.git
 ```
 ou 
 
-Aceder a [página do repositório](https://github.com/jcoelho72/TProcuraConstrutiva/) e clique em **"Code" → "Open with Visual Studio"**.
+Aceder a [página do repositório](https://github.com/jcoelho72/TProcura/) e clique em **"Code" → "Open with Visual Studio"**.
 
 ### Opção 2 - Download Manual
 
-Aceder a [página do repositório](https://github.com/jcoelho72/TProcuraConstrutiva/) e clique em **"Code" → "Download ZIP"**.
+Aceder a [página do repositório](https://github.com/jcoelho72/TProcura/) e clique em **"Code" → "Download ZIP"**.
 
 Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme seu ambiente).
 
 ### Opção 3 - Utilizar como Submódulo
 
-Para integrar o TProcuraConstrutiva como parte de outro projeto, utilize um submódulo:
+Para integrar o TProcura como parte de outro projeto, utilize um submódulo:
 
 ```bash
-git submodule add https://github.com/jcoelho72/TProcuraConstrutiva.git
+git submodule add https://github.com/jcoelho72/TProcura.git
 ```
-Essa opção é útil se pretender manter o código atualizado.
 
-Teste a classe com problemas implementados. 
+---
 
 \anchor s5
 ## Uso
 
-Para implementar um novo problema utilizando o TProcuraConstrutiva, pode:
-- redefinir a superclasse TProcuraConstrutiva de raiz;
-- readaptar um problema similar e adaptá-lo.
+Para implementar um novo problema utilizando uma das superclasses pode:
+- identificar a superclasse mais adequada, e redefinir, criando uma subclasse;
+- readaptar um problema similar já implementado.
 
-### Redefinição Mandatória
+Superclasses:
+- TProcura  - caso o problema não seja de procura, poderá utilizar esta classe para fazer os tests paramétricos
+- TProcuraConstrutiva - indicado caso tenha um problema de procura, e adopte a abordagem construtiva
+- TProcuraMelhorativa  - indicado caso tenha um problema de procura ou muito grande, e opte pela abordagem melhorativa
+- TRepresentacaoBinaria, Inteira, Real, Permutacao, Arvore - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores comuns disponíveis.
+- TProcuraAdversa - indicado para procuras adversas, ou seja jogos
 
-Ao redefinir a superclasse, é essencial que sejam implementados os seguintes métodos: 
-- Duplicar(): Cria um objecto que é uma cópia deste.
-- Copiar(): Fica com uma cópia do objecto.
-- SolucaoVazia(): Coloca o objecto no estado inicial da procura.
-- Sucessores(): Coloca em sucessores a lista de estados sucessores.
-- SolucaoCompleta(): Verifica se o estado actual é objectivo (é uma solução completa)
-- TesteManual(): Inicializa a interação com o utilizador.
-
-[Documentação dos métodos de Redefinição Mandatória](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html):
-
-### Métodos Sugeridos
-
-Para otimizar a execução e enriquecer as funcionalidades, recomenda-se também a implementação dos 
-[Métodos Sugeridos](https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html). 
-Estes métodos adicionais podem fornecer suporte a funções avançadas e melhorar a exploração do espaço de estados.
+---
 
 \anchor s6
 ## Exemplos
 
-Alguns problemas estão implementados para demonstrar o funcionamento da classe TProcuraConstrutiva:
+Problemas de exemplo da classe TProcura:
+1. TesteTVetor
+
+Problemas de exemplo da classe TProcuraConstrutiva:
 1. Aspirador ([parte 1](teste_aspirador1.html), [parte 2](teste_aspirador2.html))
 2. [Puzzle 8](teste_puzzle8.html)
 3. [8 Damas](teste_8damas.html)
 4. [Partição](teste_particao.html)
 5. [Artificial](teste_artificial.html)
 
-Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações.
+Problemas de exemplo da classe TProcuraMelhorativa:
+1. 8 Damas (TRepresentacaoInteira)
+2. 8 Damas (TRepresentacaoPermutacao)
+3. Partição (TRepresentacaoBinaria)
+4. ? (TRepresentacaoReal)
+5. ? (TRepresentacaoArvore)
+
+Problemas de exemplo da classe TProcuraAdversa:
+1. Jogo do Galo
+2. Jogo em Linha
+
+Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações. 
+
+---
 
 \anchor s7
+## Bibliografia
+
+-	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. https://elibrary.pearson.de/book/99.150005/9781292401171
+-	Eiben, A. E., & Smith, J. E. (2015). Introduction to evolutionary computing (2nd ed.). Springer. https://doi.org/10.1007/978-3-662-44874-8
+-	Burke, E. K., & Kendall, G. (Eds.). (2014). Search methodologies: Introductory tutorials in optimization and decision support techniques (2nd ed.). Springer. https://doi.org/10.1007/978-1-4614-6940-7
+
+---
+
+\anchor s8
 ## Licença
-Distribuído sob a licença MIT. Veja o arquivo [LICENSE](https://jcoelho72.github.io/TProcuraConstrutiva/LICENSE.txt) para mais informações.
+Distribuído sob a licença MIT. Veja o arquivo [LICENSE](https://jcoelho72.github.io/TProcura/LICENSE.txt) para mais informações.
 
