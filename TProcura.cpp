@@ -688,7 +688,9 @@ void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
 			if (parametro[j].nomeValores == NULL)
 				fprintf(f, "%d;", configuracoes[resultados[i].configuracao][j]);
 			else
-				fprintf(f, "%s;", parametro[j].nomeValores[configuracoes[resultados[i].configuracao][j] - parametro[j].min]);
+				fprintf(f, "%d:%s;", 
+					configuracoes[resultados[i].configuracao][j], 
+					parametro[j].nomeValores[configuracoes[resultados[i].configuracao][j] - parametro[j].min]);
 		for (int j = 0; j < indAtivo.Count(); j++)
 			fprintf(f, "%d;", Registo(resultados[i], indAtivo[j]));
 		fprintf(f, "\n");

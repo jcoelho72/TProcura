@@ -15,7 +15,7 @@ Biblioteca em C++ para **testes paramétricos** de algoritmos, e coleção de al
 
 ---
 
-## 📑 SSumário
+## 📑 Sumário
 
 - [Sobre o Projeto](#s1)
 - [Funcionalidades](#s2)
@@ -77,24 +77,24 @@ Este projeto é usado na UC de [Introdução à Inteligência Artificial](https:
 ---
 
 \anchor s3
-## 📦 Estrutura de superclasses
+## 📦 Hierarquia de Classes
 
 ```text
 TProcura
-├─ TProcuraConstrutiva        # métodos de sucessores e heurística
-│  └─ TProcuraAdversa 
-└─ TProcuraMelhorativa        # solução inicial, mutação, cruzamento, avaliação
-   ├─ TRepresentacaoBinaria
-   ├─ TRepresentacaoInteira
-   ├─ TRepresentacaoReal
-   ├─ TRepresentacaoPermutacao
-   └─ TRepresentacaoArvore
+├─ TProcuraConstrutiva         # sucessores e heurística
+│  └─ TProcuraAdversa          # sucessores e heurística
+└─ TProcuraMelhorativa         # solução inicial, vizinhança, mutação, cruzamento, avaliação
+   ├─ TRepresentacaoBinaria    # avaliação
+   ├─ TRepresentacaoInteira    # avaliação
+   ├─ TRepresentacaoReal       # avaliação
+   ├─ TRepresentacaoPermutacao # avaliação
+   └─ TRepresentacaoArvore     # avaliação
 ```
 
 \anchor s4
 ## Instalação
 
-Clonar o projeto, compilar e executar. 
+Clonar o projeto, compilar um dos projetos de teste e executar. 
 
 ### Opção 1 - Clonar o Repositório 
 ```bash
@@ -128,10 +128,10 @@ Para implementar um novo problema utilizando uma das superclasses pode:
 - readaptar um problema similar já implementado.
 
 Superclasses:
-- TProcura  - caso o problema não seja de procura, poderá utilizar esta classe para fazer os tests paramétricos
+- TProcura  - caso o problema não seja de procura, poderá utilizar esta classe para fazer testes paramétricos
 - TProcuraConstrutiva - indicado caso tenha um problema de procura, e adopte a abordagem construtiva
 - TProcuraMelhorativa  - indicado caso tenha um problema de procura ou muito grande, e opte pela abordagem melhorativa
-- TRepresentacaoBinaria, Inteira, Real, Permutacao, Arvore - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores comuns disponíveis.
+- TRepresentacaoBinaria, Inteira, Real, Permutacao, Arvore - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores já disponíveis, basta implementar a avaliação.
 - TProcuraAdversa - indicado para procuras adversas, ou seja jogos
 
 ---

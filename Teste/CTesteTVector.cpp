@@ -32,7 +32,8 @@ void CTesteTVector::ResetParametros()
 	};
 	static const char* nomesEstrutura[] = {
 			"TVector",
-			"std::vector"
+			"std::vector",
+			"TVector/std::algorithm",
 	};
 
 	TProcura::ResetParametros();
@@ -40,7 +41,7 @@ void CTesteTVector::ResetParametros()
 	parametro[algoritmo] = { "Método",1,1,12,"Método para teste.", nomesMetodo };
 
 	// estrutura de dados
-	parametro.Add({ "Estrutura",1,1,2,"Estrutura de dados utilizada para vetor.",nomesEstrutura });
+	parametro.Add({ "Estrutura",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura });
 
 	indicador.Add({ "Ordenado","verifica se o indicador está ordenado", indOrdenar });
 	indAtivo.Add(indOrdenar);
@@ -52,7 +53,7 @@ void CTesteTVector::ResetParametros()
 void CTesteTVector::Inicializar(void)
 {
 	int tamanho = instancia.valor * 1000000;
-	if (parametro[estruturaDados].valor == 0) { // TVector
+	if (Parametro(estruturaDados) != 1) { // TVector
 		dadosA.Count(tamanho);
 		dadosB.Count(tamanho);
 		for (int i = 0; i < tamanho; i++) {
@@ -73,7 +74,7 @@ void CTesteTVector::Inicializar(void)
 
 void CTesteTVector::Debug(void)
 {
-	if (parametro[algoritmo].valor == 0) {
+	if (Parametro(algoritmo) != 1) {
 		if(dadosA.Count()<6)
 			return;
 		printf("\nDados #%d: ", dadosA.Count());
@@ -100,8 +101,8 @@ int CTesteTVector::ExecutaAlgoritmo()
 	while (!Parar()) {
 		if (iteracoes > 0)
 			Inicializar();
-		if (parametro[estruturaDados].valor == 0) { // TVector
-			switch (parametro[algoritmo].valor) {
+		if (Parametro(estruturaDados) == 0) { // TVector
+			switch (Parametro(algoritmo)) {
 			case 1: // add
 				dadosA.Count(0);
 				for (int i = 0; i < instancia.valor * 1000000; i++)
@@ -141,114 +142,180 @@ int CTesteTVector::ExecutaAlgoritmo()
 				break;
 			}
 		}
-		else { // std::vector
-			switch (parametro[algoritmo].valor) {
+		else { // std::vector ou TVegtor/std::algorithm
+			switch (Parametro(algoritmo)) {
 			case 1: // add
-				stdA.clear();
-				for (int i = 0; i < instancia.valor * 1000000; i++)
-					stdA.push_back(TRand::rand());
+				if (Parametro(estruturaDados) == 1) {
+					stdA.clear();
+					for (int i = 0; i < instancia.valor * 1000000; i++)
+						stdA.push_back(TRand::rand());
+				}
+				else {
+					dadosA.Count(0);
+					for (int i = 0; i < instancia.valor * 1000000; i++)
+						dadosA.Add(TRand::rand());
+				}
 				break;
 			case 2: // Sort
-				std::sort(stdA.begin(),stdA.end());
+				if (Parametro(estruturaDados) == 1)
+					std::sort(stdA.begin(),stdA.end());
+				else 
+					std::sort(dadosA.begin(),dadosA.end());
 				break;
 			case 3: // RandomOrder
-				std::shuffle(stdA.begin(), stdA.end(), rng);
+				if (Parametro(estruturaDados) == 1)
+					std::shuffle(stdA.begin(), stdA.end(), rng);
+				else
+					std::shuffle(dadosA.begin(), dadosA.end(), rng);
 				break;
 			case 4: // Invert
-				std::reverse(stdA.begin(), stdA.end());
+				if (Parametro(estruturaDados) == 1)
+					std::reverse(stdA.begin(), stdA.end());
+				else
+					std::reverse(dadosA.begin(), dadosA.end());
 				break;
 			case 5: // BeASet (sort + unique)
-				std::sort(stdA.begin(), stdA.end());
-				stdA.erase(
-					std::unique(stdA.begin(), stdA.end()),
-					stdA.end()
-				);
+				if (Parametro(estruturaDados) == 1) {
+					std::sort(stdA.begin(), stdA.end());
+					stdA.erase(
+						std::unique(stdA.begin(), stdA.end()),
+						stdA.end()
+					);
+				}
+				else {
+					std::sort(dadosA.begin(), dadosA.end());
+					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) -dadosA.begin());
+				}
 				break;
 			case 6: // Difference
-				  // deixa A e B como sets
-				std::sort(stdA.begin(), stdA.end());
-				std::sort(stdB.begin(), stdB.end());
-				stdA.erase(
-					std::unique(stdA.begin(), stdA.end()),
-					stdA.end()
-				);
-				stdB.erase(
-					std::unique(stdB.begin(), stdB.end()),
-					stdB.end()
-				);
-				// diferença
-				{
-					std::vector<int> tmp;
-					tmp.reserve(stdA.size());
-					std::set_difference(
-						stdA.begin(), stdA.end(),
-						stdB.begin(), stdB.end(),
-						std::back_inserter(tmp)
+				if (Parametro(estruturaDados) == 1) {
+					// deixa A e B como sets
+					std::sort(stdA.begin(), stdA.end());
+					std::sort(stdB.begin(), stdB.end());
+					stdA.erase(
+						std::unique(stdA.begin(), stdA.end()),
+						stdA.end()
 					);
-					stdA.swap(tmp);
+					stdB.erase(
+						std::unique(stdB.begin(), stdB.end()),
+						stdB.end()
+					);
+					// diferença
+					{
+						std::vector<int> tmp;
+						tmp.reserve(stdA.size());
+						std::set_difference(
+							stdA.begin(), stdA.end(),
+							stdB.begin(), stdB.end(),
+							std::back_inserter(tmp)
+						);
+						stdA.swap(tmp);
+					}
+				}
+				else {
+					// deixa A e B como sets
+					std::sort(dadosA.begin(), dadosA.end());
+					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin());
+					std::sort(dadosB.begin(), dadosB.end());
+					dadosB.Count(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin());
+					dadosA.Difference(dadosB);
 				}
 				break;
 			case 7: // Union
-				std::sort(stdA.begin(), stdA.end());
-				std::sort(stdB.begin(), stdB.end());
-				stdA.erase(
-					std::unique(stdA.begin(), stdA.end()),
-					stdA.end()
-				);
-				stdB.erase(
-					std::unique(stdB.begin(), stdB.end()),
-					stdB.end()
-				);
-				{
-					std::vector<int> tmp2;
-					tmp2.reserve(stdA.size() + stdB.size());
-					std::set_union(
-						stdA.begin(), stdA.end(),
-						stdB.begin(), stdB.end(),
-						std::back_inserter(tmp2)
+				if (Parametro(estruturaDados) == 1) {
+					std::sort(stdA.begin(), stdA.end());
+					std::sort(stdB.begin(), stdB.end());
+					stdA.erase(
+						std::unique(stdA.begin(), stdA.end()),
+						stdA.end()
 					);
-					stdA.swap(tmp2);
+					stdB.erase(
+						std::unique(stdB.begin(), stdB.end()),
+						stdB.end()
+					);
+					{
+						std::vector<int> tmp2;
+						tmp2.reserve(stdA.size() + stdB.size());
+						std::set_union(
+							stdA.begin(), stdA.end(),
+							stdB.begin(), stdB.end(),
+							std::back_inserter(tmp2)
+						);
+						stdA.swap(tmp2);
+					}
+				}
+				else {
+					std::sort(dadosA.begin(), dadosA.end());
+					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin());
+					std::sort(dadosB.begin(), dadosB.end());
+					dadosB.Count(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin());
+					dadosA.Union(dadosB);
 				}
 				break;
 			case 8: // Contained
-				std::sort(stdA.begin(), stdA.end());
-				std::sort(stdB.begin(), stdB.end());
-				std::includes(
-					stdB.begin(), stdB.end(),
-					stdA.begin(), stdA.end()
-				);
+				if (Parametro(estruturaDados) == 1) {
+					std::sort(stdA.begin(), stdA.end());
+					std::sort(stdB.begin(), stdB.end());
+					std::includes(
+						stdB.begin(), stdB.end(),
+						stdA.begin(), stdA.end()
+					);
+				}
+				else {
+					std::sort(dadosA.begin(), dadosA.end());
+					std::sort(dadosB.begin(), dadosB.end());
+					std::includes(
+						dadosB.begin(), dadosB.end(),
+						dadosA.begin(), dadosA.end()
+					);
+				}
 				break;
 			case 9: // Intersection
-				std::sort(stdA.begin(), stdA.end());
-				std::sort(stdB.begin(), stdB.end());
-				stdA.erase(
-					std::unique(stdA.begin(), stdA.end()),
-					stdA.end()
-				);
-				stdB.erase(
-					std::unique(stdB.begin(), stdB.end()),
-					stdB.end()
-				);
-				{
-					std::vector<int> tmp3;
-					tmp3.reserve(std::min(stdA.size(), stdB.size()));
-					std::set_intersection(
-						stdA.begin(), stdA.end(),
-						stdB.begin(), stdB.end(),
-						std::back_inserter(tmp3)
+				if (Parametro(estruturaDados) == 1) {
+					std::sort(stdA.begin(), stdA.end());
+					std::sort(stdB.begin(), stdB.end());
+					stdA.erase(
+						std::unique(stdA.begin(), stdA.end()),
+						stdA.end()
 					);
-					stdA.swap(tmp3);
+					stdB.erase(
+						std::unique(stdB.begin(), stdB.end()),
+						stdB.end()
+					);
+					{
+						std::vector<int> tmp3;
+						tmp3.reserve(std::min(stdA.size(), stdB.size()));
+						std::set_intersection(
+							stdA.begin(), stdA.end(),
+							stdB.begin(), stdB.end(),
+							std::back_inserter(tmp3)
+						);
+						stdA.swap(tmp3);
+					}
+				}
+				else {
+					std::sort(dadosA.begin(), dadosA.end());
+					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin());
+					std::sort(dadosB.begin(), dadosB.end());
+					dadosB.Count(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin());
+					dadosA.Intersection(dadosB);
 				}
 				break;
 			case 10: // operator=()
-				stdA = stdB;
+				if (Parametro(estruturaDados) == 1)
+					stdA = stdB;
+				else
+					dadosA = dadosB;
 				break;
 			case 11: // operator+=()
-				stdA.insert(
-					stdA.end(),
-					stdB.begin(),
-					stdB.end()
-				);
+				if (Parametro(estruturaDados) == 1) {
+					stdA.insert(
+						stdA.end(),
+						stdB.begin(),
+						stdB.end()
+					);
+				} else 
+					dadosA+=dadosB;
 				break;
 			case 12: // nada
 				break;
@@ -257,7 +324,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 			
 		iteracoes++;
 		// se não foi definido limite de iterações, fazer apenas uma
-		if (parametro[limiteIteracoes].valor == 0)
+		if (Parametro(limiteIteracoes) == 0)
 			break;
 	}
 	return 1;
@@ -266,7 +333,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 int CTesteTVector::Indicador(int id)
 {
 	if (id == indOrdenar) { // verifica se está ordenado
-		if (parametro[estruturaDados].valor == 0) {
+		if (Parametro(estruturaDados) == 0) {
 			for (int i = 0; i < dadosA.Count() - 1; i++)
 				if (dadosA[i] > dadosA[i + 1])
 					return 0;

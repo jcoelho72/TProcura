@@ -421,6 +421,9 @@ public:
 	// ler uma string
 	static char *NovoTexto(const char* prompt);
 
+	// retorna o valor do parametro, para facilidade de uso
+	int Parametro(int id) { return parametro[id].valor; }
+
 protected:
 
 	void InserirRegisto(TVector<TResultado> &resultados, int inst, int conf);
