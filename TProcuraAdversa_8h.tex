@@ -1,0 +1,114 @@
+\doxysection{Adversa/\+TProcura\+Adversa.h File Reference}
+\hypertarget{TProcuraAdversa_8h}{}\label{TProcuraAdversa_8h}\index{Adversa/TProcuraAdversa.h@{Adversa/TProcuraAdversa.h}}
+{\ttfamily \#include "{}../\+Construtiva/\+TProcura\+Construtiva.\+h"{}}\newline
+Include dependency graph for TProcura\+Adversa.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSValorEstado}{SValor\+Estado}}
+\begin{DoxyCompactList}\small\item\em registo do valor de um estado, em procuras anteriores \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTProcuraAdversa}{TProcura\+Adversa}}
+\begin{DoxyCompactList}\small\item\em Representa um estado no espaço de estados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structSValorEstado}{SValor\+Estado}} \mbox{\hyperlink{TProcuraAdversa_8h_a8d5dcc924e099ce86a559b21312a7f0c}{TValor\+Estado}}
+\begin{DoxyCompactList}\small\item\em registo do valor de um estado, em procuras anteriores \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fd}{EParametros\+Adversa}} \{ \mbox{\hyperlink{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda7c46075a786ec95b7501506c807010ae}{ordenar\+Sucessores}} = parametros\+Construtivas
+, \mbox{\hyperlink{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda141880864f9850cdf0adaed42e6ebd59}{poda\+Heuristica}}
+, \mbox{\hyperlink{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda33bc2e5e9f3840a8171224b1d440c7c0}{poda\+Cega}}
+, \mbox{\hyperlink{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda2f8975c353be05ac0bf0f8b3cff626c1}{parametros\+Adversas}}
+ \}
+\begin{DoxyCompactList}\small\item\em Identifica um parâmetro específico no código. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204}{ETipo\+Valor}} \{ \mbox{\hyperlink{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a74a1ffc46ca5182c265851de5fd52c9b}{exato}}
+, \mbox{\hyperlink{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a96d57576de5542bd6b278ca87943bb7e}{lowerbound}}
+, \mbox{\hyperlink{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a4bc93493fb4c50cc149389b9a9129854}{upperbound}}
+ \}
+\begin{DoxyCompactList}\small\item\em tipo de valor resultante do minimax com cortes alfa/beta \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{TProcuraAdversa_8h_a8d5dcc924e099ce86a559b21312a7f0c}\label{TProcuraAdversa_8h_a8d5dcc924e099ce86a559b21312a7f0c} 
+\index{TProcuraAdversa.h@{TProcuraAdversa.h}!TValorEstado@{TValorEstado}}
+\index{TValorEstado@{TValorEstado}!TProcuraAdversa.h@{TProcuraAdversa.h}}
+\doxysubsubsection{\texorpdfstring{TValorEstado}{TValorEstado}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structSValorEstado}{SValor\+Estado}} \mbox{\hyperlink{TProcuraAdversa_8h_a8d5dcc924e099ce86a559b21312a7f0c}{TValor\+Estado}}}
+
+
+
+registo do valor de um estado, em procuras anteriores 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fd}\label{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fd} 
+\index{TProcuraAdversa.h@{TProcuraAdversa.h}!EParametrosAdversa@{EParametrosAdversa}}
+\index{EParametrosAdversa@{EParametrosAdversa}!TProcuraAdversa.h@{TProcuraAdversa.h}}
+\doxysubsubsection{\texorpdfstring{EParametrosAdversa}{EParametrosAdversa}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fd}{EParametros\+Adversa}}}
+
+
+
+Identifica um parâmetro específico no código. 
+
+Permite aceder a cada parâmetro sem precisar saber seu código numérico. Esta enumeração continua de EParametros\+Construtiva
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ordenarSucessores@{ordenarSucessores}!TProcuraAdversa.h@{TProcuraAdversa.h}}\index{TProcuraAdversa.h@{TProcuraAdversa.h}!ordenarSucessores@{ordenarSucessores}}}\Hypertarget{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda7c46075a786ec95b7501506c807010ae}\label{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda7c46075a786ec95b7501506c807010ae} 
+ordenar\+Sucessores&opção de ordenar sucessores por heurística, ou por último valor registado \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{podaHeuristica@{podaHeuristica}!TProcuraAdversa.h@{TProcuraAdversa.h}}\index{TProcuraAdversa.h@{TProcuraAdversa.h}!podaHeuristica@{podaHeuristica}}}\Hypertarget{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda141880864f9850cdf0adaed42e6ebd59}\label{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda141880864f9850cdf0adaed42e6ebd59} 
+poda\+Heuristica&permite cortar sucessores, mas calcula a heurística a todos, de modo a mantendo os melhores \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{podaCega@{podaCega}!TProcuraAdversa.h@{TProcuraAdversa.h}}\index{TProcuraAdversa.h@{TProcuraAdversa.h}!podaCega@{podaCega}}}\Hypertarget{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda33bc2e5e9f3840a8171224b1d440c7c0}\label{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda33bc2e5e9f3840a8171224b1d440c7c0} 
+poda\+Cega&corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{parametrosAdversas@{parametrosAdversas}!TProcuraAdversa.h@{TProcuraAdversa.h}}\index{TProcuraAdversa.h@{TProcuraAdversa.h}!parametrosAdversas@{parametrosAdversas}}}\Hypertarget{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda2f8975c353be05ac0bf0f8b3cff626c1}\label{TProcuraAdversa_8h_a51a3aae81d501993316ddaa211d5e9fda2f8975c353be05ac0bf0f8b3cff626c1} 
+parametros\+Adversas&marcador para permitir a extensão do enum em subclasses. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcuraAdversa_8h_source_l00014}{14}} of file \mbox{\hyperlink{TProcuraAdversa_8h_source}{TProcura\+Adversa.\+h}}.
+
+\Hypertarget{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204}\label{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204} 
+\index{TProcuraAdversa.h@{TProcuraAdversa.h}!ETipoValor@{ETipoValor}}
+\index{ETipoValor@{ETipoValor}!TProcuraAdversa.h@{TProcuraAdversa.h}}
+\doxysubsubsection{\texorpdfstring{ETipoValor}{ETipoValor}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204}{ETipo\+Valor}}}
+
+
+
+tipo de valor resultante do minimax com cortes alfa/beta 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{exato@{exato}!TProcuraAdversa.h@{TProcuraAdversa.h}}\index{TProcuraAdversa.h@{TProcuraAdversa.h}!exato@{exato}}}\Hypertarget{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a74a1ffc46ca5182c265851de5fd52c9b}\label{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a74a1ffc46ca5182c265851de5fd52c9b} 
+exato&o valor foi calculado sem cortes, ou seja, não sofreu influência de alfa ou beta; \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lowerbound@{lowerbound}!TProcuraAdversa.h@{TProcuraAdversa.h}}\index{TProcuraAdversa.h@{TProcuraAdversa.h}!lowerbound@{lowerbound}}}\Hypertarget{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a96d57576de5542bd6b278ca87943bb7e}\label{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a96d57576de5542bd6b278ca87943bb7e} 
+lowerbound&o valor foi afetado por um corte de beta (ou seja, ele é pelo menos esse valor, mas pode ser maior); \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{upperbound@{upperbound}!TProcuraAdversa.h@{TProcuraAdversa.h}}\index{TProcuraAdversa.h@{TProcuraAdversa.h}!upperbound@{upperbound}}}\Hypertarget{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a4bc93493fb4c50cc149389b9a9129854}\label{TProcuraAdversa_8h_af2d8f3ce278d837a36ee4d610662b204a4bc93493fb4c50cc149389b9a9129854} 
+upperbound&o valor foi afetado por um corte de alfa (ou seja, ele é no máximo esse valor, mas pode ser menor). \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcuraAdversa_8h_source_l00024}{24}} of file \mbox{\hyperlink{TProcuraAdversa_8h_source}{TProcura\+Adversa.\+h}}.
+

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcuraConstrutiva: Teste Artificial</title>
+<title>TProcura: Teste Artificial</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TProcuraConstrutiva
+   <div id="projectname">TProcura
    </div>
-   <div id="projectbrief">Algoritmos de procura para problemas de otimização</div>
+   <div id="projectbrief">Biblioteca em C++ para testes paramétricos de algoritmos, e coleção de algoritmos de procura e otimização</div>
   </td>
  </tr>
  </tbody>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('teste_artificial.html',''); initResiza
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema artificial. Pode acompanhar o teste excutando as ações localmente.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_artificial.html#artificia-a1">Ação 1 - Ver instâncias</a></li>
@@ -134,14 +134,14 @@ Sumário</h2>
 </ul>
 <p>Estas caracteristicas definem o espaço de estados, e permite avaliar os algoritmos de forma independente dos problemas, ou testar em situações extermas, mesmo antes de ter um problema concreto que tenha essas características.</p>
 <p><a class="anchor" id="artificia-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Introduza: <b>1; 1.</b></p>
 <div class="fragment"><div class="line">Nova instância (atual 1) [1-10]:1</div>
 </div><!-- fragment --><p>As instâncias têm características definidas na função CProblemaArtificial::CarregaInstancia(). Procurou-se ter instâncias de diferentes tipos.</p>
 <p>No entanto, infelizmente a heurística não é simulada, pelo que não dá para analisar algoritmos informados.</p>
 <p><a class="anchor" id="artificia-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Introduza: <b>2; 1; <em>ENTER</em>.</b></p>
 <div class="fragment"><div class="line">g:0 h:4 1|2|3</div>
@@ -165,7 +165,7 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> As ações são os próprios estados. Sem informação é complicado explorar o espaço de estados. Nesta instância o objetivo termina com 0, pelo que explorando um bocado já daria para encontrar uma solução, mas seria sempre uma procura à sorte.</p>
 <p><a class="anchor" id="artificia-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Ação 3 - Testes Empíricos</h2>
 <p>Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos por ação. Vamos portanto comparar resultados da procura em largura, custo uniforme e procura em profundidade iterativa, atendendo a que desconhecemos a profundidade máxima das instâncias. Vamos colocar dos algoritmos informados o Branch-and-Bound e o A*, dado que embora não exista heurística, existe a distância até ao nível do objetivo, e poderá dar alguma vantagem.</p>
 <p>Introduza: <b>4; 1; 1; 2; 0; 6; 1000000; 10; 1; <em>ENTER</em>; 6; <em>ENTER</em>.</b></p>

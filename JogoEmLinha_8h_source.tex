@@ -1,0 +1,75 @@
+\doxysection{Jogo\+Em\+Linha.\+h}
+\hypertarget{JogoEmLinha_8h_source}{}\label{JogoEmLinha_8h_source}\index{Adversa/Teste/JogoEmLinha.h@{Adversa/Teste/JogoEmLinha.h}}
+\mbox{\hyperlink{JogoEmLinha_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../TProcuraAdversa.h"{}}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00004}\mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951b}{00004}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951b}{EVariantesJogo}}\ \{}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00005}\mbox{\hyperlink{classCJogoEmLinha_aa3e49a13635e4e3fef66e5644594ad5c}{00005}}\ \ \ \ \ \mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951ba040a9ec6d2966f099fd3214b8ac4fef3}{regular}},\ \ \textcolor{comment}{//\ jogar\ em\ qualquer\ casa\ livre}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00006}\mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951ba8d02056ee069b575750416f390460e8b}{00006}}\ \ \ \ \ \mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951ba8d02056ee069b575750416f390460e8b}{gravidade}},\ \textcolor{comment}{//\ jogar\ na\ linha\ de\ baixo,\ ou\ por\ cima\ de\ uma\ peça}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//\ ideias\ para\ outras\ variantes:}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00008}\mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951baf3b41a5e2102cf30d6c48b061bfe5e60}{00008}}\ \ \ \ \ \mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951baf3b41a5e2102cf30d6c48b061bfe5e60}{jogadaDupla}},\ \textcolor{comment}{//\ jogam\ sempre\ duas\ peças,\ mas\ a\ segunda\ peça +\ serve\ para\ ambos}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00009}\mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951ba61976f3a7b8be367db651ed4ba2dadcf}{00009}}\ \ \ \ \ \mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951ba61976f3a7b8be367db651ed4ba2dadcf}{bordasLigadas}},\ \textcolor{comment}{//\ linha\ de\ cima\ liga\ com\ a\ de\ baixo,\ coluna\ da\ esquerda\ liga\ com\ a\ da\ direita}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951ba4eaf8c7f11a3156e70ca43787e08f77d}{zonasOcupadas}}\ \textcolor{comment}{//\ algumas\ céculas\ já estão ocupadas\ e\ ficam\ inviáveis\ para\ uso}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00011}\mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951ba4eaf8c7f11a3156e70ca43787e08f77d}{00011}}\ \};}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00013}\mbox{\hyperlink{structSJogoEmLinha}{00013}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSJogoEmLinha}{SJogoEmLinha}}\ \{}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00014}\mbox{\hyperlink{structSJogoEmLinha_afcb76423b2f50c69cfbf29f406632512}{00014}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSJogoEmLinha_afcb76423b2f50c69cfbf29f406632512}{K}};\ \textcolor{comment}{//\ número\ de\ marcas\ em\ linha}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00015}\mbox{\hyperlink{structSJogoEmLinha_a965df6adca0616dc382be363f19485e5}{00015}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSJogoEmLinha_a965df6adca0616dc382be363f19485e5}{N}};\ \textcolor{comment}{//\ número\ de\ linhas\ do\ tabuleiro}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00016}\mbox{\hyperlink{structSJogoEmLinha_ad3a41b6c954dc64e20902b797db15d5c}{00016}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSJogoEmLinha_ad3a41b6c954dc64e20902b797db15d5c}{M}};\ \textcolor{comment}{//\ número\ de\ colunas\ do\ tabuleiro}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00017}\mbox{\hyperlink{structSJogoEmLinha_a990c0928abbfb2a493437355f80a91a5}{00017}}\ \ \ \ \ \mbox{\hyperlink{JogoEmLinha_8h_a57c2c559900aabd8461562fd4a75951b}{EVariantesJogo}}\ \mbox{\hyperlink{structSJogoEmLinha_a990c0928abbfb2a493437355f80a91a5}{variante}};\ \textcolor{comment}{//\ qual\ a\ variante}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00018}\mbox{\hyperlink{JogoEmLinha_8h_a341ae535b8c471700ff8e5f0353a4a66}{00018}}\ \}\ \mbox{\hyperlink{JogoEmLinha_8h_a341ae535b8c471700ff8e5f0353a4a66}{TJogoEmLinha}};}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00021}00021\ \textcolor{comment}{//\ \ CJogo4emLinha\ class}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00023}00023\ \textcolor{comment}{//\ \ Author:\ José Coelho}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00024}00024\ \textcolor{comment}{//\ \ Last\ revision:\ 2009-\/03-\/30}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00025}00025\ \textcolor{comment}{//\ \ Description:\ }}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00027}\mbox{\hyperlink{classCJogoEmLinha}{00027}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCJogoEmLinha}{CJogoEmLinha}}\ :}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTProcuraAdversa}{TProcuraAdversa}}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00030}00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00031}\mbox{\hyperlink{classCJogoEmLinha_a8cba76145d91e14fa042258a7da7b938}{00031}}\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<char>}}\ \mbox{\hyperlink{classCJogoEmLinha_a8cba76145d91e14fa042258a7da7b938}{tabuleiro}};}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00032}00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{classCJogoEmLinha_a88abc2e2195a32ac1b78db2f8733c923}{CJogoEmLinha}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{classCJogoEmLinha_ad8cb03c6bbbbd49b3eb0993f602adc01}{\string~CJogoEmLinha}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ dados\ da\ instância}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structSJogoEmLinha}{TJogoEmLinha}}\ \mbox{\hyperlink{classCJogoEmLinha_aa3e49a13635e4e3fef66e5644594ad5c}{inst}};\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ Cria\ um\ objecto\ que\ é uma\ cópia\ deste}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*\ \mbox{\hyperlink{classCJogoEmLinha_af9b87594a26c4230c7c0f59efc8e013a}{Duplicar}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Fica\ com\ uma\ cópia\ de\ objecto}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCJogoEmLinha_ab11bd9cb65db20489151a1935df9060e}{Copiar}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TProcuraConstrutiva}}*objecto);}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ Coloca\ o\ objecto\ no\ estado\ inicial\ da\ procura}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCJogoEmLinha_ad165a68c0587ca6d77274d84a2220f03}{SolucaoVazia}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ Coloca\ em\ sucessores\ a\ lista\ de\ objectos\ sucessores\ (são alocados\ neste\ método\ e\ têm de\ ser\ apagados)}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00046}00046\ \ \ \ \ \textcolor{comment}{//\ O\ custo\ não necessita\ de\ ser\ preenchido,\ caso\ seja\ sempre\ unitário}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ chamar\ o\ método\ desta\ classe\ após adicionar\ os\ sucessores\ para\ actualizar\ geracoes\ e\ expansoes}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCJogoEmLinha_a0fbafadc8f5d1b1ed8aa3ddde563285b}{Sucessores}}(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&sucessores);}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00049}00049\ \ \ \ \ \textcolor{comment}{//\ Retorna\ verdade\ caso\ o\ estado\ actual\ seja\ um\ estado\ objectivo}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCJogoEmLinha_a82679821a4ac5334b580de65f9e3441a}{SolucaoCompleta}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ Escrever\ informação\ de\ debug\ sobre\ o\ objecto\ currente\ }}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ (utilizar\ variável\ TProcuraConstrutiva::debug\ para\ seleccionar\ o\ detalhe\ pretendido)}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCJogoEmLinha_a241f3198f804b6e0003a45fe2d11100a}{Debug}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCJogoEmLinha_a855791b2e19731340976157991d79293}{ResetParametros}}();}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ Redefinir\ para\ poder\ utilizar\ os\ algoritmos\ informados}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00059}00059\ \ \ \ \ \textcolor{comment}{//\ O\ custo\ desde\ o\ nó inicial\ é tido\ em\ conta,\ esta\ função\ deve\ devolver\ o\ custo\ estimado}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00060}00060\ \ \ \ \ \textcolor{comment}{//\ nunca\ sobre\ estimando,\ deste\ estado\ até ao\ nó final\ mais\ próximo\ (é um\ mínimo)}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ chamar\ para\ actualiação\ de\ avaliacoes}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCJogoEmLinha_afe8d4a92e1840c1436c295c5a13760db}{Heuristica}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classCJogoEmLinha_a25eb875c5fb35543ab74161e94a75ad4}{Acao}}(\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ sucessor);}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCJogoEmLinha_ad289e94136b44c9e3e942acf64ff0449}{TesteManual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome);}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCJogoEmLinha_a9c604cfb7ca0500e9f165a3a2b9b7a9d}{Codifica}}(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}]);}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00067}\mbox{\hyperlink{classCJogoEmLinha_a9c6c57f158fb470096dfbffb07da93a4}{00067}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCJogoEmLinha_a9c6c57f158fb470096dfbffb07da93a4}{Codigo}}(\textcolor{keywordtype}{char}\ peca)\ \{\ \textcolor{keywordflow}{return}\ peca\ ==\ \textcolor{charliteral}{'x'}\ ?\ 1\ :\ (peca\ ==\ \textcolor{charliteral}{'o'}\ ?\ 2\ :\ 3);\ \}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00068}\mbox{\hyperlink{classCJogoEmLinha_a1f1a90de9954476789f5d08420eedfaa}{00068}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCJogoEmLinha_a1f1a90de9954476789f5d08420eedfaa}{Indice}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordflow}{return}\ i\ *\ \mbox{\hyperlink{classCJogoEmLinha_aa3e49a13635e4e3fef66e5644594ad5c}{inst}}.\mbox{\hyperlink{structSJogoEmLinha_ad3a41b6c954dc64e20902b797db15d5c}{M}}\ +\ j;\ \}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00069}\mbox{\hyperlink{classCJogoEmLinha_a72fb49a4c59c54834e9bd5a936e1da14}{00069}}\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCJogoEmLinha_a72fb49a4c59c54834e9bd5a936e1da14}{Casa}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCJogoEmLinha_a8cba76145d91e14fa042258a7da7b938}{tabuleiro}}[\mbox{\hyperlink{classCJogoEmLinha_a1f1a90de9954476789f5d08420eedfaa}{Indice}}(i,\ j)];\ \}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00070}\mbox{\hyperlink{classCJogoEmLinha_ab07e98f06d80629870f010e9e234da81}{00070}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCJogoEmLinha_ab07e98f06d80629870f010e9e234da81}{Casa}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{char}\ valor)\ \{\ \mbox{\hyperlink{classCJogoEmLinha_a8cba76145d91e14fa042258a7da7b938}{tabuleiro}}[\mbox{\hyperlink{classCJogoEmLinha_a1f1a90de9954476789f5d08420eedfaa}{Indice}}(i,\ j)]\ =\ valor;\ \}}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCJogoEmLinha_ab7f482497b6ffa4823327474f1b822ed}{VerLinha}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ di,\ \textcolor{keywordtype}{int}\ dj);}
+\DoxyCodeLine{\Hypertarget{JogoEmLinha_8h_source_l00072}00072\ \};}
+
+\end{DoxyCode}

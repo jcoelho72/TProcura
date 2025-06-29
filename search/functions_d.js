@@ -1,9 +1,12 @@
 var searchData=
 [
-  ['parar_0',['Parar',['../classTProcura.html#a7952e187e1b0ae0ca52edab157223179',1,'TProcura']]],
-  ['pop_1',['Pop',['../classTVector.html#a3249913626d54e46b07e168ce1f05d87',1,'TVector']]],
-  ['profundidadeprimeiro_2',['ProfundidadePrimeiro',['../group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228',1,'TProcuraConstrutiva']]],
-  ['proximo_3',['Proximo',['../classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa',1,'CListaNo']]],
-  ['proximodistinto_4',['ProximoDistinto',['../classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273',1,'CListaNo']]],
-  ['push_5',['Push',['../classTVector.html#ad9c1fb99a2d0d4f060c4746e6ce97d0f',1,'TVector']]]
+  ['rand_0',['rand',['../classTRand.html#a8f8ec155d796c5586198ac75eb966d4f',1,'TRand']]],
+  ['random_1',['Random',['../classTVector.html#a769c6a55b72a463fd2313fbd638c7234',1,'TVector']]],
+  ['randomorder_2',['RandomOrder',['../classTVector.html#a528c30196e28424fcac4386b873a6e11',1,'TVector']]],
+  ['registo_3',['registo',['../classTProcura.html#ab6d1ce659d922b9d30550220e3028129',1,'TProcura::Registo(TResultado &amp;resultado, int id)'],['../classTProcura.html#a2a99102cba3846baa3597b4ab462d620',1,'TProcura::Registo(TResultado &amp;resultado, int id, int valor)']]],
+  ['relatoriocsv_4',['RelatorioCSV',['../classTProcura.html#abda2c4f1066721e5c0e06c5ea22dce36',1,'TProcura']]],
+  ['remove_5',['Remove',['../classTVector.html#a85673895d405c09b5b9155f78b67d71b',1,'TVector']]],
+  ['replace_6',['Replace',['../classTVector.html#a35217d9779ea1c7608dac2ffd677c30b',1,'TVector']]],
+  ['reset_7',['Reset',['../classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd',1,'TVector']]],
+  ['resetparametros_8',['resetparametros',['../classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871',1,'TProcura::ResetParametros()'],['../classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94',1,'CTesteTVector::ResetParametros()'],['../classTProcuraMelhorativa.html#a631cd73e03b193d42055f2824b051591',1,'TProcuraMelhorativa::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../group__RedefinicaoMandatoria.html#gacb15562d8776f4d162001d385ebc13a0',1,'TProcuraConstrutiva::ResetParametros()'],['../classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3',1,'CPuzzle8::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1',1,'TProcuraAdversa::ResetParametros()'],['../classCJogoEmLinha.html#a855791b2e19731340976157991d79293',1,'CJogoEmLinha::ResetParametros()']]]
 ];

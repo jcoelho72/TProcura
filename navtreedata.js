@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "TProcuraConstrutiva", "index.html", [
+  [ "TProcura", "index.html", [
     [ "Topics", "topics.html", "topics" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -32,8 +32,9 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -52,8 +53,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Aspirador_8cpp.html",
-"classTProcuraConstrutiva.html#ad02feccb0f347d9a475ed1b883cc12aa"
+"Adversa_2Teste_2teste_8cpp.html",
+"classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2",
+"classTVector.html#a3249913626d54e46b07e168ce1f05d87"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcuraConstrutiva: Teste Particao</title>
+<title>TProcura: Teste Particao</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TProcuraConstrutiva
+   <div id="projectname">TProcura
    </div>
-   <div id="projectbrief">Algoritmos de procura para problemas de otimização</div>
+   <div id="projectbrief">Biblioteca em C++ para testes paramétricos de algoritmos, e coleção de algoritmos de procura e otimização</div>
   </td>
  </tr>
  </tbody>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('teste_particao.html',''); initResizabl
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema da Partição. Pode acompanhar o teste excutando as ações localmente.</p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_particao.html#particao-a1">Ação 1 - Ver instâncias</a></li>
@@ -131,14 +131,14 @@ Partição - separe os números em duas partes iguais</div></div>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
 </div><!-- fragment --><p> Este problem aconsiste em dividir os números em duas partes que somem exatamente o mesmo valor.</p>
 <p><a class="anchor" id="particao-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver as instâncias que temos. Introduza: <b>1; 10.</b></p>
 <div class="fragment"><div class="line">Nova instância (atual 10) [2-1000]:</div>
 </div><!-- fragment --><p> Existem instâncias de 2 a 1000, correspondendo o ID à quantidade de números. As instâncias são geradas aleatoriamente, podendo existir instâncias impossíveis.</p>
 <p>Deixemos a instância 10 para resolução manual.</p>
 <p><a class="anchor" id="particao-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos procurar resolver manualmente a intância. Introduza: <b>2; esq dir esq dir; dir esq; dir; esq.</b></p>
 <div class="fragment"><div class="line">Colocar #8: 0 = 0</div>
@@ -193,7 +193,7 @@ Ação 2 - Resolver manualmente</h2>
 <p>No caso da partição, após um número estar num lado, apenas a soma interessa. Como se coloca os números por ordem, um estado fica igual a todos os que têm o montante igual das peças colocadas. Esquerda e direita é naturalmente irrelevante.</p>
 <p>Como o estado codificado fica pequeno, a expectativa para ganho por repetidos aumenta.</p>
 <p><a class="anchor" id="particao-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Ação 3 - Testes Empíricos</h2>
 <p>Temos para teste a procura em profundidade ilimitada, e pretendemos comparar ignorar estados repetidos, ou remover todos os repetidos gerados. Introduza: **4; 1; 3; 6; 1000000; 10; 1; 9; -1; <em>ENTER</em>; 6; <em>ENTER</em>; 4; 10; 3; <em>ENTER</em>; 6; <em>ENTER</em>. **</p>
 <div class="fragment"><div class="line">Parametros comuns a 2 configurações:</div>

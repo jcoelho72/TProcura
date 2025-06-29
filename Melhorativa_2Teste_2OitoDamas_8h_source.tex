@@ -1,0 +1,133 @@
+\doxysection{Oito\+Damas.\+h}
+\hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source}{}\label{Melhorativa_2Teste_2OitoDamas_8h_source}\index{Melhorativa/Teste/OitoDamas.h@{Melhorativa/Teste/OitoDamas.h}}
+\mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../TProcuraMelhorativa.h"{}}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00005}00005\ \textcolor{comment}{//\ \ COitoDamas\ class}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00007}00007\ \textcolor{comment}{//\ \ Author:\ José\ Coelho}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00008}00008\ \textcolor{comment}{//\ \ Last\ revision:\ 2025-\/01-\/30}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00009}00009\ \textcolor{comment}{//\ \ Description:}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00010}00010\ \textcolor{comment}{//\ \ \ \ Implementa\ o\ problema\ das\ oito\ damas.\ Este\ problema\ consiste\ em\ colocar}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00011}00011\ \textcolor{comment}{//\ \ \ \ oito\ damas\ de\ xadrez\ (movem-\/se\ na\ horizontal,\ vertical\ e\ diagonal),\ num}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00012}00012\ \textcolor{comment}{//\ \ \ \ tabuleiro\ de\ xadrez,\ sem\ que\ estas\ se\ ataquem\ umas\ as\ outras.}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00013}00013\ \textcolor{comment}{//\ \ \ \ Generalizado\ para\ N\ damas,\ o\ ID\ da\ instância\ é\ o\ número\ de\ damas}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00016}\mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_a579503586ec674137f68c4177e60e0c8}{00016}}\ \textcolor{preprocessor}{\#define\ MAX\_DAMAS\ 40}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00018}00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCOitoDamas}{COitoDamas}}\ :}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTProcuraMelhorativa}{TProcuraMelhorativa}}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00021}00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00022}\mbox{\hyperlink{classCOitoDamas_aedfd3924d0c950ba73a6342dda5cc467}{00022}}\ \ \ \ \ \mbox{\hyperlink{classCOitoDamas_aedfd3924d0c950ba73a6342dda5cc467}{COitoDamas}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00023}\mbox{\hyperlink{classCOitoDamas_ab77af0c222eed335045cf1cc4cbc8ff6}{00023}}\ \ \ \ \ \mbox{\hyperlink{classCOitoDamas_ab77af0c222eed335045cf1cc4cbc8ff6}{\string~COitoDamas}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ estrutura\ de\ dados:\ posicao\ de\ cada\ dama}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ \mbox{\hyperlink{classCOitoDamas_acb2ccabe2ec11815db2eccb59bb07ca7}{damas}};}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCOitoDamas_a3714dcd7f610c067ee86593390c3d45b}{nDamas}};\ \textcolor{comment}{//\ número\ de\ damas\ desta\ instância}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ Metodos\ virtuais\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00030}\mbox{\hyperlink{classCOitoDamas_a36a173575d8f6bd1815989a7a26b7440}{00030}}\ \ \ \ \ \mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classCOitoDamas_a36a173575d8f6bd1815989a7a26b7440}{Duplicar}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCOitoDamas}{COitoDamas}}*\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clone}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classCOitoDamas_aedfd3924d0c950ba73a6342dda5cc467}{COitoDamas}};}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clone}}\ !=\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clone}}-\/>\mbox{\hyperlink{classCOitoDamas_aea4719bda6b412974fc584abf073aef9}{Copiar}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clone}};}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00039}\mbox{\hyperlink{classCOitoDamas_a2249a5984a16e9648370eec2c5034182}{00039}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_a2249a5984a16e9648370eec2c5034182}{Copiar}}(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})\ \{}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraMelhorativa_a446cb701313bd16b9a6c5939b810d241}{TProcuraMelhorativa::Copiar}}(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCOitoDamas_acb2ccabe2ec11815db2eccb59bb07ca7}{damas}}\ =\ ((\mbox{\hyperlink{classCOitoDamas}{COitoDamas}}*)\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})-\/>damas;}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCOitoDamas_a3714dcd7f610c067ee86593390c3d45b}{nDamas}}\ =\ ((\mbox{\hyperlink{classCOitoDamas}{COitoDamas}}*)\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})-\/>nDamas;}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00045}\mbox{\hyperlink{classCOitoDamas_ab4686ec4d08c2df261fd74c9a1b274df}{00045}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_ab4686ec4d08c2df261fd74c9a1b274df}{SolucaoVazia}}(\textcolor{keywordtype}{void});\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00046}\mbox{\hyperlink{classCOitoDamas_ab0506f461abf79a87f19fe496e754528}{00046}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCOitoDamas_ab0506f461abf79a87f19fe496e754528}{SolucaoCompleta}}(\textcolor{keywordtype}{void})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCOitoDamas_acb2ccabe2ec11815db2eccb59bb07ca7}{damas}}.\mbox{\hyperlink{classTVector_ac3c744d84543ca6e32859eb7dfccfeef}{Count}}()\ ==\ \mbox{\hyperlink{classCOitoDamas_a3714dcd7f610c067ee86593390c3d45b}{nDamas}};\ \}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00047}\mbox{\hyperlink{classCOitoDamas_a8c4dfb787a9f0d8f2a8c88e682aaeb78}{00047}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_a8c4dfb787a9f0d8f2a8c88e682aaeb78}{Debug}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00048}\mbox{\hyperlink{classCOitoDamas_acda7651f84323201b3a57699daf55646}{00048}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_acda7651f84323201b3a57699daf55646}{MostrarSolucao}}(\textcolor{keywordtype}{void})\ \{\ \mbox{\hyperlink{classCOitoDamas_a8c4dfb787a9f0d8f2a8c88e682aaeb78}{Debug}}();\ \}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00049}\mbox{\hyperlink{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d}{00049}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d}{TesteManual}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome);}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ metodos\ virtuais\ redefinidos\ de\ TProcuraMelhorativa}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_a76a6cfab4d66232a84d6cb9dc73b7fcf}{NovaSolucao}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCOitoDamas_ae23eb62823fd90b67fd1292cd6b739e1}{Avaliar}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_a624402f3f1386d7d0abb312503d3dff2}{Vizinhanca}}(\mbox{\hyperlink{classTVector}{TVector<TPonto>}}\&\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vizinhos}});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_a6d9bf353a8467cc31d407685a06e32c9}{Mutar}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCOitoDamas_a1d576da54373b82c1eb9c3a34c056079}{Cruzamento}}(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{a}},\ \mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{b}});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCOitoDamas_a95896a9158166e8c14011a7830ee14a7}{Distancia}}(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{a}});}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00060}00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ métodos\ de\ normalização\ de\ um\ estado}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{void}\ Normalizar(\mbox{\hyperlink{classTVector}{TVector<int>}}\&\ \mbox{\hyperlink{classCOitoDamas_acb2ccabe2ec11815db2eccb59bb07ca7}{damas}});\ \textcolor{comment}{//\ coloca\ em\ damas\ o\ estado\ normalizado\ }}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{int}\ PesoVersao(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tab}}[\mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_a579503586ec674137f68c4177e60e0c8}{MAX\_DAMAS}}][\mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_a579503586ec674137f68c4177e60e0c8}{MAX\_DAMAS}}]);\ \textcolor{comment}{//\ peso\ da\ versão\ do\ estado}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ Simetria(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tab}}[\mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_a579503586ec674137f68c4177e60e0c8}{MAX\_DAMAS}}][\mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_a579503586ec674137f68c4177e60e0c8}{MAX\_DAMAS}}],\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{eixo}});\ \textcolor{comment}{//\ aplica\ uma\ simetria}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ Troca(\textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{a}},\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{b}});\ \textcolor{comment}{//\ troca\ dois\ valores}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00066}00066\ \};}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00068}00068\ \textcolor{comment}{/*\ Testes\ nas\ procuras\ cegas\ (instâncias\ 8\ a\ 17)}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00069}00069\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00070}00070\ \textcolor{comment}{\ ID\ |conf|\ custo(g)\ |\ \ expansões\ |\ \ gerações\ |\ avaliações\ |\ tempo(s)\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00071}00071\ \textcolor{comment}{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00072}00072\ \textcolor{comment}{\ \ 8\ |\ \ 1\ |\ \ \ \ \ \ \ \ 8\ |\ \ \ \ \ \ \ 1665\ |\ \ \ \ \ \ 1965\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,002s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00073}00073\ \textcolor{comment}{\ \ 9\ |\ \ 1\ |\ \ \ \ \ \ \ \ 9\ |\ \ \ \ \ \ \ 6977\ |\ \ \ \ \ \ 8042\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,007s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00074}00074\ \textcolor{comment}{\ 10\ |\ \ 1\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ 30779\ |\ \ \ \ \ 34815\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,023s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00075}00075\ \textcolor{comment}{\ 11\ |\ \ 1\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ 149131\ |\ \ \ \ 164246\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,133s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00076}00076\ \textcolor{comment}{\ 12\ |\ \ 1\ |\ \ \ \ \ \ \ 12\ |\ \ \ \ \ 773731\ |\ \ \ \ 841989\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,787s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00077}00077\ \textcolor{comment}{\ 13\ |\ \ 1\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ 4250877\ |\ \ \ 4601178\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 5,084s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00078}00078\ \textcolor{comment}{\ 14\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ 6900138\ |\ \ 12939175\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 11,908s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00079}00079\ \textcolor{comment}{\ 15\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ 5445913\ |\ \ 15967696\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 12,279s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00080}00080\ \textcolor{comment}{\ 16\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ 4123889\ |\ \ 16996518\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 12,649s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00081}00081\ \textcolor{comment}{\ 17\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ 3651739\ |\ \ 18318707\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 13,096s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00082}00082\ \textcolor{comment}{\ \ 8\ |\ \ 2\ |\ \ \ \ \ \ \ \ 8\ |\ \ \ \ \ \ \ \ 113\ |\ \ \ \ \ \ \ 124\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00083}00083\ \textcolor{comment}{\ \ 9\ |\ \ 2\ |\ \ \ \ \ \ \ \ 9\ |\ \ \ \ \ \ \ \ \ 41\ |\ \ \ \ \ \ \ \ 60\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00084}00084\ \textcolor{comment}{\ 10\ |\ \ 2\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ \ 102\ |\ \ \ \ \ \ \ 124\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00085}00085\ \textcolor{comment}{\ 11\ |\ \ 2\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ \ 52\ |\ \ \ \ \ \ \ \ 83\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00086}00086\ \textcolor{comment}{\ 12\ |\ \ 2\ |\ \ \ \ \ \ \ 12\ |\ \ \ \ \ \ \ \ 261\ |\ \ \ \ \ \ \ 295\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00087}00087\ \textcolor{comment}{\ 13\ |\ \ 2\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ 111\ |\ \ \ \ \ \ \ 154\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00088}00088\ \textcolor{comment}{\ 14\ |\ \ 2\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ 1899\ |\ \ \ \ \ \ 1944\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,006s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00089}00089\ \textcolor{comment}{\ 15\ |\ \ 2\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ 1359\ |\ \ \ \ \ \ 1414\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,005s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00090}00090\ \textcolor{comment}{\ 16\ |\ \ 2\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ 10052\ |\ \ \ \ \ 10112\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,028s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00091}00091\ \textcolor{comment}{\ 17\ |\ \ 2\ |\ \ \ \ \ \ \ 17\ |\ \ \ \ \ \ \ 5374\ |\ \ \ \ \ \ 5449\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,016s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00092}00092\ \textcolor{comment}{\ \ 8\ |\ \ 3\ |\ \ \ \ \ \ \ \ 8\ |\ \ \ \ \ \ \ \ 113\ |\ \ \ \ \ \ \ 120\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00093}00093\ \textcolor{comment}{\ \ 9\ |\ \ 3\ |\ \ \ \ \ \ \ \ 9\ |\ \ \ \ \ \ \ \ \ 41\ |\ \ \ \ \ \ \ \ 56\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00094}00094\ \textcolor{comment}{\ 10\ |\ \ 3\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ \ 102\ |\ \ \ \ \ \ \ 119\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00095}00095\ \textcolor{comment}{\ 11\ |\ \ 3\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ \ 52\ |\ \ \ \ \ \ \ \ 78\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00096}00096\ \textcolor{comment}{\ 12\ |\ \ 3\ |\ \ \ \ \ \ \ 12\ |\ \ \ \ \ \ \ \ 261\ |\ \ \ \ \ \ \ 289\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00097}00097\ \textcolor{comment}{\ 13\ |\ \ 3\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ 111\ |\ \ \ \ \ \ \ 148\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00098}00098\ \textcolor{comment}{\ 14\ |\ \ 3\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ 1899\ |\ \ \ \ \ \ 1937\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,006s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00099}00099\ \textcolor{comment}{\ 15\ |\ \ 3\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ 1359\ |\ \ \ \ \ \ 1407\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,008s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00100}00100\ \textcolor{comment}{\ 16\ |\ \ 3\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ 2850\ |\ \ \ \ \ \ 2896\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,020s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00101}00101\ \textcolor{comment}{\ 17\ |\ \ 3\ |\ \ \ \ \ \ \ 17\ |\ \ \ \ \ \ \ 5206\ |\ \ \ \ \ \ 5258\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,030s\ |}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00102}00102\ \textcolor{comment}{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\ resolvidas}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00103}00103\ \textcolor{comment}{Total\ \ 1\ |\ \ \ \ \ \ \ 63\ |\ \ \ 25334839\ |\ \ 69874331\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ 55,968s\ |\ \ \ 6}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00104}00104\ \textcolor{comment}{Total\ \ 2\ |\ \ \ \ \ \ 125\ |\ \ \ \ \ \ 19364\ |\ \ \ \ \ 19759\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,057s\ |\ \ 10}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00105}00105\ \textcolor{comment}{Total\ \ 3\ |\ \ \ \ \ \ 125\ |\ \ \ \ \ \ 11994\ |\ \ \ \ \ 12308\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,067s\ |\ \ 10}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00106}00106\ \textcolor{comment}{Torneio\ (\#instâncias\ melhores):}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00107}00107\ \textcolor{comment}{\ |-\/01-\/|-\/02-\/|-\/03-\/|}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00108}00108\ \textcolor{comment}{\ 1\ \ \ \ |\ -\/7\ |\ -\/7\ |-\/14}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00109}00109\ \textcolor{comment}{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00110}00110\ \textcolor{comment}{\ 2\ \ 7\ |\ \ \ \ |\ \ 0\ |\ \ 7}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00111}00111\ \textcolor{comment}{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00112}00112\ \textcolor{comment}{\ 3\ \ 7\ |\ \ 0\ |\ \ \ \ |\ \ 7}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00113}00113\ \textcolor{comment}{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00114}00114\ \textcolor{comment}{Configuração\ 1}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00115}00115\ \textcolor{comment}{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00116}00116\ \textcolor{comment}{P5(Tempo):\ 10\ |\ P6(Limite):\ 0\ |\ P7(Repetidos):\ ignorar\ |\ P8(pesoAStar):\ 100}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00117}00117\ \textcolor{comment}{P9(ruido):\ 0\ |\ P10(baralhar):\ 0\ |\ P11(Max.\ Avaliações):\ 1000000\ |\ P12(Move\ Primeiro):\ Sim}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00118}00118\ \textcolor{comment}{P13(População):\ 20\ |\ P14(Prob.\ Mutação):\ 50\ |\ P15(Dist.\ Mínima):\ 0}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00119}00119\ \textcolor{comment}{Configuração\ 2}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00120}00120\ \textcolor{comment}{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00121}00121\ \textcolor{comment}{P5(Tempo):\ 10\ |\ P6(Limite):\ -\/1\ |\ P7(Repetidos):\ ignorar\ |\ P8(pesoAStar):\ 100}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00122}00122\ \textcolor{comment}{P9(ruido):\ 0\ |\ P10(baralhar):\ 0\ |\ P11(Max.\ Avaliações):\ 1000000\ |\ P12(Move\ Primeiro):\ Sim}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00123}00123\ \textcolor{comment}{P13(População):\ 20\ |\ P14(Prob.\ Mutação):\ 50\ |\ P15(Dist.\ Mínima):\ 0}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00124}00124\ \textcolor{comment}{Configuração\ 3}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00125}00125\ \textcolor{comment}{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00126}00126\ \textcolor{comment}{P5(Tempo):\ 10\ |\ P6(Limite):\ -\/1\ |\ P7(Repetidos):\ gerados\ |\ P8(pesoAStar):\ 100}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00127}00127\ \textcolor{comment}{P9(ruido):\ 0\ |\ P10(baralhar):\ 0\ |\ P11(Max.\ Avaliações):\ 1000000\ |\ P12(Move\ Primeiro):\ Sim}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00128}00128\ \textcolor{comment}{P13(População):\ 20\ |\ P14(Prob.\ Mutação):\ 50\ |\ P15(Dist.\ Mínima):\ 0}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00129}00129\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{Melhorativa_2Teste_2OitoDamas_8h_source_l00130}00130\ \textcolor{comment}{*/}}
+
+\end{DoxyCode}

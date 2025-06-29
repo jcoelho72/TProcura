@@ -1,0 +1,21 @@
+digraph "TProcura::EditarIndicadores"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="TProcura::EditarIndicadores",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge7_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
+  Node2 -> Node3 [id="edge8_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip=" "];
+  Node1 -> Node4 [id="edge9_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="TVector::Delete",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aba2fb6d977b1309f3e884369c5f43bba",tooltip=" "];
+  Node1 -> Node5 [id="edge10_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip=" "];
+  Node1 -> Node6 [id="edge11_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TProcura::MostraIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a99f5cf1c59ce543a58d802a1ac907299",tooltip=" "];
+  Node1 -> Node7 [id="edge12_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="TProcura::NovoValor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e",tooltip=" "];
+}

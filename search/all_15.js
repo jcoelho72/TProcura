@@ -1,14 +1,17 @@
 var searchData=
 [
-  ['n_0',['N',['../TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4',1,'TRand.cpp']]],
-  ['nada_1',['nada',['../TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11',1,'TProcura.h']]],
-  ['nao_5flido_2',['NAO_LIDO',['../TProcura_8h.html#a41963e9c6730c8172ca4f219b79feba7',1,'TProcura.h']]],
-  ['ndamas_3',['nDamas',['../classCOitoDamas.html#ad6d1169f379024c488c2ba8c2a27573a',1,'COitoDamas']]],
-  ['nivel_4',['nivel',['../classCProblemaArtificial.html#a43f8923ae24ecd1e2349e2379e66d51f',1,'CProblemaArtificial']]],
-  ['niveldebug_5',['nivelDebug',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8',1,'TProcura.h']]],
-  ['nome_6',['nome',['../structSParametro.html#aa25ae60ffa1acbaeb51bdf0e5312c349',1,'SParametro']]],
-  ['nomevalores_7',['nomeValores',['../structSParametro.html#aae8aa852643edec8af4d1c3c42ede0b2',1,'SParametro']]],
-  ['novalinha_8',['NovaLinha',['../classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32',1,'TProcuraConstrutiva']]],
-  ['novovalor_9',['NovoValor',['../classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e',1,'TProcura']]],
-  ['numeros_10',['numeros',['../classCParticao.html#a5a49aee7966f84ac5456041a359aab89',1,'CParticao']]]
+  ['largura_0',['largura',['../teste_puzzle8.html#autotoc_md49',1,'Ação 3 - Procura em Largura'],['../teste_8damas.html#autotoc_md17',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md30',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md34',1,'Ação 9 - Desafio Procura em Largura']]],
+  ['larguraprimeiro_1',['larguraprimeiro',['../group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0',1,'TProcuraConstrutiva::LarguraPrimeiro()'],['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6caa7119d8453f4029f15ea59fa1063d1a6',1,'larguraPrimeiro:&#160;TProcuraConstrutiva.h']]],
+  ['last_2',['Last',['../classTVector.html#aa304d639c79ef2842f9951846c6292e3',1,'TVector']]],
+  ['ler_3',['ler',['../TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678',1,'TProcura.h']]],
+  ['libertarvector_4',['libertarvector',['../classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df',1,'TProcuraConstrutiva::LibertarVector()'],['../classTProcuraMelhorativa.html#a28993c2953d882b21f3c456e5d1b7e47',1,'TProcuraMelhorativa::LibertarVector()']]],
+  ['licença_5',['Licença',['../index.html#autotoc_md78',1,'']]],
+  ['limite_6',['limite',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f',1,'TProcuraConstrutiva.h']]],
+  ['limiteiteracoes_7',['limiteIteracoes',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6af437d05ff169dbc6ab8ff59417b5e639',1,'TProcura.h']]],
+  ['limitetempo_8',['limiteTempo',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245',1,'TProcura.h']]],
+  ['limparestatisticas_9',['limparestatisticas',['../classTProcura.html#ad0506a4e5c70623f42bb1c3f2d8c1eb6',1,'TProcura::LimparEstatisticas()'],['../classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f',1,'TProcuraConstrutiva::LimparEstatisticas(clock_t &amp;inicio)']]],
+  ['limparht_10',['LimparHT',['../classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c',1,'TProcuraConstrutiva']]],
+  ['linha_11',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
+  ['lower_5fmask_12',['LOWER_MASK',['../TRand_8cpp.html#a4ddd8cab3564b7a86a4b0e52ba08f70e',1,'TRand.cpp']]],
+  ['lowerbound_13',['lowerbound',['../TProcuraAdversa_8h.html#af2d8f3ce278d837a36ee4d610662b204a96d57576de5542bd6b278ca87943bb7e',1,'lowerbound:&#160;TProcuraAdversa.h'],['../group__VariaveisGlobais.html#ga1af840b6ec9c04ce7d4c8849346441bd',1,'TProcuraConstrutiva::lowerBound'],['../classTProcuraConstrutiva.html#a5f021041a7dfe1b68890d9e5f5f0e6f4',1,'TProcuraConstrutiva::LowerBound()']]]
 ];

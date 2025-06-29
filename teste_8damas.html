@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcuraConstrutiva: Teste 8 Damas</title>
+<title>TProcura: Teste 8 Damas</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TProcuraConstrutiva
+   <div id="projectname">TProcura
    </div>
-   <div id="projectbrief">Algoritmos de procura para problemas de otimização</div>
+   <div id="projectbrief">Biblioteca em C++ para testes paramétricos de algoritmos, e coleção de algoritmos de procura e otimização</div>
   </td>
  </tr>
  </tbody>
@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('teste_8damas.html',''); initResizable(
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste excutando as ações localmente.</p>
-<h2><a class="anchor" id="autotoc_md0"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Sumário</h2>
 <ul>
 <li>Ação 1 - Ver instâncias</li>
@@ -139,7 +139,7 @@ Sumário</h2>
 <div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
 </div><!-- fragment --><p> Este estado vazio é um tabuleiro de 8x8. O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md1"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver que instâncias temos. Introduza: <b>1; 4.</b></p>
 <div class="fragment"><div class="line">Nova instância (atual 8) [4-40]: 4</div>
@@ -153,7 +153,7 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p>O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Há várias formas de se colocar damas no tabuleiro. Está implementada a colocação de uma dama, na linha superior que não esteja atacada.</p>
 <p>Poder-se-ia permitir a colocação de uma dama em qualquer posição. No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia. Caso tivessem feito diferentes opções, seria adicionado um parametro, e os sucessores seria distinto.</p>
@@ -204,7 +204,7 @@ Ação 2 - Resolver manualmente</h2>
 <p>A escolha na primeira ação por d2 (ou d3), é crítica para obter a solução.</p>
 <p>Neste problema a solução em sempre o mesmo número de ações, igual a N.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Ação 3 - Procura em Largura</h2>
 <p>Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. Vamos deixar desde já fixado o limite no número de gerações a 1000000. Introduza: <b>1; 4; 2; 4; 6; 1000000; <em>ENTER</em>; 5.</b></p>
 <div class="fragment"><div class="line">g:0</div>
@@ -304,7 +304,7 @@ Ação 3 - Procura em Largura</h2>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p> A solução foi encontrada. No entanto, o algoritmo explora todos os estados do nível 3 antes de ver o primeiro do nível 4. Neste problema, como a solução está no nível 4, acaba por não ser muito interessante esta procura. Não só este algoritmo gasta muito tempo nos níveis inferiores, a explorar completamente, como a procura em profundidade ilimitada não tem problema, já que não existem ciclos infinitos.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Ação 4 - Procura em Profundidade</h2>
 <p>Vamos executar a mesma instância com a procura em profundidade ilimitada. Introduza: <b>1; 4; 4; 1; 3; 9; -1; <em>ENTER</em>; 5.</b></p>
 <div class="fragment"><div class="line">g:0</div>
@@ -344,13 +344,13 @@ Ação 4 - Procura em Profundidade</h2>
 </div><!-- fragment --><p>Podemos observar que o algoritmo em profundidade fez o mesmo erro que nós fizemos, ao escolher d1. No entanto, após ver que não é possível, testa a opção de d2 e encontra a solução.</p>
 <p>Neste caso fez 8 expansões, contra 13 da procura em largura. Mas evidentemente que não será esta pequena instância que irá suportar as nossas conclusões. Temos um teste empírico na ação 6, com mais instâncias.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Ação 5 - Heurística</h2>
 <p>Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações tivessem custo variável, faria sentido uma heurística para estimar o custo. Sendo o custo fixo, apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas com a abordagem construtiva.</p>
 <p>Poder-se-ia ter no entanto opções que melhorariam a abordagem construiva. Uma das possibilidades é considerar ou não os estados repetidos. Neste problema temos 3 eixos de simetria. Significa que a mesma posição pode ao ser refletida em cada eixo, transformar-se numa das outras, num total de 8 posições simétricas. Ao anular as simetrias por normalização do estado, e remoção de repetidos, o espaço de estados reduz-se. As simetrias estão implementadas, pelo que vamos testar na próxima ação.</p>
 <p>Outra possibilidade não implementada neste código, é a verificação se há linhas/colunas vazias, que estejam totalmente atacadas. Ao colocar duas ou três damas, estas podem cobrir a totalidade das casas da última linha. Esta implementação causa também mais peso, mas invalida estados antecipadamente.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Ação 6 - Testes Empíricos</h2>
 <p>Vamos começar por comparar a procura em largura, com a procura em profundidade ilimitada, e respetivas versões com eliminação de estados repetidos. Introduza: <b>4; 1; 1; 2; 0; 6; 1000000; 9; 0; 10; 1; <em>ENTER</em>; 6; <em>ENTER</em>.</b></p>
 <div class="fragment"><div class="line">Parametros comuns a 1 configurações:</div>

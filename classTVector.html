@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcuraConstrutiva: TVector&lt; Item &gt; Class Template Reference</title>
+<title>TProcura: TVector&lt; Item &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TProcuraConstrutiva
+   <div id="projectname">TProcura
    </div>
-   <div id="projectbrief">Algoritmos de procura para problemas de otimização</div>
+   <div id="projectbrief">Biblioteca em C++ para testes paramétricos de algoritmos, e coleção de algoritmos de procura e otimização</div>
   </td>
  </tr>
  </tbody>
@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('classTVector.html',''); initResizable(
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classTVector-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">TVector&lt; Item &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -113,79 +114,108 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af101f2c096078779fb2569bb82303216"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7c66dcf639a5f1c65ca4cfe4c7786f1" id="r_ae7c66dcf639a5f1c65ca4cfe4c7786f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ae7c66dcf639a5f1c65ca4cfe4c7786f1">TVector</a> (int size, Item const *init)</td></tr>
 <tr class="separator:ae7c66dcf639a5f1c65ca4cfe4c7786f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a929164b69e7759a845af1854bbb9f49f" id="r_a929164b69e7759a845af1854bbb9f49f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a929164b69e7759a845af1854bbb9f49f">~TVector</a> ()</td></tr>
-<tr class="separator:a929164b69e7759a845af1854bbb9f49f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21e44df6bc9513d711e2047abc5abf3d" id="r_a21e44df6bc9513d711e2047abc5abf3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a21e44df6bc9513d711e2047abc5abf3d">Add</a> (Item a)</td></tr>
-<tr class="separator:a21e44df6bc9513d711e2047abc5abf3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f3acd8ef761fbd3f20eb7ffa9dcb137" id="r_a1f3acd8ef761fbd3f20eb7ffa9dcb137"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a1f3acd8ef761fbd3f20eb7ffa9dcb137">Insert</a> (Item a, int index=0)</td></tr>
-<tr class="separator:a1f3acd8ef761fbd3f20eb7ffa9dcb137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab163add94e71d5e42c68945bbaf54e2d" id="r_ab163add94e71d5e42c68945bbaf54e2d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ab163add94e71d5e42c68945bbaf54e2d">~TVector</a> () noexcept</td></tr>
+<tr class="separator:ab163add94e71d5e42c68945bbaf54e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8781748d75345cbe2cf8cc7bd23520a" id="r_ad8781748d75345cbe2cf8cc7bd23520a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ad8781748d75345cbe2cf8cc7bd23520a">TVector</a> (<a class="el" href="classTVector.html">TVector</a> const &amp;o)</td></tr>
+<tr class="separator:ad8781748d75345cbe2cf8cc7bd23520a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a49351578ca543d6f46dbafdeb53a6" id="r_a49a49351578ca543d6f46dbafdeb53a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a49a49351578ca543d6f46dbafdeb53a6">operator=</a> (<a class="el" href="classTVector.html">TVector</a> const &amp;o)</td></tr>
+<tr class="separator:a49a49351578ca543d6f46dbafdeb53a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6623d3565cd1addfbd181f1c57dab09" id="r_aa6623d3565cd1addfbd181f1c57dab09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#aa6623d3565cd1addfbd181f1c57dab09">TVector</a> (<a class="el" href="classTVector.html">TVector</a> &amp;&amp;o) noexcept</td></tr>
+<tr class="separator:aa6623d3565cd1addfbd181f1c57dab09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88eaf1c9f58e45f7d5f815257d5fba1" id="r_ac88eaf1c9f58e45f7d5f815257d5fba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ac88eaf1c9f58e45f7d5f815257d5fba1">operator=</a> (<a class="el" href="classTVector.html">TVector</a> &amp;&amp;o) noexcept</td></tr>
+<tr class="separator:ac88eaf1c9f58e45f7d5f815257d5fba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d738b20bc3134076f236f0293d905a" id="r_ad6d738b20bc3134076f236f0293d905a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ad6d738b20bc3134076f236f0293d905a">operator+=</a> (const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;o)</td></tr>
+<tr class="separator:ad6d738b20bc3134076f236f0293d905a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa28afdd47b27c5e004fc75b86d6f66a6" id="r_aa28afdd47b27c5e004fc75b86d6f66a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6">Add</a> (Item a)</td></tr>
+<tr class="separator:aa28afdd47b27c5e004fc75b86d6f66a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6eca1cb8949b750e7aa87bb8828f81d" id="r_ab6eca1cb8949b750e7aa87bb8828f81d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ab6eca1cb8949b750e7aa87bb8828f81d">Insert</a> (Item a, int index=0)</td></tr>
+<tr class="separator:ab6eca1cb8949b750e7aa87bb8828f81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a509e5566cc15eb723566f318479e3bc0" id="r_a509e5566cc15eb723566f318479e3bc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a509e5566cc15eb723566f318479e3bc0">Insert</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v, int index=0)</td></tr>
 <tr class="separator:a509e5566cc15eb723566f318479e3bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9c1fb99a2d0d4f060c4746e6ce97d0f" id="r_ad9c1fb99a2d0d4f060c4746e6ce97d0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ad9c1fb99a2d0d4f060c4746e6ce97d0f">Push</a> (Item a)</td></tr>
-<tr class="separator:ad9c1fb99a2d0d4f060c4746e6ce97d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd25458f77157e6e8aa4ba0e6be3fb64" id="r_afd25458f77157e6e8aa4ba0e6be3fb64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64">Push</a> (Item a)</td></tr>
+<tr class="separator:afd25458f77157e6e8aa4ba0e6be3fb64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3249913626d54e46b07e168ce1f05d87" id="r_a3249913626d54e46b07e168ce1f05d87"><td class="memItemLeft" align="right" valign="top">Item &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a3249913626d54e46b07e168ce1f05d87">Pop</a> ()</td></tr>
 <tr class="separator:a3249913626d54e46b07e168ce1f05d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a372a42fd7c4a94fee43db36d6a339b33" id="r_a372a42fd7c4a94fee43db36d6a339b33"><td class="memItemLeft" align="right" valign="top">Item &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a372a42fd7c4a94fee43db36d6a339b33">operator[]</a> (int i)</td></tr>
 <tr class="separator:a372a42fd7c4a94fee43db36d6a339b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ee199d50089fb967bcf418ab5b30723" id="r_a8ee199d50089fb967bcf418ab5b30723"><td class="memItemLeft" align="right" valign="top">const Item &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a8ee199d50089fb967bcf418ab5b30723">operator[]</a> (int i) const</td></tr>
+<tr class="separator:a8ee199d50089fb967bcf418ab5b30723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05f29646493d42f3c77081b6031d70e5" id="r_a05f29646493d42f3c77081b6031d70e5"><td class="memItemLeft" align="right" valign="top">Item &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a05f29646493d42f3c77081b6031d70e5">First</a> ()</td></tr>
 <tr class="separator:a05f29646493d42f3c77081b6031d70e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa304d639c79ef2842f9951846c6292e3" id="r_aa304d639c79ef2842f9951846c6292e3"><td class="memItemLeft" align="right" valign="top">Item &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#aa304d639c79ef2842f9951846c6292e3">Last</a> ()</td></tr>
 <tr class="separator:aa304d639c79ef2842f9951846c6292e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a427bf294df0ee2bf96e30d278c08389f" id="r_a427bf294df0ee2bf96e30d278c08389f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a427bf294df0ee2bf96e30d278c08389f">Count</a> ()</td></tr>
-<tr class="separator:a427bf294df0ee2bf96e30d278c08389f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb1c1431c384b44d8f28ea38b10135ec" id="r_aeb1c1431c384b44d8f28ea38b10135ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#aeb1c1431c384b44d8f28ea38b10135ec">Count</a> (int value)</td></tr>
-<tr class="separator:aeb1c1431c384b44d8f28ea38b10135ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c744d84543ca6e32859eb7dfccfeef" id="r_ac3c744d84543ca6e32859eb7dfccfeef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a> () const</td></tr>
+<tr class="separator:ac3c744d84543ca6e32859eb7dfccfeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0688f10df431a79feac470593b90b662" id="r_a0688f10df431a79feac470593b90b662"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a0688f10df431a79feac470593b90b662">Count</a> (int value)</td></tr>
+<tr class="separator:a0688f10df431a79feac470593b90b662"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a769c6a55b72a463fd2313fbd638c7234" id="r_a769c6a55b72a463fd2313fbd638c7234"><td class="memItemLeft" align="right" valign="top">Item &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a769c6a55b72a463fd2313fbd638c7234">Random</a> ()</td></tr>
 <tr class="separator:a769c6a55b72a463fd2313fbd638c7234"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc78b25f8f4b07861a4b6e2eb2acec9d" id="r_acc78b25f8f4b07861a4b6e2eb2acec9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#acc78b25f8f4b07861a4b6e2eb2acec9d">operator=</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
-<tr class="separator:acc78b25f8f4b07861a4b6e2eb2acec9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a925d5f893626dcd6a1f6b2330c913354" id="r_a925d5f893626dcd6a1f6b2330c913354"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a925d5f893626dcd6a1f6b2330c913354">operator+=</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
-<tr class="separator:a925d5f893626dcd6a1f6b2330c913354"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a084d0ab4f7ea5451716f734e649950f6" id="r_a084d0ab4f7ea5451716f734e649950f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a084d0ab4f7ea5451716f734e649950f6">BeASet</a> ()</td></tr>
 <tr class="separator:a084d0ab4f7ea5451716f734e649950f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66382974113835538618976d3f43e6b3" id="r_a66382974113835538618976d3f43e6b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a66382974113835538618976d3f43e6b3">Union</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
-<tr class="separator:a66382974113835538618976d3f43e6b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb0d3bbcfe5bd331d6c73709b146b233" id="r_adb0d3bbcfe5bd331d6c73709b146b233"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#adb0d3bbcfe5bd331d6c73709b146b233">Intersection</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
-<tr class="separator:adb0d3bbcfe5bd331d6c73709b146b233"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a22eca6fa7555ef9a19ff08a56a22aa2a" id="r_a22eca6fa7555ef9a19ff08a56a22aa2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a22eca6fa7555ef9a19ff08a56a22aa2a">Difference</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
-<tr class="separator:a22eca6fa7555ef9a19ff08a56a22aa2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d85501c7c293a9aaa2beffa8a7f9c6f" id="r_a7d85501c7c293a9aaa2beffa8a7f9c6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a7d85501c7c293a9aaa2beffa8a7f9c6f">Equal</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
-<tr class="separator:a7d85501c7c293a9aaa2beffa8a7f9c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18bd3d664640de4df58f15e0bd8955ce" id="r_a18bd3d664640de4df58f15e0bd8955ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a18bd3d664640de4df58f15e0bd8955ce">Contained</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
-<tr class="separator:a18bd3d664640de4df58f15e0bd8955ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1520b4878aa655442babf702646abd7f" id="r_a1520b4878aa655442babf702646abd7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a1520b4878aa655442babf702646abd7f">Delete</a> (int i)</td></tr>
-<tr class="separator:a1520b4878aa655442babf702646abd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b6dd0098ec1c4f1291e003665eeeee8" id="r_a8b6dd0098ec1c4f1291e003665eeeee8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a8b6dd0098ec1c4f1291e003665eeeee8">Remove</a> (Item const &amp;i)</td></tr>
-<tr class="separator:a8b6dd0098ec1c4f1291e003665eeeee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae823bb295cf4d1da6783b9ef133e2209" id="r_ae823bb295cf4d1da6783b9ef133e2209"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ae823bb295cf4d1da6783b9ef133e2209">Union</a> (const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
+<tr class="separator:ae823bb295cf4d1da6783b9ef133e2209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e04072080158c780aef25ca1b4a3fbd" id="r_a8e04072080158c780aef25ca1b4a3fbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a8e04072080158c780aef25ca1b4a3fbd">Intersection</a> (const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
+<tr class="separator:a8e04072080158c780aef25ca1b4a3fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5744462d2c7efd035cf0ec50326f43be" id="r_a5744462d2c7efd035cf0ec50326f43be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a5744462d2c7efd035cf0ec50326f43be">Difference</a> (const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v)</td></tr>
+<tr class="separator:a5744462d2c7efd035cf0ec50326f43be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a192a9255de9926fd252d028871d16f8f" id="r_a192a9255de9926fd252d028871d16f8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a192a9255de9926fd252d028871d16f8f">Equal</a> (const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v) const</td></tr>
+<tr class="separator:a192a9255de9926fd252d028871d16f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a593e793d4d3a6b122b593906a18543" id="r_a9a593e793d4d3a6b122b593906a18543"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a9a593e793d4d3a6b122b593906a18543">Contained</a> (const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v) const</td></tr>
+<tr class="separator:a9a593e793d4d3a6b122b593906a18543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2fb6d977b1309f3e884369c5f43bba" id="r_aba2fb6d977b1309f3e884369c5f43bba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#aba2fb6d977b1309f3e884369c5f43bba">Delete</a> (int i)</td></tr>
+<tr class="separator:aba2fb6d977b1309f3e884369c5f43bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85673895d405c09b5b9155f78b67d71b" id="r_a85673895d405c09b5b9155f78b67d71b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a85673895d405c09b5b9155f78b67d71b">Remove</a> (Item const &amp;i)</td></tr>
+<tr class="separator:a85673895d405c09b5b9155f78b67d71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae72a4965eaa055d38204da07d6092feb" id="r_ae72a4965eaa055d38204da07d6092feb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ae72a4965eaa055d38204da07d6092feb">Find</a> (Item &amp;i, bool binary=false, int left=0, int right=-1)</td></tr>
 <tr class="separator:ae72a4965eaa055d38204da07d6092feb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a036a722efb403abd16c48d1d5dabdb" id="r_a4a036a722efb403abd16c48d1d5dabdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a4a036a722efb403abd16c48d1d5dabdb">Replace</a> (Item const &amp;iold, Item const &amp;inew)</td></tr>
-<tr class="separator:a4a036a722efb403abd16c48d1d5dabdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f765b4c8271e597e2005757ed52138" id="r_ab5f765b4c8271e597e2005757ed52138"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ab5f765b4c8271e597e2005757ed52138">Sort</a> (<a class="el" href="classTVector.html">TVector</a>&lt; int &gt; *idxvect=NULL)</td></tr>
-<tr class="separator:ab5f765b4c8271e597e2005757ed52138"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9e1e15b247dcbc2d9c4b2a08104700e" id="r_ab9e1e15b247dcbc2d9c4b2a08104700e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ab9e1e15b247dcbc2d9c4b2a08104700e">Sort</a> (int start, int end=-1)</td></tr>
+<tr class="memitem:a35217d9779ea1c7608dac2ffd677c30b" id="r_a35217d9779ea1c7608dac2ffd677c30b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a35217d9779ea1c7608dac2ffd677c30b">Replace</a> (Item const &amp;iold, Item const &amp;inew)</td></tr>
+<tr class="separator:a35217d9779ea1c7608dac2ffd677c30b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43223c9482431c8358a77038b65ab9f9" id="r_a43223c9482431c8358a77038b65ab9f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a43223c9482431c8358a77038b65ab9f9">Sort</a> (<a class="el" href="classTVector.html">TVector</a>&lt; int &gt; *idxvect=NULL)</td></tr>
+<tr class="separator:a43223c9482431c8358a77038b65ab9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9e1e15b247dcbc2d9c4b2a08104700e" id="r_ab9e1e15b247dcbc2d9c4b2a08104700e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ab9e1e15b247dcbc2d9c4b2a08104700e">Sort</a> (int start, int <a class="el" href="classTVector.html#a0321e02f28a957bf9ab65102a420e6fc">end</a>=-1)</td></tr>
 <tr class="separator:ab9e1e15b247dcbc2d9c4b2a08104700e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a747a4587a9dc84f7ac16331df242471f" id="r_a747a4587a9dc84f7ac16331df242471f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a747a4587a9dc84f7ac16331df242471f">RandomOrder</a> ()</td></tr>
-<tr class="separator:a747a4587a9dc84f7ac16331df242471f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9364da12ea22d6e7d3ef45f81c182d65" id="r_a9364da12ea22d6e7d3ef45f81c182d65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a9364da12ea22d6e7d3ef45f81c182d65">Invert</a> ()</td></tr>
-<tr class="separator:a9364da12ea22d6e7d3ef45f81c182d65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a760d08c7094ac5563f8d969f9d9e32a4" id="r_a760d08c7094ac5563f8d969f9d9e32a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a760d08c7094ac5563f8d969f9d9e32a4">Reset</a> (Item const &amp;i)</td></tr>
-<tr class="separator:a760d08c7094ac5563f8d969f9d9e32a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a528c30196e28424fcac4386b873a6e11" id="r_a528c30196e28424fcac4386b873a6e11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a528c30196e28424fcac4386b873a6e11">RandomOrder</a> ()</td></tr>
+<tr class="separator:a528c30196e28424fcac4386b873a6e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45b219aaec44aad6e6c37a806d80025" id="r_ab45b219aaec44aad6e6c37a806d80025"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ab45b219aaec44aad6e6c37a806d80025">Invert</a> ()</td></tr>
+<tr class="separator:ab45b219aaec44aad6e6c37a806d80025"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36bc3093e75aa4d710d7c9b9c1ca7bd" id="r_ab36bc3093e75aa4d710d7c9b9c1ca7bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd">Reset</a> (Item const &amp;i)</td></tr>
+<tr class="separator:ab36bc3093e75aa4d710d7c9b9c1ca7bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cbf0dc0b674640bda4e81e6d6be0f55" id="r_a8cbf0dc0b674640bda4e81e6d6be0f55"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a8cbf0dc0b674640bda4e81e6d6be0f55">Distance</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;v, int type=0)</td></tr>
 <tr class="separator:a8cbf0dc0b674640bda4e81e6d6be0f55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03b333ddccac1382d0e36558713edc1" id="r_ac03b333ddccac1382d0e36558713edc1"><td class="memItemLeft" align="right" valign="top">Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#ac03b333ddccac1382d0e36558713edc1">begin</a> () noexcept</td></tr>
+<tr class="separator:ac03b333ddccac1382d0e36558713edc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0321e02f28a957bf9ab65102a420e6fc" id="r_a0321e02f28a957bf9ab65102a420e6fc"><td class="memItemLeft" align="right" valign="top">Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a0321e02f28a957bf9ab65102a420e6fc">end</a> () noexcept</td></tr>
+<tr class="separator:a0321e02f28a957bf9ab65102a420e6fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c61335d31c86c63ca7868be655fd0d" id="r_a45c61335d31c86c63ca7868be655fd0d"><td class="memItemLeft" align="right" valign="top">const Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a45c61335d31c86c63ca7868be655fd0d">begin</a> () const noexcept</td></tr>
+<tr class="separator:a45c61335d31c86c63ca7868be655fd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7079cb7944ea88caf10b7574915858b" id="r_af7079cb7944ea88caf10b7574915858b"><td class="memItemLeft" align="right" valign="top">const Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#af7079cb7944ea88caf10b7574915858b">end</a> () const noexcept</td></tr>
+<tr class="separator:af7079cb7944ea88caf10b7574915858b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691ddcb0df46ab21a687356c6a0cd9a6" id="r_a691ddcb0df46ab21a687356c6a0cd9a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a691ddcb0df46ab21a687356c6a0cd9a6">operator+=</a> (const Item &amp;x)</td></tr>
+<tr class="separator:a691ddcb0df46ab21a687356c6a0cd9a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8178d74f03d81a76c1eebe8e9400d507" id="r_a8178d74f03d81a76c1eebe8e9400d507"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a8178d74f03d81a76c1eebe8e9400d507">operator-=</a> (const Item &amp;x)</td></tr>
+<tr class="separator:a8178d74f03d81a76c1eebe8e9400d507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a1443a09e75c00296460bc3678da000cb" id="r_a1443a09e75c00296460bc3678da000cb"><td class="memItemLeft" align="right" valign="top">static Item&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a1443a09e75c00296460bc3678da000cb">erro</a></td></tr>
 <tr class="separator:a1443a09e75c00296460bc3678da000cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a279d251a53063355259e29f34e884d69" id="r_a279d251a53063355259e29f34e884d69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a279d251a53063355259e29f34e884d69">operator+</a> (<a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; a, const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;b)</td></tr>
+<tr class="separator:a279d251a53063355259e29f34e884d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82bd872b28a29cc6050bcf74af9b9f48" id="r_a82bd872b28a29cc6050bcf74af9b9f48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a82bd872b28a29cc6050bcf74af9b9f48">operator==</a> (const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;a, const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;b)</td></tr>
+<tr class="separator:a82bd872b28a29cc6050bcf74af9b9f48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00d0bef89a8f0e527eb72e8c5ef30c7b" id="r_a00d0bef89a8f0e527eb72e8c5ef30c7b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b">operator!=</a> (const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;a, const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;b)</td></tr>
+<tr class="separator:a00d0bef89a8f0e527eb72e8c5ef30c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Item&gt;<br />
 class TVector&lt; Item &gt;</div>
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00026">26</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00020">20</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af101f2c096078779fb2569bb82303216" name="af101f2c096078779fb2569bb82303216"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af101f2c096078779fb2569bb82303216">&#9670;&#160;</a></span>TVector() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af101f2c096078779fb2569bb82303216">&#9670;&#160;</a></span>TVector() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,12 +240,12 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00049">49</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00040">40</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
 <a id="ae7c66dcf639a5f1c65ca4cfe4c7786f1" name="ae7c66dcf639a5f1c65ca4cfe4c7786f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7c66dcf639a5f1c65ca4cfe4c7786f1">&#9670;&#160;</a></span>TVector() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c66dcf639a5f1c65ca4cfe4c7786f1">&#9670;&#160;</a></span>TVector() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -242,12 +272,12 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00123">123</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00168">168</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
-<a id="a929164b69e7759a845af1854bbb9f49f" name="a929164b69e7759a845af1854bbb9f49f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a929164b69e7759a845af1854bbb9f49f">&#9670;&#160;</a></span>~TVector()</h2>
+<a id="ab163add94e71d5e42c68945bbaf54e2d" name="ab163add94e71d5e42c68945bbaf54e2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab163add94e71d5e42c68945bbaf54e2d">&#9670;&#160;</a></span>~TVector()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +288,7 @@ template&lt;class Item &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::~<a class="el" href="classTVector.html">TVector</a> </td>
+          <td class="memname">virtual <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::~<a class="el" href="classTVector.html">TVector</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -266,18 +296,17 @@ template&lt;class Item &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00136">136</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00042">42</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a21e44df6bc9513d711e2047abc5abf3d" name="a21e44df6bc9513d711e2047abc5abf3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21e44df6bc9513d711e2047abc5abf3d">&#9670;&#160;</a></span>Add()</h2>
+<a id="ad8781748d75345cbe2cf8cc7bd23520a" name="ad8781748d75345cbe2cf8cc7bd23520a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8781748d75345cbe2cf8cc7bd23520a">&#9670;&#160;</a></span>TVector() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +317,68 @@ template&lt;class Item &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Add </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;<a class="el" href="classTVector.html">::TVector</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00046">46</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6623d3565cd1addfbd181f1c57dab09" name="aa6623d3565cd1addfbd181f1c57dab09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6623d3565cd1addfbd181f1c57dab09">&#9670;&#160;</a></span>TVector() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;<a class="el" href="classTVector.html">::TVector</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00057">57</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa28afdd47b27c5e004fc75b86d6f66a6" name="aa28afdd47b27c5e004fc75b86d6f66a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa28afdd47b27c5e004fc75b86d6f66a6">&#9670;&#160;</a></span>Add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Add </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
@@ -302,7 +392,7 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00054">54</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00085">85</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -333,12 +423,80 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00360">360</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00383">383</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 --></div>
+</div>
 
 </div>
 </div>
-<a id="a18bd3d664640de4df58f15e0bd8955ce" name="a18bd3d664640de4df58f15e0bd8955ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18bd3d664640de4df58f15e0bd8955ce">&#9670;&#160;</a></span>Contained()</h2>
+<a id="a45c61335d31c86c63ca7868be655fd0d" name="a45c61335d31c86c63ca7868be655fd0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c61335d31c86c63ca7868be655fd0d">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Item * <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00138">138</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+
+</div>
+</div>
+<a id="ac03b333ddccac1382d0e36558713edc1" name="ac03b333ddccac1382d0e36558713edc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac03b333ddccac1382d0e36558713edc1">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Item * <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00136">136</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 4 --></div>
+</div>
+
+</div>
+</div>
+<a id="a9a593e793d4d3a6b122b593906a18543" name="a9a593e793d4d3a6b122b593906a18543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a593e793d4d3a6b122b593906a18543">&#9670;&#160;</a></span>Contained()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -348,24 +506,29 @@ template&lt;class Item &gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Contained </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00446">446</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00469">469</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 3 --></div>
+<div class="center"><!-- SVG 5 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 6 --></div>
 </div>
 
 </div>
 </div>
-<a id="a427bf294df0ee2bf96e30d278c08389f" name="a427bf294df0ee2bf96e30d278c08389f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a427bf294df0ee2bf96e30d278c08389f">&#9670;&#160;</a></span>Count() <span class="overload">[1/2]</span></h2>
+<a id="ac3c744d84543ca6e32859eb7dfccfeef" name="ac3c744d84543ca6e32859eb7dfccfeef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c744d84543ca6e32859eb7dfccfeef">&#9670;&#160;</a></span>Count() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,7 +542,7 @@ template&lt;class Item &gt; </div>
           <td class="memname">int <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Count </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -389,12 +552,12 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00070">70</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00106">106</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
-<a id="aeb1c1431c384b44d8f28ea38b10135ec" name="aeb1c1431c384b44d8f28ea38b10135ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb1c1431c384b44d8f28ea38b10135ec">&#9670;&#160;</a></span>Count() <span class="overload">[2/2]</span></h2>
+<a id="a0688f10df431a79feac470593b90b662" name="a0688f10df431a79feac470593b90b662"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0688f10df431a79feac470593b90b662">&#9670;&#160;</a></span>Count() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -405,7 +568,7 @@ template&lt;class Item &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Count </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Count </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -419,12 +582,12 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00071">71</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00107">107</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
-<a id="a1520b4878aa655442babf702646abd7f" name="a1520b4878aa655442babf702646abd7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1520b4878aa655442babf702646abd7f">&#9670;&#160;</a></span>Delete()</h2>
+<a id="aba2fb6d977b1309f3e884369c5f43bba" name="aba2fb6d977b1309f3e884369c5f43bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba2fb6d977b1309f3e884369c5f43bba">&#9670;&#160;</a></span>Delete()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -432,7 +595,7 @@ template&lt;class Item &gt; </div>
 template&lt;class Item &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Delete </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Delete </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
@@ -441,17 +604,17 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00326">326</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00371">371</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 4 --></div>
+<div class="center"><!-- SVG 7 --></div>
 </div>
 
 </div>
 </div>
-<a id="a22eca6fa7555ef9a19ff08a56a22aa2a" name="a22eca6fa7555ef9a19ff08a56a22aa2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a22eca6fa7555ef9a19ff08a56a22aa2a">&#9670;&#160;</a></span>Difference()</h2>
+<a id="a5744462d2c7efd035cf0ec50326f43be" name="a5744462d2c7efd035cf0ec50326f43be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5744462d2c7efd035cf0ec50326f43be">&#9670;&#160;</a></span>Difference()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -461,18 +624,23 @@ template&lt;class Item &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Difference </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00411">411</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00434">434</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 5 --></div>
+<div class="center"><!-- SVG 8 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 9 --></div>
 </div>
 
 </div>
@@ -505,17 +673,80 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00502">502</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00527">527</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 6 --></div>
+<div class="center"><!-- SVG 10 --></div>
 </div>
 
 </div>
 </div>
-<a id="a7d85501c7c293a9aaa2beffa8a7f9c6f" name="a7d85501c7c293a9aaa2beffa8a7f9c6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d85501c7c293a9aaa2beffa8a7f9c6f">&#9670;&#160;</a></span>Equal()</h2>
+<a id="af7079cb7944ea88caf10b7574915858b" name="af7079cb7944ea88caf10b7574915858b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7079cb7944ea88caf10b7574915858b">&#9670;&#160;</a></span>end() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Item * <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00139">139</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+
+</div>
+</div>
+<a id="a0321e02f28a957bf9ab65102a420e6fc" name="a0321e02f28a957bf9ab65102a420e6fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0321e02f28a957bf9ab65102a420e6fc">&#9670;&#160;</a></span>end() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Item * <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00137">137</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 11 --></div>
+</div>
+
+</div>
+</div>
+<a id="a192a9255de9926fd252d028871d16f8f" name="a192a9255de9926fd252d028871d16f8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a192a9255de9926fd252d028871d16f8f">&#9670;&#160;</a></span>Equal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -525,23 +756,23 @@ template&lt;class Item &gt; </div>
         <tr>
           <td class="memname">bool <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Equal </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00435">435</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00458">458</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 7 --></div>
+<div class="center"><!-- SVG 12 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 8 --></div>
+<div class="center"><!-- SVG 13 --></div>
 </div>
 
 </div>
@@ -586,11 +817,11 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00146">146</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00186">186</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 9 --></div>
+<div class="center"><!-- SVG 14 --></div>
 </div>
 
 </div>
@@ -620,17 +851,17 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00068">68</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00104">104</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 10 --></div>
+<div class="center"><!-- SVG 15 --></div>
 </div>
 
 </div>
 </div>
-<a id="a1f3acd8ef761fbd3f20eb7ffa9dcb137" name="a1f3acd8ef761fbd3f20eb7ffa9dcb137"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f3acd8ef761fbd3f20eb7ffa9dcb137">&#9670;&#160;</a></span>Insert() <span class="overload">[1/2]</span></h2>
+<a id="ab6eca1cb8949b750e7aa87bb8828f81d" name="ab6eca1cb8949b750e7aa87bb8828f81d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6eca1cb8949b750e7aa87bb8828f81d">&#9670;&#160;</a></span>Insert() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -638,7 +869,7 @@ Here is the caller graph for this function:</div>
 template&lt;class Item &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Insert </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Insert </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -657,7 +888,7 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00478">478</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00501">501</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
@@ -689,17 +920,17 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00459">459</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00482">482</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 11 --></div>
+<div class="center"><!-- SVG 16 --></div>
 </div>
 
 </div>
 </div>
-<a id="adb0d3bbcfe5bd331d6c73709b146b233" name="adb0d3bbcfe5bd331d6c73709b146b233"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb0d3bbcfe5bd331d6c73709b146b233">&#9670;&#160;</a></span>Intersection()</h2>
+<a id="a8e04072080158c780aef25ca1b4a3fbd" name="a8e04072080158c780aef25ca1b4a3fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e04072080158c780aef25ca1b4a3fbd">&#9670;&#160;</a></span>Intersection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,24 +940,29 @@ template&lt;class Item &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Intersection </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00396">396</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00419">419</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 12 --></div>
+<div class="center"><!-- SVG 17 --></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 18 --></div>
 </div>
 
 </div>
 </div>
-<a id="a9364da12ea22d6e7d3ef45f81c182d65" name="a9364da12ea22d6e7d3ef45f81c182d65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9364da12ea22d6e7d3ef45f81c182d65">&#9670;&#160;</a></span>Invert()</h2>
+<a id="ab45b219aaec44aad6e6c37a806d80025" name="ab45b219aaec44aad6e6c37a806d80025"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab45b219aaec44aad6e6c37a806d80025">&#9670;&#160;</a></span>Invert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -734,7 +970,7 @@ Here is the call graph for this function:</div>
 template&lt;class Item &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Invert </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Invert </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -742,7 +978,12 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00495">495</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00519">519</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 19 --></div>
+</div>
 
 </div>
 </div>
@@ -771,71 +1012,187 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00069">69</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00105">105</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 13 --></div>
+<div class="center"><!-- SVG 20 --></div>
 </div>
 
 </div>
 </div>
-<a id="a925d5f893626dcd6a1f6b2330c913354" name="a925d5f893626dcd6a1f6b2330c913354"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a925d5f893626dcd6a1f6b2330c913354">&#9670;&#160;</a></span>operator+=()</h2>
+<a id="a691ddcb0df46ab21a687356c6a0cd9a6" name="a691ddcb0df46ab21a687356c6a0cd9a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691ddcb0df46ab21a687356c6a0cd9a6">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::operator+= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramtype">const Item &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00348">348</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00142">142</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 14 --></div>
+<div class="center"><!-- SVG 21 --></div>
 </div>
 
 </div>
 </div>
-<a id="acc78b25f8f4b07861a4b6e2eb2acec9d" name="acc78b25f8f4b07861a4b6e2eb2acec9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc78b25f8f4b07861a4b6e2eb2acec9d">&#9670;&#160;</a></span>operator=()</h2>
+<a id="ad6d738b20bc3134076f236f0293d905a" name="ad6d738b20bc3134076f236f0293d905a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d738b20bc3134076f236f0293d905a">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::operator+= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
-          <td class="paramname"><em>v</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00337">337</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00076">76</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 15 --></div>
+<div class="center"><!-- SVG 22 --></div>
+</div>
+
+</div>
+</div>
+<a id="a8178d74f03d81a76c1eebe8e9400d507" name="a8178d74f03d81a76c1eebe8e9400d507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8178d74f03d81a76c1eebe8e9400d507">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const Item &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00144">144</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 23 --></div>
+</div>
+
+</div>
+</div>
+<a id="ac88eaf1c9f58e45f7d5f815257d5fba1" name="ac88eaf1c9f58e45f7d5f815257d5fba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88eaf1c9f58e45f7d5f815257d5fba1">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a> &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00065">65</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+
+</div>
+</div>
+<a id="a49a49351578ca543d6f46dbafdeb53a6" name="a49a49351578ca543d6f46dbafdeb53a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a49351578ca543d6f46dbafdeb53a6">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a> &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00048">48</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 24 --></div>
 </div>
 
 </div>
 </div>
 <a id="a372a42fd7c4a94fee43db36d6a339b33" name="a372a42fd7c4a94fee43db36d6a339b33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a372a42fd7c4a94fee43db36d6a339b33">&#9670;&#160;</a></span>operator[]()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a372a42fd7c4a94fee43db36d6a339b33">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -860,12 +1217,42 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00063">63</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00094">94</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 16 --></div>
+<div class="center"><!-- SVG 25 --></div>
 </div>
+
+</div>
+</div>
+<a id="a8ee199d50089fb967bcf418ab5b30723" name="a8ee199d50089fb967bcf418ab5b30723"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ee199d50089fb967bcf418ab5b30723">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Item &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00099">99</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
@@ -894,17 +1281,17 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00061">61</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00092">92</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 17 --></div>
+<div class="center"><!-- SVG 26 --></div>
 </div>
 
 </div>
 </div>
-<a id="ad9c1fb99a2d0d4f060c4746e6ce97d0f" name="ad9c1fb99a2d0d4f060c4746e6ce97d0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9c1fb99a2d0d4f060c4746e6ce97d0f">&#9670;&#160;</a></span>Push()</h2>
+<a id="afd25458f77157e6e8aa4ba0e6be3fb64" name="afd25458f77157e6e8aa4ba0e6be3fb64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd25458f77157e6e8aa4ba0e6be3fb64">&#9670;&#160;</a></span>Push()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -915,7 +1302,7 @@ template&lt;class Item &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Push </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Push </td>
           <td>(</td>
           <td class="paramtype">Item&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
@@ -929,16 +1316,16 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00059">59</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00090">90</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 18 --></div>
+<div class="center"><!-- SVG 27 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 19 --></div>
+<div class="center"><!-- SVG 28 --></div>
 </div>
 
 </div>
@@ -968,22 +1355,22 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00076">76</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00113">113</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 20 --></div>
+<div class="center"><!-- SVG 29 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 21 --></div>
+<div class="center"><!-- SVG 30 --></div>
 </div>
 
 </div>
 </div>
-<a id="a747a4587a9dc84f7ac16331df242471f" name="a747a4587a9dc84f7ac16331df242471f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a747a4587a9dc84f7ac16331df242471f">&#9670;&#160;</a></span>RandomOrder()</h2>
+<a id="a528c30196e28424fcac4386b873a6e11" name="a528c30196e28424fcac4386b873a6e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a528c30196e28424fcac4386b873a6e11">&#9670;&#160;</a></span>RandomOrder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -991,7 +1378,7 @@ Here is the caller graph for this function:</div>
 template&lt;class Item &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::RandomOrder </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::RandomOrder </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -999,22 +1386,22 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00289">289</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00330">330</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 22 --></div>
+<div class="center"><!-- SVG 31 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 23 --></div>
+<div class="center"><!-- SVG 32 --></div>
 </div>
 
 </div>
 </div>
-<a id="a8b6dd0098ec1c4f1291e003665eeeee8" name="a8b6dd0098ec1c4f1291e003665eeeee8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b6dd0098ec1c4f1291e003665eeeee8">&#9670;&#160;</a></span>Remove()</h2>
+<a id="a85673895d405c09b5b9155f78b67d71b" name="a85673895d405c09b5b9155f78b67d71b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85673895d405c09b5b9155f78b67d71b">&#9670;&#160;</a></span>Remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1022,7 +1409,7 @@ Here is the caller graph for this function:</div>
 template&lt;class Item &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Remove </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Remove </td>
           <td>(</td>
           <td class="paramtype">Item const &amp;&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
@@ -1031,17 +1418,17 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00297">297</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00339">339</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 24 --></div>
+<div class="center"><!-- SVG 33 --></div>
 </div>
 
 </div>
 </div>
-<a id="a4a036a722efb403abd16c48d1d5dabdb" name="a4a036a722efb403abd16c48d1d5dabdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a036a722efb403abd16c48d1d5dabdb">&#9670;&#160;</a></span>Replace()</h2>
+<a id="a35217d9779ea1c7608dac2ffd677c30b" name="a35217d9779ea1c7608dac2ffd677c30b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35217d9779ea1c7608dac2ffd677c30b">&#9670;&#160;</a></span>Replace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1049,7 +1436,7 @@ Here is the caller graph for this function:</div>
 template&lt;class Item &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Replace </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Replace </td>
           <td>(</td>
           <td class="paramtype">Item const &amp;&#160;</td>
           <td class="paramname"><em>iold</em>, </td>
@@ -1068,12 +1455,12 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00317">317</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00361">361</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
-<a id="a760d08c7094ac5563f8d969f9d9e32a4" name="a760d08c7094ac5563f8d969f9d9e32a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a760d08c7094ac5563f8d969f9d9e32a4">&#9670;&#160;</a></span>Reset()</h2>
+<a id="ab36bc3093e75aa4d710d7c9b9c1ca7bd" name="ab36bc3093e75aa4d710d7c9b9c1ca7bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36bc3093e75aa4d710d7c9b9c1ca7bd">&#9670;&#160;</a></span>Reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1081,7 +1468,7 @@ template&lt;class Item &gt; </div>
 template&lt;class Item &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Reset </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Reset </td>
           <td>(</td>
           <td class="paramtype">Item const &amp;&#160;</td>
           <td class="paramname"><em>i</em></td><td>)</td>
@@ -1090,11 +1477,11 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00309">309</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00352">352</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 25 --></div>
+<div class="center"><!-- SVG 34 --></div>
 </div>
 
 </div>
@@ -1127,12 +1514,12 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00189">189</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00230">230</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
-<a id="ab5f765b4c8271e597e2005757ed52138" name="ab5f765b4c8271e597e2005757ed52138"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5f765b4c8271e597e2005757ed52138">&#9670;&#160;</a></span>Sort() <span class="overload">[2/2]</span></h2>
+<a id="a43223c9482431c8358a77038b65ab9f9" name="a43223c9482431c8358a77038b65ab9f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43223c9482431c8358a77038b65ab9f9">&#9670;&#160;</a></span>Sort() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1140,7 +1527,7 @@ template&lt;class Item &gt; </div>
 template&lt;class Item &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Sort </td>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Sort </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; int &gt; *&#160;</td>
           <td class="paramname"><em>idxvect</em> = <code>NULL</code></td><td>)</td>
@@ -1149,22 +1536,22 @@ template&lt;class Item &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00172">172</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00212">212</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 26 --></div>
+<div class="center"><!-- SVG 35 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 27 --></div>
+<div class="center"><!-- SVG 36 --></div>
 </div>
 
 </div>
 </div>
-<a id="a66382974113835538618976d3f43e6b3" name="a66382974113835538618976d3f43e6b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66382974113835538618976d3f43e6b3">&#9670;&#160;</a></span>Union()</h2>
+<a id="ae823bb295cf4d1da6783b9ef133e2209" name="ae823bb295cf4d1da6783b9ef133e2209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae823bb295cf4d1da6783b9ef133e2209">&#9670;&#160;</a></span>Union()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1174,19 +1561,145 @@ template&lt;class Item &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp; <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;::Union </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
           <td class="paramname"><em>v</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00382">382</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00405">405</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 28 --></div>
+<div class="center"><!-- SVG 37 --></div>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 38 --></div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a00d0bef89a8f0e527eb72e8c5ef30c7b" name="a00d0bef89a8f0e527eb72e8c5ef30c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00d0bef89a8f0e527eb72e8c5ef30c7b">&#9670;&#160;</a></span>operator!=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00147">147</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+
+</div>
+</div>
+<a id="a279d251a53063355259e29f34e884d69" name="a279d251a53063355259e29f34e884d69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279d251a53063355259e29f34e884d69">&#9670;&#160;</a></span>operator+</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classTVector.html">TVector</a>&lt; Item &gt;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00145">145</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+
+</div>
+</div>
+<a id="a82bd872b28a29cc6050bcf74af9b9f48" name="a82bd872b28a29cc6050bcf74af9b9f48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82bd872b28a29cc6050bcf74af9b9f48">&#9670;&#160;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Item &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classTVector.html">TVector</a>&lt; Item &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00146">146</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>
@@ -1213,7 +1726,7 @@ template&lt;class Item &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00045">45</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TVector_8h_source.html#l00037">37</a> of file <a class="el" href="TVector_8h_source.html">TVector.h</a>.</p>
 
 </div>
 </div>

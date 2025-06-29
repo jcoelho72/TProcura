@@ -1,0 +1,801 @@
+\doxysection{CJogo\+Do\+Galo Class Reference}
+\hypertarget{classCJogoDoGalo}{}\label{classCJogoDoGalo}\index{CJogoDoGalo@{CJogoDoGalo}}
+
+
+{\ttfamily \#include $<$Jogo\+Do\+Galo.\+h$>$}
+
+
+
+Inheritance diagram for CJogo\+Do\+Galo\+:
+% FIG 0
+
+
+Collaboration diagram for CJogo\+Do\+Galo\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCJogoDoGalo_ae89ee9625b01e078ebcb0596f8edd989}{CJogo\+Do\+Galo}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classCJogoDoGalo_aa508dab7958912db59fa2d37def8d678}{\texorpdfstring{$\sim$}{\string~}\+CJogo\+Do\+Galo}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCJogoDoGalo_a0ffe5148e0dad4e325c1840d0569f508}{Duplicar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Cria um objecto que √© uma c√≥pia deste. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_ae674e5a8774f6c0eb2533c68342e185f}{Copiar}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a6855d470bfeb593cb354e5b6be4514ad}{Solucao\+Vazia}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb}{Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})
+\begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classCJogoDoGalo_a568b44d77521584132997a74bf557014}{Solucao\+Completa}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Verifica se o estado actual √© objectivo (√© uma solu√ß√£o completa) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a16f33d5fa4e812d39b3e643ce0abf3c3}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Mostra o estado no ecr„, para debug. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCJogoDoGalo_ad83a5e5ee76941ffabc95893828a768e}{Acao}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessor}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a113984a3801a93ebce61e0a700a413ab}{Teste\+Manual}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
+\begin{DoxyCompactList}\small\item\em Inicializa a interaÁ„o com o utilizador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a64044d4cc95bb6795f37c94e04f23d98}{Codifica}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\+\_\+t}} estado\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Codifica o estado para um vetor de inteiros de 64 bits. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classCJogoDoGalo_a3563839d5ffc94973acee1a1783e3527}{Heuristica}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Fun√ß√£o para calcular quanto falta para o final, o valor da heur√≠stica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTProcuraAdversa}{TProcura\+Adversa}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcuraAdversa_afe356b79fccb94b6fd2e416bc653fc17}{TProcura\+Adversa}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcuraAdversa_af519ba133593f289a454495ce72972fd}{\texorpdfstring{$\sim$}{\string~}\+TProcura\+Adversa}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraAdversa_aadc7ba5e844159862998d94e37a59bd1}{Reset\+Parametros}} ()
+\begin{DoxyCompactList}\small\item\em M√©todo para inicializar os par√¢metros (redefinir se forem adicionados par√¢metros espec√≠ficos) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_a4d8542bcb03f17da8aa3038384104f24}{Mini\+Max}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} nivel=4)
+\begin{DoxyCompactList}\small\item\em retorna o valor do estado actual, apos procura de profundidade nivel \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_adb3f857b1c8b3ee26682e335dc6ed601}{Mini\+Max\+Alfa\+Beta}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} nivel=4, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{alfa}}=-\/\mbox{\hyperlink{classTProcuraAdversa_acade7f564dd4f1a7ed993c3107e78d36}{infinito}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{beta}}=+\mbox{\hyperlink{classTProcuraAdversa_acade7f564dd4f1a7ed993c3107e78d36}{infinito}})
+\begin{DoxyCompactList}\small\item\em retorna o valor do estado actual, apos procura de profundidade nivel. Id√™ntico a Mini\+Max \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraAdversa_ae849ba1f915dc5e0875faa281ba4bdbb}{Teste\+Empirico}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}}=-\/1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{fim}}=-\/1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{mostrar\+Solucoes}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_aff6f48defaa10c14d160ac3990fd029b}{Executa\+Algoritmo}} ()
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_a75e148ba0a922339333940828366aed6}{Heuristica}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em chamar ap√≥s calcular a heur√≠stica (grava o valor, dependendo da parametriza√ß√£o) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraAdversa_aab0860dd7b025e71049e204adb25df25}{Existe\+Heuritica}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_a1869e0545c7fe2dd0d38f5f3c860c61f}{Maior\+Ameaca}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{q\+Min}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{q\+Max}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{max\+Ameaca}})
+\begin{DoxyCompactList}\small\item\em Utilit√°rio para calculo de uma heur√≠stica standard em jogos simples. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcuraConstrutiva_a13799910c11d9ab8585bec576becc8a5}{TProcura\+Construtiva}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcuraConstrutiva_aa19cbee6023bd0ff01c61c6d6db2e2ae}{\texorpdfstring{$\sim$}{\string~}\+TProcura\+Construtiva}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})
+\begin{DoxyCompactList}\small\item\em Fica com uma c√≥pia do objecto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a}{Solucao\+Vazia}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_gacb15562d8776f4d162001d385ebc13a0}{Reset\+Parametros}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa os parametros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__RedefinicaoSugerida_gacbc6e34f3a403d26d806f37b5cd739f6}{Acao}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessor}})
+\begin{DoxyCompactList}\small\item\em Retorna a a√ß√£o (movimento, passo, jogada, lance, etc.) que gerou o sucessor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{group__RedefinicaoOpcional_gacccf4fbb52126ba19bfc456c0c6d5214}{Acao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{acao}})
+\begin{DoxyCompactList}\small\item\em Executa a a√ß√£o (movimento, passo, jogada, lance, etc.) no estado atual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{group__RedefinicaoOpcional_ga1cf2a30e496ea869e85a9d60b4d469e9}{Distinto}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado)
+\begin{DoxyCompactList}\small\item\em Verifica se o estado actual distinto do fornecido. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoOpcional_ga1fdecf86b41c94a1656c17495f9b5b93}{Mostrar\+Solucao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Mostrar solu√ß√£o, seja um caminho ou o pr√≥prio estado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo}} ()
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura em largura primeiro, algoritmo cego. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura por custo uniforme, algoritmo cego. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{Profundidade\+Primeiro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} nivel=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura em profundidade primeiro, algoritmo cego. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} nivel=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura melhor primeiro, algoritmo informado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{AStar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura A\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}{IDAStar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{upper\+Bound}}=0)
+\begin{DoxyCompactList}\small\item\em Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{upper\+Bound}}=0)
+\begin{DoxyCompactList}\small\item\em Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{Limpar\+Estatisticas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_af2fbc46bcca99f48e42cdbc62eecc1fd}{Finalizar\+Corrida}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}{Lower\+Bound}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tudo}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a72975c17835fa9ce5783db63221b0637}{TProcura}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0}{\texorpdfstring{$\sim$}{\string~}\+TProcura}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{Inicializar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a475d33545a5f5f1bbebf1365d730e4f0}{Indicador}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a7952e187e1b0ae0ca52edab157223179}{Parar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_afcfe280771c67c80a69d422c476ae090}{Teste\+Empirico}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{mostrar\+Solucoes}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
+\begin{DoxyCompactList}\small\item\em Executa testes empÌricos, em todas as configuraÁıes guardadas, nas inst‚ncias selecionadas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{main}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argc}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argv}}\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a972ec246214b0dbc110b054a43518f55}{Codificar\+Solucao}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_afa3015ac104b603930d3f60a34c09fff}{Tempo\+Excedido}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a73463e33b889e6053ee32220e0514a2c}{Iteracoes\+Excedido}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_aea8aa78e35d28d0beb438e24fc7ee086}{Parametro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} $>$ \mbox{\hyperlink{classCJogoDoGalo_a4a45abc068aac13338f18d18c8bd235d}{tabuleiro}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classTProcuraAdversa}{TProcura\+Adversa}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraAdversa_a72aaad862bedca505689513bec233c2a}{minimizar}}
+\begin{DoxyCompactList}\small\item\em o jogador actual deve minimizar o custo (ou maximizar caso tenha o valor falso) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisEstado_ga70de69abaeaa64262d4bd042ef01e62c}{pai}}
+\begin{DoxyCompactList}\small\item\em Ponteiro para o estado pai, na √°rvore de procura. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}}
+\begin{DoxyCompactList}\small\item\em Custo total acumulado desde o estado inicial. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}
+\begin{DoxyCompactList}\small\item\em Estimativa para o custo at√© um estado objetivo, se dispon√≠vel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a976f17b2b53ce9ffc7d1795d291262df}{Libertar\+Vector}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vector}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{excepto}}=-\/1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{maior\+Que}}=-\/1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{Novo\+Valor}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{prompt}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTProcura_a17fa21564876d313f79b4376ce7366a1}{Novo\+Texto}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{prompt}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcuraAdversa}{TProcura\+Adversa}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_acade7f564dd4f1a7ed993c3107e78d36}{infinito}} = 1000
+\begin{DoxyCompactList}\small\item\em valor de infinito (vitoria/derrota), omissao 1000 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraAdversa_a68b3eb30c6967f5694b4d1f9f50c434c}{completo}}
+\begin{DoxyCompactList}\small\item\em controlo para indicar se a procura foi realizada de forma completa (c.\+c. foi cortada) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_ad3c1d255519bd00ea9adc042720b17cf}{nivel\+OK}} = 0
+\begin{DoxyCompactList}\small\item\em profundidade m√°xima no m√©todo iterativo \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_ga6dad497973fb467e2b2224f134b90443}{caminho}}
+\begin{DoxyCompactList}\small\item\em Solu√ß√£o retornada pela procura (os estados devem ser libertados). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisGlobais_gadb0d41114016ec069543b3494b0e0196}{solucao}} = \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}
+\begin{DoxyCompactList}\small\item\em Estado objetivo encontrado, retornado pela procura (deve ser libertado). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga1af840b6ec9c04ce7d4c8849346441bd}{lower\+Bound}} = 0
+\begin{DoxyCompactList}\small\item\em Valor m√≠nimo que a solu√ß√£o pode apresentar, obtido pela procura. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanho\+Codificado}} = \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}
+\begin{DoxyCompactList}\small\item\em N√∫mero de inteiros de 64 bits utilizados para codificar um objeto (‚â§ OBJETO\+\_\+\+HASHTABLE). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{unsigned}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}{espacos\+Ramo}} = 2
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}} = \{ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}},1,1,1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}} \}
+\begin{DoxyCompactList}\small\item\em ID da inst‚ncia atual, a ser utilizado em Solucao\+Vazia(). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \mbox{\hyperlink{classTProcura_a627ab6da33e9127360dd2f4fba836916}{ficheiro\+Instancia}} \mbox{[}256\mbox{]} = "{}instancia\+\_\+"{}
+\begin{DoxyCompactList}\small\item\em nome do ficheiro de uma inst‚ncia -\/ editado pelo utilizador (utilizar como prefixo, concatenando com ID da inst‚ncia) pode ser utilizado para gravar a inst„ncia num novo formato, colocando um indicador ativo que È chamado apÛs a execuÁ„o (pode gravar a soluÁ„o para ficheiro tambÈm, mas essa È mais facilmente gravada em CVS codificada em inteiros, onde fica associada ‡ configuraÁ„o utilizada para a gerar) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}
+\begin{DoxyCompactList}\small\item\em Par‚metros a serem utilizados na configuraÁ„o atual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_ad4fc32e65c5226aa62a959b4402a857c}{TIndicador}} $>$ \mbox{\hyperlink{classTProcura_a9b75c5c41b6e1b9e3a3390d9fd836417}{indicador}}
+\begin{DoxyCompactList}\small\item\em Indicadores que podem ser calculados apÛs a execuÁ„o, quer com informaÁ„o da inst„ncia, quer com resultado da ˙ltima corrida. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_ac4344a896fc02c79e34d5fafaf595d9f}{ind\+Ativo}}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ $>$ \mbox{\hyperlink{classTProcura_a1fc535c07c89cbd74793b7d64ca82912}{configuracoes}}
+\begin{DoxyCompactList}\small\item\em Conjuntos de configuraÁıes para teste empÌrico. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}} = 0
+\begin{DoxyCompactList}\small\item\em Resultado retornado pelo algoritmo na ˙ltima execuÁ„o. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a5a71869efc40783b068cdd25145925f6}{tempo}} = 0
+\begin{DoxyCompactList}\small\item\em tempo consumido na ˙ltima execuÁ„o. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a5cb8dad7e3cdda780c22a3893f3d5ad9}{iteracoes}} = 0
+\begin{DoxyCompactList}\small\item\em N˙mero total de iteraÁıes realizadas na ˙ltima execuÁ„o. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_aad1d62f5db16f77742bb291b6ef342f6}{instante\+Final}} = 0
+\begin{DoxyCompactList}\small\item\em Instante final (deadline) da corrida atual. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoria\+Esgotada}} = \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}}
+\begin{DoxyCompactList}\small\item\em Flag indicando problemas de memÛria esgotada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcuraAdversa}{TProcura\+Adversa}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_a01ed7d4718647eb52723ecffaf68aa4b}{No\+Folha}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} nivel)
+\begin{DoxyCompactList}\small\item\em fim da procura, por corte de n√≠vel (ou n√£o haver sucessores), retornar heur√≠stica \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraAdversa_a816a0a735f6f4379338a330e0ff19fa5}{Corte\+Alfa\+Beta}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} valor, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{alfa}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{beta}})
+\begin{DoxyCompactList}\small\item\em verifica se h√° um corte alfa/beta, atualizando alfa e beta \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_a7c4153974c32753901326271fee90197}{Metodo\+Iterativo}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{alfa\+Beta}})
+\begin{DoxyCompactList}\small\item\em itera√ß√£o, aumentando o n√≠vel progressivamente \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraAdversa_a369a3b5182150b22fd6deb0d46916d49}{Ordenar\+Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&id, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} nivel)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraAdversa_ab13f514d86e599dc15a682e6a6199987}{Substituir\+HT}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} indice)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraAdversa_ad01434aae577cafdb636f82ba2815215}{Existe\+HT}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraAdversa_a9c95c246b28345f0d515a9083ffd646d}{Valor\+Estado}} (\mbox{\hyperlink{TProcuraAdversa_8h_a8d5dcc924e099ce86a559b21312a7f0c}{TValor\+Estado}} \&valor, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{operacao}})
+\begin{DoxyCompactList}\small\item\em ler ou gravar o melhor valor conhecido \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraAdversa_ac419ad4d242b6789e5ed03431f0cbc4a}{Utilizavel}} (\mbox{\hyperlink{TProcuraAdversa_8h_a8d5dcc924e099ce86a559b21312a7f0c}{TValor\+Estado}} \&valor, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} nivel, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{alfa}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{beta}})
+\begin{DoxyCompactList}\small\item\em ver se o valor obtido √© utiliz√°vel no contexto atual \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ad02feccb0f347d9a475ed1b883cc12aa}{Debug\+Expansao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessor}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{duplo}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a042ab47715ba45d53a86413415ea95fd}{Debug\+Corte}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}}=-\/1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{duplo}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a3cb063790a46d8fac87044c7c68c53b3}{Debug\+Solucao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{continuar}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a6962c0cf7350a211ae74b00768d9c232}{Debug\+Chamada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a8a25d942dd9c34c27ad92e3e36177f2f}{Debug\+Passo}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a08aa14ddc895426b2ce3df4d763cbbd7}{Debug\+Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ae464aeb16628493409e4d88cede9a9e7}{Debug\+Iteracao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{iteracao}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a3c5b2743566153ca9d45e875106e548b}{Debug\+Estado}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id=-\/1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga70de69abaeaa64262d4bd042ef01e62c}{pai}}=-\/1)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a1784cd5198a6cb0ae7ad763af9982120}{Debug\+Ramo}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{folha}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a8e7879e0ac12522e0eedf3d3d365e51c}{Objetivo\+Alcancado}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{item}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{lista}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a18331ff4fccaf78df8bd3656357e9e75}{Objetivo\+Alcancado}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} estado, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} completa=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a2f648df694a20e7fcb688c9979f763fd}{Solucao\+Encontrada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{continuar}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ab3d3ef92421595428a27deef2c3bb668}{Calcula\+Caminho}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} completa=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_aec0a667a7fda1ebe565ba13d6b02805a}{Verifica\+Limites}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{por\+Processar}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a640e74c9b6cd340761db671438ad679e}{Calcular\+Heuristicas}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \texorpdfstring{$\ast$}{*}id=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sort\+LB}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937}{Solucao\+Parcial}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a9fda19c96c9cd874fa45578bcc30f607}{Explorar\+Sucessores}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9}{Mostrar\+Caminho}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{unsigned}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{Hash}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a8b500987c88352d27a68200454cc3c8c}{Limpar\+HT}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraConstrutiva_ad7857beab462b4b09a37e70cc9c787ac}{Existe\+HT}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_acd7a254a5057023a21b9909053c36f24}{Inserir\+Registo}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultados}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} inst, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{conf}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_ab6d1ce659d922b9d30550220e3028129}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a2a99102cba3846baa3597b4ab462d620}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} valor)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{Mostra\+Parametros}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}=1, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{id\+Parametros}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a99f5cf1c59ce543a58d802a1ac907299}{Mostra\+Indicadores}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a3332047124784be2fc7af575a5f7f8b5}{Mostrar\+Configuracoes}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0}{detalhe}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} atual=-\/1)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a8f5d1ccb82a33db762fbb8400eeacf39}{Editar\+Indicadores}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ab044dca559e3c04e5cec68647af2c7c4}{Editar\+Parametros}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ae559b54c7ff363280df914fec988794f}{Editar\+Configuracoes}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a8efec796677c8e25ad8bdb56a1082e2d}{Mostra\+Relatorio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultados}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ultimo}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ac1d9f06b12765a02290050af15463186}{Configuracao\+Atual}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{parametros}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{operacao}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a62cd10354f0fbe5ccc45bbd0c0d7f121}{Nova\+Configuracao}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{parametros}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_abd92370cf06d23e878f9426aed34e39c}{Melhor\+Resultado}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{base}}, \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{alternativa}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ac1beda871dff742fdb49ae150cda24e3}{Calcula\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultados}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a325f6cfdb9d0ee31cdecc72e738b144a}{Mostrar\+Torneio}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{torneio}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{jogo}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a23c3fcc499f1a65d6ef973eb5fc2c094}{Barra\+Torneio}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{nomes}})
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \mbox{\hyperlink{classTProcura_a5482b1df9bee3bc7da96ff11ee905c0f}{Extrair\+Configuracao}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultados}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} configuracao)
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ae9f0b921a171a110e6a6fcc209332635}{Solicita\+Instancia}} ()
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a6941386b767d6f0723c6eb9d27241d69}{Solicita\+Instancias}} ()
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_abda2c4f1066721e5c0e06c5ea22dce36}{Relatorio\+CSV}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultados}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{FILE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{f}})
+\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a8fc25ea3a65a1aef8e9064281c900ba5}{Extrai\+Lista}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{str}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a662c7ff8ba62bb5745a7ee0ec92eea13}{Inserir\+Configuracoes}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{str}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{base}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a50d54c6e69c4659017373d4c25ff1207}{Inserir\+Configuracoes}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{base}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{produto}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{valores}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_adc4d653fe0feb6033083adc5d19e7fb5}{Ajuda\+Utilizacao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{programa}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} min=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{INT\+\_\+\+MIN}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} max=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{INT\+\_\+\+MAX}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classTProcuraAdversa}{TProcura\+Adversa}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_a04c82c175bea1a911cdb5077d2ec1c02}{indice\+HT}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classTProcuraAdversa}{TProcura\+Adversa}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{TProcuraAdversa_8h_a8d5dcc924e099ce86a559b21312a7f0c}{TValor\+Estado}} \mbox{\hyperlink{classTProcuraAdversa_adf778e7e00379e60276305c569b4cbc4}{valor\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\+\_\+\+HASHTABLE}}\mbox{]}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraAdversa_abfa149e4beec8447ec67c05adeb6fedc}{reutilizado\+Avaliacao}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\+\_\+t}} \mbox{\hyperlink{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}{elementos\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\+\_\+\+HASHTABLE}}\mbox{]}\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}{custo\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_a8895513761bdfeec201d14cb01ed86f0}{TAMANHO\+\_\+\+HASHTABLE}}\mbox{]}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\+\_\+t}} \mbox{\hyperlink{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}{estado\+Cod\+HT}} \mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_af92e08783d2d2f6acc4c2f09e6354828}{colocados\+HT}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8h_source_l00014}{14}} of file \mbox{\hyperlink{JogoDoGalo_8h_source}{Jogo\+Do\+Galo.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCJogoDoGalo_ae89ee9625b01e078ebcb0596f8edd989}\label{classCJogoDoGalo_ae89ee9625b01e078ebcb0596f8edd989} 
+\index{CJogoDoGalo@{CJogoDoGalo}!CJogoDoGalo@{CJogoDoGalo}}
+\index{CJogoDoGalo@{CJogoDoGalo}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{CJogoDoGalo()}{CJogoDoGalo()}}
+{\footnotesize\ttfamily CJogo\+Do\+Galo\+::\+CJogo\+Do\+Galo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\Hypertarget{classCJogoDoGalo_aa508dab7958912db59fa2d37def8d678}\label{classCJogoDoGalo_aa508dab7958912db59fa2d37def8d678} 
+\index{CJogoDoGalo@{CJogoDoGalo}!````~CJogoDoGalo@{\texorpdfstring{$\sim$}{\string~}CJogoDoGalo}}
+\index{````~CJogoDoGalo@{\texorpdfstring{$\sim$}{\string~}CJogoDoGalo}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CJogoDoGalo()}{\string~CJogoDoGalo()}}
+{\footnotesize\ttfamily CJogo\+Do\+Galo\+::\texorpdfstring{$\sim$}{\string~}\+CJogo\+Do\+Galo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCJogoDoGalo_ad83a5e5ee76941ffabc95893828a768e}\label{classCJogoDoGalo_ad83a5e5ee76941ffabc95893828a768e} 
+\index{CJogoDoGalo@{CJogoDoGalo}!Acao@{Acao}}
+\index{Acao@{Acao}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{Acao()}{Acao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} CJogo\+Do\+Galo\+::\+Acao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}}]{sucessor }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+\Hypertarget{classCJogoDoGalo_a64044d4cc95bb6795f37c94e04f23d98}\label{classCJogoDoGalo_a64044d4cc95bb6795f37c94e04f23d98} 
+\index{CJogoDoGalo@{CJogoDoGalo}!Codifica@{Codifica}}
+\index{Codifica@{Codifica}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{Codifica()}{Codifica()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Codifica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\+\_\+t}}}]{estado\mbox{[}\+OBJETO\+\_\+\+HASHTABLE\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Codifica o estado para um vetor de inteiros de 64 bits. 
+
+\begin{DoxyNote}{Note}
+Redefini√ß√£o opcional. Necess√°rio para identifica√ß√£o de estados repetidos por hashtable.
+\end{DoxyNote}
+As vari√°veis de estado devem ser compactadas no vetor de inteiros de 64 bits. Todos os estados codificados t√™m de ser distintos de 0. Estados distintos, t√™m de ficar com codifica√ß√µes distintas.
+
+Em diversos problemas, um mesmo estado pode ter m√∫ltiplas representa√ß√µes equivalentes. Por exemplo, se um conjunto de inteiros for um estado, este pode ser representado em vetor. No entanto a ordem √© irrelevante, dado que √© um conjunto. Assim n√£o faz sentido guardar v√°rios estados que sejam representa√ß√µes do mesmo estado. H√° que normalizar o estado antes de o guardar, de modo a que seja dado como estado repetido, se uma das duas formas j√° tiver sido gerada. O exemplo do conjunto de inteiros, a normaliza√ß√£o pode ser a ordena√ß√£o do vetor, constituindo assim um estado √∫nico entre todas as formas que o conjunto pode ser representado em vetor. Problemas de tabuleiro, h√° simetrias que podem gerar v√°rias vers√µes da mesma posi√ß√£o.
+
+\begin{DoxyNote}{Note}
+Se a verifica√ß√£o de estados repetidos for baseada em hashtables, a superclasse chama este m√©todo dentro de {\ttfamily \doxylink{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb}{Sucessores()}}. 
+
+Para otimizar o consumo de mem√≥ria, s√£o utilizadas hashtables com perdas. Se necess√°rio pode alterar o tamanho da hashtable editando a macro TAMANHO\+\_\+\+HASHTABLE 
+
+a vari√°vel tamanho\+Codificado tem de ter o n√∫mero de vari√°veis de 64 bits utilizadas, garantindo que o vetor estado\mbox{[}\mbox{]} n√£o √© acedido na posi√ß√£o tamanho\+Codificado ou superior.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCJogoDoGalo_a6855d470bfeb593cb354e5b6be4514ad}{Solucao\+Vazia()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Codifica(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\_t}}\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}])}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{Vector<int>}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vetor}};\ \textcolor{comment}{//\ assumindo\ neste\ exemplo\ que\ o\ estado\ √©\ um\ vetor\ de\ inteiros\ pequenos}}
+\DoxyCodeLine{\ \ \ \ Normalizar(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vetor}});\ \textcolor{comment}{//\ o\ vetor\ tem\ v√°rias\ formas,\ e\ agora\ √©\ normalizado\ por\ uma\ fun√ß√£o\ de\ CSubProblema}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{TProcuraConstrutiva::Codifica}}(estado);\ \textcolor{comment}{//\ chamar\ a\ superclasse\ ap√≥s\ normalizar\ o\ estado}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ codificar\ n√∫meros\ de\ 4\ bits,\ assumindo\ que\ os\ inteiros\ pequenos\ cabem\ em\ 4\ bits}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ =\ 0,\ index\ =\ 0;\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ <\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vetor}}.Count();\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}++,\ index\ +=\ 4)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ estado[index\ >>\ 6]\ |=\ (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\_t}})\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vetor}}[\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}]\ <<\ (index\ \&\ 63);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 3
+\Hypertarget{classCJogoDoGalo_ae674e5a8774f6c0eb2533c68342e185f}\label{classCJogoDoGalo_ae674e5a8774f6c0eb2533c68342e185f} 
+\index{CJogoDoGalo@{CJogoDoGalo}!Copiar@{Copiar}}
+\index{Copiar@{Copiar}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{Copiar()}{Copiar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Copiar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}}]{objecto }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\Hypertarget{classCJogoDoGalo_a16f33d5fa4e812d39b3e643ce0abf3c3}\label{classCJogoDoGalo_a16f33d5fa4e812d39b3e643ce0abf3c3} 
+\index{CJogoDoGalo@{CJogoDoGalo}!Debug@{Debug}}
+\index{Debug@{Debug}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{Debug()}{Debug()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Mostra o estado no ecr„, para debug. 
+
+\begin{DoxyNote}{Note}
+RedefiniÁ„o opcional. Necess·rio para visualizar a procura, e explorar o espaÁo manualmente.
+\end{DoxyNote}
+Esta funÁ„o dever· mostrar claramente o estado atual, em texto mas da forma mais confort·vel possÌvel. O formato texto destina-\/se principalmente a quem implementa o problema, e n„o utilizadores finais. … importante poder explorar o espaÁo de estados, para verificar a correta implementaÁ„o dos sucessores, como tambÈm possa ver a ·rvore de procura dos algoritmos, para ·rvores pequenas, e assim detectar bugs.
+
+\begin{DoxyNote}{Note}
+Antes de cada linha, chame a funÁ„o \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}. Dependendo do contexto, {\ttfamily \doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}} pode imprimir caracteres que representam os ramos da ·rvore de procura, criando uma visualizaÁ„o textual que simula a estrutura da procura.
+
+A exibiÁ„o do estado pode variar conforme o nÌvel de debug definido em {\ttfamily parametro\mbox{[}nivel\+Debug\mbox{]}.valor}. Um nÌvel menor pode mostrar informaÁıes mais sucintas, enquanto um nÌvel maior pode detalhar todas as vari·veis do estado.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ È apenas\ um\ n˙mero}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ <=\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524}{atividade}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}-\/-\/<([\%d])>-\/-\/"{}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}});\ \textcolor{comment}{//\ vers„o compacta\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ vers„o mais\ elaborada\ do\ estado}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{TProcura}}.
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 5
+\Hypertarget{classCJogoDoGalo_a0ffe5148e0dad4e325c1840d0569f508}\label{classCJogoDoGalo_a0ffe5148e0dad4e325c1840d0569f508} 
+\index{CJogoDoGalo@{CJogoDoGalo}!Duplicar@{Duplicar}}
+\index{Duplicar@{Duplicar}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{Duplicar()}{Duplicar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*} CJogo\+Do\+Galo\+::\+Duplicar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cria um objecto que √© uma c√≥pia deste. 
+
+\begin{DoxyNote}{Note}
+Obrigat√≥ria a redefini√ß√£o.
+\end{DoxyNote}
+Este m√©todo tem de ser criado na subclasse, de modo a criar uma c√≥pia do mesmo tipo. O c√≥digo da subclasse geralmente segue um padr√£o e pode utilizar o modelo abaixo, aproveitando o m√©todo \doxylink{classCJogoDoGalo_ae674e5a8774f6c0eb2533c68342e185f}{Copiar()}. √â especialmente √∫til na fun√ß√£o de \doxylink{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb}{Sucessores()}, na gera√ß√£o de um novo estado.
+
+\begin{DoxyReturn}{Returns}
+Retorna o novo estado, acabado de gerar.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Caso exista falha de mem√≥ria, colocar a vari√°vel memoria\+Esgotada a true, para tentativa de terminar a execu√ß√£o de forma graciosa.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classTProcuraConstrutiva}{TNo}}\ CSubClasse::Duplicar(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{CSubClasse}}*\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clone}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{CSubClasse}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clone}}!=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clone}}-\/>\mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoriaEsgotada}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clone}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
+\Hypertarget{classCJogoDoGalo_a3563839d5ffc94973acee1a1783e3527}\label{classCJogoDoGalo_a3563839d5ffc94973acee1a1783e3527} 
+\index{CJogoDoGalo@{CJogoDoGalo}!Heuristica@{Heuristica}}
+\index{Heuristica@{Heuristica}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{Heuristica()}{Heuristica()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} CJogo\+Do\+Galo\+::\+Heuristica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Fun√ß√£o para calcular quanto falta para o final, o valor da heur√≠stica. 
+
+\begin{DoxyNote}{Note}
+Redefini√ß√£o opcional. Necess√°rio para utilizar os algoritmos informados. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Retorna a melhor estimativa, sem ultrapassar a real, do custo do estado atual at√© ao objetivo.
+\end{DoxyReturn}
+A fun√ß√£o heur√≠stica √© cr√≠tica para utilizar os algoritmos informados. Deve devolver uma estimativa sem ultrapassar o custo real, do custo que falta para atingir o estado objetivo mais pr√≥ximo do estado atual. Se a estimativa n√£o ultrapassar o custo real, a heur√≠stica ser√° {\bfseries{admiss√≠vel}}. No entanto, em alguns casos, heur√≠sticas {\bfseries{n√£o admiss√≠veis}} podem ser utilizadas, podendo acelerar a procura, mesmo que ocasionalmente levem a resultados sub√≥timos.
+
+No final, chame a fun√ß√£o heur√≠stica da superclasse para atualizar as estat√≠sticas e o n√∫mero de avalia√ß√µes. Se estiver configurado, esse processo tamb√©m pode introduzir ru√≠do na heur√≠stica, o que pode impactar certos algoritmos de procura.
+
+Esta fun√ß√£o pretende-\/se r√°pida, e o mais pr√≥xima poss√≠vel do valor real, sem ultrapassar.
+
+\begin{DoxyNote}{Note}
+Num problema, existindo alternativas, umas mais r√°pidas menos precisas, outras mais lentas mais precisas, √© aconselhada a cria√ß√£o de um ou mais parametros para que a heur√≠stica possa ser calculada de acordo com o parametro definido. Em fase de testes logo se averigua qual a vers√£o que adiciona mais vantagem √† procura.
+
+Uma heur√≠stica pode resultar de um relaxamento do problema. Verifique se o problema sem uma das restri√ß√µes (fazendo batota), se consegue resolver mais facilmente. Utilize como heur√≠stica o custo de resolver o problema sem essa restri√ß√£o.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Heuristica(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}\ =\ 0;\ \textcolor{comment}{//\ ponto\ de\ partida,\ h√°\ 0\ de\ custo}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ utilizar\ neste\ exemplo\ a\ dist√¢ncia\ at√©\ 1000,\ local\ onde\ estar√°\ o\ objetivo}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}\ =\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{abs}}(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}\ -\/\ 1000);\ \ }
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ a\ fun√ß√£o\ heur√≠stica\ da\ superclass}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__RedefinicaoSugerida_ga0e8bb1bd33683545dc4f8f6329548b40}{TProcuraConstrutiva::Heuristica}}();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_ga0e8bb1bd33683545dc4f8f6329548b40}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 8
+\Hypertarget{classCJogoDoGalo_a568b44d77521584132997a74bf557014}\label{classCJogoDoGalo_a568b44d77521584132997a74bf557014} 
+\index{CJogoDoGalo@{CJogoDoGalo}!SolucaoCompleta@{SolucaoCompleta}}
+\index{SolucaoCompleta@{SolucaoCompleta}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{SolucaoCompleta()}{SolucaoCompleta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} CJogo\+Do\+Galo\+::\+Solucao\+Completa (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Verifica se o estado actual √© objectivo (√© uma solu√ß√£o completa) 
+
+\begin{DoxyNote}{Note}
+Obrigat√≥ria a redefini√ß√£o. 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Retorna verdadeiro se √© um estado objetivo, ou falso caso contr√°rio.
+\end{DoxyReturn}
+Este m√©todo verifica se o estado atual √© objetivo, e portanto temos uma solu√ß√£o completa. A complexidade da verifica√ß√£o depende do problema, podendo ser um teste simples ou envolver m√∫ltiplas condi√ß√µes.
+
+\begin{DoxyNote}{Note}
+Este m√©todo ser√° chamado pelos algoritmos de procura no momento adequado, {\bfseries{n√£o necessariamente na gera√ß√£o de sucessores}}. Por isso, deve ser implementado separadamente de {\ttfamily \doxylink{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb}{Sucessores()}}, garantindo que a avalia√ß√£o do objetivo seja feita apenas quando necess√°rio.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}\ CSubProblema::SolucaoCompleta(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ pode\ ser\ um\ simples\ teste,\ ou\ algo\ mais\ complexo,\ dependente\ do\ problema}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ verificar\ se\ as\ condi√ß√µes\ pretendidas\ est√£o\ satisfeitas}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}\ >\ 1000;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\Hypertarget{classCJogoDoGalo_a6855d470bfeb593cb354e5b6be4514ad}\label{classCJogoDoGalo_a6855d470bfeb593cb354e5b6be4514ad} 
+\index{CJogoDoGalo@{CJogoDoGalo}!SolucaoVazia@{SolucaoVazia}}
+\index{SolucaoVazia@{SolucaoVazia}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 10
+\Hypertarget{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb}\label{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb} 
+\index{CJogoDoGalo@{CJogoDoGalo}!Sucessores@{Sucessores}}
+\index{Sucessores@{Sucessores}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{Sucessores()}{Sucessores()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Sucessores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&}]{sucessores }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Coloca em sucessores a lista de estados sucessores. 
+
+\begin{DoxyNote}{Note}
+Obrigat√≥ria a redefini√ß√£o. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em sucessores} & -\/ vari√°vel com a lista de estados sucessores a retornar.\\
+\hline
+\end{DoxyParams}
+Este √© o m√©todo principal, que define a √°rvore de procura. Para o estado atual, duplicar o estado por cada a√ß√£o / estado que seja sucessor. Alterar as vari√°veis de estado para corresponderem √† a√ß√£o efetuada no estado sucessor. Caso o custo n√£o seja unit√°rio, definir o custo da a√ß√£o. Chamar o m√©todo da superclasse no final, j√° que ir√° atualizar estat√≠sticas, bem como eliminar estados que sejam repetidos, dependendo da parametriza√ß√£o.
+
+\begin{DoxyNote}{Note}
+O custo da a√ß√£o deve ser definido aqui, mas ao chamar \doxylink{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb}{Sucessores()} da superclasse, ele ser√° acumulado para representar o custo total desde o estado inicial. 
+
+O m√©todo \doxylink{classCJogoDoGalo_a0ffe5148e0dad4e325c1840d0569f508}{Duplicar()} j√° coloca as vari√°veis de estado iguais ao estado atual. Apenas modifique as vari√°veis de estado que precisam refletir a a√ß√£o i. 
+
+Caso seja feita uma verifica√ß√£o e a a√ß√£o afinal n√£o √© v√°lida, apagar o estado. 
+
+N√£o √© preciso considerar estados repetidos, a verifica√ß√£o ser√° feita na superclasse.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Sucessores(\mbox{\hyperlink{classTVector}{TVector<TNo>}}\&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{CSubProblema}}*\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{novo}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ =\ 0;\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ <\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{numeroAcoes}};\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}}.Add(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{novo}}\ =\ (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{CSubProblema}}*)\mbox{\hyperlink{classCJogoDoGalo_a0ffe5148e0dad4e325c1840d0569f508}{Duplicar}}());}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ aplicar\ a\ a√ß√£o\ i\ nas\ vari√°veis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{novo}}-\/>variavel\ =\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ se\ o\ custo\ n√£o\ for\ unit√°rio,\ indicar\ o\ custo\ da\ a√ß√£o}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{novo}}-\/>custo\ =\ 1\ +\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ /\ 10;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ Caso\ o\ estado\ gerado\ n√£o\ seja\ v√°lido,\ remova-\/o\ da\ lista\ e\ liberte\ a\ mem√≥ria:}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{novo}}-\/>EstadoValido())\ \textcolor{comment}{//\ exemplo\ de\ m√©todo\ em\ CSubProblema\ para\ verificar\ a\ validade}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}}.Pop();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcuraConstrutiva::Sucessores}}(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcura\+Construtiva}}.
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00038}{38}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 11
+\Hypertarget{classCJogoDoGalo_a113984a3801a93ebce61e0a700a413ab}\label{classCJogoDoGalo_a113984a3801a93ebce61e0a700a413ab} 
+\index{CJogoDoGalo@{CJogoDoGalo}!TesteManual@{TesteManual}}
+\index{TesteManual@{TesteManual}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{TesteManual()}{TesteManual()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Teste\+Manual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Inicializa a interaÁ„o com o utilizador. 
+
+\begin{DoxyNote}{Note}
+RedefiniÁ„o necess·ria para definir as instancias existentes.
+\end{DoxyNote}
+Esta funÁ„o arranca com o teste manual, orientada para o programador. A interface permite\+:
+\begin{DoxyItemize}
+\item visualizar e trocar de inst‚ncia
+\item explorar o espaÁo de estados nessa instancia, executando aÁıes
+\item ver um caminho que esteja gravado (por exploraÁ„o manual ou por execuÁ„o de um algoritmo)
+\item ver e editar qualquer parametro de execuÁ„o
+\item o algoritmo È tambÈm um parametro, podendo naturalmente ser alterado
+\item h· parametros sobre limites de execuÁ„o, informaÁ„o de debug, opÁıes de implementaÁ„o e opÁıes de algoritmos
+\item executar o algoritmo com a configuraÁ„o atual
+\item adicionar a configuraÁ„o atual a um conjunto de configuraÁıes de teste
+\item executar um teste empÌrico, executando todas as configuraÁıes de teste, no conjunto de inst‚ncias selecionadas
+\end{DoxyItemize}
+
+Esta funÁ„o deve ser redefinida para inicializar a vari·vel com informaÁ„o dos IDs das inst‚ncias disponÌveis. Essa vari·vel È do tipo TParametro, mas n„o est· na lista de parametros, devendo ser inicializada aqui.
+
+\begin{DoxyNote}{Note}
+A inst‚ncia selecionada ir· ser carregada em \doxylink{classCJogoDoGalo_a6855d470bfeb593cb354e5b6be4514ad}{Solucao\+Vazia()}, utilizando o valor atual. 
+
+Esta funÁ„o deve ser o ponto de entrada, a executar no main.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::TesteManual(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ indicar\ que\ h· 10\ inst‚ncias,\ sendo\ a\ inst‚ncia\ inicial\ a\ 1}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}CaracterÌsticas\ dos\ problemas"{}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}\ \};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcuraConstrutiva::TesteManual}}(nome);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ exemplo\ do\ main}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{main}}()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{CSubProblema}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{problema}};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{problema}}.TesteManual(\textcolor{stringliteral}{"{}CSubProblema"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcura}}.
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00118}{118}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 12
+Here is the caller graph for this function\+:
+% FIG 13
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCJogoDoGalo_a4a45abc068aac13338f18d18c8bd235d}\label{classCJogoDoGalo_a4a45abc068aac13338f18d18c8bd235d} 
+\index{CJogoDoGalo@{CJogoDoGalo}!tabuleiro@{tabuleiro}}
+\index{tabuleiro@{tabuleiro}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{tabuleiro}{tabuleiro}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}}$>$ CJogo\+Do\+Galo\+::tabuleiro}
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8h_source_l00022}{22}} of file \mbox{\hyperlink{JogoDoGalo_8h_source}{Jogo\+Do\+Galo.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Adversa/\+Teste/\mbox{\hyperlink{JogoDoGalo_8h}{Jogo\+Do\+Galo.\+h}}\item 
+Adversa/\+Teste/\mbox{\hyperlink{JogoDoGalo_8cpp}{Jogo\+Do\+Galo.\+cpp}}\end{DoxyCompactItemize}

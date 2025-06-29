@@ -6,10 +6,14 @@ digraph "CProblemaArtificial::ResetParametros"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
   Node1 [id="Node000001",label="CProblemaArtificial\l::ResetParametros",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Inicializa os parametros."];
-  Node1 -> Node2 [id="edge4_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge6_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraConstrutiva\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gacb15562d8776f4d162001d385ebc13a0",tooltip="Inicializa os parametros."];
-  Node2 -> Node3 [id="edge5_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge7_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parametros."];
-  Node3 -> Node4 [id="edge6_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a427bf294df0ee2bf96e30d278c08389f",tooltip=" "];
+  Node3 -> Node4 [id="edge8_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
+  Node4 -> Node5 [id="edge9_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip=" "];
+  Node3 -> Node6 [id="edge10_Node000003_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
 }

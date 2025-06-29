@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['damas_0',['damas',['../classCOitoDamas.html#a10c8022da41375e52a7d183a5419ed52',1,'COitoDamas']]],
-  ['descricao_1',['descricao',['../structSParametro.html#a4ddb9b7f1ca63ca57878f7a5c588c928',1,'SParametro']]],
-  ['direita_2',['direita',['../classCParticao.html#afce654c064d563f0cb92d180a84bdcaf',1,'CParticao']]]
+  ['dadosa_0',['dadosA',['../classCTesteTVector.html#a2c8d3c4e4f2630bea3eee94f3dc03ff8',1,'CTesteTVector']]],
+  ['dadosb_1',['dadosB',['../classCTesteTVector.html#a709b13b333477be354b5fe53e2b3fd09',1,'CTesteTVector']]],
+  ['damas_2',['damas',['../classCOitoDamas.html#acb2ccabe2ec11815db2eccb59bb07ca7',1,'COitoDamas']]],
+  ['descricao_3',['descricao',['../structSIndicador.html#ae668b9d3e58b0b6a130b7b05fd45bdc9',1,'SIndicador::descricao'],['../structSParametro.html#a4ddb9b7f1ca63ca57878f7a5c588c928',1,'SParametro::descricao']]],
+  ['direita_4',['direita',['../classCParticao.html#a5a2ae80155615c023490f0ab89da2d35',1,'CParticao']]]
 ];

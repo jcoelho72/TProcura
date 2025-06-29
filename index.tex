@@ -1,102 +1,184 @@
-\chapter{TProcura\+Construtiva}
-\hypertarget{index}{}\label{index}\index{TProcuraConstrutiva@{TProcuraConstrutiva}}
+\chapter{TProcura}
+\hypertarget{index}{}\label{index}\index{TProcura@{TProcura}}
 \label{index_md_README}%
 \Hypertarget{index_md_README}%
- \href{https://github.com/jcoelho72/TProcuraConstrutiva/issues}{\texttt{ }} \href{https://github.com/jcoelho72/TProcuraConstrutiva/network}{\texttt{ }} \href{https://github.com/jcoelho72/TProcuraConstrutiva/stargazers}{\texttt{ }} \href{https://jcoelho72.github.io/TProcuraConstrutiva/LICENSE.txt}{\texttt{ }}
+ \href{https://github.com/jcoelho72/TProcura/issues}{\texttt{ }} \href{https://github.com/jcoelho72/TProcura/network}{\texttt{ }} \href{https://github.com/jcoelho72/TProcura/stargazers}{\texttt{ }} \href{https://jcoelho72.github.io/TProcura/LICENSE.txt}{\texttt{ }}
 
-Uma coleção de algoritmos e implementações para {\bfseries{procuras e otimizações}} em problemas complexos.
+Biblioteca em C++ para {\bfseries{testes paramétricos}} de algoritmos, e coleção de algoritmos de procura e otimização\+:
+\begin{DoxyItemize}
+\item procuras construtivas ~\newline
 
-A documentação completa está disponível em\+: ~\newline
- 👉 \href{https://jcoelho72.github.io/TProcuraConstrutiva/index.html}{\texttt{ TProcura\+Construtiva -\/ Documentação}}\hypertarget{index_autotoc_md45}{}\doxysection{\texorpdfstring{Sumário}{Sumário}}\label{index_autotoc_md45}
+\item procuras melhorativas (evolutivas e locais) ~\newline
+
+\item procuras adversas (minimax, alfa-\/beta, iterativo)
+\end{DoxyItemize}
+
+\begin{quote}
+Documentação completa em\+: ~\newline
+ 👉 \href{https://jcoelho72.github.io/TProcura/index.html}{\texttt{ TProcura -\/ Documentação}} \end{quote}
+\hypertarget{index_autotoc_md59}{}\doxysection{\texorpdfstring{$<$/blockquote$>$}{</blockquote>}}\label{index_autotoc_md59}
+\hypertarget{index_autotoc_md60}{}\doxysection{\texorpdfstring{📑 Sumário}{📑 Sumário}}\label{index_autotoc_md60}
 
 \begin{DoxyItemize}
 \item \doxylink{index_s1}{Sobre o Projeto}
-\item \doxylink{index_s2}{Estado do Projeto}
-\item \doxylink{index_s3}{Funcionalidades}
+\item \doxylink{index_s2}{Funcionalidades}
+\item \doxylink{index_s3}{Hierarquia de Classes}
 \item \doxylink{index_s4}{Instalação}
 \item \doxylink{index_s5}{Uso}
 \item \doxylink{index_s6}{Exemplos}
-\item \doxylink{index_s7}{Licença}
+\item \doxylink{index_s7}{Bibliografia}
+\item \doxylink{index_s8}{Licença}
 \end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
 
 \label{index_s1}%
 \Hypertarget{index_s1}%
-\hypertarget{index_autotoc_md46}{}\doxysection{\texorpdfstring{Sobre o Projeto}{Sobre o Projeto}}\label{index_autotoc_md46}
-Uma coleção de algoritmos e implementações para "{}"{} "{}procuras construtivas"{}, criada como ponto de partida para a implementação de novos problemas e estratégias de procura. Esse repositório serve como base para explorar e desenvolver soluções em problemas de otimização.
+\hypertarget{index_autotoc_md62}{}\doxysection{\texorpdfstring{Sobre o Projeto}{Sobre o Projeto}}\label{index_autotoc_md62}
+O {\bfseries{\doxylink{classTProcura}{TProcura}}} nasceu para unificar testes paramétricos e implementação genérica de algoritmos de procura. ~\newline
+ Em vez de alterar {\ttfamily \#define} e recompilar a cada mudança de parâmetro, o framework\+:
 
-Recursos utilizados na UC de \href{https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/}{\texttt{ Introdução à Inteligência Artificial}}, da \href{https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/}{\texttt{ Licenciatura em Engenharia Informática}} da \href{https://portal.uab.pt/}{\texttt{ Universidade Aberta}}
 
-Bibliografia da UC, e base teórica para o projeto\+: Russell, S. J., \& Norvig, P. (2021). Artificial Intelligence\+: A Modern Approach (4th ed.). Pearson.
+\begin{DoxyItemize}
+\item Propõe uma estrutura para uma lista de parametros, gerida na superclasse
+\item Gera automaticamente todas as combinações que o utilizador desejar
+\item Executa instâncias para cada combinação de parametros, e recolhe indicadores definidos ~\newline
+
+\item Exporta resultados em CSV para análises em Excel, R ou Python ~\newline
+
+\end{DoxyItemize}
+
+A arquitetura baseia-\/se em superclasses que já implementam algoritmos de procura. O utilizador só precisa de\+:
+
+
+\begin{DoxyEnumerate}
+\item Herdar a classe adequada ~\newline
+
+\item Redefinir métodos de geração de sucessores, avaliação ou operadores, para o problema concreto, conforme adequado ~\newline
+
+\item Declarar novos parâmetros e indicadores, se desejar ~\newline
+
+\end{DoxyEnumerate}
+
+Este projeto é usado na UC de \href{https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/}{\texttt{ Introdução à Inteligência Artificial}} da Universidade Aberta.
+
+\DoxyHorRuler{0}
+
 
 \label{index_s2}%
 \Hypertarget{index_s2}%
-\hypertarget{index_autotoc_md47}{}\doxysection{\texorpdfstring{Estado do Projeto}{Estado do Projeto}}\label{index_autotoc_md47}
-\begin{quote}
-\+:warning\+: Este projeto ainda está em desenvolvimento. ~\newline
- Atualizações frequentes e melhorias estão sendo implementadas. \end{quote}
-\label{index_s3}%
-\Hypertarget{index_s3}%
-\hypertarget{index_autotoc_md48}{}\doxysection{\texorpdfstring{Funcionalidades}{Funcionalidades}}\label{index_autotoc_md48}
+\hypertarget{index_autotoc_md64}{}\doxysection{\texorpdfstring{Funcionalidades}{Funcionalidades}}\label{index_autotoc_md64}
+
+\begin{DoxyEnumerate}
+\item Modo interativo, linha de comando ou MPI (futuro) ~\newline
+
+\item Geração automática de combinações de parâmetros ~\newline
+
+\item Recolha de indicadores (tempo, custo, iterações, etc.) ~\newline
+
+\item Exportação de resultados em CSV ~\newline
+
+\item Procuras Construtivas\+: ~\newline
 
 \begin{DoxyItemize}
-\item Implementação de algoritmos de procura construtiva na superclasse.
-\item Exploração do espaço de estados de forma manual
-\item Execução de algoritmos cegos\+: Procura em Largura, Profundidade Primeiro, Custo Uniforme
-\item Execução de algoritmos informados\+: Melhor Primeiro, AStar, IDAStar, Branch-\/and-\/\+Bound
-\item Executar de testes manuais e testes empíricos (várias instâncias e vários algoritmos/parametrizações).
+\item Largura / Profundidade / Custo uniforme ~\newline
+
+\item Melhor-\/primeiro / A\texorpdfstring{$\ast$}{*} / IDA\texorpdfstring{$\ast$}{*} / Branch-\/and-\/\+Bound ~\newline
+
 \end{DoxyItemize}
+\item Procuras melhorativas\+: ~\newline
+
+\begin{DoxyItemize}
+\item Algoritmos genéticos, simples -\/ (futuro\+: algoritmos evolutivos, Scatter Search, sistemas artificiais imunes, inteligência de enxames)
+\item Escalada do Monte -\/ (futuro\+: pesquisa tabu, arrefecimento simulado, GRASP, procura com vizinhança variável e muito alargada)
+\end{DoxyItemize}
+\item Procuras adversas\+: ~\newline
+
+\begin{DoxyItemize}
+\item Minimax / Alfa-\/beta / iterativo / Hash-\/table de estados explorados (futuro\+: MCTS) ~\newline
+
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+
+
+\label{index_s3}%
+\Hypertarget{index_s3}%
+\hypertarget{index_autotoc_md66}{}\doxysection{\texorpdfstring{📦 Hierarquia de Classes}{📦 Hierarquia de Classes}}\label{index_autotoc_md66}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{TProcura}
+\DoxyCodeLine{├─\ TProcuraConstrutiva\ \ \ \ \ \ \ \ \ \#\ sucessores\ e\ heurística}
+\DoxyCodeLine{│\ \ └─\ TProcuraAdversa\ \ \ \ \ \ \ \ \ \ \#\ sucessores\ e\ heurística}
+\DoxyCodeLine{└─\ TProcuraMelhorativa\ \ \ \ \ \ \ \ \ \#\ solução\ inicial,\ vizinhança,\ mutação,\ cruzamento,\ avaliação}
+\DoxyCodeLine{\ \ \ ├─\ TRepresentacaoBinaria\ \ \ \ \#\ avaliação}
+\DoxyCodeLine{\ \ \ ├─\ TRepresentacaoInteira\ \ \ \ \#\ avaliação}
+\DoxyCodeLine{\ \ \ ├─\ TRepresentacaoReal\ \ \ \ \ \ \ \#\ avaliação}
+\DoxyCodeLine{\ \ \ ├─\ TRepresentacaoPermutacao\ \#\ avaliação}
+\DoxyCodeLine{\ \ \ └─\ TRepresentacaoArvore\ \ \ \ \ \#\ avaliação}
+
+\end{DoxyCode}
+
 
 \label{index_s4}%
 \Hypertarget{index_s4}%
-\hypertarget{index_autotoc_md49}{}\doxysection{\texorpdfstring{Instalação e Execução}{Instalação e Execução}}\label{index_autotoc_md49}
-Clonar o projeto, compilar e executar.\hypertarget{index_autotoc_md50}{}\doxysubsection{\texorpdfstring{Opção 1 -\/ Clonar o Repositório}{Opção 1 - Clonar o Repositório}}\label{index_autotoc_md50}
+\hypertarget{index_autotoc_md67}{}\doxysection{\texorpdfstring{Instalação}{Instalação}}\label{index_autotoc_md67}
+Clonar o projeto, compilar um dos projetos de teste e executar.\hypertarget{index_autotoc_md68}{}\doxysubsection{\texorpdfstring{Opção 1 -\/ Clonar o Repositório}{Opção 1 - Clonar o Repositório}}\label{index_autotoc_md68}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git\ clone\ https://github.com/jcoelho72/TProcuraConstrutiva.git}
+\DoxyCodeLine{git\ clone\ https://github.com/jcoelho72/TProcura.git}
 
 \end{DoxyCode}
  ou
 
-Aceder a \href{https://github.com/jcoelho72/TProcuraConstrutiva/}{\texttt{ página do repositório}} e clique em \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}"{}\+Code"{} → "{}\+Open with Visual Studio"{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}.\hypertarget{index_autotoc_md51}{}\doxysubsection{\texorpdfstring{Opção 2 -\/ Download Manual}{Opção 2 - Download Manual}}\label{index_autotoc_md51}
-Aceder a \href{https://github.com/jcoelho72/TProcuraConstrutiva/}{\texttt{ página do repositório}} e clique em \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}"{}\+Code"{} → "{}\+Download ZIP"{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}.
+Aceder a \href{https://github.com/jcoelho72/TProcura/}{\texttt{ página do repositório}} e clique em \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}"{}\+Code"{} → "{}\+Open with Visual Studio"{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}.\hypertarget{index_autotoc_md69}{}\doxysubsection{\texorpdfstring{Opção 2 -\/ Download Manual}{Opção 2 - Download Manual}}\label{index_autotoc_md69}
+Aceder a \href{https://github.com/jcoelho72/TProcura/}{\texttt{ página do repositório}} e clique em \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}"{}\+Code"{} → "{}\+Download ZIP"{}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}.
 
-Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme seu ambiente).\hypertarget{index_autotoc_md52}{}\doxysubsection{\texorpdfstring{Opção 3 -\/ Utilizar como Submódulo}{Opção 3 - Utilizar como Submódulo}}\label{index_autotoc_md52}
-Para integrar o \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva} como parte de outro projeto, utilize um submódulo\+:
+Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme seu ambiente).\hypertarget{index_autotoc_md70}{}\doxysubsection{\texorpdfstring{Opção 3 -\/ Utilizar como Submódulo}{Opção 3 - Utilizar como Submódulo}}\label{index_autotoc_md70}
+Para integrar o \doxylink{classTProcura}{TProcura} como parte de outro projeto, utilize um submódulo\+:
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{git\ submodule\ add\ https://github.com/jcoelho72/TProcuraConstrutiva.git}
+\DoxyCodeLine{git\ submodule\ add\ https://github.com/jcoelho72/TProcura.git}
 
 \end{DoxyCode}
- Essa opção é útil se pretender manter o código atualizado.
 
-Teste a classe com problemas implementados.
+
+\DoxyHorRuler{0}
+
 
 \label{index_s5}%
 \Hypertarget{index_s5}%
-\hypertarget{index_autotoc_md53}{}\doxysection{\texorpdfstring{Uso}{Uso}}\label{index_autotoc_md53}
-Para implementar um novo problema utilizando o \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, pode\+:
+\hypertarget{index_autotoc_md72}{}\doxysection{\texorpdfstring{Uso}{Uso}}\label{index_autotoc_md72}
+Para implementar um novo problema utilizando uma das superclasses pode\+:
 \begin{DoxyItemize}
-\item redefinir a superclasse \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva} de raiz;
-\item readaptar um problema similar e adaptá-\/lo.
-\end{DoxyItemize}\hypertarget{index_autotoc_md54}{}\doxysubsection{\texorpdfstring{Redefinição Mandatória}{Redefinição Mandatória}}\label{index_autotoc_md54}
-Ao redefinir a superclasse, é essencial que sejam implementados os seguintes métodos\+:
-\begin{DoxyItemize}
-\item Duplicar()\+: Cria um objecto que é uma cópia deste.
-\item Copiar()\+: Fica com uma cópia do objecto.
-\item Solucao\+Vazia()\+: Coloca o objecto no estado inicial da procura.
-\item Sucessores()\+: Coloca em sucessores a lista de estados sucessores.
-\item Solucao\+Completa()\+: Verifica se o estado actual é objectivo (é uma solução completa)
-\item Teste\+Manual()\+: Inicializa a interação com o utilizador.
+\item identificar a superclasse mais adequada, e redefinir, criando uma subclasse;
+\item readaptar um problema similar já implementado.
 \end{DoxyItemize}
 
-\href{https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoMandatoria.html}{\texttt{ Documentação dos métodos de Redefinição Mandatória}}\+:\hypertarget{index_autotoc_md55}{}\doxysubsection{\texorpdfstring{Métodos Sugeridos}{Métodos Sugeridos}}\label{index_autotoc_md55}
-Para otimizar a execução e enriquecer as funcionalidades, recomenda-\/se também a implementação dos \href{https://jcoelho72.github.io/TProcuraConstrutiva/group__RedefinicaoSugerida.html}{\texttt{ Métodos Sugeridos}}. Estes métodos adicionais podem fornecer suporte a funções avançadas e melhorar a exploração do espaço de estados.
+Superclasses\+:
+\begin{DoxyItemize}
+\item \doxylink{classTProcura}{TProcura} -\/ caso o problema não seja de procura, poderá utilizar esta classe para fazer testes paramétricos
+\item \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva} -\/ indicado caso tenha um problema de procura, e adopte a abordagem construtiva
+\item \doxylink{classTProcuraMelhorativa}{TProcura\+Melhorativa} -\/ indicado caso tenha um problema de procura ou muito grande, e opte pela abordagem melhorativa
+\item TRepresentacao\+Binaria, Inteira, Real, Permutacao, Arvore -\/ na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores já disponíveis, basta implementar a avaliação.
+\item \doxylink{classTProcuraAdversa}{TProcura\+Adversa} -\/ indicado para procuras adversas, ou seja jogos
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
 
 \label{index_s6}%
 \Hypertarget{index_s6}%
-\hypertarget{index_autotoc_md56}{}\doxysection{\texorpdfstring{Exemplos}{Exemplos}}\label{index_autotoc_md56}
-Alguns problemas estão implementados para demonstrar o funcionamento da classe \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}\+:
+\hypertarget{index_autotoc_md74}{}\doxysection{\texorpdfstring{Exemplos}{Exemplos}}\label{index_autotoc_md74}
+Problemas de exemplo da classe \doxylink{classTProcura}{TProcura}\+:
+\begin{DoxyEnumerate}
+\item Teste\+TVetor
+\end{DoxyEnumerate}
+
+Problemas de exemplo da classe \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}\+:
 \begin{DoxyEnumerate}
 \item Aspirador (\href{teste_aspirador1.html}{\texttt{ parte 1}}, \href{teste_aspirador2.html}{\texttt{ parte 2}})
 \item \href{teste_puzzle8.html}{\texttt{ Puzzle 8}}
@@ -105,9 +187,40 @@ Alguns problemas estão implementados para demonstrar o funcionamento da classe 
 \item \href{teste_artificial.html}{\texttt{ Artificial}}
 \end{DoxyEnumerate}
 
+Problemas de exemplo da classe \doxylink{classTProcuraMelhorativa}{TProcura\+Melhorativa}\+:
+\begin{DoxyEnumerate}
+\item 8 Damas (TRepresentacao\+Inteira)
+\item 8 Damas (TRepresentacao\+Permutacao)
+\item Partição (TRepresentacao\+Binaria)
+\item ? (TRepresentacao\+Real)
+\item ? (TRepresentacao\+Arvore)
+\end{DoxyEnumerate}
+
+Problemas de exemplo da classe \doxylink{classTProcuraAdversa}{TProcura\+Adversa}\+:
+\begin{DoxyEnumerate}
+\item Jogo do Galo
+\item Jogo em Linha
+\end{DoxyEnumerate}
+
 Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações.
+
+\DoxyHorRuler{0}
+
 
 \label{index_s7}%
 \Hypertarget{index_s7}%
-\hypertarget{index_autotoc_md57}{}\doxysection{\texorpdfstring{Licença}{Licença}}\label{index_autotoc_md57}
-Distribuído sob a licença MIT. Veja o arquivo \href{https://jcoelho72.github.io/TProcuraConstrutiva/LICENSE.txt}{\texttt{ LICENSE}} para mais informações. 
+\hypertarget{index_autotoc_md76}{}\doxysection{\texorpdfstring{Bibliografia}{Bibliografia}}\label{index_autotoc_md76}
+
+\begin{DoxyItemize}
+\item Russell, S. J., \& Norvig, P. (2021). Artificial intelligence\+: A modern approach (4th ed.). Pearson. \href{https://elibrary.pearson.de/book/99.150005/9781292401171}{\texttt{ https\+://elibrary.\+pearson.\+de/book/99.\+150005/9781292401171}}
+\item Eiben, A. E., \& Smith, J. E. (2015). Introduction to evolutionary computing (2nd ed.). Springer. \href{https://doi.org/10.1007/978-3-662-44874-8}{\texttt{ https\+://doi.\+org/10.\+1007/978-\/3-\/662-\/44874-\/8}}
+\item Burke, E. K., \& Kendall, G. (Eds.). (2014). Search methodologies\+: Introductory tutorials in optimization and decision support techniques (2nd ed.). Springer. \href{https://doi.org/10.1007/978-1-4614-6940-7}{\texttt{ https\+://doi.\+org/10.\+1007/978-\/1-\/4614-\/6940-\/7}}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+
+
+\label{index_s8}%
+\Hypertarget{index_s8}%
+\hypertarget{index_autotoc_md78}{}\doxysection{\texorpdfstring{Licença}{Licença}}\label{index_autotoc_md78}
+Distribuído sob a licença MIT. Veja o arquivo \href{https://jcoelho72.github.io/TProcura/LICENSE.txt}{\texttt{ LICENSE}} para mais informações. 

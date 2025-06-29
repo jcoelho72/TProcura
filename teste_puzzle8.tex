@@ -2,7 +2,7 @@
 \hypertarget{teste_puzzle8}{}\label{teste_puzzle8}\index{Teste Puzzle 8@{Teste Puzzle 8}}
 \texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \texorpdfstring{$\vert$}{|} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|}
 
-Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_puzzle8_autotoc_md32}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_puzzle8_autotoc_md32}
+Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_puzzle8_autotoc_md46}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_puzzle8_autotoc_md46}
 
 \begin{DoxyItemize}
 \item \doxylink{teste_puzzle8_puzzle8-a1}{Ação 1 -\/ Ver instâncias}
@@ -41,7 +41,7 @@ Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste 
 
 \label{teste_puzzle8_puzzle8-a1}%
 \Hypertarget{teste_puzzle8_puzzle8-a1}%
-\hypertarget{teste_puzzle8_autotoc_md33}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Ver instâncias}{Ação 1 - Ver instâncias}}\label{teste_puzzle8_autotoc_md33}
+\hypertarget{teste_puzzle8_autotoc_md47}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Ver instâncias}{Ação 1 - Ver instâncias}}\label{teste_puzzle8_autotoc_md47}
 Vamos entrar no problema Puzzle 8, introduza\+: {\bfseries{2.}}
 
 
@@ -82,7 +82,7 @@ Estavamos na instância 40, e existem instâncias de 1 a 1000. Como as instânci
 
 \label{teste_puzzle8_puzzle8-a2}%
 \Hypertarget{teste_puzzle8_puzzle8-a2}%
-\hypertarget{teste_puzzle8_autotoc_md34}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Resolver manualmente}{Ação 2 - Resolver manualmente}}\label{teste_puzzle8_autotoc_md34}
+\hypertarget{teste_puzzle8_autotoc_md48}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Resolver manualmente}{Ação 2 - Resolver manualmente}}\label{teste_puzzle8_autotoc_md48}
 Vamos então resolver a instância manualmente. Introduza\+: {\bfseries{2; baixo dir dir baixo; {\itshape ENTER}.}}
 
 
@@ -134,7 +134,7 @@ Esta forma de ver soluções é específica do Puzzle 8 porque foi redefinido o 
 
 \label{teste_puzzle8_puzzle8-a3}%
 \Hypertarget{teste_puzzle8_puzzle8-a3}%
-\hypertarget{teste_puzzle8_autotoc_md35}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Procura em Largura}{Ação 3 - Procura em Largura}}\label{teste_puzzle8_autotoc_md35}
+\hypertarget{teste_puzzle8_autotoc_md49}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Procura em Largura}{Ação 3 - Procura em Largura}}\label{teste_puzzle8_autotoc_md49}
 Começamos pela procura em largura nesta instãncia, colocando debug a 4. Introduza\+: {\bfseries{1; 4; 4; 2; 4; {\itshape ENTER}; 5}}
 
 
@@ -275,7 +275,7 @@ Embora o estado inicial tenha sido obtido por 40 movimentos aleatórios desde o 
 
 \label{teste_puzzle8_puzzle8-a4}%
 \Hypertarget{teste_puzzle8_puzzle8-a4}%
-\hypertarget{teste_puzzle8_autotoc_md36}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Procura em Profundidade}{Ação 4 - Procura em Profundidade}}\label{teste_puzzle8_autotoc_md36}
+\hypertarget{teste_puzzle8_autotoc_md50}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Procura em Profundidade}{Ação 4 - Procura em Profundidade}}\label{teste_puzzle8_autotoc_md50}
 Vamos ver a procura em profundidade na instância 40, que sabemos ter uma solução de 10. Vamos alterar o algoritmo, colocar a profundidade a 4, debug a completo e visualização a 1, para ser ver todos os estados. Introduza\+: {\bfseries{1; 40; 4; 1; 3; 9; 4; 2; 4; 3; 1; {\itshape ENTER}; 5.}}
 
 
@@ -528,7 +528,7 @@ A procura não retorna, crasha devido a entrar num ciclo infinito. \end{adjustwi
 
 \label{teste_puzzle8_puzzle8-a5}%
 \Hypertarget{teste_puzzle8_puzzle8-a5}%
-\hypertarget{teste_puzzle8_autotoc_md37}{}\doxysubsection{\texorpdfstring{Ação 5 -\/ Heurística}{Ação 5 - Heurística}}\label{teste_puzzle8_autotoc_md37}
+\hypertarget{teste_puzzle8_autotoc_md51}{}\doxysubsection{\texorpdfstring{Ação 5 -\/ Heurística}{Ação 5 - Heurística}}\label{teste_puzzle8_autotoc_md51}
 Neste problema foi implementada a heurística com a distância na horizontal e vertical, de cada peça até à sua posição final. Esta heurística relaxa a situação de apenas ser possível mover para o local onde está o espaço, e retorna o valor que seria o correto caso cada peça pudesse mover-\/se por cima das outras. É implementada no problema ao redefinir \doxylink{classCPuzzle8_a273bc37daab41bce1aab45517e800d27}{CPuzzle8\+::\+Heuristica()}.
 
 Vamos começar por ver (notar que P3(\+Ver)\+: 1). Introduza\+: {\bfseries{1; 40; 2; esq esq; {\itshape ENTER}.}}
@@ -585,7 +585,7 @@ Vamos ver como esta heurística guia os diferentes algoritmos informados.
 
 \label{teste_puzzle8_puzzle8-a6}%
 \Hypertarget{teste_puzzle8_puzzle8-a6}%
-\hypertarget{teste_puzzle8_autotoc_md38}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Melhor Primeiro}{Ação 6 - Melhor Primeiro}}\label{teste_puzzle8_autotoc_md38}
+\hypertarget{teste_puzzle8_autotoc_md52}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Melhor Primeiro}{Ação 6 - Melhor Primeiro}}\label{teste_puzzle8_autotoc_md52}
 Vamos executar o primeiro algoritmo informado, o melhor primeiro, que segue sempre pelo ramo com menor heurística, ou seja, mais perto do objetivo, daí o nome de melhor primeiro.
 
 Este é um algoritmo em profundidade pelo que vamos deixar a configuração de remoção de estados repetidos gerados, de modo a observar o desempenho deste algoritmo nas melhores condições.
@@ -624,7 +624,7 @@ Introduza\+: {\bfseries{1; 40; 4; 1; 4; 2; 3; 8; 1000000; 10; 3; {\itshape ENTER
 
 \label{teste_puzzle8_puzzle8-a7}%
 \Hypertarget{teste_puzzle8_puzzle8-a7}%
-\hypertarget{teste_puzzle8_autotoc_md39}{}\doxysubsection{\texorpdfstring{Ação 7 -\/ AStar}{Ação 7 - AStar}}\label{teste_puzzle8_autotoc_md39}
+\hypertarget{teste_puzzle8_autotoc_md53}{}\doxysubsection{\texorpdfstring{Ação 7 -\/ AStar}{Ação 7 - AStar}}\label{teste_puzzle8_autotoc_md53}
 Vamos agora ver o comportamento do AStar, que garante a solução ótima.
 
 Introduza\+: {\bfseries{1; 40; 4; 1; 2; 4; 3; 4; 5; {\itshape ENTER}; 5.}}
@@ -732,7 +732,7 @@ Introduza\+: {\bfseries{1; 40; 4; 1; 2; 4; 3; 4; 5; {\itshape ENTER}; 5.}}
 
 \label{teste_puzzle8_puzzle8-a8}%
 \Hypertarget{teste_puzzle8_puzzle8-a8}%
-\hypertarget{teste_puzzle8_autotoc_md40}{}\doxysubsection{\texorpdfstring{Ação 8 -\/ IDAStar}{Ação 8 - IDAStar}}\label{teste_puzzle8_autotoc_md40}
+\hypertarget{teste_puzzle8_autotoc_md54}{}\doxysubsection{\texorpdfstring{Ação 8 -\/ IDAStar}{Ação 8 - IDAStar}}\label{teste_puzzle8_autotoc_md54}
 O AStar pode ter problemas de memória em instâncias complexas, existindo o IDAStar que permite a mesma ordem de expansão, mas sem o problema de memória, em troca de algum tempo de CPU extra, gasto ao expandir multiplas vezes os mesmos estados. Vamas ver como se comporta nesta instância.
 
 Introduza\+: {\bfseries{1; 40; 4; 1; 6; {\itshape ENTER}; 5.}}
@@ -830,7 +830,7 @@ Pode-\/se considerar que é o dobro, mas é um pequeno preço a pagar por não t
 
 \label{teste_puzzle8_puzzle8-a9}%
 \Hypertarget{teste_puzzle8_puzzle8-a9}%
-\hypertarget{teste_puzzle8_autotoc_md41}{}\doxysubsection{\texorpdfstring{Ação 9 -\/ Branch-\/and-\/\+Bound}{Ação 9 - Branch-and-Bound}}\label{teste_puzzle8_autotoc_md41}
+\hypertarget{teste_puzzle8_autotoc_md55}{}\doxysubsection{\texorpdfstring{Ação 9 -\/ Branch-\/and-\/\+Bound}{Ação 9 - Branch-and-Bound}}\label{teste_puzzle8_autotoc_md55}
 Vamos agora ver como se comporta o Branch-\/and-\/\+Bound, o último algoritmo informado. Este algoritmo pode ser visto como o Melhor Primeiro que continua a procura após a primeira solução. No entanto restringe o espaço de procura apenas aos estados que melhoram a solução atual.
 
 É um algoritmo em profundidade, pelo que não tem problemas de memória originados na procura em largura. Vamos baixar o nível de debug para 1.
@@ -889,7 +889,7 @@ Não o fazer, ficariamos com a informação da performance dos algoritmos numa s
 
 \label{teste_puzzle8_puzzle8-a10}%
 \Hypertarget{teste_puzzle8_puzzle8-a10}%
-\hypertarget{teste_puzzle8_autotoc_md42}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Configurações}{Ação 10 - Configurações}}\label{teste_puzzle8_autotoc_md42}
+\hypertarget{teste_puzzle8_autotoc_md56}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Configurações}{Ação 10 - Configurações}}\label{teste_puzzle8_autotoc_md56}
 Podemos adicionar configurações para o teste. Para o fazer basta alterar os parametros, e entrar no menu 6. Vamos começar por colocar a procura em largura, com todos os parametros nos valores de teste.
 
 Vamos querer para teste que\+: debug=0, avaliações=1000000, tempo=10s; repetidos=gerados.
@@ -957,7 +957,7 @@ Vamos agora introduzir o resto dos algoritmos\+:
 
 \label{teste_puzzle8_puzzle8-a11}%
 \Hypertarget{teste_puzzle8_puzzle8-a11}%
-\hypertarget{teste_puzzle8_autotoc_md43}{}\doxysubsection{\texorpdfstring{Ação 11 -\/ Testes Empíricos}{Ação 11 - Testes Empíricos}}\label{teste_puzzle8_autotoc_md43}
+\hypertarget{teste_puzzle8_autotoc_md57}{}\doxysubsection{\texorpdfstring{Ação 11 -\/ Testes Empíricos}{Ação 11 - Testes Empíricos}}\label{teste_puzzle8_autotoc_md57}
 Com as configurações efetuadas na Ação 10, vamos agora fazer um teste empírico. Falta definir as instâncias. A instância atual e seu estado não têm impacto para este teste.
 
 É preciso apenas saber se se pretende ver as soluções, instância inicial e final. Não vamos querer ver as soluções, apenas visualizar os resultados. Naturalmente que num problema novo, é de toda a conveniência observar as soluções e verificá-\/las, para remover eventuais bugs.

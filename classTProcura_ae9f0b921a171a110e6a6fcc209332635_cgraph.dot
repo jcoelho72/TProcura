@@ -9,5 +9,5 @@ digraph "TProcura::SolicitaInstancia"
   Node1 -> Node2 [id="edge3_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip=" "];
   Node1 -> Node3 [id="edge4_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcura::NovoValor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e",tooltip=" "];
+  Node3 [id="Node000003",label="TProcura::NovoTexto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a17fa21564876d313f79b4376ce7366a1",tooltip=" "];
 }

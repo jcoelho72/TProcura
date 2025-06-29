@@ -2,7 +2,7 @@
 \hypertarget{teste_8damas}{}\label{teste_8damas}\index{Teste 8 Damas@{Teste 8 Damas}}
 \texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \texorpdfstring{$\vert$}{|} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|}
 
-Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_8damas_autotoc_md0}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_8damas_autotoc_md0}
+Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_8damas_autotoc_md14}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_8damas_autotoc_md14}
 
 \begin{DoxyItemize}
 \item Ação 1 -\/ Ver instâncias
@@ -61,7 +61,7 @@ Vamos entrar no problema das 8 damas. Introduza\+: {\bfseries{3.}}
 
 \label{invalid_invalid}%
 \Hypertarget{invalid_invalid}%
-\hypertarget{teste_8damas_autotoc_md1}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Ver instâncias}{Ação 1 - Ver instâncias}}\label{teste_8damas_autotoc_md1}
+\hypertarget{teste_8damas_autotoc_md15}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Ver instâncias}{Ação 1 - Ver instâncias}}\label{teste_8damas_autotoc_md15}
 Vamos ver que instâncias temos. Introduza\+: {\bfseries{1; 4.}}
 
 
@@ -83,7 +83,7 @@ O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.
 
 \label{invalid_invalid}%
 \Hypertarget{invalid_invalid}%
-\hypertarget{teste_8damas_autotoc_md2}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Resolver manualmente}{Ação 2 - Resolver manualmente}}\label{teste_8damas_autotoc_md2}
+\hypertarget{teste_8damas_autotoc_md16}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Resolver manualmente}{Ação 2 - Resolver manualmente}}\label{teste_8damas_autotoc_md16}
 Há várias formas de se colocar damas no tabuleiro. Está implementada a colocação de uma dama, na linha superior que não esteja atacada.
 
 Poder-\/se-\/ia permitir a colocação de uma dama em qualquer posição. No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia. Caso tivessem feito diferentes opções, seria adicionado um parametro, e os sucessores seria distinto.
@@ -144,7 +144,7 @@ Neste problema a solução em sempre o mesmo número de ações, igual a N.
 
 \label{invalid_invalid}%
 \Hypertarget{invalid_invalid}%
-\hypertarget{teste_8damas_autotoc_md3}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Procura em Largura}{Ação 3 - Procura em Largura}}\label{teste_8damas_autotoc_md3}
+\hypertarget{teste_8damas_autotoc_md17}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Procura em Largura}{Ação 3 - Procura em Largura}}\label{teste_8damas_autotoc_md17}
 Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. Vamos deixar desde já fixado o limite no número de gerações a 1000000. Introduza\+: {\bfseries{1; 4; 2; 4; 6; 1000000; {\itshape ENTER}; 5.}}
 
 
@@ -250,7 +250,7 @@ Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. Vamos d
 
 \label{invalid_invalid}%
 \Hypertarget{invalid_invalid}%
-\hypertarget{teste_8damas_autotoc_md4}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Procura em Profundidade}{Ação 4 - Procura em Profundidade}}\label{teste_8damas_autotoc_md4}
+\hypertarget{teste_8damas_autotoc_md18}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Procura em Profundidade}{Ação 4 - Procura em Profundidade}}\label{teste_8damas_autotoc_md18}
 Vamos executar a mesma instância com a procura em profundidade ilimitada. Introduza\+: {\bfseries{1; 4; 4; 1; 3; 9; -\/1; {\itshape ENTER}; 5.}}
 
 
@@ -299,7 +299,7 @@ Neste caso fez 8 expansões, contra 13 da procura em largura. Mas evidentemente 
 
 \label{invalid_invalid}%
 \Hypertarget{invalid_invalid}%
-\hypertarget{teste_8damas_autotoc_md5}{}\doxysubsection{\texorpdfstring{Ação 5 -\/ Heurística}{Ação 5 - Heurística}}\label{teste_8damas_autotoc_md5}
+\hypertarget{teste_8damas_autotoc_md19}{}\doxysubsection{\texorpdfstring{Ação 5 -\/ Heurística}{Ação 5 - Heurística}}\label{teste_8damas_autotoc_md19}
 Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações tivessem custo variável, faria sentido uma heurística para estimar o custo. Sendo o custo fixo, apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas com a abordagem construtiva.
 
 Poder-\/se-\/ia ter no entanto opções que melhorariam a abordagem construiva. Uma das possibilidades é considerar ou não os estados repetidos. Neste problema temos 3 eixos de simetria. Significa que a mesma posição pode ao ser refletida em cada eixo, transformar-\/se numa das outras, num total de 8 posições simétricas. Ao anular as simetrias por normalização do estado, e remoção de repetidos, o espaço de estados reduz-\/se. As simetrias estão implementadas, pelo que vamos testar na próxima ação.
@@ -308,7 +308,7 @@ Outra possibilidade não implementada neste código, é a verificação se há l
 
 \label{invalid_invalid}%
 \Hypertarget{invalid_invalid}%
-\hypertarget{teste_8damas_autotoc_md6}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Testes Empíricos}{Ação 6 - Testes Empíricos}}\label{teste_8damas_autotoc_md6}
+\hypertarget{teste_8damas_autotoc_md20}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Testes Empíricos}{Ação 6 - Testes Empíricos}}\label{teste_8damas_autotoc_md20}
 Vamos começar por comparar a procura em largura, com a procura em profundidade ilimitada, e respetivas versões com eliminação de estados repetidos. Introduza\+: {\bfseries{4; 1; 1; 2; 0; 6; 1000000; 9; 0; 10; 1; {\itshape ENTER}; 6; {\itshape ENTER}.}}
 
 

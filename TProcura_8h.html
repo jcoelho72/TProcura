@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcuraConstrutiva: TProcura.h File Reference</title>
+<title>TProcura: TProcura.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,9 +27,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">TProcuraConstrutiva
+   <div id="projectname">TProcura
    </div>
-   <div id="projectbrief">Algoritmos de procura para problemas de otimizaÃ§Ã£o</div>
+   <div id="projectbrief">Biblioteca em C++ para testes paramÃ©tricos de algoritmos, e coleÃ§Ã£o de algoritmos de procura e otimizaÃ§Ã£o</div>
   </td>
  </tr>
  </tbody>
@@ -104,6 +104,7 @@ $(document).ready(function(){initNavTree('TProcura_8h.html',''); initResizable()
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TProcura.h:</div>
 <div class="dyncontent">
@@ -119,6 +120,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSIndicador.html">SIndicador</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSParametro.html">SParametro</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura para registo de um parâmetro.  <a href="structSParametro.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +140,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ad4fc32e65c5226aa62a959b4402a857c" id="r_ad4fc32e65c5226aa62a959b4402a857c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structSIndicador.html">SIndicador</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcura_8h.html#ad4fc32e65c5226aa62a959b4402a857c">TIndicador</a></td></tr>
+<tr class="separator:ad4fc32e65c5226aa62a959b4402a857c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac9b452041c04268ab8dafdc7542dbf0" id="r_aac9b452041c04268ab8dafdc7542dbf0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structSParametro.html">SParametro</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0">TParametro</a></td></tr>
 <tr class="memdesc:aac9b452041c04268ab8dafdc7542dbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estrutura para registo de um parâmetro.  <br /></td></tr>
 <tr class="separator:aac9b452041c04268ab8dafdc7542dbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,15 +150,19 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a2b2b75cdcabfc0008a130fb49597e29b" id="r_a2b2b75cdcabfc0008a130fb49597e29b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29b">EIndicadoresProcura</a> { <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba3f03343e90fb14215d7a3eda39bcdef6">indResultado</a> = 0
+, <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29baa2cc994a33e9a0b48ace332c7a91f176">indTempo</a>
+, <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba943d4fc0085dbcbfeeba09c833fd1f39">indIteracoes</a>
+, <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba5a7e351e9999a0ef7211c3c92888436f">indProcura</a>
+ }</td></tr>
+<tr class="separator:a2b2b75cdcabfc0008a130fb49597e29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9850fa0e8c4a6f8112bf071778c1dc6" id="r_ab9850fa0e8c4a6f8112bf071778c1dc6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6">EParametrosProcura</a> { <br />
 &#160;&#160;<a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aeabc5187dd423c46d6dc096c37b01136">algoritmo</a> = 0
 , <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>
 , <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a>
 , <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245">limiteTempo</a>
 , <br />
-&#160;&#160;<a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ad12ebb828f2b226a21ac1472d0eeebfa">limiteGeracoes</a>
-, <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ada8cabf08fbdfada7b4c7bb0063c7f74">limiteExpansoes</a>
-, <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a4e659740f4db252369b21a5998487906">limiteAvaliacoes</a>
+&#160;&#160;<a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6af437d05ff169dbc6ab8ff59417b5e639">limiteIteracoes</a>
 , <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35">parametrosProcura</a>
 <br />
  }</td></tr>
@@ -205,11 +214,25 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00012">12</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00013">13</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="ad4fc32e65c5226aa62a959b4402a857c" name="ad4fc32e65c5226aa62a959b4402a857c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4fc32e65c5226aa62a959b4402a857c">&#9670;&#160;</a></span>TIndicador</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structSIndicador.html">SIndicador</a> <a class="el" href="TProcura_8h.html#ad4fc32e65c5226aa62a959b4402a857c">TIndicador</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aac9b452041c04268ab8dafdc7542dbf0" name="aac9b452041c04268ab8dafdc7542dbf0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac9b452041c04268ab8dafdc7542dbf0">&#9670;&#160;</a></span>TParametro</h2>
 
@@ -228,8 +251,8 @@ Enumerations</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6" title="Identifica um parâmetro específico no código.">EParametrosProcura</a> e ResetParametros()</dd></dl>
 <p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(parametro[<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>].valor &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>)</div>
 <div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
-<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a></div><div class="ttdeci">@ passos</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00059">TProcura.h:59</a></div></div>
-<div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a></div><div class="ttdeci">@ nivelDebug</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00035">TProcura.h:35</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a></div><div class="ttdeci">@ passos</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00065">TProcura.h:65</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a></div><div class="ttdeci">@ nivelDebug</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00043">TProcura.h:43</a></div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -248,6 +271,32 @@ Enumerations</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a2b2b75cdcabfc0008a130fb49597e29b" name="a2b2b75cdcabfc0008a130fb49597e29b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b2b75cdcabfc0008a130fb49597e29b">&#9670;&#160;</a></span>EIndicadoresProcura</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29b">EIndicadoresProcura</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29ba3f03343e90fb14215d7a3eda39bcdef6" name="a2b2b75cdcabfc0008a130fb49597e29ba3f03343e90fb14215d7a3eda39bcdef6"></a>indResultado&#160;</td><td class="fielddoc"><p>resultado do algoritmo </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29baa2cc994a33e9a0b48ace332c7a91f176" name="a2b2b75cdcabfc0008a130fb49597e29baa2cc994a33e9a0b48ace332c7a91f176"></a>indTempo&#160;</td><td class="fielddoc"><p>tempo em milisegundos consumidos </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29ba943d4fc0085dbcbfeeba09c833fd1f39" name="a2b2b75cdcabfc0008a130fb49597e29ba943d4fc0085dbcbfeeba09c833fd1f39"></a>indIteracoes&#160;</td><td class="fielddoc"><p>número de iterações consumidas </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29ba5a7e351e9999a0ef7211c3c92888436f" name="a2b2b75cdcabfc0008a130fb49597e29ba5a7e351e9999a0ef7211c3c92888436f"></a>indProcura&#160;</td><td class="fielddoc"><p>Marcador para permitir a extensão do enum em subclasses. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00016">16</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+
+</div>
+</div>
 <a id="a9f2d53e364b23f725c2b357d0fd5eaf8" name="a9f2d53e364b23f725c2b357d0fd5eaf8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f2d53e364b23f725c2b357d0fd5eaf8">&#9670;&#160;</a></span>ENivelDebug</h2>
 
@@ -278,7 +327,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00056">56</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00062">62</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -301,7 +350,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678" name="a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678"></a>ler&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00069">69</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00075">75</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -332,17 +381,13 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245" name="ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245"></a>limiteTempo&#160;</td><td class="fielddoc"><p>Tempo limite em segundos. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6ad12ebb828f2b226a21ac1472d0eeebfa" name="ab9850fa0e8c4a6f8112bf071778c1dc6ad12ebb828f2b226a21ac1472d0eeebfa"></a>limiteGeracoes&#160;</td><td class="fielddoc"><p>Número máximo de gerações (0 significa sem limite). </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6ada8cabf08fbdfada7b4c7bb0063c7f74" name="ab9850fa0e8c4a6f8112bf071778c1dc6ada8cabf08fbdfada7b4c7bb0063c7f74"></a>limiteExpansoes&#160;</td><td class="fielddoc"><p>Número máximo de expansões (0 significa sem limite). </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6a4e659740f4db252369b21a5998487906" name="ab9850fa0e8c4a6f8112bf071778c1dc6a4e659740f4db252369b21a5998487906"></a>limiteAvaliacoes&#160;</td><td class="fielddoc"><p>Número máximo de avaliações (0 significa sem limite). </p>
+<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6af437d05ff169dbc6ab8ff59417b5e639" name="ab9850fa0e8c4a6f8112bf071778c1dc6af437d05ff169dbc6ab8ff59417b5e639"></a>limiteIteracoes&#160;</td><td class="fielddoc"><p>Número máximo de iterações (0 significa sem limite). </p>
 </td></tr>
 <tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35" name="ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35"></a>parametrosProcura&#160;</td><td class="fielddoc"><p>Marcador para permitir a extensão do enum em subclasses. </p>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00033">33</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00041">41</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
