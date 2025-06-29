@@ -132,7 +132,7 @@ Superclasses:
 ## Exemplos
 
 Problemas de exemplo da classe TProcura:
-1. TesteTVetor
+1. [TesteTVetor](teste_tvector.html)
 
 Problemas de exemplo da classe TProcuraConstrutiva:
 1. Aspirador ([parte 1](teste_aspirador1.html), [parte 2](teste_aspirador2.html))

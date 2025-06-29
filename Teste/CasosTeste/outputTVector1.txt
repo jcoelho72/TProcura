@@ -41,433 +41,145 @@ Parâmetros comuns:
  P1(Método): Add() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Sort() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): RandomOrder() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Invert() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): BeASet() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Difference() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Union() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Contained() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Intersection() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): operator=() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): operator+=() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): nada | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Add() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Sort() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): RandomOrder() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Invert() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): BeASet() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Difference() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Union() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Contained() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Intersection() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): operator=() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): operator+=() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): nada | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): std::vector
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Add() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Sort() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): RandomOrder() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Invert() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): BeASet() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Difference() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Union() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Contained() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): Intersection() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): operator=() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): operator+=() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
  P1(Método): nada | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
 P6(Estrutura): TVector/std::algorithm
 Instância 1: DONE.
-Instância 2: DONE.
 Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
 Ficheiro out.csv gravado.

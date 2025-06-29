@@ -74,14 +74,14 @@ void CTesteTVector::Inicializar(void)
 
 void CTesteTVector::Debug(void)
 {
-	if (Parametro(algoritmo) != 1) {
+	if (Parametro(estruturaDados) != 1) {
 		if(dadosA.Count()<6)
 			return;
 		printf("\nDados #%d: ", dadosA.Count());
 		for(int i=0;i<3;i++)
 			printf("%d ",dadosA[i]);
 		printf("... ");
-		for (int i = dadosA.Count() - 4; i < dadosA.Count(); i++)
+		for (int i = dadosA.Count() - 3; i < dadosA.Count(); i++)
 			printf("%d ", dadosA[i]);
 	}
 	else {
@@ -91,7 +91,7 @@ void CTesteTVector::Debug(void)
 		for (int i = 0; i < 3; i++)
 			printf("%d ", stdA[i]);
 		printf("... ");
-		for (int i = stdA.size() - 4; i < stdA.size(); i++)
+		for (int i = stdA.size() - 3; i < stdA.size(); i++)
 			printf("%d ", stdA[i]);
 	}
 }

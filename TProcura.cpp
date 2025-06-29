@@ -196,7 +196,7 @@ bool TProcura::EditarIndicadores() {
 				if (i != opcao - 1 && indicador[i].indice > indicador[opcao - 1].indice)
 					indicador[i].indice--;
 			indicador[opcao - 1].indice = -1;
-			indAtivo.Delete(opcao - 1);
+			indAtivo.Remove(opcao - 1);
 		}
 		else {
 			indicador[opcao - 1].indice = 0;
@@ -558,7 +558,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes, char
 			printf("DONE.");
 		}
 	}
-	if (ficheiro == NULL || strlen(ficheiro) == 0)
+	if (ficheiro == NULL || strlen(ficheiro) <= 1)
 		MostraRelatorio(resultados);
 	else {
 		char* pt = strtok(ficheiro, " \n\t\r");
@@ -592,7 +592,7 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 	}
 	else {
 		TVector<int> instancias;
-		bool mostrarSolucoes=false;
+		bool mostrarSolucoes = false;
 		char fichResultados[256];
 		char argParametros[BUFFER_SIZE];
 		strcpy(fichResultados, "resultados");
@@ -608,7 +608,7 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		instancias = ExtraiLista(argv[1]);
 		if (instancias.Count() == 0) {
 			AjudaUtilizacao(argv[0]);
-			return; 
+			return;
 		}
 
 		// opcionais:
@@ -624,7 +624,7 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 				strcpy(ficheiroInstancia, argv[i + 1]);
 			}
 			else if (strcmp(argv[i], "-S") == 0) {
-				mostrarSolucoes=true;
+				mostrarSolucoes = true;
 			}
 			else if (strcmp(argv[i], "-I") == 0 && i + 1 < argc) {
 				char* pt = strtok(argv[i + 1], ",");
@@ -688,8 +688,8 @@ void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
 			if (parametro[j].nomeValores == NULL)
 				fprintf(f, "%d;", configuracoes[resultados[i].configuracao][j]);
 			else
-				fprintf(f, "%d:%s;", 
-					configuracoes[resultados[i].configuracao][j], 
+				fprintf(f, "%d:%s;",
+					configuracoes[resultados[i].configuracao][j],
 					parametro[j].nomeValores[configuracoes[resultados[i].configuracao][j] - parametro[j].min]);
 		for (int j = 0; j < indAtivo.Count(); j++)
 			fprintf(f, "%d;", Registo(resultados[i], indAtivo[j]));
@@ -920,7 +920,7 @@ void TProcura::SolicitaInstancia() {
 
 		texto = NovoTexto("");
 		resultado = atoi(texto);
-		if (resultado != 0) {
+		if (resultado != 0 || strlen(texto) <= 1) {
 			instancia.valor = resultado;
 			Dominio(instancia.valor, instancia.min, instancia.max);
 		}
