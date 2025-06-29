@@ -8,5 +8,7 @@ var searchData=
   ['teste_20jogo_20em_20linha_5',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
   ['teste_20particao_6',['Teste Particao',['../teste_particao.html',1,'']]],
   ['teste_20puzzle_208_7',['Teste Puzzle 8',['../teste_puzzle8.html',1,'']]],
-  ['tprocura_8',['TProcura',['../index.html',1,'']]]
+  ['teste_20tvector_8',['Teste TVector',['../teste_tvector.html',1,'']]],
+  ['tprocura_9',['TProcura',['../index.html',1,'']]],
+  ['tvector_10',['Teste TVector',['../teste_tvector.html',1,'']]]
 ];
