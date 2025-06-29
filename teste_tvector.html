@@ -133,7 +133,7 @@ Ação 1: Menu 1 - Inicializar</h2>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p> Este menu permite inicializar os dados utilizados no algoritmo. Temos a indicação do ID da instância atual, que é 1. Estão definidas instâncias de 1 a 10. Essas instâncias significam que o tamanho do vetor é 1 milhão vezes o ID da instância. Ao escolhermos a instância 2, vemos que o vetor fica com 2 milhões de dados. Fizemos a visualização apenas dos primeiros 3 e últimos 3 elementos, mas neste caso é suficiente para sabermos que trocamos de instância, já que os números são diferentes. Podiamos também ter introduzido um texto, para alterar o prefixo atual. Este texto é importante se os dados de teste estivessem em ficheiros. Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor, não é preciso o ficheiro.</p>
+</div><!-- fragment --><p> Este menu permite inicializar os dados utilizados no algoritmo. Temos a indicação do ID da instância atual, que é 1. Estão definidas instâncias de 1 a 10. Essas instâncias significam que o tamanho do vetor é 1 milhão vezes o ID da instância. Ao escolhermos a instância 2, vemos que o vetor fica com 2 milhões de dados. Fizemos a visualização apenas dos primeiros 3 e últimos 3 elementos, mas neste caso é suficiente para sabermos que trocamos de instância, já que os números são diferentes. São diferentes os últimos números, mas os primeiros são iguais, já que não alteramos a semente do gerador aleatório. Podiamos também ter introduzido um texto, para alterar o prefixo atual. Este texto é importante se os dados de teste estivessem em ficheiros. Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor, não é preciso o ficheiro.</p>
 <p>Vamos voltar para a instãncia 1, para confirmar que é a mesma, apenas assim se pode garantir que tudo o que se faz em <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, é reproduzivel. Introduza: 1; 1.</p>
 <div class="fragment"><div class="line">ID atual: 2  Intervalo: [1-10]  Prefixo atual: &#39;instancia_&#39;</div>
 <div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 1</div>
@@ -626,7 +626,7 @@ resultados</div></div>
 <p><a class="anchor" id="tvector-a7"></a></p>
 <h2><a class="anchor" id="autotoc_md72"></a>
 Ação 7: Linha de comando</h2>
-<p>Embora o modo interativo seja útil no desenvolvimento do algoritmo ou problema, os testes paramétricos é que nos vão suportar algum tipo de hipótese formada.</p>
+<p>Embora o modo interativo seja útil no desenvolvimento do algoritmo ou problema, os testes paramétricos é que nos vão suportar uma resposta a algum tipo de hipótese formada.</p>
 <p>A linha de comando é normalmente mais simples, para por um lado poder colocar a correr num servidor, por outro, pode ver exatamente o teste solicitado numa só linha, não estando dependente da interação do utilizador.</p>
 <p>Abra a linha de comando, localize o executável, e execute com argumento "-h"</p>
 <div class="fragment"><div class="line">TProcura.exe -h</div>
@@ -702,7 +702,7 @@ resultadosTudo</div></div>
 <p><a class="anchor" id="tvector-a8"></a></p>
 <h2><a class="anchor" id="autotoc_md74"></a>
 Ação 8: Desafio CTesteTVector</h2>
-<p>Será a ordenação de <a class="el" href="classTVector.html">TVector</a> é mais rápida ou mais lenta ue a ordenação da STL? Que testes pode fazer para procurar dar uma resposta fundamentada?</p>
+<p>Será a ordenação de <a class="el" href="classTVector.html">TVector</a> mais rápida ou mais lenta ue a ordenação da STL? Que testes pode fazer para procurar dar uma resposta fundamentada?</p>
 <details >
 <summary >
 Resposta:</summary>
