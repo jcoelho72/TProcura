@@ -60,6 +60,7 @@ Este menu permite inicializar os dados utilizados no algoritmo. Temos a indicaç
 Estão definidas instâncias de 1 a 10. Essas instâncias significam que o tamanho do vetor é 1 milhão vezes o ID da instância.
 Ao escolhermos a instância 2, vemos que o vetor fica com 2 milhões de dados. 
 Fizemos a visualização apenas dos primeiros 3 e últimos 3 elementos, mas neste caso é suficiente para sabermos que trocamos de instância, já que os números são diferentes.
+São diferentes os últimos números, mas os primeiros são iguais, já que não alteramos a semente do gerador aleatório.
 Podiamos também ter introduzido um texto, para alterar o prefixo atual. 
 Este texto é importante se os dados de teste estivessem em ficheiros. 
 Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor, não é preciso o ficheiro.
@@ -735,7 +736,8 @@ Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visivel o
 \anchor tvector-a7
 ## Ação 7: Linha de comando
 
-Embora o modo interativo seja útil no desenvolvimento do algoritmo ou problema, os testes paramétricos é que nos vão suportar algum tipo de hipótese formada.
+Embora o modo interativo seja útil no desenvolvimento do algoritmo ou problema, 
+os testes paramétricos é que nos vão suportar uma resposta a algum tipo de hipótese formada.
 
 A linha de comando é normalmente mais simples, para por um lado poder colocar a correr num servidor, por outro,
 pode ver exatamente o teste solicitado numa só linha, não estando dependente da interação do utilizador.
@@ -836,7 +838,7 @@ Apenas após a identificação de bugs, é que a programação é necessária.
 \anchor tvector-a8
 ## Ação 8: Desafio CTesteTVector
 
-Será a ordenação de TVector é mais rápida ou mais lenta ue a ordenação da STL?
+Será a ordenação de TVector mais rápida ou mais lenta ue a ordenação da STL?
 Que testes pode fazer para procurar dar uma resposta fundamentada?
 
 <details>
