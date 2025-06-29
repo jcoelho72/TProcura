@@ -56,23 +56,14 @@ Este projeto é usado na UC de [Introdução à Inteligência Artificial](https:
 2. Geração automática de combinações de parâmetros  
 3. Recolha de indicadores (tempo, custo, iterações, etc.)  
 4. Exportação de resultados em CSV  
-5. Procuras cegas:  
-   - Largura 
-   - Profundidade 
-   - Custo uniforme  
-6. Procuras informadas:  
-   - Melhor-primeiro  
-   - A\* / IDA\*  
-   - Branch-and-Bound  
-7. Procuras melhorativas:  
-   - Algoritmos genéticos - (futuro: algoritmos evolutivos)
-   - Escalada do Monte 
-   - (futuro: Scatter Search, sistemas artificiais imunes, inteligência de enxames, pesquisa tabu, arrefecimento simulado, GRASP, procura com vizinhança variável e muito alargada.) 
-8. Procuras adversas:  
-   - Minimax, Minimax iterativo  
-   - Alfa-beta  
-   - Hash-table de estados explorados  
-   - (futuro: MCTS)  
+5. Procuras Construtivas:  
+   - Largura / Profundidade / Custo uniforme  
+   - Melhor-primeiro / A\* / IDA\* / Branch-and-Bound  
+6. Procuras melhorativas:  
+   - Algoritmos genéticos, simples - (futuro: algoritmos evolutivos, Scatter Search, sistemas artificiais imunes, inteligência de enxames)
+   - Escalada do Monte - (futuro: pesquisa tabu, arrefecimento simulado, GRASP, procura com vizinhança variável e muito alargada) 
+7. Procuras adversas:  
+   - Minimax / Alfa-beta / iterativo / Hash-table de estados explorados (futuro: MCTS)  
 
 ---
 

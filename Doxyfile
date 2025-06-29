@@ -1,5 +1,5 @@
-PROJECT_NAME           = "TProcuraConstrutiva"
-PROJECT_BRIEF          = "Algoritmos de procura para problemas de otimização"
+PROJECT_NAME           = "TProcura"
+PROJECT_BRIEF          = "Biblioteca em C++ para testes paramétricos de algoritmos, e coleção de algoritmos de procura e otimização"
 OUTPUT_DIRECTORY       = docs/html
 HTML_OUTPUT            = .
 
