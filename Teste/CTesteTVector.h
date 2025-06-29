@@ -1,5 +1,5 @@
 #pragma once
-#include "..\TProcura.h"
+#include "../TProcura.h"
 #include <vector>
 
 class CTesteTVector :
