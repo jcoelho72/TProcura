@@ -35,7 +35,7 @@ O **TProcura** nasceu para unificar testes paramétricos e implementação gené
 Em vez de alterar `#define` e recompilar a cada mudança de parâmetro, o framework:
 
 - Propõe uma estrutura para uma lista de parametros, gerida na superclasse 
-- Gera automaticamente todas as combinações que o utilizador desejar 
+- Gera automaticamente todas as combinações de paramertros que o utilizador desejar 
 - Executa instâncias para cada combinação de parametros, e recolhe indicadores definidos  
 - Exporta resultados em CSV para análises em Excel, R ou Python  
 
@@ -71,7 +71,7 @@ Este projeto é usado na UC de [Introdução à Inteligência Artificial](https:
 ## 📦 Hierarquia de Classes
 
 ```text
-TProcura
+TProcura                       # algoritmo
 ├─ TProcuraConstrutiva         # sucessores e heurística
 │  └─ TProcuraAdversa          # sucessores e heurística
 └─ TProcuraMelhorativa         # solução inicial, vizinhança, mutação, cruzamento, avaliação

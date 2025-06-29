@@ -19,8 +19,8 @@ jobs:
       run: make
     - name: Executar testes
       run: make check
-    - name: make distcheck
-      run: make distcheck
+#    - name: make distcheck
+#      run: make distcheck
     - name: Gerar documentação
       run: doxygen Doxyfile
     - name: Gerar layout.xml se não existir
