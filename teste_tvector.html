@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('teste_tvector.html',''); initResizable
   <div class="headertitle"><div class="title">Teste TVector</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Execução de exemplo com base na classe de teste de <a class="el" href="classTVector.html">TVector</a>. Pode acompanhar o teste excutando as ações localmente. Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>. Nos exemplos das subclasses ilustra-se as restantes funcionalidades.</p>
+<div class="textblock"><p>Execução de exemplo com base na classe de teste de <a class="el" href="classTVector.html">TVector</a>. Pode acompanhar o teste executando as ações localmente. Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>. Nos exemplos das subclasses ilustra-se as restantes funcionalidades.</p>
 <h2><a class="anchor" id="autotoc_md58"></a>
 Sumário</h2>
 <ul>
@@ -181,7 +181,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <div class="line">11: operator+=()</div>
 <div class="line">12: nada</div>
 <div class="line">Método (atual 1):</div>
-</div><!-- fragment --><p>Como o parâmetro é catégórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. Este parâmetro foi povoado na classe <a class="el" href="classCTesteTVector.html">CTesteTVector</a>, onde foram definidos estes métodos. A função do parâmetro 1 é sempre escolher o método/algoritmo a executar, mas os métodos/algoritmos variam conforme a subclasse. Ao utilizar uma das subclasses genéricas de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, esta já tem um conmjunto de algoritmos implementados, ficando esta lista preenchida.</p>
+</div><!-- fragment --><p>Como o parâmetro é catégórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. Este parâmetro foi povoado na classe <a class="el" href="classCTesteTVector.html">CTesteTVector</a>, onde foram definidos estes métodos. A função do parâmetro 1 é sempre escolher o método/algoritmo a executar, mas os métodos/algoritmos variam conforme a subclasse. Ao utilizar uma das subclasses genéricas de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, esta já tem um conjunto de algoritmos implementados, ficando esta lista preenchida.</p>
 <p>Caso não pretenda alterar um parâmetro, pode sempre carregar em ENTER para manter o valor atual. Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introduza: 2; 2.</p>
 <div class="fragment"><div class="line">Método (atual 1): 2</div>
 <div class="line"> </div>
@@ -203,7 +203,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 </div><!-- fragment --><p> Notar que agora o valor associado a P1 é "Sort()". Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug. Este parâmetro é de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, e não é necessário alterar, a não ser que se pretenda mais que 3 níveis de debug.</p>
 <p>Ao alterar este parâmetro, o algoritmo, caso tenha condicionais sobre este parâmetro, irá mostrar os detalhes do que está a fazer. Prevê-se estes níveis, em que o nível 1 deve apresentar apenas um caracter de tempos a tempos, de modo a confirmar-se que o algoritmo está a funcionar. No nível 2 deve-se dar a indicação do passo/iteração em que vai, ou grande passo, no caso do número de iterações ser elevado. No nível 3 detalhe, já é de esperar detalhe sobre todas as iterações. No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.~´</p>
 <p>Estes níveis têm o intuito de poder observar bugs, caso existam. Mas têm também um carácter didático, já que nas classes de procura, pode-se observar os algoritmos com o nível que se pretender. Assim está-se a contribuir para a compreensão do algoritmo, aplicado a um dado problema.</p>
-<p>No caso do <a class="el" href="classTVector.html">TVector</a>, os algoritmos estão implementados sem debug, pelo que este valor não é utilziado.</p>
+<p>No caso do <a class="el" href="classTVector.html">TVector</a>, os algoritmos estão implementados sem debug, pelo que este valor não é utilizado.</p>
 <p>Avançamos para o parâmetro P3, "Seed". Introduza: <em>ENTER</em>; 3; 2; <em>ENTER</em>.</p>
 <div class="fragment"><div class="line">Debug (atual 0):</div>
 <div class="line"> </div>
@@ -565,7 +565,7 @@ Ação 6: Menu 8 - Teste</h2>
 <p>É mostrando ainda um torneio entre configurações, para saber a que é mais rápida. Para permitir a reprodução, é mostrrado no final os valores exatos de cada configuração.</p>
 <p>Infelizmente, pouco podemos deduzir deste teste. O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente corridas. Sabemos apenas que não há crash.</p>
 <p>Vamos formular uma pergunta. Pretendemos saber como varia o tempo na operação de ordenação, com o tamanho do vetor.</p>
-<p>Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de novo, para não ter qualquer configuração. Introduza após arrancar: 7; P1=2; <em>ENTER</em>; 8; 1:10; <em>ENMTER</em>; 0.</p>
+<p>Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de novo, para não ter qualquer configuração. Introduza após arrancar: 7; P1=2; <em>ENTER</em>; 8; 1:10; <em>ENTER</em>; 0.</p>
 <div class="fragment"><div class="line">...</div>
 <div class="line"> P1(Método): Sort() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
 <div class="line">P6(Estrutura): TVector</div>
