@@ -1,7 +1,7 @@
 @page teste_tvector Teste TVector
 
 Execução de exemplo com base na classe de teste de TVector. 
-Pode acompanhar o teste excutando as ações localmente.
+Pode acompanhar o teste executando as ações localmente.
 Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe TProcura.
 Nos exemplos das subclasses ilustra-se as restantes funcionalidades.
 
@@ -138,7 +138,7 @@ Método (atual 1):
 Como o parâmetro é catégórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. 
 Este parâmetro foi povoado na classe CTesteTVector, onde foram definidos estes métodos.
 A função do parâmetro 1 é sempre escolher o método/algoritmo a executar, mas os métodos/algoritmos variam conforme a subclasse.
-Ao utilizar uma das subclasses genéricas de TProcura, esta já tem um conmjunto de algoritmos implementados, ficando esta lista preenchida.
+Ao utilizar uma das subclasses genéricas de TProcura, esta já tem um conjunto de algoritmos implementados, ficando esta lista preenchida.
 
 Caso não pretenda alterar um parâmetro, pode sempre carregar em ENTER para manter o valor atual. 
 Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introduza: 2; 2.
@@ -175,7 +175,7 @@ Estes níveis têm o intuito de poder observar bugs, caso existam.
 Mas têm também um carácter didático, já que nas classes de procura, pode-se observar os algoritmos com o nível que se pretender.
 Assim está-se a contribuir para a compreensão do algoritmo, aplicado a um dado problema.
 
-No caso do TVector, os algoritmos estão implementados sem debug, pelo que este valor não é utilziado.
+No caso do TVector, os algoritmos estão implementados sem debug, pelo que este valor não é utilizado.
 
 Avançamos para o parâmetro P3, "Seed". Introduza: *ENTER*; 3; 2; *ENTER*.
 
@@ -659,7 +659,7 @@ Sabemos apenas que não há crash.
 Vamos formular uma pergunta. Pretendemos saber como varia o tempo na operação de ordenação, com o tamanho do vetor.
 
 Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de novo, para não ter qualquer configuração.
-Introduza após arrancar: 7; P1=2; *ENTER*; 8; 1:10; *ENMTER*; 0.
+Introduza após arrancar: 7; P1=2; *ENTER*; 8; 1:10; *ENTER*; 0.
 
 ```entrada
 ...
