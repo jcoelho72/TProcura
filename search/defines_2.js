@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lower_5fmask_0',['LOWER_MASK',['../TRand_8cpp.html#a4ddd8cab3564b7a86a4b0e52ba08f70e',1,'TRand.cpp']]]
+  ['max_5fdamas_0',['max_damas',['../Construtiva_2Teste_2OitoDamas_8h.html#a579503586ec674137f68c4177e60e0c8',1,'MAX_DAMAS:&#160;OitoDamas.h'],['../Melhorativa_2Teste_2OitoDamas_8h.html#a579503586ec674137f68c4177e60e0c8',1,'MAX_DAMAS:&#160;OitoDamas.h']]]
 ];

@@ -39,7 +39,7 @@ digraph "TProcura::TesteEmpirico"
   Node15 -> Node16 [id="edge59_Node000015_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node16 -> Node17 [id="edge60_Node000016_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip=" "];
+  Node17 [id="Node000017",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
   Node14 -> Node18 [id="edge61_Node000014_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="TProcura::MelhorResultado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#abd92370cf06d23e878f9426aed34e39c",tooltip=" "];
   Node18 -> Node9 [id="edge62_Node000018_Node000009",color="steelblue1",style="solid",tooltip=" "];
@@ -73,6 +73,6 @@ digraph "TProcura::TesteEmpirico"
   Node27 -> Node3 [id="edge81_Node000027_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node27 -> Node9 [id="edge82_Node000027_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node28 [id="edge83_Node000001_Node000028",color="steelblue1",style="solid",tooltip=" "];
-  Node28 [id="Node000028",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip=" "];
+  Node28 [id="Node000028",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node1 -> Node26 [id="edge84_Node000001_Node000026",color="steelblue1",style="solid",tooltip=" "];
 }

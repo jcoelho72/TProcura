@@ -23,7 +23,7 @@ digraph "main"
   Node7 -> Node9 [id="edge103_Node000007_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
   Node7 -> Node10 [id="edge104_Node000007_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="TVector::Delete",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aba2fb6d977b1309f3e884369c5f43bba",tooltip=" "];
+  Node10 [id="Node000010",label="TVector::Delete",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aba2fb6d977b1309f3e884369c5f43bba",tooltip="Remove o elemento na posição i deslocando os seguintes."];
   Node7 -> Node6 [id="edge105_Node000007_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node11 [id="edge106_Node000007_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TProcura::InserirConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a662c7ff8ba62bb5745a7ee0ec92eea13",tooltip=" "];
@@ -36,7 +36,7 @@ digraph "main"
   Node13 -> Node14 [id="edge111_Node000013_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node14 -> Node15 [id="edge112_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip=" "];
+  Node15 [id="Node000015",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
   Node13 -> Node8 [id="edge113_Node000013_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node9 [id="edge114_Node000013_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node16 [id="edge115_Node000013_Node000016",color="steelblue1",style="solid",tooltip=" "];
@@ -58,7 +58,7 @@ digraph "main"
   Node22 [id="Node000022",label="TProcura::MostraIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a99f5cf1c59ce543a58d802a1ac907299",tooltip=" "];
   Node21 -> Node2 [id="edge125_Node000021_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node21 -> Node23 [id="edge126_Node000021_Node000023",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="TVector::Remove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a85673895d405c09b5b9155f78b67d71b",tooltip=" "];
+  Node23 [id="Node000023",label="TVector::Remove",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a85673895d405c09b5b9155f78b67d71b",tooltip="Remove todas as ocorrências de um dado elemento."];
   Node4 -> Node24 [id="edge127_Node000004_Node000024",color="steelblue1",style="solid",tooltip=" "];
   Node24 [id="Node000024",label="TProcura::EditarParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab044dca559e3c04e5cec68647af2c7c4",tooltip=" "];
   Node24 -> Node6 [id="edge128_Node000024_Node000006",color="steelblue1",style="solid",tooltip=" "];
@@ -123,7 +123,7 @@ digraph "main"
   Node44 [id="Node000044",label="TProcura::SolicitaInstancias",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6941386b767d6f0723c6eb9d27241d69",tooltip=" "];
   Node44 -> Node12 [id="edge168_Node000044_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node4 -> Node45 [id="edge169_Node000004_Node000045",color="steelblue1",style="solid",tooltip=" "];
-  Node45 [id="Node000045",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip=" "];
+  Node45 [id="Node000045",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node4 -> Node46 [id="edge170_Node000004_Node000046",color="steelblue1",style="solid",tooltip=" "];
   Node46 [id="Node000046",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afcfe280771c67c80a69d422c476ae090",tooltip="Executa testes emp�ricos, em todas as configura��es guardadas, nas inst�ncias selecionadas."];
   Node46 -> Node8 [id="edge171_Node000046_Node000008",color="steelblue1",style="solid",tooltip=" "];

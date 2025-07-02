@@ -52,7 +52,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node20 -> Node21 [id="edge116_Node000020_Node000021",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node21 -> Node22 [id="edge117_Node000021_Node000022",color="steelblue1",style="solid",tooltip=" "];
-  Node22 [id="Node000022",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip=" "];
+  Node22 [id="Node000022",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
   Node20 -> Node23 [id="edge118_Node000020_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="TProcuraConstrutiva\l::DebugRamo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a1784cd5198a6cb0ae7ad763af9982120",tooltip=" "];
   Node20 -> Node24 [id="edge119_Node000020_Node000024",color="steelblue1",style="solid",tooltip=" "];
@@ -95,9 +95,9 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node39 [id="Node000039",label="TProcuraConstrutiva\l::CalcularHeuristicas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a640e74c9b6cd340761db671438ad679e",tooltip=" "];
   Node39 -> Node21 [id="edge145_Node000039_Node000021",color="steelblue1",style="solid",tooltip=" "];
   Node38 -> Node33 [id="edge146_Node000038_Node000033",color="steelblue1",style="solid",tooltip=" "];
-  Node33 [id="Node000033",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip=" "];
+  Node33 [id="Node000033",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
   Node33 -> Node34 [id="edge147_Node000033_Node000034",color="steelblue1",style="solid",tooltip=" "];
-  Node34 [id="Node000034",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip=" "];
+  Node34 [id="Node000034",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node28 -> Node40 [id="edge148_Node000028_Node000040",color="steelblue1",style="solid",tooltip=" "];
   Node40 [id="Node000040",label="TProcura::Parar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7952e187e1b0ae0ca52edab157223179",tooltip="Verifica se a procura deve ser interrompida."];
   Node40 -> Node41 [id="edge149_Node000040_Node000041",color="steelblue1",style="solid",tooltip=" "];

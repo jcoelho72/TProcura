@@ -100,135 +100,99 @@ $(document).ready(function(){initNavTree('TRand_8cpp_source.html',''); initResiz
   <div class="headertitle"><div class="title">TRand.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="TRand_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TRand.cpp: implementation of the TRand class.</span></div>
+<a href="TRand_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// TRand.cpp: implementação do namespace TRand para geração de números aleatórios.</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="TRand_8h.html">TRand.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">/* Period parameters */</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">   10</a></span><span class="preprocessor">#define N 624</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#a52037c938e3c1b126c6277da5ca689d0">   11</a></span><span class="preprocessor">#define M 397</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//#define N 27</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//#define M 7</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#a376c3581bae3c2367fc9ce694e5a8949">   14</a></span><span class="preprocessor">#define MATRIX_A 0x9908b0df   </span><span class="comment">/* constant vector a */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#a39bc458849360f8f371b54c4365d397f">   15</a></span><span class="preprocessor">#define UPPER_MASK 0x80000000 </span><span class="comment">/* most significant w-r bits */</span><span class="preprocessor"></span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#a4ddd8cab3564b7a86a4b0e52ba08f70e">   16</a></span><span class="preprocessor">#define LOWER_MASK 0x7fffffff </span><span class="comment">/* least significant r bits */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;ctime&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="TRand_8h.html">TRand.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">// parâmetros do período</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> N = 624;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> M = 397;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// constantes para tempering</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> MATRIX_A = 0x9908b0dfu;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> UPPER_MASK = 0x80000000u;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> LOWER_MASK = 0x7fffffffu;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> TEMPERING_MASK_B = 0x9d2c5680u;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> TEMPERING_MASK_C = 0xefc60000u;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/* Tempering parameters */</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#ad823db99ec38ec810124406bd3dfeeae">   19</a></span><span class="preprocessor">#define TEMPERING_MASK_B 0x9d2c5680</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#ae1c7a72f80707458249c99a6f37e7d3e">   20</a></span><span class="preprocessor">#define TEMPERING_MASK_C 0xefc60000</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#a238852cd6380d77bd700e95d0a7d90c9">   21</a></span><span class="preprocessor">#define TEMPERING_SHIFT_U(y)  (y &gt;&gt; 11)</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#adce59eadb4013bb06a059dedf69c282d">   22</a></span><span class="preprocessor">#define TEMPERING_SHIFT_S(y)  (y &lt;&lt; 7)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3">   23</a></span><span class="preprocessor">#define TEMPERING_SHIFT_T(y)  (y &lt;&lt; 15)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="TRand_8cpp.html#a15f821dd6f1a65b3ecf672718aa6273c">   24</a></span><span class="preprocessor">#define TEMPERING_SHIFT_L(y)  (y &gt;&gt; 18)</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt[<a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>][2]; <span class="comment">/* the array for the state vector  */</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">static</span> <span class="keywordtype">int</span> mti[2] = { <a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> + 1, <a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> + 1 }; <span class="comment">/* mti==N+1 means mt[N] is not initialized */</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// Construction/Destruction</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// shifts de tempering</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> TEMPER_U(<span class="keywordtype">unsigned</span> y) { <span class="keywordflow">return</span> y &gt;&gt; 11; }</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> TEMPER_S(<span class="keywordtype">unsigned</span> y) { <span class="keywordflow">return</span> y &lt;&lt; 7; }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> TEMPER_T(<span class="keywordtype">unsigned</span> y) { <span class="keywordflow">return</span> y &lt;&lt; 15; }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> TEMPER_L(<span class="keywordtype">unsigned</span> y) { <span class="keywordflow">return</span> y &gt;&gt; 18; }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// estado interno: duas sequências independentes</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> mt[N][2];</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> <span class="keywordtype">int</span>      mti[2] = { N + 1, N + 1 };</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// auxiliar para mag01[x] = x * MATRIX_A</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> mag01[2] = { 0u, MATRIX_A };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespaceTRand.html">   32</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceTRand.html">TRand</a> {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classTRand.html#a07a93194afa80ce940fe16a4bd7b68d9">   34</a></span><a class="code hl_function" href="classTRand.html#a07a93194afa80ce940fe16a4bd7b68d9">TRand::TRand</a>()</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">srand</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a>, <span class="keywordtype">int</span> seq <span class="comment">/*=0*/</span>)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        seq &amp;= 1;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a> == 0)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            <a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::clock());</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        mt[0][seq] = <a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">for</span> (mti[seq] = 1; mti[seq] &lt; N; ++mti[seq]) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            mt[mti[seq]][seq] = (69069u * mt[mti[seq] - 1][seq]) &amp; 0xffffffffu;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
 </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classTRand.html#aa94554553535dc1a1c0f0e31c494c5c3">   39</a></span><a class="code hl_function" href="classTRand.html#aa94554553535dc1a1c0f0e31c494c5c3">TRand::~TRand</a>()</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
-</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">TRand::srand</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a>, <span class="keywordtype">int</span> seq)</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">/* setting initial seeds to mt[N] using         */</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">/* the generator Line 25 of Table 1 in          */</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">/* [KNUTH 1981, The Art of Computer Programming */</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">/*    Vol. 2 (2nd Ed.), pp102]                  */</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f">   46</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f">rand</a>(<span class="keywordtype">int</span> seq <span class="comment">/*=0*/</span>)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> y;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        seq &amp;= 1;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    seq &amp;= 1;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a> == 0)</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a> = (<span class="keywordtype">unsigned</span> int)clock();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    mt[0][seq] = <a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a> &amp; 0xffffffff;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">for</span> (mti[seq] = 1; mti[seq] &lt; <a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>; mti[seq]++)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        mt[mti[seq]][seq] = (69069 * mt[mti[seq] - 1][seq]) &amp; 0xffffffff;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span> (mti[seq] &gt;= N) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="comment">// gera N palavras de uma vez</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            <span class="keywordflow">if</span> (mti[seq] == N + 1) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                <span class="comment">// seed padrão</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_function" href="namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">srand</a>(0, seq);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>            }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = 0; kk &lt; N - M; ++kk) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                y = (mt[kk][seq] &amp; UPPER_MASK) | (mt[kk + 1][seq] &amp; LOWER_MASK);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                mt[kk][seq] = mt[kk + M][seq] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1];</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> kk = N - M; kk &lt; N - 1; ++kk) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                y = (mt[kk][seq] &amp; UPPER_MASK) | (mt[kk + 1][seq] &amp; LOWER_MASK);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                mt[kk][seq] = mt[kk + (M - N)][seq] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1];</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            }</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            y = (mt[N - 1][seq] &amp; UPPER_MASK) | (mt[0][seq] &amp; LOWER_MASK);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            mt[N - 1][seq] = mt[M - 1][seq] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1];</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            mti[seq] = 0;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        y = mt[mti[seq]++][seq];</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        y ^= TEMPER_U(y);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        y ^= TEMPER_S(y) &amp; TEMPERING_MASK_B;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        y ^= TEMPER_T(y) &amp; TEMPERING_MASK_C;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        y ^= TEMPER_L(y);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">return</span> y;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
 </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classTRand.html#a8f8ec155d796c5586198ac75eb966d4f">   61</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classTRand.html#a8f8ec155d796c5586198ac75eb966d4f">TRand::rand</a>(<span class="keywordtype">int</span> seq)</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> y;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mag01[2]={0x0, <a class="code hl_define" href="TRand_8cpp.html#a376c3581bae3c2367fc9ce694e5a8949">MATRIX_A</a>};</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">/* mag01[x] = x * MATRIX_A  for x=0,1 */</span></div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    seq &amp;= 1;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (mti[seq] &gt;= <a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>) { <span class="comment">/* generate N words at one time */</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keywordtype">int</span> kk;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">if</span> (mti[seq] == <a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>+1)   <span class="comment">/* if sgenrand() has not been called, */</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            <a class="code hl_function" href="classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">srand</a>(0, seq); <span class="comment">/* a default initial seed is used   */</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">for</span> (kk = 0; kk &lt; <a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> - <a class="code hl_define" href="TRand_8cpp.html#a52037c938e3c1b126c6277da5ca689d0">M</a>; kk++) {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            y = (mt[kk][seq] &amp; <a class="code hl_define" href="TRand_8cpp.html#a39bc458849360f8f371b54c4365d397f">UPPER_MASK</a>) | (mt[kk + 1][seq] &amp; <a class="code hl_define" href="TRand_8cpp.html#a4ddd8cab3564b7a86a4b0e52ba08f70e">LOWER_MASK</a>);</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            mt[kk][seq] = mt[kk + <a class="code hl_define" href="TRand_8cpp.html#a52037c938e3c1b126c6277da5ca689d0">M</a>][seq] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1];</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">for</span> (; kk &lt; <a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> - 1; kk++) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            y = (mt[kk][seq] &amp; <a class="code hl_define" href="TRand_8cpp.html#a39bc458849360f8f371b54c4365d397f">UPPER_MASK</a>) | (mt[kk + 1][seq] &amp; <a class="code hl_define" href="TRand_8cpp.html#a4ddd8cab3564b7a86a4b0e52ba08f70e">LOWER_MASK</a>);</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            mt[kk][seq] = mt[kk + (<a class="code hl_define" href="TRand_8cpp.html#a52037c938e3c1b126c6277da5ca689d0">M</a> - <a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>)][seq] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1];</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        y = (mt[<a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> - 1][seq] &amp; <a class="code hl_define" href="TRand_8cpp.html#a39bc458849360f8f371b54c4365d397f">UPPER_MASK</a>) | (mt[0][seq] &amp; <a class="code hl_define" href="TRand_8cpp.html#a4ddd8cab3564b7a86a4b0e52ba08f70e">LOWER_MASK</a>);</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        mt[<a class="code hl_define" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>-1][seq] = mt[<a class="code hl_define" href="TRand_8cpp.html#a52037c938e3c1b126c6277da5ca689d0">M</a>-1][seq] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1];</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        mti[seq] = 0;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    y = mt[mti[seq]++][seq];</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    y ^= <a class="code hl_define" href="TRand_8cpp.html#a238852cd6380d77bd700e95d0a7d90c9">TEMPERING_SHIFT_U</a>(y);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    y ^= <a class="code hl_define" href="TRand_8cpp.html#adce59eadb4013bb06a059dedf69c282d">TEMPERING_SHIFT_S</a>(y) &amp; <a class="code hl_define" href="TRand_8cpp.html#ad823db99ec38ec810124406bd3dfeeae">TEMPERING_MASK_B</a>;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    y ^= <a class="code hl_define" href="TRand_8cpp.html#a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3">TEMPERING_SHIFT_T</a>(y) &amp; <a class="code hl_define" href="TRand_8cpp.html#ae1c7a72f80707458249c99a6f37e7d3e">TEMPERING_MASK_C</a>;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    y ^= <a class="code hl_define" href="TRand_8cpp.html#a15f821dd6f1a65b3ecf672718aa6273c">TEMPERING_SHIFT_L</a>(y);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> y;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>} <span class="comment">// namespace TRand</span></div>
 </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#undef N </span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#undef M </span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#undef MATRIX_A</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#undef UPPER_MASK</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#undef LOWER_MASK</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#undef TEMPERING_MASK_B </span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#undef TEMPERING_MASK_C </span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#undef TEMPERING_SHIFT_U</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#undef TEMPERING_SHIFT_S</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#undef TEMPERING_SHIFT_T</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#undef TEMPERING_SHIFT_L</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a></div><div class="ttdeci">@ seed</div><div class="ttdoc">Semente aleat�ria para inicializar a sequ�ncia de n�meros pseudo-aleat�rios.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00044">TProcura.h:44</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_a0240ac851181b84ac374872dc5434ee4"><div class="ttname"><a href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a></div><div class="ttdeci">#define N</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00010">TRand.cpp:10</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3"><div class="ttname"><a href="TRand_8cpp.html#a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3">TEMPERING_SHIFT_T</a></div><div class="ttdeci">#define TEMPERING_SHIFT_T(y)</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00023">TRand.cpp:23</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_a15f821dd6f1a65b3ecf672718aa6273c"><div class="ttname"><a href="TRand_8cpp.html#a15f821dd6f1a65b3ecf672718aa6273c">TEMPERING_SHIFT_L</a></div><div class="ttdeci">#define TEMPERING_SHIFT_L(y)</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00024">TRand.cpp:24</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_a238852cd6380d77bd700e95d0a7d90c9"><div class="ttname"><a href="TRand_8cpp.html#a238852cd6380d77bd700e95d0a7d90c9">TEMPERING_SHIFT_U</a></div><div class="ttdeci">#define TEMPERING_SHIFT_U(y)</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00021">TRand.cpp:21</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_a376c3581bae3c2367fc9ce694e5a8949"><div class="ttname"><a href="TRand_8cpp.html#a376c3581bae3c2367fc9ce694e5a8949">MATRIX_A</a></div><div class="ttdeci">#define MATRIX_A</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00014">TRand.cpp:14</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_a39bc458849360f8f371b54c4365d397f"><div class="ttname"><a href="TRand_8cpp.html#a39bc458849360f8f371b54c4365d397f">UPPER_MASK</a></div><div class="ttdeci">#define UPPER_MASK</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00015">TRand.cpp:15</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_a4ddd8cab3564b7a86a4b0e52ba08f70e"><div class="ttname"><a href="TRand_8cpp.html#a4ddd8cab3564b7a86a4b0e52ba08f70e">LOWER_MASK</a></div><div class="ttdeci">#define LOWER_MASK</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00016">TRand.cpp:16</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_a52037c938e3c1b126c6277da5ca689d0"><div class="ttname"><a href="TRand_8cpp.html#a52037c938e3c1b126c6277da5ca689d0">M</a></div><div class="ttdeci">#define M</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00011">TRand.cpp:11</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_ad823db99ec38ec810124406bd3dfeeae"><div class="ttname"><a href="TRand_8cpp.html#ad823db99ec38ec810124406bd3dfeeae">TEMPERING_MASK_B</a></div><div class="ttdeci">#define TEMPERING_MASK_B</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00019">TRand.cpp:19</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_adce59eadb4013bb06a059dedf69c282d"><div class="ttname"><a href="TRand_8cpp.html#adce59eadb4013bb06a059dedf69c282d">TEMPERING_SHIFT_S</a></div><div class="ttdeci">#define TEMPERING_SHIFT_S(y)</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00022">TRand.cpp:22</a></div></div>
-<div class="ttc" id="aTRand_8cpp_html_ae1c7a72f80707458249c99a6f37e7d3e"><div class="ttname"><a href="TRand_8cpp.html#ae1c7a72f80707458249c99a6f37e7d3e">TEMPERING_MASK_C</a></div><div class="ttdeci">#define TEMPERING_MASK_C</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00020">TRand.cpp:20</a></div></div>
-<div class="ttc" id="aTRand_8h_html"><div class="ttname"><a href="TRand_8h.html">TRand.h</a></div></div>
-<div class="ttc" id="aclassTRand_html_a07a93194afa80ce940fe16a4bd7b68d9"><div class="ttname"><a href="classTRand.html#a07a93194afa80ce940fe16a4bd7b68d9">TRand::TRand</a></div><div class="ttdeci">TRand()</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00034">TRand.cpp:34</a></div></div>
-<div class="ttc" id="aclassTRand_html_a8f8ec155d796c5586198ac75eb966d4f"><div class="ttname"><a href="classTRand.html#a8f8ec155d796c5586198ac75eb966d4f">TRand::rand</a></div><div class="ttdeci">static unsigned int rand(int seq=0)</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00061">TRand.cpp:61</a></div></div>
-<div class="ttc" id="aclassTRand_html_aa94554553535dc1a1c0f0e31c494c5c3"><div class="ttname"><a href="classTRand.html#aa94554553535dc1a1c0f0e31c494c5c3">TRand::~TRand</a></div><div class="ttdeci">virtual ~TRand()</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00039">TRand.cpp:39</a></div></div>
-<div class="ttc" id="aclassTRand_html_ad0b319d6f58ab6820b001b4e3d3ae245"><div class="ttname"><a href="classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">TRand::srand</a></div><div class="ttdeci">static void srand(unsigned int seed, int seq=0)</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00044">TRand.cpp:44</a></div></div>
+<div class="ttc" id="aTRand_8h_html"><div class="ttname"><a href="TRand_8h.html">TRand.h</a></div><div class="ttdoc">Interface para geração de números aleatórios independentes do sistema operativo.</div></div>
+<div class="ttc" id="anamespaceTRand_html"><div class="ttname"><a href="namespaceTRand.html">TRand</a></div><div class="ttdoc">Agrupa funções para inicializar e obter valores pseudo-aleatórios.</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00032">TRand.cpp:32</a></div></div>
+<div class="ttc" id="anamespaceTRand_html_a8f8ec155d796c5586198ac75eb966d4f"><div class="ttname"><a href="namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f">TRand::rand</a></div><div class="ttdeci">unsigned int rand(int seq)</div><div class="ttdoc">Retorna o próximo valor pseudo-aleatório.</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00046">TRand.cpp:46</a></div></div>
+<div class="ttc" id="anamespaceTRand_html_ad0b319d6f58ab6820b001b4e3d3ae245"><div class="ttname"><a href="namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">TRand::srand</a></div><div class="ttdeci">void srand(unsigned int seed, int seq)</div><div class="ttdoc">Inicializa a semente da geração pseudo-aleatória.</div><div class="ttdef"><b>Definition</b> <a href="TRand_8cpp_source.html#l00034">TRand.cpp:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -8,11 +8,11 @@ digraph "Construtiva/Teste/Particao.h"
   Node1 -> Node2 [id="edge11_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="../TProcuraConstrutiva.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TProcuraConstrutiva_8h.html",tooltip=" "];
   Node2 -> Node3 [id="edge12_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="../TVector.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TVector_8h.html",tooltip=" "];
+  Node3 [id="Node000003",label="../TVector.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TVector_8h.html",tooltip="Vetor dinâmico genérico com operações de pilha, conjuntos e algoritmos úteis."];
   Node3 -> Node4 [id="edge13_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="stdlib.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node3 -> Node5 [id="edge14_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TRand.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TRand_8h.html",tooltip=" "];
+  Node5 [id="Node000005",label="TRand.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TRand_8h.html",tooltip="Interface para geração de números aleatórios independentes do sistema operativo."];
   Node2 -> Node6 [id="edge15_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="../TProcura.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TProcura_8h.html",tooltip=" "];
   Node6 -> Node3 [id="edge16_Node000006_Node000003",color="steelblue1",style="solid",tooltip=" "];

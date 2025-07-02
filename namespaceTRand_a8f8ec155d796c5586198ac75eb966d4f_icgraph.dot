@@ -5,7 +5,7 @@ digraph "TRand::rand"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
-  Node1 [id="Node000001",label="TRand::rand",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [id="Node000001",label="TRand::rand",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Retorna o próximo valor pseudo-aleatório."];
   Node1 -> Node2 [id="edge46_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraMelhorativa\l::AlgoritmoGenetico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a574d0ec15c8c1d3ded8db605def50616",tooltip=" "];
   Node2 -> Node3 [id="edge47_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -73,7 +73,7 @@ digraph "TRand::rand"
   Node29 [id="Node000029",label="TVector::Random",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a769c6a55b72a463fd2313fbd638c7234",tooltip=" "];
   Node29 -> Node25 [id="edge83_Node000029_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node30 [id="edge84_Node000001_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node30 [id="Node000030",label="TVector::RandomOrder",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a528c30196e28424fcac4386b873a6e11",tooltip=" "];
+  Node30 [id="Node000030",label="TVector::RandomOrder",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a528c30196e28424fcac4386b873a6e11",tooltip="Coloca os elementos em ordem aleatória (Fisher–Yates shuffle)."];
   Node30 -> Node7 [id="edge85_Node000030_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node31 [id="edge86_Node000001_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node31 [id="Node000031",label="TProcuraMelhorativa\l::Selecao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#abc3412ac90e57f6c25b3c609fcc93d62",tooltip=" "];

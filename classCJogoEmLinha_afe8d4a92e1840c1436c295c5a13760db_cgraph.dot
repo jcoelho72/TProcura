@@ -31,12 +31,12 @@ digraph "CJogoEmLinha::Heuristica"
   Node12 -> Node13 [id="edge29_Node000012_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraConstrutiva\l::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node13 -> Node14 [id="edge30_Node000013_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip=" "];
+  Node14 [id="Node000014",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
   Node14 -> Node15 [id="edge31_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip=" "];
+  Node15 [id="Node000015",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node12 -> Node6 [id="edge32_Node000012_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node16 [id="edge33_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="TProcuraAdversa::MaiorAmeaca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a1869e0545c7fe2dd0d38f5f3c860c61f",tooltip="Utilitário para calculo de uma heurística standard em jogos simples."];
   Node1 -> Node17 [id="edge34_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TVector::Reset",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd",tooltip=" "];
+  Node17 [id="Node000017",label="TVector::Reset",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd",tooltip="Preenche todo o vetor com um mesmo valor."];
 }

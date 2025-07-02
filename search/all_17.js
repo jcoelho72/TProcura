@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['n_0',['n',['../structSJogoEmLinha.html#a965df6adca0616dc382be363f19485e5',1,'SJogoEmLinha::N'],['../TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4',1,'N:&#160;TRand.cpp']]],
+  ['n_0',['N',['../structSJogoEmLinha.html#a965df6adca0616dc382be363f19485e5',1,'SJogoEmLinha']]],
   ['nada_1',['nada',['../TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11',1,'TProcura.h']]],
   ['nao_5flido_2',['NAO_LIDO',['../TProcura_8h.html#a41963e9c6730c8172ca4f219b79feba7',1,'TProcura.h']]],
   ['ndamas_3',['nDamas',['../classCOitoDamas.html#a3714dcd7f610c067ee86593390c3d45b',1,'COitoDamas']]],

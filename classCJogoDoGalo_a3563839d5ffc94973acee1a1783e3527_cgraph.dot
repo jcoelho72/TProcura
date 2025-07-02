@@ -25,8 +25,8 @@ digraph "CJogoDoGalo::Heuristica"
   Node9 -> Node10 [id="edge21_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraConstrutiva\l::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node10 -> Node11 [id="edge22_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip=" "];
+  Node11 [id="Node000011",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
   Node11 -> Node12 [id="edge23_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip=" "];
+  Node12 [id="Node000012",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node9 -> Node3 [id="edge24_Node000009_Node000003",color="steelblue1",style="solid",tooltip=" "];
 }

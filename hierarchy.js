@@ -27,7 +27,6 @@ var hierarchy =
         [ "CProblemaArtificial", "classCProblemaArtificial.html", null ]
       ] ]
     ] ],
-    [ "TRand", "classTRand.html", null ],
     [ "TVector< Item >", "classTVector.html", null ],
     [ "TVector< bool >", "classTVector.html", null ],
     [ "TVector< char >", "classTVector.html", null ],

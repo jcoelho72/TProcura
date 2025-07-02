@@ -26,6 +26,13 @@ var NAVTREE =
 [
   [ "TProcura", "index.html", [
     [ "Topics", "topics.html", "topics" ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -54,8 +61,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Adversa_2Teste_2teste_8cpp.html",
-"classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2",
-"classTVector.html#a3249913626d54e46b07e168ce1f05d87"
+"classCOitoDamas.html#ab0506f461abf79a87f19fe496e754528",
+"classTVector.html#a5744462d2c7efd035cf0ec50326f43be"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,9 +1,30 @@
 \doxysection{TRand.\+h File Reference}
 \hypertarget{TRand_8h}{}\label{TRand_8h}\index{TRand.h@{TRand.h}}
+
+
+Interface para geração de números aleatórios independentes do sistema operativo.  
+
+
 This graph shows which files directly or indirectly include this file\+:
 % FIG 0
-\doxysubsubsection*{Classes}
+\doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classTRand}{TRand}}
-\end{DoxyCompactItemize}
+namespace \mbox{\hyperlink{namespaceTRand}{TRand}}
+\begin{DoxyCompactList}\small\item\em Agrupa funções para inicializar e obter valores pseudo-\/aleatórios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{TRand\+::srand}} (unsigned int \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}, int seq=0)
+\begin{DoxyCompactList}\small\item\em Inicializa a semente da geração pseudo-\/aleatória. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{namespaceTRand_a8f8ec155d796c5586198ac75eb966d4f}{TRand\+::rand}} (int seq=0)
+\begin{DoxyCompactList}\small\item\em Retorna o próximo valor pseudo-\/aleatório. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface para geração de números aleatórios independentes do sistema operativo. 
+
+O namespace \doxylink{namespaceTRand}{TRand} disponibiliza funções para gerar sequências pseudo-\/aleatórias de forma portátil. Suporta até duas sequências independentes, selecionadas pelo parâmetro {\ttfamily seq} (0 ou 1). 
+
+Definition in file \mbox{\hyperlink{TRand_8h_source}{TRand.\+h}}.
+

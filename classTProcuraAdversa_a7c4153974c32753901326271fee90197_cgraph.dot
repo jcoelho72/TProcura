@@ -35,7 +35,7 @@ digraph "TProcuraAdversa::MetodoIterativo"
   Node12 -> Node13 [id="edge81_Node000012_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node13 -> Node14 [id="edge82_Node000013_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip=" "];
+  Node14 [id="Node000014",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
   Node12 -> Node15 [id="edge83_Node000012_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TProcuraConstrutiva\l::DebugRamo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a1784cd5198a6cb0ae7ad763af9982120",tooltip=" "];
   Node12 -> Node16 [id="edge84_Node000012_Node000016",color="steelblue1",style="solid",tooltip=" "];
@@ -52,9 +52,9 @@ digraph "TProcuraAdversa::MetodoIterativo"
   Node19 -> Node20 [id="edge91_Node000019_Node000020",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="TProcuraConstrutiva\l::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node20 -> Node21 [id="edge92_Node000020_Node000021",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip=" "];
+  Node21 [id="Node000021",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
   Node21 -> Node22 [id="edge93_Node000021_Node000022",color="steelblue1",style="solid",tooltip=" "];
-  Node22 [id="Node000022",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip=" "];
+  Node22 [id="Node000022",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node19 -> Node23 [id="edge94_Node000019_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="TProcuraAdversa::ValorEstado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a9c95c246b28345f0d515a9083ffd646d",tooltip="ler ou gravar o melhor valor conhecido"];
   Node23 -> Node24 [id="edge95_Node000023_Node000024",color="steelblue1",style="solid",tooltip=" "];

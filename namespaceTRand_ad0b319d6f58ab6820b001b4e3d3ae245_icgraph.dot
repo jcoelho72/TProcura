@@ -5,9 +5,9 @@ digraph "TRand::srand"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
-  Node1 [id="Node000001",label="TRand::srand",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [id="Node000001",label="TRand::srand",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node1 -> Node2 [id="edge71_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip=" "];
+  Node2 [id="Node000002",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
   Node2 -> Node3 [id="edge72_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraMelhorativa\l::AlgoritmoGenetico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a574d0ec15c8c1d3ded8db605def50616",tooltip=" "];
   Node3 -> Node4 [id="edge73_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -75,7 +75,7 @@ digraph "TRand::srand"
   Node30 [id="Node000030",label="TVector::Random",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a769c6a55b72a463fd2313fbd638c7234",tooltip=" "];
   Node30 -> Node26 [id="edge109_Node000030_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node31 [id="edge110_Node000002_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="TVector::RandomOrder",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a528c30196e28424fcac4386b873a6e11",tooltip=" "];
+  Node31 [id="Node000031",label="TVector::RandomOrder",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a528c30196e28424fcac4386b873a6e11",tooltip="Coloca os elementos em ordem aleatória (Fisher–Yates shuffle)."];
   Node31 -> Node8 [id="edge111_Node000031_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node32 [id="edge112_Node000002_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node32 [id="Node000032",label="TProcuraMelhorativa\l::Selecao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#abc3412ac90e57f6c25b3c609fcc93d62",tooltip=" "];

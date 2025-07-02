@@ -29,7 +29,7 @@ digraph "TProcuraConstrutiva::ProfundidadePrimeiro"
   Node10 -> Node11 [id="edge54_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node11 -> Node12 [id="edge55_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip=" "];
+  Node12 [id="Node000012",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
   Node10 -> Node13 [id="edge56_Node000010_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraConstrutiva\l::DebugRamo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a1784cd5198a6cb0ae7ad763af9982120",tooltip=" "];
   Node10 -> Node14 [id="edge57_Node000010_Node000014",color="steelblue1",style="solid",tooltip=" "];

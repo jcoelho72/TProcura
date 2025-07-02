@@ -1,0 +1,75 @@
+\doxysection{TRand Namespace Reference}
+\hypertarget{namespaceTRand}{}\label{namespaceTRand}\index{TRand@{TRand}}
+
+
+Agrupa funções para inicializar e obter valores pseudo-\/aleatórios.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{srand}} (unsigned int \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}, int seq=0)
+\begin{DoxyCompactList}\small\item\em Inicializa a semente da geração pseudo-\/aleatória. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{namespaceTRand_a8f8ec155d796c5586198ac75eb966d4f}{rand}} (int seq=0)
+\begin{DoxyCompactList}\small\item\em Retorna o próximo valor pseudo-\/aleatório. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Agrupa funções para inicializar e obter valores pseudo-\/aleatórios. 
+
+Funciona sem depender de implementações específicas do SO.
+\begin{DoxyItemize}
+\item \doxylink{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{srand()}\+: inicializa a semente da sequência.
+\item \doxylink{namespaceTRand_a8f8ec155d796c5586198ac75eb966d4f}{rand()}\+: retorna o próximo valor da sequência. 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceTRand_a8f8ec155d796c5586198ac75eb966d4f}\label{namespaceTRand_a8f8ec155d796c5586198ac75eb966d4f} 
+\index{TRand@{TRand}!rand@{rand}}
+\index{rand@{rand}!TRand@{TRand}}
+\doxysubsubsection{\texorpdfstring{rand()}{rand()}}
+{\footnotesize\ttfamily unsigned int TRand\+::rand (\begin{DoxyParamCaption}\item[{int}]{seq = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Retorna o próximo valor pseudo-\/aleatório. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seq} & Índice da sequência (0 ou 1). Por omissão, 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor pseudo-\/aleatório no intervalo \mbox{[}0, 2\texorpdfstring{$^\wedge$}{\string^}32 − 1\mbox{]}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 0
+Here is the caller graph for this function\+:
+% FIG 1
+\Hypertarget{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245}\label{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245} 
+\index{TRand@{TRand}!srand@{srand}}
+\index{srand@{srand}!TRand@{TRand}}
+\doxysubsubsection{\texorpdfstring{srand()}{srand()}}
+{\footnotesize\ttfamily void TRand\+::srand (\begin{DoxyParamCaption}\item[{unsigned int}]{seed,  }\item[{int}]{seq = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Inicializa a semente da geração pseudo-\/aleatória. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Valor da semente; se for zero, usa o relógio do sistema. \\
+\hline
+{\em seq} & Índice da sequência (0 ou 1). Por omissão, 0. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TRand_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{TRand_8cpp_source}{TRand.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 2

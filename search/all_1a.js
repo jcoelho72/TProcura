@@ -1,7 +1,7 @@
 var searchData=
 [
   ['ramo_0',['ramo',['../group__VariaveisGlobais.html#gaaf6f588c839f27181cf9f31f7618c8c1',1,'TProcuraConstrutiva']]],
-  ['rand_1',['rand',['../classTRand.html#a8f8ec155d796c5586198ac75eb966d4f',1,'TRand']]],
+  ['rand_1',['rand',['../namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f',1,'TRand']]],
   ['random_2',['Random',['../classTVector.html#a769c6a55b72a463fd2313fbd638c7234',1,'TVector']]],
   ['randomorder_3',['RandomOrder',['../classTVector.html#a528c30196e28424fcac4386b873a6e11',1,'TVector']]],
   ['readme_2emd_4',['README.md',['../README_8md.html',1,'']]],
@@ -16,7 +16,7 @@ var searchData=
   ['replace_13',['Replace',['../classTVector.html#a35217d9779ea1c7608dac2ffd677c30b',1,'TVector']]],
   ['repositório_14',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md85',1,'']]],
   ['reset_15',['Reset',['../classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd',1,'TVector']]],
-  ['resetparametros_16',['resetparametros',['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classCJogoEmLinha.html#a855791b2e19731340976157991d79293',1,'CJogoEmLinha::ResetParametros()'],['../classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1',1,'TProcuraAdversa::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3',1,'CPuzzle8::ResetParametros()'],['../group__RedefinicaoMandatoria.html#gacb15562d8776f4d162001d385ebc13a0',1,'TProcuraConstrutiva::ResetParametros()'],['../classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871',1,'TProcura::ResetParametros()'],['../classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94',1,'CTesteTVector::ResetParametros()'],['../classTProcuraMelhorativa.html#a631cd73e03b193d42055f2824b051591',1,'TProcuraMelhorativa::ResetParametros()']]],
+  ['resetparametros_16',['resetparametros',['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classCJogoEmLinha.html#a855791b2e19731340976157991d79293',1,'CJogoEmLinha::ResetParametros()'],['../classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1',1,'TProcuraAdversa::ResetParametros()'],['../classTProcuraMelhorativa.html#a631cd73e03b193d42055f2824b051591',1,'TProcuraMelhorativa::ResetParametros()'],['../classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3',1,'CPuzzle8::ResetParametros()'],['../group__RedefinicaoMandatoria.html#gacb15562d8776f4d162001d385ebc13a0',1,'TProcuraConstrutiva::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871',1,'TProcura::ResetParametros()'],['../classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94',1,'CTesteTVector::ResetParametros()']]],
   ['resolver_20manualmente_17',['resolver manualmente',['../teste_8damas.html#autotoc_md16',1,'Ação 2 - Resolver manualmente'],['../teste_artificial.html#autotoc_md23',1,'Ação 2 - Resolver manualmente'],['../teste_particao.html#autotoc_md44',1,'Ação 2 - Resolver manualmente'],['../teste_puzzle8.html#autotoc_md48',1,'Ação 2 - Resolver manualmente']]],
   ['resolver_20outra_20instância_18',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md33',1,'']]],
   ['resultado_19',['resultado',['../classTProcura.html#a224527229b795a4780e5faa61245a8e0',1,'TProcura']]],

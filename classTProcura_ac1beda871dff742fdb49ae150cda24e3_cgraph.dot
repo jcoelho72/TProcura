@@ -13,7 +13,7 @@ digraph "TProcura::CalculaTorneio"
   Node3 -> Node4 [id="edge13_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node4 -> Node5 [id="edge14_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip=" "];
+  Node5 [id="Node000005",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
   Node1 -> Node6 [id="edge15_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcura::MelhorResultado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#abd92370cf06d23e878f9426aed34e39c",tooltip=" "];
   Node6 -> Node7 [id="edge16_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];

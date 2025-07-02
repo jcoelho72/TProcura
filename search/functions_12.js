@@ -13,6 +13,5 @@ var searchData=
   ['_7etprocuraadversa_10',['~TProcuraAdversa',['../classTProcuraAdversa.html#af519ba133593f289a454495ce72972fd',1,'TProcuraAdversa']]],
   ['_7etprocuraconstrutiva_11',['~TProcuraConstrutiva',['../classTProcuraConstrutiva.html#aa19cbee6023bd0ff01c61c6d6db2e2ae',1,'TProcuraConstrutiva']]],
   ['_7etprocuramelhorativa_12',['~TProcuraMelhorativa',['../classTProcuraMelhorativa.html#ad2ca1ae58d4629b2119ccdbee61bde00',1,'TProcuraMelhorativa']]],
-  ['_7etrand_13',['~TRand',['../classTRand.html#aa94554553535dc1a1c0f0e31c494c5c3',1,'TRand']]],
-  ['_7etvector_14',['~TVector',['../classTVector.html#ab163add94e71d5e42c68945bbaf54e2d',1,'TVector']]]
+  ['_7etvector_13',['~TVector',['../classTVector.html#a0ba5799421ad86bb49b74170505cc76c',1,'TVector']]]
 ];

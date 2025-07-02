@@ -93,11 +93,12 @@ $(document).ready(function(){initNavTree('TRand_8cpp.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">TRand.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;time.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;ctime&gt;</code><br />
 <code>#include &quot;<a class="el" href="TRand_8h_source.html">TRand.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TRand.cpp:</div>
@@ -107,224 +108,21 @@ Include dependency graph for TRand.cpp:</div>
 </div>
 <p><a href="TRand_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a0240ac851181b84ac374872dc5434ee4" id="r_a0240ac851181b84ac374872dc5434ee4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>&#160;&#160;&#160;624</td></tr>
-<tr class="separator:a0240ac851181b84ac374872dc5434ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52037c938e3c1b126c6277da5ca689d0" id="r_a52037c938e3c1b126c6277da5ca689d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#a52037c938e3c1b126c6277da5ca689d0">M</a>&#160;&#160;&#160;397</td></tr>
-<tr class="separator:a52037c938e3c1b126c6277da5ca689d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a376c3581bae3c2367fc9ce694e5a8949" id="r_a376c3581bae3c2367fc9ce694e5a8949"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#a376c3581bae3c2367fc9ce694e5a8949">MATRIX_A</a>&#160;&#160;&#160;0x9908b0df   /* constant vector a */</td></tr>
-<tr class="separator:a376c3581bae3c2367fc9ce694e5a8949"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39bc458849360f8f371b54c4365d397f" id="r_a39bc458849360f8f371b54c4365d397f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#a39bc458849360f8f371b54c4365d397f">UPPER_MASK</a>&#160;&#160;&#160;0x80000000 /* most significant w-r bits */</td></tr>
-<tr class="separator:a39bc458849360f8f371b54c4365d397f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ddd8cab3564b7a86a4b0e52ba08f70e" id="r_a4ddd8cab3564b7a86a4b0e52ba08f70e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#a4ddd8cab3564b7a86a4b0e52ba08f70e">LOWER_MASK</a>&#160;&#160;&#160;0x7fffffff /* least significant r bits */</td></tr>
-<tr class="separator:a4ddd8cab3564b7a86a4b0e52ba08f70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad823db99ec38ec810124406bd3dfeeae" id="r_ad823db99ec38ec810124406bd3dfeeae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#ad823db99ec38ec810124406bd3dfeeae">TEMPERING_MASK_B</a>&#160;&#160;&#160;0x9d2c5680</td></tr>
-<tr class="separator:ad823db99ec38ec810124406bd3dfeeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1c7a72f80707458249c99a6f37e7d3e" id="r_ae1c7a72f80707458249c99a6f37e7d3e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#ae1c7a72f80707458249c99a6f37e7d3e">TEMPERING_MASK_C</a>&#160;&#160;&#160;0xefc60000</td></tr>
-<tr class="separator:ae1c7a72f80707458249c99a6f37e7d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a238852cd6380d77bd700e95d0a7d90c9" id="r_a238852cd6380d77bd700e95d0a7d90c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#a238852cd6380d77bd700e95d0a7d90c9">TEMPERING_SHIFT_U</a>(y)&#160;&#160;&#160;(y &gt;&gt; 11)</td></tr>
-<tr class="separator:a238852cd6380d77bd700e95d0a7d90c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adce59eadb4013bb06a059dedf69c282d" id="r_adce59eadb4013bb06a059dedf69c282d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#adce59eadb4013bb06a059dedf69c282d">TEMPERING_SHIFT_S</a>(y)&#160;&#160;&#160;(y &lt;&lt; 7)</td></tr>
-<tr class="separator:adce59eadb4013bb06a059dedf69c282d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3" id="r_a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3">TEMPERING_SHIFT_T</a>(y)&#160;&#160;&#160;(y &lt;&lt; 15)</td></tr>
-<tr class="separator:a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15f821dd6f1a65b3ecf672718aa6273c" id="r_a15f821dd6f1a65b3ecf672718aa6273c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TRand_8cpp.html#a15f821dd6f1a65b3ecf672718aa6273c">TEMPERING_SHIFT_L</a>(y)&#160;&#160;&#160;(y &gt;&gt; 18)</td></tr>
-<tr class="separator:a15f821dd6f1a65b3ecf672718aa6273c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceTRand" id="r_namespaceTRand"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTRand.html">TRand</a></td></tr>
+<tr class="memdesc:namespaceTRand"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrupa funções para inicializar e obter valores pseudo-aleatórios. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad0b319d6f58ab6820b001b4e3d3ae245" id="r_ad0b319d6f58ab6820b001b4e3d3ae245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245">TRand::srand</a> (unsigned int <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869">seed</a>, int seq=0)</td></tr>
+<tr class="memdesc:ad0b319d6f58ab6820b001b4e3d3ae245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa a semente da geração pseudo-aleatória.  <br /></td></tr>
+<tr class="separator:ad0b319d6f58ab6820b001b4e3d3ae245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8ec155d796c5586198ac75eb966d4f" id="r_a8f8ec155d796c5586198ac75eb966d4f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f">TRand::rand</a> (int seq=0)</td></tr>
+<tr class="memdesc:a8f8ec155d796c5586198ac75eb966d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retorna o próximo valor pseudo-aleatório.  <br /></td></tr>
+<tr class="separator:a8f8ec155d796c5586198ac75eb966d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a4ddd8cab3564b7a86a4b0e52ba08f70e" name="a4ddd8cab3564b7a86a4b0e52ba08f70e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ddd8cab3564b7a86a4b0e52ba08f70e">&#9670;&#160;</a></span>LOWER_MASK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LOWER_MASK&#160;&#160;&#160;0x7fffffff /* least significant r bits */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00016">16</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a52037c938e3c1b126c6277da5ca689d0" name="a52037c938e3c1b126c6277da5ca689d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52037c938e3c1b126c6277da5ca689d0">&#9670;&#160;</a></span>M</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define M&#160;&#160;&#160;397</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00011">11</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a376c3581bae3c2367fc9ce694e5a8949" name="a376c3581bae3c2367fc9ce694e5a8949"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a376c3581bae3c2367fc9ce694e5a8949">&#9670;&#160;</a></span>MATRIX_A</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MATRIX_A&#160;&#160;&#160;0x9908b0df   /* constant vector a */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00014">14</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a0240ac851181b84ac374872dc5434ee4" name="a0240ac851181b84ac374872dc5434ee4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0240ac851181b84ac374872dc5434ee4">&#9670;&#160;</a></span>N</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define N&#160;&#160;&#160;624</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00010">10</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ad823db99ec38ec810124406bd3dfeeae" name="ad823db99ec38ec810124406bd3dfeeae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad823db99ec38ec810124406bd3dfeeae">&#9670;&#160;</a></span>TEMPERING_MASK_B</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEMPERING_MASK_B&#160;&#160;&#160;0x9d2c5680</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00019">19</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ae1c7a72f80707458249c99a6f37e7d3e" name="ae1c7a72f80707458249c99a6f37e7d3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1c7a72f80707458249c99a6f37e7d3e">&#9670;&#160;</a></span>TEMPERING_MASK_C</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEMPERING_MASK_C&#160;&#160;&#160;0xefc60000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00020">20</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a15f821dd6f1a65b3ecf672718aa6273c" name="a15f821dd6f1a65b3ecf672718aa6273c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15f821dd6f1a65b3ecf672718aa6273c">&#9670;&#160;</a></span>TEMPERING_SHIFT_L</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEMPERING_SHIFT_L</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">y</td><td>)</td>
-          <td>&#160;&#160;&#160;(y &gt;&gt; 18)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00024">24</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="adce59eadb4013bb06a059dedf69c282d" name="adce59eadb4013bb06a059dedf69c282d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adce59eadb4013bb06a059dedf69c282d">&#9670;&#160;</a></span>TEMPERING_SHIFT_S</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEMPERING_SHIFT_S</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">y</td><td>)</td>
-          <td>&#160;&#160;&#160;(y &lt;&lt; 7)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00022">22</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3" name="a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a2b0d0fa7a7c8ce1bbc52a67f26f8c3">&#9670;&#160;</a></span>TEMPERING_SHIFT_T</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEMPERING_SHIFT_T</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">y</td><td>)</td>
-          <td>&#160;&#160;&#160;(y &lt;&lt; 15)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00023">23</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a238852cd6380d77bd700e95d0a7d90c9" name="a238852cd6380d77bd700e95d0a7d90c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a238852cd6380d77bd700e95d0a7d90c9">&#9670;&#160;</a></span>TEMPERING_SHIFT_U</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TEMPERING_SHIFT_U</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">y</td><td>)</td>
-          <td>&#160;&#160;&#160;(y &gt;&gt; 11)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00021">21</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a39bc458849360f8f371b54c4365d397f" name="a39bc458849360f8f371b54c4365d397f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39bc458849360f8f371b54c4365d397f">&#9670;&#160;</a></span>UPPER_MASK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UPPER_MASK&#160;&#160;&#160;0x80000000 /* most significant w-r bits */</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="TRand_8cpp_source.html#l00015">15</a> of file <a class="el" href="TRand_8cpp_source.html">TRand.cpp</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
