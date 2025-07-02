@@ -1,23 +1,35 @@
-﻿// TRand.h: interface for the TRand class.
-//
-//////////////////////////////////////////////////////////////////////
+﻿#pragma once
 
-#if !defined(AFX_TRAND_H__9FDE1FBE_24F4_4324_A740_DD79F3648BBA__INCLUDED_)
-#define AFX_TRAND_H__9FDE1FBE_24F4_4324_A740_DD79F3648BBA__INCLUDED_
+/**
+ * @file   TRand.h
+ * @brief  Interface para geração de números aleatórios independentes do sistema operativo.
+ *
+ * O namespace TRand disponibiliza funções para gerar sequências
+ * pseudo-aleatórias de forma portátil. Suporta até duas sequências
+ * independentes, selecionadas pelo parâmetro @p seq (0 ou 1).
+ */
 
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
-
-class TRand
+ /**
+  * @namespace TRand
+  * @brief Agrupa funções para inicializar e obter valores pseudo-aleatórios.
+  *
+  * Funciona sem depender de implementações específicas do SO.
+  * - srand(): inicializa a semente da sequência.
+  * - rand():  retorna o próximo valor da sequência.
+  */
+namespace TRand
 {
-public:
-	// seq 0 ou 1, para permitir duas sequências aleatórias independentes
-	static unsigned int rand(int seq = 0); 
-	static void srand(unsigned int seed, int seq = 0);
-	TRand();
-	virtual ~TRand();
+    /**
+     * @brief Inicializa a semente da geração pseudo-aleatória.
+     * @param seed Valor da semente; se for zero, usa o relógio do sistema.
+     * @param seq  Índice da sequência (0 ou 1). Por omissão, 0.
+     */
+    void srand(unsigned int seed, int seq = 0);
 
-};
-
-#endif // !defined(AFX_TRAND_H__9FDE1FBE_24F4_4324_A740_DD79F3648BBA__INCLUDED_)
+    /**
+     * @brief Retorna o próximo valor pseudo-aleatório.
+     * @param seq Índice da sequência (0 ou 1). Por omissão, 0.
+     * @return Valor pseudo-aleatório no intervalo [0, 2^32 − 1].
+     */
+    unsigned int rand(int seq = 0);
+}

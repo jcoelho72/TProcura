@@ -3,7 +3,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/jcoelho72/TProcura.svg)](https://github.com/jcoelho72/TProcura/issues)
 [![GitHub forks](https://img.shields.io/github/forks/jcoelho72/TProcura.svg)](https://github.com/jcoelho72/TProcura/network)
 [![GitHub stars](https://img.shields.io/github/stars/jcoelho72/TProcura.svg)](https://github.com/jcoelho72/TProcura/stargazers)
-[![GitHub license](https://img.shields.io/github/license/jcoelho72/TProcura.svg)](https://jcoelho72.github.io/TProcura/LICENSE.txt)
+[![GitHub license](https://img.shields.io/github/license/jcoelho72/TProcura.svg)](https://github.com/jcoelho72/TProcura/blob/main/LICENSE)
+
 
 Biblioteca em C++ para **testes paramétricos** de algoritmos, e coleção de algoritmos de procura e otimização:
 - procuras construtivas  
@@ -34,9 +35,9 @@ Biblioteca em C++ para **testes paramétricos** de algoritmos, e coleção de al
 O **TProcura** nasceu para unificar testes paramétricos e implementação genérica de algoritmos de procura.  
 Em vez de alterar `#define` e recompilar a cada mudança de parâmetro, o framework:
 
-- Propõe uma estrutura para uma lista de parametros, gerida na superclasse 
-- Gera automaticamente todas as combinações de paramertros que o utilizador desejar 
-- Executa instâncias para cada combinação de parametros, e recolhe indicadores definidos  
+- Propõe uma estrutura para uma lista de parâmetros, gerida na superclasse 
+- Gera automaticamente todas as combinações de parâmertros que o utilizador desejar 
+- Executa instâncias para cada combinação de parâmetros, e recolhe indicadores definidos  
 - Exporta resultados em CSV para análises em Excel, R ou Python  
 
 A arquitetura baseia-se em superclasses que já implementam algoritmos de procura. O utilizador só precisa de:

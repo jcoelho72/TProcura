@@ -1,843 +1,1030 @@
-﻿// TVector.h: interface for the TVector class.
-//
-//////////////////////////////////////////////////////////////////////
+﻿#pragma once
 
-#if !defined(AFX_TVECTOR_H__7E674C3E_074D_4F78_8839_D28D9BAD66FD__INCLUDED_)
-#define AFX_TVECTOR_H__7E674C3E_074D_4F78_8839_D28D9BAD66FD__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+/**
+ * @file   TVector.h
+ * @brief  Vetor dinâmico genérico com operações de pilha, conjuntos e algoritmos úteis.
+ *
+ * A classe TVector implementa um array dinâmico que cresce
+ * automaticamente, suporta acesso por índice, inserção, remoção,
+ * operações de conjunto (união, interseção, diferença),
+ * algoritmos de ordenação, baralhar, distância de edição, entre outros.
+ *
+ * @tparam Item Tipo dos elementos armazenados no vetor.
+ */
 
 #include <stdlib.h>
 #include "TRand.h"
 
-///////////////////////////////////////////////////////////////////////////////
-//	TVector class
-///////////////////////////////////////////////////////////////////////////////
+ ///////////////////////////////////////////////////////////////////////////////
+ // TVector
+ ///////////////////////////////////////////////////////////////////////////////
 
 template <class Item>
 class TVector
 {
 private:
-	TVector<int> *idx = NULL;
-	Item *v = NULL;
-	int sz = 0;
-	int count = 0;
+	TVector<int>* idx = nullptr;    /**< Vetor de índices auxiliar para ordenação. */
+	Item* v = nullptr;    /**< Array interno de elementos. */
+	int           sz = 0;          /**< Capacidade total do array. */
+	int           count = 0;        /**< Número atual de elementos. */
+
+	/** Ajusta a capacidade interna para pelo menos @p size elementos. */
 	void Size(int size);
-	// sort methods in vector
-	void QuickSort(int start,int end);
+
+	/** Implementação de QuickSort entre as posições @p start e @p end. */
+	void QuickSort(int start, int end);
+
+	/** Implementação de insertion sort entre as posições @p start e @p end. */
 	void Insertion(int start, int end);
-	void Exch(int i, int j) { Item a=v[i]; v[i]=v[j]; v[j]=a; }
-	// sort methods in index vector
-	void QuickSortIdx(int start,int end);
-	void ExchIdx(int i, int j) { int a=(*idx)[i]; (*idx)[i]=(*idx)[j]; (*idx)[j]=a; }
+
+	/** Troca os elementos nas posições @p i e @p j. */
+	void Exch(int i, int j) { Item a = v[i]; v[i] = v[j]; v[j] = a; }
+
+	/** QuickSort aplicado ao vetor de índices. */
+	void QuickSortIdx(int start, int end);
+
+	/** Troca índices nas posições @p i e @p j do vetor idx. */
+	void ExchIdx(int i, int j) { int a = (*idx)[i]; (*idx)[i] = (*idx)[j]; (*idx)[j] = a; }
+
+	/// Retorna o mínimo de dois valores
+	static inline int Min(int a, int b) noexcept { 	return (a < b) ? a : b; }
+
+	/// Retorna o máximo de dois valores
+	static inline int Max(int a, int b) noexcept { 	return (a > b) ? a : b; }
+
 public:
+	static Item erro;  /**< Valor retornado em casos de erro (acesso inválido). */
 
-	static Item erro;
+	/// @name Construtores e Destrutor
+	///@{
+	/** Construtor. Se @p size>0, aloca capacidade inicial. */
+	TVector(int size = 0);
 
-	// constructors
-	TVector(int size = 0) { if (size > 0) Size(size); }
-	TVector(int size,Item const *init);
-	virtual ~TVector() noexcept { delete [] v; }
+	/** Construtor com inicialização de elementos a partir de @p init. */
+	TVector(int size, Item const* init);
 
+	/** Destrutor, libera o buffer interno. */
+	virtual ~TVector() noexcept;
 
-	// Copy-ctor: 
-	TVector(TVector const& o) { *this = o; }
-	// Copy-assign
-	TVector& operator=(TVector const& o) { 
-		if (this != &o) {
-			Count(o.count);
-			for(int i=0;i<o.count;i++)
-				v[i]=o.v[i];
-		}
-		return *this; 
-	}
-	// Move-ctor
-	TVector(TVector&& o) noexcept {
-		v=o.v;
-		sz=o.sz;
-		count=o.count;
-		o.v = NULL;
-		o.sz = o.count = 0;
-	}
-	// Move-assign
-	TVector& operator=(TVector&& o) noexcept {
-		if (this != &o) {
-			delete[] v;
-			v = o.v;
-			sz = o.sz;
-			count = o.count;
-			o.v = NULL;
-			o.sz = o.count = 0;
-		}
-		return *this;
-	}
-	TVector<Item>& operator+=(const TVector<Item>& o) { // O(N) - add vector v to this vector
-		int w = count;
-		Count(w + o.count);
-		for (int k = o.count - 1; k >= 0; k--)
-			v[w + k] = o.v[k];
-		return *this;
-	}
+	///@name Construtores e operadores especiais
+	///@{
 
-	// access methods
-	inline TVector<Item>& Add(Item a) { operator[](count)=a; return *this; } // O(1) - add an item in the end of the vector
-	TVector<Item>& Insert(Item a,int index=0); // O(N) - insert an element a at index
-	TVector<Item>& Insert(TVector<Item>&v,int index=0); // O(N) - insert elements of v starting at index
+	/**
+	 * @brief Construtor de cópia.
+	 * @param o Vetor a copiar.
+	 */
+	TVector(const TVector& o);
 
-	// 2007/04/17: push is the same as Add method
+	/**
+	 * @brief Operador de atribuição por cópia.
+	 * @param o Vetor a atribuir.
+	 * @return Referência ao próprio vetor.
+	 */
+	TVector& operator=(const TVector& o);
+
+	/**
+	 * @brief Construtor de movimentação.
+	 * @param o Vetor temporário a mover.
+	 * @details Transfere o buffer interno sem copiar elementos.
+	 */
+	TVector(TVector&& o) noexcept;
+
+	/**
+	 * @brief Operador de atribuição por movimentação.
+	 * @param o Vetor temporário a mover.
+	 * @return Referência ao próprio vetor.
+	 */
+	TVector& operator=(TVector&& o) noexcept;
+	///@}
+
+	/**
+	 * @brief Concatena outro vetor a este.
+	 *
+	 * Adiciona todos os elementos de @p o no final deste vetor.
+	 *
+	 * @param o Vetor cujos elementos serão adicionados.
+	 * @return Referência ao próprio vetor.
+	 */
+	TVector& operator+=(const TVector& o);
+
+	///@}
+
+	/// @name Acesso a Elementos
+	///@{
+	/** Adiciona @p a no final do vetor. */
+	inline TVector<Item>& Add(Item a) { operator[](count) = a; return *this; }
+
+	/** Insere um elemento @p a na posição @p index, deslocando os seguintes. */
+	TVector<Item>& Insert(Item a, int index = 0);
+
+	/** Insere todos os elementos de @p v começando na posição @p index. */
+	TVector<Item>& Insert(TVector<Item>& v, int index = 0);
+
+	/** Alias de Add. */
 	inline TVector<Item>& Push(Item a) { return Add(a); }
-	// 2007/04/17: pop is the same as Last(), but the element returned is removed from the vector
-	inline Item& Pop() { if(count>0) return v[--count]; else { return TVector<Item>::erro; } }
 
-	Item& operator[](int i) { // O(1) - acess operator
-		if(i>=sz) Size(2*(i+1)); // duplicate the size used each time that need increase
-		if(i>=count) count=i+1;
-		return v[i];
-	}
-	const Item& operator[](int i) const { // O(1) - acess operator, const so will realocate
-		if(i<0 || i>=count)
-			return TVector<Item>::erro;
-		return v[i];
-	}
-	inline Item& First() { if(count>0) return v[0]; else { return TVector<Item>::erro; } } // O(1) - first element of the vector (2007/04/17: added extra check)
-	inline Item& Last() { if(count>0) return v[count-1]; else { return TVector<Item>::erro; } } // O(1) - last element of the vector (2007/04/17: added extra check)
-	int Count() const { return count; } // O(1) - return the number of elements in the vector
-	TVector<Item>& Count(int value) { // O(N) - set the vector to a fixed size (the elements are not initializated)
-		if(value>sz) Size(value);
-		count=value;
+	/** Remove e retorna o último elemento; em vetor vazio retorna @c erro. */
+	inline Item& Pop() { return (count > 0 ? v[--count] : TVector<Item>::erro); }
+
+	/**
+	 * @brief Acesso por índice com auto-expansão.
+	 *
+	 * Se @p i é maior ou igual à capacidade interna (@c sz),
+	 * realoca o buffer para size = 2 × (i+1).
+	 * Se @p i é maior ou igual ao número de elementos (@c count),
+	 * ajusta @c count = i+1.
+	 *
+	 * @param i Índice do elemento a aceder (deve ser ≥ 0).
+	 * @return Referência ao elemento interno @c v[i].
+	 */
+	Item& operator[](int i);
+
+	/**
+	 * @brief Acesso constante por índice sem modificação de tamanho.
+	 *
+	 * Se @p i é inválido (< 0 ou ≥ count), retorna @c erro.
+	 *
+	 * @param i Índice do elemento (0 ≤ i < count).
+	 * @return Const-ref ao elemento @c v[i] ou @c TVector<Item>::erro.
+	 */
+	const Item& operator[](int i) const;
+
+
+	/** Retorna o primeiro elemento ou @c erro se vazio. */
+	inline Item& First() { return (count > 0 ? v[0] : TVector<Item>::erro); }
+
+	/** Retorna o último elemento ou @c erro se vazio. */
+	inline Item& Last() { return (count > 0 ? v[count - 1] : TVector<Item>::erro); }
+
+	/** Número de elementos presentes. */
+	int Count() const { return count; }
+
+	/**
+	 * @brief Ajusta o tamanho lógico do vetor para @p value.
+	 *
+	 * Realoca o buffer interno caso @p value exceda a capacidade atual.
+	 * Os novos elementos entre a capacidade antiga e @p value não são inicializados.
+	 *
+	 * @param value Novo número de elementos do vetor.
+	 * @return Referência ao próprio vetor (permite encadear chamadas).
+	 */
+	TVector<Item>& Count(int value)
+	{
+		if (value > sz)
+			Size(value);
+		count = value;
 		return *this;
 	}
-	// 2007/04/17: return an element at random
-	Item& Random() { if(count>0) return operator[](TRand::rand()%count); else { return TVector<Item>::erro; } }
 
-	// set methods
-	TVector<Item>& BeASet(); // remove duplicates and sort
-	TVector<Item>& Union(const TVector<Item>&v); // join elements of two sets
-	TVector<Item>& Intersection(const TVector<Item>&v); // intersects elements of two sets
-	TVector<Item>& Difference(const TVector<Item>&v); // subtract the elements of v (bug fixed in 2007/03/26)
-	bool Equal(const TVector<Item>&v) const; // return true if v is equal (assume sorted elements)
-	bool Contained(const TVector<Item>&v) const; // return true if it is contained in v or equal (assume sorted elements)
+	/** Retorna um elemento escolhido aleatoriamente. */
+	Item& Random() { return (count > 0 ? operator[](TRand::rand() % count) : TVector<Item>::erro); }
+	///@}
 
-	// operations methods
-	TVector<Item>& Delete(int i); // O(N) - delete item i
-	TVector<Item>& Remove(Item const &i); // O(N) - remove all itens i
-	int Find(Item &i,bool binary=false,int left=0,int right=-1); // return -1 if item not found (note: use binary sort only if itens are sorted)
-	TVector<Item>& Replace(Item const &iold,Item const &inew); // O(N) - replace iold by inew
-	TVector<Item>& Sort(TVector<int>*idxvect=NULL); // O(N.log(N)) - sort idx and not the vector (bug fixed in 2006/06/04)
-	void Sort(int start,int end=-1); // sort only from start to end
-	TVector<Item>& RandomOrder(); // O(N) - put the actual vector in an random order
-	TVector<Item>& Invert(); // O(N) - invert the current element order
-	TVector<Item>& Reset(Item const &i); // O(N) - reset all itens to i
-	int Distance(TVector<Item>&v,int type=0); // distance types: 0 - exact match - O(N); 1 - deviation distance - O(N); 2 - R-type distance - O(N^2); 3 - edit distance - O(N^2)
+	/// @name Operações de Conjunto
+	///@{
+	/** Remove duplicados e ordena os elementos. */
+	TVector<Item>& BeASet();
 
-	// allowing range-for: TVector<Item> v; for(auto& x : v) {...use item x from v }
+	/** União com @p v (supõe vetores já em forma de conjunto). */
+	TVector<Item>& Union(const TVector<Item>& v);
+
+	/** Interseção com @p v (vetores em conjunto). */
+	TVector<Item>& Intersection(const TVector<Item>& v);
+
+	/** Diferença com @p v (vetores em conjunto). */
+	TVector<Item>& Difference(const TVector<Item>& v);
+
+	/** Verifica igualdade com @p v (vetores em conjunto e ordenados). */
+	bool Equal(const TVector<Item>& v) const;
+
+	/** Verifica se este conjunto está contido em @p v (ordenados). */
+	bool Contained(const TVector<Item>& v) const;
+	///@}
+
+	/// @name Algoritmos e Modificadores
+	///@{
+	/** Deleta o elemento na posição @p i. */
+	TVector<Item>& Delete(int i);
+
+	/** Remove todas as ocorrências de @p i. */
+	TVector<Item>& Remove(Item const& i);
+
+	/** Procura @p i; se @p binary=true faz busca binária em [left,right]. */
+	int Find(Item& i, bool binary = false, int left = 0, int right = -1);
+
+	/** Substitui todas ocorrências de @p iold por @p inew. */
+	TVector<Item>& Replace(Item const& iold, Item const& inew);
+
+	/** Ordena e, opcionalmente, preenche vetor de índices @p idxvect. */
+	TVector<Item>& Sort(TVector<int>* idxvect = nullptr);
+
+	/** Ordena apenas o intervalo [start,end]. */
+	void Sort(int start, int end = -1);
+
+	/** Coloca os elementos em ordem aleatória. */
+	TVector<Item>& RandomOrder();
+
+	/** Inverte a ordem atual dos elementos. */
+	TVector<Item>& Invert();
+
+	/** Preenche todos os elementos com @p i. */
+	TVector<Item>& Reset(Item const& i);
+
+	/**
+	 * Calcula a distância entre este vetor e @p v.
+	 * @param type Tipo de distância:
+	 *    - 0: correspondência exata (O(N))
+	 *    - 1: distância de desvio (O(N))
+	 *    - 2: R-distance (O(N^2))
+	 *    - 3: edit distance (O(N^2))
+	 */
+	int Distance(TVector<Item>& v, int type = 0);
+	///@}
+
+	/// @name Iteradores
+	///@{
 	Item* begin()       noexcept { return v; }
 	Item* end()         noexcept { return v + count; }
 	const Item* begin() const noexcept { return v; }
 	const Item* end()   const noexcept { return v + count; }
+	///@}
 
-	// Add with +=
-	TVector<Item>& operator+=(const Item& x) { Add(x); return *this; }
-	// Remove with -=
-	TVector<Item>& operator-=(const Item& x) { Remove(x); return *this;	}
-	friend TVector<Item> operator+(TVector<Item> a, const TVector<Item>& b) { a += b; return a;	}
-	friend bool operator==(const TVector<Item>& a, const TVector<Item>& b) { return a.Equal(b); }
-	friend bool operator!=(const TVector<Item>& a, const TVector<Item>& b) { return !a.Equal(b); }
+	/// @name Operadores Adicionais
+	///@{
+	/** Adiciona elemento @p x ao final (alias de Add). */
+	TVector<Item>& operator+=(const Item& x);
+
+	/** Remove todas ocorrências de @p x (alias de Remove). */
+	TVector<Item>& operator-=(const Item& x);
+
+	/** Concatena dois vetores, retornando o resultado. */
+	friend TVector<Item> operator+(TVector<Item> a, const TVector<Item>& b)
+	{
+		a += b; return a;
+	}
+
+	/** Compara igualdade de conjuntos (usando Equal). */
+	friend bool operator==(const TVector<Item>& a, const TVector<Item>& b)
+	{
+		return a.Equal(b);
+	}
+
+	/** Compara desigualdade de conjuntos. */
+	friend bool operator!=(const TVector<Item>& a, const TVector<Item>& b)
+	{
+		return !a.Equal(b);
+	}
+	///@}
 };
-// O(N)
 
+//----------------------------------------------------------------------------
+// instanciação da variável com o conteúdo de erro
+//----------------------------------------------------------------------------
+
+/**
+ * @brief Valor retornado em casos de acesso inválido.
+ * @details Deve ser definido pelo utilizador do template para o tipo @p Item.
+ */
 template <class Item>
 Item TVector<Item>::erro;
 
+
+
+
+//----------------------------------------------------------------------------
+// Redimensionamento interno
+//----------------------------------------------------------------------------
+
+/**
+ * @brief Ajusta a capacidade interna do vetor.
+ * @param size Nova capacidade mínima desejada.
+ * @details
+ *   - Aloca um buffer de tamanho @p size.
+ *   - Copia até @c count elementos do buffer antigo.
+ *   - Liberta o buffer anterior.
+ *   - Atualiza @c sz para o novo valor.
+ */
 template <class Item>
 void TVector<Item>::Size(int size)
 {
-	Item *aux=new Item[size];
-	if(v!=NULL) {
-		for(int k=0;k<count;k++)
-			aux[k]=v[k];
-		delete [] v;
+	Item* aux = new Item[size];
+	if (v != nullptr) {
+		for (int k = 0; k < count; ++k)
+			aux[k] = v[k];
+		delete[] v;
 	}
-	v=aux;
-	sz=size;
+	v = aux;
+	sz = size;
 }
 
+
+//----------------------------------------------------------------------------
+// Construtor com inicialização
+//----------------------------------------------------------------------------
+
+
+/**
+ * @brief Construtor.
+ * @param size Capacidade inicial do vetor.
+ *             Se zero, não aloca buffer até ao primeiro acesso.
+ */
 template <class Item>
-TVector<Item>::TVector(int size,Item const *init)
+TVector<Item>::TVector(int size)
+	: idx(nullptr), v(nullptr), sz(0), count(0)
 {
-	int k;
-	v=NULL;
-	count=sz=0;
-	if(size>0) {
+	if (size > 0)
 		Size(size);
-		for(k=0;k<size;k++)
-			operator[](k)=init[k];
-	}
 }
 
 
-/////////////////////////////////////////////////////////////////
-// Searching
-/////////////////////////////////////////////////////////////////
+/**
+ * @brief Constrói um vetor pré-carregado a partir de um array.
+ * @param size Número de elementos a copiar de @p init.
+ * @param init Ponteiro para o array de origem.
+ * @details
+ *   - Se @p size > 0, redimensiona a capacidade via Size().
+ *   - Copia cada elemento de @p init para o vetor interno.
+ *   - Ajusta @c count para @p size.
+ */
+template <class Item>
+TVector<Item>::TVector(int size, Item const* init)
+{
+	v = nullptr;
+	sz = 0;
+	count = 0;
+	if (size > 0) {
+		Size(size);
+		for (int k = 0; k < size; ++k)
+			operator[](k) = init[k];
+	}
+}
+
+/**
+ * @brief Destrutor.
+ *
+ * Liberta o buffer interno alocado para @c v.
+ */
+template <class Item>
+TVector<Item>::~TVector() noexcept
+{
+	delete[] v;
+}
+
 
 template <class Item>
-int TVector<Item>::Find(Item &i,bool binary, int left, int right)
+/**
+ * @brief Construtor de cópia.
+ * @param o Vetor a copiar.
+ */
+TVector<Item>::TVector(const TVector<Item>& o)
 {
-	if(binary) {
-		if(right<0 || right>count-1) right=count-1;
-		if(left<0 || left>right) left=0;
-		int mid;
+	*this = o;
+}
 
-		while(left<=right) {
-			mid=(left+right)>>1;
-			if(v[mid]==i) return mid;
-			if(v[mid]<i) left=mid+1;
-			else right=mid-1;
+template <class Item>
+/**
+ * @brief Operador de atribuição por cópia.
+ * @param o Vetor a atribuir.
+ * @return Referência ao próprio vetor.
+ */
+TVector<Item>& TVector<Item>::operator=(const TVector<Item>& o)
+{
+	if (this != &o) {
+		// garante capacidade e atualiza count
+		Count(o.count);
+		// copia elementos
+		for (int i = 0; i < o.count; ++i) {
+			v[i] = o.v[i];
 		}
-	} else {
-		for(int k=0;k<count;k++)
-			if(v[k]==i)
+	}
+	return *this;
+}
+
+template <class Item>
+/**
+ * @brief Construtor de movimentação.
+ * @param o Vetor temporário a mover.
+ * @details Transfere o buffer interno sem cópia de elementos.
+ */
+TVector<Item>::TVector(TVector<Item>&& o) noexcept
+	: v(o.v), sz(o.sz), count(o.count)
+{
+	o.v = nullptr;
+	o.sz = 0;
+	o.count = 0;
+}
+
+template <class Item>
+/**
+ * @brief Operador de atribuição por movimentação.
+ * @param o Vetor temporário a mover.
+ * @return Referência ao próprio vetor.
+ */
+TVector<Item>& TVector<Item>::operator=(TVector<Item>&& o) noexcept
+{
+	if (this != &o) {
+		delete[] v;
+		v = o.v;
+		sz = o.sz;
+		count = o.count;
+		o.v = nullptr;
+		o.sz = 0;
+		o.count = 0;
+	}
+	return *this;
+}
+
+template <class Item>
+/**
+ * @brief Concatena outro vetor a este.
+ *
+ * Adiciona todos os elementos de @p o no final do vetor atual.
+ *
+ * @param o Vetor cujos elementos serão adicionados.
+ * @return Referência ao próprio vetor.
+ */
+TVector<Item>& TVector<Item>::operator+=(const TVector<Item>& o)
+{
+	int oldCount = count;
+	// ajusta tamanho lógico e realoca se necessário
+	Count(oldCount + o.count);
+	// copia elementos
+	for (int k = 0; k < o.count; ++k) {
+		v[oldCount + k] = o.v[k];
+	}
+	return *this;
+}
+
+
+
+//----------------------------------------------------------------------------
+// Implementação de operator[] para auto-expansão
+//----------------------------------------------------------------------------
+
+/**
+ * @copybrief TVector::operator[](int)
+ */
+template <class Item>
+Item& TVector<Item>::operator[](int i)
+{
+	if (i >= sz)
+		Size(2 * (i + 1));
+
+	if (i >= count)
+		count = i + 1;
+
+	return v[i];
+}
+
+
+/**
+ * @copybrief TVector::operator[](int) const
+ */
+template <class Item>
+const Item& TVector<Item>::operator[](int i) const
+{
+	if (i < 0 || i >= count)
+		return TVector<Item>::erro;
+
+	return v[i];
+}
+
+//----------------------------------------------------------------------------
+// Pesquisa de elementos
+//----------------------------------------------------------------------------
+
+/**
+ * @brief Procura um elemento no vetor.
+ * @param i      Referência ao item a procurar.
+ * @param binary Se true, faz busca binária (vetor deve estar ordenado).
+ * @param left   Índice inicial da busca binária (opcional).
+ * @param right  Índice final da busca binária (opcional).
+ * @return Índice do elemento se encontrado, ou -1 caso contrário.
+ */
+template <class Item>
+int TVector<Item>::Find(Item& i, bool binary, int left, int right)
+{
+	if (binary) {
+		if (right < 0 || right > count - 1) right = count - 1;
+		if (left  < 0 || left  > right)    left = 0;
+		while (left <= right) {
+			int mid = (left + right) >> 1;
+			if (v[mid] == i) return mid;
+			if (v[mid] < i) left = mid + 1;
+			else              right = mid - 1;
+		}
+	}
+	else {
+		for (int k = 0; k < count; ++k)
+			if (v[k] == i)
 				return k;
 	}
 	return -1;
 }
 
-/////////////////////////////////////////////////////////////////
-// Sorting
-/////////////////////////////////////////////////////////////////
 
+
+
+
+//----------------------------------------------------------------------------
+// Ordenação
+//----------------------------------------------------------------------------
+
+/**
+ * @brief Ordena todo o vetor, opcionalmente devolvendo índices ordenados.
+ * @param idxvect Se não nulo, recebe um vetor de índices ordenados em vez de ordenar os elementos.
+ * @return Referência ao próprio vetor (permite encadeamento).
+ */
 template <class Item>
-TVector<Item>& TVector<Item>::Sort(TVector<int>*idxvect) // quicksort & insertion
+TVector<Item>& TVector<Item>::Sort(TVector<int>* idxvect)
 {
-	if(idxvect==NULL) { // just sort this vector
-		QuickSort(0,count-1); // make numbers more or less sorted
-		Insertion(0,count-1); // finish sort
-		// for integer numbers it takes about 1.5 seconds for 10^6 random numbers
-		// performance ok for already sorted sequences
-	} else { // sort the index
-		idx=idxvect;
+	if (idxvect == nullptr) {
+		QuickSort(0, count - 1);
+		Insertion(0, count - 1);
+	}
+	else {
+		idx = idxvect;
 		idx->Count(count);
-		for(int k=0;k<count;k++)
-			(*idx)[k]=k;
-		QuickSortIdx(0,count-1);
+		for (int k = 0; k < count; ++k)
+			(*idx)[k] = k;
+		QuickSortIdx(0, count - 1);
 	}
 	return *this;
 }
 
+
+/**
+ * @brief Ordena um subintervalo [start,end] do vetor.
+ * @param start Índice inicial (será ajustado a 0 se negativo).
+ * @param end   Índice final (será ajustado a count-1 se inválido).
+ */
 template <class Item>
-void TVector<Item>::Sort(int start,int end) // sort only from start to end
+void TVector<Item>::Sort(int start, int end)
 {
-	if(end>count-1 || end<0) end=count-1;
-	if(start<0) start=0;
-	if(start<end) {
-		QuickSort(start,end); // make numbers more or less sorted
-		Insertion(start,end); // finish sort
+	if (end > count - 1 || end < 0) end = count - 1;
+	if (start < 0)                  start = 0;
+	if (start < end) {
+		QuickSort(start, end);
+		Insertion(start, end);
 	}
 }
 
 
+/**
+ * @brief Particiona recursivamente via QuickSort.
+ * @param start Índice inicial do segmento a ordenar.
+ * @param end   Índice final do segmento a ordenar.
+ * @details Combina QuickSort para partição e Insertion Sort para segmentos pequenos.
+ */
 template <class Item>
-void TVector<Item>::QuickSort(int start,int end) // quicksort
+void TVector<Item>::QuickSort(int start, int end)
 {
-	if(end-start>32) { // otherwise left work to insertion sort
-		Exch((start+end)>>1,end-1); // the middle element next to the end
-		// sort the three elements
-		if(v[end-1]<v[start]) Exch(end-1,start);
-		if(v[end]<v[start]) Exch(end,start);
-		if(v[end]<v[end-1]) Exch(end,end-1);
+	if (end - start > 32) {
+		// pivôs median-of-three
+		Exch((start + end) >> 1, end - 1);
+		if (v[end - 1] < v[start]) Exch(end - 1, start);
+		if (v[end] < v[start]) Exch(end, start);
+		if (v[end] < v[end - 1]) Exch(end, end - 1);
 
-		// v[start] will be for sure less or equal than v[end-1]
-		// v[end] will be for sure greater or equal than v[end-1]
 		start++; end--;
 
-		// partition
-		int i=start-1,j=end;
-		Item a=v[end];
-		for(;;) {
-			while(v[++i]<a);
-			while(a<v[--j] && j>start);
-			if(i>=j) break;
-			Exch(i,j);
+		// partição
+		int i = start - 1, j = end;
+		Item pivot = v[end];
+		for (;;) {
+			while (v[++i] < pivot);
+			while (pivot < v[--j] && j > start);
+			if (i >= j) break;
+			Exch(i, j);
 		}
-		Exch(i,end);
+		Exch(i, end);
 
-		QuickSort(start-1,i-1);
-		QuickSort(i+1,end+1);
-	} //else Insertion(start,end);
-}
-
-template <class Item>
-void TVector<Item>::Insertion(int start,int end) // insertion sort
-{
-	int i;
-	for(i=end; i>start; i--)
-		if(v[i-1]>v[i])
-			Exch(i-1,i);
-
-	for(i=start+2; i<=end; i++) {
-		int j=i;
-		Item a=v[i];
-		while(a<v[j-1]) {
-			v[j]=v[j-1];
-			j--;
-		}
-		v[j]=a;
+		QuickSort(start - 1, i - 1);
+		QuickSort(i + 1, end + 1);
 	}
 }
 
-template <class Item>
-void TVector<Item>::QuickSortIdx(int start,int end) // quicksort
-{
-	if(end-start<3) { // few elements
-		if(end-start==1) { // two elements
-			if(v[(*idx)[end]]<v[(*idx)[start]]) ExchIdx(end,start);
-		} else if(end-start==2) { // three elements
-			if(v[(*idx)[end-1]]<v[(*idx)[start]]) ExchIdx(end-1,start);
-			if(v[(*idx)[end]]<v[(*idx)[start]]) ExchIdx(end,start);
-			if(v[(*idx)[end]]<v[(*idx)[end-1]]) ExchIdx(end,end-1);
-		}
-	} else { // otherwise is sorted
-		ExchIdx((start+end)>>1,end-1); // the middle element next to the end
-		// sort the three elements
-		if(v[(*idx)[end-1]]<v[(*idx)[start]]) ExchIdx(end-1,start);
-		if(v[(*idx)[end]]<v[(*idx)[start]]) ExchIdx(end,start);
-		if(v[(*idx)[end]]<v[(*idx)[end-1]]) ExchIdx(end,end-1);
 
-		// v[start] will be for sure less or equal than v[end-1]
-		// v[end] will be for sure greater or equal than v[end-1]
+/**
+ * @brief Realiza Insertion Sort num segmento.
+ * @param start Índice inicial.
+ * @param end   Índice final.
+ */
+template <class Item>
+void TVector<Item>::Insertion(int start, int end)
+{
+	for (int i = end; i > start; --i)
+		if (v[i - 1] > v[i])
+			Exch(i - 1, i);
+
+	for (int i = start + 2; i <= end; ++i) {
+		Item tmp = v[i];
+		int j = i;
+		while (tmp < v[j - 1]) {
+			v[j] = v[j - 1];
+			--j;
+		}
+		v[j] = tmp;
+	}
+}
+
+
+
+/**
+ * @brief QuickSort aplicado ao vetor de índices.
+ * @param start Índice inicial.
+ * @param end   Índice final.
+ */
+template <class Item>
+void TVector<Item>::QuickSortIdx(int start, int end)
+{
+	if (end - start < 3) {
+		// pequenos casos
+		if (end - start == 1) {
+			if (v[(*idx)[end]] < v[(*idx)[start]])
+				ExchIdx(end, start);
+		}
+		else if (end - start == 2) {
+			if (v[(*idx)[end - 1]] < v[(*idx)[start]])
+				ExchIdx(end - 1, start);
+			if (v[(*idx)[end]] < v[(*idx)[start]])
+				ExchIdx(end, start);
+			if (v[(*idx)[end]] < v[(*idx)[end - 1]])
+				ExchIdx(end, end - 1);
+		}
+	}
+	else {
+		// pivôs median-of-three em idx
+		ExchIdx((start + end) >> 1, end - 1);
+		if (v[(*idx)[end - 1]] < v[(*idx)[start]])
+			ExchIdx(end - 1, start);
+		if (v[(*idx)[end]] < v[(*idx)[start]])
+			ExchIdx(end, start);
+		if (v[(*idx)[end]] < v[(*idx)[end - 1]])
+			ExchIdx(end, end - 1);
+
 		start++; end--;
 
-		// partition
-		int i=start-1,j=end;
-		Item a=v[(*idx)[end]];
-		for(;;) {
-			while(v[(*idx)[++i]]<a);
-			while(a<v[(*idx)[--j]] && j>start);
-			if(i>=j) break;
-			ExchIdx(i,j);
+		// partição em idx
+		int i = start - 1, j = end;
+		Item pivot = v[(*idx)[end]];
+		for (;;) {
+			while (v[(*idx)[++i]] < pivot);
+			while (pivot < v[(*idx)[--j]] && j > start);
+			if (i >= j) break;
+			ExchIdx(i, j);
 		}
-		ExchIdx(i,end);
+		ExchIdx(i, end);
 
-		if(i>start)	QuickSortIdx(start-1,i-1);
-		if(i<end) QuickSortIdx(i+1,end+1);
+		if (i > start)         QuickSortIdx(start - 1, i - 1);
+		if (i < end)           QuickSortIdx(i + 1, end + 1);
 	}
 }
 
-// O(N)
+
+//----------------------------------------------------------------------------
+// Baralhar
+//----------------------------------------------------------------------------
+
+/**
+ * @brief Coloca os elementos em ordem aleatória (Fisher–Yates shuffle).
+ * @return Referência ao próprio vetor.
+ */
 template <class Item>
-TVector<Item>& TVector<Item>::RandomOrder() // put the vector in an random order
+TVector<Item>& TVector<Item>::RandomOrder()
 {
-    for(int k=count-1;k>0;k--) // select a random possition to k
-        Exch(k,TRand::rand()%(k+1));
+	for (int k = count - 1; k > 0; --k)
+		Exch(k, TRand::rand() % (k + 1));
 	return *this;
 }
 
-// O(N)
+/**
+ * @brief Remove todas as ocorrências de um dado elemento.
+ * @param i Referência ao elemento a remover.
+ * @return Referência ao próprio vetor (permite encadear chamadas).
+ */
 template <class Item>
-TVector<Item>& TVector<Item>::Remove(Item const &i)
+TVector<Item>& TVector<Item>::Remove(const Item& i)
 {
-	int k,w;
-	for(w=0,k=0;w<count;w++) { // O(N)
-		if(k!=w) v[k]=v[w];
-		if(v[w]!=i) k++;
+	int k = 0;
+	for (int w = 0; w < count; ++w) {
+		if (v[w] != i) {
+			v[k++] = v[w];
+		}
 	}
-	count=k;
+	count = k;
 	return *this;
 }
 
-// O(N)
+
+/**
+ * @brief Preenche todo o vetor com um mesmo valor.
+ * @param i Valor a atribuir a cada posição.
+ * @return Referência ao próprio vetor.
+ */
 template <class Item>
-TVector<Item>& TVector<Item>::Reset(Item const &i)
+TVector<Item>& TVector<Item>::Reset(const Item& i)
 {
-	for(int j=0;j<count;j++)
-		v[j]=i;
+	for (int j = 0; j < count; ++j) {
+		v[j] = i;
+	}
 	return *this;
 }
 
-// O(N)
+
+/**
+ * @brief Substitui todas as ocorrências de um valor antigo por um novo.
+ * @param iold Valor a ser substituído.
+ * @param inew Novo valor que substitui @p iold.
+ * @return Referência ao próprio vetor.
+ */
 template <class Item>
-TVector<Item>& TVector<Item>::Replace(Item const &iold,Item const &inew)
+TVector<Item>& TVector<Item>::Replace(const Item& iold, const Item& inew)
 {
-	for(int k=0;k<count;k++)
-		if(v[k]==iold)  // O(N)
-			v[k]=inew;
+	for (int k = 0; k < count; ++k) {
+		if (v[k] == iold) {
+			v[k] = inew;
+		}
+	}
 	return *this;
 }
 
-// O(N)
+
+/**
+ * @brief Remove o elemento na posição @p i deslocando os seguintes.
+ * @param i Índice do elemento a eliminar (0 ≤ i < count).
+ * @return Referência ao próprio vetor.
+ */
 template <class Item>
 TVector<Item>& TVector<Item>::Delete(int i)
 {
-	int k;
-	for(k=i;k<count-1;k++) { // O(N)
-		v[k]=v[k+1];
+	for (int k = i; k < count - 1; ++k) {
+		v[k] = v[k + 1];
 	}
-	count--;
+	--count;
 	return *this;
 }
 
-// set methods
-template <class Item>
-TVector<Item>& TVector<Item>::BeASet() { // remove duplicates and sort
 
-	if(count>0) {
+/**
+ * @brief Converte o vetor num conjunto: remove duplicados e ordena.
+ * @details
+ *   - Ordena o vetor completo.
+ *   - Percorre e elimina valores consecutivos iguais.
+ *   - Atualiza @c count para o novo número de elementos.
+ * @return Referência ao próprio vetor.
+ */
+template <class Item>
+TVector<Item>& TVector<Item>::BeASet()
+{
+	if (count > 0) {
 		Sort();
-
-		// remove duplicates
-		int k=0,w=1;
-
-		while(true) {
-			while(w<count && v[k]==v[w]) w++; // move w to the next different position
-			if(w>=count) break;
-			k++;
-			if(k!=w) v[k]=v[w];
+		int k = 0, w = 1;
+		while (w < count) {
+			if (v[k] != v[w]) {
+				v[++k] = v[w];
+			}
+			++w;
 		}
-
-		count=k+1;
+		count = k + 1;
 	}
-
 	return *this;
 }
 
+
+/**
+ * @brief Realiza a união deste conjunto com outro.
+ * @param other Conjunto a unir (deve estar ordenado e sem duplicados).
+ * @return Referência ao próprio vetor já representando a união.
+ */
 template <class Item>
-TVector<Item>& TVector<Item>::Union(const TVector<Item>&v) { // join elements of two sets
-	int k=0,w=0,s=Count();
-	while(k<v.Count()) {
-		while(w<s && operator[](w)<v[k]) w++; // see if v[k] is in the vector
-		if(w>=s || operator[](w)>v[k]) // not there
-			Add(v[k++]); // add v[k]
-		else k++; // already there, next k
+TVector<Item>& TVector<Item>::Union(const TVector<Item>& other)
+{
+	int k = 0, w = 0, s = Count();
+	while (k < other.Count()) {
+		while (w < s && operator[](w) < other[k]) {
+			++w;
+		}
+		if (w >= s || operator[](w) > other[k]) {
+			Add(other[k++]);
+		}
+		else {
+			++k;
+		}
 	}
 	Sort();
-
 	return *this;
 }
 
+
+/**
+ * @brief Interseção deste conjunto com outro.
+ * @param other Conjunto contra o qual intersectar (ordenado).
+ * @return Referência ao próprio vetor já representando a interseção.
+ */
 template <class Item>
-TVector<Item>& TVector<Item>::Intersection(const TVector<Item>&v) { // intersects elements of two sets
-	int k=0,w=0,z=0;
-	while(k<v.Count()) {
-		while(w<Count() && operator[](w)<v[k]) w++; // see if v[k] is in the vector
-		if(w>=Count()) break;
-		if(operator[](w)==v[k++]) // keep element, any case go for next k
-			operator[](z++)=operator[](w++);
-	}
-	Count(z);
-
-	return *this;
-}
-
-// bug found in 2007/03/26
-template <class Item>
-TVector<Item>& TVector<Item>::Difference(const TVector<Item>&v) { // subtract the elements of v
-	int k=0,w=0,z=0;
-	while(k<v.Count()) { // process all elements of v
-		while(w<Count() && operator[](w)<v[k])   // w - process all elements of this vector
-			// not in v, keep element
-			if(z!=w) operator[](z++)=operator[](w++);
-			else { z++; w++; }
-		if(w>=Count()) break;
-		k++; // next element of v
-		w++; // this w is not inserted, skip
-	}
-	// copy the rest of the elements, not in v
-	while(w<Count())
-		if(z!=w) operator[](z++)=operator[](w++);
-		else { z++; w++; }
-
-	// reset the size of the vector
-	Count(z);
-
-	return *this;
-}
-
-// O(N)
-template <class Item>
-bool TVector<Item>::Equal(const TVector<Item>&v) const { // return true if v is equal (assume sorted elements)
-	if(count==v.Count()) {
-		int k;
-		for(k=0;k<count && operator[](k)==v[k];k++);
-		return k==count;
-	}
-	return false;
-}
-
-// O(N)
-template <class Item>
-bool TVector<Item>::Contained(const TVector<Item>&v) const { // return true if it is contained in v or equal (assume sorted elements)
-	if(count<=v.Count()) {
-		int k,k2;
-		for(k=0,k2=0;k<count && k2<v.Count();k++)
-			while(k2<v.Count() && operator[](k)!=v[k2]) k2++;
-		return k==count;
-	}
-	return false;
-}
-
-
-// O(N)
-template <class Item>
-TVector<Item>& TVector<Item>::Insert(TVector<Item>&v,int index) { // insert elements of v starting at index
-	int k,z,w;
-	if(index<0) index=Count();
-	if((w=v.Count()) > 0) {
-		z=Count();
-		Count(Count()+w);
-		if(index>z) index=z;
-		// move all elements after index
-		for(k=z-1;k>=index;k--)
-			operator[](k+w)=operator[](k);
-		// copy elements of vector into this one
-		for(k=index;k<index+w;k++)
-			operator[](k)=v.operator[](k-index);
-	}
-	return *this;
-}
-
-// O(N)
-template <class Item>
-TVector<Item>& TVector<Item>::Insert(Item a,int index) { // insert an element a at index
-	int k,z;
-	if(index<0) index=Count();
-
-	z=Count();
-	Count(Count()+1);
-	if(index>z) index=z;
-
-	// move all elements after index
-	for(k=z-1;k>=index;k--)
-		operator[](k+1)=operator[](k);
-	// copy element into this position
-	operator[](index)=a;
-	return *this;
-}
-
-// O(N)
-template <class Item>
-TVector<Item>& TVector<Item>::Invert() { // invert the current order
-	if(count>1)
-		for(int k=count/2-1;k>=0;k--)
-			Exch(k,count-1-k);
-	return *this;
-}
-
-template <class Item>
-int TVector<Item>::Distance(TVector<Item>&v,int type) {
-	int result=0;
-	if(type==0) { // 0 - exact match - O(N)
-		result=abs(Count()-v.Count());
-		for(int i=(Count()<v.Count()?Count():v.Count())-1;i>=0;i--)
-			if(!((*this)[i]==v[i])) // use only the operator ==
-				result++;
-	} else if(type==1) { // 1 - deviation distance - O(N)
-		for(int i=(Count()<v.Count()?Count():v.Count())-1;i>=0;i--)
-			result+=abs((*this)[i]-v[i]);
-	} else if(type==2) { // 2 - R-type distance - O(N^2)
-		result=(Count()>v.Count()?Count():v.Count());
-		for(int i=0;i<Count()-1;i++) {
-			int j=v.Find((*this)[i]);
-			if(j>=0 && j<v.Count()-1 && (*this)[i+1]==v[j+1])
-				result--;
+TVector<Item>& TVector<Item>::Intersection(const TVector<Item>& other)
+{
+	int k = 0, w = 0, z = 0;
+	while (k < other.Count() && w < Count()) {
+		if (operator[](w) < other[k]) {
+			++w;
 		}
-	} else if(type==3) { // 3 - edit distance  - O(N^2)
-/*		Base algorithm:
-		m[i,j] = d(s1[1..i], s2[1..j])
-		m[0,0] = 0
-		m[i,0] = i,  i=1..|s1|
-		m[0,j] = j,  j=1..|s2|
-		m[i,j] = min(m[i-1,j-1] + if s1[i]=s2[j] then 0 else 1 fi,
-					 m[i-1, j] + 1,
-					 m[i, j-1] + 1 ),  i=1..|s1|, j=1..|s2|
-*/
-		int n1=Count()+1,n2=v.Count()+1;
-		TVector<int> m(n1*n2);
-		// m[0,0] = 0
-		m[0+n1*0]=0;
-		// m[i,0] = i,  i=1..|s1|
-		for(int i=1;i<n1;i++)
-			m[i+n1*0]=i;
-		// m[0,j] = j,  j=1..|s2|
-		for(int j=1;j<n2;j++)
-			m[0+n1*j]=j;
-		for(int i=1;i<n1;i++)
-			for(int j=1;j<n2;j++) {
-				// min:
-				// m[i-1,j-1] + if s1[i]=s2[j] then 0 else 1 fi,
-				m[i+n1*j]=m[i-1+n1*(j-1)];
-				if(!((*this)[i-1]==v[j-1]))
-					m[i+n1*j]++;
-				// m[i-1, j] + 1
-				if(m[i+n1*j]>m[i-1+n1*j]+1)
-					m[i+n1*j]=m[i-1+n1*j]+1;
-				// m[i, j-1] + 1
-				if(m[i+n1*j]>m[i+n1*(j-1)]+1)
-					m[i+n1*j]=m[i+n1*(j-1)]+1;
-			}
-		result=m[Count()+n1*v.Count()];
+		else if (operator[](w) == other[k]) {
+			v[z++] = v[w++];
+			++k;
+		}
+		else {
+			++k;
+		}
 	}
+	Count(z);
+	return *this;
+}
+
+
+/**
+ * @brief Diferença deste conjunto em relação a outro.
+ * @param other Conjunto cujos elementos serão subtraídos.
+ * @return Referência ao próprio vetor já representando a diferença.
+ */
+template <class Item>
+TVector<Item>& TVector<Item>::Difference(const TVector<Item>& other)
+{
+	int k = 0, w = 0, z = 0;
+	while (k < other.Count() && w < Count()) {
+		if (v[w] < other[k]) {
+			v[z++] = v[w++];
+		}
+		else if (v[w] == other[k]) {
+			++w; ++k;
+		}
+		else {
+			++k;
+		}
+	}
+	while (w < Count()) {
+		v[z++] = v[w++];
+	}
+	Count(z);
+	return *this;
+}
+
+/**
+ * @brief Verifica se dois vetores-conjunto são iguais.
+ * @param other Outro vetor a comparar (deve estar ordenado e sem duplicados).
+ * @return true se tamanhos e elementos coincidem; false caso contrário.
+ */
+template <class Item>
+bool TVector<Item>::Equal(const TVector<Item>& other) const
+{
+	if (count != other.Count()) return false;
+	for (int k = 0; k < count; ++k) {
+		if (v[k] != other[k]) return false;
+	}
+	return true;
+}
+
+
+/**
+ * @brief Verifica se este conjunto está contido no outro.
+ * @param other Conjunto suposto “contedor” (ordenado).
+ * @return true se todos os elementos deste vetor aparecem em @p other.
+ */
+template <class Item>
+bool TVector<Item>::Contained(const TVector<Item>& other) const
+{
+	if (count > other.Count()) return false;
+	int k2 = 0;
+	for (int k = 0; k < count; ++k) {
+		while (k2 < other.Count() && v[k2] < v[k]) {
+			++k2;
+		}
+		if (k2 >= other.Count() || other[k2] != v[k]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
+/**
+ * @brief Insere um vetor de itens na posição indicada.
+ * @param src   Vetor cujos elementos serão inseridos.
+ * @param index Índice onde começa a inserção (defaults to end if <0).
+ * @return Referência ao próprio vetor após inserção.
+ */
+template <class Item>
+TVector<Item>& TVector<Item>::Insert(TVector<Item>& src, int index)
+{
+	if (index < 0) index = Count();
+	int w = src.Count();
+	if (w > 0) {
+		int oldCount = Count();
+		Count(oldCount + w);
+		if (index > oldCount) index = oldCount;
+		for (int k = oldCount - 1; k >= index; --k) {
+			v[k + w] = v[k];
+		}
+		for (int k = 0; k < w; ++k) {
+			v[index + k] = src[k];
+		}
+	}
+	return *this;
+}
+
+
+/**
+ * @brief Insere um único elemento na posição indicada.
+ * @param a     Elemento a inserir.
+ * @param index Índice de inserção (defaults to end if <0).
+ * @return Referência ao próprio vetor após inserção.
+ */
+template <class Item>
+TVector<Item>& TVector<Item>::Insert(Item a, int index)
+{
+	if (index < 0) index = Count();
+	int oldCount = Count();
+	Count(oldCount + 1);
+	if (index > oldCount) index = oldCount;
+	for (int k = oldCount - 1; k >= index; --k) {
+		v[k + 1] = v[k];
+	}
+	v[index] = a;
+	return *this;
+}
+
+/**
+ * @brief Inverte a ordem dos elementos no vetor.
+ * @return Referência ao próprio vetor.
+ */
+template <class Item>
+TVector<Item>& TVector<Item>::Invert()
+{
+	for (int k = 0; k < count / 2; ++k) {
+		Exch(k, count - 1 - k);
+	}
+	return *this;
+}
+
+
+/**
+ * @brief Calcula várias métricas de “distância” entre vetores.
+ * @param other Outro vetor para comparação.
+ * @param type  Tipo de métrica:
+ *    - 0: diferença exata de posições (O(N))
+ *    - 1: soma de desvios absolutos (O(N))
+ *    - 2: R-type distance (O(N²))
+ *    - 3: edit distance (Levenshtein) (O(N²))
+ * @return Valor inteiro representando a distância.
+ */
+template <class Item>
+int TVector<Item>::Distance(TVector<Item>& other, int type)
+{
+	int result = 0;
+	int n1 = Count(), n2 = other.Count();
+
+	if (type == 0) {
+		result = abs(n1 - n2);
+		int m = Min(n1, n2);
+		for (int i = 0; i < m; ++i) {
+			if (v[i] != other[i]) ++result;
+		}
+	}
+	else if (type == 1) {
+		int m = Min(n1, n2);
+		for (int i = 0; i < m; ++i) {
+			result += abs(v[i] - other[i]);
+		}
+	}
+	else if (type == 2) {
+		result = Max(n1, n2);
+		for (int i = 0; i + 1 < n1; ++i) {
+			int j = other.Find(v[i]);
+			if (j >= 0 && j + 1 < n2 && v[i + 1] == other[j + 1]) {
+				--result;
+			}
+		}
+	}
+	else if (type == 3) {
+		int rows = n1 + 1, cols = n2 + 1;
+		TVector<int> mtx(rows * cols);
+		// inicialização da matriz
+		for (int i = 0; i < rows; ++i) mtx[i] = i;
+		for (int j = 1; j < cols; ++j) mtx[j * rows] = j;
+		// cálculo da distância de edição
+		for (int i = 1; i < rows; ++i) {
+			for (int j = 1; j < cols; ++j) {
+				int cost = (v[i - 1] == other[j - 1] ? 0 : 1);
+				int val = mtx[(i - 1) + rows * (j - 1)] + cost;
+				val = Min(val, mtx[(i - 1) + rows * j] + 1);
+				val = Min(val, mtx[i + rows * (j - 1)] + 1);
+				mtx[i + rows * j] = val;
+			}
+		}
+		result = mtx[n1 + rows * n2];
+	}
+
 	return result;
 }
 
-/* Test results in 2007/04/09
-
-set seed 2
-set 1 -1
-set 2 1000000
-set information 1
-run
-
-#1# Adding 1000000 random elements to vector A
-(31) elements of char
-(31) elements of __int16
-(31) elements of __int32
-(79) elements of __int64
-(46) elements of float
-(79) elements of double
-#2# A.Sort(); 1000000 random elements
-(93) elements of char
-(157) elements of __int16
-(156) elements of __int32
-(219) elements of __int64
-(250) elements of float
-(265) elements of double
-#3# Acessing/verifing if 1000000 elements of A are sorted
-(0) elements of char
-(16) elements of __int16
-(0) elements of __int32
-(15) elements of __int64
-(0) elements of float
-(16) elements of double
-#4# A.RandomOrder(); 1000000 elements
-(63) elements of char
-(109) elements of __int16
-(125) elements of __int32
-(172) elements of __int64
-(140) elements of float
-(172) elements of double
-#5# A.Invert(); 1000000 elements
-(0) elements of char
-(0) elements of __int16
-(16) elements of __int32
-(16) elements of __int64
-(0) elements of float
-(15) elements of double
-#6# A.BeASet(); 1000000 elements (sort and remove duplicates)
-(94) elements of char
-(156) elements of __int16
-(172) elements of __int32
-(234) elements of __int64
-(266) elements of float
-(266) elements of double
-Size of Sets A:
-char 256;
- __int16 65536;
- __int32 999879;
- __int64 1000000;
- float 980581;
- double 999890
-#7# B.operator=(A); assigning vectors
-(0) elements of char
-(0) elements of __int16
-(31) elements of __int32
-(31) elements of __int64
-(16) elements of float
-(15) elements of double
-#8# B.Equal(A); comparing vectors
-(0) elements of char
-(0) elements of __int16
-(16) elements of __int32
-(16) elements of __int64
-(0) elements of float
-(15) elements of double
-#9# A.Remove(0); set half of elements to 0 and then remove them.
-(0) elements of char
-(16) elements of __int16
-(78) elements of __int32
-(109) elements of __int64
-(94) elements of float
-(94) elements of double
-#10# B.Difference(A); difference of sets
-(0) elements of char
-(16) elements of __int16
-(15) elements of __int32
-(16) elements of __int64
-(15) elements of float
-(32) elements of double
-Size of sets:
-char 159+97=256;
- __int16 39708+25828=65536;
-__int32 606688+393191=999879;
- __int64 606696+393304=1000000;
- float 594633+385948=980581;
- double 606457+393433=999890
-#11# B.Union(A); union of sets
-(0) elements of char
-(15) elements of __int16
-(125) elements of __int32
-(188) elements of __int64
-(187) elements of float
-(203) elements of double
-#12# A.Contained(B); A contained in B
-(0) elements of char
-(0) elements of __int16
-(16) elements of __int32
-(31) elements of __int64
-(32) elements of float
-(15) elements of double
-#13# A.Intersection(B); A intersection with B
-(0) elements of char
-(0) elements of __int16
-(16) elements of __int32
-(31) elements of __int64
-(31) elements of float
-(32) elements of double
-#14# A.operator+=(B); adding vectors
-(0) elements of char
-(0) elements of __int16
-(31) elements of __int32
-(62) elements of __int64
-(32) elements of float
-(62) elements of double
-Size of vectors:
-char 415+256=671;
- __int16 105244+65536=170780;
-__int32 1606567+999879=2606446;
- __int64 1606696+1000000=2606696;
- float 1575214+980581=2555795;
- double 1606347+999890=2606237
-No errors found.Run end.
-
-
-set seed 2
-set 1 -1
-set 2 10000000
-set information 1
-run
-
-#1# Adding 10000000 random elements to vector A
-(266) elements of char
-(266) elements of __int16
-(359) elements of __int32
-(703) elements of __int64
-(578) elements of float
-(860) elements of double
-#2# A.Sort(); 10000000 random elements
-(984) elements of char
-(1516) elements of __int16
-(2000) elements of __int32
-(2609) elements of __int64
-(2891) elements of float
-(3031) elements of double
-#3# Acessing/verifing if 10000000 elements of A are sorted
-(62) elements of char
-(47) elements of __int16
-(63) elements of __int32
-(62) elements of __int64
-(78) elements of float
-(94) elements of double
-#4# A.RandomOrder(); 10000000 elements
-(1563) elements of char
-(1687) elements of __int16
-(1797) elements of __int32
-(1938) elements of __int64
-(1812) elements of float
-(1922) elements of double
-#5# A.Invert(); 10000000 elements
-(16) elements of char
-(31) elements of __int16
-(62) elements of __int32
-(125) elements of __int64
-(47) elements of float
-(125) elements of double
-#6# A.BeASet(); 10000000 elements (sort and remove duplicates)
-(1000) elements of char
-(1547) elements of __int16
-(2031) elements of __int32
-(2688) elements of __int64
-(3015) elements of float
-(3110) elements of double
-Size of Sets A:
-char 256;
- __int16 65536;
- __int32 9988463;
- __int64 10000000;
- float 8309118;
- double 9988537
-#7# B.operator=(A); assigning vectors
-(15) elements of char
-(0) elements of __int16
-(172) elements of __int32
-(266) elements of __int64
-(125) elements of float
-(250) elements of double
-#8# B.Equal(A); comparing vectors
-(0) elements of char
-(0) elements of __int16
-(78) elements of __int32
-(125) elements of __int64
-(63) elements of float
-(109) elements of double
-#9# A.Remove(0); set half of elements to 0 and then remove them.
-(0) elements of char
-(0) elements of __int16
-(984) elements of __int32
-(1032) elements of __int64
-(843) elements of float
-(1032) elements of double
-#10# B.Difference(A); difference of sets
-(0) elements of char
-(15) elements of __int16
-(141) elements of __int32
-(172) elements of __int64
-(156) elements of float
-(203) elements of double
-Size of sets:
-char 153+103=256;
- __int16 39629+25907=65536;
-__int32 6057416+3931047=9988463;
- __int64 6064739+3935261=10000000;
- float 5038930+3270188=8309118;
- double 6059269+3929268=9988537
-#11# B.Union(A); union of sets
-(0) elements of char
-(0) elements of __int16
-(1391) elements of __int32
-(2078) elements of __int64
-(1672) elements of float
-(2297) elements of double
-#12# A.Contained(B); A contained in B
-(0) elements of char
-(0) elements of __int16
-(156) elements of __int32
-(156) elements of __int64
-(156) elements of float
-(203) elements of double
-#13# A.Intersection(B); A intersection with B
-(0) elements of char
-(0) elements of __int16
-(219) elements of __int32
-(203) elements of __int64
-(219) elements of float
-(266) elements of double
-#14# A.operator+=(B); adding vectors
-(0) elements of char
-(0) elements of __int16
-(125) elements of __int32
-(218) elements of __int64
-(79) elements of float
-(218) elements of double
-Size of vectors:
-char 409+256=665;
- __int16 105165+65536=170701;
-__int32 16045879+9988463=26034342;
- __int64 16064739+10000000=26064739;
- float 13348048+8309118=21657166;
- double 16047806+9988537=26036343
-No errors found.Run end.
-
-
-
-*/
-#endif // !defined(AFX_TVECTOR_H__7E674C3E_074D_4F78_8839_D28D9BAD66FD__INCLUDED_)
