@@ -124,7 +124,7 @@ ____________________________________________________________________\n\
 		switch (Dominio(selecao, 0, 9)) {
 		case 0: return;
 		case 1: TRand::srand(Parametro(seed)); SolicitaInstancia(); Inicializar(); break;
-		case 2: ExplorarSucessores(); break;
+		case 2: Explorar(); break;
 		case 3: EditarParametros(); break;
 		case 4: MostrarSolucao(); break;
 		case 5: if (EditarIndicadores())

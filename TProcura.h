@@ -435,11 +435,11 @@ public:
 	virtual void LimparEstatisticas(clock_t& inicio);
 	/// @brief Chamar após a execução do algoritmo. Grava o tempo consumido.
 	virtual void ExecucaoTerminada(clock_t inicio);
-	// ExplorarSucessores: definir para explorar manualmente o espaço
-	virtual void ExplorarSucessores() {}
-	// MostrarSolucao: definir para visualizar a solução
+	/// @brief definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)
+	virtual void Explorar() {}
+	/// @brief definir para visualizar a solução
 	virtual void MostrarSolucao();
-	// CodificarSolucao: retorna um vetor de inteiros com a codifciação da solução (registar nos resultados)
+	/// @brief  retorna um vetor de inteiros com a codifciação da solução (esta codificação será adicionada aos indicadores, no ficheiro CSV de resultados)
 	virtual TVector<int> CodificarSolucao() { return TVector<int>(); }
 
 	/// @brief ID da instância atual, a ser utilizado em SolucaoVazia().
@@ -485,34 +485,174 @@ public:
 
 protected:
 
-	void InserirRegisto(TVector<TResultado> &resultados, int inst, int conf);
-	int Registo(TResultado &resultado, int id); // retorna id caso esteja no registo
-	void Registo(TResultado& resultado, int id, int valor); // retorna id caso esteja no registo
+	/**
+	 * @brief Insere um novo registo de resultados.
+	 * @param resultados Vetor onde inserir o resultado.
+	 * @param inst ID da instância.
+	 * @param conf ID da configuração.
+	 */
+	void InserirRegisto(TVector<TResultado>& resultados, int inst, int conf);
+
+	/**
+	 * @brief Procura um registo com determinado id.
+	 * @param resultado Vetor de resultados.
+	 * @param id ID a procurar.
+	 * @return Índice do registo, ou -1 se não encontrado.
+	 */
+	int Registo(TResultado& resultado, int id);
+
+	/**
+	 * @brief Atualiza o valor de um registo.
+	 * @param resultado Referência ao resultado a atualizar.
+	 * @param id ID do valor.
+	 * @param valor Novo valor a atribuir.
+	 */
+	void Registo(TResultado& resultado, int id, int valor);
+
+	/**
+	 * @brief Mostra os parâmetros atuais.
+	 * @param detalhe Nível de detalhe na apresentação.
+	 * @param idParametros Vetor de IDs de parâmetros a mostrar (opcional).
+	 */
 	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL);
+
+	/**
+	 * @brief Mostra os indicadores definidos.
+	 */
 	void MostraIndicadores();
+
+	/**
+	 * @brief Mostra as configurações disponíveis.
+	 * @param detalhe Nível de detalhe.
+	 * @param atual Índice da configuração atual (opcional).
+	 */
 	void MostrarConfiguracoes(int detalhe, int atual = -1);
+
+	/**
+	 * @brief Permite ao utilizador editar os indicadores a utilizar.
+	 * @return true se alterou indicadores, false caso contrário.
+	 */
 	bool EditarIndicadores();
+
+	/**
+	 * @brief Permite ao utilizador editar os parâmetros.
+	 */
 	void EditarParametros();
+
+	/**
+	 * @brief Permite ao utilizador editar as configurações.
+	 */
 	void EditarConfiguracoes();
-	void MostraRelatorio(TVector<TResultado>& resultados, bool ultimo=false);
-	void ConfiguracaoAtual(TVector<int>& parametros, int operacao); // gravar (ou ler) a configuração atual
+
+	/**
+	 * @brief Mostra um relatório dos resultados.
+	 * @param resultados Vetor de resultados a apresentar.
+	 * @param ultimo Indica se é o último relatório (opcional).
+	 */
+	void MostraRelatorio(TVector<TResultado>& resultados, bool ultimo = false);
+
+	/**
+	 * @brief Grava ou lê a configuração atual.
+	 * @param parametros Vetor de parâmetros.
+	 * @param operacao Tipo de operação (gravar ou ler).
+	 */
+	void ConfiguracaoAtual(TVector<int>& parametros, int operacao);
+
+	/**
+	 * @brief Adiciona uma nova configuração se ainda não existir.
+	 * @param parametros Vetor de parâmetros.
+	 * @return Índice da nova configuração.
+	 */
 	int NovaConfiguracao(TVector<int>& parametros);
+
+	/**
+	 * @brief Compara dois resultados para determinar o melhor.
+	 * @param base Resultado base.
+	 * @param alternativa Resultado alternativo.
+	 * @return Índice do melhor resultado.
+	 */
 	int MelhorResultado(TResultado base, TResultado alternativa);
+
+	/**
+	 * @brief Calcula o torneio entre várias configurações.
+	 * @param resultados Vetor de resultados a comparar.
+	 */
 	void CalculaTorneio(TVector<TResultado>& resultados);
+
+	/**
+	 * @brief Mostra os resultados do torneio.
+	 * @param torneio Matriz de resultados do torneio.
+	 * @param jogo Indica se é modo de jogo ou apenas comparação.
+	 */
 	void MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo = false);
+
+	/**
+	 * @brief Mostra a barra de progresso ou nomes do torneio.
+	 * @param nomes Se true, mostra nomes; caso contrário, mostra progresso.
+	 */
 	void BarraTorneio(bool nomes);
+
+	/**
+	 * @brief Extrai resultados de uma determinada configuração.
+	 * @param resultados Vetor de resultados.
+	 * @param configuracao Índice da configuração.
+	 * @return Vetor com os resultados extraídos.
+	 */
 	TVector<TResultado> ExtrairConfiguracao(TVector<TResultado>& resultados, int configuracao);
+
+	/**
+	 * @brief Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro.
+	 */
 	void SolicitaInstancia();
+
+	/**
+	 * @brief Solicita ao utilizador uma lista de instâncias.
+	 * @return Vetor com IDs das instâncias selecionadas.
+	 */
 	TVector<int> SolicitaInstancias();
 
-	void RelatorioCSV(TVector<TResultado>& resultados, FILE *f);
+	/**
+	 * @brief Gera um relatório CSV com os resultados.
+	 * @param resultados Vetor de resultados.
+	 * @param f Ponteiro para o ficheiro onde gravar.
+	 */
+	void RelatorioCSV(TVector<TResultado>& resultados, FILE* f);
 
-	TVector<int> ExtraiLista(char *str);
+	/**
+	 * @brief Extrai uma lista de inteiros a partir de uma string.
+	 * @param str String a analisar.
+	 * @return Vetor de inteiros extraídos.
+	 */
+	TVector<int> ExtraiLista(char* str);
+
+	/**
+	 * @brief Insere configurações a partir de uma string.
+	 * @param str String com as configurações.
+	 * @param base Vetor base para inserção.
+	 */
 	void InserirConfiguracoes(char* str, TVector<int>& base);
-	void InserirConfiguracoes(TVector<int>& base, TVector<int> &produto, TVector<TVector<int>> &valores);
 
+	/**
+	 * @brief Insere configurações gerando o produto cartesiano de valores.
+	 * @param base Vetor base.
+	 * @param produto Vetor para resultados.
+	 * @param valores Vetor de vetores de valores possíveis.
+	 */
+	void InserirConfiguracoes(TVector<int>& base, TVector<int>& produto, TVector<TVector<int>>& valores);
+
+	/**
+	 * @brief Mostra ajuda de utilização do programa.
+	 * @param programa Nome do programa.
+	 */
 	void AjudaUtilizacao(const char* programa);
 
+	/**
+	 * @brief Limita o domínio de um parâmetro inteiro.
+	 * @param variavel Variável a limitar.
+	 * @param min Valor mínimo permitido.
+	 * @param max Valor máximo permitido.
+	 * @return Valor ajustado dentro do domínio.
+	 */
 	static int Dominio(int& variavel, int min = INT_MIN, int max = INT_MAX);
 };
 

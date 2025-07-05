@@ -24,9 +24,9 @@ class TVector
 {
 private:
 	TVector<int>* idx = nullptr;    /**< Vetor de índices auxiliar para ordenação. */
-	Item* v = nullptr;    /**< Array interno de elementos. */
-	int           sz = 0;          /**< Capacidade total do array. */
-	int           count = 0;        /**< Número atual de elementos. */
+	Item* v = nullptr;				/**< Array interno de elementos. */
+	int sz = 0;						/**< Capacidade total do array. */
+	int count = 0;					/**< Número atual de elementos. */
 
 	/** Ajusta a capacidade interna para pelo menos @p size elementos. */
 	void Size(int size);
