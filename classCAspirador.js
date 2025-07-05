@@ -9,10 +9,10 @@ var classCAspirador =
     [ "Distinto", "classCAspirador.html#a9279c18880569e58bc26932979d58058", null ],
     [ "Duplicar", "classCAspirador.html#a3c9571f17ca0cbb074943ddd9bd27587", null ],
     [ "Heuristica", "classCAspirador.html#ada888731b2cca0a8bfa410e9bf4d188a", null ],
+    [ "Inicializar", "classCAspirador.html#af6547f44fce58ab6cac2387ea6e5a7a4", null ],
+    [ "ResetParametros", "classCAspirador.html#a7a0d35ab38ae4c5d9a941ca9b3845e4b", null ],
     [ "SolucaoCompleta", "classCAspirador.html#a80fca067d471172af5111b16e3880bf3", null ],
-    [ "SolucaoVazia", "classCAspirador.html#afc7cdfece73d364d74bca6bab1c899c1", null ],
     [ "Sucessores", "classCAspirador.html#ac28dba7dd58b76f9d16f44ebac66fab8", null ],
-    [ "TesteManual", "classCAspirador.html#a718c8187439940dec18a46a9e9e024e3", null ],
     [ "aspirador", "classCAspirador.html#a6b4d9d1a1657ada0d888d23392c9826b", null ],
     [ "salas", "classCAspirador.html#ac118e781b7b1296f09d5aec94560b00e", null ]
 ];

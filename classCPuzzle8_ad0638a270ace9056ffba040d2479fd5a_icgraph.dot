@@ -9,5 +9,5 @@ digraph "CPuzzle8::Duplicar"
   Node1 -> Node2 [id="edge3_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="CPuzzle8::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node2 -> Node3 [id="edge4_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="CPuzzle8::SolucaoVazia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a9cf95b2a057f5368736e503565fad846",tooltip=" "];
+  Node3 [id="Node000003",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
 }

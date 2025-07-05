@@ -6,5 +6,6 @@ var searchData=
   ['espacosramo_3',['espacosRamo',['../group__VariaveisGlobais.html#ga95c939d457c63d60ff3b1a0eb9e47da4',1,'TProcuraConstrutiva']]],
   ['esquerda_4',['esquerda',['../classCParticao.html#a5a3b0c754776ffb416c8d0e3833ef4ec',1,'CParticao']]],
   ['estado_5',['estado',['../structSIndice.html#a71d6cd112fe2f89c710603ad37ded5bf',1,'SIndice']]],
-  ['estadocodht_6',['estadoCodHT',['../classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999',1,'TProcuraConstrutiva']]]
+  ['estadocodht_6',['estadoCodHT',['../classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999',1,'TProcuraConstrutiva']]],
+  ['expansoes_7',['expansoes',['../group__VariaveisEstado.html#ga198a1f8ed90785a1c3f112a3468a2d74',1,'TProcuraConstrutiva']]]
 ];

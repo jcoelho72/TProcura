@@ -13,7 +13,7 @@ digraph "TProcuraConstrutiva::Sucessores"
   Node3 -> Node4 [id="edge34_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
   Node4 -> Node5 [id="edge35_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraConstrutiva\l::ExplorarSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9fda19c96c9cd874fa45578bcc30f607",tooltip=" "];
+  Node5 [id="Node000005",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node1 -> Node5 [id="edge36_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge37_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcuraConstrutiva\l::IDAStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8",tooltip="Executa a procura IDA*, algoritmo informado."];
@@ -56,5 +56,5 @@ digraph "TProcuraConstrutiva::Sucessores"
   Node1 -> Node20 [id="edge61_Node000001_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="CPuzzle8::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node20 -> Node21 [id="edge62_Node000020_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="CPuzzle8::SolucaoVazia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a9cf95b2a057f5368736e503565fad846",tooltip=" "];
+  Node21 [id="Node000021",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
 }

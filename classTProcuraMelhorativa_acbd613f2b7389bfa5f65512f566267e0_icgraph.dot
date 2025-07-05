@@ -6,6 +6,16 @@ digraph "TProcuraMelhorativa::ExplorarOperadores"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
   Node1 [id="Node000001",label="TProcuraMelhorativa\l::ExplorarOperadores",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [id="edge2_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraMelhorativa\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#affabb3691e84b777ff368bf4a4e25286",tooltip="Inicializa a interação com o utilizador."];
+  Node2 -> Node3 [id="edge9_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="COitoDamas::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a0fb443165d257ac17fc8cf5bc870404d",tooltip="Inicializa a interação com o utilizador."];
+  Node3 -> Node4 [id="edge10_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Construtiva_2Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
+  Node2 -> Node5 [id="edge11_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip="Inicializa a interação com o utilizador."];
+  Node5 -> Node4 [id="edge12_Node000005_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node6 [id="edge13_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
+  Node6 -> Node4 [id="edge14_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

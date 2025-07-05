@@ -7,7 +7,7 @@
 \begin{DoxyCompactList}\small\item\em Cria um objecto que é uma cópia deste. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{TProcura\+Construtiva\+::\+Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})
 \begin{DoxyCompactList}\small\item\em Fica com uma cópia do objecto. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a}{TProcura\+Construtiva\+::\+Solucao\+Vazia}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_gabe88a701d18a8a9ac03a9ed65a101fed}{TProcura\+Construtiva\+::\+Inicializar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{TProcura\+Construtiva\+::\+Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})
 \begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
@@ -61,7 +61,7 @@ Reimplemented in \mbox{\hyperlink{classCProblemaArtificial_aeaf471b3eb04012d8005
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00191}{191}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00199}{199}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 0
@@ -105,6 +105,55 @@ Implemented in \mbox{\hyperlink{classCJogoDoGalo_a0ffe5148e0dad4e325c1840d0569f5
 
 Here is the caller graph for this function\+:
 % FIG 1
+\Hypertarget{group__RedefinicaoMandatoria_gabe88a701d18a8a9ac03a9ed65a101fed}\label{group__RedefinicaoMandatoria_gabe88a701d18a8a9ac03a9ed65a101fed} 
+\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!Inicializar@{Inicializar}}
+\index{Inicializar@{Inicializar}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
+\doxysubsubsection{\texorpdfstring{Inicializar()}{Inicializar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Inicializar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Coloca o objecto no estado inicial da procura. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método inicializa as variáveis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer ação ser realizada na procura. Caso existam dados de instância, deve neste método carregar a instância. A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
+
+\begin{DoxyNote}{Note}
+A variável instancia.\+valor, tem o ID da instância que deve ser carregada. 
+
+Se a função \doxylink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica()} estiver implementada, o tamanho do estado codificado deve ser determinado após o carregamento da instância, pois diferentes instâncias podem exigir tamanhos distintos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Inicializar(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_gabe88a701d18a8a9ac03a9ed65a101fed}{TProcuraConstrutiva::Inicializar}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{TProcura}}.
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00230}{230}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
 \Hypertarget{group__RedefinicaoMandatoria_gacb15562d8776f4d162001d385ebc13a0}\label{group__RedefinicaoMandatoria_gacb15562d8776f4d162001d385ebc13a0} 
 \index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!ResetParametros@{ResetParametros}}
 \index{ResetParametros@{ResetParametros}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
@@ -162,9 +211,9 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb
 Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 2
+% FIG 4
 Here is the caller graph for this function\+:
-% FIG 3
+% FIG 5
 \Hypertarget{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}\label{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304} 
 \index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!SolucaoCompleta@{SolucaoCompleta}}
 \index{SolucaoCompleta@{SolucaoCompleta}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
@@ -201,53 +250,10 @@ Reimplemented in \mbox{\hyperlink{classCJogoDoGalo_a568b44d77521584132997a74bf55
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00285}{285}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00293}{293}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 4
-\Hypertarget{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a}\label{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a} 
-\index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!SolucaoVazia@{SolucaoVazia}}
-\index{SolucaoVazia@{SolucaoVazia}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
-\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Coloca o objecto no estado inicial da procura. 
-
-\begin{DoxyNote}{Note}
-Obrigatória a redefinição.
-\end{DoxyNote}
-Este método inicializa as variáveis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer ação ser realizada na procura. Caso existam dados de instância, deve neste método carregar a instância. A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
-
-\begin{DoxyNote}{Note}
-A variável instancia.\+valor, tem o ID da instância que deve ser carregada. 
-
-Se a função \doxylink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica()} estiver implementada, o tamanho do estado codificado deve ser determinado após o carregamento da instância, pois diferentes instâncias podem exigir tamanhos distintos.
-\end{DoxyNote}
-\begin{DoxySeeAlso}{See also}
-\doxylink{group__RedefinicaoSugerida_ga5ff46e85c8f1394c2502f17025284c11}{Codifica()}
-\end{DoxySeeAlso}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::SolucaoVazia(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a}{TProcuraConstrutiva::SolucaoVazia}}();}
-\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
-\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}\ =\ 0;}
-\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
-\DoxyCodeLine{\}}
-
-\end{DoxyCode}
- 
-
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00222}{222}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
-
-Here is the caller graph for this function\+:
-% FIG 5
+% FIG 6
 \Hypertarget{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}\label{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c} 
 \index{Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}!Sucessores@{Sucessores}}
 \index{Sucessores@{Sucessores}!Métodos para redefinir mandatórios@{Métodos para redefinir mandatórios}}
@@ -302,9 +308,9 @@ Reimplemented in \mbox{\hyperlink{classCJogoDoGalo_a00004ccf1fa3974c67e655291db6
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00096}{96}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 6
-Here is the caller graph for this function\+:
 % FIG 7
+Here is the caller graph for this function\+:
+% FIG 8

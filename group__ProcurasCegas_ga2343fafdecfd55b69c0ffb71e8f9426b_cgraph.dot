@@ -6,15 +6,17 @@ digraph "TProcuraConstrutiva::CustoUniforme"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
   Node1 [id="Node000001",label="TProcuraConstrutiva\l::CustoUniforme",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executa a procura por custo uniforme, algoritmo cego."];
-  Node1 -> Node2 [id="edge7_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraConstrutiva\l::ObjetivoAlcancado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a8e7879e0ac12522e0eedf3d3d365e51c",tooltip=" "];
-  Node2 -> Node3 [id="edge8_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge9_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraConstrutiva\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df",tooltip=" "];
-  Node2 -> Node2 [id="edge9_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node4 [id="edge10_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node2 [id="edge10_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge11_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcura::Parar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7952e187e1b0ae0ca52edab157223179",tooltip="Verifica se a procura deve ser interrompida."];
-  Node4 -> Node5 [id="edge11_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node5 [id="edge12_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcura::IteracoesExcedido",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a73463e33b889e6053ee32220e0514a2c",tooltip=" "];
-  Node4 -> Node6 [id="edge12_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcura::TempoExcedido",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afa3015ac104b603930d3f60a34c09fff",tooltip=" "];
+  Node5 -> Node6 [id="edge13_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aea8aa78e35d28d0beb438e24fc7ee086",tooltip=" "];
+  Node4 -> Node7 [id="edge14_Node000004_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="TProcura::TempoExcedido",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afa3015ac104b603930d3f60a34c09fff",tooltip=" "];
 }

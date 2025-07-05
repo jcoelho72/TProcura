@@ -13,7 +13,7 @@ digraph "TProcuraConstrutiva::DebugRamo"
   Node3 -> Node4 [id="edge25_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
   Node4 -> Node5 [id="edge26_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraConstrutiva\l::ExplorarSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9fda19c96c9cd874fa45578bcc30f607",tooltip=" "];
+  Node5 [id="Node000005",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node2 -> Node6 [id="edge27_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcuraConstrutiva\l::IDAStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8",tooltip="Executa a procura IDA*, algoritmo informado."];
   Node6 -> Node4 [id="edge28_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];

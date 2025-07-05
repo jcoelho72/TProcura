@@ -71,8 +71,8 @@
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00067}00067\ \textcolor{comment}{//\ Operador\ de\ vizinhanca\ (apenas\ em\ solucoes\ completas)}}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00068}\mbox{\hyperlink{classTProcuraMelhorativa_a764621b9d48b29d19b79d3e91d18c22f}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTProcuraMelhorativa_a764621b9d48b29d19b79d3e91d18c22f}{TProcuraMelhorativa::Vizinhanca}}(\mbox{\hyperlink{classTVector}{TVector<TPonto>}}\&\ vizinhos)}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00069}00069\ \{}
-\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{expansoes}}++;}
-\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00071}00071\ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{geracoes}}+=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vizinhos}}.Count();}
+\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00070}00070\ \ \ \ \ expansoes++;}
+\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00071}00071\ \ \ \ \ geracoes+=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vizinhos}}.Count();}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00072}00072\ \}}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00073}00073\ }
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00075}00075\ \textcolor{comment}{//\ Algoritmo\ de\ procura\ local:\ Escalada\ do\ Monte}}
@@ -240,7 +240,7 @@
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00240}00240\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{keywordflow}{while}(!\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{melhor}}-\/>Parar())\ \{\ }
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ iniciar\ uma\ nova\ geração,\ com\ base\ na\ antiga}}
-\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{expansoes}}++;}
+\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ expansoes++;}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00244}00244\ }
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cruzar\ conforme\ o\ custo}}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{minimo}},\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{maximo}},\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{total}};}
@@ -321,7 +321,7 @@
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}."{}});}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00324}00324\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >=\ 2)}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}\(\backslash\)nGeração\ \%d\ \#\%d\ -\/\ \%d|\%d\ [\%d-\/\%d]"{}},\ }
-\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{expansoes}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{pop}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{geracoes}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{avaliacoes}},\ min,\ max);}
+\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ expansoes,\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{pop}},\ geracoes,\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{avaliacoes}},\ min,\ max);}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00327}00327\ \}}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00328}00328\ }
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00329}00329\ }
@@ -378,7 +378,7 @@
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00380}00380\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}\(\backslash\)n\%s\ (TProcuraMelhorativa)"{}},\ nome);}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{MostraParametros}}();}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}\(\backslash\)n[Estatísticas]\ expansões\ \%d\ |\ gerações\ \%d\ |\ avaliações\ \%d\ "{}},}
-\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{expansoes}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{geracoes}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{avaliacoes}});}
+\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ expansoes,\ geracoes,\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{avaliacoes}});}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00384}00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{Debug}}();}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)}}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00386}00386\ \textcolor{stringliteral}{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\(\backslash\)n\(\backslash\)}}
@@ -406,7 +406,7 @@
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}\ =\ \mbox{\hyperlink{classTProcuraMelhorativa_af101526489df420431d22477e317fb33}{ExecutaAlgoritmo}}();}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{MostraParametros}}(0);}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}\(\backslash\)nResultado:\ \%d"{}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}});}
-\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FinalizarCorrida(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}});}
+\DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{FinalizarCorrida}}(\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}});}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:\ \mbox{\hyperlink{classTProcura_ae559b54c7ff363280df914fec988794f}{EditarConfiguracoes}}();\ \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\Hypertarget{TProcuraMelhorativa_8cpp_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}

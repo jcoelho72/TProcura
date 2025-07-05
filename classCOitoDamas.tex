@@ -28,8 +28,10 @@ Collaboration diagram for COito\+Damas\+:
 \begin{DoxyCompactList}\small\item\em Cria um objecto que Ã© uma cÃ³pia deste. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamas_aea4719bda6b412974fc584abf073aef9}{Copiar}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamas_ab4686ec4d08c2df261fd74c9a1b274df}{Solucao\+Vazia}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
-\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamas_a48d0b8900af154394ad59db6d0d94214}{Inicializar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamas_ae488eaff0a5ffaed4b98b5b730cbccdf}{Reset\+Parametros}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa os parametros, indicadores e instâncias. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamas_ab384df7572c5a6e34ffe28b346aaf517}{Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})
 \begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classCOitoDamas_ab0506f461abf79a87f19fe496e754528}{Solucao\+Completa}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
@@ -40,8 +42,6 @@ Collaboration diagram for COito\+Damas\+:
 \begin{DoxyCompactList}\small\item\em definir para visualizar a solução \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCOitoDamas_a220a570b326344f1bce4f4cb4cde2ed9}{Acao}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessor}})
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d}{Teste\+Manual}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
-\begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamas_a0e4d6e25bdbccb703b39604d286e62bf}{Codifica}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\+\_\+t}} estado\mbox{[}\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}\mbox{]})
 \begin{DoxyCompactList}\small\item\em Codifica o estado para um vetor de inteiros de 64 bits. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classCOitoDamas_aedfd3924d0c950ba73a6342dda5cc467}{COito\+Damas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
@@ -83,7 +83,7 @@ Collaboration diagram for COito\+Damas\+:
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})
 \begin{DoxyCompactList}\small\item\em Fica com uma cÃ³pia do objecto. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_ga89a0b35ca2c5c77d2c5175af6b9ca62a}{Solucao\+Vazia}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_gabe88a701d18a8a9ac03a9ed65a101fed}{Inicializar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{group__RedefinicaoMandatoria_gacb15562d8776f4d162001d385ebc13a0}{Reset\+Parametros}} ()
 \begin{DoxyCompactList}\small\item\em Inicializa os parametros. \end{DoxyCompactList}\item 
@@ -99,6 +99,8 @@ Collaboration diagram for COito\+Damas\+:
 \begin{DoxyCompactList}\small\item\em Mostrar soluÃ§Ã£o, seja um caminho ou o prÃ³prio estado. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo}} ()
 \begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__RedefinicaoOpcional_ga8828e1506e7b7713eb226681f117be10}{Indicador}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
+\begin{DoxyCompactList}\small\item\em Calcula indicadores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
 \begin{DoxyCompactList}\small\item\em Executa a procura em largura primeiro, algoritmo cego. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f}{limite}}=0)
@@ -115,8 +117,8 @@ Collaboration diagram for COito\+Damas\+:
 \begin{DoxyCompactList}\small\item\em Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{Limpar\+Estatisticas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
 \begin{DoxyCompactList}\small\item\em Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_af2fbc46bcca99f48e42cdbc62eecc1fd}{Finalizar\+Corrida}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
-\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ad8ae18693dd91bd4a6b2ce960be5678f}{Execucao\+Terminada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
+\begin{DoxyCompactList}\small\item\em Chamar após a execução do algoritmo. Grava o tempo consumido. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}{Lower\+Bound}} ()
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{Nova\+Linha}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tudo}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}})
@@ -128,20 +130,12 @@ Collaboration diagram for COito\+Damas\+:
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0}{\texorpdfstring{$\sim$}{\string~}\+TProcura}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{Inicializar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
-\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a475d33545a5f5f1bbebf1365d730e4f0}{Indicador}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
-\begin{DoxyCompactList}\small\item\em Retorna um indicador, após a execução do algoritmo. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a7952e187e1b0ae0ca52edab157223179}{Parar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_afcfe280771c67c80a69d422c476ae090}{Teste\+Empirico}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{mostrar\+Solucoes}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
 \begin{DoxyCompactList}\small\item\em Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{main}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argc}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argv}}\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a820d64eab4f1b5e040a3eca5704026e7}{Execucao\+Terminada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
-\begin{DoxyCompactList}\small\item\em Chamar após a execução do algoritmo. Grava o tempo consumido. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_abd93e2ba1f58d3ee7bef74845cee99fb}{Explorar}} ()
-\begin{DoxyCompactList}\small\item\em definir para explorar manualmente os dados (não definido em \doxylink{classTProcura}{TProcura}, apenas em \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a972ec246214b0dbc110b054a43518f55}{Codificar\+Solucao}} ()
 \begin{DoxyCompactList}\small\item\em retorna um vetor de inteiros com a codifciação da solução (esta codificação será adicionada aos indicadores, no ficheiro CSV de resultados) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_afa3015ac104b603930d3f60a34c09fff}{Tempo\+Excedido}} ()
@@ -182,7 +176,11 @@ Collaboration diagram for COito\+Damas\+:
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}}
 \begin{DoxyCompactList}\small\item\em Custo total acumulado desde o estado inicial. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}
-\begin{DoxyCompactList}\small\item\em Estimativa para o custo atÃ© um estado objetivo, se disponÃ­vel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Estimativa para o custo atÃ© um estado objetivo, se disponÃ­vel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}}
+\begin{DoxyCompactList}\small\item\em NÃºmero de expansÃµes efetuadas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga6185647765b723a3581b5541722e496f}{geracoes}}
+\begin{DoxyCompactList}\small\item\em NÃºmero de geraÃ§Ãµes efetuadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classTProcuraMelhorativa}{TProcura\+Melhorativa}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -281,8 +279,8 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937}{Solucao\+Parcial}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a9fda19c96c9cd874fa45578bcc30f607}{Explorar\+Sucessores}} ()
-\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a9d8202d80510018d01a9807f3852b59f}{Explorar}} ()
+\begin{DoxyCompactList}\small\item\em definir para explorar manualmente os dados (não definido em \doxylink{classTProcura}{TProcura}, apenas em \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9}{Mostrar\+Caminho}} ()
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{unsigned}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a70375188a6ee7775bc842a3e64f8e35c}{Hash}} ()
@@ -450,7 +448,7 @@ Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l0
 
 
 
-Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
+Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 3
@@ -516,7 +514,7 @@ Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_ga5ff46e85c8f1394
 
 
 
-Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
+Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00085}{85}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 5
@@ -637,7 +635,7 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4e
 
 
 
-Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
+Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 10
@@ -788,6 +786,54 @@ Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l000
 
 Here is the call graph for this function\+:
 % FIG 14
+\Hypertarget{classCOitoDamas_a48d0b8900af154394ad59db6d0d94214}\label{classCOitoDamas_a48d0b8900af154394ad59db6d0d94214} 
+\index{COitoDamas@{COitoDamas}!Inicializar@{Inicializar}}
+\index{Inicializar@{Inicializar}!COitoDamas@{COitoDamas}}
+\doxysubsubsection{\texorpdfstring{Inicializar()}{Inicializar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} COito\+Damas\+::\+Inicializar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Coloca o objecto no estado inicial da procura. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método inicializa as variáveis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer ação ser realizada na procura. Caso existam dados de instância, deve neste método carregar a instância. A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
+
+\begin{DoxyNote}{Note}
+A variável instancia.\+valor, tem o ID da instância que deve ser carregada. 
+
+Se a função \doxylink{classCOitoDamas_a0e4d6e25bdbccb703b39604d286e62bf}{Codifica()} estiver implementada, o tamanho do estado codificado deve ser determinado após o carregamento da instância, pois diferentes instâncias podem exigir tamanhos distintos.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{classCOitoDamas_a0e4d6e25bdbccb703b39604d286e62bf}{Codifica()}
+\end{DoxySeeAlso}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Inicializar(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{TProcura::Inicializar}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ pode/deve\ utilizar\ variável\ "{}ficheiroInstancia"{}\ concatenado\ com\ instancia.valor,\ com\ o\ ID\ da\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{TProcura}}.
+
+
+
+Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 15
 \Hypertarget{classCOitoDamas_acda7651f84323201b3a57699daf55646}\label{classCOitoDamas_acda7651f84323201b3a57699daf55646} 
 \index{COitoDamas@{COitoDamas}!MostrarSolucao@{MostrarSolucao}}
 \index{MostrarSolucao@{MostrarSolucao}!COitoDamas@{COitoDamas}}
@@ -804,10 +850,10 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a014a294d094430b113ffb36e64a74
 
 
 
-Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8h_source_l00035}{35}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8h_source_l00036}{36}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 15
+% FIG 16
 \Hypertarget{classCOitoDamas_acda7651f84323201b3a57699daf55646}\label{classCOitoDamas_acda7651f84323201b3a57699daf55646} 
 \index{COitoDamas@{COitoDamas}!MostrarSolucao@{MostrarSolucao}}
 \index{MostrarSolucao@{MostrarSolucao}!COitoDamas@{COitoDamas}}
@@ -827,7 +873,7 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a014a294d094430b113ffb36e64a74
 Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00048}{48}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 16
+% FIG 17
 \Hypertarget{classCOitoDamas_a6d9bf353a8467cc31d407685a06e32c9}\label{classCOitoDamas_a6d9bf353a8467cc31d407685a06e32c9} 
 \index{COitoDamas@{COitoDamas}!Mutar@{Mutar}}
 \index{Mutar@{Mutar}!COitoDamas@{COitoDamas}}
@@ -843,7 +889,7 @@ Reimplemented from \mbox{\hyperlink{classTProcuraMelhorativa_a1e1ecbe8c142dcd1bc
 Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 17
+% FIG 18
 \Hypertarget{classCOitoDamas_a76a6cfab4d66232a84d6cb9dc73b7fcf}\label{classCOitoDamas_a76a6cfab4d66232a84d6cb9dc73b7fcf} 
 \index{COitoDamas@{COitoDamas}!NovaSolucao@{NovaSolucao}}
 \index{NovaSolucao@{NovaSolucao}!COitoDamas@{COitoDamas}}
@@ -859,7 +905,78 @@ Reimplemented from \mbox{\hyperlink{classTProcuraMelhorativa_a1037fb94d357526863
 Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 18
+% FIG 19
+\Hypertarget{classCOitoDamas_ae488eaff0a5ffaed4b98b5b730cbccdf}\label{classCOitoDamas_ae488eaff0a5ffaed4b98b5b730cbccdf} 
+\index{COitoDamas@{COitoDamas}!ResetParametros@{ResetParametros}}
+\index{ResetParametros@{ResetParametros}!COitoDamas@{COitoDamas}}
+\doxysubsubsection{\texorpdfstring{ResetParametros()}{ResetParametros()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} COito\+Damas\+::\+Reset\+Parametros (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Inicializa os parametros, indicadores e instâncias. 
+
+\begin{DoxyNote}{Note}
+Redefinição necessária, para pelo menos indicar as instâncias existentes
+\end{DoxyNote}
+Nesta função, a primeira instrução deverá ser a chamada da função da superclasse, para que sejam criados os parametros da superclasse antes de qualquer outra instrução.
+
+Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos. Nesta função, podem ser definidos estes valores de omissão.
+
+Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema. Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
+
+Nesta função deve ser redefinida a variável com informação dos IDs das instâncias disponíveis. Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
+
+Existindo novos indicadores, devem ser adicionados aqui, e redefinida a função \doxylink{group__RedefinicaoOpcional_ga8828e1506e7b7713eb226681f117be10}{Indicador()} para calcular o valor.
+
+\begin{DoxyNote}{Note}
+Na criação de um novo parametro, dar uma estrutura TParametro.
+
+Ao adicionar novos parâmetros, é recomendável manter a enumeração sincronizada com a da superclasse. O primeiro elemento deve ser {\ttfamily parametros\+Construtivos}, garantindo que novas adições na superclasse sejam automaticamente refletidas aqui.
+
+A instância selecionada irá ser carregada em \doxylink{classCOitoDamas_a48d0b8900af154394ad59db6d0d94214}{Inicializar()}, utilizando o valor atual.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\doxylink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}
+\end{DoxySeeAlso}
+Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ continuação\ da\ enumeração\ EParametrosProcujra}}
+\DoxyCodeLine{\textcolor{keyword}{enum}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ESubProblema}}\ \{\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{opcaoHeur}}\ =\ \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35}{parametrosProcura}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{opcaoSuc}}\ \};}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::ResetParametros(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{nomesSuc}}[]\ =\ \{\ \textcolor{stringliteral}{"{}todas"{}},\ \textcolor{stringliteral}{"{}contributo"{}}\ \};\ \textcolor{comment}{//\ nomes\ para\ os\ valores\ de\ opcaoSuc}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ primeiro\ o\ método\ na\ superclasse}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}{TProcura::ResetParametros}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ considerou-\/se\ que\ se\ pretende\ ver\ algum\ debug,\ de\ omissão}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ =\ 1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ função\ Heuristica()}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Opção\ Heurística"{}},\ 0,0,10,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}explicação\ do\ que\ acontece\ na\ heuristica,\ com\ este\ parametro\ entre\ 0\ e\ 10"{}},\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ função\ Sucessores()}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}.Add(\{\ \textcolor{stringliteral}{"{}Opção\ Sucessores"{}},\ 0,0,1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}0\ gera\ todas\ as\ ações;\ 1\ gera\ apenas\ ações\ que\ tenham\ um\ contributo\ para\ a\ solução."{}},\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{nomesSuc}}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ indicador}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a9b75c5c41b6e1b9e3a3390d9fd836417}{indicador}}.Add(\{\ \textcolor{stringliteral}{"{}Ordenado"{}},\textcolor{stringliteral}{"{}verifica\ se\ um\ vetor\ está ordenado"{}},\ \mbox{\hyperlink{CTesteTVector_8cpp_aea3d1b3297c29c2c162c613e2dbeb2b3a44e9607fbd0a5c6525291688002ae30a}{indOrdenar}}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ac4344a896fc02c79e34d5fafaf595d9f}{indAtivo}}.\mbox{\hyperlink{classTVector_aa28afdd47b27c5e004fc75b86d6f66a6}{Add}}(\mbox{\hyperlink{CTesteTVector_8cpp_aea3d1b3297c29c2c162c613e2dbeb2b3a44e9607fbd0a5c6525291688002ae30a}{indOrdenar}});\ \textcolor{comment}{//\ adicionar\ aos\ indicadores\ ativos\ de\ omissão}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ indicar\ que\ há 10\ instâncias,\ sendo\ a\ instância\ inicial\ a\ 1}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}}\ =\ \{\ \textcolor{stringliteral}{"{}Problema"{}},\ 1,1,10,\ \textcolor{stringliteral}{"{}Características\ dos\ problemas"{}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}\ \};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}{TProcura}}.
+
+
+
+Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 20
 \Hypertarget{classCOitoDamas_ab0506f461abf79a87f19fe496e754528}\label{classCOitoDamas_ab0506f461abf79a87f19fe496e754528} 
 \index{COitoDamas@{COitoDamas}!SolucaoCompleta@{SolucaoCompleta}}
 \index{SolucaoCompleta@{SolucaoCompleta}!COitoDamas@{COitoDamas}}
@@ -896,10 +1013,10 @@ Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga1f3e2b667881c
 
 
 
-Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8h_source_l00033}{33}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8h_source_l00034}{34}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 19
+% FIG 21
 \Hypertarget{classCOitoDamas_ab0506f461abf79a87f19fe496e754528}\label{classCOitoDamas_ab0506f461abf79a87f19fe496e754528} 
 \index{COitoDamas@{COitoDamas}!SolucaoCompleta@{SolucaoCompleta}}
 \index{SolucaoCompleta@{SolucaoCompleta}!COitoDamas@{COitoDamas}}
@@ -939,25 +1056,19 @@ Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga1f3e2b667881c
 Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00046}{46}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 20
+% FIG 22
 \Hypertarget{classCOitoDamas_ab4686ec4d08c2df261fd74c9a1b274df}\label{classCOitoDamas_ab4686ec4d08c2df261fd74c9a1b274df} 
 \index{COitoDamas@{COitoDamas}!SolucaoVazia@{SolucaoVazia}}
 \index{SolucaoVazia@{SolucaoVazia}!COitoDamas@{COitoDamas}}
-\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} COito\+Damas\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 21
-\Hypertarget{classCOitoDamas_ab4686ec4d08c2df261fd74c9a1b274df}\label{classCOitoDamas_ab4686ec4d08c2df261fd74c9a1b274df} 
-\index{COitoDamas@{COitoDamas}!SolucaoVazia@{SolucaoVazia}}
-\index{SolucaoVazia@{SolucaoVazia}!COitoDamas@{COitoDamas}}
-\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} COito\+Damas\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})}
-
+% FIG 23
 \Hypertarget{classCOitoDamas_ab384df7572c5a6e34ffe28b346aaf517}\label{classCOitoDamas_ab384df7572c5a6e34ffe28b346aaf517} 
 \index{COitoDamas@{COitoDamas}!Sucessores@{Sucessores}}
 \index{Sucessores@{Sucessores}!COitoDamas@{COitoDamas}}
@@ -1012,74 +1123,14 @@ Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga0a13570d2f5a2
 
 
 
-Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
+Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 22
-\Hypertarget{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d}\label{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d} 
-\index{COitoDamas@{COitoDamas}!TesteManual@{TesteManual}}
-\index{TesteManual@{TesteManual}!COitoDamas@{COitoDamas}}
-\doxysubsubsection{\texorpdfstring{TesteManual()}{TesteManual()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} COito\+Damas\+::\+Teste\+Manual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Inicializa a interação com o utilizador. 
-
-\begin{DoxyNote}{Note}
-Redefinição opcional
-\end{DoxyNote}
-Esta função arranca com o teste manual, orientada para o programador. A interface permite\+:
-\begin{DoxyItemize}
-\item visualizar e trocar de instância
-\item explorar o espaço de estados nessa instancia, executando ações
-\item ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)
-\item ver e editar qualquer parametro de execução
-\item o algoritmo é também um parametro, podendo naturalmente ser alterado
-\item há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
-\item executar o algoritmo com a configuração atual
-\item adicionar a configuração atual a um conjunto de configurações de teste
-\item executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas
-\end{DoxyItemize}
-
-\begin{DoxyNote}{Note}
-Esta função deve ser o ponto de entrada, a executar no main, caso não se utilize a função \doxylink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{TProcura\+::main()}.
-\end{DoxyNote}
-\begin{DoxySeeAlso}{See also}
-\doxylink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}, \doxylink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{main}
-\end{DoxySeeAlso}
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::TesteManual(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ nome)}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \ \textcolor{comment}{//\ ações\ extra\ antes\ do\ teste\ manual,\ ou\ redefinição\ completa;}}
-\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcura::TesteManual}}(nome);\ \textcolor{comment}{//\ chamada\ do\ método\ da\ superclasse,\ caso\ não redefina\ por\ completo}}
-\DoxyCodeLine{\}}
-\DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{comment}{//\ exemplo\ do\ main,\ sem\ processar\ argumentos\ (ver\ TProcura::main)}}
-\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{main}}()}
-\DoxyCodeLine{\{}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{CSubProblema}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{problema}};}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{problema}}.TesteManual(\textcolor{stringliteral}{"{}CSubProblema"{}});}
-\DoxyCodeLine{\}}
-
-\end{DoxyCode}
- 
-
-Reimplemented from \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcura}}.
-
-
-
-Definition at line \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{Construtiva_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
-
-Here is the call graph for this function\+:
-% FIG 23
-Here is the caller graph for this function\+:
 % FIG 24
 \Hypertarget{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d}\label{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d} 
 \index{COitoDamas@{COitoDamas}!TesteManual@{TesteManual}}
 \index{TesteManual@{TesteManual}!COitoDamas@{COitoDamas}}
-\doxysubsubsection{\texorpdfstring{TesteManual()}{TesteManual()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{TesteManual()}{TesteManual()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} COito\+Damas\+::\+Teste\+Manual (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}}]{nome }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -1128,6 +1179,14 @@ Esta função deve ser o ponto de entrada, a executar no main, caso não se utilize
 
 Reimplemented from \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{TProcura}}.
 
+
+
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 25
+Here is the caller graph for this function\+:
+% FIG 26
 \Hypertarget{classCOitoDamas_a624402f3f1386d7d0abb312503d3dff2}\label{classCOitoDamas_a624402f3f1386d7d0abb312503d3dff2} 
 \index{COitoDamas@{COitoDamas}!Vizinhanca@{Vizinhanca}}
 \index{Vizinhanca@{Vizinhanca}!COitoDamas@{COitoDamas}}
@@ -1143,7 +1202,7 @@ Reimplemented from \mbox{\hyperlink{classTProcuraMelhorativa_a764621b9d48b29d19b
 Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8cpp_source}{Oito\+Damas.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 25
+% FIG 27
 
 
 \doxysubsection{Member Data Documentation}

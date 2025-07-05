@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lowerbound_0',['lowerBound',['../group__VariaveisGlobais.html#ga1af840b6ec9c04ce7d4c8849346441bd',1,'TProcuraConstrutiva']]]
+  ['k_0',['K',['../structSJogoEmLinha.html#afcb76423b2f50c69cfbf29f406632512',1,'SJogoEmLinha']]]
 ];
