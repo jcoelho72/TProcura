@@ -5,9 +5,9 @@ digraph "TProcura::Dominio"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
-  Node1 [id="Node000001",label="TProcura::Dominio",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [id="Node000001",label="TProcura::Dominio",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Limita o domínio de um parâmetro inteiro."];
   Node1 -> Node2 [id="edge37_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::EditarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae559b54c7ff363280df914fec988794f",tooltip=" "];
+  Node2 [id="Node000002",label="TProcura::EditarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae559b54c7ff363280df914fec988794f",tooltip="Permite ao utilizador editar as configurações."];
   Node2 -> Node3 [id="edge38_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraMelhorativa\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#affabb3691e84b777ff368bf4a4e25286",tooltip="Inicializa a interação com o utilizador."];
   Node2 -> Node4 [id="edge39_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -40,10 +40,10 @@ digraph "TProcura::Dominio"
   Node15 [id="Node000015",label="CPuzzle8::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a06d2a8f5d7e3670eb6ee75d7a72b0265",tooltip="Inicializa a interação com o utilizador."];
   Node15 -> Node11 [id="edge55_Node000015_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node16 [id="edge56_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TProcura::EditarIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8f5d1ccb82a33db762fbb8400eeacf39",tooltip=" "];
+  Node16 [id="Node000016",label="TProcura::EditarIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8f5d1ccb82a33db762fbb8400eeacf39",tooltip="Permite ao utilizador editar os indicadores a utilizar."];
   Node16 -> Node4 [id="edge57_Node000016_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node17 [id="edge58_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcura::EditarParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab044dca559e3c04e5cec68647af2c7c4",tooltip=" "];
+  Node17 [id="Node000017",label="TProcura::EditarParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab044dca559e3c04e5cec68647af2c7c4",tooltip="Permite ao utilizador editar os parâmetros."];
   Node17 -> Node3 [id="edge59_Node000017_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 -> Node4 [id="edge60_Node000017_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node18 [id="edge61_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -58,7 +58,7 @@ digraph "TProcura::Dominio"
   Node22 [id="Node000022",label="TProcuraMelhorativa\l::ExplorarOperadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#acbd613f2b7389bfa5f65512f566267e0",tooltip=" "];
   Node22 -> Node3 [id="edge66_Node000022_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node23 [id="edge67_Node000001_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip=" "];
+  Node23 [id="Node000023",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
   Node23 -> Node3 [id="edge68_Node000023_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node4 [id="edge69_Node000023_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node19 [id="edge70_Node000001_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];

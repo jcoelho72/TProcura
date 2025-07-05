@@ -46,11 +46,12 @@ var searchData=
   ['exemplos_43',['Exemplos',['../index.html#autotoc_md91',1,'']]],
   ['existeheuritica_44',['ExisteHeuritica',['../classTProcuraAdversa.html#aab0860dd7b025e71049e204adb25df25',1,'TProcuraAdversa']]],
   ['existeht_45',['existeht',['../classTProcuraAdversa.html#ad01434aae577cafdb636f82ba2815215',1,'TProcuraAdversa::ExisteHT()'],['../classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac',1,'TProcuraConstrutiva::ExisteHT()']]],
-  ['explorar_20os_20sucessores_46',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md27',1,'']]],
-  ['explorar_20sucessores_47',['Ação 2 - Explorar sucessores',['../teste_jogo_do_galo.html#autotoc_md2',1,'']]],
-  ['explorar_20todo_20o_20espaço_20de_20estados_48',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md5',1,'']]],
-  ['exploraroperadores_49',['ExplorarOperadores',['../classTProcuraMelhorativa.html#acbd613f2b7389bfa5f65512f566267e0',1,'TProcuraMelhorativa']]],
-  ['explorarsucessores_50',['explorarsucessores',['../classTProcuraConstrutiva.html#a9fda19c96c9cd874fa45578bcc30f607',1,'TProcuraConstrutiva::ExplorarSucessores()'],['../classTProcura.html#ac1e91215d86bdb10176b3c180fe1fe3f',1,'TProcura::ExplorarSucessores()']]],
-  ['extrailista_51',['ExtraiLista',['../classTProcura.html#a8fc25ea3a65a1aef8e9064281c900ba5',1,'TProcura']]],
-  ['extrairconfiguracao_52',['ExtrairConfiguracao',['../classTProcura.html#a5482b1df9bee3bc7da96ff11ee905c0f',1,'TProcura']]]
+  ['explorar_46',['Explorar',['../classTProcura.html#abd93e2ba1f58d3ee7bef74845cee99fb',1,'TProcura']]],
+  ['explorar_20os_20sucessores_47',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md27',1,'']]],
+  ['explorar_20sucessores_48',['Ação 2 - Explorar sucessores',['../teste_jogo_do_galo.html#autotoc_md2',1,'']]],
+  ['explorar_20todo_20o_20espaço_20de_20estados_49',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md5',1,'']]],
+  ['exploraroperadores_50',['ExplorarOperadores',['../classTProcuraMelhorativa.html#acbd613f2b7389bfa5f65512f566267e0',1,'TProcuraMelhorativa']]],
+  ['explorarsucessores_51',['ExplorarSucessores',['../classTProcuraConstrutiva.html#a9fda19c96c9cd874fa45578bcc30f607',1,'TProcuraConstrutiva']]],
+  ['extrailista_52',['ExtraiLista',['../classTProcura.html#a8fc25ea3a65a1aef8e9064281c900ba5',1,'TProcura']]],
+  ['extrairconfiguracao_53',['ExtrairConfiguracao',['../classTProcura.html#a5482b1df9bee3bc7da96ff11ee905c0f',1,'TProcura']]]
 ];

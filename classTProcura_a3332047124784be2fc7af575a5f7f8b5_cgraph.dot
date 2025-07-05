@@ -5,13 +5,13 @@ digraph "TProcura::MostrarConfiguracoes"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [id="Node000001",label="TProcura::MostrarConfiguracoes",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [id="Node000001",label="TProcura::MostrarConfiguracoes",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Mostra as configurações disponíveis."];
   Node1 -> Node2 [id="edge9_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node2 -> Node3 [id="edge10_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por Ã­ndice com auto-expansÃ£o."];
   Node1 -> Node4 [id="edge11_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TProcura::ConfiguracaoAtual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac1d9f06b12765a02290050af15463186",tooltip=" "];
+  Node4 [id="Node000004",label="TProcura::ConfiguracaoAtual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac1d9f06b12765a02290050af15463186",tooltip="Grava ou lê a configuração atual."];
   Node4 -> Node5 [id="edge12_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aea8aa78e35d28d0beb438e24fc7ee086",tooltip=" "];
   Node1 -> Node6 [id="edge13_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
@@ -19,6 +19,6 @@ digraph "TProcura::MostrarConfiguracoes"
   Node1 -> Node7 [id="edge14_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TVector::First",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a05f29646493d42f3c77081b6031d70e5",tooltip=" "];
   Node1 -> Node8 [id="edge15_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6fb8a8658085b349818e46835868c564",tooltip=" "];
+  Node8 [id="Node000008",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6fb8a8658085b349818e46835868c564",tooltip="Mostra os parâmetros atuais."];
   Node8 -> Node5 [id="edge16_Node000008_Node000005",color="steelblue1",style="solid",tooltip=" "];
 }

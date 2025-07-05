@@ -57,7 +57,7 @@ digraph "TVector::Add"
   Node17 [id="Node000017",label="TProcuraConstrutiva\l::DebugSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a08aa14ddc895426b2ce3df4d763cbbd7",tooltip=" "];
   Node17 -> Node5 [id="edge117_Node000017_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node18 [id="edge118_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcura::EditarIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8f5d1ccb82a33db762fbb8400eeacf39",tooltip=" "];
+  Node18 [id="Node000018",label="TProcura::EditarIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8f5d1ccb82a33db762fbb8400eeacf39",tooltip="Permite ao utilizador editar os indicadores a utilizar."];
   Node18 -> Node19 [id="edge119_Node000018_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
   Node19 -> Node20 [id="edge120_Node000019_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -79,13 +79,13 @@ digraph "TVector::Add"
   Node19 -> Node30 [id="edge128_Node000019_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node30 [id="Node000030",label="CPuzzle8::TesteManual",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classCPuzzle8.html#a06d2a8f5d7e3670eb6ee75d7a72b0265",tooltip="Inicializa a interação com o utilizador."];
   Node1 -> Node31 [id="edge129_Node000001_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="CTesteTVector::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node31 [id="Node000031",label="CTesteTVector::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c",tooltip="Executa o algoritmo de teste (a definir pelo utilizador)."];
   Node1 -> Node32 [id="edge130_Node000001_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node32 [id="Node000032",label="TProcura::ExtrairConfiguracao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5482b1df9bee3bc7da96ff11ee905c0f",tooltip=" "];
+  Node32 [id="Node000032",label="TProcura::ExtrairConfiguracao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5482b1df9bee3bc7da96ff11ee905c0f",tooltip="Extrai resultados de uma determinada configuração."];
   Node32 -> Node33 [id="edge131_Node000032_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node33 [id="Node000033",label="TProcura::CalculaTorneio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac1beda871dff742fdb49ae150cda24e3",tooltip=" "];
+  Node33 [id="Node000033",label="TProcura::CalculaTorneio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac1beda871dff742fdb49ae150cda24e3",tooltip="Calcula o torneio entre várias configurações."];
   Node33 -> Node34 [id="edge132_Node000033_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node34 [id="Node000034",label="TProcura::MostraRelatorio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8efec796677c8e25ad8bdb56a1082e2d",tooltip=" "];
+  Node34 [id="Node000034",label="TProcura::MostraRelatorio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8efec796677c8e25ad8bdb56a1082e2d",tooltip="Mostra um relatório dos resultados."];
   Node34 -> Node35 [id="edge133_Node000034_Node000035",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node35 [id="Node000035",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afcfe280771c67c80a69d422c476ae090",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node35 -> Node20 [id="edge134_Node000035_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -100,9 +100,9 @@ digraph "TVector::Add"
   Node38 -> Node4 [id="edge140_Node000038_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node20 [id="edge141_Node000001_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node39 [id="edge142_Node000001_Node000039",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node39 [id="Node000039",label="TProcura::MostrarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3332047124784be2fc7af575a5f7f8b5",tooltip=" "];
+  Node39 [id="Node000039",label="TProcura::MostrarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3332047124784be2fc7af575a5f7f8b5",tooltip="Mostra as configurações disponíveis."];
   Node39 -> Node40 [id="edge143_Node000039_Node000040",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node40 [id="Node000040",label="TProcura::EditarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae559b54c7ff363280df914fec988794f",tooltip=" "];
+  Node40 [id="Node000040",label="TProcura::EditarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae559b54c7ff363280df914fec988794f",tooltip="Permite ao utilizador editar as configurações."];
   Node40 -> Node36 [id="edge144_Node000040_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node40 -> Node19 [id="edge145_Node000040_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node39 -> Node20 [id="edge146_Node000039_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -118,7 +118,7 @@ digraph "TVector::Add"
   Node44 -> Node45 [id="edge153_Node000044_Node000045",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node45 [id="Node000045",label="CParticao::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a5c6104354972acf2f6ed3d8ff7a8b98c",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node1 -> Node46 [id="edge154_Node000001_Node000046",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node46 [id="Node000046",label="CTesteTVector::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node46 [id="Node000046",label="CTesteTVector::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94",tooltip="Inicializa parâmetros de teste."];
   Node1 -> Node47 [id="edge155_Node000001_Node000047",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node47 [id="Node000047",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parametros, indicadores e instâncias."];
   Node47 -> Node20 [id="edge156_Node000047_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];

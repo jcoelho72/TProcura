@@ -98,7 +98,7 @@ digraph "TProcuraConstrutiva::ExplorarSucessores"
   Node39 -> Node17 [id="edge171_Node000039_Node000017",color="steelblue1",style="solid",tooltip=" "];
   Node39 -> Node19 [id="edge172_Node000039_Node000019",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node40 [id="edge173_Node000015_Node000040",color="steelblue1",style="solid",tooltip=" "];
-  Node40 [id="Node000040",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip=" "];
+  Node40 [id="Node000040",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domínio de um parâmetro inteiro."];
   Node15 -> Node41 [id="edge174_Node000015_Node000041",color="steelblue1",style="solid",tooltip=" "];
   Node41 [id="Node000041",label="TProcuraConstrutiva\l::IDAStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8",tooltip="Executa a procura IDA*, algoritmo informado."];
   Node41 -> Node3 [id="edge175_Node000041_Node000003",color="steelblue1",style="solid",tooltip=" "];

@@ -7,7 +7,7 @@ digraph "TVector::Remove"
   rankdir="RL";
   Node1 [id="Node000001",label="TVector::Remove",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Remove todas as ocorrÃªncias de um dado elemento."];
   Node1 -> Node2 [id="edge20_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::EditarIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8f5d1ccb82a33db762fbb8400eeacf39",tooltip=" "];
+  Node2 [id="Node000002",label="TProcura::EditarIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8f5d1ccb82a33db762fbb8400eeacf39",tooltip="Permite ao utilizador editar os indicadores a utilizar."];
   Node2 -> Node3 [id="edge21_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
   Node3 -> Node4 [id="edge22_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];

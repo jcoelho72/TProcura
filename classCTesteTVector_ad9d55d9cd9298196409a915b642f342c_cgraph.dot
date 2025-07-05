@@ -5,7 +5,7 @@ digraph "CTesteTVector::ExecutaAlgoritmo"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [id="Node000001",label="CTesteTVector::ExecutaAlgoritmo",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node1 [id="Node000001",label="CTesteTVector::ExecutaAlgoritmo",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executa o algoritmo de teste (a definir pelo utilizador)."];
   Node1 -> Node2 [id="edge30_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node2 -> Node3 [id="edge31_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
@@ -25,7 +25,7 @@ digraph "CTesteTVector::ExecutaAlgoritmo"
   Node1 -> Node9 [id="edge39_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="TVector::end",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a0321e02f28a957bf9ab65102a420e6fc",tooltip=" "];
   Node1 -> Node10 [id="edge40_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="CTesteTVector::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ac0189d925fb44fbc3b2d0aad7660f528",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node10 [id="Node000010",label="CTesteTVector::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ac0189d925fb44fbc3b2d0aad7660f528",tooltip="Inicializa dados e estado para teste."];
   Node10 -> Node7 [id="edge41_Node000010_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node10 -> Node11 [id="edge42_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aea8aa78e35d28d0beb438e24fc7ee086",tooltip=" "];

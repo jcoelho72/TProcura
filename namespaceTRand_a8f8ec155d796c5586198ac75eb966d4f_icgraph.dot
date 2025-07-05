@@ -17,7 +17,7 @@ digraph "TRand::rand"
   Node1 -> Node6 [id="edge50_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="CParticao::Cruzamento",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a66758c2a7806b6c11135296959a31ad4",tooltip=" "];
   Node1 -> Node7 [id="edge51_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="CTesteTVector::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node7 [id="Node000007",label="CTesteTVector::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c",tooltip="Executa o algoritmo de teste (a definir pelo utilizador)."];
   Node1 -> Node8 [id="edge52_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TProcuraConstrutiva\l::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node8 -> Node9 [id="edge53_Node000008_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -55,7 +55,7 @@ digraph "TRand::rand"
   Node22 -> Node9 [id="edge71_Node000022_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node21 -> Node21 [id="edge72_Node000021_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node23 [id="edge73_Node000001_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="CTesteTVector::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ac0189d925fb44fbc3b2d0aad7660f528",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node23 [id="Node000023",label="CTesteTVector::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ac0189d925fb44fbc3b2d0aad7660f528",tooltip="Inicializa dados e estado para teste."];
   Node23 -> Node7 [id="edge74_Node000023_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node24 [id="edge75_Node000001_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node24 [id="Node000024",label="COitoDamas::Mutar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a6d9bf353a8467cc31d407685a06e32c9",tooltip=" "];

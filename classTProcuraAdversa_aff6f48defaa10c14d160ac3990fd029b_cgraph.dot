@@ -7,7 +7,7 @@ digraph "TProcuraAdversa::ExecutaAlgoritmo"
   rankdir="LR";
   Node1 [id="Node000001",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executa o algoritmo com os parametros atuais."];
   Node1 -> Node2 [id="edge72_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip=" "];
+  Node2 [id="Node000002",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domínio de um parâmetro inteiro."];
   Node1 -> Node3 [id="edge73_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraConstrutiva\l::LimparHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c",tooltip=" "];
   Node3 -> Node4 [id="edge74_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];

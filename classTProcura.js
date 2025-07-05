@@ -13,7 +13,7 @@ var classTProcura =
     [ "EditarParametros", "classTProcura.html#ab044dca559e3c04e5cec68647af2c7c4", null ],
     [ "ExecucaoTerminada", "classTProcura.html#a820d64eab4f1b5e040a3eca5704026e7", null ],
     [ "ExecutaAlgoritmo", "classTProcura.html#a1297806db02da2a44794883a6f427965", null ],
-    [ "ExplorarSucessores", "classTProcura.html#ac1e91215d86bdb10176b3c180fe1fe3f", null ],
+    [ "Explorar", "classTProcura.html#abd93e2ba1f58d3ee7bef74845cee99fb", null ],
     [ "ExtraiLista", "classTProcura.html#a8fc25ea3a65a1aef8e9064281c900ba5", null ],
     [ "ExtrairConfiguracao", "classTProcura.html#a5482b1df9bee3bc7da96ff11ee905c0f", null ],
     [ "Indicador", "classTProcura.html#a475d33545a5f5f1bbebf1365d730e4f0", null ],

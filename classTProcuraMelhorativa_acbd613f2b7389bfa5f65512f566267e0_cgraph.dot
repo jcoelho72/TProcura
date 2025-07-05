@@ -22,7 +22,7 @@ digraph "TProcuraMelhorativa::ExplorarOperadores"
   Node1 -> Node8 [id="edge22_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TProcuraMelhorativa\l::DebugVizinhos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a71f6e6bf53e56efec940a9e53b3795a4",tooltip=" "];
   Node1 -> Node9 [id="edge23_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip=" "];
+  Node9 [id="Node000009",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domínio de um parâmetro inteiro."];
   Node1 -> Node10 [id="edge24_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraMelhorativa\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582",tooltip="Cria um objecto que Ã© uma cÃ³pia deste."];
   Node1 -> Node11 [id="edge25_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];

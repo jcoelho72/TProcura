@@ -30,11 +30,11 @@ digraph "TProcuraConstrutiva::NovaLinha"
   Node1 -> Node11 [id="edge57_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="COitoDamas::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a8c4dfb787a9f0d8f2a8c88e682aaeb78",tooltip="Mostra o estado no ecrã, para debug."];
   Node11 -> Node12 [id="edge58_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="COitoDamas::MostrarSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#acda7651f84323201b3a57699daf55646",tooltip=" "];
+  Node12 [id="Node000012",label="COitoDamas::MostrarSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#acda7651f84323201b3a57699daf55646",tooltip="definir para visualizar a solução"];
   Node1 -> Node13 [id="edge59_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="CParticao::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa33970025179d4c6e3177c0fd518dadb",tooltip="Mostra o estado no ecrã, para debug."];
   Node13 -> Node14 [id="edge60_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="CParticao::MostrarSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a9a3087a5b0bd33ff2fabf2aef66c73a9",tooltip=" "];
+  Node14 [id="Node000014",label="CParticao::MostrarSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a9a3087a5b0bd33ff2fabf2aef66c73a9",tooltip="definir para visualizar a solução"];
   Node1 -> Node15 [id="edge61_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="CProblemaArtificial\l::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#a17e7a8290910ffd1fe8a370228c6024b",tooltip="Mostra o estado no ecrã, para debug."];
   Node1 -> Node16 [id="edge62_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];

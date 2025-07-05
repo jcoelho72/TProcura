@@ -5,8 +5,8 @@ digraph "TProcura::SolicitaInstancias"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [id="Node000001",label="TProcura::SolicitaInstancias",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [id="Node000001",label="TProcura::SolicitaInstancias",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Solicita ao utilizador uma lista de instâncias."];
   Node1 -> Node2 [id="edge3_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::ExtraiLista",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8fc25ea3a65a1aef8e9064281c900ba5",tooltip=" "];
+  Node2 [id="Node000002",label="TProcura::ExtraiLista",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8fc25ea3a65a1aef8e9064281c900ba5",tooltip="Extrai uma lista de inteiros a partir de uma string."];
   Node2 -> Node2 [id="edge4_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
 }

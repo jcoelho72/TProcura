@@ -21,7 +21,7 @@ digraph "TProcura::IteracoesExcedido"
   Node7 [id="Node000007",label="TProcuraConstrutiva\l::CustoUniforme",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasCegas.html#ga2343fafdecfd55b69c0ffb71e8f9426b",tooltip="Executa a procura por custo uniforme, algoritmo cego."];
   Node7 -> Node4 [id="edge58_Node000007_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node8 [id="edge59_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="CTesteTVector::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node8 [id="Node000008",label="CTesteTVector::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c",tooltip="Executa o algoritmo de teste (a definir pelo utilizador)."];
   Node2 -> Node9 [id="edge60_Node000002_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="TProcuraConstrutiva\l::IDAStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8",tooltip="Executa a procura IDA*, algoritmo informado."];
   Node9 -> Node4 [id="edge61_Node000009_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];

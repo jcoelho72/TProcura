@@ -25,7 +25,7 @@ digraph "TProcura::ResetParametros"
   Node9 -> Node10 [id="edge35_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraMelhorativa\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#affabb3691e84b777ff368bf4a4e25286",tooltip="Inicializa a interação com o utilizador."];
   Node1 -> Node11 [id="edge36_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="CTesteTVector::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node11 [id="Node000011",label="CTesteTVector::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94",tooltip="Inicializa parâmetros de teste."];
   Node1 -> Node12 [id="edge37_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
   Node12 -> Node2 [id="edge38_Node000012_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];

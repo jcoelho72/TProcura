@@ -11,8 +11,9 @@ var searchData=
   ['executaalgoritmo_8',['executaalgoritmo',['../classTProcuraMelhorativa.html#af101526489df420431d22477e317fb33',1,'TProcuraMelhorativa::ExecutaAlgoritmo()'],['../classTProcura.html#a1297806db02da2a44794883a6f427965',1,'TProcura::ExecutaAlgoritmo()'],['../classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c',1,'CTesteTVector::ExecutaAlgoritmo()'],['../group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3',1,'TProcuraConstrutiva::ExecutaAlgoritmo()'],['../classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b',1,'TProcuraAdversa::ExecutaAlgoritmo()']]],
   ['existeheuritica_9',['ExisteHeuritica',['../classTProcuraAdversa.html#aab0860dd7b025e71049e204adb25df25',1,'TProcuraAdversa']]],
   ['existeht_10',['existeht',['../classTProcuraAdversa.html#ad01434aae577cafdb636f82ba2815215',1,'TProcuraAdversa::ExisteHT()'],['../classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac',1,'TProcuraConstrutiva::ExisteHT()']]],
-  ['exploraroperadores_11',['ExplorarOperadores',['../classTProcuraMelhorativa.html#acbd613f2b7389bfa5f65512f566267e0',1,'TProcuraMelhorativa']]],
-  ['explorarsucessores_12',['explorarsucessores',['../classTProcuraConstrutiva.html#a9fda19c96c9cd874fa45578bcc30f607',1,'TProcuraConstrutiva::ExplorarSucessores()'],['../classTProcura.html#ac1e91215d86bdb10176b3c180fe1fe3f',1,'TProcura::ExplorarSucessores()']]],
-  ['extrailista_13',['ExtraiLista',['../classTProcura.html#a8fc25ea3a65a1aef8e9064281c900ba5',1,'TProcura']]],
-  ['extrairconfiguracao_14',['ExtrairConfiguracao',['../classTProcura.html#a5482b1df9bee3bc7da96ff11ee905c0f',1,'TProcura']]]
+  ['explorar_11',['Explorar',['../classTProcura.html#abd93e2ba1f58d3ee7bef74845cee99fb',1,'TProcura']]],
+  ['exploraroperadores_12',['ExplorarOperadores',['../classTProcuraMelhorativa.html#acbd613f2b7389bfa5f65512f566267e0',1,'TProcuraMelhorativa']]],
+  ['explorarsucessores_13',['ExplorarSucessores',['../classTProcuraConstrutiva.html#a9fda19c96c9cd874fa45578bcc30f607',1,'TProcuraConstrutiva']]],
+  ['extrailista_14',['ExtraiLista',['../classTProcura.html#a8fc25ea3a65a1aef8e9064281c900ba5',1,'TProcura']]],
+  ['extrairconfiguracao_15',['ExtrairConfiguracao',['../classTProcura.html#a5482b1df9bee3bc7da96ff11ee905c0f',1,'TProcura']]]
 ];
