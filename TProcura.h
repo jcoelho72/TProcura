@@ -473,7 +473,7 @@ public:
 
 	bool TempoExcedido() { return instanteFinal < clock(); }
 	bool IteracoesExcedido() {
-		return parametro[limiteIteracoes].valor > 0 && parametro[limiteIteracoes].valor < iteracoes;
+		return Parametro(limiteIteracoes) > 0 && Parametro(limiteIteracoes) < iteracoes;
 	}
 	// ler um número, ou retorna NAO_LIDO
 	static int NovoValor(const char* prompt);

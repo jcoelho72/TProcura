@@ -23,9 +23,9 @@ TNo CProblemaArtificial::Duplicar(void)
 	return clone;
 }
 
-void CProblemaArtificial::SolucaoVazia(void)
+void CProblemaArtificial::Inicializar(void)
 {
-	TProcuraConstrutiva::SolucaoVazia();
+	TProcuraConstrutiva::Inicializar();
 	// acertar as variáveis estáticas, com a instância
 	CarregaInstancia();
 
@@ -100,21 +100,17 @@ bool CProblemaArtificial::SolucaoCompleta(void)
 	return (nivel >= espaco.minNivelObjetivo && (id % espaco.objetivo) == 0);
 }
 
-
-void CProblemaArtificial::TesteManual(const char* nome)
-{
-	// definir as instâncias
-	instancia = { "Problema", 1,1,10, "Caracteristicas dos problemas", NULL };
-	TProcuraConstrutiva::TesteManual(nome);
-}
-
 void CProblemaArtificial::ResetParametros() 
 {
 	TProcuraConstrutiva::ResetParametros();
 	// ação e estado é o mesmo neste problema artificial, já que um estado muda completamente do pai para o filho
 	parametro[verAcoes].valor = 1; 
-	// limitar as gerações, para que a paragem por tempo não ocorra
-	parametro[limiteGeracoes].valor = 1000000;
+	// limitar as iterações, para que a paragem por tempo não ocorra
+	parametro[limiteIteracoes].valor = 1000000;
+
+	// definir as instâncias
+	instancia = { "Problema", 1,1,10, "Caracteristicas dos problemas", NULL };
+
 }
 
 

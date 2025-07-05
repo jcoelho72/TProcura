@@ -21,15 +21,20 @@ TProcuraConstrutiva* COitoDamas::Duplicar(void)
 	return clone;
 }
 
-void COitoDamas::SolucaoVazia(void) 
+void COitoDamas::Inicializar(void)
 { 
-	TProcuraConstrutiva::SolucaoVazia();
+	TProcuraConstrutiva::Inicializar();
 	damas.Count(0);
 	nDamas = instancia.valor;
 	// 4 bits por dama, com 40 damas no máximo dá 3 inteiros de 64 bits
 	tamanhoCodificado = (nDamas - 1) * 4 / 64 + 1; 
 }
 
+void COitoDamas::ResetParametros()
+{
+	TProcuraConstrutiva::ResetParametros();
+	instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
+}
 
 void COitoDamas::Sucessores(TVector<TNo>&sucessores)
 {
@@ -76,10 +81,6 @@ void COitoDamas::Debug(void)
 	}
 }
 
-void COitoDamas::TesteManual(const char* nome) {
-	instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
-	TProcuraConstrutiva::TesteManual(nome);
-}
 
 void COitoDamas::Codifica(uint64_t estado[OBJETO_HASHTABLE])
 {

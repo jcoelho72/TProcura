@@ -50,11 +50,10 @@ public:
 		nivel = obj.nivel;
 		heur = obj.heur;
 	}
-	void SolucaoVazia(void);
+	void Inicializar(void);
 	void Sucessores(TVector<TNo>& sucessores);
 	bool SolucaoCompleta(void);
 	void Debug(void);
-	void TesteManual(const char* nome);
 	bool Distinto(TNo estado);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
 	int Heuristica(void);

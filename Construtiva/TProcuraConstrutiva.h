@@ -19,7 +19,11 @@ class TProcuraConstrutiva;
  */
 typedef TProcuraConstrutiva* TNo;
 
-
+enum EIndicadoresConstrutiva {
+	indExpansoes = indProcura, ///< número de expansões efetuadas durante a procura
+	indGeracoes,               ///< número de gerações efetuadas durante a procura
+	indConstrutiva             ///< Marcador para permitir a extensão do enum em subclasses.
+};
 
 /**
  * @enum EParametrosConstrutiva
@@ -35,7 +39,7 @@ typedef TProcuraConstrutiva* TNo;
  * @see TParametro, ExecutaAlgoritmo()
  * 
  * @code
- * if(parametro[nivelDebug].valor > passos)
+ * if(Parametro(nivelDebug) > passos)
  *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
  * @endcode
  */
@@ -123,6 +127,10 @@ public:
 	int custo;
 	/// @brief Estimativa para o custo até um estado objetivo, se disponível.
 	int heuristica;
+	/// @brief Número de expansões efetuadas.
+	int expansoes;
+	/// @brief Número de gerações efetuadas.
+	int geracoes;
 
 	/** @} */ // Fim do grupo VariaveisEstado 
 
@@ -207,9 +215,9 @@ public:
 	 * @see Codifica()
 	 *
 	 * @code
-	 * void CSubProblema::SolucaoVazia(void)
+	 * void CSubProblema::Inicializar(void)
 	 * {
-	 *     TProcuraConstrutiva::SolucaoVazia();
+	 *     TProcuraConstrutiva::Inicializar();
 	 * 	   // acertar as variáveis estáticas, com a instância (ID: instancia.valor)
 	 * 	   CarregaInstancia(); // exemplo de método em CSubProblema para carregar uma instância
 	 *     // inicializar todas as variáveis de estado
@@ -219,7 +227,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	void SolucaoVazia(void) { custo = 0; }
+	void Inicializar(void) { TProcura::Inicializar(); custo = 0; }
 
 	/**
 	 * @brief Coloca em sucessores a lista de estados sucessores
@@ -542,6 +550,9 @@ public:
 	 */
 	int ExecutaAlgoritmo();
 
+	/// Calcula indicadores 
+	int Indicador(int id);
+
 
 	/** @} */ // Fim do grupo RedefinicaoOpcional
 
@@ -712,10 +723,8 @@ public:
 
 	/** @} */ // Fim do grupo VariaveisGlobais
 
-	// LimparEstatisticas: Chamar antes da corrida
 	void LimparEstatisticas(clock_t &inicio);
-	// FinalizarCorrida: Chamar após a corrida
-	void FinalizarCorrida(clock_t inicio);
+	void ExecucaoTerminada(clock_t inicio);
 
 	int LowerBound() { return custo + parametro[pesoAStar].valor * heuristica / 100; } // f(n) = g(n) + W h(n)
 	static void LibertarVector(TVector<TNo>& vector, int excepto = -1, int maiorQue = -1);
@@ -754,7 +763,7 @@ protected:
 	void VerificaLimites(int limite, int porProcessar, TVector<TNo>& sucessores);
 	void CalcularHeuristicas(TVector<TNo>& sucessores, TVector<int>* id = NULL, bool sortLB = false);
 	int SolucaoParcial(int i, TVector<TNo>& sucessores);
-	void ExplorarSucessores();
+	void Explorar();
 	void MostrarCaminho();
 
 	// variáveis da hashtable com perdas, se existir uma colisão, substitui

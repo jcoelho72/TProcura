@@ -20,9 +20,9 @@ TProcuraConstrutiva* CParticao::Duplicar(void)
 	return clone;
 }
 
-void CParticao::SolucaoVazia(void)
+void CParticao::Inicializar(void)
 {
-	TProcuraConstrutiva::SolucaoVazia();
+	TProcuraConstrutiva::Inicializar();
 	direita.Count(0);
 	esquerda.Count(0);
 	numeros.Count(0);
@@ -126,12 +126,6 @@ void CParticao::Debug(void)
 	}
 }
 
-void CParticao::TesteManual(const char* nome)
-{
-	instancia = { NULL, 10,2,1000, NULL, NULL };
-	TProcuraConstrutiva::TesteManual(nome);
-}
-
 
 // método para lidar com estados repetidos
 void CParticao::Codifica(uint64_t estado[OBJETO_HASHTABLE])
@@ -152,5 +146,11 @@ void CParticao::Codifica(uint64_t estado[OBJETO_HASHTABLE])
 	estado[0] = porColocar;
 	estado[1] = valorMaior;
 	estado[1] |= (uint64_t)valorMenor << 32;
+}
+
+void CParticao::ResetParametros()
+{
+	TProcuraConstrutiva::ResetParametros();
+	instancia = { NULL, 10,2,1000, NULL, NULL };
 }
 

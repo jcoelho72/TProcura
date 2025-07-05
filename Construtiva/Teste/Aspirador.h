@@ -25,12 +25,12 @@ public:
 		aspirador = ((CAspirador*)objecto)->aspirador;
 		salas = ((CAspirador*)objecto)->salas;
 	}
-	void SolucaoVazia(void);
+	void Inicializar(void);
+	void ResetParametros();
 	void Sucessores(TVector<TNo>& sucessores);
 	bool SolucaoCompleta(void);
 	void Debug(void);
 	const char* Acao(TProcuraConstrutiva* sucessor);
-	void TesteManual(const char* nome);
 	bool Distinto(TNo estado);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
 	int Heuristica(void);

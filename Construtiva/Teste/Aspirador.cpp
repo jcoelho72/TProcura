@@ -21,14 +21,20 @@ TProcuraConstrutiva* CAspirador::Duplicar(void)
 	return clone;
 }
 
-void CAspirador::SolucaoVazia(void)
+void CAspirador::Inicializar(void)
 {
-	TProcuraConstrutiva::SolucaoVazia();
+	TProcuraConstrutiva::Inicializar();
 	salas.Count(instancia.valor);
 	for (int i = 0; i < salas.Count(); i++) 
 		salas[i] = (TRand::rand() % 2 ? '.' : '*');
 	aspirador = TRand::rand() % salas.Count();
 	tamanhoCodificado = 1; // dá já para bastantes salas
+}
+
+void CAspirador::ResetParametros()
+{
+	TProcuraConstrutiva::ResetParametros();
+	instancia = { NULL, 4,2,50, NULL, NULL };
 }
 
 void CAspirador::Sucessores(TVector<TNo>&sucessores)
@@ -80,13 +86,6 @@ bool CAspirador::SolucaoCompleta(void)
 		if (salas[i] == '*')
 			return false;
 	return true;
-}
-
-
-void CAspirador::TesteManual(const char* nome)
-{
-	instancia = { NULL, 4,2,50, NULL, NULL };
-	TProcuraConstrutiva::TesteManual(nome);
 }
 
 bool CAspirador::Distinto(TNo estado) {

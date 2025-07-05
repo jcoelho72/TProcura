@@ -20,10 +20,10 @@ TProcuraConstrutiva* CPuzzle8::Duplicar(void)
 	return clone;
 }
 
-void CPuzzle8::SolucaoVazia(void)
+void CPuzzle8::Inicializar(void)
 {
-	int backup = parametro[estadosRepetidos].valor;
-	TProcuraConstrutiva::SolucaoVazia();
+	int backup = Parametro(estadosRepetidos);
+	TProcuraConstrutiva::Inicializar();
 	// colocar a posição final
 	puzzle.Count(9);
 	for (int i = 0; i < 9; i++)
@@ -157,15 +157,12 @@ void CPuzzle8::MostrarSolucao(void) {
 }
 
 
-void CPuzzle8::TesteManual(const char* nome) {
-	instancia = { NULL, 40,1,1000, NULL, NULL };
-	TProcuraConstrutiva::TesteManual(nome);
-}
-
 void CPuzzle8::ResetParametros() {
 	TProcuraConstrutiva::ResetParametros();
 	// opções de omissão:
 	parametro[estadosRepetidos].valor = ascendentes;
+	// instâncias
+	instancia = { NULL, 40,1,1000, NULL, NULL };
 }
 
 

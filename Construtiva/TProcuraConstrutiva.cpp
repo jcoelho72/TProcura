@@ -69,6 +69,11 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL });
 	// baralhar sucessores
 	parametro.Add({ "baralhar",0,0,1,
 		"Baralhar os sucessores ao expandir.",NULL });
+
+
+	indicador.Add({ "Expansões","número de expansões efetuadas", indExpansoes });
+	indicador.Add({ "Gerações","número de gerações efetuadas", indGeracoes });
+	indAtivo.Add(indExpansoes);
 }
 
 // Executa uma ação (movimento, passo, jogada, lance, etc.) no estado atual. Caso não seja feito nada, retornar falso.
@@ -508,7 +513,7 @@ int TProcuraConstrutiva::AStar(int limite)
 // colocando esse valor na variável heuristica
 // chamar este método para actualiacao de avaliacoes
 int TProcuraConstrutiva::Heuristica(void) {
-	avaliacoes++;
+	iteracoes++;
 	if (parametro[ruidoHeur].valor > 0)
 		heuristica += TRand::rand() % parametro[ruidoHeur].valor;
 	if (parametro[ruidoHeur].valor < 0)
@@ -666,7 +671,7 @@ void TProcuraConstrutiva::DebugIteracao(int iteracao) {
 	if (parametro[nivelDebug].valor > atividade) {
 		printf("\nIteração %d:", iteracao);
 		if (parametro[nivelDebug].valor > passos)
-			printf(" (expansões %d, gerações %d, avaliações %d)\n", expansoes, geracoes, avaliacoes);
+			printf(" (expansões %d, gerações %d, avaliações %d)\n", expansoes, geracoes, iteracoes);
 		else
 			printf("\n");
 	}
@@ -687,8 +692,8 @@ void TProcuraConstrutiva::DebugEstado(int id, int pai) {
 		printf("%d", expansoes);
 	if (geracoes)
 		printf("|%d", geracoes);
-	if (avaliacoes)
-		printf("|%d", avaliacoes);
+	if (iteracoes)
+		printf("|%d", iteracoes);
 }
 
 
@@ -722,9 +727,9 @@ int TProcuraConstrutiva::ExecutaAlgoritmo() {
 
 
 
-void TProcuraConstrutiva::FinalizarCorrida(clock_t inicio)
+void TProcuraConstrutiva::ExecucaoTerminada(clock_t inicio)
 {
-	TProcura::FinalizarCorrida(inicio);
+	TProcura::ExecucaoTerminada(inicio);
 	if (solucao != NULL) {
 		Copiar(solucao);
 		delete solucao;
@@ -733,7 +738,7 @@ void TProcuraConstrutiva::FinalizarCorrida(clock_t inicio)
 }
 
 
-void TProcuraConstrutiva::ExplorarSucessores() {
+void TProcuraConstrutiva::Explorar() {
 	TVector<TNo> sucessores;
 	clock_t inicio;
 	int opcao = 0;
@@ -770,32 +775,21 @@ void TProcuraConstrutiva::ExplorarSucessores() {
 					backup = caminho;
 					caminho.Count(0);
 					LimparEstatisticas(inicio);
-					/* // redefinir com o jogo na procura adversa
-					if (jogo) {
-						int valor = ExecutaAlgoritmo();
-						printf("Valor: %d\n", valor);
-						if (solucao != NULL)
-							Copiar(solucao);
+					int resultado;
+					switch (resultado = ExecutaAlgoritmo()) {
+					case -1: printf("Impossível\n"); break;
+					case -2: printf("Não resolvido\n"); break;
+					default: printf("Resolvido (%d)\n", resultado); break;
+					}
+					if (solucao != NULL) {
+						Copiar(solucao);
+						delete backup.Pop();
+						backup += caminho;
 						caminho = backup;
+						caminho.Pop(); // este último estado será adicionado
 					}
-					else */
-					{
-						int resultado;
-						switch (resultado = ExecutaAlgoritmo()) {
-						case -1: printf("Impossível\n"); break;
-						case -2: printf("Não resolvido\n"); break;
-						default: printf("Resolvido (%d)\n", resultado); break;
-						}
-						if (solucao != NULL) {
-							Copiar(solucao);
-							delete backup.Pop();
-							backup += caminho;
-							caminho = backup;
-							caminho.Pop(); // este último estado será adicionado
-						}
-						else
-							caminho = backup;
-					}
+					else
+						caminho = backup;
 				}
 				else {
 					int nAcoes = 0;
@@ -918,5 +912,13 @@ void TProcuraConstrutiva::Codifica(uint64_t estado[OBJETO_HASHTABLE]) {
 		estado[i] = 0;
 }
 
+int TProcuraConstrutiva::Indicador(int id)
+{
+	if (id == indExpansoes)
+		return expansoes;
+	else if (id == indGeracoes)
+		return geracoes;
+	return TProcura::Indicador(id);
+}
 
 

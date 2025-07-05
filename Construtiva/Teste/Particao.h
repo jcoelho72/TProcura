@@ -29,7 +29,7 @@ public:
 		totalEsquerda = ((CParticao*)objecto)->totalEsquerda;
 		totalDireita = ((CParticao*)objecto)->totalDireita;
 	}
-	void SolucaoVazia(void);
+	void Inicializar(void);
 	void Sucessores(TVector<TNo>& sucessores);
 	bool SolucaoCompleta(void) { 
 		return numeros.Count() == 0 && totalEsquerda == totalDireita;
@@ -37,8 +37,8 @@ public:
 	void Debug(void);
 	void MostrarSolucao(void) { Debug(); }
 	const char* Acao(TProcuraConstrutiva* sucessor);
-	void TesteManual(const char* nome);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
+	void ResetParametros();
 };
 
 /* Testes nas procuras cegas (instâncias 20 a 29)

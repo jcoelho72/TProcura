@@ -26,13 +26,12 @@ public:
 		puzzle = ((CPuzzle8*)objecto)->puzzle;
 		zero = ((CPuzzle8*)objecto)->zero;
 	}
-	void SolucaoVazia(void);
+	void Inicializar(void);
 	void Sucessores(TVector<TNo>&sucessores);
 	bool SolucaoCompleta(void);	
 	void Debug(void);
 	void MostrarSolucao(void);
 	const char* Acao(TProcuraConstrutiva* sucessor);
-	void TesteManual(const char* nome);
 	void ResetParametros();
 
 	int Heuristica(void);

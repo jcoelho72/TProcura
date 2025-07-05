@@ -28,13 +28,13 @@ public:
 		TProcuraConstrutiva::Copiar(objecto);
 		damas=((COitoDamas*)objecto)->damas;
 	}
-	void SolucaoVazia(void); 
+	void Inicializar(void);
+	void ResetParametros();
 	void Sucessores(TVector<TNo>& sucessores);
 	bool SolucaoCompleta(void) { return damas.Count() == nDamas; }
 	void Debug(void);
 	void MostrarSolucao(void) { Debug(); }
 	const char* Acao(TProcuraConstrutiva* sucessor);
-	void TesteManual(const char* nome);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
 
 private:
