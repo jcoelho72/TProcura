@@ -63,7 +63,7 @@ digraph "TVector::operator[]"
   Node19 -> Node20 [id="edge117_Node000019_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
   Node20 -> Node21 [id="edge118_Node000020_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip=" "];
+  Node21 [id="Node000021",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip="Inicializa a interação com o utilizador."];
   Node21 -> Node22 [id="edge119_Node000021_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 [id="Node000022",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node20 -> Node23 [id="edge120_Node000020_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -115,14 +115,14 @@ digraph "TVector::operator[]"
   Node45 -> Node46 [id="edge147_Node000045_Node000046",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node46 [id="Node000046",label="CParticao::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a5c6104354972acf2f6ed3d8ff7a8b98c",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node2 -> Node47 [id="edge148_Node000002_Node000047",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node47 [id="Node000047",label="CTesteTVector::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94",tooltip="Inicializa os parametros."];
+  Node47 [id="Node000047",label="CTesteTVector::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94",tooltip="Inicializa os parametros, indicadores e instâncias."];
   Node2 -> Node48 [id="edge149_Node000002_Node000048",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node48 [id="Node000048",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parametros."];
+  Node48 [id="Node000048",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parametros, indicadores e instâncias."];
   Node48 -> Node21 [id="edge150_Node000048_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node48 -> Node49 [id="edge151_Node000048_Node000049",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node49 [id="Node000049",label="TProcuraConstrutiva\l::ResetParametros",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$group__RedefinicaoMandatoria.html#gacb15562d8776f4d162001d385ebc13a0",tooltip="Inicializa os parametros."];
   Node48 -> Node54 [id="edge152_Node000048_Node000054",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node54 [id="Node000054",label="TProcuraMelhorativa\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a631cd73e03b193d42055f2824b051591",tooltip="Inicializa os parametros."];
+  Node54 [id="Node000054",label="TProcuraMelhorativa\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a631cd73e03b193d42055f2824b051591",tooltip="Inicializa os parametros, indicadores e instâncias."];
   Node54 -> Node37 [id="edge153_Node000054_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node48 -> Node47 [id="edge154_Node000048_Node000047",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node48 -> Node20 [id="edge155_Node000048_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];

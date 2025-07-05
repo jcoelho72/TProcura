@@ -9,9 +9,9 @@ digraph "TProcuraConstrutiva::ResetParametros"
   Node1 -> Node2 [id="edge5_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraAdversa::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1",tooltip="MÃ©todo para inicializar os parÃ¢metros (redefinir se forem adicionados parÃ¢metros especÃ­ficos)"];
   Node2 -> Node3 [id="edge6_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="CJogoEmLinha::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a855791b2e19731340976157991d79293",tooltip="Inicializa os parametros."];
+  Node3 [id="Node000003",label="CJogoEmLinha::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a855791b2e19731340976157991d79293",tooltip="Inicializa os parametros, indicadores e instâncias."];
   Node1 -> Node4 [id="edge7_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="CProblemaArtificial\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d",tooltip="Inicializa os parametros."];
+  Node4 [id="Node000004",label="CProblemaArtificial\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d",tooltip="Inicializa os parametros, indicadores e instâncias."];
   Node1 -> Node5 [id="edge8_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="CPuzzle8::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3",tooltip="Inicializa os parametros."];
+  Node5 [id="Node000005",label="CPuzzle8::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3",tooltip="Inicializa os parametros, indicadores e instâncias."];
 }

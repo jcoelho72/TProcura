@@ -91,7 +91,7 @@ digraph "TRand::srand"
   Node1 -> Node36 [id="edge119_Node000001_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node36 [id="Node000036",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afcfe280771c67c80a69d422c476ae090",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node36 -> Node37 [id="edge120_Node000036_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node37 [id="Node000037",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip=" "];
+  Node37 [id="Node000037",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip="Inicializa a interação com o utilizador."];
   Node37 -> Node38 [id="edge121_Node000037_Node000038",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node38 [id="Node000038",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node36 -> Node5 [id="edge122_Node000036_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];

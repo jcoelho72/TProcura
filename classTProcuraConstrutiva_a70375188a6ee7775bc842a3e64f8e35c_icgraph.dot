@@ -51,7 +51,7 @@ digraph "TProcuraConstrutiva::Hash"
   Node18 [id="Node000018",label="TProcuraConstrutiva\l::ExplorarSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9fda19c96c9cd874fa45578bcc30f607",tooltip=" "];
   Node16 -> Node16 [id="edge80_Node000016_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node19 [id="edge81_Node000015_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f",tooltip=" "];
+  Node19 [id="Node000019",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
   Node19 -> Node18 [id="edge82_Node000019_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node11 [id="edge83_Node000019_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node20 [id="edge84_Node000015_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];

@@ -44,7 +44,7 @@ digraph "TVector::Last"
   Node14 -> Node10 [id="edge76_Node000014_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node14 [id="edge77_Node000014_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node15 [id="edge78_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip=" "];
+  Node15 [id="Node000015",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip="Inicializa a interação com o utilizador."];
   Node15 -> Node16 [id="edge79_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node1 -> Node17 [id="edge80_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];

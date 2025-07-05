@@ -95,7 +95,7 @@ digraph "TProcura::Debug"
   Node1 -> Node30 [id="edge134_Node000001_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node30 [id="Node000030",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
   Node30 -> Node31 [id="edge135_Node000030_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip=" "];
+  Node31 [id="Node000031",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip="Inicializa a interação com o utilizador."];
   Node31 -> Node32 [id="edge136_Node000031_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node32 [id="Node000032",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node30 -> Node33 [id="edge137_Node000030_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
