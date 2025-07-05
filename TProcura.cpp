@@ -135,7 +135,7 @@ ____________________________________________________________________\n\
 			LimparEstatisticas(inicio);
 			resultado = ExecutaAlgoritmo();
 			MostraParametros(0);
-			FinalizarCorrida(inicio);
+			ExecucaoTerminada(inicio);
 			InserirRegisto(resultados, instancia.valor, 0);
 			break;
 		case 7: EditarConfiguracoes(); break;
@@ -667,7 +667,10 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 		"   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores\n",
 		programa, programa
 	);
-	// mostrar detalhe de todos os parâmetros?
+	printf("Lista de parâmetros:\n");
+	MostraParametros(2);
+	printf("Lista de indicadores:\n");
+	MostraIndicadores();
 }
 
 
@@ -871,7 +874,7 @@ int TProcura::MelhorResultado(TResultado base, TResultado alternativa) {
 	return Registo(base, indTempo) < Registo(alternativa, indTempo) ? 1 : -1;
 }
 
-void TProcura::FinalizarCorrida(clock_t inicio)
+void TProcura::ExecucaoTerminada(clock_t inicio)
 {
 	tempo = (int)(1000.0 * (clock() - inicio) / CLOCKS_PER_SEC);
 	if (TempoExcedido())

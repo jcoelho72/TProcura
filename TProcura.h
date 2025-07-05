@@ -176,7 +176,7 @@ public:
 	 *     TProcura::Inicializar();
 	 * 	   // acertar as variáveis estáticas, com a instância (ID: instancia.valor)
 	 * 	   CarregaInstancia(); // exemplo de método em CSubProblema para carregar uma instância
-	 *     // pode utilizar variável "ficheiroInstancia" concatenado com instancia.valor, com o ID da instância
+	 *     // pode/deve utilizar variável "ficheiroInstancia" concatenado com instancia.valor, com o ID da instância
 	 *     // inicializar todas as variáveis de estado
 	 * 	   variavel = 0;
 	 *     // Determinar o tamanho máximo do estado codificado, se aplicável
@@ -197,7 +197,31 @@ public:
 	 */
 	virtual int ExecutaAlgoritmo() { return -1; }
 
-	// retorna o valor do indicador[id]
+	/**
+	 * @brief Retorna um indicador, após a execução do algoritmo
+	 * @note Obrigatória a redefinição no caso de serem definidos indicadores na subclasse
+	 *
+	 * Este método é chamado após a execução do algoritmo, para cada indicador,
+	 * pela ordem definida pelo utilizador. Caso tenham sido definidos outros indicadorews
+	 * na subclasse, deve redefinir, e caso seja um indicador da subclasse, calcular, 
+	 * caso contrário deve chamar o método da superclasse.
+	 * 
+	 * @note Um indicador pode ser uma verificação da solução, ou qualquer outro procedimento
+	 * que executa após o algoritmo, não sendo o tempo de execução contabgilizado no algoritmo.
+	 *
+	 * @see ResetParametros()
+	 *
+	 * @code
+	 * void CSubProblema::Indicador(int id)
+	 * {
+	 *     if(id == indicador-da-subclasse) {
+	 *         // calcular indicador
+	 *         return resultado;
+	 *     }
+	 *     return TProcura::Indicador(id);
+	 * }
+	 * @endcode
+	 */
 	virtual int Indicador(int id);
 
 	/**
@@ -237,20 +261,23 @@ public:
 	virtual void Debug(void);
 
 	/**
-	 * @brief Inicializa os parametros
-	 * @note Redefinição necessária se forem adicionados novos parametros, ou for alterado
-	 * o valor de omissão de parametros existentes.
+	 * @brief Inicializa os parametros, indicadores e instâncias
+	 * @note Redefinição necessária, para pelo menos indicar as instâncias existentes
 	 *
 	 * Nesta função, a primeira instrução deverá ser a chamada da função da superclasse,
 	 * para que sejam criados os parametros da superclasse antes de qualquer outra instrução.
 	 *
 	 * Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos.
-	 * Nesta função, podem ser definidos estes valores de omissão, que se não forem alterados,
-	 * irá executar a configuração mais genérica.
+	 * Nesta função, podem ser definidos estes valores de omissão.
 	 *
 	 * Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema.
 	 * Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar
 	 * em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
+	 * 
+	 * Nesta função deve ser redefinida a variável com informação dos IDs das instâncias disponíveis.
+	 * Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
+	 * 
+	 * Existindo novos indicadores, devem ser adicionados aqui, e redefinida a função Indicador() para calcular o valor.
 	 *
 	 * @note Na criação de um novo parametro, dar uma estrutura TParametro.
 	 *
@@ -258,19 +285,21 @@ public:
 	 * com a da superclasse. O primeiro elemento deve ser `parametrosConstrutivos`,
 	 * garantindo que novas adições na superclasse sejam automaticamente refletidas aqui.
 	 *
+	 * @note A instância selecionada irá ser carregada em Inicializar(), utilizando o valor atual.
+	 * 
 	 * @see TParametro
 	 *
 	 * Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros.
 	 * @code
-	 * // continuação da enumeração EParametrosConstrutiva
-	 * enum ESubProblema { opcaoHeur = parametrosConstrutivas, opcaoSuc };
+	 * // continuação da enumeração EParametrosProcujra
+	 * enum ESubProblema { opcaoHeur = parametrosProcura, opcaoSuc };
 	 * void CSubProblema::ResetParametros(void)
 	 * {
 	 *     static const char* nomesSuc[] = { "todas", "contributo" }; // nomes para os valores de opcaoSuc
 	 *     // chamar primeiro o método na superclasse
 	 *     TProcura::ResetParametros();
-	 *     // neste exemplo considerou-se que se pretende ver apenas estados completos, ignorando ações
-	 *     parametro[verAcoes].valor = 1;
+	 *     // neste exemplo considerou-se que se pretende ver algum debug, de omissão
+	 *     parametro[nivelDebug].valor = 1;
 	 *
 	 *     // novo parametro para utilizar na função Heuristica()
 	 *     parametro.Add({ "Opção Heurística", 0,0,10,
@@ -278,6 +307,13 @@ public:
 	 *     // novo parametro para utilizar na função Sucessores()
 	 *     parametro.Add({ "Opção Sucessores", 0,0,1,
 	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc });
+	 * 
+	 *     // novo indicador
+	 *	   indicador.Add({ "Ordenado","verifica se um vetor está ordenado", indOrdenar });
+	 *     indAtivo.Add(indOrdenar); // adicionar aos indicadores ativos de omissão
+	 * 
+	 *     // indicar que há 10 instâncias, sendo a instância inicial a 1
+ 	 * 	   instancia = { "Problema", 1,1,10, "Características dos problemas", NULL };
 	 * }
 	 * @endcode
 	 */
@@ -289,7 +325,7 @@ public:
 	 * de paragem adicionais, além dos já estabelecidos.
 	 * @return Retorna verdadeiro se a procura deve parar de imediato
 	 *
-	 * O critério de paragem pode ser especificado em limite de tempo, expansões, gerações e avaliações.
+	 * O critério de paragem pode ser especificado em limite de tempo, limite de iterações.
 	 * Caso exista uma falha na alocação de memória de um estado, em chamadas futuras irá retornar verdadeiro.
 	 *
 	 * @note Redefinir apenas se o critério de paragem não puder ser contemplado nestes pontos.
@@ -298,7 +334,7 @@ public:
 	 *
 	 * @code
 	 * bool CSubProblema::Parar(void) {
-	 *     return TProcuraConstrutiva::Parar() || CriterioParagem(); // critério de paragem definido em CSubProblema
+	 *     return TProcura::Parar() || CriterioParagem(); // critério de paragem definido em CSubProblema
 	 * }
 	 * @endcode
 	 */
@@ -308,7 +344,7 @@ public:
 
 	/**
 	* @brief Inicializa a interação com o utilizador
-	* @note Redefinição necessária para definir as instancias existentes.
+	* @note Redefinição opcional
 	*
 	* Esta função arranca com o teste manual, orientada para o programador.
 	* A interface permite:
@@ -322,23 +358,18 @@ public:
 	* - adicionar a configuração atual a um conjunto de configurações de teste
 	* - executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas
 	*
-	* Esta função deve ser redefinida para inicializar a variável com informação dos IDs das instâncias disponíveis.
-	* Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
+	* @note Esta função deve ser o ponto de entrada, a executar no main, caso não se utilize a função TProcura::main().
 	*
-	* @note A instância selecionada irá ser carregada em SolucaoVazia(), utilizando o valor atual.
-	* @note Esta função deve ser o ponto de entrada, a executar no main.
-	*
-	* @see TParametro
+	* @see TParametro, main
 	*
 	* @code
 	* void CSubProblema::TesteManual(const char* nome)
 	* {
-	*     // indicar que há 10 instâncias, sendo a instância inicial a 1
-	* 	   instancia = { "Problema", 1,1,10, "Características dos problemas", NULL };
-	* 	   TProcuraConstrutiva::TesteManual(nome);
+	*      // ações extra antes do teste manual, ou redefinição completa;
+	* 	   TProcura::TesteManual(nome); // chamada do método da superclasse, caso não redefina por completo
 	* }
 	*
-	* // exemplo do main
+	* // exemplo do main, sem processar argumentos (ver TProcura::main)
 	* int main()
 	* {
 	*     CSubProblema problema;
@@ -369,13 +400,41 @@ public:
 	 */
 	virtual void TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes = true, char* ficheiro = NULL);
 
-	// processa os argumentos da função main
+	/**
+	* @brief Inicializa a interação com o utilizador
+	* @note Redefinição opcional
+	*
+	* Esta função arranca com o teste manual, orientada para o programador.
+	* A interface permite:
+	* - visualizar e trocar de instância
+	* - explorar o espaço de estados nessa instancia, executando ações
+	* - ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)
+	* - ver e editar qualquer parametro de execução
+	* - o algoritmo é também um parametro, podendo naturalmente ser alterado
+	* - há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
+	* - executar o algoritmo com a configuração atual
+	* - adicionar a configuração atual a um conjunto de configurações de teste
+	* - executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas
+	*
+	* @note Esta função deve ser o ponto de entrada, a executar no main, caso não se utilize a função TProcura::main().
+	*
+	* @see TParametro, TesteManual
+	*
+	* @code
+	* // exemplo do main, processando argumentos (ver TProcura::TesteManual)
+	* int main(int argc, char* argv[])
+	* {
+	*	std::locale::global(std::locale(""));
+	*	CSubProblema().main(argc, argv, "SubProblema");
+	* }
+	* @endcode
+	*/
 	virtual void main(int argc, char* argv[], const char*nome);
 
-	// LimparEstatisticas: Chamar antes da corrida
+	/// @brief Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução
 	virtual void LimparEstatisticas(clock_t& inicio);
-	// FinalizarCorrida: Chamar após a corrida
-	virtual void FinalizarCorrida(clock_t inicio);
+	/// @brief Chamar após a execução do algoritmo. Grava o tempo consumido.
+	virtual void ExecucaoTerminada(clock_t inicio);
 	// ExplorarSucessores: definir para explorar manualmente o espaço
 	virtual void ExplorarSucessores() {}
 	// MostrarSolucao: definir para visualizar a solução
