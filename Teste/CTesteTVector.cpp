@@ -75,11 +75,11 @@ void CTesteTVector::Inicializar(void)
 void CTesteTVector::Debug(void)
 {
 	if (Parametro(estruturaDados) != 1) {
-		if(dadosA.Count()<6)
+		if (dadosA.Count() < 6)
 			return;
 		printf("\nDados #%d: ", dadosA.Count());
-		for(int i=0;i<3;i++)
-			printf("%d ",dadosA[i]);
+		for (int i = 0; i < 3; i++)
+			printf("%d ", dadosA[i]);
 		printf("... ");
 		for (int i = dadosA.Count() - 3; i < dadosA.Count(); i++)
 			printf("%d ", dadosA[i]);
@@ -158,9 +158,9 @@ int CTesteTVector::ExecutaAlgoritmo()
 				break;
 			case 2: // Sort
 				if (Parametro(estruturaDados) == 1)
-					std::sort(stdA.begin(),stdA.end());
-				else 
-					std::sort(dadosA.begin(),dadosA.end());
+					std::sort(stdA.begin(), stdA.end());
+				else
+					std::sort(dadosA.begin(), dadosA.end());
 				break;
 			case 3: // RandomOrder
 				if (Parametro(estruturaDados) == 1)
@@ -184,7 +184,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				else {
 					std::sort(dadosA.begin(), dadosA.end());
-					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) -dadosA.begin());
+					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin());
 				}
 				break;
 			case 6: // Difference
@@ -314,14 +314,15 @@ int CTesteTVector::ExecutaAlgoritmo()
 						stdB.begin(),
 						stdB.end()
 					);
-				} else 
-					dadosA+=dadosB;
+				}
+				else
+					dadosA += dadosB;
 				break;
 			case 12: // nada
 				break;
 			}
 		}
-			
+
 		iteracoes++;
 		// se não foi definido limite de iterações, fazer apenas uma
 		if (Parametro(limiteIteracoes) == 0)
@@ -337,7 +338,8 @@ int CTesteTVector::Indicador(int id)
 			for (int i = 0; i < dadosA.Count() - 1; i++)
 				if (dadosA[i] > dadosA[i + 1])
 					return 0;
-		} else {
+		}
+		else {
 			for (int i = 0; i < stdA.size() - 1; i++)
 				if (stdA[i] > stdA[i + 1])
 					return 0;
