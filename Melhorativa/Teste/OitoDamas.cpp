@@ -12,9 +12,9 @@ COitoDamas::~COitoDamas(void)
 {
 }
 
-void COitoDamas::SolucaoVazia(void)
+void COitoDamas::Inicializar(void)
 {
-	TProcura::SolucaoVazia();
+	TProcuraMelhorativa::Inicializar();
 	damas.Count(0);
 	nDamas = instancia.valor;
 }

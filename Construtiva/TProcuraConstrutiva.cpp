@@ -72,8 +72,8 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL });
 
 
 	indicador.Add({ "Expansões","número de expansões efetuadas", indExpansoes });
-	indicador.Add({ "Gerações","número de gerações efetuadas", indGeracoes });
-	indAtivo.Add(indExpansoes);
+	indicador.Add({ "Gerações","número de estados gerados", indGeracoes });
+	indAtivo.Add(indExpansoes).Add(indGeracoes);
 }
 
 // Executa uma ação (movimento, passo, jogada, lance, etc.) no estado atual. Caso não seja feito nada, retornar falso.

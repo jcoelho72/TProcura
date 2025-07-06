@@ -1,4 +1,5 @@
 ﻿#pragma once
+
 #include "../TProcura.h"
 
 // um ponto no espaço de estados das soluções completas, é um apontador para um estado
@@ -8,6 +9,12 @@ typedef TProcuraMelhorativa* TPonto;
 // nomes dos parâmetros fixos na procura melhorativa
 enum EMelhorativas { movePrimeiroEM = parametrosProcura, populacaoAG,
 	probMutacaoAG, distMinimaAG, parametrosMelhorativas
+};
+
+enum EIndicadoresConstrutiva {
+	indEpocas = indProcura,    ///< Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
+	indGeracoes,               ///< número de estados gerados durante a procura
+	indMelhorativa             ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
 
@@ -31,7 +38,12 @@ public:
 	TProcuraMelhorativa(void);
 	~TProcuraMelhorativa(void);
 
-	int custo; // variável de estado, atualizada após Avaliar()
+	/// @brief Custo total, atualizada após Avaliar()
+	int custo; 
+	/// @brief Número de estados gerados 
+	int geracoes;
+	/// @brief Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
+	int epocas;
 
 	///////////////////////////////////////////////////////////////////////////////
 	// Métodos para redefinir
@@ -100,7 +112,7 @@ public:
 	// redefinir, para aceitar ações que sejam operadores
 	bool Acao(const char* acao) { return false; }
 	// Método para inicializar os parâmetros (redefinir se forem adicionados parâmetros específicos)
-	void ResetParametros();
+	void ResetParametros() override;
 
 
 	///////////////////////////////////////////////////////////////////////////////
@@ -118,7 +130,7 @@ public:
 	// Operador mutação, altera o estado actual (de acordo com a parametrizacao global)
 	virtual void Mutar(void) { }
 	// Operador cruzamento, cruza os dois elementos a e b, colocando o resultado no estado atual
-	virtual void Cruzamento(TPonto a, TPonto b) { geracoes++; }
+	virtual void Cruzamento(TPonto a, TPonto b) { }
 	// Função distância: distancia deste elemento ao elemento a
 	// (opcional para manter os elementos diversos)
 	virtual int Distancia(TPonto a) { return 0; }
@@ -137,10 +149,17 @@ public:
 
 
 	// Método para teste manual do objecto (chamadas aos algoritmos, construcao de uma solucao manual)
-	void TesteManual(const char* nome);
+	void TesteManualX(const char* nome); /// provavalmente apagar
 
 	// Chamar sempre que uma solução melhor que a actual e encontrada
 	void DebugMelhorEncontrado(TPonto ponto);
+
+	/**
+	 * @brief Redefinição. Ver TProcura::Indicador().
+	 */
+	int Indicador(int id) override;
+
+	void LimparEstatisticas(clock_t& inicio);
 
 
 protected:
@@ -151,7 +170,7 @@ protected:
 	void VerificaMelhor(TPonto& melhor, TPonto atual);
 	TPonto MelhorAtual(TPonto& atual, TVector<TPonto>& vizinhos, int indice);
 	void ObterExtremos(TVector<TPonto>& populacao, int& minCusto, int& maxCusto);
-	void ExplorarOperadores();
+	void Explorar() override;
 	void LibertarVector(TVector<TPonto>& vector, int excepto = -1);
 	int ExecutaAlgoritmo();
 	// Mostrar vizinhos
@@ -161,5 +180,4 @@ protected:
 	void DebugPassoEM(TPonto solucao);
 	void DebugPassoAG(int pop, int min, int max);
 	void DebugCruzamentoAG(int gPai, int gMae, int gFilho, int mutou);
-
 };

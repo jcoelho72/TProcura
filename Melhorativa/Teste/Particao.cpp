@@ -10,9 +10,9 @@ CParticao::~CParticao(void)
 {
 }
 
-void CParticao::SolucaoVazia(void)
+void CParticao::Inicializar(void)
 {
-	TProcura::SolucaoVazia();
+	TProcuraMelhorativa::Inicializar();
 	direita.Count(0);
 	esquerda.Count(0);
 	numeros.Count(0);
@@ -112,7 +112,7 @@ void CParticao::TesteManual(const char* nome)
 
 // métodos melhorativos
 void CParticao::NovaSolucao(void) {
-	TProcura::SolucaoVazia();
+	TProcuraMelhorativa::Inicializar();
 	solCompleta.Count(numeros.Count());
 	for (int i = 0; i < solCompleta.Count(); i++)
 		solCompleta[i] = TRand::rand() % 2;

@@ -58,7 +58,7 @@ public:
 		nivel = ((CProblemaArtificial*)objecto)->nivel;
 		heur = ((CProblemaArtificial*)objecto)->heur;
 	}
-	void SolucaoVazia(void);
+	void Inicializar(void);
 	void Debug(void);
 	void TesteManual(const char* nome);
 	bool Distinto(TPonto estado);

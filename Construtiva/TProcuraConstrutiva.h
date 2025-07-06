@@ -21,7 +21,7 @@ typedef TProcuraConstrutiva* TNo;
 
 enum EIndicadoresConstrutiva {
 	indExpansoes = indProcura, ///< número de expansões efetuadas durante a procura
-	indGeracoes,               ///< número de gerações efetuadas durante a procura
+	indGeracoes,               ///< número de estados gerados durante a procura
 	indConstrutiva             ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
@@ -129,7 +129,7 @@ public:
 	int heuristica;
 	/// @brief Número de expansões efetuadas.
 	int expansoes;
-	/// @brief Número de gerações efetuadas.
+	/// @brief Número de estados gerados.
 	int geracoes;
 
 	/** @} */ // Fim do grupo VariaveisEstado 

@@ -8,7 +8,7 @@
 #define BUFFER_SIZE 1024
 
 
-TProcuraMelhorativa::TProcuraMelhorativa(void) 
+TProcuraMelhorativa::TProcuraMelhorativa(void)
 {
 }
 
@@ -31,7 +31,7 @@ void TProcuraMelhorativa::ResetParametros()
 	static const char* nomesMovePrimeiro[] = { "Primeiro","Melhor" };
 	TProcura::ResetParametros();
 
-	parametro[limiteAvaliacoes].valor = 1000000;
+	parametro[limiteIteracoes].valor = 1000000;
 
 	// adicionar parâmetros da procura melhorativa
 	// alterar algoritmos
@@ -45,6 +45,10 @@ void TProcuraMelhorativa::ResetParametros()
 	parametro.Add({ "Mutação",50,0,100, "Probabilidade de um estado sofrer uma mutação após gerado, utilizado nos Algoritmos Genéticos",NULL });
 	// distância mínima
 	parametro.Add({ "Distância",0,0,1000, "Distância mínima imposta entre elementos da população, utilizado nos Algoritmos Genéticos",NULL });
+
+	indicador.Add({ "Épocas","Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", indEpocas });
+	indicador.Add({ "Gerações","número de estados gerados", indGeracoes });
+	indAtivo.Add(indEpocas).Add(indGeracoes);
 }
 
 
@@ -53,13 +57,13 @@ void TProcuraMelhorativa::ResetParametros()
 // profundidade em que o sucessor e escolhido aleatoriamente e sem retrocesso (caso falhe o processo re-inicia)
 void TProcuraMelhorativa::NovaSolucao(void)
 {
-
+	geracoes++;
 }
 
 // Retorna o valor da solucao completa actual.
 int TProcuraMelhorativa::Avaliar(void)
 {
-	avaliacoes++;
+	iteracoes++;
 	return custo;
 }
 
@@ -67,8 +71,7 @@ int TProcuraMelhorativa::Avaliar(void)
 // Operador de vizinhanca (apenas em solucoes completas)
 void TProcuraMelhorativa::Vizinhanca(TVector<TPonto>& vizinhos)
 {
-	expansoes++;
-	geracoes+=vizinhos.Count();
+	geracoes += vizinhos.Count();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -86,19 +89,20 @@ int TProcuraMelhorativa::EscaladaDoMonte()
 	melhor->custo = atual->custo = Avaliar(); // avaliar o proprio estado
 	// estado atual distinto do melhor
 	atual = solucao = (TProcuraMelhorativa*)Duplicar();
-	while(!melhor->Parar()) { 
+	while (!melhor->Parar()) {
 		// iniciar uma escalada
+		epocas++;
 		// ponto de partida uma solução aleatória (local no espaço de soluções completas)
 		solucao->NovaSolucao();
 		atual->custo = solucao->Avaliar();
 		DebugInicioEM(++procuras, solucao);
 
-		while(!melhor->Parar()) { 
+		while (!melhor->Parar()) {
 			// ver de entre os vizinhos, qual o melhor, para avançar um degrau
 			TVector<TPonto> vizinhos;
 			bool alterado = false;
 			solucao->Vizinhanca(vizinhos);
-			if(movePrimeiro) {
+			if (movePrimeiro) {
 				// move logo que encontre um vizinho melhor
 				// (pode estar a ser ignorados vizinhos melhores)
 				while (vizinhos.Count() > 0) {
@@ -115,17 +119,18 @@ int TProcuraMelhorativa::EscaladaDoMonte()
 						vizinhos.Pop();
 					}
 				}
-			} else {
+			}
+			else {
 				// analisa todos os vizinhos e avança apenas para o melhor vizinho
 				int melhorValor, melhorIndice;
 				CalcularAvaliacoes(vizinhos, melhorValor, melhorIndice);
 				// trocar caso melhore
-				if(atual->custo > melhorValor) {
+				if (atual->custo > melhorValor) {
 					solucao = MelhorAtual(atual, vizinhos, melhorIndice);
 					VerificaMelhor(melhor, atual);
 					// novos vizinhos a partir do estado atual
 					alterado = true;
-				} 
+				}
 				// tudo explorado, libertar
 				LibertarVector(vizinhos);
 			}
@@ -135,7 +140,7 @@ int TProcuraMelhorativa::EscaladaDoMonte()
 				DebugOptimoLocal(solucao);
 				break; // recomeçar nova escalada
 			}
-			else 
+			else
 				DebugPassoEM(solucao);
 		}
 	}
@@ -162,7 +167,7 @@ void TProcuraMelhorativa::DebugOptimoLocal(TPonto solucao) {
 	}
 }
 
-void TProcuraMelhorativa::DebugInicioEM(int ID, TPonto solucao) 
+void TProcuraMelhorativa::DebugInicioEM(int ID, TPonto solucao)
 {
 	if (parametro[nivelDebug].valor > 1) {
 		if (parametro[nivelDebug].valor > 2)
@@ -196,7 +201,7 @@ void TProcuraMelhorativa::VerificaMelhor(TPonto& melhor, TPonto atual) {
 	}
 }
 
-TProcuraMelhorativa* TProcuraMelhorativa::MelhorAtual(TPonto&atual, TVector<TPonto>& vizinhos, int indice) {
+TProcuraMelhorativa* TProcuraMelhorativa::MelhorAtual(TPonto& atual, TVector<TPonto>& vizinhos, int indice) {
 	atual->Copiar(vizinhos[indice]);
 	atual->custo = vizinhos[indice]->custo;
 	LibertarVector(vizinhos);
@@ -229,8 +234,8 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 	TPonto melhor = this; // melhor estado para toda a procura
 	NovaSolucao();
 	melhor->Avaliar(); // avaliar o proprio
-	if(parametro[nivelDebug].valor > 1)
-		printf("\nPopulação inicial (%d elementos)",populacao);
+	if (parametro[nivelDebug].valor > 1)
+		printf("\nPopulação inicial (%d elementos)", populacao);
 	// construir a geracao inicial
 	for (int i = 0; i < populacao; i++) {
 		geracaoAntiga.Add((TPonto)Duplicar());
@@ -238,16 +243,16 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 		geracaoAntiga.Last()->Avaliar();
 		VerificaMelhor(melhor, geracaoAntiga.Last());
 	}
-	while(!melhor->Parar()) { 
+	while (!melhor->Parar()) {
 		// iniciar uma nova geração, com base na antiga
-		expansoes++;
+		epocas++;
 
 		////////////////////////////
 		// cruzar conforme o custo
 		////////////////////////////
-		int minimo,maximo,total;
+		int minimo, maximo, total;
 		TVector<int> probabilidade;
-		total=0;
+		total = 0;
 		ObterExtremos(geracaoAntiga, minimo, maximo);
 		DebugPassoAG(geracaoAntiga.Count(), minimo, maximo);
 		// calcular a probabilidade de um elemento ser selecionado
@@ -258,9 +263,9 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 			total += probabilidade.Last();
 		}
 		// gerar novos elementos. gera-se o doubro para poder seleccionar os melhores
-		while (geracaoNova.Count() < 2 * populacao) { 
+		while (geracaoNova.Count() < 2 * populacao) {
 			// escolher dois individuos aleatoriamente de acordo com as probabilidades
-			int pai, mae, mutou=0;
+			int pai, mae, mutou = 0;
 			Selecao(pai, mae, probabilidade, total);
 			// gerar um novo individuo por cruzamento
 			geracaoNova.Add((TPonto)Duplicar());
@@ -273,9 +278,9 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 			// avaliar o valor do elemento
 			geracaoNova.Last()->Avaliar();
 			DebugCruzamentoAG(
-				geracaoAntiga[pai]->custo, 
+				geracaoAntiga[pai]->custo,
 				geracaoAntiga[mae]->custo,
-				geracaoNova.Last()->custo, 
+				geracaoNova.Last()->custo,
 				mutou);
 			VerificaMelhor(melhor, geracaoNova.Last());
 		}
@@ -287,14 +292,14 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 		// remover os elementos que são muito parecidos
 		for (int i = 0; i < populacao && i < geracaoNova.Count(); i++) {
 			// verificar se ha outro elemento muito parecido la
-			if (i > 0 && distanciaMinima > 0) { 
+			if (i > 0 && distanciaMinima > 0) {
 				bool diferente = true;
 				for (int j = 0; j < geracaoAntiga.Count(); j++)
 					if (geracaoAntiga[j]->Distancia(geracaoNova[id[i]]) < distanciaMinima) {
 						diferente = false;
 						break;
 					}
-				if(!diferente)
+				if (!diferente)
 					continue;
 			}
 			// este elemento fica, passando para a geração antiga
@@ -314,7 +319,7 @@ void TProcuraMelhorativa::DebugCruzamentoAG(int gPai, int gMae, int gFilho, int 
 {
 	if (parametro[nivelDebug].valor > 2)
 		printf("\n  Cruzar g %d x %d -> %d%s",
-			gPai, gMae, gFilho, mutou?"*":"");
+			gPai, gMae, gFilho, mutou ? "*" : "");
 }
 
 void TProcuraMelhorativa::DebugPassoAG(int pop, int min, int max)
@@ -322,8 +327,8 @@ void TProcuraMelhorativa::DebugPassoAG(int pop, int min, int max)
 	if (parametro[nivelDebug].valor == 1)
 		printf(".");
 	else if (parametro[nivelDebug].valor >= 2)
-		printf("\nGeração %d #%d - %d|%d [%d-%d]", 
-			expansoes, pop, geracoes, avaliacoes, min, max);
+		printf("\nÉpoca %d #%d - %d|%d [%d-%d]",
+			epocas, pop, geracoes, iteracoes, min, max);
 }
 
 
@@ -366,59 +371,75 @@ void TProcuraMelhorativa::DebugMelhorEncontrado(TPonto ponto)
 		Debug();
 }
 
+int TProcuraMelhorativa::Indicador(int id)
+{
+	if (id == indEpocas)
+		return epocas;
+	else if (id == indGeracoes)
+		return geracoes;
+	return TProcura::Indicador(id);
+}
+
+void TProcuraMelhorativa::LimparEstatisticas(clock_t& inicio)
+{
+	TProcura::LimparEstatisticas(inicio);
+	geracoes = epocas = 0;
+}
+
 // Metodo para teste manual do objecto (chamadas aos algoritmos, construcao de uma solucao manual)
 // Este metodo destina-se a testes preliminares, e deve ser redefinido apenas se forem definidos novos algoritmos
-void TProcuraMelhorativa::TesteManual(const char *nome)
+void TProcuraMelhorativa::TesteManualX(const char* nome) /// provavelmente apagar
 {
 	clock_t inicio;
 	int selecao, resultado;
+	TVector<TResultado> resultados;
 	ResetParametros();
-	TRand::srand(parametro[seed].valor);
-	SolucaoVazia();
+	TRand::srand(Parametro(seed));
+	Inicializar();
 	LimparEstatisticas(inicio);
-	while(true) {
+	while (true) {
 		printf("\n%s (TProcuraMelhorativa)", nome);
 		MostraParametros();
-		printf("\n[Estatísticas] expansões %d | gerações %d | avaliações %d ",
-			expansoes, geracoes, avaliacoes);
 		Debug();
+		MostraRelatorio(resultados, true);
 		printf("\n\
 _______________________________________________________________________________\n\
 | 1 - Inicializar | 2 - Explorar   | 3 - Solução/Caminho |\n\
 | 4 - Parâmetros  | 5 - Executar   | 6 - Configurações   | 7 - Teste");
 		if ((selecao = NovoValor("\nOpção: ")) == NAO_LIDO)
 			return;
-		switch(Dominio(selecao, 0, 8)) {
-			case 0: return;
-			case 1: 
-				TRand::srand(parametro[seed].valor); 
-				SolicitaInstancia(); 
-				SolucaoVazia(); 
-				NovaSolucao(); 
-				Avaliar();
-				break;
-			case 2: 
-				ExplorarOperadores(); 
-				break;
-			case 3: MostrarSolucao(); break;
-			case 4: EditarParametros(); break;
-			case 5:
-				// executar um algoritmo 
-				LimparEstatisticas(inicio);
-				resultado = ExecutaAlgoritmo();
-				MostraParametros(0);
-				printf("\nResultado: %d", resultado);
-				FinalizarCorrida(inicio);
-				break;
-			case 6: EditarConfiguracoes(); break;
-			case 7:
-				TesteEmpirico(
-					NovoValor("Instância inicial: "),
-					NovoValor("Instancia final: "),
-					NovoValor("Mostrar soluções? "));
-				break;
-			case 8: return;
-			default: printf("\nOpção não definida."); break;
+		switch (Dominio(selecao, 0, 8)) {
+		case 0: return;
+		case 1:
+			TRand::srand(Parametro(seed));
+			SolicitaInstancia();
+			Inicializar();
+			NovaSolucao();
+			Avaliar();
+			break;
+		case 2:
+			Explorar();
+			break;
+		case 3: MostrarSolucao(); break;
+		case 4: EditarParametros(); break;
+		case 5:
+			// executar um algoritmo 
+			LimparEstatisticas(inicio);
+			resultado = ExecutaAlgoritmo();
+			MostraParametros(0);
+			printf("\nResultado: %d", resultado);
+			ExecucaoTerminada(inicio);
+			InserirRegisto(resultados, instancia.valor, 0);
+			break;
+		case 6: EditarConfiguracoes(); break;
+		case 7:
+			TesteEmpirico(
+				SolicitaInstancias(),
+				NovoValor("Mostrar soluções? "),
+				NovoTexto("Ficheiro (nada para mostrar no ecrã):"));
+			break;
+		case 8: return;
+		default: printf("\nOpção não definida."); break;
 		}
 	}
 }
@@ -426,14 +447,14 @@ _______________________________________________________________________________\
 int TProcuraMelhorativa::ExecutaAlgoritmo() {
 	if (parametro[algoritmo].valor <= 7)
 		return -1;
-	if(parametro[algoritmo].valor == 8)
-		return EscaladaDoMonte(); 
+	if (parametro[algoritmo].valor == 8)
+		return EscaladaDoMonte();
 	if (parametro[algoritmo].valor == 9)
 		return AlgoritmoGenetico();
 	return -1;
 }
 
-void TProcuraMelhorativa::ExplorarOperadores() {
+void TProcuraMelhorativa::Explorar() {
 	static int populacao = 1;
 	TVector<TPonto> elementos;
 	int melhorValor, melhorIndice;
@@ -461,7 +482,7 @@ void TProcuraMelhorativa::ExplorarOperadores() {
 				indA = NovoValor("") - 1;
 				elementos[Dominio(indA, 0, elementos.Count() - 1)]->Mutar();
 			}
-			else if(opcao == 2) { // cruzar
+			else if (opcao == 2) { // cruzar
 				printf("Pai [1-%d]: ", elementos.Count());
 				indA = NovoValor("") - 1;
 				printf("Mãe [1-%d]: ", elementos.Count());

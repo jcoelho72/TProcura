@@ -42,7 +42,7 @@ public:
 		nDamas = ((COitoDamas*)objecto)->nDamas;
 	}
 
-	void SolucaoVazia(void); 
+	void Inicializar(void);
 	bool SolucaoCompleta(void) { return damas.Count() == nDamas; }
 	void Debug(void);
 	void MostrarSolucao(void) { Debug(); }

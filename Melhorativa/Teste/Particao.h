@@ -44,7 +44,7 @@ public:
 		totalDireita = ((CParticao*)objecto)->totalDireita;
 		solCompleta = ((CParticao*)objecto)->solCompleta;
 	}
-	void SolucaoVazia(void);
+	void Inicializar(void);
 	void Debug(void);
 	void MostrarSolucao(void) { Debug(); }
 	void TesteManual(const char* nome);

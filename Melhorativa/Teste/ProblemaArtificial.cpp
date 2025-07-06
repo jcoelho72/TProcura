@@ -13,9 +13,9 @@ CProblemaArtificial::~CProblemaArtificial(void)
 {
 }
 
-void CProblemaArtificial::SolucaoVazia(void)
+void CProblemaArtificial::Inicializar(void)
 {
-	TProcura::SolucaoVazia();
+	TProcuraMelhorativa::Inicializar();
 	// acertar as variáveis estáticas, com a instância
 	CarregaInstancia();
 
@@ -41,8 +41,8 @@ void CProblemaArtificial::TesteManual(const char* nome)
 void CProblemaArtificial::ResetParametros() 
 {
 	TProcuraMelhorativa::ResetParametros();
-	// limitar as gerações, para que a paragem por tempo não ocorra
-	parametro[limiteGeracoes].valor = 1000000;
+	// limitar as iterações, para que a paragem por tempo não ocorra
+	parametro[limiteIteracoes].valor = 1000000;
 }
 
 bool CProblemaArtificial::Distinto(TPonto estado) {
