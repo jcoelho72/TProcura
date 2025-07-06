@@ -5,7 +5,7 @@ digraph "TProcuraConstrutiva::ResetParametros"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
-  Node1 [id="Node000001",label="TProcuraConstrutiva\l::ResetParametros",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Inicializa os parametros."];
+  Node1 [id="Node000001",label="TProcuraConstrutiva\l::ResetParametros",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Redefinição. Ver TProcura::ResetParametros()."];
   Node1 -> Node2 [id="edge8_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraAdversa::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1",tooltip="Método para inicializar os parâmetros (redefinir se forem adicionados parâmetros específicos)"];
   Node2 -> Node3 [id="edge9_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];

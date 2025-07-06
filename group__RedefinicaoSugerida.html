@@ -161,11 +161,11 @@ Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Inválida&quot;</span>;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00111">TProcuraConstrutiva.h:112</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na �ltima execu��o.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00464">TProcura.h:464</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na �ltima execu��o.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00459">TProcura.h:459</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCJogoEmLinha.html#a25eb875c5fb35543ab74161e94a75ad4">CJogoEmLinha</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00381">381</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00352">352</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -207,7 +207,7 @@ Here is the caller graph for this function:</div>
 Para otimizar o consumo de memória, são utilizadas hashtables com perdas. Se necessário pode alterar o tamanho da hashtable editando a macro TAMANHO_HASHTABLE </dd>
 <dd>
 a variável tamanhoCodificado tem de ter o número de variáveis de 64 bits utilizadas, garantindo que o vetor estado[] não é acedido na posição tamanhoCodificado ou superior.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>SolucaoVazia()</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__RedefinicaoMandatoria.html#ga2eabd047192d429686aeadf549136d44" title="Coloca o objecto no estado inicial da procura.">Inicializar()</a></dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> CSubProblema::Codifica(<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">uint64_t</a> estado[<a class="code hl_define" href="TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526">OBJETO_HASHTABLE</a>])</div>
 <div class="line">{</div>
 <div class="line">    <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">Vector&lt;int&gt;</a> <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">vetor</a>; <span class="comment">// assumindo neste exemplo que o estado é um vetor de inteiros pequenos</span></div>

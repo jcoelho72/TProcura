@@ -9,7 +9,7 @@ digraph "CJogoEmLinha::ResetParametros"
   Node1 -> Node2 [id="edge8_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraAdversa::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1",tooltip="Método para inicializar os parâmetros (redefinir se forem adicionados parâmetros específicos)"];
   Node2 -> Node3 [id="edge9_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraConstrutiva\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gacb15562d8776f4d162001d385ebc13a0",tooltip="Inicializa os parametros."];
+  Node3 [id="Node000003",label="TProcuraConstrutiva\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga65671e37d7c8da81c6a2143027166dd8",tooltip="Redefinição. Ver TProcura::ResetParametros()."];
   Node3 -> Node4 [id="edge10_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node4 -> Node5 [id="edge11_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];

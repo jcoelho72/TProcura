@@ -2,6 +2,11 @@
 \hypertarget{classCListaNo}{}\label{classCListaNo}\index{CListaNo@{CListaNo}}
 
 
+Lista ordenada de nós para algoritmos de procura informada.  
+
+
+
+
 {\ttfamily \#include $<$CLista\+No.\+h$>$}
 
 
@@ -12,34 +17,36 @@ Collaboration diagram for CLista\+No\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classCListaNo_a59d3a16d38befa0eac15777568b49708}{CLista\+No}} (int limite=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Construtor da lista de nós. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580}{\texorpdfstring{$\sim$}{\string~}\+CLista\+No}} ()
 \item 
 bool \mbox{\hyperlink{classCListaNo_a1895f082c5a47855d4cb6236b66fd8a0}{Completa}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Indica se a lista é completa (nunca foi limpa). \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCListaNo_aef59a51e58231841d16fa45aa7582328}{Valor}} (int i)
-\item 
+\begin{DoxyCompactList}\small\item\em Retorna o valor (Lower\+Bound) de um elemento. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}} (int i=-\/1)
-\item 
+\begin{DoxyCompactList}\small\item\em Retorna o próximo elemento na lista. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCListaNo_a9f8eef005ec0d5fae8d5075892d19273}{Proximo\+Distinto}} (int i=-\/1)
-\item 
+\begin{DoxyCompactList}\small\item\em Retorna o próximo elemento com custo distinto. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{classCListaNo_a41eb61b9b842b0052c119fe44b789ba8}{Estado}} (int i=-\/1)
-\item 
+\begin{DoxyCompactList}\small\item\em Retorna o estado armazenado no elemento. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classCListaNo_a7f8ea2bd2165fba49823cc35146f7981}{Inserir}} (\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} elemento, int id=0)
-\item 
+\begin{DoxyCompactList}\small\item\em Insere um novo estado na lista, por ordem de Lower\+Bound. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCListaNo_a487ec70de88cd34f0f4356b5d0144c72}{Inserir}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&elementos)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Insere vários estados na lista, por ordem. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{classCListaNo_a6074c0df152d3e84e9d187f3e980e647}{atual}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Índice do elemento atual a processar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Lista ordenada de nós para algoritmos de procura informada. 
 
+Utilizada nos algoritmos Custo\+Uniforme e AStar para gerir estados ordenados por custo. 
 
-Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00016}{16}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
+Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00023}{23}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
 
 
 
@@ -52,7 +59,16 @@ Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00016}{16}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00023}{23}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
+Construtor da lista de nós. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em limite} & Tamanho limite da lista (opcional). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00034}{34}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
 
 \Hypertarget{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580}\label{classCListaNo_a9b86dffe0ec5192bdb6dd45c5d0dc580} 
 \index{CListaNo@{CListaNo}!````~CListaNo@{\texorpdfstring{$\sim$}{\string~}CListaNo}}
@@ -75,7 +91,14 @@ Definition at line \mbox{\hyperlink{CListaNo_8cpp_source_l00003}{3}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00035}{35}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
+Indica se a lista é completa (nunca foi limpa). 
+
+\begin{DoxyReturn}{Returns}
+true se nunca foi limpa; false caso contrário. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00048}{48}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
 
 \Hypertarget{classCListaNo_a41eb61b9b842b0052c119fe44b789ba8}\label{classCListaNo_a41eb61b9b842b0052c119fe44b789ba8} 
 \index{CListaNo@{CListaNo}!Estado@{Estado}}
@@ -85,7 +108,19 @@ Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00035}{35}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00062}{62}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
+Retorna o estado armazenado no elemento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Índice do elemento (opcional). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o estado ou NULL se inválido. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00093}{93}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 1
@@ -97,6 +132,20 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{Inserir()}{Inserir()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily int CLista\+No\+::\+Inserir (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}}}]{elemento,  }\item[{int}]{id = {\ttfamily 0} }\end{DoxyParamCaption})}
 
+
+
+Insere um novo estado na lista, por ordem de Lower\+Bound. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elemento} & Estado a inserir. \\
+\hline
+{\em id} & ID associado (opcional). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Índice do primeiro elemento com o mesmo valor. 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{CListaNo_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{CListaNo_8cpp_source}{CLista\+No.\+cpp}}.
@@ -113,6 +162,15 @@ Here is the caller graph for this function\+:
 
 
 
+Insere vários estados na lista, por ordem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elementos} & Vetor de estados a inserir. \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line \mbox{\hyperlink{CListaNo_8cpp_source_l00136}{136}} of file \mbox{\hyperlink{CListaNo_8cpp_source}{CLista\+No.\+cpp}}.
 
 Here is the call graph for this function\+:
@@ -125,7 +183,19 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00046}{46}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
+Retorna o próximo elemento na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Índice de referência (opcional). Se não fornecido, usa o atual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Índice do próximo elemento ou -\/1 se não existir. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00067}{67}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 6
@@ -139,7 +209,19 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00054}{54}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
+Retorna o próximo elemento com custo distinto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Índice de referência (opcional). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Índice do próximo elemento distinto ou -\/1. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00080}{80}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 8
@@ -153,7 +235,19 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00038}{38}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
+Retorna o valor (Lower\+Bound) de um elemento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Índice do elemento. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor do elemento ou INT\+\_\+\+MAX se inválido. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00055}{55}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 10
@@ -170,7 +264,11 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00033}{33}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
+Índice do elemento atual a processar. 
+
+
+
+Definition at line \mbox{\hyperlink{CListaNo_8h_source_l00042}{42}} of file \mbox{\hyperlink{CListaNo_8h_source}{CLista\+No.\+h}}.
 
 
 

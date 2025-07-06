@@ -13,7 +13,7 @@ digraph "CParticao::Inicializar"
   Node1 -> Node4 [id="edge14_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
   Node1 -> Node5 [id="edge15_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraConstrutiva\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gabe88a701d18a8a9ac03a9ed65a101fed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node5 [id="Node000005",label="TProcuraConstrutiva\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga2eabd047192d429686aeadf549136d44",tooltip="Coloca o objecto no estado inicial da procura."];
   Node5 -> Node6 [id="edge16_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcura::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objecto no estado inicial da procura."];
   Node1 -> Node7 [id="edge17_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
