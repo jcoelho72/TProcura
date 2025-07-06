@@ -32,13 +32,13 @@ Biblioteca em C++ para **testes paramétricos** de algoritmos, e coleção de al
 \anchor s1
 ## Sobre o Projeto
 
-O **TProcura** nasceu para unificar testes paramétricos e implementação genérica de algoritmos de procura.  
-Em vez de alterar `#define` e recompilar a cada mudança de parâmetro, o framework:
+O **TProcura** junta testes paramétricos e implementação genérica de algoritmos de procura.  
+Em vez de alterar macros e recompilar a cada teste de mudança de parâmetros, propõe-se:
 
-- Propõe uma estrutura para uma lista de parâmetros, gerida na superclasse 
-- Gera automaticamente todas as combinações de parâmertros que o utilizador desejar 
-- Executa instâncias para cada combinação de parâmetros, e recolhe indicadores definidos  
-- Exporta resultados em CSV para análises em Excel, R ou Python  
+- Estrutura para uma lista de parâmetros, gerida na superclasse 
+- Gerar automaticamente todas as combinações de parâmertros que o utilizador desejar 
+- Executar instâncias para cada combinação de parâmetros, e recolhe indicadores definidos  
+- Exportar resultados em CSV para análises em Excel, R ou Python  
 
 A arquitetura baseia-se em superclasses que já implementam algoritmos de procura. O utilizador só precisa de:
 
