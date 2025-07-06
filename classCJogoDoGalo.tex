@@ -23,8 +23,8 @@ Collaboration diagram for CJogo\+Do\+Galo\+:
 \begin{DoxyCompactList}\small\item\em Cria um objecto que Ã© uma cÃ³pia deste. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_ae674e5a8774f6c0eb2533c68342e185f}{Copiar}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a6855d470bfeb593cb354e5b6be4514ad}{Solucao\+Vazia}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
-\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a7e865ab71c12b6fa618c83448283fda5}{Inicializar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb}{Sucessores}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessores}})
 \begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classCJogoDoGalo_a568b44d77521584132997a74bf557014}{Solucao\+Completa}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
@@ -152,7 +152,7 @@ Collaboration diagram for CJogo\+Do\+Galo\+:
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}}
 \begin{DoxyCompactList}\small\item\em NÃºmero de expansÃµes efetuadas. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga6185647765b723a3581b5541722e496f}{geracoes}}
-\begin{DoxyCompactList}\small\item\em NÃºmero de geraÃ§Ãµes efetuadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em NÃºmero de estados gerados. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}}}
 \begin{DoxyCompactItemize}
@@ -194,7 +194,7 @@ Collaboration diagram for CJogo\+Do\+Galo\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}} = \{ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}},1,1,1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}} \}
-\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em Solucao\+Vazia(). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \mbox{\hyperlink{classTProcura_a627ab6da33e9127360dd2f4fba836916}{ficheiro\+Instancia}} \mbox{[}256\mbox{]} = "{}instancia\+\_\+"{}
 \begin{DoxyCompactList}\small\item\em nome do ficheiro de uma instância -\/ editado pelo utilizador (utilizar como prefixo, concatenando com ID da instância) pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo que é chamado após a execução (pode gravar a solução para ficheiro também, mas essa é mais facilmente gravada em CVS codificada em inteiros, onde fica associada à configuração utilizada para a gerar) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}
@@ -428,7 +428,7 @@ Para otimizar o consumo de memÃ³ria, sÃ£o utilizadas hashtables com perdas. Se n
 a variÃ¡vel tamanho\+Codificado tem de ter o nÃºmero de variÃ¡veis de 64 bits utilizadas, garantindo que o vetor estado\mbox{[}\mbox{]} nÃ£o Ã© acedido na posiÃ§Ã£o tamanho\+Codificado ou superior.
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
-\doxylink{group__RedefinicaoMandatoria_ga2eabd047192d429686aeadf549136d44}{Inicializar()}
+\doxylink{classCJogoDoGalo_a7e865ab71c12b6fa618c83448283fda5}{Inicializar()}
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
@@ -607,6 +607,49 @@ Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00124}{124}} of file
 
 Here is the call graph for this function\+:
 % FIG 8
+\Hypertarget{classCJogoDoGalo_a7e865ab71c12b6fa618c83448283fda5}\label{classCJogoDoGalo_a7e865ab71c12b6fa618c83448283fda5} 
+\index{CJogoDoGalo@{CJogoDoGalo}!Inicializar@{Inicializar}}
+\index{Inicializar@{Inicializar}!CJogoDoGalo@{CJogoDoGalo}}
+\doxysubsubsection{\texorpdfstring{Inicializar()}{Inicializar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Inicializar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Coloca o objecto no estado inicial da procura. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método inicializa as variáveis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer ação ser realizada na procura. Caso existam dados de instância, deve neste método carregar a instância. A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
+
+\begin{DoxyNote}{Note}
+A variável instancia.\+valor, tem o ID da instância que deve ser carregada.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Inicializar(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{TProcura::Inicializar}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ pode/deve\ utilizar\ variável\ "{}ficheiroInstancia"{}\ concatenado\ com\ instancia.valor,\ com\ o\ ID\ da\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{TProcura}}.
+
+
+
+Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 9
 \Hypertarget{classCJogoDoGalo_a568b44d77521584132997a74bf557014}\label{classCJogoDoGalo_a568b44d77521584132997a74bf557014} 
 \index{CJogoDoGalo@{CJogoDoGalo}!SolucaoCompleta@{SolucaoCompleta}}
 \index{SolucaoCompleta@{SolucaoCompleta}!CJogoDoGalo@{CJogoDoGalo}}
@@ -646,18 +689,6 @@ Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga1f3e2b667881c
 Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00054}{54}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
 
 Here is the caller graph for this function\+:
-% FIG 9
-\Hypertarget{classCJogoDoGalo_a6855d470bfeb593cb354e5b6be4514ad}\label{classCJogoDoGalo_a6855d470bfeb593cb354e5b6be4514ad} 
-\index{CJogoDoGalo@{CJogoDoGalo}!SolucaoVazia@{SolucaoVazia}}
-\index{SolucaoVazia@{SolucaoVazia}!CJogoDoGalo@{CJogoDoGalo}}
-\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{JogoDoGalo_8cpp_source}{Jogo\+Do\+Galo.\+cpp}}.
-
-Here is the call graph for this function\+:
 % FIG 10
 \Hypertarget{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb}\label{classCJogoDoGalo_a00004ccf1fa3974c67e655291db65cfb} 
 \index{CJogoDoGalo@{CJogoDoGalo}!Sucessores@{Sucessores}}
@@ -775,8 +806,6 @@ Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00118}{118}} of file
 
 Here is the call graph for this function\+:
 % FIG 12
-Here is the caller graph for this function\+:
-% FIG 13
 
 
 \doxysubsection{Member Data Documentation}

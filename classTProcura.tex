@@ -69,7 +69,7 @@ Collaboration diagram for TProcura\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}} = \{ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}},1,1,1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}} \}
-\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em Solucao\+Vazia(). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \mbox{\hyperlink{classTProcura_a627ab6da33e9127360dd2f4fba836916}{ficheiro\+Instancia}} \mbox{[}256\mbox{]} = "{}instancia\+\_\+"{}
 \begin{DoxyCompactList}\small\item\em nome do ficheiro de uma instância -\/ editado pelo utilizador (utilizar como prefixo, concatenando com ID da instância) pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo que é chamado após a execução (pode gravar a solução para ficheiro também, mas essa é mais facilmente gravada em CVS codificada em inteiros, onde fica associada à configuração utilizada para a gerar) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}
@@ -484,7 +484,7 @@ definir para explorar manualmente os dados (não definido em \doxylink{classTProc
 
 
 
-Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_a9d8202d80510018d01a9807f3852b59f}{TProcura\+Construtiva}}.
+Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_a9d8202d80510018d01a9807f3852b59f}{TProcura\+Construtiva}}, and \mbox{\hyperlink{classTProcuraMelhorativa_a76355a263331719abacf13d40a6613d0}{TProcura\+Melhorativa}}.
 
 
 
@@ -581,7 +581,7 @@ Um indicador pode ser uma verificação da solução, ou qualquer outro procedimento
 \end{DoxyCode}
  
 
-Reimplemented in \mbox{\hyperlink{classCTesteTVector_a96292fcaf864cffca72e3486248309d1}{CTeste\+TVector}}, and \mbox{\hyperlink{group__RedefinicaoOpcional_gad8bb028ef31b04b7932be22ca0afbd3c}{TProcura\+Construtiva}}.
+Reimplemented in \mbox{\hyperlink{classCTesteTVector_a96292fcaf864cffca72e3486248309d1}{CTeste\+TVector}}, \mbox{\hyperlink{group__RedefinicaoOpcional_gad8bb028ef31b04b7932be22ca0afbd3c}{TProcura\+Construtiva}}, and \mbox{\hyperlink{classTProcuraMelhorativa_a374c86b7078e3da82bf07ea81574187a}{TProcura\+Melhorativa}}.
 
 
 
@@ -624,7 +624,7 @@ A variável instancia.\+valor, tem o ID da instância que deve ser carregada.
 \end{DoxyCode}
  
 
-Reimplemented in \mbox{\hyperlink{classCAspirador_af6547f44fce58ab6cac2387ea6e5a7a4}{CAspirador}}, \mbox{\hyperlink{classCOitoDamas_a48d0b8900af154394ad59db6d0d94214}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_a9398d7eb5af933dd64c50bb09bba6400}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_ac823cf847edbe9f32fb4cd2e2c462d10}{CProblema\+Artificial}}, \mbox{\hyperlink{classCPuzzle8_ab69d1a9a91d91b918ef43b102f78e5ed}{CPuzzle8}}, \mbox{\hyperlink{classCTesteTVector_ac0189d925fb44fbc3b2d0aad7660f528}{CTeste\+TVector}}, and \mbox{\hyperlink{group__RedefinicaoMandatoria_ga2eabd047192d429686aeadf549136d44}{TProcura\+Construtiva}}.
+Reimplemented in \mbox{\hyperlink{classCJogoDoGalo_a7e865ab71c12b6fa618c83448283fda5}{CJogo\+Do\+Galo}}, \mbox{\hyperlink{classCJogoEmLinha_acc2b5079f36c1853c0f16283a70b1450}{CJogo\+Em\+Linha}}, \mbox{\hyperlink{classCAspirador_af6547f44fce58ab6cac2387ea6e5a7a4}{CAspirador}}, \mbox{\hyperlink{classCOitoDamas_a48d0b8900af154394ad59db6d0d94214}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_a9398d7eb5af933dd64c50bb09bba6400}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_ac823cf847edbe9f32fb4cd2e2c462d10}{CProblema\+Artificial}}, \mbox{\hyperlink{classCPuzzle8_ab69d1a9a91d91b918ef43b102f78e5ed}{CPuzzle8}}, \mbox{\hyperlink{classCOitoDamas_a48d0b8900af154394ad59db6d0d94214}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_a9398d7eb5af933dd64c50bb09bba6400}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_ac823cf847edbe9f32fb4cd2e2c462d10}{CProblema\+Artificial}}, \mbox{\hyperlink{classCTesteTVector_ac0189d925fb44fbc3b2d0aad7660f528}{CTeste\+TVector}}, and \mbox{\hyperlink{group__RedefinicaoMandatoria_ga2eabd047192d429686aeadf549136d44}{TProcura\+Construtiva}}.
 
 
 
@@ -735,7 +735,7 @@ Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o inst
 
 
 
-Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{TProcura\+Construtiva}}.
+Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{TProcura\+Construtiva}}, and \mbox{\hyperlink{classTProcuraMelhorativa_a8819042bdad9134e99d2151918104a61}{TProcura\+Melhorativa}}.
 
 
 
@@ -1198,7 +1198,7 @@ Exemplo com a alteração do valor de omissão de um parametro, e adição de dois no
 \end{DoxyCode}
  
 
-Reimplemented in \mbox{\hyperlink{classCJogoEmLinha_a855791b2e19731340976157991d79293}{CJogo\+Em\+Linha}}, \mbox{\hyperlink{classTProcuraAdversa_aadc7ba5e844159862998d94e37a59bd1}{TProcura\+Adversa}}, \mbox{\hyperlink{classCAspirador_a7a0d35ab38ae4c5d9a941ca9b3845e4b}{CAspirador}}, \mbox{\hyperlink{classCOitoDamas_ae488eaff0a5ffaed4b98b5b730cbccdf}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_a7184defba91cfd68281cf63d0fee98c6}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{CProblema\+Artificial}}, \mbox{\hyperlink{classCPuzzle8_acb9cf571531e2ac8581bfe407b6a01b3}{CPuzzle8}}, \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{CProblema\+Artificial}}, \mbox{\hyperlink{classTProcuraMelhorativa_a631cd73e03b193d42055f2824b051591}{TProcura\+Melhorativa}}, \mbox{\hyperlink{classCTesteTVector_a043254ea1e70bf15e54d53cfd0043b94}{CTeste\+TVector}}, and \mbox{\hyperlink{group__RedefinicaoMandatoria_ga65671e37d7c8da81c6a2143027166dd8}{TProcura\+Construtiva}}.
+Reimplemented in \mbox{\hyperlink{classCJogoEmLinha_a855791b2e19731340976157991d79293}{CJogo\+Em\+Linha}}, \mbox{\hyperlink{classTProcuraAdversa_aadc7ba5e844159862998d94e37a59bd1}{TProcura\+Adversa}}, \mbox{\hyperlink{classCAspirador_a7a0d35ab38ae4c5d9a941ca9b3845e4b}{CAspirador}}, \mbox{\hyperlink{classCOitoDamas_ae488eaff0a5ffaed4b98b5b730cbccdf}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_a7184defba91cfd68281cf63d0fee98c6}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{CProblema\+Artificial}}, \mbox{\hyperlink{classCPuzzle8_acb9cf571531e2ac8581bfe407b6a01b3}{CPuzzle8}}, \mbox{\hyperlink{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}{CProblema\+Artificial}}, \mbox{\hyperlink{classCTesteTVector_a043254ea1e70bf15e54d53cfd0043b94}{CTeste\+TVector}}, \mbox{\hyperlink{group__RedefinicaoMandatoria_ga65671e37d7c8da81c6a2143027166dd8}{TProcura\+Construtiva}}, and \mbox{\hyperlink{classTProcuraMelhorativa_ad52a9ac59f07587d70dc696c0648fe62}{TProcura\+Melhorativa}}.
 
 
 
@@ -1347,7 +1347,7 @@ Esta função deve ser o ponto de entrada, a executar no main, caso não se utilize
 \end{DoxyCode}
  
 
-Reimplemented in \mbox{\hyperlink{classCJogoDoGalo_a113984a3801a93ebce61e0a700a413ab}{CJogo\+Do\+Galo}}, \mbox{\hyperlink{classCJogoEmLinha_ad289e94136b44c9e3e942acf64ff0449}{CJogo\+Em\+Linha}}, \mbox{\hyperlink{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_aa4d328b9944991f3fc52ce0726111865}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{CProblema\+Artificial}}, and \mbox{\hyperlink{classTProcuraMelhorativa_affabb3691e84b777ff368bf4a4e25286}{TProcura\+Melhorativa}}.
+Reimplemented in \mbox{\hyperlink{classCJogoDoGalo_a113984a3801a93ebce61e0a700a413ab}{CJogo\+Do\+Galo}}, \mbox{\hyperlink{classCJogoEmLinha_ad289e94136b44c9e3e942acf64ff0449}{CJogo\+Em\+Linha}}, \mbox{\hyperlink{classCOitoDamas_a0fb443165d257ac17fc8cf5bc870404d}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_aa4d328b9944991f3fc52ce0726111865}{CParticao}}, and \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{CProblema\+Artificial}}.
 
 
 
@@ -1426,7 +1426,7 @@ Definition at line \mbox{\hyperlink{TProcura_8h_source_l00454}{454}} of file \mb
 
 
 
-ID da instância atual, a ser utilizado em Solucao\+Vazia(). 
+ID da instância atual, a ser utilizado em \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{Solucao\+Vazia()}. 
 
 
 

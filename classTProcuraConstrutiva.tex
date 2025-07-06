@@ -123,7 +123,7 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}}
 \begin{DoxyCompactList}\small\item\em N√∫mero de expans√µes efetuadas. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga6185647765b723a3581b5541722e496f}{geracoes}}
-\begin{DoxyCompactList}\small\item\em N√∫mero de gera√ß√µes efetuadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em N√∫mero de estados gerados. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -143,7 +143,7 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}} = \{ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}},1,1,1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}} \}
-\begin{DoxyCompactList}\small\item\em ID da inst‚ncia atual, a ser utilizado em Solucao\+Vazia(). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em ID da inst‚ncia atual, a ser utilizado em \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \mbox{\hyperlink{classTProcura_a627ab6da33e9127360dd2f4fba836916}{ficheiro\+Instancia}} \mbox{[}256\mbox{]} = "{}instancia\+\_\+"{}
 \begin{DoxyCompactList}\small\item\em nome do ficheiro de uma inst‚ncia -\/ editado pelo utilizador (utilizar como prefixo, concatenando com ID da inst‚ncia) pode ser utilizado para gravar a inst„ncia num novo formato, colocando um indicador ativo que È chamado apÛs a execuÁ„o (pode gravar a soluÁ„o para ficheiro tambÈm, mas essa È mais facilmente gravada em CVS codificada em inteiros, onde fica associada ‡ configuraÁ„o utilizada para a gerar) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}
@@ -289,7 +289,7 @@ Esta classe base deve ser redefinida com um problema concreto, permitindo a exec
 Para utilizar a classe, √© necess√°rio\+:
 \begin{DoxyItemize}
 \item Redefinir os m√©todos de duplica√ß√£o e c√≥pia de estados (\doxylink{group__RedefinicaoMandatoria_gaf7c2483f38d11825c220b7a8d538a623}{Duplicar()} e \doxylink{group__RedefinicaoMandatoria_ga92eb7af76e68a20fe542afb459e7d642}{Copiar()}).
-\item Implementar fun√ß√µes essenciais de procura\+: Solucao\+Vazia(), \doxylink{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}{Solucao\+Completa()}, \doxylink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{Sucessores()} e \doxylink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{Debug()}.
+\item Implementar fun√ß√µes essenciais de procura\+: \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{Solucao\+Vazia()}, \doxylink{group__RedefinicaoMandatoria_ga1f3e2b667881c3e910ba372467645304}{Solucao\+Completa()}, \doxylink{group__RedefinicaoMandatoria_ga0a13570d2f5a21296e3c10c2780e170c}{Sucessores()} e \doxylink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{Debug()}.
 \end{DoxyItemize}
 
 Permite execu√ß√£o dos algoritmos\+:

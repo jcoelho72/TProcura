@@ -54,8 +54,8 @@ Collaboration diagram for CProblema\+Artificial\+:
 \begin{DoxyCompactList}\small\item\em Cria um objecto que Ã© uma cÃ³pia deste. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCProblemaArtificial_ac98a0fece8bc458a83fc03457614f6c4}{Copiar}} (\mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})
 \begin{DoxyCompactList}\small\item\em Fica com uma cÃ³pia do objecto. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCProblemaArtificial_ab8e6af484d17e145363d152536057697}{Solucao\+Vazia}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
-\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCProblemaArtificial_ac823cf847edbe9f32fb4cd2e2c462d10}{Inicializar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCProblemaArtificial_a17e7a8290910ffd1fe8a370228c6024b}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCProblemaArtificial_abaad629eb538177261df40e1e27e92ed}{Teste\+Manual}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
@@ -143,7 +143,7 @@ Collaboration diagram for CProblema\+Artificial\+:
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraMelhorativa_a115e9579ba7af129923b869b4c90ccec}{Acao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{acao}})
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a631cd73e03b193d42055f2824b051591}{Reset\+Parametros}} ()
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_ad52a9ac59f07587d70dc696c0648fe62}{Reset\+Parametros}} () \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Inicializa os parametros, indicadores e instâncias. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a764621b9d48b29d19b79d3e91d18c22f}{Vizinhanca}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vizinhos}})
 \item 
@@ -157,10 +157,14 @@ Collaboration diagram for CProblema\+Artificial\+:
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_a574d0ec15c8c1d3ded8db605def50616}{Algoritmo\+Genetico}} ()
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_affabb3691e84b777ff368bf4a4e25286}{Teste\+Manual}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
-\begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a509c1c270c2476fa8b548ee7d6cc120d}{Teste\+ManualX}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
+\begin{DoxyCompactList}\small\item\em provavelmente apagar \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a6fc03fc9e9379496303354d2b46b8bc8}{Debug\+Melhor\+Encontrado}} (\mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ponto}})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em provavalmente apagar \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_a374c86b7078e3da82bf07ea81574187a}{Indicador}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
+\begin{DoxyCompactList}\small\item\em RedefiniÃ§Ã£o. Ver \doxylink{classTProcura_a475d33545a5f5f1bbebf1365d730e4f0}{TProcura\+::\+Indicador()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a8819042bdad9134e99d2151918104a61}{Limpar\+Estatisticas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
+\begin{DoxyCompactList}\small\item\em Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -182,12 +186,16 @@ Collaboration diagram for CProblema\+Artificial\+:
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}}
 \begin{DoxyCompactList}\small\item\em NÃºmero de expansÃµes efetuadas. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga6185647765b723a3581b5541722e496f}{geracoes}}
-\begin{DoxyCompactList}\small\item\em NÃºmero de geraÃ§Ãµes efetuadas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em NÃºmero de estados gerados. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classTProcuraMelhorativa}{TProcura\+Melhorativa}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_aa910a310a7e8ac24403fa1194597793d}{custo}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Custo total, atualizada apÃ³s \doxylink{classTProcuraMelhorativa_a98b5a07fe3813de112f603c8fdb0bc43}{Avaliar()} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_af8e5dc608467eccc7569361cde5db236}{geracoes}}
+\begin{DoxyCompactList}\small\item\em NÃºmero de estados gerados. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_a19d678deb1731c4d96d7f114d8548ab9}{epocas}}
+\begin{DoxyCompactList}\small\item\em NÃºmero de Ã©pocas decorridas num algoritmo evolutivo. Uma Ã©poca Ã© uma geraÃ§Ã£o Ãºnica. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -212,7 +220,7 @@ Collaboration diagram for CProblema\+Artificial\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} \mbox{\hyperlink{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}{instancia}} = \{ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}},1,1,1, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}} \}
-\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em Solucao\+Vazia(). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em ID da instância atual, a ser utilizado em \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{Solucao\+Vazia()}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \mbox{\hyperlink{classTProcura_a627ab6da33e9127360dd2f4fba836916}{ficheiro\+Instancia}} \mbox{[}256\mbox{]} = "{}instancia\+\_\+"{}
 \begin{DoxyCompactList}\small\item\em nome do ficheiro de uma instância -\/ editado pelo utilizador (utilizar como prefixo, concatenando com ID da instância) pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo que é chamado após a execução (pode gravar a solução para ficheiro também, mas essa é mais facilmente gravada em CVS codificada em inteiros, onde fica associada à configuração utilizada para a gerar) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_aac9b452041c04268ab8dafdc7542dbf0}{TParametro}} $>$ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}
@@ -359,8 +367,8 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a1205807eb7d011896ddd38dc5675ab44}{Obter\+Extremos}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{min\+Custo}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&max\+Custo)
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_acbd613f2b7389bfa5f65512f566267e0}{Explorar\+Operadores}} ()
-\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a76355a263331719abacf13d40a6613d0}{Explorar}} () \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
+\begin{DoxyCompactList}\small\item\em definir para explorar manualmente os dados (não definido em \doxylink{classTProcura}{TProcura}, apenas em \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a28993c2953d882b21f3c456e5d1b7e47}{Libertar\+Vector}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vector}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{excepto}}=-\/1)
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_af101526489df420431d22477e317fb33}{Executa\+Algoritmo}} ()
@@ -911,7 +919,7 @@ Reimplemented from \mbox{\hyperlink{group__RedefinicaoSugerida_ga0e8bb1bd3368354
 \Hypertarget{classCProblemaArtificial_ac823cf847edbe9f32fb4cd2e2c462d10}\label{classCProblemaArtificial_ac823cf847edbe9f32fb4cd2e2c462d10} 
 \index{CProblemaArtificial@{CProblemaArtificial}!Inicializar@{Inicializar}}
 \index{Inicializar@{Inicializar}!CProblemaArtificial@{CProblemaArtificial}}
-\doxysubsubsection{\texorpdfstring{Inicializar()}{Inicializar()}}
+\doxysubsubsection{\texorpdfstring{Inicializar()}{Inicializar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CProblema\+Artificial\+::\+Inicializar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -951,6 +959,43 @@ Definition at line \mbox{\hyperlink{Construtiva_2Teste_2ProblemaArtificial_8cpp_
 
 Here is the call graph for this function\+:
 % FIG 11
+\Hypertarget{classCProblemaArtificial_ac823cf847edbe9f32fb4cd2e2c462d10}\label{classCProblemaArtificial_ac823cf847edbe9f32fb4cd2e2c462d10} 
+\index{CProblemaArtificial@{CProblemaArtificial}!Inicializar@{Inicializar}}
+\index{Inicializar@{Inicializar}!CProblemaArtificial@{CProblemaArtificial}}
+\doxysubsubsection{\texorpdfstring{Inicializar()}{Inicializar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CProblema\+Artificial\+::\+Inicializar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Coloca o objecto no estado inicial da procura. 
+
+\begin{DoxyNote}{Note}
+Obrigatória a redefinição.
+\end{DoxyNote}
+Este método inicializa as variáveis de estado no estado inicial vazio. Representa o estado inicial antes de qualquer ação ser realizada na procura. Caso existam dados de instância, deve neste método carregar a instância. A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
+
+\begin{DoxyNote}{Note}
+A variável instancia.\+valor, tem o ID da instância que deve ser carregada.
+\end{DoxyNote}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Inicializar(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{TProcura::Inicializar}}();}
+\DoxyCodeLine{\ \ \ \ \ \ \ \textcolor{comment}{//\ acertar\ as\ variáveis\ estáticas,\ com\ a\ instância\ (ID:\ instancia.valor)}}
+\DoxyCodeLine{\ \ \ \ \ \ \ CarregaInstancia();\ \textcolor{comment}{//\ exemplo\ de\ método\ em\ CSubProblema\ para\ carregar\ uma\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ pode/deve\ utilizar\ variável\ "{}ficheiroInstancia"{}\ concatenado\ com\ instancia.valor,\ com\ o\ ID\ da\ instância}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ inicializar\ todas\ as\ variáveis\ de\ estado}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Determinar\ o\ tamanho\ máximo\ do\ estado\ codificado,\ se\ aplicável}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanhoCodificado}}\ =\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Reimplemented from \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839f43}{TProcura}}.
+
 \Hypertarget{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d}\label{classCProblemaArtificial_ae1921242498265e8700ef8ae3b49dc5d} 
 \index{CProblemaArtificial@{CProblemaArtificial}!ResetParametros@{ResetParametros}}
 \index{ResetParametros@{ResetParametros}!CProblemaArtificial@{CProblemaArtificial}}
@@ -1125,16 +1170,6 @@ Reimplemented from \mbox{\hyperlink{group__RedefinicaoMandatoria_ga1f3e2b667881c
 
 Definition at line \mbox{\hyperlink{Construtiva_2Teste_2ProblemaArtificial_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{Construtiva_2Teste_2ProblemaArtificial_8cpp_source}{Problema\+Artificial.\+cpp}}.
 
-\Hypertarget{classCProblemaArtificial_ab8e6af484d17e145363d152536057697}\label{classCProblemaArtificial_ab8e6af484d17e145363d152536057697} 
-\index{CProblemaArtificial@{CProblemaArtificial}!SolucaoVazia@{SolucaoVazia}}
-\index{SolucaoVazia@{SolucaoVazia}!CProblemaArtificial@{CProblemaArtificial}}
-\doxysubsubsection{\texorpdfstring{SolucaoVazia()}{SolucaoVazia()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CProblema\+Artificial\+::\+Solucao\+Vazia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2ProblemaArtificial_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{Melhorativa_2Teste_2ProblemaArtificial_8cpp_source}{Problema\+Artificial.\+cpp}}.
-
 \Hypertarget{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c}\label{classCProblemaArtificial_a8ecd3995c8ce751d5da10cc20709175c} 
 \index{CProblemaArtificial@{CProblemaArtificial}!Sucessores@{Sucessores}}
 \index{Sucessores@{Sucessores}!CProblemaArtificial@{CProblemaArtificial}}
@@ -1251,8 +1286,6 @@ Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2ProblemaArtificial_8cpp_
 
 Here is the call graph for this function\+:
 % FIG 14
-Here is the caller graph for this function\+:
-% FIG 15
 
 
 \doxysubsection{Member Data Documentation}
