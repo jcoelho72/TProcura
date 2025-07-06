@@ -172,7 +172,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 		// separador/mudança de linha
 		if (i < nElementos - 1) {
 			if (detalhe > 1 || (i + 1) % (detalhe == 0 ? 10 : 5) == 0)
-				printf("\n");
+				printf("\n ");
 			else if (detalhe > 0)
 				printf(" | ");
 			else

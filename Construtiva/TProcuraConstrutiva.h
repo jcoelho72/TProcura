@@ -103,7 +103,7 @@ enum EEstadosRepetidos {
  * Permite execução dos algoritmos:
  * - **Cegos**: LarguraPrimeiro(), CustoUniforme(), ProfundidadePrimeiro() 
  * - **Informados**: MelhorPrimeiro(), AStar(), IDAStar(), BranchAndBound()
- * - **Testes e avaliação**: TesteManual(), TesteEmpirico()
+ * - **Testes e avaliação**: TesteManual(), TesteEmpirico() --- definidos em TProcura
  *
  * **Observação:** Alguns métodos e parâmetros terão efeito apenas se determinados métodos forem
  * redefinidos na subclasse.
@@ -227,7 +227,21 @@ public:
 	 * }
 	 * @endcode
 	 */
-	void Inicializar(void) { TProcura::Inicializar(); custo = 0; }
+
+	/**
+	 * @brief Redefinição. Ver TProcura::Inicializar().
+	 * @note Obrigatória a redefinição.
+	 *
+	 * Este método inicializa as variáveis de estado no estado inicial vazio.
+	 * Representa o estado inicial antes de qualquer ação ser realizada na procura.
+	 * 
+	 * @note Se a função Codifica() estiver implementada, o tamanho do estado codificado
+	 * deve ser determinado após o carregamento da instância, pois diferentes instâncias
+	 * podem exigir tamanhos distintos.
+	 *
+	 * @see Codifica()
+	 */
+	void Inicializar(void) override { TProcura::Inicializar(); custo = 0; }
 
 	/**
 	 * @brief Coloca em sucessores a lista de estados sucessores
@@ -292,53 +306,10 @@ public:
 	 */
 	virtual bool SolucaoCompleta(void) { return false; }
 
-
-	/**
-	 * @brief Inicializa os parametros
-	 * @note Redefinição necessária se forem adicionados novos parametros, ou for alterado
-	 * o valor de omissão de parametros existentes.
-	 *
-	 * Nesta função, a primeira instrução deverá ser a chamada da função da superclasse,
-	 * para que sejam criados os parametros da superclasse antes de qualquer outra instrução.
-	 *
-	 * Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos.
-	 * Nesta função, podem ser definidos estes valores de omissão, que se não forem alterados,
-	 * irá executar a configuração mais genérica.
-	 *
-	 * Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema.
-	 * Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar
-	 * em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
-	 *
-	 * @note Na criação de um novo parametro, dar uma estrutura TParametro.
-	 *
-	 * @note Ao adicionar novos parâmetros, é recomendável manter a enumeração sincronizada
-	 * com a da superclasse. O primeiro elemento deve ser `parametrosConstrutivos`,
-	 * garantindo que novas adições na superclasse sejam automaticamente refletidas aqui.
-	 *
-	 * @see TParametro
-	 *
-	 * Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros.
-	 * @code
-	 * // continuação da enumeração EParametrosConstrutiva
-	 * enum ESubProblema { opcaoHeur = parametrosConstrutivas, opcaoSuc };
-	 * void CSubProblema::ResetParametros(void)
-	 * {
-	 *     static const char* nomesSuc[] = { "todas", "contributo" }; // nomes para os valores de opcaoSuc
-	 *     // chamar primeiro o método na superclasse
-	 *     TProcuraConstrutiva::ResetParametros();
-	 *     // neste exemplo considerou-se que se pretende ver apenas estados completos, ignorando ações
-	 *     parametro[verAcoes].valor = 1;
-	 *
-	 *     // novo parametro para utilizar na função Heuristica()
-	 *     parametro.Add({ "Opção Heurística", 0,0,10,
-	 *         "explicação do que acontece na heuristica, com este parametro entre 0 e 10",NULL });
-	 *     // novo parametro para utilizar na função Sucessores()
-	 *     parametro.Add({ "Opção Sucessores", 0,0,1,
-	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc });
-	 * }
-	 * @endcode
-	 */
-	void ResetParametros();
+	 /**
+	  * @brief Redefinição. Ver TProcura::ResetParametros().
+	  */
+	void ResetParametros() override;
 
 	 /** @} */ // Fim do grupo RedefinicaoMandatoria
 
@@ -405,7 +376,7 @@ public:
 	 * @note a variável tamanhoCodificado tem de ter o número de variáveis de 64 bits utilizadas,
 	 * garantindo que o vetor estado[] não é acedido na posição tamanhoCodificado ou superior.
 	 * 
-	 * @see SolucaoVazia()
+	 * @see Inicializar()
 	 *
 	 * @code
 	 * void CSubProblema::Codifica(uint64_t estado[OBJETO_HASHTABLE])
@@ -550,8 +521,10 @@ public:
 	 */
 	int ExecutaAlgoritmo();
 
-	/// Calcula indicadores 
-	int Indicador(int id);
+	/**
+	 * @brief Redefinição. Ver TProcura::Indicador().
+	 */
+	int Indicador(int id) override;
 
 
 	/** @} */ // Fim do grupo RedefinicaoOpcional

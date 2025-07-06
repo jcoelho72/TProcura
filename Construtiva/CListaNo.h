@@ -4,22 +4,33 @@
 
 #include "TProcuraConstrutiva.h"
 
-// estrutura para índice a fazer a função de lista (em vetor), de modo a reduzir custos de inserção ordenada 
-// utilizado em CListaNo
+/**
+ * @brief Estrutura de índice para lista de estados.
+ *
+ * Utilizada internamente pela CListaNo para gerir a lista ordenada.
+ */
 typedef struct SIndice {
-	TNo estado; // elemento na lista
-	int prox; // próximo elemento da lista, pela ordem mantida (de custo)
-	int proxDistinto; // próximo elemento da lista com custo distinto
+	TNo estado;           ///< Estado armazenado.
+	int prox;             ///< Próximo elemento na lista (ordem por custo).
+	int proxDistinto;     ///< Próximo elemento na lista com custo distinto.
 } TIndice;
 
-// classe para manter lista ordenada de estados (CustoUniforme e AStar)
+/**
+ * @brief Lista ordenada de nós para algoritmos de procura informada.
+ *
+ * Utilizada nos algoritmos CustoUniforme e AStar para gerir estados ordenados por custo.
+ */
 class CListaNo {
 private:
-	int limite; // tamanho da lista, se !=0 --- tamanho vai até ao dobro, após o qual é limpa para metade dos elementos
-	TVector<TIndice> indice; // índice com a estrutura de lista
-	TVector<int> livre; // índices da lista apagados, que estão livres e podem ser utilizados
-	bool completa; // se verdade, nunca foi limpa, pelo que a lista é completa
+	int limite;                   ///< Tamanho da lista. Se !=0, a lista é limpa quando atinge o dobro deste valor.
+	TVector<TIndice> indice;      ///< Estrutura de índice para a lista.
+	TVector<int> livre;           ///< Índices livres para reutilização.
+	bool completa;                ///< Indica se a lista nunca foi limpa.
 public:
+	/**
+	 * @brief Construtor da lista de nós.
+	 * @param limite Tamanho limite da lista (opcional).
+	 */
 	CListaNo(int limite = 0) :
 		limite(limite),
 		indice(2 * limite),
@@ -28,13 +39,19 @@ public:
 		atual(0) {}
 	~CListaNo();
 
-	// elemento a ser processado 
-	// (anteriores a este, excepto o primeiro, podem ser apagados, quando há falta de espaço)
-	int atual;
+	int atual; ///< Índice do elemento atual a processar.
 
+	 /**
+	 * @brief Indica se a lista é completa (nunca foi limpa).
+	 * @return true se nunca foi limpa; false caso contrário.
+	 */
 	bool Completa() { return completa; }
 
-	// retorna o valor de um elemento
+	/**
+	 * @brief Retorna o valor (LowerBound) de um elemento.
+	 * @param i Índice do elemento.
+	 * @return Valor do elemento ou INT_MAX se inválido.
+	 */
 	int Valor(int i) {
 		TNo estado;
 		if ((estado = Estado(i)) != NULL)
@@ -42,7 +59,11 @@ public:
 		return INT_MAX;
 	}
 
-	// retorna o próximo elemento, ou -1 se não há mais
+	/**
+	 * @brief Retorna o próximo elemento na lista.
+	 * @param i Índice de referência (opcional). Se não fornecido, usa o atual.
+	 * @return Índice do próximo elemento ou -1 se não existir.
+	 */
 	int Proximo(int i = -1) {
 		if (i < 0)
 			return indice[atual].prox;
@@ -50,7 +71,12 @@ public:
 			return indice[i].prox;
 		return -1;
 	}
-	// este passo é crítico para poder inserir rapido numa lista ordenada com muitos elementos iguais
+
+	/**
+	 * @brief Retorna o próximo elemento com custo distinto.
+	 * @param i Índice de referência (opcional).
+	 * @return Índice do próximo elemento distinto ou -1.
+	 */
 	int ProximoDistinto(int i = -1) {
 		if (i < 0)
 			return indice[atual].proxDistinto;
@@ -58,7 +84,12 @@ public:
 			return indice[i].proxDistinto;
 		return -1;
 	}
-	// retorna o estado deste elemento
+
+	/**
+	 * @brief Retorna o estado armazenado no elemento.
+	 * @param i Índice do elemento (opcional).
+	 * @return Ponteiro para o estado ou NULL se inválido.
+	 */
 	TNo Estado(int i = -1) {
 		if (i < 0)
 			return indice[atual].estado;
@@ -67,11 +98,31 @@ public:
 		return NULL;
 	}
 
-	int Inserir(TNo elemento, int id = 0); // insere por ordem de LB, retorna o primeiro elemento com o mesmo valor
-	void Inserir(TVector<TNo>& elementos); // inserir todos os elementos por ordem (não alterar atual)
+	/**
+	 * @brief Insere um novo estado na lista, por ordem de LowerBound.
+	 * @param elemento Estado a inserir.
+	 * @param id ID associado (opcional).
+	 * @return Índice do primeiro elemento com o mesmo valor.
+	 */
+	int Inserir(TNo elemento, int id = 0); 
+
+	/**
+	 * @brief Insere vários estados na lista, por ordem.
+	 * @param elementos Vetor de estados a inserir.
+	 */
+	void Inserir(TVector<TNo>& elementos); 
 
 private:
-	int NovoElemento(TNo elemento); // retorna o índice onde foi inserido
+	/**
+	 * @brief Cria um novo elemento na lista.
+	 * @param elemento Estado a inserir.
+	 * @return Índice onde foi inserido.
+	 */
+	int NovoElemento(TNo elemento);
+
+	/// Liberta toda a lista (limpeza).
 	void LibertarLista();
+
+	/// Liberta o elemento seguinte ao ID fornecido.
 	void LibertarSeguinte(int id);
 };

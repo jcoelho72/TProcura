@@ -164,11 +164,6 @@ public:
 	 * A primeira instrução deverá chamar o método da superclasse, conforme modelo em baixo.
 	 *
 	 * @note A variável instancia.valor, tem o ID da instância que deve ser carregada.
-	 * @note Se a função Codifica() estiver implementada, o tamanho do estado codificado
-	 * deve ser determinado após o carregamento da instância, pois diferentes instâncias
-	 * podem exigir tamanhos distintos.
-	 *
-	 * @see Codifica()
 	 *
 	 * @code
 	 * void CSubProblema::Inicializar(void)
