@@ -139,12 +139,13 @@ ____________________________________________________________________\n\
 			InserirRegisto(resultados, instancia.valor, 0);
 			break;
 		case 7: EditarConfiguracoes(); break;
-		case 8:
-			TesteEmpirico(
-				SolicitaInstancias(),
-				NovoValor("Mostrar soluções? "),
-				NovoTexto("Ficheiro (nada para mostrar no ecrã):"));
+		case 8: {
+			TVector<int> instancias = SolicitaInstancias();
+			char* ficheiro = NovoTexto("Ficheiro (nada para mostrar no ecrã):");
+			int mostrarSol = NovoValor("Mostrar soluções? ");
+			TesteEmpirico(instancias, mostrarSol, ficheiro);
 			break;
+		}
 		case 9: return;
 		default: printf("\nOpção não definida."); break;
 		}
@@ -667,9 +668,10 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 		"   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores\n",
 		programa, programa
 	);
-	printf("Lista de parâmetros:\n");
+	ResetParametros();
+	printf("\nLista de parâmetros:");
 	MostraParametros(2);
-	printf("Lista de indicadores:\n");
+	printf("\n\nLista de indicadores:");
 	MostraIndicadores();
 }
 
@@ -719,10 +721,10 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 
 	TVector<TResultado> total; // totais por cada configuração
 	total.Count(configuracoes.Count());
-	for (auto item : total) {
-		item.instancia = item.configuracao = 0;
-		item.valor.Count(indicador.Count());
-		item.valor.Reset(0);
+	for (int i = 0; i < total.Count(); i++) {
+		total[i].instancia = total[i].configuracao = 0;
+		total[i].valor.Count(indicador.Count());
+		total[i].valor.Reset(0);
 	}
 
 	// mostrar os resultados dos indicadores escolhidos
@@ -769,9 +771,9 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 void TProcura::CalculaTorneio(TVector<TResultado>& resultados) {
 	TVector<TVector<int>> torneio; // pares de configurações: 1 melhor, 0 igual -1 pior
 	torneio.Count(configuracoes.Count());
-	for (auto item : torneio) {
-		item.Count(configuracoes.Count());
-		item.Reset(0);
+	for (int i = 0; i < torneio.Count(); i++) {
+		torneio[i].Count(configuracoes.Count());
+		torneio[i].Reset(0);
 	}
 	// registar resultados mediante o melhor resultado
 	for (int i = 0; i < configuracoes.Count(); i++) {

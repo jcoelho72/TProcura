@@ -18,6 +18,10 @@ TVector<TNo> TProcuraConstrutiva::caminho;
 TProcuraConstrutiva* TProcuraConstrutiva::solucao = NULL;
 // lowerBound: valor mínimo que a solução pode obter
 int TProcuraConstrutiva::lowerBound = 0;
+/// @brief Número de expansões efetuadas.
+int TProcuraConstrutiva::expansoes = 0;
+/// @brief Número de estados gerados.
+int TProcuraConstrutiva::geracoes = 0;
 
 
 // tamanho em inteiros de 64 bits de um objeto (inferior ou igual a OBJETO_HASHTABLE)
@@ -70,10 +74,13 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL });
 	parametro.Add({ "baralhar",0,0,1,
 		"Baralhar os sucessores ao expandir.",NULL });
 
-
+	indicador[indCusto].nome = "Custo";
+	indicador[indCusto].descricao = "o resultado é o custo da solução atual";
 	indicador.Add({ "Expansões","número de expansões efetuadas", indExpansoes });
 	indicador.Add({ "Gerações","número de estados gerados", indGeracoes });
-	indAtivo.Add(indExpansoes).Add(indGeracoes);
+	indicador.Add({ "Lower Bound","valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima",
+		indLowerBound });
+	indAtivo.Add(indExpansoes).Add(indGeracoes).Add(indLowerBound);
 }
 
 // Executa uma ação (movimento, passo, jogada, lance, etc.) no estado atual. Caso não seja feito nada, retornar falso.
@@ -914,10 +921,14 @@ void TProcuraConstrutiva::Codifica(uint64_t estado[OBJETO_HASHTABLE]) {
 
 int TProcuraConstrutiva::Indicador(int id)
 {
-	if (id == indExpansoes)
+	if (id == indCusto)
+		return custo;
+	else if (id == indExpansoes)
 		return expansoes;
 	else if (id == indGeracoes)
 		return geracoes;
+	else if (id == indLowerBound)
+		return lowerBound;
 	return TProcura::Indicador(id);
 }
 

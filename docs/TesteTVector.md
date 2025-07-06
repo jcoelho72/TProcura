@@ -86,9 +86,9 @@ Notar que a instância é exatamente a mesma, como se pode confirmar pelos núme
 O menu **2 - Explorar**, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para
 expplorar os dados. Esta função está definida para as subclasses de TProcura, para os métodos construtivos e melhorativos.
 Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, por que não, tentar resolvê-lo,
-e assim ganhar sensibilidade. Vamovs deixar esta exploração para os exemplos das subclasses.
+e assim ganhar sensibilidade. Vamos deixar esta exploração para os exemplos das subclasses.
 
-Notar que o menu é sempre visualizado, colocando-se o prompt "Opção:". Para evitar repetição, vamos omitar o menu no resto deste exemplo.
+Notar que o menu no modo interativo, é sempre visualizado, colocando-se o prompt "Opção:". Para evitar repetição, vamos omitar o menu no resto deste exemplo.
 
 ---
 
@@ -169,7 +169,7 @@ Ao alterar este parâmetro, o algoritmo, caso tenha condicionais sobre este par�
 Prevê-se estes níveis, em que o nível 1 deve apresentar apenas um caracter de tempos a tempos, de modo a confirmar-se que o algoritmo está a funcionar.
 No nível 2 deve-se dar a indicação do passo/iteração em que vai, ou grande passo, no caso do número de iterações ser elevado.
 No nível 3 detalhe, já é de esperar detalhe sobre todas as iterações.
-No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.~´
+No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.
 
 Estes níveis têm o intuito de poder observar bugs, caso existam. 
 Mas têm também um carácter didático, já que nas classes de procura, pode-se observar os algoritmos com o nível que se pretender.
@@ -224,7 +224,8 @@ Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 10516757
 
 Agora sim, podemos ver que os três primeiros e últimos números são completamente distintos. 
 
-Os outros dois parâmetros, o P4 Iterações, é um parâmetro genérico para limitar o número de iterações.
+Os outros dois parâmetros, o P4 Tempo, tem o tempo em segundos para o algoritmo executar,
+e P5 Iterações, é um parâmetro genérico para limitar o número de iterações.
 Como não temos nestes algoritmos definidas iterações, não iremos utilizar.
 
 O P6 é um parâmetro definido na classe CTesteTVector, e tem a estrutura em teste. Introduza: 3; 6.
@@ -261,7 +262,7 @@ O menu *4 - Solução* será ilustrado com um problema de procura, nestes métod
 \anchor tvector-a3
 ## Ação 3: Menu 6 - Executar
 
-Avançamos para o menu *6 - Executar*. Introlduza: 6.
+Avançamos para o menu *6 - Executar*. Introduza: 6.
 
 ```entrada
 Opção: 6
@@ -274,9 +275,9 @@ Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 21
 I1(Resultado): 1 | I2(Tempo(ms)): 82 | I3(Iterações): 1 | I4(Ordenado): 1
 ____________________________________________________________________
 ```
-Os valores dos parâmetros em modo curso são mostrawdos, e de seguida a execução é completada. 
+Os valores dos parâmetros em modo curso são mostrados, e de seguida a execução é completada. 
 Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura TVector.
-O estado do vetor é visivel os três priemiros e últimos elementos, podendo-se confirmar que estes estão por ordem.
+O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.
 
 Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadors, I1 a I4.
 
@@ -328,7 +329,7 @@ Alterar indicador:
 De omissão estão todos os indicadores ligados, e são chamados por ordem de ID. 
 No entanto, por vezes pretende-se verificar a solução, executando verificações/validações. 
 Outras vezes pretende-se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo.
-Pode-se ainda querer fazer ações após o algoritmo, de transofmração da solução, ou gravação da solução para ficheiro.
+Pode-se ainda querer fazer ações após o algoritmo, de transformação da solução, ou gravação da solução para ficheiro.
 
 Com os indicadores é possível definir as ações a executar após o algoritmo, por uma dada ordem, ou se uma dada ação irá ser
 executada ou não.
@@ -435,7 +436,7 @@ Podiamos ter indicado também com a notação por vírgulas, com 1,2,3,4,5,6,7,8
 Podemos misturar notações, por exemplo, podiamos especificar o conjunto 1:3,5:9:2,12, ou seja, os números 1,2,3,5,7,9,12.
 
 Se pretendermos alterar apenas o valor de um parâmetro k para V, colocamos Pk=V. 
-Se tiver dois ou mais números, então pretendemos variar a configujração atual.
+Se tiver dois ou mais números, então pretendemos variar a configuração atual.
 
 Vamos agora colocar dois parâmetros a variar em conjunto, ou seja, estamos interessados no produto externo.
 Introduza: P3=1:2 x P6=1:3.
@@ -512,110 +513,110 @@ Instância 2: DONE.
 Instância 3: DONE.
  ID |conf|  Ordenado| Tempo(ms)|
 ----|----|----------|----------|
-  1 |  1 |        1 |       87 |
-  2 |  1 |        1 |      203 |
-  3 |  1 |        1 |      283 |
-  1 |  2 |        1 |        4 |
-  2 |  2 |        1 |       12 |
-  3 |  2 |        1 |       10 |
-  1 |  3 |        1 |       11 |
-  2 |  3 |        1 |       21 |
-  3 |  3 |        1 |       53 |
-  1 |  4 |        1 |        1 |
-  2 |  4 |        1 |        0 |
-  3 |  4 |        1 |        1 |
-  1 |  5 |        1 |       78 |
-  2 |  5 |        1 |      178 |
-  3 |  5 |        1 |      268 |
-  1 |  6 |        1 |      175 |
-  2 |  6 |        1 |      344 |
-  3 |  6 |        1 |      618 |
-  1 |  7 |        1 |      237 |
-  2 |  7 |        1 |      526 |
-  3 |  7 |        1 |      801 |
-  1 |  8 |        1 |      243 |
-  2 |  8 |        1 |      352 |
-  3 |  8 |        1 |      521 |
-  1 |  9 |        1 |      182 |
-  2 |  9 |        1 |      367 |
-  3 |  9 |        1 |      574 |
-  1 | 10 |        1 |        1 |
-  2 | 10 |        1 |        1 |
-  3 | 10 |        1 |        1 |
-  1 | 11 |        1 |        1 |
-  2 | 11 |        1 |        1 |
-  3 | 11 |        1 |        2 |
-  1 | 12 |        1 |        0 |
-  2 | 12 |        1 |        0 |
-  3 | 12 |        1 |        0 |
-  1 | 13 |        1 |       86 |
-  2 | 13 |        1 |      160 |
-  3 | 13 |        1 |      284 |
-  1 | 14 |        1 |       91 |
-  2 | 14 |        1 |      180 |
-  3 | 14 |        1 |      305 |
-  1 | 15 |        1 |       92 |
-  2 | 15 |        1 |      181 |
-  3 | 15 |        1 |      283 |
-  1 | 16 |        1 |       80 |
-  2 | 16 |        1 |      176 |
-  3 | 16 |        1 |      296 |
-  1 | 17 |        1 |       82 |
-  2 | 17 |        1 |      168 |
-  3 | 17 |        1 |      262 |
+  1 |  1 |        1 |       80 |
+  2 |  1 |        1 |       10 |
+  3 |  1 |        1 |        9 |
+  1 |  2 |        0 |        4 |
+  2 |  2 |        0 |       12 |
+  3 |  2 |        0 |       13 |
+  1 |  3 |        0 |       56 |
+  2 |  3 |        0 |       70 |
+  3 |  3 |        0 |       57 |
+  1 |  4 |        0 |        1 |
+  2 |  4 |        0 |        1 |
+  3 |  4 |        0 |        1 |
+  1 |  5 |        1 |      284 |
+  2 |  5 |        1 |       39 |
+  3 |  5 |        1 |       45 |
+  1 |  6 |        1 |      132 |
+  2 |  6 |        1 |       52 |
+  3 |  6 |        1 |       58 |
+  1 |  7 |        1 |       54 |
+  2 |  7 |        1 |       56 |
+  3 |  7 |        1 |       70 |
+  1 |  8 |        1 |       37 |
+  2 |  8 |        1 |       47 |
+  3 |  8 |        1 |       44 |
+  1 |  9 |        1 |       56 |
+  2 |  9 |        1 |       18 |
+  3 |  9 |        1 |       17 |
+  1 | 10 |        1 |        0 |
+  2 | 10 |        1 |        0 |
+  3 | 10 |        1 |        0 |
+  1 | 11 |        0 |        1 |
+  2 | 11 |        0 |        2 |
+  3 | 11 |        0 |        4 |
+  1 | 12 |        0 |        0 |
+  2 | 12 |        0 |        0 |
+  3 | 12 |        0 |        0 |
+  1 | 13 |        1 |      244 |
+  2 | 13 |        1 |       31 |
+  3 | 13 |        1 |       31 |
+  1 | 14 |        1 |       30 |
+  2 | 14 |        1 |       31 |
+  3 | 14 |        1 |       52 |
+  1 | 15 |        1 |      285 |
+  2 | 15 |        1 |       27 |
+  3 | 15 |        1 |       29 |
+  1 | 16 |        1 |       78 |
+  2 | 16 |        1 |      163 |
+  3 | 16 |        1 |      271 |
+  1 | 17 |        1 |       78 |
+  2 | 17 |        1 |      171 |
+  3 | 17 |        1 |      267 |
 ----|----|----------|----------|resolvidas
-Total  1 |        3 |      573 | 3
-Total  2 |        3 |       26 | 3
-Total  3 |        3 |       85 | 3
-Total  4 |        3 |        2 | 3
-Total  5 |        3 |      524 | 3
-Total  6 |        3 |     1137 | 3
-Total  7 |        3 |     1564 | 3
-Total  8 |        3 |     1116 | 3
-Total  9 |        3 |     1123 | 3
-Total 10 |        3 |        3 | 3
-Total 11 |        3 |        4 | 3
-Total 12 |        3 |        0 | 3
-Total 13 |        3 |      530 | 3
-Total 14 |        3 |      576 | 3
-Total 15 |        3 |      556 | 3
-Total 16 |        3 |      552 | 3
-Total 17 |        3 |      512 | 3
+Total  1 |        3 |       99 | 3
+Total  2 |        0 |       29 | 3
+Total  3 |        0 |      183 | 3
+Total  4 |        0 |        3 | 3
+Total  5 |        3 |      368 | 3
+Total  6 |        3 |      242 | 3
+Total  7 |        3 |      180 | 3
+Total  8 |        3 |      128 | 3
+Total  9 |        3 |       91 | 3
+Total 10 |        3 |        0 | 3
+Total 11 |        0 |        7 | 3
+Total 12 |        0 |        0 | 3
+Total 13 |        3 |      306 | 3
+Total 14 |        3 |      113 | 3
+Total 15 |        3 |      341 | 3
+Total 16 |        3 |      512 | 3
+Total 17 |        3 |      516 | 3
 Torneio (#instâncias melhores):
  |-01-|-02-|-03-|-04-|-05-|-06-|-07-|-08-|-09-|-10-|-11-|-12-|-13-|-14-|-15-|-16-|-17-|
- 1    | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  2 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |  0 | -2
+ 1    |  0 |  0 |  0 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  7
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
- 2  2 |    |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26
+ 2  0 |    |  0 |  0 |  1 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  8
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
- 3  2 |  0 |    |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26
+ 3  0 |  0 |    |  0 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  1 |  2 |  6
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
- 4  2 |  0 |  0 |    |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26
+ 4  0 |  0 |  0 |    |  1 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  8
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
- 5  0 | -2 | -2 | -2 |    |  2 |  3 |  3 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |  0 | -1
+ 5 -1 | -1 | -1 | -1 |    | -1 | -1 | -1 | -1 | -1 | -1 | -1 |  0 | -1 |  0 |  1 |  1 |-10
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
- 6 -2 | -3 | -3 | -3 | -2 |    |  2 |  0 |  0 | -3 | -3 | -3 | -2 | -2 | -2 | -2 | -2 |-30
+ 6  0 | -1 |  0 | -1 |  1 |    |  0 |  0 |  0 | -1 | -1 | -1 |  1 | -1 |  1 |  2 |  2 |  1
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
- 7 -3 | -3 | -3 | -3 | -3 | -2 |    | -2 | -2 | -3 | -3 | -3 | -3 | -3 | -3 | -3 | -3 |-45
+ 7  0 |  0 |  0 |  0 |  1 |  0 |    |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  7
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
- 8 -3 | -3 | -3 | -3 | -3 |  0 |  2 |    |  0 | -3 | -3 | -3 | -3 | -3 | -3 | -3 | -3 |-37
+ 8  0 |  0 |  0 |  0 |  1 |  0 |  0 |    |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  7
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
- 9 -2 | -3 | -3 | -3 | -3 |  0 |  2 |  0 |    | -3 | -3 | -3 | -2 | -2 | -2 | -3 | -3 |-33
+ 9  0 |  0 |  0 |  0 |  1 |  0 |  0 |  0 |    |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  7
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-10  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |    |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26
+10  0 |  0 |  0 |  0 |  1 |  1 |  0 |  0 |  0 |    |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  8
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-11  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |    |  0 |  2 |  2 |  2 |  2 |  2 | 26
+11  0 |  0 |  0 |  0 |  1 |  1 |  0 |  0 |  0 |  0 |    |  0 |  1 |  0 |  1 |  2 |  2 |  8
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-12  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |    |  2 |  2 |  2 |  2 |  2 | 26
+12  0 |  0 |  0 |  0 |  1 |  1 |  0 |  0 |  0 |  0 |  0 |    |  1 |  0 |  1 |  2 |  2 |  8
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-13  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  2 | -2 | -2 | -2 |    |  0 |  0 |  0 |  0 | -2
+13 -1 | -1 | -1 | -1 |  0 | -1 | -1 | -1 | -1 | -1 | -1 | -1 |    | -1 |  0 |  1 |  1 |-10
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-14  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  2 | -2 | -2 | -2 |  0 |    |  0 |  0 |  0 | -2
+14  0 |  0 |  0 |  0 |  1 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |    |  1 |  2 |  2 |  8
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-15  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  2 | -2 | -2 | -2 |  0 |  0 |    |  0 |  0 | -2
+15 -1 | -1 | -1 | -1 |  0 | -1 | -1 | -1 | -1 | -1 | -1 | -1 |  0 | -1 |    |  1 |  1 |-10
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-16  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |    |  0 | -1
+16 -2 | -2 | -1 | -2 | -1 | -2 | -2 | -2 | -2 | -2 | -2 | -2 | -1 | -2 | -1 |    |  0 |-26
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
-17  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |    | -1
+17 -2 | -2 | -2 | -2 | -1 | -2 | -2 | -2 | -2 | -2 | -2 | -2 | -1 | -2 | -1 |  0 |    |-27
  |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
 Parâmetros comuns:
  P2(Debug): nada | P4(Tempo): 10 | P5(Iterações): 0
@@ -640,8 +641,8 @@ Parâmetros comuns:
 
 TVector
  P1(Método): Sort() | P2(Debug): nada | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): std::vector
-Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791
+ P6(Estrutura): std::vector
+Dados #3000000: -2147483260 -2147483145 -2147476511 ... 2147476201 2147479659 2147481540
 ____________________________________________________________________
 ```
 
@@ -649,11 +650,13 @@ Podemos ver que durante a execução, é mostrada a configuração atual, a inst
 No final são mostrados resultados para cada configuração e instância, agregasdos por configuração.
 Os indicadores selecionados fazem parte da tabela de resultados.
 
-É mostrando ainda um torneio entre configurações, para saber a que é mais rápida.
-Para permitir a reprodução, é mostrrado no final os valores exatos de cada configuração.
+Podemos ver que o indicador definido na subclasse, Ordenado, retorna 1 nos métodos cujo resultado final o vetor fica ordenado, e 0 nos restantes.
+
+É mostrado ainda um torneio entre configurações, para saber a que é mais rápida.
+Para permitir a reprodução e identificar eventuais enganos, é mostrado no final os valores exatos de cada configuração.
 
 Infelizmente, pouco podemos deduzir deste teste. 
-O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente corridas.
+O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente execuções com diversas configurações.
 Sabemos apenas que não há crash.
 
 Vamos formular uma pergunta. Pretendemos saber como varia o tempo na operação de ordenação, com o tamanho do vetor.
@@ -677,25 +680,24 @@ Instância 9: DONE.
 Instância 10: DONE.
  ID |conf| Resultado| Tempo(ms)| Iterações|  Ordenado|
 ----|----|----------|----------|----------|----------|
-  1 |  1 |        1 |       72 |        1 |        1 |
-  2 |  1 |        1 |      154 |        1 |        1 |
-  3 |  1 |        1 |      238 |        1 |        1 |
-  4 |  1 |        1 |      335 |        1 |        1 |
-  5 |  1 |        1 |      436 |        1 |        1 |
-  6 |  1 |        1 |      555 |        1 |        1 |
-  7 |  1 |        1 |      691 |        1 |        1 |
-  8 |  1 |        1 |      823 |        1 |        1 |
-  9 |  1 |        1 |     1145 |        1 |        1 |
- 10 |  1 |        1 |     1064 |        1 |        1 |
+  1 |  1 |        1 |       84 |        1 |        1 |
+  2 |  1 |        1 |      278 |        1 |        1 |
+  3 |  1 |        1 |      414 |        1 |        1 |
+  4 |  1 |        1 |      570 |        1 |        1 |
+  5 |  1 |        1 |      590 |        1 |        1 |
+  6 |  1 |        1 |      827 |        1 |        1 |
+  7 |  1 |        1 |      947 |        1 |        1 |
+  8 |  1 |        1 |     1111 |        1 |        1 |
+  9 |  1 |        1 |     1170 |        1 |        1 |
+ 10 |  1 |        1 |     1314 |        1 |        1 |
 ----|----|----------|----------|----------|----------|resolvidas
-Total  1 |       10 |     5513 |       10 |       10 | 10
+Total  1 |       10 |     7305 |       10 |       10 | 10
 ...
 ```
 Podemos ver que o tempo sobe, mas não de forma linear. 
-A instância 1 tem 1 milhão de valores, leva 72 milisegundos.
-A instância 10 tem 10 vezes mais tamanho, mas leva mais que 720 milisegundos, foi 1064.
-Notar que a instância 9 levou mais tempo. 
-Como houve uma só execução, esta situação pode ocorrer. 
+A instância 1 tem 1 milhão de valores, leva 84 milisegundos.
+A instância 10 tem 10 vezes mais tamanho, mas leva mais que 840 milisegundos, foi 1314.
+Foram execuções únicas, os valores podem variar demasiado.
 
 Vamos colocar 10 instâncias de cada tipo, variando a semente, para assim ter mais precisão. 
 Queremos desta vez ter os resultados no Excel.
@@ -724,7 +726,7 @@ Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -12
 ____________________________________________________________________
 ```
 
-Existe a indicação que o ficheiro resultado.csv foi gravado. Pode aceder aqui: ![resultados.csv](docs/images/resultados.csv)
+Existe a indicação que o ficheiro resultado.csv foi gravado. 
 
 O ficheiro está pronto para fazermos uma análise com os relatórios dinâmcios. 
 Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visivel o tempo crescente de forma estável, um pouco acima de linear.
@@ -755,16 +757,33 @@ Opções:
   -S              Mostrar soluções durante a execução
   -h              Esta ajuda
   -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
-Exemplo: C:\Work\Git\TProcura\x64\Release\TProcura.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
+Exemplo: TProcura.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
    Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
+
+Lista de parâmetros:
+ P1(Método): Add() (1 a 12)
+ P2(Debug): nada (0 a 4)
+ P3(Seed): 1 (1 a 1000000)
+ P4(Tempo): 10 (1 a 3600)
+ P5(Iterações): 0 (0 a 1000000000)
+ P6(Estrutura): TVector (1 a 3)
+
+Lista de indicadores:
+
+I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
+I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
+I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
+I4(Ordenado): 4º lugar (verifica se o indicador está ordenado)
 ```
+
+A lista completa de parametros e indicadores é também mostrada, para permitir saber o que se pode utilizar na definição das configurações de execução.
 
 Podemos assim reproduzir o teste anterior com a seguinte entrada.
 
-Linha de comando: TProcura.exe 1:10 -R resultados -P P1=2 P3=1:10
+Linha de comando: TProcura.exe 1:10 -R resultado2 -P P1=2 P3=1:10
 
 ```entrada
-PS ...\Teste> TProcura 1:10 -R resultados -P P1=2 P3=1:10
+PS ...\Teste> TProcura 1:10 -R resultado2 -P P1=2 P3=1:10
 
 Parâmetros comuns:
  P1=2 P2=0 P4=10 P5=0 P6=1
@@ -804,7 +823,7 @@ Instância 7: DONE.
 Instância 8: DONE.
 Instância 9: DONE.
 Instância 10: DONE.
-Ficheiro resultados.csv gravado.
+Ficheiro resultado2.csv gravado.
 ```
 
 Podemos agora processar o ficheiro e confirmar que tem resultados idênticos, com ligeiras variações no tempo.
@@ -822,7 +841,7 @@ Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métod
 
 ![resultadosTudo](docs/images/resultadosTudo.png)
 
-Segundo estes resultados, TVector tem até uma ligeira vantagem em termos de tempo. 
+Segundo estes resultados, TVector tem uma ligeira vantagem em termos de tempo na ordenação, mas é pior na união e outras operações, e no final há uma diferença de 1 segundo em 35. 
 Foram utilizadas instãncias pequenas para que o teste possa ser rápido.
 Em qualquer caso pode-se afirmar que não há uma perda muito grande por utilizar TVector em vez do código STL.
 
@@ -846,8 +865,11 @@ Que testes pode fazer para procurar dar uma resposta fundamentada?
 Deve procurar executar com instâncias de dimensão razoável, vamos utilziar a 10 que é a maior.
 Deve-se executar várias vezes, e apenas na operação de ordenação.
 Linha de comando: TProcura 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3
-As diferenças não são relevantes, pode-se ver que não apenas as médias, mas os tempos mínimos e máximos são idênticos. 
-Assim, os testes realizados não permitem aferir que um método é superior ao outro.
+Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo,
+certamente mais simples do TVector nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não,
+mas tudo indica que sim.
+Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, 
+ao contrário de um código que seja compilado na altura.
 
 ![resultadosSort](docs/images/resultadosSort.png)
 

@@ -20,9 +20,11 @@ class TProcuraConstrutiva;
 typedef TProcuraConstrutiva* TNo;
 
 enum EIndicadoresConstrutiva {
-	indExpansoes = indProcura, ///< número de expansões efetuadas durante a procura
-	indGeracoes,               ///< número de estados gerados durante a procura
-	indConstrutiva             ///< Marcador para permitir a extensão do enum em subclasses.
+	indCusto = indResultado,	  ///< o resultado é o custo da solução atual, sendo um upper bound 
+	indExpansoes = indProcura,    ///< número de expansões efetuadas durante a procura
+	indGeracoes,                  ///< número de estados gerados durante a procura
+	indLowerBound,			      ///< valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
+	indConstrutiva                ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
 /**
@@ -127,10 +129,6 @@ public:
 	int custo;
 	/// @brief Estimativa para o custo até um estado objetivo, se disponível.
 	int heuristica;
-	/// @brief Número de expansões efetuadas.
-	int expansoes;
-	/// @brief Número de estados gerados.
-	int geracoes;
 
 	/** @} */ // Fim do grupo VariaveisEstado 
 
@@ -688,6 +686,10 @@ public:
 	static int lowerBound;
 	/// @brief Número de inteiros de 64 bits utilizados para codificar um objeto (≤ OBJETO_HASHTABLE).
 	static int tamanhoCodificado;
+	/// @brief Número de expansões efetuadas.
+	static int expansoes;
+	/// @brief Número de estados gerados.
+	static int geracoes;
 
 	/// @internal Auxiliar para a construção da árvore de procura.
 	static TVector<unsigned char> ramo;
@@ -696,10 +698,10 @@ public:
 
 	/** @} */ // Fim do grupo VariaveisGlobais
 
-	void LimparEstatisticas(clock_t &inicio);
-	void ExecucaoTerminada(clock_t inicio);
+	void LimparEstatisticas(clock_t &inicio) override;
+	void ExecucaoTerminada(clock_t inicio) override;
 
-	int LowerBound() { return custo + parametro[pesoAStar].valor * heuristica / 100; } // f(n) = g(n) + W h(n)
+	int LowerBound() { return custo + Parametro(pesoAStar) * heuristica / 100; } // f(n) = g(n) + W h(n)
 	static void LibertarVector(TVector<TNo>& vector, int excepto = -1, int maiorQue = -1);
 
 	// Chamar sempre que se quer uma nova linha com a árvore em baixo
