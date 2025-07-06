@@ -41,7 +41,7 @@ public:
 	// Fica com uma cópia de objecto
 	void Copiar(TProcuraConstrutiva*objecto);
 	// Coloca o objecto no estado inicial da procura
-	void SolucaoVazia(void);
+	void Inicializar(void);
 	// Coloca em sucessores a lista de objectos sucessores (são alocados neste método e têm de ser apagados)
 	// O custo não necessita de ser preenchido, caso seja sempre unitário
 	// chamar o método desta classe após adicionar os sucessores para actualizar geracoes e expansoes

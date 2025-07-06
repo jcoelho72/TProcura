@@ -429,7 +429,7 @@ void TProcuraAdversa::TesteEmpirico(int inicio, int fim, bool mostrarSolucoes) {
 					clock_t inicioCorrida;
 					printf("\n Instância %d: ", instancia.valor);
 					// carregar instância
-					SolucaoVazia();
+					Inicializar();
 					// jogar ora de brancas ora de pretas, até o jogo terminar
 					while (!SolucaoCompleta()) {
 						ConfiguracaoAtual(configuracoes[njogada % 2 == 0 ? brancas : pretas], gravar);
@@ -483,16 +483,16 @@ void TProcuraAdversa::TesteEmpirico(int inicio, int fim, bool mostrarSolucoes) {
 	printf("\n");
 	ConfiguracaoAtual(atual, gravar);
 	instancia.valor = backupID;
-	TRand::srand(parametro[seed].valor);
-	SolucaoVazia();
+	TRand::srand(Parametro(seed));
+	Inicializar();
 }
 
 
 int TProcuraAdversa::ExecutaAlgoritmo() {
 	int resultado = -1;
-	if (parametro[ordenarSucessores].valor == 2) {
+	if (Parametro(ordenarSucessores) == 2) {
 		parametro[estadosRepetidos].valor = gerados;
-		if (reutilizadoAvaliacao > 0 && parametro[nivelDebug].valor >= 1) {
+		if (reutilizadoAvaliacao > 0 && Parametro(nivelDebug) >= 1) {
 			float taxa = 1.0 * reutilizadoAvaliacao / colocadosHT;
 			LimparHT();
 			printf(" HT: reutilização %.2f vezes ", taxa);
@@ -501,7 +501,7 @@ int TProcuraAdversa::ExecutaAlgoritmo() {
 		reutilizadoAvaliacao = 0;
 		parametro[estadosRepetidos].valor = ignorados;
 	}
-	switch (parametro[algoritmo].valor) {
+	switch (Parametro(algoritmo)) {
 	case 1: resultado = MiniMax(Dominio(parametro[limite].valor, 0)); break;
 	case 2: resultado = MiniMaxAlfaBeta(Dominio(parametro[limite].valor, 0)); break;
 	}

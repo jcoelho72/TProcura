@@ -31,7 +31,7 @@ void CJogoEmLinha::Copiar(TProcuraConstrutiva*objecto)
 }
 
 // Coloca o objecto no estado inicial da procura
-void CJogoEmLinha::SolucaoVazia(void)
+void CJogoEmLinha::Inicializar(void)
 {
 	TJogoEmLinha instancias[] = {
 		{3,3,3,regular}, // Jogo do Galo
@@ -46,7 +46,7 @@ void CJogoEmLinha::SolucaoVazia(void)
 		{6,12,12,regular}, // 6 em linha 12x12
 	};
 
-	TProcuraConstrutiva::SolucaoVazia();
+	TProcuraConstrutiva::Inicializar();
 	infinito = 10000;
 	minimizar = true;
 	inst = instancias[instancia.valor - 1];

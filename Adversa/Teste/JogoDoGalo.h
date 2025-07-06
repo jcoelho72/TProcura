@@ -25,7 +25,7 @@ public:
 
 	TProcuraConstrutiva* Duplicar(void);
 	void Copiar(TProcuraConstrutiva* objecto);
-	void SolucaoVazia(void);
+	void Inicializar(void);
 	void Sucessores(TVector<TNo>&sucessores);
 	bool SolucaoCompleta(void);
 	void Debug(void);
