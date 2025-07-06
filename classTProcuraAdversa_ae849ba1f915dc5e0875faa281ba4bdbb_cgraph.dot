@@ -124,7 +124,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node47 [id="Node000047",label="TProcura::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objecto no estado inicial da procura."];
   Node1 -> Node25 [id="edge171_Node000001_Node000025",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node48 [id="edge172_Node000001_Node000048",color="steelblue1",style="solid",tooltip=" "];
-  Node48 [id="Node000048",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
+  Node48 [id="Node000048",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#aa882dc14d5e9fa3033e6924293c7c246",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
   Node48 -> Node6 [id="edge173_Node000048_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node48 -> Node49 [id="edge174_Node000048_Node000049",color="steelblue1",style="solid",tooltip=" "];
   Node49 [id="Node000049",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ad0506a4e5c70623f42bb1c3f2d8c1eb6",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];

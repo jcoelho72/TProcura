@@ -21,7 +21,7 @@ digraph "TProcuraConstrutiva::Copiar"
   Node6 -> Node8 [id="edge30_Node000006_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="CParticao::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a54bc83b93ee7996d8203192c45f3f486",tooltip=" "];
   Node1 -> Node9 [id="edge31_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TProcuraConstrutiva\l::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ad8ae18693dd91bd4a6b2ce960be5678f",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
+  Node9 [id="Node000009",label="TProcuraConstrutiva\l::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a43c6ec9acbb9f9ce77c4628bf54b7da2",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
   Node1 -> Node10 [id="edge32_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node1 -> Node11 [id="edge33_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];

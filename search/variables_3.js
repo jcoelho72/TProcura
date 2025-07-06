@@ -8,5 +8,5 @@ var searchData=
   ['esquerda_5',['esquerda',['../classCParticao.html#a5a3b0c754776ffb416c8d0e3833ef4ec',1,'CParticao']]],
   ['estado_6',['estado',['../structSIndice.html#a71d6cd112fe2f89c710603ad37ded5bf',1,'SIndice']]],
   ['estadocodht_7',['estadoCodHT',['../classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999',1,'TProcuraConstrutiva']]],
-  ['expansoes_8',['expansoes',['../group__VariaveisEstado.html#ga198a1f8ed90785a1c3f112a3468a2d74',1,'TProcuraConstrutiva']]]
+  ['expansoes_8',['expansoes',['../group__VariaveisGlobais.html#ga198a1f8ed90785a1c3f112a3468a2d74',1,'TProcuraConstrutiva']]]
 ];

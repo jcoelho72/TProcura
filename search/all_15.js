@@ -9,7 +9,7 @@ var searchData=
   ['limite_6',['limite',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2085656f32afbd50512cd8364689405f',1,'TProcuraConstrutiva.h']]],
   ['limiteiteracoes_7',['limiteIteracoes',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6af437d05ff169dbc6ab8ff59417b5e639',1,'TProcura.h']]],
   ['limitetempo_8',['limiteTempo',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245',1,'TProcura.h']]],
-  ['limparestatisticas_9',['limparestatisticas',['../classTProcura.html#ad0506a4e5c70623f42bb1c3f2d8c1eb6',1,'TProcura::LimparEstatisticas()'],['../classTProcuraMelhorativa.html#a8819042bdad9134e99d2151918104a61',1,'TProcuraMelhorativa::LimparEstatisticas()'],['../classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f',1,'TProcuraConstrutiva::LimparEstatisticas(clock_t &amp;inicio)']]],
+  ['limparestatisticas_9',['limparestatisticas',['../classTProcura.html#ad0506a4e5c70623f42bb1c3f2d8c1eb6',1,'TProcura::LimparEstatisticas()'],['../classTProcuraMelhorativa.html#a8819042bdad9134e99d2151918104a61',1,'TProcuraMelhorativa::LimparEstatisticas()'],['../classTProcuraConstrutiva.html#aa882dc14d5e9fa3033e6924293c7c246',1,'TProcuraConstrutiva::LimparEstatisticas(clock_t &amp;inicio) override']]],
   ['limparht_10',['LimparHT',['../classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c',1,'TProcuraConstrutiva']]],
   ['linha_11',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
   ['linha_20de_20comando_12',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md72',1,'']]],

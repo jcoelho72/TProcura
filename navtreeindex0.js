@@ -101,9 +101,11 @@ var NAVTREEINDEX0 =
 "TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a9134cb6bb0bc15d0e6f16f4224071540":[3,0,1,4,8,6],
 "TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058ad2126792378161b062dfd8598996995d":[3,0,1,4,8,5],
 "TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9":[3,0,1,4,7],
-"TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9a3f5ce532e96164730270739fa9473fb5":[3,0,1,4,7,0],
-"TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9aba9f465f8ec1b7ad267c21ebf56e3d7f":[3,0,1,4,7,1],
-"TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9ad0eca504c2f694ec07b362cd530496b7":[3,0,1,4,7,2],
+"TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9a3f5ce532e96164730270739fa9473fb5":[3,0,1,4,7,1],
+"TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9a818d1291f773148c729736e175d32605":[3,0,1,4,7,0],
+"TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9aba9f465f8ec1b7ad267c21ebf56e3d7f":[3,0,1,4,7,2],
+"TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9ad0eca504c2f694ec07b362cd530496b7":[3,0,1,4,7,4],
+"TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9aee656607f296f8dd902befd18962b7b4":[3,0,1,4,7,3],
 "TProcuraConstrutiva_8h.html#a510f7055614397eeab21f50df58cc9b8":[3,0,1,4,4],
 "TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88":[3,0,1,4,6],
 "TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88a108490c84e0c9531ca7c3d10979350d7":[3,0,1,4,6,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "classCOitoDamas.html#a0e4d6e25bdbccb703b39604d286e62bf":[2,0,4,6],
 "classCOitoDamas.html#a0fb443165d257ac17fc8cf5bc870404d":[2,0,4,25],
 "classCOitoDamas.html#a1d576da54373b82c1eb9c3a34c056079":[2,0,4,9],
-"classCOitoDamas.html#a220a570b326344f1bce4f4cb4cde2ed9":[2,0,4,4],
-"classCOitoDamas.html#a2249a5984a16e9648370eec2c5034182":[2,0,4,7],
-"classCOitoDamas.html#a36a173575d8f6bd1815989a7a26b7440":[2,0,4,14]
+"classCOitoDamas.html#a220a570b326344f1bce4f4cb4cde2ed9":[2,0,4,4]
 };

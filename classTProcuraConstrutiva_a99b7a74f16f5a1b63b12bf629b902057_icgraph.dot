@@ -22,7 +22,7 @@ digraph "TProcuraConstrutiva::SubstituirHT"
   Node8 [id="Node000008",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node6 -> Node6 [id="edge62_Node000006_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 -> Node9 [id="edge63_Node000003_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
+  Node9 [id="Node000009",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#aa882dc14d5e9fa3033e6924293c7c246",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
   Node9 -> Node8 [id="edge64_Node000009_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node9 -> Node5 [id="edge65_Node000009_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 -> Node10 [id="edge66_Node000003_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];

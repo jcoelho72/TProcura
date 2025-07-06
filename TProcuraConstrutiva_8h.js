@@ -20,8 +20,10 @@ var TProcuraConstrutiva_8h =
       [ "gerados", "TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88a4aa088e08a81ab94810f6ec37d998c7a", null ]
     ] ],
     [ "EIndicadoresConstrutiva", "TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9", [
+      [ "indCusto", "TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9a818d1291f773148c729736e175d32605", null ],
       [ "indExpansoes", "TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9a3f5ce532e96164730270739fa9473fb5", null ],
       [ "indGeracoes", "TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9aba9f465f8ec1b7ad267c21ebf56e3d7f", null ],
+      [ "indLowerBound", "TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9aee656607f296f8dd902befd18962b7b4", null ],
       [ "indConstrutiva", "TProcuraConstrutiva_8h.html#a44000b0a177c28d4ca1470694cdf98f9ad0eca504c2f694ec07b362cd530496b7", null ]
     ] ],
     [ "EParametrosConstrutiva", "TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058", [

@@ -7,15 +7,15 @@ digraph "TProcura::LimparEstatisticas"
   rankdir="RL";
   Node1 [id="Node000001",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
   Node1 -> Node2 [id="edge18_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
+  Node2 [id="Node000002",label="TProcuraMelhorativa\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a8819042bdad9134e99d2151918104a61",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
   Node2 -> Node3 [id="edge19_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
-  Node2 -> Node4 [id="edge20_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ae849ba1f915dc5e0875faa281ba4bdbb",tooltip=" "];
-  Node1 -> Node5 [id="edge21_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraMelhorativa\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a8819042bdad9134e99d2151918104a61",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
-  Node5 -> Node6 [id="edge22_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcuraMelhorativa\l::TesteManualX",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a509c1c270c2476fa8b548ee7d6cc120d",tooltip="provavelmente apagar"];
+  Node3 [id="Node000003",label="TProcuraMelhorativa\l::TesteManualX",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a509c1c270c2476fa8b548ee7d6cc120d",tooltip="provavelmente apagar"];
+  Node1 -> Node4 [id="edge20_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#aa882dc14d5e9fa3033e6924293c7c246",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
+  Node4 -> Node5 [id="edge21_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node4 -> Node6 [id="edge22_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ae849ba1f915dc5e0875faa281ba4bdbb",tooltip=" "];
   Node1 -> Node7 [id="edge23_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afcfe280771c67c80a69d422c476ae090",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node7 -> Node8 [id="edge24_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -35,6 +35,6 @@ digraph "TProcura::LimparEstatisticas"
   Node14 [id="Node000014",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip="Inicializa a interação com o utilizador."];
   Node10 -> Node15 [id="edge32_Node000010_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
-  Node7 -> Node6 [id="edge33_Node000007_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node3 [id="edge33_Node000007_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node10 [id="edge34_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

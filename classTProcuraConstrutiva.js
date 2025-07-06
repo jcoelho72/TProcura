@@ -22,7 +22,7 @@ var classTProcuraConstrutiva =
     [ "DebugSucessores", "classTProcuraConstrutiva.html#a08aa14ddc895426b2ce3df4d763cbbd7", null ],
     [ "Distinto", "group__RedefinicaoOpcional.html#ga1cf2a30e496ea869e85a9d60b4d469e9", null ],
     [ "Duplicar", "group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623", null ],
-    [ "ExecucaoTerminada", "classTProcuraConstrutiva.html#ad8ae18693dd91bd4a6b2ce960be5678f", null ],
+    [ "ExecucaoTerminada", "classTProcuraConstrutiva.html#a43c6ec9acbb9f9ce77c4628bf54b7da2", null ],
     [ "ExecutaAlgoritmo", "group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3", null ],
     [ "ExisteHT", "classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac", null ],
     [ "Explorar", "classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f", null ],
@@ -32,7 +32,7 @@ var classTProcuraConstrutiva =
     [ "Indicador", "group__RedefinicaoOpcional.html#gad8bb028ef31b04b7932be22ca0afbd3c", null ],
     [ "Inicializar", "group__RedefinicaoMandatoria.html#ga2eabd047192d429686aeadf549136d44", null ],
     [ "LarguraPrimeiro", "group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0", null ],
-    [ "LimparEstatisticas", "classTProcuraConstrutiva.html#ae254bbde1b2e36391d575fc2836fea7f", null ],
+    [ "LimparEstatisticas", "classTProcuraConstrutiva.html#aa882dc14d5e9fa3033e6924293c7c246", null ],
     [ "LimparHT", "classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c", null ],
     [ "LowerBound", "classTProcuraConstrutiva.html#a5f021041a7dfe1b68890d9e5f5f0e6f4", null ],
     [ "MelhorPrimeiro", "group__ProcurasInformadas.html#gaebb84182343041bc276e4ceceb4b13aa", null ],
@@ -50,8 +50,6 @@ var classTProcuraConstrutiva =
     [ "Sucessores", "group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c", null ],
     [ "VerificaLimites", "classTProcuraConstrutiva.html#aec0a667a7fda1ebe565ba13d6b02805a", null ],
     [ "custo", "group__VariaveisEstado.html#ga2ee0de16d01f9520b20807f900bf69d0", null ],
-    [ "expansoes", "group__VariaveisEstado.html#ga198a1f8ed90785a1c3f112a3468a2d74", null ],
-    [ "geracoes", "group__VariaveisEstado.html#ga6185647765b723a3581b5541722e496f", null ],
     [ "heuristica", "group__VariaveisEstado.html#ga1703a3b3ed01aa7742846d296aad112d", null ],
     [ "pai", "group__VariaveisEstado.html#ga70de69abaeaa64262d4bd042ef01e62c", null ]
 ];

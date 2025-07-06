@@ -66,9 +66,9 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \begin{DoxyCompactList}\small\item\em Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{upper\+Bound}}=0)
 \begin{DoxyCompactList}\small\item\em Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{Limpar\+Estatisticas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_aa882dc14d5e9fa3033e6924293c7c246}{Limpar\+Estatisticas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Chapar antes da execu��o do algoritmo. Limpa valores estat�sticos, e fixa o instante limite de tempo para a execu��o. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ad8ae18693dd91bd4a6b2ce960be5678f}{Execucao\+Terminada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a43c6ec9acbb9f9ce77c4628bf54b7da2}{Execucao\+Terminada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Chamar ap�s a execu��o do algoritmo. Grava o tempo consumido. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}{Lower\+Bound}} ()
 \item 
@@ -119,11 +119,7 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}}
 \begin{DoxyCompactList}\small\item\em Custo total acumulado desde o estado inicial. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}
-\begin{DoxyCompactList}\small\item\em Estimativa para o custo até um estado objetivo, se disponível. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}}
-\begin{DoxyCompactList}\small\item\em Número de expansões efetuadas. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga6185647765b723a3581b5541722e496f}{geracoes}}
-\begin{DoxyCompactList}\small\item\em Número de estados gerados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Estimativa para o custo até um estado objetivo, se disponível. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -135,6 +131,10 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \begin{DoxyCompactList}\small\item\em Valor mínimo que a solução pode apresentar, obtido pela procura. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanho\+Codificado}} = \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}
 \begin{DoxyCompactList}\small\item\em Número de inteiros de 64 bits utilizados para codificar um objeto (≤ OBJETO\+\_\+\+HASHTABLE). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}} = 0
+\begin{DoxyCompactList}\small\item\em Número de expansões efetuadas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga6185647765b723a3581b5541722e496f}{geracoes}} = 0
+\begin{DoxyCompactList}\small\item\em Número de estados gerados. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{unsigned}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}{espacos\+Ramo}} = 2
@@ -301,7 +301,7 @@ Permite execução dos algoritmos\+:
 
 {\bfseries{Observação\+:}} Alguns métodos e parâmetros terão efeito apenas se determinados métodos forem redefinidos na subclasse. 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00111}{111}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00113}{113}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 
 
@@ -314,7 +314,7 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00111}{111}} 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 \Hypertarget{classTProcuraConstrutiva_aa19cbee6023bd0ff01c61c6d6db2e2ae}\label{classTProcuraConstrutiva_aa19cbee6023bd0ff01c61c6d6db2e2ae} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!````~TProcuraConstrutiva@{\texorpdfstring{$\sim$}{\string~}TProcuraConstrutiva}}
@@ -324,7 +324,7 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00031}{31}}
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00115}{115}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00117}{117}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 
 
@@ -337,7 +337,7 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00115}{115}} 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00209}{209}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 2
@@ -351,7 +351,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00469}{469}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00476}{476}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 4
@@ -365,7 +365,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00600}{600}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00607}{607}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 6
@@ -379,7 +379,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00559}{559}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00566}{566}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 8
@@ -393,7 +393,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00681}{681}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00688}{688}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 10
@@ -405,7 +405,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00526}{526}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00533}{533}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 11
@@ -419,7 +419,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00668}{668}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00675}{675}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 13
@@ -431,7 +431,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00624}{624}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00631}{631}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 14
@@ -443,7 +443,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00551}{551}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00558}{558}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 15
@@ -455,7 +455,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00582}{582}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00589}{589}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 16
@@ -469,17 +469,17 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00636}{636}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00643}{643}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 18
 Here is the caller graph for this function\+:
 % FIG 19
-\Hypertarget{classTProcuraConstrutiva_ad8ae18693dd91bd4a6b2ce960be5678f}\label{classTProcuraConstrutiva_ad8ae18693dd91bd4a6b2ce960be5678f} 
+\Hypertarget{classTProcuraConstrutiva_a43c6ec9acbb9f9ce77c4628bf54b7da2}\label{classTProcuraConstrutiva_a43c6ec9acbb9f9ce77c4628bf54b7da2} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!ExecucaoTerminada@{ExecucaoTerminada}}
 \index{ExecucaoTerminada@{ExecucaoTerminada}!TProcuraConstrutiva@{TProcuraConstrutiva}}
 \doxysubsubsection{\texorpdfstring{ExecucaoTerminada()}{ExecucaoTerminada()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Execucao\+Terminada (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}}}]{inicio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Execucao\+Terminada (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}}}]{inicio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -491,7 +491,7 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a820d64eab4f1b5e040a3eca570402
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00730}{730}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00737}{737}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 20
@@ -503,7 +503,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00877}{877}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00884}{884}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 21
@@ -525,7 +525,7 @@ Reimplemented from \mbox{\hyperlink{classTProcura_abd93e2ba1f58d3ee7bef74845cee9
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00741}{741}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00748}{748}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 23
@@ -537,7 +537,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00827}{827}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00834}{834}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 24
@@ -551,15 +551,15 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 26
-\Hypertarget{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}\label{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f} 
+\Hypertarget{classTProcuraConstrutiva_aa882dc14d5e9fa3033e6924293c7c246}\label{classTProcuraConstrutiva_aa882dc14d5e9fa3033e6924293c7c246} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!LimparEstatisticas@{LimparEstatisticas}}
 \index{LimparEstatisticas@{LimparEstatisticas}!TProcuraConstrutiva@{TProcuraConstrutiva}}
 \doxysubsubsection{\texorpdfstring{LimparEstatisticas()}{LimparEstatisticas()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Limpar\+Estatisticas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&}]{inicio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Limpar\+Estatisticas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&}]{inicio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -571,7 +571,7 @@ Reimplemented from \mbox{\hyperlink{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00701}{701}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00708}{708}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 27
@@ -585,7 +585,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00846}{846}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00853}{853}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 29
@@ -599,10 +599,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00702}{702}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00704}{704}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
-Here is the caller graph for this function\+:
+Here is the call graph for this function\+:
 % FIG 31
+Here is the caller graph for this function\+:
+% FIG 32
 \Hypertarget{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9}\label{classTProcuraConstrutiva_a51a3757ad4f4041833c7957276d76ab9} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!MostrarCaminho@{MostrarCaminho}}
 \index{MostrarCaminho@{MostrarCaminho}!TProcuraConstrutiva@{TProcuraConstrutiva}}
@@ -611,12 +613,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00331}{331}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00338}{338}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 32
-Here is the caller graph for this function\+:
 % FIG 33
+Here is the caller graph for this function\+:
+% FIG 34
 \Hypertarget{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}\label{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!NovaLinha@{NovaLinha}}
 \index{NovaLinha@{NovaLinha}!TProcuraConstrutiva@{TProcuraConstrutiva}}
@@ -625,12 +627,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00616}{616}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00623}{623}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 34
-Here is the caller graph for this function\+:
 % FIG 35
+Here is the caller graph for this function\+:
+% FIG 36
 \Hypertarget{classTProcuraConstrutiva_a8e7879e0ac12522e0eedf3d3d365e51c}\label{classTProcuraConstrutiva_a8e7879e0ac12522e0eedf3d3d365e51c} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!ObjetivoAlcancado@{ObjetivoAlcancado}}
 \index{ObjetivoAlcancado@{ObjetivoAlcancado}!TProcuraConstrutiva@{TProcuraConstrutiva}}
@@ -639,12 +641,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00195}{195}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 36
-Here is the caller graph for this function\+:
 % FIG 37
+Here is the caller graph for this function\+:
+% FIG 38
 \Hypertarget{classTProcuraConstrutiva_a18331ff4fccaf78df8bd3656357e9e75}\label{classTProcuraConstrutiva_a18331ff4fccaf78df8bd3656357e9e75} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!ObjetivoAlcancado@{ObjetivoAlcancado}}
 \index{ObjetivoAlcancado@{ObjetivoAlcancado}!TProcuraConstrutiva@{TProcuraConstrutiva}}
@@ -653,10 +655,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00193}{193}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 38
+% FIG 39
 \Hypertarget{classTProcuraConstrutiva_a2f648df694a20e7fcb688c9979f763fd}\label{classTProcuraConstrutiva_a2f648df694a20e7fcb688c9979f763fd} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!SolucaoEncontrada@{SolucaoEncontrada}}
 \index{SolucaoEncontrada@{SolucaoEncontrada}!TProcuraConstrutiva@{TProcuraConstrutiva}}
@@ -665,12 +667,12 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00320}{320}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 39
-Here is the caller graph for this function\+:
 % FIG 40
+Here is the caller graph for this function\+:
+% FIG 41
 \Hypertarget{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937}\label{classTProcuraConstrutiva_a6bc5ce68c35bb341173421200dec2937} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!SolucaoParcial@{SolucaoParcial}}
 \index{SolucaoParcial@{SolucaoParcial}!TProcuraConstrutiva@{TProcuraConstrutiva}}
@@ -679,12 +681,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00324}{324}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00331}{331}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 41
-Here is the caller graph for this function\+:
 % FIG 42
+Here is the caller graph for this function\+:
+% FIG 43
 \Hypertarget{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057}\label{classTProcuraConstrutiva_a99b7a74f16f5a1b63b12bf629b902057} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!SubstituirHT@{SubstituirHT}}
 \index{SubstituirHT@{SubstituirHT}!TProcuraConstrutiva@{TProcuraConstrutiva}}
@@ -697,10 +699,10 @@ Reimplemented in \mbox{\hyperlink{classTProcuraAdversa_ab13f514d86e599dc15a682e6
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00898}{898}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00905}{905}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
-% FIG 43
+% FIG 44
 \Hypertarget{classTProcuraConstrutiva_aec0a667a7fda1ebe565ba13d6b02805a}\label{classTProcuraConstrutiva_aec0a667a7fda1ebe565ba13d6b02805a} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!VerificaLimites@{VerificaLimites}}
 \index{VerificaLimites@{VerificaLimites}!TProcuraConstrutiva@{TProcuraConstrutiva}}
@@ -709,12 +711,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00222}{222}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 44
-Here is the caller graph for this function\+:
 % FIG 45
+Here is the caller graph for this function\+:
+% FIG 46
 
 
 \doxysubsection{Member Data Documentation}
@@ -726,7 +728,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00746}{746}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00748}{748}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 \Hypertarget{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab}\label{classTProcuraConstrutiva_af40b12ca395037ca10b1be13c4f5e5ab} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!custoHT@{custoHT}}
@@ -736,7 +738,7 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00746}{746}} 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00744}{744}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00746}{746}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 \Hypertarget{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205}\label{classTProcuraConstrutiva_a601336388070f0aee00e9615b1097205} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!elementosHT@{elementosHT}}
@@ -746,7 +748,7 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00744}{744}} 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00743}{743}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00745}{745}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 \Hypertarget{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999}\label{classTProcuraConstrutiva_afee458f3c6b027eaf5958115801ce999} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!estadoCodHT@{estadoCodHT}}
@@ -756,7 +758,7 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00743}{743}} 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00745}{745}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00747}{747}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 
 

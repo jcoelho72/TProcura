@@ -75,9 +75,9 @@ Vamos voltar para a instãncia 1, para confirmar que é a mesma, apenas assim se
 
 Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.
 
-O menu {\bfseries{2 -\/ Explorar}}, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para expplorar os dados. Esta função está definida para as subclasses de \doxylink{classTProcura}{TProcura}, para os métodos construtivos e melhorativos. Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, por que não, tentar resolvê-\/lo, e assim ganhar sensibilidade. Vamovs deixar esta exploração para os exemplos das subclasses.
+O menu {\bfseries{2 -\/ Explorar}}, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para expplorar os dados. Esta função está definida para as subclasses de \doxylink{classTProcura}{TProcura}, para os métodos construtivos e melhorativos. Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, por que não, tentar resolvê-\/lo, e assim ganhar sensibilidade. Vamos deixar esta exploração para os exemplos das subclasses.
 
-Notar que o menu é sempre visualizado, colocando-\/se o prompt "{}\+Opção\+:"{}. Para evitar repetição, vamos omitar o menu no resto deste exemplo.
+Notar que o menu no modo interativo, é sempre visualizado, colocando-\/se o prompt "{}\+Opção\+:"{}. Para evitar repetição, vamos omitar o menu no resto deste exemplo.
 
 \DoxyHorRuler{0}
 
@@ -153,7 +153,7 @@ Caso não pretenda alterar um parâmetro, pode sempre carregar em ENTER para man
 \end{DoxyCode}
  Notar que agora o valor associado a P1 é "{}\+Sort()"{}. Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug. Este parâmetro é de \doxylink{classTProcura}{TProcura}, e não é necessário alterar, a não ser que se pretenda mais que 3 níveis de debug.
 
-Ao alterar este parâmetro, o algoritmo, caso tenha condicionais sobre este parâmetro, irá mostrar os detalhes do que está a fazer. Prevê-\/se estes níveis, em que o nível 1 deve apresentar apenas um caracter de tempos a tempos, de modo a confirmar-\/se que o algoritmo está a funcionar. No nível 2 deve-\/se dar a indicação do passo/iteração em que vai, ou grande passo, no caso do número de iterações ser elevado. No nível 3 detalhe, já é de esperar detalhe sobre todas as iterações. No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.\texorpdfstring{$\sim$}{\string~}´
+Ao alterar este parâmetro, o algoritmo, caso tenha condicionais sobre este parâmetro, irá mostrar os detalhes do que está a fazer. Prevê-\/se estes níveis, em que o nível 1 deve apresentar apenas um caracter de tempos a tempos, de modo a confirmar-\/se que o algoritmo está a funcionar. No nível 2 deve-\/se dar a indicação do passo/iteração em que vai, ou grande passo, no caso do número de iterações ser elevado. No nível 3 detalhe, já é de esperar detalhe sobre todas as iterações. No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.
 
 Estes níveis têm o intuito de poder observar bugs, caso existam. Mas têm também um carácter didático, já que nas classes de procura, pode-\/se observar os algoritmos com o nível que se pretender. Assim está-\/se a contribuir para a compreensão do algoritmo, aplicado a um dado problema.
 
@@ -209,7 +209,7 @@ Avançamos para o parâmetro P3, "{}\+Seed"{}. Introduza\+: {\itshape ENTER}; 3;
 
 Agora sim, podemos ver que os três primeiros e últimos números são completamente distintos.
 
-Os outros dois parâmetros, o P4 Iterações, é um parâmetro genérico para limitar o número de iterações. Como não temos nestes algoritmos definidas iterações, não iremos utilizar.
+Os outros dois parâmetros, o P4 Tempo, tem o tempo em segundos para o algoritmo executar, e P5 Iterações, é um parâmetro genérico para limitar o número de iterações. Como não temos nestes algoritmos definidas iterações, não iremos utilizar.
 
 O P6 é um parâmetro definido na classe \doxylink{classCTesteTVector}{CTeste\+TVector}, e tem a estrutura em teste. Introduza\+: 3; 6.
 
@@ -246,7 +246,7 @@ O menu {\itshape 4 -\/ Solução} será ilustrado com um problema de procura, ne
 \label{teste_tvector_tvector-a3}%
 \Hypertarget{teste_tvector_tvector-a3}%
 \hypertarget{teste_tvector_autotoc_md64}{}\doxysubsection{\texorpdfstring{Ação 3\+: Menu 6 -\/ Executar}{Ação 3: Menu 6 - Executar}}\label{teste_tvector_autotoc_md64}
-Avançamos para o menu {\itshape 6 -\/ Executar}. Introlduza\+: 6.
+Avançamos para o menu {\itshape 6 -\/ Executar}. Introduza\+: 6.
 
 
 \begin{DoxyCode}{0}
@@ -261,7 +261,7 @@ Avançamos para o menu {\itshape 6 -\/ Executar}. Introlduza\+: 6.
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 
 \end{DoxyCode}
- Os valores dos parâmetros em modo curso são mostrawdos, e de seguida a execução é completada. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura \doxylink{classTVector}{TVector}. O estado do vetor é visivel os três priemiros e últimos elementos, podendo-\/se confirmar que estes estão por ordem.
+ Os valores dos parâmetros em modo curso são mostrados, e de seguida a execução é completada. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura \doxylink{classTVector}{TVector}. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-\/se confirmar que estes estão por ordem.
 
 Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadors, I1 a I4.
 
@@ -305,7 +305,7 @@ Vamos agora ver o menu dos indicadores. Introduza\+: 5.
 \end{DoxyCode}
 
 
-De omissão estão todos os indicadores ligados, e são chamados por ordem de ID. No entanto, por vezes pretende-\/se verificar a solução, executando verificações/validações. Outras vezes pretende-\/se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo. Pode-\/se ainda querer fazer ações após o algoritmo, de transofmração da solução, ou gravação da solução para ficheiro.
+De omissão estão todos os indicadores ligados, e são chamados por ordem de ID. No entanto, por vezes pretende-\/se verificar a solução, executando verificações/validações. Outras vezes pretende-\/se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo. Pode-\/se ainda querer fazer ações após o algoritmo, de transformação da solução, ou gravação da solução para ficheiro.
 
 Com os indicadores é possível definir as ações a executar após o algoritmo, por uma dada ordem, ou se uma dada ação irá ser executada ou não.
 
@@ -409,7 +409,7 @@ Introduza\+: P1=1\+:12
 
 Notar que P1 já não é mostrado nos parâmetros comuns, mas sim os seus diversos valores nas configurações de 1 a 12. A notação 1\+:12 significa os números de 1 a 12. Se tivessemos colocado 1\+:12\+:2 correspondia aos números de 1 a 12 mas em passos de 2. Podiamos ter indicado também com a notação por vírgulas, com 1,2,3,4,5,6,7,8,9,10,11,12. Podemos misturar notações, por exemplo, podiamos especificar o conjunto 1\+:3,5\+:9\+:2,12, ou seja, os números 1,2,3,5,7,9,12.
 
-Se pretendermos alterar apenas o valor de um parâmetro k para V, colocamos Pk=V. Se tiver dois ou mais números, então pretendemos variar a configujração atual.
+Se pretendermos alterar apenas o valor de um parâmetro k para V, colocamos Pk=V. Se tiver dois ou mais números, então pretendemos variar a configuração atual.
 
 Vamos agora colocar dois parâmetros a variar em conjunto, ou seja, estamos interessados no produto externo. Introduza\+: P3=1\+:2 x P6=1\+:3.
 
@@ -487,110 +487,110 @@ A primeira pergunta é sobre quais as instâncias a excutar o teste, na qual pre
 \DoxyCodeLine{Instância\ 3:\ DONE.}
 \DoxyCodeLine{\ ID\ |conf|\ \ Ordenado|\ Tempo(ms)|}
 \DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
-\DoxyCodeLine{\ \ 1\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 87\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 203\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 283\ |}
-\DoxyCodeLine{\ \ 1\ |\ \ 2\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 4\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 2\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 12\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 2\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 10\ |}
-\DoxyCodeLine{\ \ 1\ |\ \ 3\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 11\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 3\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 21\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 3\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 53\ |}
-\DoxyCodeLine{\ \ 1\ |\ \ 4\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 4\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 0\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 4\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 1\ |\ \ 5\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 78\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 5\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 178\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 5\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 268\ |}
-\DoxyCodeLine{\ \ 1\ |\ \ 6\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 175\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 6\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 344\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 6\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 618\ |}
-\DoxyCodeLine{\ \ 1\ |\ \ 7\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 237\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 7\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 526\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 7\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 801\ |}
-\DoxyCodeLine{\ \ 1\ |\ \ 8\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 243\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 8\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 352\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 8\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 521\ |}
-\DoxyCodeLine{\ \ 1\ |\ \ 9\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 182\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 9\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 367\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 9\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 574\ |}
-\DoxyCodeLine{\ \ 1\ |\ 10\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 2\ |\ 10\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 3\ |\ 10\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 1\ |\ 11\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 2\ |\ 11\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 3\ |\ 11\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 2\ |}
-\DoxyCodeLine{\ \ 1\ |\ 12\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 0\ |}
-\DoxyCodeLine{\ \ 2\ |\ 12\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 0\ |}
-\DoxyCodeLine{\ \ 3\ |\ 12\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 0\ |}
-\DoxyCodeLine{\ \ 1\ |\ 13\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 86\ |}
-\DoxyCodeLine{\ \ 2\ |\ 13\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 160\ |}
-\DoxyCodeLine{\ \ 3\ |\ 13\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 284\ |}
-\DoxyCodeLine{\ \ 1\ |\ 14\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 91\ |}
-\DoxyCodeLine{\ \ 2\ |\ 14\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 180\ |}
-\DoxyCodeLine{\ \ 3\ |\ 14\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 305\ |}
-\DoxyCodeLine{\ \ 1\ |\ 15\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 92\ |}
-\DoxyCodeLine{\ \ 2\ |\ 15\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 181\ |}
-\DoxyCodeLine{\ \ 3\ |\ 15\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 283\ |}
-\DoxyCodeLine{\ \ 1\ |\ 16\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 80\ |}
-\DoxyCodeLine{\ \ 2\ |\ 16\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 176\ |}
-\DoxyCodeLine{\ \ 3\ |\ 16\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 296\ |}
-\DoxyCodeLine{\ \ 1\ |\ 17\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 82\ |}
-\DoxyCodeLine{\ \ 2\ |\ 17\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 168\ |}
-\DoxyCodeLine{\ \ 3\ |\ 17\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 262\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 80\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 10\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 9\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 2\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 4\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 2\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ 12\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 2\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ 13\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 3\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ 56\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 3\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ 70\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 3\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ 57\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 4\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 4\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 4\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 5\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 284\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 5\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 39\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 5\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 45\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 6\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 132\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 6\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 52\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 6\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 58\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 7\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 54\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 7\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 56\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 7\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 70\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 8\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 37\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 8\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 47\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 8\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 44\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 9\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 56\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 9\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 18\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 9\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 17\ |}
+\DoxyCodeLine{\ \ 1\ |\ 10\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 0\ |}
+\DoxyCodeLine{\ \ 2\ |\ 10\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 0\ |}
+\DoxyCodeLine{\ \ 3\ |\ 10\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 0\ |}
+\DoxyCodeLine{\ \ 1\ |\ 11\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 2\ |\ 11\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 2\ |}
+\DoxyCodeLine{\ \ 3\ |\ 11\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 4\ |}
+\DoxyCodeLine{\ \ 1\ |\ 12\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 0\ |}
+\DoxyCodeLine{\ \ 2\ |\ 12\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 0\ |}
+\DoxyCodeLine{\ \ 3\ |\ 12\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 0\ |}
+\DoxyCodeLine{\ \ 1\ |\ 13\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 244\ |}
+\DoxyCodeLine{\ \ 2\ |\ 13\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 31\ |}
+\DoxyCodeLine{\ \ 3\ |\ 13\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 31\ |}
+\DoxyCodeLine{\ \ 1\ |\ 14\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 30\ |}
+\DoxyCodeLine{\ \ 2\ |\ 14\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 31\ |}
+\DoxyCodeLine{\ \ 3\ |\ 14\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 52\ |}
+\DoxyCodeLine{\ \ 1\ |\ 15\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 285\ |}
+\DoxyCodeLine{\ \ 2\ |\ 15\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 27\ |}
+\DoxyCodeLine{\ \ 3\ |\ 15\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 29\ |}
+\DoxyCodeLine{\ \ 1\ |\ 16\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 78\ |}
+\DoxyCodeLine{\ \ 2\ |\ 16\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 163\ |}
+\DoxyCodeLine{\ \ 3\ |\ 16\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 271\ |}
+\DoxyCodeLine{\ \ 1\ |\ 17\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 78\ |}
+\DoxyCodeLine{\ \ 2\ |\ 17\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 171\ |}
+\DoxyCodeLine{\ \ 3\ |\ 17\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 267\ |}
 \DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|resolvidas}
-\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 573\ |\ 3}
-\DoxyCodeLine{Total\ \ 2\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ 26\ |\ 3}
-\DoxyCodeLine{Total\ \ 3\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ 85\ |\ 3}
-\DoxyCodeLine{Total\ \ 4\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ \ 2\ |\ 3}
-\DoxyCodeLine{Total\ \ 5\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 524\ |\ 3}
-\DoxyCodeLine{Total\ \ 6\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ 1137\ |\ 3}
-\DoxyCodeLine{Total\ \ 7\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ 1564\ |\ 3}
-\DoxyCodeLine{Total\ \ 8\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ 1116\ |\ 3}
-\DoxyCodeLine{Total\ \ 9\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ 1123\ |\ 3}
-\DoxyCodeLine{Total\ 10\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ \ 3\ |\ 3}
-\DoxyCodeLine{Total\ 11\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ \ 4\ |\ 3}
-\DoxyCodeLine{Total\ 12\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ \ 0\ |\ 3}
-\DoxyCodeLine{Total\ 13\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 530\ |\ 3}
-\DoxyCodeLine{Total\ 14\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 576\ |\ 3}
-\DoxyCodeLine{Total\ 15\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 556\ |\ 3}
-\DoxyCodeLine{Total\ 16\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 552\ |\ 3}
-\DoxyCodeLine{Total\ 17\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 512\ |\ 3}
+\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ 99\ |\ 3}
+\DoxyCodeLine{Total\ \ 2\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ 29\ |\ 3}
+\DoxyCodeLine{Total\ \ 3\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ 183\ |\ 3}
+\DoxyCodeLine{Total\ \ 4\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 3\ |\ 3}
+\DoxyCodeLine{Total\ \ 5\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 368\ |\ 3}
+\DoxyCodeLine{Total\ \ 6\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 242\ |\ 3}
+\DoxyCodeLine{Total\ \ 7\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 180\ |\ 3}
+\DoxyCodeLine{Total\ \ 8\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 128\ |\ 3}
+\DoxyCodeLine{Total\ \ 9\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ 91\ |\ 3}
+\DoxyCodeLine{Total\ 10\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ \ \ 0\ |\ 3}
+\DoxyCodeLine{Total\ 11\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 7\ |\ 3}
+\DoxyCodeLine{Total\ 12\ |\ \ \ \ \ \ \ \ 0\ |\ \ \ \ \ \ \ \ 0\ |\ 3}
+\DoxyCodeLine{Total\ 13\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 306\ |\ 3}
+\DoxyCodeLine{Total\ 14\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 113\ |\ 3}
+\DoxyCodeLine{Total\ 15\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 341\ |\ 3}
+\DoxyCodeLine{Total\ 16\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 512\ |\ 3}
+\DoxyCodeLine{Total\ 17\ |\ \ \ \ \ \ \ \ 3\ |\ \ \ \ \ \ 516\ |\ 3}
 \DoxyCodeLine{Torneio\ (\#instâncias\ melhores):}
 \DoxyCodeLine{\ |-\/01-\/|-\/02-\/|-\/03-\/|-\/04-\/|-\/05-\/|-\/06-\/|-\/07-\/|-\/08-\/|-\/09-\/|-\/10-\/|-\/11-\/|-\/12-\/|-\/13-\/|-\/14-\/|-\/15-\/|-\/16-\/|-\/17-\/|}
-\DoxyCodeLine{\ 1\ \ \ \ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ -\/2}
+\DoxyCodeLine{\ 1\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 7}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 2\ \ 2\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ 26}
+\DoxyCodeLine{\ 2\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 8}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 3\ \ 2\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ 26}
+\DoxyCodeLine{\ 3\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 1\ |\ \ 2\ |\ \ 6}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 4\ \ 2\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ 26}
+\DoxyCodeLine{\ 4\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 1\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 8}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 5\ \ 0\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ \ \ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ -\/1}
+\DoxyCodeLine{\ 5\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ \ \ \ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ \ 0\ |\ -\/1\ |\ \ 0\ |\ \ 1\ |\ \ 1\ |-\/10}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 6\ -\/2\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/2\ |\ \ \ \ |\ \ 2\ |\ \ 0\ |\ \ 0\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |-\/30}
+\DoxyCodeLine{\ 6\ \ 0\ |\ -\/1\ |\ \ 0\ |\ -\/1\ |\ \ 1\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ \ 1\ |\ -\/1\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 1}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 7\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/2\ |\ \ \ \ |\ -\/2\ |\ -\/2\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |-\/45}
+\DoxyCodeLine{\ 7\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 7}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 8\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ \ 0\ |\ \ 2\ |\ \ \ \ |\ \ 0\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |-\/37}
+\DoxyCodeLine{\ 8\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 7}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 9\ -\/2\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ \ 0\ |\ \ 2\ |\ \ 0\ |\ \ \ \ |\ -\/3\ |\ -\/3\ |\ -\/3\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/3\ |\ -\/3\ |-\/33}
+\DoxyCodeLine{\ 9\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 7}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{10\ \ 2\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ 26}
+\DoxyCodeLine{10\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 8}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{11\ \ 2\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ 26}
+\DoxyCodeLine{11\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 8}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{12\ \ 2\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ \ 2\ |\ 26}
+\DoxyCodeLine{12\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 1\ |\ \ 0\ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 8}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{13\ \ 0\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ -\/2}
+\DoxyCodeLine{13\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ \ 0\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ \ \ \ |\ -\/1\ |\ \ 0\ |\ \ 1\ |\ \ 1\ |-\/10}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{14\ \ 0\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ -\/2}
+\DoxyCodeLine{14\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ 1\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 1\ |\ \ \ \ |\ \ 1\ |\ \ 2\ |\ \ 2\ |\ \ 8}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{15\ \ 0\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ -\/2}
+\DoxyCodeLine{15\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ \ 0\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ -\/1\ |\ \ 0\ |\ -\/1\ |\ \ \ \ |\ \ 1\ |\ \ 1\ |-\/10}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{16\ \ 0\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ -\/1}
+\DoxyCodeLine{16\ -\/2\ |\ -\/2\ |\ -\/1\ |\ -\/2\ |\ -\/1\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/1\ |\ -\/2\ |\ -\/1\ |\ \ \ \ |\ \ 0\ |-\/26}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{17\ \ 0\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 2\ |\ \ 3\ |\ \ 3\ |\ \ 3\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ -\/1}
+\DoxyCodeLine{17\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/1\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/2\ |\ -\/1\ |\ -\/2\ |\ -\/1\ |\ \ 0\ |\ \ \ \ |-\/27}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
 \DoxyCodeLine{Parâmetros\ comuns:}
 \DoxyCodeLine{\ P2(Debug):\ nada\ |\ P4(Tempo):\ 10\ |\ P5(Iterações):\ 0}
@@ -615,8 +615,8 @@ A primeira pergunta é sobre quais as instâncias a excutar o teste, na qual pre
 \DoxyCodeLine{}
 \DoxyCodeLine{TVector}
 \DoxyCodeLine{\ P1(Método):\ Sort()\ |\ P2(Debug):\ nada\ |\ P3(Seed):\ 2\ |\ P4(Tempo):\ 10\ |\ P5(Iterações):\ 0}
-\DoxyCodeLine{P6(Estrutura):\ std::vector}
-\DoxyCodeLine{Dados\ \#1000000:\ 277845151\ 613458960\ -\/1719828728\ ...\ -\/639822065\ 75868536\ 1051675791}
+\DoxyCodeLine{\ P6(Estrutura):\ std::vector}
+\DoxyCodeLine{Dados\ \#3000000:\ -\/2147483260\ -\/2147483145\ -\/2147476511\ ...\ 2147476201\ 2147479659\ 2147481540}
 \DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 
 \end{DoxyCode}
@@ -624,9 +624,11 @@ A primeira pergunta é sobre quais as instâncias a excutar o teste, na qual pre
 
 Podemos ver que durante a execução, é mostrada a configuração atual, a instância a ser resolvida. No final são mostrados resultados para cada configuração e instância, agregasdos por configuração. Os indicadores selecionados fazem parte da tabela de resultados.
 
-É mostrando ainda um torneio entre configurações, para saber a que é mais rápida. Para permitir a reprodução, é mostrrado no final os valores exatos de cada configuração.
+Podemos ver que o indicador definido na subclasse, Ordenado, retorna 1 nos métodos cujo resultado final o vetor fica ordenado, e 0 nos restantes.
 
-Infelizmente, pouco podemos deduzir deste teste. O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente corridas. Sabemos apenas que não há crash.
+É mostrado ainda um torneio entre configurações, para saber a que é mais rápida. Para permitir a reprodução e identificar eventuais enganos, é mostrado no final os valores exatos de cada configuração.
+
+Infelizmente, pouco podemos deduzir deste teste. O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente execuções com diversas configurações. Sabemos apenas que não há crash.
 
 Vamos formular uma pergunta. Pretendemos saber como varia o tempo na operação de ordenação, com o tamanho do vetor.
 
@@ -649,22 +651,22 @@ Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de no
 \DoxyCodeLine{Instância\ 10:\ DONE.}
 \DoxyCodeLine{\ ID\ |conf|\ Resultado|\ Tempo(ms)|\ Iterações|\ \ Ordenado|}
 \DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
-\DoxyCodeLine{\ \ 1\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 72\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 2\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 154\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 3\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 238\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 4\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 335\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 5\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 436\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 6\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 555\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 7\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 691\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 8\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 823\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ \ 9\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ 1145\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
-\DoxyCodeLine{\ 10\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ 1064\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 1\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ 84\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 2\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 278\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 3\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 414\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 4\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 570\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 5\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 590\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 6\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 827\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 7\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ 947\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 8\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ 1111\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ \ 9\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ 1170\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
+\DoxyCodeLine{\ 10\ |\ \ 1\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ 1314\ |\ \ \ \ \ \ \ \ 1\ |\ \ \ \ \ \ \ \ 1\ |}
 \DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|resolvidas}
-\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ 5513\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ 10\ |\ 10}
+\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ 7305\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ 10\ |\ 10}
 \DoxyCodeLine{...}
 
 \end{DoxyCode}
- Podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 72 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva mais que 720 milisegundos, foi 1064. Notar que a instância 9 levou mais tempo. Como houve uma só execução, esta situação pode ocorrer.
+ Podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 84 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva mais que 840 milisegundos, foi 1314. Foram execuções únicas, os valores podem variar demasiado.
 
 Vamos colocar 10 instâncias de cada tipo, variando a semente, para assim ter mais precisão. Queremos desta vez ter os resultados no Excel.
 
@@ -695,7 +697,7 @@ Introduza\+: 7; P3=1\+:10; {\itshape ENTER}; 8; 1\+:10; resultado; 0.
 \end{DoxyCode}
 
 
-Existe a indicação que o ficheiro resultado.\+csv foi gravado. Pode aceder aqui\+: 
+Existe a indicação que o ficheiro resultado.\+csv foi gravado.
 
 O ficheiro está pronto para fazermos uma análise com os relatórios dinâmcios. Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visivel o tempo crescente de forma estável, um pouco acima de linear.
 
@@ -730,19 +732,36 @@ Abra a linha de comando, localize o executável, e execute com argumento "{}-\/h
 \DoxyCodeLine{\ \ -\/S\ \ \ \ \ \ \ \ \ \ \ \ \ \ Mostrar\ soluções\ durante\ a\ execução}
 \DoxyCodeLine{\ \ -\/h\ \ \ \ \ \ \ \ \ \ \ \ \ \ Esta\ ajuda}
 \DoxyCodeLine{\ \ -\/P\ <expr>\ \ \ \ \ \ \ Parâmetros\ (e.g.\ P1=1:3\ x\ P2=0:2)\ -\/\ último\ campo}
-\DoxyCodeLine{Exemplo:\ C:\(\backslash\)Work\(\backslash\)Git\(\backslash\)TProcura\(\backslash\)x64\(\backslash\)Release\(\backslash\)TProcura.exe\ 1:5\ -\/R\ out\ -\/F\ fich\_\ -\/I\ 3,1,4,2\ -\/P\ P1=1:5\ x\ P6=1,2}
+\DoxyCodeLine{Exemplo:\ TProcura.exe\ 1:5\ -\/R\ out\ -\/F\ fich\_\ -\/I\ 3,1,4,2\ -\/P\ P1=1:5\ x\ P6=1,2}
 \DoxyCodeLine{\ \ \ Executar\ sem\ argumentos\ entra\ em\ modo\ interativo,\ para\ explorar\ todos\ os\ parametros\ e\ indicadores}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lista\ de\ parâmetros:}
+\DoxyCodeLine{\ P1(Método):\ Add()\ (1\ a\ 12)}
+\DoxyCodeLine{\ P2(Debug):\ nada\ (0\ a\ 4)}
+\DoxyCodeLine{\ P3(Seed):\ 1\ (1\ a\ 1000000)}
+\DoxyCodeLine{\ P4(Tempo):\ 10\ (1\ a\ 3600)}
+\DoxyCodeLine{\ P5(Iterações):\ 0\ (0\ a\ 1000000000)}
+\DoxyCodeLine{\ P6(Estrutura):\ TVector\ (1\ a\ 3)}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lista\ de\ indicadores:}
+\DoxyCodeLine{}
+\DoxyCodeLine{I1(Resultado):\ 1º\ lugar\ (Resultado\ do\ algoritmo,\ interpretado\ conforme\ o\ algoritmo\ (sucesso/insucesso,\ custo,\ qualidade,\ valor,\ etc.).)}
+\DoxyCodeLine{I2(Tempo(ms)):\ 2º\ lugar\ (Tempo\ em\ milisegundos\ da\ execução\ (medida\ de\ esforço\ computacional).)}
+\DoxyCodeLine{I3(Iterações):\ 3º\ lugar\ (Iterações\ do\ algoritmo,\ intrepretadas\ conforme\ o\ algoritmo\ (medida\ de\ esforço\ independente\ do\ hardware).)}
+\DoxyCodeLine{I4(Ordenado):\ 4º\ lugar\ (verifica\ se\ o\ indicador\ está\ ordenado)}
 
 \end{DoxyCode}
 
 
+A lista completa de parametros e indicadores é também mostrada, para permitir saber o que se pode utilizar na definição das configurações de execução.
+
 Podemos assim reproduzir o teste anterior com a seguinte entrada.
 
-Linha de comando\+: \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{TProcura.\+exe} 1\+:10 -\/R resultados -\/P P1=2 P3=1\+:10
+Linha de comando\+: \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{TProcura.\+exe} 1\+:10 -\/R resultado2 -\/P P1=2 P3=1\+:10
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{PS\ ...\(\backslash\)Teste>\ TProcura\ 1:10\ -\/R\ resultados\ -\/P\ P1=2\ P3=1:10}
+\DoxyCodeLine{PS\ ...\(\backslash\)Teste>\ TProcura\ 1:10\ -\/R\ resultado2\ -\/P\ P1=2\ P3=1:10}
 \DoxyCodeLine{}
 \DoxyCodeLine{Parâmetros\ comuns:}
 \DoxyCodeLine{\ P1=2\ P2=0\ P4=10\ P5=0\ P6=1}
@@ -782,7 +801,7 @@ Linha de comando\+: \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{T
 \DoxyCodeLine{Instância\ 8:\ DONE.}
 \DoxyCodeLine{Instância\ 9:\ DONE.}
 \DoxyCodeLine{Instância\ 10:\ DONE.}
-\DoxyCodeLine{Ficheiro\ resultados.csv\ gravado.}
+\DoxyCodeLine{Ficheiro\ resultado2.csv\ gravado.}
 
 \end{DoxyCode}
 
@@ -809,7 +828,7 @@ Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métod
 \end{DoxyImage}
    
 
-Segundo estes resultados, \doxylink{classTVector}{TVector} tem até uma ligeira vantagem em termos de tempo. Foram utilizadas instãncias pequenas para que o teste possa ser rápido. Em qualquer caso pode-\/se afirmar que não há uma perda muito grande por utilizar \doxylink{classTVector}{TVector} em vez do código STL.
+Segundo estes resultados, \doxylink{classTVector}{TVector} tem uma ligeira vantagem em termos de tempo na ordenação, mas é pior na união e outras operações, e no final há uma diferença de 1 segundo em 35. Foram utilizadas instãncias pequenas para que o teste possa ser rápido. Em qualquer caso pode-\/se afirmar que não há uma perda muito grande por utilizar \doxylink{classTVector}{TVector} em vez do código STL.
 
 Um ficheiro script com a linha de comandos, tem toda a informação para reproduzir o teste, pelo que pode facilitar a identificação do que foi feito. Por outro lado, o ficheiro de resultados tem também todos os valores utilizados, pelo que se houve algum engano na especificação dos parâmetros, o valor utilizado incorreto é visivel nos resultados. Há uma clara separação da fase de implementação da fase de teste. O resultado de um teste pode levantar outras questões, e provocar outro teste. Se a implementação tiver todas as opções em parâmetros, não é necessário alternar com programação entre testes. Apenas após a identificação de bugs, é que a programação é necessária.
 
@@ -824,7 +843,7 @@ Será a ordenação de \doxylink{classTVector}{TVector} mais rápida ou mais len
 
 
 {\bfseries{Resposta\+:}}\begin{adjustwidth}{1em}{0em}
-Deve procurar executar com instâncias de dimensão razoável, vamos utilziar a 10 que é a maior. Deve-\/se executar várias vezes, e apenas na operação de ordenação. Linha de comando\+: \doxylink{classTProcura}{TProcura} 10 -\/R resultados\+Sort -\/P P1=2 P3=1\+:10 x P6=1\+:3 As diferenças não são relevantes, pode-\/se ver que não apenas as médias, mas os tempos mínimos e máximos são idênticos. Assim, os testes realizados não permitem aferir que um método é superior ao outro.
+Deve procurar executar com instâncias de dimensão razoável, vamos utilziar a 10 que é a maior. Deve-\/se executar várias vezes, e apenas na operação de ordenação. Linha de comando\+: \doxylink{classTProcura}{TProcura} 10 -\/R resultados\+Sort -\/P P1=2 P3=1\+:10 x P6=1\+:3 Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do \doxylink{classTVector}{TVector} nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura.
 
  
 \begin{DoxyImage}

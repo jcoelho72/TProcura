@@ -147,8 +147,8 @@ Ação 1: Menu 1 - Inicializar</h2>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.</p>
-<p>O menu <b>2 - Explorar</b>, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para expplorar os dados. Esta função está definida para as subclasses de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, para os métodos construtivos e melhorativos. Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, por que não, tentar resolvê-lo, e assim ganhar sensibilidade. Vamovs deixar esta exploração para os exemplos das subclasses.</p>
-<p>Notar que o menu é sempre visualizado, colocando-se o prompt "Opção:". Para evitar repetição, vamos omitar o menu no resto deste exemplo.</p>
+<p>O menu <b>2 - Explorar</b>, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para expplorar os dados. Esta função está definida para as subclasses de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, para os métodos construtivos e melhorativos. Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, por que não, tentar resolvê-lo, e assim ganhar sensibilidade. Vamos deixar esta exploração para os exemplos das subclasses.</p>
+<p>Notar que o menu no modo interativo, é sempre visualizado, colocando-se o prompt "Opção:". Para evitar repetição, vamos omitar o menu no resto deste exemplo.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md62"></a>
@@ -201,7 +201,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <div class="line">4: completo</div>
 <div class="line">Debug (atual 0):</div>
 </div><!-- fragment --><p> Notar que agora o valor associado a P1 é "Sort()". Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug. Este parâmetro é de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, e não é necessário alterar, a não ser que se pretenda mais que 3 níveis de debug.</p>
-<p>Ao alterar este parâmetro, o algoritmo, caso tenha condicionais sobre este parâmetro, irá mostrar os detalhes do que está a fazer. Prevê-se estes níveis, em que o nível 1 deve apresentar apenas um caracter de tempos a tempos, de modo a confirmar-se que o algoritmo está a funcionar. No nível 2 deve-se dar a indicação do passo/iteração em que vai, ou grande passo, no caso do número de iterações ser elevado. No nível 3 detalhe, já é de esperar detalhe sobre todas as iterações. No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.~´</p>
+<p>Ao alterar este parâmetro, o algoritmo, caso tenha condicionais sobre este parâmetro, irá mostrar os detalhes do que está a fazer. Prevê-se estes níveis, em que o nível 1 deve apresentar apenas um caracter de tempos a tempos, de modo a confirmar-se que o algoritmo está a funcionar. No nível 2 deve-se dar a indicação do passo/iteração em que vai, ou grande passo, no caso do número de iterações ser elevado. No nível 3 detalhe, já é de esperar detalhe sobre todas as iterações. No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.</p>
 <p>Estes níveis têm o intuito de poder observar bugs, caso existam. Mas têm também um carácter didático, já que nas classes de procura, pode-se observar os algoritmos com o nível que se pretender. Assim está-se a contribuir para a compreensão do algoritmo, aplicado a um dado problema.</p>
 <p>No caso do <a class="el" href="classTVector.html">TVector</a>, os algoritmos estão implementados sem debug, pelo que este valor não é utilizado.</p>
 <p>Avançamos para o parâmetro P3, "Seed". Introduza: <em>ENTER</em>; 3; 2; <em>ENTER</em>.</p>
@@ -241,7 +241,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <div class="line">P6(Estrutura): TVector</div>
 <div class="line">Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791</div>
 </div><!-- fragment --><p>Agora sim, podemos ver que os três primeiros e últimos números são completamente distintos.</p>
-<p>Os outros dois parâmetros, o P4 Iterações, é um parâmetro genérico para limitar o número de iterações. Como não temos nestes algoritmos definidas iterações, não iremos utilizar.</p>
+<p>Os outros dois parâmetros, o P4 Tempo, tem o tempo em segundos para o algoritmo executar, e P5 Iterações, é um parâmetro genérico para limitar o número de iterações. Como não temos nestes algoritmos definidas iterações, não iremos utilizar.</p>
 <p>O P6 é um parâmetro definido na classe <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>, e tem a estrutura em teste. Introduza: 3; 6.</p>
 <div class="fragment"><div class="line">Opção: 3</div>
 <div class="line"> </div>
@@ -265,7 +265,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <p><a class="anchor" id="tvector-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md64"></a>
 Ação 3: Menu 6 - Executar</h2>
-<p>Avançamos para o menu <em>6 - Executar</em>. Introlduza: 6.</p>
+<p>Avançamos para o menu <em>6 - Executar</em>. Introduza: 6.</p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
 <div class="line"> P1=2 P2=0 P3=2 P4=10 P5=0 P6=1</div>
@@ -275,7 +275,7 @@ Ação 3: Menu 6 - Executar</h2>
 <div class="line">Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808</div>
 <div class="line">I1(Resultado): 1 | I2(Tempo(ms)): 82 | I3(Iterações): 1 | I4(Ordenado): 1</div>
 <div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Os valores dos parâmetros em modo curso são mostrawdos, e de seguida a execução é completada. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visivel os três priemiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
+</div><!-- fragment --><p> Os valores dos parâmetros em modo curso são mostrados, e de seguida a execução é completada. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
 <p>Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadors, I1 a I4.</p>
 <p>Os três primeiros indicadores são de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, o quarto indicador é definido em <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>. O indicador I1 tem o resultado do algoritmo, que aqui retorna sempre 1 a não ser que exista algum problema. O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 82. Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância). O tempo de calcular os indicadores não é também comtabilizado. O indicador I3 tem o número de iterações realizadas. O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez. Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado. Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. Em outros métodos, que não ordenem o vetor, naturalemnte que este indiador ao ser chamado, irá retornar 0.</p>
 <p>Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2; <em>ENTER</em>; 1; <em>ENTER</em>; 6.</p>
@@ -299,7 +299,7 @@ Ação 4: Menu 5 - Indicadores</h2>
 <div class="line">I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)</div>
 <div class="line">I4(Ordenado): 4º lugar (verifica se o indicador está ordenado)</div>
 <div class="line">Alterar indicador:</div>
-</div><!-- fragment --><p>De omissão estão todos os indicadores ligados, e são chamados por ordem de ID. No entanto, por vezes pretende-se verificar a solução, executando verificações/validações. Outras vezes pretende-se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo. Pode-se ainda querer fazer ações após o algoritmo, de transofmração da solução, ou gravação da solução para ficheiro.</p>
+</div><!-- fragment --><p>De omissão estão todos os indicadores ligados, e são chamados por ordem de ID. No entanto, por vezes pretende-se verificar a solução, executando verificações/validações. Outras vezes pretende-se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo. Pode-se ainda querer fazer ações após o algoritmo, de transformação da solução, ou gravação da solução para ficheiro.</p>
 <p>Com os indicadores é possível definir as ações a executar após o algoritmo, por uma dada ordem, ou se uma dada ação irá ser executada ou não.</p>
 <p>Neste caso temos apenas um indicador definido, que é um indicador de verificação, testando se o vetor ficou ordenado.</p>
 <p>Com esta interface podemos remover e adicionar indicadores existentes por outra ordem. Vamos por exemplo colocar visivel primeiro I4 e depois I2, não mostrando os restanes.</p>
@@ -369,7 +369,7 @@ Ação 5: Menu 7 - Configurações</h2>
 <div class="line">  A:B ou A:B:C - intervalo A a B, ou com passo C</div>
 <div class="line">Comando:</div>
 </div><!-- fragment --><p>Notar que P1 já não é mostrado nos parâmetros comuns, mas sim os seus diversos valores nas configurações de 1 a 12. A notação 1:12 significa os números de 1 a 12. Se tivessemos colocado 1:12:2 correspondia aos números de 1 a 12 mas em passos de 2. Podiamos ter indicado também com a notação por vírgulas, com 1,2,3,4,5,6,7,8,9,10,11,12. Podemos misturar notações, por exemplo, podiamos especificar o conjunto 1:3,5:9:2,12, ou seja, os números 1,2,3,5,7,9,12.</p>
-<p>Se pretendermos alterar apenas o valor de um parâmetro k para V, colocamos Pk=V. Se tiver dois ou mais números, então pretendemos variar a configujração atual.</p>
+<p>Se pretendermos alterar apenas o valor de um parâmetro k para V, colocamos Pk=V. Se tiver dois ou mais números, então pretendemos variar a configuração atual.</p>
 <p>Vamos agora colocar dois parâmetros a variar em conjunto, ou seja, estamos interessados no produto externo. Introduza: P3=1:2 x P6=1:3.</p>
 <div class="fragment"><div class="line">Comando: P3=1:2 x P6=1:3</div>
 <div class="line"> </div>
@@ -430,110 +430,110 @@ Ação 6: Menu 8 - Teste</h2>
 <div class="line">Instância 3: DONE.</div>
 <div class="line"> ID |conf|  Ordenado| Tempo(ms)|</div>
 <div class="line">----|----|----------|----------|</div>
-<div class="line">  1 |  1 |        1 |       87 |</div>
-<div class="line">  2 |  1 |        1 |      203 |</div>
-<div class="line">  3 |  1 |        1 |      283 |</div>
-<div class="line">  1 |  2 |        1 |        4 |</div>
-<div class="line">  2 |  2 |        1 |       12 |</div>
-<div class="line">  3 |  2 |        1 |       10 |</div>
-<div class="line">  1 |  3 |        1 |       11 |</div>
-<div class="line">  2 |  3 |        1 |       21 |</div>
-<div class="line">  3 |  3 |        1 |       53 |</div>
-<div class="line">  1 |  4 |        1 |        1 |</div>
-<div class="line">  2 |  4 |        1 |        0 |</div>
-<div class="line">  3 |  4 |        1 |        1 |</div>
-<div class="line">  1 |  5 |        1 |       78 |</div>
-<div class="line">  2 |  5 |        1 |      178 |</div>
-<div class="line">  3 |  5 |        1 |      268 |</div>
-<div class="line">  1 |  6 |        1 |      175 |</div>
-<div class="line">  2 |  6 |        1 |      344 |</div>
-<div class="line">  3 |  6 |        1 |      618 |</div>
-<div class="line">  1 |  7 |        1 |      237 |</div>
-<div class="line">  2 |  7 |        1 |      526 |</div>
-<div class="line">  3 |  7 |        1 |      801 |</div>
-<div class="line">  1 |  8 |        1 |      243 |</div>
-<div class="line">  2 |  8 |        1 |      352 |</div>
-<div class="line">  3 |  8 |        1 |      521 |</div>
-<div class="line">  1 |  9 |        1 |      182 |</div>
-<div class="line">  2 |  9 |        1 |      367 |</div>
-<div class="line">  3 |  9 |        1 |      574 |</div>
-<div class="line">  1 | 10 |        1 |        1 |</div>
-<div class="line">  2 | 10 |        1 |        1 |</div>
-<div class="line">  3 | 10 |        1 |        1 |</div>
-<div class="line">  1 | 11 |        1 |        1 |</div>
-<div class="line">  2 | 11 |        1 |        1 |</div>
-<div class="line">  3 | 11 |        1 |        2 |</div>
-<div class="line">  1 | 12 |        1 |        0 |</div>
-<div class="line">  2 | 12 |        1 |        0 |</div>
-<div class="line">  3 | 12 |        1 |        0 |</div>
-<div class="line">  1 | 13 |        1 |       86 |</div>
-<div class="line">  2 | 13 |        1 |      160 |</div>
-<div class="line">  3 | 13 |        1 |      284 |</div>
-<div class="line">  1 | 14 |        1 |       91 |</div>
-<div class="line">  2 | 14 |        1 |      180 |</div>
-<div class="line">  3 | 14 |        1 |      305 |</div>
-<div class="line">  1 | 15 |        1 |       92 |</div>
-<div class="line">  2 | 15 |        1 |      181 |</div>
-<div class="line">  3 | 15 |        1 |      283 |</div>
-<div class="line">  1 | 16 |        1 |       80 |</div>
-<div class="line">  2 | 16 |        1 |      176 |</div>
-<div class="line">  3 | 16 |        1 |      296 |</div>
-<div class="line">  1 | 17 |        1 |       82 |</div>
-<div class="line">  2 | 17 |        1 |      168 |</div>
-<div class="line">  3 | 17 |        1 |      262 |</div>
+<div class="line">  1 |  1 |        1 |       80 |</div>
+<div class="line">  2 |  1 |        1 |       10 |</div>
+<div class="line">  3 |  1 |        1 |        9 |</div>
+<div class="line">  1 |  2 |        0 |        4 |</div>
+<div class="line">  2 |  2 |        0 |       12 |</div>
+<div class="line">  3 |  2 |        0 |       13 |</div>
+<div class="line">  1 |  3 |        0 |       56 |</div>
+<div class="line">  2 |  3 |        0 |       70 |</div>
+<div class="line">  3 |  3 |        0 |       57 |</div>
+<div class="line">  1 |  4 |        0 |        1 |</div>
+<div class="line">  2 |  4 |        0 |        1 |</div>
+<div class="line">  3 |  4 |        0 |        1 |</div>
+<div class="line">  1 |  5 |        1 |      284 |</div>
+<div class="line">  2 |  5 |        1 |       39 |</div>
+<div class="line">  3 |  5 |        1 |       45 |</div>
+<div class="line">  1 |  6 |        1 |      132 |</div>
+<div class="line">  2 |  6 |        1 |       52 |</div>
+<div class="line">  3 |  6 |        1 |       58 |</div>
+<div class="line">  1 |  7 |        1 |       54 |</div>
+<div class="line">  2 |  7 |        1 |       56 |</div>
+<div class="line">  3 |  7 |        1 |       70 |</div>
+<div class="line">  1 |  8 |        1 |       37 |</div>
+<div class="line">  2 |  8 |        1 |       47 |</div>
+<div class="line">  3 |  8 |        1 |       44 |</div>
+<div class="line">  1 |  9 |        1 |       56 |</div>
+<div class="line">  2 |  9 |        1 |       18 |</div>
+<div class="line">  3 |  9 |        1 |       17 |</div>
+<div class="line">  1 | 10 |        1 |        0 |</div>
+<div class="line">  2 | 10 |        1 |        0 |</div>
+<div class="line">  3 | 10 |        1 |        0 |</div>
+<div class="line">  1 | 11 |        0 |        1 |</div>
+<div class="line">  2 | 11 |        0 |        2 |</div>
+<div class="line">  3 | 11 |        0 |        4 |</div>
+<div class="line">  1 | 12 |        0 |        0 |</div>
+<div class="line">  2 | 12 |        0 |        0 |</div>
+<div class="line">  3 | 12 |        0 |        0 |</div>
+<div class="line">  1 | 13 |        1 |      244 |</div>
+<div class="line">  2 | 13 |        1 |       31 |</div>
+<div class="line">  3 | 13 |        1 |       31 |</div>
+<div class="line">  1 | 14 |        1 |       30 |</div>
+<div class="line">  2 | 14 |        1 |       31 |</div>
+<div class="line">  3 | 14 |        1 |       52 |</div>
+<div class="line">  1 | 15 |        1 |      285 |</div>
+<div class="line">  2 | 15 |        1 |       27 |</div>
+<div class="line">  3 | 15 |        1 |       29 |</div>
+<div class="line">  1 | 16 |        1 |       78 |</div>
+<div class="line">  2 | 16 |        1 |      163 |</div>
+<div class="line">  3 | 16 |        1 |      271 |</div>
+<div class="line">  1 | 17 |        1 |       78 |</div>
+<div class="line">  2 | 17 |        1 |      171 |</div>
+<div class="line">  3 | 17 |        1 |      267 |</div>
 <div class="line">----|----|----------|----------|resolvidas</div>
-<div class="line">Total  1 |        3 |      573 | 3</div>
-<div class="line">Total  2 |        3 |       26 | 3</div>
-<div class="line">Total  3 |        3 |       85 | 3</div>
-<div class="line">Total  4 |        3 |        2 | 3</div>
-<div class="line">Total  5 |        3 |      524 | 3</div>
-<div class="line">Total  6 |        3 |     1137 | 3</div>
-<div class="line">Total  7 |        3 |     1564 | 3</div>
-<div class="line">Total  8 |        3 |     1116 | 3</div>
-<div class="line">Total  9 |        3 |     1123 | 3</div>
-<div class="line">Total 10 |        3 |        3 | 3</div>
-<div class="line">Total 11 |        3 |        4 | 3</div>
-<div class="line">Total 12 |        3 |        0 | 3</div>
-<div class="line">Total 13 |        3 |      530 | 3</div>
-<div class="line">Total 14 |        3 |      576 | 3</div>
-<div class="line">Total 15 |        3 |      556 | 3</div>
-<div class="line">Total 16 |        3 |      552 | 3</div>
-<div class="line">Total 17 |        3 |      512 | 3</div>
+<div class="line">Total  1 |        3 |       99 | 3</div>
+<div class="line">Total  2 |        0 |       29 | 3</div>
+<div class="line">Total  3 |        0 |      183 | 3</div>
+<div class="line">Total  4 |        0 |        3 | 3</div>
+<div class="line">Total  5 |        3 |      368 | 3</div>
+<div class="line">Total  6 |        3 |      242 | 3</div>
+<div class="line">Total  7 |        3 |      180 | 3</div>
+<div class="line">Total  8 |        3 |      128 | 3</div>
+<div class="line">Total  9 |        3 |       91 | 3</div>
+<div class="line">Total 10 |        3 |        0 | 3</div>
+<div class="line">Total 11 |        0 |        7 | 3</div>
+<div class="line">Total 12 |        0 |        0 | 3</div>
+<div class="line">Total 13 |        3 |      306 | 3</div>
+<div class="line">Total 14 |        3 |      113 | 3</div>
+<div class="line">Total 15 |        3 |      341 | 3</div>
+<div class="line">Total 16 |        3 |      512 | 3</div>
+<div class="line">Total 17 |        3 |      516 | 3</div>
 <div class="line">Torneio (#instâncias melhores):</div>
 <div class="line"> |-01-|-02-|-03-|-04-|-05-|-06-|-07-|-08-|-09-|-10-|-11-|-12-|-13-|-14-|-15-|-16-|-17-|</div>
-<div class="line"> 1    | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  2 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |  0 | -2</div>
+<div class="line"> 1    |  0 |  0 |  0 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  7</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 2  2 |    |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
+<div class="line"> 2  0 |    |  0 |  0 |  1 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  8</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 3  2 |  0 |    |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
+<div class="line"> 3  0 |  0 |    |  0 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  1 |  2 |  6</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 4  2 |  0 |  0 |    |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
+<div class="line"> 4  0 |  0 |  0 |    |  1 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  8</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 5  0 | -2 | -2 | -2 |    |  2 |  3 |  3 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |  0 | -1</div>
+<div class="line"> 5 -1 | -1 | -1 | -1 |    | -1 | -1 | -1 | -1 | -1 | -1 | -1 |  0 | -1 |  0 |  1 |  1 |-10</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 6 -2 | -3 | -3 | -3 | -2 |    |  2 |  0 |  0 | -3 | -3 | -3 | -2 | -2 | -2 | -2 | -2 |-30</div>
+<div class="line"> 6  0 | -1 |  0 | -1 |  1 |    |  0 |  0 |  0 | -1 | -1 | -1 |  1 | -1 |  1 |  2 |  2 |  1</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 7 -3 | -3 | -3 | -3 | -3 | -2 |    | -2 | -2 | -3 | -3 | -3 | -3 | -3 | -3 | -3 | -3 |-45</div>
+<div class="line"> 7  0 |  0 |  0 |  0 |  1 |  0 |    |  0 |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  7</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 8 -3 | -3 | -3 | -3 | -3 |  0 |  2 |    |  0 | -3 | -3 | -3 | -3 | -3 | -3 | -3 | -3 |-37</div>
+<div class="line"> 8  0 |  0 |  0 |  0 |  1 |  0 |  0 |    |  0 |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  7</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 9 -2 | -3 | -3 | -3 | -3 |  0 |  2 |  0 |    | -3 | -3 | -3 | -2 | -2 | -2 | -3 | -3 |-33</div>
+<div class="line"> 9  0 |  0 |  0 |  0 |  1 |  0 |  0 |  0 |    |  0 |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  7</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">10  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |    |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
+<div class="line">10  0 |  0 |  0 |  0 |  1 |  1 |  0 |  0 |  0 |    |  0 |  0 |  1 |  0 |  1 |  2 |  2 |  8</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">11  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |    |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
+<div class="line">11  0 |  0 |  0 |  0 |  1 |  1 |  0 |  0 |  0 |  0 |    |  0 |  1 |  0 |  1 |  2 |  2 |  8</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">12  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |    |  2 |  2 |  2 |  2 |  2 | 26</div>
+<div class="line">12  0 |  0 |  0 |  0 |  1 |  1 |  0 |  0 |  0 |  0 |  0 |    |  1 |  0 |  1 |  2 |  2 |  8</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">13  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  2 | -2 | -2 | -2 |    |  0 |  0 |  0 |  0 | -2</div>
+<div class="line">13 -1 | -1 | -1 | -1 |  0 | -1 | -1 | -1 | -1 | -1 | -1 | -1 |    | -1 |  0 |  1 |  1 |-10</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">14  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  2 | -2 | -2 | -2 |  0 |    |  0 |  0 |  0 | -2</div>
+<div class="line">14  0 |  0 |  0 |  0 |  1 |  1 |  0 |  0 |  0 |  0 |  0 |  0 |  1 |    |  1 |  2 |  2 |  8</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">15  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  2 | -2 | -2 | -2 |  0 |  0 |    |  0 |  0 | -2</div>
+<div class="line">15 -1 | -1 | -1 | -1 |  0 | -1 | -1 | -1 | -1 | -1 | -1 | -1 |  0 | -1 |    |  1 |  1 |-10</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">16  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |    |  0 | -1</div>
+<div class="line">16 -2 | -2 | -1 | -2 | -1 | -2 | -2 | -2 | -2 | -2 | -2 | -2 | -1 | -2 | -1 |    |  0 |-26</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">17  0 | -2 | -2 | -2 |  0 |  2 |  3 |  3 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |    | -1</div>
+<div class="line">17 -2 | -2 | -2 | -2 | -1 | -2 | -2 | -2 | -2 | -2 | -2 | -2 | -1 | -2 | -1 |  0 |    |-27</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
 <div class="line">Parâmetros comuns:</div>
 <div class="line"> P2(Debug): nada | P4(Tempo): 10 | P5(Iterações): 0</div>
@@ -558,12 +558,13 @@ Ação 6: Menu 8 - Teste</h2>
 <div class="line"> </div>
 <div class="line">TVector</div>
 <div class="line"> P1(Método): Sort() | P2(Debug): nada | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line">P6(Estrutura): std::vector</div>
-<div class="line">Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791</div>
+<div class="line"> P6(Estrutura): std::vector</div>
+<div class="line">Dados #3000000: -2147483260 -2147483145 -2147476511 ... 2147476201 2147479659 2147481540</div>
 <div class="line">____________________________________________________________________</div>
 </div><!-- fragment --><p>Podemos ver que durante a execução, é mostrada a configuração atual, a instância a ser resolvida. No final são mostrados resultados para cada configuração e instância, agregasdos por configuração. Os indicadores selecionados fazem parte da tabela de resultados.</p>
-<p>É mostrando ainda um torneio entre configurações, para saber a que é mais rápida. Para permitir a reprodução, é mostrrado no final os valores exatos de cada configuração.</p>
-<p>Infelizmente, pouco podemos deduzir deste teste. O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente corridas. Sabemos apenas que não há crash.</p>
+<p>Podemos ver que o indicador definido na subclasse, Ordenado, retorna 1 nos métodos cujo resultado final o vetor fica ordenado, e 0 nos restantes.</p>
+<p>É mostrado ainda um torneio entre configurações, para saber a que é mais rápida. Para permitir a reprodução e identificar eventuais enganos, é mostrado no final os valores exatos de cada configuração.</p>
+<p>Infelizmente, pouco podemos deduzir deste teste. O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente execuções com diversas configurações. Sabemos apenas que não há crash.</p>
 <p>Vamos formular uma pergunta. Pretendemos saber como varia o tempo na operação de ordenação, com o tamanho do vetor.</p>
 <p>Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de novo, para não ter qualquer configuração. Introduza após arrancar: 7; P1=2; <em>ENTER</em>; 8; 1:10; <em>ENTER</em>; 0.</p>
 <div class="fragment"><div class="line">...</div>
@@ -581,20 +582,20 @@ Ação 6: Menu 8 - Teste</h2>
 <div class="line">Instância 10: DONE.</div>
 <div class="line"> ID |conf| Resultado| Tempo(ms)| Iterações|  Ordenado|</div>
 <div class="line">----|----|----------|----------|----------|----------|</div>
-<div class="line">  1 |  1 |        1 |       72 |        1 |        1 |</div>
-<div class="line">  2 |  1 |        1 |      154 |        1 |        1 |</div>
-<div class="line">  3 |  1 |        1 |      238 |        1 |        1 |</div>
-<div class="line">  4 |  1 |        1 |      335 |        1 |        1 |</div>
-<div class="line">  5 |  1 |        1 |      436 |        1 |        1 |</div>
-<div class="line">  6 |  1 |        1 |      555 |        1 |        1 |</div>
-<div class="line">  7 |  1 |        1 |      691 |        1 |        1 |</div>
-<div class="line">  8 |  1 |        1 |      823 |        1 |        1 |</div>
-<div class="line">  9 |  1 |        1 |     1145 |        1 |        1 |</div>
-<div class="line"> 10 |  1 |        1 |     1064 |        1 |        1 |</div>
+<div class="line">  1 |  1 |        1 |       84 |        1 |        1 |</div>
+<div class="line">  2 |  1 |        1 |      278 |        1 |        1 |</div>
+<div class="line">  3 |  1 |        1 |      414 |        1 |        1 |</div>
+<div class="line">  4 |  1 |        1 |      570 |        1 |        1 |</div>
+<div class="line">  5 |  1 |        1 |      590 |        1 |        1 |</div>
+<div class="line">  6 |  1 |        1 |      827 |        1 |        1 |</div>
+<div class="line">  7 |  1 |        1 |      947 |        1 |        1 |</div>
+<div class="line">  8 |  1 |        1 |     1111 |        1 |        1 |</div>
+<div class="line">  9 |  1 |        1 |     1170 |        1 |        1 |</div>
+<div class="line"> 10 |  1 |        1 |     1314 |        1 |        1 |</div>
 <div class="line">----|----|----------|----------|----------|----------|resolvidas</div>
-<div class="line">Total  1 |       10 |     5513 |       10 |       10 | 10</div>
+<div class="line">Total  1 |       10 |     7305 |       10 |       10 | 10</div>
 <div class="line">...</div>
-</div><!-- fragment --><p> Podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 72 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva mais que 720 milisegundos, foi 1064. Notar que a instância 9 levou mais tempo. Como houve uma só execução, esta situação pode ocorrer.</p>
+</div><!-- fragment --><p> Podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 84 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva mais que 840 milisegundos, foi 1314. Foram execuções únicas, os valores podem variar demasiado.</p>
 <p>Vamos colocar 10 instâncias de cada tipo, variando a semente, para assim ter mais precisão. Queremos desta vez ter os resultados no Excel.</p>
 <p>Introduza: 7; P3=1:10; <em>ENTER</em>; 8; 1:10; resultado; 0.</p>
 <div class="fragment"><div class="line">...</div>
@@ -616,7 +617,7 @@ Ação 6: Menu 8 - Teste</h2>
 <div class="line">P6(Estrutura): TVector</div>
 <div class="line">Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237</div>
 <div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p>Existe a indicação que o ficheiro resultado.csv foi gravado. Pode aceder aqui: <img src="docs/images/resultados.csv" alt="resultados.csv" class="inline"/></p>
+</div><!-- fragment --><p>Existe a indicação que o ficheiro resultado.csv foi gravado.</p>
 <p>O ficheiro está pronto para fazermos uma análise com os relatórios dinâmcios. Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visivel o tempo crescente de forma estável, um pouco acima de linear.</p>
 <div class="image">
 <img src="resultados.png" alt=""/>
@@ -639,11 +640,27 @@ Ação 7: Linha de comando</h2>
 <div class="line">  -S              Mostrar soluções durante a execução</div>
 <div class="line">  -h              Esta ajuda</div>
 <div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
-<div class="line">Exemplo: C:\Work\Git\TProcura\x64\Release\TProcura.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
+<div class="line">Exemplo: TProcura.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
 <div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
-</div><!-- fragment --><p>Podemos assim reproduzir o teste anterior com a seguinte entrada.</p>
-<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na �ltima execu��o.">TProcura.exe</a> 1:10 -R resultados -P P1=2 P3=1:10</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcura 1:10 -R resultados -P P1=2 P3=1:10</div>
+<div class="line"> </div>
+<div class="line">Lista de parâmetros:</div>
+<div class="line"> P1(Método): Add() (1 a 12)</div>
+<div class="line"> P2(Debug): nada (0 a 4)</div>
+<div class="line"> P3(Seed): 1 (1 a 1000000)</div>
+<div class="line"> P4(Tempo): 10 (1 a 3600)</div>
+<div class="line"> P5(Iterações): 0 (0 a 1000000000)</div>
+<div class="line"> P6(Estrutura): TVector (1 a 3)</div>
+<div class="line"> </div>
+<div class="line">Lista de indicadores:</div>
+<div class="line"> </div>
+<div class="line">I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)</div>
+<div class="line">I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)</div>
+<div class="line">I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)</div>
+<div class="line">I4(Ordenado): 4º lugar (verifica se o indicador está ordenado)</div>
+</div><!-- fragment --><p>A lista completa de parametros e indicadores é também mostrada, para permitir saber o que se pode utilizar na definição das configurações de execução.</p>
+<p>Podemos assim reproduzir o teste anterior com a seguinte entrada.</p>
+<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na �ltima execu��o.">TProcura.exe</a> 1:10 -R resultado2 -P P1=2 P3=1:10</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcura 1:10 -R resultado2 -P P1=2 P3=1:10</div>
 <div class="line"> </div>
 <div class="line">Parâmetros comuns:</div>
 <div class="line"> P1=2 P2=0 P4=10 P5=0 P6=1</div>
@@ -683,7 +700,7 @@ Ação 7: Linha de comando</h2>
 <div class="line">Instância 8: DONE.</div>
 <div class="line">Instância 9: DONE.</div>
 <div class="line">Instância 10: DONE.</div>
-<div class="line">Ficheiro resultados.csv gravado.</div>
+<div class="line">Ficheiro resultado2.csv gravado.</div>
 </div><!-- fragment --><p>Podemos agora processar o ficheiro e confirmar que tem resultados idênticos, com ligeiras variações no tempo.</p>
 <p>Estando respondida a questão inicial sobre o tempo de ordenação, podemos com este código procurar responder a outra questão:</p>
 <ul>
@@ -696,7 +713,7 @@ Ação 7: Linha de comando</h2>
 <img src="resultadosTudo.png" alt=""/>
 <div class="caption">
 resultadosTudo</div></div>
-    <p>Segundo estes resultados, <a class="el" href="classTVector.html">TVector</a> tem até uma ligeira vantagem em termos de tempo. Foram utilizadas instãncias pequenas para que o teste possa ser rápido. Em qualquer caso pode-se afirmar que não há uma perda muito grande por utilizar <a class="el" href="classTVector.html">TVector</a> em vez do código STL.</p>
+    <p>Segundo estes resultados, <a class="el" href="classTVector.html">TVector</a> tem uma ligeira vantagem em termos de tempo na ordenação, mas é pior na união e outras operações, e no final há uma diferença de 1 segundo em 35. Foram utilizadas instãncias pequenas para que o teste possa ser rápido. Em qualquer caso pode-se afirmar que não há uma perda muito grande por utilizar <a class="el" href="classTVector.html">TVector</a> em vez do código STL.</p>
 <p>Um ficheiro script com a linha de comandos, tem toda a informação para reproduzir o teste, pelo que pode facilitar a identificação do que foi feito. Por outro lado, o ficheiro de resultados tem também todos os valores utilizados, pelo que se houve algum engano na especificação dos parâmetros, o valor utilizado incorreto é visivel nos resultados. Há uma clara separação da fase de implementação da fase de teste. O resultado de um teste pode levantar outras questões, e provocar outro teste. Se a implementação tiver todas as opções em parâmetros, não é necessário alternar com programação entre testes. Apenas após a identificação de bugs, é que a programação é necessária.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a8"></a></p>
@@ -706,7 +723,7 @@ Ação 8: Desafio CTesteTVector</h2>
 <details >
 <summary >
 Resposta:</summary>
-<p>Deve procurar executar com instâncias de dimensão razoável, vamos utilziar a 10 que é a maior. Deve-se executar várias vezes, e apenas na operação de ordenação. Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3 As diferenças não são relevantes, pode-se ver que não apenas as médias, mas os tempos mínimos e máximos são idênticos. Assim, os testes realizados não permitem aferir que um método é superior ao outro.</p>
+<p>Deve procurar executar com instâncias de dimensão razoável, vamos utilziar a 10 que é a maior. Deve-se executar várias vezes, e apenas na operação de ordenação. Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3 Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do <a class="el" href="classTVector.html">TVector</a> nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura.</p>
 <div class="image">
 <img src="resultadosSort.png" alt=""/>
 <div class="caption">

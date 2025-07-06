@@ -113,9 +113,9 @@ Collaboration diagram for CParticao\+:
 \begin{DoxyCompactList}\small\item\em Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{upper\+Bound}}=0)
 \begin{DoxyCompactList}\small\item\em Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ae254bbde1b2e36391d575fc2836fea7f}{Limpar\+Estatisticas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_aa882dc14d5e9fa3033e6924293c7c246}{Limpar\+Estatisticas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Chapar antes da execuÁ„o do algoritmo. Limpa valores estatÌsticos, e fixa o instante limite de tempo para a execuÁ„o. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_ad8ae18693dd91bd4a6b2ce960be5678f}{Execucao\+Terminada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a43c6ec9acbb9f9ce77c4628bf54b7da2}{Execucao\+Terminada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Chamar apÛs a execuÁ„o do algoritmo. Grava o tempo consumido. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}{Lower\+Bound}} ()
 \item 
@@ -188,11 +188,7 @@ Collaboration diagram for CParticao\+:
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}}
 \begin{DoxyCompactList}\small\item\em Custo total acumulado desde o estado inicial. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}
-\begin{DoxyCompactList}\small\item\em Estimativa para o custo at√© um estado objetivo, se dispon√≠vel. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}}
-\begin{DoxyCompactList}\small\item\em N√∫mero de expans√µes efetuadas. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga6185647765b723a3581b5541722e496f}{geracoes}}
-\begin{DoxyCompactList}\small\item\em N√∫mero de estados gerados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Estimativa para o custo at√© um estado objetivo, se dispon√≠vel. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classTProcuraMelhorativa}{TProcura\+Melhorativa}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -226,6 +222,10 @@ Collaboration diagram for CParticao\+:
 \begin{DoxyCompactList}\small\item\em Valor m√≠nimo que a solu√ß√£o pode apresentar, obtido pela procura. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga514dd29e1b8b06e0ecdf054c992c716b}{tamanho\+Codificado}} = \mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\+\_\+\+HASHTABLE}}
 \begin{DoxyCompactList}\small\item\em N√∫mero de inteiros de 64 bits utilizados para codificar um objeto (‚â§ OBJETO\+\_\+\+HASHTABLE). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga198a1f8ed90785a1c3f112a3468a2d74}{expansoes}} = 0
+\begin{DoxyCompactList}\small\item\em N√∫mero de expans√µes efetuadas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga6185647765b723a3581b5541722e496f}{geracoes}} = 0
+\begin{DoxyCompactList}\small\item\em N√∫mero de estados gerados. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{unsigned}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} $>$ \mbox{\hyperlink{group__VariaveisGlobais_gaaf6f588c839f27181cf9f31f7618c8c1}{ramo}}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisGlobais_ga95c939d457c63d60ff3b1a0eb9e47da4}{espacos\+Ramo}} = 2

@@ -28,9 +28,13 @@ typedef \mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texo
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9}{EIndicadores\+Construtiva}} \{ \mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9a3f5ce532e96164730270739fa9473fb5}{ind\+Expansoes}} = ind\+Procura
+enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9}{EIndicadores\+Construtiva}} \{ \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9a818d1291f773148c729736e175d32605}{ind\+Custo}} = ind\+Resultado
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9a3f5ce532e96164730270739fa9473fb5}{ind\+Expansoes}} = ind\+Procura
 , \mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9aba9f465f8ec1b7ad267c21ebf56e3d7f}{ind\+Geracoes}}
-, \mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9ad0eca504c2f694ec07b362cd530496b7}{ind\+Construtiva}}
+, \mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9aee656607f296f8dd902befd18962b7b4}{ind\+Lower\+Bound}}
+, \newline
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9ad0eca504c2f694ec07b362cd530496b7}{ind\+Construtiva}}
  \}
 \item 
 enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a3c6c902bf1e6a69c702caca172718058}{EParametros\+Construtiva}} \{ \newline
@@ -184,7 +188,7 @@ branch\+And\+Bound&Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo info
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00065}{65}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00067}{67}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 \Hypertarget{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88}\label{TProcuraConstrutiva_8h_a72cc367d2463c44be31f085f2ff5fa88} 
 \index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!EEstadosRepetidos@{EEstadosRepetidos}}
@@ -217,7 +221,7 @@ gerados&estados são comparados com todos os gerados, e se forem repetidos são 
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00085}{85}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00087}{87}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
 \Hypertarget{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9}\label{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9} 
 \index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!EIndicadoresConstrutiva@{EIndicadoresConstrutiva}}
@@ -226,12 +230,20 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00085}{85}} o
 {\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9}{EIndicadores\+Construtiva}}}
 
 \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indCusto@{indCusto}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!indCusto@{indCusto}}}\Hypertarget{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9a818d1291f773148c729736e175d32605}\label{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9a818d1291f773148c729736e175d32605} 
+ind\+Custo&o resultado é o custo da solução atual, sendo um upper bound \\
+\hline
+
 \raisebox{\heightof{T}}[0pt][0pt]{\index{indExpansoes@{indExpansoes}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!indExpansoes@{indExpansoes}}}\Hypertarget{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9a3f5ce532e96164730270739fa9473fb5}\label{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9a3f5ce532e96164730270739fa9473fb5} 
 ind\+Expansoes&número de expansões efetuadas durante a procura \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{indGeracoes@{indGeracoes}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!indGeracoes@{indGeracoes}}}\Hypertarget{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9aba9f465f8ec1b7ad267c21ebf56e3d7f}\label{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9aba9f465f8ec1b7ad267c21ebf56e3d7f} 
 ind\+Geracoes&número de estados gerados durante a procura \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indLowerBound@{indLowerBound}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!indLowerBound@{indLowerBound}}}\Hypertarget{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9aee656607f296f8dd902befd18962b7b4}\label{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9aee656607f296f8dd902befd18962b7b4} 
+ind\+Lower\+Bound&valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{indConstrutiva@{indConstrutiva}!TProcuraConstrutiva.h@{TProcuraConstrutiva.h}}\index{TProcuraConstrutiva.h@{TProcuraConstrutiva.h}!indConstrutiva@{indConstrutiva}}}\Hypertarget{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9ad0eca504c2f694ec07b362cd530496b7}\label{TProcuraConstrutiva_8h_a44000b0a177c28d4ca1470694cdf98f9ad0eca504c2f694ec07b362cd530496b7} 
@@ -299,5 +311,5 @@ parametros\+Construtivas&Marcador para permitir a extensão do enum em subclasse
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00046}{46}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00048}{48}} of file \mbox{\hyperlink{TProcuraConstrutiva_8h_source}{TProcura\+Construtiva.\+h}}.
 
