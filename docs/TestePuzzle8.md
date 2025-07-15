@@ -1,6 +1,6 @@
 @page teste_puzzle8 Teste Puzzle 8
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 
 Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste excutando as ações localmente.
@@ -41,17 +41,15 @@ Vamos entrar no problema Puzzle 8, introduza: **2.**
 
 ```entrada
 Puzzle 8
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 0 | gerações 0 | avaliações 0
- .  4  2
- 6  3  5
- 7  1  8
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+ P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
+ 3  1  2
+ 4  7  5
+ 6  8  .
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
+| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
 ```
 Aparece uma instância do Puzzle 8. Poderiamos procurar resolver manualmente. 
 No entanto esta instância está distante da solução, pelo que vamos ver outra instância.
@@ -60,14 +58,18 @@ Introduza: **1;4.**
 ```entrada
 Opção: 1
 
-Nova instância (atual 40) [1-1000]: 4
+ID atual: 40  Intervalo: [1-1000]  Prefixo atual: 'instancia_'
+Novo ID (ENTER mantém) ou novo prefixo (texto): 4
 
 Puzzle 8
-...
+ P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  3  1  2
- 4  5  8
- 6  7  .
-_______________________________________________________________________________```
+ 6  4  5
+ 7  8  .
+____________________________________________________________________
+```
 
 Estavamos na instância 40, e existem instâncias de 1 a 1000. 
 Como as instâncias são construídas com base em movimentos aleatórios em quantidade igual ao ID da instância,
@@ -77,18 +79,18 @@ ao escolher um ID de 4 garantimos que estamos a uma distância de 4 ou menos da 
 \anchor puzzle8-a2
 ## Ação 2 - Resolver manualmente
 
-Vamos então resolver a instância manualmente. Introduza: **2; baixo dir dir baixo; *ENTER*.**
+Vamos então resolver a instância manualmente. Introduza: **2; dir dir baixo baixo; *ENTER*.**
 
 ```entrada
 Opção: 2
 g:0 h:4 1|2|3
  3  1  2
- 4  5  8
- 6  7  .
+ 6  4  5
+ 7  8  .
 Ações: baixo dir
-Sucessor [1-2, ação(ões), exe]:baixo dir dir baixo
+Sucessor [1-2, ação(ões), exe]:dir dir baixo baixo
 Executadas 4 ações com sucesso.
-g:0 6|16|6
+g:0 6|14|6
  .  1  2
  3  4  5
  6  7  8
@@ -100,23 +102,23 @@ Puzzle 8
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+____________________________________________________________________
 ```
-A instância está resolvida. Vamos agora ver o caminho gravado. Introduza **3.**
+A instância está resolvida. Vamos agora ver o caminho gravado. Introduza **4.**
 
 ```entrada
-Opção: 3
+Opção: 4
 
-Parte 1, ações: baixo dir dir baixo
+Parte 1, ações: dir dir baixo baixo
 (3) 1  2
-(4)(5)(8)
- 6  7  .
+(6) 4  5
+(7)(8) .
 Puzzle 8
 ...
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+____________________________________________________________________
 ```
 Vemos agora a solução num formato compacto. 
 Num só tabuleiro, vemos as peças que mudam.
@@ -131,356 +133,418 @@ Assim temos uma forma compacta mais cómuda de ver soluções.
 ## Ação 3 - Procura em Largura
 
 Começamos pela procura em largura nesta instãncia, colocando debug a 4.
-Introduza: **1; 4; 4; 2; 4; *ENTER*; 5**
+Introduza: **1; 4; 3; 2; 4; *ENTER*; 6**
 
 ```entrada
+Opção: 6
+
 g:0
  3  1  2
- 4  5  8
- 6  7  .
+ 6  4  5
+ 7  8  .
 Ações: baixo dir
 g:1 1|2
  3  1  2
- 4  5  .
- 6  7  8
+ 6  4  .
+ 7  8  5
 Ações: baixo dir
 g:1 2|4
  3  1  2
- 4  5  8
- 6  .  7
+ 6  4  5
+ 7  .  8
 Ações: baixo dir
 g:2 3|6
  3  1  .
- 4  5  2
- 6  7  8
+ 6  4  2
+ 7  8  5
 Ações: dir
 g:2 4|7
  3  1  2
- 4  .  5
- 6  7  8
+ 6  .  4
+ 7  8  5
 Ações: baixo cima dir
 g:2 5|10
  3  1  2
- 4  .  8
- 6  5  7
+ 6  .  5
+ 7  4  8
 Ações: baixo dir esq
 g:2 6|13
  3  1  2
- 4  5  8
- .  6  7
+ 6  4  5
+ .  7  8
 Ações: baixo
 g:3 7|14
  3  .  1
- 4  5  2
- 6  7  8
+ 6  4  2
+ 7  8  5
 Ações: cima dir
 g:3 8|16
  3  .  2
- 4  1  5
- 6  7  8
+ 6  1  4
+ 7  8  5
 Ações: dir esq
 g:3 9|18
  3  1  2
- 4  7  5
- 6  .  8
+ 6  8  4
+ 7  .  5
 Ações: dir esq
 g:3 10|20
+ 3  1  2
+ .  6  4
+ 7  8  5
+Ações: baixo cima
+g:3 11|22
+ 3  .  2
+ 6  1  5
+ 7  4  8
+Ações: dir esq
+g:3 12|24
+ 3  1  2
+ .  6  5
+ 7  4  8
+Ações: baixo cima
+g:3 13|26
+ 3  1  2
+ 6  5  .
+ 7  4  8
+Ações: baixo cima
+g:3 14|28
  3  1  2
  .  4  5
  6  7  8  Solução encontrada!
  .  1  2
  3  4  5
  6  7  8 (g:4)
-P1:1 P2:4 P3:4 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:2
-P11:100 P12:0 P13:0
-Resultado: 4 (0,027s)
+ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P7=0 P8=2 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 11 | gerações 22 | avaliações 0
+ P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 4 | I2(Tempo(ms)): 45 | I3(Iterações): 0 | I4(Expansões): 15 | I5(Gerações): 30 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 Foi encontrada uma solução de distância 4. Podemos ver a ordem das expansões, houve estados expandidos 
 que em nada contribuiam para a solução, mas serviram para garantir que não havia outra solução mais curta.
 
 Esta instância era fácil, mas e a instância inicial?
-Vamos ver, mas reduzindo o debug para 2. Introduza: **1; 40; 4; 2; 2; *ENTER*; 5
+Vamos ver, mas reduzindo o debug para 2, e a semente para 2. Introduza: **1; 40; 3; 2; 2; 3; 2; *ENTER*; 6.**
 
 ```entrada
+Opção: 6
+
 g:0
-g:1 1|2
-g:1 2|4
-g:2 3|6
+g:1 1|4
+g:1 2|6
+g:1 3|8
+g:1 4|10
+g:2 5|12
+g:2 6|13
+g:2 7|14
+g:2 8|15
+g:2 9|16
+g:2 10|17
 ...
-g:9 388|668
-g:9 389|670
-g:9 390|672 Solução encontrada!
+g:11 1281|2123
+g:11 1282|2125
+g:11 1283|2127
+g:11 1284|2129 Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:10)
-P1:1 P2:2 P3:4 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:2
-P11:100 P12:0 P13:0
-Resultado: 10 (0,162s)
+ 6  7  8 (g:12)
+ P1=1 P2=2 P3=2 P4=10 P5=0 P6=4 P7=0 P8=2 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 391 | gerações 674 | avaliações 0
+ P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 12 | I2(Tempo(ms)): 621 | I3(Iterações): 0 | I4(Expansões): 1285 | I5(Gerações): 2131 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
-Foi encontrado um resultado com 10 movimentos, mas foram realizadas 391 expansões, resultando em 674 gerações.
-Vamos confirmar a solução. Introduza **3.**
+Foi encontrado um resultado com 12 movimentos, mas foram realizadas 1285 expansões, resultando em 2131 gerações.
+
+Vamos confirmar a solução. Introduza **4.**
 
 ```entrada
-Parte 1, ações: esq cima cima dir
- . (4) 2
- 6 (3) 5
-(7)(1) 8
-Parte 2, ações: baixo baixo esq
+Opção: 4
+
+Parte 1, ações: baixo esq cima cima
+ 4 (7)(3)
+ 1  . (2)
+ 6  8 (5)
+Parte 2, ações: dir baixo baixo dir
 (4)(3) 2
-(6) 1  5
- .  7  8
-Parte 3, ações: cima dir baixo
-(3) .  2
-(4)(1) 5
+ 1 (7) 5
+ 6 (8) .
+Parte 3, ações: cima esq
+ .  4  2
+(1)(3) 5
+ 6  7  8
+Parte 4, ações: baixo dir
+(1)(4) 2
+ 3  .  5
  6  7  8
 Puzzle 8
 ...
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+...
+____________________________________________________________________
 ```
 
-Nesta instância, foram precisas 3 partes para mostrar a solução com 10 ações. 
+Nesta instância, foram precisas 4 partes para mostrar a solução com 12 ações. 
 
 Embora o estado inicial tenha sido obtido por 40 movimentos aleatórios desde o estado objetivo,
-alguns dos movimentos acabaram por se inverter resultando numa instância à distãncia 10 do objetivo.
+alguns dos movimentos acabaram por se inverter resultando numa instância à distãncia 12 do objetivo.
+
+Utilizamos P3(Seed)=2, naturalmente que outra semente aleatória poderia gerar um puzzle de 0 a 40 movimentos da solução.
 
 
 \anchor puzzle8-a4
 ## Ação 4 - Procura em Profundidade
 
-Vamos ver a procura em profundidade na instância 40, que sabemos ter uma solução de 10. 
+Vamos ver a procura em profundidade na instância 40, que sabemos ter uma solução de 12. 
 Vamos alterar o algoritmo, colocar a profundidade a 4, debug a completo e visualização a 1, 
 para ser ver todos os estados. 
-Introduza: **1; 40; 4; 1; 3; 9; 4; 2; 4; 3; 1; *ENTER*; 5.**
+Introduza: **1; 40; 3; 1; 3; 7; 4; 2; 4; 6; 1; *ENTER*; 6.**
 
 ```entrada
 g:0
- .  4  2
- 6  3  5
- 7  1  8
-  +g:1 1|2 cima
-  | 6  4  2
-  | .  3  5
-  | 7  1  8
-  |  +g:2 2|4 cima
-  |  | 6  4  2
-  |  | 7  3  5
-  |  | .  1  8
-  |  |  +g:3 3|5 esq
-  |  |    6  4  2
-  |  |    7  3  5
-  |  |    1  .  8
+ 4  7  3
+ 1  .  2
+ 6  8  5
+  +g:1 1|4 baixo
+  | 4  .  3
+  | 1  7  2
+  | 6  8  5
+  |  +g:2 2|6 dir
+  |  | .  4  3
+  |  | 1  7  2
+  |  | 6  8  5
+  |  |  +g:3 3|7 cima
+  |  |    1  4  3
+  |  |    .  7  2
+  |  |    6  8  5
   |  |
-  |  +g:2 3|5 esq
-  |    6  4  2
-  |    3  .  5
-  |    7  1  8
-  |     +g:3 4|8 baixo
-  |     | 6  .  2
-  |     | 3  4  5
-  |     | 7  1  8
-  |     |
+  |  +g:2 3|7 esq
+  |    4  3  .
+  |    1  7  2
+  |    6  8  5
   |     +g:3 4|8 cima
-  |     | 6  4  2
-  |     | 3  1  5
-  |     | 7  .  8
-  |     |
-  |     +g:3 4|8 esq
-  |       6  4  2
-  |       3  5  .
-  |       7  1  8
+  |       4  3  2
+  |       1  7  .
+  |       6  8  5
   |
-  +g:1 4|8 esq
-    4  .  2
-    6  3  5
-    7  1  8
-     +g:2 5|10 cima
-     | 4  3  2
-     | 6  .  5
-     | 7  1  8
-     |  +g:3 6|13 cima
-     |  | 4  3  2
-     |  | 6  1  5
-     |  | 7  .  8
-     |  |
-     |  +g:3 6|13 dir
-     |  | 4  3  2
-     |  | .  6  5
-     |  | 7  1  8
-     |  |
-     |  +g:3 6|13 esq
-     |    4  3  2
-     |    6  5  .
-     |    7  1  8
+  +g:1 4|8 cima
+  | 4  7  3
+  | 1  8  2
+  | 6  .  5
+  |  +g:2 5|10 dir
+  |  | 4  7  3
+  |  | 1  8  2
+  |  | .  6  5
+  |  |  +g:3 6|11 baixo
+  |  |    4  7  3
+  |  |    .  8  2
+  |  |    1  6  5
+  |  |
+  |  +g:2 6|11 esq
+  |    4  7  3
+  |    1  8  2
+  |    6  5  .
+  |     +g:3 7|12 baixo
+  |       4  7  3
+  |       1  8  .
+  |       6  5  2
+  |
+  +g:1 7|12 dir
+  | 4  7  3
+  | .  1  2
+  | 6  8  5
+  |  +g:2 8|14 baixo
+  |  | .  7  3
+  |  | 4  1  2
+  |  | 6  8  5
+  |  |  +g:3 9|15 esq
+  |  |    7  .  3
+  |  |    4  1  2
+  |  |    6  8  5
+  |  |
+  |  +g:2 9|15 cima
+  |    4  7  3
+  |    6  1  2
+  |    .  8  5
+  |     +g:3 10|16 esq
+  |       4  7  3
+  |       6  1  2
+  |       8  .  5
+  |
+  +g:1 10|16 esq
+    4  7  3
+    1  2  .
+    6  8  5
+     +g:2 11|18 baixo
+     | 4  7  .
+     | 1  2  3
+     | 6  8  5
+     |  +g:3 12|19 dir
+     |    4  .  7
+     |    1  2  3
+     |    6  8  5
      |
-     +g:2 6|13 esq
-       4  2  .
-       6  3  5
-       7  1  8
-        +g:3 7|14 cima
-          4  2  5
-          6  3  .
-          7  1  8
+     +g:2 12|19 cima
+       4  7  3
+       1  2  5
+       6  8  .
+        +g:3 13|20 dir
+          4  7  3
+          1  2  5
+          6  .  8
 
-P1:3 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:4 P10:2
-P11:100 P12:0 P13:0
-Resultado: -1 (0,043s)
+ P1=3 P2=4 P3=2 P4=10 P5=0 P6=1 P7=4 P8=2 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 4 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 7 | gerações 14 | avaliações 0
- .  4  2
- 6  3  5
- 7  1  8
-_______________________________________________________________________________
+ P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 1 | P7(Limite): 4 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
+ 4  7  3
+ 1  .  2
+ 6  8  5
+I1(Custo): -1 | I2(Tempo(ms)): 70 | I3(Iterações): 0 | I4(Expansões): 13 | I5(Gerações): 20 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 Foram vistos todos os estados, e não se encontrou uma solução. Vamos agora colocar 
 o limite a 0, de modo a executar a iterativa, e debug no nível 2.
-Introduza: **1; 40; 4; 9; 0; 2; 2; *ENTER*; 5.
+Introduza: **1; 40; 3; 7; 0; 2; 2; *ENTER*; 6.**
 
 ```entrada
 Iteração 1:
 = g:0
 Iteração 2:
---+= g:1 1|2
-  += g:1 1|2
+--+= g:1 1|4
+  += g:1 1|4
+  += g:1 1|4
+  += g:1 1|4
 Iteração 3:
---+--+= g:2 3|6
-  |  += g:2 3|6
-  +--+= g:2 4|8
-     += g:2 4|8
+--+--+= g:2 3|10
+  |  += g:2 3|10
+  +--+= g:2 4|12
+  |  += g:2 4|12
+  +--+= g:2 5|14
+  |  += g:2 5|14
+  +--+= g:2 6|16
+     += g:2 6|16
 Iteração 4:
---+--+--+= g:3 7|13
-  |  +--+= g:3 8|16
-  |     += g:3 8|16
-  |     += g:3 8|16
-  +--+--+= g:3 10|21
-     |  += g:3 10|21
-     |  += g:3 10|21
-     +--+= g:3 11|22
+--+--+--+= g:3 9|23
+  |  +--+= g:3 10|24
+  +--+--+= g:3 12|27
+  |  +--+= g:3 13|28
+  +--+--+= g:3 15|31
+  |  +--+= g:3 16|32
+  +--+--+= g:3 18|35
+     +--+= g:3 19|36
 Iteração 5:
---+--+--+--+= g:4 15|29
-  |  |     += g:4 15|29
+--+--+--+--+= g:4 23|45
+  |  |     += g:4 23|45
+  |  +--+--+= g:4 25|48
+  |        += g:4 25|48
+  +--+--+--+= g:4 28|53
+  |  |     += g:4 28|53
+  |  +--+--+= g:4 30|56
+  |        += g:4 30|56
+  +--+--+--+= g:4 33|61
+  |  |     += g:4 33|61
+  |  +--+--+= g:4 35|64
+  |        += g:4 35|64
+  +--+--+--+= g:4 38|69
+     |     += g:4 38|69
+     +--+--+= g:4 40|72
+           += g:4 40|72
 ...
-           += g:4 26|52
-Iteração 6:
---+--+--+--+--+= g:5 31|62
-  |  |     |  += g:5 31|62
+Iteração 13:
+--+--+--+--+--+--+--+--+--+--+--+--+= g:12 2711|4651
+  |  |     |     |  |  |     |     += g:12 2711|4651
+  |  |     |     |  |  |     +--+--+= g:12 2713|4656
 ...
-              += g:5 57|102
-Iteração 7:
---+--+--+--+--+--+= g:6 63|114
-  |  |     |  |  += g:6 63|114
-...
-                 += g:6 108|192
-Iteração 8:
---+--+--+--+--+--+--+= g:7 115|205
-  |  |     |  |  +--+= g:7 116|206
-...
-                 +--+= g:7 199|350
-Iteração 9:
---+--+--+--+--+--+--+--+= g:8 207|365
-  |  |     |  |  |     += g:8 207|365
-...
-                       += g:8 358|644
-Iteração 10:
---+--+--+--+--+--+--+--+--+= g:9 367|660
-  |  |     |  |  |     +--+= g:9 368|663
-...
-                       +--+= g:9 653|1126
-Iteração 11:
---+--+--+--+--+--+--+--+--+--+= g:10 663|1144
-  |  |     |  |  |     |     += g:10 663|1144
-...
-     |  |  |     |     |  |  += g:10 904|1574
-     |  |  |     |     |  +--+ Solução encontrada!
+  |  |                          +--+= g:12 2943|5062
+  |  |                             += g:12 2943|5062
+  |  +--+--+--+--+--+--+--+--+--+--+= g:12 2953|5079
+  |        |     |  |  |     |     += g:12 2953|5079
+  |        |     |  |  |     +--+--+ Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:10)
-P1:3 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:2
-P11:100 P12:0 P13:0
-Resultado: 10 (1,037s)
+ 6  7  8 (g:12)
+ P1=3 P2=2 P3=2 P4=10 P5=0 P6=1 P7=0 P8=2 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ascendentes | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 905 | gerações 1576 | avaliações 0
+ P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 12 | I2(Tempo(ms)): 3920 | I3(Iterações): 0 | I4(Expansões): 2955 | I5(Gerações): 5084 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 
-A procura em profundidade iterativa encontrou também a solução ótima, com 10 movimentos, na 11ª iteração.
-Foram realizadas 905 expansões e 1576 gerações, um valor superior à procura em largura.
+A procura em profundidade iterativa encontrou também a solução ótima, com 12 movimentos, na 13ª iteração.
+Foram realizadas 2955 expansões e 5084 gerações, um valor superior à procura em largura.
 
-Notar no entanto no parâmetro P10(Repetidos): ascendentes. Significa que não foram gerados estadso, 
+Notar no entanto no parâmetro P8(Repetidos): ascendentes. Significa que não foram gerados estadso, 
 que num dado ramo, já tinham ocorrido anteriormente. Esta é a opção de omissão para este problema, 
 já que foi redefinido CPuzzle8::ResetParametros().
 
 Vamos repetir esta execução, com debug no nível 1, e ignorando repetidos. 
-Introduza: **1; 40; 4; 2; 1; 10; 1; *ENTER*; 5.**
+Introduza: **1; 40; 3; 2; 1; 8; 1; *ENTER*; 6.**
 
 ```entrada
+Opção: 6
 #
 #
 #
-
 
 
 
 
 
 #####
-###############
-################ Solução encontrada!
+##########
+#######################
+####################################################################
+##########...###########################
+##########...########################### Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:10)
-P1:3 P2:1 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1
-P11:100 P12:0 P13:0
-Resultado: 10 (0,018s)
+ 6  7  8 (g:12)
+ P1=3 P2=1 P3=2 P4=10 P5=0 P6=1 P7=0 P8=1 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 14852 | gerações 42350 | avaliações 0
+ P1(Algoritmo): Profundidade Primeiro | P2(Debug): atividade | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 12 | I2(Tempo(ms)): 114 | I3(Iterações): 0 | I4(Expansões): 156105 | I5(Gerações): 440523 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 Podemos ver que o número de expansões e gerações é consideravelmente superior.
 
 A verificação dos estados repetidos, é portanto um parametro bastante importante neste problema, em que
 o mesmo estado pode surgir várias vezes. Vamos então testar em eliminar todos os estados repetidos.
-Introduza: **1; 40; 4; 10; 3; *ENTER*; 5.**
+Introduza: **1; 40; 3; 8; 3; *ENTER*; 6.**
 
 ```entrada
 #
@@ -494,23 +558,24 @@ Introduza: **1; 40; 4; 10; 3; *ENTER*; 5.**
 
 
 
+#
+#
  Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:10)
-P1:3 P2:1 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:3
-P11:100 P12:0 P13:0
-Resultado: 10 (0,050s)
+ 6  7  8 (g:12)
+ P1=3 P2=1 P3=2 P4=10 P5=0 P6=1 P7=0 P8=3 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): atividade | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 864 | gerações 1469 | avaliações 0
+ P1(Algoritmo): Profundidade Primeiro | P2(Debug): atividade | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 12 | I2(Tempo(ms)): 77 | I3(Iterações): 0 | I4(Expansões): 2647 | I5(Gerações): 4400 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 
 Podemos ver que o número de exapansões e gerações é ligeiramente inferior à configuração inicial, de remover repetidos ascendentes.
@@ -533,51 +598,62 @@ Esta heurística relaxa a situação de apenas ser possível mover para o local 
 retorna o valor que seria o correto caso cada peça pudesse mover-se por cima das outras.
 É implementada no problema ao redefinir CPuzzle8::Heuristica().
 
-Vamos começar por ver (notar que P3(Ver): 1). Introduza: **1; 40; 2; esq esq; *ENTER*.**
+Vamos começar por ver (notar que P6(Ver): 1). Introduza: **1; 40; 2; dir baixo; *ENTER*.**
 
 ```entrada
-g:0 h:6 1|2|3
- .  4  2
- 6  3  5
- 7  1  8
-  +#1 g:1 h:7 1|2|3 cima
-  | 6  4  2
-  | .  3  5
-  | 7  1  8
-  +#2 g:1 h:7 1|2|3 esq
-    4  .  2
-    6  3  5
-    7  1  8
-Sucessor [1-2, ação(ões), exe]:esq esq
+g:0 h:12 1|4|5
+ 4  7  3
+ 1  .  2
+ 6  8  5
+  +#1 g:1 h:11 1|4|5 baixo
+  | 4  .  3
+  | 1  7  2
+  | 6  8  5
+  +#2 g:1 h:13 1|4|5 cima
+  | 4  7  3
+  | 1  8  2
+  | 6  .  5
+  +#3 g:1 h:11 1|4|5 dir
+  | 4  7  3
+  | .  1  2
+  | 6  8  5
+  +#4 g:1 h:13 1|4|5 esq
+    4  7  3
+    1  2  .
+    6  8  5
+Sucessor [1-4, ação(ões), exe]:dir baixo
 Executadas 2 ações com sucesso.
-g:0 h:8 4|9|6
- 4  2  .
- 6  3  5
- 7  1  8
-  +#1 g:1 h:9 4|9|6 cima
-  | 4  2  5
-  | 6  3  .
-  | 7  1  8
-  +#2 g:1 h:7 4|9|6 dir
-    4  .  2
-    6  3  5
-    7  1  8
+g:0 h:10 4|13|8
+ .  7  3
+ 4  1  2
+ 6  8  5
+  +#1 g:1 h:11 4|13|8 cima
+  | 4  7  3
+  | .  1  2
+  | 6  8  5
+  +#2 g:1 h:11 4|13|8 esq
+    7  .  3
+    4  1  2
+    6  8  5
 Sucessor [1-2, ação(ões), exe]:
 
 Puzzle 8
 ...
- 4  2  .
- 6  3  5
- 7  1  8
-_______________________________________________________________________________
+ .  7  3
+ 4  1  2
+ 6  8  5
+____________________________________________________________________
 ```
 
 Na informação de um estado, vemos não apenas o valor de g (o custo), mas também o valor de h.
 O valor de h é a heuristica, que idealmente é uma estimativa conservadora da distância até ao objetivo.
 
-No estado inicial a heurística é 6, porque:
-- o número 1 está à distância 2
-- o número 3, 4, 6, e 7 à distância 1
+No estado inicial a heurística é 12, porque:
+- os números 2, 5, 8 estão a distância 1
+- os números 1, 4, 7 estã à distância 2
+- o número 3 está à distância 3
+
+O total será 3 + 6 + 3 = 12.
 
 Vamos ver como esta heurística guia os diferentes algoritmos informados.
 
@@ -590,145 +666,126 @@ com menor heurística, ou seja, mais perto do objetivo, daí o nome de melhor pr
 Este é um algoritmo em profundidade pelo que vamos deixar a configuração de remoção de estados
 repetidos gerados, de modo a observar o desempenho deste algoritmo nas melhores condições.
 
-Neste e em outras execuções das procuras informadas, vamos limitar o número de avaliações a 1000000, 
+Neste e em outras execuções das procuras informadas, vamos limitar o número de avaliações (iterações) a 1000000, 
 de modo a ter um critério de paragem independente do tempo.
 
-Introduza: **1; 40; 4; 1; 4; 2; 3; 8; 1000000; 10; 3; *ENTER*; 5.**
+Introduza: **1; 40; 3; 1; 4; 2; 3; 5; 1000000; 8; 3; *ENTER*; 6.**
 
 ```entrada
---+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+& g:30 h:4 31|56|56
-  |  |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     | 6  4  2
-  |  |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     | 3  1  5
-  |  |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     | .  7  8
-  |  |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     |     |  |  |     
-  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+ Solução encontrada!
+Opção: 6
+--+--+--+--+--+--...+--+--+--+--+--+--+--+--+--+--+--+--+--+ Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:44)
-P1:4 P2:3 P3:1 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3
-P11:100 P12:0 P13:0
-Resultado: 44 (0,028s)
+ 6  7  8 (g:70)
+ P1=4 P2=3 P3=2 P4=10 P5=1000000 P6=1 P7=0 P8=3 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): Melhor Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000
-P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 45 | gerações 83 | avaliações 83
+ P1(Algoritmo): Melhor Primeiro | P2(Debug): detalhe | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000
+ P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 70 | I2(Tempo(ms)): 36 | I3(Iterações): 128 | I4(Expansões): 70 | I5(Gerações): 128 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
-Conseguimos uma solução de 44 ações, utilizando 45 expansões. 
+Conseguimos uma solução de 70 ações, utilizando 70 expansões. 
 O resultado em termos de esforço computacional é muito reduzido, pelo que a informação 
 dada pela heurística foi útil. No entanto, a qualidade da solução baixa, já que fica com
-44 de custo, quando sabemos existir uma solução de custo 10. 
+70 de custo, quando sabemos existir uma solução de custo 12. 
 
 \anchor puzzle8-a7
 ## Ação 7 - AStar
 
 Vamos agora ver o comportamento do AStar, que garante a solução ótima. 
 
-Introduza: **1; 40; 4; 1; 2; 4; 3; 4; 5; *ENTER*; 5.**
+Introduza: **1; 40; 3; 1; 5; 2; 4; 6; 4; *ENTER*; 6.**
 
 ```entrada
-g:0 h:8
- .  4  2
- 6  3  5
- 7  1  8
-Ações: cima esq
-g:1 h:7 1|2|2
- 4  .  2
- 6  3  5
- 7  1  8
-Ações: cima esq
-g:1 h:7 2|4|4
- 6  4  2
- .  3  5
- 7  1  8
-Ações: cima esq
-g:2 h:6 3|6|6
- 6  4  2
- 3  .  5
- 7  1  8
-Ações: baixo cima esq
-g:3 h:5 4|9|9
- 6  4  2
- 3  1  5
- 7  .  8
+Opção: 6
+
+g:0 h:10
+ 4  7  3
+ 1  .  2
+ 6  8  5
+Ações: baixo cima dir esq
+g:1 h:11 1|4|4
+ 4  .  3
+ 1  7  2
+ 6  8  5
 Ações: dir esq
-g:4 h:4 5|11|11
- 6  4  2
- 3  1  5
- .  7  8
-Ações: baixo
-g:3 h:5 6|12|12
- 6  .  2
- 3  4  5
- 7  1  8
-Ações: dir esq
-g:2 h:8 7|14|14
+g:2 h:10 2|6|6
+ 4  3  .
+ 1  7  2
+ 6  8  5
+Ações: cima
+g:3 h:9 3|7|7
  4  3  2
- 6  .  5
- 7  1  8
-Ações: cima dir esq
-g:3 h:7 8|17|17
+ 1  7  .
+ 6  8  5
+Ações: cima dir
+g:4 h:8 4|9|9
  4  3  2
- 6  1  5
- 7  .  8
-Ações: dir esq
-g:4 h:6 9|19|19
+ 1  7  5
+ 6  8  .
+Ações: dir
+g:5 h:7 5|10|10
  4  3  2
- 6  1  5
- .  7  8
-Ações: baixo
-g:5 h:5 10|20|20
+ 1  7  5
+ 6  .  8
+Ações: baixo dir
+g:6 h:6 6|12|12
+ 4  3  2
+ 1  .  5
+ 6  7  8
+Ações: baixo dir esq
+g:7 h:5 7|15|15
  4  3  2
  .  1  5
  6  7  8
-Ações: baixo esq
-g:6 h:4 11|22|22
+Ações: baixo cima
+g:8 h:4 8|17|17
  .  3  2
  4  1  5
  6  7  8
 Ações: esq
-g:7 h:3 12|23|23
+g:9 h:3 9|18|18
  3  .  2
  4  1  5
  6  7  8
 Ações: cima esq
-g:8 h:2 13|25|25
+g:10 h:2 10|20|20
  3  1  2
  4  .  5
  6  7  8
 Ações: cima dir esq
-g:9 h:1 14|28|28
+g:11 h:1 11|23|23
  3  1  2
  .  4  5
  6  7  8
 Ações: baixo cima
-g:10 15|30|30
+g:12 12|25|25
  .  1  2
  3  4  5
  6  7  8  Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:10)
-P1:5 P2:4 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3
-P11:100 P12:0 P13:0
-Resultado: 10 (0,041s)
+ 6  7  8 (g:12)
+ P1=5 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): A* | P2(Debug): completo | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000
-P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 15 | gerações 30 | avaliações 30
+ P1(Algoritmo): A* | P2(Debug): completo | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 12 | I2(Tempo(ms)): 40 | I3(Iterações): 25 | I4(Expansões): 12 | I5(Gerações): 25 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
-Foram utilizadas 15 expansões para obter a solução ótima de 10 movimentos. 
+Foram utilizadas 12 expansões para obter a solução ótima de 12 movimentos. 
 Esta é portanto uma instância simples para este algoritmo.
 
 \anchor puzzle8-a8
@@ -738,99 +795,60 @@ O AStar pode ter problemas de memória em instâncias complexas, existindo o IDA
 de expansão, mas sem o problema de memória, em troca de algum tempo de CPU extra, gasto ao expandir multiplas
 vezes os mesmos estados. Vamas ver como se comporta nesta instância.
 
-Introduza: **1; 40; 4; 1; 6; *ENTER*; 5.**
+Introduza: **1; 40; 3; 1; 6; *ENTER*; 6.**
 
 ```entrada
-g:0 h:8
- .  4  2
- 6  3  5
- 7  1  8
+g:0 h:10
+ 4  7  3
+ 1  .  2
+ 6  8  5
 
-Iteração 6: (expansões 0, gerações 0, avaliações 1)
-g:0 h:8 |1
- .  4  2
- 6  3  5
- 7  1  8
-  +
-  +
-Iteração 8: (expansões 1, gerações 2, avaliações 3)
-g:0 h:8 1|2|3
- .  4  2
- 6  3  5
- 7  1  8
-  +g:1 h:7 2|4|5 cima
-  |  +g:2 h:6 3|6|7 esq
-  |  |  +g:3 h:5 4|9|10 baixo
-  |  |  |  +
-  |  |  |  +
-  |  |  +g:3 h:5 5|11|12 cima
-  |  |  |  +g:4 h:4 6|13|14 dir
-  |  |  |  |  +
-  |  |  |  +
-  |  |  +
-  |  +
-  +g:1 h:7 7|14|15 esq
-     +
-     +
-Iteração 10: (expansões 8, gerações 16, avaliações 17)
-g:0 h:8 8|16|17
- .  4  2
- 6  3  5
- 7  1  8
-  +g:1 h:7 9|18|19 cima
-  |  +g:2 h:6 10|20|21 esq
-  |  |  +g:3 h:5 11|23|24 baixo
-  |  |  |  +g:4 h:6 12|25|26 dir
-  |  |  |  |  +
-  |  |  |  +g:4 h:6 13|26|27 esq
-  |  |  |     +
-  |  |  +g:3 h:5 14|27|28 cima
-  |  |  |  +g:4 h:4 15|29|30 dir
-  |  |  |  |  +g:5 h:5 16|30|31 baixo
-  |  |  |  |     +g:6 h:4 17|32|33 baixo
-  |  |  |  |     |  +
-  |  |  |  |     +
-  |  |  |  +g:4 h:6 18|33|34 esq
-  |  |  |     +
-  |  |  +g:3 h:7 19|34|35 esq
+Iteração 12: (expansões 0, gerações 0, avaliações 1)
+g:0 h:10 |1
+ 4  7  3
+ 1  .  2
+ 6  8  5
+  +g:1 h:11 1|4|5 baixo
+  |  +g:2 h:10 2|6|7 dir
+  |  |  +g:3 h:9 3|7|8 cima
   |  |     +
   |  |     +
-  |  +g:2 h:8 20|36|37 cima
-  |     +
-  +g:1 h:7 21|37|38 esq
-     +g:2 h:8 22|39|40 cima
-     |  +g:3 h:7 23|42|43 cima
-     |  |  +g:4 h:6 24|44|45 dir
-     |  |  |  +g:5 h:5 25|45|46 baixo
-     |  |  |     +g:6 h:4 26|47|48 baixo
-     |  |  |     |  +g:7 h:3 27|48|49 esq
-     |  |  |     |     +g:8 h:2 28|50|51 cima
-     |  |  |     |     |  +g:9 h:1 29|53|54 dir
-     |  |  |     |     |  |  +g:10 30|55|56 baixo
-     |  |  |     |     |  |  | Solução encontrada!
+  |  +g:2 h:10 4|9|10 esq
+  |     +g:3 h:9 5|10|11 cima
+  |        +g:4 h:8 6|12|13 cima
+  |        |  +g:5 h:7 7|13|14 dir
+  |        |     +g:6 h:6 8|15|16 baixo
+  |        |     |  +g:7 h:5 9|18|19 baixo
+  |        |     |  |  +g:8 h:4 10|20|21 dir
+  |        |     |  |  |  +g:9 h:3 11|21|22 cima
+  |        |     |  |  |     +g:10 h:2 12|23|24 esq
+  |        |     |  |  |     |  +g:11 h:1 13|26|27 baixo
+  |        |     |  |  |     |  |  +g:12 14|28|29 dir
+  |        |     |  |  |     |  |  | Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:10)
-P1:6 P2:4 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3
-P11:100 P12:0 P13:0
-Resultado: 10 (0,059s)
+ 6  7  8 (g:12)
+ P1=6 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): IDA* | P2(Debug): completo | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000
-P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 30 | gerações 55 | avaliações 56
+ P1(Algoritmo): IDA* | P2(Debug): completo | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 12 | I2(Tempo(ms)): 35 | I3(Iterações): 29 | I4(Expansões): 14 | I5(Gerações): 28 |
+I6(Lower Bound): 14
+____________________________________________________________________
 ```
 Podemos ver que em termos de iterações, ao contrário da procura em profundidade iterativa,
-tem menos iterações. O limite da iteração seguinte é determinado pelo menor valor dos estados
-cortados, avançando mais que uma unidade de cada vez.
-Acabou por ter apenas 30 expansões, enquanto que o AStar utilizou 15 expansões. 
+tem menos iterações. 
 
-Pode-se considerar que é o dobro, mas é um pequeno preço a pagar por não ter problemas de memória.
+O limite da iteração seguinte é determinado pelo menor valor dos estados
+cortados, avançando mais que uma unidade de cada vez.
+Acabou por ter apenas 29 expansões, enquanto que o AStar utilizou 12 expansões. 
+
+Pode-se considerar que é mais do dobro, mas é um pequeno preço a pagar por não ter problemas de memória.
 
 
 \anchor puzzle8-a9
@@ -843,50 +861,67 @@ No entanto restringe o espaço de procura apenas aos estados que melhoram a solu
 É um algoritmo em profundidade, pelo que não tem problemas de memória originados na procura em largura.
 Vamos baixar o nível de debug para 1.
 
-Introduza: **1; 40; 4; 1; 2; 1; 7; *ENTER*; 5.**
+Introduza: **1; 40; 3; 1; 7; 2; 1; *ENTER*; 6.**
 
 ```entrada
 # Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:44) Solução encontrada!
+ 6  7  8 (g:70) Solução encontrada!
+ .  1  2
+ 3  4  5
+ 6  7  8 (g:68) Solução encontrada!
+ .  1  2
+ 3  4  5
+ 6  7  8 (g:64) Solução encontrada!
+ .  1  2
+ 3  4  5
+ 6  7  8 (g:60) Solução encontrada!
+ .  1  2
+ 3  4  5
+ 6  7  8 (g:52) Solução encontrada!
+ .  1  2
+ 3  4  5
+ 6  7  8 (g:50)# Solução encontrada!
+ .  1  2
+ 3  4  5
+ 6  7  8 (g:48) Solução encontrada!
+ .  1  2
+ 3  4  5
+ 6  7  8 (g:46)# Solução encontrada!
  .  1  2
  3  4  5
  6  7  8 (g:42) Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:40) Solução encontrada!
+ 6  7  8 (g:32) Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:38) Solução encontrada!
+ 6  7  8 (g:30) Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:26) Solução encontrada!
+ 6  7  8 (g:28)# Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:24) Solução encontrada!
+ 6  7  8 (g:24)# Solução encontrada!
  .  1  2
  3  4  5
- 6  7  8 (g:18) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:10)
-P1:7 P2:1 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3
-P11:100 P12:0 P13:0
-Resultado: 10 (0,019s)
+ 6  7  8 (g:12)
+ P1=7 P2=1 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0
+ P11=0
 Puzzle 8
-P1(Algoritmo): Branch and Bound | P2(Debug): atividade | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000
-P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 846 | gerações 1406 | avaliações 1406
+ P1(Algoritmo): Branch and Bound | P2(Debug): atividade | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  .  1  2
  3  4  5
  6  7  8
-_______________________________________________________________________________
+I1(Custo): 12 | I2(Tempo(ms)): 36 | I3(Iterações): 6666 | I4(Expansões): 4110 | I5(Gerações): 6666 |
+I6(Lower Bound): 14
+____________________________________________________________________
 ```
-Vemos que primeiramente encontra a solução de 44 movimentos, e depois vai encontrando sucessivamente 
-soluções melhores até que termina com a solução de 10. Gasta nesta instância um número 
+Vemos que primeiramente encontra a solução de 70 movimentos, e depois vai encontrando sucessivamente 
+soluções melhores até que termina com a solução de 12. Gasta nesta instância um número 
 consideravelmente superior de expansões e gerações, quando comparado com o AStar.
 
 Podemos agora ver outras instâncias, e estar a executar cada um dos algoritmos para ver qual é o melhor.
@@ -897,6 +932,13 @@ não necessariamente representativa de todas as instâncias.
 
 É para melhor medir o desempenho de algoritmos e configurações, que existem os testes empíricos,
 permitindo assim comparar algoritmos e/ou configurações num leque alargado de instâncias.
+
+..................................................................
+..................................................................
+.... (executar logo o teste empírico em linha de comando?)........
+..................................................................
+..................................................................
+
 
 \anchor puzzle8-a10
 ## Ação 10 - Configurações
@@ -1200,4 +1242,4 @@ O Melhor Primeiro e os algoritmos cegos, estão claramente a trás.
 Note-se no entanto que o limite no número de avaliações não afeta os algoritmos cegos, pelo que um limite no 
 numero de gerações poderia permitir observar vantagem do Melhor Primeiro sobre os algoritmos cegos.
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |

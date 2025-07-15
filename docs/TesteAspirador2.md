@@ -1,8 +1,6 @@
 @page teste_aspirador2 Teste Aspirador - Parte 2/2
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
-
-
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
 
@@ -43,8 +41,8 @@ Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.
 ## Ação 11 - Efetuar uma procura em Profundidade Primeiro
 
 Utilizar a instância número 2, o algoritmo profundidade primeiro, 
-com limite de profundidade a 3, com nível de debug máximo, e ignorando repetidos: 
-**1; 2; 4; 1; 3; 9; 3; 2; 4; 10; 1; *ENTER*; 5.**
+com limite de profundidade a 3, com nível de debug máximo, ignorando repetidos e ver ações a 1: 
+**1; 2; 3; 1; 3; 7; 3; 2; 4; 8; 1; 6; 1; *ENTER*; 6.**
 
 O parâmetro 1 é o algoritmo, em que o 3 é a profundidade primeiro.
 
@@ -60,12 +58,12 @@ Algoritmo base a executar.
 Algoritmo (atual 1):
 ```
 
-O parâmetro 9 é o limite, com diferentes interpretações conforme o algoritmo.  
+O parâmetro 7 é o limite, com diferentes interpretações conforme o algoritmo.  
 Na procura em largura o limite servia para limitar o número de estados gerados mas não expandidos. 
 Aqui serve para limitar o nível de profundidade, que é fixado a 3. 
 
 ```entrada
-Opção: 5
+Opção: 6
 g:0
  * [*]
   +g:1 1|2 esq
@@ -84,25 +82,24 @@ g:0
      +g:2 3|6 asp
        * [.]
 
-P1:3 P2:4 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:3 P10:1
-P11:100 P12:0 P13:0
-Resultado: -1 (0,012s)
+ P1=3 P2=4 P3=1 P4=10 P5=0 P6=1 P7=3 P8=1 P9=100 P10=0
+ P11=0
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 3 | gerações 6 | avaliações 0
+ P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 1 | P7(Limite): 3 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
  * [*]
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+I1(Custo): -1 | I2(Tempo(ms)): 12 | I3(Iterações): 0 | I4(Expansões): 3 | I5(Gerações): 6 |
+I6(Lower Bound): 0
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
+| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
 ```
 
 Podemos ver todos os estados gerados. 
 A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -1. 
-Este resultado pode ser utilizado para saber que não há nenhuma solução 
-de comprimento inferior a 3, ou seja, é um lower bound.
+Embora o indicador 6 não seja atualizado, este resultado pode ser utilizado para saber que não há nenhuma solução 
+de comprimento inferior a 3, ou seja, é um lower bound, neste caso 4, já que o custo de cada movimento é unitário. 
 
 Esta visualização da árvore da procura é interessante para pequenos problemas, 
 mas naturalmente que procuras maiores torna-se impraticável. 
@@ -111,10 +108,10 @@ Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamo
 \anchor aspirador-a12
 ## Ação 12 - Ver uma árvore de procura maior
 
-Colocar a profundidade a 10, e o nível de debug a 3: **1; 2; 4; 9; 10; 2; 3; *ENTER*; 5.**
+Colocar a profundidade a 10, e o nível de debug a 3: **1; 2; 3; 7; 10; 2; 3; *ENTER*; 6.**
 
 ```entrada
-Opção: 5
+Opção: 6
 --+--+--+--+--+--+--+--+--+= g:9 9|18
   |  |  |  |  |  |  |  |  |[*] *
   |  |  |  |  |  |  |  |  += g:9 9|18
@@ -127,26 +124,25 @@ Opção: 5
   |  |  |  |  |  |     |  | * [.]
   |  |  |  |  |  |     |  + Solução encontrada!
 [.] . (g:9)
-P1:3 P2:3 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:10 P10:1
-P11:100 P12:0 P13:0
-Resultado: 9 (0,021s)
+ P1=3 P2=3 P3=1 P4=10 P5=0 P6=1 P7=10 P8=1 P9=100 P10=0
+ P11=0
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 10 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 12 | gerações 24 | avaliações 0
+ P1(Algoritmo): Profundidade Primeiro | P2(Debug): detalhe | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 1 | P7(Limite): 10 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
 [.] .
-_______________________________________________________________________________
+I1(Custo): 9 | I2(Tempo(ms)): 22 | I3(Iterações): 0 | I4(Expansões): 12 | I5(Gerações): 24 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 Com o nível debug a 3 vemos a árvore de procura apenas os estados folha, mas não os estados expandidos. 
 A informação é mais reduzida, mas poderá ser uma boa forma de analisar 
 os estados em que o algoritmo volta para trás, 
 já que podem ter alguma característica relevante, ainda não implementada. 
-A solução não é óptima, tem comprimento 9! Podemos visualizar a solução, introduza: **3.**
+A solução não é óptima, tem comprimento 9! Podemos visualizar a solução, introduza: **4.**
 
 ```entrada
-Opção: 3
+Opção: 4
 
  * [*] (g:0)
 [*] *  (g:1)
@@ -171,7 +167,7 @@ no caso deste código é executada com o limite=0.
 \anchor aspirador-a13
 ## Ação 13 - Profundidade Iterativa
 
-Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: **1; 2; 4; 9; 0; 2; 2; *ENTER*; 5.**
+Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: **1; 2; 3; 7; 0; 2; 2; *ENTER*; 6.**
 
 ```entrada
 Iteração 1:
@@ -192,17 +188,16 @@ Iteração 4:
   +--+--+= g:3 10|20
      |  + Solução encontrada!
 [.] . (g:3)
-P1:3 P2:2 P3:1 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1
-P11:100 P12:0 P13:0
-Resultado: 3 (0,016s)
+ P1=3 P2=2 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P9=100 P10=0
+ P11=0
 Aspirador
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 10 | gerações 20 | avaliações 0
+ P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
 [.] .
-_______________________________________________________________________________
+I1(Custo): 3 | I2(Tempo(ms)): 15 | I3(Iterações): 0 | I4(Expansões): 10 | I5(Gerações): 20 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 
 Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solução ótima. 
@@ -220,7 +215,7 @@ Vamos agora ver o que acontece se não limitarmos a procura em profundidade, col
 ## Ação 14 - Profundidade ilimitada
 
 Colocar a profundidade ilimitada (limite a -1), e o nível de debug a 1: 
-**1; 2; 4; 9; -1; 2; 1; *ENTER*; 5.**
+**1; 2; 3; 7; -1; 2; 1; *ENTER*; 6.**
 
 ```entrada
 Opção: 5
@@ -249,4 +244,4 @@ encontra a solução ótima sem nunca se enganar. Iremos em outros problemas tes
 O custo de cada ação é sempre unitário, pelo que, o custo uniforme será mostrado num problema em que cada ação possa ter custo variável.
 Deixamos também as configurações e os testes empíricos, com as opções 6 e 7 do menu dos testes manuais, para outros problemas. 
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
