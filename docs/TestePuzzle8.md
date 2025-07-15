@@ -933,313 +933,102 @@ não necessariamente representativa de todas as instâncias.
 É para melhor medir o desempenho de algoritmos e configurações, que existem os testes empíricos,
 permitindo assim comparar algoritmos e/ou configurações num leque alargado de instâncias.
 
-..................................................................
-..................................................................
-.... (executar logo o teste empírico em linha de comando?)........
-..................................................................
-..................................................................
-
 
 \anchor puzzle8-a10
-## Ação 10 - Configurações
+## Ação 10 - Testes Empíricos
 
-Podemos adicionar configurações para o teste. 
-Para o fazer basta alterar os parametros, e entrar no menu 6.
-Vamos começar por colocar a procura em largura, com todos os parametros nos valores de teste.
-
-Vamos querer para teste que: debug=0, avaliações=1000000, tempo=10s; repetidos=gerados.
-
-Introduza: **4; 1; 1; 2; 0; 5; 10; 8; 1000000; 10; 3; *ENTER*; 6; *ENTER*.**
+Vamos agora fazer testes empíricos, para comparar os algoritmos informados. 
+Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "-h".
 
 ```entrada
-Parametros comuns a 1 configurações:
-P1:1 P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3
-P11:100 P12:0 P13:0
---- Configuração 1 --- atual
+C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva -h
 
-Selecionar configuração (negativo apaga):
+Teste TProcurasConstrutivas
+Problema:
+  1 - Aspirador
+  2 - Puzzle 8
+  3 - 8 Damas
+  4 - Partição
+  5 - Artificial
+Opção: 2
+Uso: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe <instâncias> [opções]
+  <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]
+Opções:
+  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)
+  -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)
+  -I <ind>        Lista de indicadores (e.g. 2,1,3)
+  -S              Mostrar soluções durante a execução
+  -h              Esta ajuda
+  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
+Exemplo: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
+   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
+
+Lista de parâmetros:
+ P1(Algoritmo): Largura Primeiro (1 a 7)
+ P2(Debug): nada (0 a 4)
+ P3(Seed): 1 (1 a 1000000)
+ P4(Tempo): 10 (1 a 3600)
+ P5(Iterações): 0 (0 a 1000000000)
+ P6(Ver): 4 (1 a 100)
+ P7(Limite): 0 (-1 a 1000000)
+ P8(Repetidos): ascendentes (1 a 3)
+ P9(pesoAStar): 100 (0 a 10000)
+ P10(ruido): 0 (-100 a 100)
+ P11(baralhar): 0 (0 a 1)
+
+Lista de indicadores:
+
+I1(Custo): 1º lugar (o resultado é o custo da solução atual)
+I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
+I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
+I4(Expansões): 4º lugar (número de expansões efetuadas)
+I5(Gerações): 5º lugar (número de estados gerados)
+I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)
 ```
-Ao entrar na opção 6 pela primeira vez, introduzimos a primeira parameterização de teste. Temos a configuração 1.
-Vamos agora alterar o que pretendemos variar. 
-Neste caso vamos variar o algoritmo, tudo o resto mantém-se igual.
 
-Introduza: **4; 1; 3; *ENTER*; 6; *ENTER*.**
+A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opçºão 2 para o Puzzle 8.
 
+Pretendemos fazer um teste empírico, considerando os seguintes aspetos:
+- utilizar as instâncias 1 a 100 do Puzzle 8.
+- executar os algoritmos informados, P1=4 até P1=7.
+- ver todos os indicadores I1 a I6
+
+Assim, podemos executar o programa com a seguinte linha de comando:
 ```entrada
-Parametros comuns a 2 configurações:
-P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3 P11:100
-P12:0 P13:0
---- Configuração 1
-P1:1
---- Configuração 2 --- atual
-P1:3
-Selecionar configuração (negativo apaga):
-```
+C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 1:100 -R resultadoPuzzle8 -P P1=4:7
 
-Podemos ver agora que há 2 configurações. 
-Os parâmetros que tomam o mesmo valor estão na primeira secção, seguindo-se os paramêtros que diferem entre configurações.
-Poderiamos ao indicar uma configuração, em vez de sair, alterar a parametrização atual para uma das configurações guardadas.
-Poderiamos também apagar uma configuração com -ID, sendo ID a identificação da configuração.
-
-Vamos agora introduzir o resto dos algoritmos:
-- **4; 1; 4; *ENTER*; 6; *ENTER*
-- **4; 1; 5; *ENTER*; 6; *ENTER*
-- **4; 1; 6; *ENTER*; 6; *ENTER*
-- **4; 1; 7; *ENTER*; 6; *ENTER*
-
-```entrada
-Parametros comuns a 6 configurações:
-P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3 P11:100
-P12:0 P13:0
---- Configuração 1
-P1:1
---- Configuração 2
-P1:3
---- Configuração 3
-P1:4
---- Configuração 4
-P1:5
---- Configuração 5
-P1:6
---- Configuração 6 --- atual
-P1:7
-```
-Temos 6 configurações preparadas para serem testadas. 
-Estamos em condições de fazer um teste empírico, em que todos os algoritmos estão nas mesmas
-condições de execução, excepto a troca de algoritmo.
-
-\anchor puzzle8-a11
-## Ação 11 - Testes Empíricos
-
-Com as configurações efetuadas na Ação 10, vamos agora fazer um teste empírico. Falta definir as instâncias.
-A instância atual e seu estado não têm impacto para este teste.
-
-É preciso apenas saber se se pretende ver as soluções, instância inicial e final. 
-Não vamos querer ver as soluções, apenas visualizar os resultados. 
-Naturalmente que num problema novo, é de toda a conveniência observar as soluções e verificá-las, para remover eventuais bugs.
-
-Introduza: **7; 0; 49; 40.**
-
-```entrada
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000
-P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-Instância 40: DONE.
-Instância 41: DONE.
-Instância 42: DONE.
-Instância 43: DONE.
-Instância 44: DONE.
-Instância 45: DONE.
-Instância 46: DONE.
-Instância 47: DONE.
-Instância 48: DONE.
-Instância 49: DONE.
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000
-P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-Instância 40: DONE.
-Instância 41: DONE.
-Instância 42: DONE.
-Instância 43: DONE.
-Instância 44: DONE.
-Instância 45: DONE.
-Instância 46: DONE.
-Instância 47: DONE.
-Instância 48: DONE.
-Instância 49: DONE.
+Teste TProcurasConstrutivas
+Problema:
+  1 - Aspirador
+  2 - Puzzle 8
+  3 - 8 Damas
+  4 - Partição
+  5 - Artificial
+Opção: 2
 ...
-P1(Algoritmo): Branch and Bound | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000
-P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-Instância 40: DONE.
-Instância 41: DONE.
-Instância 42: DONE.
-Instância 43: DONE.
-Instância 44: DONE.
-Instância 45: DONE.
-Instância 46: DONE.
-Instância 47: DONE.
-Instância 48: DONE.
-Instância 49: DONE.
- ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |
-----|----|----------|------------|-----------|------------|----------|
- 40 |  1 |       10 |        348 |       570 |          0 |   0,001s |
- 41 |  1 |       11 |        495 |       774 |          0 |   0,001s |
- 42 |  1 |       12 |       1175 |      1921 |          0 |   0,002s |
- 43 |  1 |       13 |       1425 |      2266 |          0 |   0,001s |
- 44 |  1 |       14 |       2506 |      4084 |          0 |   0,003s |
- 45 |  1 |       15 |       3981 |      6311 |          0 |   0,004s |
- 46 |  1 |       16 |       4892 |      7512 |          0 |   0,005s |
- 47 |  1 |       15 |       3981 |      6311 |          0 |   0,003s |
- 48 |  1 |       14 |       2397 |      3699 |          0 |   0,002s |
- 49 |  1 |       15 |       3380 |      5191 |          0 |   0,004s |
- 40 |  2 |       10 |        864 |      1469 |          0 |   0,035s |
- 41 |  2 |       11 |       1253 |      2088 |          0 |   0,040s |
- 42 |  2 |       12 |       3292 |      5507 |          0 |   0,043s |
- 43 |  2 |       13 |       3965 |      6563 |          0 |   0,047s |
- 44 |  2 |       14 |       7265 |     12070 |          0 |   0,062s |
- 45 |  2 |       15 |      11884 |     19494 |          0 |   0,061s |
- 46 |  2 |       16 |      14393 |     23397 |          0 |   0,097s |
- 47 |  2 |       15 |      11884 |     19494 |          0 |   0,058s |
- 48 |  2 |       14 |       6720 |     11007 |          0 |   0,050s |
- 49 |  2 |       15 |       9617 |     15683 |          0 |   0,056s |
- 40 |  3 |       44 |         45 |        83 |         83 |   0,000s |
- 41 |  3 |       11 |         11 |        22 |         22 |   0,000s |
- 42 |  3 |       42 |         43 |        80 |         80 |   0,000s |
- 43 |  3 |       23 |         23 |        44 |         44 |   0,000s |
- 44 |  3 |       22 |         22 |        42 |         42 |   0,000s |
- 45 |  3 |       21 |         21 |        41 |         41 |   0,000s |
- 46 |  3 |       44 |         44 |        82 |         82 |   0,000s |
- 47 |  3 |       21 |         21 |        41 |         41 |   0,000s |
- 48 |  3 |       14 |         14 |        28 |         28 |   0,000s |
- 49 |  3 |       15 |         15 |        30 |         30 |   0,000s |
- 40 |  4 |       10 |         15 |        30 |         30 |   0,000s |
- 41 |  4 |       11 |         24 |        42 |         42 |   0,000s |
- 42 |  4 |       12 |         33 |        60 |         60 |   0,000s |
- 43 |  4 |       13 |         48 |        84 |         84 |   0,000s |
- 44 |  4 |       14 |         96 |       161 |        161 |   0,000s |
- 45 |  4 |       15 |        107 |       180 |        180 |   0,000s |
- 46 |  4 |       16 |        139 |       232 |        232 |   0,001s |
- 47 |  4 |       15 |        107 |       180 |        180 |   0,000s |
- 48 |  4 |       14 |         84 |       141 |        141 |   0,000s |
- 49 |  4 |       15 |        136 |       228 |        228 |   0,001s |
- 40 |  5 |       10 |         30 |        55 |         56 |   0,009s |
- 41 |  5 |       11 |         31 |        57 |         58 |   0,008s |
- 42 |  5 |       12 |         90 |       162 |        163 |   0,012s |
- 43 |  5 |       13 |        127 |       223 |        224 |   0,015s |
- 44 |  5 |       14 |        197 |       341 |        342 |   0,018s |
- 45 |  5 |       15 |        277 |       477 |        478 |   0,025s |
- 46 |  5 |       16 |        275 |       469 |        470 |   0,024s |
- 47 |  5 |       15 |        277 |       477 |        478 |   0,019s |
- 48 |  5 |       14 |        130 |       228 |        229 |   0,016s |
- 49 |  5 |       15 |        148 |       258 |        259 |   0,015s |
- 40 |  6 |       10 |        846 |      1406 |       1406 |   0,001s |
- 41 |  6 |       11 |         22 |        39 |         39 |   0,000s |
- 42 |  6 |       12 |        827 |      1373 |       1373 |   0,001s |
- 43 |  6 |       13 |        320 |       537 |        537 |   0,000s |
- 44 |  6 |       14 |        304 |       511 |        511 |   0,000s |
- 45 |  6 |       15 |        317 |       530 |        530 |   0,000s |
- 46 |  6 |       16 |        813 |      1354 |       1354 |   0,001s |
- 47 |  6 |       15 |        317 |       530 |        530 |   0,001s |
- 48 |  6 |       14 |         71 |       121 |        121 |   0,000s |
- 49 |  6 |       15 |         82 |       140 |        140 |   0,000s |
-----|----|----------|------------|-----------|------------|----------| resolvidas
-Total  1 |      135 |      24580 |     38639 |          0 |   0,026s |  10
-Total  2 |      135 |      71137 |    116772 |          0 |   0,549s |  10
-Total  3 |      257 |        259 |       493 |        493 |   0,000s |  10
-Total  4 |      135 |        789 |      1338 |       1338 |   0,002s |  10
-Total  5 |      135 |       1582 |      2747 |       2757 |   0,161s |  10
-Total  6 |      135 |       3919 |      6541 |       6541 |   0,004s |  10
-Torneio (#instâncias melhores):
- |-01-|-02-|-03-|-04-|-05-|-06-|
- 1    |  0 |  7 |  0 |  0 |  0 |  7
- |----|----|----|----|----|----|
- 2  0 |    |  7 |  0 |  0 |  0 |  7
- |----|----|----|----|----|----|
- 3 -7 | -7 |    | -7 | -7 | -7 |-35
- |----|----|----|----|----|----|
- 4  0 |  0 |  7 |    |  0 |  0 |  7
- |----|----|----|----|----|----|
- 5  0 |  0 |  7 |  0 |    |  0 |  7
- |----|----|----|----|----|----|
- 6  0 |  0 |  7 |  0 |  0 |    |  7
- |----|----|----|----|----|----|
-Parametros comuns a 6 configurações:
-P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 10
-P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000 | P9(Limite): 0
-P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0
---- Configuração 1
-P1(Algoritmo): Largura Primeiro
---- Configuração 2
-P1(Algoritmo): Profundidade Primeiro
---- Configuração 3
-P1(Algoritmo): Melhor Primeiro
---- Configuração 4
-P1(Algoritmo): A*
---- Configuração 5
-P1(Algoritmo): IDA*
---- Configuração 6
-P1(Algoritmo): Branch and Bound
-
-Puzzle 8
-...
-_______________________________________________________________________________
+Ficheiro resultadoPuzzle8.csv gravado.
 ```
-Primeiramente enquando o algoritmo executa, temos o algoritmo e a instância a ser processada.
-Se tivessemos solicitado soluções, em vez de DONE, iriamnos ver a solução.
-Como escolhemos critérios de paragem curtos, as instâncias são simples, o teste terminou rápido.
 
-Temos os resultados por cada instância e configuração. 
-Temos também os somatórios de cada indicador, ou seja, custo (qualidade), expansões, gerações, avaliações e tempo.
-Na última coluna temos também o número de instâncias resolvidas, mas neste caso foram todas as 10 resolvidas por todos os algoritmos.
+O ficheiro de resultados foi gravado, e podemos agora confirmar que:
+- o Melhor Primeiro nem sempre retorna a solução ótima e os restantes 3 algoritmos informados retornam sempre a solução ótima;
+- identificar quais os algoritmos mais eficientes em termos de esforço computacional, medido pelo tempo CPU e número de expansões;
 
-Como os algoritmos executaram no mesmo computador, o criterio tempo poderia ser utilizado, para os algoritmos
-que obtiveram as soluções de melhor qualidade, ou seja, de custo total 135. Segundo este critério, a configuração 4,
-o AStar, seria o melhor.
+Com o relatório dinâmico, coloque P1 nas colunas, Instância nas linhas, e soma de I1(Custo) nos valores. 
+Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a baixo do óptimo, respondendo à primeira questão.
 
-No final temos um torneio entre configurações, em que cada configuração ganha 1 ponto por cada instância que tem 
-melhor que as restantes. 
+Para a segunda questão, pode colocar P1 nas linhas, somatório nas colunasm, Soma de I2(Tempo(ms)) e Soma de I4(Expansões) nos valores.
+Podemos confirmar que para este problema e estas instâncias, o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro e depois o Branch-and-bound.
 
-Para uma instância ser considerada melhor, a qualidade tem de ser melhor. Se a qualidade for igual, 
-O tempo tem de ser melhor em pelo menos 0.1 segundos. Nestas condições, o torneio é perdido pelo Melhor Primeiro,
-que embora o algoritmo mais rápido em termos de tempo, apresenta soluções de pior qualidade. Os restantes lugares
-ficam iguais, já que as diferenças temporais não ultrapassam a granularidade definida de 0.1 segundos.
-
-Vamos repetir o teste com as instâncias de 990 a 999. Introduza: **7; 0; 999; 990.**
+Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados. 
 
 ```entrada
- ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |
-----|----|----------|------------|-----------|------------|----------|
+C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 1:100 -R resultadoPuzzle8b -P P1=4:7
 ...
-----|----|----------|------------|-----------|------------|----------| resolvidas
-Total  1 |      249 |    1308470 |   1517905 |          0 |   1,454s |  10
-Total  2 |      249 |    8537541 |  11746172 |          0 |   8,651s |  10
-Total  3 |     4421 |       4472 |      7864 |       7864 |   0,007s |  10
-Total  4 |      249 |      19620 |     30554 |      30554 |   0,030s |  10
-Total  5 |      249 |      29563 |     47788 |      47798 |   0,280s |  10
-Total  6 |      249 |     821149 |   1301677 |    1301677 |   1,097s |  10
-Torneio (#instâncias melhores):
- |-01-|-02-|-03-|-04-|-05-|-06-|
- 1    | 10 | 10 |-10 | -9 | -5 | -4
- |----|----|----|----|----|----|
- 2-10 |    | 10 |-10 |-10 |-10 |-30
- |----|----|----|----|----|----|
- 3-10 |-10 |    |-10 |-10 |-10 |-50
- |----|----|----|----|----|----|
- 4 10 | 10 | 10 |    |  0 |  5 | 35
- |----|----|----|----|----|----|
- 5  9 | 10 | 10 |  0 |    |  5 | 34
- |----|----|----|----|----|----|
- 6  5 | 10 | 10 | -5 | -5 |    | 15
- |----|----|----|----|----|----|
-Parametros comuns a 6 configurações:
-P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 10
-P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000 | P9(Limite): 0
-P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0
---- Configuração 1
-P1(Algoritmo): Largura Primeiro
---- Configuração 2
-P1(Algoritmo): Profundidade Primeiro
---- Configuração 3
-P1(Algoritmo): Melhor Primeiro
---- Configuração 4
-P1(Algoritmo): A*
---- Configuração 5
-P1(Algoritmo): IDA*
---- Configuração 6
-P1(Algoritmo): Branch and Bound
-
-Puzzle 8
-...
-_______________________________________________________________________________
+Ficheiro resultadoPuzzle8b.csv gravado.
 ```
 
-Podemos observar aqui uma vantagem para o AStar e IDAStar, comparativamente com o Branch-and-Bound.
-O Melhor Primeiro e os algoritmos cegos, estão claramente a trás.
-Note-se no entanto que o limite no número de avaliações não afeta os algoritmos cegos, pelo que um limite no 
-numero de gerações poderia permitir observar vantagem do Melhor Primeiro sobre os algoritmos cegos.
+Podemos ver que estas instâncias já têm mais de 20 movimentos até ao objetivo.
+Observamos agora que o Melhor Primeiro é o mais eficientes, seguido do AStar e IDAStar e por último o Branch-and-Bound.
+
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
