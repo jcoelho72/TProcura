@@ -6,6 +6,6 @@ var searchData=
   ['3_20testes_20empíricos_3',['3 testes empíricos',['../teste_artificial.html#autotoc_md24',1,'Ação 3 - Testes Empíricos'],['../teste_particao.html#autotoc_md45',1,'Ação 3 - Testes Empíricos']]],
   ['3_20torneio_20profundidade_4',['Ação 3 - Torneio Profundidade',['../teste_jogo_em_linha.html#autotoc_md10',1,'']]],
   ['3_20utilizar_20como_20submódulo_5',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md87',1,'']]],
-  ['3_20ver_20a_20solução_20caminho_20realizada_20manualmente_6',['Ação 3 - Ver a solução/caminho realizada manualmente',['../teste_aspirador1.html#autotoc_md28',1,'']]],
+  ['3_20ver_20a_20solução_20realizada_20manualmente_6',['Ação 3 - Ver a solução realizada manualmente',['../teste_aspirador1.html#autotoc_md28',1,'']]],
   ['3_3a_20menu_206_20executar_7',['Ação 3: Menu 6 - Executar',['../teste_tvector.html#autotoc_md64',1,'']]]
 ];

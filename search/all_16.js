@@ -9,7 +9,7 @@ var searchData=
   ['maiorameaca_6',['MaiorAmeaca',['../classTProcuraAdversa.html#a1869e0545c7fe2dd0d38f5f3c860c61f',1,'TProcuraAdversa']]],
   ['mandatórios_7',['Métodos para redefinir mandatórios',['../group__RedefinicaoMandatoria.html',1,'']]],
   ['manual_8',['Opção 2 - Download Manual',['../index.html#autotoc_md86',1,'']]],
-  ['manualmente_9',['manualmente',['../teste_8damas.html#autotoc_md16',1,'Ação 2 - Resolver manualmente'],['../teste_artificial.html#autotoc_md23',1,'Ação 2 - Resolver manualmente'],['../teste_puzzle8.html#autotoc_md48',1,'Ação 2 - Resolver manualmente'],['../teste_particao.html#autotoc_md44',1,'Ação 2 - Resolver manualmente'],['../teste_aspirador1.html#autotoc_md28',1,'Ação 3 - Ver a solução/caminho realizada manualmente']]],
+  ['manualmente_9',['manualmente',['../teste_8damas.html#autotoc_md16',1,'Ação 2 - Resolver manualmente'],['../teste_artificial.html#autotoc_md23',1,'Ação 2 - Resolver manualmente'],['../teste_puzzle8.html#autotoc_md48',1,'Ação 2 - Resolver manualmente'],['../teste_particao.html#autotoc_md44',1,'Ação 2 - Resolver manualmente'],['../teste_aspirador1.html#autotoc_md28',1,'Ação 3 - Ver a solução realizada manualmente']]],
   ['max_10',['max',['../structSParametro.html#aa6d52b4df1268ca83929f85df2a491fa',1,'SParametro']]],
   ['max_5fdamas_11',['max_damas',['../Melhorativa_2Teste_2OitoDamas_8h.html#a579503586ec674137f68c4177e60e0c8',1,'MAX_DAMAS:&#160;OitoDamas.h'],['../Construtiva_2Teste_2OitoDamas_8h.html#a579503586ec674137f68c4177e60e0c8',1,'MAX_DAMAS:&#160;OitoDamas.h']]],
   ['maxcusto_12',['maxCusto',['../structSParametrosEspaco.html#ac23ae53946ef13719a8c99f7cc1b2661',1,'SParametrosEspaco']]],

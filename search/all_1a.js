@@ -5,7 +5,7 @@ var searchData=
   ['random_2',['Random',['../classTVector.html#a769c6a55b72a463fd2313fbd638c7234',1,'TVector']]],
   ['randomorder_3',['RandomOrder',['../classTVector.html#a528c30196e28424fcac4386b873a6e11',1,'TVector']]],
   ['readme_2emd_4',['README.md',['../README_8md.html',1,'']]],
-  ['realizada_20manualmente_5',['Ação 3 - Ver a solução/caminho realizada manualmente',['../teste_aspirador1.html#autotoc_md28',1,'']]],
+  ['realizada_20manualmente_5',['Ação 3 - Ver a solução realizada manualmente',['../teste_aspirador1.html#autotoc_md28',1,'']]],
   ['redefinir_6',['Métodos desnecessários redefinir',['../group__RedefinicaoOpcional.html',1,'']]],
   ['redefinir_20mandatórios_7',['Métodos para redefinir mandatórios',['../group__RedefinicaoMandatoria.html',1,'']]],
   ['redefinir_20sugeridos_8',['Métodos para redefinir, sugeridos',['../group__RedefinicaoSugerida.html',1,'']]],
