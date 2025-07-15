@@ -15,7 +15,7 @@ Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste 
 \item \doxylink{teste_puzzle8_puzzle8-a8}{Ação 8 -\/ IDAStar}
 \item \doxylink{teste_puzzle8_puzzle8-a9}{Ação 9 -\/ Branch-\/and-\/\+Bound}
 \item \doxylink{teste_puzzle8_puzzle8-a10}{Ação 10 -\/ Configurações}
-\item \doxylink{teste_puzzle8_puzzle8-a11}{Ação 11 -\/ Testes Empíricos}
+\item Ação 11 -\/ Testes Empíricos
 \end{DoxyItemize}
 
 
@@ -922,297 +922,108 @@ Não o fazer, ficariamos com a informação da performance dos algoritmos numa s
 
 É para melhor medir o desempenho de algoritmos e configurações, que existem os testes empíricos, permitindo assim comparar algoritmos e/ou configurações num leque alargado de instâncias.
 
-.................................................................. .................................................................. .... (executar logo o teste empírico em linha de comando?)........ .................................................................. ..................................................................
-
 \label{teste_puzzle8_puzzle8-a10}%
 \Hypertarget{teste_puzzle8_puzzle8-a10}%
-\hypertarget{teste_puzzle8_autotoc_md56}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Configurações}{Ação 10 - Configurações}}\label{teste_puzzle8_autotoc_md56}
-Podemos adicionar configurações para o teste. Para o fazer basta alterar os parametros, e entrar no menu 6. Vamos começar por colocar a procura em largura, com todos os parametros nos valores de teste.
-
-Vamos querer para teste que\+: debug=0, avaliações=1000000, tempo=10s; repetidos=gerados.
-
-Introduza\+: {\bfseries{4; 1; 1; 2; 0; 5; 10; 8; 1000000; 10; 3; {\itshape ENTER}; 6; {\itshape ENTER}.}}
+\hypertarget{teste_puzzle8_autotoc_md56}{}\doxysubsection{\texorpdfstring{Ação 10 -\/ Testes Empíricos}{Ação 10 - Testes Empíricos}}\label{teste_puzzle8_autotoc_md56}
+Vamos agora fazer testes empíricos, para comparar os algoritmos informados. Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "{}-\/h"{}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Parametros\ comuns\ a\ 1\ configurações:}
-\DoxyCodeLine{P1:1\ P2:0\ P3:4\ P4:1\ P5:10\ P6:0\ P7:0\ P8:1000000\ P9:0\ P10:3}
-\DoxyCodeLine{P11:100\ P12:0\ P13:0}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 1\ -\/-\/-\/\ atual}
+\DoxyCodeLine{C:\(\backslash\)...\(\backslash\)TProcura\(\backslash\)Construtiva\(\backslash\)Teste>\ ../../x64/Release/TProcuraConstrutiva\ -\/h}
 \DoxyCodeLine{}
-\DoxyCodeLine{Selecionar\ configuração\ (negativo\ apaga):}
+\DoxyCodeLine{Teste\ TProcurasConstrutivas}
+\DoxyCodeLine{Problema:}
+\DoxyCodeLine{\ \ 1\ -\/\ Aspirador}
+\DoxyCodeLine{\ \ 2\ -\/\ Puzzle\ 8}
+\DoxyCodeLine{\ \ 3\ -\/\ 8\ Damas}
+\DoxyCodeLine{\ \ 4\ -\/\ Partição}
+\DoxyCodeLine{\ \ 5\ -\/\ Artificial}
+\DoxyCodeLine{Opção:\ 2}
+\DoxyCodeLine{Uso:\ C:\(\backslash\)Work\(\backslash\)Git\(\backslash\)TProcura\(\backslash\)x64\(\backslash\)Release\(\backslash\)TProcuraConstrutiva.exe\ <instâncias>\ [opções]}
+\DoxyCodeLine{\ \ <instâncias>\ \ \ \ Conjunto\ de\ IDs:\ A\ |\ A,B,C\ |\ A:B[:C]}
+\DoxyCodeLine{Opções:}
+\DoxyCodeLine{\ \ -\/R\ <ficheiro>\ \ \ Nome\ do\ CSV\ de\ resultados\ (omissão:\ resultados.csv)}
+\DoxyCodeLine{\ \ -\/F\ <prefixo>\ \ \ \ Prefixo\ dos\ ficheiros\ de\ instância\ (omissão:\ instancia\_)}
+\DoxyCodeLine{\ \ -\/I\ <ind>\ \ \ \ \ \ \ \ Lista\ de\ indicadores\ (e.g.\ 2,1,3)}
+\DoxyCodeLine{\ \ -\/S\ \ \ \ \ \ \ \ \ \ \ \ \ \ Mostrar\ soluções\ durante\ a\ execução}
+\DoxyCodeLine{\ \ -\/h\ \ \ \ \ \ \ \ \ \ \ \ \ \ Esta\ ajuda}
+\DoxyCodeLine{\ \ -\/P\ <expr>\ \ \ \ \ \ \ Parâmetros\ (e.g.\ P1=1:3\ x\ P2=0:2)\ -\/\ último\ campo}
+\DoxyCodeLine{Exemplo:\ C:\(\backslash\)Work\(\backslash\)Git\(\backslash\)TProcura\(\backslash\)x64\(\backslash\)Release\(\backslash\)TProcuraConstrutiva.exe\ 1:5\ -\/R\ out\ -\/F\ fich\_\ -\/I\ 3,1,4,2\ -\/P\ P1=1:5\ x\ P6=1,2}
+\DoxyCodeLine{\ \ \ Executar\ sem\ argumentos\ entra\ em\ modo\ interativo,\ para\ explorar\ todos\ os\ parametros\ e\ indicadores}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lista\ de\ parâmetros:}
+\DoxyCodeLine{\ P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
+\DoxyCodeLine{\ P2(Debug):\ nada\ (0\ a\ 4)}
+\DoxyCodeLine{\ P3(Seed):\ 1\ (1\ a\ 1000000)}
+\DoxyCodeLine{\ P4(Tempo):\ 10\ (1\ a\ 3600)}
+\DoxyCodeLine{\ P5(Iterações):\ 0\ (0\ a\ 1000000000)}
+\DoxyCodeLine{\ P6(Ver):\ 4\ (1\ a\ 100)}
+\DoxyCodeLine{\ P7(Limite):\ 0\ (-\/1\ a\ 1000000)}
+\DoxyCodeLine{\ P8(Repetidos):\ ascendentes\ (1\ a\ 3)}
+\DoxyCodeLine{\ P9(pesoAStar):\ 100\ (0\ a\ 10000)}
+\DoxyCodeLine{\ P10(ruido):\ 0\ (-\/100\ a\ 100)}
+\DoxyCodeLine{\ P11(baralhar):\ 0\ (0\ a\ 1)}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lista\ de\ indicadores:}
+\DoxyCodeLine{}
+\DoxyCodeLine{I1(Custo):\ 1º\ lugar\ (o\ resultado\ é\ o\ custo\ da\ solução\ atual)}
+\DoxyCodeLine{I2(Tempo(ms)):\ 2º\ lugar\ (Tempo\ em\ milisegundos\ da\ execução\ (medida\ de\ esforço\ computacional).)}
+\DoxyCodeLine{I3(Iterações):\ 3º\ lugar\ (Iterações\ do\ algoritmo,\ intrepretadas\ conforme\ o\ algoritmo\ (medida\ de\ esforço\ independente\ do\ hardware).)}
+\DoxyCodeLine{I4(Expansões):\ 4º\ lugar\ (número\ de\ expansões\ efetuadas)}
+\DoxyCodeLine{I5(Gerações):\ 5º\ lugar\ (número\ de\ estados\ gerados)}
+\DoxyCodeLine{I6(Lower\ Bound):\ 6º\ lugar\ (valor\ mínimo\ para\ a\ melhor\ solução,\ se\ igual\ ao\ custo\ da\ solução\ obtida,\ então\ esta\ é\ ótima)}
 
 \end{DoxyCode}
- Ao entrar na opção 6 pela primeira vez, introduzimos a primeira parameterização de teste. Temos a configuração 1. Vamos agora alterar o que pretendemos variar. Neste caso vamos variar o algoritmo, tudo o resto mantém-\/se igual.
-
-Introduza\+: {\bfseries{4; 1; 3; {\itshape ENTER}; 6; {\itshape ENTER}.}}
 
 
-\begin{DoxyCode}{0}
-\DoxyCodeLine{Parametros\ comuns\ a\ 2\ configurações:}
-\DoxyCodeLine{P2:0\ P3:4\ P4:1\ P5:10\ P6:0\ P7:0\ P8:1000000\ P9:0\ P10:3\ P11:100}
-\DoxyCodeLine{P12:0\ P13:0}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 1}
-\DoxyCodeLine{P1:1}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 2\ -\/-\/-\/\ atual}
-\DoxyCodeLine{P1:3}
-\DoxyCodeLine{Selecionar\ configuração\ (negativo\ apaga):}
+A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opçºão 2 para o Puzzle 8.
 
-\end{DoxyCode}
-
-
-Podemos ver agora que há 2 configurações. Os parâmetros que tomam o mesmo valor estão na primeira secção, seguindo-\/se os paramêtros que diferem entre configurações. Poderiamos ao indicar uma configuração, em vez de sair, alterar a parametrização atual para uma das configurações guardadas. Poderiamos também apagar uma configuração com -\/ID, sendo ID a identificação da configuração.
-
-Vamos agora introduzir o resto dos algoritmos\+:
+Pretendemos fazer um teste empírico, considerando os seguintes aspetos\+:
 \begin{DoxyItemize}
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}4; 1; 4; {\itshape ENTER}; 6; {\itshape ENTER}
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}4; 1; 5; {\itshape ENTER}; 6; {\itshape ENTER}
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}4; 1; 6; {\itshape ENTER}; 6; {\itshape ENTER}
-\item \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}4; 1; 7; {\itshape ENTER}; 6; {\itshape ENTER}
+\item utilizar as instâncias 1 a 100 do Puzzle 8.
+\item executar os algoritmos informados, P1=4 até P1=7.
+\item ver todos os indicadores I1 a I6
 \end{DoxyItemize}
 
-
+Assim, podemos executar o programa com a seguinte linha de comando\+: 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Parametros\ comuns\ a\ 6\ configurações:}
-\DoxyCodeLine{P2:0\ P3:4\ P4:1\ P5:10\ P6:0\ P7:0\ P8:1000000\ P9:0\ P10:3\ P11:100}
-\DoxyCodeLine{P12:0\ P13:0}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 1}
-\DoxyCodeLine{P1:1}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 2}
-\DoxyCodeLine{P1:3}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 3}
-\DoxyCodeLine{P1:4}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 4}
-\DoxyCodeLine{P1:5}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 5}
-\DoxyCodeLine{P1:6}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 6\ -\/-\/-\/\ atual}
-\DoxyCodeLine{P1:7}
-
-\end{DoxyCode}
- Temos 6 configurações preparadas para serem testadas. Estamos em condições de fazer um teste empírico, em que todos os algoritmos estão nas mesmas condições de execução, excepto a troca de algoritmo.
-
-\label{teste_puzzle8_puzzle8-a11}%
-\Hypertarget{teste_puzzle8_puzzle8-a11}%
-\hypertarget{teste_puzzle8_autotoc_md57}{}\doxysubsection{\texorpdfstring{Ação 11 -\/ Testes Empíricos}{Ação 11 - Testes Empíricos}}\label{teste_puzzle8_autotoc_md57}
-Com as configurações efetuadas na Ação 10, vamos agora fazer um teste empírico. Falta definir as instâncias. A instância atual e seu estado não têm impacto para este teste.
-
-É preciso apenas saber se se pretende ver as soluções, instância inicial e final. Não vamos querer ver as soluções, apenas visualizar os resultados. Naturalmente que num problema novo, é de toda a conveniência observar as soluções e verificá-\/las, para remover eventuais bugs.
-
-Introduza\+: {\bfseries{7; 0; 49; 40.}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 1000000}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ gerados\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{Instância\ 40:\ DONE.}
-\DoxyCodeLine{Instância\ 41:\ DONE.}
-\DoxyCodeLine{Instância\ 42:\ DONE.}
-\DoxyCodeLine{Instância\ 43:\ DONE.}
-\DoxyCodeLine{Instância\ 44:\ DONE.}
-\DoxyCodeLine{Instância\ 45:\ DONE.}
-\DoxyCodeLine{Instância\ 46:\ DONE.}
-\DoxyCodeLine{Instância\ 47:\ DONE.}
-\DoxyCodeLine{Instância\ 48:\ DONE.}
-\DoxyCodeLine{Instância\ 49:\ DONE.}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 1000000}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ gerados\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{Instância\ 40:\ DONE.}
-\DoxyCodeLine{Instância\ 41:\ DONE.}
-\DoxyCodeLine{Instância\ 42:\ DONE.}
-\DoxyCodeLine{Instância\ 43:\ DONE.}
-\DoxyCodeLine{Instância\ 44:\ DONE.}
-\DoxyCodeLine{Instância\ 45:\ DONE.}
-\DoxyCodeLine{Instância\ 46:\ DONE.}
-\DoxyCodeLine{Instância\ 47:\ DONE.}
-\DoxyCodeLine{Instância\ 48:\ DONE.}
-\DoxyCodeLine{Instância\ 49:\ DONE.}
-\DoxyCodeLine{...}
-\DoxyCodeLine{P1(Algoritmo):\ Branch\ and\ Bound\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 1000000}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ gerados\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{Instância\ 40:\ DONE.}
-\DoxyCodeLine{Instância\ 41:\ DONE.}
-\DoxyCodeLine{Instância\ 42:\ DONE.}
-\DoxyCodeLine{Instância\ 43:\ DONE.}
-\DoxyCodeLine{Instância\ 44:\ DONE.}
-\DoxyCodeLine{Instância\ 45:\ DONE.}
-\DoxyCodeLine{Instância\ 46:\ DONE.}
-\DoxyCodeLine{Instância\ 47:\ DONE.}
-\DoxyCodeLine{Instância\ 48:\ DONE.}
-\DoxyCodeLine{Instância\ 49:\ DONE.}
-\DoxyCodeLine{\ ID\ |conf|\ custo(g)\ |\ \ expansões\ |\ \ gerações\ |\ avaliações\ |\ tempo(s)\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 40\ |\ \ 1\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ \ 348\ |\ \ \ \ \ \ \ 570\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 41\ |\ \ 1\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ 495\ |\ \ \ \ \ \ \ 774\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 42\ |\ \ 1\ |\ \ \ \ \ \ \ 12\ |\ \ \ \ \ \ \ 1175\ |\ \ \ \ \ \ 1921\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,002s\ |}
-\DoxyCodeLine{\ 43\ |\ \ 1\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ 1425\ |\ \ \ \ \ \ 2266\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 44\ |\ \ 1\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ 2506\ |\ \ \ \ \ \ 4084\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,003s\ |}
-\DoxyCodeLine{\ 45\ |\ \ 1\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ 3981\ |\ \ \ \ \ \ 6311\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,004s\ |}
-\DoxyCodeLine{\ 46\ |\ \ 1\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ 4892\ |\ \ \ \ \ \ 7512\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,005s\ |}
-\DoxyCodeLine{\ 47\ |\ \ 1\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ 3981\ |\ \ \ \ \ \ 6311\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,003s\ |}
-\DoxyCodeLine{\ 48\ |\ \ 1\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ 2397\ |\ \ \ \ \ \ 3699\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,002s\ |}
-\DoxyCodeLine{\ 49\ |\ \ 1\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ 3380\ |\ \ \ \ \ \ 5191\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,004s\ |}
-\DoxyCodeLine{\ 40\ |\ \ 2\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ \ 864\ |\ \ \ \ \ \ 1469\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,035s\ |}
-\DoxyCodeLine{\ 41\ |\ \ 2\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ 1253\ |\ \ \ \ \ \ 2088\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,040s\ |}
-\DoxyCodeLine{\ 42\ |\ \ 2\ |\ \ \ \ \ \ \ 12\ |\ \ \ \ \ \ \ 3292\ |\ \ \ \ \ \ 5507\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,043s\ |}
-\DoxyCodeLine{\ 43\ |\ \ 2\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ 3965\ |\ \ \ \ \ \ 6563\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,047s\ |}
-\DoxyCodeLine{\ 44\ |\ \ 2\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ 7265\ |\ \ \ \ \ 12070\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,062s\ |}
-\DoxyCodeLine{\ 45\ |\ \ 2\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ 11884\ |\ \ \ \ \ 19494\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,061s\ |}
-\DoxyCodeLine{\ 46\ |\ \ 2\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ 14393\ |\ \ \ \ \ 23397\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,097s\ |}
-\DoxyCodeLine{\ 47\ |\ \ 2\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ 11884\ |\ \ \ \ \ 19494\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,058s\ |}
-\DoxyCodeLine{\ 48\ |\ \ 2\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ 6720\ |\ \ \ \ \ 11007\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,050s\ |}
-\DoxyCodeLine{\ 49\ |\ \ 2\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ 9617\ |\ \ \ \ \ 15683\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,056s\ |}
-\DoxyCodeLine{\ 40\ |\ \ 3\ |\ \ \ \ \ \ \ 44\ |\ \ \ \ \ \ \ \ \ 45\ |\ \ \ \ \ \ \ \ 83\ |\ \ \ \ \ \ \ \ \ 83\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 41\ |\ \ 3\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ 22\ |\ \ \ \ \ \ \ \ \ 22\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 42\ |\ \ 3\ |\ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ \ 43\ |\ \ \ \ \ \ \ \ 80\ |\ \ \ \ \ \ \ \ \ 80\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 43\ |\ \ 3\ |\ \ \ \ \ \ \ 23\ |\ \ \ \ \ \ \ \ \ 23\ |\ \ \ \ \ \ \ \ 44\ |\ \ \ \ \ \ \ \ \ 44\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 44\ |\ \ 3\ |\ \ \ \ \ \ \ 22\ |\ \ \ \ \ \ \ \ \ 22\ |\ \ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ \ 42\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 45\ |\ \ 3\ |\ \ \ \ \ \ \ 21\ |\ \ \ \ \ \ \ \ \ 21\ |\ \ \ \ \ \ \ \ 41\ |\ \ \ \ \ \ \ \ \ 41\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 46\ |\ \ 3\ |\ \ \ \ \ \ \ 44\ |\ \ \ \ \ \ \ \ \ 44\ |\ \ \ \ \ \ \ \ 82\ |\ \ \ \ \ \ \ \ \ 82\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 47\ |\ \ 3\ |\ \ \ \ \ \ \ 21\ |\ \ \ \ \ \ \ \ \ 21\ |\ \ \ \ \ \ \ \ 41\ |\ \ \ \ \ \ \ \ \ 41\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 48\ |\ \ 3\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ \ 28\ |\ \ \ \ \ \ \ \ \ 28\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 49\ |\ \ 3\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 30\ |\ \ \ \ \ \ \ \ \ 30\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 40\ |\ \ 4\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 30\ |\ \ \ \ \ \ \ \ \ 30\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 41\ |\ \ 4\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ \ 24\ |\ \ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ \ 42\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 42\ |\ \ 4\ |\ \ \ \ \ \ \ 12\ |\ \ \ \ \ \ \ \ \ 33\ |\ \ \ \ \ \ \ \ 60\ |\ \ \ \ \ \ \ \ \ 60\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 43\ |\ \ 4\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ \ 48\ |\ \ \ \ \ \ \ \ 84\ |\ \ \ \ \ \ \ \ \ 84\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 44\ |\ \ 4\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ \ \ 96\ |\ \ \ \ \ \ \ 161\ |\ \ \ \ \ \ \ \ 161\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 45\ |\ \ 4\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 107\ |\ \ \ \ \ \ \ 180\ |\ \ \ \ \ \ \ \ 180\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 46\ |\ \ 4\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ \ 139\ |\ \ \ \ \ \ \ 232\ |\ \ \ \ \ \ \ \ 232\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 47\ |\ \ 4\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 107\ |\ \ \ \ \ \ \ 180\ |\ \ \ \ \ \ \ \ 180\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 48\ |\ \ 4\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ \ \ 84\ |\ \ \ \ \ \ \ 141\ |\ \ \ \ \ \ \ \ 141\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 49\ |\ \ 4\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 136\ |\ \ \ \ \ \ \ 228\ |\ \ \ \ \ \ \ \ 228\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 40\ |\ \ 5\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ \ \ 30\ |\ \ \ \ \ \ \ \ 55\ |\ \ \ \ \ \ \ \ \ 56\ |\ \ \ 0,009s\ |}
-\DoxyCodeLine{\ 41\ |\ \ 5\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ \ 31\ |\ \ \ \ \ \ \ \ 57\ |\ \ \ \ \ \ \ \ \ 58\ |\ \ \ 0,008s\ |}
-\DoxyCodeLine{\ 42\ |\ \ 5\ |\ \ \ \ \ \ \ 12\ |\ \ \ \ \ \ \ \ \ 90\ |\ \ \ \ \ \ \ 162\ |\ \ \ \ \ \ \ \ 163\ |\ \ \ 0,012s\ |}
-\DoxyCodeLine{\ 43\ |\ \ 5\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ 127\ |\ \ \ \ \ \ \ 223\ |\ \ \ \ \ \ \ \ 224\ |\ \ \ 0,015s\ |}
-\DoxyCodeLine{\ 44\ |\ \ 5\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ \ 197\ |\ \ \ \ \ \ \ 341\ |\ \ \ \ \ \ \ \ 342\ |\ \ \ 0,018s\ |}
-\DoxyCodeLine{\ 45\ |\ \ 5\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 277\ |\ \ \ \ \ \ \ 477\ |\ \ \ \ \ \ \ \ 478\ |\ \ \ 0,025s\ |}
-\DoxyCodeLine{\ 46\ |\ \ 5\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ \ 275\ |\ \ \ \ \ \ \ 469\ |\ \ \ \ \ \ \ \ 470\ |\ \ \ 0,024s\ |}
-\DoxyCodeLine{\ 47\ |\ \ 5\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 277\ |\ \ \ \ \ \ \ 477\ |\ \ \ \ \ \ \ \ 478\ |\ \ \ 0,019s\ |}
-\DoxyCodeLine{\ 48\ |\ \ 5\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ \ 130\ |\ \ \ \ \ \ \ 228\ |\ \ \ \ \ \ \ \ 229\ |\ \ \ 0,016s\ |}
-\DoxyCodeLine{\ 49\ |\ \ 5\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 148\ |\ \ \ \ \ \ \ 258\ |\ \ \ \ \ \ \ \ 259\ |\ \ \ 0,015s\ |}
-\DoxyCodeLine{\ 40\ |\ \ 6\ |\ \ \ \ \ \ \ 10\ |\ \ \ \ \ \ \ \ 846\ |\ \ \ \ \ \ 1406\ |\ \ \ \ \ \ \ 1406\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 41\ |\ \ 6\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ \ 22\ |\ \ \ \ \ \ \ \ 39\ |\ \ \ \ \ \ \ \ \ 39\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 42\ |\ \ 6\ |\ \ \ \ \ \ \ 12\ |\ \ \ \ \ \ \ \ 827\ |\ \ \ \ \ \ 1373\ |\ \ \ \ \ \ \ 1373\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 43\ |\ \ 6\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ 320\ |\ \ \ \ \ \ \ 537\ |\ \ \ \ \ \ \ \ 537\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 44\ |\ \ 6\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ \ 304\ |\ \ \ \ \ \ \ 511\ |\ \ \ \ \ \ \ \ 511\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 45\ |\ \ 6\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 317\ |\ \ \ \ \ \ \ 530\ |\ \ \ \ \ \ \ \ 530\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 46\ |\ \ 6\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ \ 813\ |\ \ \ \ \ \ 1354\ |\ \ \ \ \ \ \ 1354\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 47\ |\ \ 6\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ 317\ |\ \ \ \ \ \ \ 530\ |\ \ \ \ \ \ \ \ 530\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 48\ |\ \ 6\ |\ \ \ \ \ \ \ 14\ |\ \ \ \ \ \ \ \ \ 71\ |\ \ \ \ \ \ \ 121\ |\ \ \ \ \ \ \ \ 121\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 49\ |\ \ 6\ |\ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ \ 82\ |\ \ \ \ \ \ \ 140\ |\ \ \ \ \ \ \ \ 140\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\ resolvidas}
-\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ 135\ |\ \ \ \ \ \ 24580\ |\ \ \ \ \ 38639\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,026s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 2\ |\ \ \ \ \ \ 135\ |\ \ \ \ \ \ 71137\ |\ \ \ \ 116772\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,549s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 3\ |\ \ \ \ \ \ 257\ |\ \ \ \ \ \ \ \ 259\ |\ \ \ \ \ \ \ 493\ |\ \ \ \ \ \ \ \ 493\ |\ \ \ 0,000s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 4\ |\ \ \ \ \ \ 135\ |\ \ \ \ \ \ \ \ 789\ |\ \ \ \ \ \ 1338\ |\ \ \ \ \ \ \ 1338\ |\ \ \ 0,002s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 5\ |\ \ \ \ \ \ 135\ |\ \ \ \ \ \ \ 1582\ |\ \ \ \ \ \ 2747\ |\ \ \ \ \ \ \ 2757\ |\ \ \ 0,161s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 6\ |\ \ \ \ \ \ 135\ |\ \ \ \ \ \ \ 3919\ |\ \ \ \ \ \ 6541\ |\ \ \ \ \ \ \ 6541\ |\ \ \ 0,004s\ |\ \ 10}
-\DoxyCodeLine{Torneio\ (\#instâncias\ melhores):}
-\DoxyCodeLine{\ |-\/01-\/|-\/02-\/|-\/03-\/|-\/04-\/|-\/05-\/|-\/06-\/|}
-\DoxyCodeLine{\ 1\ \ \ \ |\ \ 0\ |\ \ 7\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 7}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 2\ \ 0\ |\ \ \ \ |\ \ 7\ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ 7}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 3\ -\/7\ |\ -\/7\ |\ \ \ \ |\ -\/7\ |\ -\/7\ |\ -\/7\ |-\/35}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 4\ \ 0\ |\ \ 0\ |\ \ 7\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 7}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 5\ \ 0\ |\ \ 0\ |\ \ 7\ |\ \ 0\ |\ \ \ \ |\ \ 0\ |\ \ 7}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 6\ \ 0\ |\ \ 0\ |\ \ 7\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 7}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{Parametros\ comuns\ a\ 6\ configurações:}
-\DoxyCodeLine{P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1\ |\ P5(Tempo):\ 10}
-\DoxyCodeLine{P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 1000000\ |\ P9(Limite):\ 0}
-\DoxyCodeLine{P10(Repetidos):\ gerados\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0\ |\ P13(baralhar):\ 0}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 1}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 2}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 3}
-\DoxyCodeLine{P1(Algoritmo):\ Melhor\ Primeiro}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 4}
-\DoxyCodeLine{P1(Algoritmo):\ A*}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 5}
-\DoxyCodeLine{P1(Algoritmo):\ IDA*}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 6}
-\DoxyCodeLine{P1(Algoritmo):\ Branch\ and\ Bound}
+\DoxyCodeLine{C:\(\backslash\)...\(\backslash\)TProcura\(\backslash\)Construtiva\(\backslash\)Teste>\ ../../x64/Release/TProcuraConstrutiva\ 1:100\ -\/R\ resultadoPuzzle8\ -\/P\ P1=4:7}
 \DoxyCodeLine{}
-\DoxyCodeLine{Puzzle\ 8}
+\DoxyCodeLine{Teste\ TProcurasConstrutivas}
+\DoxyCodeLine{Problema:}
+\DoxyCodeLine{\ \ 1\ -\/\ Aspirador}
+\DoxyCodeLine{\ \ 2\ -\/\ Puzzle\ 8}
+\DoxyCodeLine{\ \ 3\ -\/\ 8\ Damas}
+\DoxyCodeLine{\ \ 4\ -\/\ Partição}
+\DoxyCodeLine{\ \ 5\ -\/\ Artificial}
+\DoxyCodeLine{Opção:\ 2}
 \DoxyCodeLine{...}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{Ficheiro\ resultadoPuzzle8.csv\ gravado.}
 
 \end{DoxyCode}
- Primeiramente enquando o algoritmo executa, temos o algoritmo e a instância a ser processada. Se tivessemos solicitado soluções, em vez de DONE, iriamnos ver a solução. Como escolhemos critérios de paragem curtos, as instâncias são simples, o teste terminou rápido.
 
-Temos os resultados por cada instância e configuração. Temos também os somatórios de cada indicador, ou seja, custo (qualidade), expansões, gerações, avaliações e tempo. Na última coluna temos também o número de instâncias resolvidas, mas neste caso foram todas as 10 resolvidas por todos os algoritmos.
 
-Como os algoritmos executaram no mesmo computador, o criterio tempo poderia ser utilizado, para os algoritmos que obtiveram as soluções de melhor qualidade, ou seja, de custo total 135. Segundo este critério, a configuração 4, o AStar, seria o melhor.
+O ficheiro de resultados foi gravado, e podemos agora confirmar que\+:
+\begin{DoxyItemize}
+\item o Melhor Primeiro nem sempre retorna a solução ótima e os restantes 3 algoritmos informados retornam sempre a solução ótima;
+\item identificar quais os algoritmos mais eficientes em termos de esforço computacional, medido pelo tempo CPU e número de expansões;
+\end{DoxyItemize}
 
-No final temos um torneio entre configurações, em que cada configuração ganha 1 ponto por cada instância que tem melhor que as restantes.
+Com o relatório dinâmico, coloque P1 nas colunas, Instância nas linhas, e soma de I1(\+Custo) nos valores. Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a baixo do óptimo, respondendo à primeira questão.
 
-Para uma instância ser considerada melhor, a qualidade tem de ser melhor. Se a qualidade for igual, O tempo tem de ser melhor em pelo menos 0.\+1 segundos. Nestas condições, o torneio é perdido pelo Melhor Primeiro, que embora o algoritmo mais rápido em termos de tempo, apresenta soluções de pior qualidade. Os restantes lugares ficam iguais, já que as diferenças temporais não ultrapassam a granularidade definida de 0.\+1 segundos.
+Para a segunda questão, pode colocar P1 nas linhas, somatório nas colunasm, Soma de I2(\+Tempo(ms)) e Soma de I4(Expansões) nos valores. Podemos confirmar que para este problema e estas instâncias, o AStar e IDAStar são os mais eficientes, seguindo-\/se o Melhor Primeiro e depois o Branch-\/and-\/bound.
 
-Vamos repetir o teste com as instâncias de 990 a 999. Introduza\+: {\bfseries{7; 0; 999; 990.}}
+Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ ID\ |conf|\ custo(g)\ |\ \ expansões\ |\ \ gerações\ |\ avaliações\ |\ tempo(s)\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
+\DoxyCodeLine{C:\(\backslash\)...\(\backslash\)TProcura\(\backslash\)Construtiva\(\backslash\)Teste>\ ../../x64/Release/TProcuraConstrutiva\ 1:100\ -\/R\ resultadoPuzzle8b\ -\/P\ P1=4:7}
 \DoxyCodeLine{...}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\ resolvidas}
-\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ 249\ |\ \ \ \ 1308470\ |\ \ \ 1517905\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 1,454s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 2\ |\ \ \ \ \ \ 249\ |\ \ \ \ 8537541\ |\ \ 11746172\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 8,651s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 3\ |\ \ \ \ \ 4421\ |\ \ \ \ \ \ \ 4472\ |\ \ \ \ \ \ 7864\ |\ \ \ \ \ \ \ 7864\ |\ \ \ 0,007s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 4\ |\ \ \ \ \ \ 249\ |\ \ \ \ \ \ 19620\ |\ \ \ \ \ 30554\ |\ \ \ \ \ \ 30554\ |\ \ \ 0,030s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 5\ |\ \ \ \ \ \ 249\ |\ \ \ \ \ \ 29563\ |\ \ \ \ \ 47788\ |\ \ \ \ \ \ 47798\ |\ \ \ 0,280s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 6\ |\ \ \ \ \ \ 249\ |\ \ \ \ \ 821149\ |\ \ \ 1301677\ |\ \ \ \ 1301677\ |\ \ \ 1,097s\ |\ \ 10}
-\DoxyCodeLine{Torneio\ (\#instâncias\ melhores):}
-\DoxyCodeLine{\ |-\/01-\/|-\/02-\/|-\/03-\/|-\/04-\/|-\/05-\/|-\/06-\/|}
-\DoxyCodeLine{\ 1\ \ \ \ |\ 10\ |\ 10\ |-\/10\ |\ -\/9\ |\ -\/5\ |\ -\/4}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 2-\/10\ |\ \ \ \ |\ 10\ |-\/10\ |-\/10\ |-\/10\ |-\/30}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 3-\/10\ |-\/10\ |\ \ \ \ |-\/10\ |-\/10\ |-\/10\ |-\/50}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 4\ 10\ |\ 10\ |\ 10\ |\ \ \ \ |\ \ 0\ |\ \ 5\ |\ 35}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 5\ \ 9\ |\ 10\ |\ 10\ |\ \ 0\ |\ \ \ \ |\ \ 5\ |\ 34}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 6\ \ 5\ |\ 10\ |\ 10\ |\ -\/5\ |\ -\/5\ |\ \ \ \ |\ 15}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{Parametros\ comuns\ a\ 6\ configurações:}
-\DoxyCodeLine{P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1\ |\ P5(Tempo):\ 10}
-\DoxyCodeLine{P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 1000000\ |\ P9(Limite):\ 0}
-\DoxyCodeLine{P10(Repetidos):\ gerados\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0\ |\ P13(baralhar):\ 0}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 1}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 2}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 3}
-\DoxyCodeLine{P1(Algoritmo):\ Melhor\ Primeiro}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 4}
-\DoxyCodeLine{P1(Algoritmo):\ A*}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 5}
-\DoxyCodeLine{P1(Algoritmo):\ IDA*}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 6}
-\DoxyCodeLine{P1(Algoritmo):\ Branch\ and\ Bound}
-\DoxyCodeLine{}
-\DoxyCodeLine{Puzzle\ 8}
-\DoxyCodeLine{...}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{Ficheiro\ resultadoPuzzle8b.csv\ gravado.}
 
 \end{DoxyCode}
 
 
-Podemos observar aqui uma vantagem para o AStar e IDAStar, comparativamente com o Branch-\/and-\/\+Bound. O Melhor Primeiro e os algoritmos cegos, estão claramente a trás. Note-\/se no entanto que o limite no número de avaliações não afeta os algoritmos cegos, pelo que um limite no numero de gerações poderia permitir observar vantagem do Melhor Primeiro sobre os algoritmos cegos.
+Podemos ver que estas instâncias já têm mais de 20 movimentos até ao objetivo. Observamos agora que o Melhor Primeiro é o mais eficientes, seguido do AStar e IDAStar e por último o Branch-\/and-\/\+Bound.
 
 \texorpdfstring{$\vert$}{|} \href{teste_tvector.html}{\texttt{ Teste\+TVector}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \texorpdfstring{$\vert$}{|} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|} 

@@ -110,7 +110,7 @@ Sumário</h2>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a8">Ação 8 - IDAStar</a></li>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a9">Ação 9 - Branch-and-Bound</a></li>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a10">Ação 10 - Configurações</a></li>
-<li><a class="el" href="teste_puzzle8.html#puzzle8-a11">Ação 11 - Testes Empíricos</a></li>
+<li>Ação 11 - Testes Empíricos</li>
 </ul>
 <div class="fragment"><div class="line">Teste TProcurasConstrutivas</div>
 <div class="line">Problema:</div>
@@ -882,255 +882,82 @@ Ação 9 - Branch-and-Bound</h2>
 <p>Podemos agora ver outras instâncias, e estar a executar cada um dos algoritmos para ver qual é o melhor. No entanto seria um trabalho fastidioso.</p>
 <p>Não o fazer, ficariamos com a informação da performance dos algoritmos numa só instância, não necessariamente representativa de todas as instâncias.</p>
 <p>É para melhor medir o desempenho de algoritmos e configurações, que existem os testes empíricos, permitindo assim comparar algoritmos e/ou configurações num leque alargado de instâncias.</p>
-<p>.................................................................. .................................................................. .... (executar logo o teste empírico em linha de comando?)........ .................................................................. ..................................................................</p>
 <p><a class="anchor" id="puzzle8-a10"></a></p>
 <h2><a class="anchor" id="autotoc_md56"></a>
-Ação 10 - Configurações</h2>
-<p>Podemos adicionar configurações para o teste. Para o fazer basta alterar os parametros, e entrar no menu 6. Vamos começar por colocar a procura em largura, com todos os parametros nos valores de teste.</p>
-<p>Vamos querer para teste que: debug=0, avaliações=1000000, tempo=10s; repetidos=gerados.</p>
-<p>Introduza: <b>4; 1; 1; 2; 0; 5; 10; 8; 1000000; 10; 3; <em>ENTER</em>; 6; <em>ENTER</em>.</b></p>
-<div class="fragment"><div class="line">Parametros comuns a 1 configurações:</div>
-<div class="line">P1:1 P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3</div>
-<div class="line">P11:100 P12:0 P13:0</div>
-<div class="line">--- Configuração 1 --- atual</div>
+Ação 10 - Testes Empíricos</h2>
+<p>Vamos agora fazer testes empíricos, para comparar os algoritmos informados. Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "-h".</p>
+<div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
 <div class="line"> </div>
-<div class="line">Selecionar configuração (negativo apaga):</div>
-</div><!-- fragment --><p> Ao entrar na opção 6 pela primeira vez, introduzimos a primeira parameterização de teste. Temos a configuração 1. Vamos agora alterar o que pretendemos variar. Neste caso vamos variar o algoritmo, tudo o resto mantém-se igual.</p>
-<p>Introduza: <b>4; 1; 3; <em>ENTER</em>; 6; <em>ENTER</em>.</b></p>
-<div class="fragment"><div class="line">Parametros comuns a 2 configurações:</div>
-<div class="line">P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3 P11:100</div>
-<div class="line">P12:0 P13:0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1:1</div>
-<div class="line">--- Configuração 2 --- atual</div>
-<div class="line">P1:3</div>
-<div class="line">Selecionar configuração (negativo apaga):</div>
-</div><!-- fragment --><p>Podemos ver agora que há 2 configurações. Os parâmetros que tomam o mesmo valor estão na primeira secção, seguindo-se os paramêtros que diferem entre configurações. Poderiamos ao indicar uma configuração, em vez de sair, alterar a parametrização atual para uma das configurações guardadas. Poderiamos também apagar uma configuração com -ID, sendo ID a identificação da configuração.</p>
-<p>Vamos agora introduzir o resto dos algoritmos:</p><ul>
-<li>**4; 1; 4; <em>ENTER</em>; 6; <em>ENTER</em></li>
-<li>**4; 1; 5; <em>ENTER</em>; 6; <em>ENTER</em></li>
-<li>**4; 1; 6; <em>ENTER</em>; 6; <em>ENTER</em></li>
-<li>**4; 1; 7; <em>ENTER</em>; 6; <em>ENTER</em></li>
+<div class="line">Teste TProcurasConstrutivas</div>
+<div class="line">Problema:</div>
+<div class="line">  1 - Aspirador</div>
+<div class="line">  2 - Puzzle 8</div>
+<div class="line">  3 - 8 Damas</div>
+<div class="line">  4 - Partição</div>
+<div class="line">  5 - Artificial</div>
+<div class="line">Opção: 2</div>
+<div class="line">Uso: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
+<div class="line">  &lt;instâncias&gt;    Conjunto de IDs: A | A,B,C | A:B[:C]</div>
+<div class="line">Opções:</div>
+<div class="line">  -R &lt;ficheiro&gt;   Nome do CSV de resultados (omissão: resultados.csv)</div>
+<div class="line">  -F &lt;prefixo&gt;    Prefixo dos ficheiros de instância (omissão: instancia_)</div>
+<div class="line">  -I &lt;ind&gt;        Lista de indicadores (e.g. 2,1,3)</div>
+<div class="line">  -S              Mostrar soluções durante a execução</div>
+<div class="line">  -h              Esta ajuda</div>
+<div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
+<div class="line">Exemplo: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
+<div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
+<div class="line"> </div>
+<div class="line">Lista de parâmetros:</div>
+<div class="line"> P1(Algoritmo): Largura Primeiro (1 a 7)</div>
+<div class="line"> P2(Debug): nada (0 a 4)</div>
+<div class="line"> P3(Seed): 1 (1 a 1000000)</div>
+<div class="line"> P4(Tempo): 10 (1 a 3600)</div>
+<div class="line"> P5(Iterações): 0 (0 a 1000000000)</div>
+<div class="line"> P6(Ver): 4 (1 a 100)</div>
+<div class="line"> P7(Limite): 0 (-1 a 1000000)</div>
+<div class="line"> P8(Repetidos): ascendentes (1 a 3)</div>
+<div class="line"> P9(pesoAStar): 100 (0 a 10000)</div>
+<div class="line"> P10(ruido): 0 (-100 a 100)</div>
+<div class="line"> P11(baralhar): 0 (0 a 1)</div>
+<div class="line"> </div>
+<div class="line">Lista de indicadores:</div>
+<div class="line"> </div>
+<div class="line">I1(Custo): 1º lugar (o resultado é o custo da solução atual)</div>
+<div class="line">I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)</div>
+<div class="line">I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)</div>
+<div class="line">I4(Expansões): 4º lugar (número de expansões efetuadas)</div>
+<div class="line">I5(Gerações): 5º lugar (número de estados gerados)</div>
+<div class="line">I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)</div>
+</div><!-- fragment --><p>A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opçºão 2 para o Puzzle 8.</p>
+<p>Pretendemos fazer um teste empírico, considerando os seguintes aspetos:</p><ul>
+<li>utilizar as instâncias 1 a 100 do Puzzle 8.</li>
+<li>executar os algoritmos informados, P1=4 até P1=7.</li>
+<li>ver todos os indicadores I1 a I6</li>
 </ul>
-<div class="fragment"><div class="line">Parametros comuns a 6 configurações:</div>
-<div class="line">P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:1000000 P9:0 P10:3 P11:100</div>
-<div class="line">P12:0 P13:0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1:1</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1:3</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1:4</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1:5</div>
-<div class="line">--- Configuração 5</div>
-<div class="line">P1:6</div>
-<div class="line">--- Configuração 6 --- atual</div>
-<div class="line">P1:7</div>
-</div><!-- fragment --><p> Temos 6 configurações preparadas para serem testadas. Estamos em condições de fazer um teste empírico, em que todos os algoritmos estão nas mesmas condições de execução, excepto a troca de algoritmo.</p>
-<p><a class="anchor" id="puzzle8-a11"></a></p>
-<h2><a class="anchor" id="autotoc_md57"></a>
-Ação 11 - Testes Empíricos</h2>
-<p>Com as configurações efetuadas na Ação 10, vamos agora fazer um teste empírico. Falta definir as instâncias. A instância atual e seu estado não têm impacto para este teste.</p>
-<p>É preciso apenas saber se se pretende ver as soluções, instância inicial e final. Não vamos querer ver as soluções, apenas visualizar os resultados. Naturalmente que num problema novo, é de toda a conveniência observar as soluções e verificá-las, para remover eventuais bugs.</p>
-<p>Introduza: <b>7; 0; 49; 40.</b></p>
-<div class="fragment"><div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">Instância 40: DONE.</div>
-<div class="line">Instância 41: DONE.</div>
-<div class="line">Instância 42: DONE.</div>
-<div class="line">Instância 43: DONE.</div>
-<div class="line">Instância 44: DONE.</div>
-<div class="line">Instância 45: DONE.</div>
-<div class="line">Instância 46: DONE.</div>
-<div class="line">Instância 47: DONE.</div>
-<div class="line">Instância 48: DONE.</div>
-<div class="line">Instância 49: DONE.</div>
-<div class="line">P1(Algoritmo): Profundidade Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">Instância 40: DONE.</div>
-<div class="line">Instância 41: DONE.</div>
-<div class="line">Instância 42: DONE.</div>
-<div class="line">Instância 43: DONE.</div>
-<div class="line">Instância 44: DONE.</div>
-<div class="line">Instância 45: DONE.</div>
-<div class="line">Instância 46: DONE.</div>
-<div class="line">Instância 47: DONE.</div>
-<div class="line">Instância 48: DONE.</div>
-<div class="line">Instância 49: DONE.</div>
-<div class="line">...</div>
-<div class="line">P1(Algoritmo): Branch and Bound | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">Instância 40: DONE.</div>
-<div class="line">Instância 41: DONE.</div>
-<div class="line">Instância 42: DONE.</div>
-<div class="line">Instância 43: DONE.</div>
-<div class="line">Instância 44: DONE.</div>
-<div class="line">Instância 45: DONE.</div>
-<div class="line">Instância 46: DONE.</div>
-<div class="line">Instância 47: DONE.</div>
-<div class="line">Instância 48: DONE.</div>
-<div class="line">Instância 49: DONE.</div>
-<div class="line"> ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------|</div>
-<div class="line"> 40 |  1 |       10 |        348 |       570 |          0 |   0,001s |</div>
-<div class="line"> 41 |  1 |       11 |        495 |       774 |          0 |   0,001s |</div>
-<div class="line"> 42 |  1 |       12 |       1175 |      1921 |          0 |   0,002s |</div>
-<div class="line"> 43 |  1 |       13 |       1425 |      2266 |          0 |   0,001s |</div>
-<div class="line"> 44 |  1 |       14 |       2506 |      4084 |          0 |   0,003s |</div>
-<div class="line"> 45 |  1 |       15 |       3981 |      6311 |          0 |   0,004s |</div>
-<div class="line"> 46 |  1 |       16 |       4892 |      7512 |          0 |   0,005s |</div>
-<div class="line"> 47 |  1 |       15 |       3981 |      6311 |          0 |   0,003s |</div>
-<div class="line"> 48 |  1 |       14 |       2397 |      3699 |          0 |   0,002s |</div>
-<div class="line"> 49 |  1 |       15 |       3380 |      5191 |          0 |   0,004s |</div>
-<div class="line"> 40 |  2 |       10 |        864 |      1469 |          0 |   0,035s |</div>
-<div class="line"> 41 |  2 |       11 |       1253 |      2088 |          0 |   0,040s |</div>
-<div class="line"> 42 |  2 |       12 |       3292 |      5507 |          0 |   0,043s |</div>
-<div class="line"> 43 |  2 |       13 |       3965 |      6563 |          0 |   0,047s |</div>
-<div class="line"> 44 |  2 |       14 |       7265 |     12070 |          0 |   0,062s |</div>
-<div class="line"> 45 |  2 |       15 |      11884 |     19494 |          0 |   0,061s |</div>
-<div class="line"> 46 |  2 |       16 |      14393 |     23397 |          0 |   0,097s |</div>
-<div class="line"> 47 |  2 |       15 |      11884 |     19494 |          0 |   0,058s |</div>
-<div class="line"> 48 |  2 |       14 |       6720 |     11007 |          0 |   0,050s |</div>
-<div class="line"> 49 |  2 |       15 |       9617 |     15683 |          0 |   0,056s |</div>
-<div class="line"> 40 |  3 |       44 |         45 |        83 |         83 |   0,000s |</div>
-<div class="line"> 41 |  3 |       11 |         11 |        22 |         22 |   0,000s |</div>
-<div class="line"> 42 |  3 |       42 |         43 |        80 |         80 |   0,000s |</div>
-<div class="line"> 43 |  3 |       23 |         23 |        44 |         44 |   0,000s |</div>
-<div class="line"> 44 |  3 |       22 |         22 |        42 |         42 |   0,000s |</div>
-<div class="line"> 45 |  3 |       21 |         21 |        41 |         41 |   0,000s |</div>
-<div class="line"> 46 |  3 |       44 |         44 |        82 |         82 |   0,000s |</div>
-<div class="line"> 47 |  3 |       21 |         21 |        41 |         41 |   0,000s |</div>
-<div class="line"> 48 |  3 |       14 |         14 |        28 |         28 |   0,000s |</div>
-<div class="line"> 49 |  3 |       15 |         15 |        30 |         30 |   0,000s |</div>
-<div class="line"> 40 |  4 |       10 |         15 |        30 |         30 |   0,000s |</div>
-<div class="line"> 41 |  4 |       11 |         24 |        42 |         42 |   0,000s |</div>
-<div class="line"> 42 |  4 |       12 |         33 |        60 |         60 |   0,000s |</div>
-<div class="line"> 43 |  4 |       13 |         48 |        84 |         84 |   0,000s |</div>
-<div class="line"> 44 |  4 |       14 |         96 |       161 |        161 |   0,000s |</div>
-<div class="line"> 45 |  4 |       15 |        107 |       180 |        180 |   0,000s |</div>
-<div class="line"> 46 |  4 |       16 |        139 |       232 |        232 |   0,001s |</div>
-<div class="line"> 47 |  4 |       15 |        107 |       180 |        180 |   0,000s |</div>
-<div class="line"> 48 |  4 |       14 |         84 |       141 |        141 |   0,000s |</div>
-<div class="line"> 49 |  4 |       15 |        136 |       228 |        228 |   0,001s |</div>
-<div class="line"> 40 |  5 |       10 |         30 |        55 |         56 |   0,009s |</div>
-<div class="line"> 41 |  5 |       11 |         31 |        57 |         58 |   0,008s |</div>
-<div class="line"> 42 |  5 |       12 |         90 |       162 |        163 |   0,012s |</div>
-<div class="line"> 43 |  5 |       13 |        127 |       223 |        224 |   0,015s |</div>
-<div class="line"> 44 |  5 |       14 |        197 |       341 |        342 |   0,018s |</div>
-<div class="line"> 45 |  5 |       15 |        277 |       477 |        478 |   0,025s |</div>
-<div class="line"> 46 |  5 |       16 |        275 |       469 |        470 |   0,024s |</div>
-<div class="line"> 47 |  5 |       15 |        277 |       477 |        478 |   0,019s |</div>
-<div class="line"> 48 |  5 |       14 |        130 |       228 |        229 |   0,016s |</div>
-<div class="line"> 49 |  5 |       15 |        148 |       258 |        259 |   0,015s |</div>
-<div class="line"> 40 |  6 |       10 |        846 |      1406 |       1406 |   0,001s |</div>
-<div class="line"> 41 |  6 |       11 |         22 |        39 |         39 |   0,000s |</div>
-<div class="line"> 42 |  6 |       12 |        827 |      1373 |       1373 |   0,001s |</div>
-<div class="line"> 43 |  6 |       13 |        320 |       537 |        537 |   0,000s |</div>
-<div class="line"> 44 |  6 |       14 |        304 |       511 |        511 |   0,000s |</div>
-<div class="line"> 45 |  6 |       15 |        317 |       530 |        530 |   0,000s |</div>
-<div class="line"> 46 |  6 |       16 |        813 |      1354 |       1354 |   0,001s |</div>
-<div class="line"> 47 |  6 |       15 |        317 |       530 |        530 |   0,001s |</div>
-<div class="line"> 48 |  6 |       14 |         71 |       121 |        121 |   0,000s |</div>
-<div class="line"> 49 |  6 |       15 |         82 |       140 |        140 |   0,000s |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------| resolvidas</div>
-<div class="line">Total  1 |      135 |      24580 |     38639 |          0 |   0,026s |  10</div>
-<div class="line">Total  2 |      135 |      71137 |    116772 |          0 |   0,549s |  10</div>
-<div class="line">Total  3 |      257 |        259 |       493 |        493 |   0,000s |  10</div>
-<div class="line">Total  4 |      135 |        789 |      1338 |       1338 |   0,002s |  10</div>
-<div class="line">Total  5 |      135 |       1582 |      2747 |       2757 |   0,161s |  10</div>
-<div class="line">Total  6 |      135 |       3919 |      6541 |       6541 |   0,004s |  10</div>
-<div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|-03-|-04-|-05-|-06-|</div>
-<div class="line"> 1    |  0 |  7 |  0 |  0 |  0 |  7</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 2  0 |    |  7 |  0 |  0 |  0 |  7</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 3 -7 | -7 |    | -7 | -7 | -7 |-35</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 4  0 |  0 |  7 |    |  0 |  0 |  7</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 5  0 |  0 |  7 |  0 |    |  0 |  7</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 6  0 |  0 |  7 |  0 |  0 |    |  7</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line">Parametros comuns a 6 configurações:</div>
-<div class="line">P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 10</div>
-<div class="line">P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000 | P9(Limite): 0</div>
-<div class="line">P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1(Algoritmo): Largura Primeiro</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1(Algoritmo): Profundidade Primeiro</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1(Algoritmo): Melhor Primeiro</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1(Algoritmo): A*</div>
-<div class="line">--- Configuração 5</div>
-<div class="line">P1(Algoritmo): IDA*</div>
-<div class="line">--- Configuração 6</div>
-<div class="line">P1(Algoritmo): Branch and Bound</div>
+<p>Assim, podemos executar o programa com a seguinte linha de comando: </p><div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva 1:100 -R resultadoPuzzle8 -P P1=4:7</div>
 <div class="line"> </div>
-<div class="line">Puzzle 8</div>
+<div class="line">Teste TProcurasConstrutivas</div>
+<div class="line">Problema:</div>
+<div class="line">  1 - Aspirador</div>
+<div class="line">  2 - Puzzle 8</div>
+<div class="line">  3 - 8 Damas</div>
+<div class="line">  4 - Partição</div>
+<div class="line">  5 - Artificial</div>
+<div class="line">Opção: 2</div>
 <div class="line">...</div>
-<div class="line">_______________________________________________________________________________</div>
-</div><!-- fragment --><p> Primeiramente enquando o algoritmo executa, temos o algoritmo e a instância a ser processada. Se tivessemos solicitado soluções, em vez de DONE, iriamnos ver a solução. Como escolhemos critérios de paragem curtos, as instâncias são simples, o teste terminou rápido.</p>
-<p>Temos os resultados por cada instância e configuração. Temos também os somatórios de cada indicador, ou seja, custo (qualidade), expansões, gerações, avaliações e tempo. Na última coluna temos também o número de instâncias resolvidas, mas neste caso foram todas as 10 resolvidas por todos os algoritmos.</p>
-<p>Como os algoritmos executaram no mesmo computador, o criterio tempo poderia ser utilizado, para os algoritmos que obtiveram as soluções de melhor qualidade, ou seja, de custo total 135. Segundo este critério, a configuração 4, o AStar, seria o melhor.</p>
-<p>No final temos um torneio entre configurações, em que cada configuração ganha 1 ponto por cada instância que tem melhor que as restantes.</p>
-<p>Para uma instância ser considerada melhor, a qualidade tem de ser melhor. Se a qualidade for igual, O tempo tem de ser melhor em pelo menos 0.1 segundos. Nestas condições, o torneio é perdido pelo Melhor Primeiro, que embora o algoritmo mais rápido em termos de tempo, apresenta soluções de pior qualidade. Os restantes lugares ficam iguais, já que as diferenças temporais não ultrapassam a granularidade definida de 0.1 segundos.</p>
-<p>Vamos repetir o teste com as instâncias de 990 a 999. Introduza: <b>7; 0; 999; 990.</b></p>
-<div class="fragment"><div class="line"> ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------|</div>
+<div class="line">Ficheiro resultadoPuzzle8.csv gravado.</div>
+</div><!-- fragment --><p>O ficheiro de resultados foi gravado, e podemos agora confirmar que:</p><ul>
+<li>o Melhor Primeiro nem sempre retorna a solução ótima e os restantes 3 algoritmos informados retornam sempre a solução ótima;</li>
+<li>identificar quais os algoritmos mais eficientes em termos de esforço computacional, medido pelo tempo CPU e número de expansões;</li>
+</ul>
+<p>Com o relatório dinâmico, coloque P1 nas colunas, Instância nas linhas, e soma de I1(Custo) nos valores. Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a baixo do óptimo, respondendo à primeira questão.</p>
+<p>Para a segunda questão, pode colocar P1 nas linhas, somatório nas colunasm, Soma de I2(Tempo(ms)) e Soma de I4(Expansões) nos valores. Podemos confirmar que para este problema e estas instâncias, o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro e depois o Branch-and-bound.</p>
+<p>Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados.</p>
+<div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva 1:100 -R resultadoPuzzle8b -P P1=4:7</div>
 <div class="line">...</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------| resolvidas</div>
-<div class="line">Total  1 |      249 |    1308470 |   1517905 |          0 |   1,454s |  10</div>
-<div class="line">Total  2 |      249 |    8537541 |  11746172 |          0 |   8,651s |  10</div>
-<div class="line">Total  3 |     4421 |       4472 |      7864 |       7864 |   0,007s |  10</div>
-<div class="line">Total  4 |      249 |      19620 |     30554 |      30554 |   0,030s |  10</div>
-<div class="line">Total  5 |      249 |      29563 |     47788 |      47798 |   0,280s |  10</div>
-<div class="line">Total  6 |      249 |     821149 |   1301677 |    1301677 |   1,097s |  10</div>
-<div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|-03-|-04-|-05-|-06-|</div>
-<div class="line"> 1    | 10 | 10 |-10 | -9 | -5 | -4</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 2-10 |    | 10 |-10 |-10 |-10 |-30</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 3-10 |-10 |    |-10 |-10 |-10 |-50</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 4 10 | 10 | 10 |    |  0 |  5 | 35</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 5  9 | 10 | 10 |  0 |    |  5 | 34</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 6  5 | 10 | 10 | -5 | -5 |    | 15</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line">Parametros comuns a 6 configurações:</div>
-<div class="line">P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 10</div>
-<div class="line">P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 1000000 | P9(Limite): 0</div>
-<div class="line">P10(Repetidos): gerados | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1(Algoritmo): Largura Primeiro</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1(Algoritmo): Profundidade Primeiro</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1(Algoritmo): Melhor Primeiro</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1(Algoritmo): A*</div>
-<div class="line">--- Configuração 5</div>
-<div class="line">P1(Algoritmo): IDA*</div>
-<div class="line">--- Configuração 6</div>
-<div class="line">P1(Algoritmo): Branch and Bound</div>
-<div class="line"> </div>
-<div class="line">Puzzle 8</div>
-<div class="line">...</div>
-<div class="line">_______________________________________________________________________________</div>
-</div><!-- fragment --><p>Podemos observar aqui uma vantagem para o AStar e IDAStar, comparativamente com o Branch-and-Bound. O Melhor Primeiro e os algoritmos cegos, estão claramente a trás. Note-se no entanto que o limite no número de avaliações não afeta os algoritmos cegos, pelo que um limite no numero de gerações poderia permitir observar vantagem do Melhor Primeiro sobre os algoritmos cegos.</p>
+<div class="line">Ficheiro resultadoPuzzle8b.csv gravado.</div>
+</div><!-- fragment --><p>Podemos ver que estas instâncias já têm mais de 20 movimentos até ao objetivo. Observamos agora que o Melhor Primeiro é o mais eficientes, seguido do AStar e IDAStar e por último o Branch-and-Bound.</p>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

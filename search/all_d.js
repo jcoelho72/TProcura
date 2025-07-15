@@ -3,8 +3,8 @@ var searchData=
   ['dadosa_0',['dadosA',['../classCTesteTVector.html#a2c8d3c4e4f2630bea3eee94f3dc03ff8',1,'CTesteTVector']]],
   ['dadosb_1',['dadosB',['../classCTesteTVector.html#a709b13b333477be354b5fe53e2b3fd09',1,'CTesteTVector']]],
   ['damas_2',['damas',['../classCOitoDamas.html#acb2ccabe2ec11815db2eccb59bb07ca7',1,'COitoDamas::damas'],['../teste_8damas.html',1,'Teste 8 Damas']]],
-  ['de_20classes_3',['📦 Hierarquia de Classes',['../index.html#autotoc_md83',1,'']]],
-  ['de_20comando_4',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md72',1,'']]],
+  ['de_20classes_3',['📦 Hierarquia de Classes',['../index.html#autotoc_md82',1,'']]],
+  ['de_20comando_4',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md71',1,'']]],
   ['de_20estado_5',['Variáveis de estado',['../group__VariaveisEstado.html',1,'']]],
   ['de_20estados_6',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md5',1,'']]],
   ['de_20instância_7',['Ação 1 - Trocar de instância',['../teste_aspirador1.html#autotoc_md26',1,'']]],
@@ -29,7 +29,7 @@ var searchData=
   ['debugsucessores_26',['DebugSucessores',['../classTProcuraConstrutiva.html#a08aa14ddc895426b2ce3df4d763cbbd7',1,'TProcuraConstrutiva']]],
   ['debugvizinhos_27',['DebugVizinhos',['../classTProcuraMelhorativa.html#a71f6e6bf53e56efec940a9e53b3795a4',1,'TProcuraMelhorativa']]],
   ['delete_28',['Delete',['../classTVector.html#aba2fb6d977b1309f3e884369c5f43bba',1,'TVector']]],
-  ['desafio_20ctestetvector_29',['Ação 8: Desafio CTesteTVector',['../teste_tvector.html#autotoc_md74',1,'']]],
+  ['desafio_20ctestetvector_29',['Ação 8: Desafio CTesteTVector',['../teste_tvector.html#autotoc_md73',1,'']]],
   ['desafio_20procura_20em_20largura_30',['Ação 9 - Desafio Procura em Largura',['../teste_aspirador1.html#autotoc_md34',1,'']]],
   ['desafio_20procura_20profundidade_31',['Ação 15 - Desafio Procura Profundidade',['../teste_aspirador2.html#autotoc_md41',1,'']]],
   ['descricao_32',['descricao',['../structSParametro.html#a4ddb9b7f1ca63ca57878f7a5c588c928',1,'SParametro::descricao'],['../structSIndicador.html#ae668b9d3e58b0b6a130b7b05fd45bdc9',1,'SIndicador::descricao']]],
@@ -43,6 +43,6 @@ var searchData=
   ['distminimaag_40',['distMinimaAG',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13dadb1bc552bdc784728a1fae5157abdf9d',1,'TProcuraMelhorativa.h']]],
   ['do_20galo_41',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
   ['dominio_42',['Dominio',['../classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf',1,'TProcura']]],
-  ['download_20manual_43',['Opção 2 - Download Manual',['../index.html#autotoc_md86',1,'']]],
+  ['download_20manual_43',['Opção 2 - Download Manual',['../index.html#autotoc_md85',1,'']]],
   ['duplicar_44',['duplicar',['../classCJogoEmLinha.html#af9b87594a26c4230c7c0f59efc8e013a',1,'CJogoEmLinha::Duplicar()'],['../classCJogoDoGalo.html#a0ffe5148e0dad4e325c1840d0569f508',1,'CJogoDoGalo::Duplicar()'],['../classCPuzzle8.html#ad0638a270ace9056ffba040d2479fd5a',1,'CPuzzle8::Duplicar()'],['../classCAspirador.html#a3c9571f17ca0cbb074943ddd9bd27587',1,'CAspirador::Duplicar()'],['../classCOitoDamas.html#ad9ce9bd26af98392515937e9aff10e5a',1,'COitoDamas::Duplicar()'],['../classCParticao.html#aa50c7d31c22b1baa8ecb15b2841e2854',1,'CParticao::Duplicar()'],['../classCProblemaArtificial.html#ada920ffe8fe97913ef87196864618a48',1,'CProblemaArtificial::Duplicar()'],['../classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582',1,'TProcuraMelhorativa::Duplicar()'],['../classCProblemaArtificial.html#a15bc8f02957607a1ce184975b34465da',1,'CProblemaArtificial::Duplicar()'],['../classCParticao.html#a124783fa742619a5839649b83f3b93bc',1,'CParticao::Duplicar()'],['../classCOitoDamas.html#a36a173575d8f6bd1815989a7a26b7440',1,'COitoDamas::Duplicar()'],['../group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623',1,'TProcuraConstrutiva::Duplicar()']]]
 ];

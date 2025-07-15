@@ -7,7 +7,7 @@ var searchData=
   ['sindicador_4',['SIndicador',['../structSIndicador.html',1,'']]],
   ['sindice_5',['SIndice',['../structSIndice.html',1,'']]],
   ['sjogoemlinha_6',['SJogoEmLinha',['../structSJogoEmLinha.html',1,'']]],
-  ['sobre_20o_20projeto_7',['Sobre o Projeto',['../index.html#autotoc_md79',1,'']]],
+  ['sobre_20o_20projeto_7',['Sobre o Projeto',['../index.html#autotoc_md78',1,'']]],
   ['solcompleta_8',['solCompleta',['../classCParticao.html#a10a1cc5253c3f2d3e7c7cc8b54dab99e',1,'CParticao']]],
   ['solicitainstancia_9',['SolicitaInstancia',['../classTProcura.html#ae9f0b921a171a110e6a6fcc209332635',1,'TProcura']]],
   ['solicitainstancias_10',['SolicitaInstancias',['../classTProcura.html#a6941386b767d6f0723c6eb9d27241d69',1,'TProcura']]],
@@ -23,10 +23,10 @@ var searchData=
   ['sresultado_20',['SResultado',['../structSResultado.html',1,'']]],
   ['stda_21',['stdA',['../classCTesteTVector.html#a97289f00e4f142034782703fb9227fd7',1,'CTesteTVector']]],
   ['stdb_22',['stdB',['../classCTesteTVector.html#a4259d236668ba2ad0bceb6bb3fc54a19',1,'CTesteTVector']]],
-  ['submódulo_23',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md87',1,'']]],
+  ['submódulo_23',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md86',1,'']]],
   ['substituirht_24',['substituirht',['../classTProcuraAdversa.html#ab13f514d86e599dc15a682e6a6199987',1,'TProcuraAdversa::SubstituirHT()'],['../classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057',1,'TProcuraConstrutiva::SubstituirHT()']]],
   ['sucessores_25',['sucessores',['../teste_aspirador1.html#autotoc_md27',1,'Ação 2 - Explorar os sucessores'],['../teste_jogo_do_galo.html#autotoc_md2',1,'Ação 2 - Explorar sucessores'],['../classCAspirador.html#ac28dba7dd58b76f9d16f44ebac66fab8',1,'CAspirador::Sucessores()'],['../classCJogoDoGalo.html#a00004ccf1fa3974c67e655291db65cfb',1,'CJogoDoGalo::Sucessores()'],['../classCParticao.html#a5c6104354972acf2f6ed3d8ff7a8b98c',1,'CParticao::Sucessores()'],['../classCJogoEmLinha.html#a0fbafadc8f5d1b1ed8aa3ddde563285b',1,'CJogoEmLinha::Sucessores()'],['../classCOitoDamas.html#ab384df7572c5a6e34ffe28b346aaf517',1,'COitoDamas::Sucessores()'],['../group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c',1,'TProcuraConstrutiva::Sucessores()'],['../classCProblemaArtificial.html#a8ecd3995c8ce751d5da10cc20709175c',1,'CProblemaArtificial::Sucessores()'],['../classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a',1,'CPuzzle8::Sucessores()']]],
   ['sugeridos_26',['Métodos para redefinir, sugeridos',['../group__RedefinicaoSugerida.html',1,'']]],
-  ['sumário_27',['sumário',['../index.html#autotoc_md77',1,'📑 Sumário'],['../teste_jogo_em_linha.html#autotoc_md7',1,'Sumário'],['../teste_8damas.html#autotoc_md14',1,'Sumário'],['../teste_artificial.html#autotoc_md21',1,'Sumário'],['../teste_aspirador1.html#autotoc_md25',1,'Sumário'],['../teste_jogo_do_galo.html#autotoc_md0',1,'Sumário'],['../teste_aspirador2.html#autotoc_md35',1,'Sumário'],['../teste_particao.html#autotoc_md42',1,'Sumário'],['../teste_puzzle8.html#autotoc_md46',1,'Sumário'],['../teste_tvector.html#autotoc_md58',1,'Sumário']]],
+  ['sumário_27',['sumário',['../index.html#autotoc_md76',1,'📑 Sumário'],['../teste_jogo_em_linha.html#autotoc_md7',1,'Sumário'],['../teste_8damas.html#autotoc_md14',1,'Sumário'],['../teste_artificial.html#autotoc_md21',1,'Sumário'],['../teste_aspirador1.html#autotoc_md25',1,'Sumário'],['../teste_jogo_do_galo.html#autotoc_md0',1,'Sumário'],['../teste_aspirador2.html#autotoc_md35',1,'Sumário'],['../teste_particao.html#autotoc_md42',1,'Sumário'],['../teste_puzzle8.html#autotoc_md46',1,'Sumário'],['../teste_tvector.html#autotoc_md57',1,'Sumário']]],
   ['svalorestado_28',['SValorEstado',['../structSValorEstado.html',1,'']]]
 ];

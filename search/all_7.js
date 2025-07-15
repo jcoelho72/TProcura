@@ -4,6 +4,6 @@ var searchData=
   ['8_20damas_1',['Teste 8 Damas',['../teste_8damas.html',1,'']]],
   ['8_20idastar_2',['Ação 8 - IDAStar',['../teste_puzzle8.html#autotoc_md54',1,'']]],
   ['8_20resolver_20outra_20instância_3',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md33',1,'']]],
-  ['8_20teste_4',['Ação 6: Menu 8 - Teste',['../teste_tvector.html#autotoc_md70',1,'']]],
-  ['8_3a_20desafio_20ctestetvector_5',['Ação 8: Desafio CTesteTVector',['../teste_tvector.html#autotoc_md74',1,'']]]
+  ['8_20teste_4',['Ação 6: Menu 8 - Teste',['../teste_tvector.html#autotoc_md69',1,'']]],
+  ['8_3a_20desafio_20ctestetvector_5',['Ação 8: Desafio CTesteTVector',['../teste_tvector.html#autotoc_md73',1,'']]]
 ];
