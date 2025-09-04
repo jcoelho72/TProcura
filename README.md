@@ -37,7 +37,7 @@ Em vez de alterar macros e recompilar a cada teste de mudança de parâmetros, p
 
 - Estrutura para uma lista de parâmetros, gerida na superclasse 
 - Gerar automaticamente todas as combinações de parâmertros que o utilizador desejar 
-- Executar instâncias para cada combinação de parâmetros, e recolhe indicadores definidos  
+- Executar instâncias para cada combinação de parâmetros, e recolher indicadores solicitados  
 - Exportar resultados em CSV para análises em Excel, R ou Python  
 
 A arquitetura baseia-se em superclasses que já implementam algoritmos de procura. O utilizador só precisa de:

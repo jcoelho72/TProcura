@@ -1,7 +1,10 @@
 @page teste_tvector Teste TVector
 
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+
 Execução de exemplo com base na classe de teste de TVector. 
 Pode acompanhar o teste executando as ações localmente.
+Selecione o projeto TProcura, e execute.
 Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe TProcura.
 Nos exemplos das subclasses ilustra-se as restantes funcionalidades.
 
@@ -85,7 +88,7 @@ Notar que a instância é exatamente a mesma, como se pode confirmar pelos núme
 
 O menu **2 - Explorar**, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para
 expplorar os dados. Esta função está definida para as subclasses de TProcura, para os métodos construtivos e melhorativos.
-Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, por que não, tentar resolvê-lo,
+Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, porque não, tentar resolvê-lo,
 e assim ganhar sensibilidade. Vamos deixar esta exploração para os exemplos das subclasses.
 
 Notar que o menu no modo interativo, é sempre visualizado, colocando-se o prompt "Opção:". Para evitar repetição, vamos omitar o menu no resto deste exemplo.
@@ -108,9 +111,9 @@ P5(Iterações): 0 (0 a 1000000000)
 P6(Estrutura): TVector (1 a 3)
 Parametro:
 ```
-Podemos ver os parametros quer já tinhamos visto, com mais detalhe. Temos o ID do parâmetro, nome do parâmetro, e valor atribuído.
+Podemos ver os parametros que já tinhamos visto, mas agora com mais detalhe. Temos o ID do parâmetro, nome do parâmetro, e valor atribuído.
 Alguns parâmetros têm texto, quando as opções são categóricas, outros têm números, para valores quantitativos.
-Não existem números reais nos parâmetros, tendo de ser convertidos sempre para inteiro. 
+Não existem números reais nos parâmetros, tendo de ser convertidos sempre para inteiros. 
 Mesmo os parâmetros categóricos, têm um número inteiro associado a cada valor.
 Cada parâmetro tem um valor mínimo e máximo em inteiros, que pode tomar.
 
@@ -135,7 +138,7 @@ Método para teste.
 Método (atual 1):
 ```
 
-Como o parâmetro é catégórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. 
+Como o parâmetro é categórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. 
 Este parâmetro foi povoado na classe CTesteTVector, onde foram definidos estes métodos.
 A função do parâmetro 1 é sempre escolher o método/algoritmo a executar, mas os métodos/algoritmos variam conforme a subclasse.
 Ao utilizar uma das subclasses genéricas de TProcura, esta já tem um conjunto de algoritmos implementados, ficando esta lista preenchida.
@@ -255,7 +258,7 @@ A terceira opção é um misto entre utilizar TVector, mas na ordenação e dete
 
 Vamos deixar como está. Introduza: *ENTER*; *ENTER*.
 
-O menu *4 - Solução* será ilustrado com um problema de procura, nestes métodos a solução é o estado do vetor após aplicadas as operações.
+O menu *4 - Solução* será ilustrado com um problema de procura, já que nestes métodos, a solução é o estado do vetor após aplicadas as operações.
 
 ---
 
@@ -275,14 +278,14 @@ Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 21
 I1(Resultado): 1 | I2(Tempo(ms)): 82 | I3(Iterações): 1 | I4(Ordenado): 1
 ____________________________________________________________________
 ```
-Os valores dos parâmetros em modo curso são mostrados, e de seguida a execução é completada. 
+Os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é completada. 
 Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura TVector.
 O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.
 
 Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadors, I1 a I4.
 
 Os três primeiros indicadores são de TProcura, o quarto indicador é definido em CTesteTVector.
-O indicador I1 tem o resultado do algoritmo, que aqui retorna sempre 1 a não ser que exista algum problema.
+O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema.
 O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 82. 
 Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância).
 O tempo de calcular os indicadores não é também comtabilizado.
@@ -290,7 +293,7 @@ O indicador I3 tem o número de iterações realizadas.
 O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez.
 Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado.
 Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. 
-Em outros métodos, que não ordenem o vetor, naturalemnte que este indiador ao ser chamado, irá retornar 0.
+Em outros métodos, que não ordenem o vetor, naturalmente que este indicador ao ser chamado, irá retornar 0.
 
 Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2; *ENTER*; 1; *ENTER*; 6. 
 
@@ -655,7 +658,7 @@ Podemos ver que o indicador definido na subclasse, Ordenado, retorna 1 nos méto
 É mostrado ainda um torneio entre configurações, para saber a que é mais rápida.
 Para permitir a reprodução e identificar eventuais enganos, é mostrado no final os valores exatos de cada configuração.
 
-Infelizmente, pouco podemos deduzir deste teste. 
+Infelizmente, pouco podemos concluir com este teste. 
 O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente execuções com diversas configurações.
 Sabemos apenas que não há crash.
 
@@ -744,7 +747,14 @@ os testes paramétricos é que nos vão suportar uma resposta a algum tipo de hi
 A linha de comando é normalmente mais simples, para por um lado poder colocar a correr num servidor, por outro,
 pode ver exatamente o teste solicitado numa só linha, não estando dependente da interação do utilizador.
 
-Abra a linha de comando, localize o executável, e execute com argumento "-h"
+Abra a linha de comando, localize o executável, e execute com argumento "-h".
+Vamos executar na pasta Teste, pelo que funcionará a linha: 
+
+```entrada
+C:\...\TProcura\Teste> ../x64/Release/TProcura -h
+```
+
+Para simplificidade, omitimos a pasta e path do executável.
 
 ```entrada
 TProcura.exe -h
@@ -862,7 +872,7 @@ Que testes pode fazer para procurar dar uma resposta fundamentada?
 
 <details>
   <summary>Resposta:</summary>
-Deve procurar executar com instâncias de dimensão razoável, vamos utilziar a 10 que é a maior.
+Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior.
 Deve-se executar várias vezes, e apenas na operação de ordenação.
 Linha de comando: TProcura 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3
 Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo,
@@ -876,4 +886,5 @@ ao contrário de um código que seja compilado na altura.
 
 </details>
 
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 

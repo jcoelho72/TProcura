@@ -3,6 +3,7 @@
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 Execução de exemplo com base no problema do Aspirador. 
+Selecione o projeto TProcuraConstrutiva, e execute.
 Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
@@ -58,6 +59,7 @@ Temos também o estado atual, que tem uma visualização dependente do problema.
 
 Após o estado temos o menu, com as opções de inicializar numa nova instância, 
 explorar o espaço de estados, editar os parâmetros atuais, ver a solução atual,
+escolher os indicadors a calcular após execução, 
 executar o algoritmo selecionado com os parametros atuais, editar configurações
 e executar um teste empírico com as configurações atuais.
 
@@ -156,7 +158,7 @@ Assim, é possível verificar ou identificar erros em soluções obtidas por mé
 a evidência de falha.
 
 Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver 
-instâncias manualmente pequenas. 
+instâncias pequenas no modo manual. 
 Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre 
 o problema em questão, que lhe poderá levar a identificar optimizações que de outra 
 forma lhe passariam desapercebidas.

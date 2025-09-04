@@ -3,7 +3,9 @@
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 
-Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste excutando as ações localmente.
+Execução de exemplo com base no problema do Puzzle 8. 
+Selecione o projeto TProcuraConstrutiva, e execute.
+Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
 
@@ -16,8 +18,7 @@ Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste 
 - [Ação 7 - AStar](#puzzle8-a7)
 - [Ação 8 - IDAStar](#puzzle8-a8)
 - [Ação 9 - Branch-and-Bound](#puzzle8-a9)
-- [Ação 10 - Configurações](#puzzle8-a10)
-- [Ação 11 - Testes Empíricos](#puzzle8-a11)
+- [Ação 10 - Testes Empíricos](#puzzle8-a10)
 
 
 ```entrada
@@ -232,7 +233,7 @@ Foi encontrada uma solução de distância 4. Podemos ver a ordem das expansões
 que em nada contribuiam para a solução, mas serviram para garantir que não havia outra solução mais curta.
 
 Esta instância era fácil, mas e a instância inicial?
-Vamos ver, mas reduzindo o debug para 2, e a semente para 2. Introduza: **1; 40; 3; 2; 2; 3; 2; *ENTER*; 6.**
+Vamos ver, mas reduzindo o debug para 2, e a semente para 2. Introduza: **3; 2; 2; 3; 2; *ENTER*; 1; 40; 6.**
 
 ```entrada
 Opção: 6
@@ -540,10 +541,11 @@ I1(Custo): 12 | I2(Tempo(ms)): 114 | I3(Iterações): 0 | I4(Expansões): 156105
 I6(Lower Bound): 0
 ____________________________________________________________________
 ```
-Podemos ver que o número de expansões e gerações é consideravelmente superior.
+Podemos ver que o número de expansões e gerações é consideravelmente superior. 
+O tempo foi inferior mesmo com mais gerações, mas isso deve-se ao nível de debug utilizado.
 
 A verificação dos estados repetidos, é portanto um parametro bastante importante neste problema, em que
-o mesmo estado pode surgir várias vezes. Vamos então testar em eliminar todos os estados repetidos.
+o mesmo estado pode surgir várias vezes. Vamos então testar em eliminar todos os estados repetidos gerados.
 Introduza: **1; 40; 3; 8; 3; *ENTER*; 6.**
 
 ```entrada
@@ -579,9 +581,6 @@ ____________________________________________________________________
 ```
 
 Podemos ver que o número de exapansões e gerações é ligeiramente inferior à configuração inicial, de remover repetidos ascendentes.
-No entanto, o tempo CPU é consideravelmente inferior. Isto deve-se a que a remoção de estados repetidos gerados,
-utiliza uma hashtable, em vez de verificar cada ascendente um a um. Esta verificação de ascendentes é 
-normalmente menos eficiente, e remove menos estados que a verificação de estados gerados.
 
 Pergunta: o que acontecia se executar-mos a procura em profundidade ilimitada, ao deixar limite com -1, 
 e sem verificar estados repetidos?
@@ -793,7 +792,7 @@ Esta é portanto uma instância simples para este algoritmo.
 
 O AStar pode ter problemas de memória em instâncias complexas, existindo o IDAStar que permite a mesma ordem
 de expansão, mas sem o problema de memória, em troca de algum tempo de CPU extra, gasto ao expandir multiplas
-vezes os mesmos estados. Vamas ver como se comporta nesta instância.
+vezes os mesmos estados. Vamos ver como se comporta nesta instância.
 
 Introduza: **1; 40; 3; 1; 6; *ENTER*; 6.**
 
@@ -924,7 +923,7 @@ Vemos que primeiramente encontra a solução de 70 movimentos, e depois vai enco
 soluções melhores até que termina com a solução de 12. Gasta nesta instância um número 
 consideravelmente superior de expansões e gerações, quando comparado com o AStar.
 
-Podemos agora ver outras instâncias, e estar a executar cada um dos algoritmos para ver qual é o melhor.
+Podemos agora ver outras instâncias, e executar cada um dos algoritmos para ver qual é o melhor.
 No entanto seria um trabalho fastidioso.
 
 Não o fazer, ficariamos com a informação da performance dos algoritmos numa só instância, 
@@ -933,11 +932,12 @@ não necessariamente representativa de todas as instâncias.
 É para melhor medir o desempenho de algoritmos e configurações, que existem os testes empíricos,
 permitindo assim comparar algoritmos e/ou configurações num leque alargado de instâncias.
 
-
 \anchor puzzle8-a10
 ## Ação 10 - Testes Empíricos
 
 Vamos agora fazer testes empíricos, para comparar os algoritmos informados. 
+As configurações e testes no modo interativo, foram exemplificados no exemplo de teste do TVector. 
+
 Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "-h".
 
 ```entrada
@@ -951,7 +951,7 @@ Problema:
   4 - Partição
   5 - Artificial
 Opção: 2
-Uso: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe <instâncias> [opções]
+Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe <instâncias> [opções]
   <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]
 Opções:
   -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)
@@ -960,7 +960,7 @@ Opções:
   -S              Mostrar soluções durante a execução
   -h              Esta ajuda
   -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
-Exemplo: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
+Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
    Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
 
 Lista de parâmetros:
@@ -986,7 +986,7 @@ I5(Gerações): 5º lugar (número de estados gerados)
 I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)
 ```
 
-A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opçºão 2 para o Puzzle 8.
+A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opção 2 para o Puzzle 8.
 
 Pretendemos fazer um teste empírico, considerando os seguintes aspetos:
 - utilizar as instâncias 1 a 100 do Puzzle 8.
@@ -1016,7 +1016,7 @@ O ficheiro de resultados foi gravado, e podemos agora confirmar que:
 Com o relatório dinâmico, coloque P1 nas colunas, Instância nas linhas, e soma de I1(Custo) nos valores. 
 Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a baixo do óptimo, respondendo à primeira questão.
 
-Para a segunda questão, pode colocar P1 nas linhas, somatório nas colunasm, Soma de I2(Tempo(ms)) e Soma de I4(Expansões) nos valores.
+Para a segunda questão, pode colocar P1 nas linhas, somatório nas colunas, Soma de I2(Tempo(ms)) e Soma de I4(Expansões) nos valores.
 Podemos confirmar que para este problema e estas instâncias, o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro e depois o Branch-and-bound.
 
 Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados. 
@@ -1029,6 +1029,7 @@ Ficheiro resultadoPuzzle8b.csv gravado.
 
 Podemos ver que estas instâncias já têm mais de 20 movimentos até ao objetivo.
 Observamos agora que o Melhor Primeiro é o mais eficientes, seguido do AStar e IDAStar e por último o Branch-and-Bound.
+A heurística é boa, mas não para acertar numa boa solução á primeira, e por esse motivo o Melhor Primeiro e o Branch-and-Bound são mais penalizados.
 
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |

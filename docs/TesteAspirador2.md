@@ -2,7 +2,9 @@
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
-Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.
+Execução de exemplo com base no problema do Aspirador. 
+Selecione o projeto TProcuraConstrutiva, e execute.
+Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
 
@@ -99,7 +101,7 @@ ____________________________________________________________________
 Podemos ver todos os estados gerados. 
 A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -1. 
 Embora o indicador 6 não seja atualizado, este resultado pode ser utilizado para saber que não há nenhuma solução 
-de comprimento inferior a 3, ou seja, é um lower bound, neste caso 4, já que o custo de cada movimento é unitário. 
+de comprimento inferior a 3, ou seja, é um lower bound, neste caso 3, já que o custo de cada movimento é unitário. 
 
 Esta visualização da árvore da procura é interessante para pequenos problemas, 
 mas naturalmente que procuras maiores torna-se impraticável. 
@@ -204,6 +206,10 @@ Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solu�
 Fez várias iterações que não serviram para nada, antes de executar na iteração 4 com limite a 4. 
 Mas essas árvores de procura são muito mais pequenas, pelo que o peso de executar essas procuras extra não é muito relevante.
 
+As iterações que não serviram para nada, é na verdade uma afimrmação pouco precisa. Serviram para saber que não há solução nesse nível.
+Apenas assim é que se pode concluir na iteração 4 que a solução é óptima.
+Executando a procura em profundidade com limite 4, obtinhamos a solução ótima, mas sem saber que é ótima.
+
 Podemos ver também a versão compactada da árvore de procura, contendo apenas informação do estado, 
 tal como na procura em largura, mas desta vez com informação de onde o estado veio. 
 Pela observação da árvore é possível verificar que a maior parte das ramificações são de dois sucessores, 
@@ -225,7 +231,7 @@ Opção: 5
 Temos um crash do programa, e bem cedo. 
 Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. 
 Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. 
-Entrou-se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar na solução da procura com nível 10. 
+Entrou-se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar após conhecermos a solução da procura com nível 10. 
 
 \anchor aspirador-a15
 ## Ação 15 - Desafio Procura Profundidade
@@ -242,6 +248,6 @@ Está terminado esta execução de exemplo. Este problema tem uma heurística pe
 encontra a solução ótima sem nunca se enganar. Iremos em outros problemas testar os algoritmos informados.
 
 O custo de cada ação é sempre unitário, pelo que, o custo uniforme será mostrado num problema em que cada ação possa ter custo variável.
-Deixamos também as configurações e os testes empíricos, com as opções 6 e 7 do menu dos testes manuais, para outros problemas. 
+As configurações e os testes empíricos, com as opções 7 e 8 do menu, são exemplificadas em outros problemas. 
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |

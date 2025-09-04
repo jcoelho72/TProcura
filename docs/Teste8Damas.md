@@ -3,7 +3,9 @@
 | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 
-Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste excutando as ações localmente.
+Execução de exemplo com base no problema das 8 Damas. 
+Selecione o projeto TProcuraConstrutiva, e execute.
+Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
 
@@ -32,11 +34,9 @@ Vamos entrar no problema das 8 damas. Introduza: **3.**
 
 ```entrada
 8 Damas
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 0 | gerações 0 | avaliações 0
+ P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
 ::  ::  ::  ::
   ::  ::  ::  ::
 ::  ::  ::  ::
@@ -45,9 +45,10 @@ P13(baralhar): 0
   ::  ::  ::  ::
 ::  ::  ::  ::
   ::  ::  ::  ::
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
+| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+Opção:
 ```
 Este estado vazio é um tabuleiro de 8x8. 
 O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.
@@ -60,7 +61,8 @@ Vamos ver que instâncias temos. Introduza: **1; 4.**
 
 
 ```entrada
-Nova instância (atual 8) [4-40]: 4
+ID atual: 8  Intervalo: [4-40]  Prefixo atual: 'instancia_'
+Novo ID (ENTER mantém) ou novo prefixo (texto): 4
 
 8 Damas
 ...
@@ -68,7 +70,7 @@ Nova instância (atual 8) [4-40]: 4
   ::  ::
 ::  ::
   ::  ::
-_______________________________________________________________________________
+____________________________________________________________________
 ```
 
 O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.
@@ -83,10 +85,10 @@ Está implementada a colocação de uma dama, na linha superior que não esteja 
 
 Poder-se-ia permitir a colocação de uma dama em qualquer posição. 
 No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia.
-Caso tivessem feito diferentes opções, seria adicionado um parametro, e os sucessores seria distinto.
+Caso se tivessem implementado diferentes opções, seria adicionado um parametro, e os sucessores seria distinto conforme o valor desse parâmetro.
 
 Vamos resolver esta instância manualmente, para explorar o espaço de estados.
-Introduza: **2; d1; d4; d3.**
+Introduza: **2; d1; d4; d2.**
 
 
 ```entrada
@@ -122,16 +124,14 @@ g:0 7|14|11
 Ações:
 Sem sucessores.
 8 Damas
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 7 | gerações 14 | avaliações 11
+ P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
 ##  ::
   ::  ##
 ::##::
   ::  ::
-_______________________________________________________________________________
+____________________________________________________________________
 ```
 Esta resolução correu mal, e chegamos a um beco sem saida. 
 Não há nenhuma coluna onde possa ser colocada a quarta dama, sem que esteja atacada.
@@ -145,8 +145,8 @@ Neste problema a solução em sempre o mesmo número de ações, igual a N.
 ## Ação 3 - Procura em Largura
 
 Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. 
-Vamos deixar desde já fixado o limite no número de gerações a 1000000. 
-Introduza: **1; 4; 2; 4; 6; 1000000; *ENTER*; 5.**
+Vamos deixar desde já fixado o limite no número de iterações a 1000000. 
+Introduza: **1; 4; 3; 2; 4; 5; 1000000; *ENTER*; 6.**
 
 ```entrada
 g:0
@@ -230,20 +230,19 @@ g:3 12|14
   ::  ##
 ##  ::
   ::##::(g:4)
-P1:1 P2:4 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1
-P11:100 P12:0 P13:0
-Resultado: 4 (0,038s)
+ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=0 P8=1 P9=100 P10=0
+ P11=0
 8 Damas
-P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 13 | gerações 15 | avaliações 0
+ P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
 ::##::
   ::  ##
 ##  ::
   ::##::
-_______________________________________________________________________________
+I1(Custo): 4 | I2(Tempo(ms)): 39 | I3(Iterações): 0 | I4(Expansões): 13 | I5(Gerações): 15 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 A solução foi encontrada. No entanto, o algoritmo explora todos os estados do nível 3 antes de ver
 o primeiro do nível 4. Neste problema, como a solução está no nível 4, acaba por não ser muito
@@ -255,7 +254,7 @@ completamente, como a procura em profundidade ilimitada não tem problema, já q
 ## Ação 4 - Procura em Profundidade
 
 Vamos executar a mesma instância com a procura em profundidade ilimitada.
-Introduza: **1; 4; 4; 1; 3; 9; -1; *ENTER*; 5.**
+Introduza: **1; 4; 3; 1; 3; 7; -1; *ENTER*; 6.**
 
 ```entrada
 g:0
@@ -278,20 +277,19 @@ g:0
   ::  ##
 ##  ::
   ::##::(g:4)
-P1:3 P2:4 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:-1 P10:1
-P11:100 P12:0 P13:0
-Resultado: 4 (0,014s)
+ P1=3 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=-1 P8=1 P9=100 P10=0
+ P11=0
 8 Damas
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 8 | gerações 10 | avaliações 0
+ P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000
+ P6(Ver): 4 | P7(Limite): -1 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
 ::##::
   ::  ##
 ##  ::
   ::##::
-_______________________________________________________________________________
+I1(Custo): 4 | I2(Tempo(ms)): 12 | I3(Iterações): 0 | I4(Expansões): 8 | I5(Gerações): 10 |
+I6(Lower Bound): 0
+____________________________________________________________________
 ```
 
 Podemos observar que o algoritmo em profundidade fez o mesmo erro que nós fizemos, ao escolher d1.
@@ -310,7 +308,7 @@ apenas sabemos que se existir solução, a distância é conhecida e igual para 
 num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas
 com a abordagem construtiva.
 
-Poder-se-ia ter no entanto opções que melhorariam a abordagem construiva. 
+Poder-se-ia ter no entanto opções que melhorariam a abordagem construtiva. 
 Uma das possibilidades é considerar ou não os estados repetidos. 
 Neste problema temos 3 eixos de simetria. Significa que a mesma posição pode ao ser refletida em cada eixo,
 transformar-se numa das outras, num total de 8 posições simétricas. 
@@ -319,170 +317,110 @@ As simetrias estão implementadas, pelo que vamos testar na próxima ação.
 
 Outra possibilidade não implementada neste código, é a verificação se há linhas/colunas vazias, que 
 estejam totalmente atacadas. Ao colocar duas ou três damas, estas podem cobrir a totalidade das casas
-da última linha. Esta implementação causa também mais peso, mas invalida estados antecipadamente. 
+da última linha, e essa linha só é analisada no último nível. 
+Esta implementação causa também mais peso, mas invalida estados antecipadamente. 
 
 \anchor 8damas-a6
 ## Ação 6 - Testes Empíricos
 
-Vamos começar por comparar a procura em largura, com a procura em profundidade ilimitada, 
-e respetivas versões com eliminação de estados repetidos.
-Introduza: **4; 1; 1; 2; 0; 6; 1000000; 9; 0; 10; 1; *ENTER*; 6; *ENTER*.**
+Nos testes empíricos vamos passar para a interface da linha de comando, por ser mais simples.
+
+Vamos obter primeiramente a lista de todos os parâmetros.
 
 ```entrada
-Parametros comuns a 1 configurações:
-P1:1 P2:0 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1
-P11:100 P12:0 P13:0
---- Configuração 1 --- atual
+C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva -h
+
+Teste TProcurasConstrutivas
+Problema:
+  1 - Aspirador
+  2 - Puzzle 8
+  3 - 8 Damas
+  4 - Partição
+  5 - Artificial
+Opção: 3
+Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe <instâncias> [opções]
+  <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]
+Opções:
+  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)
+  -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)
+  -I <ind>        Lista de indicadores (e.g. 2,1,3)
+  -S              Mostrar soluções durante a execução
+  -h              Esta ajuda
+  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
+Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
+   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
+
+Lista de parâmetros:
+ P1(Algoritmo): Largura Primeiro (1 a 7)
+ P2(Debug): nada (0 a 4)
+ P3(Seed): 1 (1 a 1000000)
+ P4(Tempo): 10 (1 a 3600)
+ P5(Iterações): 0 (0 a 1000000000)
+ P6(Ver): 4 (1 a 100)
+ P7(Limite): 0 (-1 a 1000000)
+ P8(Repetidos): ignorar (1 a 3)
+ P9(pesoAStar): 100 (0 a 10000)
+ P10(ruido): 0 (-100 a 100)
+ P11(baralhar): 0 (0 a 1)
+
+Lista de indicadores:
+
+I1(Custo): 1º lugar (o resultado é o custo da solução atual)
+I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
+I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
+I4(Expansões): 4º lugar (número de expansões efetuadas)
+I5(Gerações): 5º lugar (número de estados gerados)
+I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)
 ```
-Colocação das restantes configurações: 
-- **4; 10; 3; *ENTER*; 6; *ENTER*.**
-- **4; 10; 1; 1; 3; 9; -1; *ENTER*; 6; *ENTER*.**
-- **4; 10; 3; *ENTER*; 6; *ENTER*.**
+
+Num primeiro teste pretendemos comparar a procura em largura com a procura em profundidade ilimitada, 
+e respetivas versões com eliminação de estados repetidos. Colocamos o P7=-1 para a procura em profundidade ilimitada, não afetando a procura em largura.
 
 ```entrada
-Parametros comuns a 4 configurações:
-P2:0 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P11:100 P12:0 P13:0
---- Configuração 1
-P1:1 P9:0 P10:1
---- Configuração 2
-P1:1 P9:0 P10:3
---- Configuração 3
-P1:3 P9:-1 P10:1
---- Configuração 4 --- atual
-P1:3 P9:-1 P10:3
-```
-Vamos agora executar o teste para as primeiras 10 instâncias: **7; 0; 13; 4.**
+C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 4:13 -R resultado8Damas -P P7=-1 P1=1,3 x P8=1,3
 
-```entrada
- ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |
-----|----|----------|------------|-----------|------------|----------|
-  4 |  1 |        4 |         13 |        15 |          0 |   0,000s |
-  5 |  1 |        5 |         33 |        44 |          0 |   0,000s |
-  6 |  1 |        6 |        114 |       149 |          0 |   0,000s |
-  7 |  1 |        7 |        419 |       512 |          0 |   0,000s |
-  8 |  1 |        8 |       1665 |      1965 |          0 |   0,001s |
-  9 |  1 |        9 |       6977 |      8042 |          0 |   0,004s |
- 10 |  1 |       10 |      30779 |     34815 |          0 |   0,020s |
- 11 |  1 |       11 |     149131 |    164246 |          0 |   0,115s |
- 12 |  1 |       12 |     773731 |    841989 |          0 |   0,631s |
- 13 |  1 | não res. |     393490 |   1000002 |          0 |   0,478s |
-  4 |  2 |        4 |          8 |         8 |          0 |   0,000s |
-  5 |  2 |        5 |         18 |        23 |          0 |   0,000s |
-  6 |  2 |        6 |         60 |        75 |          0 |   0,000s |
-  7 |  2 |        7 |        211 |       257 |          0 |   0,000s |
-  8 |  2 |        8 |        839 |       983 |          0 |   0,002s |
-  9 |  2 |        9 |       3490 |      4022 |          0 |   0,007s |
- 10 |  2 |       10 |      15392 |     17408 |          0 |   0,033s |
- 11 |  2 |       11 |      74567 |     82124 |          0 |   0,180s |
- 12 |  2 |       12 |     386869 |    420995 |          0 |   1,082s |
- 13 |  2 | não res. |     517151 |   1000001 |          0 |   2,481s |
-  4 |  3 |        4 |          8 |        10 |          0 |   0,000s |
-  5 |  3 |        5 |          5 |        11 |          0 |   0,000s |
-  6 |  3 |        6 |         31 |        39 |          0 |   0,000s |
-  7 |  3 |        7 |          9 |        22 |          0 |   0,000s |
-  8 |  3 |        8 |        113 |       124 |          0 |   0,001s |
-  9 |  3 |        9 |         41 |        60 |          0 |   0,000s |
- 10 |  3 |       10 |        102 |       124 |          0 |   0,001s |
- 11 |  3 |       11 |         52 |        83 |          0 |   0,000s |
- 12 |  3 |       12 |        261 |       295 |          0 |   0,001s |
- 13 |  3 |       13 |        111 |       154 |          0 |   0,000s |
-  4 |  4 |        4 |          8 |         8 |          0 |   0,000s |
-  5 |  4 |        5 |          5 |         9 |          0 |   0,000s |
-  6 |  4 |        6 |         31 |        36 |          0 |   0,000s |
-  7 |  4 |        7 |          9 |        19 |          0 |   0,000s |
-  8 |  4 |        8 |        113 |       120 |          0 |   0,000s |
-  9 |  4 |        9 |         41 |        56 |          0 |   0,000s |
- 10 |  4 |       10 |        102 |       119 |          0 |   0,000s |
- 11 |  4 |       11 |         52 |        78 |          0 |   0,000s |
- 12 |  4 |       12 |        261 |       289 |          0 |   0,000s |
- 13 |  4 |       13 |        111 |       148 |          0 |   0,001s |
-----|----|----------|------------|-----------|------------|----------| resolvidas
-Total  1 |       72 |    1356352 |   2051779 |          0 |   1,249s |   9
-Total  2 |       72 |     998605 |   1525896 |          0 |   3,785s |   9
-Total  3 |       85 |        733 |       922 |          0 |   0,003s |  10
-Total  4 |       85 |        733 |       882 |          0 |   0,001s |  10
-Torneio (#instâncias melhores):
- |-01-|-02-|-03-|-04-|
- 1    |  1 | -3 | -3 | -5
- |----|----|----|----|
- 2 -1 |    | -3 | -3 | -7
- |----|----|----|----|
- 3  3 |  3 |    |  0 |  6
- |----|----|----|----|
- 4  3 |  3 |  0 |    |  6
- |----|----|----|----|
-Parametros comuns a 4 configurações:
-P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 10
-P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0 | P11(pesoAStar): 100
-P12(ruido): 0 | P13(baralhar): 0
---- Configuração 1
-P1(Algoritmo): Largura Primeiro | P9(Limite): 0 | P10(Repetidos): ignorar
---- Configuração 2
-P1(Algoritmo): Largura Primeiro | P9(Limite): 0 | P10(Repetidos): gerados
---- Configuração 3
-P1(Algoritmo): Profundidade Primeiro | P9(Limite): -1 | P10(Repetidos): ignorar
---- Configuração 4
-P1(Algoritmo): Profundidade Primeiro | P9(Limite): -1 | P10(Repetidos): gerados
+Teste TProcurasConstrutivas
+Problema:
+  1 - Aspirador
+  2 - Puzzle 8
+  3 - 8 Damas
+  4 - Partição
+  5 - Artificial
+Opção: 3
+...
+Ficheiro resultado8Damas.csv gravado.
 ```
 
 Podemos ver a clara superioridade da procura em profundidade ilimitada.
-A procura em largura nem resolve a instância 13 dentro dos critérios de paragem.
+Todas as instâncias são resolvidas, mas em termos de tempo, a última leva 2 e 5 segundos pela procura em largura, e 0 segundos na procura em profundidade.
+Em termos de expansões, o máximo da procura em profundidade é algumas centenas, enquanto que a procur em largura tem na instância maior mais de um milhão de expansões.
+A remoção de estados gerados repetidos, podemos observar na procura em largura que reduz em metade o número de expansões, mas duplica o tempo.
 
-Não é possível com estas instâncias, observar diferença entre repetidos ignorando ou 
-gerados, mas gastando tempo com a normalização. Há apenas uma ligeira diferença
-nos estados gerados.
+Não é possível com estas instâncias, observar diferença para a procura em profundidade. 
 
-Para observar diferença, vamos retirar as duas primeiras configurações do teste, para
-poder executar instâncias maiores.
+Vamos retirar as duas primeiras configurações do teste, para poder executar instâncias maiores.
 
-Introduza: **6; -1; 6; -1; 7; 0; 23; 14.
 
 ```entrada
- ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |
-----|----|----------|------------|-----------|------------|----------|
- 14 |  1 |       14 |       1899 |      1944 |          0 |   0,002s |
- 15 |  1 |       15 |       1359 |      1414 |          0 |   0,001s |
- 16 |  1 |       16 |      10052 |     10112 |          0 |   0,009s |
- 17 |  1 |       17 |       5374 |      5449 |          0 |   0,005s |
- 18 |  1 |       18 |      41299 |     41377 |          0 |   0,051s |
- 19 |  1 |       19 |       2545 |      2642 |          0 |   0,008s |
- 20 |  1 |       20 |     199635 |    199733 |          0 |   0,264s |
- 21 |  1 |       21 |       8562 |      8676 |          0 |   0,011s |
- 22 |  1 | não res. |     999877 |   1000001 |          0 |   1,426s |
- 23 |  1 |       23 |      25428 |     25566 |          0 |   0,038s |
- 14 |  2 |       14 |       1899 |      1937 |          0 |   0,005s |
- 15 |  2 |       15 |       1359 |      1407 |          0 |   0,003s |
- 16 |  2 |       16 |       2850 |      2896 |          0 |   0,010s |
- 17 |  2 |       17 |       5206 |      5258 |          0 |   0,019s |
- 18 |  2 |       18 |      28605 |     28659 |          0 |   0,127s |
- 19 |  2 |       19 |       4656 |      4733 |          0 |   0,021s |
- 20 |  2 |       20 |     112596 |    112672 |          0 |   0,539s |
- 21 |  2 |       21 |      20208 |     20295 |          0 |   0,091s |
- 22 |  2 |       22 |     425154 |    425243 |          0 |   2,397s |
- 23 |  2 |       23 |     250250 |    250347 |          0 |   1,455s |
-----|----|----------|------------|-----------|------------|----------| resolvidas
-Total  1 |      163 |    1296030 |   1296914 |          0 |   1,815s |   9
-Total  2 |      185 |     852783 |    853447 |          0 |   4,667s |  10
-Torneio (#instâncias melhores):
- |-01-|-02-|
- 1    |  1 |  1
- |----|----|
- 2 -1 |    | -1
- |----|----|
-Parametros comuns a 2 configurações:
-P1(Algoritmo): Profundidade Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): -1 | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0
---- Configuração 1
-P10(Repetidos): ignorar
---- Configuração 2
-P10(Repetidos): gerados
-```
-Embora uma das instâncias não tenha sido resolvida devido ao limite das gerações,
-a configuração em que ignora os repetidos, revela-se mais rápida em termos de tempo,
-embora com cerca de mais 50% de estados gerados e expandidos.
+C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 14:23 -R resultado8DamasB -P P7=-1 P1=3 P8=1,3
 
-Dos resultados pode-se também conjeturar que as instâncias pares são mais complexas que as ímpares.
+Teste TProcurasConstrutivas
+Problema:
+  1 - Aspirador
+  2 - Puzzle 8
+  3 - 8 Damas
+  4 - Partição
+  5 - Artificial
+Opção: 3
+...
+Ficheiro resultado8DamasB.csv gravado.
+```
+
+Podemos ver que o tempo continua menor se não se eliminarem os estados repetidos, mesmo na instância mais complexa, a 22, que levou 1 segundo, enquanto que com eliminação de repetidos foi 1,8 segundos.
+No entanto, para essa instância o número de expansões foi de 1737188 ignorando repetidos, e de 425154 eliminando repetidos.
+Confirma-se que neste problema, e tmabém para o algoritmo em profundidade, a eliminação de repetidos reduz o número de expansões, mas aumenta o tempo, pelo que não é compensador.
+
+As instâncias pares aparentam ser mais complexas que as ímpares.
 
 
 | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
