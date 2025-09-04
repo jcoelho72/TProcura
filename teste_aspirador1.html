@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('teste_aspirador1.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
-<p>Execução de exemplo com base no problema do Aspirador. Pode acompanhar o teste excutando as ações localmente.</p>
+<p>Execução de exemplo com base no problema do Aspirador. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md25"></a>
 Sumário</h2>
 <ul>
@@ -134,7 +134,7 @@ Aspirador - espaço de estados para 2 salas</div></div>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
 </div><!-- fragment --><p>Esta é a informação apresentada no teste manual. Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais. Podemos ver que o primeiro parametro é o algoritmo, e está selecionado de omissão a Largura Primeiro. Em termos de Debug está selecionado o valor nada, ou seja, não é mostrada informação de debug. Seguem-se outros parametros, os quais alguns serão apresentados ao longo desta execução.</p>
 <p>Temos também o estado atual, que tem uma visualização dependente do problema.</p>
-<p>Após o estado temos o menu, com as opções de inicializar numa nova instância, explorar o espaço de estados, editar os parâmetros atuais, ver a solução atual, executar o algoritmo selecionado com os parametros atuais, editar configurações e executar um teste empírico com as configurações atuais.</p>
+<p>Após o estado temos o menu, com as opções de inicializar numa nova instância, explorar o espaço de estados, editar os parâmetros atuais, ver a solução atual, escolher os indicadors a calcular após execução, executar o algoritmo selecionado com os parametros atuais, editar configurações e executar um teste empírico com as configurações atuais.</p>
 <p>Tanto os parâmetros como o menu, repetem-se em cada interação. Para evitar repetição na documentação, o output é cortado sempre que não existam ambiguidades.</p>
 <p><a class="anchor" id="aspirador-a1"></a></p>
 <h2><a class="anchor" id="autotoc_md26"></a>
@@ -186,7 +186,7 @@ Ação 2 - Explorar os sucessores</h2>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
 </div><!-- fragment --><p>Ao receber as duas ações, estas foram executadas e indicado o número de ações executados com sucesso. Se fosse uma solução completa, todas as ações até ao estado final, esta operação seria uma verificação da solução. Caso exista alguma ação inválida, a ação é rejeitada e o estado atual fica na primeira ação inválida. Assim, é possível verificar ou identificar erros em soluções obtidas por métodos externos, sendo apresentada a evidência de falha.</p>
-<p>Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias manualmente pequenas. Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra forma lhe passariam desapercebidas.</p>
+<p>Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas no modo manual. Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra forma lhe passariam desapercebidas.</p>
 <p><a class="anchor" id="aspirador-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md28"></a>
 Ação 3 - Ver a solução realizada manualmente</h2>

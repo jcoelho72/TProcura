@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('teste_puzzle8.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
-<p>Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste excutando as ações localmente.</p>
+<p>Execução de exemplo com base no problema do Puzzle 8. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md46"></a>
 Sumário</h2>
 <ul>
@@ -109,8 +109,7 @@ Sumário</h2>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a7">Ação 7 - AStar</a></li>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a8">Ação 8 - IDAStar</a></li>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a9">Ação 9 - Branch-and-Bound</a></li>
-<li><a class="el" href="teste_puzzle8.html#puzzle8-a10">Ação 10 - Configurações</a></li>
-<li>Ação 11 - Testes Empíricos</li>
+<li><a class="el" href="teste_puzzle8.html#puzzle8-a10">Ação 10 - Testes Empíricos</a></li>
 </ul>
 <div class="fragment"><div class="line">Teste TProcurasConstrutivas</div>
 <div class="line">Problema:</div>
@@ -289,7 +288,7 @@ Ação 3 - Procura em Largura</h2>
 <div class="line">I6(Lower Bound): 0</div>
 <div class="line">____________________________________________________________________</div>
 </div><!-- fragment --><p> Foi encontrada uma solução de distância 4. Podemos ver a ordem das expansões, houve estados expandidos que em nada contribuiam para a solução, mas serviram para garantir que não havia outra solução mais curta.</p>
-<p>Esta instância era fácil, mas e a instância inicial? Vamos ver, mas reduzindo o debug para 2, e a semente para 2. Introduza: <b>1; 40; 3; 2; 2; 3; 2; <em>ENTER</em>; 6.</b></p>
+<p>Esta instância era fácil, mas e a instância inicial? Vamos ver, mas reduzindo o debug para 2, e a semente para 2. Introduza: <b>3; 2; 2; 3; 2; <em>ENTER</em>; 1; 40; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
 <div class="line">g:0</div>
@@ -563,8 +562,8 @@ Ação 4 - Procura em Profundidade</h2>
 <div class="line">I1(Custo): 12 | I2(Tempo(ms)): 114 | I3(Iterações): 0 | I4(Expansões): 156105 | I5(Gerações): 440523 |</div>
 <div class="line">I6(Lower Bound): 0</div>
 <div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Podemos ver que o número de expansões e gerações é consideravelmente superior.</p>
-<p>A verificação dos estados repetidos, é portanto um parametro bastante importante neste problema, em que o mesmo estado pode surgir várias vezes. Vamos então testar em eliminar todos os estados repetidos. Introduza: <b>1; 40; 3; 8; 3; <em>ENTER</em>; 6.</b></p>
+</div><!-- fragment --><p> Podemos ver que o número de expansões e gerações é consideravelmente superior. O tempo foi inferior mesmo com mais gerações, mas isso deve-se ao nível de debug utilizado.</p>
+<p>A verificação dos estados repetidos, é portanto um parametro bastante importante neste problema, em que o mesmo estado pode surgir várias vezes. Vamos então testar em eliminar todos os estados repetidos gerados. Introduza: <b>1; 40; 3; 8; 3; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">#</div>
 <div class="line">#</div>
 <div class="line">#</div>
@@ -594,7 +593,7 @@ Ação 4 - Procura em Profundidade</h2>
 <div class="line">I1(Custo): 12 | I2(Tempo(ms)): 77 | I3(Iterações): 0 | I4(Expansões): 2647 | I5(Gerações): 4400 |</div>
 <div class="line">I6(Lower Bound): 0</div>
 <div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p>Podemos ver que o número de exapansões e gerações é ligeiramente inferior à configuração inicial, de remover repetidos ascendentes. No entanto, o tempo CPU é consideravelmente inferior. Isto deve-se a que a remoção de estados repetidos gerados, utiliza uma hashtable, em vez de verificar cada ascendente um a um. Esta verificação de ascendentes é normalmente menos eficiente, e remove menos estados que a verificação de estados gerados.</p>
+</div><!-- fragment --><p>Podemos ver que o número de exapansões e gerações é ligeiramente inferior à configuração inicial, de remover repetidos ascendentes.</p>
 <p>Pergunta: o que acontecia se executar-mos a procura em profundidade ilimitada, ao deixar limite com -1, e sem verificar estados repetidos? </p><details >
 <summary >
 Resposta</summary>
@@ -770,7 +769,7 @@ Ação 7 - AStar</h2>
 <p><a class="anchor" id="puzzle8-a8"></a></p>
 <h2><a class="anchor" id="autotoc_md54"></a>
 Ação 8 - IDAStar</h2>
-<p>O AStar pode ter problemas de memória em instâncias complexas, existindo o IDAStar que permite a mesma ordem de expansão, mas sem o problema de memória, em troca de algum tempo de CPU extra, gasto ao expandir multiplas vezes os mesmos estados. Vamas ver como se comporta nesta instância.</p>
+<p>O AStar pode ter problemas de memória em instâncias complexas, existindo o IDAStar que permite a mesma ordem de expansão, mas sem o problema de memória, em troca de algum tempo de CPU extra, gasto ao expandir multiplas vezes os mesmos estados. Vamos ver como se comporta nesta instância.</p>
 <p>Introduza: <b>1; 40; 3; 1; 6; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">g:0 h:10</div>
 <div class="line"> 4  7  3</div>
@@ -879,13 +878,14 @@ Ação 9 - Branch-and-Bound</h2>
 <div class="line">I6(Lower Bound): 14</div>
 <div class="line">____________________________________________________________________</div>
 </div><!-- fragment --><p> Vemos que primeiramente encontra a solução de 70 movimentos, e depois vai encontrando sucessivamente soluções melhores até que termina com a solução de 12. Gasta nesta instância um número consideravelmente superior de expansões e gerações, quando comparado com o AStar.</p>
-<p>Podemos agora ver outras instâncias, e estar a executar cada um dos algoritmos para ver qual é o melhor. No entanto seria um trabalho fastidioso.</p>
+<p>Podemos agora ver outras instâncias, e executar cada um dos algoritmos para ver qual é o melhor. No entanto seria um trabalho fastidioso.</p>
 <p>Não o fazer, ficariamos com a informação da performance dos algoritmos numa só instância, não necessariamente representativa de todas as instâncias.</p>
 <p>É para melhor medir o desempenho de algoritmos e configurações, que existem os testes empíricos, permitindo assim comparar algoritmos e/ou configurações num leque alargado de instâncias.</p>
 <p><a class="anchor" id="puzzle8-a10"></a></p>
 <h2><a class="anchor" id="autotoc_md56"></a>
 Ação 10 - Testes Empíricos</h2>
-<p>Vamos agora fazer testes empíricos, para comparar os algoritmos informados. Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "-h".</p>
+<p>Vamos agora fazer testes empíricos, para comparar os algoritmos informados. As configurações e testes no modo interativo, foram exemplificados no exemplo de teste do <a class="el" href="classTVector.html">TVector</a>.</p>
+<p>Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "-h".</p>
 <div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
 <div class="line"> </div>
 <div class="line">Teste TProcurasConstrutivas</div>
@@ -896,7 +896,7 @@ Ação 10 - Testes Empíricos</h2>
 <div class="line">  4 - Partição</div>
 <div class="line">  5 - Artificial</div>
 <div class="line">Opção: 2</div>
-<div class="line">Uso: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
+<div class="line">Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
 <div class="line">  &lt;instâncias&gt;    Conjunto de IDs: A | A,B,C | A:B[:C]</div>
 <div class="line">Opções:</div>
 <div class="line">  -R &lt;ficheiro&gt;   Nome do CSV de resultados (omissão: resultados.csv)</div>
@@ -905,7 +905,7 @@ Ação 10 - Testes Empíricos</h2>
 <div class="line">  -S              Mostrar soluções durante a execução</div>
 <div class="line">  -h              Esta ajuda</div>
 <div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
-<div class="line">Exemplo: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
+<div class="line">Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
 <div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
 <div class="line"> </div>
 <div class="line">Lista de parâmetros:</div>
@@ -929,7 +929,7 @@ Ação 10 - Testes Empíricos</h2>
 <div class="line">I4(Expansões): 4º lugar (número de expansões efetuadas)</div>
 <div class="line">I5(Gerações): 5º lugar (número de estados gerados)</div>
 <div class="line">I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)</div>
-</div><!-- fragment --><p>A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opçºão 2 para o Puzzle 8.</p>
+</div><!-- fragment --><p>A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opção 2 para o Puzzle 8.</p>
 <p>Pretendemos fazer um teste empírico, considerando os seguintes aspetos:</p><ul>
 <li>utilizar as instâncias 1 a 100 do Puzzle 8.</li>
 <li>executar os algoritmos informados, P1=4 até P1=7.</li>
@@ -952,12 +952,12 @@ Ação 10 - Testes Empíricos</h2>
 <li>identificar quais os algoritmos mais eficientes em termos de esforço computacional, medido pelo tempo CPU e número de expansões;</li>
 </ul>
 <p>Com o relatório dinâmico, coloque P1 nas colunas, Instância nas linhas, e soma de I1(Custo) nos valores. Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a baixo do óptimo, respondendo à primeira questão.</p>
-<p>Para a segunda questão, pode colocar P1 nas linhas, somatório nas colunasm, Soma de I2(Tempo(ms)) e Soma de I4(Expansões) nos valores. Podemos confirmar que para este problema e estas instâncias, o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro e depois o Branch-and-bound.</p>
+<p>Para a segunda questão, pode colocar P1 nas linhas, somatório nas colunas, Soma de I2(Tempo(ms)) e Soma de I4(Expansões) nos valores. Podemos confirmar que para este problema e estas instâncias, o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro e depois o Branch-and-bound.</p>
 <p>Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados.</p>
 <div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva 1:100 -R resultadoPuzzle8b -P P1=4:7</div>
 <div class="line">...</div>
 <div class="line">Ficheiro resultadoPuzzle8b.csv gravado.</div>
-</div><!-- fragment --><p>Podemos ver que estas instâncias já têm mais de 20 movimentos até ao objetivo. Observamos agora que o Melhor Primeiro é o mais eficientes, seguido do AStar e IDAStar e por último o Branch-and-Bound.</p>
+</div><!-- fragment --><p>Podemos ver que estas instâncias já têm mais de 20 movimentos até ao objetivo. Observamos agora que o Melhor Primeiro é o mais eficientes, seguido do AStar e IDAStar e por último o Branch-and-Bound. A heurística é boa, mas não para acertar numa boa solução á primeira, e por esse motivo o Melhor Primeiro e o Branch-and-Bound são mais penalizados.</p>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
