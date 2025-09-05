@@ -1013,23 +1013,37 @@ O ficheiro de resultados foi gravado, e podemos agora confirmar que:
 - o Melhor Primeiro nem sempre retorna a solução ótima e os restantes 3 algoritmos informados retornam sempre a solução ótima;
 - identificar quais os algoritmos mais eficientes em termos de esforço computacional, medido pelo tempo CPU e número de expansões;
 
-Com o relatório dinâmico, coloque P1 nas colunas, Instância nas linhas, e soma de I1(Custo) nos valores. 
-Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a baixo do óptimo, respondendo à primeira questão.
+Com o relatório dinâmico, destaque o método P1 nas colunas, e indicadores no conteúdo, com os valores nas linhas: 
 
-Para a segunda questão, pode colocar P1 nas linhas, somatório nas colunas, Soma de I2(Tempo(ms)) e Soma de I4(Expansões) nos valores.
-Podemos confirmar que para este problema e estas instâncias, o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro e depois o Branch-and-bound.
+| Valores | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
+|:---:|---:|---:|---:|---:|
+| Soma de I1(Custo) | 21554 | 690 | 690 | 690 |
+| Soma de I2(Tempo(ms)) | 68 | 2 | 2 | 13517 |
+| Soma de I4(Expansões) | 21721 | 1858 | 2693 | 4460077 |
+
+Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a cima do óptimo, respondendo à primeira questão.
+
+Para a segunda questão, podemos confirmar que para este problema e estas instâncias, 
+o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro (embora sem o ótimo) e depois o Branch-and-bound.
 
 Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados. 
 
 ```entrada
-C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 1:100 -R resultadoPuzzle8b -P P1=4:7
+C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 900:999 -R resultadoPuzzle8b -P P1=4:7
 ...
 Ficheiro resultadoPuzzle8b.csv gravado.
 ```
 
+| Valores | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
+|:---:|---:|---:|---:|---:|
+| Máximo de I1(Custo) | 470 | 27 | 27 | 27 |
+| Soma de I1(Custo) | 21512 | 2430 | 2430 | 2430 |
+| Soma de I2(Tempo(ms)) | 62 | 157 | 181 | 8874 |
+| Soma de I4(Expansões) | 21646 | 150389 | 189373 | 4464967 |
+
 Podemos ver que estas instâncias já têm mais de 20 movimentos até ao objetivo.
 Observamos agora que o Melhor Primeiro é o mais eficientes, seguido do AStar e IDAStar e por último o Branch-and-Bound.
 A heurística é boa, mas não para acertar numa boa solução á primeira, e por esse motivo o Melhor Primeiro e o Branch-and-Bound são mais penalizados.
-
+O custo da instância mais difícil é 470 para o Melhor Primeiro, e 27 para os restantes algoritmos, o que revela a distância a que o Melhor Primeiro pode ficar.
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |

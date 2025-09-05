@@ -378,21 +378,46 @@ e respetivas versões com eliminação de estados repetidos. Colocamos o P7=-1 p
 
 ```entrada
 C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 4:13 -R resultado8Damas -P P7=-1 P1=1,3 x P8=1,3
-
-Teste TProcurasConstrutivas
-Problema:
-  1 - Aspirador
-  2 - Puzzle 8
-  3 - 8 Damas
-  4 - Partição
-  5 - Artificial
+...
 Opção: 3
 ...
 Ficheiro resultado8Damas.csv gravado.
 ```
+Soma de I2(Tempo(ms)):
+|        |    1:Largura Primeiro | | 3:Profundidade Primeiro | |
+| Rótulos de Linha | 1:ignorar | 3:gerados | 1:ignorar | 3:gerados |
+|:---:|---:|---:|---:|---:|
+| 4 | 0 | 15 | 0 | 4 |
+| 5 | 0 | 5 | 0 | 4 |
+| 6 | 1 | 5 | 0 | 4 |
+| 7 | 0 | 5 | 0 | 4 |
+| 8 | 1 | 5 | 0 | 4 |
+| 9 | 3 | 13 | 0 | 4 |
+| 10 | 15 | 56 | 0 | 5 |
+| 11 | 80 | 182 | 0 | 4 |
+| 12 | 447 | 901 | 0 | 4 |
+| 13 | 2417 | 5171 | 0 | 4 |
+| Total Geral | 2964 | 6358 | 0 | 41 |
 
 Podemos ver a clara superioridade da procura em profundidade ilimitada.
 Todas as instâncias são resolvidas, mas em termos de tempo, a última leva 2 e 5 segundos pela procura em largura, e 0 segundos na procura em profundidade.
+
+Soma de I4(Expansões):
+|        |    1:Largura Primeiro | | 3:Profundidade Primeiro | |
+| Rótulos de Linha | 1:ignorar | 3:gerados | 1:ignorar | 3:gerados |
+|:---:|---:|---:|---:|---:|
+| 4 | 13 | 8 | 8 | 8 |
+| 5 | 33 | 18 | 5 | 5 |
+| 6 | 114 | 60 | 31 | 31 |
+| 7 | 419 | 211 | 9 | 9 |
+| 8 | 1665 | 839 | 113 | 113 |
+| 9 | 6977 | 3490 | 41 | 41 |
+| 10 | 30779 | 15392 | 102 | 102 |
+| 11 | 149131 | 74567 | 52 | 52 |
+| 12 | 773731 | 386869 | 261 | 261 |
+| 13 | 4250877 | 2125440 | 111 | 111 |
+| Total Geral | 5213739 | 2606894 | 733 | 733 |
+
 Em termos de expansões, o máximo da procura em profundidade é algumas centenas, enquanto que a procur em largura tem na instância maior mais de um milhão de expansões.
 A remoção de estados gerados repetidos, podemos observar na procura em largura que reduz em metade o número de expansões, mas duplica o tempo.
 
@@ -403,24 +428,63 @@ Vamos retirar as duas primeiras configurações do teste, para poder executar in
 
 ```entrada
 C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 14:23 -R resultado8DamasB -P P7=-1 P1=3 P8=1,3
-
-Teste TProcurasConstrutivas
-Problema:
-  1 - Aspirador
-  2 - Puzzle 8
-  3 - 8 Damas
-  4 - Partição
-  5 - Artificial
+...
 Opção: 3
 ...
 Ficheiro resultado8DamasB.csv gravado.
 ```
 
+|   | Soma de I2(Tempo(ms)) | | Soma de I4(Expansões) | |
+| Rótulos de Linha | 1:ignorar | 3:gerados | 1:ignorar | 3:gerados |
+|:---:|---:|---:|---:|---:|
+| 14 | 1 | 19 | 1899 | 1899 |
+| 15 | 1 | 6 | 1359 | 1359 |
+| 16 | 5 | 12 | 10052 | 2850 |
+| 17 | 2 | 19 | 5374 | 5206 |
+| 18 | 24 | 105 | 41299 | 28605 |
+| 19 | 2 | 29 | 2545 | 4656 |
+| 20 | 131 | 410 | 199635 | 112596 |
+| 21 | 5 | 98 | 8562 | 20208 |
+| 22 | 1070 | 1812 | 1737188 | 425154 |
+| 23 | 19 | 1137 | 25428 | 250250 |
+| Total Geral | 1260 | 3647 | 2033341 | 852783 |
+
 Podemos ver que o tempo continua menor se não se eliminarem os estados repetidos, mesmo na instância mais complexa, a 22, que levou 1 segundo, enquanto que com eliminação de repetidos foi 1,8 segundos.
 No entanto, para essa instância o número de expansões foi de 1737188 ignorando repetidos, e de 425154 eliminando repetidos.
-Confirma-se que neste problema, e tmabém para o algoritmo em profundidade, a eliminação de repetidos reduz o número de expansões, mas aumenta o tempo, pelo que não é compensador.
+Confirma-se que neste problema, e também para o algoritmo em profundidade, a eliminação de repetidos reduz o número de expansões, mas aumenta o tempo, pelo que não é compensador.
 
 As instâncias pares aparentam ser mais complexas que as ímpares.
+
+Qual é afinal a maior instância que se consegue resolver?
+<details>
+  <summary>Resposta:</summary>
+Vamos usar apenas as instâncias pares, e até ao limite de 40, que é o que temos implementado. 
+Utilizamos apenas a procura em profundidade ilimitada, sem eliminação de repetidos.
+```entrada
+C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 24:40:2 -R resultado8DamasC -P P7=-1 P1=3 P8=1
+...
+Opção: 3
+...
+Ficheiro resultado8DamasC.csv gravado.
+```
+
+| Rótulos de Linha | Soma de I1(Custo) | Soma de I2(Tempo(ms)) | Soma de I4(Expansões) |
+|:---:|---:|---:|---:|
+| 24 | 24 | 309 | 411608 |
+| 26 | 26 | 323 | 397699 |
+| 28 | 28 | 2537 | 3006298 |
+| 30 | -2 | 10001 | 10677294 |
+| 32 | -2 | 10001 | 9980585 |
+| 34 | -2 | 10001 | 9346319 |
+| 36 | -2 | 10001 | 8628941 |
+| 38 | -2 | 10001 | 7673544 |
+| 40 | -2 | 10001 | 7353868 |
+| Total Geral | 66 | 63175 | 57476156 |
+
+Consegue-se resolver até à instância 28, em 2 segundos. 
+Nas instâncias 30 a 40, não se consegue encontrar solução no limite de 10 segundos.
+
+</details>
 
 
 | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |

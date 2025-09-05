@@ -854,7 +854,7 @@ Podemos agora processar o ficheiro e confirmar que tem resultados idênticos.
 
 Utilizamos agora as tabelas diretamente, em vez de imagens do Excel. 
 
-Os valores são distintos de4vido a ter sido executado num outro computador, mas tem exactamente a mesma tendência.
+Os valores são distintos devido a ter sido executado num outro computador, mas tem exactamente a mesma tendência.
 A média do tempo sobe com o tamanho, mas não de forma linear.
 
 Estando respondida a questão inicial sobre o tempo de ordenação, podemos com este código procurar responder a outra questão:
@@ -913,7 +913,7 @@ Deve-se executar várias vezes, e apenas na operação de ordenação.
 Linha de comando: TProcura 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3
 
 | Valores | 1:TVector | 2:std::vector | 3:TVector/std::algorithm | 
-|:---:|---:|---:|---:|---:|
+|:---:|---:|---:|---:|
 | Mínimo de I2(Tempo(ms)) | 772 | 844 | 888 | 
 | Média de I2(Tempo(ms)) | 801,8 | 915,9 | 915,5 | 
 | Máximo de I2(Tempo(ms)) | 830 | 956 | 937 | 
@@ -923,8 +923,6 @@ certamente mais simples do TVector nestes vetores. Um teste estatístico poderá
 mas tudo indica que sim.
 Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, 
 ao contrário de um código que seja compilado na altura.
-
-
 </details>
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
