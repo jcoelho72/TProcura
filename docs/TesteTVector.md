@@ -836,7 +836,26 @@ Instância 10: DONE.
 Ficheiro resultado2.csv gravado.
 ```
 
-Podemos agora processar o ficheiro e confirmar que tem resultados idênticos, com ligeiras variações no tempo.
+Podemos agora processar o ficheiro e confirmar que tem resultados idênticos.
+
+| Rótulos de Linha | Média de I2 (Tempo ms) |
+|:----------------:|-----------------------:|
+|        1         |                  71,2  |
+|        2         |                 153,1  |
+|        3         |                 231,3  |
+|        4         |                 309,0  |
+|        5         |                 389,2  |
+|        6         |                 472,1  |
+|        7         |                 564,9  |
+|        8         |                 645,0  |
+|        9         |                 732,1  |
+|       10         |                 836,0  |
+| **Total Geral**  |               **440,4**|
+
+Utilizamos agora as tabelas diretamente, em vez de imagens do Excel. 
+
+Os valores são distintos de4vido a ter sido executado num outro computador, mas tem exactamente a mesma tendência.
+A média do tempo sobe com o tamanho, mas não de forma linear.
 
 Estando respondida a questão inicial sobre o tempo de ordenação, podemos com este código procurar responder a outra questão:
 
@@ -847,9 +866,26 @@ Temos também de variar a estrutura de dados.
 
 Linha de comando: TProcura 1,3 -R resultadosTudo -P P1=1:12 x P3=1:10 x P6=1:3
 
-Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, e no conteúdo I2 com o tempo.
+Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, 
+e no conteúdo I2 com o tempo.
 
-![resultadosTudo](docs/images/resultadosTudo.png)
+Soma de I2(Tempo(ms)):
+| Rótulos de Linha | 1:TVector | 2:std::vector | 3:TVector/std::algorithm |
+|:----------------:|----------:|--------------:|-------------------------:|
+| 1:Add()          |       160 |           180 |                      178 |
+| 10:operator=()   |        29 |            10 |                       28 |
+| 11:operator+=()  |        30 |            54 |                       31 |
+| 12:nada          |         0 |             0 |                        0 |
+| 2:Sort()         |      3048 |          3355 |                     3432 |
+| 3:RandomOrder()  |       404 |           613 |                      601 |
+| 4:Invert()       |        27 |            10 |                        9 |
+| 5:BeASet()       |      3081 |          3577 |                     3411 |
+| 6:Difference()   |      6504 |          7300 |                     7358 |
+| 7:Union()        |      9634 |          6990 |                    10792 |
+| 8:Contained()    |      5994 |          6788 |                     6610 |
+| 9:Intersection() |      6533 |          7129 |                     7420 |
+| **Total Geral**  |   **35444** |      **36006** |                 **39870** |
+
 
 Segundo estes resultados, TVector tem uma ligeira vantagem em termos de tempo na ordenação, mas é pior na união e outras operações, e no final há uma diferença de 1 segundo em 35. 
 Foram utilizadas instãncias pequenas para que o teste possa ser rápido.
@@ -875,13 +911,18 @@ Que testes pode fazer para procurar dar uma resposta fundamentada?
 Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior.
 Deve-se executar várias vezes, e apenas na operação de ordenação.
 Linha de comando: TProcura 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3
+
+| Valores | 1:TVector | 2:std::vector | 3:TVector/std::algorithm | 
+|:---:|---:|---:|---:|---:|
+| Mínimo de I2(Tempo(ms)) | 772 | 844 | 888 | 
+| Média de I2(Tempo(ms)) | 801,8 | 915,9 | 915,5 | 
+| Máximo de I2(Tempo(ms)) | 830 | 956 | 937 | 
+
 Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo,
 certamente mais simples do TVector nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não,
 mas tudo indica que sim.
 Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, 
 ao contrário de um código que seja compilado na altura.
-
-![resultadosSort](docs/images/resultadosSort.png)
 
 
 </details>
