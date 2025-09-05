@@ -817,7 +817,35 @@ Linha de comando\+: \doxylink{classTProcura_a224527229b795a4780e5faa61245a8e0}{T
 \end{DoxyCode}
 
 
-Podemos agora processar o ficheiro e confirmar que tem resultados idênticos, com ligeiras variações no tempo.
+Podemos agora processar o ficheiro e confirmar que tem resultados idênticos.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Média de I2 (Tempo ms)    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Média de I2 (Tempo ms)    }\\\cline{1-2}
+\endhead
+\PBS\centering 1   &\PBS\raggedleft 71,2    \\\cline{1-2}
+\PBS\centering 2   &\PBS\raggedleft 153,1    \\\cline{1-2}
+\PBS\centering 3   &\PBS\raggedleft 231,3    \\\cline{1-2}
+\PBS\centering 4   &\PBS\raggedleft 309,0    \\\cline{1-2}
+\PBS\centering 5   &\PBS\raggedleft 389,2    \\\cline{1-2}
+\PBS\centering 6   &\PBS\raggedleft 472,1    \\\cline{1-2}
+\PBS\centering 7   &\PBS\raggedleft 564,9    \\\cline{1-2}
+\PBS\centering 8   &\PBS\raggedleft 645,0    \\\cline{1-2}
+\PBS\centering 9   &\PBS\raggedleft 732,1    \\\cline{1-2}
+\PBS\centering 10   &\PBS\raggedleft 836,0    \\\cline{1-2}
+\PBS\centering {\bfseries{Total Geral}}   &\PBS\raggedleft {\bfseries{440,4}}   \\\cline{1-2}
+\end{longtabu}
+
+
+Utilizamos agora as tabelas diretamente, em vez de imagens do Excel.
+
+Os valores são distintos de4vido a ter sido executado num outro computador, mas tem exactamente a mesma tendência. A média do tempo sobe com o tamanho, mas não de forma linear.
 
 Estando respondida a questão inicial sobre o tempo de ordenação, podemos com este código procurar responder a outra questão\+:
 
@@ -832,12 +860,31 @@ Linha de comando\+: \doxylink{classTProcura}{TProcura} 1,3 -\/R resultados\+Tudo
 
 Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, e no conteúdo I2 com o tempo.
 
- 
-\begin{DoxyImage}
-\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{resultadosTudo.png}
-\doxyfigcaption{resultados\+Tudo}
-\end{DoxyImage}
-   
+Soma de I2(\+Tempo(ms))\+: \tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 1\+:\doxylink{classTVector}{TVector}   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 2\+:std\+::vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:TVector/std\+::algorithm    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 1\+:\doxylink{classTVector}{TVector}   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 2\+:std\+::vector   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:TVector/std\+::algorithm    }\\\cline{1-4}
+\endhead
+\PBS\centering 1\+:Add()   &\PBS\raggedleft 160   &\PBS\raggedleft 180   &\PBS\raggedleft 178    \\\cline{1-4}
+\PBS\centering 10\+:operator=()   &\PBS\raggedleft 29   &\PBS\raggedleft 10   &\PBS\raggedleft 28    \\\cline{1-4}
+\PBS\centering 11\+:operator+=()   &\PBS\raggedleft 30   &\PBS\raggedleft 54   &\PBS\raggedleft 31    \\\cline{1-4}
+\PBS\centering 12\+:nada   &\PBS\raggedleft 0   &\PBS\raggedleft 0   &\PBS\raggedleft 0    \\\cline{1-4}
+\PBS\centering 2\+:Sort()   &\PBS\raggedleft 3048   &\PBS\raggedleft 3355   &\PBS\raggedleft 3432    \\\cline{1-4}
+\PBS\centering 3\+:Random\+Order()   &\PBS\raggedleft 404   &\PBS\raggedleft 613   &\PBS\raggedleft 601    \\\cline{1-4}
+\PBS\centering 4\+:Invert()   &\PBS\raggedleft 27   &\PBS\raggedleft 10   &\PBS\raggedleft 9    \\\cline{1-4}
+\PBS\centering 5\+:Be\+ASet()   &\PBS\raggedleft 3081   &\PBS\raggedleft 3577   &\PBS\raggedleft 3411    \\\cline{1-4}
+\PBS\centering 6\+:Difference()   &\PBS\raggedleft 6504   &\PBS\raggedleft 7300   &\PBS\raggedleft 7358    \\\cline{1-4}
+\PBS\centering 7\+:Union()   &\PBS\raggedleft 9634   &\PBS\raggedleft 6990   &\PBS\raggedleft 10792    \\\cline{1-4}
+\PBS\centering 8\+:Contained()   &\PBS\raggedleft 5994   &\PBS\raggedleft 6788   &\PBS\raggedleft 6610    \\\cline{1-4}
+\PBS\centering 9\+:Intersection()   &\PBS\raggedleft 6533   &\PBS\raggedleft 7129   &\PBS\raggedleft 7420    \\\cline{1-4}
+\PBS\centering {\bfseries{Total Geral}}   &\PBS\raggedleft {\bfseries{35444}}   &\PBS\raggedleft {\bfseries{36006}}   &\PBS\raggedleft {\bfseries{39870}}   \\\cline{1-4}
+\end{longtabu}
+
 
 Segundo estes resultados, \doxylink{classTVector}{TVector} tem uma ligeira vantagem em termos de tempo na ordenação, mas é pior na união e outras operações, e no final há uma diferença de 1 segundo em 35. Foram utilizadas instãncias pequenas para que o teste possa ser rápido. Em qualquer caso pode-\/se afirmar que não há uma perda muito grande por utilizar \doxylink{classTVector}{TVector} em vez do código STL.
 
@@ -854,14 +901,11 @@ Será a ordenação de \doxylink{classTVector}{TVector} mais rápida ou mais len
 
 
 {\bfseries{Resposta\+:}}\begin{adjustwidth}{1em}{0em}
-Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior. Deve-\/se executar várias vezes, e apenas na operação de ordenação. Linha de comando\+: \doxylink{classTProcura}{TProcura} 10 -\/R resultados\+Sort -\/P P1=2 P3=1\+:10 x P6=1\+:3 Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do \doxylink{classTVector}{TVector} nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura.
+Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior. Deve-\/se executar várias vezes, e apenas na operação de ordenação. Linha de comando\+: \doxylink{classTProcura}{TProcura} 10 -\/R resultados\+Sort -\/P P1=2 P3=1\+:10 x P6=1\+:3
 
- 
-\begin{DoxyImage}
-\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{resultadosSort.png}
-\doxyfigcaption{resultados\+Sort}
-\end{DoxyImage}
-   
+\texorpdfstring{$\vert$}{|} Valores \texorpdfstring{$\vert$}{|} 1\+:\doxylink{classTVector}{TVector} \texorpdfstring{$\vert$}{|} 2\+:std\+::vector \texorpdfstring{$\vert$}{|} 3\+:TVector/std\+::algorithm \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}\+:---\+:\texorpdfstring{$\vert$}{|}---\+:\texorpdfstring{$\vert$}{|}---\+:\texorpdfstring{$\vert$}{|}---\+:\texorpdfstring{$\vert$}{|}---\+:\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} Mínimo de I2(\+Tempo(ms)) \texorpdfstring{$\vert$}{|} 772 \texorpdfstring{$\vert$}{|} 844 \texorpdfstring{$\vert$}{|} 888 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} Média de I2(\+Tempo(ms)) \texorpdfstring{$\vert$}{|} 801,8 \texorpdfstring{$\vert$}{|} 915,9 \texorpdfstring{$\vert$}{|} 915,5 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} Máximo de I2(\+Tempo(ms)) \texorpdfstring{$\vert$}{|} 830 \texorpdfstring{$\vert$}{|} 956 \texorpdfstring{$\vert$}{|} 937 \texorpdfstring{$\vert$}{|}
+
+Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do \doxylink{classTVector}{TVector} nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura.
 
 \end{adjustwidth}
 
