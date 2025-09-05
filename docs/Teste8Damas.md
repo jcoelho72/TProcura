@@ -384,8 +384,7 @@ Opção: 3
 Ficheiro resultado8Damas.csv gravado.
 ```
 Soma de I2(Tempo(ms)):
-|        |    1:Largura Primeiro | | 3:Profundidade Primeiro | |
-| Rótulos de Linha | 1:ignorar | 3:gerados | 1:ignorar | 3:gerados |
+| Rótulos de Linha | 1:Largura Primeiro<br> 1:ignorar | 3:gerados | 3:Profundidade Primeiro <br>1:ignorar | 3:gerados |
 |:---:|---:|---:|---:|---:|
 | 4 | 0 | 15 | 0 | 4 |
 | 5 | 0 | 5 | 0 | 4 |
@@ -403,8 +402,7 @@ Podemos ver a clara superioridade da procura em profundidade ilimitada.
 Todas as instâncias são resolvidas, mas em termos de tempo, a última leva 2 e 5 segundos pela procura em largura, e 0 segundos na procura em profundidade.
 
 Soma de I4(Expansões):
-|        |    1:Largura Primeiro | | 3:Profundidade Primeiro | |
-| Rótulos de Linha | 1:ignorar | 3:gerados | 1:ignorar | 3:gerados |
+| Rótulos de Linha | 1:Largura Primeiro<br> 1:ignorar | 3:gerados | 3:Profundidade Primeiro <br>1:ignorar | 3:gerados |
 |:---:|---:|---:|---:|---:|
 | 4 | 13 | 8 | 8 | 8 |
 | 5 | 33 | 18 | 5 | 5 |
@@ -434,8 +432,7 @@ Opção: 3
 Ficheiro resultado8DamasB.csv gravado.
 ```
 
-|   | Soma de I2(Tempo(ms)) | | Soma de I4(Expansões) | |
-| Rótulos de Linha | 1:ignorar | 3:gerados | 1:ignorar | 3:gerados |
+| Rótulos de Linha | Soma de I2(Tempo(ms))<br>1:ignorar | 3:gerados | Soma de I4(Expansões)<br>1:ignorar | 3:gerados |
 |:---:|---:|---:|---:|---:|
 | 14 | 1 | 19 | 1899 | 1899 |
 | 15 | 1 | 6 | 1359 | 1359 |
