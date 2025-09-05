@@ -732,7 +732,7 @@ Ação 7: Linha de comando</h2>
 <td class="markdownTableBodyCenter"><b>Total Geral</b>   </td><td class="markdownTableBodyRight"><b>440,4</b>   </td></tr>
 </table>
 <p>Utilizamos agora as tabelas diretamente, em vez de imagens do Excel.</p>
-<p>Os valores são distintos de4vido a ter sido executado num outro computador, mas tem exactamente a mesma tendência. A média do tempo sobe com o tamanho, mas não de forma linear.</p>
+<p>Os valores são distintos devido a ter sido executado num outro computador, mas tem exactamente a mesma tendência. A média do tempo sobe com o tamanho, mas não de forma linear.</p>
 <p>Estando respondida a questão inicial sobre o tempo de ordenação, podemos com este código procurar responder a outra questão:</p>
 <ul>
 <li>considerando todas as operações em teste, há diferença entre alguma das estruturas de dados em termos de tempo?</li>
@@ -781,9 +781,17 @@ Ação 8: Desafio CTesteTVector</h2>
 <summary >
 Resposta:</summary>
 <p>Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior. Deve-se executar várias vezes, e apenas na operação de ordenação. Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3</p>
-<p>| Valores | 1:<a class="el" href="classTVector.html">TVector</a> | 2:std::vector | 3:TVector/std::algorithm | |:&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:| | Mínimo de I2(Tempo(ms)) | 772 | 844 | 888 | | Média de I2(Tempo(ms)) | 801,8 | 915,9 | 915,5 | | Máximo de I2(Tempo(ms)) | 830 | 956 | 937 |</p>
-<p>Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do <a class="el" href="classTVector.html">TVector</a> nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura.</p>
-<p></p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Valores   </th><th class="markdownTableHeadRight">1:<a class="el" href="classTVector.html">TVector</a>   </th><th class="markdownTableHeadRight">2:std::vector   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Mínimo de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">772   </td><td class="markdownTableBodyRight">844   </td><td class="markdownTableBodyRight">888    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">Média de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">801,8   </td><td class="markdownTableBodyRight">915,9   </td><td class="markdownTableBodyRight">915,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Máximo de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">830   </td><td class="markdownTableBodyRight">956   </td><td class="markdownTableBodyRight">937   </td></tr>
+</table>
+<p>Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do <a class="el" href="classTVector.html">TVector</a> nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura. </p>
 </details>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
 </div></div><!-- contents -->
