@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 	std::locale::global(std::locale(""));
 
 	printf("\n\
-Teste TProcurasConstrutivas\nProblema:\n\
+Teste TProcuraMelhorativa\nProblema:\n\
   1 - 8 Damas\n\
   2 - Partição\n\
   3 - Artificial\n\

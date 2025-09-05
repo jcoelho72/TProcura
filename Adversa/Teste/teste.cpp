@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 	std::locale::global(std::locale(""));
 
 	printf("\n\
-Teste TProcurasAdversas\nProblema:\n\
+Teste TProcuraAdversa\nProblema:\n\
   1 - Jogo do Galo\n\
   2 - Jogo Em Linha\n\
 Opção: ");

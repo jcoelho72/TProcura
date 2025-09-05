@@ -173,10 +173,15 @@ Ficheiro resultadoArtificial.csv gravado.
 
 Podemos observar aqui que há duas instâncias que não foram resolvidas pelos algoritmos cegos, as instâncias 8 e 10. 
 
-No entanto, as procuras informadas são bastante robustas, mesmo com a heurística mínima
+O custo uniforme retorna a solução ótima para as instâncias 4, 5 e 7, enquanto que a procura em largura e profundidade iterativa,
+retornam soluções piores. Isto acontece dado que o custo das ações não é unitário, e o custo uniforme utiliza essa informação.
+O tempo é também melhor nestes casos.
+
+
+As procuras informadas são bastante robustas, mesmo com a heurística mínima
 indicando a informação até ao nível em que pode estar o estado objetivo. 
-Estas 10 instâncias não são portanto complexas para estes algoritmos, tanto o A* como o Branch-and-Bound, 
-resolvem todas, e com bons tempos.
+Estas 10 instâncias não são portanto complexas para estes algoritmos, tanto o A*, IDA** como o Branch-and-Bound, 
+resolvem todas à optimalidade, e com bons tempos. O Melhor Primeiro é o mais eficiente, mas retorna soluções piores.
 
 Assim, podem lidar com objetivos mais raros, profundos, e com ramificação mais elevada, que as utilizadas aqui.
 

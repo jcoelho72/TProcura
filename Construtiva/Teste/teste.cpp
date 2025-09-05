@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 {
 	std::locale::global(std::locale(""));
 
-	printf("\nTeste TProcurasConstrutivas\nProblema:\n\
+	printf("\nTeste TProcuraConstrutiva\nProblema:\n\
   1 - Aspirador\n  2 - Puzzle 8\n  3 - 8 Damas\n  4 - Partição\n  5 - Artificial\nOpção: ");
 	switch (TProcura::NovoValor("")) {
 	case 1:	CAspirador().main(argc, argv, "Aspirador"); break;

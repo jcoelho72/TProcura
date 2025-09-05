@@ -1,6 +1,7 @@
 @page teste_jogo_em_linha Teste Jogo Em Linha
 
 Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo. 
+Selecione o projeto TProcuraAdversa, e execute.
 Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
