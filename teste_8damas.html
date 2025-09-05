@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('teste_8damas.html',''); initResizable(
   <div class="headertitle"><div class="title">Teste 8 Damas</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
+<div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema das 8 Damas. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md14"></a>
 Sumário</h2>
@@ -394,7 +394,7 @@ Ação 6 - Testes Empíricos</h2>
 <div class="line">I5(Gerações): 5º lugar (número de estados gerados)</div>
 <div class="line">I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)</div>
 </div><!-- fragment --><p>Num primeiro teste pretendemos comparar a procura em largura com a procura em profundidade ilimitada, e respetivas versões com eliminação de estados repetidos. Colocamos o P7=-1 para a procura em profundidade ilimitada, não afetando a procura em largura.</p>
-<div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva 4:13 -R resultado8Damas -P P7=-1 P1=1,3 x P8=1,3</div>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 4:13 -R resultado8Damas -P P7=-1 P1=1,3 x P8=1,3</div>
 <div class="line">...</div>
 <div class="line">Opção: 3</div>
 <div class="line">...</div>
@@ -459,7 +459,7 @@ Ação 6 - Testes Empíricos</h2>
 <p>Em termos de expansões, o máximo da procura em profundidade é algumas centenas, enquanto que a procur em largura tem na instância maior mais de um milhão de expansões. A remoção de estados gerados repetidos, podemos observar na procura em largura que reduz em metade o número de expansões, mas duplica o tempo.</p>
 <p>Não é possível com estas instâncias, observar diferença para a procura em profundidade.</p>
 <p>Vamos retirar as duas primeiras configurações do teste, para poder executar instâncias maiores.</p>
-<div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva 14:23 -R resultado8DamasB -P P7=-1 P1=3 P8=1,3</div>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 14:23 -R resultado8DamasB -P P7=-1 P1=3 P8=1,3</div>
 <div class="line">...</div>
 <div class="line">Opção: 3</div>
 <div class="line">...</div>
@@ -497,7 +497,7 @@ Ação 6 - Testes Empíricos</h2>
 <p>Qual é afinal a maior instância que se consegue resolver? </p><details >
 <summary >
 Resposta:</summary>
-<p>Vamos usar apenas as instâncias pares, e até ao limite de 40, que é o que temos implementado. Utilizamos apenas a procura em profundidade ilimitada, sem eliminação de repetidos. </p><div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva 24:40:2 -R resultado8DamasC -P P7=-1 P1=3 P8=1</div>
+<p>Vamos usar apenas as instâncias pares, e até ao limite de 40, que é o que temos implementado. Utilizamos apenas a procura em profundidade ilimitada, sem eliminação de repetidos. </p><div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 24:40:2 -R resultado8DamasC -P P7=-1 P1=3 P8=1</div>
 <div class="line">...</div>
 <div class="line">Opção: 3</div>
 <div class="line">...</div>
@@ -529,7 +529,7 @@ Resposta:</summary>
 <p>Consegue-se resolver até à instância 28, em 2 segundos. Nas instâncias 30 a 40, não se consegue encontrar solução no limite de 10 segundos.</p>
 <p></p>
 </details>
-<p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
+<p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

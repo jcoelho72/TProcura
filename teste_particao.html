@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('teste_particao.html',''); initResizabl
   <div class="headertitle"><div class="title">Teste Particao</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
-<p>Execução de exemplo com base no problema da Partição. Pode acompanhar o teste excutando as ações localmente.</p>
+<div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
+<p>Execução de exemplo com base no problema da Partição. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md42"></a>
 Sumário</h2>
 <ul>
@@ -118,76 +118,69 @@ Sumário</h2>
 Partição - separe os números em duas partes iguais</div></div>
     <p>Vamos escolher o problema da partição. Introduza: <b>4.</b></p>
 <div class="fragment"><div class="line">Partição</div>
-<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">[Estatísticas] expansões 0 | gerações 0 | avaliações 0</div>
+<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
+<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
+<div class="line"> P11(baralhar): 0</div>
 <div class="line">Colocar #8: 0 = 0</div>
-<div class="line">---   8  10  14  17  ---</div>
-<div class="line">---  18  25  28  28  ---</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
-<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
-</div><!-- fragment --><p> Este problem aconsiste em dividir os números em duas partes que somem exatamente o mesmo valor.</p>
+<div class="line">---   2   2   9   9  ---</div>
+<div class="line">---  13  16  17  24  ---</div>
+<div class="line">____________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
+<div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Este problema consiste em dividir os números em duas partes que somem exatamente o mesmo valor.</p>
 <p><a class="anchor" id="particao-a1"></a></p>
 <h2><a class="anchor" id="autotoc_md43"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver as instâncias que temos. Introduza: <b>1; 10.</b></p>
-<div class="fragment"><div class="line">Nova instância (atual 10) [2-1000]:</div>
+<div class="fragment"><div class="line">ID atual: 10  Intervalo: [2-1000]  Prefixo atual: &#39;instancia_&#39;</div>
+<div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 10</div>
 </div><!-- fragment --><p> Existem instâncias de 2 a 1000, correspondendo o ID à quantidade de números. As instâncias são geradas aleatoriamente, podendo existir instâncias impossíveis.</p>
 <p>Deixemos a instância 10 para resolução manual.</p>
 <p><a class="anchor" id="particao-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md44"></a>
 Ação 2 - Resolver manualmente</h2>
-<p>Vamos procurar resolver manualmente a intância. Introduza: <b>2; esq dir esq dir; dir esq; dir; esq.</b></p>
-<div class="fragment"><div class="line">Colocar #8: 0 = 0</div>
-<div class="line">---   8  10  14  17  ---</div>
-<div class="line">---  18  25  28  28  ---</div>
+<p>Vamos procurar resolver manualmente a intância. Introduza: <b>2; esq dir esq dir; dir; esq.</b></p>
+<div class="fragment"><div class="line">g:0 1|2|3</div>
+<div class="line">Colocar #8: 0 = 0</div>
+<div class="line">---   2   2   9   9  ---</div>
+<div class="line">---  13  16  17  24  ---</div>
 <div class="line">Ações: esq dir</div>
 <div class="line">Sucessor [1-2, ação(ões), exe]:esq dir esq dir</div>
 <div class="line">Executadas 4 ações com sucesso.</div>
 <div class="line">g:0 6|12|6</div>
-<div class="line">Colocar #4: 53 = 46</div>
-<div class="line">---   8  10  14  17  ---</div>
-<div class="line">     28  25          &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  28  18</div>
-<div class="line">Ações: esq dir</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:dir esq</div>
-<div class="line">Executadas 2 ações com sucesso.</div>
-<div class="line">g:0 9|18|9</div>
-<div class="line">Colocar #2: 67 = 63</div>
-<div class="line">---   8  10          ---</div>
-<div class="line">     28  25  14      &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  28  18  17</div>
+<div class="line">Colocar #4: 40 = 30</div>
+<div class="line">---   2   2   9   9  ---</div>
+<div class="line">     24  16          &lt;&lt;&lt;</div>
+<div class="line">&gt;&gt;&gt;  17  13</div>
 <div class="line">Ações: esq dir</div>
 <div class="line">Sucessor [1-2, ação(ões), exe]:dir</div>
 <div class="line">Executadas 1 ações com sucesso.</div>
-<div class="line">g:0 11|22|12</div>
-<div class="line">Colocar #1: 67 = 73</div>
-<div class="line">---   8              ---</div>
-<div class="line">     28  25  14      &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  28  18  17  10</div>
+<div class="line">g:0 8|16|9</div>
+<div class="line">Colocar #3: 40 = 39</div>
+<div class="line">---   2   2   9      ---</div>
+<div class="line">     24  16          &lt;&lt;&lt;</div>
+<div class="line">&gt;&gt;&gt;  17  13   9</div>
 <div class="line">Ações: esq dir</div>
 <div class="line">Sucessor [1-2, ação(ões), exe]:esq</div>
 <div class="line">Executadas 1 ações com sucesso.</div>
-<div class="line">g:0 13|24|13</div>
-<div class="line">Colocar #0: 75 = 73</div>
-<div class="line">     28  25  14   8  &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  28  18  17  10</div>
+<div class="line">g:0 10|18|10</div>
+<div class="line">Colocar #2: 49 = 39</div>
+<div class="line">---   2   2          ---</div>
+<div class="line">     24  16   9      &lt;&lt;&lt;</div>
+<div class="line">&gt;&gt;&gt;  17  13   9</div>
 <div class="line">Ações:</div>
 <div class="line">Sem sucessores.</div>
 <div class="line">Partição</div>
-<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">[Estatísticas] expansões 13 | gerações 24 | avaliações 13</div>
-<div class="line">Colocar #0: 75 = 73</div>
-<div class="line">     28  25  14   8  &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  28  18  17  10</div>
-<div class="line">_______________________________________________________________________________</div>
-</div><!-- fragment --><p> Foi uma boa tentativa, mas no final um lado soma 75 o outro 73.</p>
+<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
+<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
+<div class="line"> P11(baralhar): 0</div>
+<div class="line">Colocar #2: 49 = 39</div>
+<div class="line">---   2   2          ---</div>
+<div class="line">     24  16   9      &lt;&lt;&lt;</div>
+<div class="line">&gt;&gt;&gt;  17  13   9</div>
+<div class="line">____________________________________________________________________</div>
+</div><!-- fragment --><p> Foi uma boa tentativa, mas no final um lado soma 49 do outro 39, e os números que restam não chegam para equilibrar.</p>
 <p>Tal como as 8 damas, o número de ações de uma solução completa é fixo. É igual à quantidade de número a colocar. Sabemos que não faz sentido a procura em largura nestes problemas. Também pelos mesmos motivos que nas 8 damas, não se consegue uma heurística pelo que não faz sentido as procuras informadas.</p>
 <p>Naturalmente que se poderia efetuar mais cortes dos que estão a ser feitos nesta implementação. Vamos apenas comparar a remoção de repetidos gerados, relativamente a ignorar repetidos.</p>
 <p>No caso da partição, após um número estar num lado, apenas a soma interessa. Como se coloca os números por ordem, um estado fica igual a todos os que têm o montante igual das peças colocadas. Esquerda e direita é naturalmente irrelevante.</p>
@@ -195,107 +188,228 @@ Ação 2 - Resolver manualmente</h2>
 <p><a class="anchor" id="particao-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md45"></a>
 Ação 3 - Testes Empíricos</h2>
-<p>Temos para teste a procura em profundidade ilimitada, e pretendemos comparar ignorar estados repetidos, ou remover todos os repetidos gerados. Introduza: **4; 1; 3; 6; 1000000; 10; 1; 9; -1; <em>ENTER</em>; 6; <em>ENTER</em>; 4; 10; 3; <em>ENTER</em>; 6; <em>ENTER</em>. **</p>
-<div class="fragment"><div class="line">Parametros comuns a 2 configurações:</div>
-<div class="line">P1:3 P2:0 P3:4 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:-1 P11:100</div>
-<div class="line">P12:0 P13:0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P10:1</div>
-<div class="line">--- Configuração 2 --- atual</div>
-<div class="line">P10:3</div>
-</div><!-- fragment --><p> Estamos prontos para ver primeiramente algumas instâncias mais pequenas. Introduza: <b>7; 0; 19; 10.</b></p>
-<div class="fragment"><div class="line"> ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------|</div>
-<div class="line"> 10 |  1 |        8 |         13 |        16 |          0 |   0,000s |</div>
-<div class="line"> 11 |  1 |       11 |         55 |        60 |          0 |   0,000s |</div>
-<div class="line"> 12 |  1 | sem sol. |        603 |       602 |          0 |   0,001s |</div>
-<div class="line"> 13 |  1 | sem sol. |       1539 |      1538 |          0 |   0,001s |</div>
-<div class="line"> 14 |  1 |       13 |         37 |        42 |          0 |   0,000s |</div>
-<div class="line"> 15 |  1 | sem sol. |       8131 |      8130 |          0 |   0,003s |</div>
-<div class="line"> 16 |  1 |       16 |         35 |        42 |          0 |   0,000s |</div>
-<div class="line"> 17 |  1 |       17 |         76 |        84 |          0 |   0,000s |</div>
-<div class="line"> 18 |  1 |       16 |         42 |        48 |          0 |   0,000s |</div>
-<div class="line"> 19 |  1 |       19 |         31 |        38 |          0 |   0,000s |</div>
-<div class="line"> 10 |  2 |        8 |         13 |        15 |          0 |   0,000s |</div>
-<div class="line"> 11 |  2 |       11 |         44 |        48 |          0 |   0,001s |</div>
-<div class="line"> 12 |  2 | sem sol. |        124 |       123 |          0 |   0,000s |</div>
-<div class="line"> 13 |  2 | sem sol. |        158 |       157 |          0 |   0,000s |</div>
-<div class="line"> 14 |  2 |       13 |         37 |        41 |          0 |   0,000s |</div>
-<div class="line"> 15 |  2 | sem sol. |        290 |       289 |          0 |   0,000s |</div>
-<div class="line"> 16 |  2 |       16 |         32 |        38 |          0 |   0,000s |</div>
-<div class="line"> 17 |  2 |       17 |         64 |        71 |          0 |   0,000s |</div>
-<div class="line"> 18 |  2 |       16 |         42 |        47 |          0 |   0,000s |</div>
-<div class="line"> 19 |  2 |       19 |         31 |        37 |          0 |   0,000s |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------| resolvidas</div>
-<div class="line">Total  1 |      100 |      10562 |     10600 |          0 |   0,005s |  10</div>
-<div class="line">Total  2 |      100 |        835 |       866 |          0 |   0,001s |  10</div>
-<div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|</div>
-<div class="line"> 1    |  0 |  0</div>
-<div class="line"> |----|----|</div>
-<div class="line"> 2  0 |    |  0</div>
-<div class="line"> |----|----|</div>
-<div class="line">Parametros comuns a 2 configurações:</div>
-<div class="line">P1(Algoritmo): Profundidade Primeiro | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): -1 | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P10(Repetidos): ignorar</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P10(Repetidos): gerados</div>
-</div><!-- fragment --><p>Muito rápido, não é possível observar diferenças a nível de tempo. Pode-se no entanto ver que os estados gerados e expandidos, são uma ordem de grandeza superior, se se ignorar estados gerados duplicadso.</p>
-<p>Introduza: <b>7; 0; 29; 20.</b></p>
-<div class="fragment"><div class="line"> ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------|</div>
-<div class="line"> 20 |  1 |       20 |        184 |       192 |          0 |   0,000s |</div>
-<div class="line"> 21 |  1 |       20 |         33 |        40 |          0 |   0,000s |</div>
-<div class="line"> 22 |  1 |       21 |         34 |        42 |          0 |   0,000s |</div>
-<div class="line"> 23 |  1 | sem sol. |     384627 |    384626 |          0 |   0,232s |</div>
-<div class="line"> 24 |  1 | não res. |     999992 |   1000002 |          0 |   0,564s |</div>
-<div class="line"> 25 |  1 | não res. |     999991 |   1000002 |          0 |   0,538s |</div>
-<div class="line"> 26 |  1 | não res. |     999991 |   1000002 |          0 |   0,595s |</div>
-<div class="line"> 27 |  1 |       27 |         45 |        54 |          0 |   0,000s |</div>
-<div class="line"> 28 |  1 |       27 |         86 |        96 |          0 |   0,000s |</div>
-<div class="line"> 29 |  1 |       29 |         50 |        58 |          0 |   0,000s |</div>
-<div class="line"> 20 |  2 |       20 |        148 |       155 |          0 |   0,000s |</div>
-<div class="line"> 21 |  2 |       20 |         33 |        39 |          0 |   0,000s |</div>
-<div class="line"> 22 |  2 |       21 |         34 |        41 |          0 |   0,000s |</div>
-<div class="line"> 23 |  2 | sem sol. |       1008 |      1007 |          0 |   0,001s |</div>
-<div class="line"> 24 |  2 | sem sol. |       1389 |      1388 |          0 |   0,002s |</div>
-<div class="line"> 25 |  2 | sem sol. |       1874 |      1873 |          0 |   0,002s |</div>
-<div class="line"> 26 |  2 | sem sol. |       1473 |      1472 |          0 |   0,001s |</div>
-<div class="line"> 27 |  2 |       27 |         45 |        53 |          0 |   0,000s |</div>
-<div class="line"> 28 |  2 |       27 |         81 |        90 |          0 |   0,000s |</div>
-<div class="line"> 29 |  2 |       29 |         50 |        57 |          0 |   0,000s |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------| resolvidas</div>
-<div class="line">Total  1 |      144 |    3385033 |   3385114 |          0 |   1,929s |   7</div>
-<div class="line">Total  2 |      144 |       6135 |      6175 |          0 |   0,006s |  10</div>
-<div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|</div>
-<div class="line"> 1    | -4 | -4</div>
-<div class="line"> |----|----|</div>
-<div class="line"> 2  4 |    |  4</div>
-<div class="line"> |----|----|</div>
-</div><!-- fragment --><p>Conseguimos observar clara vantagem já nestas instâncias de 20 elementos. Nas instâncias impossíveis o espaço de estados aumenta de forma considerável, caso se ignore repetidos. Na instância 23 (as restantes atingiram o critério de paragem), foram necessários 384 mil estados, enquanto que removendo duplicados apenas 1007, o que dá duas ordens de grandeza.</p>
-<p>Claramente a remoção de repetidos é crítica, dado que muitos estados ficam iguais após ações distintas.</p>
-<p>Vamos fazer agora um teste para saber até que instância podem os métodos construtivos resolver instâncias partição. Introduza: <b>6; -1; 7; 0; 159; 150</b></p>
-<div class="fragment"><div class="line">  ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------|</div>
-<div class="line">150 |  1 |      150 |        404 |       448 |          0 |   0,001s |</div>
-<div class="line">151 |  1 |      151 |        257 |       301 |          0 |   0,000s |</div>
-<div class="line">152 |  1 | sem sol. |     460826 |    460825 |          0 |   1,068s |</div>
-<div class="line">153 |  1 | sem sol. |     489670 |    489669 |          0 |   1,155s |</div>
-<div class="line">154 |  1 | sem sol. |     470043 |    470042 |          0 |   1,225s |</div>
-<div class="line">155 |  1 |      155 |        423 |       467 |          0 |   0,001s |</div>
-<div class="line">156 |  1 | sem sol. |     469527 |    469526 |          0 |   1,114s |</div>
-<div class="line">157 |  1 |      157 |        454 |       501 |          0 |   0,001s |</div>
-<div class="line">158 |  1 | sem sol. |     553655 |    553654 |          0 |   1,355s |</div>
-<div class="line">159 |  1 |      159 |        457 |       506 |          0 |   0,001s |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------| resolvidas</div>
-<div class="line">Total  1 |      772 |    2445716 |   2445939 |          0 |   5,921s |  10</div>
-</div><!-- fragment --><p> Com 150 números o algoritmo já leva à volta de 1 segundo, e as gerações estão a metade do limite, que é um milhão.</p>
-<p>As instâncias que têm resolução, continuam a ser resolvidas muito rapidamente.</p>
-<p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
+<p>Vamos fazer testes empíricos na linha de comandos.</p>
+<p>Vamos obter primeiramente a lista de todos os parâmetros.</p>
+<div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
+<div class="line">PS C:\Work\Git\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
+<div class="line"> </div>
+<div class="line">Teste TProcurasConstrutivas</div>
+<div class="line">Problema:</div>
+<div class="line">  1 - Aspirador</div>
+<div class="line">  2 - Puzzle 8</div>
+<div class="line">  3 - 8 Damas</div>
+<div class="line">  4 - Partição</div>
+<div class="line">  5 - Artificial</div>
+<div class="line">Opção: 4</div>
+<div class="line">Uso: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
+<div class="line">  &lt;instâncias&gt;    Conjunto de IDs: A | A,B,C | A:B[:C]</div>
+<div class="line">Opções:</div>
+<div class="line">  -R &lt;ficheiro&gt;   Nome do CSV de resultados (omissão: resultados.csv)</div>
+<div class="line">  -F &lt;prefixo&gt;    Prefixo dos ficheiros de instância (omissão: instancia_)</div>
+<div class="line">  -I &lt;ind&gt;        Lista de indicadores (e.g. 2,1,3)</div>
+<div class="line">  -S              Mostrar soluções durante a execução</div>
+<div class="line">  -h              Esta ajuda</div>
+<div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
+<div class="line">Exemplo: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
+<div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
+<div class="line"> </div>
+<div class="line">Lista de parâmetros:</div>
+<div class="line"> P1(Algoritmo): Largura Primeiro (1 a 7)</div>
+<div class="line"> P2(Debug): nada (0 a 4)</div>
+<div class="line"> P3(Seed): 1 (1 a 1000000)</div>
+<div class="line"> P4(Tempo): 10 (1 a 3600)</div>
+<div class="line"> P5(Iterações): 0 (0 a 1000000000)</div>
+<div class="line"> P6(Ver): 4 (1 a 100)</div>
+<div class="line"> P7(Limite): 0 (-1 a 1000000)</div>
+<div class="line"> P8(Repetidos): ignorar (1 a 3)</div>
+<div class="line"> P9(pesoAStar): 100 (0 a 10000)</div>
+<div class="line"> P10(ruido): 0 (-100 a 100)</div>
+<div class="line"> P11(baralhar): 0 (0 a 1)</div>
+<div class="line"> </div>
+<div class="line">Lista de indicadores:</div>
+<div class="line"> </div>
+<div class="line">I1(Custo): 1º lugar (o resultado é o custo da solução atual)</div>
+<div class="line">I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)</div>
+<div class="line">I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)</div>
+<div class="line">I4(Expansões): 4º lugar (número de expansões efetuadas)</div>
+<div class="line">I5(Gerações): 5º lugar (número de estados gerados)</div>
+<div class="line">I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)</div>
+</div><!-- fragment --><p>Temos para teste a procura em profundidade ilimitada, e pretendemos comparar ignorar estados repetidos, ou remover todos os repetidos gerados.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 10:19 -R resultadoParticao -P P7=-1 P1=3 x P8=1,3</div>
+<div class="line">...</div>
+<div class="line">Opção: 4</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoParticao.csv gravado.</div>
+</div><!-- fragment --><p>Podemos ver o resultado:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Soma de I1(Custo)<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">Soma de I2(Tempo(ms))<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">Soma de I4(Expansões)<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">27    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">17    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">947   </td><td class="markdownTableBodyRight">119    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">1151   </td><td class="markdownTableBodyRight">143    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">24    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">25    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">17403   </td><td class="markdownTableBodyRight">440    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">24223   </td><td class="markdownTableBodyRight">462    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">46639   </td><td class="markdownTableBodyRight">630    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">57931   </td><td class="markdownTableBodyRight">580    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">41   </td><td class="markdownTableBodyRight">41   </td><td class="markdownTableBodyRight">53   </td><td class="markdownTableBodyRight">57   </td><td class="markdownTableBodyRight">148387   </td><td class="markdownTableBodyRight">2467   </td></tr>
+</table>
+<p>As instâncias escolhidas são muito pequenas, e o tempo de execução é praticamente nulo. Não servem para medir diferenças de tempo, mas servem para medir diferenças no número de estados expandidos. Tudo leva a crer que a remoção de repetidos gerados é muito vantajosa.</p>
+<p>Vamos procurar instâncias maiores, de 20 a 29.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 20:29 -R resultadoParticaoB -P P7=-1 P1=3 x P8=1,3</div>
+<div class="line">...</div>
+<div class="line">Opção: 4</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoParticaoB.csv gravado.</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Soma de I1(Custo)<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">Soma de I2(Tempo(ms))<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">Soma de I4(Expansões)<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">87   </td><td class="markdownTableBodyRight">85    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">46   </td><td class="markdownTableBodyRight">46    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">35    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">134   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">390983   </td><td class="markdownTableBodyRight">1236    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">381   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">1071431   </td><td class="markdownTableBodyRight">1164    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">41   </td><td class="markdownTableBodyRight">41    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">66   </td><td class="markdownTableBodyRight">65    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">2420   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">8098059   </td><td class="markdownTableBodyRight">2104    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">2431   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">7867847   </td><td class="markdownTableBodyRight">2186    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">49   </td><td class="markdownTableBodyRight">49    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">135   </td><td class="markdownTableBodyRight">135   </td><td class="markdownTableBodyRight">5366   </td><td class="markdownTableBodyRight">59   </td><td class="markdownTableBodyRight">17428644   </td><td class="markdownTableBodyRight">7011   </td></tr>
+</table>
+<p>É agora claro que a remoção de repetidos gerados é crítica para o desempenho. Podemos ver também que as instâncias que não têm solução, são muito mais difíceis. Nestas instâncias toda a árvore de estados é percorrida, e podemos registar diferenças entre ter ou não remoção de repetidos, de várias ordens de grandeza.</p>
+<p>Qual é a maior instância que se conseguimos resolver com esta implemantação? </p><details >
+<summary >
+Resposta:</summary>
+<p>Vamos usar apenas a remoção de repetidos. Como não sabemos qual é a maior instância que se consegue resolver, e o melhor método tem um tempo insignificante na maior instância testada, a 29, fazemos primeiramente um teste de 10 em 10, até 200, para termos uma ideia.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 30:200:10 -R resultadoParticaoC -P P7=-1 P1=3 P8=3</div>
+<div class="line">...</div>
+<div class="line">Opção: 4</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoParticaoC.csv gravado.</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Soma de I1(Custo)   </th><th class="markdownTableHeadRight">Soma de I2(Tempo(ms))   </th><th class="markdownTableHeadRight">Soma de I4(Expansões)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">30   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">50    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">7301    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">50   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">83    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">60   </td><td class="markdownTableBodyRight">60   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">142    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">70   </td><td class="markdownTableBodyRight">70   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">119    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">80   </td><td class="markdownTableBodyRight">79   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">132    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">90   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">79   </td><td class="markdownTableBodyRight">74065    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">132   </td><td class="markdownTableBodyRight">130625    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">110   </td><td class="markdownTableBodyRight">108   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">314    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">120   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">230   </td><td class="markdownTableBodyRight">222208    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">130   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">291   </td><td class="markdownTableBodyRight">269323    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">140   </td><td class="markdownTableBodyRight">140   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">236    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">149   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">252    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">160   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">710   </td><td class="markdownTableBodyRight">604753    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">170   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">814   </td><td class="markdownTableBodyRight">655988    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">180   </td><td class="markdownTableBodyRight">178   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">376    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">190   </td><td class="markdownTableBodyRight">190   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">673    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">198   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">339    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">1245   </td><td class="markdownTableBodyRight">2324   </td><td class="markdownTableBodyRight">1966979   </td></tr>
+</table>
+<p>Todas as instâncias a baixo de 1 segundo, mas mesmo assim já perto do limite dos 10 segundos. A instância 100 levou 0.1 segundos, a 160 levou 0.7 segundos, pelo que o limite estará algures entre 200 e 300. Assim, vamos testar a partir de 200, até 300, passos de 5.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Soma de I1(Custo)   </th><th class="markdownTableHeadRight">Soma de I2(Tempo(ms))   </th><th class="markdownTableHeadRight">Soma de I4(Expansões)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">205   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">1638   </td><td class="markdownTableBodyRight">1251882    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">210   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">1399   </td><td class="markdownTableBodyRight">1107437    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">215   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">1824   </td><td class="markdownTableBodyRight">1407324    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">220   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">1906   </td><td class="markdownTableBodyRight">1516272    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">225   </td><td class="markdownTableBodyRight">224   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">382    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">230   </td><td class="markdownTableBodyRight">230   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">392    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">235   </td><td class="markdownTableBodyRight">234   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">398    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">240   </td><td class="markdownTableBodyRight">239   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">463    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">245   </td><td class="markdownTableBodyRight">245   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">417    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">250   </td><td class="markdownTableBodyRight">250   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">425    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">255   </td><td class="markdownTableBodyRight">254   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">433    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">260   </td><td class="markdownTableBodyRight">259   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">439    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">265   </td><td class="markdownTableBodyRight">265   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">450    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">270   </td><td class="markdownTableBodyRight">270   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">460    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">275   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">6974880    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">280   </td><td class="markdownTableBodyRight">280   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">1041    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">285   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">7132853    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">290   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">7017596    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">295   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">6435970    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">300   </td><td class="markdownTableBodyRight">299   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">511    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">3037   </td><td class="markdownTableBodyRight">46828   </td><td class="markdownTableBodyRight">32850025   </td></tr>
+</table>
+<p>A instância 275 não se consegue resolver em 10 segundos, mas a 220 sim. As instâncias com solução, são mais simples, pelo que perturbam a análise. A instância impossível maior que se consegue resoolver, estará entre 220 e 275.</p>
+<p>Naturalmente que com outra semente aleatória, iriamos ter instâncias diferentes, que podem ser mais complexas ou mais simples.</p>
+<p></p>
+</details>
+<p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

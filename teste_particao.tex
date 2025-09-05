@@ -1,8 +1,8 @@
 \chapter{Teste Particao}
 \hypertarget{teste_particao}{}\label{teste_particao}\index{Teste Particao@{Teste Particao}}
-\texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \texorpdfstring{$\vert$}{|} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|}
+\texorpdfstring{$\vert$}{|} \href{teste_tvector.html}{\texttt{ Teste\+TVector}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \texorpdfstring{$\vert$}{|} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|}
 
-Execução de exemplo com base no problema da Partição. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_particao_autotoc_md42}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_particao_autotoc_md42}
+Execução de exemplo com base no problema da Partição. Selecione o projeto \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, e execute. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_particao_autotoc_md42}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_particao_autotoc_md42}
 
 \begin{DoxyItemize}
 \item \doxylink{teste_particao_particao-a1}{Ação 1 -\/ Ver instâncias}
@@ -36,20 +36,19 @@ Vamos escolher o problema da partição. Introduza\+: {\bfseries{4.}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Partição}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 0\ |\ gerações\ 0\ |\ avaliações\ 0}
+\DoxyCodeLine{\ P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Seed):\ 1\ |\ P4(Tempo):\ 10\ |\ P5(Iterações):\ 0}
+\DoxyCodeLine{\ P6(Ver):\ 4\ |\ P7(Limite):\ 0\ |\ P8(Repetidos):\ ignorar\ |\ P9(pesoAStar):\ 100\ |\ P10(ruido):\ 0}
+\DoxyCodeLine{\ P11(baralhar):\ 0}
 \DoxyCodeLine{Colocar\ \#8:\ 0\ =\ 0}
-\DoxyCodeLine{-\/-\/-\/\ \ \ 8\ \ 10\ \ 14\ \ 17\ \ -\/-\/-\/}
-\DoxyCodeLine{-\/-\/-\/\ \ 18\ \ 25\ \ 28\ \ 28\ \ -\/-\/-\/}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
-\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Solução/Caminho\ |}
-\DoxyCodeLine{|\ 4\ -\/\ Parâmetros\ \ |\ 5\ -\/\ Executar\ |\ 6\ -\/\ Configurações\ \ \ |\ 7\ -\/\ Teste}
+\DoxyCodeLine{-\/-\/-\/\ \ \ 2\ \ \ 2\ \ \ 9\ \ \ 9\ \ -\/-\/-\/}
+\DoxyCodeLine{-\/-\/-\/\ \ 13\ \ 16\ \ 17\ \ 24\ \ -\/-\/-\/}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{|\ 1\ -\/\ Inicializar\ |\ 2\ -\/\ Explorar\ |\ 3\ -\/\ Parâmetros\ \ \ \ |\ 4\ -\/\ Solução\ |}
+\DoxyCodeLine{|\ 5\ -\/\ Indicadores\ |\ 6\ -\/\ Executar\ |\ 7\ -\/\ Configurações\ |\ 8\ -\/\ Teste\ \ \ |}
+\DoxyCodeLine{Opção:}
 
 \end{DoxyCode}
- Este problem aconsiste em dividir os números em duas partes que somem exatamente o mesmo valor.
+ Este problema consiste em dividir os números em duas partes que somem exatamente o mesmo valor.
 
 \label{teste_particao_particao-a1}%
 \Hypertarget{teste_particao_particao-a1}%
@@ -58,7 +57,8 @@ Vamos ver as instâncias que temos. Introduza\+: {\bfseries{1; 10.}}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Nova\ instância\ (atual\ 10)\ [2-\/1000]:}
+\DoxyCodeLine{ID\ atual:\ 10\ \ Intervalo:\ [2-\/1000]\ \ Prefixo\ atual:\ 'instancia\_'}
+\DoxyCodeLine{Novo\ ID\ (ENTER\ mantém)\ ou\ novo\ prefixo\ (texto):\ 10}
 
 \end{DoxyCode}
  Existem instâncias de 2 a 1000, correspondendo o ID à quantidade de números. As instâncias são geradas aleatoriamente, podendo existir instâncias impossíveis.
@@ -68,59 +68,52 @@ Deixemos a instância 10 para resolução manual.
 \label{teste_particao_particao-a2}%
 \Hypertarget{teste_particao_particao-a2}%
 \hypertarget{teste_particao_autotoc_md44}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Resolver manualmente}{Ação 2 - Resolver manualmente}}\label{teste_particao_autotoc_md44}
-Vamos procurar resolver manualmente a intância. Introduza\+: {\bfseries{2; esq dir esq dir; dir esq; dir; esq.}}
+Vamos procurar resolver manualmente a intância. Introduza\+: {\bfseries{2; esq dir esq dir; dir; esq.}}
 
 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{g:0\ 1|2|3}
 \DoxyCodeLine{Colocar\ \#8:\ 0\ =\ 0}
-\DoxyCodeLine{-\/-\/-\/\ \ \ 8\ \ 10\ \ 14\ \ 17\ \ -\/-\/-\/}
-\DoxyCodeLine{-\/-\/-\/\ \ 18\ \ 25\ \ 28\ \ 28\ \ -\/-\/-\/}
+\DoxyCodeLine{-\/-\/-\/\ \ \ 2\ \ \ 2\ \ \ 9\ \ \ 9\ \ -\/-\/-\/}
+\DoxyCodeLine{-\/-\/-\/\ \ 13\ \ 16\ \ 17\ \ 24\ \ -\/-\/-\/}
 \DoxyCodeLine{Ações:\ esq\ dir}
 \DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:esq\ dir\ esq\ dir}
 \DoxyCodeLine{Executadas\ 4\ ações\ com\ sucesso.}
 \DoxyCodeLine{g:0\ 6|12|6}
-\DoxyCodeLine{Colocar\ \#4:\ 53\ =\ 46}
-\DoxyCodeLine{-\/-\/-\/\ \ \ 8\ \ 10\ \ 14\ \ 17\ \ -\/-\/-\/}
-\DoxyCodeLine{\ \ \ \ \ 28\ \ 25\ \ \ \ \ \ \ \ \ \ <<<}
-\DoxyCodeLine{>>>\ \ 28\ \ 18}
-\DoxyCodeLine{Ações:\ esq\ dir}
-\DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:dir\ esq}
-\DoxyCodeLine{Executadas\ 2\ ações\ com\ sucesso.}
-\DoxyCodeLine{g:0\ 9|18|9}
-\DoxyCodeLine{Colocar\ \#2:\ 67\ =\ 63}
-\DoxyCodeLine{-\/-\/-\/\ \ \ 8\ \ 10\ \ \ \ \ \ \ \ \ \ -\/-\/-\/}
-\DoxyCodeLine{\ \ \ \ \ 28\ \ 25\ \ 14\ \ \ \ \ \ <<<}
-\DoxyCodeLine{>>>\ \ 28\ \ 18\ \ 17}
+\DoxyCodeLine{Colocar\ \#4:\ 40\ =\ 30}
+\DoxyCodeLine{-\/-\/-\/\ \ \ 2\ \ \ 2\ \ \ 9\ \ \ 9\ \ -\/-\/-\/}
+\DoxyCodeLine{\ \ \ \ \ 24\ \ 16\ \ \ \ \ \ \ \ \ \ <<<}
+\DoxyCodeLine{>>>\ \ 17\ \ 13}
 \DoxyCodeLine{Ações:\ esq\ dir}
 \DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:dir}
 \DoxyCodeLine{Executadas\ 1\ ações\ com\ sucesso.}
-\DoxyCodeLine{g:0\ 11|22|12}
-\DoxyCodeLine{Colocar\ \#1:\ 67\ =\ 73}
-\DoxyCodeLine{-\/-\/-\/\ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/-\/-\/}
-\DoxyCodeLine{\ \ \ \ \ 28\ \ 25\ \ 14\ \ \ \ \ \ <<<}
-\DoxyCodeLine{>>>\ \ 28\ \ 18\ \ 17\ \ 10}
+\DoxyCodeLine{g:0\ 8|16|9}
+\DoxyCodeLine{Colocar\ \#3:\ 40\ =\ 39}
+\DoxyCodeLine{-\/-\/-\/\ \ \ 2\ \ \ 2\ \ \ 9\ \ \ \ \ \ -\/-\/-\/}
+\DoxyCodeLine{\ \ \ \ \ 24\ \ 16\ \ \ \ \ \ \ \ \ \ <<<}
+\DoxyCodeLine{>>>\ \ 17\ \ 13\ \ \ 9}
 \DoxyCodeLine{Ações:\ esq\ dir}
 \DoxyCodeLine{Sucessor\ [1-\/2,\ ação(ões),\ exe]:esq}
 \DoxyCodeLine{Executadas\ 1\ ações\ com\ sucesso.}
-\DoxyCodeLine{g:0\ 13|24|13}
-\DoxyCodeLine{Colocar\ \#0:\ 75\ =\ 73}
-\DoxyCodeLine{\ \ \ \ \ 28\ \ 25\ \ 14\ \ \ 8\ \ <<<}
-\DoxyCodeLine{>>>\ \ 28\ \ 18\ \ 17\ \ 10}
+\DoxyCodeLine{g:0\ 10|18|10}
+\DoxyCodeLine{Colocar\ \#2:\ 49\ =\ 39}
+\DoxyCodeLine{-\/-\/-\/\ \ \ 2\ \ \ 2\ \ \ \ \ \ \ \ \ \ -\/-\/-\/}
+\DoxyCodeLine{\ \ \ \ \ 24\ \ 16\ \ \ 9\ \ \ \ \ \ <<<}
+\DoxyCodeLine{>>>\ \ 17\ \ 13\ \ \ 9}
 \DoxyCodeLine{Ações:}
 \DoxyCodeLine{Sem\ sucessores.}
 \DoxyCodeLine{Partição}
-\DoxyCodeLine{P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 0\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 13\ |\ gerações\ 24\ |\ avaliações\ 13}
-\DoxyCodeLine{Colocar\ \#0:\ 75\ =\ 73}
-\DoxyCodeLine{\ \ \ \ \ 28\ \ 25\ \ 14\ \ \ 8\ \ <<<}
-\DoxyCodeLine{>>>\ \ 28\ \ 18\ \ 17\ \ 10}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{\ P1(Algoritmo):\ Largura\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Seed):\ 1\ |\ P4(Tempo):\ 10\ |\ P5(Iterações):\ 0}
+\DoxyCodeLine{\ P6(Ver):\ 4\ |\ P7(Limite):\ 0\ |\ P8(Repetidos):\ ignorar\ |\ P9(pesoAStar):\ 100\ |\ P10(ruido):\ 0}
+\DoxyCodeLine{\ P11(baralhar):\ 0}
+\DoxyCodeLine{Colocar\ \#2:\ 49\ =\ 39}
+\DoxyCodeLine{-\/-\/-\/\ \ \ 2\ \ \ 2\ \ \ \ \ \ \ \ \ \ -\/-\/-\/}
+\DoxyCodeLine{\ \ \ \ \ 24\ \ 16\ \ \ 9\ \ \ \ \ \ <<<}
+\DoxyCodeLine{>>>\ \ 17\ \ 13\ \ \ 9}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 
 \end{DoxyCode}
- Foi uma boa tentativa, mas no final um lado soma 75 o outro 73.
+ Foi uma boa tentativa, mas no final um lado soma 49 do outro 39, e os números que restam não chegam para equilibrar.
 
 Tal como as 8 damas, o número de ações de uma solução completa é fixo. É igual à quantidade de número a colocar. Sabemos que não faz sentido a procura em largura nestes problemas. Também pelos mesmos motivos que nas 8 damas, não se consegue uma heurística pelo que não faz sentido as procuras informadas.
 
@@ -133,133 +126,241 @@ Como o estado codificado fica pequeno, a expectativa para ganho por repetidos au
 \label{teste_particao_particao-a3}%
 \Hypertarget{teste_particao_particao-a3}%
 \hypertarget{teste_particao_autotoc_md45}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Testes Empíricos}{Ação 3 - Testes Empíricos}}\label{teste_particao_autotoc_md45}
-Temos para teste a procura em profundidade ilimitada, e pretendemos comparar ignorar estados repetidos, ou remover todos os repetidos gerados. Introduza\+: \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}4; 1; 3; 6; 1000000; 10; 1; 9; -\/1; {\itshape ENTER}; 6; {\itshape ENTER}; 4; 10; 3; {\itshape ENTER}; 6; {\itshape ENTER}. \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}
+Vamos fazer testes empíricos na linha de comandos.
+
+Vamos obter primeiramente a lista de todos os parâmetros.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{Parametros\ comuns\ a\ 2\ configurações:}
-\DoxyCodeLine{P1:3\ P2:0\ P3:4\ P4:1\ P5:10\ P6:1000000\ P7:0\ P8:0\ P9:-\/1\ P11:100}
-\DoxyCodeLine{P12:0\ P13:0}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 1}
-\DoxyCodeLine{P10:1}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 2\ -\/-\/-\/\ atual}
-\DoxyCodeLine{P10:3}
-
-\end{DoxyCode}
- Estamos prontos para ver primeiramente algumas instâncias mais pequenas. Introduza\+: {\bfseries{7; 0; 19; 10.}}
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\ ID\ |conf|\ custo(g)\ |\ \ expansões\ |\ \ gerações\ |\ avaliações\ |\ tempo(s)\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 10\ |\ \ 1\ |\ \ \ \ \ \ \ \ 8\ |\ \ \ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 11\ |\ \ 1\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ \ 55\ |\ \ \ \ \ \ \ \ 60\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 12\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ \ \ \ 603\ |\ \ \ \ \ \ \ 602\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 13\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1539\ |\ \ \ \ \ \ 1538\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 14\ |\ \ 1\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ \ 37\ |\ \ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 15\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 8131\ |\ \ \ \ \ \ 8130\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,003s\ |}
-\DoxyCodeLine{\ 16\ |\ \ 1\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ \ \ 35\ |\ \ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 17\ |\ \ 1\ |\ \ \ \ \ \ \ 17\ |\ \ \ \ \ \ \ \ \ 76\ |\ \ \ \ \ \ \ \ 84\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 18\ |\ \ 1\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ 48\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 19\ |\ \ 1\ |\ \ \ \ \ \ \ 19\ |\ \ \ \ \ \ \ \ \ 31\ |\ \ \ \ \ \ \ \ 38\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 10\ |\ \ 2\ |\ \ \ \ \ \ \ \ 8\ |\ \ \ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ 15\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 11\ |\ \ 2\ |\ \ \ \ \ \ \ 11\ |\ \ \ \ \ \ \ \ \ 44\ |\ \ \ \ \ \ \ \ 48\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 12\ |\ \ 2\ |\ sem\ sol.\ |\ \ \ \ \ \ \ \ 124\ |\ \ \ \ \ \ \ 123\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 13\ |\ \ 2\ |\ sem\ sol.\ |\ \ \ \ \ \ \ \ 158\ |\ \ \ \ \ \ \ 157\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 14\ |\ \ 2\ |\ \ \ \ \ \ \ 13\ |\ \ \ \ \ \ \ \ \ 37\ |\ \ \ \ \ \ \ \ 41\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 15\ |\ \ 2\ |\ sem\ sol.\ |\ \ \ \ \ \ \ \ 290\ |\ \ \ \ \ \ \ 289\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 16\ |\ \ 2\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ \ \ 32\ |\ \ \ \ \ \ \ \ 38\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 17\ |\ \ 2\ |\ \ \ \ \ \ \ 17\ |\ \ \ \ \ \ \ \ \ 64\ |\ \ \ \ \ \ \ \ 71\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 18\ |\ \ 2\ |\ \ \ \ \ \ \ 16\ |\ \ \ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ 47\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 19\ |\ \ 2\ |\ \ \ \ \ \ \ 19\ |\ \ \ \ \ \ \ \ \ 31\ |\ \ \ \ \ \ \ \ 37\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\ resolvidas}
-\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ 100\ |\ \ \ \ \ \ 10562\ |\ \ \ \ \ 10600\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,005s\ |\ \ 10}
-\DoxyCodeLine{Total\ \ 2\ |\ \ \ \ \ \ 100\ |\ \ \ \ \ \ \ \ 835\ |\ \ \ \ \ \ \ 866\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |\ \ 10}
-\DoxyCodeLine{Torneio\ (\#instâncias\ melhores):}
-\DoxyCodeLine{\ |-\/01-\/|-\/02-\/|}
-\DoxyCodeLine{\ 1\ \ \ \ |\ \ 0\ |\ \ 0}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 2\ \ 0\ |\ \ \ \ |\ \ 0}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{Parametros\ comuns\ a\ 2\ configurações:}
-\DoxyCodeLine{P1(Algoritmo):\ Profundidade\ Primeiro\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 1000000\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ -\/1\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0\ |\ P13(baralhar):\ 0}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 1}
-\DoxyCodeLine{P10(Repetidos):\ ignorar}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 2}
-\DoxyCodeLine{P10(Repetidos):\ gerados}
+\DoxyCodeLine{C:\(\backslash\)...\(\backslash\)TProcura\(\backslash\)Construtiva\(\backslash\)Teste>\ ../../x64/Release/TProcuraConstrutiva\ -\/h}
+\DoxyCodeLine{PS\ C:\(\backslash\)Work\(\backslash\)Git\(\backslash\)TProcura\(\backslash\)Construtiva\(\backslash\)Teste>\ ../../x64/Release/TProcuraConstrutiva\ -\/h}
+\DoxyCodeLine{}
+\DoxyCodeLine{Teste\ TProcurasConstrutivas}
+\DoxyCodeLine{Problema:}
+\DoxyCodeLine{\ \ 1\ -\/\ Aspirador}
+\DoxyCodeLine{\ \ 2\ -\/\ Puzzle\ 8}
+\DoxyCodeLine{\ \ 3\ -\/\ 8\ Damas}
+\DoxyCodeLine{\ \ 4\ -\/\ Partição}
+\DoxyCodeLine{\ \ 5\ -\/\ Artificial}
+\DoxyCodeLine{Opção:\ 4}
+\DoxyCodeLine{Uso:\ C:\(\backslash\)Work\(\backslash\)Git\(\backslash\)TProcura\(\backslash\)x64\(\backslash\)Release\(\backslash\)TProcuraConstrutiva.exe\ <instâncias>\ [opções]}
+\DoxyCodeLine{\ \ <instâncias>\ \ \ \ Conjunto\ de\ IDs:\ A\ |\ A,B,C\ |\ A:B[:C]}
+\DoxyCodeLine{Opções:}
+\DoxyCodeLine{\ \ -\/R\ <ficheiro>\ \ \ Nome\ do\ CSV\ de\ resultados\ (omissão:\ resultados.csv)}
+\DoxyCodeLine{\ \ -\/F\ <prefixo>\ \ \ \ Prefixo\ dos\ ficheiros\ de\ instância\ (omissão:\ instancia\_)}
+\DoxyCodeLine{\ \ -\/I\ <ind>\ \ \ \ \ \ \ \ Lista\ de\ indicadores\ (e.g.\ 2,1,3)}
+\DoxyCodeLine{\ \ -\/S\ \ \ \ \ \ \ \ \ \ \ \ \ \ Mostrar\ soluções\ durante\ a\ execução}
+\DoxyCodeLine{\ \ -\/h\ \ \ \ \ \ \ \ \ \ \ \ \ \ Esta\ ajuda}
+\DoxyCodeLine{\ \ -\/P\ <expr>\ \ \ \ \ \ \ Parâmetros\ (e.g.\ P1=1:3\ x\ P2=0:2)\ -\/\ último\ campo}
+\DoxyCodeLine{Exemplo:\ C:\(\backslash\)Work\(\backslash\)Git\(\backslash\)TProcura\(\backslash\)x64\(\backslash\)Release\(\backslash\)TProcuraConstrutiva.exe\ 1:5\ -\/R\ out\ -\/F\ fich\_\ -\/I\ 3,1,4,2\ -\/P\ P1=1:5\ x\ P6=1,2}
+\DoxyCodeLine{\ \ \ Executar\ sem\ argumentos\ entra\ em\ modo\ interativo,\ para\ explorar\ todos\ os\ parametros\ e\ indicadores}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lista\ de\ parâmetros:}
+\DoxyCodeLine{\ P1(Algoritmo):\ Largura\ Primeiro\ (1\ a\ 7)}
+\DoxyCodeLine{\ P2(Debug):\ nada\ (0\ a\ 4)}
+\DoxyCodeLine{\ P3(Seed):\ 1\ (1\ a\ 1000000)}
+\DoxyCodeLine{\ P4(Tempo):\ 10\ (1\ a\ 3600)}
+\DoxyCodeLine{\ P5(Iterações):\ 0\ (0\ a\ 1000000000)}
+\DoxyCodeLine{\ P6(Ver):\ 4\ (1\ a\ 100)}
+\DoxyCodeLine{\ P7(Limite):\ 0\ (-\/1\ a\ 1000000)}
+\DoxyCodeLine{\ P8(Repetidos):\ ignorar\ (1\ a\ 3)}
+\DoxyCodeLine{\ P9(pesoAStar):\ 100\ (0\ a\ 10000)}
+\DoxyCodeLine{\ P10(ruido):\ 0\ (-\/100\ a\ 100)}
+\DoxyCodeLine{\ P11(baralhar):\ 0\ (0\ a\ 1)}
+\DoxyCodeLine{}
+\DoxyCodeLine{Lista\ de\ indicadores:}
+\DoxyCodeLine{}
+\DoxyCodeLine{I1(Custo):\ 1º\ lugar\ (o\ resultado\ é\ o\ custo\ da\ solução\ atual)}
+\DoxyCodeLine{I2(Tempo(ms)):\ 2º\ lugar\ (Tempo\ em\ milisegundos\ da\ execução\ (medida\ de\ esforço\ computacional).)}
+\DoxyCodeLine{I3(Iterações):\ 3º\ lugar\ (Iterações\ do\ algoritmo,\ intrepretadas\ conforme\ o\ algoritmo\ (medida\ de\ esforço\ independente\ do\ hardware).)}
+\DoxyCodeLine{I4(Expansões):\ 4º\ lugar\ (número\ de\ expansões\ efetuadas)}
+\DoxyCodeLine{I5(Gerações):\ 5º\ lugar\ (número\ de\ estados\ gerados)}
+\DoxyCodeLine{I6(Lower\ Bound):\ 6º\ lugar\ (valor\ mínimo\ para\ a\ melhor\ solução,\ se\ igual\ ao\ custo\ da\ solução\ obtida,\ então\ esta\ é\ ótima)}
 
 \end{DoxyCode}
 
 
-Muito rápido, não é possível observar diferenças a nível de tempo. Pode-\/se no entanto ver que os estados gerados e expandidos, são uma ordem de grandeza superior, se se ignorar estados gerados duplicadso.
-
-Introduza\+: {\bfseries{7; 0; 29; 20.}}
+Temos para teste a procura em profundidade ilimitada, e pretendemos comparar ignorar estados repetidos, ou remover todos os repetidos gerados.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ ID\ |conf|\ custo(g)\ |\ \ expansões\ |\ \ gerações\ |\ avaliações\ |\ tempo(s)\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 20\ |\ \ 1\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ \ \ 184\ |\ \ \ \ \ \ \ 192\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 21\ |\ \ 1\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ \ \ \ 33\ |\ \ \ \ \ \ \ \ 40\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 22\ |\ \ 1\ |\ \ \ \ \ \ \ 21\ |\ \ \ \ \ \ \ \ \ 34\ |\ \ \ \ \ \ \ \ 42\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 23\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ 384627\ |\ \ \ \ 384626\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,232s\ |}
-\DoxyCodeLine{\ 24\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ \ 999992\ |\ \ \ 1000002\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,564s\ |}
-\DoxyCodeLine{\ 25\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ \ 999991\ |\ \ \ 1000002\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,538s\ |}
-\DoxyCodeLine{\ 26\ |\ \ 1\ |\ não\ res.\ |\ \ \ \ \ 999991\ |\ \ \ 1000002\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,595s\ |}
-\DoxyCodeLine{\ 27\ |\ \ 1\ |\ \ \ \ \ \ \ 27\ |\ \ \ \ \ \ \ \ \ 45\ |\ \ \ \ \ \ \ \ 54\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 28\ |\ \ 1\ |\ \ \ \ \ \ \ 27\ |\ \ \ \ \ \ \ \ \ 86\ |\ \ \ \ \ \ \ \ 96\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 29\ |\ \ 1\ |\ \ \ \ \ \ \ 29\ |\ \ \ \ \ \ \ \ \ 50\ |\ \ \ \ \ \ \ \ 58\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 20\ |\ \ 2\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ \ \ 148\ |\ \ \ \ \ \ \ 155\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 21\ |\ \ 2\ |\ \ \ \ \ \ \ 20\ |\ \ \ \ \ \ \ \ \ 33\ |\ \ \ \ \ \ \ \ 39\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 22\ |\ \ 2\ |\ \ \ \ \ \ \ 21\ |\ \ \ \ \ \ \ \ \ 34\ |\ \ \ \ \ \ \ \ 41\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 23\ |\ \ 2\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1008\ |\ \ \ \ \ \ 1007\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 24\ |\ \ 2\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1389\ |\ \ \ \ \ \ 1388\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,002s\ |}
-\DoxyCodeLine{\ 25\ |\ \ 2\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1874\ |\ \ \ \ \ \ 1873\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,002s\ |}
-\DoxyCodeLine{\ 26\ |\ \ 2\ |\ sem\ sol.\ |\ \ \ \ \ \ \ 1473\ |\ \ \ \ \ \ 1472\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{\ 27\ |\ \ 2\ |\ \ \ \ \ \ \ 27\ |\ \ \ \ \ \ \ \ \ 45\ |\ \ \ \ \ \ \ \ 53\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 28\ |\ \ 2\ |\ \ \ \ \ \ \ 27\ |\ \ \ \ \ \ \ \ \ 81\ |\ \ \ \ \ \ \ \ 90\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{\ 29\ |\ \ 2\ |\ \ \ \ \ \ \ 29\ |\ \ \ \ \ \ \ \ \ 50\ |\ \ \ \ \ \ \ \ 57\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\ resolvidas}
-\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ 144\ |\ \ \ \ 3385033\ |\ \ \ 3385114\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 1,929s\ |\ \ \ 7}
-\DoxyCodeLine{Total\ \ 2\ |\ \ \ \ \ \ 144\ |\ \ \ \ \ \ \ 6135\ |\ \ \ \ \ \ 6175\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,006s\ |\ \ 10}
-\DoxyCodeLine{Torneio\ (\#instâncias\ melhores):}
-\DoxyCodeLine{\ |-\/01-\/|-\/02-\/|}
-\DoxyCodeLine{\ 1\ \ \ \ |\ -\/4\ |\ -\/4}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 2\ \ 4\ |\ \ \ \ |\ \ 4}
-\DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|}
+\DoxyCodeLine{PS\ ...\(\backslash\)Teste>\ TProcuraConstrutiva\ 10:19\ -\/R\ resultadoParticao\ -\/P\ P7=-\/1\ P1=3\ x\ P8=1,3}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Opção:\ 4}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Ficheiro\ resultadoParticao.csv\ gravado.}
 
 \end{DoxyCode}
 
 
-Conseguimos observar clara vantagem já nestas instâncias de 20 elementos. Nas instâncias impossíveis o espaço de estados aumenta de forma considerável, caso se ignore repetidos. Na instância 23 (as restantes atingiram o critério de paragem), foram necessários 384 mil estados, enquanto que removendo duplicados apenas 1007, o que dá duas ordens de grandeza.
+Podemos ver o resultado\+:
 
-Claramente a remoção de repetidos é crítica, dado que muitos estados ficam iguais após ações distintas.
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{7}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I1(\+Custo)~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I2(\+Tempo(ms))~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I4(Expansões)~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados    }\\\cline{1-7}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I1(\+Custo)~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I2(\+Tempo(ms))~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I4(Expansões)~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados    }\\\cline{1-7}
+\endhead
+\PBS\centering 10   &\PBS\raggedleft 8   &\PBS\raggedleft 8   &\PBS\raggedleft 0   &\PBS\raggedleft 15   &\PBS\raggedleft 27   &\PBS\raggedleft 27    \\\cline{1-7}
+\PBS\centering 11   &\PBS\raggedleft 10   &\PBS\raggedleft 10   &\PBS\raggedleft 0   &\PBS\raggedleft 4   &\PBS\raggedleft 17   &\PBS\raggedleft 17    \\\cline{1-7}
+\PBS\centering 12   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 1   &\PBS\raggedleft 5   &\PBS\raggedleft 947   &\PBS\raggedleft 119    \\\cline{1-7}
+\PBS\centering 13   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 0   &\PBS\raggedleft 4   &\PBS\raggedleft 1151   &\PBS\raggedleft 143    \\\cline{1-7}
+\PBS\centering 14   &\PBS\raggedleft 14   &\PBS\raggedleft 14   &\PBS\raggedleft 0   &\PBS\raggedleft 4   &\PBS\raggedleft 24   &\PBS\raggedleft 24    \\\cline{1-7}
+\PBS\centering 15   &\PBS\raggedleft 15   &\PBS\raggedleft 15   &\PBS\raggedleft 0   &\PBS\raggedleft 5   &\PBS\raggedleft 25   &\PBS\raggedleft 25    \\\cline{1-7}
+\PBS\centering 16   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 6   &\PBS\raggedleft 5   &\PBS\raggedleft 17403   &\PBS\raggedleft 440    \\\cline{1-7}
+\PBS\centering 17   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 8   &\PBS\raggedleft 4   &\PBS\raggedleft 24223   &\PBS\raggedleft 462    \\\cline{1-7}
+\PBS\centering 18   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 17   &\PBS\raggedleft 5   &\PBS\raggedleft 46639   &\PBS\raggedleft 630    \\\cline{1-7}
+\PBS\centering 19   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 21   &\PBS\raggedleft 6   &\PBS\raggedleft 57931   &\PBS\raggedleft 580    \\\cline{1-7}
+\PBS\centering Total Geral   &\PBS\raggedleft 41   &\PBS\raggedleft 41   &\PBS\raggedleft 53   &\PBS\raggedleft 57   &\PBS\raggedleft 148387   &\PBS\raggedleft 2467   \\\cline{1-7}
+\end{longtabu}
 
-Vamos fazer agora um teste para saber até que instância podem os métodos construtivos resolver instâncias partição. Introduza\+: {\bfseries{6; -\/1; 7; 0; 159; 150}}
+
+As instâncias escolhidas são muito pequenas, e o tempo de execução é praticamente nulo. Não servem para medir diferenças de tempo, mas servem para medir diferenças no número de estados expandidos. Tudo leva a crer que a remoção de repetidos gerados é muito vantajosa.
+
+Vamos procurar instâncias maiores, de 20 a 29.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ ID\ |conf|\ custo(g)\ |\ \ expansões\ |\ \ gerações\ |\ avaliações\ |\ tempo(s)\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}
-\DoxyCodeLine{150\ |\ \ 1\ |\ \ \ \ \ \ 150\ |\ \ \ \ \ \ \ \ 404\ |\ \ \ \ \ \ \ 448\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{151\ |\ \ 1\ |\ \ \ \ \ \ 151\ |\ \ \ \ \ \ \ \ 257\ |\ \ \ \ \ \ \ 301\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,000s\ |}
-\DoxyCodeLine{152\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ 460826\ |\ \ \ \ 460825\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 1,068s\ |}
-\DoxyCodeLine{153\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ 489670\ |\ \ \ \ 489669\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 1,155s\ |}
-\DoxyCodeLine{154\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ 470043\ |\ \ \ \ 470042\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 1,225s\ |}
-\DoxyCodeLine{155\ |\ \ 1\ |\ \ \ \ \ \ 155\ |\ \ \ \ \ \ \ \ 423\ |\ \ \ \ \ \ \ 467\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{156\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ 469527\ |\ \ \ \ 469526\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 1,114s\ |}
-\DoxyCodeLine{157\ |\ \ 1\ |\ \ \ \ \ \ 157\ |\ \ \ \ \ \ \ \ 454\ |\ \ \ \ \ \ \ 501\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{158\ |\ \ 1\ |\ sem\ sol.\ |\ \ \ \ \ 553655\ |\ \ \ \ 553654\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 1,355s\ |}
-\DoxyCodeLine{159\ |\ \ 1\ |\ \ \ \ \ \ 159\ |\ \ \ \ \ \ \ \ 457\ |\ \ \ \ \ \ \ 506\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 0,001s\ |}
-\DoxyCodeLine{-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|\ resolvidas}
-\DoxyCodeLine{Total\ \ 1\ |\ \ \ \ \ \ 772\ |\ \ \ \ 2445716\ |\ \ \ 2445939\ |\ \ \ \ \ \ \ \ \ \ 0\ |\ \ \ 5,921s\ |\ \ 10}
+\DoxyCodeLine{PS\ ...\(\backslash\)Teste>\ TProcuraConstrutiva\ 20:29\ -\/R\ resultadoParticaoB\ -\/P\ P7=-\/1\ P1=3\ x\ P8=1,3}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Opção:\ 4}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Ficheiro\ resultadoParticaoB.csv\ gravado.}
 
 \end{DoxyCode}
- Com 150 números o algoritmo já leva à volta de 1 segundo, e as gerações estão a metade do limite, que é um milhão.
 
-As instâncias que têm resolução, continuam a ser resolvidas muito rapidamente.
 
-\texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \texorpdfstring{$\vert$}{|} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|} 
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{7}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I1(\+Custo)~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I2(\+Tempo(ms))~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I4(Expansões)~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados    }\\\cline{1-7}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I1(\+Custo)~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I2(\+Tempo(ms))~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I4(Expansões)~\newline
+1\+:ignorar   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ 3\+:gerados    }\\\cline{1-7}
+\endhead
+\PBS\centering 20   &\PBS\raggedleft 18   &\PBS\raggedleft 18   &\PBS\raggedleft 0   &\PBS\raggedleft 14   &\PBS\raggedleft 87   &\PBS\raggedleft 85    \\\cline{1-7}
+\PBS\centering 21   &\PBS\raggedleft 21   &\PBS\raggedleft 21   &\PBS\raggedleft 0   &\PBS\raggedleft 4   &\PBS\raggedleft 46   &\PBS\raggedleft 46    \\\cline{1-7}
+\PBS\centering 22   &\PBS\raggedleft 21   &\PBS\raggedleft 21   &\PBS\raggedleft 0   &\PBS\raggedleft 4   &\PBS\raggedleft 35   &\PBS\raggedleft 35    \\\cline{1-7}
+\PBS\centering 23   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 134   &\PBS\raggedleft 7   &\PBS\raggedleft 390983   &\PBS\raggedleft 1236    \\\cline{1-7}
+\PBS\centering 24   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 381   &\PBS\raggedleft 5   &\PBS\raggedleft 1071431   &\PBS\raggedleft 1164    \\\cline{1-7}
+\PBS\centering 25   &\PBS\raggedleft 25   &\PBS\raggedleft 25   &\PBS\raggedleft 0   &\PBS\raggedleft 4   &\PBS\raggedleft 41   &\PBS\raggedleft 41    \\\cline{1-7}
+\PBS\centering 26   &\PBS\raggedleft 25   &\PBS\raggedleft 25   &\PBS\raggedleft 0   &\PBS\raggedleft 4   &\PBS\raggedleft 66   &\PBS\raggedleft 65    \\\cline{1-7}
+\PBS\centering 27   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 2420   &\PBS\raggedleft 5   &\PBS\raggedleft 8098059   &\PBS\raggedleft 2104    \\\cline{1-7}
+\PBS\centering 28   &\PBS\raggedleft -\/1   &\PBS\raggedleft -\/1   &\PBS\raggedleft 2431   &\PBS\raggedleft 8   &\PBS\raggedleft 7867847   &\PBS\raggedleft 2186    \\\cline{1-7}
+\PBS\centering 29   &\PBS\raggedleft 29   &\PBS\raggedleft 29   &\PBS\raggedleft 0   &\PBS\raggedleft 4   &\PBS\raggedleft 49   &\PBS\raggedleft 49    \\\cline{1-7}
+\PBS\centering Total Geral   &\PBS\raggedleft 135   &\PBS\raggedleft 135   &\PBS\raggedleft 5366   &\PBS\raggedleft 59   &\PBS\raggedleft 17428644   &\PBS\raggedleft 7011   \\\cline{1-7}
+\end{longtabu}
+
+
+É agora claro que a remoção de repetidos gerados é crítica para o desempenho. Podemos ver também que as instâncias que não têm solução, são muito mais difíceis. Nestas instâncias toda a árvore de estados é percorrida, e podemos registar diferenças entre ter ou não remoção de repetidos, de várias ordens de grandeza.
+
+Qual é a maior instância que se conseguimos resolver com esta implemantação? 
+
+{\bfseries{Resposta\+:}}\begin{adjustwidth}{1em}{0em}
+Vamos usar apenas a remoção de repetidos. Como não sabemos qual é a maior instância que se consegue resolver, e o melhor método tem um tempo insignificante na maior instância testada, a 29, fazemos primeiramente um teste de 10 em 10, até 200, para termos uma ideia.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PS\ ...\(\backslash\)Teste>\ TProcuraConstrutiva\ 30:200:10\ -\/R\ resultadoParticaoC\ -\/P\ P7=-\/1\ P1=3\ P8=3}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Opção:\ 4}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Ficheiro\ resultadoParticaoC.csv\ gravado.}
+
+\end{DoxyCode}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I1(\+Custo)   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I2(\+Tempo(ms))   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I4(Expansões)    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I1(\+Custo)   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I2(\+Tempo(ms))   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I4(Expansões)    }\\\cline{1-4}
+\endhead
+\PBS\centering 30   &\PBS\raggedleft 30   &\PBS\raggedleft 15   &\PBS\raggedleft 50    \\\cline{1-4}
+\PBS\centering 40   &\PBS\raggedleft -\/1   &\PBS\raggedleft 10   &\PBS\raggedleft 7301    \\\cline{1-4}
+\PBS\centering 50   &\PBS\raggedleft 50   &\PBS\raggedleft 4   &\PBS\raggedleft 83    \\\cline{1-4}
+\PBS\centering 60   &\PBS\raggedleft 60   &\PBS\raggedleft 3   &\PBS\raggedleft 142    \\\cline{1-4}
+\PBS\centering 70   &\PBS\raggedleft 70   &\PBS\raggedleft 6   &\PBS\raggedleft 119    \\\cline{1-4}
+\PBS\centering 80   &\PBS\raggedleft 79   &\PBS\raggedleft 4   &\PBS\raggedleft 132    \\\cline{1-4}
+\PBS\centering 90   &\PBS\raggedleft -\/1   &\PBS\raggedleft 79   &\PBS\raggedleft 74065    \\\cline{1-4}
+\PBS\centering 100   &\PBS\raggedleft -\/1   &\PBS\raggedleft 132   &\PBS\raggedleft 130625    \\\cline{1-4}
+\PBS\centering 110   &\PBS\raggedleft 108   &\PBS\raggedleft 4   &\PBS\raggedleft 314    \\\cline{1-4}
+\PBS\centering 120   &\PBS\raggedleft -\/1   &\PBS\raggedleft 230   &\PBS\raggedleft 222208    \\\cline{1-4}
+\PBS\centering 130   &\PBS\raggedleft -\/1   &\PBS\raggedleft 291   &\PBS\raggedleft 269323    \\\cline{1-4}
+\PBS\centering 140   &\PBS\raggedleft 140   &\PBS\raggedleft 4   &\PBS\raggedleft 236    \\\cline{1-4}
+\PBS\centering 150   &\PBS\raggedleft 149   &\PBS\raggedleft 5   &\PBS\raggedleft 252    \\\cline{1-4}
+\PBS\centering 160   &\PBS\raggedleft -\/1   &\PBS\raggedleft 710   &\PBS\raggedleft 604753    \\\cline{1-4}
+\PBS\centering 170   &\PBS\raggedleft -\/1   &\PBS\raggedleft 814   &\PBS\raggedleft 655988    \\\cline{1-4}
+\PBS\centering 180   &\PBS\raggedleft 178   &\PBS\raggedleft 4   &\PBS\raggedleft 376    \\\cline{1-4}
+\PBS\centering 190   &\PBS\raggedleft 190   &\PBS\raggedleft 5   &\PBS\raggedleft 673    \\\cline{1-4}
+\PBS\centering 200   &\PBS\raggedleft 198   &\PBS\raggedleft 4   &\PBS\raggedleft 339    \\\cline{1-4}
+\PBS\centering Total Geral   &\PBS\raggedleft 1245   &\PBS\raggedleft 2324   &\PBS\raggedleft 1966979   \\\cline{1-4}
+\end{longtabu}
+
+
+Todas as instâncias a baixo de 1 segundo, mas mesmo assim já perto do limite dos 10 segundos. A instância 100 levou 0.\+1 segundos, a 160 levou 0.\+7 segundos, pelo que o limite estará algures entre 200 e 300. Assim, vamos testar a partir de 200, até 300, passos de 5.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I1(\+Custo)   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I2(\+Tempo(ms))   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I4(Expansões)    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I1(\+Custo)   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I2(\+Tempo(ms))   }&\PBS\raggedleft \cellcolor{\tableheadbgcolor}\textbf{ Soma de I4(Expansões)    }\\\cline{1-4}
+\endhead
+\PBS\centering 205   &\PBS\raggedleft -\/1   &\PBS\raggedleft 1638   &\PBS\raggedleft 1251882    \\\cline{1-4}
+\PBS\centering 210   &\PBS\raggedleft -\/1   &\PBS\raggedleft 1399   &\PBS\raggedleft 1107437    \\\cline{1-4}
+\PBS\centering 215   &\PBS\raggedleft -\/1   &\PBS\raggedleft 1824   &\PBS\raggedleft 1407324    \\\cline{1-4}
+\PBS\centering 220   &\PBS\raggedleft -\/1   &\PBS\raggedleft 1906   &\PBS\raggedleft 1516272    \\\cline{1-4}
+\PBS\centering 225   &\PBS\raggedleft 224   &\PBS\raggedleft 4   &\PBS\raggedleft 382    \\\cline{1-4}
+\PBS\centering 230   &\PBS\raggedleft 230   &\PBS\raggedleft 4   &\PBS\raggedleft 392    \\\cline{1-4}
+\PBS\centering 235   &\PBS\raggedleft 234   &\PBS\raggedleft 4   &\PBS\raggedleft 398    \\\cline{1-4}
+\PBS\centering 240   &\PBS\raggedleft 239   &\PBS\raggedleft 5   &\PBS\raggedleft 463    \\\cline{1-4}
+\PBS\centering 245   &\PBS\raggedleft 245   &\PBS\raggedleft 5   &\PBS\raggedleft 417    \\\cline{1-4}
+\PBS\centering 250   &\PBS\raggedleft 250   &\PBS\raggedleft 5   &\PBS\raggedleft 425    \\\cline{1-4}
+\PBS\centering 255   &\PBS\raggedleft 254   &\PBS\raggedleft 5   &\PBS\raggedleft 433    \\\cline{1-4}
+\PBS\centering 260   &\PBS\raggedleft 259   &\PBS\raggedleft 5   &\PBS\raggedleft 439    \\\cline{1-4}
+\PBS\centering 265   &\PBS\raggedleft 265   &\PBS\raggedleft 5   &\PBS\raggedleft 450    \\\cline{1-4}
+\PBS\centering 270   &\PBS\raggedleft 270   &\PBS\raggedleft 5   &\PBS\raggedleft 460    \\\cline{1-4}
+\PBS\centering 275   &\PBS\raggedleft -\/2   &\PBS\raggedleft 10001   &\PBS\raggedleft 6974880    \\\cline{1-4}
+\PBS\centering 280   &\PBS\raggedleft 280   &\PBS\raggedleft 5   &\PBS\raggedleft 1041    \\\cline{1-4}
+\PBS\centering 285   &\PBS\raggedleft -\/2   &\PBS\raggedleft 10001   &\PBS\raggedleft 7132853    \\\cline{1-4}
+\PBS\centering 290   &\PBS\raggedleft -\/2   &\PBS\raggedleft 10001   &\PBS\raggedleft 7017596    \\\cline{1-4}
+\PBS\centering 295   &\PBS\raggedleft -\/2   &\PBS\raggedleft 10001   &\PBS\raggedleft 6435970    \\\cline{1-4}
+\PBS\centering 300   &\PBS\raggedleft 299   &\PBS\raggedleft 5   &\PBS\raggedleft 511    \\\cline{1-4}
+\PBS\centering Total Geral   &\PBS\raggedleft 3037   &\PBS\raggedleft 46828   &\PBS\raggedleft 32850025   \\\cline{1-4}
+\end{longtabu}
+
+
+A instância 275 não se consegue resolver em 10 segundos, mas a 220 sim. As instâncias com solução, são mais simples, pelo que perturbam a análise. A instância impossível maior que se consegue resoolver, estará entre 220 e 275.
+
+Naturalmente que com outra semente aleatória, iriamos ter instâncias diferentes, que podem ser mais complexas ou mais simples.
+
+\end{adjustwidth}
+
+
+\texorpdfstring{$\vert$}{|} \href{teste_tvector.html}{\texttt{ Teste\+TVector}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \texorpdfstring{$\vert$}{|} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|} 
