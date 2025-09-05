@@ -1,9 +1,11 @@
 @page teste_artificial Teste Artificial
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 
-Execução de exemplo com base no problema artificial. Pode acompanhar o teste excutando as ações localmente.
+Execução de exemplo com base no problema artificial. 
+Selecione o projeto TProcuraConstrutiva, e execute.
+Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
 
@@ -27,15 +29,14 @@ Temos ainda a opção do problema artificial. Introduza: **5.**
 
 ```entrada
 Artificial
-P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0
-[Estatísticas] expansões 0 | gerações 0 | avaliações 0
+ P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000
+ P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
 --<([1])>--
-_______________________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |
-| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
+| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+Opção:
 ```
 
 Estas instâncias artificiais não têm um problema concreto. 
@@ -46,12 +47,12 @@ No entanto, cada instância tem diferentes características:
 - Nível do objetivo - pode-se definir o nível mínimo em que o objetivo pode estar, e assim indicar que é 8. Nesse caso apenas estados no nível 8 ou superior, é que podem ser objetivo.
 - Nível máximo - a profundidade máxima em que há estados. Após este nível os sucessores ficam vazios.
 - Objetivo - permite controlar a raridade do objetivo. Define-se um número K, se ID é objetivo então tem de ser multiplo de K. No caso de K=10, significa que todos os estados que tiverem ID a terminar com 0, são objetivo.
-- Custo máximo - permite controlar entre custos das ações fixos, ou variáveis
-- Repetição de estados - define-se um número K, ficando todos os IDs resto da divisão por K. Assim, controla-se a probabilidade de um estado ser repetido, K menor há mais repetidos.
+- Custo máximo - permite controlar custos das ações, fixos ou variáveis
+- Repetição de estados - define-se um número K, ficando todos os IDs resto da divisão por K iguais. Assim, controla-se a probabilidade de um estado ser repetido, K menor há mais repetidos.
 - Repetição de estados mas por nível - idêntico ao anterior, mas os estados apenas são repetidos de entre os que estão no mesmo nível.
 
 Estas caracteristicas definem o espaço de estados, e permite avaliar os algoritmos de forma independente
-dos problemas, ou testar em situações extermas, mesmo antes de ter um problema concreto que tenha essas características.
+dos problemas, ou testar o algoritmo em situações extermas, mesmo antes de ter um problema concreto que tenha essas características.
 
 \anchor artificia-a1
 ## Ação 1 - Ver instâncias
@@ -59,39 +60,55 @@ dos problemas, ou testar em situações extermas, mesmo antes de ter um problema
 Introduza: **1; 1.**
 
 ```entrada
-Nova instância (atual 1) [1-10]:1
+ID atual: 1  Intervalo: [1-10]  Prefixo atual: 'instancia_'
+Novo ID (ENTER mantém) ou novo prefixo (texto): 1
 ```
 
 As instâncias têm características definidas na função CProblemaArtificial::CarregaInstancia().
 Procurou-se ter instâncias de diferentes tipos.
 
+|ID|Ramificação mínima|máxima|Nível Objetivo mínimo|máximo|objetivo|Custo máximo|Estados máximo|Estados nível máximo|Semente|Comentário|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|2|2|4|5|10|1|0|0|1| pequena instância, ramificação baixa, profundidade baixa, objetivo 1 em 10 (termina em 0)|
+|4|4|1|6|10|1|100|0|2| ramificação média, estados máximos 100 (repetem-se, resto da divisão por 100). minNivelObjetivo tem de ser 1 sempre que maxEstados>0|
+|6|6|5|7|10|1|0|100|3| estados máximos em cada nível 100 (repetem-se, resto da divisão por 100, mas sem colisões entre níveis)|
+|1|4|4|7|10|10|0|0|4| custos não unitários (até 10), ramificação variável baixa|
+|1|4|20|20|100|2|0|0|5| profundidade média, solução no último nível apenas, custos variáveis mas menos, objetivo 1 em 100 (termina em 00)|
+|1|4|1|20|100|2|10000|0|6| máximo número de estados 10K (minNivelObjetivo tem de ser 1 sempre que maxEstados>0)|
+|1|4|20|20|100|2|0|1000|7| máximo número de estados num nível 1K|
+|10|20|10|20|100|1|0|0|8| ramificação média, profundidade média, solução variável, custo fixo|
+|10|20|1|20|100|1|10000|0|9| máximo número de estados 10K (minNivelObjetivo tem de ser 1 sempre que maxEstados>0)|
+|20|100|40|60|100|2|0|0|10| ramificação elevada, profundidade elevada| 
+
 No entanto, infelizmente a heurística não é simulada, pelo que não dá para analisar algoritmos informados.
 
 \anchor artificia-a2
-## Ação 2 - Resolver manualmente
+2## Ação 2 - Resolver manualmente
 
 Introduza: **2; 1; *ENTER*.**
 
 ```entrada
 g:0 h:4 1|2|3
 --<([1])>--
-  +#1 g:1 h:3 1|2|3 a2715811231
-  |--<([2715811231])>--
-  +#2 g:1 h:3 1|2|3 a3810139872
-   --<([3810139872])>--
+  +#1 g:1 h:3 1|2|3 a3293277081
+  |--<([3293277081])>--
+  +#2 g:1 h:3 1|2|3 a2068425467
+   --<([2068425467])>--
 Sucessor [1-2, ação(ões), exe]:1
 g:0 h:3 2|4|6
---<([2715811231])>--
-  +#1 g:1 h:2 2|4|6 a83408230
-  |--<([83408230])>--
-  +#2 g:1 h:2 2|4|6 a3304292189
-   --<([3304292189])>--
+--<([3293277081])>--
+  +#1 g:1 h:2 2|4|6 a954181094
+  |--<([954181094])>--
+  +#2 g:1 h:2 2|4|6 a2222870430
+   --<([2222870430])>--
 Sucessor [1-2, ação(ões), exe]:
 
 Artificial
-...
---<([2715811231])>--
-_______________________________________________________________________________
+ P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000
+ P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0
+--<([3293277081])>--
+____________________________________________________________________
 ```
 As ações são os próprios estados. Sem informação é complicado explorar o espaço de estados.
 Nesta instância o objetivo termina com 0, pelo que explorando um bocado já daria para encontrar 
@@ -101,139 +118,69 @@ uma solução, mas seria sempre uma procura à sorte.
 \anchor artificia-a3
 ## Ação 3 - Testes Empíricos
 
+Vamos fazer testes empíricos na linha de comandos. 
+
 Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos por ação.
 Vamos portanto comparar resultados da procura em largura, custo uniforme e procura em profundidade iterativa,
 atendendo a que desconhecemos a profundidade máxima das instâncias. 
-Vamos colocar dos algoritmos informados o Branch-and-Bound e o A*, dado que embora não exista heurística, 
-existe a distância até ao nível do objetivo, e poderá dar alguma vantagem.
-
-Introduza: **4; 1; 1; 2; 0; 6; 1000000; 10; 1; *ENTER*; 6; *ENTER*.**
+Vamos colocar os algoritmos informados, dado que embora não exista heurística, 
+existe a distância até ao nível do objetivo, e poderá observar-se alguma diferença.
 
 
 ```entrada
-Parametros comuns a 1 configurações:
-P1:1 P2:0 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1
-P11:100 P12:0 P13:0
---- Configuração 1 --- atual
+PS ...\Teste> TProcuraConstrutiva 1:10 -R resultadoArtificial -P P1=1:7
+...
+Opção: 5
+...
+Ficheiro resultadoArtificial.csv gravado.
 ```
 
-Vamos colocar o custo uniforme, e procura em profundiadade iterativa:
-- **4; 1; 2; *ENTER*; 6; *ENTER*.* 
-- **4; 1; 3; *ENTER*; 6; *ENTER*.* 
-- **4; 1; 7; *ENTER*; 6; *ENTER*.* 
-- **4; 1; 5; *ENTER*; 6; *ENTER*.* 
+| Valores | Instância | 1:Largura Primeiro | 2:Custo Uniforme | 3:Profundidade Primeiro | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
+|:---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Soma de I1(Custo) | 1 | 4 | 4 | 4 | 4 | 4 | 4 | 4 |
+|  | 2 | 2 | 2 | 2 | 4 | 2 | 2 | 2 |
+|  | 3 | 5 | 5 | 5 | 7 | 5 | 5 | 5 |
+|  | 4 | 28 | 24 | 28 | 32 | 24 | 24 | 24 |
+|  | 5 | 29 | 23 | 29 | 29 | 23 | 23 | 23 |
+|  | 6 | 9 | 9 | 9 | 30 | 9 | 9 | 9 |
+|  | 7 | 29 | 22 | 29 | 29 | 22 | 22 | 22 |
+|  | 8 | -2 | -2 | -2 | 20 | 10 | 10 | 10 |
+|  | 9 | 2 | 2 | 2 | 13 | 2 | 2 | 2 |
+|  | 10 | -2 | -2 | -2 | 87 | 40 | 40 | 40 |
+| Soma de I2(Tempo(ms)) | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 0 |
+|  | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+|  | 3 | 0 | 5 | 0 | 0 | 1 | 1 | 0 |
+|  | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+|  | 5 | 647 | 168 | 1454 | 0 | 4 | 4 | 13 |
+|  | 6 | 0 | 0 | 0 | 0 | 0 | 1 | 3 |
+|  | 7 | 1785 | 351 | 3544 | 0 | 4 | 3 | 15 |
+|  | 8 | 12410 | 11681 | 10001 | 0 | 1 | 1 | 3 |
+|  | 9 | 0 | 2 | 0 | 0 | 1 | 1 | 9 |
+|  | 10 | 14122 | 12821 | 10001 | 1 | 5 | 7 | 33 |
+| Soma de I4(Expansões) | 1 | 8 | 18 | 15 | 7 | 7 | 5 | 7 |
+|  | 2 | 3 | 6 | 4 | 4 | 6 | 15 | 24 |
+|  | 3 | 260 | 1575 | 315 | 8 | 69 | 6 | 11 |
+|  | 4 | 11 | 33 | 18 | 15 | 32 | 158 | 32 |
+|  | 5 | 408686 | 83219 | 817729 | 25 | 2309 | 2755 | 5558 |
+|  | 6 | 74 | 82 | 150 | 283 | 82 | 235 | 859 |
+|  | 7 | 987178 | 172024 | 1989155 | 123 | 2969 | 1939 | 6311 |
+|  | 8 | 3616818 | 2549679 | 2880994 | 50 | 40 | 52 | 1075 |
+|  | 9 | 4 | 172 | 5 | 13 | 172 | 209 | 2122 |
+|  | 10 | 1305934 | 904220 | 1359754 | 119 | 380 | 833 | 2849 |
+| Total Soma de I1(Custo) |  | 104 | 87 | 104 | 255 | 141 | 141 | 141 |
+| Total Soma de I2(Tempo(ms)) |  | 28964 | 25029 | 25001 | 1 | 17 | 18 | 76 |
+| Total Soma de I4(Expansões) |  | 6318976 | 3711028 | 7048139 | 647 | 6066 | 6207 | 18848 |
 
-```entrada
-Parametros comuns a 5 configurações:
-P2:0 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1 P11:100
-P12:0 P13:0
---- Configuração 1
-P1:1
---- Configuração 2
-P1:2
---- Configuração 3
-P1:3
---- Configuração 4
-P1:7
---- Configuração 5 --- atual
-P1:5
-```
+Podemos observar aqui que há duas instâncias que não foram resolvidas pelos algoritmos cegos, as instâncias 8 e 10. 
 
-Vamos agora resolver todas as 10 instâncias: **7; 0; 10; 1.**
-
-```entrada
- ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |
-----|----|----------|------------|-----------|------------|----------|
-  1 |  1 |        5 |         16 |        32 |          0 |   0,000s |
-  2 |  1 |        2 |          2 |         8 |          0 |   0,000s |
-  3 |  1 |        5 |        260 |      1560 |          0 |   0,000s |
-  4 |  1 |       16 |          7 |        11 |          0 |   0,000s |
-  5 |  1 |       25 |     331561 |    663719 |          0 |   0,117s |
-  6 |  1 |       11 |         14 |        27 |          0 |   0,000s |
-  7 |  1 | não res. |     496637 |   1000003 |          0 |   0,200s |
-  8 |  1 | não res. |      69015 |   1000006 |          0 |   0,114s |
-  9 |  1 |        2 |          6 |        91 |          0 |   0,000s |
- 10 |  1 | não res. |      16854 |   1000033 |          0 |   0,108s |
-  1 |  2 |        5 |         31 |        62 |          0 |   0,000s |
-  2 |  2 |        2 |          6 |        24 |          0 |   0,000s |
-  3 |  2 |        5 |       1581 |      9486 |          0 |   0,002s |
-  4 |  2 |       16 |          6 |        12 |          0 |   0,000s |
-  5 |  2 |       22 |      59854 |    119675 |          0 |   0,039s |
-  6 |  2 |       11 |         20 |        39 |          0 |   0,000s |
-  7 |  2 |       22 |      84480 |    169257 |          0 |   0,051s |
-  8 |  2 | não res. |      69022 |   1000012 |          0 |   0,187s |
-  9 |  2 |        2 |        106 |      1537 |          0 |   0,001s |
- 10 |  2 | não res. |      16784 |   1000056 |          0 |   0,251s |
-  1 |  3 |        5 |         31 |        62 |          0 |   0,000s |
-  2 |  3 |        2 |          3 |        12 |          0 |   0,000s |
-  3 |  3 |        5 |        315 |      1890 |          0 |   0,000s |
-  4 |  3 |       16 |         13 |        21 |          0 |   0,000s |
-  5 |  3 | não res. |     499391 |   1000002 |          0 |   0,144s |
-  6 |  3 |       11 |         41 |        62 |          0 |   0,000s |
-  7 |  3 | não res. |     497963 |   1000001 |          0 |   0,146s |
-  8 |  3 | não res. |      69047 |   1000012 |          0 |   0,086s |
-  9 |  3 |        2 |          7 |       104 |          0 |   0,000s |
- 10 |  3 | não res. |      16863 |   1000033 |          0 |   0,085s |
-  1 |  4 |        5 |         31 |        62 |         62 |   0,000s |
-  2 |  4 |        2 |         32 |       120 |        120 |   0,000s |
-  3 |  4 |        5 |         10 |        60 |         60 |   0,000s |
-  4 |  4 |       16 |          6 |        12 |         12 |   0,000s |
-  5 |  4 |       22 |       1284 |      2249 |       2249 |   0,001s |
-  6 |  4 |       11 |        985 |      1929 |       1929 |   0,001s |
-  7 |  4 |       22 |       2831 |      4221 |       4221 |   0,001s |
-  8 |  4 |       10 |        292 |      4281 |       4281 |   0,001s |
-  9 |  4 |        2 |       2417 |     33084 |      33084 |   0,005s |
- 10 |  4 |       40 |       1201 |     72680 |      72680 |   0,009s |
-  1 |  5 |        5 |         32 |        62 |         62 |   0,000s |
-  2 |  5 |        2 |          6 |        24 |         24 |   0,000s |
-  3 |  5 |        5 |         26 |       156 |        156 |   0,000s |
-  4 |  5 |       16 |          5 |         9 |          9 |   0,000s |
-  5 |  5 |       22 |       2902 |      5036 |       5036 |   0,002s |
-  6 |  5 |       11 |         20 |        39 |         39 |   0,000s |
-  7 |  5 |       22 |       1075 |      1860 |       1860 |   0,000s |
-  8 |  5 |       10 |         92 |      1294 |       1294 |   0,000s |
-  9 |  5 |        2 |        106 |      1537 |       1537 |   0,001s |
- 10 |  5 |       40 |        149 |      8302 |       8302 |   0,002s |
-----|----|----------|------------|-----------|------------|----------| resolvidas
-Total  1 |       66 |     914372 |   3665490 |          0 |   0,539s |   7
-Total  2 |       85 |     231890 |   2300160 |          0 |   0,531s |   8
-Total  3 |       41 |    1083674 |   4002199 |          0 |   0,461s |   6
-Total  4 |      135 |       9089 |    118698 |     118698 |   0,018s |  10
-Total  5 |      135 |       4413 |     18319 |      18319 |   0,005s |  10
-Torneio (#instâncias melhores):
- |-01-|-02-|-03-|-04-|-05-|
- 1    | -2 |  1 | -4 | -4 | -9
- |----|----|----|----|----|
- 2  2 |    |  2 | -2 | -2 |  0
- |----|----|----|----|----|
- 3 -1 | -2 |    | -4 | -4 |-11
- |----|----|----|----|----|
- 4  4 |  2 |  4 |    |  0 | 10
- |----|----|----|----|----|
- 5  4 |  2 |  4 |  0 |    | 10
- |----|----|----|----|----|
-Parametros comuns a 5 configurações:
-P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1 | P5(Tempo): 10
-P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0 | P9(Limite): 0
-P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0
---- Configuração 1
-P1(Algoritmo): Largura Primeiro
---- Configuração 2
-P1(Algoritmo): Custo Uniforme
---- Configuração 3
-P1(Algoritmo): Profundidade Primeiro
---- Configuração 4
-P1(Algoritmo): Branch and Bound
---- Configuração 5
-P1(Algoritmo): A*
-```
-Podemos observar aqui que as procuras informadas são bastante robustas, mesmo com a heurística mínima
+No entanto, as procuras informadas são bastante robustas, mesmo com a heurística mínima
 indicando a informação até ao nível em que pode estar o estado objetivo. 
+Estas 10 instâncias não são portanto complexas para estes algoritmos, tanto o A* como o Branch-and-Bound, 
+resolvem todas, e com bons tempos.
 
-Estas 10 instâncias não são portanto complexas para estes algoritmos, 
-que podem lidar com objetivos mais raros, profundos, e com ramificação mais elevada, que as utilizadas aqui.
+Assim, podem lidar com objetivos mais raros, profundos, e com ramificação mais elevada, que as utilizadas aqui.
 
 A remoção de duplicados não foi ativada, mas algumas instâncias tinham repetidos, e essa situação melhora
 naturalmente o desempanho dos algoritmos.
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |

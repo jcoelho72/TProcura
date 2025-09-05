@@ -128,7 +128,7 @@ Vamos obter primeiramente a lista de todos os parâmetros.
 
 ```entrada
 C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva -h
-PS C:\Work\Git\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva -h
+PS C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva -h
 
 Teste TProcurasConstrutivas
 Problema:
@@ -138,7 +138,7 @@ Problema:
   4 - Partição
   5 - Artificial
 Opção: 4
-Uso: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe <instâncias> [opções]
+Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe <instâncias> [opções]
   <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]
 Opções:
   -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)
@@ -147,7 +147,7 @@ Opções:
   -S              Mostrar soluções durante a execução
   -h              Esta ajuda
   -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
-Exemplo: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
+Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
    Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
 
 Lista de parâmetros:
