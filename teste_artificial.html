@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('teste_artificial.html',''); initResiza
   <div class="headertitle"><div class="title">Teste Artificial</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
-<p>Execução de exemplo com base no problema artificial. Pode acompanhar o teste excutando as ações localmente.</p>
+<div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
+<p>Execução de exemplo com base no problema artificial. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md21"></a>
 Sumário</h2>
 <ul>
@@ -114,173 +114,142 @@ Sumário</h2>
 <div class="line">Opção: 5</div>
 </div><!-- fragment --><p>Temos ainda a opção do problema artificial. Introduza: <b>5.</b></p>
 <div class="fragment"><div class="line">Artificial</div>
-<div class="line">P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0</div>
-<div class="line">[Estatísticas] expansões 0 | gerações 0 | avaliações 0</div>
+<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000</div>
+<div class="line"> P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
+<div class="line"> P11(baralhar): 0</div>
 <div class="line">--&lt;([1])&gt;--</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
-<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+<div class="line">____________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
+<div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p>Estas instâncias artificiais não têm um problema concreto. Cada estado é abstrato e é representado por um inteiro. O primeiro estado é o estado 1. No entanto, cada instância tem diferentes características:</p><ul>
 <li>Ramificação - existe valor mínimo e máximo, pelo que pode-se controlar se é elevada ou baixa, fixa ou variável.</li>
 <li>Nível do objetivo - pode-se definir o nível mínimo em que o objetivo pode estar, e assim indicar que é 8. Nesse caso apenas estados no nível 8 ou superior, é que podem ser objetivo.</li>
 <li>Nível máximo - a profundidade máxima em que há estados. Após este nível os sucessores ficam vazios.</li>
 <li>Objetivo - permite controlar a raridade do objetivo. Define-se um número K, se ID é objetivo então tem de ser multiplo de K. No caso de K=10, significa que todos os estados que tiverem ID a terminar com 0, são objetivo.</li>
-<li>Custo máximo - permite controlar entre custos das ações fixos, ou variáveis</li>
-<li>Repetição de estados - define-se um número K, ficando todos os IDs resto da divisão por K. Assim, controla-se a probabilidade de um estado ser repetido, K menor há mais repetidos.</li>
+<li>Custo máximo - permite controlar custos das ações, fixos ou variáveis</li>
+<li>Repetição de estados - define-se um número K, ficando todos os IDs resto da divisão por K iguais. Assim, controla-se a probabilidade de um estado ser repetido, K menor há mais repetidos.</li>
 <li>Repetição de estados mas por nível - idêntico ao anterior, mas os estados apenas são repetidos de entre os que estão no mesmo nível.</li>
 </ul>
-<p>Estas caracteristicas definem o espaço de estados, e permite avaliar os algoritmos de forma independente dos problemas, ou testar em situações extermas, mesmo antes de ter um problema concreto que tenha essas características.</p>
+<p>Estas caracteristicas definem o espaço de estados, e permite avaliar os algoritmos de forma independente dos problemas, ou testar o algoritmo em situações extermas, mesmo antes de ter um problema concreto que tenha essas características.</p>
 <p><a class="anchor" id="artificia-a1"></a></p>
 <h2><a class="anchor" id="autotoc_md22"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Introduza: <b>1; 1.</b></p>
-<div class="fragment"><div class="line">Nova instância (atual 1) [1-10]:1</div>
+<div class="fragment"><div class="line">ID atual: 1  Intervalo: [1-10]  Prefixo atual: &#39;instancia_&#39;</div>
+<div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 1</div>
 </div><!-- fragment --><p>As instâncias têm características definidas na função CProblemaArtificial::CarregaInstancia(). Procurou-se ter instâncias de diferentes tipos.</p>
+<p>|ID|Ramificação mínima|máxima|Nível Objetivo mínimo|máximo|objetivo|Custo máximo|Estados máximo|Estados nível máximo|Semente|Comentário| |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:| |2|2|4|5|10|1|0|0|1| pequena instância, ramificação baixa, profundidade baixa, objetivo 1 em 10 (termina em 0)| |4|4|1|6|10|1|100|0|2| ramificação média, estados máximos 100 (repetem-se, resto da divisão por 100). minNivelObjetivo tem de ser 1 sempre que maxEstados&gt;0| |6|6|5|7|10|1|0|100|3| estados máximos em cada nível 100 (repetem-se, resto da divisão por 100, mas sem colisões entre níveis)| |1|4|4|7|10|10|0|0|4| custos não unitários (até 10), ramificação variável baixa| |1|4|20|20|100|2|0|0|5| profundidade média, solução no último nível apenas, custos variáveis mas menos, objetivo 1 em 100 (termina em 00)| |1|4|1|20|100|2|10000|0|6| máximo número de estados 10K (minNivelObjetivo tem de ser 1 sempre que maxEstados&gt;0)| |1|4|20|20|100|2|0|1000|7| máximo número de estados num nível 1K| |10|20|10|20|100|1|0|0|8| ramificação média, profundidade média, solução variável, custo fixo| |10|20|1|20|100|1|10000|0|9| máximo número de estados 10K (minNivelObjetivo tem de ser 1 sempre que maxEstados&gt;0)| |20|100|40|60|100|2|0|0|10| ramificação elevada, profundidade elevada|</p>
 <p>No entanto, infelizmente a heurística não é simulada, pelo que não dá para analisar algoritmos informados.</p>
-<p><a class="anchor" id="artificia-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md23"></a>
-Ação 2 - Resolver manualmente</h2>
+<p><a class="anchor" id="artificia-a2"></a>2## Ação 2 - Resolver manualmente</p>
 <p>Introduza: <b>2; 1; <em>ENTER</em>.</b></p>
 <div class="fragment"><div class="line">g:0 h:4 1|2|3</div>
 <div class="line">--&lt;([1])&gt;--</div>
-<div class="line">  +#1 g:1 h:3 1|2|3 a2715811231</div>
-<div class="line">  |--&lt;([2715811231])&gt;--</div>
-<div class="line">  +#2 g:1 h:3 1|2|3 a3810139872</div>
-<div class="line">   --&lt;([3810139872])&gt;--</div>
+<div class="line">  +#1 g:1 h:3 1|2|3 a3293277081</div>
+<div class="line">  |--&lt;([3293277081])&gt;--</div>
+<div class="line">  +#2 g:1 h:3 1|2|3 a2068425467</div>
+<div class="line">   --&lt;([2068425467])&gt;--</div>
 <div class="line">Sucessor [1-2, ação(ões), exe]:1</div>
 <div class="line">g:0 h:3 2|4|6</div>
-<div class="line">--&lt;([2715811231])&gt;--</div>
-<div class="line">  +#1 g:1 h:2 2|4|6 a83408230</div>
-<div class="line">  |--&lt;([83408230])&gt;--</div>
-<div class="line">  +#2 g:1 h:2 2|4|6 a3304292189</div>
-<div class="line">   --&lt;([3304292189])&gt;--</div>
+<div class="line">--&lt;([3293277081])&gt;--</div>
+<div class="line">  +#1 g:1 h:2 2|4|6 a954181094</div>
+<div class="line">  |--&lt;([954181094])&gt;--</div>
+<div class="line">  +#2 g:1 h:2 2|4|6 a2222870430</div>
+<div class="line">   --&lt;([2222870430])&gt;--</div>
 <div class="line">Sucessor [1-2, ação(ões), exe]:</div>
 <div class="line"> </div>
 <div class="line">Artificial</div>
-<div class="line">...</div>
-<div class="line">--&lt;([2715811231])&gt;--</div>
-<div class="line">_______________________________________________________________________________</div>
+<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000</div>
+<div class="line"> P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
+<div class="line"> P11(baralhar): 0</div>
+<div class="line">--&lt;([3293277081])&gt;--</div>
+<div class="line">____________________________________________________________________</div>
 </div><!-- fragment --><p> As ações são os próprios estados. Sem informação é complicado explorar o espaço de estados. Nesta instância o objetivo termina com 0, pelo que explorando um bocado já daria para encontrar uma solução, mas seria sempre uma procura à sorte.</p>
 <p><a class="anchor" id="artificia-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Ação 3 - Testes Empíricos</h2>
-<p>Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos por ação. Vamos portanto comparar resultados da procura em largura, custo uniforme e procura em profundidade iterativa, atendendo a que desconhecemos a profundidade máxima das instâncias. Vamos colocar dos algoritmos informados o Branch-and-Bound e o A*, dado que embora não exista heurística, existe a distância até ao nível do objetivo, e poderá dar alguma vantagem.</p>
-<p>Introduza: <b>4; 1; 1; 2; 0; 6; 1000000; 10; 1; <em>ENTER</em>; 6; <em>ENTER</em>.</b></p>
-<div class="fragment"><div class="line">Parametros comuns a 1 configurações:</div>
-<div class="line">P1:1 P2:0 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1</div>
-<div class="line">P11:100 P12:0 P13:0</div>
-<div class="line">--- Configuração 1 --- atual</div>
-</div><!-- fragment --><p>Vamos colocar o custo uniforme, e procura em profundiadade iterativa:</p><ul>
-<li>**4; 1; 2; <em>ENTER</em>; 6; <em>ENTER</em>.*</li>
-<li>**4; 1; 3; <em>ENTER</em>; 6; <em>ENTER</em>.*</li>
-<li>**4; 1; 7; <em>ENTER</em>; 6; <em>ENTER</em>.*</li>
-<li>**4; 1; 5; <em>ENTER</em>; 6; <em>ENTER</em>.*</li>
-</ul>
-<div class="fragment"><div class="line">Parametros comuns a 5 configurações:</div>
-<div class="line">P2:0 P3:1 P4:1 P5:10 P6:1000000 P7:0 P8:0 P9:0 P10:1 P11:100</div>
-<div class="line">P12:0 P13:0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1:1</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1:2</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1:3</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1:7</div>
-<div class="line">--- Configuração 5 --- atual</div>
-<div class="line">P1:5</div>
-</div><!-- fragment --><p>Vamos agora resolver todas as 10 instâncias: <b>7; 0; 10; 1.</b></p>
-<div class="fragment"><div class="line"> ID |conf| custo(g) |  expansões |  gerações | avaliações | tempo(s) |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------|</div>
-<div class="line">  1 |  1 |        5 |         16 |        32 |          0 |   0,000s |</div>
-<div class="line">  2 |  1 |        2 |          2 |         8 |          0 |   0,000s |</div>
-<div class="line">  3 |  1 |        5 |        260 |      1560 |          0 |   0,000s |</div>
-<div class="line">  4 |  1 |       16 |          7 |        11 |          0 |   0,000s |</div>
-<div class="line">  5 |  1 |       25 |     331561 |    663719 |          0 |   0,117s |</div>
-<div class="line">  6 |  1 |       11 |         14 |        27 |          0 |   0,000s |</div>
-<div class="line">  7 |  1 | não res. |     496637 |   1000003 |          0 |   0,200s |</div>
-<div class="line">  8 |  1 | não res. |      69015 |   1000006 |          0 |   0,114s |</div>
-<div class="line">  9 |  1 |        2 |          6 |        91 |          0 |   0,000s |</div>
-<div class="line"> 10 |  1 | não res. |      16854 |   1000033 |          0 |   0,108s |</div>
-<div class="line">  1 |  2 |        5 |         31 |        62 |          0 |   0,000s |</div>
-<div class="line">  2 |  2 |        2 |          6 |        24 |          0 |   0,000s |</div>
-<div class="line">  3 |  2 |        5 |       1581 |      9486 |          0 |   0,002s |</div>
-<div class="line">  4 |  2 |       16 |          6 |        12 |          0 |   0,000s |</div>
-<div class="line">  5 |  2 |       22 |      59854 |    119675 |          0 |   0,039s |</div>
-<div class="line">  6 |  2 |       11 |         20 |        39 |          0 |   0,000s |</div>
-<div class="line">  7 |  2 |       22 |      84480 |    169257 |          0 |   0,051s |</div>
-<div class="line">  8 |  2 | não res. |      69022 |   1000012 |          0 |   0,187s |</div>
-<div class="line">  9 |  2 |        2 |        106 |      1537 |          0 |   0,001s |</div>
-<div class="line"> 10 |  2 | não res. |      16784 |   1000056 |          0 |   0,251s |</div>
-<div class="line">  1 |  3 |        5 |         31 |        62 |          0 |   0,000s |</div>
-<div class="line">  2 |  3 |        2 |          3 |        12 |          0 |   0,000s |</div>
-<div class="line">  3 |  3 |        5 |        315 |      1890 |          0 |   0,000s |</div>
-<div class="line">  4 |  3 |       16 |         13 |        21 |          0 |   0,000s |</div>
-<div class="line">  5 |  3 | não res. |     499391 |   1000002 |          0 |   0,144s |</div>
-<div class="line">  6 |  3 |       11 |         41 |        62 |          0 |   0,000s |</div>
-<div class="line">  7 |  3 | não res. |     497963 |   1000001 |          0 |   0,146s |</div>
-<div class="line">  8 |  3 | não res. |      69047 |   1000012 |          0 |   0,086s |</div>
-<div class="line">  9 |  3 |        2 |          7 |       104 |          0 |   0,000s |</div>
-<div class="line"> 10 |  3 | não res. |      16863 |   1000033 |          0 |   0,085s |</div>
-<div class="line">  1 |  4 |        5 |         31 |        62 |         62 |   0,000s |</div>
-<div class="line">  2 |  4 |        2 |         32 |       120 |        120 |   0,000s |</div>
-<div class="line">  3 |  4 |        5 |         10 |        60 |         60 |   0,000s |</div>
-<div class="line">  4 |  4 |       16 |          6 |        12 |         12 |   0,000s |</div>
-<div class="line">  5 |  4 |       22 |       1284 |      2249 |       2249 |   0,001s |</div>
-<div class="line">  6 |  4 |       11 |        985 |      1929 |       1929 |   0,001s |</div>
-<div class="line">  7 |  4 |       22 |       2831 |      4221 |       4221 |   0,001s |</div>
-<div class="line">  8 |  4 |       10 |        292 |      4281 |       4281 |   0,001s |</div>
-<div class="line">  9 |  4 |        2 |       2417 |     33084 |      33084 |   0,005s |</div>
-<div class="line"> 10 |  4 |       40 |       1201 |     72680 |      72680 |   0,009s |</div>
-<div class="line">  1 |  5 |        5 |         32 |        62 |         62 |   0,000s |</div>
-<div class="line">  2 |  5 |        2 |          6 |        24 |         24 |   0,000s |</div>
-<div class="line">  3 |  5 |        5 |         26 |       156 |        156 |   0,000s |</div>
-<div class="line">  4 |  5 |       16 |          5 |         9 |          9 |   0,000s |</div>
-<div class="line">  5 |  5 |       22 |       2902 |      5036 |       5036 |   0,002s |</div>
-<div class="line">  6 |  5 |       11 |         20 |        39 |         39 |   0,000s |</div>
-<div class="line">  7 |  5 |       22 |       1075 |      1860 |       1860 |   0,000s |</div>
-<div class="line">  8 |  5 |       10 |         92 |      1294 |       1294 |   0,000s |</div>
-<div class="line">  9 |  5 |        2 |        106 |      1537 |       1537 |   0,001s |</div>
-<div class="line"> 10 |  5 |       40 |        149 |      8302 |       8302 |   0,002s |</div>
-<div class="line">----|----|----------|------------|-----------|------------|----------| resolvidas</div>
-<div class="line">Total  1 |       66 |     914372 |   3665490 |          0 |   0,539s |   7</div>
-<div class="line">Total  2 |       85 |     231890 |   2300160 |          0 |   0,531s |   8</div>
-<div class="line">Total  3 |       41 |    1083674 |   4002199 |          0 |   0,461s |   6</div>
-<div class="line">Total  4 |      135 |       9089 |    118698 |     118698 |   0,018s |  10</div>
-<div class="line">Total  5 |      135 |       4413 |     18319 |      18319 |   0,005s |  10</div>
-<div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|-03-|-04-|-05-|</div>
-<div class="line"> 1    | -2 |  1 | -4 | -4 | -9</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 2  2 |    |  2 | -2 | -2 |  0</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 3 -1 | -2 |    | -4 | -4 |-11</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 4  4 |  2 |  4 |    |  0 | 10</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 5  4 |  2 |  4 |  0 |    | 10</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line">Parametros comuns a 5 configurações:</div>
-<div class="line">P2(Debug): nada | P3(Ver): 1 | P4(Seed): 1 | P5(Tempo): 10</div>
-<div class="line">P6(Gerações): 1000000 | P7(Expansões): 0 | P8(Avaliações): 0 | P9(Limite): 0</div>
-<div class="line">P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1(Algoritmo): Largura Primeiro</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1(Algoritmo): Custo Uniforme</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1(Algoritmo): Profundidade Primeiro</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1(Algoritmo): Branch and Bound</div>
-<div class="line">--- Configuração 5</div>
-<div class="line">P1(Algoritmo): A*</div>
-</div><!-- fragment --><p> Podemos observar aqui que as procuras informadas são bastante robustas, mesmo com a heurística mínima indicando a informação até ao nível em que pode estar o estado objetivo.</p>
-<p>Estas 10 instâncias não são portanto complexas para estes algoritmos, que podem lidar com objetivos mais raros, profundos, e com ramificação mais elevada, que as utilizadas aqui.</p>
+<p>Vamos fazer testes empíricos na linha de comandos.</p>
+<p>Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos por ação. Vamos portanto comparar resultados da procura em largura, custo uniforme e procura em profundidade iterativa, atendendo a que desconhecemos a profundidade máxima das instâncias. Vamos colocar os algoritmos informados, dado que embora não exista heurística, existe a distância até ao nível do objetivo, e poderá observar-se alguma diferença.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 1:10 -R resultadoArtificial -P P1=1:7</div>
+<div class="line">...</div>
+<div class="line">Opção: 5</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoArtificial.csv gravado.</div>
+</div><!-- fragment --><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Valores   </th><th class="markdownTableHeadRight">Instância   </th><th class="markdownTableHeadRight">1:Largura Primeiro   </th><th class="markdownTableHeadRight">2:Custo Uniforme   </th><th class="markdownTableHeadRight">3:Profundidade Primeiro   </th><th class="markdownTableHeadRight">4:Melhor Primeiro   </th><th class="markdownTableHeadRight">5:A*   </th><th class="markdownTableHeadRight">6:IDA*   </th><th class="markdownTableHeadRight">7:Branch and Bound    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Soma de I1(Custo)   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">5    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">28   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">28   </td><td class="markdownTableBodyRight">32   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">24    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">23    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">30   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">9    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">22    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">20   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">10    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">87   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">40    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Soma de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">647   </td><td class="markdownTableBodyRight">168   </td><td class="markdownTableBodyRight">1454   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">13    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">1785   </td><td class="markdownTableBodyRight">351   </td><td class="markdownTableBodyRight">3544   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">15    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">12410   </td><td class="markdownTableBodyRight">11681   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">14122   </td><td class="markdownTableBodyRight">12821   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">33    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Soma de I4(Expansões)   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">7    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">24    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">260   </td><td class="markdownTableBodyRight">1575   </td><td class="markdownTableBodyRight">315   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">69   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">11    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">11   </td><td class="markdownTableBodyRight">33   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">32   </td><td class="markdownTableBodyRight">158   </td><td class="markdownTableBodyRight">32    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">408686   </td><td class="markdownTableBodyRight">83219   </td><td class="markdownTableBodyRight">817729   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">2309   </td><td class="markdownTableBodyRight">2755   </td><td class="markdownTableBodyRight">5558    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">74   </td><td class="markdownTableBodyRight">82   </td><td class="markdownTableBodyRight">150   </td><td class="markdownTableBodyRight">283   </td><td class="markdownTableBodyRight">82   </td><td class="markdownTableBodyRight">235   </td><td class="markdownTableBodyRight">859    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">987178   </td><td class="markdownTableBodyRight">172024   </td><td class="markdownTableBodyRight">1989155   </td><td class="markdownTableBodyRight">123   </td><td class="markdownTableBodyRight">2969   </td><td class="markdownTableBodyRight">1939   </td><td class="markdownTableBodyRight">6311    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">3616818   </td><td class="markdownTableBodyRight">2549679   </td><td class="markdownTableBodyRight">2880994   </td><td class="markdownTableBodyRight">50   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">52   </td><td class="markdownTableBodyRight">1075    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">172   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">172   </td><td class="markdownTableBodyRight">209   </td><td class="markdownTableBodyRight">2122    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">1305934   </td><td class="markdownTableBodyRight">904220   </td><td class="markdownTableBodyRight">1359754   </td><td class="markdownTableBodyRight">119   </td><td class="markdownTableBodyRight">380   </td><td class="markdownTableBodyRight">833   </td><td class="markdownTableBodyRight">2849    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Soma de I1(Custo)   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">104   </td><td class="markdownTableBodyRight">87   </td><td class="markdownTableBodyRight">104   </td><td class="markdownTableBodyRight">255   </td><td class="markdownTableBodyRight">141   </td><td class="markdownTableBodyRight">141   </td><td class="markdownTableBodyRight">141    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">Total Soma de I2(Tempo(ms))   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">28964   </td><td class="markdownTableBodyRight">25029   </td><td class="markdownTableBodyRight">25001   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">76    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Soma de I4(Expansões)   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">6318976   </td><td class="markdownTableBodyRight">3711028   </td><td class="markdownTableBodyRight">7048139   </td><td class="markdownTableBodyRight">647   </td><td class="markdownTableBodyRight">6066   </td><td class="markdownTableBodyRight">6207   </td><td class="markdownTableBodyRight">18848   </td></tr>
+</table>
+<p>Podemos observar aqui que há duas instâncias que não foram resolvidas pelos algoritmos cegos, as instâncias 8 e 10.</p>
+<p>No entanto, as procuras informadas são bastante robustas, mesmo com a heurística mínima indicando a informação até ao nível em que pode estar o estado objetivo. Estas 10 instâncias não são portanto complexas para estes algoritmos, tanto o A* como o Branch-and-Bound, resolvem todas, e com bons tempos.</p>
+<p>Assim, podem lidar com objetivos mais raros, profundos, e com ramificação mais elevada, que as utilizadas aqui.</p>
 <p>A remoção de duplicados não foi ativada, mas algumas instâncias tinham repetidos, e essa situação melhora naturalmente o desempanho dos algoritmos.</p>
-<p>| <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
+<p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

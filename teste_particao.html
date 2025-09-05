@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('teste_particao.html',''); initResizabl
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema da Partição. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_particao.html#particao-a1">Ação 1 - Ver instâncias</a></li>
@@ -130,7 +130,7 @@ Partição - separe os números em duas partes iguais</div></div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Este problema consiste em dividir os números em duas partes que somem exatamente o mesmo valor.</p>
 <p><a class="anchor" id="particao-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver as instâncias que temos. Introduza: <b>1; 10.</b></p>
 <div class="fragment"><div class="line">ID atual: 10  Intervalo: [2-1000]  Prefixo atual: &#39;instancia_&#39;</div>
@@ -138,7 +138,7 @@ Ação 1 - Ver instâncias</h2>
 </div><!-- fragment --><p> Existem instâncias de 2 a 1000, correspondendo o ID à quantidade de números. As instâncias são geradas aleatoriamente, podendo existir instâncias impossíveis.</p>
 <p>Deixemos a instância 10 para resolução manual.</p>
 <p><a class="anchor" id="particao-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos procurar resolver manualmente a intância. Introduza: <b>2; esq dir esq dir; dir; esq.</b></p>
 <div class="fragment"><div class="line">g:0 1|2|3</div>
@@ -186,12 +186,12 @@ Ação 2 - Resolver manualmente</h2>
 <p>No caso da partição, após um número estar num lado, apenas a soma interessa. Como se coloca os números por ordem, um estado fica igual a todos os que têm o montante igual das peças colocadas. Esquerda e direita é naturalmente irrelevante.</p>
 <p>Como o estado codificado fica pequeno, a expectativa para ganho por repetidos aumenta.</p>
 <p><a class="anchor" id="particao-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Ação 3 - Testes Empíricos</h2>
 <p>Vamos fazer testes empíricos na linha de comandos.</p>
 <p>Vamos obter primeiramente a lista de todos os parâmetros.</p>
 <div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
-<div class="line">PS C:\Work\Git\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
+<div class="line">PS C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
 <div class="line"> </div>
 <div class="line">Teste TProcurasConstrutivas</div>
 <div class="line">Problema:</div>
@@ -201,7 +201,7 @@ Ação 3 - Testes Empíricos</h2>
 <div class="line">  4 - Partição</div>
 <div class="line">  5 - Artificial</div>
 <div class="line">Opção: 4</div>
-<div class="line">Uso: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
+<div class="line">Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
 <div class="line">  &lt;instâncias&gt;    Conjunto de IDs: A | A,B,C | A:B[:C]</div>
 <div class="line">Opções:</div>
 <div class="line">  -R &lt;ficheiro&gt;   Nome do CSV de resultados (omissão: resultados.csv)</div>
@@ -210,7 +210,7 @@ Ação 3 - Testes Empíricos</h2>
 <div class="line">  -S              Mostrar soluções durante a execução</div>
 <div class="line">  -h              Esta ajuda</div>
 <div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
-<div class="line">Exemplo: C:\Work\Git\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
+<div class="line">Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
 <div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
 <div class="line"> </div>
 <div class="line">Lista de parâmetros:</div>

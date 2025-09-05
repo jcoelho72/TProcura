@@ -1,19 +1,19 @@
 var searchData=
 [
   ['o_20espaço_20de_20estados_0',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md5',1,'']]],
-  ['o_20projeto_1',['Sobre o Projeto',['../index.html#autotoc_md78',1,'']]],
-  ['o_20repositório_2',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md84',1,'']]],
+  ['o_20projeto_1',['Sobre o Projeto',['../index.html#autotoc_md77',1,'']]],
+  ['o_20repositório_2',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md83',1,'']]],
   ['objetivo_3',['objetivo',['../structSParametrosEspaco.html#ab14626a36f514fb7b02baaa1cde43e7f',1,'SParametrosEspaco']]],
   ['objetivoalcancado_4',['objetivoalcancado',['../classTProcuraConstrutiva.html#a8e7879e0ac12522e0eedf3d3d365e51c',1,'TProcuraConstrutiva::ObjetivoAlcancado(int item, TVector&lt; TNo &gt; &amp;lista)'],['../classTProcuraConstrutiva.html#a18331ff4fccaf78df8bd3656357e9e75',1,'TProcuraConstrutiva::ObjetivoAlcancado(TNo estado, bool completa=true)']]],
   ['objeto_5fhashtable_5',['OBJETO_HASHTABLE',['../TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526',1,'TProcuraConstrutiva.h']]],
   ['obterextremos_6',['ObterExtremos',['../classTProcuraMelhorativa.html#a1205807eb7d011896ddd38dc5675ab44',1,'TProcuraMelhorativa']]],
   ['oitodamas_2ecpp_7',['oitodamas.cpp',['../Melhorativa_2Teste_2OitoDamas_8cpp.html',1,'(Global Namespace)'],['../Construtiva_2Teste_2OitoDamas_8cpp.html',1,'(Global Namespace)']]],
   ['oitodamas_2eh_8',['oitodamas.h',['../Construtiva_2Teste_2OitoDamas_8h.html',1,'(Global Namespace)'],['../Melhorativa_2Teste_2OitoDamas_8h.html',1,'(Global Namespace)']]],
-  ['opção_201_20clonar_20o_20repositório_9',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md84',1,'']]],
-  ['opção_202_20download_20manual_10',['Opção 2 - Download Manual',['../index.html#autotoc_md85',1,'']]],
-  ['opção_203_20utilizar_20como_20submódulo_11',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md86',1,'']]],
-  ['opções_20a_12',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md31',1,'']]],
-  ['opções_20b_13',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md32',1,'']]],
+  ['opção_201_20clonar_20o_20repositório_9',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md83',1,'']]],
+  ['opção_202_20download_20manual_10',['Opção 2 - Download Manual',['../index.html#autotoc_md84',1,'']]],
+  ['opção_203_20utilizar_20como_20submódulo_11',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md85',1,'']]],
+  ['opções_20a_12',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md30',1,'']]],
+  ['opções_20b_13',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md31',1,'']]],
   ['operator_21_3d_14',['operator!=',['../classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b',1,'TVector']]],
   ['operator_2b_15',['operator+',['../classTVector.html#a279d251a53063355259e29f34e884d69',1,'TVector']]],
   ['operator_2b_3d_16',['operator+=',['../classTVector.html#a7c69ceeac2bef2bf161e5e6aab440468',1,'TVector::operator+=(const TVector &amp;o)'],['../classTVector.html#a691ddcb0df46ab21a687356c6a0cd9a6',1,'TVector::operator+=(const Item &amp;x)']]],
@@ -23,6 +23,6 @@ var searchData=
   ['operator_5b_5d_20',['operator[]',['../classTVector.html#a372a42fd7c4a94fee43db36d6a339b33',1,'TVector::operator[](int i)'],['../classTVector.html#a8ee199d50089fb967bcf418ab5b30723',1,'TVector::operator[](int i) const']]],
   ['ordemvalor_21',['OrdemValor',['../classTProcuraMelhorativa.html#aec9c9187221f37a37f71bee878a577ae',1,'TProcuraMelhorativa']]],
   ['ordenarsucessores_22',['ordenarsucessores',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda7c46075a786ec95b7501506c807010ae',1,'ordenarSucessores:&#160;TProcuraAdversa.h'],['../classTProcuraAdversa.html#a369a3b5182150b22fd6deb0d46916d49',1,'TProcuraAdversa::OrdenarSucessores()']]],
-  ['os_20sucessores_23',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md27',1,'']]],
-  ['outra_20instância_24',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md33',1,'']]]
+  ['os_20sucessores_23',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md26',1,'']]],
+  ['outra_20instância_24',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md32',1,'']]]
 ];
