@@ -995,7 +995,7 @@ Pretendemos fazer um teste empírico, considerando os seguintes aspetos:
 
 Assim, podemos executar o programa com a seguinte linha de comando:
 ```entrada
-C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 1:100 -R resultadoPuzzle8 -P P1=4:7
+PS ...\Teste> TProcuraConstrutiva 1:100 -R resultadoPuzzle8 -P P1=4:7
 
 Teste TProcurasConstrutivas
 Problema:
@@ -1029,7 +1029,7 @@ o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro (embora
 Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados. 
 
 ```entrada
-C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 900:999 -R resultadoPuzzle8b -P P1=4:7
+PS ...\Teste> TProcuraConstrutiva 900:999 -R resultadoPuzzle8b -P P1=4:7
 ...
 Ficheiro resultadoPuzzle8b.csv gravado.
 ```

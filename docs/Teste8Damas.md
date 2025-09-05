@@ -1,6 +1,6 @@
 @page teste_8damas Teste 8 Damas
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
 
 
 Execução de exemplo com base no problema das 8 Damas. 
@@ -52,7 +52,6 @@ Opção:
 ```
 Este estado vazio é um tabuleiro de 8x8. 
 O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.
-
 
 \anchor 8damas-a1
 ## Ação 1 - Ver instâncias
@@ -377,7 +376,7 @@ Num primeiro teste pretendemos comparar a procura em largura com a procura em pr
 e respetivas versões com eliminação de estados repetidos. Colocamos o P7=-1 para a procura em profundidade ilimitada, não afetando a procura em largura.
 
 ```entrada
-C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 4:13 -R resultado8Damas -P P7=-1 P1=1,3 x P8=1,3
+PS ...\Teste> TProcuraConstrutiva 4:13 -R resultado8Damas -P P7=-1 P1=1,3 x P8=1,3
 ...
 Opção: 3
 ...
@@ -425,7 +424,7 @@ Vamos retirar as duas primeiras configurações do teste, para poder executar in
 
 
 ```entrada
-C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 14:23 -R resultado8DamasB -P P7=-1 P1=3 P8=1,3
+PS ...\Teste> TProcuraConstrutiva 14:23 -R resultado8DamasB -P P7=-1 P1=3 P8=1,3
 ...
 Opção: 3
 ...
@@ -458,7 +457,7 @@ Qual é afinal a maior instância que se consegue resolver?
 Vamos usar apenas as instâncias pares, e até ao limite de 40, que é o que temos implementado. 
 Utilizamos apenas a procura em profundidade ilimitada, sem eliminação de repetidos.
 ```entrada
-C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva 24:40:2 -R resultado8DamasC -P P7=-1 P1=3 P8=1
+PS ...\Teste> TProcuraConstrutiva 24:40:2 -R resultado8DamasC -P P7=-1 P1=3 P8=1
 ...
 Opção: 3
 ...
@@ -484,4 +483,4 @@ Nas instâncias 30 a 40, não se consegue encontrar solução no limite de 10 se
 </details>
 
 
-| [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
+| [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) |
