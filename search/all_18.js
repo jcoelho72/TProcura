@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['o_20espaço_20de_20estados_0',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md5',1,'']]],
+  ['o_20espaço_20de_20estados_0',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md32',1,'']]],
   ['o_20projeto_1',['Sobre o Projeto',['../index.html#autotoc_md77',1,'']]],
   ['o_20repositório_2',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md83',1,'']]],
   ['objetivo_3',['objetivo',['../structSParametrosEspaco.html#ab14626a36f514fb7b02baaa1cde43e7f',1,'SParametrosEspaco']]],
@@ -12,17 +12,17 @@ var searchData=
   ['opção_201_20clonar_20o_20repositório_9',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md83',1,'']]],
   ['opção_202_20download_20manual_10',['Opção 2 - Download Manual',['../index.html#autotoc_md84',1,'']]],
   ['opção_203_20utilizar_20como_20submódulo_11',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md85',1,'']]],
-  ['opções_20a_12',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md30',1,'']]],
-  ['opções_20b_13',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md31',1,'']]],
+  ['opções_20a_12',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md16',1,'']]],
+  ['opções_20b_13',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md17',1,'']]],
   ['operator_21_3d_14',['operator!=',['../classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b',1,'TVector']]],
   ['operator_2b_15',['operator+',['../classTVector.html#a279d251a53063355259e29f34e884d69',1,'TVector']]],
-  ['operator_2b_3d_16',['operator+=',['../classTVector.html#a7c69ceeac2bef2bf161e5e6aab440468',1,'TVector::operator+=(const TVector &amp;o)'],['../classTVector.html#a691ddcb0df46ab21a687356c6a0cd9a6',1,'TVector::operator+=(const Item &amp;x)']]],
+  ['operator_2b_3d_16',['operator+=',['../classTVector.html#a691ddcb0df46ab21a687356c6a0cd9a6',1,'TVector::operator+=(const Item &amp;x)'],['../classTVector.html#a7c69ceeac2bef2bf161e5e6aab440468',1,'TVector::operator+=(const TVector &amp;o)']]],
   ['operator_2d_3d_17',['operator-=',['../classTVector.html#a8178d74f03d81a76c1eebe8e9400d507',1,'TVector']]],
   ['operator_3d_18',['operator=',['../classTVector.html#a2af41d12d985866414ecabe9cebeb39f',1,'TVector::operator=(TVector &amp;&amp;o) noexcept'],['../classTVector.html#a3e9a3f686ca0987253b82a61e9564624',1,'TVector::operator=(const TVector &amp;o)']]],
   ['operator_3d_3d_19',['operator==',['../classTVector.html#a82bd872b28a29cc6050bcf74af9b9f48',1,'TVector']]],
-  ['operator_5b_5d_20',['operator[]',['../classTVector.html#a372a42fd7c4a94fee43db36d6a339b33',1,'TVector::operator[](int i)'],['../classTVector.html#a8ee199d50089fb967bcf418ab5b30723',1,'TVector::operator[](int i) const']]],
+  ['operator_5b_5d_20',['operator[]',['../classTVector.html#a8ee199d50089fb967bcf418ab5b30723',1,'TVector::operator[](int i) const'],['../classTVector.html#a372a42fd7c4a94fee43db36d6a339b33',1,'TVector::operator[](int i)']]],
   ['ordemvalor_21',['OrdemValor',['../classTProcuraMelhorativa.html#aec9c9187221f37a37f71bee878a577ae',1,'TProcuraMelhorativa']]],
-  ['ordenarsucessores_22',['ordenarsucessores',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda7c46075a786ec95b7501506c807010ae',1,'ordenarSucessores:&#160;TProcuraAdversa.h'],['../classTProcuraAdversa.html#a369a3b5182150b22fd6deb0d46916d49',1,'TProcuraAdversa::OrdenarSucessores()']]],
-  ['os_20sucessores_23',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md26',1,'']]],
-  ['outra_20instância_24',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md32',1,'']]]
+  ['ordenarsucessores_22',['ordenarsucessores',['../classTProcuraAdversa.html#a369a3b5182150b22fd6deb0d46916d49',1,'TProcuraAdversa::OrdenarSucessores()'],['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda7c46075a786ec95b7501506c807010ae',1,'ordenarSucessores:&#160;TProcuraAdversa.h']]],
+  ['os_20sucessores_23',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md12',1,'']]],
+  ['outra_20instância_24',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md18',1,'']]]
 ];

@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('teste_aspirador2.html',''); initResiza
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
 <p>Execução de exemplo com base no problema do Aspirador. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
-<h2><a class="anchor" id="autotoc_md34"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_aspirador2.html#aspirador-a10">Ação 10 - Procura em Profundidade</a></li>
@@ -117,7 +117,7 @@ Sumário</h2>
 <div class="line">Opção: 1</div>
 </div><!-- fragment --><p>Selecione o problema do Aspirador: <b>1.</b></p>
 <p><a class="anchor" id="aspirador-a10"></a></p>
-<h2><a class="anchor" id="autotoc_md35"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Ação 10 - Procura em Profundidade</h2>
 <div class="image">
 <img src="aspirador_profundidade.png" alt=""/>
@@ -125,7 +125,7 @@ Ação 10 - Procura em Profundidade</h2>
 Profundidade Primeiro - expande primeiro os estados mais profundos</div></div>
     <p>Avançamos agora para a procura em profundidade. Neste caso temos neste algoritmo diversas estratégias. Podemos executar esta procura com um limite de profundidade. Vamos fazer isso na instância 2, que sabemos ter uma solução de 3 movimentos.</p>
 <p><a class="anchor" id="aspirador-a11"></a></p>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Ação 11 - Efetuar uma procura em Profundidade Primeiro</h2>
 <p>Utilizar a instância número 2, o algoritmo profundidade primeiro, com limite de profundidade a 3, com nível de debug máximo, ignorando repetidos e ver ações a 1: <b>1; 2; 3; 1; 3; 7; 3; 2; 4; 8; 1; 6; 1; <em>ENTER</em>; 6.</b></p>
 <p>O parâmetro 1 é o algoritmo, em que o 3 é a profundidade primeiro.</p>
@@ -174,7 +174,7 @@ Ação 11 - Efetuar uma procura em Profundidade Primeiro</h2>
 </div><!-- fragment --><p>Podemos ver todos os estados gerados. A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -1. Embora o indicador 6 não seja atualizado, este resultado pode ser utilizado para saber que não há nenhuma solução de comprimento inferior a 3, ou seja, é um lower bound, neste caso 3, já que o custo de cada movimento é unitário.</p>
 <p>Esta visualização da árvore da procura é interessante para pequenos problemas, mas naturalmente que procuras maiores torna-se impraticável. Podemos observar aqui que o estado inicial foi gerado novamente, dado que estamos a ignorar os repetidos.</p>
 <p><a class="anchor" id="aspirador-a12"></a></p>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Ação 12 - Ver uma árvore de procura maior</h2>
 <p>Colocar a profundidade a 10, e o nível de debug a 3: <b>1; 2; 3; 7; 10; 2; 3; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -215,7 +215,7 @@ Ação 12 - Ver uma árvore de procura maior</h2>
 <div class="line">[.] .  (g:9)</div>
 </div><!-- fragment --><p>Como o algoritmo é cego, segue a ordem dos sucessores. Neste caso está sempre a trocar de posição antes de aspirar. Apenas foi ver as alternativas quando teve de voltar para trás, devido ao limite de profundidade. Se tivéssemos escolhido uma profundidade menor, a solução obtida seria também menor. Mas se a profundidade fosse menor que a solução mais curta, não iriamos obter nenhuma solução. É com base nesse dilema que surge a procura em profundidade iterativa, no caso deste código é executada com o limite=0.</p>
 <p><a class="anchor" id="aspirador-a13"></a></p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Ação 13 - Profundidade Iterativa</h2>
 <p>Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: <b>1; 2; 3; 7; 0; 2; 2; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Iteração 1:</div>
@@ -251,14 +251,14 @@ Ação 13 - Profundidade Iterativa</h2>
 <p>Podemos ver também a versão compactada da árvore de procura, contendo apenas informação do estado, tal como na procura em largura, mas desta vez com informação de onde o estado veio. Pela observação da árvore é possível verificar que a maior parte das ramificações são de dois sucessores, o que é natural dado que este problema tem apenas duas salas.</p>
 <p>Vamos agora ver o que acontece se não limitarmos a procura em profundidade, colocando o limite=-1</p>
 <p><a class="anchor" id="aspirador-a14"></a></p>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Ação 14 - Profundidade ilimitada</h2>
 <p>Colocar a profundidade ilimitada (limite a -1), e o nível de debug a 1: <b>1; 2; 3; 7; -1; 2; 1; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 5</div>
 <div class="line">########</div>
 </div><!-- fragment --><p>Temos um crash do programa, e bem cedo. Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. Se tivesse implementada com listas, teríamos um problema de memória, como na procura em largura. Entrou-se num ramo infinito, mesmo neste pequeno problema, como aliás é possível imaginar após conhecermos a solução da procura com nível 10.</p>
 <p><a class="anchor" id="aspirador-a15"></a></p>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Ação 15 - Desafio Procura Profundidade</h2>
 <p>Lembra-se de algo dado na procura em largura, que impede ciclos infinitos e poderia permitir o uso da procura em profundidade ilimitada?</p>
 <details >

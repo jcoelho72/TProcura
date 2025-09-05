@@ -95,8 +95,8 @@ $(document).ready(function(){initNavTree('teste_jogo_em_linha.html',''); initRes
   <div class="headertitle"><div class="title">Teste Jogo Em Linha</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo. Pode acompanhar o teste excutando as ações localmente.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<div class="textblock"><p>Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo. Selecione o projeto <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a1">Ação 1 - Ver instâncias</a></li>
@@ -113,7 +113,7 @@ Sumário</h2>
 <div class="line">Opção: 2</div>
 </div><!-- fragment --><p>Este jogo tem várias instâncias, com as dimensões e tamanho da linha para ganhar. Existe ainda a variante em que as peças caem pela ação da gravidade.</p>
 <p><a class="anchor" id="jel-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md35"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no Jogo Em Linha, introduza: <b>2.</b></p>
 <div class="fragment"><div class="line">Jogo Em Linha</div>
@@ -247,7 +247,7 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p>Temos diferentes tabuleiros, resultando em ramificações distintas. A variante da gravidade, reduz consideravelmente a ramificação.</p>
 <p><a class="anchor" id="jel-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md36"></a>
 Ação 2 - Heurística</h2>
 <p>Vamos começar por verificar se a heurística implementada, tem atenção a aspetos mínimos, como bloquear ameaças de vitória a uma jogada.</p>
 <p>Para tal vamos fazer um jogo com profundidade 1, para que a heurística seja o fator predominante.</p>
@@ -297,7 +297,7 @@ Ação 2 - Heurística</h2>
 <div class="line">   A B C D E F G H I J K L</div>
 </div><!-- fragment --><p>Não temos portanto motivo para não considerar a heurística válida. Deixamos de forma a variante da gravidade, já que esta heurística foi feita com base na variante regular.</p>
 <p><a class="anchor" id="jel-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md37"></a>
 Ação 3 - Torneio Profundidade</h2>
 <p>Pretendemos agora verificar que em torneio, profundidade maior resulta em força de jogo superior. Assim, como temos muitos jogos, vamos fazer apenas duas profundidades, nível 1 e 2, mas com várias opções.</p>
 <p>Vamos primeiramente construir as configurações em teste. Introduza:</p><ul>
@@ -363,7 +363,7 @@ Ação 3 - Torneio Profundidade</h2>
 <p>A ordenação leva a jogadas e resultados distintos, mas terá sido um acaso o facto de ter perdido alguns pontos. Um volume de jogos permitiria concluir que não há diferença.</p>
 <p>A utilização de cortes alfa/beta, bem como a ordenação de estados é portanto crítica, motivo pelo qual se justifica o método iterativo.</p>
 <p><a class="anchor" id="jel-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md38"></a>
 Ação 4 - Torneio Iterativo</h2>
 <p>Na ação anterior, após confirmação que quanto maior a profundidade melhor, podemos comparar procuras com a mesma profundidade, mas diferentes opções. Sabemos que o corte alfa/beta é benéfico neste jogos, bem como a ordenação dos sucessores, porque reduz o tempo, mantendo a árvore de procura com a mesma qualidade.</p>
 <p>Em termos práticos, o tempo é um fator restritivo, e ideal para poder comparar algoritmos. Tendo tempo igual, pretende-se saber qual o mais forte. Os métodos da ação 3 não permitem a paragem por tempo, tem de se definir a profundidade máxima.</p>
@@ -500,11 +500,11 @@ Ação 4 - Torneio Iterativo</h2>
 </div><!-- fragment --><p>Pelos resultados deste torneio, podemos ver que ordenar é melhor com um valor de seed, e é o pior com outro valor de seed. Portanto, não há uma diferença demasiado forte.</p>
 <p>Pudemos observar um empate, pelo que, pelo menos esta dimensão de tabuleiros, aceita empates na prática. Por outro lado, há vitórias de brancas e pretas, pelo que o jogo está equilibrado.</p>
 <p><a class="anchor" id="jel-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Ação 5 - Torneio Ruido</h2>
 <p>... (estudar o efeito do ruído)</p>
 <p><a class="anchor" id="jel-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md40"></a>
 Ação 6 - Torneio Poda</h2>
 <p>... (estudar o efeito da poda) </p>
 </div></div><!-- contents -->

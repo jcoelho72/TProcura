@@ -8,7 +8,6 @@ digraph "Adversa"
   subgraph clusterdir_1d159169ffaaf33cf19acf7cabbcc614 {
     graph [ bgcolor="#edf0f7", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_1d159169ffaaf33cf19acf7cabbcc614.html",tooltip=""]
     dir_1d159169ffaaf33cf19acf7cabbcc614 [shape=plaintext, label="Adversa"];
-  dir_357f27f21f9880545a55bc57ef3a3598 [label="docs", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_357f27f21f9880545a55bc57ef3a3598.html",tooltip=""];
   dir_c00e824f67c353aa146bef48a600275c [label="Teste", fillcolor="#a2b4d6", color="grey25", style="filled", URL="dir_c00e824f67c353aa146bef48a600275c.html",tooltip=""];
   }
   dir_8805000e22b5206d9499637ceb5fdf2f [label="Construtiva", fillcolor="#edf0f7", color="red", style="filled", URL="dir_8805000e22b5206d9499637ceb5fdf2f.html",tooltip=""];

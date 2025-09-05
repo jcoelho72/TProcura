@@ -5,7 +5,7 @@ var searchData=
   ['random_2',['Random',['../classTVector.html#a769c6a55b72a463fd2313fbd638c7234',1,'TVector']]],
   ['randomorder_3',['RandomOrder',['../classTVector.html#a528c30196e28424fcac4386b873a6e11',1,'TVector']]],
   ['readme_2emd_4',['README.md',['../README_8md.html',1,'']]],
-  ['realizada_20manualmente_5',['Ação 3 - Ver a solução realizada manualmente',['../teste_aspirador1.html#autotoc_md27',1,'']]],
+  ['realizada_20manualmente_5',['Ação 3 - Ver a solução realizada manualmente',['../teste_aspirador1.html#autotoc_md13',1,'']]],
   ['redefinir_6',['Métodos desnecessários redefinir',['../group__RedefinicaoOpcional.html',1,'']]],
   ['redefinir_20mandatórios_7',['Métodos para redefinir mandatórios',['../group__RedefinicaoMandatoria.html',1,'']]],
   ['redefinir_20sugeridos_8',['Métodos para redefinir, sugeridos',['../group__RedefinicaoSugerida.html',1,'']]],
@@ -17,10 +17,10 @@ var searchData=
   ['repositório_14',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md83',1,'']]],
   ['reset_15',['Reset',['../classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd',1,'TVector']]],
   ['resetparametros_16',['resetparametros',['../group__RedefinicaoMandatoria.html#ga65671e37d7c8da81c6a2143027166dd8',1,'TProcuraConstrutiva::ResetParametros()'],['../classCJogoEmLinha.html#a855791b2e19731340976157991d79293',1,'CJogoEmLinha::ResetParametros()'],['../classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1',1,'TProcuraAdversa::ResetParametros()'],['../classCAspirador.html#a7a0d35ab38ae4c5d9a941ca9b3845e4b',1,'CAspirador::ResetParametros()'],['../classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf',1,'COitoDamas::ResetParametros()'],['../classCParticao.html#a7184defba91cfd68281cf63d0fee98c6',1,'CParticao::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871',1,'TProcura::ResetParametros()'],['../classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94',1,'CTesteTVector::ResetParametros()'],['../classTProcuraMelhorativa.html#ad52a9ac59f07587d70dc696c0648fe62',1,'TProcuraMelhorativa::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3',1,'CPuzzle8::ResetParametros()']]],
-  ['resolver_20manualmente_17',['resolver manualmente',['../teste_8damas.html#autotoc_md16',1,'Ação 2 - Resolver manualmente'],['../teste_particao.html#autotoc_md43',1,'Ação 2 - Resolver manualmente'],['../teste_puzzle8.html#autotoc_md47',1,'Ação 2 - Resolver manualmente']]],
-  ['resolver_20outra_20instância_18',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md32',1,'']]],
+  ['resolver_20manualmente_17',['resolver manualmente',['../teste_8damas.html#autotoc_md2',1,'Ação 2 - Resolver manualmente'],['../teste_particao.html#autotoc_md43',1,'Ação 2 - Resolver manualmente'],['../teste_puzzle8.html#autotoc_md47',1,'Ação 2 - Resolver manualmente']]],
+  ['resolver_20outra_20instância_18',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md18',1,'']]],
   ['resultado_19',['resultado',['../classTProcura.html#a224527229b795a4780e5faa61245a8e0',1,'TProcura']]],
   ['reutilizadoavaliacao_20',['reutilizadoAvaliacao',['../classTProcuraAdversa.html#abfa149e4beec8447ec67c05adeb6fedc',1,'TProcuraAdversa']]],
-  ['ruido_21',['Ação 5 - Torneio Ruido',['../teste_jogo_em_linha.html#autotoc_md12',1,'']]],
+  ['ruido_21',['Ação 5 - Torneio Ruido',['../teste_jogo_em_linha.html#autotoc_md39',1,'']]],
   ['ruidoheur_22',['ruidoHeur',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a2b7583be54d4abb36af6972683134789',1,'TProcuraConstrutiva.h']]]
 ];

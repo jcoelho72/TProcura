@@ -2,7 +2,7 @@
 \hypertarget{teste_artificial}{}\label{teste_artificial}\index{Teste Artificial@{Teste Artificial}}
 \texorpdfstring{$\vert$}{|} \href{teste_tvector.html}{\texttt{ Teste\+TVector}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador1.html}{\texttt{ Aspirador 1}} \texorpdfstring{$\vert$}{|} \href{teste_aspirador2.html}{\texttt{ Aspirador 2}} \texorpdfstring{$\vert$}{|} \href{teste_puzzle8.html}{\texttt{ Puzzle 8}} \texorpdfstring{$\vert$}{|} \href{teste_8damas.html}{\texttt{ 8 Damas}} \texorpdfstring{$\vert$}{|} \href{teste_particao.html}{\texttt{ Partição}} \texorpdfstring{$\vert$}{|} \href{teste_artificial.html}{\texttt{ Artificial}} \texorpdfstring{$\vert$}{|}
 
-Execução de exemplo com base no problema artificial. Selecione o projeto \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, e execute. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_artificial_autotoc_md21}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_artificial_autotoc_md21}
+Execução de exemplo com base no problema artificial. Selecione o projeto \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva}, e execute. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_artificial_autotoc_md7}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_artificial_autotoc_md7}
 
 \begin{DoxyItemize}
 \item \doxylink{teste_artificial_artificia-a1}{Ação 1 -\/ Ver instâncias}
@@ -56,7 +56,7 @@ Estas caracteristicas definem o espaço de estados, e permite avaliar os algorit
 
 \label{teste_artificial_artificia-a1}%
 \Hypertarget{teste_artificial_artificia-a1}%
-\hypertarget{teste_artificial_autotoc_md22}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Ver instâncias}{Ação 1 - Ver instâncias}}\label{teste_artificial_autotoc_md22}
+\hypertarget{teste_artificial_autotoc_md8}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Ver instâncias}{Ação 1 - Ver instâncias}}\label{teste_artificial_autotoc_md8}
 Introduza\+: {\bfseries{1; 1.}}
 
 
@@ -108,7 +108,7 @@ Introduza\+: {\bfseries{2; 1; {\itshape ENTER}.}}
 
 \label{teste_artificial_artificia-a3}%
 \Hypertarget{teste_artificial_artificia-a3}%
-\hypertarget{teste_artificial_autotoc_md23}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Testes Empíricos}{Ação 3 - Testes Empíricos}}\label{teste_artificial_autotoc_md23}
+\hypertarget{teste_artificial_autotoc_md9}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Testes Empíricos}{Ação 3 - Testes Empíricos}}\label{teste_artificial_autotoc_md9}
 Vamos fazer testes empíricos na linha de comandos.
 
 Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos por ação. Vamos portanto comparar resultados da procura em largura, custo uniforme e procura em profundidade iterativa, atendendo a que desconhecemos a profundidade máxima das instâncias. Vamos colocar os algoritmos informados, dado que embora não exista heurística, existe a distância até ao nível do objetivo, e poderá observar-\/se alguma diferença.
@@ -172,7 +172,9 @@ Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos 
 
 Podemos observar aqui que há duas instâncias que não foram resolvidas pelos algoritmos cegos, as instâncias 8 e 10.
 
-No entanto, as procuras informadas são bastante robustas, mesmo com a heurística mínima indicando a informação até ao nível em que pode estar o estado objetivo. Estas 10 instâncias não são portanto complexas para estes algoritmos, tanto o A\texorpdfstring{$\ast$}{*} como o Branch-\/and-\/\+Bound, resolvem todas, e com bons tempos.
+O custo uniforme retorna a solução ótima para as instâncias 4, 5 e 7, enquanto que a procura em largura e profundidade iterativa, retornam soluções piores. Isto acontece dado que o custo das ações não é unitário, e o custo uniforme utiliza essa informação. O tempo é também melhor nestes casos.
+
+As procuras informadas são bastante robustas, mesmo com a heurística mínima indicando a informação até ao nível em que pode estar o estado objetivo. Estas 10 instâncias não são portanto complexas para estes algoritmos, tanto o A\texorpdfstring{$\ast$}{*}, IDA\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} como o Branch-\/and-\/\+Bound, resolvem todas à optimalidade, e com bons tempos. O Melhor Primeiro é o mais eficiente, mas retorna soluções piores.
 
 Assim, podem lidar com objetivos mais raros, profundos, e com ramificação mais elevada, que as utilizadas aqui.
 
