@@ -1142,10 +1142,10 @@ Com esta tabela, pode-se fazer o relatório dinâmico com os resultados do torne
 
 | Rótulos de Linha | 0 | 1 | 2 | 3 | Total Geral |
 |:---:|:---:|:---:|:---:|:---:|
-| 0 | 0 | 0 | 0 | 0 |
-| 1 | 1 | 0 | 0 | 1 |
-| 2 | 1 | 1 | 0 | 2 |
-| 3 | 1 | 1 | 0 | 2 |
+|   | 0 | 0 | 0 | 0 | 0 |
+| 1 |   | 1 | 0 | 0 | 1 |
+| 2 | 1 |   | 1 | 0 | 2 |
+| 3 | 1 | 1 |   | 0 | 2 |
 | Total Geral | 3 | 2 | 0 | 0 | 5 |
 
 O filtro é necessário para que cada jogo conte uma só vez. Cada jogo está em duas linhas.
