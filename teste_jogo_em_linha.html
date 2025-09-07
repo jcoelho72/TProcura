@@ -106,7 +106,7 @@ Sumário</h2>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a5">Ação 5 - Torneio Ruido</a></li>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a6">Ação 6 - Torneio Poda</a></li>
 </ul>
-<div class="fragment"><div class="line">Teste TProcurasAdversas</div>
+<div class="fragment"><div class="line">Teste TProcuraAdversa</div>
 <div class="line">Problema:</div>
 <div class="line">  1 - Jogo do Galo</div>
 <div class="line">  2 - Jogo Em Linha</div>
@@ -117,20 +117,18 @@ Sumário</h2>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no Jogo Em Linha, introduza: <b>2.</b></p>
 <div class="fragment"><div class="line">Jogo Em Linha</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): 0 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0 | P14(Ordenar): 2 | P15(PodaHeuristica): 0 | P16(PodaCega): 0</div>
-<div class="line">[Estatísticas] expansões 0 | gerações 0 | avaliações 0</div>
+<div class="line"> P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
+<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
+<div class="line"> P11(baralhar): 0 | P12(Ordenar): 2 | P13(PodaHeuristica): 0 | P14(PodaCega): 0</div>
 <div class="line">3 em Linha (3x3)</div>
 <div class="line">   A B C</div>
 <div class="line"> 1 . . . 1</div>
 <div class="line"> 2 . . . 2</div>
 <div class="line"> 3 . . . 3</div>
 <div class="line">   A B C</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Solução/Caminho |</div>
-<div class="line">| 4 - Parâmetros  | 5 - Executar | 6 - Configurações   | 7 - Teste</div>
+<div class="line">____________________________________________________________________</div>
+<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
+<div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
 </div><!-- fragment --><p>O primeiro jogo é o Jogo do Galo, em que se tem de fazer 3 em linha, num tabuleiro de 3x3. Vamos ver outras instâncias.</p>
 <p>Introduza:</p><ul>
 <li><b>1; 2.</b> jogo 4 em Linha (4x4)</li>
@@ -252,10 +250,10 @@ Ação 2 - Heurística</h2>
 <p>Vamos começar por verificar se a heurística implementada, tem atenção a aspetos mínimos, como bloquear ameaças de vitória a uma jogada.</p>
 <p>Para tal vamos fazer um jogo com profundidade 1, para que a heurística seja o fator predominante.</p>
 <p>Introduza:</p><ul>
-<li><b>1; 2; 4; 9; 2; <em>ENTER</em>; 5.</b> executa um lance, fica com 3 ameaças a 3 jogadas</li>
-<li><b>5.</b> responde anulando uma das ameaças, e faz 2 ameaças a 3 jogadas</li>
-<li><b>5.</b> uma das ameaças passa a 2 jogadas</li>
-<li><b>5; 5; 5; ....</b> termine o jogo, verificando que todas as ameaças são resondidas</li>
+<li><b>1; 2; 3; 7; 2; <em>ENTER</em>; 6.</b> executa um lance, fica com 3 ameaças a 3 jogadas</li>
+<li><b>6.</b> responde anulando uma das ameaças, e faz 2 ameaças a 3 jogadas</li>
+<li><b>6.</b> uma das ameaças passa a 2 jogadas</li>
+<li><b>6; 6; 6; ....</b> termine o jogo, verificando que todas as ameaças são resondidas</li>
 </ul>
 <div class="fragment"><div class="line">4 em Linha (4x4)</div>
 <div class="line">   A B C D</div>
@@ -278,7 +276,8 @@ Ação 2 - Heurística</h2>
 <div class="line"> 3 . x . . 3</div>
 <div class="line"> 4 x . . . 4</div>
 <div class="line">   A B C D</div>
-</div><!-- fragment --><p>Podemos fazer o mesmo para um tabuleiro maior. Introduza: <b>1; 10; 5.</b> Execute também um jogo, verificando que as ameaças vão sendo respondidas: <b>5; 5; ...</b></p>
+</div><!-- fragment --><p>Este teste é importante para despistar algum erro na heurística.</p>
+<p>Podemos fazer o mesmo para um tabuleiro maior. Introduza: <b>1; 10; 6.</b> O lance inicial vai para o meio do tabuleiro, onde há mais ameaças em simultâneo, ou seja, vai para a jogada que maximiza o valor da heurística. Execute também um jogo, verificando que as ameaças vão sendo respondidas: <b>6; 6; ...</b></p>
 <p>Se conseguir chegar ao final, verifica que há empate:</p>
 <div class="fragment"><div class="line">6 em Linha (12x12)</div>
 <div class="line">   A B C D E F G H I J K L</div>
@@ -299,210 +298,161 @@ Ação 2 - Heurística</h2>
 <p><a class="anchor" id="jel-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md37"></a>
 Ação 3 - Torneio Profundidade</h2>
-<p>Pretendemos agora verificar que em torneio, profundidade maior resulta em força de jogo superior. Assim, como temos muitos jogos, vamos fazer apenas duas profundidades, nível 1 e 2, mas com várias opções.</p>
-<p>Vamos primeiramente construir as configurações em teste. Introduza:</p><ul>
-<li>**4; 1; 2; 9; 2; 14; 0; <em>ENTER</em>; 6; <em>ENTER</em>. &ndash; MiniMax alfa/beta, sem ordenação, nível 2</li>
-<li>**4; 9; 3; <em>ENTER</em>; 6; <em>ENTER</em>. &ndash; MiniMax alfa/beta, sem ordenação, nivel 3</li>
-<li>**4; 9; 2; 14; 1; <em>ENTER</em>; 6; <em>ENTER</em>. &ndash; MiniMax alfa/beta, com ordenação, nível 2</li>
-<li>**4; 9; 3; <em>ENTER</em>; 6; <em>ENTER</em>. &ndash; MiniMax alfa/beta, com ordenação, nivel 3</li>
-<li>**4; 1; 1; 9; 2; 14; 0; <em>ENTER</em>; 6; <em>ENTER</em>. &ndash; MiniMax, sem ordenação, nível 2</li>
-<li>**4; 9; 3; <em>ENTER</em>; 6; <em>ENTER</em>. &ndash; MiniMax, sem ordenação, nível 2</li>
+<p>Nos testes empíricos vamos utilizar a linha de comando, por ser mais simples a identificação do teste a realizar.</p>
+<p>Pretendemos verificar num torneio, que a profundidade maior resulta em força de jogo superior. Assim, como temos muitos jogos, vamos fazer apenas duas profundidades, nível 1 e 2, mas com várias opções.</p>
+<p>Pretendemos também comparar:</p><ul>
+<li>MiniMax alfa/beta vs MiniMax</li>
+<li>Com / sem ordenação</li>
 </ul>
-<p>O resultado das configurações deverá ser este:</p>
-<div class="fragment"><div class="line">Parametros comuns a 6 configurações:</div>
-<div class="line">P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:0 P10:1 P11:100 P12:0</div>
-<div class="line">P13:0 P15:0 P16:0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1:2 P9:2 P14:0</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1:2 P9:3 P14:0</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1:2 P9:2 P14:1</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1:2 P9:3 P14:1</div>
-<div class="line">--- Configuração 5</div>
-<div class="line">P1:1 P9:2 P14:0</div>
-<div class="line">--- Configuração 6 --- atual</div>
-<div class="line">P1:1 P9:3 P14:0</div>
-</div><!-- fragment --><p>Vamos executar o torneio, para todas as instâncias. Introduza: <b>7; 0; 10; 1.</b></p>
-<div class="fragment"><div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|-03-|-04-|-05-|-06-|</div>
-<div class="line"> 1    | -2 |  2 | -3 |  2 | -2 |-13</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 2  2 |    |  2 |  0 |  2 |  2 | 14</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 3  2 | -2 |    | -3 |  2 | -2 |-13</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 4  2 | -2 |  2 |    |  2 | -2 | 11</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 5  2 | -2 |  2 | -3 |    | -2 |-13</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line"> 6  2 |  2 |  2 |  0 |  2 |    | 14</div>
-<div class="line"> |----|----|----|----|----|----|</div>
-<div class="line">Tempos: 0,733s 15,511s 0,706s 8,993s 0,730s 57,606s</div>
-<div class="line">Parametros comuns a 6 configurações:</div>
-<div class="line">P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 10</div>
-<div class="line">P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0 | P10(Repetidos): ignorar</div>
-<div class="line">P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0 | P15(PodaHeuristica): 0</div>
-<div class="line">P16(PodaCega): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P9(Limite): 2 | P14(Ordenar): 0</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P9(Limite): 3 | P14(Ordenar): 0</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P9(Limite): 2 | P14(Ordenar): 1</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P9(Limite): 3 | P14(Ordenar): 1</div>
-<div class="line">--- Configuração 5</div>
-<div class="line">P1(Algoritmo): MiniMax | P9(Limite): 2 | P14(Ordenar): 0</div>
-<div class="line">--- Configuração 6</div>
-<div class="line">P1(Algoritmo): MiniMax | P9(Limite): 3 | P14(Ordenar): 0</div>
-</div><!-- fragment --><p> As configurações de profundidade 3 ganharam as de profundidade 2, sendo clara a vitória, significa que a heurística faz sentido, e utilizada em mais profundidade adiciona informação.</p>
-<p>Entre elas deveriam ser iguais, mas houve uma diferença na configuração 4.</p>
-<p>Em termos de tempos, podemos ver o MiniMax sem cortes com mais tempo total, 57 segundos, seguido do MiniMax com cortes alfa/beta mas sem ordenação, com 15 segundos, e com o melhor tempo o MiniMax com cortes alfa/beta e com ordenação, levando 9 segundos.</p>
-<p>A ordenação leva a jogadas e resultados distintos, mas terá sido um acaso o facto de ter perdido alguns pontos. Um volume de jogos permitiria concluir que não há diferença.</p>
-<p>A utilização de cortes alfa/beta, bem como a ordenação de estados é portanto crítica, motivo pelo qual se justifica o método iterativo.</p>
+<p>Vamos utilizar todas as instâncias, já que a heurística é igual.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 1:10 -R resultadoEmLinha -P P1=1,2 x P12=0,1 x P7=2,3</div>
+<div class="line">...</div>
+<div class="line">Opção: 2</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoEmLinha.csv gravado.</div>
+</div><!-- fragment --><p>Podemos com os resultados fazer um relatório dinâmico em que soma todos os resultados e separa por cada indicador em estudo:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadCenter">Ordenar 0   </th><th class="markdownTableHeadCenter">Ordenar 1   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Nível 2   </td><td class="markdownTableBodyCenter">-36   </td><td class="markdownTableBodyCenter">-36   </td><td class="markdownTableBodyCenter">-72    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">-18   </td><td class="markdownTableBodyCenter">-18   </td><td class="markdownTableBodyCenter">-36    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">-18   </td><td class="markdownTableBodyCenter">-18   </td><td class="markdownTableBodyCenter">-36    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">Nível 3   </td><td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyCenter">72    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyCenter">36    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyCenter">36    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">-4   </td><td class="markdownTableBodyCenter">0   </td></tr>
+</table>
+<p>A grande diferença foi a profundidade, em que o valor 3 (corresponde ao nível 2), foi claramente superior ao valor 2 (correspondente ao nível 1). Significa que a heurística faz sentido, já que adicionando mais profundidade aumenta a força de jogo. A diferença entre cortes alfa/beta e sem cortes, não é observável aqui. O nível de profundidade é curto, pelo que é normal. A ordenação aparenta até a dar um impacto ligeiramente negativo.</p>
+<p>A tabela de torneio é a seguinte:</p>
+<p>| Rótulos de Linha | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | Total Geral | |:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:| | 0 | 2 | 2 | 2 | -2 | -2 | -3 | -3 | -4 | | 1 | 2 | 2 | 2 | -2 | -2 | -3 | -3 | -4 | | 2 | 2 | 2 | 2 | -2 | -2 | -3 | -3 | -4 | | 3 | 2 | 2 | 2 | -2 | -2 | -3 | -3 | -4 | | 4 | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 10 | | 5 | 2 | 2 | 2 | 2 | 2 | 0 | 0 | 10 | | 6 | 2 | 2 | 2 | 2 | -2 | -2 | 0 | 4 | | 7 | 2 | 2 | 2 | 2 | -2 | -2 | 0 | 4 | | Total Geral | 14 | 14 | 14 | 14 | -10 | -10 | -12 | -12 | 12 |</p>
+<p>As configurações de cada jogador:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Jogador   </th><th class="markdownTableHeadCenter">P1(Algoritmo)   </th><th class="markdownTableHeadCenter">P2(Debug)   </th><th class="markdownTableHeadCenter">P3(Seed)   </th><th class="markdownTableHeadCenter">P4(Tempo)   </th><th class="markdownTableHeadCenter">P5(Iterações)   </th><th class="markdownTableHeadCenter">P6(Ver)   </th><th class="markdownTableHeadCenter">P7(Limite)   </th><th class="markdownTableHeadCenter">P8(Repetidos)   </th><th class="markdownTableHeadCenter">P9(pesoAStar)   </th><th class="markdownTableHeadCenter">P10(ruido)   </th><th class="markdownTableHeadCenter">P11(baralhar)   </th><th class="markdownTableHeadCenter">P12(Ordenar)   </th><th class="markdownTableHeadCenter">P13(PodaHeuristica)   </th><th class="markdownTableHeadCenter">P14(PodaCega)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td></tr>
+</table>
+<p>Podemos ver uma tabela de resultados de cada jogador, com os parâmetros que variam:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P1(Algoritmo)   </th><th class="markdownTableHeadCenter">P7(Limite)   </th><th class="markdownTableHeadCenter">P12(Ordenar)   </th><th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadCenter">Brancas   </th><th class="markdownTableHeadCenter">Pretas   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-4   </td><td class="markdownTableBodyCenter">-14   </td><td class="markdownTableBodyCenter">-18    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-4   </td><td class="markdownTableBodyCenter">-14   </td><td class="markdownTableBodyCenter">-18    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">-4   </td><td class="markdownTableBodyCenter">-14   </td><td class="markdownTableBodyCenter">-18    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">-4   </td><td class="markdownTableBodyCenter">-14   </td><td class="markdownTableBodyCenter">-18    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">20    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">20    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyCenter">16    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyCenter">16   </td></tr>
+</table>
+<p>| Total Geral | | | 12 | -12 | 0 |</p>
+<p>O jogador 4 e 5, com o nível máximo no teste e sem ordenar, aparenta ser superior. Como a profundidade é fixa, é natural que os cortes alfa/beta e ordenação não alterem o resultado de forma significativa. Reduzem o tempo, mas não alteram o resultado.</p>
 <p><a class="anchor" id="jel-a4"></a></p>
 <h2><a class="anchor" id="autotoc_md38"></a>
 Ação 4 - Torneio Iterativo</h2>
-<p>Na ação anterior, após confirmação que quanto maior a profundidade melhor, podemos comparar procuras com a mesma profundidade, mas diferentes opções. Sabemos que o corte alfa/beta é benéfico neste jogos, bem como a ordenação dos sucessores, porque reduz o tempo, mantendo a árvore de procura com a mesma qualidade.</p>
-<p>Em termos práticos, o tempo é um fator restritivo, e ideal para poder comparar algoritmos. Tendo tempo igual, pretende-se saber qual o mais forte. Os métodos da ação 3 não permitem a paragem por tempo, tem de se definir a profundidade máxima.</p>
+<p>Na ação anterior, após confirmação que quanto maior a profundidade melhor, podemos comparar procuras com a mesma profundidade, mas diferentes opções.</p>
+<p>Sabemos que o corte alfa/beta é benéfico neste jogos, bem como a ordenação dos sucessores, porque reduz o tempo, mantendo a árvore de procura com a mesma qualidade.</p>
+<p>Em termos práticos, o tempo é um fator restritivo, e ideal para poder comparar algoritmos. Tendo tempo igual, pretende-se saber qual o mais forte. Os métodos da ação 3 não têm paragem por tempo, tem de se definir a profundidade máxima.</p>
 <p>O método iterativo faz procuras com a profundidade iterativamente a ser aumentada. Esta estratégia tem a vantagem de ter sempre um movemento pronto a jogar quando o tempo acaba. Por outro lado, utiliza o tempo existente, se der para explorar mais um nível, esse é explorado.</p>
 <p>Vamos nesta ação, com o torneio iterativo, comparar métodos em que se dá a todos o mesmo tempo para jogar.</p>
-<p>Temos mais uma opção na ordennação, que é o valor 2 (omissão). Este valor, para além de ordenar os sucessores, guarda em memória cada estado, e resultado de análises anteriores. Quando o estado ocorre novamnete, se estiver em memória, o seu valor é utilizado em vez de ser executada a heurítica ou uma procura e determinada profundidade. Para tal é guardada alguma informação sobre o estado de modo a sabermos se podemos utilizar o valor assim que exista possibilidade de reutilização. Esta opção tem naturalmente mais impacto na procura iterativa, em que os estados iniciais são re-expandidos, mas pode ter influencia mesmo sem ser na procura iterativa, caso o mesmo estado apareça por ordens distintas de movimentos.</p>
-<p>Vamos utilizar 1 segundo por lance.</p>
-<p>Introduza:</p><ul>
-<li><b>4; 1; 2; 9; 0; 5; 1; 14; 0; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax alfa/beta, sem ordenação, 1s</li>
-<li><b>4; 14; 1; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax alfa/beta, ordenação 1, 1s</li>
-<li><b>4; 14; 2; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax alfa/beta, ordenação 2, 1s</li>
-<li><b>4; 1; 1; 14; 0; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax, sem ordenação, 1s</li>
-<li><b>4; 14; 2; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax, ordenação 2, 1s</li>
-</ul>
-<p>O resultado deverá ser o seguinte:</p>
-<div class="fragment"><div class="line">Parametros comuns a 5 configurações:</div>
-<div class="line">P2:0 P3:4 P4:1 P5:10 P6:0 P7:0 P8:0 P9:0 P10:1 P11:100</div>
-<div class="line">P12:0 P13:0 P15:0 P16:0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1:2 P14:0</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1:2 P14:1</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1:2 P14:2</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1:1 P14:0</div>
-<div class="line">--- Configuração 5 --- atual</div>
-<div class="line">P1:1 P14:2</div>
-</div><!-- fragment --><p> Vamos agora executar o torneio, mas apenas numa instância pequena, de modo a que os jogos sejam mais rápidos. Este teste ao utilizar 1 segundo por lance, significa que um jogo com 60 lances, leve 1 minuto. Introduza: <b>7; 0; 3; 3.</b></p>
-<div class="fragment"><div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|-03-|-04-|-05-|</div>
-<div class="line"> 1    |  0 |  0 |  1 |  1 |  1</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 2  0 |    |  1 |  0 |  0 |  1</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 3  1 |  0 |    |  0 |  0 |  0</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 4  0 |  0 |  0 |    |  0 | -1</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 5  0 |  0 |  0 |  0 |    | -1</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line">Tempos: 55,079s 45,969s 46,600s 63,583s 52,842s</div>
-<div class="line">Parametros comuns a 5 configurações:</div>
-<div class="line">P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 1</div>
-<div class="line">P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0 | P9(Limite): 0</div>
-<div class="line">P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0</div>
-<div class="line">P15(PodaHeuristica): 0 | P16(PodaCega): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P14(Ordenar): 0</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P14(Ordenar): 1</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P14(Ordenar): 2</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1(Algoritmo): MiniMax | P14(Ordenar): 0</div>
-<div class="line">--- Configuração 5</div>
-<div class="line">P1(Algoritmo): MiniMax | P14(Ordenar): 2</div>
-</div><!-- fragment --><p> Houve um ligeiro resutlado positivo para as duas primeiras configurações. Não se pode concluir que neste jogo, um método seja muito melhor que outro.</p>
-<p>Vamos agora utilizar uma instância maior, mas com a gravidade, em que os sucessores são mais limitados. Introduza: <b>7; 0; 5; 5.</b></p>
-<div class="fragment"><div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|-03-|-04-|-05-|</div>
-<div class="line"> 1    |  1 |  1 |  1 | -1 |  4</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 2 -1 |    | -1 |  1 |  1 |  2</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 3  1 | -1 |    |  1 |  1 |  2</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 4 -1 | -1 | -1 |    |  1 | -4</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line"> 5 -1 | -1 |  1 | -1 |    | -4</div>
-<div class="line"> |----|----|----|----|----|</div>
-<div class="line">Tempos: 159,921s 154,533s 119,257s 156,182s 155,026s</div>
-<div class="line">Parametros comuns a 5 configurações:</div>
-<div class="line">P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1 | P5(Tempo): 1</div>
-<div class="line">P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0 | P9(Limite): 0</div>
-<div class="line">P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0</div>
-<div class="line">P15(PodaHeuristica): 0 | P16(PodaCega): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P14(Ordenar): 0</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P14(Ordenar): 1</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P14(Ordenar): 2</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P1(Algoritmo): MiniMax | P14(Ordenar): 0</div>
-<div class="line">--- Configuração 5</div>
-<div class="line">P1(Algoritmo): MiniMax | P14(Ordenar): 2</div>
-</div><!-- fragment --><p>Este jogo aparentemente não admite empates, sendo clara a vantagem dos cortes alfa/beta sobre o MiniMax puro. Já a componente de ordenação, não é visivel melhoria, sendo até melhor a versão sem ordenação, mas tal pode ser devido a uma questão de sorte na ordenação dos lances.</p>
-<p>Já tinhamos dito que seria sorte numa situação anterior, agora novamente sorte.</p>
-<p>É tempo de tirar a limpo esta situação. Vamos fazer um último torneio com as duas melhores configurações, neste problema, mas com a ordem de sucessores baralhada de início. Vamos fazer vários jogos, com sementes distintas, e assim confirmar se não ordenar é uma vantagem neste jogo.</p>
-<p>Introduza:</p><ul>
-<li><b>4; 1; 2; 9; 0; 5; 1; 14; 2; 13; 1; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax alfa/beta, ordenação 2, 1s</li>
-<li><b>4; 14; 0; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax alfa/beta, sem ordenação, 1s</li>
-<li><b>4; 14; 2; 4; 2; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax alfa/beta, ordenação 2, 1s, seed 2</li>
-<li><b>4; 14; 0; <em>ENTER</em>; 6; <em>ENTER</em>.</b> &ndash; Iterativo, MiniMax alfa/beta, sem ordenação, 1s, seed 2</li>
-</ul>
-<p>O resultado deverá ser:</p>
-<div class="fragment"><div class="line">Parametros comuns a 4 configurações:</div>
-<div class="line">P1:2 P2:0 P3:4 P5:1 P6:0 P7:0 P8:0 P9:0 P10:1 P11:100</div>
-<div class="line">P12:0 P13:1 P15:0 P16:0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P4:1 P14:2</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P4:1 P14:0</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P4:2 P14:2</div>
-<div class="line">--- Configuração 4 --- atual</div>
-<div class="line">P4:2 P14:0</div>
-</div><!-- fragment --><p>Vamos agora executar novamente, utilizando a instância 4, ligeiramente mais reduzida que a 5, mas com características idênticas. Introduza: <b>7; 0; 4; 4.</b></p>
-<div class="fragment"><div class="line">Torneio (#instâncias melhores):</div>
-<div class="line"> |-01-|-02-|-03-|-04-|</div>
-<div class="line"> 1    | -1 |  1 | -1 | -1</div>
-<div class="line"> |----|----|----|----|</div>
-<div class="line"> 2 -1 |    | -1 |  1 |  0</div>
-<div class="line"> |----|----|----|----|</div>
-<div class="line"> 3  0 |  1 |    | -1 |  1</div>
-<div class="line"> |----|----|----|----|</div>
-<div class="line"> 4  1 | -1 | -1 |    |  0</div>
-<div class="line"> |----|----|----|----|</div>
-<div class="line">Tempos: 72,835s 77,357s 67,841s 77,481s</div>
-<div class="line">Parametros comuns a 4 configurações:</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 4 | P5(Tempo): 1</div>
-<div class="line">P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0 | P9(Limite): 0</div>
-<div class="line">P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 1</div>
-<div class="line">P15(PodaHeuristica): 0 | P16(PodaCega): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P4(Seed): 1 | P14(Ordenar): 2</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P4(Seed): 1 | P14(Ordenar): 0</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P4(Seed): 2 | P14(Ordenar): 2</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P4(Seed): 2 | P14(Ordenar): 0</div>
-</div><!-- fragment --><p>Pelos resultados deste torneio, podemos ver que ordenar é melhor com um valor de seed, e é o pior com outro valor de seed. Portanto, não há uma diferença demasiado forte.</p>
-<p>Pudemos observar um empate, pelo que, pelo menos esta dimensão de tabuleiros, aceita empates na prática. Por outro lado, há vitórias de brancas e pretas, pelo que o jogo está equilibrado.</p>
+<p>Temos mais uma opção na ordennação, que é o valor 2 (omissão). Este valor, para além de ordenar os sucessores, guarda em memória cada estado, e resultado de análises anteriores. Quando o estado ocorre novamnete, se estiver em memória, o seu valor é utilizado em vez de ser executada a heurítica ou uma procura e determinada profundidade. Para tal é guardada alguma informação sobre o estado de modo a sabermos se podemos utilizar o valor assim que exista possibilidade de reutilização. Esta opção tem naturalmente mais impacto na procura iterativa, em que os estados iniciais são re-expandidos, mas pode ter influencia mesmo sem ser na procura iterativa, caso o mesmo estado apareça várias vezes por ordens distintas de movimentos.</p>
+<p>Vamos utilizar 1 segundo por lance. O valor de omissão de P7 é 0, mas vamos colocar P7=0 para realçar que estamos na procura iterativa. Utilizamos apenas a instãncia 3 para que o torneio não leve muito tempo, já que cada lance levará 1 segundo.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 3 -R resultadoIterativo -P P4=1 P7=0 P1=1,2 x P12=0:2</div>
+<div class="line">...</div>
+<div class="line">Opção: 2</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoIterativo.csv gravado.</div>
+</div><!-- fragment --><p>| P1(Algoritmo) | P12(Ordenar) | Rótulos de Linha | 0 | 1 | 2 | 3 | 4 | 5 | Total Geral | |:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:| | 1:MiniMax | 0 | |0 | 0 | 0 | 0 | 0 | 0 | 0 | | 2:MiniMax alfa/beta | 0 | 1 | | 1 | 1 | 0 | 1 | 0 | 3 | | 1:MiniMax | 1 | 2 | 0 | 0 | | 0 | 0 | 1 | 1 | | 2:MiniMax alfa/beta | 1 | 3 | 0 | 0 | 0 | | 0 | 1 | 1 | | 1:MiniMax | 2 | 4 | 0 | 0 | 0 | 0 | | 0 | 0 | | 2:MiniMax alfa/beta | 2 | 5 | 0 | 0 | 0 | 0 | 0 | | 0 | | Total Geral | | 1 | 0 | 1 | 0 | 1 | 2 | 5 |</p>
+<p>Estes resultados apontam para vantagem do MiniMax com cortes alfa/beta, sem ordenação.</p>
+<p>Os resultados por jogador:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P1(Algoritmo)   </th><th class="markdownTableHeadCenter">P12(Ordenar)   </th><th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadCenter">Brancas   </th><th class="markdownTableHeadCenter">Pretas   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">3    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-2   </td><td class="markdownTableBodyCenter">-2   </td></tr>
+</table>
+<p>| Total Geral | 5 | -5 | 0 |</p>
+<p>Esta tabela confirma a tabela anterior, e permite observar que nesta instância as brancas ganham com maior facilidade.</p>
+<p>Vamos agora utilizar uma instância maior, mas com a gravidade, a instância 5, em que os sucessores são mais limitados.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 5 -R resultadoIterativo5 -P P4=1 P7=0 P1=1,2 x P12=0:2</div>
+<div class="line">...</div>
+<div class="line">Opção: 2</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoIterativo5.csv gravado.</div>
+</div><!-- fragment --><p>Resultados por jogador:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P1(Algoritmo)   </th><th class="markdownTableHeadCenter">P12(Ordenar)   </th><th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadCenter">Brancas   </th><th class="markdownTableHeadCenter">Pretas   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">-2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">-3   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">4    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">-3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-2   </td></tr>
+</table>
+<p>| Total Geral | | -12 | 12 | 0 |</p>
+<p>Podemos observar que o MiniMax com ordenação 2 é o algoritmo mais forte neste jogo. O jogo aparenta não permitir empates, e as pretas têm mais facilidade em ganhar.</p>
+<p>O MiniMax ao utilizar a ordenação 2, memoriza mais estados e pode assim ter maior vantagem que o ganho pelos cortes do alfa/beta. Ao utilizar o alfa/beta, a informação memorizada tem de ter informação se esteve um corte alfa ou beta ativo, para utilizar devidamente o valor registado, como um upper bound ou lower bound. Assim, o ganho da memorização perde-se.</p>
+<p>Estes resultados poderiam ser mais evidentes com mais tempo por jogada, o que permitiria maiores profundidades e maiores ganhos em algumas configurações. Por outro lado, para maior precisão, tem de se utilizar aleatoriedade e ruído, que é o que iremos fazer na próxima ação.</p>
 <p><a class="anchor" id="jel-a5"></a></p>
 <h2><a class="anchor" id="autotoc_md39"></a>
 Ação 5 - Torneio Ruido</h2>
-<p>... (estudar o efeito do ruído)</p>
+<p>Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra, utilizando vários jogos, com diferentes sementes aleatórias.</p>
+<p>Pretendemos saber entre o MiniMax com e sem cortes alfa/beta, qual é o melhor, se ordenarmos com 2 (guarda estados analisados), e utilizarmos a procura iterativa.</p>
+<p>No entanto, se executarmos um teste a variar apenas a semente, como a semente aleatória apenas tem efeito se forem gerados números aleatórios, iriamos apenas gerar jogadores iguais.</p>
+<p>Assim, vamos primeiramente estudar o uso do ruído na heurística, com o efeito de variar a jogada.</p>
+<p>O ruído é especificado no parâmetro 10, e o seu valor pode ser positivo ou negativo. Se for negativo pode oscilar positiva ou negativamente, se positivo será sempre um ruído positivo. Vamos variar entre valores negativos, já que pretendemos que o ruído seja simétrico. Esperamos que ruído baixo, não altere a força de jogo, mas ruído alto degrade consideravelmente a força de jogo.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 5 -R resultadoRuido -P P4=1 P7=0 P12=0 P1=1 P10=0,-1,-2,-5,-10 </div>
+<div class="line">...</div>
+<div class="line">Opção: 2</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoRuido.csv gravado.</div>
+</div><!-- fragment --><p>... (estudar o efeito do ruído)</p>
 <p><a class="anchor" id="jel-a6"></a></p>
 <h2><a class="anchor" id="autotoc_md40"></a>
 Ação 6 - Torneio Poda</h2>
