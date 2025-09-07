@@ -56,7 +56,9 @@ Collaboration diagram for TProcura\+:
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a73463e33b889e6053ee32220e0514a2c}{Iteracoes\+Excedido}} ()
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_aea8aa78e35d28d0beb438e24fc7ee086}{Parametro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a0e9e692f29af8a5d5279a8647c800437}{Parametro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \& \mbox{\hyperlink{classTProcura_ab0442a86569fcc589eb3dee11ce33603}{Parametro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -1011,11 +1013,21 @@ Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00898}{898}} of file \
 
 Here is the caller graph for this function\+:
 % FIG 57
-\Hypertarget{classTProcura_aea8aa78e35d28d0beb438e24fc7ee086}\label{classTProcura_aea8aa78e35d28d0beb438e24fc7ee086} 
+\Hypertarget{classTProcura_ab0442a86569fcc589eb3dee11ce33603}\label{classTProcura_ab0442a86569fcc589eb3dee11ce33603} 
 \index{TProcura@{TProcura}!Parametro@{Parametro}}
 \index{Parametro@{Parametro}!TProcura@{TProcura}}
-\doxysubsubsection{\texorpdfstring{Parametro()}{Parametro()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} TProcura\+::\+Parametro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{Parametro()}{Parametro()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \& TProcura\+::\+Parametro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00480}{480}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_a0e9e692f29af8a5d5279a8647c800437}\label{classTProcura_a0e9e692f29af8a5d5279a8647c800437} 
+\index{TProcura@{TProcura}!Parametro@{Parametro}}
+\index{Parametro@{Parametro}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{Parametro()}{Parametro()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} TProcura\+::\+Parametro (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}}}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -1274,14 +1286,14 @@ Redefinição não é necessária
 \end{DoxyNote}
 
 \begin{DoxyParams}{Parameters}
-{\em inicio} & -\/ ID da primeira instância no teste (ou -\/1 para a primeira) \\
+{\em instancias} & -\/ IDs das instâncias a serem utilizadas \\
 \hline
-{\em fim} & -\/ ID da última instância no teste (ou -\/1 para a última) \\
+{\em mostrar\+Solucoes} & -\/ se true, mostra a solução após cada execução, c.\+c. indica apenas a instância em processamento. \\
 \hline
-{\em mostrar\+Solucoes} & -\/ se true, mostra a solução após cada execução, c.\+c. indica apenas a instância em processamento.\\
+{\em ficheiro} & -\/ nome do ficheiro com os resultados, caso exista\\
 \hline
 \end{DoxyParams}
-Esta função é chamada de \doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()} para executar testes empíricos. A função apresenta-\/se como método virtual, atendendo a que será redefinida nas procuras adversas. É genérica e não se prevê outras situações que seja necessário redefini-\/la.
+Esta função é chamada de \doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()} para executar testes empíricos. A função apresenta-\/se como método virtual, atendendo a que é redefinida nas procuras adversas. É genérica e não se prevê outras situações que seja necessário redefini-\/la.
 
 \begin{DoxyNote}{Note}
 Pode ser chamada diretamente do código, e nesse caso é necessário que a variável estática \textquotesingle{}configuracoes\textquotesingle{} tenha as configurações em teste. Se {\ttfamily configuracoes} estiver vazia, o teste empírico será executado apenas com a configuração atual, avaliando seu desempenho isoladamente, sem comparação com outras configurações.
@@ -1289,6 +1301,10 @@ Pode ser chamada diretamente do código, e nesse caso é necessário que a variável
 \begin{DoxySeeAlso}{See also}
 \doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()} 
 \end{DoxySeeAlso}
+
+
+Reimplemented in \mbox{\hyperlink{classTProcuraAdversa_a4b4a40d5c7e79fba24bc562d6e934fd8}{TProcura\+Adversa}}.
+
 
 
 Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00509}{509}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.

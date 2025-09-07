@@ -45,5 +45,5 @@ digraph "TVector::First"
   Node16 -> Node7 [id="edge44_Node000016_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 -> Node15 [id="edge45_Node000016_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node18 [id="edge46_Node000005_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ae849ba1f915dc5e0875faa281ba4bdbb",tooltip=" "];
+  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
 }

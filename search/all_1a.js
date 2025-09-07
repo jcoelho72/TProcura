@@ -11,7 +11,7 @@ var searchData=
   ['redefinir_20sugeridos_8',['Métodos para redefinir, sugeridos',['../group__RedefinicaoSugerida.html',1,'']]],
   ['registo_9',['registo',['../classTProcura.html#ab6d1ce659d922b9d30550220e3028129',1,'TProcura::Registo(TResultado &amp;resultado, int id)'],['../classTProcura.html#a2a99102cba3846baa3597b4ab462d620',1,'TProcura::Registo(TResultado &amp;resultado, int id, int valor)']]],
   ['regular_10',['regular',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951ba040a9ec6d2966f099fd3214b8ac4fef3',1,'JogoEmLinha.h']]],
-  ['relatoriocsv_11',['RelatorioCSV',['../classTProcura.html#abda2c4f1066721e5c0e06c5ea22dce36',1,'TProcura']]],
+  ['relatoriocsv_11',['relatoriocsv',['../classTProcuraAdversa.html#a4f84c15e5b70fcbb66d55f1bca1ee023',1,'TProcuraAdversa::RelatorioCSV()'],['../classTProcura.html#abda2c4f1066721e5c0e06c5ea22dce36',1,'TProcura::RelatorioCSV()']]],
   ['remove_12',['Remove',['../classTVector.html#a85673895d405c09b5b9155f78b67d71b',1,'TVector']]],
   ['replace_13',['Replace',['../classTVector.html#a35217d9779ea1c7608dac2ffd677c30b',1,'TVector']]],
   ['repositório_14',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md83',1,'']]],

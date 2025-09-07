@@ -75,6 +75,7 @@ var NAVTREEINDEX0 =
 "Puzzle8_8h.html":[3,0,1,0,9],
 "Puzzle8_8h_source.html":[3,0,1,0,9],
 "TProcuraAdversa_8cpp.html":[3,0,0,1],
+"TProcuraAdversa_8cpp.html#a6b20d41d6252e9871430c242cb1a56e7":[3,0,0,1,0],
 "TProcuraAdversa_8cpp_source.html":[3,0,0,1],
 "TProcuraAdversa_8h.html":[3,0,0,2],
 "TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fd":[3,0,0,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classCOitoDamas.html":[2,0,4],
 "classCOitoDamas.html#a0e4d6e25bdbccb703b39604d286e62bf":[2,0,4,6],
 "classCOitoDamas.html#a0fb443165d257ac17fc8cf5bc870404d":[2,0,4,25],
-"classCOitoDamas.html#a1d576da54373b82c1eb9c3a34c056079":[2,0,4,9],
-"classCOitoDamas.html#a220a570b326344f1bce4f4cb4cde2ed9":[2,0,4,4]
+"classCOitoDamas.html#a1d576da54373b82c1eb9c3a34c056079":[2,0,4,9]
 };

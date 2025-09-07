@@ -36,5 +36,5 @@ digraph "CJogoEmLinha::Sucessores"
   Node12 -> Node15 [id="edge31_Node000012_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TProcuraConstrutiva\l::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057",tooltip=" "];
   Node11 -> Node16 [id="edge32_Node000011_Node000016",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aea8aa78e35d28d0beb438e24fc7ee086",tooltip=" "];
+  Node16 [id="Node000016",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
 }

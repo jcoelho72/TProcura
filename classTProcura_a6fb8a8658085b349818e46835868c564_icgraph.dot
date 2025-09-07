@@ -46,7 +46,7 @@ digraph "TProcura::MostraParametros"
   Node15 -> Node6 [id="edge51_Node000015_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node12 [id="edge52_Node000015_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node17 [id="edge53_Node000013_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ae849ba1f915dc5e0875faa281ba4bdbb",tooltip=" "];
+  Node17 [id="Node000017",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node1 -> Node16 [id="edge54_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge55_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node12 [id="edge56_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];

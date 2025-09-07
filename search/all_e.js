@@ -34,7 +34,7 @@ var searchData=
   ['espaco_31',['espaco',['../classCProblemaArtificial.html#a93aab3cc42f3e85ad39c6d7e206707da',1,'CProblemaArtificial']]],
   ['espacosramo_32',['espacosRamo',['../group__VariaveisGlobais.html#ga95c939d457c63d60ff3b1a0eb9e47da4',1,'TProcuraConstrutiva']]],
   ['esquerda_33',['esquerda',['../classCParticao.html#a5a3b0c754776ffb416c8d0e3833ef4ec',1,'CParticao']]],
-  ['estado_34',['estado',['../structSIndice.html#a71d6cd112fe2f89c710603ad37ded5bf',1,'SIndice::estado'],['../classCListaNo.html#a41eb61b9b842b0052c119fe44b789ba8',1,'CListaNo::Estado()'],['../group__VariaveisEstado.html',1,'Variáveis de estado']]],
+  ['estado_34',['estado',['../classCListaNo.html#a41eb61b9b842b0052c119fe44b789ba8',1,'CListaNo::Estado()'],['../structSIndice.html#a71d6cd112fe2f89c710603ad37ded5bf',1,'SIndice::estado'],['../group__VariaveisEstado.html',1,'Variáveis de estado']]],
   ['estadocodht_35',['estadoCodHT',['../classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999',1,'TProcuraConstrutiva']]],
   ['estados_36',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md32',1,'']]],
   ['estadosrepetidos_37',['estadosRepetidos',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a4a2e0375ee9ae11db3eb5779886ff9e5',1,'TProcuraConstrutiva.h']]],

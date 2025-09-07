@@ -28,7 +28,7 @@ digraph "CTesteTVector::ExecutaAlgoritmo"
   Node10 [id="Node000010",label="CTesteTVector::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#ac0189d925fb44fbc3b2d0aad7660f528",tooltip="Inicializa dados e estado para teste."];
   Node10 -> Node7 [id="edge42_Node000010_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node10 -> Node11 [id="edge43_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aea8aa78e35d28d0beb438e24fc7ee086",tooltip=" "];
+  Node11 [id="Node000011",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
   Node10 -> Node12 [id="edge44_Node000010_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
   Node12 -> Node13 [id="edge45_Node000012_Node000013",color="steelblue1",style="solid",tooltip=" "];

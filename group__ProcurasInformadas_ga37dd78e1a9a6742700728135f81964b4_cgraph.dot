@@ -18,7 +18,7 @@ digraph "TProcuraConstrutiva::AStar"
   Node6 [id="Node000006",label="TProcuraConstrutiva\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df",tooltip=" "];
   Node5 -> Node5 [id="edge17_Node000005_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node7 [id="edge18_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aea8aa78e35d28d0beb438e24fc7ee086",tooltip=" "];
+  Node7 [id="Node000007",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
   Node1 -> Node8 [id="edge19_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TProcura::Parar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7952e187e1b0ae0ca52edab157223179",tooltip="Verifica se a procura deve ser interrompida."];
   Node8 -> Node9 [id="edge20_Node000008_Node000009",color="steelblue1",style="solid",tooltip=" "];

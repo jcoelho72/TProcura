@@ -29,5 +29,5 @@ digraph "CJogoDoGalo::Sucessores"
   Node9 -> Node12 [id="edge23_Node000009_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TProcuraConstrutiva\l::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057",tooltip=" "];
   Node8 -> Node13 [id="edge24_Node000008_Node000013",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aea8aa78e35d28d0beb438e24fc7ee086",tooltip=" "];
+  Node13 [id="Node000013",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
 }

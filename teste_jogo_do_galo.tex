@@ -974,22 +974,36 @@ Temos também de ter o cuidado de desligar a utilização das hashtables, para o
 
 Introduza\+:
 \begin{DoxyItemize}
-\item {\bfseries{1; 7; P7=20 P12=0 P7=7,5,3; {\itshape ENTER}.}}
+\item {\bfseries{1; 7; P1=1 P12=0 P7=20,7,5,3; -\/1; {\itshape ENTER}.}}
 \end{DoxyItemize}
+
+Apagamos a configuração 1 dado que tinha o valor de omissão P7=0.
 
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{...}
-\DoxyCodeLine{Comando:\ P7=20\ P12=0\ P7=7,5,3}
+\DoxyCodeLine{Comando:\ P1=1\ P12=0\ P7=20,7,5,3}
 \DoxyCodeLine{}
 \DoxyCodeLine{Parâmetros\ comuns:}
-\DoxyCodeLine{\ P1=2\ P2=0\ P3=1\ P4=10\ P5=0\ P6=4\ P8=1\ P9=100\ P10=0\ P11=0}
+\DoxyCodeLine{\ P1=1\ P2=0\ P3=1\ P4=10\ P5=0\ P6=4\ P8=1\ P9=100\ P10=0\ P11=0}
 \DoxyCodeLine{\ P12=0\ P13=0\ P14=0}
-\DoxyCodeLine{-\/\ Configurações\ geradas\ (total:\ 4)\ -\/}
-\DoxyCodeLine{\ P7=20\ [1]\ -\/-\/-\/\ atual}
+\DoxyCodeLine{-\/\ Configurações\ geradas\ (total:\ 5)\ -\/}
+\DoxyCodeLine{\ P7=0\ [1]\ -\/-\/-\/\ atual}
 \DoxyCodeLine{\ P7=3\ [2]}
 \DoxyCodeLine{\ P7=5\ [3]}
 \DoxyCodeLine{\ P7=7\ [4]}
+\DoxyCodeLine{\ P7=20\ [5]}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Comando:\ -\/1}
+\DoxyCodeLine{}
+\DoxyCodeLine{Parâmetros\ comuns:}
+\DoxyCodeLine{\ P1=1\ P2=0\ P3=1\ P4=10\ P5=0\ P6=4\ P8=1\ P9=100\ P10=0\ P11=0}
+\DoxyCodeLine{\ P12=0\ P13=0\ P14=0}
+\DoxyCodeLine{-\/\ Configurações\ geradas\ (total:\ 4)\ -\/}
+\DoxyCodeLine{\ P7=3\ [1]\ -\/-\/-\/\ atual}
+\DoxyCodeLine{\ P7=5\ [2]}
+\DoxyCodeLine{\ P7=7\ [3]}
+\DoxyCodeLine{\ P7=20\ [4]}
 \DoxyCodeLine{\ ...}
 
 \end{DoxyCode}
@@ -1001,81 +1015,200 @@ Podemos ainda ver as soluções, que aqui equivale a observar os jogos. Como sã
 
 Introduza\+: {\bfseries{8; 1; {\itshape ENTER}; 0.}}
 
-\begin{quote}
-\begin{quote}
-\begin{quote}
-\begin{quote}
-chamada a função de teste de \doxylink{classTProcuraConstrutiva}{TProcura\+Construtiva} e não \doxylink{classTProcuraAdversa}{TProcura\+Adversa} testar também a linha de comando \end{quote}
-\end{quote}
-\end{quote}
-\end{quote}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Match\ 1\ vs\ 2:}
 \DoxyCodeLine{\ Instância\ 1:\ \ Empate}
 \DoxyCodeLine{Match\ 1\ vs\ 3:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
+\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
 \DoxyCodeLine{Match\ 1\ vs\ 4:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
+\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
 \DoxyCodeLine{Match\ 2\ vs\ 1:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
+\DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
 \DoxyCodeLine{Match\ 2\ vs\ 3:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
+\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
 \DoxyCodeLine{Match\ 2\ vs\ 4:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
+\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
 \DoxyCodeLine{Match\ 3\ vs\ 1:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
-\DoxyCodeLine{Match\ 3\ vs\ 2:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
-\DoxyCodeLine{Match\ 3\ vs\ 4:}
 \DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
+\DoxyCodeLine{Match\ 3\ vs\ 2:}
+\DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
+\DoxyCodeLine{Match\ 3\ vs\ 4:}
+\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
 \DoxyCodeLine{Match\ 4\ vs\ 1:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
+\DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
 \DoxyCodeLine{Match\ 4\ vs\ 2:}
-\DoxyCodeLine{\ Instância\ 1:\ \ Empate}
+\DoxyCodeLine{\ Instância\ 1:\ \ Vitória\ Branca}
 \DoxyCodeLine{Match\ 4\ vs\ 3:}
 \DoxyCodeLine{\ Instância\ 1:\ \ Empate}
 \DoxyCodeLine{Torneio\ (\#instâncias\ melhores):}
 \DoxyCodeLine{\ |-\/01-\/|-\/02-\/|-\/03-\/|-\/04-\/|}
-\DoxyCodeLine{\ 1\ \ \ \ |\ \ 0\ |\ \ 1\ |\ \ 1\ |\ \ 2}
+\DoxyCodeLine{\ 1\ \ \ \ |\ \ 0\ |\ \ 0\ |\ \ 0\ |\ -\/3}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 2\ \ 0\ |\ \ \ \ |\ \ 1\ |\ \ 1\ |\ \ 2}
+\DoxyCodeLine{\ 2\ \ 1\ |\ \ \ \ |\ \ 0\ |\ \ 0\ |\ -\/1}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 3\ \ 0\ |\ \ 0\ |\ \ \ \ |\ \ 1\ |\ -\/1}
+\DoxyCodeLine{\ 3\ \ 1\ |\ \ 1\ |\ \ \ \ |\ \ 0\ |\ \ 2}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{\ 4\ \ 0\ |\ \ 0\ |\ \ 0\ |\ \ \ \ |\ -\/3}
+\DoxyCodeLine{\ 4\ \ 1\ |\ \ 1\ |\ \ 0\ |\ \ \ \ |\ \ 2}
 \DoxyCodeLine{\ |-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|-\/-\/-\/-\/|}
-\DoxyCodeLine{Tempos:\ 0,033s\ 0,009s\ 0,004s\ 0,000s}
-\DoxyCodeLine{Parametros\ comuns\ a\ 4\ configurações:}
-\DoxyCodeLine{P1(Algoritmo):\ MiniMax\ alfa/beta\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0\ |\ P13(baralhar):\ 0}
-\DoxyCodeLine{P14(Ordenar):\ 0\ |\ P15(PodaHeuristica):\ 0\ |\ P16(PodaCega):\ 0}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 1}
-\DoxyCodeLine{P9(Limite):\ 20}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 2}
-\DoxyCodeLine{P9(Limite):\ 7}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 3}
-\DoxyCodeLine{P9(Limite):\ 5}
-\DoxyCodeLine{-\/-\/-\/\ Configuração\ 4}
-\DoxyCodeLine{P9(Limite):\ 3}
+\DoxyCodeLine{Tempos:\ 0,000s\ 0,006s\ 0,060s\ 0,344s}
+\DoxyCodeLine{Parâmetros\ comuns:}
+\DoxyCodeLine{\ P1(Algoritmo):\ MiniMax\ |\ P2(Debug):\ nada\ |\ P3(Seed):\ 1\ |\ P4(Tempo):\ 10\ |\ P5(Iterações):\ 0}
+\DoxyCodeLine{\ P6(Ver):\ 4\ |\ P8(Repetidos):\ ignorar\ |\ P9(pesoAStar):\ 100\ |\ P10(ruido):\ 0\ |\ P11(baralhar):\ 0}
+\DoxyCodeLine{\ P12(Ordenar):\ 0\ |\ P13(PodaHeuristica):\ 0\ |\ P14(PodaCega):\ 0}
+\DoxyCodeLine{-\/\ Configurações\ geradas\ (total:\ 4)\ -\/}
+\DoxyCodeLine{\ P7(Limite):\ 3\ [1]}
+\DoxyCodeLine{\ P7(Limite):\ 5\ [2]}
+\DoxyCodeLine{\ P7(Limite):\ 7\ [3]}
+\DoxyCodeLine{\ P7(Limite):\ 20\ [4]}
 \DoxyCodeLine{}
 \DoxyCodeLine{Jogo\ do\ Galo}
-\DoxyCodeLine{P1(Algoritmo):\ MiniMax\ alfa/beta\ |\ P2(Debug):\ nada\ |\ P3(Ver):\ 4\ |\ P4(Seed):\ 1}
-\DoxyCodeLine{P5(Tempo):\ 10\ |\ P6(Gerações):\ 0\ |\ P7(Expansões):\ 0\ |\ P8(Avaliações):\ 0}
-\DoxyCodeLine{P9(Limite):\ 3\ |\ P10(Repetidos):\ ignorar\ |\ P11(pesoAStar):\ 100\ |\ P12(ruido):\ 0}
-\DoxyCodeLine{P13(baralhar):\ 0\ |\ P14(Ordenar):\ 0\ |\ P15(PodaHeuristica):\ 0\ |\ P16(PodaCega):\ 0}
-\DoxyCodeLine{[Estatísticas]\ expansões\ 1\ |\ gerações\ 1\ |\ avaliações\ 1}
+\DoxyCodeLine{\ P1(Algoritmo):\ MiniMax\ |\ P2(Debug):\ nada\ |\ P3(Seed):\ 1\ |\ P4(Tempo):\ 10\ |\ P5(Iterações):\ 0}
+\DoxyCodeLine{\ P6(Ver):\ 4\ |\ P7(Limite):\ 0\ |\ P8(Repetidos):\ ignorar\ |\ P9(pesoAStar):\ 100\ |\ P10(ruido):\ 0}
+\DoxyCodeLine{\ P11(baralhar):\ 0\ |\ P12(Ordenar):\ 0\ |\ P13(PodaHeuristica):\ 0\ |\ P14(PodaCega):\ 0}
 \DoxyCodeLine{\ \ A\ B\ C}
 \DoxyCodeLine{1\ .\ .\ .\ 1}
 \DoxyCodeLine{2\ .\ .\ .\ 2}
 \DoxyCodeLine{3\ .\ .\ .\ 3}
 \DoxyCodeLine{\ \ A\ B\ C}
-\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
+\DoxyCodeLine{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_}
 
 \end{DoxyCode}
- Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações são igualmente boas. Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.
 
-Notar na informação da linha com os tempos\+: "{}\+Tempos\+: 0,033s 0,009s 0,004s 0,000s"{} Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. Profundidades maiores o tempo é superior.
+
+Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações com nível 20 e 7 são igualmente boas. Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.
+
+Notar na informação da linha com os tempos\+: "{}\+Tempos\+: 0,028s 0,001s 0,001s 0,005s"{} Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. Profundidades maiores o tempo é superior.
+
+Vamos ver o resultado deste mesmo torneio em ficheiro CSV. Introduza\+: {\bfseries{8; 1; resultado\+Galo; 0.}}
+
+O ficheiro fica com duas tabelas, a primeira com o resultado dos jogos, duas linhas por cada jogo\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Jogador   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Adversário   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Cor   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Resultado    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Jogador   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Adversário   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Cor   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Resultado    }\\\cline{1-4}
+\endhead
+\PBS\centering 0   &\PBS\centering 1   &\PBS\centering Brancas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 1   &\PBS\centering 0   &\PBS\centering Pretas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 0   &\PBS\centering 2   &\PBS\centering Brancas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 2   &\PBS\centering 0   &\PBS\centering Pretas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 0   &\PBS\centering 3   &\PBS\centering Brancas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 3   &\PBS\centering 0   &\PBS\centering Pretas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 1   &\PBS\centering 0   &\PBS\centering Brancas   &\PBS\centering 1    \\\cline{1-4}
+\PBS\centering 0   &\PBS\centering 1   &\PBS\centering Pretas   &\PBS\centering -\/1    \\\cline{1-4}
+\PBS\centering 1   &\PBS\centering 2   &\PBS\centering Brancas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 2   &\PBS\centering 1   &\PBS\centering Pretas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 1   &\PBS\centering 3   &\PBS\centering Brancas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 3   &\PBS\centering 1   &\PBS\centering Pretas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 2   &\PBS\centering 0   &\PBS\centering Brancas   &\PBS\centering 1    \\\cline{1-4}
+\PBS\centering 0   &\PBS\centering 2   &\PBS\centering Pretas   &\PBS\centering -\/1    \\\cline{1-4}
+\PBS\centering 2   &\PBS\centering 1   &\PBS\centering Brancas   &\PBS\centering 1    \\\cline{1-4}
+\PBS\centering 1   &\PBS\centering 2   &\PBS\centering Pretas   &\PBS\centering -\/1    \\\cline{1-4}
+\PBS\centering 2   &\PBS\centering 3   &\PBS\centering Brancas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 3   &\PBS\centering 2   &\PBS\centering Pretas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 3   &\PBS\centering 0   &\PBS\centering Brancas   &\PBS\centering 1    \\\cline{1-4}
+\PBS\centering 0   &\PBS\centering 3   &\PBS\centering Pretas   &\PBS\centering -\/1    \\\cline{1-4}
+\PBS\centering 3   &\PBS\centering 1   &\PBS\centering Brancas   &\PBS\centering 1    \\\cline{1-4}
+\PBS\centering 1   &\PBS\centering 3   &\PBS\centering Pretas   &\PBS\centering -\/1    \\\cline{1-4}
+\PBS\centering 3   &\PBS\centering 2   &\PBS\centering Brancas   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 2   &\PBS\centering 3   &\PBS\centering Pretas   &\PBS\centering 0   \\\cline{1-4}
+\end{longtabu}
+
+
+Com esta tabela, pode-\/se fazer o relatório dinâmico com os resultados do torneio, colocando\+:
+\begin{DoxyItemize}
+\item linhas\+: Jogador
+\item colunas\+: Adversário
+\item valores\+: Resultado
+\item Filtro\+: Cor=Brancas
+\end{DoxyItemize}
+
+\texorpdfstring{$\vert$}{|} Rótulos de Linha \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 2 \texorpdfstring{$\vert$}{|} 3 \texorpdfstring{$\vert$}{|} Total Geral \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}\+:---\+:\texorpdfstring{$\vert$}{|}\+:---\+:\texorpdfstring{$\vert$}{|}\+:---\+:\texorpdfstring{$\vert$}{|}\+:---\+:\texorpdfstring{$\vert$}{|}\+:---\+:\texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 2 \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 2 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} 3 \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 1 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 2 \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} Total Geral \texorpdfstring{$\vert$}{|} 3 \texorpdfstring{$\vert$}{|} 2 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 0 \texorpdfstring{$\vert$}{|} 5 \texorpdfstring{$\vert$}{|}
+
+O filtro é necessário para que cada jogo conte uma só vez. Cada jogo está em duas linhas. Existindo várias instâncias, haverá sempre duas linhas por cada confronto A vs B, com o somatório do resultado em todas as instâncias.
+
+Podemos fazer outras tabelas, como o resultado dos jogos por cor\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha (Jogador)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Brancas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pretas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Total Geral    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha (Jogador)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Brancas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pretas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Total Geral    }\\\cline{1-4}
+\endhead
+\PBS\centering 0   &\PBS\centering 0   &\PBS\centering -\/3   &\PBS\centering -\/3    \\\cline{1-4}
+\PBS\centering 1   &\PBS\centering 1   &\PBS\centering -\/2   &\PBS\centering -\/1    \\\cline{1-4}
+\PBS\centering 2   &\PBS\centering 2   &\PBS\centering 0   &\PBS\centering 2    \\\cline{1-4}
+\PBS\centering 3   &\PBS\centering 2   &\PBS\centering 0   &\PBS\centering 2    \\\cline{1-4}
+\PBS\centering Total Geral   &\PBS\centering 5   &\PBS\centering -\/5   &\PBS\centering 0   \\\cline{1-4}
+\end{longtabu}
+
+
+Podemos ver que os jogadores mais fortes ganharam quando estavam de brancas, e o inverso também, os jogadores mais fracos só perderam quando estavam de pretas. Em termos de jogadores, o jogador 2 e 3 têm os mesmos pontos, pelo que podem ser considerados de força idêntica.
+
+Podemos confirmar que os jogos entre jogadores mais fortes ficaram empatados, ao filtrar a tabela anterior por jogador/adversário 2 ou 3\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Brancas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pretas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Total Geral    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Rótulos de Linha   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Brancas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Pretas   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Total Geral    }\\\cline{1-4}
+\endhead
+\PBS\centering 2   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering 3   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0    \\\cline{1-4}
+\PBS\centering Total Geral   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   \\\cline{1-4}
+\end{longtabu}
+
+
+Sem o filtro para o Adversário ser 2 ou 3, iriamos obter a pontuação dos jogadores mais fortes, em conjunto com os mais fracos, o que poderia medir a eficiência de um jogador a lidar com mais fracos. Para saber se um jogador é mais forte que outro, apenas os confrontos entre ambos devem ser utilizados, o chamado match.
+
+A segunda tabela no ficheiro CSV tem as configurações de cada jogador.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{15}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Jogador   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P1(\+Algoritmo)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P2(\+Debug)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P3(\+Seed)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P4(\+Tempo)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P5(Iterações)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P6(\+Ver)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P7(\+Limite)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P8(\+Repetidos)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P9(peso\+AStar)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P10(ruido)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P11(baralhar)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P12(\+Ordenar)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P13(\+Poda\+Heuristica)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P14(\+Poda\+Cega)    }\\\cline{1-15}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Jogador   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P1(\+Algoritmo)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P2(\+Debug)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P3(\+Seed)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P4(\+Tempo)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P5(Iterações)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P6(\+Ver)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P7(\+Limite)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P8(\+Repetidos)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P9(peso\+AStar)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P10(ruido)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P11(baralhar)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P12(\+Ordenar)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P13(\+Poda\+Heuristica)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ P14(\+Poda\+Cega)    }\\\cline{1-15}
+\endhead
+\PBS\centering 0   &\PBS\centering 1\+:Mini\+Max   &\PBS\centering 0\+:nada   &\PBS\centering 1   &\PBS\centering 10   &\PBS\centering 0   &\PBS\centering 4   &\PBS\centering 3   &\PBS\centering 1\+:ignorar   &\PBS\centering 100   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0    \\\cline{1-15}
+\PBS\centering 1   &\PBS\centering 1\+:Mini\+Max   &\PBS\centering 0\+:nada   &\PBS\centering 1   &\PBS\centering 10   &\PBS\centering 0   &\PBS\centering 4   &\PBS\centering 5   &\PBS\centering 1\+:ignorar   &\PBS\centering 100   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0    \\\cline{1-15}
+\PBS\centering 2   &\PBS\centering 1\+:Mini\+Max   &\PBS\centering 0\+:nada   &\PBS\centering 1   &\PBS\centering 10   &\PBS\centering 0   &\PBS\centering 4   &\PBS\centering 7   &\PBS\centering 1\+:ignorar   &\PBS\centering 100   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0    \\\cline{1-15}
+\PBS\centering 3   &\PBS\centering 1\+:Mini\+Max   &\PBS\centering 0\+:nada   &\PBS\centering 1   &\PBS\centering 10   &\PBS\centering 0   &\PBS\centering 4   &\PBS\centering 20   &\PBS\centering 1\+:ignorar   &\PBS\centering 100   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   &\PBS\centering 0   \\\cline{1-15}
+\end{longtabu}
+
+
+Assim, mantemos a informação completa no ficheiro de resultados, mesmo em torneios, para que se detecte algum erro na configuração, e se possa saber exatamente como os resultados foram obtgidos.
+
+Como seria de esperar, este ficheiro de resultados poderia ser obtido também em linha de comandos\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{PS\ ...\(\backslash\)Teste>\ TProcuraAdversa\ 1\ -\/R\ resultadoGalo\ -\/P\ P1=1\ P12=0\ P7=20,7,5,3}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Opção:\ 1}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Ficheiro\ resultadoGalo.csv\ gravado.}
+
+\end{DoxyCode}
+
+
+A linha de comandos continua a ser o modo preferencial quando a implementação está finalizada e se pretende testes empíricos.
 
 Este é no entanto um jogo muito pequeno para explorar, pelo que a sua generalização para os Jogos Em Linha, permitirá explorar melhor as particularidades das procuras adversas. 

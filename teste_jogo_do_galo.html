@@ -918,95 +918,204 @@ Ação 6 - Testes Empíricos</h2>
 <p>O único parametro que faz diferença, atendendo a que os tempos de execução são muito rápidos, é a profundidade da procura. Vamos colocar em competição várias configurações a diferentes profundidades, e pretendemos conseguir observar maior desempenho nas procuras de maior profundidade.</p>
 <p>Temos também de ter o cuidado de desligar a utilização das hashtables, para observer sem perturbações o ganho da profundidade.</p>
 <p>Introduza:</p><ul>
-<li><b>1; 7; P7=20 P12=0 P7=7,5,3; <em>ENTER</em>.</b></li>
+<li><b>1; 7; P1=1 P12=0 P7=20,7,5,3; -1; <em>ENTER</em>.</b></li>
 </ul>
+<p>Apagamos a configuração 1 dado que tinha o valor de omissão P7=0.</p>
 <div class="fragment"><div class="line">...</div>
-<div class="line">Comando: P7=20 P12=0 P7=7,5,3</div>
+<div class="line">Comando: P1=1 P12=0 P7=20,7,5,3</div>
 <div class="line"> </div>
 <div class="line">Parâmetros comuns:</div>
-<div class="line"> P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0</div>
+<div class="line"> P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0</div>
 <div class="line"> P12=0 P13=0 P14=0</div>
-<div class="line">- Configurações geradas (total: 4) -</div>
-<div class="line"> P7=20 [1] --- atual</div>
+<div class="line">- Configurações geradas (total: 5) -</div>
+<div class="line"> P7=0 [1] --- atual</div>
 <div class="line"> P7=3 [2]</div>
 <div class="line"> P7=5 [3]</div>
 <div class="line"> P7=7 [4]</div>
+<div class="line"> P7=20 [5]</div>
+<div class="line">...</div>
+<div class="line">Comando: -1</div>
+<div class="line"> </div>
+<div class="line">Parâmetros comuns:</div>
+<div class="line"> P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0</div>
+<div class="line"> P12=0 P13=0 P14=0</div>
+<div class="line">- Configurações geradas (total: 4) -</div>
+<div class="line"> P7=3 [1] --- atual</div>
+<div class="line"> P7=5 [2]</div>
+<div class="line"> P7=7 [3]</div>
+<div class="line"> P7=20 [4]</div>
 <div class="line"> ...</div>
 </div><!-- fragment --><p>Temos 4 configurações. Como a procura é adversa, é necessário duas configurações, ou seja, jogos entre configurações para avaliar. Assim, em vez da tabela com desempenho individual, há jogos entre todas as configurações, e reportado apenas a tabela de torneio final.</p>
 <p>Podemos ainda ver as soluções, que aqui equivale a observar os jogos. Como são 4 configurações, haverá grande quantidade de jogos, de todos contra todos e de ambas as cores. Por outro lado os jogos são muito rápidos. Assim, não vamos querer ver os jogos. Se existissem vários tabuleiros iniciais, ou vários tamanhos, ou seja, instâncias de jogo, podiamos indicar as instâncias a serem utilizadas.</p>
 <p>Introduza: <b>8; 1; <em>ENTER</em>; 0.</b></p>
-<blockquote class="doxtable">
-<blockquote class="doxtable">
-<blockquote class="doxtable">
-<blockquote class="doxtable">
-<p>&zwj;chamada a função de teste de <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a> e não <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> testar também a linha de comando </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 <div class="fragment"><div class="line">Match 1 vs 2:</div>
 <div class="line"> Instância 1:  Empate</div>
 <div class="line">Match 1 vs 3:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
+<div class="line"> Instância 1:  Empate</div>
 <div class="line">Match 1 vs 4:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
+<div class="line"> Instância 1:  Empate</div>
 <div class="line">Match 2 vs 1:</div>
-<div class="line"> Instância 1:  Empate</div>
+<div class="line"> Instância 1:  Vitória Branca</div>
 <div class="line">Match 2 vs 3:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
+<div class="line"> Instância 1:  Empate</div>
 <div class="line">Match 2 vs 4:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
+<div class="line"> Instância 1:  Empate</div>
 <div class="line">Match 3 vs 1:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Match 3 vs 2:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Match 3 vs 4:</div>
 <div class="line"> Instância 1:  Vitória Branca</div>
+<div class="line">Match 3 vs 2:</div>
+<div class="line"> Instância 1:  Vitória Branca</div>
+<div class="line">Match 3 vs 4:</div>
+<div class="line"> Instância 1:  Empate</div>
 <div class="line">Match 4 vs 1:</div>
-<div class="line"> Instância 1:  Empate</div>
+<div class="line"> Instância 1:  Vitória Branca</div>
 <div class="line">Match 4 vs 2:</div>
-<div class="line"> Instância 1:  Empate</div>
+<div class="line"> Instância 1:  Vitória Branca</div>
 <div class="line">Match 4 vs 3:</div>
 <div class="line"> Instância 1:  Empate</div>
 <div class="line">Torneio (#instâncias melhores):</div>
 <div class="line"> |-01-|-02-|-03-|-04-|</div>
-<div class="line"> 1    |  0 |  1 |  1 |  2</div>
+<div class="line"> 1    |  0 |  0 |  0 | -3</div>
 <div class="line"> |----|----|----|----|</div>
-<div class="line"> 2  0 |    |  1 |  1 |  2</div>
+<div class="line"> 2  1 |    |  0 |  0 | -1</div>
 <div class="line"> |----|----|----|----|</div>
-<div class="line"> 3  0 |  0 |    |  1 | -1</div>
+<div class="line"> 3  1 |  1 |    |  0 |  2</div>
 <div class="line"> |----|----|----|----|</div>
-<div class="line"> 4  0 |  0 |  0 |    | -3</div>
+<div class="line"> 4  1 |  1 |  0 |    |  2</div>
 <div class="line"> |----|----|----|----|</div>
-<div class="line">Tempos: 0,033s 0,009s 0,004s 0,000s</div>
-<div class="line">Parametros comuns a 4 configurações:</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0</div>
-<div class="line">P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0</div>
-<div class="line">--- Configuração 1</div>
-<div class="line">P9(Limite): 20</div>
-<div class="line">--- Configuração 2</div>
-<div class="line">P9(Limite): 7</div>
-<div class="line">--- Configuração 3</div>
-<div class="line">P9(Limite): 5</div>
-<div class="line">--- Configuração 4</div>
-<div class="line">P9(Limite): 3</div>
+<div class="line">Tempos: 0,000s 0,006s 0,060s 0,344s</div>
+<div class="line">Parâmetros comuns:</div>
+<div class="line"> P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
+<div class="line"> P6(Ver): 4 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0 | P11(baralhar): 0</div>
+<div class="line"> P12(Ordenar): 0 | P13(PodaHeuristica): 0 | P14(PodaCega): 0</div>
+<div class="line">- Configurações geradas (total: 4) -</div>
+<div class="line"> P7(Limite): 3 [1]</div>
+<div class="line"> P7(Limite): 5 [2]</div>
+<div class="line"> P7(Limite): 7 [3]</div>
+<div class="line"> P7(Limite): 20 [4]</div>
 <div class="line"> </div>
 <div class="line">Jogo do Galo</div>
-<div class="line">P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1</div>
-<div class="line">P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0</div>
-<div class="line">P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0</div>
-<div class="line">P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0</div>
-<div class="line">[Estatísticas] expansões 1 | gerações 1 | avaliações 1</div>
+<div class="line"> P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
+<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
+<div class="line"> P11(baralhar): 0 | P12(Ordenar): 0 | P13(PodaHeuristica): 0 | P14(PodaCega): 0</div>
 <div class="line">  A B C</div>
 <div class="line">1 . . . 1</div>
 <div class="line">2 . . . 2</div>
 <div class="line">3 . . . 3</div>
 <div class="line">  A B C</div>
-<div class="line">_______________________________________________________________________________</div>
-</div><!-- fragment --><p> Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações são igualmente boas. Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.</p>
-<p>Notar na informação da linha com os tempos: "Tempos: 0,033s 0,009s 0,004s 0,000s" Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. Profundidades maiores o tempo é superior.</p>
+<div class="line">____________________________________________________________________</div>
+</div><!-- fragment --><p>Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações com nível 20 e 7 são igualmente boas. Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.</p>
+<p>Notar na informação da linha com os tempos: "Tempos: 0,028s 0,001s 0,001s 0,005s" Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. Profundidades maiores o tempo é superior.</p>
+<p>Vamos ver o resultado deste mesmo torneio em ficheiro CSV. Introduza: <b>8; 1; resultadoGalo; 0.</b></p>
+<p>O ficheiro fica com duas tabelas, a primeira com o resultado dos jogos, duas linhas por cada jogo:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Jogador   </th><th class="markdownTableHeadCenter">Adversário   </th><th class="markdownTableHeadCenter">Cor   </th><th class="markdownTableHeadCenter">Resultado    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">Brancas   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">Pretas   </td><td class="markdownTableBodyCenter">0   </td></tr>
+</table>
+<p>Com esta tabela, pode-se fazer o relatório dinâmico com os resultados do torneio, colocando:</p><ul>
+<li>linhas: Jogador</li>
+<li>colunas: Adversário</li>
+<li>valores: Resultado</li>
+<li>Filtro: Cor=Brancas</li>
+</ul>
+<p>| Rótulos de Linha | 0 | 1 | 2 | 3 | Total Geral | |:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:| | 0 | 0 | 0 | 0 | 0 | | 1 | 1 | 0 | 0 | 1 | | 2 | 1 | 1 | 0 | 2 | | 3 | 1 | 1 | 0 | 2 | | Total Geral | 3 | 2 | 0 | 0 | 5 |</p>
+<p>O filtro é necessário para que cada jogo conte uma só vez. Cada jogo está em duas linhas. Existindo várias instâncias, haverá sempre duas linhas por cada confronto A vs B, com o somatório do resultado em todas as instâncias.</p>
+<p>Podemos fazer outras tabelas, como o resultado dos jogos por cor:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha (Jogador)   </th><th class="markdownTableHeadCenter">Brancas   </th><th class="markdownTableHeadCenter">Pretas   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-3   </td><td class="markdownTableBodyCenter">-3    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-2   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">-5   </td><td class="markdownTableBodyCenter">0   </td></tr>
+</table>
+<p>Podemos ver que os jogadores mais fortes ganharam quando estavam de brancas, e o inverso também, os jogadores mais fracos só perderam quando estavam de pretas. Em termos de jogadores, o jogador 2 e 3 têm os mesmos pontos, pelo que podem ser considerados de força idêntica.</p>
+<p>Podemos confirmar que os jogos entre jogadores mais fortes ficaram empatados, ao filtrar a tabela anterior por jogador/adversário 2 ou 3:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadCenter">Brancas   </th><th class="markdownTableHeadCenter">Pretas   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td></tr>
+</table>
+<p>Sem o filtro para o Adversário ser 2 ou 3, iriamos obter a pontuação dos jogadores mais fortes, em conjunto com os mais fracos, o que poderia medir a eficiência de um jogador a lidar com mais fracos. Para saber se um jogador é mais forte que outro, apenas os confrontos entre ambos devem ser utilizados, o chamado match.</p>
+<p>A segunda tabela no ficheiro CSV tem as configurações de cada jogador.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Jogador   </th><th class="markdownTableHeadCenter">P1(Algoritmo)   </th><th class="markdownTableHeadCenter">P2(Debug)   </th><th class="markdownTableHeadCenter">P3(Seed)   </th><th class="markdownTableHeadCenter">P4(Tempo)   </th><th class="markdownTableHeadCenter">P5(Iterações)   </th><th class="markdownTableHeadCenter">P6(Ver)   </th><th class="markdownTableHeadCenter">P7(Limite)   </th><th class="markdownTableHeadCenter">P8(Repetidos)   </th><th class="markdownTableHeadCenter">P9(pesoAStar)   </th><th class="markdownTableHeadCenter">P10(ruido)   </th><th class="markdownTableHeadCenter">P11(baralhar)   </th><th class="markdownTableHeadCenter">P12(Ordenar)   </th><th class="markdownTableHeadCenter">P13(PodaHeuristica)   </th><th class="markdownTableHeadCenter">P14(PodaCega)    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td></tr>
+</table>
+<p>Assim, mantemos a informação completa no ficheiro de resultados, mesmo em torneios, para que se detecte algum erro na configuração, e se possa saber exatamente como os resultados foram obtgidos.</p>
+<p>Como seria de esperar, este ficheiro de resultados poderia ser obtido também em linha de comandos:</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 1 -R resultadoGalo -P P1=1 P12=0 P7=20,7,5,3</div>
+<div class="line">...</div>
+<div class="line">Opção: 1</div>
+<div class="line">...</div>
+<div class="line">Ficheiro resultadoGalo.csv gravado.</div>
+</div><!-- fragment --><p>A linha de comandos continua a ser o modo preferencial quando a implementação está finalizada e se pretende testes empíricos.</p>
 <p>Este é no entanto um jogo muito pequeno para explorar, pelo que a sua generalização para os Jogos Em Linha, permitirá explorar melhor as particularidades das procuras adversas. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
