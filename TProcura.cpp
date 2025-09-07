@@ -234,10 +234,10 @@ void TProcura::EditarParametros() {
 		// solicitar valor
 		valor = NovoValor("");
 		if (valor != NAO_LIDO || valor == 0)
-			parametro[opcao - 1].valor = Dominio(
-				valor,
-				parametro[opcao - 1].min,
-				parametro[opcao - 1].max);
+			Parametro(opcao - 1) = 
+				Dominio(valor,
+					parametro[opcao - 1].min,
+					parametro[opcao - 1].max);
 	}
 }
 
@@ -261,7 +261,7 @@ int TProcura::NovaConfiguracao(TVector<int>& parametros)
 void TProcura::ConfiguracaoAtual(TVector<int>& parametros, int operacao) {
 	if (operacao == gravar) {
 		for (int i = 0; i < parametro.Count() && i < parametros.Count(); i++)
-			parametro[i].valor = parametros[i];
+			Parametro(i) = parametros[i];
 	}
 	else if (operacao == ler) {
 		parametros.Count(0);

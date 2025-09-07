@@ -722,13 +722,13 @@ void TProcuraConstrutiva::LimparEstatisticas(clock_t& inicio)
 int TProcuraConstrutiva::ExecutaAlgoritmo() {
 	int resultado = -1;
 	switch (Parametro(algoritmo)) {
-	case 1: resultado = LarguraPrimeiro(Dominio(parametro[limite].valor, 0)); break;
-	case 2: resultado = CustoUniforme(Dominio(parametro[limite].valor, 0)); break;
-	case 3: resultado = ProfundidadePrimeiro(parametro[limite].valor); break;
-	case 4: resultado = MelhorPrimeiro(parametro[limite].valor); break;
-	case 5: resultado = AStar(Dominio(parametro[limite].valor, 0)); break;
-	case 6: resultado = IDAStar(Dominio(parametro[limite].valor, 0)); break;
-	case 7: resultado = BranchAndBound(Dominio(parametro[limite].valor, 0)); break;
+	case 1: resultado = LarguraPrimeiro(Dominio(Parametro(limite), 0)); break;
+	case 2: resultado = CustoUniforme(Dominio(Parametro(limite), 0)); break;
+	case 3: resultado = ProfundidadePrimeiro(Parametro(limite)); break;
+	case 4: resultado = MelhorPrimeiro(Parametro(limite)); break;
+	case 5: resultado = AStar(Dominio(Parametro(limite), 0)); break;
+	case 6: resultado = IDAStar(Dominio(Parametro(limite), 0)); break;
+	case 7: resultado = BranchAndBound(Dominio(Parametro(limite), 0)); break;
 	}
 	return custo = resultado;
 }

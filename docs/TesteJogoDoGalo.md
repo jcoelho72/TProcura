@@ -995,20 +995,34 @@ Temos também de ter o cuidado de desligar a utilização das hashtables,
 para observer sem perturbações o ganho da profundidade.
 
 Introduza: 
-- **1; 7; P7=20 P12=0 P7=7,5,3; *ENTER*.**
+- **1; 7; P1=1 P12=0 P7=20,7,5,3; -1; *ENTER*.**
+
+Apagamos a configuração 1 dado que tinha o valor de omissão P7=0.
 
 ```entrada
 ...
-Comando: P7=20 P12=0 P7=7,5,3
+Comando: P1=1 P12=0 P7=20,7,5,3
 
 Parâmetros comuns:
- P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0
+ P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0
  P12=0 P13=0 P14=0
-- Configurações geradas (total: 4) -
- P7=20 [1] --- atual
+- Configurações geradas (total: 5) -
+ P7=0 [1] --- atual
  P7=3 [2]
  P7=5 [3]
  P7=7 [4]
+ P7=20 [5]
+...
+Comando: -1
+
+Parâmetros comuns:
+ P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0
+ P12=0 P13=0 P14=0
+- Configurações geradas (total: 4) -
+ P7=3 [1] --- atual
+ P7=5 [2]
+ P7=7 [3]
+ P7=20 [4]
  ...
 ```
 
@@ -1022,79 +1036,170 @@ Se existissem vários tabuleiros iniciais, ou vários tamanhos, ou seja, instân
 
 Introduza: **8; 1; *ENTER*; 0.**
 
->>>> chamada a função de teste de TProcuraConstrutiva e não TProcuraAdversa
->>>> testar também a linha de comando
-
 ```entrada
 Match 1 vs 2:
  Instância 1:  Empate
 Match 1 vs 3:
- Instância 1:  Vitória Branca
+ Instância 1:  Empate
 Match 1 vs 4:
- Instância 1:  Vitória Branca
+ Instância 1:  Empate
 Match 2 vs 1:
- Instância 1:  Empate
+ Instância 1:  Vitória Branca
 Match 2 vs 3:
- Instância 1:  Vitória Branca
+ Instância 1:  Empate
 Match 2 vs 4:
- Instância 1:  Vitória Branca
+ Instância 1:  Empate
 Match 3 vs 1:
- Instância 1:  Empate
-Match 3 vs 2:
- Instância 1:  Empate
-Match 3 vs 4:
  Instância 1:  Vitória Branca
+Match 3 vs 2:
+ Instância 1:  Vitória Branca
+Match 3 vs 4:
+ Instância 1:  Empate
 Match 4 vs 1:
- Instância 1:  Empate
+ Instância 1:  Vitória Branca
 Match 4 vs 2:
- Instância 1:  Empate
+ Instância 1:  Vitória Branca
 Match 4 vs 3:
  Instância 1:  Empate
 Torneio (#instâncias melhores):
  |-01-|-02-|-03-|-04-|
- 1    |  0 |  1 |  1 |  2
+ 1    |  0 |  0 |  0 | -3
  |----|----|----|----|
- 2  0 |    |  1 |  1 |  2
+ 2  1 |    |  0 |  0 | -1
  |----|----|----|----|
- 3  0 |  0 |    |  1 | -1
+ 3  1 |  1 |    |  0 |  2
  |----|----|----|----|
- 4  0 |  0 |  0 |    | -3
+ 4  1 |  1 |  0 |    |  2
  |----|----|----|----|
-Tempos: 0,033s 0,009s 0,004s 0,000s
-Parametros comuns a 4 configurações:
-P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0 | P13(baralhar): 0
-P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
---- Configuração 1
-P9(Limite): 20
---- Configuração 2
-P9(Limite): 7
---- Configuração 3
-P9(Limite): 5
---- Configuração 4
-P9(Limite): 3
+Tempos: 0,000s 0,006s 0,060s 0,344s
+Parâmetros comuns:
+ P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 4 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0 | P11(baralhar): 0
+ P12(Ordenar): 0 | P13(PodaHeuristica): 0 | P14(PodaCega): 0
+- Configurações geradas (total: 4) -
+ P7(Limite): 3 [1]
+ P7(Limite): 5 [2]
+ P7(Limite): 7 [3]
+ P7(Limite): 20 [4]
 
 Jogo do Galo
-P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Ver): 4 | P4(Seed): 1
-P5(Tempo): 10 | P6(Gerações): 0 | P7(Expansões): 0 | P8(Avaliações): 0
-P9(Limite): 3 | P10(Repetidos): ignorar | P11(pesoAStar): 100 | P12(ruido): 0
-P13(baralhar): 0 | P14(Ordenar): 0 | P15(PodaHeuristica): 0 | P16(PodaCega): 0
-[Estatísticas] expansões 1 | gerações 1 | avaliações 1
+ P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
+ P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
+ P11(baralhar): 0 | P12(Ordenar): 0 | P13(PodaHeuristica): 0 | P14(PodaCega): 0
   A B C
 1 . . . 1
 2 . . . 2
 3 . . . 3
   A B C
-_______________________________________________________________________________
+____________________________________________________________________
 ```
-Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações são igualmente boas.
+
+Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações com nível 20 e 7 
+são igualmente boas.
 Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. 
 As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.
 
-Notar na informação da linha com os tempos: "Tempos: 0,033s 0,009s 0,004s 0,000s"
+Notar na informação da linha com os tempos: "Tempos: 0,028s 0,001s 0,001s 0,005s"
 Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. 
 Profundidades maiores o tempo é superior.
+
+Vamos ver o resultado deste mesmo torneio em ficheiro CSV. Introduza: **8; 1; resultadoGalo; 0.**
+
+O ficheiro fica com duas tabelas, a primeira com o resultado dos jogos, duas linhas por cada jogo:
+
+| Jogador | Adversário | Cor | Resultado |
+|:---:|:---:|:---:|:---:|
+| 0 | 1 | Brancas | 0 |
+| 1 | 0 | Pretas | 0 |
+| 0 | 2 | Brancas | 0 |
+| 2 | 0 | Pretas | 0 |
+| 0 | 3 | Brancas | 0 |
+| 3 | 0 | Pretas | 0 |
+| 1 | 0 | Brancas | 1 |
+| 0 | 1 | Pretas | -1 |
+| 1 | 2 | Brancas | 0 |
+| 2 | 1 | Pretas | 0 |
+| 1 | 3 | Brancas | 0 |
+| 3 | 1 | Pretas | 0 |
+| 2 | 0 | Brancas | 1 |
+| 0 | 2 | Pretas | -1 |
+| 2 | 1 | Brancas | 1 |
+| 1 | 2 | Pretas | -1 |
+| 2 | 3 | Brancas | 0 |
+| 3 | 2 | Pretas | 0 |
+| 3 | 0 | Brancas | 1 |
+| 0 | 3 | Pretas | -1 |
+| 3 | 1 | Brancas | 1 |
+| 1 | 3 | Pretas | -1 |
+| 3 | 2 | Brancas | 0 |
+| 2 | 3 | Pretas | 0 |
+
+Com esta tabela, pode-se fazer o relatório dinâmico com os resultados do torneio, colocando:
+- linhas: Jogador
+- colunas: Adversário
+- valores: Resultado
+- Filtro: Cor=Brancas
+
+| Rótulos de Linha | 0 | 1 | 2 | 3 | Total Geral |
+|:---:|:---:|:---:|:---:|:---:|
+| 0 | 0 | 0 | 0 | 0 |
+| 1 | 1 | 0 | 0 | 1 |
+| 2 | 1 | 1 | 0 | 2 |
+| 3 | 1 | 1 | 0 | 2 |
+| Total Geral | 3 | 2 | 0 | 0 | 5 |
+
+O filtro é necessário para que cada jogo conte uma só vez. Cada jogo está em duas linhas.
+Existindo várias instâncias, haverá sempre duas linhas por cada confronto A vs B, com o somatório do resultado em todas as instâncias.
+
+Podemos fazer outras tabelas, como o resultado dos jogos por cor:
+
+| Rótulos de Linha (Jogador) | Brancas | Pretas | Total Geral |
+|:---:|:---:|:---:|:---:|
+| 0 | 0 | -3 | -3 |
+| 1 | 1 | -2 | -1 |
+| 2 | 2 | 0 | 2 |
+| 3 | 2 | 0 | 2 |
+| Total Geral | 5 | -5 | 0 |
+
+Podemos ver que os jogadores mais fortes ganharam quando estavam de brancas, e o inverso também, os jogadores
+mais fracos só perderam quando estavam de pretas. 
+Em termos de jogadores, o jogador 2 e 3 têm os mesmos pontos, pelo que podem ser considerados de força idêntica.
+
+Podemos confirmar que os jogos entre jogadores mais fortes ficaram empatados, ao filtrar a tabela anterior por jogador/adversário 2 ou 3:
+
+| Rótulos de Linha | Brancas | Pretas | Total Geral |
+|:---:|:---:|:---:|:---:|
+| 2 | 0 | 0 | 0 |
+| 3 | 0 | 0 | 0 |
+| Total Geral | 0 | 0 | 0 |
+
+Sem o filtro para o Adversário ser 2 ou 3, iriamos obter a pontuação dos jogadores mais fortes, em conjunto com 
+os mais fracos, o que poderia medir a eficiência de um jogador a lidar com mais fracos. 
+Para saber se um jogador é mais forte que outro, apenas os confrontos entre ambos devem ser utilizados, o chamado match.
+
+A segunda tabela no ficheiro CSV tem as configurações de cada jogador.
+
+| Jogador | P1(Algoritmo) | P2(Debug) | P3(Seed) | P4(Tempo) | P5(Iterações) | P6(Ver) | P7(Limite) | P8(Repetidos) | P9(pesoAStar) | P10(ruido) | P11(baralhar) | P12(Ordenar) | P13(PodaHeuristica) | P14(PodaCega) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 1:MiniMax | 0:nada | 1 | 10 | 0 | 4 | 3 | 1:ignorar | 100 | 0 | 0 | 0 | 0 | 0 |
+| 1 | 1:MiniMax | 0:nada | 1 | 10 | 0 | 4 | 5 | 1:ignorar | 100 | 0 | 0 | 0 | 0 | 0 |
+| 2 | 1:MiniMax | 0:nada | 1 | 10 | 0 | 4 | 7 | 1:ignorar | 100 | 0 | 0 | 0 | 0 | 0 |
+| 3 | 1:MiniMax | 0:nada | 1 | 10 | 0 | 4 | 20 | 1:ignorar | 100 | 0 | 0 | 0 | 0 | 0 |
+
+Assim, mantemos a informação completa no ficheiro de resultados, mesmo em torneios, para que se detecte algum erro na configuração, 
+e se possa saber exatamente como os resultados foram obtgidos.
+
+Como seria de esperar, este ficheiro de resultados poderia ser obtido também em linha de comandos:
+
+```entrada
+PS ...\Teste> TProcuraAdversa 1 -R resultadoGalo -P P1=1 P12=0 P7=20,7,5,3
+...
+Opção: 1
+...
+Ficheiro resultadoGalo.csv gravado.
+```
+
+A linha de comandos continua a ser o modo preferencial quando a implementação está finalizada e se pretende testes empíricos.
 
 Este é no entanto um jogo muito pequeno para explorar, pelo que a sua generalização para os Jogos Em Linha, 
 permitirá explorar melhor as particularidades das procuras adversas.

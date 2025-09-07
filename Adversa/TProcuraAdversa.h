@@ -68,10 +68,10 @@ public:
 	/// @brief retorna o valor do estado actual, apos procura de profundidade nivel. Idêntico a MiniMax
 	int MiniMaxAlfaBeta(int nivel = 4, int alfa = -infinito, int beta = +infinito);
 
-	// utilizar para executar testes empíricos, utilizando todas as instâncias,
+	// Utilizar para executar testes empíricos
 	// Utiliza as configurações existentes, ou parâmetros atuais
 	// Efetua um torneio entre configurações
-	void TesteEmpirico(int inicio = -1, int fim = -1, bool mostrarSolucoes = true);
+	void TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes = true, char* ficheiro = NULL);
 
 	/// @brief Executa o algoritmo com os parametros atuais
 	int ExecutaAlgoritmo();
@@ -102,6 +102,12 @@ protected:
 	/// @brief  iteração, aumentando o nível progressivamente
 	int MetodoIterativo(int alfaBeta);
 
+	/**
+	 * @brief Gera um relatório CSV com os resultados.
+	 * @param resultados Vetor de resultados.
+	 * @param f Ponteiro para o ficheiro onde gravar.
+	 */
+	void RelatorioCSV(TVector<TVector<int>>& torneio, FILE* f);
 
 	void OrdenarSucessores(TVector<TNo>& sucessores, TVector<int>& id, int nivel);
 

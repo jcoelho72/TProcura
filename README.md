@@ -150,8 +150,8 @@ Problemas de exemplo da classe TProcuraMelhorativa:
 5. ? (TRepresentacaoArvore)
 
 Problemas de exemplo da classe TProcuraAdversa:
-1. Jogo do Galo
-2. Jogo em Linha
+1. [Jogo do Galo](teste_jogo_do_galo.html)
+2. [Jogo em Linha](teste_jogo_em_linha.html)
 
 Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações. 
 

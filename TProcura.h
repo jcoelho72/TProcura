@@ -377,12 +377,12 @@ public:
 	/**
 	 * @brief Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas
 	 * @note Redefinição não é necessária
-	 * @param inicio - ID da primeira instância no teste (ou -1 para a primeira)
-	 * @param fim - ID da última instância no teste (ou -1 para a última)
+	 * @param instancias - IDs das instâncias a serem utilizadas
 	 * @param mostrarSolucoes - se true, mostra a solução após cada execução, c.c. indica apenas a instância em processamento.
+	 * @param ficheiro - nome do ficheiro com os resultados, caso exista
 	 *
 	 * Esta função é chamada de TesteManual() para executar testes empíricos.
-	 * A função apresenta-se como método virtual, atendendo a que será redefinida nas
+	 * A função apresenta-se como método virtual, atendendo a que é redefinida nas
 	 * procuras adversas. É genérica e não se prevê outras situações que seja necessário
 	 * redefini-la.
 	 *
@@ -475,8 +475,9 @@ public:
 	// ler uma string
 	static char *NovoTexto(const char* prompt);
 
-	// retorna o valor do parametro, para facilidade de uso
-	int Parametro(int id) { return parametro[id].valor; }
+	// retorna o valor do parametro, para facilidade de uso (leitura e escrita)
+	int Parametro(int id) const { return parametro[id].valor; }
+	int& Parametro(int id) { return parametro[id].valor; }
 
 protected:
 

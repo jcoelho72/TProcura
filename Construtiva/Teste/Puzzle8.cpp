@@ -30,7 +30,7 @@ void CPuzzle8::Inicializar(void)
 		puzzle[i] = i;
 	zero=0;
 	// efectuar trocas ao acaso
-	parametro[estadosRepetidos].valor = ignorados;
+	Parametro(estadosRepetidos) = ignorados;
 	for (int i = 0; i < instancia.valor; i++) { // utilizar o ID da instância
 		TVector<TNo> sucessores;
 		Sucessores(sucessores);
@@ -39,7 +39,7 @@ void CPuzzle8::Inicializar(void)
 		zero = ((CPuzzle8*)filho)->zero;
 		LibertarVector(sucessores);
 	}
-	parametro[estadosRepetidos].valor = backup;
+	Parametro(estadosRepetidos) = backup;
 	tamanhoCodificado = 1; // apenas um inteiro de 64 bits é suficiente para 4*9 bits
 }
 
@@ -160,7 +160,7 @@ void CPuzzle8::MostrarSolucao(void) {
 void CPuzzle8::ResetParametros() {
 	TProcuraConstrutiva::ResetParametros();
 	// opções de omissão:
-	parametro[estadosRepetidos].valor = ascendentes;
+	Parametro(estadosRepetidos) = ascendentes;
 	// instâncias
 	instancia = { NULL, 40,1,1000, NULL, NULL };
 }
