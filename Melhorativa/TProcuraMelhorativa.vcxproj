@@ -129,6 +129,11 @@
   <ItemGroup>
     <ClCompile Include="..\TProcura.cpp" />
     <ClCompile Include="..\TRand.cpp" />
+    <ClCompile Include="TCodificacaoArvore.cpp" />
+    <ClCompile Include="TCodificacaoBinaria.cpp" />
+    <ClCompile Include="TCodificacaoInteira.cpp" />
+    <ClCompile Include="TCodificacaoPermutacao.cpp" />
+    <ClCompile Include="TCodificacaoReal.cpp" />
     <ClCompile Include="Teste\OitoDamas.cpp" />
     <ClCompile Include="Teste\Particao.cpp" />
     <ClCompile Include="Teste\ProblemaArtificial.cpp" />
@@ -139,6 +144,11 @@
     <ClInclude Include="..\TProcura.h" />
     <ClInclude Include="..\TRand.h" />
     <ClInclude Include="..\TVector.h" />
+    <ClInclude Include="TCodificacaoArvore.h" />
+    <ClInclude Include="TCodificacaoBinaria.h" />
+    <ClInclude Include="TCodificacaoInteira.h" />
+    <ClInclude Include="TCodificacaoPermutacao.h" />
+    <ClInclude Include="TCodificacaoReal.h" />
     <ClInclude Include="Teste\OitoDamas.h" />
     <ClInclude Include="Teste\Particao.h" />
     <ClInclude Include="Teste\ProblemaArtificial.h" />
