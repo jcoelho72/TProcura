@@ -1,5 +1,6 @@
 var annotated_dup =
 [
+    [ "BitRef", "classBitRef.html", "classBitRef" ],
     [ "CAspirador", "classCAspirador.html", "classCAspirador" ],
     [ "CJogoDoGalo", "classCJogoDoGalo.html", "classCJogoDoGalo" ],
     [ "CJogoEmLinha", "classCJogoEmLinha.html", "classCJogoEmLinha" ],
@@ -16,6 +17,11 @@ var annotated_dup =
     [ "SParametrosEspaco", "structSParametrosEspaco.html", "structSParametrosEspaco" ],
     [ "SResultado", "structSResultado.html", "structSResultado" ],
     [ "SValorEstado", "structSValorEstado.html", "structSValorEstado" ],
+    [ "TCodificacaoArvore", "classTCodificacaoArvore.html", null ],
+    [ "TCodificacaoBinaria", "classTCodificacaoBinaria.html", null ],
+    [ "TCodificacaoInteira", "classTCodificacaoInteira.html", null ],
+    [ "TCodificacaoPermutacao", "classTCodificacaoPermutacao.html", "classTCodificacaoPermutacao" ],
+    [ "TCodificacaoReal", "classTCodificacaoReal.html", "classTCodificacaoReal" ],
     [ "TProcura", "classTProcura.html", "classTProcura" ],
     [ "TProcuraAdversa", "classTProcuraAdversa.html", "classTProcuraAdversa" ],
     [ "TProcuraConstrutiva", "classTProcuraConstrutiva.html", "classTProcuraConstrutiva" ],

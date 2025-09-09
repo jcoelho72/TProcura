@@ -9,9 +9,11 @@ var searchData=
   ['_7ecproblemaartificial_6',['~cproblemaartificial',['../classCProblemaArtificial.html#a5a3353d4f263cdaa090237fe245f532a',1,'CProblemaArtificial::~CProblemaArtificial(void)'],['../classCProblemaArtificial.html#a5a3353d4f263cdaa090237fe245f532a',1,'CProblemaArtificial::~CProblemaArtificial(void)']]],
   ['_7ecpuzzle8_7',['~CPuzzle8',['../classCPuzzle8.html#a05a4b0712e7ff5cea28b6a76b5f9557f',1,'CPuzzle8']]],
   ['_7ectestetvector_8',['~CTesteTVector',['../classCTesteTVector.html#a4da32c26bbf817cc06f48569a19e1b90',1,'CTesteTVector']]],
-  ['_7etprocura_9',['~TProcura',['../classTProcura.html#a3aebd23cfe82d58b78024d39e8b31fc0',1,'TProcura']]],
-  ['_7etprocuraadversa_10',['~TProcuraAdversa',['../classTProcuraAdversa.html#af519ba133593f289a454495ce72972fd',1,'TProcuraAdversa']]],
-  ['_7etprocuraconstrutiva_11',['~TProcuraConstrutiva',['../classTProcuraConstrutiva.html#aa19cbee6023bd0ff01c61c6d6db2e2ae',1,'TProcuraConstrutiva']]],
-  ['_7etprocuramelhorativa_12',['~TProcuraMelhorativa',['../classTProcuraMelhorativa.html#ad2ca1ae58d4629b2119ccdbee61bde00',1,'TProcuraMelhorativa']]],
-  ['_7etvector_13',['~TVector',['../classTVector.html#a0ba5799421ad86bb49b74170505cc76c',1,'TVector']]]
+  ['_7etcodificacaopermutacao_9',['~TCodificacaoPermutacao',['../classTCodificacaoPermutacao.html#a86adf88d28340d016bcbb94281caf8ba',1,'TCodificacaoPermutacao']]],
+  ['_7etcodificacaoreal_10',['~TCodificacaoReal',['../classTCodificacaoReal.html#a183cf919bf30f2eb85c4bc9a7ee0f8c6',1,'TCodificacaoReal']]],
+  ['_7etprocura_11',['~TProcura',['../classTProcura.html#a3aebd23cfe82d58b78024d39e8b31fc0',1,'TProcura']]],
+  ['_7etprocuraadversa_12',['~TProcuraAdversa',['../classTProcuraAdversa.html#af519ba133593f289a454495ce72972fd',1,'TProcuraAdversa']]],
+  ['_7etprocuraconstrutiva_13',['~TProcuraConstrutiva',['../classTProcuraConstrutiva.html#aa19cbee6023bd0ff01c61c6d6db2e2ae',1,'TProcuraConstrutiva']]],
+  ['_7etprocuramelhorativa_14',['~TProcuraMelhorativa',['../classTProcuraMelhorativa.html#ad2ca1ae58d4629b2119ccdbee61bde00',1,'TProcuraMelhorativa']]],
+  ['_7etvector_15',['~TVector',['../classTVector.html#a0ba5799421ad86bb49b74170505cc76c',1,'TVector']]]
 ];

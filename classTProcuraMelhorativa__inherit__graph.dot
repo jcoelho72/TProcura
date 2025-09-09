@@ -38,7 +38,7 @@ digraph "TProcuraMelhorativa"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">#</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">DebugCruzamentoAG()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-  Node2 -> Node1 [id="edge5_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node2 -> Node1 [id="edge10_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
   Node2 [id="Node000002",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TProcura</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">instancia<BR ALIGN="LEFT"/></TD></TR>
@@ -80,7 +80,7 @@ digraph "TProcuraMelhorativa"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">#</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Dominio()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTProcura.html",tooltip="Classe base para todas as procuras."];
-  Node1 -> Node3 [id="edge6_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node1 -> Node3 [id="edge11_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
   Node3 [id="Node000003",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">COitoDamas</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">damas<BR ALIGN="LEFT"/></TD></TR>
@@ -99,7 +99,7 @@ digraph "TProcuraMelhorativa"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0"></TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">and 17 more...</TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classCOitoDamas.html",tooltip="Representa um estado do problema das 8 damas."];
-  Node1 -> Node4 [id="edge7_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node1 -> Node4 [id="edge12_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
   Node4 [id="Node000004",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">CParticao</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">numeros<BR ALIGN="LEFT"/></TD></TR>
@@ -122,7 +122,7 @@ digraph "TProcuraMelhorativa"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0"></TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">and 16 more...</TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classCParticao.html",tooltip="Representa um estado do problema da partição."];
-  Node1 -> Node5 [id="edge8_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node1 -> Node5 [id="edge13_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
   Node5 [id="Node000005",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">CProblemaArtificial</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">id<BR ALIGN="LEFT"/></TD></TR>
@@ -143,4 +143,72 @@ digraph "TProcuraMelhorativa"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0"></TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">and 13 more...</TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html",tooltip="Representa um estado num problema artificial."];
+  Node1 -> Node6 [id="edge14_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node6 [id="Node000006",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TCodificacaoArvore</TD></TR>
+<HR/>
+<TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
+<HR/>
+<TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
+</TABLE>>
+,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTCodificacaoArvore.html",tooltip=" "];
+  Node1 -> Node7 [id="edge15_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node7 [id="Node000007",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TCodificacaoBinaria</TD></TR>
+<HR/>
+<TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
+<HR/>
+<TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
+</TABLE>>
+,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTCodificacaoBinaria.html",tooltip=" "];
+  Node1 -> Node8 [id="edge16_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node8 [id="Node000008",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TCodificacaoInteira</TD></TR>
+<HR/>
+<TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
+<HR/>
+<TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
+</TABLE>>
+,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html",tooltip=" "];
+  Node1 -> Node9 [id="edge17_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node9 [id="Node000009",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TCodificacaoPermutacao</TD></TR>
+<HR/>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">estado<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">nElementos<BR ALIGN="LEFT"/></TD></TR>
+<HR/>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">TCodificacaoPermutacao()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">~TCodificacaoPermutacao()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Avaliar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Inicializar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Debug()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Duplicar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Copiar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">NovaSolucao()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Acao()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">ResetParametros()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Vizinhanca()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Mutar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Cruzamento()<BR ALIGN="LEFT"/></TD></TR>
+</TABLE>>
+,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTCodificacaoPermutacao.html",tooltip=" "];
+  Node1 -> Node10 [id="edge18_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node10 [id="Node000010",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TCodificacaoReal</TD></TR>
+<HR/>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">estado<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">nElementos<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">minValor<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">maxValor<BR ALIGN="LEFT"/></TD></TR>
+<HR/>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">TCodificacaoReal()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">~TCodificacaoReal()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Avaliar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Inicializar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Debug()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Duplicar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Copiar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">NovaSolucao()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Acao()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">ResetParametros()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Vizinhanca()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Mutar()<BR ALIGN="LEFT"/></TD></TR>
+<TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Cruzamento()<BR ALIGN="LEFT"/></TD></TR>
+</TABLE>>
+,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTCodificacaoReal.html",tooltip=" "];
 }

@@ -1,0 +1,63 @@
+\doxysection{TCodificacao\+Inteira.\+h}
+\hypertarget{TCodificacaoInteira_8h_source}{}\label{TCodificacaoInteira_8h_source}\index{Melhorativa/TCodificacaoInteira.h@{Melhorativa/TCodificacaoInteira.h}}
+\mbox{\hyperlink{TCodificacaoInteira_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TProcuraMelhorativa_8h}{TProcuraMelhorativa.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00004}00004\ \textcolor{comment}{//\ nomes\ dos\ parâmetros\ fixos\ na\ codificação\ binária}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00005}\mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26b}{00005}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26b}{ECodificacaoInteira}}\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00006}\mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26ba5dd6f9ddec471a5dbf98ee49d39664c0}{00006}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26ba5dd6f9ddec471a5dbf98ee49d39664c0}{cruzamentoCI}}\ =\ \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa981e798f0e2652c4b6e264b69128d96}{parametrosMelhorativas}},}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00007}\mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26ba4e794426edc9a57239eab961fd666f9e}{00007}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26badd5350c1490459f55df0a02fe7dd0159}{mutacaoCI}},\ \mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26ba8dfd3fa793e748ccbc99d2937c2cb5b7}{vizinhancaCI}},\ \mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26ba371bcb2f0019e5167365ba8dff066f4a}{limiteVizinhancaCI}},\ \mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26ba4e794426edc9a57239eab961fd666f9e}{distanciaCI}},}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26bada56171628e524bdbbe06aae7b047cba}{parametrosCodificacaoInteira}}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00009}\mbox{\hyperlink{TCodificacaoInteira_8h_a6441bc17f6acdec5f44e16aded36c26bada56171628e524bdbbe06aae7b047cba}{00009}}\ \};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00011}\mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127a}{00011}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127a}{ETiposVizinhancaInteira}}\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00012}\mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aaebcc75c984f2a0d3fb11411f791dbd6a}{00012}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aaebcc75c984f2a0d3fb11411f791dbd6a}{vizIncDecValor}}\ =\ 1,\ \ \ \ \textcolor{comment}{//\ incrementa/decrementa\ valor}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00013}\mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aaa5d7c53f81ae0cf882b45df313ee3358}{00013}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aaa5d7c53f81ae0cf882b45df313ee3358}{vizIncDecPot2}},\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ incrementa/decrementa\ potência\ de\ 2}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00014}\mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aa30e5ed51c7d93e14b1dad201e792156d}{00014}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aa30e5ed51c7d93e14b1dad201e792156d}{vizTrocaValor}},\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ troca\ valores\ entre\ dois\ elementos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00015}\mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aa4fbf83b5e5ef412ca795da1b059ceb09}{00015}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aa4fbf83b5e5ef412ca795da1b059ceb09}{vizInserir}},\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ insere\ um\ elemento\ noutro\ local\ (deslocando\ os\ outros)}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00016}\mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aa22e05165c6f5a184a8490243c0ea8c6b}{00016}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aa22e05165c6f5a184a8490243c0ea8c6b}{vizTrocaPar}},\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ troca\ dois\ elementos\ (permuta)}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00017}\mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aaffa5ff92db2553be7c7b46a3329208f0}{00017}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_ab6f4f122217771cfeb0508e8004f127aaffa5ff92db2553be7c7b46a3329208f0}{vizInverterSegmento}},\ \ \ \textcolor{comment}{//\ inverte\ um\ segmento}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00018}00018\ \};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00020}\mbox{\hyperlink{TCodificacaoInteira_8h_a8da2d437f7442ad25916239a13ebe93e}{00020}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{TCodificacaoInteira_8h_a8da2d437f7442ad25916239a13ebe93e}{ETiposDistanciaInteira}}\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00021}\mbox{\hyperlink{TCodificacaoInteira_8h_a8da2d437f7442ad25916239a13ebe93eaca798fd059ceefebe7e8c2b6c7a56af5}{00021}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_a8da2d437f7442ad25916239a13ebe93eaca798fd059ceefebe7e8c2b6c7a56af5}{distHamming}}\ =\ 1,\ \textcolor{comment}{//\ número\ de\ posições\ com\ valores\ diferentes}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00022}\mbox{\hyperlink{TCodificacaoInteira_8h_a8da2d437f7442ad25916239a13ebe93eac98936b5e15c4927bf7bae37e20bf20c}{00022}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_a8da2d437f7442ad25916239a13ebe93eac98936b5e15c4927bf7bae37e20bf20c}{distEuclidiana}},\ \ \textcolor{comment}{//\ distância\ euclidiana\ (raiz\ quadrada\ da\ soma\ dos\ quadrados\ das\ diferenças)}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00023}00023\ \ \ \ \ \mbox{\hyperlink{TCodificacaoInteira_8h_a8da2d437f7442ad25916239a13ebe93eab4b6a34a0568c7906d9dfacd7656da78}{distManhattan}}\ \ \ \ \textcolor{comment}{//\ distância\ Manhattan\ (soma\ das\ diferenças\ absolutas)}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00024}\mbox{\hyperlink{TCodificacaoInteira_8h_a8da2d437f7442ad25916239a13ebe93eab4b6a34a0568c7906d9dfacd7656da78}{00024}}\ \};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00026}\mbox{\hyperlink{classTCodificacaoInteira}{00026}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTCodificacaoInteira}{TCodificacaoInteira}}\ :}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTProcuraMelhorativa}{TProcuraMelhorativa}}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00029}00029\ \ \ \ \ \mbox{\hyperlink{classTCodificacaoInteira}{TCodificacaoInteira}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{classTCodificacaoInteira}{\string~TCodificacaoInteira}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<int>}}\ estado;\ \textcolor{comment}{//\ codificação\ inteira}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ nElementos;\ \textcolor{comment}{//\ número\ de\ elementos\ na\ permutação}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classTVector}{TVector<int>}}\ maxValor;\ \textcolor{comment}{//\ valor\ máximo\ para\ cada\ elemento}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ métodos\ necessários\ redefinir}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{int}\ Avaliar(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ Duplicar(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ deve\ carregar\ a\ instância,\ para\ variáveis\ estáticas,\ da\ subclasse}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ definir\ valores\ globais:\ nElementos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{void}\ Inicializar(\textcolor{keywordtype}{void})=0;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ métodos\ que\ podem\ ser\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{void}\ Debug(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ métodos\ que\ não se\ prevê que\ sejam\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ Copiar(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{void}\ NovaSolucao(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{void}\ ResetParametros();}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ operadores\ melhorativos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{void}\ Vizinhanca(\mbox{\hyperlink{classTVector}{TVector<TPonto>}}\&\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vizinhos}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ Mutar(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ Cruzamento(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{a}},\ \mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{b}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{int}\ Distancia(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{a}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00056}00056\ \};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoInteira_8h_source_l00057}00057\ }
+
+\end{DoxyCode}

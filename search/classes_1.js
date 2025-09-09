@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['sindicador_0',['SIndicador',['../structSIndicador.html',1,'']]],
-  ['sindice_1',['SIndice',['../structSIndice.html',1,'']]],
-  ['sjogoemlinha_2',['SJogoEmLinha',['../structSJogoEmLinha.html',1,'']]],
-  ['sparametro_3',['SParametro',['../structSParametro.html',1,'']]],
-  ['sparametrosespaco_4',['SParametrosEspaco',['../structSParametrosEspaco.html',1,'']]],
-  ['sresultado_5',['SResultado',['../structSResultado.html',1,'']]],
-  ['svalorestado_6',['SValorEstado',['../structSValorEstado.html',1,'']]]
+  ['caspirador_0',['CAspirador',['../classCAspirador.html',1,'']]],
+  ['cjogodogalo_1',['CJogoDoGalo',['../classCJogoDoGalo.html',1,'']]],
+  ['cjogoemlinha_2',['CJogoEmLinha',['../classCJogoEmLinha.html',1,'']]],
+  ['clistano_3',['CListaNo',['../classCListaNo.html',1,'']]],
+  ['coitodamas_4',['COitoDamas',['../classCOitoDamas.html',1,'']]],
+  ['cparticao_5',['CParticao',['../classCParticao.html',1,'']]],
+  ['cproblemaartificial_6',['CProblemaArtificial',['../classCProblemaArtificial.html',1,'']]],
+  ['cpuzzle8_7',['CPuzzle8',['../classCPuzzle8.html',1,'']]],
+  ['ctestetvector_8',['CTesteTVector',['../classCTesteTVector.html',1,'']]]
 ];

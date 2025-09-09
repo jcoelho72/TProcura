@@ -1,0 +1,74 @@
+\doxysection{TCodificacao\+Binaria.\+h}
+\hypertarget{TCodificacaoBinaria_8h_source}{}\label{TCodificacaoBinaria_8h_source}\index{Melhorativa/TCodificacaoBinaria.h@{Melhorativa/TCodificacaoBinaria.h}}
+\mbox{\hyperlink{TCodificacaoBinaria_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TProcuraMelhorativa_8h}{TProcuraMelhorativa.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00004}00004\ \textcolor{comment}{//\ nomes\ dos\ parâmetros\ fixos\ na\ codificação\ binária}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00005}\mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826}{00005}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826}{ECodificacaoBinaria}}\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00006}\mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826a6164a9008c538d78b1132df87066bc11}{00006}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826a6164a9008c538d78b1132df87066bc11}{cruzamentoCB}}\ =\ \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa981e798f0e2652c4b6e264b69128d96}{parametrosMelhorativas}},\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00007}\mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826a873c4d5adf071cd425e20a091f596d2b}{00007}}\ \ \ \ \ \mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826a873c4d5adf071cd425e20a091f596d2b}{mutacaoCB}},\ \mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826a358bbbf225ac553cd1e875cd478c7deb}{vizinhancaCB}},\ \mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826a6e54bc49a3d4ce1058e907b96209727e}{parametrosCodificacaoBinaria}}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00008}\mbox{\hyperlink{TCodificacaoBinaria_8h_ae9b4405f1ed45affeb1935205ec8f826a6e54bc49a3d4ce1058e907b96209727e}{00008}}\ \};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00010}00010\ \textcolor{comment}{//\ classe\ para\ permitir\ referência\ a\ um\ bit,\ para\ leitura\ e\ escrita}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00011}\mbox{\hyperlink{classBitRef}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBitRef}{BitRef}}\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00012}00012\ \ \ \ \ uint64\_t\&\ word;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00013}00013\ \ \ \ \ uint64\_t\ mask;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00014}00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00015}\mbox{\hyperlink{classBitRef_aa95d691745cb584e6e7f1544802e6de6}{00015}}\ \ \ \ \ \mbox{\hyperlink{classBitRef_aa95d691745cb584e6e7f1544802e6de6}{BitRef}}(uint64\_t\&\ w,\ uint64\_t\ m)\ :\ word(w),\ mask(m)\ \{\}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//\ conversão para\ leitura}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00017}\mbox{\hyperlink{classBitRef_a58f696de677b3d584677f69636a828ab}{00017}}\ \ \ \ \ \textcolor{keyword}{operator}\ bool()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (word\ \&\ mask)\ !=\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ atribuição\ para\ escrita}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00019}\mbox{\hyperlink{classBitRef_a7bce091db5109017f04694afd2ad54b6}{00019}}\ \ \ \ \ \mbox{\hyperlink{classBitRef}{BitRef}}\&\ \mbox{\hyperlink{classBitRef_a7bce091db5109017f04694afd2ad54b6}{operator=}}(\textcolor{keywordtype}{bool}\ v)\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v)\ word\ |=\ mask;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \ \ word\ \&=\ \string~mask;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ atribuição\ de\ outro\ BitRef}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00025}\mbox{\hyperlink{classBitRef_a93d409eb7a607b1e078e29a056cfbb2e}{00025}}\ \ \ \ \ \mbox{\hyperlink{classBitRef}{BitRef}}\&\ \mbox{\hyperlink{classBitRef_a93d409eb7a607b1e078e29a056cfbb2e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classBitRef}{BitRef}}\&\ other)\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this}\ =\ bool(other);\ \textcolor{comment}{//\ reutiliza\ o\ operador=(bool)}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00028}00028\ \};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00031}\mbox{\hyperlink{classTCodificacaoBinaria}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTCodificacaoBinaria}{TCodificacaoBinaria}}\ :}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTProcuraMelhorativa}{TProcuraMelhorativa}}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{classTCodificacaoBinaria}{TCodificacaoBinaria}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{classTCodificacaoBinaria}{\string~TCodificacaoBinaria}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<uint64\_t>}}\ estado;\ \textcolor{comment}{//\ codificação\ binária\ (em\ números\ de\ 64\ bits)}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ nElementos;\ \textcolor{comment}{//\ número\ de\ elementos\ binários\ na\ codificação}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ troca\ o\ bit\ i}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ Troca(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}})\ \{\ estado[\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ >>\ 6]\ \string^=\ ((\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\_t}})1\ <<\ (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ \&\ 63));\ \}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ acesso\ a\ um\ bit\ para\ atribuir\ }}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classBitRef}{BitRef}}\ Bit(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classBitRef}{BitRef}}(estado[\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ >>\ 6],\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\_t}}(1)\ <<\ (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ \&\ 63));\ \}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00044}00044\ \ \ \ \ \textcolor{comment}{//\ acesso\ a\ um\ bit\ para\ ler}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ Bit(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}})\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (estado[\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ >>\ 6]\ \&\ ((\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{uint64\_t}})1\ <<\ (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}}\ \&\ 63)))\ !=\ 0;\ \}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ métodos\ necessários\ redefinir}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ Duplicar(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{int}\ Avaliar(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ deve\ carregar\ a\ instância,\ para\ variáveis\ estáticas,\ da\ subclasse}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ definir\ valores\ globais:\ nElementos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ Inicializar(\textcolor{keywordtype}{void})=0;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ métodos\ que\ podem\ ser\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ Debug(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00058}00058\ \ \ \ \ \textcolor{comment}{//\ métodos\ que\ não se\ prevê que\ sejam\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{void}\ Copiar(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ NovaSolucao(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{void}\ ResetParametros();}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ operadores\ melhorativos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{void}\ Vizinhanca(\mbox{\hyperlink{classTVector}{TVector<TPonto>}}\&\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vizinhos}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{void}\ Mutar(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{void}\ Cruzamento(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{a}},\ \mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{b}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{int}\ Distancia(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{a}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00067}00067\ \};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoBinaria_8h_source_l00068}00068\ }
+
+\end{DoxyCode}

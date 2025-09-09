@@ -8,11 +8,19 @@ var searchData=
   ['variante_5',['variante',['../structSJogoEmLinha.html#a990c0928abbfb2a493437355f80a91a5',1,'SJogoEmLinha']]],
   ['ver_20a_20alterar_20um_20parâmetro_6',['Ação 4 - Ver a alterar um parâmetro',['../teste_aspirador1.html#autotoc_md14',1,'']]],
   ['ver_20a_20solução_20realizada_20manualmente_7',['Ação 3 - Ver a solução realizada manualmente',['../teste_aspirador1.html#autotoc_md13',1,'']]],
-  ['ver_20instâncias_8',['ver instâncias',['../teste_puzzle8.html#autotoc_md46',1,'Ação 1 - Ver instâncias'],['../teste_particao.html#autotoc_md42',1,'Ação 1 - Ver instâncias'],['../teste_jogo_em_linha.html#autotoc_md35',1,'Ação 1 - Ver instâncias'],['../teste_jogo_do_galo.html#autotoc_md28',1,'Ação 1 - Ver instâncias'],['../teste_artificial.html#autotoc_md8',1,'Ação 1 - Ver instâncias'],['../teste_8damas.html#autotoc_md1',1,'Ação 1 - Ver instâncias']]],
+  ['ver_20instâncias_8',['ver instâncias',['../teste_particao.html#autotoc_md42',1,'Ação 1 - Ver instâncias'],['../teste_jogo_em_linha.html#autotoc_md35',1,'Ação 1 - Ver instâncias'],['../teste_jogo_do_galo.html#autotoc_md28',1,'Ação 1 - Ver instâncias'],['../teste_artificial.html#autotoc_md8',1,'Ação 1 - Ver instâncias'],['../teste_8damas.html#autotoc_md1',1,'Ação 1 - Ver instâncias'],['../teste_puzzle8.html#autotoc_md46',1,'Ação 1 - Ver instâncias']]],
   ['ver_20uma_20árvore_20de_20procura_20maior_9',['Ação 12 - Ver uma árvore de procura maior',['../teste_aspirador2.html#autotoc_md23',1,'']]],
   ['veracoes_10',['verAcoes',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1',1,'TProcuraConstrutiva.h']]],
   ['verificalimites_11',['VerificaLimites',['../classTProcuraConstrutiva.html#aec0a667a7fda1ebe565ba13d6b02805a',1,'TProcuraConstrutiva']]],
   ['verificamelhor_12',['VerificaMelhor',['../classTProcuraMelhorativa.html#aeb435694084a626e3d52f3a489d9a93d',1,'TProcuraMelhorativa']]],
   ['verlinha_13',['VerLinha',['../classCJogoEmLinha.html#ab7f482497b6ffa4823327474f1b822ed',1,'CJogoEmLinha']]],
-  ['vizinhanca_14',['vizinhanca',['../classTProcuraMelhorativa.html#a764621b9d48b29d19b79d3e91d18c22f',1,'TProcuraMelhorativa::Vizinhanca()'],['../classCParticao.html#a54bc83b93ee7996d8203192c45f3f486',1,'CParticao::Vizinhanca()'],['../classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2',1,'COitoDamas::Vizinhanca()']]]
+  ['vizincdecpot2_14',['vizIncDecPot2',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aaa5d7c53f81ae0cf882b45df313ee3358',1,'TCodificacaoInteira.h']]],
+  ['vizincdecvalor_15',['vizIncDecValor',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aaebcc75c984f2a0d3fb11411f791dbd6a',1,'TCodificacaoInteira.h']]],
+  ['vizinhanca_16',['vizinhanca',['../classTProcuraMelhorativa.html#a764621b9d48b29d19b79d3e91d18c22f',1,'TProcuraMelhorativa::Vizinhanca()'],['../classTCodificacaoPermutacao.html#aca536a8709cddbfa6461652949092a4c',1,'TCodificacaoPermutacao::Vizinhanca()'],['../classTCodificacaoReal.html#a95fc441bc8e6c9c6bac399f7eb33b32f',1,'TCodificacaoReal::Vizinhanca()'],['../classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2',1,'COitoDamas::Vizinhanca()'],['../classCParticao.html#a54bc83b93ee7996d8203192c45f3f486',1,'CParticao::Vizinhanca()']]],
+  ['vizinhancacb_17',['vizinhancaCB',['../TCodificacaoBinaria_8h.html#ae9b4405f1ed45affeb1935205ec8f826a358bbbf225ac553cd1e875cd478c7deb',1,'TCodificacaoBinaria.h']]],
+  ['vizinhancaci_18',['vizinhancaCI',['../TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba8dfd3fa793e748ccbc99d2937c2cb5b7',1,'TCodificacaoInteira.h']]],
+  ['vizinserir_19',['vizInserir',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa4fbf83b5e5ef412ca795da1b059ceb09',1,'TCodificacaoInteira.h']]],
+  ['vizinvertersegmento_20',['vizInverterSegmento',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aaffa5ff92db2553be7c7b46a3329208f0',1,'TCodificacaoInteira.h']]],
+  ['viztrocapar_21',['vizTrocaPar',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa22e05165c6f5a184a8490243c0ea8c6b',1,'TCodificacaoInteira.h']]],
+  ['viztrocavalor_22',['vizTrocaValor',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa30e5ed51c7d93e14b1dad201e792156d',1,'TCodificacaoInteira.h']]]
 ];

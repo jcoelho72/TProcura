@@ -7,9 +7,11 @@ var searchData=
   ['maxestadosnivel_4',['maxEstadosNivel',['../structSParametrosEspaco.html#a3fd332074a315d06bb87610caced5630',1,'SParametrosEspaco']]],
   ['maxnivel_5',['maxNivel',['../structSParametrosEspaco.html#a13709018ce7e3c95e76c99b0a0897187',1,'SParametrosEspaco']]],
   ['maxramificacao_6',['maxRamificacao',['../structSParametrosEspaco.html#a350f905e7dae470a2e6bda8841c05d3b',1,'SParametrosEspaco']]],
-  ['memoriaesgotada_7',['memoriaEsgotada',['../classTProcura.html#a0603a12d645bdc6ff66a454c8614014d',1,'TProcura']]],
-  ['min_8',['min',['../structSParametro.html#aaf6a93eeb7215270e707dcd20940e9ff',1,'SParametro']]],
-  ['minimizar_9',['minimizar',['../classTProcuraAdversa.html#a72aaad862bedca505689513bec233c2a',1,'TProcuraAdversa']]],
-  ['minnivelobjetivo_10',['minNivelObjetivo',['../structSParametrosEspaco.html#aab8a5cc24b87aada1e4a440917465569',1,'SParametrosEspaco']]],
-  ['minramificacao_11',['minRamificacao',['../structSParametrosEspaco.html#ade65ba6e25f2584c653151a1934cb0a1',1,'SParametrosEspaco']]]
+  ['maxvalor_7',['maxValor',['../classTCodificacaoReal.html#a09c910fcc5f67baf54f27ab90ca73bf9',1,'TCodificacaoReal']]],
+  ['memoriaesgotada_8',['memoriaEsgotada',['../classTProcura.html#a0603a12d645bdc6ff66a454c8614014d',1,'TProcura']]],
+  ['min_9',['min',['../structSParametro.html#aaf6a93eeb7215270e707dcd20940e9ff',1,'SParametro']]],
+  ['minimizar_10',['minimizar',['../classTProcuraAdversa.html#a72aaad862bedca505689513bec233c2a',1,'TProcuraAdversa']]],
+  ['minnivelobjetivo_11',['minNivelObjetivo',['../structSParametrosEspaco.html#aab8a5cc24b87aada1e4a440917465569',1,'SParametrosEspaco']]],
+  ['minramificacao_12',['minRamificacao',['../structSParametrosEspaco.html#ade65ba6e25f2584c653151a1934cb0a1',1,'SParametrosEspaco']]],
+  ['minvalor_13',['minValor',['../classTCodificacaoReal.html#a1a26007565088d520e7de62eb9b2c886',1,'TCodificacaoReal']]]
 ];

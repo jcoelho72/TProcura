@@ -6,7 +6,7 @@ var searchData=
   ['espaco_3',['espaco',['../classCProblemaArtificial.html#a93aab3cc42f3e85ad39c6d7e206707da',1,'CProblemaArtificial']]],
   ['espacosramo_4',['espacosRamo',['../group__VariaveisGlobais.html#ga95c939d457c63d60ff3b1a0eb9e47da4',1,'TProcuraConstrutiva']]],
   ['esquerda_5',['esquerda',['../classCParticao.html#a5a3b0c754776ffb416c8d0e3833ef4ec',1,'CParticao']]],
-  ['estado_6',['estado',['../structSIndice.html#a71d6cd112fe2f89c710603ad37ded5bf',1,'SIndice']]],
+  ['estado_6',['estado',['../structSIndice.html#a71d6cd112fe2f89c710603ad37ded5bf',1,'SIndice::estado'],['../classTCodificacaoPermutacao.html#a55a0de29361c1b35041966c854a165c2',1,'TCodificacaoPermutacao::estado'],['../classTCodificacaoReal.html#a1fe908e5ed55a1c05c66b0e05989b717',1,'TCodificacaoReal::estado']]],
   ['estadocodht_7',['estadoCodHT',['../classTProcuraConstrutiva.html#afee458f3c6b027eaf5958115801ce999',1,'TProcuraConstrutiva']]],
   ['expansoes_8',['expansoes',['../group__VariaveisGlobais.html#ga198a1f8ed90785a1c3f112a3468a2d74',1,'TProcuraConstrutiva']]]
 ];

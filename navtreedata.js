@@ -61,8 +61,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Adversa_2Teste_2teste_8cpp.html",
-"classCOitoDamas.html#a220a570b326344f1bce4f4cb4cde2ed9",
-"classTVector.html#a05f29646493d42f3c77081b6031d70e5"
+"classCJogoDoGalo.html#a00004ccf1fa3974c67e655291db65cfb",
+"classTProcuraAdversa.html#a7c4153974c32753901326271fee90197",
+"structSParametro.html#aa6d52b4df1268ca83929f85df2a491fa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

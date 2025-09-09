@@ -1,0 +1,43 @@
+\doxysection{TCodificacao\+Real.\+h}
+\hypertarget{TCodificacaoReal_8h_source}{}\label{TCodificacaoReal_8h_source}\index{Melhorativa/TCodificacaoReal.h@{Melhorativa/TCodificacaoReal.h}}
+\mbox{\hyperlink{TCodificacaoReal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TProcuraMelhorativa_8h}{TProcuraMelhorativa.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00003}\mbox{\hyperlink{classTCodificacaoReal}{00003}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTCodificacaoReal}{TCodificacaoReal}}\ :}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00004}00004\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTProcuraMelhorativa}{TProcuraMelhorativa}}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00005}00005\ \{}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00006}00006\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00007}\mbox{\hyperlink{classTCodificacaoReal_ac5da114de8222ac49eb1099504185168}{00007}}\ \ \ \ \ \mbox{\hyperlink{classTCodificacaoReal_ac5da114de8222ac49eb1099504185168}{TCodificacaoReal}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00008}\mbox{\hyperlink{classTCodificacaoReal_a183cf919bf30f2eb85c4bc9a7ee0f8c6}{00008}}\ \ \ \ \ \mbox{\hyperlink{classTCodificacaoReal_a183cf919bf30f2eb85c4bc9a7ee0f8c6}{\string~TCodificacaoReal}}()\ \{\}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00010}\mbox{\hyperlink{classTCodificacaoReal_a1fe908e5ed55a1c05c66b0e05989b717}{00010}}\ \ \ \ \ \mbox{\hyperlink{classTVector}{TVector<double>}}\ \mbox{\hyperlink{classTCodificacaoReal_a1fe908e5ed55a1c05c66b0e05989b717}{estado}};\ \textcolor{comment}{//\ codificação\ real}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00011}\mbox{\hyperlink{classTCodificacaoReal_aca148f3ecab608c81ae28dd4fb5ae85a}{00011}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTCodificacaoReal_aca148f3ecab608c81ae28dd4fb5ae85a}{nElementos}};\ \textcolor{comment}{//\ número\ de\ elementos\ no\ estado}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00012}\mbox{\hyperlink{classTCodificacaoReal_a09c910fcc5f67baf54f27ab90ca73bf9}{00012}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classTVector}{TVector<double>}}\ \mbox{\hyperlink{classTCodificacaoReal_a1a26007565088d520e7de62eb9b2c886}{minValor}},\ \mbox{\hyperlink{classTCodificacaoReal_a09c910fcc5f67baf54f27ab90ca73bf9}{maxValor}};\ \textcolor{comment}{//\ valores\ mínimo\ e\ máximo\ para\ cada\ elemento,\ se\ vazios,\ o\ domínio\ é de\ 0\ a\ 1}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ métodos\ necessários\ redefinir}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00015}\mbox{\hyperlink{classTCodificacaoReal_ab1498e41b9111c3e98cba9b72e28bebf}{00015}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTCodificacaoReal_ab1498e41b9111c3e98cba9b72e28bebf}{Avaliar}}(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ deve\ carregar\ a\ instância,\ para\ variáveis\ estáticas,\ da\ subclasse}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//\ definir\ valores\ globais:\ nElementos,\ minValor,\ maxValor}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00019}\mbox{\hyperlink{classTCodificacaoReal_a0652383ada0c9ac2016e8846bceb54f3}{00019}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCodificacaoReal_a0652383ada0c9ac2016e8846bceb54f3}{Inicializar}}(\textcolor{keywordtype}{void})=0;}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ métodos\ que\ podem\ ser\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00022}\mbox{\hyperlink{classTCodificacaoReal_abb88edf7e43b2782acbaba88986ab316}{00022}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCodificacaoReal_abb88edf7e43b2782acbaba88986ab316}{Debug}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ métodos\ que\ não se\ prevê que\ sejam\ redefinidos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00026}\mbox{\hyperlink{classTCodificacaoReal_ab4e6b92cf2c32c0a5d87176014bb23a8}{00026}}\ \ \ \ \ \mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTCodificacaoReal_ab4e6b92cf2c32c0a5d87176014bb23a8}{Duplicar}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00027}\mbox{\hyperlink{classTCodificacaoReal_a097bfb967ae787d1ee7eff2ef63a76d5}{00027}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCodificacaoReal_a097bfb967ae787d1ee7eff2ef63a76d5}{Copiar}}(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00028}\mbox{\hyperlink{classTCodificacaoReal_ae250760cfff4f7d105f6e423790a5247}{00028}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCodificacaoReal_ae250760cfff4f7d105f6e423790a5247}{NovaSolucao}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00029}\mbox{\hyperlink{classTCodificacaoReal_a29ca69d68f948df2c6c5aa9492819326}{00029}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTCodificacaoReal_a29ca69d68f948df2c6c5aa9492819326}{Acao}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{acao}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00030}\mbox{\hyperlink{classTCodificacaoReal_a05ae961431a020791a4ce90c11bc4561}{00030}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCodificacaoReal_a05ae961431a020791a4ce90c11bc4561}{ResetParametros}}();}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ operadores\ melhorativos}}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00032}\mbox{\hyperlink{classTCodificacaoReal_a95fc441bc8e6c9c6bac399f7eb33b32f}{00032}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCodificacaoReal_a95fc441bc8e6c9c6bac399f7eb33b32f}{Vizinhanca}}(\mbox{\hyperlink{classTVector}{TVector<TPonto>}}\&\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{vizinhos}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00033}\mbox{\hyperlink{classTCodificacaoReal_ab68e5d3796d0c50dcb6b3900a7a1c185}{00033}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCodificacaoReal_ab68e5d3796d0c50dcb6b3900a7a1c185}{Mutar}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00034}\mbox{\hyperlink{classTCodificacaoReal_aa8a63ef9b72823de2c1bdaae069650fb}{00034}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTCodificacaoReal_aa8a63ef9b72823de2c1bdaae069650fb}{Cruzamento}}(\mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{a}},\ \mbox{\hyperlink{classTProcuraMelhorativa}{TPonto}}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{b}});}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00036}00036\ \};}
+\DoxyCodeLine{\Hypertarget{TCodificacaoReal_8h_source_l00037}00037\ }
+
+\end{DoxyCode}
