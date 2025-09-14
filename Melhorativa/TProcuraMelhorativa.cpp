@@ -7,9 +7,14 @@
 
 #define BUFFER_SIZE 1024
 
+/// @brief Número de estados gerados 
+int TProcuraMelhorativa::geracoes = 0;
+/// @brief Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
+int TProcuraMelhorativa::epocas = 0;
 
 TProcuraMelhorativa::TProcuraMelhorativa(void)
 {
+	geracoes++; // cada estado criado conta como uma geração
 }
 
 TProcuraMelhorativa::~TProcuraMelhorativa(void)
@@ -19,14 +24,7 @@ TProcuraMelhorativa::~TProcuraMelhorativa(void)
 void TProcuraMelhorativa::ResetParametros()
 {
 	static const char* nomesAlgoritmos[] = {
-		"Largura Primeiro",
-		"Custo Uniforme",
-		"Profundidade Primeiro",
-		"Melhor Primeiro",
-		"A*",
-		"IDA*",
-		"Branch and Bound",
-		"Escaldada do Monte",
+		"Escalada do Monte",
 		"Algoritmo Genético" };
 	static const char* nomesMovePrimeiro[] = { "Primeiro","Melhor" };
 	TProcura::ResetParametros();
@@ -35,7 +33,7 @@ void TProcuraMelhorativa::ResetParametros()
 
 	// adicionar parâmetros da procura melhorativa
 	// alterar algoritmos
-	parametro[algoritmo] = { "Algoritmo",1,1,9,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
+	parametro[algoritmo] = { "Algoritmo",1,1,2,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
 
 	// move primeiro
 	parametro.Add({ "Move",1,1,2, "Utilizado na Escalada do Monte", nomesMovePrimeiro });
@@ -51,27 +49,11 @@ void TProcuraMelhorativa::ResetParametros()
 	indAtivo.Add(indEpocas).Add(indGeracoes);
 }
 
-
-
-// e gerada uma nova solucao aleatoriamente. Este metodo e definido iniciamente como uma procura em
-// profundidade em que o sucessor e escolhido aleatoriamente e sem retrocesso (caso falhe o processo re-inicia)
-void TProcuraMelhorativa::NovaSolucao(void)
-{
-	geracoes++;
-}
-
 // Retorna o valor da solucao completa actual.
 int TProcuraMelhorativa::Avaliar(void)
 {
 	iteracoes++;
 	return custo;
-}
-
-
-// Operador de vizinhanca (apenas em solucoes completas)
-void TProcuraMelhorativa::Vizinhanca(TVector<TPonto>& vizinhos)
-{
-	geracoes += vizinhos.Count();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -386,70 +368,10 @@ void TProcuraMelhorativa::LimparEstatisticas(clock_t& inicio)
 	geracoes = epocas = 0;
 }
 
-// Metodo para teste manual do objecto (chamadas aos algoritmos, construcao de uma solucao manual)
-// Este metodo destina-se a testes preliminares, e deve ser redefinido apenas se forem definidos novos algoritmos
-void TProcuraMelhorativa::TesteManualX(const char* nome) /// provavelmente apagar
-{
-	clock_t inicio;
-	int selecao, resultado;
-	TVector<TResultado> resultados;
-	ResetParametros();
-	TRand::srand(Parametro(seed));
-	Inicializar();
-	LimparEstatisticas(inicio);
-	while (true) {
-		printf("\n%s (TProcuraMelhorativa)", nome);
-		MostraParametros();
-		Debug();
-		MostraRelatorio(resultados, true);
-		printf("\n\
-_______________________________________________________________________________\n\
-| 1 - Inicializar | 2 - Explorar   | 3 - Solução/Caminho |\n\
-| 4 - Parâmetros  | 5 - Executar   | 6 - Configurações   | 7 - Teste");
-		if ((selecao = NovoValor("\nOpção: ")) == NAO_LIDO)
-			return;
-		switch (Dominio(selecao, 0, 8)) {
-		case 0: return;
-		case 1:
-			TRand::srand(Parametro(seed));
-			SolicitaInstancia();
-			Inicializar();
-			NovaSolucao();
-			Avaliar();
-			break;
-		case 2:
-			Explorar();
-			break;
-		case 3: MostrarSolucao(); break;
-		case 4: EditarParametros(); break;
-		case 5:
-			// executar um algoritmo 
-			LimparEstatisticas(inicio);
-			resultado = ExecutaAlgoritmo();
-			MostraParametros(0);
-			printf("\nResultado: %d", resultado);
-			ExecucaoTerminada(inicio);
-			InserirRegisto(resultados, instancia.valor, 0);
-			break;
-		case 6: EditarConfiguracoes(); break;
-		case 7:
-			TesteEmpirico(
-				SolicitaInstancias(),
-				NovoValor("Mostrar soluções? "),
-				NovoTexto("Ficheiro (nada para mostrar no ecrã):"));
-			break;
-		case 8: return;
-		default: printf("\nOpção não definida."); break;
-		}
-	}
-}
-
 int TProcuraMelhorativa::ExecutaAlgoritmo() {
-	if (parametro[algoritmo].valor <= 7)
-		return -1;
-	if (parametro[algoritmo].valor == 8)
+	if (parametro[algoritmo].valor == 1)
 		return EscaladaDoMonte();
-	if (parametro[algoritmo].valor == 9)
+	if (parametro[algoritmo].valor == 2)
 		return AlgoritmoGenetico();
 	return -1;
 }

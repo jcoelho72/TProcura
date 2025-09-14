@@ -31,6 +31,7 @@ public:
 class TCodificacaoBinaria :
     public TProcuraMelhorativa
 {
+public:
 	TCodificacaoBinaria() {}
 	~TCodificacaoBinaria() {}
 

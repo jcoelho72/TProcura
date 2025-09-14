@@ -7,7 +7,8 @@ class TProcuraMelhorativa;
 typedef TProcuraMelhorativa* TPonto;
 
 // nomes dos parâmetros fixos na procura melhorativa
-enum EMelhorativas { movePrimeiroEM = parametrosProcura, populacaoAG,
+enum EMelhorativas {
+	movePrimeiroEM = parametrosProcura, populacaoAG,
 	probMutacaoAG, distMinimaAG, parametrosMelhorativas
 };
 
@@ -39,11 +40,11 @@ public:
 	~TProcuraMelhorativa(void);
 
 	/// @brief Custo total, atualizada após Avaliar()
-	int custo; 
+	int custo;
 	/// @brief Número de estados gerados 
-	int geracoes;
+	static int geracoes;
 	/// @brief Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
-	int epocas;
+	static int epocas;
 
 	///////////////////////////////////////////////////////////////////////////////
 	// Métodos para redefinir
@@ -104,9 +105,9 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void Copiar(TPonto objecto) { }
+	virtual void Copiar(TPonto objecto) {}
 
-	virtual void NovaSolucao(void);
+	virtual void NovaSolucao(void) {}
 	// Retorna o valor da solução completa actual. Atribuir o valor a custo
 	virtual int Avaliar(void);
 	// redefinir, para aceitar ações que sejam operadores
@@ -114,6 +115,8 @@ public:
 	// Método para inicializar os parâmetros (redefinir se forem adicionados parâmetros específicos)
 	void ResetParametros() override;
 
+	// critério de paragem adicionado para procuras meolhorativas, se custo é nulo, parar
+	bool Parar(void) { return TProcura::Parar() || custo == 0; }
 
 	///////////////////////////////////////////////////////////////////////////////
 	// Operadores a redefinir para Escalada-do-Monte
@@ -121,14 +124,14 @@ public:
 
 	// Operador de vizinhanca (apenas em soluções completas)
 	// chamar a função nesta classe para actualizacao de estatisticas
-	virtual void Vizinhanca(TVector<TPonto>& vizinhos);
+	virtual void Vizinhanca(TVector<TPonto>& vizinhos) {}
 
 	///////////////////////////////////////////////////////////////////////////////
 	// Algorithmos Evolutivos
 	///////////////////////////////////////////////////////////////////////////////
 
 	// Operador mutação, altera o estado actual (de acordo com a parametrizacao global)
-	virtual void Mutar(void) { }
+	virtual void Mutar(void) {}
 	// Operador cruzamento, cruza os dois elementos a e b, colocando o resultado no estado atual
 	virtual void Cruzamento(TPonto a, TPonto b) { }
 	// Função distância: distancia deste elemento ao elemento a
@@ -147,10 +150,6 @@ public:
 	// retorna a avaliação do resultado final
 	int AlgoritmoGenetico();
 
-
-	// Método para teste manual do objecto (chamadas aos algoritmos, construcao de uma solucao manual)
-	void TesteManualX(const char* nome); /// provavalmente apagar
-
 	// Chamar sempre que uma solução melhor que a actual e encontrada
 	void DebugMelhorEncontrado(TPonto ponto);
 
@@ -158,6 +157,11 @@ public:
 	 * @brief Redefinição. Ver TProcura::Indicador().
 	 */
 	int Indicador(int id) override;
+
+	/**
+	 * @brief Inicializar a instância. No final, chamar NovaSolucao() para inicializar o estado.
+	 */
+	void Inicializar(void) {}
 
 	void LimparEstatisticas(clock_t& inicio);
 

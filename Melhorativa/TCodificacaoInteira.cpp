@@ -28,24 +28,35 @@ void TCodificacaoInteira::ResetParametros() {
 		"inserir",
 		"trocaPar",
 		"inverterSegmento" };
+	static const char* nomesCruzamento[] = {
+		"uniforme",
+		"2-pontos",
+		"3-pontos",
+		"4-pontos",
+		"5-pontos",
+		"6-pontos",
+		"7-pontos",
+		"8-pontos",
+		"9-pontos",
+		"10-pontos" };
 	static const char* nomesDistancias[] = {
-		"Hamming",
-		"Euclidiana",
-		"Manhattan"};
+		"Hamming", // número de posições com valores diferentes
+		"Euclidiana", // distância euclidiana (raiz quadrada da soma dos quadrados das diferenças)
+		"Manhattan" }; // distância Manhattan (soma das diferenças absolutas)
 
 	TProcuraMelhorativa::ResetParametros();
 	// parametros da codificação inteira
-	parametro.Add({ "Cruzamento", 1,0,10,
-		"Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", NULL });
-	parametro.Add({ "Mutação", 0,0,100,
+	parametro.Add({ "tCruzamento", 1,0,10,
+		"Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento });
+	parametro.Add({ "tMutação", 0,0,100,
 		"Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada elemento, em percentagem (1 a 100)", NULL });
-	parametro.Add({ "Vizinhanca", 1,1,6,
+	parametro.Add({ "tVizinhanca", 1,1,6,
 		"Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca });
-	parametro.Add({ "LimiteVizinhança", 0,0,1000,
+	parametro.Add({ "LimiteViz", 0,0,1000,
 		"LimiteVizinhança, conforme a vizinhança, se 0 não há limite\n\
 - incDecPot2 + trocaValor - limita a diferença máxima de valores\n\
-- inserir + trocaPar + inverterSegmento + rodarSegmento + inserirSegmento - limita a distância entre pares", NULL });
-	parametro.Add({ "Distância", 1,1,3,
+- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL });
+	parametro.Add({ "tDistância", 1,1,3,
 		"Distância: vários métodso para distâncias de inteiros", nomesDistancias });
 }
 
@@ -88,17 +99,17 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 	ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(vizinhancaCI);
 	int limiteVizinhanca = Parametro(limiteVizinhancaCI);
 
-	if (tipo >= vizIncDecValor && tipo <= vizTrocaValor) {
+	if (tipo >= vizIncDecValorCI && tipo <= vizTrocaValorCI) {
 		// alterar valor de um elemento
 		for (int i = 0; i < nElementos; i++) {
 			int j = 0;
 			while (abs(j) <= maxValor[i] && (!limiteVizinhanca || abs(j) <= limiteVizinhanca)) {
 				// incrementar j (+1, -1, +2, -2, +4, -4, etc no caso de potências, e incremental c.c.)
 				if (j <= 0)
-					j = -j + (tipo == vizIncDecPot2 ? (j == 0 ? 1 : -j) : 1);
+					j = -j + (tipo == vizIncDecPot2CI ? (j == 0 ? 1 : -j) : 1);
 				else
 					j = -j;
-				if (tipo == vizIncDecValor && j > 1)
+				if (tipo == vizIncDecValorCI && j > 1)
 					break; // apenas incrementa/decrementa 1
 				if (estado[i] + j < 0 || estado[i] + j >= maxValor[i])
 					continue; // valor inválido
@@ -113,14 +124,14 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 			}
 		}
 	}
-	else if (tipo >= vizInserir && tipo <= vizInverterSegmento) {
+	else if (tipo >= vizInserirCI && tipo <= vizInverterSegmentoCI) {
 		// alterar posição de elementos
 		for (int i = 0; i < nElementos; i++) // elemento i
 			for (int j = 0; j < nElementos; j++) // elemento j ou local j
 				if (i != j && (!limiteVizinhanca || abs(i - j) <= limiteVizinhanca)) {
 					TCodificacaoInteira* vizinho = (TCodificacaoInteira*)Duplicar();
 					if (vizinho != NULL) {
-						if (tipo == vizInserir) {
+						if (tipo == vizInserirCI) {
 							int valor = vizinho->estado[i];
 							vizinho->estado.Delete(i);
 							vizinho->estado.Insert(j < i ? j : j - 1, valor);
@@ -130,7 +141,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 									vizinho->estado[k] %= maxValor[k];
 							}
 						}
-						else if (tipo == vizTrocaPar && i < j) { // trocaPar
+						else if (tipo == vizTrocaParCI && i < j) { // trocaPar
 							int valor = vizinho->estado[i];
 							vizinho->estado[i] = vizinho->estado[j];
 							vizinho->estado[j] = valor;
@@ -140,7 +151,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 								vizinho->estado[j] %= maxValor[j];
 							}
 						}
-						else if (tipo == vizInverterSegmento && i < j) { // inverterSegmento
+						else if (tipo == vizInverterSegmentoCI && i < j) { // inverterSegmento
 							int ii = i, jj = j;
 							while (ii < jj) {
 								int valor = vizinho->estado[ii];
@@ -175,24 +186,24 @@ void TCodificacaoInteira::Mutar(void) {
 		ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(vizinhancaCI);
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
-		if (tipo == vizIncDecValor) {
+		if (tipo == vizIncDecValorCI) {
 			estado[i] += (TRand::rand() % 2 == 0 ? 1 : -1);
-		} else if(tipo==vizIncDecPot2) {
+		} else if(tipo==vizIncDecPot2CI) {
 			do {
 				j = 1 << (TRand::rand() % 10); // potência de 2 até 512 
 			} while (j >= maxValor[i]); 
 			estado[i] += (TRand::rand() % 2 == 0 ? j : -j);
-		} else if (tipo == vizTrocaValor) {
+		} else if (tipo == vizTrocaValorCI) {
 			estado[i] = TRand::rand() % maxValor[i];
-		} else if (tipo == vizInserir) {
+		} else if (tipo == vizInserirCI) {
 			int valor = estado[i];
 			estado.Delete(i);
 			estado.Insert(j < i ? j : j - 1, valor);
-		} else if (tipo == vizTrocaPar) {
+		} else if (tipo == vizTrocaParCI) {
 			int valor = estado[i];
 			estado[i] = estado[j];
 			estado[j] = valor;
-		} else if (tipo == vizInverterSegmento) {
+		} else if (tipo == vizInverterSegmentoCI) {
 			while (i < j) {
 				int valor = estado[i];
 				estado[i] = estado[j];
@@ -224,7 +235,7 @@ int TCodificacaoInteira::Distancia(TPonto a) {
 	int dist = 0;
 	TCodificacaoInteira& obj = *(TCodificacaoInteira*)a;
 	ETiposDistanciaInteira tipo = (ETiposDistanciaInteira)Parametro(distanciaCI);
-	if (tipo == distEuclidiana) {
+	if (tipo == distEuclidianaCI) {
 		int64_t d = 0;
 		for (int i = 0; i < nElementos; i++) {
 			int64_t dif = estado[i] - obj.estado[i];
@@ -232,7 +243,7 @@ int TCodificacaoInteira::Distancia(TPonto a) {
 		}
 		dist = (int)d;
 	}
-	else if (tipo == distManhattan) {
+	else if (tipo == distManhattanCI) {
 		for (int i = 0; i < nElementos; i++) 
 			dist += abs(estado[i] - obj.estado[i]);
 	}

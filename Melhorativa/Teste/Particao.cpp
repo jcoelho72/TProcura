@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 
+TVector<int> CParticaoCB::numeros; // número de elementos a particionar
+
 CParticao::CParticao(void) : totalDireita(0), totalEsquerda(0)
 {
 }
@@ -36,6 +38,7 @@ void CParticao::Inicializar(void)
 	//	numeros.Add(abs(soma1 - soma2));
 	numeros.Remove(0);
 	numeros.Sort();
+	NovaSolucao();
 }
 
 void CParticao::Debug(void)
@@ -50,12 +53,12 @@ void CParticao::Debug(void)
 					printf("\n    ");
 				}
 				printf("%3d ", numeros[i]);
-				if (j % 4 == 0) 
+				if (j % 4 == 0)
 					printf(" <<<");
 			}
 		}
 		if (j % 4 != 0) {
-			while (j++ % 4 != 0) 
+			while (j++ % 4 != 0)
 				printf("    ");
 			printf(" <<<");
 		}
@@ -148,7 +151,7 @@ void CParticao::Mutar(void) {
 
 void CParticao::Cruzamento(TPonto a, TPonto b) {
 	// divisao tem de ter elementos de um e de outro
-	int divisao = 1 + TRand::rand() % solCompleta.Count()-2; 
+	int divisao = 1 + TRand::rand() % solCompleta.Count() - 2;
 	for (int i = 0; i < divisao; i++)
 		solCompleta[i] = ((CParticao*)a)->solCompleta[i];
 	for (int i = divisao; i < solCompleta.Count(); i++)
@@ -164,3 +167,79 @@ int CParticao::Distancia(TPonto a) {
 	return diferentes;
 }
 
+void CParticaoCB::Inicializar(void) {
+	TProcuraMelhorativa::Inicializar();
+	nElementos = instancia.valor; // número de elementos a particionar
+
+	numeros.Count(0);
+
+	// gerar uma instancia provavelmente possivel
+	int soma1, soma2;
+	soma1 = soma2 = 0;
+	for (int i = 0; i < instancia.valor; i++) {
+		numeros.Add(TRand::rand() % (3 * instancia.valor));
+		if (soma1 < soma2)
+			soma1 += estado.Last();
+		else soma2 += estado.Last();
+	}
+	// acertar a paridade, muito embora não se saiba se há ou não solução
+	if ((soma1 + soma2) % 2 == 1)
+		numeros.Last() + 1;
+	// garantir que há uma solução
+	//if (soma1 != soma2)
+	//	estado.Add(abs(soma1 - soma2));
+	numeros.Remove(0);
+	numeros.Sort();
+	nElementos = numeros.Count();
+	NovaSolucao();
+}
+
+int CParticaoCB::Avaliar(void) {
+	int totalEsquerda, totalDireita;
+	custo = 0;
+	TProcuraMelhorativa::Avaliar();
+	totalEsquerda = totalDireita = 0;
+	for (int i = 0; i < nElementos; i++)
+		if (Bit(i))
+			totalEsquerda += numeros[i];
+		else
+			totalDireita += numeros[i];
+	return custo = abs(totalEsquerda - totalDireita);
+}
+
+void CParticaoCB::Debug(void)
+{
+	int i, j, esq = 0, dir = 0;
+	TVector<int> nEsq, nDir;
+	for (i = 0; i < nElementos; i++)
+		if (Bit(i)) {
+			esq += numeros[i];
+			nEsq.Add(numeros[i]);
+		}
+		else {
+			dir += numeros[i];
+			nDir.Add(numeros[i]);
+		}
+	printf("\nColocar #%d:",
+		nElementos);
+	printf("\n-------------------||-------------------");
+	while (nEsq.Count() > 0 || nDir.Count() > 0) {
+		printf("\n");
+		for(int j=0;j<4;j++) {
+			if (nEsq.Count() > 0)
+				printf("%3d ", nEsq.Pop());
+			else 
+				printf("    ");
+		}
+		printf(" <<||>> ");
+		for (int j = 0; j < 4; j++) {
+			if (nDir.Count() > 0)
+				printf("%3d ", nDir.Pop());
+			else
+				printf("    ");
+		}
+	}
+	printf("\n-------------------||-------------------");
+	printf("\n            %3d  <<||>> %3d \n", esq, dir);
+	TCodificacaoBinaria::Debug();
+}

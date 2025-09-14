@@ -9,23 +9,24 @@ enum ECodificacaoInteira {
 };
 
 enum ETiposVizinhancaInteira {
-	vizIncDecValor = 1,    // incrementa/decrementa valor
-	vizIncDecPot2,         // incrementa/decrementa potência de 2
-	vizTrocaValor,         // troca valores entre dois elementos
-	vizInserir,            // insere um elemento noutro local (deslocando os outros)
-	vizTrocaPar,           // troca dois elementos (permuta)
-	vizInverterSegmento,   // inverte um segmento
+	vizIncDecValorCI = 1,    // incrementa/decrementa valor
+	vizIncDecPot2CI,         // incrementa/decrementa potência de 2
+	vizTrocaValorCI,         // troca valores entre dois elementos
+	vizInserirCI,            // insere um elemento noutro local (deslocando os outros)
+	vizTrocaParCI,           // troca dois elementos (permuta)
+	vizInverterSegmentoCI,   // inverte um segmento
 };
 
 enum ETiposDistanciaInteira {
-	distHamming = 1, // número de posições com valores diferentes
-	distEuclidiana,  // distância euclidiana (raiz quadrada da soma dos quadrados das diferenças)
-	distManhattan    // distância Manhattan (soma das diferenças absolutas)
+	distHammingCI = 1, // número de posições com valores diferentes
+	distEuclidianaCI,  // distância euclidiana (raiz quadrada da soma dos quadrados das diferenças)
+	distManhattanCI    // distância Manhattan (soma das diferenças absolutas)
 };
 
 class TCodificacaoInteira :
     public TProcuraMelhorativa
 {
+public:
 	TCodificacaoInteira() {}
 	~TCodificacaoInteira() {}
 

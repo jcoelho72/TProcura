@@ -17,6 +17,7 @@ void COitoDamas::Inicializar(void)
 	TProcuraMelhorativa::Inicializar();
 	damas.Count(0);
 	nDamas = instancia.valor;
+	NovaSolucao();
 }
 
 
@@ -32,11 +33,6 @@ void COitoDamas::Debug(void)
 				printf("%c%c", cor, cor);
 		}
 	}
-}
-
-void COitoDamas::TesteManual(const char* nome) {
-	instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
-	TProcuraMelhorativa::TesteManual(nome);
 }
 
 // e gerada uma nova solucao aleatoriamente.

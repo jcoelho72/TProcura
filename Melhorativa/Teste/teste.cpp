@@ -16,13 +16,19 @@ int main(int argc, char* argv[])
 	printf("\n\
 Teste TProcuraMelhorativa\nProblema:\n\
   1 - 8 Damas\n\
-  2 - Partição\n\
-  3 - Artificial\n\
+  2 - 8 Damas Inteira\n\
+  3 - 8 Damas Permutacao\n\
+  4 - Partição\n\
+  5 - Partição Binária\n\
+  6 - Artificial\n\
 Opção: ");
 	switch (TProcura::NovoValor("")) {
 	case 1:	COitoDamas().main(argc, argv, "8 Damas"); break;
-	case 2:	CParticao().main(argc, argv, "Partição"); break;
-	case 3:	CProblemaArtificial().main(argc, argv, "Artificial"); break;
+	case 2:	COitoDamasCI().main(argc, argv, "8 Damas Inteira"); break;
+	case 3:	COitoDamasCP().main(argc, argv, "8 Damas Permutação"); break;
+	case 4:	CParticao().main(argc, argv, "Partição"); break;
+	case 5: CParticaoCB().main(argc, argv, "Partição Binária"); break;
+	case 6:	CProblemaArtificial().main(argc, argv, "Artificial"); break;
 	default: printf("Problema não implementado.");
 	}
 }
