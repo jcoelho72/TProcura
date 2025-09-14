@@ -6,6 +6,10 @@ digraph "TVector::Reset"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
   Node1 [id="Node000001",label="TVector::Reset",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Preenche todo o vetor com um mesmo valor."];
-  Node1 -> Node2 [id="edge2_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CJogoEmLinha::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#afe8d4a92e1840c1436c295c5a13760db",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
+  Node1 -> Node2 [id="edge4_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="TCodificacaoPermutacao\l::Cruzamento",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoPermutacao.html#a5d189994f033f59a881c985604b959dc",tooltip=" "];
+  Node1 -> Node3 [id="edge5_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="CJogoEmLinha::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#afe8d4a92e1840c1436c295c5a13760db",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
+  Node1 -> Node4 [id="edge6_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="COitoDamasCI::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamasCI.html#a5c4340c008bd04f699951906166d19f2",tooltip="Coloca o objecto no estado inicial da procura."];
 }

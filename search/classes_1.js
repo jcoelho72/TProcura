@@ -5,8 +5,11 @@ var searchData=
   ['cjogoemlinha_2',['CJogoEmLinha',['../classCJogoEmLinha.html',1,'']]],
   ['clistano_3',['CListaNo',['../classCListaNo.html',1,'']]],
   ['coitodamas_4',['COitoDamas',['../classCOitoDamas.html',1,'']]],
-  ['cparticao_5',['CParticao',['../classCParticao.html',1,'']]],
-  ['cproblemaartificial_6',['CProblemaArtificial',['../classCProblemaArtificial.html',1,'']]],
-  ['cpuzzle8_7',['CPuzzle8',['../classCPuzzle8.html',1,'']]],
-  ['ctestetvector_8',['CTesteTVector',['../classCTesteTVector.html',1,'']]]
+  ['coitodamasci_5',['COitoDamasCI',['../classCOitoDamasCI.html',1,'']]],
+  ['coitodamascp_6',['COitoDamasCP',['../classCOitoDamasCP.html',1,'']]],
+  ['cparticao_7',['CParticao',['../classCParticao.html',1,'']]],
+  ['cparticaocb_8',['CParticaoCB',['../classCParticaoCB.html',1,'']]],
+  ['cproblemaartificial_9',['CProblemaArtificial',['../classCProblemaArtificial.html',1,'']]],
+  ['cpuzzle8_10',['CPuzzle8',['../classCPuzzle8.html',1,'']]],
+  ['ctestetvector_11',['CTesteTVector',['../classCTesteTVector.html',1,'']]]
 ];

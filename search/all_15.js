@@ -10,9 +10,10 @@ var searchData=
   ['limiteiteracoes_7',['limiteIteracoes',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6af437d05ff169dbc6ab8ff59417b5e639',1,'TProcura.h']]],
   ['limitetempo_8',['limiteTempo',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245',1,'TProcura.h']]],
   ['limitevizinhancaci_9',['limiteVizinhancaCI',['../TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba371bcb2f0019e5167365ba8dff066f4a',1,'TCodificacaoInteira.h']]],
-  ['limparestatisticas_10',['limparestatisticas',['../classTProcura.html#ad0506a4e5c70623f42bb1c3f2d8c1eb6',1,'TProcura::LimparEstatisticas()'],['../classTProcuraMelhorativa.html#a8819042bdad9134e99d2151918104a61',1,'TProcuraMelhorativa::LimparEstatisticas()'],['../classTProcuraConstrutiva.html#aa882dc14d5e9fa3033e6924293c7c246',1,'TProcuraConstrutiva::LimparEstatisticas(clock_t &amp;inicio) override']]],
-  ['limparht_11',['LimparHT',['../classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c',1,'TProcuraConstrutiva']]],
-  ['linha_12',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
-  ['linha_20de_20comando_13',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md70',1,'']]],
-  ['lowerbound_14',['lowerbound',['../group__VariaveisGlobais.html#ga1af840b6ec9c04ce7d4c8849346441bd',1,'TProcuraConstrutiva::lowerBound'],['../TProcuraAdversa_8h.html#af2d8f3ce278d837a36ee4d610662b204a96d57576de5542bd6b278ca87943bb7e',1,'lowerbound:&#160;TProcuraAdversa.h'],['../classTProcuraConstrutiva.html#a5f021041a7dfe1b68890d9e5f5f0e6f4',1,'TProcuraConstrutiva::LowerBound()']]]
+  ['limitevizinhancacp_10',['limiteVizinhancaCP',['../TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa4ba29d03d2190745dab6617f18daba9e',1,'TCodificacaoPermutacao.h']]],
+  ['limparestatisticas_11',['limparestatisticas',['../classTProcura.html#ad0506a4e5c70623f42bb1c3f2d8c1eb6',1,'TProcura::LimparEstatisticas()'],['../classTProcuraMelhorativa.html#a8819042bdad9134e99d2151918104a61',1,'TProcuraMelhorativa::LimparEstatisticas()'],['../classTProcuraConstrutiva.html#aa882dc14d5e9fa3033e6924293c7c246',1,'TProcuraConstrutiva::LimparEstatisticas(clock_t &amp;inicio) override']]],
+  ['limparht_12',['LimparHT',['../classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c',1,'TProcuraConstrutiva']]],
+  ['linha_13',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
+  ['linha_20de_20comando_14',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md70',1,'']]],
+  ['lowerbound_15',['lowerbound',['../classTProcuraConstrutiva.html#a5f021041a7dfe1b68890d9e5f5f0e6f4',1,'TProcuraConstrutiva::LowerBound()'],['../TProcuraAdversa_8h.html#af2d8f3ce278d837a36ee4d610662b204a96d57576de5542bd6b278ca87943bb7e',1,'lowerbound:&#160;TProcuraAdversa.h'],['../group__VariaveisGlobais.html#ga1af840b6ec9c04ce7d4c8849346441bd',1,'TProcuraConstrutiva::lowerBound']]]
 ];

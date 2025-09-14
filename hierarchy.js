@@ -27,9 +27,15 @@ var hierarchy =
         [ "CParticao", "classCParticao.html", null ],
         [ "CProblemaArtificial", "classCProblemaArtificial.html", null ],
         [ "TCodificacaoArvore", "classTCodificacaoArvore.html", null ],
-        [ "TCodificacaoBinaria", "classTCodificacaoBinaria.html", null ],
-        [ "TCodificacaoInteira", "classTCodificacaoInteira.html", null ],
-        [ "TCodificacaoPermutacao", "classTCodificacaoPermutacao.html", null ],
+        [ "TCodificacaoBinaria", "classTCodificacaoBinaria.html", [
+          [ "CParticaoCB", "classCParticaoCB.html", null ]
+        ] ],
+        [ "TCodificacaoInteira", "classTCodificacaoInteira.html", [
+          [ "COitoDamasCI", "classCOitoDamasCI.html", null ]
+        ] ],
+        [ "TCodificacaoPermutacao", "classTCodificacaoPermutacao.html", [
+          [ "COitoDamasCP", "classCOitoDamasCP.html", null ]
+        ] ],
         [ "TCodificacaoReal", "classTCodificacaoReal.html", null ]
       ] ]
     ] ],

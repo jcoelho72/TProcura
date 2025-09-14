@@ -22,10 +22,10 @@ var classCOitoDamas =
     [ "Mutar", "classCOitoDamas.html#a6d9bf353a8467cc31d407685a06e32c9", null ],
     [ "NovaSolucao", "classCOitoDamas.html#a76a6cfab4d66232a84d6cb9dc73b7fcf", null ],
     [ "ResetParametros", "classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf", null ],
+    [ "ResetParametros", "classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf", null ],
     [ "SolucaoCompleta", "classCOitoDamas.html#ab0506f461abf79a87f19fe496e754528", null ],
     [ "SolucaoCompleta", "classCOitoDamas.html#ab0506f461abf79a87f19fe496e754528", null ],
     [ "Sucessores", "classCOitoDamas.html#ab384df7572c5a6e34ffe28b346aaf517", null ],
-    [ "TesteManual", "classCOitoDamas.html#a0fb443165d257ac17fc8cf5bc870404d", null ],
     [ "Vizinhanca", "classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2", null ],
     [ "damas", "classCOitoDamas.html#acb2ccabe2ec11815db2eccb59bb07ca7", null ]
 ];
