@@ -8,8 +8,10 @@ typedef TProcuraMelhorativa* TPonto;
 
 // nomes dos parâmetros fixos na procura melhorativa
 enum EMelhorativas {
-	movePrimeiroEM = parametrosProcura, populacaoAG,
-	probMutacaoAG, distMinimaAG, parametrosMelhorativas
+	populacaoAE = parametrosProcura, probCruzarAE,
+	probMutarAE, selecaoAE, pressaoAE, tamanhoTorneioAE, probMelhorTorneioAE,
+	sobrevivenciaAE, percDescendentesAE, qRoundRobinAE, elitismoAE,
+	distMinimaAG, movePrimeiroEM, parametrosMelhorativas
 };
 
 enum EIndicadoresConstrutiva {
@@ -115,7 +117,10 @@ public:
 	// Método para inicializar os parâmetros (redefinir se forem adicionados parâmetros específicos)
 	void ResetParametros() override;
 
-	// critério de paragem adicionado para procuras meolhorativas, se custo é nulo, parar
+	// critrio de paragem adicionado para procuras melhorativas:
+	// - custo nulo, significa obter o ótimo - futuro considerar um lower bound
+	// - número gerações (ou épocas) sem melhoria - futuro
+	// - diversidade da população - futuro
 	bool Parar(void) { return TProcura::Parar() || custo == 0; }
 
 	///////////////////////////////////////////////////////////////////////////////
@@ -150,6 +155,15 @@ public:
 	// retorna a avaliação do resultado final
 	int AlgoritmoGenetico();
 
+	///////////////////////////////////////////////////////////////////////////////
+	// Algoritmo Evolutivo: Algoritmos Geneticos + Estratégia de Evolução
+	///////////////////////////////////////////////////////////////////////////////
+	// Implementação em linha com Eiben & Smith, 2015
+	// retorna a avaliação do resultado final
+	int AlgoritmoEvolutivo();
+
+
+
 	// Chamar sempre que uma solução melhor que a actual e encontrada
 	void DebugMelhorEncontrado(TPonto ponto);
 
@@ -172,6 +186,8 @@ protected:
 	void OrdemValor(TVector<TPonto>& populacao, TVector<int>& id);
 	void CalcularAvaliacoes(TVector<TPonto>& vizinhos, int& melhorValor, int& melhorIndice);
 	void VerificaMelhor(TPonto& melhor, TPonto atual);
+	void VerificaMelhor(TPonto atual);
+	int MelhorCusto(TVector<TPonto>& populacao, bool inverter = false);
 	TPonto MelhorAtual(TPonto& atual, TVector<TPonto>& vizinhos, int indice);
 	void ObterExtremos(TVector<TPonto>& populacao, int& minCusto, int& maxCusto);
 	void Explorar() override;
@@ -184,4 +200,10 @@ protected:
 	void DebugPassoEM(TPonto solucao);
 	void DebugPassoAG(int pop, int min, int max);
 	void DebugCruzamentoAG(int gPai, int gMae, int gFilho, int mutou);
+	// algoritmo evolutivo
+	TVector<TPonto> InicializarPopulacaoAE();
+	TVector<TPonto> SelecionarPaisAE(TVector<TPonto>& populacao);
+	TVector<TPonto> ReproduzirAE(TVector<TPonto>& pais);
+	TVector<TPonto> SelecionarSobreviventesAE(TVector<TPonto>& populacao, TVector<TPonto>& descendentes);
+	void DebugGeracaoAE(int epoca, TVector<TPonto>& populacao);
 };

@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <limits.h>
 #include <stdio.h>
+#include <cstdarg>
 
 
 // código para número não lido (não deve ser utilizado num parâmetro)
@@ -34,7 +35,7 @@ enum EIndicadoresProcura {
  * @see TParametro, ExecutaAlgoritmo()
  *
  * @code
- * if(parametro[nivelDebug].valor > passos)
+ * if(Parametro(nivelDebug) > passos)
  *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
  * @endcode
  */
@@ -103,7 +104,7 @@ typedef struct SIndicador {
  *
  * Exemplo:
  * @code
- * if(parametro[nivelDebug].valor > passos)
+ * if(Parametro(nivelDebug) > passos)
  *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
  * @endcode
  */
@@ -179,7 +180,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void Inicializar(void) { }
+	virtual void Inicializar(void) {}
 
 
 	/**
@@ -198,9 +199,9 @@ public:
 	 *
 	 * Este método é chamado após a execução do algoritmo, para cada indicador,
 	 * pela ordem definida pelo utilizador. Caso tenham sido definidos outros indicadorews
-	 * na subclasse, deve redefinir, e caso seja um indicador da subclasse, calcular, 
+	 * na subclasse, deve redefinir, e caso seja um indicador da subclasse, calcular,
 	 * caso contrário deve chamar o método da superclasse.
-	 * 
+	 *
 	 * @note Um indicador pode ser uma verificação da solução, ou qualquer outro procedimento
 	 * que executa após o algoritmo, não sendo o tempo de execução contabgilizado no algoritmo.
 	 *
@@ -268,10 +269,10 @@ public:
 	 * Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema.
 	 * Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar
 	 * em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
-	 * 
+	 *
 	 * Nesta função deve ser redefinida a variável com informação dos IDs das instâncias disponíveis.
 	 * Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
-	 * 
+	 *
 	 * Existindo novos indicadores, devem ser adicionados aqui, e redefinida a função Indicador() para calcular o valor.
 	 *
 	 * @note Na criação de um novo parametro, dar uma estrutura TParametro.
@@ -281,7 +282,7 @@ public:
 	 * garantindo que novas adições na superclasse sejam automaticamente refletidas aqui.
 	 *
 	 * @note A instância selecionada irá ser carregada em Inicializar(), utilizando o valor atual.
-	 * 
+	 *
 	 * @see TParametro
 	 *
 	 * Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros.
@@ -302,13 +303,13 @@ public:
 	 *     // novo parametro para utilizar na função Sucessores()
 	 *     parametro.Add({ "Opção Sucessores", 0,0,1,
 	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc });
-	 * 
+	 *
 	 *     // novo indicador
 	 *	   indicador.Add({ "Ordenado","verifica se um vetor está ordenado", indOrdenar });
 	 *     indAtivo.Add(indOrdenar); // adicionar aos indicadores ativos de omissão
-	 * 
+	 *
 	 *     // indicar que há 10 instâncias, sendo a instância inicial a 1
- 	 * 	   instancia = { "Problema", 1,1,10, "Características dos problemas", NULL };
+	 * 	   instancia = { "Problema", 1,1,10, "Características dos problemas", NULL };
 	 * }
 	 * @endcode
 	 */
@@ -424,7 +425,7 @@ public:
 	* }
 	* @endcode
 	*/
-	virtual void main(int argc, char* argv[], const char*nome);
+	virtual void main(int argc, char* argv[], const char* nome);
 
 	/// @brief Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução
 	virtual void LimparEstatisticas(clock_t& inicio);
@@ -473,11 +474,51 @@ public:
 	// ler um número, ou retorna NAO_LIDO
 	static int NovoValor(const char* prompt);
 	// ler uma string
-	static char *NovoTexto(const char* prompt);
+	static char* NovoTexto(const char* prompt);
 
 	// retorna o valor do parametro, para facilidade de uso (leitura e escrita)
 	int Parametro(int id) const { return parametro[id].valor; }
 	int& Parametro(int id) { return parametro[id].valor; }
+
+	/// @brief Mostra uma informação de debug, se o nível de debug for suficiente.
+	/// @param tipo Nível de detalhe necessário para exibir a mensagem.
+	/// @param exato Se true, só imprime se o nível de debug for exatamente igual a `tipo`.
+	///              Se false, imprime se for >= `tipo`.
+	/// @param fmt Formato da mensagem, como no printf.
+	/// @return true se a mensagem foi impressa, false caso contrário.
+	/// 
+	/// @note Pode ser usado com || para encadear mensagens de diferentes níveis, 
+	/// imprimindo apenas a primeira que corresponda ao nível de debug atual.	
+	/// 
+	/// @code
+	/// // Exemplo: tenta imprimir no nível passos, senão no detalhe
+	/// Debug(passos, true,  "\nPasso %d", iteracoes) ||
+	/// Debug(detalhe, false, "\nPasso %d | Melhor custo: %d", iteracoes, custo) ||
+	/// @endcode
+	bool Debug(ENivelDebug tipo, bool exato, const char* fmt, ...) {
+		int nivel = Parametro(nivelDebug);
+		if (exato ? nivel != tipo : nivel < tipo)
+			return false;
+		va_list args;
+		va_start(args, fmt); // último parâmetro fixo é 'fmt'
+		vprintf(fmt, args);
+		va_end(args);
+		return true;
+	}
+
+
+	/// @brief Mostra uma informação de debug, se o nível de debug for suficiente
+	/// @param tipo Nível de detalhe necessário para exibir a mensagem.
+	/// resto dos parâmetros como em printf
+	bool Debug(ENivelDebug tipo, const char* fmt, ...) {
+		if (Parametro(nivelDebug) < tipo)
+			return false;
+		va_list args;
+		va_start(args, fmt);
+		vprintf(fmt, args);
+		va_end(args);
+		return true;
+	}
 
 protected:
 
