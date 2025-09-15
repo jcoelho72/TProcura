@@ -19,12 +19,23 @@ typedef \mbox{\hyperlink{classTProcuraMelhorativa}{TProcura\+Melhorativa}} \texo
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13d}{EMelhorativas}} \{ \newline
-\mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dafe2fb7ed5d54479dad0d2813b65116bb}{move\+Primeiro\+EM}} = parametros\+Procura
-, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad3e68c47effdb2cb72c7250560ad06ca}{populacao\+AG}}
-, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da172b20ce04fbd29e46b9fe2690630dd1}{prob\+Mutacao\+AG}}
+\mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da8e5b6fb4d55d038863318db47d9b11ee}{populacao\+AE}} = parametros\+Procura
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa3c36cbd7e5360a174d35439bdaccf47}{prob\+Cruzar\+AE}}
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da9cfdf4aa9cfbe4c37fcb5675ef06f676}{prob\+Mutar\+AE}}
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da84f86a60c8979c94061a7db1585cc909}{selecao\+AE}}
+, \newline
+\mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da6cecc45a60a4f6ea64a22cbbbb2dde66}{pressao\+AE}}
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da08ed9724e82c1e977b780f45be8d20aa}{tamanho\+Torneio\+AE}}
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad8175e45af4b2ff87a4dd3b02e8a1e4e}{prob\+Melhor\+Torneio\+AE}}
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dac2606740cfc3057c0c0e49652b6d4307}{sobrevivencia\+AE}}
+, \newline
+\mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da3c9ce040652e94aa3b624b5833700a33}{perc\+Descendentes\+AE}}
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da0278164d0874a61385b56dfb4db90b8e}{q\+Round\+Robin\+AE}}
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad8480fc61a13a96d91de8417d3762858}{elitismo\+AE}}
 , \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dadb1bc552bdc784728a1fae5157abdf9d}{dist\+Minima\+AG}}
 , \newline
-\mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa981e798f0e2652c4b6e264b69128d96}{parametros\+Melhorativas}}
+\mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dafe2fb7ed5d54479dad0d2813b65116bb}{move\+Primeiro\+EM}}
+, \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa981e798f0e2652c4b6e264b69128d96}{parametros\+Melhorativas}}
  \}
 \item 
 enum \mbox{\hyperlink{TProcuraMelhorativa_8h_a44000b0a177c28d4ca1470694cdf98f9}{EIndicadores\+Construtiva}} \{ \mbox{\hyperlink{TProcuraMelhorativa_8h_a44000b0a177c28d4ca1470694cdf98f9a141b045b3aecc4e3895b1aead328bc92}{ind\+Epocas}} = ind\+Procura
@@ -70,7 +81,7 @@ ind\+Melhorativa&Marcador para permitir a extensão do enum em subclasses. \\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00015}{15}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00017}{17}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 \Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13d}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13d} 
 \index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!EMelhorativas@{EMelhorativas}}
@@ -79,20 +90,56 @@ Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00015}{15}} o
 {\footnotesize\ttfamily enum \mbox{\hyperlink{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13d}{EMelhorativas}}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{movePrimeiroEM@{movePrimeiroEM}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!movePrimeiroEM@{movePrimeiroEM}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dafe2fb7ed5d54479dad0d2813b65116bb}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dafe2fb7ed5d54479dad0d2813b65116bb} 
-move\+Primeiro\+EM&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{populacaoAE@{populacaoAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!populacaoAE@{populacaoAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da8e5b6fb4d55d038863318db47d9b11ee}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da8e5b6fb4d55d038863318db47d9b11ee} 
+populacao\+AE&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{populacaoAG@{populacaoAG}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!populacaoAG@{populacaoAG}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad3e68c47effdb2cb72c7250560ad06ca}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad3e68c47effdb2cb72c7250560ad06ca} 
-populacao\+AG&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{probCruzarAE@{probCruzarAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!probCruzarAE@{probCruzarAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa3c36cbd7e5360a174d35439bdaccf47}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa3c36cbd7e5360a174d35439bdaccf47} 
+prob\+Cruzar\+AE&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{probMutacaoAG@{probMutacaoAG}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!probMutacaoAG@{probMutacaoAG}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da172b20ce04fbd29e46b9fe2690630dd1}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da172b20ce04fbd29e46b9fe2690630dd1} 
-prob\+Mutacao\+AG&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{probMutarAE@{probMutarAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!probMutarAE@{probMutarAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da9cfdf4aa9cfbe4c37fcb5675ef06f676}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da9cfdf4aa9cfbe4c37fcb5675ef06f676} 
+prob\+Mutar\+AE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{selecaoAE@{selecaoAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!selecaoAE@{selecaoAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da84f86a60c8979c94061a7db1585cc909}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da84f86a60c8979c94061a7db1585cc909} 
+selecao\+AE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{pressaoAE@{pressaoAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!pressaoAE@{pressaoAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da6cecc45a60a4f6ea64a22cbbbb2dde66}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da6cecc45a60a4f6ea64a22cbbbb2dde66} 
+pressao\+AE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tamanhoTorneioAE@{tamanhoTorneioAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!tamanhoTorneioAE@{tamanhoTorneioAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da08ed9724e82c1e977b780f45be8d20aa}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da08ed9724e82c1e977b780f45be8d20aa} 
+tamanho\+Torneio\+AE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{probMelhorTorneioAE@{probMelhorTorneioAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!probMelhorTorneioAE@{probMelhorTorneioAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad8175e45af4b2ff87a4dd3b02e8a1e4e}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad8175e45af4b2ff87a4dd3b02e8a1e4e} 
+prob\+Melhor\+Torneio\+AE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sobrevivenciaAE@{sobrevivenciaAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!sobrevivenciaAE@{sobrevivenciaAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dac2606740cfc3057c0c0e49652b6d4307}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dac2606740cfc3057c0c0e49652b6d4307} 
+sobrevivencia\+AE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{percDescendentesAE@{percDescendentesAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!percDescendentesAE@{percDescendentesAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da3c9ce040652e94aa3b624b5833700a33}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da3c9ce040652e94aa3b624b5833700a33} 
+perc\+Descendentes\+AE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{qRoundRobinAE@{qRoundRobinAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!qRoundRobinAE@{qRoundRobinAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da0278164d0874a61385b56dfb4db90b8e}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13da0278164d0874a61385b56dfb4db90b8e} 
+q\+Round\+Robin\+AE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{elitismoAE@{elitismoAE}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!elitismoAE@{elitismoAE}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad8480fc61a13a96d91de8417d3762858}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dad8480fc61a13a96d91de8417d3762858} 
+elitismo\+AE&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{distMinimaAG@{distMinimaAG}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!distMinimaAG@{distMinimaAG}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dadb1bc552bdc784728a1fae5157abdf9d}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dadb1bc552bdc784728a1fae5157abdf9d} 
 dist\+Minima\+AG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{movePrimeiroEM@{movePrimeiroEM}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!movePrimeiroEM@{movePrimeiroEM}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dafe2fb7ed5d54479dad0d2813b65116bb}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13dafe2fb7ed5d54479dad0d2813b65116bb} 
+move\+Primeiro\+EM&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{parametrosMelhorativas@{parametrosMelhorativas}!TProcuraMelhorativa.h@{TProcuraMelhorativa.h}}\index{TProcuraMelhorativa.h@{TProcuraMelhorativa.h}!parametrosMelhorativas@{parametrosMelhorativas}}}\Hypertarget{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa981e798f0e2652c4b6e264b69128d96}\label{TProcuraMelhorativa_8h_a590d0affde11aafe26e2619bf4f2e13daa981e798f0e2652c4b6e264b69128d96} 

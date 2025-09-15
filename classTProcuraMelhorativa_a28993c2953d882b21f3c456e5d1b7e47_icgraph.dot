@@ -6,16 +6,21 @@ digraph "TProcuraMelhorativa::LibertarVector"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
   Node1 [id="Node000001",label="TProcuraMelhorativa\l::LibertarVector",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [id="edge8_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge11_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraMelhorativa\l::AlgoritmoGenetico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a574d0ec15c8c1d3ded8db605def50616",tooltip=" "];
-  Node2 -> Node3 [id="edge9_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node3 [id="edge12_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraMelhorativa\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#af101526489df420431d22477e317fb33",tooltip="Executa o algoritmo com os parametros atuais."];
-  Node1 -> Node4 [id="edge10_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge13_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcuraMelhorativa\l::EscaladaDoMonte",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a8c8caa2d188bb5f6701fc5e1ddbc4510",tooltip=" "];
-  Node4 -> Node3 [id="edge11_Node000004_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node5 [id="edge12_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node3 [id="edge14_Node000004_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge15_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
-  Node1 -> Node6 [id="edge13_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge16_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcuraMelhorativa\l::MelhorAtual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a55ff18ec36fc46b793b0ee20085388a1",tooltip=" "];
-  Node6 -> Node4 [id="edge14_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 -> Node4 [id="edge17_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge18_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="TProcuraMelhorativa\l::SelecionarSobreviventesAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a083b961ed7ed1483625559d068755a7f",tooltip=" "];
+  Node7 -> Node8 [id="edge19_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="TProcuraMelhorativa\l::AlgoritmoEvolutivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6e7a1d0f1281eae6bf3fbbc7fa5f4026",tooltip=" "];
+  Node8 -> Node3 [id="edge20_Node000008_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

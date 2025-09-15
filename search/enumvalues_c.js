@@ -8,10 +8,14 @@ var searchData=
   ['parametrosmelhorativas_5',['parametrosMelhorativas',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13daa981e798f0e2652c4b6e264b69128d96',1,'TProcuraMelhorativa.h']]],
   ['parametrosprocura_6',['parametrosProcura',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35',1,'TProcura.h']]],
   ['passos_7',['passos',['../TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0',1,'TProcura.h']]],
-  ['pesoastar_8',['pesoAStar',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a301297462c3762b42e1ec439be22af98',1,'TProcuraConstrutiva.h']]],
-  ['podacega_9',['podaCega',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda33bc2e5e9f3840a8171224b1d440c7c0',1,'TProcuraAdversa.h']]],
-  ['podaheuristica_10',['podaHeuristica',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda141880864f9850cdf0adaed42e6ebd59',1,'TProcuraAdversa.h']]],
-  ['populacaoag_11',['populacaoAG',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13dad3e68c47effdb2cb72c7250560ad06ca',1,'TProcuraMelhorativa.h']]],
-  ['probmutacaoag_12',['probMutacaoAG',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da172b20ce04fbd29e46b9fe2690630dd1',1,'TProcuraMelhorativa.h']]],
-  ['profundidadeprimeiro_13',['profundidadePrimeiro',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6caecb0560a7ce374aec3dfdf3fb91c4dd7',1,'TProcuraConstrutiva.h']]]
+  ['percdescendentesae_8',['percDescendentesAE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da3c9ce040652e94aa3b624b5833700a33',1,'TProcuraMelhorativa.h']]],
+  ['pesoastar_9',['pesoAStar',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a301297462c3762b42e1ec439be22af98',1,'TProcuraConstrutiva.h']]],
+  ['podacega_10',['podaCega',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda33bc2e5e9f3840a8171224b1d440c7c0',1,'TProcuraAdversa.h']]],
+  ['podaheuristica_11',['podaHeuristica',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda141880864f9850cdf0adaed42e6ebd59',1,'TProcuraAdversa.h']]],
+  ['populacaoae_12',['populacaoAE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da8e5b6fb4d55d038863318db47d9b11ee',1,'TProcuraMelhorativa.h']]],
+  ['pressaoae_13',['pressaoAE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da6cecc45a60a4f6ea64a22cbbbb2dde66',1,'TProcuraMelhorativa.h']]],
+  ['probcruzarae_14',['probCruzarAE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13daa3c36cbd7e5360a174d35439bdaccf47',1,'TProcuraMelhorativa.h']]],
+  ['probmelhortorneioae_15',['probMelhorTorneioAE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13dad8175e45af4b2ff87a4dd3b02e8a1e4e',1,'TProcuraMelhorativa.h']]],
+  ['probmutarae_16',['probMutarAE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da9cfdf4aa9cfbe4c37fcb5675ef06f676',1,'TProcuraMelhorativa.h']]],
+  ['profundidadeprimeiro_17',['profundidadePrimeiro',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6caecb0560a7ce374aec3dfdf3fb91c4dd7',1,'TProcuraConstrutiva.h']]]
 ];

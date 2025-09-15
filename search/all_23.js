@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📑_20sumário_0',['📑 Sumário',['../index.html#autotoc_md75',1,'']]]
+  ['árvore_20de_20procura_20maior_0',['Ação 12 - Ver uma árvore de procura maior',['../teste_aspirador2.html#autotoc_md23',1,'']]]
 ];

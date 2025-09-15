@@ -5,6 +5,7 @@
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$limits.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$cstdarg$>$}\newline
 Include dependency graph for TProcura.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
@@ -89,7 +90,7 @@ Definition at line \mbox{\hyperlink{TProcura_8h_source_l00003}{3}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00013}{13}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00014}{14}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 
 
@@ -120,7 +121,7 @@ Existe uma vetor de parametros declarada de forma estática, de modo a aceder a q
 \end{DoxySeeAlso}
 Exemplo\+: 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(Parametro(\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}})\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
 
 \end{DoxyCode}
@@ -159,7 +160,7 @@ ind\+Procura&Marcador para permitir a extensão do enum em subclasses. \\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00016}{16}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00017}{17}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}\label{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8} 
 \index{TProcura.h@{TProcura.h}!ENivelDebug@{ENivelDebug}}
@@ -206,7 +207,7 @@ completo&Mostra toda a execução detalhadamente. \\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00062}{62}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00063}{63}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3}\label{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3} 
 \index{TProcura.h@{TProcura.h}!EOperacao@{EOperacao}}
@@ -233,7 +234,7 @@ ler&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00075}{75}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00076}{76}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6} 
 \index{TProcura.h@{TProcura.h}!EParametrosProcura@{EParametrosProcura}}
@@ -255,7 +256,7 @@ O último elemento ({\ttfamily parametros\+Procura}) não representa um parâmetro 
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(parametro[\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}}].valor\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(Parametro(\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8}{nivelDebug}})\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0}{passos}})}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
 
 \end{DoxyCode}
@@ -287,5 +288,5 @@ parametros\+Procura&Marcador para permitir a extensão do enum em subclasses. \\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00041}{41}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00042}{42}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 

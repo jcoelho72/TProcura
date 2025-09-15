@@ -105,6 +105,7 @@ $(document).ready(function(){initNavTree('TProcura_8h.html',''); initResizable()
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;cstdarg&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for TProcura.h:</div>
 <div class="dyncontent">
@@ -214,7 +215,7 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00013">13</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00014">14</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -249,10 +250,10 @@ Enumerations</h2></td></tr>
 <p>Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.</p>
 <dl class="section note"><dt>Note</dt><dd>Existe uma vetor de parametros declarada de forma estática, de modo a aceder a qualquer parametro de forma global no código. A ordem dos parametros estão de acordo com o tipo enumerado EParametrosConstrutiva</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6" title="Identifica um parâmetro específico no código.">EParametrosProcura</a> e ResetParametros()</dd></dl>
-<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(parametro[<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>].valor &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>)</div>
+<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>)</div>
 <div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
-<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a></div><div class="ttdeci">@ passos</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00065">TProcura.h:65</a></div></div>
-<div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a></div><div class="ttdeci">@ nivelDebug</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00043">TProcura.h:43</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a></div><div class="ttdeci">@ passos</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00066">TProcura.h:66</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a></div><div class="ttdeci">@ nivelDebug</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00044">TProcura.h:44</a></div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -293,7 +294,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00016">16</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00017">17</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -327,7 +328,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00062">62</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00063">63</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -350,7 +351,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678" name="a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678"></a>ler&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00075">75</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00076">76</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -370,7 +371,7 @@ Enumerations</h2></td></tr>
 <p>Permite aceder a cada parâmetro sem precisar saber seu código numérico. Índice do vetor de parametros, na classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>O último elemento (<code>parametrosProcura</code>) não representa um parâmetro real. Existe para permitir a criação de uma enumeração adicional em subclasses, caso seja necessário adicionar parâmetros específicos.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0" title="Estrutura para registo de um parâmetro.">TParametro</a>, ExecutaAlgoritmo()</dd></dl>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span>(parametro[<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>].valor &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>)</div>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8">nivelDebug</a>) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0">passos</a>)</div>
 <div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
 </div><!-- fragment --> <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6aeabc5187dd423c46d6dc096c37b01136" name="ab9850fa0e8c4a6f8112bf071778c1dc6aeabc5187dd423c46d6dc096c37b01136"></a>algoritmo&#160;</td><td class="fielddoc"><p>Algoritmo base a executar. </p>
@@ -387,7 +388,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00041">41</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00042">42</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
