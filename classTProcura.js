@@ -8,7 +8,6 @@ var classTProcura =
     [ "CodificarSolucao", "classTProcura.html#a972ec246214b0dbc110b054a43518f55", null ],
     [ "ConfiguracaoAtual", "classTProcura.html#ac1d9f06b12765a02290050af15463186", null ],
     [ "Debug", "classTProcura.html#a854e8f4133fa73db23b693155a2fa681", null ],
-    [ "Debug", "classTProcura.html#a67ee13d863e50ab075f6bc3a31e2bfac", null ],
     [ "Debug", "classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0", null ],
     [ "EditarConfiguracoes", "classTProcura.html#ae559b54c7ff363280df914fec988794f", null ],
     [ "EditarIndicadores", "classTProcura.html#a8f5d1ccb82a33db762fbb8400eeacf39", null ],
