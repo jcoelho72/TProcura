@@ -252,28 +252,19 @@ public:
 	/// @name Operadores Adicionais
 	///@{
 	/** Adiciona elemento @p x ao final (alias de Add). */
-	TVector<Item>& operator+=(const Item& x);
+	TVector<Item>& operator+=(const Item& x) { return Add(x); }
 
 	/** Remove todas ocorrências de @p x (alias de Remove). */
-	TVector<Item>& operator-=(const Item& x);
+	TVector<Item>& operator-=(const Item& x) { return Remove(x); }
 
 	/** Concatena dois vetores, retornando o resultado. */
-	friend TVector<Item> operator+(TVector<Item> a, const TVector<Item>& b)
-	{
-		a += b; return a;
-	}
+	friend TVector<Item> operator+(TVector<Item> a, const TVector<Item>& b) { a += b; return a; }
 
 	/** Compara igualdade de conjuntos (usando Equal). */
-	friend bool operator==(const TVector<Item>& a, const TVector<Item>& b)
-	{
-		return a.Equal(b);
-	}
+	friend bool operator==(const TVector<Item>& a, const TVector<Item>& b) { return a.Equal(b);	}
 
 	/** Compara desigualdade de conjuntos. */
-	friend bool operator!=(const TVector<Item>& a, const TVector<Item>& b)
-	{
-		return !a.Equal(b);
-	}
+	friend bool operator!=(const TVector<Item>& a, const TVector<Item>& b) { return !a.Equal(b); }
 	///@}
 };
 

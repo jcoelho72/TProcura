@@ -506,20 +506,6 @@ public:
 		return true;
 	}
 
-
-	/// @brief Mostra uma informação de debug, se o nível de debug for suficiente
-	/// @param tipo Nível de detalhe necessário para exibir a mensagem.
-	/// resto dos parâmetros como em printf
-	bool Debug(ENivelDebug tipo, const char* fmt, ...) {
-		if (Parametro(nivelDebug) < tipo)
-			return false;
-		va_list args;
-		va_start(args, fmt);
-		vprintf(fmt, args);
-		va_end(args);
-		return true;
-	}
-
 protected:
 
 	/**

@@ -225,9 +225,9 @@ void TProcuraMelhorativa::VerificaMelhor(TPonto atual)
 
 int TProcuraMelhorativa::MelhorCusto(TVector<TPonto>& populacao, bool inverter)
 {
-	int custo = inverter?0:INT_MAX;
+	int custo = inverter ? 0 : INT_MAX;
 	for (int i = 0; i < populacao.Count(); i++)
-		if (inverter? custo < populacao[i]->custo : custo > populacao[i]->custo)
+		if (inverter ? custo < populacao[i]->custo : custo > populacao[i]->custo)
 			custo = populacao[i]->custo;
 	return custo;
 }
@@ -415,16 +415,16 @@ int TProcuraMelhorativa::AlgoritmoEvolutivo()
 
 void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) {
 	if (Parametro(nivelDebug) == atividade) {
-		if (epoca % 1000 == 0) 
+		if (epoca % 1000 == 0)
 			printf(".");
 	}
 	else {
 		Debug(passos, true, "\nÉpoca %d", epoca) ||
-		Debug(detalhe, true, "\nÉpoca %d | Melhor custo: %d", epoca, custo) ||
-		Debug(completo, true, "\nÉpoca %d\n  Melhor custo: %d\n  Pior custo: %d\n  Tempo disponível: %.2f\n  Iterações: %d", 
-			epoca, custo, MelhorCusto(populacao,true),
-			(double)(instanteFinal - clock()) / CLOCKS_PER_SEC,
-			iteracoes);
+			Debug(detalhe, true, "\nÉpoca %d | Melhor custo: %d", epoca, custo) ||
+			Debug(completo, true, "\nÉpoca %d\n  Melhor custo: %d\n  Pior custo: %d\n  Tempo disponível: %.2f\n  Iterações: %d",
+				epoca, custo, MelhorCusto(populacao, true),
+				(double)(instanteFinal - clock()) / CLOCKS_PER_SEC,
+				iteracoes);
 	}
 }
 
@@ -435,7 +435,7 @@ TVector<TPonto> TProcuraMelhorativa::InicializarPopulacaoAE() {
 		novo->NovaSolucao();
 		novo->Avaliar();
 		VerificaMelhor(novo);
-		populacao.Add(novo);
+		populacao += novo;
 	}
 	return populacao;
 }
@@ -447,7 +447,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 	int pop = populacao.Count();
 	if (descendentes < 1)
 		descendentes = 1;
-	else if(descendentes > pop)
+	else if (descendentes > pop)
 		descendentes = pop;
 	pais.Count(0);
 	if (Parametro(selecaoAE) == 1) { // roleta
@@ -469,14 +469,14 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 		float valor = (float)(TRand::rand() % 10000) / (descendentes * 10000.0f);
 		for (int escolhido = 0; pais.Count() < descendentes; escolhido++) {
 			while (pais.Count() < descendentes && valor <= probabilidades[escolhido]) {
-				pais.Add(populacao[escolhido]);
+				pais += populacao[escolhido];
 				valor += 1.0f / (float)descendentes;
 			}
 		}
 	}
 	else if (Parametro(selecaoAE) == 3) { // uniforme
 		for (int i = 0; i < descendentes; i++)
-			pais.Add(populacao.Random());
+			pais += populacao.Random();
 	}
 	else if (Parametro(selecaoAE) == 2) { // torneio
 		int tamanho = Parametro(tamanhoTorneioAE);
@@ -484,55 +484,57 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 			TVector<TPonto> competidores;
 			TVector<int> id;
 			for (int j = 0; j < tamanho; j++)
-				competidores.Add(populacao.Random());
+				competidores += populacao.Random();
 			// ordenar por custo
 			OrdemValor(competidores, id);
 			// escolher melhor ou segundo melhor
 			if ((TRand::rand() % 100) < Parametro(probMelhorTorneioAE))
-				pais.Add(competidores[id[0]]);
+				pais += competidores[id[0]];
 			else
-				pais.Add(competidores[id[1 % tamanho]]);
+				pais += competidores[id[1 % tamanho]];
 		}
 	}
 	return pais;
 }
 
-
 TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais) {
 	TVector<TPonto> descendentes;
-	while (descendentes.Count() < pais.Count()) {
-		TPonto pai = pais.Random();
-		TPonto mae;
-		do {
-			mae = pais.Random();
-		} while (mae == pai && pais.Count() > 1);
+	pais.RandomOrder();
+	while (pais.Count() > 0) {
+		TPonto pai = pais.Pop();
 
-		if (TRand::rand() % 100 < Parametro(probCruzarAE)) {
-			// gerar um novo individuo por cruzamento
-			TPonto filho=pai->Duplicar();
-			filho->Cruzamento(pai, mae);
-			descendentes.Add(filho);
-			if (descendentes.Count() < pais.Count()) {
-				filho = mae->Duplicar();
-				filho->Cruzamento(mae, pai);
-				descendentes.Add(filho);
-			}
+		if(pais.Count() == 0) {
+			// não há mãe, apenas copiar o pai
+			descendentes += pai->Duplicar();
 		}
 		else {
-			// copia o elemento sem alterações
-			descendentes.Add(pai->Duplicar());
-			if (descendentes.Count() < pais.Count())
-				descendentes.Add(mae->Duplicar());
-		}
-		for (int i = descendentes.Count() - 2; i < descendentes.Count(); i++) {
-			// mudar o novo elemento, dependente da probabilidade
-			if (TRand::rand() % 100 < Parametro(probMutarAE))
-				descendentes[i]->Mutar();
-			// avaliar o valor do elemento
-			descendentes[i]->Avaliar();
-			VerificaMelhor(descendentes[i]);
+			TPonto mae = pais.Pop();
+			if (TRand::rand() % 100 < Parametro(probCruzarAE)) {
+				// gerar um novo individuo por cruzamento
+				TPonto filho = pai->Duplicar();
+				filho->Cruzamento(pai, mae);
+				descendentes += filho;
+				filho = mae->Duplicar();
+				filho->Cruzamento(mae, pai);
+				descendentes += filho;
+			}
+			else {
+				// copia o elemento sem alterações
+				descendentes += pai->Duplicar();
+				descendentes += mae->Duplicar();
+			}
 		}
 	}
+	// mutar e avaliar descendentes
+	for (auto descendente : descendentes) {
+		// mudar o novo elemento, dependente da probabilidade
+		if (TRand::rand() % 100 < Parametro(probMutarAE))
+			descendente->Mutar();
+		// avaliar o valor do elemento
+		descendente->Avaliar();
+		VerificaMelhor(descendente);
+	}
+
 	return descendentes;
 }
 
@@ -545,7 +547,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		TVector<int> id;
 		OrdemValor(populacao, id); // melhor primeiro
 		for (int i = 0; i < nElite && i < populacao.Count(); i++)
-			elite.Add(populacao[id[i]]->Duplicar());
+			elite += populacao[id[i]]->Duplicar();
 		// encontrar o melhor descendente
 		melhorDescendente = MelhorCusto(descendentes);
 	}
@@ -567,7 +569,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		OrdemValor(populacao, id); // ordena por custo (melhor primeiro)
 		TVector<TPonto> novaPopulacao;
 		for (int i = 0; i < Parametro(populacaoAE); i++) {
-			novaPopulacao.Add(populacao[id[i]]);
+			novaPopulacao += populacao[id[i]];
 			populacao[id[i]] = NULL;
 		}
 		LibertarVector(populacao);
@@ -597,7 +599,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		perdas.Sort(&id);
 		TVector<TPonto> novaPopulacao;
 		for (int i = 0; i < Parametro(populacaoAE); i++) {
-			novaPopulacao.Add(populacao[id[i]]);
+			novaPopulacao += populacao[id[i]];
 			populacao[id[i]] = NULL;
 		}
 		LibertarVector(populacao);
