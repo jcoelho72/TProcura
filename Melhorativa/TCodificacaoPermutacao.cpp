@@ -37,17 +37,17 @@ void TCodificacaoPermutacao::ResetParametros() {
 
 	TProcuraMelhorativa::ResetParametros();
 	// parametros da codificação inteira
-	parametro.Add({ "tCruzamento", 3,1,4,
-		"Cruzamento: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", nomesCruzamento });
-	parametro.Add({ "tMutação", 0,0,0,
-		"Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)", NULL });
-	parametro.Add({ "tVizinhanca", 1,1,3,
-		"Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca });
-	parametro.Add({ "LimiteViz", 0,0,1000,
+	parametro += { "tCruzamento", 3,1,4,
+		"Cruzamento: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", nomesCruzamento };
+	parametro += { "tMutação", 0,0,0,
+		"Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)", NULL };
+	parametro += { "tVizinhanca", 1,1,3,
+		"Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca };
+	parametro += { "LimiteViz", 0,0,1000,
 		"LimiteVizinhança, conforme a vizinhança, se 0 não há limite\n\
-- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL });
-	parametro.Add({ "tDistância", 1,1,3,
-		"Distância: vários métodso para distâncias de permutações", nomesDistancias });
+- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL };
+	parametro += { "tDistância", 1,1,3,
+		"Distância: vários métodso para distâncias de permutações", nomesDistancias };
 
 }
 
@@ -66,7 +66,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 
 	// escolher dois pontos de corte distintos
 	while (divisoes.Count() < 2) {
-		divisoes.Add(TRand::rand() % nElementos);
+		divisoes += (TRand::rand() % nElementos);
 		divisoes.BeASet();
 	}
 
@@ -122,7 +122,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 
 		auto addEdge = [&](int from, int to) {
 			if (adj[from].Find(to) < 0)
-				adj[from].Add(to);
+				adj[from] += to;
 			};
 
 		// adicionar arestas de A
@@ -155,11 +155,11 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 						int size = adj[v].Count();
 						if (size < minSize) {
 							minSize = size;
-							candidatos.Count(0);
-							candidatos.Add(v);
+							candidatos = {}; 
+							candidatos += v;
 						}
 						else if (size == minSize) {
-							candidatos.Add(v);
+							candidatos += v;
 						}
 					}
 				}
@@ -257,7 +257,7 @@ void TCodificacaoPermutacao::Vizinhanca(TVector<TPonto>& vizinhos) {
 					}
 
 					vizinho->custo = -1;
-					vizinhos.Add(vizinho);
+					vizinhos += vizinho;
 				}
 				else
 					memoriaEsgotada = true;

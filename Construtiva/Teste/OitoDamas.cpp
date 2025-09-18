@@ -24,7 +24,7 @@ TProcuraConstrutiva* COitoDamas::Duplicar(void)
 void COitoDamas::Inicializar(void)
 { 
 	TProcuraConstrutiva::Inicializar();
-	damas.Count(0);
+	damas = {}; 
 	nDamas = instancia.valor;
 	// 4 bits por dama, com 40 damas no máximo dá 3 inteiros de 64 bits
 	tamanhoCodificado = (nDamas - 1) * 4 / 64 + 1; 
@@ -50,8 +50,8 @@ void COitoDamas::Sucessores(TVector<TNo>&sucessores)
 			COitoDamas* sucessor = (COitoDamas*)Duplicar();
 			if (memoriaEsgotada)
 				return;
-			sucessor->damas.Add(i);
-			sucessores.Add(sucessor);
+			sucessor->damas += i;
+			sucessores += sucessor;
 		}
 	}
 	TProcuraConstrutiva::Sucessores(sucessores);

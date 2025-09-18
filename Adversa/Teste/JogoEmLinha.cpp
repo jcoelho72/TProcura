@@ -67,7 +67,7 @@ void CJogoEmLinha::Sucessores(TVector<TNo>&sucessores)
 	for (int j = 0; j < inst.M; j++)
 		for (int i = inst.N - 1; i >= 0; i--)
 			if (Casa(i,j) == '.') {
-				sucessores.Add(novo = (CJogoEmLinha*)Duplicar());
+				sucessores += (novo = (CJogoEmLinha*)Duplicar());
 				novo->minimizar = !minimizar;
 				novo->Casa(i, j, (minimizar ? 'x' : 'o'));
 				if (inst.variante == gravidade)

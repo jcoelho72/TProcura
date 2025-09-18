@@ -41,13 +41,12 @@ void CTesteTVector::ResetParametros()
 	parametro[algoritmo] = { "Método",1,1,12,"Método para teste.", nomesMetodo };
 
 	// estrutura de dados
-	parametro.Add({ "Estrutura",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura });
+	parametro += { "Estrutura",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura };
 
-	indicador.Add({ "Ordenado","verifica se o indicador está ordenado", indOrdenar });
-	indAtivo.Add(indOrdenar);
+	indicador += { "Ordenado","verifica se o indicador está ordenado", indOrdenar };
+	indAtivo += indOrdenar;
 
 	instancia = { "Dados", 1,1,10, "Vetores aleatórios de K milhões", NULL };
-
 }
 
 void CTesteTVector::Inicializar(void)
@@ -104,9 +103,9 @@ int CTesteTVector::ExecutaAlgoritmo()
 		if (Parametro(estruturaDados) == 1) { // TVector
 			switch (Parametro(algoritmo)) {
 			case 1: // add
-				dadosA.Count(0);
+				dadosA = {}; 
 				for (int i = 0; i < instancia.valor * 1000000; i++)
-					dadosA.Add(TRand::rand());
+					dadosA += TRand::rand();
 				break;
 			case 2: // Sort
 				dadosA.Sort();
@@ -151,9 +150,9 @@ int CTesteTVector::ExecutaAlgoritmo()
 						stdA.push_back(TRand::rand());
 				}
 				else {
-					dadosA.Count(0);
+					dadosA = {}; 
 					for (int i = 0; i < instancia.valor * 1000000; i++)
-						dadosA.Add(TRand::rand());
+						dadosA += TRand::rand();
 				}
 				break;
 			case 2: // Sort

@@ -47,36 +47,36 @@ void TProcuraMelhorativa::ResetParametros()
 	parametro[algoritmo] = { "Algoritmo",1,1,3,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
 
 	// população 
-	parametro.Add({ "populacaoAE",20,2,1000000, "Número de elementos em cada geração, utilizado nos Algoritmos Evolutivos",NULL });
+	parametro += { "populacaoAE",20,2,1000000, "Número de elementos em cada geração, utilizado nos Algoritmos Evolutivos",NULL };
 	// probabilidade de cruzamento 
-	parametro.Add({ "probCruzarAE",100,0,100, "Probabilidade de um estado ser cruzado, utilizado nos Algoritmos Evolutivos",NULL });
+	parametro += { "probCruzarAE",100,0,100, "Probabilidade de um estado ser cruzado, utilizado nos Algoritmos Evolutivos",NULL };
 	// probabilidade de mutação 
-	parametro.Add({ "probMutarAE",50,0,100, "Probabilidade de um estado sofrer uma mutação após gerado, utilizado nos Algoritmos Evolutivos",NULL });
+	parametro += { "probMutarAE",50,0,100, "Probabilidade de um estado sofrer uma mutação após gerado, utilizado nos Algoritmos Evolutivos",NULL };
 	// Seleção dos pais
-	parametro.Add({ "selecaoAE",1,1,3, "Método de seleção dos pais para cruzamento, utilizado nos Algoritmos Evolutivos", nomesSelecao });
+	parametro += { "selecaoAE",1,1,3, "Método de seleção dos pais para cruzamento, utilizado nos Algoritmos Evolutivos", nomesSelecao };
 	// Pressão da seleção
-	parametro.Add({ "pressaoAE",150,100,200, "Pressão da seleção (1.0 a 2.0 > 100 a 200). \
+	parametro += { "pressaoAE",150,100,200, "Pressão da seleção (1.0 a 2.0 > 100 a 200). \
 Controla a diferença de probabilidade entre o melhor e o pior indivíduo no método Ranking Selection.\n\
-Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", NULL });
+Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", NULL };
 	// Tamanho do torneio
-	parametro.Add({ "tamanhoTorneioAE",2,2,100, "Tamanho do torneio, caso a sobrevivência seja do tipo torneio.", NULL });
+	parametro += { "tamanhoTorneioAE",2,2,100, "Tamanho do torneio, caso a sobrevivência seja do tipo torneio.", NULL };
 	// Probabilidade do melhor ganhar no torneio
-	parametro.Add({ "probMelhorTorneioAE",100,0,100, "Probabilidade do melhor ganhar o torneio.", NULL });
+	parametro += { "probMelhorTorneioAE",100,0,100, "Probabilidade do melhor ganhar o torneio.", NULL };
 	// Sobrevivência
-	parametro.Add({ "sobrevivenciaAE",1,1,3, "Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos", nomesSobrevivencia });
+	parametro += { "sobrevivenciaAE",1,1,3, "Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos", nomesSobrevivencia };
 	// Descendentes
-	parametro.Add({ "percDescendentesAE",100,0,100, "Número de descendentes a substituirem elementos na população, em percentagem (100 toda a população é substituída, 0 apenas um elemento)", NULL });
+	parametro += { "percDescendentesAE",100,0,100, "Número de descendentes a substituirem elementos na população, em percentagem (100 toda a população é substituída, 0 apenas um elemento)", NULL };
 	// qRoundRobinAE
-	parametro.Add({ "qRoundRobinAE",3,2,100, "Número de elementos no round-robin (valor de q)", NULL });
+	parametro += { "qRoundRobinAE",3,2,100, "Número de elementos no round-robin (valor de q)", NULL };
 	// Elitismo
-	parametro.Add({ "elitismoAE",1,0,100, "Número absoluto de indivíduos melhores, que se mantêm na geração seguinte, excepto se há descendência com valor igual ou superior", NULL });
+	parametro += { "elitismoAE",1,0,100, "Número absoluto de indivíduos melhores, que se mantêm na geração seguinte, excepto se há descendência com valor igual ou superior", NULL };
 	// distância 
-	parametro.Add({ "distMinimaAG",0,0,1000, "Distância mínima imposta entre elementos da população, utilizado nos Algoritmos Genéticos",NULL });
+	parametro += { "distMinimaAG",0,0,1000, "Distância mínima imposta entre elementos da população, utilizado nos Algoritmos Genéticos",NULL };
 	// move primeiro
-	parametro.Add({ "movePrimeiroEM",1,1,2, "Utilizado na Escalada do Monte", nomesMovePrimeiro });
+	parametro += { "movePrimeiroEM",1,1,2, "Utilizado na Escalada do Monte", nomesMovePrimeiro };
 
-	indicador.Add({ "Épocas","Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", indEpocas });
-	indicador.Add({ "Gerações","número de estados gerados", indGeracoes });
+	indicador += { "Épocas","Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", indEpocas };
+	indicador += { "Gerações","número de estados gerados", indGeracoes };
 	indAtivo.Add(indEpocas).Add(indGeracoes);
 }
 
@@ -203,7 +203,7 @@ void TProcuraMelhorativa::LibertarVector(TVector<TPonto>& vector, int excepto)
 	for (int i = 0; i < vector.Count(); i++)
 		if (i != excepto && vector[i] != NULL)
 			delete vector[i];
-	vector.Count(0);
+	vector = {}; 
 }
 
 void TProcuraMelhorativa::VerificaMelhor(TPonto& melhor, TPonto atual) {
@@ -269,7 +269,7 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 		printf("\nPopulação inicial (%d elementos)", populacao);
 	// construir a geracao inicial
 	for (int i = 0; i < populacao; i++) {
-		geracaoAntiga.Add((TPonto)Duplicar());
+		geracaoAntiga += ((TPonto)Duplicar());
 		geracaoAntiga.Last()->NovaSolucao();
 		geracaoAntiga.Last()->Avaliar();
 		VerificaMelhor(melhor, geracaoAntiga.Last());
@@ -290,7 +290,7 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 		for (int i = 0; i < geracaoAntiga.Count(); i++) {
 			// cada elemento tem de ter sempre probabilidade de ser escolhido
 			// por isso adiciona-se 1 para que o custo maximo tenha probabilidade minima
-			probabilidade.Add(maximo - geracaoAntiga[i]->custo + 1);
+			probabilidade += (maximo - geracaoAntiga[i]->custo + 1);
 			total += probabilidade.Last();
 		}
 		// gerar novos elementos. gera-se o doubro para poder seleccionar os melhores
@@ -299,7 +299,7 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 			int pai, mae, mutou = 0;
 			Selecao(pai, mae, probabilidade, total);
 			// gerar um novo individuo por cruzamento
-			geracaoNova.Add((TPonto)Duplicar());
+			geracaoNova += ((TPonto)Duplicar());
 			geracaoNova.Last()->Cruzamento(geracaoAntiga[pai], geracaoAntiga[mae]);
 			// mudar o novo elemento, dependente da probabilidade
 			if (TRand::rand() % 100 < (unsigned)probablidadeMutacao) {
@@ -334,7 +334,7 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 					continue;
 			}
 			// este elemento fica, passando para a geração antiga
-			geracaoAntiga.Add(geracaoNova[id[i]]);
+			geracaoAntiga += geracaoNova[id[i]];
 			geracaoNova[id[i]] = NULL;
 		}
 		// todos os novos que não se mantêm, são apagados
@@ -366,7 +366,7 @@ void TProcuraMelhorativa::DebugPassoAG(int pop, int min, int max)
 void TProcuraMelhorativa::OrdemValor(TVector<TPonto>& populacao, TVector<int>& id) {
 	TVector<int> valor;
 	for (int i = 0; i < populacao.Count(); i++)
-		valor.Add(populacao[i]->custo);
+		valor += populacao[i]->custo;
 	valor.Sort(&id);
 }
 
@@ -449,7 +449,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 		descendentes = 1;
 	else if (descendentes > pop)
 		descendentes = pop;
-	pais.Count(0);
+	pais = {}; 
 	if (Parametro(selecaoAE) == 1) { // roleta
 		// roleta implementada como Stochastic Universal Sampling (SUS)
 		TVector<int> id;
@@ -460,7 +460,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 		for (int i = 0; i < populacao.Count(); i++) {
 			// calcular a probabilidade de um elemento ser selecionado
 			// utilizando o método Ranking Selection
-			probabilidades.Add((2.0f - (float)pressao / 100.0f) / pop +
+			probabilidades += ((2.0f - (float)pressao / 100.0f) / pop +
 				(2.0f * id[i] * ((float)pressao / 100.0f - 1.0f)) / (float)(pop * (pop - 1)));
 			if (i > 0)
 				probabilidades[i] += probabilidades[i - 1];
@@ -558,13 +558,13 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 			delete populacao[i];
 			populacao[i] = NULL;
 		}
-		populacao.Remove(NULL);
+		populacao -= NULL;
 		populacao += descendentes;
-		descendentes.Count(0);
+		descendentes = {}; 
 	}
 	else if (Parametro(sobrevivenciaAE) == 2) { // substituir piores
 		populacao += descendentes;
-		descendentes.Count(0);
+		descendentes = {}; 
 		TVector<int> id;
 		OrdemValor(populacao, id); // ordena por custo (melhor primeiro)
 		TVector<TPonto> novaPopulacao;
@@ -580,7 +580,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		int q = Parametro(qRoundRobinAE); // número de competidores
 		TVector<int> perdas;
 		populacao += descendentes;
-		descendentes.Count(0);
+		descendentes = {}; 
 		perdas.Count(populacao.Count());
 		perdas.Reset(0);
 		for (int i = 0; i < populacao.Count(); i++) {

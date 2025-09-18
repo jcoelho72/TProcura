@@ -298,15 +298,15 @@ public:
 	 *     parametro[nivelDebug].valor = 1;
 	 *
 	 *     // novo parametro para utilizar na função Heuristica()
-	 *     parametro.Add({ "Opção Heurística", 0,0,10,
-	 *         "explicação do que acontece na heuristica, com este parametro entre 0 e 10",NULL });
+	 *     parametro += { "Opção Heurística", 0,0,10,
+	 *         "explicação do que acontece na heuristica, com este parametro entre 0 e 10",NULL };
 	 *     // novo parametro para utilizar na função Sucessores()
-	 *     parametro.Add({ "Opção Sucessores", 0,0,1,
-	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc });
+	 *     parametro += { "Opção Sucessores", 0,0,1,
+	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc };
 	 *
 	 *     // novo indicador
-	 *	   indicador.Add({ "Ordenado","verifica se um vetor está ordenado", indOrdenar });
-	 *     indAtivo.Add(indOrdenar); // adicionar aos indicadores ativos de omissão
+	 *	   indicador += { "Ordenado","verifica se um vetor está ordenado", indOrdenar };
+	 *     indAtivo += indOrdenar; // adicionar aos indicadores ativos de omissão
 	 *
 	 *     // indicar que há 10 instâncias, sendo a instância inicial a 1
 	 * 	   instancia = { "Problema", 1,1,10, "Características dos problemas", NULL };

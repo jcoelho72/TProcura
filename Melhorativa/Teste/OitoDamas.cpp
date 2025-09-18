@@ -15,7 +15,7 @@ COitoDamas::~COitoDamas(void)
 void COitoDamas::Inicializar(void)
 {
 	TProcuraMelhorativa::Inicializar();
-	damas.Count(0);
+	damas = {}; 
 	nDamas = instancia.valor;
 	NovaSolucao();
 }
@@ -64,7 +64,7 @@ void COitoDamas::Vizinhanca(TVector<TPonto>& vizinhos)
 			if (j != damas[i]) {
 				COitoDamas* vizinho = (COitoDamas*)Duplicar();
 				vizinho->damas[i] = j;
-				vizinhos.Add(vizinho);
+				vizinhos += vizinho;
 			}
 	TProcuraMelhorativa::Vizinhanca(vizinhos);
 }

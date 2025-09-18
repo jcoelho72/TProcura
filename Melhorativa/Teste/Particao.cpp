@@ -15,17 +15,15 @@ CParticao::~CParticao(void)
 void CParticao::Inicializar(void)
 {
 	TProcuraMelhorativa::Inicializar();
-	direita.Count(0);
-	esquerda.Count(0);
-	numeros.Count(0);
+	direita = esquerda = numeros = {};
 	totalDireita = totalEsquerda = 0;
-	solCompleta.Count(0);
+	solCompleta = {}; 
 
 	// gerar uma instancia provavelmente possivel
 	int soma1, soma2;
 	soma1 = soma2 = 0;
 	for (int i = 0; i < instancia.valor; i++) {
-		numeros.Add(TRand::rand() % (3 * instancia.valor));
+		numeros += (TRand::rand() % (3 * instancia.valor));
 		if (soma1 < soma2)
 			soma1 += numeros.Last();
 		else soma2 += numeros.Last();
@@ -35,8 +33,8 @@ void CParticao::Inicializar(void)
 		numeros.Last() + 1;
 	// garantir que há uma solução
 	//if (soma1 != soma2)
-	//	numeros.Add(abs(soma1 - soma2));
-	numeros.Remove(0);
+	//	numeros += abs(soma1 - soma2);
+	numeros -= 0;
 	numeros.Sort();
 	NovaSolucao();
 }
@@ -137,7 +135,7 @@ void CParticao::Vizinhanca(TVector<TPonto>& vizinhos) {
 	for (int i = 0; i < solCompleta.Count(); i++) {
 		CParticao* vizinho = (CParticao*)Duplicar();
 		vizinho->solCompleta[i] = !solCompleta[i];
-		vizinhos.Add(vizinho);
+		vizinhos += vizinho;
 	}
 	TProcuraMelhorativa::Vizinhanca(vizinhos);
 }
@@ -171,13 +169,13 @@ void CParticaoCB::Inicializar(void) {
 	TProcuraMelhorativa::Inicializar();
 	nElementos = instancia.valor; // número de elementos a particionar
 
-	numeros.Count(0);
+	numeros = {}; 
 
 	// gerar uma instancia provavelmente possivel
 	int soma1, soma2;
 	soma1 = soma2 = 0;
 	for (int i = 0; i < instancia.valor; i++) {
-		numeros.Add(TRand::rand() % (3 * instancia.valor));
+		numeros += (TRand::rand() % (3 * instancia.valor));
 		if (soma1 < soma2)
 			soma1 += estado.Last();
 		else soma2 += estado.Last();
@@ -187,8 +185,8 @@ void CParticaoCB::Inicializar(void) {
 		numeros.Last() + 1;
 	// garantir que há uma solução
 	//if (soma1 != soma2)
-	//	estado.Add(abs(soma1 - soma2));
-	numeros.Remove(0);
+	//	estado += abs(soma1 - soma2);
+	numeros -= 0;
 	numeros.Sort();
 	nElementos = numeros.Count();
 	NovaSolucao();
@@ -214,11 +212,11 @@ void CParticaoCB::Debug(void)
 	for (i = 0; i < nElementos; i++)
 		if (Bit(i)) {
 			esq += numeros[i];
-			nEsq.Add(numeros[i]);
+			nEsq += numeros[i];
 		}
 		else {
 			dir += numeros[i];
-			nDir.Add(numeros[i]);
+			nDir += numeros[i];
 		}
 	printf("\nColocar #%d:",
 		nElementos);

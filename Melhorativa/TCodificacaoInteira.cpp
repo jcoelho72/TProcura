@@ -46,18 +46,18 @@ void TCodificacaoInteira::ResetParametros() {
 
 	TProcuraMelhorativa::ResetParametros();
 	// parametros da codificação inteira
-	parametro.Add({ "tCruzamento", 1,0,9,
-		"Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento });
-	parametro.Add({ "tMutação", 0,0,100,
-		"Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada elemento, em percentagem (1 a 100)", NULL });
-	parametro.Add({ "tVizinhanca", 1,1,6,
-		"Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca });
-	parametro.Add({ "LimiteViz", 0,0,1000,
+	parametro += { "tCruzamento", 1,0,9,
+		"Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento };
+	parametro += { "tMutação", 0,0,100,
+		"Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada elemento, em percentagem (1 a 100)", NULL };
+	parametro += { "tVizinhanca", 1,1,6,
+		"Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca };
+	parametro += { "LimiteViz", 0,0,1000,
 		"LimiteVizinhança, conforme a vizinhança, se 0 não há limite\n\
 - incDecPot2 + trocaValor - limita a diferença máxima de valores\n\
-- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL });
-	parametro.Add({ "tDistância", 1,1,3,
-		"Distância: vários métodso para distâncias de inteiros", nomesDistancias });
+- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL };
+	parametro += { "tDistância", 1,1,3,
+		"Distância: vários métodso para distâncias de inteiros", nomesDistancias };
 }
 
 void TCodificacaoInteira::Cruzamento(TPonto a, TPonto b) {
@@ -66,7 +66,7 @@ void TCodificacaoInteira::Cruzamento(TPonto a, TPonto b) {
 	if (pontos > nElementos / 2)
 		pontos = nElementos / 2;
 	while (divisoes.Count() < pontos) {
-		divisoes.Add(TRand::rand() % nElementos);
+		divisoes += (TRand::rand() % nElementos);
 		divisoes.BeASet();
 	}
 	if (divisoes.Count() == 0) { // cruzamento uniforme
@@ -117,7 +117,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 				if (vizinho != NULL) {
 					vizinho->estado[i] += j;
 					vizinho->custo = -1;
-					vizinhos.Add(vizinho);
+					vizinhos += vizinho;
 				}
 				else 
 					memoriaEsgotada = true;
@@ -168,7 +168,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 						}
 
 						vizinho->custo = -1;
-						vizinhos.Add(vizinho);
+						vizinhos += vizinho;
 					}
 					else 
 						memoriaEsgotada = true;

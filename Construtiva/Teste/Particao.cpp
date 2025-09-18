@@ -13,7 +13,7 @@ CParticao::~CParticao(void)
 TProcuraConstrutiva* CParticao::Duplicar(void)
 {
 	CParticao* clone = new CParticao;
-	if(clone!=NULL)
+	if (clone != NULL)
 		clone->Copiar(this);
 	else
 		memoriaEsgotada = true;
@@ -23,16 +23,14 @@ TProcuraConstrutiva* CParticao::Duplicar(void)
 void CParticao::Inicializar(void)
 {
 	TProcuraConstrutiva::Inicializar();
-	direita.Count(0);
-	esquerda.Count(0);
-	numeros.Count(0);
+	direita = esquerda = numeros = {}; 
 	totalDireita = totalEsquerda = 0;
 
 	// gerar uma instancia provavelmente possivel
 	int soma1, soma2;
 	soma1 = soma2 = 0;
 	for (int i = 0; i < instancia.valor; i++) {
-		numeros.Add(TRand::rand() % (3 * instancia.valor));
+		numeros += (TRand::rand() % (3 * instancia.valor));
 		if (soma1 < soma2)
 			soma1 += numeros.Last();
 		else soma2 += numeros.Last();
@@ -42,13 +40,13 @@ void CParticao::Inicializar(void)
 		numeros.Last() + 1;
 	// garantir que há uma solução
 	//if (soma1 != soma2)
-	//	numeros.Add(abs(soma1 - soma2));
-	numeros.Remove(0);
+	//	numeros += abs(soma1 - soma2);
+	numeros -= 0;
 	numeros.Sort();
 	tamanhoCodificado = 2; // apenas dois inteiro de 64 bits, para colocar 3 inteiros de 32 bits
 }
 
-void CParticao::Sucessores(TVector<TNo>&sucessores)
+void CParticao::Sucessores(TVector<TNo>& sucessores)
 {
 	int faltaDistribuir = 0;
 	for (int i = 0; i < numeros.Count(); i++)
@@ -59,15 +57,15 @@ void CParticao::Sucessores(TVector<TNo>&sucessores)
 	}
 
 	if (numeros.Count() > 0) {
-		CParticao * esquerda, * direita;
-		sucessores.Add(esquerda = (CParticao*)Duplicar());
-		sucessores.Add(direita = (CParticao*)Duplicar());
+		CParticao* esquerda, * direita;
+		sucessores += (esquerda = (CParticao*)Duplicar());
+		sucessores += (direita = (CParticao*)Duplicar());
 		if (memoriaEsgotada)
 			return;
-		esquerda->esquerda.Push(esquerda->numeros.Pop());
-		esquerda->totalEsquerda+=esquerda->esquerda.Last();
-		direita->direita.Push(direita->numeros.Pop());
-		direita->totalDireita+=direita->direita.Last();
+		esquerda->esquerda += (esquerda->numeros.Pop());
+		esquerda->totalEsquerda += esquerda->esquerda.Last();
+		direita->direita += (direita->numeros.Pop());
+		direita->totalDireita += direita->direita.Last();
 		TProcuraConstrutiva::Sucessores(sucessores);
 	}
 }
@@ -88,7 +86,7 @@ void CParticao::Debug(void)
 	int i, j;
 	NovaLinha();
 	printf("Colocar #%d: %d = %d",
-	numeros.Count(), totalEsquerda, totalDireita);
+		numeros.Count(), totalEsquerda, totalDireita);
 	for (i = 0; i < numeros.Count(); i++) {
 		if (i % 4 == 0) {
 			NovaLinha();

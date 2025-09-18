@@ -41,7 +41,7 @@ void CJogoDoGalo::Sucessores(TVector<TNo>&sucessores)
 	if (!SolucaoCompleta()) {
 		for (int i = 0; i < 9; i++)
 			if (tabuleiro[i] == '.') {
-				sucessores.Add(novo = (CJogoDoGalo*)Duplicar());
+				sucessores += (novo = (CJogoDoGalo*)Duplicar());
 				if (memoriaEsgotada)
 					return;
 				novo->minimizar = !minimizar;

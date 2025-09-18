@@ -41,15 +41,15 @@ void CAspirador::Sucessores(TVector<TNo>&sucessores)
 {
 	CAspirador* sucessor;
 	if (aspirador > 0) { // esquerda
-		sucessores.Add(sucessor = (CAspirador*)Duplicar());
+		sucessores += (sucessor = (CAspirador*)Duplicar());
 		sucessor->aspirador--;
 	}
 	if (aspirador < salas.Count() - 1) { // direita
-		sucessores.Add(sucessor = (CAspirador*)Duplicar());
+		sucessores += (sucessor = (CAspirador*)Duplicar());
 		sucessor->aspirador++;
 	}
 	// limpar
-	sucessores.Add(sucessor = (CAspirador*)Duplicar());
+	sucessores += (sucessor = (CAspirador*)Duplicar());
 	sucessor->salas[aspirador] = '.';
 	if (memoriaEsgotada)
 		return;

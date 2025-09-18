@@ -56,7 +56,7 @@ void CPuzzle8::Sucessores(TVector<TNo>&sucessores)
 			if (memoriaEsgotada)
 				return;
 			sucessor->Trocar(zero, novaCasa);
-			sucessores.Add(sucessor);
+			sucessores += sucessor;
 		}
 	}
 	TProcuraConstrutiva::Sucessores(sucessores);

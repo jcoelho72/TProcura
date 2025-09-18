@@ -41,9 +41,9 @@ void TProcuraAdversa::ResetParametros()
 	Parametro(baralharSuc) = 0; // de omissão está com valor 0, para facilitar nos testes, mas deve ficar com 1 para obter jogos distintos
 
 	// O "infinito" é dependente do problema, não faz sentido alterar senão no código
-	parametro.Add({ "Ordenar",2,0,2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.",NULL });
-	parametro.Add({ "PodaHeuristica",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores).",NULL });
-	parametro.Add({ "PodaCega",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. ",NULL });
+	parametro += { "Ordenar",2,0,2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.",NULL };
+	parametro += { "PodaHeuristica",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores).",NULL };
+	parametro += { "PodaCega",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. ",NULL };
 }
 
 
@@ -149,7 +149,7 @@ void TProcuraAdversa::OrdenarSucessores(
 		}
 	}
 
-	id.Count(0);
+	id = {};
 	if (nivel > 2 && Parametro(ordenarSucessores) >= 1) {
 		CalcularHeuristicas(sucessores, &id); // id fica ordenado por heurística
 
@@ -161,19 +161,19 @@ void TProcuraAdversa::OrdenarSucessores(
 			Parametro(podaHeuristica) < id.Count()) {
 			TVector<TNo> manterSuc;
 			for (int i = 0; i < Parametro(podaHeuristica); i++)
-				manterSuc.Add(sucessores[id[i]]);
+				manterSuc += sucessores[id[i]];
 			for (int i = Parametro(podaHeuristica); i < id.Count(); i++)
 				delete sucessores[id[i]];
 			sucessores = manterSuc;
-			id.Count(0);
+			id = {}; 
 			for (int i = 0; i < sucessores.Count(); i++)
-				id.Add(i);
+				id += i;
 		}
 
 	}
 	else
 		for (int i = 0; i < sucessores.Count(); i++)
-			id.Add(i);
+			id += i;
 }
 
 // iteração, aumentando o nível progressivamente
@@ -398,7 +398,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 	for (auto item : instancias)
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
-	instancias.Remove(-1);
+	instancias -= (-1);
 	ConfiguracaoAtual(atual, ler);
 	if (configuracoes.Count() == 0) {
 		// não foram feitas configurações, utilizar a atual 

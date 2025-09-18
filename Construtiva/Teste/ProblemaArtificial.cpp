@@ -54,7 +54,7 @@ void CProblemaArtificial::Sucessores(TVector<TNo>&sucessores)
 			ramificacao = espaco.minRamificacao;
 
 		for (int i = 0; i < ramificacao; i++) {
-			sucessores.Add(sucessor = (CProblemaArtificial*)Duplicar());
+			sucessores += (sucessor = (CProblemaArtificial*)Duplicar());
 			sucessor->nivel++;
 			// ID tem de ser dependente do pai e da semente, para poder serem gerados os mesmos sucessores,
 			//    independente da ordem de expansão que o algoritmo utilizar

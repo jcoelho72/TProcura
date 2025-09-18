@@ -46,28 +46,28 @@ void TProcura::ResetParametros()
 		"completo" };
 
 	// definir indicadores base
-	indicador.Count(0);
-	indicador.Add({ "Resultado","Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", 0 });
-	indicador.Add({ "Tempo(ms)","Tempo em milisegundos da execução (medida de esforço computacional).", 1 });
-	indicador.Add({ "Iterações","Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).", 2 });
+	indicador = {};
+	indicador += { "Resultado", "Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", 0 };
+	indicador += { "Tempo(ms)", "Tempo em milisegundos da execução (medida de esforço computacional).", 1 };
+	indicador += { "Iterações", "Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).", 2 };
 	for (int i = 0; i < indicador.Count(); i++) // ativar todos os indicadores
-		indAtivo.Add(i);
+		indAtivo += i;
 
 	// definir parametros base
-	parametro.Count(0);
+	parametro = {};
 	// algoritmos
-	parametro.Add({ "Algoritmo",1,1,1,"Algoritmo base a executar.", nomesAlgoritmos });
+	parametro += { "Algoritmo", 1, 1, 1, "Algoritmo base a executar.", nomesAlgoritmos };
 	// nivel de debug
-	parametro.Add({ "Debug",0,0,4,"Nível de debug, de reduzido a completo.",nomesDebug });
+	parametro += { "Debug", 0, 0, 4, "Nível de debug, de reduzido a completo.", nomesDebug };
 	// seed 
-	parametro.Add({ "Seed",1,1,1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios.",NULL });
+	parametro += { "Seed", 1, 1, 1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios.", NULL };
 	// limite tempo
-	parametro.Add({ "Tempo",10,1,3600, "Limnite de tempo em segundos. ",NULL });
+	parametro += { "Tempo", 10, 1, 3600, "Limnite de tempo em segundos. ", NULL };
 	// máximo de iterações
-	parametro.Add({ "Iterações",0,0,1000000000, "Limite de número de iterações (0 não há limite). ",NULL });
+	parametro += { "Iterações", 0, 0, 1000000000, "Limite de número de iterações (0 não há limite). ", NULL };
 
 	// colocar as configurações vazias (podem ser inicializadas se existirem configurações de omissão)
-	configuracoes.Count(0);
+	configuracoes = {};
 }
 
 // retorna o valor do indicador[id]
@@ -128,8 +128,8 @@ ____________________________________________________________________\n\
 		case 3: EditarParametros(); break;
 		case 4: MostrarSolucao(); break;
 		case 5: if (EditarIndicadores())
-			resultados.Count(0);
-			break;
+			resultados = {};
+			  break;
 		case 6:
 			// executar um algoritmo 
 			LimparEstatisticas(inicio);
@@ -195,14 +195,14 @@ bool TProcura::EditarIndicadores() {
 				if (i != opcao - 1 && indicador[i].indice > indicador[opcao - 1].indice)
 					indicador[i].indice--;
 			indicador[opcao - 1].indice = -1;
-			indAtivo.Remove(opcao - 1);
+			indAtivo -= (opcao - 1);
 		}
 		else {
 			indicador[opcao - 1].indice = 0;
 			for (int i = 0; i < indicador.Count(); i++)
 				if (i != opcao - 1 && indicador[i].indice >= indicador[opcao - 1].indice)
 					indicador[opcao - 1].indice = indicador[i].indice + 1;
-			indAtivo.Add(opcao - 1); // coloca no fim
+			indAtivo += (opcao - 1); // coloca no fim
 		}
 		// invalidar resultados atuais
 		editado = true;
@@ -234,10 +234,10 @@ void TProcura::EditarParametros() {
 		// solicitar valor
 		valor = NovoValor("");
 		if (valor != NAO_LIDO || valor == 0)
-			Parametro(opcao - 1) = 
-				Dominio(valor,
-					parametro[opcao - 1].min,
-					parametro[opcao - 1].max);
+			Parametro(opcao - 1) =
+			Dominio(valor,
+				parametro[opcao - 1].min,
+				parametro[opcao - 1].max);
 	}
 }
 
@@ -264,15 +264,15 @@ void TProcura::ConfiguracaoAtual(TVector<int>& parametros, int operacao) {
 			Parametro(i) = parametros[i];
 	}
 	else if (operacao == ler) {
-		parametros.Count(0);
+		parametros = {};
 		for (int i = 0; i < parametro.Count(); i++)
-			parametros.Add(Parametro(i));
+			parametros += Parametro(i);
 	}
 }
 
 void TProcura::InserirRegisto(TVector<TResultado>& resultados, int inst, int conf)
 {
-	resultados.Add({ inst, conf });
+	resultados += { inst, conf };
 	for (auto ind : indAtivo)
 		Registo(resultados.Last(), ind, Indicador(ind));
 	// adicionar no final a solução codificada em inteíros
@@ -333,10 +333,10 @@ TVector<int> TProcura::ExtraiLista(char* str) {
 				B = aux;
 			}
 			for (int i = A; i <= B; i += C)
-				lista.Add(i);
+				lista += i;
 		}
 		else // inteiro apenas
-			lista.Add(atoi(str));
+			lista += atoi(str);
 	}
 	lista.BeASet();
 	return lista;
@@ -353,7 +353,7 @@ Introduza IDs das instâncias (de %d a %d): ", instancia.min, instancia.max);
 	fgets(str, BUFFER_SIZE, stdin);
 	if (strlen(str) > 1)
 		return ExtraiLista(str);
-	instancias.Add(instancia.valor); // colocar apenas a instância atual
+	instancias += instancia.valor; // colocar apenas a instância atual
 	return instancias;
 }
 
@@ -418,8 +418,8 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 				param = atoi(pt + 1);
 				if (param > 0 && param <= parametro.Count()) {
 					valores.Count(valores.Count() + 1);
-					valores.Last().Count(0);
-					valores.Last().Add(param); // primeiro valor é ID do parâmetro
+					valores.Last() = {};
+					valores.Last() += param; // primeiro valor é ID do parâmetro
 					valores.Last() += ExtraiLista(pt2 + 1); // valores para o parâmetro tomar
 					if (valores.Last().Count() == 2) {
 						// apenas um elemento, altera a configuração atual 
@@ -436,21 +436,21 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 		}
 		else if (*pt == 'x') {
 			valores.Count(valores.Count() + 1);
-			valores.Last().Add(0); // produto externo
+			valores.Last() += 0; // produto externo
 		}
 		pt = strtok(NULL, " \n\t\r");
 	}
 	// inserir configurações de acordo com o pretendido (produto externo, ou apenas à configuração base)
-	produto.Count(0);
+	produto = {};
 	for (int i = 0; i < valores.Count(); i++)
 		if (valores[i].First() > 0) { // c.c. é o operador produto externo
 			if (i == valores.Count() - 1 || valores[i + 1].First() != 0) { // não há outro produto externo, colocar na configuração atual
-				produto.Add(i);
+				produto += i;
 				InserirConfiguracoes(base, produto, valores);
-				produto.Count(0);
+				produto = {};
 			}
 			else
-				produto.Add(i);
+				produto += i;
 		}
 }
 
@@ -473,7 +473,7 @@ void TProcura::InserirConfiguracoes(TVector<int>& base, TVector<int>& produto, T
 				InserirConfiguracoes(base, produto, valores);
 		}
 	base = backup;
-	produto.Push(idLista);
+	produto += idLista;
 }
 
 void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
@@ -484,9 +484,9 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 		for (int j = 1; j < configuracoes.Count() && igual; j++)
 			igual = (configuracoes.First()[i] == configuracoes[j][i]);
 		if (igual)
-			comum.Add(i);
+			comum += i;
 		else
-			distinto.Add(i);
+			distinto += i;
 	}
 	// mostra parametros comuns, evitando repetição em cada configuração
 	printf("\nParâmetros comuns:");
@@ -513,7 +513,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes, char
 	for (auto item : instancias)
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
-	instancias.Remove(-1);
+	instancias -= (-1);
 	ConfiguracaoAtual(atual, ler);
 	if (configuracoes.Count() == 0) {
 		// não foram feitas configurações, utilizar a atual
@@ -627,9 +627,9 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 			}
 			else if (strcmp(argv[i], "-I") == 0 && i + 1 < argc) {
 				char* pt = strtok(argv[i + 1], ",");
-				indAtivo.Count(0);
+				indAtivo = {};
 				while (pt) {
-					indAtivo.Add(atoi(pt) - 1);
+					indAtivo += (atoi(pt) - 1);
 					indicador[indAtivo.Last()].indice = indAtivo.Count() - 1;
 					pt = strtok(NULL, ",");
 				}
@@ -837,7 +837,7 @@ TVector<TResultado>  TProcura::ExtrairConfiguracao(TVector<TResultado>& resultad
 	TVector<TResultado> extracao;
 	for (auto res : resultados)
 		if (res.configuracao == configuracao)
-			extracao.Add(res);
+			extracao += res;
 	return extracao;
 }
 

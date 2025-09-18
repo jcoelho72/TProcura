@@ -12,7 +12,7 @@ int CListaNo::NovoElemento(TNo elemento) {
 	int id = -1;
 	if (limite == 0 || indice.Count() < 2 * limite) {
 		// adicionar, há espaço
-		indice.Add({ elemento, 1, 1 });
+		indice += { elemento, 1, 1 };
 		id = indice.Count() - 1;
 	}
 	else {
@@ -70,7 +70,7 @@ void CListaNo::LibertarLista() {
 
 void CListaNo::LibertarSeguinte(int id) {
 	int i = Proximo(id);
-	livre.Push(i);
+	livre += i;
 	if (indice[i].estado != NULL) {
 		delete indice[i].estado;
 		indice[i].estado = NULL;
@@ -85,7 +85,7 @@ int CListaNo::Inserir(TNo elemento, int id) {
 	int idNovo = NovoElemento(elemento);
 	if (idNovo == 0) {
 		// primeiro elemento, inserir um elemento final
-		indice.Add({ NULL,-1,-1 });
+		indice += { NULL,-1,-1 };
 		return 0;
 	}
 	valor = Valor(idNovo);
@@ -139,7 +139,7 @@ void CListaNo::Inserir(TVector<TNo>& elementos) {
 
 	// 1. Ordenar elementos, complexidaded O(N log(N))
 	for (int j = 0; j < elementos.Count(); j++)
-		lbElementos.Add(elementos[j]->LowerBound());
+		lbElementos += elementos[j]->LowerBound();
 	lbElementos.Sort(&idElementos);
 
 	// 2. inserir por ordem, tirando partido do local onde já está o último elemento

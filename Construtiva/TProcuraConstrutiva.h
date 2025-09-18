@@ -265,7 +265,7 @@ public:
 	 * {
 	 *     CSubProblema* novo;
 	 *     for(int i = 0; i < numeroAcoes; i++) {
-	 *         sucessores.Add(novo = (CSubProblema*)Duplicar());
+	 *         sucessores += (novo = (CSubProblema*)Duplicar());
 	 *         // aplicar a ação i nas variáveis de estado
 	 *         novo->variavel = i;
 	 * 		   // se o custo não for unitário, indicar o custo da ação

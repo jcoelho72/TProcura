@@ -55,31 +55,30 @@ void TProcuraConstrutiva::ResetParametros()
 	// algoritmos, alterar
 	parametro[algoritmo] = { "Algoritmo",1,1,7,"Algoritmo base a executar.", nomesAlgoritmos };
 	// ver Acoes (ou apenas estados completos)
-	parametro.Add({ "Ver",4,1,100,"Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.",NULL });
+	parametro += { "Ver",4,1,100,"Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.",NULL };
 	// limite (algoritmo)
-	parametro.Add({ "Limite",0,-1,1000000,
+	parametro += { "Limite",0,-1,1000000,
 		"Valor dependente do algoritmo. \n\
 Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. \n\
-Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL });
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL };
 	// estados repetidos
-	parametro.Add({ "Repetidos", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).",
-			nomesRepetidos });
+	parametro += { "Repetidos", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).",
+			nomesRepetidos };
 	// pesoAStar 
-	parametro.Add({ "pesoAStar",100,0,10000,
-		"Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.",NULL });
+	parametro += { "pesoAStar",100,0,10000,
+		"Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.",NULL };
 	// ruido heuristica
-	parametro.Add({ "ruido",0,-100,100,
-		"Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",NULL });
+	parametro += { "ruido",0,-100,100,
+		"Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",NULL };
 	// baralhar sucessores
-	parametro.Add({ "baralhar",0,0,1,
-		"Baralhar os sucessores ao expandir.",NULL });
+	parametro += { "baralhar",0,0,1, "Baralhar os sucessores ao expandir.",NULL };
 
 	indicador[indCusto].nome = "Custo";
 	indicador[indCusto].descricao = "o resultado é o custo da solução atual";
-	indicador.Add({ "Expansões","número de expansões efetuadas", indExpansoes });
-	indicador.Add({ "Gerações","número de estados gerados", indGeracoes });
-	indicador.Add({ "Lower Bound","valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima",
-		indLowerBound });
+	indicador += { "Expansões","número de expansões efetuadas", indExpansoes };
+	indicador += { "Gerações","número de estados gerados", indGeracoes };
+	indicador += { "Lower Bound","valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima",
+		indLowerBound };
 	indAtivo.Add(indExpansoes).Add(indGeracoes).Add(indLowerBound);
 }
 
@@ -132,7 +131,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 			}
 		}
 	}
-	sucessores.Remove(NULL);
+	sucessores -= NULL;
 	if (Parametro(baralharSuc) == 1)
 		sucessores.RandomOrder();
 	expansoes++;
@@ -146,7 +145,7 @@ void TProcuraConstrutiva::LibertarVector(TVector<TNo>& vector, int excepto, int 
 	for (int i = 0; i < vector.Count(); i++)
 		if (i != excepto && i > maiorQue && vector[i] != NULL)
 			delete vector[i];
-	vector.Count(0);
+	vector = {}; 
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -157,7 +156,7 @@ void TProcuraConstrutiva::LibertarVector(TVector<TNo>& vector, int excepto, int 
 int TProcuraConstrutiva::LarguraPrimeiro(int limite)
 {
 	TVector<TNo> lista; // lista de nós gerados na árvore de procura (expandidos ou não)
-	lista.Add(this); // nó inical: estado, custo
+	lista += this; // nó inical: estado, custo
 	for (int i = 0; i < lista.Count() && !Parar(); i++) {
 		// processar o próximo estado não expandido (estão expandidos todos os anteriores a i)
 		lista[i]->DebugPasso();
@@ -168,7 +167,7 @@ int TProcuraConstrutiva::LarguraPrimeiro(int limite)
 		VerificaLimites(limite, lista.Count() - i, sucessores);
 		// inserir tudo no final da lista
 		for (int j = 0; j < sucessores.Count(); j++) {
-			lista.Add(sucessores[j]);
+			lista += sucessores[j];
 			// verificar se é um estado objetivo, a solução é completa nesse caso
 			// teste na geração e não na expansão 
 			if (lista.Last()->SolucaoCompleta()) {
@@ -211,7 +210,7 @@ void TProcuraConstrutiva::CalculaCaminho(bool completa) {
 	// limpar o caminho anterior (caso do BnB que obtém mais que uma solução)
 	while (caminho.Count() > 0)
 		delete caminho.Pop();
-	caminho.Add(atual->Duplicar());
+	caminho += atual->Duplicar();
 	caminho.Last()->custo = atual->custo;
 
 	// apenas se a lista estiver completa, há a garantia dos pais não terem sido apagados
@@ -219,7 +218,7 @@ void TProcuraConstrutiva::CalculaCaminho(bool completa) {
 		// obter caminho para a solucao
 		while (atual->pai != NULL) {
 			atual = atual->pai;
-			caminho.Add(atual->Duplicar());
+			caminho += atual->Duplicar();
 			caminho.Last()->custo = atual->custo;
 		}
 	}
@@ -481,7 +480,7 @@ void TProcuraConstrutiva::CalcularHeuristicas(
 	for (int i = 0; i < sucessores.Count(); i++) {
 		sucessores[i]->heuristica = sucessores[i]->Heuristica();
 		if (id != NULL)
-			heuristicas.Add(sucessores[i]->heuristica + (sortLB ? sucessores[i]->custo : 0));
+			heuristicas += (sucessores[i]->heuristica + (sortLB ? sucessores[i]->custo : 0));
 	}
 	if (id != NULL)
 		heuristicas.Sort(id); // ordenar id
@@ -538,11 +537,11 @@ void TProcuraConstrutiva::DebugExpansao(int sucessor, int sucessores, bool duplo
 
 		if (sucessor == 0 && sucessores == 1) { // só um ramo
 			DebugRamo(Parametro(nivelDebug) < completo ? '-' : ' ', duplo ? '#' : '+');
-			ramo.Add(' '); // a ser impresso nesta posição nas linhas seguintes
+			ramo += ' '; // a ser impresso nesta posição nas linhas seguintes
 		}
 		else if (sucessor == 0) { // início e continua
 			DebugRamo(Parametro(nivelDebug) < completo ? '-' : ' ', duplo ? '#' : '+');
-			ramo.Add(duplo ? '/' : '|'); // a ser impresso nesta posição nas linhas seguintes
+			ramo += (duplo ? '/' : '|'); // a ser impresso nesta posição nas linhas seguintes
 		}
 		else if (sucessor > 0 && sucessor < sucessores - 1) { // no meio e continua
 			DebugRamo(' ', duplo ? '#' : '+');
@@ -591,7 +590,7 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 	if (Parametro(nivelDebug) > nada && SolucaoCompleta()) {
 		printf(" Solução encontrada!");
 		if (!continuar)
-			ramo.Count(0);
+			ramo = {}; 
 		Debug();
 		printf("(g:%d)", custo);
 	}
@@ -651,8 +650,8 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 		}
 	}
 	else {
-		ramo.Count(0);
-		ramo.Add(' ');
+		ramo = {}; 
+		ramo += ' ';
 		for (int i = 0; i < sucessores.Count() && i < 30; i++) {
 			ramo.First() = '+';
 			NovaLinha();
@@ -665,7 +664,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 			if (Parametro(verAcoes) == 1)
 				sucessores[i]->Debug();
 		}
-		ramo.Count(0);
+		ramo = {}; 
 
 	}
 }
@@ -709,7 +708,7 @@ void TProcuraConstrutiva::LimparEstatisticas(clock_t& inicio)
 {
 	TProcura::LimparEstatisticas(inicio);
 	geracoes = expansoes = 0;
-	ramo.Count(0);
+	ramo = {}; 
 	while (caminho.Count() > 0)
 		delete caminho.Pop();
 	if (solucao != NULL)
@@ -752,7 +751,7 @@ void TProcuraConstrutiva::Explorar() {
 	int opcao = 0;
 	LimparEstatisticas(inicio);
 	do {
-		caminho.Add(Duplicar());
+		caminho += Duplicar();
 		if (caminho.Count() > 1)
 			caminho.Last()->custo += caminho[caminho.Count() - 2]->custo;
 		else
@@ -781,7 +780,7 @@ void TProcuraConstrutiva::Explorar() {
 				if (strcmp(token, "exe") == 0) {
 					TVector<TNo> backup;
 					backup = caminho;
-					caminho.Count(0);
+					caminho = {}; 
 					LimparEstatisticas(inicio);
 					int resultado;
 					switch (resultado = ExecutaAlgoritmo()) {
@@ -813,7 +812,7 @@ void TProcuraConstrutiva::Explorar() {
 
 						if (token != NULL) {
 							// há outra ação, é preciso atualizar o caminho
-							caminho.Add(Duplicar());
+							caminho += Duplicar();
 							if (caminho.Count() > 1)
 								caminho.Last()->custo += caminho[caminho.Count() - 2]->custo;
 							else
