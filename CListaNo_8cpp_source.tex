@@ -16,7 +16,7 @@
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ -\/1;}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (limite\ ==\ 0\ ||\ indice.Count()\ <\ 2\ *\ limite)\ \{}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ adicionar,\ há espaço}}
-\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ indice.Add(\{\ elemento,\ 1,\ 1\ \});}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ indice\ +=\ \{\ elemento,\ 1,\ 1\ \};}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{id}\ =\ indice.Count()\ -\/\ 1;}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00017}00017\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
@@ -74,7 +74,7 @@
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00070}00070\ }
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00071}00071\ \textcolor{keywordtype}{void}\ CListaNo::LibertarSeguinte(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ \mbox{\hyperlink{classCListaNo_ac0247e41530a14c23afb3279fa15bbfa}{Proximo}}(\textcolor{keywordtype}{id});}
-\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00073}00073\ \ \ \ \ livre.\mbox{\hyperlink{classTVector_afd25458f77157e6e8aa4ba0e6be3fb64}{Push}}(i);}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00073}00073\ \ \ \ \ livre\ +=\ i;}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (indice[i].estado\ !=\ NULL)\ \{}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ indice[i].estado;}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ indice[i].estado\ =\ NULL;}
@@ -89,7 +89,7 @@
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{int}\ idNovo\ =\ NovoElemento(elemento);}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (idNovo\ ==\ 0)\ \{}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ primeiro\ elemento,\ inserir\ um\ elemento\ final}}
-\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ indice.Add(\{\ NULL,-\/1,-\/1\ \});}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ indice\ +=\ \{\ NULL,-\/1,-\/1\ \};}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00090}00090\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00091}00091\ \ \ \ \ valor\ =\ \mbox{\hyperlink{classCListaNo_aef59a51e58231841d16fa45aa7582328}{Valor}}(idNovo);}
@@ -143,7 +143,7 @@
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00139}00139\ }
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//\ 1.\ Ordenar\ elementos,\ complexidaded\ O(N\ log(N))}}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ elementos.\mbox{\hyperlink{classTVector_ac3c744d84543ca6e32859eb7dfccfeef}{Count}}();\ j++)}
-\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ lbElementos.\mbox{\hyperlink{classTVector_aa28afdd47b27c5e004fc75b86d6f66a6}{Add}}(elementos[j]-\/>LowerBound());}
+\DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ lbElementos\ +=\ elementos[j]-\/>LowerBound();}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00143}00143\ \ \ \ \ lbElementos.\mbox{\hyperlink{classTVector_a6006a477a6794ac80c97cc35c8925699}{Sort}}(\&idElementos);}
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00144}00144\ }
 \DoxyCodeLine{\Hypertarget{CListaNo_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{comment}{//\ 2.\ inserir\ por\ ordem,\ tirando\ partido\ do\ local\ onde\ já está o\ último\ elemento}}
