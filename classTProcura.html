@@ -582,14 +582,9 @@ Here is the caller graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="TProcura_8cpp_source.html#l00256">256</a> of file <a class="el" href="TProcura_8cpp_source.html">TProcura.cpp</a>.</p>
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 9 --></div>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 10 --></div>
+<div class="center"><!-- SVG 9 --></div>
 </div>
 
 </div>
@@ -662,7 +657,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 11 --></div>
+<div class="center"><!-- SVG 10 --></div>
 </div>
 
 </div>
@@ -696,32 +691,34 @@ Here is the call graph for this function:</div>
 <p>Esta função deverá mostrar claramente o estado atual, em texto mas da forma mais confortável possível. O formato texto destina-se principalmente a quem implementa o problema, e não utilizadores finais. É importante poder explorar o espaço de estados, para verificar a correta implementação dos sucessores, como também possa ver a árvore de procura dos algoritmos, para árvores pequenas, e assim detectar bugs.</p>
 <dl class="section note"><dt>Note</dt><dd>Antes de cada linha, chame a função NovaLinha(). Dependendo do contexto, <code>NovaLinha()</code> pode imprimir caracteres que representam os ramos da árvore de procura, criando uma visualização textual que simula a estrutura da procura.</dd>
 <dd>
-A exibição do estado pode variar conforme o nível de debug definido em <code>parametro[nivelDebug].valor</code>. Um nível menor pode mostrar informações mais sucintas, enquanto um nível maior pode detalhar todas as variáveis do estado.</dd></dl>
+A exibição do estado pode variar conforme o nível de debug definido em <code>Parametro(NIVEL_DEBUG)</code>. Um nível menor pode mostrar informações mais sucintas, enquanto um nível maior pode detalhar todas as variáveis do estado.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd>NovaLinha()</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> CSubProblema::Debug(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">       NovaLinha();</div>
 <div class="line">    <span class="comment">// neste exemplo o estado é apenas um número</span></div>
-<div class="line">    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">parametro</a>[<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">nivelDebug</a>].valor &lt;= <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">atividade</a>)</div>
+<div class="line">    <span class="keywordflow">if</span>(<a class="code hl_function" href="classTProcura.html#a0e9e692f29af8a5d5279a8647c800437">Parametro</a>(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &lt;= <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378">ATIVIDADE</a>)</div>
 <div class="line">           <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">printf</a>(<span class="stringliteral">&quot;--&lt;([%d])&gt;--&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a>); <span class="comment">// versão compacta do estado</span></div>
 <div class="line">    <span class="keywordflow">else</span> {</div>
 <div class="line">        <span class="comment">// versão mais elaborada do estado</span></div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcura_html_ad60c9c327ddddd054d9ff499ef53532f"><div class="ttname"><a href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">TProcura::parametro</a></div><div class="ttdeci">static TVector&lt; TParametro &gt; parametro</div><div class="ttdoc">Parâmetros a serem utilizados na configuração atual.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00452">TProcura.h:452</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378">ATIVIDADE</a></div><div class="ttdeci">@ ATIVIDADE</div><div class="ttdoc">Apenas eventos principais.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00065">TProcura.h:65</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a></div><div class="ttdeci">@ NIVEL_DEBUG</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00044">TProcura.h:44</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a0e9e692f29af8a5d5279a8647c800437"><div class="ttname"><a href="classTProcura.html#a0e9e692f29af8a5d5279a8647c800437">TProcura::Parametro</a></div><div class="ttdeci">int Parametro(int id) const</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00480">TProcura.h:480</a></div></div>
 </div><!-- fragment --> 
-<p>Reimplemented in <a class="el" href="classCJogoDoGalo.html#a16f33d5fa4e812d39b3e643ce0abf3c3">CJogoDoGalo</a>, <a class="el" href="classCJogoEmLinha.html#a241f3198f804b6e0003a45fe2d11100a">CJogoEmLinha</a>, <a class="el" href="classCAspirador.html#a06c5ae19d38939c0eb949bb2d8e86ea5">CAspirador</a>, <a class="el" href="classCOitoDamas.html#a8c4dfb787a9f0d8f2a8c88e682aaeb78">COitoDamas</a>, <a class="el" href="classCParticao.html#aa33970025179d4c6e3177c0fd518dadb">CParticao</a>, <a class="el" href="classCProblemaArtificial.html#a17e7a8290910ffd1fe8a370228c6024b">CProblemaArtificial</a>, <a class="el" href="classCPuzzle8.html#a8ecb37cf08f1fe64bba96834370afa35">CPuzzle8</a>, <a class="el" href="classTCodificacaoBinaria.html#a0102f0448166c56274de4d739ca05866">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a3cc16ef4b60dffc2a29c634446926190">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#a8d135851e5730962edffed15534f4240">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html#abb88edf7e43b2782acbaba88986ab316">TCodificacaoReal</a>, <a class="el" href="classCOitoDamas.html#a8c4dfb787a9f0d8f2a8c88e682aaeb78">COitoDamas</a>, <a class="el" href="classCOitoDamasCI.html#a4ff45062cc9aef77a8eefb924169849c">COitoDamasCI</a>, <a class="el" href="classCOitoDamasCP.html#ad9f4e7437b7f0dee84a7da8dc8436388">COitoDamasCP</a>, <a class="el" href="classCParticao.html#aa33970025179d4c6e3177c0fd518dadb">CParticao</a>, <a class="el" href="classCParticaoCB.html#ae617520232e4ce1515aadeef3370f567">CParticaoCB</a>, <a class="el" href="classCProblemaArtificial.html#a17e7a8290910ffd1fe8a370228c6024b">CProblemaArtificial</a>, and <a class="el" href="classCTesteTVector.html#af53e06f07045b1c72f144f16f6998206">CTesteTVector</a>.</p>
+<p>Reimplemented in <a class="el" href="classCJogoDoGalo.html#a16f33d5fa4e812d39b3e643ce0abf3c3">CJogoDoGalo</a>, <a class="el" href="classCJogoEmLinha.html#a241f3198f804b6e0003a45fe2d11100a">CJogoEmLinha</a>, <a class="el" href="classCAspirador.html#a06c5ae19d38939c0eb949bb2d8e86ea5">CAspirador</a>, <a class="el" href="classCOitoDamas.html#a8c4dfb787a9f0d8f2a8c88e682aaeb78">COitoDamas</a>, <a class="el" href="classCParticao.html#aa33970025179d4c6e3177c0fd518dadb">CParticao</a>, <a class="el" href="classCProblemaArtificial.html#a17e7a8290910ffd1fe8a370228c6024b">CProblemaArtificial</a>, <a class="el" href="classCPuzzle8.html#a8ecb37cf08f1fe64bba96834370afa35">CPuzzle8</a>, <a class="el" href="classTCodificacaoBinaria.html#a0102f0448166c56274de4d739ca05866">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a3cc16ef4b60dffc2a29c634446926190">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#a8d135851e5730962edffed15534f4240">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html#abb88edf7e43b2782acbaba88986ab316">TCodificacaoReal</a>, <a class="el" href="classCOitoDamas.html#a8c4dfb787a9f0d8f2a8c88e682aaeb78">COitoDamas</a>, <a class="el" href="classCOitoDamasCI.html#a4ff45062cc9aef77a8eefb924169849c">COitoDamasCI</a>, <a class="el" href="classCOitoDamasCP.html#ad9f4e7437b7f0dee84a7da8dc8436388">COitoDamasCP</a>, <a class="el" href="classCParticao.html#aa33970025179d4c6e3177c0fd518dadb">CParticao</a>, <a class="el" href="classCParticaoCB.html#ae617520232e4ce1515aadeef3370f567">CParticaoCB</a>, <a class="el" href="classCProblemaArtificial.html#a17e7a8290910ffd1fe8a370228c6024b">CProblemaArtificial</a>, <a class="el" href="classCTesteTVector.html#af53e06f07045b1c72f144f16f6998206">CTesteTVector</a>, and <a class="el" href="classCTesteTVector.html#a98f0e815a25aa85841c88a638bf4eaf0">CTesteTVector</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="TProcura_8cpp_source.html#l00083">83</a> of file <a class="el" href="TProcura_8cpp_source.html">TProcura.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 12 --></div>
+<div class="center"><!-- SVG 11 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 13 --></div>
+<div class="center"><!-- SVG 12 --></div>
 </div>
 
 </div>
@@ -781,7 +778,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 14 --></div>
+<div class="center"><!-- SVG 13 --></div>
 </div>
 
 </div>
@@ -815,12 +812,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 15 --></div>
+<div class="center"><!-- SVG 14 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 16 --></div>
+<div class="center"><!-- SVG 15 --></div>
 </div>
 
 </div>
@@ -855,12 +852,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 17 --></div>
+<div class="center"><!-- SVG 16 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 18 --></div>
+<div class="center"><!-- SVG 17 --></div>
 </div>
 
 </div>
@@ -894,12 +891,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 19 --></div>
+<div class="center"><!-- SVG 18 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 20 --></div>
+<div class="center"><!-- SVG 19 --></div>
 </div>
 
 </div>
@@ -936,12 +933,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 21 --></div>
+<div class="center"><!-- SVG 20 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 22 --></div>
+<div class="center"><!-- SVG 21 --></div>
 </div>
 
 </div>
@@ -971,7 +968,7 @@ Here is the caller graph for this function:</div>
 
 <p>Executa o algoritmo com os parametros atuais. </p>
 <dl class="section note"><dt>Note</dt><dd>Redefinição necessária</dd></dl>
-<p>No caso de adicionar algum algoritmo, chame o algoritmo com base em parametro[algoritmo].valor Se <code><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a interação com o utilizador.">TesteManual()</a></code> não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente. </p>
+<p>No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO) Se <code><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a interação com o utilizador.">TesteManual()</a></code> não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente. </p>
 
 <p>Reimplemented in <a class="el" href="classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b">TProcuraAdversa</a>, <a class="el" href="group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3">TProcuraConstrutiva</a>, <a class="el" href="classTProcuraMelhorativa.html#af101526489df420431d22477e317fb33">TProcuraMelhorativa</a>, and <a class="el" href="classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c">CTesteTVector</a>.</p>
 
@@ -979,7 +976,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 23 --></div>
+<div class="center"><!-- SVG 22 --></div>
 </div>
 
 </div>
@@ -1015,7 +1012,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 24 --></div>
+<div class="center"><!-- SVG 23 --></div>
 </div>
 
 </div>
@@ -1057,12 +1054,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 25 --></div>
+<div class="center"><!-- SVG 24 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 26 --></div>
+<div class="center"><!-- SVG 25 --></div>
 </div>
 
 </div>
@@ -1115,7 +1112,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 27 --></div>
+<div class="center"><!-- SVG 26 --></div>
 </div>
 
 </div>
@@ -1166,7 +1163,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 28 --></div>
+<div class="center"><!-- SVG 27 --></div>
 </div>
 
 </div>
@@ -1218,7 +1215,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 29 --></div>
+<div class="center"><!-- SVG 28 --></div>
 </div>
 
 </div>
@@ -1270,12 +1267,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 30 --></div>
+<div class="center"><!-- SVG 29 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 31 --></div>
+<div class="center"><!-- SVG 30 --></div>
 </div>
 
 </div>
@@ -1334,7 +1331,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 32 --></div>
+<div class="center"><!-- SVG 31 --></div>
 </div>
 
 </div>
@@ -1393,12 +1390,12 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 33 --></div>
+<div class="center"><!-- SVG 32 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 34 --></div>
+<div class="center"><!-- SVG 33 --></div>
 </div>
 
 </div>
@@ -1430,12 +1427,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 35 --></div>
+<div class="center"><!-- SVG 34 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 36 --></div>
+<div class="center"><!-- SVG 35 --></div>
 </div>
 
 </div>
@@ -1472,12 +1469,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 37 --></div>
+<div class="center"><!-- SVG 36 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 38 --></div>
+<div class="center"><!-- SVG 37 --></div>
 </div>
 
 </div>
@@ -1549,12 +1546,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 39 --></div>
+<div class="center"><!-- SVG 38 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 40 --></div>
+<div class="center"><!-- SVG 39 --></div>
 </div>
 
 </div>
@@ -1607,12 +1604,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 41 --></div>
+<div class="center"><!-- SVG 40 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 42 --></div>
+<div class="center"><!-- SVG 41 --></div>
 </div>
 
 </div>
@@ -1646,7 +1643,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 43 --></div>
+<div class="center"><!-- SVG 42 --></div>
 </div>
 
 </div>
@@ -1698,12 +1695,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 44 --></div>
+<div class="center"><!-- SVG 43 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 45 --></div>
+<div class="center"><!-- SVG 44 --></div>
 </div>
 
 </div>
@@ -1755,12 +1752,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 46 --></div>
+<div class="center"><!-- SVG 45 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 47 --></div>
+<div class="center"><!-- SVG 46 --></div>
 </div>
 
 </div>
@@ -1812,12 +1809,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 48 --></div>
+<div class="center"><!-- SVG 47 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 49 --></div>
+<div class="center"><!-- SVG 48 --></div>
 </div>
 
 </div>
@@ -1854,12 +1851,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 50 --></div>
+<div class="center"><!-- SVG 49 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 51 --></div>
+<div class="center"><!-- SVG 50 --></div>
 </div>
 
 </div>
@@ -1911,12 +1908,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 52 --></div>
+<div class="center"><!-- SVG 51 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 53 --></div>
+<div class="center"><!-- SVG 52 --></div>
 </div>
 
 </div>
@@ -1958,12 +1955,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 54 --></div>
+<div class="center"><!-- SVG 53 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 55 --></div>
+<div class="center"><!-- SVG 54 --></div>
 </div>
 
 </div>
@@ -1996,7 +1993,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 56 --></div>
+<div class="center"><!-- SVG 55 --></div>
 </div>
 
 </div>
@@ -2029,7 +2026,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 57 --></div>
+<div class="center"><!-- SVG 56 --></div>
 </div>
 
 </div>
@@ -2132,12 +2129,12 @@ Esta função deve manter a eficiência elevada, dado que é chamada em ciclos inter
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 58 --></div>
+<div class="center"><!-- SVG 57 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 59 --></div>
+<div class="center"><!-- SVG 58 --></div>
 </div>
 
 </div>
@@ -2190,7 +2187,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 60 --></div>
+<div class="center"><!-- SVG 59 --></div>
 </div>
 
 </div>
@@ -2296,12 +2293,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 61 --></div>
+<div class="center"><!-- SVG 60 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 62 --></div>
+<div class="center"><!-- SVG 61 --></div>
 </div>
 
 </div>
@@ -2350,7 +2347,7 @@ A instância selecionada irá ser carregada em <a class="el" href="classTProcura.h
 <div class="line">    <span class="comment">// chamar primeiro o método na superclasse</span></div>
 <div class="line">    <a class="code hl_function" href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871">TProcura::ResetParametros</a>();</div>
 <div class="line">    <span class="comment">// neste exemplo considerou-se que se pretende ver algum debug, de omissão</span></div>
-<div class="line">    <a class="code hl_variable" href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">parametro</a>[<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">nivelDebug</a>].valor = 1;</div>
+<div class="line">    <a class="code hl_function" href="classTProcura.html#a0e9e692f29af8a5d5279a8647c800437">Parametro</a>(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) = 1;</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// novo parametro para utilizar na função Heuristica()</span></div>
 <div class="line">    <a class="code hl_variable" href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">parametro</a> += { <span class="stringliteral">&quot;Opção Heurística&quot;</span>, 0,0,10,</div>
@@ -2370,6 +2367,7 @@ A instância selecionada irá ser carregada em <a class="el" href="classTProcura.h
 <div class="ttc" id="aclassTProcura_html_a6b870a79b10bf2523bdb37c4b06bb871"><div class="ttname"><a href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871">TProcura::ResetParametros</a></div><div class="ttdeci">virtual void ResetParametros()</div><div class="ttdoc">Inicializa os parametros, indicadores e instâncias.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00037">TProcura.cpp:37</a></div></div>
 <div class="ttc" id="aclassTProcura_html_ac4344a896fc02c79e34d5fafaf595d9f"><div class="ttname"><a href="classTProcura.html#ac4344a896fc02c79e34d5fafaf595d9f">TProcura::indAtivo</a></div><div class="ttdeci">static TVector&lt; int &gt; indAtivo</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00456">TProcura.h:456</a></div></div>
 <div class="ttc" id="aclassTProcura_html_ac54b5d632d3efd448b51bfca6cb6a238"><div class="ttname"><a href="classTProcura.html#ac54b5d632d3efd448b51bfca6cb6a238">TProcura::instancia</a></div><div class="ttdeci">static TParametro instancia</div><div class="ttdoc">ID da instância atual, a ser utilizado em SolucaoVazia().</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00021">TProcura.h:21</a></div></div>
+<div class="ttc" id="aclassTProcura_html_ad60c9c327ddddd054d9ff499ef53532f"><div class="ttname"><a href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">TProcura::parametro</a></div><div class="ttdeci">static TVector&lt; TParametro &gt; parametro</div><div class="ttdoc">Parâmetros a serem utilizados na configuração atual.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00452">TProcura.h:452</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCJogoEmLinha.html#a855791b2e19731340976157991d79293">CJogoEmLinha</a>, <a class="el" href="classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1">TProcuraAdversa</a>, <a class="el" href="classCAspirador.html#a7a0d35ab38ae4c5d9a941ca9b3845e4b">CAspirador</a>, <a class="el" href="classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf">COitoDamas</a>, <a class="el" href="classCParticao.html#a7184defba91cfd68281cf63d0fee98c6">CParticao</a>, <a class="el" href="classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d">CProblemaArtificial</a>, <a class="el" href="classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3">CPuzzle8</a>, <a class="el" href="classTCodificacaoBinaria.html#a2fac1dbb30a1e109803559213001267b">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a5100a41aeaae385245b0cf8f493615a3">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#adc0c8bcf59133f55ff83efca45c6f79d">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html#a05ae961431a020791a4ce90c11bc4561">TCodificacaoReal</a>, <a class="el" href="classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf">COitoDamas</a>, <a class="el" href="classCOitoDamasCI.html#ac8954b7751c740cb0489b98a74142827">COitoDamasCI</a>, <a class="el" href="classCOitoDamasCP.html#a9eba2f6a84513cd1b62021362241d3fc">COitoDamasCP</a>, <a class="el" href="classCParticaoCB.html#a41dc438c16b823fd1b20cbd61a7396ed">CParticaoCB</a>, <a class="el" href="classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d">CProblemaArtificial</a>, <a class="el" href="classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94">CTesteTVector</a>, <a class="el" href="group__RedefinicaoMandatoria.html#ga65671e37d7c8da81c6a2143027166dd8">TProcuraConstrutiva</a>, and <a class="el" href="classTProcuraMelhorativa.html#ad52a9ac59f07587d70dc696c0648fe62">TProcuraMelhorativa</a>.</p>
 
@@ -2377,7 +2375,7 @@ A instância selecionada irá ser carregada em <a class="el" href="classTProcura.h
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 63 --></div>
+<div class="center"><!-- SVG 62 --></div>
 </div>
 
 </div>
@@ -2411,12 +2409,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 64 --></div>
+<div class="center"><!-- SVG 63 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 65 --></div>
+<div class="center"><!-- SVG 64 --></div>
 </div>
 
 </div>
@@ -2451,12 +2449,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 66 --></div>
+<div class="center"><!-- SVG 65 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 67 --></div>
+<div class="center"><!-- SVG 66 --></div>
 </div>
 
 </div>
@@ -2488,7 +2486,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 68 --></div>
+<div class="center"><!-- SVG 67 --></div>
 </div>
 
 </div>
@@ -2553,12 +2551,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 69 --></div>
+<div class="center"><!-- SVG 68 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 70 --></div>
+<div class="center"><!-- SVG 69 --></div>
 </div>
 
 </div>
@@ -2622,12 +2620,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 71 --></div>
+<div class="center"><!-- SVG 70 --></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 72 --></div>
+<div class="center"><!-- SVG 71 --></div>
 </div>
 
 </div>

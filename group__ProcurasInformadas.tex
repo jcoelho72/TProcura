@@ -40,7 +40,7 @@ Este algoritmo é semelhante ao Custo Uniforme, mas os estados são ordenados pe
 \begin{DoxyNote}{Note}
 Se o limite do número de estados for atingido, os estados gerados com maior lower bound serão removidos. 
 
-O parâmetro parametro\mbox{[}peso\+AStar\mbox{]}.valor, com valor padrão 100, indica o peso (em percentagem) que a heurística terá no cálculo do lower bound. Se esse valor for reduzido, a heurística terá menor peso (pode chegar a 0, fazendo com que o algoritmo se comporte como o Custo Uniforme). Se for aumentado acima de 100, a heurística terá mais influência, aproximando a estratégia do Melhor Primeiro. Dessa forma, esse parâmetro permite modelar uma gama de estratégias entre Custo Uniforme, A\texorpdfstring{$\ast$}{*} e Melhor Primeiro, o que pode resultar em melhor desempenho para determinados problemas.
+O parâmetro Parametro(\+PESO\+\_\+\+ASTAR), com valor padrão 100, indica o peso (em percentagem) que a heurística terá no cálculo do lower bound. Se esse valor for reduzido, a heurística terá menor peso (pode chegar a 0, fazendo com que o algoritmo se comporte como o Custo Uniforme). Se for aumentado acima de 100, a heurística terá mais influência, aproximando a estratégia do Melhor Primeiro. Dessa forma, esse parâmetro permite modelar uma gama de estratégias entre Custo Uniforme, A\texorpdfstring{$\ast$}{*} e Melhor Primeiro, o que pode resultar em melhor desempenho para determinados problemas.
 
 Se a procura for interrompida, é possível extrair um lower bound, embora isso não permita a obtenção de uma solução.
 \end{DoxyNote}

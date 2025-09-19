@@ -346,7 +346,7 @@ Esta função deverá mostrar claramente o estado atual, em texto mas da forma mais
 \begin{DoxyNote}{Note}
 Antes de cada linha, chame a função Nova\+Linha(). Dependendo do contexto, {\ttfamily Nova\+Linha()} pode imprimir caracteres que representam os ramos da árvore de procura, criando uma visualização textual que simula a estrutura da procura.
 
-A exibição do estado pode variar conforme o nível de debug definido em {\ttfamily parametro\mbox{[}nivel\+Debug\mbox{]}.valor}. Um nível menor pode mostrar informações mais sucintas, enquanto um nível maior pode detalhar todas as variáveis do estado.
+A exibição do estado pode variar conforme o nível de debug definido em {\ttfamily Parametro(\+NIVEL\+\_\+\+DEBUG)}. Um nível menor pode mostrar informações mais sucintas, enquanto um nível maior pode detalhar todas as variáveis do estado.
 \end{DoxyNote}
 \begin{DoxySeeAlso}{See also}
 Nova\+Linha()
@@ -357,7 +357,7 @@ Nova\+Linha()
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \ \ \ NovaLinha();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é apenas\ um\ número}}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{nivelDebug}}].valor\ <=\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{atividade}})}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classTProcura_a0e9e692f29af8a5d5279a8647c800437}{Parametro}}(\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3}{NIVEL\_DEBUG}})\ <=\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378}{ATIVIDADE}})}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}-\/-\/<([\%d])>-\/-\/"{}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}});\ \textcolor{comment}{//\ versão compacta\ do\ estado}}
 \DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{else}\ \{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{comment}{//\ versão mais\ elaborada\ do\ estado}}
@@ -505,7 +505,7 @@ Exemplo com a alteração do valor de omissão de um parametro, e adição de dois no
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ chamar\ primeiro\ o\ método\ na\ superclasse}}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb871}{TProcura::ResetParametros}}();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ considerou-\/se\ que\ se\ pretende\ ver\ algum\ debug,\ de\ omissão}}
-\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}[\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{nivelDebug}}].valor\ =\ 1;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_a0e9e692f29af8a5d5279a8647c800437}{Parametro}}(\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3}{NIVEL\_DEBUG}})\ =\ 1;}
 \DoxyCodeLine{}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ novo\ parametro\ para\ utilizar\ na\ função\ Heuristica()}}
 \DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}{parametro}}\ +=\ \{\ \textcolor{stringliteral}{"{}Opção\ Heurística"{}},\ 0,0,10,}

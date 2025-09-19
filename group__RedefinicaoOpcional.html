@@ -231,14 +231,14 @@ Here is the call graph for this function:</div>
 
 <p>Executa o algoritmo com os parametros atuais. </p>
 <dl class="section note"><dt>Note</dt><dd>Redefinição necessária no caso de se alterar os algoritmos disponíveis.</dd></dl>
-<p>No caso de adicionar algum algoritmo, chame o algoritmo com base em parametro[algoritmo].valor Se <code><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a intera��o com o utilizador.">TesteManual()</a></code> não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente.</p>
+<p>No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO) Se <code><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a intera��o com o utilizador.">TesteManual()</a></code> não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente.</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a intera��o com o utilizador.">TesteManual()</a>, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058" title="Identifica um parâmetro específico no código.">EParametrosConstrutiva</a>, <a class="el" href="group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0" title="Executa a procura em largura primeiro, algoritmo cego.">LarguraPrimeiro()</a>, <a class="el" href="group__ProcurasCegas.html#ga2343fafdecfd55b69c0ffb71e8f9426b" title="Executa a procura por custo uniforme, algoritmo cego.">CustoUniforme()</a>, <a class="el" href="group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228" title="Executa a procura em profundidade primeiro, algoritmo cego.">ProfundidadePrimeiro()</a> </dd>
 <dd>
 <a class="el" href="group__ProcurasInformadas.html#gaebb84182343041bc276e4ceceb4b13aa" title="Executa a procura melhor primeiro, algoritmo informado.">MelhorPrimeiro()</a>, <a class="el" href="group__ProcurasInformadas.html#ga37dd78e1a9a6742700728135f81964b4" title="Executa a procura A*, algoritmo informado.">AStar()</a>, <a class="el" href="group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8" title="Executa a procura IDA*, algoritmo informado.">IDAStar()</a>, <a class="el" href="group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd" title="Executa o algoritmo Branch-and-Bound, um algoritmo informado.">BranchAndBound()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a1297806db02da2a44794883a6f427965">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00720">720</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00715">715</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -280,7 +280,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a475d33545a5f5f1bbebf1365d730e4f0">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00921">921</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00916">916</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -315,7 +315,7 @@ Here is the call graph for this function:</div>
 
 <p>Mostrar solução, seja um caminho ou o próprio estado. </p>
 <dl class="section note"><dt>Note</dt><dd>Redefinição opcional.</dd></dl>
-<p>Esta função exibe a solução, mostrando um estado a cada X ações e exibindo as ações entre os estados. O valor padrão de <code>X</code> é 4, ajustável pelo parâmetro <code>parametro[verAcoes].valor</code>.</p>
+<p>Esta função exibe a solução, mostrando um estado a cada X ações e exibindo as ações entre os estados. O valor padrão de <code>X</code> é 4, ajustável pelo parâmetro <code>Parametro(VER_ACOES)</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>Em problemas onde seja simples de seguir a ação, pode-se utilizar valores maiores, sem ser necessário mostrar muitos estados completos. Em problemas que as ações sejam mais complexas, ou alterem mais o estado, poderá ser até preferível colocar este valor a 1, para que o estado seja sempre mostrado em cada ação.</dd>
 <dd>
 Há problemas em que o estado é já a solução. Neste caso pode-se redefinir esta função chamando a função <a class="el" href="classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0" title="Mostra o estado no ecr�, para debug.">Debug()</a>.</dd>

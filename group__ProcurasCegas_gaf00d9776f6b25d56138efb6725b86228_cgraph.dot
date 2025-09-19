@@ -38,7 +38,7 @@ digraph "TProcuraConstrutiva::ProfundidadePrimeiro"
   Node11 -> Node8 [id="edge66_Node000011_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node14 [id="edge67_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcuraConstrutiva\l::DebugIteracao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ae464aeb16628493409e4d88cede9a9e7",tooltip=" "];
-  Node14 -> Node8 [id="edge68_Node000014_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node4 [id="edge68_Node000014_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node15 [id="edge69_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TProcuraConstrutiva\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df",tooltip=" "];
   Node1 -> Node16 [id="edge70_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
