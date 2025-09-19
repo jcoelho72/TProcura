@@ -60,7 +60,7 @@ void TProcura::ResetParametros()
 		{ "Tempo(ms)", "Tempo em milisegundos da execução (medida de esforço computacional).", IND_TEMPO },
 		{ "Iterações", "Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).", IND_ITERACOES }
 	};
-	indAtivo = {IND_RESULTADO, IND_TEMPO, IND_ITERACOES};
+	indAtivo = { IND_RESULTADO, IND_TEMPO, IND_ITERACOES };
 
 	// colocar as configurações vazias (podem ser inicializadas se existirem configurações de omissão)
 	configuracoes = {};
@@ -287,59 +287,8 @@ void TProcura::Registo(TResultado& resultado, int id, int valor)
 		resultado.valor[indicador[id].indice] = valor;
 }
 
-// Sintaxe de <lista> (apenas inteiros, sem espaços):
-//   A ou A,B,C   - único valor ou enumeração
-//   A:B ou A:B:C - intervalo A a B, ou com passo C
-TVector<int> TProcura::ExtraiLista(char* str) {
-	TVector<int> lista;
-	char* pt;
-
-	if (!str || *str == '\0')
-		return lista;
-
-	// separar por vírgulas
-	if (pt = strchr(str, ',')) {
-		*pt = 0;
-		lista = ExtraiLista(str);
-		do {
-			str = pt + 1;
-			if (pt = strchr(str, ','))
-				*pt = 0;
-			lista += ExtraiLista(str);
-		} while (pt);
-	}
-	else {
-		// procurar por : (intervalo)
-		if (pt = strchr(str, ':')) {
-			char* pt2;
-			*pt = 0;
-			int A = atoi(str);
-			int C = 1;
-			A = atoi(str);
-			if (pt2 = strchr(pt + 1, ':')) { // A:B:C
-				*pt2 = 0;
-				if ((C = atoi(pt2 + 1)) <= 0)
-					C = 1;
-			} // c.c. A:B
-			int B = atoi(pt + 1);
-			if (A > B) { // ordem não interessa
-				int aux = A;
-				A = B;
-				B = aux;
-			}
-			for (int i = A; i <= B; i += C)
-				lista += i;
-		}
-		else // inteiro apenas
-			lista += atoi(str);
-	}
-	lista.BeASet();
-	return lista;
-}
-
 TVector<int> TProcura::SolicitaInstancias()
 {
-	TVector<int> instancias;
 	char str[BUFFER_SIZE];
 	printf("\nSintaxe (apenas inteiros, sem espaços):\n\
   A ou A,B,C   - único valor ou enumeração\n\
@@ -347,9 +296,9 @@ TVector<int> TProcura::SolicitaInstancias()
 Introduza IDs das instâncias (de %d a %d): ", instancia.min, instancia.max);
 	fgets(str, BUFFER_SIZE, stdin);
 	if (strlen(str) > 1)
-		return ExtraiLista(str);
-	instancias += instancia.valor; // colocar apenas a instância atual
-	return instancias;
+		return _TV(str);
+	// colocar apenas a instância atual
+	return TVector<int>() += instancia.valor;
 }
 
 
@@ -415,7 +364,7 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 					valores.Count(valores.Count() + 1);
 					valores.Last() = {};
 					valores.Last() += param; // primeiro valor é ID do parâmetro
-					valores.Last() += ExtraiLista(pt2 + 1); // valores para o parâmetro tomar
+					valores.Last() += _TV(pt2 + 1); // valores para o parâmetro tomar
 					if (valores.Last().Count() == 2) {
 						// apenas um elemento, altera a configuração atual 
 						// (se fosse para alternar, colocava o valor base masi o valor a alternar)
@@ -599,7 +548,7 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		ResetParametros();
 
 		// 1:10  --- conjunto de instâncias (idêntico ao interativo)
-		instancias = ExtraiLista(argv[1]);
+		instancias = argv[1];
 		if (instancias.Count() == 0) {
 			AjudaUtilizacao(argv[0]);
 			return;

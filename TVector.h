@@ -13,6 +13,7 @@
  */
 
 #include <stdlib.h>
+#include <string.h>
 #include <initializer_list>
 #include "TRand.h"
 
@@ -101,6 +102,28 @@ public:
 			v[i++] = val;
 	}
 
+
+	/**
+	 * @brief Constrói um vetor de inteiros a partir de uma string no formato de lista.
+	 * @param str String com a lista de inteiros ou intervalos.
+	 * @details
+	 * Sintaxe suportada (sem espaços):
+	 * - "A" ou "A,B,C" : valores individuais separados por vírgulas
+	 * - "A:B"          : intervalo de A até B (passo 1)
+	 * - "A:B:C"        : intervalo de A até B com passo C
+	 *
+	 * Exemplos:
+	 * @code
+	 * TVector<int> v("1,3,5");        // {1,3,5}
+	 * TVector<int> v("0:10:2,15");    // {0,2,4,6,8,10,15}
+	 * @endcode
+	 *
+	 * - Valores inválidos ou passo <= 0 são ajustados para passo = 1.
+	 * - Se A > B, a ordem é invertida.
+	 * - Remove duplicados e ordena no final (BeASet()).
+	 */
+	TVector(const char* str) {}
+
 	/**
 	 * @brief Operador de atribuição por movimentação.
 	 * @param o Vetor temporário a mover.
@@ -134,6 +157,17 @@ public:
 		return *this;
 	}
 
+	/**
+	 * @brief Acrescenta elementos a partir de uma string no formato de lista.
+	 * @param str String com a lista de inteiros ou intervalos.
+	 * @details
+	 * - Apenas disponível para TVector<int>.
+	 * - Sintaxe: "A" ou "A,B,C" ou "A:B" ou "A:B:C".
+	 * - O parsing e a remoção de duplicados/ordenação são feitos apenas
+	 *   dentro da string, não no vetor final.
+	 * - Os elementos são adicionados no final, preservando os já existentes.
+	 */
+	TVector<Item>& operator+=(const char* str) {}
 
 	///@}
 
@@ -540,10 +574,6 @@ int TVector<Item>::Find(Item& i, bool binary, int left, int right)
 	}
 	return -1;
 }
-
-
-
-
 
 //----------------------------------------------------------------------------
 // Ordenação
@@ -1047,3 +1077,62 @@ int TVector<Item>::Distance(TVector<Item>& other, int type)
 	return result;
 }
 
+template<>
+inline TVector<int>::TVector(const char* str) {
+	if (!str || *str == '\0')
+		return;
+
+	// Criar cópia mutável da string
+	char* buf= _strdup(str);
+	char* original = buf;
+	char* pt;
+
+	// separar por vírgulas
+	if (pt = strchr(buf, ',')) {
+		*pt = 0;
+		*this = TVector(buf);
+		do {
+			buf = pt + 1;
+			if (pt = strchr(buf, ','))
+				*pt = 0;
+			*this += TVector(buf);
+		} while (pt);
+	}
+	else {
+		// procurar por : (intervalo)
+		if (pt = strchr(buf, ':')) {
+			char* pt2;
+			*pt = 0;
+			int A = atoi(buf);
+			int C = 1;
+			if (pt2 = strchr(pt + 1, ':')) { // A:B:C
+				*pt2 = 0;
+				if ((C = atoi(pt2 + 1)) <= 0)
+					C = 1;
+			} // c.c. A:B
+			int B = atoi(pt + 1);
+			if (A > B) { // ordem não interessa
+				int aux = A;
+				A = B;
+				B = aux;
+			}
+			for (int i = A; i <= B; i += C)
+				*this += i;
+		}
+		else // inteiro apenas
+			*this += atoi(buf);
+	}
+	free(original);
+	BeASet();
+}
+
+template<>
+inline TVector<int>& TVector<int>::operator+=(const char* str) {
+	*this += TVector<int>(str);
+	return *this;
+}
+
+// permite fazer for(auto x : _TV("1:10,15:50:3,73")) printf("%d ", x);
+inline TVector<int> _TV(const char* str) {
+	return TVector<int>(str);
+}

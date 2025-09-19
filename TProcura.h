@@ -642,13 +642,6 @@ protected:
 	void RelatorioCSV(TVector<TResultado>& resultados, FILE* f);
 
 	/**
-	 * @brief Extrai uma lista de inteiros a partir de uma string.
-	 * @param str String a analisar.
-	 * @return Vetor de inteiros extraídos.
-	 */
-	TVector<int> ExtraiLista(char* str);
-
-	/**
 	 * @brief Insere configurações a partir de uma string.
 	 * @param str String com as configurações.
 	 * @param base Vetor base para inserção.
