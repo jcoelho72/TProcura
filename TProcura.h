@@ -56,7 +56,7 @@ enum EParametrosProcura {
  * @see nivelDebug
  *
  * @code
- * if(parametro[nivelDebug].valor > passos)
+ * if(Parametro(NIVEL_DEBUG) > PASSOS)
  *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
  * @endcode
  */
@@ -187,7 +187,7 @@ public:
 	 * @brief Executa o algoritmo com os parametros atuais
 	 * @note Redefinição necessária
 	 *
-	 * No caso de adicionar algum algoritmo, chame o algoritmo com base em parametro[algoritmo].valor
+	 * No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO)
 	 * Se `TesteManual()` não for utilizado, esta função pode ser chamada diretamente,
 	 * desde que os parâmetros necessários já estejam configurados corretamente.
 	 */
@@ -236,7 +236,7 @@ public:
 	 * que simula a estrutura da procura.
 	 *
 	 * @note A exibição do estado pode variar conforme o nível de debug definido
-	 * em `parametro[nivelDebug].valor`. Um nível menor pode mostrar informações mais sucintas,
+	 * em `Parametro(NIVEL_DEBUG)`. Um nível menor pode mostrar informações mais sucintas,
 	 * enquanto um nível maior pode detalhar todas as variáveis do estado.
 	 *
 	 * @see NovaLinha()
@@ -246,7 +246,7 @@ public:
 	 * {
 	 * 	   NovaLinha();
 	 *     // neste exemplo o estado é apenas um número
-	 *     if(parametro[nivelDebug].valor <= atividade)
+	 *     if(Parametro(NIVEL_DEBUG) <= ATIVIDADE)
 	 * 	       printf("--<([%d])>--", variavel); // versão compacta do estado
 	 *     else {
 	 *         // versão mais elaborada do estado
@@ -295,7 +295,7 @@ public:
 	 *     // chamar primeiro o método na superclasse
 	 *     TProcura::ResetParametros();
 	 *     // neste exemplo considerou-se que se pretende ver algum debug, de omissão
-	 *     parametro[nivelDebug].valor = 1;
+	 *     Parametro(NIVEL_DEBUG) = 1;
 	 *
 	 *     // novo parametro para utilizar na função Heuristica()
 	 *     parametro += { "Opção Heurística", 0,0,10,

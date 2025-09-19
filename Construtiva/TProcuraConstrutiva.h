@@ -481,7 +481,7 @@ public:
 	 * 
 	 * Esta função exibe a solução, mostrando um estado a cada X ações 
 	 * e exibindo as ações entre os estados. O valor padrão de `X` é 4, 
-	 * ajustável pelo parâmetro `parametro[verAcoes].valor`.
+	 * ajustável pelo parâmetro `Parametro(VER_ACOES)`.
 	 * 
 	 * @note Em problemas onde seja simples de seguir a ação, pode-se utilizar valores maiores, sem
 	 * ser necessário mostrar muitos estados completos. Em problemas que as ações sejam mais complexas,
@@ -510,7 +510,7 @@ public:
 	 * @brief Executa o algoritmo com os parametros atuais
 	 * @note Redefinição necessária no caso de se alterar os algoritmos disponíveis.
 	 *
-	 * No caso de adicionar algum algoritmo, chame o algoritmo com base em parametro[algoritmo].valor
+	 * No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO)
 	 * Se `TesteManual()` não for utilizado, esta função pode ser chamada diretamente,
 	 * desde que os parâmetros necessários já estejam configurados corretamente.
 	 *
@@ -619,7 +619,7 @@ public:
 	 * propriedade de optimalidade.
 	 *
 	 * @note Se o limite do número de estados for atingido, os estados gerados com maior lower bound serão removidos.
-	 * @note O parâmetro parametro[pesoAStar].valor, com valor padrão 100, indica o peso (em percentagem) que a heurística
+	 * @note O parâmetro Parametro(PESO_ASTAR), com valor padrão 100, indica o peso (em percentagem) que a heurística
 	 * terá no cálculo do lower bound. Se esse valor for reduzido, a heurística terá menor peso (pode chegar a 0, fazendo com
 	 * que o algoritmo se comporte como o Custo Uniforme). Se for aumentado acima de 100, a heurística terá mais influência,
 	 * aproximando a estratégia do Melhor Primeiro. Dessa forma, esse parâmetro permite modelar uma gama de estratégias entre

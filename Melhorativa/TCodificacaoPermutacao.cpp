@@ -36,19 +36,17 @@ void TCodificacaoPermutacao::ResetParametros() {
 		"Spearman footrule" }; // soma das diferenças absolutas das posições
 
 	TProcuraMelhorativa::ResetParametros();
-	// parametros da codificação inteira
-	parametro += { "tCruzamento", 3,1,4,
-		"Cruzamento: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", nomesCruzamento };
-	parametro += { "tMutação", 0,0,0,
-		"Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)", NULL };
-	parametro += { "tVizinhanca", 1,1,3,
-		"Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca };
-	parametro += { "LimiteViz", 0,0,1000,
-		"LimiteVizinhança, conforme a vizinhança, se 0 não há limite\n\
-- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL };
-	parametro += { "tDistância", 1,1,3,
-		"Distância: vários métodso para distâncias de permutações", nomesDistancias };
 
+	// parametros da codificação inteira
+	parametro += {
+		{ "tCruzamento", 3, 1, 4, "Cruzamento: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", nomesCruzamento },
+		{ "tMutação", 0,0,0, "Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)", NULL },
+		{ "tVizinhanca", 1,1,3, "Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
+		{ "LimiteViz", 0,0,1000,
+"LimiteVizinhança, conforme a vizinhança, se 0 não há limite\n\
+- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL },
+		{ "tDistância", 1,1,3, "Distância: vários métodso para distâncias de permutações", nomesDistancias }
+	};
 }
 
 void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {

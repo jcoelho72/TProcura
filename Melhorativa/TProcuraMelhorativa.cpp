@@ -50,7 +50,7 @@ void TProcuraMelhorativa::ResetParametros()
 		{ "probCruzarAE",100,0,100, "Probabilidade de um estado ser cruzado, utilizado nos Algoritmos Evolutivos",NULL },
 		{ "probMutarAE",50,0,100, "Probabilidade de um estado sofrer uma mutação após gerado, utilizado nos Algoritmos Evolutivos",NULL },
 		{ "selecaoAE",1,1,3, "Método de seleção dos pais para cruzamento, utilizado nos Algoritmos Evolutivos", nomesSelecao },
-		{ "pressaoAE",150,100,200, 
+		{ "pressaoAE",150,100,200,
 "Pressão da seleção (1.0 a 2.0 > 100 a 200). \
 Controla a diferença de probabilidade entre o melhor e o pior indivíduo no método Ranking Selection.\n\
 Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", NULL },
@@ -69,7 +69,7 @@ Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos
 		{ "Épocas", "Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", IND_EPOCAS },
 		{ "Gerações","número de estados gerados", IND_GERACOES }
 	};
-	indAtivo += {IND_EPOCAS, IND_GERACOES}; 
+	indAtivo += {IND_EPOCAS, IND_GERACOES};
 }
 
 // Retorna o valor da solucao completa actual.
@@ -85,7 +85,7 @@ int TProcuraMelhorativa::Avaliar(void)
 // retorna a avaliacao do resultado actual
 int TProcuraMelhorativa::EscaladaDoMonte()
 {
-	bool movePrimeiro = (parametro[MOVE_PRIMEIRO_EM].valor == 1);
+	bool movePrimeiro = (Parametro(MOVE_PRIMEIRO_EM) == 1);
 	TPonto atual = this; // estado atual
 	TPonto melhor = this; // melhor estado para todas as escaladas
 	int procuras = 0;
@@ -156,37 +156,22 @@ int TProcuraMelhorativa::EscaladaDoMonte()
 }
 
 void TProcuraMelhorativa::DebugPassoEM(TPonto solucao) {
-	if (parametro[NIVEL_DEBUG].valor > PASSOS) {
-		if (parametro[NIVEL_DEBUG].valor > DETALHE)
-			solucao->Debug();
-	}
+	if (Parametro(NIVEL_DEBUG) >= COMPLETO)
+		solucao->Debug();
 }
 
 
 void TProcuraMelhorativa::DebugOptimoLocal(TPonto solucao) {
-	if (parametro[NIVEL_DEBUG].valor > ATIVIDADE) {
-		printf(">> %d]", solucao->custo);
-		if (parametro[NIVEL_DEBUG].valor > PASSOS) {
-			solucao->Debug();
-		}
-	}
+	Debug(PASSOS, false, ">> %d]", solucao->custo);
+	if (Parametro(NIVEL_DEBUG) >= DETALHE)
+		solucao->Debug();
 }
 
 void TProcuraMelhorativa::DebugInicioEM(int ID, TPonto solucao)
 {
-	if (parametro[NIVEL_DEBUG].valor > ATIVIDADE) {
-		if (parametro[NIVEL_DEBUG].valor > PASSOS)
-			printf("\n");
-		printf("\nEscalada %d - ", ID);
+	if (Debug(PASSOS, true, "\nEscalada %d - ", ID) ||
+		Debug(DETALHE, false, "\n\nEscalada %d - ", ID))
 		solucao->Debug();
-	}
-	if (parametro[NIVEL_DEBUG].valor > ATIVIDADE) {
-		if (parametro[NIVEL_DEBUG].valor > PASSOS)
-			printf("\n");
-		printf(" [%d >> ", solucao->custo);
-		if (parametro[NIVEL_DEBUG].valor > DETALHE)
-			solucao->Debug();
-	}
 }
 
 
@@ -195,7 +180,7 @@ void TProcuraMelhorativa::LibertarVector(TVector<TPonto>& vector, int excepto)
 	for (int i = 0; i < vector.Count(); i++)
 		if (i != excepto && vector[i] != NULL)
 			delete vector[i];
-	vector = {}; 
+	vector = {};
 }
 
 void TProcuraMelhorativa::VerificaMelhor(TPonto& melhor, TPonto atual) {
@@ -249,16 +234,15 @@ void TProcuraMelhorativa::CalcularAvaliacoes(TVector<TPonto>& vizinhos, int& mel
 // parametros para a mutacao e cruzamento podem ser dados em variaveis globais
 int TProcuraMelhorativa::AlgoritmoGenetico()
 {
-	int populacao = parametro[POPULACAO_AE].valor;
-	int probablidadeMutacao = parametro[PROB_MUTAR_AE].valor;
-	int distanciaMinima = parametro[DIST_MINIMA_AG].valor;
+	int populacao = Parametro(POPULACAO_AE);
+	int probablidadeMutacao = Parametro(PROB_MUTAR_AE);
+	int distanciaMinima = Parametro(DIST_MINIMA_AG);
 	TVector<TPonto> geracaoAntiga, geracaoNova;
 	TVector<int> id;
 	TPonto melhor = this; // melhor estado para toda a procura
 	NovaSolucao();
 	melhor->Avaliar(); // avaliar o proprio
-	if (parametro[NIVEL_DEBUG].valor > ATIVIDADE)
-		printf("\nPopulação inicial (%d elementos)", populacao);
+	Debug(PASSOS, false, "\nPopulação inicial (%d elementos)", populacao);
 	// construir a geracao inicial
 	for (int i = 0; i < populacao; i++) {
 		geracaoAntiga += ((TPonto)Duplicar());
@@ -340,18 +324,15 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 
 void TProcuraMelhorativa::DebugCruzamentoAG(int gPai, int gMae, int gFilho, int mutou)
 {
-	if (parametro[NIVEL_DEBUG].valor > PASSOS)
-		printf("\n  Cruzar g %d x %d -> %d%s",
-			gPai, gMae, gFilho, mutou ? "*" : "");
+	Debug(DETALHE, false, "\n  Cruzar g %d x %d -> %d%s",
+		gPai, gMae, gFilho, mutou ? "*" : "");
 }
 
 void TProcuraMelhorativa::DebugPassoAG(int pop, int min, int max)
 {
-	if (parametro[NIVEL_DEBUG].valor == ATIVIDADE)
-		printf(".");
-	else if (parametro[NIVEL_DEBUG].valor >= PASSOS)
-		printf("\nÉpoca %d #%d - %d|%d [%d-%d]",
-			epocas, pop, geracoes, iteracoes, min, max);
+	Debug(ATIVIDADE, true, ".") ||
+	Debug(PASSOS, false, "\nÉpoca %d #%d - %d|%d [%d-%d]",
+		epocas, pop, geracoes, iteracoes, min, max);
 }
 
 
@@ -441,7 +422,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 		descendentes = 1;
 	else if (descendentes > pop)
 		descendentes = pop;
-	pais = {}; 
+	pais = {};
 	if (Parametro(SELECAO_AE) == 1) { // roleta
 		// roleta implementada como Stochastic Universal Sampling (SUS)
 		TVector<int> id;
@@ -495,7 +476,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais) {
 	while (pais.Count() > 0) {
 		TPonto pai = pais.Pop();
 
-		if(pais.Count() == 0) {
+		if (pais.Count() == 0) {
 			// não há mãe, apenas copiar o pai
 			descendentes += pai->Duplicar();
 		}
@@ -552,11 +533,11 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		}
 		populacao -= NULL;
 		populacao += descendentes;
-		descendentes = {}; 
+		descendentes = {};
 	}
 	else if (Parametro(SOBREVIVENCIA_AE) == 2) { // substituir piores
 		populacao += descendentes;
-		descendentes = {}; 
+		descendentes = {};
 		TVector<int> id;
 		OrdemValor(populacao, id); // ordena por custo (melhor primeiro)
 		TVector<TPonto> novaPopulacao;
@@ -572,7 +553,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		int q = Parametro(Q_ROUND_ROBIN_AE); // número de competidores
 		TVector<int> perdas;
 		populacao += descendentes;
-		descendentes = {}; 
+		descendentes = {};
 		perdas.Count(populacao.Count());
 		perdas.Reset(0);
 		for (int i = 0; i < populacao.Count(); i++) {
@@ -621,10 +602,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 // Chamar sempre que uma solucao melhor que a actual e encontrada
 void TProcuraMelhorativa::DebugMelhorEncontrado(TPonto ponto)
 {
-	if (parametro[NIVEL_DEBUG].valor > NADA) {
-		Debug();
-	}
-	if (parametro[NIVEL_DEBUG].valor > PASSOS)
+	if (Parametro(NIVEL_DEBUG) > NADA) 
 		Debug();
 }
 

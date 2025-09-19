@@ -671,15 +671,10 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 
 // uma nova iteração de um algoritmo iterativo
 void TProcuraConstrutiva::DebugIteracao(int iteracao) {
-	if (Parametro(NIVEL_DEBUG) == ATIVIDADE)
-		printf("\n");
-	if (Parametro(NIVEL_DEBUG) > ATIVIDADE) {
-		printf("\nIteração %d:", iteracao);
-		if (Parametro(NIVEL_DEBUG) > PASSOS)
-			printf(" (expansões %d, gerações %d, avaliações %d)\n", expansoes, geracoes, iteracoes);
-		else
-			printf("\n");
-	}
+	Debug(ATIVIDADE,true, "\n") ||
+	Debug(PASSOS,true, "\nIteração %d:\n", iteracao) ||
+	Debug(DETALHE, false, "\nIteração %d: (expansões %d, gerações %d, avaliações %d)\n", 
+		iteracao, expansoes, geracoes, iteracoes);
 }
 
 // informação geral sobre o estado 

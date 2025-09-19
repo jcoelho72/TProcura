@@ -267,8 +267,7 @@ int TProcuraAdversa::NoFolha(bool nivel) {
 		// a maximizar, entre 10 e 20, irá preferir 20, sempre é maior
 		// a minimizar, entre 10 e 20, irá preferir 10 que é menor
 	}
-	if (Parametro(NIVEL_DEBUG) > ATIVIDADE)
-		printf(" %d", resultado);
+	Debug(PASSOS, false, "%d", resultado);
 	return resultado;
 }
 

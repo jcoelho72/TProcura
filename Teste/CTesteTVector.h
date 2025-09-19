@@ -26,6 +26,7 @@ public:
     void Inicializar(void);
     /// Mostra informação de debug sobre o estado dos vetores.
     void Debug(void);
+    using TProcura::Debug; // Reexpõe as sobrecargas herdadas
     /// Executa o algoritmo de teste (a definir pelo utilizador).
     int ExecutaAlgoritmo();
     /// Calcula indicadores de teste.
