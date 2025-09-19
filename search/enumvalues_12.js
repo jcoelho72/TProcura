@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['veracoes_0',['verAcoes',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1',1,'TProcuraConstrutiva.h']]],
+  ['ver_5facoes_0',['VER_ACOES',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a134c16a33d8097069706ef153a5f4446',1,'TProcuraConstrutiva.h']]],
   ['vizincdecpot2ci_1',['vizIncDecPot2CI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa398f762449ab4f3ec9cafa420f08918b',1,'TCodificacaoInteira.h']]],
   ['vizincdecvalorci_2',['vizIncDecValorCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aace4006e9cc4c2a6274d11e81d9c85ffc',1,'TCodificacaoInteira.h']]],
   ['vizinhancacb_3',['vizinhancaCB',['../TCodificacaoBinaria_8h.html#ae9b4405f1ed45affeb1935205ec8f826a358bbbf225ac553cd1e875cd478c7deb',1,'TCodificacaoBinaria.h']]],

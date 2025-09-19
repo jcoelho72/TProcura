@@ -23,7 +23,8 @@ var searchData=
   ['operator_3d_3d_20',['operator==',['../classTVector.html#a82bd872b28a29cc6050bcf74af9b9f48',1,'TVector']]],
   ['operator_5b_5d_21',['operator[]',['../classTVector.html#a8ee199d50089fb967bcf418ab5b30723',1,'TVector::operator[](int i) const'],['../classTVector.html#a372a42fd7c4a94fee43db36d6a339b33',1,'TVector::operator[](int i)']]],
   ['ordemvalor_22',['OrdemValor',['../classTProcuraMelhorativa.html#aec9c9187221f37a37f71bee878a577ae',1,'TProcuraMelhorativa']]],
-  ['ordenarsucessores_23',['ordenarsucessores',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda7c46075a786ec95b7501506c807010ae',1,'ordenarSucessores:&#160;TProcuraAdversa.h'],['../classTProcuraAdversa.html#a369a3b5182150b22fd6deb0d46916d49',1,'TProcuraAdversa::OrdenarSucessores()']]],
-  ['os_20sucessores_24',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md12',1,'']]],
-  ['outra_20instância_25',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md18',1,'']]]
+  ['ordenar_5fsucessores_23',['ORDENAR_SUCESSORES',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdac6a7d07bb3f73205ead929aa8a682952',1,'TProcuraAdversa.h']]],
+  ['ordenarsucessores_24',['OrdenarSucessores',['../classTProcuraAdversa.html#a369a3b5182150b22fd6deb0d46916d49',1,'TProcuraAdversa']]],
+  ['os_20sucessores_25',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md12',1,'']]],
+  ['outra_20instância_26',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md18',1,'']]]
 ];

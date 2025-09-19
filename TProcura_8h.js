@@ -10,28 +10,28 @@ var TProcura_8h =
     [ "TParametro", "TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0", null ],
     [ "TResultado", "TProcura_8h.html#a4428af995799ff246df4a39dfb58d0e9", null ],
     [ "EIndicadoresProcura", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29b", [
-      [ "indResultado", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba3f03343e90fb14215d7a3eda39bcdef6", null ],
-      [ "indTempo", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29baa2cc994a33e9a0b48ace332c7a91f176", null ],
-      [ "indIteracoes", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba943d4fc0085dbcbfeeba09c833fd1f39", null ],
-      [ "indProcura", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba5a7e351e9999a0ef7211c3c92888436f", null ]
+      [ "IND_RESULTADO", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29bae0a2fcc9529e9f164d57ad46c224812e", null ],
+      [ "IND_TEMPO", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff", null ],
+      [ "IND_ITERACOES", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba97d29cd7ac74f317aa24647078b74c58", null ],
+      [ "IND_PROCURA", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29bac172e855e17f9858284ee80b5040d9ce", null ]
     ] ],
     [ "ENivelDebug", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8", [
-      [ "nada", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ac3c65d9c426dc46b3b833cb8bca3ce11", null ],
-      [ "atividade", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a6d396cc6acfcd7a1ed2faa7a8fc82524", null ],
-      [ "passos", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ab5dc30fbc6c4f1a31fc94df8b228d8d0", null ],
-      [ "detalhe", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a1c11821ca1925ac0472c416c9c8c32f0", null ],
-      [ "completo", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a7aaddfd6fd1a3d2ddcc82ed13813d45f", null ]
+      [ "NADA", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e", null ],
+      [ "ATIVIDADE", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378", null ],
+      [ "PASSOS", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a", null ],
+      [ "DETALHE", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8af7a4423a328c6615b8658cd221f3e87f", null ],
+      [ "COMPLETO", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8abcad279ff890adb41763ccbc3fd85bfc", null ]
     ] ],
     [ "EOperacao", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3", [
-      [ "gravar", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a8b82100682d3e3a7c54ef437c08f93dd", null ],
-      [ "ler", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a062204d53ed89d3101540f989f176678", null ]
+      [ "GRAVAR", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a5f2b018e9e5b8b220fe8a17ac39ff042", null ],
+      [ "LER", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3ae6fe9228f4939ae8277bb49921020a46", null ]
     ] ],
     [ "EParametrosProcura", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6", [
-      [ "algoritmo", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aeabc5187dd423c46d6dc096c37b01136", null ],
-      [ "nivelDebug", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab95e3f481af62f4a528ebb9650906fb8", null ],
-      [ "seed", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869", null ],
-      [ "limiteTempo", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ab9b7a997847b4af852b600ac955c9245", null ],
-      [ "limiteIteracoes", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6af437d05ff169dbc6ab8ff59417b5e639", null ],
-      [ "parametrosProcura", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a31dee02dcc4ab7ee4f0562ea3ffc9e35", null ]
+      [ "ALGORITMO", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a3b2430b904112624118081fcfe160812", null ],
+      [ "NIVEL_DEBUG", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3", null ],
+      [ "SEMENTE", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a950d9177aa4b7541b78cbc2bb1657b90", null ],
+      [ "LIMITE_TEMPO", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ad4d1ad2d967b020f5527e13a8db8a1bc", null ],
+      [ "LIMITE_ITERACOES", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a59eb50b8b96453c7ff04c538a27b52bd", null ],
+      [ "PARAMETROS_PROCURA", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa552224ca253c2e061d55a1a50557c5c", null ]
     ] ]
 ];

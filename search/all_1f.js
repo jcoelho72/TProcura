@@ -10,7 +10,7 @@ var searchData=
   ['ver_20a_20solução_20realizada_20manualmente_7',['Ação 3 - Ver a solução realizada manualmente',['../teste_aspirador1.html#autotoc_md13',1,'']]],
   ['ver_20instâncias_8',['ver instâncias',['../teste_particao.html#autotoc_md42',1,'Ação 1 - Ver instâncias'],['../teste_jogo_em_linha.html#autotoc_md35',1,'Ação 1 - Ver instâncias'],['../teste_jogo_do_galo.html#autotoc_md28',1,'Ação 1 - Ver instâncias'],['../teste_artificial.html#autotoc_md8',1,'Ação 1 - Ver instâncias'],['../teste_8damas.html#autotoc_md1',1,'Ação 1 - Ver instâncias'],['../teste_puzzle8.html#autotoc_md46',1,'Ação 1 - Ver instâncias']]],
   ['ver_20uma_20árvore_20de_20procura_20maior_9',['Ação 12 - Ver uma árvore de procura maior',['../teste_aspirador2.html#autotoc_md23',1,'']]],
-  ['veracoes_10',['verAcoes',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a6ff627ad332763ead4f58b9a5d3b49e1',1,'TProcuraConstrutiva.h']]],
+  ['ver_5facoes_10',['VER_ACOES',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a134c16a33d8097069706ef153a5f4446',1,'TProcuraConstrutiva.h']]],
   ['verificalimites_11',['VerificaLimites',['../classTProcuraConstrutiva.html#aec0a667a7fda1ebe565ba13d6b02805a',1,'TProcuraConstrutiva']]],
   ['verificamelhor_12',['verificamelhor',['../classTProcuraMelhorativa.html#aeb435694084a626e3d52f3a489d9a93d',1,'TProcuraMelhorativa::VerificaMelhor(TPonto &amp;melhor, TPonto atual)'],['../classTProcuraMelhorativa.html#a8cb678f2a5c1bc649d5e1739ef7b5106',1,'TProcuraMelhorativa::VerificaMelhor(TPonto atual)']]],
   ['verlinha_13',['VerLinha',['../classCJogoEmLinha.html#ab7f482497b6ffa4823327474f1b822ed',1,'CJogoEmLinha']]],

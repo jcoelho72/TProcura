@@ -2,8 +2,8 @@ var searchData=
 [
   ['tabuleiro_0',['tabuleiro',['../classCJogoEmLinha.html#a8cba76145d91e14fa042258a7da7b938',1,'CJogoEmLinha::tabuleiro'],['../classCJogoDoGalo.html#a4a45abc068aac13338f18d18c8bd235d',1,'CJogoDoGalo::tabuleiro']]],
   ['tamanho_5fhashtable_1',['TAMANHO_HASHTABLE',['../TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0',1,'TProcuraConstrutiva.h']]],
-  ['tamanhocodificado_2',['tamanhoCodificado',['../group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b',1,'TProcuraConstrutiva']]],
-  ['tamanhotorneioae_3',['tamanhoTorneioAE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da08ed9724e82c1e977b780f45be8d20aa',1,'TProcuraMelhorativa.h']]],
+  ['tamanho_5ftorneio_5fae_2',['TAMANHO_TORNEIO_AE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da2352a1f84fe6102a683dfdbf803dd63f',1,'TProcuraMelhorativa.h']]],
+  ['tamanhocodificado_3',['tamanhoCodificado',['../group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b',1,'TProcuraConstrutiva']]],
   ['tcodificacaoarvore_4',['TCodificacaoArvore',['../classTCodificacaoArvore.html',1,'']]],
   ['tcodificacaoarvore_2ecpp_5',['TCodificacaoArvore.cpp',['../TCodificacaoArvore_8cpp.html',1,'']]],
   ['tcodificacaoarvore_2eh_6',['TCodificacaoArvore.h',['../TCodificacaoArvore_8h.html',1,'']]],

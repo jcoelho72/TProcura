@@ -34,13 +34,13 @@
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00031}00031\ }
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00032}\mbox{\hyperlink{namespaceTRand}{00032}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceTRand}{TRand}}\ \{}
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00034}\mbox{\hyperlink{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{00034}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{srand}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}},\ \textcolor{keywordtype}{int}\ seq\ \textcolor{comment}{/*=0*/})}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00034}\mbox{\hyperlink{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{00034}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceTRand_ad0b319d6f58ab6820b001b4e3d3ae245}{srand}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ seed,\ \textcolor{keywordtype}{int}\ seq\ \textcolor{comment}{/*=0*/})}
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00035}00035\ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ seq\ \&=\ 1;}
-\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}\ ==\ 0)}
-\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}}\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(std::clock());}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (seed\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ seed\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\textcolor{keyword}{>}(std::clock());}
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ mt[0][seq]\ =\ \mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6a9342e081acd3acb727f5dd3c5dab0869}{seed}};}
+\DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ mt[0][seq]\ =\ seed;}
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (mti[seq]\ =\ 1;\ mti[seq]\ <\ N;\ ++mti[seq])\ \{}
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ mt[mti[seq]][seq]\ =\ (69069u\ *\ mt[mti[seq]\ -\/\ 1][seq])\ \&\ 0xffffffffu;}
 \DoxyCodeLine{\Hypertarget{TRand_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
