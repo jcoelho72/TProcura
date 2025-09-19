@@ -7,11 +7,11 @@
 static std::mt19937_64 rng{ std::random_device{}() };
 
 enum EParametrosVector {
-	estruturaDados = PARAMETROS_PROCURA         ///< estrutura base a utilizar
+	ESTRUTURA_DADOS = PARAMETROS_PROCURA         ///< estrutura base a utilizar
 };
 
 enum EIndicadoresVector {
-	indOrdenar = IND_PROCURA, ///< verifica se está ordenado
+	IND_ORDENAR = IND_PROCURA, ///< verifica se está ordenado
 };
 
 void CTesteTVector::ResetParametros()
@@ -41,10 +41,10 @@ void CTesteTVector::ResetParametros()
 	parametro[ALGORITMO] = { "Método",1,1,12,"Método para teste.", nomesMetodo };
 
 	// estrutura de dados
-	parametro += { "Estrutura",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura };
+	parametro += { "ESTRUTURA_DADOS",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura };
 
-	indicador += { "Ordenado","verifica se o indicador está ordenado", indOrdenar };
-	indAtivo += indOrdenar;
+	indicador += { "IND_ORDENAR","verifica se o indicador está ordenado", IND_ORDENAR };
+	indAtivo += IND_ORDENAR;
 
 	instancia = { "Dados", 1,1,10, "Vetores aleatórios de K milhões", NULL };
 }
@@ -52,7 +52,7 @@ void CTesteTVector::ResetParametros()
 void CTesteTVector::Inicializar(void)
 {
 	int tamanho = instancia.valor * 1000000;
-	if (Parametro(estruturaDados) != 2) { // TVector
+	if (Parametro(ESTRUTURA_DADOS) != 2) { // TVector
 		dadosA.Count(tamanho);
 		dadosB.Count(tamanho);
 		for (int i = 0; i < tamanho; i++) {
@@ -73,7 +73,7 @@ void CTesteTVector::Inicializar(void)
 
 void CTesteTVector::Debug(void)
 {
-	if (Parametro(estruturaDados) != 2) {
+	if (Parametro(ESTRUTURA_DADOS) != 2) {
 		if (dadosA.Count() < 6)
 			return;
 		printf("\nDados #%d: ", dadosA.Count());
@@ -100,7 +100,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 	while (!Parar()) {
 		if (iteracoes > 0)
 			Inicializar();
-		if (Parametro(estruturaDados) == 1) { // TVector
+		if (Parametro(ESTRUTURA_DADOS) == 1) { // TVector
 			switch (Parametro(ALGORITMO)) {
 			case 1: // add
 				dadosA = {}; 
@@ -144,7 +144,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 		else { // std::vector ou TVegtor/std::algorithm
 			switch (Parametro(ALGORITMO)) {
 			case 1: // add
-				if (Parametro(estruturaDados) == 2) {
+				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					stdA.clear();
 					for (int i = 0; i < instancia.valor * 1000000; i++)
 						stdA.push_back(TRand::rand());
@@ -156,25 +156,25 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				break;
 			case 2: // Sort
-				if (Parametro(estruturaDados) == 2)
+				if (Parametro(ESTRUTURA_DADOS) == 2)
 					std::sort(stdA.begin(), stdA.end());
 				else
 					std::sort(dadosA.begin(), dadosA.end());
 				break;
 			case 3: // RandomOrder
-				if (Parametro(estruturaDados) == 2)
+				if (Parametro(ESTRUTURA_DADOS) == 2)
 					std::shuffle(stdA.begin(), stdA.end(), rng);
 				else
 					std::shuffle(dadosA.begin(), dadosA.end(), rng);
 				break;
 			case 4: // Invert
-				if (Parametro(estruturaDados) == 2)
+				if (Parametro(ESTRUTURA_DADOS) == 2)
 					std::reverse(stdA.begin(), stdA.end());
 				else
 					std::reverse(dadosA.begin(), dadosA.end());
 				break;
 			case 5: // BeASet (sort + unique)
-				if (Parametro(estruturaDados) == 2) {
+				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					std::sort(stdA.begin(), stdA.end());
 					stdA.erase(
 						std::unique(stdA.begin(), stdA.end()),
@@ -187,7 +187,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				break;
 			case 6: // Difference
-				if (Parametro(estruturaDados) == 2) {
+				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					// deixa A e B como sets
 					std::sort(stdA.begin(), stdA.end());
 					std::sort(stdB.begin(), stdB.end());
@@ -221,7 +221,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				break;
 			case 7: // Union
-				if (Parametro(estruturaDados) == 2) {
+				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					std::sort(stdA.begin(), stdA.end());
 					std::sort(stdB.begin(), stdB.end());
 					stdA.erase(
@@ -252,7 +252,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				break;
 			case 8: // Contained
-				if (Parametro(estruturaDados) == 2) {
+				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					std::sort(stdA.begin(), stdA.end());
 					std::sort(stdB.begin(), stdB.end());
 					std::includes(
@@ -270,7 +270,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				break;
 			case 9: // Intersection
-				if (Parametro(estruturaDados) == 2) {
+				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					std::sort(stdA.begin(), stdA.end());
 					std::sort(stdB.begin(), stdB.end());
 					stdA.erase(
@@ -301,13 +301,13 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				break;
 			case 10: // operator=()
-				if (Parametro(estruturaDados) == 2)
+				if (Parametro(ESTRUTURA_DADOS) == 2)
 					stdA = stdB;
 				else
 					dadosA = dadosB;
 				break;
 			case 11: // operator+=()
-				if (Parametro(estruturaDados) == 2) {
+				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					stdA.insert(
 						stdA.end(),
 						stdB.begin(),
@@ -332,8 +332,8 @@ int CTesteTVector::ExecutaAlgoritmo()
 
 int CTesteTVector::Indicador(int id)
 {
-	if (id == indOrdenar) { // verifica se está ordenado
-		if (Parametro(estruturaDados) != 2) {
+	if (id == IND_ORDENAR) { // verifica se está ordenado
+		if (Parametro(ESTRUTURA_DADOS) != 2) {
 			for (int i = 0; i < dadosA.Count() - 1; i++)
 				if (dadosA[i] > dadosA[i + 1]) {
 					Debug(COMPLETO, false, "\nordem %d > %d (%d,%d)",

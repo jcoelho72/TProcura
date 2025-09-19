@@ -39,19 +39,19 @@ void TProcura::ResetParametros()
 	static const char* nomesAlgoritmos[] = {
 		"Algoritmo base" };
 	static const char* nomesDebug[] = {
-		"nada",
-		"atividade",
-		"passos",
-		"detalhe",
-		"completo" };
+		"NADA",
+		"ATIVIDADE",
+		"PASSOS",
+		"DETALHE",
+		"COMPLETO" };
 
 	// definir parametros base
 	parametro = {
-		{ "Algoritmo", 1, 1, 1, "Algoritmo base a executar.", nomesAlgoritmos },
-		{ "Nivel debug", 0, 0, 4, "Nível de debug, de reduzido a completo.", nomesDebug },
-		{ "Semente", 1, 1, 1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios.", NULL },
-		{ "Tempo", 10, 1, 3600, "Limnite de tempo em segundos. ", NULL },
-		{ "Iterações", 0, 0, 1000000000, "Limite de número de iterações (0 não há limite). ", NULL }
+		{ "ALGORITMO", 1, 1, 1, "Algoritmo base a executar.", nomesAlgoritmos },
+		{ "NIVEL_DEBUG", 0, 0, 4, "Nível de debug, de reduzido a completo.", nomesDebug },
+		{ "SEMENTE", 1, 1, 1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios.", NULL },
+		{ "LIMITE_TEMPO", 10, 1, 3600, "Limnite de tempo em segundos. ", NULL },
+		{ "LIMITE_ITERACOES", 0, 0, 1000000000, "Limite de número de iterações (0 não há limite). ", NULL }
 	};
 
 	// definir indicadores base
@@ -152,6 +152,8 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 	printf("\n ");
 	for (int i = 0; i < nElementos; i++) {
 		int parID = (idParametros == NULL ? i : (*idParametros)[i]);
+		if(!ParametroAtivo(parID))
+			continue;
 		// identificação do parâmetro
 		if (detalhe == 0 || parametro[parID].nome == NULL)
 			printf("P%d=", parID + 1);
@@ -411,7 +413,7 @@ void TProcura::InserirConfiguracoes(TVector<int>& base, TVector<int>& produto, T
 			lista[i] <= parametro[param - 1].max)
 		{
 			base[param - 1] = lista[i];
-			if (produto.Count() == 0)
+			if (produto.Empty())
 				NovaConfiguracao(base);
 			else
 				InserirConfiguracoes(base, produto, valores);
@@ -459,7 +461,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes, char
 			item = -1;
 	instancias -= (-1);
 	ConfiguracaoAtual(atual, LER);
-	if (configuracoes.Count() == 0) {
+	if (configuracoes.Empty()) {
 		// não foram feitas configurações, utilizar a atual
 		configuracoes.Count(1);
 		configuracoes.Last() = atual;
@@ -549,7 +551,7 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 
 		// 1:10  --- conjunto de instâncias (idêntico ao interativo)
 		instancias = argv[1];
-		if (instancias.Count() == 0) {
+		if (instancias.Empty()) {
 			AjudaUtilizacao(argv[0]);
 			return;
 		}
@@ -622,7 +624,6 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 
 void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
 	// cabeçalho: instância, parametros, indicadores
-	// TODO: poder-se selecionar parametros a mostrar
 	fprintf(f, "Instância;");
 	for (int i = 0; i < parametro.Count(); i++)
 		fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
@@ -632,11 +633,14 @@ void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
 
 	for (auto res : resultados) {
 		fprintf(f, "%d;", res.instancia);
-		for (int j = 0; j < parametro.Count(); j++)
-			if (parametro[j].nomeValores == NULL)
-				fprintf(f, "%d;", configuracoes[res.configuracao][j]);
+		for (int j = 0; j < parametro.Count(); j++) 
+			// ver se parametro j está ativo na configuração configuracoes[res.configuracao]
+			if(!ParametroAtivo(j, &(configuracoes[res.configuracao]))) 
+				fprintf(f, ";"); // parametro inativo, não mostrar
+			else if (parametro[j].nomeValores == NULL)
+				fprintf(f, "%d;", configuracoes[res.configuracao][j]); // mostrar valor
 			else
-				fprintf(f, "%d:%s;",
+				fprintf(f, "%d:%s;", // mostrar valor e texto
 					configuracoes[res.configuracao][j],
 					parametro[j].nomeValores[configuracoes[res.configuracao][j] - parametro[j].min]);
 		for (auto ind : indAtivo)
@@ -645,11 +649,10 @@ void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
 	}
 }
 
-
 void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 {
 	if (ultimo) {
-		if (resultados.Count() > 0) {
+		if (!resultados.Empty()) {
 			int elementos = 0;
 			for (auto ind : indAtivo) {
 				if (elementos > 0)

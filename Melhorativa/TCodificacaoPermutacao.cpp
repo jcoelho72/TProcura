@@ -39,18 +39,18 @@ void TCodificacaoPermutacao::ResetParametros() {
 
 	// parametros da codificação inteira
 	parametro += {
-		{ "tCruzamento", 3, 1, 4, "Cruzamento: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", nomesCruzamento },
-		{ "tMutação", 0,0,0, "Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)", NULL },
-		{ "tVizinhanca", 1,1,3, "Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
-		{ "LimiteViz", 0,0,1000,
-"LimiteVizinhança, conforme a vizinhança, se 0 não há limite\n\
+		{ "TIPO_CRUZAR", 3, 1, 4, "TIPO_CRUZAR: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", nomesCruzamento },
+		{ "TIPO_MUTAR", 0,0,0, "TIPO_MUTAR: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)", NULL },
+		{ "TIPO_VIZINHO", 1,1,3, "TIPO_VIZINHO: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
+		{ "LIMITE_VIZINHOS", 0,0,1000,
+"LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite\n\
 - inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL },
-		{ "tDistância", 1,1,3, "Distância: vários métodso para distâncias de permutações", nomesDistancias }
+		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de permutações", nomesDistancias }
 	};
 }
 
 void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
-	int operador = Parametro(cruzamentoCP);
+	int operador = Parametro(TIPO_CRUZAR_CP);
 	TVector<int> divisoes;
 	auto& A = ((TCodificacaoPermutacao*)a)->estado;
 	auto& B = ((TCodificacaoPermutacao*)b)->estado; 
@@ -145,7 +145,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 
 			// escolher próximo
 			int next = -1;
-			if (adj[current].Count() > 0) {
+			if (!adj[current].Empty()) {
 				int minSize = nElementos + 1;
 				TVector<int> candidatos;
 				for (int v : adj[current]) {
@@ -161,8 +161,8 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 						}
 					}
 				}
-				if (candidatos.Count() > 0)
-					next = candidatos[TRand::rand() % candidatos.Count()];
+				if (!candidatos.Empty())
+					next = candidatos.Random();
 			}
 
 			if (next == -1) {
@@ -223,8 +223,8 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 
 void TCodificacaoPermutacao::Vizinhanca(TVector<TPonto>& vizinhos) {
 	// inverter segmento de N bits
-	ETiposVizinhancaPermutacao tipo = (ETiposVizinhancaPermutacao)Parametro(vizinhancaCP);
-	int limiteVizinhanca = Parametro(limiteVizinhancaCP);
+	ETiposVizinhancaPermutacao tipo = (ETiposVizinhancaPermutacao)Parametro(TIPO_VIZINHO_CP);
+	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CP);
 
 	// alterar posição de elementos
 	for (int i = 0; i < nElementos; i++) // elemento i
@@ -265,11 +265,12 @@ void TCodificacaoPermutacao::Vizinhanca(TVector<TPonto>& vizinhos) {
 
 void TCodificacaoPermutacao::Mutar(void) {
 	// mutação com probabilidade p de trocar cada bit
-	int p = Parametro(mutacaoCP);
-	int limiteVizinhanca = Parametro(limiteVizinhancaCP);
+	int p = Parametro(TIPO_MUTAR_CP);
+	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CP);
 	if (p == 0) {
 		// um vizinho aleatório
-		ETiposVizinhancaPermutacao tipo = (ETiposVizinhancaPermutacao)Parametro(vizinhancaCP);
+		ETiposVizinhancaPermutacao tipo = 
+			(ETiposVizinhancaPermutacao)Parametro(TIPO_VIZINHO_CP);
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
 		if (tipo == vizInserirCP) {
@@ -298,7 +299,8 @@ void TCodificacaoPermutacao::Mutar(void) {
 int TCodificacaoPermutacao::Distancia(TPonto a) {
 	int dist = 0;
 	TCodificacaoPermutacao& obj = *(TCodificacaoPermutacao*)a;
-	ETiposDistanciaPermutacao tipo = (ETiposDistanciaPermutacao)Parametro(distanciaCP);
+	ETiposDistanciaPermutacao tipo = 
+		(ETiposDistanciaPermutacao)Parametro(TIPO_DISTANCIA_CP);
 	if (tipo == distKendallTauCP) {
 		// número de pares fora de ordem
 		for(int i=0; i<nElementos-1; i++)

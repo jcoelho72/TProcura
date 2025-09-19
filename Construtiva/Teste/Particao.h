@@ -32,7 +32,7 @@ public:
 	void Inicializar(void);
 	void Sucessores(TVector<TNo>& sucessores);
 	bool SolucaoCompleta(void) { 
-		return numeros.Count() == 0 && totalEsquerda == totalDireita;
+		return numeros.Empty() && totalEsquerda == totalDireita;
 	}
 	void Debug(void);
 	void MostrarSolucao(void) { Debug(); }

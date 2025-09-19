@@ -47,19 +47,19 @@ void TCodificacaoInteira::ResetParametros() {
 	TProcuraMelhorativa::ResetParametros();
 	// parametros da codificação inteira
 	parametro += {
-		{ "tCruzamento", 1, 0, 9, "Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento },
-		{ "tMutação", 0,0,100, "Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada elemento, em percentagem (1 a 100)", NULL },
-		{ "tVizinhanca", 1,1,6, "Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
-		{ "LimiteViz", 0,0,1000,
-"LimiteVizinhança, conforme a vizinhança, se 0 não há limite\n\
+		{ "TIPO_CRUZAR", 1, 0, 9, "Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento },
+		{ "TIPO_MUTAR", 0,0,100, "Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada elemento, em percentagem (1 a 100)", NULL },
+		{ "TIPO_VIZINHO", 1,1,6, "Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
+		{ "LIMITE_VIZINHOS", 0,0,1000,
+"LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite\n\
 - incDecPot2 + trocaValor - limita a diferença máxima de valores\n\
 - inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL },
-		{ "tDistância", 1,1,3, "Distância: vários métodso para distâncias de inteiros", nomesDistancias }
+		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de inteiros", nomesDistancias }
 	};
 }
 
 void TCodificacaoInteira::Cruzamento(TPonto a, TPonto b) {
-	int pontos = Parametro(cruzamentoCI);
+	int pontos = Parametro(TIPO_CRUZAR_CI);
 	TVector<int> divisoes;
 	if (pontos > nElementos / 2)
 		pontos = nElementos / 2;
@@ -67,7 +67,7 @@ void TCodificacaoInteira::Cruzamento(TPonto a, TPonto b) {
 		divisoes += (TRand::rand() % nElementos);
 		divisoes.BeASet();
 	}
-	if (divisoes.Count() == 0) { // cruzamento uniforme
+	if (divisoes.Empty()) { // cruzamento uniforme
 		for (int i = 0; i < nElementos; i++)
 			estado[i] = ((TCodificacaoInteira*)(TRand::rand() % 2 == 0 ? a : b))->estado[i];
 		custo = -1;
@@ -81,7 +81,7 @@ void TCodificacaoInteira::Cruzamento(TPonto a, TPonto b) {
 				i++;
 			}
 			divisoes.Pop();
-		} while (divisoes.Count() > 0);
+		} while (!divisoes.Empty());
 		while (i < nElementos) {
 			estado[i] = ((TCodificacaoInteira*)(a))->estado[i];
 			i++;
@@ -94,8 +94,8 @@ void TCodificacaoInteira::Cruzamento(TPonto a, TPonto b) {
 
 void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 	// inverter segmento de N bits
-	ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(vizinhancaCI);
-	int limiteVizinhanca = Parametro(limiteVizinhancaCI);
+	ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
+	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CI);
 
 	if (tipo >= vizIncDecValorCI && tipo <= vizTrocaValorCI) {
 		// alterar valor de um elemento
@@ -177,11 +177,11 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 
 void TCodificacaoInteira::Mutar(void) {
 	// mutação com probabilidade p de trocar cada bit
-	int p = Parametro(mutacaoCI);
-	int limiteVizinhanca = Parametro(limiteVizinhancaCI);
+	int p = Parametro(TIPO_MUTAR_CI);
+	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CI);
 	if (p == 0) {
 		// um vizinho aleatório
-		ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(vizinhancaCI);
+		ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
 		if (tipo == vizIncDecValorCI) {
@@ -232,7 +232,7 @@ void TCodificacaoInteira::Mutar(void) {
 int TCodificacaoInteira::Distancia(TPonto a) {
 	int dist = 0;
 	TCodificacaoInteira& obj = *(TCodificacaoInteira*)a;
-	ETiposDistanciaInteira tipo = (ETiposDistanciaInteira)Parametro(distanciaCI);
+	ETiposDistanciaInteira tipo = (ETiposDistanciaInteira)Parametro(TIPO_DISTANCIA_CI);
 	if (tipo == distEuclidianaCI) {
 		int64_t d = 0;
 		for (int i = 0; i < nElementos; i++) {

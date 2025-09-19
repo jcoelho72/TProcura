@@ -3,8 +3,8 @@
 
 // nomes dos parâmetros fixos na codificação binária
 enum ECodificacaoBinaria {
-	cruzamentoCB = PARAMETROS_MELHORATIVA, 
-	mutacaoCB, vizinhancaCB, parametrosCodificacaoBinaria
+	TIPO_CRUZAR_CB = PARAMETROS_MELHORATIVA, 
+	TIPO_MUTAR_CB, TIPO_VIZINHO_CB, PARAMETROS_CB
 };
 
 // classe para permitir referência a um bit, para leitura e escrita

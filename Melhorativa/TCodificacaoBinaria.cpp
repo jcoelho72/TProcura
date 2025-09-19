@@ -38,16 +38,16 @@ void TCodificacaoBinaria::ResetParametros() {
 
 	// parametros da codificação binária
 	parametro += {
-		{ "tCruzamento", 1, 0, 10, "Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento },
-		{ "tMutação", 0,0,100, "Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada bit, em percentagem (1 a 100)", NULL },
-		{ "tVizinhanca", 1,1,1000, "Troca segmento: 1 - apenas 1 bit de cada vez, >=2 troca um segmento de N bits", NULL }
+		{ "TIPO_CRUZAR", 1, 0, 10, "TIPO_CRUZAR: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento },
+		{ "TIPO_MUTAR", 0,0,100, "TIPO_MUTAR: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada bit, em percentagem (1 a 100)", NULL },
+		{ "TIPO_VIZINHO", 1,1,1000, "Troca segmento: 1 - apenas 1 bit de cada vez, >=2 troca um segmento de N bits", NULL }
 	};
 }
 
 
 void TCodificacaoBinaria::Vizinhanca(TVector<TPonto>& vizinhos) {
 	// inverter segmento de N bits
-	int tamanho = Parametro(vizinhancaCB);
+	int tamanho = Parametro(TIPO_VIZINHO_CB);
 	if (tamanho < 1)
 		tamanho = 1;
 	for (int i = 0; i < nElementos - tamanho + 1; i++) {
@@ -66,10 +66,10 @@ void TCodificacaoBinaria::Vizinhanca(TVector<TPonto>& vizinhos) {
 
 void TCodificacaoBinaria::Mutar(void) {
 	// mutação com probabilidade p de trocar cada bit
-	int p = Parametro(mutacaoCB);
+	int p = Parametro(TIPO_MUTAR_CB);
 	if (p == 0) {
 		// um vizinho aleatório
-		int tamanho = Parametro(vizinhancaCB);
+		int tamanho = Parametro(TIPO_VIZINHO_CB);
 		if (tamanho < 1)
 			tamanho = 1;
 		int i = TRand::rand() % (nElementos - tamanho + 1);
@@ -87,7 +87,7 @@ void TCodificacaoBinaria::Mutar(void) {
 }
 
 void TCodificacaoBinaria::Cruzamento(TPonto a, TPonto b) {
-	int pontos = Parametro(cruzamentoCB);
+	int pontos = Parametro(TIPO_CRUZAR_CB);
 	TVector<int> divisoes;
 	if(pontos>nElementos/2)
 		pontos = nElementos / 2;
@@ -95,7 +95,7 @@ void TCodificacaoBinaria::Cruzamento(TPonto a, TPonto b) {
 		divisoes += (TRand::rand() % nElementos);
 		divisoes.BeASet();
 	}
-	if (divisoes.Count() == 0) { // cruzamento uniforme
+	if (divisoes.Empty()) { // cruzamento uniforme
 		for (int i = 0; i < nElementos; i++)
 			Bit(i) = ((TCodificacaoBinaria*)(TRand::rand() % 2 == 0?a:b))->Bit(i);
 		custo = -1;
@@ -109,7 +109,7 @@ void TCodificacaoBinaria::Cruzamento(TPonto a, TPonto b) {
 				i++;
 			}
 			divisoes.Pop();
-		} while (divisoes.Count() > 0);
+		} while (!divisoes.Empty());
 		while (i < nElementos) {
 			Bit(i) = ((TCodificacaoBinaria*)(a))->Bit(i);
 			i++;

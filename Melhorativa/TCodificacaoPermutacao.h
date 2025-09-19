@@ -3,9 +3,9 @@
 
 // nomes dos parâmetros fixos na codificação binária
 enum ECodificacaoPermutacao {
-	cruzamentoCP = PARAMETROS_MELHORATIVA,
-	mutacaoCP, vizinhancaCP, limiteVizinhancaCP, distanciaCP,
-	parametrosCodificacaoPermutacao
+	TIPO_CRUZAR_CP = PARAMETROS_MELHORATIVA,
+	TIPO_MUTAR_CP, TIPO_VIZINHO_CP, LIMITE_VIZINHOS_CP, TIPO_DISTANCIA_CP,
+	PARAMETROS_CP
 };
 
 enum ETiposVizinhancaPermutacao {

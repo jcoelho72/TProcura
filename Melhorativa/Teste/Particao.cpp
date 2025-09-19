@@ -44,7 +44,7 @@ void CParticao::Debug(void)
 	int i, j;
 	printf("\nColocar #%d: %d = %d",
 		numeros.Count(), totalEsquerda, totalDireita);
-	if (solCompleta.Count() > 0) {
+	if (!solCompleta.Empty()) {
 		for (i = 0, j = 0; i < solCompleta.Count(); i++) {
 			if (solCompleta[i]) { // esquerda
 				if (j++ % 4 == 0) {
@@ -221,17 +221,17 @@ void CParticaoCB::Debug(void)
 	printf("\nColocar #%d:",
 		nElementos);
 	printf("\n-------------------||-------------------");
-	while (nEsq.Count() > 0 || nDir.Count() > 0) {
+	while (!nEsq.Empty() || !nDir.Empty()) {
 		printf("\n");
 		for(int j=0;j<4;j++) {
-			if (nEsq.Count() > 0)
+			if (!nEsq.Empty())
 				printf("%3d ", nEsq.Pop());
 			else 
 				printf("    ");
 		}
 		printf(" <<||>> ");
 		for (int j = 0; j < 4; j++) {
-			if (nDir.Count() > 0)
+			if (!nDir.Empty())
 				printf("%3d ", nDir.Pop());
 			else
 				printf("    ");

@@ -56,7 +56,7 @@ void CParticao::Sucessores(TVector<TNo>& sucessores)
 		return;
 	}
 
-	if (numeros.Count() > 0) {
+	if (!numeros.Empty()) {
 		CParticao* esquerda, * direita;
 		sucessores += (esquerda = (CParticao*)Duplicar());
 		sucessores += (direita = (CParticao*)Duplicar());

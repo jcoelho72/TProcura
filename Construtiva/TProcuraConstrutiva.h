@@ -124,11 +124,11 @@ public:
 	 */
 
 	/// @brief Ponteiro para o estado pai, na árvore de procura.
-	TNo pai;
+	TNo pai = NULL;
 	/// @brief Custo total acumulado desde o estado inicial.
-	int custo;
+	int custo = 1;
 	/// @brief Estimativa para o custo até um estado objetivo, se disponível.
-	int heuristica;
+	int heuristica = 0;
 
 	/** @} */ // Fim do grupo VariaveisEstado 
 

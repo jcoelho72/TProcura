@@ -3,9 +3,9 @@
 
 // nomes dos parâmetros fixos na codificação binária
 enum ECodificacaoInteira {
-	cruzamentoCI = PARAMETROS_MELHORATIVA,
-	mutacaoCI, vizinhancaCI, limiteVizinhancaCI, distanciaCI,
-	parametrosCodificacaoInteira
+	TIPO_CRUZAR_CI = PARAMETROS_MELHORATIVA,
+	TIPO_MUTAR_CI, TIPO_VIZINHO_CI, LIMITE_VIZINHOS_CI, TIPO_DISTANCIA_CI,
+	PARAMETROS_CI
 };
 
 enum ETiposVizinhancaInteira {

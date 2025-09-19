@@ -221,6 +221,9 @@ public:
 	/** Número de elementos presentes. */
 	int Count() const { return count; }
 
+	/** Verifica se o vetor está vazio. */
+	bool Empty() const { return (count == 0); }
+
 	/**
 	 * @brief Ajusta o tamanho lógico do vetor para @p value.
 	 *

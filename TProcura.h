@@ -35,7 +35,7 @@ enum EIndicadoresProcura {
  * @see TParametro, ExecutaAlgoritmo()
  *
  * @code
- * if(Parametro(nivelDebug) > passos)
+ * if(Parametro(NIVEL_DEBUG) > PASSOS)
  *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
  * @endcode
  */
@@ -104,7 +104,7 @@ typedef struct SIndicador {
  *
  * Exemplo:
  * @code
- * if(Parametro(nivelDebug) > passos)
+ * if(Parametro(NIVEL_DEBUG) > PASSOS)
  *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
  * @endcode
  */
@@ -122,6 +122,8 @@ typedef struct SParametro {
 	/// @brief Nome associado a cada valor do parâmetro, útil para variáveis categóricas.
 	/// @note Especialmente relevante quando os valores não seguem uma sequência ordenada.
 	const char** nomeValores;
+	/// @brief dependência (indice do parametro, seguido de valores permitidos) - vazio não tem dependência
+	TVector<int> dependencia;
 } TParametro;
 
 
@@ -295,7 +297,7 @@ public:
 	 *     // chamar primeiro o método na superclasse
 	 *     TProcura::ResetParametros();
 	 *     // neste exemplo considerou-se que se pretende ver algum debug, de omissão
-	 *     Parametro(NIVEL_DEBUG) = 1;
+	 *     Parametro(NIVEL_DEBUG) = ATIVIDADE;
 	 *
 	 *     // novo parametro para utilizar na função Heuristica()
 	 *     parametro += { "Opção Heurística", 0,0,10,
@@ -479,6 +481,16 @@ public:
 	// retorna o valor do parametro, para facilidade de uso (leitura e escrita)
 	int Parametro(int id) const { return parametro[id].valor; }
 	int& Parametro(int id) { return parametro[id].valor; }
+	bool ParametroAtivo(int id, TVector<int> *valores = NULL) const {
+		if (parametro[id].dependencia.Empty())
+			return true;
+		int valor;
+		if(valores==NULL) 
+			valor = Parametro(parametro[id].dependencia.First());
+		else
+			valor = (*valores)[parametro[id].dependencia.First()];
+		return parametro[id].dependencia.Find(valor, true, 1) >= 0;
+	}
 
 	/// @brief Mostra uma informação de debug, se o nível de debug for suficiente.
 	/// @param tipo Nível de detalhe necessário para exibir a mensagem.

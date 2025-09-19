@@ -32,7 +32,7 @@ int TProcuraConstrutiva::custoHT[TAMANHO_HASHTABLE]; // hashtable / custo do est
 uint64_t TProcuraConstrutiva::estadoCodHT[OBJETO_HASHTABLE]; // elemento codificado
 int TProcuraConstrutiva::colocadosHT = 0; // número de elementos colocados na HT
 
-TProcuraConstrutiva::TProcuraConstrutiva(void) : pai(NULL), custo(1), heuristica(0) {
+TProcuraConstrutiva::TProcuraConstrutiva(void) {
 }
 
 
@@ -54,29 +54,31 @@ void TProcuraConstrutiva::ResetParametros()
 
 	// definir parametros base
 	// algoritmos, alterar
-	parametro[ALGORITMO] = { "Algoritmo",1,1,7,"Algoritmo base a executar.", nomesAlgoritmos };
+	parametro[ALGORITMO] = { "ALGORITMO",1,1,7,"Algoritmo base a executar.", nomesAlgoritmos };
 	// parametros adicionados
 	parametro += {
-		{ "Ver", 4, 1, 100, "Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.", NULL },
-		{ "Limite",0,-1,1000000,
+		{ "VER_ACOES", 4, 1, 100, "Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.", NULL },
+		{ "LIMITE",0,-1,1000000,
 "Valor dependente do algoritmo. \n\
 Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. \n\
 Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL },
-		{ "Repetidos", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).", nomesRepetidos },
-		{ "pesoAStar", 100, 0, 10000,
-		  "Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.", NULL },
-		{ "ruido",0,-100,100, "Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",NULL },
-		{ "baralhar",0,0,1, "Baralhar os sucessores ao expandir.",NULL }
+		{ "ESTADOS_REPETIDOS", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).", nomesRepetidos },
+		{ "PESO_ASTAR", 100, 0, 10000,
+		  "Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.", 
+		  NULL, _TV("0,5:7")},
+		{ "RUIDO_HEURISTICA",0,-100,100, "Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",
+		  NULL, _TV("0,5:7") },
+		{ "BARALHAR_SUCESSORES",0,0,1, "Baralhar os sucessores ao expandir.",NULL }
 	};
 
 	// indicadores, alterar
-	indicador[IND_CUSTO].nome = "Custo";
+	indicador[IND_CUSTO].nome = "IND_CUSTO";
 	indicador[IND_CUSTO].descricao = "o resultado é o custo da solução atual";
 	// indicadores adicionados
 	indicador += {
-		{ "Expansões", "número de expansões efetuadas", IND_EXPANSOES },
-		{ "Gerações","número de estados gerados", IND_GERACOES },
-		{ "Lower Bound", "valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima", IND_LOWER_BOUND }
+		{ "IND_EXPANSOES", "número de expansões efetuadas", IND_EXPANSOES },
+		{ "IND_GERACOES","número de estados gerados", IND_GERACOES },
+		{ "IND_LOWER_BOUND", "valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima", IND_LOWER_BOUND }
 	};
 	indAtivo += {IND_EXPANSOES, IND_GERACOES, IND_LOWER_BOUND};
 }
@@ -207,7 +209,7 @@ int TProcuraConstrutiva::ObjetivoAlcancado(int item, TVector<TNo>& lista)
 void TProcuraConstrutiva::CalculaCaminho(bool completa) {
 	TNo atual = this;
 	// limpar o caminho anterior (caso do BnB que obtém mais que uma solução)
-	while (caminho.Count() > 0)
+	while (!caminho.Empty())
 		delete caminho.Pop();
 	caminho += atual->Duplicar();
 	caminho.Last()->custo = atual->custo;
@@ -351,7 +353,7 @@ void TProcuraConstrutiva::MostrarCaminho() {
 			printf(" (g:%d) ", caminho[i]->custo);
 		}
 	}
-	if (caminho.Count() == 0)
+	if (caminho.Empty())
 		printf("Caminho vazio.");
 }
 
@@ -703,7 +705,7 @@ void TProcuraConstrutiva::LimparEstatisticas(clock_t& inicio)
 	TProcura::LimparEstatisticas(inicio);
 	geracoes = expansoes = 0;
 	ramo = {};
-	while (caminho.Count() > 0)
+	while (!caminho.Empty())
 		delete caminho.Pop();
 	if (solucao != NULL)
 		delete solucao;
@@ -757,7 +759,7 @@ void TProcuraConstrutiva::Explorar() {
 		DebugEstado();
 		Debug();
 		DebugSucessores(sucessores);
-		if (sucessores.Count() == 0) {
+		if (sucessores.Empty()) {
 			printf("\nSem sucessores.");
 			opcao = 0;
 		}

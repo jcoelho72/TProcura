@@ -34,7 +34,7 @@ void TProcuraAdversa::ResetParametros()
 
 	// adicionar parâmetros da procura adversa
 	// alterar algoritmos
-	parametro[ALGORITMO] = { "Algoritmo",2,1,2,"Seleção do algoritmo de procura adversa base.", nomesAlgoritmos };
+	parametro[ALGORITMO] = { "ALGORITMO",2,1,2,"Seleção do algoritmo de procura adversa base.", nomesAlgoritmos };
 
 	Parametro(LIMITE) = 0; // procura iterativa preferencial
 	Parametro(ESTADOS_REPETIDOS) = 1; // nas procuras adversas, não utilizar este parametro (utilizar ordenar=2)
@@ -44,9 +44,9 @@ void TProcuraAdversa::ResetParametros()
 
 	// adicionar parametros da procura adversa
 	parametro += {
-		{ "Ordenar", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.", NULL },
-		{ "PodaHeuristica",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores).",NULL },
-		{ "PodaCega",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. ",NULL }
+		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.", NULL },
+		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores).",NULL },
+		{ "PODA_CEGA",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. ",NULL }
 	};
 }
 
@@ -71,7 +71,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 	TVector<TNo> sucessores;
 	Sucessores(sucessores);
 	// caso não existam sucessores, é como se fosse um nó folha
-	if (sucessores.Count() == 0)
+	if (sucessores.Empty())
 		return NoFolha(false);
 
 	TVector<int> id; // índice para ordenar os sucessores por heurística
@@ -289,7 +289,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 
 	TVector<TNo> sucessores;
 	Sucessores(sucessores);
-	if (sucessores.Count() == 0)
+	if (sucessores.Empty())
 		return NoFolha(false);
 
 	TVector<int> id; // índice para ordenar os sucessores por heurística
@@ -403,7 +403,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 			item = -1;
 	instancias -= (-1);
 	ConfiguracaoAtual(atual, LER);
-	if (configuracoes.Count() == 0) {
+	if (configuracoes.Empty()) {
 		// não foram feitas configurações, utilizar a atual 
 		configuracoes.Count(1);
 		configuracoes.Last() = atual;

@@ -17,7 +17,7 @@ int CListaNo::NovoElemento(TNo elemento) {
 	}
 	else {
 		// limite de estados atingido, gerar o espaço
-		if (livre.Count() == 0)
+		if (livre.Empty())
 			// não há livres, libertar metade
 			LibertarLista();
 
