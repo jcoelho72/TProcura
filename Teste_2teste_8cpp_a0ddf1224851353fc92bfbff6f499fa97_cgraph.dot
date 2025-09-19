@@ -101,7 +101,7 @@ digraph "main"
   Node35 [id="Node000035",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
   Node35 -> Node36 [id="edge163_Node000035_Node000036",color="steelblue1",style="solid",tooltip=" "];
   Node36 [id="Node000036",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0",tooltip="Mostra o estado no ecrã, para debug."];
-  Node36 -> Node6 [id="edge164_Node000036_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node36 -> Node36 [id="edge164_Node000036_Node000036",color="steelblue1",style="solid",tooltip=" "];
   Node35 -> Node37 [id="edge165_Node000035_Node000037",color="steelblue1",style="solid",tooltip=" "];
   Node37 [id="Node000037",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domínio de um parâmetro inteiro."];
   Node35 -> Node38 [id="edge166_Node000035_Node000038",color="steelblue1",style="solid",tooltip=" "];

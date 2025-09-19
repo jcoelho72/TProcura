@@ -12,7 +12,9 @@ Collaboration diagram for TVector\texorpdfstring{$<$}{<} Item \texorpdfstring{$>
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTVector}{TVector}} \& \mbox{\hyperlink{classTVector_a7c69ceeac2bef2bf161e5e6aab440468}{operator+=}} (const \mbox{\hyperlink{classTVector}{TVector}} \&o)
-\begin{DoxyCompactList}\small\item\em Concatena outro vetor a este. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Concatena outro vetor a este. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTVector}{TVector}} \& \mbox{\hyperlink{classTVector_a886f6e482b2fb8bbac5b611eca1ee468}{operator+=}} (std\+::initializer\+\_\+list$<$ Item $>$ init)
+\begin{DoxyCompactList}\small\item\em Adiciona múltiplos elementos ao final do vetor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \begin{Indent}\textbf{ Construtores e Destrutor}\par
 \begin{DoxyCompactItemize}
 \item 
@@ -32,6 +34,8 @@ virtual \mbox{\hyperlink{classTVector_a0ba5799421ad86bb49b74170505cc76c}{\texorp
 \begin{DoxyCompactList}\small\item\em Operador de atribuição por cópia. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTVector_aa6623d3565cd1addfbd181f1c57dab09}{TVector}} (\mbox{\hyperlink{classTVector}{TVector}} \&\&o) noexcept
 \begin{DoxyCompactList}\small\item\em Construtor de movimentação. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTVector_ab207d23b5ccb0f5830d9b1f8e4c9acdf}{TVector}} (std\+::initializer\+\_\+list$<$ Item $>$ init)
+\begin{DoxyCompactList}\small\item\em Constrói um vetor a partir de uma lista de inicialização. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTVector}{TVector}} \& \mbox{\hyperlink{classTVector_a2af41d12d985866414ecabe9cebeb39f}{operator=}} (\mbox{\hyperlink{classTVector}{TVector}} \&\&o) noexcept
 \begin{DoxyCompactList}\small\item\em Operador de atribuição por movimentação. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \end{Indent}
@@ -140,7 +144,7 @@ bool \mbox{\hyperlink{classTVector_a00d0bef89a8f0e527eb72e8c5ef30c7b}{operator!=
 class TVector$<$ Item $>$}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00023}{23}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00024}{24}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 
 
@@ -148,7 +152,7 @@ Definition at line \mbox{\hyperlink{TVector_8h_source_l00023}{23}} of file \mbox
 \Hypertarget{classTVector_af101f2c096078779fb2569bb82303216}\label{classTVector_af101f2c096078779fb2569bb82303216} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!TVector@{TVector}}
 \index{TVector@{TVector}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
-\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily template$<$class Item $>$ \\
 \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\mbox{\hyperlink{classTVector}{\+::\+TVector}} (\begin{DoxyParamCaption}\item[{int}]{size = {\ttfamily 0} }\end{DoxyParamCaption})}
 
@@ -165,12 +169,12 @@ Construtor. Se {\ttfamily size\texorpdfstring{$>$}{>}0}, aloca capacidade inicia
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00323}{323}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00351}{351}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_ae7c66dcf639a5f1c65ca4cfe4c7786f1}\label{classTVector_ae7c66dcf639a5f1c65ca4cfe4c7786f1} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!TVector@{TVector}}
 \index{TVector@{TVector}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
-\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily template$<$class Item $>$ \\
 \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\mbox{\hyperlink{classTVector}{\+::\+TVector}} (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{Item const \texorpdfstring{$\ast$}{*}}]{init }\end{DoxyParamCaption})}
 
@@ -194,7 +198,7 @@ Construtor com inicialização de elementos a partir de {\ttfamily init}.
 \item Ajusta {\ttfamily count} para {\ttfamily size}. 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00341}{341}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00369}{369}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a0ba5799421ad86bb49b74170505cc76c}\label{classTVector_a0ba5799421ad86bb49b74170505cc76c} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!````~TVector@{\texorpdfstring{$\sim$}{\string~}TVector}}
@@ -211,12 +215,12 @@ Destrutor, libera o buffer interno.
 
 Liberta o buffer interno alocado para {\ttfamily v}. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00359}{359}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00387}{387}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a0fd57ce860d22f425cbb01d87dd0a064}\label{classTVector_a0fd57ce860d22f425cbb01d87dd0a064} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!TVector@{TVector}}
 \index{TVector@{TVector}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
-\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily template$<$class Item $>$ \\
 \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\mbox{\hyperlink{classTVector}{\+::\+TVector}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{o }\end{DoxyParamCaption})}
 
@@ -231,12 +235,12 @@ Construtor de cópia.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00370}{370}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00398}{398}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_aa6623d3565cd1addfbd181f1c57dab09}\label{classTVector_aa6623d3565cd1addfbd181f1c57dab09} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!TVector@{TVector}}
 \index{TVector@{TVector}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
-\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily template$<$class Item $>$ \\
 \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\mbox{\hyperlink{classTVector}{\+::\+TVector}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&\&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
@@ -258,8 +262,30 @@ Transfere o buffer interno sem copiar elementos.
 \end{DoxyParams}
 Transfere o buffer interno sem cópia de elementos. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00400}{400}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00428}{428}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
+\Hypertarget{classTVector_ab207d23b5ccb0f5830d9b1f8e4c9acdf}\label{classTVector_ab207d23b5ccb0f5830d9b1f8e4c9acdf} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!TVector@{TVector}}
+\index{TVector@{TVector}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{TVector()}{TVector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\mbox{\hyperlink{classTVector}{\+::\+TVector}} (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ Item $>$}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constrói um vetor a partir de uma lista de inicialização. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init} & Lista de elementos a copiar para o vetor. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00097}{97}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 1
 
 
 \doxysubsection{Member Function Documentation}
@@ -272,12 +298,12 @@ Definition at line \mbox{\hyperlink{TVector_8h_source_l00400}{400}} of file \mbo
 
 Adiciona {\ttfamily a} no final do vetor. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00115}{115}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00143}{143}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 1
-Here is the caller graph for this function\+:
 % FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
 \Hypertarget{classTVector_a084d0ab4f7ea5451716f734e649950f6}\label{classTVector_a084d0ab4f7ea5451716f734e649950f6} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!BeASet@{BeASet}}
 \index{BeASet@{BeASet}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -301,10 +327,10 @@ Referência ao próprio vetor.
 
 \end{DoxyItemize}
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00769}{769}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00797}{797}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 3
+% FIG 4
 \Hypertarget{classTVector_a45c61335d31c86c63ca7868be655fd0d}\label{classTVector_a45c61335d31c86c63ca7868be655fd0d} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!begin@{begin}}
 \index{begin@{begin}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -314,7 +340,7 @@ const Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTVector}{TVector}}$<
 
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00248}{248}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00276}{276}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_ac03b333ddccac1382d0e36558713edc1}\label{classTVector_ac03b333ddccac1382d0e36558713edc1} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!begin@{begin}}
@@ -325,10 +351,10 @@ Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTVector}{TVector}}$<$ Item
 
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00246}{246}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00274}{274}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 4
+% FIG 5
 \Hypertarget{classTVector_a9a593e793d4d3a6b122b593906a18543}\label{classTVector_a9a593e793d4d3a6b122b593906a18543} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Contained@{Contained}}
 \index{Contained@{Contained}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -352,12 +378,12 @@ true se todos os elementos deste vetor aparecem em {\ttfamily other}.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00886}{886}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00914}{914}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 5
-Here is the caller graph for this function\+:
 % FIG 6
+Here is the caller graph for this function\+:
+% FIG 7
 \Hypertarget{classTVector_ac3c744d84543ca6e32859eb7dfccfeef}\label{classTVector_ac3c744d84543ca6e32859eb7dfccfeef} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Count@{Count}}
 \index{Count@{Count}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -367,7 +393,7 @@ int \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Count (\begin{Doxy
 
 Número de elementos presentes. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00160}{160}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00188}{188}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a0688f10df431a79feac470593b90b662}\label{classTVector_a0688f10df431a79feac470593b90b662} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Count@{Count}}
@@ -392,7 +418,7 @@ Referência ao próprio vetor (permite encadear chamadas).
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00171}{171}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00199}{199}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_aba2fb6d977b1309f3e884369c5f43bba}\label{classTVector_aba2fb6d977b1309f3e884369c5f43bba} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Delete@{Delete}}
@@ -417,10 +443,10 @@ Referência ao próprio vetor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00750}{750}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00778}{778}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 7
+% FIG 8
 \Hypertarget{classTVector_a5744462d2c7efd035cf0ec50326f43be}\label{classTVector_a5744462d2c7efd035cf0ec50326f43be} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Difference@{Difference}}
 \index{Difference@{Difference}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -444,12 +470,12 @@ Referência ao próprio vetor já representando a diferença.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00843}{843}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00871}{871}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 8
-Here is the caller graph for this function\+:
 % FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
 \Hypertarget{classTVector_a8cbf0dc0b674640bda4e81e6d6be0f55}\label{classTVector_a8cbf0dc0b674640bda4e81e6d6be0f55} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Distance@{Distance}}
 \index{Distance@{Distance}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -487,10 +513,10 @@ Valor inteiro representando a distância.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00973}{973}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l01001}{1001}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 10
+% FIG 11
 \Hypertarget{classTVector_af7079cb7944ea88caf10b7574915858b}\label{classTVector_af7079cb7944ea88caf10b7574915858b} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!end@{end}}
 \index{end@{end}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -500,7 +526,7 @@ const Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTVector}{TVector}}$<
 
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00249}{249}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00277}{277}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a0321e02f28a957bf9ab65102a420e6fc}\label{classTVector_a0321e02f28a957bf9ab65102a420e6fc} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!end@{end}}
@@ -511,10 +537,10 @@ Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTVector}{TVector}}$<$ Item
 
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00247}{247}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00275}{275}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 11
+% FIG 12
 \Hypertarget{classTVector_a192a9255de9926fd252d028871d16f8f}\label{classTVector_a192a9255de9926fd252d028871d16f8f} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Equal@{Equal}}
 \index{Equal@{Equal}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -538,12 +564,12 @@ true se tamanhos e elementos coincidem; false caso contrário.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00870}{870}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00898}{898}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 12
-Here is the caller graph for this function\+:
 % FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
 \Hypertarget{classTVector_ae72a4965eaa055d38204da07d6092feb}\label{classTVector_ae72a4965eaa055d38204da07d6092feb} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Find@{Find}}
 \index{Find@{Find}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -573,10 +599,10 @@ Procura {\ttfamily i}; se {\ttfamily binary=true} faz busca binária em \mbox{[}
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00496}{496}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00524}{524}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 14
+% FIG 15
 \Hypertarget{classTVector_a05f29646493d42f3c77081b6031d70e5}\label{classTVector_a05f29646493d42f3c77081b6031d70e5} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!First@{First}}
 \index{First@{First}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -586,10 +612,10 @@ Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+First (\begin{
 
 Retorna o primeiro elemento ou {\ttfamily erro} se vazio. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00154}{154}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00182}{182}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 15
+% FIG 16
 \Hypertarget{classTVector_ab6eca1cb8949b750e7aa87bb8828f81d}\label{classTVector_ab6eca1cb8949b750e7aa87bb8828f81d} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Insert@{Insert}}
 \index{Insert@{Insert}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -615,10 +641,10 @@ Referência ao próprio vetor após inserção.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00935}{935}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00963}{963}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 16
+% FIG 17
 \Hypertarget{classTVector_a509e5566cc15eb723566f318479e3bc0}\label{classTVector_a509e5566cc15eb723566f318479e3bc0} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Insert@{Insert}}
 \index{Insert@{Insert}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -644,10 +670,10 @@ Referência ao próprio vetor após inserção.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00909}{909}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00937}{937}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 17
+% FIG 18
 \Hypertarget{classTVector_a8e04072080158c780aef25ca1b4a3fbd}\label{classTVector_a8e04072080158c780aef25ca1b4a3fbd} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Intersection@{Intersection}}
 \index{Intersection@{Intersection}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -671,12 +697,12 @@ Referência ao próprio vetor já representando a interseção.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00817}{817}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00845}{845}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 18
-Here is the caller graph for this function\+:
 % FIG 19
+Here is the caller graph for this function\+:
+% FIG 20
 \Hypertarget{classTVector_ab45b219aaec44aad6e6c37a806d80025}\label{classTVector_ab45b219aaec44aad6e6c37a806d80025} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Invert@{Invert}}
 \index{Invert@{Invert}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -695,10 +721,10 @@ Referência ao próprio vetor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00953}{953}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00981}{981}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 20
+% FIG 21
 \Hypertarget{classTVector_aa304d639c79ef2842f9951846c6292e3}\label{classTVector_aa304d639c79ef2842f9951846c6292e3} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Last@{Last}}
 \index{Last@{Last}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -708,27 +734,27 @@ Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Last (\begin{D
 
 Retorna o último elemento ou {\ttfamily erro} se vazio. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00157}{157}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00185}{185}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 21
+% FIG 22
 \Hypertarget{classTVector_a691ddcb0df46ab21a687356c6a0cd9a6}\label{classTVector_a691ddcb0df46ab21a687356c6a0cd9a6} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
-\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$class Item $>$ \\
 \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const Item \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Adiciona elemento {\ttfamily x} ao final (alias de Add). 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00255}{255}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00283}{283}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 22
+% FIG 23
 \Hypertarget{classTVector_a7c69ceeac2bef2bf161e5e6aab440468}\label{classTVector_a7c69ceeac2bef2bf161e5e6aab440468} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator+=@{operator+=}}
 \index{operator+=@{operator+=}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
-\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$class Item $>$ \\
 \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$ \&}]{o }\end{DoxyParamCaption})}
 
@@ -758,8 +784,33 @@ Referência ao próprio vetor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00437}{437}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00465}{465}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
+\Hypertarget{classTVector_a886f6e482b2fb8bbac5b611eca1ee468}\label{classTVector_a886f6e482b2fb8bbac5b611eca1ee468} 
+\index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$class Item $>$ \\
+\mbox{\hyperlink{classTVector}{TVector}} \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::operator+= (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ Item $>$}]{init }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adiciona múltiplos elementos ao final do vetor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init} & Lista de elementos a adicionar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referência ao próprio vetor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00128}{128}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+
+Here is the call graph for this function\+:
+% FIG 24
 \Hypertarget{classTVector_a8178d74f03d81a76c1eebe8e9400d507}\label{classTVector_a8178d74f03d81a76c1eebe8e9400d507} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator-\/=@{operator-\/=}}
 \index{operator-\/=@{operator-\/=}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -769,10 +820,10 @@ Definition at line \mbox{\hyperlink{TVector_8h_source_l00437}{437}} of file \mbo
 
 Remove todas ocorrências de {\ttfamily x} (alias de Remove). 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00258}{258}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00286}{286}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 23
+% FIG 25
 \Hypertarget{classTVector_a3e9a3f686ca0987253b82a61e9564624}\label{classTVector_a3e9a3f686ca0987253b82a61e9564624} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator=@{operator=}}
 \index{operator=@{operator=}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -794,7 +845,7 @@ Referência ao próprio vetor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00381}{381}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00409}{409}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a2af41d12d985866414ecabe9cebeb39f}\label{classTVector_a2af41d12d985866414ecabe9cebeb39f} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator=@{operator=}}
@@ -817,7 +868,7 @@ Referência ao próprio vetor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00414}{414}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00442}{442}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a372a42fd7c4a94fee43db36d6a339b33}\label{classTVector_a372a42fd7c4a94fee43db36d6a339b33} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
@@ -844,10 +895,10 @@ Referência ao elemento interno {\ttfamily v}\mbox{[}i\mbox{]}.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00459}{459}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00487}{487}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 24
+% FIG 26
 \Hypertarget{classTVector_a8ee199d50089fb967bcf418ab5b30723}\label{classTVector_a8ee199d50089fb967bcf418ab5b30723} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -873,7 +924,7 @@ Const-\/ref ao elemento {\ttfamily v}\mbox{[}i\mbox{]} ou {\ttfamily \doxylink{c
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00475}{475}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00503}{503}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a3249913626d54e46b07e168ce1f05d87}\label{classTVector_a3249913626d54e46b07e168ce1f05d87} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Pop@{Pop}}
@@ -884,10 +935,10 @@ Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Pop (\begin{Do
 
 Remove e retorna o último elemento; em vetor vazio retorna {\ttfamily erro}. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00127}{127}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00155}{155}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 25
+% FIG 27
 \Hypertarget{classTVector_afd25458f77157e6e8aa4ba0e6be3fb64}\label{classTVector_afd25458f77157e6e8aa4ba0e6be3fb64} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Push@{Push}}
 \index{Push@{Push}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -897,10 +948,10 @@ Here is the caller graph for this function\+:
 
 Alias de Add. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00124}{124}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00152}{152}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 26
+% FIG 28
 \Hypertarget{classTVector_a769c6a55b72a463fd2313fbd638c7234}\label{classTVector_a769c6a55b72a463fd2313fbd638c7234} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Random@{Random}}
 \index{Random@{Random}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -910,12 +961,12 @@ Item \& \mbox{\hyperlink{classTVector}{TVector}}$<$ Item $>$\+::\+Random (\begin
 
 Retorna um elemento escolhido aleatoriamente. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00180}{180}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00208}{208}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 27
+% FIG 29
 Here is the caller graph for this function\+:
-% FIG 28
+% FIG 30
 \Hypertarget{classTVector_a528c30196e28424fcac4386b873a6e11}\label{classTVector_a528c30196e28424fcac4386b873a6e11} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!RandomOrder@{RandomOrder}}
 \index{RandomOrder@{RandomOrder}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -934,12 +985,12 @@ Referência ao próprio vetor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00685}{685}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00713}{713}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 29
+% FIG 31
 Here is the caller graph for this function\+:
-% FIG 30
+% FIG 32
 \Hypertarget{classTVector_a85673895d405c09b5b9155f78b67d71b}\label{classTVector_a85673895d405c09b5b9155f78b67d71b} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Remove@{Remove}}
 \index{Remove@{Remove}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -963,10 +1014,10 @@ Referência ao próprio vetor (permite encadear chamadas).
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00698}{698}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00726}{726}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 31
+% FIG 33
 \Hypertarget{classTVector_a35217d9779ea1c7608dac2ffd677c30b}\label{classTVector_a35217d9779ea1c7608dac2ffd677c30b} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Replace@{Replace}}
 \index{Replace@{Replace}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -992,7 +1043,7 @@ Referência ao próprio vetor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00733}{733}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00761}{761}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_ab36bc3093e75aa4d710d7c9b9c1ca7bd}\label{classTVector_ab36bc3093e75aa4d710d7c9b9c1ca7bd} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Reset@{Reset}}
@@ -1017,10 +1068,10 @@ Referência ao próprio vetor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00717}{717}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00745}{745}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 32
+% FIG 34
 \Hypertarget{classTVector_ab9e1e15b247dcbc2d9c4b2a08104700e}\label{classTVector_ab9e1e15b247dcbc2d9c4b2a08104700e} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Sort@{Sort}}
 \index{Sort@{Sort}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -1043,7 +1094,7 @@ Ordena apenas o intervalo \mbox{[}start,end\mbox{]}.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00553}{553}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00581}{581}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a6006a477a6794ac80c97cc35c8925699}\label{classTVector_a6006a477a6794ac80c97cc35c8925699} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Sort@{Sort}}
@@ -1068,12 +1119,12 @@ Referência ao próprio vetor (permite encadeamento).
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00530}{530}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00558}{558}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 33
+% FIG 35
 Here is the caller graph for this function\+:
-% FIG 34
+% FIG 36
 \Hypertarget{classTVector_ae823bb295cf4d1da6783b9ef133e2209}\label{classTVector_ae823bb295cf4d1da6783b9ef133e2209} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!Union@{Union}}
 \index{Union@{Union}!TVector$<$ Item $>$@{TVector$<$ Item $>$}}
@@ -1097,12 +1148,12 @@ Referência ao próprio vetor já representando a união.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00792}{792}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00820}{820}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 35
+% FIG 37
 Here is the caller graph for this function\+:
-% FIG 36
+% FIG 38
 
 
 \doxysubsection{Friends And Related Symbol Documentation}
@@ -1115,7 +1166,7 @@ bool operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTVec
 
 Compara desigualdade de conjuntos. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00267}{267}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00295}{295}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a279d251a53063355259e29f34e884d69}\label{classTVector_a279d251a53063355259e29f34e884d69} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator+@{operator+}}
@@ -1126,7 +1177,7 @@ Definition at line \mbox{\hyperlink{TVector_8h_source_l00267}{267}} of file \mbo
 
 Concatena dois vetores, retornando o resultado. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00261}{261}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00289}{289}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 \Hypertarget{classTVector_a82bd872b28a29cc6050bcf74af9b9f48}\label{classTVector_a82bd872b28a29cc6050bcf74af9b9f48} 
 \index{TVector$<$ Item $>$@{TVector$<$ Item $>$}!operator==@{operator==}}
@@ -1137,7 +1188,7 @@ bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTVec
 
 Compara igualdade de conjuntos (usando Equal). 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00264}{264}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00292}{292}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 
 
@@ -1157,7 +1208,7 @@ Valor retornado em casos de erro (acesso inválido).
 
 Deve ser definido pelo utilizador do template para o tipo {\ttfamily Item}. 
 
-Definition at line \mbox{\hyperlink{TVector_8h_source_l00056}{56}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
+Definition at line \mbox{\hyperlink{TVector_8h_source_l00057}{57}} of file \mbox{\hyperlink{TVector_8h_source}{TVector.\+h}}.
 
 
 

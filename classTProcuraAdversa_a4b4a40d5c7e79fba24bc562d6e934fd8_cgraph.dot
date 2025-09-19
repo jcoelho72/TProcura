@@ -18,7 +18,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node6 [id="Node000006",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
   Node1 -> Node7 [id="edge111_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0",tooltip="Mostra o estado no ecrã, para debug."];
-  Node7 -> Node4 [id="edge112_Node000007_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node7 [id="edge112_Node000007_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node8 [id="edge113_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parametros atuais."];
   Node8 -> Node9 [id="edge114_Node000008_Node000009",color="steelblue1",style="solid",tooltip=" "];

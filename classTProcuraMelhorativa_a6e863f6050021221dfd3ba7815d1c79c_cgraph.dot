@@ -29,5 +29,5 @@ digraph "TProcuraMelhorativa::ReproduzirAE"
   Node11 [id="Node000011",label="TProcuraMelhorativa\l::DebugMelhorEncontrado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6fc03fc9e9379496303354d2b46b8bc8",tooltip=" "];
   Node11 -> Node12 [id="edge25_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0",tooltip="Mostra o estado no ecrã, para debug."];
-  Node12 -> Node5 [id="edge26_Node000012_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node12 [id="edge26_Node000012_Node000012",color="steelblue1",style="solid",tooltip=" "];
 }

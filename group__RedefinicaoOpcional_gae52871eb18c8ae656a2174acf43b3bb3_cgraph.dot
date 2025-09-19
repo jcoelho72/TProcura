@@ -37,7 +37,7 @@ digraph "TProcuraConstrutiva::ExecutaAlgoritmo"
   Node14 [id="Node000014",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#gacbc6e34f3a403d26d806f37b5cd739f6",tooltip="Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor."];
   Node13 -> Node15 [id="edge130_Node000013_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0",tooltip="Mostra o estado no ecr�, para debug."];
-  Node15 -> Node8 [id="edge131_Node000015_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node15 [id="edge131_Node000015_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node16 [id="edge132_Node000013_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="TProcuraConstrutiva\l::DebugEstado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a3c5b2743566153ca9d45e875106e548b",tooltip=" "];
   Node13 -> Node17 [id="edge133_Node000013_Node000017",color="steelblue1",style="solid",tooltip=" "];
