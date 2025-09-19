@@ -51,35 +51,34 @@ void TProcuraConstrutiva::ResetParametros()
 		"ascendentes",
 		"gerados" };
 	TProcura::ResetParametros();
+
 	// definir parametros base
 	// algoritmos, alterar
 	parametro[ALGORITMO] = { "Algoritmo",1,1,7,"Algoritmo base a executar.", nomesAlgoritmos };
-	// ver Acoes (ou apenas estados completos)
-	parametro += { "Ver",4,1,100,"Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.",NULL };
-	// limite (algoritmo)
-	parametro += { "Limite",0,-1,1000000,
-		"Valor dependente do algoritmo. \n\
+	// parametros adicionados
+	parametro += {
+		{ "Ver", 4, 1, 100, "Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.", NULL },
+		{ "Limite",0,-1,1000000,
+"Valor dependente do algoritmo. \n\
 Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. \n\
-Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL };
-	// estados repetidos
-	parametro += { "Repetidos", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).",
-			nomesRepetidos };
-	// pesoAStar 
-	parametro += { "pesoAStar",100,0,10000,
-		"Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.",NULL };
-	// ruido heuristica
-	parametro += { "ruido",0,-100,100,
-		"Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",NULL };
-	// baralhar sucessores
-	parametro += { "baralhar",0,0,1, "Baralhar os sucessores ao expandir.",NULL };
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL },
+		{ "Repetidos", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).", nomesRepetidos },
+		{ "pesoAStar", 100, 0, 10000,
+		  "Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.", NULL },
+		{ "ruido",0,-100,100, "Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",NULL },
+		{ "baralhar",0,0,1, "Baralhar os sucessores ao expandir.",NULL }
+	};
 
+	// indicadores, alterar
 	indicador[IND_CUSTO].nome = "Custo";
 	indicador[IND_CUSTO].descricao = "o resultado é o custo da solução atual";
-	indicador += { "Expansões","número de expansões efetuadas", IND_EXPANSOES };
-	indicador += { "Gerações","número de estados gerados", IND_GERACOES };
-	indicador += { "Lower Bound","valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima",
-		IND_LOWER_BOUND };
-	indAtivo.Add(IND_EXPANSOES).Add(IND_GERACOES).Add(IND_LOWER_BOUND);
+	// indicadores adicionados
+	indicador += {
+		{ "Expansões", "número de expansões efetuadas", IND_EXPANSOES },
+		{ "Gerações","número de estados gerados", IND_GERACOES },
+		{ "Lower Bound", "valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima", IND_LOWER_BOUND }
+	};
+	indAtivo += {IND_EXPANSOES, IND_GERACOES, IND_LOWER_BOUND};
 }
 
 // Executa uma ação (movimento, passo, jogada, lance, etc.) no estado atual. Caso não seja feito nada, retornar falso.
@@ -91,7 +90,7 @@ bool TProcuraConstrutiva::Acao(const char* acao) {
 			Copiar(sucessores[i]);
 			TProcuraConstrutiva::LibertarVector(sucessores);
 			return true;
-		} 
+		}
 	return false;
 }
 
@@ -145,7 +144,7 @@ void TProcuraConstrutiva::LibertarVector(TVector<TNo>& vector, int excepto, int 
 	for (int i = 0; i < vector.Count(); i++)
 		if (i != excepto && i > maiorQue && vector[i] != NULL)
 			delete vector[i];
-	vector = {}; 
+	vector = {};
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -590,7 +589,7 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 	if (Parametro(NIVEL_DEBUG) > NADA && SolucaoCompleta()) {
 		printf(" Solução encontrada!");
 		if (!continuar)
-			ramo = {}; 
+			ramo = {};
 		Debug();
 		printf("(g:%d)", custo);
 	}
@@ -650,7 +649,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 		}
 	}
 	else {
-		ramo = {}; 
+		ramo = {};
 		ramo += ' ';
 		for (int i = 0; i < sucessores.Count() && i < 30; i++) {
 			ramo.First() = '+';
@@ -664,7 +663,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 			if (Parametro(VER_ACOES) == 1)
 				sucessores[i]->Debug();
 		}
-		ramo = {}; 
+		ramo = {};
 
 	}
 }
@@ -708,7 +707,7 @@ void TProcuraConstrutiva::LimparEstatisticas(clock_t& inicio)
 {
 	TProcura::LimparEstatisticas(inicio);
 	geracoes = expansoes = 0;
-	ramo = {}; 
+	ramo = {};
 	while (caminho.Count() > 0)
 		delete caminho.Pop();
 	if (solucao != NULL)
@@ -780,7 +779,7 @@ void TProcuraConstrutiva::Explorar() {
 				if (strcmp(token, "exe") == 0) {
 					TVector<TNo> backup;
 					backup = caminho;
-					caminho = {}; 
+					caminho = {};
 					LimparEstatisticas(inicio);
 					int resultado;
 					switch (resultado = ExecutaAlgoritmo()) {

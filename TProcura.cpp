@@ -45,26 +45,22 @@ void TProcura::ResetParametros()
 		"detalhe",
 		"completo" };
 
-	// definir indicadores base
-	indicador = {};
-	indicador += { "Resultado", "Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", 0 };
-	indicador += { "Tempo(ms)", "Tempo em milisegundos da execução (medida de esforço computacional).", 1 };
-	indicador += { "Iterações", "Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).", 2 };
-	for (int i = 0; i < indicador.Count(); i++) // ativar todos os indicadores
-		indAtivo += i;
-
 	// definir parametros base
-	parametro = {};
-	// algoritmos
-	parametro += { "Algoritmo", 1, 1, 1, "Algoritmo base a executar.", nomesAlgoritmos };
-	// nivel de debug
-	parametro += { "Debug", 0, 0, 4, "Nível de debug, de reduzido a completo.", nomesDebug };
-	// seed 
-	parametro += { "Seed", 1, 1, 1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios.", NULL };
-	// limite tempo
-	parametro += { "Tempo", 10, 1, 3600, "Limnite de tempo em segundos. ", NULL };
-	// máximo de iterações
-	parametro += { "Iterações", 0, 0, 1000000000, "Limite de número de iterações (0 não há limite). ", NULL };
+	parametro = {
+		{ "Algoritmo", 1, 1, 1, "Algoritmo base a executar.", nomesAlgoritmos },
+		{ "Nivel debug", 0, 0, 4, "Nível de debug, de reduzido a completo.", nomesDebug },
+		{ "Semente", 1, 1, 1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios.", NULL },
+		{ "Tempo", 10, 1, 3600, "Limnite de tempo em segundos. ", NULL },
+		{ "Iterações", 0, 0, 1000000000, "Limite de número de iterações (0 não há limite). ", NULL }
+	};
+
+	// definir indicadores base
+	indicador = {
+		{ "Resultado", "Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", IND_RESULTADO },
+		{ "Tempo(ms)", "Tempo em milisegundos da execução (medida de esforço computacional).", IND_TEMPO },
+		{ "Iterações", "Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).", IND_ITERACOES }
+	};
+	indAtivo = {IND_RESULTADO, IND_TEMPO, IND_ITERACOES};
 
 	// colocar as configurações vazias (podem ser inicializadas se existirem configurações de omissão)
 	configuracoes = {};
@@ -86,8 +82,7 @@ int TProcura::Indicador(int id) {
 // Escrever informacao de debug sobre o objecto atual
 void TProcura::Debug(void)
 {
-	if (Parametro(NIVEL_DEBUG) > NADA)
-		printf("\nTProcura::Debug() método não redefinido.");
+	Debug(ATIVIDADE, false, "\nTProcura::Debug() método não redefinido.");
 }
 
 // Chamar antes de iniciar uma procura

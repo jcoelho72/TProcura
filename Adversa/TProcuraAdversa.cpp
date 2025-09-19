@@ -41,9 +41,13 @@ void TProcuraAdversa::ResetParametros()
 	Parametro(BARALHAR_SUCESSORES) = 0; // de omissão está com valor 0, para facilitar nos testes, mas deve ficar com 1 para obter jogos distintos
 
 	// O "infinito" é dependente do problema, não faz sentido alterar senão no código
-	parametro += { "Ordenar",2,0,2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.",NULL };
-	parametro += { "PodaHeuristica",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores).",NULL };
-	parametro += { "PodaCega",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. ",NULL };
+
+	// adicionar parametros da procura adversa
+	parametro += {
+		{ "Ordenar", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.", NULL },
+		{ "PodaHeuristica",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores).",NULL },
+		{ "PodaCega",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. ",NULL }
+	};
 }
 
 
@@ -165,7 +169,7 @@ void TProcuraAdversa::OrdenarSucessores(
 			for (int i = Parametro(PODA_HEURISTICA); i < id.Count(); i++)
 				delete sucessores[id[i]];
 			sucessores = manterSuc;
-			id = {}; 
+			id = {};
 			for (int i = 0; i < sucessores.Count(); i++)
 				id += i;
 		}
@@ -523,10 +527,10 @@ void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, FILE* f) {
 				fprintf(f, "%d;%d;%s;%d\n", jogador, adversario, "Brancas", torneio[jogador][adversario]);
 				fprintf(f, "%d;%d;%s;%d\n", adversario, jogador, "Pretas", -torneio[jogador][adversario]);
 			}
-	if(configuracoes.Count()!=torneio.Count())
-		return; 
+	if (configuracoes.Count() != torneio.Count())
+		return;
 	// No final, mostrar as configurações
-	fprintf(f,"\nJogador;");
+	fprintf(f, "\nJogador;");
 	for (int i = 0; i < parametro.Count(); i++)
 		fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
 	fprintf(f, "\n");

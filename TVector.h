@@ -13,6 +13,7 @@
  */
 
 #include <stdlib.h>
+#include <initializer_list>
 #include "TRand.h"
 
  ///////////////////////////////////////////////////////////////////////////////
@@ -90,12 +91,24 @@ public:
 	TVector(TVector&& o) noexcept;
 
 	/**
+	 * @brief Constrói um vetor a partir de uma lista de inicialização.
+	 * @param init Lista de elementos a copiar para o vetor.
+	 */
+	TVector(std::initializer_list<Item> init) {
+		Count(static_cast<int>(init.size())); // ajusta capacidade 
+		int i = 0;
+		for (const auto& val : init)
+			v[i++] = val;
+	}
+
+	/**
 	 * @brief Operador de atribuição por movimentação.
 	 * @param o Vetor temporário a mover.
 	 * @return Referência ao próprio vetor.
 	 */
 	TVector& operator=(TVector&& o) noexcept;
 	///@}
+
 
 	/**
 	 * @brief Concatena outro vetor a este.
@@ -106,6 +119,21 @@ public:
 	 * @return Referência ao próprio vetor.
 	 */
 	TVector& operator+=(const TVector& o);
+
+	/**
+	 * @brief Adiciona múltiplos elementos ao final do vetor.
+	 * @param init Lista de elementos a adicionar.
+	 * @return Referência ao próprio vetor.
+	 */
+	TVector& operator+=(std::initializer_list<Item> init) {
+		int oldCount = Count();
+		Count(oldCount + static_cast<int>(init.size()));
+		int i = 0;
+		for (const auto& val : init) 
+			v[oldCount + i++] = val;
+		return *this;
+	}
+
 
 	///@}
 

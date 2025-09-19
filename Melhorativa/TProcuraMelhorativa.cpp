@@ -40,44 +40,36 @@ void TProcuraMelhorativa::ResetParametros()
 	};
 	TProcura::ResetParametros();
 
-	parametro[LIMITE_ITERACOES].valor = 1000000;
-
-	// adicionar parâmetros da procura melhorativa
-	// alterar algoritmos
+	// alterar parametros base
+	Parametro(LIMITE_ITERACOES) = 1000000;
 	parametro[ALGORITMO] = { "Algoritmo",1,1,3,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
 
-	// população 
-	parametro += { "populacaoAE",20,2,1000000, "Número de elementos em cada geração, utilizado nos Algoritmos Evolutivos",NULL };
-	// probabilidade de cruzamento 
-	parametro += { "probCruzarAE",100,0,100, "Probabilidade de um estado ser cruzado, utilizado nos Algoritmos Evolutivos",NULL };
-	// probabilidade de mutação 
-	parametro += { "probMutarAE",50,0,100, "Probabilidade de um estado sofrer uma mutação após gerado, utilizado nos Algoritmos Evolutivos",NULL };
-	// Seleção dos pais
-	parametro += { "selecaoAE",1,1,3, "Método de seleção dos pais para cruzamento, utilizado nos Algoritmos Evolutivos", nomesSelecao };
-	// Pressão da seleção
-	parametro += { "pressaoAE",150,100,200, "Pressão da seleção (1.0 a 2.0 > 100 a 200). \
+	// adicionar parâmetros da procura melhorativa
+	parametro += {
+		{ "populacaoAE", 20, 2, 1000000, "Número de elementos em cada geração, utilizado nos Algoritmos Evolutivos", NULL },
+		{ "probCruzarAE",100,0,100, "Probabilidade de um estado ser cruzado, utilizado nos Algoritmos Evolutivos",NULL },
+		{ "probMutarAE",50,0,100, "Probabilidade de um estado sofrer uma mutação após gerado, utilizado nos Algoritmos Evolutivos",NULL },
+		{ "selecaoAE",1,1,3, "Método de seleção dos pais para cruzamento, utilizado nos Algoritmos Evolutivos", nomesSelecao },
+		{ "pressaoAE",150,100,200, 
+"Pressão da seleção (1.0 a 2.0 > 100 a 200). \
 Controla a diferença de probabilidade entre o melhor e o pior indivíduo no método Ranking Selection.\n\
-Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", NULL };
-	// Tamanho do torneio
-	parametro += { "tamanhoTorneioAE",2,2,100, "Tamanho do torneio, caso a sobrevivência seja do tipo torneio.", NULL };
-	// Probabilidade do melhor ganhar no torneio
-	parametro += { "probMelhorTorneioAE",100,0,100, "Probabilidade do melhor ganhar o torneio.", NULL };
-	// Sobrevivência
-	parametro += { "sobrevivenciaAE",1,1,3, "Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos", nomesSobrevivencia };
-	// Descendentes
-	parametro += { "percDescendentesAE",100,0,100, "Número de descendentes a substituirem elementos na população, em percentagem (100 toda a população é substituída, 0 apenas um elemento)", NULL };
-	// qRoundRobinAE
-	parametro += { "qRoundRobinAE",3,2,100, "Número de elementos no round-robin (valor de q)", NULL };
-	// Elitismo
-	parametro += { "elitismoAE",1,0,100, "Número absoluto de indivíduos melhores, que se mantêm na geração seguinte, excepto se há descendência com valor igual ou superior", NULL };
-	// distância 
-	parametro += { "distMinimaAG",0,0,1000, "Distância mínima imposta entre elementos da população, utilizado nos Algoritmos Genéticos",NULL };
-	// move primeiro
-	parametro += { "movePrimeiroEM",1,1,2, "Utilizado na Escalada do Monte", nomesMovePrimeiro };
+Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", NULL },
+		{ "tamanhoTorneioAE",2,2,100, "Tamanho do torneio, caso a sobrevivência seja do tipo torneio.", NULL },
+		{ "probMelhorTorneioAE",100,0,100, "Probabilidade do melhor ganhar o torneio.", NULL },
+		{ "sobrevivenciaAE",1,1,3, "Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos", nomesSobrevivencia },
+		{ "percDescendentesAE",100,0,100, "Número de descendentes a substituirem elementos na população, em percentagem (100 toda a população é substituída, 0 apenas um elemento)", NULL },
+		{ "qRoundRobinAE",3,2,100, "Número de elementos no round-robin (valor de q)", NULL },
+		{ "elitismoAE",1,0,100, "Número absoluto de indivíduos melhores, que se mantêm na geração seguinte, excepto se há descendência com valor igual ou superior", NULL },
+		{ "distMinimaAG",0,0,1000, "Distância mínima imposta entre elementos da população, utilizado nos Algoritmos Genéticos",NULL },
+		{ "movePrimeiroEM",1,1,2, "Utilizado na Escalada do Monte", nomesMovePrimeiro }
+	};
 
-	indicador += { "Épocas","Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", IND_EPOCAS };
-	indicador += { "Gerações","número de estados gerados", IND_GERACOES };
-	indAtivo.Add(IND_EPOCAS).Add(IND_GERACOES);
+	// adicionar indicadores da procura melhorativa
+	indicador += {
+		{ "Épocas", "Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", IND_EPOCAS },
+		{ "Gerações","número de estados gerados", IND_GERACOES }
+	};
+	indAtivo += {IND_EPOCAS, IND_GERACOES}; 
 }
 
 // Retorna o valor da solucao completa actual.
