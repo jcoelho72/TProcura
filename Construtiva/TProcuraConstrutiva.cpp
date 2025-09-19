@@ -53,7 +53,7 @@ void TProcuraConstrutiva::ResetParametros()
 	TProcura::ResetParametros();
 	// definir parametros base
 	// algoritmos, alterar
-	parametro[algoritmo] = { "Algoritmo",1,1,7,"Algoritmo base a executar.", nomesAlgoritmos };
+	parametro[ALGORITMO] = { "Algoritmo",1,1,7,"Algoritmo base a executar.", nomesAlgoritmos };
 	// ver Acoes (ou apenas estados completos)
 	parametro += { "Ver",4,1,100,"Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.",NULL };
 	// limite (algoritmo)
@@ -73,13 +73,13 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.",NULL };
 	// baralhar sucessores
 	parametro += { "baralhar",0,0,1, "Baralhar os sucessores ao expandir.",NULL };
 
-	indicador[indCusto].nome = "Custo";
-	indicador[indCusto].descricao = "o resultado é o custo da solução atual";
-	indicador += { "Expansões","número de expansões efetuadas", indExpansoes };
-	indicador += { "Gerações","número de estados gerados", indGeracoes };
+	indicador[IND_CUSTO].nome = "Custo";
+	indicador[IND_CUSTO].descricao = "o resultado é o custo da solução atual";
+	indicador += { "Expansões","número de expansões efetuadas", IND_EXPANSOES };
+	indicador += { "Gerações","número de estados gerados", IND_GERACOES };
 	indicador += { "Lower Bound","valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima",
-		indLowerBound };
-	indAtivo.Add(indExpansoes).Add(indGeracoes).Add(indLowerBound);
+		IND_LOWER_BOUND };
+	indAtivo.Add(IND_EXPANSOES).Add(IND_GERACOES).Add(IND_LOWER_BOUND);
 }
 
 // Executa uma ação (movimento, passo, jogada, lance, etc.) no estado atual. Caso não seja feito nada, retornar falso.
@@ -109,7 +109,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 		// o custo total tem de estar atualizado antes de se utilizar nas hashtables
 	}
 	// verificação de estados repetidos
-	if (Parametro(estadosRepetidos) == gerados) {
+	if (Parametro(ESTADOS_REPETIDOS) == GERADOS) {
 		for (int i = 0; i < sucessores.Count(); i++)
 			if (sucessores[i]->ExisteHT()) {
 				// estado já gerado anteriormente, está na hashtable, pelo que não interessa
@@ -117,7 +117,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 				sucessores[i] = NULL;
 			}
 	}
-	else if (Parametro(estadosRepetidos) == ascendentes) {
+	else if (Parametro(ESTADOS_REPETIDOS) == ASCENDENTES) {
 		// verificar se o estado já foi gerado na árvore de procura
 		// remover todos os estados que ja tenham sido expandidos neste ramo
 		for (int i = 0; i < sucessores.Count(); i++) {
@@ -132,7 +132,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 		}
 	}
 	sucessores -= NULL;
-	if (Parametro(baralharSuc) == 1)
+	if (Parametro(BARALHAR_SUCESSORES) == 1)
 		sucessores.RandomOrder();
 	expansoes++;
 	geracoes += sucessores.Count();
@@ -176,7 +176,7 @@ int TProcuraConstrutiva::LarguraPrimeiro(int limite)
 			}
 		}
 
-		if (Parametro(nivelDebug) > detalhe)
+		if (Parametro(NIVEL_DEBUG) > DETALHE)
 			lista[i]->DebugSucessores(sucessores);
 
 		// Nao se pode libertar estados ja expandidos porque nao se sabe se
@@ -260,7 +260,7 @@ int TProcuraConstrutiva::CustoUniforme(int limite)
 		lista.Estado()->Sucessores(sucessores);
 		// insere por ordem de custo, e não apenas no final
 		lista.Inserir(sucessores);
-		if (Parametro(nivelDebug) > detalhe)
+		if (Parametro(NIVEL_DEBUG) > DETALHE)
 			lista.Estado()->DebugSucessores(sucessores);
 	}
 	return -1; // falhou
@@ -336,9 +336,9 @@ int TProcuraConstrutiva::SolucaoParcial(int i, TVector<TNo>& sucessores)
 
 void TProcuraConstrutiva::MostrarCaminho() {
 	for (int i = 0; i < caminho.Count(); i++) {
-		if (Parametro(verAcoes) > 1) {
+		if (Parametro(VER_ACOES) > 1) {
 			// mostrar o estado a cada K ações, no início e no fim
-			if (i % Parametro(verAcoes) == 0 || i == caminho.Count() - 1) {
+			if (i % Parametro(VER_ACOES) == 0 || i == caminho.Count() - 1) {
 				caminho[i]->Debug();
 				// mostrar custo
 				printf(" (g:%d) ", caminho[i]->custo);
@@ -506,7 +506,7 @@ int TProcuraConstrutiva::AStar(int limite)
 		CalcularHeuristicas(sucessores);
 		// insere por ordem de custo, e não apenas no final
 		lista.Inserir(sucessores);
-		if (Parametro(nivelDebug) > detalhe)
+		if (Parametro(NIVEL_DEBUG) > DETALHE)
 			lista.Estado()->DebugSucessores(sucessores);
 	}
 
@@ -520,10 +520,10 @@ int TProcuraConstrutiva::AStar(int limite)
 // chamar este método para actualiacao de avaliacoes
 int TProcuraConstrutiva::Heuristica(void) {
 	iteracoes++;
-	if (Parametro(ruidoHeur) > 0)
-		heuristica += TRand::rand() % Parametro(ruidoHeur);
-	if (Parametro(ruidoHeur) < 0)
-		heuristica += TRand::rand() % (-2 * Parametro(ruidoHeur)) - Parametro(ruidoHeur);
+	if (Parametro(RUIDO_HEURISTICA) > 0)
+		heuristica += TRand::rand() % Parametro(RUIDO_HEURISTICA);
+	if (Parametro(RUIDO_HEURISTICA) < 0)
+		heuristica += TRand::rand() % (-2 * Parametro(RUIDO_HEURISTICA)) - Parametro(RUIDO_HEURISTICA);
 	return heuristica;
 }
 
@@ -531,16 +531,16 @@ int TProcuraConstrutiva::Heuristica(void) {
 // Metodo para ser chamado antes de analisar cada sucessor
 void TProcuraConstrutiva::DebugExpansao(int sucessor, int sucessores, bool duplo)
 {
-	if (Parametro(nivelDebug) >= passos) {
+	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 		if (sucessor > 0)
 			NovaLinha(false);
 
 		if (sucessor == 0 && sucessores == 1) { // só um ramo
-			DebugRamo(Parametro(nivelDebug) < completo ? '-' : ' ', duplo ? '#' : '+');
+			DebugRamo(Parametro(NIVEL_DEBUG) < COMPLETO ? '-' : ' ', duplo ? '#' : '+');
 			ramo += ' '; // a ser impresso nesta posição nas linhas seguintes
 		}
 		else if (sucessor == 0) { // início e continua
-			DebugRamo(Parametro(nivelDebug) < completo ? '-' : ' ', duplo ? '#' : '+');
+			DebugRamo(Parametro(NIVEL_DEBUG) < COMPLETO ? '-' : ' ', duplo ? '#' : '+');
 			ramo += (duplo ? '/' : '|'); // a ser impresso nesta posição nas linhas seguintes
 		}
 		else if (sucessor > 0 && sucessor < sucessores - 1) { // no meio e continua
@@ -564,21 +564,21 @@ void TProcuraConstrutiva::DebugRamo(char ramo, char folha) {
 // Metodo para ser chamado quando nao ha sucessores ou ha um corte de profundidade
 void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 {
-	if (Parametro(nivelDebug) >= passos) {
+	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 		if (sucessores < 0) {
-			if (Parametro(nivelDebug) < completo) {
+			if (Parametro(NIVEL_DEBUG) < COMPLETO) {
 				printf("%c ", '='); // corte de profundidade  
 				DebugEstado();
-				if (Parametro(nivelDebug) >= detalhe)
+				if (Parametro(NIVEL_DEBUG) >= DETALHE)
 					Debug();
 			}
 		}
 		else if (sucessores > 0)
 			ramo.Pop();
-		else if (Parametro(nivelDebug) < completo) { // ramo em que nao e possivel continuar
+		else if (Parametro(NIVEL_DEBUG) < COMPLETO) { // ramo em que nao e possivel continuar
 			printf("%c ", '&');
 			DebugEstado();
-			if (Parametro(nivelDebug) >= detalhe)
+			if (Parametro(NIVEL_DEBUG) >= DETALHE)
 				Debug();
 		}
 	}
@@ -587,7 +587,7 @@ void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 // Encontrou uma solucao
 void TProcuraConstrutiva::DebugSolucao(bool continuar)
 {
-	if (Parametro(nivelDebug) > nada && SolucaoCompleta()) {
+	if (Parametro(NIVEL_DEBUG) > NADA && SolucaoCompleta()) {
 		printf(" Solução encontrada!");
 		if (!continuar)
 			ramo = {}; 
@@ -595,9 +595,9 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 		printf("(g:%d)", custo);
 	}
 	else {
-		if (Parametro(nivelDebug) > atividade)
+		if (Parametro(NIVEL_DEBUG) > ATIVIDADE)
 			Debug();
-		if (Parametro(nivelDebug) >= passos && !continuar)
+		if (Parametro(NIVEL_DEBUG) >= PASSOS && !continuar)
 			ramo.Pop();
 	}
 }
@@ -605,14 +605,14 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 // Informacao de debug na chamada ao metodo recursivo
 void TProcuraConstrutiva::DebugChamada(void)
 {
-	if (Parametro(nivelDebug) == atividade && expansoes % 1000 == 0)
+	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
 		printf("#");
-	if (Parametro(nivelDebug) > detalhe) {
+	if (Parametro(NIVEL_DEBUG) > DETALHE) {
 		// neste nível, cada estado expandido é visualizado, não apenas os estados folha
 		DebugEstado();
 		if (pai != NULL)
 			printf(" %s", pai->Acao(this)); // mostra sempre a ação
-		if (Parametro(verAcoes) == 1 || pai == NULL)
+		if (Parametro(VER_ACOES) == 1 || pai == NULL)
 			Debug();
 		NovaLinha();
 	}
@@ -629,18 +629,18 @@ void TProcuraConstrutiva::NovaLinha(bool tudo)
 // Passo no algoritmo em largura
 void TProcuraConstrutiva::DebugPasso(void)
 {
-	if (Parametro(nivelDebug) == atividade && expansoes % 1000 == 0)
+	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
 		printf("#");
-	if (Parametro(nivelDebug) >= passos) {
+	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 		printf("\n");
 		DebugEstado();
 	}
-	if (Parametro(nivelDebug) > passos)
+	if (Parametro(NIVEL_DEBUG) > PASSOS)
 		Debug();
 }
 // Mostrar sucessores
 void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
-	if (Parametro(verAcoes) > 2) {
+	if (Parametro(VER_ACOES) > 2) {
 		// mostrar apenas ações
 		printf("\nAções: ");
 		for (int i = 0; i < sucessores.Count() && i < 30; i++) {
@@ -661,7 +661,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 			else
 				ramo.First() = ' ';
 			printf(" %s", Acao(sucessores[i])); // mostra sempre a ação
-			if (Parametro(verAcoes) == 1)
+			if (Parametro(VER_ACOES) == 1)
 				sucessores[i]->Debug();
 		}
 		ramo = {}; 
@@ -672,11 +672,11 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 
 // uma nova iteração de um algoritmo iterativo
 void TProcuraConstrutiva::DebugIteracao(int iteracao) {
-	if (Parametro(nivelDebug) == atividade)
+	if (Parametro(NIVEL_DEBUG) == ATIVIDADE)
 		printf("\n");
-	if (Parametro(nivelDebug) > atividade) {
+	if (Parametro(NIVEL_DEBUG) > ATIVIDADE) {
 		printf("\nIteração %d:", iteracao);
-		if (Parametro(nivelDebug) > passos)
+		if (Parametro(NIVEL_DEBUG) > PASSOS)
 			printf(" (expansões %d, gerações %d, avaliações %d)\n", expansoes, geracoes, iteracoes);
 		else
 			printf("\n");
@@ -720,14 +720,14 @@ void TProcuraConstrutiva::LimparEstatisticas(clock_t& inicio)
 
 int TProcuraConstrutiva::ExecutaAlgoritmo() {
 	int resultado = -1;
-	switch (Parametro(algoritmo)) {
-	case 1: resultado = LarguraPrimeiro(Dominio(Parametro(limite), 0)); break;
-	case 2: resultado = CustoUniforme(Dominio(Parametro(limite), 0)); break;
-	case 3: resultado = ProfundidadePrimeiro(Parametro(limite)); break;
-	case 4: resultado = MelhorPrimeiro(Parametro(limite)); break;
-	case 5: resultado = AStar(Dominio(Parametro(limite), 0)); break;
-	case 6: resultado = IDAStar(Dominio(Parametro(limite), 0)); break;
-	case 7: resultado = BranchAndBound(Dominio(Parametro(limite), 0)); break;
+	switch (Parametro(ALGORITMO)) {
+	case 1: resultado = LarguraPrimeiro(Dominio(Parametro(LIMITE), 0)); break;
+	case 2: resultado = CustoUniforme(Dominio(Parametro(LIMITE), 0)); break;
+	case 3: resultado = ProfundidadePrimeiro(Parametro(LIMITE)); break;
+	case 4: resultado = MelhorPrimeiro(Parametro(LIMITE)); break;
+	case 5: resultado = AStar(Dominio(Parametro(LIMITE), 0)); break;
+	case 6: resultado = IDAStar(Dominio(Parametro(LIMITE), 0)); break;
+	case 7: resultado = BranchAndBound(Dominio(Parametro(LIMITE), 0)); break;
 	}
 	return custo = resultado;
 }
@@ -851,8 +851,8 @@ unsigned int TProcuraConstrutiva::Hash() {
 }
 
 void TProcuraConstrutiva::LimparHT() {
-	if (Parametro(estadosRepetidos) == gerados) {
-		if (Parametro(nivelDebug) >= 1) {
+	if (Parametro(ESTADOS_REPETIDOS) == GERADOS) {
+		if (Parametro(NIVEL_DEBUG) >= ATIVIDADE) {
 			int usado = 0; // contar para calcular taxa de ocupação
 			for (int i = 0; i < TAMANHO_HASHTABLE; i++) {
 				bool limpo = true;
@@ -921,13 +921,13 @@ void TProcuraConstrutiva::Codifica(uint64_t estado[OBJETO_HASHTABLE]) {
 
 int TProcuraConstrutiva::Indicador(int id)
 {
-	if (id == indCusto)
+	if (id == IND_CUSTO)
 		return custo;
-	else if (id == indExpansoes)
+	else if (id == IND_EXPANSOES)
 		return expansoes;
-	else if (id == indGeracoes)
+	else if (id == IND_GERACOES)
 		return geracoes;
-	else if (id == indLowerBound)
+	else if (id == IND_LOWER_BOUND)
 		return lowerBound;
 	return TProcura::Indicador(id);
 }

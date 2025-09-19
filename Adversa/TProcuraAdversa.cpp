@@ -34,11 +34,11 @@ void TProcuraAdversa::ResetParametros()
 
 	// adicionar parâmetros da procura adversa
 	// alterar algoritmos
-	parametro[algoritmo] = { "Algoritmo",2,1,2,"Seleção do algoritmo de procura adversa base.", nomesAlgoritmos };
+	parametro[ALGORITMO] = { "Algoritmo",2,1,2,"Seleção do algoritmo de procura adversa base.", nomesAlgoritmos };
 
-	Parametro(limite) = 0; // procura iterativa preferencial
-	Parametro(estadosRepetidos) = 1; // nas procuras adversas, não utilizar este parametro (utilizar ordenar=2)
-	Parametro(baralharSuc) = 0; // de omissão está com valor 0, para facilitar nos testes, mas deve ficar com 1 para obter jogos distintos
+	Parametro(LIMITE) = 0; // procura iterativa preferencial
+	Parametro(ESTADOS_REPETIDOS) = 1; // nas procuras adversas, não utilizar este parametro (utilizar ordenar=2)
+	Parametro(BARALHAR_SUCESSORES) = 0; // de omissão está com valor 0, para facilitar nos testes, mas deve ficar com 1 para obter jogos distintos
 
 	// O "infinito" é dependente do problema, não faz sentido alterar senão no código
 	parametro += { "Ordenar",2,0,2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.",NULL };
@@ -80,7 +80,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 		int valor;
 		TValorEstado valorConhecido;
 
-		if (((TProcuraAdversa*)sucessores[id[i]])->ValorEstado(valorConhecido, ler) &&
+		if (((TProcuraAdversa*)sucessores[id[i]])->ValorEstado(valorConhecido, LER) &&
 			valorConhecido.nivel >= nivel)
 		{
 			valor = valorConhecido.valor;
@@ -88,15 +88,15 @@ int TProcuraAdversa::MiniMax(int nivel)
 		else {
 			// chamada recursiva, com um nível a menos, idêntico à procura em profundidade
 			valor = ((TProcuraAdversa*)sucessores[id[i]])->MiniMax(nivel - 1);
-			valorConhecido = { valor, nivel, exato };
-			((TProcuraAdversa*)sucessores[id[i]])->ValorEstado(valorConhecido, gravar);
+			valorConhecido = { valor, nivel, EXATO };
+			((TProcuraAdversa*)sucessores[id[i]])->ValorEstado(valorConhecido, GRAVAR);
 		}
 
 		// pretende-se obter o melhor resultado, que oscila entre minimizar ou maximizar
 		if (i == 0 || (minimizar ? resultado > valor : resultado < valor)) {
 			resultado = valor;
 			melhor = id[i];
-			if (nivel > 1 && Parametro(nivelDebug) >= 2) { // colocar valor actual alterado
+			if (nivel > 1 && Parametro(NIVEL_DEBUG) >= PASSOS) { // colocar valor actual alterado
 				NovaLinha();
 				printf("(%d)", resultado);
 			}
@@ -119,15 +119,15 @@ int TProcuraAdversa::Heuristica(void) {
 	TValorEstado calculado;
 	heuristica = TProcuraConstrutiva::Heuristica(); // incrementa avaliações e adiciona ruído se for caso disso
 	// valor da heurística já calculado, gravar
-	calculado = { heuristica,0,exato }; // valor da heurística com nível 0
-	ValorEstado(calculado, gravar);
+	calculado = { heuristica,0,EXATO }; // valor da heurística com nível 0
+	ValorEstado(calculado, GRAVAR);
 	return heuristica;
 }
 
 // chamar em CSubProblema::Heuristica() para verificar se a heurística já existe, ou precisa de ser calculada
 bool TProcuraAdversa::ExisteHeuritica(void) {
 	TValorEstado calculado;
-	if (ValorEstado(calculado, ler)) {
+	if (ValorEstado(calculado, LER)) {
 		heuristica = calculado.valor;
 		return true;
 	}
@@ -137,11 +137,11 @@ bool TProcuraAdversa::ExisteHeuritica(void) {
 void TProcuraAdversa::OrdenarSucessores(
 	TVector<TNo>& sucessores, TVector<int>& id, int nivel)
 {
-	if (Parametro(podaCega) > 0 &&
-		sucessores.Count() > Parametro(podaCega))
+	if (Parametro(PODA_CEGA) > 0 &&
+		sucessores.Count() > Parametro(PODA_CEGA))
 	{
 		// podar de forma aleatória, nem heurística deve ser calculada
-		while (sucessores.Count() > Parametro(podaCega)) {
+		while (sucessores.Count() > Parametro(PODA_CEGA)) {
 			int id = TRand::rand() % sucessores.Count();
 			delete sucessores[id];
 			sucessores[id] = sucessores.Last();
@@ -150,19 +150,19 @@ void TProcuraAdversa::OrdenarSucessores(
 	}
 
 	id = {};
-	if (nivel > 2 && Parametro(ordenarSucessores) >= 1) {
+	if (nivel > 2 && Parametro(ORDENAR_SUCESSORES) >= 1) {
 		CalcularHeuristicas(sucessores, &id); // id fica ordenado por heurística
 
 		if (!minimizar)
 			id.Invert();
 
 		// podar sucessores
-		if (Parametro(podaHeuristica) > 0 &&
-			Parametro(podaHeuristica) < id.Count()) {
+		if (Parametro(PODA_HEURISTICA) > 0 &&
+			Parametro(PODA_HEURISTICA) < id.Count()) {
 			TVector<TNo> manterSuc;
-			for (int i = 0; i < Parametro(podaHeuristica); i++)
+			for (int i = 0; i < Parametro(PODA_HEURISTICA); i++)
 				manterSuc += sucessores[id[i]];
-			for (int i = Parametro(podaHeuristica); i < id.Count(); i++)
+			for (int i = Parametro(PODA_HEURISTICA); i < id.Count(); i++)
 				delete sucessores[id[i]];
 			sucessores = manterSuc;
 			id = {}; 
@@ -194,7 +194,7 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 			solucao = NULL;
 			resOK = resultado;
 			nivelOK = nivel;
-			if (Parametro(nivelDebug) > 0 && solOK != NULL)
+			if (Parametro(NIVEL_DEBUG) > NADA && solOK != NULL)
 				printf("\n%d: %s (%d)", nivel, Acao(solOK), resultado);
 		}
 		else
@@ -263,7 +263,7 @@ int TProcuraAdversa::NoFolha(bool nivel) {
 		// a maximizar, entre 10 e 20, irá preferir 20, sempre é maior
 		// a minimizar, entre 10 e 20, irá preferir 10 que é menor
 	}
-	if (Parametro(nivelDebug) > 1)
+	if (Parametro(NIVEL_DEBUG) > ATIVIDADE)
 		printf(" %d", resultado);
 	return resultado;
 }
@@ -298,7 +298,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 		int valor;
 		TValorEstado valorConhecido;
 
-		if (((TProcuraAdversa*)sucessores[id[i]])->ValorEstado(valorConhecido, ler) &&
+		if (((TProcuraAdversa*)sucessores[id[i]])->ValorEstado(valorConhecido, LER) &&
 			Utilizavel(valorConhecido, nivel, alfa, beta))
 		{
 			valor = valorConhecido.valor;
@@ -306,19 +306,19 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 		else {
 			// chamada recursiva, com um nível a menos, idêntico à procura em profundidade
 			valor = ((TProcuraAdversa*)sucessores[id[i]])->MiniMaxAlfaBeta(nivel - 1, alfa, beta);
-			valorConhecido = { valor, nivel, exato };
+			valorConhecido = { valor, nivel, EXATO };
 			if (valor <= alfa)
-				valorConhecido.tipo = upperbound;  // Causado por corte alfa
+				valorConhecido.tipo = UPPER_BOUND;  // Causado por corte alfa
 			else if (valor >= beta)
-				valorConhecido.tipo = lowerbound;  // Causado por corte beta
+				valorConhecido.tipo = LOWER_BOUND;  // Causado por corte beta
 			// registar valor apenas se estiver dentro de alfa/beta (para não influenciarem o resultado)
-			((TProcuraAdversa*)sucessores[id[i]])->ValorEstado(valorConhecido, gravar);
+			((TProcuraAdversa*)sucessores[id[i]])->ValorEstado(valorConhecido, GRAVAR);
 		}
 
 		if (i == 0 || (minimizar ? resultado > valor : resultado < valor)) {
 			resultado = valor;
 			melhor = id[i];
-			if (nivel > 1 && Parametro(nivelDebug) >= 2) {
+			if (nivel > 1 && Parametro(NIVEL_DEBUG) >= PASSOS) {
 				// colocar valor actual alterado
 				NovaLinha();
 				printf("(%d)", resultado);
@@ -342,9 +342,9 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 
 bool TProcuraAdversa::Utilizavel(TValorEstado& valor, int nivel, int alfa, int beta) {
 	return valor.nivel >= nivel &&
-		(valor.tipo == exato ||
+		(valor.tipo == EXATO ||
 			valor.tipo == lowerBound && valor.valor >= beta ||
-			valor.tipo == upperbound && valor.valor <= alfa);
+			valor.tipo == UPPER_BOUND && valor.valor <= alfa);
 }
 
 
@@ -356,7 +356,7 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 			return true;
 		if (alfa >= valor) {
 			// corte alfa
-			if (Parametro(nivelDebug) > 1) {
+			if (Parametro(NIVEL_DEBUG) > ATIVIDADE) {
 				// substituir o ultimo caracter por um corte
 				ramo.Last() = '>';
 				NovaLinha();
@@ -374,7 +374,7 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 			return true;
 		if (beta <= valor) {
 			// corte beta
-			if (Parametro(nivelDebug) > 1) {
+			if (Parametro(NIVEL_DEBUG) > ATIVIDADE) {
 				ramo.Last() = '>';
 				NovaLinha();
 				printf(" beta(%d)", beta);
@@ -399,7 +399,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
 	instancias -= (-1);
-	ConfiguracaoAtual(atual, ler);
+	ConfiguracaoAtual(atual, LER);
 	if (configuracoes.Count() == 0) {
 		// não foram feitas configurações, utilizar a atual 
 		configuracoes.Count(1);
@@ -435,8 +435,8 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 					Inicializar();
 					// jogar ora de brancas ora de pretas, até o jogo terminar
 					while (!SolucaoCompleta()) {
-						ConfiguracaoAtual(configuracoes[njogada % 2 == 0 ? brancas : pretas], gravar);
-						TRand::srand(Parametro(seed));
+						ConfiguracaoAtual(configuracoes[njogada % 2 == 0 ? brancas : pretas], GRAVAR);
+						TRand::srand(Parametro(SEMENTE));
 						inicioCorrida = clock();
 						LimparEstatisticas(inicioCorrida);
 						resultado = ExecutaAlgoritmo();
@@ -445,8 +445,8 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 							const char* strAcao = Acao(solucao);
 							Copiar(solucao);
 							if (mostrarSolucoes) {
-								if (Parametro(verAcoes) == 1 ||
-									njogada % Parametro(verAcoes) == 0) {
+								if (Parametro(VER_ACOES) == 1 ||
+									njogada % Parametro(VER_ACOES) == 0) {
 									printf("\n%s %d %s",
 										(njogada % 2 == 0 ? "Brancas" : "Pretas"),
 										(njogada / 2) + 1, strAcao);
@@ -506,9 +506,9 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 
 	}
 
-	ConfiguracaoAtual(atual, gravar);
+	ConfiguracaoAtual(atual, GRAVAR);
 	instancia.valor = backupID;
-	TRand::srand(Parametro(seed));
+	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
 }
 
@@ -546,9 +546,9 @@ void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, FILE* f) {
 
 int TProcuraAdversa::ExecutaAlgoritmo() {
 	int resultado = -1;
-	if (Parametro(ordenarSucessores) == 2) {
-		Parametro(estadosRepetidos) = gerados;
-		if (reutilizadoAvaliacao > 0 && Parametro(nivelDebug) >= 1) {
+	if (Parametro(ORDENAR_SUCESSORES) == 2) {
+		Parametro(ESTADOS_REPETIDOS) = GERADOS;
+		if (reutilizadoAvaliacao > 0 && Parametro(NIVEL_DEBUG) >= ATIVIDADE) {
 			float taxa = 1.0 * reutilizadoAvaliacao / colocadosHT;
 			LimparHT();
 			printf(" HT: reutilização %.2f vezes ", taxa);
@@ -556,11 +556,11 @@ int TProcuraAdversa::ExecutaAlgoritmo() {
 		else
 			LimparHT();
 		reutilizadoAvaliacao = 0;
-		Parametro(estadosRepetidos) = ignorados;
+		Parametro(ESTADOS_REPETIDOS) = IGNORADOS;
 	}
-	switch (Parametro(algoritmo)) {
-	case 1: resultado = MiniMax(Dominio(Parametro(limite), 0)); break;
-	case 2: resultado = MiniMaxAlfaBeta(Dominio(Parametro(limite), 0)); break;
+	switch (Parametro(ALGORITMO)) {
+	case 1: resultado = MiniMax(Dominio(Parametro(LIMITE), 0)); break;
+	case 2: resultado = MiniMaxAlfaBeta(Dominio(Parametro(LIMITE), 0)); break;
 	}
 	return resultado;
 }
@@ -590,10 +590,10 @@ bool TProcuraAdversa::ExisteHT() {
 
 
 bool TProcuraAdversa::ValorEstado(TValorEstado& valor, int operacao) {
-	if (Parametro(ordenarSucessores) != 2)
+	if (Parametro(ORDENAR_SUCESSORES) != 2)
 		return false;
 	ExisteHT(); // calcula indiceHT
-	if (operacao == ler) {
+	if (operacao == LER) {
 		if (indiceHT >= 0 && valorHT[indiceHT].nivel >= 0) {
 			valor = valorHT[indiceHT];
 			reutilizadoAvaliacao++;

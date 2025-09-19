@@ -8,16 +8,17 @@ typedef TProcuraMelhorativa* TPonto;
 
 // nomes dos parâmetros fixos na procura melhorativa
 enum EMelhorativas {
-	populacaoAE = parametrosProcura, probCruzarAE,
-	probMutarAE, selecaoAE, pressaoAE, tamanhoTorneioAE, probMelhorTorneioAE,
-	sobrevivenciaAE, percDescendentesAE, qRoundRobinAE, elitismoAE,
-	distMinimaAG, movePrimeiroEM, parametrosMelhorativas
+	POPULACAO_AE = PARAMETROS_PROCURA, PROB_CRUZAR_AE,
+	PROB_MUTAR_AE, SELECAO_AE, PRESSAO_AE, TAMANHO_TORNEIO_AE, 
+	PROB_MELHOR_TORNEIO_AE, SOBREVIVENCIA_AE, PERC_DESCENDENTES_AE, 
+	Q_ROUND_ROBIN_AE, ELITISMO_AE, DIST_MINIMA_AG, MOVE_PRIMEIRO_EM, 
+	PARAMETROS_MELHORATIVA
 };
 
 enum EIndicadoresConstrutiva {
-	indEpocas = indProcura,    ///< Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
-	indGeracoes,               ///< número de estados gerados durante a procura
-	indMelhorativa             ///< Marcador para permitir a extensão do enum em subclasses.
+	IND_EPOCAS = IND_PROCURA,    ///< Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
+	IND_GERACOES,               ///< número de estados gerados durante a procura
+	IND_MELHORATIVA             ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
 

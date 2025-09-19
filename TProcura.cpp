@@ -73,11 +73,11 @@ void TProcura::ResetParametros()
 // retorna o valor do indicador[id]
 int TProcura::Indicador(int id) {
 	switch (id) {
-	case indResultado:
+	case IND_RESULTADO:
 		return resultado;
-	case indTempo:
+	case IND_TEMPO:
 		return tempo;
-	case indIteracoes:
+	case IND_ITERACOES:
 		return iteracoes;
 	}
 	return 0;
@@ -86,7 +86,7 @@ int TProcura::Indicador(int id) {
 // Escrever informacao de debug sobre o objecto atual
 void TProcura::Debug(void)
 {
-	if (Parametro(nivelDebug) > nada)
+	if (Parametro(NIVEL_DEBUG) > NADA)
 		printf("\nTProcura::Debug() método não redefinido.");
 }
 
@@ -95,7 +95,7 @@ void TProcura::LimparEstatisticas(clock_t& inicio)
 {
 	resultado = tempo = iteracoes = 0;
 	inicio = clock();
-	instanteFinal = inicio + Parametro(limiteTempo) * CLOCKS_PER_SEC;
+	instanteFinal = inicio + Parametro(LIMITE_TEMPO) * CLOCKS_PER_SEC;
 	memoriaEsgotada = false;
 }
 
@@ -107,7 +107,7 @@ void TProcura::TesteManual(const char* nome)
 	clock_t inicio;
 	TVector<TResultado> resultados;
 	ResetParametros();
-	TRand::srand(Parametro(seed));
+	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
 	LimparEstatisticas(inicio);
 	while (true) {
@@ -123,7 +123,7 @@ ____________________________________________________________________\n\
 			return;
 		switch (Dominio(selecao, 0, 9)) {
 		case 0: return;
-		case 1: TRand::srand(Parametro(seed)); SolicitaInstancia(); Inicializar(); break;
+		case 1: TRand::srand(Parametro(SEMENTE)); SolicitaInstancia(); Inicializar(); break;
 		case 2: Explorar(); break;
 		case 3: EditarParametros(); break;
 		case 4: MostrarSolucao(); break;
@@ -259,11 +259,11 @@ int TProcura::NovaConfiguracao(TVector<int>& parametros)
 
 // gravar (ou ler) a configuração atual
 void TProcura::ConfiguracaoAtual(TVector<int>& parametros, int operacao) {
-	if (operacao == gravar) {
+	if (operacao == GRAVAR) {
 		for (int i = 0; i < parametro.Count() && i < parametros.Count(); i++)
 			Parametro(i) = parametros[i];
 	}
-	else if (operacao == ler) {
+	else if (operacao == LER) {
 		parametros = {};
 		for (int i = 0; i < parametro.Count(); i++)
 			parametros += Parametro(i);
@@ -363,7 +363,7 @@ void TProcura::EditarConfiguracoes() {
 	int id = -1, auxID;
 	char* str;
 
-	ConfiguracaoAtual(atual, ler);
+	ConfiguracaoAtual(atual, LER);
 
 	id = NovaConfiguracao(atual);
 
@@ -396,10 +396,10 @@ Comando: ");
 		else {
 			InserirConfiguracoes(str, atual);
 			configuracoes[id] = atual; // alterar atual se necessário
-			ConfiguracaoAtual(atual, gravar);
+			ConfiguracaoAtual(atual, GRAVAR);
 		}
 	} while (true);
-	ConfiguracaoAtual(atual, gravar);
+	ConfiguracaoAtual(atual, GRAVAR);
 }
 
 void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
@@ -495,7 +495,7 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 	// visualizar configurações atuais, assinalando a atualmente escolhida
 	printf("\n- Configurações geradas (total: %d) -", configuracoes.Count());
 	for (int i = 0; i < configuracoes.Count(); i++) {
-		ConfiguracaoAtual(configuracoes[i], gravar);
+		ConfiguracaoAtual(configuracoes[i], GRAVAR);
 		MostraParametros(detalhe, &distinto);
 		printf(" [%d]", i + 1);
 		if (i == atual)
@@ -514,7 +514,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes, char
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
 	instancias -= (-1);
-	ConfiguracaoAtual(atual, ler);
+	ConfiguracaoAtual(atual, LER);
 	if (configuracoes.Count() == 0) {
 		// não foram feitas configurações, utilizar a atual
 		configuracoes.Count(1);
@@ -522,12 +522,12 @@ void TProcura::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes, char
 	}
 	// percorrer todas as instâncias
 	for (int configuracao = 0; configuracao < configuracoes.Count(); configuracao++) {
-		ConfiguracaoAtual(configuracoes[configuracao], gravar);
+		ConfiguracaoAtual(configuracoes[configuracao], GRAVAR);
 		MostraParametros();
 		for (auto inst : instancias) {
 			instancia.valor = inst;
 			clock_t inicioCorrida;
-			TRand::srand(Parametro(seed));
+			TRand::srand(Parametro(SEMENTE));
 			// carregar instância
 			Inicializar();
 			// executar um algoritmo 
@@ -578,9 +578,9 @@ void TProcura::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes, char
 			printf("\nErro ao gravar ficheiro %s.", str);
 	}
 
-	ConfiguracaoAtual(atual, gravar);
+	ConfiguracaoAtual(atual, GRAVAR);
 	instancia.valor = backupID;
-	TRand::srand(Parametro(seed));
+	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
 }
 
@@ -642,9 +642,9 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 					strcat(argParametros, " ");
 					strcat(argParametros, argv[i]);
 				}
-				ConfiguracaoAtual(base, ler);
+				ConfiguracaoAtual(base, LER);
 				InserirConfiguracoes(argParametros, base);
-				ConfiguracaoAtual(base, gravar);
+				ConfiguracaoAtual(base, GRAVAR);
 				break;
 			}
 		}
@@ -737,7 +737,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 		printf("----------|");
 
 	for (auto res : resultados) {
-		if (Registo(res, indResultado) >= -1)
+		if (Registo(res, IND_RESULTADO) >= -1)
 			total[res.configuracao].instancia++;
 		printf("\n%3d |%3d |", res.instancia, res.configuracao + 1);
 
@@ -855,25 +855,25 @@ void TProcura::BarraTorneio(bool nomes) {
 
 int TProcura::MelhorResultado(TResultado base, TResultado alternativa) {
 	// se não resolvido por ambos, retornar igualdade (assumir código -1 para impossível, -2 para não resolvido, menor é melhor)
-	if (Registo(base, indResultado) == -2 && Registo(alternativa, indResultado) == -2)
+	if (Registo(base, IND_RESULTADO) == -2 && Registo(alternativa, IND_RESULTADO) == -2)
 		return 0;
 	// se igual no custo e o tempo menor que 100, retornar igualdade
-	if (Registo(base, indResultado) == Registo(alternativa, indResultado) &&
-		abs(Registo(base, indTempo) - Registo(alternativa, indTempo)) / 100 == 0)
+	if (Registo(base, IND_RESULTADO) == Registo(alternativa, IND_RESULTADO) &&
+		abs(Registo(base, IND_TEMPO) - Registo(alternativa, IND_TEMPO)) / 100 == 0)
 		return 0;
 	// primeiro custo (ou não resolvido, -2)
-	if ((Registo(base, indResultado) == -2 &&
-		Registo(alternativa, indResultado) > -2) ||
-		(Registo(alternativa, indResultado) > 0 &&
-			Registo(base, indResultado) > Registo(alternativa, indResultado)))
+	if ((Registo(base, IND_RESULTADO) == -2 &&
+		Registo(alternativa, IND_RESULTADO) > -2) ||
+		(Registo(alternativa, IND_RESULTADO) > 0 &&
+			Registo(base, IND_RESULTADO) > Registo(alternativa, IND_RESULTADO)))
 		return -1;
-	if ((Registo(base, indResultado) > -2 &&
-		Registo(alternativa, indResultado) == -2) ||
-		(Registo(base, indResultado) > 0 &&
-			Registo(alternativa, indResultado) > Registo(base, indResultado)))
+	if ((Registo(base, IND_RESULTADO) > -2 &&
+		Registo(alternativa, IND_RESULTADO) == -2) ||
+		(Registo(base, IND_RESULTADO) > 0 &&
+			Registo(alternativa, IND_RESULTADO) > Registo(base, IND_RESULTADO)))
 		return 1;
 	// agora o tempo
-	return Registo(base, indTempo) < Registo(alternativa, indTempo) ? 1 : -1;
+	return Registo(base, IND_TEMPO) < Registo(alternativa, IND_TEMPO) ? 1 : -1;
 }
 
 void TProcura::ExecucaoTerminada(clock_t inicio)

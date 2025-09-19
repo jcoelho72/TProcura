@@ -7,11 +7,11 @@
 static std::mt19937_64 rng{ std::random_device{}() };
 
 enum EParametrosVector {
-	estruturaDados = parametrosProcura         ///< estrutura base a utilizar
+	estruturaDados = PARAMETROS_PROCURA         ///< estrutura base a utilizar
 };
 
 enum EIndicadoresVector {
-	indOrdenar = indProcura, ///< verifica se está ordenado
+	indOrdenar = IND_PROCURA, ///< verifica se está ordenado
 };
 
 void CTesteTVector::ResetParametros()
@@ -38,7 +38,7 @@ void CTesteTVector::ResetParametros()
 
 	TProcura::ResetParametros();
 
-	parametro[algoritmo] = { "Método",1,1,12,"Método para teste.", nomesMetodo };
+	parametro[ALGORITMO] = { "Método",1,1,12,"Método para teste.", nomesMetodo };
 
 	// estrutura de dados
 	parametro += { "Estrutura",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura };
@@ -101,7 +101,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 		if (iteracoes > 0)
 			Inicializar();
 		if (Parametro(estruturaDados) == 1) { // TVector
-			switch (Parametro(algoritmo)) {
+			switch (Parametro(ALGORITMO)) {
 			case 1: // add
 				dadosA = {}; 
 				for (int i = 0; i < instancia.valor * 1000000; i++)
@@ -142,7 +142,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 			}
 		}
 		else { // std::vector ou TVegtor/std::algorithm
-			switch (Parametro(algoritmo)) {
+			switch (Parametro(ALGORITMO)) {
 			case 1: // add
 				if (Parametro(estruturaDados) == 2) {
 					stdA.clear();
@@ -324,7 +324,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 
 		iteracoes++;
 		// se não foi definido limite de iterações, fazer apenas uma
-		if (Parametro(limiteIteracoes) == 0)
+		if (Parametro(LIMITE_ITERACOES) == 0)
 			break;
 	}
 	return 1;
@@ -336,7 +336,7 @@ int CTesteTVector::Indicador(int id)
 		if (Parametro(estruturaDados) != 2) {
 			for (int i = 0; i < dadosA.Count() - 1; i++)
 				if (dadosA[i] > dadosA[i + 1]) {
-					if (Parametro(nivelDebug) >= 4)
+					if (Parametro(NIVEL_DEBUG) >= 4)
 						printf("\nordem %d > %d (%d,%d)",
 							i, i + 1, dadosA[i], dadosA[i + 1]);
 					return 0;
@@ -345,7 +345,7 @@ int CTesteTVector::Indicador(int id)
 		else {
 			for (int i = 0; i < stdA.size() - 1; i++)
 				if (stdA[i] > stdA[i + 1]) {
-					if (Parametro(nivelDebug) >= 4)
+					if (Parametro(NIVEL_DEBUG) >= 4)
 						printf("\nordem %d > %d (%d,%d)",
 							i, i + 1, stdA[i], stdA[i + 1]);
 					return 0;

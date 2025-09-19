@@ -3,7 +3,7 @@
 
 // nomes dos parâmetros fixos na codificação binária
 enum ECodificacaoBinaria {
-	cruzamentoCB = parametrosMelhorativas, 
+	cruzamentoCB = PARAMETROS_MELHORATIVA, 
 	mutacaoCB, vizinhancaCB, parametrosCodificacaoBinaria
 };
 

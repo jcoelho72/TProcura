@@ -15,10 +15,10 @@
 
 
 enum EIndicadoresProcura {
-	indResultado = 0, ///< resultado do algoritmo
-	indTempo,         ///< tempo em milisegundos consumidos
-	indIteracoes,     ///< número de iterações consumidas
-	indProcura        ///< Marcador para permitir a extensão do enum em subclasses.
+	IND_RESULTADO = 0, ///< resultado do algoritmo
+	IND_TEMPO,         ///< tempo em milisegundos consumidos
+	IND_ITERACOES,     ///< número de iterações consumidas
+	IND_PROCURA        ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
 /**
@@ -40,12 +40,12 @@ enum EIndicadoresProcura {
  * @endcode
  */
 enum EParametrosProcura {
-	algoritmo = 0,         ///< Algoritmo base a executar.
-	nivelDebug,            ///< Nível de debug, de reduzido a completo.
-	seed,                  ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
-	limiteTempo,           ///< Tempo limite em segundos. 
-	limiteIteracoes,      ///< Número máximo de iterações (0 significa sem limite).
-	parametrosProcura      ///< Marcador para permitir a extensão do enum em subclasses.
+	ALGORITMO = 0,         ///< Algoritmo base a executar.
+	NIVEL_DEBUG,            ///< Nível de debug, de reduzido a completo.
+	SEMENTE,                  ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
+	LIMITE_TEMPO,           ///< Tempo limite em segundos. 
+	LIMITE_ITERACOES,      ///< Número máximo de iterações (0 significa sem limite).
+	PARAMETROS_PROCURA      ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
 /**
@@ -61,11 +61,11 @@ enum EParametrosProcura {
  * @endcode
  */
 enum ENivelDebug {
-	nada = 0,  ///< Sem informações de debug.
-	atividade, ///< Apenas eventos principais.
-	passos,    ///< Exibe passos intermediários.
-	detalhe,   ///< Debug detalhada sobre estados e decisões.
-	completo   ///< Mostra toda a execução detalhadamente.
+	NADA = 0,  ///< Sem informações de debug.
+	ATIVIDADE, ///< Apenas eventos principais.
+	PASSOS,    ///< Exibe passos intermediários.
+	DETALHE,   ///< Debug detalhada sobre estados e decisões.
+	COMPLETO   ///< Mostra toda a execução detalhadamente.
 };
 
 /**
@@ -73,7 +73,7 @@ enum ENivelDebug {
  *
  * @note Utilizado em funções que requerem distinção entre operação de leitura e gravação.
  */
-enum EOperacao { gravar = 0, ler };
+enum EOperacao { GRAVAR = 0, LER };
 
 
 // identificação de todos os indicadores definidos
@@ -469,7 +469,7 @@ public:
 
 	bool TempoExcedido() { return instanteFinal < clock(); }
 	bool IteracoesExcedido() {
-		return Parametro(limiteIteracoes) > 0 && Parametro(limiteIteracoes) < iteracoes;
+		return Parametro(LIMITE_ITERACOES) > 0 && Parametro(LIMITE_ITERACOES) < iteracoes;
 	}
 	// ler um número, ou retorna NAO_LIDO
 	static int NovoValor(const char* prompt);
@@ -496,7 +496,7 @@ public:
 	/// Debug(detalhe, false, "\nPasso %d | Melhor custo: %d", iteracoes, custo) ||
 	/// @endcode
 	bool Debug(ENivelDebug tipo, bool exato, const char* fmt, ...) {
-		int nivel = Parametro(nivelDebug);
+		int nivel = Parametro(NIVEL_DEBUG);
 		if (exato ? nivel != tipo : nivel < tipo)
 			return false;
 		va_list args;

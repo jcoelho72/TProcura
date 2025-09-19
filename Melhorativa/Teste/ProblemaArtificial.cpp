@@ -42,7 +42,7 @@ void CProblemaArtificial::ResetParametros()
 {
 	TProcuraMelhorativa::ResetParametros();
 	// limitar as iterações, para que a paragem por tempo não ocorra
-	parametro[limiteIteracoes].valor = 1000000;
+	Parametro(LIMITE_ITERACOES) = 1000000;
 }
 
 bool CProblemaArtificial::Distinto(TPonto estado) {

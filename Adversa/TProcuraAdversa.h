@@ -12,19 +12,19 @@
 *
 */	
 enum EParametrosAdversa { 
-	ordenarSucessores = parametrosConstrutivas, ///< opção de ordenar sucessores por heurística, ou por último valor registado
-	podaHeuristica,      ///< permite cortar sucessores, mas calcula a heurística a todos, de modo a mantendo os melhores
-	podaCega,		     ///< corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória
-	parametrosAdversas   ///< marcador para permitir a extensão do enum em subclasses.
+	ORDENAR_SUCESSORES = PARAMETROS_CONSTRUTIVA, ///< opção de ordenar sucessores por heurística, ou por último valor registado
+	PODA_HEURISTICA,      ///< permite cortar sucessores, mas calcula a heurística a todos, de modo a mantendo os melhores
+	PODA_CEGA,		     ///< corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória
+	PARAMETROS_ADVERSA   ///< marcador para permitir a extensão do enum em subclasses.
 };
 
 /**
 * @brief tipo de valor resultante do minimax com cortes alfa/beta
 */
 enum ETipoValor { 
-	exato,      ///< o valor foi calculado sem cortes, ou seja, não sofreu influência de alfa ou beta;
-	lowerbound, ///< o valor foi afetado por um corte de beta (ou seja, ele é pelo menos esse valor, mas pode ser maior);
-	upperbound  ///< o valor foi afetado por um corte de alfa (ou seja, ele é no máximo esse valor, mas pode ser menor).
+	EXATO,      ///< o valor foi calculado sem cortes, ou seja, não sofreu influência de alfa ou beta;
+	LOWER_BOUND, ///< o valor foi afetado por um corte de beta (ou seja, ele é pelo menos esse valor, mas pode ser maior);
+	UPPER_BOUND  ///< o valor foi afetado por um corte de alfa (ou seja, ele é no máximo esse valor, mas pode ser menor).
 };
 
 /**

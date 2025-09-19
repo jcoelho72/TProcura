@@ -22,7 +22,7 @@ TProcuraConstrutiva* CPuzzle8::Duplicar(void)
 
 void CPuzzle8::Inicializar(void)
 {
-	int backup = Parametro(estadosRepetidos);
+	int backup = Parametro(ESTADOS_REPETIDOS);
 	TProcuraConstrutiva::Inicializar();
 	// colocar a posição final
 	puzzle.Count(9);
@@ -30,7 +30,7 @@ void CPuzzle8::Inicializar(void)
 		puzzle[i] = i;
 	zero=0;
 	// efectuar trocas ao acaso
-	Parametro(estadosRepetidos) = ignorados;
+	Parametro(ESTADOS_REPETIDOS) = IGNORADOS;
 	for (int i = 0; i < instancia.valor; i++) { // utilizar o ID da instância
 		TVector<TNo> sucessores;
 		Sucessores(sucessores);
@@ -39,7 +39,7 @@ void CPuzzle8::Inicializar(void)
 		zero = ((CPuzzle8*)filho)->zero;
 		LibertarVector(sucessores);
 	}
-	Parametro(estadosRepetidos) = backup;
+	Parametro(ESTADOS_REPETIDOS) = backup;
 	tamanhoCodificado = 1; // apenas um inteiro de 64 bits é suficiente para 4*9 bits
 }
 
@@ -160,7 +160,7 @@ void CPuzzle8::MostrarSolucao(void) {
 void CPuzzle8::ResetParametros() {
 	TProcuraConstrutiva::ResetParametros();
 	// opções de omissão:
-	Parametro(estadosRepetidos) = ascendentes;
+	Parametro(ESTADOS_REPETIDOS) = ASCENDENTES;
 	// instâncias
 	instancia = { NULL, 40,1,1000, NULL, NULL };
 }

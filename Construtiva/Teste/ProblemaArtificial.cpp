@@ -104,9 +104,9 @@ void CProblemaArtificial::ResetParametros()
 {
 	TProcuraConstrutiva::ResetParametros();
 	// ação e estado é o mesmo neste problema artificial, já que um estado muda completamente do pai para o filho
-	Parametro(verAcoes) = 1; 
+	Parametro(VER_ACOES) = 1; 
 	// limitar as iterações, para que a paragem por tempo não ocorra
-	Parametro(limiteIteracoes) = 1000000;
+	Parametro(LIMITE_ITERACOES) = 1000000;
 
 	// definir as instâncias
 	instancia = { "Problema", 1,1,10, "Caracteristicas dos problemas", NULL };

@@ -40,11 +40,11 @@ void TProcuraMelhorativa::ResetParametros()
 	};
 	TProcura::ResetParametros();
 
-	parametro[limiteIteracoes].valor = 1000000;
+	parametro[LIMITE_ITERACOES].valor = 1000000;
 
 	// adicionar parâmetros da procura melhorativa
 	// alterar algoritmos
-	parametro[algoritmo] = { "Algoritmo",1,1,3,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
+	parametro[ALGORITMO] = { "Algoritmo",1,1,3,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
 
 	// população 
 	parametro += { "populacaoAE",20,2,1000000, "Número de elementos em cada geração, utilizado nos Algoritmos Evolutivos",NULL };
@@ -75,9 +75,9 @@ Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos
 	// move primeiro
 	parametro += { "movePrimeiroEM",1,1,2, "Utilizado na Escalada do Monte", nomesMovePrimeiro };
 
-	indicador += { "Épocas","Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", indEpocas };
-	indicador += { "Gerações","número de estados gerados", indGeracoes };
-	indAtivo.Add(indEpocas).Add(indGeracoes);
+	indicador += { "Épocas","Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", IND_EPOCAS };
+	indicador += { "Gerações","número de estados gerados", IND_GERACOES };
+	indAtivo.Add(IND_EPOCAS).Add(IND_GERACOES);
 }
 
 // Retorna o valor da solucao completa actual.
@@ -93,7 +93,7 @@ int TProcuraMelhorativa::Avaliar(void)
 // retorna a avaliacao do resultado actual
 int TProcuraMelhorativa::EscaladaDoMonte()
 {
-	bool movePrimeiro = (parametro[movePrimeiroEM].valor == 1);
+	bool movePrimeiro = (parametro[MOVE_PRIMEIRO_EM].valor == 1);
 	TPonto atual = this; // estado atual
 	TPonto melhor = this; // melhor estado para todas as escaladas
 	int procuras = 0;
@@ -164,17 +164,17 @@ int TProcuraMelhorativa::EscaladaDoMonte()
 }
 
 void TProcuraMelhorativa::DebugPassoEM(TPonto solucao) {
-	if (parametro[nivelDebug].valor > 2) {
-		if (parametro[nivelDebug].valor > 3)
+	if (parametro[NIVEL_DEBUG].valor > PASSOS) {
+		if (parametro[NIVEL_DEBUG].valor > DETALHE)
 			solucao->Debug();
 	}
 }
 
 
 void TProcuraMelhorativa::DebugOptimoLocal(TPonto solucao) {
-	if (parametro[nivelDebug].valor > 1) {
+	if (parametro[NIVEL_DEBUG].valor > ATIVIDADE) {
 		printf(">> %d]", solucao->custo);
-		if (parametro[nivelDebug].valor > 2) {
+		if (parametro[NIVEL_DEBUG].valor > PASSOS) {
 			solucao->Debug();
 		}
 	}
@@ -182,17 +182,17 @@ void TProcuraMelhorativa::DebugOptimoLocal(TPonto solucao) {
 
 void TProcuraMelhorativa::DebugInicioEM(int ID, TPonto solucao)
 {
-	if (parametro[nivelDebug].valor > 1) {
-		if (parametro[nivelDebug].valor > 2)
+	if (parametro[NIVEL_DEBUG].valor > ATIVIDADE) {
+		if (parametro[NIVEL_DEBUG].valor > PASSOS)
 			printf("\n");
 		printf("\nEscalada %d - ", ID);
 		solucao->Debug();
 	}
-	if (parametro[nivelDebug].valor > 1) {
-		if (parametro[nivelDebug].valor > 2)
+	if (parametro[NIVEL_DEBUG].valor > ATIVIDADE) {
+		if (parametro[NIVEL_DEBUG].valor > PASSOS)
 			printf("\n");
 		printf(" [%d >> ", solucao->custo);
-		if (parametro[nivelDebug].valor > 3)
+		if (parametro[NIVEL_DEBUG].valor > DETALHE)
 			solucao->Debug();
 	}
 }
@@ -257,15 +257,15 @@ void TProcuraMelhorativa::CalcularAvaliacoes(TVector<TPonto>& vizinhos, int& mel
 // parametros para a mutacao e cruzamento podem ser dados em variaveis globais
 int TProcuraMelhorativa::AlgoritmoGenetico()
 {
-	int populacao = parametro[populacaoAE].valor;
-	int probablidadeMutacao = parametro[probMutarAE].valor;
-	int distanciaMinima = parametro[distMinimaAG].valor;
+	int populacao = parametro[POPULACAO_AE].valor;
+	int probablidadeMutacao = parametro[PROB_MUTAR_AE].valor;
+	int distanciaMinima = parametro[DIST_MINIMA_AG].valor;
 	TVector<TPonto> geracaoAntiga, geracaoNova;
 	TVector<int> id;
 	TPonto melhor = this; // melhor estado para toda a procura
 	NovaSolucao();
 	melhor->Avaliar(); // avaliar o proprio
-	if (parametro[nivelDebug].valor > 1)
+	if (parametro[NIVEL_DEBUG].valor > ATIVIDADE)
 		printf("\nPopulação inicial (%d elementos)", populacao);
 	// construir a geracao inicial
 	for (int i = 0; i < populacao; i++) {
@@ -348,16 +348,16 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 
 void TProcuraMelhorativa::DebugCruzamentoAG(int gPai, int gMae, int gFilho, int mutou)
 {
-	if (parametro[nivelDebug].valor > 2)
+	if (parametro[NIVEL_DEBUG].valor > PASSOS)
 		printf("\n  Cruzar g %d x %d -> %d%s",
 			gPai, gMae, gFilho, mutou ? "*" : "");
 }
 
 void TProcuraMelhorativa::DebugPassoAG(int pop, int min, int max)
 {
-	if (parametro[nivelDebug].valor == 1)
+	if (parametro[NIVEL_DEBUG].valor == ATIVIDADE)
 		printf(".");
-	else if (parametro[nivelDebug].valor >= 2)
+	else if (parametro[NIVEL_DEBUG].valor >= PASSOS)
 		printf("\nÉpoca %d #%d - %d|%d [%d-%d]",
 			epocas, pop, geracoes, iteracoes, min, max);
 }
@@ -414,23 +414,23 @@ int TProcuraMelhorativa::AlgoritmoEvolutivo()
 }
 
 void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) {
-	if (Parametro(nivelDebug) == atividade) {
+	if (Parametro(NIVEL_DEBUG) == ATIVIDADE) {
 		if (epoca % 1000 == 0)
 			printf(".");
 	}
 	else {
-		Debug(passos, true, "\nÉpoca %d", epoca) ||
-			Debug(detalhe, true, "\nÉpoca %d | Melhor custo: %d", epoca, custo) ||
-			Debug(completo, true, "\nÉpoca %d\n  Melhor custo: %d\n  Pior custo: %d\n  Tempo disponível: %.2f\n  Iterações: %d",
-				epoca, custo, MelhorCusto(populacao, true),
-				(double)(instanteFinal - clock()) / CLOCKS_PER_SEC,
-				iteracoes);
+		Debug(PASSOS, true, "\nÉpoca %d", epoca) ||
+		Debug(DETALHE, true, "\nÉpoca %d | Melhor custo: %d", epoca, custo) ||
+		Debug(COMPLETO, true, "\nÉpoca %d\n  Melhor custo: %d\n  Pior custo: %d\n  Tempo disponível: %.2f\n  Iterações: %d",
+			epoca, custo, MelhorCusto(populacao, true),
+			(double)(instanteFinal - clock()) / CLOCKS_PER_SEC,
+			iteracoes);
 	}
 }
 
 TVector<TPonto> TProcuraMelhorativa::InicializarPopulacaoAE() {
 	TVector<TPonto> populacao;
-	for (int i = 0; i < Parametro(populacaoAE) && !Parar(); i++) {
+	for (int i = 0; i < Parametro(POPULACAO_AE) && !Parar(); i++) {
 		auto novo = Duplicar();
 		novo->NovaSolucao();
 		novo->Avaliar();
@@ -443,19 +443,19 @@ TVector<TPonto> TProcuraMelhorativa::InicializarPopulacaoAE() {
 TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao) {
 	TVector<TPonto> pais;
 	// selecionar os pais, de acordo com o método escolhido
-	int descendentes = (Parametro(percDescendentesAE) * populacao.Count()) / 100;
+	int descendentes = (Parametro(PERC_DESCENDENTES_AE) * populacao.Count()) / 100;
 	int pop = populacao.Count();
 	if (descendentes < 1)
 		descendentes = 1;
 	else if (descendentes > pop)
 		descendentes = pop;
 	pais = {}; 
-	if (Parametro(selecaoAE) == 1) { // roleta
+	if (Parametro(SELECAO_AE) == 1) { // roleta
 		// roleta implementada como Stochastic Universal Sampling (SUS)
 		TVector<int> id;
 		TVector<int> custos;
 		TVector<float> probabilidades;
-		int pressao = Parametro(pressaoAE);
+		int pressao = Parametro(PRESSAO_AE);
 		OrdemValor(populacao, id);
 		for (int i = 0; i < populacao.Count(); i++) {
 			// calcular a probabilidade de um elemento ser selecionado
@@ -474,12 +474,12 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 			}
 		}
 	}
-	else if (Parametro(selecaoAE) == 3) { // uniforme
+	else if (Parametro(SELECAO_AE) == 3) { // uniforme
 		for (int i = 0; i < descendentes; i++)
 			pais += populacao.Random();
 	}
-	else if (Parametro(selecaoAE) == 2) { // torneio
-		int tamanho = Parametro(tamanhoTorneioAE);
+	else if (Parametro(SELECAO_AE) == 2) { // torneio
+		int tamanho = Parametro(TAMANHO_TORNEIO_AE);
 		for (int i = 0; i < descendentes; i++) {
 			TVector<TPonto> competidores;
 			TVector<int> id;
@@ -488,7 +488,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 			// ordenar por custo
 			OrdemValor(competidores, id);
 			// escolher melhor ou segundo melhor
-			if ((TRand::rand() % 100) < Parametro(probMelhorTorneioAE))
+			if ((TRand::rand() % 100) < Parametro(PROB_MELHOR_TORNEIO_AE))
 				pais += competidores[id[0]];
 			else
 				pais += competidores[id[1 % tamanho]];
@@ -509,7 +509,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais) {
 		}
 		else {
 			TPonto mae = pais.Pop();
-			if (TRand::rand() % 100 < Parametro(probCruzarAE)) {
+			if (TRand::rand() % 100 < Parametro(PROB_CRUZAR_AE)) {
 				// gerar um novo individuo por cruzamento
 				TPonto filho = pai->Duplicar();
 				filho->Cruzamento(pai, mae);
@@ -528,7 +528,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais) {
 	// mutar e avaliar descendentes
 	for (auto descendente : descendentes) {
 		// mudar o novo elemento, dependente da probabilidade
-		if (TRand::rand() % 100 < Parametro(probMutarAE))
+		if (TRand::rand() % 100 < Parametro(PROB_MUTAR_AE))
 			descendente->Mutar();
 		// avaliar o valor do elemento
 		descendente->Avaliar();
@@ -540,7 +540,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais) {
 
 TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& populacao, TVector<TPonto>& descendentes) {
 	TVector<TPonto> elite;
-	int nElite = Parametro(elitismoAE);
+	int nElite = Parametro(ELITISMO_AE);
 	int melhorDescendente = INT_MAX;
 	if (nElite > 0) {
 		// 1. Copiar os N melhores da população atual
@@ -552,7 +552,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		melhorDescendente = MelhorCusto(descendentes);
 	}
 
-	if (Parametro(sobrevivenciaAE) == 1) { // idade
+	if (Parametro(SOBREVIVENCIA_AE) == 1) { // idade
 		// remover os mais velhos (os que estão mais tempo na população)
 		for (int i = 0; i < descendentes.Count() && i < populacao.Count(); i++) {
 			delete populacao[i];
@@ -562,22 +562,22 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		populacao += descendentes;
 		descendentes = {}; 
 	}
-	else if (Parametro(sobrevivenciaAE) == 2) { // substituir piores
+	else if (Parametro(SOBREVIVENCIA_AE) == 2) { // substituir piores
 		populacao += descendentes;
 		descendentes = {}; 
 		TVector<int> id;
 		OrdemValor(populacao, id); // ordena por custo (melhor primeiro)
 		TVector<TPonto> novaPopulacao;
-		for (int i = 0; i < Parametro(populacaoAE); i++) {
+		for (int i = 0; i < Parametro(POPULACAO_AE); i++) {
 			novaPopulacao += populacao[id[i]];
 			populacao[id[i]] = NULL;
 		}
 		LibertarVector(populacao);
 		populacao = novaPopulacao;
 	}
-	else if (Parametro(sobrevivenciaAE) == 3) { // round-robin
+	else if (Parametro(SOBREVIVENCIA_AE) == 3) { // round-robin
 		// cada elemento compete com q outros, os que perdem mais são eliminados
-		int q = Parametro(qRoundRobinAE); // número de competidores
+		int q = Parametro(Q_ROUND_ROBIN_AE); // número de competidores
 		TVector<int> perdas;
 		populacao += descendentes;
 		descendentes = {}; 
@@ -598,7 +598,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		TVector<int> id;
 		perdas.Sort(&id);
 		TVector<TPonto> novaPopulacao;
-		for (int i = 0; i < Parametro(populacaoAE); i++) {
+		for (int i = 0; i < Parametro(POPULACAO_AE); i++) {
 			novaPopulacao += populacao[id[i]];
 			populacao[id[i]] = NULL;
 		}
@@ -629,18 +629,18 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 // Chamar sempre que uma solucao melhor que a actual e encontrada
 void TProcuraMelhorativa::DebugMelhorEncontrado(TPonto ponto)
 {
-	if (parametro[nivelDebug].valor > 0) {
+	if (parametro[NIVEL_DEBUG].valor > NADA) {
 		Debug();
 	}
-	if (parametro[nivelDebug].valor > 2)
+	if (parametro[NIVEL_DEBUG].valor > PASSOS)
 		Debug();
 }
 
 int TProcuraMelhorativa::Indicador(int id)
 {
-	if (id == indEpocas)
+	if (id == IND_EPOCAS)
 		return epocas;
-	else if (id == indGeracoes)
+	else if (id == IND_GERACOES)
 		return geracoes;
 	return TProcura::Indicador(id);
 }
@@ -653,7 +653,7 @@ void TProcuraMelhorativa::LimparEstatisticas(clock_t& inicio)
 
 int TProcuraMelhorativa::ExecutaAlgoritmo() {
 	// escolher o algoritmo a executar
-	switch (parametro[algoritmo].valor) {
+	switch (Parametro(ALGORITMO)) {
 	case 1: return EscaladaDoMonte();
 	case 2: return AlgoritmoGenetico();
 	case 3: return AlgoritmoEvolutivo();

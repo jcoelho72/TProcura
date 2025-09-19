@@ -20,11 +20,11 @@ class TProcuraConstrutiva;
 typedef TProcuraConstrutiva* TNo;
 
 enum EIndicadoresConstrutiva {
-	indCusto = indResultado,	  ///< o resultado é o custo da solução atual, sendo um upper bound 
-	indExpansoes = indProcura,    ///< número de expansões efetuadas durante a procura
-	indGeracoes,                  ///< número de estados gerados durante a procura
-	indLowerBound,			      ///< valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
-	indConstrutiva                ///< Marcador para permitir a extensão do enum em subclasses.
+	IND_CUSTO = IND_RESULTADO,	  ///< o resultado é o custo da solução atual, sendo um upper bound 
+	IND_EXPANSOES = IND_PROCURA,    ///< número de expansões efetuadas durante a procura
+	IND_GERACOES,                  ///< número de estados gerados durante a procura
+	IND_LOWER_BOUND,			      ///< valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
+	IND_CONSTRUTIVA                ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
 /**
@@ -46,13 +46,13 @@ enum EIndicadoresConstrutiva {
  * @endcode
  */
 enum EParametrosConstrutiva {
-	verAcoes = parametrosProcura, ///< Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações.
-	limite,                ///< Valor dependente do algoritmo. Exemplo: Profundidade limitada.
-	estadosRepetidos,      ///< Forma de lidar com estados repetidos (ignorá-los, ascendentes, gerados).
-	pesoAStar,             ///< Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. 
-	ruidoHeur,             ///< Ruído a adicionar à heurística para testes de robustez.
-	baralharSuc,           ///< Baralhar os sucessores ao expandir.
-	parametrosConstrutivas ///< Marcador para permitir a extensão do enum em subclasses.
+	VER_ACOES = PARAMETROS_PROCURA, ///< Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações.
+	LIMITE,                ///< Valor dependente do algoritmo. Exemplo: Profundidade limitada.
+	ESTADOS_REPETIDOS,      ///< Forma de lidar com estados repetidos (ignorá-los, ascendentes, gerados).
+	PESO_ASTAR,             ///< Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. 
+	RUIDO_HEURISTICA,             ///< Ruído a adicionar à heurística para testes de robustez.
+	BARALHAR_SUCESSORES,           ///< Baralhar os sucessores ao expandir.
+	PARAMETROS_CONSTRUTIVA ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
 
@@ -65,13 +65,13 @@ enum EParametrosConstrutiva {
  * @see EParametrosConstrutiva
  */
 enum EAlgoritmo {
-	larguraPrimeiro = 1, ///< Executa a procura em largura primeiro, algoritmo cego. @see TProcuraConstrutiva::LarguraPrimeiro()
-	custoUniforme,       ///< Executa a procura por custo uniforme, algoritmo cego. @see TProcuraConstrutiva::CustoUniforme()
-	profundidadePrimeiro,///< Executa a procura em profundidade primeiro, algoritmo cego. @see TProcuraConstrutiva::ProfundidadePrimeiro()
-	melhorPrimeiro,      ///< Executa a procura melhor primeiro, algoritmo informado. @see TProcuraConstrutiva::MelhorPrimeiro()
-	aStar,               ///< Executa a procura A*, algoritmo informado. @see TProcuraConstrutiva::AStar()
-	idAStar,             ///< Executa a procura IDA*, algoritmo informado. @see TProcuraConstrutiva::IDAStar()
-	branchAndBound       ///< Executa o algoritmo Branch-and-Bound, um algoritmo informado. @see TProcuraConstrutiva::BranchAndBound()
+	LARGURA_PRIMEIRO = 1, ///< Executa a procura em largura primeiro, algoritmo cego. @see TProcuraConstrutiva::LarguraPrimeiro()
+	CUSTO_UNIFORME,       ///< Executa a procura por custo uniforme, algoritmo cego. @see TProcuraConstrutiva::CustoUniforme()
+	PROFUNDIDADE_PRIMEIRO,///< Executa a procura em profundidade primeiro, algoritmo cego. @see TProcuraConstrutiva::ProfundidadePrimeiro()
+	MELHOR_PRIMEIRO,      ///< Executa a procura melhor primeiro, algoritmo informado. @see TProcuraConstrutiva::MelhorPrimeiro()
+	A_STAR,               ///< Executa a procura A*, algoritmo informado. @see TProcuraConstrutiva::AStar()
+	IDA_STAR,             ///< Executa a procura IDA*, algoritmo informado. @see TProcuraConstrutiva::IDAStar()
+	BRANCH_AND_BOUND       ///< Executa o algoritmo Branch-and-Bound, um algoritmo informado. @see TProcuraConstrutiva::BranchAndBound()
 };
 
 
@@ -85,9 +85,9 @@ enum EAlgoritmo {
  * @see Sucessores(), estadosRepetidos
  */
 enum EEstadosRepetidos { 
-	ignorados = 1, ///< ignorados os estados gerados repetidos
-	ascendentes,   ///< estados são comparados com ascendentes, e se forem repetidos são removidos
-	gerados        ///< estados são comparados com todos os gerados, e se forem repetidos são removidos
+	IGNORADOS = 1, ///< ignorados os estados gerados repetidos
+	ASCENDENTES,   ///< estados são comparados com ascendentes, e se forem repetidos são removidos
+	GERADOS        ///< estados são comparados com todos os gerados, e se forem repetidos são removidos
 };
 
 
@@ -701,7 +701,7 @@ public:
 	void LimparEstatisticas(clock_t &inicio) override;
 	void ExecucaoTerminada(clock_t inicio) override;
 
-	int LowerBound() { return custo + Parametro(pesoAStar) * heuristica / 100; } // f(n) = g(n) + W h(n)
+	int LowerBound() { return custo + Parametro(PESO_ASTAR) * heuristica / 100; } // f(n) = g(n) + W h(n)
 	static void LibertarVector(TVector<TNo>& vector, int excepto = -1, int maiorQue = -1);
 
 	// Chamar sempre que se quer uma nova linha com a árvore em baixo
