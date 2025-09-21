@@ -49,11 +49,11 @@ void TCodificacaoInteira::ResetParametros() {
 	parametro += {
 		{ "TIPO_CRUZAR", 1, 0, 9, "Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento, _TV("0,2,3") },
 		{ "TIPO_MUTAR", 0,0,100, "Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada elemento, em percentagem (1 a 100)", NULL, _TV("0,2,3") },
-		{ "TIPO_VIZINHO", 1,1,6, "Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca, _TV("0,1") },
+		{ "TIPO_VIZINHO", 1,1,6, "Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
 		{ "LIMITE_VIZINHOS", 0,0,1000,
 "LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite\n\
 - incDecPot2 + trocaValor - limita a diferença máxima de valores\n\
-- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL },
+- inserir + trocaPar + inverterSegmento - limita a distância entre pares" },
 		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de inteiros", nomesDistancias, _TV("0,2,3") }
 	};
 }

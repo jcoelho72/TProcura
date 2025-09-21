@@ -121,7 +121,7 @@ typedef struct SParametro {
 	const char* descricao;
 	/// @brief Nome associado a cada valor do parâmetro, útil para variáveis categóricas.
 	/// @note Especialmente relevante quando os valores não seguem uma sequência ordenada.
-	const char** nomeValores;
+	const char** nomeValores = NULL;
 	/// @brief dependência (indice do parametro, seguido de valores permitidos) - vazio não tem dependência
 	TVector<int> dependencia;
 } TParametro;

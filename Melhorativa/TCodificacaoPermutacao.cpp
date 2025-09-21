@@ -44,7 +44,7 @@ void TCodificacaoPermutacao::ResetParametros() {
 		{ "TIPO_VIZINHO", 1,1,3, "TIPO_VIZINHO: vários métodso para vizinhanças de inteiros", nomesVizinhanca, _TV("0,1") },
 		{ "LIMITE_VIZINHOS", 0,0,1000,
 "LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite\n\
-- inserir + trocaPar + inverterSegmento - limita a distância entre pares", NULL },
+- inserir + trocaPar + inverterSegmento - limita a distância entre pares" },
 		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de permutações", nomesDistancias, _TV("0,2,3") }
 	};
 }
