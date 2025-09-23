@@ -1,7 +1,9 @@
 # Variáveis
 CC = g++
+MPICC = mpic++
 CFLAGS = -Wall -g
 TARGET = TProcura
+TARGET_MPI = TProcuraMPI
 SRC = TProcura.cpp TRand.cpp Teste/CTesteTVector.cpp Teste/teste.cpp 
 FTeste = Teste/CasosTeste/outputTVector1.txt 
 
@@ -11,6 +13,10 @@ all: $(TARGET)
 # Regra para compilar o programa
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) -o $@ $^
+
+# Compilação com MPI
+mpi: $(SRC)
+    $(MPICC) $(CFLAGS) -DMPI_ATIVO -o $(TARGET_MPI) $^
 
 # Regra para testes (executada com `make check`)
 check: $(TARGET)

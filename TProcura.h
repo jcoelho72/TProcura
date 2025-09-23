@@ -381,13 +381,15 @@ public:
 	 * @brief Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas
 	 * @note Redefinição não é necessária
 	 * @param instancias - IDs das instâncias a serem utilizadas
-	 * @param mostrarSolucoes - se true, mostra a solução após cada execução, c.c. indica apenas a instância em processamento.
 	 * @param ficheiro - nome do ficheiro com os resultados, caso exista
 	 *
 	 * Esta função é chamada de TesteManual() para executar testes empíricos.
 	 * A função apresenta-se como método virtual, atendendo a que é redefinida nas
 	 * procuras adversas. É genérica e não se prevê outras situações que seja necessário
 	 * redefini-la.
+	 *
+	 * @note o parametro NIVEL_DEBUG controla a quantidade de informação que é mostrada relativamente às tarefas,
+	 *       sendo colocado com o valor NADA para a execução do algoritmo
 	 *
 	 * @note Pode ser chamada diretamente do código, e nesse caso é necessário que a variável
 	 * estática 'configuracoes' tenha as configurações em teste.
@@ -396,7 +398,7 @@ public:
 	 *
 	 * @see TesteManual()
 	 */
-	virtual void TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes = true, char* ficheiro = NULL);
+	virtual void TesteEmpirico(TVector<int> instancias, char* ficheiro = NULL);
 
 	/**
 	* @brief Inicializa a interação com o utilizador
@@ -468,6 +470,12 @@ public:
 	static clock_t instanteFinal;
 	/// @brief Flag indicando problemas de memória esgotada.
 	static bool memoriaEsgotada;
+	/// @brief MPI - rank do processo
+	static int mpiID;
+	/// @brief MPI - número de processos
+	static int mpiCount;
+
+
 
 	bool TempoExcedido() { return instanteFinal < clock(); }
 	bool IteracoesExcedido() {
@@ -481,11 +489,11 @@ public:
 	// retorna o valor do parametro, para facilidade de uso (leitura e escrita)
 	int Parametro(int id) const { return parametro[id].valor; }
 	int& Parametro(int id) { return parametro[id].valor; }
-	bool ParametroAtivo(int id, TVector<int> *valores = NULL) const {
+	bool ParametroAtivo(int id, TVector<int>* valores = NULL) const {
 		if (parametro[id].dependencia.Empty())
 			return true;
 		int valor;
-		if(valores==NULL) 
+		if (valores == NULL)
 			valor = Parametro(parametro[id].dependencia.First());
 		else
 			valor = (*valores)[parametro[id].dependencia.First()];
@@ -507,8 +515,8 @@ public:
 	/// Debug(passos, true,  "\nPasso %d", iteracoes) ||
 	/// Debug(detalhe, false, "\nPasso %d | Melhor custo: %d", iteracoes, custo) ||
 	/// @endcode
-	bool Debug(ENivelDebug tipo, bool exato, const char* fmt, ...) {
-		int nivel = Parametro(NIVEL_DEBUG);
+	static bool Debug(ENivelDebug tipo, bool exato, const char* fmt, ...) {
+		int nivel = parametro[NIVEL_DEBUG].valor;
 		if (exato ? nivel != tipo : nivel < tipo)
 			return false;
 		va_list args;
@@ -682,5 +690,19 @@ protected:
 	 * @return Valor ajustado dentro do domínio.
 	 */
 	static int Dominio(int& variavel, int min = INT_MIN, int max = INT_MAX);
-};
 
+	/// @brief Inicializa o ambiente MPI, se aplicável.
+	static void InicializaMPI(int argc, char* argv[]);
+	/// @brief Finaliza o ambiente MPI, se aplicável.
+	static void FinalizaMPI();
+	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro.
+	bool JuntarCSV(const char* ficheiro);
+
+	/// @brief retorna o tempo em segundos desde que o cronómetro foi inicializado
+	static double Cronometro(int id = 0, bool inicialiar = false) {
+		static clock_t inicio[10] = { 0 }; // até 10 cronómetros
+		if (inicialiar)
+			inicio[id] = clock();
+		return (double)(clock() - inicio[id]) / CLOCKS_PER_SEC;
+	}
+};

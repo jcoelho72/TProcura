@@ -15,78 +15,66 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TProcuraMelhorativa.cpp">
+    <ClCompile Include="Aspirador.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Teste\OitoDamas.cpp">
+    <ClCompile Include="OitoDamas.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Teste\Particao.cpp">
+    <ClCompile Include="Particao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Teste\teste.cpp">
+    <ClCompile Include="ProblemaArtificial.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Teste\ProblemaArtificial.cpp">
+    <ClCompile Include="Puzzle8.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\TProcura.cpp">
+    <ClCompile Include="teste.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="..\TRand.cpp">
+    <ClCompile Include="..\..\TProcura.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="TCodificacaoBinaria.cpp">
+    <ClCompile Include="..\..\TRand.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="TCodificacaoInteira.cpp">
+    <ClCompile Include="..\CListaNo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="TCodificacaoReal.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="TCodificacaoPermutacao.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="TCodificacaoArvore.cpp">
+    <ClCompile Include="..\TProcuraConstrutiva.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TProcuraMelhorativa.h">
+    <ClInclude Include="Aspirador.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Teste\OitoDamas.h">
+    <ClInclude Include="OitoDamas.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Teste\Particao.h">
+    <ClInclude Include="Particao.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Teste\ProblemaArtificial.h">
+    <ClInclude Include="ProblemaArtificial.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\TProcura.h">
+    <ClInclude Include="Puzzle8.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\TRand.h">
+    <ClInclude Include="..\..\TProcura.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="..\TVector.h">
+    <ClInclude Include="..\..\TRand.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="TCodificacaoBinaria.h">
+    <ClInclude Include="..\..\TVector.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="TCodificacaoInteira.h">
+    <ClInclude Include="..\CListaNo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="TCodificacaoReal.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="TCodificacaoPermutacao.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="TCodificacaoArvore.h">
+    <ClInclude Include="..\TProcuraConstrutiva.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
