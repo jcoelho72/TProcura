@@ -30,7 +30,7 @@ public:
     /// Executa o algoritmo de teste (a definir pelo utilizador).
     int ExecutaAlgoritmo();
     /// Calcula indicadores de teste.
-    int Indicador(int id);
+    int64_t Indicador(int id);
 };
 
 

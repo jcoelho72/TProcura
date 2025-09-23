@@ -415,7 +415,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 	}
 
 	TVector<TVector<int>> torneio; // pares de configurações: 1 melhor, 0 igual -1 pior
-	TVector<int> tempoTotal; // tempo total de resposta, em todos os jogos
+	TVector<double> tempoTotal; // tempo total de resposta, em todos os jogos
 	torneio.Count(configuracoes.Count());
 	for (int i = 0; i < configuracoes.Count(); i++) {
 		torneio[i].Count(configuracoes.Count());
@@ -432,7 +432,6 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 				for (auto inst : instancias) {
 					instancia.valor = inst;
 					int resultado = -1, njogada = 0;
-					clock_t inicioCorrida;
 					printf("\n Instância %d: ", instancia.valor);
 					// carregar instância
 					Inicializar();
@@ -440,10 +439,10 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 					while (!SolucaoCompleta()) {
 						ConfiguracaoAtual(configuracoes[njogada % 2 == 0 ? brancas : pretas], GRAVAR);
 						TRand::srand(Parametro(SEMENTE));
-						inicioCorrida = clock();
-						LimparEstatisticas(inicioCorrida);
+						Cronometro(2, true); // reiniciar cronómetro
+						LimparEstatisticas();
 						resultado = ExecutaAlgoritmo();
-						tempoTotal[njogada % 2 == 0 ? brancas : pretas] += clock() - inicioCorrida;
+						tempoTotal[njogada % 2 == 0 ? brancas : pretas] += Cronometro(2);
 						if (solucao != NULL) { // efetuado um lance
 							const char* strAcao = Acao(solucao);
 							Copiar(solucao);
@@ -484,8 +483,8 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 	if (ficheiro == NULL || strlen(ficheiro) <= 1) {
 		MostrarTorneio(torneio, true);
 		printf("\nTempos: ");
-		for (int i = 0; i < tempoTotal.Count(); i++)
-			printf("%.3fs ", 1.0 * tempoTotal[i] / CLOCKS_PER_SEC);
+		for (auto tempo : tempoTotal)
+			printf("%.3fs ", tempo);
 		MostrarConfiguracoes(1);
 		printf("\n");
 	}

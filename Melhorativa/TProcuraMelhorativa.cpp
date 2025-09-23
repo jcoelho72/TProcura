@@ -606,7 +606,7 @@ void TProcuraMelhorativa::DebugMelhorEncontrado(TPonto ponto)
 		Debug();
 }
 
-int TProcuraMelhorativa::Indicador(int id)
+int64_t TProcuraMelhorativa::Indicador(int id)
 {
 	if (id == IND_EPOCAS)
 		return epocas;
@@ -615,9 +615,9 @@ int TProcuraMelhorativa::Indicador(int id)
 	return TProcura::Indicador(id);
 }
 
-void TProcuraMelhorativa::LimparEstatisticas(clock_t& inicio)
+void TProcuraMelhorativa::LimparEstatisticas()
 {
-	TProcura::LimparEstatisticas(inicio);
+	TProcura::LimparEstatisticas();
 	geracoes = epocas = 0;
 }
 

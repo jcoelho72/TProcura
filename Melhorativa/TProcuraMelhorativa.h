@@ -171,14 +171,14 @@ public:
 	/**
 	 * @brief Redefinição. Ver TProcura::Indicador().
 	 */
-	int Indicador(int id) override;
+	int64_t Indicador(int id) override;
 
 	/**
 	 * @brief Inicializar a instância. No final, chamar NovaSolucao() para inicializar o estado.
 	 */
 	void Inicializar(void) {}
 
-	void LimparEstatisticas(clock_t& inicio);
+	void LimparEstatisticas();
 
 
 protected:

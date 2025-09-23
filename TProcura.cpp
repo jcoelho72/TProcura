@@ -11,7 +11,7 @@
 // Resultado retornado pelo algoritmo na última execução.
 int TProcura::resultado = 0;
 // tempo consumido na última execução.
-int TProcura::tempo = 0;
+double TProcura::tempo = 0;
 // numero de iterações, conforme definido no algoritmo
 int TProcura::iteracoes = 0;
 
@@ -74,12 +74,12 @@ void TProcura::ResetParametros()
 }
 
 // retorna o valor do indicador[id]
-int TProcura::Indicador(int id) {
+int64_t TProcura::Indicador(int id) {
 	switch (id) {
 	case IND_RESULTADO:
 		return resultado;
 	case IND_TEMPO:
-		return tempo;
+		return (int64_t)(1000 * tempo);
 	case IND_ITERACOES:
 		return iteracoes;
 	}
@@ -93,11 +93,10 @@ void TProcura::Debug(void)
 }
 
 // Chamar antes de iniciar uma procura
-void TProcura::LimparEstatisticas(clock_t& inicio)
+void TProcura::LimparEstatisticas()
 {
 	resultado = tempo = iteracoes = 0;
-	inicio = clock();
-	instanteFinal = inicio + Parametro(LIMITE_TEMPO) * CLOCKS_PER_SEC;
+	instanteFinal = clock() + Parametro(LIMITE_TEMPO) * CLOCKS_PER_SEC;
 	memoriaEsgotada = false;
 }
 
@@ -106,12 +105,11 @@ void TProcura::LimparEstatisticas(clock_t& inicio)
 void TProcura::TesteManual(const char* nome)
 {
 	int selecao;
-	clock_t inicio;
 	TVector<TResultado> resultados;
 	ResetParametros();
 	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
-	LimparEstatisticas(inicio);
+	LimparEstatisticas();
 	while (true) {
 		printf("\n%s", nome);
 		MostraParametros();
@@ -134,10 +132,12 @@ ____________________________________________________________________\n\
 			  break;
 		case 6:
 			// executar um algoritmo 
-			LimparEstatisticas(inicio);
+			Cronometro(2, true);
+			LimparEstatisticas();
 			resultado = ExecutaAlgoritmo();
 			MostraParametros(0);
-			ExecucaoTerminada(inicio);
+			tempo = Cronometro(2);
+			ExecucaoTerminada();
 			InserirRegisto(resultados, instancia.valor, 0);
 			break;
 		case 7: EditarConfiguracoes(); break;
@@ -288,7 +288,7 @@ int TProcura::Registo(TResultado& resultado, int id)
 	return 0;
 }
 
-void TProcura::Registo(TResultado& resultado, int id, int valor)
+void TProcura::Registo(TResultado& resultado, int id, int64_t valor)
 {
 	if (id >= 0 && id < indicador.Count() && indicador[id].indice >= 0)
 		resultado.valor[indicador[id].indice] = valor;
@@ -500,7 +500,7 @@ fflush(stdout);
 			if (Parametro(NIVEL_DEBUG) >= DETALHE) {
 				// mostrar uma linha por cada execução
 				Debug(DETALHE, false, "\n%.1fs Tarefa %d, processo %d: ", Cronometro(1), nTarefa - 1, mpiID) &&
-				fflush(stdout);
+					fflush(stdout);
 			}
 			else if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(0) > 60) {
 				Debug(ATIVIDADE, true, ".") ||
@@ -510,21 +510,20 @@ fflush(stdout);
 			}
 
 			instancia.valor = inst;
-			clock_t inicioCorrida;
 			TRand::srand(Parametro(SEMENTE));
 			// carregar instância
 			Inicializar();
 			// executar um algoritmo 
 			Debug(DETALHE, false, "instância %d: ", instancia.valor) && fflush(stdout);
-			inicioCorrida = clock();
-			LimparEstatisticas(inicioCorrida);
+			Cronometro(2, true); // reiniciar cronómetro da execução
+			LimparEstatisticas();
 			{
 				ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
 				Parametro(NIVEL_DEBUG) = NADA; // remover informação de debug do algoritmo, já que é um teste empírico
 				resultado = ExecutaAlgoritmo();
 				Parametro(NIVEL_DEBUG) = backupDebug;
 			}
-			tempo = clock() - inicioCorrida;
+			tempo = Cronometro(2);
 			InserirRegisto(resultados, instancia.valor, configuracao);
 
 			if (resultado >= 0) {
@@ -880,9 +879,8 @@ int TProcura::MelhorResultado(TResultado base, TResultado alternativa) {
 	return Registo(base, IND_TEMPO) < Registo(alternativa, IND_TEMPO) ? 1 : -1;
 }
 
-void TProcura::ExecucaoTerminada(clock_t inicio)
+void TProcura::ExecucaoTerminada()
 {
-	tempo = (int)(1000.0 * (clock() - inicio) / CLOCKS_PER_SEC);
 	if (TempoExcedido())
 		printf(" Tempo excedido.");
 	else if (memoriaEsgotada)
@@ -891,10 +889,10 @@ void TProcura::ExecucaoTerminada(clock_t inicio)
 
 // MostrarSolucao: definir para visualizar a solução
 void TProcura::MostrarSolucao() {
-	TVector<int> solucao = CodificarSolucao();
+	TVector<int64_t> solucao = CodificarSolucao();
 	printf("\nSolução: ");
 	for (auto& x : solucao)
-		printf("%d ", x);
+		printf("%ld ", x);
 	printf(".");
 }
 

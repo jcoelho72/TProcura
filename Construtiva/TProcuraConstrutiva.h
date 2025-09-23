@@ -522,7 +522,7 @@ public:
 	/**
 	 * @brief Redefinição. Ver TProcura::Indicador().
 	 */
-	int Indicador(int id) override;
+	int64_t Indicador(int id) override;
 
 
 	/** @} */ // Fim do grupo RedefinicaoOpcional
@@ -698,8 +698,8 @@ public:
 
 	/** @} */ // Fim do grupo VariaveisGlobais
 
-	void LimparEstatisticas(clock_t &inicio) override;
-	void ExecucaoTerminada(clock_t inicio) override;
+	void LimparEstatisticas() override;
+	void ExecucaoTerminada() override;
 
 	int LowerBound() { return custo + Parametro(PESO_ASTAR) * heuristica / 100; } // f(n) = g(n) + W h(n)
 	static void LibertarVector(TVector<TNo>& vector, int excepto = -1, int maiorQue = -1);

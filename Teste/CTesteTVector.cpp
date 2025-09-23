@@ -330,7 +330,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 	return 1;
 }
 
-int CTesteTVector::Indicador(int id)
+int64_t CTesteTVector::Indicador(int id)
 {
 	if (id == IND_ORDENAR) { // verifica se está ordenado
 		if (Parametro(ESTRUTURA_DADOS) != 2) {

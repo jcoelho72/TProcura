@@ -700,9 +700,9 @@ void TProcuraConstrutiva::DebugEstado(int id, int pai) {
 
 
 // Chamar antes de iniciar uma procura
-void TProcuraConstrutiva::LimparEstatisticas(clock_t& inicio)
+void TProcuraConstrutiva::LimparEstatisticas()
 {
-	TProcura::LimparEstatisticas(inicio);
+	TProcura::LimparEstatisticas();
 	geracoes = expansoes = 0;
 	ramo = {};
 	while (!caminho.Empty())
@@ -730,9 +730,9 @@ int TProcuraConstrutiva::ExecutaAlgoritmo() {
 
 
 
-void TProcuraConstrutiva::ExecucaoTerminada(clock_t inicio)
+void TProcuraConstrutiva::ExecucaoTerminada()
 {
-	TProcura::ExecucaoTerminada(inicio);
+	TProcura::ExecucaoTerminada();
 	if (solucao != NULL) {
 		Copiar(solucao);
 		delete solucao;
@@ -743,9 +743,8 @@ void TProcuraConstrutiva::ExecucaoTerminada(clock_t inicio)
 
 void TProcuraConstrutiva::Explorar() {
 	TVector<TNo> sucessores;
-	clock_t inicio;
 	int opcao = 0;
-	LimparEstatisticas(inicio);
+	LimparEstatisticas();
 	do {
 		caminho += Duplicar();
 		if (caminho.Count() > 1)
@@ -777,13 +776,15 @@ void TProcuraConstrutiva::Explorar() {
 					TVector<TNo> backup;
 					backup = caminho;
 					caminho = {};
-					LimparEstatisticas(inicio);
+					Cronometro(2, true);
+					LimparEstatisticas();
 					int resultado;
 					switch (resultado = ExecutaAlgoritmo()) {
 					case -1: printf("Impossível\n"); break;
 					case -2: printf("Não resolvido\n"); break;
 					default: printf("Resolvido (%d)\n", resultado); break;
 					}
+					tempo = Cronometro(2);
 					if (solucao != NULL) {
 						Copiar(solucao);
 						delete backup.Pop();
@@ -915,7 +916,7 @@ void TProcuraConstrutiva::Codifica(uint64_t estado[OBJETO_HASHTABLE]) {
 		estado[i] = 0;
 }
 
-int TProcuraConstrutiva::Indicador(int id)
+int64_t TProcuraConstrutiva::Indicador(int id)
 {
 	if (id == IND_CUSTO)
 		return custo;

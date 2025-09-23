@@ -136,7 +136,7 @@ typedef struct SParametro {
  */
 typedef struct SResultado {
 	int instancia, configuracao;
-	TVector<int> valor; // valor para cada indicador selecionado (fixos os EIndicadoresProcura, resultado, tempo, iterações)
+	TVector<int64_t> valor; // valor para cada indicador selecionado (fixos os EIndicadoresProcura, resultado, tempo, iterações)
 } TResultado;
 
 
@@ -210,7 +210,7 @@ public:
 	 * @see ResetParametros()
 	 *
 	 * @code
-	 * void CSubProblema::Indicador(int id)
+	 * int64_t CSubProblema::Indicador(int id)
 	 * {
 	 *     if(id == indicador-da-subclasse) {
 	 *         // calcular indicador
@@ -220,7 +220,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual int Indicador(int id);
+	virtual int64_t Indicador(int id);
 
 	/**
 	 * @brief Mostra o estado no ecrã, para debug.
@@ -432,15 +432,15 @@ public:
 	virtual void main(int argc, char* argv[], const char* nome);
 
 	/// @brief Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução
-	virtual void LimparEstatisticas(clock_t& inicio);
+	virtual void LimparEstatisticas();
 	/// @brief Chamar após a execução do algoritmo. Grava o tempo consumido.
-	virtual void ExecucaoTerminada(clock_t inicio);
+	virtual void ExecucaoTerminada();
 	/// @brief definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)
 	virtual void Explorar() {}
 	/// @brief definir para visualizar a solução
 	virtual void MostrarSolucao();
-	/// @brief  retorna um vetor de inteiros com a codifciação da solução (esta codificação será adicionada aos indicadores, no ficheiro CSV de resultados)
-	virtual TVector<int> CodificarSolucao() { return TVector<int>(); }
+	/// @brief  retorna um vetor de inteiros com a codificação da solução (esta codificação será adicionada aos indicadores, no ficheiro CSV de resultados)
+	virtual TVector<int64_t> CodificarSolucao() { return TVector<int64_t>(); }
 
 	/// @brief ID da instância atual, a ser utilizado em SolucaoVazia().
 	static TParametro instancia;
@@ -463,7 +463,7 @@ public:
 	/// @brief Resultado retornado pelo algoritmo na última execução.
 	static int resultado;
 	/// @brief tempo consumido na última execução.
-	static int tempo;
+	static double tempo;
 	/// @brief Número total de iterações realizadas na última execução.
 	static int iteracoes;
 	/// @brief Instante final (deadline) da corrida atual.
@@ -550,7 +550,7 @@ protected:
 	 * @param id ID do valor.
 	 * @param valor Novo valor a atribuir.
 	 */
-	void Registo(TResultado& resultado, int id, int valor);
+	void Registo(TResultado& resultado, int id, int64_t valor);
 
 	/**
 	 * @brief Mostra os parâmetros atuais.
