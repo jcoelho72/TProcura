@@ -15,9 +15,23 @@ int main(int argc, char* argv[])
 {
 	std::locale::global(std::locale(""));
 
+#ifndef MPI_ATIVO
 	printf("\nTeste TProcuraConstrutiva\nProblema:\n\
   1 - Aspirador\n  2 - Puzzle 8\n  3 - 8 Damas\n  4 - Partição\n  5 - Artificial\nOpção: ");
-	switch (TProcura::NovoValor("")) {
+	int caso = TProcura::NovoValor("");
+#else
+	// não utilizar o stdin em programas MPI
+	if (argc < 2) {
+		printf("Utilizar o primeiro argumento para identificar o problema:\n\
+  1 - Aspirador\n  2 - Puzzle 8\n  3 - 8 Damas\n  4 - Partição\n  5 - Artificial");
+		return 1;
+	}
+	int caso = atoi(argv[1]);
+	argc--;
+	argv++;
+#endif
+
+	switch (caso) {
 	case 1:	CAspirador().main(argc, argv, "Aspirador"); break;
 	case 2:	CPuzzle8().main(argc, argv, "Puzzle 8"); break;
 	case 3:	COitoDamas().main(argc, argv, "8 Damas"); break;

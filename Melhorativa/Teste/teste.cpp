@@ -13,6 +13,8 @@ int main(int argc, char* argv[])
 {
 	std::locale::global(std::locale(""));
 
+
+#ifndef MPI_ATIVO
 	printf("\n\
 Teste TProcuraMelhorativa\nProblema:\n\
   1 - 8 Damas\n\
@@ -22,7 +24,27 @@ Teste TProcuraMelhorativa\nProblema:\n\
   5 - Partição Binária\n\
   6 - Artificial\n\
 Opção: ");
-	switch (TProcura::NovoValor("")) {
+	int caso = TProcura::NovoValor("");
+#else
+	// não utilizar o stdin em programas MPI
+	if (argc < 2) {
+		printf("Utilizar o primeiro argumento para identificar o problema:\n\
+Teste TProcuraMelhorativa\nProblema:\n\
+  1 - 8 Damas\n\
+  2 - 8 Damas Inteira\n\
+  3 - 8 Damas Permutacao\n\
+  4 - Partição\n\
+  5 - Partição Binária\n\
+  6 - Artificia");
+		return 1;
+	}
+	int caso = atoi(argv[1]);
+	argc--;
+	argv++;
+#endif
+
+
+	switch (caso) {
 	case 1:	COitoDamas().main(argc, argv, "8 Damas"); break;
 	case 2:	COitoDamasCI().main(argc, argv, "8 Damas Inteira"); break;
 	case 3:	COitoDamasCP().main(argc, argv, "8 Damas Permutação"); break;
@@ -31,4 +53,5 @@ Opção: ");
 	case 6:	CProblemaArtificial().main(argc, argv, "Artificial"); break;
 	default: printf("Problema não implementado.");
 	}
+
 }
