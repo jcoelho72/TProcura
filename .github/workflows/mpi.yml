@@ -16,7 +16,7 @@ jobs:
         run: make mpi
 
       - name: Executar TProcuraMPI
-        run: mpiexec -n 4 ./TProcuraMPI 1:10 -R resultadoMPI -P P1=2 P2=2 P3=1:10
+        run: mpiexec --oversubscribe -n 4 ./TProcuraMPI 1:10 -R resultadoMPI -P P1=2 P2=2 P3=1:10
 
       - name: Guardar resultados
         uses: actions/upload-artifact@v4
