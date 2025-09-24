@@ -7,7 +7,7 @@ jobs:
   run-mpi:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Instalar OpenMPI
         run: sudo apt-get update && sudo apt-get install -y openmpi-bin libopenmpi-dev
@@ -19,7 +19,7 @@ jobs:
         run: mpiexec -n 4 ./TProcuraMPI 1:10 -R resultadoMPI -P P1=2 P2=2 P3=1:10
 
       - name: Guardar resultados
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: resultados
           path: resultadoMPI.csv
