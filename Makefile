@@ -16,7 +16,7 @@ $(TARGET): $(SRC)
 
 # Compilação com MPI
 mpi: $(SRC)
-    $(MPICC) $(CFLAGS) -DMPI_ATIVO -o $(TARGET_MPI) $^
+	$(MPICC) $(CFLAGS) -DMPI_ATIVO -o $(TARGET_MPI) $^
 
 # Regra para testes (executada com `make check`)
 check: $(TARGET)

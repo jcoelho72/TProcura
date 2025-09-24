@@ -1082,33 +1082,40 @@ int TVector<Item>::Distance(TVector<Item>& other, int type)
 
 template<>
 inline TVector<int>::TVector(const char* str) {
+	char buf[256], *bufferGrande = nullptr;
+	char* token = buf;
+	char* pt;
 	if (!str || *str == '\0')
 		return;
 
-	// Criar cópia mutável da string
-	char* buf= _strdup(str);
-	char* original = buf;
-	char* pt;
+	if(strlen(str)<256)
+		strcpy(buf, str);
+	else {
+		if ((bufferGrande = new char[strlen(str) + 1]) == nullptr)
+			return;
+		strcpy(bufferGrande, str);
+		token = bufferGrande;
+	}
 
 	// separar por vírgulas
-	if (pt = strchr(buf, ',')) {
+	if ((pt = strchr(token, ','))) {
 		*pt = 0;
-		*this = TVector(buf);
+		*this = TVector(token);
 		do {
-			buf = pt + 1;
-			if (pt = strchr(buf, ','))
+			token = pt + 1;
+			if (pt = strchr(token, ','))
 				*pt = 0;
-			*this += TVector(buf);
+			*this += TVector(token);
 		} while (pt);
 	}
 	else {
 		// procurar por : (intervalo)
-		if (pt = strchr(buf, ':')) {
+		if ((pt = strchr(token, ':'))) {
 			char* pt2;
 			*pt = 0;
-			int A = atoi(buf);
+			int A = atoi(token);
 			int C = 1;
-			if (pt2 = strchr(pt + 1, ':')) { // A:B:C
+			if ((pt2 = strchr(pt + 1, ':'))) { // A:B:C
 				*pt2 = 0;
 				if ((C = atoi(pt2 + 1)) <= 0)
 					C = 1;
@@ -1123,10 +1130,11 @@ inline TVector<int>::TVector(const char* str) {
 				*this += i;
 		}
 		else // inteiro apenas
-			*this += atoi(buf);
+			*this += atoi(token);
 	}
-	free(original);
 	BeASet();
+	if (bufferGrande) 
+		delete[] bufferGrande;
 }
 
 template<>
