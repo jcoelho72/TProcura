@@ -4,6 +4,7 @@
 #include <time.h>
 #include <string.h>
 #include <ctype.h>
+#include <inttypes.h> 
 #ifdef MPI_ATIVO
 #include <mpi.h>
 #endif
@@ -36,6 +37,8 @@ TVector<int> TProcura::indAtivo;
 int TProcura::mpiID = 0;
 // MPI - número de processos
 int TProcura::mpiCount = 1;
+// Modo MPI : 0 = divisão estática, 1 = mestre-escravo
+int TProcura::modoMPI = 0;
 
 
 // conjuntos de valores de parâmetros, para teste
@@ -283,7 +286,7 @@ char* TProcura::MostraTempo(double segundos)
 	static const int64_t semana = 7 * dia;
 	static const int64_t mes = 30 * dia;
 	static const int64_t ano = 365 * dia;
-	static int count=0;
+	static int count = 0;
 
 	static TVector<int64_t> unidades = { ano, mes, semana, dia, hora, minuto, segundo };
 
@@ -322,7 +325,7 @@ void TProcura::InserirRegisto(TVector<TResultado>& resultados, int inst, int con
 	resultados.Last().valor += CodificarSolucao();
 }
 
-int TProcura::Registo(TResultado& resultado, int id)
+int64_t TProcura::Registo(TResultado& resultado, int id)
 {
 	if (id >= 0 && id < indicador.Count() && indicador[id].indice >= 0)
 		return resultado.valor[indicador[id].indice];
@@ -540,14 +543,14 @@ fflush(stdout);
 
 			if (Parametro(NIVEL_DEBUG) >= DETALHE) {
 				// mostrar uma linha por cada execução
-				Debug(DETALHE, false, "\n%s Tarefa %d, processo %d: ", 
+				Debug(DETALHE, false, "\n%s Tarefa %d, processo %d: ",
 					MostraTempo(Cronometro(CONT_TESTE)), nTarefa - 1, mpiID) &&
 					fflush(stdout);
 			}
 			else if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > 60) {
 				Debug(ATIVIDADE, true, ".") ||
-					Debug(PASSOS, false, "\n%s Tarefa %d. ", 
-						MostraTempo(Cronometro(CONT_TESTE)) , nTarefa - 1);
+					Debug(PASSOS, false, "\n%s Tarefa %d. ",
+						MostraTempo(Cronometro(CONT_TESTE)), nTarefa - 1);
 				fflush(stdout);
 				Cronometro(CONT_REPORTE, true);
 			}
@@ -628,6 +631,182 @@ fflush(stdout);
 	Inicializar();
 }
 
+void TProcura::TesteEmpiricoMestre(TVector<int> instancias, char* ficheiro)
+{
+#ifdef MPI_ATIVO
+	int dados[3] = { 0, 0, 0 }; // instância, configuração
+	TVector<int> escravo, execucao;
+	for (int i = 1; i < mpiCount; i++)
+		escravo += i;
+
+	// Ciclo:
+	// 1. Enviar trabalho para os escravos
+	// 2. Encerrar escravos a mais
+	// 3. Receber resultados e repetir 1 ou 2 conforme as necessidades
+
+	TVector<TResultado> resultados; // guarda as soluções obtidas
+	TVector<TResultado> tarefas;
+	TVector<int> atual;
+	int backupID = instancia.valor;
+	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
+	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
+	for (auto item : instancias)
+		if (item<instancia.min || item>instancia.max)
+			item = -1;
+	instancias -= (-1);
+	ConfiguracaoAtual(atual, LER);
+	if (configuracoes.Empty()) {
+		// não foram feitas configurações, utilizar a atual
+		configuracoes.Count(1);
+		configuracoes.Last() = atual;
+	}
+
+	// construir todas as tarefas
+	for (int configuracao = 0; configuracao < configuracoes.Count(); configuracao++)
+		for (auto inst : instancias)
+			tarefas += { inst, configuracao };
+
+	// dar uma tarefa a cada escravo
+	while (!tarefas.Empty() && !escravo.Empty()) {
+		auto tarefa = tarefas.Pop();
+		dados[0] = tarefa.instancia;
+		dados[1] = tarefa.configuracao;
+		execucao += escravo.Last();
+		MPI_Send(dados, 2, MPI_INT, escravo.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+	}
+	// caso existam escravos sem trabalho, mandar fechar todos, não há mais tarefas
+	dados[0] = dados[1] = -1;
+	while (!escravo.Empty()) 
+		MPI_Send(dados, 2, MPI_INT, escravo.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+
+	// receber resultados e continuar a dar trabalho caso exista
+	while (!execucao.Empty()) {
+		MPI_Status stat;
+		MPI_Recv(dados, 3, MPI_INT, MPI_ANY_SOURCE, TAG_CABECALHO, MPI_COMM_WORLD, &stat);
+		resultados += {dados[0], dados[1]};
+		resultados.Last().valor.Count(dados[2]);
+		execucao -= stat.MPI_SOURCE;
+		escravo += stat.MPI_SOURCE;
+		MPI_Recv(resultados.Last().valor.Data(), dados[2], MPI_LONG_LONG, 
+			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+
+		// ainda há tarefas
+		if (!tarefas.Empty()) {
+			auto tarefa = tarefas.Pop();
+			dados[0] = tarefa.instancia;
+			dados[1] = tarefa.configuracao;
+			execucao += escravo.Last();
+			MPI_Send(dados, 2, MPI_INT, escravo.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+		}
+		else { // tudo feito, mandar sair
+			dados[0] = dados[1] = -1;
+			MPI_Send(dados, 2, MPI_INT, escravo.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+		}
+	}
+
+	{   // escrever o ficheiro de resultados
+		char* pt = strtok(ficheiro, " \n\t\r");
+		char str[BUFFER_SIZE];
+		sprintf(str, "%s.csv", pt);
+		FILE* f = fopen(str, "wt");
+		if (f != NULL) {
+			// escrever BOM UTF-8 (apenas no mpiID 0)
+			const unsigned char bom[] = { 0xEF,0xBB,0xBF };
+			if (mpiID == 0) {
+				fwrite(bom, 1, sizeof(bom), f);
+				fprintf(f, "sep=;\n");
+			}
+			RelatorioCSV(resultados, f);
+			fclose(f);
+		}
+		else
+			printf("\nErro ao gravar ficheiro %s.", str);
+	}
+
+#endif
+}
+
+void TProcura::TesteEmpiricoEscravo(TVector<int> instancias, char* ficheiro)
+{
+#ifdef MPI_ATIVO
+	int dados[3] = { 0, 0, 0 }; // instância, configuração
+	// Ciclo:
+	// 1. Solicitar tarefa ao mestre
+	// 2. Executar tarefa
+	// 3. Enviar resultados ao mestre
+	// 4. Repetir até receber ordem de paragem
+
+	TVector<TResultado> resultados; // guarda as soluções obtidas
+	TVector<int> atual;
+	int backupID = instancia.valor;
+	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
+	for (auto item : instancias)
+		if (item<instancia.min || item>instancia.max)
+			item = -1;
+	instancias -= (-1);
+	ConfiguracaoAtual(atual, LER);
+	if (configuracoes.Empty()) {
+		// não foram feitas configurações, utilizar a atual
+		configuracoes.Count(1);
+		configuracoes.Last() = atual;
+	}
+
+	for (;;) {
+		// receber nova tarefa
+		MPI_Recv(dados, 2, MPI_INT, 0, TAG_TRABALHO, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		if (dados[0] < 0)
+			break;
+		// carregar a configuração
+		ConfiguracaoAtual(configuracoes[dados[1]], GRAVAR);
+		instancia.valor = dados[0];
+		TRand::srand(Parametro(SEMENTE));
+		// carregar instância
+		Inicializar();
+		// executar um algoritmo 
+		Debug(DETALHE, false, "instância %d: ", instancia.valor) && fflush(stdout);
+		Cronometro(CONT_ALGORITMO, true); // reiniciar cronómetro da execução
+		LimparEstatisticas();
+		{
+			ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
+			Parametro(NIVEL_DEBUG) = NADA; // remover informação de debug do algoritmo, já que é um teste empírico
+			resultado = ExecutaAlgoritmo();
+			Parametro(NIVEL_DEBUG) = backupDebug;
+		}
+		tempo = Cronometro(CONT_ALGORITMO);
+		InserirRegisto(resultados, instancia.valor, dados[1]);
+
+		if (resultado >= 0) {
+			if (Parametro(NIVEL_DEBUG) >= COMPLETO)
+				MostrarSolucao();
+		}
+		else {
+			if (Parar())
+				Debug(DETALHE, false, "Não resolvido. ");
+			if (TempoExcedido())
+				Debug(DETALHE, false, "Tempo excedido. ");
+			if (memoriaEsgotada)
+				Debug(DETALHE, false, "Memória esgotada. ");
+			if (resultado < 0 && !Parar())
+				Debug(DETALHE, false, "Instância Impossível! (se algoritmo completo) ");
+			else // não resolvido, cancelar resultados 
+				resultados.Last().valor.First() = -2;
+		}
+		Debug(DETALHE, false, "DONE.") && fflush(stdout);
+
+		// enviar registo para master, e apagar
+		// dados[0] e dados[1] já têm a configuração e instância
+		dados[2] = resultados.Last().valor.Count();
+		MPI_Send(dados, 3, MPI_INT, 0, TAG_CABECALHO, MPI_COMM_WORLD);
+		MPI_Send(resultados.Last().valor.Data(), dados[2], MPI_LONG_LONG, 0, TAG_VALORES, MPI_COMM_WORLD);
+
+		resultados.Pop();
+	}
+
+	// saída, enviar o tempo de trabalho e tempo de espera totais
+
+#endif
+}
+
 // processa os argumentos da função main
 void TProcura::main(int argc, char* argv[], const char* nome) {
 	TVector<int> instancias;
@@ -669,6 +848,10 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		else if (strcmp(argv[i], "-F") == 0 && i + 1 < argc) {
 			strcpy(ficheiroInstancia, argv[i + 1]);
 		}
+		else if (strcmp(argv[i], "-M") == 0 && i + 1 < argc) {
+			if ((modoMPI = atoi(argv[i + 1])) != 1)
+				modoMPI = 0; // apenas 0 ou 1
+		}
 		else if (strcmp(argv[i], "-S") == 0) {
 			mostrarSolucoes = true;
 		}
@@ -701,7 +884,19 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 
 	if (Parametro(NIVEL_DEBUG) >= DETALHE && mpiID == 0)
 		MostrarConfiguracoes(0, -1);
-	TesteEmpirico(instancias, fichResultados);
+
+	if (modoMPI == 0 || mpiCount == 1)
+		// divisão estática ou execução em série
+		TesteEmpirico(instancias, fichResultados);
+	else {
+		if (mpiID == 0)
+			// processo mestre
+			TesteEmpiricoMestre(instancias, fichResultados);
+		else
+			// processos escravos
+			TesteEmpiricoEscravo(instancias, fichResultados);
+	}
+
 	FinalizaMPI();
 }
 
@@ -712,6 +907,7 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 		"Opções:\n"
 		"  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)\n"
 		"  -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)\n"
+		"  -M <modo>       Modo MPI: 0 = divisão estática, 1 = mestre-escravo\n"
 		"  -I <ind>        Lista de indicadores (e.g. 2,1,3)\n"
 		"  -S              Mostrar soluções durante a execução\n"
 		"  -h              Esta ajuda\n"
@@ -750,7 +946,7 @@ void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
 					configuracoes[res.configuracao][j],
 					parametro[j].nomeValores[configuracoes[res.configuracao][j] - parametro[j].min]);
 		for (auto ind : indAtivo)
-			fprintf(f, "%d;", Registo(res, ind));
+			fprintf(f, "%" PRId64 ";", Registo(res, ind));
 		fprintf(f, "\n");
 	}
 }
@@ -765,7 +961,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 					printf(" | ");
 				if (elementos % 5 == 0)
 					printf("\n");
-				printf("I%d(%s): %d", ind + 1, indicador[ind].nome, Registo(resultados.Last(), ind));
+				printf("I%d(%s): %" PRId64, ind + 1, indicador[ind].nome, Registo(resultados.Last(), ind));
 				elementos++;
 			}
 		}
@@ -795,7 +991,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 		printf("\n%3d |%3d |", res.instancia, res.configuracao + 1);
 
 		for (auto ind : indAtivo)
-			printf(" %8d |", Registo(res, ind));
+			printf(" %8" PRId64 " |", Registo(res, ind));
 
 		for (auto ind : indAtivo)
 			Registo(total[res.configuracao], ind,
@@ -811,7 +1007,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 		printf("\nTotal%3d |", i + 1);
 
 		for (auto ind : indAtivo)
-			printf(" %8d |", Registo(total[i], ind));
+			printf(" %8" PRId64 " |", Registo(total[i], ind));
 
 		printf(" %d", total[i].instancia);
 	}

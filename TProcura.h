@@ -40,12 +40,12 @@ enum EIndicadoresProcura {
  * @endcode
  */
 enum EParametrosProcura {
-	ALGORITMO = 0,         ///< Algoritmo base a executar.
-	NIVEL_DEBUG,            ///< Nível de debug, de reduzido a completo.
-	SEMENTE,                  ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
-	LIMITE_TEMPO,           ///< Tempo limite em segundos. 
-	LIMITE_ITERACOES,      ///< Número máximo de iterações (0 significa sem limite).
-	PARAMETROS_PROCURA      ///< Marcador para permitir a extensão do enum em subclasses.
+	ALGORITMO = 0,        ///< Algoritmo base a executar.
+	NIVEL_DEBUG,          ///< Nível de debug, de reduzido a completo.
+	SEMENTE,              ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
+	LIMITE_TEMPO,         ///< Tempo limite em segundos. 
+	LIMITE_ITERACOES,     ///< Número máximo de iterações (0 significa sem limite).
+	PARAMETROS_PROCURA    ///< Marcador para permitir a extensão do enum em subclasses.
 };
 
 /**
@@ -88,6 +88,15 @@ enum ECronometro {
 	CONT_FINALIZACAO,   ///< Tempo de encerramento/exportação
 	CONT_CHECKPOINT,    ///< Tempo entre checkpoints ou estados internos
 	CONT_NUMERO         ///< Número de contadores disponíveis
+};
+
+/**
+ * @brief Define as tags MPI para comunicação entre processos.
+ */
+enum ETagMPI {
+	TAG_TRABALHO = 0,  
+	TAG_CABECALHO,
+	TAG_VALORES
 };
 
 
@@ -415,6 +424,11 @@ public:
 	 */
 	virtual void TesteEmpirico(TVector<int> instancias, char* ficheiro = NULL);
 
+	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
+	virtual void TesteEmpiricoMestre(TVector<int> instancias, char* ficheiro = NULL);
+	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
+	virtual void TesteEmpiricoEscravo(TVector<int> instancias, char* ficheiro = NULL);
+
 	/**
 	* @brief Inicializa a interação com o utilizador
 	* @note Redefinição opcional
@@ -489,6 +503,9 @@ public:
 	static int mpiID;
 	/// @brief MPI - número de processos
 	static int mpiCount;
+	/// @brief Modo MPI
+	/// @note 0 = divisão estática, 1 = mestre-escravo
+	static int modoMPI; 
 
 
 
@@ -560,7 +577,7 @@ protected:
 	 * @param id ID a procurar.
 	 * @return Índice do registo, ou -1 se não encontrado.
 	 */
-	int Registo(TResultado& resultado, int id);
+	int64_t Registo(TResultado& resultado, int id);
 
 	/**
 	 * @brief Atualiza o valor de um registo.
@@ -713,6 +730,8 @@ protected:
 	static void InicializaMPI(int argc, char* argv[]);
 	/// @brief Finaliza o ambiente MPI, se aplicável.
 	static void FinalizaMPI();
+
+
 	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro.
 	bool JuntarCSV(const char* ficheiro);
 

@@ -211,6 +211,10 @@ public:
 	 */
 	const Item& operator[](int i) const;
 
+	/// Acesso direto
+	Item* Data() { return v; }
+	/// Acesso direto constante
+	const Item* Data() const { return v; }
 
 	/** Retorna o primeiro elemento ou @c erro se vazio. */
 	inline Item& First() { return (count > 0 ? v[0] : TVector<Item>::erro); }
