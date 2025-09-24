@@ -2,12 +2,12 @@ var TCodificacaoInteira_8h =
 [
     [ "TCodificacaoInteira", "classTCodificacaoInteira.html", "classTCodificacaoInteira" ],
     [ "ECodificacaoInteira", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26b", [
-      [ "cruzamentoCI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba5dd6f9ddec471a5dbf98ee49d39664c0", null ],
-      [ "mutacaoCI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26badd5350c1490459f55df0a02fe7dd0159", null ],
-      [ "vizinhancaCI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba8dfd3fa793e748ccbc99d2937c2cb5b7", null ],
-      [ "limiteVizinhancaCI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba371bcb2f0019e5167365ba8dff066f4a", null ],
-      [ "distanciaCI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba4e794426edc9a57239eab961fd666f9e", null ],
-      [ "parametrosCodificacaoInteira", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26bada56171628e524bdbbe06aae7b047cba", null ]
+      [ "TIPO_CRUZAR_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26badb05429040639597458eccef17972080", null ],
+      [ "TIPO_MUTAR_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26baea692e0cf56446eb7b8c778238083f7c", null ],
+      [ "TIPO_VIZINHO_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26bac07b276a7a2153b64704964e6ffed9f6", null ],
+      [ "LIMITE_VIZINHOS_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba3dba8315a07a2a8afac2f3a9eddcd66d", null ],
+      [ "TIPO_DISTANCIA_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba5d90152887d49524c47c416a82c9bf96", null ],
+      [ "PARAMETROS_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba9cdf11110d20c309723329466ca8cda2", null ]
     ] ],
     [ "ETiposDistanciaInteira", "TCodificacaoInteira_8h.html#a8da2d437f7442ad25916239a13ebe93e", [
       [ "distHammingCI", "TCodificacaoInteira_8h.html#a8da2d437f7442ad25916239a13ebe93eaa8ce3e9479e83655ba01af5d4a987021", null ],

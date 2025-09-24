@@ -68,7 +68,18 @@ enum \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Deb
 enum \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3}{EOperacao}} \{ \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3a5f2b018e9e5b8b220fe8a17ac39ff042}{GRAVAR}} = 0
 , \mbox{\hyperlink{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3ae6fe9228f4939ae8277bb49921020a46}{LER}}
  \}
-\begin{DoxyCompactList}\small\item\em Define o sentido da operação de entrada/saída de dados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Define o sentido da operação de entrada/saída de dados. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501}{ECronometro}} \{ \newline
+\mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a8ae5fb297d5b14691f03df80cedd7356}{CONT\+\_\+\+ALGORITMO}} = 0
+, \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a54fe8b533ec0e5e100efa1afa320902f}{CONT\+\_\+\+TESTE}}
+, \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a5d64b4c79464d92bd9c468bac1db6500}{CONT\+\_\+\+REPORTE}}
+, \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501af6631d1f92b866e090cf63adfc61af11}{CONT\+\_\+\+PREPARACAO}}
+, \newline
+\mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501aec9f5248657dc6d6fb0be9cd756489e6}{CONT\+\_\+\+FINALIZACAO}}
+, \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a7870afaea840c9f32e29d18841b23ac2}{CONT\+\_\+\+CHECKPOINT}}
+, \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a4b8d8613b11a48b4adfbabf70ed21813}{CONT\+\_\+\+NUMERO}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define os tipos de contadores de cronômetro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -121,7 +132,7 @@ Existe uma vetor de parametros declarada de forma estática, de modo a aceder a q
 \end{DoxySeeAlso}
 Exemplo\+: 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(Parametro(nivelDebug)\ >\ passos)}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(Parametro(\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3}{NIVEL\_DEBUG}})\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a}{PASSOS}})}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
 
 \end{DoxyCode}
@@ -134,6 +145,53 @@ Exemplo\+:
 
 
 \doxysubsection{Enumeration Type Documentation}
+\Hypertarget{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501}\label{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501} 
+\index{TProcura.h@{TProcura.h}!ECronometro@{ECronometro}}
+\index{ECronometro@{ECronometro}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{ECronometro}{ECronometro}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501}{ECronometro}}}
+
+
+
+Define os tipos de contadores de cronômetro. 
+
+\begin{DoxyNote}{Note}
+Utilizado na função Cronometro() para especificar o contador. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONT\_ALGORITMO@{CONT\_ALGORITMO}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!CONT\_ALGORITMO@{CONT\_ALGORITMO}}}\Hypertarget{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a8ae5fb297d5b14691f03df80cedd7356}\label{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a8ae5fb297d5b14691f03df80cedd7356} 
+CONT\+\_\+\+ALGORITMO&Tempo da execução do algoritmo por instância. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONT\_TESTE@{CONT\_TESTE}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!CONT\_TESTE@{CONT\_TESTE}}}\Hypertarget{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a54fe8b533ec0e5e100efa1afa320902f}\label{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a54fe8b533ec0e5e100efa1afa320902f} 
+CONT\+\_\+\+TESTE&Tempo total do teste (todas as execuções) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONT\_REPORTE@{CONT\_REPORTE}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!CONT\_REPORTE@{CONT\_REPORTE}}}\Hypertarget{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a5d64b4c79464d92bd9c468bac1db6500}\label{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a5d64b4c79464d92bd9c468bac1db6500} 
+CONT\+\_\+\+REPORTE&Tempo entre mensagens durante o teste. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONT\_PREPARACAO@{CONT\_PREPARACAO}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!CONT\_PREPARACAO@{CONT\_PREPARACAO}}}\Hypertarget{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501af6631d1f92b866e090cf63adfc61af11}\label{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501af6631d1f92b866e090cf63adfc61af11} 
+CONT\+\_\+\+PREPARACAO&Tempo de inicialização antes do teste. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONT\_FINALIZACAO@{CONT\_FINALIZACAO}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!CONT\_FINALIZACAO@{CONT\_FINALIZACAO}}}\Hypertarget{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501aec9f5248657dc6d6fb0be9cd756489e6}\label{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501aec9f5248657dc6d6fb0be9cd756489e6} 
+CONT\+\_\+\+FINALIZACAO&Tempo de encerramento/exportação. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONT\_CHECKPOINT@{CONT\_CHECKPOINT}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!CONT\_CHECKPOINT@{CONT\_CHECKPOINT}}}\Hypertarget{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a7870afaea840c9f32e29d18841b23ac2}\label{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a7870afaea840c9f32e29d18841b23ac2} 
+CONT\+\_\+\+CHECKPOINT&Tempo entre checkpoints ou estados internos. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONT\_NUMERO@{CONT\_NUMERO}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!CONT\_NUMERO@{CONT\_NUMERO}}}\Hypertarget{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a4b8d8613b11a48b4adfbabf70ed21813}\label{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a4b8d8613b11a48b4adfbabf70ed21813} 
+CONT\+\_\+\+NUMERO&Número de contadores disponíveis. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00083}{83}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
 \Hypertarget{TProcura_8h_a2b2b75cdcabfc0008a130fb49597e29b}\label{TProcura_8h_a2b2b75cdcabfc0008a130fb49597e29b} 
 \index{TProcura.h@{TProcura.h}!EIndicadoresProcura@{EIndicadoresProcura}}
 \index{EIndicadoresProcura@{EIndicadoresProcura}!TProcura.h@{TProcura.h}}
@@ -256,7 +314,7 @@ O último elemento ({\ttfamily parametros\+Procura}) não representa um parâmetro 
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(Parametro(nivelDebug)\ >\ passos)}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(Parametro(\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3}{NIVEL\_DEBUG}})\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a}{PASSOS}})}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
 
 \end{DoxyCode}

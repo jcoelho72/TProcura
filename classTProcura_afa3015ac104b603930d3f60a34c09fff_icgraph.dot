@@ -7,9 +7,9 @@ digraph "TProcura::TempoExcedido"
   rankdir="RL";
   Node1 [id="Node000001",label="TProcura::TempoExcedido",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge49_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a820d64eab4f1b5e040a3eca5704026e7",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
+  Node2 [id="Node000002",label="TProcura::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a86985c8dc9a0e0bd375a4148f6ea6de7",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
   Node2 -> Node3 [id="edge50_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraConstrutiva\l::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a43c6ec9acbb9f9ce77c4628bf54b7da2",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
+  Node3 [id="Node000003",label="TProcuraConstrutiva\l::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a42e8230fd5131f4bff8645680ff785f5",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
   Node2 -> Node4 [id="edge51_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
   Node4 -> Node5 [id="edge52_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -58,7 +58,7 @@ digraph "TProcura::TempoExcedido"
   Node22 -> Node23 [id="edge77_Node000022_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parametros atuais."];
   Node23 -> Node24 [id="edge78_Node000023_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node24 [id="Node000024",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node24 [id="Node000024",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
   Node22 -> Node21 [id="edge79_Node000022_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node21 -> Node25 [id="edge80_Node000021_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node25 [id="Node000025",label="TProcuraAdversa::MiniMax\lAlfaBeta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb3f857b1c8b3ee26682e335dc6ed601",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel. IdÃªntico a MiniMax"];
@@ -80,7 +80,7 @@ digraph "TProcura::TempoExcedido"
   Node30 -> Node13 [id="edge91_Node000030_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node30 -> Node30 [id="edge92_Node000030_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 -> Node31 [id="edge93_Node000011_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afcfe280771c67c80a69d422c476ae090",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node31 [id="Node000031",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node31 -> Node5 [id="edge94_Node000031_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node31 -> Node4 [id="edge95_Node000031_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node31 [id="edge96_Node000001_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];

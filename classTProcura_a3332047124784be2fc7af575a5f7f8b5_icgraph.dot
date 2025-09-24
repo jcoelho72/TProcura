@@ -26,10 +26,10 @@ digraph "TProcura::MostrarConfiguracoes"
   Node1 -> Node10 [id="edge25_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcura::MostraRelatorio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8efec796677c8e25ad8bdb56a1082e2d",tooltip="Mostra um relatório dos resultados."];
   Node10 -> Node11 [id="edge26_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afcfe280771c67c80a69d422c476ae090",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node11 [id="Node000011",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node11 -> Node4 [id="edge27_Node000011_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 -> Node3 [id="edge28_Node000011_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 -> Node3 [id="edge29_Node000010_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node12 [id="edge30_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node12 [id="Node000012",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
 }

@@ -9,6 +9,15 @@ var TProcura_8h =
     [ "TIndicador", "TProcura_8h.html#ad4fc32e65c5226aa62a959b4402a857c", null ],
     [ "TParametro", "TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0", null ],
     [ "TResultado", "TProcura_8h.html#a4428af995799ff246df4a39dfb58d0e9", null ],
+    [ "ECronometro", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501", [
+      [ "CONT_ALGORITMO", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501a8ae5fb297d5b14691f03df80cedd7356", null ],
+      [ "CONT_TESTE", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501a54fe8b533ec0e5e100efa1afa320902f", null ],
+      [ "CONT_REPORTE", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501a5d64b4c79464d92bd9c468bac1db6500", null ],
+      [ "CONT_PREPARACAO", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501af6631d1f92b866e090cf63adfc61af11", null ],
+      [ "CONT_FINALIZACAO", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501aec9f5248657dc6d6fb0be9cd756489e6", null ],
+      [ "CONT_CHECKPOINT", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501a7870afaea840c9f32e29d18841b23ac2", null ],
+      [ "CONT_NUMERO", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501a4b8d8613b11a48b4adfbabf70ed21813", null ]
+    ] ],
     [ "EIndicadoresProcura", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29b", [
       [ "IND_RESULTADO", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29bae0a2fcc9529e9f164d57ad46c224812e", null ],
       [ "IND_TEMPO", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff", null ],

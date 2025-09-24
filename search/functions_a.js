@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['nofolha_0',['NoFolha',['../classTProcuraAdversa.html#a01ed7d4718647eb52723ecffaf68aa4b',1,'TProcuraAdversa']]],
-  ['novaconfiguracao_1',['NovaConfiguracao',['../classTProcura.html#a62cd10354f0fbe5ccc45bbd0c0d7f121',1,'TProcura']]],
-  ['novalinha_2',['NovaLinha',['../classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32',1,'TProcuraConstrutiva']]],
-  ['novasolucao_3',['novasolucao',['../classTCodificacaoBinaria.html#aa46563911320bf89456b47fb4767ded6',1,'TCodificacaoBinaria::NovaSolucao()'],['../classTCodificacaoInteira.html#a7d2dc5819367ddacdbcf1b3e30a67d4c',1,'TCodificacaoInteira::NovaSolucao()'],['../classTCodificacaoPermutacao.html#a16f609d10fde3c8dbbbeeba584f3c619',1,'TCodificacaoPermutacao::NovaSolucao()'],['../classTCodificacaoReal.html#ae250760cfff4f7d105f6e423790a5247',1,'TCodificacaoReal::NovaSolucao()'],['../classCOitoDamas.html#a76a6cfab4d66232a84d6cb9dc73b7fcf',1,'COitoDamas::NovaSolucao()'],['../classCParticao.html#a82ac73218fe065f106b5b1d3162637a1',1,'CParticao::NovaSolucao()'],['../classTProcuraMelhorativa.html#a50bf29ddd183e8e4678ceb2247b9cf58',1,'TProcuraMelhorativa::NovaSolucao()']]],
-  ['novotexto_4',['NovoTexto',['../classTProcura.html#a17fa21564876d313f79b4376ce7366a1',1,'TProcura']]],
-  ['novovalor_5',['NovoValor',['../classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e',1,'TProcura']]]
+  ['larguraprimeiro_0',['LarguraPrimeiro',['../group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0',1,'TProcuraConstrutiva']]],
+  ['last_1',['Last',['../classTVector.html#aa304d639c79ef2842f9951846c6292e3',1,'TVector']]],
+  ['libertarvector_2',['libertarvector',['../classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df',1,'TProcuraConstrutiva::LibertarVector()'],['../classTProcuraMelhorativa.html#a28993c2953d882b21f3c456e5d1b7e47',1,'TProcuraMelhorativa::LibertarVector()']]],
+  ['limparestatisticas_3',['limparestatisticas',['../classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828',1,'TProcuraConstrutiva::LimparEstatisticas()'],['../classTProcuraMelhorativa.html#a6c7163b20ace9bebdf3c073cd475dec9',1,'TProcuraMelhorativa::LimparEstatisticas()'],['../classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f',1,'TProcura::LimparEstatisticas()']]],
+  ['limparht_4',['LimparHT',['../classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c',1,'TProcuraConstrutiva']]],
+  ['lowerbound_5',['LowerBound',['../classTProcuraConstrutiva.html#a5f021041a7dfe1b68890d9e5f5f0e6f4',1,'TProcuraConstrutiva']]]
 ];

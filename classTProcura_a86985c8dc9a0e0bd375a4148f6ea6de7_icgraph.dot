@@ -7,7 +7,7 @@ digraph "TProcura::ExecucaoTerminada"
   rankdir="RL";
   Node1 [id="Node000001",label="TProcura::ExecucaoTerminada",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
   Node1 -> Node2 [id="edge9_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcuraConstrutiva\l::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a43c6ec9acbb9f9ce77c4628bf54b7da2",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
+  Node2 [id="Node000002",label="TProcuraConstrutiva\l::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a42e8230fd5131f4bff8645680ff785f5",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
   Node1 -> Node3 [id="edge10_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
   Node3 -> Node4 [id="edge11_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];

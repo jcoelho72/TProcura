@@ -34,12 +34,12 @@ digraph "TProcura::MostraParametros"
   Node11 -> Node13 [id="edge37_Node000011_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcura::MostraRelatorio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8efec796677c8e25ad8bdb56a1082e2d",tooltip="Mostra um relatório dos resultados."];
   Node13 -> Node14 [id="edge38_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afcfe280771c67c80a69d422c476ae090",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node14 [id="Node000014",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node14 -> Node3 [id="edge39_Node000014_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node6 [id="edge40_Node000014_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node6 [id="edge41_Node000013_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 -> Node15 [id="edge42_Node000011_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node15 [id="Node000015",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
   Node1 -> Node14 [id="edge43_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge44_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

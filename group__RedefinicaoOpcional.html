@@ -112,9 +112,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gae52871eb18c8ae656a2174acf43b3bb3" id="r_gae52871eb18c8ae656a2174acf43b3bb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3">TProcuraConstrutiva::ExecutaAlgoritmo</a> ()</td></tr>
 <tr class="memdesc:gae52871eb18c8ae656a2174acf43b3bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o algoritmo com os parametros atuais.  <br /></td></tr>
 <tr class="separator:gae52871eb18c8ae656a2174acf43b3bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8bb028ef31b04b7932be22ca0afbd3c" id="r_gad8bb028ef31b04b7932be22ca0afbd3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RedefinicaoOpcional.html#gad8bb028ef31b04b7932be22ca0afbd3c">TProcuraConstrutiva::Indicador</a> (<a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a> id) <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">override</a></td></tr>
-<tr class="memdesc:gad8bb028ef31b04b7932be22ca0afbd3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinição. Ver <a class="el" href="classTProcura.html#a475d33545a5f5f1bbebf1365d730e4f0" title="Retorna um indicador, ap�s a execu��o do algoritmo.">TProcura::Indicador()</a>.  <br /></td></tr>
-<tr class="separator:gad8bb028ef31b04b7932be22ca0afbd3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98059503024d1ffc1c8ddaaec1b5a116" id="r_ga98059503024d1ffc1c8ddaaec1b5a116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RedefinicaoOpcional.html#ga98059503024d1ffc1c8ddaaec1b5a116">TProcuraConstrutiva::Indicador</a> (<a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a> id) <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">override</a></td></tr>
+<tr class="memdesc:ga98059503024d1ffc1c8ddaaec1b5a116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinição. Ver <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2" title="Retorna um indicador, ap�s a execu��o do algoritmo.">TProcura::Indicador()</a>.  <br /></td></tr>
+<tr class="separator:ga98059503024d1ffc1c8ddaaec1b5a116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Métodos que não precisam ser redefinidos para uma implementação eficaz </p>
@@ -154,7 +154,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Retorna verdadeiro, mas caso não seja feito uma ação, devido a ser impossível, retornar falso.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>A implementação gera os sucessores, e vê qual o que corresponde à ação fornecida. Copia o estado correspondente para o atual, ou retorna falso caso a ação não seja possível. O método não é eficiente, mas também não utilizado pelos algoritmos, apenas na interface. Caso exista um motivo para que seja eficiente, deve ser implementada uma versão mais eficiente para cada problema, tendo em atenção a sua coerência com a função <a class="el" href="group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c" title="Coloca em sucessores a lista de estados sucessores.">Sucessores()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00085">85</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00087">87</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -198,7 +198,7 @@ Here is the call graph for this function:</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a> != <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">outro</a>.variavel;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00113">TProcuraConstrutiva.h:114</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na �ltima execu��o.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00460">TProcura.h:460</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na �ltima execu��o.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00479">TProcura.h:479</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCAspirador.html#a9279c18880569e58bc26932979d58058">CAspirador</a>, and <a class="el" href="classCProblemaArtificial.html#a5243c313f30ce2fe40f0d9d274cd5d8a">CProblemaArtificial</a>.</p>
 
@@ -238,7 +238,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a1297806db02da2a44794883a6f427965">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00715">715</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00717">717</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -252,8 +252,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="gad8bb028ef31b04b7932be22ca0afbd3c" name="gad8bb028ef31b04b7932be22ca0afbd3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad8bb028ef31b04b7932be22ca0afbd3c">&#9670;&#160;</a></span>Indicador()</h2>
+<a id="ga98059503024d1ffc1c8ddaaec1b5a116" name="ga98059503024d1ffc1c8ddaaec1b5a116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga98059503024d1ffc1c8ddaaec1b5a116">&#9670;&#160;</a></span>Indicador()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +262,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a> TProcuraConstrutiva::Indicador </td>
+          <td class="memname"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int64_t</a> TProcuraConstrutiva::Indicador </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a>&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
@@ -276,11 +276,11 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Redefinição. Ver <a class="el" href="classTProcura.html#a475d33545a5f5f1bbebf1365d730e4f0" title="Retorna um indicador, ap�s a execu��o do algoritmo.">TProcura::Indicador()</a>. </p>
+<p>Redefinição. Ver <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2" title="Retorna um indicador, ap�s a execu��o do algoritmo.">TProcura::Indicador()</a>. </p>
 
-<p>Reimplemented from <a class="el" href="classTProcura.html#a475d33545a5f5f1bbebf1365d730e4f0">TProcura</a>.</p>
+<p>Reimplemented from <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00916">916</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00919">919</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -327,7 +327,7 @@ Em situações particulares, poderá ser possível construir a solução de form
 <div class="line">    <a class="code hl_function" href="classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0">Debug</a>();</div>
 <div class="line">    <span class="comment">// caso seja um caminho do estado inicial ao final, não redefinir</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcura_html_a98f0e815a25aa85841c88a638bf4eaf0"><div class="ttname"><a href="classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(void)</div><div class="ttdoc">Mostra o estado no ecr�, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00083">TProcura.cpp:83</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a98f0e815a25aa85841c88a638bf4eaf0"><div class="ttname"><a href="classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(void)</div><div class="ttdoc">Mostra o estado no ecr�, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00091">TProcura.cpp:91</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a014a294d094430b113ffb36e64a74d97">TProcura</a>.</p>
 

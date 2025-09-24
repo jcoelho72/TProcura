@@ -1,5 +1,6 @@
 var structSParametro =
 [
+    [ "dependencia", "structSParametro.html#a599032a07da5a46584c5304445b6ca00", null ],
     [ "descricao", "structSParametro.html#a4ddb9b7f1ca63ca57878f7a5c588c928", null ],
     [ "max", "structSParametro.html#aa6d52b4df1268ca83929f85df2a491fa", null ],
     [ "min", "structSParametro.html#aaf6a93eeb7215270e707dcd20940e9ff", null ],

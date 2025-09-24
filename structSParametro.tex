@@ -26,8 +26,10 @@ int \mbox{\hyperlink{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}{max}}
 \begin{DoxyCompactList}\small\item\em valor máximo que o parametro pode tomar \end{DoxyCompactList}\item 
 const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structSParametro_a4ddb9b7f1ca63ca57878f7a5c588c928}{descricao}}
 \begin{DoxyCompactList}\small\item\em descrição do parametro, opcional \end{DoxyCompactList}\item 
-const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structSParametro_aae8aa852643edec8af4d1c3c42ede0b2}{nome\+Valores}}
-\begin{DoxyCompactList}\small\item\em Nome associado a cada valor do parâmetro, útil para variáveis categóricas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+const char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structSParametro_aae8aa852643edec8af4d1c3c42ede0b2}{nome\+Valores}} = NULL
+\begin{DoxyCompactList}\small\item\em Nome associado a cada valor do parâmetro, útil para variáveis categóricas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ int $>$ \mbox{\hyperlink{structSParametro_a599032a07da5a46584c5304445b6ca00}{dependencia}}
+\begin{DoxyCompactList}\small\item\em dependência (indice do parametro, seguido de valores permitidos) -\/ vazio não tem dependência \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -43,17 +45,31 @@ Existe uma vetor de parametros declarada de forma estática, de modo a aceder a q
 \end{DoxySeeAlso}
 Exemplo\+: 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if}(Parametro(nivelDebug)\ >\ passos)}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(Parametro(\mbox{\hyperlink{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3}{NIVEL\_DEBUG}})\ >\ \mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a}{PASSOS}})}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ mostrar\ informação\ de\ debug\ correspondendo\ ao\ nível\ detalhe\ ou\ superior}}
 
 \end{DoxyCode}
  
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00111}{111}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00126}{126}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{structSParametro_a599032a07da5a46584c5304445b6ca00}\label{structSParametro_a599032a07da5a46584c5304445b6ca00} 
+\index{SParametro@{SParametro}!dependencia@{dependencia}}
+\index{dependencia@{dependencia}!SParametro@{SParametro}}
+\doxysubsubsection{\texorpdfstring{dependencia}{dependencia}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$int$>$ SParametro\+::dependencia}
+
+
+
+dependência (indice do parametro, seguido de valores permitidos) -\/ vazio não tem dependência 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00141}{141}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
 \Hypertarget{structSParametro_a4ddb9b7f1ca63ca57878f7a5c588c928}\label{structSParametro_a4ddb9b7f1ca63ca57878f7a5c588c928} 
 \index{SParametro@{SParametro}!descricao@{descricao}}
 \index{descricao@{descricao}!SParametro@{SParametro}}
@@ -66,7 +82,7 @@ descrição do parametro, opcional
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00121}{121}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00136}{136}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_aa6d52b4df1268ca83929f85df2a491fa}\label{structSParametro_aa6d52b4df1268ca83929f85df2a491fa} 
 \index{SParametro@{SParametro}!max@{max}}
@@ -80,7 +96,7 @@ valor máximo que o parametro pode tomar
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00119}{119}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00134}{134}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff}\label{structSParametro_aaf6a93eeb7215270e707dcd20940e9ff} 
 \index{SParametro@{SParametro}!min@{min}}
@@ -94,7 +110,7 @@ valor mínimo que o parametro pode tomar
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00117}{117}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00132}{132}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_aa25ae60ffa1acbaeb51bdf0e5312c349}\label{structSParametro_aa25ae60ffa1acbaeb51bdf0e5312c349} 
 \index{SParametro@{SParametro}!nome@{nome}}
@@ -108,13 +124,13 @@ nome do parametro, opcional mas aconselhado nos parâmetros específicos
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00113}{113}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00128}{128}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_aae8aa852643edec8af4d1c3c42ede0b2}\label{structSParametro_aae8aa852643edec8af4d1c3c42ede0b2} 
 \index{SParametro@{SParametro}!nomeValores@{nomeValores}}
 \index{nomeValores@{nomeValores}!SParametro@{SParametro}}
 \doxysubsubsection{\texorpdfstring{nomeValores}{nomeValores}}
-{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} SParametro\+::nome\+Valores}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} SParametro\+::nome\+Valores = NULL}
 
 
 
@@ -125,7 +141,7 @@ Especialmente relevante quando os valores não seguem uma sequência ordenada.
 \end{DoxyNote}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00124}{124}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00139}{139}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33}\label{structSParametro_a6e6c4623e2bbfac2be3ec7a9d39e4d33} 
 \index{SParametro@{SParametro}!valor@{valor}}
@@ -139,7 +155,7 @@ valor do parametro
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00115}{115}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00130}{130}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 
 

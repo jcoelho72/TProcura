@@ -2,12 +2,12 @@ var TCodificacaoPermutacao_8h =
 [
     [ "TCodificacaoPermutacao", "classTCodificacaoPermutacao.html", "classTCodificacaoPermutacao" ],
     [ "ECodificacaoPermutacao", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2a", [
-      [ "cruzamentoCP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa85a256edf8b2f3db917366a11beadf54", null ],
-      [ "mutacaoCP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa1d3dfda9b351dc2fcfc4bde0644b7cb5", null ],
-      [ "vizinhancaCP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa9602bd849442f329b0e4f1211fa5cfc9", null ],
-      [ "limiteVizinhancaCP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa4ba29d03d2190745dab6617f18daba9e", null ],
-      [ "distanciaCP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aad2b28b3c0052b05d650c0aad7c16d895", null ],
-      [ "parametrosCodificacaoPermutacao", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aaa5ef48496bc12cc0fcf899f0b027cc9b", null ]
+      [ "TIPO_CRUZAR_CP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aaf6482b5a36c1a242cc76b13e64630a13", null ],
+      [ "TIPO_MUTAR_CP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa32dd12ab4545376d776f5905724c06b0", null ],
+      [ "TIPO_VIZINHO_CP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa77d1a0dd55212547c1427af6db899df4", null ],
+      [ "LIMITE_VIZINHOS_CP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa1915512e9152f6dfbac22aec1fdb1975", null ],
+      [ "TIPO_DISTANCIA_CP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa070eaccc285c16fcfad6722346f311b7", null ],
+      [ "PARAMETROS_CP", "TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa4b7e3ba90d85bfc3b105936f01e3e0b8", null ]
     ] ],
     [ "ETiposDistanciaPermutacao", "TCodificacaoPermutacao_8h.html#a425b0d443e3e0e97759d1b231b71c564", [
       [ "distHammingCP", "TCodificacaoPermutacao_8h.html#a425b0d443e3e0e97759d1b231b71c564aeaebe8fe52812a18cc43825b0f7ae047", null ],

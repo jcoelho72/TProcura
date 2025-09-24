@@ -50,8 +50,8 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \begin{DoxyCompactList}\small\item\em Mostrar soluÃ§Ã£o, seja um caminho ou o prÃ³prio estado. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__RedefinicaoOpcional_gae52871eb18c8ae656a2174acf43b3bb3}{Executa\+Algoritmo}} ()
 \begin{DoxyCompactList}\small\item\em Executa o algoritmo com os parametros atuais. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__RedefinicaoOpcional_gad8bb028ef31b04b7932be22ca0afbd3c}{Indicador}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
-\begin{DoxyCompactList}\small\item\em RedefiniÃ§Ã£o. Ver \doxylink{classTProcura_a475d33545a5f5f1bbebf1365d730e4f0}{TProcura\+::\+Indicador()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int64\+\_\+t}} \mbox{\hyperlink{group__RedefinicaoOpcional_ga98059503024d1ffc1c8ddaaec1b5a116}{Indicador}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
+\begin{DoxyCompactList}\small\item\em RedefiniÃ§Ã£o. Ver \doxylink{classTProcura_a39f8ec3e0c97c7bc1bcd45e685168da2}{TProcura\+::\+Indicador()}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} limite=0)
 \begin{DoxyCompactList}\small\item\em Executa a procura em largura primeiro, algoritmo cego. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} limite=0)
@@ -66,9 +66,9 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \begin{DoxyCompactList}\small\item\em Executa a procura IDA\texorpdfstring{$\ast$}{*}, algoritmo informado. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{upper\+Bound}}=0)
 \begin{DoxyCompactList}\small\item\em Executa o algoritmo Branch-\/and-\/\+Bound, um algoritmo informado. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_aa882dc14d5e9fa3033e6924293c7c246}{Limpar\+Estatisticas}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_adaefadabea2eb225ed28c3927feb6828}{Limpar\+Estatisticas}} () \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a43c6ec9acbb9f9ce77c4628bf54b7da2}{Execucao\+Terminada}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicio}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraConstrutiva_a42e8230fd5131f4bff8645680ff785f5}{Execucao\+Terminada}} () \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Chamar após a execução do algoritmo. Grava o tempo consumido. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraConstrutiva_a5f021041a7dfe1b68890d9e5f5f0e6f4}{Lower\+Bound}} ()
 \item 
@@ -87,12 +87,12 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \begin{DoxyCompactList}\small\item\em Verifica se a procura deve ser interrompida. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_afcfe280771c67c80a69d422c476ae090}{Teste\+Empirico}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{mostrar\+Solucoes}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ae98922e2f7f8bb6e487af0a1e4f84336}{Teste\+Empirico}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
 \begin{DoxyCompactList}\small\item\em Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{main}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argc}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argv}}\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a972ec246214b0dbc110b054a43518f55}{Codificar\+Solucao}} ()
-\begin{DoxyCompactList}\small\item\em retorna um vetor de inteiros com a codifciação da solução (esta codificação será adicionada aos indicadores, no ficheiro CSV de resultados) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int64\+\_\+t}} $>$ \mbox{\hyperlink{classTProcura_ac772df9c7bcd3c5bb20f17c783ec3155}{Codificar\+Solucao}} ()
+\begin{DoxyCompactList}\small\item\em retorna um vetor de inteiros com a codificação da solução (esta codificação será adicionada aos indicadores, no ficheiro CSV de resultados) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_afa3015ac104b603930d3f60a34c09fff}{Tempo\+Excedido}} ()
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a73463e33b889e6053ee32220e0514a2c}{Iteracoes\+Excedido}} ()
@@ -101,8 +101,8 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \& \mbox{\hyperlink{classTProcura_ab0442a86569fcc589eb3dee11ce33603}{Parametro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a854e8f4133fa73db23b693155a2fa681}{Debug}} (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} tipo, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{exato}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{fmt}},...)
-\begin{DoxyCompactList}\small\item\em Mostra uma informação de debug, se o nível de debug for suficiente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a816897a3f52c463e9ba30df3fd41dd6e}{Parametro\+Ativo}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{valores}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -114,15 +114,19 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a9918a19f3cead7c9c6bd28f19ff31b0e}{Novo\+Valor}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{prompt}})
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTProcura_a17fa21564876d313f79b4376ce7366a1}{Novo\+Texto}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{prompt}})
-\end{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a5a45cf62116d2138a4cb823c9e50e1df}{Debug}} (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} tipo, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{exato}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{fmt}},...)
+\begin{DoxyCompactList}\small\item\em Mostra uma informação de debug, se o nível de debug for suficiente. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classTProcura_a3bfb17b3b826cc2f593f950a227c3049}{Mostra\+Tempo}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{double}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{segundos}})
+\begin{DoxyCompactList}\small\item\em Mostra tempo num formato humano. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisEstado_ga70de69abaeaa64262d4bd042ef01e62c}{pai}}
+\mbox{\hyperlink{TProcuraConstrutiva_8h_a510f7055614397eeab21f50df58cc9b8}{TNo}} \mbox{\hyperlink{group__VariaveisEstado_ga70de69abaeaa64262d4bd042ef01e62c}{pai}} = \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}
 \begin{DoxyCompactList}\small\item\em Ponteiro para o estado pai, na Ã¡rvore de procura. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}}
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga2ee0de16d01f9520b20807f900bf69d0}{custo}} = 1
 \begin{DoxyCompactList}\small\item\em Custo total acumulado desde o estado inicial. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}}
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{group__VariaveisEstado_ga1703a3b3ed01aa7742846d296aad112d}{heuristica}} = 0
 \begin{DoxyCompactList}\small\item\em Estimativa para o custo atÃ© um estado objetivo, se disponÃ­vel. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -160,14 +164,18 @@ Collaboration diagram for TProcura\+Construtiva\+:
 \begin{DoxyCompactList}\small\item\em Conjuntos de configurações para teste empírico. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}} = 0
 \begin{DoxyCompactList}\small\item\em Resultado retornado pelo algoritmo na última execução. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a5a71869efc40783b068cdd25145925f6}{tempo}} = 0
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{double}} \mbox{\hyperlink{classTProcura_af7735671436a99def475aba1fdb42435}{tempo}} = 0
 \begin{DoxyCompactList}\small\item\em tempo consumido na última execução. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a5cb8dad7e3cdda780c22a3893f3d5ad9}{iteracoes}} = 0
 \begin{DoxyCompactList}\small\item\em Número total de iterações realizadas na última execução. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \mbox{\hyperlink{classTProcura_aad1d62f5db16f77742bb291b6ef342f6}{instante\+Final}} = 0
 \begin{DoxyCompactList}\small\item\em Instante final (deadline) da corrida atual. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a0603a12d645bdc6ff66a454c8614014d}{memoria\+Esgotada}} = \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}}
-\begin{DoxyCompactList}\small\item\em Flag indicando problemas de memória esgotada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Flag indicando problemas de memória esgotada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a33299404773c01c2ef170581cf8e7e6c}{mpi\+ID}} = 0
+\begin{DoxyCompactList}\small\item\em MPI -\/ rank do processo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a9783dde67fd219cf5e9f8661728e13a9}{mpi\+Count}} = 1
+\begin{DoxyCompactList}\small\item\em MPI -\/ número de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -222,7 +230,7 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \begin{DoxyCompactList}\small\item\em Insere um novo registo de resultados. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_ab6d1ce659d922b9d30550220e3028129}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
 \begin{DoxyCompactList}\small\item\em Procura um registo com determinado id. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a2a99102cba3846baa3597b4ab462d620}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} valor)
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ad9142d2a01abb01dfb939c23bf478de2}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int64\+\_\+t}} valor)
 \begin{DoxyCompactList}\small\item\em Atualiza o valor de um registo. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a6fb8a8658085b349818e46835868c564}{Mostra\+Parametros}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{detalhe}}=1, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{id\+Parametros}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
 \begin{DoxyCompactList}\small\item\em Mostra os parâmetros atuais. \end{DoxyCompactList}\item 
@@ -258,14 +266,14 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \begin{DoxyCompactList}\small\item\em Solicita ao utilizador uma lista de instâncias. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_abda2c4f1066721e5c0e06c5ea22dce36}{Relatorio\+CSV}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultados}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{FILE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{f}})
 \begin{DoxyCompactList}\small\item\em Gera um relatório CSV com os resultados. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a8fc25ea3a65a1aef8e9064281c900ba5}{Extrai\+Lista}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{str}})
-\begin{DoxyCompactList}\small\item\em Extrai uma lista de inteiros a partir de uma string. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a662c7ff8ba62bb5745a7ee0ec92eea13}{Inserir\+Configuracoes}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{str}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{base}})
 \begin{DoxyCompactList}\small\item\em Insere configurações a partir de uma string. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a50d54c6e69c4659017373d4c25ff1207}{Inserir\+Configuracoes}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{base}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{produto}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{valores}})
 \begin{DoxyCompactList}\small\item\em Insere configurações gerando o produto cartesiano de valores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_adc4d653fe0feb6033083adc5d19e7fb5}{Ajuda\+Utilizacao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{programa}})
-\begin{DoxyCompactList}\small\item\em Mostra ajuda de utilização do programa. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Mostra ajuda de utilização do programa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_aa47aff45144b528adaecdb654c498844}{Juntar\+CSV}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}})
+\begin{DoxyCompactList}\small\item\em Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -282,7 +290,13 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a12cd67e1b86ed4d6a6c47c652c0cd9bf}{Dominio}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{variavel}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} min=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{INT\+\_\+\+MIN}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} max=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{INT\+\_\+\+MAX}})
-\begin{DoxyCompactList}\small\item\em Limita o domínio de um parâmetro inteiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Limita o domínio de um parâmetro inteiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a99028e43382ddefb3660942deb95608d}{Inicializa\+MPI}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argc}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argv}}\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Inicializa o ambiente MPI, se aplicável. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a5f946d1f7a89ca3c50fbb80477966607}{Finaliza\+MPI}} ()
+\begin{DoxyCompactList}\small\item\em Finaliza o ambiente MPI, se aplicável. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{double}} \mbox{\hyperlink{classTProcura_adb09aa964fe750da7a383318cd0f48a0}{Cronometro}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{enum}} \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501}{ECronometro}} id=\mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a8ae5fb297d5b14691f03df80cedd7356}{CONT\+\_\+\+ALGORITMO}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{inicialiar}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{false}})
+\begin{DoxyCompactList}\small\item\em retorna o tempo em segundos desde que o cronómetro foi inicializado \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -300,7 +314,7 @@ Permite execuÃ§Ã£o dos algoritmos\+:
 \begin{DoxyItemize}
 \item {\bfseries{Cegos}}\+: \doxylink{group__ProcurasCegas_gafe656922894d8a27b4cfb70128793af0}{Largura\+Primeiro()}, \doxylink{group__ProcurasCegas_ga2343fafdecfd55b69c0ffb71e8f9426b}{Custo\+Uniforme()}, \doxylink{group__ProcurasCegas_gaf00d9776f6b25d56138efb6725b86228}{Profundidade\+Primeiro()}
 \item {\bfseries{Informados}}\+: \doxylink{group__ProcurasInformadas_gaebb84182343041bc276e4ceceb4b13aa}{Melhor\+Primeiro()}, \doxylink{group__ProcurasInformadas_ga37dd78e1a9a6742700728135f81964b4}{AStar()}, \doxylink{group__ProcurasInformadas_gae77f9608e7988052377d7025bee7c4e8}{IDAStar()}, \doxylink{group__ProcurasInformadas_gafe804dbf6cabda9e627500c2d4f8aafd}{Branch\+And\+Bound()}
-\item {\bfseries{Testes e avaliaÃ§Ã£o}}\+: \doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()}, \doxylink{classTProcura_afcfe280771c67c80a69d422c476ae090}{Teste\+Empirico()} --- definidos em \doxylink{classTProcura}{TProcura}
+\item {\bfseries{Testes e avaliaÃ§Ã£o}}\+: \doxylink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual()}, \doxylink{classTProcura_ae98922e2f7f8bb6e487af0a1e4f84336}{Teste\+Empirico()} --- definidos em \doxylink{classTProcura}{TProcura}
 \end{DoxyItemize}
 
 {\bfseries{ObservaÃ§Ã£o\+:}} Alguns mÃ©todos e parÃ¢metros terÃ£o efeito apenas se determinados mÃ©todos forem redefinidos na subclasse. 
@@ -341,7 +355,7 @@ Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8h_source_l00117}{117}} 
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00207}{207}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00209}{209}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 2
@@ -355,7 +369,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00474}{474}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00476}{476}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 4
@@ -369,7 +383,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00605}{605}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00607}{607}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 6
@@ -383,7 +397,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00564}{564}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00566}{566}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 8
@@ -397,7 +411,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00681}{681}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00683}{683}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 10
@@ -409,7 +423,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00531}{531}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00533}{533}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 11
@@ -423,7 +437,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00673}{673}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00675}{675}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 13
@@ -437,7 +451,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00629}{629}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00631}{631}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 15
@@ -449,7 +463,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00556}{556}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00558}{558}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 16
@@ -461,7 +475,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00587}{587}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00589}{589}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 17
@@ -475,17 +489,17 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00641}{641}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00643}{643}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 19
 Here is the caller graph for this function\+:
 % FIG 20
-\Hypertarget{classTProcuraConstrutiva_a43c6ec9acbb9f9ce77c4628bf54b7da2}\label{classTProcuraConstrutiva_a43c6ec9acbb9f9ce77c4628bf54b7da2} 
+\Hypertarget{classTProcuraConstrutiva_a42e8230fd5131f4bff8645680ff785f5}\label{classTProcuraConstrutiva_a42e8230fd5131f4bff8645680ff785f5} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!ExecucaoTerminada@{ExecucaoTerminada}}
 \index{ExecucaoTerminada@{ExecucaoTerminada}!TProcuraConstrutiva@{TProcuraConstrutiva}}
 \doxysubsubsection{\texorpdfstring{ExecucaoTerminada()}{ExecucaoTerminada()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Execucao\+Terminada (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}}}]{inicio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Execucao\+Terminada (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -493,11 +507,11 @@ Chamar após a execução do algoritmo. Grava o tempo consumido.
 
 
 
-Reimplemented from \mbox{\hyperlink{classTProcura_a820d64eab4f1b5e040a3eca5704026e7}{TProcura}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a86985c8dc9a0e0bd375a4148f6ea6de7}{TProcura}}.
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00731}{731}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00733}{733}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 21
@@ -509,7 +523,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00878}{878}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00881}{881}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 22
@@ -531,7 +545,7 @@ Reimplemented from \mbox{\hyperlink{classTProcura_abd93e2ba1f58d3ee7bef74845cee9
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00742}{742}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00744}{744}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 24
@@ -543,7 +557,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00828}{828}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00831}{831}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 25
@@ -557,15 +571,15 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 27
-\Hypertarget{classTProcuraConstrutiva_aa882dc14d5e9fa3033e6924293c7c246}\label{classTProcuraConstrutiva_aa882dc14d5e9fa3033e6924293c7c246} 
+\Hypertarget{classTProcuraConstrutiva_adaefadabea2eb225ed28c3927feb6828}\label{classTProcuraConstrutiva_adaefadabea2eb225ed28c3927feb6828} 
 \index{TProcuraConstrutiva@{TProcuraConstrutiva}!LimparEstatisticas@{LimparEstatisticas}}
 \index{LimparEstatisticas@{LimparEstatisticas}!TProcuraConstrutiva@{TProcuraConstrutiva}}
 \doxysubsubsection{\texorpdfstring{LimparEstatisticas()}{LimparEstatisticas()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Limpar\+Estatisticas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{clock\+\_\+t}} \&}]{inicio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Construtiva\+::\+Limpar\+Estatisticas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -573,11 +587,11 @@ Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o inst
 
 
 
-Reimplemented from \mbox{\hyperlink{classTProcura_ad0506a4e5c70623f42bb1c3f2d8c1eb6}{TProcura}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_ae82e7be02923531e7ead26b1b25cec0f}{TProcura}}.
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00701}{701}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00703}{703}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 28
@@ -591,7 +605,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00847}{847}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00850}{850}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 30
@@ -619,7 +633,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00336}{336}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00338}{338}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 34
@@ -633,7 +647,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00621}{621}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00623}{623}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 36
@@ -647,7 +661,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00200}{200}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00202}{202}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 38
@@ -661,7 +675,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00193}{193}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 40
@@ -673,7 +687,7 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00318}{318}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00320}{320}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 41
@@ -687,7 +701,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00329}{329}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00331}{331}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 43
@@ -705,7 +719,7 @@ Reimplemented in \mbox{\hyperlink{classTProcuraAdversa_ab13f514d86e599dc15a682e6
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00899}{899}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00902}{902}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 45
@@ -717,7 +731,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00227}{227}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source_l00229}{229}} of file \mbox{\hyperlink{TProcuraConstrutiva_8cpp_source}{TProcura\+Construtiva.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 46

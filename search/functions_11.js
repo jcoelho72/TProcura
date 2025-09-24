@@ -1,9 +1,16 @@
 var searchData=
 [
-  ['valor_0',['Valor',['../classCListaNo.html#aef59a51e58231841d16fa45aa7582328',1,'CListaNo']]],
-  ['valorestado_1',['ValorEstado',['../classTProcuraAdversa.html#a9c95c246b28345f0d515a9083ffd646d',1,'TProcuraAdversa']]],
-  ['verificalimites_2',['VerificaLimites',['../classTProcuraConstrutiva.html#aec0a667a7fda1ebe565ba13d6b02805a',1,'TProcuraConstrutiva']]],
-  ['verificamelhor_3',['verificamelhor',['../classTProcuraMelhorativa.html#aeb435694084a626e3d52f3a489d9a93d',1,'TProcuraMelhorativa::VerificaMelhor(TPonto &amp;melhor, TPonto atual)'],['../classTProcuraMelhorativa.html#a8cb678f2a5c1bc649d5e1739ef7b5106',1,'TProcuraMelhorativa::VerificaMelhor(TPonto atual)']]],
-  ['verlinha_4',['VerLinha',['../classCJogoEmLinha.html#ab7f482497b6ffa4823327474f1b822ed',1,'CJogoEmLinha']]],
-  ['vizinhanca_5',['vizinhanca',['../classTCodificacaoBinaria.html#a2dab8869b025da3b57888d9830b3b281',1,'TCodificacaoBinaria::Vizinhanca()'],['../classTCodificacaoInteira.html#a4411e9666d20ad365a56879808dda144',1,'TCodificacaoInteira::Vizinhanca()'],['../classTCodificacaoPermutacao.html#aca536a8709cddbfa6461652949092a4c',1,'TCodificacaoPermutacao::Vizinhanca()'],['../classTCodificacaoReal.html#a95fc441bc8e6c9c6bac399f7eb33b32f',1,'TCodificacaoReal::Vizinhanca()'],['../classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2',1,'COitoDamas::Vizinhanca()'],['../classCParticao.html#a54bc83b93ee7996d8203192c45f3f486',1,'CParticao::Vizinhanca()'],['../classTProcuraMelhorativa.html#ad268f3d892d6a912f632369e1c9be878',1,'TProcuraMelhorativa::Vizinhanca()']]]
+  ['tcodificacaobinaria_0',['TCodificacaoBinaria',['../classTCodificacaoBinaria.html#a1e8cb3042ee30695e43e8c595e22e8bc',1,'TCodificacaoBinaria']]],
+  ['tcodificacaointeira_1',['TCodificacaoInteira',['../classTCodificacaoInteira.html#abb7f5fe5d6b47c9e69e2b97715e483ae',1,'TCodificacaoInteira']]],
+  ['tcodificacaopermutacao_2',['TCodificacaoPermutacao',['../classTCodificacaoPermutacao.html#a4952645c033324ee35e8077e0de40756',1,'TCodificacaoPermutacao']]],
+  ['tcodificacaoreal_3',['TCodificacaoReal',['../classTCodificacaoReal.html#ac5da114de8222ac49eb1099504185168',1,'TCodificacaoReal']]],
+  ['tempoexcedido_4',['TempoExcedido',['../classTProcura.html#afa3015ac104b603930d3f60a34c09fff',1,'TProcura']]],
+  ['testeempirico_5',['testeempirico',['../classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8',1,'TProcuraAdversa::TesteEmpirico()'],['../classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336',1,'TProcura::TesteEmpirico(TVector&lt; int &gt; instancias, char *ficheiro=NULL)']]],
+  ['testemanual_6',['testemanual',['../classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af',1,'TProcura::TesteManual()'],['../classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed',1,'CProblemaArtificial::TesteManual()'],['../classCParticao.html#aa4d328b9944991f3fc52ce0726111865',1,'CParticao::TesteManual()'],['../classCJogoEmLinha.html#ad289e94136b44c9e3e942acf64ff0449',1,'CJogoEmLinha::TesteManual()'],['../classCJogoDoGalo.html#a113984a3801a93ebce61e0a700a413ab',1,'CJogoDoGalo::TesteManual()']]],
+  ['tprocura_7',['TProcura',['../classTProcura.html#a72975c17835fa9ce5783db63221b0637',1,'TProcura']]],
+  ['tprocuraadversa_8',['TProcuraAdversa',['../classTProcuraAdversa.html#afe356b79fccb94b6fd2e416bc653fc17',1,'TProcuraAdversa']]],
+  ['tprocuraconstrutiva_9',['TProcuraConstrutiva',['../classTProcuraConstrutiva.html#a13799910c11d9ab8585bec576becc8a5',1,'TProcuraConstrutiva']]],
+  ['tprocuramelhorativa_10',['TProcuraMelhorativa',['../classTProcuraMelhorativa.html#aba98f98071199b2fb5c16b830a2875a2',1,'TProcuraMelhorativa']]],
+  ['troca_11',['Troca',['../classTCodificacaoBinaria.html#af0633fcdb3d410738061a8470c5e0780',1,'TCodificacaoBinaria']]],
+  ['tvector_12',['tvector',['../classTVector.html#af101f2c096078779fb2569bb82303216',1,'TVector::TVector(int size=0)'],['../classTVector.html#ae7c66dcf639a5f1c65ca4cfe4c7786f1',1,'TVector::TVector(int size, Item const *init)'],['../classTVector.html#a0fd57ce860d22f425cbb01d87dd0a064',1,'TVector::TVector(const TVector &amp;o)'],['../classTVector.html#aa6623d3565cd1addfbd181f1c57dab09',1,'TVector::TVector(TVector &amp;&amp;o) noexcept'],['../classTVector.html#ab207d23b5ccb0f5830d9b1f8e4c9acdf',1,'TVector::TVector(std::initializer_list&lt; Item &gt; init)'],['../classTVector.html#a8497010f3b4e85691a4e49970dddd77b',1,'TVector::TVector(const char *str)']]]
 ];

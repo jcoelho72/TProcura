@@ -126,20 +126,43 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4ddb9b7f1ca63ca57878f7a5c588c928" id="r_a4ddb9b7f1ca63ca57878f7a5c588c928"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSParametro.html#a4ddb9b7f1ca63ca57878f7a5c588c928">descricao</a></td></tr>
 <tr class="memdesc:a4ddb9b7f1ca63ca57878f7a5c588c928"><td class="mdescLeft">&#160;</td><td class="mdescRight">descrição do parametro, opcional  <br /></td></tr>
 <tr class="separator:a4ddb9b7f1ca63ca57878f7a5c588c928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae8aa852643edec8af4d1c3c42ede0b2" id="r_aae8aa852643edec8af4d1c3c42ede0b2"><td class="memItemLeft" align="right" valign="top">const char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSParametro.html#aae8aa852643edec8af4d1c3c42ede0b2">nomeValores</a></td></tr>
+<tr class="memitem:aae8aa852643edec8af4d1c3c42ede0b2" id="r_aae8aa852643edec8af4d1c3c42ede0b2"><td class="memItemLeft" align="right" valign="top">const char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSParametro.html#aae8aa852643edec8af4d1c3c42ede0b2">nomeValores</a> = NULL</td></tr>
 <tr class="memdesc:aae8aa852643edec8af4d1c3c42ede0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nome associado a cada valor do parâmetro, útil para variáveis categóricas.  <br /></td></tr>
 <tr class="separator:aae8aa852643edec8af4d1c3c42ede0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a599032a07da5a46584c5304445b6ca00" id="r_a599032a07da5a46584c5304445b6ca00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTVector.html">TVector</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSParametro.html#a599032a07da5a46584c5304445b6ca00">dependencia</a></td></tr>
+<tr class="memdesc:a599032a07da5a46584c5304445b6ca00"><td class="mdescLeft">&#160;</td><td class="mdescRight">dependência (indice do parametro, seguido de valores permitidos) - vazio não tem dependência  <br /></td></tr>
+<tr class="separator:a599032a07da5a46584c5304445b6ca00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Estrutura para registo de um parâmetro. </p>
 <p>Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.</p>
 <dl class="section note"><dt>Note</dt><dd>Existe uma vetor de parametros declarada de forma estática, de modo a aceder a qualquer parametro de forma global no código. A ordem dos parametros estão de acordo com o tipo enumerado EParametrosConstrutiva</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6" title="Identifica um parâmetro específico no código.">EParametrosProcura</a> e ResetParametros()</dd></dl>
-<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(nivelDebug) &gt; passos)</div>
+<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
 <div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
+<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a></div><div class="ttdeci">@ PASSOS</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00066">TProcura.h:66</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a></div><div class="ttdeci">@ NIVEL_DEBUG</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00044">TProcura.h:44</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00111">111</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00126">126</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a599032a07da5a46584c5304445b6ca00" name="a599032a07da5a46584c5304445b6ca00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599032a07da5a46584c5304445b6ca00">&#9670;&#160;</a></span>dependencia</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTVector.html">TVector</a>&lt;int&gt; SParametro::dependencia</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dependência (indice do parametro, seguido de valores permitidos) - vazio não tem dependência </p>
+
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00141">141</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+
+</div>
+</div>
 <a id="a4ddb9b7f1ca63ca57878f7a5c588c928" name="a4ddb9b7f1ca63ca57878f7a5c588c928"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ddb9b7f1ca63ca57878f7a5c588c928">&#9670;&#160;</a></span>descricao</h2>
 
@@ -154,7 +177,7 @@ Public Attributes</h2></td></tr>
 
 <p>descrição do parametro, opcional </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00121">121</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00136">136</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -172,7 +195,7 @@ Public Attributes</h2></td></tr>
 
 <p>valor máximo que o parametro pode tomar </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00119">119</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00134">134</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -190,7 +213,7 @@ Public Attributes</h2></td></tr>
 
 <p>valor mínimo que o parametro pode tomar </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00117">117</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00132">132</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -208,7 +231,7 @@ Public Attributes</h2></td></tr>
 
 <p>nome do parametro, opcional mas aconselhado nos parâmetros específicos </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00113">113</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00128">128</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -219,7 +242,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char** SParametro::nomeValores</td>
+          <td class="memname">const char** SParametro::nomeValores = NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -227,7 +250,7 @@ Public Attributes</h2></td></tr>
 <p>Nome associado a cada valor do parâmetro, útil para variáveis categóricas. </p>
 <dl class="section note"><dt>Note</dt><dd>Especialmente relevante quando os valores não seguem uma sequência ordenada. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00124">124</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00139">139</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -245,7 +268,7 @@ Public Attributes</h2></td></tr>
 
 <p>valor do parametro </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00115">115</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00130">130</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>

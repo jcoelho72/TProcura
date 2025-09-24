@@ -41,7 +41,7 @@ digraph "TProcuraConstrutiva::Codifica"
   Node16 -> Node17 [id="edge78_Node000016_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parametros atuais."];
   Node17 -> Node18 [id="edge79_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
   Node16 -> Node19 [id="edge80_Node000016_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="TProcuraAdversa::MetodoIterativo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a7c4153974c32753901326271fee90197",tooltip="iteraÃ§Ã£o, aumentando o nÃ­vel progressivamente"];
   Node19 -> Node16 [id="edge81_Node000019_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -65,7 +65,7 @@ digraph "TProcuraConstrutiva::Codifica"
   Node25 [id="Node000025",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node23 -> Node23 [id="edge94_Node000023_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 -> Node26 [id="edge95_Node000022_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node26 [id="Node000026",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#aa882dc14d5e9fa3033e6924293c7c246",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
+  Node26 [id="Node000026",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
   Node26 -> Node25 [id="edge96_Node000026_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node26 -> Node18 [id="edge97_Node000026_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 -> Node27 [id="edge98_Node000022_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];

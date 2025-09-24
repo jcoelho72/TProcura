@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['valor_0',['valor',['../structSValorEstado.html#a3374e50c2a88a710ddc82d198b48b4c2',1,'SValorEstado::valor'],['../structSParametro.html#a6e6c4623e2bbfac2be3ec7a9d39e4d33',1,'SParametro::valor'],['../structSResultado.html#a4ddd2a7c64e1782427a96153c9cbd8d1',1,'SResultado::valor'],['../classCListaNo.html#aef59a51e58231841d16fa45aa7582328',1,'CListaNo::Valor()']]],
+  ['valor_0',['valor',['../structSValorEstado.html#a3374e50c2a88a710ddc82d198b48b4c2',1,'SValorEstado::valor'],['../structSParametro.html#a6e6c4623e2bbfac2be3ec7a9d39e4d33',1,'SParametro::valor'],['../structSResultado.html#adce8636ee5bdd2586c0c106cc4b6571d',1,'SResultado::valor'],['../classCListaNo.html#aef59a51e58231841d16fa45aa7582328',1,'CListaNo::Valor()']]],
   ['valorestado_1',['ValorEstado',['../classTProcuraAdversa.html#a9c95c246b28345f0d515a9083ffd646d',1,'TProcuraAdversa']]],
   ['valorht_2',['valorHT',['../classTProcuraAdversa.html#adf778e7e00379e60276305c569b4cbc4',1,'TProcuraAdversa']]],
   ['variáveis_20de_20estado_3',['Variáveis de estado',['../group__VariaveisEstado.html',1,'']]],
@@ -16,15 +16,12 @@ var searchData=
   ['verlinha_13',['VerLinha',['../classCJogoEmLinha.html#ab7f482497b6ffa4823327474f1b822ed',1,'CJogoEmLinha']]],
   ['vizincdecpot2ci_14',['vizIncDecPot2CI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa398f762449ab4f3ec9cafa420f08918b',1,'TCodificacaoInteira.h']]],
   ['vizincdecvalorci_15',['vizIncDecValorCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aace4006e9cc4c2a6274d11e81d9c85ffc',1,'TCodificacaoInteira.h']]],
-  ['vizinhanca_16',['vizinhanca',['../classCParticao.html#a54bc83b93ee7996d8203192c45f3f486',1,'CParticao::Vizinhanca()'],['../classTProcuraMelhorativa.html#ad268f3d892d6a912f632369e1c9be878',1,'TProcuraMelhorativa::Vizinhanca()'],['../classTCodificacaoBinaria.html#a2dab8869b025da3b57888d9830b3b281',1,'TCodificacaoBinaria::Vizinhanca()'],['../classTCodificacaoInteira.html#a4411e9666d20ad365a56879808dda144',1,'TCodificacaoInteira::Vizinhanca()'],['../classTCodificacaoPermutacao.html#aca536a8709cddbfa6461652949092a4c',1,'TCodificacaoPermutacao::Vizinhanca()'],['../classTCodificacaoReal.html#a95fc441bc8e6c9c6bac399f7eb33b32f',1,'TCodificacaoReal::Vizinhanca()'],['../classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2',1,'COitoDamas::Vizinhanca()']]],
-  ['vizinhancacb_17',['vizinhancaCB',['../TCodificacaoBinaria_8h.html#ae9b4405f1ed45affeb1935205ec8f826a358bbbf225ac553cd1e875cd478c7deb',1,'TCodificacaoBinaria.h']]],
-  ['vizinhancaci_18',['vizinhancaCI',['../TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba8dfd3fa793e748ccbc99d2937c2cb5b7',1,'TCodificacaoInteira.h']]],
-  ['vizinhancacp_19',['vizinhancaCP',['../TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa9602bd849442f329b0e4f1211fa5cfc9',1,'TCodificacaoPermutacao.h']]],
-  ['vizinserirci_20',['vizInserirCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa85c8803a5fe297f5ad96558d5ce927ba',1,'TCodificacaoInteira.h']]],
-  ['vizinserircp_21',['vizInserirCP',['../TCodificacaoPermutacao_8h.html#acf3f1917258da7b20ead794264ab711ca0bd2e79eac28e81867da0d81e8db7ecf',1,'TCodificacaoPermutacao.h']]],
-  ['vizinvertersegmentoci_22',['vizInverterSegmentoCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa01bc104de2455723aba09746699ddb59',1,'TCodificacaoInteira.h']]],
-  ['vizinvertersegmentocp_23',['vizInverterSegmentoCP',['../TCodificacaoPermutacao_8h.html#acf3f1917258da7b20ead794264ab711caf9c6e6bb2f1dec2e45b5dc790d17faf5',1,'TCodificacaoPermutacao.h']]],
-  ['viztrocaparci_24',['vizTrocaParCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa8b020cfa85759a1dfa2efafcf3cf0b1b',1,'TCodificacaoInteira.h']]],
-  ['viztrocaparcp_25',['vizTrocaParCP',['../TCodificacaoPermutacao_8h.html#acf3f1917258da7b20ead794264ab711caadf6d539444d2845a62b69b8e613cc03',1,'TCodificacaoPermutacao.h']]],
-  ['viztrocavalorci_26',['vizTrocaValorCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa5c502e771565fac1d6adf315aecfc78b',1,'TCodificacaoInteira.h']]]
+  ['vizinhanca_16',['vizinhanca',['../classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2',1,'COitoDamas::Vizinhanca()'],['../classTProcuraMelhorativa.html#ad268f3d892d6a912f632369e1c9be878',1,'TProcuraMelhorativa::Vizinhanca()'],['../classTCodificacaoBinaria.html#a2dab8869b025da3b57888d9830b3b281',1,'TCodificacaoBinaria::Vizinhanca()'],['../classTCodificacaoInteira.html#a4411e9666d20ad365a56879808dda144',1,'TCodificacaoInteira::Vizinhanca()'],['../classTCodificacaoPermutacao.html#aca536a8709cddbfa6461652949092a4c',1,'TCodificacaoPermutacao::Vizinhanca()'],['../classTCodificacaoReal.html#a95fc441bc8e6c9c6bac399f7eb33b32f',1,'TCodificacaoReal::Vizinhanca()'],['../classCParticao.html#a54bc83b93ee7996d8203192c45f3f486',1,'CParticao::Vizinhanca()']]],
+  ['vizinserirci_17',['vizInserirCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa85c8803a5fe297f5ad96558d5ce927ba',1,'TCodificacaoInteira.h']]],
+  ['vizinserircp_18',['vizInserirCP',['../TCodificacaoPermutacao_8h.html#acf3f1917258da7b20ead794264ab711ca0bd2e79eac28e81867da0d81e8db7ecf',1,'TCodificacaoPermutacao.h']]],
+  ['vizinvertersegmentoci_19',['vizInverterSegmentoCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa01bc104de2455723aba09746699ddb59',1,'TCodificacaoInteira.h']]],
+  ['vizinvertersegmentocp_20',['vizInverterSegmentoCP',['../TCodificacaoPermutacao_8h.html#acf3f1917258da7b20ead794264ab711caf9c6e6bb2f1dec2e45b5dc790d17faf5',1,'TCodificacaoPermutacao.h']]],
+  ['viztrocaparci_21',['vizTrocaParCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa8b020cfa85759a1dfa2efafcf3cf0b1b',1,'TCodificacaoInteira.h']]],
+  ['viztrocaparcp_22',['vizTrocaParCP',['../TCodificacaoPermutacao_8h.html#acf3f1917258da7b20ead794264ab711caadf6d539444d2845a62b69b8e613cc03',1,'TCodificacaoPermutacao.h']]],
+  ['viztrocavalorci_23',['vizTrocaValorCI',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127aa5c502e771565fac1d6adf315aecfc78b',1,'TCodificacaoInteira.h']]]
 ];

@@ -7,5 +7,5 @@ digraph "TProcuraMelhorativa::Indicador"
   rankdir="LR";
   Node1 [id="Node000001",label="TProcuraMelhorativa\l::Indicador",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="RedefiniÃ§Ã£o. Ver TProcura::Indicador()."];
   Node1 -> Node2 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::Indicador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a475d33545a5f5f1bbebf1365d730e4f0",tooltip="Retorna um indicador, após a execução do algoritmo."];
+  Node2 [id="Node000002",label="TProcura::Indicador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2",tooltip="Retorna um indicador, após a execução do algoritmo."];
 }
