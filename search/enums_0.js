@@ -16,10 +16,11 @@ var searchData=
   ['eparametrosconstrutiva_13',['EParametrosConstrutiva',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058',1,'TProcuraConstrutiva.h']]],
   ['eparametrosprocura_14',['EParametrosProcura',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6',1,'TProcura.h']]],
   ['eparametrosvector_15',['EParametrosVector',['../CTesteTVector_8cpp.html#ab7116e26ed24a637f29ee22ca4021401',1,'CTesteTVector.cpp']]],
-  ['etiposdistanciainteira_16',['ETiposDistanciaInteira',['../TCodificacaoInteira_8h.html#a8da2d437f7442ad25916239a13ebe93e',1,'TCodificacaoInteira.h']]],
-  ['etiposdistanciapermutacao_17',['ETiposDistanciaPermutacao',['../TCodificacaoPermutacao_8h.html#a425b0d443e3e0e97759d1b231b71c564',1,'TCodificacaoPermutacao.h']]],
-  ['etiposvizinhancainteira_18',['ETiposVizinhancaInteira',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127a',1,'TCodificacaoInteira.h']]],
-  ['etiposvizinhancapermutacao_19',['ETiposVizinhancaPermutacao',['../TCodificacaoPermutacao_8h.html#acf3f1917258da7b20ead794264ab711c',1,'TCodificacaoPermutacao.h']]],
-  ['etipovalor_20',['ETipoValor',['../TProcuraAdversa_8h.html#af2d8f3ce278d837a36ee4d610662b204',1,'TProcuraAdversa.h']]],
-  ['evariantesjogo_21',['EVariantesJogo',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951b',1,'JogoEmLinha.h']]]
+  ['etagmpi_16',['ETagMPI',['../TProcura_8h.html#a084a356cffd72e2407083ceb2a3202ef',1,'TProcura.h']]],
+  ['etiposdistanciainteira_17',['ETiposDistanciaInteira',['../TCodificacaoInteira_8h.html#a8da2d437f7442ad25916239a13ebe93e',1,'TCodificacaoInteira.h']]],
+  ['etiposdistanciapermutacao_18',['ETiposDistanciaPermutacao',['../TCodificacaoPermutacao_8h.html#a425b0d443e3e0e97759d1b231b71c564',1,'TCodificacaoPermutacao.h']]],
+  ['etiposvizinhancainteira_19',['ETiposVizinhancaInteira',['../TCodificacaoInteira_8h.html#ab6f4f122217771cfeb0508e8004f127a',1,'TCodificacaoInteira.h']]],
+  ['etiposvizinhancapermutacao_20',['ETiposVizinhancaPermutacao',['../TCodificacaoPermutacao_8h.html#acf3f1917258da7b20ead794264ab711c',1,'TCodificacaoPermutacao.h']]],
+  ['etipovalor_21',['ETipoValor',['../TProcuraAdversa_8h.html#af2d8f3ce278d837a36ee4d610662b204',1,'TProcuraAdversa.h']]],
+  ['evariantesjogo_22',['EVariantesJogo',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951b',1,'JogoEmLinha.h']]]
 ];

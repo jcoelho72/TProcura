@@ -30,7 +30,7 @@ digraph "TProcura::TesteEmpirico"
   Node10 -> Node12 [id="edge63_Node000010_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TProcura::Indicador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2",tooltip="Retorna um indicador, após a execução do algoritmo."];
   Node10 -> Node13 [id="edge64_Node000010_Node000013",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab6d1ce659d922b9d30550220e3028129",tooltip="Procura um registo com determinado id."];
+  Node13 [id="Node000013",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77",tooltip="Procura um registo com determinado id."];
   Node1 -> Node14 [id="edge65_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcura::JuntarCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa47aff45144b528adaecdb654c498844",tooltip="Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro."];
   Node1 -> Node15 [id="edge66_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];

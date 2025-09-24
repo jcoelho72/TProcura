@@ -14,6 +14,8 @@ var classTVector =
     [ "Contained", "classTVector.html#a9a593e793d4d3a6b122b593906a18543", null ],
     [ "Count", "classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef", null ],
     [ "Count", "classTVector.html#a0688f10df431a79feac470593b90b662", null ],
+    [ "Data", "classTVector.html#addd572d70b587092fddc21a8b0f53120", null ],
+    [ "Data", "classTVector.html#a99fd303b7ca72c07b26978cc64517b98", null ],
     [ "Delete", "classTVector.html#aba2fb6d977b1309f3e884369c5f43bba", null ],
     [ "Difference", "classTVector.html#a5744462d2c7efd035cf0ec50326f43be", null ],
     [ "Distance", "classTVector.html#a8cbf0dc0b674640bda4e81e6d6be0f55", null ],

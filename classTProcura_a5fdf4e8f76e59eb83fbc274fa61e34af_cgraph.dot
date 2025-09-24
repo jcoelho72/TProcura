@@ -78,7 +78,7 @@ digraph "TProcura::TesteManual"
   Node28 -> Node30 [id="edge139_Node000028_Node000030",color="steelblue1",style="solid",tooltip=" "];
   Node30 [id="Node000030",label="TProcura::Indicador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2",tooltip="Retorna um indicador, após a execução do algoritmo."];
   Node28 -> Node31 [id="edge140_Node000028_Node000031",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab6d1ce659d922b9d30550220e3028129",tooltip="Procura um registo com determinado id."];
+  Node31 [id="Node000031",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77",tooltip="Procura um registo com determinado id."];
   Node1 -> Node32 [id="edge141_Node000001_Node000032",color="steelblue1",style="solid",tooltip=" "];
   Node32 [id="Node000032",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
   Node32 -> Node7 [id="edge142_Node000032_Node000007",color="steelblue1",style="solid",tooltip=" "];

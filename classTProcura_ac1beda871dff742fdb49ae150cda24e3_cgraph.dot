@@ -13,7 +13,7 @@ digraph "TProcura::CalculaTorneio"
   Node1 -> Node4 [id="edge11_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcura::MelhorResultado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#abd92370cf06d23e878f9426aed34e39c",tooltip="Compara dois resultados para determinar o melhor."];
   Node4 -> Node5 [id="edge12_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab6d1ce659d922b9d30550220e3028129",tooltip="Procura um registo com determinado id."];
+  Node5 [id="Node000005",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77",tooltip="Procura um registo com determinado id."];
   Node1 -> Node6 [id="edge13_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcura::MostrarTorneio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a325f6cfdb9d0ee31cdecc72e738b144a",tooltip="Mostra os resultados do torneio."];
   Node6 -> Node7 [id="edge14_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];

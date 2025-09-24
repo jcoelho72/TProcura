@@ -36,7 +36,7 @@ var classTProcura =
     [ "Parametro", "classTProcura.html#a0e9e692f29af8a5d5279a8647c800437", null ],
     [ "ParametroAtivo", "classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e", null ],
     [ "Parar", "classTProcura.html#a7952e187e1b0ae0ca52edab157223179", null ],
-    [ "Registo", "classTProcura.html#ab6d1ce659d922b9d30550220e3028129", null ],
+    [ "Registo", "classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77", null ],
     [ "Registo", "classTProcura.html#ad9142d2a01abb01dfb939c23bf478de2", null ],
     [ "RelatorioCSV", "classTProcura.html#abda2c4f1066721e5c0e06c5ea22dce36", null ],
     [ "ResetParametros", "classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871", null ],
@@ -44,5 +44,7 @@ var classTProcura =
     [ "SolicitaInstancias", "classTProcura.html#a6941386b767d6f0723c6eb9d27241d69", null ],
     [ "TempoExcedido", "classTProcura.html#afa3015ac104b603930d3f60a34c09fff", null ],
     [ "TesteEmpirico", "classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336", null ],
+    [ "TesteEmpiricoEscravo", "classTProcura.html#aba845d5aa0f683e131b71875983e74aa", null ],
+    [ "TesteEmpiricoMestre", "classTProcura.html#a7c12bffa66660ab302a441a0f014a593", null ],
     [ "TesteManual", "classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af", null ]
 ];

@@ -79,7 +79,12 @@ enum \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501}{ECronometro
 , \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a7870afaea840c9f32e29d18841b23ac2}{CONT\+\_\+\+CHECKPOINT}}
 , \mbox{\hyperlink{TProcura_8h_ab79dbb572a75555ba44a86b6605a2501a4b8d8613b11a48b4adfbabf70ed21813}{CONT\+\_\+\+NUMERO}}
  \}
-\begin{DoxyCompactList}\small\item\em Define os tipos de contadores de cronômetro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Define os tipos de contadores de cronômetro. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{TProcura_8h_a084a356cffd72e2407083ceb2a3202ef}{ETag\+MPI}} \{ \mbox{\hyperlink{TProcura_8h_a084a356cffd72e2407083ceb2a3202efa28b61c2fd0e2b5ad28a91a15f503a661}{TAG\+\_\+\+TRABALHO}} = 0
+, \mbox{\hyperlink{TProcura_8h_a084a356cffd72e2407083ceb2a3202efaa4285a66acf9e6100e8a7d5e00890a59}{TAG\+\_\+\+CABECALHO}}
+, \mbox{\hyperlink{TProcura_8h_a084a356cffd72e2407083ceb2a3202efaa130054e33910954a32bedfadba58d25}{TAG\+\_\+\+VALORES}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define as tags MPI para comunicação entre processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -347,4 +352,32 @@ PARAMETROS\+\_\+\+PROCURA&Marcador para permitir a extensão do enum em subclasse
 
 
 Definition at line \mbox{\hyperlink{TProcura_8h_source_l00042}{42}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{TProcura_8h_a084a356cffd72e2407083ceb2a3202ef}\label{TProcura_8h_a084a356cffd72e2407083ceb2a3202ef} 
+\index{TProcura.h@{TProcura.h}!ETagMPI@{ETagMPI}}
+\index{ETagMPI@{ETagMPI}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{ETagMPI}{ETagMPI}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{TProcura_8h_a084a356cffd72e2407083ceb2a3202ef}{ETag\+MPI}}}
+
+
+
+Define as tags MPI para comunicação entre processos. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TAG\_TRABALHO@{TAG\_TRABALHO}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!TAG\_TRABALHO@{TAG\_TRABALHO}}}\Hypertarget{TProcura_8h_a084a356cffd72e2407083ceb2a3202efa28b61c2fd0e2b5ad28a91a15f503a661}\label{TProcura_8h_a084a356cffd72e2407083ceb2a3202efa28b61c2fd0e2b5ad28a91a15f503a661} 
+TAG\+\_\+\+TRABALHO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TAG\_CABECALHO@{TAG\_CABECALHO}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!TAG\_CABECALHO@{TAG\_CABECALHO}}}\Hypertarget{TProcura_8h_a084a356cffd72e2407083ceb2a3202efaa4285a66acf9e6100e8a7d5e00890a59}\label{TProcura_8h_a084a356cffd72e2407083ceb2a3202efaa4285a66acf9e6100e8a7d5e00890a59} 
+TAG\+\_\+\+CABECALHO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TAG\_VALORES@{TAG\_VALORES}!TProcura.h@{TProcura.h}}\index{TProcura.h@{TProcura.h}!TAG\_VALORES@{TAG\_VALORES}}}\Hypertarget{TProcura_8h_a084a356cffd72e2407083ceb2a3202efaa130054e33910954a32bedfadba58d25}\label{TProcura_8h_a084a356cffd72e2407083ceb2a3202efaa130054e33910954a32bedfadba58d25} 
+TAG\+\_\+\+VALORES&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00096}{96}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 

@@ -49,6 +49,10 @@ Collaboration diagram for CTeste\+TVector\+:
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ae98922e2f7f8bb6e487af0a1e4f84336}{Teste\+Empirico}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
 \begin{DoxyCompactList}\small\item\em Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a7c12bffa66660ab302a441a0f014a593}{Teste\+Empirico\+Mestre}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
+\begin{DoxyCompactList}\small\item\em Teste empírico com modo mestre-\/escravo (este é o mestre) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_aba845d5aa0f683e131b71875983e74aa}{Teste\+Empirico\+Escravo}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
+\begin{DoxyCompactList}\small\item\em Teste empírico com modo mestre-\/escravo (este é o escravo) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{main}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argc}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argv}}\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ae82e7be02923531e7ead26b1b25cec0f}{Limpar\+Estatisticas}} ()
@@ -127,13 +131,15 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a33299404773c01c2ef170581cf8e7e6c}{mpi\+ID}} = 0
 \begin{DoxyCompactList}\small\item\em MPI -\/ rank do processo. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a9783dde67fd219cf5e9f8661728e13a9}{mpi\+Count}} = 1
-\begin{DoxyCompactList}\small\item\em MPI -\/ número de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em MPI -\/ número de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a161c6f23578aa8a9081ec7a1c406ad34}{modo\+MPI}} = 0
+\begin{DoxyCompactList}\small\item\em Modo MPI. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_acd7a254a5057023a21b9909053c36f24}{Inserir\+Registo}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultados}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} inst, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{conf}})
 \begin{DoxyCompactList}\small\item\em Insere um novo registo de resultados. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_ab6d1ce659d922b9d30550220e3028129}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int64\+\_\+t}} \mbox{\hyperlink{classTProcura_ae7fda59c4090bfd47b63d2d227122b77}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
 \begin{DoxyCompactList}\small\item\em Procura um registo com determinado id. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ad9142d2a01abb01dfb939c23bf478de2}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int64\+\_\+t}} valor)
 \begin{DoxyCompactList}\small\item\em Atualiza o valor de um registo. \end{DoxyCompactList}\item 
@@ -264,7 +270,7 @@ Pode ser usado com \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} para e
 \end{DoxyCode}
  
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00533}{533}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00550}{550}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classCTesteTVector_af53e06f07045b1c72f144f16f6998206}\label{classCTesteTVector_af53e06f07045b1c72f144f16f6998206} 
 \index{CTesteTVector@{CTesteTVector}!Debug@{Debug}}
@@ -331,7 +337,7 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4e
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00274}{274}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00283}{283}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 \Hypertarget{classCTesteTVector_ad9d55d9cd9298196409a915b642f342c}\label{classCTesteTVector_ad9d55d9cd9298196409a915b642f342c} 
 \index{CTesteTVector@{CTesteTVector}!ExecutaAlgoritmo@{ExecutaAlgoritmo}}

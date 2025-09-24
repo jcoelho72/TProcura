@@ -40,6 +40,10 @@ Collaboration diagram for TProcura\+:
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ae98922e2f7f8bb6e487af0a1e4f84336}{Teste\+Empirico}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
 \begin{DoxyCompactList}\small\item\em Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a7c12bffa66660ab302a441a0f014a593}{Teste\+Empirico\+Mestre}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
+\begin{DoxyCompactList}\small\item\em Teste empírico com modo mestre-\/escravo (este é o mestre) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_aba845d5aa0f683e131b71875983e74aa}{Teste\+Empirico\+Escravo}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{instancias}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}})
+\begin{DoxyCompactList}\small\item\em Teste empírico com modo mestre-\/escravo (este é o escravo) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_aad1499e49cf6757569aeabd9c3fb2a8c}{main}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argc}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{argv}}\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ae82e7be02923531e7ead26b1b25cec0f}{Limpar\+Estatisticas}} ()
@@ -101,13 +105,15 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a33299404773c01c2ef170581cf8e7e6c}{mpi\+ID}} = 0
 \begin{DoxyCompactList}\small\item\em MPI -\/ rank do processo. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a9783dde67fd219cf5e9f8661728e13a9}{mpi\+Count}} = 1
-\begin{DoxyCompactList}\small\item\em MPI -\/ número de processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em MPI -\/ número de processos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a161c6f23578aa8a9081ec7a1c406ad34}{modo\+MPI}} = 0
+\begin{DoxyCompactList}\small\item\em Modo MPI. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_acd7a254a5057023a21b9909053c36f24}{Inserir\+Registo}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultados}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} inst, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{conf}})
 \begin{DoxyCompactList}\small\item\em Insere um novo registo de resultados. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_ab6d1ce659d922b9d30550220e3028129}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int64\+\_\+t}} \mbox{\hyperlink{classTProcura_ae7fda59c4090bfd47b63d2d227122b77}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id)
 \begin{DoxyCompactList}\small\item\em Procura um registo com determinado id. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ad9142d2a01abb01dfb939c23bf478de2}{Registo}} (\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{resultado}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} id, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int64\+\_\+t}} valor)
 \begin{DoxyCompactList}\small\item\em Atualiza o valor de um registo. \end{DoxyCompactList}\item 
@@ -173,7 +179,7 @@ Esta classe base para procuras... (separação de TProcuras\+Construtivas, em curs
 
 {\bfseries{Observação\+:}} Alguns métodos e parâmetros terão efeito apenas se determinados métodos forem redefinidos na subclasse. 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00169}{169}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00178}{178}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 
 
@@ -186,7 +192,7 @@ Definition at line \mbox{\hyperlink{TProcura_8h_source_l00169}{169}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00172}{172}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00181}{181}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0}\label{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0} 
 \index{TProcura@{TProcura}!````~TProcura@{\texorpdfstring{$\sim$}{\string~}TProcura}}
@@ -196,7 +202,7 @@ Definition at line \mbox{\hyperlink{TProcura_8h_source_l00172}{172}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00173}{173}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00182}{182}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 
 
@@ -218,7 +224,7 @@ Mostra ajuda de utilização do programa.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00708}{708}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00903}{903}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 2
@@ -241,7 +247,7 @@ Mostra a barra de progresso ou nomes do torneio.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00898}{898}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01094}{1094}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 4
@@ -264,7 +270,7 @@ Calcula o torneio entre várias configurações.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00824}{824}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01020}{1020}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 6
@@ -282,7 +288,7 @@ retorna um vetor de inteiros com a codificação da solução (esta codificação será
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00458}{458}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00472}{472}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 8
@@ -305,7 +311,7 @@ Grava ou lê a configuração atual.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00264}{264}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00267}{267}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 9
@@ -323,7 +329,7 @@ retorna o tempo em segundos desde que o cronómetro foi inicializado
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00720}{720}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00739}{739}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 11
@@ -361,7 +367,7 @@ Pode ser usado com \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} para e
 \end{DoxyCode}
  
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00533}{533}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00550}{550}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}\label{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0} 
 \index{TProcura@{TProcura}!Debug@{Debug}}
@@ -406,7 +412,7 @@ Reimplemented in \mbox{\hyperlink{classCJogoDoGalo_a16f33d5fa4e812d39b3e643ce0ab
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 12
@@ -436,7 +442,7 @@ Valor ajustado dentro do domínio.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00993}{993}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01189}{1189}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 14
@@ -452,7 +458,7 @@ Permite ao utilizador editar as configurações.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00353}{353}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00356}{356}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 15
@@ -473,7 +479,7 @@ true se alterou indicadores, false caso contrário.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00188}{188}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00191}{191}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 17
@@ -491,7 +497,7 @@ Permite ao utilizador editar os parâmetros.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00216}{216}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00219}{219}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 19
@@ -513,7 +519,7 @@ Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_a42e8230fd5131f4bff86
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00932}{932}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01128}{1128}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 21
@@ -538,7 +544,7 @@ Reimplemented in \mbox{\hyperlink{classTProcuraAdversa_aff6f48defaa10c14d160ac39
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00211}{211}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00220}{220}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 23
@@ -558,7 +564,7 @@ Reimplemented in \mbox{\hyperlink{classTProcuraConstrutiva_a9d8202d80510018d01a9
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00454}{454}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00468}{468}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 24
@@ -584,7 +590,7 @@ Vetor com os resultados extraídos.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00889}{889}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01085}{1085}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 25
@@ -600,7 +606,7 @@ Finaliza o ambiente MPI, se aplicável.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01012}{1012}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01208}{1208}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 26
@@ -645,7 +651,7 @@ Reimplemented in \mbox{\hyperlink{classCTesteTVector_a9b2fa997b10ef80c88262c9e14
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 28
@@ -661,7 +667,7 @@ Inicializa o ambiente MPI, se aplicável.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01001}{1001}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01197}{1197}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 29
@@ -706,7 +712,7 @@ Reimplemented in \mbox{\hyperlink{classCJogoDoGalo_a7e865ab71c12b6fa618c83448283
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00200}{200}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00209}{209}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 31
@@ -729,7 +735,7 @@ Insere configurações a partir de uma string.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00400}{400}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 32
@@ -756,7 +762,7 @@ Insere configurações gerando o produto cartesiano de valores.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00449}{449}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00452}{452}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 34
@@ -781,7 +787,7 @@ Insere um novo registo de resultados.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00316}{316}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 35
@@ -795,7 +801,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00496}{496}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00513}{513}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 37
@@ -813,7 +819,7 @@ Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01021}{1021}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01217}{1217}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 39
@@ -833,7 +839,7 @@ Reimplemented in \mbox{\hyperlink{classTProcuraMelhorativa_a6c7163b20ace9bebdf3c
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 40
@@ -883,7 +889,7 @@ Esta função deve ser o ponto de entrada, a executar no main, caso não se utilize
 \end{DoxyCode}
  
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00632}{632}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00811}{811}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 42
@@ -911,7 +917,7 @@ Compara dois resultados para determinar o melhor.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00909}{909}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01105}{1105}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 44
@@ -929,7 +935,7 @@ Mostra os indicadores definidos.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00845}{845}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01041}{1041}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 46
@@ -952,7 +958,7 @@ Mostra os parâmetros atuais.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 47
@@ -977,7 +983,7 @@ Mostra as configurações disponíveis.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00471}{471}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00474}{474}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 49
@@ -1002,7 +1008,7 @@ Mostra um relatório dos resultados.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00758}{758}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00954}{954}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 51
@@ -1024,7 +1030,7 @@ Reimplemented in \mbox{\hyperlink{classCOitoDamas_acda7651f84323201b3a57699daf55
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00941}{941}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01137}{1137}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 53
@@ -1049,7 +1055,7 @@ Mostra os resultados do torneio.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00859}{859}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01055}{1055}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 55
@@ -1067,7 +1073,7 @@ Mostra tempo num formato humano.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00276}{276}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00279}{279}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 57
@@ -1091,7 +1097,7 @@ Adiciona uma nova configuração se ainda não existir.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00247}{247}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00250}{250}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 58
@@ -1105,7 +1111,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00960}{960}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01156}{1156}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 60
@@ -1117,7 +1123,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00950}{950}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01146}{1146}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 61
@@ -1129,7 +1135,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00506}{506}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00523}{523}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a0e9e692f29af8a5d5279a8647c800437}\label{classTProcura_a0e9e692f29af8a5d5279a8647c800437} 
 \index{TProcura@{TProcura}!Parametro@{Parametro}}
@@ -1139,7 +1145,7 @@ Definition at line \mbox{\hyperlink{TProcura_8h_source_l00506}{506}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00505}{505}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00522}{522}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a816897a3f52c463e9ba30df3fd41dd6e}\label{classTProcura_a816897a3f52c463e9ba30df3fd41dd6e} 
 \index{TProcura@{TProcura}!ParametroAtivo@{ParametroAtivo}}
@@ -1149,7 +1155,7 @@ Definition at line \mbox{\hyperlink{TProcura_8h_source_l00505}{505}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00507}{507}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00524}{524}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 62
@@ -1191,17 +1197,17 @@ Reimplemented in \mbox{\hyperlink{classTProcuraMelhorativa_add6b034d0b16d10ca85b
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00354}{354}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00363}{363}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 64
 Here is the caller graph for this function\+:
 % FIG 65
-\Hypertarget{classTProcura_ab6d1ce659d922b9d30550220e3028129}\label{classTProcura_ab6d1ce659d922b9d30550220e3028129} 
+\Hypertarget{classTProcura_ae7fda59c4090bfd47b63d2d227122b77}\label{classTProcura_ae7fda59c4090bfd47b63d2d227122b77} 
 \index{TProcura@{TProcura}!Registo@{Registo}}
 \index{Registo@{Registo}!TProcura@{TProcura}}
 \doxysubsubsection{\texorpdfstring{Registo()}{Registo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} TProcura\+::\+Registo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&}]{resultado,  }\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int64\+\_\+t}} TProcura\+::\+Registo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{TProcura_8h_a4428af995799ff246df4a39dfb58d0e9}{TResultado}} \&}]{resultado,  }\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -1219,7 +1225,7 @@ Procura um registo com determinado id.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00325}{325}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00328}{328}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 66
@@ -1244,7 +1250,7 @@ Atualiza o valor de um registo.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00332}{332}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00335}{335}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 \Hypertarget{classTProcura_abda2c4f1066721e5c0e06c5ea22dce36}\label{classTProcura_abda2c4f1066721e5c0e06c5ea22dce36} 
 \index{TProcura@{TProcura}!RelatorioCSV@{RelatorioCSV}}
@@ -1265,7 +1271,7 @@ Gera um relatório CSV com os resultados.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00731}{731}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00927}{927}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 67
@@ -1338,7 +1344,7 @@ Reimplemented in \mbox{\hyperlink{classCJogoEmLinha_a855791b2e19731340976157991d
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the caller graph for this function\+:
 % FIG 69
@@ -1354,7 +1360,7 @@ Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00968}{968}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l01164}{1164}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 70
@@ -1375,7 +1381,7 @@ Vetor com IDs das instâncias selecionadas.
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00338}{338}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00341}{341}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 72
@@ -1389,7 +1395,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00495}{495}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00512}{512}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 74
@@ -1425,12 +1431,48 @@ Pode ser chamada diretamente do código, e nesse caso é necessário que a variável
 \end{DoxySeeAlso}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00501}{501}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00504}{504}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 75
 Here is the caller graph for this function\+:
 % FIG 76
+\Hypertarget{classTProcura_aba845d5aa0f683e131b71875983e74aa}\label{classTProcura_aba845d5aa0f683e131b71875983e74aa} 
+\index{TProcura@{TProcura}!TesteEmpiricoEscravo@{TesteEmpiricoEscravo}}
+\index{TesteEmpiricoEscravo@{TesteEmpiricoEscravo}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{TesteEmpiricoEscravo()}{TesteEmpiricoEscravo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+::\+Teste\+Empirico\+Escravo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$}]{instancias,  }\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}}]{ficheiro = {\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Teste empírico com modo mestre-\/escravo (este é o escravo) 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00729}{729}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 77
+Here is the caller graph for this function\+:
+% FIG 78
+\Hypertarget{classTProcura_a7c12bffa66660ab302a441a0f014a593}\label{classTProcura_a7c12bffa66660ab302a441a0f014a593} 
+\index{TProcura@{TProcura}!TesteEmpiricoMestre@{TesteEmpiricoMestre}}
+\index{TesteEmpiricoMestre@{TesteEmpiricoMestre}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{TesteEmpiricoMestre()}{TesteEmpiricoMestre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+::\+Teste\+Empirico\+Mestre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$}]{instancias,  }\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}}]{ficheiro = {\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{NULL}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Teste empírico com modo mestre-\/escravo (este é o mestre) 
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00634}{634}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 79
+Here is the caller graph for this function\+:
+% FIG 80
 \Hypertarget{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}\label{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af} 
 \index{TProcura@{TProcura}!TesteManual@{TesteManual}}
 \index{TesteManual@{TesteManual}!TProcura@{TProcura}}
@@ -1485,12 +1527,12 @@ Reimplemented in \mbox{\hyperlink{classCJogoDoGalo_a113984a3801a93ebce61e0a700a4
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcura_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{TProcura_8cpp_source}{TProcura.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 77
+% FIG 81
 Here is the caller graph for this function\+:
-% FIG 78
+% FIG 82
 
 
 \doxysubsection{Member Data Documentation}
@@ -1506,7 +1548,7 @@ Conjuntos de configurações para teste empírico.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00477}{477}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00491}{491}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a627ab6da33e9127360dd2f4fba836916}\label{classTProcura_a627ab6da33e9127360dd2f4fba836916} 
 \index{TProcura@{TProcura}!ficheiroInstancia@{ficheiroInstancia}}
@@ -1523,7 +1565,7 @@ nome do ficheiro de uma instância -\/ editado pelo utilizador (utilizar como pre
 \end{DoxySeeAlso}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00468}{468}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00482}{482}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_ac4344a896fc02c79e34d5fafaf595d9f}\label{classTProcura_ac4344a896fc02c79e34d5fafaf595d9f} 
 \index{TProcura@{TProcura}!indAtivo@{indAtivo}}
@@ -1533,7 +1575,7 @@ Definition at line \mbox{\hyperlink{TProcura_8h_source_l00468}{468}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00475}{475}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00489}{489}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a9b75c5c41b6e1b9e3a3390d9fd836417}\label{classTProcura_a9b75c5c41b6e1b9e3a3390d9fd836417} 
 \index{TProcura@{TProcura}!indicador@{indicador}}
@@ -1550,7 +1592,7 @@ Indicadores que podem ser calculados após a execução, quer com informação da ins
 \end{DoxySeeAlso}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00474}{474}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00488}{488}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238}\label{classTProcura_ac54b5d632d3efd448b51bfca6cb6a238} 
 \index{TProcura@{TProcura}!instancia@{instancia}}
@@ -1564,7 +1606,7 @@ ID da instância atual, a ser utilizado em \doxylink{classTProcura_a224527229b795
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00024}{24}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00025}{25}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_aad1d62f5db16f77742bb291b6ef342f6}\label{classTProcura_aad1d62f5db16f77742bb291b6ef342f6} 
 \index{TProcura@{TProcura}!instanteFinal@{instanteFinal}}
@@ -1578,7 +1620,7 @@ Instante final (deadline) da corrida atual.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00485}{485}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00499}{499}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a5cb8dad7e3cdda780c22a3893f3d5ad9}\label{classTProcura_a5cb8dad7e3cdda780c22a3893f3d5ad9} 
 \index{TProcura@{TProcura}!iteracoes@{iteracoes}}
@@ -1592,7 +1634,7 @@ Número total de iterações realizadas na última execução.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00483}{483}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00497}{497}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a0603a12d645bdc6ff66a454c8614014d}\label{classTProcura_a0603a12d645bdc6ff66a454c8614014d} 
 \index{TProcura@{TProcura}!memoriaEsgotada@{memoriaEsgotada}}
@@ -1606,7 +1648,24 @@ Flag indicando problemas de memória esgotada.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00487}{487}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00501}{501}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+\Hypertarget{classTProcura_a161c6f23578aa8a9081ec7a1c406ad34}\label{classTProcura_a161c6f23578aa8a9081ec7a1c406ad34} 
+\index{TProcura@{TProcura}!modoMPI@{modoMPI}}
+\index{modoMPI@{modoMPI}!TProcura@{TProcura}}
+\doxysubsubsection{\texorpdfstring{modoMPI}{modoMPI}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} TProcura\+::modo\+MPI = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Modo MPI. 
+
+\begin{DoxyNote}{Note}
+0 = divisão estática, 1 = mestre-\/escravo 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00508}{508}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a9783dde67fd219cf5e9f8661728e13a9}\label{classTProcura_a9783dde67fd219cf5e9f8661728e13a9} 
 \index{TProcura@{TProcura}!mpiCount@{mpiCount}}
@@ -1620,7 +1679,7 @@ MPI -\/ número de processos.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00491}{491}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00505}{505}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a33299404773c01c2ef170581cf8e7e6c}\label{classTProcura_a33299404773c01c2ef170581cf8e7e6c} 
 \index{TProcura@{TProcura}!mpiID@{mpiID}}
@@ -1634,7 +1693,7 @@ MPI -\/ rank do processo.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00489}{489}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00503}{503}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_ad60c9c327ddddd054d9ff499ef53532f}\label{classTProcura_ad60c9c327ddddd054d9ff499ef53532f} 
 \index{TProcura@{TProcura}!parametro@{parametro}}
@@ -1651,7 +1710,7 @@ Parâmetros a serem utilizados na configuração atual.
 \end{DoxySeeAlso}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00471}{471}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00485}{485}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_a224527229b795a4780e5faa61245a8e0}\label{classTProcura_a224527229b795a4780e5faa61245a8e0} 
 \index{TProcura@{TProcura}!resultado@{resultado}}
@@ -1665,7 +1724,7 @@ Resultado retornado pelo algoritmo na última execução.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00479}{479}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00493}{493}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{classTProcura_af7735671436a99def475aba1fdb42435}\label{classTProcura_af7735671436a99def475aba1fdb42435} 
 \index{TProcura@{TProcura}!tempo@{tempo}}
@@ -1679,7 +1738,7 @@ tempo consumido na última execução.
 
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00481}{481}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00495}{495}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 
 

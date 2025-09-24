@@ -11,5 +11,5 @@ digraph "TProcura::RelatorioCSV"
   Node2 -> Node3 [id="edge5_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
   Node1 -> Node4 [id="edge6_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab6d1ce659d922b9d30550220e3028129",tooltip="Procura um registo com determinado id."];
+  Node4 [id="Node000004",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77",tooltip="Procura um registo com determinado id."];
 }
