@@ -541,6 +541,9 @@ public:
 		return true;
 	}
 
+	/// @brief Mostra tempo num formato humano.
+	static char *MostraTempo(double segundos);
+
 protected:
 
 	/**

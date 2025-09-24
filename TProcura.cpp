@@ -273,6 +273,46 @@ void TProcura::ConfiguracaoAtual(TVector<int>& parametros, int operacao) {
 	}
 }
 
+char* TProcura::MostraTempo(double segundos)
+{
+	static char str[BUFFER_SIZE], str2[BUFFER_SIZE];
+	static const int64_t segundo = 1000;
+	static const int64_t minuto = 60 * segundo;
+	static const int64_t hora = 60 * minuto;
+	static const int64_t dia = 24 * hora;
+	static const int64_t semana = 7 * dia;
+	static const int64_t mes = 30 * dia;
+	static const int64_t ano = 365 * dia;
+	static int count=0;
+
+	static TVector<int64_t> unidades = { ano, mes, semana, dia, hora, minuto, segundo };
+
+	static TVector<char> unidadesStr = {
+		'a', 'm', 's', 'd', 'h', '\'', '"'
+	};
+
+	int64_t ms = (int64_t)(1000 * segundos + 0.5);
+
+	strcpy(str, "");
+	for (int i = 0; i < unidades.Count(); i++)
+		if (ms >= unidades[i]) {
+			sprintf(str2, "%s%lld%c ", str, ms / unidades[i], unidadesStr[i]);
+			strcpy(str, str2);
+			ms %= unidades[i];
+		}
+	if (ms > 0) {
+		sprintf(str2, "%s%lldms ", str, ms);
+		strcpy(str, str2);
+	}
+
+	// permite até duas chamadas em simultâneo
+	if ((count++) % 2 == 0) {
+		strcpy(str2, str);
+		return str2;
+	}
+	return str;
+}
+
 void TProcura::InserirRegisto(TVector<TResultado>& resultados, int inst, int conf)
 {
 	resultados += { inst, conf };
@@ -500,12 +540,14 @@ fflush(stdout);
 
 			if (Parametro(NIVEL_DEBUG) >= DETALHE) {
 				// mostrar uma linha por cada execução
-				Debug(DETALHE, false, "\n%.1fs Tarefa %d, processo %d: ", Cronometro(CONT_TESTE), nTarefa - 1, mpiID) &&
+				Debug(DETALHE, false, "\n%s Tarefa %d, processo %d: ", 
+					MostraTempo(Cronometro(CONT_TESTE)), nTarefa - 1, mpiID) &&
 					fflush(stdout);
 			}
 			else if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > 60) {
 				Debug(ATIVIDADE, true, ".") ||
-					Debug(PASSOS, false, "\n%dm Tarefa %d. ", (int)(Cronometro(CONT_TESTE) / 60 + 0.5), nTarefa - 1);
+					Debug(PASSOS, false, "\n%s Tarefa %d. ", 
+						MostraTempo(Cronometro(CONT_TESTE)) , nTarefa - 1);
 				fflush(stdout);
 				Cronometro(CONT_REPORTE, true);
 			}
@@ -571,10 +613,12 @@ fflush(stdout);
 		if (mpiCount > 1) {
 			// tenta juntar ficheiros, caso existam os ficheiros dos outros processos
 			JuntarCSV(ficheiro) &&
-				Debug(ATIVIDADE, false, 
+				Debug(ATIVIDADE, false,
 					"\nFicheiro %s.csv gravado.\n"
-					"Tempo real: %.1fs, CPU total: %.1fs", 
-					ficheiro, Cronometro(CONT_TESTE), Cronometro(CONT_TESTE) * mpiCount);
+					"Tempo real: %s",
+					ficheiro, MostraTempo(Cronometro(CONT_TESTE))) &&
+				Debug(ATIVIDADE, false, ", CPU total: %s",
+					MostraTempo(Cronometro(CONT_TESTE) * mpiCount));
 		}
 	}
 
