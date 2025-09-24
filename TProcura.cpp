@@ -1,4 +1,5 @@
 #include "TProcura.h"
+#include <locale>
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
@@ -79,7 +80,7 @@ int64_t TProcura::Indicador(int id) {
 	case IND_RESULTADO:
 		return resultado;
 	case IND_TEMPO:
-		return (int64_t)(1000 * tempo);
+		return (int64_t)(1000 * tempo + 0.5);
 	case IND_ITERACOES:
 		return iteracoes;
 	}
@@ -132,11 +133,11 @@ ____________________________________________________________________\n\
 			  break;
 		case 6:
 			// executar um algoritmo 
-			Cronometro(2, true);
+			Cronometro(CONT_ALGORITMO, true);
 			LimparEstatisticas();
 			resultado = ExecutaAlgoritmo();
 			MostraParametros(0);
-			tempo = Cronometro(2);
+			tempo = Cronometro(CONT_ALGORITMO);
 			ExecucaoTerminada();
 			InserirRegisto(resultados, instancia.valor, 0);
 			break;
@@ -462,8 +463,8 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	TVector<int> atual;
 	int backupID = instancia.valor;
 	int nTarefa = 0;
-	Cronometro(0, true); // reiniciar cronómetro evento
-	Cronometro(1, true); // reiniciar cronómetro global
+	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
+	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
 	for (auto item : instancias)
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
@@ -499,14 +500,14 @@ fflush(stdout);
 
 			if (Parametro(NIVEL_DEBUG) >= DETALHE) {
 				// mostrar uma linha por cada execução
-				Debug(DETALHE, false, "\n%.1fs Tarefa %d, processo %d: ", Cronometro(1), nTarefa - 1, mpiID) &&
+				Debug(DETALHE, false, "\n%.1fs Tarefa %d, processo %d: ", Cronometro(CONT_TESTE), nTarefa - 1, mpiID) &&
 					fflush(stdout);
 			}
-			else if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(0) > 60) {
+			else if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > 60) {
 				Debug(ATIVIDADE, true, ".") ||
-					Debug(PASSOS, false, "\n%dm Tarefa %d. ", (int)(Cronometro(1) / 60 + 0.5), nTarefa - 1);
+					Debug(PASSOS, false, "\n%dm Tarefa %d. ", (int)(Cronometro(CONT_TESTE) / 60 + 0.5), nTarefa - 1);
 				fflush(stdout);
-				Cronometro(0, true);
+				Cronometro(CONT_REPORTE, true);
 			}
 
 			instancia.valor = inst;
@@ -515,7 +516,7 @@ fflush(stdout);
 			Inicializar();
 			// executar um algoritmo 
 			Debug(DETALHE, false, "instância %d: ", instancia.valor) && fflush(stdout);
-			Cronometro(2, true); // reiniciar cronómetro da execução
+			Cronometro(CONT_ALGORITMO, true); // reiniciar cronómetro da execução
 			LimparEstatisticas();
 			{
 				ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
@@ -523,7 +524,7 @@ fflush(stdout);
 				resultado = ExecutaAlgoritmo();
 				Parametro(NIVEL_DEBUG) = backupDebug;
 			}
-			tempo = Cronometro(2);
+			tempo = Cronometro(CONT_ALGORITMO);
 			InserirRegisto(resultados, instancia.valor, configuracao);
 
 			if (resultado >= 0) {
@@ -570,7 +571,10 @@ fflush(stdout);
 		if (mpiCount > 1) {
 			// tenta juntar ficheiros, caso existam os ficheiros dos outros processos
 			JuntarCSV(ficheiro) &&
-				Debug(ATIVIDADE, false, "\nFicheiro %s.csv gravado.", ficheiro);
+				Debug(ATIVIDADE, false, 
+					"\nFicheiro %s.csv gravado.\n"
+					"Tempo real: %.1fs, CPU total: %.1fs", 
+					ficheiro, Cronometro(CONT_TESTE), Cronometro(CONT_TESTE) * mpiCount);
 		}
 	}
 
@@ -586,6 +590,8 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 	bool mostrarSolucoes = false;
 	char fichResultados[256];
 	char argParametros[BUFFER_SIZE];
+
+	std::locale::global(std::locale(""));
 
 	if (argc <= 1) {
 		TesteManual(nome);

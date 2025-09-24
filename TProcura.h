@@ -75,6 +75,21 @@ enum ENivelDebug {
  */
 enum EOperacao { GRAVAR = 0, LER };
 
+/**
+ * @brief Define os tipos de contadores de cronômetro.
+ *
+ * @note Utilizado na função Cronometro() para especificar o contador.
+ */
+enum ECronometro {
+	CONT_ALGORITMO = 0, ///< Tempo da execução do algoritmo por instância
+	CONT_TESTE,         ///< Tempo total do teste (todas as execuções)
+	CONT_REPORTE,       ///< Tempo entre mensagens durante o teste
+	CONT_PREPARACAO,    ///< Tempo de inicialização antes do teste
+	CONT_FINALIZACAO,   ///< Tempo de encerramento/exportação
+	CONT_CHECKPOINT,    ///< Tempo entre checkpoints ou estados internos
+	CONT_NUMERO         ///< Número de contadores disponíveis
+};
+
 
 // identificação de todos os indicadores definidos
 typedef struct SIndicador {
@@ -699,8 +714,8 @@ protected:
 	bool JuntarCSV(const char* ficheiro);
 
 	/// @brief retorna o tempo em segundos desde que o cronómetro foi inicializado
-	static double Cronometro(int id = 0, bool inicialiar = false) {
-		static clock_t inicio[10] = { 0 }; // até 10 cronómetros
+	static double Cronometro(enum ECronometro id = CONT_ALGORITMO, bool inicialiar = false) {
+		static clock_t inicio[CONT_NUMERO] = { 0 }; // até 10 cronómetros
 		if (inicialiar)
 			inicio[id] = clock();
 		return (double)(clock() - inicio[id]) / CLOCKS_PER_SEC;

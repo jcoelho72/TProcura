@@ -776,7 +776,7 @@ void TProcuraConstrutiva::Explorar() {
 					TVector<TNo> backup;
 					backup = caminho;
 					caminho = {};
-					Cronometro(2, true);
+					Cronometro(CONT_ALGORITMO, true);
 					LimparEstatisticas();
 					int resultado;
 					switch (resultado = ExecutaAlgoritmo()) {
@@ -784,7 +784,7 @@ void TProcuraConstrutiva::Explorar() {
 					case -2: printf("Não resolvido\n"); break;
 					default: printf("Resolvido (%d)\n", resultado); break;
 					}
-					tempo = Cronometro(2);
+					tempo = Cronometro(CONT_ALGORITMO);
 					if (solucao != NULL) {
 						Copiar(solucao);
 						delete backup.Pop();

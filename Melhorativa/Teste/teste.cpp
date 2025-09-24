@@ -13,7 +13,6 @@ int main(int argc, char* argv[])
 {
 	std::locale::global(std::locale(""));
 
-
 #ifndef MPI_ATIVO
 	printf("\n\
 Teste TProcuraMelhorativa\nProblema:\n\
