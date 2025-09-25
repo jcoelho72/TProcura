@@ -1,11 +1,11 @@
-digraph "TProcura::MostraTempo"
+digraph "TProcura::RelatorioCSV"
 {
  // LATEX_PDF_SIZE
   bgcolor="transparent";
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
-  Node1 [id="Node000001",label="TProcura::MostraTempo",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Mostra tempo num formato humano."];
+  Node1 [id="Node000001",label="TProcura::RelatorioCSV",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Gera um relatório CSV com os resultados."];
   Node1 -> Node2 [id="edge12_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node2 -> Node3 [id="edge13_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
