@@ -425,9 +425,9 @@ public:
 	virtual void TesteEmpirico(TVector<int> instancias, char* ficheiro = NULL);
 
 	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
-	virtual void TesteEmpiricoMestre(TVector<int> instancias, char* ficheiro = NULL);
+	virtual void TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro = NULL);
 	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
-	virtual void TesteEmpiricoEscravo(TVector<int> instancias, char* ficheiro = NULL);
+	virtual void TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro = NULL);
 
 	/**
 	* @brief Inicializa a interação com o utilizador
@@ -564,6 +564,15 @@ public:
 protected:
 
 	/**
+	 * @brief Executa uma tarefa num teste empírico
+	 * @param resultados Vetor onde inserir o resultado.
+	 * @param inst ID da instância.
+	 * @param conf ID da configuração.
+	 */
+	void ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf);
+
+
+	/**
 	 * @brief Insere um novo registo de resultados.
 	 * @param resultados Vetor onde inserir o resultado.
 	 * @param inst ID da instância.
@@ -694,7 +703,7 @@ protected:
 	 * @param resultados Vetor de resultados.
 	 * @param f Ponteiro para o ficheiro onde gravar.
 	 */
-	void RelatorioCSV(TVector<TResultado>& resultados, FILE* f);
+	bool RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro);
 
 	/**
 	 * @brief Insere configurações a partir de uma string.

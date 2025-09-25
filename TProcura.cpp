@@ -506,6 +506,11 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	TVector<int> atual;
 	int backupID = instancia.valor;
 	int nTarefa = 0;
+	double periodoReporte = 60;
+	switch (Parametro(NIVEL_DEBUG)) {
+	case DETALHE: periodoReporte = 10; break;
+	case COMPLETO: periodoReporte = 1; break;
+	}
 	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
 	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
 	for (auto item : instancias)
@@ -519,110 +524,56 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 		configuracoes.Last() = atual;
 	}
 	if (mpiID == 0)
-		Debug(ATIVIDADE, false, "\nTeste com %d instâncias e %d configurações, utilizando %d processo(s). \
-Tarefas/processo: %.1f",
-instancias.Count(), configuracoes.Count(), mpiCount,
-1. * (instancias.Count() * configuracoes.Count()) / mpiCount) &&
-fflush(stdout);
+		Debug(ATIVIDADE, false,
+			"\nTeste com %d tarefas, %d instâncias, %d configurações, utilizando %d processo(s). ",
+			instancias.Count() * configuracoes.Count(), instancias.Count(), configuracoes.Count(), mpiCount) &&
+		fflush(stdout);
 	// percorrer todas as instâncias
 	for (int configuracao = 0; configuracao < configuracoes.Count(); configuracao++) {
 		ConfiguracaoAtual(configuracoes[configuracao], GRAVAR);
-		if (Parametro(NIVEL_DEBUG) >= COMPLETO) {
-			Debug(COMPLETO, false, "\nProcesso %d, parametros:\n", mpiID);
-			MostraParametros();
-			fflush(stdout);
-		}
+
 		for (auto inst : instancias) {
 			// distribuir tarefas por MPI
-			if (nTarefa % mpiCount != mpiID) {
-				nTarefa++;
+			if ((nTarefa++) % mpiCount != mpiID)
 				continue;
-			}
-			else
-				nTarefa++;
 
-			if (Parametro(NIVEL_DEBUG) >= DETALHE) {
-				// mostrar uma linha por cada execução
-				Debug(DETALHE, false, "\n%s Tarefa %d, processo %d: ",
-					MostraTempo(Cronometro(CONT_TESTE)), nTarefa - 1, mpiID) &&
+			if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
+				Debug(ATIVIDADE, false, "\n%s Tarefa %d. ",
+					MostraTempo(Cronometro(CONT_TESTE)), nTarefa - 1) &&
 					fflush(stdout);
-			}
-			else if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > 60) {
-				Debug(ATIVIDADE, true, ".") ||
-					Debug(PASSOS, false, "\n%s Tarefa %d. ",
-						MostraTempo(Cronometro(CONT_TESTE)), nTarefa - 1);
-				fflush(stdout);
 				Cronometro(CONT_REPORTE, true);
 			}
 
-			instancia.valor = inst;
-			TRand::srand(Parametro(SEMENTE));
-			// carregar instância
-			Inicializar();
-			// executar um algoritmo 
-			Debug(DETALHE, false, "instância %d: ", instancia.valor) && fflush(stdout);
-			Cronometro(CONT_ALGORITMO, true); // reiniciar cronómetro da execução
-			LimparEstatisticas();
-			{
-				ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
-				Parametro(NIVEL_DEBUG) = NADA; // remover informação de debug do algoritmo, já que é um teste empírico
-				resultado = ExecutaAlgoritmo();
-				Parametro(NIVEL_DEBUG) = backupDebug;
-			}
-			tempo = Cronometro(CONT_ALGORITMO);
-			InserirRegisto(resultados, instancia.valor, configuracao);
-
-			if (resultado >= 0) {
-				if (Parametro(NIVEL_DEBUG) >= COMPLETO)
-					MostrarSolucao();
-			}
-			else {
-				if (Parar())
-					Debug(DETALHE, false, "Não resolvido. ");
-				if (TempoExcedido())
-					Debug(DETALHE, false, "Tempo excedido. ");
-				if (memoriaEsgotada)
-					Debug(DETALHE, false, "Memória esgotada. ");
-				if (resultado < 0 && !Parar())
-					Debug(DETALHE, false, "Instância Impossível! (se algoritmo completo) ");
-				else // não resolvido, cancelar resultados 
-					resultados.Last().valor.First() = -2;
-			}
-			Debug(DETALHE, false, "DONE.") && fflush(stdout);
+			ExecutaTarefa(resultados, inst, configuracao);
 		}
 	}
+
 	if (ficheiro == NULL || strlen(ficheiro) <= 1)
 		MostraRelatorio(resultados);
 	else {
-		char* pt = strtok(ficheiro, " \n\t\r");
-		char str[BUFFER_SIZE];
-		if (mpiCount > 1)
-			sprintf(str, "%s%d.csv", pt, mpiID);
-		else
-			sprintf(str, "%s.csv", pt);
-		FILE* f = fopen(str, "wt");
-		if (f != NULL) {
-			// escrever BOM UTF-8 (apenas no mpiID 0)
-			const unsigned char bom[] = { 0xEF,0xBB,0xBF };
-			if (mpiID == 0) {
-				fwrite(bom, 1, sizeof(bom), f);
-				fprintf(f, "sep=;\n");
-			}
-			RelatorioCSV(resultados, f);
-			fclose(f);
-		}
-		else
-			printf("\nErro ao gravar ficheiro %s.", str);
-		if (mpiCount > 1) {
+		// gravar resultados em ficheiro CSV
+		RelatorioCSV(resultados, ficheiro);
+
+		double tempoLocal = Cronometro(CONT_TESTE);
+		double tempoTotal = tempoLocal;
+		double tempoMaximo = tempoLocal;
+#ifdef MPI_ATIVO
+		MPI_Reduce(&tempoLocal, &tempoTotal, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+		MPI_Reduce(&tempoLocal, &tempoMaximo, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
+#endif
+
+		if (mpiCount > 1 && mpiID == 0) 
 			// tenta juntar ficheiros, caso existam os ficheiros dos outros processos
-			JuntarCSV(ficheiro) &&
-				Debug(ATIVIDADE, false,
-					"\nFicheiro %s.csv gravado.\n"
-					"Tempo real: %s",
-					ficheiro, MostraTempo(Cronometro(CONT_TESTE))) &&
-				Debug(ATIVIDADE, false, ", CPU total: %s",
-					MostraTempo(Cronometro(CONT_TESTE) * mpiCount));
-		}
+			JuntarCSV(ficheiro);
+		if(mpiID == 0)
+			Debug(ATIVIDADE, false,
+				"\nFicheiro %s.csv gravado.\n"
+				"Tempo real: %s",
+				ficheiro, MostraTempo(Cronometro(CONT_TESTE))) &&
+			Debug(ATIVIDADE, false, "\nCPU total: %s",
+				MostraTempo(Cronometro(CONT_TESTE) * mpiCount)) &&
+			Debug(ATIVIDADE, false, "\nTaxa de utilização: %.1f%%",
+				100. * tempoTotal / (tempoMaximo * mpiCount));
 	}
 
 	ConfiguracaoAtual(atual, GRAVAR);
@@ -631,13 +582,23 @@ fflush(stdout);
 	Inicializar();
 }
 
-void TProcura::TesteEmpiricoMestre(TVector<int> instancias, char* ficheiro)
+void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 {
 #ifdef MPI_ATIVO
 	int dados[3] = { 0, 0, 0 }; // instância, configuração
-	TVector<int> escravo, execucao;
+	double esperaTrabalhadores = 0, esperaGestor = 0;
+	TVector<double> terminou; // instante em que terminou cada trabalhador
+	TVector<int> trabalhador, trabalhar;
+	double periodoReporte = 60;
+	switch (Parametro(NIVEL_DEBUG)) {
+	case DETALHE: periodoReporte = 10; break;
+	case COMPLETO: periodoReporte = 1; break;
+	}
 	for (int i = 1; i < mpiCount; i++)
-		escravo += i;
+		trabalhador += i;
+
+	terminou.Count(mpiCount);
+	terminou.Reset(0);
 
 	// Ciclo:
 	// 1. Enviar trabalho para os escravos
@@ -645,7 +606,7 @@ void TProcura::TesteEmpiricoMestre(TVector<int> instancias, char* ficheiro)
 	// 3. Receber resultados e repetir 1 ou 2 conforme as necessidades
 
 	TVector<TResultado> resultados; // guarda as soluções obtidas
-	TVector<TResultado> tarefas;
+	TVector<TResultado> tarefas; // guarda informação apenas das tarefas a realizar (sem resultados)
 	TVector<int> atual;
 	int backupID = instancia.valor;
 	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
@@ -666,67 +627,97 @@ void TProcura::TesteEmpiricoMestre(TVector<int> instancias, char* ficheiro)
 		for (auto inst : instancias)
 			tarefas += { inst, configuracao };
 
+	Debug(ATIVIDADE, false, "\nTeste com %d tarefas, %d instâncias, %d configurações, utilizando %d processo(s). ",
+		tarefas.Count(), instancias.Count(), configuracoes.Count(),
+		trabalhador.Count() + 1) &&
+		fflush(stdout);
+
 	// dar uma tarefa a cada escravo
-	while (!tarefas.Empty() && !escravo.Empty()) {
+	while (!tarefas.Empty() && !trabalhador.Empty()) {
 		auto tarefa = tarefas.Pop();
 		dados[0] = tarefa.instancia;
 		dados[1] = tarefa.configuracao;
-		execucao += escravo.Last();
-		MPI_Send(dados, 2, MPI_INT, escravo.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+		trabalhar += trabalhador.Last();
+		MPI_Send(dados, 2, MPI_INT, trabalhador.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+		esperaTrabalhadores += Cronometro(CONT_TESTE); // estava parado até esta altura
 	}
 	// caso existam escravos sem trabalho, mandar fechar todos, não há mais tarefas
 	dados[0] = dados[1] = -1;
-	while (!escravo.Empty()) 
-		MPI_Send(dados, 2, MPI_INT, escravo.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+	while (!trabalhador.Empty()) {
+		auto trabalhadorID = trabalhador.Pop();
+		MPI_Send(dados, 2, MPI_INT, trabalhadorID, TAG_TRABALHO, MPI_COMM_WORLD);
+		terminou[trabalhadorID] = Cronometro(CONT_TESTE);
+	}
 
 	// receber resultados e continuar a dar trabalho caso exista
-	while (!execucao.Empty()) {
+	while (!trabalhar.Empty()) {
 		MPI_Status stat;
+
+		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
+			// mostrar uma linha por cada execução
+			Debug(ATIVIDADE, false, "\n%s Faltam %d tarefas, em curso %d",
+				MostraTempo(Cronometro(CONT_TESTE)), tarefas.Count(), trabalhar.Count()) &&
+				fflush(stdout);
+			Cronometro(CONT_REPORTE, true);
+		}
+
+		double inicioEspera = Cronometro(CONT_TESTE);
 		MPI_Recv(dados, 3, MPI_INT, MPI_ANY_SOURCE, TAG_CABECALHO, MPI_COMM_WORLD, &stat);
+		esperaGestor += Cronometro(CONT_TESTE) - inicioEspera;
 		resultados += {dados[0], dados[1]};
 		resultados.Last().valor.Count(dados[2]);
-		execucao -= stat.MPI_SOURCE;
-		escravo += stat.MPI_SOURCE;
-		MPI_Recv(resultados.Last().valor.Data(), dados[2], MPI_LONG_LONG, 
+		trabalhar -= stat.MPI_SOURCE;
+		trabalhador += stat.MPI_SOURCE;
+		MPI_Recv(resultados.Last().valor.Data(), dados[2], MPI_LONG_LONG,
 			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		// tempo de espera do trabalhador
+		esperaTrabalhadores += (double)((int64_t)resultados.Last().valor.Pop()) / 1000.;
 
 		// ainda há tarefas
 		if (!tarefas.Empty()) {
 			auto tarefa = tarefas.Pop();
 			dados[0] = tarefa.instancia;
 			dados[1] = tarefa.configuracao;
-			execucao += escravo.Last();
-			MPI_Send(dados, 2, MPI_INT, escravo.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+			trabalhar += trabalhador.Last();
+			MPI_Send(dados, 2, MPI_INT, trabalhador.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
 		}
 		else { // tudo feito, mandar sair
 			dados[0] = dados[1] = -1;
-			MPI_Send(dados, 2, MPI_INT, escravo.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+			auto trabalhadorID = trabalhador.Pop();
+			MPI_Send(dados, 2, MPI_INT, trabalhadorID, TAG_TRABALHO, MPI_COMM_WORLD);
+			terminou[trabalhadorID] = Cronometro(CONT_TESTE);
 		}
 	}
 
-	{   // escrever o ficheiro de resultados
-		char* pt = strtok(ficheiro, " \n\t\r");
-		char str[BUFFER_SIZE];
-		sprintf(str, "%s.csv", pt);
-		FILE* f = fopen(str, "wt");
-		if (f != NULL) {
-			// escrever BOM UTF-8 (apenas no mpiID 0)
-			const unsigned char bom[] = { 0xEF,0xBB,0xBF };
-			if (mpiID == 0) {
-				fwrite(bom, 1, sizeof(bom), f);
-				fprintf(f, "sep=;\n");
-			}
-			RelatorioCSV(resultados, f);
-			fclose(f);
-		}
-		else
-			printf("\nErro ao gravar ficheiro %s.", str);
-	}
+	// contar a espera dos trabalhadores, após terminarem
+	for (int i = 1; i < mpiCount; i++)
+		esperaTrabalhadores += Cronometro(CONT_TESTE) - terminou[i];
+
+	// escrever o ficheiro de resultados
+	int backupCount = mpiCount;
+	double taxaUtilizacaoT = 1. - (esperaTrabalhadores / (Cronometro(CONT_TESTE) * (mpiCount - 1)));
+	double taxaUtilizacaoG = 1. - (esperaGestor / Cronometro(CONT_TESTE));
+	double taxaUtilizacao = 1. - ((esperaTrabalhadores + esperaGestor) / (Cronometro(CONT_TESTE) * mpiCount));
+	mpiCount = 1; // forçar a escrita do ficheiro apenas neste processo
+	RelatorioCSV(resultados, ficheiro) &&
+		Debug(ATIVIDADE, false,
+			"\nFicheiro %s.csv gravado.\n"
+			"Tempo real: %s",
+			ficheiro, MostraTempo(Cronometro(CONT_TESTE))) &&
+		Debug(ATIVIDADE, false, "\nCPU total: %s",
+			MostraTempo(Cronometro(CONT_TESTE) * (backupCount - 1))) &&
+		Debug(ATIVIDADE, false, "\nEspera do gestor: %s",
+			MostraTempo(esperaGestor)) &&
+		Debug(ATIVIDADE, false, "\nEspera total dos trabalhadores: %s",
+			MostraTempo(esperaTrabalhadores)) &&
+		Debug(ATIVIDADE, false, "\nTaxa de utilização:\n- Total: %.1f%%\n- Gestor: %.1f%%\n- Trabalhadores: %.1f%% ",
+			taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
+	mpiCount = backupCount;
 
 #endif
 }
 
-void TProcura::TesteEmpiricoEscravo(TVector<int> instancias, char* ficheiro)
+void TProcura::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 {
 #ifdef MPI_ATIVO
 	int dados[3] = { 0, 0, 0 }; // instância, configuração
@@ -756,47 +747,16 @@ void TProcura::TesteEmpiricoEscravo(TVector<int> instancias, char* ficheiro)
 		MPI_Recv(dados, 2, MPI_INT, 0, TAG_TRABALHO, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		if (dados[0] < 0)
 			break;
-		// carregar a configuração
-		ConfiguracaoAtual(configuracoes[dados[1]], GRAVAR);
-		instancia.valor = dados[0];
-		TRand::srand(Parametro(SEMENTE));
-		// carregar instância
-		Inicializar();
-		// executar um algoritmo 
-		Debug(DETALHE, false, "instância %d: ", instancia.valor) && fflush(stdout);
-		Cronometro(CONT_ALGORITMO, true); // reiniciar cronómetro da execução
-		LimparEstatisticas();
-		{
-			ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
-			Parametro(NIVEL_DEBUG) = NADA; // remover informação de debug do algoritmo, já que é um teste empírico
-			resultado = ExecutaAlgoritmo();
-			Parametro(NIVEL_DEBUG) = backupDebug;
-		}
-		tempo = Cronometro(CONT_ALGORITMO);
-		InserirRegisto(resultados, instancia.valor, dados[1]);
 
-		if (resultado >= 0) {
-			if (Parametro(NIVEL_DEBUG) >= COMPLETO)
-				MostrarSolucao();
-		}
-		else {
-			if (Parar())
-				Debug(DETALHE, false, "Não resolvido. ");
-			if (TempoExcedido())
-				Debug(DETALHE, false, "Tempo excedido. ");
-			if (memoriaEsgotada)
-				Debug(DETALHE, false, "Memória esgotada. ");
-			if (resultado < 0 && !Parar())
-				Debug(DETALHE, false, "Instância Impossível! (se algoritmo completo) ");
-			else // não resolvido, cancelar resultados 
-				resultados.Last().valor.First() = -2;
-		}
-		Debug(DETALHE, false, "DONE.") && fflush(stdout);
+		ExecutaTarefa(resultados, dados[0], dados[1]);
 
 		// enviar registo para master, e apagar
 		// dados[0] e dados[1] já têm a configuração e instância
-		dados[2] = resultados.Last().valor.Count();
+		dados[2] = resultados.Last().valor.Count() + 1;
+		double inicioEspera = Cronometro(CONT_TESTE);
 		MPI_Send(dados, 3, MPI_INT, 0, TAG_CABECALHO, MPI_COMM_WORLD);
+		// colocar a espera no final do vetor de resultados
+		resultados.Last().valor += (int64_t)((Cronometro(CONT_TESTE) - inicioEspera) * 1000 + 0.5);
 		MPI_Send(resultados.Last().valor.Data(), dados[2], MPI_LONG_LONG, 0, TAG_VALORES, MPI_COMM_WORLD);
 
 		resultados.Pop();
@@ -805,6 +765,46 @@ void TProcura::TesteEmpiricoEscravo(TVector<int> instancias, char* ficheiro)
 	// saída, enviar o tempo de trabalho e tempo de espera totais
 
 #endif
+}
+
+void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf)
+{
+	// carregar a configuração
+	ConfiguracaoAtual(configuracoes[conf], GRAVAR);
+	instancia.valor = inst;
+	TRand::srand(Parametro(SEMENTE));
+	// carregar instância
+	Inicializar();
+	// executar um algoritmo 
+	Debug(COMPLETO, false, "instância %d: ", instancia.valor) && fflush(stdout);
+	Cronometro(CONT_ALGORITMO, true); // reiniciar cronómetro da execução
+	LimparEstatisticas();
+	{
+		ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
+		Parametro(NIVEL_DEBUG) = NADA; // remover informação de debug do algoritmo, já que é um teste empírico
+		resultado = ExecutaAlgoritmo();
+		Parametro(NIVEL_DEBUG) = backupDebug;
+	}
+	tempo = Cronometro(CONT_ALGORITMO);
+	InserirRegisto(resultados, instancia.valor, conf);
+
+	if (resultado >= 0) {
+		if (Parametro(NIVEL_DEBUG) >= COMPLETO)
+			MostrarSolucao();
+	}
+	else {
+		if (Parar())
+			Debug(COMPLETO, false, "Não resolvido. ");
+		if (TempoExcedido())
+			Debug(COMPLETO, false, "Tempo excedido. ");
+		if (memoriaEsgotada)
+			Debug(COMPLETO, false, "Memória esgotada. ");
+		if (resultado < 0 && !Parar())
+			Debug(COMPLETO, false, "Instância Impossível! (se algoritmo completo) ");
+		else // não resolvido, cancelar resultados 
+			resultados.Last().valor.First() = -2;
+	}
+	Debug(COMPLETO, false, "DONE.") && fflush(stdout);
 }
 
 // processa os argumentos da função main
@@ -891,10 +891,10 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 	else {
 		if (mpiID == 0)
 			// processo mestre
-			TesteEmpiricoMestre(instancias, fichResultados);
+			TesteEmpiricoGestor(instancias, fichResultados);
 		else
 			// processos escravos
-			TesteEmpiricoEscravo(instancias, fichResultados);
+			TesteEmpiricoTrabalhador(instancias, fichResultados);
 	}
 
 	FinalizaMPI();
@@ -907,7 +907,7 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 		"Opções:\n"
 		"  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)\n"
 		"  -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)\n"
-		"  -M <modo>       Modo MPI: 0 = divisão estática, 1 = mestre-escravo\n"
+		"  -M <modo>       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador\n"
 		"  -I <ind>        Lista de indicadores (e.g. 2,1,3)\n"
 		"  -S              Mostrar soluções durante a execução\n"
 		"  -h              Esta ajuda\n"
@@ -924,31 +924,54 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 }
 
 
-void TProcura::RelatorioCSV(TVector<TResultado>& resultados, FILE* f) {
-	// cabeçalho: instância, parametros, indicadores
-	fprintf(f, "Instância;");
-	for (int i = 0; i < parametro.Count(); i++)
-		fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
-	for (auto item : indAtivo)
-		fprintf(f, "I%d(%s);", item + 1, indicador[item].nome);
-	fprintf(f, "\n");
+bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
+	char* pt = strtok(ficheiro, " \n\t\r");
+	char str[BUFFER_SIZE];
+	if (mpiCount > 1)
+		sprintf(str, "%s_%d.csv", pt, mpiID);
+	else
+		sprintf(str, "%s.csv", pt);
+	FILE* f = fopen(str, "wt");
+	if (f != NULL) {
+		// escrever BOM UTF-8 (apenas no mpiID 0)
+		const unsigned char bom[] = { 0xEF,0xBB,0xBF };
+		if (mpiID == 0) {
+			fwrite(bom, 1, sizeof(bom), f);
+			fprintf(f, "sep=;\n");
+		}
 
-	for (auto res : resultados) {
-		fprintf(f, "%d;", res.instancia);
-		for (int j = 0; j < parametro.Count(); j++)
-			// ver se parametro j está ativo na configuração configuracoes[res.configuracao]
-			if (!ParametroAtivo(j, &(configuracoes[res.configuracao])))
-				fprintf(f, ";"); // parametro inativo, não mostrar
-			else if (parametro[j].nomeValores == NULL)
-				fprintf(f, "%d;", configuracoes[res.configuracao][j]); // mostrar valor
-			else
-				fprintf(f, "%d:%s;", // mostrar valor e texto
-					configuracoes[res.configuracao][j],
-					parametro[j].nomeValores[configuracoes[res.configuracao][j] - parametro[j].min]);
-		for (auto ind : indAtivo)
-			fprintf(f, "%" PRId64 ";", Registo(res, ind));
+		// cabeçalho: instância, parametros, indicadores
+		fprintf(f, "Instância;");
+		for (int i = 0; i < parametro.Count(); i++)
+			fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
+		for (auto item : indAtivo)
+			fprintf(f, "I%d(%s);", item + 1, indicador[item].nome);
 		fprintf(f, "\n");
+
+		for (auto res : resultados) {
+			fprintf(f, "%d;", res.instancia);
+			for (int j = 0; j < parametro.Count(); j++)
+				// ver se parametro j está ativo na configuração configuracoes[res.configuracao]
+				if (!ParametroAtivo(j, &(configuracoes[res.configuracao])))
+					fprintf(f, ";"); // parametro inativo, não mostrar
+				else if (parametro[j].nomeValores == NULL)
+					fprintf(f, "%d;", configuracoes[res.configuracao][j]); // mostrar valor
+				else
+					fprintf(f, "%d:%s;", // mostrar valor e texto
+						configuracoes[res.configuracao][j],
+						parametro[j].nomeValores[configuracoes[res.configuracao][j] - parametro[j].min]);
+			for (auto ind : indAtivo)
+				fprintf(f, "%" PRId64 ";", Registo(res, ind));
+			fprintf(f, "\n");
+		}
+
+		fclose(f);
 	}
+	else {
+		printf("\nErro ao gravar ficheiro %s.", str);
+		return false;
+	}
+	return true;
 }
 
 void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
@@ -1222,7 +1245,7 @@ bool TProcura::JuntarCSV(const char* ficheiro)
 
 	// verifica se existem os ficheiros intermédios
 	for (int i = 0; i < mpiCount; i++) {
-		sprintf(nome, "%s%d.csv", ficheiro, i);
+		sprintf(nome, "%s_%d.csv", ficheiro, i);
 		if ((fLer = fopen(nome, "rt")) == NULL)
 			// não existe este ficheiro, ainda não está tudo
 			return false;
@@ -1238,7 +1261,7 @@ bool TProcura::JuntarCSV(const char* ficheiro)
 	}
 
 	for (int i = 0; i < mpiCount; i++) {
-		sprintf(nome, "%s%d.csv", ficheiro, i);
+		sprintf(nome, "%s_%d.csv", ficheiro, i);
 		fLer = fopen(nome, "rt");
 		if (fLer == NULL) {
 			printf("\nErro ao ler ficheiro %s.", nome);
