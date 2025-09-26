@@ -88,7 +88,7 @@ const char* CProblemaArtificial::Acao(TProcuraConstrutiva* sucessor) {
 }
 
 
-void CProblemaArtificial::Debug(void)
+void CProblemaArtificial::Debug(bool completo)
 {
 	NovaLinha();
 	printf("--<([%u])>--", id);

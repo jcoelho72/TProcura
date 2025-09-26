@@ -268,7 +268,7 @@ public:
 	 * @see NovaLinha()
 	 *
 	 * @code
-	 * void CSubProblema::Debug(void)   // refazer comentários....
+	 * void CSubProblema::Debug(bool completo)   // refazer comentários....
 	 * {
 	 * 	   NovaLinha();
 	 *     // neste exemplo o estado é apenas um número

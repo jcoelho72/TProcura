@@ -67,7 +67,7 @@ const char* COitoDamas::Acao(TProcuraConstrutiva* sucessor) {
 	return "Inv";
 }
 
-void COitoDamas::Debug(void)
+void COitoDamas::Debug(bool completo)
 {
 	for (int i = 0; i < nDamas; i++) {
 		NovaLinha();

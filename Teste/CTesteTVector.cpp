@@ -71,7 +71,7 @@ void CTesteTVector::Inicializar(void)
 	}
 }
 
-void CTesteTVector::Debug(void)
+void CTesteTVector::Debug(bool completo)
 {
 	if (Parametro(ESTRUTURA_DADOS) != 2) {
 		if (dadosA.Count() < 6)

@@ -127,7 +127,7 @@ bool CJogoEmLinha::SolucaoCompleta(void)
 
 // Escrever informação de debug sobre o objecto currente 
 // (utilizar variável TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
-void CJogoEmLinha::Debug(void)
+void CJogoEmLinha::Debug(bool completo)
 {
 	// identificação do tipo de jogo
 	NovaLinha();

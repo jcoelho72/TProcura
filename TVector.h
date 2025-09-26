@@ -1107,7 +1107,7 @@ inline TVector<int>::TVector(const char* str) {
 		*this = TVector(token);
 		do {
 			token = pt + 1;
-			if (pt = strchr(token, ','))
+			if ((pt = strchr(token, ',')))
 				*pt = 0;
 			*this += TVector(token);
 		} while (pt);
