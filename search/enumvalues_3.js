@@ -7,5 +7,6 @@ var searchData=
   ['disthammingcp_4',['distHammingCP',['../TCodificacaoPermutacao_8h.html#a425b0d443e3e0e97759d1b231b71c564aeaebe8fe52812a18cc43825b0f7ae047',1,'TCodificacaoPermutacao.h']]],
   ['distkendalltaucp_5',['distKendallTauCP',['../TCodificacaoPermutacao_8h.html#a425b0d443e3e0e97759d1b231b71c564a3ddd6014e22186e189f1a9b15a56377e',1,'TCodificacaoPermutacao.h']]],
   ['distmanhattanci_6',['distManhattanCI',['../TCodificacaoInteira_8h.html#a8da2d437f7442ad25916239a13ebe93eaff843d4c3a462425d4434e2306940fa0',1,'TCodificacaoInteira.h']]],
-  ['distspearmanfootrulecp_7',['distSpearmanFootruleCP',['../TCodificacaoPermutacao_8h.html#a425b0d443e3e0e97759d1b231b71c564ac9b75e8b348326de679724a5d4162127',1,'TCodificacaoPermutacao.h']]]
+  ['distspearmanfootrulecp_7',['distSpearmanFootruleCP',['../TCodificacaoPermutacao_8h.html#a425b0d443e3e0e97759d1b231b71c564ac9b75e8b348326de679724a5d4162127',1,'TCodificacaoPermutacao.h']]],
+  ['diversidade_8',['DIVERSIDADE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da0ac70ab8cb784bc9936f3c140fd7e36c',1,'TProcuraMelhorativa.h']]]
 ];

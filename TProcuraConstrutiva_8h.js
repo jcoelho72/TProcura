@@ -1,7 +1,6 @@
 var TProcuraConstrutiva_8h =
 [
     [ "TProcuraConstrutiva", "classTProcuraConstrutiva.html", "classTProcuraConstrutiva" ],
-    [ "_CRT_SECURE_NO_WARNINGS", "TProcuraConstrutiva_8h.html#af08ec37a8c99d747fb60fa15bc28678b", null ],
     [ "OBJETO_HASHTABLE", "TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526", null ],
     [ "TAMANHO_HASHTABLE", "TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0", null ],
     [ "TNo", "TProcuraConstrutiva_8h.html#a510f7055614397eeab21f50df58cc9b8", null ],

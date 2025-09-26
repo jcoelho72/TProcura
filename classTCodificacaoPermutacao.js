@@ -6,7 +6,7 @@ var classTCodificacaoPermutacao =
     [ "Avaliar", "classTCodificacaoPermutacao.html#acd59d3912d60fe1c1a964521f13aebc7", null ],
     [ "Copiar", "classTCodificacaoPermutacao.html#af5facf24062db3665fa04a9b8460a844", null ],
     [ "Cruzamento", "classTCodificacaoPermutacao.html#a5d189994f033f59a881c985604b959dc", null ],
-    [ "Debug", "classTCodificacaoPermutacao.html#a8d135851e5730962edffed15534f4240", null ],
+    [ "Debug", "classTCodificacaoPermutacao.html#a1bf5de3b783a2f106b974b42620a7964", null ],
     [ "Distancia", "classTCodificacaoPermutacao.html#af1933ed84720378b2b8b78b672076ad4", null ],
     [ "Duplicar", "classTCodificacaoPermutacao.html#acc26f6577f8f43d59b1bd4f17fe8b659", null ],
     [ "Inicializar", "classTCodificacaoPermutacao.html#aa209162e1b26bd9eca69d6cc0671cf8a", null ],

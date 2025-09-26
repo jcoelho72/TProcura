@@ -7,7 +7,7 @@ digraph "TProcuraConstrutiva::DebugPasso"
   rankdir="LR";
   Node1 [id="Node000001",label="TProcuraConstrutiva\l::DebugPasso",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge5_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0",tooltip="Mostra o estado no ecrã, para debug."];
+  Node2 [id="Node000002",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrã, para debug."];
   Node2 -> Node2 [id="edge6_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node3 [id="edge7_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraConstrutiva\l::DebugEstado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a3c5b2743566153ca9d45e875106e548b",tooltip=" "];

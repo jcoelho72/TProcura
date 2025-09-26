@@ -11,7 +11,7 @@ digraph "TProcuraAdversa::MetodoIterativo"
   Node1 -> Node3 [id="edge81_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraConstrutiva\l::DebugIteracao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ae464aeb16628493409e4d88cede9a9e7",tooltip=" "];
   Node3 -> Node4 [id="edge82_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0",tooltip="Mostra o estado no ecrã, para debug."];
+  Node4 [id="Node000004",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrã, para debug."];
   Node4 -> Node4 [id="edge83_Node000004_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node5 [id="edge84_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcuraAdversa::MiniMax",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4d8542bcb03f17da8aa3038384104f24",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel"];

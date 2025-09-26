@@ -34,7 +34,7 @@ Collaboration diagram for CParticao\+:
 \begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classCParticao_a8f49dd653c0b56e3da7ec3664611cd5f}{Solucao\+Completa}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em Verifica se o estado actual Ã© objectivo (Ã© uma soluÃ§Ã£o completa) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCParticao_aa33970025179d4c6e3177c0fd518dadb}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCParticao_ab4ae8a64ecfa771df00a6977409863ee}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} completo=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCParticao_a9a3087a5b0bd33ff2fabf2aef66c73a9}{Mostrar\+Solucao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em definir para visualizar a solução \end{DoxyCompactList}\item 
@@ -54,7 +54,7 @@ Collaboration diagram for CParticao\+:
 \begin{DoxyCompactList}\small\item\em Fica com uma cÃ³pia do objecto. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCParticao_a9398d7eb5af933dd64c50bb09bba6400}{Inicializar}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCParticao_aa33970025179d4c6e3177c0fd518dadb}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCParticao_ab4ae8a64ecfa771df00a6977409863ee}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} completo=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCParticao_a9a3087a5b0bd33ff2fabf2aef66c73a9}{Mostrar\+Solucao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em definir para visualizar a solução \end{DoxyCompactList}\item 
@@ -274,6 +274,8 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcuraMelhorativa}{TProcura\+Melhorativa}}}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_ab1191e46286698e517e2d5bf3cd18ff0}{lower\+Bound}} = 0
+\begin{DoxyCompactList}\small\item\em Lower Bound, se existir. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_af8e5dc608467eccc7569361cde5db236}{geracoes}} = 0
 \begin{DoxyCompactList}\small\item\em NÃºmero de estados gerados. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_a19d678deb1731c4d96d7f114d8548ab9}{epocas}} = 0
@@ -376,6 +378,8 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \begin{DoxyCompactList}\small\item\em Insere configurações gerando o produto cartesiano de valores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_adc4d653fe0feb6033083adc5d19e7fb5}{Ajuda\+Utilizacao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{programa}})
 \begin{DoxyCompactList}\small\item\em Mostra ajuda de utilização do programa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ab90f47d04e48a6728fc9dafca3870a5f}{Debug\+Tabela}} (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} nivel, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tabela}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}tipo="{}"{})
+\begin{DoxyCompactList}\small\item\em Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_aa47aff45144b528adaecdb654c498844}{Juntar\+CSV}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}})
 \begin{DoxyCompactList}\small\item\em Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcuraMelhorativa}{TProcura\+Melhorativa}}}
@@ -415,15 +419,19 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_ac0273cf661acd96f0c1c2e2fa5661ca6}{Debug\+Cruzamento\+AG}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Pai}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Mae}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Filho}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{mutou}})
 \item 
-\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_ac8e4d93219b84ad2039d23230a22d718}{Inicializar\+Populacao\+AE}} ()
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a5f0aa5bd919d038c2e1d3903188ba0c1}{Completar\+Populacao\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
 \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a35e3a8f92ef41a8941f75ceee20e13bb}{Selecionar\+Pais\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
-\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a6e863f6050021221dfd3ba7815d1c79c}{Reproduzir\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{pais}})
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a63e8ac07e1d712645b9038cd72aa133b}{Reproduzir\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{pais}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
 \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a083b961ed7ed1483625559d068755a7f}{Selecionar\+Sobreviventes\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{descendentes}})
 \item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a5e51812d311d976a002f6c7ec0fcd555}{Aplicar\+Diversidade\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
+\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a98c93de808e3181024508c35fa22d62f}{Debug\+Geracao\+AE}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{epoca}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a6680888f6064501586d740cab891d0cd}{Diversidade\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{min\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{max\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{avg\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{melhor\+Pior}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
 \begin{DoxyCompactItemize}
@@ -646,11 +654,11 @@ Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2Particao_8cpp_source_l00
 
 Here is the call graph for this function\+:
 % FIG 8
-\Hypertarget{classCParticao_aa33970025179d4c6e3177c0fd518dadb}\label{classCParticao_aa33970025179d4c6e3177c0fd518dadb} 
+\Hypertarget{classCParticao_ab4ae8a64ecfa771df00a6977409863ee}\label{classCParticao_ab4ae8a64ecfa771df00a6977409863ee} 
 \index{CParticao@{CParticao}!Debug@{Debug}}
 \index{Debug@{Debug}!CParticao@{CParticao}}
 \doxysubsubsection{\texorpdfstring{Debug()}{Debug()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CParticao\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CParticao\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}}}]{completo = {\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -671,7 +679,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfamil
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{bool}\ completo)\ \ \ \textcolor{comment}{//\ refazer\ comentários....}}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é apenas\ um\ número}}
@@ -685,7 +693,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfamil
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{TProcura}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a0c5676c1b54ab6bdc1045b98aeafe456}{TProcura}}.
 
 
 
@@ -695,11 +703,11 @@ Here is the call graph for this function\+:
 % FIG 9
 Here is the caller graph for this function\+:
 % FIG 10
-\Hypertarget{classCParticao_aa33970025179d4c6e3177c0fd518dadb}\label{classCParticao_aa33970025179d4c6e3177c0fd518dadb} 
+\Hypertarget{classCParticao_ab4ae8a64ecfa771df00a6977409863ee}\label{classCParticao_ab4ae8a64ecfa771df00a6977409863ee} 
 \index{CParticao@{CParticao}!Debug@{Debug}}
 \index{Debug@{Debug}!CParticao@{CParticao}}
 \doxysubsubsection{\texorpdfstring{Debug()}{Debug()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CParticao\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CParticao\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}}}]{completo = {\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -720,7 +728,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfamil
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{bool}\ completo)\ \ \ \textcolor{comment}{//\ refazer\ comentários....}}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é apenas\ um\ número}}
@@ -734,7 +742,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfamil
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{TProcura}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a0c5676c1b54ab6bdc1045b98aeafe456}{TProcura}}.
 
 \Hypertarget{classCParticao_a2de8ca4185fd0e852b5104e1daec86d6}\label{classCParticao_a2de8ca4185fd0e852b5104e1daec86d6} 
 \index{CParticao@{CParticao}!Distancia@{Distancia}}

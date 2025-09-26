@@ -5,7 +5,7 @@ var classCPuzzle8 =
     [ "Acao", "classCPuzzle8.html#a6e6634ceac73ff4eb3ffa10978eb1126", null ],
     [ "Codifica", "classCPuzzle8.html#a611b043ab56407d684e27508ef9287fa", null ],
     [ "Copiar", "classCPuzzle8.html#aeff7640f4f77cbc742d751185954bce4", null ],
-    [ "Debug", "classCPuzzle8.html#a8ecb37cf08f1fe64bba96834370afa35", null ],
+    [ "Debug", "classCPuzzle8.html#acb9a55050da99ad64e2dc1b32c98d0a1", null ],
     [ "Distinto", "classCPuzzle8.html#aa66512563951c5f94b6b0dcf7d7ea86b", null ],
     [ "Duplicar", "classCPuzzle8.html#ad0638a270ace9056ffba040d2479fd5a", null ],
     [ "Heuristica", "classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27", null ],

@@ -27,7 +27,7 @@ Collaboration diagram for COito\+Damas\+CP\+:
 \begin{DoxyCompactList}\small\item\em Coloca o objecto no estado inicial da procura. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamasCP_a9eba2f6a84513cd1b62021362241d3fc}{Reset\+Parametros}} ()
 \begin{DoxyCompactList}\small\item\em Inicializa os parametros, indicadores e instâncias. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamasCP_ad9f4e7437b7f0dee84a7da8dc8436388}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCOitoDamasCP_a8f78d413428985c5e4b1a3e2bfcbe2bf}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} completo)
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTCodificacaoPermutacao}{TCodificacao\+Permutacao}}}
 \begin{DoxyCompactItemize}
@@ -36,7 +36,7 @@ Collaboration diagram for COito\+Damas\+CP\+:
 \item 
 \mbox{\hyperlink{classTCodificacaoPermutacao_a86adf88d28340d016bcbb94281caf8ba}{\texorpdfstring{$\sim$}{\string~}\+TCodificacao\+Permutacao}} ()
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTCodificacaoPermutacao_a8d135851e5730962edffed15534f4240}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTCodificacaoPermutacao_a1bf5de3b783a2f106b974b42620a7964}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} completo=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTCodificacaoPermutacao_af5facf24062db3665fa04a9b8460a844}{Copiar}} (\mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{objecto}})
 \begin{DoxyCompactList}\small\item\em Fica com uma cÃ³pia do objecto. \end{DoxyCompactList}\item 
@@ -144,6 +144,8 @@ Collaboration diagram for COito\+Damas\+CP\+:
 \doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classTProcuraMelhorativa}{TProcura\+Melhorativa}}}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_ab1191e46286698e517e2d5bf3cd18ff0}{lower\+Bound}} = 0
+\begin{DoxyCompactList}\small\item\em Lower Bound, se existir. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_af8e5dc608467eccc7569361cde5db236}{geracoes}} = 0
 \begin{DoxyCompactList}\small\item\em NÃºmero de estados gerados. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_a19d678deb1731c4d96d7f114d8548ab9}{epocas}} = 0
@@ -216,15 +218,19 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_ac0273cf661acd96f0c1c2e2fa5661ca6}{Debug\+Cruzamento\+AG}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Pai}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Mae}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Filho}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{mutou}})
 \item 
-\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_ac8e4d93219b84ad2039d23230a22d718}{Inicializar\+Populacao\+AE}} ()
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a5f0aa5bd919d038c2e1d3903188ba0c1}{Completar\+Populacao\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
 \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a35e3a8f92ef41a8941f75ceee20e13bb}{Selecionar\+Pais\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
-\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a6e863f6050021221dfd3ba7815d1c79c}{Reproduzir\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{pais}})
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a63e8ac07e1d712645b9038cd72aa133b}{Reproduzir\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{pais}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
 \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a083b961ed7ed1483625559d068755a7f}{Selecionar\+Sobreviventes\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{descendentes}})
 \item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a5e51812d311d976a002f6c7ec0fcd555}{Aplicar\+Diversidade\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
+\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a98c93de808e3181024508c35fa22d62f}{Debug\+Geracao\+AE}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{epoca}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a6680888f6064501586d740cab891d0cd}{Diversidade\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{min\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{max\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{avg\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{melhor\+Pior}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
 \begin{DoxyCompactItemize}
@@ -277,6 +283,8 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \begin{DoxyCompactList}\small\item\em Insere configurações gerando o produto cartesiano de valores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_adc4d653fe0feb6033083adc5d19e7fb5}{Ajuda\+Utilizacao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{programa}})
 \begin{DoxyCompactList}\small\item\em Mostra ajuda de utilização do programa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ab90f47d04e48a6728fc9dafca3870a5f}{Debug\+Tabela}} (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} nivel, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tabela}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}tipo="{}"{})
+\begin{DoxyCompactList}\small\item\em Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_aa47aff45144b528adaecdb654c498844}{Juntar\+CSV}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}})
 \begin{DoxyCompactList}\small\item\em Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
@@ -295,7 +303,7 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00134}{134}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00137}{137}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 
 
@@ -308,7 +316,7 @@ Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l001
 
 
 
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00138}{138}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00141}{141}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 2
@@ -320,7 +328,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00139}{139}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00142}{142}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 
 
@@ -337,15 +345,15 @@ Implements \mbox{\hyperlink{classTCodificacaoPermutacao_acd59d3912d60fe1c1a96452
 
 
 
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00141}{141}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00144}{144}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 3
-\Hypertarget{classCOitoDamasCP_ad9f4e7437b7f0dee84a7da8dc8436388}\label{classCOitoDamasCP_ad9f4e7437b7f0dee84a7da8dc8436388} 
+\Hypertarget{classCOitoDamasCP_a8f78d413428985c5e4b1a3e2bfcbe2bf}\label{classCOitoDamasCP_a8f78d413428985c5e4b1a3e2bfcbe2bf} 
 \index{COitoDamasCP@{COitoDamasCP}!Debug@{Debug}}
 \index{Debug@{Debug}!COitoDamasCP@{COitoDamasCP}}
 \doxysubsubsection{\texorpdfstring{Debug()}{Debug()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} COito\+Damas\+CP\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} COito\+Damas\+CP\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}}}]{completo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -366,7 +374,7 @@ Nova\+Linha()
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{bool}\ completo)\ \ \ \textcolor{comment}{//\ refazer\ comentários....}}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \ \ \ NovaLinha();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é apenas\ um\ número}}
@@ -380,11 +388,11 @@ Nova\+Linha()
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{TProcura}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a0c5676c1b54ab6bdc1045b98aeafe456}{TProcura}}.
 
 
 
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00174}{174}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00177}{177}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 4
@@ -428,7 +436,7 @@ Implements \mbox{\hyperlink{classTCodificacaoPermutacao_acc26f6577f8f43d59b1bd4f
 
 
 
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00152}{152}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00155}{155}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 5
@@ -471,7 +479,7 @@ Implements \mbox{\hyperlink{classTCodificacaoPermutacao_aa209162e1b26bd9eca69d6c
 
 
 
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00163}{163}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00166}{166}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 6
@@ -542,7 +550,7 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb
 
 
 
-Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00169}{169}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
+Definition at line \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source_l00172}{172}} of file \mbox{\hyperlink{Melhorativa_2Teste_2OitoDamas_8h_source}{Oito\+Damas.\+h}}.
 
 Here is the call graph for this function\+:
 % FIG 7

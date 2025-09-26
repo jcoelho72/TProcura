@@ -2,8 +2,8 @@ var classCTesteTVector =
 [
     [ "CTesteTVector", "classCTesteTVector.html#aabaa5d70e94de2603e67a57e2c2577aa", null ],
     [ "~CTesteTVector", "classCTesteTVector.html#a4da32c26bbf817cc06f48569a19e1b90", null ],
-    [ "Debug", "classCTesteTVector.html#af53e06f07045b1c72f144f16f6998206", null ],
-    [ "Debug", "classCTesteTVector.html#a98f0e815a25aa85841c88a638bf4eaf0", null ],
+    [ "Debug", "classCTesteTVector.html#a0c5676c1b54ab6bdc1045b98aeafe456", null ],
+    [ "Debug", "classCTesteTVector.html#a8ec1ac319d1625515c64c6fcafab72b8", null ],
     [ "ExecutaAlgoritmo", "classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c", null ],
     [ "Indicador", "classCTesteTVector.html#a9b2fa997b10ef80c88262c9e1463b767", null ],
     [ "Inicializar", "classCTesteTVector.html#ac0189d925fb44fbc3b2d0aad7660f528", null ],

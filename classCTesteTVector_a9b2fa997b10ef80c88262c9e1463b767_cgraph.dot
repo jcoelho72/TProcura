@@ -9,7 +9,7 @@ digraph "CTesteTVector::Indicador"
   Node1 -> Node2 [id="edge7_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
   Node1 -> Node3 [id="edge8_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="CTesteTVector::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#af53e06f07045b1c72f144f16f6998206",tooltip="Mostra informação de debug sobre o estado dos vetores."];
+  Node3 [id="Node000003",label="CTesteTVector::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCTesteTVector.html#a8ec1ac319d1625515c64c6fcafab72b8",tooltip="Mostra informação de debug sobre o estado dos vetores."];
   Node3 -> Node2 [id="edge9_Node000003_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node3 -> Node4 [id="edge10_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];

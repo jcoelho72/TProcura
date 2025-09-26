@@ -197,12 +197,12 @@ Here is the call graph for this function:</div>
 <div class="line">    <span class="comment">// verificar todas as variáveis de estado</span></div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a> != <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">outro</a>.variavel;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00113">TProcuraConstrutiva.h:114</a></div></div>
+<div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00111">TProcuraConstrutiva.h:112</a></div></div>
 <div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na �ltima execu��o.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00493">TProcura.h:493</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCAspirador.html#a9279c18880569e58bc26932979d58058">CAspirador</a>, and <a class="el" href="classCProblemaArtificial.html#a5243c313f30ce2fe40f0d9d274cd5d8a">CProblemaArtificial</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00476">476</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00474">474</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -280,7 +280,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00919">919</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00918">918</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -318,20 +318,20 @@ Here is the call graph for this function:</div>
 <p>Esta função exibe a solução, mostrando um estado a cada X ações e exibindo as ações entre os estados. O valor padrão de <code>X</code> é 4, ajustável pelo parâmetro <code>Parametro(VER_ACOES)</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>Em problemas onde seja simples de seguir a ação, pode-se utilizar valores maiores, sem ser necessário mostrar muitos estados completos. Em problemas que as ações sejam mais complexas, ou alterem mais o estado, poderá ser até preferível colocar este valor a 1, para que o estado seja sempre mostrado em cada ação.</dd>
 <dd>
-Há problemas em que o estado é já a solução. Neste caso pode-se redefinir esta função chamando a função <a class="el" href="classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0" title="Mostra o estado no ecr�, para debug.">Debug()</a>.</dd>
+Há problemas em que o estado é já a solução. Neste caso pode-se redefinir esta função chamando a função <a class="el" href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456" title="Mostra o estado no ecr�, para debug.">Debug()</a>.</dd>
 <dd>
 Em situações particulares, poderá ser possível construir a solução de forma mais compacta, num único estado com as ações todas codificadas, por exemplo um caminho num mapa. Nesse caso há que redefinir este método, implementando a visualização da solução de raiz.</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> CSubProblema::MostrarSolucao(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="comment">// caso o estado final seja a solução, simplesmente mostrar o estado atual</span></div>
-<div class="line">    <a class="code hl_function" href="classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0">Debug</a>();</div>
+<div class="line">    <a class="code hl_function" href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">Debug</a>();</div>
 <div class="line">    <span class="comment">// caso seja um caminho do estado inicial ao final, não redefinir</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcura_html_a98f0e815a25aa85841c88a638bf4eaf0"><div class="ttname"><a href="classTProcura.html#a98f0e815a25aa85841c88a638bf4eaf0">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(void)</div><div class="ttdoc">Mostra o estado no ecr�, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00094">TProcura.cpp:94</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a0c5676c1b54ab6bdc1045b98aeafe456"><div class="ttname"><a href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(bool completo=true)</div><div class="ttdoc">Mostra o estado no ecr�, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00094">TProcura.cpp:94</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a014a294d094430b113ffb36e64a74d97">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00507">507</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00505">505</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

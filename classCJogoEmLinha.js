@@ -8,7 +8,7 @@ var classCJogoEmLinha =
     [ "Codifica", "classCJogoEmLinha.html#a9c604cfb7ca0500e9f165a3a2b9b7a9d", null ],
     [ "Codigo", "classCJogoEmLinha.html#a9c6c57f158fb470096dfbffb07da93a4", null ],
     [ "Copiar", "classCJogoEmLinha.html#ab11bd9cb65db20489151a1935df9060e", null ],
-    [ "Debug", "classCJogoEmLinha.html#a241f3198f804b6e0003a45fe2d11100a", null ],
+    [ "Debug", "classCJogoEmLinha.html#a2ee665ea0e0e9f23c4a8eb7cf8b0b12c", null ],
     [ "Duplicar", "classCJogoEmLinha.html#af9b87594a26c4230c7c0f59efc8e013a", null ],
     [ "Heuristica", "classCJogoEmLinha.html#afe8d4a92e1840c1436c295c5a13760db", null ],
     [ "Indice", "classCJogoEmLinha.html#a1f1a90de9954476789f5d08420eedfaa", null ],

@@ -9,5 +9,5 @@ digraph "COitoDamasCI::Debug"
   Node1 -> Node2 [id="edge3_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
   Node1 -> Node3 [id="edge4_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TCodificacaoInteira\l::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html#a3cc16ef4b60dffc2a29c634446926190",tooltip="Mostra o estado no ecrã, para debug."];
+  Node3 [id="Node000003",label="TCodificacaoInteira\l::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html#a2a849dc7fe5bacff0f625cd6cec2e47e",tooltip="Mostra o estado no ecrã, para debug."];
 }

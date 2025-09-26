@@ -29,7 +29,7 @@ Collaboration diagram for CJogo\+Do\+Galo\+:
 \begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classCJogoDoGalo_a568b44d77521584132997a74bf557014}{Solucao\+Completa}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em Verifica se o estado actual Ã© objectivo (Ã© uma soluÃ§Ã£o completa) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a16f33d5fa4e812d39b3e643ce0abf3c3}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCJogoDoGalo_a7ccc3f62401cbc7c8b45c8c453fd0ba7}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcuraAdversa_a68b3eb30c6967f5694b4d1f9f50c434c}{completo}}=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCJogoDoGalo_ad83a5e5ee76941ffabc95893828a768e}{Acao}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessor}})
 \item 
@@ -350,6 +350,8 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \begin{DoxyCompactList}\small\item\em Insere configurações gerando o produto cartesiano de valores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_adc4d653fe0feb6033083adc5d19e7fb5}{Ajuda\+Utilizacao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{programa}})
 \begin{DoxyCompactList}\small\item\em Mostra ajuda de utilização do programa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ab90f47d04e48a6728fc9dafca3870a5f}{Debug\+Tabela}} (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} nivel, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tabela}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}tipo="{}"{})
+\begin{DoxyCompactList}\small\item\em Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_aa47aff45144b528adaecdb654c498844}{Juntar\+CSV}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}})
 \begin{DoxyCompactList}\small\item\em Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
@@ -493,11 +495,11 @@ Definition at line \mbox{\hyperlink{JogoDoGalo_8cpp_source_l00022}{22}} of file 
 
 Here is the caller graph for this function\+:
 % FIG 4
-\Hypertarget{classCJogoDoGalo_a16f33d5fa4e812d39b3e643ce0abf3c3}\label{classCJogoDoGalo_a16f33d5fa4e812d39b3e643ce0abf3c3} 
+\Hypertarget{classCJogoDoGalo_a7ccc3f62401cbc7c8b45c8c453fd0ba7}\label{classCJogoDoGalo_a7ccc3f62401cbc7c8b45c8c453fd0ba7} 
 \index{CJogoDoGalo@{CJogoDoGalo}!Debug@{Debug}}
 \index{Debug@{Debug}!CJogoDoGalo@{CJogoDoGalo}}
 \doxysubsubsection{\texorpdfstring{Debug()}{Debug()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CJogo\+Do\+Galo\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}}}]{completo = {\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -518,7 +520,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfamil
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTProcuraAdversa_a68b3eb30c6967f5694b4d1f9f50c434c}{completo}})\ \ \ \textcolor{comment}{//\ refazer\ comentários....}}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é apenas\ um\ número}}
@@ -532,7 +534,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfamil
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{TProcura}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a0c5676c1b54ab6bdc1045b98aeafe456}{TProcura}}.
 
 
 

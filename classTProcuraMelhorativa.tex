@@ -62,7 +62,7 @@ Collaboration diagram for TProcura\+Melhorativa\+:
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a3aebd23cfe82d58b78024d39e8b31fc0}{\texorpdfstring{$\sim$}{\string~}\+TProcura}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a0c5676c1b54ab6bdc1045b98aeafe456}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} completo=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}})
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{virtual}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_a5fdf4e8f76e59eb83fbc274fa61e34af}{Teste\+Manual}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}nome)
 \begin{DoxyCompactList}\small\item\em Inicializa a interação com o utilizador. \end{DoxyCompactList}\item 
@@ -98,6 +98,8 @@ Collaboration diagram for TProcura\+Melhorativa\+:
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_ab1191e46286698e517e2d5bf3cd18ff0}{lower\+Bound}} = 0
+\begin{DoxyCompactList}\small\item\em Lower Bound, se existir. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_af8e5dc608467eccc7569361cde5db236}{geracoes}} = 0
 \begin{DoxyCompactList}\small\item\em NÃºmero de estados gerados. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{static}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcuraMelhorativa_a19d678deb1731c4d96d7f114d8548ab9}{epocas}} = 0
@@ -170,15 +172,19 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_ac0273cf661acd96f0c1c2e2fa5661ca6}{Debug\+Cruzamento\+AG}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Pai}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Mae}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{g\+Filho}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{mutou}})
 \item 
-\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_ac8e4d93219b84ad2039d23230a22d718}{Inicializar\+Populacao\+AE}} ()
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a5f0aa5bd919d038c2e1d3903188ba0c1}{Completar\+Populacao\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
 \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a35e3a8f92ef41a8941f75ceee20e13bb}{Selecionar\+Pais\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
-\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a6e863f6050021221dfd3ba7815d1c79c}{Reproduzir\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{pais}})
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a63e8ac07e1d712645b9038cd72aa133b}{Reproduzir\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{pais}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
 \item 
 \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a083b961ed7ed1483625559d068755a7f}{Selecionar\+Sobreviventes\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{descendentes}})
 \item 
+\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \mbox{\hyperlink{classTProcuraMelhorativa_a5e51812d311d976a002f6c7ec0fcd555}{Aplicar\+Diversidade\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
+\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a98c93de808e3181024508c35fa22d62f}{Debug\+Geracao\+AE}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{epoca}}, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}})
+\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcuraMelhorativa_a6680888f6064501586d740cab891d0cd}{Diversidade\+AE}} (\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{populacao}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{min\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{max\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{avg\+Dist}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{melhor\+Pior}})
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
 \begin{DoxyCompactItemize}
@@ -231,6 +237,8 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \begin{DoxyCompactList}\small\item\em Insere configurações gerando o produto cartesiano de valores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_adc4d653fe0feb6033083adc5d19e7fb5}{Ajuda\+Utilizacao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{programa}})
 \begin{DoxyCompactList}\small\item\em Mostra ajuda de utilização do programa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ab90f47d04e48a6728fc9dafca3870a5f}{Debug\+Tabela}} (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} nivel, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tabela}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}tipo="{}"{})
+\begin{DoxyCompactList}\small\item\em Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_aa47aff45144b528adaecdb654c498844}{Juntar\+CSV}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}})
 \begin{DoxyCompactList}\small\item\em Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
@@ -261,7 +269,7 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00038}{38}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00039}{39}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 
 
@@ -274,7 +282,7 @@ Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00038}{38}} o
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 \Hypertarget{classTProcuraMelhorativa_ad2ca1ae58d4629b2119ccdbee61bde00}\label{classTProcuraMelhorativa_ad2ca1ae58d4629b2119ccdbee61bde00} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!````~TProcuraMelhorativa@{\texorpdfstring{$\sim$}{\string~}TProcuraMelhorativa}}
@@ -284,7 +292,7 @@ Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00015}{15}}
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 
 
@@ -297,7 +305,7 @@ Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00020}{20}}
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00117}{117}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00120}{120}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the caller graph for this function\+:
 % FIG 2
@@ -309,7 +317,7 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00368}{368}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00382}{382}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 3
@@ -323,12 +331,26 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00235}{235}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00249}{249}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
 % FIG 5
 Here is the caller graph for this function\+:
 % FIG 6
+\Hypertarget{classTProcuraMelhorativa_a5e51812d311d976a002f6c7ec0fcd555}\label{classTProcuraMelhorativa_a5e51812d311d976a002f6c7ec0fcd555} 
+\index{TProcuraMelhorativa@{TProcuraMelhorativa}!AplicarDiversidadeAE@{AplicarDiversidadeAE}}
+\index{AplicarDiversidadeAE@{AplicarDiversidadeAE}!TProcuraMelhorativa@{TProcuraMelhorativa}}
+\doxysubsubsection{\texorpdfstring{AplicarDiversidadeAE()}{AplicarDiversidadeAE()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ TProcura\+Melhorativa\+::\+Aplicar\+Diversidade\+AE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&}]{populacao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00783}{783}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
 \Hypertarget{classTProcuraMelhorativa_a98b5a07fe3813de112f603c8fdb0bc43}\label{classTProcuraMelhorativa_a98b5a07fe3813de112f603c8fdb0bc43} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Avaliar@{Avaliar}}
 \index{Avaliar@{Avaliar}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -341,10 +363,12 @@ Reimplemented in \mbox{\hyperlink{classCOitoDamas_ae23eb62823fd90b67fd1292cd6b73
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
+Here is the call graph for this function\+:
+% FIG 9
 Here is the caller graph for this function\+:
-% FIG 7
+% FIG 10
 \Hypertarget{classTProcuraMelhorativa_a4eb294616d6fd3d9a12a074b659db863}\label{classTProcuraMelhorativa_a4eb294616d6fd3d9a12a074b659db863} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!CalcularAvaliacoes@{CalcularAvaliacoes}}
 \index{CalcularAvaliacoes@{CalcularAvaliacoes}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -353,12 +377,26 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00220}{220}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00234}{234}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 8
+% FIG 11
 Here is the caller graph for this function\+:
-% FIG 9
+% FIG 12
+\Hypertarget{classTProcuraMelhorativa_a5f0aa5bd919d038c2e1d3903188ba0c1}\label{classTProcuraMelhorativa_a5f0aa5bd919d038c2e1d3903188ba0c1} 
+\index{TProcuraMelhorativa@{TProcuraMelhorativa}!CompletarPopulacaoAE@{CompletarPopulacaoAE}}
+\index{CompletarPopulacaoAE@{CompletarPopulacaoAE}!TProcuraMelhorativa@{TProcuraMelhorativa}}
+\doxysubsubsection{\texorpdfstring{CompletarPopulacaoAE()}{CompletarPopulacaoAE()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ TProcura\+Melhorativa\+::\+Completar\+Populacao\+AE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&}]{populacao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00498}{498}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
 \Hypertarget{classTProcuraMelhorativa_a446cb701313bd16b9a6c5939b810d241}\label{classTProcuraMelhorativa_a446cb701313bd16b9a6c5939b810d241} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Copiar@{Copiar}}
 \index{Copiar@{Copiar}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -399,10 +437,10 @@ Reimplemented in \mbox{\hyperlink{classTCodificacaoBinaria_ad2083ee209edac21d0ce
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00111}{111}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00114}{114}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 10
+% FIG 15
 \Hypertarget{classTProcuraMelhorativa_a36607136095d36b87357cce021eeab29}\label{classTProcuraMelhorativa_a36607136095d36b87357cce021eeab29} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Cruzamento@{Cruzamento}}
 \index{Cruzamento@{Cruzamento}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -415,10 +453,10 @@ Reimplemented in \mbox{\hyperlink{classTCodificacaoBinaria_ac8df002987d87aa7ecaa
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00142}{142}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00145}{145}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 11
+% FIG 16
 \Hypertarget{classTProcuraMelhorativa_ac0273cf661acd96f0c1c2e2fa5661ca6}\label{classTProcuraMelhorativa_ac0273cf661acd96f0c1c2e2fa5661ca6} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!DebugCruzamentoAG@{DebugCruzamentoAG}}
 \index{DebugCruzamentoAG@{DebugCruzamentoAG}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -427,12 +465,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00325}{325}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00339}{339}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 12
+% FIG 17
 Here is the caller graph for this function\+:
-% FIG 13
+% FIG 18
 \Hypertarget{classTProcuraMelhorativa_a98c93de808e3181024508c35fa22d62f}\label{classTProcuraMelhorativa_a98c93de808e3181024508c35fa22d62f} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!DebugGeracaoAE@{DebugGeracaoAE}}
 \index{DebugGeracaoAE@{DebugGeracaoAE}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -441,12 +479,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00389}{389}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00406}{406}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 14
+% FIG 19
 Here is the caller graph for this function\+:
-% FIG 15
+% FIG 20
 \Hypertarget{classTProcuraMelhorativa_aa57d370e5ae543707424b8bc9f404b09}\label{classTProcuraMelhorativa_aa57d370e5ae543707424b8bc9f404b09} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!DebugInicioEM@{DebugInicioEM}}
 \index{DebugInicioEM@{DebugInicioEM}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -455,12 +493,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00184}{184}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 16
+% FIG 21
 Here is the caller graph for this function\+:
-% FIG 17
+% FIG 22
 \Hypertarget{classTProcuraMelhorativa_a6fc03fc9e9379496303354d2b46b8bc8}\label{classTProcuraMelhorativa_a6fc03fc9e9379496303354d2b46b8bc8} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!DebugMelhorEncontrado@{DebugMelhorEncontrado}}
 \index{DebugMelhorEncontrado@{DebugMelhorEncontrado}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -469,12 +507,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00603}{603}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00842}{842}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 18
+% FIG 23
 Here is the caller graph for this function\+:
-% FIG 19
+% FIG 24
 \Hypertarget{classTProcuraMelhorativa_a5ca716c360ad420c1f642ddce21fd6e3}\label{classTProcuraMelhorativa_a5ca716c360ad420c1f642ddce21fd6e3} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!DebugOptimoLocal@{DebugOptimoLocal}}
 \index{DebugOptimoLocal@{DebugOptimoLocal}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -483,12 +521,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00164}{164}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 20
+% FIG 25
 Here is the caller graph for this function\+:
-% FIG 21
+% FIG 26
 \Hypertarget{classTProcuraMelhorativa_a4e8f2500b354fcb2dd46fded2e6b643b}\label{classTProcuraMelhorativa_a4e8f2500b354fcb2dd46fded2e6b643b} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!DebugPassoAG@{DebugPassoAG}}
 \index{DebugPassoAG@{DebugPassoAG}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -497,12 +535,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00331}{331}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00345}{345}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 22
+% FIG 27
 Here is the caller graph for this function\+:
-% FIG 23
+% FIG 28
 \Hypertarget{classTProcuraMelhorativa_aa4572163864fef20a4476b03fdf5ec5b}\label{classTProcuraMelhorativa_aa4572163864fef20a4476b03fdf5ec5b} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!DebugPassoEM@{DebugPassoEM}}
 \index{DebugPassoEM@{DebugPassoEM}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -511,12 +549,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00158}{158}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00172}{172}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 24
+% FIG 29
 Here is the caller graph for this function\+:
-% FIG 25
+% FIG 30
 \Hypertarget{classTProcuraMelhorativa_a71f6e6bf53e56efec940a9e53b3795a4}\label{classTProcuraMelhorativa_a71f6e6bf53e56efec940a9e53b3795a4} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!DebugVizinhos@{DebugVizinhos}}
 \index{DebugVizinhos@{DebugVizinhos}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -525,10 +563,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00713}{713}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00953}{953}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the caller graph for this function\+:
-% FIG 26
+% FIG 31
 \Hypertarget{classTProcuraMelhorativa_ab870165cba9b9832946f9bbe26862c0f}\label{classTProcuraMelhorativa_ab870165cba9b9832946f9bbe26862c0f} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Distancia@{Distancia}}
 \index{Distancia@{Distancia}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -541,10 +579,22 @@ Reimplemented in \mbox{\hyperlink{classTCodificacaoBinaria_a6f922717bd9de7f4c8ad
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00145}{145}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00148}{148}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 27
+% FIG 32
+\Hypertarget{classTProcuraMelhorativa_a6680888f6064501586d740cab891d0cd}\label{classTProcuraMelhorativa_a6680888f6064501586d740cab891d0cd} 
+\index{TProcuraMelhorativa@{TProcuraMelhorativa}!DiversidadeAE@{DiversidadeAE}}
+\index{DiversidadeAE@{DiversidadeAE}!TProcuraMelhorativa@{TProcuraMelhorativa}}
+\doxysubsubsection{\texorpdfstring{DiversidadeAE()}{DiversidadeAE()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} TProcura\+Melhorativa\+::\+Diversidade\+AE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&}]{populacao,  }\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&}]{min\+Dist,  }\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&}]{max\+Dist,  }\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&}]{avg\+Dist,  }\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} \&}]{melhor\+Pior }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00466}{466}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+
+Here is the caller graph for this function\+:
+% FIG 33
 \Hypertarget{classTProcuraMelhorativa_af38c70a1e83290851c52a2cc85e19582}\label{classTProcuraMelhorativa_af38c70a1e83290851c52a2cc85e19582} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Duplicar@{Duplicar}}
 \index{Duplicar@{Duplicar}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -584,7 +634,7 @@ Caso exista falha de memÃ³ria, colocar a variÃ¡vel memoria\+Esgotada a true, par
 Implemented in \mbox{\hyperlink{classCOitoDamas_ad9ce9bd26af98392515937e9aff10e5a}{COito\+Damas}}, \mbox{\hyperlink{classCParticao_aa50c7d31c22b1baa8ecb15b2841e2854}{CParticao}}, \mbox{\hyperlink{classCProblemaArtificial_ada920ffe8fe97913ef87196864618a48}{CProblema\+Artificial}}, \mbox{\hyperlink{classTCodificacaoReal_ab4e6b92cf2c32c0a5d87176014bb23a8}{TCodificacao\+Real}}, \mbox{\hyperlink{classCOitoDamas_a36a173575d8f6bd1815989a7a26b7440}{COito\+Damas}}, \mbox{\hyperlink{classCOitoDamasCI_a1d35285a7fbb9104e6db5587c8db5924}{COito\+Damas\+CI}}, \mbox{\hyperlink{classCOitoDamasCP_a6f0835407b0f84be61f0c9d04fe71417}{COito\+Damas\+CP}}, \mbox{\hyperlink{classCParticao_a124783fa742619a5839649b83f3b93bc}{CParticao}}, \mbox{\hyperlink{classCParticaoCB_af24fe3e275e519a96fcb657c204b5cc5}{CParticao\+CB}}, \mbox{\hyperlink{classCProblemaArtificial_a15bc8f02957607a1ce184975b34465da}{CProblema\+Artificial}}, \mbox{\hyperlink{classTCodificacaoBinaria_af86710c3e68600bbdf4fd649011a4463}{TCodificacao\+Binaria}}, \mbox{\hyperlink{classTCodificacaoInteira_aae6c2a9186d72721b44d91b240711b89}{TCodificacao\+Inteira}}, and \mbox{\hyperlink{classTCodificacaoPermutacao_acc26f6577f8f43d59b1bd4f17fe8b659}{TCodificacao\+Permutacao}}.
 
 Here is the caller graph for this function\+:
-% FIG 28
+% FIG 34
 \Hypertarget{classTProcuraMelhorativa_a8c8caa2d188bb5f6701fc5e1ddbc4510}\label{classTProcuraMelhorativa_a8c8caa2d188bb5f6701fc5e1ddbc4510} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!EscaladaDoMonte@{EscaladaDoMonte}}
 \index{EscaladaDoMonte@{EscaladaDoMonte}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -593,12 +643,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00086}{86}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 29
+% FIG 35
 Here is the caller graph for this function\+:
-% FIG 30
+% FIG 36
 \Hypertarget{classTProcuraMelhorativa_af101526489df420431d22477e317fb33}\label{classTProcuraMelhorativa_af101526489df420431d22477e317fb33} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!ExecutaAlgoritmo@{ExecutaAlgoritmo}}
 \index{ExecutaAlgoritmo@{ExecutaAlgoritmo}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -618,10 +668,10 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a1297806db02da2a44794883a6f427
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00624}{624}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00864}{864}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 31
+% FIG 37
 \Hypertarget{classTProcuraMelhorativa_a76355a263331719abacf13d40a6613d0}\label{classTProcuraMelhorativa_a76355a263331719abacf13d40a6613d0} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Explorar@{Explorar}}
 \index{Explorar@{Explorar}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -638,10 +688,10 @@ Reimplemented from \mbox{\hyperlink{classTProcura_abd93e2ba1f58d3ee7bef74845cee9
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00634}{634}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00874}{874}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 32
+% FIG 38
 \Hypertarget{classTProcuraMelhorativa_a9fb583268291334ec7da02e2216bc7e8}\label{classTProcuraMelhorativa_a9fb583268291334ec7da02e2216bc7e8} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Indicador@{Indicador}}
 \index{Indicador@{Indicador}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -658,10 +708,10 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a39f8ec3e0c97c7bc1bcd45e685168
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00609}{609}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00849}{849}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 33
+% FIG 39
 \Hypertarget{classTProcuraMelhorativa_a72a59b4afbcd7b1f7ea65e4d2cff1a1b}\label{classTProcuraMelhorativa_a72a59b4afbcd7b1f7ea65e4d2cff1a1b} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Inicializar@{Inicializar}}
 \index{Inicializar@{Inicializar}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -678,24 +728,10 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a1af0e64ed79d99972d8d48fadf839
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00179}{179}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00182}{182}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 34
-\Hypertarget{classTProcuraMelhorativa_ac8e4d93219b84ad2039d23230a22d718}\label{classTProcuraMelhorativa_ac8e4d93219b84ad2039d23230a22d718} 
-\index{TProcuraMelhorativa@{TProcuraMelhorativa}!InicializarPopulacaoAE@{InicializarPopulacaoAE}}
-\index{InicializarPopulacaoAE@{InicializarPopulacaoAE}!TProcuraMelhorativa@{TProcuraMelhorativa}}
-\doxysubsubsection{\texorpdfstring{InicializarPopulacaoAE()}{InicializarPopulacaoAE()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ TProcura\+Melhorativa\+::\+Inicializar\+Populacao\+AE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-
-
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00404}{404}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
-
-Here is the call graph for this function\+:
-% FIG 35
-Here is the caller graph for this function\+:
-% FIG 36
+% FIG 40
 \Hypertarget{classTProcuraMelhorativa_a28993c2953d882b21f3c456e5d1b7e47}\label{classTProcuraMelhorativa_a28993c2953d882b21f3c456e5d1b7e47} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!LibertarVector@{LibertarVector}}
 \index{LibertarVector@{LibertarVector}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -704,10 +740,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00178}{178}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00192}{192}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the caller graph for this function\+:
-% FIG 37
+% FIG 41
 \Hypertarget{classTProcuraMelhorativa_a6c7163b20ace9bebdf3c073cd475dec9}\label{classTProcuraMelhorativa_a6c7163b20ace9bebdf3c073cd475dec9} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!LimparEstatisticas@{LimparEstatisticas}}
 \index{LimparEstatisticas@{LimparEstatisticas}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -724,10 +760,10 @@ Reimplemented from \mbox{\hyperlink{classTProcura_ae82e7be02923531e7ead26b1b25ce
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00618}{618}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00858}{858}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 38
+% FIG 42
 \Hypertarget{classTProcuraMelhorativa_a55ff18ec36fc46b793b0ee20085388a1}\label{classTProcuraMelhorativa_a55ff18ec36fc46b793b0ee20085388a1} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!MelhorAtual@{MelhorAtual}}
 \index{MelhorAtual@{MelhorAtual}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -736,12 +772,12 @@ Here is the call graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00212}{212}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00226}{226}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 39
+% FIG 43
 Here is the caller graph for this function\+:
-% FIG 40
+% FIG 44
 \Hypertarget{classTProcuraMelhorativa_a9a99d8084b1549c81053c76b384c79ee}\label{classTProcuraMelhorativa_a9a99d8084b1549c81053c76b384c79ee} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!MelhorCusto@{MelhorCusto}}
 \index{MelhorCusto@{MelhorCusto}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -750,10 +786,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00203}{203}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00217}{217}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the caller graph for this function\+:
-% FIG 41
+% FIG 45
 \Hypertarget{classTProcuraMelhorativa_a1e1ecbe8c142dcd1bccf3c836f4a3307}\label{classTProcuraMelhorativa_a1e1ecbe8c142dcd1bccf3c836f4a3307} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Mutar@{Mutar}}
 \index{Mutar@{Mutar}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -766,10 +802,10 @@ Reimplemented in \mbox{\hyperlink{classTCodificacaoBinaria_a6781e05ebdb49d7a5c17
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00140}{140}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00143}{143}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 42
+% FIG 46
 \Hypertarget{classTProcuraMelhorativa_a50bf29ddd183e8e4678ceb2247b9cf58}\label{classTProcuraMelhorativa_a50bf29ddd183e8e4678ceb2247b9cf58} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!NovaSolucao@{NovaSolucao}}
 \index{NovaSolucao@{NovaSolucao}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -782,10 +818,10 @@ Reimplemented in \mbox{\hyperlink{classTCodificacaoBinaria_aa46563911320bf89456b
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00113}{113}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00116}{116}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 43
+% FIG 47
 \Hypertarget{classTProcuraMelhorativa_a1205807eb7d011896ddd38dc5675ab44}\label{classTProcuraMelhorativa_a1205807eb7d011896ddd38dc5675ab44} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!ObterExtremos@{ObterExtremos}}
 \index{ObterExtremos@{ObterExtremos}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -794,10 +830,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00359}{359}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00372}{372}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the caller graph for this function\+:
-% FIG 44
+% FIG 48
 \Hypertarget{classTProcuraMelhorativa_aec9c9187221f37a37f71bee878a577ae}\label{classTProcuraMelhorativa_aec9c9187221f37a37f71bee878a577ae} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!OrdemValor@{OrdemValor}}
 \index{OrdemValor@{OrdemValor}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -806,12 +842,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00339}{339}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00352}{352}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 45
+% FIG 49
 Here is the caller graph for this function\+:
-% FIG 46
+% FIG 50
 \Hypertarget{classTProcuraMelhorativa_add6b034d0b16d10ca85b2b42d956fae0}\label{classTProcuraMelhorativa_add6b034d0b16d10ca85b2b42d956fae0} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Parar@{Parar}}
 \index{Parar@{Parar}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -848,26 +884,26 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a7952e187e1b0ae0ca52edab157223
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00125}{125}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00128}{128}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the call graph for this function\+:
-% FIG 47
+% FIG 51
 Here is the caller graph for this function\+:
-% FIG 48
-\Hypertarget{classTProcuraMelhorativa_a6e863f6050021221dfd3ba7815d1c79c}\label{classTProcuraMelhorativa_a6e863f6050021221dfd3ba7815d1c79c} 
+% FIG 52
+\Hypertarget{classTProcuraMelhorativa_a63e8ac07e1d712645b9038cd72aa133b}\label{classTProcuraMelhorativa_a63e8ac07e1d712645b9038cd72aa133b} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!ReproduzirAE@{ReproduzirAE}}
 \index{ReproduzirAE@{ReproduzirAE}!TProcuraMelhorativa@{TProcuraMelhorativa}}
 \doxysubsubsection{\texorpdfstring{ReproduzirAE()}{ReproduzirAE()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ TProcura\+Melhorativa\+::\+Reproduzir\+AE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&}]{pais }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ TProcura\+Melhorativa\+::\+Reproduzir\+AE (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&}]{pais,  }\item[{\mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{TProcuraMelhorativa_8h_a96cc31942cc33f2999974edd7caada2a}{TPonto}} $>$ \&}]{populacao }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00473}{473}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00598}{598}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 49
+% FIG 53
 Here is the caller graph for this function\+:
-% FIG 50
+% FIG 54
 \Hypertarget{classTProcuraMelhorativa_ad52a9ac59f07587d70dc696c0648fe62}\label{classTProcuraMelhorativa_ad52a9ac59f07587d70dc696c0648fe62} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!ResetParametros@{ResetParametros}}
 \index{ResetParametros@{ResetParametros}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -935,12 +971,12 @@ Reimplemented from \mbox{\hyperlink{classTProcura_a6b870a79b10bf2523bdb37c4b06bb
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 51
+% FIG 55
 Here is the caller graph for this function\+:
-% FIG 52
+% FIG 56
 \Hypertarget{classTProcuraMelhorativa_abc3412ac90e57f6c25b3c609fcc93d62}\label{classTProcuraMelhorativa_abc3412ac90e57f6c25b3c609fcc93d62} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Selecao@{Selecao}}
 \index{Selecao@{Selecao}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -949,12 +985,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00346}{346}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00359}{359}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 53
+% FIG 57
 Here is the caller graph for this function\+:
-% FIG 54
+% FIG 58
 \Hypertarget{classTProcuraMelhorativa_a35e3a8f92ef41a8941f75ceee20e13bb}\label{classTProcuraMelhorativa_a35e3a8f92ef41a8941f75ceee20e13bb} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!SelecionarPaisAE@{SelecionarPaisAE}}
 \index{SelecionarPaisAE@{SelecionarPaisAE}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -963,12 +999,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00416}{416}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00510}{510}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 55
+% FIG 59
 Here is the caller graph for this function\+:
-% FIG 56
+% FIG 60
 \Hypertarget{classTProcuraMelhorativa_a083b961ed7ed1483625559d068755a7f}\label{classTProcuraMelhorativa_a083b961ed7ed1483625559d068755a7f} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!SelecionarSobreviventesAE@{SelecionarSobreviventesAE}}
 \index{SelecionarSobreviventesAE@{SelecionarSobreviventesAE}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -977,12 +1013,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00514}{514}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00661}{661}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 57
+% FIG 61
 Here is the caller graph for this function\+:
-% FIG 58
+% FIG 62
 \Hypertarget{classTProcuraMelhorativa_aeb435694084a626e3d52f3a489d9a93d}\label{classTProcuraMelhorativa_aeb435694084a626e3d52f3a489d9a93d} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!VerificaMelhor@{VerificaMelhor}}
 \index{VerificaMelhor@{VerificaMelhor}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -991,12 +1027,12 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00186}{186}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00200}{200}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 59
+% FIG 63
 Here is the caller graph for this function\+:
-% FIG 60
+% FIG 64
 \Hypertarget{classTProcuraMelhorativa_a8cb678f2a5c1bc649d5e1739ef7b5106}\label{classTProcuraMelhorativa_a8cb678f2a5c1bc649d5e1739ef7b5106} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!VerificaMelhor@{VerificaMelhor}}
 \index{VerificaMelhor@{VerificaMelhor}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -1005,10 +1041,10 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00194}{194}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source_l00208}{208}} of file \mbox{\hyperlink{TProcuraMelhorativa_8cpp_source}{TProcura\+Melhorativa.\+cpp}}.
 
 Here is the call graph for this function\+:
-% FIG 61
+% FIG 65
 \Hypertarget{classTProcuraMelhorativa_ad268f3d892d6a912f632369e1c9be878}\label{classTProcuraMelhorativa_ad268f3d892d6a912f632369e1c9be878} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!Vizinhanca@{Vizinhanca}}
 \index{Vizinhanca@{Vizinhanca}!TProcuraMelhorativa@{TProcuraMelhorativa}}
@@ -1021,10 +1057,10 @@ Reimplemented in \mbox{\hyperlink{classTCodificacaoBinaria_a2dab8869b025da3b5788
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00133}{133}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00136}{136}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 Here is the caller graph for this function\+:
-% FIG 62
+% FIG 66
 
 
 \doxysubsection{Member Data Documentation}
@@ -1040,7 +1076,7 @@ Custo total, atualizada apÃ³s \doxylink{classTProcuraMelhorativa_a98b5a07fe3813d
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00046}{46}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00047}{47}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 \Hypertarget{classTProcuraMelhorativa_a19d678deb1731c4d96d7f114d8548ab9}\label{classTProcuraMelhorativa_a19d678deb1731c4d96d7f114d8548ab9} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!epocas@{epocas}}
@@ -1054,7 +1090,7 @@ NÃºmero de Ã©pocas decorridas num algoritmo evolutivo. Uma Ã©poca Ã© uma geraÃ§Ã
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00050}{50}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00053}{53}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 \Hypertarget{classTProcuraMelhorativa_af8e5dc608467eccc7569361cde5db236}\label{classTProcuraMelhorativa_af8e5dc608467eccc7569361cde5db236} 
 \index{TProcuraMelhorativa@{TProcuraMelhorativa}!geracoes@{geracoes}}
@@ -1068,7 +1104,21 @@ NÃºmero de estados gerados.
 
 
 
-Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00048}{48}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00051}{51}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
+
+\Hypertarget{classTProcuraMelhorativa_ab1191e46286698e517e2d5bf3cd18ff0}\label{classTProcuraMelhorativa_ab1191e46286698e517e2d5bf3cd18ff0} 
+\index{TProcuraMelhorativa@{TProcuraMelhorativa}!lowerBound@{lowerBound}}
+\index{lowerBound@{lowerBound}!TProcuraMelhorativa@{TProcuraMelhorativa}}
+\doxysubsubsection{\texorpdfstring{lowerBound}{lowerBound}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} TProcura\+Melhorativa\+::lower\+Bound = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Lower Bound, se existir. 
+
+
+
+Definition at line \mbox{\hyperlink{TProcuraMelhorativa_8h_source_l00049}{49}} of file \mbox{\hyperlink{TProcuraMelhorativa_8h_source}{TProcura\+Melhorativa.\+h}}.
 
 
 

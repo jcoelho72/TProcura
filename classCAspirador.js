@@ -5,7 +5,7 @@ var classCAspirador =
     [ "Acao", "classCAspirador.html#a602bee168dd45c680b2a10bdef57a5a4", null ],
     [ "Codifica", "classCAspirador.html#a856e23c30c70be5345f56979b27fdc1d", null ],
     [ "Copiar", "classCAspirador.html#a3785ad3b80ecc08711a70d9920e0bcb9", null ],
-    [ "Debug", "classCAspirador.html#a06c5ae19d38939c0eb949bb2d8e86ea5", null ],
+    [ "Debug", "classCAspirador.html#ab95fe625712f157e5836de7364a53cee", null ],
     [ "Distinto", "classCAspirador.html#a9279c18880569e58bc26932979d58058", null ],
     [ "Duplicar", "classCAspirador.html#a3c9571f17ca0cbb074943ddd9bd27587", null ],
     [ "Heuristica", "classCAspirador.html#ada888731b2cca0a8bfa410e9bf4d188a", null ],

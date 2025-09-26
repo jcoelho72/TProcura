@@ -19,6 +19,8 @@ var TProcuraMelhorativa_8h =
       [ "PERC_DESCENDENTES", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13dacce7ffe756caffff4894aac6acb7d584", null ],
       [ "Q_ROUND_ROBIN", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da616515244660de4baa44ba9fbeb2c10f", null ],
       [ "ELITISMO", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da0575bbc8e4e15a92809b397e1ea17db7", null ],
+      [ "IMIGRANTES", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da7351ca91829b6dc34e69e55f19f60753", null ],
+      [ "DIVERSIDADE", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da0ac70ab8cb784bc9936f3c140fd7e36c", null ],
       [ "DIST_MINIMA", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da118a0e035ec6f8f367733e0df9cee3e0", null ],
       [ "MOVE_PRIMEIRO", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da955c95984399bbdfb401f3915fe5d051", null ],
       [ "PARAMETROS_MELHORATIVA", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da40bfb6b341d4218e79fddf891f7a175c", null ]

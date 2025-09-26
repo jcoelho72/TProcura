@@ -36,7 +36,7 @@ Collaboration diagram for CAspirador\+:
 \begin{DoxyCompactList}\small\item\em Coloca em sucessores a lista de estados sucessores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classCAspirador_a80fca067d471172af5111b16e3880bf3}{Solucao\+Completa}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
 \begin{DoxyCompactList}\small\item\em Verifica se o estado actual Ã© objectivo (Ã© uma soluÃ§Ã£o completa) \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}})
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classCAspirador_ab95fe625712f157e5836de7364a53cee}{Debug}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} completo=\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}) \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{override}}
 \begin{DoxyCompactList}\small\item\em Mostra o estado no ecrã, para debug. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classCAspirador_a602bee168dd45c680b2a10bdef57a5a4}{Acao}} (\mbox{\hyperlink{classTProcuraConstrutiva}{TProcura\+Construtiva}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{sucessor}})
 \item 
@@ -303,6 +303,8 @@ static int \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{res
 \begin{DoxyCompactList}\small\item\em Insere configurações gerando o produto cartesiano de valores. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_adc4d653fe0feb6033083adc5d19e7fb5}{Ajuda\+Utilizacao}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{programa}})
 \begin{DoxyCompactList}\small\item\em Mostra ajuda de utilização do programa. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} \mbox{\hyperlink{classTProcura_ab90f47d04e48a6728fc9dafca3870a5f}{Debug\+Tabela}} (\mbox{\hyperlink{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}{ENivel\+Debug}} nivel, \mbox{\hyperlink{classTVector}{TVector}}$<$ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{int}} $>$\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{tabela}}, \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}tipo="{}"{})
+\begin{DoxyCompactList}\small\item\em Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}} \mbox{\hyperlink{classTProcura_aa47aff45144b528adaecdb654c498844}{Juntar\+CSV}} (\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{const}} \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{ficheiro}})
 \begin{DoxyCompactList}\small\item\em Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classTProcura}{TProcura}}}
@@ -436,11 +438,11 @@ Definition at line \mbox{\hyperlink{Aspirador_8h_source_l00024}{24}} of file \mb
 
 Here is the caller graph for this function\+:
 % FIG 4
-\Hypertarget{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5}\label{classCAspirador_a06c5ae19d38939c0eb949bb2d8e86ea5} 
+\Hypertarget{classCAspirador_ab95fe625712f157e5836de7364a53cee}\label{classCAspirador_ab95fe625712f157e5836de7364a53cee} 
 \index{CAspirador@{CAspirador}!Debug@{Debug}}
 \index{Debug@{Debug}!CAspirador@{CAspirador}}
 \doxysubsubsection{\texorpdfstring{Debug()}{Debug()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CAspirador\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{void}} CAspirador\+::\+Debug (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{bool}}}]{completo = {\ttfamily \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{true}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -461,7 +463,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfamil
 \end{DoxySeeAlso}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ CSubProblema::Debug(\textcolor{keywordtype}{bool}\ completo)\ \ \ \textcolor{comment}{//\ refazer\ comentários....}}
 \DoxyCodeLine{\{}
 \DoxyCodeLine{\ \ \ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
 \DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ neste\ exemplo\ o\ estado\ é apenas\ um\ número}}
@@ -475,7 +477,7 @@ A exibição do estado pode variar conforme o nível de debug definido em {\ttfamil
 \end{DoxyCode}
  
 
-Reimplemented from \mbox{\hyperlink{classTProcura_a98f0e815a25aa85841c88a638bf4eaf0}{TProcura}}.
+Reimplemented from \mbox{\hyperlink{classTProcura_a0c5676c1b54ab6bdc1045b98aeafe456}{TProcura}}.
 
 
 
