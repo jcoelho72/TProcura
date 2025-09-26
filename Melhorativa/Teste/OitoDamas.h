@@ -46,7 +46,7 @@ public:
 
 	void Inicializar(void);
 	bool SolucaoCompleta(void) { return damas.Count() == nDamas; }
-	void Debug(void);
+	void Debug(bool completo = true) override;
 	void MostrarSolucao(void) { Debug(); }
 	void ResetParametros() {
 		TProcuraMelhorativa::ResetParametros();
@@ -113,7 +113,11 @@ public:
 		NovaSolucao();
 	}
 
-	void Debug(void) {
+	void Debug(bool completo) {
+		if (!completo) {
+			TCodificacaoInteira::Debug();
+			return;
+		}
 		for (int i = 0; i < nElementos; i++) {
 			printf("\n");
 			for (int j = 0; j < nElementos; j++) {
@@ -125,7 +129,6 @@ public:
 			}
 		}
 		printf("\n");
-		TCodificacaoInteira::Debug();
 	}
 
 };
@@ -171,7 +174,11 @@ public:
 		instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
 	}
 
-	void Debug(void) {
+	void Debug(bool completo) {
+		if (!completo) {
+			TCodificacaoPermutacao::Debug();
+			return;
+		}
 		for (int i = 0; i < nElementos; i++) {
 			printf("\n");
 			for (int j = 0; j < nElementos; j++) {
@@ -183,7 +190,6 @@ public:
 			}
 		}
 		printf("\n");
-		TCodificacaoPermutacao::Debug();
 	}
 
 };

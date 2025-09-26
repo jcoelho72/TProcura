@@ -15,7 +15,7 @@ void TCodificacaoPermutacao::NovaSolucao(void) {
 	custo = -1;
 }
 
-void TCodificacaoPermutacao::Debug(void) {
+void TCodificacaoPermutacao::Debug(bool completo) {
 	for (int i = 0; i < nElementos; i++)
 		printf("%d ", estado[i]);
 }

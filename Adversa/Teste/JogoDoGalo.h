@@ -28,7 +28,7 @@ public:
 	void Inicializar(void);
 	void Sucessores(TVector<TNo>&sucessores);
 	bool SolucaoCompleta(void);
-	void Debug(void);
+	void Debug(bool completo = true) override;
 	const char* Acao(TProcuraConstrutiva* sucessor);
 	void TesteManual(const char* nome);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);

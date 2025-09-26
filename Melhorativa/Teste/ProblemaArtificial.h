@@ -59,7 +59,7 @@ public:
 		heur = ((CProblemaArtificial*)objecto)->heur;
 	}
 	void Inicializar(void);
-	void Debug(void);
+	void Debug(bool completo = true) override;
 	void TesteManual(const char* nome);
 	bool Distinto(TPonto estado);
 	int Heuristica(void);

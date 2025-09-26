@@ -81,7 +81,7 @@ const char* CParticao::Acao(TProcuraConstrutiva* sucessor) {
 	return "Inv";
 }
 
-void CParticao::Debug(void)
+void CParticao::Debug(bool completo)
 {
 	int i, j;
 	NovaLinha();

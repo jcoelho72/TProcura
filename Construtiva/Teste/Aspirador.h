@@ -29,7 +29,7 @@ public:
 	void ResetParametros();
 	void Sucessores(TVector<TNo>& sucessores);
 	bool SolucaoCompleta(void);
-	void Debug(void);
+	void Debug(bool completo = true) override;
 	const char* Acao(TProcuraConstrutiva* sucessor);
 	bool Distinto(TNo estado);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);

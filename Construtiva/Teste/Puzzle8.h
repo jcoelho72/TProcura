@@ -29,7 +29,7 @@ public:
 	void Inicializar(void);
 	void Sucessores(TVector<TNo>&sucessores);
 	bool SolucaoCompleta(void);	
-	void Debug(void);
+	void Debug(bool completo = true) override;
 	void MostrarSolucao(void);
 	const char* Acao(TProcuraConstrutiva* sucessor);
 	void ResetParametros();

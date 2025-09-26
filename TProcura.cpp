@@ -91,7 +91,7 @@ int64_t TProcura::Indicador(int id) {
 }
 
 // Escrever informacao de debug sobre o objecto atual
-void TProcura::Debug(void)
+void TProcura::Debug(bool completo)
 {
 	Debug(ATIVIDADE, false, "\nTProcura::Debug() método não redefinido.");
 }
@@ -99,9 +99,11 @@ void TProcura::Debug(void)
 // Chamar antes de iniciar uma procura
 void TProcura::LimparEstatisticas()
 {
-	resultado = tempo = iteracoes = 0;
+	resultado = iteracoes = 0;
+	tempo = 0;
 	instanteFinal = clock() + Parametro(LIMITE_TEMPO) * CLOCKS_PER_SEC;
 	memoriaEsgotada = false;
+	Cronometro(CONT_ALGORITMO, true);
 }
 
 // Metodo para teste manual do objecto (chamadas aos algoritmos, construcao de uma solucao manual)
@@ -136,7 +138,6 @@ ____________________________________________________________________\n\
 			  break;
 		case 6:
 			// executar um algoritmo 
-			Cronometro(CONT_ALGORITMO, true);
 			LimparEstatisticas();
 			resultado = ExecutaAlgoritmo();
 			MostraParametros(0);
@@ -777,7 +778,6 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	Inicializar();
 	// executar um algoritmo 
 	Debug(COMPLETO, false, "instância %d: ", instancia.valor) && fflush(stdout);
-	Cronometro(CONT_ALGORITMO, true); // reiniciar cronómetro da execução
 	LimparEstatisticas();
 	{
 		ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
@@ -1161,7 +1161,7 @@ void TProcura::MostrarSolucao() {
 	TVector<int64_t> solucao = CodificarSolucao();
 	printf("\nSolução: ");
 	for (auto& x : solucao)
-		printf("%ld ", x);
+		printf("%" PRId64 " ", x);
 	printf(".");
 }
 
@@ -1196,7 +1196,8 @@ void TProcura::SolicitaInstancia() {
 		texto = NovoTexto("");
 		resultado = atoi(texto);
 		if (resultado != 0 || strlen(texto) <= 1) {
-			instancia.valor = resultado;
+			if(resultado != 0)
+				instancia.valor = resultado;
 			Dominio(instancia.valor, instancia.min, instancia.max);
 		}
 		else if (strlen(texto) < 256) {
@@ -1235,6 +1236,21 @@ void TProcura::FinalizaMPI()
 		fflush(stdout);
 	MPI_Finalize();
 #endif
+}
+
+void TProcura::DebugTabela(ENivelDebug nivel, TVector<int> tabela, const char* tipo)
+{
+	Debug(DETALHE, false, "\n%4s|", tipo);
+	for (int i = 0; i < 10 && i < tabela.Count(); i++)
+		Debug(DETALHE, false, "%4d|", i + 1);
+	Debug(DETALHE, false, "\n----|");
+	for (int i = 0; i < 10 && i < tabela.Count(); i++)
+		Debug(DETALHE, false, "----|");
+	for (int i = 0; i < tabela.Count(); i++) {
+		if (i % 10 == 0)
+			Debug(DETALHE, false, "\n%4d|", i);
+		Debug(DETALHE, false, "%4d|", tabela[i]);
+	}
 }
 
 bool TProcura::JuntarCSV(const char* ficheiro)

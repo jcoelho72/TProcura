@@ -96,7 +96,7 @@ const char* CJogoDoGalo::Acao(TProcuraConstrutiva* sucessor) {
 	return str;
 }
 
-void CJogoDoGalo::Debug(void)
+void CJogoDoGalo::Debug(bool completo)
 {
 	NovaLinha(); // cabeçalho
 	printf(" ");

@@ -25,7 +25,7 @@ void CProblemaArtificial::Inicializar(void)
 }
 
 
-void CProblemaArtificial::Debug(void)
+void CProblemaArtificial::Debug(bool completo)
 {
 	printf("\n--<([%u])>--", id);
 }

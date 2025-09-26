@@ -67,7 +67,7 @@ const char* CAspirador::Acao(TProcuraConstrutiva* sucessor) {
 	return "Inválida";
 }
 
-void CAspirador::Debug(void)
+void CAspirador::Debug(bool completo)
 {
 	NovaLinha();
 	for (int i = 0; i < salas.Count(); i++) {

@@ -21,7 +21,7 @@ void COitoDamas::Inicializar(void)
 }
 
 
-void COitoDamas::Debug(void)
+void COitoDamas::Debug(bool completo)
 {
 	for (int i = 0; i < nDamas; i++) {
 		printf("\n");

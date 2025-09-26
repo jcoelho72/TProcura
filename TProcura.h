@@ -142,7 +142,7 @@ typedef struct SParametro {
 	/// @brief valor máximo que o parametro pode tomar
 	int max;
 	/// @brief descrição do parametro, opcional 
-	const char* descricao;
+	const char* descricao = NULL;
 	/// @brief Nome associado a cada valor do parâmetro, útil para variáveis categóricas.
 	/// @note Especialmente relevante quando os valores não seguem uma sequência ordenada.
 	const char** nomeValores = NULL;
@@ -268,7 +268,7 @@ public:
 	 * @see NovaLinha()
 	 *
 	 * @code
-	 * void CSubProblema::Debug(void)
+	 * void CSubProblema::Debug(void)   // refazer comentários....
 	 * {
 	 * 	   NovaLinha();
 	 *     // neste exemplo o estado é apenas um número
@@ -280,7 +280,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void Debug(void);
+	virtual void Debug(bool completo = true);
 
 	/**
 	 * @brief Inicializa os parametros, indicadores e instâncias
@@ -740,6 +740,8 @@ protected:
 	/// @brief Finaliza o ambiente MPI, se aplicável.
 	static void FinalizaMPI();
 
+	/// @brief Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior
+	void DebugTabela(ENivelDebug nivel, TVector<int>tabela, const char *tipo = "");
 
 	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro.
 	bool JuntarCSV(const char* ficheiro);

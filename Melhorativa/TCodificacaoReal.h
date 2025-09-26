@@ -19,7 +19,7 @@ public:
 	void Inicializar(void)=0;
 
 	// métodos que podem ser redefinidos
-	void Debug(void);
+	void Debug(bool completo = true) override;
 
 
 	// métodos que não se prevê que sejam redefinidos

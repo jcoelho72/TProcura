@@ -15,7 +15,7 @@ void TCodificacaoInteira::NovaSolucao(void) {
 	custo = -1;
 }
 
-void TCodificacaoInteira::Debug(void) {
+void TCodificacaoInteira::Debug(bool completo) {
 	for (int i = 0; i < nElementos; i++)
 		printf("%d ", estado[i]);
 }

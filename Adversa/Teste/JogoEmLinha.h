@@ -50,7 +50,7 @@ public:
 	bool SolucaoCompleta(void);
 	// Escrever informação de debug sobre o objecto currente 
 	// (utilizar variável TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
-	void Debug(void);
+	void Debug(bool completo = true) override;
 
 	void ResetParametros();
 

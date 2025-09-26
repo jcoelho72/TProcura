@@ -25,7 +25,7 @@ public:
     /// Inicializa dados e estado para teste.
     void Inicializar(void);
     /// Mostra informação de debug sobre o estado dos vetores.
-    void Debug(void);
+    void Debug(bool completo = true) override;
     using TProcura::Debug; // Reexpõe as sobrecargas herdadas
     /// Executa o algoritmo de teste (a definir pelo utilizador).
     int ExecutaAlgoritmo();

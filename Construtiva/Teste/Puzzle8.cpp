@@ -99,7 +99,7 @@ const char* CPuzzle8::Acao(TProcuraConstrutiva* sucessor) {
 	return "Inv";
 }
 
-void CPuzzle8::Debug(void)
+void CPuzzle8::Debug(bool completo)
 {
 	for (int i = 0; i < 3; i++) {
 		NovaLinha();

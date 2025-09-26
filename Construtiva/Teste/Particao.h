@@ -34,7 +34,7 @@ public:
 	bool SolucaoCompleta(void) { 
 		return numeros.Empty() && totalEsquerda == totalDireita;
 	}
-	void Debug(void);
+	void Debug(bool completo = true) override;
 	void MostrarSolucao(void) { Debug(); }
 	const char* Acao(TProcuraConstrutiva* sucessor);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);

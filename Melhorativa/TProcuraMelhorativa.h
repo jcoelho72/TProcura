@@ -11,7 +11,8 @@ enum EMelhorativas {
 	POPULACAO = PARAMETROS_PROCURA, PROB_CRUZAR,
 	PROB_MUTAR, SELECAO, PRESSAO, TAMANHO_TORNEIO, 
 	PROB_MELHOR_TORNEIO, SOBREVIVENCIA, PERC_DESCENDENTES, 
-	Q_ROUND_ROBIN, ELITISMO, DIST_MINIMA, MOVE_PRIMEIRO, 
+	Q_ROUND_ROBIN, ELITISMO, IMIGRANTES, 
+	DIVERSIDADE, DIST_MINIMA, MOVE_PRIMEIRO,
 	PARAMETROS_MELHORATIVA
 };
 
@@ -44,6 +45,8 @@ public:
 
 	/// @brief Custo total, atualizada após Avaliar()
 	int custo;
+	/// @brief Lower Bound, se existir
+	static int lowerBound;
 	/// @brief Número de estados gerados 
 	static int geracoes;
 	/// @brief Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
@@ -119,10 +122,10 @@ public:
 	void ResetParametros() override;
 
 	// critrio de paragem adicionado para procuras melhorativas:
-	// - custo nulo, significa obter o ótimo - futuro considerar um lower bound
+	// - custo nulo, significa obter o ótimo (lowerBound pode ser atualizado, caso exista, de omissão é 0)
 	// - número gerações (ou épocas) sem melhoria - futuro
 	// - diversidade da população - futuro
-	bool Parar(void) { return TProcura::Parar() || custo == 0; }
+	bool Parar(void) { return TProcura::Parar() || custo <= lowerBound; }
 
 	///////////////////////////////////////////////////////////////////////////////
 	// Operadores a redefinir para Escalada-do-Monte
@@ -202,9 +205,12 @@ protected:
 	void DebugPassoAG(int pop, int min, int max);
 	void DebugCruzamentoAG(int gPai, int gMae, int gFilho, int mutou);
 	// algoritmo evolutivo
-	TVector<TPonto> InicializarPopulacaoAE();
+	TVector<TPonto> CompletarPopulacaoAE(TVector<TPonto>& populacao);
 	TVector<TPonto> SelecionarPaisAE(TVector<TPonto>& populacao);
-	TVector<TPonto> ReproduzirAE(TVector<TPonto>& pais);
+	TVector<TPonto> ReproduzirAE(TVector<TPonto>& pais, TVector<TPonto>& populacao);
 	TVector<TPonto> SelecionarSobreviventesAE(TVector<TPonto>& populacao, TVector<TPonto>& descendentes);
+	TVector<TPonto> AplicarDiversidadeAE(TVector<TPonto>& populacao);
 	void DebugGeracaoAE(int epoca, TVector<TPonto>& populacao);
+	void DiversidadeAE(TVector<TPonto>& populacao, 
+		int& minDist, int& maxDist, int& avgDist, int& melhorPior);
 };

@@ -776,7 +776,6 @@ void TProcuraConstrutiva::Explorar() {
 					TVector<TNo> backup;
 					backup = caminho;
 					caminho = {};
-					Cronometro(CONT_ALGORITMO, true);
 					LimparEstatisticas();
 					int resultado;
 					switch (resultado = ExecutaAlgoritmo()) {

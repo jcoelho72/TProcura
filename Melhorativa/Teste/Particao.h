@@ -46,7 +46,7 @@ public:
 		solCompleta = ((CParticao*)objecto)->solCompleta;
 	}
 	void Inicializar(void);
-	void Debug(void);
+	void Debug(bool completo = true) override;
 	void MostrarSolucao(void) { Debug(); }
 	void TesteManual(const char* nome);
 
@@ -85,5 +85,5 @@ public:
 		return clone;
 	}
 	void Inicializar(void);
-	void Debug(void);
+	void Debug(bool completo) override;
 };

@@ -53,7 +53,7 @@ public:
 	void Inicializar(void);
 	void Sucessores(TVector<TNo>& sucessores);
 	bool SolucaoCompleta(void);
-	void Debug(void);
+	void Debug(bool completo = true) override;
 	bool Distinto(TNo estado);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
 	int Heuristica(void);

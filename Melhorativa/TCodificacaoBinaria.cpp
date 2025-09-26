@@ -17,7 +17,7 @@ void TCodificacaoBinaria::NovaSolucao(void) {
 }
 
 // métodos que podem ser redefinidos
-void TCodificacaoBinaria::Debug(void) {
+void TCodificacaoBinaria::Debug(bool completo) {
 	for (int i = 0; i < nElementos; i++) 
 		printf("%d", Bit(i) ? 1 : 0);
 }

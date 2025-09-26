@@ -439,7 +439,6 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 					while (!SolucaoCompleta()) {
 						ConfiguracaoAtual(configuracoes[njogada % 2 == 0 ? brancas : pretas], GRAVAR);
 						TRand::srand(Parametro(SEMENTE));
-						Cronometro(CONT_ALGORITMO, true); // reiniciar cronómetro
 						LimparEstatisticas();
 						resultado = ExecutaAlgoritmo();
 						tempoTotal[njogada % 2 == 0 ? brancas : pretas] += Cronometro(CONT_ALGORITMO);

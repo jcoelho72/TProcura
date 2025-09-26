@@ -39,7 +39,7 @@ void CParticao::Inicializar(void)
 	NovaSolucao();
 }
 
-void CParticao::Debug(void)
+void CParticao::Debug(bool completo)
 {
 	int i, j;
 	printf("\nColocar #%d: %d = %d",
@@ -205,10 +205,16 @@ int CParticaoCB::Avaliar(void) {
 	return custo = abs(totalEsquerda - totalDireita);
 }
 
-void CParticaoCB::Debug(void)
+void CParticaoCB::Debug(bool completo)
 {
 	int i, j, esq = 0, dir = 0;
 	TVector<int> nEsq, nDir;
+
+	if(!completo) {
+		TCodificacaoBinaria::Debug();
+		return;
+	}
+
 	for (i = 0; i < nElementos; i++)
 		if (Bit(i)) {
 			esq += numeros[i];
@@ -239,5 +245,4 @@ void CParticaoCB::Debug(void)
 	}
 	printf("\n-------------------||-------------------");
 	printf("\n            %3d  <<||>> %3d \n", esq, dir);
-	TCodificacaoBinaria::Debug();
 }
