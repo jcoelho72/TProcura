@@ -205,13 +205,15 @@ void TProcuraMelhorativa::VerificaMelhor(TPonto& melhor, TPonto atual) {
 	}
 }
 
-void TProcuraMelhorativa::VerificaMelhor(TPonto atual)
+bool TProcuraMelhorativa::VerificaMelhor(TPonto atual)
 {
 	if (custo > atual->custo) {
 		Copiar(atual);
 		custo = atual->custo;
 		DebugMelhorEncontrado(this);
+		return true;
 	}
+	return false;
 }
 
 int TProcuraMelhorativa::MelhorCusto(TVector<TPonto>& populacao, bool inverter)
@@ -411,36 +413,38 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 		populacao.Count()))
 	{
 		int minimo, maximo;
+		if(populacao.Empty())
+			return;
 		ObterExtremos(populacao, minimo, maximo);
 		Debug(PASSOS, false, " (g: %d a %d)", minimo, maximo);
 		if (Parametro(NIVEL_DEBUG) == DETALHE) { // mostrar custos de toda a população
+			int minDist, maxDist, avgDist, melhorPior;
 			TVector<int> custos;
+			// mostrar diversidade da população
+			DiversidadeAE(populacao, minDist, maxDist, avgDist, melhorPior);
+			Debug(DETALHE, false, " [d: %d a %d (média %d, melhor/pior %d)]",
+				minDist, maxDist, avgDist, melhorPior);
 			for (auto individuo : populacao)
 				custos += individuo->custo;
 			DebugTabela(DETALHE, custos, "Ind");
 		}
 		else if (Parametro(NIVEL_DEBUG) >= COMPLETO) { // mostrar diversidade da população
-			Debug(COMPLETO, false, "\nPopulação:");
-			for (int i = 0; i < populacao.Count(); i++) {
-				Debug(COMPLETO, false, "\n%4d: ", i + 1);
-				populacao[i]->Debug(false);
-				Debug(COMPLETO, false, " (g: %d)", populacao[i]->custo);
-			}
+			DebugPopulacaoAE(populacao, "\nPopulação:");
 			Debug(COMPLETO, false, "\nDiversidade:");
 			if (populacao.Count() <= 20) { // matriz de distâncias
-				Debug(DETALHE, false, "\n    |");
+				Debug(COMPLETO, false, "\n    |");
 				for (int i = 0; i < populacao.Count(); i++)
-					Debug(DETALHE, false, "%4d|", i + 1);
-				Debug(DETALHE, false, "\n----|");
+					Debug(COMPLETO, false, "%4d|", i + 1);
+				Debug(COMPLETO, false, "\n----|");
 				for (int i = 0; i < populacao.Count(); i++)
-					Debug(DETALHE, false, "----|");
+					Debug(COMPLETO, false, "----|");
 				for (int i = 0; i < populacao.Count(); i++) {
-					Debug(DETALHE, false, "\n%4d|", i + 1);
+					Debug(COMPLETO, false, "\n%4d|", i + 1);
 					for (int j = 0; j < populacao.Count(); j++)
 						if (i == j)
-							Debug(DETALHE, false, "    |");
+							Debug(COMPLETO, false, "    |");
 						else
-							Debug(DETALHE, false, "%4d|", populacao[i]->Distancia(populacao[j]));
+							Debug(COMPLETO, false, "%4d|", populacao[i]->Distancia(populacao[j]));
 				}
 			}
 			else { // distâncias entre dois elementos aleatórios
@@ -448,18 +452,22 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 				for (auto individuo : populacao)
 					id += id.Count();
 				id.RandomOrder();
-				Debug(DETALHE, false, "\nInd |Ind | g  |\n----|----|----|");
+				Debug(COMPLETO, false, "\nInd |Ind | g  |\n----|----|----|");
 				for (int i = 0; i < id.Count(); i += 2)
 					Debug(COMPLETO, false, "\n%4d|%4d|%4d|",
 						id[i], id[i + 1], populacao[id[i]]->Distancia(populacao[id[i + 1]]));
 			}
 		}
-		else if (Parametro(NIVEL_DEBUG) == DETALHE) { // mostrar diversidade da população
-			int minDist, maxDist, avgDist, melhorPior;
-			DiversidadeAE(populacao, minDist, maxDist, avgDist, melhorPior);
-			Debug(COMPLETO, false, " [d: %d a %d (média %d, melhor/pior %d)]", 
-				minDist, maxDist, avgDist, melhorPior);
-		}
+	}
+}
+
+void TProcuraMelhorativa::DebugPopulacaoAE(TVector<TPonto>& populacao, const char *titulo)
+{
+	Debug(COMPLETO, false, titulo);
+	for (int i = 0; i < populacao.Count(); i++) {
+		Debug(COMPLETO, false, "\n%4d: ", i + 1);
+		populacao[i]->Debug(false);
+		Debug(COMPLETO, false, " (g: %d)", populacao[i]->custo);
 	}
 }
 
@@ -475,7 +483,7 @@ void TProcuraMelhorativa::DiversidadeAE(TVector<TPonto>& populacao,
 	for (int i = 0; i < populacao.Count(); i++) {
 		if(populacao[i]->custo < populacao[melhor]->custo)
 			melhor = i;
-		if (populacao[i]->custo < populacao[pior]->custo)
+		if (populacao[i]->custo > populacao[pior]->custo)
 			pior = i;
 		for (int j = i + 1; j < populacao.Count(); j++) {
 			int dist = populacao[i]->Distancia(populacao[j]);
@@ -496,7 +504,6 @@ void TProcuraMelhorativa::DiversidadeAE(TVector<TPonto>& populacao,
 
 
 TVector<TPonto> TProcuraMelhorativa::CompletarPopulacaoAE(TVector<TPonto>& populacao) {
-	Cronometro(CONT_REPORTE, true); // reset do cronometro
 	while (populacao.Count() < Parametro(POPULACAO) && !Parar()) {
 		auto novo = Duplicar();
 		novo->NovaSolucao();
@@ -872,85 +879,86 @@ int TProcuraMelhorativa::ExecutaAlgoritmo() {
 }
 
 void TProcuraMelhorativa::Explorar() {
-	static int populacao = 1;
-	TVector<TPonto> elementos;
+	TVector<TPonto> populacao;
+	TVector<TPonto> vizinhos;
 	int melhorValor, melhorIndice;
 	int opcao = 0, indA, indB, indC;
+	int backupPopulacao = Parametro(POPULACAO);
+	int backupNivelDebug = Parametro(NIVEL_DEBUG);
+	int backupLimiteTempo = Parametro(LIMITE_TEMPO);
+	int epoca = 0;
 
-	populacao = NovoValor("População (1 para vizinhos):");
-	if (populacao < 0)
-		populacao = 1;
+	Parametro(NIVEL_DEBUG) = EXTRA_DEBUG; // mostrar todo o debug existente, incluindo operadores
+	Parametro(POPULACAO) = 4; // manter um número baixo de elementos, só para explorar manualmente
+	Parametro(LIMITE_TEMPO) = 3600; // 1h para resolução manual
 
-	if (populacao > 1) {
-		printf("\nTeste da Mutação e Cruzamento:");
-		elementos.Count(populacao);
-		for (int i = 0; i < populacao; i++) {
-			elementos[i] = (TPonto)Duplicar();
-			elementos[i]->NovaSolucao();
+	LimparEstatisticas(); 
+	Avaliar();
+	populacao = {};
+	populacao = CompletarPopulacaoAE(populacao);
+	do {
+		DebugGeracaoAE(epoca, populacao);
+		opcao = NovoValor("\nOperação (1 - Mutar, 2 - Cruzar, 3 - Vizinhos): ");
+		Dominio(opcao, 0, 3);
+		if (opcao == 1) { // mutar
+			printf("Individuo [1-%d]: ", populacao.Count());
+			indA = NovoValor("") - 1;
+			Dominio(indA, 0, populacao.Count());
+			printf("\nAtual:  ");
+			populacao[indA]->Debug(false);
+			populacao[indA]->Mutar();
+			printf("\nMutado: ");
+			populacao[indA]->Debug(false);
+			populacao[indA]->Avaliar();
+			if(!VerificaMelhor(populacao[indA]))
+				populacao[indA]->Debug();
+		} else if(opcao == 2) { // cruzar
+			printf("Pai [1-%d]: ", populacao.Count());
+			indA = NovoValor("") - 1;
+			printf("Mãe [1-%d]: ", populacao.Count());
+			indB = NovoValor("") - 1;
+			printf("Filho [1-%d]: ", populacao.Count());
+			indC = NovoValor("") - 1;
+			Dominio(indA, 0, populacao.Count());
+			Dominio(indB, 0, populacao.Count());
+			Dominio(indC, 0, populacao.Count());
+			printf("\nPai:   ");
+			populacao[indA]->Debug(false);
+			printf("\nMãe:   ");
+			populacao[indB]->Debug(false);
+			populacao[indC]->Cruzamento(populacao[indA], populacao[indB]);
+			printf("\nFilho: ");
+			populacao[indC]->Debug(false);
+			populacao[indC]->Avaliar();
+			if (!VerificaMelhor(populacao[indC]))
+				populacao[indC]->Debug();
+		} else if (opcao == 3) { // vizinhos
+			printf("Individuo [1-%d]: ", populacao.Count());
+			indA = NovoValor("") - 1;
+			Dominio(indA, 0, populacao.Count() - 1);
+			printf("\nAtual: ");
+			populacao[indA]->Debug(false);
+			populacao[indA]->Vizinhanca(vizinhos);
+			CalcularAvaliacoes(vizinhos, melhorValor, melhorIndice);
+			DebugPopulacaoAE(vizinhos, "\nVizinhos:");
+			printf("\nVizinho [1-%d]: ", vizinhos.Count());
+			indB = NovoValor("") - 1;
+			Dominio(indB, 0, vizinhos.Count() - 1);
+			delete populacao[indA];
+			populacao[indA] = vizinhos[indB];
+			vizinhos[indB] = NULL;
+			if (!VerificaMelhor(populacao[indA]))
+				populacao[indA]->Debug();
+			LibertarVector(vizinhos);
 		}
-		CalcularAvaliacoes(elementos, melhorValor, melhorIndice);
-		DebugVizinhos(elementos);
-		do {
-			// solicitar operação de mutação ou cruzamento
-			opcao = NovoValor("\nOperação (1 - Mutar, 2 - Cruzar): ");
-			Dominio(opcao, 0, 2);
-			if (opcao == 1) { // mutar
-				printf("Individuo [1-%d]: ", elementos.Count());
-				indA = NovoValor("") - 1;
-				elementos[Dominio(indA, 0, elementos.Count() - 1)]->Mutar();
-			}
-			else if (opcao == 2) { // cruzar
-				printf("Pai [1-%d]: ", elementos.Count());
-				indA = NovoValor("") - 1;
-				printf("Mãe [1-%d]: ", elementos.Count());
-				indB = NovoValor("") - 1;
-				printf("Filho [1-%d]: ", elementos.Count());
-				indC = NovoValor("") - 1;
-				Dominio(indA, 0, elementos.Count());
-				Dominio(indB, 0, elementos.Count());
-				Dominio(indC, 0, elementos.Count());
-				elementos[indC]->Cruzamento(elementos[indA], elementos[indB]);
-			}
-			if (opcao != 0) {
-				CalcularAvaliacoes(elementos, melhorValor, melhorIndice);
-				DebugVizinhos(elementos);
-			}
-		} while (opcao != 0);
-	}
-	else {
-		printf("\nTeste da Vizinhança:");
-		NovaSolucao();
-		do {
-			char str[BUFFER_SIZE];
-			custo = Avaliar();
-			Vizinhanca(elementos);
-			CalcularAvaliacoes(elementos, melhorValor, melhorIndice);
-			// linha com informação
-			Debug();
-			DebugVizinhos(elementos);
-			if (elementos.Empty()) {
-				printf("\nSem vizinhos.");
-				opcao = 0;
-			}
-			else {
-				printf("\nVizinho (0 sai) [1-%d, ação]: ", elementos.Count());
-				fgets(str, BUFFER_SIZE, stdin);
-				opcao = atoi(str);
-			}
-			if (opcao > 0 && opcao <= elementos.Count()) {
-				Copiar(elementos[opcao - 1]);
-				custo = elementos[opcao - 1]->custo;
-			}
-			else if (strlen(str) > 1) {
-				opcao = Acao(strtok(str, " \t\n\r"));
-			}
-			LibertarVector(elementos);
-		} while (opcao != 0);
-	}
+
+		epoca++;
+	} while(opcao > 0 && !Parar());
+
+	LibertarVector(populacao);
+	Parametro(NIVEL_DEBUG) = backupNivelDebug;
+	Parametro(POPULACAO) = backupPopulacao;
+	Parametro(LIMITE_TEMPO) = backupLimiteTempo;
 }
 
-// Mostrar vizinhos
-void TProcuraMelhorativa::DebugVizinhos(TVector<TPonto>& vizinhos) {
-
-}
 

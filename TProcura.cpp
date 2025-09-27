@@ -159,11 +159,13 @@ ____________________________________________________________________\n\
 
 void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 	int nElementos = (idParametros == NULL ? parametro.Count() : idParametros->Count());
+	int count = 0;
 	printf("\n ");
 	for (int i = 0; i < nElementos; i++) {
 		int parID = (idParametros == NULL ? i : (*idParametros)[i]);
 		if (!ParametroAtivo(parID))
 			continue;
+		count++;
 		// identificação do parâmetro
 		if (detalhe == 0 || parametro[parID].nome == NULL)
 			printf("P%d=", parID + 1);
@@ -179,7 +181,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 			printf(" (%d a %d)", parametro[parID].min, parametro[parID].max);
 		// separador/mudança de linha
 		if (i < nElementos - 1) {
-			if (detalhe > 1 || (i + 1) % (detalhe == 0 ? 10 : 5) == 0)
+			if (detalhe > 1 || count % (detalhe == 0 ? 8 : 4) == 0)
 				printf("\n ");
 			else if (detalhe > 0)
 				printf(" | ");
@@ -1240,16 +1242,16 @@ void TProcura::FinalizaMPI()
 
 void TProcura::DebugTabela(ENivelDebug nivel, TVector<int> tabela, const char* tipo)
 {
-	Debug(DETALHE, false, "\n%4s|", tipo);
+	Debug(nivel, false, "\n%4s|", tipo);
 	for (int i = 0; i < 10 && i < tabela.Count(); i++)
-		Debug(DETALHE, false, "%4d|", i + 1);
-	Debug(DETALHE, false, "\n----|");
+		Debug(nivel, false, "%4d|", i + 1);
+	Debug(nivel, false, "\n----|");
 	for (int i = 0; i < 10 && i < tabela.Count(); i++)
-		Debug(DETALHE, false, "----|");
+		Debug(nivel, false, "----|");
 	for (int i = 0; i < tabela.Count(); i++) {
 		if (i % 10 == 0)
-			Debug(DETALHE, false, "\n%4d|", i);
-		Debug(DETALHE, false, "%4d|", tabela[i]);
+			Debug(nivel, false, "\n%4d|", i);
+		Debug(nivel, false, "%4d|", tabela[i]);
 	}
 }
 

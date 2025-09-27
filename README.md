@@ -14,7 +14,6 @@ Biblioteca em C++ para **testes paramétricos** de algoritmos, e coleção de al
 > Documentação completa em:  
 > 👉 [TProcura - Documentação](https://jcoelho72.github.io/TProcura/index.html)
 
----
 
 ## 📑 Sumário
 
@@ -46,7 +45,10 @@ A arquitetura baseia-se em superclasses que já implementam algoritmos de procur
 2. Redefinir métodos de geração de sucessores, avaliação ou operadores, para o problema concreto, conforme adequado  
 3. Declarar novos parâmetros e indicadores, se desejar  
 
-Este projeto é usado na UC de [Introdução à Inteligência Artificial](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/) da Universidade Aberta.
+Este projeto é utilizado nas Unidades Curriculares:
+
+- [Introdução à Inteligência Artificial](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/) da Universidade Aberta.
+- [Heurísticas Modernas](https://guiadoscursos.uab.pt/ucs/heuristicas-modernas-2/) da Universidade Aberta e Universidade de Tras-os-Montes e Alto Douro.
 
 ---
 
@@ -78,8 +80,8 @@ TProcura                       # algoritmo
 └─ TProcuraMelhorativa         # solução inicial, vizinhança, mutação, cruzamento, avaliação
    ├─ TRepresentacaoBinaria    # avaliação
    ├─ TRepresentacaoInteira    # avaliação
-   ├─ TRepresentacaoReal       # avaliação
    ├─ TRepresentacaoPermutacao # avaliação
+   ├─ TRepresentacaoReal       # avaliação
    └─ TRepresentacaoArvore     # avaliação
 ```
 
@@ -124,7 +126,7 @@ Superclasses:
 - TProcura  - caso o problema não seja de procura, poderá utilizar esta classe para fazer testes paramétricos
 - TProcuraConstrutiva - indicado caso tenha um problema de procura, e adopte a abordagem construtiva
 - TProcuraMelhorativa  - indicado caso tenha um problema de procura ou muito grande, e opte pela abordagem melhorativa
-- TRepresentacaoBinaria, Inteira, Real, Permutacao, Arvore - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores já disponíveis, basta implementar a avaliação.
+- TCodificacaoBinaria, TCodificacaoInteira, TCodificacaoPermutacao, TCodificacaoReal, TCodificacaoArvore - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores já disponíveis, basta implementar a avaliação.
 - TProcuraAdversa - indicado para procuras adversas, ou seja jogos
 
 ---
@@ -143,11 +145,11 @@ Problemas de exemplo da classe TProcuraConstrutiva:
 5. [Artificial](teste_artificial.html)
 
 Problemas de exemplo da classe TProcuraMelhorativa:
-1. 8 Damas (TRepresentacaoInteira)
-2. 8 Damas (TRepresentacaoPermutacao)
-3. Partição (TRepresentacaoBinaria)
-4. ? (TRepresentacaoReal)
-5. ? (TRepresentacaoArvore)
+1. [8 Damas CI](teste_8damas_ci.html) (TCodificacaoInteira)
+2. [8 Damas CP](teste_8damas_cp.html) (TCodificacaoPermutacao)
+3. [Partição CB](teste_particao_cb.html) (TCodificacaoBinaria)
+4. ? (TCodificacaoReal)
+5. ? (TCodificacaoArvore)
 
 Problemas de exemplo da classe TProcuraAdversa:
 1. [Jogo do Galo](teste_jogo_do_galo.html)

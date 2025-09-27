@@ -54,5 +54,9 @@ public:
 	void Mutar(void);
 	void Cruzamento(TPonto a, TPonto b);
 	int Distancia(TPonto a);
+
+	using TProcura::Debug;
+private:
+	static const char* nomesVizinhanca[];
 };
 

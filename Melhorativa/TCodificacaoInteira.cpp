@@ -2,6 +2,13 @@
 
 int TCodificacaoInteira::nElementos = 0; // número de elementos na permutação
 TVector<int> TCodificacaoInteira::maxValor; // valor máximo para cada elemento
+const char* TCodificacaoInteira::nomesVizinhanca[] = {
+	"incDecValor",
+	"incDecPot2",
+	"trocaValor",
+	"inserir",
+	"trocaPar",
+	"inverterSegmento" };
 
 void TCodificacaoInteira::Copiar(TPonto objecto) {
 	TCodificacaoInteira& obj = *((TCodificacaoInteira*)objecto);
@@ -21,15 +28,9 @@ void TCodificacaoInteira::Debug(bool completo) {
 }
 
 void TCodificacaoInteira::ResetParametros() {
-	static const char* nomesVizinhanca[] = {
-		"incDecValor",
-		"incDecPot2",
-		"trocaValor",
-		"inserir",
-		"trocaPar",
-		"inverterSegmento" };
 	static const char* nomesCruzamento[] = {
 		"uniforme",
+		"1-ponto",
 		"2-pontos",
 		"3-pontos",
 		"4-pontos",
@@ -47,7 +48,7 @@ void TCodificacaoInteira::ResetParametros() {
 	TProcuraMelhorativa::ResetParametros();
 	// parametros da codificação inteira
 	parametro += {
-		{ "TIPO_CRUZAR", 1, 0, 9, "Cruzamento: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento, _TV("0,2,3") },
+		{ "TIPO_CRUZAR", 1, 0, 10, "Cruzamento: N - N-pontos, 0 - uniforme", nomesCruzamento, _TV("0,2,3") },
 		{ "TIPO_MUTAR", 0,0,100, "Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada elemento, em percentagem (1 a 100)", NULL, _TV("0,2,3") },
 		{ "TIPO_VIZINHO", 1,1,6, "Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
 		{ "LIMITE_VIZINHOS", 0,0,1000,
@@ -68,25 +69,28 @@ void TCodificacaoInteira::Cruzamento(TPonto a, TPonto b) {
 		divisoes.BeASet();
 	}
 	if (divisoes.Empty()) { // cruzamento uniforme
+		Debug(EXTRA_DEBUG, false, " cruzamento uniforme");
 		for (int i = 0; i < nElementos; i++)
 			estado[i] = ((TCodificacaoInteira*)(TRand::rand() % 2 == 0 ? a : b))->estado[i];
-		custo = -1;
 	}
 	else { // cruzamento em N pontos
+		bool copiaPai = true;
 		int i = 0;
-		divisoes.Invert();
-		do {
-			while (i < divisoes.Last()) {
-				estado[i] = ((TCodificacaoInteira*)(divisoes.Count() % 2 == 0 ? a : b))->estado[i];
+		if (Parametro(NIVEL_DEBUG) >= EXTRA_DEBUG) {
+			Debug(EXTRA_DEBUG, false, " cruzamento %d-ponto(s): ", divisoes.Count());
+			for (auto ponto : divisoes)
+				Debug(EXTRA_DEBUG, false, "%d ", ponto);
+		}
+		divisoes += nElementos; // ponto final
+		for(auto ponto : divisoes) {
+			while (i < ponto) {
+				estado[i] = ((TCodificacaoInteira*)(copiaPai ? a : b))->estado[i];
 				i++;
 			}
-			divisoes.Pop();
-		} while (!divisoes.Empty());
-		while (i < nElementos) {
-			estado[i] = ((TCodificacaoInteira*)(a))->estado[i];
-			i++;
+			copiaPai = !copiaPai;
 		}
 	}
+	custo = -1;
 
 	TProcuraMelhorativa::Cruzamento(a, b);
 }
@@ -96,6 +100,8 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 	// inverter segmento de N bits
 	ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CI);
+	Debug(EXTRA_DEBUG, false, " vizinhança %s (limite %d)",
+		nomesVizinhanca[tipo - 1], limiteVizinhanca);
 
 	if (tipo >= vizIncDecValorCI && tipo <= vizTrocaValorCI) {
 		// alterar valor de um elemento
@@ -117,7 +123,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 					vizinho->custo = -1;
 					vizinhos += vizinho;
 				}
-				else 
+				else
 					memoriaEsgotada = true;
 			}
 		}
@@ -168,7 +174,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 						vizinho->custo = -1;
 						vizinhos += vizinho;
 					}
-					else 
+					else
 						memoriaEsgotada = true;
 				}
 	}
@@ -184,24 +190,31 @@ void TCodificacaoInteira::Mutar(void) {
 		ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
+		Debug(EXTRA_DEBUG, false, " mutar vizinho %s (%d,%d)",
+			nomesVizinhanca[tipo - 1], i, j);
 		if (tipo == vizIncDecValorCI) {
 			estado[i] += (TRand::rand() % 2 == 0 ? 1 : -1);
-		} else if(tipo==vizIncDecPot2CI) {
+		}
+		else if (tipo == vizIncDecValorCI) {
 			do {
 				j = 1 << (TRand::rand() % 10); // potência de 2 até 512 
-			} while (j >= maxValor[i]); 
+			} while (j >= maxValor[i]);
 			estado[i] += (TRand::rand() % 2 == 0 ? j : -j);
-		} else if (tipo == vizTrocaValorCI) {
+		}
+		else if (tipo == vizTrocaValorCI) {
 			estado[i] = TRand::rand() % maxValor[i];
-		} else if (tipo == vizInserirCI) {
+		}
+		else if (tipo == vizInserirCI) {
 			int valor = estado[i];
 			estado.Delete(i);
 			estado.Insert(j < i ? j : j - 1, valor);
-		} else if (tipo == vizTrocaParCI) {
+		}
+		else if (tipo == vizTrocaParCI) {
 			int valor = estado[i];
 			estado[i] = estado[j];
 			estado[j] = valor;
-		} else if (tipo == vizInverterSegmentoCI) {
+		}
+		else if (tipo == vizInverterSegmentoCI) {
 			while (i < j) {
 				int valor = estado[i];
 				estado[i] = estado[j];
@@ -212,17 +225,20 @@ void TCodificacaoInteira::Mutar(void) {
 		}
 		// garantir que os valores estão dentro dos limites
 		for (int i = 0; i < nElementos; i++)
-			estado[i] = (estado[i] + maxValor[i]) % maxValor[i]; 
+			estado[i] = (estado[i] + maxValor[i]) % maxValor[i];
 		custo = -1;
 	}
 	else {
+		Debug(EXTRA_DEBUG, false, " mutar prob p(%d) limiteVizinhanca %d",
+			p, limiteVizinhanca);
 		// cada elemento com probabilidade p
 		for (int i = 0; i < nElementos; i++)
 			if (TRand::rand() % 100 < p) {
 				if (limiteVizinhanca) {
 					estado[i] += TRand::rand() % (2 * limiteVizinhanca + 1) - limiteVizinhanca;
 					estado[i] = (estado[i] + maxValor[i]) % maxValor[i]; // garantir positivo
-				} else 
+				}
+				else
 					estado[i] += TRand::rand() % maxValor[i];
 			}
 		custo = -1;
@@ -242,7 +258,7 @@ int TCodificacaoInteira::Distancia(TPonto a) {
 		dist = (int)d;
 	}
 	else if (tipo == distManhattanCI) {
-		for (int i = 0; i < nElementos; i++) 
+		for (int i = 0; i < nElementos; i++)
 			dist += abs(estado[i] - obj.estado[i]);
 	}
 	else // Hamming

@@ -1,6 +1,10 @@
 #include "TCodificacaoPermutacao.h"
 
 int TCodificacaoPermutacao::nElementos = 0; // número de elementos na permutação
+const char* TCodificacaoPermutacao::nomesVizinhanca[] = {
+	"inserir",
+	"trocaPar",
+	"inverterSegmento" };
 
 void TCodificacaoPermutacao::Copiar(TPonto objecto) {
 	TCodificacaoPermutacao& obj = *((TCodificacaoPermutacao*)objecto);
@@ -21,10 +25,6 @@ void TCodificacaoPermutacao::Debug(bool completo) {
 }
 
 void TCodificacaoPermutacao::ResetParametros() {
-	static const char* nomesVizinhanca[] = {
-		"inserir",
-		"trocaPar",
-		"inverterSegmento" };
 	static const char* nomesCruzamento[] = {
 		"PMX",
 		"Edge",
@@ -72,6 +72,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 	int fim = divisoes.Last();
 
 	if (operador == 1) { // PMX
+		Debug(EXTRA_DEBUG, false, " cruzamento PBX %d - %d", inicio, fim);
 		// mapeamento valor -> posição em B
 		TVector<int> posB;
 		posB.Count(nElementos);
@@ -116,6 +117,8 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 	}
 	else if (operador == 2) { // ERX
 		TVector<TVector<int>> adj;
+		Debug(EXTRA_DEBUG, false, " cruzamento ERX");
+
 		adj.Count(nElementos);
 
 		auto addEdge = [&](int from, int to) {
@@ -174,6 +177,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 		}
 	}
 	else if (operador == 3) { // OX
+		Debug(EXTRA_DEBUG,false," cruzamento OX %d - %d", inicio, fim);
 		for (int i = inicio; i <= fim; i++) {
 			estado[i] = A[i];
 			usado[A[i]] = true;
@@ -194,6 +198,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 	}
 	else if (operador == 4) { // CX
 		TVector<int> posB;
+		Debug(EXTRA_DEBUG, false, " cruzamento CX");
 		posB.Count(nElementos);
 		for (int i = 0; i < nElementos; i++)
 			posB[B[i]] = i;
@@ -220,12 +225,12 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 	}
 }
 
-
 void TCodificacaoPermutacao::Vizinhanca(TVector<TPonto>& vizinhos) {
 	// inverter segmento de N bits
 	ETiposVizinhancaPermutacao tipo = (ETiposVizinhancaPermutacao)Parametro(TIPO_VIZINHO_CP);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CP);
-
+	Debug(EXTRA_DEBUG, false, " vizinhança %s (limite %d)",
+		nomesVizinhanca[tipo - 1], limiteVizinhanca);
 	// alterar posição de elementos
 	for (int i = 0; i < nElementos; i++) // elemento i
 		for (int j = 0; j < nElementos; j++) // elemento j ou local j
@@ -273,6 +278,8 @@ void TCodificacaoPermutacao::Mutar(void) {
 			(ETiposVizinhancaPermutacao)Parametro(TIPO_VIZINHO_CP);
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
+		Debug(EXTRA_DEBUG, false, " mutar vizinho %s (%d,%d)",
+			nomesVizinhanca[tipo - 1], i, j);
 		if (tipo == vizInserirCP) {
 			int valor = estado[i];
 			for (int k = i; k != j; (i < j ? k++ : k--))

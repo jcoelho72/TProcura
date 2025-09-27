@@ -50,6 +50,7 @@ void TCodificacaoBinaria::Vizinhanca(TVector<TPonto>& vizinhos) {
 	int tamanho = Parametro(TIPO_VIZINHO_CB);
 	if (tamanho < 1)
 		tamanho = 1;
+	Debug(EXTRA_DEBUG, false, " vizinhança %d bits", tamanho);
 	for (int i = 0; i < nElementos - tamanho + 1; i++) {
 		TCodificacaoBinaria* vizinho = (TCodificacaoBinaria*)Duplicar();
 		if (vizinho != NULL) {
@@ -73,11 +74,14 @@ void TCodificacaoBinaria::Mutar(void) {
 		if (tamanho < 1)
 			tamanho = 1;
 		int i = TRand::rand() % (nElementos - tamanho + 1);
+		Debug(EXTRA_DEBUG, false, " mutar vizinho #bits %d (%d)",
+			tamanho, i);
 		for (int j = 0; j < tamanho; j++)
 			Troca(i + j);
 		custo = -1;
 	}
 	else {
+		Debug(EXTRA_DEBUG, false, " mutar prob p(%d)",	p);
 		// cada bit com probabilidade p
 		for (int i = 0; i < nElementos; i++)
 			if (TRand::rand() % 100 < p)
@@ -96,25 +100,28 @@ void TCodificacaoBinaria::Cruzamento(TPonto a, TPonto b) {
 		divisoes.BeASet();
 	}
 	if (divisoes.Empty()) { // cruzamento uniforme
+		Debug(EXTRA_DEBUG, false, " cruzamento uniforme");
 		for (int i = 0; i < nElementos; i++)
 			Bit(i) = ((TCodificacaoBinaria*)(TRand::rand() % 2 == 0?a:b))->Bit(i);
-		custo = -1;
 	}
 	else { // cruzamento em N pontos
 		int i=0;
-		divisoes.Invert();
-		do {
-			while (i < divisoes.Last()) {
-				Bit(i) = ((TCodificacaoBinaria*)(divisoes.Count() % 2 == 0 ? a : b))->Bit(i);
+		bool copiaPai = true;
+		if (Parametro(NIVEL_DEBUG) >= EXTRA_DEBUG) {
+			Debug(EXTRA_DEBUG, false, " cruzamento %d-ponto(s): ", divisoes.Count());
+			for (auto ponto : divisoes)
+				Debug(EXTRA_DEBUG, false, "%d ", ponto);
+		}
+		divisoes += nElementos; // ponto final
+		for (auto ponto : divisoes) {
+			while (i < ponto) {
+				Bit(i) = ((TCodificacaoBinaria*)(copiaPai ? a : b))->Bit(i);
 				i++;
 			}
-			divisoes.Pop();
-		} while (!divisoes.Empty());
-		while (i < nElementos) {
-			Bit(i) = ((TCodificacaoBinaria*)(a))->Bit(i);
-			i++;
+			copiaPai = !copiaPai;
 		}
 	}
+	custo = -1;
 
 	TProcuraMelhorativa::Cruzamento(a, b);
 }

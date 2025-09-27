@@ -61,11 +61,12 @@ enum EParametrosProcura {
  * @endcode
  */
 enum ENivelDebug {
-	NADA = 0,  ///< Sem informações de debug.
-	ATIVIDADE, ///< Apenas eventos principais.
-	PASSOS,    ///< Exibe passos intermediários.
-	DETALHE,   ///< Debug detalhada sobre estados e decisões.
-	COMPLETO   ///< Mostra toda a execução detalhadamente.
+	NADA = 0,   ///< Sem informações de debug.
+	ATIVIDADE,  ///< Apenas eventos principais.
+	PASSOS,     ///< Exibe passos intermediários.
+	DETALHE,    ///< Debug detalhada sobre estados e decisões.
+	COMPLETO,   ///< Mostra toda a execução detalhadamente.
+	EXTRA_DEBUG ///< Nível extra para debug muito detalhado (uso interno).
 };
 
 /**

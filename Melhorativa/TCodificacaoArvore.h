@@ -31,5 +31,7 @@ class TCodificacaoArvore :
 	void Vizinhanca(TVector<TPonto>& vizinhos);
 	void Mutar(void);
 	void Cruzamento(TPonto a, TPonto b);
+
+	using TProcura::Debug;
 };
 

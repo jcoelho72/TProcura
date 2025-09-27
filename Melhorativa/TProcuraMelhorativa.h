@@ -190,7 +190,7 @@ protected:
 	void OrdemValor(TVector<TPonto>& populacao, TVector<int>& id);
 	void CalcularAvaliacoes(TVector<TPonto>& vizinhos, int& melhorValor, int& melhorIndice);
 	void VerificaMelhor(TPonto& melhor, TPonto atual);
-	void VerificaMelhor(TPonto atual);
+	bool VerificaMelhor(TPonto atual);
 	int MelhorCusto(TVector<TPonto>& populacao, bool inverter = false);
 	TPonto MelhorAtual(TPonto& atual, TVector<TPonto>& vizinhos, int indice);
 	void ObterExtremos(TVector<TPonto>& populacao, int& minCusto, int& maxCusto);
@@ -198,7 +198,6 @@ protected:
 	void LibertarVector(TVector<TPonto>& vector, int excepto = -1);
 	int ExecutaAlgoritmo();
 	// Mostrar vizinhos
-	void DebugVizinhos(TVector<TPonto>& vizinhos);
 	void DebugInicioEM(int ID, TPonto solucao);
 	void DebugOptimoLocal(TPonto solucao);
 	void DebugPassoEM(TPonto solucao);
@@ -211,6 +210,7 @@ protected:
 	TVector<TPonto> SelecionarSobreviventesAE(TVector<TPonto>& populacao, TVector<TPonto>& descendentes);
 	TVector<TPonto> AplicarDiversidadeAE(TVector<TPonto>& populacao);
 	void DebugGeracaoAE(int epoca, TVector<TPonto>& populacao);
+	void DebugPopulacaoAE(TVector<TPonto>& populacao, const char* titulo); // mostrar toda a população
 	void DiversidadeAE(TVector<TPonto>& populacao, 
 		int& minDist, int& maxDist, int& avgDist, int& melhorPior);
 };
