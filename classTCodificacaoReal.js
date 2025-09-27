@@ -6,6 +6,7 @@ var classTCodificacaoReal =
     [ "Avaliar", "classTCodificacaoReal.html#ab1498e41b9111c3e98cba9b72e28bebf", null ],
     [ "Copiar", "classTCodificacaoReal.html#a097bfb967ae787d1ee7eff2ef63a76d5", null ],
     [ "Cruzamento", "classTCodificacaoReal.html#aa8a63ef9b72823de2c1bdaae069650fb", null ],
+    [ "Debug", "classTCodificacaoReal.html#a0c5676c1b54ab6bdc1045b98aeafe456", null ],
     [ "Debug", "classTCodificacaoReal.html#a5fa4679d254ad80dd6e6905c9bba3af1", null ],
     [ "Duplicar", "classTCodificacaoReal.html#ab4e6b92cf2c32c0a5d87176014bb23a8", null ],
     [ "Inicializar", "classTCodificacaoReal.html#a0652383ada0c9ac2016e8846bceb54f3", null ],

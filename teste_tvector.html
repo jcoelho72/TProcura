@@ -95,9 +95,9 @@ $(document).ready(function(){initNavTree('teste_tvector.html',''); initResizable
   <div class="headertitle"><div class="title">Teste TVector</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
+<div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
 <p>Execução de exemplo com base na classe de teste de <a class="el" href="classTVector.html">TVector</a>. Pode acompanhar o teste executando as ações localmente. Selecione o projeto <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, e execute. Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>. Nos exemplos das subclasses ilustra-se as restantes funcionalidades.</p>
-<h2><a class="anchor" id="autotoc_md56"></a>
+<h2><a class="anchor" id="autotoc_md63"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_tvector.html#tvector-a1">Ação 1: Menu 1 - Inicializar</a></li>
@@ -120,7 +120,7 @@ Sumário</h2>
 </div><!-- fragment --><p>Ao arrancar com o programa sem argumentos, entramos no modo interativo, com o teste manual. Esta é a informação apresentada. Na zona superior aparece o nome do problema (neste caso <a class="el" href="classTVector.html">TVector</a>), seguido dos parametros e valores atuais. Iremos detalhar os parametrors mais adiante. Segue-se uma zona com informação sobre os dados do problema concreto a resolver, a instância, neste caso é um vetor de números aleatórios, com 1 milhão de elementos. Temos vários algoritmos, em que cada um testa um método da classe <a class="el" href="classTVector.html">TVector</a>. Segue-se o menu com 8 comandos, os quais iremos cobrir neste exemplo. Entre os dados e o menu, após ter exsitido uma execução, são apresentados os indicadores relativos à última execução. Iremos detalhar também estes indicadores.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md58"></a>
+<h2><a class="anchor" id="autotoc_md65"></a>
 Ação 1: Menu 1 - Inicializar</h2>
 <p>Vamos ver o menu 1, inicializar. Introduza: 1; 2.</p>
 <div class="fragment"><div class="line">ID atual: 1  Intervalo: [1-10]  Prefixo atual: &#39;instancia_&#39;</div>
@@ -152,7 +152,7 @@ Ação 1: Menu 1 - Inicializar</h2>
 <p>Notar que o menu no modo interativo, é sempre visualizado, colocando-se o prompt "Opção:". Para evitar repetição, vamos omitar o menu no resto deste exemplo.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md60"></a>
+<h2><a class="anchor" id="autotoc_md67"></a>
 Ação 2: Menu 3 - Parâmetros</h2>
 <p>Avançamos para o menu <b>3 - Parâmetros</b>. Introduza: 3.</p>
 <div class="fragment"><div class="line">Opção: 3</div>
@@ -264,7 +264,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <p>O menu <em>4 - Solução</em> será ilustrado com um problema de procura, já que nestes métodos, a solução é o estado do vetor após aplicadas as operações.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md62"></a>
+<h2><a class="anchor" id="autotoc_md69"></a>
 Ação 3: Menu 6 - Executar</h2>
 <p>Avançamos para o menu <em>6 - Executar</em>. Introduza: 6.</p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -289,7 +289,7 @@ Ação 3: Menu 6 - Executar</h2>
 </div><!-- fragment --><p>Notar que o resultado em termos de dados final, é exatamente o mesmo. É natural já que ambas as estruturas de dados receberam a mesma instância. O tempo foi um milisegundo superior, mas outra execução o tempo CPU pode ser distinto.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md64"></a>
+<h2><a class="anchor" id="autotoc_md71"></a>
 Ação 4: Menu 5 - Indicadores</h2>
 <p>Vamos agora ver o menu dos indicadores. Introduza: 5.</p>
 <div class="fragment"><div class="line">Opção: 5</div>
@@ -321,7 +321,7 @@ Ação 4: Menu 5 - Indicadores</h2>
 </div><!-- fragment --><p>Podemos ver que agora apenas I4 seguido de I2 são apresentados.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md66"></a>
+<h2><a class="anchor" id="autotoc_md73"></a>
 Ação 5: Menu 7 - Configurações</h2>
 <p>Os métodos utilizados até aqui, permitem executar testes confortavelmente sem ter de andar a alterar código, compilar e executar. Pode-se ir registando os dados, e procurar tirar conclusões.</p>
 <p>No entanto, execuções particulares podem ser enganadoras, como o tempo de execução da ordenação entre <a class="el" href="classTVector.html">TVector</a> e o sort() da STL. Para existir garantias, temos de fazer muitas execuções, com diferentes parâmetros, e poder processar os resultados posteriormente.</p>
@@ -400,7 +400,7 @@ Ação 5: Menu 7 - Configurações</h2>
 <p>Avance para a próxima ação.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md68"></a>
+<h2><a class="anchor" id="autotoc_md75"></a>
 Ação 6: Menu 8 - Teste</h2>
 <p>Tendo configurações introduzidas, vamos agora executar um teste com estas configurações. Introduza: 8; 1:3; <em>ENTER</em>; 0.</p>
 <p>A primeira pergunta é sobre quais as instâncias a excutar o teste, na qual pretendemos as 3 primeiras. A segunda pergunta é para colocar os resultados num ficheiro de texto, para já não estamos interesados. A terceira pergunta permite que se vejam as soluções assim que cada execução termina, também não precisamos neste teste.</p>
@@ -626,7 +626,7 @@ Ação 6: Menu 8 - Teste</h2>
 resultados</div></div>
     <hr  />
 <p><a class="anchor" id="tvector-a7"></a></p>
-<h2><a class="anchor" id="autotoc_md70"></a>
+<h2><a class="anchor" id="autotoc_md77"></a>
 Ação 7: Linha de comando</h2>
 <p>Embora o modo interativo seja útil no desenvolvimento do algoritmo ou problema, os testes paramétricos é que nos vão suportar uma resposta a algum tipo de hipótese formada.</p>
 <p>A linha de comando é normalmente mais simples, para por um lado poder colocar a correr num servidor, por outro, pode ver exatamente o teste solicitado numa só linha, não estando dependente da interação do utilizador.</p>
@@ -774,7 +774,7 @@ Ação 7: Linha de comando</h2>
 <p>Um ficheiro script com a linha de comandos, tem toda a informação para reproduzir o teste, pelo que pode facilitar a identificação do que foi feito. Por outro lado, o ficheiro de resultados tem também todos os valores utilizados, pelo que se houve algum engano na especificação dos parâmetros, o valor utilizado incorreto é visivel nos resultados. Há uma clara separação da fase de implementação da fase de teste. O resultado de um teste pode levantar outras questões, e provocar outro teste. Se a implementação tiver todas as opções em parâmetros, não é necessário alternar com programação entre testes. Apenas após a identificação de bugs, é que a programação é necessária.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a8"></a></p>
-<h2><a class="anchor" id="autotoc_md72"></a>
+<h2><a class="anchor" id="autotoc_md79"></a>
 Ação 8: Desafio CTesteTVector</h2>
 <p>Será a ordenação de <a class="el" href="classTVector.html">TVector</a> mais rápida ou mais lenta ue a ordenação da STL? Que testes pode fazer para procurar dar uma resposta fundamentada?</p>
 <details >
@@ -793,7 +793,7 @@ Resposta:</summary>
 </table>
 <p>Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do <a class="el" href="classTVector.html">TVector</a> nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura. </p>
 </details>
-<p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
+<p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

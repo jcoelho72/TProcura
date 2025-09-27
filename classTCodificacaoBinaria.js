@@ -7,6 +7,7 @@ var classTCodificacaoBinaria =
     [ "Bit", "classTCodificacaoBinaria.html#a82db1e906b249821c06f910742f42f46", null ],
     [ "Copiar", "classTCodificacaoBinaria.html#ad2083ee209edac21d0ce27db4349825c", null ],
     [ "Cruzamento", "classTCodificacaoBinaria.html#ac8df002987d87aa7ecaa43e6d833bfdd", null ],
+    [ "Debug", "classTCodificacaoBinaria.html#a0c5676c1b54ab6bdc1045b98aeafe456", null ],
     [ "Debug", "classTCodificacaoBinaria.html#a7560b318948bf6a98d21ed79befe6719", null ],
     [ "Distancia", "classTCodificacaoBinaria.html#a6f922717bd9de7f4c8adae5342f9c047", null ],
     [ "Duplicar", "classTCodificacaoBinaria.html#af86710c3e68600bbdf4fd649011a4463", null ],

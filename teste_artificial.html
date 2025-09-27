@@ -95,9 +95,9 @@ $(document).ready(function(){initNavTree('teste_artificial.html',''); initResiza
   <div class="headertitle"><div class="title">Teste Artificial</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> |</p>
+<div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
 <p>Execução de exemplo com base no problema artificial. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_artificial.html#artificia-a1">Ação 1 - Ver instâncias</a></li>
@@ -133,7 +133,7 @@ Sumário</h2>
 </ul>
 <p>Estas caracteristicas definem o espaço de estados, e permite avaliar os algoritmos de forma independente dos problemas, ou testar o algoritmo em situações extermas, mesmo antes de ter um problema concreto que tenha essas características.</p>
 <p><a class="anchor" id="artificia-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md14"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Introduza: <b>1; 1.</b></p>
 <div class="fragment"><div class="line">ID atual: 1  Intervalo: [1-10]  Prefixo atual: &#39;instancia_&#39;</div>
@@ -166,7 +166,7 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">____________________________________________________________________</div>
 </div><!-- fragment --><p> As ações são os próprios estados. Sem informação é complicado explorar o espaço de estados. Nesta instância o objetivo termina com 0, pelo que explorando um bocado já daria para encontrar uma solução, mas seria sempre uma procura à sorte.</p>
 <p><a class="anchor" id="artificia-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Ação 3 - Testes Empíricos</h2>
 <p>Vamos fazer testes empíricos na linha de comandos.</p>
 <p>Temos aqui o custo uniforme, atendendo que há instâncias com custos distintos por ação. Vamos portanto comparar resultados da procura em largura, custo uniforme e procura em profundidade iterativa, atendendo a que desconhecemos a profundidade máxima das instâncias. Vamos colocar os algoritmos informados, dado que embora não exista heurística, existe a distância até ao nível do objetivo, e poderá observar-se alguma diferença.</p>
@@ -250,7 +250,7 @@ Ação 3 - Testes Empíricos</h2>
 <p>As procuras informadas são bastante robustas, mesmo com a heurística mínima indicando a informação até ao nível em que pode estar o estado objetivo. Estas 10 instâncias não são portanto complexas para estes algoritmos, tanto o A*, IDA** como o Branch-and-Bound, resolvem todas à optimalidade, e com bons tempos. O Melhor Primeiro é o mais eficiente, mas retorna soluções piores.</p>
 <p>Assim, podem lidar com objetivos mais raros, profundos, e com ramificação mais elevada, que as utilizadas aqui.</p>
 <p>A remoção de duplicados não foi ativada, mas algumas instâncias tinham repetidos, e essa situação melhora naturalmente o desempanho dos algoritmos.</p>
-<p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | </p>
+<p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

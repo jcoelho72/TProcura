@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['galo_0',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]]
+  ['damas_0',['Teste 8 Damas',['../teste_8damas.html',1,'']]],
+  ['damas_20codificação_20inteira_1',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]],
+  ['damas_20codificação_20por_20permutação_2',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],
+  ['do_20galo_3',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]]
 ];

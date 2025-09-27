@@ -5,6 +5,7 @@ var classTCodificacaoInteira =
     [ "Avaliar", "classTCodificacaoInteira.html#af0017a5b3fc77264bd6892b5f8095e37", null ],
     [ "Copiar", "classTCodificacaoInteira.html#a86b9ca6a83484dde91e836829665edc7", null ],
     [ "Cruzamento", "classTCodificacaoInteira.html#a2f8b171459b12aa418f6e4bed17af74e", null ],
+    [ "Debug", "classTCodificacaoInteira.html#a0c5676c1b54ab6bdc1045b98aeafe456", null ],
     [ "Debug", "classTCodificacaoInteira.html#a2a849dc7fe5bacff0f625cd6cec2e47e", null ],
     [ "Distancia", "classTCodificacaoInteira.html#add6681ab3c16c4c64571ec84efeafbf6", null ],
     [ "Duplicar", "classTCodificacaoInteira.html#aae6c2a9186d72721b44d91b240711b89", null ],

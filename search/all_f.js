@@ -4,5 +4,5 @@ var searchData=
   ['finalizampi_1',['FinalizaMPI',['../classTProcura.html#a5f946d1f7a89ca3c50fbb80477966607',1,'TProcura']]],
   ['find_2',['Find',['../classTVector.html#ae72a4965eaa055d38204da07d6092feb',1,'TVector']]],
   ['first_3',['First',['../classTVector.html#a05f29646493d42f3c77081b6031d70e5',1,'TVector']]],
-  ['funcionalidades_4',['Funcionalidades',['../index.html#autotoc_md79',1,'']]]
+  ['funcionalidades_4',['Funcionalidades',['../index.html#autotoc_md85',1,'']]]
 ];

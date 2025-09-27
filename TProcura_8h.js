@@ -29,7 +29,8 @@ var TProcura_8h =
       [ "ATIVIDADE", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378", null ],
       [ "PASSOS", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a", null ],
       [ "DETALHE", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8af7a4423a328c6615b8658cd221f3e87f", null ],
-      [ "COMPLETO", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8abcad279ff890adb41763ccbc3fd85bfc", null ]
+      [ "COMPLETO", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8abcad279ff890adb41763ccbc3fd85bfc", null ],
+      [ "EXTRA_DEBUG", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a85f15eede083124399a315d1e0f98e96", null ]
     ] ],
     [ "EOperacao", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3", [
       [ "GRAVAR", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a5f2b018e9e5b8b220fe8a17ac39ff042", null ],

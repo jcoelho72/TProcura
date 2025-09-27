@@ -18,7 +18,7 @@ var classTProcuraMelhorativa =
     [ "DebugOptimoLocal", "classTProcuraMelhorativa.html#a5ca716c360ad420c1f642ddce21fd6e3", null ],
     [ "DebugPassoAG", "classTProcuraMelhorativa.html#a4e8f2500b354fcb2dd46fded2e6b643b", null ],
     [ "DebugPassoEM", "classTProcuraMelhorativa.html#aa4572163864fef20a4476b03fdf5ec5b", null ],
-    [ "DebugVizinhos", "classTProcuraMelhorativa.html#a71f6e6bf53e56efec940a9e53b3795a4", null ],
+    [ "DebugPopulacaoAE", "classTProcuraMelhorativa.html#a372f8a7498a27d2fb11c3791b1f26d61", null ],
     [ "Distancia", "classTProcuraMelhorativa.html#ab870165cba9b9832946f9bbe26862c0f", null ],
     [ "DiversidadeAE", "classTProcuraMelhorativa.html#a6680888f6064501586d740cab891d0cd", null ],
     [ "Duplicar", "classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582", null ],
@@ -42,7 +42,7 @@ var classTProcuraMelhorativa =
     [ "SelecionarPaisAE", "classTProcuraMelhorativa.html#a35e3a8f92ef41a8941f75ceee20e13bb", null ],
     [ "SelecionarSobreviventesAE", "classTProcuraMelhorativa.html#a083b961ed7ed1483625559d068755a7f", null ],
     [ "VerificaMelhor", "classTProcuraMelhorativa.html#aeb435694084a626e3d52f3a489d9a93d", null ],
-    [ "VerificaMelhor", "classTProcuraMelhorativa.html#a8cb678f2a5c1bc649d5e1739ef7b5106", null ],
+    [ "VerificaMelhor", "classTProcuraMelhorativa.html#a45311cd5bd1ead24ce6eedbabf2465bd", null ],
     [ "Vizinhanca", "classTProcuraMelhorativa.html#ad268f3d892d6a912f632369e1c9be878", null ],
     [ "custo", "classTProcuraMelhorativa.html#aa910a310a7e8ac24403fa1194597793d", null ]
 ];

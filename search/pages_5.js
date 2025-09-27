@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['em_20linha_0',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]]
+  ['codificação_20binária_0',['Teste Particao - Codificação Binária',['../teste_particao_cb.html',1,'']]],
+  ['codificação_20inteira_1',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]],
+  ['codificação_20por_20permutação_2',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]]
 ];
