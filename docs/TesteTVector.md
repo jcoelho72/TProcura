@@ -790,13 +790,15 @@ A lista completa de parametros e indicadores é também mostrada, para permitir 
 
 Podemos assim reproduzir o teste anterior com a seguinte entrada.
 
-Linha de comando: TProcura.exe 1:10 -R resultado2 -P P1=2 P3=1:10
+Linha de comando: TProcura.exe 1:10 -R resultado2 -P P1=2 P2=4 P3=1:10
+
+O nível de debug destina-se à informação a reportar sobre o andamento do teste, 
+e não do algoritmo que executa sempre com debug nível 0, de modo a obter os melhores tempos.
 
 ```entrada
-PS ...\Teste> TProcura 1:10 -R resultado2 -P P1=2 P3=1:10
-
+PS ...\Teste> TProcura 1:10 -R resultado2 -P P1=2 P2=4 P3=1:10
 Parâmetros comuns:
- P1=2 P2=0 P4=10 P5=0 P6=1
+ P1=2 P2=4 P4=10 P5=0 P6=1
 - Configurações geradas (total: 10) -
  P3=1 [1]
  P3=2 [2]
@@ -808,33 +810,32 @@ Parâmetros comuns:
  P3=8 [8]
  P3=9 [9]
  P3=10 [10]
- P1(Método): Sort() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
-Instância 1: DONE.
-Instância 2: DONE.
-Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
+Teste com 100 tarefas, 10 instâncias, 10 configurações, utilizando 1 processo(s). instância 1:
+Solução: .DONE.instância 2:
+Solução: .DONE.instância 3:
+Solução: .DONE.instância 4:
+Solução: .DONE.instância 5:
+Solução: .DONE.
+1" 358ms  Tarefa 5. instância 6:
+Solução: .DONE.instância 7:
+Solução: .DONE.
+2" 547ms  Tarefa 7. instância 8:
 ...
- P1(Método): Sort() | P2(Debug): nada | P3(Seed): 10 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
-Instância 1: DONE.
-Instância 2: DONE.
-Instância 3: DONE.
-Instância 4: DONE.
-Instância 5: DONE.
-Instância 6: DONE.
-Instância 7: DONE.
-Instância 8: DONE.
-Instância 9: DONE.
-Instância 10: DONE.
+46" 376ms  Tarefa 95. instância 6:
+Solução: .DONE.instância 7:
+Solução: .DONE.
+47" 666ms  Tarefa 97. instância 8:
+Solução: .DONE.instância 9:
+Solução: .DONE.
+49" 204ms  Tarefa 99. instância 10:
+Solução: .DONE.
 Ficheiro resultado2.csv gravado.
+Tempo real: 50" 117ms
+CPU total: 50" 120ms
+Taxa de utilização: 100,0%
 ```
+
+O tempo total foi de 50 segundos, com debug a 0 não iriamos ter nenhum input senão após o teste terminar.
 
 Podemos agora processar o ficheiro e confirmar que tem resultados idênticos.
 

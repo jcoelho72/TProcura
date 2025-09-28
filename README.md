@@ -19,7 +19,7 @@ Biblioteca em C++ para **testes paramétricos** de algoritmos, e coleção de al
 
 - [Sobre o Projeto](#s1)
 - [Funcionalidades](#s2)
-- [Hierarquia de Classes](#s3)
+- [Estrutura do Repositório](#s3)
 - [Instalação](#s4)
 - [Uso](#s5)
 - [Exemplos](#s6)
@@ -55,7 +55,7 @@ Este projeto é utilizado nas Unidades Curriculares:
 \anchor s2
 ## Funcionalidades
 
-1. Modo interativo, linha de comando ou MPI (futuro)  
+1. Modo interativo, linha de comando ou MPI  
 2. Geração automática de combinações de parâmetros  
 3. Recolha de indicadores (tempo, custo, iterações, etc.)  
 4. Exportação de resultados em CSV  
@@ -63,7 +63,7 @@ Este projeto é utilizado nas Unidades Curriculares:
    - Largura / Profundidade / Custo uniforme  
    - Melhor-primeiro / A\* / IDA\* / Branch-and-Bound  
 6. Procuras melhorativas:  
-   - Algoritmos genéticos, simples - (futuro: algoritmos evolutivos, Scatter Search, sistemas artificiais imunes, inteligência de enxames)
+   - Algoritmos Evolutivos - (futuro: Scatter Search, sistemas artificiais imunes, inteligência de enxames)
    - Escalada do Monte - (futuro: pesquisa tabu, arrefecimento simulado, GRASP, procura com vizinhança variável e muito alargada) 
 7. Procuras adversas:  
    - Minimax / Alfa-beta / iterativo / Hash-table de estados explorados (futuro: MCTS)  
@@ -71,19 +71,64 @@ Este projeto é utilizado nas Unidades Curriculares:
 ---
 
 \anchor s3
-## 📦 Hierarquia de Classes
+## 📦 Estrutura do Repositório
 
+O repositório inclui 4 projetos principais, cada um com uma superclasse base para implementação de novos problemas:
 ```text
-TProcura                       # algoritmo
-├─ TProcuraConstrutiva         # sucessores e heurística
-│  └─ TProcuraAdversa          # sucessores e heurística
-└─ TProcuraMelhorativa         # solução inicial, vizinhança, mutação, cruzamento, avaliação
-   ├─ TRepresentacaoBinaria    # avaliação
-   ├─ TRepresentacaoInteira    # avaliação
-   ├─ TRepresentacaoPermutacao # avaliação
-   ├─ TRepresentacaoReal       # avaliação
-   └─ TRepresentacaoArvore     # avaliação
+TProcura
+├─ TProcuraConstrutiva  
+│  └─ TProcuraAdversa 
+└─ TProcuraMelhorativa  
 ```
+- TProcura: modos de execução (interativo, linha de comandos, MPI), gestão de parâmetros e indicadores, execução de testes.
+- TProcuraConstrutiva / TProcuraAdversa: algoritmos construtivos e adversos, exigem implementação de sucessores e heurística.
+- TProcuraMelhorativa: algoritmos melhorativos (solução inicial, vizinhança, mutação, cruzamento, avaliação).
+
+Subclasses já fornecem operadores para diferentes representações, restando apenas implementar a avaliação.
+```text
+── TProcuraMelhorativa    
+   ├─ TRepresentacaoBinaria 
+   ├─ TRepresentacaoInteira 
+   ├─ TRepresentacaoPermutacao 
+   ├─ TRepresentacaoReal   
+   └─ TRepresentacaoArvore 
+```
+ 
+### Estrutura de Pastas
+
+A estrutura do repositório é a seguinte:
+```text
+TProcura
+├─ Adversa/Construtiva/Melhorativa # pastas de projetos principais  
+│  └─ Teste          # projeto de teste (não necessário para usar a biblioteca)
+│     └─ CasosTeste  # ficheiros para testes 
+├─ Teste  
+│  ├─ CasosTeste 
+│  └─ bin/x64        # pasta criada na compilação em linux ou no Visual Studio, não faz parte do repositório
+│     ├─ Debug
+│     ├─ MPI
+│     └─ Release
+├─ docs              # documentação em Markdown
+└─ styles            # estilos doxygen
+```
+### Compilação e Execução
+
+Na pasta `<projeto>/Teste` do projeto respetivo:
+
+- **Linux**: `make` ou `make mpi`  
+- **Windows (Visual Studio)**: selecionar a configuração desejada (Debug, Release ou MPI).  
+  > ⚠️ Para MPI é necessário instalar previamente o [MS MPI](https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi).  
+
+Executar o projeto:
+- Interativo: `./Executavel`  
+- Linha de comando: `./Executavel <argumentos>`  (ajuda: `./Executavel -h`)  
+- MPI: `mpiexec -n 4 ./Executavel <argumentos>`
+
+Onde fica o executável:
+- **Linux**: `<projeto>/Teste/bin/[Debug|MPI|Release]`  
+- **Windows (Visual Studio)**: `<projeto>/Teste/x64/[Debug|MPI|Release]`
+
+> ℹ️ Os `Makefile` estão localizados em `<projeto>/Teste`, pois destinam-se apenas à compilação dos projetos de teste.
 
 
 \anchor s4
