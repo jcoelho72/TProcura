@@ -101,13 +101,14 @@ A estrutura do repositório é a seguinte:
 TProcura
 ├─ Adversa/Construtiva/Melhorativa # pastas de projetos principais  
 │  └─ Teste          # projeto de teste (não necessário para usar a biblioteca)
-│     └─ CasosTeste  # ficheiros para testes 
-├─ Teste  
-│  ├─ CasosTeste 
-│  └─ bin/x64        # pasta criada na compilação em linux ou no Visual Studio, não faz parte do repositório
-│     ├─ Debug
-│     ├─ MPI
-│     └─ Release
+│     ├─ CasosTeste  # ficheiros para testes de validação de alterações ao código
+│     ├─ Resultados  # ficheiros CSV de execução (não colocados no repositório)
+│     └─ bin/x64     # (fora do repositório) pasta bin criada na compilação em linux ou x64 no Visual Studio
+│        ├─ Debug
+│        ├─ MPI
+│        └─ Release
+├─ Teste             # mesma estrutura em todos os projetos
+│  └─ ...   
 ├─ docs              # documentação em Markdown
 └─ styles            # estilos doxygen
 ```
@@ -129,7 +130,7 @@ Onde fica o executável:
 - **Windows (Visual Studio)**: `<projeto>/Teste/x64/[Debug|MPI|Release]`
 
 > ℹ️ Os `Makefile` estão localizados em `<projeto>/Teste`, pois destinam-se apenas à compilação dos projetos de teste.
-
+> ℹ️ Os ficheiros CSV de resultados podem ser gravados em `Resultados/` usando o parâmetro `-R Resultados/<nome>`.
 
 \anchor s4
 ## Instalação
