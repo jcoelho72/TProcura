@@ -219,27 +219,41 @@ Estrutura de Pastas</h2>
 Compilação e Execução</h2>
 <p>Na pasta <code>&lt;projeto&gt;/Teste</code> do projeto respetivo:</p>
 <ul>
-<li><b>Linux</b>: <code>make</code> ou <code>make mpi</code> <br  />
+<li><b>Linux</b>: <br  />
+<ul>
+<li>Pré-requisito para MPI: instalar o <a href="https://www.open-mpi.org/">Open MPI</a> <br  />
+ <div class="fragment"><div class="line">sudo apt-get update</div>
+<div class="line">sudo apt-get install -y openmpi-bin libopenmpi-dev</div>
+</div><!-- fragment --></li>
+<li>Compilação: <code>make</code> ou <code>make mpi</code></li>
+</ul>
 </li>
 <li><b>Windows (Visual Studio)</b>: selecionar a configuração desejada (Debug, Release ou MPI). <br  />
  <blockquote class="doxtable">
 <p>&zwj;⚠️ Para MPI é necessário instalar previamente o <a href="https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi">MS MPI</a>. <br  />
  </p>
 </blockquote>
-Executar o projeto:</li>
+</li>
+</ul>
+<p>Executar o projeto:</p>
+<ul>
 <li>Interativo: <code>./Executavel</code> <br  />
 </li>
 <li>Linha de comando: <code>./Executavel &lt;argumentos&gt;</code> (ajuda: <code>./Executavel -h</code>) <br  />
 </li>
 <li>MPI: <code>mpiexec -n 4 ./Executavel &lt;argumentos&gt;</code></li>
 </ul>
-<p>Onde fica o executável:</p><ul>
+<p>Onde fica o executável:</p>
+<ul>
 <li><b>Linux</b>: <code>&lt;projeto&gt;/Teste/bin/[Debug|MPI|Release]</code> <br  />
 </li>
 <li><b>Windows (Visual Studio)</b>: <code>&lt;projeto&gt;/Teste/x64/[Debug|MPI|Release]</code></li>
 </ul>
 <blockquote class="doxtable">
-<p>&zwj;ℹ️ Os <code>Makefile</code> estão localizados em <code>&lt;projeto&gt;/Teste</code>, pois destinam-se apenas à compilação dos projetos de teste. ℹ️ Os ficheiros CSV de resultados podem ser gravados em <code>Resultados/</code> usando o parâmetro <code>-R Resultados/&lt;nome&gt;</code>. </p>
+<p>&zwj;ℹ️ Os <code>Makefile</code> estão localizados em <code>&lt;projeto&gt;/Teste</code>, pois destinam-se apenas à compilação dos projetos de teste. </p>
+</blockquote>
+<blockquote class="doxtable">
+<p>&zwj;ℹ️ Os ficheiros CSV de resultados podem ser gravados em <code>Resultados/</code> usando o parâmetro <code>-R Resultados/&lt;nome&gt;</code>. </p>
 </blockquote>
 <p><a class="anchor" id="s4"></a></p>
 <h1><a class="anchor" id="autotoc_md10"></a>
