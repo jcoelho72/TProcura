@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('teste_puzzle8.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
-<p>Execução de exemplo com base no problema do Puzzle 8. Selecione o projeto TProcuraConstrutiva, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
+<p>Execução de exemplo com base no problema do Puzzle 8. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md74"></a>
 Sumário</h2>
 <ul>
@@ -530,7 +530,7 @@ Ação 4 - Procura em Profundidade</h2>
 <div class="line">I6(Lower Bound): 0</div>
 <div class="line">____________________________________________________________________</div>
 </div><!-- fragment --><p>A procura em profundidade iterativa encontrou também a solução ótima, com 12 movimentos, na 13ª iteração. Foram realizadas 2955 expansões e 5084 gerações, um valor superior à procura em largura.</p>
-<p>Notar no entanto no parâmetro P8(Repetidos): ascendentes. Significa que não foram gerados estadso, que num dado ramo, já tinham ocorrido anteriormente. Esta é a opção de omissão para este problema, já que foi redefinido CPuzzle8::ResetParametros().</p>
+<p>Notar no entanto no parâmetro P8(Repetidos): ascendentes. Significa que não foram gerados estadso, que num dado ramo, já tinham ocorrido anteriormente. Esta é a opção de omissão para este problema, já que foi redefinido <a class="el" href="classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3" title="Inicializa os parametros, indicadores e inst�ncias.">CPuzzle8::ResetParametros()</a>.</p>
 <p>Vamos repetir esta execução, com debug no nível 1, e ignorando repetidos. Introduza: <b>1; 40; 3; 2; 1; 8; 1; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line">#</div>
@@ -602,7 +602,7 @@ Resposta</summary>
 <p><a class="anchor" id="puzzle8-a5"></a></p>
 <h2><a class="anchor" id="autotoc_md79"></a>
 Ação 5 - Heurística</h2>
-<p>Neste problema foi implementada a heurística com a distância na horizontal e vertical, de cada peça até à sua posição final. Esta heurística relaxa a situação de apenas ser possível mover para o local onde está o espaço, e retorna o valor que seria o correto caso cada peça pudesse mover-se por cima das outras. É implementada no problema ao redefinir CPuzzle8::Heuristica().</p>
+<p>Neste problema foi implementada a heurística com a distância na horizontal e vertical, de cada peça até à sua posição final. Esta heurística relaxa a situação de apenas ser possível mover para o local onde está o espaço, e retorna o valor que seria o correto caso cada peça pudesse mover-se por cima das outras. É implementada no problema ao redefinir <a class="el" href="classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27" title="Função para calcular quanto falta para o final, o valor da heurística.">CPuzzle8::Heuristica()</a>.</p>
 <p>Vamos começar por ver (notar que P6(Ver): 1). Introduza: <b>1; 40; 2; dir baixo; <em>ENTER</em>.</b></p>
 <div class="fragment"><div class="line">g:0 h:12 1|4|5</div>
 <div class="line"> 4  7  3</div>
@@ -884,7 +884,7 @@ Ação 9 - Branch-and-Bound</h2>
 <p><a class="anchor" id="puzzle8-a10"></a></p>
 <h2><a class="anchor" id="autotoc_md84"></a>
 Ação 10 - Testes Empíricos</h2>
-<p>Vamos agora fazer testes empíricos, para comparar os algoritmos informados. As configurações e testes no modo interativo, foram exemplificados no exemplo de teste do TVector.</p>
+<p>Vamos agora fazer testes empíricos, para comparar os algoritmos informados. As configurações e testes no modo interativo, foram exemplificados no exemplo de teste do <a class="el" href="classTVector.html">TVector</a>.</p>
 <p>Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "-h".</p>
 <div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
 <div class="line"> </div>

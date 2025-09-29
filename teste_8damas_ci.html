@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('teste_8damas_ci.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
-<p>Execução de exemplo com base no problema das 8 damas, com a codificação inteira. Selecione o projeto TProcuraMelhorativa, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
+<p>Execução de exemplo com base no problema das 8 damas, com a codificação inteira. Selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md29"></a>
 Sumário</h2>
 <ul>
@@ -137,8 +137,8 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">____________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
-</div><!-- fragment --><p> Temos uma instância das 8 Damas como no exemplo da TProcuraConstrutiva. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas que se atacam mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto transfoormam-se em custos, que pretendemos remover.</p>
-<p>Temos um número de parametros mais extenso, embora os 5 primeiros parametros sejam os mesmos que no exemplo do teste TVector. O último parametro é o P25, muito embora não estejam 25 parametros. O P11 por exemplo não é mostrado. Alguns parametros só são ativos devido a valores de outros parametros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parametros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
+</div><!-- fragment --><p> Temos uma instância das 8 Damas como no exemplo da <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas que se atacam mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto transfoormam-se em custos, que pretendemos remover.</p>
+<p>Temos um número de parametros mais extenso, embora os 5 primeiros parametros sejam os mesmos que no exemplo do teste <a class="el" href="classTVector.html">TVector</a>. O último parametro é o P25, muito embora não estejam 25 parametros. O P11 por exemplo não é mostrado. Alguns parametros só são ativos devido a valores de outros parametros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parametros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
 <p>Vamos trocar para uma instância menor antes de avançarmos, para simplificar a nossa exploração.</p>
 <p>Introduza: <b>1;4.</b></p>
 <div class="fragment"><div class="line">Opção: 1</div>
@@ -733,7 +733,7 @@ Ação 4 - Testes Empíricos</h2>
 <p>Vamos agora procurar saber qual a melhor parametrização dos algoritmos evolutivos para as 8 damas.</p>
 <p>Começamos por executar a parametrização de omissão nas primeiras instâncias. Como o algoritmo é aleatório, é crítico fazer mais que uma execução. No entanto neste exemplo, sem processamento paralelo, vamos fazer apeans 1 execução. Iremos repetir o teste mais tarde com mais execuções, num cluster, e assim poder observar uma melhoria na qualidade dos resultados. Colocamos o nível de debug a PASSO, para ter alguma informação durante execução.</p>
 <p>Notar que nos testes empíricos, o nível de debug destina-se à informação sobre o progresso da execução global, mas o algoritmo é executado sempre sem qualquer debug, de modo a obtermos a melhor performance.</p>
-<p>Linha de comando: TProcuraMelhorativa.exe 4:40 -R damasCIt1 -P P2=2</p>
+<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na �ltima execu��o.">TProcuraMelhorativa.exe</a> 4:40 -R damasCIt1 -P P2=2</p>
 <div class="fragment"><div class="line">PS ...\Teste&gt; .\x64\Release\TProcuraMelhorativa.exe 4:40 -R damasCIt1 -P P2=2</div>
 <div class="line">...</div>
 <div class="line">Opção: 2</div>
@@ -828,7 +828,7 @@ Ação 4 - Testes Empíricos</h2>
 <p>A parametrização de omissão consegue resolver até à instância 20, mas após essa instância, falha tanto por tempo como por número de iterações.</p>
 <p>Não interressa ter instâncias demasiado simples ou demasiado complicadas nos testes. Como estes testes não vão ser num cluster, convém ter um conjunto de teste reduzido. Pretendemos melhorar o algoritmo no ponto de transição. Assim, vamos escolher para conjunto de teste, as instâncias 17 a 26.</p>
 <p>O primeiro parametro a averiguar, é o tamanho da população.</p>
-<p>Linha de comando: TProcuraMelhorativa.exe 17:26 -R damasCIt2 -P P2=2 P6=10,20,30,50,100,200</p>
+<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na �ltima execu��o.">TProcuraMelhorativa.exe</a> 17:26 -R damasCIt2 -P P2=2 P6=10,20,30,50,100,200</p>
 <p>Notar que repetimos a população 20, da qual já tinhamos resultados. Poderiamos aproveitar, mas não só é mais simples repetir, como repetindo garante-se condições de igualdade entre execuções.</p>
 <div class="fragment"><div class="line">Teste com 60 tarefas, 10 instâncias, 6 configurações, utilizando 1 processo(s).</div>
 <div class="line">1&#39; 1&quot; 759ms  Tarefa 14.</div>

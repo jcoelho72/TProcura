@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('teste_aspirador1.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
-<p>Execução de exemplo com base no problema do Aspirador. Selecione o projeto TProcuraConstrutiva, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
+<p>Execução de exemplo com base no problema do Aspirador. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md38"></a>
 Sumário</h2>
 <ul>
@@ -153,7 +153,7 @@ Ação 1 - Trocar de instância</h2>
 <div class="line">____________________________________________________________________</div>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
-</div><!-- fragment --><p>Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda: A representação do estado é algo que é implementado na sub-classe (neste caso em CAspirador::Debug()), de modo a se poder visualizar o estado em que estamos. Ao chamar Inicializar() podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro (P3(Seed): 1), sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.</p>
+</div><!-- fragment --><p>Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda: A representação do estado é algo que é implementado na sub-classe (neste caso em <a class="el" href="classCAspirador.html#ab95fe625712f157e5836de7364a53cee" title="Mostra o estado no ecr�, para debug.">CAspirador::Debug()</a>), de modo a se poder visualizar o estado em que estamos. Ao chamar Inicializar() podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro (P3(Seed): 1), sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.</p>
 <p><a class="anchor" id="aspirador-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md40"></a>
 Ação 2 - Explorar os sucessores</h2>

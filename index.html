@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">TProcura </div></div>
+  <div class="headertitle"><div class="title"><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> </div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/jcoelho72/TProcura/issues"><img src="https://img.shields.io/github/issues/jcoelho72/TProcura.svg" alt="GitHub issues" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/jcoelho72/TProcura/network"><img src="https://img.shields.io/github/forks/jcoelho72/TProcura.svg" alt="GitHub forks" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/jcoelho72/TProcura/stargazers"><img src="https://img.shields.io/github/stars/jcoelho72/TProcura.svg" alt="GitHub stars" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/jcoelho72/TProcura/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jcoelho72/TProcura.svg" alt="GitHub license" style="pointer-events: none;" class="inline"/></a></p>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p><a class="anchor" id="s1"></a></p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Sobre o Projeto</h1>
-<p>O <b>TProcura</b> junta testes paramétricos e implementação genérica de algoritmos de procura. <br  />
+<p>O <b><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a></b> junta testes paramétricos e implementação genérica de algoritmos de procura. <br  />
  Em vez de alterar macros e recompilar a cada teste de mudança de parâmetros, propõe-se:</p>
 <ul>
 <li>Estrutura para uma lista de parâmetros, gerida na superclasse</li>
@@ -190,9 +190,9 @@ Funcionalidades</h1>
 <div class="line">│  └─ TProcuraAdversa </div>
 <div class="line">└─ TProcuraMelhorativa  </div>
 </div><!-- fragment --><ul>
-<li>TProcura: modos de execução (interativo, linha de comandos, MPI), gestão de parâmetros e indicadores, execução de testes.</li>
-<li>TProcuraConstrutiva / TProcuraAdversa: algoritmos construtivos e adversos, exigem implementação de sucessores e heurística.</li>
-<li>TProcuraMelhorativa: algoritmos melhorativos (solução inicial, vizinhança, mutação, cruzamento, avaliação).</li>
+<li><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>: modos de execução (interativo, linha de comandos, MPI), gestão de parâmetros e indicadores, execução de testes.</li>
+<li><a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a> / <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>: algoritmos construtivos e adversos, exigem implementação de sucessores e heurística.</li>
+<li><a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>: algoritmos melhorativos (solução inicial, vizinhança, mutação, cruzamento, avaliação).</li>
 </ul>
 <p>Subclasses já fornecem operadores para diferentes representações, restando apenas implementar a avaliação. </p><div class="fragment"><div class="line">── TProcuraMelhorativa    </div>
 <div class="line">   ├─ TRepresentacaoBinaria </div>
@@ -270,7 +270,7 @@ Opção 2 - Download Manual</h2>
 <p>Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme seu ambiente).</p>
 <h2><a class="anchor" id="autotoc_md13"></a>
 Opção 3 - Utilizar como Submódulo</h2>
-<p>Para integrar o TProcura como parte de outro projeto, utilize um submódulo:</p>
+<p>Para integrar o <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> como parte de outro projeto, utilize um submódulo:</p>
 <div class="fragment"><div class="line">git submodule add https://github.com/jcoelho72/TProcura.git</div>
 </div><!-- fragment --><hr  />
 <p><a class="anchor" id="s5"></a></p>
@@ -281,34 +281,34 @@ Uso</h1>
 <li>readaptar um problema similar já implementado.</li>
 </ul>
 <p>Superclasses:</p><ul>
-<li>TProcura - caso o problema não seja de procura, poderá utilizar esta classe para fazer testes paramétricos</li>
-<li>TProcuraConstrutiva - indicado caso tenha um problema de procura, e adopte a abordagem construtiva</li>
-<li>TProcuraMelhorativa - indicado caso tenha um problema de procura ou muito grande, e opte pela abordagem melhorativa</li>
-<li>TCodificacaoBinaria, TCodificacaoInteira, TCodificacaoPermutacao, TCodificacaoReal, TCodificacaoArvore - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores já disponíveis, basta implementar a avaliação.</li>
-<li>TProcuraAdversa - indicado para procuras adversas, ou seja jogos</li>
+<li><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> - caso o problema não seja de procura, poderá utilizar esta classe para fazer testes paramétricos</li>
+<li><a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a> - indicado caso tenha um problema de procura, e adopte a abordagem construtiva</li>
+<li><a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> - indicado caso tenha um problema de procura ou muito grande, e opte pela abordagem melhorativa</li>
+<li><a class="el" href="classTCodificacaoBinaria.html">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html">TCodificacaoReal</a>, <a class="el" href="classTCodificacaoArvore.html">TCodificacaoArvore</a> - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores já disponíveis, basta implementar a avaliação.</li>
+<li><a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> - indicado para procuras adversas, ou seja jogos</li>
 </ul>
 <hr  />
 <p><a class="anchor" id="s6"></a></p>
 <h1><a class="anchor" id="autotoc_md17"></a>
 Exemplos</h1>
-<p>Problemas de exemplo da classe TProcura:</p><ol type="1">
+<p>Problemas de exemplo da classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>:</p><ol type="1">
 <li><a href="teste_tvector.html">TesteTVetor</a></li>
 </ol>
-<p>Problemas de exemplo da classe TProcuraConstrutiva:</p><ol type="1">
+<p>Problemas de exemplo da classe <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>:</p><ol type="1">
 <li>Aspirador (<a href="teste_aspirador1.html">parte 1</a>, <a href="teste_aspirador2.html">parte 2</a>)</li>
 <li><a href="teste_puzzle8.html">Puzzle 8</a></li>
 <li><a href="teste_8damas.html">8 Damas</a></li>
 <li><a href="teste_particao.html">Partição</a></li>
 <li><a href="teste_artificial.html">Artificial</a></li>
 </ol>
-<p>Problemas de exemplo da classe TProcuraMelhorativa:</p><ol type="1">
-<li><a href="teste_8damas_ci.html">8 Damas CI</a> (TCodificacaoInteira)</li>
-<li><a href="teste_8damas_cp.html">8 Damas CP</a> (TCodificacaoPermutacao)</li>
-<li><a href="teste_particao_cb.html">Partição CB</a> (TCodificacaoBinaria)</li>
-<li>? (TCodificacaoReal)</li>
-<li>? (TCodificacaoArvore)</li>
+<p>Problemas de exemplo da classe <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>:</p><ol type="1">
+<li><a href="teste_8damas_ci.html">8 Damas CI</a> (<a class="el" href="classTCodificacaoInteira.html">TCodificacaoInteira</a>)</li>
+<li><a href="teste_8damas_cp.html">8 Damas CP</a> (<a class="el" href="classTCodificacaoPermutacao.html">TCodificacaoPermutacao</a>)</li>
+<li><a href="teste_particao_cb.html">Partição CB</a> (<a class="el" href="classTCodificacaoBinaria.html">TCodificacaoBinaria</a>)</li>
+<li>? (<a class="el" href="classTCodificacaoReal.html">TCodificacaoReal</a>)</li>
+<li>? (<a class="el" href="classTCodificacaoArvore.html">TCodificacaoArvore</a>)</li>
 </ol>
-<p>Problemas de exemplo da classe TProcuraAdversa:</p><ol type="1">
+<p>Problemas de exemplo da classe <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>:</p><ol type="1">
 <li><a href="teste_jogo_do_galo.html">Jogo do Galo</a></li>
 <li><a href="teste_jogo_em_linha.html">Jogo em Linha</a></li>
 </ol>
