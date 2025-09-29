@@ -1,7 +1,24 @@
 name: Teste MPI
 
 on:
-  workflow_dispatch:   # só corre quando tu mandas (não em cada push)
+  workflow_dispatch:
+    inputs:
+      projeto:
+        description: 'Projeto (TProcura, Construtiva, Melhorativa, Adversa)'
+        required: true
+        default: 'TProcura'
+      nproc:
+        description: 'Processos MPI'
+        required: true
+        default: '4'
+      instancias:
+        description: 'Instâncias (ex: 1:10)'
+        required: true
+        default: '1:10'
+      parametros:
+        description: 'Parâmetros (ex: P2=2 P3=1:10)'
+        required: true
+        default: 'P2=2 P3=1:10'
 
 jobs:
   run-mpi:
@@ -13,13 +30,37 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y openmpi-bin libopenmpi-dev
 
       - name: Compilar versão MPI
-        run: make mpi
+        run: |
+          if [ "${{ github.event.inputs.projeto }}" = "TProcura" ]; then
+            cd ./Teste
+          else
+            cd ./${{ github.event.inputs.projeto }}/Teste
+          fi
+          make mpi
 
-      - name: Executar TProcuraMPI
-        run: mpiexec --oversubscribe -n 4 ./TProcuraMPI 1:10 -R resultadoMPI -P P1=2 P2=2 P3=1:10
+      - name: Executar ${{ github.event.inputs.projeto }}
+        run: |
+          if [ "${{ github.event.inputs.projeto }}" = "TProcura" ]; then
+            WORKDIR="./Teste"
+            EXEC="TProcura"
+          else
+            WORKDIR="./${{ github.event.inputs.projeto }}/Teste"
+            EXEC="TProcura${{ github.event.inputs.projeto }}"
+          fi
+
+          cd $WORKDIR
+          mpiexec --oversubscribe -n ${{ github.event.inputs.nproc }} \
+            ./bin/MPI/$EXEC \
+            ${{ github.event.inputs.instancias }} \
+            -R ./Resultados/resultadoMPI \
+            -P ${{ github.event.inputs.parametros }}
 
       - name: Guardar resultados
         uses: actions/upload-artifact@v4
         with:
-          name: resultados
-          path: resultadoMPI.csv
+          name: resultados-${{ github.event.inputs.projeto }}-${{ github.run_id }}
+          path: |
+            ./Teste/Resultados/resultadoMPI.csv
+            ./Adversa/Teste/Resultados/resultadoMPI.csv
+            ./Construtiva/Teste/Resultados/resultadoMPI.csv
+            ./Melhorativa/Teste/Resultados/resultadoMPI.csv

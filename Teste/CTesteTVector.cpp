@@ -86,11 +86,11 @@ void CTesteTVector::Debug(bool completo)
 	else {
 		if (stdA.size() < 6)
 			return;
-		printf("\nDados #%d: ", stdA.size());
+		printf("\nDados #%" PRId64 ": ", stdA.size());
 		for (int i = 0; i < 3; i++)
 			printf("%d ", stdA[i]);
 		printf("... ");
-		for (int i = stdA.size() - 3; i < stdA.size(); i++)
+		for (std::size_t i = stdA.size() - 3; i < stdA.size(); i++)
 			printf("%d ", stdA[i]);
 	}
 }
@@ -183,7 +183,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				else {
 					std::sort(dadosA.begin(), dadosA.end());
-					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin());
+					dadosA.Count((int)(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin()));
 				}
 				break;
 			case 6: // Difference
@@ -214,9 +214,9 @@ int CTesteTVector::ExecutaAlgoritmo()
 				else {
 					// deixa A e B como sets
 					std::sort(dadosA.begin(), dadosA.end());
-					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin());
+					dadosA.Count((int)(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin()));
 					std::sort(dadosB.begin(), dadosB.end());
-					dadosB.Count(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin());
+					dadosB.Count((int)(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin()));
 					dadosA.Difference(dadosB);
 				}
 				break;
@@ -245,9 +245,9 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				else {
 					std::sort(dadosA.begin(), dadosA.end());
-					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin());
+					dadosA.Count((int)(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin()));
 					std::sort(dadosB.begin(), dadosB.end());
-					dadosB.Count(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin());
+					dadosB.Count((int)(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin()));
 					dadosA.Union(dadosB);
 				}
 				break;
@@ -255,18 +255,18 @@ int CTesteTVector::ExecutaAlgoritmo()
 				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					std::sort(stdA.begin(), stdA.end());
 					std::sort(stdB.begin(), stdB.end());
-					std::includes(
-						stdB.begin(), stdB.end(),
-						stdA.begin(), stdA.end()
-					);
+					(void) std::includes(
+							stdB.begin(), stdB.end(),
+							stdA.begin(), stdA.end()
+						);
 				}
 				else {
 					std::sort(dadosA.begin(), dadosA.end());
 					std::sort(dadosB.begin(), dadosB.end());
-					std::includes(
-						dadosB.begin(), dadosB.end(),
-						dadosA.begin(), dadosA.end()
-					);
+					(void) std::includes(
+							dadosB.begin(), dadosB.end(),
+							dadosA.begin(), dadosA.end()
+						);
 				}
 				break;
 			case 9: // Intersection
@@ -294,9 +294,9 @@ int CTesteTVector::ExecutaAlgoritmo()
 				}
 				else {
 					std::sort(dadosA.begin(), dadosA.end());
-					dadosA.Count(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin());
+					dadosA.Count((int)(std::unique(dadosA.begin(), dadosA.end()) - dadosA.begin()));
 					std::sort(dadosB.begin(), dadosB.end());
-					dadosB.Count(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin());
+					dadosB.Count((int)(std::unique(dadosB.begin(), dadosB.end()) - dadosB.begin()));
 					dadosA.Intersection(dadosB);
 				}
 				break;
@@ -342,7 +342,7 @@ int64_t CTesteTVector::Indicador(int id)
 				}
 		}
 		else {
-			for (int i = 0; i < stdA.size() - 1; i++)
+			for (std::size_t i = 0; i < stdA.size() - 1; i++)
 				if (stdA[i] > stdA[i + 1]) {
 					Debug(COMPLETO, false, "\nordem %d > %d (%d,%d)",
 							i, i + 1, stdA[i], stdA[i + 1]);

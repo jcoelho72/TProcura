@@ -30,7 +30,7 @@ void CParticao::Inicializar(void)
 	}
 	// acertar a paridade, muito embora não se saiba se há ou não solução
 	if ((soma1 + soma2) % 2 == 1)
-		numeros.Last() + 1;
+		numeros.Last() += 1;
 	// garantir que há uma solução
 	//if (soma1 != soma2)
 	//	numeros += abs(soma1 - soma2);
@@ -177,12 +177,12 @@ void CParticaoCB::Inicializar(void) {
 	for (int i = 0; i < instancia.valor; i++) {
 		numeros += (TRand::rand() % (3 * instancia.valor));
 		if (soma1 < soma2)
-			soma1 += estado.Last();
-		else soma2 += estado.Last();
+			soma1 += (int)estado.Last();
+		else soma2 += (int)estado.Last();
 	}
 	// acertar a paridade, muito embora não se saiba se há ou não solução
 	if ((soma1 + soma2) % 2 == 1)
-		numeros.Last() + 1;
+		numeros.Last() += 1;
 	// garantir que há uma solução
 	//if (soma1 != soma2)
 	//	estado += abs(soma1 - soma2);
@@ -207,7 +207,7 @@ int CParticaoCB::Avaliar(void) {
 
 void CParticaoCB::Debug(bool completo)
 {
-	int i, j, esq = 0, dir = 0;
+	int i, esq = 0, dir = 0;
 	TVector<int> nEsq, nDir;
 
 	if(!completo) {

@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "../TProcuraConstrutiva.h"
 
-#define MAX_DAMAS 40
+constexpr int MAX_DAMAS = 40;
 
 /**
  * @brief Representa um estado do problema das 8 damas

@@ -17,10 +17,13 @@ jobs:
       run: sudo apt-get update && sudo apt-get install -y g++ doxygen
     - name: Compilar
       run: make
+      working-directory: ./Teste
     - name: Executar testes
       run: make check
+      working-directory: ./Teste
 #    - name: make distcheck
 #      run: make distcheck
+#      working-directory: ./Teste
     - name: Gerar documentação
       run: doxygen Doxyfile
     - name: Gerar layout.xml se não existir

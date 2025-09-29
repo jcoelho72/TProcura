@@ -15,7 +15,7 @@
 //    Generalizado para N damas, o ID da instância é o número de damas
 ///////////////////////////////////////////////////////////////////////////////
 
-#define MAX_DAMAS 40
+constexpr int MAX_DAMAS = 40;
 
 class COitoDamas :
 	public TProcuraMelhorativa
@@ -45,7 +45,7 @@ public:
 	}
 
 	void Inicializar(void);
-	bool SolucaoCompleta(void) { return damas.Count() == nDamas; }
+	bool SolucaoCompleta(void) const { return damas.Count() == nDamas; }
 	void Debug(bool completo = true) override;
 	void MostrarSolucao(void) { Debug(); }
 	void ResetParametros() {

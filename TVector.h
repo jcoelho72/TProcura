@@ -14,6 +14,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include <initializer_list>
 #include "TRand.h"
 
@@ -49,10 +50,10 @@ private:
 	void ExchIdx(int i, int j) { int a = (*idx)[i]; (*idx)[i] = (*idx)[j]; (*idx)[j] = a; }
 
 	/// Retorna o mínimo de dois valores
-	static inline int Min(int a, int b) noexcept { 	return (a < b) ? a : b; }
+	static inline int Min(int a, int b) noexcept { return (a < b) ? a : b; }
 
 	/// Retorna o máximo de dois valores
-	static inline int Max(int a, int b) noexcept { 	return (a > b) ? a : b; }
+	static inline int Max(int a, int b) noexcept { return (a > b) ? a : b; }
 
 public:
 	static Item erro;  /**< Valor retornado em casos de erro (acesso inválido). */
@@ -152,7 +153,7 @@ public:
 		int oldCount = Count();
 		Count(oldCount + static_cast<int>(init.size()));
 		int i = 0;
-		for (const auto& val : init) 
+		for (const auto& val : init)
 			v[oldCount + i++] = val;
 		return *this;
 	}
@@ -330,7 +331,7 @@ public:
 	friend TVector<Item> operator+(TVector<Item> a, const TVector<Item>& b) { a += b; return a; }
 
 	/** Compara igualdade de conjuntos (usando Equal). */
-	friend bool operator==(const TVector<Item>& a, const TVector<Item>& b) { return a.Equal(b);	}
+	friend bool operator==(const TVector<Item>& a, const TVector<Item>& b) { return a.Equal(b); }
 
 	/** Compara desigualdade de conjuntos. */
 	friend bool operator!=(const TVector<Item>& a, const TVector<Item>& b) { return !a.Equal(b); }
@@ -369,7 +370,8 @@ void TVector<Item>::Size(int size)
 {
 	Item* aux = new Item[size];
 	if (v != nullptr) {
-		for (int k = 0; k < count; ++k)
+		int limite = (count < size ? count : size);
+		for (int k = limite - 1; k >= 0; --k)
 			aux[k] = v[k];
 		delete[] v;
 	}
@@ -1086,18 +1088,19 @@ int TVector<Item>::Distance(TVector<Item>& other, int type)
 
 template<>
 inline TVector<int>::TVector(const char* str) {
-	char buf[256], *bufferGrande = nullptr;
+	char buf[256] = "", * bufferGrande = nullptr;
 	char* token = buf;
 	char* pt;
+	size_t tamanho = 0;
 	if (!str || *str == '\0')
 		return;
 
-	if(strlen(str)<256)
-		strcpy(buf, str);
+	if ((tamanho = (int)strlen(str)) < 256)
+		snprintf(buf, sizeof(buf), "%s", str);
 	else {
-		if ((bufferGrande = new char[strlen(str) + 1]) == nullptr)
+		if ((bufferGrande = new char[tamanho + 1]) == nullptr)
 			return;
-		strcpy(bufferGrande, str);
+		snprintf(bufferGrande, tamanho + 1, "%s", str);
 		token = bufferGrande;
 	}
 
@@ -1137,7 +1140,7 @@ inline TVector<int>::TVector(const char* str) {
 			*this += atoi(token);
 	}
 	BeASet();
-	if (bufferGrande) 
+	if (bufferGrande)
 		delete[] bufferGrande;
 }
 

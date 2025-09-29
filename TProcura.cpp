@@ -4,11 +4,10 @@
 #include <time.h>
 #include <string.h>
 #include <ctype.h>
-#include <inttypes.h> 
 #ifdef MPI_ATIVO
 #include <mpi.h>
 #endif
-#define BUFFER_SIZE 1024
+constexpr int BUFFER_SIZE = 1024;
 
 // Resultado retornado pelo algoritmo na última execução.
 int TProcura::resultado = 0;
@@ -281,7 +280,7 @@ void TProcura::ConfiguracaoAtual(TVector<int>& parametros, int operacao) {
 
 char* TProcura::MostraTempo(double segundos)
 {
-	static char str[BUFFER_SIZE], str2[BUFFER_SIZE];
+	static char str[BUFFER_SIZE];
 	static const int64_t segundo = 1000;
 	static const int64_t minuto = 60 * segundo;
 	static const int64_t hora = 60 * minuto;
@@ -289,7 +288,6 @@ char* TProcura::MostraTempo(double segundos)
 	static const int64_t semana = 7 * dia;
 	static const int64_t mes = 30 * dia;
 	static const int64_t ano = 365 * dia;
-	static int count = 0;
 
 	static TVector<int64_t> unidades = { ano, mes, semana, dia, hora, minuto, segundo };
 
@@ -298,24 +296,17 @@ char* TProcura::MostraTempo(double segundos)
 	};
 
 	int64_t ms = (int64_t)(1000 * segundos + 0.5);
+	int len = 0;
+	str[0] = 0;
 
-	strcpy(str, "");
 	for (int i = 0; i < unidades.Count(); i++)
 		if (ms >= unidades[i]) {
-			sprintf(str2, "%s%lld%c ", str, ms / unidades[i], unidadesStr[i]);
-			strcpy(str, str2);
+			len += snprintf(str + len, sizeof(str) - len, "%" PRId64 "%c ", ms / unidades[i], unidadesStr[i]);
 			ms %= unidades[i];
 		}
-	if (ms > 0) {
-		sprintf(str2, "%s%lldms ", str, ms);
-		strcpy(str, str2);
-	}
+	if (ms > 0) 
+		len += snprintf(str + len, sizeof(str) - len, "%" PRId64 "ms ", ms);
 
-	// permite até duas chamadas em simultâneo
-	if ((count++) % 2 == 0) {
-		strcpy(str2, str);
-		return str2;
-	}
 	return str;
 }
 
@@ -401,17 +392,17 @@ Comando: ");
 }
 
 void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
-	char* pt;
+	char* pt, *contexto;
 	TVector<int> currente, produto;
 	TVector<TVector<int>> valores;
 
 	// processar todos os itens a iniciar em P, obtendo informação entre quais existe x
-	pt = strtok(str, " \n\t\r");
+	pt = compat::strtok(str, " \n\t\r", &contexto);
 	while (pt) {
 		if (*pt == 'P') {
 			char* pt2;
 			int param;
-			if (pt2 = strchr(pt + 1, '=')) {
+			if ((pt2 = strchr(pt + 1, '='))) {
 				*pt2 = 0;
 				param = atoi(pt + 1);
 				if (param > 0 && param <= parametro.Count()) {
@@ -436,7 +427,7 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 			valores.Count(valores.Count() + 1);
 			valores.Last() += 0; // produto externo
 		}
-		pt = strtok(NULL, " \n\t\r");
+		pt = compat::strtok(NULL, " \n\t\r", &contexto);
 	}
 	// inserir configurações de acordo com o pretendido (produto externo, ou apenas à configuração base)
 	produto = {};
@@ -565,10 +556,10 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 		MPI_Reduce(&tempoLocal, &tempoMaximo, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
 #endif
 
-		if (mpiCount > 1 && mpiID == 0) 
+		if (mpiCount > 1 && mpiID == 0)
 			// tenta juntar ficheiros, caso existam os ficheiros dos outros processos
 			JuntarCSV(ficheiro);
-		if(mpiID == 0)
+		if (mpiID == 0)
 			Debug(ATIVIDADE, false,
 				"\nFicheiro %s.csv gravado.\n"
 				"Tempo real: %s",
@@ -812,9 +803,8 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 // processa os argumentos da função main
 void TProcura::main(int argc, char* argv[], const char* nome) {
 	TVector<int> instancias;
-	bool mostrarSolucoes = false;
 	char fichResultados[256];
-	char argParametros[BUFFER_SIZE];
+	char argParametros[BUFFER_SIZE] = "";
 
 	std::locale::global(std::locale(""));
 
@@ -834,7 +824,7 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		return;
 	}
 
-	strcpy(fichResultados, "resultados");
+	snprintf(fichResultados, sizeof(fichResultados), "resultados");
 
 	ResetParametros();
 
@@ -845,35 +835,32 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 	// -P P1=1:3 x P2=0:2 --- formatação de parâmetros (idêntico ao interativo)
 	for (int i = 2; i < argc; i++) {
 		if (strcmp(argv[i], "-R") == 0 && i + 1 < argc) {
-			strcpy(fichResultados, argv[i + 1]);
+			snprintf(fichResultados, sizeof(fichResultados), "%s", argv[i + 1]);
 		}
 		else if (strcmp(argv[i], "-F") == 0 && i + 1 < argc) {
-			strcpy(ficheiroInstancia, argv[i + 1]);
+			snprintf(ficheiroInstancia, sizeof(ficheiroInstancia), "%s", argv[i + 1]);
 		}
 		else if (strcmp(argv[i], "-M") == 0 && i + 1 < argc) {
 			if ((modoMPI = atoi(argv[i + 1])) != 1)
 				modoMPI = 0; // apenas 0 ou 1
 		}
-		else if (strcmp(argv[i], "-S") == 0) {
-			mostrarSolucoes = true;
-		}
 		else if (strcmp(argv[i], "-I") == 0 && i + 1 < argc) {
-			char* pt = strtok(argv[i + 1], ",");
+			char* contexto;
+			char* pt = compat::strtok(argv[i + 1], ",", &contexto);
 			indAtivo = {};
 			while (pt) {
 				indAtivo += (atoi(pt) - 1);
 				indicador[indAtivo.Last()].indice = indAtivo.Count() - 1;
-				pt = strtok(NULL, ",");
+				pt = compat::strtok(NULL, ",", &contexto);
 			}
 		}
 		else if (strcmp(argv[i], "-P") == 0 && i + 1 < argc) {
 			TVector<int> base;
 			// o resto é para concatenar e enviar
-			strcpy(argParametros, "");
-			while (++i < argc) {
-				strcat(argParametros, " ");
-				strcat(argParametros, argv[i]);
-			}
+			int len = 0;
+			argParametros[0] = 0;
+			while (++i < argc) 
+				len += snprintf(argParametros + len, sizeof(argParametros) - len, " %s", argv[i]);
 			ConfiguracaoAtual(base, LER);
 			InserirConfiguracoes(argParametros, base);
 			ConfiguracaoAtual(base, GRAVAR);
@@ -911,7 +898,6 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 		"  -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)\n"
 		"  -M <modo>       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador\n"
 		"  -I <ind>        Lista de indicadores (e.g. 2,1,3)\n"
-		"  -S              Mostrar soluções durante a execução\n"
 		"  -h              Esta ajuda\n"
 		"  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo\n"
 		"Exemplo: %s 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2 \n"
@@ -927,13 +913,14 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 
 
 bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
-	char* pt = strtok(ficheiro, " \n\t\r");
+	char * contexto;
+	char* pt = compat::strtok(ficheiro, " \n\t\r", &contexto);
 	char str[BUFFER_SIZE];
 	if (mpiCount > 1)
-		sprintf(str, "%s_%d.csv", pt, mpiID);
+		snprintf(str, sizeof(str), "%s_%d.csv", pt, mpiID);
 	else
-		sprintf(str, "%s.csv", pt);
-	FILE* f = fopen(str, "wt");
+		snprintf(str, sizeof(str), "%s.csv", pt);
+	FILE* f = compat::fopen(str, "wt");
 	if (f != NULL) {
 		// escrever BOM UTF-8 (apenas no mpiID 0)
 		const unsigned char bom[] = { 0xEF,0xBB,0xBF };
@@ -950,7 +937,7 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
 			fprintf(f, "I%d(%s);", item + 1, indicador[item].nome);
 		fprintf(f, "\n");
 
-		for (auto res : resultados) {
+		for (auto& res : resultados) {
 			fprintf(f, "%d;", res.instancia);
 			for (int j = 0; j < parametro.Count(); j++)
 				// ver se parametro j está ativo na configuração configuracoes[res.configuracao]
@@ -1007,10 +994,10 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 		printf("%10s|", indicador[ind].nome);
 
 	printf("\n----|----|");
-	for (auto ind : indAtivo)
+	for (int i = 0; i < indAtivo.Count(); i++)
 		printf("----------|");
 
-	for (auto res : resultados) {
+	for (auto &res : resultados) {
 		if (Registo(res, IND_RESULTADO) >= -1)
 			total[res.configuracao].instancia++;
 		printf("\n%3d |%3d |", res.instancia, res.configuracao + 1);
@@ -1024,7 +1011,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 				Registo(res, ind));
 	}
 	printf("\n----|----|");
-	for (auto ind : indAtivo)
+	for (int i = 0; i < indAtivo.Count(); i++)
 		printf("----------|");
 	printf("resolvidas");
 	// tabela com os totais por configuração
@@ -1109,7 +1096,7 @@ void TProcura::MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo)
 
 TVector<TResultado>  TProcura::ExtrairConfiguracao(TVector<TResultado>& resultados, int configuracao) {
 	TVector<TResultado> extracao;
-	for (auto res : resultados)
+	for (auto &res : resultados)
 		if (res.configuracao == configuracao)
 			extracao += res;
 	return extracao;
@@ -1198,13 +1185,14 @@ void TProcura::SolicitaInstancia() {
 		texto = NovoTexto("");
 		resultado = atoi(texto);
 		if (resultado != 0 || strlen(texto) <= 1) {
-			if(resultado != 0)
+			if (resultado != 0)
 				instancia.valor = resultado;
 			Dominio(instancia.valor, instancia.min, instancia.max);
 		}
 		else if (strlen(texto) < 256) {
-			char* pt = strtok(texto, " \n\t\r");
-			strcpy(ficheiroInstancia, pt);
+			char* contexto;
+			char* pt = compat::strtok(texto, " \n\t\r", &contexto);
+			snprintf(ficheiroInstancia, sizeof(ficheiroInstancia), "%s", pt);
 		}
 	}
 	else
@@ -1263,24 +1251,24 @@ bool TProcura::JuntarCSV(const char* ficheiro)
 
 	// verifica se existem os ficheiros intermédios
 	for (int i = 0; i < mpiCount; i++) {
-		sprintf(nome, "%s_%d.csv", ficheiro, i);
-		if ((fLer = fopen(nome, "rt")) == NULL)
+		snprintf(nome, sizeof(nome), "%s_%d.csv", ficheiro, i);
+		if ((fLer = compat::fopen(nome, "rt")) == NULL)
 			// não existe este ficheiro, ainda não está tudo
 			return false;
 		fclose(fLer);
 	}
 
 	// todos os ficheiros existem, juntar
-	sprintf(nome, "%s.csv", ficheiro);
-	fGravar = fopen(nome, "wt");
+	snprintf(nome, sizeof(nome), "%s.csv", ficheiro);
+	fGravar = compat::fopen(nome, "wt");
 	if (fGravar == NULL) {
 		printf("\nErro ao gravar ficheiro %s.", nome);
 		return false;
 	}
 
 	for (int i = 0; i < mpiCount; i++) {
-		sprintf(nome, "%s_%d.csv", ficheiro, i);
-		fLer = fopen(nome, "rt");
+		snprintf(nome, sizeof(nome), "%s_%d.csv", ficheiro, i);
+		fLer = compat::fopen(nome, "rt");
 		if (fLer == NULL) {
 			printf("\nErro ao ler ficheiro %s.", nome);
 			continue;

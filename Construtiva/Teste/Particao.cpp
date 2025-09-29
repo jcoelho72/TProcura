@@ -37,7 +37,7 @@ void CParticao::Inicializar(void)
 	}
 	// acertar a paridade, muito embora não se saiba se há ou não solução
 	if ((soma1 + soma2) % 2 == 1)
-		numeros.Last() + 1;
+		numeros.Last() += 1;
 	// garantir que há uma solução
 	//if (soma1 != soma2)
 	//	numeros += abs(soma1 - soma2);
@@ -83,7 +83,7 @@ const char* CParticao::Acao(TProcuraConstrutiva* sucessor) {
 
 void CParticao::Debug(bool completo)
 {
-	int i, j;
+	int i;
 	NovaLinha();
 	printf("Colocar #%d: %d = %d",
 		numeros.Count(), totalEsquerda, totalDireita);

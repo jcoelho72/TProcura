@@ -4,9 +4,9 @@
 #include "../TProcura.h"
 
 // número de elementos na hashtable com perdas
-#define TAMANHO_HASHTABLE 1000000
+constexpr int TAMANHO_HASHTABLE = 1000000;
 // tamanho máximo de um objecto, em unidades de 64 bits
-#define OBJETO_HASHTABLE 5
+constexpr int OBJETO_HASHTABLE = 5;
 
 class TProcuraConstrutiva;
 
@@ -725,7 +725,7 @@ protected:
 	// uma nova iteração de um algoritmo iterativo
 	void DebugIteracao(int iteracao);
 	// informação geral sobre o estado 
-	void DebugEstado(int id = -1, int pai = -1);
+	void DebugEstado(int id = -1, int pai = -1) const;
 	void DebugRamo(char ramo, char folha);
 
 	// metodos internos

@@ -4,8 +4,7 @@
 #include <math.h>
 #include <string.h>
 
-#define BUFFER_SIZE 1024
-
+constexpr int BUFFER_SIZE = 1024;
 
 // valor de infinito (vitoria/derrota), omissao 1000
 int TProcuraAdversa::infinito = 1000;
@@ -214,7 +213,7 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 // - calcular o número de ameaças de vitória, para cada lado, de menor comprimento:
 //   - qMin - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente; 
 //   - qMax - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente; 
-int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int maxAmeaca)
+int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int maxAmeaca) const
 {
 	int pontos = 0, peso = 1;
 
@@ -241,7 +240,7 @@ int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int max
 			peso <<= 1;
 	}
 
-	return infinito * (2 / (1 + exp(-0.01 * pontos)) - 1);
+	return (int)(infinito * (2 / (1 + exp(-0.01 * pontos)) - 1));
 }
 
 // fim da procura, por corte de nível (ou não haver sucessores), retornar heurística
@@ -550,7 +549,7 @@ int TProcuraAdversa::ExecutaAlgoritmo() {
 	if (Parametro(ORDENAR_SUCESSORES) == 2) {
 		Parametro(ESTADOS_REPETIDOS) = GERADOS;
 		if (reutilizadoAvaliacao > 0 && Parametro(NIVEL_DEBUG) >= ATIVIDADE) {
-			float taxa = 1.0 * reutilizadoAvaliacao / colocadosHT;
+			float taxa = (float)(1.0 * reutilizadoAvaliacao / colocadosHT);
 			LimparHT();
 			printf(" HT: reutilização %.2f vezes ", taxa);
 		}

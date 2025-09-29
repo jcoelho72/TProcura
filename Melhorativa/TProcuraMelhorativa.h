@@ -44,7 +44,7 @@ public:
 	~TProcuraMelhorativa(void);
 
 	/// @brief Custo total, atualizada após Avaliar()
-	int custo;
+	int custo = -1;
 	/// @brief Lower Bound, se existir
 	static int lowerBound;
 	/// @brief Número de estados gerados 

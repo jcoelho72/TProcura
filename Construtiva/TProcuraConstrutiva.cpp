@@ -5,8 +5,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#define BUFFER_SIZE 1024
-
+constexpr int BUFFER_SIZE = 1024;
 
 // auxiliar para construcao da arvore de procura
 TVector<unsigned char> TProcuraConstrutiva::ramo;
@@ -680,7 +679,7 @@ void TProcuraConstrutiva::DebugIteracao(int iteracao) {
 }
 
 // informação geral sobre o estado 
-void TProcuraConstrutiva::DebugEstado(int id, int pai) {
+void TProcuraConstrutiva::DebugEstado(int id, int pai) const {
 	if (id >= 0) {
 		printf("#%d ", id);
 		if (pai >= 0)
@@ -777,7 +776,7 @@ void TProcuraConstrutiva::Explorar() {
 					backup = caminho;
 					caminho = {};
 					LimparEstatisticas();
-					int resultado;
+					int resultad = 0;
 					switch (resultado = ExecutaAlgoritmo()) {
 					case -1: printf("Impossível\n"); break;
 					case -2: printf("Não resolvido\n"); break;

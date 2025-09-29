@@ -84,7 +84,7 @@ void TCodificacaoBinaria::Mutar(void) {
 		Debug(EXTRA_DEBUG, false, " mutar prob p(%d)",	p);
 		// cada bit com probabilidade p
 		for (int i = 0; i < nElementos; i++)
-			if (TRand::rand() % 100 < p)
+			if (TRand::rand() % 100 < (unsigned)p)
 				Troca(i);
 		custo = -1;
 	}

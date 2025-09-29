@@ -233,7 +233,7 @@ void TCodificacaoInteira::Mutar(void) {
 			p, limiteVizinhanca);
 		// cada elemento com probabilidade p
 		for (int i = 0; i < nElementos; i++)
-			if (TRand::rand() % 100 < p) {
+			if (TRand::rand() % 100 < (unsigned)p) {
 				if (limiteVizinhanca) {
 					estado[i] += TRand::rand() % (2 * limiteVizinhanca + 1) - limiteVizinhanca;
 					estado[i] = (estado[i] + maxValor[i]) % maxValor[i]; // garantir positivo

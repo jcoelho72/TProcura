@@ -90,7 +90,7 @@ public:
 	 * - qMin - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente; 
 	 * - qMax - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente; 
 	 */
-	int MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int maxAmeaca);
+	int MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int maxAmeaca) const;
 
 protected:
 	/// @brief fim da procura, por corte de nível (ou não haver sucessores), retornar heurística

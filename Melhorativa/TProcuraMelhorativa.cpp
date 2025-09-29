@@ -4,8 +4,7 @@
 #include <time.h>
 #include <string.h>
 
-
-#define BUFFER_SIZE 1024
+constexpr int BUFFER_SIZE = 1024;
 
 /// @brief Lower Bound, se existir
 int TProcuraMelhorativa::lowerBound = 0;
@@ -15,7 +14,7 @@ int TProcuraMelhorativa::geracoes = 0;
 int TProcuraMelhorativa::epocas = 0;
 
 
-TProcuraMelhorativa::TProcuraMelhorativa(void)
+TProcuraMelhorativa::TProcuraMelhorativa(void) 
 {
 	geracoes++; // cada estado criado conta como uma geração
 }
@@ -580,7 +579,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 			// ordenar por custo
 			OrdemValor(competidores, id);
 			// escolher melhor ou segundo melhor
-			if ((TRand::rand() % 100) < probMelhor)
+			if ((TRand::rand() % 100) < (unsigned)probMelhor)
 				pais += competidores[id[0]];
 			else
 				pais += competidores[id[1 % tamanho]];
@@ -628,7 +627,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 		else {
 			TPonto mae = pais.Pop();
 			custoPais += mae->custo;
-			if (TRand::rand() % 100 < Parametro(PROB_CRUZAR)) {
+			if (TRand::rand() % 100 < (unsigned)Parametro(PROB_CRUZAR)) {
 				// gerar um novo individuo por cruzamento
 				TPonto filho = pai->Duplicar();
 				filho->Cruzamento(pai, mae);
@@ -648,7 +647,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 	// mutar e avaliar descendentes
 	for (auto descendente : descendentes) {
 		// mudar o novo elemento, dependente da probabilidade
-		if (TRand::rand() % 100 < Parametro(PROB_MUTAR)) {
+		if (TRand::rand() % 100 < (unsigned)Parametro(PROB_MUTAR)) {
 			descendente->Mutar();
 			mutacoes++;
 		}

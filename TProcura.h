@@ -1,18 +1,17 @@
 #pragma once
 
-#define _CRT_SECURE_NO_WARNINGS
-
 #include "TVector.h"
 #include <time.h>
 #include <stdint.h>
 #include <limits.h>
 #include <stdio.h>
+#include <inttypes.h> 
 #include <cstdarg>
+#include "compact.h"
 
 
 // código para número não lido (não deve ser utilizado num parâmetro)
-#define NAO_LIDO -1000000
-
+constexpr int NAO_LIDO = 1024;
 
 enum EIndicadoresProcura {
 	IND_RESULTADO = 0, ///< resultado do algoritmo
@@ -135,18 +134,18 @@ typedef struct SIndicador {
  */
 typedef struct SParametro {
 	/// @brief nome do parametro, opcional mas aconselhado nos parâmetros específicos
-	const char* nome;
+	const char* nome = "Indefinido";
 	/// @brief valor do parametro
-	int valor;
+	int valor = 0;
 	/// @brief valor mínimo que o parametro pode tomar
-	int min;
+	int min = 0;
 	/// @brief valor máximo que o parametro pode tomar
-	int max;
+	int max = 0;
 	/// @brief descrição do parametro, opcional 
-	const char* descricao = NULL;
+	const char* descricao = nullptr;
 	/// @brief Nome associado a cada valor do parâmetro, útil para variáveis categóricas.
 	/// @note Especialmente relevante quando os valores não seguem uma sequência ordenada.
-	const char** nomeValores = NULL;
+	const char** nomeValores = nullptr;
 	/// @brief dependência (indice do parametro, seguido de valores permitidos) - vazio não tem dependência
 	TVector<int> dependencia;
 } TParametro;
@@ -160,7 +159,7 @@ typedef struct SParametro {
  * o desempenho de algoritmos e respetivas parametrizações.
  */
 typedef struct SResultado {
-	int instancia, configuracao;
+	int instancia = 0, configuracao = 0;
 	TVector<int64_t> valor; // valor para cada indicador selecionado (fixos os EIndicadoresProcura, resultado, tempo, iterações)
 } TResultado;
 
