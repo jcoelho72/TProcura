@@ -4,10 +4,10 @@ PROJECT_BRIEF          = "Biblioteca em C++ para testes paramétricos de algorit
 OUTPUT_DIRECTORY       = docs
 HTML_OUTPUT            = html
 
-EXCLUDE += */Resultados/*
+EXCLUDE += */Resultados/README.md
 
 # Definir diretórios de entrada
-INPUT                  = . docs/
+INPUT                  = ./README.md ./docs/
 RECURSIVE              = YES
 IMAGE_PATH             = docs/images
 LAYOUT_FILE            = layout.xml
