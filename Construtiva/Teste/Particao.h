@@ -17,7 +17,7 @@ public:
 
 	// estrutura de dados (números a colocar, números colocados em cada lado, e total de cada lado)
 	TVector<int> numeros, esquerda, direita;
-	int totalEsquerda, totalDireita;
+	int totalEsquerda = 0, totalDireita = 0;
 
 	// Metodos virtuais redefinidos
 	TProcuraConstrutiva* Duplicar(void);

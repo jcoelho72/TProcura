@@ -278,6 +278,8 @@ void TCodificacaoPermutacao::Mutar(void) {
 			(ETiposVizinhancaPermutacao)Parametro(TIPO_VIZINHO_CP);
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
+		if(abs(i-j)>limiteVizinhanca && limiteVizinhanca>0)
+			j = (i + (TRand::rand() % (2 * limiteVizinhanca + 1)) - limiteVizinhanca + nElementos) % nElementos;
 		Debug(EXTRA_DEBUG, false, " mutar vizinho %s (%d,%d)",
 			nomesVizinhanca[tipo - 1], i, j);
 		if (tipo == vizInserirCP) {

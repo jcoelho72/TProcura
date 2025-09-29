@@ -123,7 +123,7 @@ void CPuzzle8::MostrarSolucao(void) {
 		// reportar uma parte, e iniciar outra
 		if (i == caminho.Count()-1 ||
 			contador[((CPuzzle8*)caminho[i + 1])->zero] > 0 ||
-			i<caminho.Count()-2 && contador[((CPuzzle8*)caminho[i + 2])->zero] > 0)
+			(i<caminho.Count()-2 && contador[((CPuzzle8*)caminho[i + 2])->zero] > 0))
 		{
 			printf("\nParte %d, ações:", parte);
 			// mostrar ações

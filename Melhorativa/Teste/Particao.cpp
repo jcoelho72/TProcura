@@ -4,7 +4,7 @@
 
 TVector<int> CParticaoCB::numeros; // número de elementos a particionar
 
-CParticao::CParticao(void) : totalDireita(0), totalEsquerda(0)
+CParticao::CParticao(void) 
 {
 }
 

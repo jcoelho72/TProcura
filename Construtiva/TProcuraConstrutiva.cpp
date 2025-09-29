@@ -776,7 +776,7 @@ void TProcuraConstrutiva::Explorar() {
 					backup = caminho;
 					caminho = {};
 					LimparEstatisticas();
-					int resultad = 0;
+					int resultado = 0;
 					switch (resultado = ExecutaAlgoritmo()) {
 					case -1: printf("Impossível\n"); break;
 					case -2: printf("Não resolvido\n"); break;

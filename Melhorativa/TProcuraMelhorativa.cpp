@@ -14,7 +14,7 @@ int TProcuraMelhorativa::geracoes = 0;
 int TProcuraMelhorativa::epocas = 0;
 
 
-TProcuraMelhorativa::TProcuraMelhorativa(void) 
+TProcuraMelhorativa::TProcuraMelhorativa(void)
 {
 	geracoes++; // cada estado criado conta como uma geração
 }
@@ -43,7 +43,7 @@ void TProcuraMelhorativa::ResetParametros()
 	static const char* nomesDiversidade[] = {
 		"Nenhuma",
 		"Avaliação partilhada",
-		"Limpeza"   
+		"Limpeza"
 	};
 
 	TProcura::ResetParametros();
@@ -412,7 +412,7 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 		populacao.Count()))
 	{
 		int minimo, maximo;
-		if(populacao.Empty())
+		if (populacao.Empty())
 			return;
 		ObterExtremos(populacao, minimo, maximo);
 		Debug(PASSOS, false, " (g: %d a %d)", minimo, maximo);
@@ -448,8 +448,8 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 			}
 			else { // distâncias entre dois elementos aleatórios
 				TVector<int> id;
-				for (auto individuo : populacao)
-					id += id.Count();
+				for (int i = 0; i < populacao.Count(); i++)
+					id += i;
 				id.RandomOrder();
 				Debug(COMPLETO, false, "\nInd |Ind | g  |\n----|----|----|");
 				for (int i = 0; i < id.Count(); i += 2)
@@ -460,7 +460,7 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 	}
 }
 
-void TProcuraMelhorativa::DebugPopulacaoAE(TVector<TPonto>& populacao, const char *titulo)
+void TProcuraMelhorativa::DebugPopulacaoAE(TVector<TPonto>& populacao, const char* titulo)
 {
 	Debug(COMPLETO, false, titulo);
 	for (int i = 0; i < populacao.Count(); i++) {
@@ -470,7 +470,7 @@ void TProcuraMelhorativa::DebugPopulacaoAE(TVector<TPonto>& populacao, const cha
 	}
 }
 
-void TProcuraMelhorativa::DiversidadeAE(TVector<TPonto>& populacao, 
+void TProcuraMelhorativa::DiversidadeAE(TVector<TPonto>& populacao,
 	int& minDist, int& maxDist, int& avgDist, int& melhorPior)
 {
 	// processar todos os pares 
@@ -480,7 +480,7 @@ void TProcuraMelhorativa::DiversidadeAE(TVector<TPonto>& populacao,
 	maxDist = 0;
 	avgDist = 0;
 	for (int i = 0; i < populacao.Count(); i++) {
-		if(populacao[i]->custo < populacao[melhor]->custo)
+		if (populacao[i]->custo < populacao[melhor]->custo)
 			melhor = i;
 		if (populacao[i]->custo > populacao[pior]->custo)
 			pior = i;
@@ -593,7 +593,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 		pai.Reset(0);
 		for (auto elemento : pais) {
 			int id = populacao.Find(elemento);
-			if (id >= 0) 
+			if (id >= 0)
 				pai[id]++;
 		}
 		DebugTabela(COMPLETO, pai, "#Pai");
@@ -609,7 +609,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 	pais.RandomOrder();
 	if (Parametro(NIVEL_DEBUG) >= COMPLETO) {
 		TVector<int> paiID;
-		for(auto elemento : pais) {
+		for (auto elemento : pais) {
 			int id = popoulacao.Find(elemento);
 			if (id >= 0)
 				paiID += (id + 1);
@@ -658,7 +658,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 	}
 	Debug(COMPLETO, false, "\nCusto (g):");
 	DebugTabela(COMPLETO, custoPais, "Pais");
-	Debug(COMPLETO, false, "\nFilhos (g) - %d cruzamentos, %d mutações", 
+	Debug(COMPLETO, false, "\nFilhos (g) - %d cruzamentos, %d mutações",
 		cruzamentos, mutacoes);
 	DebugTabela(COMPLETO, custoFilhos, "Desc");
 	return descendentes;
@@ -756,7 +756,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		populacao = novaPopulacao;
 	}
 
-	if(imigrantes > 0) {
+	if (imigrantes > 0) {
 		// 3. Adicionar novos elementos aleatórios
 		Debug(COMPLETO, false, " - Imigrantes %d", imigrantes);
 		for (int i = 0; i < imigrantes; i++) {
@@ -778,7 +778,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 				delete populacao[idx];
 				populacao[idx] = e;
 			}
-			else 
+			else
 				delete e; // já não é necessário
 		}
 	}
@@ -792,20 +792,20 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 	if (Parametro(DIVERSIDADE) == 2) { // avaliação partilhada
 		TVector<int> id, penalizados;
 		int count = 0;
-		for(auto individuo : populacao)
-			id += id.Count();
+		for (int i = 0; i < populacao.Count(); i++)
+			id += i;
 		Debug(COMPLETO, false, "\nFASE Diversidade - avaliação partilhada");
-		for (int j=0; j<populacao.Count(); j++) {
-			if(id.Count()>20)
+		for (int j = 0; j < populacao.Count(); j++) {
+			if (id.Count() > 20)
 				id.RandomOrder();
-			for (int i = 0; i < id.Count() && i < 20; i++) 
+			for (int i = 0; i < id.Count() && i < 20; i++)
 				if (j != id[i] &&
 					populacao[j]->Distancia(populacao[id[i]]) <= distMinima) {
 					populacao[j]->custo++; // soma 1 por cada elemento muito parecido
 					populacao[id[i]]->custo++;
 					count++;
-					penalizados += (id[i]+1);
-					penalizados += (j+1);
+					penalizados += (id[i] + 1);
+					penalizados += (j + 1);
 				}
 		}
 		if (!penalizados.Empty()) {
@@ -813,10 +813,11 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 			Debug(COMPLETO, false, " (%d penalizações aplicadas)", count);
 			DebugTabela(COMPLETO, penalizados, "Ind");
 		}
-	} else if (Parametro(DIVERSIDADE) == 3) { // limpeza
+	}
+	else if (Parametro(DIVERSIDADE) == 3) { // limpeza
 		TVector<int> id, remover;
-		for (auto individuo : populacao)
-			id += id.Count();
+		for (int i = 0; i < populacao.Count(); i++)
+			id += i;
 		Debug(COMPLETO, false, "\nFASE Diversidade - limpeza");
 		for (int j = 0; j < populacao.Count(); j++) {
 			if (id.Count() > 20)
@@ -827,12 +828,12 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 				{
 					remover += id[i];
 					//remover += j; // apenas um
-					id -= id[i]; 
+					id -= id[i];
 					id -= j;
 					break;
 				}
 		}
-		for(auto i : remover) {
+		for (auto i : remover) {
 			delete populacao[i];
 			populacao[i] = NULL;
 		}
@@ -891,7 +892,7 @@ void TProcuraMelhorativa::Explorar() {
 	Parametro(POPULACAO) = 4; // manter um número baixo de elementos, só para explorar manualmente
 	Parametro(LIMITE_TEMPO) = 3600; // 1h para resolução manual
 
-	LimparEstatisticas(); 
+	LimparEstatisticas();
 	Avaliar();
 	populacao = {};
 	populacao = CompletarPopulacaoAE(populacao);
@@ -909,9 +910,10 @@ void TProcuraMelhorativa::Explorar() {
 			printf("\nMutado: ");
 			populacao[indA]->Debug(false);
 			populacao[indA]->Avaliar();
-			if(!VerificaMelhor(populacao[indA]))
+			if (!VerificaMelhor(populacao[indA]))
 				populacao[indA]->Debug();
-		} else if(opcao == 2) { // cruzar
+		}
+		else if (opcao == 2) { // cruzar
 			printf("Pai [1-%d]: ", populacao.Count());
 			indA = NovoValor("") - 1;
 			printf("Mãe [1-%d]: ", populacao.Count());
@@ -931,7 +933,8 @@ void TProcuraMelhorativa::Explorar() {
 			populacao[indC]->Avaliar();
 			if (!VerificaMelhor(populacao[indC]))
 				populacao[indC]->Debug();
-		} else if (opcao == 3) { // vizinhos
+		}
+		else if (opcao == 3) { // vizinhos
 			printf("Individuo [1-%d]: ", populacao.Count());
 			indA = NovoValor("") - 1;
 			Dominio(indA, 0, populacao.Count() - 1);
@@ -952,7 +955,7 @@ void TProcuraMelhorativa::Explorar() {
 		}
 
 		epoca++;
-	} while(opcao > 0 && !Parar());
+	} while (opcao > 0 && !Parar());
 
 	LibertarVector(populacao);
 	Parametro(NIVEL_DEBUG) = backupNivelDebug;

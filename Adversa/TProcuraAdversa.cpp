@@ -345,8 +345,8 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 bool TProcuraAdversa::Utilizavel(TValorEstado& valor, int nivel, int alfa, int beta) {
 	return valor.nivel >= nivel &&
 		(valor.tipo == EXATO ||
-			valor.tipo == lowerBound && valor.valor >= beta ||
-			valor.tipo == UPPER_BOUND && valor.valor <= alfa);
+			(valor.tipo == lowerBound && valor.valor >= beta) ||
+			(valor.tipo == UPPER_BOUND && valor.valor <= alfa));
 }
 
 
@@ -467,8 +467,8 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 					if (resultado != 0) {
 						bool inverter;
 						// brancas e minimizar ou pretas e maximizar, inverter
-						inverter = (njogada % 2 == 0) && minimizar ||
-							(njogada % 2 == 1) && !minimizar;
+						inverter = ((njogada % 2 == 0) && minimizar) ||
+							((njogada % 2 == 1) && !minimizar);
 						// vitória/derrota branca/preta
 						torneio[brancas][pretas] += (resultado < 0 ? -1 : 1) * (inverter ? -1 : 1);
 						printf(" Vitória %s", (inverter ? resultado < 0 : resultado > 0) ? "Branca" : "Preta");
