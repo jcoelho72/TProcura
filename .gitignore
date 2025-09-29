@@ -363,5 +363,6 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Resultados de execução (ficheiros CSV)
-Resultados/*
-!Resultados/README.md
+# Resultados de execução (ficheiros CSV)
+**/Teste/Resultados/*
+!**/Teste/Resultados/README-Resultados.md
