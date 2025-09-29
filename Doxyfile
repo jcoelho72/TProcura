@@ -7,8 +7,9 @@ HTML_OUTPUT            = html
 EXCLUDE += */Resultados/README.md
 
 # Definir diretórios de entrada
-INPUT                  = ./README.md ./docs/
-RECURSIVE              = YES
+INPUT = ./README.md ./docs ./Construtiva ./Adversa ./Melhorativa ./
+FILE_PATTERNS = *.cpp *.h *.md
+RECURSIVE = YES
 IMAGE_PATH             = docs/images
 LAYOUT_FILE            = layout.xml
 
