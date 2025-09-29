@@ -127,6 +127,7 @@ var menudata={children:[
 {text:"v",url:"globals.html#index_v"},
 {text:"z",url:"globals.html#index_z"}]},
 {text:"Functions",url:"globals_func.html"},
+{text:"Variables",url:"globals_vars.html"},
 {text:"Typedefs",url:"globals_type.html"},
 {text:"Enumerations",url:"globals_enum.html"},
 {text:"Enumerator",url:"globals_eval.html",children:[
@@ -149,5 +150,4 @@ var menudata={children:[
 {text:"t",url:"globals_eval.html#index_t"},
 {text:"u",url:"globals_eval.html#index_u"},
 {text:"v",url:"globals_eval.html#index_v"},
-{text:"z",url:"globals_eval.html#index_z"}]},
-{text:"Macros",url:"globals_defs.html"}]}]}]}
+{text:"z",url:"globals_eval.html#index_z"}]}]}]}]}

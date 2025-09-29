@@ -41,7 +41,7 @@
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00037}00037\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ acertar\ a\ paridade,\ muito\ embora\ não\ se\ saiba\ se\ há\ ou\ não\ solução}}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{soma1}}\ +\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{soma2}})\ \%\ 2\ ==\ 1)}
-\DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCParticao_a66f8ebeadfe83528094ae545015452f5}{numeros}}.\mbox{\hyperlink{classTVector_aa304d639c79ef2842f9951846c6292e3}{Last}}()\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCParticao_a66f8ebeadfe83528094ae545015452f5}{numeros}}.\mbox{\hyperlink{classTVector_aa304d639c79ef2842f9951846c6292e3}{Last}}()\ +=\ 1;}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ garantir\ que\ há\ uma\ solução}}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//if\ (soma1\ !=\ soma2)}}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ \ numeros\ +=\ abs(soma1\ -\/\ soma2);}}
@@ -87,7 +87,7 @@
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00083}00083\ }
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00084}\mbox{\hyperlink{classCParticao_ab4ae8a64ecfa771df00a6977409863ee}{00084}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_ab4ae8a64ecfa771df00a6977409863ee}{CParticao::Debug}}(\textcolor{keywordtype}{bool}\ completo)}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00085}00085\ \{}
-\DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{j}};}
+\DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{i}};}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{classTProcuraConstrutiva_a7426b2abb333f77ef5d00ae46d5f2d32}{NovaLinha}}();}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{printf}}(\textcolor{stringliteral}{"{}Colocar\ \#\%d:\ \%d\ =\ \%d"{}},}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCParticao_a66f8ebeadfe83528094ae545015452f5}{numeros}}.\mbox{\hyperlink{classTVector_ac3c744d84543ca6e32859eb7dfccfeef}{Count}}(),\ \mbox{\hyperlink{classCParticao_ac8e1d8b71df06957820ecde534d22bd9}{totalEsquerda}},\ \mbox{\hyperlink{classCParticao_a8c4d8befbbe3703930b6922b7182b30c}{totalDireita}});}
@@ -130,7 +130,7 @@
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00126}00126\ }
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00127}00127\ }
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00128}00128\ \textcolor{comment}{//\ método\ para\ lidar\ com\ estados\ repetidos}}
-\DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00129}\mbox{\hyperlink{classCParticao_a51dc6a3cb2696010714aec34a42df97d}{00129}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_a51dc6a3cb2696010714aec34a42df97d}{CParticao::Codifica}}(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_ad1114b0f3993c53d8c5d61ecc3434526}{OBJETO\_HASHTABLE}}])}
+\DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00129}\mbox{\hyperlink{classCParticao_a51dc6a3cb2696010714aec34a42df97d}{00129}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCParticao_a51dc6a3cb2696010714aec34a42df97d}{CParticao::Codifica}}(uint64\_t\ estado[\mbox{\hyperlink{TProcuraConstrutiva_8h_a3c9bbee9a4b6d5cb7fd35cf81666df9d}{OBJETO\_HASHTABLE}}])}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00130}00130\ \{}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{valorMaior}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{valorMenor}},\ \mbox{\hyperlink{classTProcura_a224527229b795a4780e5faa61245a8e0}{porColocar}};}
 \DoxyCodeLine{\Hypertarget{Construtiva_2Teste_2Particao_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{comment}{//\ como\ a\ ordem\ é\ fixa,\ um\ estado\ fica\ definido\ por:}}

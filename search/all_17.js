@@ -2,7 +2,7 @@ var searchData=
 [
   ['n_0',['N',['../structSJogoEmLinha.html#a965df6adca0616dc382be363f19485e5',1,'SJogoEmLinha']]],
   ['nada_1',['NADA',['../TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e',1,'TProcura.h']]],
-  ['nao_5flido_2',['NAO_LIDO',['../TProcura_8h.html#a41963e9c6730c8172ca4f219b79feba7',1,'TProcura.h']]],
+  ['nao_5flido_2',['NAO_LIDO',['../TProcura_8h.html#a59f9d6e2b09717823299d60a0e6f2efc',1,'TProcura.h']]],
   ['ndamas_3',['nDamas',['../classCOitoDamas.html#a3714dcd7f610c067ee86593390c3d45b',1,'COitoDamas']]],
   ['nelementos_4',['nelementos',['../classTCodificacaoBinaria.html#a89ced05839a59a91748ca6b4ae0fbc4c',1,'TCodificacaoBinaria::nElementos'],['../classTCodificacaoInteira.html#a5b16dd4be6c560df11cf15a824d0eaad',1,'TCodificacaoInteira::nElementos'],['../classTCodificacaoPermutacao.html#a6db3a625cc78d662fa1f1f516a9cd0b1',1,'TCodificacaoPermutacao::nElementos'],['../classTCodificacaoReal.html#aca148f3ecab608c81ae28dd4fb5ae85a',1,'TCodificacaoReal::nElementos']]],
   ['nivel_5',['nivel',['../structSValorEstado.html#aacc79a74672b452d6939ee17b987560c',1,'SValorEstado::nivel'],['../classCProblemaArtificial.html#a43f8923ae24ecd1e2349e2379e66d51f',1,'CProblemaArtificial::nivel']]],

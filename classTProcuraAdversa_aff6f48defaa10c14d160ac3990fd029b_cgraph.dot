@@ -32,7 +32,7 @@ digraph "TProcuraAdversa::ExecutaAlgoritmo"
   Node13 [id="Node000013",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrã, para debug."];
   Node13 -> Node13 [id="edge99_Node000013_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node11 -> Node14 [id="edge100_Node000011_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcuraConstrutiva\l::DebugEstado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a3c5b2743566153ca9d45e875106e548b",tooltip=" "];
+  Node14 [id="Node000014",label="TProcuraConstrutiva\l::DebugEstado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adc41599501474db99a828a6f46aeb063",tooltip=" "];
   Node11 -> Node15 [id="edge101_Node000011_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TProcuraConstrutiva\l::NovaLinha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32",tooltip=" "];
   Node15 -> Node10 [id="edge102_Node000015_Node000010",color="steelblue1",style="solid",tooltip=" "];

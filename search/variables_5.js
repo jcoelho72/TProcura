@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['geracoes_0',['geracoes',['../group__VariaveisGlobais.html#ga6185647765b723a3581b5541722e496f',1,'TProcuraConstrutiva::geracoes'],['../classTProcuraMelhorativa.html#af8e5dc608467eccc7569361cde5db236',1,'TProcuraMelhorativa::geracoes']]]
+  ['ficheiroinstancia_0',['ficheiroInstancia',['../classTProcura.html#a627ab6da33e9127360dd2f4fba836916',1,'TProcura']]]
 ];

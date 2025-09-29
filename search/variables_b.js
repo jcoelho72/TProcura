@@ -1,11 +1,21 @@
 var searchData=
 [
-  ['n_0',['N',['../structSJogoEmLinha.html#a965df6adca0616dc382be363f19485e5',1,'SJogoEmLinha']]],
-  ['ndamas_1',['nDamas',['../classCOitoDamas.html#a3714dcd7f610c067ee86593390c3d45b',1,'COitoDamas']]],
-  ['nelementos_2',['nelementos',['../classTCodificacaoBinaria.html#a89ced05839a59a91748ca6b4ae0fbc4c',1,'TCodificacaoBinaria::nElementos'],['../classTCodificacaoInteira.html#a5b16dd4be6c560df11cf15a824d0eaad',1,'TCodificacaoInteira::nElementos'],['../classTCodificacaoPermutacao.html#a6db3a625cc78d662fa1f1f516a9cd0b1',1,'TCodificacaoPermutacao::nElementos'],['../classTCodificacaoReal.html#aca148f3ecab608c81ae28dd4fb5ae85a',1,'TCodificacaoReal::nElementos']]],
-  ['nivel_3',['nivel',['../structSValorEstado.html#aacc79a74672b452d6939ee17b987560c',1,'SValorEstado::nivel'],['../classCProblemaArtificial.html#a43f8923ae24ecd1e2349e2379e66d51f',1,'CProblemaArtificial::nivel']]],
-  ['nivelok_4',['nivelOK',['../classTProcuraAdversa.html#ad3c1d255519bd00ea9adc042720b17cf',1,'TProcuraAdversa']]],
-  ['nome_5',['nome',['../structSIndicador.html#a553a717c601fb7060688a3c7bbeb6d19',1,'SIndicador::nome'],['../structSParametro.html#aa25ae60ffa1acbaeb51bdf0e5312c349',1,'SParametro::nome']]],
-  ['nomevalores_6',['nomeValores',['../structSParametro.html#aae8aa852643edec8af4d1c3c42ede0b2',1,'SParametro']]],
-  ['numeros_7',['numeros',['../classCParticao.html#a66f8ebeadfe83528094ae545015452f5',1,'CParticao::numeros'],['../classCParticaoCB.html#a2d37bd2e1874d582c31f74485daa251e',1,'CParticaoCB::numeros']]]
+  ['m_0',['M',['../structSJogoEmLinha.html#ad3a41b6c954dc64e20902b797db15d5c',1,'SJogoEmLinha']]],
+  ['max_1',['max',['../structSParametro.html#aa6d52b4df1268ca83929f85df2a491fa',1,'SParametro']]],
+  ['max_5fdamas_2',['max_damas',['../Melhorativa_2Teste_2OitoDamas_8h.html#a0b67c2974d2e0d3b452e24336ae8facc',1,'MAX_DAMAS:&#160;OitoDamas.h'],['../Construtiva_2Teste_2OitoDamas_8h.html#a0b67c2974d2e0d3b452e24336ae8facc',1,'MAX_DAMAS:&#160;OitoDamas.h']]],
+  ['maxcusto_3',['maxCusto',['../structSParametrosEspaco.html#ac23ae53946ef13719a8c99f7cc1b2661',1,'SParametrosEspaco']]],
+  ['maxestados_4',['maxEstados',['../structSParametrosEspaco.html#a93819b4ad9f3b62f674e0d84be294e64',1,'SParametrosEspaco']]],
+  ['maxestadosnivel_5',['maxEstadosNivel',['../structSParametrosEspaco.html#a3fd332074a315d06bb87610caced5630',1,'SParametrosEspaco']]],
+  ['maxnivel_6',['maxNivel',['../structSParametrosEspaco.html#a13709018ce7e3c95e76c99b0a0897187',1,'SParametrosEspaco']]],
+  ['maxramificacao_7',['maxRamificacao',['../structSParametrosEspaco.html#a350f905e7dae470a2e6bda8841c05d3b',1,'SParametrosEspaco']]],
+  ['maxvalor_8',['maxvalor',['../classTCodificacaoInteira.html#a428656cbca99d29e4b3f6860167e9e91',1,'TCodificacaoInteira::maxValor'],['../classTCodificacaoReal.html#a09c910fcc5f67baf54f27ab90ca73bf9',1,'TCodificacaoReal::maxValor']]],
+  ['memoriaesgotada_9',['memoriaEsgotada',['../classTProcura.html#a0603a12d645bdc6ff66a454c8614014d',1,'TProcura']]],
+  ['min_10',['min',['../structSParametro.html#aaf6a93eeb7215270e707dcd20940e9ff',1,'SParametro']]],
+  ['minimizar_11',['minimizar',['../classTProcuraAdversa.html#a72aaad862bedca505689513bec233c2a',1,'TProcuraAdversa']]],
+  ['minnivelobjetivo_12',['minNivelObjetivo',['../structSParametrosEspaco.html#aab8a5cc24b87aada1e4a440917465569',1,'SParametrosEspaco']]],
+  ['minramificacao_13',['minRamificacao',['../structSParametrosEspaco.html#ade65ba6e25f2584c653151a1934cb0a1',1,'SParametrosEspaco']]],
+  ['minvalor_14',['minValor',['../classTCodificacaoReal.html#a1a26007565088d520e7de62eb9b2c886',1,'TCodificacaoReal']]],
+  ['modompi_15',['modoMPI',['../classTProcura.html#a161c6f23578aa8a9081ec7a1c406ad34',1,'TProcura']]],
+  ['mpicount_16',['mpiCount',['../classTProcura.html#a9783dde67fd219cf5e9f8661728e13a9',1,'TProcura']]],
+  ['mpiid_17',['mpiID',['../classTProcura.html#a33299404773c01c2ef170581cf8e7e6c',1,'TProcura']]]
 ];

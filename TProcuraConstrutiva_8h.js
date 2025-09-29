@@ -1,8 +1,6 @@
 var TProcuraConstrutiva_8h =
 [
     [ "TProcuraConstrutiva", "classTProcuraConstrutiva.html", "classTProcuraConstrutiva" ],
-    [ "OBJETO_HASHTABLE", "TProcuraConstrutiva_8h.html#ad1114b0f3993c53d8c5d61ecc3434526", null ],
-    [ "TAMANHO_HASHTABLE", "TProcuraConstrutiva_8h.html#a8895513761bdfeec201d14cb01ed86f0", null ],
     [ "TNo", "TProcuraConstrutiva_8h.html#a510f7055614397eeab21f50df58cc9b8", null ],
     [ "EAlgoritmo", "TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6c", [
       [ "LARGURA_PRIMEIRO", "TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6ca4bdb9cfb386855ab9d6bc3e2a369f6ed", null ],
@@ -33,5 +31,7 @@ var TProcuraConstrutiva_8h =
       [ "RUIDO_HEURISTICA", "TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058aad9519a49fe0df299e6bf5d1fcb32c04", null ],
       [ "BARALHAR_SUCESSORES", "TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a7b1958972b4b5ea44f3e32d37a0539c9", null ],
       [ "PARAMETROS_CONSTRUTIVA", "TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a10f3abcc9bf34c539e8b9396e7bcb6d1", null ]
-    ] ]
+    ] ],
+    [ "OBJETO_HASHTABLE", "TProcuraConstrutiva_8h.html#a3c9bbee9a4b6d5cb7fd35cf81666df9d", null ],
+    [ "TAMANHO_HASHTABLE", "TProcuraConstrutiva_8h.html#adee3945eff4acfc542f2730380c8f74f", null ]
 ];

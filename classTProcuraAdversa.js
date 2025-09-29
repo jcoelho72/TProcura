@@ -7,7 +7,7 @@ var classTProcuraAdversa =
     [ "ExisteHeuritica", "classTProcuraAdversa.html#aab0860dd7b025e71049e204adb25df25", null ],
     [ "ExisteHT", "classTProcuraAdversa.html#ad01434aae577cafdb636f82ba2815215", null ],
     [ "Heuristica", "classTProcuraAdversa.html#a75e148ba0a922339333940828366aed6", null ],
-    [ "MaiorAmeaca", "classTProcuraAdversa.html#a1869e0545c7fe2dd0d38f5f3c860c61f", null ],
+    [ "MaiorAmeaca", "classTProcuraAdversa.html#a5af95be0d4ae37a72eab750aa5f0db45", null ],
     [ "MetodoIterativo", "classTProcuraAdversa.html#a7c4153974c32753901326271fee90197", null ],
     [ "MiniMax", "classTProcuraAdversa.html#a4d8542bcb03f17da8aa3038384104f24", null ],
     [ "MiniMaxAlfaBeta", "classTProcuraAdversa.html#adb3f857b1c8b3ee26682e335dc6ed601", null ],

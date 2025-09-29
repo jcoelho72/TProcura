@@ -39,7 +39,7 @@ digraph "CJogoEmLinha::Heuristica"
   Node16 [id="Node000016",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node13 -> Node6 [id="edge36_Node000013_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node17 [id="edge37_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcuraAdversa::MaiorAmeaca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a1869e0545c7fe2dd0d38f5f3c860c61f",tooltip="Utilitário para calculo de uma heurística standard em jogos simples."];
+  Node17 [id="Node000017",label="TProcuraAdversa::MaiorAmeaca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a5af95be0d4ae37a72eab750aa5f0db45",tooltip="Utilitário para calculo de uma heurística standard em jogos simples."];
   Node1 -> Node18 [id="edge38_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="TVector::Reset",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd",tooltip="Preenche todo o vetor com um mesmo valor."];
 }

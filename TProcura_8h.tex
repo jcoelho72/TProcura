@@ -5,7 +5,9 @@
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$limits.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
 {\ttfamily \#include $<$cstdarg$>$}\newline
+{\ttfamily \#include "{}compact.\+h"{}}\newline
 Include dependency graph for TProcura.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
@@ -21,13 +23,6 @@ struct \mbox{\hyperlink{structSResultado}{SResultado}}
 \item 
 class \mbox{\hyperlink{classTProcura}{TProcura}}
 \begin{DoxyCompactList}\small\item\em Classe base para todas as procuras. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{TProcura_8h_af08ec37a8c99d747fb60fa15bc28678b}{\+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}}
-\item 
-\#define \mbox{\hyperlink{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}{NAO\+\_\+\+LIDO}}~-\/1000000
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
@@ -86,29 +81,11 @@ enum \mbox{\hyperlink{TProcura_8h_a084a356cffd72e2407083ceb2a3202ef}{ETag\+MPI}}
 , \mbox{\hyperlink{TProcura_8h_a084a356cffd72e2407083ceb2a3202efaa130054e33910954a32bedfadba58d25}{TAG\+\_\+\+VALORES}}
  \}
 \begin{DoxyCompactList}\small\item\em Define as tags MPI para comunicação entre processos. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\Hypertarget{TProcura_8h_af08ec37a8c99d747fb60fa15bc28678b}\label{TProcura_8h_af08ec37a8c99d747fb60fa15bc28678b} 
-\index{TProcura.h@{TProcura.h}!\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}}
-\index{\_CRT\_SECURE\_NO\_WARNINGS@{\_CRT\_SECURE\_NO\_WARNINGS}!TProcura.h@{TProcura.h}}
-\doxysubsubsection{\texorpdfstring{\_CRT\_SECURE\_NO\_WARNINGS}{\_CRT\_SECURE\_NO\_WARNINGS}}
-{\footnotesize\ttfamily \#define \+\_\+\+CRT\+\_\+\+SECURE\+\_\+\+NO\+\_\+\+WARNINGS}
-
-
-
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00003}{3}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
-
-\Hypertarget{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7}\label{TProcura_8h_a41963e9c6730c8172ca4f219b79feba7} 
-\index{TProcura.h@{TProcura.h}!NAO\_LIDO@{NAO\_LIDO}}
-\index{NAO\_LIDO@{NAO\_LIDO}!TProcura.h@{TProcura.h}}
-\doxysubsubsection{\texorpdfstring{NAO\_LIDO}{NAO\_LIDO}}
-{\footnotesize\ttfamily \#define NAO\+\_\+\+LIDO~-\/1000000}
-
-
-
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00014}{14}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
-
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{TProcura_8h_a59f9d6e2b09717823299d60a0e6f2efc}{NAO\+\_\+\+LIDO}} = 1024
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
@@ -196,7 +173,7 @@ CONT\+\_\+\+NUMERO&Número de contadores disponíveis. \\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00084}{84}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00083}{83}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{TProcura_8h_a2b2b75cdcabfc0008a130fb49597e29b}\label{TProcura_8h_a2b2b75cdcabfc0008a130fb49597e29b} 
 \index{TProcura.h@{TProcura.h}!EIndicadoresProcura@{EIndicadoresProcura}}
@@ -224,7 +201,7 @@ IND\+\_\+\+PROCURA&Marcador para permitir a extensão do enum em subclasses. \\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00017}{17}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00016}{16}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8}\label{TProcura_8h_a9f2d53e364b23f725c2b357d0fd5eaf8} 
 \index{TProcura.h@{TProcura.h}!ENivelDebug@{ENivelDebug}}
@@ -275,7 +252,7 @@ EXTRA\+\_\+\+DEBUG&Nível extra para debug muito detalhado (uso interno). \\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00063}{63}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00062}{62}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3}\label{TProcura_8h_a10f5ddbb9232fda16b29e31829ac51d3} 
 \index{TProcura.h@{TProcura.h}!EOperacao@{EOperacao}}
@@ -302,7 +279,7 @@ LER&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00077}{77}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00076}{76}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6}\label{TProcura_8h_ab9850fa0e8c4a6f8112bf071778c1dc6} 
 \index{TProcura.h@{TProcura.h}!EParametrosProcura@{EParametrosProcura}}
@@ -356,7 +333,7 @@ PARAMETROS\+\_\+\+PROCURA&Marcador para permitir a extensão do enum em subclasse
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00042}{42}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00041}{41}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 
 \Hypertarget{TProcura_8h_a084a356cffd72e2407083ceb2a3202ef}\label{TProcura_8h_a084a356cffd72e2407083ceb2a3202ef} 
 \index{TProcura.h@{TProcura.h}!ETagMPI@{ETagMPI}}
@@ -384,5 +361,18 @@ TAG\+\_\+\+VALORES&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{TProcura_8h_source_l00097}{97}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00096}{96}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{TProcura_8h_a59f9d6e2b09717823299d60a0e6f2efc}\label{TProcura_8h_a59f9d6e2b09717823299d60a0e6f2efc} 
+\index{TProcura.h@{TProcura.h}!NAO\_LIDO@{NAO\_LIDO}}
+\index{NAO\_LIDO@{NAO\_LIDO}!TProcura.h@{TProcura.h}}
+\doxysubsubsection{\texorpdfstring{NAO\_LIDO}{NAO\_LIDO}}
+{\footnotesize\ttfamily constexpr int NAO\+\_\+\+LIDO = 1024\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{TProcura_8h_source_l00014}{14}} of file \mbox{\hyperlink{TProcura_8h_source}{TProcura.\+h}}.
 

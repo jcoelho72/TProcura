@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['heur_0',['heur',['../classCProblemaArtificial.html#a35a30f5e4d76e045daca3d81abd9b407',1,'CProblemaArtificial']]],
-  ['heuristica_1',['heuristica',['../group__VariaveisEstado.html#ga1703a3b3ed01aa7742846d296aad112d',1,'TProcuraConstrutiva']]]
+  ['geracoes_0',['geracoes',['../group__VariaveisGlobais.html#ga6185647765b723a3581b5541722e496f',1,'TProcuraConstrutiva::geracoes'],['../classTProcuraMelhorativa.html#af8e5dc608467eccc7569361cde5db236',1,'TProcuraMelhorativa::geracoes']]]
 ];

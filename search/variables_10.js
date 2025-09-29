@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['tabuleiro_0',['tabuleiro',['../classCJogoDoGalo.html#a4a45abc068aac13338f18d18c8bd235d',1,'CJogoDoGalo::tabuleiro'],['../classCJogoEmLinha.html#a8cba76145d91e14fa042258a7da7b938',1,'CJogoEmLinha::tabuleiro']]],
-  ['tamanhocodificado_1',['tamanhoCodificado',['../group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b',1,'TProcuraConstrutiva']]],
-  ['tempo_2',['tempo',['../classTProcura.html#af7735671436a99def475aba1fdb42435',1,'TProcura']]],
-  ['tipo_3',['tipo',['../structSValorEstado.html#a50ab452ee030441b761efc29dd223eaa',1,'SValorEstado']]],
-  ['totaldireita_4',['totalDireita',['../classCParticao.html#a8c4d8befbbe3703930b6922b7182b30c',1,'CParticao']]],
-  ['totalesquerda_5',['totalEsquerda',['../classCParticao.html#ac8e1d8b71df06957820ecde534d22bd9',1,'CParticao']]]
+  ['salas_0',['salas',['../classCAspirador.html#ac118e781b7b1296f09d5aec94560b00e',1,'CAspirador']]],
+  ['sementealeatoria_1',['sementeAleatoria',['../structSParametrosEspaco.html#a81f440d64e50396bdd359e516b91075c',1,'SParametrosEspaco']]],
+  ['solcompleta_2',['solCompleta',['../classCParticao.html#a10a1cc5253c3f2d3e7c7cc8b54dab99e',1,'CParticao']]],
+  ['solucao_3',['solucao',['../group__VariaveisGlobais.html#gadb0d41114016ec069543b3494b0e0196',1,'TProcuraConstrutiva']]],
+  ['stda_4',['stdA',['../classCTesteTVector.html#a97289f00e4f142034782703fb9227fd7',1,'CTesteTVector']]],
+  ['stdb_5',['stdB',['../classCTesteTVector.html#a4259d236668ba2ad0bceb6bb3fc54a19',1,'CTesteTVector']]]
 ];

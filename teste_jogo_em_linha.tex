@@ -1,6 +1,6 @@
 \chapter{Teste Jogo Em Linha}
 \hypertarget{teste_jogo_em_linha}{}\label{teste_jogo_em_linha}\index{Teste Jogo Em Linha@{Teste Jogo Em Linha}}
-Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo. Selecione o projeto \doxylink{classTProcuraAdversa}{TProcura\+Adversa}, e execute. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_jogo_em_linha_autotoc_md40}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_jogo_em_linha_autotoc_md40}
+Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo. Selecione o projeto \doxylink{classTProcuraAdversa}{TProcura\+Adversa}, e execute. Pode acompanhar o teste excutando as ações localmente.\hypertarget{teste_jogo_em_linha_autotoc_md42}{}\doxysubsection{\texorpdfstring{Sumário}{Sumário}}\label{teste_jogo_em_linha_autotoc_md42}
 
 \begin{DoxyItemize}
 \item \doxylink{teste_jogo_em_linha_jel-a1}{Ação 1 -\/ Ver instâncias}
@@ -26,7 +26,7 @@ Este jogo tem várias instâncias, com as dimensões e tamanho da linha para gan
 
 \label{teste_jogo_em_linha_jel-a1}%
 \Hypertarget{teste_jogo_em_linha_jel-a1}%
-\hypertarget{teste_jogo_em_linha_autotoc_md41}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Ver instâncias}{Ação 1 - Ver instâncias}}\label{teste_jogo_em_linha_autotoc_md41}
+\hypertarget{teste_jogo_em_linha_autotoc_md43}{}\doxysubsection{\texorpdfstring{Ação 1 -\/ Ver instâncias}{Ação 1 - Ver instâncias}}\label{teste_jogo_em_linha_autotoc_md43}
 Vamos entrar no Jogo Em Linha, introduza\+: {\bfseries{2.}}
 
 
@@ -175,7 +175,7 @@ Temos diferentes tabuleiros, resultando em ramificações distintas. A variante 
 
 \label{teste_jogo_em_linha_jel-a2}%
 \Hypertarget{teste_jogo_em_linha_jel-a2}%
-\hypertarget{teste_jogo_em_linha_autotoc_md42}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Heurística}{Ação 2 - Heurística}}\label{teste_jogo_em_linha_autotoc_md42}
+\hypertarget{teste_jogo_em_linha_autotoc_md44}{}\doxysubsection{\texorpdfstring{Ação 2 -\/ Heurística}{Ação 2 - Heurística}}\label{teste_jogo_em_linha_autotoc_md44}
 Vamos começar por verificar se a heurística implementada, tem atenção a aspetos mínimos, como bloquear ameaças de vitória a uma jogada.
 
 Para tal vamos fazer um jogo com profundidade 1, para que a heurística seja o fator predominante.
@@ -246,7 +246,7 @@ Não temos portanto motivo para não considerar a heurística válida. Deixamos 
 
 \label{teste_jogo_em_linha_jel-a3}%
 \Hypertarget{teste_jogo_em_linha_jel-a3}%
-\hypertarget{teste_jogo_em_linha_autotoc_md43}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Torneio Profundidade}{Ação 3 - Torneio Profundidade}}\label{teste_jogo_em_linha_autotoc_md43}
+\hypertarget{teste_jogo_em_linha_autotoc_md45}{}\doxysubsection{\texorpdfstring{Ação 3 -\/ Torneio Profundidade}{Ação 3 - Torneio Profundidade}}\label{teste_jogo_em_linha_autotoc_md45}
 Nos testes empíricos vamos utilizar a linha de comando, por ser mais simples a identificação do teste a realizar.
 
 Pretendemos verificar num torneio, que a profundidade maior resulta em força de jogo superior. Assim, como temos muitos jogos, vamos fazer apenas duas profundidades, nível 1 e 2, mas com várias opções.
@@ -348,7 +348,7 @@ O jogador 4 e 5, com o nível máximo no teste e sem ordenar, aparenta ser super
 
 \label{teste_jogo_em_linha_jel-a4}%
 \Hypertarget{teste_jogo_em_linha_jel-a4}%
-\hypertarget{teste_jogo_em_linha_autotoc_md44}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Torneio Iterativo}{Ação 4 - Torneio Iterativo}}\label{teste_jogo_em_linha_autotoc_md44}
+\hypertarget{teste_jogo_em_linha_autotoc_md46}{}\doxysubsection{\texorpdfstring{Ação 4 -\/ Torneio Iterativo}{Ação 4 - Torneio Iterativo}}\label{teste_jogo_em_linha_autotoc_md46}
 Na ação anterior, após confirmação que quanto maior a profundidade melhor, podemos comparar procuras com a mesma profundidade, mas diferentes opções.
 
 Sabemos que o corte alfa/beta é benéfico neste jogos, bem como a ordenação dos sucessores, porque reduz o tempo, mantendo a árvore de procura com a mesma qualidade.
@@ -443,7 +443,7 @@ Estes resultados poderiam ser mais evidentes com mais tempo por jogada, o que pe
 
 \label{teste_jogo_em_linha_jel-a5}%
 \Hypertarget{teste_jogo_em_linha_jel-a5}%
-\hypertarget{teste_jogo_em_linha_autotoc_md45}{}\doxysubsection{\texorpdfstring{Ação 5 -\/ Torneio Ruido}{Ação 5 - Torneio Ruido}}\label{teste_jogo_em_linha_autotoc_md45}
+\hypertarget{teste_jogo_em_linha_autotoc_md47}{}\doxysubsection{\texorpdfstring{Ação 5 -\/ Torneio Ruido}{Ação 5 - Torneio Ruido}}\label{teste_jogo_em_linha_autotoc_md47}
 Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra, utilizando vários jogos, com diferentes sementes aleatórias.
 
 Pretendemos saber entre o Mini\+Max com e sem cortes alfa/beta, qual é o melhor, se ordenarmos com 2 (guarda estados analisados), e utilizarmos a procura iterativa.
@@ -469,5 +469,5 @@ O ruído é especificado no parâmetro 10, e o seu valor pode ser positivo ou ne
 
 \label{teste_jogo_em_linha_jel-a6}%
 \Hypertarget{teste_jogo_em_linha_jel-a6}%
-\hypertarget{teste_jogo_em_linha_autotoc_md46}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Torneio Poda}{Ação 6 - Torneio Poda}}\label{teste_jogo_em_linha_autotoc_md46}
+\hypertarget{teste_jogo_em_linha_autotoc_md48}{}\doxysubsection{\texorpdfstring{Ação 6 -\/ Torneio Poda}{Ação 6 - Torneio Poda}}\label{teste_jogo_em_linha_autotoc_md48}
 ... (estudar o efeito da poda) 
