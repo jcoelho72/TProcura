@@ -34,7 +34,7 @@ var searchData=
   ['instância_31',['instância',['../teste_aspirador1.html#autotoc_md19',1,'Ação 1 - Trocar de instância'],['../teste_aspirador1.html#autotoc_md26',1,'Ação 8 - Resolver outra instância']]],
   ['instâncias_32',['instâncias',['../teste_jogo_do_galo.html#autotoc_md36',1,'Ação 1 - Ver instâncias'],['../teste_jogo_em_linha.html#autotoc_md43',1,'Ação 1 - Ver instâncias'],['../teste_particao.html#autotoc_md50',1,'Ação 1 - Ver instâncias'],['../teste_puzzle8.html#autotoc_md55',1,'Ação 1 - Ver instâncias'],['../teste_8damas.html#autotoc_md3',1,'Ação 1 - Ver instâncias'],['../teste_8damas_ci.html#autotoc_md10',1,'Ação 1 - Ver instâncias'],['../teste_artificial.html#autotoc_md16',1,'Ação 1 - Ver instâncias']]],
   ['inst_33',['inst',['../classCJogoEmLinha.html#aa3e49a13635e4e3fef66e5644594ad5c',1,'CJogoEmLinha']]],
-  ['instalação_34',['Instalação',['..//home/runner/work/TProcura/TProcura/README.md#autotoc_md93',1,'']]],
+  ['instalação_34',['Instalação',['../index.html#autotoc_md93',1,'']]],
   ['instancia_35',['instancia',['../classTProcura.html#ac54b5d632d3efd448b51bfca6cb6a238',1,'TProcura::instancia'],['../structSResultado.html#abcf1163e39d1d92069afb8b6063114f9',1,'SResultado::instancia']]],
   ['instantefinal_36',['instanteFinal',['../classTProcura.html#aad1d62f5db16f77742bb291b6ef342f6',1,'TProcura']]],
   ['inteira_37',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]],

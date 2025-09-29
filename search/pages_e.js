@@ -12,5 +12,6 @@ var searchData=
   ['teste_20particao_20codificação_20binária_9',['Teste Particao - Codificação Binária',['../teste_particao_cb.html',1,'']]],
   ['teste_20puzzle_208_10',['Teste Puzzle 8',['../teste_puzzle8.html',1,'']]],
   ['teste_20tvector_11',['Teste TVector',['../teste_tvector.html',1,'']]],
-  ['tvector_12',['Teste TVector',['../teste_tvector.html',1,'']]]
+  ['tprocura_12',['TProcura',['../index.html',1,'']]],
+  ['tvector_13',['Teste TVector',['../teste_tvector.html',1,'']]]
 ];

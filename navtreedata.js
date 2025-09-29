@@ -25,7 +25,6 @@
 var NAVTREE =
 [
   [ "TProcura", "index.html", [
-    [ "Pasta Resultados", "index.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

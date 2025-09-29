@@ -6,7 +6,7 @@ var searchData=
   ['last_3',['Last',['../classTVector.html#aa304d639c79ef2842f9951846c6292e3',1,'TVector']]],
   ['ler_4',['LER',['../TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3ae6fe9228f4939ae8277bb49921020a46',1,'TProcura.h']]],
   ['libertarvector_5',['libertarvector',['../classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df',1,'TProcuraConstrutiva::LibertarVector()'],['../classTProcuraMelhorativa.html#a28993c2953d882b21f3c456e5d1b7e47',1,'TProcuraMelhorativa::LibertarVector()']]],
-  ['licença_6',['Licença',['..//home/runner/work/TProcura/TProcura/README.md#autotoc_md104',1,'']]],
+  ['licença_6',['Licença',['../index.html#autotoc_md104',1,'']]],
   ['limite_7',['LIMITE',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a32d02498ce9b0c0377275e54839bfad2',1,'TProcuraConstrutiva.h']]],
   ['limite_5fiteracoes_8',['LIMITE_ITERACOES',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a59eb50b8b96453c7ff04c538a27b52bd',1,'TProcura.h']]],
   ['limite_5ftempo_9',['LIMITE_TEMPO',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ad4d1ad2d967b020f5527e13a8db8a1bc',1,'TProcura.h']]],

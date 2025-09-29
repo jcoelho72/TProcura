@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcura: Pasta Resultados</title>
+<title>TProcura: TProcura</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,11 +92,241 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Pasta Resultados </div></div>
+  <div class="headertitle"><div class="title"><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_Adversa_2Teste_2Resultados_2README"></a>Aqui são gravados os ficheiros CSV de execução. <br  />
- O conteúdo é ignorado pelo Git. </p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/jcoelho72/TProcura/issues"><img src="https://img.shields.io/github/issues/jcoelho72/TProcura.svg" alt="GitHub issues" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/jcoelho72/TProcura/network"><img src="https://img.shields.io/github/forks/jcoelho72/TProcura.svg" alt="GitHub forks" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/jcoelho72/TProcura/stargazers"><img src="https://img.shields.io/github/stars/jcoelho72/TProcura.svg" alt="GitHub stars" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/jcoelho72/TProcura/blob/main/LICENSE"><img src="https://img.shields.io/github/license/jcoelho72/TProcura.svg" alt="GitHub license" style="pointer-events: none;" class="inline"/></a></p>
+<p>Biblioteca em C++ para <b>testes paramétricos</b> de algoritmos, e coleção de algoritmos de procura e otimização:</p><ul>
+<li>procuras construtivas <br  />
+</li>
+<li>procuras melhorativas (evolutivas e locais) <br  />
+</li>
+<li>procuras adversas (minimax, alfa-beta, iterativo)</li>
+</ul>
+<blockquote class="doxtable">
+<p>&zwj;Documentação completa em: <br  />
+ 👉 <a href="https://jcoelho72.github.io/TProcura/index.html">TProcura - Documentação</a> </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md84"></a>
+📑 Sumário</h1>
+<ul>
+<li><a class="el" href="index.html#s1">Sobre o Projeto</a></li>
+<li><a class="el" href="index.html#s2">Funcionalidades</a></li>
+<li><a class="el" href="index.html#s3">Estrutura do Repositório</a></li>
+<li><a class="el" href="index.html#s4">Instalação</a></li>
+<li><a class="el" href="index.html#s5">Uso</a></li>
+<li><a class="el" href="index.html#s6">Exemplos</a></li>
+<li><a class="el" href="index.html#s7">Bibliografia</a></li>
+<li><a class="el" href="index.html#s8">Licença</a></li>
+</ul>
+<hr  />
+<p><a class="anchor" id="s1"></a></p>
+<h1><a class="anchor" id="autotoc_md86"></a>
+Sobre o Projeto</h1>
+<p>O <b><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a></b> junta testes paramétricos e implementação genérica de algoritmos de procura. <br  />
+ Em vez de alterar macros e recompilar a cada teste de mudança de parâmetros, propõe-se:</p>
+<ul>
+<li>Estrutura para uma lista de parâmetros, gerida na superclasse</li>
+<li>Gerar automaticamente todas as combinações de parâmertros que o utilizador desejar</li>
+<li>Executar instâncias para cada combinação de parâmetros, e recolher indicadores solicitados <br  />
+</li>
+<li>Exportar resultados em CSV para análises em Excel, R ou Python <br  />
+</li>
+</ul>
+<p>A arquitetura baseia-se em superclasses que já implementam algoritmos de procura. O utilizador só precisa de:</p>
+<ol type="1">
+<li>Herdar a classe adequada <br  />
+</li>
+<li>Redefinir métodos de geração de sucessores, avaliação ou operadores, para o problema concreto, conforme adequado <br  />
+</li>
+<li>Declarar novos parâmetros e indicadores, se desejar <br  />
+</li>
+</ol>
+<p>Este projeto é utilizado nas Unidades Curriculares:</p>
+<ul>
+<li><a href="https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/">Introdução à Inteligência Artificial</a> da Universidade Aberta.</li>
+<li><a href="https://guiadoscursos.uab.pt/ucs/heuristicas-modernas-2/">Heurísticas Modernas</a> da Universidade Aberta e Universidade de Tras-os-Montes e Alto Douro.</li>
+</ul>
+<hr  />
+<p><a class="anchor" id="s2"></a></p>
+<h1><a class="anchor" id="autotoc_md88"></a>
+Funcionalidades</h1>
+<ol type="1">
+<li>Modo interativo, linha de comando ou MPI <br  />
+</li>
+<li>Geração automática de combinações de parâmetros <br  />
+</li>
+<li>Recolha de indicadores (tempo, custo, iterações, etc.) <br  />
+</li>
+<li>Exportação de resultados em CSV <br  />
+</li>
+<li>Procuras Construtivas: <br  />
+<ul>
+<li>Largura / Profundidade / Custo uniforme <br  />
+</li>
+<li>Melhor-primeiro / A* / IDA* / Branch-and-Bound <br  />
+</li>
+</ul>
+</li>
+<li>Procuras melhorativas: <br  />
+<ul>
+<li>Algoritmos Evolutivos - (futuro: Scatter Search, sistemas artificiais imunes, inteligência de enxames)</li>
+<li>Escalada do Monte - (futuro: pesquisa tabu, arrefecimento simulado, GRASP, procura com vizinhança variável e muito alargada)</li>
+</ul>
+</li>
+<li>Procuras adversas: <br  />
+<ul>
+<li>Minimax / Alfa-beta / iterativo / Hash-table de estados explorados (futuro: MCTS) <br  />
+</li>
+</ul>
+</li>
+</ol>
+<hr  />
+<p><a class="anchor" id="s3"></a></p>
+<h1><a class="anchor" id="autotoc_md90"></a>
+📦 Estrutura do Repositório</h1>
+<p>O repositório inclui 4 projetos principais, cada um com uma superclasse base para implementação de novos problemas: </p><div class="fragment"><div class="line">TProcura</div>
+<div class="line">├─ TProcuraConstrutiva  </div>
+<div class="line">│  └─ TProcuraAdversa </div>
+<div class="line">└─ TProcuraMelhorativa  </div>
+</div><!-- fragment --><ul>
+<li><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>: modos de execução (interativo, linha de comandos, MPI), gestão de parâmetros e indicadores, execução de testes.</li>
+<li><a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a> / <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>: algoritmos construtivos e adversos, exigem implementação de sucessores e heurística.</li>
+<li><a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>: algoritmos melhorativos (solução inicial, vizinhança, mutação, cruzamento, avaliação).</li>
+</ul>
+<p>Subclasses já fornecem operadores para diferentes representações, restando apenas implementar a avaliação. </p><div class="fragment"><div class="line">── TProcuraMelhorativa    </div>
+<div class="line">   ├─ TRepresentacaoBinaria </div>
+<div class="line">   ├─ TRepresentacaoInteira </div>
+<div class="line">   ├─ TRepresentacaoPermutacao </div>
+<div class="line">   ├─ TRepresentacaoReal   </div>
+<div class="line">   └─ TRepresentacaoArvore </div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md91"></a>
+Estrutura de Pastas</h2>
+<p>A estrutura do repositório é a seguinte: </p><div class="fragment"><div class="line">TProcura</div>
+<div class="line">├─ Adversa/Construtiva/Melhorativa # pastas de projetos principais  </div>
+<div class="line">│  └─ Teste          # projeto de teste (não necessário para usar a biblioteca)</div>
+<div class="line">│     ├─ CasosTeste  # ficheiros para testes de validação de alterações ao código</div>
+<div class="line">│     ├─ Resultados  # ficheiros CSV de execução (não colocados no repositório)</div>
+<div class="line">│     └─ bin/x64     # (fora do repositório) pasta bin criada na compilação em linux ou x64 no Visual Studio</div>
+<div class="line">│        ├─ Debug</div>
+<div class="line">│        ├─ MPI</div>
+<div class="line">│        └─ Release</div>
+<div class="line">├─ Teste             # mesma estrutura em todos os projetos</div>
+<div class="line">│  └─ ...   </div>
+<div class="line">├─ docs              # documentação em Markdown</div>
+<div class="line">└─ styles            # estilos doxygen</div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md92"></a>
+Compilação e Execução</h2>
+<p>Na pasta <code>&lt;projeto&gt;/Teste</code> do projeto respetivo:</p>
+<ul>
+<li><b>Linux</b>: <br  />
+<ul>
+<li>Pré-requisito para MPI: instalar o <a href="https://www.open-mpi.org/">Open MPI</a> <br  />
+ <div class="fragment"><div class="line">sudo apt-get update</div>
+<div class="line">sudo apt-get install -y openmpi-bin libopenmpi-dev</div>
+</div><!-- fragment --></li>
+<li>Compilação: <code>make</code> ou <code>make mpi</code></li>
+</ul>
+</li>
+<li><b>Windows (Visual Studio)</b>: selecionar a configuração desejada (Debug, Release ou MPI). <br  />
+ <blockquote class="doxtable">
+<p>&zwj;⚠️ Para MPI é necessário instalar previamente o <a href="https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi">MS MPI</a>. <br  />
+ </p>
+</blockquote>
+</li>
+</ul>
+<p>Executar o projeto:</p>
+<ul>
+<li>Interativo: <code>./Executavel</code> <br  />
+</li>
+<li>Linha de comando: <code>./Executavel &lt;argumentos&gt;</code> (ajuda: <code>./Executavel -h</code>) <br  />
+</li>
+<li>MPI: <code>mpiexec -n 4 ./Executavel &lt;argumentos&gt;</code></li>
+</ul>
+<p>Onde fica o executável:</p>
+<ul>
+<li><b>Linux</b>: <code>&lt;projeto&gt;/Teste/bin/[Debug|MPI|Release]</code> <br  />
+</li>
+<li><b>Windows (Visual Studio)</b>: <code>&lt;projeto&gt;/Teste/x64/[Debug|MPI|Release]</code></li>
+</ul>
+<blockquote class="doxtable">
+<p>&zwj;ℹ️ Os <code>Makefile</code> estão localizados em <code>&lt;projeto&gt;/Teste</code>, pois destinam-se apenas à compilação dos projetos de teste. </p>
+</blockquote>
+<blockquote class="doxtable">
+<p>&zwj;ℹ️ Os ficheiros CSV de resultados podem ser gravados em <code>Resultados/</code> usando o parâmetro <code>-R Resultados/&lt;nome&gt;</code>. </p>
+</blockquote>
+<p><a class="anchor" id="s4"></a></p>
+<h1><a class="anchor" id="autotoc_md93"></a>
+Instalação</h1>
+<p>Clonar o projeto, compilar um dos projetos de teste e executar.</p>
+<h2><a class="anchor" id="autotoc_md94"></a>
+Opção 1 - Clonar o Repositório</h2>
+<div class="fragment"><div class="line">git clone https://github.com/jcoelho72/TProcura.git</div>
+</div><!-- fragment --><p> ou</p>
+<p>Aceder a <a href="https://github.com/jcoelho72/TProcura/">página do repositório</a> e clique em **"Code" → "Open with Visual Studio"**.</p>
+<h2><a class="anchor" id="autotoc_md95"></a>
+Opção 2 - Download Manual</h2>
+<p>Aceder a <a href="https://github.com/jcoelho72/TProcura/">página do repositório</a> e clique em **"Code" → "Download ZIP"**.</p>
+<p>Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme seu ambiente).</p>
+<h2><a class="anchor" id="autotoc_md96"></a>
+Opção 3 - Utilizar como Submódulo</h2>
+<p>Para integrar o <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> como parte de outro projeto, utilize um submódulo:</p>
+<div class="fragment"><div class="line">git submodule add https://github.com/jcoelho72/TProcura.git</div>
+</div><!-- fragment --><hr  />
+<p><a class="anchor" id="s5"></a></p>
+<h1><a class="anchor" id="autotoc_md98"></a>
+Uso</h1>
+<p>Para implementar um novo problema utilizando uma das superclasses pode:</p><ul>
+<li>identificar a superclasse mais adequada, e redefinir, criando uma subclasse;</li>
+<li>readaptar um problema similar já implementado.</li>
+</ul>
+<p>Superclasses:</p><ul>
+<li><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> - caso o problema não seja de procura, poderá utilizar esta classe para fazer testes paramétricos</li>
+<li><a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a> - indicado caso tenha um problema de procura, e adopte a abordagem construtiva</li>
+<li><a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> - indicado caso tenha um problema de procura ou muito grande, e opte pela abordagem melhorativa</li>
+<li><a class="el" href="classTCodificacaoBinaria.html">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html">TCodificacaoReal</a>, <a class="el" href="classTCodificacaoArvore.html">TCodificacaoArvore</a> - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores já disponíveis, basta implementar a avaliação.</li>
+<li><a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> - indicado para procuras adversas, ou seja jogos</li>
+</ul>
+<hr  />
+<p><a class="anchor" id="s6"></a></p>
+<h1><a class="anchor" id="autotoc_md100"></a>
+Exemplos</h1>
+<p>Problemas de exemplo da classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>:</p><ol type="1">
+<li><a href="teste_tvector.html">TesteTVetor</a></li>
+</ol>
+<p>Problemas de exemplo da classe <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>:</p><ol type="1">
+<li>Aspirador (<a href="teste_aspirador1.html">parte 1</a>, <a href="teste_aspirador2.html">parte 2</a>)</li>
+<li><a href="teste_puzzle8.html">Puzzle 8</a></li>
+<li><a href="teste_8damas.html">8 Damas</a></li>
+<li><a href="teste_particao.html">Partição</a></li>
+<li><a href="teste_artificial.html">Artificial</a></li>
+</ol>
+<p>Problemas de exemplo da classe <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>:</p><ol type="1">
+<li><a href="teste_8damas_ci.html">8 Damas CI</a> (<a class="el" href="classTCodificacaoInteira.html">TCodificacaoInteira</a>)</li>
+<li><a href="teste_8damas_cp.html">8 Damas CP</a> (<a class="el" href="classTCodificacaoPermutacao.html">TCodificacaoPermutacao</a>)</li>
+<li><a href="teste_particao_cb.html">Partição CB</a> (<a class="el" href="classTCodificacaoBinaria.html">TCodificacaoBinaria</a>)</li>
+<li>? (<a class="el" href="classTCodificacaoReal.html">TCodificacaoReal</a>)</li>
+<li>? (<a class="el" href="classTCodificacaoArvore.html">TCodificacaoArvore</a>)</li>
+</ol>
+<p>Problemas de exemplo da classe <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>:</p><ol type="1">
+<li><a href="teste_jogo_do_galo.html">Jogo do Galo</a></li>
+<li><a href="teste_jogo_em_linha.html">Jogo em Linha</a></li>
+</ol>
+<p>Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações.</p>
+<hr  />
+<p><a class="anchor" id="s7"></a></p>
+<h1><a class="anchor" id="autotoc_md102"></a>
+Bibliografia</h1>
+<ul>
+<li>Russell, S. J., &amp; Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. <a href="https://elibrary.pearson.de/book/99.150005/9781292401171">https://elibrary.pearson.de/book/99.150005/9781292401171</a></li>
+<li>Eiben, A. E., &amp; Smith, J. E. (2015). Introduction to evolutionary computing (2nd ed.). Springer. <a href="https://doi.org/10.1007/978-3-662-44874-8">https://doi.org/10.1007/978-3-662-44874-8</a></li>
+<li>Burke, E. K., &amp; Kendall, G. (Eds.). (2014). Search methodologies: Introductory tutorials in optimization and decision support techniques (2nd ed.). Springer. <a href="https://doi.org/10.1007/978-1-4614-6940-7">https://doi.org/10.1007/978-1-4614-6940-7</a></li>
+</ul>
+<hr  />
+<p><a class="anchor" id="s8"></a></p>
+<h1><a class="anchor" id="autotoc_md104"></a>
+Licença</h1>
+<p>Distribuído sob a licença MIT. Veja o arquivo <a href="https://jcoelho72.github.io/TProcura/LICENSE.txt">LICENSE</a> para mais informações. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

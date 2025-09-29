@@ -10,7 +10,7 @@ var searchData=
   ['de_20estado_7',['Variáveis de estado',['../group__VariaveisEstado.html',1,'']]],
   ['de_20estados_8',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md40',1,'']]],
   ['de_20instância_9',['Ação 1 - Trocar de instância',['../teste_aspirador1.html#autotoc_md19',1,'']]],
-  ['de_20pastas_10',['Estrutura de Pastas',['..//home/runner/work/TProcura/TProcura/README.md#autotoc_md91',1,'']]],
+  ['de_20pastas_10',['Estrutura de Pastas',['../index.html#autotoc_md91',1,'']]],
   ['de_20procura_20cega_11',['Algoritmos de Procura Cega',['../group__ProcurasCegas.html',1,'']]],
   ['de_20procura_20informada_12',['Algoritmos de Procura Informada',['../group__ProcurasInformadas.html',1,'']]],
   ['de_20procura_20maior_13',['Ação 12 - Ver uma árvore de procura maior',['../teste_aspirador2.html#autotoc_md31',1,'']]],
@@ -56,8 +56,8 @@ var searchData=
   ['diversidade_53',['DIVERSIDADE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da0ac70ab8cb784bc9936f3c140fd7e36c',1,'TProcuraMelhorativa.h']]],
   ['diversidadeae_54',['DiversidadeAE',['../classTProcuraMelhorativa.html#a6680888f6064501586d740cab891d0cd',1,'TProcuraMelhorativa']]],
   ['do_20galo_55',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
-  ['do_20repositório_56',['📦 Estrutura do Repositório',['..//home/runner/work/TProcura/TProcura/README.md#autotoc_md90',1,'']]],
+  ['do_20repositório_56',['📦 Estrutura do Repositório',['../index.html#autotoc_md90',1,'']]],
   ['dominio_57',['Dominio',['../classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf',1,'TProcura']]],
-  ['download_20manual_58',['Opção 2 - Download Manual',['..//home/runner/work/TProcura/TProcura/README.md#autotoc_md95',1,'']]],
+  ['download_20manual_58',['Opção 2 - Download Manual',['../index.html#autotoc_md95',1,'']]],
   ['duplicar_59',['duplicar',['../classCOitoDamasCI.html#a1d35285a7fbb9104e6db5587c8db5924',1,'COitoDamasCI::Duplicar()'],['../classCParticao.html#aa50c7d31c22b1baa8ecb15b2841e2854',1,'CParticao::Duplicar()'],['../classCProblemaArtificial.html#ada920ffe8fe97913ef87196864618a48',1,'CProblemaArtificial::Duplicar()'],['../classCPuzzle8.html#ad0638a270ace9056ffba040d2479fd5a',1,'CPuzzle8::Duplicar()'],['../group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623',1,'TProcuraConstrutiva::Duplicar()'],['../classTCodificacaoBinaria.html#af86710c3e68600bbdf4fd649011a4463',1,'TCodificacaoBinaria::Duplicar()'],['../classTCodificacaoInteira.html#aae6c2a9186d72721b44d91b240711b89',1,'TCodificacaoInteira::Duplicar()'],['../classTCodificacaoPermutacao.html#acc26f6577f8f43d59b1bd4f17fe8b659',1,'TCodificacaoPermutacao::Duplicar()'],['../classTCodificacaoReal.html#ab4e6b92cf2c32c0a5d87176014bb23a8',1,'TCodificacaoReal::Duplicar()'],['../classCOitoDamas.html#a36a173575d8f6bd1815989a7a26b7440',1,'COitoDamas::Duplicar()'],['../classCAspirador.html#a3c9571f17ca0cbb074943ddd9bd27587',1,'CAspirador::Duplicar()'],['../classCOitoDamasCP.html#a6f0835407b0f84be61f0c9d04fe71417',1,'COitoDamasCP::Duplicar()'],['../classCParticao.html#a124783fa742619a5839649b83f3b93bc',1,'CParticao::Duplicar()'],['../classCParticaoCB.html#af24fe3e275e519a96fcb657c204b5cc5',1,'CParticaoCB::Duplicar()'],['../classCProblemaArtificial.html#a15bc8f02957607a1ce184975b34465da',1,'CProblemaArtificial::Duplicar()'],['../classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582',1,'TProcuraMelhorativa::Duplicar()'],['../classCOitoDamas.html#ad9ce9bd26af98392515937e9aff10e5a',1,'COitoDamas::Duplicar()'],['../classCJogoDoGalo.html#a0ffe5148e0dad4e325c1840d0569f508',1,'CJogoDoGalo::Duplicar()'],['../classCJogoEmLinha.html#af9b87594a26c4230c7c0f59efc8e013a',1,'CJogoEmLinha::Duplicar()']]]
 ];
