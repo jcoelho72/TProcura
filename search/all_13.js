@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['jogadadupla_0',['jogadaDupla',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951baf3b41a5e2102cf30d6c48b061bfe5e60',1,'JogoEmLinha.h']]],
-  ['jogo_20do_20galo_1',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
-  ['jogo_20em_20linha_2',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
-  ['jogodogalo_2ecpp_3',['JogoDoGalo.cpp',['../JogoDoGalo_8cpp.html',1,'']]],
-  ['jogodogalo_2eh_4',['JogoDoGalo.h',['../JogoDoGalo_8h.html',1,'']]],
-  ['jogoemlinha_2ecpp_5',['JogoEmLinha.cpp',['../JogoEmLinha_8cpp.html',1,'']]],
-  ['jogoemlinha_2eh_6',['JogoEmLinha.h',['../JogoEmLinha_8h.html',1,'']]],
-  ['juntarcsv_7',['JuntarCSV',['../classTProcura.html#aa47aff45144b528adaecdb654c498844',1,'TProcura']]]
+  ['largura_0',['largura',['../teste_8damas.html#autotoc_md25',1,'Ação 3 - Procura em Largura'],['../teste_puzzle8.html#autotoc_md77',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md43',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md47',1,'Ação 9 - Desafio Procura em Largura']]],
+  ['licença_1',['Licença',['../index.html#autotoc_md21',1,'']]],
+  ['linha_2',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
+  ['linha_20de_20comando_3',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md99',1,'']]]
 ];

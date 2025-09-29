@@ -1,20 +1,9 @@
 var searchData=
 [
-  ['n_0',['N',['../structSJogoEmLinha.html#a965df6adca0616dc382be363f19485e5',1,'SJogoEmLinha']]],
-  ['nada_1',['NADA',['../TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e',1,'TProcura.h']]],
-  ['nao_5flido_2',['NAO_LIDO',['../TProcura_8h.html#a59f9d6e2b09717823299d60a0e6f2efc',1,'TProcura.h']]],
-  ['ndamas_3',['nDamas',['../classCOitoDamas.html#a3714dcd7f610c067ee86593390c3d45b',1,'COitoDamas']]],
-  ['nelementos_4',['nelementos',['../classTCodificacaoBinaria.html#a89ced05839a59a91748ca6b4ae0fbc4c',1,'TCodificacaoBinaria::nElementos'],['../classTCodificacaoInteira.html#a5b16dd4be6c560df11cf15a824d0eaad',1,'TCodificacaoInteira::nElementos'],['../classTCodificacaoPermutacao.html#a6db3a625cc78d662fa1f1f516a9cd0b1',1,'TCodificacaoPermutacao::nElementos'],['../classTCodificacaoReal.html#aca148f3ecab608c81ae28dd4fb5ae85a',1,'TCodificacaoReal::nElementos']]],
-  ['nivel_5',['nivel',['../structSValorEstado.html#aacc79a74672b452d6939ee17b987560c',1,'SValorEstado::nivel'],['../classCProblemaArtificial.html#a43f8923ae24ecd1e2349e2379e66d51f',1,'CProblemaArtificial::nivel']]],
-  ['nivel_5fdebug_6',['NIVEL_DEBUG',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3',1,'TProcura.h']]],
-  ['nivelok_7',['nivelOK',['../classTProcuraAdversa.html#ad3c1d255519bd00ea9adc042720b17cf',1,'TProcuraAdversa']]],
-  ['nofolha_8',['NoFolha',['../classTProcuraAdversa.html#a01ed7d4718647eb52723ecffaf68aa4b',1,'TProcuraAdversa']]],
-  ['nome_9',['nome',['../structSParametro.html#aa25ae60ffa1acbaeb51bdf0e5312c349',1,'SParametro::nome'],['../structSIndicador.html#a553a717c601fb7060688a3c7bbeb6d19',1,'SIndicador::nome']]],
-  ['nomevalores_10',['nomeValores',['../structSParametro.html#aae8aa852643edec8af4d1c3c42ede0b2',1,'SParametro']]],
-  ['novaconfiguracao_11',['NovaConfiguracao',['../classTProcura.html#a62cd10354f0fbe5ccc45bbd0c0d7f121',1,'TProcura']]],
-  ['novalinha_12',['NovaLinha',['../classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32',1,'TProcuraConstrutiva']]],
-  ['novasolucao_13',['novasolucao',['../classTCodificacaoInteira.html#a7d2dc5819367ddacdbcf1b3e30a67d4c',1,'TCodificacaoInteira::NovaSolucao()'],['../classTCodificacaoPermutacao.html#a16f609d10fde3c8dbbbeeba584f3c619',1,'TCodificacaoPermutacao::NovaSolucao()'],['../classTCodificacaoReal.html#ae250760cfff4f7d105f6e423790a5247',1,'TCodificacaoReal::NovaSolucao()'],['../classCOitoDamas.html#a76a6cfab4d66232a84d6cb9dc73b7fcf',1,'COitoDamas::NovaSolucao()'],['../classCParticao.html#a82ac73218fe065f106b5b1d3162637a1',1,'CParticao::NovaSolucao()'],['../classTProcuraMelhorativa.html#a50bf29ddd183e8e4678ceb2247b9cf58',1,'TProcuraMelhorativa::NovaSolucao()'],['../classTCodificacaoBinaria.html#aa46563911320bf89456b47fb4767ded6',1,'TCodificacaoBinaria::NovaSolucao()']]],
-  ['novotexto_14',['NovoTexto',['../classTProcura.html#a17fa21564876d313f79b4376ce7366a1',1,'TProcura']]],
-  ['novovalor_15',['NovoValor',['../classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e',1,'TProcura']]],
-  ['numeros_16',['numeros',['../classCParticao.html#a66f8ebeadfe83528094ae545015452f5',1,'CParticao::numeros'],['../classCParticaoCB.html#a2d37bd2e1874d582c31f74485daa251e',1,'CParticaoCB::numeros']]]
+  ['readme_2emd_0',['README.md',['../README_8md.html',1,'']]],
+  ['realizada_20manualmente_1',['Ação 3 - Ver a solução realizada manualmente',['../teste_aspirador1.html#autotoc_md41',1,'']]],
+  ['repositório_2',['repositório',['../index.html#autotoc_md7',1,'📦 Estrutura do Repositório'],['../index.html#autotoc_md11',1,'Opção 1 - Clonar o Repositório']]],
+  ['resolver_20manualmente_3',['resolver manualmente',['../teste_8damas.html#autotoc_md24',1,'Ação 2 - Resolver manualmente'],['../teste_8damas_ci.html#autotoc_md31',1,'Ação 2 - Resolver manualmente'],['../teste_particao.html#autotoc_md71',1,'Ação 2 - Resolver manualmente'],['../teste_puzzle8.html#autotoc_md76',1,'Ação 2 - Resolver manualmente']]],
+  ['resolver_20outra_20instância_4',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md46',1,'']]],
+  ['ruido_5',['Ação 5 - Torneio Ruido',['../teste_jogo_em_linha.html#autotoc_md67',1,'']]]
 ];

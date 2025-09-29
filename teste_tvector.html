@@ -96,8 +96,8 @@ $(document).ready(function(){initNavTree('teste_tvector.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
-<p>Execução de exemplo com base na classe de teste de <a class="el" href="classTVector.html">TVector</a>. Pode acompanhar o teste executando as ações localmente. Selecione o projeto <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, e execute. Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>. Nos exemplos das subclasses ilustra-se as restantes funcionalidades.</p>
-<h2><a class="anchor" id="autotoc_md65"></a>
+<p>Execução de exemplo com base na classe de teste de TVector. Pode acompanhar o teste executando as ações localmente. Selecione o projeto TProcura, e execute. Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe TProcura. Nos exemplos das subclasses ilustra-se as restantes funcionalidades.</p>
+<h2><a class="anchor" id="autotoc_md85"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_tvector.html#tvector-a1">Ação 1: Menu 1 - Inicializar</a></li>
@@ -117,10 +117,10 @@ Sumário</h2>
 <div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p>Ao arrancar com o programa sem argumentos, entramos no modo interativo, com o teste manual. Esta é a informação apresentada. Na zona superior aparece o nome do problema (neste caso <a class="el" href="classTVector.html">TVector</a>), seguido dos parametros e valores atuais. Iremos detalhar os parametrors mais adiante. Segue-se uma zona com informação sobre os dados do problema concreto a resolver, a instância, neste caso é um vetor de números aleatórios, com 1 milhão de elementos. Temos vários algoritmos, em que cada um testa um método da classe <a class="el" href="classTVector.html">TVector</a>. Segue-se o menu com 8 comandos, os quais iremos cobrir neste exemplo. Entre os dados e o menu, após ter exsitido uma execução, são apresentados os indicadores relativos à última execução. Iremos detalhar também estes indicadores.</p>
+</div><!-- fragment --><p>Ao arrancar com o programa sem argumentos, entramos no modo interativo, com o teste manual. Esta é a informação apresentada. Na zona superior aparece o nome do problema (neste caso TVector), seguido dos parametros e valores atuais. Iremos detalhar os parametrors mais adiante. Segue-se uma zona com informação sobre os dados do problema concreto a resolver, a instância, neste caso é um vetor de números aleatórios, com 1 milhão de elementos. Temos vários algoritmos, em que cada um testa um método da classe TVector. Segue-se o menu com 8 comandos, os quais iremos cobrir neste exemplo. Entre os dados e o menu, após ter exsitido uma execução, são apresentados os indicadores relativos à última execução. Iremos detalhar também estes indicadores.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md67"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 Ação 1: Menu 1 - Inicializar</h2>
 <p>Vamos ver o menu 1, inicializar. Introduza: 1; 2.</p>
 <div class="fragment"><div class="line">ID atual: 1  Intervalo: [1-10]  Prefixo atual: &#39;instancia_&#39;</div>
@@ -135,7 +135,7 @@ Ação 1: Menu 1 - Inicializar</h2>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Este menu permite inicializar os dados utilizados no algoritmo. Temos a indicação do ID da instância atual, que é 1. Estão definidas instâncias de 1 a 10. Essas instâncias significam que o tamanho do vetor é 1 milhão vezes o ID da instância. Ao escolhermos a instância 2, vemos que o vetor fica com 2 milhões de dados. Fizemos a visualização apenas dos primeiros 3 e últimos 3 elementos, mas neste caso é suficiente para sabermos que trocamos de instância, já que os números são diferentes. São diferentes os últimos números, mas os primeiros são iguais, já que não alteramos a semente do gerador aleatório. Podiamos também ter introduzido um texto, para alterar o prefixo atual. Este texto é importante se os dados de teste estivessem em ficheiros. Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor, não é preciso o ficheiro.</p>
-<p>Vamos voltar para a instãncia 1, para confirmar que é a mesma, apenas assim se pode garantir que tudo o que se faz em <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, é reproduzivel. Introduza: 1; 1.</p>
+<p>Vamos voltar para a instãncia 1, para confirmar que é a mesma, apenas assim se pode garantir que tudo o que se faz em TProcura, é reproduzivel. Introduza: 1; 1.</p>
 <div class="fragment"><div class="line">ID atual: 2  Intervalo: [1-10]  Prefixo atual: &#39;instancia_&#39;</div>
 <div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 1</div>
 <div class="line"> </div>
@@ -148,11 +148,11 @@ Ação 1: Menu 1 - Inicializar</h2>
 <div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.</p>
-<p>O menu <b>2 - Explorar</b>, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para expplorar os dados. Esta função está definida para as subclasses de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, para os métodos construtivos e melhorativos. Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, porque não, tentar resolvê-lo, e assim ganhar sensibilidade. Vamos deixar esta exploração para os exemplos das subclasses.</p>
+<p>O menu <b>2 - Explorar</b>, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para expplorar os dados. Esta função está definida para as subclasses de TProcura, para os métodos construtivos e melhorativos. Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, porque não, tentar resolvê-lo, e assim ganhar sensibilidade. Vamos deixar esta exploração para os exemplos das subclasses.</p>
 <p>Notar que o menu no modo interativo, é sempre visualizado, colocando-se o prompt "Opção:". Para evitar repetição, vamos omitar o menu no resto deste exemplo.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md69"></a>
+<h2><a class="anchor" id="autotoc_md89"></a>
 Ação 2: Menu 3 - Parâmetros</h2>
 <p>Avançamos para o menu <b>3 - Parâmetros</b>. Introduza: 3.</p>
 <div class="fragment"><div class="line">Opção: 3</div>
@@ -182,7 +182,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <div class="line">11: operator+=()</div>
 <div class="line">12: nada</div>
 <div class="line">Método (atual 1):</div>
-</div><!-- fragment --><p>Como o parâmetro é categórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. Este parâmetro foi povoado na classe <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>, onde foram definidos estes métodos. A função do parâmetro 1 é sempre escolher o método/algoritmo a executar, mas os métodos/algoritmos variam conforme a subclasse. Ao utilizar uma das subclasses genéricas de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, esta já tem um conjunto de algoritmos implementados, ficando esta lista preenchida.</p>
+</div><!-- fragment --><p>Como o parâmetro é categórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. Este parâmetro foi povoado na classe CTesteTVector, onde foram definidos estes métodos. A função do parâmetro 1 é sempre escolher o método/algoritmo a executar, mas os métodos/algoritmos variam conforme a subclasse. Ao utilizar uma das subclasses genéricas de TProcura, esta já tem um conjunto de algoritmos implementados, ficando esta lista preenchida.</p>
 <p>Caso não pretenda alterar um parâmetro, pode sempre carregar em ENTER para manter o valor atual. Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introduza: 2; 2.</p>
 <div class="fragment"><div class="line">Método (atual 1): 2</div>
 <div class="line"> </div>
@@ -201,10 +201,10 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <div class="line">3: detalhe</div>
 <div class="line">4: completo</div>
 <div class="line">Debug (atual 0):</div>
-</div><!-- fragment --><p> Notar que agora o valor associado a P1 é "Sort()". Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug. Este parâmetro é de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, e não é necessário alterar, a não ser que se pretenda mais que 3 níveis de debug.</p>
+</div><!-- fragment --><p> Notar que agora o valor associado a P1 é "Sort()". Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug. Este parâmetro é de TProcura, e não é necessário alterar, a não ser que se pretenda mais que 3 níveis de debug.</p>
 <p>Ao alterar este parâmetro, o algoritmo, caso tenha condicionais sobre este parâmetro, irá mostrar os detalhes do que está a fazer. Prevê-se estes níveis, em que o nível 1 deve apresentar apenas um caracter de tempos a tempos, de modo a confirmar-se que o algoritmo está a funcionar. No nível 2 deve-se dar a indicação do passo/iteração em que vai, ou grande passo, no caso do número de iterações ser elevado. No nível 3 detalhe, já é de esperar detalhe sobre todas as iterações. No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.</p>
 <p>Estes níveis têm o intuito de poder observar bugs, caso existam. Mas têm também um carácter didático, já que nas classes de procura, pode-se observar os algoritmos com o nível que se pretender. Assim está-se a contribuir para a compreensão do algoritmo, aplicado a um dado problema.</p>
-<p>No caso do <a class="el" href="classTVector.html">TVector</a>, os algoritmos estão implementados sem debug, pelo que este valor não é utilizado.</p>
+<p>No caso do TVector, os algoritmos estão implementados sem debug, pelo que este valor não é utilizado.</p>
 <p>Avançamos para o parâmetro P3, "Seed". Introduza: <em>ENTER</em>; 3; 2; <em>ENTER</em>.</p>
 <div class="fragment"><div class="line">Debug (atual 0):</div>
 <div class="line"> </div>
@@ -243,7 +243,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <div class="line">Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791</div>
 </div><!-- fragment --><p>Agora sim, podemos ver que os três primeiros e últimos números são completamente distintos.</p>
 <p>Os outros dois parâmetros, o P4 Tempo, tem o tempo em segundos para o algoritmo executar, e P5 Iterações, é um parâmetro genérico para limitar o número de iterações. Como não temos nestes algoritmos definidas iterações, não iremos utilizar.</p>
-<p>O P6 é um parâmetro definido na classe <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>, e tem a estrutura em teste. Introduza: 3; 6.</p>
+<p>O P6 é um parâmetro definido na classe CTesteTVector, e tem a estrutura em teste. Introduza: 3; 6.</p>
 <div class="fragment"><div class="line">Opção: 3</div>
 <div class="line"> </div>
 <div class="line"> P1(Método): Sort() (1 a 12)</div>
@@ -259,12 +259,12 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <div class="line">2: std::vector</div>
 <div class="line">3: TVector/std::algorithm</div>
 <div class="line">Estrutura (atual 1):</div>
-</div><!-- fragment --><p>Foram definidas 3 opções pela qual os métodos podem ser executados. Utilizando exclusivamente a <a class="el" href="classTVector.html">TVector</a>, a opção atual. A segunda opção é não utilizando <a class="el" href="classTVector.html">TVector</a>, mas sim std::vector e algoritmos da STL equivalentes aos métodos em teste de <a class="el" href="classTVector.html">TVector</a>. A terceira opção é um misto entre utilizar <a class="el" href="classTVector.html">TVector</a>, mas na ordenação e deteção de estados únicos, utilizar os métodos da STL.</p>
+</div><!-- fragment --><p>Foram definidas 3 opções pela qual os métodos podem ser executados. Utilizando exclusivamente a TVector, a opção atual. A segunda opção é não utilizando TVector, mas sim std::vector e algoritmos da STL equivalentes aos métodos em teste de TVector. A terceira opção é um misto entre utilizar TVector, mas na ordenação e deteção de estados únicos, utilizar os métodos da STL.</p>
 <p>Vamos deixar como está. Introduza: <em>ENTER</em>; <em>ENTER</em>.</p>
 <p>O menu <em>4 - Solução</em> será ilustrado com um problema de procura, já que nestes métodos, a solução é o estado do vetor após aplicadas as operações.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md71"></a>
+<h2><a class="anchor" id="autotoc_md91"></a>
 Ação 3: Menu 6 - Executar</h2>
 <p>Avançamos para o menu <em>6 - Executar</em>. Introduza: 6.</p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -276,9 +276,9 @@ Ação 3: Menu 6 - Executar</h2>
 <div class="line">Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808</div>
 <div class="line">I1(Resultado): 1 | I2(Tempo(ms)): 82 | I3(Iterações): 1 | I4(Ordenado): 1</div>
 <div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é completada. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
+</div><!-- fragment --><p> Os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é completada. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura TVector. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
 <p>Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadors, I1 a I4.</p>
-<p>Os três primeiros indicadores são de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, o quarto indicador é definido em <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>. O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema. O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 82. Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância). O tempo de calcular os indicadores não é também comtabilizado. O indicador I3 tem o número de iterações realizadas. O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez. Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado. Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. Em outros métodos, que não ordenem o vetor, naturalmente que este indicador ao ser chamado, irá retornar 0.</p>
+<p>Os três primeiros indicadores são de TProcura, o quarto indicador é definido em CTesteTVector. O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema. O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 82. Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância). O tempo de calcular os indicadores não é também comtabilizado. O indicador I3 tem o número de iterações realizadas. O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez. Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado. Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. Em outros métodos, que não ordenem o vetor, naturalmente que este indicador ao ser chamado, irá retornar 0.</p>
 <p>Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2; <em>ENTER</em>; 1; <em>ENTER</em>; 6.</p>
 <div class="fragment"><div class="line">TVector</div>
 <div class="line"> P1(Método): Sort() | P2(Debug): nada | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0</div>
@@ -289,7 +289,7 @@ Ação 3: Menu 6 - Executar</h2>
 </div><!-- fragment --><p>Notar que o resultado em termos de dados final, é exatamente o mesmo. É natural já que ambas as estruturas de dados receberam a mesma instância. O tempo foi um milisegundo superior, mas outra execução o tempo CPU pode ser distinto.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md73"></a>
+<h2><a class="anchor" id="autotoc_md93"></a>
 Ação 4: Menu 5 - Indicadores</h2>
 <p>Vamos agora ver o menu dos indicadores. Introduza: 5.</p>
 <div class="fragment"><div class="line">Opção: 5</div>
@@ -321,10 +321,10 @@ Ação 4: Menu 5 - Indicadores</h2>
 </div><!-- fragment --><p>Podemos ver que agora apenas I4 seguido de I2 são apresentados.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md75"></a>
+<h2><a class="anchor" id="autotoc_md95"></a>
 Ação 5: Menu 7 - Configurações</h2>
 <p>Os métodos utilizados até aqui, permitem executar testes confortavelmente sem ter de andar a alterar código, compilar e executar. Pode-se ir registando os dados, e procurar tirar conclusões.</p>
-<p>No entanto, execuções particulares podem ser enganadoras, como o tempo de execução da ordenação entre <a class="el" href="classTVector.html">TVector</a> e o sort() da STL. Para existir garantias, temos de fazer muitas execuções, com diferentes parâmetros, e poder processar os resultados posteriormente.</p>
+<p>No entanto, execuções particulares podem ser enganadoras, como o tempo de execução da ordenação entre TVector e o sort() da STL. Para existir garantias, temos de fazer muitas execuções, com diferentes parâmetros, e poder processar os resultados posteriormente.</p>
 <p>Assim, é crítico que se possa definir confortavelmente todas as configurações a executar, de modo a obter resultados em bloco, e não um a um.</p>
 <p>Introduza: 7.</p>
 <div class="fragment"><div class="line">Opção: 7</div>
@@ -400,7 +400,7 @@ Ação 5: Menu 7 - Configurações</h2>
 <p>Avance para a próxima ação.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md77"></a>
+<h2><a class="anchor" id="autotoc_md97"></a>
 Ação 6: Menu 8 - Teste</h2>
 <p>Tendo configurações introduzidas, vamos agora executar um teste com estas configurações. Introduza: 8; 1:3; <em>ENTER</em>; 0.</p>
 <p>A primeira pergunta é sobre quais as instâncias a excutar o teste, na qual pretendemos as 3 primeiras. A segunda pergunta é para colocar os resultados num ficheiro de texto, para já não estamos interesados. A terceira pergunta permite que se vejam as soluções assim que cada execução termina, também não precisamos neste teste.</p>
@@ -626,7 +626,7 @@ Ação 6: Menu 8 - Teste</h2>
 resultados</div></div>
     <hr  />
 <p><a class="anchor" id="tvector-a7"></a></p>
-<h2><a class="anchor" id="autotoc_md79"></a>
+<h2><a class="anchor" id="autotoc_md99"></a>
 Ação 7: Linha de comando</h2>
 <p>Embora o modo interativo seja útil no desenvolvimento do algoritmo ou problema, os testes paramétricos é que nos vão suportar uma resposta a algum tipo de hipótese formada.</p>
 <p>A linha de comando é normalmente mais simples, para por um lado poder colocar a correr num servidor, por outro, pode ver exatamente o teste solicitado numa só linha, não estando dependente da interação do utilizador.</p>
@@ -662,7 +662,7 @@ Ação 7: Linha de comando</h2>
 <div class="line">I4(Ordenado): 4º lugar (verifica se o indicador está ordenado)</div>
 </div><!-- fragment --><p>A lista completa de parametros e indicadores é também mostrada, para permitir saber o que se pode utilizar na definição das configurações de execução.</p>
 <p>Podemos assim reproduzir o teste anterior com a seguinte entrada.</p>
-<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na �ltima execu��o.">TProcura.exe</a> 1:10 -R resultado2 -P P1=2 P2=4 P3=1:10</p>
+<p>Linha de comando: TProcura.exe 1:10 -R resultado2 -P P1=2 P2=4 P3=1:10</p>
 <p>O nível de debug destina-se à informação a reportar sobre o andamento do teste, e não do algoritmo que executa sempre com debug nível 0, de modo a obter os melhores tempos.</p>
 <div class="fragment"><div class="line">PS ...\Teste&gt; TProcura 1:10 -R resultado2 -P P1=2 P2=4 P3=1:10</div>
 <div class="line">Parâmetros comuns:</div>
@@ -736,11 +736,11 @@ Ação 7: Linha de comando</h2>
 <li>considerando todas as operações em teste, há diferença entre alguma das estruturas de dados em termos de tempo?</li>
 </ul>
 <p>De modo a ter uma resposta rápida mas com várias iteraçoes, vamos utilizar apenas as instâncias 1 e 3, mas mantendo 10 sementes aleatórias. Temos também de variar a estrutura de dados.</p>
-<p>Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1,3 -R resultadosTudo -P P1=1:12 x P3=1:10 x P6=1:3</p>
+<p>Linha de comando: TProcura 1,3 -R resultadosTudo -P P1=1:12 x P3=1:10 x P6=1:3</p>
 <p>Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, e no conteúdo I2 com o tempo.</p>
 <p>Soma de I2(Tempo(ms)): </p><table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:<a class="el" href="classTVector.html">TVector</a>   </th><th class="markdownTableHeadRight">2:std::vector   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm    </th></tr>
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:TVector   </th><th class="markdownTableHeadRight">2:std::vector   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">1:Add()   </td><td class="markdownTableBodyRight">160   </td><td class="markdownTableBodyRight">180   </td><td class="markdownTableBodyRight">178    </td></tr>
 <tr class="markdownTableRowEven">
@@ -768,20 +768,20 @@ Ação 7: Linha de comando</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter"><b>Total Geral</b>   </td><td class="markdownTableBodyRight"><b>35444</b>   </td><td class="markdownTableBodyRight"><b>36006</b>   </td><td class="markdownTableBodyRight"><b>39870</b>   </td></tr>
 </table>
-<p>Segundo estes resultados, <a class="el" href="classTVector.html">TVector</a> tem uma ligeira vantagem em termos de tempo na ordenação, mas é pior na união e outras operações, e no final há uma diferença de 1 segundo em 35. Foram utilizadas instãncias pequenas para que o teste possa ser rápido. Em qualquer caso pode-se afirmar que não há uma perda muito grande por utilizar <a class="el" href="classTVector.html">TVector</a> em vez do código STL.</p>
+<p>Segundo estes resultados, TVector tem uma ligeira vantagem em termos de tempo na ordenação, mas é pior na união e outras operações, e no final há uma diferença de 1 segundo em 35. Foram utilizadas instãncias pequenas para que o teste possa ser rápido. Em qualquer caso pode-se afirmar que não há uma perda muito grande por utilizar TVector em vez do código STL.</p>
 <p>Um ficheiro script com a linha de comandos, tem toda a informação para reproduzir o teste, pelo que pode facilitar a identificação do que foi feito. Por outro lado, o ficheiro de resultados tem também todos os valores utilizados, pelo que se houve algum engano na especificação dos parâmetros, o valor utilizado incorreto é visivel nos resultados. Há uma clara separação da fase de implementação da fase de teste. O resultado de um teste pode levantar outras questões, e provocar outro teste. Se a implementação tiver todas as opções em parâmetros, não é necessário alternar com programação entre testes. Apenas após a identificação de bugs, é que a programação é necessária.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a8"></a></p>
-<h2><a class="anchor" id="autotoc_md81"></a>
+<h2><a class="anchor" id="autotoc_md101"></a>
 Ação 8: Desafio CTesteTVector</h2>
-<p>Será a ordenação de <a class="el" href="classTVector.html">TVector</a> mais rápida ou mais lenta ue a ordenação da STL? Que testes pode fazer para procurar dar uma resposta fundamentada?</p>
+<p>Será a ordenação de TVector mais rápida ou mais lenta ue a ordenação da STL? Que testes pode fazer para procurar dar uma resposta fundamentada?</p>
 <details >
 <summary >
 Resposta:</summary>
-<p>Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior. Deve-se executar várias vezes, e apenas na operação de ordenação. Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3</p>
+<p>Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior. Deve-se executar várias vezes, e apenas na operação de ordenação. Linha de comando: TProcura 10 -R resultadosSort -P P1=2 P3=1:10 x P6=1:3</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Valores   </th><th class="markdownTableHeadRight">1:<a class="el" href="classTVector.html">TVector</a>   </th><th class="markdownTableHeadRight">2:std::vector   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm    </th></tr>
+<th class="markdownTableHeadCenter">Valores   </th><th class="markdownTableHeadRight">1:TVector   </th><th class="markdownTableHeadRight">2:std::vector   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">Mínimo de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">772   </td><td class="markdownTableBodyRight">844   </td><td class="markdownTableBodyRight">888    </td></tr>
 <tr class="markdownTableRowEven">
@@ -789,7 +789,7 @@ Resposta:</summary>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">Máximo de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">830   </td><td class="markdownTableBodyRight">956   </td><td class="markdownTableBodyRight">937   </td></tr>
 </table>
-<p>Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do <a class="el" href="classTVector.html">TVector</a> nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura. </p>
+<p>Os resultados aparentam confirmar que há uma certa vantagem para o algoritmo, certamente mais simples do TVector nestes vetores. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas tudo indica que sim. Este pode ser um efeito de uma codificação intensa do STL não beneficiar de optimizações que tenham sido introduzidas no compilador, ao contrário de um código que seja compilado na altura. </p>
 </details>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
