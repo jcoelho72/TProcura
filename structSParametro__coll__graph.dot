@@ -16,7 +16,7 @@ digraph "SParametro"
 <TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Estrutura para registo de um parâmetro."];
-  Node2 -> Node1 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" ",label=" +dependencia",fontcolor="grey" ,arrowhead="odiamond"];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" ",label=" +dependencia",fontcolor="grey" ,arrowhead="odiamond"];
   Node2 [id="Node000002",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TVector&lt; int &gt;</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">erro<BR ALIGN="LEFT"/></TD></TR>

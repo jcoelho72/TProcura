@@ -6,6 +6,6 @@ digraph "COitoDamasCI::COitoDamasCI"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
   Node1 [id="Node000001",label="COitoDamasCI::COitoDamasCI",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [id="edge2_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="COitoDamasCI::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamasCI.html#a1d35285a7fbb9104e6db5587c8db5924",tooltip="Cria um objecto que é uma cópia deste."];
 }

@@ -6,12 +6,12 @@ digraph "CParticao::NovaSolucao"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
   Node1 [id="Node000001",label="CParticao::NovaSolucao",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [id="edge5_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
-  Node1 -> Node3 [id="edge6_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraMelhorativa\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a72a59b4afbcd7b1f7ea65e4d2cff1a1b",tooltip="Inicializar a instância. No final, chamar NovaSolucao() para inicializar o estado."];
-  Node1 -> Node4 [id="edge7_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
-  Node4 -> Node5 [id="edge8_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
 }

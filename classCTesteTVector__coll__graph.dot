@@ -20,7 +20,7 @@ digraph "CTesteTVector"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Debug()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Classe de teste para TVector, integrada na framework TProcura."];
-  Node2 -> Node1 [id="edge12_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" ",arrowtail="onormal"];
   Node2 [id="Node000002",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TProcura</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">ficheiroInstancia<BR ALIGN="LEFT"/></TD></TR>
@@ -65,7 +65,7 @@ digraph "CTesteTVector"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">#</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">Cronometro()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTProcura.html",tooltip="Classe base para todas as procuras."];
-  Node3 -> Node2 [id="edge13_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" ",label=" +instancia",fontcolor="grey" ,arrowhead="odiamond"];
+  Node3 -> Node2 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" ",label=" +instancia",fontcolor="grey" ,arrowhead="odiamond"];
   Node3 [id="Node000003",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">SParametro</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">nome<BR ALIGN="LEFT"/></TD></TR>
@@ -78,7 +78,7 @@ digraph "CTesteTVector"
 <TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structSParametro.html",tooltip="Estrutura para registo de um parâmetro."];
-  Node4 -> Node3 [id="edge14_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" ",label=" +dependencia",fontcolor="grey" ,arrowhead="odiamond"];
+  Node4 -> Node3 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" ",label=" +dependencia",fontcolor="grey" ,arrowhead="odiamond"];
   Node4 [id="Node000004",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TVector&lt; int &gt;</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">erro<BR ALIGN="LEFT"/></TD></TR>
@@ -181,7 +181,7 @@ digraph "CTesteTVector"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">*</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">end()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTVector.html",tooltip=" "];
-  Node5 -> Node2 [id="edge15_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" ",label=" +parametro",fontcolor="grey" ,arrowhead="odiamond"];
+  Node5 -> Node2 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" ",label=" +parametro",fontcolor="grey" ,arrowhead="odiamond"];
   Node5 [id="Node000005",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TVector&lt; SParametro &gt;</TD></TR>
 <HR/>
 <TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
@@ -284,8 +284,8 @@ digraph "CTesteTVector"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">*</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">end()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTVector.html",tooltip=" "];
-  Node3 -> Node5 [id="edge16_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" ",label=" +erro",fontcolor="grey" ,arrowhead="odiamond"];
-  Node6 -> Node2 [id="edge17_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" ",label=" +indicador",fontcolor="grey" ,arrowhead="odiamond"];
+  Node3 -> Node5 [id="edge5_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" ",label=" +erro",fontcolor="grey" ,arrowhead="odiamond"];
+  Node6 -> Node2 [id="edge6_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" ",label=" +indicador",fontcolor="grey" ,arrowhead="odiamond"];
   Node6 [id="Node000006",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TVector&lt; SIndicador &gt;</TD></TR>
 <HR/>
 <TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
@@ -388,7 +388,7 @@ digraph "CTesteTVector"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">*</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">end()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTVector.html",tooltip=" "];
-  Node7 -> Node6 [id="edge18_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" ",label=" +erro",fontcolor="grey" ,arrowhead="odiamond"];
+  Node7 -> Node6 [id="edge7_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" ",label=" +erro",fontcolor="grey" ,arrowhead="odiamond"];
   Node7 [id="Node000007",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">SIndicador</TD></TR>
 <HR/>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">nome<BR ALIGN="LEFT"/></TD></TR>
@@ -398,8 +398,8 @@ digraph "CTesteTVector"
 <TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structSIndicador.html",tooltip=" "];
-  Node4 -> Node2 [id="edge19_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" ",label=" +indAtivo",fontcolor="grey" ,arrowhead="odiamond"];
-  Node8 -> Node2 [id="edge20_Node000002_Node000008",color="steelblue1",style="solid",tooltip=" ",label=" +configuracoes",fontcolor="grey" ,arrowhead="odiamond"];
+  Node4 -> Node2 [id="edge8_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" ",label=" +indAtivo",fontcolor="grey" ,arrowhead="odiamond"];
+  Node8 -> Node2 [id="edge9_Node000002_Node000008",color="steelblue1",style="solid",tooltip=" ",label=" +configuracoes",fontcolor="grey" ,arrowhead="odiamond"];
   Node8 [id="Node000008",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TVector&lt; TVector&lt; int &gt; &gt;</TD></TR>
 <HR/>
 <TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
@@ -502,6 +502,6 @@ digraph "CTesteTVector"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">*</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">end()<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
 ,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classTVector.html",tooltip=" "];
-  Node4 -> Node8 [id="edge21_Node000008_Node000004",color="steelblue1",style="solid",tooltip=" ",label=" +erro",fontcolor="grey" ,arrowhead="odiamond"];
-  Node4 -> Node1 [id="edge22_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" ",label=" +dadosA\n+dadosB",fontcolor="grey" ,arrowhead="odiamond"];
+  Node4 -> Node8 [id="edge10_Node000008_Node000004",color="steelblue1",style="solid",tooltip=" ",label=" +erro",fontcolor="grey" ,arrowhead="odiamond"];
+  Node4 -> Node1 [id="edge11_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" ",label=" +dadosA\n+dadosB",fontcolor="grey" ,arrowhead="odiamond"];
 }

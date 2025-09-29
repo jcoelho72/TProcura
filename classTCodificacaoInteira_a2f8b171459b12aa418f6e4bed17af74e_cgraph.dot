@@ -6,16 +6,16 @@ digraph "TCodificacaoInteira::Cruzamento"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
   Node1 [id="Node000001",label="TCodificacaoInteira\l::Cruzamento",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
-  Node1 -> Node2 [id="edge7_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector::BeASet",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a084d0ab4f7ea5451716f734e649950f6",tooltip="Converte o vetor num conjunto: remove duplicados e ordena."];
-  Node1 -> Node3 [id="edge8_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraMelhorativa\l::Cruzamento",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a36607136095d36b87357cce021eeab29",tooltip=" "];
-  Node1 -> Node4 [id="edge9_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TCodificacaoInteira\l::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html#a2a849dc7fe5bacff0f625cd6cec2e47e",tooltip="Mostra o estado no ecr�, para debug."];
-  Node1 -> Node5 [id="edge10_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
-  Node1 -> Node6 [id="edge11_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
-  Node6 -> Node7 [id="edge12_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
 }
