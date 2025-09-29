@@ -116,20 +116,31 @@ TProcura
 
 Na pasta `<projeto>/Teste` do projeto respetivo:
 
-- **Linux**: `make` ou `make mpi`  
+- **Linux**:  
+  - Pré-requisito para MPI: instalar o [Open MPI](https://www.open-mpi.org/)  
+    ```bash
+    sudo apt-get update
+    sudo apt-get install -y openmpi-bin libopenmpi-dev
+    ```
+  - Compilação: `make` ou `make mpi`
+
 - **Windows (Visual Studio)**: selecionar a configuração desejada (Debug, Release ou MPI).  
   > ⚠️ Para MPI é necessário instalar previamente o [MS MPI](https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi).  
 
+
 Executar o projeto:
+
 - Interativo: `./Executavel`  
 - Linha de comando: `./Executavel <argumentos>`  (ajuda: `./Executavel -h`)  
 - MPI: `mpiexec -n 4 ./Executavel <argumentos>`
 
 Onde fica o executável:
+
 - **Linux**: `<projeto>/Teste/bin/[Debug|MPI|Release]`  
 - **Windows (Visual Studio)**: `<projeto>/Teste/x64/[Debug|MPI|Release]`
 
 > ℹ️ Os `Makefile` estão localizados em `<projeto>/Teste`, pois destinam-se apenas à compilação dos projetos de teste.
+
 > ℹ️ Os ficheiros CSV de resultados podem ser gravados em `Resultados/` usando o parâmetro `-R Resultados/<nome>`.
 
 \anchor s4
