@@ -5,7 +5,7 @@ digraph "TProcura::Debug"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="RL";
-  Node1 [id="Node000001",label="TProcura::Debug",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Mostra o estado no ecrã, para debug."];
+  Node1 [id="Node000001",label="TProcura::Debug",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Mostra o estado no ecrÃ£, para debug."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraMelhorativa\l::AlgoritmoGenetico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a574d0ec15c8c1d3ded8db605def50616",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -34,7 +34,7 @@ digraph "TProcura::Debug"
   Node13 [id="Node000013",label="TProcuraMelhorativa\l::EscaladaDoMonte",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a8c8caa2d188bb5f6701fc5e1ddbc4510",tooltip=" "];
   Node13 -> Node3 [id="edge15_Node000013_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 -> Node14 [id="edge16_Node000012_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node14 [id="Node000014",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (nÃ£o definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node6 -> Node13 [id="edge17_Node000006_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 -> Node14 [id="edge18_Node000006_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node1 [id="edge19_Node000001_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -119,7 +119,7 @@ digraph "TProcura::Debug"
   Node43 -> Node44 [id="edge74_Node000043_Node000044",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node44 [id="Node000044",label="TProcuraConstrutiva\l::ObjetivoAlcancado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a18331ff4fccaf78df8bd3656357e9e75",tooltip=" "];
   Node1 -> Node46 [id="edge75_Node000001_Node000046",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node46 [id="Node000046",label="TProcura::DebugTabela",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab90f47d04e48a6728fc9dafca3870a5f",tooltip="Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior..."];
+  Node46 [id="Node000046",label="TProcura::DebugTabela",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab90f47d04e48a6728fc9dafca3870a5f",tooltip="Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nÃ­vel de debug for igual ou superi..."];
   Node46 -> Node4 [id="edge76_Node000046_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node46 -> Node30 [id="edge77_Node000046_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node46 -> Node36 [id="edge78_Node000046_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -130,17 +130,17 @@ digraph "TProcura::Debug"
   Node48 [id="Node000048",label="TProcuraMelhorativa\l::SelecionarSobreviventesAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a083b961ed7ed1483625559d068755a7f",tooltip=" "];
   Node48 -> Node5 [id="edge82_Node000048_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node49 [id="edge83_Node000001_Node000049",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node49 [id="Node000049",label="TProcura::ExecutaTarefa",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a2c3c5fdff8277b04a219156dec0f068b",tooltip="Executa uma tarefa num teste empírico."];
+  Node49 [id="Node000049",label="TProcura::ExecutaTarefa",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a2c3c5fdff8277b04a219156dec0f068b",tooltip="Executa uma tarefa num teste empÃ­rico."];
   Node49 -> Node50 [id="edge84_Node000049_Node000050",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node50 [id="Node000050",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node50 [id="Node000050",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empÃ­ricos, em todas as configuraÃ§Ãµes guardadas, nas instÃ¢ncias selecionadas."];
   Node50 -> Node53 [id="edge85_Node000050_Node000053",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node53 [id="Node000053",label="TProcura::TesteManual",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
+  Node53 [id="Node000053",label="TProcura::TesteManual",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interaÃ§Ã£o com o utilizador."];
   Node1 -> Node18 [id="edge86_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node18 [id="Node000018",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (nÃ£o definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node1 -> Node59 [id="edge87_Node000001_Node000059",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node59 [id="Node000059",label="TProcura::FinalizaMPI",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a5f946d1f7a89ca3c50fbb80477966607",tooltip="Finaliza o ambiente MPI, se aplicável."];
+  Node59 [id="Node000059",label="TProcura::FinalizaMPI",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a5f946d1f7a89ca3c50fbb80477966607",tooltip="Finaliza o ambiente MPI, se aplicÃ¡vel."];
   Node1 -> Node60 [id="edge88_Node000001_Node000060",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node60 [id="Node000060",label="TProcura::InicializaMPI",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a99028e43382ddefb3660942deb95608d",tooltip="Inicializa o ambiente MPI, se aplicável."];
+  Node60 [id="Node000060",label="TProcura::InicializaMPI",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a99028e43382ddefb3660942deb95608d",tooltip="Inicializa o ambiente MPI, se aplicÃ¡vel."];
   Node1 -> Node28 [id="edge89_Node000001_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node36 [id="edge90_Node000001_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node47 [id="edge91_Node000001_Node000047",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -149,6 +149,6 @@ digraph "TProcura::Debug"
   Node23 [id="Node000023",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
   Node1 -> Node50 [id="edge94_Node000001_Node000050",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node61 [id="edge95_Node000001_Node000061",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node61 [id="Node000061",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#afd7217164b5ffce15f1949138f469fdb",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
+  Node61 [id="Node000061",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#afd7217164b5ffce15f1949138f469fdb",tooltip="Teste empÃ­rico com modo mestre-escravo (este Ã© o mestre)"];
   Node1 -> Node53 [id="edge96_Node000001_Node000053",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

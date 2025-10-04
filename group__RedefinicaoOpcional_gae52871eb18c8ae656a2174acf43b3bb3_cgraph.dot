@@ -36,7 +36,7 @@ digraph "TProcuraConstrutiva::ExecutaAlgoritmo"
   Node13 -> Node14 [id="edge16_Node000013_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#gacbc6e34f3a403d26d806f37b5cd739f6",tooltip="Retorna a aÃ§Ã£o (movimento, passo, jogada, lance, etc.) que gerou o sucessor."];
   Node13 -> Node15 [id="edge17_Node000013_Node000015",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrã, para debug."];
+  Node15 [id="Node000015",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrÃ£, para debug."];
   Node15 -> Node15 [id="edge18_Node000015_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node16 [id="edge19_Node000013_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="TProcuraConstrutiva\l::DebugEstado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adc41599501474db99a828a6f46aeb063",tooltip=" "];
@@ -98,7 +98,7 @@ digraph "TProcuraConstrutiva::ExecutaAlgoritmo"
   Node35 -> Node8 [id="edge56_Node000035_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node35 -> Node9 [id="edge57_Node000035_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node36 [id="edge58_Node000001_Node000036",color="steelblue1",style="solid",tooltip=" "];
-  Node36 [id="Node000036",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domínio de um parâmetro inteiro."];
+  Node36 [id="Node000036",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domÃ­nio de um parÃ¢metro inteiro."];
   Node1 -> Node37 [id="edge59_Node000001_Node000037",color="steelblue1",style="solid",tooltip=" "];
   Node37 [id="Node000037",label="TProcuraConstrutiva\l::IDAStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8",tooltip="Executa a procura IDA*, algoritmo informado."];
   Node37 -> Node3 [id="edge60_Node000037_Node000003",color="steelblue1",style="solid",tooltip=" "];

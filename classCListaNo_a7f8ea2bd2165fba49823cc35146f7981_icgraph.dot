@@ -7,5 +7,5 @@ digraph "CListaNo::Inserir"
   rankdir="RL";
   Node1 [id="Node000001",label="CListaNo::Inserir",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Insere um novo estado na lista, por ordem de LowerBound."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CListaNo::Inserir",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCListaNo.html#a487ec70de88cd34f0f4356b5d0144c72",tooltip="Insere v·rios estados na lista, por ordem."];
+  Node2 [id="Node000002",label="CListaNo::Inserir",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCListaNo.html#a487ec70de88cd34f0f4356b5d0144c72",tooltip="Insere v√°rios estados na lista, por ordem."];
 }

@@ -100,56 +100,56 @@ $(document).ready(function(){initNavTree('Adversa_2Teste_2teste_8cpp_source.html
   <div class="headertitle"><div class="title">teste.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="Adversa_2Teste_2teste_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// teste.cpp : programa para teste da classe TProcuraConstrutiva</span></div>
+<a href="Adversa_2Teste_2teste_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// teste.cpp : programa para teste da classe TProcuraConstrutiva </span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;locale&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../TProcuraAdversa.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="JogoDoGalo_8h.html">JogoDoGalo.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="JogoEmLinha_8h.html">JogoEmLinha.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="Adversa_2Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   11</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="Adversa_2Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    std::locale::global(std::locale(<span class="stringliteral">&quot;&quot;</span>));</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifndef MPI_ATIVO</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    printf(<span class="stringliteral">&quot;\n\</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">Teste TProcuraAdversa\nProblema:\n\</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">  1 - Jogo do Galo\n\</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">  2 - Jogo Em Linha\n\</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="stringliteral">Opção: &quot;</span>);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> caso = <a class="code hl_function" href="classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e">TProcura::NovoValor</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// não utilizar o stdin em programas MPI</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (argc &lt; 2) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        printf(<span class="stringliteral">&quot;Utilizar o primeiro argumento para identificar o problema:\n\</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral">Teste TProcuraAdversa\nProblema:\n\</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="stringliteral">  1 - Jogo do Galo\n\</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="stringliteral">  2 - Jogo Em Linha&quot;</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">int</span> caso = atoi(argv[1]);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    argc--;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    argv++;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">switch</span> (caso) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">case</span> 1: <a class="code hl_class" href="classCJogoDoGalo.html">CJogoDoGalo</a>().<a class="code hl_function" href="classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c">main</a>(argc, argv, <span class="stringliteral">&quot;Jogo do Galo&quot;</span>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">case</span> 2: <a class="code hl_class" href="classCJogoEmLinha.html">CJogoEmLinha</a>().<a class="code hl_function" href="classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c">main</a>(argc, argv, <span class="stringliteral">&quot;Jogo Em Linha&quot;</span>); <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">default</span>: printf(<span class="stringliteral">&quot;Problema não implementado.&quot;</span>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../TProcuraAdversa.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="JogoDoGalo_8h.html">JogoDoGalo.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="JogoEmLinha_8h.html">JogoEmLinha.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="Adversa_2Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">   10</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="Adversa_2Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[])</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <a class="code hl_function" href="namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc">compat::init_io</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef MPI_ATIVO</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    printf(<span class="stringliteral">&quot;\n\</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="stringliteral">Teste TProcuraAdversa\nProblema:\n\</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="stringliteral">  1 - Jogo do Galo\n\</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="stringliteral">  2 - Jogo Em Linha\n\</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="stringliteral">Opção: &quot;</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> caso = <a class="code hl_function" href="classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e">TProcura::NovoValor</a>(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// não utilizar o stdin em programas MPI</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (argc &lt; 2) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        printf(<span class="stringliteral">&quot;Utilizar o primeiro argumento para identificar o problema:\n\</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="stringliteral">Teste TProcuraAdversa\nProblema:\n\</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="stringliteral">  1 - Jogo do Galo\n\</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="stringliteral">  2 - Jogo Em Linha&quot;</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">int</span> caso = atoi(argv[1]);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    argc--;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    argv++;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">switch</span> (caso) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">case</span> 1: <a class="code hl_class" href="classCJogoDoGalo.html">CJogoDoGalo</a>().<a class="code hl_function" href="classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c">main</a>(argc, argv, <span class="stringliteral">&quot;Jogo do Galo&quot;</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">case</span> 2: <a class="code hl_class" href="classCJogoEmLinha.html">CJogoEmLinha</a>().<a class="code hl_function" href="classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c">main</a>(argc, argv, <span class="stringliteral">&quot;Jogo Em Linha&quot;</span>); <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">default</span>: printf(<span class="stringliteral">&quot;Problema não implementado.&quot;</span>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 </div>
-<div class="ttc" id="aAdversa_2Teste_2teste_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="Adversa_2Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition</b> <a href="Adversa_2Teste_2teste_8cpp_source.html#l00011">teste.cpp:11</a></div></div>
+<div class="ttc" id="aAdversa_2Teste_2teste_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="Adversa_2Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition</b> <a href="Adversa_2Teste_2teste_8cpp_source.html#l00010">teste.cpp:10</a></div></div>
 <div class="ttc" id="aJogoDoGalo_8h_html"><div class="ttname"><a href="JogoDoGalo_8h.html">JogoDoGalo.h</a></div></div>
 <div class="ttc" id="aJogoEmLinha_8h_html"><div class="ttname"><a href="JogoEmLinha_8h.html">JogoEmLinha.h</a></div></div>
 <div class="ttc" id="aclassCJogoDoGalo_html"><div class="ttname"><a href="classCJogoDoGalo.html">CJogoDoGalo</a></div><div class="ttdef"><b>Definition</b> <a href="JogoDoGalo_8h_source.html#l00014">JogoDoGalo.h:16</a></div></div>
 <div class="ttc" id="aclassCJogoEmLinha_html"><div class="ttname"><a href="classCJogoEmLinha.html">CJogoEmLinha</a></div><div class="ttdef"><b>Definition</b> <a href="JogoEmLinha_8h_source.html#l00027">JogoEmLinha.h:29</a></div></div>
 <div class="ttc" id="aclassTProcura_html_a9918a19f3cead7c9c6bd28f19ff31b0e"><div class="ttname"><a href="classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e">TProcura::NovoValor</a></div><div class="ttdeci">static int NovoValor(const char *prompt)</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l01158">TProcura.cpp:1158</a></div></div>
-<div class="ttc" id="aclassTProcura_html_aad1499e49cf6757569aeabd9c3fb2a8c"><div class="ttname"><a href="classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c">TProcura::main</a></div><div class="ttdeci">virtual void main(int argc, char *argv[], const char *nome)</div><div class="ttdoc">Inicializa a intera��o com o utilizador.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00804">TProcura.cpp:804</a></div></div>
+<div class="ttc" id="aclassTProcura_html_aad1499e49cf6757569aeabd9c3fb2a8c"><div class="ttname"><a href="classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c">TProcura::main</a></div><div class="ttdeci">virtual void main(int argc, char *argv[], const char *nome)</div><div class="ttdoc">Inicializa a interação com o utilizador.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00804">TProcura.cpp:804</a></div></div>
+<div class="ttc" id="anamespacecompat_html_a4458d9a13083e2a6ae1b6c659c4043cc"><div class="ttname"><a href="namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc">compat::init_io</a></div><div class="ttdeci">void init_io()</div><div class="ttdef"><b>Definition</b> <a href="compact_8h_source.html#l00032">compact.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

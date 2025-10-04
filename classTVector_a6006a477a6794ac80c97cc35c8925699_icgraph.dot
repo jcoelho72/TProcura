@@ -13,7 +13,7 @@ digraph "TVector::Sort"
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node5 [id="Node000005",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (nÃ£o definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node2 -> Node6 [id="edge5_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcuraConstrutiva\l::BranchAndBound",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd",tooltip="Executa o algoritmo Branch-and-Bound, um algoritmo informado."];
   Node6 -> Node4 [id="edge6_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -49,7 +49,7 @@ digraph "TVector::Sort"
   Node1 -> Node17 [id="edge26_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="CParticaoCB::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticaoCB.html#a9feb5f17582cdd0d70463072dc72d2ed",tooltip="Coloca o objecto no estado inicial da procura."];
   Node1 -> Node18 [id="edge27_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="CListaNo::Inserir",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCListaNo.html#a487ec70de88cd34f0f4356b5d0144c72",tooltip="Insere vários estados na lista, por ordem."];
+  Node18 [id="Node000018",label="CListaNo::Inserir",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCListaNo.html#a487ec70de88cd34f0f4356b5d0144c72",tooltip="Insere vÃ¡rios estados na lista, por ordem."];
   Node1 -> Node19 [id="edge28_Node000001_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="TProcuraMelhorativa\l::OrdemValor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#aec9c9187221f37a37f71bee878a577ae",tooltip=" "];
   Node19 -> Node20 [id="edge29_Node000019_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];

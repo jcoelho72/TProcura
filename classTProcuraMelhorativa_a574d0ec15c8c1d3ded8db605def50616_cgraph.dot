@@ -7,7 +7,7 @@ digraph "TProcuraMelhorativa::AlgoritmoGenetico"
   rankdir="LR";
   Node1 [id="Node000001",label="TProcuraMelhorativa\l::AlgoritmoGenetico",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrã, para debug."];
+  Node2 [id="Node000002",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrÃ£, para debug."];
   Node2 -> Node2 [id="edge2_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node3 [id="edge3_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraMelhorativa\l::DebugCruzamentoAG",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#ac0273cf661acd96f0c1c2e2fa5661ca6",tooltip=" "];
@@ -47,7 +47,7 @@ digraph "TProcuraMelhorativa::AlgoritmoGenetico"
   Node17 -> Node19 [id="edge22_Node000017_Node000019",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="TProcuraMelhorativa\l::DebugMelhorEncontrado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6fc03fc9e9379496303354d2b46b8bc8",tooltip=" "];
   Node19 -> Node20 [id="edge23_Node000019_Node000020",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
+  Node20 [id="Node000020",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronÃ³metro foi inicializado"];
   Node19 -> Node2 [id="edge24_Node000019_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node21 [id="edge25_Node000019_Node000021",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];

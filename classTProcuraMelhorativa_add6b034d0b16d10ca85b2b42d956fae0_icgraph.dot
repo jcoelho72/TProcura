@@ -14,6 +14,6 @@ digraph "TProcuraMelhorativa::Parar"
   Node4 [id="Node000004",label="TProcuraMelhorativa\l::CompletarPopulacaoAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a5f0aa5bd919d038c2e1d3903188ba0c1",tooltip=" "];
   Node4 -> Node2 [id="edge4_Node000004_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 -> Node5 [id="edge5_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node5 [id="Node000005",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (nÃ£o definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node1 -> Node5 [id="edge6_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

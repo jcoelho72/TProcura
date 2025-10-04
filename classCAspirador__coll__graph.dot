@@ -120,7 +120,7 @@ digraph "CAspirador"
 <HR/>
 <TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">&nbsp;</TD></TR>
 </TABLE>>
-,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structSParametro.html",tooltip="Estrutura para registo de um parâmetro."];
+,height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structSParametro.html",tooltip="Estrutura para registo de um parÃ¢metro."];
   Node5 -> Node4 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" ",label=" +dependencia",fontcolor="grey" ,arrowhead="odiamond"];
   Node5 [id="Node000005",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">TVector&lt; int &gt;</TD></TR>
 <HR/>

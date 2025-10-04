@@ -29,7 +29,7 @@ digraph "TProcuraMelhorativa::Copiar"
   Node11 [id="Node000011",label="TProcuraMelhorativa\l::AlgoritmoEvolutivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6e7a1d0f1281eae6bf3fbbc7fa5f4026",tooltip=" "];
   Node11 -> Node7 [id="edge12_Node000011_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 -> Node12 [id="edge13_Node000010_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node12 [id="Node000012",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (nÃ£o definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node8 -> Node6 [id="edge14_Node000008_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 -> Node12 [id="edge15_Node000008_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 -> Node13 [id="edge16_Node000008_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];

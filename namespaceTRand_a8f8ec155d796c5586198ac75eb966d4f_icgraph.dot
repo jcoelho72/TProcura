@@ -25,7 +25,7 @@ digraph "TRand::rand"
   Node1 -> Node10 [id="edge9_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraConstrutiva\l::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node10 -> Node11 [id="edge10_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (n�o definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node11 [id="Node000011",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node10 -> Node12 [id="edge11_Node000010_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TProcuraAdversa::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a75e148ba0a922339333940828366aed6",tooltip="chamar após calcular a heurística (grava o valor, dependendo da parametrização)"];
   Node12 -> Node13 [id="edge12_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -104,7 +104,7 @@ digraph "TRand::rand"
   Node44 [id="Node000044",label="TProcuraMelhorativa\l::DebugGeracaoAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a98c93de808e3181024508c35fa22d62f",tooltip=" "];
   Node44 -> Node42 [id="edge55_Node000044_Node000042",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node44 -> Node45 [id="edge56_Node000044_Node000045",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node45 [id="Node000045",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (n�o definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node45 [id="Node000045",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node43 -> Node9 [id="edge57_Node000043_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node43 -> Node46 [id="edge58_Node000043_Node000046",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node46 [id="Node000046",label="TCodificacaoPermutacao\l::NovaSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoPermutacao.html#a16f609d10fde3c8dbbbeeba584f3c619",tooltip=" "];

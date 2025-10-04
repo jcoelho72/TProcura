@@ -26,7 +26,7 @@ digraph "TProcuraMelhorativa::Avaliar"
   Node10 [id="Node000010",label="TProcuraMelhorativa\l::EscaladaDoMonte",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a8c8caa2d188bb5f6701fc5e1ddbc4510",tooltip=" "];
   Node10 -> Node3 [id="edge10_Node000010_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node9 -> Node11 [id="edge11_Node000009_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node11 [id="Node000011",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (nÃ£o definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node1 -> Node10 [id="edge12_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node11 [id="edge13_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -16,5 +16,5 @@ digraph "TProcuraMelhorativa::ObterExtremos"
   Node5 [id="Node000005",label="TProcuraMelhorativa\l::AlgoritmoEvolutivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6e7a1d0f1281eae6bf3fbbc7fa5f4026",tooltip=" "];
   Node5 -> Node3 [id="edge5_Node000005_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 -> Node6 [id="edge6_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (n„o definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node6 [id="Node000006",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (n√£o definido em TProcura, apenas em TProcuraConstrutiva)"];
 }

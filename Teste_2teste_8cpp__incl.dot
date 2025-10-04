@@ -36,9 +36,13 @@ digraph "Teste/teste.cpp"
   Node15 [id="Node000015",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node14 -> Node16 [id="edge16_Node000014_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="cstring",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node1 -> Node17 [id="edge17_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="CTesteTVector.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$CTesteTVector_8h.html",tooltip=" "];
-  Node17 -> Node2 [id="edge18_Node000017_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node17 -> Node18 [id="edge19_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="vector",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node14 -> Node17 [id="edge17_Node000014_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node14 -> Node18 [id="edge18_Node000014_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="locale",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node19 [id="edge19_Node000001_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="CTesteTVector.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$CTesteTVector_8h.html",tooltip=" "];
+  Node19 -> Node2 [id="edge20_Node000019_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node19 -> Node20 [id="edge21_Node000019_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="vector",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }

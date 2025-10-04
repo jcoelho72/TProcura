@@ -41,6 +41,10 @@ digraph "Construtiva/Teste/Aspirador.cpp"
   Node17 [id="Node000017",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node16 -> Node18 [id="edge19_Node000016_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="cstring",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node1 -> Node7 [id="edge20_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node6 [id="edge21_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node16 -> Node19 [id="edge20_Node000016_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node16 -> Node20 [id="edge21_Node000016_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="locale",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node7 [id="edge22_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge23_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
 }

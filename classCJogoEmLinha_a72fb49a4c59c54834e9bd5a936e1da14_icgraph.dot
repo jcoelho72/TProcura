@@ -7,7 +7,7 @@ digraph "CJogoEmLinha::Casa"
   rankdir="RL";
   Node1 [id="Node000001",label="CJogoEmLinha::Casa",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CJogoEmLinha::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a2ee665ea0e0e9f23c4a8eb7cf8b0b12c",tooltip="Mostra o estado no ecr�, para debug."];
+  Node2 [id="Node000002",label="CJogoEmLinha::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a2ee665ea0e0e9f23c4a8eb7cf8b0b12c",tooltip="Mostra o estado no ecrã, para debug."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="CJogoEmLinha::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#afe8d4a92e1840c1436c295c5a13760db",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];

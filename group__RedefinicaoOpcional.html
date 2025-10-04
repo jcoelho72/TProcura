@@ -113,7 +113,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae52871eb18c8ae656a2174acf43b3bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa o algoritmo com os parametros atuais.  <br /></td></tr>
 <tr class="separator:gae52871eb18c8ae656a2174acf43b3bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga98059503024d1ffc1c8ddaaec1b5a116" id="r_ga98059503024d1ffc1c8ddaaec1b5a116"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__RedefinicaoOpcional.html#ga98059503024d1ffc1c8ddaaec1b5a116">TProcuraConstrutiva::Indicador</a> (<a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a> id) <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">override</a></td></tr>
-<tr class="memdesc:ga98059503024d1ffc1c8ddaaec1b5a116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinição. Ver <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2" title="Retorna um indicador, ap�s a execu��o do algoritmo.">TProcura::Indicador()</a>.  <br /></td></tr>
+<tr class="memdesc:ga98059503024d1ffc1c8ddaaec1b5a116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redefinição. Ver <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2" title="Retorna um indicador, após a execução do algoritmo.">TProcura::Indicador()</a>.  <br /></td></tr>
 <tr class="separator:ga98059503024d1ffc1c8ddaaec1b5a116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -198,7 +198,7 @@ Here is the call graph for this function:</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a> != <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">outro</a>.variavel;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00111">TProcuraConstrutiva.h:112</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na �ltima execu��o.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00493">TProcura.h:493</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00493">TProcura.h:493</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCAspirador.html#a9279c18880569e58bc26932979d58058">CAspirador</a>, and <a class="el" href="classCProblemaArtificial.html#a5243c313f30ce2fe40f0d9d274cd5d8a">CProblemaArtificial</a>.</p>
 
@@ -231,8 +231,8 @@ Here is the call graph for this function:</div>
 
 <p>Executa o algoritmo com os parametros atuais. </p>
 <dl class="section note"><dt>Note</dt><dd>Redefinição necessária no caso de se alterar os algoritmos disponíveis.</dd></dl>
-<p>No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO) Se <code><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a intera��o com o utilizador.">TesteManual()</a></code> não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a intera��o com o utilizador.">TesteManual()</a>, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058" title="Identifica um parâmetro específico no código.">EParametrosConstrutiva</a>, <a class="el" href="group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0" title="Executa a procura em largura primeiro, algoritmo cego.">LarguraPrimeiro()</a>, <a class="el" href="group__ProcurasCegas.html#ga2343fafdecfd55b69c0ffb71e8f9426b" title="Executa a procura por custo uniforme, algoritmo cego.">CustoUniforme()</a>, <a class="el" href="group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228" title="Executa a procura em profundidade primeiro, algoritmo cego.">ProfundidadePrimeiro()</a> </dd>
+<p>No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO) Se <code><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a interação com o utilizador.">TesteManual()</a></code> não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af" title="Inicializa a interação com o utilizador.">TesteManual()</a>, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058" title="Identifica um parâmetro específico no código.">EParametrosConstrutiva</a>, <a class="el" href="group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0" title="Executa a procura em largura primeiro, algoritmo cego.">LarguraPrimeiro()</a>, <a class="el" href="group__ProcurasCegas.html#ga2343fafdecfd55b69c0ffb71e8f9426b" title="Executa a procura por custo uniforme, algoritmo cego.">CustoUniforme()</a>, <a class="el" href="group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228" title="Executa a procura em profundidade primeiro, algoritmo cego.">ProfundidadePrimeiro()</a> </dd>
 <dd>
 <a class="el" href="group__ProcurasInformadas.html#gaebb84182343041bc276e4ceceb4b13aa" title="Executa a procura melhor primeiro, algoritmo informado.">MelhorPrimeiro()</a>, <a class="el" href="group__ProcurasInformadas.html#ga37dd78e1a9a6742700728135f81964b4" title="Executa a procura A*, algoritmo informado.">AStar()</a>, <a class="el" href="group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8" title="Executa a procura IDA*, algoritmo informado.">IDAStar()</a>, <a class="el" href="group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd" title="Executa o algoritmo Branch-and-Bound, um algoritmo informado.">BranchAndBound()</a> </dd></dl>
 
@@ -276,11 +276,11 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Redefinição. Ver <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2" title="Retorna um indicador, ap�s a execu��o do algoritmo.">TProcura::Indicador()</a>. </p>
+<p>Redefinição. Ver <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2" title="Retorna um indicador, após a execução do algoritmo.">TProcura::Indicador()</a>. </p>
 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00917">917</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00918">918</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -318,7 +318,7 @@ Here is the call graph for this function:</div>
 <p>Esta função exibe a solução, mostrando um estado a cada X ações e exibindo as ações entre os estados. O valor padrão de <code>X</code> é 4, ajustável pelo parâmetro <code>Parametro(VER_ACOES)</code>.</p>
 <dl class="section note"><dt>Note</dt><dd>Em problemas onde seja simples de seguir a ação, pode-se utilizar valores maiores, sem ser necessário mostrar muitos estados completos. Em problemas que as ações sejam mais complexas, ou alterem mais o estado, poderá ser até preferível colocar este valor a 1, para que o estado seja sempre mostrado em cada ação.</dd>
 <dd>
-Há problemas em que o estado é já a solução. Neste caso pode-se redefinir esta função chamando a função <a class="el" href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456" title="Mostra o estado no ecr�, para debug.">Debug()</a>.</dd>
+Há problemas em que o estado é já a solução. Neste caso pode-se redefinir esta função chamando a função <a class="el" href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456" title="Mostra o estado no ecrã, para debug.">Debug()</a>.</dd>
 <dd>
 Em situações particulares, poderá ser possível construir a solução de forma mais compacta, num único estado com as ações todas codificadas, por exemplo um caminho num mapa. Nesse caso há que redefinir este método, implementando a visualização da solução de raiz.</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> CSubProblema::MostrarSolucao(<span class="keywordtype">void</span>)</div>
@@ -327,7 +327,7 @@ Em situações particulares, poderá ser possível construir a solução de form
 <div class="line">    <a class="code hl_function" href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">Debug</a>();</div>
 <div class="line">    <span class="comment">// caso seja um caminho do estado inicial ao final, não redefinir</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcura_html_a0c5676c1b54ab6bdc1045b98aeafe456"><div class="ttname"><a href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(bool completo=true)</div><div class="ttdoc">Mostra o estado no ecr�, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00093">TProcura.cpp:93</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a0c5676c1b54ab6bdc1045b98aeafe456"><div class="ttname"><a href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(bool completo=true)</div><div class="ttdoc">Mostra o estado no ecrã, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00093">TProcura.cpp:93</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a014a294d094430b113ffb36e64a74d97">TProcura</a>.</p>
 

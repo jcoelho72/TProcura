@@ -104,37 +104,58 @@ $(document).ready(function(){initNavTree('compact_8h_source.html',''); initResiz
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="namespacecompat.html">    6</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecompat.html">compat</a> {</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;locale&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="namespacecompat.html#a00b22acc72899dbcb64f43ad8ec8b41d">    8</a></span>    <span class="keyword">inline</span> FILE* <a class="code hl_function" href="namespacecompat.html#a00b22acc72899dbcb64f43ad8ec8b41d">fopen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, <span class="keyword">const</span> <span class="keywordtype">char</span>* mode) {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        FILE* f = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        fopen_s(&amp;f, filename, mode);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <span class="keywordflow">return</span> f;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        <span class="keywordflow">return</span> std::fopen(filename, mode);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;windows.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespacecompat.html">   12</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecompat.html">compat</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacecompat.html#a00b22acc72899dbcb64f43ad8ec8b41d">   14</a></span>    <span class="keyword">inline</span> FILE* <a class="code hl_function" href="namespacecompat.html#a00b22acc72899dbcb64f43ad8ec8b41d">fopen</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* filename, <span class="keyword">const</span> <span class="keywordtype">char</span>* mode) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        FILE* f = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        fopen_s(&amp;f, filename, mode);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordflow">return</span> f;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> std::fopen(filename, mode);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
 </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespacecompat.html#a342aea1a38c4383aedcc7fea5e68048a">   18</a></span>    <span class="keyword">inline</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="namespacecompat.html#a342aea1a38c4383aedcc7fea5e68048a">strtok</a>(<span class="keywordtype">char</span>* str, <span class="keyword">const</span> <span class="keywordtype">char</span>* delim, <span class="keywordtype">char</span>** context) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keywordflow">return</span> strtok_s(str, delim, context);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keywordflow">return</span> strtok_r(str, delim, context);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespacecompat.html#a342aea1a38c4383aedcc7fea5e68048a">   24</a></span>    <span class="keyword">inline</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="namespacecompat.html#a342aea1a38c4383aedcc7fea5e68048a">strtok</a>(<span class="keywordtype">char</span>* str, <span class="keyword">const</span> <span class="keywordtype">char</span>* delim, <span class="keywordtype">char</span>** context) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> strtok_s(str, delim, context);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> strtok_r(str, delim, context);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>} <span class="comment">// namespace compat</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc">   32</a></span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc">init_io</a>() {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#ifdef _WIN32</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="comment">// Windows: locale &quot;.UTF-8&quot; é válido</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        std::locale::global(std::locale(<span class="stringliteral">&quot;.UTF-8&quot;</span>));</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        SetConsoleOutputCP(CP_UTF8);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        SetConsoleCP(CP_UTF8);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="comment">// Linux: usar locale vazio &quot;&quot; → herda do ambiente (normalmente já UTF-8)</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        std::locale::global(std::locale(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
 </div>
-<div class="ttc" id="anamespacecompat_html"><div class="ttname"><a href="namespacecompat.html">compat</a></div><div class="ttdef"><b>Definition</b> <a href="compact_8h_source.html#l00006">compact.h:6</a></div></div>
-<div class="ttc" id="anamespacecompat_html_a00b22acc72899dbcb64f43ad8ec8b41d"><div class="ttname"><a href="namespacecompat.html#a00b22acc72899dbcb64f43ad8ec8b41d">compat::fopen</a></div><div class="ttdeci">FILE * fopen(const char *filename, const char *mode)</div><div class="ttdef"><b>Definition</b> <a href="compact_8h_source.html#l00008">compact.h:8</a></div></div>
-<div class="ttc" id="anamespacecompat_html_a342aea1a38c4383aedcc7fea5e68048a"><div class="ttname"><a href="namespacecompat.html#a342aea1a38c4383aedcc7fea5e68048a">compat::strtok</a></div><div class="ttdeci">char * strtok(char *str, const char *delim, char **context)</div><div class="ttdef"><b>Definition</b> <a href="compact_8h_source.html#l00018">compact.h:18</a></div></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>} <span class="comment">// namespace compat</span></div>
+</div>
+<div class="ttc" id="anamespacecompat_html"><div class="ttname"><a href="namespacecompat.html">compat</a></div><div class="ttdef"><b>Definition</b> <a href="compact_8h_source.html#l00012">compact.h:12</a></div></div>
+<div class="ttc" id="anamespacecompat_html_a00b22acc72899dbcb64f43ad8ec8b41d"><div class="ttname"><a href="namespacecompat.html#a00b22acc72899dbcb64f43ad8ec8b41d">compat::fopen</a></div><div class="ttdeci">FILE * fopen(const char *filename, const char *mode)</div><div class="ttdef"><b>Definition</b> <a href="compact_8h_source.html#l00014">compact.h:14</a></div></div>
+<div class="ttc" id="anamespacecompat_html_a342aea1a38c4383aedcc7fea5e68048a"><div class="ttname"><a href="namespacecompat.html#a342aea1a38c4383aedcc7fea5e68048a">compat::strtok</a></div><div class="ttdeci">char * strtok(char *str, const char *delim, char **context)</div><div class="ttdef"><b>Definition</b> <a href="compact_8h_source.html#l00024">compact.h:24</a></div></div>
+<div class="ttc" id="anamespacecompat_html_a4458d9a13083e2a6ae1b6c659c4043cc"><div class="ttname"><a href="namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc">compat::init_io</a></div><div class="ttdeci">void init_io()</div><div class="ttdef"><b>Definition</b> <a href="compact_8h_source.html#l00032">compact.h:32</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

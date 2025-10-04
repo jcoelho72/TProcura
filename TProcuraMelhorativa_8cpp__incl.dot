@@ -38,7 +38,11 @@ digraph "Melhorativa/TProcuraMelhorativa.cpp"
   Node16 [id="Node000016",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node15 -> Node17 [id="edge17_Node000015_Node000017",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="cstring",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node1 -> Node7 [id="edge18_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node10 [id="edge19_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node6 [id="edge20_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node18 [id="edge18_Node000015_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node15 -> Node19 [id="edge19_Node000015_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="locale",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node1 -> Node7 [id="edge20_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node10 [id="edge21_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge22_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
 }

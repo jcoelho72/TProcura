@@ -34,4 +34,8 @@ digraph "TProcura.h"
   Node14 [id="Node000014",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node13 -> Node15 [id="edge15_Node000013_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="cstring",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node13 -> Node16 [id="edge16_Node000013_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node13 -> Node17 [id="edge17_Node000013_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="locale",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }

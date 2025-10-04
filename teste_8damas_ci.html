@@ -733,7 +733,7 @@ Ação 4 - Testes Empíricos</h2>
 <p>Vamos agora procurar saber qual a melhor parametrização dos algoritmos evolutivos para as 8 damas.</p>
 <p>Começamos por executar a parametrização de omissão nas primeiras instâncias. Como o algoritmo é aleatório, é crítico fazer mais que uma execução. No entanto neste exemplo, sem processamento paralelo, vamos fazer apeans 1 execução. Iremos repetir o teste mais tarde com mais execuções, num cluster, e assim poder observar uma melhoria na qualidade dos resultados. Colocamos o nível de debug a PASSO, para ter alguma informação durante execução.</p>
 <p>Notar que nos testes empíricos, o nível de debug destina-se à informação sobre o progresso da execução global, mas o algoritmo é executado sempre sem qualquer debug, de modo a obtermos a melhor performance.</p>
-<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na �ltima execu��o.">TProcuraMelhorativa.exe</a> 4:40 -R damasCIt1 -P P2=2</p>
+<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na última execução.">TProcuraMelhorativa.exe</a> 4:40 -R damasCIt1 -P P2=2</p>
 <div class="fragment"><div class="line">PS ...\Teste&gt; .\x64\Release\TProcuraMelhorativa.exe 4:40 -R damasCIt1 -P P2=2</div>
 <div class="line">...</div>
 <div class="line">Opção: 2</div>
@@ -828,7 +828,7 @@ Ação 4 - Testes Empíricos</h2>
 <p>A parametrização de omissão consegue resolver até à instância 20, mas após essa instância, falha tanto por tempo como por número de iterações.</p>
 <p>Não interressa ter instâncias demasiado simples ou demasiado complicadas nos testes. Como estes testes não vão ser num cluster, convém ter um conjunto de teste reduzido. Pretendemos melhorar o algoritmo no ponto de transição. Assim, vamos escolher para conjunto de teste, as instâncias 17 a 26.</p>
 <p>O primeiro parametro a averiguar, é o tamanho da população.</p>
-<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na �ltima execu��o.">TProcuraMelhorativa.exe</a> 17:26 -R damasCIt2 -P P2=2 P6=10,20,30,50,100,200</p>
+<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na última execução.">TProcuraMelhorativa.exe</a> 17:26 -R damasCIt2 -P P2=2 P6=10,20,30,50,100,200</p>
 <p>Notar que repetimos a população 20, da qual já tinhamos resultados. Poderiamos aproveitar, mas não só é mais simples repetir, como repetindo garante-se condições de igualdade entre execuções.</p>
 <div class="fragment"><div class="line">Teste com 60 tarefas, 10 instâncias, 6 configurações, utilizando 1 processo(s).</div>
 <div class="line">1&#39; 1&quot; 759ms  Tarefa 14.</div>

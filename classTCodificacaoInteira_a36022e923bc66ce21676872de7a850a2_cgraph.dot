@@ -7,7 +7,7 @@ digraph "TCodificacaoInteira::Mutar"
   rankdir="LR";
   Node1 [id="Node000001",label="TCodificacaoInteira\l::Mutar",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TCodificacaoInteira\l::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html#a2a849dc7fe5bacff0f625cd6cec2e47e",tooltip="Mostra o estado no ecr�, para debug."];
+  Node2 [id="Node000002",label="TCodificacaoInteira\l::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html#a2a849dc7fe5bacff0f625cd6cec2e47e",tooltip="Mostra o estado no ecrã, para debug."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TVector::Delete",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aba2fb6d977b1309f3e884369c5f43bba",tooltip="Remove o elemento na posição i deslocando os seguintes."];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];

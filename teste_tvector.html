@@ -96,7 +96,9 @@ $(document).ready(function(){initNavTree('teste_tvector.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
-<p>Execução de exemplo com base na classe de teste de <a class="el" href="classTVector.html">TVector</a>. Pode acompanhar o teste executando as ações localmente. Selecione o projeto <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, e execute. Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>. Nos exemplos das subclasses ilustra-se as restantes funcionalidades.</p>
+<p>Execução de exemplo com base na classe de teste de <a class="el" href="classTVector.html">TVector</a>. Pode acompanhar o teste executando as ações localmente.</p>
+<p>No Visual Studio, selecione o projeto <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, e execute. No Linux na pasta <code>.../TProcura/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcura</code></p>
+<p>Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>. Nos exemplos das subclasses ilustra-se as restantes funcionalidades.</p>
 <h2><a class="anchor" id="autotoc_md65"></a>
 Sumário</h2>
 <ul>
@@ -107,7 +109,8 @@ Sumário</h2>
 <li><a class="el" href="teste_tvector.html#tvector-a5">Ação 5: Menu 7 - Configurações</a></li>
 <li><a class="el" href="teste_tvector.html#tvector-a6">Ação 6: Menu 8 - Teste</a></li>
 <li><a class="el" href="teste_tvector.html#tvector-a7">Ação 7: Linha de comando</a></li>
-<li><a class="el" href="teste_tvector.html#tvector-a8">Ação 8: Desafio CTesteTVector</a></li>
+<li><a class="el" href="teste_tvector.html#tvector-a8">Ação 8: Execução MPI</a></li>
+<li><a class="el" href="teste_tvector.html#tvector-a9">Ação 9: Desafio CTesteTVector</a></li>
 </ul>
 <div class="fragment"><div class="line">TVector</div>
 <div class="line"> P1(Método): Add() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
@@ -662,7 +665,7 @@ Ação 7: Linha de comando</h2>
 <div class="line">I4(Ordenado): 4º lugar (verifica se o indicador está ordenado)</div>
 </div><!-- fragment --><p>A lista completa de parametros e indicadores é também mostrada, para permitir saber o que se pode utilizar na definição das configurações de execução.</p>
 <p>Podemos assim reproduzir o teste anterior com a seguinte entrada.</p>
-<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na �ltima execu��o.">TProcura.exe</a> 1:10 -R resultado2 -P P1=2 P2=4 P3=1:10</p>
+<p>Linha de comando: <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na última execução.">TProcura.exe</a> 1:10 -R resultado2 -P P1=2 P2=4 P3=1:10</p>
 <p>O nível de debug destina-se à informação a reportar sobre o andamento do teste, e não do algoritmo que executa sempre com debug nível 0, de modo a obter os melhores tempos.</p>
 <div class="fragment"><div class="line">PS ...\Teste&gt; TProcura 1:10 -R resultado2 -P P1=2 P2=4 P3=1:10</div>
 <div class="line">Parâmetros comuns:</div>
@@ -773,7 +776,11 @@ Ação 7: Linha de comando</h2>
 <hr  />
 <p><a class="anchor" id="tvector-a8"></a></p>
 <h2><a class="anchor" id="autotoc_md81"></a>
-Ação 8: Desafio CTesteTVector</h2>
+Ação 8: Execução MPI</h2>
+<hr  />
+<p><a class="anchor" id="tvector-a9"></a></p>
+<h2><a class="anchor" id="autotoc_md83"></a>
+Ação 9: Desafio CTesteTVector</h2>
 <p>Será a ordenação de <a class="el" href="classTVector.html">TVector</a> mais rápida ou mais lenta ue a ordenação da STL? Que testes pode fazer para procurar dar uma resposta fundamentada?</p>
 <details >
 <summary >

@@ -11,7 +11,7 @@ var classCProblemaArtificial =
     [ "Debug", "classCProblemaArtificial.html#aed61188cb7e4ad383c94ff239f116327", null ],
     [ "Debug", "classCProblemaArtificial.html#aed61188cb7e4ad383c94ff239f116327", null ],
     [ "Distinto", "classCProblemaArtificial.html#a5243c313f30ce2fe40f0d9d274cd5d8a", null ],
-    [ "Distinto", "classCProblemaArtificial.html#a6f31b35be6934eae7e34242fc1aff4e8", null ],
+    [ "Distinto", "classCProblemaArtificial.html#a3ce5871f01df205781ef06fb596d812e", null ],
     [ "Duplicar", "classCProblemaArtificial.html#ada920ffe8fe97913ef87196864618a48", null ],
     [ "Duplicar", "classCProblemaArtificial.html#a15bc8f02957607a1ce184975b34465da", null ],
     [ "Heuristica", "classCProblemaArtificial.html#acefa1963a1703a5f092c391a13b37ff5", null ],

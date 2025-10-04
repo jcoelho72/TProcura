@@ -48,10 +48,10 @@ digraph "TProcuraConstrutiva::Hash"
   Node16 -> Node17 [id="edge25_Node000016_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
   Node17 -> Node18 [id="edge26_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node18 [id="Node000018",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (nÃ£o definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node16 -> Node16 [id="edge27_Node000016_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node19 [id="edge28_Node000015_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para..."];
+  Node19 [id="Node000019",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execuÃ§Ã£o do algoritmo. Limpa valores estatÃ­sticos, e fixa o instante limite de tempo ..."];
   Node19 -> Node18 [id="edge29_Node000019_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node11 [id="edge30_Node000019_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node20 [id="edge31_Node000015_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];

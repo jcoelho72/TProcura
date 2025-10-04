@@ -37,4 +37,8 @@ digraph "Construtiva/TProcuraConstrutiva.h"
   Node15 [id="Node000015",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node14 -> Node16 [id="edge17_Node000014_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="cstring",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node14 -> Node17 [id="edge18_Node000014_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node14 -> Node18 [id="edge19_Node000014_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="locale",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }
