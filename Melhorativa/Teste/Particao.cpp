@@ -1,8 +1,8 @@
-﻿#include "Particao.h"
+#include "Particao.h"
 #include <stdio.h>
 #include <string.h>
 
-TVector<int> CParticaoCB::numeros; // número de elementos a particionar
+TVector<int> CParticaoCB::numeros; // número de elementos a particionar 
 
 CParticao::CParticao(void) 
 {

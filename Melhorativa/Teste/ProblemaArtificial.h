@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "../TProcuraMelhorativa.h"
 
-// estrutura para caracterização do espaço de procura
+// estrutura para caracterização do espaço de procura 
 typedef struct SParametrosEspaco {
 	int minRamificacao, maxRamificacao; // valores mínimos e máximos para a ramificação
 	int minNivelObjetivo; // valor mínimo do nível para um estado poder ser objetivo
@@ -38,9 +38,9 @@ public:
 	static TParametrosEspaco espaco;
 
 	// estrutura de dados (suficiente um inteiro)
-	unsigned int id; // número arbitrário para representar este estado, será o ID do estado, gerado aleatóriamente
-	int nivel; // nível a que o estado foi gerado
-	int heur; // valor gerado para a heurística, conforme os parâmetros da instância
+	unsigned int id = 0; // número arbitrário para representar este estado, será o ID do estado, gerado aleatóriamente
+	int nivel = 0; // nível a que o estado foi gerado
+	int heur = 0; // valor gerado para a heurística, conforme os parâmetros da instância
 
 	// Metodos virtuais redefinidos
 	TPonto Duplicar(void) {
@@ -61,7 +61,7 @@ public:
 	void Inicializar(void);
 	void Debug(bool completo = true) override;
 	void TesteManual(const char* nome);
-	bool Distinto(TPonto estado);
+	bool Distinto(TPonto estado) const;
 	int Heuristica(void);
 	void ResetParametros();
 

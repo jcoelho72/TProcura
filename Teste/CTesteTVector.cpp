@@ -11,7 +11,7 @@ enum EParametrosVector {
 };
 
 enum EIndicadoresVector {
-	IND_ORDENAR = IND_PROCURA, ///< verifica se está ordenado
+	IND_ORDENAR = IND_PROCURA, ///< verifica se estÃ¡ ordenado
 };
 
 void CTesteTVector::ResetParametros()
@@ -38,15 +38,15 @@ void CTesteTVector::ResetParametros()
 
 	TProcura::ResetParametros();
 
-	parametro[ALGORITMO] = { "Método",1,1,12,"Método para teste.", nomesMetodo };
+	parametro[ALGORITMO] = { "MÃ©todo",1,1,12,"MÃ©todo para teste.", nomesMetodo };
 
 	// estrutura de dados
 	parametro += { "ESTRUTURA_DADOS",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura };
 
-	indicador += { "IND_ORDENAR","verifica se o indicador está ordenado", IND_ORDENAR };
+	indicador += { "IND_ORDENAR","verifica se o indicador estÃ¡ ordenado", IND_ORDENAR };
 	indAtivo += IND_ORDENAR;
 
-	instancia = { "Dados", 1,1,10, "Vetores aleatórios de K milhões", NULL };
+	instancia = { "Dados", 1,1,10, "Vetores aleatÃ³rios de K milhÃµes", NULL };
 }
 
 void CTesteTVector::Inicializar(void)
@@ -61,7 +61,7 @@ void CTesteTVector::Inicializar(void)
 		}
 	}
 	else { // std::vector
-		// define o tamanho e inicializa com zeros (ou itens padrão)
+		// define o tamanho e inicializa com zeros (ou itens padrÃ£o)
 		stdA.resize(tamanho);
 		stdB.resize(tamanho);
 		for (int i = 0; i < tamanho; i++) {
@@ -199,7 +199,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 						std::unique(stdB.begin(), stdB.end()),
 						stdB.end()
 					);
-					// diferença
+					// diferenÃ§a
 					{
 						std::vector<int> tmp;
 						tmp.reserve(stdA.size());
@@ -283,7 +283,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 					);
 					{
 						std::vector<int> tmp3;
-						tmp3.reserve(std::min(stdA.size(), stdB.size()));
+						tmp3.reserve(stdA.size() < stdB.size() ? stdA.size() : stdB.size());
 						std::set_intersection(
 							stdA.begin(), stdA.end(),
 							stdB.begin(), stdB.end(),
@@ -323,7 +323,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 		}
 
 		iteracoes++;
-		// se não foi definido limite de iterações, fazer apenas uma
+		// se nÃ£o foi definido limite de iteraÃ§Ãµes, fazer apenas uma
 		if (Parametro(LIMITE_ITERACOES) == 0)
 			break;
 	}
@@ -332,7 +332,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 
 int64_t CTesteTVector::Indicador(int id)
 {
-	if (id == IND_ORDENAR) { // verifica se está ordenado
+	if (id == IND_ORDENAR) { // verifica se estÃ¡ ordenado
 		if (Parametro(ESTRUTURA_DADOS) != 2) {
 			for (int i = 0; i < dadosA.Count() - 1; i++)
 				if (dadosA[i] > dadosA[i + 1]) {

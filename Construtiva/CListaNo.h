@@ -3,30 +3,30 @@
 #include "TProcuraConstrutiva.h"
 
 /**
- * @brief Estrutura de Ìndice para lista de estados.
+ * @brief Estrutura de √≠ndice para lista de estados.  
  *
  * Utilizada internamente pela CListaNo para gerir a lista ordenada.
  */
 typedef struct SIndice {
 	TNo estado;           ///< Estado armazenado.
-	int prox;             ///< PrÛximo elemento na lista (ordem por custo).
-	int proxDistinto;     ///< PrÛximo elemento na lista com custo distinto.
+	int prox;             ///< Pr√≥ximo elemento na lista (ordem por custo).
+	int proxDistinto;     ///< Pr√≥ximo elemento na lista com custo distinto.
 } TIndice;
 
 /**
- * @brief Lista ordenada de nÛs para algoritmos de procura informada.
+ * @brief Lista ordenada de n√≥s para algoritmos de procura informada.
  *
  * Utilizada nos algoritmos CustoUniforme e AStar para gerir estados ordenados por custo.
  */
 class CListaNo {
 private:
-	int limite;                   ///< Tamanho da lista. Se !=0, a lista È limpa quando atinge o dobro deste valor.
-	TVector<TIndice> indice;      ///< Estrutura de Ìndice para a lista.
-	TVector<int> livre;           ///< Õndices livres para reutilizaÁ„o.
+	int limite;                   ///< Tamanho da lista. Se !=0, a lista √© limpa quando atinge o dobro deste valor.
+	TVector<TIndice> indice;      ///< Estrutura de √≠ndice para a lista.
+	TVector<int> livre;           ///< √çndices livres para reutiliza√ß√£o.
 	bool completa;                ///< Indica se a lista nunca foi limpa.
 public:
 	/**
-	 * @brief Construtor da lista de nÛs.
+	 * @brief Construtor da lista de n√≥s.
 	 * @param limite Tamanho limite da lista (opcional).
 	 */
 	CListaNo(int limite = 0) :
@@ -37,18 +37,18 @@ public:
 		atual(0) {}
 	~CListaNo();
 
-	int atual; ///< Õndice do elemento atual a processar.
+	int atual; ///< √çndice do elemento atual a processar.
 
 	 /**
-	 * @brief Indica se a lista È completa (nunca foi limpa).
-	 * @return true se nunca foi limpa; false caso contr·rio.
+	 * @brief Indica se a lista √© completa (nunca foi limpa).
+	 * @return true se nunca foi limpa; false caso contr√°rio.
 	 */
 	bool Completa() { return completa; }
 
 	/**
 	 * @brief Retorna o valor (LowerBound) de um elemento.
-	 * @param i Õndice do elemento.
-	 * @return Valor do elemento ou INT_MAX se inv·lido.
+	 * @param i √çndice do elemento.
+	 * @return Valor do elemento ou INT_MAX se inv√°lido.
 	 */
 	int Valor(int i) {
 		TNo estado;
@@ -58,9 +58,9 @@ public:
 	}
 
 	/**
-	 * @brief Retorna o prÛximo elemento na lista.
-	 * @param i Õndice de referÍncia (opcional). Se n„o fornecido, usa o atual.
-	 * @return Õndice do prÛximo elemento ou -1 se n„o existir.
+	 * @brief Retorna o pr√≥ximo elemento na lista.
+	 * @param i √çndice de refer√™ncia (opcional). Se n√£o fornecido, usa o atual.
+	 * @return √çndice do pr√≥ximo elemento ou -1 se n√£o existir.
 	 */
 	int Proximo(int i = -1) {
 		if (i < 0)
@@ -71,9 +71,9 @@ public:
 	}
 
 	/**
-	 * @brief Retorna o prÛximo elemento com custo distinto.
-	 * @param i Õndice de referÍncia (opcional).
-	 * @return Õndice do prÛximo elemento distinto ou -1.
+	 * @brief Retorna o pr√≥ximo elemento com custo distinto.
+	 * @param i √çndice de refer√™ncia (opcional).
+	 * @return √çndice do pr√≥ximo elemento distinto ou -1.
 	 */
 	int ProximoDistinto(int i = -1) {
 		if (i < 0)
@@ -85,8 +85,8 @@ public:
 
 	/**
 	 * @brief Retorna o estado armazenado no elemento.
-	 * @param i Õndice do elemento (opcional).
-	 * @return Ponteiro para o estado ou NULL se inv·lido.
+	 * @param i √çndice do elemento (opcional).
+	 * @return Ponteiro para o estado ou NULL se inv√°lido.
 	 */
 	TNo Estado(int i = -1) {
 		if (i < 0)
@@ -100,12 +100,12 @@ public:
 	 * @brief Insere um novo estado na lista, por ordem de LowerBound.
 	 * @param elemento Estado a inserir.
 	 * @param id ID associado (opcional).
-	 * @return Õndice do primeiro elemento com o mesmo valor.
+	 * @return √çndice do primeiro elemento com o mesmo valor.
 	 */
 	int Inserir(TNo elemento, int id = 0); 
 
 	/**
-	 * @brief Insere v·rios estados na lista, por ordem.
+	 * @brief Insere v√°rios estados na lista, por ordem.
 	 * @param elementos Vetor de estados a inserir.
 	 */
 	void Inserir(TVector<TNo>& elementos); 
@@ -114,7 +114,7 @@ private:
 	/**
 	 * @brief Cria um novo elemento na lista.
 	 * @param elemento Estado a inserir.
-	 * @return Õndice onde foi inserido.
+	 * @return √çndice onde foi inserido.
 	 */
 	int NovoElemento(TNo elemento);
 

@@ -127,7 +127,6 @@ Na pasta `<projeto>/Teste` do projeto respetivo:
 - **Windows (Visual Studio)**: selecionar a configuração desejada (Debug, Release ou MPI).  
   > ⚠️ Para MPI é necessário instalar previamente o [MS MPI](https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi).  
 
-
 Executar o projeto:
 
 - Interativo: `./Executavel`  
@@ -142,6 +141,11 @@ Onde fica o executável:
 > ℹ️ Os `Makefile` estão localizados em `<projeto>/Teste`, pois destinam-se apenas à compilação dos projetos de teste.
 
 > ℹ️ Os ficheiros CSV de resultados podem ser gravados em `Resultados/` usando o parâmetro `-R Resultados/<nome>`.
+
+> ℹ️ Todos os ficheiros de código-fonte estão em **UTF-8 sem BOM**.  
+
+> Certifique-se de que o seu editor respeita esta configuração (já incluída em `.editorconfig`).
+
 
 \anchor s4
 ## Instalação

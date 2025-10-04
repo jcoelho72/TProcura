@@ -1,9 +1,9 @@
-﻿#include "Aspirador.h"
+#include "Aspirador.h"
 #include <stdio.h>
 #include <string.h>
 
 
-CAspirador::CAspirador(void) 
+CAspirador::CAspirador(void) : aspirador(0)
 {
 }
 

@@ -1,9 +1,9 @@
-﻿#include "ProblemaArtificial.h"
+#include "ProblemaArtificial.h"
 #include <stdio.h>
 #include <string.h>
 
 
-TParametrosEspaco CProblemaArtificial::espaco;
+TParametrosEspaco CProblemaArtificial::espaco; 
 
 CProblemaArtificial::CProblemaArtificial(void) 
 {

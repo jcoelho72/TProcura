@@ -1,8 +1,8 @@
-﻿#include "Puzzle8.h"
+#include "Puzzle8.h"
 #include <stdio.h>
 #include <string.h>
 
-CPuzzle8::CPuzzle8(void) : zero(0)
+CPuzzle8::CPuzzle8(void) : zero(0) 
 {
 }
 

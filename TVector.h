@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 /**
  * @file   TVector.h
@@ -368,6 +368,12 @@ Item TVector<Item>::erro;
 template <class Item>
 void TVector<Item>::Size(int size)
 {
+	if (size <= 0) {
+		delete[] v;
+		v = nullptr;
+		sz = 0;
+		return;
+	}
 	Item* aux = new Item[size];
 	if (v != nullptr) {
 		int limite = (count < size ? count : size);

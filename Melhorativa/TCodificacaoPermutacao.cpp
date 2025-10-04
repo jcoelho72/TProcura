@@ -1,6 +1,6 @@
 #include "TCodificacaoPermutacao.h"
 
-int TCodificacaoPermutacao::nElementos = 0; // número de elementos na permutação
+int TCodificacaoPermutacao::nElementos = 0; // nÃºmero de elementos na permutaÃ§Ã£o 
 const char* TCodificacaoPermutacao::nomesVizinhanca[] = {
 	"inserir",
 	"trocaPar",
@@ -31,21 +31,21 @@ void TCodificacaoPermutacao::ResetParametros() {
 		"Order",
 		"Cycle"};
 	static const char* nomesDistancias[] = {
-		"Hamming", // número de posições com valores diferentes
-		"Kendall tau", // número de pares fora de ordem
-		"Spearman footrule" }; // soma das diferenças absolutas das posições
+		"Hamming", // nÃºmero de posiÃ§Ãµes com valores diferentes
+		"Kendall tau", // nÃºmero de pares fora de ordem
+		"Spearman footrule" }; // soma das diferenÃ§as absolutas das posiÃ§Ãµes
 
 	TProcuraMelhorativa::ResetParametros();
 
-	// parametros da codificação inteira
+	// parametros da codificaÃ§Ã£o inteira
 	parametro += {
 		{ "TIPO_CRUZAR", 3, 1, 4, "TIPO_CRUZAR: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", nomesCruzamento, _TV("0,2,3") },
-		{ "TIPO_MUTAR", 0,0,0, "TIPO_MUTAR: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)", NULL, _TV("0,2,3") },
-		{ "TIPO_VIZINHO", 1,1,3, "TIPO_VIZINHO: vários métodso para vizinhanças de inteiros", nomesVizinhanca, _TV("0,1") },
+		{ "TIPO_MUTAR", 0,0,0, "TIPO_MUTAR: 0 - aplica um vizinho aleatÃ³rio (seja 1 sÃ³ elemento ou segmento)", NULL, _TV("0,2,3") },
+		{ "TIPO_VIZINHO", 1,1,3, "TIPO_VIZINHO: vÃ¡rios mÃ©todso para vizinhanÃ§as de inteiros", nomesVizinhanca, _TV("0,1") },
 		{ "LIMITE_VIZINHOS", 0,0,1000,
-"LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite\n\
-- inserir + trocaPar + inverterSegmento - limita a distância entre pares" },
-		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de permutações", nomesDistancias, _TV("0,2,3") }
+"LIMITE_VIZINHOS, conforme a vizinhanÃ§a, se 0 nÃ£o hÃ¡ limite\n\
+- inserir + trocaPar + inverterSegmento - limita a distÃ¢ncia entre pares" },
+		{ "TIPO_DISTANCIA", 1,1,3, "DistÃ¢ncia: vÃ¡rios mÃ©todso para distÃ¢ncias de permutaÃ§Ãµes", nomesDistancias, _TV("0,2,3") }
 	};
 }
 
@@ -57,7 +57,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 
 	estado.Reset(-1);
 
-	// vetor de marcação (usado/copied) disponível para todos os operadores
+	// vetor de marcaÃ§Ã£o (usado/copied) disponÃ­vel para todos os operadores
 	TVector<bool> usado;
 	usado.Count(nElementos);
 	usado.Reset(false);
@@ -73,7 +73,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 
 	if (operador == 1) { // PMX
 		Debug(EXTRA_DEBUG, false, " cruzamento PBX %d - %d", inicio, fim);
-		// mapeamento valor -> posição em B
+		// mapeamento valor -> posiÃ§Ã£o em B
 		TVector<int> posB;
 		posB.Count(nElementos);
 		for (int i = 0; i < nElementos; i++)
@@ -85,7 +85,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 			usado[A[i]] = true;
 		}
 
-		// tratar elementos de B no segmento que não foram copiados
+		// tratar elementos de B no segmento que nÃ£o foram copiados
 		for (int i = inicio; i <= fim; i++) {
 			int val = B[i];
 			if (!usado[val]) {
@@ -110,7 +110,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 			}
 		}
 
-		// preencher restantes posições com elementos de B
+		// preencher restantes posiÃ§Ãµes com elementos de B
 		for (int i = 0; i < nElementos; i++)
 			if (estado[i] < 0)
 				estado[i] = B[i];
@@ -146,7 +146,7 @@ void TCodificacaoPermutacao::Cruzamento(TPonto a, TPonto b) {
 			estado[i] = current;
 			usado[current] = true;
 
-			// escolher próximo
+			// escolher prÃ³ximo
 			int next = -1;
 			if (!adj[current].Empty()) {
 				int minSize = nElementos + 1;
@@ -229,9 +229,9 @@ void TCodificacaoPermutacao::Vizinhanca(TVector<TPonto>& vizinhos) {
 	// inverter segmento de N bits
 	ETiposVizinhancaPermutacao tipo = (ETiposVizinhancaPermutacao)Parametro(TIPO_VIZINHO_CP);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CP);
-	Debug(EXTRA_DEBUG, false, " vizinhança %s (limite %d)",
+	Debug(EXTRA_DEBUG, false, " vizinhanÃ§a %s (limite %d)",
 		nomesVizinhanca[tipo - 1], limiteVizinhanca);
-	// alterar posição de elementos
+	// alterar posiÃ§Ã£o de elementos
 	for (int i = 0; i < nElementos; i++) // elemento i
 		for (int j = 0; j < nElementos; j++) // elemento j ou local j
 			if (i != j && (!limiteVizinhanca || abs(i - j) <= limiteVizinhanca)) {
@@ -269,11 +269,11 @@ void TCodificacaoPermutacao::Vizinhanca(TVector<TPonto>& vizinhos) {
 }
 
 void TCodificacaoPermutacao::Mutar(void) {
-	// mutação com probabilidade p de trocar cada bit
+	// mutaÃ§Ã£o com probabilidade p de trocar cada bit
 	int p = Parametro(TIPO_MUTAR_CP);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CP);
 	if (p == 0) {
-		// um vizinho aleatório
+		// um vizinho aleatÃ³rio
 		ETiposVizinhancaPermutacao tipo = 
 			(ETiposVizinhancaPermutacao)Parametro(TIPO_VIZINHO_CP);
 		int i = TRand::rand() % nElementos;
@@ -311,14 +311,14 @@ int TCodificacaoPermutacao::Distancia(TPonto a) {
 	ETiposDistanciaPermutacao tipo = 
 		(ETiposDistanciaPermutacao)Parametro(TIPO_DISTANCIA_CP);
 	if (tipo == distKendallTauCP) {
-		// número de pares fora de ordem
+		// nÃºmero de pares fora de ordem
 		for(int i=0; i<nElementos-1; i++)
 			for(int j=i+1; j<nElementos; j++)
 				if (obj.estado.Find(estado[i]) > obj.estado.Find(estado[j]))
 					dist++;
 	}
 	else if (tipo == distSpearmanFootruleCP) {
-		// soma das diferenças absolutas das posições
+		// soma das diferenÃ§as absolutas das posiÃ§Ãµes
 		for (int i = 0; i < nElementos; i++)
 			dist += abs(i - obj.estado.Find(estado[i]));
 	}

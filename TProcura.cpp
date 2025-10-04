@@ -9,23 +9,23 @@
 #endif
 constexpr int BUFFER_SIZE = 1024;
 
-// Resultado retornado pelo algoritmo na ˙ltima execuÁ„o.
+// Resultado retornado pelo algoritmo na √∫ltima execu√ß√£o.   
 int TProcura::resultado = 0;
-// tempo consumido na ˙ltima execuÁ„o.
+// tempo consumido na √∫ltima execu√ß√£o.
 double TProcura::tempo = 0;
-// numero de iteraÁıes, conforme definido no algoritmo
+// numero de itera√ß√µes, conforme definido no algoritmo
 int TProcura::iteracoes = 0;
 
 // deadline da corrida atual
 clock_t TProcura::instanteFinal = 0;
-// flag de problemas de memÛria esgotada
+// flag de problemas de mem√≥ria esgotada
 bool TProcura::memoriaEsgotada = false;
-// ID da inst‚ncia atual (problemas com v·rias inst‚ncias, a utilizar em SolucaoVazia())
+// ID da inst√¢ncia atual (problemas com v√°rias inst√¢ncias, a utilizar em SolucaoVazia())
 TParametro TProcura::instancia = { NULL,1,1,1, NULL, NULL };
-// nome do ficheiro de uma inst‚ncia (utilizar como prefixo, concatenando com ID da inst‚ncia)
+// nome do ficheiro de uma inst√¢ncia (utilizar como prefixo, concatenando com ID da inst√¢ncia)
 char TProcura::ficheiroInstancia[256] = "instancia_";
 
-// adicionar par‚metros especÌficos, se necess·rio
+// adicionar par√¢metros espec√≠ficos, se necess√°rio
 TVector<TParametro> TProcura::parametro;
 // adicionar indicadores conforme a necessidade
 TVector<TIndicador> TProcura::indicador;
@@ -34,13 +34,13 @@ TVector<int> TProcura::indAtivo;
 
 // MPI - rank do processo
 int TProcura::mpiID = 0;
-// MPI - n˙mero de processos
+// MPI - n√∫mero de processos
 int TProcura::mpiCount = 1;
-// Modo MPI : 0 = divis„o est·tica, 1 = mestre-escravo
+// Modo MPI : 0 = divis√£o est√°tica, 1 = mestre-escravo
 int TProcura::modoMPI = 0;
 
 
-// conjuntos de valores de par‚metros, para teste
+// conjuntos de valores de par√¢metros, para teste
 TVector<TVector<int>> TProcura::configuracoes;
 
 
@@ -58,21 +58,21 @@ void TProcura::ResetParametros()
 	// definir parametros base
 	parametro = {
 		{ "ALGORITMO", 1, 1, 1, "Algoritmo base a executar.", nomesAlgoritmos },
-		{ "NIVEL_DEBUG", 0, 0, 4, "NÌvel de debug, de reduzido a completo.", nomesDebug },
-		{ "SEMENTE", 1, 1, 1000000, "Semente aleatÛria para inicializar a sequÍncia de n˙meros pseudo-aleatÛrios." },
+		{ "NIVEL_DEBUG", 0, 0, 4, "N√≠vel de debug, de reduzido a completo.", nomesDebug },
+		{ "SEMENTE", 1, 1, 1000000, "Semente aleat√≥ria para inicializar a sequ√™ncia de n√∫meros pseudo-aleat√≥rios." },
 		{ "LIMITE_TEMPO", 10, 1, 3600, "Limnite de tempo em segundos. " },
-		{ "LIMITE_ITERACOES", 0, 0, 1000000000, "Limite de n˙mero de iteraÁıes (0 n„o h· limite). " }
+		{ "LIMITE_ITERACOES", 0, 0, 1000000000, "Limite de n√∫mero de itera√ß√µes (0 n√£o h√° limite). " }
 	};
 
 	// definir indicadores base
 	indicador = {
 		{ "Resultado", "Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", IND_RESULTADO },
-		{ "Tempo(ms)", "Tempo em milisegundos da execuÁ„o (medida de esforÁo computacional).", IND_TEMPO },
-		{ "IteraÁıes", "IteraÁıes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÁo independente do hardware).", IND_ITERACOES }
+		{ "Tempo(ms)", "Tempo em milisegundos da execu√ß√£o (medida de esfor√ßo computacional).", IND_TEMPO },
+		{ "Itera√ß√µes", "Itera√ß√µes do algoritmo, intrepretadas conforme o algoritmo (medida de esfor√ßo independente do hardware).", IND_ITERACOES }
 	};
 	indAtivo = { IND_RESULTADO, IND_TEMPO, IND_ITERACOES };
 
-	// colocar as configuraÁıes vazias (podem ser inicializadas se existirem configuraÁıes de omiss„o)
+	// colocar as configura√ß√µes vazias (podem ser inicializadas se existirem configura√ß√µes de omiss√£o)
 	configuracoes = {};
 }
 
@@ -92,7 +92,7 @@ int64_t TProcura::Indicador(int id) {
 // Escrever informacao de debug sobre o objecto atual
 void TProcura::Debug(bool completo)
 {
-	Debug(ATIVIDADE, false, "\nTProcura::Debug() mÈtodo n„o redefinido.");
+	Debug(ATIVIDADE, false, "\nTProcura::Debug() m√©todo n√£o redefinido.");
 }
 
 // Chamar antes de iniciar uma procura
@@ -122,9 +122,9 @@ void TProcura::TesteManual(const char* nome)
 		MostraRelatorio(resultados, true);
 		printf("\n\
 ____________________________________________________________________\n\
-| 1 - Inicializar | 2 - Explorar | 3 - Par‚metros    | 4 - SoluÁ„o |\n\
-| 5 - Indicadores | 6 - Executar | 7 - ConfiguraÁıes | 8 - Teste   |");
-		if ((selecao = NovoValor("\nOpÁ„o: ")) == NAO_LIDO)
+| 1 - Inicializar | 2 - Explorar | 3 - Par√¢metros    | 4 - Solu√ß√£o |\n\
+| 5 - Indicadores | 6 - Executar | 7 - Configura√ß√µes | 8 - Teste   |");
+		if ((selecao = NovoValor("\nOp√ß√£o: ")) == NAO_LIDO)
 			return;
 		switch (Dominio(selecao, 0, 9)) {
 		case 0: return;
@@ -147,11 +147,11 @@ ____________________________________________________________________\n\
 		case 7: EditarConfiguracoes(); break;
 		case 8: {
 			TVector<int> instancias = SolicitaInstancias();
-			TesteEmpirico(instancias, NovoTexto("Ficheiro (nada para mostrar no ecr„):"));
+			TesteEmpirico(instancias, NovoTexto("Ficheiro (nada para mostrar no ecr√£):"));
 			break;
 		}
 		case 9: return;
-		default: printf("\nOpÁ„o n„o definida."); break;
+		default: printf("\nOp√ß√£o n√£o definida."); break;
 		}
 	}
 }
@@ -165,12 +165,12 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 		if (!ParametroAtivo(parID))
 			continue;
 		count++;
-		// identificaÁ„o do par‚metro
+		// identifica√ß√£o do par√¢metro
 		if (detalhe == 0 || parametro[parID].nome == NULL)
 			printf("P%d=", parID + 1);
 		else
 			printf("P%d(%s): ", parID + 1, parametro[parID].nome);
-		// valor do par‚metro
+		// valor do par√¢metro
 		if (detalhe == 0 || parametro[parID].nomeValores == NULL)
 			printf("%d", Parametro(parID));
 		else
@@ -178,7 +178,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros) {
 		// mostrar intervalo permitido
 		if (detalhe > 1)
 			printf(" (%d a %d)", parametro[parID].min, parametro[parID].max);
-		// separador/mudanÁa de linha
+		// separador/mudan√ßa de linha
 		if (i < nElementos - 1) {
 			if (detalhe > 1 || count % (detalhe == 0 ? 8 : 4) == 0)
 				printf("\n ");
@@ -225,10 +225,10 @@ void TProcura::EditarParametros() {
 		if ((opcao = NovoValor("\nParametro:")) == NAO_LIDO || opcao == 0)
 			return;
 		opcao = Dominio(opcao, 1, parametro.Count());
-		// mostrar descriÁ„o se existir
+		// mostrar descri√ß√£o se existir
 		if (parametro[opcao - 1].descricao != NULL)
 			printf("\n%s", parametro[opcao - 1].descricao);
-		// mostrar textos dos valores possÌveis, caso existam
+		// mostrar textos dos valores poss√≠veis, caso existam
 		if (parametro[opcao - 1].nomeValores != NULL)
 			for (int i = parametro[opcao - 1].min; i <= parametro[opcao - 1].max; i++)
 				printf("\n%d: %s", i,
@@ -252,7 +252,7 @@ void TProcura::EditarParametros() {
 int TProcura::NovaConfiguracao(TVector<int>& parametros)
 {
 	int id = -1;
-	// procurar pela configuraÁ„o
+	// procurar pela configura√ß√£o
 	for (int i = 0; i < configuracoes.Count() && id < 0; i++)
 		if (configuracoes[i].Equal(parametros))
 			id = i;
@@ -265,7 +265,7 @@ int TProcura::NovaConfiguracao(TVector<int>& parametros)
 }
 
 
-// gravar (ou ler) a configuraÁ„o atual
+// gravar (ou ler) a configura√ß√£o atual
 void TProcura::ConfiguracaoAtual(TVector<int>& parametros, int operacao) {
 	if (operacao == GRAVAR) {
 		for (int i = 0; i < parametro.Count() && i < parametros.Count(); i++)
@@ -304,7 +304,7 @@ char* TProcura::MostraTempo(double segundos)
 			len += snprintf(str + len, sizeof(str) - len, "%" PRId64 "%c ", ms / unidades[i], unidadesStr[i]);
 			ms %= unidades[i];
 		}
-	if (ms > 0) 
+	if (ms > 0)
 		len += snprintf(str + len, sizeof(str) - len, "%" PRId64 "ms ", ms);
 
 	return str;
@@ -315,7 +315,7 @@ void TProcura::InserirRegisto(TVector<TResultado>& resultados, int inst, int con
 	resultados += { inst, conf };
 	for (auto ind : indAtivo)
 		Registo(resultados.Last(), ind, Indicador(ind));
-	// adicionar no final a soluÁ„o codificada em inteÌros
+	// adicionar no final a solu√ß√£o codificada em inte√≠ros
 	resultados.Last().valor += CodificarSolucao();
 }
 
@@ -335,20 +335,20 @@ void TProcura::Registo(TResultado& resultado, int id, int64_t valor)
 TVector<int> TProcura::SolicitaInstancias()
 {
 	char str[BUFFER_SIZE];
-	printf("\nSintaxe (apenas inteiros, sem espaÁos):\n\
-  A ou A,B,C   - ˙nico valor ou enumeraÁ„o\n\
+	printf("\nSintaxe (apenas inteiros, sem espa√ßos):\n\
+  A ou A,B,C   - √∫nico valor ou enumera√ß√£o\n\
   A:B ou A:B:C - intervalo A a B, ou com passo C\n\
-Introduza IDs das inst‚ncias (de %d a %d): ", instancia.min, instancia.max);
-	fgets(str, BUFFER_SIZE, stdin);
-	if (strlen(str) > 1)
-		return _TV(str);
-	// colocar apenas a inst‚ncia atual
+Introduza IDs das inst√¢ncias (de %d a %d): ", instancia.min, instancia.max);
+	if (fgets(str, BUFFER_SIZE, stdin))
+		if (strlen(str) > 1)
+			return _TV(str);
+	// colocar apenas a inst√¢ncia atual
 	return TVector<int>() += instancia.valor;
 }
 
 
 void TProcura::EditarConfiguracoes() {
-	TVector<int> atual; // par‚metros atuais
+	TVector<int> atual; // par√¢metros atuais
 	int id = -1, auxID;
 	char* str;
 
@@ -360,11 +360,11 @@ void TProcura::EditarConfiguracoes() {
 		MostrarConfiguracoes(0, id);
 
 		str = NovoTexto("\nSintaxe comando:\n\
-  id / -id     - Seleciona configuraÁ„o como atual ou apaga 'id'\n\
-  Pk=<conj.>   - Varia Pk na configuraÁ„o atual (gera N configuraÁıes)\n\
-  Pk=<conj.> x Pw=<conj.> - produto externo de Pk e Pw (gera NxM configuraÁıes)\n\
-Sintaxe de <conj.> (apenas inteiros, sem espaÁos):\n\
-  A ou A,B,C   - ˙nico valor ou enumeraÁ„o\n\
+  id / -id     - Seleciona configura√ß√£o como atual ou apaga 'id'\n\
+  Pk=<conj.>   - Varia Pk na configura√ß√£o atual (gera N configura√ß√µes)\n\
+  Pk=<conj.> x Pw=<conj.> - produto externo de Pk e Pw (gera NxM configura√ß√µes)\n\
+Sintaxe de <conj.> (apenas inteiros, sem espa√ßos):\n\
+  A ou A,B,C   - √∫nico valor ou enumera√ß√£o\n\
   A:B ou A:B:C - intervalo A a B, ou com passo C\n\
 Comando: ");
 		if (strlen(str) <= 1)
@@ -384,7 +384,7 @@ Comando: ");
 		}
 		else {
 			InserirConfiguracoes(str, atual);
-			configuracoes[id] = atual; // alterar atual se necess·rio
+			configuracoes[id] = atual; // alterar atual se necess√°rio
 			ConfiguracaoAtual(atual, GRAVAR);
 		}
 	} while (true);
@@ -392,11 +392,11 @@ Comando: ");
 }
 
 void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
-	char* pt, *contexto;
+	char* pt, * contexto;
 	TVector<int> currente, produto;
 	TVector<TVector<int>> valores;
 
-	// processar todos os itens a iniciar em P, obtendo informaÁ„o entre quais existe x
+	// processar todos os itens a iniciar em P, obtendo informa√ß√£o entre quais existe x
 	pt = compat::strtok(str, " \n\t\r", &contexto);
 	while (pt) {
 		if (*pt == 'P') {
@@ -408,10 +408,10 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 				if (param > 0 && param <= parametro.Count()) {
 					valores.Count(valores.Count() + 1);
 					valores.Last() = {};
-					valores.Last() += param; // primeiro valor È ID do par‚metro
-					valores.Last() += _TV(pt2 + 1); // valores para o par‚metro tomar
+					valores.Last() += param; // primeiro valor √© ID do par√¢metro
+					valores.Last() += _TV(pt2 + 1); // valores para o par√¢metro tomar
 					if (valores.Last().Count() == 2) {
-						// apenas um elemento, altera a configuraÁ„o atual 
+						// apenas um elemento, altera a configura√ß√£o atual 
 						// (se fosse para alternar, colocava o valor base masi o valor a alternar)
 						int valor = valores.Last().Last();
 						if (valor >= parametro[param - 1].min &&
@@ -429,11 +429,11 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 		}
 		pt = compat::strtok(NULL, " \n\t\r", &contexto);
 	}
-	// inserir configuraÁıes de acordo com o pretendido (produto externo, ou apenas ‡ configuraÁ„o base)
+	// inserir configura√ß√µes de acordo com o pretendido (produto externo, ou apenas √† configura√ß√£o base)
 	produto = {};
 	for (int i = 0; i < valores.Count(); i++)
-		if (valores[i].First() > 0) { // c.c. È o operador produto externo
-			if (i == valores.Count() - 1 || valores[i + 1].First() != 0) { // n„o h· outro produto externo, colocar na configuraÁ„o atual
+		if (valores[i].First() > 0) { // c.c. √© o operador produto externo
+			if (i == valores.Count() - 1 || valores[i + 1].First() != 0) { // n√£o h√° outro produto externo, colocar na configura√ß√£o atual
 				produto += i;
 				InserirConfiguracoes(base, produto, valores);
 				produto = {};
@@ -445,7 +445,7 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 
 void TProcura::InserirConfiguracoes(TVector<int>& base, TVector<int>& produto, TVector<TVector<int>>& valores)
 {
-	// inserir os valores do ˙ltimo elemento de forma recursiva
+	// inserir os valores do √∫ltimo elemento de forma recursiva
 	int idLista = produto.Pop();
 	TVector<int> backup = base;
 	TVector<int>& lista = valores[idLista];
@@ -467,7 +467,7 @@ void TProcura::InserirConfiguracoes(TVector<int>& base, TVector<int>& produto, T
 
 void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 	TVector<int> comum, distinto;
-	// identificar parametros comuns e distintos entre as parametrizaÁıes
+	// identificar parametros comuns e distintos entre as parametriza√ß√µes
 	for (int i = 0; i < configuracoes.First().Count(); i++) {
 		bool igual = true;
 		for (int j = 1; j < configuracoes.Count() && igual; j++)
@@ -477,12 +477,12 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 		else
 			distinto += i;
 	}
-	// mostra parametros comuns, evitando repetiÁ„o em cada configuraÁ„o
-	printf("\nPar‚metros comuns:");
+	// mostra parametros comuns, evitando repeti√ß√£o em cada configura√ß√£o
+	printf("\nPar√¢metros comuns:");
 	MostraParametros(detalhe, &comum);
 
-	// visualizar configuraÁıes atuais, assinalando a atualmente escolhida
-	printf("\n- ConfiguraÁıes geradas (total: %d) -", configuracoes.Count());
+	// visualizar configura√ß√µes atuais, assinalando a atualmente escolhida
+	printf("\n- Configura√ß√µes geradas (total: %d) -", configuracoes.Count());
 	for (int i = 0; i < configuracoes.Count(); i++) {
 		ConfiguracaoAtual(configuracoes[i], GRAVAR);
 		MostraParametros(detalhe, &distinto);
@@ -493,10 +493,10 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 }
 
 
-// utilizar para executar testes empÌricos, utilizando todas as inst„ncias,
-// com o ˙ltimo algoritmo executado e configuraÁıes existentes
+// utilizar para executar testes emp√≠ricos, utilizando todas as inst√£ncias,
+// com o √∫ltimo algoritmo executado e configura√ß√µes existentes
 void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
-	TVector<TResultado> resultados; // guarda as soluÁıes obtidas
+	TVector<TResultado> resultados; // guarda as solu√ß√µes obtidas
 	TVector<int> atual;
 	int backupID = instancia.valor;
 	int nTarefa = 0;
@@ -505,24 +505,24 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	case DETALHE: periodoReporte = 10; break;
 	case COMPLETO: periodoReporte = 1; break;
 	}
-	Cronometro(CONT_TESTE, true); // reiniciar cronÛmetro global
-	Cronometro(CONT_REPORTE, true); // reiniciar cronÛmetro evento
+	Cronometro(CONT_TESTE, true); // reiniciar cron√≥metro global
+	Cronometro(CONT_REPORTE, true); // reiniciar cron√≥metro evento
 	for (auto item : instancias)
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
 	instancias -= (-1);
 	ConfiguracaoAtual(atual, LER);
 	if (configuracoes.Empty()) {
-		// n„o foram feitas configuraÁıes, utilizar a atual
+		// n√£o foram feitas configura√ß√µes, utilizar a atual
 		configuracoes.Count(1);
 		configuracoes.Last() = atual;
 	}
 	if (mpiID == 0)
 		Debug(ATIVIDADE, false,
-			"\nTeste com %d tarefas, %d inst‚ncias, %d configuraÁıes, utilizando %d processo(s). ",
+			"\nTeste com %d tarefas, %d inst√¢ncias, %d configura√ß√µes, utilizando %d processo(s). ",
 			instancias.Count() * configuracoes.Count(), instancias.Count(), configuracoes.Count(), mpiCount) &&
 		fflush(stdout);
-	// percorrer todas as inst‚ncias
+	// percorrer todas as inst√¢ncias
 	for (int configuracao = 0; configuracao < configuracoes.Count(); configuracao++) {
 		ConfiguracaoAtual(configuracoes[configuracao], GRAVAR);
 
@@ -566,7 +566,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 				ficheiro, MostraTempo(Cronometro(CONT_TESTE))) &&
 			Debug(ATIVIDADE, false, "\nCPU total: %s",
 				MostraTempo(Cronometro(CONT_TESTE) * mpiCount)) &&
-			Debug(ATIVIDADE, false, "\nTaxa de utilizaÁ„o: %.1f%%",
+			Debug(ATIVIDADE, false, "\nTaxa de utiliza√ß√£o: %.1f%%",
 				100. * tempoTotal / (tempoMaximo * mpiCount));
 	}
 
@@ -579,7 +579,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 {
 #ifdef MPI_ATIVO
-	int dados[3] = { 0, 0, 0 }; // inst‚ncia, configuraÁ„o
+	int dados[3] = { 0, 0, 0 }; // inst√¢ncia, configura√ß√£o
 	double esperaTrabalhadores = 0, esperaGestor = 0;
 	TVector<double> terminou; // instante em que terminou cada trabalhador
 	TVector<int> trabalhador, trabalhar;
@@ -599,19 +599,19 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 	// 2. Encerrar escravos a mais
 	// 3. Receber resultados e repetir 1 ou 2 conforme as necessidades
 
-	TVector<TResultado> resultados; // guarda as soluÁıes obtidas
-	TVector<TResultado> tarefas; // guarda informaÁ„o apenas das tarefas a realizar (sem resultados)
+	TVector<TResultado> resultados; // guarda as solu√ß√µes obtidas
+	TVector<TResultado> tarefas; // guarda informa√ß√£o apenas das tarefas a realizar (sem resultados)
 	TVector<int> atual;
 	int backupID = instancia.valor;
-	Cronometro(CONT_TESTE, true); // reiniciar cronÛmetro global
-	Cronometro(CONT_REPORTE, true); // reiniciar cronÛmetro evento
+	Cronometro(CONT_TESTE, true); // reiniciar cron√≥metro global
+	Cronometro(CONT_REPORTE, true); // reiniciar cron√≥metro evento
 	for (auto item : instancias)
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
 	instancias -= (-1);
 	ConfiguracaoAtual(atual, LER);
 	if (configuracoes.Empty()) {
-		// n„o foram feitas configuraÁıes, utilizar a atual
+		// n√£o foram feitas configura√ß√µes, utilizar a atual
 		configuracoes.Count(1);
 		configuracoes.Last() = atual;
 	}
@@ -621,7 +621,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 		for (auto inst : instancias)
 			tarefas += { inst, configuracao };
 
-	Debug(ATIVIDADE, false, "\nTeste com %d tarefas, %d inst‚ncias, %d configuraÁıes, utilizando %d processo(s). ",
+	Debug(ATIVIDADE, false, "\nTeste com %d tarefas, %d inst√¢ncias, %d configura√ß√µes, utilizando %d processo(s). ",
 		tarefas.Count(), instancias.Count(), configuracoes.Count(),
 		trabalhador.Count() + 1) &&
 		fflush(stdout);
@@ -633,9 +633,9 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 		dados[1] = tarefa.configuracao;
 		trabalhar += trabalhador.Last();
 		MPI_Send(dados, 2, MPI_INT, trabalhador.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
-		esperaTrabalhadores += Cronometro(CONT_TESTE); // estava parado atÈ esta altura
+		esperaTrabalhadores += Cronometro(CONT_TESTE); // estava parado at√© esta altura
 	}
-	// caso existam escravos sem trabalho, mandar fechar todos, n„o h· mais tarefas
+	// caso existam escravos sem trabalho, mandar fechar todos, n√£o h√° mais tarefas
 	dados[0] = dados[1] = -1;
 	while (!trabalhador.Empty()) {
 		auto trabalhadorID = trabalhador.Pop();
@@ -648,7 +648,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 		MPI_Status stat;
 
 		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
-			// mostrar uma linha por cada execuÁ„o
+			// mostrar uma linha por cada execu√ß√£o
 			Debug(ATIVIDADE, false, "\n%s Faltam %d tarefas, em curso %d",
 				MostraTempo(Cronometro(CONT_TESTE)), tarefas.Count(), trabalhar.Count()) &&
 				fflush(stdout);
@@ -667,7 +667,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 		// tempo de espera do trabalhador
 		esperaTrabalhadores += (double)((int64_t)resultados.Last().valor.Pop()) / 1000.;
 
-		// ainda h· tarefas
+		// ainda h√° tarefas
 		if (!tarefas.Empty()) {
 			auto tarefa = tarefas.Pop();
 			dados[0] = tarefa.instancia;
@@ -683,7 +683,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 		}
 	}
 
-	// contar a espera dos trabalhadores, apÛs terminarem
+	// contar a espera dos trabalhadores, ap√≥s terminarem
 	for (int i = 1; i < mpiCount; i++)
 		esperaTrabalhadores += Cronometro(CONT_TESTE) - terminou[i];
 
@@ -692,7 +692,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 	double taxaUtilizacaoT = 1. - (esperaTrabalhadores / (Cronometro(CONT_TESTE) * (mpiCount - 1)));
 	double taxaUtilizacaoG = 1. - (esperaGestor / Cronometro(CONT_TESTE));
 	double taxaUtilizacao = 1. - ((esperaTrabalhadores + esperaGestor) / (Cronometro(CONT_TESTE) * mpiCount));
-	mpiCount = 1; // forÁar a escrita do ficheiro apenas neste processo
+	mpiCount = 1; // for√ßar a escrita do ficheiro apenas neste processo
 	RelatorioCSV(resultados, ficheiro) &&
 		Debug(ATIVIDADE, false,
 			"\nFicheiro %s.csv gravado.\n"
@@ -704,7 +704,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 			MostraTempo(esperaGestor)) &&
 		Debug(ATIVIDADE, false, "\nEspera total dos trabalhadores: %s",
 			MostraTempo(esperaTrabalhadores)) &&
-		Debug(ATIVIDADE, false, "\nTaxa de utilizaÁ„o:\n- Total: %.1f%%\n- Gestor: %.1f%%\n- Trabalhadores: %.1f%% ",
+		Debug(ATIVIDADE, false, "\nTaxa de utiliza√ß√£o:\n- Total: %.1f%%\n- Gestor: %.1f%%\n- Trabalhadores: %.1f%% ",
 			taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
 	mpiCount = backupCount;
 
@@ -714,24 +714,24 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 void TProcura::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 {
 #ifdef MPI_ATIVO
-	int dados[3] = { 0, 0, 0 }; // inst‚ncia, configuraÁ„o
+	int dados[3] = { 0, 0, 0 }; // inst√¢ncia, configura√ß√£o
 	// Ciclo:
 	// 1. Solicitar tarefa ao mestre
 	// 2. Executar tarefa
 	// 3. Enviar resultados ao mestre
-	// 4. Repetir atÈ receber ordem de paragem
+	// 4. Repetir at√© receber ordem de paragem
 
-	TVector<TResultado> resultados; // guarda as soluÁıes obtidas
+	TVector<TResultado> resultados; // guarda as solu√ß√µes obtidas
 	TVector<int> atual;
 	int backupID = instancia.valor;
-	Cronometro(CONT_TESTE, true); // reiniciar cronÛmetro global
+	Cronometro(CONT_TESTE, true); // reiniciar cron√≥metro global
 	for (auto item : instancias)
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
 	instancias -= (-1);
 	ConfiguracaoAtual(atual, LER);
 	if (configuracoes.Empty()) {
-		// n„o foram feitas configuraÁıes, utilizar a atual
+		// n√£o foram feitas configura√ß√µes, utilizar a atual
 		configuracoes.Count(1);
 		configuracoes.Last() = atual;
 	}
@@ -745,7 +745,7 @@ void TProcura::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 		ExecutaTarefa(resultados, dados[0], dados[1]);
 
 		// enviar registo para master, e apagar
-		// dados[0] e dados[1] j· tÍm a configuraÁ„o e inst‚ncia
+		// dados[0] e dados[1] j√° t√™m a configura√ß√£o e inst√¢ncia
 		dados[2] = resultados.Last().valor.Count() + 1;
 		double inicioEspera = Cronometro(CONT_TESTE);
 		MPI_Send(dados, 3, MPI_INT, 0, TAG_CABECALHO, MPI_COMM_WORLD);
@@ -756,25 +756,25 @@ void TProcura::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 		resultados.Pop();
 	}
 
-	// saÌda, enviar o tempo de trabalho e tempo de espera totais
+	// sa√≠da, enviar o tempo de trabalho e tempo de espera totais
 
 #endif
 }
 
 void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf)
 {
-	// carregar a configuraÁ„o
+	// carregar a configura√ß√£o
 	ConfiguracaoAtual(configuracoes[conf], GRAVAR);
 	instancia.valor = inst;
 	TRand::srand(Parametro(SEMENTE));
-	// carregar inst‚ncia
+	// carregar inst√¢ncia
 	Inicializar();
 	// executar um algoritmo 
-	Debug(COMPLETO, false, "inst‚ncia %d: ", instancia.valor) && fflush(stdout);
+	Debug(COMPLETO, false, "inst√¢ncia %d: ", instancia.valor) && fflush(stdout);
 	LimparEstatisticas();
 	{
 		ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
-		Parametro(NIVEL_DEBUG) = NADA; // remover informaÁ„o de debug do algoritmo, j· que È um teste empÌrico
+		Parametro(NIVEL_DEBUG) = NADA; // remover informa√ß√£o de debug do algoritmo, j√° que √© um teste emp√≠rico
 		resultado = ExecutaAlgoritmo();
 		Parametro(NIVEL_DEBUG) = backupDebug;
 	}
@@ -787,26 +787,26 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	}
 	else {
 		if (Parar())
-			Debug(COMPLETO, false, "N„o resolvido. ");
+			Debug(COMPLETO, false, "N√£o resolvido. ");
 		if (TempoExcedido())
 			Debug(COMPLETO, false, "Tempo excedido. ");
 		if (memoriaEsgotada)
-			Debug(COMPLETO, false, "MemÛria esgotada. ");
+			Debug(COMPLETO, false, "Mem√≥ria esgotada. ");
 		if (resultado < 0 && !Parar())
-			Debug(COMPLETO, false, "Inst‚ncia ImpossÌvel! (se algoritmo completo) ");
-		else // n„o resolvido, cancelar resultados 
+			Debug(COMPLETO, false, "Inst√¢ncia Imposs√≠vel! (se algoritmo completo) ");
+		else // n√£o resolvido, cancelar resultados 
 			resultados.Last().valor.First() = -2;
 	}
 	Debug(COMPLETO, false, "DONE.") && fflush(stdout);
 }
 
-// processa os argumentos da funÁ„o main
+// processa os argumentos da fun√ß√£o main
 void TProcura::main(int argc, char* argv[], const char* nome) {
 	TVector<int> instancias;
 	char fichResultados[256];
 	char argParametros[BUFFER_SIZE] = "";
 
-	std::locale::global(std::locale(""));
+	compat::init_io();
 
 	if (argc <= 1) {
 		TesteManual(nome);
@@ -817,7 +817,7 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		return;
 	}
 
-	// 1:10  --- conjunto de inst‚ncias (idÍntico ao interativo)
+	// 1:10  --- conjunto de inst√¢ncias (id√™ntico ao interativo)
 	instancias = argv[1];
 	if (instancias.Empty()) {
 		AjudaUtilizacao(argv[0]);
@@ -829,10 +829,10 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 	ResetParametros();
 
 	// opcionais:
-	// -R resultados --- ficheiro de resultados em CSV (adicionada extens„o .csv)
-	// -F instancia_ --- prefixo dos ficheiros de inst‚ncias
+	// -R resultados --- ficheiro de resultados em CSV (adicionada extens√£o .csv)
+	// -F instancia_ --- prefixo dos ficheiros de inst√¢ncias
 	// -I 2,1,3 --- indicadores selecionados por ordem 
-	// -P P1=1:3 x P2=0:2 --- formataÁ„o de par‚metros (idÍntico ao interativo)
+	// -P P1=1:3 x P2=0:2 --- formata√ß√£o de par√¢metros (id√™ntico ao interativo)
 	for (int i = 2; i < argc; i++) {
 		if (strcmp(argv[i], "-R") == 0 && i + 1 < argc) {
 			snprintf(fichResultados, sizeof(fichResultados), "%s", argv[i + 1]);
@@ -856,10 +856,10 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		}
 		else if (strcmp(argv[i], "-P") == 0 && i + 1 < argc) {
 			TVector<int> base;
-			// o resto È para concatenar e enviar
+			// o resto √© para concatenar e enviar
 			int len = 0;
 			argParametros[0] = 0;
-			while (++i < argc) 
+			while (++i < argc)
 				len += snprintf(argParametros + len, sizeof(argParametros) - len, " %s", argv[i]);
 			ConfiguracaoAtual(base, LER);
 			InserirConfiguracoes(argParametros, base);
@@ -868,14 +868,14 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		}
 	}
 
-	// arrancar MPI apenas apÛs processar os argumentos
+	// arrancar MPI apenas ap√≥s processar os argumentos
 	InicializaMPI(argc, argv);
 
 	if (Parametro(NIVEL_DEBUG) >= DETALHE && mpiID == 0)
 		MostrarConfiguracoes(0, -1);
 
 	if (modoMPI == 0 || mpiCount == 1)
-		// divis„o est·tica ou execuÁ„o em sÈrie
+		// divis√£o est√°tica ou execu√ß√£o em s√©rie
 		TesteEmpirico(instancias, fichResultados);
 	else {
 		if (mpiID == 0)
@@ -891,21 +891,21 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 
 void TProcura::AjudaUtilizacao(const char* programa) {
 	printf(
-		"Uso: %s <inst‚ncias> [opÁıes]\n"
-		"  <inst‚ncias>    Conjunto de IDs: A | A,B,C | A:B[:C]\n"
-		"OpÁıes:\n"
-		"  -R <ficheiro>   Nome do CSV de resultados (omiss„o: resultados.csv)\n"
-		"  -F <prefixo>    Prefixo dos ficheiros de inst‚ncia (omiss„o: instancia_)\n"
-		"  -M <modo>       Modo MPI: 0 = divis„o est·tica, 1 = gestor-trabalhador\n"
+		"Uso: %s <inst√¢ncias> [op√ß√µes]\n"
+		"  <inst√¢ncias>    Conjunto de IDs: A | A,B,C | A:B[:C]\n"
+		"Op√ß√µes:\n"
+		"  -R <ficheiro>   Nome do CSV de resultados (omiss√£o: resultados.csv)\n"
+		"  -F <prefixo>    Prefixo dos ficheiros de inst√¢ncia (omiss√£o: instancia_)\n"
+		"  -M <modo>       Modo MPI: 0 = divis√£o est√°tica, 1 = gestor-trabalhador\n"
 		"  -I <ind>        Lista de indicadores (e.g. 2,1,3)\n"
 		"  -h              Esta ajuda\n"
-		"  -P <expr>       Par‚metros (e.g. P1=1:3 x P2=0:2) - ˙ltimo campo\n"
+		"  -P <expr>       Par√¢metros (e.g. P1=1:3 x P2=0:2) - √∫ltimo campo\n"
 		"Exemplo: %s 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2 \n"
 		"   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores\n",
 		programa, programa
 	);
 	ResetParametros();
-	printf("\nLista de par‚metros:");
+	printf("\nLista de par√¢metros:");
 	MostraParametros(2);
 	printf("\n\nLista de indicadores:");
 	MostraIndicadores();
@@ -913,7 +913,7 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 
 
 bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
-	char * contexto;
+	char* contexto;
 	char* pt = compat::strtok(ficheiro, " \n\t\r", &contexto);
 	char str[BUFFER_SIZE];
 	if (mpiCount > 1)
@@ -929,8 +929,8 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
 			fprintf(f, "sep=;\n");
 		}
 
-		// cabeÁalho: inst‚ncia, parametros, indicadores
-		fprintf(f, "Inst‚ncia;");
+		// cabe√ßalho: inst√¢ncia, parametros, indicadores
+		fprintf(f, "Inst√¢ncia;");
 		for (int i = 0; i < parametro.Count(); i++)
 			fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
 		for (auto item : indAtivo)
@@ -940,9 +940,9 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
 		for (auto& res : resultados) {
 			fprintf(f, "%d;", res.instancia);
 			for (int j = 0; j < parametro.Count(); j++)
-				// ver se parametro j est· ativo na configuraÁ„o configuracoes[res.configuracao]
+				// ver se parametro j est√° ativo na configura√ß√£o configuracoes[res.configuracao]
 				if (!ParametroAtivo(j, &(configuracoes[res.configuracao])))
-					fprintf(f, ";"); // parametro inativo, n„o mostrar
+					fprintf(f, ";"); // parametro inativo, n√£o mostrar
 				else if (parametro[j].nomeValores == NULL)
 					fprintf(f, "%d;", configuracoes[res.configuracao][j]); // mostrar valor
 				else
@@ -980,7 +980,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 		return;
 	}
 
-	TVector<TResultado> total; // totais por cada configuraÁ„o
+	TVector<TResultado> total; // totais por cada configura√ß√£o
 	total.Count(configuracoes.Count());
 	for (int i = 0; i < total.Count(); i++) {
 		total[i].instancia = total[i].configuracao = 0;
@@ -997,7 +997,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 	for (int i = 0; i < indAtivo.Count(); i++)
 		printf("----------|");
 
-	for (auto &res : resultados) {
+	for (auto& res : resultados) {
 		if (Registo(res, IND_RESULTADO) >= -1)
 			total[res.configuracao].instancia++;
 		printf("\n%3d |%3d |", res.instancia, res.configuracao + 1);
@@ -1014,7 +1014,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 	for (int i = 0; i < indAtivo.Count(); i++)
 		printf("----------|");
 	printf("resolvidas");
-	// tabela com os totais por configuraÁ„o
+	// tabela com os totais por configura√ß√£o
 	for (int i = 0; i < total.Count(); i++) {
 		printf("\nTotal%3d |", i + 1);
 
@@ -1023,14 +1023,14 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 
 		printf(" %d", total[i].instancia);
 	}
-	// mostrar torneio entre configuraÁıes
+	// mostrar torneio entre configura√ß√µes
 	CalculaTorneio(resultados);
 	MostrarConfiguracoes(1);
 	printf("\n");
 }
 
 void TProcura::CalculaTorneio(TVector<TResultado>& resultados) {
-	TVector<TVector<int>> torneio; // pares de configuraÁıes: 1 melhor, 0 igual -1 pior
+	TVector<TVector<int>> torneio; // pares de configura√ß√µes: 1 melhor, 0 igual -1 pior
 	torneio.Count(configuracoes.Count());
 	for (int i = 0; i < torneio.Count(); i++) {
 		torneio[i].Count(configuracoes.Count());
@@ -1042,7 +1042,7 @@ void TProcura::CalculaTorneio(TVector<TResultado>& resultados) {
 		for (int j = 0; j < configuracoes.Count(); j++)
 			if (i != j) {
 				TVector<TResultado> configuracaoJ = ExtrairConfiguracao(resultados, j);
-				// resultados sempre por mesma ordem de inst‚ncia
+				// resultados sempre por mesma ordem de inst√¢ncia
 				for (int k = 0; k < configuracaoI.Count() && k < configuracaoJ.Count(); k++)
 					torneio[i][j] += MelhorResultado(configuracaoI[k], configuracaoJ[k]);
 			}
@@ -1058,7 +1058,7 @@ void TProcura::MostraIndicadores()
 		if (indicador[i].indice < 0)
 			printf("inativo ");
 		else
-			printf("%d∫ lugar ", indicador[i].indice + 1);
+			printf("%d¬∫ lugar ", indicador[i].indice + 1);
 		printf("(%s)", indicador[i].descricao);
 	}
 }
@@ -1079,7 +1079,7 @@ void TProcura::MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo)
 			}
 
 	// mostrar tabela do torneio
-	printf("\nTorneio (#inst‚ncias melhores):");
+	printf("\nTorneio (#inst√¢ncias melhores):");
 	BarraTorneio(true);
 	for (int i = 0; i < pontos.Count(); i++) {
 		printf("\n%2d", i + 1);
@@ -1096,7 +1096,7 @@ void TProcura::MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo)
 
 TVector<TResultado>  TProcura::ExtrairConfiguracao(TVector<TResultado>& resultados, int configuracao) {
 	TVector<TResultado> extracao;
-	for (auto &res : resultados)
+	for (auto& res : resultados)
 		if (res.configuracao == configuracao)
 			extracao += res;
 	return extracao;
@@ -1115,14 +1115,14 @@ void TProcura::BarraTorneio(bool nomes) {
 
 
 int TProcura::MelhorResultado(TResultado base, TResultado alternativa) {
-	// se n„o resolvido por ambos, retornar igualdade (assumir cÛdigo -1 para impossÌvel, -2 para n„o resolvido, menor È melhor)
+	// se n√£o resolvido por ambos, retornar igualdade (assumir c√≥digo -1 para imposs√≠vel, -2 para n√£o resolvido, menor √© melhor)
 	if (Registo(base, IND_RESULTADO) == -2 && Registo(alternativa, IND_RESULTADO) == -2)
 		return 0;
 	// se igual no custo e o tempo menor que 100, retornar igualdade
 	if (Registo(base, IND_RESULTADO) == Registo(alternativa, IND_RESULTADO) &&
 		abs(Registo(base, IND_TEMPO) - Registo(alternativa, IND_TEMPO)) / 100 == 0)
 		return 0;
-	// primeiro custo (ou n„o resolvido, -2)
+	// primeiro custo (ou n√£o resolvido, -2)
 	if ((Registo(base, IND_RESULTADO) == -2 &&
 		Registo(alternativa, IND_RESULTADO) > -2) ||
 		(Registo(alternativa, IND_RESULTADO) > 0 &&
@@ -1142,13 +1142,13 @@ void TProcura::ExecucaoTerminada()
 	if (TempoExcedido())
 		printf(" Tempo excedido.");
 	else if (memoriaEsgotada)
-		printf(" MemÛria esgotada.");
+		printf(" Mem√≥ria esgotada.");
 }
 
-// MostrarSolucao: definir para visualizar a soluÁ„o
+// MostrarSolucao: definir para visualizar a solu√ß√£o
 void TProcura::MostrarSolucao() {
 	TVector<int64_t> solucao = CodificarSolucao();
-	printf("\nSoluÁ„o: ");
+	printf("\nSolu√ß√£o: ");
 	for (auto& x : solucao)
 		printf("%" PRId64 " ", x);
 	printf(".");
@@ -1158,9 +1158,9 @@ void TProcura::MostrarSolucao() {
 int TProcura::NovoValor(const char* prompt) {
 	char str[BUFFER_SIZE];
 	printf("%s", prompt);
-	fgets(str, BUFFER_SIZE, stdin);
-	if (strlen(str) > 1)
-		return atoi(str);
+	if (fgets(str, BUFFER_SIZE, stdin))
+		if (strlen(str) > 1)
+			return atoi(str);
 	return NAO_LIDO;
 }
 
@@ -1168,7 +1168,8 @@ int TProcura::NovoValor(const char* prompt) {
 char* TProcura::NovoTexto(const char* prompt) {
 	static char str[BUFFER_SIZE];
 	printf("%s", prompt);
-	fgets(str, BUFFER_SIZE, stdin);
+	if (fgets(str, BUFFER_SIZE, stdin) == nullptr)
+		str[0] = 0;
 	return str;
 }
 
@@ -1177,10 +1178,10 @@ void TProcura::SolicitaInstancia() {
 	if (instancia.max != instancia.min) {
 		int resultado;
 		char* texto;
-		printf("\nID atual: %d  Intervalo: [%dñ%d]  ",
+		printf("\nID atual: %d  Intervalo: [%d‚Äì%d]  ",
 			instancia.valor, instancia.min, instancia.max);
 		printf("Prefixo atual: '%s' ", ficheiroInstancia);
-		printf("\nNovo ID (ENTER mantÈm) ou novo prefixo (texto): ");
+		printf("\nNovo ID (ENTER mant√©m) ou novo prefixo (texto): ");
 
 		texto = NovoTexto("");
 		resultado = atoi(texto);
@@ -1245,15 +1246,15 @@ void TProcura::DebugTabela(ENivelDebug nivel, TVector<int> tabela, const char* t
 
 bool TProcura::JuntarCSV(const char* ficheiro)
 {
-	// ficheiros CSV com o mesmo cabeÁalho, ficheiro0.csv, ficheiro1.csv, ..., ficheiroN.csv
+	// ficheiros CSV com o mesmo cabe√ßalho, ficheiro0.csv, ficheiro1.csv, ..., ficheiroN.csv
 	FILE* fGravar = NULL, * fLer = NULL;
 	char nome[256], str[BUFFER_SIZE];
 
-	// verifica se existem os ficheiros intermÈdios
+	// verifica se existem os ficheiros interm√©dios
 	for (int i = 0; i < mpiCount; i++) {
 		snprintf(nome, sizeof(nome), "%s_%d.csv", ficheiro, i);
 		if ((fLer = compat::fopen(nome, "rt")) == NULL)
-			// n„o existe este ficheiro, ainda n„o est· tudo
+			// n√£o existe este ficheiro, ainda n√£o est√° tudo
 			return false;
 		fclose(fLer);
 	}
@@ -1275,14 +1276,14 @@ bool TProcura::JuntarCSV(const char* ficheiro)
 		}
 		while (!feof(fLer)) {
 			if (fgets(str, BUFFER_SIZE, fLer) != NULL) {
-				// evitar escrever o cabeÁalho mais do que uma vez
-				if (i > 0 && strncmp(str, "Inst‚ncia;", 10) == 0)
+				// evitar escrever o cabe√ßalho mais do que uma vez
+				if (i > 0 && strncmp(str, "Inst√¢ncia;", 10) == 0)
 					continue;
 				fputs(str, fGravar);
 			}
 		}
 		fclose(fLer);
-		remove(nome); // apagar ficheiro intermÈdio
+		remove(nome); // apagar ficheiro interm√©dio
 	}
 	fclose(fGravar);
 	return true;

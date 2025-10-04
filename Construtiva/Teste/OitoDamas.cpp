@@ -1,7 +1,7 @@
-﻿#include "OitoDamas.h"
+#include "OitoDamas.h"
 #include <stdio.h>
 
-int COitoDamas::nDamas = 8; // número de damas desta instância
+int COitoDamas::nDamas = 8; // número de damas desta instância 
 
 COitoDamas::COitoDamas(void)
 {

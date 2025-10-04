@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "../TProcuraConstrutiva.h"
 
-// estrutura para caracterização do espaço de procura
+// estrutura para caracterização do espaço de procura 
 typedef struct SParametrosEspaco {
 	int minRamificacao, maxRamificacao; // valores mínimos e máximos para a ramificação
 	int minNivelObjetivo; // valor mínimo do nível para um estado poder ser objetivo

@@ -4,7 +4,10 @@
 
 Execução de exemplo com base na classe de teste de TVector. 
 Pode acompanhar o teste executando as ações localmente.
-Selecione o projeto TProcura, e execute.
+
+No Visual Studio, selecione o projeto TProcura, e execute.
+No Linux na pasta `.../TProcura/Teste$` execute `make` seguido de `./bin/Release/TProcura`
+
 Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe TProcura.
 Nos exemplos das subclasses ilustra-se as restantes funcionalidades.
 
@@ -17,7 +20,8 @@ Nos exemplos das subclasses ilustra-se as restantes funcionalidades.
 - [Ação 5: Menu 7 - Configurações](#tvector-a5)
 - [Ação 6: Menu 8 - Teste](#tvector-a6)
 - [Ação 7: Linha de comando](#tvector-a7)
-- [Ação 8: Desafio CTesteTVector](#tvector-a8)
+- [Ação 8: Execução MPI](#tvector-a8)
+- [Ação 9: Desafio CTesteTVector](#tvector-a9)
 
 
 ```entrada
@@ -902,7 +906,15 @@ Apenas após a identificação de bugs, é que a programação é necessária.
 ---
 
 \anchor tvector-a8
-## Ação 8: Desafio CTesteTVector
+## Ação 8: Execução MPI
+
+
+
+
+---
+
+\anchor tvector-a9
+## Ação 9: Desafio CTesteTVector
 
 Será a ordenação de TVector mais rápida ou mais lenta ue a ordenação da STL?
 Que testes pode fazer para procurar dar uma resposta fundamentada?

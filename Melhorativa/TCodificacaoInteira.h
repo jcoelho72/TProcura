@@ -1,7 +1,7 @@
 #pragma once
 #include "TProcuraMelhorativa.h"
 
-// nomes dos par‚metros fixos na codificaÁ„o bin·ria
+// nomes dos par√¢metros fixos na codifica√ß√£o bin√°ria
 enum ECodificacaoInteira {
 	TIPO_CRUZAR_CI = PARAMETROS_MELHORATIVA,
 	TIPO_MUTAR_CI, TIPO_VIZINHO_CI, LIMITE_VIZINHOS_CI, TIPO_DISTANCIA_CI,
@@ -9,8 +9,8 @@ enum ECodificacaoInteira {
 };
 
 enum ETiposVizinhancaInteira {
-	vizIncDecValorCI = 1,    // incrementa/decrementa valor
-	vizIncDecPot2CI,         // incrementa/decrementa potÍncia de 2
+	vizIncDecValorCI = 1,    // incrementa/decrementa valor 
+	vizIncDecPot2CI,         // incrementa/decrementa pot√™ncia de 2
 	vizTrocaValorCI,         // troca valores entre dois elementos
 	vizInserirCI,            // insere um elemento noutro local (deslocando os outros)
 	vizTrocaParCI,           // troca dois elementos (permuta)
@@ -18,9 +18,9 @@ enum ETiposVizinhancaInteira {
 };
 
 enum ETiposDistanciaInteira {
-	distHammingCI = 1, // n˙mero de posiÁıes com valores diferentes
-	distEuclidianaCI,  // dist‚ncia euclidiana (raiz quadrada da soma dos quadrados das diferenÁas)
-	distManhattanCI    // dist‚ncia Manhattan (soma das diferenÁas absolutas)
+	distHammingCI = 1, // n√∫mero de posi√ß√µes com valores diferentes
+	distEuclidianaCI,  // dist√¢ncia euclidiana (raiz quadrada da soma dos quadrados das diferen√ßas)
+	distManhattanCI    // dist√¢ncia Manhattan (soma das diferen√ßas absolutas)
 };
 
 class TCodificacaoInteira :
@@ -30,22 +30,22 @@ public:
 	TCodificacaoInteira() {}
 	~TCodificacaoInteira() {}
 
-	TVector<int> estado; // codificaÁ„o inteira
-	static int nElementos; // n˙mero de elementos na permutaÁ„o
-	static TVector<int> maxValor; // valor m·ximo para cada elemento
+	TVector<int> estado; // codifica√ß√£o inteira
+	static int nElementos; // n√∫mero de elementos na permuta√ß√£o
+	static TVector<int> maxValor; // valor m√°ximo para cada elemento
 
-	// mÈtodos necess·rios redefinir
+	// m√©todos necess√°rios redefinir
 	int Avaliar(void) = 0;
 	TPonto Duplicar(void) = 0;
 
-	// deve carregar a inst‚ncia, para vari·veis est·ticas, da subclasse
+	// deve carregar a inst√¢ncia, para vari√°veis est√°ticas, da subclasse
 	// definir valores globais: nElementos
 	void Inicializar(void)=0;
 
-	// mÈtodos que podem ser redefinidos
+	// m√©todos que podem ser redefinidos
 	void Debug(bool completo = true) override;
 
-	// mÈtodos que n„o se prevÍ que sejam redefinidos
+	// m√©todos que n√£o se prev√™ que sejam redefinidos
 	void Copiar(TPonto objecto);
 	void NovaSolucao(void);
 	void ResetParametros();

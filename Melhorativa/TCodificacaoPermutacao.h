@@ -1,7 +1,7 @@
 #pragma once
 #include "TProcuraMelhorativa.h"
 
-// nomes dos par‚metros fixos na codificaÁ„o bin·ria
+// nomes dos par√¢metros fixos na codifica√ß√£o bin√°ria
 enum ECodificacaoPermutacao {
 	TIPO_CRUZAR_CP = PARAMETROS_MELHORATIVA,
 	TIPO_MUTAR_CP, TIPO_VIZINHO_CP, LIMITE_VIZINHOS_CP, TIPO_DISTANCIA_CP,
@@ -11,13 +11,13 @@ enum ECodificacaoPermutacao {
 enum ETiposVizinhancaPermutacao {
 	vizInserirCP = 1,        // insere um elemento noutro local (deslocando os outros)
 	vizTrocaParCP,           // troca dois elementos (permuta)
-	vizInverterSegmentoCP,   // inverte um segmento
+	vizInverterSegmentoCP,   // inverte um segmento 
 };
 
 enum ETiposDistanciaPermutacao {
-	distHammingCP = 1,	 // n˙mero de posiÁıes com valores diferentes
-	distKendallTauCP,		 // dist‚ncia Kendall tau (n˙mero de pares fora de ordem)
-	distSpearmanFootruleCP // dist‚ncia Spearman footrule (soma das diferenÁas absolutas das posiÁıes)
+	distHammingCP = 1,	 // n√∫mero de posi√ß√µes com valores diferentes
+	distKendallTauCP,		 // dist√¢ncia Kendall tau (n√∫mero de pares fora de ordem)
+	distSpearmanFootruleCP // dist√¢ncia Spearman footrule (soma das diferen√ßas absolutas das posi√ß√µes)
 };
 
 class TCodificacaoPermutacao :
@@ -27,21 +27,21 @@ public:
 	TCodificacaoPermutacao() {}
 	~TCodificacaoPermutacao() {}
 
-	TVector<int> estado; // codificaÁ„o por permutaÁ„o
-	static int nElementos; // n˙mero de elementos na permutaÁ„o
+	TVector<int> estado; // codifica√ß√£o por permuta√ß√£o
+	static int nElementos; // n√∫mero de elementos na permuta√ß√£o
 
-	// mÈtodos necess·rios redefinir
+	// m√©todos necess√°rios redefinir
 	int Avaliar(void) = 0;
 	TPonto Duplicar(void) = 0;
 
-	// deve carregar a inst‚ncia, para vari·veis est·ticas, da subclasse
+	// deve carregar a inst√¢ncia, para vari√°veis est√°ticas, da subclasse
 	// definir valores globais: nElementos
 	void Inicializar(void)=0; 
 
-	// mÈtodos que podem ser redefinidos
+	// m√©todos que podem ser redefinidos
 	void Debug(bool completo = true) override;
 
-	// mÈtodos que n„o se prevÍ que sejam redefinidos
+	// m√©todos que n√£o se prev√™ que sejam redefinidos
 	void Copiar(TPonto objecto);
 	void NovaSolucao(void);
 	bool Acao(const char* acao);

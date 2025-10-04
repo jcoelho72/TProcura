@@ -1,8 +1,7 @@
-﻿// ProcuraEngine.cpp : Defines the entry point for the console application.
+// ProcuraEngine.cpp : Defines the entry point for the console application.
 //
 
 #include <stdio.h>
-#include <locale>
 
 #include "../TProcuraMelhorativa.h"
 #include "OitoDamas.h"
@@ -11,7 +10,7 @@
 
 int main(int argc, char* argv[])
 {
-	std::locale::global(std::locale(""));
+	compat::init_io();
 
 #ifndef MPI_ATIVO
 	printf("\n\

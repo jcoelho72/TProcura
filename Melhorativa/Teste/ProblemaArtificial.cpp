@@ -1,9 +1,9 @@
-﻿#include "ProblemaArtificial.h"
+#include "ProblemaArtificial.h"
 #include <stdio.h>
 #include <string.h>
 
 
-TParametrosEspaco CProblemaArtificial::espaco;
+TParametrosEspaco CProblemaArtificial::espaco; 
 
 CProblemaArtificial::CProblemaArtificial(void) 
 {
@@ -45,7 +45,7 @@ void CProblemaArtificial::ResetParametros()
 	Parametro(LIMITE_ITERACOES) = 1000000;
 }
 
-bool CProblemaArtificial::Distinto(TPonto estado) {
+bool CProblemaArtificial::Distinto(TPonto estado) const {
 	return CProblemaArtificial::id != ((CProblemaArtificial*)estado)->id;
 }
 

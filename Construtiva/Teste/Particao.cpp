@@ -1,8 +1,8 @@
-﻿#include "Particao.h"
+#include "Particao.h"
 #include <stdio.h>
 #include <string.h>
 
-CParticao::CParticao(void) 
+CParticao::CParticao(void)  
 {
 }
 

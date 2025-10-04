@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include "../TProcura.h"
 
-// um ponto no espaço de estados das soluções completas, é um apontador para um estado
+// um ponto no espaço de estados das soluções completas, é um apontador para um estado 
 class TProcuraMelhorativa;
 typedef TProcuraMelhorativa* TPonto;
 

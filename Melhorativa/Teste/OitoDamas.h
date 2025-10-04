@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "../TProcuraMelhorativa.h"
 #include "../TCodificacaoInteira.h"
 #include "../TCodificacaoPermutacao.h"
@@ -6,7 +6,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 //	COitoDamas class
 ///////////////////////////////////////////////////////////////////////////////
-//	Author: José Coelho
+//	Author: José Coelho 
 //	Last revision: 2025-01-30
 //	Description:
 //    Implementa o problema das oito damas. Este problema consiste em colocar

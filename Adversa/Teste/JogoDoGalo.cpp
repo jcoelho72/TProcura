@@ -1,7 +1,7 @@
-﻿#include "JogoDoGalo.h"
+#include "JogoDoGalo.h"
 #include <stdio.h>
 
-CJogoDoGalo::CJogoDoGalo(void)
+CJogoDoGalo::CJogoDoGalo(void) 
 {
 }
 

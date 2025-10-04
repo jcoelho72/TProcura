@@ -3,7 +3,7 @@
 #include "../TProcuraConstrutiva.h"
 
 /**
- * @brief Representa um estado do problema da partição
+ * @brief Representa um estado do problema da partição 
  *
  * Este problema consiste em dividir um conjunto de numeros naturais em duas partes 
  * cuja soma dos numeros em cada parte seja igual.

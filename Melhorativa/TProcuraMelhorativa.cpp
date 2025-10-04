@@ -1,4 +1,4 @@
-﻿#include "TProcuraMelhorativa.h"
+#include "TProcuraMelhorativa.h"
 
 #include <stdio.h>
 #include <time.h>
@@ -6,7 +6,7 @@
 
 constexpr int BUFFER_SIZE = 1024;
 
-/// @brief Lower Bound, se existir
+/// @brief Lower Bound, se existir 
 int TProcuraMelhorativa::lowerBound = 0;
 /// @brief Número de estados gerados 
 int TProcuraMelhorativa::geracoes = 0;
@@ -140,7 +140,7 @@ int TProcuraMelhorativa::EscaladaDoMonte()
 			}
 			else {
 				// analisa todos os vizinhos e avança apenas para o melhor vizinho
-				int melhorValor, melhorIndice;
+				int melhorValor = 0, melhorIndice = 0;
 				CalcularAvaliacoes(vizinhos, melhorValor, melhorIndice);
 				// trocar caso melhore
 				if (atual->custo > melhorValor) {

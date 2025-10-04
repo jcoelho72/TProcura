@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "../TProcuraAdversa.h"
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -6,7 +6,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 //	Author: José Coelho
 //	Last revision: 2025-01-30
-//	Description:
+//	Description: 
 //    Implementa o Jogo do Galo. Este jogo e jogado num tabuleiro 3x3 por dois jogadores
 //    em que cada jogador joga a vez numa posicao vazia, colocando a sua marca.
 //    Ganha o jogador que conseguir fazer 3 em linha com a sua marca.

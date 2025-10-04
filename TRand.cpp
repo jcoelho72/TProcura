@@ -1,10 +1,10 @@
-﻿// TRand.cpp: implementação do namespace TRand para geração de números aleatórios.
+// TRand.cpp: implementação do namespace TRand para geração de números aleatórios.
 //
 #include <ctime>
 #include "TRand.h"
 
 namespace {
-    // parâmetros do período
+    // parâmetros do período 
     constexpr int N = 624;
     constexpr int M = 397;
 

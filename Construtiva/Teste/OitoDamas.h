@@ -1,10 +1,10 @@
-﻿#pragma once
+#pragma once
 #include "../TProcuraConstrutiva.h"
 
 constexpr int MAX_DAMAS = 40;
 
 /**
- * @brief Representa um estado do problema das 8 damas
+ * @brief Representa um estado do problema das 8 damas 
  *
  * Este problema consiste em colocar oito damas de xadrez (movem-se na horizontal, vertical e diagonal), num
  * tabuleiro de xadrez, sem que estas se ataquem umas as outras. 

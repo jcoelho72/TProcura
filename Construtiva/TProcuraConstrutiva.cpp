@@ -1,4 +1,4 @@
-﻿#include "TProcuraConstrutiva.h"
+#include "TProcuraConstrutiva.h"
 #include "CListaNo.h"
 #include <stdio.h>
 #include <time.h>
@@ -7,7 +7,7 @@
 
 constexpr int BUFFER_SIZE = 1024;
 
-// auxiliar para construcao da arvore de procura
+// auxiliar para construcao da arvore de procura 
 TVector<unsigned char> TProcuraConstrutiva::ramo;
 // espacamento entre ramos da arvore de debug
 int TProcuraConstrutiva::espacosRamo = 2;
@@ -63,8 +63,8 @@ Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. \n
 Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite." },
 		{ "ESTADOS_REPETIDOS", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).", nomesRepetidos },
 		{ "PESO_ASTAR", 100, 0, 10000,
-		  "Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.", 
-		  NULL, _TV("0,5:7")},
+		  "Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.",
+		  NULL, _TV("0,5:7") },
 		{ "RUIDO_HEURISTICA",0,-100,100, "Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",
 		  NULL, _TV("0,5:7") },
 		{ "BARALHAR_SUCESSORES",0,0,1, "Baralhar os sucessores ao expandir." }
@@ -672,10 +672,10 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 
 // uma nova iteração de um algoritmo iterativo
 void TProcuraConstrutiva::DebugIteracao(int iteracao) {
-	Debug(ATIVIDADE,true, "\n") ||
-	Debug(PASSOS,true, "\nIteração %d:\n", iteracao) ||
-	Debug(DETALHE, false, "\nIteração %d: (expansões %d, gerações %d, avaliações %d)\n", 
-		iteracao, expansoes, geracoes, iteracoes);
+	Debug(ATIVIDADE, true, "\n") ||
+		Debug(PASSOS, true, "\nIteração %d:\n", iteracao) ||
+		Debug(DETALHE, false, "\nIteração %d: (expansões %d, gerações %d, avaliações %d)\n",
+			iteracao, expansoes, geracoes, iteracoes);
 }
 
 // informação geral sobre o estado 
@@ -764,7 +764,8 @@ void TProcuraConstrutiva::Explorar() {
 		else {
 			char str[BUFFER_SIZE];
 			printf("\nSucessor [1-%d, ação(ões), exe]:", sucessores.Count());
-			fgets(str, BUFFER_SIZE, stdin);
+			if (!fgets(str, BUFFER_SIZE, stdin))
+				str[0] = 0;
 			opcao = atoi(str);
 			if (opcao == 0 && strlen(str) > 1) {
 				char* token;

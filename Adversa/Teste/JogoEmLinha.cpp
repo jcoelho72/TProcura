@@ -1,7 +1,7 @@
 #include "JogoEmLinha.h"
 #include <stdio.h>
 
-// dados da instância
+// dados da instÃ¢ncia 
 TJogoEmLinha CJogoEmLinha::inst = { 3,3,3,regular }; // Jogo do Galo
 
 CJogoEmLinha::CJogoEmLinha(void)
@@ -12,7 +12,7 @@ CJogoEmLinha::~CJogoEmLinha(void)
 {
 }
 
-// Cria um objecto que é uma cópia deste
+// Cria um objecto que Ã© uma cÃ³pia deste
 TProcuraConstrutiva* CJogoEmLinha::Duplicar(void)
 {
 	CJogoEmLinha* clone = new CJogoEmLinha;
@@ -23,7 +23,7 @@ TProcuraConstrutiva* CJogoEmLinha::Duplicar(void)
 	return clone;
 }
 
-// Fica com uma cópia de objecto
+// Fica com uma cÃ³pia de objecto
 void CJogoEmLinha::Copiar(TProcuraConstrutiva*objecto)
 {
 	tabuleiro = ((CJogoEmLinha*)objecto)->tabuleiro;
@@ -71,7 +71,7 @@ void CJogoEmLinha::Sucessores(TVector<TNo>&sucessores)
 				novo->minimizar = !minimizar;
 				novo->Casa(i, j, (minimizar ? 'x' : 'o'));
 				if (inst.variante == gravidade)
-					break; // apenas a primeira posição livre da coluna
+					break; // apenas a primeira posiÃ§Ã£o livre da coluna
 			}
 	TProcuraAdversa::Sucessores(sucessores);
 }
@@ -118,23 +118,23 @@ bool CJogoEmLinha::SolucaoCompleta(void)
 			VerLinha(0, coluna, 1, -1))
 			return true;
 
-	// verificar se há espaço para mais jogadas
+	// verificar se hÃ¡ espaÃ§o para mais jogadas
 	for (int i = 0; i < inst.N * inst.M; i++)
 		if (tabuleiro[i] == '.')
 			return false; // podem ser feitas mais jogadas
-	return true; // não há hipótese de mais jogadas
+	return true; // nÃ£o hÃ¡ hipÃ³tese de mais jogadas
 }
 
-// Escrever informação de debug sobre o objecto currente 
-// (utilizar variável TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
+// Escrever informaÃ§Ã£o de debug sobre o objecto currente 
+// (utilizar variÃ¡vel TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
 void CJogoEmLinha::Debug(bool completo)
 {
-	// identificação do tipo de jogo
+	// identificaÃ§Ã£o do tipo de jogo
 	NovaLinha();
 	printf("%d em Linha (%dx%d)", inst.K, inst.M, inst.N);
 	if (inst.variante == gravidade)
 		printf(" gravidade");
-	NovaLinha(); // cabeçalho
+	NovaLinha(); // cabeÃ§alho
 	printf("  ");
 	for (int i = 0; i < inst.M; i++)
 		printf(" %c", 'A' + i);
@@ -161,12 +161,12 @@ const char* CJogoEmLinha::Acao(TNo sucessor)
 	static char str[20];
 	CJogoEmLinha* suc = (CJogoEmLinha*)sucessor;
 	int diferenca = -1;
-	// verificar que há uma só diferença
+	// verificar que hÃ¡ uma sÃ³ diferenÃ§a
 	for (int i = 0; i < inst.N * inst.M; i++)
 		if (tabuleiro[i] != suc->tabuleiro[i]) {
 			if (diferenca == -1)
 				diferenca = i;
-			else // duas diferenças
+			else // duas diferenÃ§as
 				return "Inv";
 		}
 	sprintf(str, "%c%d", 'a' + diferenca % inst.M, 1 + diferenca / inst.M);
@@ -182,7 +182,7 @@ void CJogoEmLinha::TesteManual(const char* nome)
 void CJogoEmLinha::Codifica(uint64_t estado[OBJETO_HASHTABLE])
 {
 	TProcuraConstrutiva::Codifica(estado);
-	// codificar números de 2 bits: ".xo"
+	// codificar nÃºmeros de 2 bits: ".xo"
 	for (int i = 0, index = 0; i < inst.N * inst.M; i++, index += 2)
 		estado[index >> 6] |= ((uint64_t)Codigo(tabuleiro[i])) << (index & 63);
 }
@@ -198,14 +198,14 @@ int CJogoEmLinha::Heuristica()
 	if (ExisteHeuritica())
 		return heuristica;
 
-	qMin.Count(inst.K - 1); // contabilizar ameaças a 1, 2 e 3 (até K-1)
+	qMin.Count(inst.K - 1); // contabilizar ameaÃ§as a 1, 2 e 3 (atÃ© K-1)
 	qMax.Count(inst.K - 1);
 	qMin.Reset(0);
 	qMax.Reset(0);
-	// processar todas as sequências de 4 
+	// processar todas as sequÃªncias de 4 
 	for (int linha = 0; linha < inst.N; linha++) {
 		for (int coluna = 0; coluna < inst.M; coluna++) {
-			for (int dir = 0; dir < 4; dir++) { // 4 direções (horizontal, vertical, duas diagonais)
+			for (int dir = 0; dir < 4; dir++) { // 4 direÃ§Ãµes (horizontal, vertical, duas diagonais)
 				if ((index[dir][0] > 0 ? linha <= inst.N - inst.K : 1) &&
 					(index[dir][1] > 0 ? coluna <= inst.M - inst.K : 
 						index[dir][1] < 0 ? coluna >= inst.K - 1 : 1)) 
@@ -225,10 +225,10 @@ int CJogoEmLinha::Heuristica()
 						heuristica = -infinito;
 						return TProcuraAdversa::Heuristica();
 					}
-					// verificar se quem joga tem ameaça a 1, para ganhar na sua vez de jogar
+					// verificar se quem joga tem ameaÃ§a a 1, para ganhar na sua vez de jogar
 					if (minimizar ? nMin == inst.K - 1 && nMax == 0 : nMax == inst.K - 1 && nMin == 0)
-						heuristica = (minimizar ? -infinito : infinito); // vitória em 1, é igual a posição terminal
-					// não reteornar de imediato, já que o jogo pode ter sido já ganho pelo adversário
+						heuristica = (minimizar ? -infinito : infinito); // vitÃ³ria em 1, Ã© igual a posiÃ§Ã£o terminal
+					// nÃ£o reteornar de imediato, jÃ¡ que o jogo pode ter sido jÃ¡ ganho pelo adversÃ¡rio
 
 					// registar resultado
 					if (nMax > 0 && nMin == 0)
@@ -243,6 +243,6 @@ int CJogoEmLinha::Heuristica()
 		return TProcuraAdversa::Heuristica();
 
 	heuristica = MaiorAmeaca(qMin, qMax, inst.K - 1);
-	// retornar a soma das ameaças
+	// retornar a soma das ameaÃ§as
 	return TProcuraAdversa::Heuristica();
 }

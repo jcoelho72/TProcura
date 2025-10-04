@@ -6,8 +6,8 @@
  * @class CTesteTVector
  * @brief Classe de teste para TVector, integrada na framework TProcura.
  *
- * Permite testar as funcionalidades do vetor dinâmico (TVector), nomeadamente
- * operações sobre vetores de inteiros, e comparar resultados com a STL.
+ * Permite testar as funcionalidades do vetor dinÃ¢mico (TVector), nomeadamente
+ * operaÃ§Ãµes sobre vetores de inteiros, e comparar resultados com a STL.
  *
  * @see TProcura, TVector
  */
@@ -17,16 +17,16 @@ public:
     CTesteTVector() {}
     ~CTesteTVector() {}
 
-    TVector<int> dadosA, dadosB;   ///< Vetores de teste para operações TVector.
-    std::vector<int> stdA, stdB;   ///< Vetores equivalentes em STL para comparação.
+    TVector<int> dadosA, dadosB;   ///< Vetores de teste para operaÃ§Ãµes TVector.
+    std::vector<int> stdA, stdB;   ///< Vetores equivalentes em STL para comparaÃ§Ã£o.
 
-    /// Inicializa parâmetros de teste.
+    /// Inicializa parÃ¢metros de teste.
     void ResetParametros();
     /// Inicializa dados e estado para teste.
     void Inicializar(void);
-    /// Mostra informação de debug sobre o estado dos vetores.
+    /// Mostra informaÃ§Ã£o de debug sobre o estado dos vetores.
     void Debug(bool completo = true) override;
-    using TProcura::Debug; // Reexpõe as sobrecargas herdadas
+    using TProcura::Debug; // ReexpÃµe as sobrecargas herdadas
     /// Executa o algoritmo de teste (a definir pelo utilizador).
     int ExecutaAlgoritmo();
     /// Calcula indicadores de teste.

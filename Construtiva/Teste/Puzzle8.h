@@ -1,8 +1,8 @@
-﻿#pragma once
+#pragma once
 #include "../TProcuraConstrutiva.h"
 
 /**
- * @brief Representa um estado do puzzle 8
+ * @brief Representa um estado do puzzle 8 
  * 
  * Este problema consiste em mover numa quadricula de 3x3
  * oito peças, em que os movimentos permitidos é mover uma peça para a 

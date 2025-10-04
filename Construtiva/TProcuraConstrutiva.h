@@ -1,9 +1,9 @@
-﻿#pragma once
+#pragma once
 
 #include "../TVector.h"
 #include "../TProcura.h"
 
-// número de elementos na hashtable com perdas
+// número de elementos na hashtable com perdas 
 constexpr int TAMANHO_HASHTABLE = 1000000;
 // tamanho máximo de um objecto, em unidades de 64 bits
 constexpr int OBJETO_HASHTABLE = 5;

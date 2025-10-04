@@ -1,24 +1,24 @@
-#include "CListaNo.h"
+#include "CListaNo.h" 
 
 CListaNo::~CListaNo() {
-	// n„o libertar o primeiro elemento
+	// n√£o libertar o primeiro elemento 
 	for (int i = 1; i < indice.Count(); i++)
 		if (indice[i].estado != NULL)
 			delete indice[i].estado;
 }
 
-// retorna o Ìndice onde foi inserido
+// retorna o √≠ndice onde foi inserido
 int CListaNo::NovoElemento(TNo elemento) {
 	int id = -1;
 	if (limite == 0 || indice.Count() < 2 * limite) {
-		// adicionar, h· espaÁo
+		// adicionar, h√° espa√ßo
 		indice += { elemento, 1, 1 };
 		id = indice.Count() - 1;
 	}
 	else {
-		// limite de estados atingido, gerar o espaÁo
+		// limite de estados atingido, gerar o espa√ßo
 		if (livre.Empty())
-			// n„o h· livres, libertar metade
+			// n√£o h√° livres, libertar metade
 			LibertarLista();
 
 		// utilizar o primeiro livre
@@ -28,13 +28,13 @@ int CListaNo::NovoElemento(TNo elemento) {
 }
 
 void CListaNo::LibertarLista() {
-	bool jaProcessados = false; // libertar primeiro estados j· processados (anteriores a atual)
+	bool jaProcessados = false; // libertar primeiro estados j√° processados (anteriores a atual)
 	// parar assim que existam "limite" estados livres
 	completa = false;
 	while (livre.Count() < limite) {
 		if (!jaProcessados) {
 			jaProcessados = true;
-			// apagar elementos apÛs o estado inicial
+			// apagar elementos ap√≥s o estado inicial
 			while (livre.Count() < limite && Proximo(0) != atual)
 				LibertarSeguinte(0);
 		}
@@ -45,24 +45,24 @@ void CListaNo::LibertarLista() {
 				anteriorID = i;
 			}
 			if (piorID < 0) {
-				// valores todos iguais apÛs atual, apagar o seguinte ao atual
+				// valores todos iguais ap√≥s atual, apagar o seguinte ao atual
 				while (livre.Count() < limite)
 					LibertarSeguinte(atual);
 			}
 			else {
-				// comeÁar por libertar todos apÛs o primeiro elemento com o pior ID
+				// come√ßar por libertar todos ap√≥s o primeiro elemento com o pior ID
 				while (livre.Count() < limite && Proximo(piorID) != 1)
 					LibertarSeguinte(piorID);
 				if (livre.Count() < limite) {
 					// tem de se eliminar o primeiro elemento com o pior valor
 					// o que implica atualizar o proxDistinto de todos os anteriores
 					while (Proximo(anteriorID) != piorID) {
-						indice[anteriorID].proxDistinto = 1; // ˙ltimo elemento
+						indice[anteriorID].proxDistinto = 1; // √∫ltimo elemento
 						anteriorID = Proximo(anteriorID);
 					}
 					LibertarSeguinte(anteriorID);
 				}
-				// tudo liberto com este valor, se ainda n„o È suficiente, seguir para o prÛximo
+				// tudo liberto com este valor, se ainda n√£o √© suficiente, seguir para o pr√≥ximo
 			}
 		}
 	}
@@ -89,11 +89,11 @@ int CListaNo::Inserir(TNo elemento, int id) {
 		return 0;
 	}
 	valor = Valor(idNovo);
-	// atualizar Ìndice
+	// atualizar √≠ndice
 	for (int i = id, j = -1; i >= 0; i = ProximoDistinto(i)) {
 		valorI = Valor(i);
 		if (valorI == valor) {
-			// inserir logo a seguir, j· que assim nada mais altera
+			// inserir logo a seguir, j√° que assim nada mais altera
 			indice[idNovo].prox = Proximo(i);
 			indice[idNovo].proxDistinto = ProximoDistinto(i);
 			indice[i].prox = idNovo;
@@ -101,12 +101,12 @@ int CListaNo::Inserir(TNo elemento, int id) {
 		}
 		else if (valorI < valor)
 			j = i; // mantem o primeiro elemento anterior
-		else { // valor atual j· È superior, valor novo
+		else { // valor atual j√° √© superior, valor novo
 			if (j < 0) {
-				// heurÌstica n„o consistente, 
-				// e agora est· a gerar um estado com menor valor que o pai
+				// heur√≠stica n√£o consistente, 
+				// e agora est√° a gerar um estado com menor valor que o pai
 				// i, novo, i.prox, ...
-				// o i fica com o prÛximo distinto em novo, o que n„o È verdade mas mais vale assim
+				// o i fica com o pr√≥ximo distinto em novo, o que n√£o √© verdade mas mais vale assim
 				indice[idNovo].prox = Proximo(i);
 				indice[idNovo].proxDistinto = Proximo(i);
 				indice[i].prox = idNovo;
@@ -114,7 +114,7 @@ int CListaNo::Inserir(TNo elemento, int id) {
 				return idNovo;
 			}
 			else {
-				// utilizar o Ìndice de j, anterior, colocando antes de i
+				// utilizar o √≠ndice de j, anterior, colocando antes de i
 				// j, ... , novo, i
 				// atualizar o proxDistinto de j, passa a novo
 				indice[idNovo].prox = i;
@@ -142,7 +142,7 @@ void CListaNo::Inserir(TVector<TNo>& elementos) {
 		lbElementos += elementos[j]->LowerBound();
 	lbElementos.Sort(&idElementos);
 
-	// 2. inserir por ordem, tirando partido do local onde j· est· o ˙ltimo elemento
+	// 2. inserir por ordem, tirando partido do local onde j√° est√° o √∫ltimo elemento
 	for (int j = 0; j < idElementos.Count(); j++)
 		id = Inserir(elementos[idElementos[j]], id);
 

@@ -1,4 +1,4 @@
-﻿#include "TProcuraAdversa.h"
+#include "TProcuraAdversa.h"
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
@@ -6,7 +6,7 @@
 
 constexpr int BUFFER_SIZE = 1024;
 
-// valor de infinito (vitoria/derrota), omissao 1000
+// valor de infinito (vitoria/derrota), omissao 1000 
 int TProcuraAdversa::infinito = 1000;
 // controlo para indicar se a procura foi realizada de forma completa (c.c. foi cortada)
 bool TProcuraAdversa::completo;

@@ -1,6 +1,6 @@
 #include "TCodificacaoBinaria.h"
 
-// número de elementos binários na codificação
+// nÃºmero de elementos binÃ¡rios na codificaÃ§Ã£o 
 int TCodificacaoBinaria::nElementos = 0;
 
 void TCodificacaoBinaria::Copiar(TPonto objecto) {
@@ -16,7 +16,7 @@ void TCodificacaoBinaria::NovaSolucao(void) {
 	custo = -1;
 }
 
-// métodos que podem ser redefinidos
+// mÃ©todos que podem ser redefinidos
 void TCodificacaoBinaria::Debug(bool completo) {
 	for (int i = 0; i < nElementos; i++) 
 		printf("%d", Bit(i) ? 1 : 0);
@@ -36,10 +36,10 @@ void TCodificacaoBinaria::ResetParametros() {
 			"10-pontos" };
 	TProcuraMelhorativa::ResetParametros();
 
-	// parametros da codificação binária
+	// parametros da codificaÃ§Ã£o binÃ¡ria
 	parametro += {
 		{ "TIPO_CRUZAR", 1, 0, 10, "TIPO_CRUZAR: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento, _TV("0,2,3") },
-		{ "TIPO_MUTAR", 0,0,100, "TIPO_MUTAR: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada bit, em percentagem (1 a 100)", NULL, _TV("0,2,3") },
+		{ "TIPO_MUTAR", 0,0,100, "TIPO_MUTAR: 0 - aplica um vizinho aleatÃ³rio (seja 1 sÃ³ elemento ou segmento), 1 a 100, probabilidade de mutaÃ§Ã£o de cada bit, em percentagem (1 a 100)", NULL, _TV("0,2,3") },
 		{ "TIPO_VIZINHO", 1,1,1000, "Troca segmento: 1 - apenas 1 bit de cada vez, >=2 troca um segmento de N bits" }
 	};
 }
@@ -50,7 +50,7 @@ void TCodificacaoBinaria::Vizinhanca(TVector<TPonto>& vizinhos) {
 	int tamanho = Parametro(TIPO_VIZINHO_CB);
 	if (tamanho < 1)
 		tamanho = 1;
-	Debug(EXTRA_DEBUG, false, " vizinhança %d bits", tamanho);
+	Debug(EXTRA_DEBUG, false, " vizinhanÃ§a %d bits", tamanho);
 	for (int i = 0; i < nElementos - tamanho + 1; i++) {
 		TCodificacaoBinaria* vizinho = (TCodificacaoBinaria*)Duplicar();
 		if (vizinho != NULL) {
@@ -66,10 +66,10 @@ void TCodificacaoBinaria::Vizinhanca(TVector<TPonto>& vizinhos) {
 }
 
 void TCodificacaoBinaria::Mutar(void) {
-	// mutação com probabilidade p de trocar cada bit
+	// mutaÃ§Ã£o com probabilidade p de trocar cada bit
 	int p = Parametro(TIPO_MUTAR_CB);
 	if (p == 0) {
-		// um vizinho aleatório
+		// um vizinho aleatÃ³rio
 		int tamanho = Parametro(TIPO_VIZINHO_CB);
 		if (tamanho < 1)
 			tamanho = 1;
@@ -126,7 +126,7 @@ void TCodificacaoBinaria::Cruzamento(TPonto a, TPonto b) {
 	TProcuraMelhorativa::Cruzamento(a, b);
 }
 
-int TCodificacaoBinaria::Distancia(TPonto a) { // distância de Hamming
+int TCodificacaoBinaria::Distancia(TPonto a) { // distÃ¢ncia de Hamming
 	int dist = 0;
 	for (int i = 0; i < nElementos; i++)
 		if (Bit(i) != ((TCodificacaoBinaria*)a)->Bit(i))

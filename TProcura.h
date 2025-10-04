@@ -10,88 +10,88 @@
 #include "compact.h"
 
 
-// cÛdigo para n˙mero n„o lido (n„o deve ser utilizado num par‚metro)
+// c√≥digo para n√∫mero n√£o lido (n√£o deve ser utilizado num par√¢metro)
 constexpr int NAO_LIDO = 1024;
 
 enum EIndicadoresProcura {
 	IND_RESULTADO = 0, ///< resultado do algoritmo
 	IND_TEMPO,         ///< tempo em milisegundos consumidos
-	IND_ITERACOES,     ///< n˙mero de iteraÁıes consumidas
-	IND_PROCURA        ///< Marcador para permitir a extens„o do enum em subclasses.
+	IND_ITERACOES,     ///< n√∫mero de itera√ß√µes consumidas
+	IND_PROCURA        ///< Marcador para permitir a extens√£o do enum em subclasses.
 };
 
 /**
  * @enum EParametrosProcura
- * @brief Identifica um par‚metro especÌfico no cÛdigo.
+ * @brief Identifica um par√¢metro espec√≠fico no c√≥digo.
  *
- * Permite aceder a cada par‚metro sem precisar saber seu cÛdigo numÈrico.
- * Õndice do vetor de parametros, na classe TProcura.
+ * Permite aceder a cada par√¢metro sem precisar saber seu c√≥digo num√©rico.
+ * √çndice do vetor de parametros, na classe TProcura.
  *
- * @note O ˙ltimo elemento (`parametrosProcura`) n„o representa um par‚metro real.
- * Existe para permitir a criaÁ„o de uma enumeraÁ„o adicional em subclasses, caso
- * seja necess·rio adicionar par‚metros especÌficos.
+ * @note O √∫ltimo elemento (`parametrosProcura`) n√£o representa um par√¢metro real.
+ * Existe para permitir a cria√ß√£o de uma enumera√ß√£o adicional em subclasses, caso
+ * seja necess√°rio adicionar par√¢metros espec√≠ficos.
  *
  * @see TParametro, ExecutaAlgoritmo()
  *
  * @code
  * if(Parametro(NIVEL_DEBUG) > PASSOS)
- *     // mostrar informaÁ„o de debug correspondendo ao nÌvel detalhe ou superior
+ *     // mostrar informa√ß√£o de debug correspondendo ao n√≠vel detalhe ou superior
  * @endcode
  */
 enum EParametrosProcura {
 	ALGORITMO = 0,        ///< Algoritmo base a executar.
-	NIVEL_DEBUG,          ///< NÌvel de debug, de reduzido a completo.
-	SEMENTE,              ///< Semente aleatÛria para inicializar a sequÍncia de n˙meros pseudo-aleatÛrios.
+	NIVEL_DEBUG,          ///< N√≠vel de debug, de reduzido a completo.
+	SEMENTE,              ///< Semente aleat√≥ria para inicializar a sequ√™ncia de n√∫meros pseudo-aleat√≥rios.
 	LIMITE_TEMPO,         ///< Tempo limite em segundos. 
-	LIMITE_ITERACOES,     ///< N˙mero m·ximo de iteraÁıes (0 significa sem limite).
-	PARAMETROS_PROCURA    ///< Marcador para permitir a extens„o do enum em subclasses.
+	LIMITE_ITERACOES,     ///< N√∫mero m√°ximo de itera√ß√µes (0 significa sem limite).
+	PARAMETROS_PROCURA    ///< Marcador para permitir a extens√£o do enum em subclasses.
 };
 
 /**
- * @brief NÌveis de detalhamento para debug.
+ * @brief N√≠veis de detalhamento para debug.
  *
- * Controla a quantidade de informaÁıes exibidas durante a execuÁ„o do algoritmo.
+ * Controla a quantidade de informa√ß√µes exibidas durante a execu√ß√£o do algoritmo.
  *
  * @see nivelDebug
  *
  * @code
  * if(Parametro(NIVEL_DEBUG) > PASSOS)
- *     // mostrar informaÁ„o de debug correspondendo ao nÌvel detalhe ou superior
+ *     // mostrar informa√ß√£o de debug correspondendo ao n√≠vel detalhe ou superior
  * @endcode
  */
 enum ENivelDebug {
-	NADA = 0,   ///< Sem informaÁıes de debug.
+	NADA = 0,   ///< Sem informa√ß√µes de debug.
 	ATIVIDADE,  ///< Apenas eventos principais.
-	PASSOS,     ///< Exibe passos intermedi·rios.
-	DETALHE,    ///< Debug detalhada sobre estados e decisıes.
-	COMPLETO,   ///< Mostra toda a execuÁ„o detalhadamente.
-	EXTRA_DEBUG ///< NÌvel extra para debug muito detalhado (uso interno).
+	PASSOS,     ///< Exibe passos intermedi√°rios.
+	DETALHE,    ///< Debug detalhada sobre estados e decis√µes.
+	COMPLETO,   ///< Mostra toda a execu√ß√£o detalhadamente.
+	EXTRA_DEBUG ///< N√≠vel extra para debug muito detalhado (uso interno).
 };
 
 /**
- * @brief Define o sentido da operaÁ„o de entrada/saÌda de dados.
+ * @brief Define o sentido da opera√ß√£o de entrada/sa√≠da de dados.
  *
- * @note Utilizado em funÁıes que requerem distinÁ„o entre operaÁ„o de leitura e gravaÁ„o.
+ * @note Utilizado em fun√ß√µes que requerem distin√ß√£o entre opera√ß√£o de leitura e grava√ß√£o.
  */
 enum EOperacao { GRAVAR = 0, LER };
 
 /**
- * @brief Define os tipos de contadores de cronÙmetro.
+ * @brief Define os tipos de contadores de cron√¥metro.
  *
- * @note Utilizado na funÁ„o Cronometro() para especificar o contador.
+ * @note Utilizado na fun√ß√£o Cronometro() para especificar o contador.
  */
 enum ECronometro {
-	CONT_ALGORITMO = 0, ///< Tempo da execuÁ„o do algoritmo por inst‚ncia
-	CONT_TESTE,         ///< Tempo total do teste (todas as execuÁıes)
+	CONT_ALGORITMO = 0, ///< Tempo da execu√ß√£o do algoritmo por inst√¢ncia
+	CONT_TESTE,         ///< Tempo total do teste (todas as execu√ß√µes)
 	CONT_REPORTE,       ///< Tempo entre mensagens durante o teste
-	CONT_PREPARACAO,    ///< Tempo de inicializaÁ„o antes do teste
-	CONT_FINALIZACAO,   ///< Tempo de encerramento/exportaÁ„o
+	CONT_PREPARACAO,    ///< Tempo de inicializa√ß√£o antes do teste
+	CONT_FINALIZACAO,   ///< Tempo de encerramento/exporta√ß√£o
 	CONT_CHECKPOINT,    ///< Tempo entre checkpoints ou estados internos
-	CONT_NUMERO         ///< N˙mero de contadores disponÌveis
+	CONT_NUMERO         ///< N√∫mero de contadores dispon√≠veis
 };
 
 /**
- * @brief Define as tags MPI para comunicaÁ„o entre processos.
+ * @brief Define as tags MPI para comunica√ß√£o entre processos.
  */
 enum ETagMPI {
 	TAG_TRABALHO = 0,  
@@ -100,78 +100,78 @@ enum ETagMPI {
 };
 
 
-// identificaÁ„o de todos os indicadores definidos
+// identifica√ß√£o de todos os indicadores definidos
 typedef struct SIndicador {
 	/// @brief nome do indicador
 	const char* nome;
-	/// @brief descriÁ„o do indicador, opcional 
+	/// @brief descri√ß√£o do indicador, opcional 
 	const char* descricao;
-	/// @brief indice onde aparece o indicador nos resultados, c.c. -1 para n„o aparecer 
+	/// @brief indice onde aparece o indicador nos resultados, c.c. -1 para n√£o aparecer 
 	int indice;
 } TIndicador;
 
 /**
- * @brief Estrutura para registo de um par‚metro
+ * @brief Estrutura para registo de um par√¢metro
  *
- * Permite registrar um par‚metro, armazenando seu valor,
- * limites m·ximo e mÌnimo, alÈm de nome e descriÁ„o.
- * Cada valor pode ter tambÈm um nome, em vez de ser um n˙mero.
- * Podem e devem ser adicionados par‚metros especÌficos de cada problema,
- * de modo a poderem ser testados no teste empÌrico.
+ * Permite registrar um par√¢metro, armazenando seu valor,
+ * limites m√°ximo e m√≠nimo, al√©m de nome e descri√ß√£o.
+ * Cada valor pode ter tamb√©m um nome, em vez de ser um n√∫mero.
+ * Podem e devem ser adicionados par√¢metros espec√≠ficos de cada problema,
+ * de modo a poderem ser testados no teste emp√≠rico.
  *
  * @note
- * Existe uma vetor de parametros declarada de forma est·tica,
- * de modo a aceder a qualquer parametro de forma global no cÛdigo.
- * A ordem dos parametros est„o de acordo com o tipo enumerado EParametrosConstrutiva
+ * Existe uma vetor de parametros declarada de forma est√°tica,
+ * de modo a aceder a qualquer parametro de forma global no c√≥digo.
+ * A ordem dos parametros est√£o de acordo com o tipo enumerado EParametrosConstrutiva
  *
  * @see EParametrosProcura e ResetParametros()
  *
  * Exemplo:
  * @code
  * if(Parametro(NIVEL_DEBUG) > PASSOS)
- *     // mostrar informaÁ„o de debug correspondendo ao nÌvel detalhe ou superior
+ *     // mostrar informa√ß√£o de debug correspondendo ao n√≠vel detalhe ou superior
  * @endcode
  */
 typedef struct SParametro {
-	/// @brief nome do parametro, opcional mas aconselhado nos par‚metros especÌficos
+	/// @brief nome do parametro, opcional mas aconselhado nos par√¢metros espec√≠ficos
 	const char* nome = "Indefinido";
 	/// @brief valor do parametro
 	int valor = 0;
-	/// @brief valor mÌnimo que o parametro pode tomar
+	/// @brief valor m√≠nimo que o parametro pode tomar
 	int min = 0;
-	/// @brief valor m·ximo que o parametro pode tomar
+	/// @brief valor m√°ximo que o parametro pode tomar
 	int max = 0;
-	/// @brief descriÁ„o do parametro, opcional 
+	/// @brief descri√ß√£o do parametro, opcional 
 	const char* descricao = nullptr;
-	/// @brief Nome associado a cada valor do par‚metro, ˙til para vari·veis categÛricas.
-	/// @note Especialmente relevante quando os valores n„o seguem uma sequÍncia ordenada.
+	/// @brief Nome associado a cada valor do par√¢metro, √∫til para vari√°veis categ√≥ricas.
+	/// @note Especialmente relevante quando os valores n√£o seguem uma sequ√™ncia ordenada.
 	const char** nomeValores = nullptr;
-	/// @brief dependÍncia (indice do parametro, seguido de valores permitidos) - vazio n„o tem dependÍncia
+	/// @brief depend√™ncia (indice do parametro, seguido de valores permitidos) - vazio n√£o tem depend√™ncia
 	TVector<int> dependencia;
 } TParametro;
 
 
 /**
  * @internal
- * @brief Estrutura para guardar o resultado de uma execuÁ„o
+ * @brief Estrutura para guardar o resultado de uma execu√ß√£o
  *
- * Permite registar informaÁ„o para testes empÌricos, de modo a avaliar
- * o desempenho de algoritmos e respetivas parametrizaÁıes.
+ * Permite registar informa√ß√£o para testes emp√≠ricos, de modo a avaliar
+ * o desempenho de algoritmos e respetivas parametriza√ß√µes.
  */
 typedef struct SResultado {
 	int instancia = 0, configuracao = 0;
-	TVector<int64_t> valor; // valor para cada indicador selecionado (fixos os EIndicadoresProcura, resultado, tempo, iteraÁıes)
+	TVector<int64_t> valor; // valor para cada indicador selecionado (fixos os EIndicadoresProcura, resultado, tempo, itera√ß√µes)
 } TResultado;
 
 
 /**
  * @brief Classe base para todas as procuras.
  *
- * Esta classe base para procuras... (separaÁ„o de TProcurasConstrutivas, em curso).
+ * Esta classe base para procuras... (separa√ß√£o de TProcurasConstrutivas, em curso).
  *   pretende-se que depois as sub-classes tipo TProcuraMelhorativa, possa herdar de
- *   TProcura, n„o ficando com partes da procura construtiva que s„o desnecess·rias
+ *   TProcura, n√£o ficando com partes da procura construtiva que s√£o desnecess√°rias
  *
- * **ObservaÁ„o:** Alguns mÈtodos e par‚metros ter„o efeito apenas se determinados mÈtodos forem
+ * **Observa√ß√£o:** Alguns m√©todos e par√¢metros ter√£o efeito apenas se determinados m√©todos forem
  * redefinidos na subclasse.
  */
 
@@ -183,25 +183,25 @@ public:
 
 	/**
 	 * @brief Coloca o objecto no estado inicial da procura.
-	 * @note ObrigatÛria a redefiniÁ„o.
+	 * @note Obrigat√≥ria a redefini√ß√£o.
 	 *
-	 * Este mÈtodo inicializa as vari·veis de estado no estado inicial vazio.
-	 * Representa o estado inicial antes de qualquer aÁ„o ser realizada na procura.
-	 * Caso existam dados de inst‚ncia, deve neste mÈtodo carregar a inst‚ncia.
-	 * A primeira instruÁ„o dever· chamar o mÈtodo da superclasse, conforme modelo em baixo.
+	 * Este m√©todo inicializa as vari√°veis de estado no estado inicial vazio.
+	 * Representa o estado inicial antes de qualquer a√ß√£o ser realizada na procura.
+	 * Caso existam dados de inst√¢ncia, deve neste m√©todo carregar a inst√¢ncia.
+	 * A primeira instru√ß√£o dever√° chamar o m√©todo da superclasse, conforme modelo em baixo.
 	 *
-	 * @note A vari·vel instancia.valor, tem o ID da inst‚ncia que deve ser carregada.
+	 * @note A vari√°vel instancia.valor, tem o ID da inst√¢ncia que deve ser carregada.
 	 *
 	 * @code
 	 * void CSubProblema::Inicializar(void)
 	 * {
 	 *     TProcura::Inicializar();
-	 * 	   // acertar as vari·veis est·ticas, com a inst‚ncia (ID: instancia.valor)
-	 * 	   CarregaInstancia(); // exemplo de mÈtodo em CSubProblema para carregar uma inst‚ncia
-	 *     // pode/deve utilizar vari·vel "ficheiroInstancia" concatenado com instancia.valor, com o ID da inst‚ncia
-	 *     // inicializar todas as vari·veis de estado
+	 * 	   // acertar as vari√°veis est√°ticas, com a inst√¢ncia (ID: instancia.valor)
+	 * 	   CarregaInstancia(); // exemplo de m√©todo em CSubProblema para carregar uma inst√¢ncia
+	 *     // pode/deve utilizar vari√°vel "ficheiroInstancia" concatenado com instancia.valor, com o ID da inst√¢ncia
+	 *     // inicializar todas as vari√°veis de estado
 	 * 	   variavel = 0;
-	 *     // Determinar o tamanho m·ximo do estado codificado, se aplic·vel
+	 *     // Determinar o tamanho m√°ximo do estado codificado, se aplic√°vel
 	 * 	   tamanhoCodificado = 1;
 	 * }
 	 * @endcode
@@ -211,25 +211,25 @@ public:
 
 	/**
 	 * @brief Executa o algoritmo com os parametros atuais
-	 * @note RedefiniÁ„o necess·ria
+	 * @note Redefini√ß√£o necess√°ria
 	 *
 	 * No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO)
-	 * Se `TesteManual()` n„o for utilizado, esta funÁ„o pode ser chamada diretamente,
-	 * desde que os par‚metros necess·rios j· estejam configurados corretamente.
+	 * Se `TesteManual()` n√£o for utilizado, esta fun√ß√£o pode ser chamada diretamente,
+	 * desde que os par√¢metros necess√°rios j√° estejam configurados corretamente.
 	 */
 	virtual int ExecutaAlgoritmo() { return -1; }
 
 	/**
-	 * @brief Retorna um indicador, apÛs a execuÁ„o do algoritmo
-	 * @note ObrigatÛria a redefiniÁ„o no caso de serem definidos indicadores na subclasse
+	 * @brief Retorna um indicador, ap√≥s a execu√ß√£o do algoritmo
+	 * @note Obrigat√≥ria a redefini√ß√£o no caso de serem definidos indicadores na subclasse
 	 *
-	 * Este mÈtodo È chamado apÛs a execuÁ„o do algoritmo, para cada indicador,
+	 * Este m√©todo √© chamado ap√≥s a execu√ß√£o do algoritmo, para cada indicador,
 	 * pela ordem definida pelo utilizador. Caso tenham sido definidos outros indicadorews
 	 * na subclasse, deve redefinir, e caso seja um indicador da subclasse, calcular,
-	 * caso contr·rio deve chamar o mÈtodo da superclasse.
+	 * caso contr√°rio deve chamar o m√©todo da superclasse.
 	 *
-	 * @note Um indicador pode ser uma verificaÁ„o da soluÁ„o, ou qualquer outro procedimento
-	 * que executa apÛs o algoritmo, n„o sendo o tempo de execuÁ„o contabgilizado no algoritmo.
+	 * @note Um indicador pode ser uma verifica√ß√£o da solu√ß√£o, ou qualquer outro procedimento
+	 * que executa ap√≥s o algoritmo, n√£o sendo o tempo de execu√ß√£o contabgilizado no algoritmo.
 	 *
 	 * @see ResetParametros()
 	 *
@@ -247,35 +247,35 @@ public:
 	virtual int64_t Indicador(int id);
 
 	/**
-	 * @brief Mostra o estado no ecr„, para debug.
-	 * @note RedefiniÁ„o opcional. Necess·rio para visualizar a procura, e explorar o espaÁo manualmente.
+	 * @brief Mostra o estado no ecr√£, para debug.
+	 * @note Redefini√ß√£o opcional. Necess√°rio para visualizar a procura, e explorar o espa√ßo manualmente.
 	 *
-	 * Esta funÁ„o dever· mostrar claramente o estado atual, em texto mas da forma mais confort·vel possÌvel.
-	 * O formato texto destina-se principalmente a quem implementa o problema, e n„o utilizadores
+	 * Esta fun√ß√£o dever√° mostrar claramente o estado atual, em texto mas da forma mais confort√°vel poss√≠vel.
+	 * O formato texto destina-se principalmente a quem implementa o problema, e n√£o utilizadores
 	 * finais.
-	 * … importante poder explorar o espaÁo de estados, para verificar a correta implementaÁ„o
-	 * dos sucessores, como tambÈm possa ver a ·rvore de procura dos algoritmos, para ·rvores pequenas,
+	 * √â importante poder explorar o espa√ßo de estados, para verificar a correta implementa√ß√£o
+	 * dos sucessores, como tamb√©m possa ver a √°rvore de procura dos algoritmos, para √°rvores pequenas,
 	 * e assim detectar bugs.
 	 *
-	 * @note Antes de cada linha, chame a funÁ„o NovaLinha(). Dependendo do contexto, `NovaLinha()` pode
-	 * imprimir caracteres que representam os ramos da ·rvore de procura, criando uma visualizaÁ„o textual
+	 * @note Antes de cada linha, chame a fun√ß√£o NovaLinha(). Dependendo do contexto, `NovaLinha()` pode
+	 * imprimir caracteres que representam os ramos da √°rvore de procura, criando uma visualiza√ß√£o textual
 	 * que simula a estrutura da procura.
 	 *
-	 * @note A exibiÁ„o do estado pode variar conforme o nÌvel de debug definido
-	 * em `Parametro(NIVEL_DEBUG)`. Um nÌvel menor pode mostrar informaÁıes mais sucintas,
-	 * enquanto um nÌvel maior pode detalhar todas as vari·veis do estado.
+	 * @note A exibi√ß√£o do estado pode variar conforme o n√≠vel de debug definido
+	 * em `Parametro(NIVEL_DEBUG)`. Um n√≠vel menor pode mostrar informa√ß√µes mais sucintas,
+	 * enquanto um n√≠vel maior pode detalhar todas as vari√°veis do estado.
 	 *
 	 * @see NovaLinha()
 	 *
 	 * @code
-	 * void CSubProblema::Debug(bool completo)   // refazer coment·rios....
+	 * void CSubProblema::Debug(bool completo)   // refazer coment√°rios....
 	 * {
 	 * 	   NovaLinha();
-	 *     // neste exemplo o estado È apenas um n˙mero
+	 *     // neste exemplo o estado √© apenas um n√∫mero
 	 *     if(Parametro(NIVEL_DEBUG) <= ATIVIDADE)
-	 * 	       printf("--<([%d])>--", variavel); // vers„o compacta do estado
+	 * 	       printf("--<([%d])>--", variavel); // vers√£o compacta do estado
 	 *     else {
-	 *         // vers„o mais elaborada do estado
+	 *         // vers√£o mais elaborada do estado
 	 *     }
 	 * }
 	 * @endcode
@@ -283,59 +283,59 @@ public:
 	virtual void Debug(bool completo = true);
 
 	/**
-	 * @brief Inicializa os parametros, indicadores e inst‚ncias
-	 * @note RedefiniÁ„o necess·ria, para pelo menos indicar as inst‚ncias existentes
+	 * @brief Inicializa os parametros, indicadores e inst√¢ncias
+	 * @note Redefini√ß√£o necess√°ria, para pelo menos indicar as inst√¢ncias existentes
 	 *
-	 * Nesta funÁ„o, a primeira instruÁ„o dever· ser a chamada da funÁ„o da superclasse,
-	 * para que sejam criados os parametros da superclasse antes de qualquer outra instruÁ„o.
+	 * Nesta fun√ß√£o, a primeira instru√ß√£o dever√° ser a chamada da fun√ß√£o da superclasse,
+	 * para que sejam criados os parametros da superclasse antes de qualquer outra instru√ß√£o.
 	 *
-	 * Cada problema pode ter um algoritmo e configuraÁıes padr„o que funcionam bem na maioria dos casos.
-	 * Nesta funÁ„o, podem ser definidos estes valores de omiss„o.
+	 * Cada problema pode ter um algoritmo e configura√ß√µes padr√£o que funcionam bem na maioria dos casos.
+	 * Nesta fun√ß√£o, podem ser definidos estes valores de omiss√£o.
 	 *
-	 * Novos par‚metros podem ser adicionados conforme necess·rio para atender ‡s particularidades do problema.
-	 * Estes parametros podem depois ser selecionados ou incluÌdos num teste empÌrico, de modo a averiguar
-	 * em fase de testes, qual a melhor configuraÁ„o, evitando escolhas arbitr·rias ou n„o fundamentadas.
+	 * Novos par√¢metros podem ser adicionados conforme necess√°rio para atender √†s particularidades do problema.
+	 * Estes parametros podem depois ser selecionados ou inclu√≠dos num teste emp√≠rico, de modo a averiguar
+	 * em fase de testes, qual a melhor configura√ß√£o, evitando escolhas arbitr√°rias ou n√£o fundamentadas.
 	 *
-	 * Nesta funÁ„o deve ser redefinida a vari·vel com informaÁ„o dos IDs das inst‚ncias disponÌveis.
-	 * Essa vari·vel È do tipo TParametro, mas n„o est· na lista de parametros, devendo ser inicializada aqui.
+	 * Nesta fun√ß√£o deve ser redefinida a vari√°vel com informa√ß√£o dos IDs das inst√¢ncias dispon√≠veis.
+	 * Essa vari√°vel √© do tipo TParametro, mas n√£o est√° na lista de parametros, devendo ser inicializada aqui.
 	 *
-	 * Existindo novos indicadores, devem ser adicionados aqui, e redefinida a funÁ„o Indicador() para calcular o valor.
+	 * Existindo novos indicadores, devem ser adicionados aqui, e redefinida a fun√ß√£o Indicador() para calcular o valor.
 	 *
-	 * @note Na criaÁ„o de um novo parametro, dar uma estrutura TParametro.
+	 * @note Na cria√ß√£o de um novo parametro, dar uma estrutura TParametro.
 	 *
-	 * @note Ao adicionar novos par‚metros, È recomend·vel manter a enumeraÁ„o sincronizada
+	 * @note Ao adicionar novos par√¢metros, √© recomend√°vel manter a enumera√ß√£o sincronizada
 	 * com a da superclasse. O primeiro elemento deve ser `parametrosConstrutivos`,
-	 * garantindo que novas adiÁıes na superclasse sejam automaticamente refletidas aqui.
+	 * garantindo que novas adi√ß√µes na superclasse sejam automaticamente refletidas aqui.
 	 *
-	 * @note A inst‚ncia selecionada ir· ser carregada em Inicializar(), utilizando o valor atual.
+	 * @note A inst√¢ncia selecionada ir√° ser carregada em Inicializar(), utilizando o valor atual.
 	 *
 	 * @see TParametro
 	 *
-	 * Exemplo com a alteraÁ„o do valor de omiss„o de um parametro, e adiÁ„o de dois novos parametros.
+	 * Exemplo com a altera√ß√£o do valor de omiss√£o de um parametro, e adi√ß√£o de dois novos parametros.
 	 * @code
-	 * // continuaÁ„o da enumeraÁ„o EParametrosProcujra
+	 * // continua√ß√£o da enumera√ß√£o EParametrosProcujra
 	 * enum ESubProblema { opcaoHeur = parametrosProcura, opcaoSuc };
 	 * void CSubProblema::ResetParametros(void)
 	 * {
 	 *     static const char* nomesSuc[] = { "todas", "contributo" }; // nomes para os valores de opcaoSuc
-	 *     // chamar primeiro o mÈtodo na superclasse
+	 *     // chamar primeiro o m√©todo na superclasse
 	 *     TProcura::ResetParametros();
-	 *     // neste exemplo considerou-se que se pretende ver algum debug, de omiss„o
+	 *     // neste exemplo considerou-se que se pretende ver algum debug, de omiss√£o
 	 *     Parametro(NIVEL_DEBUG) = ATIVIDADE;
 	 *
-	 *     // novo parametro para utilizar na funÁ„o Heuristica()
-	 *     parametro += { "OpÁ„o HeurÌstica", 0,0,10,
-	 *         "explicaÁ„o do que acontece na heuristica, com este parametro entre 0 e 10",NULL };
-	 *     // novo parametro para utilizar na funÁ„o Sucessores()
-	 *     parametro += { "OpÁ„o Sucessores", 0,0,1,
-	 *         "0 gera todas as aÁıes; 1 gera apenas aÁıes que tenham um contributo para a soluÁ„o.",nomesSuc };
+	 *     // novo parametro para utilizar na fun√ß√£o Heuristica()
+	 *     parametro += { "Op√ß√£o Heur√≠stica", 0,0,10,
+	 *         "explica√ß√£o do que acontece na heuristica, com este parametro entre 0 e 10",NULL };
+	 *     // novo parametro para utilizar na fun√ß√£o Sucessores()
+	 *     parametro += { "Op√ß√£o Sucessores", 0,0,1,
+	 *         "0 gera todas as a√ß√µes; 1 gera apenas a√ß√µes que tenham um contributo para a solu√ß√£o.",nomesSuc };
 	 *
 	 *     // novo indicador
-	 *	   indicador += { "Ordenado","verifica se um vetor est· ordenado", indOrdenar };
-	 *     indAtivo += indOrdenar; // adicionar aos indicadores ativos de omiss„o
+	 *	   indicador += { "Ordenado","verifica se um vetor est√° ordenado", indOrdenar };
+	 *     indAtivo += indOrdenar; // adicionar aos indicadores ativos de omiss√£o
 	 *
-	 *     // indicar que h· 10 inst‚ncias, sendo a inst‚ncia inicial a 1
-	 * 	   instancia = { "Problema", 1,1,10, "CaracterÌsticas dos problemas", NULL };
+	 *     // indicar que h√° 10 inst√¢ncias, sendo a inst√¢ncia inicial a 1
+	 * 	   instancia = { "Problema", 1,1,10, "Caracter√≠sticas dos problemas", NULL };
 	 * }
 	 * @endcode
 	 */
@@ -343,20 +343,20 @@ public:
 
 	/**
 	 * @brief Verifica se a procura deve ser interrompida
-	 * @note A redefiniÁ„o È opcional e deve ser feita apenas se houver necessidade de critÈrios
-	 * de paragem adicionais, alÈm dos j· estabelecidos.
+	 * @note A redefini√ß√£o √© opcional e deve ser feita apenas se houver necessidade de crit√©rios
+	 * de paragem adicionais, al√©m dos j√° estabelecidos.
 	 * @return Retorna verdadeiro se a procura deve parar de imediato
 	 *
-	 * O critÈrio de paragem pode ser especificado em limite de tempo, limite de iteraÁıes.
-	 * Caso exista uma falha na alocaÁ„o de memÛria de um estado, em chamadas futuras ir· retornar verdadeiro.
+	 * O crit√©rio de paragem pode ser especificado em limite de tempo, limite de itera√ß√µes.
+	 * Caso exista uma falha na aloca√ß√£o de mem√≥ria de um estado, em chamadas futuras ir√° retornar verdadeiro.
 	 *
-	 * @note Redefinir apenas se o critÈrio de paragem n„o puder ser contemplado nestes pontos.
-	 * @note Esta funÁ„o deve manter a eficiÍncia elevada, dado que È chamada em ciclos internos
+	 * @note Redefinir apenas se o crit√©rio de paragem n√£o puder ser contemplado nestes pontos.
+	 * @note Esta fun√ß√£o deve manter a efici√™ncia elevada, dado que √© chamada em ciclos internos
 	 * dos algoritmos de procura.
 	 *
 	 * @code
 	 * bool CSubProblema::Parar(void) {
-	 *     return TProcura::Parar() || CriterioParagem(); // critÈrio de paragem definido em CSubProblema
+	 *     return TProcura::Parar() || CriterioParagem(); // crit√©rio de paragem definido em CSubProblema
 	 * }
 	 * @endcode
 	 */
@@ -365,30 +365,30 @@ public:
 	}
 
 	/**
-	* @brief Inicializa a interaÁ„o com o utilizador
-	* @note RedefiniÁ„o opcional
+	* @brief Inicializa a intera√ß√£o com o utilizador
+	* @note Redefini√ß√£o opcional
 	*
-	* Esta funÁ„o arranca com o teste manual, orientada para o programador.
+	* Esta fun√ß√£o arranca com o teste manual, orientada para o programador.
 	* A interface permite:
-	* - visualizar e trocar de inst‚ncia
-	* - explorar o espaÁo de estados nessa instancia, executando aÁıes
-	* - ver um caminho que esteja gravado (por exploraÁ„o manual ou por execuÁ„o de um algoritmo)
-	* - ver e editar qualquer parametro de execuÁ„o
-	* - o algoritmo È tambÈm um parametro, podendo naturalmente ser alterado
-	* - h· parametros sobre limites de execuÁ„o, informaÁ„o de debug, opÁıes de implementaÁ„o e opÁıes de algoritmos
-	* - executar o algoritmo com a configuraÁ„o atual
-	* - adicionar a configuraÁ„o atual a um conjunto de configuraÁıes de teste
-	* - executar um teste empÌrico, executando todas as configuraÁıes de teste, no conjunto de inst‚ncias selecionadas
+	* - visualizar e trocar de inst√¢ncia
+	* - explorar o espa√ßo de estados nessa instancia, executando a√ß√µes
+	* - ver um caminho que esteja gravado (por explora√ß√£o manual ou por execu√ß√£o de um algoritmo)
+	* - ver e editar qualquer parametro de execu√ß√£o
+	* - o algoritmo √© tamb√©m um parametro, podendo naturalmente ser alterado
+	* - h√° parametros sobre limites de execu√ß√£o, informa√ß√£o de debug, op√ß√µes de implementa√ß√£o e op√ß√µes de algoritmos
+	* - executar o algoritmo com a configura√ß√£o atual
+	* - adicionar a configura√ß√£o atual a um conjunto de configura√ß√µes de teste
+	* - executar um teste emp√≠rico, executando todas as configura√ß√µes de teste, no conjunto de inst√¢ncias selecionadas
 	*
-	* @note Esta funÁ„o deve ser o ponto de entrada, a executar no main, caso n„o se utilize a funÁ„o TProcura::main().
+	* @note Esta fun√ß√£o deve ser o ponto de entrada, a executar no main, caso n√£o se utilize a fun√ß√£o TProcura::main().
 	*
 	* @see TParametro, main
 	*
 	* @code
 	* void CSubProblema::TesteManual(const char* nome)
 	* {
-	*      // aÁıes extra antes do teste manual, ou redefiniÁ„o completa;
-	* 	   TProcura::TesteManual(nome); // chamada do mÈtodo da superclasse, caso n„o redefina por completo
+	*      // a√ß√µes extra antes do teste manual, ou redefini√ß√£o completa;
+	* 	   TProcura::TesteManual(nome); // chamada do m√©todo da superclasse, caso n√£o redefina por completo
 	* }
 	*
 	* // exemplo do main, sem processar argumentos (ver TProcura::main)
@@ -402,50 +402,50 @@ public:
 	virtual void TesteManual(const char* nome);
 
 	/**
-	 * @brief Executa testes empÌricos, em todas as configuraÁıes guardadas, nas inst‚ncias selecionadas
-	 * @note RedefiniÁ„o n„o È necess·ria
-	 * @param instancias - IDs das inst‚ncias a serem utilizadas
+	 * @brief Executa testes emp√≠ricos, em todas as configura√ß√µes guardadas, nas inst√¢ncias selecionadas
+	 * @note Redefini√ß√£o n√£o √© necess√°ria
+	 * @param instancias - IDs das inst√¢ncias a serem utilizadas
 	 * @param ficheiro - nome do ficheiro com os resultados, caso exista
 	 *
-	 * Esta funÁ„o È chamada de TesteManual() para executar testes empÌricos.
-	 * A funÁ„o apresenta-se como mÈtodo virtual, atendendo a que È redefinida nas
-	 * procuras adversas. … genÈrica e n„o se prevÍ outras situaÁıes que seja necess·rio
+	 * Esta fun√ß√£o √© chamada de TesteManual() para executar testes emp√≠ricos.
+	 * A fun√ß√£o apresenta-se como m√©todo virtual, atendendo a que √© redefinida nas
+	 * procuras adversas. √â gen√©rica e n√£o se prev√™ outras situa√ß√µes que seja necess√°rio
 	 * redefini-la.
 	 *
-	 * @note o parametro NIVEL_DEBUG controla a quantidade de informaÁ„o que È mostrada relativamente ‡s tarefas,
-	 *       sendo colocado com o valor NADA para a execuÁ„o do algoritmo
+	 * @note o parametro NIVEL_DEBUG controla a quantidade de informa√ß√£o que √© mostrada relativamente √†s tarefas,
+	 *       sendo colocado com o valor NADA para a execu√ß√£o do algoritmo
 	 *
-	 * @note Pode ser chamada diretamente do cÛdigo, e nesse caso È necess·rio que a vari·vel
-	 * est·tica 'configuracoes' tenha as configuraÁıes em teste.
-	 * Se `configuracoes` estiver vazia, o teste empÌrico ser· executado apenas
-	 * com a configuraÁ„o atual, avaliando seu desempenho isoladamente, sem comparaÁ„o com outras configuraÁıes.
+	 * @note Pode ser chamada diretamente do c√≥digo, e nesse caso √© necess√°rio que a vari√°vel
+	 * est√°tica 'configuracoes' tenha as configura√ß√µes em teste.
+	 * Se `configuracoes` estiver vazia, o teste emp√≠rico ser√° executado apenas
+	 * com a configura√ß√£o atual, avaliando seu desempenho isoladamente, sem compara√ß√£o com outras configura√ß√µes.
 	 *
 	 * @see TesteManual()
 	 */
 	virtual void TesteEmpirico(TVector<int> instancias, char* ficheiro = NULL);
 
-	/// @brief Teste empÌrico com modo mestre-escravo (este È o mestre)
+	/// @brief Teste emp√≠rico com modo mestre-escravo (este √© o mestre)
 	virtual void TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro = NULL);
-	/// @brief Teste empÌrico com modo mestre-escravo (este È o escravo)
+	/// @brief Teste emp√≠rico com modo mestre-escravo (este √© o escravo)
 	virtual void TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro = NULL);
 
 	/**
-	* @brief Inicializa a interaÁ„o com o utilizador
-	* @note RedefiniÁ„o opcional
+	* @brief Inicializa a intera√ß√£o com o utilizador
+	* @note Redefini√ß√£o opcional
 	*
-	* Esta funÁ„o arranca com o teste manual, orientada para o programador.
+	* Esta fun√ß√£o arranca com o teste manual, orientada para o programador.
 	* A interface permite:
-	* - visualizar e trocar de inst‚ncia
-	* - explorar o espaÁo de estados nessa instancia, executando aÁıes
-	* - ver um caminho que esteja gravado (por exploraÁ„o manual ou por execuÁ„o de um algoritmo)
-	* - ver e editar qualquer parametro de execuÁ„o
-	* - o algoritmo È tambÈm um parametro, podendo naturalmente ser alterado
-	* - h· parametros sobre limites de execuÁ„o, informaÁ„o de debug, opÁıes de implementaÁ„o e opÁıes de algoritmos
-	* - executar o algoritmo com a configuraÁ„o atual
-	* - adicionar a configuraÁ„o atual a um conjunto de configuraÁıes de teste
-	* - executar um teste empÌrico, executando todas as configuraÁıes de teste, no conjunto de inst‚ncias selecionadas
+	* - visualizar e trocar de inst√¢ncia
+	* - explorar o espa√ßo de estados nessa instancia, executando a√ß√µes
+	* - ver um caminho que esteja gravado (por explora√ß√£o manual ou por execu√ß√£o de um algoritmo)
+	* - ver e editar qualquer parametro de execu√ß√£o
+	* - o algoritmo √© tamb√©m um parametro, podendo naturalmente ser alterado
+	* - h√° parametros sobre limites de execu√ß√£o, informa√ß√£o de debug, op√ß√µes de implementa√ß√£o e op√ß√µes de algoritmos
+	* - executar o algoritmo com a configura√ß√£o atual
+	* - adicionar a configura√ß√£o atual a um conjunto de configura√ß√µes de teste
+	* - executar um teste emp√≠rico, executando todas as configura√ß√µes de teste, no conjunto de inst√¢ncias selecionadas
 	*
-	* @note Esta funÁ„o deve ser o ponto de entrada, a executar no main, caso n„o se utilize a funÁ„o TProcura::main().
+	* @note Esta fun√ß√£o deve ser o ponto de entrada, a executar no main, caso n√£o se utilize a fun√ß√£o TProcura::main().
 	*
 	* @see TParametro, TesteManual
 	*
@@ -460,51 +460,51 @@ public:
 	*/
 	virtual void main(int argc, char* argv[], const char* nome);
 
-	/// @brief Chapar antes da execuÁ„o do algoritmo. Limpa valores estatÌsticos, e fixa o instante limite de tempo para a execuÁ„o
+	/// @brief Chapar antes da execu√ß√£o do algoritmo. Limpa valores estat√≠sticos, e fixa o instante limite de tempo para a execu√ß√£o
 	virtual void LimparEstatisticas();
-	/// @brief Chamar apÛs a execuÁ„o do algoritmo. Grava o tempo consumido.
+	/// @brief Chamar ap√≥s a execu√ß√£o do algoritmo. Grava o tempo consumido.
 	virtual void ExecucaoTerminada();
-	/// @brief definir para explorar manualmente os dados (n„o definido em TProcura, apenas em TProcuraConstrutiva)
+	/// @brief definir para explorar manualmente os dados (n√£o definido em TProcura, apenas em TProcuraConstrutiva)
 	virtual void Explorar() {}
-	/// @brief definir para visualizar a soluÁ„o
+	/// @brief definir para visualizar a solu√ß√£o
 	virtual void MostrarSolucao();
-	/// @brief  retorna um vetor de inteiros com a codificaÁ„o da soluÁ„o (esta codificaÁ„o ser· adicionada aos indicadores, no ficheiro CSV de resultados)
+	/// @brief  retorna um vetor de inteiros com a codifica√ß√£o da solu√ß√£o (esta codifica√ß√£o ser√° adicionada aos indicadores, no ficheiro CSV de resultados)
 	virtual TVector<int64_t> CodificarSolucao() { return TVector<int64_t>(); }
 
-	/// @brief ID da inst‚ncia atual, a ser utilizado em SolucaoVazia().
+	/// @brief ID da inst√¢ncia atual, a ser utilizado em SolucaoVazia().
 	static TParametro instancia;
-	/// @brief nome do ficheiro de uma inst‚ncia - editado pelo utilizador 
-	///        (utilizar como prefixo, concatenando com ID da inst‚ncia)
-	///        pode ser utilizado para gravar a inst„ncia num novo formato, colocando um indicador ativo 
-	///        que È chamado apÛs a execuÁ„o (pode gravar a soluÁ„o para ficheiro tambÈm, mas essa È mais facilmente
-	///        gravada em CVS codificada em inteiros, onde fica associada ‡ configuraÁ„o utilizada para a gerar)
+	/// @brief nome do ficheiro de uma inst√¢ncia - editado pelo utilizador 
+	///        (utilizar como prefixo, concatenando com ID da inst√¢ncia)
+	///        pode ser utilizado para gravar a inst√£ncia num novo formato, colocando um indicador ativo 
+	///        que √© chamado ap√≥s a execu√ß√£o (pode gravar a solu√ß√£o para ficheiro tamb√©m, mas essa √© mais facilmente
+	///        gravada em CVS codificada em inteiros, onde fica associada √† configura√ß√£o utilizada para a gerar)
 	/// @see Inicializar()
 	static char ficheiroInstancia[256];
-	/// @brief Par‚metros a serem utilizados na configuraÁ„o atual.
+	/// @brief Par√¢metros a serem utilizados na configura√ß√£o atual.
 	/// @see EParametrosConstrutiva
 	static TVector<TParametro> parametro;
-	/// @brief Indicadores que podem ser calculados apÛs a execuÁ„o, quer com informaÁ„o da inst„ncia, quer com resultado da ˙ltima corrida.
+	/// @brief Indicadores que podem ser calculados ap√≥s a execu√ß√£o, quer com informa√ß√£o da inst√£ncia, quer com resultado da √∫ltima corrida.
 	/// @see Indicador()
 	static TVector<TIndicador> indicador;
 	static TVector<int> indAtivo; // lista por ordem dos indicadores a utilizar
-	/// @brief Conjuntos de configuraÁıes para teste empÌrico.
+	/// @brief Conjuntos de configura√ß√µes para teste emp√≠rico.
 	static TVector<TVector<int>> configuracoes;
-	/// @brief Resultado retornado pelo algoritmo na ˙ltima execuÁ„o.
+	/// @brief Resultado retornado pelo algoritmo na √∫ltima execu√ß√£o.
 	static int resultado;
-	/// @brief tempo consumido na ˙ltima execuÁ„o.
+	/// @brief tempo consumido na √∫ltima execu√ß√£o.
 	static double tempo;
-	/// @brief N˙mero total de iteraÁıes realizadas na ˙ltima execuÁ„o.
+	/// @brief N√∫mero total de itera√ß√µes realizadas na √∫ltima execu√ß√£o.
 	static int iteracoes;
 	/// @brief Instante final (deadline) da corrida atual.
 	static clock_t instanteFinal;
-	/// @brief Flag indicando problemas de memÛria esgotada.
+	/// @brief Flag indicando problemas de mem√≥ria esgotada.
 	static bool memoriaEsgotada;
 	/// @brief MPI - rank do processo
 	static int mpiID;
-	/// @brief MPI - n˙mero de processos
+	/// @brief MPI - n√∫mero de processos
 	static int mpiCount;
 	/// @brief Modo MPI
-	/// @note 0 = divis„o est·tica, 1 = mestre-escravo
+	/// @note 0 = divis√£o est√°tica, 1 = mestre-escravo
 	static int modoMPI; 
 
 
@@ -513,7 +513,7 @@ public:
 	bool IteracoesExcedido() {
 		return Parametro(LIMITE_ITERACOES) > 0 && Parametro(LIMITE_ITERACOES) < iteracoes;
 	}
-	// ler um n˙mero, ou retorna NAO_LIDO
+	// ler um n√∫mero, ou retorna NAO_LIDO
 	static int NovoValor(const char* prompt);
 	// ler uma string
 	static char* NovoTexto(const char* prompt);
@@ -532,18 +532,18 @@ public:
 		return parametro[id].dependencia.Find(valor, true, 1) >= 0;
 	}
 
-	/// @brief Mostra uma informaÁ„o de debug, se o nÌvel de debug for suficiente.
-	/// @param tipo NÌvel de detalhe necess·rio para exibir a mensagem.
-	/// @param exato Se true, sÛ imprime se o nÌvel de debug for exatamente igual a `tipo`.
+	/// @brief Mostra uma informa√ß√£o de debug, se o n√≠vel de debug for suficiente.
+	/// @param tipo N√≠vel de detalhe necess√°rio para exibir a mensagem.
+	/// @param exato Se true, s√≥ imprime se o n√≠vel de debug for exatamente igual a `tipo`.
 	///              Se false, imprime se for >= `tipo`.
 	/// @param fmt Formato da mensagem, como no printf.
-	/// @return true se a mensagem foi impressa, false caso contr·rio.
+	/// @return true se a mensagem foi impressa, false caso contr√°rio.
 	/// 
-	/// @note Pode ser usado com || para encadear mensagens de diferentes nÌveis, 
-	/// imprimindo apenas a primeira que corresponda ao nÌvel de debug atual.	
+	/// @note Pode ser usado com || para encadear mensagens de diferentes n√≠veis, 
+	/// imprimindo apenas a primeira que corresponda ao n√≠vel de debug atual.	
 	/// 
 	/// @code
-	/// // Exemplo: tenta imprimir no nÌvel passos, sen„o no detalhe
+	/// // Exemplo: tenta imprimir no n√≠vel passos, sen√£o no detalhe
 	/// Debug(passos, true,  "\nPasso %d", iteracoes) ||
 	/// Debug(detalhe, false, "\nPasso %d | Melhor custo: %d", iteracoes, custo) ||
 	/// @endcode
@@ -552,7 +552,7 @@ public:
 		if (exato ? nivel != tipo : nivel < tipo)
 			return false;
 		va_list args;
-		va_start(args, fmt); // ˙ltimo par‚metro fixo È 'fmt'
+		va_start(args, fmt); // √∫ltimo par√¢metro fixo √© 'fmt'
 		vprintf(fmt, args);
 		va_end(args);
 		return true;
@@ -564,10 +564,10 @@ public:
 protected:
 
 	/**
-	 * @brief Executa uma tarefa num teste empÌrico
+	 * @brief Executa uma tarefa num teste emp√≠rico
 	 * @param resultados Vetor onde inserir o resultado.
-	 * @param inst ID da inst‚ncia.
-	 * @param conf ID da configuraÁ„o.
+	 * @param inst ID da inst√¢ncia.
+	 * @param conf ID da configura√ß√£o.
 	 */
 	void ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf);
 
@@ -575,8 +575,8 @@ protected:
 	/**
 	 * @brief Insere um novo registo de resultados.
 	 * @param resultados Vetor onde inserir o resultado.
-	 * @param inst ID da inst‚ncia.
-	 * @param conf ID da configuraÁ„o.
+	 * @param inst ID da inst√¢ncia.
+	 * @param conf ID da configura√ß√£o.
 	 */
 	void InserirRegisto(TVector<TResultado>& resultados, int inst, int conf);
 
@@ -584,22 +584,22 @@ protected:
 	 * @brief Procura um registo com determinado id.
 	 * @param resultado Vetor de resultados.
 	 * @param id ID a procurar.
-	 * @return Õndice do registo, ou -1 se n„o encontrado.
+	 * @return √çndice do registo, ou -1 se n√£o encontrado.
 	 */
 	int64_t Registo(TResultado& resultado, int id);
 
 	/**
 	 * @brief Atualiza o valor de um registo.
-	 * @param resultado ReferÍncia ao resultado a atualizar.
+	 * @param resultado Refer√™ncia ao resultado a atualizar.
 	 * @param id ID do valor.
 	 * @param valor Novo valor a atribuir.
 	 */
 	void Registo(TResultado& resultado, int id, int64_t valor);
 
 	/**
-	 * @brief Mostra os par‚metros atuais.
-	 * @param detalhe NÌvel de detalhe na apresentaÁ„o.
-	 * @param idParametros Vetor de IDs de par‚metros a mostrar (opcional).
+	 * @brief Mostra os par√¢metros atuais.
+	 * @param detalhe N√≠vel de detalhe na apresenta√ß√£o.
+	 * @param idParametros Vetor de IDs de par√¢metros a mostrar (opcional).
 	 */
 	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL);
 
@@ -609,46 +609,46 @@ protected:
 	void MostraIndicadores();
 
 	/**
-	 * @brief Mostra as configuraÁıes disponÌveis.
-	 * @param detalhe NÌvel de detalhe.
-	 * @param atual Õndice da configuraÁ„o atual (opcional).
+	 * @brief Mostra as configura√ß√µes dispon√≠veis.
+	 * @param detalhe N√≠vel de detalhe.
+	 * @param atual √çndice da configura√ß√£o atual (opcional).
 	 */
 	void MostrarConfiguracoes(int detalhe, int atual = -1);
 
 	/**
 	 * @brief Permite ao utilizador editar os indicadores a utilizar.
-	 * @return true se alterou indicadores, false caso contr·rio.
+	 * @return true se alterou indicadores, false caso contr√°rio.
 	 */
 	bool EditarIndicadores();
 
 	/**
-	 * @brief Permite ao utilizador editar os par‚metros.
+	 * @brief Permite ao utilizador editar os par√¢metros.
 	 */
 	void EditarParametros();
 
 	/**
-	 * @brief Permite ao utilizador editar as configuraÁıes.
+	 * @brief Permite ao utilizador editar as configura√ß√µes.
 	 */
 	void EditarConfiguracoes();
 
 	/**
-	 * @brief Mostra um relatÛrio dos resultados.
+	 * @brief Mostra um relat√≥rio dos resultados.
 	 * @param resultados Vetor de resultados a apresentar.
-	 * @param ultimo Indica se È o ˙ltimo relatÛrio (opcional).
+	 * @param ultimo Indica se √© o √∫ltimo relat√≥rio (opcional).
 	 */
 	void MostraRelatorio(TVector<TResultado>& resultados, bool ultimo = false);
 
 	/**
-	 * @brief Grava ou lÍ a configuraÁ„o atual.
-	 * @param parametros Vetor de par‚metros.
-	 * @param operacao Tipo de operaÁ„o (gravar ou ler).
+	 * @brief Grava ou l√™ a configura√ß√£o atual.
+	 * @param parametros Vetor de par√¢metros.
+	 * @param operacao Tipo de opera√ß√£o (gravar ou ler).
 	 */
 	void ConfiguracaoAtual(TVector<int>& parametros, int operacao);
 
 	/**
-	 * @brief Adiciona uma nova configuraÁ„o se ainda n„o existir.
-	 * @param parametros Vetor de par‚metros.
-	 * @return Õndice da nova configuraÁ„o.
+	 * @brief Adiciona uma nova configura√ß√£o se ainda n√£o existir.
+	 * @param parametros Vetor de par√¢metros.
+	 * @return √çndice da nova configura√ß√£o.
 	 */
 	int NovaConfiguracao(TVector<int>& parametros);
 
@@ -656,12 +656,12 @@ protected:
 	 * @brief Compara dois resultados para determinar o melhor.
 	 * @param base Resultado base.
 	 * @param alternativa Resultado alternativo.
-	 * @return Õndice do melhor resultado.
+	 * @return √çndice do melhor resultado.
 	 */
 	int MelhorResultado(TResultado base, TResultado alternativa);
 
 	/**
-	 * @brief Calcula o torneio entre v·rias configuraÁıes.
+	 * @brief Calcula o torneio entre v√°rias configura√ß√µes.
 	 * @param resultados Vetor de resultados a comparar.
 	 */
 	void CalculaTorneio(TVector<TResultado>& resultados);
@@ -669,86 +669,86 @@ protected:
 	/**
 	 * @brief Mostra os resultados do torneio.
 	 * @param torneio Matriz de resultados do torneio.
-	 * @param jogo Indica se È modo de jogo ou apenas comparaÁ„o.
+	 * @param jogo Indica se √© modo de jogo ou apenas compara√ß√£o.
 	 */
 	void MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo = false);
 
 	/**
 	 * @brief Mostra a barra de progresso ou nomes do torneio.
-	 * @param nomes Se true, mostra nomes; caso contr·rio, mostra progresso.
+	 * @param nomes Se true, mostra nomes; caso contr√°rio, mostra progresso.
 	 */
 	void BarraTorneio(bool nomes);
 
 	/**
-	 * @brief Extrai resultados de uma determinada configuraÁ„o.
+	 * @brief Extrai resultados de uma determinada configura√ß√£o.
 	 * @param resultados Vetor de resultados.
-	 * @param configuracao Õndice da configuraÁ„o.
-	 * @return Vetor com os resultados extraÌdos.
+	 * @param configuracao √çndice da configura√ß√£o.
+	 * @return Vetor com os resultados extra√≠dos.
 	 */
 	TVector<TResultado> ExtrairConfiguracao(TVector<TResultado>& resultados, int configuracao);
 
 	/**
-	 * @brief Solicita ao utilizador o ID da inst‚ncia a utilizar, permitindo alterar tambÈm o prefixo do ficheiro.
+	 * @brief Solicita ao utilizador o ID da inst√¢ncia a utilizar, permitindo alterar tamb√©m o prefixo do ficheiro.
 	 */
 	void SolicitaInstancia();
 
 	/**
-	 * @brief Solicita ao utilizador uma lista de inst‚ncias.
-	 * @return Vetor com IDs das inst‚ncias selecionadas.
+	 * @brief Solicita ao utilizador uma lista de inst√¢ncias.
+	 * @return Vetor com IDs das inst√¢ncias selecionadas.
 	 */
 	TVector<int> SolicitaInstancias();
 
 	/**
-	 * @brief Gera um relatÛrio CSV com os resultados.
+	 * @brief Gera um relat√≥rio CSV com os resultados.
 	 * @param resultados Vetor de resultados.
 	 * @param f Ponteiro para o ficheiro onde gravar.
 	 */
 	bool RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro);
 
 	/**
-	 * @brief Insere configuraÁıes a partir de uma string.
-	 * @param str String com as configuraÁıes.
-	 * @param base Vetor base para inserÁ„o.
+	 * @brief Insere configura√ß√µes a partir de uma string.
+	 * @param str String com as configura√ß√µes.
+	 * @param base Vetor base para inser√ß√£o.
 	 */
 	void InserirConfiguracoes(char* str, TVector<int>& base);
 
 	/**
-	 * @brief Insere configuraÁıes gerando o produto cartesiano de valores.
+	 * @brief Insere configura√ß√µes gerando o produto cartesiano de valores.
 	 * @param base Vetor base.
 	 * @param produto Vetor para resultados.
-	 * @param valores Vetor de vetores de valores possÌveis.
+	 * @param valores Vetor de vetores de valores poss√≠veis.
 	 */
 	void InserirConfiguracoes(TVector<int>& base, TVector<int>& produto, TVector<TVector<int>>& valores);
 
 	/**
-	 * @brief Mostra ajuda de utilizaÁ„o do programa.
+	 * @brief Mostra ajuda de utiliza√ß√£o do programa.
 	 * @param programa Nome do programa.
 	 */
 	void AjudaUtilizacao(const char* programa);
 
 	/**
-	 * @brief Limita o domÌnio de um par‚metro inteiro.
-	 * @param variavel Vari·vel a limitar.
-	 * @param min Valor mÌnimo permitido.
-	 * @param max Valor m·ximo permitido.
-	 * @return Valor ajustado dentro do domÌnio.
+	 * @brief Limita o dom√≠nio de um par√¢metro inteiro.
+	 * @param variavel Vari√°vel a limitar.
+	 * @param min Valor m√≠nimo permitido.
+	 * @param max Valor m√°ximo permitido.
+	 * @return Valor ajustado dentro do dom√≠nio.
 	 */
 	static int Dominio(int& variavel, int min = INT_MIN, int max = INT_MAX);
 
-	/// @brief Inicializa o ambiente MPI, se aplic·vel.
+	/// @brief Inicializa o ambiente MPI, se aplic√°vel.
 	static void InicializaMPI(int argc, char* argv[]);
-	/// @brief Finaliza o ambiente MPI, se aplic·vel.
+	/// @brief Finaliza o ambiente MPI, se aplic√°vel.
 	static void FinalizaMPI();
 
-	/// @brief Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nÌvel de debug for igual ou superior
+	/// @brief Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o n√≠vel de debug for igual ou superior
 	void DebugTabela(ENivelDebug nivel, TVector<int>tabela, const char *tipo = "");
 
-	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um ˙nico ficheiro.
+	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um √∫nico ficheiro.
 	bool JuntarCSV(const char* ficheiro);
 
-	/// @brief retorna o tempo em segundos desde que o cronÛmetro foi inicializado
+	/// @brief retorna o tempo em segundos desde que o cron√≥metro foi inicializado
 	static double Cronometro(enum ECronometro id = CONT_ALGORITMO, bool inicialiar = false) {
-		static clock_t inicio[CONT_NUMERO] = { 0 }; // atÈ 10 cronÛmetros
+		static clock_t inicio[CONT_NUMERO] = { 0 }; // at√© 10 cron√≥metros
 		if (inicialiar)
 			inicio[id] = clock();
 		return (double)(clock() - inicio[id]) / CLOCKS_PER_SEC;

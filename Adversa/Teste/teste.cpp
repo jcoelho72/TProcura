@@ -1,8 +1,7 @@
-﻿// teste.cpp : programa para teste da classe TProcuraConstrutiva
+// teste.cpp : programa para teste da classe TProcuraConstrutiva 
 //
 
 #include <stdio.h>
-#include <locale>
 
 #include "../TProcuraAdversa.h"
 #include "JogoDoGalo.h"
@@ -10,7 +9,7 @@
 
 int main(int argc, char* argv[])
 {
-	std::locale::global(std::locale(""));
+	compat::init_io();
 
 #ifndef MPI_ATIVO
 	printf("\n\

@@ -1,7 +1,7 @@
 #include "TCodificacaoInteira.h"
 
-int TCodificacaoInteira::nElementos = 0; // n˙mero de elementos na permutaÁ„o
-TVector<int> TCodificacaoInteira::maxValor; // valor m·ximo para cada elemento
+int TCodificacaoInteira::nElementos = 0; // n√∫mero de elementos na permuta√ß√£o
+TVector<int> TCodificacaoInteira::maxValor; // valor m√°ximo para cada elemento 
 const char* TCodificacaoInteira::nomesVizinhanca[] = {
 	"incDecValor",
 	"incDecPot2",
@@ -41,21 +41,21 @@ void TCodificacaoInteira::ResetParametros() {
 		"9-pontos",
 		"10-pontos" };
 	static const char* nomesDistancias[] = {
-		"Hamming", // n˙mero de posiÁıes com valores diferentes
-		"Euclidiana", // dist‚ncia euclidiana (raiz quadrada da soma dos quadrados das diferenÁas)
-		"Manhattan" }; // dist‚ncia Manhattan (soma das diferenÁas absolutas)
+		"Hamming", // n√∫mero de posi√ß√µes com valores diferentes
+		"Euclidiana", // dist√¢ncia euclidiana (raiz quadrada da soma dos quadrados das diferen√ßas)
+		"Manhattan" }; // dist√¢ncia Manhattan (soma das diferen√ßas absolutas)
 
 	TProcuraMelhorativa::ResetParametros();
-	// parametros da codificaÁ„o inteira
+	// parametros da codifica√ß√£o inteira
 	parametro += {
 		{ "TIPO_CRUZAR", 1, 0, 10, "Cruzamento: N - N-pontos, 0 - uniforme", nomesCruzamento, _TV("0,2,3") },
-		{ "TIPO_MUTAR", 0,0,100, "MutaÁ„o: 0 - aplica um vizinho aleatÛrio (seja 1 sÛ elemento ou segmento), 1 a 100, probabilidade de mutaÁ„o de cada elemento, em percentagem (1 a 100)", NULL, _TV("0,2,3") },
-		{ "TIPO_VIZINHO", 1,1,6, "VizinhanÁa: v·rios mÈtodso para vizinhanÁas de inteiros", nomesVizinhanca },
+		{ "TIPO_MUTAR", 0,0,100, "Muta√ß√£o: 0 - aplica um vizinho aleat√≥rio (seja 1 s√≥ elemento ou segmento), 1 a 100, probabilidade de muta√ß√£o de cada elemento, em percentagem (1 a 100)", NULL, _TV("0,2,3") },
+		{ "TIPO_VIZINHO", 1,1,6, "Vizinhan√ßa: v√°rios m√©todso para vizinhan√ßas de inteiros", nomesVizinhanca },
 		{ "LIMITE_VIZINHOS", 0,0,1000,
-"LIMITE_VIZINHOS, conforme a vizinhanÁa, se 0 n„o h· limite\n\
-- incDecPot2 + trocaValor - limita a diferenÁa m·xima de valores\n\
-- inserir + trocaPar + inverterSegmento - limita a dist‚ncia entre pares" },
-		{ "TIPO_DISTANCIA", 1,1,3, "Dist‚ncia: v·rios mÈtodso para dist‚ncias de inteiros", nomesDistancias, _TV("0,2,3") }
+"LIMITE_VIZINHOS, conforme a vizinhan√ßa, se 0 n√£o h√° limite\n\
+- incDecPot2 + trocaValor - limita a diferen√ßa m√°xima de valores\n\
+- inserir + trocaPar + inverterSegmento - limita a dist√¢ncia entre pares" },
+		{ "TIPO_DISTANCIA", 1,1,3, "Dist√¢ncia: v√°rios m√©todso para dist√¢ncias de inteiros", nomesDistancias, _TV("0,2,3") }
 	};
 }
 
@@ -100,7 +100,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 	// inverter segmento de N bits
 	ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CI);
-	Debug(EXTRA_DEBUG, false, " vizinhanÁa %s (limite %d)",
+	Debug(EXTRA_DEBUG, false, " vizinhan√ßa %s (limite %d)",
 		nomesVizinhanca[tipo - 1], limiteVizinhanca);
 
 	if (tipo >= vizIncDecValorCI && tipo <= vizTrocaValorCI) {
@@ -108,7 +108,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 		for (int i = 0; i < nElementos; i++) {
 			int j = 0;
 			while (abs(j) <= maxValor[i] && (!limiteVizinhanca || abs(j) <= limiteVizinhanca)) {
-				// incrementar j (+1, -1, +2, -2, +4, -4, etc no caso de potÍncias, e incremental c.c.)
+				// incrementar j (+1, -1, +2, -2, +4, -4, etc no caso de pot√™ncias, e incremental c.c.)
 				if (j <= 0)
 					j = -j + (tipo == vizIncDecPot2CI ? (j == 0 ? 1 : -j) : 1);
 				else
@@ -116,7 +116,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 				if (tipo == vizIncDecValorCI && j > 1)
 					break; // apenas incrementa/decrementa 1
 				if (estado[i] + j < 0 || estado[i] + j >= maxValor[i])
-					continue; // valor inv·lido
+					continue; // valor inv√°lido
 				TCodificacaoInteira* vizinho = (TCodificacaoInteira*)Duplicar();
 				if (vizinho != NULL) {
 					vizinho->estado[i] += j;
@@ -129,7 +129,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 		}
 	}
 	else if (tipo >= vizInserirCI && tipo <= vizInverterSegmentoCI) {
-		// alterar posiÁ„o de elementos
+		// alterar posi√ß√£o de elementos
 		for (int i = 0; i < nElementos; i++) // elemento i
 			for (int j = 0; j < nElementos; j++) // elemento j ou local j
 				if (i != j && (!limiteVizinhanca || abs(i - j) <= limiteVizinhanca)) {
@@ -140,7 +140,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 							vizinho->estado.Delete(i);
 							vizinho->estado.Insert(j < i ? j : j - 1, valor);
 							if (maxValor[i] != maxValor[j]) {
-								// garantir que os valores est„o dentro dos limites
+								// garantir que os valores est√£o dentro dos limites
 								for (int k = (i < j ? i : j); k < (i < j ? j : i); k++)
 									vizinho->estado[k] %= maxValor[k];
 							}
@@ -150,7 +150,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 							vizinho->estado[i] = vizinho->estado[j];
 							vizinho->estado[j] = valor;
 							if (maxValor[i] != maxValor[j]) {
-								// garantir que os valores est„o dentro dos limites
+								// garantir que os valores est√£o dentro dos limites
 								vizinho->estado[i] %= maxValor[i];
 								vizinho->estado[j] %= maxValor[j];
 							}
@@ -162,7 +162,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 								vizinho->estado[ii] = vizinho->estado[jj];
 								vizinho->estado[jj] = valor;
 								if (maxValor[ii] != maxValor[jj]) {
-									// garantir que os valores est„o dentro dos limites
+									// garantir que os valores est√£o dentro dos limites
 									vizinho->estado[ii] %= maxValor[ii];
 									vizinho->estado[jj] %= maxValor[jj];
 								}
@@ -182,11 +182,11 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 }
 
 void TCodificacaoInteira::Mutar(void) {
-	// mutaÁ„o com probabilidade p de trocar cada bit
+	// muta√ß√£o com probabilidade p de trocar cada bit
 	int p = Parametro(TIPO_MUTAR_CI);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CI);
 	if (p == 0) {
-		// um vizinho aleatÛrio
+		// um vizinho aleat√≥rio
 		ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
@@ -197,7 +197,7 @@ void TCodificacaoInteira::Mutar(void) {
 		}
 		else if (tipo == vizIncDecValorCI) {
 			do {
-				j = 1 << (TRand::rand() % 10); // potÍncia de 2 atÈ 512 
+				j = 1 << (TRand::rand() % 10); // pot√™ncia de 2 at√© 512 
 			} while (j >= maxValor[i]);
 			estado[i] += (TRand::rand() % 2 == 0 ? j : -j);
 		}
@@ -223,7 +223,7 @@ void TCodificacaoInteira::Mutar(void) {
 				j--;
 			}
 		}
-		// garantir que os valores est„o dentro dos limites
+		// garantir que os valores est√£o dentro dos limites
 		for (int i = 0; i < nElementos; i++)
 			estado[i] = (estado[i] + maxValor[i]) % maxValor[i];
 		custo = -1;

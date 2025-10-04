@@ -1,4 +1,4 @@
-﻿// teste.cpp : programa para teste da classe TProcura
+// teste.cpp : programa para teste da classe TProcura
 //
 
 #include "../TProcura.h"
