@@ -662,7 +662,8 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	int backupID = instancia.valor;
 	int nTarefa = 0;
 	double periodoReporte = 60;
-	printf("\n══ 🧪  Início do Teste ══");
+	printf("\n══ 🧪  Início do Teste (🖥️ %d) ══", mpiID);
+	fflush(stdout);
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
 	case COMPLETO: periodoReporte = 1; break;
@@ -694,7 +695,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 				continue;
 
 			if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
-				Debug(ATIVIDADE, false, "\n⏱ %s 🖥️ Tarefa %d. ",
+				Debug(ATIVIDADE, false, "\n⏱ %s 📋 Tarefa %d. ",
 					MostraTempo(Cronometro(CONT_TESTE)), nTarefa - 1) &&
 					fflush(stdout);
 				Cronometro(CONT_REPORTE, true);
@@ -736,7 +737,8 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	instancia.valor = backupID;
 	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
-	printf("\n══ 🏁  Fim do Teste ══");
+	printf("\n══ 🏁  Fim do Teste (🖥️ %d) ══", mpiID);
+	fflush(stdout);
 }
 
 void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
@@ -784,7 +786,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 		for (auto inst : instancias)
 			tarefas += { inst, configuracao };
 
-	Debug(ATIVIDADE, false, "\nTeste com %d tarefas, %d instâncias, %d configurações, utilizando %d processo(s). ",
+	Debug(ATIVIDADE, false, "\n📋 Tarefas:%d   ↻ Instâncias: %d   🛠️ Configurações: %d   🖥️ Processos: %d.",
 		tarefas.Count(), instancias.Count(), configuracoes.Count(),
 		trabalhador.Count() + 1) &&
 		fflush(stdout);
@@ -812,7 +814,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 
 		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
 			// mostrar uma linha por cada execução
-			Debug(ATIVIDADE, false, "\n%s Faltam %d tarefas, em curso %d",
+			Debug(ATIVIDADE, false, "\n⏱ %s 📋 Tarefas: %d  🖥️ Trabalhadores: %d",
 				MostraTempo(Cronometro(CONT_TESTE)), tarefas.Count(), trabalhar.Count()) &&
 				fflush(stdout);
 			Cronometro(CONT_REPORTE, true);
@@ -858,16 +860,16 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 	mpiCount = 1; // forçar a escrita do ficheiro apenas neste processo
 	RelatorioCSV(resultados, ficheiro) &&
 		Debug(ATIVIDADE, false,
-			"\nFicheiro %s.csv gravado.\n"
-			"Tempo real: %s",
+			"\n📄 Ficheiro %s.csv gravado.\n"
+			"⏱ Tempo real: %s",
 			ficheiro, MostraTempo(Cronometro(CONT_TESTE))) &&
-		Debug(ATIVIDADE, false, "\nCPU total: %s",
+		Debug(ATIVIDADE, false, "\n⏱ CPU total: %s",
 			MostraTempo(Cronometro(CONT_TESTE) * (backupCount - 1))) &&
-		Debug(ATIVIDADE, false, "\nEspera do gestor: %s",
+		Debug(ATIVIDADE, false, "\n⏱ Espera do gestor: %s",
 			MostraTempo(esperaGestor)) &&
-		Debug(ATIVIDADE, false, "\nEspera total dos trabalhadores: %s",
+		Debug(ATIVIDADE, false, "\n⏱ Espera trabalhadores: %s",
 			MostraTempo(esperaTrabalhadores)) &&
-		Debug(ATIVIDADE, false, "\nTaxa de utilização:\n- Total: %.1f%%\n- Gestor: %.1f%%\n- Trabalhadores: %.1f%% ",
+		Debug(ATIVIDADE, false, "\n📊 Utilização:\n- Total: %.1f%%\n- Gestor: %.1f%%\n- Trabalhadores: %.1f%% ",
 			taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
 	mpiCount = backupCount;
 
@@ -1033,9 +1035,6 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 
 	// arrancar MPI apenas após processar os argumentos
 	InicializaMPI(argc, argv);
-
-	if (Parametro(NIVEL_DEBUG) >= DETALHE && mpiID == 0)
-		MostrarConfiguracoes(0, -1);
 
 	if (modoMPI == 0 || mpiCount == 1)
 		// divisão estática ou execução em série
