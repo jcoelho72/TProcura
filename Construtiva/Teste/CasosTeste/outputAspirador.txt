@@ -1,608 +1,1116 @@
 ﻿
-Teste TProcurasConstrutivas
-Problema:
-  1 - Aspirador
-  2 - Puzzle 8
-  3 - 8 Damas
-  4 - Partição
-  5 - Artificial
-Opção: 
+â”Œâ”€ Teste TProcuraConstrutiva â”€â”€â”
+â”‚ 1 - Aspirador                â”‚
+â”‚ 2 - Puzzle 8                 â”‚
+â”‚ 3 - 8 Damas                  â”‚
+â”‚ 4 - PartiÃ§Ã£o                 â”‚
+â”‚ 5 - Artificial               â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 [*] *  .  * 
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
-ID atual: 4  Intervalo: [2–50]  Prefixo atual: 'instancia_' 
-Novo ID (ENTER mantém) ou novo prefixo (texto): 
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ â†»  Inicializar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ ID atual: 4  Intervalo: [2â€“50]  
+â”‚ Prefixo atual: 'instancia_' 
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+Novo ID (ENTER mantÃ©m) ou novo prefixo (texto): 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * [*]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: g:0 h:3 1|2
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â•â• ðŸ’° g:0 ðŸŽ¯ h:3 ðŸ”¢ 1|2 â•â•
  * [*]
-Ações: esq asp 
-Sucessor [1-2, ação(ões), exe]:g:0 h:3 2|4
+â”Œâ”€ âš¡  AÃ§Ãµes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ esq asp 
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ðŸ”  Sucessor [1-2, aÃ§Ã£o(Ãµes), exe]: 
+â”Œâ”€ âœ…  Sucesso â”€â”€â”€â”€â”€â”€â”€
+â”‚ AÃ§Ã£o executada.    
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+â•â• ðŸ’° g:0 ðŸŽ¯ h:3 ðŸ”¢ 2|4 â•â•
 [*] * 
-Ações: dir asp 
-Sucessor [1-2, ação(ões), exe]:g:0 h:2 3|6
+â”Œâ”€ âš¡  AÃ§Ãµes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ dir asp 
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ðŸ”  Sucessor [1-2, aÃ§Ã£o(Ãµes), exe]: 
+â”Œâ”€ âœ…  Sucesso â”€â”€â”€â”€â”€â”€â”€
+â”‚ AÃ§Ã£o executada.    
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+â•â• ðŸ’° g:0 ðŸŽ¯ h:2 ðŸ”¢ 3|6 â•â•
 [.] * 
-Ações: dir asp 
-Sucessor [1-2, ação(ões), exe]:Executadas 2 ações com sucesso.
-g:0 6|12
+â”Œâ”€ âš¡  AÃ§Ãµes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ dir asp 
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ðŸ”  Sucessor [1-2, aÃ§Ã£o(Ãµes), exe]: 
+â”Œâ”€ âœ…  Sucesso â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ Executadas 2 aÃ§Ãµes. 
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+
+â•â• ðŸ’° g:0 ðŸ”¢ 6|12 â•â•
  . [.]
-Ações: esq asp 
-Sucessor [1-2, ação(ões), exe]:
+â”Œâ”€ âš¡  AÃ§Ãµes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ esq asp 
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ðŸ”  Sucessor [1-2, aÃ§Ã£o(Ãµes), exe]: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
- P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): nada (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 10 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Ver): 4 (1 a 100)
-P7(Limite): 0 (-1 a 1000000)
-P8(Repetidos): ignorar (1 a 3)
-P9(pesoAStar): 100 (0 a 10000)
-P10(ruido): 0 (-100 a 100)
-P11(baralhar): 0 (0 a 1)
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+â”‚ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+â”‚ P3(SEMENTE):               1          (1 a 1000000)
+â”‚ P4(LIMITE_TEMPO):          10         (1 a 3600)
+â”‚ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+â”‚ P6(VER_ACOES):             4          (1 a 100)
+â”‚ P7(LIMITE):                0          (-1 a 1000000)
+â”‚ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+â”‚ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Parametro:
-Limnite de tempo em segundos. 
-Tempo (atual 10): 
- P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): nada (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 3 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Ver): 4 (1 a 100)
-P7(Limite): 0 (-1 a 1000000)
-P8(Repetidos): ignorar (1 a 3)
-P9(pesoAStar): 100 (0 a 10000)
-P10(ruido): 0 (-100 a 100)
-P11(baralhar): 0 (0 a 1)
+â”Œâ”€ âš™ï¸  P4(LIMITE_TEMPO) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ Limnite de tempo em segundos.                                        
+â”‚ Intervalo: 1 a 3600
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+LIMITE_TEMPO (atual 10): 
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+â”‚ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+â”‚ P3(SEMENTE):               1          (1 a 1000000)
+â”‚ P4(LIMITE_TEMPO):          3          (1 a 3600)
+â”‚ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+â”‚ P6(VER_ACOES):             4          (1 a 100)
+â”‚ P7(LIMITE):                0          (-1 a 1000000)
+â”‚ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+â”‚ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Parametro:
-Algoritmo base a executar.
-1: Largura Primeiro
-2: Custo Uniforme
-3: Profundidade Primeiro
-4: Melhor Primeiro
-5: A*
-6: IDA*
-7: Branch and Bound
-Algoritmo (atual 1): 
- P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): nada (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 3 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Ver): 4 (1 a 100)
-P7(Limite): 0 (-1 a 1000000)
-P8(Repetidos): ignorar (1 a 3)
-P9(pesoAStar): 100 (0 a 10000)
-P10(ruido): 0 (-100 a 100)
-P11(baralhar): 0 (0 a 1)
+â”Œâ”€ âš™ï¸  P1(ALGORITMO) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ Algoritmo base a executar.                                           
+â”‚ 1: Largura Primeiro
+â”‚ 2: Custo Uniforme
+â”‚ 3: Profundidade Primeiro
+â”‚ 4: Melhor Primeiro
+â”‚ 5: A*
+â”‚ 6: IDA*
+â”‚ 7: Branch and Bound
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ALGORITMO (atual 1): 
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+â”‚ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+â”‚ P3(SEMENTE):               1          (1 a 1000000)
+â”‚ P4(LIMITE_TEMPO):          3          (1 a 3600)
+â”‚ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+â”‚ P6(VER_ACOES):             4          (1 a 100)
+â”‚ P7(LIMITE):                0          (-1 a 1000000)
+â”‚ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+â”‚ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Parametro:
-Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
-Seed (atual 1): 
- P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): nada (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 3 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Ver): 4 (1 a 100)
-P7(Limite): 0 (-1 a 1000000)
-P8(Repetidos): ignorar (1 a 3)
-P9(pesoAStar): 100 (0 a 10000)
-P10(ruido): 0 (-100 a 100)
-P11(baralhar): 0 (0 a 1)
+â”Œâ”€ âš™ï¸  P3(SEMENTE) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ Semente aleatÃ³ria para inicializar a sequÃªncia de nÃºmeros pseudo-aleatÃ³rios.
+â”‚ Intervalo: 1 a 1000000
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+SEMENTE (atual 1): 
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+â”‚ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+â”‚ P3(SEMENTE):               1          (1 a 1000000)
+â”‚ P4(LIMITE_TEMPO):          3          (1 a 3600)
+â”‚ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+â”‚ P6(VER_ACOES):             4          (1 a 100)
+â”‚ P7(LIMITE):                0          (-1 a 1000000)
+â”‚ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+â”‚ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Parametro:
-Nível de debug, de reduzido a completo.
-0: nada
-1: atividade
-2: passos
-3: detalhe
-4: completo
-Debug (atual 0): 
- P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 3 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Ver): 4 (1 a 100)
-P7(Limite): 0 (-1 a 1000000)
-P8(Repetidos): ignorar (1 a 3)
-P9(pesoAStar): 100 (0 a 10000)
-P10(ruido): 0 (-100 a 100)
-P11(baralhar): 0 (0 a 1)
+â”Œâ”€ âš™ï¸  P2(NIVEL_DEBUG) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ NÃ­vel de debug, de reduzido a completo.                              
+â”‚ 0: NADA
+â”‚ 1: ATIVIDADE
+â”‚ 2: PASSOS
+â”‚ 3: DETALHE
+â”‚ 4: COMPLETO
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+NIVEL_DEBUG (atual 0): 
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+â”‚ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+â”‚ P3(SEMENTE):               1          (1 a 1000000)
+â”‚ P4(LIMITE_TEMPO):          3          (1 a 3600)
+â”‚ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+â”‚ P6(VER_ACOES):             4          (1 a 100)
+â”‚ P7(LIMITE):                0          (-1 a 1000000)
+â”‚ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+â”‚ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Parametro:
-Nível de debug, de reduzido a completo.
-0: nada
-1: atividade
-2: passos
-3: detalhe
-4: completo
-Debug (atual 4): 
- P1(Algoritmo): Largura Primeiro (1 a 7)
-P2(Debug): completo (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 3 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Ver): 4 (1 a 100)
-P7(Limite): 0 (-1 a 1000000)
-P8(Repetidos): ignorar (1 a 3)
-P9(pesoAStar): 100 (0 a 10000)
-P10(ruido): 0 (-100 a 100)
-P11(baralhar): 0 (0 a 1)
+â”Œâ”€ âš™ï¸  P2(NIVEL_DEBUG) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ NÃ­vel de debug, de reduzido a completo.                              
+â”‚ 0: NADA
+â”‚ 1: ATIVIDADE
+â”‚ 2: PASSOS
+â”‚ 3: DETALHE
+â”‚ 4: COMPLETO
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+NIVEL_DEBUG (atual 4): 
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+â”‚ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+â”‚ P3(SEMENTE):               1          (1 a 1000000)
+â”‚ P4(LIMITE_TEMPO):          3          (1 a 3600)
+â”‚ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+â”‚ P6(VER_ACOES):             4          (1 a 100)
+â”‚ P7(LIMITE):                0          (-1 a 1000000)
+â”‚ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+â”‚ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Parametro:
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
-
-I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 4º lugar (número de expansões efetuadas)
-I5(Gerações): 5º lugar (número de gerações efetuadas)
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  1Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  2Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  3Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  4Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  5Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  6Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 3º lugar (número de expansões efetuadas)
-I5(Gerações): 4º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  1Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  2Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  3Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  4Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  5Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 1º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 2º lugar (número de expansões efetuadas)
-I5(Gerações): 3º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  1Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  3Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  4Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 1º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  2Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 2º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  3Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 2º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  3Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 2º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 4º lugar (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  3Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  5Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 2º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 4º lugar (número de expansões efetuadas)
-I5(Gerações): 5º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  3Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  5Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  6Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 3º lugar (número de expansões efetuadas)
-I5(Gerações): 4º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  2Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  3Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  4Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  5Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 2º lugar (número de expansões efetuadas)
-I5(Gerações): 3º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  2Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  3Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  4Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 4º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 2º lugar (número de expansões efetuadas)
-I5(Gerações): 3º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  2Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  5Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  3Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  4Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
-
-I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 4º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 2º lugar (número de expansões efetuadas)
-I5(Gerações): 3º lugar (número de gerações efetuadas)
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  2Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  5Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  3Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  4Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  3Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 1º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  2Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 1º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  2Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 3º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 1º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  4Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  2Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 2º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  3Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 2º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  3Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 3º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 2º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  4Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  3Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 3º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 4º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 2º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  4Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  5Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  3Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 3º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 4º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 2º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 5º lugar (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  4Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  5Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  3Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  6Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 2º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 4º lugar (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  3Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  5Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 3º lugar (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  3Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  4Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 1º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 2º lugar (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  2Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  3Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 1º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 2º lugar (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  2Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  4Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  3Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 2º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  3Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 3º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  4Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
-
-I1(Resultado): 3º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  4Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 4º lugar (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  5Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 3º lugar (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  3Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  4Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 3º lugar (número de expansões efetuadas)
-I5(Gerações): 4º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  3Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  4Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  5Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 2º lugar (número de expansões efetuadas)
-I5(Gerações): 3º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  3Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  4Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ–  inativo 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ–  inativo 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  4Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 4º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): inativo (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  5Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ–  inativo 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  4Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 4º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 5º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 1º lugar (número de expansões efetuadas)
-I5(Gerações): 2º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  5Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  6Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  4Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ”  2Âº lugar 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  3Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 3º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 4º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 2º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): 1º lugar (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  4Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  5Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  3Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ”  2Âº lugar 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
-
-I1(Resultado): 2º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  3Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: g:0 7|14
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â•â• ðŸ’° g:0 ðŸ”¢ 1|2 â•â•
  . [.]
-Ações: esq asp 
-Sucessor [1-2, ação(ões), exe]:g:0 8|16
- . [.]
-Ações: esq asp 
-Sucessor [1-2, ação(ões), exe]:
-Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
- . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
+â”Œâ”€ âš¡  AÃ§Ãµes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ esq asp 
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ðŸ”  Sucessor [1-2, aÃ§Ã£o(Ãµes), exe]: 
+â”Œâ”€ âœ…  Sucesso â”€â”€â”€â”€â”€â”€â”€
+â”‚ AÃ§Ã£o executada.    
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-I1(Resultado): 2º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 3º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 1º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): inativo (número de expansões efetuadas)
-I5(Gerações): inativo (número de gerações efetuadas)
+â•â• ðŸ’° g:0 ðŸ”¢ 2|4 â•â•
+ . [.]
+â”Œâ”€ âš¡  AÃ§Ãµes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ esq asp 
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ðŸ”  Sucessor [1-2, aÃ§Ã£o(Ãµes), exe]: 
+Aspirador
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ . [.]
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
+â”Œâ”€ âš–  Indicadores â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ I1(IND_CUSTO): âœ”  3Âº lugar 
+â”‚ o resultado Ã© o custo da soluÃ§Ã£o atual
+â”‚ I2(Tempo(ms)): âœ”  4Âº lugar 
+â”‚ Tempo em milisegundos da execuÃ§Ã£o (medida de esforÃ§o computacional).
+â”‚ I3(IteraÃ§Ãµes): âœ”  2Âº lugar 
+â”‚ IteraÃ§Ãµes do algoritmo, intrepretadas conforme o algoritmo (medida de esforÃ§o independente do hardware).
+â”‚ I4(IND_EXPANSOES): âœ–  inativo 
+â”‚ nÃºmero de expansÃµes efetuadas
+â”‚ I5(IND_GERACOES): âœ”  1Âº lugar 
+â”‚ nÃºmero de estados gerados
+â”‚ I6(IND_LOWER_BOUND): âœ–  inativo 
+â”‚ valor mÃ­nimo para a melhor soluÃ§Ã£o, se igual ao custo da soluÃ§Ã£o obtida, entÃ£o esta Ã© Ã³tima
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Alterar indicador: 
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 3 | P5(Iterações): 0
-P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
-P11(baralhar): 0
+â”Œâ”€ âš™ï¸  ParÃ¢metros â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â”‚ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+â”‚ P4(LIMITE_TEMPO): 3 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+â”‚ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 
+â”Œâ”€ â˜°  Menu â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1 â†»  Inicializar â”‚ 2 ðŸ”  Explorar â”‚ 3 âš™ï¸  ParÃ¢metros    â”‚ 4 âœ”  SoluÃ§Ã£o â”‚
+â”‚ 5 âš–  Indicadores â”‚ 6 â–º  Executar  â”‚ 7 ðŸ› ï¸  ConfiguraÃ§Ãµes â”‚ 8 ðŸ§ª  Teste  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+OpÃ§Ã£o: 
