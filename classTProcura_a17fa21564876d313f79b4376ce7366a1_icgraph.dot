@@ -25,5 +25,8 @@ digraph "TProcura::NovoTexto"
   Node1 -> Node10 [id="edge9_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
   Node10 -> Node3 [id="edge10_Node000010_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node3 [id="edge11_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node11 [id="edge11_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="TProcura::SolicitaInstancias",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6941386b767d6f0723c6eb9d27241d69",tooltip="Solicita ao utilizador uma lista de instâncias."];
+  Node11 -> Node3 [id="edge12_Node000011_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge13_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

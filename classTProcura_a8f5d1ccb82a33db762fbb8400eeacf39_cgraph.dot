@@ -10,6 +10,10 @@ digraph "TProcura::EditarIndicadores"
   Node2 [id="Node000002",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domínio de um parâmetro inteiro."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcura::MostraIndicadores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a99f5cf1c59ce543a58d802a1ac907299",tooltip="Mostra os indicadores definidos."];
-  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TProcura::NovoValor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afa633176f014aeed4be467dbd50060c2",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="compat::ContaUTF8",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5",tooltip=" "];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TProcura::NovoValor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e",tooltip=" "];
 }

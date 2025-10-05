@@ -15,9 +15,9 @@ digraph "TProcura::MostrarConfiguracoes"
   Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TVector::First",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a05f29646493d42f3c77081b6031d70e5",tooltip=" "];
   Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6fb8a8658085b349818e46835868c564",tooltip="Mostra os parâmetros atuais."];
-  Node6 -> Node3 [id="edge6_Node000006_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node6 -> Node7 [id="edge7_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="TProcura::ParametroAtivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e",tooltip=" "];
-  Node7 -> Node3 [id="edge8_Node000007_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fa07f03b8e5a201e35023ba7724b82",tooltip="Mostra os parâmetros atuais."];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afa633176f014aeed4be467dbd50060c2",tooltip=" "];
+  Node7 -> Node8 [id="edge7_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="compat::ContaUTF8",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5",tooltip=" "];
 }

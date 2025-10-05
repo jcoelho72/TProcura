@@ -28,7 +28,7 @@ var classTProcura =
     [ "main", "classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c", null ],
     [ "MelhorResultado", "classTProcura.html#abd92370cf06d23e878f9426aed34e39c", null ],
     [ "MostraIndicadores", "classTProcura.html#a99f5cf1c59ce543a58d802a1ac907299", null ],
-    [ "MostraParametros", "classTProcura.html#a6fb8a8658085b349818e46835868c564", null ],
+    [ "MostraParametros", "classTProcura.html#ae7fa07f03b8e5a201e35023ba7724b82", null ],
     [ "MostrarConfiguracoes", "classTProcura.html#a3332047124784be2fc7af575a5f7f8b5", null ],
     [ "MostraRelatorio", "classTProcura.html#a8efec796677c8e25ad8bdb56a1082e2d", null ],
     [ "MostrarSolucao", "classTProcura.html#a014a294d094430b113ffb36e64a74d97", null ],

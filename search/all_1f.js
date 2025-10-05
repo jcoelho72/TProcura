@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['valor_0',['valor',['../structSParametro.html#a6e6c4623e2bbfac2be3ec7a9d39e4d33',1,'SParametro::valor'],['../structSResultado.html#adce8636ee5bdd2586c0c106cc4b6571d',1,'SResultado::valor'],['../classCListaNo.html#aef59a51e58231841d16fa45aa7582328',1,'CListaNo::Valor()'],['../structSValorEstado.html#a3374e50c2a88a710ddc82d198b48b4c2',1,'SValorEstado::valor']]],
+  ['valor_0',['valor',['../structSValorEstado.html#a3374e50c2a88a710ddc82d198b48b4c2',1,'SValorEstado::valor'],['../structSParametro.html#a6e6c4623e2bbfac2be3ec7a9d39e4d33',1,'SParametro::valor'],['../structSResultado.html#adce8636ee5bdd2586c0c106cc4b6571d',1,'SResultado::valor'],['../classCListaNo.html#aef59a51e58231841d16fa45aa7582328',1,'CListaNo::Valor()']]],
   ['valorestado_1',['ValorEstado',['../classTProcuraAdversa.html#a9c95c246b28345f0d515a9083ffd646d',1,'TProcuraAdversa']]],
   ['valorht_2',['valorHT',['../classTProcuraAdversa.html#adf778e7e00379e60276305c569b4cbc4',1,'TProcuraAdversa']]],
   ['variáveis_20de_20estado_3',['Variáveis de estado',['../group__VariaveisEstado.html',1,'']]],
