@@ -38,12 +38,12 @@ void CTesteTVector::ResetParametros()
 
 	TProcura::ResetParametros();
 
-	parametro[ALGORITMO] = { "Método",1,1,12,"Método para teste.", nomesMetodo };
+	parametro[ALGORITMO] = { "ALGORITMO",1,1,12,"Método para teste.", nomesMetodo };
 
 	// estrutura de dados
 	parametro += { "ESTRUTURA_DADOS",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura };
 
-	indicador += { "IND_ORDENAR","verifica se o indicador está ordenado", IND_ORDENAR };
+	indicador += { "IND_ORDENAR","verifica se o vetor está ordenado", IND_ORDENAR };
 	indAtivo += IND_ORDENAR;
 
 	instancia = { "Dados", 1,1,10, "Vetores aleatórios de K milhões", NULL };

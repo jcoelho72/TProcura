@@ -99,6 +99,19 @@ enum ETagMPI {
 	TAG_VALORES
 };
 
+/**
+ * @brief Define as partes de uma caixa de texto para exibição formatada.
+ *
+ * Utilizado na função MostraCaixa() para especificar qual parte da caixa desenhar.
+ */
+enum class ECaixaParte {
+	Topo,        // início da caixa
+	Separador,   // linha de separação
+	Meio,        // linha intermédia
+	Fundo        // fecho da caixa
+};
+
+
 
 // identificação de todos os indicadores definidos
 typedef struct SIndicador {
@@ -561,6 +574,12 @@ public:
 	/// @brief Mostra tempo num formato humano.
 	static char *MostraTempo(double segundos);
 
+	static void MostraCaixa(TVector<const char*> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true);
+	static void MostraCaixa(const char* titulo, ECaixaParte parte, int largura = 70, bool aberta = true);
+	static void MostraCaixa(TVector<const char*> textos, int largura = 70, bool aberta = true);
+	static void Mensagem(const char* titulo, const char* fmt, ...);
+
+
 protected:
 
 	/**
@@ -601,7 +620,8 @@ protected:
 	 * @param detalhe Nível de detalhe na apresentação.
 	 * @param idParametros Vetor de IDs de parâmetros a mostrar (opcional).
 	 */
-	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL);
+	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL,
+		const char *titulo="");
 
 	/**
 	 * @brief Mostra os indicadores definidos.
@@ -753,4 +773,5 @@ protected:
 			inicio[id] = clock();
 		return (double)(clock() - inicio[id]) / CLOCKS_PER_SEC;
 	}
+
 };

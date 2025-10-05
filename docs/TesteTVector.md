@@ -26,120 +26,156 @@ Nos exemplos das subclasses ilustra-se as restantes funcionalidades.
 
 ```entrada
 TVector
- P1(Método): Add() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Add() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+└──────────────────────────────────────────────────────────────────────
 Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção:
 ```
 
 Ao arrancar com o programa sem argumentos, entramos no modo interativo, com o teste manual. 
 Esta é a informação apresentada. 
-Na zona superior aparece o nome do problema (neste caso TVector), seguido dos parametros e valores atuais. Iremos detalhar os parametrors mais adiante.
-Segue-se uma zona com informação sobre os dados do problema concreto a resolver, a instância, neste caso é um vetor de números aleatórios, com 1 milhão de elementos.
+Na zona superior aparece o nome do problema (neste caso TVector),
+seguido de uma caixa com os parametros com os valores atuais.
+Iremos detalhar os parametrors mais adiante.
+Segue-se uma zona com informação sobre os dados do problema concreto a resolver,
+a instância, neste caso é um vetor de números aleatórios, com 1 milhão de elementos.
 Temos vários algoritmos, em que cada um testa um método da classe TVector.
-Segue-se o menu com 8 comandos, os quais iremos cobrir neste exemplo. 
-Entre os dados e o menu, após ter exsitido uma execução, são apresentados os indicadores relativos à última execução. Iremos detalhar também estes indicadores.
+Segue-se uma outra caixa com o menu e os seus 8 comandos, os quais iremos cobrir neste exemplo. 
+Entre os dados e o menu, após ter exsitido uma execução, são apresentados os indicadores relativos à última execução.
+Iremos detalhar também estes indicadores.
 
 ---
 
 \anchor tvector-a1
 ## Ação 1: Menu 1 - Inicializar
 
-Vamos ver o menu 1, inicializar. Introduza: 1; 2.
+Vamos ver o menu 1 ↻ inicializar. Introduza: 1; 2.
 
 ```entrada
-ID atual: 1  Intervalo: [1-10]  Prefixo atual: 'instancia_'
+Opção: 1
+
+┌─ ↻  Inicializar ─────────────────────────────────────────────────────
+│ ID atual: 1  Intervalo: [1–10]
+│ Prefixo atual: 'instancia_'
+└──────────────────────────────────────────────────────────────────────
 Novo ID (ENTER mantém) ou novo prefixo (texto): 2
 
 TVector
- P1(Método): Add() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Add() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+└──────────────────────────────────────────────────────────────────────
 Dados #2000000: -498792314 -2114916689 -1334173636 ... 1289309513 1347067406 1395724283
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção:
 ```
-Este menu permite inicializar os dados utilizados no algoritmo. Temos a indicação do ID da instância atual, que é 1.
-Estão definidas instâncias de 1 a 10. Essas instâncias significam que o tamanho do vetor é 1 milhão vezes o ID da instância.
+Este menu permite inicializar os dados utilizados no algoritmo.
+Temos a indicação do ID da instância atual, que é 1.
+Estão definidas instâncias de 1 a 10.
+Essas instâncias significam que o tamanho do vetor é 1 milhão vezes o ID da instância.
 Ao escolhermos a instância 2, vemos que o vetor fica com 2 milhões de dados. 
-Fizemos a visualização apenas dos primeiros 3 e últimos 3 elementos, mas neste caso é suficiente para sabermos que trocamos de instância, já que os números são diferentes.
-São diferentes os últimos números, mas os primeiros são iguais, já que não alteramos a semente do gerador aleatório.
+Fizemos a visualização apenas dos primeiros 3 e últimos 3 elementos,
+mas neste caso é suficiente para sabermos que trocamos de instância, já que os números são diferentes.
+São diferentes os últimos números, mas os primeiros são iguais,
+já que não alteramos a semente do gerador aleatório.
 Podiamos também ter introduzido um texto, para alterar o prefixo atual. 
 Este texto é importante se os dados de teste estivessem em ficheiros. 
-Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor, não é preciso o ficheiro.
+Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor,
+não é preciso o ficheiro.
 
-Vamos voltar para a instãncia 1, para confirmar que é a mesma, apenas assim se pode garantir que tudo o que se faz em TProcura, é reproduzivel. Introduza: 1; 1.
+Vamos voltar para a instãncia 1, para confirmar que é a mesma,
+apenas assim se pode garantir que tudo o que se faz em TProcura, é reproduzivel. Introduza: 1; 1.
 
 ```entrada
-ID atual: 2  Intervalo: [1-10]  Prefixo atual: 'instancia_'
+Opção: 1
+
+┌─ ↻  Inicializar ─────────────────────────────────────────────────────
+│ ID atual: 2  Intervalo: [1–10]
+│ Prefixo atual: 'instancia_'
+└──────────────────────────────────────────────────────────────────────
 Novo ID (ENTER mantém) ou novo prefixo (texto): 1
 
 TVector
- P1(Método): Add() | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Add() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+└──────────────────────────────────────────────────────────────────────
 Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção:
 ```
 
 Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.
 
-O menu **2 - Explorar**, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para
+O menu **2 🔍 Explorar**, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para
 expplorar os dados. Esta função está definida para as subclasses de TProcura, para os métodos construtivos e melhorativos.
 Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, porque não, tentar resolvê-lo,
 e assim ganhar sensibilidade. Vamos deixar esta exploração para os exemplos das subclasses.
 
-Notar que o menu no modo interativo, é sempre visualizado, colocando-se o prompt "Opção:". Para evitar repetição, vamos omitar o menu no resto deste exemplo.
+Notar que o menu no modo interativo, é sempre visualizado, colocando-se o prompt "Opção:".
+Para evitar repetição, vamos omitar o menu no resto deste exemplo.
 
 ---
 
 \anchor tvector-a2
 ## Ação 2: Menu 3 - Parâmetros
 
-Avançamos para o menu **3 - Parâmetros**. Introduza: 3.
+Avançamos para o menu **3 ⚙️ Parâmetros**. Introduza: 3.
 
 ```entrada
 Opção: 3
 
- P1(Método): Add() (1 a 12)
-P2(Debug): nada (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 10 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Estrutura): TVector (1 a 3)
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Add()      (1 a 12)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
 Parametro:
 ```
-Podemos ver os parametros que já tinhamos visto, mas agora com mais detalhe. Temos o ID do parâmetro, nome do parâmetro, e valor atribuído.
-Alguns parâmetros têm texto, quando as opções são categóricas, outros têm números, para valores quantitativos.
+Podemos ver os parametros que já tinhamos visto, mas agora com mais detalhe.
+Temos o ID do parâmetro, nome do parâmetro, e valor atribuído.
+O nome dos parametros é igual à macro no código.
+Alguns parâmetros têm texto quando as opções são categóricas, outros têm números para valores quantitativos.
 Não existem números reais nos parâmetros, tendo de ser convertidos sempre para inteiros. 
 Mesmo os parâmetros categóricos, têm um número inteiro associado a cada valor.
-Cada parâmetro tem um valor mínimo e máximo em inteiros, que pode tomar.
+Cada parâmetro tem um intervalo mínimo e máximo em inteiros, que pode tomar.
 
-Vamos ver as opções no parâmetro 1, é o método a ser executado. Introduza: 1.
+Vamos ver as opções no parâmetro 1, que é o método a ser executado. Introduza: 1.
 
 ```entrada
 Parametro:1
 
-Método para teste.
-1: Add()
-2: Sort()
-3: RandomOrder()
-4: Invert()
-5: BeASet()
-6: Difference()
-7: Union()
-8: Contained()
-9: Intersection()
-10: operator=()
-11: operator+=()
-12: nada
-Método (atual 1):
+┌─ ⚙️  P1(ALGORITMO) ──────────────────────────────────────────────────
+│ Método para teste.
+│ 1: Add()
+│ 2: Sort()
+│ 3: RandomOrder()
+│ 4: Invert()
+│ 5: BeASet()
+│ 6: Difference()
+│ 7: Union()
+│ 8: Contained()
+│ 9: Intersection()
+│ 10: operator=()
+│ 11: operator+=()
+│ 12: nada
+└──────────────────────────────────────────────────────────────────────
+ALGORITMO (atual 1):
 ```
 
 Como o parâmetro é categórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. 
@@ -151,26 +187,31 @@ Caso não pretenda alterar um parâmetro, pode sempre carregar em ENTER para man
 Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introduza: 2; 2.
 
 ```entrada
-Método (atual 1): 2
+ALGORITMO (atual 1): 2
 
- P1(Método): Sort() (1 a 12)
-P2(Debug): nada (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 10 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Estrutura): TVector (1 a 3)
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Sort()     (1 a 12)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
 Parametro:2
 
-Nível de debug, de reduzido a completo.
-0: nada
-1: atividade
-2: passos
-3: detalhe
-4: completo
-Debug (atual 0):
+┌─ ⚙️  P2(NIVEL_DEBUG) ────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.
+│ 0: NADA
+│ 1: ATIVIDADE
+│ 2: PASSOS
+│ 3: DETALHE
+│ 4: COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 0):
 ```
-Notar que agora o valor associado a P1 é "Sort()". Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug.
-Este parâmetro é de TProcura, e não é necessário alterar, a não ser que se pretenda mais que 3 níveis de debug.
+Notar que agora o valor associado a P1 é "Sort()".
+Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug.
+Este parâmetro é de TProcura, e não é necessário alterar, a não ser que se pretenda mais que 4 níveis de debug.
 
 Ao alterar este parâmetro, o algoritmo, caso tenha condicionais sobre este parâmetro, irá mostrar os detalhes do que está a fazer.
 Prevê-se estes níveis, em que o nível 1 deve apresentar apenas um caracter de tempos a tempos, de modo a confirmar-se que o algoritmo está a funcionar.
@@ -179,40 +220,49 @@ No nível 3 detalhe, já é de esperar detalhe sobre todas as iterações.
 No nivel 4 completo, todo o detalhe deve ser dado em todos os passos, de modo a constituir uma prova de que o resultado é correto.
 
 Estes níveis têm o intuito de poder observar bugs, caso existam. 
-Mas têm também um carácter didático, já que nas classes de procura, pode-se observar os algoritmos com o nível que se pretender.
-Assim está-se a contribuir para a compreensão do algoritmo, aplicado a um dado problema.
+Têm também um carácter didático, já que nas classes de procura, pode-se observar os algoritmos com o nível que se pretender.
+Assim, está-se a contribuir para a compreensão do algoritmo, aplicado a um dado problema.
 
 No caso do TVector, os algoritmos estão implementados sem debug, pelo que este valor não é utilizado.
 
-Avançamos para o parâmetro P3, "Seed". Introduza: *ENTER*; 3; 2; *ENTER*.
+Avançamos para o parâmetro P3, "SEMENTE". Introduza: *ENTER*; 3; 2; *ENTER*.
 
 
 ```entrada
-Debug (atual 0):
-
- P1(Método): Sort() (1 a 12)
-P2(Debug): nada (0 a 4)
-P3(Seed): 1 (1 a 1000000)
-P4(Tempo): 10 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Estrutura): TVector (1 a 3)
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Sort()     (1 a 12)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
 Parametro:3
 
-Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
-Seed (atual 1): 2
+┌─ ⚙️  P3(SEMENTE) ────────────────────────────────────────────────────
+│ Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
+│ Intervalo: 1 a 1000000
+└──────────────────────────────────────────────────────────────────────
+SEMENTE (atual 1): 2
 
- P1(Método): Sort() (1 a 12)
-P2(Debug): nada (0 a 4)
-P3(Seed): 2 (1 a 1000000)
-P4(Tempo): 10 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Estrutura): TVector (1 a 3)
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Sort()     (1 a 12)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               2          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
 Parametro:
 
 TVector
- P1(Método): Sort() | P2(Debug): nada | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+└──────────────────────────────────────────────────────────────────────
 Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237
+...
+Opção: 
 ```
 O P3 tem a semente aleatória. No entanto, voltamos ao menu inicial e a instância é a mesma.
 É preciso inicializar e com esta nova semente, já irá ser criada uma nova instância. Introduza: 1; *ENTER*.
@@ -220,19 +270,26 @@ O P3 tem a semente aleatória. No entanto, voltamos ao menu inicial e a instânc
 ```entrada
 Opção: 1
 
-ID atual: 1  Intervalo: [1-10]  Prefixo atual: 'instancia_'
+┌─ ↻  Inicializar ─────────────────────────────────────────────────────
+│ ID atual: 1  Intervalo: [1–10]
+│ Prefixo atual: 'instancia_'
+└──────────────────────────────────────────────────────────────────────
 Novo ID (ENTER mantém) ou novo prefixo (texto):
 
 TVector
- P1(Método): Sort() | P2(Debug): nada | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+└──────────────────────────────────────────────────────────────────────
 Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791
+...
+Opção:
 ```
 
 Agora sim, podemos ver que os três primeiros e últimos números são completamente distintos. 
 
-Os outros dois parâmetros, o P4 Tempo, tem o tempo em segundos para o algoritmo executar,
-e P5 Iterações, é um parâmetro genérico para limitar o número de iterações.
+Os outros dois parâmetros, o P4 LIMITE_TEMPO, tem o tempo em segundos para o algoritmo executar,
+e P5 LIMITE_ITERACOES, é um parâmetro genérico para limitar o número de iterações.
 Como não temos nestes algoritmos definidas iterações, não iremos utilizar.
 
 O P6 é um parâmetro definido na classe CTesteTVector, e tem a estrutura em teste. Introduza: 3; 6.
@@ -240,19 +297,23 @@ O P6 é um parâmetro definido na classe CTesteTVector, e tem a estrutura em tes
 ```entrada
 Opção: 3
 
- P1(Método): Sort() (1 a 12)
-P2(Debug): nada (0 a 4)
-P3(Seed): 2 (1 a 1000000)
-P4(Tempo): 10 (1 a 3600)
-P5(Iterações): 0 (0 a 1000000000)
-P6(Estrutura): TVector (1 a 3)
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Sort()     (1 a 12)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               2          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
 Parametro:6
 
-Estrutura de dados utilizada para vetor.
-1: TVector
-2: std::vector
-3: TVector/std::algorithm
-Estrutura (atual 1):
+┌─ ⚙️  P6(ESTRUTURA_DADOS) ────────────────────────────────────────────
+│ Estrutura de dados utilizada para vetor.
+│ 1: TVector
+│ 2: std::vector
+│ 3: TVector/std::algorithm
+└──────────────────────────────────────────────────────────────────────
+ESTRUTURA_DADOS (atual 1):
 ```
 
 Foram definidas 3 opções pela qual os métodos podem ser executados. 
@@ -262,27 +323,36 @@ A terceira opção é um misto entre utilizar TVector, mas na ordenação e dete
 
 Vamos deixar como está. Introduza: *ENTER*; *ENTER*.
 
-O menu *4 - Solução* será ilustrado com um problema de procura, já que nestes métodos, a solução é o estado do vetor após aplicadas as operações.
+O menu *4 ✔  Solução* será ilustrado com um problema de procura, já que nestes métodos, a solução é o estado do vetor após aplicadas as operações.
 
 ---
 
 \anchor tvector-a3
 ## Ação 3: Menu 6 - Executar
 
-Avançamos para o menu *6 - Executar*. Introduza: 6.
+Avançamos para o menu *6 ►  Executar*. Introduza: 6.
 
 ```entrada
 Opção: 6
 
- P1=2 P2=0 P3=2 P4=10 P5=0 P6=1
+══ ►  Executar ══
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1=2 P2=0 P3=2 P4=10 P5=0 P6=1
+└──────────────────────────────────────────────────────────────────────
+══ 🏁  Execução terminada ══
 TVector
- P1(Método): Sort() | P2(Debug): nada | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+└──────────────────────────────────────────────────────────────────────
 Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808
-I1(Resultado): 1 | I2(Tempo(ms)): 82 | I3(Iterações): 1 | I4(Ordenado): 1
-____________________________________________________________________
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 1 | I2(Tempo(ms)): 70 | I3(Iterações): 1 | I4(IND_ORDENAR): 1
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
-Os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é completada. 
+A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada. 
 Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura TVector.
 O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.
 
@@ -290,30 +360,36 @@ Como já houve uma execução, existe agora mais uma linha antes do menu, com os
 
 Os três primeiros indicadores são de TProcura, o quarto indicador é definido em CTesteTVector.
 O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema.
-O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 82. 
+O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 70. 
 Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância).
 O tempo de calcular os indicadores não é também comtabilizado.
 O indicador I3 tem o número de iterações realizadas. 
 O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez.
 Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado.
 Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. 
-Em outros métodos, que não ordenem o vetor, naturalmente que este indicador ao ser chamado, irá retornar 0.
+Em outros métodos que não ordenem o vetor, naturalmente que este indicador nesses casos, ao ser chamado irá retornar 0.
 
 Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2; *ENTER*; 1; *ENTER*; 6. 
 
 ```entrada
+...
+══ 🏁  Execução terminada ══
 TVector
- P1(Método): Sort() | P2(Debug): nada | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): std::vector
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): std::vector
+└──────────────────────────────────────────────────────────────────────
 Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808
-I1(Resultado): 1 | I2(Tempo(ms)): 83 | I3(Iterações): 1 | I4(Ordenado): 1
-____________________________________________________________________
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 1 | I2(Tempo(ms)): 73 | I3(Iterações): 1 | I4(IND_ORDENAR): 1
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
 
-Notar que o resultado em termos de dados final, é exatamente o mesmo. 
+Notar que o resultado em termos de dados final é 73, praticamente o mesmo. 
 É natural já que ambas as estruturas de dados receberam a mesma instância.
-O tempo foi um milisegundo superior, mas outra execução o tempo CPU pode ser distinto.
-
+O tempo foi 3 milisegundos superior, mas outra execução o tempo CPU pode ser distinto.
 
 ---
 
@@ -325,11 +401,16 @@ Vamos agora ver o menu dos indicadores. Introduza: 5.
 ```entrada
 Opção: 5
 
-
-I1(Resultado): 1º lugar (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Ordenado): 4º lugar (verifica se o indicador está ordenado)
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): ✔  1º lugar
+│ Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).
+│ I2(Tempo(ms)): ✔  2º lugar
+│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ I3(Iterações): ✔  3º lugar
+│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
+│ I4(IND_ORDENAR): ✔  4º lugar
+│ verifica se o vetor está ordenado
+└──────────────────────────────────────────────────────────────────────
 Alterar indicador:
 ```
 
@@ -350,22 +431,32 @@ Introduza: 1;2;3;2;*ENTER*;1;*ENTER*;6.
 
 ```entrada
 ...
-I1(Resultado): inativo (Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): inativo (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Ordenado): 1º lugar (verifica se o indicador está ordenado)
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): ✖  inativo
+│ Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).
+│ I2(Tempo(ms)): ✔  2º lugar
+│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ I3(Iterações): ✖  inativo
+│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
+│ I4(IND_ORDENAR): ✔  1º lugar
+│ verifica se o vetor está ordenado
+└──────────────────────────────────────────────────────────────────────
 Alterar indicador:
 ...
+══ 🏁  Execução terminada ══
 TVector
- P1(Método): Sort() | P2(Debug): nada | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0
-P6(Estrutura): TVector
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): std::vector
+└──────────────────────────────────────────────────────────────────────
 Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808
-I4(Ordenado): 1 | I2(Tempo(ms)): 90
-____________________________________________________________________
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I4(IND_ORDENAR): 1 | I2(Tempo(ms)): 63
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
-
-Podemos ver que agora apenas I4 seguido de I2 são apresentados.
-
+Podemos ver que agora apenas I4 seguido de I2 são apresentados. O tempo é também distinto, não tendo sido alterados nenhuns parametros.
 
 ---
 

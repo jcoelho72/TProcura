@@ -335,25 +335,35 @@ int TProcuraConstrutiva::SolucaoParcial(int i, TVector<TNo>& sucessores)
 }
 
 void TProcuraConstrutiva::MostrarCaminho() {
-	for (int i = 0; i < caminho.Count(); i++) {
+	printf("\n══ ✔  Solução ══"); 
+	for (int i = 0; i < caminho.Count() - 1; i++) {
 		if (Parametro(VER_ACOES) > 1) {
 			// mostrar o estado a cada K ações, no início e no fim
-			if (i % Parametro(VER_ACOES) == 0 || i == caminho.Count() - 1) {
+			if (i % Parametro(VER_ACOES) == 0) {
 				caminho[i]->Debug();
 				// mostrar custo
-				printf(" (g:%d) ", caminho[i]->custo);
+				printf(" (💰 g:%d) ⚡ ", caminho[i]->custo);
 			}
 			// mostrar a ação
 			if (i < caminho.Count() - 1)
-				printf(" %s", caminho[i]->Acao(caminho[i + 1]));
+				printf(" → %s", caminho[i]->Acao(caminho[i + 1]));
 		}
 		else {
 			caminho[i]->Debug();
-			printf(" (g:%d) ", caminho[i]->custo);
+			printf(" (💰 g:%d) ⚡ ", caminho[i]->custo);
 		}
 	}
 	if (caminho.Empty())
 		printf("Caminho vazio.");
+	else {
+		caminho.Last()->Debug();
+		// mostrar custo
+		printf(" (💰 g:%d) ", caminho.Last()->custo);
+		if(caminho.Last()->SolucaoCompleta())
+			printf("🎯 ");
+		else
+			printf("🚫 ");
+	}
 }
 
 
@@ -641,13 +651,18 @@ void TProcuraConstrutiva::DebugPasso(void)
 // Mostrar sucessores
 void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 	if (Parametro(VER_ACOES) > 2) {
+		int col = 2;
 		// mostrar apenas ações
-		printf("\nAções: ");
-		for (int i = 0; i < sucessores.Count() && i < 30; i++) {
-			printf("%s ", Acao(sucessores[i]));
-			if (i % 10 == 9)
-				printf("\n ");
+		TProcura::MostraCaixa("⚡  Ações", ECaixaParte::Topo);
+		TProcura::MostraCaixa("", ECaixaParte::Meio, 1);
+		for (int i = 0; i < sucessores.Count() && i < 50; i++) {
+			col += printf("%s ", Acao(sucessores[i]));
+			if (col > 70) {
+				TProcura::MostraCaixa("", ECaixaParte::Meio, 1);
+				col = 2;
+			}
 		}
+		TProcura::MostraCaixa("", ECaixaParte::Fundo);
 	}
 	else {
 		ramo = {};
@@ -680,21 +695,28 @@ void TProcuraConstrutiva::DebugIteracao(int iteracao) {
 
 // informação geral sobre o estado 
 void TProcuraConstrutiva::DebugEstado(int id, int pai) const {
+	printf("\n══ "); // ╠ ║
+
 	if (id >= 0) {
-		printf("#%d ", id);
+		printf("🔖 #%d ", id);
 		if (pai >= 0)
 			printf("(#%d) ", pai);
 	}
-	printf("g:%d ", custo);
+	printf("💰 g:%d ", custo);
 	if (heuristica)
-		printf("h:%d ", heuristica);
+		printf("🎯 h:%d ", heuristica);
 
-	if (expansoes)
-		printf("%d", expansoes);
-	if (geracoes)
-		printf("|%d", geracoes);
-	if (iteracoes)
-		printf("|%d", iteracoes);
+	if (expansoes || geracoes || iteracoes) {
+		printf("🔢 ");
+		if (expansoes)
+			printf("%d", expansoes);
+		if (geracoes)
+			printf("|%d", geracoes);
+		if (iteracoes)
+			printf("|%d", iteracoes);
+	}
+
+	printf(" ══"); // ╣ ║
 }
 
 
@@ -758,12 +780,12 @@ void TProcuraConstrutiva::Explorar() {
 		Debug();
 		DebugSucessores(sucessores);
 		if (sucessores.Empty()) {
-			printf("\nSem sucessores.");
+			TProcura::Mensagem("ℹ️  Informação", "Sem sucessores.");
 			opcao = 0;
 		}
 		else {
 			char str[BUFFER_SIZE];
-			printf("\nSucessor [1-%d, ação(ões), exe]:", sucessores.Count());
+			printf("\n🔍  Sucessor [1-%d, ação(ões), exe]: ", sucessores.Count());
 			if (!fgets(str, BUFFER_SIZE, stdin))
 				str[0] = 0;
 			opcao = atoi(str);
@@ -779,9 +801,9 @@ void TProcuraConstrutiva::Explorar() {
 					LimparEstatisticas();
 					int resultado = 0;
 					switch (resultado = ExecutaAlgoritmo()) {
-					case -1: printf("Impossível\n"); break;
-					case -2: printf("Não resolvido\n"); break;
-					default: printf("Resolvido (%d)\n", resultado); break;
+					case -1: TProcura::Mensagem("ℹ️  Informação", "Impossível"); break;
+					case -2: TProcura::Mensagem("", "Não resolvido"); break;
+					default: TProcura::Mensagem("✅  Sucesso", "Resolvido (%d)", resultado); break;
 					}
 					tempo = Cronometro(CONT_ALGORITMO);
 					if (solucao != NULL) {
@@ -801,7 +823,7 @@ void TProcuraConstrutiva::Explorar() {
 						if (Acao(token))
 							nAcoes++;
 						else {
-							printf("Ação %s inválida.\n", token);
+							TProcura::Mensagem("", "Ação %s inválida.", token);
 							break;
 						}
 						token = strtok(NULL, " \t\n\r");
@@ -817,12 +839,14 @@ void TProcuraConstrutiva::Explorar() {
 
 					} while (token != NULL);
 					if (nAcoes > 0)
-						printf("Executadas %d ações com sucesso.\n", nAcoes);
+						TProcura::Mensagem("✅  Sucesso", "Executadas %d ações.", nAcoes);
 				}
 			}
 		}
-		if (opcao > 0 && opcao <= sucessores.Count())
+		if (opcao > 0 && opcao <= sucessores.Count()) {
 			Copiar(sucessores[opcao - 1]);
+			TProcura::Mensagem("✅  Sucesso", "Ação executada.");
+		}
 		LibertarVector(sucessores);
 	} while (opcao != 0);
 }
