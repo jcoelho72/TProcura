@@ -1041,54 +1041,35 @@ Estando respondida a questão inicial sobre o tempo de ordenação, podemos com 
 De modo a ter uma resposta rápida mas com várias iteraçoes, vamos utilizar apenas as instâncias 1 e 3, mas mantendo 10 sementes aleatórias.
 Temos também de variar a estrutura de dados.
 
-Linha de comando: TProcura 1,3 -R Resultados/tvetor3 -P P2=4 P1=1:12 x P3=1:10 x P6=1:3
+Linha de comando: TProcura 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3
 
-Colocamos o debug nível 4 para observar o que acontece:
+Colocamos o debug nível 3 para observar o que acontece:
 
 ```entrada
-══ 🧪  Início do Teste ══
-📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 1.instância 1:
-ordem 0 > 1 (465546144,-902849688)
-Solução: .DONE.instância 3:
-ordem 0 > 1 (2064524572,-815752854)
-Solução: .DONE.instância 1:
-Solução: .DONE.instância 3:
-Solução: .DONE.instância 1:
-ordem 0 > 1 (-859283482,-1807843937)
-Solução: .DONE.instância 3:
-ordem 0 > 1 (-1236904704,-1743816936)
-Solução: .DONE.instância 1:
-ordem 0 > 1 (-1243737237,-1410932558)
-Solução: .DONE.instância 3:
-ordem 1 > 2 (1004384089,-300757056)
-Solução: .DONE.instância 1:
-Solução: .DONE.instância 3:
-...
-Solução: .DONE.instância 3:
-Solução: .DONE.
-⏱ 1' 59" 629ms  📋 Tarefa 714. instância 1:
-ordem 0 > 1 (810700108,-1031594401)
-Solução: .DONE.instância 3:
-ordem 0 > 1 (810700108,-1031594401)
-Solução: .DONE.instância 1:
-ordem 1 > 2 (1463315862,-263798896)
-Solução: .DONE.instância 3:
-ordem 1 > 2 (1463315862,-263798896)
-Solução: .DONE.instância 1:
-ordem 1 > 2 (1463315862,-263798896)
-Solução: .DONE.instância 3:
-ordem 1 > 2 (1463315862,-263798896)
-Solução: .DONE.
+TProcura/Teste$ ./bin/Release/TProcura 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x
+P6=1:3
+
+══ 🧪  Início do Teste (🖥️ 0) ══
+📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 1.
+⏱ 10" 114ms         📋 63      ↻ 3       🛠️ 31      🖥️ 1
+⏱ 20" 269ms         📋 132     ↻ 1       🛠️ 66      🖥️ 1
+⏱ 30" 313ms         📋 186     ↻ 1       🛠️ 93      🖥️ 1
+⏱ 40" 326ms         📋 246     ↻ 1       🛠️ 123     🖥️ 1
+⏱ 50" 502ms         📋 322     ↻ 1       🛠️ 161     🖥️ 1
+⏱ 1' 521ms          📋 392     ↻ 1       🛠️ 196     🖥️ 1
+⏱ 1' 10" 985ms      📋 468     ↻ 1       🛠️ 234     🖥️ 1
+⏱ 1' 21" 64ms       📋 517     ↻ 3       🛠️ 258     🖥️ 1
+⏱ 1' 31" 187ms      📋 563     ↻ 3       🛠️ 281     🖥️ 1
+⏱ 1' 41" 994ms      📋 614     ↻ 1       🛠️ 307     🖥️ 1
+⏱ 1' 52" 495ms      📋 666     ↻ 1       🛠️ 333     🖥️ 1
 📄 Ficheiro Resultados/tvetor3.csv gravado.
-⏱ Tempo real: 1' 59" 750ms
-⏱ CPU total: 1' 59" 750ms
+⏱ Tempo real: 2' 1" 910ms
+⏱ CPU total: 2' 1" 910ms
 📊 Utilização: 100.0%
-══ 🏁  Fim do Teste ══
+══ 🏁  Fim do Teste (🖥️ 0) 2' 1" 921ms  ══
 ```
 
-Podemos ver que o debug máximo, mostra indicação das instâncias a resolver e também visualiza detalhes nos indicadores,
-identificando elementos fora de ordem, naturalmente em operações que não ordenam o vetor.
-Caso exista um crash, este modo permite identificar a tarefa concreta que levou ao crash.
+Podemos ver que o debug 3, mostra indicação da tarefa atual, bem como instância e configuração. 
 
 Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, 
 e no conteúdo I2 com o tempo.
@@ -1154,23 +1135,23 @@ Linha de comando: mpiexec -n 4 TProcura 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P 
 ```
 TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3
 
-══ 🧪  Início do Teste (🖥️ 0) ══
-📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.
 ══ 🧪  Início do Teste (🖥️ 1) ══
 ══ 🧪  Início do Teste (🖥️ 2) ══
 ══ 🧪  Início do Teste (🖥️ 3) ══
-⏱ 10" 222ms  📋 Tarefa 496.
-══ 🏁  Fim do Teste (🖥️ 2) ══
-══ 🏁  Fim do Teste (🖥️ 3) ══
-══ 🏁  Fim do Teste (🖥️ 1) ══
+══ 🧪  Início do Teste (🖥️ 0) ══
+📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.
+⏱ 10" 26ms          📋 496     ↻ 1       🛠️ 248     🖥️ 4
+══ 🏁  Fim do Teste (🖥️ 2) 13" 257ms  ══
+══ 🏁  Fim do Teste (🖥️ 3) 53" 221ms  ══
+══ 🏁  Fim do Teste (🖥️ 1) 1' 4" 250ms  ══
 📄 Ficheiro Resultados/tvetor3MPI1m0.csv gravado.
-⏱ Tempo real: 48" 692ms
-⏱ CPU total: 3' 14" 766ms
-📊 Utilização: 59.8%
-══ 🏁  Fim do Teste (🖥️ 0) ══
+⏱ Tempo real: 1' 4" 244ms
+⏱ CPU total: 4' 16" 976ms
+📊 Utilização: 57.4%
+══ 🏁  Fim do Teste (🖥️ 0) 1' 4" 255ms  ══
 ```
 
-O tempo de execução real foi de 48 segundos, mas o tempo total de execução foi de 3 minutos, e a utilização de 60%.
+O tempo de execução real foi de 1 minuto, mas o tempo total de execução foi de 4 minutos, e a utilização de 60%.
 Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas.
 
 Podemos observar que o processo 2 terminou pouco depois dos 10 segundos.
@@ -1185,25 +1166,38 @@ Linha de comando: mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m
 ```
 TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3
 
+══ 🧪  Início do Teste (🖥️ 0) ══
+══ 🧪  Início do Teste (🖥️ 2) ══
+══ 🧪  Início do Teste (🖥️ 1) ══
 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.
-⏱ 10" 26ms  📋 Tarefas: 537  🖥️ Trabalhadores: 3
-⏱ 20" 33ms  📋 Tarefas: 325  🖥️ Trabalhadores: 3
-⏱ 30" 56ms  📋 Tarefas: 157  🖥️ Trabalhadores: 3
-⏱ 40" 265ms  📋 Tarefas: 33  🖥️ Trabalhadores: 3
+══ 🧪  Início do Teste (🖥️ 3) ══
+⏱ 10" 51ms          📋 134     ↻ 3       🛠️ 292     🖥️ 3
+⏱ 20" 232ms         📋 231     ↻ 1       🛠️ 244     🖥️ 3
+⏱ 30" 389ms         📋 329     ↻ 1       🛠️ 195     🖥️ 3
+⏱ 40" 487ms         📋 428     ↻ 3       🛠️ 145     🖥️ 3
+⏱ 50" 577ms         📋 537     ↻ 1       🛠️ 91      🖥️ 3
+⏱ 1' 706ms          📋 615     ↻ 1       🛠️ 52      🖥️ 3
+⏱ 1' 10" 871ms      📋 706     ↻ 3       🛠️ 6       🖥️ 3
+══ 🏁  Fim do Teste (🖥️ 3) 1' 13" 822ms  ══
+══ 🏁  Fim do Teste (🖥️ 2) 1' 13" 855ms  ══
+══ 🏁  Fim do Teste (🖥️ 1) 1' 14" 332ms  ══
 📄 Ficheiro Resultados/tvetor3MPI1m1.csv gravado.
-⏱ Tempo real: 42" 998ms
-⏱ CPU total: 2' 8" 994ms
-⏱ Espera do gestor: 42" 989ms
-⏱ Espera trabalhadores: 417ms
+⏱ Tempo real: 1' 14" 339ms
+⏱ CPU total: 3' 43" 16ms
+⏱ Espera do gestor: 1' 14" 324ms
+⏱ Espera trabalhadores: 1" 1ms
 📊 Utilização:
-- Total: 74.8%
+- Total: 74.7%
 - Gestor: 0.0%
-- Trabalhadores: 99.7%
+- Trabalhadores: 99.6%
+══ 🏁  Fim do Teste (🖥️ 0) 1' 14" 339ms  ══
 ```
-Obteve-se uma taxa de utilização de 75%, superior aos 60% do método estático.
-O tempo real foi de 42 segundos, também inferior, mesmo considerando que apenas 3 dos 4 processos processaram tarefas.
 
-Em relação aos 2 minutos iniciais, reduziu-se mais de metade, tudo o resto permaneceu sem alterações.
+Obteve-se uma taxa de utilização de 75%, superior aos 60% do método estático.
+O tempo real foi de 1 minuto, um valor idêntico à distribuição de trabalho estática,
+mesmo considerando que apenas 3 dos 4 processos processaram tarefas.
+
+Em relação aos 2 minutos iniciais, reduziu-se metade, tudo o resto permaneceu sem alterações.
 Quanto maior os testes e maior o número de processadores, maior será o ganho da execução MPI.
 
 No entanto para isso precisamos de ter acesso a um cluster.
