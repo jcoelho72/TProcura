@@ -885,47 +885,30 @@ Ação 7: Linha de comando</h2>
 <li>considerando todas as operações em teste, há diferença entre alguma das estruturas de dados em termos de tempo?</li>
 </ul>
 <p>De modo a ter uma resposta rápida mas com várias iteraçoes, vamos utilizar apenas as instâncias 1 e 3, mas mantendo 10 sementes aleatórias. Temos também de variar a estrutura de dados.</p>
-<p>Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1,3 -R Resultados/tvetor3 -P P2=4 P1=1:12 x P3=1:10 x P6=1:3</p>
-<p>Colocamos o debug nível 4 para observar o que acontece:</p>
-<div class="fragment"><div class="line">══ 🧪  Início do Teste ══</div>
-<div class="line">📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 1.instância 1:</div>
-<div class="line">ordem 0 &gt; 1 (465546144,-902849688)</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">ordem 0 &gt; 1 (2064524572,-815752854)</div>
-<div class="line">Solução: .DONE.instância 1:</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">Solução: .DONE.instância 1:</div>
-<div class="line">ordem 0 &gt; 1 (-859283482,-1807843937)</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">ordem 0 &gt; 1 (-1236904704,-1743816936)</div>
-<div class="line">Solução: .DONE.instância 1:</div>
-<div class="line">ordem 0 &gt; 1 (-1243737237,-1410932558)</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">ordem 1 &gt; 2 (1004384089,-300757056)</div>
-<div class="line">Solução: .DONE.instância 1:</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">...</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">Solução: .DONE.</div>
-<div class="line">⏱ 1&#39; 59&quot; 629ms  📋 Tarefa 714. instância 1:</div>
-<div class="line">ordem 0 &gt; 1 (810700108,-1031594401)</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">ordem 0 &gt; 1 (810700108,-1031594401)</div>
-<div class="line">Solução: .DONE.instância 1:</div>
-<div class="line">ordem 1 &gt; 2 (1463315862,-263798896)</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">ordem 1 &gt; 2 (1463315862,-263798896)</div>
-<div class="line">Solução: .DONE.instância 1:</div>
-<div class="line">ordem 1 &gt; 2 (1463315862,-263798896)</div>
-<div class="line">Solução: .DONE.instância 3:</div>
-<div class="line">ordem 1 &gt; 2 (1463315862,-263798896)</div>
-<div class="line">Solução: .DONE.</div>
+<p>Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</p>
+<p>Colocamos o debug nível 3 para observar o que acontece:</p>
+<div class="fragment"><div class="line">TProcura/Teste$ ./bin/Release/TProcura 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x</div>
+<div class="line">P6=1:3</div>
+<div class="line"> </div>
+<div class="line">══ 🧪  Início do Teste (🖥️ 0) ══</div>
+<div class="line">📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 1.</div>
+<div class="line">⏱ 10&quot; 114ms         📋 63      ↻ 3       🛠️ 31      🖥️ 1</div>
+<div class="line">⏱ 20&quot; 269ms         📋 132     ↻ 1       🛠️ 66      🖥️ 1</div>
+<div class="line">⏱ 30&quot; 313ms         📋 186     ↻ 1       🛠️ 93      🖥️ 1</div>
+<div class="line">⏱ 40&quot; 326ms         📋 246     ↻ 1       🛠️ 123     🖥️ 1</div>
+<div class="line">⏱ 50&quot; 502ms         📋 322     ↻ 1       🛠️ 161     🖥️ 1</div>
+<div class="line">⏱ 1&#39; 521ms          📋 392     ↻ 1       🛠️ 196     🖥️ 1</div>
+<div class="line">⏱ 1&#39; 10&quot; 985ms      📋 468     ↻ 1       🛠️ 234     🖥️ 1</div>
+<div class="line">⏱ 1&#39; 21&quot; 64ms       📋 517     ↻ 3       🛠️ 258     🖥️ 1</div>
+<div class="line">⏱ 1&#39; 31&quot; 187ms      📋 563     ↻ 3       🛠️ 281     🖥️ 1</div>
+<div class="line">⏱ 1&#39; 41&quot; 994ms      📋 614     ↻ 1       🛠️ 307     🖥️ 1</div>
+<div class="line">⏱ 1&#39; 52&quot; 495ms      📋 666     ↻ 1       🛠️ 333     🖥️ 1</div>
 <div class="line">📄 Ficheiro Resultados/tvetor3.csv gravado.</div>
-<div class="line">⏱ Tempo real: 1&#39; 59&quot; 750ms</div>
-<div class="line">⏱ CPU total: 1&#39; 59&quot; 750ms</div>
+<div class="line">⏱ Tempo real: 2&#39; 1&quot; 910ms</div>
+<div class="line">⏱ CPU total: 2&#39; 1&quot; 910ms</div>
 <div class="line">📊 Utilização: 100.0%</div>
-<div class="line">══ 🏁  Fim do Teste ══</div>
-</div><!-- fragment --><p>Podemos ver que o debug máximo, mostra indicação das instâncias a resolver e também visualiza detalhes nos indicadores, identificando elementos fora de ordem, naturalmente em operações que não ordenam o vetor. Caso exista um crash, este modo permite identificar a tarefa concreta que levou ao crash.</p>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 0) 2&#39; 1&quot; 921ms  ══</div>
+</div><!-- fragment --><p>Podemos ver que o debug 3, mostra indicação da tarefa atual, bem como instância e configuração.</p>
 <p>Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, e no conteúdo I2 com o tempo.</p>
 <p>Soma de I2(Tempo(ms)): </p><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -975,42 +958,53 @@ Ação 8: Execução MPI</h2>
 <p>Linha de comando: mpiexec -n 4 <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</p>
 <div class="fragment"><div class="line">TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
 <div class="line"> </div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 0) ══</div>
-<div class="line">📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
 <div class="line">══ 🧪  Início do Teste (🖥️ 1) ══</div>
 <div class="line">══ 🧪  Início do Teste (🖥️ 2) ══</div>
 <div class="line">══ 🧪  Início do Teste (🖥️ 3) ══</div>
-<div class="line">⏱ 10&quot; 222ms  📋 Tarefa 496.</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 2) ══</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 3) ══</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 1) ══</div>
+<div class="line">══ 🧪  Início do Teste (🖥️ 0) ══</div>
+<div class="line">📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
+<div class="line">⏱ 10&quot; 26ms          📋 496     ↻ 1       🛠️ 248     🖥️ 4</div>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 2) 13&quot; 257ms  ══</div>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 3) 53&quot; 221ms  ══</div>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 1) 1&#39; 4&quot; 250ms  ══</div>
 <div class="line">📄 Ficheiro Resultados/tvetor3MPI1m0.csv gravado.</div>
-<div class="line">⏱ Tempo real: 48&quot; 692ms</div>
-<div class="line">⏱ CPU total: 3&#39; 14&quot; 766ms</div>
-<div class="line">📊 Utilização: 59.8%</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 0) ══</div>
-</div><!-- fragment --><p>O tempo de execução real foi de 48 segundos, mas o tempo total de execução foi de 3 minutos, e a utilização de 60%. Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas.</p>
+<div class="line">⏱ Tempo real: 1&#39; 4&quot; 244ms</div>
+<div class="line">⏱ CPU total: 4&#39; 16&quot; 976ms</div>
+<div class="line">📊 Utilização: 57.4%</div>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 0) 1&#39; 4&quot; 255ms  ══</div>
+</div><!-- fragment --><p>O tempo de execução real foi de 1 minuto, mas o tempo total de execução foi de 4 minutos, e a utilização de 60%. Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas.</p>
 <p>Podemos observar que o processo 2 terminou pouco depois dos 10 segundos. O processo 0 é sempre o último a terminar, já que tem de no final juntar os ficheiros de resultados. Isso não significa que não tenha ficado parado à espera dos outros. Na verdade o processo 0 ficou de facto à espera, caso contrário teria reportado o estado da situação aos 20 segundos.</p>
 <p>Vamos agora ver o gestor-trabalhador, em que o trabalho ém falta é gerido centralmente.</p>
 <p>Linha de comando: mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</p>
 <div class="fragment"><div class="line">TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
 <div class="line"> </div>
+<div class="line">══ 🧪  Início do Teste (🖥️ 0) ══</div>
+<div class="line">══ 🧪  Início do Teste (🖥️ 2) ══</div>
+<div class="line">══ 🧪  Início do Teste (🖥️ 1) ══</div>
 <div class="line">📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
-<div class="line">⏱ 10&quot; 26ms  📋 Tarefas: 537  🖥️ Trabalhadores: 3</div>
-<div class="line">⏱ 20&quot; 33ms  📋 Tarefas: 325  🖥️ Trabalhadores: 3</div>
-<div class="line">⏱ 30&quot; 56ms  📋 Tarefas: 157  🖥️ Trabalhadores: 3</div>
-<div class="line">⏱ 40&quot; 265ms  📋 Tarefas: 33  🖥️ Trabalhadores: 3</div>
+<div class="line">══ 🧪  Início do Teste (🖥️ 3) ══</div>
+<div class="line">⏱ 10&quot; 51ms          📋 134     ↻ 3       🛠️ 292     🖥️ 3</div>
+<div class="line">⏱ 20&quot; 232ms         📋 231     ↻ 1       🛠️ 244     🖥️ 3</div>
+<div class="line">⏱ 30&quot; 389ms         📋 329     ↻ 1       🛠️ 195     🖥️ 3</div>
+<div class="line">⏱ 40&quot; 487ms         📋 428     ↻ 3       🛠️ 145     🖥️ 3</div>
+<div class="line">⏱ 50&quot; 577ms         📋 537     ↻ 1       🛠️ 91      🖥️ 3</div>
+<div class="line">⏱ 1&#39; 706ms          📋 615     ↻ 1       🛠️ 52      🖥️ 3</div>
+<div class="line">⏱ 1&#39; 10&quot; 871ms      📋 706     ↻ 3       🛠️ 6       🖥️ 3</div>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 3) 1&#39; 13&quot; 822ms  ══</div>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 2) 1&#39; 13&quot; 855ms  ══</div>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 1) 1&#39; 14&quot; 332ms  ══</div>
 <div class="line">📄 Ficheiro Resultados/tvetor3MPI1m1.csv gravado.</div>
-<div class="line">⏱ Tempo real: 42&quot; 998ms</div>
-<div class="line">⏱ CPU total: 2&#39; 8&quot; 994ms</div>
-<div class="line">⏱ Espera do gestor: 42&quot; 989ms</div>
-<div class="line">⏱ Espera trabalhadores: 417ms</div>
+<div class="line">⏱ Tempo real: 1&#39; 14&quot; 339ms</div>
+<div class="line">⏱ CPU total: 3&#39; 43&quot; 16ms</div>
+<div class="line">⏱ Espera do gestor: 1&#39; 14&quot; 324ms</div>
+<div class="line">⏱ Espera trabalhadores: 1&quot; 1ms</div>
 <div class="line">📊 Utilização:</div>
-<div class="line">- Total: 74.8%</div>
+<div class="line">- Total: 74.7%</div>
 <div class="line">- Gestor: 0.0%</div>
-<div class="line">- Trabalhadores: 99.7%</div>
-</div><!-- fragment --><p> Obteve-se uma taxa de utilização de 75%, superior aos 60% do método estático. O tempo real foi de 42 segundos, também inferior, mesmo considerando que apenas 3 dos 4 processos processaram tarefas.</p>
-<p>Em relação aos 2 minutos iniciais, reduziu-se mais de metade, tudo o resto permaneceu sem alterações. Quanto maior os testes e maior o número de processadores, maior será o ganho da execução MPI.</p>
+<div class="line">- Trabalhadores: 99.6%</div>
+<div class="line">══ 🏁  Fim do Teste (🖥️ 0) 1&#39; 14&quot; 339ms  ══</div>
+</div><!-- fragment --><p>Obteve-se uma taxa de utilização de 75%, superior aos 60% do método estático. O tempo real foi de 1 minuto, um valor idêntico à distribuição de trabalho estática, mesmo considerando que apenas 3 dos 4 processos processaram tarefas.</p>
+<p>Em relação aos 2 minutos iniciais, reduziu-se metade, tudo o resto permaneceu sem alterações. Quanto maior os testes e maior o número de processadores, maior será o ganho da execução MPI.</p>
 <p>No entanto para isso precisamos de ter acesso a um cluster. Torna-se impraticável testes de volume utilizando computador próprio.</p>
 <p>A submissão de trabalhos num cluster, será alvo de um caso de estudo, para exemplificação.</p>
 <hr  />
