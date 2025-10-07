@@ -574,9 +574,9 @@ public:
 	/// @brief Mostra tempo num formato humano.
 	static char *MostraTempo(double segundos);
 
-	static void MostraCaixa(TVector<const char*> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true);
-	static void MostraCaixa(const char* titulo, ECaixaParte parte, int largura = 70, bool aberta = true);
-	static void MostraCaixa(TVector<const char*> textos, int largura = 70, bool aberta = true);
+	static void MostraCaixa(TVector<const char*> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
+	static void MostraCaixa(const char* titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0);
+	static void MostraCaixa(TVector<const char*> textos, int largura = 70, bool aberta = true, int identacao = 0);
 	static void Mensagem(const char* titulo, const char* fmt, ...);
 
 
