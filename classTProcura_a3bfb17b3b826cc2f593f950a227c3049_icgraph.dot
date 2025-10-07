@@ -57,4 +57,5 @@ digraph "TProcura::MostraTempo"
   Node1 -> Node22 [id="edge29_Node000001_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 [id="Node000022",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1b444fbb9aa1d6bf3df277df3f289587",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node22 -> Node14 [id="edge30_Node000022_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node16 [id="edge31_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -144,7 +144,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node51 -> Node53 [id="edge94_Node000051_Node000053",color="steelblue1",style="solid",tooltip=" "];
   Node53 [id="Node000053",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fa07f03b8e5a201e35023ba7724b82",tooltip="Mostra os parâmetros atuais."];
   Node53 -> Node54 [id="edge95_Node000053_Node000054",color="steelblue1",style="solid",tooltip=" "];
-  Node54 [id="Node000054",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#afa633176f014aeed4be467dbd50060c2",tooltip=" "];
+  Node54 [id="Node000054",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a3496857ee1a91785fbb6ad45f5e9ddea",tooltip=" "];
   Node1 -> Node56 [id="edge96_Node000001_Node000056",color="steelblue1",style="solid",tooltip=" "];
   Node56 [id="Node000056",label="TProcura::MostrarTorneio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a325f6cfdb9d0ee31cdecc72e738b144a",tooltip="Mostra os resultados do torneio."];
   Node56 -> Node57 [id="edge97_Node000056_Node000057",color="steelblue1",style="solid",tooltip=" "];

@@ -319,11 +319,9 @@ Ação 3: Menu 6 - Executar</h2>
 <p>Avançamos para o menu <em>6 ► Executar</em>. Introduza: 6.</p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">══ ►  Executar ══</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
-<div class="line">│ P1=2 P2=0 P3=2 P4=10 P5=0 P6=1</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">══ 🏁  Execução terminada ══</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=2 P2=0 P3=2 P4=10 P5=0 P6=1</div>
+<div class="line">═╧═ 🏁  Execução terminada (⏱  70ms ) ═══</div>
 <div class="line">TVector</div>
 <div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10</div>
@@ -331,16 +329,19 @@ Ação 3: Menu 6 - Executar</h2>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808</div>
 <div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I1(Resultado): 1 | I2(Tempo(ms)): 70 | I3(Iterações): 1 | I4(IND_ORDENAR): 1</div>
+<div class="line">│ I1(Resultado): 1 | I2(Tempo(ms)): 69 | I3(Iterações): 1 | I4(IND_ORDENAR): 1</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p> A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
+</div><!-- fragment --><p> A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada. Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 70 milisegundos. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
 <p>Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadors, I1 a I4.</p>
-<p>Os três primeiros indicadores são de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, o quarto indicador é definido em <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>. O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema. O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 70. Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância). O tempo de calcular os indicadores não é também comtabilizado. O indicador I3 tem o número de iterações realizadas. O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez. Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado. Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. Em outros métodos que não ordenem o vetor, naturalmente que este indicador nesses casos, ao ser chamado irá retornar 0.</p>
+<p>Os três primeiros indicadores são de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, o quarto indicador é definido em <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>. O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema. O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 69. Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância). O tempo de calcular os indicadores não é também comtabilizado. O indicador I3 tem o número de iterações realizadas. O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez. Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado. Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. Em outros métodos que não ordenem o vetor, naturalmente que este indicador nesses casos, ao ser chamado irá retornar 0.</p>
 <p>Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2; <em>ENTER</em>; 1; <em>ENTER</em>; 6.</p>
-<div class="fragment"><div class="line">...</div>
-<div class="line">══ 🏁  Execução terminada ══</div>
+<div class="fragment"><div class="line">Opção: 6</div>
+<div class="line"> </div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=2 P2=0 P3=2 P4=10 P5=0 P6=2</div>
+<div class="line">═╧═ 🏁  Execução terminada (⏱  65ms ) ═══</div>
 <div class="line">TVector</div>
 <div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10</div>
@@ -348,11 +349,11 @@ Ação 3: Menu 6 - Executar</h2>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808</div>
 <div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I1(Resultado): 1 | I2(Tempo(ms)): 73 | I3(Iterações): 1 | I4(IND_ORDENAR): 1</div>
+<div class="line">│ I1(Resultado): 1 | I2(Tempo(ms)): 64 | I3(Iterações): 1 | I4(IND_ORDENAR): 1</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p>Notar que o resultado em termos de dados final é 73, praticamente o mesmo. É natural já que ambas as estruturas de dados receberam a mesma instância. O tempo foi 3 milisegundos superior, mas outra execução o tempo CPU pode ser distinto.</p>
+</div><!-- fragment --><p>Notar que o resultado em termos de dados final é 64, praticamente o mesmo. É natural já que ambas as estruturas de dados receberam a mesma instância. A diferença de tempo em outra execução pode ser diferente.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a4"></a></p>
 <h2><a class="anchor" id="autotoc_md73"></a>
@@ -389,7 +390,11 @@ Ação 4: Menu 5 - Indicadores</h2>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">Alterar indicador:</div>
 <div class="line">...</div>
-<div class="line">══ 🏁  Execução terminada ══</div>
+<div class="line">Opção: 6</div>
+<div class="line"> </div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=2 P2=0 P3=2 P4=10 P5=0 P6=2</div>
+<div class="line">═╧═ 🏁  Execução terminada (⏱  76ms ) ═══</div>
 <div class="line">TVector</div>
 <div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10</div>
@@ -397,7 +402,7 @@ Ação 4: Menu 5 - Indicadores</h2>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808</div>
 <div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I4(IND_ORDENAR): 1 | I2(Tempo(ms)): 63</div>
+<div class="line">│ I4(IND_ORDENAR): 1 | I2(Tempo(ms)): 75</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
@@ -412,13 +417,10 @@ Ação 5: Menu 7 - Configurações</h2>
 <p>Introduza: 7.</p>
 <div class="fragment"><div class="line">Opção: 7</div>
 <div class="line"> </div>
-<div class="line">┌─ 🛠️ Parâmetros comuns ───────────────────────────────────────────────</div>
-<div class="line">│ P1=2 P2=0 P3=2 P4=10 P5=0 P6=2</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">══ Configurações geradas (total: 1) ══</div>
-<div class="line">┌─ ⚙️ [1] ⭐ atual ─────────────────────────────────────────────────────</div>
-<div class="line">│</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> ├─ 🛠️  ─ P1=2 P2=0 P3=2 P4=10 P5=0 P6=2 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─  ⭐ atual</div>
+<div class="line">═╧═══════════════════</div>
 <div class="line">┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────</div>
 <div class="line">│    id / -id - Seleciona configuração como atual ou apaga &#39;id&#39;</div>
 <div class="line">│    Pk = &lt;conj.&gt; - Varia Pk na configuração atual (gera N configs)</div>
@@ -431,46 +433,21 @@ Ação 5: Menu 7 - Configurações</h2>
 <p>Introduza: P1=1:12</p>
 <div class="fragment"><div class="line">✏️ Comando: P1=1:12</div>
 <div class="line"> </div>
-<div class="line">┌─ 🛠️ Parâmetros comuns ───────────────────────────────────────────────</div>
-<div class="line">│ P2=0 P3=2 P4=10 P5=0 P6=2</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">══ Configurações geradas (total: 12) ══</div>
-<div class="line">┌─ ⚙️ [1] ⭐ atual ─────────────────────────────────────────────────────</div>
-<div class="line">│ P1=2</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [2] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=1</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [3] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=3</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [4] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=4</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [5] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=5</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [6] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=6</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [7] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=7</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [8] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=8</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [9] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=9</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [10] ────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=10</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [11] ────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=11</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [12] ────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=12</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> ├─ 🛠️  ─ P2=0 P3=2 P4=10 P5=0 P6=2 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=2 ⭐ atual</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=1</div>
+<div class="line"> ├─ ⚙️ [3] ─ P1=3</div>
+<div class="line"> ├─ ⚙️ [4] ─ P1=4</div>
+<div class="line"> ├─ ⚙️ [5] ─ P1=5</div>
+<div class="line"> ├─ ⚙️ [6] ─ P1=6</div>
+<div class="line"> ├─ ⚙️ [7] ─ P1=7</div>
+<div class="line"> ├─ ⚙️ [8] ─ P1=8</div>
+<div class="line"> ├─ ⚙️ [9] ─ P1=9</div>
+<div class="line"> ├─ ⚙️ [10] ─ P1=10</div>
+<div class="line"> ├─ ⚙️ [11] ─ P1=11</div>
+<div class="line"> ├─ ⚙️ [12] ─ P1=12</div>
+<div class="line">═╧═══════════════════</div>
 <div class="line">┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────</div>
 <div class="line">│    id / -id - Seleciona configuração como atual ou apaga &#39;id&#39;</div>
 <div class="line">│    Pk = &lt;conj.&gt; - Varia Pk na configuração atual (gera N configs)</div>
@@ -483,26 +460,26 @@ Ação 5: Menu 7 - Configurações</h2>
 <p>Vamos agora colocar dois parâmetros a variar em conjunto, ou seja, estamos interessados no produto externo. Introduza: P3=1:2 x P6=1:3.</p>
 <div class="fragment"><div class="line">✏️ Comando: P3=1:2 x P6=1:3</div>
 <div class="line"> </div>
-<div class="line">┌─ 🛠️ Parâmetros comuns ───────────────────────────────────────────────</div>
-<div class="line">│ P2=0 P4=10 P5=0</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">══ Configurações geradas (total: 17) ══</div>
-<div class="line">┌─ ⚙️ [1] ⭐ atual ─────────────────────────────────────────────────────</div>
-<div class="line">│ P1=2 P3=2 P6=2</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [2] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=1 P3=2 P6=2</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [3] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=3 P3=2 P6=2</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [4] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=4 P3=2 P6=2</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">...</div>
-<div class="line">┌─ ⚙️ [17] ────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1=2 P3=2 P6=3</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> ├─ 🛠️  ─ P2=0 P4=10 P5=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=2 P3=2 P6=2 ⭐ atual</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=1 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [3] ─ P1=3 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [4] ─ P1=4 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [5] ─ P1=5 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [6] ─ P1=6 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [7] ─ P1=7 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [8] ─ P1=8 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [9] ─ P1=9 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [10] ─ P1=10 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [11] ─ P1=11 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [12] ─ P1=12 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [13] ─ P1=2 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [14] ─ P1=2 P3=2 P6=1</div>
+<div class="line"> ├─ ⚙️ [15] ─ P1=2 P3=1 P6=2</div>
+<div class="line"> ├─ ⚙️ [16] ─ P1=2 P3=1 P6=3</div>
+<div class="line"> ├─ ⚙️ [17] ─ P1=2 P3=2 P6=3</div>
+<div class="line">═╧═══════════════════</div>
 <div class="line">┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────</div>
 <div class="line">│    id / -id - Seleciona configuração como atual ou apaga &#39;id&#39;</div>
 <div class="line">│    Pk = &lt;conj.&gt; - Varia Pk na configuração atual (gera N configs)</div>
@@ -527,180 +504,176 @@ Ação 6: Menu 8 - Teste</h2>
 <div class="line">✏️ IDs das instâncias (1 a 10): 1:3</div>
 <div class="line">📄  Ficheiro resultados (nada para mostrar no ecrã):</div>
 <div class="line"> </div>
-<div class="line">══ 🧪  Início do Teste ══</div>
+<div class="line"> ├─ 🛠️  ─ P2=0 P4=10 P5=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=2 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=1 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [3] ─ P1=3 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [4] ─ P1=4 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [5] ─ P1=5 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [6] ─ P1=6 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [7] ─ P1=7 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [8] ─ P1=8 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [9] ─ P1=9 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [10] ─ P1=10 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [11] ─ P1=11 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [12] ─ P1=12 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [13] ─ P1=2 P3=2 P6=1</div>
+<div class="line"> ├─ ⚙️ [14] ─ P1=2 P3=1 P6=2</div>
+<div class="line"> ├─ ⚙️ [15] ─ P1=2 P3=2 P6=2</div>
+<div class="line"> ├─ ⚙️ [16] ─ P1=2 P3=1 P6=3</div>
+<div class="line"> ├─ ⚙️ [17] ─ P1=2 P3=2 P6=3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
 <div class="line">┌──────┬───────┬───────────┬───────────┐</div>
 <div class="line">│ ↻    │ 🛠️    │ 💰         │ ⏱         │</div>
 <div class="line">├──────┼───────┼───────────┼───────────┤</div>
-<div class="line">│ 1    │ 1     │ 0         │ 71        │</div>
-<div class="line">│ 2    │ 1     │ 0         │ 133       │</div>
-<div class="line">│ 3    │ 1     │ 0         │ 200       │</div>
-<div class="line">│ 1    │ 2     │ 0         │ 6         │</div>
-<div class="line">│ 2    │ 2     │ 0         │ 7         │</div>
-<div class="line">│ 3    │ 2     │ 0         │ 12        │</div>
-<div class="line">│ 1    │ 3     │ 0         │ 3         │</div>
-<div class="line">│ 2    │ 3     │ 0         │ 8         │</div>
-<div class="line">│ 3    │ 3     │ 0         │ 18        │</div>
-<div class="line">│ 1    │ 4     │ 0         │ 0         │</div>
-<div class="line">│ 2    │ 4     │ 0         │ 1         │</div>
-<div class="line">│ 3    │ 4     │ 0         │ 1         │</div>
-<div class="line">│ 1    │ 5     │ 0         │ 61        │</div>
-<div class="line">│ 2    │ 5     │ 0         │ 127       │</div>
-<div class="line">│ 3    │ 5     │ 0         │ 224       │</div>
-<div class="line">│ 1    │ 6     │ 0         │ 146       │</div>
-<div class="line">│ 2    │ 6     │ 0         │ 316       │</div>
-<div class="line">│ 3    │ 6     │ 0         │ 497       │</div>
-<div class="line">│ 1    │ 7     │ 0         │ 165       │</div>
-<div class="line">│ 2    │ 7     │ 0         │ 401       │</div>
-<div class="line">│ 3    │ 7     │ 0         │ 560       │</div>
-<div class="line">│ 1    │ 8     │ 0         │ 133       │</div>
-<div class="line">│ 2    │ 8     │ 0         │ 413       │</div>
-<div class="line">│ 3    │ 8     │ 0         │ 483       │</div>
-<div class="line">│ 1    │ 9     │ 0         │ 200       │</div>
-<div class="line">│ 2    │ 9     │ 0         │ 401       │</div>
-<div class="line">│ 3    │ 9     │ 0         │ 455       │</div>
-<div class="line">│ 1    │ 10    │ 0         │ 0         │</div>
-<div class="line">│ 2    │ 10    │ 0         │ 0         │</div>
-<div class="line">│ 3    │ 10    │ 0         │ 1         │</div>
-<div class="line">│ 1    │ 11    │ 0         │ 0         │</div>
-<div class="line">│ 2    │ 11    │ 0         │ 1         │</div>
-<div class="line">│ 3    │ 11    │ 0         │ 19        │</div>
-<div class="line">│ 1    │ 12    │ 0         │ 0         │</div>
-<div class="line">│ 2    │ 12    │ 0         │ 0         │</div>
-<div class="line">│ 3    │ 12    │ 0         │ 0         │</div>
-<div class="line">│ 1    │ 13    │ 0         │ 73        │</div>
-<div class="line">│ 2    │ 13    │ 0         │ 143       │</div>
-<div class="line">│ 3    │ 13    │ 0         │ 231       │</div>
-<div class="line">│ 1    │ 14    │ 0         │ 65        │</div>
-<div class="line">│ 2    │ 14    │ 0         │ 147       │</div>
-<div class="line">│ 3    │ 14    │ 0         │ 229       │</div>
-<div class="line">│ 1    │ 15    │ 0         │ 69        │</div>
-<div class="line">│ 2    │ 15    │ 0         │ 205       │</div>
-<div class="line">│ 3    │ 15    │ 0         │ 278       │</div>
-<div class="line">│ 1    │ 16    │ 0         │ 126       │</div>
-<div class="line">│ 2    │ 16    │ 0         │ 191       │</div>
-<div class="line">│ 3    │ 16    │ 0         │ 257       │</div>
-<div class="line">│ 1    │ 17    │ 0         │ 66        │</div>
-<div class="line">│ 2    │ 17    │ 0         │ 136       │</div>
-<div class="line">│ 3    │ 17    │ 0         │ 208       │</div>
+<div class="line">│ 1    │ 1     │ 1         │ 67        │</div>
+<div class="line">│ 2    │ 1     │ 1         │ 140       │</div>
+<div class="line">│ 3    │ 1     │ 1         │ 213       │</div>
+<div class="line">│ 1    │ 2     │ 1         │ 7         │</div>
+<div class="line">│ 2    │ 2     │ 1         │ 11        │</div>
+<div class="line">│ 3    │ 2     │ 1         │ 24        │</div>
+<div class="line">│ 1    │ 3     │ 1         │ 6         │</div>
+<div class="line">│ 2    │ 3     │ 1         │ 13        │</div>
+<div class="line">│ 3    │ 3     │ 1         │ 21        │</div>
+<div class="line">│ 1    │ 4     │ 1         │ 0         │</div>
+<div class="line">│ 2    │ 4     │ 1         │ 1         │</div>
+<div class="line">│ 3    │ 4     │ 1         │ 1         │</div>
+<div class="line">│ 1    │ 5     │ 1         │ 75        │</div>
+<div class="line">│ 2    │ 5     │ 1         │ 139       │</div>
+<div class="line">│ 3    │ 5     │ 1         │ 219       │</div>
+<div class="line">│ 1    │ 6     │ 1         │ 136       │</div>
+<div class="line">│ 2    │ 6     │ 1         │ 284       │</div>
+<div class="line">│ 3    │ 6     │ 1         │ 447       │</div>
+<div class="line">│ 1    │ 7     │ 1         │ 206       │</div>
+<div class="line">│ 2    │ 7     │ 1         │ 461       │</div>
+<div class="line">│ 3    │ 7     │ 1         │ 696       │</div>
+<div class="line">│ 1    │ 8     │ 1         │ 126       │</div>
+<div class="line">│ 2    │ 8     │ 1         │ 329       │</div>
+<div class="line">│ 3    │ 8     │ 1         │ 527       │</div>
+<div class="line">│ 1    │ 9     │ 1         │ 156       │</div>
+<div class="line">│ 2    │ 9     │ 1         │ 291       │</div>
+<div class="line">│ 3    │ 9     │ 1         │ 453       │</div>
+<div class="line">│ 1    │ 10    │ 1         │ 1         │</div>
+<div class="line">│ 2    │ 10    │ 1         │ 1         │</div>
+<div class="line">│ 3    │ 10    │ 1         │ 2         │</div>
+<div class="line">│ 1    │ 11    │ 1         │ 1         │</div>
+<div class="line">│ 2    │ 11    │ 1         │ 1         │</div>
+<div class="line">│ 3    │ 11    │ 1         │ 2         │</div>
+<div class="line">│ 1    │ 12    │ 1         │ 0         │</div>
+<div class="line">│ 2    │ 12    │ 1         │ 0         │</div>
+<div class="line">│ 3    │ 12    │ 1         │ 0         │</div>
+<div class="line">│ 1    │ 13    │ 1         │ 61        │</div>
+<div class="line">│ 2    │ 13    │ 1         │ 137       │</div>
+<div class="line">│ 3    │ 13    │ 1         │ 220       │</div>
+<div class="line">│ 1    │ 14    │ 1         │ 58        │</div>
+<div class="line">│ 2    │ 14    │ 1         │ 131       │</div>
+<div class="line">│ 3    │ 14    │ 1         │ 193       │</div>
+<div class="line">│ 1    │ 15    │ 1         │ 65        │</div>
+<div class="line">│ 2    │ 15    │ 1         │ 133       │</div>
+<div class="line">│ 3    │ 15    │ 1         │ 250       │</div>
+<div class="line">│ 1    │ 16    │ 1         │ 58        │</div>
+<div class="line">│ 2    │ 16    │ 1         │ 134       │</div>
+<div class="line">│ 3    │ 16    │ 1         │ 200       │</div>
+<div class="line">│ 1    │ 17    │ 1         │ 58        │</div>
+<div class="line">│ 2    │ 17    │ 1         │ 135       │</div>
+<div class="line">│ 3    │ 17    │ 1         │ 225       │</div>
 <div class="line">└──────┴───────┴───────────┴───────────┘</div>
 <div class="line">┌─ 📊  Total 🛠️ 1 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 404 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 420 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 2 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 0 Tempo(ms): 25 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 42 Iterações: 3 IND_ORDENAR: 0 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 3 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 0 Tempo(ms): 29 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 40 Iterações: 3 IND_ORDENAR: 0 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 4 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 0 Tempo(ms): 2 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 2 Iterações: 3 IND_ORDENAR: 0 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 5 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 412 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 433 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 6 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 959 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 867 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 7 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 1126 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 1363 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 8 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 1029 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 982 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 9 ──────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 1056 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 900 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 10 ─────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 0 Tempo(ms): 1 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 4 Iterações: 3 IND_ORDENAR: 0 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 11 ─────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 0 Tempo(ms): 20 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 4 Iterações: 3 IND_ORDENAR: 0 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 12 ─────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 0 Tempo(ms): 0 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 0 Iterações: 3 IND_ORDENAR: 0 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 13 ─────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 447 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 418 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 14 ─────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 441 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 382 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 15 ─────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 552 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 448 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 16 ─────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 574 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 392 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">┌─ 📊  Total 🛠️ 17 ─────────────────────────────────────────────────────</div>
-<div class="line">│ IND_ORDENAR: 3 Tempo(ms): 410 Instâncias resolvidas: 3</div>
+<div class="line">│ Resultado: 3 Tempo(ms): 418 Iterações: 3 IND_ORDENAR: 3 Instâncias resolvidas: 3</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">🏆  Torneio (#instâncias melhores):</div>
 <div class="line"> |-01-|-02-|-03-|-04-|-05-|-06-|-07-|-08-|-09-|-10-|-11-|-12-|-13-|-14-|-15-|-16-|-17-|</div>
-<div class="line"> 1    | -2 | -2 | -2 |  0 |  2 |  2 |  2 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |  0 | -3</div>
+<div class="line"> 1    | -2 | -2 | -2 |  0 |  2 |  3 |  2 |  2 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |  0 | -3</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 2  2 |    |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  3 |  2 | 27</div>
+<div class="line"> 2  2 |    |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 3  2 |  0 |    |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  3 |  2 | 27</div>
+<div class="line"> 3  2 |  0 |    |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 4  2 |  0 |  0 |    |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  3 |  2 | 27</div>
+<div class="line"> 4  2 |  0 |  0 |    |  2 |  3 |  3 |  3 |  3 |  0 |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 5  0 | -2 | -2 | -2 |    |  2 |  3 |  2 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |  0 | -2</div>
+<div class="line"> 5  0 | -2 | -2 | -2 |    |  2 |  3 |  2 |  2 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |  0 | -3</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 6 -2 | -3 | -3 | -3 | -2 |    |  0 |  0 |  0 | -3 | -3 | -3 | -2 | -2 | -2 | -2 | -2 |-32</div>
+<div class="line"> 6 -2 | -3 | -3 | -3 | -2 |    |  2 |  0 |  0 | -3 | -3 | -3 | -2 | -2 | -2 | -2 | -2 |-30</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 7 -2 | -3 | -3 | -3 | -3 |  0 |    |  0 | -1 | -3 | -3 | -3 | -2 | -3 | -2 | -2 | -2 |-35</div>
+<div class="line"> 7 -3 | -3 | -3 | -3 | -3 | -2 |    | -2 | -2 | -3 | -3 | -3 | -3 | -3 | -3 | -3 | -3 |-45</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 8 -2 | -3 | -3 | -3 | -2 |  0 |  0 |    |  0 | -3 | -3 | -3 | -2 | -2 | -2 | -2 | -2 |-32</div>
+<div class="line"> 8 -2 | -3 | -3 | -3 | -2 |  0 |  2 |    |  0 | -3 | -3 | -3 | -2 | -2 | -2 | -2 | -2 |-30</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line"> 9 -3 | -3 | -3 | -3 | -3 |  0 |  1 |  0 |    | -3 | -3 | -3 | -3 | -3 | -3 | -2 | -3 |-37</div>
+<div class="line"> 9 -2 | -3 | -3 | -3 | -2 |  0 |  2 |  0 |    | -3 | -3 | -3 | -2 | -2 | -2 | -2 | -2 |-30</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">10  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |    |  0 |  0 |  2 |  2 |  2 |  3 |  2 | 27</div>
+<div class="line">10  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |    |  0 |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">11  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |    |  0 |  2 |  2 |  2 |  3 |  2 | 27</div>
+<div class="line">11  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |    |  0 |  2 |  2 |  2 |  2 |  2 | 26</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">12  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |    |  2 |  2 |  2 |  3 |  2 | 27</div>
+<div class="line">12  2 |  0 |  0 |  0 |  2 |  3 |  3 |  3 |  3 |  0 |  0 |    |  2 |  2 |  2 |  2 |  2 | 26</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">13  0 | -2 | -2 | -2 |  0 |  2 |  2 |  2 |  3 | -2 | -2 | -2 |    |  0 |  0 |  0 |  0 | -3</div>
+<div class="line">13  0 | -2 | -2 | -2 |  0 |  2 |  3 |  2 |  2 | -2 | -2 | -2 |    |  0 |  0 |  0 |  0 | -3</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">14  0 | -2 | -2 | -2 |  0 |  2 |  3 |  2 |  3 | -2 | -2 | -2 |  0 |    |  0 |  0 |  0 | -2</div>
+<div class="line">14  0 | -2 | -2 | -2 |  0 |  2 |  3 |  2 |  2 | -2 | -2 | -2 |  0 |    |  0 |  0 |  0 | -3</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">15  0 | -2 | -2 | -2 |  0 |  2 |  2 |  2 |  3 | -2 | -2 | -2 |  0 |  0 |    |  0 |  0 | -3</div>
+<div class="line">15  0 | -2 | -2 | -2 |  0 |  2 |  3 |  2 |  2 | -2 | -2 | -2 |  0 |  0 |    |  0 |  0 | -3</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">16  0 | -3 | -3 | -3 |  0 |  2 |  2 |  2 |  2 | -3 | -3 | -3 |  0 |  0 |  0 |    |  0 |-10</div>
+<div class="line">16  0 | -2 | -2 | -2 |  0 |  2 |  3 |  2 |  2 | -2 | -2 | -2 |  0 |  0 |  0 |    |  0 | -3</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">17  0 | -2 | -2 | -2 |  0 |  2 |  2 |  2 |  3 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |    | -3</div>
+<div class="line">17  0 | -2 | -2 | -2 |  0 |  2 |  3 |  2 |  2 | -2 | -2 | -2 |  0 |  0 |  0 |  0 |    | -3</div>
 <div class="line"> |----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|</div>
-<div class="line">┌─ 🛠️ Parâmetros comuns ───────────────────────────────────────────────</div>
-<div class="line">│ P2(NIVEL_DEBUG): NADA | P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">══ Configurações geradas (total: 17) ══</div>
-<div class="line">┌─ ⚙️ [1] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Sort() | P3(SEMENTE): 2 | P6(ESTRUTURA_DADOS): std::vector</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [2] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Add() | P3(SEMENTE): 2 | P6(ESTRUTURA_DADOS): std::vector</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [3] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): RandomOrder() | P3(SEMENTE): 2 | P6(ESTRUTURA_DADOS): std::vector</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">...</div>
-<div class="line">┌─ ⚙️ [17] ────────────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Sort() | P3(SEMENTE): 2 | P6(ESTRUTURA_DADOS): TVector/std::algorithm</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> </div>
-<div class="line">══ 🏁  Fim do Teste ══</div>
-<div class="line">TVector</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10</div>
-<div class="line">│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): std::vector</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I4(IND_ORDENAR): 1 | I2(Tempo(ms)): 63</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  8&quot; 29ms ) ═══</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p>Podemos ver que durante a execução, nada é mostrado. O parametro P2(NIVEL_DEBUG) controla do debug do algoritrmo durante a execução simples, no comando 6. Num teste o debug do algoritmo é sempre colocado a 0, sendo este parametro utilizado para mostrar informações do teste.</p>
+</div><!-- fragment --><p>As configurações atuais são mostradas logo de início, para poder ser fácil de identificar algum problema.</p>
+<p>Podemos ver que durante a execução, nada é mostrado, sendo mostrados os resultados dos testes no final.</p>
+<p>O parametro P2(NIVEL_DEBUG) controla do debug do algoritrmo durante a execução simples, no comando 6. Num teste o debug do algoritmo é sempre colocado a 0, sendo este parametro utilizado para mostrar informações do teste.</p>
 <p>Como o teste foi rápido, não havia muito a mostrar, mas ao executar um teste longo, é importante que saiba o estado atual do teste.</p>
 <p>No final é mostrada primeiramente uma tabela de resultados, com apenas o custo e tempo, por cada instância e configuração em teste. Como o custo não está nos indicadores calculados, ficou a zero, caso contrário ficaria a 1 já que foi assim que definimos nesta instância para sucesso.</p>
 <p>Seguem-se os totais por configuração, e um torneio entre configurações, sendo contabilizada vitória para a configuração que tiver melhores resultados em mais instâncias.</p>
@@ -716,41 +689,37 @@ Ação 6: Menu 8 - Teste</h2>
 <div class="line">✏️ IDs das instâncias (1 a 10): 1:10</div>
 <div class="line">📄  Ficheiro resultados (nada para mostrar no ecrã):</div>
 <div class="line"> </div>
-<div class="line">══ 🧪  Início do Teste ══</div>
+<div class="line"> ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=1 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
 <div class="line">┌──────┬───────┬───────────┬───────────┐</div>
 <div class="line">│ ↻    │ 🛠️    │ 💰         │ ⏱         │</div>
 <div class="line">├──────┼───────┼───────────┼───────────┤</div>
-<div class="line">│ 1    │ 1     │ 1         │ 66        │</div>
+<div class="line">│ 1    │ 1     │ 1         │ 65        │</div>
 <div class="line">│ 2    │ 1     │ 1         │ 133       │</div>
-<div class="line">│ 3    │ 1     │ 1         │ 208       │</div>
-<div class="line">│ 4    │ 1     │ 1         │ 303       │</div>
-<div class="line">│ 5    │ 1     │ 1         │ 370       │</div>
-<div class="line">│ 6    │ 1     │ 1         │ 462       │</div>
-<div class="line">│ 7    │ 1     │ 1         │ 553       │</div>
-<div class="line">│ 8    │ 1     │ 1         │ 600       │</div>
-<div class="line">│ 9    │ 1     │ 1         │ 692       │</div>
-<div class="line">│ 10   │ 1     │ 1         │ 755       │</div>
+<div class="line">│ 3    │ 1     │ 1         │ 209       │</div>
+<div class="line">│ 4    │ 1     │ 1         │ 278       │</div>
+<div class="line">│ 5    │ 1     │ 1         │ 388       │</div>
+<div class="line">│ 6    │ 1     │ 1         │ 439       │</div>
+<div class="line">│ 7    │ 1     │ 1         │ 524       │</div>
+<div class="line">│ 8    │ 1     │ 1         │ 644       │</div>
+<div class="line">│ 9    │ 1     │ 1         │ 665       │</div>
+<div class="line">│ 10   │ 1     │ 1         │ 738       │</div>
 <div class="line">└──────┴───────┴───────────┴───────────┘</div>
 <div class="line">┌─ 📊  Total 🛠️ 1 ──────────────────────────────────────────────────────</div>
-<div class="line">│ Resultado: 10 Tempo(ms): 4142 Iterações: 10 IND_ORDENAR: 10 Instâncias resolvidas: 10</div>
+<div class="line">│ Resultado: 10 Tempo(ms): 4083 Iterações: 10 IND_ORDENAR: 10 Instâncias resolvidas: 10</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">🏆  Torneio (#instâncias melhores):</div>
 <div class="line"> |-01-|</div>
 <div class="line"> 1    |  0</div>
 <div class="line"> |----|</div>
-<div class="line">┌─ 🛠️ Parâmetros comuns ───────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10</div>
-<div class="line">│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">══ Configurações geradas (total: 1) ══</div>
-<div class="line">┌─ ⚙️ [1] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> </div>
-<div class="line">══ 🏁  Fim do Teste ══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  4&quot; 725ms ) ═══</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p> Podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 66 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva 755 milisegundos. Foram execuções únicas, os valores podem variar demasiado.</p>
+</div><!-- fragment --><p> Podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 65 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva 738 milisegundos. Foram execuções únicas, os valores podem variar demasiado.</p>
 <p>Vamos colocar 10 instâncias de cada tipo, variando a semente, para assim ter mais precisão. Queremos desta vez ter os resultados no Excel (utilizando a pasta Resultados) e vamos colocar o debug a 1.</p>
 <p>Introduza: 7; P2=1; P3=1:10; <em>ENTER</em>; 8; 1:10; Resultados/tvetor1.</p>
 <div class="fragment"><div class="line">Opção: 8</div>
@@ -761,16 +730,29 @@ Ação 6: Menu 8 - Teste</h2>
 <div class="line">✏️ IDs das instâncias (1 a 10): 1:10</div>
 <div class="line">📄  Ficheiro resultados (nada para mostrar no ecrã): Resultados/tvetor1</div>
 <div class="line"> </div>
-<div class="line">══ 🧪  Início do Teste ══</div>
-<div class="line">📋 Tarefas:100   ↻ Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 1.</div>
-<div class="line">📄 Ficheiro Resultados/tvetor1.csv gravado.</div>
-<div class="line">⏱ Tempo real: 50&quot; 180ms</div>
-<div class="line">⏱ CPU total: 50&quot; 180ms</div>
-<div class="line">📊 Utilização: 100.0%</div>
-<div class="line">══ 🏁  Fim do Teste ══</div>
+<div class="line"> ├─ 🛠️  ─ P1=2 P2=1 P4=10 P5=0 P6=1 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P3=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P3=2</div>
+<div class="line"> ├─ ⚙️ [3] ─ P3=3</div>
+<div class="line"> ├─ ⚙️ [4] ─ P3=4</div>
+<div class="line"> ├─ ⚙️ [5] ─ P3=5</div>
+<div class="line"> ├─ ⚙️ [6] ─ P3=6</div>
+<div class="line"> ├─ ⚙️ [7] ─ P3=7</div>
+<div class="line"> ├─ ⚙️ [8] ─ P3=8</div>
+<div class="line"> ├─ ⚙️ [9] ─ P3=9</div>
+<div class="line"> ├─ ⚙️ [10] ─ P3=10</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:100   ↻ Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 1.</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/tvetor1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 45&quot; 11ms</div>
+<div class="line"> │  ⏱  CPU total: 45&quot; 11ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  45&quot; 21ms ) ═══</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p>Podemos ver uma primeira linha indicando que há 100 tarefas, 10 instâncias, 10 configurações e 1 processo, já que não estamos a executar em MPI. Existe a indicação que o ficheiro Resultados/tvetor1.csv foi gravado. No final é dado o tempo real, o tempo total de CPU e a utilização, que neste caso é 100% já que é um programa em série.</p>
+</div><!-- fragment --><p>Podemos ver uma primeira linha indicando que há 100 tarefas, 10 instâncias, 10 configurações e 1 processo, já que não estamos a executar em MPI. Existe a indicação que o ficheiro Resultados/tvetor1.csv foi gravado, em vez da tabela de resultados final da execução anterior. No final é dado o tempo real, o tempo total de CPU e a utilização, que neste caso é 100% já que é um programa em série.</p>
 <p>O ficheiro está pronto para fazermos uma análise com os relatórios dinâmicos. Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visivel o tempo crescente de forma estável, um pouco acima de linear.</p>
 <div class="image">
 <img src="tvetor1.png" alt=""/>
@@ -823,37 +805,35 @@ Ação 7: Linha de comando</h2>
 <p>Podemos reproduzir o teste anterior com a seguinte entrada.</p>
 <p>Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1:10 -R Resultados/tvetor2 -P P1=2 P2=3 P3=1:10</p>
 <p>Subimos o nível de debug de 1 para 3, já que o nível 2 apenas reporta de minuto a minuto. Tal como o modo teste, na execução via linha de comando, o algoritmo executa sempre com debug nível 0, de modo a obter os melhores tempos. O parametro de debug é apenas para visualizar o andamento do teste.</p>
-<div class="fragment"><div class="line">./bin/Release/TProcura 1:10 -R Resultados/tvetor2 -P P1=2 P2=3 P3=1:10</div>
+<div class="fragment"><div class="line">/TProcura/Teste$ ./bin/Release/TProcura 1:10 -R Resultados/tvetor2 -P P1=2 P2=3 P3=1:10</div>
 <div class="line"> </div>
-<div class="line">┌─ 🛠️ Parâmetros comuns ───────────────────────────────────────────────</div>
-<div class="line">│ P1=2 P2=3 P4=10 P5=0 P6=1</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">══ Configurações geradas (total: 10) ══</div>
-<div class="line">┌─ ⚙️ [1] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P3=1</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [2] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P3=2</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚙️ [3] ─────────────────────────────────────────────────────────────</div>
-<div class="line">│ P3=3</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">...</div>
-<div class="line">┌─ ⚙️ [10] ────────────────────────────────────────────────────────────</div>
-<div class="line">│ P3=10</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">══ 🧪  Início do Teste ══</div>
-<div class="line">📋 Tarefas:100   ↻ Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 1.</div>
-<div class="line">⏱ 10&quot; 58ms  📋 Tarefa 22.</div>
-<div class="line">⏱ 20&quot; 313ms  📋 Tarefa 43.</div>
-<div class="line">⏱ 30&quot; 318ms  📋 Tarefa 60.</div>
-<div class="line">⏱ 40&quot; 557ms  📋 Tarefa 80.</div>
-<div class="line">📄 Ficheiro Resultados/tvetor2.csv gravado.</div>
-<div class="line">⏱ Tempo real: 50&quot; 335ms</div>
-<div class="line">⏱ CPU total: 50&quot; 335ms</div>
-<div class="line">📊 Utilização: 100.0%</div>
-<div class="line">══ 🏁  Fim do Teste ══</div>
-</div><!-- fragment --><p>O tempo total foi de 50 segundos, com debug a 0 não iriamos ter nenhum input senão após o teste terminar. Podemos ver com nível 3 um report a cada 10 segundos, com o número da tarefa atual, podendo assim ter uma idia concreta do andamento dos testes.</p>
+<div class="line"> ├─ 🛠️  ─ P1=2 P2=3 P4=10 P5=0 P6=1 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P3=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P3=2</div>
+<div class="line"> ├─ ⚙️ [3] ─ P3=3</div>
+<div class="line"> ├─ ⚙️ [4] ─ P3=4</div>
+<div class="line"> ├─ ⚙️ [5] ─ P3=5</div>
+<div class="line"> ├─ ⚙️ [6] ─ P3=6</div>
+<div class="line"> ├─ ⚙️ [7] ─ P3=7</div>
+<div class="line"> ├─ ⚙️ [8] ─ P3=8</div>
+<div class="line"> ├─ ⚙️ [9] ─ P3=9</div>
+<div class="line"> ├─ ⚙️ [10] ─ P3=10</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:100   ↻ Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱ 10&quot; 241ms         📋 23      ↻ 4       🛠️ 2       🖥️ 1</div>
+<div class="line"> ├─ ⏱ 20&quot; 595ms         📋 45      ↻ 6       🛠️ 4       🖥️ 1</div>
+<div class="line"> ├─ ⏱ 31&quot; 137ms         📋 67      ↻ 8       🛠️ 6       🖥️ 1</div>
+<div class="line"> ├─ ⏱ 41&quot; 157ms         📋 88      ↻ 9       🛠️ 8       🖥️ 1</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/tvetor2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 47&quot; 514ms</div>
+<div class="line"> │  ⏱  CPU total: 47&quot; 518ms</div>
+<div class="line"> │  📊  Utilização: 100,0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  47&quot; 526ms ) ═══</div>
+</div><!-- fragment --><p>No arranque, como habitualmente, são mostradas as configurações, de modo a que possa ser detectado um erro, e abortado o teste se necessário.</p>
+<p>O teste arranca normalmente, tendo o tempo total sido de 47 segundos. Com debug a 0 não iriamos ter nenhum input senão após o teste terminar. Podemos ver com nível 3 um report a cada 10 segundos, com o número da tarefa atual, o número da instância atual, configuração atual e número de processos. Assim podemos ir vendo o andamento dos testes.</p>
+<p>No final temos a mesmoa informação final que nos testes em modo interativo. São em tudo iguais, a diferença aqui é termos utilizado o debug nível 3.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Média de I2(Tempo(ms))    </th></tr>
@@ -887,28 +867,38 @@ Ação 7: Linha de comando</h2>
 <p>De modo a ter uma resposta rápida mas com várias iteraçoes, vamos utilizar apenas as instâncias 1 e 3, mas mantendo 10 sementes aleatórias. Temos também de variar a estrutura de dados.</p>
 <p>Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</p>
 <p>Colocamos o debug nível 3 para observar o que acontece:</p>
-<div class="fragment"><div class="line">TProcura/Teste$ ./bin/Release/TProcura 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x</div>
-<div class="line">P6=1:3</div>
+<div class="fragment"><div class="line">/TProcura/Teste$ ./bin/Release/TProcura 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
 <div class="line"> </div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 0) ══</div>
-<div class="line">📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 1.</div>
-<div class="line">⏱ 10&quot; 114ms         📋 63      ↻ 3       🛠️ 31      🖥️ 1</div>
-<div class="line">⏱ 20&quot; 269ms         📋 132     ↻ 1       🛠️ 66      🖥️ 1</div>
-<div class="line">⏱ 30&quot; 313ms         📋 186     ↻ 1       🛠️ 93      🖥️ 1</div>
-<div class="line">⏱ 40&quot; 326ms         📋 246     ↻ 1       🛠️ 123     🖥️ 1</div>
-<div class="line">⏱ 50&quot; 502ms         📋 322     ↻ 1       🛠️ 161     🖥️ 1</div>
-<div class="line">⏱ 1&#39; 521ms          📋 392     ↻ 1       🛠️ 196     🖥️ 1</div>
-<div class="line">⏱ 1&#39; 10&quot; 985ms      📋 468     ↻ 1       🛠️ 234     🖥️ 1</div>
-<div class="line">⏱ 1&#39; 21&quot; 64ms       📋 517     ↻ 3       🛠️ 258     🖥️ 1</div>
-<div class="line">⏱ 1&#39; 31&quot; 187ms      📋 563     ↻ 3       🛠️ 281     🖥️ 1</div>
-<div class="line">⏱ 1&#39; 41&quot; 994ms      📋 614     ↻ 1       🛠️ 307     🖥️ 1</div>
-<div class="line">⏱ 1&#39; 52&quot; 495ms      📋 666     ↻ 1       🛠️ 333     🖥️ 1</div>
-<div class="line">📄 Ficheiro Resultados/tvetor3.csv gravado.</div>
-<div class="line">⏱ Tempo real: 2&#39; 1&quot; 910ms</div>
-<div class="line">⏱ CPU total: 2&#39; 1&quot; 910ms</div>
-<div class="line">📊 Utilização: 100.0%</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 0) 2&#39; 1&quot; 921ms  ══</div>
-</div><!-- fragment --><p>Podemos ver que o debug 3, mostra indicação da tarefa atual, bem como instância e configuração.</p>
+<div class="line"> ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [3] ─ P1=3 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [4] ─ P1=4 P3=1 P6=1</div>
+<div class="line">...</div>
+<div class="line"> ├─ ⚙️ [358] ─ P1=10 P3=10 P6=3</div>
+<div class="line"> ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3</div>
+<div class="line"> ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱ 10&quot; 123ms         📋 63      ↻ 3       🛠️ 31      🖥️ 1</div>
+<div class="line"> ├─ ⏱ 20&quot; 408ms         📋 132     ↻ 1       🛠️ 66      🖥️ 1</div>
+<div class="line"> ├─ ⏱ 30&quot; 592ms         📋 196     ↻ 1       🛠️ 98      🖥️ 1</div>
+<div class="line"> ├─ ⏱ 40&quot; 688ms         📋 257     ↻ 3       🛠️ 128     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 50&quot; 886ms         📋 326     ↻ 1       🛠️ 163     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 1&quot; 65ms        📋 396     ↻ 1       🛠️ 198     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 11&quot; 87ms       📋 466     ↻ 1       🛠️ 233     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 21&quot; 229ms      📋 520     ↻ 1       🛠️ 260     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 31&quot; 652ms      📋 588     ↻ 1       🛠️ 294     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 42&quot; 54ms       📋 642     ↻ 1       🛠️ 321     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 52&quot; 677ms      📋 710     ↻ 1       🛠️ 355     🖥️ 1</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/tvetor3.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 1&#39; 54&quot; 121ms</div>
+<div class="line"> │  ⏱  CPU total: 1&#39; 54&quot; 124ms</div>
+<div class="line"> │  📊  Utilização: 100,0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  1&#39; 54&quot; 132ms ) ═══</div>
+</div><!-- fragment --><p>Podemos ver que solicitá-mos muitas configurações. Se fosse engano, poderiamos ter abortado o teste.</p>
 <p>Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, e no conteúdo I2 com o tempo.</p>
 <p>Soma de I2(Tempo(ms)): </p><table class="markdownTable">
 <tr class="markdownTableHead">
@@ -956,55 +946,73 @@ Ação 8: Execução MPI</h2>
 <p>No modo gestor-trabalhador, a divisão das tarefas é gerida por um dos processos, o processo gestor, que distribui trabalho. Assim, não há o risco de um processo já ter terminado, e outro ter ainda muitas tarefas para executar, tirando-se melhor partido do CPU disponível caso as tarefas tenham tempo de realização distinto.</p>
 <p>Vamos fazer dois testes, um com cada modo, e com 4 processadores.</p>
 <p>Linha de comando: mpiexec -n 4 <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</p>
-<div class="fragment"><div class="line">TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
+<div class="fragment"><div class="line">/TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
 <div class="line"> </div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 1) ══</div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 2) ══</div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 3) ══</div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 0) ══</div>
-<div class="line">📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
-<div class="line">⏱ 10&quot; 26ms          📋 496     ↻ 1       🛠️ 248     🖥️ 4</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 2) 13&quot; 257ms  ══</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 3) 53&quot; 221ms  ══</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 1) 1&#39; 4&quot; 250ms  ══</div>
-<div class="line">📄 Ficheiro Resultados/tvetor3MPI1m0.csv gravado.</div>
-<div class="line">⏱ Tempo real: 1&#39; 4&quot; 244ms</div>
-<div class="line">⏱ CPU total: 4&#39; 16&quot; 976ms</div>
-<div class="line">📊 Utilização: 57.4%</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 0) 1&#39; 4&quot; 255ms  ══</div>
-</div><!-- fragment --><p>O tempo de execução real foi de 1 minuto, mas o tempo total de execução foi de 4 minutos, e a utilização de 60%. Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas.</p>
+<div class="line"> ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1</div>
+<div class="line"> ...</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 1) ═══</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 3) ═══</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 2) ═══</div>
+<div class="line">...</div>
+<div class="line"> ├─ ⚙️ [358] ─ P1=10 P3=10 P6=3</div>
+<div class="line"> ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3</div>
+<div class="line"> ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
+<div class="line"> ├─ ⏱ 10&quot; 131ms         📋 500     ↻ 1       🛠️ 250     🖥️ 4</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  12&quot; 304ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  38&quot; 63ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  46&quot; 96ms ) ═══</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/tvetor3MPI1m0.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 46&quot; 92ms</div>
+<div class="line"> │  ⏱  CPU total: 3&#39; 4&quot; 369ms</div>
+<div class="line"> │  📊  Utilização: 60.3%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  46&quot; 103ms ) ═══</div>
+</div><!-- fragment --><p>O arranque dos processos veio misturado com a lista de configurações em teste, que o processo 0 estava a mostrar. O tempo de execução real foi de 46 segundos, mas o tempo total de execução foi de 3 minutos, e a utilização de 60%. Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas.</p>
 <p>Podemos observar que o processo 2 terminou pouco depois dos 10 segundos. O processo 0 é sempre o último a terminar, já que tem de no final juntar os ficheiros de resultados. Isso não significa que não tenha ficado parado à espera dos outros. Na verdade o processo 0 ficou de facto à espera, caso contrário teria reportado o estado da situação aos 20 segundos.</p>
 <p>Vamos agora ver o gestor-trabalhador, em que o trabalho ém falta é gerido centralmente.</p>
 <p>Linha de comando: mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</p>
-<div class="fragment"><div class="line">TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
+<div class="fragment"><div class="line">/TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
 <div class="line"> </div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 0) ══</div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 2) ══</div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 1) ══</div>
-<div class="line">📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
-<div class="line">══ 🧪  Início do Teste (🖥️ 3) ══</div>
-<div class="line">⏱ 10&quot; 51ms          📋 134     ↻ 3       🛠️ 292     🖥️ 3</div>
-<div class="line">⏱ 20&quot; 232ms         📋 231     ↻ 1       🛠️ 244     🖥️ 3</div>
-<div class="line">⏱ 30&quot; 389ms         📋 329     ↻ 1       🛠️ 195     🖥️ 3</div>
-<div class="line">⏱ 40&quot; 487ms         📋 428     ↻ 3       🛠️ 145     🖥️ 3</div>
-<div class="line">⏱ 50&quot; 577ms         📋 537     ↻ 1       🛠️ 91      🖥️ 3</div>
-<div class="line">⏱ 1&#39; 706ms          📋 615     ↻ 1       🛠️ 52      🖥️ 3</div>
-<div class="line">⏱ 1&#39; 10&quot; 871ms      📋 706     ↻ 3       🛠️ 6       🖥️ 3</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 3) 1&#39; 13&quot; 822ms  ══</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 2) 1&#39; 13&quot; 855ms  ══</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 1) 1&#39; 14&quot; 332ms  ══</div>
-<div class="line">📄 Ficheiro Resultados/tvetor3MPI1m1.csv gravado.</div>
-<div class="line">⏱ Tempo real: 1&#39; 14&quot; 339ms</div>
-<div class="line">⏱ CPU total: 3&#39; 43&quot; 16ms</div>
-<div class="line">⏱ Espera do gestor: 1&#39; 14&quot; 324ms</div>
-<div class="line">⏱ Espera trabalhadores: 1&quot; 1ms</div>
-<div class="line">📊 Utilização:</div>
-<div class="line">- Total: 74.7%</div>
-<div class="line">- Gestor: 0.0%</div>
-<div class="line">- Trabalhadores: 99.6%</div>
-<div class="line">══ 🏁  Fim do Teste (🖥️ 0) 1&#39; 14&quot; 339ms  ══</div>
-</div><!-- fragment --><p>Obteve-se uma taxa de utilização de 75%, superior aos 60% do método estático. O tempo real foi de 1 minuto, um valor idêntico à distribuição de trabalho estática, mesmo considerando que apenas 3 dos 4 processos processaram tarefas.</p>
-<p>Em relação aos 2 minutos iniciais, reduziu-se metade, tudo o resto permaneceu sem alterações. Quanto maior os testes e maior o número de processadores, maior será o ganho da execução MPI.</p>
+<div class="line"> ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 1) ═══</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 2) ═══</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 3) ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [3] ─ P1=3 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [4] ─ P1=4 P3=1 P6=1</div>
+<div class="line"> ├─ ⚙️ [5] ─ P1=5 P3=1 P6=1</div>
+<div class="line">...</div>
+<div class="line"> ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3</div>
+<div class="line"> ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
+<div class="line"> ├─ ⏱ 10&quot; 7ms           📋 186     ↻ 3       🛠️ 266     🖥️ 3</div>
+<div class="line"> ├─ ⏱ 20&quot; 37ms          📋 398     ↻ 3       🛠️ 160     🖥️ 3</div>
+<div class="line"> ├─ ⏱ 30&quot; 63ms          📋 590     ↻ 3       🛠️ 64      🖥️ 3</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  37&quot; 326ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  37&quot; 347ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  37&quot; 501ms ) ═══</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/tvetor3MPI1m1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 37&quot; 500ms</div>
+<div class="line"> │  ⏱  CPU total: 1&#39; 52&quot; 500ms</div>
+<div class="line"> │  ⏱  Espera do gestor: 37&quot; 492ms</div>
+<div class="line"> │  ⏱  Espera trabalhadores: 329ms</div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 74.8%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 99.7%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  37&quot; 500ms ) ═══</div>
+</div><!-- fragment --><p>Obteve-se uma taxa de utilização de 75%, superior aos 60% do método estático. O tempo real foi de 37 segundos, com tempo total de 2 minutos. É um valor idêntico à distribuição de trabalho estática, mesmo considerando que apenas 3 dos 4 processos processaram tarefas.</p>
+<p>Em relação aos 2 minutos iniciais, reduziu-se menos de metade, tudo o resto permaneceu sem alterações. Quanto maior os testes e maior o número de processadores, maior será o ganho da execução MPI.</p>
 <p>No entanto para isso precisamos de ter acesso a um cluster. Torna-se impraticável testes de volume utilizando computador próprio.</p>
 <p>A submissão de trabalhos num cluster, será alvo de um caso de estudo, para exemplificação.</p>
 <hr  />
