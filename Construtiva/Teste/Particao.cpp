@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-CParticao::CParticao(void)  
+CParticao::CParticao(void)
 {
 }
 
@@ -22,8 +22,7 @@ TProcuraConstrutiva* CParticao::Duplicar(void)
 
 void CParticao::Inicializar(void)
 {
-	TProcuraConstrutiva::Inicializar();
-	direita = esquerda = numeros = {}; 
+	direita = esquerda = numeros = {};
 	totalDireita = totalEsquerda = 0;
 
 	// gerar uma instancia provavelmente possivel
@@ -44,6 +43,7 @@ void CParticao::Inicializar(void)
 	numeros -= 0;
 	numeros.Sort();
 	tamanhoCodificado = 2; // apenas dois inteiro de 64 bits, para colocar 3 inteiros de 32 bits
+	TProcuraConstrutiva::Inicializar();
 }
 
 void CParticao::Sucessores(TVector<TNo>& sucessores)
@@ -83,45 +83,54 @@ const char* CParticao::Acao(TProcuraConstrutiva* sucessor) {
 
 void CParticao::Debug(bool completo)
 {
-	int i;
+	char str[256];
+	int i, col, total = 0;
+	for (auto numero : numeros)
+		total += numero;
+	snprintf(str, sizeof(str), "📦%d → ◀️%d = ▶️%d",
+		total, totalEsquerda, totalDireita);
 	NovaLinha();
-	printf("Colocar #%d: %d = %d",
-		numeros.Count(), totalEsquerda, totalDireita);
+	// apenas no modo completo mostra tudo
+	if (Parametro(NIVEL_DEBUG) < COMPLETO) {
+		MostraCaixa(str, ECaixaParte::Separador, 1, true, -2);
+		return;
+	}
+	MostraCaixa(str, ECaixaParte::Topo, 70, true, -2);
+	NovaLinha();
+	MostraCaixa("📦", ECaixaParte::Separador, 1, true, -2);
+	col = 2;
 	for (i = 0; i < numeros.Count(); i++) {
-		if (i % 4 == 0) {
+		col += printf(" %d", numeros[i]);
+		if (col > 60 && i < numeros.Count() - 1) {
+			col = 2;
 			NovaLinha();
-			printf("--- ");
+			MostraCaixa("📦", ECaixaParte::Separador, 1, true, -2);
 		}
-		printf("%3d ", numeros[i]);
-		if ((i + 1) % 4 == 0)
-			printf(" ---");
 	}
-	if (i % 4 != 0) {
-		while (i++ % 4 != 0)
-			printf("    ");
-		printf(" ---");
-	}
+	NovaLinha();
+	MostraCaixa("◀️", ECaixaParte::Separador, 1, true, -2);
+	col = 2;
 	for (i = 0; i < esquerda.Count(); i++) {
-		if (i % 4 == 0) {
+		col += printf(" %d", esquerda[i]);
+		if (col > 60 && i < numeros.Count() - 1) {
+			col = 2;
 			NovaLinha();
-			printf("    ");
+			MostraCaixa("◀️", ECaixaParte::Separador, 1, true, -2);
 		}
-		printf("%3d ", esquerda[i]);
-		if ((i + 1) % 4 == 0)
-			printf(" <<<");
 	}
-	if (i % 4 != 0) {
-		while (i++ % 4 != 0)
-			printf("    ");
-		printf(" <<<");
-	}
+	NovaLinha();
+	MostraCaixa("▶️", ECaixaParte::Separador, 1, true, -2);
+	col = 2;
 	for (i = 0; i < direita.Count(); i++) {
-		if (i % 4 == 0) {
+		col += printf(" %d", direita[i]);
+		if (col > 60 && i < numeros.Count() - 1) {
+			col = 2;
 			NovaLinha();
-			printf(">>> ");
+			MostraCaixa("▶️", ECaixaParte::Separador, 1, true, -2);
 		}
-		printf("%3d ", direita[i]);
 	}
+	NovaLinha();
+	MostraCaixa("", ECaixaParte::Fundo, 70, true, -2);
 }
 
 

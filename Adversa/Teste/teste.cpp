@@ -12,12 +12,12 @@ int main(int argc, char* argv[])
 	compat::init_io();
 
 #ifndef MPI_ATIVO
-	printf("\n\
-Teste TProcuraAdversa\nProblema:\n\
-  1 - Jogo do Galo\n\
-  2 - Jogo Em Linha\n\
-Opção: ");
-	int caso = TProcura::NovoValor("");
+	TProcura::MostraCaixa({
+		"Teste TProcuraAdversa",
+		"1 - Jogo do Galo",
+		"2 - Jogo Em Linha"
+		}, 30, false);
+	int caso = TProcura::NovoValor("\nOpção: ");
 #else
 	// não utilizar o stdin em programas MPI
 	if (argc < 2) {

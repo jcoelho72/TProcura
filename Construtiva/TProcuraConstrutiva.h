@@ -9,6 +9,7 @@ constexpr int TAMANHO_HASHTABLE = 1000000;
 constexpr int OBJETO_HASHTABLE = 5;
 
 class TProcuraConstrutiva;
+class CListaNo;
 
 /**
  * @brief Representa um nó na árvore de busca, apontando para um estado.
@@ -30,14 +31,14 @@ enum EIndicadoresConstrutiva {
  * @brief Identifica um parâmetro específico no código.
  *
  * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
- * Índice do vetor de parametros, na classe TProcuraConstrutiva. 
+ * Índice do vetor de parametros, na classe TProcuraConstrutiva.
  *
  * @note O último elemento (`parametrosConstrutivas`) não representa um parâmetro real.
  * Existe para permitir a criação de uma enumeração adicional em subclasses, caso
  * seja necessário adicionar parâmetros específicos.
  *
  * @see TParametro, ExecutaAlgoritmo()
- * 
+ *
  * @code
  * if(Parametro(nivelDebug) > passos)
  *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
@@ -75,14 +76,14 @@ enum EAlgoritmo {
 
 /**
  * @brief Enumerado com os valores possíveis do parametro estadosRepetidos
- * 
- * Os estados gerados que sejam repetidos, podem não ser removidos, ou podem ser 
+ *
+ * Os estados gerados que sejam repetidos, podem não ser removidos, ou podem ser
  * removidos se existir um ascendente igual, ou ainda serem guardados numa hashtable
- * de modo a serem removidos todos os estados gerados que sejam repetidos. 
- * 
+ * de modo a serem removidos todos os estados gerados que sejam repetidos.
+ *
  * @see Sucessores(), estadosRepetidos
  */
-enum EEstadosRepetidos { 
+enum EEstadosRepetidos {
 	IGNORADOS = 1, ///< ignorados os estados gerados repetidos
 	ASCENDENTES,   ///< estados são comparados com ascendentes, e se forem repetidos são removidos
 	GERADOS        ///< estados são comparados com todos os gerados, e se forem repetidos são removidos
@@ -93,15 +94,15 @@ enum EEstadosRepetidos {
  * @brief Representa um estado no espaço de estados.
  *
  * Esta classe base deve ser redefinida com um problema concreto,
- * permitindo a execução de procuras construtivas. 
+ * permitindo a execução de procuras construtivas.
  *
  * Para utilizar a classe, é necessário:
  * - Redefinir os métodos de duplicação e cópia de estados (Duplicar() e Copiar()).
  * - Implementar funções essenciais de procura: SolucaoVazia(), SolucaoCompleta(),
  *   Sucessores() e Debug().
- * 
+ *
  * Permite execução dos algoritmos:
- * - **Cegos**: LarguraPrimeiro(), CustoUniforme(), ProfundidadePrimeiro() 
+ * - **Cegos**: LarguraPrimeiro(), CustoUniforme(), ProfundidadePrimeiro()
  * - **Informados**: MelhorPrimeiro(), AStar(), IDAStar(), BranchAndBound()
  * - **Testes e avaliação**: TesteManual(), TesteEmpirico() --- definidos em TProcura
  *
@@ -121,12 +122,14 @@ public:
 	 * @{
 	 */
 
-	/// @brief Ponteiro para o estado pai, na árvore de procura.
+	 /// @brief Ponteiro para o estado pai, na árvore de procura.
 	TNo pai = NULL;
 	/// @brief Custo total acumulado desde o estado inicial.
 	int custo = 1;
 	/// @brief Estimativa para o custo até um estado objetivo, se disponível.
 	int heuristica = 0;
+	/// @brief ID do estado, para efeitos de debug
+	int debugID = 0;
 
 	/** @} */ // Fim do grupo VariaveisEstado 
 
@@ -192,7 +195,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void Copiar(TNo objecto) { }
+	virtual void Copiar(TNo objecto) {}
 
 	/**
 	 * @brief Coloca o objecto no estado inicial da procura.
@@ -224,20 +227,20 @@ public:
 	 * @endcode
 	 */
 
-	/**
-	 * @brief Redefinição. Ver TProcura::Inicializar().
-	 * @note Obrigatória a redefinição.
-	 *
-	 * Este método inicializa as variáveis de estado no estado inicial vazio.
-	 * Representa o estado inicial antes de qualquer ação ser realizada na procura.
-	 * 
-	 * @note Se a função Codifica() estiver implementada, o tamanho do estado codificado
-	 * deve ser determinado após o carregamento da instância, pois diferentes instâncias
-	 * podem exigir tamanhos distintos.
-	 *
-	 * @see Codifica()
-	 */
-	void Inicializar(void) override { TProcura::Inicializar(); custo = 0; }
+	 /**
+	  * @brief Redefinição. Ver TProcura::Inicializar().
+	  * @note Obrigatória a redefinição.
+	  *
+	  * Este método inicializa as variáveis de estado no estado inicial vazio.
+	  * Representa o estado inicial antes de qualquer ação ser realizada na procura.
+	  *
+	  * @note Se a função Codifica() estiver implementada, o tamanho do estado codificado
+	  * deve ser determinado após o carregamento da instância, pois diferentes instâncias
+	  * podem exigir tamanhos distintos.
+	  *
+	  * @see Codifica()
+	  */
+	void Inicializar(void) override { TProcura::Inicializar(); custo = 0; ramo = {}; }
 
 	/**
 	 * @brief Coloca em sucessores a lista de estados sucessores
@@ -302,76 +305,76 @@ public:
 	 */
 	virtual bool SolucaoCompleta(void) { return false; }
 
-	 /**
-	  * @brief Redefinição. Ver TProcura::ResetParametros().
-	  */
+	/**
+	 * @brief Redefinição. Ver TProcura::ResetParametros().
+	 */
 	void ResetParametros() override;
 
-	 /** @} */ // Fim do grupo RedefinicaoMandatoria
+	/** @} */ // Fim do grupo RedefinicaoMandatoria
+
+   /**
+	* @defgroup RedefinicaoSugerida Métodos para redefinir, sugeridos
+	* Métodos de redefinição aconselhados a uma boa implementação
+	* @{
+	*/
 
 	/**
-	 * @defgroup RedefinicaoSugerida Métodos para redefinir, sugeridos
-	 * Métodos de redefinição aconselhados a uma boa implementação
-	 * @{
+	 * @brief Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor
+	 * @note Redefinição opcional.
+	 * @param sucessor - estado filho deste, cuja ação deve ser identificada
+	 * @return texto identificando a ação, pode ser uma constante
+	 *
+	 * Este método não é crítico, mas é importante para se poder visualizar ações.
+	 * Se este método não for redefinido, a interface mostrará apenas os estados completos,
+	 * sem detalhar as ações que os geraram.
+	 *
+	 * Durante a exploração manual do espaço de estados, permitir que ações sejam fornecidas
+	 * diretamente, ao invés de depender do ID do sucessor, facilita testes e integração com outros sistemas.
+	 * Esta situação é vantajosa, para permitir introduzir uma sequência de ações, que eventualmente
+	 * venha de outro programa, permitindo assim a validação da solução.
+	 *
+	 * @code
+	 * const char* CSubProblema::Acao(TNo sucessor) {
+	 *     CSubProblema& filho = *((CSubProblema*)sucessor);
+	 *     // determinar pela diferença das variáveis de estado, a ação
+	 *     // exemplo de ações hipotéticas de manter, incrementar ou decrementar o valor da variável
+	 *     if(variavel == filho.variavel)
+	 *         return "manter";
+	 *     if(variavel == filho.variavel + 1)
+	 *         return "inc";
+	 *     if(variavel == filho.variavel - 1)
+	 *         return "dec";
+	 *     return "Inválida";
+	 * }
+	 * @endcode
 	 */
-
-	 /**
-	  * @brief Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor
-	  * @note Redefinição opcional.
-	  * @param sucessor - estado filho deste, cuja ação deve ser identificada
-	  * @return texto identificando a ação, pode ser uma constante
-	  *
-	  * Este método não é crítico, mas é importante para se poder visualizar ações.
-	  * Se este método não for redefinido, a interface mostrará apenas os estados completos,
-	  * sem detalhar as ações que os geraram.
-	  *
-	  * Durante a exploração manual do espaço de estados, permitir que ações sejam fornecidas
-	  * diretamente, ao invés de depender do ID do sucessor, facilita testes e integração com outros sistemas.
-	  * Esta situação é vantajosa, para permitir introduzir uma sequência de ações, que eventualmente
-	  * venha de outro programa, permitindo assim a validação da solução.
-	  *
-	  * @code
-	  * const char* CSubProblema::Acao(TNo sucessor) {
-	  *     CSubProblema& filho = *((CSubProblema*)sucessor);
-	  *     // determinar pela diferença das variáveis de estado, a ação
-	  *     // exemplo de ações hipotéticas de manter, incrementar ou decrementar o valor da variável
-	  *     if(variavel == filho.variavel)
-	  *         return "manter";
-	  *     if(variavel == filho.variavel + 1)
-	  *         return "inc";
-	  *     if(variavel == filho.variavel - 1)
-	  *         return "dec";
-	  *     return "Inválida";
-	  * }
-	  * @endcode
-	  */
 	virtual const char* Acao(TNo sucessor) { return "ação inválida"; }
 
-    /**
+	/**
 	 * @brief Codifica o estado para um vetor de inteiros de 64 bits
 	 * @note Redefinição opcional. Necessário para identificação de estados repetidos por hashtable.
 	 *
 	 * As variáveis de estado devem ser compactadas no vetor de inteiros de 64 bits.
-	 * Todos os estados codificados têm de ser distintos de 0. Estados distintos, têm de 
-	 * ficar com codificações distintas. 
-	 * 
+	 * Todos os estados codificados têm de ser distintos de 0. Estados distintos, têm de
+	 * ficar com codificações distintas.
+	 *
 	 * Em diversos problemas, um mesmo estado pode ter múltiplas representações equivalentes.
 	 * Por exemplo, se um conjunto de inteiros for um estado, este pode ser  representado em vetor.
 	 * No entanto a ordem é irrelevante, dado que é um conjunto.
 	 * Assim não faz sentido guardar vários estados que sejam representações do mesmo estado.
-	 * Há que normalizar o estado antes de o guardar, de modo a que seja dado como estado repetido, 
+	 * Há que normalizar o estado antes de o guardar, de modo a que seja dado como estado repetido,
 	 * se uma das duas formas já tiver sido gerada.
 	 * O exemplo do conjunto de inteiros, a normalização pode ser a ordenação do vetor,
 	 * constituindo assim um estado único entre todas as formas que o conjunto pode ser representado em vetor.
 	 * Problemas de tabuleiro, há simetrias que podem gerar várias versões da mesma posição.
-	 * 
+	 *
 	 * @note Se a verificação de estados repetidos for baseada em hashtables,
 	 * a superclasse chama este método dentro de `Sucessores()`.
 	 * @note Para otimizar o consumo de memória, são utilizadas hashtables com perdas.
 	 * Se necessário pode alterar o tamanho da hashtable editando a macro TAMANHO_HASHTABLE
 	 * @note a variável tamanhoCodificado tem de ter o número de variáveis de 64 bits utilizadas,
 	 * garantindo que o vetor estado[] não é acedido na posição tamanhoCodificado ou superior.
-	 * 
+	 *
 	 * @see Inicializar()
 	 *
 	 * @code
@@ -394,33 +397,33 @@ public:
 	 * @return Retorna a melhor estimativa, sem ultrapassar a real, do custo do estado atual até ao objetivo.
 	 *
 	 * A função heurística é crítica para utilizar os algoritmos informados.
-	 * Deve devolver uma estimativa sem ultrapassar o custo real, 
-	 * do custo que falta para atingir o estado objetivo mais próximo do estado atual. 
-	 * Se a estimativa não ultrapassar o custo real, a heurística será **admissível**. 
-	 * No entanto, em alguns casos, heurísticas **não admissíveis** podem ser utilizadas, 
+	 * Deve devolver uma estimativa sem ultrapassar o custo real,
+	 * do custo que falta para atingir o estado objetivo mais próximo do estado atual.
+	 * Se a estimativa não ultrapassar o custo real, a heurística será **admissível**.
+	 * No entanto, em alguns casos, heurísticas **não admissíveis** podem ser utilizadas,
 	 * podendo acelerar a procura, mesmo que ocasionalmente levem a resultados subótimos.
-	 * 
-	 * No final, chame a função heurística da superclasse para atualizar as estatísticas 
-	 * e o número de avaliações. Se estiver configurado, esse processo também pode introduzir 
+	 *
+	 * No final, chame a função heurística da superclasse para atualizar as estatísticas
+	 * e o número de avaliações. Se estiver configurado, esse processo também pode introduzir
 	 * ruído na heurística, o que pode impactar certos algoritmos de procura.
-	 * 
-	 * Esta função pretende-se rápida, e o mais próxima possível do valor real, sem ultrapassar. 
-	 * 
+	 *
+	 * Esta função pretende-se rápida, e o mais próxima possível do valor real, sem ultrapassar.
+	 *
 	 * @note Num problema, existindo alternativas, umas mais rápidas menos precisas,
 	 * outras mais lentas mais precisas, é aconselhada a criação de um ou mais parametros
-	 * para que a heurística possa ser calculada de acordo com o parametro definido. 
+	 * para que a heurística possa ser calculada de acordo com o parametro definido.
 	 * Em fase de testes logo se averigua qual a versão que adiciona mais vantagem à procura.
-	 * 
-	 * @note Uma heurística pode resultar de um relaxamento do problema. Verifique se 
+	 *
+	 * @note Uma heurística pode resultar de um relaxamento do problema. Verifique se
 	 * o problema sem uma das restrições (fazendo batota), se consegue resolver mais facilmente.
 	 * Utilize como heurística o custo de resolver o problema sem essa restrição.
-	 * 
+	 *
 	 * @code
 	 * void CSubProblema::Heuristica(void)
 	 * {
 	 *     heuristica = 0; // ponto de partida, há 0 de custo
 	 *     // utilizar neste exemplo a distância até 1000, local onde estará o objetivo
-	 *     heuristica = abs(variavel - 1000); 	
+	 *     heuristica = abs(variavel - 1000);
 	 *     // chamar a função heurística da superclass
 	 *     return TProcuraConstrutiva::Heuristica();
 	 * }
@@ -429,13 +432,13 @@ public:
 	virtual int Heuristica(void);
 
 
-	 /** @} */ // Fim do grupo RedefinicaoSugerida
+	/** @} */ // Fim do grupo RedefinicaoSugerida
 
-	/**
-	 * @defgroup RedefinicaoOpcional Métodos desnecessários redefinir
-	 * Métodos que não precisam ser redefinidos para uma implementação eficaz
-	 * @{
-	 */
+   /**
+	* @defgroup RedefinicaoOpcional Métodos desnecessários redefinir
+	* Métodos que não precisam ser redefinidos para uma implementação eficaz
+	* @{
+	*/
 
 	/**
 	 * @brief Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual.
@@ -445,8 +448,8 @@ public:
 	 *
 	 * @note A implementação gera os sucessores, e vê qual o que corresponde à ação fornecida.
 	 * Copia o estado correspondente para o atual, ou retorna falso caso a ação não seja possível.
-	 * O método não é eficiente, mas também não utilizado pelos algoritmos, apenas na interface. 
-	 * Caso exista um motivo para que seja eficiente, deve ser implementada uma versão mais eficiente 
+	 * O método não é eficiente, mas também não utilizado pelos algoritmos, apenas na interface.
+	 * Caso exista um motivo para que seja eficiente, deve ser implementada uma versão mais eficiente
 	 * para cada problema, tendo em atenção a sua coerência com a função Sucessores().
 	 */
 	virtual bool Acao(const char* acao);
@@ -459,8 +462,8 @@ public:
 	 * @return Retorna verdadeiro se o estado é distinto, e falso se é igual
 	 *
 	 * Compara as variáveis de estado para determinar se dois estados são iguais ou diferentes.
-	 * 
-	 * @note Se a verificação de estados repetidos for baseada na análise de ascendentes, 
+	 *
+	 * @note Se a verificação de estados repetidos for baseada na análise de ascendentes,
 	 * a superclasse chama este método dentro de `Sucessores()`.
 	 *
 	 * @code
@@ -475,12 +478,12 @@ public:
 
 	/**
 	 * @brief Mostrar solução, seja um caminho ou o próprio estado
-	 * @note Redefinição opcional. 
-	 * 
-	 * Esta função exibe a solução, mostrando um estado a cada X ações 
-	 * e exibindo as ações entre os estados. O valor padrão de `X` é 4, 
+	 * @note Redefinição opcional.
+	 *
+	 * Esta função exibe a solução, mostrando um estado a cada X ações
+	 * e exibindo as ações entre os estados. O valor padrão de `X` é 4,
 	 * ajustável pelo parâmetro `Parametro(VER_ACOES)`.
-	 * 
+	 *
 	 * @note Em problemas onde seja simples de seguir a ação, pode-se utilizar valores maiores, sem
 	 * ser necessário mostrar muitos estados completos. Em problemas que as ações sejam mais complexas,
 	 * ou alterem mais o estado, poderá ser até preferível colocar este valor a 1, para que o estado
@@ -488,11 +491,11 @@ public:
 	 *
 	 * @note Há problemas em que o estado é já a solução. Neste caso pode-se redefinir esta função
 	 * chamando a função Debug().
-	 * 
+	 *
 	 * @note Em situações particulares, poderá ser possível construir a solução de forma
 	 * mais compacta, num único estado com as ações todas codificadas, por exemplo um caminho
-	 * num mapa. Nesse caso há que redefinir este método, implementando a visualização da solução de raiz. 
-	 * 
+	 * num mapa. Nesse caso há que redefinir este método, implementando a visualização da solução de raiz.
+	 *
 	 * @code
 	 * void CSubProblema::MostrarSolucao(void)
 	 * {
@@ -534,20 +537,20 @@ public:
 
 	 /**
 	  * @brief Executa a procura em largura primeiro, algoritmo cego.
-	  * @param limite Com valor 0, executa sem limite. Se maior que 0, 
+	  * @param limite Com valor 0, executa sem limite. Se maior que 0,
 	  * os estados não expandidos são limitados a este valor.
 	  * @return Retorna o valor da solução, ou -1 em caso de falha.
 	  *
-	  * O algoritmo expande primeiro os estados mais antigos. 
+	  * O algoritmo expande primeiro os estados mais antigos.
 	  * Assim, somente após todos os estados de nível K serem expandidos,
 	  * os estados de nível K+1 começam a ser expandidos.
 	  *
-	  * Caso o custo de cada ação seja unitário, o algoritmo retorna a solução ótima. 
+	  * Caso o custo de cada ação seja unitário, o algoritmo retorna a solução ótima.
 	  * Se o custo for variável, pode não retornar a solução ótima.
 	  *
-	  * @note Se o limite de número de estados for atingido, 
+	  * @note Se o limite de número de estados for atingido,
 	  * os estados gerados mais recentemente são removidos.
-	  * 
+	  *
 	  * @see EAlgoritmo, ExecutaAlgoritmo();
 	  */
 	int LarguraPrimeiro(int limite = 0);
@@ -558,8 +561,8 @@ public:
 	 * @param limite Com valor 0, executa sem limite. Se maior que 0, limita os estados gerados não expandidos a esse valor.
 	 * @return Retorna o valor da solução, ou -1 em caso de falha.
 	 *
-	 * Semelhante à procura em largura, mas os estados são ordenados pelo custo. 
-	 * Dessa forma, os estados de menor custo são expandidos antes dos de custo maior, 
+	 * Semelhante à procura em largura, mas os estados são ordenados pelo custo.
+	 * Dessa forma, os estados de menor custo são expandidos antes dos de custo maior,
 	 * o que preserva a optimalidade mesmo quando os custos são variáveis.
 	 *
 	 * @note Se o limite de número de estados for atingido, os estados gerados mais recentemente são removidos.
@@ -575,10 +578,10 @@ public:
 	 *              Se um valor positivo, efetua a procura limitada a esse nível de profundidade.
 	 * @return Retorna o valor da solução, ou -1 em caso de falha.
 	 *
-	 * O algoritmo expande os estados mais recentes primeiro, explorando em profundidade 
+	 * O algoritmo expande os estados mais recentes primeiro, explorando em profundidade
 	 * antes de avaliar os estados vizinhos.
 	 * Não garante a solução ótima e está implementada na versão recursiva.
-	 * 
+	 *
 	 * @see EAlgoritmo, ExecutaAlgoritmo();
 	 */
 	int ProfundidadePrimeiro(int nivel = 0);
@@ -676,7 +679,7 @@ public:
 	 * @{
 	 */
 
-	/// @brief Solução retornada pela procura (os estados devem ser libertados).
+	 /// @brief Solução retornada pela procura (os estados devem ser libertados).
 	static TVector<TNo> caminho;
 	/// @brief Estado objetivo encontrado, retornado pela procura (deve ser libertado).
 	static TNo solucao;
@@ -690,9 +693,7 @@ public:
 	static int geracoes;
 
 	/// @internal Auxiliar para a construção da árvore de procura.
-	static TVector<unsigned char> ramo;
-	/// @internal Espaçamento entre os ramos na árvore de debug.
-	static int espacosRamo;
+	static TVector<const char*> ramo;
 
 	/** @} */ // Fim do grupo VariaveisGlobais
 
@@ -711,22 +712,38 @@ protected:
 	// Métodos para visualizar a procura
 
 	// Método para ser chamado antes de analisar cada sucessor
-	void DebugExpansao(int sucessor, int sucessores, bool duplo = false);
+	void DebugExpansao(int sucessor, int sucessores, bool minimizar = true);
 	// Método para ser chamado quando não há sucessores ou há um corte de profundidade
 	void DebugCorte(int sucessores = -1, bool duplo = false);
 	// Encontrou uma solução
 	void DebugSolucao(bool continuar = false);
 	// Informação de debug na chamada ao método recursivo
-	void DebugChamada(void);
+	void DebugChamada();
 	// Passo no algoritmo em largura
-	void DebugPasso(void);
+	void DebugPasso(CListaNo* lista = NULL);
 	// Mostrar sucessores
 	void DebugSucessores(TVector<TNo>& sucessores);
 	// uma nova iteração de um algoritmo iterativo
-	void DebugIteracao(int iteracao);
+	void DebugIteracao(int iteracao, const char* simbolo);
 	// informação geral sobre o estado 
-	void DebugEstado(int id = -1, int pai = -1) const;
-	void DebugRamo(char ramo, char folha);
+	void DebugEstado(bool novaLinha = true) const;
+	void DebugRamo(const char* ramo, const char* folha);
+	void DebugConjunto(TVector<int> valores, const char* etiqueta);
+	void DebugFolha(bool fimLinha, const char* fmt, ...) {
+		if (Parametro(NIVEL_DEBUG) >= DETALHE) {
+			if(fimLinha)
+				ramo.Last() = " └─";
+			NovaLinha();
+		}
+		else 
+			Debug(PASSOS, true, " ─── ");
+		if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+			va_list args;
+			va_start(args, fmt);
+			vprintf(fmt, args);
+			va_end(args);
+		}
+	}
 
 	// metodos internos
 	int ObjetivoAlcancado(int item, TVector<TNo>& lista);
@@ -735,7 +752,7 @@ protected:
 	void CalculaCaminho(bool completa = true); // coloca o caminho desde o estado objetivo
 	void VerificaLimites(int limite, int porProcessar, TVector<TNo>& sucessores);
 	void CalcularHeuristicas(TVector<TNo>& sucessores, TVector<int>* id = NULL, bool sortLB = false);
-	int SolucaoParcial(int i, TVector<TNo>& sucessores);
+	int SolucaoParcial(int i, TVector<TNo>& sucessores, int iAux=-1, TVector<int> *id=NULL);
 	void Explorar();
 	void MostrarCaminho();
 

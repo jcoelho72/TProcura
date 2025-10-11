@@ -23,12 +23,12 @@ TProcuraConstrutiva* CAspirador::Duplicar(void)
 
 void CAspirador::Inicializar(void)
 {
-	TProcuraConstrutiva::Inicializar();
 	salas.Count(instancia.valor);
 	for (int i = 0; i < salas.Count(); i++) 
 		salas[i] = (TRand::rand() % 2 ? '.' : '*');
 	aspirador = TRand::rand() % salas.Count();
 	tamanhoCodificado = 1; // dá já para bastantes salas
+	TProcuraConstrutiva::Inicializar();
 }
 
 void CAspirador::ResetParametros()

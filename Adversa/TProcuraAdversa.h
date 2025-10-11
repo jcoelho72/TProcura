@@ -82,6 +82,8 @@ public:
 	// @brief chamar em CSubProblema::Heuristica() para verificar se a heurística já existe, ou precisa de ser calculada
 	bool ExisteHeuritica(void);
 
+	void Sucessores(TVector<TNo>& sucessores);
+
 
 	/**
 	 * @brief Utilitário para calculo de uma heurística standard em jogos simples
@@ -123,4 +125,6 @@ protected:
 	bool Utilizavel(TValorEstado& valor, int nivel, int alfa, int beta);
 
 	static int reutilizadoAvaliacao; // número de vezes que uma avaliação é reutilizada
+
+	void DebugChamada(int alfa=0, int beta=0);
 };

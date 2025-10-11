@@ -50,6 +50,40 @@ void TProcuraAdversa::ResetParametros()
 }
 
 
+void TProcuraAdversa::Sucessores(TVector<TNo>& sucessores) {
+	TProcuraConstrutiva::Sucessores(sucessores);
+	if (Parametro(NIVEL_DEBUG) >= PASSOS && !sucessores.Empty()) {
+		if (minimizar)
+			ramo.Push(" ├□");
+		else
+			ramo.Push(" ├■");
+	}
+}
+
+void TProcuraAdversa::DebugChamada(int alfa, int beta) {
+	bool raiz = (ramo.Count() <= 1);
+
+	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
+		printf("#");
+	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+		if (raiz)
+			ramo.First() = (minimizar ? " ├□" : " ├■");
+		NovaLinha(true);
+		ramo.Last() = (ramo.Last() == " ├■" || ramo.Last() == " ├□" ? " │ " : "   ");
+		ramo.First() = " │ ";
+		DebugEstado(false);
+		if (alfa || beta)
+			printf(" α=%d β=%d ═══", alfa, beta);
+		if (pai != NULL)
+			printf(" ⚡%s", pai->Acao(this)); // mostra sempre a ação
+		if (Parametro(NIVEL_DEBUG) >= DETALHE &&
+			(Parametro(VER_ACOES) == 1 || pai == NULL) ||
+			Parametro(NIVEL_DEBUG) >= COMPLETO)
+			Debug();
+	}
+}
+
+
 ///////////////////////////////////////////////////////////////////////////////
 // Algoritmo MiniMax
 ///////////////////////////////////////////////////////////////////////////////
@@ -78,8 +112,8 @@ int TProcuraAdversa::MiniMax(int nivel)
 
 	int resultado = 0, melhor = -1;
 	// processar os sucessores
-	for (int i = 0; i < sucessores.Count(); i++) {
-		DebugExpansao(i, sucessores.Count(), minimizar);
+	for (int i = 0; i < id.Count(); i++) {
+		DebugExpansao(i, id.Count(), minimizar);
 		int valor;
 		TValorEstado valorConhecido;
 
@@ -87,6 +121,10 @@ int TProcuraAdversa::MiniMax(int nivel)
 			valorConhecido.nivel >= nivel)
 		{
 			valor = valorConhecido.valor;
+			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada();
+				DebugFolha(false, "💾 %d", valor);
+			}
 		}
 		else {
 			// chamada recursiva, com um nível a menos, idêntico à procura em profundidade
@@ -100,11 +138,22 @@ int TProcuraAdversa::MiniMax(int nivel)
 			resultado = valor;
 			melhor = id[i];
 			if (nivel > 1 && Parametro(NIVEL_DEBUG) >= PASSOS) { // colocar valor actual alterado
+				ramo.Last() = (minimizar ? " ├■" : " ├□");
 				NovaLinha();
-				printf("(%d)", resultado);
+				printf(" %d", resultado);
 			}
-			if (minimizar ? resultado <= custo + 1 - infinito : resultado >= infinito - custo - 1)
+			// caso de vitória/derrota
+			if (minimizar ? resultado <= custo + 1 - infinito : resultado >= infinito - custo - 1) {
+				DebugFolha(true, (resultado < 0 ? " ☖ %d" : " ☗ %d"), custo);
+				// listar os nós não explorados
+				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+					TVector<int> valores;
+					for (int j = i + 1; j < id.Count(); j++)
+						valores += sucessores[id[j]]->debugID;
+					DebugConjunto(valores, "🔖");
+				}
 				break; // nao e possivel melhorar
+			}
 		}
 	}
 	// todos os sucessores analizados, se houver uma solução melhor, retornar
@@ -245,10 +294,7 @@ int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int max
 
 // fim da procura, por corte de nível (ou não haver sucessores), retornar heurística
 int TProcuraAdversa::NoFolha(bool nivel) {
-	int resultado;
-	DebugCorte(nivel ? -1 : 0, minimizar);
-
-	resultado = Heuristica();
+	int resultado = Heuristica();
 
 	if (resultado >= infinito) {
 		resultado = infinito - custo; // subtrair
@@ -266,7 +312,7 @@ int TProcuraAdversa::NoFolha(bool nivel) {
 		// a maximizar, entre 10 e 20, irá preferir 20, sempre é maior
 		// a minimizar, entre 10 e 20, irá preferir 10 que é menor
 	}
-	Debug(PASSOS, false, "%d", resultado);
+	DebugFolha(false, "🍃 %d", resultado);
 	return resultado;
 }
 
@@ -277,7 +323,7 @@ int TProcuraAdversa::NoFolha(bool nivel) {
 // idêntico a MiniMax
 int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 {
-	DebugChamada();
+	DebugChamada(alfa, beta);
 	if (nivel == 1 || Parar()) {
 		completo = false;
 		return NoFolha(true);
@@ -295,8 +341,8 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 	OrdenarSucessores(sucessores, id, nivel);
 
 	int resultado = 0, melhor = -1;
-	for (int i = 0; i < sucessores.Count(); i++) {
-		DebugExpansao(i, sucessores.Count(), minimizar);
+	for (int i = 0; i < id.Count(); i++) {
+		DebugExpansao(i, id.Count(), minimizar);
 		int valor;
 		TValorEstado valorConhecido;
 
@@ -304,6 +350,10 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 			Utilizavel(valorConhecido, nivel, alfa, beta))
 		{
 			valor = valorConhecido.valor;
+			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(alfa, beta);
+				DebugFolha(false, "💾 %d", valor);
+			}
 		}
 		else {
 			// chamada recursiva, com um nível a menos, idêntico à procura em profundidade
@@ -321,15 +371,23 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 			resultado = valor;
 			melhor = id[i];
 			if (nivel > 1 && Parametro(NIVEL_DEBUG) >= PASSOS) {
-				// colocar valor actual alterado
+				ramo.Last() = (minimizar ? " ├■" : " ├□");
 				NovaLinha();
-				printf("(%d)", resultado);
+				printf(" %d", resultado);
 			}
 		}
 		// corte alfa/beta bem como atualização
 		if (i < sucessores.Count() - 1) { // nao interessa cortar quando não há mais nada para cortar
-			if (CorteAlfaBeta(resultado, alfa, beta))
+			if (CorteAlfaBeta(resultado, alfa, beta)) {
+				// listar os nós não explorados
+				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+					TVector<int> valores;
+					for (int j = i + 1; j < id.Count(); j++)
+						valores += sucessores[id[j]]->debugID;
+					DebugConjunto(valores, "🔖");
+				}
 				break;
+			}
 		}
 	}
 	if (melhor >= 0) {
@@ -354,38 +412,37 @@ bool TProcuraAdversa::Utilizavel(TValorEstado& valor, int nivel, int alfa, int b
 bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 	if (minimizar) { // pretas
 		// ver se ja e maximo
-		if (valor <= custo + 1 - infinito)
+		if (valor <= custo + 1 - infinito) {
+			DebugFolha(true, "☖ %d", custo);
 			return true;
+		}
 		if (alfa >= valor) {
 			// corte alfa
-			if (Parametro(NIVEL_DEBUG) > ATIVIDADE) {
-				// substituir o ultimo caracter por um corte
-				ramo.Last() = '>';
-				NovaLinha();
-				printf(" alfa(%d)", alfa);
-			}
+			DebugFolha(true, "🪓 α(%d)", alfa);
 			return true; // as brancas tem uma alternativa, e escusado continuar a procurar aqui
 		}
 		// atualização beta
-		if (beta > valor)
+		if (beta > valor) {
 			beta = valor;
+			Debug(PASSOS, false, " → β");
+		}
 	}
 	else { // brancas
 		// ver se atingiu o maximo
-		if (valor >= infinito - custo - 1)
+		if (valor >= infinito - custo - 1) {
+			DebugFolha(true, "☗ %d", custo);
 			return true;
+		}
 		if (beta <= valor) {
 			// corte beta
-			if (Parametro(NIVEL_DEBUG) > ATIVIDADE) {
-				ramo.Last() = '>';
-				NovaLinha();
-				printf(" beta(%d)", beta);
-			}
+			DebugFolha(true, "🪓 β(%d)", beta);
 			return true; // as pretas tem uma alternativa, e escusado continuar a procurar aqui
 		}
 		// atualização alfa
-		if (alfa < valor)
+		if (alfa < valor) {
 			alfa = valor;
+			Debug(PASSOS, false, " → α");
+		}
 	}
 	// não há corte
 	return false;

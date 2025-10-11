@@ -121,14 +121,12 @@ public:
 		for (int i = 0; i < nElementos; i++) {
 			printf("\n");
 			for (int j = 0; j < nElementos; j++) {
-				int cor = ((i + j) % 2 ? ' ' : ':');
 				if (estado.Count() > i && estado[i] == j)
-					printf("%c%c", '#', '#');
+					printf("%2s", "♛ "); //"♛ ");
 				else
-					printf("%c%c", cor, cor);
+					printf("%s", ((i + j) % 2 ? "  " : "::" )); // "▒▒" "::" "░░"
 			}
 		}
-		printf("\n");
 	}
 
 };
@@ -182,14 +180,12 @@ public:
 		for (int i = 0; i < nElementos; i++) {
 			printf("\n");
 			for (int j = 0; j < nElementos; j++) {
-				int cor = ((i + j) % 2 ? ' ' : ':');
 				if (estado.Count() > i && estado[i] == j)
-					printf("%c%c", '#', '#');
+					printf("%2s", "♛ "); //"♛ ");
 				else
-					printf("%c%c", cor, cor);
+					printf("%s", ((i + j) % 2 ? "  " : "::")); // "▒▒" "::" "░░"
 			}
 		}
-		printf("\n");
 	}
 
 };

@@ -13,16 +13,14 @@ int main(int argc, char* argv[])
 	compat::init_io();
 
 #ifndef MPI_ATIVO
-	printf("\n\
-Teste TProcuraMelhorativa\nProblema:\n\
-  1 - 8 Damas\n\
-  2 - 8 Damas Inteira\n\
-  3 - 8 Damas Permutacao\n\
-  4 - Partição\n\
-  5 - Partição Binária\n\
-  6 - Artificial\n\
-Opção: ");
-	int caso = TProcura::NovoValor("");
+	TProcura::MostraCaixa({
+		"Teste TProcuraMelhorativa",
+		"1 - 8 Damas (Inteira)",
+		"2 - 8 Damas (Permutacao)",
+		"3 - Partição (Binária)"
+		}, 30, false);
+	int caso = TProcura::NovoValor("\nOpção: ");
+
 #else
 	// não utilizar o stdin em programas MPI
 	if (argc < 2) {
@@ -43,12 +41,9 @@ Teste TProcuraMelhorativa\nProblema:\n\
 
 
 	switch (caso) {
-	case 1:	COitoDamas().main(argc, argv, "8 Damas"); break;
-	case 2:	COitoDamasCI().main(argc, argv, "8 Damas Inteira"); break;
-	case 3:	COitoDamasCP().main(argc, argv, "8 Damas Permutação"); break;
-	case 4:	CParticao().main(argc, argv, "Partição"); break;
-	case 5: CParticaoCB().main(argc, argv, "Partição Binária"); break;
-	case 6:	CProblemaArtificial().main(argc, argv, "Artificial"); break;
+	case 1:	COitoDamasCI().main(argc, argv, "8 Damas (Inteira)"); break;
+	case 2:	COitoDamasCP().main(argc, argv, "8 Damas (Permutação)"); break;
+	case 3: CParticaoCB().main(argc, argv, "Partição (Binária)"); break;
 	default: printf("Problema não implementado.");
 	}
 

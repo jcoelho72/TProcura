@@ -25,7 +25,6 @@ TNo CProblemaArtificial::Duplicar(void)
 
 void CProblemaArtificial::Inicializar(void)
 {
-	TProcuraConstrutiva::Inicializar();
 	// acertar as variáveis estáticas, com a instância
 	CarregaInstancia();
 
@@ -34,6 +33,7 @@ void CProblemaArtificial::Inicializar(void)
 	heur = 0;
 
 	tamanhoCodificado = 1; 
+	TProcuraConstrutiva::Inicializar();
 }
 
 // gerar os sucessores de acordo com a instância, de forma aleatória
@@ -87,11 +87,21 @@ const char* CProblemaArtificial::Acao(TProcuraConstrutiva* sucessor) {
 	return str; 
 }
 
-
 void CProblemaArtificial::Debug(bool completo)
 {
+	unsigned int idaux = id;
 	NovaLinha();
-	printf("--<([%u])>--", id);
+	printf(" ");
+	for (int i = 0; i < 4; i++) {
+		DebugHSL((idaux & 0xff) * 360.0f / 256.0f);
+		printf("%02X",idaux & 0xff);
+		idaux >>= 8;
+		if (i < 3) {
+			DebugHSL();
+			printf("-");
+		}
+	}
+	DebugHSL();
 }
 
 bool CProblemaArtificial::SolucaoCompleta(void)

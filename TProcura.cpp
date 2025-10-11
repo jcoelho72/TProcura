@@ -145,7 +145,7 @@ void TProcura::TesteManual(const char* nome)
 			tempo = Cronometro(CONT_ALGORITMO);
 			ExecucaoTerminada();
 			InserirRegisto(resultados, instancia.valor, 0);
-			printf("\n═╧═ 🏁  Execução terminada (⏱  %s) ═══",
+			printf("\n═╧═ 🏁  Execução terminada ⏱  %s ═══",
 				MostraTempo(Cronometro(CONT_ALGORITMO)));
 			break;
 		case 7: EditarConfiguracoes(); break;
@@ -224,21 +224,32 @@ void TProcura::MostraCaixa(TVector<const char*> titulo, ECaixaParte parte, TVect
 
 void TProcura::MostraCaixa(const char* titulo, ECaixaParte parte, int largura, bool aberta, int identacao) {
 	// início da caixa ou linha de separação ou fim da caixa
+	bool novaLinha = true;
 	if (!titulo)
 		titulo = "";
+	if (identacao < 0) {
+		novaLinha = false;
+		identacao = -identacao - 1;
+	}
 	unsigned int len = (unsigned int)(
 		parte == ECaixaParte::Fundo ?
-		largura :
+		largura - (titulo[0] == 0 ? 0 : compat::ContaUTF8(titulo) - 4) :
 		largura - compat::ContaUTF8(titulo) - (parte == ECaixaParte::Meio ? 1 : 4));
 
 	if (len > 100)
 		len = 0;
 
+	if (novaLinha)
+		printf("\n");
 	switch (parte) {
-	case ECaixaParte::Topo: printf("\n%*s┌─ %s ─", identacao, "", titulo); break;
-	case ECaixaParte::Separador: printf("\n%*s├─ %s ─", identacao, "", titulo); break;
-	case ECaixaParte::Meio: printf("\n%*s│ %s", identacao, "", titulo); break;
-	case ECaixaParte::Fundo: printf("\n%*s└", identacao, ""); break;
+	case ECaixaParte::Topo: printf("%*s┌─ %s ─", identacao, "", titulo); break;
+	case ECaixaParte::Separador: printf("%*s├─ %s ─", identacao, "", titulo); break;
+	case ECaixaParte::Meio: printf("%*s│ %s", identacao, "", titulo); break;
+	case ECaixaParte::Fundo:
+		printf("%*s└", identacao, "");
+		if (titulo[0] != 0) // texto a ser inserido no fundo
+			printf("─ %s ─", titulo);
+		break;
 	}
 
 	// mostrar a barra com len de comprimento
@@ -280,8 +291,29 @@ void TProcura::Mensagem(const char* titulo, const char* fmt, ...) {
 		MostraCaixa({ titulo, texto.Data() }, len < 20 ? 20 : len);
 	}
 	va_end(args);
-	printf("\n");
 }
+
+/// @brief Muda a cor (fundo/letra) com HSL (h=0 a 360 saturação, luminosidade)
+void TProcura::DebugHSL(float h, float s, float l, bool fundo) {
+	if (h < 0 || h > 360) { // reset de cores
+		printf("\x1b[0m");
+	}
+	else {
+		float c = (1 - fabs(2 * l - 1)) * s;
+		float x = c * (1 - fabs(fmod(h / 60.0, 2) - 1));
+		float m = l - c / 2;
+		float r, g, b;
+		if (h < 60) { r = c; g = x; b = 0; }
+		else if (h < 120) { r = x; g = c; b = 0; }
+		else if (h < 180) { r = 0; g = c; b = x; }
+		else if (h < 240) { r = 0; g = x; b = c; }
+		else if (h < 300) { r = x; g = 0; b = c; }
+		else { r = c; g = 0; b = x; }
+		printf("\x1b[%d;2;%d;%d;%dm", (fundo ? 48 : 38),
+			(int)((r + m) * 255), (int)((g + m) * 255), (int)((b + m) * 255));
+	}
+}
+
 
 void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const char* titulo) {
 	int nElementos = (idParametros == NULL ? parametro.Count() : idParametros->Count());
@@ -325,7 +357,12 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 		// separador/mudança de linha
 		if (i < nElementos - 1) {
 			if (detalhe > 1 || col > 70) { // limite de largura
-				MostraCaixa("", ECaixaParte::Meio, 1);
+				if (detalhe == 0) {
+					MostraCaixa("⚙️ ", ECaixaParte::Separador, 1, true, 1);
+					printf(" ");
+				}
+				else
+					MostraCaixa("", ECaixaParte::Meio, 1);
 				col = 3;
 			}
 			else if (detalhe > 0)
@@ -662,6 +699,10 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 		MostraParametros(detalhe, &distinto, str);
 		if (i == atual)
 			printf(" ⭐ atual");
+		if (atual < 0 && i == 2 && configuracoes.Count() > 10) {
+			printf("\n │ ...");
+			i = configuracoes.Count() - 4;
+		}
 	}
 	printf("\n═╧═══════════════════");
 }
@@ -681,7 +722,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	fflush(stdout);
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
-	case COMPLETO: periodoReporte = 1; break;
+	case COMPLETO: periodoReporte = 0; break; // reporte em todos os eventos
 	}
 	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
 	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
@@ -711,7 +752,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 
 			if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
 				Debug(ATIVIDADE, false,
-					"\n ├─ ⏱ %-15s   📋 %-5d   ↻ %-5d   🛠️ %-5d   🖥️ %-5d",
+					"\n ├─ ⏱ %-15s 📋 %-5d ↻ %-5d 🛠️ %-5d 🖥️ %-5d",
 					MostraTempo(Cronometro(CONT_TESTE)),
 					nTarefa - 1,
 					inst,
@@ -775,7 +816,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 	fflush(stdout);
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
-	case COMPLETO: periodoReporte = 1; break;
+	case COMPLETO: periodoReporte = 0; break;
 	}
 	for (int i = 1; i < mpiCount; i++)
 		trabalhador += i;
@@ -837,19 +878,6 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 	while (!trabalhar.Empty()) {
 		MPI_Status stat;
 
-		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
-			// mostrar uma linha por cada execução
-			Debug(ATIVIDADE, false,
-				"\n ├─ ⏱ %-15s   📋 %-5d   ↻ %-5d   🛠️ %-5d   🖥️ %-5d",
-				MostraTempo(Cronometro(CONT_TESTE)),
-				totalTarefas - tarefas.Count(),
-				tarefas.Last().instancia,
-				tarefas.Last().configuracao,
-				trabalhar.Count()) &&
-				fflush(stdout);
-			Cronometro(CONT_REPORTE, true);
-		}
-
 		double inicioEspera = Cronometro(CONT_TESTE);
 		MPI_Recv(dados, 3, MPI_INT, MPI_ANY_SOURCE, TAG_CABECALHO, MPI_COMM_WORLD, &stat);
 		esperaGestor += Cronometro(CONT_TESTE) - inicioEspera;
@@ -861,6 +889,21 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		// tempo de espera do trabalhador
 		esperaTrabalhadores += (double)((int64_t)resultados.Last().valor.Pop()) / 1000.;
+
+		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
+			// mostrar uma linha por cada execução
+			Debug(ATIVIDADE, false,
+				"\n ├─ ⏱ %-15s 📋 %-5d ↻ %-5d 🛠️ %-5d 🖥️ %-5d ⚖  ",
+				MostraTempo(Cronometro(CONT_TESTE)),
+				totalTarefas - tarefas.Count(),
+				resultados.Last().instancia,
+				resultados.Last().configuracao,
+				trabalhador.Last());
+			for (auto ind : resultados.Last().valor)
+				printf("%" PRId64 " ", ind);
+			fflush(stdout);
+			Cronometro(CONT_REPORTE, true);
+		}
 
 		// ainda há tarefas
 		if (!tarefas.Empty()) {
@@ -972,7 +1015,6 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	// carregar instância
 	Inicializar();
 	// executar um algoritmo 
-	Debug(COMPLETO, false, "instância %d: ", instancia.valor) && fflush(stdout);
 	LimparEstatisticas();
 	{
 		ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
@@ -984,22 +1026,25 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	InserirRegisto(resultados, instancia.valor, conf);
 
 	if (resultado >= 0) {
-		if (Parametro(NIVEL_DEBUG) >= COMPLETO)
-			MostrarSolucao();
+		mpiID == 0 && Debug(COMPLETO, false, "🎯 %-5d", resultado);
 	}
 	else {
 		if (Parar())
-			Debug(COMPLETO, false, "Não resolvido. ");
+			mpiID == 0 && Debug(COMPLETO, false, "🚫 ");
 		if (TempoExcedido())
-			Debug(COMPLETO, false, "Tempo excedido. ");
+			mpiID == 0 && Debug(COMPLETO, false, "⏱ ");
 		if (memoriaEsgotada)
-			Debug(COMPLETO, false, "Memória esgotada. ");
+			mpiID == 0 && Debug(COMPLETO, false, "💾 ");
 		if (resultado < 0 && !Parar())
-			Debug(COMPLETO, false, "Instância Impossível! (se algoritmo completo) ");
+			mpiID == 0 && Debug(COMPLETO, false, "🎯 ❌  "); //Instância Impossível! (se algoritmo completo) ");
 		else // não resolvido, cancelar resultados 
 			resultados.Last().valor.First() = -2;
 	}
-	Debug(COMPLETO, false, "DONE.") && fflush(stdout);
+	if (mpiID == 0 && Parametro(NIVEL_DEBUG) >= COMPLETO) {
+		printf("⚖  ");
+		for (auto ind : resultados.Last().valor)
+			printf("%" PRId64 " ", ind);
+	}
 }
 
 // processa os argumentos da função main
@@ -1438,32 +1483,42 @@ void TProcura::InicializaMPI(int argc, char* argv[])
 	MPI_Init(&argc, &argv);
 	MPI_Comm_size(MPI_COMM_WORLD, &mpiCount);
 	MPI_Comm_rank(MPI_COMM_WORLD, &mpiID);
-	Debug(COMPLETO, false, "\nProcesso %d de %d iniciado.", mpiID, mpiCount) &&
-		fflush(stdout);
 #endif
 }
 
 void TProcura::FinalizaMPI()
 {
 #ifdef MPI_ATIVO
-	Debug(COMPLETO, false, "\nProcesso %d de %d terminado.", mpiID, mpiCount) &&
-		fflush(stdout);
 	MPI_Finalize();
 #endif
 }
 
-void TProcura::DebugTabela(ENivelDebug nivel, TVector<int> tabela, const char* tipo)
+void TProcura::DebugTabela(ENivelDebug nivel, TVector<int> tabela, const char* tipo,
+	const char* prefixo, int modoCor, bool duplaColuna)
 {
-	Debug(nivel, false, "\n%4s|", tipo);
+	if (Parametro(NIVEL_DEBUG) < nivel)
+		return;
+	printf("\n%s%-4s│", prefixo, tipo);
 	for (int i = 0; i < 10 && i < tabela.Count(); i++)
-		Debug(nivel, false, "%4d|", i + 1);
-	Debug(nivel, false, "\n----|");
+		printf("%4d│", i + 1);
+	printf("\n%s────┼", prefixo);
 	for (int i = 0; i < 10 && i < tabela.Count(); i++)
-		Debug(nivel, false, "----|");
+		printf("────┼");
 	for (int i = 0; i < tabela.Count(); i++) {
 		if (i % 10 == 0)
-			Debug(nivel, false, "\n%4d|", i);
-		Debug(nivel, false, "%4d|", tabela[i]);
+			printf("\n%s%4d│", prefixo, i);
+		if (modoCor > 0 && modoCor <= 1000000) // conteúdo com cor de 1 a modoCor
+			DebugHSL(tabela[i] * 360.0f / modoCor);
+		else if (modoCor > 1000000) // 0 - verde e maiorCusto vermelho
+			DebugHSL((1 - 1.0f * tabela[i] / (modoCor - 1000000)) * 120,.75,.5,false);
+		else if (modoCor < 0) // índice com a cor
+			DebugHSL((i + 1) * 360.0f / tabela.Count());
+		printf("%4d", tabela[i]);
+		DebugHSL();
+		if (duplaColuna && i % 2 == 0)
+			printf("⇄");
+		else
+			printf("│");
 	}
 }
 

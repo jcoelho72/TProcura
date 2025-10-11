@@ -2,8 +2,11 @@
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |
 
-Execução de exemplo com base no problema do Aspirador. 
-Selecione o projeto TProcuraConstrutiva, e execute.
+Execução de exemplo com base no problema do Aspirador.
+
+No Visual Studio, selecione o projeto TProcuraConstrutiva, e execute.
+No Linux na pasta `.../TProcura/Construtiva/Teste$` execute `make` seguido de `./bin/Release/TProcuraConstrutiva`
+
 Pode acompanhar o teste excutando as ações localmente.
 
 ## Sumário
@@ -20,13 +23,13 @@ Pode acompanhar o teste excutando as ações localmente.
 
 
 ```entrada
-Teste TProcurasConstrutivas
-Problema:
-  1 - Aspirador
-  2 - Puzzle 8
-  3 - 8 Damas
-  4 - Partição
-  5 - Artificial
+┌─ Teste TProcuraConstrutiva ──┐
+│ 1 - Aspirador                │
+│ 2 - Puzzle 8                 │
+│ 3 - 8 Damas                  │
+│ 4 - Partição                 │
+│ 5 - Artificial               │
+└──────────────────────────────┘
 Opção: 1
 ```
 
@@ -40,22 +43,27 @@ uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto ig
 
 ```entrada
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
- P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
- P11(baralhar): 0
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+└──────────────────────────────────────────────────────────────────────
 [*] *  .  *
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
 ```
 
 Esta é a informação apresentada no teste manual. 
 Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais.
-Podemos ver que o primeiro parametro é o algoritmo, e está selecionado de omissão a Largura Primeiro.
-Em termos de Debug está selecionado o valor nada, ou seja, não é mostrada informação de debug.
+Podemos ver que o primeiro parametro é o ALGORITMO, e está selecionado de omissão a Largura Primeiro.
+Em termos de NIVEL_DEBUG está selecionado o valor NADA, ou seja, não é mostrada informação de debug.
 Seguem-se outros parametros, os quais alguns serão apresentados ao longo desta execução.
+Os nomes dos parametros e valores, são os mesmos utilizados no código, e por esse motivo não é utilizada acentuação.
 
-Temos também o estado atual, que tem uma visualização dependente do problema.
+Temos o estado atual após a caixa dos parametros, que tem uma visualização dependente do problema.
 
 Após o estado temos o menu, com as opções de inicializar numa nova instância, 
 explorar o espaço de estados, editar os parâmetros atuais, ver a solução atual,
@@ -71,8 +79,10 @@ Para evitar repetição na documentação, o output é cortado sempre que não e
 
 Escreva os seguintes números separados por Enter: **1; 2**
 
-Temos hipótese aqui de alterar o prefixo da instância, útil para situações em que se lê os dados da instância de um ficheiro.
-Este problema as instâncias são geradas aleatoriamente, e não lidas de ficheiros, pelo que escolhemos apenas o ID da instância.
+Temos hipótese aqui de alterar o prefixo da instância,
+útil para situações em que se lê os dados da instância de um ficheiro.
+Este problema as instâncias são geradas aleatoriamente,
+e não lidas de ficheiros, pelo que escolhemos apenas o ID da instância.
 
 Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na terceira sala, 
 estando as duas primeiras sujas:
@@ -80,15 +90,23 @@ estando as duas primeiras sujas:
 ```entrada
 Opção: 1
 
-ID atual: 4  Intervalo: [2-50]  Prefixo atual: 'instancia_'
+┌─ ↻  Inicializar ─────────────────────────────────────────────────────
+│ ID atual: 4  Intervalo: [2–50]
+│ Prefixo atual: 'instancia_'
+└──────────────────────────────────────────────────────────────────────
 Novo ID (ENTER mantém) ou novo prefixo (texto): 2
 
 Aspirador
-...
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+└──────────────────────────────────────────────────────────────────────
  * [*]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
 ```
 
 Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda:
@@ -98,7 +116,7 @@ Ao chamar Inicializar() podemos trocar o ID da instância.
 Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos 
 escolher em ter uma instância maior ou menor. 
 A sujidade das casas é gerada aleatoriamente. 
-No entanto a semente aleatória é um parâmetro (P3(Seed): 1), sendo sempre a mesma caso não se altere, 
+No entanto a semente aleatória é um parâmetro (P3(SEMENTE): 1), sendo sempre a mesma caso não se altere, 
 garantindo assim que podemos obter a mesma instância mais tarde.
 
 \anchor aspirador-a2
@@ -108,17 +126,35 @@ A partir do estado atual, introduza: **2; 1; 2.**
 
 ```entrada
 Opção: 2
-g:0 h:3 1|2
+
+══ 💰 g:0 🎯 h:3 🔢 1|2 ══
  * [*]
-Ações: esq asp
-Sucessor [1-2, ação(ões), exe]:1
-g:0 h:3 2|4
+┌─ ⚡  Ações ───────────────────────────────────────────────────────────
+│ esq asp
+└──────────────────────────────────────────────────────────────────────
+🔍  Sucessor [1-2, ação(ões), exe]: 1
+
+┌─ ✅  Sucesso ───────
+│ Ação executada.
+└────────────────────
+
+══ 💰 g:0 🎯 h:3 🔢 2|4 ══
 [*] *
-Ações: dir asp
-Sucessor [1-2, ação(ões), exe]:2
-g:0 h:2 3|6
+┌─ ⚡  Ações ───────────────────────────────────────────────────────────
+│ dir asp
+└──────────────────────────────────────────────────────────────────────
+🔍  Sucessor [1-2, ação(ões), exe]: 2
+
+┌─ ✅  Sucesso ───────
+│ Ação executada.
+└────────────────────
+
+══ 💰 g:0 🎯 h:2 🔢 3|6 ══
 [.] *
-Ações: dir asp
+┌─ ⚡  Ações ───────────────────────────────────────────────────────────
+│ dir asp
+└──────────────────────────────────────────────────────────────────────
+🔍  Sucessor [1-2, ação(ões), exe]:
 ```
 
 Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda,
@@ -136,23 +172,32 @@ Introduza: **dir asp; *ENTER*.**
 Note que "dir asp" podem ser introduzidas de uma vez.
 
 ```entrada
-Sucessor [1-2, ação(ões), exe]:dir asp
-Executadas 2 ações com sucesso.
-g:0 6|12
+🔍  Sucessor [1-2, ação(ões), exe]: dir asp
+
+┌─ ✅  Sucesso ────────
+│ Executadas 2 ações.
+└─────────────────────
+
+══ 💰 g:0 🔢 6|12 ══
  . [.]
-Ações: esq asp
-Sucessor [1-2, ação(ões), exe]:
+┌─ ⚡  Ações ───────────────────────────────────────────────────────────
+│ esq asp
+└──────────────────────────────────────────────────────────────────────
+🔍  Sucessor [1-2, ação(ões), exe]:
 
 Aspirador
-...
+,,,
  . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
 ```
 
 Ao receber as duas ações, estas foram executadas e indicado o número de ações executados com sucesso.
-Se fosse uma solução completa, todas as ações até ao estado final, esta operação seria uma verificação da solução.
+Se fosse uma solução completa, todas as ações até ao estado final,
+esta operação seria uma verificação da solução.
 Caso exista alguma ação inválida, a ação é rejeitada e o estado atual fica na primeira ação inválida.
 Assim, é possível verificar ou identificar erros em soluções obtidas por métodos externos, sendo apresentada
 a evidência de falha.
@@ -172,14 +217,17 @@ No entanto houve um caminho, que ficou guardado. Introduza: **4.**
 ```entrada
 Opção: 4
 
- * [*] (g:0)  esq asp dir asp
- . [.] (g:4)
+══ ✔  Solução ══
+ * [*] (💰 g:0) ⚡  → esq → asp → dir → asp
+ . [.] (💰 g:4) 🎯
 Aspirador
 ...
- . [.]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+. [.]
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
 ```
 
 Neste problema uma solução é um conjunto de ações, o caminho desde o estado inicial até ao estado final. 
@@ -190,27 +238,28 @@ Esta letra representa o custo g(n) no manual, e sempre que ocorra significa o cu
 Neste problema o custo não foi definido, pelo que é adoptado o valor de 1 unidade por cada movimento. 
 
 A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os estados também.
-Para isso é preciso alterar o parâmetro P6(Ver).
+Para isso é preciso alterar o parâmetro P6(VER_ACOES).
 
 \anchor aspirador-a4
 ## Ação 4 - Ver a alterar um parâmetro
 
-Vamos editar o parâmetro P6(Ver). Introduza: **3**
+Vamos editar o parâmetro P6(VER_ACOES). Introduza: **3**
 
 ```entrada
 Opção: 3
 
- P1(Algoritmo): Largura Primeiro (1 a 7)
- P2(Debug): nada (0 a 4)
- P3(Seed): 1 (1 a 1000000)
- P4(Tempo): 10 (1 a 3600)
- P5(Iterações): 0 (0 a 1000000000)
- P6(Ver): 4 (1 a 100)
- P7(Limite): 0 (-1 a 1000000)
- P8(Repetidos): ignorar (1 a 3)
- P9(pesoAStar): 100 (0 a 10000)
- P10(ruido): 0 (-100 a 100)
- P11(baralhar): 0 (0 a 1)
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+│ P6(VER_ACOES):             4          (1 a 100)
+│ P7(LIMITE):                0          (-1 a 1000000)
+│ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+│ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+└──────────────────────────────────────────────────────────────────────
+Parametro:
 ```
 Podemos ver todos os os parâmetros e valores mínimos e máximos.  
 Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 6, 
@@ -219,15 +268,26 @@ Caso seja definido no problema novos parâmetros, ficariam aqui também expostos
 Introduza: **6; 1; *ENTER*; 4.**
 
 ```entrada
+Parametro:6
+
+┌─ ⚙️  P6(VER_ACOES) ──────────────────────────────────────────────────
+│ Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.
+│ Intervalo: 1 a 100
+└──────────────────────────────────────────────────────────────────────
+VER_ACOES (atual 4): 1
 ...
 Opção: 4
 
- * [*] (g:0)
-[*] *  (g:1)
-[.] *  (g:2)
- . [*] (g:3)
- . [.] (g:4)
- ...
+══ ✔  Solução ══
+ * [*] (💰 g:0) ⚡
+[*] *  (💰 g:1) ⚡
+[.] *  (💰 g:2) ⚡
+ . [*] (💰 g:3) ⚡
+ . [.] (💰 g:4) 🎯
+...
+ . [.]
+...
+Opção:
 ```
 Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.
 
@@ -243,31 +303,18 @@ A opção 4 vamos alterar neste caso o parâmetro nível de debug.
 Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa. 
 
 ```entrada
-Opção: 1
-
-ID atual: 2  Intervalo: [2-50]  Prefixo atual: 'instancia_'
-Novo ID (ENTER mantém) ou novo prefixo (texto): 2
-
-Aspirador
-...
-* [*]
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
-Opção: 3
-
- P1(Algoritmo): Largura Primeiro (1 a 7)
- P2(Debug): nada (0 a 4)
 ...
 Parametro:2
 
-Nível de debug, de reduzido a completo.
-0: nada
-1: atividade
-2: passos
-3: detalhe
-4: completo
-Debug (atual 0): 4
+┌─ ⚙️  P2(NIVEL_DEBUG) ────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.
+│ 0: NADA
+│ 1: ATIVIDADE
+│ 2: PASSOS
+│ 3: DETALHE
+│ 4: COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 0): 4
 ...
  * [*]
 ____________________________________________________________________

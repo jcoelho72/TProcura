@@ -94,7 +94,7 @@ enum ECronometro {
  * @brief Define as tags MPI para comunicação entre processos.
  */
 enum ETagMPI {
-	TAG_TRABALHO = 0,  
+	TAG_TRABALHO = 0,
 	TAG_CABECALHO,
 	TAG_VALORES
 };
@@ -518,7 +518,7 @@ public:
 	static int mpiCount;
 	/// @brief Modo MPI
 	/// @note 0 = divisão estática, 1 = mestre-escravo
-	static int modoMPI; 
+	static int modoMPI;
 
 
 
@@ -572,13 +572,21 @@ public:
 	}
 
 	/// @brief Mostra tempo num formato humano.
-	static char *MostraTempo(double segundos);
+	static char* MostraTempo(double segundos);
 
 	static void MostraCaixa(TVector<const char*> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
 	static void MostraCaixa(const char* titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0);
 	static void MostraCaixa(TVector<const char*> textos, int largura = 70, bool aberta = true, int identacao = 0);
 	static void Mensagem(const char* titulo, const char* fmt, ...);
 
+	/// @brief Muda a cor (fundo/letra) com HSL.
+	/// @param h Hue (matiz): 0–360 graus (círculo cromático). Se <0, faz reset.
+	/// @param s Saturação: 0–1 (0 = cinzento, 1 = cor pura).
+	/// @param l Luminosidade: 0–1 (0 = preto, 0.5 = cor normal, 1 = branco).
+	/// @param fundo true = cor de fundo, false = cor do texto.
+	/// Valores por omissão: s=1, l=0.2, fundo=true.
+	/// Chamada sem argumentos faz reset das cores
+	static void DebugHSL(float h = -1, float s = 1.0, float l = 0.2, bool fundo = true);
 
 protected:
 
@@ -621,7 +629,7 @@ protected:
 	 * @param idParametros Vetor de IDs de parâmetros a mostrar (opcional).
 	 */
 	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL,
-		const char *titulo="");
+		const char* titulo = "");
 
 	/**
 	 * @brief Mostra os indicadores definidos.
@@ -761,7 +769,8 @@ protected:
 	static void FinalizaMPI();
 
 	/// @brief Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior
-	void DebugTabela(ENivelDebug nivel, TVector<int>tabela, const char *tipo = "");
+	void DebugTabela(ENivelDebug nivel, TVector<int>tabela, const char* tipo = "",
+			const char* prefixo="", int modoCor=0, bool duplaColuna=false);
 
 	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro.
 	bool JuntarCSV(const char* ficheiro);

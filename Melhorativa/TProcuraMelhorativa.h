@@ -12,7 +12,7 @@ enum EMelhorativas {
 	PROB_MUTAR, SELECAO, PRESSAO, TAMANHO_TORNEIO, 
 	PROB_MELHOR_TORNEIO, SOBREVIVENCIA, PERC_DESCENDENTES, 
 	Q_ROUND_ROBIN, ELITISMO, IMIGRANTES, 
-	DIVERSIDADE, DIST_MINIMA, MOVE_PRIMEIRO,
+	DIVERSIDADE, DIST_MINIMA, //MOVE_PRIMEIRO,
 	PARAMETROS_MELHORATIVA
 };
 
@@ -211,6 +211,8 @@ protected:
 	TVector<TPonto> AplicarDiversidadeAE(TVector<TPonto>& populacao);
 	void DebugGeracaoAE(int epoca, TVector<TPonto>& populacao);
 	void DebugPopulacaoAE(TVector<TPonto>& populacao, const char* titulo); // mostrar toda a população
-	void DiversidadeAE(TVector<TPonto>& populacao, 
+	void DebugDiversidadeAE(TVector<TPonto>& populacao, const char* titulo); // diversidade da população
+	void DebugID(int id, int pop); // mostra indivíduo ID com cor única, se elemento da população
+	void DiversidadeAE(TVector<TPonto>& populacao,
 		int& minDist, int& maxDist, int& avgDist, int& melhorPior);
 };

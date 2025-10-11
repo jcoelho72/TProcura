@@ -800,7 +800,8 @@ Sabemos apenas que não há crash.
 Vamos formular uma pergunta. Pretendemos saber como varia o tempo na operação de ordenação, com o tamanho do vetor.
 
 Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de novo, para não ter qualquer configuração.
-Introduza após arrancar: 7; P1=2; *ENTER*; 8; 1:10; *ENTER*.
+Vamos agora colocar a informação de debug no máximo.
+Introduza após arrancar: 7; P1=2 P2=4; *ENTER*; 8; 1:10; *ENTER*.
 
 
 ```entrada
@@ -812,38 +813,52 @@ Opção: 8
 ✏️ IDs das instâncias (1 a 10): 1:10
 📄  Ficheiro resultados (nada para mostrar no ecrã):
 
- ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=1 (parâmetros comuns)
+ ├─ 🛠️  ─ P1=2 P2=4 P3=1 P4=10 P5=0 P6=1 (parâmetros comuns)
 ═╪═ Configurações ═══
  ├─ ⚙️ [1] ─
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:10   ↻ Instâncias: 10   🛠️ Configurações: 1   🖥️ Processos: 1.
+ ├─ ⏱                   📋 0       ↻ 1       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 196ms             📋 1       ↻ 2       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 492ms             📋 2       ↻ 3       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 969ms             📋 3       ↻ 4       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 1" 637ms          📋 4       ↻ 5       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 2" 356ms          📋 5       ↻ 6       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 3" 256ms          📋 6       ↻ 7       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 4" 266ms          📋 7       ↻ 8       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 5" 482ms          📋 8       ↻ 9       🛠️ 0       🖥️ 1    🎯 1
+ ├─ ⏱ 6" 702ms          📋 9       ↻ 10      🛠️ 0       🖥️ 1    🎯 1
 ┌──────┬───────┬───────────┬───────────┐
 │ ↻    │ 🛠️    │ 💰         │ ⏱         │
 ├──────┼───────┼───────────┼───────────┤
-│ 1    │ 1     │ 1         │ 65        │
-│ 2    │ 1     │ 1         │ 133       │
-│ 3    │ 1     │ 1         │ 209       │
-│ 4    │ 1     │ 1         │ 278       │
-│ 5    │ 1     │ 1         │ 388       │
-│ 6    │ 1     │ 1         │ 439       │
-│ 7    │ 1     │ 1         │ 524       │
-│ 8    │ 1     │ 1         │ 644       │
-│ 9    │ 1     │ 1         │ 665       │
-│ 10   │ 1     │ 1         │ 738       │
+│ 1    │ 1     │ 1         │ 182       │
+│ 2    │ 1     │ 1         │ 233       │
+│ 3    │ 1     │ 1         │ 416       │
+│ 4    │ 1     │ 1         │ 539       │
+│ 5    │ 1     │ 1         │ 613       │
+│ 6    │ 1     │ 1         │ 784       │
+│ 7    │ 1     │ 1         │ 858       │
+│ 8    │ 1     │ 1         │ 1041      │
+│ 9    │ 1     │ 1         │ 1065      │
+│ 10   │ 1     │ 1         │ 1329      │
 └──────┴───────┴───────────┴───────────┘
 ┌─ 📊  Total 🛠️ 1 ──────────────────────────────────────────────────────
-│ Resultado: 10 Tempo(ms): 4083 Iterações: 10 IND_ORDENAR: 10 Instâncias resolvidas: 10
+│ Resultado: 10 Tempo(ms): 7060 Iterações: 10 IND_ORDENAR: 10 Instâncias resolvidas: 10
 └──────────────────────────────────────────────────────────────────────
 🏆  Torneio (#instâncias melhores):
  |-01-|
  1    |  0
  |----|
 
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  4" 725ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  8" 326ms ) ═══
 ...
 Opção:
 ```
-Podemos ver que o tempo sobe, mas não de forma linear. 
+A informação debug completa, mostra por cada execução uma linha.
+Em cada linha é identificado o instante, tarefa, instância, configuração, processo e finalmente o resultado (valor do primeiro indicador).
+
+Sobre os resultados mostrados em tabela, podemos ver que o tempo sobe, mas não de forma linear. 
 A instância 1 tem 1 milhão de valores, leva 65 milisegundos.
 A instância 10 tem 10 vezes mais tamanho, mas leva 738 milisegundos.
 Foram execuções únicas, os valores podem variar demasiado.

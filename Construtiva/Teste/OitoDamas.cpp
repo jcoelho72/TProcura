@@ -23,11 +23,11 @@ TProcuraConstrutiva* COitoDamas::Duplicar(void)
 
 void COitoDamas::Inicializar(void)
 { 
-	TProcuraConstrutiva::Inicializar();
 	damas = {}; 
 	nDamas = instancia.valor;
 	// 4 bits por dama, com 40 damas no máximo dá 3 inteiros de 64 bits
 	tamanhoCodificado = (nDamas - 1) * 4 / 64 + 1; 
+	TProcuraConstrutiva::Inicializar();
 }
 
 void COitoDamas::ResetParametros()

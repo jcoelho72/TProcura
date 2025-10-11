@@ -224,6 +224,7 @@ void CParticaoCB::Debug(bool completo)
 			dir += numeros[i];
 			nDir += numeros[i];
 		}
+/*
 	printf("\nColocar #%d:",
 		nElementos);
 	printf("\n-------------------||-------------------");
@@ -245,4 +246,40 @@ void CParticaoCB::Debug(bool completo)
 	}
 	printf("\n-------------------||-------------------");
 	printf("\n            %3d  <<||>> %3d \n", esq, dir);
+*/
+	char str[256];
+	int col, total = esq+dir;
+	snprintf(str, sizeof(str), "📦%d → ◀️%d = ▶️%d",
+		total, esq, dir);
+	printf("\n");
+	// apenas no modo completo mostra tudo
+	if (Parametro(NIVEL_DEBUG) < COMPLETO) {
+		MostraCaixa(str, ECaixaParte::Separador, 1, true, -2);
+		return;
+	}
+	MostraCaixa(str, ECaixaParte::Topo, 70, true, -2);
+	printf("\n");
+	MostraCaixa("◀️", ECaixaParte::Separador, 1, true, -2);
+	col = 2;
+	for (i = 0; i < nEsq.Count(); i++) {
+		col += printf(" %d", nEsq[i]);
+		if (col > 60 && i < numeros.Count() - 1) {
+			col = 2;
+			printf("\n");
+			MostraCaixa("◀️", ECaixaParte::Separador, 1, true, -2);
+		}
+	}
+	printf("\n");
+	MostraCaixa("▶️", ECaixaParte::Separador, 1, true, -2);
+	col = 2;
+	for (i = 0; i < nDir.Count(); i++) {
+		col += printf(" %d", nDir[i]);
+		if (col > 60 && i < numeros.Count() - 1) {
+			col = 2;
+			printf("\n");
+			MostraCaixa("▶️", ECaixaParte::Separador, 1, true, -2);
+		}
+	}
+	printf("\n");
+	MostraCaixa("", ECaixaParte::Fundo, 70, true, -2);
 }
