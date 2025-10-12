@@ -174,33 +174,25 @@ Ação 2 - Explorar os sucessores</h2>
 <p>A partir do estado atual, introduza: <b>2; 1; 2.</b></p>
 <div class="fragment"><div class="line">Opção: 2</div>
 <div class="line"> </div>
-<div class="line">══ 💰 g:0 🎯 h:3 🔢 1|2 ══</div>
-<div class="line"> * [*]</div>
-<div class="line">┌─ ⚡  Ações ───────────────────────────────────────────────────────────</div>
-<div class="line">│ esq asp</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🎯 h:3 🔢 1|2 ═══</div>
+<div class="line"> │  * [*]</div>
+<div class="line"> │ └─ ⚡ ───── esq asp</div>
 <div class="line">🔍  Sucessor [1-2, ação(ões), exe]: 1</div>
 <div class="line"> </div>
 <div class="line">┌─ ✅  Sucesso ───────</div>
 <div class="line">│ Ação executada.</div>
 <div class="line">└────────────────────</div>
-<div class="line"> </div>
-<div class="line">══ 💰 g:0 🎯 h:3 🔢 2|4 ══</div>
-<div class="line">[*] *</div>
-<div class="line">┌─ ⚡  Ações ───────────────────────────────────────────────────────────</div>
-<div class="line">│ dir asp</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🎯 h:3 🔢 2|4 ═══</div>
+<div class="line"> │ [*] *</div>
+<div class="line"> │ └─ ⚡ ───── dir asp</div>
 <div class="line">🔍  Sucessor [1-2, ação(ões), exe]: 2</div>
 <div class="line"> </div>
 <div class="line">┌─ ✅  Sucesso ───────</div>
 <div class="line">│ Ação executada.</div>
 <div class="line">└────────────────────</div>
-<div class="line"> </div>
-<div class="line">══ 💰 g:0 🎯 h:2 🔢 3|6 ══</div>
-<div class="line">[.] *</div>
-<div class="line">┌─ ⚡  Ações ───────────────────────────────────────────────────────────</div>
-<div class="line">│ dir asp</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🎯 h:2 🔢 3|6 ═══</div>
+<div class="line"> │ [.] *</div>
+<div class="line"> │ └─ ⚡ ───── dir asp</div>
 <div class="line">🔍  Sucessor [1-2, ação(ões), exe]:</div>
 </div><!-- fragment --><p>Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações: esq, dir, asp. Para indicar o número do sucessor, é preciso ver, já que o número 1 é para a primeira ação válida, na lista de sucessores. No entanto, as ações são unívocas. Podemos indicar várias ações de uma só vez.</p>
 <p>Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número, introduzido duas ações de uma vez. Introduza: <b>dir asp; <em>ENTER</em>.</b> Note que "dir asp" podem ser introduzidas de uma vez.</p>
@@ -209,17 +201,14 @@ Ação 2 - Explorar os sucessores</h2>
 <div class="line">┌─ ✅  Sucesso ────────</div>
 <div class="line">│ Executadas 2 ações.</div>
 <div class="line">└─────────────────────</div>
-<div class="line"> </div>
-<div class="line">══ 💰 g:0 🔢 6|12 ══</div>
-<div class="line"> . [.]</div>
-<div class="line">┌─ ⚡  Ações ───────────────────────────────────────────────────────────</div>
-<div class="line">│ esq asp</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🔢 6|12 ═══</div>
+<div class="line"> │  . [.]</div>
+<div class="line"> │ └─ ⚡ ───── esq asp</div>
 <div class="line">🔍  Sucessor [1-2, ação(ões), exe]:</div>
 <div class="line"> </div>
 <div class="line">Aspirador</div>
-<div class="line">,,,</div>
-<div class="line"> . [.]</div>
+<div class="line">...</div>
+<div class="line"> │  . [.]</div>
 <div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
 <div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
 <div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
@@ -234,11 +223,11 @@ Ação 3 - Ver a solução realizada manualmente</h2>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
 <div class="line">══ ✔  Solução ══</div>
-<div class="line"> * [*] (💰 g:0) ⚡  → esq → asp → dir → asp</div>
-<div class="line"> . [.] (💰 g:4) 🎯</div>
+<div class="line"> │  * [*] (💰 g:0) ⚡  → esq → asp → dir → asp</div>
+<div class="line"> │  . [.] (💰 g:4) 🎯</div>
 <div class="line">Aspirador</div>
 <div class="line">...</div>
-<div class="line">. [.]</div>
+<div class="line"> │  . [.]</div>
 <div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
 <div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
 <div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
@@ -314,67 +303,83 @@ Procura em Largura - expande primeiro os estados menos profundos</div></div>
 </div><!-- fragment --><p> A opção 6 executa o algoritmo selecionado, que é a Largura Primeiro.</p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">g:0</div>
-<div class="line"> * [*]</div>
-<div class="line">  +#1 g:1 1|2 esq</div>
-<div class="line">  |[*] *</div>
-<div class="line">  +#2 g:1 1|2 asp</div>
-<div class="line">    * [.]</div>
-<div class="line">g:1 1|2</div>
-<div class="line">[*] *</div>
-<div class="line">  +#1 g:2 2|4 dir</div>
-<div class="line">  | * [*]</div>
-<div class="line">  +#2 g:2 2|4 asp</div>
-<div class="line">   [.] *</div>
-<div class="line">g:1 2|4</div>
-<div class="line"> * [.]</div>
-<div class="line">  +#1 g:2 3|6 esq</div>
-<div class="line">  |[*] .</div>
-<div class="line">  +#2 g:2 3|6 asp</div>
-<div class="line">    * [.]</div>
-<div class="line">g:2 3|6</div>
-<div class="line"> * [*]</div>
-<div class="line">  +#1 g:3 4|8 esq</div>
-<div class="line">  |[*] *</div>
-<div class="line">  +#2 g:3 4|8 asp</div>
-<div class="line">    * [.]</div>
-<div class="line">g:2 4|8</div>
-<div class="line">[.] *</div>
-<div class="line">  +#1 g:3 5|10 dir</div>
-<div class="line">  | . [*]</div>
-<div class="line">  +#2 g:3 5|10 asp</div>
-<div class="line">   [.] *</div>
-<div class="line">g:2 5|10</div>
-<div class="line">[*] .  Solução encontrada!</div>
-<div class="line">[.] . (g:3)</div>
-<div class="line"> P1=1 P2=4 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
+<div class="line"> │  * [*]</div>
+<div class="line"> │  ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ esq</div>
+<div class="line"> │  │ [*] *</div>
+<div class="line"> │  └■═╤═ 🔖2 💰 g:1 🔢 1|2 ═══ asp</div>
+<div class="line"> │     * [.]</div>
+<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }</div>
+<div class="line"> │ [*] *</div>
+<div class="line"> │  ├■═╤═ 🔖3 💰 g:2 🔢 2|4 ═══ dir</div>
+<div class="line"> │  │  * [*]</div>
+<div class="line"> │  └■═╤═ 🔖4 💰 g:2 🔢 2|4 ═══ asp</div>
+<div class="line"> │    [.] *</div>
+<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|4 ═══ { 🔖3 🔖4 }</div>
+<div class="line"> │  * [.]</div>
+<div class="line"> │  ├■═╤═ 🔖5 💰 g:2 🔢 3|6 ═══ esq</div>
+<div class="line"> │  │ [*] .</div>
+<div class="line"> │  └■═╤═ 🔖6 💰 g:2 🔢 3|6 ═══ asp</div>
+<div class="line"> │     * [.]</div>
+<div class="line"> ├■═╤═ 🔖3 💰 g:2 🔢 3|6 ═══ { 🔖4 🔖5 🔖6 }</div>
+<div class="line"> │  * [*]</div>
+<div class="line"> │  ├■═╤═ 🔖7 💰 g:3 🔢 4|8 ═══ esq</div>
+<div class="line"> │  │ [*] *</div>
+<div class="line"> │  └■═╤═ 🔖8 💰 g:3 🔢 4|8 ═══ asp</div>
+<div class="line"> │     * [.]</div>
+<div class="line"> ├■═╤═ 🔖4 💰 g:2 🔢 4|8 ═══ { 🔖5 🔖6 🔖7 🔖8 }</div>
+<div class="line"> │ [.] *</div>
+<div class="line"> │  ├■═╤═ 🔖9 💰 g:3 🔢 5|10 ═══ dir</div>
+<div class="line"> │  │  . [*]</div>
+<div class="line"> │  └■═╤═ 🔖10 💰 g:3 🔢 5|10 ═══ asp</div>
+<div class="line"> │    [.] *</div>
+<div class="line"> ├■═╤═ 🔖5 💰 g:2 🔢 5|10 ═══ { 🔖6 🔖7 🔖8 🔖9 🔖10 }</div>
+<div class="line"> │ [*] .</div>
+<div class="line"> │  ├■═╤═ 🔖11 💰 g:3 🔢 6|12 ═══ dir</div>
+<div class="line"> │  │  * [.]</div>
+<div class="line"> │  └■═╤═ 🔖12 💰 g:3 🔢 6|12 ═══ asp</div>
+<div class="line"> │    [.] .</div>
+<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │ [.] .</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱   ═══</div>
 <div class="line">Aspirador</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">[.] .</div>
-<div class="line">I1(Custo): 3 | I2(Tempo(ms)): 19 | I3(Iterações): 0 | I4(Expansões): 6 | I5(Gerações): 12 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
-<div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
-</div><!-- fragment --><p>Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, sendo recolhido pelo I1(custo). Significa que a procura encontrou uma solução de comprimento 3. Notar que o I3(Iterações) e I6(Lower Bound) ficaram a 0, já que não são atualizados neste algoritmo.</p>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 6 |</div>
+<div class="line">│ I5(IND_GERACOES): 12 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p>Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, sendo recolhido pelo I1(IND_CUSTO). Significa que a procura encontrou uma solução de comprimento 3. Notar que o I3(Iterações) e I6(IND_LOWER_BOUND) ficaram a 0, já que não são atualizados neste algoritmo.</p>
 <p>No caso de não ter os resultados iguais, confirme se todos os parâmetros estão iguais.</p>
 <p>Podemos ver a solução, tendo ficado guardada, tal como na resolução manual. Introduza: <b>4.</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
-<div class="line"> * [*] (g:0)</div>
-<div class="line"> * [.] (g:1)</div>
-<div class="line">[*] .  (g:2)</div>
-<div class="line">[.] .  (g:3)</div>
+<div class="line">══ ✔  Solução ══</div>
+<div class="line"> * [*] (💰 g:0) ⚡</div>
+<div class="line"> * [.] (💰 g:1) ⚡</div>
+<div class="line">[*] .  (💰 g:2) ⚡</div>
+<div class="line">[.] .  (💰 g:3) 🎯</div>
 <div class="line">...</div>
 </div><!-- fragment --><p> Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.</p>
-<p>A árvore da procura em largura não é desenhada na visualização textual, apenas na procura em profundidade. Nesta procura o que podemos ver é cada estado expandido e respetivos sucessores gerados. Cada estado irá aparecer pela primeira vez quando é gerado, e uma segunda vez quando é expandido. Na procura em largura, expandimos sempre o estado gerado há mais tempo.</p>
+<p>A árvore da procura em largura não é desenhada na visualização textual, apenas na procura em profundidade.</p>
+<p>Nesta procura o que podemos ver é cada estado expandido e respetivos sucessores gerados. Cada estado irá aparecer pela primeira vez quando é gerado, e uma segunda vez quando é expandido.</p>
+<p>Existe uma etiqueta em cada estado que permite confirmar que cada estado gerado será expandido uma só vez. É também mostrada a lista dos estados gerados não expandidos em cada passo. O estado expandido é sempre o primeiro dessa lista, que consta na iteração anterior.</p>
+<p>Na procura em largura expandimos sempre o estado gerado há mais tempo.</p>
 <ul>
 <li>Verificar que o segundo estado expandido, é o primeiro sucessor do primeiro estado expandido. O terceiro estado expandido é o segundo sucessor do primeiro estado expandido. Poder-se-ia continuar, o estado expandido seguinte é sempre o gerado há mais tempo.</li>
 </ul>
-<p>Temos no entanto o mesmo estado inicial a ser gerado. De facto, o primeiro sucessor na segunda expansão, é o primeiro estado que é gerado novamente.</p>
+<p>Temos no entanto o mesmo estado inicial a ser gerado. De facto, o primeiro sucessor na segunda expansão, o estado 3, é o estado inicial que é gerado novamente.</p>
 <p>Podemos lidar com estados repetidos de duas formas:</p>
 <ul>
 <li>Verificar se o estado a ser gerado, não tem já um ascendente - neste caso é preciso implementar a função Distinto() - Para fazer esta validação, o código tem de seguir pelos pais, e testar se são diferentes do atual.</li>
@@ -389,46 +394,58 @@ Ação 6 - Editar opções A</h2>
 </ul>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">g:0</div>
-<div class="line"> * [*]</div>
-<div class="line">g:1 1|2</div>
-<div class="line">[*] *</div>
-<div class="line">g:1 2|3</div>
-<div class="line"> * [.]</div>
-<div class="line">g:2 3|4</div>
-<div class="line">[.] *</div>
-<div class="line">g:2 4|5</div>
-<div class="line">[*] .  Solução encontrada!</div>
-<div class="line">[.] . (g:3)</div>
-<div class="line"> P1=1 P2=3 P3=1 P4=10 P5=0 P6=1 P7=0 P8=2 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
+<div class="line"> │  * [*]</div>
+<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }</div>
+<div class="line"> │ [*] *</div>
+<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|3 ═══ { 🔖3 }</div>
+<div class="line"> │  * [.]</div>
+<div class="line"> ├■═╤═ 🔖3 💰 g:2 🔢 3|4 ═══ { 🔖4 }</div>
+<div class="line"> │ [.] *</div>
+<div class="line"> ├■═╤═ 🔖4 💰 g:2 🔢 4|5 ═══ { 🔖5 }</div>
+<div class="line"> │ [*] .</div>
+<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │ [.] .</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=3 P3=1 P4=10 P5=0 P6=1 P7=0 P8=2 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱   ═══</div>
 <div class="line">Aspirador</div>
 <div class="line">...</div>
 <div class="line">[.] .</div>
-<div class="line">I1(Custo): 3 | I2(Tempo(ms)): 8 | I3(Iterações): 0 | I4(Expansões): 5 | I5(Gerações): 6 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |</div>
+<div class="line">│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p> A interação de troca de parâmetro não é mais mostrada para não saturar o texto.</p>
-<p>Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.</p>
+<p>Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Vemos no entanto a lista dos estados gerados não expandidos, confirmando que é claramente menor. Podemos também confirmar que o estado inicial não foi um dos gerados, caso contrário seria expandido na 4º ou 5º expansão.</p>
 <p><a class="anchor" id="aspirador-a7"></a></p>
 <h2><a class="anchor" id="autotoc_md25"></a>
 Ação 7 - Editar opções B</h2>
 <p>Alterar a opção para remover os repetidos com base nos gerados, e alterar o debug para nível 2: <b>1; 2; 3; 8; 3; 2; 2; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">g:0</div>
-<div class="line">g:1 1|2</div>
-<div class="line">g:1 2|3</div>
-<div class="line">g:2 3|4</div>
-<div class="line">g:2 4|5 Solução encontrada!</div>
-<div class="line">[.] . (g:3)</div>
-<div class="line"> P1=1 P2=2 P3=1 P4=10 P5=0 P6=1 P7=0 P8=3 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
+<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }</div>
+<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|3 ═══ { 🔖3 }</div>
+<div class="line"> ├■═╤═ 🔖3 💰 g:2 🔢 3|4 ═══ { 🔖4 }</div>
+<div class="line"> ├■═╤═ 🔖4 💰 g:2 🔢 4|5 ═══ { 🔖5 }</div>
+<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │ [.] .</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=2 P3=1 P4=10 P5=0 P6=1 P7=0 P8=3 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  7ms  ═══</div>
+<div class="line">Aspirador</div>
 <div class="line">...</div>
-<div class="line">I1(Custo): 3 | I2(Tempo(ms)): 21 | I3(Iterações): 0 | I4(Expansões): 5 | I5(Gerações): 6 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números: expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.</p>
+<div class="line">[.] .</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 7 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |</div>
+<div class="line">│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g) seguido de dois números: expansões e gerações realizadas até ao momento. A lista com os estados gerados nãó expandidos, é ainda visualizada no final. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.</p>
 <p>É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.</p>
 <p>O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.</p>
 <p><a class="anchor" id="aspirador-a8"></a></p>
@@ -440,35 +457,41 @@ Ação 8 - Resolver outra instância</h2>
 <div class="fragment"><div class="line">Aspirador</div>
 <div class="line">...</div>
 <div class="line"> *  *  .  *  * [*] *  .  .  .</div>
-<div class="line">I1(Custo): 13 | I2(Tempo(ms)): 131 | I3(Iterações): 0 | I4(Expansões): 147000 | I5(Gerações): 421790 |</div>
-<div class="line">I6(Lower Bound): 0</div>
 <div class="line">...</div>
 <div class="line">Opção: 6</div>
-<div class="line">########...########### Solução encontrada!</div>
-<div class="line">[.] .  .  .  .  .  .  .  .  . (g:13)</div>
-<div class="line"> P1=1 P2=1 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line"> </div>
+<div class="line">═╤═ ►  Execução iniciada ═══##################....################</div>
+<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │ [.] .  .  .  .  .  .  .  .  .</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=1 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  367ms  ═══</div>
+<div class="line">Aspirador</div>
 <div class="line">...</div>
-<div class="line">I1(Custo): 13 | I2(Tempo(ms)): 453 | I3(Iterações): 0 | I4(Expansões): 516031 | I5(Gerações): 1513017 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> São demasiados estados gerados, 1,5 milhões, em 0.5 segundos. Há um # que é colocado no output a cada 1000 expansões. Se desconfiamos que com tanto estado, dificilmente a solução pode ser óptima, podemos ver a solução. Introduza: <b>4</b></p>
+<div class="line">[.] .  .  .  .  .  .  .  .  .</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 13 | I2(Tempo(ms)): 367 | I3(Iterações): 0 | I4(IND_EXPANSOES): 516031 |</div>
+<div class="line">│ I5(IND_GERACOES): 1513017 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> São demasiados estados gerados, 1,5 milhões, em 0.4 segundos. Há um # que é colocado no output a cada 1000 expansões. Se desconfiamos que com tanto estado, dificilmente a solução pode ser óptima, podemos ver a solução. Introduza: <b>4</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
-<div class="line"> *  *  .  *  * [*] *  .  .  .  (g:0)</div>
-<div class="line"> *  *  .  *  *  * [*] .  .  .  (g:1)</div>
-<div class="line"> *  *  .  *  *  * [.] .  .  .  (g:2)</div>
-<div class="line"> *  *  .  *  * [*] .  .  .  .  (g:3)</div>
-<div class="line"> *  *  .  *  * [.] .  .  .  .  (g:4)</div>
-<div class="line"> *  *  .  * [*] .  .  .  .  .  (g:5)</div>
-<div class="line"> *  *  .  * [.] .  .  .  .  .  (g:6)</div>
-<div class="line"> *  *  . [*] .  .  .  .  .  .  (g:7)</div>
-<div class="line"> *  *  . [.] .  .  .  .  .  .  (g:8)</div>
-<div class="line"> *  * [.] .  .  .  .  .  .  .  (g:9)</div>
-<div class="line"> * [*] .  .  .  .  .  .  .  .  (g:10)</div>
-<div class="line"> * [.] .  .  .  .  .  .  .  .  (g:11)</div>
-<div class="line">[*] .  .  .  .  .  .  .  .  .  (g:12)</div>
-<div class="line">[.] .  .  .  .  .  .  .  .  .  (g:13)</div>
+<div class="line">══ ✔  Solução ══</div>
+<div class="line"> *  *  .  *  * [*] *  .  .  .  (💰 g:0) ⚡</div>
+<div class="line"> *  *  .  *  *  * [*] .  .  .  (💰 g:1) ⚡</div>
+<div class="line"> *  *  .  *  *  * [.] .  .  .  (💰 g:2) ⚡</div>
+<div class="line"> *  *  .  *  * [*] .  .  .  .  (💰 g:3) ⚡</div>
+<div class="line"> *  *  .  *  * [.] .  .  .  .  (💰 g:4) ⚡</div>
+<div class="line"> *  *  .  * [*] .  .  .  .  .  (💰 g:5) ⚡</div>
+<div class="line"> *  *  .  * [.] .  .  .  .  .  (💰 g:6) ⚡</div>
+<div class="line"> *  *  . [*] .  .  .  .  .  .  (💰 g:7) ⚡</div>
+<div class="line"> *  *  . [.] .  .  .  .  .  .  (💰 g:8) ⚡</div>
+<div class="line"> *  * [.] .  .  .  .  .  .  .  (💰 g:9) ⚡</div>
+<div class="line"> * [*] .  .  .  .  .  .  .  .  (💰 g:10) ⚡</div>
+<div class="line"> * [.] .  .  .  .  .  .  .  .  (💰 g:11) ⚡</div>
+<div class="line">[*] .  .  .  .  .  .  .  .  .  (💰 g:12) ⚡</div>
+<div class="line">[.] .  .  .  .  .  .  .  .  .  (💰 g:13) 🎯</div>
 </div><!-- fragment --><p>Não houve desperdício visivel nesta solução. O algoritmo procura em largura garante-nos que esta solução é ótima, dado que o custo de cada ação é unitário.</p>
 <p>Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.</p>
 <p>A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.</p>

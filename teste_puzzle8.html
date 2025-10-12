@@ -96,7 +96,9 @@ $(document).ready(function(){initNavTree('teste_puzzle8.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
-<p>Execução de exemplo com base no problema do Puzzle 8. Selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. Pode acompanhar o teste excutando as ações localmente.</p>
+<p>Execução de exemplo com base no problema do Puzzle 8.</p>
+<p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. No Linux na pasta <code>.../TProcura/Construtiva/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraConstrutiva</code></p>
+<p>Pode acompanhar o teste excutando as ações localmente.</p>
 <h2><a class="anchor" id="autotoc_md54"></a>
 Sumário</h2>
 <ul>
@@ -111,13 +113,13 @@ Sumário</h2>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a9">Ação 9 - Branch-and-Bound</a></li>
 <li><a class="el" href="teste_puzzle8.html#puzzle8-a10">Ação 10 - Testes Empíricos</a></li>
 </ul>
-<div class="fragment"><div class="line">Teste TProcurasConstrutivas</div>
-<div class="line">Problema:</div>
-<div class="line">  1 - Aspirador</div>
-<div class="line">  2 - Puzzle 8</div>
-<div class="line">  3 - 8 Damas</div>
-<div class="line">  4 - Partição</div>
-<div class="line">  5 - Artificial</div>
+<div class="fragment"><div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
+<div class="line">│ 1 - Aspirador                │</div>
+<div class="line">│ 2 - Puzzle 8                 │</div>
+<div class="line">│ 3 - 8 Damas                  │</div>
+<div class="line">│ 4 - Partição                 │</div>
+<div class="line">│ 5 - Artificial               │</div>
+<div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 2</div>
 </div><!-- fragment --><div class="image">
 <img src="puzzle8.png" alt=""/>
@@ -128,55 +130,70 @@ Puzzle 8 - movimentar uma das peças para o espaço vazio</div></div>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no problema Puzzle 8, introduza: <b>2.</b></p>
 <div class="fragment"><div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 4  7  5</div>
-<div class="line"> 6  8  .</div>
-<div class="line">____________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
-<div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ascendentes | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  4  7  5</div>
+<div class="line"> │  6  8  .</div>
+<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p> Aparece uma instância do Puzzle 8. Poderiamos procurar resolver manualmente. No entanto esta instância está distante da solução, pelo que vamos ver outra instância. Introduza: <b>1;4.</b></p>
 <div class="fragment"><div class="line">Opção: 1</div>
 <div class="line"> </div>
-<div class="line">ID atual: 40  Intervalo: [1-1000]  Prefixo atual: &#39;instancia_&#39;</div>
+<div class="line">┌─ ↻  Inicializar ─────────────────────────────────────────────────────</div>
+<div class="line">│ ID atual: 40  Intervalo: [1–1000]</div>
+<div class="line">│ Prefixo atual: &#39;instancia_&#39;</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 4</div>
 <div class="line"> </div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ascendentes | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> 3  1  2</div>
 <div class="line"> 6  4  5</div>
 <div class="line"> 7  8  .</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p>Estavamos na instância 40, e existem instâncias de 1 a 1000. Como as instâncias são construídas com base em movimentos aleatórios em quantidade igual ao ID da instância, ao escolher um ID de 4 garantimos que estamos a uma distância de 4 ou menos da solução.</p>
 <p><a class="anchor" id="puzzle8-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md56"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos então resolver a instância manualmente. Introduza: <b>2; dir dir baixo baixo; <em>ENTER</em>.</b></p>
 <div class="fragment"><div class="line">Opção: 2</div>
-<div class="line">g:0 h:4 1|2|3</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  4  5</div>
-<div class="line"> 7  8  .</div>
-<div class="line">Ações: baixo dir</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:dir dir baixo baixo</div>
-<div class="line">Executadas 4 ações com sucesso.</div>
-<div class="line">g:0 6|14|6</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">Ações: cima esq</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:</div>
+<div class="line"> </div>
+<div class="line">═╤═ 💰 g:0 🎯 h:4 🔢 1|2|3 ═══</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  4  5</div>
+<div class="line"> │  7  8  .</div>
+<div class="line"> │ └─ ⚡ ───── baixo dir</div>
+<div class="line">🔍  Sucessor [1-2, ação(ões), exe]: dir dir baixo baixo</div>
+<div class="line"> </div>
+<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">│ Executadas 4 ações.</div>
+<div class="line">└─────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🔢 6|14|6 ═══</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │ └─ ⚡ ───── cima esq</div>
+<div class="line">🔍  Sucessor [1-2, ação(ões), exe]:</div>
 <div class="line"> </div>
 <div class="line">Puzzle 8</div>
 <div class="line">...</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p> A instância está resolvida. Vamos agora ver o caminho gravado. Introduza <b>4.</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
@@ -186,10 +203,11 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">(7)(8) .</div>
 <div class="line">Puzzle 8</div>
 <div class="line">...</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p> Vemos agora a solução num formato compacto. Num só tabuleiro, vemos as peças que mudam. Ou se se quiser, vemos o percurso do espaço. Existe uma só parte, com as ações que demos manualmente. Caso o caminho intersecte, existiriam mais partes.</p>
 <p>Esta forma de ver soluções é específica do Puzzle 8 porque foi redefinido o método MostrarSolucao(). Assim temos uma forma compacta mais cómuda de ver soluções.</p>
 <p><a class="anchor" id="puzzle8-a3"></a></p>
@@ -198,131 +216,158 @@ Ação 3 - Procura em Largura</h2>
 <p>Começamos pela procura em largura nesta instãncia, colocando debug a 4. Introduza: <b>1; 4; 3; 2; 4; <em>ENTER</em>; 6</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">g:0</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  4  5</div>
-<div class="line"> 7  8  .</div>
-<div class="line">Ações: baixo dir</div>
-<div class="line">g:1 1|2</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  4  .</div>
-<div class="line"> 7  8  5</div>
-<div class="line">Ações: baixo dir</div>
-<div class="line">g:1 2|4</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  4  5</div>
-<div class="line"> 7  .  8</div>
-<div class="line">Ações: baixo dir</div>
-<div class="line">g:2 3|6</div>
-<div class="line"> 3  1  .</div>
-<div class="line"> 6  4  2</div>
-<div class="line"> 7  8  5</div>
-<div class="line">Ações: dir</div>
-<div class="line">g:2 4|7</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  .  4</div>
-<div class="line"> 7  8  5</div>
-<div class="line">Ações: baixo cima dir</div>
-<div class="line">g:2 5|10</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  .  5</div>
-<div class="line"> 7  4  8</div>
-<div class="line">Ações: baixo dir esq</div>
-<div class="line">g:2 6|13</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  4  5</div>
-<div class="line"> .  7  8</div>
-<div class="line">Ações: baixo</div>
-<div class="line">g:3 7|14</div>
-<div class="line"> 3  .  1</div>
-<div class="line"> 6  4  2</div>
-<div class="line"> 7  8  5</div>
-<div class="line">Ações: cima dir</div>
-<div class="line">g:3 8|16</div>
-<div class="line"> 3  .  2</div>
-<div class="line"> 6  1  4</div>
-<div class="line"> 7  8  5</div>
-<div class="line">Ações: dir esq</div>
-<div class="line">g:3 9|18</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  8  4</div>
-<div class="line"> 7  .  5</div>
-<div class="line">Ações: dir esq</div>
-<div class="line">g:3 10|20</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> .  6  4</div>
-<div class="line"> 7  8  5</div>
-<div class="line">Ações: baixo cima</div>
-<div class="line">g:3 11|22</div>
-<div class="line"> 3  .  2</div>
-<div class="line"> 6  1  5</div>
-<div class="line"> 7  4  8</div>
-<div class="line">Ações: dir esq</div>
-<div class="line">g:3 12|24</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> .  6  5</div>
-<div class="line"> 7  4  8</div>
-<div class="line">Ações: baixo cima</div>
-<div class="line">g:3 13|26</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 6  5  .</div>
-<div class="line"> 7  4  8</div>
-<div class="line">Ações: baixo cima</div>
-<div class="line">g:3 14|28</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> .  4  5</div>
-<div class="line"> 6  7  8  Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:4)</div>
-<div class="line"> P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P7=0 P8=2 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  4  5</div>
+<div class="line"> │  7  8  .</div>
+<div class="line"> │ └─ ⚡ ───── baixo dir { 🔖1 🔖2 }</div>
+<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  4  .</div>
+<div class="line"> │  7  8  5</div>
+<div class="line"> │ └─ ⚡ ───── baixo dir { 🔖3 🔖4 }</div>
+<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|4 ═══ { 🔖3 🔖4 }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  4  5</div>
+<div class="line"> │  7  .  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo dir { 🔖5 🔖6 }</div>
+<div class="line"> ├■═╤═ 🔖3 💰 g:2 🔢 3|6 ═══ { 🔖4 🔖5 🔖6 }</div>
+<div class="line"> │  3  1  .</div>
+<div class="line"> │  6  4  2</div>
+<div class="line"> │  7  8  5</div>
+<div class="line"> │ └─ ⚡ ───── dir { 🔖7 }</div>
+<div class="line"> ├■═╤═ 🔖4 💰 g:2 🔢 4|7 ═══ { 🔖5 🔖6 🔖7 }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  .  4</div>
+<div class="line"> │  7  8  5</div>
+<div class="line"> │ └─ ⚡ ───── baixo cima dir { 🔖8 🔖9 🔖10 }</div>
+<div class="line"> ├■═╤═ 🔖5 💰 g:2 🔢 5|10 ═══ { 🔖6 🔖7 🔖8 🔖9 🔖10 }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  .  5</div>
+<div class="line"> │  7  4  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo dir esq { 🔖11 🔖12 🔖13 }</div>
+<div class="line"> ├■═╤═ 🔖6 💰 g:2 🔢 6|13 ═══ { 🔖7 🔖8 🔖9 🔖10 🔖11 🔖12 🔖13 }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  4  5</div>
+<div class="line"> │  .  7  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo { 🔖14 }</div>
+<div class="line"> ├■═╤═ 🔖7 💰 g:3 🔢 7|14 ═══ { 🔖8 🔖9 🔖10 🔖11 🔖12 🔖13 🔖14 }</div>
+<div class="line"> │  3  .  1</div>
+<div class="line"> │  6  4  2</div>
+<div class="line"> │  7  8  5</div>
+<div class="line"> │ └─ ⚡ ───── cima dir { 🔖15 🔖16 }</div>
+<div class="line"> ├■═╤═ 🔖8 💰 g:3 🔢 8|16 ═══ { 🔖9 🔖10 🔖11 🔖12 🔖13 🔖14 🔖15 🔖16 }</div>
+<div class="line"> │  3  .  2</div>
+<div class="line"> │  6  1  4</div>
+<div class="line"> │  7  8  5</div>
+<div class="line"> │ └─ ⚡ ───── dir esq { 🔖17 🔖18 }</div>
+<div class="line"> ├■═╤═ 🔖9 💰 g:3 🔢 9|18 ═══ { 🔖10 🔖11 🔖12 🔖13 🔖14 🔖15 🔖16 🔖17 🔖18 }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  8  4</div>
+<div class="line"> │  7  .  5</div>
+<div class="line"> │ └─ ⚡ ───── dir esq { 🔖19 🔖20 }</div>
+<div class="line"> ├■═╤═ 🔖10 💰 g:3 🔢 10|20 ═══ { 🔖11 🔖12 🔖13 🔖14 🔖15 🔖16 🔖17 🔖18 🔖19 🔖20 }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  .  6  4</div>
+<div class="line"> │  7  8  5</div>
+<div class="line"> │ └─ ⚡ ───── baixo cima { 🔖21 🔖22 }</div>
+<div class="line"> ├■═╤═ 🔖11 💰 g:3 🔢 11|22 ═══ { 🔖12 🔖13 🔖14 … 🔖20 🔖21 🔖22 } #11</div>
+<div class="line"> │  3  .  2</div>
+<div class="line"> │  6  1  5</div>
+<div class="line"> │  7  4  8</div>
+<div class="line"> │ └─ ⚡ ───── dir esq { 🔖23 🔖24 }</div>
+<div class="line"> ├■═╤═ 🔖12 💰 g:3 🔢 12|24 ═══ { 🔖13 🔖14 🔖15 … 🔖22 🔖23 🔖24 } #12</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  .  6  5</div>
+<div class="line"> │  7  4  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo cima { 🔖25 🔖26 }</div>
+<div class="line"> ├■═╤═ 🔖13 💰 g:3 🔢 13|26 ═══ { 🔖14 🔖15 🔖16 … 🔖24 🔖25 🔖26 } #13</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  6  5  .</div>
+<div class="line"> │  7  4  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo cima { 🔖27 🔖28 }</div>
+<div class="line"> ├■═╤═ 🔖14 💰 g:3 🔢 14|28 ═══ { 🔖15 🔖16 🔖17 … 🔖26 🔖27 🔖28 } #14</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  .  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo esq { 🔖29 🔖30 }</div>
+<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P7=0 P8=2 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  1ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ascendentes | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 4 | I2(Tempo(ms)): 45 | I3(Iterações): 0 | I4(Expansões): 15 | I5(Gerações): 30 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 4 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 15 |</div>
+<div class="line">│ I5(IND_GERACOES): 30 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p> Foi encontrada uma solução de distância 4. Podemos ver a ordem das expansões, houve estados expandidos que em nada contribuiam para a solução, mas serviram para garantir que não havia outra solução mais curta.</p>
+<p>Vemos a lista de estados gerados não expandidos, vai cada vez aumentando, e na geração 14 já tinha 14 elementos. A partir de 10 elementos, em vez de colocar todos os elementos da lista, colocamos apenas os primeiros e últimos, acompanhado com a quantidade de elementos.</p>
 <p>Esta instância era fácil, mas e a instância inicial? Vamos ver, mas reduzindo o debug para 2, e a semente para 2. Introduza: <b>3; 2; 2; 3; 2; <em>ENTER</em>; 1; 40; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">g:0</div>
-<div class="line">g:1 1|4</div>
-<div class="line">g:1 2|6</div>
-<div class="line">g:1 3|8</div>
-<div class="line">g:1 4|10</div>
-<div class="line">g:2 5|12</div>
-<div class="line">g:2 6|13</div>
-<div class="line">g:2 7|14</div>
-<div class="line">g:2 8|15</div>
-<div class="line">g:2 9|16</div>
-<div class="line">g:2 10|17</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
+<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|4 ═══ { 🔖2 🔖3 🔖4 }</div>
+<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|6 ═══ { 🔖3 🔖4 🔖5 🔖6 }</div>
+<div class="line"> ├■═╤═ 🔖3 💰 g:1 🔢 3|8 ═══ { 🔖4 🔖5 🔖6 🔖7 🔖8 }</div>
+<div class="line"> ├■═╤═ 🔖4 💰 g:1 🔢 4|10 ═══ { 🔖5 🔖6 🔖7 🔖8 🔖9 🔖10 }</div>
+<div class="line"> ├■═╤═ 🔖5 💰 g:2 🔢 5|12 ═══ { 🔖6 🔖7 🔖8 🔖9 🔖10 🔖11 🔖12 }</div>
+<div class="line"> ├■═╤═ 🔖6 💰 g:2 🔢 6|13 ═══ { 🔖7 🔖8 🔖9 🔖10 🔖11 🔖12 🔖13 }</div>
+<div class="line"> ├■═╤═ 🔖7 💰 g:2 🔢 7|14 ═══ { 🔖8 🔖9 🔖10 🔖11 🔖12 🔖13 🔖14 }</div>
+<div class="line"> ├■═╤═ 🔖8 💰 g:2 🔢 8|15 ═══ { 🔖9 🔖10 🔖11 🔖12 🔖13 🔖14 🔖15 }</div>
+<div class="line"> ├■═╤═ 🔖9 💰 g:2 🔢 9|16 ═══ { 🔖10 🔖11 🔖12 🔖13 🔖14 🔖15 🔖16 }</div>
+<div class="line"> ├■═╤═ 🔖10 💰 g:2 🔢 10|17 ═══ { 🔖11 🔖12 🔖13 🔖14 🔖15 🔖16 🔖17 }</div>
+<div class="line"> ├■═╤═ 🔖11 💰 g:2 🔢 11|18 ═══ { 🔖12 🔖13 🔖14 🔖15 🔖16 🔖17 🔖18 }</div>
+<div class="line"> ├■═╤═ 🔖12 💰 g:2 🔢 12|19 ═══ { 🔖13 🔖14 🔖15 🔖16 🔖17 🔖18 🔖19 }</div>
+<div class="line"> ├■═╤═ 🔖13 💰 g:3 🔢 13|20 ═══ { 🔖14 🔖15 🔖16 🔖17 🔖18 🔖19 🔖20 }</div>
+<div class="line"> ├■═╤═ 🔖14 💰 g:3 🔢 14|22 ═══ { 🔖15 🔖16 🔖17 🔖18 🔖19 🔖20 🔖21 🔖22 }</div>
+<div class="line"> ├■═╤═ 🔖15 💰 g:3 🔢 15|24 ═══ { 🔖16 🔖17 🔖18 🔖19 🔖20 🔖21 🔖22 🔖23 🔖24 }</div>
+<div class="line"> ├■═╤═ 🔖16 💰 g:3 🔢 16|26 ═══ { 🔖17 🔖18 🔖19 🔖20 🔖21 🔖22 🔖23 🔖24 🔖25 🔖26 }</div>
+<div class="line"> ├■═╤═ 🔖17 💰 g:3 🔢 17|28 ═══ { 🔖18 🔖19 🔖20 … 🔖26 🔖27 🔖28 } #11</div>
+<div class="line"> ├■═╤═ 🔖18 💰 g:3 🔢 18|30 ═══ { 🔖19 🔖20 🔖21 … 🔖28 🔖29 🔖30 } #12</div>
+<div class="line"> ├■═╤═ 🔖19 💰 g:3 🔢 19|32 ═══ { 🔖20 🔖21 🔖22 … 🔖30 🔖31 🔖32 } #13</div>
+<div class="line"> ├■═╤═ 🔖20 💰 g:3 🔢 20|34 ═══ { 🔖21 🔖22 🔖23 … 🔖32 🔖33 🔖34 } #14</div>
+<div class="line"> ├■═╤═ 🔖21 💰 g:4 🔢 21|36 ═══ { 🔖22 🔖23 🔖24 … 🔖34 🔖35 🔖36 } #15</div>
 <div class="line">...</div>
-<div class="line">g:11 1281|2123</div>
-<div class="line">g:11 1282|2125</div>
-<div class="line">g:11 1283|2127</div>
-<div class="line">g:11 1284|2129 Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:12)</div>
-<div class="line"> P1=1 P2=2 P3=2 P4=10 P5=0 P6=4 P7=0 P8=2 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">├■═╤═ 🔖1281 💰 g:11 🔢 1281|2123 ═══ { 🔖1282 🔖1283 🔖1284 … 🔖2121 🔖2122 🔖2123 } #842</div>
+<div class="line"> ├■═╤═ 🔖1282 💰 g:11 🔢 1282|2125 ═══ { 🔖1283 🔖1284 🔖1285 … 🔖2123 🔖2124 🔖2125 } #843</div>
+<div class="line"> ├■═╤═ 🔖1283 💰 g:11 🔢 1283|2127 ═══ { 🔖1284 🔖1285 🔖1286 … 🔖2125 🔖2126 🔖2127 } #844</div>
+<div class="line"> ├■═╤═ 🔖1284 💰 g:11 🔢 1284|2129 ═══ { 🔖1285 🔖1286 🔖1287 … 🔖2127 🔖2128 🔖2129 } #845</div>
+<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=2 P3=2 P4=10 P5=0 P6=4 P7=0 P8=2 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  31ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): passos | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 2</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ascendentes | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 12 | I2(Tempo(ms)): 621 | I3(Iterações): 0 | I4(Expansões): 1285 | I5(Gerações): 2131 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Foi encontrado um resultado com 12 movimentos, mas foram realizadas 1285 expansões, resultando em 2131 gerações.</p>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 31 | I3(Iterações): 0 | I4(IND_EXPANSOES): 1285 |</div>
+<div class="line">│ I5(IND_GERACOES): 2131 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Foi encontrado um resultado com 12 movimentos, mas foram realizadas 1285 expansões, resultando em 2131 gerações. Notar que a lista de estados gerados não expandidos foi contniuamente crescendo, e no momento em que foi encontrada a solução haviam 845 estados nesta lista.</p>
 <p>Vamos confirmar a solução. Introduza <b>4.</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
@@ -348,251 +393,294 @@ Ação 3 - Procura em Largura</h2>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
 <div class="line">...</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p>Nesta instância, foram precisas 4 partes para mostrar a solução com 12 ações.</p>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p>Nesta instância foram precisas 4 partes para mostrar a solução com 12 ações.</p>
 <p>Embora o estado inicial tenha sido obtido por 40 movimentos aleatórios desde o estado objetivo, alguns dos movimentos acabaram por se inverter resultando numa instância à distãncia 12 do objetivo.</p>
-<p>Utilizamos P3(Seed)=2, naturalmente que outra semente aleatória poderia gerar um puzzle de 0 a 40 movimentos da solução.</p>
+<p>Utilizamos P3(SEMENTE)=2, naturalmente que outra semente aleatória poderia gerar um puzzle de 0 a 40 movimentos da solução.</p>
 <p><a class="anchor" id="puzzle8-a4"></a></p>
 <h2><a class="anchor" id="autotoc_md58"></a>
 Ação 4 - Procura em Profundidade</h2>
-<p>Vamos ver a procura em profundidade na instância 40, que sabemos ter uma solução de 12. Vamos alterar o algoritmo, colocar a profundidade a 4, debug a completo e visualização a 1, para ser ver todos os estados. Introduza: <b>1; 40; 3; 1; 3; 7; 4; 2; 4; 6; 1; <em>ENTER</em>; 6.</b></p>
-<div class="fragment"><div class="line">g:0</div>
-<div class="line"> 4  7  3</div>
-<div class="line"> 1  .  2</div>
-<div class="line"> 6  8  5</div>
-<div class="line">  +g:1 1|4 baixo</div>
-<div class="line">  | 4  .  3</div>
-<div class="line">  | 1  7  2</div>
-<div class="line">  | 6  8  5</div>
-<div class="line">  |  +g:2 2|6 dir</div>
-<div class="line">  |  | .  4  3</div>
-<div class="line">  |  | 1  7  2</div>
-<div class="line">  |  | 6  8  5</div>
-<div class="line">  |  |  +g:3 3|7 cima</div>
-<div class="line">  |  |    1  4  3</div>
-<div class="line">  |  |    .  7  2</div>
-<div class="line">  |  |    6  8  5</div>
-<div class="line">  |  |</div>
-<div class="line">  |  +g:2 3|7 esq</div>
-<div class="line">  |    4  3  .</div>
-<div class="line">  |    1  7  2</div>
-<div class="line">  |    6  8  5</div>
-<div class="line">  |     +g:3 4|8 cima</div>
-<div class="line">  |       4  3  2</div>
-<div class="line">  |       1  7  .</div>
-<div class="line">  |       6  8  5</div>
-<div class="line">  |</div>
-<div class="line">  +g:1 4|8 cima</div>
-<div class="line">  | 4  7  3</div>
-<div class="line">  | 1  8  2</div>
-<div class="line">  | 6  .  5</div>
-<div class="line">  |  +g:2 5|10 dir</div>
-<div class="line">  |  | 4  7  3</div>
-<div class="line">  |  | 1  8  2</div>
-<div class="line">  |  | .  6  5</div>
-<div class="line">  |  |  +g:3 6|11 baixo</div>
-<div class="line">  |  |    4  7  3</div>
-<div class="line">  |  |    .  8  2</div>
-<div class="line">  |  |    1  6  5</div>
-<div class="line">  |  |</div>
-<div class="line">  |  +g:2 6|11 esq</div>
-<div class="line">  |    4  7  3</div>
-<div class="line">  |    1  8  2</div>
-<div class="line">  |    6  5  .</div>
-<div class="line">  |     +g:3 7|12 baixo</div>
-<div class="line">  |       4  7  3</div>
-<div class="line">  |       1  8  .</div>
-<div class="line">  |       6  5  2</div>
-<div class="line">  |</div>
-<div class="line">  +g:1 7|12 dir</div>
-<div class="line">  | 4  7  3</div>
-<div class="line">  | .  1  2</div>
-<div class="line">  | 6  8  5</div>
-<div class="line">  |  +g:2 8|14 baixo</div>
-<div class="line">  |  | .  7  3</div>
-<div class="line">  |  | 4  1  2</div>
-<div class="line">  |  | 6  8  5</div>
-<div class="line">  |  |  +g:3 9|15 esq</div>
-<div class="line">  |  |    7  .  3</div>
-<div class="line">  |  |    4  1  2</div>
-<div class="line">  |  |    6  8  5</div>
-<div class="line">  |  |</div>
-<div class="line">  |  +g:2 9|15 cima</div>
-<div class="line">  |    4  7  3</div>
-<div class="line">  |    6  1  2</div>
-<div class="line">  |    .  8  5</div>
-<div class="line">  |     +g:3 10|16 esq</div>
-<div class="line">  |       4  7  3</div>
-<div class="line">  |       6  1  2</div>
-<div class="line">  |       8  .  5</div>
-<div class="line">  |</div>
-<div class="line">  +g:1 10|16 esq</div>
-<div class="line">    4  7  3</div>
-<div class="line">    1  2  .</div>
-<div class="line">    6  8  5</div>
-<div class="line">     +g:2 11|18 baixo</div>
-<div class="line">     | 4  7  .</div>
-<div class="line">     | 1  2  3</div>
-<div class="line">     | 6  8  5</div>
-<div class="line">     |  +g:3 12|19 dir</div>
-<div class="line">     |    4  .  7</div>
-<div class="line">     |    1  2  3</div>
-<div class="line">     |    6  8  5</div>
-<div class="line">     |</div>
-<div class="line">     +g:2 12|19 cima</div>
-<div class="line">       4  7  3</div>
-<div class="line">       1  2  5</div>
-<div class="line">       6  8  .</div>
-<div class="line">        +g:3 13|20 dir</div>
-<div class="line">          4  7  3</div>
-<div class="line">          1  2  5</div>
-<div class="line">          6  .  8</div>
+<p>Vamos ver a procura em profundidade na instância 40, que sabemos ter uma solução de 12. Vamos alterar o algoritmo, colocar a profundidade a 4, debug a completo e visualização de ações a 1, para ser ver todos os estados. Introduza: <b>1; 40; 3; 1; 3; 7; 4; 2; 4; 6; 1; <em>ENTER</em>; 6.</b></p>
+<div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line"> P1=3 P2=4 P3=2 P4=10 P5=0 P6=1 P7=4 P8=2 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══</div>
+<div class="line"> │  4  7  3</div>
+<div class="line"> │  1  .  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │  ├■═╤═ 🔖1 💰 g:1 🔢 1|4 ═══ ⚡baixo</div>
+<div class="line"> │  │  4  .  3</div>
+<div class="line"> │  │  1  7  2</div>
+<div class="line"> │  │  6  8  5</div>
+<div class="line"> │  │  ├■═╤═ 🔖5 💰 g:2 🔢 2|6 ═══ ⚡dir</div>
+<div class="line"> │  │  │  .  4  3</div>
+<div class="line"> │  │  │  1  7  2</div>
+<div class="line"> │  │  │  6  8  5</div>
+<div class="line"> │  │  │  └■═╤═ 🔖7 💰 g:3 🔢 3|7 ═══ ⚡cima</div>
+<div class="line"> │  │  │     1  4  3</div>
+<div class="line"> │  │  │     .  7  2</div>
+<div class="line"> │  │  │     6  8  5</div>
+<div class="line"> │  │  │    🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖6 💰 g:2 🔢 3|7 ═══ ⚡esq</div>
+<div class="line"> │  │     4  3  .</div>
+<div class="line"> │  │     1  7  2</div>
+<div class="line"> │  │     6  8  5</div>
+<div class="line"> │  │     └■═╤═ 🔖8 💰 g:3 🔢 4|8 ═══ ⚡cima</div>
+<div class="line"> │  │        4  3  2</div>
+<div class="line"> │  │        1  7  .</div>
+<div class="line"> │  │        6  8  5</div>
+<div class="line"> │  │       🍃🪜</div>
+<div class="line"> │  ├■═╤═ 🔖2 💰 g:1 🔢 4|8 ═══ ⚡cima</div>
+<div class="line"> │  │  4  7  3</div>
+<div class="line"> │  │  1  8  2</div>
+<div class="line"> │  │  6  .  5</div>
+<div class="line"> │  │  ├■═╤═ 🔖9 💰 g:2 🔢 5|10 ═══ ⚡dir</div>
+<div class="line"> │  │  │  4  7  3</div>
+<div class="line"> │  │  │  1  8  2</div>
+<div class="line"> │  │  │  .  6  5</div>
+<div class="line"> │  │  │  └■═╤═ 🔖11 💰 g:3 🔢 6|11 ═══ ⚡baixo</div>
+<div class="line"> │  │  │     4  7  3</div>
+<div class="line"> │  │  │     .  8  2</div>
+<div class="line"> │  │  │     1  6  5</div>
+<div class="line"> │  │  │    🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖10 💰 g:2 🔢 6|11 ═══ ⚡esq</div>
+<div class="line"> │  │     4  7  3</div>
+<div class="line"> │  │     1  8  2</div>
+<div class="line"> │  │     6  5  .</div>
+<div class="line"> │  │     └■═╤═ 🔖12 💰 g:3 🔢 7|12 ═══ ⚡baixo</div>
+<div class="line"> │  │        4  7  3</div>
+<div class="line"> │  │        1  8  .</div>
+<div class="line"> │  │        6  5  2</div>
+<div class="line"> │  │       🍃🪜</div>
+<div class="line"> │  ├■═╤═ 🔖3 💰 g:1 🔢 7|12 ═══ ⚡dir</div>
+<div class="line"> │  │  4  7  3</div>
+<div class="line"> │  │  .  1  2</div>
+<div class="line"> │  │  6  8  5</div>
+<div class="line"> │  │  ├■═╤═ 🔖13 💰 g:2 🔢 8|14 ═══ ⚡baixo</div>
+<div class="line"> │  │  │  .  7  3</div>
+<div class="line"> │  │  │  4  1  2</div>
+<div class="line"> │  │  │  6  8  5</div>
+<div class="line"> │  │  │  └■═╤═ 🔖15 💰 g:3 🔢 9|15 ═══ ⚡esq</div>
+<div class="line"> │  │  │     7  .  3</div>
+<div class="line"> │  │  │     4  1  2</div>
+<div class="line"> │  │  │     6  8  5</div>
+<div class="line"> │  │  │    🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖14 💰 g:2 🔢 9|15 ═══ ⚡cima</div>
+<div class="line"> │  │     4  7  3</div>
+<div class="line"> │  │     6  1  2</div>
+<div class="line"> │  │     .  8  5</div>
+<div class="line"> │  │     └■═╤═ 🔖16 💰 g:3 🔢 10|16 ═══ ⚡esq</div>
+<div class="line"> │  │        4  7  3</div>
+<div class="line"> │  │        6  1  2</div>
+<div class="line"> │  │        8  .  5</div>
+<div class="line"> │  │       🍃🪜</div>
+<div class="line"> │  └■═╤═ 🔖4 💰 g:1 🔢 10|16 ═══ ⚡esq</div>
+<div class="line"> │     4  7  3</div>
+<div class="line"> │     1  2  .</div>
+<div class="line"> │     6  8  5</div>
+<div class="line"> │     ├■═╤═ 🔖17 💰 g:2 🔢 11|18 ═══ ⚡baixo</div>
+<div class="line"> │     │  4  7  .</div>
+<div class="line"> │     │  1  2  3</div>
+<div class="line"> │     │  6  8  5</div>
+<div class="line"> │     │  └■═╤═ 🔖19 💰 g:3 🔢 12|19 ═══ ⚡dir</div>
+<div class="line"> │     │     4  .  7</div>
+<div class="line"> │     │     1  2  3</div>
+<div class="line"> │     │     6  8  5</div>
+<div class="line"> │     │    🍃🪜</div>
+<div class="line"> │     └■═╤═ 🔖18 💰 g:2 🔢 12|19 ═══ ⚡cima</div>
+<div class="line"> │        4  7  3</div>
+<div class="line"> │        1  2  5</div>
+<div class="line"> │        6  8  .</div>
+<div class="line"> │        └■═╤═ 🔖20 💰 g:3 🔢 13|20 ═══ ⚡dir</div>
+<div class="line"> │           4  7  3</div>
+<div class="line"> │           1  2  5</div>
+<div class="line"> │           6  .  8</div>
+<div class="line"> │          🍃🪜</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=3 P2=4 P3=2 P4=10 P5=0 P6=1 P7=4 P8=2 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  1ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 1 | P7(Limite): 4 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 2</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 4</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ascendentes | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> 4  7  3</div>
 <div class="line"> 1  .  2</div>
 <div class="line"> 6  8  5</div>
-<div class="line">I1(Custo): -1 | I2(Tempo(ms)): 70 | I3(Iterações): 0 | I4(Expansões): 13 | I5(Gerações): 20 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Foram vistos todos os estados, e não se encontrou uma solução. Vamos agora colocar o limite a 0, de modo a executar a iterativa, e debug no nível 2. Introduza: <b>1; 40; 3; 7; 0; 2; 2; <em>ENTER</em>; 6.</b></p>
-<div class="fragment"><div class="line">Iteração 1:</div>
-<div class="line">= g:0</div>
-<div class="line">Iteração 2:</div>
-<div class="line">--+= g:1 1|4</div>
-<div class="line">  += g:1 1|4</div>
-<div class="line">  += g:1 1|4</div>
-<div class="line">  += g:1 1|4</div>
-<div class="line">Iteração 3:</div>
-<div class="line">--+--+= g:2 3|10</div>
-<div class="line">  |  += g:2 3|10</div>
-<div class="line">  +--+= g:2 4|12</div>
-<div class="line">  |  += g:2 4|12</div>
-<div class="line">  +--+= g:2 5|14</div>
-<div class="line">  |  += g:2 5|14</div>
-<div class="line">  +--+= g:2 6|16</div>
-<div class="line">     += g:2 6|16</div>
-<div class="line">Iteração 4:</div>
-<div class="line">--+--+--+= g:3 9|23</div>
-<div class="line">  |  +--+= g:3 10|24</div>
-<div class="line">  +--+--+= g:3 12|27</div>
-<div class="line">  |  +--+= g:3 13|28</div>
-<div class="line">  +--+--+= g:3 15|31</div>
-<div class="line">  |  +--+= g:3 16|32</div>
-<div class="line">  +--+--+= g:3 18|35</div>
-<div class="line">     +--+= g:3 19|36</div>
-<div class="line">Iteração 5:</div>
-<div class="line">--+--+--+--+= g:4 23|45</div>
-<div class="line">  |  |     += g:4 23|45</div>
-<div class="line">  |  +--+--+= g:4 25|48</div>
-<div class="line">  |        += g:4 25|48</div>
-<div class="line">  +--+--+--+= g:4 28|53</div>
-<div class="line">  |  |     += g:4 28|53</div>
-<div class="line">  |  +--+--+= g:4 30|56</div>
-<div class="line">  |        += g:4 30|56</div>
-<div class="line">  +--+--+--+= g:4 33|61</div>
-<div class="line">  |  |     += g:4 33|61</div>
-<div class="line">  |  +--+--+= g:4 35|64</div>
-<div class="line">  |        += g:4 35|64</div>
-<div class="line">  +--+--+--+= g:4 38|69</div>
-<div class="line">     |     += g:4 38|69</div>
-<div class="line">     +--+--+= g:4 40|72</div>
-<div class="line">           += g:4 40|72</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): -1 | I2(Tempo(ms)): 1 | I3(Iterações): 0 | I4(IND_EXPANSOES): 13 |</div>
+<div class="line">│ I5(IND_GERACOES): 20 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">...</div>
-<div class="line">Iteração 13:</div>
-<div class="line">--+--+--+--+--+--+--+--+--+--+--+--+= g:12 2711|4651</div>
-<div class="line">  |  |     |     |  |  |     |     += g:12 2711|4651</div>
-<div class="line">  |  |     |     |  |  |     +--+--+= g:12 2713|4656</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Foram vistos todos os estados, e não se encontrou uma solução. No entanto todos os nós folha foram cortados devido ao limite, motivo pelo qual têm o icon da escada. Vamos agora colocar o limite a 0, de modo a executar a iterativa, e debug no nível 2. Introduza: <b>1; 40; 3; 7; 0; 2; 2; <em>ENTER</em>; 6.</b></p>
+<div class="fragment"><div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├─────────── 🌳 🪜 1 ⏱  ────────────</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══ ─── 🍃🪜</div>
+<div class="line"> ├─────────── 🌳 🪜 2 ⏱  ────────────</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══</div>
+<div class="line"> │  ├■═╤═ 🔖1 💰 g:1 🔢 1|4 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> │  ├■═╤═ 🔖2 💰 g:1 🔢 1|4 ═══ ⚡cima ─── 🍃🪜</div>
+<div class="line"> │  ├■═╤═ 🔖3 💰 g:1 🔢 1|4 ═══ ⚡dir ─── 🍃🪜</div>
+<div class="line"> │  └■═╤═ 🔖4 💰 g:1 🔢 1|4 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> ├─────────── 🌳 🪜 3 ⏱  ────────────</div>
+<div class="line"> ├■═╤═ 💰 g:0 🔢 1|4 ═══</div>
+<div class="line"> │  ├■═╤═ 🔖5 💰 g:1 🔢 2|8 ═══ ⚡baixo</div>
+<div class="line"> │  │  ├■═╤═ 🔖9 💰 g:2 🔢 3|10 ═══ ⚡dir ─── 🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖10 💰 g:2 🔢 3|10 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> │  ├■═╤═ 🔖6 💰 g:1 🔢 3|10 ═══ ⚡cima</div>
+<div class="line"> │  │  ├■═╤═ 🔖11 💰 g:2 🔢 4|12 ═══ ⚡dir ─── 🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖12 💰 g:2 🔢 4|12 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> │  ├■═╤═ 🔖7 💰 g:1 🔢 4|12 ═══ ⚡dir</div>
+<div class="line"> │  │  ├■═╤═ 🔖13 💰 g:2 🔢 5|14 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖14 💰 g:2 🔢 5|14 ═══ ⚡cima ─── 🍃🪜</div>
+<div class="line"> │  └■═╤═ 🔖8 💰 g:1 🔢 5|14 ═══ ⚡esq</div>
+<div class="line"> │     ├■═╤═ 🔖15 💰 g:2 🔢 6|16 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> │     └■═╤═ 🔖16 💰 g:2 🔢 6|16 ═══ ⚡cima ─── 🍃🪜</div>
+<div class="line"> ├─────────── 🌳 🪜 4 ⏱  ────────────</div>
+<div class="line"> ├■═╤═ 💰 g:0 🔢 6|16 ═══</div>
+<div class="line"> │  ├■═╤═ 🔖17 💰 g:1 🔢 7|20 ═══ ⚡baixo</div>
+<div class="line"> │  │  ├■═╤═ 🔖21 💰 g:2 🔢 8|22 ═══ ⚡dir</div>
+<div class="line"> │  │  │  └■═╤═ 🔖23 💰 g:3 🔢 9|23 ═══ ⚡cima ─── 🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖22 💰 g:2 🔢 9|23 ═══ ⚡esq</div>
+<div class="line"> │  │     └■═╤═ 🔖24 💰 g:3 🔢 10|24 ═══ ⚡cima ─── 🍃🪜</div>
+<div class="line"> │  ├■═╤═ 🔖18 💰 g:1 🔢 10|24 ═══ ⚡cima</div>
+<div class="line"> │  │  ├■═╤═ 🔖25 💰 g:2 🔢 11|26 ═══ ⚡dir</div>
+<div class="line"> │  │  │  └■═╤═ 🔖27 💰 g:3 🔢 12|27 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖26 💰 g:2 🔢 12|27 ═══ ⚡esq</div>
+<div class="line"> │  │     └■═╤═ 🔖28 💰 g:3 🔢 13|28 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> │  ├■═╤═ 🔖19 💰 g:1 🔢 13|28 ═══ ⚡dir</div>
+<div class="line"> │  │  ├■═╤═ 🔖29 💰 g:2 🔢 14|30 ═══ ⚡baixo</div>
+<div class="line"> │  │  │  └■═╤═ 🔖31 💰 g:3 🔢 15|31 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> │  │  └■═╤═ 🔖30 💰 g:2 🔢 15|31 ═══ ⚡cima</div>
+<div class="line"> │  │     └■═╤═ 🔖32 💰 g:3 🔢 16|32 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> │  └■═╤═ 🔖20 💰 g:1 🔢 16|32 ═══ ⚡esq</div>
+<div class="line"> │     ├■═╤═ 🔖33 💰 g:2 🔢 17|34 ═══ ⚡baixo</div>
+<div class="line"> │     │  └■═╤═ 🔖35 💰 g:3 🔢 18|35 ═══ ⚡dir ─── 🍃🪜</div>
+<div class="line"> │     └■═╤═ 🔖34 💰 g:2 🔢 18|35 ═══ ⚡cima</div>
+<div class="line"> │        └■═╤═ 🔖36 💰 g:3 🔢 19|36 ═══ ⚡dir ─── 🍃🪜</div>
+<div class="line"> ├─────────── 🌳 🪜 5 ⏱  ────────────</div>
 <div class="line">...</div>
-<div class="line">  |  |                          +--+= g:12 2943|5062</div>
-<div class="line">  |  |                             += g:12 2943|5062</div>
-<div class="line">  |  +--+--+--+--+--+--+--+--+--+--+= g:12 2953|5079</div>
-<div class="line">  |        |     |  |  |     |     += g:12 2953|5079</div>
-<div class="line">  |        |     |  |  |     +--+--+ Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:12)</div>
-<div class="line"> P1=3 P2=2 P3=2 P4=10 P5=0 P6=1 P7=0 P8=2 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line"> ├─────────── 🌳 🪜 13 ⏱ 49ms  ────────────</div>
+<div class="line"> ├■═╤═ 💰 g:0 🔢 2699|4628 ═══</div>
+<div class="line"> │  ├■═╤═ 🔖4629 💰 g:1 🔢 2700|4632 ═══ ⚡baixo</div>
+<div class="line"> │  │  ├■═╤═ 🔖4633 💰 g:2 🔢 2701|4634 ═══ ⚡dir</div>
+<div class="line"> │  │  │  └■═╤═ 🔖4635 💰 g:3 🔢 2702|4635 ═══ ⚡cima</div>
+<div class="line"> │  │  │     ├■═╤═ 🔖4636 💰 g:4 🔢 2703|4637 ═══ ⚡cima</div>
+<div class="line"> │  │  │     │  └■═╤═ 🔖4638 💰 g:5 🔢 2704|4638 ═══ ⚡esq</div>
+<div class="line"> │  │  │     │     ├■═╤═ 🔖4639 💰 g:6 🔢 2705|4640 ═══ ⚡baixo</div>
+<div class="line"> │  │  │     │     │  ├■═╤═ 🔖4641 💰 g:7 🔢 2706|4643 ═══ ⚡baixo</div>
+<div class="line"> │  │  │     │     │  │  ├■═╤═ 🔖4644 💰 g:8 🔢 2707|4645 ═══ ⚡dir</div>
+<div class="line"> │  │  │     │     │  │  │  └■═╤═ 🔖4646 💰 g:9 🔢 2708|4646 ═══ ⚡cima</div>
+<div class="line"> │  │  │     │     │  │  │     ├■═╤═ 🔖4647 💰 g:10 🔢 2709|4648 ═══ ⚡cima</div>
+<div class="line"> │  │  │     │     │  │  │     │  └■═╤═ 🔖4649 💰 g:11 🔢 2710|4649 ═══ ⚡esq</div>
+<div class="line"> │  │  │     │     │  │  │     │     ├■═╤═ 🔖4650 💰 g:12 🔢 2711|4651 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> │  │  │     │     │  │  │     │     └■═╤═ 🔖4651 💰 g:12 🔢 2711|4651 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> │  │  │     │     │  │  │     └■═╤═ 🔖4648 💰 g:10 🔢 2711|4651 ═══ ⚡esq</div>
+<div class="line"> │  │  │     │     │  │  │        ├■═╤═ 🔖4652 💰 g:11 🔢 2712|4654 ═══ ⚡baixo</div>
+<div class="line"> │  │  │     │     │  │  │        │  ├■═╤═ 🔖4655 💰 g:12 🔢 2713|4656 ═══ ⚡dir ─── 🍃🪜</div>
+<div class="line"> │  │  │     │     │  │  │        │  └■═╤═ 🔖4656 💰 g:12 🔢 2713|4656 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> │  │  │     │     │  │  │        ├■═╤═ 🔖4653 💰 g:11 🔢 2713|4656 ═══ ⚡cima</div>
+<div class="line"> │  │  │     │     │  │  │        │  ├■═╤═ 🔖4657 💰 g:12 🔢 2714|4658 ═══ ⚡dir ─── 🍃🪜</div>
+<div class="line"> │  │  │     │     │  │  │        │  └■═╤═ 🔖4658 💰 g:12 🔢 2714|4658 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> │  │  │     │     │  │  │        └■═╤═ 🔖4654 💰 g:11 🔢 2714|4658 ═══ ⚡esq</div>
+<div class="line"> │  │  │     │     │  │  │           ├■═╤═ 🔖4659 💰 g:12 🔢 2715|4660 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> │  │  │     │     │  │  │           └■═╤═ 🔖4660 💰 g:12 🔢 2715|4660 ═══ ⚡cima ─── 🍃🪜</div>
+<div class="line"> │  │  │     │     │  │  └■═╤═ 🔖4645 💰 g:8 🔢 2715|4660 ═══ ⚡esq</div>
+<div class="line"> │  │  │     │     │  │     └■═╤═ 🔖4661 💰 g:9 🔢 2716|4661 ═══ ⚡cima</div>
+<div class="line"> │  │  │     │     │  │        ├■═╤═ 🔖4662 💰 g:10 🔢 2717|4663 ═══ ⚡cima</div>
+<div class="line"> │  │  │     │     │  │        │  └■═╤═ 🔖4664 💰 g:11 🔢 2718|4664 ═══ ⚡dir</div>
+<div class="line"> │  │  │     │     │  │        │     ├■═╤═ 🔖4665 💰 g:12 🔢 2719|4666 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> ...</div>
+<div class="line">  │  │  └■═╤═ 🔖4634 💰 g:2 🔢 2943|5062 ═══ ⚡esq</div>
+<div class="line"> │  │     └■═╤═ 🔖5063 💰 g:3 🔢 2944|5063 ═══ ⚡cima</div>
+<div class="line"> │  │        ├■═╤═ 🔖5064 💰 g:4 🔢 2945|5065 ═══ ⚡cima</div>
+<div class="line"> │  │        │  └■═╤═ 🔖5066 💰 g:5 🔢 2946|5066 ═══ ⚡dir</div>
+<div class="line"> │  │        │     ├■═╤═ 🔖5067 💰 g:6 🔢 2947|5068 ═══ ⚡baixo</div>
+<div class="line"> │  │        │     │  ├■═╤═ 🔖5069 💰 g:7 🔢 2948|5071 ═══ ⚡baixo</div>
+<div class="line"> │  │        │     │  │  ├■═╤═ 🔖5072 💰 g:8 🔢 2949|5073 ═══ ⚡dir</div>
+<div class="line"> │  │        │     │  │  │  └■═╤═ 🔖5074 💰 g:9 🔢 2950|5074 ═══ ⚡cima</div>
+<div class="line"> │  │        │     │  │  │     ├■═╤═ 🔖5075 💰 g:10 🔢 2951|5076 ═══ ⚡cima</div>
+<div class="line"> │  │        │     │  │  │     │  └■═╤═ 🔖5077 💰 g:11 🔢 2952|5077 ═══ ⚡esq</div>
+<div class="line"> │  │        │     │  │  │     │     ├■═╤═ 🔖5078 💰 g:12 🔢 2953|5079 ═══ ⚡baixo ─── 🍃🪜</div>
+<div class="line"> │  │        │     │  │  │     │     └■═╤═ 🔖5079 💰 g:12 🔢 2953|5079 ═══ ⚡esq ─── 🍃🪜</div>
+<div class="line"> │  │        │     │  │  │     └■═╤═ 🔖5076 💰 g:10 🔢 2953|5079 ═══ ⚡esq</div>
+<div class="line"> │  │        │     │  │  │        ├■═╤═ 🔖5080 💰 g:11 🔢 2954|5082 ═══ ⚡baixo</div>
+<div class="line"> │  │        │     │  │  │        │  ├■═╤═ 🔖5083 💰 g:12 🔢 2955|5084 ═══ ⚡dir</div>
+<div class="line"> │  │        │     │  │  │        │  │  🎯 Solução encontrada!</div>
+<div class="line"> │  │        │     │  │  │        │  │  .  1  2</div>
+<div class="line"> │  │        │     │  │  │        │  │  3  4  5</div>
+<div class="line"> │  │        │     │  │  │        │  │  6  7  8  ─── 🎯 12 → 📈 ───  { 🔖5084 }  ───  { 🔖5081 🔖5082 }  ───  { 🔖5073 }  ───  { 🔖5070 🔖5071 }  ───  { 🔖5068 }  ───  { 🔖5065 }  ───  { 🔖4630 🔖4631 🔖4632 }</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=3 P2=2 P3=2 P4=10 P5=0 P6=1 P7=0 P8=2 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  55ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Profundidade Primeiro | P2(Debug): passos | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ascendentes | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 2</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ascendentes | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 12 | I2(Tempo(ms)): 3920 | I3(Iterações): 0 | I4(Expansões): 2955 | I5(Gerações): 5084 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 55 | I3(Iterações): 0 | I4(IND_EXPANSOES): 2955 |</div>
+<div class="line">│ I5(IND_GERACOES): 5084 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p>A procura em profundidade iterativa encontrou também a solução ótima, com 12 movimentos, na 13ª iteração. Foram realizadas 2955 expansões e 5084 gerações, um valor superior à procura em largura.</p>
-<p>Notar no entanto no parâmetro P8(Repetidos): ascendentes. Significa que não foram gerados estadso, que num dado ramo, já tinham ocorrido anteriormente. Esta é a opção de omissão para este problema, já que foi redefinido <a class="el" href="classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3" title="Inicializa os parametros, indicadores e instâncias.">CPuzzle8::ResetParametros()</a>.</p>
+<p>Notar no entanto no parâmetro P8(ESTADOS_REPETIDOS): ascendentes. Significa que não foram gerados estadso, que num dado ramo, já tinham ocorrido anteriormente. Esta é a opção de omissão para este problema, já que foi redefinido <a class="el" href="classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3" title="Inicializa os parametros, indicadores e instâncias.">CPuzzle8::ResetParametros()</a>.</p>
 <p>Vamos repetir esta execução, com debug no nível 1, e ignorando repetidos. Introduza: <b>1; 40; 3; 2; 1; 8; 1; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
-<div class="line">#</div>
-<div class="line">#</div>
-<div class="line">#</div>
 <div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">#####</div>
-<div class="line">##########</div>
-<div class="line">#######################</div>
-<div class="line">####################################################################</div>
-<div class="line">##########...###########################</div>
-<div class="line">##########...########################### Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:12)</div>
-<div class="line"> P1=3 P2=1 P3=2 P4=10 P5=0 P6=1 P7=0 P8=1 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══###########...########</div>
+<div class="line"> ├■ 🎯 Solução encontrada!</div>
+<div class="line"> ├■ .  1  2</div>
+<div class="line"> ├■ 3  4  5</div>
+<div class="line"> ├■ 6  7  8</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=3 P2=1 P3=2 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  78ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Profundidade Primeiro | P2(Debug): atividade | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 2</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 12 | I2(Tempo(ms)): 114 | I3(Iterações): 0 | I4(Expansões): 156105 | I5(Gerações): 440523 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Podemos ver que o número de expansões e gerações é consideravelmente superior. O tempo foi inferior mesmo com mais gerações, mas isso deve-se ao nível de debug utilizado.</p>
-<p>A verificação dos estados repetidos, é portanto um parametro bastante importante neste problema, em que o mesmo estado pode surgir várias vezes. Vamos então testar em eliminar todos os estados repetidos gerados. Introduza: <b>1; 40; 3; 8; 3; <em>ENTER</em>; 6.</b></p>
-<div class="fragment"><div class="line">#</div>
-<div class="line">#</div>
-<div class="line">#</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 78 | I3(Iterações): 0 | I4(IND_EXPANSOES): 156105 |</div>
+<div class="line">│ I5(IND_GERACOES): 440523 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Podemos ver que o número de expansões e gerações é consideravelmente superior. O tempo foi idêntico mesmo com mais gerações, mas isso deve-se ao nível de debug utilizado.</p>
+<p>A verificação dos estados repetidos, é portanto um parametro bastante importante neste problema, em que o mesmo estado pode surgir várias vezes. Vamos então testar a eliminação de todos os estados repetidos gerados. Introduza: <b>1; 40; 3; 8; 3; <em>ENTER</em>; 6.</b></p>
+<div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">#</div>
-<div class="line">#</div>
-<div class="line"> Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:12)</div>
-<div class="line"> P1=3 P2=1 P3=2 P4=10 P5=0 P6=1 P7=0 P8=3 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══####</div>
+<div class="line"> ├■ 🎯 Solução encontrada!</div>
+<div class="line"> ├■ .  1  2</div>
+<div class="line"> ├■ 3  4  5</div>
+<div class="line"> ├■ 6  7  8</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=3 P2=1 P3=2 P4=10 P5=0 P6=1 P7=0 P8=3 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  23ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Profundidade Primeiro | P2(Debug): atividade | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 2</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): gerados | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 12 | I2(Tempo(ms)): 77 | I3(Iterações): 0 | I4(Expansões): 2647 | I5(Gerações): 4400 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 23 | I3(Iterações): 0 | I4(IND_EXPANSOES): 2647 |</div>
+<div class="line">│ I5(IND_GERACOES): 4400 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p>Podemos ver que o número de exapansões e gerações é ligeiramente inferior à configuração inicial, de remover repetidos ascendentes.</p>
 <p>Pergunta: o que acontecia se executar-mos a procura em profundidade ilimitada, ao deixar limite com -1, e sem verificar estados repetidos? </p><details >
 <summary >
@@ -603,7 +691,7 @@ Resposta</summary>
 <h2><a class="anchor" id="autotoc_md59"></a>
 Ação 5 - Heurística</h2>
 <p>Neste problema foi implementada a heurística com a distância na horizontal e vertical, de cada peça até à sua posição final. Esta heurística relaxa a situação de apenas ser possível mover para o local onde está o espaço, e retorna o valor que seria o correto caso cada peça pudesse mover-se por cima das outras. É implementada no problema ao redefinir <a class="el" href="classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27" title="Função para calcular quanto falta para o final, o valor da heurística.">CPuzzle8::Heuristica()</a>.</p>
-<p>Vamos começar por ver (notar que P6(Ver): 1). Introduza: <b>1; 40; 2; dir baixo; <em>ENTER</em>.</b></p>
+<p>Vamos começar por ver (notar que P6(VER_ACOES): 1). Introduza: <b>1; 40; 2; dir baixo; <em>ENTER</em>.</b></p>
 <div class="fragment"><div class="line">g:0 h:12 1|4|5</div>
 <div class="line"> 4  7  3</div>
 <div class="line"> 1  .  2</div>
