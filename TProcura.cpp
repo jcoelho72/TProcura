@@ -299,9 +299,14 @@ void TProcura::DebugHSL(float h, float s, float l, bool fundo) {
 		printf("\x1b[0m");
 	}
 	else {
-		float c = (1 - fabs(2 * l - 1)) * s;
-		float x = c * (1 - fabs(fmod(h / 60.0, 2) - 1));
+		float f = (2 * l - 1);
+		float c = (1 - (f < 0 ? -f : f)) * s;
+
+		float h60 = h / 60.0f;
+		float hmod2 = h60 - 2 * int(h60 / 2);  
+		float x = c * (1 - ((hmod2 - 1) < 0 ? -(hmod2 - 1) : (hmod2 - 1)));
 		float m = l - c / 2;
+
 		float r, g, b;
 		if (h < 60) { r = c; g = x; b = 0; }
 		else if (h < 120) { r = x; g = c; b = 0; }
@@ -309,10 +314,12 @@ void TProcura::DebugHSL(float h, float s, float l, bool fundo) {
 		else if (h < 240) { r = 0; g = x; b = c; }
 		else if (h < 300) { r = x; g = 0; b = c; }
 		else { r = c; g = 0; b = x; }
+
 		printf("\x1b[%d;2;%d;%d;%dm", (fundo ? 48 : 38),
 			(int)((r + m) * 255), (int)((g + m) * 255), (int)((b + m) * 255));
 	}
 }
+
 
 
 void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const char* titulo) {
@@ -1510,7 +1517,7 @@ void TProcura::DebugTabela(ENivelDebug nivel, TVector<int> tabela, const char* t
 		if (modoCor > 0 && modoCor <= 1000000) // conteúdo com cor de 1 a modoCor
 			DebugHSL(tabela[i] * 360.0f / modoCor);
 		else if (modoCor > 1000000) // 0 - verde e maiorCusto vermelho
-			DebugHSL((1 - 1.0f * tabela[i] / (modoCor - 1000000)) * 120,.75,.5,false);
+			DebugHSL((1 - 1.0f * tabela[i] / (modoCor - 1000000)) * 120, .75, .5, false);
 		else if (modoCor < 0) // índice com a cor
 			DebugHSL((i + 1) * 360.0f / tabela.Count());
 		printf("%4d", tabela[i]);
