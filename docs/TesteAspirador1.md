@@ -127,33 +127,25 @@ A partir do estado atual, introduza: **2; 1; 2.**
 ```entrada
 Opção: 2
 
-══ 💰 g:0 🎯 h:3 🔢 1|2 ══
- * [*]
-┌─ ⚡  Ações ───────────────────────────────────────────────────────────
-│ esq asp
-└──────────────────────────────────────────────────────────────────────
+═╤═ 💰 g:0 🎯 h:3 🔢 1|2 ═══
+ │  * [*]
+ │ └─ ⚡ ───── esq asp
 🔍  Sucessor [1-2, ação(ões), exe]: 1
 
 ┌─ ✅  Sucesso ───────
 │ Ação executada.
 └────────────────────
-
-══ 💰 g:0 🎯 h:3 🔢 2|4 ══
-[*] *
-┌─ ⚡  Ações ───────────────────────────────────────────────────────────
-│ dir asp
-└──────────────────────────────────────────────────────────────────────
+═╤═ 💰 g:0 🎯 h:3 🔢 2|4 ═══
+ │ [*] *
+ │ └─ ⚡ ───── dir asp
 🔍  Sucessor [1-2, ação(ões), exe]: 2
 
 ┌─ ✅  Sucesso ───────
 │ Ação executada.
 └────────────────────
-
-══ 💰 g:0 🎯 h:2 🔢 3|6 ══
-[.] *
-┌─ ⚡  Ações ───────────────────────────────────────────────────────────
-│ dir asp
-└──────────────────────────────────────────────────────────────────────
+═╤═ 💰 g:0 🎯 h:2 🔢 3|6 ═══
+ │ [.] *
+ │ └─ ⚡ ───── dir asp
 🔍  Sucessor [1-2, ação(ões), exe]:
 ```
 
@@ -177,17 +169,14 @@ Note que "dir asp" podem ser introduzidas de uma vez.
 ┌─ ✅  Sucesso ────────
 │ Executadas 2 ações.
 └─────────────────────
-
-══ 💰 g:0 🔢 6|12 ══
- . [.]
-┌─ ⚡  Ações ───────────────────────────────────────────────────────────
-│ esq asp
-└──────────────────────────────────────────────────────────────────────
+═╤═ 💰 g:0 🔢 6|12 ═══
+ │  . [.]
+ │ └─ ⚡ ───── esq asp
 🔍  Sucessor [1-2, ação(ões), exe]:
 
 Aspirador
-,,,
- . [.]
+...
+ │  . [.]
 ┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
 │ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
@@ -218,11 +207,11 @@ No entanto houve um caminho, que ficou guardado. Introduza: **4.**
 Opção: 4
 
 ══ ✔  Solução ══
- * [*] (💰 g:0) ⚡  → esq → asp → dir → asp
- . [.] (💰 g:4) 🎯
+ │  * [*] (💰 g:0) ⚡  → esq → asp → dir → asp
+ │  . [.] (💰 g:4) 🎯
 Aspirador
 ...
-. [.]
+ │  . [.]
 ┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
 │ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
@@ -324,55 +313,67 @@ A opção 6 executa o algoritmo selecionado, que é a Largura Primeiro.
 ```entrada
 Opção: 6
 
-g:0
- * [*]
-  +#1 g:1 1|2 esq
-  |[*] *
-  +#2 g:1 1|2 asp
-    * [.]
-g:1 1|2
-[*] *
-  +#1 g:2 2|4 dir
-  | * [*]
-  +#2 g:2 2|4 asp
-   [.] *
-g:1 2|4
- * [.]
-  +#1 g:2 3|6 esq
-  |[*] .
-  +#2 g:2 3|6 asp
-    * [.]
-g:2 3|6
- * [*]
-  +#1 g:3 4|8 esq
-  |[*] *
-  +#2 g:3 4|8 asp
-    * [.]
-g:2 4|8
-[.] *
-  +#1 g:3 5|10 dir
-  | . [*]
-  +#2 g:3 5|10 asp
-   [.] *
-g:2 5|10
-[*] .  Solução encontrada!
-[.] . (g:3)
- P1=1 P2=4 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P9=100 P10=0
- P11=0
+═╤═ ►  Execução iniciada ═══
+ ├■═╤═ 💰 g:0  ═══ { }
+ │  * [*]
+ │  ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ esq
+ │  │ [*] *
+ │  └■═╤═ 🔖2 💰 g:1 🔢 1|2 ═══ asp
+ │     * [.]
+ ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }
+ │ [*] *
+ │  ├■═╤═ 🔖3 💰 g:2 🔢 2|4 ═══ dir
+ │  │  * [*]
+ │  └■═╤═ 🔖4 💰 g:2 🔢 2|4 ═══ asp
+ │    [.] *
+ ├■═╤═ 🔖2 💰 g:1 🔢 2|4 ═══ { 🔖3 🔖4 }
+ │  * [.]
+ │  ├■═╤═ 🔖5 💰 g:2 🔢 3|6 ═══ esq
+ │  │ [*] .
+ │  └■═╤═ 🔖6 💰 g:2 🔢 3|6 ═══ asp
+ │     * [.]
+ ├■═╤═ 🔖3 💰 g:2 🔢 3|6 ═══ { 🔖4 🔖5 🔖6 }
+ │  * [*]
+ │  ├■═╤═ 🔖7 💰 g:3 🔢 4|8 ═══ esq
+ │  │ [*] *
+ │  └■═╤═ 🔖8 💰 g:3 🔢 4|8 ═══ asp
+ │     * [.]
+ ├■═╤═ 🔖4 💰 g:2 🔢 4|8 ═══ { 🔖5 🔖6 🔖7 🔖8 }
+ │ [.] *
+ │  ├■═╤═ 🔖9 💰 g:3 🔢 5|10 ═══ dir
+ │  │  . [*]
+ │  └■═╤═ 🔖10 💰 g:3 🔢 5|10 ═══ asp
+ │    [.] *
+ ├■═╤═ 🔖5 💰 g:2 🔢 5|10 ═══ { 🔖6 🔖7 🔖8 🔖9 🔖10 }
+ │ [*] .
+ │  ├■═╤═ 🔖11 💰 g:3 🔢 6|12 ═══ dir
+ │  │  * [.]
+ │  └■═╤═ 🔖12 💰 g:3 🔢 6|12 ═══ asp
+ │    [.] .
+ │  🎯 Solução encontrada!
+ │ [.] .
+ ├─ ⚙️  Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0
+═╧═ 🏁  Execução terminada ⏱   ═══
 Aspirador
- P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
- P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
- P11(baralhar): 0
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0
+│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+└──────────────────────────────────────────────────────────────────────
 [.] .
-I1(Custo): 3 | I2(Tempo(ms)): 19 | I3(Iterações): 0 | I4(Expansões): 6 | I5(Gerações): 12 |
-I6(Lower Bound): 0
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 6 |
+│ I5(IND_GERACOES): 12 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
 ```
 
-Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, sendo recolhido pelo I1(custo). 
-Significa que a procura encontrou uma solução de comprimento 3. Notar que o I3(Iterações) e I6(Lower Bound) ficaram a 0, já que 
+Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, sendo recolhido pelo I1(IND_CUSTO). 
+Significa que a procura encontrou uma solução de comprimento 3. Notar que o I3(Iterações) e I6(IND_LOWER_BOUND) ficaram a 0, já que 
 não são atualizados neste algoritmo.
 
 No caso de não ter os resultados iguais, confirme se todos os parâmetros estão iguais.
@@ -382,25 +383,32 @@ Podemos ver a solução, tendo ficado guardada, tal como na resolução manual. 
 ```entrada
 Opção: 4
 
- * [*] (g:0)
- * [.] (g:1)
-[*] .  (g:2)
-[.] .  (g:3)
+══ ✔  Solução ══
+ * [*] (💰 g:0) ⚡
+ * [.] (💰 g:1) ⚡
+[*] .  (💰 g:2) ⚡
+[.] .  (💰 g:3) 🎯
 ...
 ```
 Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.
 
-A árvore da procura em largura não é desenhada na visualização textual, apenas na procura em profundidade. 
+A árvore da procura em largura não é desenhada na visualização textual, apenas na procura em profundidade.
+
 Nesta procura o que podemos ver é cada estado expandido e respetivos sucessores gerados. 
-Cada estado irá aparecer pela primeira vez quando é gerado, e uma segunda vez quando é expandido. 
-Na procura em largura, expandimos sempre o estado gerado há mais tempo.
+Cada estado irá aparecer pela primeira vez quando é gerado, e uma segunda vez quando é expandido.
+
+Existe uma etiqueta em cada estado que permite confirmar que cada estado gerado será expandido uma só vez.
+É também mostrada a lista dos estados gerados não expandidos em cada passo.
+O estado expandido é sempre o primeiro dessa lista, que consta na iteração anterior.
+
+Na procura em largura expandimos sempre o estado gerado há mais tempo.
 
 - Verificar que o segundo estado expandido, é o primeiro sucessor do primeiro estado expandido. 
 O terceiro estado expandido é o segundo sucessor do primeiro estado expandido. 
 Poder-se-ia continuar, o estado expandido seguinte é sempre o gerado há mais tempo.
 
 Temos no entanto o mesmo estado inicial a ser gerado. De facto, o primeiro sucessor na segunda expansão, 
-é o primeiro estado que é gerado novamente.
+o estado 3, é o estado inicial que é gerado novamente.
 
 Podemos lidar com estados repetidos de duas formas:
 
@@ -410,37 +418,44 @@ Podemos lidar com estados repetidos de duas formas:
 \anchor aspirador-a6
 ## Ação 6 - Editar opções A
 
-Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3: **1; 2; 3; 8; 2; 2; 3; *ENTER*; 6.**
+Altere a opção para remover os repetidos com base nos ascendentes,
+e o debug para nível 3: **1; 2; 3; 8; 2; 2; 3; *ENTER*; 6.**
 
 - Verificar que o número de expansões é 5 e gerações é 6, uma melhoria.  O resultado da procura mantém-se em 3.
 
 ```entrada
 Opção: 6
 
-g:0
- * [*]
-g:1 1|2
-[*] *
-g:1 2|3
- * [.]
-g:2 3|4
-[.] *
-g:2 4|5
-[*] .  Solução encontrada!
-[.] . (g:3)
- P1=1 P2=3 P3=1 P4=10 P5=0 P6=1 P7=0 P8=2 P9=100 P10=0
- P11=0
+═╤═ ►  Execução iniciada ═══
+ ├■═╤═ 💰 g:0  ═══ { }
+ │  * [*]
+ ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }
+ │ [*] *
+ ├■═╤═ 🔖2 💰 g:1 🔢 2|3 ═══ { 🔖3 }
+ │  * [.]
+ ├■═╤═ 🔖3 💰 g:2 🔢 3|4 ═══ { 🔖4 }
+ │ [.] *
+ ├■═╤═ 🔖4 💰 g:2 🔢 4|5 ═══ { 🔖5 }
+ │ [*] .
+ │  🎯 Solução encontrada!
+ │ [.] .
+ ├─ ⚙️  Parâmetros ─ P1=1 P2=3 P3=1 P4=10 P5=0 P6=1 P7=0 P8=2 P11=0
+═╧═ 🏁  Execução terminada ⏱   ═══
 Aspirador
 ...
 [.] .
-I1(Custo): 3 | I2(Tempo(ms)): 8 | I3(Iterações): 0 | I4(Expansões): 5 | I5(Gerações): 6 |
-I6(Lower Bound): 0
-____________________________________________________________________
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |
+│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
 A interação de troca de parâmetro não é mais mostrada para não saturar o texto. 
 
-Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. 
-Mesmo assim podemos confirmar que o estado inicial não foi gerado, caso contrário seria expandido na 4º ou 5º expansão.
+Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados.
+Vemos no entanto a lista dos estados gerados não expandidos, confirmando que é claramente menor.
+Podemos também confirmar que o estado inicial não foi um dos gerados, caso contrário seria expandido na 4º ou 5º expansão.
 
 \anchor aspirador-a7
 ## Ação 7 - Editar opções B
@@ -451,21 +466,30 @@ Alterar a  opção para remover os repetidos com base nos gerados, e alterar o d
 ```entrada
 Opção: 6
 
-g:0
-g:1 1|2
-g:1 2|3
-g:2 3|4
-g:2 4|5 Solução encontrada!
-[.] . (g:3)
- P1=1 P2=2 P3=1 P4=10 P5=0 P6=1 P7=0 P8=3 P9=100 P10=0
- P11=0
+═╤═ ►  Execução iniciada ═══
+ ├■═╤═ 💰 g:0  ═══ { }
+ ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }
+ ├■═╤═ 🔖2 💰 g:1 🔢 2|3 ═══ { 🔖3 }
+ ├■═╤═ 🔖3 💰 g:2 🔢 3|4 ═══ { 🔖4 }
+ ├■═╤═ 🔖4 💰 g:2 🔢 4|5 ═══ { 🔖5 }
+ │  🎯 Solução encontrada!
+ │ [.] .
+ ├─ ⚙️  Parâmetros ─ P1=1 P2=2 P3=1 P4=10 P5=0 P6=1 P7=0 P8=3 P11=0
+═╧═ 🏁  Execução terminada ⏱  7ms  ═══
+Aspirador
 ...
-I1(Custo): 3 | I2(Tempo(ms)): 21 | I3(Iterações): 0 | I4(Expansões): 5 | I5(Gerações): 6 |
-I6(Lower Bound): 0
-____________________________________________________________________
+[.] .
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 7 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |
+│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
-Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g), seguido de dois números: 
-expansões e gerações realizadas até ao momento. No caso deste problema o estado é visualizado numa só linha, 
+Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g) seguido de dois números: 
+expansões e gerações realizadas até ao momento.
+A lista com os estados gerados nãó expandidos, é ainda visualizada no final.
+No caso deste problema o estado é visualizado numa só linha, 
 mas em outros problemas estes dois níveis de debug podem fazer diferença. 
 Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para 
 lidar com os estados repetidos seja distinta.
@@ -489,20 +513,25 @@ A instância é demasiado grande, e sem remover repetidos, rapidamente gera dema
 Aspirador
 ...
  *  *  .  *  * [*] *  .  .  .
-I1(Custo): 13 | I2(Tempo(ms)): 131 | I3(Iterações): 0 | I4(Expansões): 147000 | I5(Gerações): 421790 |
-I6(Lower Bound): 0
 ...
 Opção: 6
-########...########### Solução encontrada!
-[.] .  .  .  .  .  .  .  .  . (g:13)
- P1=1 P2=1 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P9=100 P10=0
- P11=0
+
+═╤═ ►  Execução iniciada ═══##################....################
+ │  🎯 Solução encontrada!
+ │ [.] .  .  .  .  .  .  .  .  .
+ ├─ ⚙️  Parâmetros ─ P1=1 P2=1 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0
+═╧═ 🏁  Execução terminada ⏱  367ms  ═══
+Aspirador
 ...
-I1(Custo): 13 | I2(Tempo(ms)): 453 | I3(Iterações): 0 | I4(Expansões): 516031 | I5(Gerações): 1513017 |
-I6(Lower Bound): 0
-____________________________________________________________________
+[.] .  .  .  .  .  .  .  .  .
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 13 | I2(Tempo(ms)): 367 | I3(Iterações): 0 | I4(IND_EXPANSOES): 516031 |
+│ I5(IND_GERACOES): 1513017 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
-São demasiados estados gerados, 1,5 milhões, em 0.5 segundos. 
+São demasiados estados gerados, 1,5 milhões, em 0.4 segundos. 
 Há um # que é colocado no output a cada 1000 expansões. 
 Se desconfiamos que com tanto estado, dificilmente a solução pode ser óptima, podemos ver a solução.
 Introduza: **4**
@@ -510,20 +539,21 @@ Introduza: **4**
 ```entrada
 Opção: 4
 
- *  *  .  *  * [*] *  .  .  .  (g:0)
- *  *  .  *  *  * [*] .  .  .  (g:1)
- *  *  .  *  *  * [.] .  .  .  (g:2)
- *  *  .  *  * [*] .  .  .  .  (g:3)
- *  *  .  *  * [.] .  .  .  .  (g:4)
- *  *  .  * [*] .  .  .  .  .  (g:5)
- *  *  .  * [.] .  .  .  .  .  (g:6)
- *  *  . [*] .  .  .  .  .  .  (g:7)
- *  *  . [.] .  .  .  .  .  .  (g:8)
- *  * [.] .  .  .  .  .  .  .  (g:9)
- * [*] .  .  .  .  .  .  .  .  (g:10)
- * [.] .  .  .  .  .  .  .  .  (g:11)
-[*] .  .  .  .  .  .  .  .  .  (g:12)
-[.] .  .  .  .  .  .  .  .  .  (g:13)
+══ ✔  Solução ══
+ *  *  .  *  * [*] *  .  .  .  (💰 g:0) ⚡
+ *  *  .  *  *  * [*] .  .  .  (💰 g:1) ⚡
+ *  *  .  *  *  * [.] .  .  .  (💰 g:2) ⚡
+ *  *  .  *  * [*] .  .  .  .  (💰 g:3) ⚡
+ *  *  .  *  * [.] .  .  .  .  (💰 g:4) ⚡
+ *  *  .  * [*] .  .  .  .  .  (💰 g:5) ⚡
+ *  *  .  * [.] .  .  .  .  .  (💰 g:6) ⚡
+ *  *  . [*] .  .  .  .  .  .  (💰 g:7) ⚡
+ *  *  . [.] .  .  .  .  .  .  (💰 g:8) ⚡
+ *  * [.] .  .  .  .  .  .  .  (💰 g:9) ⚡
+ * [*] .  .  .  .  .  .  .  .  (💰 g:10) ⚡
+ * [.] .  .  .  .  .  .  .  .  (💰 g:11) ⚡
+[*] .  .  .  .  .  .  .  .  .  (💰 g:12) ⚡
+[.] .  .  .  .  .  .  .  .  .  (💰 g:13) 🎯
 ```
 
 Não houve desperdício visivel nesta solução. 

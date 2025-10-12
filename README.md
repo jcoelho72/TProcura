@@ -122,7 +122,7 @@ Na pasta `<projeto>/Teste` do projeto respetivo:
     sudo apt-get update
     sudo apt-get install -y openmpi-bin libopenmpi-dev
     ```
-  - Compilação: `make` ou `make mpi`
+  - Compilação: `make` ou `make [mpi|debug|release]`
 
 - **Windows (Visual Studio)**: selecionar a configuração desejada (Debug, Release ou MPI).  
   > ⚠️ Para MPI é necessário instalar previamente o [MS MPI](https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi).  
