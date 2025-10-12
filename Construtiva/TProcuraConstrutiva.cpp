@@ -624,7 +624,8 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 {
 	if (Parametro(NIVEL_DEBUG) > NADA && SolucaoCompleta()) {
 		NovaLinha();
-		printf(" 🎯 Solução encontrada!");
+		printf(" 🎯 Solução encontrada! 💰  g:%d", custo);
+		ramo.Last() =" │ ";
 		Debug();
 		if (!continuar)
 			ramo = {};
@@ -648,13 +649,13 @@ void TProcuraConstrutiva::DebugChamada()
 		if (raiz)
 			ramo.First() = " ├■";
 		NovaLinha(true);
-		ramo.Last() = (ramo.Last() == " ├■" || ramo.Last() == " ├□" ? " │ " : "   ");
+		ramo.Last() = ((ramo.Last() == " ├■" || ramo.Last() == " ├□") ? " │ " : "   ");
 		ramo.First() = " │ ";
 		DebugEstado(false);
 		if (pai != NULL)
 			printf(" ⚡%s", pai->Acao(this)); // mostra sempre a ação
-		if (Parametro(NIVEL_DEBUG) >= DETALHE &&
-			(Parametro(VER_ACOES) == 1 || pai == NULL) ||
+		if ((Parametro(NIVEL_DEBUG) >= DETALHE &&
+			(Parametro(VER_ACOES) == 1 || pai == NULL)) ||
 			Parametro(NIVEL_DEBUG) >= COMPLETO)
 			Debug();
 	}

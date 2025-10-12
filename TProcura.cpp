@@ -432,7 +432,7 @@ void TProcura::EditarParametros() {
 		if (parametro[opcao - 1].nomeValores != NULL)
 			for (int i = parametro[opcao - 1].min; i <= parametro[opcao - 1].max; i++) {
 				MostraCaixa("", ECaixaParte::Meio, 1);
-				printf("%d: %s", i,
+				printf(CINZ "%d:" NCINZ " %s", i,
 					parametro[opcao - 1].nomeValores[i - parametro[opcao - 1].min]);
 			}
 		else {

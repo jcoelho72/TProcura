@@ -2,9 +2,14 @@
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |
 
-Execução de exemplo com base no problema da Partição. 
-Selecione o projeto TProcuraConstrutiva, e execute.
-Pode acompanhar o teste excutando as ações localmente.
+Execução de exemplo com base no problema da Partição.
+Execução de exemplo com base no problema das 8 Damas.
+Pode acompanhar o teste executando as ações localmente.
+
+No Visual Studio, selecione o projeto TProcuraConstrutiva, e execute.
+No Linux na pasta `.../TProcura/Construtiva/Teste$` execute `make` seguido de `./bin/Release/TProcuraConstrutiva`
+
+Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
 
 ## Sumário
 

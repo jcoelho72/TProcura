@@ -4,11 +4,12 @@
 
 
 Execução de exemplo com base no problema do Puzzle 8.
+Pode acompanhar o teste executando as ações localmente.
 
 No Visual Studio, selecione o projeto TProcuraConstrutiva, e execute.
 No Linux na pasta `.../TProcura/Construtiva/Teste$` execute `make` seguido de `./bin/Release/TProcuraConstrutiva`
 
-Pode acompanhar o teste excutando as ações localmente.
+Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
 
 ## Sumário
 
@@ -694,51 +695,58 @@ Esta heurística relaxa a situação de apenas ser possível mover para o local 
 retorna o valor que seria o correto caso cada peça pudesse mover-se por cima das outras.
 É implementada no problema ao redefinir CPuzzle8::Heuristica().
 
-Vamos começar por ver (notar que P6(VER_ACOES): 1). Introduza: **1; 40; 2; dir baixo; *ENTER*.**
+Vamos começar por ver (notar que P6(VER_ACOES): 1 e P3(SEMENTE): 2).
+Introduza: **1; 40; 2; dir baixo; *ENTER*.**
 
 ```entrada
-g:0 h:12 1|4|5
- 4  7  3
- 1  .  2
- 6  8  5
-  +#1 g:1 h:11 1|4|5 baixo
-  | 4  .  3
-  | 1  7  2
-  | 6  8  5
-  +#2 g:1 h:13 1|4|5 cima
-  | 4  7  3
-  | 1  8  2
-  | 6  .  5
-  +#3 g:1 h:11 1|4|5 dir
-  | 4  7  3
-  | .  1  2
-  | 6  8  5
-  +#4 g:1 h:13 1|4|5 esq
-    4  7  3
-    1  2  .
-    6  8  5
-Sucessor [1-4, ação(ões), exe]:dir baixo
-Executadas 2 ações com sucesso.
-g:0 h:10 4|13|8
- .  7  3
- 4  1  2
- 6  8  5
-  +#1 g:1 h:11 4|13|8 cima
-  | 4  7  3
-  | .  1  2
-  | 6  8  5
-  +#2 g:1 h:11 4|13|8 esq
-    7  .  3
-    4  1  2
-    6  8  5
-Sucessor [1-2, ação(ões), exe]:
+Opção: 2
+
+═╤═ 💰 g:0 🎯 h:12 🔢 1|4|5 ═══
+ │  4  7  3
+ │  1  .  2
+ │  6  8  5
+ │  ├■═╤═ 💰 g:1 🎯 h:11 🔢 1|4|5 ═══ baixo
+ │  │  4  .  3
+ │  │  1  7  2
+ │  │  6  8  5
+ │  ├■═╤═ 💰 g:1 🎯 h:13 🔢 1|4|5 ═══ cima
+ │  │  4  7  3
+ │  │  1  8  2
+ │  │  6  .  5
+ │  ├■═╤═ 💰 g:1 🎯 h:11 🔢 1|4|5 ═══ dir
+ │  │  4  7  3
+ │  │  .  1  2
+ │  │  6  8  5
+ │  └■═╤═ 💰 g:1 🎯 h:13 🔢 1|4|5 ═══ esq
+ │     4  7  3
+ │     1  2  .
+ │     6  8  5
+🔍  Sucessor [1-4, ação(ões), exe]: dir baixo
+
+┌─ ✅  Sucesso ────────
+│ Executadas 2 ações.
+└─────────────────────
+═╤═ 💰 g:0 🎯 h:10 🔢 4|13|8 ═══
+ │  .  7  3
+ │  4  1  2
+ │  6  8  5
+ │  ├■═╤═ 💰 g:1 🎯 h:11 🔢 4|13|8 ═══ cima
+ │  │  4  7  3
+ │  │  .  1  2
+ │  │  6  8  5
+ │  └■═╤═ 💰 g:1 🎯 h:11 🔢 4|13|8 ═══ esq
+ │     7  .  3
+ │     4  1  2
+ │     6  8  5
+🔍  Sucessor [1-2, ação(ões), exe]:
 
 Puzzle 8
 ...
- .  7  3
- 4  1  2
- 6  8  5
-____________________________________________________________________
+ │  .  7  3
+ │  4  1  2
+ │  6  8  5
+...
+Opção:
 ```
 
 Na informação de um estado, vemos não apenas o valor de g (o custo), mas também o valor de h.
@@ -765,28 +773,51 @@ repetidos gerados, de modo a observar o desempenho deste algoritmo nas melhores 
 Neste e em outras execuções das procuras informadas, vamos limitar o número de avaliações (iterações) a 1000000, 
 de modo a ter um critério de paragem independente do tempo.
 
-Introduza: **1; 40; 3; 1; 4; 2; 3; 5; 1000000; 8; 3; *ENTER*; 6.**
+Introduza: **1; 40; 3; 1; 4; 2; 3; 5; 1000000; 6; 4; 8; 3; *ENTER*; 6.**
 
 ```entrada
-Opção: 6
---+--+--+--+--+--...+--+--+--+--+--+--+--+--+--+--+--+--+--+ Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:70)
- P1=4 P2=3 P3=2 P4=10 P5=1000000 P6=1 P7=0 P8=3 P9=100 P10=0
- P11=0
+═╤═ ►  Execução iniciada ═══
+ ├■═╤═ 💰 g:0 🎯 h:10  ═══
+ │  4  7  3
+ │  1  .  2
+ │  6  8  5
+ │  ├■═╤═ 🔖1 💰 g:1 🎯 h:11 🔢 1|4|4 ═══ ⚡baixo
+ │  │  ├■═╤═ 🔖5 💰 g:2 🎯 h:10 🔢 2|6|6 ═══ ⚡dir
+ │  │  │  └■═╤═ 🔖7 💰 g:3 🎯 h:9 🔢 3|7|7 ═══ ⚡cima
+ │  │  │     ├■═╤═ 🔖8 💰 g:4 🎯 h:10 🔢 4|9|9 ═══ ⚡cima
+ │  │  │     │  └■═╤═ 🔖10 💰 g:5 🎯 h:11 🔢 5|10|10 ═══ ⚡esq
+ │  │  │     │     ├■═╤═ 🔖11 💰 g:6 🎯 h:10 🔢 6|12|12 ═══ ⚡baixo
+ │  │  │     │     │  ├■═╤═ 🔖13 💰 g:7 🎯 h:9 🔢 7|15|15 ═══ ⚡baixo
+ │  │  │     │     │  │  ├■═╤═ 🔖16 💰 g:8 🎯 h:8 🔢 8|17|17 ═══ ⚡dir
+ │  │  │     │     │  │  │  └■═╤═ 🔖18 💰 g:9 🎯 h:9 🔢 9|18|18 ═══ ⚡cima
+...
+ │  │  │     │     │  │  │     └─ { 🔖20 }
+ │  │  │     │     │  │  └─ { 🔖17 }
+ │  │  │     │     │  └─ { 🔖14 🔖15 }
+ │  │  │     │     └─ { 🔖12 }
+ │  │  │     └─ { 🔖9 }
+ │  │  └─ { 🔖6 }
+ │  └─ { 🔖2 🔖3 🔖4 }
+ ├─ ⚙️  Parâmetros ─ P1=4 P2=3 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P11=0
+═╧═ 🏁  Execução terminada ⏱  13ms  ═══
 Puzzle 8
- P1(Algoritmo): Melhor Primeiro | P2(Debug): detalhe | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000
- P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
- P11(baralhar): 0
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Melhor Primeiro | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 2
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4
+│ P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): gerados | P11(BARALHAR_SUCESSORES): 0
+└──────────────────────────────────────────────────────────────────────
  .  1  2
  3  4  5
  6  7  8
-I1(Custo): 70 | I2(Tempo(ms)): 36 | I3(Iterações): 128 | I4(Expansões): 70 | I5(Gerações): 128 |
-I6(Lower Bound): 0
-____________________________________________________________________
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 70 | I2(Tempo(ms)): 13 | I3(Iterações): 128 | I4(IND_EXPANSOES): 70 |
+│ I5(IND_GERACOES): 128 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
-Conseguimos uma solução de 70 ações, utilizando 70 expansões. 
+Conseguimos uma solução de 70 ações, utilizando 70 expansões.
+O output teve de ser cortado não pelo número de expansões mas pela profundidade.
 O resultado em termos de esforço computacional é muito reduzido, pelo que a informação 
 dada pela heurística foi útil. No entanto, a qualidade da solução baixa, já que fica com
 70 de custo, quando sabemos existir uma solução de custo 12. 
@@ -796,93 +827,104 @@ dada pela heurística foi útil. No entanto, a qualidade da solução baixa, já
 
 Vamos agora ver o comportamento do AStar, que garante a solução ótima. 
 
-Introduza: **1; 40; 3; 1; 5; 2; 4; 6; 4; *ENTER*; 6.**
+Introduza: **1; 40; 3; 1; 5; 2; 4; *ENTER*; 6.**
 
 ```entrada
 Opção: 6
 
-g:0 h:10
- 4  7  3
- 1  .  2
- 6  8  5
-Ações: baixo cima dir esq
-g:1 h:11 1|4|4
- 4  .  3
- 1  7  2
- 6  8  5
-Ações: dir esq
-g:2 h:10 2|6|6
- 4  3  .
- 1  7  2
- 6  8  5
-Ações: cima
-g:3 h:9 3|7|7
- 4  3  2
- 1  7  .
- 6  8  5
-Ações: cima dir
-g:4 h:8 4|9|9
- 4  3  2
- 1  7  5
- 6  8  .
-Ações: dir
-g:5 h:7 5|10|10
- 4  3  2
- 1  7  5
- 6  .  8
-Ações: baixo dir
-g:6 h:6 6|12|12
- 4  3  2
- 1  .  5
- 6  7  8
-Ações: baixo dir esq
-g:7 h:5 7|15|15
- 4  3  2
- .  1  5
- 6  7  8
-Ações: baixo cima
-g:8 h:4 8|17|17
- .  3  2
- 4  1  5
- 6  7  8
-Ações: esq
-g:9 h:3 9|18|18
- 3  .  2
- 4  1  5
- 6  7  8
-Ações: cima esq
-g:10 h:2 10|20|20
- 3  1  2
- 4  .  5
- 6  7  8
-Ações: cima dir esq
-g:11 h:1 11|23|23
- 3  1  2
- .  4  5
- 6  7  8
-Ações: baixo cima
-g:12 12|25|25
- .  1  2
- 3  4  5
- 6  7  8  Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:12)
- P1=5 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0
- P11=0
+═╤═ ►  Execução iniciada ═══
+ ├■═╤═ 💰 g:0 🎯 h:10  ═══ { }
+ │  4  7  3
+ │  1  .  2
+ │  6  8  5
+ │ └─ ⚡ ───── baixo cima dir esq { 🔖1 🔖2 🔖3 🔖4 }
+ ├■═╤═ 🔖1 💰 g:1 🎯 h:11 🔢 1|4|4 ═══ { 🔖3 🔖2 🔖4 }
+ │  4  .  3
+ │  1  7  2
+ │  6  8  5
+ │ └─ ⚡ ───── dir esq { 🔖5 🔖6 }
+ ├■═╤═ 🔖6 💰 g:2 🎯 h:10 🔢 2|6|6 ═══ { 🔖5 🔖3 🔖2 🔖4 }
+ │  4  3  .
+ │  1  7  2
+ │  6  8  5
+ │ └─ ⚡ ───── cima { 🔖7 }
+ ├■═╤═ 🔖7 💰 g:3 🎯 h:9 🔢 3|7|7 ═══ { 🔖5 🔖3 🔖2 🔖4 }
+ │  4  3  2
+ │  1  7  .
+ │  6  8  5
+ │ └─ ⚡ ───── cima dir { 🔖8 🔖9 }
+ ├■═╤═ 🔖8 💰 g:4 🎯 h:8 🔢 4|9|9 ═══ { 🔖5 🔖3 🔖2 🔖9 🔖4 }
+ │  4  3  2
+ │  1  7  5
+ │  6  8  .
+ │ └─ ⚡ ───── dir { 🔖10 }
+ ├■═╤═ 🔖10 💰 g:5 🎯 h:7 🔢 5|10|10 ═══ { 🔖5 🔖3 🔖2 🔖9 🔖4 }
+ │  4  3  2
+ │  1  7  5
+ │  6  .  8
+ │ └─ ⚡ ───── baixo dir { 🔖11 🔖12 }
+ ├■═╤═ 🔖11 💰 g:6 🎯 h:6 🔢 6|12|12 ═══ { 🔖5 🔖3 🔖2 🔖12 🔖9 🔖4 }
+ │  4  3  2
+ │  1  .  5
+ │  6  7  8
+ │ └─ ⚡ ───── baixo dir esq { 🔖13 🔖14 🔖15 }
+ ├■═╤═ 🔖14 💰 g:7 🎯 h:5 🔢 7|15|15 ═══ { 🔖13 🔖5 🔖3 🔖2 🔖15 🔖12 🔖9 🔖4 }
+ │  4  3  2
+ │  .  1  5
+ │  6  7  8
+ │ └─ ⚡ ───── baixo cima { 🔖16 🔖17 }
+ ├■═╤═ 🔖16 💰 g:8 🎯 h:4 🔢 8|17|17 ═══ { 🔖13 🔖5 🔖3 🔖2 🔖17 🔖15 🔖12 🔖9 🔖4 }
+ │  .  3  2
+ │  4  1  5
+ │  6  7  8
+ │ └─ ⚡ ───── esq { 🔖18 }
+ ├■═╤═ 🔖18 💰 g:9 🎯 h:3 🔢 9|18|18 ═══ { 🔖13 🔖5 🔖3 🔖2 🔖17 🔖15 🔖12 🔖9 🔖4 }
+ │  3  .  2
+ │  4  1  5
+ │  6  7  8
+ │ └─ ⚡ ───── cima esq { 🔖19 🔖20 }
+ ├■═╤═ 🔖19 💰 g:10 🎯 h:2 🔢 10|20|20 ═══ { 🔖13 🔖5 🔖3 🔖2 🔖20 🔖17 🔖15 🔖12 🔖9 🔖4 }
+ │  3  1  2
+ │  4  .  5
+ │  6  7  8
+ │ └─ ⚡ ───── cima dir esq { 🔖21 🔖22 🔖23 }
+ ├■═╤═ 🔖22 💰 g:11 🎯 h:1 🔢 11|23|23 ═══ { 🔖13 🔖5 🔖3 … 🔖12 🔖9 🔖4 } #12
+ │  3  1  2
+ │  .  4  5
+ │  6  7  8
+ │ └─ ⚡ ───── baixo cima { 🔖24 🔖25 }
+ ├■═╤═ 🔖24 💰 g:12 🔢 12|25|25 ═══ { 🔖13 🔖5 🔖3 … 🔖12 🔖9 🔖4 } #13
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ │  🎯 Solução encontrada!
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├─ ⚙️  Parâmetros ─ P1=5 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0 P11=0
+═╧═ 🏁  Execução terminada ⏱  1ms  ═══
 Puzzle 8
- P1(Algoritmo): A* | P2(Debug): completo | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000
- P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
- P11(baralhar): 0
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): A* | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): gerados
+│ P9(PESO_ASTAR): 100 | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+└──────────────────────────────────────────────────────────────────────
  .  1  2
  3  4  5
  6  7  8
-I1(Custo): 12 | I2(Tempo(ms)): 40 | I3(Iterações): 25 | I4(Expansões): 12 | I5(Gerações): 25 |
-I6(Lower Bound): 0
-____________________________________________________________________
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 1 | I3(Iterações): 25 | I4(IND_EXPANSOES): 12 |
+│ I5(IND_GERACOES): 25 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
-Foram utilizadas 12 expansões para obter a solução ótima de 12 movimentos. 
-Esta é portanto uma instância simples para este algoritmo.
+Foram utilizadas 12 expansões para obter a solução ótima de 12 movimentos.
+Notar na lista ordenada, um dos piores estados é o estado 4, gerado no início, mas nem por isso
+foi expandido, já que tinha um mau valor heurístico. Como colocamos P6(VER_ACOES): 4, não vemos os estados gerados,
+colocando a 1 já poderiamos confirmar o motivo para que este estado permaneça no final da lista de estados gerados não expandidos.
+
+Esta é uma instância simples para este algoritmo.
 
 \anchor puzzle8-a8
 ## Ação 8 - IDAStar
@@ -894,57 +936,114 @@ vezes os mesmos estados. Vamos ver como se comporta nesta instância.
 Introduza: **1; 40; 3; 1; 6; *ENTER*; 6.**
 
 ```entrada
-g:0 h:10
- 4  7  3
- 1  .  2
- 6  8  5
+Opção: 6
 
-Iteração 12: (expansões 0, gerações 0, avaliações 1)
-g:0 h:10 |1
- 4  7  3
- 1  .  2
- 6  8  5
-  +g:1 h:11 1|4|5 baixo
-  |  +g:2 h:10 2|6|7 dir
-  |  |  +g:3 h:9 3|7|8 cima
-  |  |     +
-  |  |     +
-  |  +g:2 h:10 4|9|10 esq
-  |     +g:3 h:9 5|10|11 cima
-  |        +g:4 h:8 6|12|13 cima
-  |        |  +g:5 h:7 7|13|14 dir
-  |        |     +g:6 h:6 8|15|16 baixo
-  |        |     |  +g:7 h:5 9|18|19 baixo
-  |        |     |  |  +g:8 h:4 10|20|21 dir
-  |        |     |  |  |  +g:9 h:3 11|21|22 cima
-  |        |     |  |  |     +g:10 h:2 12|23|24 esq
-  |        |     |  |  |     |  +g:11 h:1 13|26|27 baixo
-  |        |     |  |  |     |  |  +g:12 14|28|29 dir
-  |        |     |  |  |     |  |  | Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:12)
- P1=6 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0
- P11=0
+═╤═ ►  Execução iniciada ═══
+ ├─────────── 🌳 📉 12 ⏱ 1ms  ────────────
+ ├■═╤═ 💰 g:0 🎯 h:10 🔢 |1 ═══
+ │  4  7  3
+ │  1  .  2
+ │  6  8  5
+ │  ├■═╤═ 🔖1 💰 g:1 🎯 h:11 🔢 1|4|5 ═══ ⚡baixo
+ │  │  4  .  3
+ │  │  1  7  2
+ │  │  6  8  5
+ │  │  ├■═╤═ 🔖5 💰 g:2 🎯 h:10 🔢 2|6|7 ═══ ⚡dir
+ │  │  │  .  4  3
+ │  │  │  1  7  2
+ │  │  │  6  8  5
+ │  │  │  └■═╤═ 🔖7 💰 g:3 🎯 h:9 🔢 3|7|8 ═══ ⚡cima
+ │  │  │     1  4  3
+ │  │  │     .  7  2
+ │  │  │     6  8  5
+ │  │  │     ├─🍃 14 → 📉 { 🔖8 }
+ │  │  │     └─🍃 { 🔖9 }
+ │  │  └■═╤═ 🔖6 💰 g:2 🎯 h:10 🔢 4|9|10 ═══ ⚡esq
+ │  │     4  3  .
+ │  │     1  7  2
+ │  │     6  8  5
+ │  │     └■═╤═ 🔖10 💰 g:3 🎯 h:9 🔢 5|10|11 ═══ ⚡cima
+ │  │        4  3  2
+ │  │        1  7  .
+ │  │        6  8  5
+ │  │        ├■═╤═ 🔖11 💰 g:4 🎯 h:8 🔢 6|12|13 ═══ ⚡cima
+ │  │        │  4  3  2
+ │  │        │  1  7  5
+ │  │        │  6  8  .
+ │  │        │  └■═╤═ 🔖13 💰 g:5 🎯 h:7 🔢 7|13|14 ═══ ⚡dir
+ │  │        │     4  3  2
+ │  │        │     1  7  5
+ │  │        │     6  .  8
+ │  │        │     ├■═╤═ 🔖14 💰 g:6 🎯 h:6 🔢 8|15|16 ═══ ⚡baixo
+ │  │        │     │  4  3  2
+ │  │        │     │  1  .  5
+ │  │        │     │  6  7  8
+ │  │        │     │  ├■═╤═ 🔖16 💰 g:7 🎯 h:5 🔢 9|18|19 ═══ ⚡baixo
+ │  │        │     │  │  4  .  2
+ │  │        │     │  │  1  3  5
+ │  │        │     │  │  6  7  8
+ │  │        │     │  │  ├■═╤═ 🔖19 💰 g:8 🎯 h:4 🔢 10|20|21 ═══ ⚡dir
+ │  │        │     │  │  │  .  4  2
+ │  │        │     │  │  │  1  3  5
+ │  │        │     │  │  │  6  7  8
+ │  │        │     │  │  │  └■═╤═ 🔖21 💰 g:9 🎯 h:3 🔢 11|21|22 ═══ ⚡cima
+ │  │        │     │  │  │     1  4  2
+ │  │        │     │  │  │     .  3  5
+ │  │        │     │  │  │     6  7  8
+ │  │        │     │  │  │     ├■═╤═ 🔖23 💰 g:10 🎯 h:2 🔢 12|23|24 ═══ ⚡esq
+ │  │        │     │  │  │     │  1  4  2
+ │  │        │     │  │  │     │  3  .  5
+ │  │        │     │  │  │     │  6  7  8
+ │  │        │     │  │  │     │  ├■═╤═ 🔖24 💰 g:11 🎯 h:1 🔢 13|26|27 ═══ ⚡baixo
+ │  │        │     │  │  │     │  │  1  .  2
+ │  │        │     │  │  │     │  │  3  4  5
+ │  │        │     │  │  │     │  │  6  7  8
+ │  │        │     │  │  │     │  │  ├■═╤═ 🔖27 💰 g:12 🔢 14|28|29 ═══ ⚡dir
+ │  │        │     │  │  │     │  │  │  .  1  2
+ │  │        │     │  │  │     │  │  │  3  4  5
+ │  │        │     │  │  │     │  │  │  6  7  8
+ │  │        │     │  │  │     │  │  │  🎯 Solução encontrada!
+ │  │        │     │  │  │     │  │  │  .  1  2
+ │  │        │     │  │  │     │  │  │  3  4  5
+ │  │        │     │  │  │     │  │  │  6  7  8
+ │  │        │     │  │  │     │  │  │ 🎯 12 → 📈
+ │  │        │     │  │  │     │  │  └─ { 🔖28 }
+ │  │        │     │  │  │     │  └─ { 🔖25 🔖26 }
+ │  │        │     │  │  │     └─ { 🔖22 }
+ │  │        │     │  │  └─ { 🔖20 }
+ │  │        │     │  └─ { 🔖17 🔖18 }
+ │  │        │     └─ { 🔖15 }
+ │  │        └─ { 🔖12 }
+ │  └─ { 🔖3 🔖2 🔖4 }
+ ├─ ⚙️  Parâmetros ─ P1=6 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0 P11=0
+═╧═ 🏁  Execução terminada ⏱  2ms  ═══
 Puzzle 8
- P1(Algoritmo): IDA* | P2(Debug): completo | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000
- P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
- P11(baralhar): 0
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): IDA* | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): gerados
+│ P9(PESO_ASTAR): 100 | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+└──────────────────────────────────────────────────────────────────────
  .  1  2
  3  4  5
  6  7  8
-I1(Custo): 12 | I2(Tempo(ms)): 35 | I3(Iterações): 29 | I4(Expansões): 14 | I5(Gerações): 28 |
-I6(Lower Bound): 14
-____________________________________________________________________
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 2 | I3(Iterações): 29 | I4(IND_EXPANSOES): 14 |
+│ I5(IND_GERACOES): 28 | I6(IND_LOWER_BOUND): 14
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
 Podemos ver que em termos de iterações, ao contrário da procura em profundidade iterativa,
 tem menos iterações. 
 
 O limite da iteração seguinte é determinado pelo menor valor dos estados
 cortados, avançando mais que uma unidade de cada vez.
-Acabou por ter apenas 29 expansões, enquanto que o AStar utilizou 12 expansões. 
+O primeiro limite é determinado pelo valor da heurística do estado inicial, que neste caso tinha o valor perfeito.
 
-Pode-se considerar que é mais do dobro, mas é um pequeno preço a pagar por não ter problemas de memória.
+Acabou por ter apenas 14 expansões, enquanto que o AStar utilizou 12 expansões. 
+
+Neste caso como houve uma só iteração, correu bastante bem. Mas mesmo que fosse o dobro das expansões,
+é um pequeno preço a pagar por não ter problemas de memória.
 
 
 \anchor puzzle8-a9
@@ -960,61 +1059,81 @@ Vamos baixar o nível de debug para 1.
 Introduza: **1; 40; 3; 1; 7; 2; 1; *ENTER*; 6.**
 
 ```entrada
-# Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:70) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:68) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:64) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:60) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:52) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:50)# Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:48) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:46)# Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:42) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:32) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:30) Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:28)# Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:24)# Solução encontrada!
- .  1  2
- 3  4  5
- 6  7  8 (g:12)
- P1=7 P2=1 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0
- P11=0
+═╤═ ►  Execução iniciada ═══#
+ ├■ 🎯 Solução encontrada! 💰  g:70
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├■ 🎯 Solução encontrada! 💰  g:68
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├■ 🎯 Solução encontrada! 💰  g:64
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├■ 🎯 Solução encontrada! 💰  g:60
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├■ 🎯 Solução encontrada! 💰  g:52
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ └■ 🎯 Solução encontrada! 💰  g:50
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8 #
+ └■ 🎯 Solução encontrada! 💰  g:48
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ └■ 🎯 Solução encontrada! 💰  g:46
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8 #
+ ├■ 🎯 Solução encontrada! 💰  g:42
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├■ 🎯 Solução encontrada! 💰  g:32
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├■ 🎯 Solução encontrada! 💰  g:30
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├■ 🎯 Solução encontrada! 💰  g:28
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8 #
+ ├■ 🎯 Solução encontrada! 💰  g:24
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8 #
+ ├■ 🎯 Solução encontrada! 💰  g:12
+ │  .  1  2
+ │  3  4  5
+ │  6  7  8
+ ├─ ⚙️  Parâmetros ─ P1=7 P2=1 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0 P11=0
+═╧═ 🏁  Execução terminada ⏱  30ms  ═══
 Puzzle 8
- P1(Algoritmo): Branch and Bound | P2(Debug): atividade | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000
- P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0
- P11(baralhar): 0
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Branch and Bound | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 2
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4
+│ P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): gerados | P9(PESO_ASTAR): 100
+│ P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+└──────────────────────────────────────────────────────────────────────
  .  1  2
  3  4  5
  6  7  8
-I1(Custo): 12 | I2(Tempo(ms)): 36 | I3(Iterações): 6666 | I4(Expansões): 4110 | I5(Gerações): 6666 |
-I6(Lower Bound): 14
-____________________________________________________________________
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 30 | I3(Iterações): 6666 | I4(IND_EXPANSOES): 4110 |
+│ I5(IND_GERACOES): 6666 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+...
+Opção:
 ```
 Vemos que primeiramente encontra a solução de 70 movimentos, e depois vai encontrando sucessivamente 
 soluções melhores até que termina com a solução de 12. Gasta nesta instância um número 
@@ -1038,75 +1157,101 @@ As configurações e testes no modo interativo, foram exemplificados no exemplo 
 Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "-h".
 
 ```entrada
-C:\...\TProcura\Construtiva\Teste> ../../x64/Release/TProcuraConstrutiva -h
+/TProcura/Construtiva/Teste$ ./bin/Release/TProcuraConstrutiva -h
 
-Teste TProcurasConstrutivas
-Problema:
-  1 - Aspirador
-  2 - Puzzle 8
-  3 - 8 Damas
-  4 - Partição
-  5 - Artificial
+┌─ Teste TProcuraConstrutiva ──┐
+│ 1 - Aspirador                │
+│ 2 - Puzzle 8                 │
+│ 3 - 8 Damas                  │
+│ 4 - Partição                 │
+│ 5 - Artificial               │
+└──────────────────────────────┘
 Opção: 2
-Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe <instâncias> [opções]
+Uso: ./bin/Release/TProcuraConstrutiva <instâncias> [opções]
   <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]
 Opções:
   -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)
   -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)
+  -M <modo>       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador
   -I <ind>        Lista de indicadores (e.g. 2,1,3)
-  -S              Mostrar soluções durante a execução
   -h              Esta ajuda
   -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
-Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
+Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
    Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
 
 Lista de parâmetros:
- P1(Algoritmo): Largura Primeiro (1 a 7)
- P2(Debug): nada (0 a 4)
- P3(Seed): 1 (1 a 1000000)
- P4(Tempo): 10 (1 a 3600)
- P5(Iterações): 0 (0 a 1000000000)
- P6(Ver): 4 (1 a 100)
- P7(Limite): 0 (-1 a 1000000)
- P8(Repetidos): ascendentes (1 a 3)
- P9(pesoAStar): 100 (0 a 10000)
- P10(ruido): 0 (-100 a 100)
- P11(baralhar): 0 (0 a 1)
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Largura Primeiro ( 1 a  7)
+│ P2(NIVEL_DEBUG):           NADA       ( 0 a  4)
+│ P3(SEMENTE):               1          ( 1 a  1000000)
+│ P4(LIMITE_TEMPO):          10         ( 1 a  3600)
+│ P5(LIMITE_ITERACOES):      0          ( 0 a  1000000000)
+│ P6(VER_ACOES):             4          ( 1 a  100)
+│ P7(LIMITE):                0          (-1 a  1000000)
+│ P8(ESTADOS_REPETIDOS):     ascendentes ( 1 a  3)
+│ P11(BARALHAR_SUCESSORES):  0          ( 0 a  1)
+└──────────────────────────────────────────────────────────────────────
 
 Lista de indicadores:
-
-I1(Custo): 1º lugar (o resultado é o custo da solução atual)
-I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)
-I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)
-I4(Expansões): 4º lugar (número de expansões efetuadas)
-I5(Gerações): 5º lugar (número de estados gerados)
-I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)
+┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): ✔  1º lugar
+│ o resultado é o custo da solução atual
+│ I2(Tempo(ms)): ✔  2º lugar
+│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ I3(Iterações): ✔  3º lugar
+│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
+│ I4(IND_EXPANSOES): ✔  4º lugar
+│ número de expansões efetuadas
+│ I5(IND_GERACOES): ✔  5º lugar
+│ número de estados gerados
+│ I6(IND_LOWER_BOUND): ✔  6º lugar
+│ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
+└──────────────────────────────────────────────────────────────────────
 ```
 
 A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opção 2 para o Puzzle 8.
 
-Pretendemos fazer um teste empírico, considerando os seguintes aspetos:
+Pretendemos fazer um teste empírico considerando os seguintes aspetos:
 - utilizar as instâncias 1 a 100 do Puzzle 8.
 - executar os algoritmos informados, P1=4 até P1=7.
 - ver todos os indicadores I1 a I6
+- ver alguma informação de debug da execução (os algoritmos executam sempre em debug nível 0)
 
 Assim, podemos executar o programa com a seguinte linha de comando:
 ```entrada
-PS ...\Teste> TProcuraConstrutiva 1:100 -R resultadoPuzzle8 -P P1=4:7
+PS ...\Teste> TProcuraConstrutiva 1:100 -R Resultados/Puzzle8t1 -P P1=4:7 P2=3
 
-Teste TProcurasConstrutivas
-Problema:
-  1 - Aspirador
-  2 - Puzzle 8
-  3 - 8 Damas
-  4 - Partição
-  5 - Artificial
+┌─ Teste TProcuraConstrutiva ──┐
+│ 1 - Aspirador                │
+│ 2 - Puzzle 8                 │
+│ 3 - 8 Damas                  │
+│ 4 - Partição                 │
+│ 5 - Artificial               │
+└──────────────────────────────┘
 Opção: 2
-...
-Ficheiro resultadoPuzzle8.csv gravado.
+
+ ├─ 🛠️  ─ P2=3 P3=1 P4=10 P5=0 P6=4 P7=0 P8=2 P11=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙️ [1] ─ P1=4
+ ├─ ⚙️ [2] ─ P1=5
+ ├─ ⚙️ [3] ─ P1=6
+ ├─ ⚙️ [4] ─ P1=7
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:400   ↻ Instâncias: 100   🛠️ Configurações: 4   🖥️ Processos: 1.
+ ├─ ⏱ 10" 179ms       📋 387   ↻ 88    🛠️ 3     🖥️ 1
+ ├─ 📄  Ficheiro Resultados/Puzzle8t1.csv gravado.
+ │  ⏱  Tempo real: 13" 197ms
+ │  ⏱  CPU total: 13" 197ms
+ │  📊  Utilização: 100.0%
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  13" 197ms ) ═══
 ```
 
-O ficheiro de resultados foi gravado, e podemos agora confirmar que:
+O ficheiro de resultados foi gravado, toda a execução decorreu em 13 segundos, pelo que o nível 3 de debug
+fez um só relatório aos 10 segundos. O nível 4 o relatório é em cada reaulado, o que neste caso seria
+demasiado já que há 400 tarefas. O nível 2 dá um report a cada minuto.
+
+Podemos agora confirmar que:
 - o Melhor Primeiro nem sempre retorna a solução ótima e os restantes 3 algoritmos informados retornam sempre a solução ótima;
 - identificar quais os algoritmos mais eficientes em termos de esforço computacional, medido pelo tempo CPU e número de expansões;
 
@@ -1115,7 +1260,7 @@ Com o relatório dinâmico, destaque o método P1 nas colunas, e indicadores no 
 | Valores | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
 |:---:|---:|---:|---:|---:|
 | Soma de I1(Custo) | 21554 | 690 | 690 | 690 |
-| Soma de I2(Tempo(ms)) | 68 | 2 | 2 | 13517 |
+| Soma de I2(Tempo(ms)) | 68 | 0 | 0 | 13121 |
 | Soma de I4(Expansões) | 21721 | 1858 | 2693 | 4460077 |
 
 Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a cima do óptimo, respondendo à primeira questão.
@@ -1123,19 +1268,35 @@ Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a cima d
 Para a segunda questão, podemos confirmar que para este problema e estas instâncias, 
 o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro (embora sem o ótimo) e depois o Branch-and-bound.
 
-Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados. 
+Estas instâncias tinham ainda muitos poucos movimentos aleatórios.
+Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados. 
 
 ```entrada
-PS ...\Teste> TProcuraConstrutiva 900:999 -R resultadoPuzzle8b -P P1=4:7
+PS ...\Teste> TProcuraConstrutiva 900:999 -R Resultados/Puzzle8t2 -P P1=4:7 P2=3
 ...
-Ficheiro resultadoPuzzle8b.csv gravado.
+Opção: 2
+
+ ├─ 🛠️  ─ P2=3 P3=1 P4=10 P5=0 P6=4 P7=0 P8=2 P11=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙️ [1] ─ P1=4
+ ├─ ⚙️ [2] ─ P1=5
+ ├─ ⚙️ [3] ─ P1=6
+ ├─ ⚙️ [4] ─ P1=7
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:400   ↻ Instâncias: 100   🛠️ Configurações: 4   🖥️ Processos: 1.
+ ├─ 📄  Ficheiro Resultados/Puzzle8t2.csv gravado.
+ │  ⏱  Tempo real: 8" 276ms
+ │  ⏱  CPU total: 8" 276ms
+ │  📊  Utilização: 100.0%
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  8" 277ms ) ═══
 ```
 
 | Valores | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
 |:---:|---:|---:|---:|---:|
 | Máximo de I1(Custo) | 470 | 27 | 27 | 27 |
 | Soma de I1(Custo) | 21512 | 2430 | 2430 | 2430 |
-| Soma de I2(Tempo(ms)) | 62 | 157 | 181 | 8874 |
+| Soma de I2(Tempo(ms)) | 39 | 147 | 165 | 7833 |
 | Soma de I4(Expansões) | 21646 | 150389 | 189373 | 4464967 |
 
 Podemos ver que estas instâncias já têm mais de 20 movimentos até ao objetivo.

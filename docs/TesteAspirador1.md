@@ -9,6 +9,9 @@ No Linux na pasta `.../TProcura/Construtiva/Teste$` execute `make` seguido de `.
 
 Pode acompanhar o teste excutando as ações localmente.
 
+Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
+
+
 ## Sumário
 
 - [Ação 1 - Trocar de instância](#aspirador-a1)

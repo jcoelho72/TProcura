@@ -1,8 +1,12 @@
 @page teste_jogo_em_linha Teste Jogo Em Linha
 
-Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo. 
-Selecione o projeto TProcuraAdversa, e execute.
-Pode acompanhar o teste excutando as ações localmente.
+Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo.
+Pode acompanhar o teste executando as ações localmente.
+
+No Visual Studio, selecione o projeto TProcuraAdversa, e execute.
+No Linux na pasta `.../TProcura/Adversa/Teste$` execute `make` seguido de `./bin/Release/TProcuraAdversa`
+
+Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
 
 ## Sumário
 

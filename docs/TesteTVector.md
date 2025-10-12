@@ -11,6 +11,8 @@ No Linux na pasta `.../TProcura/Teste$` execute `make` seguido de `./bin/Release
 Este exemplo serve para ilustrar as funcionalidades principais de testes paramétricos da classe TProcura.
 Nos exemplos das subclasses ilustra-se as restantes funcionalidades.
 
+Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
+
 ## Sumário
 
 - [Ação 1: Menu 1 - Inicializar](#tvector-a1)
