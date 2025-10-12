@@ -9,7 +9,7 @@ digraph "TProcuraConstrutiva::Acao"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gacccf4fbb52126ba19bfc456c0c6d5214",tooltip="Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraConstrutiva\l::DebugChamada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a6962c0cf7350a211ae74b00768d9c232",tooltip=" "];
+  Node3 [id="Node000003",label="TProcuraConstrutiva\l::DebugChamada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a50d5d518140c559770c9c02b90e88dfe",tooltip=" "];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcuraConstrutiva\l::BranchAndBound",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd",tooltip="Executa o algoritmo Branch-and-Bound, um algoritmo informado."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -43,13 +43,15 @@ digraph "TProcuraConstrutiva::Acao"
   Node14 -> Node5 [id="edge22_Node000014_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node14 [id="edge23_Node000014_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node15 [id="edge24_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TProcuraConstrutiva\l::DebugSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a08aa14ddc895426b2ce3df4d763cbbd7",tooltip=" "];
-  Node15 -> Node6 [id="edge25_Node000015_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node6 [id="edge26_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node12 [id="edge27_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node16 [id="edge28_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TProcuraConstrutiva\l::MostrarCaminho",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a51a3757ad4f4041833c7957276d76ab9",tooltip=" "];
-  Node16 -> Node17 [id="edge29_Node000016_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcuraConstrutiva\l::MostrarSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#ga1fdecf86b41c94a1656c17495f9b5b93",tooltip="Mostrar solução, seja um caminho ou o próprio estado."];
-  Node1 -> Node11 [id="edge30_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TProcuraAdversa::DebugChamada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ac3cd014dd680e5cd8fa7d52031f62d21",tooltip=" "];
+  Node1 -> Node16 [id="edge25_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TProcuraConstrutiva\l::DebugSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a08aa14ddc895426b2ce3df4d763cbbd7",tooltip=" "];
+  Node16 -> Node6 [id="edge26_Node000016_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge27_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node12 [id="edge28_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node17 [id="edge29_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="TProcuraConstrutiva\l::MostrarCaminho",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a51a3757ad4f4041833c7957276d76ab9",tooltip=" "];
+  Node17 -> Node18 [id="edge30_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="TProcuraConstrutiva\l::MostrarSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#ga1fdecf86b41c94a1656c17495f9b5b93",tooltip="Mostrar solução, seja um caminho ou o próprio estado."];
+  Node1 -> Node11 [id="edge31_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

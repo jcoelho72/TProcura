@@ -38,17 +38,16 @@ digraph "TProcuraMelhorativa::EscaladaDoMonte"
   Node11 -> Node10 [id="edge19_Node000011_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge20_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraMelhorativa\l::NovaSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a50bf29ddd183e8e4678ceb2247b9cf58",tooltip=" "];
-  Node1 -> Node4 [id="edge21_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node14 [id="edge22_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node14 [id="edge21_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcuraMelhorativa\l::VerificaMelhor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#aeb435694084a626e3d52f3a489d9a93d",tooltip=" "];
-  Node14 -> Node12 [id="edge23_Node000014_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node14 -> Node15 [id="edge24_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node12 [id="edge22_Node000014_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node15 [id="edge23_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TProcuraMelhorativa\l::DebugMelhorEncontrado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6fc03fc9e9379496303354d2b46b8bc8",tooltip=" "];
-  Node15 -> Node16 [id="edge25_Node000015_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node16 [id="edge24_Node000015_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
-  Node15 -> Node3 [id="edge26_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node15 -> Node17 [id="edge27_Node000015_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node3 [id="edge25_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node17 [id="edge26_Node000015_Node000017",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];
-  Node1 -> Node18 [id="edge28_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node18 [id="edge27_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="TProcuraMelhorativa\l::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#ad268f3d892d6a912f632369e1c9be878",tooltip=" "];
 }

@@ -35,11 +35,7 @@ digraph "TProcuraConstrutiva::DebugCorte"
   Node11 -> Node10 [id="edge17_Node000011_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node11 [id="edge18_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node12 [id="edge19_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcuraAdversa::NoFolha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a01ed7d4718647eb52723ecffaf68aa4b",tooltip="fim da procura, por corte de nível (ou não haver sucessores), retornar heurística"];
-  Node12 -> Node7 [id="edge20_Node000012_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 -> Node11 [id="edge21_Node000012_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node13 [id="edge22_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcuraConstrutiva\l::ProfundidadePrimeiro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228",tooltip="Executa a procura em profundidade primeiro, algoritmo cego."];
-  Node13 -> Node3 [id="edge23_Node000013_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 -> Node13 [id="edge24_Node000013_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="TProcuraConstrutiva\l::ProfundidadePrimeiro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228",tooltip="Executa a procura em profundidade primeiro, algoritmo cego."];
+  Node12 -> Node3 [id="edge20_Node000012_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node12 [id="edge21_Node000012_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

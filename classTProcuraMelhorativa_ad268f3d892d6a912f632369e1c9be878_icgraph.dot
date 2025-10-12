@@ -8,16 +8,14 @@ digraph "TProcuraMelhorativa::Vizinhanca"
   Node1 [id="Node000001",label="TProcuraMelhorativa\l::Vizinhanca",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraMelhorativa\l::EscaladaDoMonte",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a8c8caa2d188bb5f6701fc5e1ddbc4510",tooltip=" "];
-  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraMelhorativa\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#af101526489df420431d22477e317fb33",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TCodificacaoBinaria\l::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoBinaria.html#a2dab8869b025da3b57888d9830b3b281",tooltip=" "];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TCodificacaoBinaria\l::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoBinaria.html#a2dab8869b025da3b57888d9830b3b281",tooltip=" "];
+  Node4 [id="Node000004",label="TCodificacaoInteira\l::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html#a4411e9666d20ad365a56879808dda144",tooltip=" "];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TCodificacaoInteira\l::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html#a4411e9666d20ad365a56879808dda144",tooltip=" "];
+  Node5 [id="Node000005",label="TCodificacaoPermutacao\l::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoPermutacao.html#aca536a8709cddbfa6461652949092a4c",tooltip=" "];
   Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TCodificacaoPermutacao\l::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoPermutacao.html#aca536a8709cddbfa6461652949092a4c",tooltip=" "];
+  Node6 [id="Node000006",label="COitoDamas::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2",tooltip=" "];
   Node1 -> Node7 [id="edge6_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="COitoDamas::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a624402f3f1386d7d0abb312503d3dff2",tooltip=" "];
-  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="CParticao::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a54bc83b93ee7996d8203192c45f3f486",tooltip=" "];
+  Node7 [id="Node000007",label="CParticao::Vizinhanca",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a54bc83b93ee7996d8203192c45f3f486",tooltip=" "];
 }

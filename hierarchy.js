@@ -42,6 +42,7 @@ var hierarchy =
     [ "TVector< Item >", "classTVector.html", null ],
     [ "TVector< bool >", "classTVector.html", null ],
     [ "TVector< char >", "classTVector.html", null ],
+    [ "TVector< const char * >", "classTVector.html", null ],
     [ "TVector< double >", "classTVector.html", null ],
     [ "TVector< int >", "classTVector.html", null ],
     [ "TVector< int64_t >", "classTVector.html", null ],
@@ -50,6 +51,5 @@ var hierarchy =
     [ "TVector< SParametro >", "classTVector.html", null ],
     [ "TVector< TProcuraConstrutiva >", "classTVector.html", null ],
     [ "TVector< TVector< int > >", "classTVector.html", null ],
-    [ "TVector< uint64_t >", "classTVector.html", null ],
-    [ "TVector< unsigned char >", "classTVector.html", null ]
+    [ "TVector< uint64_t >", "classTVector.html", null ]
 ];

@@ -22,7 +22,6 @@ var TProcuraMelhorativa_8h =
       [ "IMIGRANTES", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da7351ca91829b6dc34e69e55f19f60753", null ],
       [ "DIVERSIDADE", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da0ac70ab8cb784bc9936f3c140fd7e36c", null ],
       [ "DIST_MINIMA", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da118a0e035ec6f8f367733e0df9cee3e0", null ],
-      [ "MOVE_PRIMEIRO", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da955c95984399bbdfb401f3915fe5d051", null ],
       [ "PARAMETROS_MELHORATIVA", "TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da40bfb6b341d4218e79fddf891f7a175c", null ]
     ] ]
 ];

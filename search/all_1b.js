@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ramo_0',['ramo',['../group__VariaveisGlobais.html#gaaf6f588c839f27181cf9f31f7618c8c1',1,'TProcuraConstrutiva']]],
+  ['ramo_0',['ramo',['../group__VariaveisGlobais.html#gaac97e0931e93f82c5c2f8f148d3772ca',1,'TProcuraConstrutiva']]],
   ['rand_1',['rand',['../namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f',1,'TRand']]],
   ['random_2',['Random',['../classTVector.html#a769c6a55b72a463fd2313fbd638c7234',1,'TVector']]],
   ['randomorder_3',['RandomOrder',['../classTVector.html#a528c30196e28424fcac4386b873a6e11',1,'TVector']]],

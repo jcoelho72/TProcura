@@ -33,6 +33,5 @@ digraph "TProcura::CodificarSolucao"
   Node2 -> Node7 [id="edge14_Node000002_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge15_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcura::MostrarSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a014a294d094430b113ffb36e64a74d97",tooltip="definir para visualizar a solução"];
-  Node13 -> Node3 [id="edge16_Node000013_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 -> Node7 [id="edge17_Node000013_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 -> Node7 [id="edge16_Node000013_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

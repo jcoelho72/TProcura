@@ -36,11 +36,15 @@ digraph "TProcura::EditarConfiguracoes"
   Node12 -> Node14 [id="edge16_Node000012_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fa07f03b8e5a201e35023ba7724b82",tooltip="Mostra os parâmetros atuais."];
   Node14 -> Node10 [id="edge17_Node000014_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node15 [id="edge18_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TProcura::NovaConfiguracao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a62cd10354f0fbe5ccc45bbd0c0d7f121",tooltip="Adiciona uma nova configuração se ainda não existir."];
-  Node15 -> Node4 [id="edge19_Node000015_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node15 -> Node16 [id="edge20_Node000015_Node000016",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TVector::Last",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa304d639c79ef2842f9951846c6292e3",tooltip=" "];
-  Node1 -> Node17 [id="edge21_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcura::NovoTexto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a17fa21564876d313f79b4376ce7366a1",tooltip=" "];
+  Node14 -> Node3 [id="edge18_Node000014_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node15 [id="edge19_Node000014_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TProcura::ParametroAtivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e",tooltip=" "];
+  Node15 -> Node3 [id="edge20_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node16 [id="edge21_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TProcura::NovaConfiguracao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a62cd10354f0fbe5ccc45bbd0c0d7f121",tooltip="Adiciona uma nova configuração se ainda não existir."];
+  Node16 -> Node4 [id="edge22_Node000016_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node16 -> Node17 [id="edge23_Node000016_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="TVector::Last",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa304d639c79ef2842f9951846c6292e3",tooltip=" "];
+  Node1 -> Node18 [id="edge24_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="TProcura::NovoTexto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a17fa21564876d313f79b4376ce7366a1",tooltip=" "];
 }

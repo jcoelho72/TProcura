@@ -680,7 +680,7 @@ Ação 6: Menu 8 - Teste</h2>
 <p>O detalhe dos parametros em cada configuração é replicado no final, para associar os resultados aos parametros utilizados.</p>
 <p>Infelizmente, pouco podemos concluir com este teste. O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente execuções com diversas configurações. Sabemos apenas que não há crash.</p>
 <p>Vamos formular uma pergunta. Pretendemos saber como varia o tempo na operação de ordenação, com o tamanho do vetor.</p>
-<p>Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de novo, para não ter qualquer configuração. Introduza após arrancar: 7; P1=2; <em>ENTER</em>; 8; 1:10; <em>ENTER</em>.</p>
+<p>Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de novo, para não ter qualquer configuração. Vamos agora colocar a informação de debug no máximo. Introduza após arrancar: 7; P1=2 P2=4; <em>ENTER</em>; 8; 1:10; <em>ENTER</em>.</p>
 <div class="fragment"><div class="line">Opção: 8</div>
 <div class="line"> </div>
 <div class="line">┌─ 📖 Sintaxe comando ────────────────────</div>
@@ -689,37 +689,49 @@ Ação 6: Menu 8 - Teste</h2>
 <div class="line">✏️ IDs das instâncias (1 a 10): 1:10</div>
 <div class="line">📄  Ficheiro resultados (nada para mostrar no ecrã):</div>
 <div class="line"> </div>
-<div class="line"> ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=1 (parâmetros comuns)</div>
+<div class="line"> ├─ 🛠️  ─ P1=2 P2=4 P3=1 P4=10 P5=0 P6=1 (parâmetros comuns)</div>
 <div class="line">═╪═ Configurações ═══</div>
 <div class="line"> ├─ ⚙️ [1] ─</div>
 <div class="line">═╧═══════════════════</div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:10   ↻ Instâncias: 10   🛠️ Configurações: 1   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱                   📋 0       ↻ 1       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 196ms             📋 1       ↻ 2       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 492ms             📋 2       ↻ 3       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 969ms             📋 3       ↻ 4       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 1&quot; 637ms          📋 4       ↻ 5       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 2&quot; 356ms          📋 5       ↻ 6       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 3&quot; 256ms          📋 6       ↻ 7       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 4&quot; 266ms          📋 7       ↻ 8       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 5&quot; 482ms          📋 8       ↻ 9       🛠️ 0       🖥️ 1    🎯 1</div>
+<div class="line"> ├─ ⏱ 6&quot; 702ms          📋 9       ↻ 10      🛠️ 0       🖥️ 1    🎯 1</div>
 <div class="line">┌──────┬───────┬───────────┬───────────┐</div>
 <div class="line">│ ↻    │ 🛠️    │ 💰         │ ⏱         │</div>
 <div class="line">├──────┼───────┼───────────┼───────────┤</div>
-<div class="line">│ 1    │ 1     │ 1         │ 65        │</div>
-<div class="line">│ 2    │ 1     │ 1         │ 133       │</div>
-<div class="line">│ 3    │ 1     │ 1         │ 209       │</div>
-<div class="line">│ 4    │ 1     │ 1         │ 278       │</div>
-<div class="line">│ 5    │ 1     │ 1         │ 388       │</div>
-<div class="line">│ 6    │ 1     │ 1         │ 439       │</div>
-<div class="line">│ 7    │ 1     │ 1         │ 524       │</div>
-<div class="line">│ 8    │ 1     │ 1         │ 644       │</div>
-<div class="line">│ 9    │ 1     │ 1         │ 665       │</div>
-<div class="line">│ 10   │ 1     │ 1         │ 738       │</div>
+<div class="line">│ 1    │ 1     │ 1         │ 182       │</div>
+<div class="line">│ 2    │ 1     │ 1         │ 233       │</div>
+<div class="line">│ 3    │ 1     │ 1         │ 416       │</div>
+<div class="line">│ 4    │ 1     │ 1         │ 539       │</div>
+<div class="line">│ 5    │ 1     │ 1         │ 613       │</div>
+<div class="line">│ 6    │ 1     │ 1         │ 784       │</div>
+<div class="line">│ 7    │ 1     │ 1         │ 858       │</div>
+<div class="line">│ 8    │ 1     │ 1         │ 1041      │</div>
+<div class="line">│ 9    │ 1     │ 1         │ 1065      │</div>
+<div class="line">│ 10   │ 1     │ 1         │ 1329      │</div>
 <div class="line">└──────┴───────┴───────────┴───────────┘</div>
 <div class="line">┌─ 📊  Total 🛠️ 1 ──────────────────────────────────────────────────────</div>
-<div class="line">│ Resultado: 10 Tempo(ms): 4083 Iterações: 10 IND_ORDENAR: 10 Instâncias resolvidas: 10</div>
+<div class="line">│ Resultado: 10 Tempo(ms): 7060 Iterações: 10 IND_ORDENAR: 10 Instâncias resolvidas: 10</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">🏆  Torneio (#instâncias melhores):</div>
 <div class="line"> |-01-|</div>
 <div class="line"> 1    |  0</div>
 <div class="line"> |----|</div>
 <div class="line"> </div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  4&quot; 725ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  8&quot; 326ms ) ═══</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p> Podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 65 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva 738 milisegundos. Foram execuções únicas, os valores podem variar demasiado.</p>
+</div><!-- fragment --><p> A informação debug completa, mostra por cada execução uma linha. Em cada linha é identificado o instante, tarefa, instância, configuração, processo e finalmente o resultado (valor do primeiro indicador).</p>
+<p>Sobre os resultados mostrados em tabela, podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 65 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva 738 milisegundos. Foram execuções únicas, os valores podem variar demasiado.</p>
 <p>Vamos colocar 10 instâncias de cada tipo, variando a semente, para assim ter mais precisão. Queremos desta vez ter os resultados no Excel (utilizando a pasta Resultados) e vamos colocar o debug a 1.</p>
 <p>Introduza: 7; P2=1; P3=1:10; <em>ENTER</em>; 8; 1:10; Resultados/tvetor1.</p>
 <div class="fragment"><div class="line">Opção: 8</div>
