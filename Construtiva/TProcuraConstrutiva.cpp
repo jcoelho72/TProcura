@@ -142,7 +142,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 		case MELHOR_PRIMEIRO:
 		case IDA_STAR:
 		case BRANCH_AND_BOUND:
-			ramo.Push(" ├■");
+			ramo.Push(RAMO_ESTADO);
 		}
 	}
 	else
@@ -465,7 +465,7 @@ int TProcuraConstrutiva::IDAStar(int upperBound)
 			DebugExpansao(i, id.Count());
 			if (atual > upperBound) {
 				// acima do permitido nesta iteração
-				ramo.Last() = (i < id.Count() - 1 ? " ├─" : " └─");
+				ramo.Last() = (i < id.Count() - 1 ? RAMO_NOVO : RAMO_FIM);
 				if (lowerBound == upperBound || lowerBound > atual) {
 					DebugFolha(false, "🍃 %d → 📉", atual);
 					lowerBound = atual;
@@ -591,9 +591,9 @@ int TProcuraConstrutiva::Heuristica(void) {
 void TProcuraConstrutiva::DebugExpansao(int sucessor, int sucessores, bool minimizar)
 {
 	if (minimizar)
-		ramo.Last() = (sucessor < sucessores - 1 ? " ├■" : " └■");
+		ramo.Last() = (sucessor < sucessores - 1 ? RAMO_ESTADO : RAMO_ESTADO_FIM);
 	else
-		ramo.Last() = (sucessor < sucessores - 1 ? " ├□" : " └□");
+		ramo.Last() = (sucessor < sucessores - 1 ? RAMO_ESTADO2 : RAMO_ESTADO2_FIM);
 }
 
 void TProcuraConstrutiva::DebugRamo(const char* ramo, const char* folha) {
@@ -613,7 +613,7 @@ void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 	}
 
 	if (Parametro(NIVEL_DEBUG) >= PASSOS && sucessores < 0) {
-		ramo.Last() = " └─";
+		ramo.Last() = RAMO_FIM;
 		NovaLinha();
 		printf("🪓 🔖%d ", debugID);
 	}
@@ -625,7 +625,7 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 	if (Parametro(NIVEL_DEBUG) > NADA && SolucaoCompleta()) {
 		NovaLinha();
 		printf(" 🎯 Solução encontrada! 💰  g:%d", custo);
-		ramo.Last() =" │ ";
+		ramo.Last() = RAMO_CONTINUA;
 		Debug();
 		if (!continuar)
 			ramo = {};
@@ -647,10 +647,10 @@ void TProcuraConstrutiva::DebugChamada()
 		bool raiz = (ramo.Count() <= 1);
 		// neste nível, cada estado expandido é visualizado, não apenas os estados folha
 		if (raiz)
-			ramo.First() = " ├■";
+			ramo.First() = RAMO_ESTADO;
 		NovaLinha(true);
-		ramo.Last() = ((ramo.Last() == " ├■" || ramo.Last() == " ├□") ? " │ " : "   ");
-		ramo.First() = " │ ";
+		ramo.Last() = ((ramo.Last() == RAMO_ESTADO || ramo.Last() == RAMO_ESTADO2) ? RAMO_CONTINUA : RAMO_VAZIO);
+		ramo.First() = RAMO_CONTINUA;
 		DebugEstado(false);
 		if (pai != NULL)
 			printf(" ⚡%s", pai->Acao(this)); // mostra sempre a ação
@@ -676,9 +676,9 @@ void TProcuraConstrutiva::DebugPasso(CListaNo* lista)
 		printf("#");
 	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 		char str[256];
-		ramo.First() = " ├■";
+		ramo.First() = RAMO_ESTADO;
 		NovaLinha(true);
-		ramo.First() = " │ ";
+		ramo.First() = RAMO_CONTINUA;
 		DebugEstado(false);
 		if (lista == NULL) {
 			if (expansoes < geracoes) {
@@ -723,12 +723,12 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 		}
 	}
 	else {
-		ramo.Push((sucessores.Count() > 1 ? " ├■" : " └■"));
+		ramo.Push((sucessores.Count() > 1 ? RAMO_ESTADO : RAMO_ESTADO_FIM));
 		for (int i = 0; i < sucessores.Count(); i++) {
 			NovaLinha(true);
 			sucessores[i]->DebugEstado(false);
 			printf(" %s", Acao(sucessores[i])); // mostra sempre a ação
-			ramo.Last() = (i < sucessores.Count() - 1 ? " │ " : "   ");
+			ramo.Last() = (i < sucessores.Count() - 1 ? RAMO_CONTINUA : RAMO_VAZIO);
 			if (Parametro(VER_ACOES) == 1)
 				sucessores[i]->Debug();
 			// mostrar só alguns se forem muitos sucessores
@@ -737,7 +737,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 				printf("...");
 				i = sucessores.Count() - 4;
 			}
-			ramo.Last() = (i < sucessores.Count() - 2 ? " ├■" : " └■");
+			ramo.Last() = (i < sucessores.Count() - 2 ? RAMO_ESTADO : RAMO_ESTADO_FIM);
 		}
 		ramo.Pop();
 	}
@@ -802,7 +802,7 @@ void TProcuraConstrutiva::LimparEstatisticas()
 	TProcura::LimparEstatisticas();
 	geracoes = expansoes = 0;
 	ramo = {};
-	ramo.Add(" │ ");
+	ramo.Add(RAMO_CONTINUA);
 	while (!caminho.Empty())
 		delete caminho.Pop();
 	if (solucao != NULL)
@@ -856,7 +856,7 @@ void TProcuraConstrutiva::Explorar() {
 			caminho.Last()->custo = 0;
 		heuristica = Heuristica();
 		ramo = {};
-		ramo.Push(" │ ");
+		ramo.Push(RAMO_CONTINUA);
 		Sucessores(sucessores);
 		CalcularHeuristicas(sucessores);
 		// linha com informação

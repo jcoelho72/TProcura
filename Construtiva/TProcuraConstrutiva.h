@@ -694,6 +694,15 @@ public:
 
 	/// @internal Auxiliar para a construção da árvore de procura.
 	static TVector<const char*> ramo;
+	/// @internal valores que ramo pode ter, de modo a ter as strings uma só vez
+	static constexpr const char* RAMO_ESTADO = " ├■";
+	static constexpr const char* RAMO_ESTADO2 = " ├□";
+	static constexpr const char* RAMO_ESTADO_FIM = " └■";
+	static constexpr const char* RAMO_ESTADO2_FIM = " └□";
+	static constexpr const char* RAMO_NOVO = " ├─";
+	static constexpr const char* RAMO_FIM = " └─";
+	static constexpr const char* RAMO_CONTINUA = " │ ";
+	static constexpr const char* RAMO_VAZIO = "   ";
 
 	/** @} */ // Fim do grupo VariaveisGlobais
 
@@ -731,11 +740,11 @@ protected:
 	void DebugConjunto(TVector<int> valores, const char* etiqueta);
 	void DebugFolha(bool fimLinha, const char* fmt, ...) {
 		if (Parametro(NIVEL_DEBUG) >= DETALHE) {
-			if(fimLinha)
+			if (fimLinha)
 				ramo.Last() = " └─";
 			NovaLinha();
 		}
-		else 
+		else
 			Debug(PASSOS, true, " ─── ");
 		if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 			va_list args;
@@ -752,7 +761,7 @@ protected:
 	void CalculaCaminho(bool completa = true); // coloca o caminho desde o estado objetivo
 	void VerificaLimites(int limite, int porProcessar, TVector<TNo>& sucessores);
 	void CalcularHeuristicas(TVector<TNo>& sucessores, TVector<int>* id = NULL, bool sortLB = false);
-	int SolucaoParcial(int i, TVector<TNo>& sucessores, int iAux=-1, TVector<int> *id=NULL);
+	int SolucaoParcial(int i, TVector<TNo>& sucessores, int iAux = -1, TVector<int>* id = NULL);
 	void Explorar();
 	void MostrarCaminho();
 
