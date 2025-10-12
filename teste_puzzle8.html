@@ -96,9 +96,9 @@ $(document).ready(function(){initNavTree('teste_puzzle8.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
-<p>Execução de exemplo com base no problema do Puzzle 8.</p>
+<p>Execução de exemplo com base no problema do Puzzle 8. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. No Linux na pasta <code>.../TProcura/Construtiva/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraConstrutiva</code></p>
-<p>Pode acompanhar o teste excutando as ações localmente.</p>
+<p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
 <h2><a class="anchor" id="autotoc_md54"></a>
 Sumário</h2>
 <ul>
@@ -691,49 +691,55 @@ Resposta</summary>
 <h2><a class="anchor" id="autotoc_md59"></a>
 Ação 5 - Heurística</h2>
 <p>Neste problema foi implementada a heurística com a distância na horizontal e vertical, de cada peça até à sua posição final. Esta heurística relaxa a situação de apenas ser possível mover para o local onde está o espaço, e retorna o valor que seria o correto caso cada peça pudesse mover-se por cima das outras. É implementada no problema ao redefinir <a class="el" href="classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27" title="Função para calcular quanto falta para o final, o valor da heurística.">CPuzzle8::Heuristica()</a>.</p>
-<p>Vamos começar por ver (notar que P6(VER_ACOES): 1). Introduza: <b>1; 40; 2; dir baixo; <em>ENTER</em>.</b></p>
-<div class="fragment"><div class="line">g:0 h:12 1|4|5</div>
-<div class="line"> 4  7  3</div>
-<div class="line"> 1  .  2</div>
-<div class="line"> 6  8  5</div>
-<div class="line">  +#1 g:1 h:11 1|4|5 baixo</div>
-<div class="line">  | 4  .  3</div>
-<div class="line">  | 1  7  2</div>
-<div class="line">  | 6  8  5</div>
-<div class="line">  +#2 g:1 h:13 1|4|5 cima</div>
-<div class="line">  | 4  7  3</div>
-<div class="line">  | 1  8  2</div>
-<div class="line">  | 6  .  5</div>
-<div class="line">  +#3 g:1 h:11 1|4|5 dir</div>
-<div class="line">  | 4  7  3</div>
-<div class="line">  | .  1  2</div>
-<div class="line">  | 6  8  5</div>
-<div class="line">  +#4 g:1 h:13 1|4|5 esq</div>
-<div class="line">    4  7  3</div>
-<div class="line">    1  2  .</div>
-<div class="line">    6  8  5</div>
-<div class="line">Sucessor [1-4, ação(ões), exe]:dir baixo</div>
-<div class="line">Executadas 2 ações com sucesso.</div>
-<div class="line">g:0 h:10 4|13|8</div>
-<div class="line"> .  7  3</div>
-<div class="line"> 4  1  2</div>
-<div class="line"> 6  8  5</div>
-<div class="line">  +#1 g:1 h:11 4|13|8 cima</div>
-<div class="line">  | 4  7  3</div>
-<div class="line">  | .  1  2</div>
-<div class="line">  | 6  8  5</div>
-<div class="line">  +#2 g:1 h:11 4|13|8 esq</div>
-<div class="line">    7  .  3</div>
-<div class="line">    4  1  2</div>
-<div class="line">    6  8  5</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:</div>
+<p>Vamos começar por ver (notar que P6(VER_ACOES): 1 e P3(SEMENTE): 2). Introduza: <b>1; 40; 2; dir baixo; <em>ENTER</em>.</b></p>
+<div class="fragment"><div class="line">Opção: 2</div>
+<div class="line"> </div>
+<div class="line">═╤═ 💰 g:0 🎯 h:12 🔢 1|4|5 ═══</div>
+<div class="line"> │  4  7  3</div>
+<div class="line"> │  1  .  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │  ├■═╤═ 💰 g:1 🎯 h:11 🔢 1|4|5 ═══ baixo</div>
+<div class="line"> │  │  4  .  3</div>
+<div class="line"> │  │  1  7  2</div>
+<div class="line"> │  │  6  8  5</div>
+<div class="line"> │  ├■═╤═ 💰 g:1 🎯 h:13 🔢 1|4|5 ═══ cima</div>
+<div class="line"> │  │  4  7  3</div>
+<div class="line"> │  │  1  8  2</div>
+<div class="line"> │  │  6  .  5</div>
+<div class="line"> │  ├■═╤═ 💰 g:1 🎯 h:11 🔢 1|4|5 ═══ dir</div>
+<div class="line"> │  │  4  7  3</div>
+<div class="line"> │  │  .  1  2</div>
+<div class="line"> │  │  6  8  5</div>
+<div class="line"> │  └■═╤═ 💰 g:1 🎯 h:13 🔢 1|4|5 ═══ esq</div>
+<div class="line"> │     4  7  3</div>
+<div class="line"> │     1  2  .</div>
+<div class="line"> │     6  8  5</div>
+<div class="line">🔍  Sucessor [1-4, ação(ões), exe]: dir baixo</div>
+<div class="line"> </div>
+<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">│ Executadas 2 ações.</div>
+<div class="line">└─────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🎯 h:10 🔢 4|13|8 ═══</div>
+<div class="line"> │  .  7  3</div>
+<div class="line"> │  4  1  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │  ├■═╤═ 💰 g:1 🎯 h:11 🔢 4|13|8 ═══ cima</div>
+<div class="line"> │  │  4  7  3</div>
+<div class="line"> │  │  .  1  2</div>
+<div class="line"> │  │  6  8  5</div>
+<div class="line"> │  └■═╤═ 💰 g:1 🎯 h:11 🔢 4|13|8 ═══ esq</div>
+<div class="line"> │     7  .  3</div>
+<div class="line"> │     4  1  2</div>
+<div class="line"> │     6  8  5</div>
+<div class="line">🔍  Sucessor [1-2, ação(ões), exe]:</div>
 <div class="line"> </div>
 <div class="line">Puzzle 8</div>
 <div class="line">...</div>
-<div class="line"> .  7  3</div>
-<div class="line"> 4  1  2</div>
-<div class="line"> 6  8  5</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line"> │  .  7  3</div>
+<div class="line"> │  4  1  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p>Na informação de um estado, vemos não apenas o valor de g (o custo), mas também o valor de h. O valor de h é a heuristica, que idealmente é uma estimativa conservadora da distância até ao objetivo.</p>
 <p>No estado inicial a heurística é 12, porque:</p><ul>
 <li>os números 2, 5, 8 estão a distância 1</li>
@@ -748,223 +754,328 @@ Ação 6 - Melhor Primeiro</h2>
 <p>Vamos executar o primeiro algoritmo informado, o melhor primeiro, que segue sempre pelo ramo com menor heurística, ou seja, mais perto do objetivo, daí o nome de melhor primeiro.</p>
 <p>Este é um algoritmo em profundidade pelo que vamos deixar a configuração de remoção de estados repetidos gerados, de modo a observar o desempenho deste algoritmo nas melhores condições.</p>
 <p>Neste e em outras execuções das procuras informadas, vamos limitar o número de avaliações (iterações) a 1000000, de modo a ter um critério de paragem independente do tempo.</p>
-<p>Introduza: <b>1; 40; 3; 1; 4; 2; 3; 5; 1000000; 8; 3; <em>ENTER</em>; 6.</b></p>
-<div class="fragment"><div class="line">Opção: 6</div>
-<div class="line">--+--+--+--+--+--...+--+--+--+--+--+--+--+--+--+--+--+--+--+ Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:70)</div>
-<div class="line"> P1=4 P2=3 P3=2 P4=10 P5=1000000 P6=1 P7=0 P8=3 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<p>Introduza: <b>1; 40; 3; 1; 4; 2; 3; 5; 1000000; 6; 4; 8; 3; <em>ENTER</em>; 6.</b></p>
+<div class="fragment"><div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0 🎯 h:10  ═══</div>
+<div class="line"> │  4  7  3</div>
+<div class="line"> │  1  .  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │  ├■═╤═ 🔖1 💰 g:1 🎯 h:11 🔢 1|4|4 ═══ ⚡baixo</div>
+<div class="line"> │  │  ├■═╤═ 🔖5 💰 g:2 🎯 h:10 🔢 2|6|6 ═══ ⚡dir</div>
+<div class="line"> │  │  │  └■═╤═ 🔖7 💰 g:3 🎯 h:9 🔢 3|7|7 ═══ ⚡cima</div>
+<div class="line"> │  │  │     ├■═╤═ 🔖8 💰 g:4 🎯 h:10 🔢 4|9|9 ═══ ⚡cima</div>
+<div class="line"> │  │  │     │  └■═╤═ 🔖10 💰 g:5 🎯 h:11 🔢 5|10|10 ═══ ⚡esq</div>
+<div class="line"> │  │  │     │     ├■═╤═ 🔖11 💰 g:6 🎯 h:10 🔢 6|12|12 ═══ ⚡baixo</div>
+<div class="line"> │  │  │     │     │  ├■═╤═ 🔖13 💰 g:7 🎯 h:9 🔢 7|15|15 ═══ ⚡baixo</div>
+<div class="line"> │  │  │     │     │  │  ├■═╤═ 🔖16 💰 g:8 🎯 h:8 🔢 8|17|17 ═══ ⚡dir</div>
+<div class="line"> │  │  │     │     │  │  │  └■═╤═ 🔖18 💰 g:9 🎯 h:9 🔢 9|18|18 ═══ ⚡cima</div>
+<div class="line">...</div>
+<div class="line"> │  │  │     │     │  │  │     └─ { 🔖20 }</div>
+<div class="line"> │  │  │     │     │  │  └─ { 🔖17 }</div>
+<div class="line"> │  │  │     │     │  └─ { 🔖14 🔖15 }</div>
+<div class="line"> │  │  │     │     └─ { 🔖12 }</div>
+<div class="line"> │  │  │     └─ { 🔖9 }</div>
+<div class="line"> │  │  └─ { 🔖6 }</div>
+<div class="line"> │  └─ { 🔖2 🔖3 🔖4 }</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=4 P2=3 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  13ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Melhor Primeiro | P2(Debug): detalhe | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000</div>
-<div class="line"> P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Melhor Primeiro | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 2</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4</div>
+<div class="line">│ P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): gerados | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 70 | I2(Tempo(ms)): 36 | I3(Iterações): 128 | I4(Expansões): 70 | I5(Gerações): 128 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Conseguimos uma solução de 70 ações, utilizando 70 expansões. O resultado em termos de esforço computacional é muito reduzido, pelo que a informação dada pela heurística foi útil. No entanto, a qualidade da solução baixa, já que fica com 70 de custo, quando sabemos existir uma solução de custo 12.</p>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 70 | I2(Tempo(ms)): 13 | I3(Iterações): 128 | I4(IND_EXPANSOES): 70 |</div>
+<div class="line">│ I5(IND_GERACOES): 128 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Conseguimos uma solução de 70 ações, utilizando 70 expansões. O output teve de ser cortado não pelo número de expansões mas pela profundidade. O resultado em termos de esforço computacional é muito reduzido, pelo que a informação dada pela heurística foi útil. No entanto, a qualidade da solução baixa, já que fica com 70 de custo, quando sabemos existir uma solução de custo 12.</p>
 <p><a class="anchor" id="puzzle8-a7"></a></p>
 <h2><a class="anchor" id="autotoc_md61"></a>
 Ação 7 - AStar</h2>
 <p>Vamos agora ver o comportamento do AStar, que garante a solução ótima.</p>
-<p>Introduza: <b>1; 40; 3; 1; 5; 2; 4; 6; 4; <em>ENTER</em>; 6.</b></p>
+<p>Introduza: <b>1; 40; 3; 1; 5; 2; 4; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">g:0 h:10</div>
-<div class="line"> 4  7  3</div>
-<div class="line"> 1  .  2</div>
-<div class="line"> 6  8  5</div>
-<div class="line">Ações: baixo cima dir esq</div>
-<div class="line">g:1 h:11 1|4|4</div>
-<div class="line"> 4  .  3</div>
-<div class="line"> 1  7  2</div>
-<div class="line"> 6  8  5</div>
-<div class="line">Ações: dir esq</div>
-<div class="line">g:2 h:10 2|6|6</div>
-<div class="line"> 4  3  .</div>
-<div class="line"> 1  7  2</div>
-<div class="line"> 6  8  5</div>
-<div class="line">Ações: cima</div>
-<div class="line">g:3 h:9 3|7|7</div>
-<div class="line"> 4  3  2</div>
-<div class="line"> 1  7  .</div>
-<div class="line"> 6  8  5</div>
-<div class="line">Ações: cima dir</div>
-<div class="line">g:4 h:8 4|9|9</div>
-<div class="line"> 4  3  2</div>
-<div class="line"> 1  7  5</div>
-<div class="line"> 6  8  .</div>
-<div class="line">Ações: dir</div>
-<div class="line">g:5 h:7 5|10|10</div>
-<div class="line"> 4  3  2</div>
-<div class="line"> 1  7  5</div>
-<div class="line"> 6  .  8</div>
-<div class="line">Ações: baixo dir</div>
-<div class="line">g:6 h:6 6|12|12</div>
-<div class="line"> 4  3  2</div>
-<div class="line"> 1  .  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">Ações: baixo dir esq</div>
-<div class="line">g:7 h:5 7|15|15</div>
-<div class="line"> 4  3  2</div>
-<div class="line"> .  1  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">Ações: baixo cima</div>
-<div class="line">g:8 h:4 8|17|17</div>
-<div class="line"> .  3  2</div>
-<div class="line"> 4  1  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">Ações: esq</div>
-<div class="line">g:9 h:3 9|18|18</div>
-<div class="line"> 3  .  2</div>
-<div class="line"> 4  1  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">Ações: cima esq</div>
-<div class="line">g:10 h:2 10|20|20</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> 4  .  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">Ações: cima dir esq</div>
-<div class="line">g:11 h:1 11|23|23</div>
-<div class="line"> 3  1  2</div>
-<div class="line"> .  4  5</div>
-<div class="line"> 6  7  8</div>
-<div class="line">Ações: baixo cima</div>
-<div class="line">g:12 12|25|25</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8  Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:12)</div>
-<div class="line"> P1=5 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0 🎯 h:10  ═══ { }</div>
+<div class="line"> │  4  7  3</div>
+<div class="line"> │  1  .  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │ └─ ⚡ ───── baixo cima dir esq { 🔖1 🔖2 🔖3 🔖4 }</div>
+<div class="line"> ├■═╤═ 🔖1 💰 g:1 🎯 h:11 🔢 1|4|4 ═══ { 🔖3 🔖2 🔖4 }</div>
+<div class="line"> │  4  .  3</div>
+<div class="line"> │  1  7  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │ └─ ⚡ ───── dir esq { 🔖5 🔖6 }</div>
+<div class="line"> ├■═╤═ 🔖6 💰 g:2 🎯 h:10 🔢 2|6|6 ═══ { 🔖5 🔖3 🔖2 🔖4 }</div>
+<div class="line"> │  4  3  .</div>
+<div class="line"> │  1  7  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │ └─ ⚡ ───── cima { 🔖7 }</div>
+<div class="line"> ├■═╤═ 🔖7 💰 g:3 🎯 h:9 🔢 3|7|7 ═══ { 🔖5 🔖3 🔖2 🔖4 }</div>
+<div class="line"> │  4  3  2</div>
+<div class="line"> │  1  7  .</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │ └─ ⚡ ───── cima dir { 🔖8 🔖9 }</div>
+<div class="line"> ├■═╤═ 🔖8 💰 g:4 🎯 h:8 🔢 4|9|9 ═══ { 🔖5 🔖3 🔖2 🔖9 🔖4 }</div>
+<div class="line"> │  4  3  2</div>
+<div class="line"> │  1  7  5</div>
+<div class="line"> │  6  8  .</div>
+<div class="line"> │ └─ ⚡ ───── dir { 🔖10 }</div>
+<div class="line"> ├■═╤═ 🔖10 💰 g:5 🎯 h:7 🔢 5|10|10 ═══ { 🔖5 🔖3 🔖2 🔖9 🔖4 }</div>
+<div class="line"> │  4  3  2</div>
+<div class="line"> │  1  7  5</div>
+<div class="line"> │  6  .  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo dir { 🔖11 🔖12 }</div>
+<div class="line"> ├■═╤═ 🔖11 💰 g:6 🎯 h:6 🔢 6|12|12 ═══ { 🔖5 🔖3 🔖2 🔖12 🔖9 🔖4 }</div>
+<div class="line"> │  4  3  2</div>
+<div class="line"> │  1  .  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo dir esq { 🔖13 🔖14 🔖15 }</div>
+<div class="line"> ├■═╤═ 🔖14 💰 g:7 🎯 h:5 🔢 7|15|15 ═══ { 🔖13 🔖5 🔖3 🔖2 🔖15 🔖12 🔖9 🔖4 }</div>
+<div class="line"> │  4  3  2</div>
+<div class="line"> │  .  1  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo cima { 🔖16 🔖17 }</div>
+<div class="line"> ├■═╤═ 🔖16 💰 g:8 🎯 h:4 🔢 8|17|17 ═══ { 🔖13 🔖5 🔖3 🔖2 🔖17 🔖15 🔖12 🔖9 🔖4 }</div>
+<div class="line"> │  .  3  2</div>
+<div class="line"> │  4  1  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │ └─ ⚡ ───── esq { 🔖18 }</div>
+<div class="line"> ├■═╤═ 🔖18 💰 g:9 🎯 h:3 🔢 9|18|18 ═══ { 🔖13 🔖5 🔖3 🔖2 🔖17 🔖15 🔖12 🔖9 🔖4 }</div>
+<div class="line"> │  3  .  2</div>
+<div class="line"> │  4  1  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │ └─ ⚡ ───── cima esq { 🔖19 🔖20 }</div>
+<div class="line"> ├■═╤═ 🔖19 💰 g:10 🎯 h:2 🔢 10|20|20 ═══ { 🔖13 🔖5 🔖3 🔖2 🔖20 🔖17 🔖15 🔖12 🔖9 🔖4 }</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  4  .  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │ └─ ⚡ ───── cima dir esq { 🔖21 🔖22 🔖23 }</div>
+<div class="line"> ├■═╤═ 🔖22 💰 g:11 🎯 h:1 🔢 11|23|23 ═══ { 🔖13 🔖5 🔖3 … 🔖12 🔖9 🔖4 } #12</div>
+<div class="line"> │  3  1  2</div>
+<div class="line"> │  .  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │ └─ ⚡ ───── baixo cima { 🔖24 🔖25 }</div>
+<div class="line"> ├■═╤═ 🔖24 💰 g:12 🔢 12|25|25 ═══ { 🔖13 🔖5 🔖3 … 🔖12 🔖9 🔖4 } #13</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=5 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  1ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): A* | P2(Debug): completo | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): A* | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10</div>
+<div class="line">│ P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): gerados</div>
+<div class="line">│ P9(PESO_ASTAR): 100 | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 12 | I2(Tempo(ms)): 40 | I3(Iterações): 25 | I4(Expansões): 12 | I5(Gerações): 25 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Foram utilizadas 12 expansões para obter a solução ótima de 12 movimentos. Esta é portanto uma instância simples para este algoritmo.</p>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 1 | I3(Iterações): 25 | I4(IND_EXPANSOES): 12 |</div>
+<div class="line">│ I5(IND_GERACOES): 25 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Foram utilizadas 12 expansões para obter a solução ótima de 12 movimentos. Notar na lista ordenada, um dos piores estados é o estado 4, gerado no início, mas nem por isso foi expandido, já que tinha um mau valor heurístico. Como colocamos P6(VER_ACOES): 4, não vemos os estados gerados, colocando a 1 já poderiamos confirmar o motivo para que este estado permaneça no final da lista de estados gerados não expandidos.</p>
+<p>Esta é uma instância simples para este algoritmo.</p>
 <p><a class="anchor" id="puzzle8-a8"></a></p>
 <h2><a class="anchor" id="autotoc_md62"></a>
 Ação 8 - IDAStar</h2>
 <p>O AStar pode ter problemas de memória em instâncias complexas, existindo o IDAStar que permite a mesma ordem de expansão, mas sem o problema de memória, em troca de algum tempo de CPU extra, gasto ao expandir multiplas vezes os mesmos estados. Vamos ver como se comporta nesta instância.</p>
 <p>Introduza: <b>1; 40; 3; 1; 6; <em>ENTER</em>; 6.</b></p>
-<div class="fragment"><div class="line">g:0 h:10</div>
-<div class="line"> 4  7  3</div>
-<div class="line"> 1  .  2</div>
-<div class="line"> 6  8  5</div>
+<div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">Iteração 12: (expansões 0, gerações 0, avaliações 1)</div>
-<div class="line">g:0 h:10 |1</div>
-<div class="line"> 4  7  3</div>
-<div class="line"> 1  .  2</div>
-<div class="line"> 6  8  5</div>
-<div class="line">  +g:1 h:11 1|4|5 baixo</div>
-<div class="line">  |  +g:2 h:10 2|6|7 dir</div>
-<div class="line">  |  |  +g:3 h:9 3|7|8 cima</div>
-<div class="line">  |  |     +</div>
-<div class="line">  |  |     +</div>
-<div class="line">  |  +g:2 h:10 4|9|10 esq</div>
-<div class="line">  |     +g:3 h:9 5|10|11 cima</div>
-<div class="line">  |        +g:4 h:8 6|12|13 cima</div>
-<div class="line">  |        |  +g:5 h:7 7|13|14 dir</div>
-<div class="line">  |        |     +g:6 h:6 8|15|16 baixo</div>
-<div class="line">  |        |     |  +g:7 h:5 9|18|19 baixo</div>
-<div class="line">  |        |     |  |  +g:8 h:4 10|20|21 dir</div>
-<div class="line">  |        |     |  |  |  +g:9 h:3 11|21|22 cima</div>
-<div class="line">  |        |     |  |  |     +g:10 h:2 12|23|24 esq</div>
-<div class="line">  |        |     |  |  |     |  +g:11 h:1 13|26|27 baixo</div>
-<div class="line">  |        |     |  |  |     |  |  +g:12 14|28|29 dir</div>
-<div class="line">  |        |     |  |  |     |  |  | Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:12)</div>
-<div class="line"> P1=6 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├─────────── 🌳 📉 12 ⏱ 1ms  ────────────</div>
+<div class="line"> ├■═╤═ 💰 g:0 🎯 h:10 🔢 |1 ═══</div>
+<div class="line"> │  4  7  3</div>
+<div class="line"> │  1  .  2</div>
+<div class="line"> │  6  8  5</div>
+<div class="line"> │  ├■═╤═ 🔖1 💰 g:1 🎯 h:11 🔢 1|4|5 ═══ ⚡baixo</div>
+<div class="line"> │  │  4  .  3</div>
+<div class="line"> │  │  1  7  2</div>
+<div class="line"> │  │  6  8  5</div>
+<div class="line"> │  │  ├■═╤═ 🔖5 💰 g:2 🎯 h:10 🔢 2|6|7 ═══ ⚡dir</div>
+<div class="line"> │  │  │  .  4  3</div>
+<div class="line"> │  │  │  1  7  2</div>
+<div class="line"> │  │  │  6  8  5</div>
+<div class="line"> │  │  │  └■═╤═ 🔖7 💰 g:3 🎯 h:9 🔢 3|7|8 ═══ ⚡cima</div>
+<div class="line"> │  │  │     1  4  3</div>
+<div class="line"> │  │  │     .  7  2</div>
+<div class="line"> │  │  │     6  8  5</div>
+<div class="line"> │  │  │     ├─🍃 14 → 📉 { 🔖8 }</div>
+<div class="line"> │  │  │     └─🍃 { 🔖9 }</div>
+<div class="line"> │  │  └■═╤═ 🔖6 💰 g:2 🎯 h:10 🔢 4|9|10 ═══ ⚡esq</div>
+<div class="line"> │  │     4  3  .</div>
+<div class="line"> │  │     1  7  2</div>
+<div class="line"> │  │     6  8  5</div>
+<div class="line"> │  │     └■═╤═ 🔖10 💰 g:3 🎯 h:9 🔢 5|10|11 ═══ ⚡cima</div>
+<div class="line"> │  │        4  3  2</div>
+<div class="line"> │  │        1  7  .</div>
+<div class="line"> │  │        6  8  5</div>
+<div class="line"> │  │        ├■═╤═ 🔖11 💰 g:4 🎯 h:8 🔢 6|12|13 ═══ ⚡cima</div>
+<div class="line"> │  │        │  4  3  2</div>
+<div class="line"> │  │        │  1  7  5</div>
+<div class="line"> │  │        │  6  8  .</div>
+<div class="line"> │  │        │  └■═╤═ 🔖13 💰 g:5 🎯 h:7 🔢 7|13|14 ═══ ⚡dir</div>
+<div class="line"> │  │        │     4  3  2</div>
+<div class="line"> │  │        │     1  7  5</div>
+<div class="line"> │  │        │     6  .  8</div>
+<div class="line"> │  │        │     ├■═╤═ 🔖14 💰 g:6 🎯 h:6 🔢 8|15|16 ═══ ⚡baixo</div>
+<div class="line"> │  │        │     │  4  3  2</div>
+<div class="line"> │  │        │     │  1  .  5</div>
+<div class="line"> │  │        │     │  6  7  8</div>
+<div class="line"> │  │        │     │  ├■═╤═ 🔖16 💰 g:7 🎯 h:5 🔢 9|18|19 ═══ ⚡baixo</div>
+<div class="line"> │  │        │     │  │  4  .  2</div>
+<div class="line"> │  │        │     │  │  1  3  5</div>
+<div class="line"> │  │        │     │  │  6  7  8</div>
+<div class="line"> │  │        │     │  │  ├■═╤═ 🔖19 💰 g:8 🎯 h:4 🔢 10|20|21 ═══ ⚡dir</div>
+<div class="line"> │  │        │     │  │  │  .  4  2</div>
+<div class="line"> │  │        │     │  │  │  1  3  5</div>
+<div class="line"> │  │        │     │  │  │  6  7  8</div>
+<div class="line"> │  │        │     │  │  │  └■═╤═ 🔖21 💰 g:9 🎯 h:3 🔢 11|21|22 ═══ ⚡cima</div>
+<div class="line"> │  │        │     │  │  │     1  4  2</div>
+<div class="line"> │  │        │     │  │  │     .  3  5</div>
+<div class="line"> │  │        │     │  │  │     6  7  8</div>
+<div class="line"> │  │        │     │  │  │     ├■═╤═ 🔖23 💰 g:10 🎯 h:2 🔢 12|23|24 ═══ ⚡esq</div>
+<div class="line"> │  │        │     │  │  │     │  1  4  2</div>
+<div class="line"> │  │        │     │  │  │     │  3  .  5</div>
+<div class="line"> │  │        │     │  │  │     │  6  7  8</div>
+<div class="line"> │  │        │     │  │  │     │  ├■═╤═ 🔖24 💰 g:11 🎯 h:1 🔢 13|26|27 ═══ ⚡baixo</div>
+<div class="line"> │  │        │     │  │  │     │  │  1  .  2</div>
+<div class="line"> │  │        │     │  │  │     │  │  3  4  5</div>
+<div class="line"> │  │        │     │  │  │     │  │  6  7  8</div>
+<div class="line"> │  │        │     │  │  │     │  │  ├■═╤═ 🔖27 💰 g:12 🔢 14|28|29 ═══ ⚡dir</div>
+<div class="line"> │  │        │     │  │  │     │  │  │  .  1  2</div>
+<div class="line"> │  │        │     │  │  │     │  │  │  3  4  5</div>
+<div class="line"> │  │        │     │  │  │     │  │  │  6  7  8</div>
+<div class="line"> │  │        │     │  │  │     │  │  │  🎯 Solução encontrada!</div>
+<div class="line"> │  │        │     │  │  │     │  │  │  .  1  2</div>
+<div class="line"> │  │        │     │  │  │     │  │  │  3  4  5</div>
+<div class="line"> │  │        │     │  │  │     │  │  │  6  7  8</div>
+<div class="line"> │  │        │     │  │  │     │  │  │ 🎯 12 → 📈</div>
+<div class="line"> │  │        │     │  │  │     │  │  └─ { 🔖28 }</div>
+<div class="line"> │  │        │     │  │  │     │  └─ { 🔖25 🔖26 }</div>
+<div class="line"> │  │        │     │  │  │     └─ { 🔖22 }</div>
+<div class="line"> │  │        │     │  │  └─ { 🔖20 }</div>
+<div class="line"> │  │        │     │  └─ { 🔖17 🔖18 }</div>
+<div class="line"> │  │        │     └─ { 🔖15 }</div>
+<div class="line"> │  │        └─ { 🔖12 }</div>
+<div class="line"> │  └─ { 🔖3 🔖2 🔖4 }</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=6 P2=4 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  2ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): IDA* | P2(Debug): completo | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): IDA* | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10</div>
+<div class="line">│ P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): gerados</div>
+<div class="line">│ P9(PESO_ASTAR): 100 | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 12 | I2(Tempo(ms)): 35 | I3(Iterações): 29 | I4(Expansões): 14 | I5(Gerações): 28 |</div>
-<div class="line">I6(Lower Bound): 14</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 2 | I3(Iterações): 29 | I4(IND_EXPANSOES): 14 |</div>
+<div class="line">│ I5(IND_GERACOES): 28 | I6(IND_LOWER_BOUND): 14</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p> Podemos ver que em termos de iterações, ao contrário da procura em profundidade iterativa, tem menos iterações.</p>
-<p>O limite da iteração seguinte é determinado pelo menor valor dos estados cortados, avançando mais que uma unidade de cada vez. Acabou por ter apenas 29 expansões, enquanto que o AStar utilizou 12 expansões.</p>
-<p>Pode-se considerar que é mais do dobro, mas é um pequeno preço a pagar por não ter problemas de memória.</p>
+<p>O limite da iteração seguinte é determinado pelo menor valor dos estados cortados, avançando mais que uma unidade de cada vez. O primeiro limite é determinado pelo valor da heurística do estado inicial, que neste caso tinha o valor perfeito.</p>
+<p>Acabou por ter apenas 14 expansões, enquanto que o AStar utilizou 12 expansões.</p>
+<p>Neste caso como houve uma só iteração, correu bastante bem. Mas mesmo que fosse o dobro das expansões, é um pequeno preço a pagar por não ter problemas de memória.</p>
 <p><a class="anchor" id="puzzle8-a9"></a></p>
 <h2><a class="anchor" id="autotoc_md63"></a>
 Ação 9 - Branch-and-Bound</h2>
 <p>Vamos agora ver como se comporta o Branch-and-Bound, o último algoritmo informado. Este algoritmo pode ser visto como o Melhor Primeiro que continua a procura após a primeira solução. No entanto restringe o espaço de procura apenas aos estados que melhoram a solução atual.</p>
 <p>É um algoritmo em profundidade, pelo que não tem problemas de memória originados na procura em largura. Vamos baixar o nível de debug para 1.</p>
 <p>Introduza: <b>1; 40; 3; 1; 7; 2; 1; <em>ENTER</em>; 6.</b></p>
-<div class="fragment"><div class="line"># Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:70) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:68) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:64) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:60) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:52) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:50)# Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:48) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:46)# Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:42) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:32) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:30) Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:28)# Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:24)# Solução encontrada!</div>
-<div class="line"> .  1  2</div>
-<div class="line"> 3  4  5</div>
-<div class="line"> 6  7  8 (g:12)</div>
-<div class="line"> P1=7 P2=1 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="fragment"><div class="line">═╤═ ►  Execução iniciada ═══#</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:70</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:68</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:64</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:60</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:52</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> └■ 🎯 Solução encontrada! 💰  g:50</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8 #</div>
+<div class="line"> └■ 🎯 Solução encontrada! 💰  g:48</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> └■ 🎯 Solução encontrada! 💰  g:46</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8 #</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:42</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:32</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:30</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:28</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8 #</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:24</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8 #</div>
+<div class="line"> ├■ 🎯 Solução encontrada! 💰  g:12</div>
+<div class="line"> │  .  1  2</div>
+<div class="line"> │  3  4  5</div>
+<div class="line"> │  6  7  8</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=7 P2=1 P3=2 P4=10 P5=1000000 P6=4 P7=0 P8=3 P9=100 P10=0 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  30ms  ═══</div>
 <div class="line">Puzzle 8</div>
-<div class="line"> P1(Algoritmo): Branch and Bound | P2(Debug): atividade | P3(Seed): 2 | P4(Tempo): 10 | P5(Iterações): 1000000</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): gerados | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Branch and Bound | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 2</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4</div>
+<div class="line">│ P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): gerados | P9(PESO_ASTAR): 100</div>
+<div class="line">│ P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> .  1  2</div>
 <div class="line"> 3  4  5</div>
 <div class="line"> 6  7  8</div>
-<div class="line">I1(Custo): 12 | I2(Tempo(ms)): 36 | I3(Iterações): 6666 | I4(Expansões): 4110 | I5(Gerações): 6666 |</div>
-<div class="line">I6(Lower Bound): 14</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 12 | I2(Tempo(ms)): 30 | I3(Iterações): 6666 | I4(IND_EXPANSOES): 4110 |</div>
+<div class="line">│ I5(IND_GERACOES): 6666 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p> Vemos que primeiramente encontra a solução de 70 movimentos, e depois vai encontrando sucessivamente soluções melhores até que termina com a solução de 12. Gasta nesta instância um número consideravelmente superior de expansões e gerações, quando comparado com o AStar.</p>
 <p>Podemos agora ver outras instâncias, e executar cada um dos algoritmos para ver qual é o melhor. No entanto seria um trabalho fastidioso.</p>
 <p>Não o fazer, ficariamos com a informação da performance dos algoritmos numa só instância, não necessariamente representativa de todas as instâncias.</p>
@@ -974,68 +1085,91 @@ Ação 9 - Branch-and-Bound</h2>
 Ação 10 - Testes Empíricos</h2>
 <p>Vamos agora fazer testes empíricos, para comparar os algoritmos informados. As configurações e testes no modo interativo, foram exemplificados no exemplo de teste do <a class="el" href="classTVector.html">TVector</a>.</p>
 <p>Executamos o programa em linha de comando, pelo que vamos ver primeiramente todos os argumentos, com a opção "-h".</p>
-<div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
+<div class="fragment"><div class="line">/TProcura/Construtiva/Teste$ ./bin/Release/TProcuraConstrutiva -h</div>
 <div class="line"> </div>
-<div class="line">Teste TProcurasConstrutivas</div>
-<div class="line">Problema:</div>
-<div class="line">  1 - Aspirador</div>
-<div class="line">  2 - Puzzle 8</div>
-<div class="line">  3 - 8 Damas</div>
-<div class="line">  4 - Partição</div>
-<div class="line">  5 - Artificial</div>
+<div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
+<div class="line">│ 1 - Aspirador                │</div>
+<div class="line">│ 2 - Puzzle 8                 │</div>
+<div class="line">│ 3 - 8 Damas                  │</div>
+<div class="line">│ 4 - Partição                 │</div>
+<div class="line">│ 5 - Artificial               │</div>
+<div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 2</div>
-<div class="line">Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
+<div class="line">Uso: ./bin/Release/TProcuraConstrutiva &lt;instâncias&gt; [opções]</div>
 <div class="line">  &lt;instâncias&gt;    Conjunto de IDs: A | A,B,C | A:B[:C]</div>
 <div class="line">Opções:</div>
 <div class="line">  -R &lt;ficheiro&gt;   Nome do CSV de resultados (omissão: resultados.csv)</div>
 <div class="line">  -F &lt;prefixo&gt;    Prefixo dos ficheiros de instância (omissão: instancia_)</div>
+<div class="line">  -M &lt;modo&gt;       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador</div>
 <div class="line">  -I &lt;ind&gt;        Lista de indicadores (e.g. 2,1,3)</div>
-<div class="line">  -S              Mostrar soluções durante a execução</div>
 <div class="line">  -h              Esta ajuda</div>
 <div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
-<div class="line">Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
+<div class="line">Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
 <div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
 <div class="line"> </div>
 <div class="line">Lista de parâmetros:</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro (1 a 7)</div>
-<div class="line"> P2(Debug): nada (0 a 4)</div>
-<div class="line"> P3(Seed): 1 (1 a 1000000)</div>
-<div class="line"> P4(Tempo): 10 (1 a 3600)</div>
-<div class="line"> P5(Iterações): 0 (0 a 1000000000)</div>
-<div class="line"> P6(Ver): 4 (1 a 100)</div>
-<div class="line"> P7(Limite): 0 (-1 a 1000000)</div>
-<div class="line"> P8(Repetidos): ascendentes (1 a 3)</div>
-<div class="line"> P9(pesoAStar): 100 (0 a 10000)</div>
-<div class="line"> P10(ruido): 0 (-100 a 100)</div>
-<div class="line"> P11(baralhar): 0 (0 a 1)</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO):             Largura Primeiro ( 1 a  7)</div>
+<div class="line">│ P2(NIVEL_DEBUG):           NADA       ( 0 a  4)</div>
+<div class="line">│ P3(SEMENTE):               1          ( 1 a  1000000)</div>
+<div class="line">│ P4(LIMITE_TEMPO):          10         ( 1 a  3600)</div>
+<div class="line">│ P5(LIMITE_ITERACOES):      0          ( 0 a  1000000000)</div>
+<div class="line">│ P6(VER_ACOES):             4          ( 1 a  100)</div>
+<div class="line">│ P7(LIMITE):                0          (-1 a  1000000)</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS):     ascendentes ( 1 a  3)</div>
+<div class="line">│ P11(BARALHAR_SUCESSORES):  0          ( 0 a  1)</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> </div>
 <div class="line">Lista de indicadores:</div>
-<div class="line"> </div>
-<div class="line">I1(Custo): 1º lugar (o resultado é o custo da solução atual)</div>
-<div class="line">I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)</div>
-<div class="line">I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)</div>
-<div class="line">I4(Expansões): 4º lugar (número de expansões efetuadas)</div>
-<div class="line">I5(Gerações): 5º lugar (número de estados gerados)</div>
-<div class="line">I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): ✔  1º lugar</div>
+<div class="line">│ o resultado é o custo da solução atual</div>
+<div class="line">│ I2(Tempo(ms)): ✔  2º lugar</div>
+<div class="line">│ Tempo em milisegundos da execução (medida de esforço computacional).</div>
+<div class="line">│ I3(Iterações): ✔  3º lugar</div>
+<div class="line">│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</div>
+<div class="line">│ I4(IND_EXPANSOES): ✔  4º lugar</div>
+<div class="line">│ número de expansões efetuadas</div>
+<div class="line">│ I5(IND_GERACOES): ✔  5º lugar</div>
+<div class="line">│ número de estados gerados</div>
+<div class="line">│ I6(IND_LOWER_BOUND): ✔  6º lugar</div>
+<div class="line">│ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 </div><!-- fragment --><p>A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opção 2 para o Puzzle 8.</p>
-<p>Pretendemos fazer um teste empírico, considerando os seguintes aspetos:</p><ul>
+<p>Pretendemos fazer um teste empírico considerando os seguintes aspetos:</p><ul>
 <li>utilizar as instâncias 1 a 100 do Puzzle 8.</li>
 <li>executar os algoritmos informados, P1=4 até P1=7.</li>
 <li>ver todos os indicadores I1 a I6</li>
+<li>ver alguma informação de debug da execução (os algoritmos executam sempre em debug nível 0)</li>
 </ul>
-<p>Assim, podemos executar o programa com a seguinte linha de comando: </p><div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 1:100 -R resultadoPuzzle8 -P P1=4:7</div>
+<p>Assim, podemos executar o programa com a seguinte linha de comando: </p><div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 1:100 -R Resultados/Puzzle8t1 -P P1=4:7 P2=3</div>
 <div class="line"> </div>
-<div class="line">Teste TProcurasConstrutivas</div>
-<div class="line">Problema:</div>
-<div class="line">  1 - Aspirador</div>
-<div class="line">  2 - Puzzle 8</div>
-<div class="line">  3 - 8 Damas</div>
-<div class="line">  4 - Partição</div>
-<div class="line">  5 - Artificial</div>
+<div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
+<div class="line">│ 1 - Aspirador                │</div>
+<div class="line">│ 2 - Puzzle 8                 │</div>
+<div class="line">│ 3 - 8 Damas                  │</div>
+<div class="line">│ 4 - Partição                 │</div>
+<div class="line">│ 5 - Artificial               │</div>
+<div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 2</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultadoPuzzle8.csv gravado.</div>
-</div><!-- fragment --><p>O ficheiro de resultados foi gravado, e podemos agora confirmar que:</p><ul>
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P2=3 P3=1 P4=10 P5=0 P6=4 P7=0 P8=2 P11=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=4</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=5</div>
+<div class="line"> ├─ ⚙️ [3] ─ P1=6</div>
+<div class="line"> ├─ ⚙️ [4] ─ P1=7</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:400   ↻ Instâncias: 100   🛠️ Configurações: 4   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱ 10&quot; 179ms       📋 387   ↻ 88    🛠️ 3     🖥️ 1</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/Puzzle8t1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 13&quot; 197ms</div>
+<div class="line"> │  ⏱  CPU total: 13&quot; 197ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  13&quot; 197ms ) ═══</div>
+</div><!-- fragment --><p>O ficheiro de resultados foi gravado, toda a execução decorreu em 13 segundos, pelo que o nível 3 de debug fez um só relatório aos 10 segundos. O nível 4 o relatório é em cada reaulado, o que neste caso seria demasiado já que há 400 tarefas. O nível 2 dá um report a cada minuto.</p>
+<p>Podemos agora confirmar que:</p><ul>
 <li>o Melhor Primeiro nem sempre retorna a solução ótima e os restantes 3 algoritmos informados retornam sempre a solução ótima;</li>
 <li>identificar quais os algoritmos mais eficientes em termos de esforço computacional, medido pelo tempo CPU e número de expansões;</li>
 </ul>
@@ -1046,16 +1180,31 @@ Ação 10 - Testes Empíricos</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">Soma de I1(Custo)   </td><td class="markdownTableBodyRight">21554   </td><td class="markdownTableBodyRight">690   </td><td class="markdownTableBodyRight">690   </td><td class="markdownTableBodyRight">690    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">Soma de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">68   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">13517    </td></tr>
+<td class="markdownTableBodyCenter">Soma de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">68   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">13121    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">Soma de I4(Expansões)   </td><td class="markdownTableBodyRight">21721   </td><td class="markdownTableBodyRight">1858   </td><td class="markdownTableBodyRight">2693   </td><td class="markdownTableBodyRight">4460077   </td></tr>
 </table>
 <p>Pode confirmar que apenas a coluna do Melhor Primeiro apresenta valores a cima do óptimo, respondendo à primeira questão.</p>
 <p>Para a segunda questão, podemos confirmar que para este problema e estas instâncias, o AStar e IDAStar são os mais eficientes, seguindo-se o Melhor Primeiro (embora sem o ótimo) e depois o Branch-and-bound.</p>
 <p>Estas instâncias tinham ainda muitos poucos movimentos aleatórios. Vamos repetir o teste com as instâncias de 900 a 999, tendo o cuidado de alterar o nome do ficheiro de resultados.</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 900:999 -R resultadoPuzzle8b -P P1=4:7</div>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 900:999 -R Resultados/Puzzle8t2 -P P1=4:7 P2=3</div>
 <div class="line">...</div>
-<div class="line">Ficheiro resultadoPuzzle8b.csv gravado.</div>
+<div class="line">Opção: 2</div>
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P2=3 P3=1 P4=10 P5=0 P6=4 P7=0 P8=2 P11=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=4</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=5</div>
+<div class="line"> ├─ ⚙️ [3] ─ P1=6</div>
+<div class="line"> ├─ ⚙️ [4] ─ P1=7</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:400   ↻ Instâncias: 100   🛠️ Configurações: 4   🖥️ Processos: 1.</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/Puzzle8t2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 8&quot; 276ms</div>
+<div class="line"> │  ⏱  CPU total: 8&quot; 276ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  8&quot; 277ms ) ═══</div>
 </div><!-- fragment --><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Valores   </th><th class="markdownTableHeadRight">4:Melhor Primeiro   </th><th class="markdownTableHeadRight">5:A*   </th><th class="markdownTableHeadRight">6:IDA*   </th><th class="markdownTableHeadRight">7:Branch and Bound    </th></tr>
@@ -1064,7 +1213,7 @@ Ação 10 - Testes Empíricos</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">Soma de I1(Custo)   </td><td class="markdownTableBodyRight">21512   </td><td class="markdownTableBodyRight">2430   </td><td class="markdownTableBodyRight">2430   </td><td class="markdownTableBodyRight">2430    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Soma de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">62   </td><td class="markdownTableBodyRight">157   </td><td class="markdownTableBodyRight">181   </td><td class="markdownTableBodyRight">8874    </td></tr>
+<td class="markdownTableBodyCenter">Soma de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">39   </td><td class="markdownTableBodyRight">147   </td><td class="markdownTableBodyRight">165   </td><td class="markdownTableBodyRight">7833    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">Soma de I4(Expansões)   </td><td class="markdownTableBodyRight">21646   </td><td class="markdownTableBodyRight">150389   </td><td class="markdownTableBodyRight">189373   </td><td class="markdownTableBodyRight">4464967   </td></tr>
 </table>
