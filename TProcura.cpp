@@ -122,8 +122,8 @@ void TProcura::TesteManual(const char* nome)
 		MostraRelatorio(resultados, true);
 		printf("\n"
 			"┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐\n"
-			"│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │\n"
-			"│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │\n"
+			"│ 1 ↻  " CINZ "Inicializar" NCINZ " │ 2 🔍  " CINZ "Explorar" NCINZ " │ 3 ⚙️  " CINZ "Parâmetros" NCINZ "    │ 4 ✔  " CINZ "Solução" NCINZ " │\n"
+			"│ 5 ⚖  " CINZ "Indicadores" NCINZ " │ 6 ►  " CINZ "Executar" NCINZ "  │ 7 🛠️  " CINZ "Configurações" NCINZ " │ 8 🧪  " CINZ "Teste" NCINZ "  │\n"
 			"└──────────────────┴────────────────┴─────────────────────┴──────────────┘");
 		if ((selecao = NovoValor("\nOpção: ")) == NAO_LIDO)
 			return;
@@ -296,7 +296,7 @@ void TProcura::Mensagem(const char* titulo, const char* fmt, ...) {
 /// @brief Muda a cor (fundo/letra) com HSL (h=0 a 360 saturação, luminosidade)
 void TProcura::DebugHSL(float h, float s, float l, bool fundo) {
 	if (h < 0 || h > 360) { // reset de cores
-		printf("\x1b[0m");
+		printf(NCINZ);
 	}
 	else {
 		float f = (2 * l - 1);
@@ -345,9 +345,9 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 		count++;
 		// identificação do parâmetro
 		if (detalhe == 0 || parametro[parID].nome == NULL)
-			col += printf("P%d=", parID + 1);
+			col += printf(CINZ "P%d=" NCINZ, parID + 1) - CINZ_TAM;
 		else
-			col += printf("P%d(%s): ", parID + 1, parametro[parID].nome);
+			col += printf(CINZ "P%d(%s):" NCINZ " ", parID + 1, parametro[parID].nome) - CINZ_TAM;
 		// valor do parâmetro
 		if (detalhe > 1 && col < 30)
 			col += printf("%*s", (30 - col), "");
@@ -359,7 +359,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 		if (detalhe > 1) {
 			if (col < 40)
 				col += printf("%*s", (40 - col), "");
-			col += printf(" (%d a %d)", parametro[parID].min, parametro[parID].max);
+			col += printf(" " CINZ "(% d a % d)" NCINZ, parametro[parID].min, parametro[parID].max) - CINZ_TAM;
 		}
 		// separador/mudança de linha
 		if (i < nElementos - 1) {
@@ -547,7 +547,7 @@ TVector<int> TProcura::SolicitaInstancias()
 	char* str;
 
 	MostraCaixa(
-		{ "📖 Sintaxe comando"," Instâncias : A,B,C | A:B | A:B:C" }
+		{ "📖 Sintaxe comando"," " CINZ "Instâncias:" NCINZ " A,B,C | A:B | A : B : C" }
 	, 40);
 
 	printf("\n✏️ IDs das instâncias (%d a %d): ", instancia.min, instancia.max);
@@ -575,10 +575,10 @@ void TProcura::EditarConfiguracoes() {
 		MostraCaixa(
 			{
 "📖 Sintaxe comando",
-"   id / -id - Seleciona configuração como atual ou apaga 'id'",
-"   Pk = <conj.> - Varia Pk na configuração atual (gera N configs)",
-"   Pk = <conj.> x Pw = <conj.> - produto externo (gera NxM configs)",
-" Sintaxe de <conj.> : A,B,C | A:B | A:B:C"
+"   id / -id " CINZ "- Seleciona configuração como atual ou apaga 'id'" NCINZ,
+"   Pk = <conj.> " CINZ "- Varia Pk na configuração atual (gera N configs)" NCINZ,
+"   Pk = <conj.> x Pw = <conj.> " CINZ "- produto externo (gera NxM configs)" NCINZ,
+" " CINZ "Sintaxe de <conj.> :" NCINZ " A,B,C | A:B | A:B:C"
 			}
 		, 70);
 
@@ -695,7 +695,7 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 	}
 	// mostra parametros comuns, evitando repetição em cada configuração
 	MostraParametros(detalhe, &comum, "🛠️ ");
-	printf(" (parâmetros comuns)");
+	printf(CINZ " (parâmetros comuns)" NCINZ);
 
 	// visualizar configurações atuais, assinalando a atualmente escolhida
 	printf("\n═╪═ Configurações ═══");
@@ -1228,7 +1228,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 					MostraCaixa("", ECaixaParte::Meio, 1);
 					col = 2;
 				}
-				col += printf("I%d(%s): %" PRId64, ind + 1, indicador[ind].nome, Registo(resultados.Last(), ind));
+				col += printf(CINZ "I%d(%s):" NCINZ " %" PRId64, ind + 1, indicador[ind].nome, Registo(resultados.Last(), ind)) - CINZ_TAM;
 			}
 			MostraCaixa("", ECaixaParte::Fundo);
 		}
@@ -1281,7 +1281,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 		MostraCaixa(str, ECaixaParte::Topo);
 		MostraCaixa("", ECaixaParte::Meio, 1);
 		for (auto ind : indAtivo) {
-			col += printf("%s: ", indicador[ind].nome);
+			col += printf(CINZ "%s:" NCINZ " ", indicador[ind].nome) - CINZ_TAM;
 			col += printf("%" PRId64 " ", Registo(total[i], ind));
 			if (col > 70) {
 				MostraCaixa("", ECaixaParte::Meio, 1);
@@ -1290,7 +1290,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 		}
 		if (col > 70)
 			MostraCaixa("", ECaixaParte::Meio, 1);
-		printf("Instâncias resolvidas: %d", total[i].instancia);
+		printf(CINZ "Instâncias resolvidas:" NCINZ " %d", total[i].instancia);
 		MostraCaixa("", ECaixaParte::Fundo);
 	}
 	// mostrar torneio entre configurações
@@ -1324,13 +1324,13 @@ void TProcura::MostraIndicadores()
 	MostraCaixa("⚖  Indicadores", ECaixaParte::Topo);
 	for (int i = 0; i < indicador.Count(); i++) {
 		MostraCaixa("", ECaixaParte::Meio, 1);
-		printf("I%d(%s): ", i + 1, indicador[i].nome);
+		printf(CINZ "I%d(%s):" NCINZ " ", i + 1, indicador[i].nome);
 		if (indicador[i].indice < 0)
 			printf("✖  inativo ");
 		else
 			printf("✔  %dº lugar ", indicador[i].indice + 1);
 		MostraCaixa("", ECaixaParte::Meio, 1);
-		printf("%s", indicador[i].descricao);
+		printf(CINZ "%s" NCINZ, indicador[i].descricao);
 	}
 	MostraCaixa("", ECaixaParte::Fundo);
 }
@@ -1453,10 +1453,10 @@ void TProcura::SolicitaInstancia() {
 
 		MostraCaixa("↻  Inicializar", ECaixaParte::Topo);
 		MostraCaixa("", ECaixaParte::Meio, 1);
-		printf("ID atual: %d  Intervalo: [%d–%d]  ",
+		printf(CINZ "ID atual:" NCINZ " %d  " CINZ "Intervalo:" NCINZ " [%d–%d]  ",
 			instancia.valor, instancia.min, instancia.max);
 		MostraCaixa("", ECaixaParte::Meio, 1);
-		printf("Prefixo atual: '%s' ", ficheiroInstancia);
+		printf(CINZ "Prefixo atual:" NCINZ " '%s' ", ficheiroInstancia);
 		MostraCaixa("", ECaixaParte::Fundo);
 		texto = NovoTexto("\nNovo ID (ENTER mantém) ou novo prefixo (texto): ");
 		resultado = atoi(texto);

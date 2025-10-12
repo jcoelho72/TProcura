@@ -57,7 +57,7 @@ Puzzle 8
 │ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
 │ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
 └──────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
+Opção: 
 ```
 Aparece uma instância do Puzzle 8. Poderiamos procurar resolver manualmente. 
 No entanto esta instância está distante da solução, pelo que vamos ver outra instância.

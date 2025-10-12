@@ -13,6 +13,11 @@
 // código para número não lido (não deve ser utilizado num parâmetro)
 constexpr int NAO_LIDO = 1024;
 
+// macros para ativar/desativar cinzento (ANSI)
+#define CINZ   "\x1b[90m"
+#define NCINZ  "\x1b[0m"
+constexpr int CINZ_TAM = 9;   // bytes invisíveis (5 + 4), útil para alinhamento
+
 enum EIndicadoresProcura {
 	IND_RESULTADO = 0, ///< resultado do algoritmo
 	IND_TEMPO,         ///< tempo em milisegundos consumidos
