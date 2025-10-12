@@ -150,4 +150,5 @@ var menudata={children:[
 {text:"t",url:"globals_eval.html#index_t"},
 {text:"u",url:"globals_eval.html#index_u"},
 {text:"v",url:"globals_eval.html#index_v"},
-{text:"z",url:"globals_eval.html#index_z"}]}]}]}]}
+{text:"z",url:"globals_eval.html#index_z"}]},
+{text:"Macros",url:"globals_defs.html"}]}]}]}

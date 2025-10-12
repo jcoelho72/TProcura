@@ -4,6 +4,8 @@ var TProcura_8h =
     [ "SParametro", "structSParametro.html", "structSParametro" ],
     [ "SResultado", "structSResultado.html", "structSResultado" ],
     [ "TProcura", "classTProcura.html", "classTProcura" ],
+    [ "CINZ", "TProcura_8h.html#a0dc38cd03bd6399815ccf316508cb83a", null ],
+    [ "NCINZ", "TProcura_8h.html#aa026ed6cee15b6482301335ff132b242", null ],
     [ "TIndicador", "TProcura_8h.html#ad4fc32e65c5226aa62a959b4402a857c", null ],
     [ "TParametro", "TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0", null ],
     [ "TResultado", "TProcura_8h.html#a4428af995799ff246df4a39dfb58d0e9", null ],
@@ -53,5 +55,6 @@ var TProcura_8h =
       [ "TAG_CABECALHO", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efaa4285a66acf9e6100e8a7d5e00890a59", null ],
       [ "TAG_VALORES", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efaa130054e33910954a32bedfadba58d25", null ]
     ] ],
+    [ "CINZ_TAM", "TProcura_8h.html#a5b68e23357bb5aef0c73d262ebfa0d3c", null ],
     [ "NAO_LIDO", "TProcura_8h.html#a59f9d6e2b09717823299d60a0e6f2efc", null ]
 ];

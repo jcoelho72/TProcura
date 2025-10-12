@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"compact_8h.html#a00b22acc72899dbcb64f43ad8ec8b41d":[3,0,5,1],
+"compact_8h.html#a2cc00022a29bc0fc08165228956a10f5":[3,0,5,0],
+"compact_8h.html#a342aea1a38c4383aedcc7fea5e68048a":[3,0,5,3],
 "compact_8h.html#a4458d9a13083e2a6ae1b6c659c4043cc":[3,0,5,2],
 "compact_8h_source.html":[3,0,5],
 "dir_114aa71efa62e0f2f4756db1d63d8801.html":[3,0,4,0],
@@ -15,8 +18,8 @@ var NAVTREEINDEX3 =
 "dir_dd90f41686238f35fbbf3adb743ef1d9.html":[3,0,0,0,0],
 "dir_deb139ba7ed6141b09c371acd5d7861d.html":[3,0,1,0],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
@@ -63,6 +66,7 @@ var NAVTREEINDEX3 =
 "functions_z.html":[2,3,0,21],
 "functions_~.html":[2,3,0,22],
 "globals.html":[3,1,0],
+"globals_defs.html":[3,1,6],
 "globals_enum.html":[3,1,4],
 "globals_eval.html":[3,1,5],
 "globals_func.html":[3,1,1],
