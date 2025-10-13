@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"classTCodificacaoBinaria.html#ad2083ee209edac21d0ce27db4349825c":[2,0,21,5],
+"classTCodificacaoBinaria.html#af0633fcdb3d410738061a8470c5e0780":[2,0,21,15],
 "classTCodificacaoBinaria.html#af86710c3e68600bbdf4fd649011a4463":[2,0,21,10],
 "classTCodificacaoInteira.html":[2,0,22],
 "classTCodificacaoInteira.html#a0c5676c1b54ab6bdc1045b98aeafe456":[2,0,22,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "classTVector.html#ae823bb295cf4d1da6783b9ef133e2209":[2,0,29,48],
 "classTVector.html#af101f2c096078779fb2569bb82303216":[2,0,29,0],
 "classTVector.html#af7079cb7944ea88caf10b7574915858b":[2,0,29,20],
-"classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64":[2,0,29,40],
-"classes.html":[2,1],
-"compact_8h.html":[3,0,5]
+"classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64":[2,0,29,40]
 };

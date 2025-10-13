@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('teste_particao.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
-<p>Execução de exemplo com base no problema da Partição. Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste executando as ações localmente.</p>
+<p>Execução de exemplo com base no problema da Partição. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. No Linux na pasta <code>.../TProcura/Construtiva/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraConstrutiva</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
 <h2><a class="anchor" id="autotoc_md49"></a>
@@ -106,13 +106,13 @@ Sumário</h2>
 <li><a class="el" href="teste_particao.html#particao-a2">Ação 2 - Resolver manualmente</a></li>
 <li><a class="el" href="teste_particao.html#particao-a3">Ação 6 - Testes Empíricos</a></li>
 </ul>
-<div class="fragment"><div class="line">Teste TProcurasConstrutivas</div>
-<div class="line">Problema:</div>
-<div class="line">  1 - Aspirador</div>
-<div class="line">  2 - Puzzle 8</div>
-<div class="line">  3 - 8 Damas</div>
-<div class="line">  4 - Partição</div>
-<div class="line">  5 - Artificial</div>
+<div class="fragment"><div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
+<div class="line">│ 1 - Aspirador                │</div>
+<div class="line">│ 2 - Puzzle 8                 │</div>
+<div class="line">│ 3 - 8 Damas                  │</div>
+<div class="line">│ 4 - Partição                 │</div>
+<div class="line">│ 5 - Artificial               │</div>
+<div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 4</div>
 </div><!-- fragment --><div class="image">
 <img src="particao.png" alt=""/>
@@ -120,22 +120,42 @@ Sumário</h2>
 Partição - separe os números em duas partes iguais</div></div>
     <p>Vamos escolher o problema da partição. Introduza: <b>4.</b></p>
 <div class="fragment"><div class="line">Partição</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
-<div class="line">Colocar #8: 0 = 0</div>
-<div class="line">---   2   2   9   9  ---</div>
-<div class="line">---  13  16  17  24  ---</div>
-<div class="line">____________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
-<div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │  ├─ 📦92 → ◀️0 = ▶️0 ─</div>
+<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p> Este problema consiste em dividir os números em duas partes que somem exatamente o mesmo valor.</p>
+</div><!-- fragment --><p> Este problema consiste em dividir os números em duas partes que somem exatamente o mesmo valor. Está no modo compato, vamos colocar no modo extendido para ver o conteúdo da instância. Introduza: <b>3; 2; 4; <em>ENTER</em>.</b></p>
+<div class="fragment"><div class="line">Partição</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │  ┌─ 📦92 → ◀️0 = ▶️0 ────────────────────────────────────────────────────</div>
+<div class="line"> │  ├─ 📦 ─ 2 2 9 9 13 16 17 24</div>
+<div class="line"> │  ├─ ◀️ ─</div>
+<div class="line"> │  ├─ ▶️ ─</div>
+<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Podemos agora ver os números a colocar. Somam no total 92, e tem que se colocar cada número numa das linhas. A soma em cada linha tem de ser igual.</p>
 <p><a class="anchor" id="particao-a1"></a></p>
 <h2><a class="anchor" id="autotoc_md50"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver as instâncias que temos. Introduza: <b>1; 10.</b></p>
-<div class="fragment"><div class="line">ID atual: 10  Intervalo: [2-1000]  Prefixo atual: &#39;instancia_&#39;</div>
+<div class="fragment"><div class="line">Opção: 1</div>
+<div class="line"> </div>
+<div class="line">┌─ ↻  Inicializar ─────────────────────────────────────────────────────</div>
+<div class="line">│ ID atual: 10  Intervalo: [2–1000]</div>
+<div class="line">│ Prefixo atual: &#39;instancia_&#39;</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 10</div>
 </div><!-- fragment --><p> Existem instâncias de 2 a 1000, correspondendo o ID à quantidade de números. As instâncias são geradas aleatoriamente, podendo existir instâncias impossíveis.</p>
 <p>Deixemos a instância 10 para resolução manual.</p>
@@ -143,45 +163,67 @@ Ação 1 - Ver instâncias</h2>
 <h2><a class="anchor" id="autotoc_md51"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos procurar resolver manualmente a intância. Introduza: <b>2; esq dir esq dir; dir; esq.</b></p>
-<div class="fragment"><div class="line">g:0 1|2|3</div>
-<div class="line">Colocar #8: 0 = 0</div>
-<div class="line">---   2   2   9   9  ---</div>
-<div class="line">---  13  16  17  24  ---</div>
-<div class="line">Ações: esq dir</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:esq dir esq dir</div>
-<div class="line">Executadas 4 ações com sucesso.</div>
-<div class="line">g:0 6|12|6</div>
-<div class="line">Colocar #4: 40 = 30</div>
-<div class="line">---   2   2   9   9  ---</div>
-<div class="line">     24  16          &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  17  13</div>
-<div class="line">Ações: esq dir</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:dir</div>
-<div class="line">Executadas 1 ações com sucesso.</div>
-<div class="line">g:0 8|16|9</div>
-<div class="line">Colocar #3: 40 = 39</div>
-<div class="line">---   2   2   9      ---</div>
-<div class="line">     24  16          &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  17  13   9</div>
-<div class="line">Ações: esq dir</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:esq</div>
-<div class="line">Executadas 1 ações com sucesso.</div>
-<div class="line">g:0 10|18|10</div>
-<div class="line">Colocar #2: 49 = 39</div>
-<div class="line">---   2   2          ---</div>
-<div class="line">     24  16   9      &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  17  13   9</div>
-<div class="line">Ações:</div>
-<div class="line">Sem sucessores.</div>
+<div class="fragment"><div class="line">Opção: 2</div>
+<div class="line"> </div>
+<div class="line">═╤═ 💰 g:0 🔢 1|2|3 ═══</div>
+<div class="line"> │  ┌─ 📦92 → ◀️0 = ▶️0 ────────────────────────────────────────────────────</div>
+<div class="line"> │  ├─ 📦 ─ 2 2 9 9 13 16 17 24</div>
+<div class="line"> │  ├─ ◀️ ─</div>
+<div class="line"> │  ├─ ▶️ ─</div>
+<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │ └─ ⚡ ───── esq dir { 🔖1 🔖2 }</div>
+<div class="line">🔍  Sucessor [1-2, ação(ões), exe]: esq dir esq dir</div>
+<div class="line"> </div>
+<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">│ Executadas 4 ações.</div>
+<div class="line">└─────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🔢 6|12|6 ═══</div>
+<div class="line"> │  ┌─ 📦22 → ◀️40 = ▶️30 ──────────────────────────────────────────────────</div>
+<div class="line"> │  ├─ 📦 ─ 2 2 9 9</div>
+<div class="line"> │  ├─ ◀️ ─ 24 16</div>
+<div class="line"> │  ├─ ▶️ ─ 17 13</div>
+<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │ └─ ⚡ ───── esq dir { 🔖11 🔖12 }</div>
+<div class="line">🔍  Sucessor [1-2, ação(ões), exe]: dir</div>
+<div class="line"> </div>
+<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">│ Executadas 1 ações.</div>
+<div class="line">└─────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🔢 8|16|9 ═══</div>
+<div class="line"> │  ┌─ 📦13 → ◀️40 = ▶️39 ──────────────────────────────────────────────────</div>
+<div class="line"> │  ├─ 📦 ─ 2 2 9</div>
+<div class="line"> │  ├─ ◀️ ─ 24 16</div>
+<div class="line"> │  ├─ ▶️ ─ 17 13 9</div>
+<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │ └─ ⚡ ───── esq dir { 🔖15 🔖16 }</div>
+<div class="line">🔍  Sucessor [1-2, ação(ões), exe]: esq</div>
+<div class="line"> </div>
+<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">│ Executadas 1 ações.</div>
+<div class="line">└─────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🔢 10|18|10 ═══</div>
+<div class="line"> │  ┌─ 📦4 → ◀️49 = ▶️39 ───────────────────────────────────────────────────</div>
+<div class="line"> │  ├─ 📦 ─ 2 2</div>
+<div class="line"> │  ├─ ◀️ ─ 24 16 9</div>
+<div class="line"> │  ├─ ▶️ ─ 17 13 9</div>
+<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │ └─ ⚡ ─────</div>
+<div class="line">┌─ ℹ️  Informação ───</div>
+<div class="line">│ Sem sucessores.</div>
+<div class="line">└────────────────────</div>
 <div class="line">Partição</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
-<div class="line">Colocar #2: 49 = 39</div>
-<div class="line">---   2   2          ---</div>
-<div class="line">     24  16   9      &lt;&lt;&lt;</div>
-<div class="line">&gt;&gt;&gt;  17  13   9</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │  ┌─ 📦4 → ◀️49 = ▶️39 ───────────────────────────────────────────────────</div>
+<div class="line"> │  ├─ 📦 ─ 2 2</div>
+<div class="line"> │  ├─ ◀️ ─ 24 16 9</div>
+<div class="line"> │  ├─ ▶️ ─ 17 13 9</div>
+<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p> Foi uma boa tentativa, mas no final um lado soma 49 do outro 39, e os números que restam não chegam para equilibrar.</p>
 <p>Tal como as 8 damas, o número de ações de uma solução completa é fixo. É igual à quantidade de número a colocar. Sabemos que não faz sentido a procura em largura nestes problemas. Também pelos mesmos motivos que nas 8 damas, não se consegue uma heurística pelo que não faz sentido as procuras informadas.</p>
 <p>Naturalmente que se poderia efetuar mais cortes dos que estão a ser feitos nesta implementação. Vamos apenas comparar a remoção de repetidos gerados, relativamente a ignorar repetidos.</p>
@@ -192,56 +234,73 @@ Ação 2 - Resolver manualmente</h2>
 Ação 3 - Testes Empíricos</h2>
 <p>Vamos fazer testes empíricos na linha de comandos.</p>
 <p>Vamos obter primeiramente a lista de todos os parâmetros.</p>
-<div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
-<div class="line">PS C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
+<div class="fragment"><div class="line">/TProcura/Construtiva/Teste$ ./bin/Release/TProcuraConstrutiva -h</div>
 <div class="line"> </div>
-<div class="line">Teste TProcurasConstrutivas</div>
-<div class="line">Problema:</div>
-<div class="line">  1 - Aspirador</div>
-<div class="line">  2 - Puzzle 8</div>
-<div class="line">  3 - 8 Damas</div>
-<div class="line">  4 - Partição</div>
-<div class="line">  5 - Artificial</div>
+<div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
+<div class="line">│ 1 - Aspirador                │</div>
+<div class="line">│ 2 - Puzzle 8                 │</div>
+<div class="line">│ 3 - 8 Damas                  │</div>
+<div class="line">│ 4 - Partição                 │</div>
+<div class="line">│ 5 - Artificial               │</div>
+<div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 4</div>
-<div class="line">Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
+<div class="line">Uso: ./bin/Release/TProcuraConstrutiva &lt;instâncias&gt; [opções]</div>
 <div class="line">  &lt;instâncias&gt;    Conjunto de IDs: A | A,B,C | A:B[:C]</div>
 <div class="line">Opções:</div>
 <div class="line">  -R &lt;ficheiro&gt;   Nome do CSV de resultados (omissão: resultados.csv)</div>
 <div class="line">  -F &lt;prefixo&gt;    Prefixo dos ficheiros de instância (omissão: instancia_)</div>
+<div class="line">  -M &lt;modo&gt;       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador</div>
 <div class="line">  -I &lt;ind&gt;        Lista de indicadores (e.g. 2,1,3)</div>
-<div class="line">  -S              Mostrar soluções durante a execução</div>
 <div class="line">  -h              Esta ajuda</div>
 <div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
-<div class="line">Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
+<div class="line">Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
 <div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
 <div class="line"> </div>
 <div class="line">Lista de parâmetros:</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro (1 a 7)</div>
-<div class="line"> P2(Debug): nada (0 a 4)</div>
-<div class="line"> P3(Seed): 1 (1 a 1000000)</div>
-<div class="line"> P4(Tempo): 10 (1 a 3600)</div>
-<div class="line"> P5(Iterações): 0 (0 a 1000000000)</div>
-<div class="line"> P6(Ver): 4 (1 a 100)</div>
-<div class="line"> P7(Limite): 0 (-1 a 1000000)</div>
-<div class="line"> P8(Repetidos): ignorar (1 a 3)</div>
-<div class="line"> P9(pesoAStar): 100 (0 a 10000)</div>
-<div class="line"> P10(ruido): 0 (-100 a 100)</div>
-<div class="line"> P11(baralhar): 0 (0 a 1)</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO):             Largura Primeiro ( 1 a  7)</div>
+<div class="line">│ P2(NIVEL_DEBUG):           NADA       ( 0 a  4)</div>
+<div class="line">│ P3(SEMENTE):               1          ( 1 a  1000000)</div>
+<div class="line">│ P4(LIMITE_TEMPO):          10         ( 1 a  3600)</div>
+<div class="line">│ P5(LIMITE_ITERACOES):      0          ( 0 a  1000000000)</div>
+<div class="line">│ P6(VER_ACOES):             4          ( 1 a  100)</div>
+<div class="line">│ P7(LIMITE):                0          (-1 a  1000000)</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS):     ignorar    ( 1 a  3)</div>
+<div class="line">│ P11(BARALHAR_SUCESSORES):  0          ( 0 a  1)</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> </div>
 <div class="line">Lista de indicadores:</div>
-<div class="line"> </div>
-<div class="line">I1(Custo): 1º lugar (o resultado é o custo da solução atual)</div>
-<div class="line">I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)</div>
-<div class="line">I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)</div>
-<div class="line">I4(Expansões): 4º lugar (número de expansões efetuadas)</div>
-<div class="line">I5(Gerações): 5º lugar (número de estados gerados)</div>
-<div class="line">I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): ✔  1º lugar</div>
+<div class="line">│ o resultado é o custo da solução atual</div>
+<div class="line">│ I2(Tempo(ms)): ✔  2º lugar</div>
+<div class="line">│ Tempo em milisegundos da execução (medida de esforço computacional).</div>
+<div class="line">│ I3(Iterações): ✔  3º lugar</div>
+<div class="line">│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</div>
+<div class="line">│ I4(IND_EXPANSOES): ✔  4º lugar</div>
+<div class="line">│ número de expansões efetuadas</div>
+<div class="line">│ I5(IND_GERACOES): ✔  5º lugar</div>
+<div class="line">│ número de estados gerados</div>
+<div class="line">│ I6(IND_LOWER_BOUND): ✔  6º lugar</div>
+<div class="line">│ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 </div><!-- fragment --><p>Temos para teste a procura em profundidade ilimitada, e pretendemos comparar ignorar estados repetidos, ou remover todos os repetidos gerados.</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 10:19 -R resultadoParticao -P P7=-1 P1=3 x P8=1,3</div>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 10:19 -R Resultados/Particaot1 -P P2=3 P7=-1 P1=3 P8=1,3</div>
 <div class="line">...</div>
 <div class="line">Opção: 4</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultadoParticao.csv gravado.</div>
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P1=3 P2=3 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P8=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P8=3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:20   ↻ Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 1.</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/Particaot1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 20ms</div>
+<div class="line"> │  ⏱  CPU total: 20ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  20ms ) ═══</div>
 </div><!-- fragment --><p>Podemos ver o resultado:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -250,65 +309,117 @@ Ação 3 - Testes Empíricos</h2>
 1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">Soma de I4(Expansões)<br  />
 1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">27    </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">27    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">17    </td></tr>
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">17    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">947   </td><td class="markdownTableBodyRight">119    </td></tr>
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">20   </td><td class="markdownTableBodyRight">20    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">1151   </td><td class="markdownTableBodyRight">143    </td></tr>
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">20   </td><td class="markdownTableBodyRight">20    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">24    </td></tr>
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">24    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">25    </td></tr>
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">25    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">17403   </td><td class="markdownTableBodyRight">440    </td></tr>
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">26   </td><td class="markdownTableBodyRight">26    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">24223   </td><td class="markdownTableBodyRight">462    </td></tr>
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">106   </td><td class="markdownTableBodyRight">103    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">46639   </td><td class="markdownTableBodyRight">630    </td></tr>
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">77   </td><td class="markdownTableBodyRight">77    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">57931   </td><td class="markdownTableBodyRight">580    </td></tr>
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">19   </td><td class="markdownTableBodyRight">19   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">32   </td><td class="markdownTableBodyRight">32    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">41   </td><td class="markdownTableBodyRight">41   </td><td class="markdownTableBodyRight">53   </td><td class="markdownTableBodyRight">57   </td><td class="markdownTableBodyRight">148387   </td><td class="markdownTableBodyRight">2467   </td></tr>
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">141   </td><td class="markdownTableBodyRight">141   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">374   </td><td class="markdownTableBodyRight">371   </td></tr>
 </table>
-<p>As instâncias escolhidas são muito pequenas, e o tempo de execução é praticamente nulo. Não servem para medir diferenças de tempo, mas servem para medir diferenças no número de estados expandidos. Tudo leva a crer que a remoção de repetidos gerados é muito vantajosa.</p>
-<p>Vamos procurar instâncias maiores, de 20 a 29.</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 20:29 -R resultadoParticaoB -P P7=-1 P1=3 x P8=1,3</div>
+<p>As instâncias escolhidas são muito pequenas, e o tempo de execução é praticamente nulo. Não servem para medir diferenças de tempo. Apenas há diferença nas expansões na instância 17, devido a remoção de repetidos.</p>
+<p>Vamos procurar instâncias maiores, como não sabemos a dimensão, vamos escolher algumas de dimensões distintas.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 20:28:2,30:95:5,100:1000:100 -R Resultados/Particaot2 -P P2=3 P7=-1 P1=3 P8=1,3</div>
 <div class="line">...</div>
 <div class="line">Opção: 4</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultadoParticaoB.csv gravado.</div>
-</div><!-- fragment --><table class="markdownTable">
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P1=3 P2=3 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P8=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P8=3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:58   ↻ Instâncias: 29   🛠️ Configurações: 2   🖥️ Processos: 1.</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/Particaot2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 157ms</div>
+<div class="line"> │  ⏱  CPU total: 157ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  157ms ) ═══</div>
+</div><!-- fragment --><p>A execução terminou de imediato.</p>
+<table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Soma de I1(Custo)<br  />
 1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">Soma de I2(Tempo(ms))<br  />
 1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">Soma de I4(Expansões)<br  />
 1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">87   </td><td class="markdownTableBodyRight">85    </td></tr>
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">87   </td><td class="markdownTableBodyRight">85    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">46   </td><td class="markdownTableBodyRight">46    </td></tr>
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">35    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">35    </td></tr>
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">135   </td><td class="markdownTableBodyRight">102    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">134   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">390983   </td><td class="markdownTableBodyRight">1236    </td></tr>
+<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">66   </td><td class="markdownTableBodyRight">65    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">381   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">1071431   </td><td class="markdownTableBodyRight">1164    </td></tr>
+<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">44   </td><td class="markdownTableBodyRight">44    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">41   </td><td class="markdownTableBodyRight">41    </td></tr>
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">30   </td><td class="markdownTableBodyRight">30   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">50   </td><td class="markdownTableBodyRight">50    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">66   </td><td class="markdownTableBodyRight">65    </td></tr>
+<td class="markdownTableBodyCenter">35   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">58   </td><td class="markdownTableBodyRight">58    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">2420   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">8098059   </td><td class="markdownTableBodyRight">2104    </td></tr>
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">67   </td><td class="markdownTableBodyRight">67    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">-1   </td><td class="markdownTableBodyRight">2431   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">7867847   </td><td class="markdownTableBodyRight">2186    </td></tr>
+<td class="markdownTableBodyCenter">45   </td><td class="markdownTableBodyRight">45   </td><td class="markdownTableBodyRight">45   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">76   </td><td class="markdownTableBodyRight">76    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">49   </td><td class="markdownTableBodyRight">49    </td></tr>
+<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">50   </td><td class="markdownTableBodyRight">50   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">83   </td><td class="markdownTableBodyRight">83    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">135   </td><td class="markdownTableBodyRight">135   </td><td class="markdownTableBodyRight">5366   </td><td class="markdownTableBodyRight">59   </td><td class="markdownTableBodyRight">17428644   </td><td class="markdownTableBodyRight">7011   </td></tr>
+<td class="markdownTableBodyCenter">55   </td><td class="markdownTableBodyRight">54   </td><td class="markdownTableBodyRight">54   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">119   </td><td class="markdownTableBodyRight">118    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">60   </td><td class="markdownTableBodyRight">60   </td><td class="markdownTableBodyRight">60   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">142   </td><td class="markdownTableBodyRight">142    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">65   </td><td class="markdownTableBodyRight">65   </td><td class="markdownTableBodyRight">65   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">111   </td><td class="markdownTableBodyRight">111    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">70   </td><td class="markdownTableBodyRight">70   </td><td class="markdownTableBodyRight">70   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">119   </td><td class="markdownTableBodyRight">119    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">75   </td><td class="markdownTableBodyRight">74   </td><td class="markdownTableBodyRight">74   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">123   </td><td class="markdownTableBodyRight">123    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">80   </td><td class="markdownTableBodyRight">79   </td><td class="markdownTableBodyRight">79   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">132   </td><td class="markdownTableBodyRight">132    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">85   </td><td class="markdownTableBodyRight">85   </td><td class="markdownTableBodyRight">85   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">166   </td><td class="markdownTableBodyRight">166    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">90   </td><td class="markdownTableBodyRight">88   </td><td class="markdownTableBodyRight">88   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">332   </td><td class="markdownTableBodyRight">240    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">95   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">559   </td><td class="markdownTableBodyRight">470    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">168   </td><td class="markdownTableBodyRight">168    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">198   </td><td class="markdownTableBodyRight">198   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">339   </td><td class="markdownTableBodyRight">339    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">300   </td><td class="markdownTableBodyRight">299   </td><td class="markdownTableBodyRight">299   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">511   </td><td class="markdownTableBodyRight">511    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">400   </td><td class="markdownTableBodyRight">398   </td><td class="markdownTableBodyRight">398   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">681   </td><td class="markdownTableBodyRight">681    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">500   </td><td class="markdownTableBodyRight">500   </td><td class="markdownTableBodyRight">500   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">1257   </td><td class="markdownTableBodyRight">1257    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">600   </td><td class="markdownTableBodyRight">599   </td><td class="markdownTableBodyRight">599   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">11   </td><td class="markdownTableBodyRight">1882   </td><td class="markdownTableBodyRight">1881    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">700   </td><td class="markdownTableBodyRight">700   </td><td class="markdownTableBodyRight">700   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">1408   </td><td class="markdownTableBodyRight">1407    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">800   </td><td class="markdownTableBodyRight">800   </td><td class="markdownTableBodyRight">800   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">11   </td><td class="markdownTableBodyRight">1362   </td><td class="markdownTableBodyRight">1362    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">900   </td><td class="markdownTableBodyRight">899   </td><td class="markdownTableBodyRight">899   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">1531   </td><td class="markdownTableBodyRight">1531    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1000   </td><td class="markdownTableBodyRight">1000   </td><td class="markdownTableBodyRight">1000   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">1700   </td><td class="markdownTableBodyRight">1700    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">6476   </td><td class="markdownTableBodyRight">6476   </td><td class="markdownTableBodyRight">42   </td><td class="markdownTableBodyRight">110   </td><td class="markdownTableBodyRight">13343   </td><td class="markdownTableBodyRight">13123   </td></tr>
 </table>
-<p>É agora claro que a remoção de repetidos gerados é crítica para o desempenho. Podemos ver também que as instâncias que não têm solução, são muito mais difíceis. Nestas instâncias toda a árvore de estados é percorrida, e podemos registar diferenças entre ter ou não remoção de repetidos, de várias ordens de grandeza.</p>
+<p>É agora claro que a remoção de repetidos gerados apenas consome mais tempo, sendo até raros os casos de instâncias com menos gerações.</p>
+<p>Naturalmente que esta conclusão é válida apenas para as instâncias geradas, que têm um método de geração que pode não garantir que temos instâncias complexas. Mesmo as instâncias maiores são resolvidas em instantes.</p>
+<p>As instâncias impossíveis são no geral mais difíceis, já que toda a árvgore tem de ser percorrida.</p>
 <p>Qual é a maior instância que se conseguimos resolver com esta implemantação? </p><details >
 <summary >
 Resposta:</summary>

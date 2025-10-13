@@ -5,6 +5,6 @@ var searchData=
   ['tamanhocodificado_2',['tamanhoCodificado',['../group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b',1,'TProcuraConstrutiva']]],
   ['tempo_3',['tempo',['../classTProcura.html#af7735671436a99def475aba1fdb42435',1,'TProcura']]],
   ['tipo_4',['tipo',['../structSValorEstado.html#a50ab452ee030441b761efc29dd223eaa',1,'SValorEstado']]],
-  ['totaldireita_5',['totalDireita',['../classCParticao.html#a8c4d8befbbe3703930b6922b7182b30c',1,'CParticao']]],
-  ['totalesquerda_6',['totalEsquerda',['../classCParticao.html#ac8e1d8b71df06957820ecde534d22bd9',1,'CParticao']]]
+  ['totaldireita_5',['totaldireita',['../classCParticao.html#a0a9b8c1d6dd73cbd4a4597aaf7c0a75d',1,'CParticao::totalDireita'],['../classCParticao.html#a8c4d8befbbe3703930b6922b7182b30c',1,'CParticao::totalDireita']]],
+  ['totalesquerda_6',['totalesquerda',['../classCParticao.html#a2f7c54e73bdc18b30067e65027da4d6f',1,'CParticao::totalEsquerda'],['../classCParticao.html#ac8e1d8b71df06957820ecde534d22bd9',1,'CParticao::totalEsquerda']]]
 ];

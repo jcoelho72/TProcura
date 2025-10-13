@@ -30,6 +30,8 @@ var classCParticao =
     [ "esquerda", "classCParticao.html#a5a3b0c754776ffb416c8d0e3833ef4ec", null ],
     [ "numeros", "classCParticao.html#a66f8ebeadfe83528094ae545015452f5", null ],
     [ "solCompleta", "classCParticao.html#a10a1cc5253c3f2d3e7c7cc8b54dab99e", null ],
+    [ "totalDireita", "classCParticao.html#a0a9b8c1d6dd73cbd4a4597aaf7c0a75d", null ],
     [ "totalDireita", "classCParticao.html#a8c4d8befbbe3703930b6922b7182b30c", null ],
+    [ "totalEsquerda", "classCParticao.html#a2f7c54e73bdc18b30067e65027da4d6f", null ],
     [ "totalEsquerda", "classCParticao.html#ac8e1d8b71df06957820ecde534d22bd9", null ]
 ];

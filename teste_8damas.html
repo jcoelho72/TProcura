@@ -109,13 +109,13 @@ Sumário</h2>
 <li>Ação 5 - Heurística</li>
 <li>Ação 6 - Testes Empíricos</li>
 </ul>
-<div class="fragment"><div class="line">Teste TProcurasConstrutivas</div>
-<div class="line">Problema:</div>
-<div class="line">  1 - Aspirador</div>
-<div class="line">  2 - Puzzle 8</div>
-<div class="line">  3 - 8 Damas</div>
-<div class="line">  4 - Partição</div>
-<div class="line">  5 - Artificial</div>
+<div class="fragment"><div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
+<div class="line">│ 1 - Aspirador                │</div>
+<div class="line">│ 2 - Puzzle 8                 │</div>
+<div class="line">│ 3 - 8 Damas                  │</div>
+<div class="line">│ 4 - Partição                 │</div>
+<div class="line">│ 5 - Artificial               │</div>
+<div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 3</div>
 </div><!-- fragment --><div class="image">
 <img src="8damas.png" alt=""/>
@@ -123,9 +123,12 @@ Sumário</h2>
 8 Damas - colocar 8 damas no tabuleiro sem que se ataquem mutuamente</div></div>
     <p>Vamos entrar no problema das 8 damas. Introduza: <b>3.</b></p>
 <div class="fragment"><div class="line">8 Damas</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
+<div class="line">8 Damas</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">::  ::  ::  ::</div>
 <div class="line">  ::  ::  ::  ::</div>
 <div class="line">::  ::  ::  ::</div>
@@ -134,16 +137,22 @@ Sumário</h2>
 <div class="line">  ::  ::  ::  ::</div>
 <div class="line">::  ::  ::  ::</div>
 <div class="line">  ::  ::  ::  ::</div>
-<div class="line">____________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
-<div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
+<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Este estado vazio é um tabuleiro de 8x8. O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver que instâncias temos. Introduza: <b>1; 4.</b></p>
-<div class="fragment"><div class="line">ID atual: 8  Intervalo: [4-40]  Prefixo atual: &#39;instancia_&#39;</div>
+<div class="fragment"><div class="line">Opção: 1</div>
+<div class="line"> </div>
+<div class="line">┌─ ↻  Inicializar ─────────────────────────────────────────────────────</div>
+<div class="line">│ ID atual: 8  Intervalo: [4–40]</div>
+<div class="line">│ Prefixo atual: &#39;instancia_&#39;</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 4</div>
 <div class="line"> </div>
 <div class="line">8 Damas</div>
@@ -152,7 +161,8 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">  ::  ::</div>
 <div class="line">::  ::</div>
 <div class="line">  ::  ::</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p>O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md4"></a>
@@ -160,276 +170,370 @@ Ação 2 - Resolver manualmente</h2>
 <p>Há várias formas de se colocar damas no tabuleiro. Está implementada a colocação de uma dama, na linha superior que não esteja atacada.</p>
 <p>Poder-se-ia permitir a colocação de uma dama em qualquer posição. No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia. Caso se tivessem implementado diferentes opções, seria adicionado um parametro, e os sucessores seria distinto conforme o valor desse parâmetro.</p>
 <p>Vamos resolver esta instância manualmente, para explorar o espaço de estados. Introduza: <b>2; d1; d4; d2.</b></p>
-<div class="fragment"><div class="line">g:0 1|4|5</div>
+<div class="fragment"><div class="line">Opção: 2</div>
+<div class="line"> </div>
+<div class="line">═╤═ 💰 g:0 🔢 1|4|5 ═══</div>
 <div class="line">::  ::</div>
 <div class="line">  ::  ::</div>
 <div class="line">::  ::</div>
 <div class="line">  ::  ::</div>
-<div class="line">Ações: d1 d2 d3 d4</div>
-<div class="line">Sucessor [1-4, ação(ões), exe]:d1</div>
-<div class="line">Executadas 1 ações com sucesso.</div>
-<div class="line">g:0 3|10|8</div>
-<div class="line">##  ::</div>
+<div class="line"> │ └─ ⚡ ───── d1 d2 d3 d4</div>
+<div class="line">🔍  Sucessor [1-4, ação(ões), exe]: d1</div>
+<div class="line"> </div>
+<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">│ Executadas 1 ações.</div>
+<div class="line">└─────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🔢 3|10|8 ═══</div>
+<div class="line">♛   ::</div>
 <div class="line">  ::  ::</div>
 <div class="line">::  ::</div>
 <div class="line">  ::  ::</div>
-<div class="line">Ações: d3 d4</div>
-<div class="line">Sucessor [1-2, ação(ões), exe]:d4</div>
-<div class="line">Executadas 1 ações com sucesso.</div>
-<div class="line">g:0 5|13|10</div>
-<div class="line">##  ::</div>
-<div class="line">  ::  ##</div>
+<div class="line"> │ └─ ⚡ ───── d3 d4</div>
+<div class="line">🔍  Sucessor [1-2, ação(ões), exe]: d4</div>
+<div class="line"> </div>
+<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">│ Executadas 1 ações.</div>
+<div class="line">└─────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🔢 5|13|10 ═══</div>
+<div class="line">♛   ::</div>
+<div class="line">  ::  ♛</div>
 <div class="line">::  ::</div>
 <div class="line">  ::  ::</div>
-<div class="line">Ações: d2</div>
-<div class="line">Sucessor [1-1, ação(ões), exe]:d2</div>
-<div class="line">Executadas 1 ações com sucesso.</div>
-<div class="line">g:0 7|14|11</div>
-<div class="line">##  ::</div>
-<div class="line">  ::  ##</div>
-<div class="line">::##::</div>
+<div class="line"> │ └─ ⚡ ───── d2</div>
+<div class="line">🔍  Sucessor [1-1, ação(ões), exe]: d2</div>
+<div class="line"> </div>
+<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">│ Executadas 1 ações.</div>
+<div class="line">└─────────────────────</div>
+<div class="line">═╤═ 💰 g:0 🔢 7|14|11 ═══</div>
+<div class="line">♛   ::</div>
+<div class="line">  ::  ♛</div>
+<div class="line">::♛ ::</div>
 <div class="line">  ::  ::</div>
-<div class="line">Ações:</div>
-<div class="line">Sem sucessores.</div>
+<div class="line"> │ └─ ⚡ ─────</div>
+<div class="line">┌─ ℹ️  Informação ───</div>
+<div class="line">│ Sem sucessores.</div>
+<div class="line">└────────────────────</div>
 <div class="line">8 Damas</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
-<div class="line">##  ::</div>
-<div class="line">  ::  ##</div>
-<div class="line">::##::</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">♛   ::</div>
+<div class="line">  ::  ♛</div>
+<div class="line">::♛ ::</div>
 <div class="line">  ::  ::</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> Esta resolução correu mal, e chegamos a um beco sem saida. Não há nenhuma coluna onde possa ser colocada a quarta dama, sem que esteja atacada.</p>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> Esta resolução correu mal e chegamos a um beco sem saida. Não há nenhuma coluna onde possa ser colocada a quarta dama sem que esteja atacada.</p>
 <p>A escolha na primeira ação por d2 (ou d3), é crítica para obter a solução.</p>
-<p>Neste problema a solução em sempre o mesmo número de ações, igual a N.</p>
+<p>Neste problema a solução tem sempre o mesmo número de ações, igual a N.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Ação 3 - Procura em Largura</h2>
 <p>Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. Vamos deixar desde já fixado o limite no número de iterações a 1000000. Introduza: <b>1; 4; 3; 2; 4; 5; 1000000; <em>ENTER</em>; 6.</b></p>
-<div class="fragment"><div class="line">g:0</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d1 d2 d3 d4</div>
-<div class="line">g:1 1|4</div>
-<div class="line">##  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d3 d4</div>
-<div class="line">g:1 2|6</div>
-<div class="line">::##::</div>
-<div class="line">  ::  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d4</div>
-<div class="line">g:1 3|7</div>
-<div class="line">::  ##</div>
-<div class="line">  ::  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d1</div>
-<div class="line">g:1 4|8</div>
-<div class="line">::  ::##</div>
-<div class="line">  ::  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d1 d2</div>
-<div class="line">g:2 5|10</div>
-<div class="line">##  ::</div>
-<div class="line">  ::##::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações:</div>
-<div class="line">g:2 6|10</div>
-<div class="line">##  ::</div>
-<div class="line">  ::  ##</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d2</div>
-<div class="line">g:2 7|11</div>
-<div class="line">::##::</div>
-<div class="line">  ::  ##</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d1</div>
-<div class="line">g:2 8|12</div>
-<div class="line">::  ##</div>
-<div class="line">##::  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d4</div>
-<div class="line">g:2 9|13</div>
-<div class="line">::  ::##</div>
-<div class="line">##::  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações: d3</div>
-<div class="line">g:2 10|14</div>
-<div class="line">::  ::##</div>
-<div class="line">  ##  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações:</div>
-<div class="line">g:3 11|14</div>
-<div class="line">##  ::</div>
-<div class="line">  ::  ##</div>
-<div class="line">::##::</div>
-<div class="line">  ::  ::</div>
-<div class="line">Ações:</div>
-<div class="line">g:3 12|14</div>
-<div class="line">::##::</div>
-<div class="line">  ::  ##</div>
-<div class="line">##  ::</div>
-<div class="line">  ::  :: Solução encontrada!</div>
-<div class="line">::##::</div>
-<div class="line">  ::  ##</div>
-<div class="line">##  ::</div>
-<div class="line">  ::##::(g:4)</div>
-<div class="line"> P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=0 P8=1 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="fragment"><div class="line">Opção: 6</div>
+<div class="line"> </div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d1 d2 d3 d4 { 🔖1 🔖2 🔖3 🔖4 }</div>
+<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|4 ═══ { 🔖2 🔖3 🔖4 }</div>
+<div class="line"> │ ♛   ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d3 d4 { 🔖5 🔖6 }</div>
+<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|6 ═══ { 🔖3 🔖4 🔖5 🔖6 }</div>
+<div class="line"> │ ::♛ ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d4 { 🔖7 }</div>
+<div class="line"> ├■═╤═ 🔖3 💰 g:1 🔢 3|7 ═══ { 🔖4 🔖5 🔖6 🔖7 }</div>
+<div class="line"> │ ::  ♛</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d1 { 🔖8 }</div>
+<div class="line"> ├■═╤═ 🔖4 💰 g:1 🔢 4|8 ═══ { 🔖5 🔖6 🔖7 🔖8 }</div>
+<div class="line"> │ ::  ::♛</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d1 d2 { 🔖9 🔖10 }</div>
+<div class="line"> ├■═╤═ 🔖5 💰 g:2 🔢 5|10 ═══ { 🔖6 🔖7 🔖8 🔖9 🔖10 }</div>
+<div class="line"> │ ♛   ::</div>
+<div class="line"> │   ::♛ ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ─────</div>
+<div class="line"> ├■═╤═ 🔖6 💰 g:2 🔢 6|10 ═══ { 🔖7 🔖8 🔖9 🔖10 }</div>
+<div class="line"> │ ♛   ::</div>
+<div class="line"> │   ::  ♛</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d2 { 🔖11 }</div>
+<div class="line"> ├■═╤═ 🔖7 💰 g:2 🔢 7|11 ═══ { 🔖8 🔖9 🔖10 🔖11 }</div>
+<div class="line"> │ ::♛ ::</div>
+<div class="line"> │   ::  ♛</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d1 { 🔖12 }</div>
+<div class="line"> ├■═╤═ 🔖8 💰 g:2 🔢 8|12 ═══ { 🔖9 🔖10 🔖11 🔖12 }</div>
+<div class="line"> │ ::  ♛</div>
+<div class="line"> │ ♛ ::  ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d4 { 🔖13 }</div>
+<div class="line"> ├■═╤═ 🔖9 💰 g:2 🔢 9|13 ═══ { 🔖10 🔖11 🔖12 🔖13 }</div>
+<div class="line"> │ ::  ::♛</div>
+<div class="line"> │ ♛ ::  ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d3 { 🔖14 }</div>
+<div class="line"> ├■═╤═ 🔖10 💰 g:2 🔢 10|14 ═══ { 🔖11 🔖12 🔖13 🔖14 }</div>
+<div class="line"> │ ::  ::♛</div>
+<div class="line"> │   ♛   ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ─────</div>
+<div class="line"> ├■═╤═ 🔖11 💰 g:3 🔢 11|14 ═══ { 🔖12 🔖13 🔖14 }</div>
+<div class="line"> │ ♛   ::</div>
+<div class="line"> │   ::  ♛</div>
+<div class="line"> │ ::♛ ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ─────</div>
+<div class="line"> ├■═╤═ 🔖12 💰 g:3 🔢 12|14 ═══ { 🔖13 🔖14 }</div>
+<div class="line"> │ ::♛ ::</div>
+<div class="line"> │   ::  ♛</div>
+<div class="line"> │ ♛   ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ └─ ⚡ ───── d3 { 🔖15 }</div>
+<div class="line"> │  🎯 Solução encontrada! 💰  g:4</div>
+<div class="line"> │ ::♛ ::</div>
+<div class="line"> │   ::  ♛</div>
+<div class="line"> │ ♛   ::</div>
+<div class="line"> │   ::♛ ::</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=0 P8=1 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱  1ms  ═══</div>
 <div class="line">8 Damas</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
-<div class="line">::##::</div>
-<div class="line">  ::  ##</div>
-<div class="line">##  ::</div>
-<div class="line">  ::##::</div>
-<div class="line">I1(Custo): 4 | I2(Tempo(ms)): 39 | I3(Iterações): 0 | I4(Expansões): 13 | I5(Gerações): 15 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p> A solução foi encontrada. No entanto, o algoritmo explora todos os estados do nível 3 antes de ver o primeiro do nível 4. Neste problema, como a solução está no nível 4, acaba por não ser muito interessante esta procura. Não só este algoritmo gasta muito tempo nos níveis inferiores, a explorar completamente, como a procura em profundidade ilimitada não tem problema, já que não existem ciclos infinitos.</p>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4</div>
+<div class="line">│ P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">::♛ ::</div>
+<div class="line">  ::  ♛</div>
+<div class="line">♛   ::</div>
+<div class="line">  ::♛ ::</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 4 | I2(Tempo(ms)): 1 | I3(Iterações): 0 | I4(IND_EXPANSOES): 13 |</div>
+<div class="line">│ I5(IND_GERACOES): 15 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p> A solução foi encontrada. No entanto, o algoritmo explora todos os estados do nível 3 antes de ver o primeiro do nível 4. Neste problema, como a solução está no nível 4, acaba por não ser muito interessante esta procura. Qualquer estado no nível 4 seria uma solução, e foram expandidos todos os estados do nível 3. Não podia ser pior.</p>
+<p>Não só este algoritmo gasta muito tempo nos níveis inferiores, a explorar completamente, como a procura em profundidade ilimitada não tem problema, já que não existem ciclos infinitos.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Ação 4 - Procura em Profundidade</h2>
 <p>Vamos executar a mesma instância com a procura em profundidade ilimitada. Introduza: <b>1; 4; 3; 1; 3; 7; -1; <em>ENTER</em>; 6.</b></p>
-<div class="fragment"><div class="line">g:0</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">::  ::</div>
-<div class="line">  ::  ::</div>
-<div class="line">  +g:1 1|4 d1</div>
-<div class="line">  |  +g:2 2|6 d3</div>
-<div class="line">  |  |</div>
-<div class="line">  |  +g:2 3|6 d4</div>
-<div class="line">  |     +g:3 4|7 d2</div>
-<div class="line">  |</div>
-<div class="line">  +g:1 5|7 d2</div>
-<div class="line">  |  +g:2 6|8 d4</div>
-<div class="line">  |     +g:3 7|9 d1</div>
-<div class="line">  |        +g:4 8|10 d3</div>
-<div class="line">  |          Solução encontrada!</div>
-<div class="line">::##::</div>
-<div class="line">  ::  ##</div>
-<div class="line">##  ::</div>
-<div class="line">  ::##::(g:4)</div>
-<div class="line"> P1=3 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=-1 P8=1 P9=100 P10=0</div>
-<div class="line"> P11=0</div>
+<div class="fragment"><div class="line">Opção: 6</div>
+<div class="line"> </div>
+<div class="line">═╤═ ►  Execução iniciada ═══</div>
+<div class="line"> ├■═╤═ 💰 g:0  ═══</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │ ::  ::</div>
+<div class="line"> │   ::  ::</div>
+<div class="line"> │  ├■═╤═ 🔖1 💰 g:1 🔢 1|4 ═══ ⚡d1</div>
+<div class="line"> │  │ ♛   ::</div>
+<div class="line"> │  │   ::  ::</div>
+<div class="line"> │  │ ::  ::</div>
+<div class="line"> │  │   ::  ::</div>
+<div class="line"> │  │  ├■═╤═ 🔖5 💰 g:2 🔢 2|6 ═══ ⚡d3</div>
+<div class="line"> │  │  │ ♛   ::</div>
+<div class="line"> │  │  │   ::♛ ::</div>
+<div class="line"> │  │  │ ::  ::</div>
+<div class="line"> │  │  │   ::  ::</div>
+<div class="line"> │  │  │ 🍃</div>
+<div class="line"> │  │  └■═╤═ 🔖6 💰 g:2 🔢 3|6 ═══ ⚡d4</div>
+<div class="line"> │  │    ♛   ::</div>
+<div class="line"> │  │      ::  ♛</div>
+<div class="line"> │  │    ::  ::</div>
+<div class="line"> │  │      ::  ::</div>
+<div class="line"> │  │     └■═╤═ 🔖7 💰 g:3 🔢 4|7 ═══ ⚡d2</div>
+<div class="line"> │  │       ♛   ::</div>
+<div class="line"> │  │         ::  ♛</div>
+<div class="line"> │  │       ::♛ ::</div>
+<div class="line"> │  │         ::  ::</div>
+<div class="line"> │  │       🍃</div>
+<div class="line"> │  ├■═╤═ 🔖2 💰 g:1 🔢 5|7 ═══ ⚡d2</div>
+<div class="line"> │  │ ::♛ ::</div>
+<div class="line"> │  │   ::  ::</div>
+<div class="line"> │  │ ::  ::</div>
+<div class="line"> │  │   ::  ::</div>
+<div class="line"> │  │  └■═╤═ 🔖8 💰 g:2 🔢 6|8 ═══ ⚡d4</div>
+<div class="line"> │  │    ::♛ ::</div>
+<div class="line"> │  │      ::  ♛</div>
+<div class="line"> │  │    ::  ::</div>
+<div class="line"> │  │      ::  ::</div>
+<div class="line"> │  │     └■═╤═ 🔖9 💰 g:3 🔢 7|9 ═══ ⚡d1</div>
+<div class="line"> │  │       ::♛ ::</div>
+<div class="line"> │  │         ::  ♛</div>
+<div class="line"> │  │       ♛   ::</div>
+<div class="line"> │  │         ::  ::</div>
+<div class="line"> │  │        └■═╤═ 🔖10 💰 g:4 🔢 8|10 ═══ ⚡d3</div>
+<div class="line"> │  │          ::♛ ::</div>
+<div class="line"> │  │            ::  ♛</div>
+<div class="line"> │  │          ♛   ::</div>
+<div class="line"> │  │            ::♛ ::</div>
+<div class="line"> │  │           🎯 Solução encontrada! 💰  g:4</div>
+<div class="line"> │  │        │ ::♛ ::</div>
+<div class="line"> │  │        │   ::  ♛</div>
+<div class="line"> │  │        │ ♛   ::</div>
+<div class="line"> │  │        │   ::♛ ::</div>
+<div class="line"> │  │        │ 🎯 4 → 📈</div>
+<div class="line"> │  └─ { 🔖3 🔖4 }</div>
+<div class="line"> ├─ ⚙️  Parâmetros ─ P1=3 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=-1 P8=1 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱   ═══</div>
 <div class="line">8 Damas</div>
-<div class="line"> P1(Algoritmo): Profundidade Primeiro | P2(Debug): completo | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): -1 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0</div>
-<div class="line">::##::</div>
-<div class="line">  ::  ##</div>
-<div class="line">##  ::</div>
-<div class="line">  ::##::</div>
-<div class="line">I1(Custo): 4 | I2(Tempo(ms)): 12 | I3(Iterações): 0 | I4(Expansões): 8 | I5(Gerações): 10 |</div>
-<div class="line">I6(Lower Bound): 0</div>
-<div class="line">____________________________________________________________________</div>
-</div><!-- fragment --><p>Podemos observar que o algoritmo em profundidade fez o mesmo erro que nós fizemos, ao escolher d1. No entanto, após ver que não é possível, testa a opção de d2 e encontra a solução.</p>
-<p>Neste caso fez 8 expansões, contra 13 da procura em largura. Mas evidentemente que não será esta pequena instância que irá suportar as nossas conclusões. Temos um teste empírico na ação 6, com mais instâncias.</p>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4</div>
+<div class="line">│ P7(LIMITE): -1 | P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">::♛ ::</div>
+<div class="line">  ::  ♛</div>
+<div class="line">♛   ::</div>
+<div class="line">  ::♛ ::</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 4 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 8 |</div>
+<div class="line">│ I5(IND_GERACOES): 10 | I6(IND_LOWER_BOUND): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
+</div><!-- fragment --><p>Podemos observar que o algoritmo em profundidade fez o mesmo erro que nós fizemos, foi escolher d1 na primeira ação. No entanto, após ver que não é possível, testa a opção de d2 e encontra a solução.</p>
+<p>Notar que os nós folha, foram atingidos por não haver sucessores na posição concreta, e não por nível da árvore de procura, já que o limite foi colocado a -1, ou seja, ilimitado.</p>
+<p>No final da procura, ainda havia um ramo para analisar, com dois estados pendentes. Esses estados eram as ações d3 e d4 inicial, que são ações simétricas a d1 e d2. Como temos P8(ESTADOS_REPETIDOS): ignorar, estas ações são geradas.</p>
+<p>Neste caso houve 8 expansões na procura em profundidade, contra 13 da procura em largura. Mas evidentemente que não será esta pequena instância que irá suportar as nossas conclusões. Temos um teste empírico na ação 6, com mais instâncias.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Ação 5 - Heurística</h2>
-<p>Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações tivessem custo variável, faria sentido uma heurística para estimar o custo. Sendo o custo fixo, apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas com a abordagem construtiva.</p>
-<p>Poder-se-ia ter no entanto opções que melhorariam a abordagem construtiva. Uma das possibilidades é considerar ou não os estados repetidos. Neste problema temos 3 eixos de simetria. Significa que a mesma posição pode ao ser refletida em cada eixo, transformar-se numa das outras, num total de 8 posições simétricas. Ao anular as simetrias por normalização do estado, e remoção de repetidos, o espaço de estados reduz-se. As simetrias estão implementadas, pelo que vamos testar na próxima ação.</p>
+<p>Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações tivessem custo variável, faria sentido uma heurística para estimar o custo até ao final. Sendo o custo fixo, apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas com a abordagem construtiva.</p>
+<p>Podemos sempre considerar a hipótese de ter uma heurística ignorando a admissibilidade, apenas para guiar a procura. No entanto neste problema não é claro que heurística possa ser.</p>
+<p>Podemos ter no entanto outras opções que melhoram a abordagem construtiva. Uma das possibilidades é considerar ou não os estados repetidos. Neste problema temos 3 eixos de simetria. Significa que a mesma posição pode ao ser refletida em cada eixo, transformar-se numa das outras, num total de 8 posições simétricas. Ao anular as simetrias por normalização do estado, e remoção de repetidos, o espaço de estados reduz-se. As simetrias estão implementadas, pelo que vamos testar na próxima ação.</p>
 <p>Outra possibilidade não implementada neste código, é a verificação se há linhas/colunas vazias, que estejam totalmente atacadas. Ao colocar duas ou três damas, estas podem cobrir a totalidade das casas da última linha, e essa linha só é analisada no último nível. Esta implementação causa também mais peso, mas invalida estados antecipadamente.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Ação 6 - Testes Empíricos</h2>
 <p>Nos testes empíricos vamos passar para a interface da linha de comando, por ser mais simples.</p>
 <p>Vamos obter primeiramente a lista de todos os parâmetros.</p>
-<div class="fragment"><div class="line">C:\...\TProcura\Construtiva\Teste&gt; ../../x64/Release/TProcuraConstrutiva -h</div>
+<div class="fragment"><div class="line">/TProcura/Construtiva/Teste$ ./bin/Release/TProcuraConstrutiva -h</div>
 <div class="line"> </div>
-<div class="line">Teste TProcurasConstrutivas</div>
-<div class="line">Problema:</div>
-<div class="line">  1 - Aspirador</div>
-<div class="line">  2 - Puzzle 8</div>
-<div class="line">  3 - 8 Damas</div>
-<div class="line">  4 - Partição</div>
-<div class="line">  5 - Artificial</div>
+<div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
+<div class="line">│ 1 - Aspirador                │</div>
+<div class="line">│ 2 - Puzzle 8                 │</div>
+<div class="line">│ 3 - 8 Damas                  │</div>
+<div class="line">│ 4 - Partição                 │</div>
+<div class="line">│ 5 - Artificial               │</div>
+<div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 3</div>
-<div class="line">Uso: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe &lt;instâncias&gt; [opções]</div>
+<div class="line">Uso: ./bin/Release/TProcuraConstrutiva &lt;instâncias&gt; [opções]</div>
 <div class="line">  &lt;instâncias&gt;    Conjunto de IDs: A | A,B,C | A:B[:C]</div>
 <div class="line">Opções:</div>
 <div class="line">  -R &lt;ficheiro&gt;   Nome do CSV de resultados (omissão: resultados.csv)</div>
 <div class="line">  -F &lt;prefixo&gt;    Prefixo dos ficheiros de instância (omissão: instancia_)</div>
+<div class="line">  -M &lt;modo&gt;       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador</div>
 <div class="line">  -I &lt;ind&gt;        Lista de indicadores (e.g. 2,1,3)</div>
-<div class="line">  -S              Mostrar soluções durante a execução</div>
 <div class="line">  -h              Esta ajuda</div>
 <div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
-<div class="line">Exemplo: C:\...\TProcura\x64\Release\TProcuraConstrutiva.exe 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
+<div class="line">Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
 <div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
 <div class="line"> </div>
 <div class="line">Lista de parâmetros:</div>
-<div class="line"> P1(Algoritmo): Largura Primeiro (1 a 7)</div>
-<div class="line"> P2(Debug): nada (0 a 4)</div>
-<div class="line"> P3(Seed): 1 (1 a 1000000)</div>
-<div class="line"> P4(Tempo): 10 (1 a 3600)</div>
-<div class="line"> P5(Iterações): 0 (0 a 1000000000)</div>
-<div class="line"> P6(Ver): 4 (1 a 100)</div>
-<div class="line"> P7(Limite): 0 (-1 a 1000000)</div>
-<div class="line"> P8(Repetidos): ignorar (1 a 3)</div>
-<div class="line"> P9(pesoAStar): 100 (0 a 10000)</div>
-<div class="line"> P10(ruido): 0 (-100 a 100)</div>
-<div class="line"> P11(baralhar): 0 (0 a 1)</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO):             Largura Primeiro ( 1 a  7)</div>
+<div class="line">│ P2(NIVEL_DEBUG):           NADA       ( 0 a  4)</div>
+<div class="line">│ P3(SEMENTE):               1          ( 1 a  1000000)</div>
+<div class="line">│ P4(LIMITE_TEMPO):          10         ( 1 a  3600)</div>
+<div class="line">│ P5(LIMITE_ITERACOES):      0          ( 0 a  1000000000)</div>
+<div class="line">│ P6(VER_ACOES):             4          ( 1 a  100)</div>
+<div class="line">│ P7(LIMITE):                0          (-1 a  1000000)</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS):     ignorar    ( 1 a  3)</div>
+<div class="line">│ P11(BARALHAR_SUCESSORES):  0          ( 0 a  1)</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> </div>
 <div class="line">Lista de indicadores:</div>
-<div class="line"> </div>
-<div class="line">I1(Custo): 1º lugar (o resultado é o custo da solução atual)</div>
-<div class="line">I2(Tempo(ms)): 2º lugar (Tempo em milisegundos da execução (medida de esforço computacional).)</div>
-<div class="line">I3(Iterações): 3º lugar (Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).)</div>
-<div class="line">I4(Expansões): 4º lugar (número de expansões efetuadas)</div>
-<div class="line">I5(Gerações): 5º lugar (número de estados gerados)</div>
-<div class="line">I6(Lower Bound): 6º lugar (valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima)</div>
-</div><!-- fragment --><p>Num primeiro teste pretendemos comparar a procura em largura com a procura em profundidade ilimitada, e respetivas versões com eliminação de estados repetidos. Colocamos o P7=-1 para a procura em profundidade ilimitada, não afetando a procura em largura.</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 4:13 -R resultado8Damas -P P7=-1 P1=1,3 x P8=1,3</div>
+<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): ✔  1º lugar</div>
+<div class="line">│ o resultado é o custo da solução atual</div>
+<div class="line">│ I2(Tempo(ms)): ✔  2º lugar</div>
+<div class="line">│ Tempo em milisegundos da execução (medida de esforço computacional).</div>
+<div class="line">│ I3(Iterações): ✔  3º lugar</div>
+<div class="line">│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</div>
+<div class="line">│ I4(IND_EXPANSOES): ✔  4º lugar</div>
+<div class="line">│ número de expansões efetuadas</div>
+<div class="line">│ I5(IND_GERACOES): ✔  5º lugar</div>
+<div class="line">│ número de estados gerados</div>
+<div class="line">│ I6(IND_LOWER_BOUND): ✔  6º lugar</div>
+<div class="line">│ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+</div><!-- fragment --><p>Num primeiro teste pretendemos comparar a procura em largura com a procura em profundidade ilimitada, e respetivas versões com eliminação de estados repetidos. Colocamos o P7=-1 para a procura em profundidade ilimitada, não afetando a procura em largura. Colocamos debug nível 3.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 4:13 -R Resultados/8Damast1 -P P2=3 P7=-1 P1=1,3 x P8=1,3</div>
 <div class="line">...</div>
 <div class="line">Opção: 3</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultado8Damas.csv gravado.</div>
-</div><!-- fragment --><p> Soma de I2(Tempo(ms)): </p><table class="markdownTable">
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P2=3 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P1=1 P8=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P1=3 P8=1</div>
+<div class="line"> ├─ ⚙️ [3] ─ P1=1 P8=3</div>
+<div class="line"> ├─ ⚙️ [4] ─ P1=3 P8=3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:40   ↻ Instâncias: 10   🛠️ Configurações: 4   🖥️ Processos: 1.</div>
+<div class="line">HT: utilização 89%, reuso: 2.57 vezes</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/8Damast1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 8&quot; 534ms</div>
+<div class="line"> │  ⏱  CPU total: 8&quot; 534ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  8&quot; 534ms ) ═══</div>
+</div><!-- fragment --><p>As 40 tarefas foram realizadas em menos de 10 segundos.</p>
+<p>Soma de I2(Tempo(ms)): </p><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:Largura Primeiro<br  />
  1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">3:Profundidade Primeiro <br  />
 1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">56   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">5    </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">39   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">80   </td><td class="markdownTableBodyRight">182   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">85   </td><td class="markdownTableBodyRight">171   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">447   </td><td class="markdownTableBodyRight">901   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">485   </td><td class="markdownTableBodyRight">685   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">2417   </td><td class="markdownTableBodyRight">5171   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">2984   </td><td class="markdownTableBodyRight">3829   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">2964   </td><td class="markdownTableBodyRight">6358   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">41   </td></tr>
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">3581   </td><td class="markdownTableBodyRight">4757   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">23   </td></tr>
 </table>
-<p>Podemos ver a clara superioridade da procura em profundidade ilimitada. Todas as instâncias são resolvidas, mas em termos de tempo, a última leva 2 e 5 segundos pela procura em largura, e 0 segundos na procura em profundidade.</p>
+<p>Podemos ver a clara superioridade da procura em profundidade ilimitada. Todas as instâncias são resolvidas, mas em termos de tempo, a última leva 2 e 4 segundos pela procura em largura, e 0 segundos na procura em profundidade.</p>
 <p>Soma de I4(Expansões): </p><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:Largura Primeiro<br  />
@@ -461,74 +565,82 @@ Ação 6 - Testes Empíricos</h2>
 <p>Em termos de expansões, o máximo da procura em profundidade é algumas centenas, enquanto que a procur em largura tem na instância maior mais de um milhão de expansões. A remoção de estados gerados repetidos, podemos observar na procura em largura que reduz em metade o número de expansões, mas duplica o tempo.</p>
 <p>Não é possível com estas instâncias, observar diferença para a procura em profundidade.</p>
 <p>Vamos retirar as duas primeiras configurações do teste, para poder executar instâncias maiores.</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 14:23 -R resultado8DamasB -P P7=-1 P1=3 P8=1,3</div>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 14:23 -R Resultados/8Damast2 -P P2=3 P7=-1 P1=3 P8=1,3</div>
 <div class="line">...</div>
 <div class="line">Opção: 3</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultado8DamasB.csv gravado.</div>
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P1=3 P2=3 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P8=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P8=3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:20   ↻ Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 1.</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados/8Damast2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 3&quot; 957ms</div>
+<div class="line"> │  ⏱  CPU total: 3&quot; 957ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  3&quot; 957ms ) ═══</div>
 </div><!-- fragment --><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Soma de I2(Tempo(ms))<br  />
 1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">Soma de I4(Expansões)<br  />
 1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">19   </td><td class="markdownTableBodyRight">1899   </td><td class="markdownTableBodyRight">1899    </td></tr>
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">1899   </td><td class="markdownTableBodyRight">1899    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">1359   </td><td class="markdownTableBodyRight">1359    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">10052   </td><td class="markdownTableBodyRight">2850    </td></tr>
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">10052   </td><td class="markdownTableBodyRight">2850    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">19   </td><td class="markdownTableBodyRight">5374   </td><td class="markdownTableBodyRight">5206    </td></tr>
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">28   </td><td class="markdownTableBodyRight">5374   </td><td class="markdownTableBodyRight">5206    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">105   </td><td class="markdownTableBodyRight">41299   </td><td class="markdownTableBodyRight">28605    </td></tr>
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">82   </td><td class="markdownTableBodyRight">41299   </td><td class="markdownTableBodyRight">28605    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">2545   </td><td class="markdownTableBodyRight">4656    </td></tr>
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">2545   </td><td class="markdownTableBodyRight">4656    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">131   </td><td class="markdownTableBodyRight">410   </td><td class="markdownTableBodyRight">199635   </td><td class="markdownTableBodyRight">112596    </td></tr>
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">136   </td><td class="markdownTableBodyRight">290   </td><td class="markdownTableBodyRight">199635   </td><td class="markdownTableBodyRight">112596    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">98   </td><td class="markdownTableBodyRight">8562   </td><td class="markdownTableBodyRight">20208    </td></tr>
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">52   </td><td class="markdownTableBodyRight">8562   </td><td class="markdownTableBodyRight">20208    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">1070   </td><td class="markdownTableBodyRight">1812   </td><td class="markdownTableBodyRight">1737188   </td><td class="markdownTableBodyRight">425154    </td></tr>
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">1285   </td><td class="markdownTableBodyRight">1172   </td><td class="markdownTableBodyRight">1737188   </td><td class="markdownTableBodyRight">425154    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">19   </td><td class="markdownTableBodyRight">1137   </td><td class="markdownTableBodyRight">25428   </td><td class="markdownTableBodyRight">250250    </td></tr>
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">802   </td><td class="markdownTableBodyRight">25428   </td><td class="markdownTableBodyRight">250250    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">1260   </td><td class="markdownTableBodyRight">3647   </td><td class="markdownTableBodyRight">2033341   </td><td class="markdownTableBodyRight">852783   </td></tr>
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">1485   </td><td class="markdownTableBodyRight">2471   </td><td class="markdownTableBodyRight">2033341   </td><td class="markdownTableBodyRight">852783   </td></tr>
 </table>
-<p>Podemos ver que o tempo continua menor se não se eliminarem os estados repetidos, mesmo na instância mais complexa, a 22, que levou 1 segundo, enquanto que com eliminação de repetidos foi 1,8 segundos. No entanto, para essa instância o número de expansões foi de 1737188 ignorando repetidos, e de 425154 eliminando repetidos. Confirma-se que neste problema, e também para o algoritmo em profundidade, a eliminação de repetidos reduz o número de expansões, mas aumenta o tempo, pelo que não é compensador.</p>
+<p>Podemos ver que o tempo continua menor se não se eliminarem os estados repetidos. Na instância mais complexa, a 22, que levou 1.28 segundos, enquanto que com eliminação de repetidos foi 1,17 segundos. No entanto, para essa instância o número de expansões foi de 1737188 ignorando repetidos, e de 425154 eliminando repetidos. Em outras instâncias o tempo aparenta subir mais com os estados gerados, e só por sorte pode haver um resultado mais curto.</p>
+<p>Confirma-se que neste problema, e também para o algoritmo em profundidade, a eliminação de repetidos reduz o número de expansões, mas aumenta o tempo, não sendo compensador neste caso.</p>
 <p>As instâncias pares aparentam ser mais complexas que as ímpares.</p>
 <p>Qual é afinal a maior instância que se consegue resolver? </p><details >
 <summary >
 Resposta:</summary>
-<p>Vamos usar apenas as instâncias pares, e até ao limite de 40, que é o que temos implementado. Utilizamos apenas a procura em profundidade ilimitada, sem eliminação de repetidos. </p><div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 24:40:2 -R resultado8DamasC -P P7=-1 P1=3 P8=1</div>
+<p>Vamos usar apenas as instâncias pares, e até ao limite de 40, que é o que temos implementado. Utilizamos apenas a procura em profundidade ilimitada, sem eliminação de repetidos. Vamos colcoar o debug a 4, já que são poucas tarefas.</p>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraConstrutiva 24:40:2 -R Resultados/8Damast3 -P P2=4 P7=-1 P1=3 P8=1</div>
 <div class="line">...</div>
 <div class="line">Opção: 3</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultado8DamasC.csv gravado.</div>
-</div><!-- fragment --><table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Soma de I1(Custo)   </th><th class="markdownTableHeadRight">Soma de I2(Tempo(ms))   </th><th class="markdownTableHeadRight">Soma de I4(Expansões)    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">309   </td><td class="markdownTableBodyRight">411608    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">26   </td><td class="markdownTableBodyRight">323   </td><td class="markdownTableBodyRight">397699    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">28   </td><td class="markdownTableBodyRight">2537   </td><td class="markdownTableBodyRight">3006298    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10677294    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">9980585    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">34   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">9346319    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">36   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">8628941    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">38   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">7673544    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">-2   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">7353868    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">66   </td><td class="markdownTableBodyRight">63175   </td><td class="markdownTableBodyRight">57476156   </td></tr>
-</table>
-<p>Consegue-se resolver até à instância 28, em 2 segundos. Nas instâncias 30 a 40, não se consegue encontrar solução no limite de 10 segundos.</p>
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P1=3 P2=4 P3=1 P4=10 P5=0 P6=4 P7=-1 P8=1 P11=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:9   ↻ Instâncias: 9   🛠️ Configurações: 1   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱                 📋 0     ↻ 24    🛠️ 0     🖥️ 1    🎯 24   ⚖  24 347 0 411608 411755 0</div>
+<div class="line"> ├─ ⏱ 347ms           📋 1     ↻ 26    🛠️ 0     🖥️ 1    🎯 26   ⚖  26 357 0 397699 397880 0</div>
+<div class="line"> ├─ ⏱ 704ms           📋 2     ↻ 28    🛠️ 0     🖥️ 1    🎯 28   ⚖  28 2787 0 3006298 3006508 0</div>
+<div class="line"> ├─ ⏱ 3&quot; 491ms        📋 3     ↻ 30    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 10051598 10051835 0</div>
+<div class="line"> ├─ ⏱ 13&quot; 491ms       📋 4     ↻ 32    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 9262352 9262634 0</div>
+<div class="line"> ├─ ⏱ 23&quot; 491ms       📋 5     ↻ 34    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 8661432 8661748 0</div>
+<div class="line"> ├─ ⏱ 33&quot; 491ms       📋 6     ↻ 36    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 8136140 8136498 0</div>
+<div class="line"> ├─ ⏱ 43&quot; 492ms       📋 7     ↻ 38    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 7619227 7619631 0</div>
+<div class="line"> ├─ ⏱ 53&quot; 492ms       📋 8     ↻ 40    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 7123911 7124371 0</div>
+<div class="line"> ├─ 📄  Ficheiro Resultados8Damast3.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 1&#39; 3&quot; 493ms</div>
+<div class="line"> │  ⏱  CPU total: 1&#39; 3&quot; 493ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  1&#39; 3&quot; 493ms ) ═══</div>
+</div><!-- fragment --><p>Podemos ver logo nos logs do teste que consegue-se resolver até à instância 28 em 2,7 segundos. Nas instâncias 30 a 40, não se consegue encontrar solução no limite de 10 segundos.</p>
 <p></p>
 </details>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>

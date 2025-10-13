@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"classes.html":[2,1],
+"compact_8h.html":[3,0,5],
 "compact_8h.html#a00b22acc72899dbcb64f43ad8ec8b41d":[3,0,5,1],
 "compact_8h.html#a2cc00022a29bc0fc08165228956a10f5":[3,0,5,0],
 "compact_8h.html#a342aea1a38c4383aedcc7fea5e68048a":[3,0,5,3],
@@ -18,8 +20,8 @@ var NAVTREEINDEX3 =
 "dir_dd90f41686238f35fbbf3adb743ef1d9.html":[3,0,0,0,0],
 "dir_deb139ba7ed6141b09c371acd5d7861d.html":[3,0,1,0],
 "files.html":[3,0],
-"functions.html":[2,3,0],
 "functions.html":[2,3,0,0],
+"functions.html":[2,3,0],
 "functions_b.html":[2,3,0,1],
 "functions_c.html":[2,3,0,2],
 "functions_d.html":[2,3,0,3],
