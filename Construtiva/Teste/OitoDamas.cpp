@@ -14,7 +14,7 @@ COitoDamas::~COitoDamas(void)
 TProcuraConstrutiva* COitoDamas::Duplicar(void)
 {
 	COitoDamas* clone = new COitoDamas;
-	if(clone!=NULL)
+	if (clone != NULL)
 		clone->damas = damas;
 	else
 		memoriaEsgotada = true;
@@ -22,11 +22,11 @@ TProcuraConstrutiva* COitoDamas::Duplicar(void)
 }
 
 void COitoDamas::Inicializar(void)
-{ 
-	damas = {}; 
+{
+	damas = {};
 	nDamas = instancia.valor;
 	// 4 bits por dama, com 40 damas no máximo dá 3 inteiros de 64 bits
-	tamanhoCodificado = (nDamas - 1) * 4 / 64 + 1; 
+	tamanhoCodificado = (nDamas - 1) * 4 / 64 + 1;
 	TProcuraConstrutiva::Inicializar();
 }
 
@@ -36,7 +36,7 @@ void COitoDamas::ResetParametros()
 	instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
 }
 
-void COitoDamas::Sucessores(TVector<TNo>&sucessores)
+void COitoDamas::Sucessores(TVector<TNo>& sucessores)
 {
 	int novaLinha = damas.Count();
 	// tentar colocar damas em todas as colunas
@@ -69,16 +69,22 @@ const char* COitoDamas::Acao(TProcuraConstrutiva* sucessor) {
 
 void COitoDamas::Debug(bool completo)
 {
+	if (!completo) {
+		NovaLinha();
+		for (auto dama : damas)
+			printf("d%d ", dama);
+		return;
+	}
 	for (int i = 0; i < nDamas; i++) {
 		NovaLinha();
 		for (int j = 0; j < nDamas; j++) {
-			int cor = ((i + j) % 2 ? ' ' : ':');
 			if (damas.Count() > i && damas[i] == j)
-				printf("%c%c", '#', '#');
-			else 
-				printf("%c%c", cor, cor);
+				printf("%2s", "♛ "); //"♛ ");
+			else
+				printf("%s", ((i + j) % 2 ? "  " : "::")); // "▒▒" "::" "░░"
 		}
 	}
+
 }
 
 

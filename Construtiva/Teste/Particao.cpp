@@ -26,10 +26,10 @@ void CParticao::Inicializar(void)
 	totalDireita = totalEsquerda = 0;
 
 	// gerar uma instancia provavelmente possivel
-	int soma1, soma2;
+	int64_t soma1, soma2;
 	soma1 = soma2 = 0;
 	for (int i = 0; i < instancia.valor; i++) {
-		numeros += (TRand::rand() % (3 * instancia.valor));
+		numeros += (TRand::rand() % (10 * instancia.valor * instancia.valor));
 		if (soma1 < soma2)
 			soma1 += numeros.Last();
 		else soma2 += numeros.Last();
@@ -42,13 +42,13 @@ void CParticao::Inicializar(void)
 	//	numeros += abs(soma1 - soma2);
 	numeros -= 0;
 	numeros.Sort();
-	tamanhoCodificado = 2; // apenas dois inteiro de 64 bits, para colocar 3 inteiros de 32 bits
+	tamanhoCodificado = 3; // apenas três inteiro de 64 bits, para colocar 3 inteiros de 64 bits
 	TProcuraConstrutiva::Inicializar();
 }
 
 void CParticao::Sucessores(TVector<TNo>& sucessores)
 {
-	int faltaDistribuir = 0;
+	int64_t faltaDistribuir = 0;
 	for (int i = 0; i < numeros.Count(); i++)
 		faltaDistribuir += numeros[i];
 	if (faltaDistribuir < abs(totalEsquerda - totalDireita)) { // ja nao ha hipotese
@@ -84,10 +84,11 @@ const char* CParticao::Acao(TProcuraConstrutiva* sucessor) {
 void CParticao::Debug(bool completo)
 {
 	char str[256];
-	int i, col, total = 0;
+	int i, col;
+	int64_t total=0;
 	for (auto numero : numeros)
 		total += numero;
-	snprintf(str, sizeof(str), "📦%d → ◀️%d = ▶️%d",
+	snprintf(str, sizeof(str), "📦%" PRId64 " → ◀️%" PRId64 " = ▶️%" PRId64,
 		total, totalEsquerda, totalDireita);
 	NovaLinha();
 	// apenas no modo completo mostra tudo
@@ -137,7 +138,7 @@ void CParticao::Debug(bool completo)
 // método para lidar com estados repetidos
 void CParticao::Codifica(uint64_t estado[OBJETO_HASHTABLE])
 {
-	int valorMaior, valorMenor, porColocar;
+	int64_t valorMaior, valorMenor, porColocar;
 	// como a ordem é fixa, um estado fica definido por:
 	// - números que faltam colocar
 	// - valor atual num lado, o menor
@@ -152,7 +153,7 @@ void CParticao::Codifica(uint64_t estado[OBJETO_HASHTABLE])
 	porColocar = numeros.Count();
 	estado[0] = porColocar;
 	estado[1] = valorMaior;
-	estado[1] |= (uint64_t)valorMenor << 32;
+	estado[2] = valorMenor;
 }
 
 void CParticao::ResetParametros()

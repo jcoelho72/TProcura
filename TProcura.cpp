@@ -723,6 +723,12 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	int backupID = instancia.valor;
 	int nTarefa = 0;
 	double periodoReporte = 60;
+	ConfiguracaoAtual(atual, LER);
+	if (configuracoes.Empty()) {
+		// não foram feitas configurações, utilizar a atual
+		configuracoes.Count(1);
+		configuracoes.Last() = atual;
+	}
 	if (mpiID == 0)
 		MostrarConfiguracoes(0);
 	printf("\n═╤═ 🧪  Início do Teste (🖥️ %d) ═══", mpiID);
@@ -737,12 +743,6 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
 	instancias -= (-1);
-	ConfiguracaoAtual(atual, LER);
-	if (configuracoes.Empty()) {
-		// não foram feitas configurações, utilizar a atual
-		configuracoes.Count(1);
-		configuracoes.Last() = atual;
-	}
 	if (mpiID == 0)
 		Debug(ATIVIDADE, false,
 			"\n ├─ 📋 Tarefas:%d   ↻ Instâncias: %d   🛠️ Configurações: %d   🖥️ Processos: %d.",
@@ -768,7 +768,6 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 					fflush(stdout);
 				Cronometro(CONT_REPORTE, true);
 			}
-
 			ExecutaTarefa(resultados, inst, configuracao);
 		}
 	}
