@@ -105,6 +105,15 @@ digraph "TProcuraConstrutiva::NovaLinha"
   Node1 -> Node33 [id="edge66_Node000001_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node33 [id="Node000033",label="TProcuraConstrutiva\l::DebugSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a08aa14ddc895426b2ce3df4d763cbbd7",tooltip=" "];
   Node33 -> Node14 [id="edge67_Node000033_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node17 [id="edge68_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node21 [id="edge69_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node34 [id="edge68_Node000001_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node34 [id="Node000034",label="TProcuraConstrutiva\l::LimparHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c",tooltip=" "];
+  Node34 -> Node18 [id="edge69_Node000034_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node34 -> Node15 [id="edge70_Node000034_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node34 -> Node35 [id="edge71_Node000034_Node000035",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node35 [id="Node000035",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node35 -> Node14 [id="edge72_Node000035_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node35 -> Node19 [id="edge73_Node000035_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node34 -> Node22 [id="edge74_Node000034_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node17 [id="edge75_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node21 [id="edge76_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
