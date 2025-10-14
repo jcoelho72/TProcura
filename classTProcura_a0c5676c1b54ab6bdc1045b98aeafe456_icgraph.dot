@@ -159,7 +159,7 @@ digraph "TProcura::Debug"
   Node61 [id="Node000061",label="TProcuraMelhorativa\l::SelecionarSobreviventesAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a083b961ed7ed1483625559d068755a7f",tooltip=" "];
   Node61 -> Node4 [id="edge105_Node000061_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node18 [id="edge106_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
+  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node1 -> Node51 [id="edge107_Node000001_Node000051",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node62 [id="edge108_Node000001_Node000062",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node62 [id="Node000062",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#afd7217164b5ffce15f1949138f469fdb",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];

@@ -44,5 +44,5 @@ digraph "TProcuraConstrutiva::Copiar"
   Node16 -> Node13 [id="edge21_Node000016_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 -> Node16 [id="edge22_Node000016_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node17 [id="edge23_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
+  Node17 [id="Node000017",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
 }

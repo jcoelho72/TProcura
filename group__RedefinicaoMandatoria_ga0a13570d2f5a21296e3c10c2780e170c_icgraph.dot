@@ -34,7 +34,7 @@ digraph "TProcuraConstrutiva::Sucessores"
   Node10 -> Node11 [id="edge17_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parametros atuais."];
   Node11 -> Node12 [id="edge18_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
+  Node12 [id="Node000012",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node10 -> Node13 [id="edge19_Node000010_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraAdversa::MetodoIterativo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a7c4153974c32753901326271fee90197",tooltip="iteração, aumentando o nível progressivamente"];
   Node13 -> Node10 [id="edge20_Node000013_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];

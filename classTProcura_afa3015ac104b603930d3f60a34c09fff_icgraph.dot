@@ -68,7 +68,7 @@ digraph "TProcura::TempoExcedido"
   Node25 -> Node26 [id="edge36_Node000025_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node26 [id="Node000026",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parametros atuais."];
   Node26 -> Node27 [id="edge37_Node000026_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
+  Node27 [id="Node000027",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node25 -> Node24 [id="edge38_Node000025_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node28 [id="edge39_Node000024_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="TProcuraAdversa::MiniMax\lAlfaBeta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb3f857b1c8b3ee26682e335dc6ed601",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel. Idêntico a MiniMax"];

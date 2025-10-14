@@ -113,7 +113,7 @@ digraph "TRand::srand"
   Node63 [id="Node000063",label="CProblemaArtificial\l::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#a8ecd3995c8ce751d5da10cc20709175c",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node1 -> Node63 [id="edge58_Node000001_Node000063",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node28 [id="edge59_Node000001_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node28 [id="Node000028",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
+  Node28 [id="Node000028",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node1 -> Node3 [id="edge60_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge61_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

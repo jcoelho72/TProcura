@@ -68,7 +68,7 @@ digraph "compat::ContaUTF8"
   Node26 [id="Node000026",label="TProcura::MostrarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3332047124784be2fc7af575a5f7f8b5",tooltip="Mostra as configurações disponíveis."];
   Node26 -> Node19 [id="edge36_Node000026_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node26 -> Node27 [id="edge37_Node000026_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
+  Node27 [id="Node000027",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node26 -> Node28 [id="edge38_Node000026_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node28 -> Node6 [id="edge39_Node000028_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];

@@ -45,7 +45,7 @@ digraph "TProcura::Inicializar"
   Node12 -> Node19 [id="edge20_Node000012_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
   Node12 -> Node20 [id="edge21_Node000012_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
+  Node20 [id="Node000020",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node1 -> Node3 [id="edge22_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge23_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

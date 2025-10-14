@@ -63,7 +63,7 @@ digraph "TProcura::MostraCaixa"
   Node24 [id="Node000024",label="TProcura::MostrarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3332047124784be2fc7af575a5f7f8b5",tooltip="Mostra as configurações disponíveis."];
   Node24 -> Node7 [id="edge33_Node000024_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node25 [id="edge34_Node000024_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node25 [id="Node000025",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8",tooltip=" "];
+  Node25 [id="Node000025",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node24 -> Node26 [id="edge35_Node000024_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node26 [id="Node000026",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node26 -> Node9 [id="edge36_Node000026_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];

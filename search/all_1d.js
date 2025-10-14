@@ -44,7 +44,7 @@ var searchData=
   ['testeartificial_2emd_41',['TesteArtificial.md',['../TesteArtificial_8md.html',1,'']]],
   ['testeaspirador1_2emd_42',['TesteAspirador1.md',['../TesteAspirador1_8md.html',1,'']]],
   ['testeaspirador2_2emd_43',['TesteAspirador2.md',['../TesteAspirador2_8md.html',1,'']]],
-  ['testeempirico_44',['testeempirico',['../classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8',1,'TProcuraAdversa::TesteEmpirico()'],['../classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336',1,'TProcura::TesteEmpirico(TVector&lt; int &gt; instancias, char *ficheiro=NULL)']]],
+  ['testeempirico_44',['testeempirico',['../classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb',1,'TProcuraAdversa::TesteEmpirico()'],['../classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336',1,'TProcura::TesteEmpirico(TVector&lt; int &gt; instancias, char *ficheiro=NULL)']]],
   ['testeempiricogestor_45',['TesteEmpiricoGestor',['../classTProcura.html#afd7217164b5ffce15f1949138f469fdb',1,'TProcura']]],
   ['testeempiricotrabalhador_46',['TesteEmpiricoTrabalhador',['../classTProcura.html#a1b444fbb9aa1d6bf3df277df3f289587',1,'TProcura']]],
   ['testejogodogalo_2emd_47',['TesteJogoDoGalo.md',['../TesteJogoDoGalo_8md.html',1,'']]],

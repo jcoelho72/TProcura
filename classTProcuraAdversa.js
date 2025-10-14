@@ -18,7 +18,7 @@ var classTProcuraAdversa =
     [ "ResetParametros", "classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1", null ],
     [ "SubstituirHT", "classTProcuraAdversa.html#ab13f514d86e599dc15a682e6a6199987", null ],
     [ "Sucessores", "classTProcuraAdversa.html#a6870779a8413eb398f9037514f8936aa", null ],
-    [ "TesteEmpirico", "classTProcuraAdversa.html#a4b4a40d5c7e79fba24bc562d6e934fd8", null ],
+    [ "TesteEmpirico", "classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb", null ],
     [ "Utilizavel", "classTProcuraAdversa.html#ac419ad4d242b6789e5ed03431f0cbc4a", null ],
     [ "ValorEstado", "classTProcuraAdversa.html#a9c95c246b28345f0d515a9083ffd646d", null ],
     [ "indiceHT", "classTProcuraAdversa.html#a04c82c175bea1a911cdb5077d2ec1c02", null ],

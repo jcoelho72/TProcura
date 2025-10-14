@@ -2449,61 +2449,75 @@ Ação 6 - Testes Empíricos</h2>
 <p>O único parametro que faz diferença, atendendo a que os tempos de execução são muito rápidos, é a profundidade da procura. Vamos colocar em competição várias configurações a diferentes profundidades, e pretendemos conseguir observar maior desempenho nas procuras de maior profundidade.</p>
 <p>Temos também de ter o cuidado de desligar a utilização das hashtables, para observer sem perturbações o ganho da profundidade.</p>
 <p>Introduza:</p><ul>
-<li><b>1; 7; P1=1 P12=0 P7=20,7,5,3; -1; <em>ENTER</em>.</b></li>
+<li><b>1; 7; P1=1 P2=4 P12=0 P7=20,7,5,3; -1; <em>ENTER</em>.</b></li>
 </ul>
 <p>Apagamos a configuração 1 dado que tinha o valor de omissão P7=0.</p>
-<div class="fragment"><div class="line">...</div>
-<div class="line">Comando: P1=1 P12=0 P7=20,7,5,3</div>
+<div class="fragment"><div class="line">Opção: 7</div>
 <div class="line"> </div>
-<div class="line">Parâmetros comuns:</div>
-<div class="line"> P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0</div>
-<div class="line"> P12=0 P13=0 P14=0</div>
-<div class="line">- Configurações geradas (total: 5) -</div>
-<div class="line"> P7=0 [1] --- atual</div>
-<div class="line"> P7=3 [2]</div>
-<div class="line"> P7=5 [3]</div>
-<div class="line"> P7=7 [4]</div>
-<div class="line"> P7=20 [5]</div>
+<div class="line"> ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=0 P8=1 P11=0 P12=2 P13=0 P14=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─  ⭐ atual</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────</div>
+<div class="line">│    id / -id - Seleciona configuração como atual ou apaga &#39;id&#39;</div>
+<div class="line">│    Pk = &lt;conj.&gt; - Varia Pk na configuração atual (gera N configs)</div>
+<div class="line">│    Pk = &lt;conj.&gt; x Pw = &lt;conj.&gt; - produto externo (gera NxM configs)</div>
+<div class="line">│  Sintaxe de &lt;conj.&gt; : A,B,C | A:B | A:B:C</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">✏️ Comando: P1=1 P2=4 P12=0 P7=20,7,5,3</div>
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P7=0 ⭐ atual</div>
+<div class="line"> ├─ ⚙️ [2] ─ P7=3</div>
+<div class="line"> ├─ ⚙️ [3] ─ P7=5</div>
+<div class="line"> ├─ ⚙️ [4] ─ P7=7</div>
+<div class="line"> ├─ ⚙️ [5] ─ P7=20</div>
+<div class="line">═╧═══════════════════</div>
 <div class="line">...</div>
-<div class="line">Comando: -1</div>
+<div class="line">✏️ Comando: -1</div>
 <div class="line"> </div>
-<div class="line">Parâmetros comuns:</div>
-<div class="line"> P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0</div>
-<div class="line"> P12=0 P13=0 P14=0</div>
-<div class="line">- Configurações geradas (total: 4) -</div>
-<div class="line"> P7=3 [1] --- atual</div>
-<div class="line"> P7=5 [2]</div>
-<div class="line"> P7=7 [3]</div>
-<div class="line"> P7=20 [4]</div>
-<div class="line"> ...</div>
+<div class="line"> ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P7=3 ⭐ atual</div>
+<div class="line"> ├─ ⚙️ [2] ─ P7=5</div>
+<div class="line"> ├─ ⚙️ [3] ─ P7=7</div>
+<div class="line"> ├─ ⚙️ [4] ─ P7=20</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">...</div>
 </div><!-- fragment --><p>Temos 4 configurações. Como a procura é adversa, é necessário duas configurações, ou seja, jogos entre configurações para avaliar. Assim, em vez da tabela com desempenho individual, há jogos entre todas as configurações, e reportado apenas a tabela de torneio final.</p>
-<p>Podemos ainda ver as soluções, que aqui equivale a observar os jogos. Como são 4 configurações, haverá grande quantidade de jogos, de todos contra todos e de ambas as cores. Por outro lado os jogos são muito rápidos. Assim, não vamos querer ver os jogos. Se existissem vários tabuleiros iniciais, ou vários tamanhos, ou seja, instâncias de jogo, podiamos indicar as instâncias a serem utilizadas.</p>
-<p>Introduza: <b>8; 1; <em>ENTER</em>; 0.</b></p>
-<div class="fragment"><div class="line">Match 1 vs 2:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Match 1 vs 3:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Match 1 vs 4:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Match 2 vs 1:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
-<div class="line">Match 2 vs 3:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Match 2 vs 4:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Match 3 vs 1:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
-<div class="line">Match 3 vs 2:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
-<div class="line">Match 3 vs 4:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Match 4 vs 1:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
-<div class="line">Match 4 vs 2:</div>
-<div class="line"> Instância 1:  Vitória Branca</div>
-<div class="line">Match 4 vs 3:</div>
-<div class="line"> Instância 1:  Empate</div>
-<div class="line">Torneio (#instâncias melhores):</div>
+<p>Podemos ainda ver as soluções, que aqui equivale a observar os jogos. Como são 4 configurações haverá grande quantidade de jogos, de todos contra todos e de ambas as cores. Por outro lado os jogos são muito rápidos. Assim, não vamos querer ver os jogos. Se existissem vários tabuleiros iniciais, ou vários tamanhos, ou seja, instâncias de jogo, podiamos indicar as instâncias a serem utilizadas.</p>
+<p>Introduza: <b>8; 1; <em>ENTER</em>.</b></p>
+<div class="fragment"><div class="line">Opção: 8</div>
+<div class="line"> </div>
+<div class="line">┌─ 📖 Sintaxe comando ────────────────────</div>
+<div class="line">│  Instâncias: A,B,C | A:B | A : B : C</div>
+<div class="line">└────────────────────────────────────────</div>
+<div class="line">✏️ IDs das instâncias (1 a 1): 1</div>
+<div class="line">📄  Ficheiro resultados (nada para mostrar no ecrã):</div>
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P7=3</div>
+<div class="line"> ├─ ⚙️ [2] ─ P7=5</div>
+<div class="line"> ├─ ⚙️ [3] ─ P7=7</div>
+<div class="line"> ├─ ⚙️ [4] ─ P7=20</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:12   ↻ Instâncias: 1   🛠️ Configurações: 4   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱                 📋 0     ↻ 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3 🟰</div>
+<div class="line"> ├─ ⏱ 1ms             📋 1     ↻ 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰</div>
+<div class="line"> ├─ ⏱ 6ms             📋 2     ↻ 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰</div>
+<div class="line"> ├─ ⏱ 23ms            📋 3     ↻ 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ⚪</div>
+<div class="line"> ├─ ⏱ 24ms            📋 4     ↻ 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰</div>
+<div class="line"> ├─ ⏱ 29ms            📋 5     ↻ 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰</div>
+<div class="line"> ├─ ⏱ 42ms            📋 6     ↻ 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ⚪</div>
+<div class="line"> ├─ ⏱ 60ms            📋 7     ↻ 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ⚪</div>
+<div class="line"> ├─ ⏱ 76ms            📋 8     ↻ 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰</div>
+<div class="line"> ├─ ⏱ 106ms           📋 9     ↻ 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ⚪</div>
+<div class="line"> ├─ ⏱ 235ms           📋 10    ↻ 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ⚪</div>
+<div class="line"> ├─ ⏱ 358ms           📋 11    ↻ 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰</div>
+<div class="line">🏆  Torneio (#instâncias melhores):</div>
 <div class="line"> |-01-|-02-|-03-|-04-|</div>
 <div class="line"> 1    |  0 |  0 |  0 | -3</div>
 <div class="line"> |----|----|----|----|</div>
@@ -2513,30 +2527,45 @@ Ação 6 - Testes Empíricos</h2>
 <div class="line"> |----|----|----|----|</div>
 <div class="line"> 4  1 |  1 |  0 |    |  2</div>
 <div class="line"> |----|----|----|----|</div>
-<div class="line">Tempos: 0,000s 0,006s 0,060s 0,344s</div>
-<div class="line">Parâmetros comuns:</div>
-<div class="line"> P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0 | P11(baralhar): 0</div>
-<div class="line"> P12(Ordenar): 0 | P13(PodaHeuristica): 0 | P14(PodaCega): 0</div>
-<div class="line">- Configurações geradas (total: 4) -</div>
-<div class="line"> P7(Limite): 3 [1]</div>
-<div class="line"> P7(Limite): 5 [2]</div>
-<div class="line"> P7(Limite): 7 [3]</div>
-<div class="line"> P7(Limite): 20 [4]</div>
-<div class="line"> </div>
+<div class="line"> │ Tempos: 0.000s 0.005s 0.063s 0.412s</div>
+<div class="line">┌─ 🛠️  ────────────────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10</div>
+<div class="line">│ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P8(ESTADOS_REPETIDOS): ignorar</div>
+<div class="line">│ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0</div>
+<div class="line">│ P14(PODA_CEGA): 0</div>
+<div class="line">└────────────────────────────────────────────────────────────────────── (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line">┌─ ⚙️ [1] ─────────────────────────────────────────────────────────────</div>
+<div class="line">│ P7(LIMITE): 3</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙️ [2] ─────────────────────────────────────────────────────────────</div>
+<div class="line">│ P7(LIMITE): 5</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙️ [3] ─────────────────────────────────────────────────────────────</div>
+<div class="line">│ P7(LIMITE): 7</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙️ [4] ─────────────────────────────────────────────────────────────</div>
+<div class="line">│ P7(LIMITE): 20</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  481ms ) ═══</div>
 <div class="line">Jogo do Galo</div>
-<div class="line"> P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0 | P12(Ordenar): 0 | P13(PodaHeuristica): 0 | P14(PodaCega): 0</div>
+<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10</div>
+<div class="line">│ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar</div>
+<div class="line">│ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0</div>
+<div class="line">│ P14(PODA_CEGA): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">  A B C</div>
 <div class="line">1 . . . 1</div>
 <div class="line">2 . . . 2</div>
 <div class="line">3 . . . 3</div>
 <div class="line">  A B C</div>
-<div class="line">____________________________________________________________________</div>
+<div class="line">...</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p>Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações com nível 20 e 7 são igualmente boas. Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.</p>
-<p>Notar na informação da linha com os tempos: "Tempos: 0,028s 0,001s 0,001s 0,005s" Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. Profundidades maiores o tempo é superior.</p>
-<p>Vamos ver o resultado deste mesmo torneio em ficheiro CSV. Introduza: <b>8; 1; resultadoGalo; 0.</b></p>
+<p>Notar na informação da linha com os tempos: "Tempos: 0.000s 0.005s 0.063s 0.412s" Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. Profundidades maiores o tempo é superior.</p>
+<p>Vamos ver o resultado deste mesmo torneio em ficheiro CSV. Introduza: <b>8; 1; Resultados/Galo; 0.</b></p>
 <p>O ficheiro fica com duas tabelas, a primeira com o resultado dos jogos, duas linhas por cada jogo:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -2641,11 +2670,20 @@ Ação 6 - Testes Empíricos</h2>
 </table>
 <p>Assim, mantemos a informação completa no ficheiro de resultados, mesmo em torneios, para que se detecte algum erro na configuração, e se possa saber exatamente como os resultados foram obtgidos.</p>
 <p>Como seria de esperar, este ficheiro de resultados poderia ser obtido também em linha de comandos:</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 1 -R resultadoGalo -P P1=1 P12=0 P7=20,7,5,3</div>
+<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 1 -R Resultados/Galo -P P1=1 P12=0 P7=20,7,5,3</div>
 <div class="line">...</div>
 <div class="line">Opção: 1</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultadoGalo.csv gravado.</div>
+<div class="line"> </div>
+<div class="line"> ├─ 🛠️  ─ P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P7=3</div>
+<div class="line"> ├─ ⚙️ [2] ─ P7=5</div>
+<div class="line"> ├─ ⚙️ [3] ─ P7=7</div>
+<div class="line"> ├─ ⚙️ [4] ─ P7=20</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> │ Erro ao gravar ficheiro Resultados/Galo.csv.</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  479ms ) ═══</div>
 </div><!-- fragment --><p>A linha de comandos continua a ser o modo preferencial quando a implementação está finalizada e se pretende testes empíricos.</p>
 <p>Este é no entanto um jogo muito pequeno para explorar, pelo que a sua generalização para os Jogos Em Linha, permitirá explorar melhor as particularidades das procuras adversas. </p>
 </div></div><!-- contents -->
