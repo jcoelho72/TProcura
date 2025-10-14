@@ -1202,7 +1202,6 @@ Introduza após arrancar:  **1; 3; 1; 2; 2; 2; 7; 20; 12; 2; *ENTER*; 6.**
 <details>
   <summary>Ver árvore completa do Jogo do Galo (com cortes alfa/beta)</summary>
 
-
 ```entrada
 Opção: 6
 
@@ -2531,73 +2530,87 @@ Temos também de ter o cuidado de desligar a utilização das hashtables,
 para observer sem perturbações o ganho da profundidade.
 
 Introduza: 
-- **1; 7; P1=1 P12=0 P7=20,7,5,3; -1; *ENTER*.**
+- **1; 7; P1=1 P2=4 P12=0 P7=20,7,5,3; -1; *ENTER*.**
 
 Apagamos a configuração 1 dado que tinha o valor de omissão P7=0.
 
 ```entrada
-...
-Comando: P1=1 P12=0 P7=20,7,5,3
+Opção: 7
 
-Parâmetros comuns:
- P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0
- P12=0 P13=0 P14=0
-- Configurações geradas (total: 5) -
- P7=0 [1] --- atual
- P7=3 [2]
- P7=5 [3]
- P7=7 [4]
- P7=20 [5]
-...
-Comando: -1
+ ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=0 P8=1 P11=0 P12=2 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙️ [1] ─  ⭐ atual
+═╧═══════════════════
+┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
+│    id / -id - Seleciona configuração como atual ou apaga 'id'
+│    Pk = <conj.> - Varia Pk na configuração atual (gera N configs)
+│    Pk = <conj.> x Pw = <conj.> - produto externo (gera NxM configs)
+│  Sintaxe de <conj.> : A,B,C | A:B | A:B:C
+└──────────────────────────────────────────────────────────────────────
+✏️ Comando: P1=1 P2=4 P12=0 P7=20,7,5,3
 
-Parâmetros comuns:
- P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P9=100 P10=0 P11=0
- P12=0 P13=0 P14=0
-- Configurações geradas (total: 4) -
- P7=3 [1] --- atual
- P7=5 [2]
- P7=7 [3]
- P7=20 [4]
- ...
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙️ [1] ─ P7=0 ⭐ atual
+ ├─ ⚙️ [2] ─ P7=3
+ ├─ ⚙️ [3] ─ P7=5
+ ├─ ⚙️ [4] ─ P7=7
+ ├─ ⚙️ [5] ─ P7=20
+═╧═══════════════════
+...
+✏️ Comando: -1
+
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙️ [1] ─ P7=3 ⭐ atual
+ ├─ ⚙️ [2] ─ P7=5
+ ├─ ⚙️ [3] ─ P7=7
+ ├─ ⚙️ [4] ─ P7=20
+═╧═══════════════════
+...
 ```
 
 Temos 4 configurações. Como a procura é adversa, é necessário duas configurações, ou seja, jogos entre configurações para avaliar.
 Assim, em vez da tabela com desempenho individual, há jogos entre todas as configurações, e reportado apenas a tabela de torneio final.
 
 Podemos ainda ver as soluções, que aqui equivale a observar os jogos. 
-Como são 4 configurações, haverá grande quantidade de jogos, de todos contra todos e de ambas as cores. 
+Como são 4 configurações haverá grande quantidade de jogos, de todos contra todos e de ambas as cores. 
 Por outro lado os jogos são muito rápidos. Assim, não vamos querer ver os jogos.
 Se existissem vários tabuleiros iniciais, ou vários tamanhos, ou seja, instâncias de jogo, podiamos indicar as instâncias a serem utilizadas. 
 
-Introduza: **8; 1; *ENTER*; 0.**
+Introduza: **8; 1; *ENTER*.**
 
 ```entrada
-Match 1 vs 2:
- Instância 1:  Empate
-Match 1 vs 3:
- Instância 1:  Empate
-Match 1 vs 4:
- Instância 1:  Empate
-Match 2 vs 1:
- Instância 1:  Vitória Branca
-Match 2 vs 3:
- Instância 1:  Empate
-Match 2 vs 4:
- Instância 1:  Empate
-Match 3 vs 1:
- Instância 1:  Vitória Branca
-Match 3 vs 2:
- Instância 1:  Vitória Branca
-Match 3 vs 4:
- Instância 1:  Empate
-Match 4 vs 1:
- Instância 1:  Vitória Branca
-Match 4 vs 2:
- Instância 1:  Vitória Branca
-Match 4 vs 3:
- Instância 1:  Empate
-Torneio (#instâncias melhores):
+Opção: 8
+
+┌─ 📖 Sintaxe comando ────────────────────
+│  Instâncias: A,B,C | A:B | A : B : C
+└────────────────────────────────────────
+✏️ IDs das instâncias (1 a 1): 1
+📄  Ficheiro resultados (nada para mostrar no ecrã):
+
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙️ [1] ─ P7=3
+ ├─ ⚙️ [2] ─ P7=5
+ ├─ ⚙️ [3] ─ P7=7
+ ├─ ⚙️ [4] ─ P7=20
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:12   ↻ Instâncias: 1   🛠️ Configurações: 4   🖥️ Processos: 1.
+ ├─ ⏱                 📋 0     ↻ 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3 🟰
+ ├─ ⏱ 1ms             📋 1     ↻ 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰
+ ├─ ⏱ 6ms             📋 2     ↻ 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰
+ ├─ ⏱ 23ms            📋 3     ↻ 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ⚪
+ ├─ ⏱ 24ms            📋 4     ↻ 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰
+ ├─ ⏱ 29ms            📋 5     ↻ 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰
+ ├─ ⏱ 42ms            📋 6     ↻ 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ⚪
+ ├─ ⏱ 60ms            📋 7     ↻ 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ⚪
+ ├─ ⏱ 76ms            📋 8     ↻ 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰
+ ├─ ⏱ 106ms           📋 9     ↻ 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ⚪
+ ├─ ⏱ 235ms           📋 10    ↻ 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ⚪
+ ├─ ⏱ 358ms           📋 11    ↻ 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🟰
+🏆  Torneio (#instâncias melhores):
  |-01-|-02-|-03-|-04-|
  1    |  0 |  0 |  0 | -3
  |----|----|----|----|
@@ -2607,27 +2620,42 @@ Torneio (#instâncias melhores):
  |----|----|----|----|
  4  1 |  1 |  0 |    |  2
  |----|----|----|----|
-Tempos: 0,000s 0,006s 0,060s 0,344s
-Parâmetros comuns:
- P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
- P6(Ver): 4 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0 | P11(baralhar): 0
- P12(Ordenar): 0 | P13(PodaHeuristica): 0 | P14(PodaCega): 0
-- Configurações geradas (total: 4) -
- P7(Limite): 3 [1]
- P7(Limite): 5 [2]
- P7(Limite): 7 [3]
- P7(Limite): 20 [4]
-
+ │ Tempos: 0.000s 0.005s 0.063s 0.412s
+┌─ 🛠️  ────────────────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P8(ESTADOS_REPETIDOS): ignorar
+│ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
+│ P14(PODA_CEGA): 0
+└────────────────────────────────────────────────────────────────────── (parâmetros comuns)
+═╪═ Configurações ═══
+┌─ ⚙️ [1] ─────────────────────────────────────────────────────────────
+│ P7(LIMITE): 3
+└──────────────────────────────────────────────────────────────────────
+┌─ ⚙️ [2] ─────────────────────────────────────────────────────────────
+│ P7(LIMITE): 5
+└──────────────────────────────────────────────────────────────────────
+┌─ ⚙️ [3] ─────────────────────────────────────────────────────────────
+│ P7(LIMITE): 7
+└──────────────────────────────────────────────────────────────────────
+┌─ ⚙️ [4] ─────────────────────────────────────────────────────────────
+│ P7(LIMITE): 20
+└──────────────────────────────────────────────────────────────────────
+═╧═══════════════════
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  481ms ) ═══
 Jogo do Galo
- P1(Algoritmo): MiniMax | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0
- P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
- P11(baralhar): 0 | P12(Ordenar): 0 | P13(PodaHeuristica): 0 | P14(PodaCega): 0
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+│ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
+│ P14(PODA_CEGA): 0
+└──────────────────────────────────────────────────────────────────────
   A B C
 1 . . . 1
 2 . . . 2
 3 . . . 3
   A B C
-____________________________________________________________________
+...
+Opção:
 ```
 
 Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações com nível 20 e 7 
@@ -2635,11 +2663,11 @@ são igualmente boas.
 Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. 
 As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.
 
-Notar na informação da linha com os tempos: "Tempos: 0,028s 0,001s 0,001s 0,005s"
+Notar na informação da linha com os tempos: "Tempos: 0.000s 0.005s 0.063s 0.412s"
 Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. 
 Profundidades maiores o tempo é superior.
 
-Vamos ver o resultado deste mesmo torneio em ficheiro CSV. Introduza: **8; 1; resultadoGalo; 0.**
+Vamos ver o resultado deste mesmo torneio em ficheiro CSV. Introduza: **8; 1; Resultados/Galo; 0.**
 
 O ficheiro fica com duas tabelas, a primeira com o resultado dos jogos, duas linhas por cada jogo:
 
@@ -2728,11 +2756,20 @@ e se possa saber exatamente como os resultados foram obtgidos.
 Como seria de esperar, este ficheiro de resultados poderia ser obtido também em linha de comandos:
 
 ```entrada
-PS ...\Teste> TProcuraAdversa 1 -R resultadoGalo -P P1=1 P12=0 P7=20,7,5,3
+PS ...\Teste> TProcuraAdversa 1 -R Resultados/Galo -P P1=1 P12=0 P7=20,7,5,3
 ...
 Opção: 1
-...
-Ficheiro resultadoGalo.csv gravado.
+
+ ├─ 🛠️  ─ P1=1 P2=0 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙️ [1] ─ P7=3
+ ├─ ⚙️ [2] ─ P7=5
+ ├─ ⚙️ [3] ─ P7=7
+ ├─ ⚙️ [4] ─ P7=20
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ │ Erro ao gravar ficheiro Resultados/Galo.csv.
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  479ms ) ═══
 ```
 
 A linha de comandos continua a ser o modo preferencial quando a implementação está finalizada e se pretende testes empíricos.

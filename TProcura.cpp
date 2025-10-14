@@ -763,7 +763,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 					MostraTempo(Cronometro(CONT_TESTE)),
 					nTarefa - 1,
 					inst,
-					configuracao,
+					configuracao + 1,
 					mpiCount) &&
 					fflush(stdout);
 				Cronometro(CONT_REPORTE, true);

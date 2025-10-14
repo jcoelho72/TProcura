@@ -71,7 +71,7 @@ public:
 	// Utilizar para executar testes empíricos
 	// Utiliza as configurações existentes, ou parâmetros atuais
 	// Efetua um torneio entre configurações
-	void TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes = true, char* ficheiro = NULL);
+	void TesteEmpirico(TVector<int> instancias, char* ficheiro = NULL);
 
 	/// @brief Executa o algoritmo com os parametros atuais
 	int ExecutaAlgoritmo();

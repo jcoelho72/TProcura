@@ -451,9 +451,11 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 // utilizar para executar testes empíricos, utilizando todas as instâncias,
 // Utiliza as configurações existentes, ou parâmetros atuais
 // Efetua um torneio entre configurações
-void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoes, char* ficheiro) {
+void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	TVector<int> atual;
+	double periodoReporte = 60;
 	int backupID = instancia.valor;
+	int nTarefa = 0;
 	for (auto item : instancias)
 		if (item<instancia.min || item>instancia.max)
 			item = -1;
@@ -469,6 +471,16 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 		configuracoes.Count(2);
 		configuracoes.Last() = atual;
 	}
+	if (mpiID == 0)
+		MostrarConfiguracoes(0);
+	printf("\n═╤═ 🧪  Início do Teste (🖥️ %d) ═══", mpiID);
+	fflush(stdout);
+	switch (Parametro(NIVEL_DEBUG)) {
+	case DETALHE: periodoReporte = 10; break;
+	case COMPLETO: periodoReporte = 0; break; // reporte em todos os eventos
+	}
+	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
+	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
 
 	TVector<TVector<int>> torneio; // pares de configurações: 1 melhor, 0 igual -1 pior
 	TVector<double> tempoTotal; // tempo total de resposta, em todos os jogos
@@ -480,15 +492,36 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 	tempoTotal.Count(configuracoes.Count());
 	tempoTotal.Reset(0);
 
+	if (mpiID == 0)
+		Debug(ATIVIDADE, false,
+			"\n ├─ 📋 Tarefas:%d   ↻ Instâncias: %d   🛠️ Configurações: %d   🖥️ Processos: %d.",
+			instancias.Count() * configuracoes.Count() * (configuracoes.Count() - 1),
+			instancias.Count(), configuracoes.Count(), mpiCount) &&
+		fflush(stdout);
+
 	// dois jogadores, brancas é o primeiro a jogar, pretas é o segundo
 	for (int brancas = 0; brancas < configuracoes.Count(); brancas++)
 		for (int pretas = 0; pretas < configuracoes.Count(); pretas++)
 			if (brancas != pretas) {
-				printf("\nMatch %d vs %d:", brancas + 1, pretas + 1);
 				for (auto inst : instancias) {
+					// distribuir tarefas por MPI
+					if ((nTarefa++) % mpiCount != mpiID)
+						continue;
 					instancia.valor = inst;
+
+					if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
+						Debug(ATIVIDADE, false,
+							"\n ├─ ⏱ %-15s 📋 %-5d ↻ %-5d 🛠️ %-5d 🛠️ %-5d 🖥️ %-5d",
+							MostraTempo(Cronometro(CONT_TESTE)),
+							nTarefa - 1,
+							inst,
+							brancas + 1, pretas + 1,
+							mpiCount) &&
+							fflush(stdout);
+						Cronometro(CONT_REPORTE, true);
+					}
+
 					int resultado = -1, njogada = 0;
-					printf("\n Instância %d: ", instancia.valor);
 					// carregar instância
 					Inicializar();
 					// jogar ora de brancas ora de pretas, até o jogo terminar
@@ -496,23 +529,16 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 						ConfiguracaoAtual(configuracoes[njogada % 2 == 0 ? brancas : pretas], GRAVAR);
 						TRand::srand(Parametro(SEMENTE));
 						LimparEstatisticas();
+						int backupDebug = Parametro(NIVEL_DEBUG);
+						Parametro(NIVEL_DEBUG) = NADA;
 						resultado = ExecutaAlgoritmo();
+						Parametro(NIVEL_DEBUG) = backupDebug;
 						tempoTotal[njogada % 2 == 0 ? brancas : pretas] += Cronometro(CONT_ALGORITMO);
 						if (solucao != NULL) { // efetuado um lance
 							const char* strAcao = Acao(solucao);
 							Copiar(solucao);
-							if (mostrarSolucoes) {
-								if (Parametro(VER_ACOES) == 1 ||
-									njogada % Parametro(VER_ACOES) == 0) {
-									printf("\n%s %d %s",
-										(njogada % 2 == 0 ? "Brancas" : "Pretas"),
-										(njogada / 2) + 1, strAcao);
-									Debug();
-									printf(" f:%d ", resultado);
-								}
-								else // mostrar apenas a ação
-									printf(" %s", strAcao);
-							}
+							if (Parametro(NIVEL_DEBUG) >= COMPLETO) 
+								printf(" %s", strAcao);
 							njogada++;
 						}
 						else {
@@ -528,20 +554,19 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 							((njogada % 2 == 1) && !minimizar);
 						// vitória/derrota branca/preta
 						torneio[brancas][pretas] += (resultado < 0 ? -1 : 1) * (inverter ? -1 : 1);
-						printf(" Vitória %s", (inverter ? resultado < 0 : resultado > 0) ? "Branca" : "Preta");
+						Debug(COMPLETO, false, " 🏆 %s", (inverter ? resultado < 0 : resultado > 0) ? "⚪" : "⚫");
 					}
 					else
-						printf(" Empate");
+						Debug(COMPLETO, false, " 🟰 ");
 				}
 			}
 
 	if (ficheiro == NULL || strlen(ficheiro) <= 1) {
 		MostrarTorneio(torneio, true);
-		printf("\nTempos: ");
+		printf("\n │ Tempos: ");
 		for (auto tempo : tempoTotal)
 			printf("%.3fs ", tempo);
 		MostrarConfiguracoes(1);
-		printf("\n");
 	}
 	else {
 		char* pt = strtok(ficheiro, " \n\t\r");
@@ -555,11 +580,11 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 			fwrite(bom, 1, sizeof(bom), f);
 			fprintf(f, "sep=;\n");
 			RelatorioCSV(torneio, f);
-			printf("\nFicheiro %s gravado.", str);
+			printf("\n │ Ficheiro %s gravado.", str);
 			fclose(f);
 		}
 		else
-			printf("\nErro ao gravar ficheiro %s.", str);
+			printf("\n │ Erro ao gravar ficheiro %s.", str);
 
 	}
 
@@ -567,6 +592,8 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, bool mostrarSolucoe
 	instancia.valor = backupID;
 	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
+	printf("\n═╧═ 🏁  Fim do Teste (🖥️ %d  ⏱  %s) ═══", mpiID, MostraTempo(Cronometro(CONT_TESTE)));
+	fflush(stdout);
 }
 
 
