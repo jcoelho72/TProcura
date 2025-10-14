@@ -234,7 +234,7 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 	nivelOK = 0;
 	TNo solOK = NULL;
 	do {
-		DebugIteracao(nivel + 1);
+		DebugIteracao(nivel + 1, "🪜");
 		completo = true;
 		// chamar a profundidade nível 1, e se não resolver, o nível 2, e assim sucessivamente
 		resultado = (alfaBeta ? MiniMaxAlfaBeta(++nivel) : MiniMax(++nivel));
@@ -403,7 +403,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 bool TProcuraAdversa::Utilizavel(TValorEstado& valor, int nivel, int alfa, int beta) {
 	return valor.nivel >= nivel &&
 		(valor.tipo == EXATO ||
-			(valor.tipo == lowerBound && valor.valor >= beta) ||
+			(valor.tipo == LOWER_BOUND && valor.valor >= beta) ||
 			(valor.tipo == UPPER_BOUND && valor.valor <= alfa));
 }
 

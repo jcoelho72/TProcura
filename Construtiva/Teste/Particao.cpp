@@ -29,7 +29,7 @@ void CParticao::Inicializar(void)
 	int64_t soma1, soma2;
 	soma1 = soma2 = 0;
 	for (int i = 0; i < instancia.valor; i++) {
-		numeros += (TRand::rand() % (10 * instancia.valor * instancia.valor));
+		numeros += (instancia.valor * instancia.valor + 4 * (TRand::rand() % instancia.valor + 1) + TRand::rand() % 4);
 		if (soma1 < soma2)
 			soma1 += numeros.Last();
 		else soma2 += numeros.Last();
@@ -37,7 +37,9 @@ void CParticao::Inicializar(void)
 	// acertar a paridade, muito embora não se saiba se há ou não solução
 	if ((soma1 + soma2) % 2 == 1)
 		numeros.Last() += 1;
-	// garantir que há uma solução
+	// garantir que há uma solução, mas não há necessidade
+	// a esmagadora maioria das instâncias terá solução, excepto se os
+	// números forem de ordens de grandeza distintos
 	//if (soma1 != soma2)
 	//	numeros += abs(soma1 - soma2);
 	numeros -= 0;
@@ -85,7 +87,7 @@ void CParticao::Debug(bool completo)
 {
 	char str[256];
 	int i, col;
-	int64_t total=0;
+	int64_t total = 0;
 	for (auto numero : numeros)
 		total += numero;
 	snprintf(str, sizeof(str), "📦%" PRId64 " → ◀️%" PRId64 " = ▶️%" PRId64,

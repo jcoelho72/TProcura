@@ -121,7 +121,7 @@ void TProcura::TesteManual(const char* nome)
 		Debug();
 		MostraRelatorio(resultados, true);
 		printf("\n"
-			"┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐\n"
+			"┌─ ☰ Menu ────────┬────────────────┬─────────────────────┬──────────────┐\n"
 			"│ 1 ↻  " CINZ "Inicializar" NCINZ " │ 2 🔍  " CINZ "Explorar" NCINZ " │ 3 ⚙️  " CINZ "Parâmetros" NCINZ "    │ 4 ✔  " CINZ "Solução" NCINZ " │\n"
 			"│ 5 ⚖  " CINZ "Indicadores" NCINZ " │ 6 ►  " CINZ "Executar" NCINZ "  │ 7 🛠️  " CINZ "Configurações" NCINZ " │ 8 🧪  " CINZ "Teste" NCINZ "  │\n"
 			"└──────────────────┴────────────────┴─────────────────────┴──────────────┘");

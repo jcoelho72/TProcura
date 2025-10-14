@@ -969,8 +969,9 @@ void TProcuraConstrutiva::LimparHT() {
 					usado++;
 			}
 			// reportar estatísticas se existir muito reuso
-			if (usado > 0 && usado * 2 <= colocadosHT) {
-				printf("\nHT: utilização %d%%, reuso: %.2f vezes",
+			if (Parametro(NIVEL_DEBUG) >= DETALHE && usado > 0 && usado * 2 <= colocadosHT) {
+				NovaLinha();
+				printf("HT: utilização %d%%, reuso: %.2f vezes",
 					usado * 100 / TAMANHO_HASHTABLE,
 					1.0 * colocadosHT / usado);
 			}

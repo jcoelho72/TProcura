@@ -3,9 +3,15 @@
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |
 
 
-Execução de exemplo com base no problema artificial. 
-Selecione o projeto TProcuraConstrutiva, e execute.
-Pode acompanhar o teste excutando as ações localmente.
+Execução de exemplo com base no problema artificial.
+Pode acompanhar o teste executando as ações localmente.
+
+No Visual Studio, selecione o projeto TProcuraConstrutiva, e execute.
+No Linux na pasta `.../TProcura/Construtiva/Teste$` execute `make` seguido de `./bin/Release/TProcuraConstrutiva`
+
+Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
+
+Ficheiro não atualizado! (procurar atualizar este código para ter heurísticas)
 
 ## Sumário
 
@@ -15,13 +21,13 @@ Pode acompanhar o teste excutando as ações localmente.
 
 
 ```entrada
-Teste TProcurasConstrutivas
-Problema:
-  1 - Aspirador
-  2 - Puzzle 8
-  3 - 8 Damas
-  4 - Partição
-  5 - Artificial
+┌─ Teste TProcuraConstrutiva ──┐
+│ 1 - Aspirador                │
+│ 2 - Puzzle 8                 │
+│ 3 - 8 Damas                  │
+│ 4 - Partição                 │
+│ 5 - Artificial               │
+└──────────────────────────────┘
 Opção: 5
 ```
 
@@ -29,13 +35,16 @@ Temos ainda a opção do problema artificial. Introduza: **5.**
 
 ```entrada
 Artificial
- P1(Algoritmo): Largura Primeiro | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 1000000
- P6(Ver): 1 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0
- P11(baralhar): 0
---<([1])>--
-____________________________________________________________________
-| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |
-| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |
+┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 1
+│ P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+└──────────────────────────────────────────────────────────────────────
+ │  01-00-00-00
+┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└──────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção:
 ```
 
