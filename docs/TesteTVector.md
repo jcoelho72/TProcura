@@ -1063,7 +1063,7 @@ Vamos fazer também a versão com esforço B, para podermos ficar com a situaç�
  │  📊  Utilização: 100.0%
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  47" 579ms ) ═══
 ```
-
+ 
 O tempo total sido de 47 segundos.
 Com debug a 0 não iriamos ter nenhum input senão após o teste terminar.
 Podemos ver com nível 3 um report a cada 10 segundos, com o número da tarefa atual,
