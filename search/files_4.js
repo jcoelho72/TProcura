@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['particao_2ecpp_0',['particao.cpp',['../Construtiva_2Teste_2Particao_8cpp.html',1,'(Global Namespace)'],['../Melhorativa_2Teste_2Particao_8cpp.html',1,'(Global Namespace)']]],
-  ['particao_2eh_1',['particao.h',['../Construtiva_2Teste_2Particao_8h.html',1,'(Global Namespace)'],['../Melhorativa_2Teste_2Particao_8h.html',1,'(Global Namespace)']]],
-  ['problemaartificial_2ecpp_2',['problemaartificial.cpp',['../Construtiva_2Teste_2ProblemaArtificial_8cpp.html',1,'(Global Namespace)'],['../Melhorativa_2Teste_2ProblemaArtificial_8cpp.html',1,'(Global Namespace)']]],
-  ['problemaartificial_2eh_3',['problemaartificial.h',['../Construtiva_2Teste_2ProblemaArtificial_8h.html',1,'(Global Namespace)'],['../Melhorativa_2Teste_2ProblemaArtificial_8h.html',1,'(Global Namespace)']]],
-  ['puzzle8_2ecpp_4',['Puzzle8.cpp',['../Puzzle8_8cpp.html',1,'']]],
-  ['puzzle8_2eh_5',['Puzzle8.h',['../Puzzle8_8h.html',1,'']]]
+  ['jogodogalo_2ecpp_0',['JogoDoGalo.cpp',['../JogoDoGalo_8cpp.html',1,'']]],
+  ['jogodogalo_2eh_1',['JogoDoGalo.h',['../JogoDoGalo_8h.html',1,'']]],
+  ['jogoemlinha_2ecpp_2',['JogoEmLinha.cpp',['../JogoEmLinha_8cpp.html',1,'']]],
+  ['jogoemlinha_2eh_3',['JogoEmLinha.h',['../JogoEmLinha_8h.html',1,'']]]
 ];

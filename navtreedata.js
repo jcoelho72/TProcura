@@ -64,7 +64,7 @@ var NAVTREEINDEX =
 "Adversa_2Teste_2teste_8cpp.html",
 "TProcura_8h.html#ad4fc32e65c5226aa62a959b4402a857c",
 "classTCodificacaoBinaria.html#ad2083ee209edac21d0ce27db4349825c",
-"classes.html"
+"compact_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

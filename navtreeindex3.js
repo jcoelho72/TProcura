@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"classes.html":[2,1],
 "compact_8h.html":[3,0,5],
 "compact_8h.html#a00b22acc72899dbcb64f43ad8ec8b41d":[3,0,5,1],
 "compact_8h.html#a2cc00022a29bc0fc08165228956a10f5":[3,0,5,0],

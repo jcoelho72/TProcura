@@ -23,7 +23,7 @@ digraph "TProcuraAdversa::MiniMaxAlfaBeta"
   Node4 -> Node8 [id="edge9_Node000004_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
   Node1 -> Node9 [id="edge10_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TProcuraConstrutiva\l::DebugChamada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a50d5d518140c559770c9c02b90e88dfe",tooltip=" "];
+  Node9 [id="Node000009",label="TProcuraAdversa::DebugChamada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ad88cb2a2f894ceda4c8ed67e775a96e0",tooltip=" "];
   Node9 -> Node10 [id="edge11_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#gacbc6e34f3a403d26d806f37b5cd739f6",tooltip="Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor."];
   Node9 -> Node7 [id="edge12_Node000009_Node000007",color="steelblue1",style="solid",tooltip=" "];
@@ -36,7 +36,7 @@ digraph "TProcuraAdversa::MiniMaxAlfaBeta"
   Node9 -> Node6 [id="edge17_Node000009_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node9 -> Node8 [id="edge18_Node000009_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge19_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcuraConstrutiva\l::DebugConjunto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a2009fcf3fa13c00d5ef8c928ac850aaa",tooltip=" "];
+  Node13 [id="Node000013",label="TProcura::DebugConjunto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aeb0c13100562688b04050be9710eaf38",tooltip=" "];
   Node1 -> Node14 [id="edge20_Node000001_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcuraConstrutiva\l::DebugCorte",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a042ab47715ba45d53a86413415ea95fd",tooltip=" "];
   Node14 -> Node4 [id="edge21_Node000014_Node000004",color="steelblue1",style="solid",tooltip=" "];

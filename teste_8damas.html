@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('teste_8damas.html',''); initResizable(
 <p>Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. No Linux na pasta <code>.../TProcura/Construtiva/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraConstrutiva</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Sumário</h2>
 <ul>
 <li>Ação 1 - Ver instâncias</li>
@@ -144,7 +144,7 @@ Sumário</h2>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Este estado vazio é um tabuleiro de 8x8. O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver que instâncias temos. Introduza: <b>1; 4.</b></p>
 <div class="fragment"><div class="line">Opção: 1</div>
@@ -165,7 +165,7 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Há várias formas de se colocar damas no tabuleiro. Está implementada a colocação de uma dama, na linha superior que não esteja atacada.</p>
 <p>Poder-se-ia permitir a colocação de uma dama em qualquer posição. No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia. Caso se tivessem implementado diferentes opções, seria adicionado um parametro, e os sucessores seria distinto conforme o valor desse parâmetro.</p>
@@ -230,7 +230,7 @@ Ação 2 - Resolver manualmente</h2>
 <p>A escolha na primeira ação por d2 (ou d3), é crítica para obter a solução.</p>
 <p>Neste problema a solução tem sempre o mesmo número de ações, igual a N.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Ação 3 - Procura em Largura</h2>
 <p>Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. Vamos deixar desde já fixado o limite no número de iterações a 1000000. Introduza: <b>1; 4; 3; 2; 4; 5; 1000000; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -340,7 +340,7 @@ Ação 3 - Procura em Largura</h2>
 </div><!-- fragment --><p> A solução foi encontrada. No entanto, o algoritmo explora todos os estados do nível 3 antes de ver o primeiro do nível 4. Neste problema, como a solução está no nível 4, acaba por não ser muito interessante esta procura. Qualquer estado no nível 4 seria uma solução, e foram expandidos todos os estados do nível 3. Não podia ser pior.</p>
 <p>Não só este algoritmo gasta muito tempo nos níveis inferiores, a explorar completamente, como a procura em profundidade ilimitada não tem problema, já que não existem ciclos infinitos.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Ação 4 - Procura em Profundidade</h2>
 <p>Vamos executar a mesma instância com a procura em profundidade ilimitada. Introduza: <b>1; 4; 3; 1; 3; 7; -1; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -423,14 +423,14 @@ Ação 4 - Procura em Profundidade</h2>
 <p>No final da procura, ainda havia um ramo para analisar, com dois estados pendentes. Esses estados eram as ações d3 e d4 inicial, que são ações simétricas a d1 e d2. Como temos P8(ESTADOS_REPETIDOS): ignorar, estas ações são geradas.</p>
 <p>Neste caso houve 8 expansões na procura em profundidade, contra 13 da procura em largura. Mas evidentemente que não será esta pequena instância que irá suportar as nossas conclusões. Temos um teste empírico na ação 6, com mais instâncias.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Ação 5 - Heurística</h2>
 <p>Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações tivessem custo variável, faria sentido uma heurística para estimar o custo até ao final. Sendo o custo fixo, apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas com a abordagem construtiva.</p>
 <p>Podemos sempre considerar a hipótese de ter uma heurística ignorando a admissibilidade, apenas para guiar a procura. No entanto neste problema não é claro que heurística possa ser.</p>
 <p>Podemos ter no entanto outras opções que melhoram a abordagem construtiva. Uma das possibilidades é considerar ou não os estados repetidos. Neste problema temos 3 eixos de simetria. Significa que a mesma posição pode ao ser refletida em cada eixo, transformar-se numa das outras, num total de 8 posições simétricas. Ao anular as simetrias por normalização do estado, e remoção de repetidos, o espaço de estados reduz-se. As simetrias estão implementadas, pelo que vamos testar na próxima ação.</p>
 <p>Outra possibilidade não implementada neste código, é a verificação se há linhas/colunas vazias, que estejam totalmente atacadas. Ao colocar duas ou três damas, estas podem cobrir a totalidade das casas da última linha, e essa linha só é analisada no último nível. Esta implementação causa também mais peso, mas invalida estados antecipadamente.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Ação 6 - Testes Empíricos</h2>
 <p>Nos testes empíricos vamos passar para a interface da linha de comando, por ser mais simples.</p>
 <p>Vamos obter primeiramente a lista de todos os parâmetros.</p>

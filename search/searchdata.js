@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "123456789_abcdefghijklmnopqrstuvz~àá📑📦",
   1: "bcst",
   2: "ct",
-  3: "acjoprt",
+  3: "acdijoprt",
   4: "_abcdefhijlmnoprstuv~",
   5: "abcdefghiklmnoprstvz",
   6: "t",
@@ -12,7 +12,7 @@ var indexSectionsWithContent =
   9: "o",
   10: "cn",
   11: "acdegimprsvà",
-  12: "128abcdegijlprt"
+  12: "128abcdegijloprt"
 };
 
 var indexSectionNames =

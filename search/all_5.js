@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['6_20editar_20opções_20a_0',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md24',1,'']]],
-  ['6_20executar_1',['Ação 3: Menu 6 - Executar',['../teste_tvector.html#autotoc_md71',1,'']]],
-  ['6_20melhor_20primeiro_2',['Ação 6 - Melhor Primeiro',['../teste_puzzle8.html#autotoc_md60',1,'']]],
-  ['6_20testes_20empíricos_3',['6 testes empíricos',['../teste_8damas.html#autotoc_md8',1,'Ação 6 - Testes Empíricos'],['../teste_jogo_do_galo.html#autotoc_md41',1,'Ação 6 - Testes Empíricos']]],
-  ['6_20torneio_20poda_4',['Ação 6 - Torneio Poda',['../teste_jogo_em_linha.html#autotoc_md48',1,'']]],
-  ['6_3a_20menu_208_20teste_5',['Ação 6: Menu 8 - Teste',['../teste_tvector.html#autotoc_md77',1,'']]]
+  ['6_20editar_20opções_20a_0',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md42',1,'']]],
+  ['6_20executar_1',['Ação 3: Menu 6 - Executar',['../teste_tvector.html#autotoc_md89',1,'']]],
+  ['6_20melhor_20primeiro_2',['Ação 6 - Melhor Primeiro',['../teste_puzzle8.html#autotoc_md78',1,'']]],
+  ['6_20testes_20empíricos_3',['6 testes empíricos',['../teste_8damas.html#autotoc_md26',1,'Ação 6 - Testes Empíricos'],['../teste_jogo_do_galo.html#autotoc_md59',1,'Ação 6 - Testes Empíricos']]],
+  ['6_20torneio_20poda_4',['Ação 6 - Torneio Poda',['../teste_jogo_em_linha.html#autotoc_md66',1,'']]],
+  ['6_3a_20menu_208_20teste_5',['Ação 6: Menu 8 - Teste',['../teste_tvector.html#autotoc_md95',1,'']]]
 ];

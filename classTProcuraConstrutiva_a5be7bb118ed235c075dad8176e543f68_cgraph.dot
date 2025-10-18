@@ -7,7 +7,7 @@ digraph "TProcuraConstrutiva::SolucaoParcial"
   rankdir="LR";
   Node1 [id="Node000001",label="TProcuraConstrutiva\l::SolucaoParcial",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcuraConstrutiva\l::DebugConjunto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a2009fcf3fa13c00d5ef8c928ac850aaa",tooltip=" "];
+  Node2 [id="Node000002",label="TProcura::DebugConjunto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aeb0c13100562688b04050be9710eaf38",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraConstrutiva\l::DebugFolha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a2916a3eba76527ca857dfddd67429dfd",tooltip=" "];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];

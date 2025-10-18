@@ -40,7 +40,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node10 -> Node18 [id="edge18_Node000010_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="TProcuraAdversa::MiniMax",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4d8542bcb03f17da8aa3038384104f24",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel"];
   Node18 -> Node19 [id="edge19_Node000018_Node000019",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="TProcuraConstrutiva\l::DebugChamada",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcuraConstrutiva.html#a50d5d518140c559770c9c02b90e88dfe",tooltip=" "];
+  Node19 [id="Node000019",label="TProcuraAdversa::DebugChamada",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcuraAdversa.html#ad88cb2a2f894ceda4c8ed67e775a96e0",tooltip=" "];
   Node19 -> Node2 [id="edge20_Node000019_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node6 [id="edge21_Node000019_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node8 [id="edge22_Node000019_Node000008",color="steelblue1",style="solid",tooltip=" "];
@@ -51,7 +51,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node19 -> Node17 [id="edge25_Node000019_Node000017",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node4 [id="edge26_Node000019_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node18 -> Node23 [id="edge27_Node000018_Node000023",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="TProcuraConstrutiva\l::DebugConjunto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a2009fcf3fa13c00d5ef8c928ac850aaa",tooltip=" "];
+  Node23 [id="Node000023",label="TProcura::DebugConjunto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aeb0c13100562688b04050be9710eaf38",tooltip=" "];
   Node18 -> Node24 [id="edge28_Node000018_Node000024",color="steelblue1",style="solid",tooltip=" "];
   Node24 [id="Node000024",label="TProcuraConstrutiva\l::DebugCorte",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a042ab47715ba45d53a86413415ea95fd",tooltip=" "];
   Node24 -> Node25 [id="edge29_Node000024_Node000025",color="steelblue1",style="solid",tooltip=" "];
