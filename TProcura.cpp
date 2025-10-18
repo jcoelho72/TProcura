@@ -714,6 +714,23 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 	printf("\n═╧═══════════════════");
 }
 
+void TProcura::DebugConjunto(TVector<int> valores, const char* etiqueta) {
+	printf(" { ");
+	if (valores.Count() <= 10) {
+		for (auto ind : valores)
+			printf("%s%d ", etiqueta, ind);
+	}
+	else {
+		for (int i = 0; i <= 2; i++)
+			printf("%s%d ", etiqueta, valores[i]);
+		printf("… ");
+		for (int i = valores.Count() - 3; i < valores.Count(); i++)
+			printf("%s%d ", etiqueta, valores[i]);
+	}
+	printf("} ");
+	if (valores.Count() > 10)
+		printf("#%d", valores.Count());
+}
 
 // utilizar para executar testes empíricos, utilizando todas as instãncias,
 // com o último algoritmo executado e configurações existentes
@@ -729,8 +746,11 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 		configuracoes.Count(1);
 		configuracoes.Last() = atual;
 	}
-	if (mpiID == 0)
+	if (mpiID == 0) {
 		MostrarConfiguracoes(0);
+		printf("\n Instâncias:");
+		DebugConjunto(instancias, "↻ ");
+	}
 	printf("\n═╤═ 🧪  Início do Teste (🖥️ %d) ═══", mpiID);
 	fflush(stdout);
 	switch (Parametro(NIVEL_DEBUG)) {
@@ -1170,13 +1190,14 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
 		snprintf(str, sizeof(str), "%s_%d.csv", pt, mpiID);
 	else
 		snprintf(str, sizeof(str), "%s.csv", pt);
-	FILE* f = compat::fopen(str, "wt");
+	FILE* f = compat::fopen(str, "wb");
 	if (f != NULL) {
 		// escrever BOM UTF-8 (apenas no mpiID 0)
-		const unsigned char bom[] = { 0xEF,0xBB,0xBF };
+		//const unsigned char bom[] = { 0xEF,0xBB,0xBF };
 		if (mpiID == 0) {
-			fwrite(bom, 1, sizeof(bom), f);
-			fprintf(f, "sep=;\n");
+			// não assinar já que o Excel não abre direto de qualquer forma
+			//fwrite(bom, 1, sizeof(bom), f);
+			//fprintf(f, "sep=;\n");
 		}
 
 		// cabeçalho: instância, parametros, indicadores

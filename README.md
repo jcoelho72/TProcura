@@ -39,6 +39,9 @@ Em vez de alterar macros e recompilar a cada teste de mudança de parâmetros, p
 - Executar instâncias para cada combinação de parâmetros, e recolher indicadores solicitados  
 - Exportar resultados em CSV para análises em Excel, R ou Python  
 
+👉 Para uma visão mais aprofundada da **metodologia de testes e reporte científico**, consulte a página:  
+[**Testes de Algoritmos com o TProcura**](investigacao.html)
+
 A arquitetura baseia-se em superclasses que já implementam algoritmos de procura. O utilizador só precisa de:
 
 1. Herdar a classe adequada  

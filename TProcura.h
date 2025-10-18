@@ -584,6 +584,9 @@ public:
 	static void MostraCaixa(TVector<const char*> textos, int largura = 70, bool aberta = true, int identacao = 0);
 	static void Mensagem(const char* titulo, const char* fmt, ...);
 
+	static void DebugConjunto(TVector<int> valores, const char* etiqueta);
+
+
 	/// @brief Muda a cor (fundo/letra) com HSL.
 	/// @param h Hue (matiz): 0–360 graus (círculo cromático). Se <0, faz reset.
 	/// @param s Saturação: 0–1 (0 = cinzento, 1 = cor pura).

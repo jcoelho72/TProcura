@@ -727,7 +727,7 @@ protected:
 	// Encontrou uma solução
 	void DebugSolucao(bool continuar = false);
 	// Informação de debug na chamada ao método recursivo
-	void DebugChamada();
+	void DebugChamada(bool noFolha);
 	// Passo no algoritmo em largura
 	void DebugPasso(CListaNo* lista = NULL);
 	// Mostrar sucessores
@@ -737,15 +737,14 @@ protected:
 	// informação geral sobre o estado 
 	void DebugEstado(bool novaLinha = true) const;
 	void DebugRamo(const char* ramo, const char* folha);
-	void DebugConjunto(TVector<int> valores, const char* etiqueta);
 	void DebugFolha(bool fimLinha, const char* fmt, ...) {
-		if (Parametro(NIVEL_DEBUG) >= DETALHE) {
+		if (Parametro(NIVEL_DEBUG) >= COMPLETO) {
 			if (fimLinha)
 				ramo.Last() = " └─";
 			NovaLinha();
 		}
 		else
-			Debug(PASSOS, true, " ─── ");
+			Debug(PASSOS, false, " ─── ");
 		if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 			va_list args;
 			va_start(args, fmt);

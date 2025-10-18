@@ -12,6 +12,10 @@ int TProcuraMelhorativa::lowerBound = 0;
 int TProcuraMelhorativa::geracoes = 0;
 /// @brief Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
 int TProcuraMelhorativa::epocas = 0;
+/**
+ * @brief Utilizar como prefixo em cada linha no método Debug() do estado
+ */
+const char* TProcuraMelhorativa::debugPrefixo = "";
 
 
 TProcuraMelhorativa::TProcuraMelhorativa(void)
@@ -30,7 +34,7 @@ void TProcuraMelhorativa::ResetParametros()
 		//		"Escalada do Monte",
 		//		"Algoritmo Genético",
 				"Algoritmo Evolutivo" };
-	static const char* nomesMovePrimeiro[] = { "Primeiro","Melhor" };
+	//static const char* nomesMovePrimeiro[] = { "Primeiro","Melhor" };
 	static const char* nomesSelecao[] = {
 		"Roleta", // roleta implementada com Stochastic Universal Sampling (SUS)
 		"Torneio", // requere tamanho do torneio, se é determinístico, se é com reposição
@@ -981,53 +985,62 @@ void TProcuraMelhorativa::Explorar() {
 	populacao = CompletarPopulacaoAE(populacao);
 	do {
 		DebugGeracaoAE(epoca, populacao);
-		opcao = NovoValor("\nOperação (1 - Mutar, 2 - Cruzar, 3 - Vizinhos): ");
+		if ((opcao = NovoValor("\n │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): ")) == NAO_LIDO)
+			break;
 		Dominio(opcao, 0, 3);
+		debugPrefixo = " │ │ ";
 		if (opcao == 1) { // mutar
-			printf("Individuo [1-%d]: ", populacao.Count());
+			printf(" │ ┌───── ✨ ───── ");
+			printf("\n │ │ 🧑‍🔬 [1-%d]: ", populacao.Count());
 			indA = NovoValor("") - 1;
 			Dominio(indA, 0, populacao.Count());
-			printf("\nAtual:  ");
+			printf(" │ │ 📍  ");
 			populacao[indA]->Debug(false);
 			populacao[indA]->Mutar();
-			printf("\nMutado: ");
+			printf("\n │ │ ✨  ");
 			populacao[indA]->Debug(false);
 			populacao[indA]->Avaliar();
 			if (!VerificaMelhor(populacao[indA]))
 				populacao[indA]->Debug();
+			printf("\n │ └────────────── ");
 		}
 		else if (opcao == 2) { // cruzar
-			printf("Pai [1-%d]: ", populacao.Count());
+			printf(" │ ┌───── 🧬 ───── ");
+			printf("\n │ │ 🧑‍🔬 Pai [1-%d]: ", populacao.Count());
 			indA = NovoValor("") - 1;
-			printf("Mãe [1-%d]: ", populacao.Count());
+			printf(" │ │ 🧑‍🔬 Mãe [1-%d]: ", populacao.Count());
 			indB = NovoValor("") - 1;
-			printf("Filho [1-%d]: ", populacao.Count());
+			printf(" │ │ 🧑‍🔬 Filho [1-%d]: ", populacao.Count());
 			indC = NovoValor("") - 1;
+			printf(" │ │ ");
 			Dominio(indA, 0, populacao.Count());
 			Dominio(indB, 0, populacao.Count());
 			Dominio(indC, 0, populacao.Count());
-			printf("\nPai:   ");
+			printf("\n │ │ 📍 Pai   ");
 			populacao[indA]->Debug(false);
-			printf("\nMãe:   ");
+			printf("\n │ │ 📍 Mãe   ");
 			populacao[indB]->Debug(false);
 			populacao[indC]->Cruzamento(populacao[indA], populacao[indB]);
-			printf("\nFilho: ");
+			printf("\n │ │ 🧬 Filho ");
 			populacao[indC]->Debug(false);
 			populacao[indC]->Avaliar();
 			if (!VerificaMelhor(populacao[indC]))
 				populacao[indC]->Debug();
+			printf("\n │ └────────────── ");
 		}
 		else if (opcao == 3) { // vizinhos
-			printf("Individuo [1-%d]: ", populacao.Count());
+			printf(" │ ┌───── 🔗 ───── ");
+			printf("\n │ │ 🧑‍🔬 [1-%d]: ", populacao.Count());
 			indA = NovoValor("") - 1;
 			Dominio(indA, 0, populacao.Count() - 1);
-			printf("\nAtual: ");
+			printf(" │ │ 📍  ");
 			populacao[indA]->Debug(false);
 			populacao[indA]->Vizinhanca(vizinhos);
 			CalcularAvaliacoes(vizinhos, melhorValor, melhorIndice);
-			DebugPopulacaoAE(vizinhos, "Vizinhos");
-			printf("\nVizinho [1-%d]: ", vizinhos.Count());
+			DebugPopulacaoAE(vizinhos, "🔗 Vizinhos");
+			printf("\n │ │ 🧑‍🔬 [1-%d]: ", vizinhos.Count());
 			indB = NovoValor("") - 1;
+			printf(" │ │ ");
 			Dominio(indB, 0, vizinhos.Count() - 1);
 			delete populacao[indA];
 			populacao[indA] = vizinhos[indB];
@@ -1035,11 +1048,13 @@ void TProcuraMelhorativa::Explorar() {
 			if (!VerificaMelhor(populacao[indA]))
 				populacao[indA]->Debug();
 			LibertarVector(vizinhos);
+			printf("\n │ └────────────── ");
 		}
 
 		epoca++;
 	} while (opcao > 0 && !Parar());
-
+	printf(" └──────────────── ");
+	debugPrefixo = "";
 	LibertarVector(populacao);
 	Parametro(NIVEL_DEBUG) = backupNivelDebug;
 	Parametro(POPULACAO) = backupPopulacao;

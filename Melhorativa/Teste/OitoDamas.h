@@ -119,7 +119,7 @@ public:
 			return;
 		}
 		for (int i = 0; i < nElementos; i++) {
-			printf("\n");
+			printf("\n%s", debugPrefixo);
 			for (int j = 0; j < nElementos; j++) {
 				if (estado.Count() > i && estado[i] == j)
 					printf("%2s", "♛ "); //"♛ ");
@@ -178,7 +178,7 @@ public:
 			return;
 		}
 		for (int i = 0; i < nElementos; i++) {
-			printf("\n");
+			printf("\n%s", debugPrefixo);
 			for (int j = 0; j < nElementos; j++) {
 				if (estado.Count() > i && estado[i] == j)
 					printf("%2s", "♛ "); //"♛ ");

@@ -183,6 +183,10 @@ public:
 
 	void LimparEstatisticas();
 
+	/**
+	 * @brief Utilizar como prefixo em cada linha no método Debug() do estado
+	 */
+	static const char* debugPrefixo;
 
 protected:
 	// métodos internos

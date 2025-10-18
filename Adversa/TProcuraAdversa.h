@@ -126,5 +126,5 @@ protected:
 
 	static int reutilizadoAvaliacao; // número de vezes que uma avaliação é reutilizada
 
-	void DebugChamada(int alfa=0, int beta=0);
+	void DebugChamada(bool noFolha, int alfa=0, int beta=0);
 };

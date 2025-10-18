@@ -60,7 +60,7 @@ void TProcuraAdversa::Sucessores(TVector<TNo>& sucessores) {
 	}
 }
 
-void TProcuraAdversa::DebugChamada(int alfa, int beta) {
+void TProcuraAdversa::DebugChamada(bool noFolha, int alfa, int beta) {
 	bool raiz = (ramo.Count() <= 1);
 
 	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
@@ -76,8 +76,7 @@ void TProcuraAdversa::DebugChamada(int alfa, int beta) {
 			printf(" α=%d β=%d ═══", alfa, beta);
 		if (pai != NULL)
 			printf(" ⚡%s", pai->Acao(this)); // mostra sempre a ação
-		if (Parametro(NIVEL_DEBUG) >= DETALHE &&
-			(Parametro(VER_ACOES) == 1 || pai == NULL) ||
+		if (noFolha && Parametro(NIVEL_DEBUG) >= DETALHE ||
 			Parametro(NIVEL_DEBUG) >= COMPLETO)
 			Debug();
 	}
@@ -90,15 +89,17 @@ void TProcuraAdversa::DebugChamada(int alfa, int beta) {
 // retorna o valor do estado actual, apos procura de profundidade nivel
 int TProcuraAdversa::MiniMax(int nivel)
 {
-	DebugChamada();
-	// no final da árvore, retornar (valor da heuristica)
-	if (nivel == 1 || Parar()) {
-		completo = false; // árvore cortada, a procura deixa de ser completa
-		return NoFolha(true);
-	}
+	bool noFolha = (nivel == 1 || Parar());
 
 	if (nivel == 0)
 		return MetodoIterativo(false);
+
+	DebugChamada(noFolha);
+	// no final da árvore, retornar (valor da heuristica)
+	if (noFolha) {
+		completo = false; // árvore cortada, a procura deixa de ser completa
+		return NoFolha(true);
+	}
 
 	// expandir o estado
 	TVector<TNo> sucessores;
@@ -122,7 +123,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 		{
 			valor = valorConhecido.valor;
 			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
-				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada();
+				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(false);
 				DebugFolha(false, "💾 %d", valor);
 			}
 		}
@@ -247,7 +248,7 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 			resOK = resultado;
 			nivelOK = nivel;
 			if (Parametro(NIVEL_DEBUG) > NADA && solOK != NULL)
-				printf("\n%d: %s (%d)", nivel, Acao(solOK), resultado);
+				printf("\n │ 🌳 🪜 %d ⚡ %s 🎯 %d ", nivel, Acao(solOK), resultado);
 		}
 		else
 			completo = false;
@@ -323,14 +324,16 @@ int TProcuraAdversa::NoFolha(bool nivel) {
 // idêntico a MiniMax
 int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 {
-	DebugChamada(alfa, beta);
-	if (nivel == 1 || Parar()) {
-		completo = false;
-		return NoFolha(true);
-	}
+	bool noFolha= (nivel == 1 || Parar());
 
 	if (nivel == 0)
 		return MetodoIterativo(true);
+
+	DebugChamada(noFolha, alfa, beta);
+	if (noFolha) {
+		completo = false;
+		return NoFolha(true);
+	}
 
 	TVector<TNo> sucessores;
 	Sucessores(sucessores);
@@ -351,7 +354,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 		{
 			valor = valorConhecido.valor;
 			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
-				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(alfa, beta);
+				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(false, alfa, beta);
 				DebugFolha(false, "💾 %d", valor);
 			}
 		}
@@ -537,7 +540,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 						if (solucao != NULL) { // efetuado um lance
 							const char* strAcao = Acao(solucao);
 							Copiar(solucao);
-							if (Parametro(NIVEL_DEBUG) >= COMPLETO) 
+							if (Parametro(NIVEL_DEBUG) >= COMPLETO)
 								printf(" %s", strAcao);
 							njogada++;
 						}
@@ -630,9 +633,14 @@ void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, FILE* f) {
 
 int TProcuraAdversa::ExecutaAlgoritmo() {
 	int resultado = -1;
+
+	switch (Parametro(ALGORITMO)) {
+	case 1: resultado = MiniMax(Dominio(Parametro(LIMITE), 0)); break;
+	case 2: resultado = MiniMaxAlfaBeta(Dominio(Parametro(LIMITE), 0)); break;
+	}
 	if (Parametro(ORDENAR_SUCESSORES) == 2) {
 		Parametro(ESTADOS_REPETIDOS) = GERADOS;
-		if (reutilizadoAvaliacao > 0 && Parametro(NIVEL_DEBUG) >= ATIVIDADE) {
+		if (reutilizadoAvaliacao > 0 && Parametro(NIVEL_DEBUG) >= DETALHE) {
 			float taxa = (float)(1.0 * reutilizadoAvaliacao / colocadosHT);
 			LimparHT();
 			printf(" HT: reutilização %.2f vezes ", taxa);
@@ -641,10 +649,6 @@ int TProcuraAdversa::ExecutaAlgoritmo() {
 			LimparHT();
 		reutilizadoAvaliacao = 0;
 		Parametro(ESTADOS_REPETIDOS) = IGNORADOS;
-	}
-	switch (Parametro(ALGORITMO)) {
-	case 1: resultado = MiniMax(Dominio(Parametro(LIMITE), 0)); break;
-	case 2: resultado = MiniMaxAlfaBeta(Dominio(Parametro(LIMITE), 0)); break;
 	}
 	return resultado;
 }
