@@ -73,5 +73,48 @@ namespace compat {
 	}
 
 
+#define ICON_LISTA \
+    X(INST,  "📄")    /* instância / dados */ \
+    X(EXP,   "🔍")    /* explorar */ \
+    X(PARAM, "⚙️")    /* parâmetros */ \
+    X(SOL,   "✔")     /* solução */ \
+    X(IND,   "⚖")    /* indicadores */ \
+    X(EXEC,  "►")     /* execução (início) */ \
+    X(FIM,   "🏁")     /* execução (fim) */ \
+    X(CONF,  "🛠️")    /* configuração */ \
+    X(TESTE, "🧪")    /* teste */ \
+    X(TEMPO, "⏱")    /* tempo utilizado */ \
+    X(RESULT, "🗎")    /* resultado / ficheiro */ \
+    X(PROCESSO, "🖥️")    /* processo / computador */ \
+    X(TAREFA, "📋")    /* tarefa */ \
+    X(TAXA, "📊")     /* taxa / resultado */ \
+    X(SUCESSO, "🎯")    /* objetivo alcançado, sucesso */ \
+    X(INSUC, "🚫")    /* insucesso, objetivo não alcançado */ \
+    X(MEMORIA, "🗄")    /* estado em memória ou erro de memória (alternativa: 💾) */ \
+    X(IMP, "⛔")       /* impossível, sem solução */ \
+    X(VALOR, "💰")       /* valor/custo da solução */ \
+    X(SEL, "☑")       /* valor ativo / selecionado */ \
+    X(NSEL, "☐")       /* valor inativo / não selecionado */ \
+    X(TORNEIO, "🏆")       /* torneio */ \
+    X(MENU,  "☰")      /* menu */ 
+
+	enum class EIcon {
+#define X(nome, string) nome,
+		ICON_LISTA
+#undef X
+	};
+
+	inline const char* Icon(EIcon icon) {
+		switch (icon) {
+#define X(nome, string) case EIcon::nome: return string;
+			ICON_LISTA
+#undef X
+		}
+		return "";
+	}
 
 } // namespace compat
+
+// este tipo e função ficam disponíveis sem necessidade de colocar compact::
+using compat::EIcon;
+using compat::Icon;

@@ -121,10 +121,13 @@ void TProcura::TesteManual(const char* nome)
 		Debug();
 		MostraRelatorio(resultados, true);
 		printf("\n"
-			"┌─ ☰ Menu ────────┬────────────────┬─────────────────────┬──────────────┐\n"
-			"│ 1 ↻  " CINZ "Inicializar" NCINZ " │ 2 🔍  " CINZ "Explorar" NCINZ " │ 3 ⚙️  " CINZ "Parâmetros" NCINZ "    │ 4 ✔  " CINZ "Solução" NCINZ " │\n"
-			"│ 5 ⚖  " CINZ "Indicadores" NCINZ " │ 6 ►  " CINZ "Executar" NCINZ "  │ 7 🛠️  " CINZ "Configurações" NCINZ " │ 8 🧪  " CINZ "Teste" NCINZ "  │\n"
-			"└──────────────────┴────────────────┴─────────────────────┴──────────────┘");
+			"┌─ %-2s Menu ────────┬────────────────┬─────────────────────┬──────────────┐\n"
+			"│ 1 %-2s  " CINZ "Instância" NCINZ "  │ 2 %-2s  " CINZ "Explorar" NCINZ " │ 3 %-2s  " CINZ "Parâmetros" NCINZ "    │ 4 %-2s  " CINZ "Solução" NCINZ " │\n"
+			"│ 5 %-2s  " CINZ "Indicadores" NCINZ " │ 6 %-2s  " CINZ "Executar" NCINZ "  │ 7 %-2s  " CINZ "Configurações" NCINZ " │ 8 %-2s  " CINZ "Teste" NCINZ "  │\n"
+			"└──────────────────┴────────────────┴─────────────────────┴──────────────┘",
+			Icon(EIcon::MENU), Icon(EIcon::INST), Icon(EIcon::EXP), Icon(EIcon::PARAM),
+			Icon(EIcon::SOL), Icon(EIcon::IND), Icon(EIcon::EXEC), Icon(EIcon::CONF),
+			Icon(EIcon::TESTE));
 		if ((selecao = NovoValor("\nOpção: ")) == NAO_LIDO)
 			return;
 		switch (Dominio(selecao, 0, 9)) {
@@ -138,20 +141,21 @@ void TProcura::TesteManual(const char* nome)
 			  break;
 		case 6:
 			// executar um algoritmo
-			printf("\n═╤═ ►  Execução iniciada ═══");
+			printf("\n═╤═ %-2s  Execução iniciada ═══", Icon(EIcon::EXEC));
 			LimparEstatisticas();
 			resultado = ExecutaAlgoritmo();
 			MostraParametros(0);
 			tempo = Cronometro(CONT_ALGORITMO);
 			ExecucaoTerminada();
 			InserirRegisto(resultados, instancia.valor, 0);
-			printf("\n═╧═ 🏁  Execução terminada ⏱  %s ═══",
+			printf("\n═╧═ %-2s  Execução terminada %-2s  %s ═══",
+				Icon(EIcon::FIM), Icon(EIcon::TEMPO),
 				MostraTempo(Cronometro(CONT_ALGORITMO)));
 			break;
 		case 7: EditarConfiguracoes(); break;
 		case 8: {
 			TVector<int> instancias = SolicitaInstancias();
-			TesteEmpirico(instancias, NovoTexto("📄  Ficheiro resultados (nada para mostrar no ecrã): "));
+			TesteEmpirico(instancias, NovoTexto("🗎  Ficheiro resultados (nada para mostrar no ecrã): "));
 			break;
 		}
 		case 9: return;
@@ -222,7 +226,9 @@ void TProcura::MostraCaixa(TVector<const char*> titulo, ECaixaParte parte, TVect
 }
 
 
-void TProcura::MostraCaixa(const char* titulo, ECaixaParte parte, int largura, bool aberta, int identacao) {
+void TProcura::MostraCaixa(const char* titulo, ECaixaParte parte, int largura,
+	bool aberta, int identacao, const char* icon)
+{
 	// início da caixa ou linha de separação ou fim da caixa
 	bool novaLinha = true;
 	if (!titulo)
@@ -236,19 +242,41 @@ void TProcura::MostraCaixa(const char* titulo, ECaixaParte parte, int largura, b
 		largura - (titulo[0] == 0 ? 0 : compat::ContaUTF8(titulo) - 4) :
 		largura - compat::ContaUTF8(titulo) - (parte == ECaixaParte::Meio ? 1 : 4));
 
+	if (icon[0] != 0)
+		len -= 3;
+
 	if (len > 100)
 		len = 0;
 
 	if (novaLinha)
 		printf("\n");
 	switch (parte) {
-	case ECaixaParte::Topo: printf("%*s┌─ %s ─", identacao, "", titulo); break;
-	case ECaixaParte::Separador: printf("%*s├─ %s ─", identacao, "", titulo); break;
-	case ECaixaParte::Meio: printf("%*s│ %s", identacao, "", titulo); break;
+	case ECaixaParte::Topo:
+		if(icon[0]!=0)
+			printf("%*s┌─ %-2s %s ─", identacao, "", icon, titulo); 
+		else
+			printf("%*s┌─ %s ─", identacao, "", titulo);
+		break;
+	case ECaixaParte::Separador:
+		if(icon[0]!=0)
+			printf("%*s├─ %-2s %s ─", identacao, "", icon, titulo);
+		else
+			printf("%*s├─ %s ─", identacao, "", titulo);
+		break;
+	case ECaixaParte::Meio:
+		if(icon[0]!=0)
+			printf("%*s│ ^%-2s %s", identacao, "", icon, titulo);
+		else
+			printf("%*s│ %s", identacao, "", titulo);
+		break;
 	case ECaixaParte::Fundo:
 		printf("%*s└", identacao, "");
-		if (titulo[0] != 0) // texto a ser inserido no fundo
-			printf("─ %s ─", titulo);
+		if (titulo[0] != 0) { // texto a ser inserido no fundo
+			if(icon[0]!=0)
+				printf("─ %-2s %s ─", icon, titulo);
+			else
+				printf("─ %s ─", titulo);
+		}
 		break;
 	}
 
@@ -303,7 +331,7 @@ void TProcura::DebugHSL(float h, float s, float l, bool fundo) {
 		float c = (1 - (f < 0 ? -f : f)) * s;
 
 		float h60 = h / 60.0f;
-		float hmod2 = h60 - 2 * int(h60 / 2);  
+		float hmod2 = h60 - 2 * int(h60 / 2);
 		float x = c * (1 - ((hmod2 - 1) < 0 ? -(hmod2 - 1) : (hmod2 - 1)));
 		float m = l - c / 2;
 
@@ -326,10 +354,10 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 	int nElementos = (idParametros == NULL ? parametro.Count() : idParametros->Count());
 	int count = 0, col = 2;
 	if (titulo == nullptr || titulo[0] == 0)
-		titulo = "⚙️  Parâmetros";
+		titulo = "Parâmetros";
 	// detalhe 0 é só uma linha (separador)
 	if (detalhe) {
-		MostraCaixa(titulo, ECaixaParte::Topo, 70);
+		MostraCaixa(titulo, ECaixaParte::Topo, 70,true,0,Icon(EIcon::PARAM));
 		MostraCaixa("", ECaixaParte::Meio, 1);
 	}
 	else {
@@ -365,7 +393,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 		if (i < nElementos - 1) {
 			if (detalhe > 1 || col > 70) { // limite de largura
 				if (detalhe == 0) {
-					MostraCaixa("⚙️ ", ECaixaParte::Separador, 1, true, 1);
+					MostraCaixa(" ", ECaixaParte::Separador, 1, true, 1, Icon(EIcon::PARAM));
 					printf(" ");
 				}
 				else
@@ -423,7 +451,7 @@ void TProcura::EditarParametros() {
 			continue;
 		}
 		// iniciar caixa com nome do parametro
-		snprintf(str, sizeof(str), "⚙️  P%d(%s)", opcao, parametro[opcao - 1].nome);
+		snprintf(str, sizeof(str), "%-2s  P%d(%s)", Icon(EIcon::PARAM), opcao, parametro[opcao - 1].nome);
 		MostraCaixa(str, ECaixaParte::Topo);
 		// mostrar descrição se existir
 		if (parametro[opcao - 1].descricao != NULL)
@@ -550,7 +578,7 @@ TVector<int> TProcura::SolicitaInstancias()
 		{ "📖 Sintaxe comando"," " CINZ "Instâncias:" NCINZ " A,B,C | A:B | A : B : C" }
 	, 40);
 
-	printf("\n✏️ IDs das instâncias (%d a %d): ", instancia.min, instancia.max);
+	printf("\n%-2s IDs das instâncias (%d a %d): ", Icon(EIcon::INST), instancia.min, instancia.max);
 
 	str = NovoTexto("");
 	if (strlen(str) > 1)
@@ -694,14 +722,14 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 			distinto += i;
 	}
 	// mostra parametros comuns, evitando repetição em cada configuração
-	MostraParametros(detalhe, &comum, "🛠️ ");
+	MostraParametros(detalhe, &comum, Icon(EIcon::CONF));
 	printf(CINZ " (parâmetros comuns)" NCINZ);
 
 	// visualizar configurações atuais, assinalando a atualmente escolhida
 	printf("\n═╪═ Configurações ═══");
 	for (int i = 0; i < configuracoes.Count(); i++) {
 		char str[256];
-		snprintf(str, sizeof(str), "⚙️ [%d]", i + 1);
+		snprintf(str, sizeof(str), "%-2s [%d]", Icon(EIcon::PARAM), i + 1);
 		ConfiguracaoAtual(configuracoes[i], GRAVAR);
 		MostraParametros(detalhe, &distinto, str);
 		if (i == atual)
@@ -714,23 +742,53 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 	printf("\n═╧═══════════════════");
 }
 
-void TProcura::DebugConjunto(TVector<int> valores, const char* etiqueta) {
+void TProcura::MostraConjunto(TVector<int> valores, const char* etiqueta) {
 	printf(" { ");
 	if (valores.Count() <= 10) {
 		for (auto ind : valores)
-			printf("%s%d ", etiqueta, ind);
+			printf("%-2s%d ", etiqueta, ind);
 	}
 	else {
 		for (int i = 0; i <= 2; i++)
-			printf("%s%d ", etiqueta, valores[i]);
+			printf("%.2s%d ", etiqueta, valores[i]);
 		printf("… ");
 		for (int i = valores.Count() - 3; i < valores.Count(); i++)
-			printf("%s%d ", etiqueta, valores[i]);
+			printf("%-2s%d ", etiqueta, valores[i]);
 	}
 	printf("} ");
 	if (valores.Count() > 10)
 		printf("#%d", valores.Count());
 }
+
+void TProcura::TesteInicio(TVector<int>& instancias, TVector<int>& configAtual) {
+	ConfiguracaoAtual(configAtual, LER);
+	if (configuracoes.Empty()) {
+		// não foram feitas configurações, utilizar a atual
+		configuracoes.Count(1);
+		configuracoes.Last() = configAtual;
+	}
+	for (auto item : instancias)
+		if (item<instancia.min || item>instancia.max)
+			item = -1;
+	instancias -= (-1);
+	if (mpiID == 0) {
+		printf("\n\n═╤═ Instâncias ═══");
+		MostraConjunto(instancias, Icon(EIcon::INST));
+		MostrarConfiguracoes(0);
+	}
+	printf("\n═╤═ %-2s  Início do Teste (%-2s %d) ═══",
+		Icon(EIcon::TESTE), Icon(EIcon::PROCESSO), mpiID);
+	fflush(stdout);
+	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
+}
+
+void TProcura::TesteFim() {
+	printf("\n═╧═ %-2s  Fim do Teste (%-2s %d  %-2s  %s) ═══",
+		Icon(EIcon::FIM), Icon(EIcon::PROCESSO), mpiID, Icon(EIcon::TEMPO),
+		MostraTempo(Cronometro(CONT_TESTE)));
+	fflush(stdout);
+}
+
 
 // utilizar para executar testes empíricos, utilizando todas as instãncias,
 // com o último algoritmo executado e configurações existentes
@@ -740,33 +798,21 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	int backupID = instancia.valor;
 	int nTarefa = 0;
 	double periodoReporte = 60;
-	ConfiguracaoAtual(atual, LER);
-	if (configuracoes.Empty()) {
-		// não foram feitas configurações, utilizar a atual
-		configuracoes.Count(1);
-		configuracoes.Last() = atual;
-	}
-	if (mpiID == 0) {
-		MostrarConfiguracoes(0);
-		printf("\n Instâncias:");
-		DebugConjunto(instancias, "↻ ");
-	}
-	printf("\n═╤═ 🧪  Início do Teste (🖥️ %d) ═══", mpiID);
-	fflush(stdout);
+
+	TesteInicio(instancias, atual);
+
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
 	case COMPLETO: periodoReporte = 0; break; // reporte em todos os eventos
 	}
-	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
 	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
-	for (auto item : instancias)
-		if (item<instancia.min || item>instancia.max)
-			item = -1;
-	instancias -= (-1);
 	if (mpiID == 0)
 		Debug(ATIVIDADE, false,
-			"\n ├─ 📋 Tarefas:%d   ↻ Instâncias: %d   🛠️ Configurações: %d   🖥️ Processos: %d.",
-			instancias.Count() * configuracoes.Count(), instancias.Count(), configuracoes.Count(), mpiCount) &&
+			"\n ├─ %-2s Tarefas:%d   %-2s Instâncias: %d   %-2s Configurações: %d   %-2s Processos: %d.",
+			Icon(EIcon::TAREFA), instancias.Count() * configuracoes.Count(),
+			Icon(EIcon::INST), instancias.Count(),
+			Icon(EIcon::CONF), configuracoes.Count(),
+			Icon(EIcon::PROCESSO), mpiCount) &&
 		fflush(stdout);
 	// percorrer todas as instâncias
 	for (int configuracao = 0; configuracao < configuracoes.Count(); configuracao++) {
@@ -779,12 +825,12 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 
 			if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
 				Debug(ATIVIDADE, false,
-					"\n ├─ ⏱ %-15s 📋 %-5d ↻ %-5d 🛠️ %-5d 🖥️ %-5d",
-					MostraTempo(Cronometro(CONT_TESTE)),
-					nTarefa - 1,
-					inst,
-					configuracao + 1,
-					mpiCount) &&
+					"\n ├─ %-2s %-15s %-2s %-5d %-2s %-5d %-2s %-5d %-2s %-5d",
+					Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
+					Icon(EIcon::TAREFA), nTarefa,
+					Icon(EIcon::INST), inst,
+					Icon(EIcon::CONF), configuracao + 1,
+					Icon(EIcon::PROCESSO), mpiCount) &&
 					fflush(stdout);
 				Cronometro(CONT_REPORTE, true);
 			}
@@ -811,21 +857,22 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 			JuntarCSV(ficheiro);
 		if (mpiID == 0)
 			Debug(ATIVIDADE, false,
-				"\n ├─ 📄  Ficheiro %s.csv gravado.\n"
-				" │  ⏱  Tempo real: %s",
-				ficheiro, MostraTempo(Cronometro(CONT_TESTE))) &&
-			Debug(ATIVIDADE, false, "\n │  ⏱  CPU total: %s",
-				MostraTempo(Cronometro(CONT_TESTE) * mpiCount)) &&
-			Debug(ATIVIDADE, false, "\n │  📊  Utilização: %.1f%%",
-				100. * tempoTotal / (tempoMaximo * mpiCount));
+				"\n ├─ %-2s  Ficheiro %s.csv gravado.\n"
+				" │  %-2s  Tempo real: %s",
+				Icon(EIcon::RESULT), ficheiro,
+				Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE))) &&
+			Debug(ATIVIDADE, false, "\n │  %-2s  CPU total: %s",
+				Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE) * mpiCount)) &&
+			Debug(ATIVIDADE, false, "\n │  %-2s  Utilização: %.1f%%",
+				Icon(EIcon::TAXA), 100. * tempoTotal / (tempoMaximo * mpiCount));
 	}
 
 	ConfiguracaoAtual(atual, GRAVAR);
 	instancia.valor = backupID;
 	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
-	printf("\n═╧═ 🏁  Fim do Teste (🖥️ %d  ⏱  %s) ═══", mpiID, MostraTempo(Cronometro(CONT_TESTE)));
-	fflush(stdout);
+
+	TesteFim();
 }
 
 void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
@@ -835,11 +882,11 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 	double esperaTrabalhadores = 0, esperaGestor = 0;
 	TVector<double> terminou; // instante em que terminou cada trabalhador
 	TVector<int> trabalhador, trabalhar;
+	TVector<int> atual;
 	double periodoReporte = 60;
-	if (mpiID == 0)
-		MostrarConfiguracoes(0);
-	printf("\n═╤═ 🧪  Início do Teste (🖥️ %d) ═══", mpiID);
-	fflush(stdout);
+
+	TesteInicio(instancias, atual);
+
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
 	case COMPLETO: periodoReporte = 0; break;
@@ -857,20 +904,8 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 
 	TVector<TResultado> resultados; // guarda as soluções obtidas
 	TVector<TResultado> tarefas; // guarda informação apenas das tarefas a realizar (sem resultados)
-	TVector<int> atual;
 	int backupID = instancia.valor;
-	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
 	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
-	for (auto item : instancias)
-		if (item<instancia.min || item>instancia.max)
-			item = -1;
-	instancias -= (-1);
-	ConfiguracaoAtual(atual, LER);
-	if (configuracoes.Empty()) {
-		// não foram feitas configurações, utilizar a atual
-		configuracoes.Count(1);
-		configuracoes.Last() = atual;
-	}
 
 	// construir todas as tarefas
 	for (int configuracao = 0; configuracao < configuracoes.Count(); configuracao++)
@@ -878,9 +913,11 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 			tarefas += { inst, configuracao };
 
 	int totalTarefas = tarefas.Count();
-	Debug(ATIVIDADE, false, "\n ├─ 📋 Tarefas:%d   ↻ Instâncias: %d   🛠️ Configurações: %d   🖥️ Processos: %d.",
-		tarefas.Count(), instancias.Count(), configuracoes.Count(),
-		trabalhador.Count() + 1) &&
+	Debug(ATIVIDADE, false, "\n ├─ %-2s Tarefas:%d   %-2s Instâncias: %d   %-2s Configurações: %d   %-2s Processos: %d.",
+		Icon(EIcon::TAREFA), tarefas.Count(),
+		Icon(EIcon::INST), instancias.Count(),
+		Icon(EIcon::CONF), configuracoes.Count(),
+		Icon(EIcon::PROCESSO), trabalhador.Count() + 1) &&
 		fflush(stdout);
 
 	// dar uma tarefa a cada escravo
@@ -919,12 +956,13 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
 			// mostrar uma linha por cada execução
 			Debug(ATIVIDADE, false,
-				"\n ├─ ⏱ %-15s 📋 %-5d ↻ %-5d 🛠️ %-5d 🖥️ %-5d ⚖  ",
-				MostraTempo(Cronometro(CONT_TESTE)),
-				totalTarefas - tarefas.Count(),
-				resultados.Last().instancia,
-				resultados.Last().configuracao,
-				trabalhador.Last());
+				"\n ├─ %-2s %-15s %-2s %-5d %-2s %-5d %-2s %-5d %-2s %-5d %-2s  ",
+				Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
+				Icon(EIcon::TAREFA), totalTarefas - tarefas.Count(),
+				Icon(EIcon::INST), resultados.Last().instancia,
+				Icon(EIcon::CONF), resultados.Last().configuracao,
+				Icon(EIcon::PROCESSO), trabalhador.Last(),
+				Icon(EIcon::IND));
 			for (auto ind : resultados.Last().valor)
 				printf("%" PRId64 " ", ind);
 			fflush(stdout);
@@ -959,21 +997,21 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 	mpiCount = 1; // forçar a escrita do ficheiro apenas neste processo
 	RelatorioCSV(resultados, ficheiro) &&
 		Debug(ATIVIDADE, false,
-			"\n ├─ 📄  Ficheiro %s.csv gravado.\n"
-			" │  ⏱  Tempo real: %s",
-			ficheiro, MostraTempo(Cronometro(CONT_TESTE))) &&
-		Debug(ATIVIDADE, false, "\n │  ⏱  CPU total: %s",
-			MostraTempo(Cronometro(CONT_TESTE) * (backupCount - 1))) &&
-		Debug(ATIVIDADE, false, "\n │  ⏱  Espera do gestor: %s",
-			MostraTempo(esperaGestor)) &&
-		Debug(ATIVIDADE, false, "\n │  ⏱  Espera trabalhadores: %s",
-			MostraTempo(esperaTrabalhadores)) &&
-		Debug(ATIVIDADE, false, "\n │  📊  Utilização:\n │  - Total: %.1f%%\n │  - Gestor: %.1f%%\n │  - Trabalhadores: %.1f%% ",
-			taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
+			"\n ├─ %-2s  Ficheiro %s.csv gravado.\n"
+			" │  %-2s  Tempo real: %s",
+			Icon(EIcon::RESULT), ficheiro,
+			Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE))) &&
+		Debug(ATIVIDADE, false, "\n │  %-2s  CPU total: %s",
+			Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE) * (backupCount - 1))) &&
+		Debug(ATIVIDADE, false, "\n │  %-2s  Espera do gestor: %s",
+			Icon(EIcon::TEMPO), MostraTempo(esperaGestor)) &&
+		Debug(ATIVIDADE, false, "\n │  %-2s  Espera trabalhadores: %s",
+			Icon(EIcon::TEMPO), MostraTempo(esperaTrabalhadores)) &&
+		Debug(ATIVIDADE, false, "\n │  %-2s  Utilização:\n │  - Total: %.1f%%\n │  - Gestor: %.1f%%\n │  - Trabalhadores: %.1f%% ",
+			Icon(EIcon::TAXA), taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
 	mpiCount = backupCount;
 
-	printf("\n═╧═ 🏁  Fim do Teste (🖥️ %d  ⏱  %s) ═══", mpiID, MostraTempo(Cronometro(CONT_TESTE)));
-	fflush(stdout);
+	TesteFim();
 #endif
 }
 
@@ -990,19 +1028,8 @@ void TProcura::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 	TVector<TResultado> resultados; // guarda as soluções obtidas
 	TVector<int> atual;
 	int backupID = instancia.valor;
-	printf("\n═╤═ 🧪  Início do Teste (🖥️ %d) ═══", mpiID);
-	fflush(stdout);
-	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
-	for (auto item : instancias)
-		if (item<instancia.min || item>instancia.max)
-			item = -1;
-	instancias -= (-1);
-	ConfiguracaoAtual(atual, LER);
-	if (configuracoes.Empty()) {
-		// não foram feitas configurações, utilizar a atual
-		configuracoes.Count(1);
-		configuracoes.Last() = atual;
-	}
+
+	TesteInicio(instancias, atual);
 
 	for (;;) {
 		// receber nova tarefa
@@ -1026,9 +1053,7 @@ void TProcura::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 
 	// saída, enviar o tempo de trabalho e tempo de espera totais
 
-	printf("\n═╧═ 🏁  Fim do Teste (🖥️ %d  ⏱  %s) ═══", mpiID, MostraTempo(Cronometro(CONT_TESTE)));
-	fflush(stdout);
-
+	TesteFim();
 #endif
 }
 
@@ -1052,22 +1077,22 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	InserirRegisto(resultados, instancia.valor, conf);
 
 	if (resultado >= 0) {
-		mpiID == 0 && Debug(COMPLETO, false, "🎯 %-5d", resultado);
+		mpiID == 0 && Debug(COMPLETO, false, "%-2s %-5d", Icon(EIcon::SUCESSO), resultado);
 	}
 	else {
 		if (Parar())
-			mpiID == 0 && Debug(COMPLETO, false, "🚫 ");
+			mpiID == 0 && Debug(COMPLETO, false, "%-2s ", Icon(EIcon::INSUC));
 		if (TempoExcedido())
-			mpiID == 0 && Debug(COMPLETO, false, "⏱ ");
+			mpiID == 0 && Debug(COMPLETO, false, "%-2s ", Icon(EIcon::TEMPO));
 		if (memoriaEsgotada)
-			mpiID == 0 && Debug(COMPLETO, false, "💾 ");
-		if (resultado < 0 && !Parar())
-			mpiID == 0 && Debug(COMPLETO, false, "🎯 ❌  "); //Instância Impossível! (se algoritmo completo) ");
+			mpiID == 0 && Debug(COMPLETO, false, "%-2s ", Icon(EIcon::MEMORIA));
+		if (resultado < 0 && !Parar()) //Instância Impossível! (se algoritmo completo) ");
+			mpiID == 0 && Debug(COMPLETO, false, "%-2s %-2s  ", Icon(EIcon::SUCESSO), Icon(EIcon::IMP));
 		else // não resolvido, cancelar resultados 
 			resultados.Last().valor.First() = -2;
 	}
 	if (mpiID == 0 && Parametro(NIVEL_DEBUG) >= COMPLETO) {
-		printf("⚖  ");
+		printf("%-2s  ", Icon(EIcon::IND));
 		for (auto ind : resultados.Last().valor)
 			printf("%" PRId64 " ", ind);
 	}
@@ -1239,7 +1264,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 	if (ultimo) {
 		if (!resultados.Empty() && !indAtivo.Empty()) {
 			int col = 2;
-			MostraCaixa("⚖  Indicadores", ECaixaParte::Topo);
+			MostraCaixa("Indicadores", ECaixaParte::Topo,70,true,0, Icon(EIcon::IND));
 			MostraCaixa("", ECaixaParte::Meio, 1);
 			for (auto ind : indAtivo) {
 				if (col > 2)
@@ -1267,7 +1292,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 
 	// mostrar os resultados apenas do custo e tempo
 	MostraCaixa(titulosVazios, ECaixaParte::Topo, larguras, false);
-	MostraCaixa({ "↻ ", "🛠️ ","💰 ", "⏱ " },
+	MostraCaixa({ Icon(EIcon::INST), Icon(EIcon::CONF),Icon(EIcon::VALOR), Icon(EIcon::TEMPO) },
 		ECaixaParte::Meio,
 		larguras, false);
 	MostraCaixa(titulosVazios, ECaixaParte::Separador, larguras, false);
@@ -1297,7 +1322,8 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 	for (int i = 0; i < total.Count(); i++) {
 		char str[256];
 		int col = 2;
-		snprintf(str, sizeof(str), "📊  Total 🛠️ %d", i + 1);
+		snprintf(str, sizeof(str), "%-2s  Total %-2s %d",
+			Icon(EIcon::TAXA), Icon(EIcon::CONF), i + 1);
 		MostraCaixa(str, ECaixaParte::Topo);
 		MostraCaixa("", ECaixaParte::Meio, 1);
 		for (auto ind : indAtivo) {
@@ -1341,14 +1367,14 @@ void TProcura::CalculaTorneio(TVector<TResultado>& resultados) {
 
 void TProcura::MostraIndicadores()
 {
-	MostraCaixa("⚖  Indicadores", ECaixaParte::Topo);
+	MostraCaixa("Indicadores", ECaixaParte::Topo, 70, true, 0, Icon(EIcon::IND));
 	for (int i = 0; i < indicador.Count(); i++) {
 		MostraCaixa("", ECaixaParte::Meio, 1);
 		printf(CINZ "I%d(%s):" NCINZ " ", i + 1, indicador[i].nome);
 		if (indicador[i].indice < 0)
-			printf("✖  inativo ");
+			printf("%-2s  inativo ", Icon(EIcon::NSEL));
 		else
-			printf("✔  %dº lugar ", indicador[i].indice + 1);
+			printf("%-2s  %dº lugar ", Icon(EIcon::SEL), indicador[i].indice + 1);
 		MostraCaixa("", ECaixaParte::Meio, 1);
 		printf(CINZ "%s" NCINZ, indicador[i].descricao);
 	}
@@ -1371,7 +1397,7 @@ void TProcura::MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo)
 			}
 
 	// mostrar tabela do torneio
-	printf("\n🏆  Torneio (#instâncias melhores):");
+	printf("\n%-2s  Torneio (#instâncias melhores):", Icon(EIcon::TORNEIO));
 	BarraTorneio(true);
 	for (int i = 0; i < pontos.Count(); i++) {
 		printf("\n%2d", i + 1);
@@ -1471,7 +1497,7 @@ void TProcura::SolicitaInstancia() {
 		int resultado;
 		char* texto;
 
-		MostraCaixa("↻  Inicializar", ECaixaParte::Topo);
+		MostraCaixa("Instância", ECaixaParte::Topo, 70, true, 0, Icon(EIcon::INST));
 		MostraCaixa("", ECaixaParte::Meio, 1);
 		printf(CINZ "ID atual:" NCINZ " %d  " CINZ "Intervalo:" NCINZ " [%d–%d]  ",
 			instancia.valor, instancia.min, instancia.max);

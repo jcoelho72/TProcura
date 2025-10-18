@@ -151,7 +151,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 					TVector<int> valores;
 					for (int j = i + 1; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
-					DebugConjunto(valores, "🔖");
+					MostraConjunto(valores, "🔖");
 				}
 				break; // nao e possivel melhorar
 			}
@@ -387,7 +387,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 					TVector<int> valores;
 					for (int j = i + 1; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
-					DebugConjunto(valores, "🔖");
+					MostraConjunto(valores, "🔖");
 				}
 				break;
 			}

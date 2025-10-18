@@ -352,7 +352,7 @@ int TProcuraConstrutiva::SolucaoParcial(int i, TVector<TNo>& sucessores, int iAu
 			valores += (iAux >= 0 ? sucessores[(*id)[j]]->debugID : sucessores[j]->debugID);
 		if (!valores.Empty()) {
 			DebugFolha(true, "");
-			DebugConjunto(valores, "🔖");
+			MostraConjunto(valores, "🔖");
 		}
 	}
 	ramo.Pop();
@@ -481,7 +481,7 @@ int TProcuraConstrutiva::IDAStar(int upperBound)
 					TVector<int> valores;
 					// apenas o atual, já que continua
 					valores += sucessores[id[i]]->debugID;
-					DebugConjunto(valores, "🔖");
+					MostraConjunto(valores, "🔖");
 				}
 			}
 			else {
@@ -524,7 +524,7 @@ int TProcuraConstrutiva::BranchAndBound(int upperBound)
 					TVector<int> valores;
 					for (int j = i; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
-					DebugConjunto(valores, "🔖");
+					MostraConjunto(valores, "🔖");
 				}
 				break;
 			}
@@ -690,7 +690,7 @@ void TProcuraConstrutiva::DebugPasso(CListaNo* lista)
 		if (lista == NULL) {
 			if (expansoes < geracoes) {
 				snprintf(str, sizeof(str), "%d:%d", expansoes + 1, geracoes);
-				DebugConjunto(_TV(str), "🔖");
+				MostraConjunto(_TV(str), "🔖");
 			}
 			else
 				printf(" { }");
@@ -702,7 +702,7 @@ void TProcuraConstrutiva::DebugPasso(CListaNo* lista)
 			for (; lista->Estado() != NULL; lista->atual = lista->Proximo())
 				valores += lista->Estado()->debugID;
 			lista->atual = atual;
-			DebugConjunto(valores, "🔖");
+			MostraConjunto(valores, "🔖");
 		}
 	}
 	if (Parametro(NIVEL_DEBUG) > PASSOS)
@@ -726,7 +726,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 			for (auto suc : sucessores)
 				valores += suc->debugID;
 			if (valores.First() != 0)
-				DebugConjunto(valores, "🔖");
+				MostraConjunto(valores, "🔖");
 		}
 	}
 	else {

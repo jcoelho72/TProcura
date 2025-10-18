@@ -116,8 +116,6 @@ enum class ECaixaParte {
 	Fundo        // fecho da caixa
 };
 
-
-
 // identificação de todos os indicadores definidos
 typedef struct SIndicador {
 	/// @brief nome do indicador
@@ -580,11 +578,11 @@ public:
 	static char* MostraTempo(double segundos);
 
 	static void MostraCaixa(TVector<const char*> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
-	static void MostraCaixa(const char* titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0);
+	static void MostraCaixa(const char* titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0, const char* icon = "");
 	static void MostraCaixa(TVector<const char*> textos, int largura = 70, bool aberta = true, int identacao = 0);
 	static void Mensagem(const char* titulo, const char* fmt, ...);
 
-	static void DebugConjunto(TVector<int> valores, const char* etiqueta);
+	static void MostraConjunto(TVector<int> valores, const char* etiqueta);
 
 
 	/// @brief Muda a cor (fundo/letra) com HSL.
@@ -790,5 +788,9 @@ protected:
 			inicio[id] = clock();
 		return (double)(clock() - inicio[id]) / CLOCKS_PER_SEC;
 	}
+
+	/// @brief arranque de teste, auxiliar aos Testes Empíricos
+	void TesteInicio(TVector<int> &instancias, TVector<int> &configAtual);
+	void TesteFim();
 
 };
