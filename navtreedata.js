@@ -30,7 +30,8 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
-        [ "Functions", "namespacemembers_func.html", null ]
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -64,7 +65,7 @@ var NAVTREEINDEX =
 "Adversa_2Teste_2teste_8cpp.html",
 "TProcura_8h.html#ad4fc32e65c5226aa62a959b4402a857c",
 "classTCodificacaoBinaria.html#ad2083ee209edac21d0ce27db4349825c",
-"compact_8h.html"
+"classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

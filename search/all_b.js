@@ -6,7 +6,7 @@ var searchData=
   ['beaset_3',['BeASet',['../classTVector.html#a084d0ab4f7ea5451716f734e649950f6',1,'TVector']]],
   ['begin_4',['begin',['../classTVector.html#ac03b333ddccac1382d0e36558713edc1',1,'TVector::begin() noexcept'],['../classTVector.html#a45c61335d31c86c63ca7868be655fd0d',1,'TVector::begin() const noexcept']]],
   ['beta_5',['Ação 4 - MiniMax com cortes Alfa/Beta',['../teste_jogo_do_galo.html#autotoc_md57',1,'']]],
-  ['bibliografia_6',['Bibliografia',['../index.html#autotoc_md122',1,'']]],
+  ['bibliografia_6',['Bibliografia',['../index.html#autotoc_md125',1,'']]],
   ['binária_7',['Teste Particao - Codificação Binária',['../teste_particao_cb.html',1,'']]],
   ['bit_8',['bit',['../classTCodificacaoBinaria.html#a82db1e906b249821c06f910742f42f46',1,'TCodificacaoBinaria::Bit(int i) const'],['../classTCodificacaoBinaria.html#a9f693a420b0569bf1102f1eb7a91bc43',1,'TCodificacaoBinaria::Bit(int i)']]],
   ['bitref_9',['bitref',['../classBitRef.html#aa95d691745cb584e6e7f1544802e6de6',1,'BitRef::BitRef()'],['../classBitRef.html',1,'BitRef']]],

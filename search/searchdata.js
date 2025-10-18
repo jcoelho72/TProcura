@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "123456789_abcdefghijklmnopqrstuvz~àá📑📦",
+  0: "123456789_abcdefghijklmnopqrstuvxz~àá📑📦",
   1: "bcst",
   2: "ct",
   3: "acdijoprt",
@@ -8,9 +8,9 @@ var indexSectionsWithContent =
   5: "abcdefghiklmnoprstvz",
   6: "t",
   7: "e",
-  8: "abcdefgijlmnopqrstuvz",
+  8: "abcdefgijlmnopqrstuvxz",
   9: "o",
-  10: "cn",
+  10: "cinx",
   11: "acdegimprsvà",
   12: "128abcdegijloprt"
 };

@@ -103,5 +103,15 @@ digraph "TProcura::Cronometro"
   Node37 [id="Node000037",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afd7217164b5ffce15f1949138f469fdb",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node37 -> Node26 [id="edge60_Node000037_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node33 [id="edge61_Node000001_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node28 [id="edge62_Node000001_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node38 [id="edge62_Node000001_Node000038",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node38 [id="Node000038",label="TProcura::TesteFim",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aacb98ca4aa5bbc4db469bb5329e58434",tooltip=" "];
+  Node38 -> Node25 [id="edge63_Node000038_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node38 -> Node37 [id="edge64_Node000038_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node38 -> Node33 [id="edge65_Node000038_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node39 [id="edge66_Node000001_Node000039",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node39 [id="Node000039",label="TProcura::TesteInicio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a577697338460038138738e87157166af",tooltip="arranque de teste, auxiliar aos Testes Empíricos"];
+  Node39 -> Node25 [id="edge67_Node000039_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node39 -> Node37 [id="edge68_Node000039_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node39 -> Node33 [id="edge69_Node000039_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node28 [id="edge70_Node000001_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

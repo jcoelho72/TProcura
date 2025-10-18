@@ -88,10 +88,10 @@ digraph "TProcuraConstrutiva::MelhorPrimeiro"
   Node25 -> Node27 [id="edge52_Node000025_Node000027",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node30 [id="edge53_Node000001_Node000030",color="steelblue1",style="solid",tooltip=" "];
   Node30 [id="Node000030",label="TProcuraConstrutiva\l::SolucaoParcial",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a5be7bb118ed235c075dad8176e543f68",tooltip=" "];
-  Node30 -> Node31 [id="edge54_Node000030_Node000031",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="TProcura::DebugConjunto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aeb0c13100562688b04050be9710eaf38",tooltip=" "];
-  Node30 -> Node14 [id="edge55_Node000030_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node30 -> Node20 [id="edge56_Node000030_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node30 -> Node14 [id="edge54_Node000030_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node30 -> Node20 [id="edge55_Node000030_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node30 -> Node31 [id="edge56_Node000030_Node000031",color="steelblue1",style="solid",tooltip=" "];
+  Node31 [id="Node000031",label="TProcura::MostraConjunto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afc922372bd66e1124bce8e4c61a593a5",tooltip=" "];
   Node30 -> Node12 [id="edge57_Node000030_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node30 -> Node15 [id="edge58_Node000030_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node32 [id="edge59_Node000001_Node000032",color="steelblue1",style="solid",tooltip=" "];

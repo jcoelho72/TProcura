@@ -85,7 +85,11 @@ digraph "TProcura::MostraTempo"
   Node32 [id="Node000032",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afd7217164b5ffce15f1949138f469fdb",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node32 -> Node25 [id="edge47_Node000032_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node33 [id="edge48_Node000001_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node33 [id="Node000033",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1b444fbb9aa1d6bf3df277df3f289587",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
-  Node33 -> Node25 [id="edge49_Node000033_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node27 [id="edge50_Node000001_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node33 [id="Node000033",label="TProcura::TesteFim",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aacb98ca4aa5bbc4db469bb5329e58434",tooltip=" "];
+  Node33 -> Node24 [id="edge49_Node000033_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node33 -> Node32 [id="edge50_Node000033_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node33 -> Node34 [id="edge51_Node000033_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node34 [id="Node000034",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1b444fbb9aa1d6bf3df277df3f289587",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node34 -> Node25 [id="edge52_Node000034_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node27 [id="edge53_Node000001_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

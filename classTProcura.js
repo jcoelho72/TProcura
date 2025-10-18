@@ -48,5 +48,7 @@ var classTProcura =
     [ "TesteEmpirico", "classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336", null ],
     [ "TesteEmpiricoGestor", "classTProcura.html#afd7217164b5ffce15f1949138f469fdb", null ],
     [ "TesteEmpiricoTrabalhador", "classTProcura.html#a1b444fbb9aa1d6bf3df277df3f289587", null ],
+    [ "TesteFim", "classTProcura.html#aacb98ca4aa5bbc4db469bb5329e58434", null ],
+    [ "TesteInicio", "classTProcura.html#a577697338460038138738e87157166af", null ],
     [ "TesteManual", "classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af", null ]
 ];
