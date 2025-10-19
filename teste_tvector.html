@@ -111,7 +111,6 @@ Sumário</h2>
 <li><a class="el" href="teste_tvector.html#tvector-a6">Ação 6: Menu 8 - Teste</a></li>
 <li><a class="el" href="teste_tvector.html#tvector-a7">Ação 7: Linha de comando</a></li>
 <li><a class="el" href="teste_tvector.html#tvector-a8">Ação 8: Execução MPI</a></li>
-<li><a class="el" href="teste_tvector.html#tvector-a9">Ação 9: Desafio CTesteTVector</a></li>
 </ul>
 <div class="fragment"><div class="line">TVector</div>
 <div class="line">┌─ ⚙️ Parâmetros ──────────────────────────────────────────────────────</div>
@@ -814,9 +813,9 @@ Ação 7: Linha de comando</h2>
 <div class="line">│ verifica se o vetor está ordenado</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 </div><!-- fragment --><p>Podemos ver os parametros específicos do programa, e também a lista completa de parametros e indicadores do algoritmo. Assim podemos saber o que utilizar na definição das configurações de execução.</p>
-<p>Podemos reproduzir o teste anterior de acordo com o modelo de Teste.</p>
 <h3><a class="anchor" id="autotoc_md98"></a>
 Teste: tvetor_1</h3>
+<p>Podemos neste teste reproduzir o teste anterior de acordo com o modelo de Teste. Nesse teste queremos saber como varia o tempo na operação de ordenação, com o tamanho do vetor, ou seja, pretendemos um teste de performance.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Performance (tempo vs tamanho)</li>
 <li><b>Definição</b>: Instâncias: 1:10; Configurações: P1=2</li>
@@ -844,8 +843,7 @@ Teste: tvetor_1</h3>
 <div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  5&quot; 156ms ) ═══</div>
 </div><!-- fragment --><p>No arranque, como habitualmente, são mostradas as instâncias e configurações, de modo a que possa ser detectado um erro, e abortado o teste se necessário.</p>
 <p>O teste arranca normalmente, e pára aos 5 segundos dado que o teste é no modo base. Vamos fazer também a versão com esforço B, para podermos ficar com a situação que tinhamos no modo interativo.</p>
-<div class="fragment"><div class="line">/TProcura/Teste$ ./bin/Release/TProcura 1:10 -R Resultados/tvetor_1B -P P1=2 P2=</div>
-<div class="line">3 P3=1:10</div>
+<div class="fragment"><div class="line">/TProcura/Teste$ ./bin/Release/TProcura 1:10 -R Resultados/tvetor_1B -P P1=2 P2=3 P3=1:10</div>
 <div class="line"> </div>
 <div class="line"> </div>
 <div class="line">═╤═ Instâncias ═══ { 📄1 📄2 📄3 📄4 📄5 📄6 📄7 📄8 📄9 📄10 }</div>
@@ -875,220 +873,293 @@ Teste: tvetor_1</h3>
 <div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  47&quot; 579ms ) ═══</div>
 </div><!-- fragment --><p>O tempo total sido de 47 segundos. Com debug a 0 não iriamos ter nenhum input senão após o teste terminar. Podemos ver com nível 3 um report a cada 10 segundos, com o número da tarefa atual, o número da instância atual, configuração atual e número de processos. Assim podemos ir vendo o andamento dos testes.</p>
 <p>No final temos a mesmoa informação final que nos testes em modo interativo. São em tudo iguais, a diferença aqui é termos utilizado o debug nível 3.</p>
+<p>É preciso referenciar o hardware utilizado. Ao não ser num cluster em que o hardware é preparado para execuções, torna-se complicada a reprodução fiel, principalmente se o tempo é um indicador em estudo, como é este caso. Outras aplicações podem estar a executar e velocidade do CPU variável, podem enviesar os resultados, o que foi o caso estas execuções.</p>
+<ul>
+<li><b>hardwoare</b>: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)</li>
+</ul>
 <h4><a class="anchor" id="autotoc_md99"></a>
 Análise e Conclusões</h4>
-<p>Vamos agora analisar os resultados, com a relação entre tempo e tamanho, conforme objetivo inicial do teste.</p>
-<p>.... (refazer)</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Média de I2(Tempo(ms))    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">69,7    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">162,2    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">254,5    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">332,5    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">407,3    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">504    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">594,6    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">643,8    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">713,3    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">817,9   </td></tr>
-</table>
-<p>Utilizamos agora as tabelas diretamente, em vez de imagens do Excel.</p>
-<p>Os valores são distintos mas agora temos mais precisão, uma vez que temos 10 excuções por cada caso. A média do tempo sobe com o tamanho, mas não de forma linear.</p>
-<p>Estando respondida a questão inicial sobre o tempo de ordenação, podemos com este código procurar responder a outra questão:</p>
+<p>Os dois ficheiros produzidos, Resultados/tvetor_1.csv e Resultados/tvetor_1B.csv, podem ser importados e analisados com qualquer software adequado, de modo a obter-se gráficos e tabelas que permitam observar o que se pretende, e permitam realizar testes estatísticos.</p>
+<p>Vamos utilizar o MS Excel, fazendo uso de importação de ficheiros para modelo de dados, criação de gráficos e relatórios dinâmicos, e criação de medidas DAX.</p>
 <ul>
-<li>considerando todas as operações em teste, há diferença entre alguma das estruturas de dados em termos de tempo?</li>
+<li><b>Ficheiro de Análise</b>: tvetor.xlsx</li>
 </ul>
-<p>Com base nesta pergunta construímos o próximo teste.</p>
+<p>Criamos um só ficheiro de análise, independente do número de testes. Por esse motivo tem o nome único com o nome do problema.</p>
+<ul>
+<li><b>Importação CSV</b>: importar todos os ficheiros CSV criados para modelo de dados.<ul>
+<li>Dados &gt; Obter Dados &gt; De Ficheiro &gt; De Texto/CSV &gt; tvetor_1.csv</li>
+</ul>
+</li>
+</ul>
+<div class="image">
+<img src="excel1.png" alt=""/>
+<div class="caption">
+Janela de importação</div></div>
+    <p>Os dados devem estar corretos, caso o separador ou codificação não seja corretamente identificada, corrigir. Vamos no entanto carregar para modelo de dados, e não direto para o Excel. A vantagem deste passo torna-se evidênte em ficheiros grandes, reduzindo consideravelmente o tamanho do ficheiro de Excel, e não existindo limite de 1 milhão de linhas.</p>
+<p>Para colocar os dados no modelo de dados, temos de selecionar a opção "Carregar Para..." <img src="excel2.png" alt="" class="inline" title="Carregar Para..."/>    </p>
+<p>Na janela optamos por ligação apenas e adicionar ao modelo de dados: <img src="excel3.png" alt="" class="inline" title="Importar dados"/>    </p>
+<p>Este processo tem de ser repetido para os restantes ficheiros a processar, neste caso tvetor_1B.csv</p>
+<p>Após o carregamento vemos as consultas e ligações com os ficheiros carregados, com 10 e 100 linhas: <img src="excel4.png" alt="" class="inline" title="Consultas e Ligações"/>    </p>
+<p>Caso não apareça ou tenha sido fechada, esta caixa pode ser ligada em</p><ul>
+<li>Dados &gt; Consultas e Ligações</li>
+</ul>
+<p>O menu de contexto numa dessas ligações permite editar e alterar o que for necessário na consulta, ou voltar a carregar o ficheiro caso tenha sido refrescado.</p>
+<p>O friso "Power Pivot" é também importante, para estabelecer a ligação entre as duas consultas: <img src="excel5.png" alt="" class="inline" title="Friso Power Pivot"/>    </p>
+<p>Neste menu vamos para já para Gerir <img src="excel6.png" alt="" class="inline" title="Gerir Power Pivot"/>    </p>
+<p>Nesta janela podemos ver as consultas em baixo, com as colunas no modelo de dados. Iremos voltar aqui para adicionar variáveis calculadas, se necessário. Para já vamos para:</p><ul>
+<li>Estrutura &gt; Relações &gt; Criar Relação</li>
+</ul>
+<p>Podemos fazer uma relação entre as duas consultas, com base na instância: <img src="excel7.png" alt="" class="inline" title="Criar Relação"/>    </p>
+<p>Esta relação permite que se utilize dados de ambas as consultas, num mesmo relatório dinâmico. Apenas podemos fazer esta operação porque uma das consultas tem uma linha por cada instância.</p>
+<p>Estamos prontos para criar uma tabela dinâmica:</p><ul>
+<li>Inserir &gt; Tabela Dinâmica &gt; A partir de modelo de dados</li>
+</ul>
+<p>Ficamos com uma tabela dinâmica, em que podemos utilizar todos os campos das consultas que estão no modelo de dados: <img src="excel8.png" alt="" class="inline" title="Campos da Tabela Dinâmica"/>    </p>
+<p>Vamos obter o gráfico em bruto da performance:</p><ul>
+<li><b>Linhas</b>: Instância (usar a coluna de tvetor_1)</li>
+<li><b>Valores</b>: I2 de ambas as consultas</li>
+</ul>
+<p>Obtemos a primeira tabela de resultados: <img src="excel9.png" alt="" class="inline" title="Instância vs soma Tempo"/>    </p>
+<p>Naturalmente que uma das colunas tem 10 execuções a outra 1. Podemos observar:</p><ul>
+<li>há um efeito não linear, atendendo a que a instância 1 leva 65 ou 67,6 millisegundos a executar, enquanto a instância 10 com 10 vezes o tamanho, leva mais que 10 vezes o tempo</li>
+<li>os resultados de ambas as execuções não batem muito certo. Assim, o que é certo é que os valores obtidos são incertos.</li>
+</ul>
+<p>Na execução com 10 corridas, podemos procurar obter a média e intervalo de confiança, com medidas DAX. Para tal, é preciso adicionar medidas DAX na tabela tvetor_1B.</p>
+<p>Vamos começar pela média do tempo. Pode-se adicionar novas medidas adicionando nos Campos da Tabela Dinâmica, no menu de contexto da consulta, ou no Power Pivot &gt; Medidas &gt; Nova Medida</p>
+<div class="image">
+<img src="excel10.png" alt=""/>
+<div class="caption">
+Nova Medida</div></div>
+    <ul>
+<li>MédiaTempo = AVERAGE([I2(Tempo(ms))])</li>
+<li>N = COUNTROWS(tvetor_1B)</li>
+<li>DesvioPadrao = STDEV.S([I2(Tempo(ms))])</li>
+<li>ErroPadrao = [DesvioPadrao] / SQRT([N])</li>
+<li>IC_Inf = [MédiaTempo] - 1.96 * [ErroPadrao]</li>
+<li>IC_Sup = [MédiaTempo] + 1.96 * [ErroPadrao]</li>
+</ul>
+<p>Nota: o valor de N deveria ser 30 ou superior, para ser utilizado o valor 1.96 para 95% de confiança.</p>
+<p>Assim podemos obter uma informação mais precisa, dos dados que temos:</p>
+<div class="image">
+<img src="excel11.png" alt=""/>
+<div class="caption">
+Instância vs Tempo</div></div>
+    <p>Vemos que o intervalo de confiança de até 50 millisegundos, pelo que há relativa certeza nas décimas de segundo. O intervalo de confiança foi por vezes violado considerando a execução base, o que é normal utilizando 95% de confiança, em que 1 em cada 20 casos irá estar fora do intervalo. Por outro lado N é inferior a 30, e também o facto de se utilizar um computador local, duas corridas em alturas distintas podem estar sujeitas a processos em paralelo distintos, e ter enviasamento do tempo.</p>
+<p>Melhores resultados serão obtidos numa excecução num cluster, e com N superior.</p>
+<p>As medidas DAX permitem o calculo da estatística pretendida, embora dê algum trabalho a criar as variáveis, fica automaticamente recalculada para os filtros que pretendermos.</p>
+<p>Podemos confirmar que há um efeito não linear no tempo. Mesmo considerando os intervalos máximo para a instância 1, 71,1 millisegundos, 10 vezes este tempo fica fora do intervalo de tempo da instância 10, que tem no mínimo 755 millisegundos.</p>
+<p>Vamos avançar para o próximo teste.</p>
 <h3><a class="anchor" id="autotoc_md100"></a>
 Teste: tvetor_2</h3>
+<p>Pretendemos agora, considerando todas as operações em teste, procurar saber se há diferença entre alguma das estruturas de dados em termos de tempo. Estamos portanto perante um teste paramétrico.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico (P6(ESTRUTURA_DADOS) vs P1(ALGORITMO) - irrelevante?)</li>
-<li><b>Definição</b>: Instâncias: 1,3; Configurações: P1=1:12 x P6=1:3 x P3=1:10</li>
-<li><b>Esforço</b>: 1,3; 1:4; 1:10</li>
-<li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1,3 -R Resultados/tvetor_2 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10</li>
+<li><b>Definição</b>: Instâncias: 1; Configurações: P1=1:12 x P6=1:3 x P3=1:10</li>
+<li><b>Esforço</b>: 1; 1:4; 1:10</li>
+<li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1 -R Resultados/tvetor_2 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10</li>
 </ul>
-<p>Neste caso o esforço incide sobre as instâncias, com a versão A apenas com as instâncias 1 e 3. Coloca-se no entanto 10 sementes aleatórias.</p>
-<p>.... (refazer)</p>
-<div class="fragment"><div class="line">/TProcura/Teste$ ./bin/Release/TProcura 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
+<p>Neste caso o esforço incide sobre as instâncias, com a versão A apenas com a instância 1. Coloca-se no entanto 10 sementes aleatórias.</p>
+<div class="fragment"><div class="line">/TProcura/Teste$ ./bin/Release/TProcura 1 -R Resultados/tvetor_2 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10</div>
 <div class="line"> </div>
-<div class="line"> ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄1 }</div>
+<div class="line"> ├─ 🛠️ ─ P2=3 P4=10 P5=0 (parâmetros comuns)</div>
 <div class="line">═╪═ Configurações ═══</div>
 <div class="line"> ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1</div>
 <div class="line"> ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1</div>
 <div class="line"> ├─ ⚙️ [3] ─ P1=3 P3=1 P6=1</div>
-<div class="line"> ├─ ⚙️ [4] ─ P1=4 P3=1 P6=1</div>
-<div class="line">...</div>
+<div class="line"> │ ...</div>
 <div class="line"> ├─ ⚙️ [358] ─ P1=10 P3=10 P6=3</div>
 <div class="line"> ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3</div>
 <div class="line"> ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3</div>
 <div class="line">═╧═══════════════════</div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
-<div class="line"> ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 1.</div>
-<div class="line"> ├─ ⏱ 10&quot; 123ms         📋 63      ↻ 3       🛠️ 31      🖥️ 1</div>
-<div class="line"> ├─ ⏱ 20&quot; 408ms         📋 132     ↻ 1       🛠️ 66      🖥️ 1</div>
-<div class="line"> ├─ ⏱ 30&quot; 592ms         📋 196     ↻ 1       🛠️ 98      🖥️ 1</div>
-<div class="line"> ├─ ⏱ 40&quot; 688ms         📋 257     ↻ 3       🛠️ 128     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 50&quot; 886ms         📋 326     ↻ 1       🛠️ 163     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 1&quot; 65ms        📋 396     ↻ 1       🛠️ 198     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 11&quot; 87ms       📋 466     ↻ 1       🛠️ 233     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 21&quot; 229ms      📋 520     ↻ 1       🛠️ 260     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 31&quot; 652ms      📋 588     ↻ 1       🛠️ 294     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 42&quot; 54ms       📋 642     ↻ 1       🛠️ 321     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 52&quot; 677ms      📋 710     ↻ 1       🛠️ 355     🖥️ 1</div>
-<div class="line"> ├─ 📄  Ficheiro Resultados/tvetor3.csv gravado.</div>
-<div class="line"> │  ⏱  Tempo real: 1&#39; 54&quot; 121ms</div>
-<div class="line"> │  ⏱  CPU total: 1&#39; 54&quot; 124ms</div>
-<div class="line"> │  📊  Utilização: 100,0%</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  1&#39; 54&quot; 132ms ) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:360   📄 Instâncias: 1   🛠️ Configurações: 360   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱ 10&quot; 41ms        📋 140   📄 1     🛠️ 140   🖥️ 1</div>
+<div class="line"> ├─ ⏱ 20&quot; 53ms        📋 278   📄 1     🛠️ 278   🖥️ 1</div>
+<div class="line"> ├─ 🗎  Ficheiro Resultados/tvetor_2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 25&quot; 853ms</div>
+<div class="line"> │  ⏱  CPU total: 25&quot; 853ms</div>
+<div class="line"> │  📊  Utilização: 100.0%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  25&quot; 862ms ) ═══</div>
 </div><!-- fragment --><p>Podemos ver que solicitá-mos muitas configurações. Se fosse engano, poderiamos ter abortado o teste.</p>
-<p>Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, e no conteúdo I2 com o tempo.</p>
-<p>Soma de I2(Tempo(ms)): </p><table class="markdownTable">
+<p>Vamos ficar com apenas o esforço base, atendendo a que foi já 25 segundos.</p>
+<h4><a class="anchor" id="autotoc_md101"></a>
+Análise e Conclusões</h4>
+<p>Importamos de igual forma este ficheiro, mas não ligamos com as outras duas consultas dado que não temos aqui todas as instâncias, nem uma relação entre ambos os testes que se pretenda explorar.</p>
+<p>Ficamos com nova consulta, tvetor_2, com 360 linhas carregadas.</p>
+<p>Podemos fazer desde logo o relatório dinâmico a partir do modelo de dados, colocando:</p><ul>
+<li><b>linhas</b>: P1(ALGORITMO)</li>
+<li><b>colunas</b>: P6(ESTRUTURA_DADOS)</li>
+<li><b>valores</b>: Soma I2(Tempo(ms))</li>
+</ul>
+<p>Obtemos a seguinte tabela da Soma de I2(tempo(ms)): </p><table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:<a class="el" href="classTVector.html">TVector</a>   </th><th class="markdownTableHeadRight">2:std::vector   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm    </th></tr>
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:<a class="el" href="classTVector.html">TVector</a>   </th><th class="markdownTableHeadRight">2:std::vector   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm   </th><th class="markdownTableHeadRight">Total Geral    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:Add()   </td><td class="markdownTableBodyRight">376   </td><td class="markdownTableBodyRight">174   </td><td class="markdownTableBodyRight">306    </td></tr>
+<td class="markdownTableBodyCenter">1:Add()   </td><td class="markdownTableBodyRight">63   </td><td class="markdownTableBodyRight">38   </td><td class="markdownTableBodyRight">71   </td><td class="markdownTableBodyRight">172    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">10:operator=()   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">26    </td></tr>
+<td class="markdownTableBodyCenter">10:operator=()   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">15    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">11:operator+=()   </td><td class="markdownTableBodyRight">28   </td><td class="markdownTableBodyRight">32   </td><td class="markdownTableBodyRight">31    </td></tr>
+<td class="markdownTableBodyCenter">11:operator+=()   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">40    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">12:nada   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<td class="markdownTableBodyCenter">12:nada   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">2:Sort()   </td><td class="markdownTableBodyRight">3162   </td><td class="markdownTableBodyRight">2989   </td><td class="markdownTableBodyRight">3465    </td></tr>
+<td class="markdownTableBodyCenter">2:Sort()   </td><td class="markdownTableBodyRight">661   </td><td class="markdownTableBodyRight">616   </td><td class="markdownTableBodyRight">623   </td><td class="markdownTableBodyRight">1900    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">3:RandomOrder()   </td><td class="markdownTableBodyRight">407   </td><td class="markdownTableBodyRight">231   </td><td class="markdownTableBodyRight">278    </td></tr>
+<td class="markdownTableBodyCenter">3:RandomOrder()   </td><td class="markdownTableBodyRight">63   </td><td class="markdownTableBodyRight">32   </td><td class="markdownTableBodyRight">33   </td><td class="markdownTableBodyRight">128    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">4:Invert()   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">11    </td></tr>
+<td class="markdownTableBodyCenter">4:Invert()   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">5:BeASet()   </td><td class="markdownTableBodyRight">3177   </td><td class="markdownTableBodyRight">2908   </td><td class="markdownTableBodyRight">3353    </td></tr>
+<td class="markdownTableBodyCenter">5:BeASet()   </td><td class="markdownTableBodyRight">664   </td><td class="markdownTableBodyRight">672   </td><td class="markdownTableBodyRight">667   </td><td class="markdownTableBodyRight">2003    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">6:Difference()   </td><td class="markdownTableBodyRight">6666   </td><td class="markdownTableBodyRight">6062   </td><td class="markdownTableBodyRight">6925    </td></tr>
+<td class="markdownTableBodyCenter">6:Difference()   </td><td class="markdownTableBodyRight">1467   </td><td class="markdownTableBodyRight">1392   </td><td class="markdownTableBodyRight">1479   </td><td class="markdownTableBodyRight">4338    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">7:Union()   </td><td class="markdownTableBodyRight">10388   </td><td class="markdownTableBodyRight">6182   </td><td class="markdownTableBodyRight">11193    </td></tr>
+<td class="markdownTableBodyCenter">7:Union()   </td><td class="markdownTableBodyRight">2497   </td><td class="markdownTableBodyRight">1413   </td><td class="markdownTableBodyRight">2273   </td><td class="markdownTableBodyRight">6183    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">8:Contained()   </td><td class="markdownTableBodyRight">6281   </td><td class="markdownTableBodyRight">5774   </td><td class="markdownTableBodyRight">6539    </td></tr>
+<td class="markdownTableBodyCenter">8:Contained()   </td><td class="markdownTableBodyRight">1378   </td><td class="markdownTableBodyRight">1252   </td><td class="markdownTableBodyRight">1362   </td><td class="markdownTableBodyRight">3992    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">9:Intersection()   </td><td class="markdownTableBodyRight">6798   </td><td class="markdownTableBodyRight">6244   </td><td class="markdownTableBodyRight">6655    </td></tr>
+<td class="markdownTableBodyCenter">9:Intersection()   </td><td class="markdownTableBodyRight">1454   </td><td class="markdownTableBodyRight">1347   </td><td class="markdownTableBodyRight">1476   </td><td class="markdownTableBodyRight">4277    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">37330   </td><td class="markdownTableBodyRight">30618   </td><td class="markdownTableBodyRight">38782   </td></tr>
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">8265   </td><td class="markdownTableBodyRight">6785   </td><td class="markdownTableBodyRight">8001   </td><td class="markdownTableBodyRight">23051   </td></tr>
 </table>
-<p>Segundo estes resultados, <a class="el" href="classTVector.html">TVector</a> tem uma ligeira desvantagem em termos de tempo, e no final há uma diferença de 7 segundo em 37. Foram utilizadas instãncias pequenas para que o teste possa ser rápido. Em qualquer caso pode-se afirmar que não há uma perda muito grande por utilizar <a class="el" href="classTVector.html">TVector</a> em vez do código STL.</p>
-<p>Um ficheiro script com a linha de comandos, tem toda a informação para reproduzir o teste, pelo que pode facilitar a identificação do que foi feito. Por outro lado, o ficheiro de resultados tem também todos os valores utilizados, pelo que se houve algum engano na especificação dos parâmetros, o valor utilizado incorreto é visivel nos resultados. Há uma clara separação da fase de implementação da fase de teste. O resultado de um teste pode levantar outras questões, e provocar outro teste. Se a implementação tiver todas as opções em parâmetros, não é necessário alternar com programação entre testes. Apenas após a identificação de bugs, é que a programação é necessária.</p>
+<p>Podemos ver que os valores obtidos pelas estruturas são da mesma ordem de grandeza, mas o std::vetor aparenta ser mais rápido em algumas operações, nomeadamente na operação Union(), ficando com ligeira vantagem em outras.</p>
+<p>Para obter uma resposta com base estatística, vamos calcular os intervalos, como fizemos no teste 1. As medidas são exatamente as mesmas, mas aplicadas a consulta tvetor_2:</p><ul>
+<li>MédiaTempo2 = AVERAGE([I2(Tempo(ms))])</li>
+<li>N2 = COUNTROWS(tvetor_2)</li>
+<li>DesvioPadrao2 = STDEV.S([I2(Tempo(ms))])</li>
+<li>ErroPadrao2 = [DesvioPadrao2] / SQRT([N2])</li>
+<li>IC_Inf2 = [MédiaTempo2] - 1.96 * [ErroPadrao2]</li>
+<li>IC_Sup2 = [MédiaTempo2] + 1.96 * [ErroPadrao2]</li>
+</ul>
+<p>Colocamos agora os limites nos valores</p><ul>
+<li><b>linhas</b>: P1(ALGORITMO)</li>
+<li><b>colunas</b>: P6(ESTRUTURA_DADOS)</li>
+<li><b>valores</b>: IC_Inf2, IC_Sup2</li>
+</ul>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:<a class="el" href="classTVector.html">TVector</a><br  />
+IC_Inf2   </th><th class="markdownTableHeadRight">IC_Sup2   </th><th class="markdownTableHeadRight">2:std::vector<br  />
+IC_Inf2   </th><th class="markdownTableHeadRight">IC_Sup2   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm<br  />
+IC_Inf2   </th><th class="markdownTableHeadRight">IC_Sup2    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1:Add()   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">9    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">10:operator=()   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">11:operator+=()   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">12:nada   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2:Sort()   </td><td class="markdownTableBodyRight">63   </td><td class="markdownTableBodyRight">69   </td><td class="markdownTableBodyRight">58   </td><td class="markdownTableBodyRight">65   </td><td class="markdownTableBodyRight">60   </td><td class="markdownTableBodyRight">65    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3:RandomOrder()   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">4    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4:Invert()   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">5:BeASet()   </td><td class="markdownTableBodyRight">64   </td><td class="markdownTableBodyRight">69   </td><td class="markdownTableBodyRight">59   </td><td class="markdownTableBodyRight">76   </td><td class="markdownTableBodyRight">57   </td><td class="markdownTableBodyRight">77    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">6:Difference()   </td><td class="markdownTableBodyRight">138   </td><td class="markdownTableBodyRight">155   </td><td class="markdownTableBodyRight">127   </td><td class="markdownTableBodyRight">151   </td><td class="markdownTableBodyRight">127   </td><td class="markdownTableBodyRight">169    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7:Union()   </td><td class="markdownTableBodyRight">227   </td><td class="markdownTableBodyRight">272   </td><td class="markdownTableBodyRight">128   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">214   </td><td class="markdownTableBodyRight">240    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8:Contained()   </td><td class="markdownTableBodyRight">126   </td><td class="markdownTableBodyRight">150   </td><td class="markdownTableBodyRight">113   </td><td class="markdownTableBodyRight">137   </td><td class="markdownTableBodyRight">123   </td><td class="markdownTableBodyRight">150    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">9:Intersection()   </td><td class="markdownTableBodyRight">137   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">128   </td><td class="markdownTableBodyRight">142   </td><td class="markdownTableBodyRight">127   </td><td class="markdownTableBodyRight">169   </td></tr>
+</table>
+<p>Podemos ver que a operação 7 de união, os intervalos de confiança não se intersectam, pelo que a diferença é real entre amboas as operações. Nos restantes casos os intervalos de confiança intersectam-se, pelo que este teste não permite saber se as médias são distintas.</p>
+<p>A utilização de intervalos de confiança para saber se dois valores são distintos, é um teste conservador, significando que pode haver casos em que os intervalos se intersectem, e exista forma com os mesmos dados e um teste estatístico mais fino, de concluir a diferença.</p>
 <hr  />
 <p><a class="anchor" id="tvector-a8"></a></p>
-<h2><a class="anchor" id="autotoc_md102"></a>
+<h2><a class="anchor" id="autotoc_md103"></a>
 Ação 8: Execução MPI</h2>
 <p>Vamos agora executar em MPI para tirar partido de vários processadores em paralelo.</p>
 <p>Antes desta secção, sertifique-se que tem o MPI operacional, seguindo as instruções na secção Compilação e Execução do <a class="el" href="README_8md.html">README.md</a>.</p>
 <p>Não esquecer de utilizar o binário MPI.</p>
-<p>Usamos como referência o teste anterior, com cerca de 2 minutos.</p>
+<p>Usamos como referência o teste tvetor_1B com 47 segundos.</p>
 <p>Chamamos agora à atenção para o parametro -M para especificar o modo:</p>
 <div class="fragment"><div class="line">-M &lt;modo&gt;       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador</div>
 </div><!-- fragment --><p>Na divisão estática, o modo de omissão, as tarefas são previamente divididas pelos processadores. Este modo é excelente se todas as tarefas tiverem duração idêntica.</p>
 <p>No modo gestor-trabalhador, a divisão das tarefas é gerida por um dos processos, o processo gestor, que distribui trabalho. Assim, não há o risco de um processo já ter terminado, e outro ter ainda muitas tarefas para executar, tirando-se melhor partido do CPU disponível caso as tarefas tenham tempo de realização distinto.</p>
 <p>Vamos fazer dois testes, um com cada modo, e com 4 processadores.</p>
-<p>Linha de comando: mpiexec -n 4 <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</p>
-<div class="fragment"><div class="line">/TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
+<p>Linha de comando: mpiexec -n 4 <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1:10 -R Resultados/tvetor_1Bm0 -P P1=2 P2=3 P3=1:10</p>
+<div class="fragment"><div class="line">TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1:10 -R Resultados/tvetor_1Bm0 -P P1=2 P2=3 P3=1:10</div>
 <div class="line"> </div>
-<div class="line"> ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄1 📄2 📄3 📄4 📄5 📄6 📄7 📄8 📄9 📄10 }</div>
+<div class="line"> ├─ 🛠️ ─ P1=2 P2=3 P4=10 P5=0 P6=1 (parâmetros comuns)</div>
 <div class="line">═╪═ Configurações ═══</div>
-<div class="line"> ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1</div>
-<div class="line"> ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1</div>
-<div class="line"> ...</div>
-<div class="line">═╤═ 🧪  Início do Teste (🖥️ 1) ═══</div>
-<div class="line">═╤═ 🧪  Início do Teste (🖥️ 3) ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P3=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P3=2</div>
+<div class="line"> ├─ ⚙️ [3] ─ P3=3</div>
+<div class="line"> </div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 2) ═══</div>
-<div class="line">...</div>
-<div class="line"> ├─ ⚙️ [358] ─ P1=10 P3=10 P6=3</div>
-<div class="line"> ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3</div>
-<div class="line"> ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 3) ═══ ├─ ⚙️ [4] ─ P3=4</div>
+<div class="line"> ├─ ⚙️ [5] ─ P3=5</div>
+<div class="line"> ├─ ⚙️ [6] ─ P3=6</div>
+<div class="line"> </div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 1) ═══ ├─ ⚙️ [7] ─ P3=7</div>
+<div class="line"> ├─ ⚙️ [8] ─ P3=8</div>
+<div class="line"> ├─ ⚙️ [9] ─ P3=9</div>
+<div class="line"> ├─ ⚙️ [10] ─ P3=10</div>
 <div class="line">═╧═══════════════════</div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
-<div class="line"> ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
-<div class="line"> ├─ ⏱ 10&quot; 131ms         📋 500     ↻ 1       🛠️ 250     🖥️ 4</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  12&quot; 304ms ) ═══</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  38&quot; 63ms ) ═══</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  46&quot; 96ms ) ═══</div>
-<div class="line"> ├─ 📄  Ficheiro Resultados/tvetor3MPI1m0.csv gravado.</div>
-<div class="line"> │  ⏱  Tempo real: 46&quot; 92ms</div>
-<div class="line"> │  ⏱  CPU total: 3&#39; 4&quot; 369ms</div>
-<div class="line"> │  📊  Utilização: 60.3%</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  46&quot; 103ms ) ═══</div>
-</div><!-- fragment --><p>O arranque dos processos veio misturado com a lista de configurações em teste, que o processo 0 estava a mostrar. O tempo de execução real foi de 46 segundos, mas o tempo total de execução foi de 3 minutos, e a utilização de 60%. Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas.</p>
-<p>Podemos observar que o processo 2 terminou pouco depois dos 10 segundos. O processo 0 é sempre o último a terminar, já que tem de no final juntar os ficheiros de resultados. Isso não significa que não tenha ficado parado à espera dos outros. Na verdade o processo 0 ficou de facto à espera, caso contrário teria reportado o estado da situação aos 20 segundos.</p>
+<div class="line"> ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 4.</div>
+<div class="line"> ├─ ⏱ 10&quot; 374ms       📋 93    📄 3     🛠️ 10    🖥️ 4</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  11&quot; 173ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  13&quot; 542ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  13&quot; 542ms ) ═══</div>
+<div class="line"> ├─ 🗎  Ficheiro Resultados/tvetor_1Bm0.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 13&quot; 534ms</div>
+<div class="line"> │  ⏱  CPU total: 54&quot; 137ms</div>
+<div class="line"> │  📊  Utilização: 91.4%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  13&quot; 541ms ) ═══</div>
+</div><!-- fragment --><p>O arranque dos processos veio misturado com a lista de configurações em teste, que o processo 0 estava a mostrar. O tempo de execução real foi de 13 segundos, mas o tempo total de execução foi de 54 segundos, e a utilização de 90%. Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas, mas não de forma muito evidente.</p>
+<p>Podemos observar que o processo 2 terminou pouco depois dos 10 segundos. O processo 0 é sempre o último a terminar, já que tem de no final juntar os ficheiros de resultados. Isso não significa que não tenha ficado parado à espera dos outros.</p>
 <p>Vamos agora ver o gestor-trabalhador, em que o trabalho ém falta é gerido centralmente.</p>
-<p>Linha de comando: mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</p>
-<div class="fragment"><div class="line">/TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3</div>
+<p>Linha de comando: mpiexec -n 4 <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1:10 -R Resultados/tvetor_1Bm1 -M 1 -P P1=2 P2=3 P3=1:10</p>
+<div class="fragment"><div class="line">/TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1:10 -R Resultados/tvetor_1Bm1</div>
+<div class="line">-M 1 -P P1=2 P2=3 P3=1:10</div>
 <div class="line"> </div>
-<div class="line"> ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)</div>
-<div class="line">═╪═ Configurações ═══</div>
-<div class="line"> </div>
-<div class="line">═╤═ 🧪  Início do Teste (🖥️ 1) ═══</div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 2) ═══</div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 3) ═══</div>
-<div class="line"> ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1</div>
-<div class="line"> ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1</div>
-<div class="line"> ├─ ⚙️ [3] ─ P1=3 P3=1 P6=1</div>
-<div class="line"> ├─ ⚙️ [4] ─ P1=4 P3=1 P6=1</div>
-<div class="line"> ├─ ⚙️ [5] ─ P1=5 P3=1 P6=1</div>
-<div class="line">...</div>
-<div class="line"> ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3</div>
-<div class="line"> ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄1 📄2 📄3 📄4 📄5 📄6 📄7 📄8 📄9 📄10 }</div>
+<div class="line"> ├─ 🛠️ ─ P1=2 P2=3 P4=10 P5=0 P6=1 (parâmetros comuns)</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙️ [1] ─ P3=1</div>
+<div class="line"> ├─ ⚙️ [2] ─ P3=2</div>
+<div class="line"> ├─ ⚙️ [3] ─ P3=3</div>
+<div class="line"> ├─ ⚙️ [4] ─ P3=4</div>
+<div class="line"> ├─ ⚙️ [5] ─ P3=5</div>
+<div class="line"> ├─ ⚙️ [6] ─ P3=6</div>
+<div class="line"> ├─ ⚙️ [7] ─ P3=7</div>
+<div class="line"> ├─ ⚙️ [8] ─ P3=8</div>
+<div class="line"> ├─ ⚙️ [9] ─ P3=9</div>
+<div class="line"> ├─ ⚙️ [10] ─ P3=10</div>
 <div class="line">═╧═══════════════════</div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
-<div class="line"> ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.</div>
-<div class="line"> ├─ ⏱ 10&quot; 7ms           📋 186     ↻ 3       🛠️ 266     🖥️ 3</div>
-<div class="line"> ├─ ⏱ 20&quot; 37ms          📋 398     ↻ 3       🛠️ 160     🖥️ 3</div>
-<div class="line"> ├─ ⏱ 30&quot; 63ms          📋 590     ↻ 3       🛠️ 64      🖥️ 3</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  37&quot; 326ms ) ═══</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  37&quot; 347ms ) ═══</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  37&quot; 501ms ) ═══</div>
-<div class="line"> ├─ 📄  Ficheiro Resultados/tvetor3MPI1m1.csv gravado.</div>
-<div class="line"> │  ⏱  Tempo real: 37&quot; 500ms</div>
-<div class="line"> │  ⏱  CPU total: 1&#39; 52&quot; 500ms</div>
-<div class="line"> │  ⏱  Espera do gestor: 37&quot; 492ms</div>
-<div class="line"> │  ⏱  Espera trabalhadores: 329ms</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 1) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 4.</div>
+<div class="line"> ├─ ⏱ 10&quot; 646ms       📋 63    📄 8     🛠️ 3     🖥️ 3     ⚖  1 657 1 1</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  16&quot; 420ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  16&quot; 462ms ) ═══</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  16&quot; 496ms ) ═══</div>
+<div class="line"> ├─ 🗎  Ficheiro Resultados/tvetor_1Bm1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 16&quot; 497ms</div>
+<div class="line"> │  ⏱  CPU total: 49&quot; 491ms</div>
+<div class="line"> │  ⏱  Espera do gestor: 16&quot; 495ms</div>
+<div class="line"> │  ⏱  Espera trabalhadores: 111ms</div>
 <div class="line"> │  📊  Utilização:</div>
 <div class="line"> │  - Total: 74.8%</div>
 <div class="line"> │  - Gestor: 0.0%</div>
-<div class="line"> │  - Trabalhadores: 99.7%</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  37&quot; 500ms ) ═══</div>
-</div><!-- fragment --><p>Obteve-se uma taxa de utilização de 75%, superior aos 60% do método estático. O tempo real foi de 37 segundos, com tempo total de 2 minutos. É um valor idêntico à distribuição de trabalho estática, mesmo considerando que apenas 3 dos 4 processos processaram tarefas.</p>
-<p>Em relação aos 2 minutos iniciais, reduziu-se menos de metade, tudo o resto permaneceu sem alterações. Quanto maior os testes e maior o número de processadores, maior será o ganho da execução MPI.</p>
+<div class="line"> │  - Trabalhadores: 99.8%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  16&quot; 497ms ) ═══</div>
+</div><!-- fragment --><p>Obteve-se uma taxa de utilização de 75%, neste caso inferior aos 90% do método estático. O tempo real foi de 16 segundos, com tempo total de 49 segundos. É um valor idêntico à distribuição de trabalho estática, mesmo considerando que apenas 3 dos 4 processos processaram tarefas.</p>
+<p>Em relação aos 47 segundos iniciais, reduziu-se para 1/3, tudo o resto permaneceu sem alterações. Quanto maior os testes e maior o número de processadores, maior será o ganho da execução MPI.</p>
 <p>No entanto para isso precisamos de ter acesso a um cluster. Torna-se impraticável testes de volume utilizando computador próprio.</p>
 <p>A submissão de trabalhos num cluster, será alvo de um caso de estudo, para exemplificação.</p>
-<hr  />
-<p><a class="anchor" id="tvector-a9"></a></p>
-<h2><a class="anchor" id="autotoc_md104"></a>
-Ação 9: Desafio CTesteTVector</h2>
-<p>Será a ordenação de <a class="el" href="classTVector.html">TVector</a> mais rápida ou mais lenta ue a ordenação da STL? Que testes pode fazer para procurar dar uma resposta fundamentada?</p>
-<details >
-<summary >
-Resposta:</summary>
-<p>Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior. Deve-se executar várias vezes, e apenas na operação de ordenação. Linha de comando: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 10 -R Resultados/tvetorA9 -P P2=3 P1=2 P3=1:10 x P6=1:3</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Valores   </th><th class="markdownTableHeadRight">1:<a class="el" href="classTVector.html">TVector</a>   </th><th class="markdownTableHeadRight">2:std::vector   </th><th class="markdownTableHeadRight">3:TVector/std::algorithm    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Média de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">142,25   </td><td class="markdownTableBodyRight">139,85   </td><td class="markdownTableBodyRight">130,2    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">Mínimo de I2(Tempo(ms))2   </td><td class="markdownTableBodyRight">62   </td><td class="markdownTableBodyRight">58   </td><td class="markdownTableBodyRight">58    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Máximo de I2(Tempo(ms))   </td><td class="markdownTableBodyRight">224   </td><td class="markdownTableBodyRight">317   </td><td class="markdownTableBodyRight">214   </td></tr>
-</table>
-<p>Os resultados não confirmam vantagem nem desvantagem para nenhum algoritmo. Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas em princípio será necessário uma amostra maior. </p>
-</details>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_artificial.html">Artificial</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
