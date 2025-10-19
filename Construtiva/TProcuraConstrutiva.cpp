@@ -323,7 +323,7 @@ int TProcuraConstrutiva::ProfundidadePrimeiro(int nivel)
 		LibertarVector(sucessores);
 	}
 	else
-		DebugFolha(false, "🍃🪜");
+		DebugFolha(false, "%-2s%-2s", Icon(EIcon::FOLHA), Icon(EIcon::LIMITE));
 
 	// falha na procura neste nó, ou não há estado objetivo a partir daqui
 	// ou atingiu-se o limite, pelo que temos de retornar -1
@@ -338,7 +338,7 @@ int TProcuraConstrutiva::SolucaoEncontrada(bool continuar) {
 	else // caso existam várias soluções, substitui a anterior
 		solucao->Copiar(this);
 	CalculaCaminho();
-	DebugFolha(false, "🎯 %d → 📈", custo);
+	DebugFolha(false, "%-2s %d → %-2s", Icon(EIcon::SUCESSO), custo, Icon(EIcon::UB));
 	return solucao->custo = custo;
 }
 
@@ -352,7 +352,7 @@ int TProcuraConstrutiva::SolucaoParcial(int i, TVector<TNo>& sucessores, int iAu
 			valores += (iAux >= 0 ? sucessores[(*id)[j]]->debugID : sucessores[j]->debugID);
 		if (!valores.Empty()) {
 			DebugFolha(true, "");
-			MostraConjunto(valores, "🔖");
+			MostraConjunto(valores, Icon(EIcon::ID));
 		}
 	}
 	ramo.Pop();
@@ -362,14 +362,14 @@ int TProcuraConstrutiva::SolucaoParcial(int i, TVector<TNo>& sucessores, int iAu
 }
 
 void TProcuraConstrutiva::MostrarCaminho() {
-	printf("\n══ ✔  Solução ══");
+	printf("\n══ %-2s  Solução ══", Icon(EIcon::SOL));
 	for (int i = 0; i < caminho.Count() - 1; i++) {
 		if (Parametro(VER_ACOES) > 1) {
 			// mostrar o estado a cada K ações, no início e no fim
 			if (i % Parametro(VER_ACOES) == 0) {
 				caminho[i]->Debug();
 				// mostrar custo
-				printf(" (💰 g:%d) ⚡ ", caminho[i]->custo);
+				printf(" (%-2s g:%d) %-2s ", Icon(EIcon::VALOR), caminho[i]->custo, Icon(EIcon::ACCAO));
 			}
 			// mostrar a ação
 			if (i < caminho.Count() - 1)
@@ -377,7 +377,7 @@ void TProcuraConstrutiva::MostrarCaminho() {
 		}
 		else {
 			caminho[i]->Debug();
-			printf(" (💰 g:%d) ⚡ ", caminho[i]->custo);
+			printf(" (%-2s g:%d) %-2s ", Icon(EIcon::VALOR), caminho[i]->custo, Icon(EIcon::ACCAO));
 		}
 	}
 	if (caminho.Empty())
@@ -385,11 +385,11 @@ void TProcuraConstrutiva::MostrarCaminho() {
 	else {
 		caminho.Last()->Debug();
 		// mostrar custo
-		printf(" (💰 g:%d) ", caminho.Last()->custo);
+		printf(" (%-2s g:%d) ", Icon(EIcon::VALOR), caminho.Last()->custo);
 		if (caminho.Last()->SolucaoCompleta())
-			printf("🎯 ");
+			printf("%-2s ", Icon(EIcon::SUCESSO));
 		else
-			printf("🚫 ");
+			printf("%-2s ", Icon(EIcon::INSUC));
 	}
 }
 
@@ -400,7 +400,7 @@ void TProcuraConstrutiva::MostrarCaminho() {
 int TProcuraConstrutiva::MelhorPrimeiro(int nivel)
 {
 	if (nivel > 0 && Parametro(LIMITE) == nivel)
-		DebugIteracao(nivel, "🪜");
+		DebugIteracao(nivel, Icon(EIcon::LIMITE));
 
 	bool noFolha = !((nivel <= 0 || nivel > 1) && !Parar());
 	DebugChamada(noFolha);
@@ -423,7 +423,7 @@ int TProcuraConstrutiva::MelhorPrimeiro(int nivel)
 		LibertarVector(sucessores);
 	}
 	else
-		DebugFolha(false, "🍃🪜");
+		DebugFolha(false, "%-2s&-2s", Icon(EIcon::FOLHA), Icon(EIcon::LIMITE));
 	return -1;
 }
 
@@ -441,7 +441,7 @@ int TProcuraConstrutiva::IDAStar(int upperBound)
 		do {
 			// limpar hashtable: estados gerados no nível anterior não devem impedir nova geração
 			LimparHT();
-			DebugIteracao(lowerBound, "📉");
+			DebugIteracao(lowerBound, Icon(EIcon::LB));
 			// ver se há uma solução com este valor
 			resultado = IDAStar(lowerBound);
 			// o valor de lowerBound é atualizado, para utilizar na próxima iteração se necessário
@@ -471,17 +471,17 @@ int TProcuraConstrutiva::IDAStar(int upperBound)
 				// acima do permitido nesta iteração
 				ramo.Last() = (i < id.Count() - 1 ? RAMO_NOVO : RAMO_FIM);
 				if (lowerBound == upperBound || lowerBound > atual) {
-					DebugFolha(false, "🍃 %d → 📉", atual);
+					DebugFolha(false, "%-2s %d → %-2s", atual, Icon(EIcon::FOLHA), Icon(EIcon::LB));
 					lowerBound = atual;
 				}
 				else
-					DebugFolha(false, "🍃");
+					DebugFolha(false, Icon(EIcon::FOLHA));
 				// listar os nós não explorados
 				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 					TVector<int> valores;
 					// apenas o atual, já que continua
 					valores += sucessores[id[i]]->debugID;
-					MostraConjunto(valores, "🔖");
+					MostraConjunto(valores, Icon(EIcon::ID));
 				}
 			}
 			else {
@@ -518,13 +518,13 @@ int TProcuraConstrutiva::BranchAndBound(int upperBound)
 				// Nó folha, não identificado antes. Mostrar o estado no caso do detalhe
 				if (Parametro(NIVEL_DEBUG) == DETALHE)
 					Debug();
-				DebugFolha(true, "🍃📈");
+				DebugFolha(true, "%-2s%-2s", Icon(EIcon::FOLHA), Icon(EIcon::UB));
 				// listar os nós não explorados
 				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 					TVector<int> valores;
 					for (int j = i; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
-					MostraConjunto(valores, "🔖");
+					MostraConjunto(valores, Icon(EIcon::ID));
 				}
 				break;
 			}
@@ -615,7 +615,7 @@ void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 {
 	if (Parametro(NIVEL_DEBUG) >= PASSOS && sucessores >= 0) {
 		if (sucessores == 0)
-			DebugFolha(false, "🍃");
+			DebugFolha(false, Icon(EIcon::FOLHA));
 		else
 			ramo.Pop();
 	}
@@ -623,7 +623,7 @@ void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 	if (Parametro(NIVEL_DEBUG) >= PASSOS && sucessores < 0) {
 		ramo.Last() = RAMO_FIM;
 		NovaLinha();
-		printf("🪓 🔖%d ", debugID);
+		printf("%-2s%-2s %d ", Icon(EIcon::CORTE), Icon(EIcon::ID), debugID);
 	}
 }
 
@@ -632,7 +632,8 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 {
 	if (Parametro(NIVEL_DEBUG) > NADA && SolucaoCompleta()) {
 		NovaLinha();
-		printf(" 🎯 Solução encontrada! 💰  g:%d", custo);
+		printf(" %-2s Solução encontrada! %-2s  g:%d",
+			Icon(EIcon::SUCESSO), Icon(EIcon::VALOR), custo);
 		ramo.Last() = RAMO_CONTINUA;
 		Debug();
 		if (!continuar)
@@ -661,7 +662,7 @@ void TProcuraConstrutiva::DebugChamada(bool noFolha)
 		ramo.First() = RAMO_CONTINUA;
 		DebugEstado(false);
 		if (pai != NULL)
-			printf(" ⚡%s", pai->Acao(this)); // mostra sempre a ação
+			printf(" %-2s%s", Icon(EIcon::ACCAO), pai->Acao(this)); // mostra sempre a ação
 		if ((noFolha && Parametro(NIVEL_DEBUG) >= DETALHE) ||
 			Parametro(NIVEL_DEBUG) >= COMPLETO)
 			Debug();
@@ -690,7 +691,7 @@ void TProcuraConstrutiva::DebugPasso(CListaNo* lista)
 		if (lista == NULL) {
 			if (expansoes < geracoes) {
 				snprintf(str, sizeof(str), "%d:%d", expansoes + 1, geracoes);
-				MostraConjunto(_TV(str), "🔖");
+				MostraConjunto(_TV(str), Icon(EIcon::ID));
 			}
 			else
 				printf(" { }");
@@ -702,7 +703,7 @@ void TProcuraConstrutiva::DebugPasso(CListaNo* lista)
 			for (; lista->Estado() != NULL; lista->atual = lista->Proximo())
 				valores += lista->Estado()->debugID;
 			lista->atual = atual;
-			MostraConjunto(valores, "🔖");
+			MostraConjunto(valores, Icon(EIcon::ID));
 		}
 	}
 	if (Parametro(NIVEL_DEBUG) > PASSOS)
@@ -713,7 +714,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 	if (Parametro(VER_ACOES) > 2) {
 		// mostrar apenas ações
 		NovaLinha(true);
-		TProcura::MostraCaixa("⚡", ECaixaParte::Fundo, 1, true, -1);
+		TProcura::MostraCaixa("", ECaixaParte::Fundo, 1, true, -1, Icon(EIcon::ACCAO));
 		for (int i = 0; i < sucessores.Count(); i++) {
 			printf(" %s", Acao(sucessores[i]));
 			if (i == 2 && sucessores.Count() > 10) {
@@ -726,7 +727,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 			for (auto suc : sucessores)
 				valores += suc->debugID;
 			if (valores.First() != 0)
-				MostraConjunto(valores, "🔖");
+				MostraConjunto(valores, Icon(EIcon::ID));
 		}
 	}
 	else {
@@ -741,7 +742,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 			// mostrar só alguns se forem muitos sucessores
 			if (i == 2 && sucessores.Count() > 10) {
 				NovaLinha(true);
-				printf("...");
+				printf(" …");
 				i = sucessores.Count() - 4;
 			}
 			ramo.Last() = (i < sucessores.Count() - 2 ? RAMO_ESTADO : RAMO_ESTADO_FIM);
@@ -753,8 +754,9 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 
 // uma nova iteração de um algoritmo iterativo
 void TProcuraConstrutiva::DebugIteracao(int iteracao, const char* simbolo) {
-	Debug(PASSOS, false, "\n ├─────────── 🌳 %s %d ⏱ %s ──────────── ",
-		simbolo, iteracao, MostraTempo(Cronometro(CONT_ALGORITMO)));
+	Debug(PASSOS, false, "\n ├─────────── %-2s %s %d %-2s %s ──────────── ",
+		Icon(EIcon::ARVORE), simbolo, iteracao, Icon(EIcon::TEMPO),
+		MostraTempo(Cronometro(CONT_ALGORITMO)));
 }
 
 // informação geral sobre o estado 
@@ -765,14 +767,14 @@ void TProcuraConstrutiva::DebugEstado(bool novaLinha) const {
 		printf("═╤═ ");
 
 	if (debugID > 0) {
-		printf("🔖%d ", debugID);
+		printf("%-2s%d ", Icon(EIcon::ID), debugID);
 	}
-	printf("💰 g:%d ", custo);
+	printf("%-2s g:%d ", Icon(EIcon::VALOR), custo);
 	if (heuristica)
-		printf("🎯 h:%d ", heuristica);
+		printf("%-2s h:%d ", Icon(EIcon::SUCESSO), heuristica);
 
 	if (expansoes || geracoes || iteracoes) {
-		printf("🔢 ");
+		printf("%-2s ", Icon(EIcon::IND));
 		if (expansoes)
 			printf("%d", expansoes);
 		if (geracoes)
@@ -811,7 +813,7 @@ int TProcuraConstrutiva::ExecutaAlgoritmo() {
 	case 6: resultado = IDAStar(Dominio(Parametro(LIMITE), 0)); break;
 	case 7:
 		if (Parametro(LIMITE) > 0)
-			DebugIteracao(Parametro(LIMITE), "📈");
+			DebugIteracao(Parametro(LIMITE), Icon(EIcon::UB));
 		resultado = BranchAndBound(Dominio(Parametro(LIMITE), 0));
 		break;
 	}
@@ -858,7 +860,7 @@ void TProcuraConstrutiva::Explorar() {
 		}
 		else {
 			char str[BUFFER_SIZE];
-			printf("\n🔍  Sucessor [1-%d, ação(ões), exe]: ", sucessores.Count());
+			printf("\n%-2s Sucessor [1-%d, ação(ões), exe]: ", Icon(EIcon::EXP), sucessores.Count());
 			if (!fgets(str, BUFFER_SIZE, stdin))
 				str[0] = 0;
 			opcao = atoi(str);
@@ -876,7 +878,7 @@ void TProcuraConstrutiva::Explorar() {
 					switch (resultado = ExecutaAlgoritmo()) {
 					case -1: TProcura::Mensagem("ℹ️  Informação", "Impossível"); break;
 					case -2: TProcura::Mensagem("", "Não resolvido"); break;
-					default: TProcura::Mensagem("✅  Sucesso", "Resolvido (%d)", resultado); break;
+					default: TProcura::Mensagem("🎯  Sucesso", "Resolvido (%d)", resultado); break;
 					}
 					tempo = Cronometro(CONT_ALGORITMO);
 					if (solucao != NULL) {
@@ -912,13 +914,13 @@ void TProcuraConstrutiva::Explorar() {
 
 					} while (token != NULL);
 					if (nAcoes > 0)
-						TProcura::Mensagem("✅  Sucesso", "Executadas %d ações.", nAcoes);
+						TProcura::Mensagem("🎯  Sucesso", "Executadas %d ações.", nAcoes);
 				}
 			}
 		}
 		if (opcao > 0 && opcao <= sucessores.Count()) {
 			Copiar(sucessores[opcao - 1]);
-			TProcura::Mensagem("✅  Sucesso", "Ação executada.");
+			TProcura::Mensagem("🎯  Sucesso", "Ação executada.");
 		}
 		LibertarVector(sucessores);
 	} while (opcao != 0);

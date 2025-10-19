@@ -75,7 +75,7 @@ void TProcuraAdversa::DebugChamada(bool noFolha, int alfa, int beta) {
 		if (alfa || beta)
 			printf(" α=%d β=%d ═══", alfa, beta);
 		if (pai != NULL)
-			printf(" ⚡%s", pai->Acao(this)); // mostra sempre a ação
+			printf(" %-2s%s", Icon(EIcon::ACCAO), pai->Acao(this)); // mostra sempre a ação
 		if (noFolha && Parametro(NIVEL_DEBUG) >= DETALHE ||
 			Parametro(NIVEL_DEBUG) >= COMPLETO)
 			Debug();
@@ -124,7 +124,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 			valor = valorConhecido.valor;
 			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(false);
-				DebugFolha(false, "💾 %d", valor);
+				DebugFolha(false, "%-2s %d", Icon(EIcon::MEMORIA), valor);
 			}
 		}
 		else {
@@ -145,13 +145,13 @@ int TProcuraAdversa::MiniMax(int nivel)
 			}
 			// caso de vitória/derrota
 			if (minimizar ? resultado <= custo + 1 - infinito : resultado >= infinito - custo - 1) {
-				DebugFolha(true, (resultado < 0 ? " ☖ %d" : " ☗ %d"), custo);
+				DebugFolha(true, " %-2s %d", Icon(resultado < 0 ? EIcon::VIT_PRETA: EIcon::VIT_BRANCA), custo);
 				// listar os nós não explorados
 				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 					TVector<int> valores;
 					for (int j = i + 1; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
-					MostraConjunto(valores, "🔖");
+					MostraConjunto(valores, Icon(EIcon::ID));
 				}
 				break; // nao e possivel melhorar
 			}
@@ -235,7 +235,7 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 	nivelOK = 0;
 	TNo solOK = NULL;
 	do {
-		DebugIteracao(nivel + 1, "🪜");
+		DebugIteracao(nivel + 1, Icon(EIcon::LIMITE));
 		completo = true;
 		// chamar a profundidade nível 1, e se não resolver, o nível 2, e assim sucessivamente
 		resultado = (alfaBeta ? MiniMaxAlfaBeta(++nivel) : MiniMax(++nivel));
@@ -248,7 +248,9 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 			resOK = resultado;
 			nivelOK = nivel;
 			if (Parametro(NIVEL_DEBUG) > NADA && solOK != NULL)
-				printf("\n │ 🌳 🪜 %d ⚡ %s 🎯 %d ", nivel, Acao(solOK), resultado);
+				printf("\n │ %-2s%-2s %d %-2s%s %-2s%d ",
+					Icon(EIcon::ARVORE), Icon(EIcon::LIMITE),nivel,
+					Icon(EIcon::ACCAO), Acao(solOK), Icon(EIcon::SUCESSO), resultado);
 		}
 		else
 			completo = false;
@@ -313,7 +315,7 @@ int TProcuraAdversa::NoFolha(bool nivel) {
 		// a maximizar, entre 10 e 20, irá preferir 20, sempre é maior
 		// a minimizar, entre 10 e 20, irá preferir 10 que é menor
 	}
-	DebugFolha(false, "🍃 %d", resultado);
+	DebugFolha(false, "%-2s %d", Icon(EIcon::FOLHA), resultado);
 	return resultado;
 }
 
@@ -355,7 +357,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 			valor = valorConhecido.valor;
 			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(false, alfa, beta);
-				DebugFolha(false, "💾 %d", valor);
+				DebugFolha(false, "%-2s %d", Icon(EIcon::MEMORIA), valor);
 			}
 		}
 		else {
@@ -387,7 +389,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 					TVector<int> valores;
 					for (int j = i + 1; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
-					MostraConjunto(valores, "🔖");
+					MostraConjunto(valores, Icon(EIcon::ID));
 				}
 				break;
 			}
@@ -416,12 +418,12 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 	if (minimizar) { // pretas
 		// ver se ja e maximo
 		if (valor <= custo + 1 - infinito) {
-			DebugFolha(true, "☖ %d", custo);
+			DebugFolha(true, "%-2s %d", Icon(EIcon::VIT_PRETA), custo);
 			return true;
 		}
 		if (alfa >= valor) {
 			// corte alfa
-			DebugFolha(true, "🪓 α(%d)", alfa);
+			DebugFolha(true, "%-2s α(%d)", Icon(EIcon::CORTE), alfa);
 			return true; // as brancas tem uma alternativa, e escusado continuar a procurar aqui
 		}
 		// atualização beta
@@ -433,12 +435,12 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 	else { // brancas
 		// ver se atingiu o maximo
 		if (valor >= infinito - custo - 1) {
-			DebugFolha(true, "☗ %d", custo);
+			DebugFolha(true, "%-2s %d", Icon(EIcon::VIT_BRANCA), custo);
 			return true;
 		}
 		if (beta <= valor) {
 			// corte beta
-			DebugFolha(true, "🪓 β(%d)", beta);
+			DebugFolha(true, "%-2s β(%d)", Icon(EIcon::CORTE), beta);
 			return true; // as pretas tem uma alternativa, e escusado continuar a procurar aqui
 		}
 		// atualização alfa
@@ -476,7 +478,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	}
 	if (mpiID == 0)
 		MostrarConfiguracoes(0);
-	printf("\n═╤═ 🧪  Início do Teste (🖥️ %d) ═══", mpiID);
+	printf("\n═╤═ %-2s Início do Teste (%-2s %d) ═══", Icon(EIcon::TESTE), Icon(EIcon::PROCESSO), mpiID);
 	fflush(stdout);
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
@@ -497,9 +499,11 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 
 	if (mpiID == 0)
 		Debug(ATIVIDADE, false,
-			"\n ├─ 📋 Tarefas:%d   ↻ Instâncias: %d   🛠️ Configurações: %d   🖥️ Processos: %d.",
-			instancias.Count() * configuracoes.Count() * (configuracoes.Count() - 1),
-			instancias.Count(), configuracoes.Count(), mpiCount) &&
+			"\n ├─ %-2s Tarefas:%d   %-2s Instâncias: %d   %-2s Configurações: %d   %-2s Processos: %d.",
+			Icon(EIcon::TAREFA), instancias.Count() * configuracoes.Count() * (configuracoes.Count() - 1),
+			Icon(EIcon::INST), instancias.Count(),
+			Icon(EIcon::CONF), configuracoes.Count(),
+			Icon(EIcon::PROCESSO), mpiCount) &&
 		fflush(stdout);
 
 	// dois jogadores, brancas é o primeiro a jogar, pretas é o segundo
@@ -514,12 +518,13 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 
 					if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
 						Debug(ATIVIDADE, false,
-							"\n ├─ ⏱ %-15s 📋 %-5d ↻ %-5d 🛠️ %-5d 🛠️ %-5d 🖥️ %-5d",
-							MostraTempo(Cronometro(CONT_TESTE)),
-							nTarefa - 1,
-							inst,
-							brancas + 1, pretas + 1,
-							mpiCount) &&
+							"\n ├─ %-2s %-15s %-2s %-5d %-2s %-5d %-2s %-5d %-2s %-5d %-2s %-5d",
+							Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
+							Icon(EIcon::TAREFA), nTarefa,
+							Icon(EIcon::INST), inst,
+							Icon(EIcon::CONF), brancas + 1,
+							Icon(EIcon::CONF), pretas + 1,
+							Icon(EIcon::PROCESSO), mpiCount) &&
 							fflush(stdout);
 						Cronometro(CONT_REPORTE, true);
 					}
@@ -557,10 +562,10 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 							((njogada % 2 == 1) && !minimizar);
 						// vitória/derrota branca/preta
 						torneio[brancas][pretas] += (resultado < 0 ? -1 : 1) * (inverter ? -1 : 1);
-						Debug(COMPLETO, false, " 🏆 %s", (inverter ? resultado < 0 : resultado > 0) ? "⚪" : "⚫");
+						Debug(COMPLETO, false, " 🏆 %s", (inverter ? resultado < 0 : resultado > 0) ? Icon(EIcon::VIT_PRETA) : Icon(EIcon::VIT_BRANCA));
 					}
 					else
-						Debug(COMPLETO, false, " 🟰 ");
+						Debug(COMPLETO, false, Icon(EIcon::EMPATE));
 				}
 			}
 
@@ -595,7 +600,9 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	instancia.valor = backupID;
 	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
-	printf("\n═╧═ 🏁  Fim do Teste (🖥️ %d  ⏱  %s) ═══", mpiID, MostraTempo(Cronometro(CONT_TESTE)));
+	printf("\n═╧═ %-2s  Fim do Teste (%-2s %d  %-2s  %s) ═══",
+		Icon(EIcon::FIM), Icon(EIcon::PROCESSO), mpiID,
+		Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)));
 	fflush(stdout);
 }
 

@@ -76,7 +76,7 @@ namespace compat {
 #define ICON_LISTA \
     X(INST,  "📄")    /* instância / dados */ \
     X(EXP,   "🔍")    /* explorar */ \
-    X(PARAM, "⚙️")    /* parâmetros */ \
+    X(PARAM, "⚙")    /* parâmetros */ \
     X(SOL,   "✔")     /* solução */ \
     X(IND,   "⚖")    /* indicadores */ \
     X(EXEC,  "►")     /* execução (início) */ \
@@ -84,19 +84,45 @@ namespace compat {
     X(CONF,  "🛠️")    /* configuração */ \
     X(TESTE, "🧪")    /* teste */ \
     X(TEMPO, "⏱")    /* tempo utilizado */ \
-    X(RESULT, "🗎")    /* resultado / ficheiro */ \
+    X(RESULT, "📑")    /* resultado / ficheiro */ \
     X(PROCESSO, "🖥️")    /* processo / computador */ \
     X(TAREFA, "📋")    /* tarefa */ \
     X(TAXA, "📊")     /* taxa / resultado */ \
     X(SUCESSO, "🎯")    /* objetivo alcançado, sucesso */ \
     X(INSUC, "🚫")    /* insucesso, objetivo não alcançado */ \
-    X(MEMORIA, "🗄")    /* estado em memória ou erro de memória (alternativa: 💾) */ \
+    X(MEMORIA, "💾")    /* estado em memória ou erro de memória (alternativa: 💾) */ \
     X(IMP, "⛔")       /* impossível, sem solução */ \
     X(VALOR, "💰")       /* valor/custo da solução */ \
-    X(SEL, "☑")       /* valor ativo / selecionado */ \
-    X(NSEL, "☐")       /* valor inativo / não selecionado */ \
-    X(TORNEIO, "🏆")       /* torneio */ \
-    X(MENU,  "☰")      /* menu */ 
+    X(SEL, "✓")       /* valor ativo / selecionado */ \
+    X(NSEL, "✗")       /* valor inativo / não selecionado */ \
+    X(FOLHA, "🍃")       /* folha - nó folha numa árvore*/ \
+    X(LIMITE, "🪜")       /* limite, profundidade de procura */ \
+    X(UB, "📈")       /* upper bound / melhorar (dois contextos) */ \
+    X(LB, "📉")       /* lower bound / a descer (dois contextos) */ \
+    X(ID, "🔖")       /* identificador do estado, ID */ \
+    X(ACCAO, "⚡")       /* ação, movimento, jogada, lance */ \
+    X(ARVORE, "🌳")       /* árvore de procura, iteração (algoritmo iterativo) */ \
+    X(CORTE, "🪓")       /* corte / poda da árvore de procura */ \
+    X(VIT_PRETA, "☖")       /* vitória preta */ \
+    X(VIT_BRANCA, "☗")       /* vitória branca */ \
+    X(EMPATE, "🟰")       /* empate */ \
+    X(EPOCA, "📆")       /* época */ \
+    X(DIST, "📏")       /* distância entre dois elementos */ \
+    X(ELEMENTO, "⚪")       /* elemento, pessoa, indivíduo */ \
+    X(POP, "👥")       /* população */ \
+    X(DIVERSIDADE, "🌈")       /* diversidade */ \
+    X(SEL_PAIS, "🧩")       /* fase algoritmo evolutivo, selecionar pais */ \
+    X(PAIS, "🧑‍🤝‍🧑")       /* pais, do operador de cruzamento */ \
+    X(CRUZAR, "🧬")       /* cruzamento, reprodução */ \
+    X(MUTAR, "✨")       /* mutação */ \
+    X(SOBREVIVENCIA, "🛡️")       /* fase da sobrevivência algoritmo evolutivo */ \
+    X(IDADE, "⏳")       /* idade de um elemento/indivíduo */ \
+    X(IMIGRANTES, "🚶‍")       /* elementos / indivíduos imigrantes, estrangeiros */ \
+    X(APAGADO, "🧹")       /* removido / apagado / eliminado / limpo */ \
+    X(ELITE,  "👑")      /* elite */ \
+    X(TORNEIO,  "🏆")      /* torneio */ \
+    X(VIZINHO,  "🔗")      /* vizinho, operador de vizinhança */ \
+	X(MENU, "☰")      /* menu */
 
 	enum class EIcon {
 #define X(nome, string) nome,

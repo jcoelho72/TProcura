@@ -1095,7 +1095,7 @@ criação de gráficos e relatórios dinâmicos, e criação de medidas DAX.
 
 <details>
   <summary>Passo a passo da importação e análise no Excel</summary>
-
+   
 Criamos um só ficheiro de análise, independente do número de testes.
 Por esse motivo tem o nome único com o nome do problema.
 

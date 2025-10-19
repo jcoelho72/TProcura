@@ -416,30 +416,32 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 	{
 		int minimo, maximo;
 		Debug(PASSOS, true, "─") || Debug(DETALHE, false, "┬");
-		Debug(PASSOS, false, "─ 📆 %d ⏱ %s ────",
-			epoca, MostraTempo(Cronometro(CONT_ALGORITMO)));
+		Debug(PASSOS, false, "─ %-2s %d %-2s %s ────",
+			Icon(EIcon::EPOCA), epoca, Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_ALGORITMO)));
 		if (populacao.Empty())
 			return;
 		ObterExtremos(populacao, minimo, maximo);
-		Debug(PASSOS, false, " 💰 g%d-%d", minimo, maximo);
+		Debug(PASSOS, false, " %-2s g%d-%d", Icon(EIcon::VALOR), minimo, maximo);
 		if (Parametro(NIVEL_DEBUG) == DETALHE) { // mostrar custos de toda a população
 			int minDist, maxDist, avgDist, melhorPior, maiorCusto = 0;
 			TVector<int> custos;
 			// mostrar diversidade da população
 			DiversidadeAE(populacao, minDist, maxDist, avgDist, melhorPior);
-			Debug(DETALHE, false, " [📏 %d-%d (μ=%d, melhor/pior %d)]",
-				minDist, maxDist, avgDist, melhorPior);
+			Debug(DETALHE, false, " [%-2s %d-%d (μ=%d, melhor/pior %d)]",
+				Icon(EIcon::DIST), minDist, maxDist, avgDist, melhorPior);
 			for (auto individuo : populacao) {
 				custos += individuo->custo;
 				if (maiorCusto < individuo->custo)
 					maiorCusto = individuo->custo;
 			}
-			DebugTabela(DETALHE, custos, "🧑‍🔬💰", " │ │", 1000000 + maiorCusto);
+			char str[256];
+			snprintf(str, sizeof(str), "%-2s&-2s", Icon(EIcon::ELEMENTO), Icon(EIcon::VALOR));
+			DebugTabela(DETALHE, custos, str, " │ │", 1000000 + maiorCusto);
 			Debug(DETALHE, false, "\n │ └──────────────────────────────────── ");
 		}
 		else if (Parametro(NIVEL_DEBUG) >= COMPLETO) { // mostrar diversidade da população
-			DebugPopulacaoAE(populacao, "👥");
-			DebugDiversidadeAE(populacao, "🌈 ");
+			DebugPopulacaoAE(populacao, Icon(EIcon::POP));
+			DebugDiversidadeAE(populacao, Icon(EIcon::DIVERSIDADE));
 		}
 	}
 }
@@ -452,10 +454,10 @@ void TProcuraMelhorativa::DebugPopulacaoAE(TVector<TPonto>& populacao, const cha
 			maiorCusto = ind->custo;
 	printf("\n │ ├───── %s ───── ", titulo);
 	for (int i = 0; i < populacao.Count(); i++) {
-		printf("\n │ │ 🧑‍🔬 ");
+		printf("\n │ │ %-2s ", Icon(EIcon::ELEMENTO));
 		DebugID(i + 1, populacao.Count());
 		populacao[i]->Debug(false);
-		printf(" 💰 ");
+		printf(" %-2s ", Icon(EIcon::VALOR));
 		DebugHSL((1 - 1.0f * populacao[i]->custo / maiorCusto) * 120, .75, .5, false);
 		printf("g:%d", populacao[i]->custo);
 		DebugHSL();
@@ -466,7 +468,7 @@ void TProcuraMelhorativa::DebugDiversidadeAE(TVector<TPonto>& populacao, const c
 {
 	printf("\n │ ├───── %s ───── ", titulo);
 	if (populacao.Count() <= 10) { // matriz de distâncias
-		printf("\n │ │  🧑‍🔬 │");
+		printf("\n │ │  %-2s │", Icon(EIcon::ELEMENTO));
 		for (int i = 0; i < populacao.Count(); i++) {
 			DebugID(i + 1, populacao.Count());
 			printf("│");
@@ -492,8 +494,9 @@ void TProcuraMelhorativa::DebugDiversidadeAE(TVector<TPonto>& populacao, const c
 		TVector<int> id;
 		for (int i = 0; i < populacao.Count(); i++)
 			id += i;
-		id.RandomOrder();
-		printf("\n │ │  🧑‍🔬 │ 🧑‍🔬 │ 📏 │\n │ │ ────┼────┼────┼");
+		//id.RandomOrder(); // não utilizar aleatório para não alterar a sequência para o algoritmo principal
+		printf("\n │ │  %-2s │ %-2s │ %-2s │\n │ │ ────┼────┼────┼",
+			Icon(EIcon::ELEMENTO), Icon(EIcon::ELEMENTO), Icon(EIcon::DIST));
 		for (int i = 0; i < id.Count(); i += 2) {
 			printf("\n │ │ ");
 			DebugID(id[i] + 1, populacao.Count());
@@ -565,7 +568,8 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 	else if (descendentes > pop)
 		descendentes = pop;
 
-	Debug(COMPLETO, false, "\n │ ├─┬─── FASE 🎯 Selecionar %d 🧑‍🤝‍🧑 pais ───── ", descendentes);
+	Debug(COMPLETO, false, "\n │ ├─┬─── FASE %-2s Selecionar %d %-2s pais ───── ",
+		Icon(EIcon::SEL_PAIS), descendentes, Icon(EIcon::PAIS));
 	pais = {};
 	if (Parametro(SELECAO) == 1) { // roleta
 		// roleta implementada como Stochastic Universal Sampling (SUS)
@@ -649,8 +653,8 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 	int cruzamentos = 0, mutacoes = 0;
 	int melhor, pior, igual; // estatística do avanço da nova geração
 	TVector<int> custoPais, custoFilhos;
-	Debug(COMPLETO, false, "\n │ ├─┬─── FASE Reproduzir %d pais ───── ", pais.Count());
-	Debug(COMPLETO, false, "\n │ │ ├───── Pais (🧑‍🤝‍🧑) ───── ");
+	Debug(COMPLETO, false, "\n │ ├─┬─── FASE %-2s Reproduzir %d pais ───── ", Icon(EIcon::CRUZAR), pais.Count());
+	Debug(COMPLETO, false, "\n │ │ ├───── Pais (%-2s) ───── ", Icon(EIcon::PAIS));
 	pais.RandomOrder();
 	if (Parametro(NIVEL_DEBUG) >= COMPLETO) {
 		TVector<int> paiID;
@@ -659,7 +663,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 			if (id >= 0)
 				paiID += (id + 1);
 		}
-		DebugTabela(COMPLETO, paiID, " 🧑‍🔬 ", " │ │ │ ", popoulacao.Count(), true);
+		DebugTabela(COMPLETO, paiID, Icon(EIcon::ELEMENTO), " │ │ │ ", popoulacao.Count(), true);
 	}
 	while (!pais.Empty()) {
 		TPonto pai = pais.Pop();
@@ -727,11 +731,16 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 				igual++;
 	}
 
-	Debug(COMPLETO, false, "\n │ │ ├───── Pais (💰) ───── ");
+	Debug(COMPLETO, false, "\n │ │ ├───── Pais (%-2s) ───── ", Icon(EIcon::VALOR));
 	DebugTabela(COMPLETO, custoPais, " 🧑‍🔬 ", " │ │ │ ", 1000000 + maiorCusto, true);
-	Debug(COMPLETO, false, "\n │ │ ├───── Filhos (💰) 🧬%d  ✨%d ───── 📈%d ➖%d 📉%d",
-		cruzamentos, mutacoes, melhor, igual, pior);
-	DebugTabela(COMPLETO, custoFilhos, " 🧑‍🔬 ", " │ │ │ ", 1000000 + maiorCusto, true);
+	Debug(COMPLETO, false, "\n │ │ ├───── Filhos (%.2s) %.2s%d  %.2s%d ───── %.2s%d %.2s%d %.2s%d",
+		Icon(EIcon::VALOR),
+		Icon(EIcon::CRUZAR), cruzamentos,
+		Icon(EIcon::MUTAR), mutacoes,
+		Icon(EIcon::UB), melhor,
+		Icon(EIcon::EMPATE), igual,
+		Icon(EIcon::LB), pior);
+	DebugTabela(COMPLETO, custoFilhos, Icon(EIcon::ELEMENTO), " │ │ │ ", 1000000 + maiorCusto, true);
 	Debug(COMPLETO, false, "\n │ │ └──────────────────────────────────── ");
 	return descendentes;
 }
@@ -742,7 +751,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 	int nElite = Parametro(ELITISMO);
 	int imigrantes = Parametro(IMIGRANTES);
 	int melhorDescendente = INT_MAX;
-	Debug(COMPLETO, false, "\n │ ├─┬─── FASE 🛡️ Sobrevivência ───── ");
+	Debug(COMPLETO, false, "\n │ ├─┬─── FASE %-2s Sobrevivência ───── ", Icon(EIcon::SOBREVIVENCIA));
 	if (nElite > 0) {
 		// 1. Copiar os N melhores da população atual
 		TVector<int> id;
@@ -757,7 +766,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 	}
 
 	if (Parametro(SOBREVIVENCIA) == 1) { // idade
-		Debug(COMPLETO, false, "\n │ │ ├───── ⏳ Idade ───── ");
+		Debug(COMPLETO, false, "\n │ │ ├───── %-2s Idade ───── ", Icon(EIcon::IDADE));
 		// remover os mais velhos (os que estão mais tempo na população)
 		for (int i = 0; i < descendentes.Count() && i < populacao.Count(); i++) {
 			delete populacao[i];
@@ -830,13 +839,14 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 
 	if (imigrantes > 0) {
 		// 3. Adicionar novos elementos aleatórios
-		Debug(COMPLETO, false, "\n │ │ ├───── 🚶‍♂️🌍 Imigrantes ");
+		Debug(COMPLETO, false, "\n │ │ ├───── 🚶‍♂️🌍 Imigrantes ",
+			Icon(EIcon::IMIGRANTES));
 		for (int i = 0; i < imigrantes; i++) {
 			// remover um aleatório para dar lugar a um imigrante
 			int idx = TRand::rand() % populacao.Count();
 			delete populacao[idx];
 			populacao[idx] = NULL;
-			Debug(COMPLETO, false, " %d✖ →🆕", idx + 1);
+			Debug(COMPLETO, false, " %d✖ →🆕", idx + 1, Icon(EIcon::APAGADO), Icon(EIcon::IMIGRANTES));
 		}
 		Debug(COMPLETO, false, " ───── ");
 	}
@@ -853,8 +863,8 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 				delete populacao[idx];
 				populacao[idx] = elite[i];
 				if (!primeiro) {
-					Debug(COMPLETO, false, "\n │ │ ├───── 👑 Elite %d→%d",
-						idElite[i] + 1, idx + 1);
+					Debug(COMPLETO, false, "\n │ │ ├───── %-2s Elite %d→%d",
+						Icon(EIcon::ELITE), idElite[i] + 1, idx + 1);
 					primeiro = true;
 				}
 				else
@@ -879,7 +889,8 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 		int count = 0;
 		for (int i = 0; i < populacao.Count(); i++)
 			id += i;
-		Debug(COMPLETO, false, "\n │ ├───── FASE Diversidade - avaliação partilhada ───── ");
+		Debug(COMPLETO, false, "\n │ ├───── FASE %-2s Diversidade - avaliação partilhada ───── ",
+			Icon(EIcon::DIVERSIDADE));
 		for (int j = 0; j < populacao.Count(); j++) {
 			if (id.Count() > 20)
 				id.RandomOrder();
@@ -922,7 +933,7 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 		for (auto i : remover) {
 			delete populacao[i];
 			populacao[i] = NULL;
-			Debug(COMPLETO, false, " 🧹✖ %d", i + 1);
+			Debug(COMPLETO, false, " %-2s %d", Icon(EIcon::APAGADO), i + 1);
 		}
 		populacao -= NULL;
 	}
@@ -933,8 +944,10 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 // Chamar sempre que uma solucao melhor que a actual e encontrada
 void TProcuraMelhorativa::DebugMelhorEncontrado(TPonto ponto)
 {
-	if (Debug(ATIVIDADE, false, "\n │ 🏆 ⏱ %s 💰 g:%d\n─┴───────────────────",
-		MostraTempo(Cronometro(CONT_ALGORITMO)), custo)) {
+	if (Debug(ATIVIDADE, false, "\n │ %-2s %-2s %s %-2s g:%d\n─┴───────────────────",
+		Icon(EIcon::TORNEIO), Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_ALGORITMO)),
+		Icon(EIcon::VALOR), custo))
+	{
 		Debug();
 		printf("\n─┬───────────────────");
 	}
@@ -990,14 +1003,14 @@ void TProcuraMelhorativa::Explorar() {
 		Dominio(opcao, 0, 3);
 		debugPrefixo = " │ │ ";
 		if (opcao == 1) { // mutar
-			printf(" │ ┌───── ✨ ───── ");
-			printf("\n │ │ 🧑‍🔬 [1-%d]: ", populacao.Count());
+			printf(" │ ┌───── %-2s ───── ", Icon(EIcon::MUTAR));
+			printf("\n │ │ %-2s [1-%d]: ", Icon(EIcon::ELEMENTO), populacao.Count());
 			indA = NovoValor("") - 1;
 			Dominio(indA, 0, populacao.Count());
-			printf(" │ │ 📍  ");
+			printf(" │ │ %-2s  ", Icon(EIcon::ELEMENTO));
 			populacao[indA]->Debug(false);
 			populacao[indA]->Mutar();
-			printf("\n │ │ ✨  ");
+			printf("\n │ │ %-2s  ", Icon(EIcon::MUTAR));
 			populacao[indA]->Debug(false);
 			populacao[indA]->Avaliar();
 			if (!VerificaMelhor(populacao[indA]))
@@ -1005,23 +1018,23 @@ void TProcuraMelhorativa::Explorar() {
 			printf("\n │ └────────────── ");
 		}
 		else if (opcao == 2) { // cruzar
-			printf(" │ ┌───── 🧬 ───── ");
-			printf("\n │ │ 🧑‍🔬 Pai [1-%d]: ", populacao.Count());
+			printf(" │ ┌───── %-2s ───── ", Icon(EIcon::CRUZAR));
+			printf("\n │ │ %-2s Pai [1-%d]: ", Icon(EIcon::ELEMENTO), populacao.Count());
 			indA = NovoValor("") - 1;
-			printf(" │ │ 🧑‍🔬 Mãe [1-%d]: ", populacao.Count());
+			printf(" │ │ %-2s Mãe [1-%d]: ", Icon(EIcon::ELEMENTO), populacao.Count());
 			indB = NovoValor("") - 1;
-			printf(" │ │ 🧑‍🔬 Filho [1-%d]: ", populacao.Count());
+			printf(" │ │ %-2s Filho [1-%d]: ", Icon(EIcon::ELEMENTO), populacao.Count());
 			indC = NovoValor("") - 1;
 			printf(" │ │ ");
 			Dominio(indA, 0, populacao.Count());
 			Dominio(indB, 0, populacao.Count());
 			Dominio(indC, 0, populacao.Count());
-			printf("\n │ │ 📍 Pai   ");
+			printf("\n │ │ %-2s Pai   ", Icon(EIcon::ELEMENTO));
 			populacao[indA]->Debug(false);
-			printf("\n │ │ 📍 Mãe   ");
+			printf("\n │ │ %-2s Mãe   ", Icon(EIcon::ELEMENTO));
 			populacao[indB]->Debug(false);
 			populacao[indC]->Cruzamento(populacao[indA], populacao[indB]);
-			printf("\n │ │ 🧬 Filho ");
+			printf("\n │ │ %-2s Filho ", Icon(EIcon::CRUZAR));
 			populacao[indC]->Debug(false);
 			populacao[indC]->Avaliar();
 			if (!VerificaMelhor(populacao[indC]))
@@ -1029,16 +1042,16 @@ void TProcuraMelhorativa::Explorar() {
 			printf("\n │ └────────────── ");
 		}
 		else if (opcao == 3) { // vizinhos
-			printf(" │ ┌───── 🔗 ───── ");
-			printf("\n │ │ 🧑‍🔬 [1-%d]: ", populacao.Count());
+			printf(" │ ┌───── %-2s ───── ", Icon(EIcon::VIZINHO));
+			printf("\n │ │ %-2s [1-%d]: ", Icon(EIcon::ELEMENTO), populacao.Count());
 			indA = NovoValor("") - 1;
 			Dominio(indA, 0, populacao.Count() - 1);
-			printf(" │ │ 📍  ");
+			printf(" │ │ %-2s  ", Icon(EIcon::ELEMENTO));
 			populacao[indA]->Debug(false);
 			populacao[indA]->Vizinhanca(vizinhos);
 			CalcularAvaliacoes(vizinhos, melhorValor, melhorIndice);
-			DebugPopulacaoAE(vizinhos, "🔗 Vizinhos");
-			printf("\n │ │ 🧑‍🔬 [1-%d]: ", vizinhos.Count());
+			DebugPopulacaoAE(vizinhos, "Vizinhos");
+			printf("\n │ │ %-2s [1-%d]: ", Icon(EIcon::ELEMENTO), vizinhos.Count());
 			indB = NovoValor("") - 1;
 			printf(" │ │ ");
 			Dominio(indB, 0, vizinhos.Count() - 1);
