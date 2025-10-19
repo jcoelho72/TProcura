@@ -875,7 +875,7 @@ Teste: tvetor_1</h3>
 <p>No final temos a mesmoa informação final que nos testes em modo interativo. São em tudo iguais, a diferença aqui é termos utilizado o debug nível 3.</p>
 <p>É preciso referenciar o hardware utilizado. Ao não ser num cluster em que o hardware é preparado para execuções, torna-se complicada a reprodução fiel, principalmente se o tempo é um indicador em estudo, como é este caso. Outras aplicações podem estar a executar e velocidade do CPU variável, podem enviesar os resultados, o que foi o caso estas execuções.</p>
 <ul>
-<li><b>hardwoare</b>: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)</li>
+<li><b>hardware</b>: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)</li>
 </ul>
 <h4><a class="anchor" id="autotoc_md99"></a>
 Análise e Conclusões</h4>
@@ -884,6 +884,10 @@ Análise e Conclusões</h4>
 <ul>
 <li><b>Ficheiro de Análise</b>: tvetor.xlsx</li>
 </ul>
+<details >
+<summary >
+Passo a passo da importação e análise no Excel</summary>
+<p></p>
 <p>Criamos um só ficheiro de análise, independente do número de testes. Por esse motivo tem o nome único com o nome do problema.</p>
 <ul>
 <li><b>Importação CSV</b>: importar todos os ficheiros CSV criados para modelo de dados.<ul>
@@ -914,7 +918,8 @@ Janela de importação</div></div>
 <p>Estamos prontos para criar uma tabela dinâmica:</p><ul>
 <li>Inserir &gt; Tabela Dinâmica &gt; A partir de modelo de dados</li>
 </ul>
-<p>Ficamos com uma tabela dinâmica, em que podemos utilizar todos os campos das consultas que estão no modelo de dados: <img src="excel8.png" alt="" class="inline" title="Campos da Tabela Dinâmica"/>    </p>
+<p>Ficamos com uma tabela dinâmica, em que podemos utilizar todos os campos das consultas que estão no modelo de dados: <img src="excel8.png" alt="" class="inline" title="Campos da Tabela Dinâmica"/>     </p>
+</details>
 <p>Vamos obter o gráfico em bruto da performance:</p><ul>
 <li><b>Linhas</b>: Instância (usar a coluna de tvetor_1)</li>
 <li><b>Valores</b>: I2 de ambas as consultas</li>
@@ -925,6 +930,10 @@ Janela de importação</div></div>
 <li>os resultados de ambas as execuções não batem muito certo. Assim, o que é certo é que os valores obtidos são incertos.</li>
 </ul>
 <p>Na execução com 10 corridas, podemos procurar obter a média e intervalo de confiança, com medidas DAX. Para tal, é preciso adicionar medidas DAX na tabela tvetor_1B.</p>
+<details >
+<summary >
+Passo a passo da implementação do intervalo de confiança no Excel</summary>
+<p></p>
 <p>Vamos começar pela média do tempo. Pode-se adicionar novas medidas adicionando nos Campos da Tabela Dinâmica, no menu de contexto da consulta, ou no Power Pivot &gt; Medidas &gt; Nova Medida</p>
 <div class="image">
 <img src="excel10.png" alt=""/>
@@ -938,7 +947,8 @@ Nova Medida</div></div>
 <li>IC_Inf = [MédiaTempo] - 1.96 * [ErroPadrao]</li>
 <li>IC_Sup = [MédiaTempo] + 1.96 * [ErroPadrao]</li>
 </ul>
-<p>Nota: o valor de N deveria ser 30 ou superior, para ser utilizado o valor 1.96 para 95% de confiança.</p>
+<p>Nota: o valor de N deveria ser 30 ou superior, para ser utilizado o valor 1.96 para 95% de confiança. </p>
+</details>
 <p>Assim podemos obter uma informação mais precisa, dos dados que temos:</p>
 <div class="image">
 <img src="excel11.png" alt=""/>
