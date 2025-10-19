@@ -23,7 +23,6 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 - [Ação 6: Menu 8 - Teste](#tvector-a6)
 - [Ação 7: Linha de comando](#tvector-a7)
 - [Ação 8: Execução MPI](#tvector-a8)
-- [Ação 9: Desafio CTesteTVector](#tvector-a9)
 
 
 ```entrada
@@ -977,9 +976,12 @@ Lista de indicadores:
 Podemos ver os parametros específicos do programa, e também a lista completa de parametros e indicadores
 do algoritmo. Assim podemos saber o que utilizar na definição das configurações de execução.
 
-Podemos reproduzir o teste anterior de acordo com o modelo de Teste.
 
 ### Teste: tvetor_1
+
+Podemos neste teste reproduzir o teste anterior de acordo com o modelo de Teste.
+Nesse teste queremos saber como varia o tempo na operação de ordenação, com o tamanho do vetor,
+ou seja, pretendemos um teste de performance.
 
 - **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
 - **Definição**: Instâncias: 1:10; Configurações: P1=2
@@ -1033,8 +1035,7 @@ O teste arranca normalmente, e pára aos 5 segundos dado que o teste é no modo 
 Vamos fazer também a versão com esforço B, para podermos ficar com a situação que tinhamos no modo interativo.
 
 ```entrada
-/TProcura/Teste$ ./bin/Release/TProcura 1:10 -R Resultados/tvetor_1B -P P1=2 P2=
-3 P3=1:10
+/TProcura/Teste$ ./bin/Release/TProcura 1:10 -R Resultados/tvetor_1B -P P1=2 P2=3 P3=1:10
 
 
 ═╤═ Instâncias ═══ { 📄1 📄2 📄3 📄4 📄5 📄6 📄7 📄8 📄9 📄10 }
@@ -1073,117 +1074,242 @@ Assim podemos ir vendo o andamento dos testes.
 No final temos a mesmoa informação final que nos testes em modo interativo.
 São em tudo iguais, a diferença aqui é termos utilizado o debug nível 3.
 
+É preciso referenciar o hardware utilizado. Ao não ser num cluster em que o hardware é preparado
+para execuções, torna-se complicada a reprodução fiel, principalmente se o tempo é
+um indicador em estudo, como é este caso. Outras aplicações podem estar a executar e velocidade do CPU
+variável, podem enviesar os resultados, o que foi o caso estas execuções.
+
+- **hardwoare**: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)
+
+
 #### Análise e Conclusões
 
-Vamos agora analisar os resultados, com a relação entre tempo e tamanho, conforme objetivo inicial do teste.
+Os dois ficheiros produzidos, Resultados/tvetor_1.csv e Resultados/tvetor_1B.csv, podem ser importados e
+analisados com qualquer software adequado, de modo a obter-se gráficos e tabelas que permitam observar
+o que se pretende, e permitam realizar testes estatísticos.
 
-.... (refazer)
+Vamos utilizar o MS Excel, fazendo uso de importação de ficheiros para modelo de dados,
+criação de gráficos e relatórios dinâmicos, e criação de medidas DAX.
 
+- **Ficheiro de Análise**: tvetor.xlsx
 
-| Rótulos de Linha | Média de I2(Tempo(ms)) |
-|:---:|---:|
-| 1 | 69,7 |
-| 2 | 162,2 |
-| 3 | 254,5 |
-| 4 | 332,5 |
-| 5 | 407,3 |
-| 6 | 504 |
-| 7 | 594,6 |
-| 8 | 643,8 |
-| 9 | 713,3 |
-| 10 | 817,9 |
+Criamos um só ficheiro de análise, independente do número de testes.
+Por esse motivo tem o nome único com o nome do problema.
 
-Utilizamos agora as tabelas diretamente, em vez de imagens do Excel. 
+- **Importação CSV**: importar todos os ficheiros CSV criados para modelo de dados.
+	- Dados > Obter Dados > De Ficheiro > De Texto/CSV > tvetor_1.csv
 
-Os valores são distintos mas agora temos mais precisão, uma vez que temos 10 excuções por cada caso.
-A média do tempo sobe com o tamanho, mas não de forma linear.
+![Janela de importação](docs/images/excel1.png)
 
-Estando respondida a questão inicial sobre o tempo de ordenação, podemos com este código procurar responder a outra questão:
+Os dados devem estar corretos, caso o separador ou codificação não seja corretamente identificada, corrigir.
+Vamos no entanto carregar para modelo de dados, e não direto para o Excel.
+A vantagem deste passo torna-se evidênte em ficheiros grandes, reduzindo consideravelmente o tamanho do ficheiro de Excel,
+e não existindo limite de 1 milhão de linhas.
 
-- considerando todas as operações em teste, há diferença entre alguma das estruturas de dados em termos de tempo?
+Para colocar os dados no modelo de dados, temos de selecionar a opção "Carregar Para..."
+![Carregar Para...](docs/images/excel2.png)
 
-Com base nesta pergunta construímos o próximo teste.
+Na janela optamos por ligação apenas e adicionar ao modelo de dados:
+![Importar dados](docs/images/excel3.png)
+
+Este processo tem de ser repetido para os restantes ficheiros a processar, neste caso tvetor_1B.csv
+
+Após o carregamento vemos as consultas e ligações com os ficheiros carregados, com 10 e 100 linhas:
+![Consultas e Ligações](docs/images/excel4.png)
+
+Caso não apareça ou tenha sido fechada, esta caixa pode ser ligada em
+- Dados > Consultas e Ligações
+
+O menu de contexto numa dessas ligações permite editar e alterar o que for necessário na consulta,
+ou voltar a carregar o ficheiro caso tenha sido refrescado.
+
+O friso "Power Pivot" é também importante, para estabelecer a ligação entre as duas consultas:
+![Friso Power Pivot](docs/images/excel5.png)
+
+Neste menu vamos para já para Gerir
+![Gerir Power Pivot](docs/images/excel6.png)
+
+Nesta janela podemos ver as consultas em baixo, com as colunas no modelo de dados.
+Iremos voltar aqui para adicionar variáveis calculadas, se necessário.
+Para já vamos para:
+- Estrutura > Relações > Criar Relação
+
+Podemos fazer uma relação entre as duas consultas, com base na instância:
+![Criar Relação](docs/images/excel7.png)
+
+Esta relação permite que se utilize dados de ambas as consultas, num mesmo relatório dinâmico.
+Apenas podemos fazer esta operação porque uma das consultas tem uma linha por cada instância.
+
+Estamos prontos para criar uma tabela dinâmica:
+- Inserir > Tabela Dinâmica > A partir de modelo de dados
+
+Ficamos com uma tabela dinâmica, em que podemos utilizar todos os campos das consultas que estão no modelo de dados:
+![Campos da Tabela Dinâmica](docs/images/excel8.png)
+
+Vamos obter o gráfico em bruto da performance:
+- **Linhas**: Instância (usar a coluna de tvetor_1)
+- **Valores**: I2 de ambas as consultas
+
+Obtemos a primeira tabela de resultados:
+![Instância vs soma Tempo](docs/images/excel9.png)
+
+Naturalmente que uma das colunas tem 10 execuções a outra 1.
+Podemos observar:
+- há um efeito não linear, atendendo a que a instância 1 leva 65 ou 67,6 millisegundos a executar, enquanto a instância 10 com 10 vezes o tamanho, leva mais que 10 vezes o tempo
+- os resultados de ambas as execuções não batem muito certo. Assim, o que é certo é que os valores obtidos são incertos.
+
+Na execução com 10 corridas, podemos procurar obter a média e intervalo de confiança, com medidas DAX.
+Para tal, é preciso adicionar medidas DAX na tabela tvetor_1B. 
+
+Vamos começar pela média do tempo. Pode-se adicionar novas medidas adicionando nos Campos da Tabela Dinâmica,
+no menu de contexto da consulta, ou no Power Pivot > Medidas > Nova Medida
+
+![Nova Medida](docs/images/excel10.png)
+
+- MédiaTempo = AVERAGE([I2(Tempo(ms))])
+- N = COUNTROWS(tvetor_1B)
+- DesvioPadrao = STDEV.S([I2(Tempo(ms))])
+- ErroPadrao = [DesvioPadrao] / SQRT([N])
+- IC_Inf = [MédiaTempo] - 1.96 * [ErroPadrao]
+- IC_Sup = [MédiaTempo] + 1.96 * [ErroPadrao]
+
+Nota: o valor de N deveria ser 30 ou superior, para ser utilizado o valor 1.96 para 95% de confiança.
+
+Assim podemos obter uma informação mais precisa, dos dados que temos:
+
+![Instância vs Tempo](docs/images/excel11.png)
+
+Vemos que o intervalo de confiança de até 50 millisegundos, pelo que há relativa certeza nas décimas de segundo.
+O intervalo de confiança foi por vezes violado considerando a execução base, o que é normal utilizando 95% de confiança,
+em que 1 em cada 20 casos irá estar fora do intervalo. Por outro lado N é inferior a 30, e também
+o facto de se utilizar um computador local, duas corridas em alturas distintas podem estar sujeitas
+a processos em paralelo distintos, e ter enviasamento do tempo.
+
+Melhores resultados serão obtidos numa excecução num cluster, e com N superior.
+
+As medidas DAX permitem o calculo da estatística pretendida, embora dê algum trabalho a criar as variáveis,
+fica automaticamente recalculada para os filtros que pretendermos. 
+
+Podemos confirmar que há um efeito não linear no tempo.
+Mesmo considerando os intervalos máximo para a instância 1, 71,1 millisegundos, 10 vezes este tempo
+fica fora do intervalo de tempo da instância 10, que tem no mínimo 755 millisegundos.
+
+Vamos avançar para o próximo teste.
 
 ### Teste: tvetor_2
 
+Pretendemos agora, considerando todas as operações em teste, procurar saber se há diferença
+entre alguma das estruturas de dados em termos de tempo. Estamos portanto perante um teste paramétrico.
+
 - **Tipo de Teste / Objetivo**: Paramétrico (P6(ESTRUTURA_DADOS) vs P1(ALGORITMO) - irrelevante?)
-- **Definição**: Instâncias: 1,3; Configurações: P1=1:12 x P6=1:3 x P3=1:10
-- **Esforço**: 1,3; 1:4; 1:10
-- **Execução**: TProcura 1,3 -R Resultados/tvetor_2 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10
+- **Definição**: Instâncias: 1; Configurações: P1=1:12 x P6=1:3 x P3=1:10
+- **Esforço**: 1; 1:4; 1:10
+- **Execução**: TProcura 1 -R Resultados/tvetor_2 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10
 
-Neste caso o esforço incide sobre as instâncias, com a versão A apenas com as instâncias 1 e 3.
+Neste caso o esforço incide sobre as instâncias, com a versão A apenas com a instância 1.
 Coloca-se no entanto 10 sementes aleatórias.
-
-.... (refazer)
-
 
 
 ```entrada
-/TProcura/Teste$ ./bin/Release/TProcura 1,3 -R Resultados/tvetor3 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3
+/TProcura/Teste$ ./bin/Release/TProcura 1 -R Resultados/tvetor_2 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10
 
- ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)
+
+═╤═ Instâncias ═══ { 📄1 }
+ ├─ 🛠️ ─ P2=3 P4=10 P5=0 (parâmetros comuns)
 ═╪═ Configurações ═══
  ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1
  ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1
  ├─ ⚙️ [3] ─ P1=3 P3=1 P6=1
- ├─ ⚙️ [4] ─ P1=4 P3=1 P6=1
-...
+ │ ...
  ├─ ⚙️ [358] ─ P1=10 P3=10 P6=3
  ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3
  ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 1.
- ├─ ⏱ 10" 123ms         📋 63      ↻ 3       🛠️ 31      🖥️ 1
- ├─ ⏱ 20" 408ms         📋 132     ↻ 1       🛠️ 66      🖥️ 1
- ├─ ⏱ 30" 592ms         📋 196     ↻ 1       🛠️ 98      🖥️ 1
- ├─ ⏱ 40" 688ms         📋 257     ↻ 3       🛠️ 128     🖥️ 1
- ├─ ⏱ 50" 886ms         📋 326     ↻ 1       🛠️ 163     🖥️ 1
- ├─ ⏱ 1' 1" 65ms        📋 396     ↻ 1       🛠️ 198     🖥️ 1
- ├─ ⏱ 1' 11" 87ms       📋 466     ↻ 1       🛠️ 233     🖥️ 1
- ├─ ⏱ 1' 21" 229ms      📋 520     ↻ 1       🛠️ 260     🖥️ 1
- ├─ ⏱ 1' 31" 652ms      📋 588     ↻ 1       🛠️ 294     🖥️ 1
- ├─ ⏱ 1' 42" 54ms       📋 642     ↻ 1       🛠️ 321     🖥️ 1
- ├─ ⏱ 1' 52" 677ms      📋 710     ↻ 1       🛠️ 355     🖥️ 1
- ├─ 📄  Ficheiro Resultados/tvetor3.csv gravado.
- │  ⏱  Tempo real: 1' 54" 121ms
- │  ⏱  CPU total: 1' 54" 124ms
- │  📊  Utilização: 100,0%
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  1' 54" 132ms ) ═══
+ ├─ 📋 Tarefas:360   📄 Instâncias: 1   🛠️ Configurações: 360   🖥️ Processos: 1.
+ ├─ ⏱ 10" 41ms        📋 140   📄 1     🛠️ 140   🖥️ 1
+ ├─ ⏱ 20" 53ms        📋 278   📄 1     🛠️ 278   🖥️ 1
+ ├─ 🗎  Ficheiro Resultados/tvetor_2.csv gravado.
+ │  ⏱  Tempo real: 25" 853ms
+ │  ⏱  CPU total: 25" 853ms
+ │  📊  Utilização: 100.0%
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  25" 862ms ) ═══
 ```
 
 Podemos ver que solicitá-mos muitas configurações. Se fosse engano, poderiamos ter abortado o teste.
 
-Podemos processar no relatório dinâmico, colocando nas linhas P1 com os métodos, nas colunas P6 com as estruturas, 
-e no conteúdo I2 com o tempo.
+Vamos ficar com apenas o esforço base, atendendo a que foi já 25 segundos.
 
-Soma de I2(Tempo(ms)):
-| Rótulos de Linha | 1:TVector | 2:std::vector | 3:TVector/std::algorithm |
-|:----------------:|----------:|--------------:|-------------------------:|
-| 1:Add() | 376 | 174 | 306 |
-| 10:operator=() | 25 | 12 | 26 |
-| 11:operator+=() | 28 | 32 | 31 |
-| 12:nada | 0 | 0 | 0 |
-| 2:Sort() | 3162 | 2989 | 3465 |
-| 3:RandomOrder() | 407 | 231 | 278 |
-| 4:Invert() | 22 | 10 | 11 |
-| 5:BeASet() | 3177 | 2908 | 3353 |
-| 6:Difference() | 6666 | 6062 | 6925 |
-| 7:Union() | 10388 | 6182 | 11193 |
-| 8:Contained() | 6281 | 5774 | 6539 |
-| 9:Intersection() | 6798 | 6244 | 6655 |
-| Total Geral | 37330 | 30618 | 38782 |
+#### Análise e Conclusões
 
-Segundo estes resultados, TVector tem uma ligeira desvantagem em termos de tempo, e no final há uma diferença de 7 segundo em 37. 
-Foram utilizadas instãncias pequenas para que o teste possa ser rápido.
-Em qualquer caso pode-se afirmar que não há uma perda muito grande por utilizar TVector em vez do código STL.
+Importamos de igual forma este ficheiro, mas não ligamos com as outras duas consultas dado que
+não temos aqui todas as instâncias, nem uma relação entre ambos os testes que se pretenda explorar.
 
-Um ficheiro script com a linha de comandos, tem toda a informação para reproduzir o teste, pelo que pode facilitar a identificação do que foi feito.
-Por outro lado, o ficheiro de resultados tem também todos os valores utilizados, pelo que se houve algum engano na especificação dos parâmetros, o valor utilizado incorreto é visivel nos resultados.
-Há uma clara separação da fase de implementação da fase de teste. 
-O resultado de um teste pode levantar outras questões, e provocar outro teste. 
-Se a implementação tiver todas as opções em parâmetros, não é necessário alternar com programação entre testes. 
-Apenas após a identificação de bugs, é que a programação é necessária.
+Ficamos com nova consulta, tvetor_2, com 360 linhas carregadas.
+
+Podemos fazer desde logo o relatório dinâmico a partir do modelo de dados, colocando:
+- **linhas**: P1(ALGORITMO)
+- **colunas**: P6(ESTRUTURA_DADOS)
+- **valores**: Soma I2(Tempo(ms))
+
+Obtemos a seguinte tabela da Soma de I2(tempo(ms)):
+| Rótulos de Linha | 1:TVector | 2:std::vector | 3:TVector/std::algorithm | Total Geral |
+|:---:|---:|---:|---:|---:|
+| 1:Add() | 63 | 38 | 71 | 172 |
+| 10:operator=() | 7 | 0 | 8 | 15 |
+| 11:operator+=() | 8 | 23 | 9 | 40 |
+| 12:nada | 0 | 0 | 0 | 0 |
+| 2:Sort() | 661 | 616 | 623 | 1900 |
+| 3:RandomOrder() | 63 | 32 | 33 | 128 |
+| 4:Invert() | 3 | 0 | 0 | 3 |
+| 5:BeASet() | 664 | 672 | 667 | 2003 |
+| 6:Difference() | 1467 | 1392 | 1479 | 4338 |
+| 7:Union() | 2497 | 1413 | 2273 | 6183 |
+| 8:Contained() | 1378 | 1252 | 1362 | 3992 |
+| 9:Intersection() | 1454 | 1347 | 1476 | 4277 |
+| Total Geral | 8265 | 6785 | 8001 | 23051 |
+
+Podemos ver que os valores obtidos pelas estruturas são da mesma ordem de grandeza, mas o std::vetor
+aparenta ser mais rápido em algumas operações, nomeadamente na operação Union(), ficando com ligeira vantagem em outras.
+
+Para obter uma resposta com base estatística, vamos calcular os intervalos, como fizemos no teste 1.
+As medidas são exatamente as mesmas, mas aplicadas a consulta tvetor_2:
+- MédiaTempo2 = AVERAGE([I2(Tempo(ms))])
+- N2 = COUNTROWS(tvetor_2)
+- DesvioPadrao2 = STDEV.S([I2(Tempo(ms))])
+- ErroPadrao2 = [DesvioPadrao2] / SQRT([N2])
+- IC_Inf2 = [MédiaTempo2] - 1.96 * [ErroPadrao2]
+- IC_Sup2 = [MédiaTempo2] + 1.96 * [ErroPadrao2]
+
+Colocamos agora os limites nos valores
+- **linhas**: P1(ALGORITMO)
+- **colunas**: P6(ESTRUTURA_DADOS)
+- **valores**: IC_Inf2, IC_Sup2
+
+
+| Rótulos de Linha | 1:TVector<br>IC_Inf2 | IC_Sup2 | 2:std::vector<br>IC_Inf2 | IC_Sup2 | 3:TVector/std::algorithm<br>IC_Inf2 | IC_Sup2 |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 1:Add() | 5 | 7 | 3 | 5 | 5 | 9 |
+| 10:operator=() | 0 | 1 | 0 | 0 | 1 | 1 |
+| 11:operator+=() | 1 | 1 | 1 | 3 | 1 | 1 |
+| 12:nada | 0 | 0 | 0 | 0 | 0 | 0 |
+| 2:Sort() | 63 | 69 | 58 | 65 | 60 | 65 |
+| 3:RandomOrder() | 5 | 8 | 3 | 4 | 3 | 4 |
+| 4:Invert() | 0 | 1 | 0 | 0 | 0 | 0 |
+| 5:BeASet() | 64 | 69 | 59 | 76 | 57 | 77 |
+| 6:Difference() | 138 | 155 | 127 | 151 | 127 | 169 |
+| 7:Union() | 227 | 272 | 128 | 154 | 214 | 240 |
+| 8:Contained() | 126 | 150 | 113 | 137 | 123 | 150 |
+| 9:Intersection() | 137 | 154 | 128 | 142 | 127 | 169 |
+
+Podemos ver que a operação 7 de união, os intervalos de confiança não se intersectam, pelo que
+a diferença é real entre amboas as operações. Nos restantes casos os intervalos de confiança
+intersectam-se, pelo que este teste não permite saber se as médias são distintas.
+
+A utilização de intervalos de confiança para saber se dois valores são distintos, é um teste conservador,
+significando que pode haver casos em que os intervalos se intersectem, e exista forma com os mesmos dados e um teste
+estatístico mais fino, de concluir a diferença.
+
 
 ---
 
@@ -1196,7 +1322,7 @@ Antes desta secção, sertifique-se que tem o MPI operacional, seguindo as instr
 
 Não esquecer de utilizar o binário MPI.
 
-Usamos como referência o teste anterior, com cerca de 2 minutos.
+Usamos como referência o teste tvetor_1B com 47 segundos.
 
 Chamamos agora à atenção para o parametro -M para especificar o modo:
 
@@ -1213,94 +1339,101 @@ melhor partido do CPU disponível caso as tarefas tenham tempo de realização d
 
 Vamos fazer dois testes, um com cada modo, e com 4 processadores. 
 
-Linha de comando: mpiexec -n 4 TProcura 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3
+Linha de comando: mpiexec -n 4 TProcura 1:10 -R Resultados/tvetor_1Bm0 -P P1=2 P2=3 P3=1:10
 
 ```
-/TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m0 -M 0 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3
+TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1:10 -R Resultados/tvetor_1Bm0 -P P1=2 P2=3 P3=1:10
 
- ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)
+
+═╤═ Instâncias ═══ { 📄1 📄2 📄3 📄4 📄5 📄6 📄7 📄8 📄9 📄10 }
+ ├─ 🛠️ ─ P1=2 P2=3 P4=10 P5=0 P6=1 (parâmetros comuns)
 ═╪═ Configurações ═══
- ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1
- ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1
- ...
-═╤═ 🧪  Início do Teste (🖥️ 1) ═══
-═╤═ 🧪  Início do Teste (🖥️ 3) ═══
+ ├─ ⚙️ [1] ─ P3=1
+ ├─ ⚙️ [2] ─ P3=2
+ ├─ ⚙️ [3] ─ P3=3
+
 ═╤═ 🧪  Início do Teste (🖥️ 2) ═══
-...
- ├─ ⚙️ [358] ─ P1=10 P3=10 P6=3
- ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3
- ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3
+═╤═ 🧪  Início do Teste (🖥️ 3) ═══ ├─ ⚙️ [4] ─ P3=4
+ ├─ ⚙️ [5] ─ P3=5
+ ├─ ⚙️ [6] ─ P3=6
+
+═╤═ 🧪  Início do Teste (🖥️ 1) ═══ ├─ ⚙️ [7] ─ P3=7
+ ├─ ⚙️ [8] ─ P3=8
+ ├─ ⚙️ [9] ─ P3=9
+ ├─ ⚙️ [10] ─ P3=10
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.
- ├─ ⏱ 10" 131ms         📋 500     ↻ 1       🛠️ 250     🖥️ 4
-═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  12" 304ms ) ═══
-═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  38" 63ms ) ═══
-═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  46" 96ms ) ═══
- ├─ 📄  Ficheiro Resultados/tvetor3MPI1m0.csv gravado.
- │  ⏱  Tempo real: 46" 92ms
- │  ⏱  CPU total: 3' 4" 369ms
- │  📊  Utilização: 60.3%
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  46" 103ms ) ═══
+ ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 4.
+ ├─ ⏱ 10" 374ms       📋 93    📄 3     🛠️ 10    🖥️ 4
+═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  11" 173ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  13" 542ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  13" 542ms ) ═══
+ ├─ 🗎  Ficheiro Resultados/tvetor_1Bm0.csv gravado.
+ │  ⏱  Tempo real: 13" 534ms
+ │  ⏱  CPU total: 54" 137ms
+ │  📊  Utilização: 91.4%
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  13" 541ms ) ═══
 ```
 
 O arranque dos processos veio misturado com a lista de configurações em teste, que o processo 0 estava a mostrar.
-O tempo de execução real foi de 46 segundos, mas o tempo total de execução foi de 3 minutos, e a utilização de 60%.
-Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas.
+O tempo de execução real foi de 13 segundos, mas o tempo total de execução foi de 54 segundos, e a utilização de 90%.
+Significa que houve processadores parados, já sem nada para fazer, enquanto que outros ainda tinham tarefas,
+mas não de forma muito evidente.
 
 Podemos observar que o processo 2 terminou pouco depois dos 10 segundos.
 O processo 0 é sempre o último a terminar, já que tem de no final juntar os ficheiros de resultados.
 Isso não significa que não tenha ficado parado à espera dos outros.
-Na verdade o processo 0 ficou de facto à espera, caso contrário teria reportado o estado da situação aos 20 segundos.
 
 Vamos agora ver o gestor-trabalhador, em que o trabalho ém falta é gerido centralmente.
 
-Linha de comando: mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3
+Linha de comando: mpiexec -n 4 TProcura 1:10 -R Resultados/tvetor_1Bm1 -M 1 -P P1=2 P2=3 P3=1:10
 
 ```
-/TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1,3 -R Resultados/tvetor3MPI1m1 -M 1 -P P2=3 P1=1:12 x P3=1:10 x P6=1:3
+/TProcura/Teste$ mpiexec -n 4 ./bin/MPI/TProcura 1:10 -R Resultados/tvetor_1Bm1
+-M 1 -P P1=2 P2=3 P3=1:10
 
- ├─ 🛠️  ─ P2=3 P4=10 P5=0 (parâmetros comuns)
-═╪═ Configurações ═══
-
-═╤═ 🧪  Início do Teste (🖥️ 1) ═══
 ═╤═ 🧪  Início do Teste (🖥️ 2) ═══
 ═╤═ 🧪  Início do Teste (🖥️ 3) ═══
- ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1
- ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1
- ├─ ⚙️ [3] ─ P1=3 P3=1 P6=1
- ├─ ⚙️ [4] ─ P1=4 P3=1 P6=1
- ├─ ⚙️ [5] ─ P1=5 P3=1 P6=1
-...
- ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3
- ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3
+
+═╤═ Instâncias ═══ { 📄1 📄2 📄3 📄4 📄5 📄6 📄7 📄8 📄9 📄10 }
+ ├─ 🛠️ ─ P1=2 P2=3 P4=10 P5=0 P6=1 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙️ [1] ─ P3=1
+ ├─ ⚙️ [2] ─ P3=2
+ ├─ ⚙️ [3] ─ P3=3
+ ├─ ⚙️ [4] ─ P3=4
+ ├─ ⚙️ [5] ─ P3=5
+ ├─ ⚙️ [6] ─ P3=6
+ ├─ ⚙️ [7] ─ P3=7
+ ├─ ⚙️ [8] ─ P3=8
+ ├─ ⚙️ [9] ─ P3=9
+ ├─ ⚙️ [10] ─ P3=10
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:720   ↻ Instâncias: 2   🛠️ Configurações: 360   🖥️ Processos: 4.
- ├─ ⏱ 10" 7ms           📋 186     ↻ 3       🛠️ 266     🖥️ 3
- ├─ ⏱ 20" 37ms          📋 398     ↻ 3       🛠️ 160     🖥️ 3
- ├─ ⏱ 30" 63ms          📋 590     ↻ 3       🛠️ 64      🖥️ 3
-═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  37" 326ms ) ═══
-═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  37" 347ms ) ═══
-═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  37" 501ms ) ═══
- ├─ 📄  Ficheiro Resultados/tvetor3MPI1m1.csv gravado.
- │  ⏱  Tempo real: 37" 500ms
- │  ⏱  CPU total: 1' 52" 500ms
- │  ⏱  Espera do gestor: 37" 492ms
- │  ⏱  Espera trabalhadores: 329ms
+═╤═ 🧪  Início do Teste (🖥️ 1) ═══
+ ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 4.
+ ├─ ⏱ 10" 646ms       📋 63    📄 8     🛠️ 3     🖥️ 3     ⚖  1 657 1 1
+═╧═ 🏁  Fim do Teste (🖥️ 2  ⏱  16" 420ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 3  ⏱  16" 462ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 1  ⏱  16" 496ms ) ═══
+ ├─ 🗎  Ficheiro Resultados/tvetor_1Bm1.csv gravado.
+ │  ⏱  Tempo real: 16" 497ms
+ │  ⏱  CPU total: 49" 491ms
+ │  ⏱  Espera do gestor: 16" 495ms
+ │  ⏱  Espera trabalhadores: 111ms
  │  📊  Utilização:
  │  - Total: 74.8%
  │  - Gestor: 0.0%
- │  - Trabalhadores: 99.7%
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  37" 500ms ) ═══
+ │  - Trabalhadores: 99.8%
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  16" 497ms ) ═══
 ```
 
-Obteve-se uma taxa de utilização de 75%, superior aos 60% do método estático.
-O tempo real foi de 37 segundos, com tempo total de 2 minutos.
+Obteve-se uma taxa de utilização de 75%, neste caso inferior aos 90% do método estático.
+O tempo real foi de 16 segundos, com tempo total de 49 segundos.
 É um valor idêntico à distribuição de trabalho estática,
 mesmo considerando que apenas 3 dos 4 processos processaram tarefas.
 
-Em relação aos 2 minutos iniciais, reduziu-se menos de metade, tudo o resto permaneceu sem alterações.
+Em relação aos 47 segundos iniciais, reduziu-se para 1/3, tudo o resto permaneceu sem alterações.
 Quanto maior os testes e maior o número de processadores, maior será o ganho da execução MPI.
 
 No entanto para isso precisamos de ter acesso a um cluster.
@@ -1308,30 +1441,7 @@ Torna-se impraticável testes de volume utilizando computador próprio.
 
 A submissão de trabalhos num cluster, será alvo de um caso de estudo, para exemplificação.
 
----
 
-\anchor tvector-a9
-## Ação 9: Desafio CTesteTVector
-
-Será a ordenação de TVector mais rápida ou mais lenta ue a ordenação da STL?
-Que testes pode fazer para procurar dar uma resposta fundamentada?
-
-<details>
-  <summary>Resposta:</summary>
-Deve procurar executar com instâncias de dimensão razoável, vamos utilizar a 10 que é a maior.
-Deve-se executar várias vezes, e apenas na operação de ordenação.
-Linha de comando: TProcura 10 -R Resultados/tvetorA9 -P P2=3 P1=2 P3=1:10 x P6=1:3
-
-| Valores | 1:TVector | 2:std::vector | 3:TVector/std::algorithm |
-|:---:|---:|---:|---:|
-| Média de I2(Tempo(ms)) | 142,25 | 139,85 | 130,2 |
-| Mínimo de I2(Tempo(ms))2 | 62 | 58 | 58 |
-| Máximo de I2(Tempo(ms)) | 224 | 317 | 214 |
-
-
-Os resultados não confirmam vantagem nem desvantagem para nenhum algoritmo.
-Um teste estatístico poderá dar resposta se as médias são distintas ou não, mas em princípio será necessário uma amostra maior.
-</details>
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |
 

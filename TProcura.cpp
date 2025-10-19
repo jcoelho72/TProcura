@@ -387,7 +387,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 		if (detalhe > 1) {
 			if (col < 40)
 				col += printf("%*s", (40 - col), "");
-			col += printf(" " CINZ "(% d a % d)" NCINZ, parametro[parID].min, parametro[parID].max) - CINZ_TAM;
+			col += printf(" " CINZ "(%d a %d)" NCINZ, parametro[parID].min, parametro[parID].max) - CINZ_TAM;
 		}
 		// separador/mudança de linha
 		if (i < nElementos - 1) {
@@ -1200,9 +1200,7 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 		programa, programa
 	);
 	ResetParametros();
-	printf("\nLista de parâmetros:");
 	MostraParametros(2);
-	printf("\n\nLista de indicadores:");
 	MostraIndicadores();
 }
 
