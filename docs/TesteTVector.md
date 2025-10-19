@@ -1079,7 +1079,7 @@ para execuções, torna-se complicada a reprodução fiel, principalmente se o t
 um indicador em estudo, como é este caso. Outras aplicações podem estar a executar e velocidade do CPU
 variável, podem enviesar os resultados, o que foi o caso estas execuções.
 
-- **hardwoare**: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)
+- **hardware**: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)
 
 
 #### Análise e Conclusões
@@ -1092,6 +1092,9 @@ Vamos utilizar o MS Excel, fazendo uso de importação de ficheiros para modelo 
 criação de gráficos e relatórios dinâmicos, e criação de medidas DAX.
 
 - **Ficheiro de Análise**: tvetor.xlsx
+
+<details>
+  <summary>Passo a passo da importação e análise no Excel</summary>
 
 Criamos um só ficheiro de análise, independente do número de testes.
 Por esse motivo tem o nome único com o nome do problema.
@@ -1145,6 +1148,7 @@ Estamos prontos para criar uma tabela dinâmica:
 
 Ficamos com uma tabela dinâmica, em que podemos utilizar todos os campos das consultas que estão no modelo de dados:
 ![Campos da Tabela Dinâmica](docs/images/excel8.png)
+</details>
 
 Vamos obter o gráfico em bruto da performance:
 - **Linhas**: Instância (usar a coluna de tvetor_1)
@@ -1161,7 +1165,10 @@ Podemos observar:
 Na execução com 10 corridas, podemos procurar obter a média e intervalo de confiança, com medidas DAX.
 Para tal, é preciso adicionar medidas DAX na tabela tvetor_1B. 
 
-Vamos começar pela média do tempo. Pode-se adicionar novas medidas adicionando nos Campos da Tabela Dinâmica,
+<details>
+  <summary>Passo a passo da implementação do intervalo de confiança no Excel</summary>
+
+  Vamos começar pela média do tempo. Pode-se adicionar novas medidas adicionando nos Campos da Tabela Dinâmica,
 no menu de contexto da consulta, ou no Power Pivot > Medidas > Nova Medida
 
 ![Nova Medida](docs/images/excel10.png)
@@ -1174,6 +1181,7 @@ no menu de contexto da consulta, ou no Power Pivot > Medidas > Nova Medida
 - IC_Sup = [MédiaTempo] + 1.96 * [ErroPadrao]
 
 Nota: o valor de N deveria ser 30 ou superior, para ser utilizado o valor 1.96 para 95% de confiança.
+</details>
 
 Assim podemos obter uma informação mais precisa, dos dados que temos:
 
