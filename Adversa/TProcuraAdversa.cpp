@@ -67,16 +67,16 @@ void TProcuraAdversa::DebugChamada(bool noFolha, int alfa, int beta) {
 		printf("#");
 	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 		if (raiz)
-			ramo.First() = (minimizar ? " ├□" : " ├■");
+			ramo.First() = (minimizar ? RAMO_ESTADO2 : RAMO_ESTADO);
 		NovaLinha(true);
-		ramo.Last() = (ramo.Last() == " ├■" || ramo.Last() == " ├□" ? " │ " : "   ");
-		ramo.First() = " │ ";
+		ramo.Last() = (ramo.Last() == RAMO_ESTADO || ramo.Last() == RAMO_ESTADO2 ? RAMO_CONTINUA : RAMO_VAZIO);
+		ramo.First() = RAMO_CONTINUA;
 		DebugEstado(false);
 		if (alfa || beta)
 			printf(" α=%d β=%d ═══", alfa, beta);
 		if (pai != NULL)
 			printf(" %-2s%s", Icon(EIcon::ACCAO), pai->Acao(this)); // mostra sempre a ação
-		if (noFolha && Parametro(NIVEL_DEBUG) >= DETALHE ||
+		if ((noFolha && Parametro(NIVEL_DEBUG) >= DETALHE) ||
 			Parametro(NIVEL_DEBUG) >= COMPLETO)
 			Debug();
 	}
@@ -124,7 +124,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 			valor = valorConhecido.valor;
 			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(false);
-				DebugFolha(false, "%-2s %d", Icon(EIcon::MEMORIA), valor);
+				DebugFolha(false, "%-2s%d", Icon(EIcon::MEMORIA), valor);
 			}
 		}
 		else {
@@ -145,7 +145,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 			}
 			// caso de vitória/derrota
 			if (minimizar ? resultado <= custo + 1 - infinito : resultado >= infinito - custo - 1) {
-				DebugFolha(true, " %-2s %d", Icon(resultado < 0 ? EIcon::VIT_PRETA: EIcon::VIT_BRANCA), custo);
+				DebugFolha(true, " %-2s%d", Icon(resultado < 0 ? EIcon::VIT_PRETA: EIcon::VIT_BRANCA), custo);
 				// listar os nós não explorados
 				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 					TVector<int> valores;
@@ -315,7 +315,7 @@ int TProcuraAdversa::NoFolha(bool nivel) {
 		// a maximizar, entre 10 e 20, irá preferir 20, sempre é maior
 		// a minimizar, entre 10 e 20, irá preferir 10 que é menor
 	}
-	DebugFolha(false, "%-2s %d", Icon(EIcon::FOLHA), resultado);
+	DebugFolha(false, "%-2s%d", Icon(EIcon::FOLHA), resultado);
 	return resultado;
 }
 
@@ -357,7 +357,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 			valor = valorConhecido.valor;
 			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(false, alfa, beta);
-				DebugFolha(false, "%-2s %d", Icon(EIcon::MEMORIA), valor);
+				DebugFolha(false, "%-2s%d", Icon(EIcon::MEMORIA), valor);
 			}
 		}
 		else {
@@ -418,12 +418,12 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 	if (minimizar) { // pretas
 		// ver se ja e maximo
 		if (valor <= custo + 1 - infinito) {
-			DebugFolha(true, "%-2s %d", Icon(EIcon::VIT_PRETA), custo);
+			DebugFolha(true, "%-2s%d", Icon(EIcon::VIT_PRETA), custo);
 			return true;
 		}
 		if (alfa >= valor) {
 			// corte alfa
-			DebugFolha(true, "%-2s α(%d)", Icon(EIcon::CORTE), alfa);
+			DebugFolha(true, "%-2sα(%d)", Icon(EIcon::CORTE), alfa);
 			return true; // as brancas tem uma alternativa, e escusado continuar a procurar aqui
 		}
 		// atualização beta
@@ -435,12 +435,12 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 	else { // brancas
 		// ver se atingiu o maximo
 		if (valor >= infinito - custo - 1) {
-			DebugFolha(true, "%-2s %d", Icon(EIcon::VIT_BRANCA), custo);
+			DebugFolha(true, "%-2s%d", Icon(EIcon::VIT_BRANCA), custo);
 			return true;
 		}
 		if (beta <= valor) {
 			// corte beta
-			DebugFolha(true, "%-2s β(%d)", Icon(EIcon::CORTE), beta);
+			DebugFolha(true, "%-2sβ(%d)", Icon(EIcon::CORTE), beta);
 			return true; // as pretas tem uma alternativa, e escusado continuar a procurar aqui
 		}
 		// atualização alfa
@@ -478,7 +478,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	}
 	if (mpiID == 0)
 		MostrarConfiguracoes(0);
-	printf("\n═╤═ %-2s Início do Teste (%-2s %d) ═══", Icon(EIcon::TESTE), Icon(EIcon::PROCESSO), mpiID);
+	printf("\n═╤═ %-2s Início do Teste (%-2s%d) ═══", Icon(EIcon::TESTE), Icon(EIcon::PROCESSO), mpiID);
 	fflush(stdout);
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
@@ -499,7 +499,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 
 	if (mpiID == 0)
 		Debug(ATIVIDADE, false,
-			"\n ├─ %-2s Tarefas:%d   %-2s Instâncias: %d   %-2s Configurações: %d   %-2s Processos: %d.",
+			"\n ├─ %-2sTarefas:%d   %-2sInstâncias: %d   %-2sConfigurações: %d   %-2sProcessos: %d.",
 			Icon(EIcon::TAREFA), instancias.Count() * configuracoes.Count() * (configuracoes.Count() - 1),
 			Icon(EIcon::INST), instancias.Count(),
 			Icon(EIcon::CONF), configuracoes.Count(),
@@ -518,7 +518,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 
 					if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
 						Debug(ATIVIDADE, false,
-							"\n ├─ %-2s %-15s %-2s %-5d %-2s %-5d %-2s %-5d %-2s %-5d %-2s %-5d",
+							"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d",
 							Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
 							Icon(EIcon::TAREFA), nTarefa,
 							Icon(EIcon::INST), inst,
@@ -600,7 +600,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	instancia.valor = backupID;
 	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
-	printf("\n═╧═ %-2s  Fim do Teste (%-2s %d  %-2s  %s) ═══",
+	printf("\n═╧═ %-2s Fim do Teste (%-2s%d  %-2s%s) ═══",
 		Icon(EIcon::FIM), Icon(EIcon::PROCESSO), mpiID,
 		Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)));
 	fflush(stdout);

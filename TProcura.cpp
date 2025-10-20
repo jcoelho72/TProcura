@@ -121,10 +121,10 @@ void TProcura::TesteManual(const char* nome)
 		Debug();
 		MostraRelatorio(resultados, true);
 		printf("\n"
-			"┌─ %-2s Menu ────────┬────────────────┬─────────────────────┬──────────────┐\n"
-			"│ 1 %-2s  " CINZ "Instância" NCINZ "  │ 2 %-2s  " CINZ "Explorar" NCINZ " │ 3 %-2s  " CINZ "Parâmetros" NCINZ "    │ 4 %-2s  " CINZ "Solução" NCINZ " │\n"
-			"│ 5 %-2s  " CINZ "Indicadores" NCINZ " │ 6 %-2s  " CINZ "Executar" NCINZ "  │ 7 %-2s  " CINZ "Configurações" NCINZ " │ 8 %-2s  " CINZ "Teste" NCINZ "  │\n"
-			"└──────────────────┴────────────────┴─────────────────────┴──────────────┘",
+			"┌─ %-2sMenu ─────────┬────────────────┬─────────────────────┬──────────────┐\n"
+			"│ 1 %-2s  " CINZ "Instância" NCINZ "  │ 2 %-2s " CINZ "Explorar" NCINZ " │ 3 %-2s  " CINZ "Parâmetros" NCINZ "    │ 4 %-2s " CINZ "Solução" NCINZ " │\n"
+			"│ 5 %-2s  " CINZ "Indicadores" NCINZ " │ 6 %-2s  " CINZ "Executar" NCINZ " │ 7 %-2s " CINZ "Configurações" NCINZ " │ 8 %-2s " CINZ "Teste" NCINZ "  │\n"
+			"└───────────────────┴────────────────┴─────────────────────┴──────────────┘",
 			Icon(EIcon::MENU), Icon(EIcon::INST), Icon(EIcon::EXP), Icon(EIcon::PARAM),
 			Icon(EIcon::SOL), Icon(EIcon::IND), Icon(EIcon::EXEC), Icon(EIcon::CONF),
 			Icon(EIcon::TESTE));
@@ -141,14 +141,14 @@ void TProcura::TesteManual(const char* nome)
 			  break;
 		case 6:
 			// executar um algoritmo
-			printf("\n═╤═ %-2s  Execução iniciada ═══", Icon(EIcon::EXEC));
+			printf("\n═╤═ %-2s Execução iniciada ═══", Icon(EIcon::EXEC));
 			LimparEstatisticas();
 			resultado = ExecutaAlgoritmo();
 			MostraParametros(0);
 			tempo = Cronometro(CONT_ALGORITMO);
 			ExecucaoTerminada();
 			InserirRegisto(resultados, instancia.valor, 0);
-			printf("\n═╧═ %-2s  Execução terminada %-2s  %s ═══",
+			printf("\n═╧═ %-2s Execução terminada %-2s  %s ═══",
 				Icon(EIcon::FIM), Icon(EIcon::TEMPO),
 				MostraTempo(Cronometro(CONT_ALGORITMO)));
 			break;
@@ -159,7 +159,7 @@ void TProcura::TesteManual(const char* nome)
 			break;
 		}
 		case 9: return;
-		default: Mensagem("", "Opção não definida."); break;
+		default: Mensagem(Icon(EIcon::IMP), "Opção não definida."); break;
 		}
 	}
 }
@@ -253,19 +253,19 @@ void TProcura::MostraCaixa(const char* titulo, ECaixaParte parte, int largura,
 	switch (parte) {
 	case ECaixaParte::Topo:
 		if(icon[0]!=0)
-			printf("%*s┌─ %-2s %s ─", identacao, "", icon, titulo); 
+			printf("%*s┌─ %-2s%s ─", identacao, "", icon, titulo); 
 		else
 			printf("%*s┌─ %s ─", identacao, "", titulo);
 		break;
 	case ECaixaParte::Separador:
 		if(icon[0]!=0)
-			printf("%*s├─ %-2s %s ─", identacao, "", icon, titulo);
+			printf("%*s├─ %-2s%s ─", identacao, "", icon, titulo);
 		else
 			printf("%*s├─ %s ─", identacao, "", titulo);
 		break;
 	case ECaixaParte::Meio:
 		if(icon[0]!=0)
-			printf("%*s│ ^%-2s %s", identacao, "", icon, titulo);
+			printf("%*s│ ^%-2s%s", identacao, "", icon, titulo);
 		else
 			printf("%*s│ %s", identacao, "", titulo);
 		break;
@@ -273,7 +273,7 @@ void TProcura::MostraCaixa(const char* titulo, ECaixaParte parte, int largura,
 		printf("%*s└", identacao, "");
 		if (titulo[0] != 0) { // texto a ser inserido no fundo
 			if(icon[0]!=0)
-				printf("─ %-2s %s ─", icon, titulo);
+				printf("─ %-2s%s ─", icon, titulo);
 			else
 				printf("─ %s ─", titulo);
 		}
@@ -302,7 +302,7 @@ void TProcura::MostraCaixa(TVector<const char*> textos, int largura, bool aberta
 
 void TProcura::Mensagem(const char* titulo, const char* fmt, ...) {
 	if (titulo == nullptr || titulo[0] == 0)
-		titulo = "⚠️  Aviso";
+		titulo = "⚠️";
 
 	va_list args;
 	va_start(args, fmt);
@@ -451,7 +451,7 @@ void TProcura::EditarParametros() {
 			continue;
 		}
 		// iniciar caixa com nome do parametro
-		snprintf(str, sizeof(str), "%-2s  P%d(%s)", Icon(EIcon::PARAM), opcao, parametro[opcao - 1].nome);
+		snprintf(str, sizeof(str), "%-2s P%d(%s)", Icon(EIcon::PARAM), opcao, parametro[opcao - 1].nome);
 		MostraCaixa(str, ECaixaParte::Topo);
 		// mostrar descrição se existir
 		if (parametro[opcao - 1].descricao != NULL)
@@ -776,14 +776,14 @@ void TProcura::TesteInicio(TVector<int>& instancias, TVector<int>& configAtual) 
 		MostraConjunto(instancias, Icon(EIcon::INST));
 		MostrarConfiguracoes(0);
 	}
-	printf("\n═╤═ %-2s  Início do Teste (%-2s %d) ═══",
+	printf("\n═╤═ %-2s Início do Teste (%-2s%d) ═══",
 		Icon(EIcon::TESTE), Icon(EIcon::PROCESSO), mpiID);
 	fflush(stdout);
 	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
 }
 
 void TProcura::TesteFim() {
-	printf("\n═╧═ %-2s  Fim do Teste (%-2s %d  %-2s  %s) ═══",
+	printf("\n═╧═ %-2s Fim do Teste (%-2s%d  %-2s%s) ═══",
 		Icon(EIcon::FIM), Icon(EIcon::PROCESSO), mpiID, Icon(EIcon::TEMPO),
 		MostraTempo(Cronometro(CONT_TESTE)));
 	fflush(stdout);
@@ -808,7 +808,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
 	if (mpiID == 0)
 		Debug(ATIVIDADE, false,
-			"\n ├─ %-2s Tarefas:%d   %-2s Instâncias: %d   %-2s Configurações: %d   %-2s Processos: %d.",
+			"\n ├─ %-2sTarefas:%d   %-2sInstâncias: %d   %-2sConfigurações: %d   %-2sProcessos: %d.",
 			Icon(EIcon::TAREFA), instancias.Count() * configuracoes.Count(),
 			Icon(EIcon::INST), instancias.Count(),
 			Icon(EIcon::CONF), configuracoes.Count(),
@@ -825,7 +825,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 
 			if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
 				Debug(ATIVIDADE, false,
-					"\n ├─ %-2s %-15s %-2s %-5d %-2s %-5d %-2s %-5d %-2s %-5d",
+					"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d",
 					Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
 					Icon(EIcon::TAREFA), nTarefa,
 					Icon(EIcon::INST), inst,
@@ -857,13 +857,13 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 			JuntarCSV(ficheiro);
 		if (mpiID == 0)
 			Debug(ATIVIDADE, false,
-				"\n ├─ %-2s  Ficheiro %s.csv gravado.\n"
-				" │  %-2s  Tempo real: %s",
+				"\n ├─ %-2s Ficheiro %s.csv gravado.\n"
+				" │  %-2s Tempo real: %s",
 				Icon(EIcon::RESULT), ficheiro,
 				Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE))) &&
-			Debug(ATIVIDADE, false, "\n │  %-2s  CPU total: %s",
+			Debug(ATIVIDADE, false, "\n │  %-2s CPU total: %s",
 				Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE) * mpiCount)) &&
-			Debug(ATIVIDADE, false, "\n │  %-2s  Utilização: %.1f%%",
+			Debug(ATIVIDADE, false, "\n │  %-2s Utilização: %.1f%%",
 				Icon(EIcon::TAXA), 100. * tempoTotal / (tempoMaximo * mpiCount));
 	}
 
@@ -913,7 +913,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 			tarefas += { inst, configuracao };
 
 	int totalTarefas = tarefas.Count();
-	Debug(ATIVIDADE, false, "\n ├─ %-2s Tarefas:%d   %-2s Instâncias: %d   %-2s Configurações: %d   %-2s Processos: %d.",
+	Debug(ATIVIDADE, false, "\n ├─ %-2sTarefas:%d   %-2sInstâncias: %d   %-2sConfigurações: %d   %-2sProcessos: %d.",
 		Icon(EIcon::TAREFA), tarefas.Count(),
 		Icon(EIcon::INST), instancias.Count(),
 		Icon(EIcon::CONF), configuracoes.Count(),
@@ -956,7 +956,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
 			// mostrar uma linha por cada execução
 			Debug(ATIVIDADE, false,
-				"\n ├─ %-2s %-15s %-2s %-5d %-2s %-5d %-2s %-5d %-2s %-5d %-2s  ",
+				"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s ",
 				Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
 				Icon(EIcon::TAREFA), totalTarefas - tarefas.Count(),
 				Icon(EIcon::INST), resultados.Last().instancia,
@@ -997,17 +997,17 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 	mpiCount = 1; // forçar a escrita do ficheiro apenas neste processo
 	RelatorioCSV(resultados, ficheiro) &&
 		Debug(ATIVIDADE, false,
-			"\n ├─ %-2s  Ficheiro %s.csv gravado.\n"
-			" │  %-2s  Tempo real: %s",
+			"\n ├─ %-2s Ficheiro %s.csv gravado.\n"
+			" │  %-2s Tempo real: %s",
 			Icon(EIcon::RESULT), ficheiro,
 			Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE))) &&
-		Debug(ATIVIDADE, false, "\n │  %-2s  CPU total: %s",
+		Debug(ATIVIDADE, false, "\n │  %-2s CPU total: %s",
 			Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE) * (backupCount - 1))) &&
-		Debug(ATIVIDADE, false, "\n │  %-2s  Espera do gestor: %s",
+		Debug(ATIVIDADE, false, "\n │  %-2s Espera do gestor: %s",
 			Icon(EIcon::TEMPO), MostraTempo(esperaGestor)) &&
-		Debug(ATIVIDADE, false, "\n │  %-2s  Espera trabalhadores: %s",
+		Debug(ATIVIDADE, false, "\n │  %-2s Espera trabalhadores: %s",
 			Icon(EIcon::TEMPO), MostraTempo(esperaTrabalhadores)) &&
-		Debug(ATIVIDADE, false, "\n │  %-2s  Utilização:\n │  - Total: %.1f%%\n │  - Gestor: %.1f%%\n │  - Trabalhadores: %.1f%% ",
+		Debug(ATIVIDADE, false, "\n │  %-2s Utilização:\n │  - Total: %.1f%%\n │  - Gestor: %.1f%%\n │  - Trabalhadores: %.1f%% ",
 			Icon(EIcon::TAXA), taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
 	mpiCount = backupCount;
 
@@ -1077,22 +1077,22 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	InserirRegisto(resultados, instancia.valor, conf);
 
 	if (resultado >= 0) {
-		mpiID == 0 && Debug(COMPLETO, false, "%-2s %-5d", Icon(EIcon::SUCESSO), resultado);
+		mpiID == 0 && Debug(COMPLETO, false, "%-2s%-5d", Icon(EIcon::SUCESSO), resultado);
 	}
 	else {
 		if (Parar())
-			mpiID == 0 && Debug(COMPLETO, false, "%-2s ", Icon(EIcon::INSUC));
+			mpiID == 0 && Debug(COMPLETO, false, "%-2s", Icon(EIcon::INSUC));
 		if (TempoExcedido())
-			mpiID == 0 && Debug(COMPLETO, false, "%-2s ", Icon(EIcon::TEMPO));
+			mpiID == 0 && Debug(COMPLETO, false, "%-2s", Icon(EIcon::TEMPO));
 		if (memoriaEsgotada)
-			mpiID == 0 && Debug(COMPLETO, false, "%-2s ", Icon(EIcon::MEMORIA));
+			mpiID == 0 && Debug(COMPLETO, false, "%-2s", Icon(EIcon::MEMORIA));
 		if (resultado < 0 && !Parar()) //Instância Impossível! (se algoritmo completo) ");
-			mpiID == 0 && Debug(COMPLETO, false, "%-2s %-2s  ", Icon(EIcon::SUCESSO), Icon(EIcon::IMP));
+			mpiID == 0 && Debug(COMPLETO, false, "%-2s%-2s", Icon(EIcon::SUCESSO), Icon(EIcon::IMP));
 		else // não resolvido, cancelar resultados 
 			resultados.Last().valor.First() = -2;
 	}
 	if (mpiID == 0 && Parametro(NIVEL_DEBUG) >= COMPLETO) {
-		printf("%-2s  ", Icon(EIcon::IND));
+		printf("%-2s ", Icon(EIcon::IND));
 		for (auto ind : resultados.Last().valor)
 			printf("%" PRId64 " ", ind);
 	}
@@ -1320,7 +1320,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 	for (int i = 0; i < total.Count(); i++) {
 		char str[256];
 		int col = 2;
-		snprintf(str, sizeof(str), "%-2s  Total %-2s %d",
+		snprintf(str, sizeof(str), "%-2s Total %-2s%d",
 			Icon(EIcon::TAXA), Icon(EIcon::CONF), i + 1);
 		MostraCaixa(str, ECaixaParte::Topo);
 		MostraCaixa("", ECaixaParte::Meio, 1);
@@ -1370,9 +1370,9 @@ void TProcura::MostraIndicadores()
 		MostraCaixa("", ECaixaParte::Meio, 1);
 		printf(CINZ "I%d(%s):" NCINZ " ", i + 1, indicador[i].nome);
 		if (indicador[i].indice < 0)
-			printf("%-2s  inativo ", Icon(EIcon::NSEL));
+			printf("%-2sinativo ", Icon(EIcon::NSEL));
 		else
-			printf("%-2s  %dº lugar ", Icon(EIcon::SEL), indicador[i].indice + 1);
+			printf("%-2s%dº lugar ", Icon(EIcon::SEL), indicador[i].indice + 1);
 		MostraCaixa("", ECaixaParte::Meio, 1);
 		printf(CINZ "%s" NCINZ, indicador[i].descricao);
 	}
@@ -1395,7 +1395,7 @@ void TProcura::MostrarTorneio(TVector<TVector<int>>& torneio, bool jogo)
 			}
 
 	// mostrar tabela do torneio
-	printf("\n%-2s  Torneio (#instâncias melhores):", Icon(EIcon::TORNEIO));
+	printf("\n%-2s Torneio (#instâncias melhores):", Icon(EIcon::TORNEIO));
 	BarraTorneio(true);
 	for (int i = 0; i < pontos.Count(); i++) {
 		printf("\n%2d", i + 1);
@@ -1456,9 +1456,9 @@ int TProcura::MelhorResultado(TResultado base, TResultado alternativa) {
 void TProcura::ExecucaoTerminada()
 {
 	if (TempoExcedido())
-		Mensagem("", " Tempo excedido");
+		Mensagem(Icon(EIcon::INSUC), " Tempo excedido");
 	else if (memoriaEsgotada)
-		Mensagem("", " Memória esgotada");
+		Mensagem(Icon(EIcon::INSUC), " Memória esgotada");
 }
 
 // MostrarSolucao: definir para visualizar a solução
