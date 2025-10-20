@@ -1204,7 +1204,9 @@ A forma como temos o programa, requer interação do utilizador, pelo que tivemo
 ### Teste: puzzle8_1
 
 Pretendemos comparar os algoritmos construtivos para este problema, P1=1,3:7.
-Retiramos o custo uniforme atendendo a que é igual à procura em largura se as ações tiverem todas custo 1.
+Retiramos o custo uniforme atendendo a que é igual à procura em largura se as ações tiverem todas custo 1,
+e utilizamos o valor de omissão da procura em profundidade, P7=0, para obter a profundidade iterativa.
+
 Precisamos de selecionar instâncias, de simples a complexas.
 Como tempos bastantes instâncias, vamos fixar a semente com 4 valores,
 e alteramos o esforço do teste com o número de instâncias.
@@ -1299,6 +1301,42 @@ Interessante também o valor do maior custo, ou seja, da instância mais complex
 O Melhor Primeiro chegou a dar soluções de 815 movimentos, o que em termos de qualidade da solução será certamente baixo,
 atendendo a que a instância mais complexa tem apenas 29 movimentos.
 
+Ficamos com a comparação dos algoritmos, e com a performance global.
+Não temos um teste de performance, em que se cruza o tempo com a dificuldade da instância.
+Neste caso o tamanho da instância é sempre o mesmo, mas as instâncias não são todas da mesma complexidade.
+As que têm a solução ótima mais longa, podem ser consideradas mais complexas.
+
+- **Tipo de Teste / Objetivo**: Performance (I2 (tempo) vs I1 (ótimo))
+
+Como temos as soluções óptimas utilizando por exemplo o Astar, podemos extrair o I1 ótimo e fazer os gráficos com os resultados do teste puzzle8_1.
+
+| Rótulos de Linha | 1:Largura Primeiro | 3:Profundidade Primeiro | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 1 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 13 | 2 | 6 | 0 | 0 | 0 | 21 |
+| 15 | 8 | 12 | 0 | 0 | 0 | 35 |
+| 17 | 34 | 31 | 1 | 0 | 0 | 118 |
+| 19 | 42 | 77 | 0 | 0 | 0 | 28 |
+| 21 | 139 | 252 | 1 | 1 | 1 | 242 |
+| 23 | 429 | 763 | 1 | 1 | 1 | 289 |
+| 25 | 1430 | 2242 | 0 | 1 | 2 | 97 |
+| 27 | 4659 | 8014 | 0 | 5 | 11 | 63 |
+| 29 | 9389 | 10000 | 1 | 9 | 8 | 119 |
+
+Com o esforço atual, existem apenas 40 instâncias. Não temos assim uma amostra de instâncias linear na dificuldade.
+Para melhorar estes resultados é preciso mais instâncias, utilizando este mesmo teste mas com maior esforço.
+
+Podemos no entanto observar o auemnto gradual do tempo nos algoritmos cegos.
+Pelo contrário, os algoritmos informados têm um tempo muito reduzido, na ordem dos milisegundos.
+Apenas o BnB tem algum tempo superior, mas que aparenta não ser dependnete da dificuldade da instância,
+será mais relacionado com a sorte ou azar da primeira solução encontrada estar perto ou longe do ótimo.
+
+Um maior volume de testes permitirá aferir que provavelmente o Melhor Primeiro é mais rápido principalmente em instâncias complicadas.
+
+Como o Melhor Primeiro não obtém todas as soluções óptimas, poderiamos calcular a percentagem de desvio da
+qualidade da solução até ao valor óptimo: %desvio = (ValorObtido - óptimo)/óptimo.
+Este indicador seria útil para comparar dos algoritmos não exatos, de modo a aferir a qualidade das suas soluções.
+Temos neste caso um só algoritmo, com soluções de muito má qualidade, pelo que não utilizaremos para já este indicador.
 
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |
