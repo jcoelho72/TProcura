@@ -128,16 +128,16 @@ Aspirador - espaço de estados para 2 salas</div></div>
     <p>Selecione o problema do Aspirador: <b>1.</b></p>
 <p>A versão deste problema foi generalizada no código para poderem existir N salas, uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.</p>
 <div class="fragment"><div class="line">Aspirador</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
 <div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
 <div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">[*] *  .  *</div>
-<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
-<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
-<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line"> │ [*] *  .  *</div>
+<div class="line">┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└───────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>Esta é a informação apresentada no teste manual. Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais. Podemos ver que o primeiro parametro é o ALGORITMO, e está selecionado de omissão a Largura Primeiro. Em termos de NIVEL_DEBUG está selecionado o valor NADA, ou seja, não é mostrada informação de debug. Seguem-se outros parametros, os quais alguns serão apresentados ao longo desta execução. Os nomes dos parametros e valores, são os mesmos utilizados no código, e por esse motivo não é utilizada acentuação.</p>
 <p>Temos o estado atual após a caixa dos parametros, que tem uma visualização dependente do problema.</p>
@@ -151,23 +151,24 @@ Ação 1 - Trocar de instância</h2>
 <p>Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na terceira sala, estando as duas primeiras sujas:</p>
 <div class="fragment"><div class="line">Opção: 1</div>
 <div class="line"> </div>
-<div class="line">┌─ ↻  Inicializar ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ 📄 Instância ───────────────────────────────────────────────────────</div>
 <div class="line">│ ID atual: 4  Intervalo: [2–50]</div>
 <div class="line">│ Prefixo atual: &#39;instancia_&#39;</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 2</div>
 <div class="line"> </div>
 <div class="line">Aspirador</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
 <div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
 <div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> * [*]</div>
-<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
-<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
-<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└───────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">Opção:</div>
 </div><!-- fragment --><p>Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda: A representação do estado é algo que é implementado na sub-classe (neste caso em <a class="el" href="classCAspirador.html#ab95fe625712f157e5836de7364a53cee" title="Mostra o estado no ecrã, para debug.">CAspirador::Debug()</a>), de modo a se poder visualizar o estado em que estamos. Ao chamar Inicializar() podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro (P3(SEMENTE): 1), sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.</p>
 <p><a class="anchor" id="aspirador-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md38"></a>
@@ -175,45 +176,45 @@ Ação 2 - Explorar os sucessores</h2>
 <p>A partir do estado atual, introduza: <b>2; 1; 2.</b></p>
 <div class="fragment"><div class="line">Opção: 2</div>
 <div class="line"> </div>
-<div class="line">═╤═ 💰 g:0 🎯 h:3 🔢 1|2 ═══</div>
+<div class="line">═╤═ 💰 g:0 🎯 h:3 ⚖  1|2 ═══</div>
 <div class="line"> │  * [*]</div>
-<div class="line"> │ └─ ⚡ ───── esq asp</div>
-<div class="line">🔍  Sucessor [1-2, ação(ões), exe]: 1</div>
+<div class="line"> │ └─ ⚡  ──── esq asp</div>
+<div class="line">🔍 Sucessor [1-2, ação(ões), exe]: 1</div>
 <div class="line"> </div>
-<div class="line">┌─ ✅  Sucesso ───────</div>
+<div class="line">┌─ ✔  ───────────────</div>
 <div class="line">│ Ação executada.</div>
 <div class="line">└────────────────────</div>
-<div class="line">═╤═ 💰 g:0 🎯 h:3 🔢 2|4 ═══</div>
+<div class="line">═╤═ 💰 g:0 🎯 h:3 ⚖  2|4 ═══</div>
 <div class="line"> │ [*] *</div>
-<div class="line"> │ └─ ⚡ ───── dir asp</div>
-<div class="line">🔍  Sucessor [1-2, ação(ões), exe]: 2</div>
+<div class="line"> │ └─ ⚡  ──── dir asp</div>
+<div class="line">🔍 Sucessor [1-2, ação(ões), exe]: 2</div>
 <div class="line"> </div>
-<div class="line">┌─ ✅  Sucesso ───────</div>
+<div class="line">┌─ ✔  ───────────────</div>
 <div class="line">│ Ação executada.</div>
 <div class="line">└────────────────────</div>
-<div class="line">═╤═ 💰 g:0 🎯 h:2 🔢 3|6 ═══</div>
+<div class="line">═╤═ 💰 g:0 🎯 h:2 ⚖  3|6 ═══</div>
 <div class="line"> │ [.] *</div>
-<div class="line"> │ └─ ⚡ ───── dir asp</div>
-<div class="line">🔍  Sucessor [1-2, ação(ões), exe]:</div>
+<div class="line"> │ └─ ⚡  ──── dir asp</div>
+<div class="line">🔍 Sucessor [1-2, ação(ões), exe]:</div>
 </div><!-- fragment --><p>Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações: esq, dir, asp. Para indicar o número do sucessor, é preciso ver, já que o número 1 é para a primeira ação válida, na lista de sucessores. No entanto, as ações são unívocas. Podemos indicar várias ações de uma só vez.</p>
 <p>Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número, introduzido duas ações de uma vez. Introduza: <b>dir asp; <em>ENTER</em>.</b> Note que "dir asp" podem ser introduzidas de uma vez.</p>
-<div class="fragment"><div class="line">🔍  Sucessor [1-2, ação(ões), exe]: dir asp</div>
+<div class="fragment"><div class="line">🔍 Sucessor [1-2, ação(ões), exe]: dir asp</div>
 <div class="line"> </div>
-<div class="line">┌─ ✅  Sucesso ────────</div>
+<div class="line">┌─ ✔  ────────────────</div>
 <div class="line">│ Executadas 2 ações.</div>
 <div class="line">└─────────────────────</div>
-<div class="line">═╤═ 💰 g:0 🔢 6|12 ═══</div>
+<div class="line">═╤═ 💰 g:0 ⚖  6|12 ═══</div>
 <div class="line"> │  . [.]</div>
-<div class="line"> │ └─ ⚡ ───── esq asp</div>
-<div class="line">🔍  Sucessor [1-2, ação(ões), exe]:</div>
+<div class="line"> │ └─ ⚡  ──── esq asp</div>
+<div class="line">🔍 Sucessor [1-2, ação(ões), exe]:</div>
 <div class="line"> </div>
 <div class="line">Aspirador</div>
 <div class="line">...</div>
 <div class="line"> │  . [.]</div>
-<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
-<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
-<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└───────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>Ao receber as duas ações, estas foram executadas e indicado o número de ações executados com sucesso. Se fosse uma solução completa, todas as ações até ao estado final, esta operação seria uma verificação da solução. Caso exista alguma ação inválida, a ação é rejeitada e o estado atual fica na primeira ação inválida. Assim, é possível verificar ou identificar erros em soluções obtidas por métodos externos, sendo apresentada a evidência de falha.</p>
 <p>Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas no modo manual. Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra forma lhe passariam desapercebidas.</p>
@@ -223,16 +224,17 @@ Ação 3 - Ver a solução realizada manualmente</h2>
 <p>O resultado da resolução manual da ação anterior, é visualizar apenas o último estado. No entanto houve um caminho, que ficou guardado. Introduza: <b>4.</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
 <div class="line"> </div>
-<div class="line">══ ✔  Solução ══</div>
+<div class="line">══ ✔   Solução ══</div>
 <div class="line"> │  * [*] (💰 g:0) ⚡  → esq → asp → dir → asp</div>
 <div class="line"> │  . [.] (💰 g:4) 🎯</div>
 <div class="line">Aspirador</div>
-<div class="line">...</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line"> │  . [.]</div>
-<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
-<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
-<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">...</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>Neste problema uma solução é um conjunto de ações, o caminho desde o estado inicial até ao estado final. É mostrado esse caminho visualizando as ações a partir do estado inicial. Foram 4 movimentos, mas houve um desperdício. No primeiro movimento, poderíamos ter logo aspirado. Em outros problemas, a solução pode ser apenas o estado final. Notar ainda na letra g, seguida de um número. Esta letra representa o custo g(n) no manual, e sempre que ocorra significa o custo desde o estado inicial até esse estado. Neste problema o custo não foi definido, pelo que é adoptado o valor de 1 unidade por cada movimento.</p>
 <p>A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os estados também. Para isso é preciso alterar o parâmetro P6(VER_ACOES).</p>
@@ -242,7 +244,7 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <p>Vamos editar o parâmetro P6(VER_ACOES). Introduza: <b>3</b></p>
 <div class="fragment"><div class="line">Opção: 3</div>
 <div class="line"> </div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO):             Largura Primeiro (1 a 7)</div>
 <div class="line">│ P2(NIVEL_DEBUG):           NADA       (0 a 4)</div>
 <div class="line">│ P3(SEMENTE):               1          (1 a 1000000)</div>
@@ -267,13 +269,14 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <div class="line">Opção: 4</div>
 <div class="line"> </div>
 <div class="line">══ ✔  Solução ══</div>
-<div class="line"> * [*] (💰 g:0) ⚡</div>
-<div class="line">[*] *  (💰 g:1) ⚡</div>
-<div class="line">[.] *  (💰 g:2) ⚡</div>
-<div class="line"> . [*] (💰 g:3) ⚡</div>
-<div class="line"> . [.] (💰 g:4) 🎯</div>
+<div class="line"> │  * [*] (💰 g:0) ⚡</div>
+<div class="line"> │ [*] *  (💰 g:1) ⚡</div>
+<div class="line"> │ [.] *  (💰 g:2) ⚡</div>
+<div class="line"> │  . [*] (💰 g:3) ⚡</div>
+<div class="line"> │  . [.] (💰 g:4) 🎯</div>
+<div class="line">Aspirador</div>
 <div class="line">...</div>
-<div class="line"> . [.]</div>
+<div class="line"> │  . [.]</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.</p>
@@ -289,7 +292,7 @@ Procura em Largura - expande primeiro os estados menos profundos</div></div>
 <div class="fragment"><div class="line">...</div>
 <div class="line">Parametro:2</div>
 <div class="line"> </div>
-<div class="line">┌─ ⚙️  P2(NIVEL_DEBUG) ────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙️ P2(NIVEL_DEBUG) ────────────────────────────────────────────────</div>
 <div class="line">│ Nível de debug, de reduzido a completo.</div>
 <div class="line">│ 0: NADA</div>
 <div class="line">│ 1: ATIVIDADE</div>
@@ -307,59 +310,59 @@ Procura em Largura - expande primeiro os estados menos profundos</div></div>
 <div class="line">═╤═ ►  Execução iniciada ═══</div>
 <div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
 <div class="line"> │  * [*]</div>
-<div class="line"> │  ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ esq</div>
+<div class="line"> │  ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ esq</div>
 <div class="line"> │  │ [*] *</div>
-<div class="line"> │  └■═╤═ 🔖2 💰 g:1 🔢 1|2 ═══ asp</div>
+<div class="line"> │  └■═╤═ 🔖 2 💰 g:1 ⚖  1|2 ═══ asp</div>
 <div class="line"> │     * [.]</div>
-<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }</div>
+<div class="line"> ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 }</div>
 <div class="line"> │ [*] *</div>
-<div class="line"> │  ├■═╤═ 🔖3 💰 g:2 🔢 2|4 ═══ dir</div>
+<div class="line"> │  ├■═╤═ 🔖 3 💰 g:2 ⚖  2|4 ═══ dir</div>
 <div class="line"> │  │  * [*]</div>
-<div class="line"> │  └■═╤═ 🔖4 💰 g:2 🔢 2|4 ═══ asp</div>
+<div class="line"> │  └■═╤═ 🔖 4 💰 g:2 ⚖  2|4 ═══ asp</div>
 <div class="line"> │    [.] *</div>
-<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|4 ═══ { 🔖3 🔖4 }</div>
+<div class="line"> ├■═╤═ 🔖 2 💰 g:1 ⚖  2|4 ═══ { 🔖 3 🔖 4 }</div>
 <div class="line"> │  * [.]</div>
-<div class="line"> │  ├■═╤═ 🔖5 💰 g:2 🔢 3|6 ═══ esq</div>
+<div class="line"> │  ├■═╤═ 🔖 5 💰 g:2 ⚖  3|6 ═══ esq</div>
 <div class="line"> │  │ [*] .</div>
-<div class="line"> │  └■═╤═ 🔖6 💰 g:2 🔢 3|6 ═══ asp</div>
+<div class="line"> │  └■═╤═ 🔖 6 💰 g:2 ⚖  3|6 ═══ asp</div>
 <div class="line"> │     * [.]</div>
-<div class="line"> ├■═╤═ 🔖3 💰 g:2 🔢 3|6 ═══ { 🔖4 🔖5 🔖6 }</div>
+<div class="line"> ├■═╤═ 🔖 3 💰 g:2 ⚖  3|6 ═══ { 🔖 4 🔖 5 🔖 6 }</div>
 <div class="line"> │  * [*]</div>
-<div class="line"> │  ├■═╤═ 🔖7 💰 g:3 🔢 4|8 ═══ esq</div>
+<div class="line"> │  ├■═╤═ 🔖 7 💰 g:3 ⚖  4|8 ═══ esq</div>
 <div class="line"> │  │ [*] *</div>
-<div class="line"> │  └■═╤═ 🔖8 💰 g:3 🔢 4|8 ═══ asp</div>
+<div class="line"> │  └■═╤═ 🔖 8 💰 g:3 ⚖  4|8 ═══ asp</div>
 <div class="line"> │     * [.]</div>
-<div class="line"> ├■═╤═ 🔖4 💰 g:2 🔢 4|8 ═══ { 🔖5 🔖6 🔖7 🔖8 }</div>
+<div class="line"> ├■═╤═ 🔖 4 💰 g:2 ⚖  4|8 ═══ { 🔖 5 🔖 6 🔖 7 🔖 8 }</div>
 <div class="line"> │ [.] *</div>
-<div class="line"> │  ├■═╤═ 🔖9 💰 g:3 🔢 5|10 ═══ dir</div>
+<div class="line"> │  ├■═╤═ 🔖 9 💰 g:3 ⚖  5|10 ═══ dir</div>
 <div class="line"> │  │  . [*]</div>
-<div class="line"> │  └■═╤═ 🔖10 💰 g:3 🔢 5|10 ═══ asp</div>
+<div class="line"> │  └■═╤═ 🔖 10 💰 g:3 ⚖  5|10 ═══ asp</div>
 <div class="line"> │    [.] *</div>
-<div class="line"> ├■═╤═ 🔖5 💰 g:2 🔢 5|10 ═══ { 🔖6 🔖7 🔖8 🔖9 🔖10 }</div>
+<div class="line"> ├■═╤═ 🔖 5 💰 g:2 ⚖  5|10 ═══ { 🔖 6 🔖 7 🔖 8 🔖 9 🔖 10 }</div>
 <div class="line"> │ [*] .</div>
-<div class="line"> │  ├■═╤═ 🔖11 💰 g:3 🔢 6|12 ═══ dir</div>
+<div class="line"> │  ├■═╤═ 🔖 11 💰 g:3 ⚖  6|12 ═══ dir</div>
 <div class="line"> │  │  * [.]</div>
-<div class="line"> │  └■═╤═ 🔖12 💰 g:3 🔢 6|12 ═══ asp</div>
+<div class="line"> │  └■═╤═ 🔖 12 💰 g:3 ⚖  6|12 ═══ asp</div>
 <div class="line"> │    [.] .</div>
-<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │  🎯  Solução encontrada! 💰 g:3</div>
 <div class="line"> │ [.] .</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱   ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱    ═══</div>
 <div class="line">Aspirador</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
 <div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0</div>
 <div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">[.] .</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
 <div class="line">│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 6 |</div>
 <div class="line">│ I5(IND_GERACOES): 12 | I6(IND_LOWER_BOUND): 0</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
-<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
-<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└───────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, sendo recolhido pelo I1(IND_CUSTO). Significa que a procura encontrou uma solução de comprimento 3. Notar que o I3(Iterações) e I6(IND_LOWER_BOUND) ficaram a 0, já que não são atualizados neste algoritmo.</p>
 <p>No caso de não ter os resultados iguais, confirme se todos os parâmetros estão iguais.</p>
@@ -398,22 +401,26 @@ Ação 6 - Editar opções A</h2>
 <div class="line">═╤═ ►  Execução iniciada ═══</div>
 <div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
 <div class="line"> │  * [*]</div>
-<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }</div>
+<div class="line"> ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 }</div>
 <div class="line"> │ [*] *</div>
-<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|3 ═══ { 🔖3 }</div>
+<div class="line"> ├■═╤═ 🔖 2 💰 g:1 ⚖  2|3 ═══ { 🔖 3 }</div>
 <div class="line"> │  * [.]</div>
-<div class="line"> ├■═╤═ 🔖3 💰 g:2 🔢 3|4 ═══ { 🔖4 }</div>
+<div class="line"> ├■═╤═ 🔖 3 💰 g:2 ⚖  3|4 ═══ { 🔖 4 }</div>
 <div class="line"> │ [.] *</div>
-<div class="line"> ├■═╤═ 🔖4 💰 g:2 🔢 4|5 ═══ { 🔖5 }</div>
+<div class="line"> ├■═╤═ 🔖 4 💰 g:2 ⚖  4|5 ═══ { 🔖 5 }</div>
 <div class="line"> │ [*] .</div>
-<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> │  🎯  Solução encontrada! 💰 g:3</div>
 <div class="line"> │ [.] .</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=3 P3=1 P4=10 P5=0 P6=1 P7=0 P8=2 P11=0</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱   ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=3 P3=1 P4=10 P5=0 P6=1 P7=0 P8=2 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱    ═══</div>
 <div class="line">Aspirador</div>
-<div class="line">...</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ascendentes | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">[.] .</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
 <div class="line">│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |</div>
 <div class="line">│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
@@ -429,19 +436,23 @@ Ação 7 - Editar opções B</h2>
 <div class="line"> </div>
 <div class="line">═╤═ ►  Execução iniciada ═══</div>
 <div class="line"> ├■═╤═ 💰 g:0  ═══ { }</div>
-<div class="line"> ├■═╤═ 🔖1 💰 g:1 🔢 1|2 ═══ { 🔖2 }</div>
-<div class="line"> ├■═╤═ 🔖2 💰 g:1 🔢 2|3 ═══ { 🔖3 }</div>
-<div class="line"> ├■═╤═ 🔖3 💰 g:2 🔢 3|4 ═══ { 🔖4 }</div>
-<div class="line"> ├■═╤═ 🔖4 💰 g:2 🔢 4|5 ═══ { 🔖5 }</div>
-<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line"> ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 }</div>
+<div class="line"> ├■═╤═ 🔖 2 💰 g:1 ⚖  2|3 ═══ { 🔖 3 }</div>
+<div class="line"> ├■═╤═ 🔖 3 💰 g:2 ⚖  3|4 ═══ { 🔖 4 }</div>
+<div class="line"> ├■═╤═ 🔖 4 💰 g:2 ⚖  4|5 ═══ { 🔖 5 }</div>
+<div class="line"> │  🎯  Solução encontrada! 💰 g:3</div>
 <div class="line"> │ [.] .</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=2 P3=1 P4=10 P5=0 P6=1 P7=0 P8=3 P11=0</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱  7ms  ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=2 P3=1 P4=10 P5=0 P6=1 P7=0 P8=3 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱   8ms  ═══</div>
 <div class="line">Aspirador</div>
-<div class="line">...</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): gerados | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">[.] .</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 7 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 8 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |</div>
 <div class="line">│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">...</div>
@@ -455,22 +466,25 @@ Ação 8 - Resolver outra instância</h2>
 <p>Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior: <b>1; 10; 3; 8; 1; 2; 1; <em>ENTER</em>; 6.</b></p>
 <p>Pode haver um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados: <br  />
 </p>
-<div class="fragment"><div class="line">Aspirador</div>
-<div class="line">...</div>
+<div class="fragment"><div class="line">...</div>
 <div class="line"> *  *  .  *  * [*] *  .  .  .</div>
 <div class="line">...</div>
 <div class="line">Opção: 6</div>
 <div class="line"> </div>
-<div class="line">═╤═ ►  Execução iniciada ═══##################....################</div>
-<div class="line"> │  🎯 Solução encontrada!</div>
+<div class="line">═╤═ ►  Execução iniciada ═══########...###############</div>
+<div class="line"> │  🎯  Solução encontrada! 💰 g:13</div>
 <div class="line"> │ [.] .  .  .  .  .  .  .  .  .</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=1 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱  367ms  ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=1 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱   376ms  ═══</div>
 <div class="line">Aspirador</div>
-<div class="line">...</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0</div>
+<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">[.] .  .  .  .  .  .  .  .  .</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I1(IND_CUSTO): 13 | I2(Tempo(ms)): 367 | I3(Iterações): 0 | I4(IND_EXPANSOES): 516031 |</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(IND_CUSTO): 13 | I2(Tempo(ms)): 376 | I3(Iterações): 0 | I4(IND_EXPANSOES): 516031 |</div>
 <div class="line">│ I5(IND_GERACOES): 1513017 | I6(IND_LOWER_BOUND): 0</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">...</div>

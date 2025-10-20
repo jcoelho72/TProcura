@@ -23,7 +23,7 @@ var searchData=
   ['relatoriocsv_20',['relatoriocsv',['../classTProcuraAdversa.html#a4f84c15e5b70fcbb66d55f1bca1ee023',1,'TProcuraAdversa::RelatorioCSV()'],['../classTProcura.html#ab29731e4c9c1d57ccf72740d7d96ec32',1,'TProcura::RelatorioCSV()']]],
   ['remove_21',['Remove',['../classTVector.html#a85673895d405c09b5b9155f78b67d71b',1,'TVector']]],
   ['replace_22',['Replace',['../classTVector.html#a35217d9779ea1c7608dac2ffd677c30b',1,'TVector']]],
-  ['repositório_23',['repositório',['../index.html#autotoc_md112',1,'📦 Estrutura do Repositório'],['../index.html#autotoc_md116',1,'Opção 1 - Clonar o Repositório']]],
+  ['repositório_23',['repositório',['../index.html#autotoc_md113',1,'📦 Estrutura do Repositório'],['../index.html#autotoc_md117',1,'Opção 1 - Clonar o Repositório']]],
   ['reprodução_20de_20execuções_24',['Ação 1: Reprodução de Execuções',['../deucalion.html#autotoc_md5',1,'']]],
   ['reproduzirae_25',['ReproduzirAE',['../classTProcuraMelhorativa.html#a63e8ac07e1d712645b9038cd72aa133b',1,'TProcuraMelhorativa']]],
   ['reset_26',['Reset',['../classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd',1,'TVector']]],
