@@ -37,25 +37,24 @@ Opção: 3
 Vamos entrar no problema das 8 damas. Introduza: **3.**
 
 ```entrada
-8 Damas
-8 Damas
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+ Damas
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
 │ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
 └──────────────────────────────────────────────────────────────────────
-::  ::  ::  ::
-  ::  ::  ::  ::
-::  ::  ::  ::
-  ::  ::  ::  ::
-::  ::  ::  ::
-  ::  ::  ::  ::
-::  ::  ::  ::
-  ::  ::  ::  ::
-┌─ ☰  Menu ────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└──────────────────┴────────────────┴─────────────────────┴──────────────┘
+ │ ::  ::  ::  ::
+ │   ::  ::  ::  ::
+ │ ::  ::  ::  ::
+ │   ::  ::  ::  ::
+ │ ::  ::  ::  ::
+ │   ::  ::  ::  ::
+ │ ::  ::  ::  ::
+ │   ::  ::  ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção:
 ```
 Este estado vazio é um tabuleiro de 8x8. 
@@ -70,7 +69,7 @@ Vamos ver que instâncias temos. Introduza: **1; 4.**
 ```entrada
 Opção: 1
 
-┌─ ↻  Inicializar ─────────────────────────────────────────────────────
+┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ ID atual: 8  Intervalo: [4–40]
 │ Prefixo atual: 'instancia_'
 └──────────────────────────────────────────────────────────────────────
@@ -108,58 +107,54 @@ Introduza: **2; d1; d4; d2.**
 ```entrada
 Opção: 2
 
-═╤═ 💰 g:0 🔢 1|4|5 ═══
-::  ::
-  ::  ::
-::  ::
-  ::  ::
- │ └─ ⚡ ───── d1 d2 d3 d4
-🔍  Sucessor [1-4, ação(ões), exe]: d1
+═╤═ 💰 g:0 ⚖  1|4|5 ═══
+ │ ::  ::
+ │   ::  ::
+ │ ::  ::
+ │   ::  ::
+ │ └─ ⚡  ──── d1 d2 d3 d4
+🔍 Sucessor [1-4, ação(ões), exe]: d1
 
-┌─ ✅  Sucesso ────────
+┌─ ✔  ────────────────
 │ Executadas 1 ações.
 └─────────────────────
-═╤═ 💰 g:0 🔢 3|10|8 ═══
-♛   ::
-  ::  ::
-::  ::
-  ::  ::
- │ └─ ⚡ ───── d3 d4
-🔍  Sucessor [1-2, ação(ões), exe]: d4
+═╤═ 💰 g:0 ⚖  3|10|8 ═══
+ │ ♛   ::
+ │   ::  ::
+ │ ::  ::
+ │   ::  ::
+ │ └─ ⚡  ──── d3 d4
+🔍 Sucessor [1-2, ação(ões), exe]: d4
 
-┌─ ✅  Sucesso ────────
+┌─ ✔  ────────────────
 │ Executadas 1 ações.
 └─────────────────────
-═╤═ 💰 g:0 🔢 5|13|10 ═══
-♛   ::
-  ::  ♛
-::  ::
-  ::  ::
- │ └─ ⚡ ───── d2
-🔍  Sucessor [1-1, ação(ões), exe]: d2
+═╤═ 💰 g:0 ⚖  5|13|10 ═══
+ │ ♛   ::
+ │   ::  ♛
+ │ ::  ::
+ │   ::  ::
+ │ └─ ⚡  ──── d2
+🔍 Sucessor [1-1, ação(ões), exe]: d2
 
-┌─ ✅  Sucesso ────────
+┌─ ✔  ────────────────
 │ Executadas 1 ações.
 └─────────────────────
-═╤═ 💰 g:0 🔢 7|14|11 ═══
-♛   ::
-  ::  ♛
-::♛ ::
-  ::  ::
- │ └─ ⚡ ─────
-┌─ ℹ️  Informação ───
+═╤═ 💰 g:0 ⚖  7|14|11 ═══
+ │ ♛   ::
+ │   ::  ♛
+ │ ::♛ ::
+ │   ::  ::
+ │ └─ ⚡  ────
+┌─ ⛔  ───────────────
 │ Sem sucessores.
 └────────────────────
 8 Damas
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
-└──────────────────────────────────────────────────────────────────────
-♛   ::
-  ::  ♛
-::♛ ::
-  ::  ::
+...
+ │ ♛   ::
+ │   ::  ♛
+ │ ::♛ ::
+ │   ::  ::
 ...
 Opção:
 ```
@@ -187,88 +182,88 @@ Opção: 6
  │   ::  ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d1 d2 d3 d4 { 🔖1 🔖2 🔖3 🔖4 }
- ├■═╤═ 🔖1 💰 g:1 🔢 1|4 ═══ { 🔖2 🔖3 🔖4 }
+ │ └─ ⚡  ──── d1 d2 d3 d4 { 🔖 1 🔖 2 🔖 3 🔖 4 }
+ ├■═╤═ 🔖 1 💰 g:1 ⚖  1|4 ═══ { 🔖 2 🔖 3 🔖 4 }
  │ ♛   ::
  │   ::  ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d3 d4 { 🔖5 🔖6 }
- ├■═╤═ 🔖2 💰 g:1 🔢 2|6 ═══ { 🔖3 🔖4 🔖5 🔖6 }
+ │ └─ ⚡  ──── d3 d4 { 🔖 5 🔖 6 }
+ ├■═╤═ 🔖 2 💰 g:1 ⚖  2|6 ═══ { 🔖 3 🔖 4 🔖 5 🔖 6 }
  │ ::♛ ::
  │   ::  ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d4 { 🔖7 }
- ├■═╤═ 🔖3 💰 g:1 🔢 3|7 ═══ { 🔖4 🔖5 🔖6 🔖7 }
+ │ └─ ⚡  ──── d4 { 🔖 7 }
+ ├■═╤═ 🔖 3 💰 g:1 ⚖  3|7 ═══ { 🔖 4 🔖 5 🔖 6 🔖 7 }
  │ ::  ♛
  │   ::  ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d1 { 🔖8 }
- ├■═╤═ 🔖4 💰 g:1 🔢 4|8 ═══ { 🔖5 🔖6 🔖7 🔖8 }
+ │ └─ ⚡  ──── d1 { 🔖 8 }
+ ├■═╤═ 🔖 4 💰 g:1 ⚖  4|8 ═══ { 🔖 5 🔖 6 🔖 7 🔖 8 }
  │ ::  ::♛
  │   ::  ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d1 d2 { 🔖9 🔖10 }
- ├■═╤═ 🔖5 💰 g:2 🔢 5|10 ═══ { 🔖6 🔖7 🔖8 🔖9 🔖10 }
+ │ └─ ⚡  ──── d1 d2 { 🔖 9 🔖 10 }
+ ├■═╤═ 🔖 5 💰 g:2 ⚖  5|10 ═══ { 🔖 6 🔖 7 🔖 8 🔖 9 🔖 10 }
  │ ♛   ::
  │   ::♛ ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ─────
- ├■═╤═ 🔖6 💰 g:2 🔢 6|10 ═══ { 🔖7 🔖8 🔖9 🔖10 }
+ │ └─ ⚡  ────
+ ├■═╤═ 🔖 6 💰 g:2 ⚖  6|10 ═══ { 🔖 7 🔖 8 🔖 9 🔖 10 }
  │ ♛   ::
  │   ::  ♛
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d2 { 🔖11 }
- ├■═╤═ 🔖7 💰 g:2 🔢 7|11 ═══ { 🔖8 🔖9 🔖10 🔖11 }
+ │ └─ ⚡  ──── d2 { 🔖 11 }
+ ├■═╤═ 🔖 7 💰 g:2 ⚖  7|11 ═══ { 🔖 8 🔖 9 🔖 10 🔖 11 }
  │ ::♛ ::
  │   ::  ♛
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d1 { 🔖12 }
- ├■═╤═ 🔖8 💰 g:2 🔢 8|12 ═══ { 🔖9 🔖10 🔖11 🔖12 }
+ │ └─ ⚡  ──── d1 { 🔖 12 }
+ ├■═╤═ 🔖 8 💰 g:2 ⚖  8|12 ═══ { 🔖 9 🔖 10 🔖 11 🔖 12 }
  │ ::  ♛
  │ ♛ ::  ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d4 { 🔖13 }
- ├■═╤═ 🔖9 💰 g:2 🔢 9|13 ═══ { 🔖10 🔖11 🔖12 🔖13 }
+ │ └─ ⚡  ──── d4 { 🔖 13 }
+ ├■═╤═ 🔖 9 💰 g:2 ⚖  9|13 ═══ { 🔖 10 🔖 11 🔖 12 🔖 13 }
  │ ::  ::♛
  │ ♛ ::  ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ───── d3 { 🔖14 }
- ├■═╤═ 🔖10 💰 g:2 🔢 10|14 ═══ { 🔖11 🔖12 🔖13 🔖14 }
+ │ └─ ⚡  ──── d3 { 🔖 14 }
+ ├■═╤═ 🔖 10 💰 g:2 ⚖  10|14 ═══ { 🔖 11 🔖 12 🔖 13 🔖 14 }
  │ ::  ::♛
  │   ♛   ::
  │ ::  ::
  │   ::  ::
- │ └─ ⚡ ─────
- ├■═╤═ 🔖11 💰 g:3 🔢 11|14 ═══ { 🔖12 🔖13 🔖14 }
+ │ └─ ⚡  ────
+ ├■═╤═ 🔖 11 💰 g:3 ⚖  11|14 ═══ { 🔖 12 🔖 13 🔖 14 }
  │ ♛   ::
  │   ::  ♛
  │ ::♛ ::
  │   ::  ::
- │ └─ ⚡ ─────
- ├■═╤═ 🔖12 💰 g:3 🔢 12|14 ═══ { 🔖13 🔖14 }
+ │ └─ ⚡  ────
+ ├■═╤═ 🔖 12 💰 g:3 ⚖  12|14 ═══ { 🔖 13 🔖 14 }
  │ ::♛ ::
  │   ::  ♛
  │ ♛   ::
  │   ::  ::
- │ └─ ⚡ ───── d3 { 🔖15 }
- │  🎯 Solução encontrada! 💰  g:4
+ │ └─ ⚡  ──── d3 { 🔖 15 }
+ │  🎯  Solução encontrada! 💰 g:4
  │ ::♛ ::
  │   ::  ♛
  │ ♛   ::
  │   ::♛ ::
- ├─ ⚙️  Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=0 P8=1 P11=0
-═╧═ 🏁  Execução terminada ⏱  1ms  ═══
+ ├─ Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=0 P8=1 P11=0
+═╧═ 🏁  Execução terminada ⏱   1ms  ═══
 8 Damas
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4
 │ P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
@@ -277,7 +272,7 @@ Opção: 6
   ::  ♛
 ♛   ::
   ::♛ ::
-┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ I1(IND_CUSTO): 4 | I2(Tempo(ms)): 1 | I3(Iterações): 0 | I4(IND_EXPANSOES): 13 |
 │ I5(IND_GERACOES): 15 | I6(IND_LOWER_BOUND): 0
 └──────────────────────────────────────────────────────────────────────
@@ -308,59 +303,59 @@ Opção: 6
  │   ::  ::
  │ ::  ::
  │   ::  ::
- │  ├■═╤═ 🔖1 💰 g:1 🔢 1|4 ═══ ⚡d1
+ │  ├■═╤═ 🔖 1 💰 g:1 ⚖  1|4 ═══ ⚡ d1
  │  │ ♛   ::
  │  │   ::  ::
  │  │ ::  ::
  │  │   ::  ::
- │  │  ├■═╤═ 🔖5 💰 g:2 🔢 2|6 ═══ ⚡d3
+ │  │  ├■═╤═ 🔖 5 💰 g:2 ⚖  2|6 ═══ ⚡ d3
  │  │  │ ♛   ::
  │  │  │   ::♛ ::
  │  │  │ ::  ::
  │  │  │   ::  ::
  │  │  │ 🍃
- │  │  └■═╤═ 🔖6 💰 g:2 🔢 3|6 ═══ ⚡d4
+ │  │  └■═╤═ 🔖 6 💰 g:2 ⚖  3|6 ═══ ⚡ d4
  │  │    ♛   ::
  │  │      ::  ♛
  │  │    ::  ::
  │  │      ::  ::
- │  │     └■═╤═ 🔖7 💰 g:3 🔢 4|7 ═══ ⚡d2
+ │  │     └■═╤═ 🔖 7 💰 g:3 ⚖  4|7 ═══ ⚡ d2
  │  │       ♛   ::
  │  │         ::  ♛
  │  │       ::♛ ::
  │  │         ::  ::
  │  │       🍃
- │  ├■═╤═ 🔖2 💰 g:1 🔢 5|7 ═══ ⚡d2
+ │  ├■═╤═ 🔖 2 💰 g:1 ⚖  5|7 ═══ ⚡ d2
  │  │ ::♛ ::
  │  │   ::  ::
  │  │ ::  ::
  │  │   ::  ::
- │  │  └■═╤═ 🔖8 💰 g:2 🔢 6|8 ═══ ⚡d4
+ │  │  └■═╤═ 🔖 8 💰 g:2 ⚖  6|8 ═══ ⚡ d4
  │  │    ::♛ ::
  │  │      ::  ♛
  │  │    ::  ::
  │  │      ::  ::
- │  │     └■═╤═ 🔖9 💰 g:3 🔢 7|9 ═══ ⚡d1
+ │  │     └■═╤═ 🔖 9 💰 g:3 ⚖  7|9 ═══ ⚡ d1
  │  │       ::♛ ::
  │  │         ::  ♛
  │  │       ♛   ::
  │  │         ::  ::
- │  │        └■═╤═ 🔖10 💰 g:4 🔢 8|10 ═══ ⚡d3
+ │  │        └■═╤═ 🔖 10 💰 g:4 ⚖  8|10 ═══ ⚡ d3
  │  │          ::♛ ::
  │  │            ::  ♛
  │  │          ♛   ::
  │  │            ::♛ ::
- │  │           🎯 Solução encontrada! 💰  g:4
+ │  │           🎯  Solução encontrada! 💰 g:4
  │  │        │ ::♛ ::
  │  │        │   ::  ♛
  │  │        │ ♛   ::
  │  │        │   ::♛ ::
  │  │        │ 🎯 4 → 📈
- │  └─ { 🔖3 🔖4 }
- ├─ ⚙️  Parâmetros ─ P1=3 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=-1 P8=1 P11=0
-═╧═ 🏁  Execução terminada ⏱   ═══
+ │  └─ { 🔖 3 🔖 4 }
+ ├─ Parâmetros ─ P1=3 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=-1 P8=1 P11=0
+═╧═ 🏁  Execução terminada ⏱    ═══
 8 Damas
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4
 │ P7(LIMITE): -1 | P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
@@ -369,7 +364,7 @@ Opção: 6
   ::  ♛
 ♛   ::
   ::♛ ::
-┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ I1(IND_CUSTO): 4 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 8 |
 │ I5(IND_GERACOES): 10 | I6(IND_LOWER_BOUND): 0
 └──────────────────────────────────────────────────────────────────────
@@ -380,7 +375,7 @@ Opção:
 Podemos observar que o algoritmo em profundidade fez o mesmo erro que nós fizemos, foi escolher d1 na primeira ação.
 No entanto, após ver que não é possível, testa a opção de d2 e encontra a solução.
 
-Notar que os nós folha, foram atingidos por não haver sucessores na posição concreta, e não por
+Notar que os nós folha foram atingidos por não haver sucessores na posição concreta, e não por
 nível da árvore de procura, já que o limite foi colocado a -1, ou seja, ilimitado.
 
 No final da procura, ainda havia um ramo para analisar, com dois estados pendentes.
@@ -445,189 +440,320 @@ Opções:
 Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
    Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
 
-Lista de parâmetros:
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
-│ P1(ALGORITMO):             Largura Primeiro ( 1 a  7)
-│ P2(NIVEL_DEBUG):           NADA       ( 0 a  4)
-│ P3(SEMENTE):               1          ( 1 a  1000000)
-│ P4(LIMITE_TEMPO):          10         ( 1 a  3600)
-│ P5(LIMITE_ITERACOES):      0          ( 0 a  1000000000)
-│ P6(VER_ACOES):             4          ( 1 a  100)
-│ P7(LIMITE):                0          (-1 a  1000000)
-│ P8(ESTADOS_REPETIDOS):     ignorar    ( 1 a  3)
-│ P11(BARALHAR_SUCESSORES):  0          ( 0 a  1)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+│ P6(VER_ACOES):             4          (1 a 100)
+│ P7(LIMITE):                0          (-1 a 1000000)
+│ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+│ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
 └──────────────────────────────────────────────────────────────────────
-
-Lista de indicadores:
-┌─ ⚖  Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): ✔  1º lugar
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): ✓ 1º lugar
 │ o resultado é o custo da solução atual
-│ I2(Tempo(ms)): ✔  2º lugar
+│ I2(Tempo(ms)): ✓ 2º lugar
 │ Tempo em milisegundos da execução (medida de esforço computacional).
-│ I3(Iterações): ✔  3º lugar
+│ I3(Iterações): ✓ 3º lugar
 │ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
-│ I4(IND_EXPANSOES): ✔  4º lugar
+│ I4(IND_EXPANSOES): ✓ 4º lugar
 │ número de expansões efetuadas
-│ I5(IND_GERACOES): ✔  5º lugar
+│ I5(IND_GERACOES): ✓ 5º lugar
 │ número de estados gerados
-│ I6(IND_LOWER_BOUND): ✔  6º lugar
+│ I6(IND_LOWER_BOUND): ✓ 6º lugar
 │ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
 └──────────────────────────────────────────────────────────────────────
 ```
 
-Num primeiro teste pretendemos comparar a procura em largura com a procura em profundidade ilimitada, 
-e respetivas versões com eliminação de estados repetidos.
-Colocamos o P7=-1 para a procura em profundidade ilimitada, não afetando a procura em largura.
-Colocamos debug nível 3.
+Atendendo a que o algoritmo em profundidade primeiro é o único que faz sentido, atendendo a que os algoritmos informados
+não fazem sentido utilizar dado que não existe heurística, vamos estudar uma das opções disponíveis nesta implementação.
+Nesse sentido temos P1=3 fixo.
+
+Podemos ver se a remoção de estados repetidos ajuda ou prejudica, atendendo a que pode reduzir os estados analisados mas
+é também consumidora de tempo, pelo que fica em aberto P8=1,3. Não faz sentido os estados ascendentes dado que não há
+movimentos inversos.
+
+Vamos também ver se baralhar os sucessores tem algum impacto nos resultados, face à ordem fixa dos sucessores, P11=0,1.
+No caso de P11=1, podemos utilizar várias sementes aleatórias, P3 a variar, caso P11=0, não faz sentido já que não temos
+utilização para os valores aleatórios, e as instâncias são sempre as mesmas.
+
+Sobre a melhor configuração, procuraremos fazer um teste de performance final.
+
+### Teste: 8damas_1
+
+Vamos primeiramente fazer um teste, para verificar se os estados repetidos são benéficos.
+Como temos poucas instâncias, de 4 a 40, e o algoritmo não é aleatório, o esforço não pode ser aumentando demasiado, pelo que
+utilizamos dois níveis.
+
+- **Tipo de Teste / Objetivo**: Paramétrico (P8=1,3)
+- **Definição**: Instâncias: 4:40:4; Configurações: P1=3 P7=-1 P8=1,3 
+- **Esforço**: 4:40:4; 4:40
+- **Execução**: TProcura 4:40:4 -R Resultados/8damas_1 -P P1=3 P2=4 P7=-1 P8=1,3 
+
+Colocamos P2=4 atendendo a que são poucas tarefas:
 
 ```entrada
-PS ...\Teste> TProcuraConstrutiva 4:13 -R Resultados/8Damast1 -P P2=3 P7=-1 P1=1,3 x P8=1,3
-...
 Opção: 3
 
- ├─ 🛠️  ─ P2=3 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)
+
+═╤═ Instâncias ═══ { 📄 4 📄 8 📄 12 📄 16 📄 20 📄 24 📄 28 📄 32 📄 36 📄 40 }
+ ├─ 🛠️  ─ P1=3 P2=4 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)
 ═╪═ Configurações ═══
- ├─ ⚙️ [1] ─ P1=1 P8=1
- ├─ ⚙️ [2] ─ P1=3 P8=1
- ├─ ⚙️ [3] ─ P1=1 P8=3
- ├─ ⚙️ [4] ─ P1=3 P8=3
+ ├─ ⚙  [1] ─ P8=1
+ ├─ ⚙  [2] ─ P8=3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:40   ↻ Instâncias: 10   🛠️ Configurações: 4   🖥️ Processos: 1.
-HT: utilização 89%, reuso: 2.57 vezes
- ├─ 📄  Ficheiro Resultados/8Damast1.csv gravado.
- │  ⏱  Tempo real: 8" 534ms
- │  ⏱  CPU total: 8" 534ms
+ ├─ 📋 Tarefas:20   📄 Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 1.
+ ├─ ⏱                 📋 1     📄 4     🛠️ 1     🖥️ 1    🎯 4    ⚖  4 0 0 8 10 0
+ ├─ ⏱                 📋 2     📄 8     🛠️ 1     🖥️ 1    🎯 8    ⚖  8 0 0 113 124 0
+ ├─ ⏱                 📋 3     📄 12    🛠️ 1     🖥️ 1    🎯 12   ⚖  12 0 0 261 295 0
+ ├─ ⏱                 📋 4     📄 16    🛠️ 1     🖥️ 1    🎯 16   ⚖  16 8 0 10052 10112 0
+ ├─ ⏱ 8ms             📋 5     📄 20    🛠️ 1     🖥️ 1    🎯 20   ⚖  20 142 0 199635 199733 0
+ ├─ ⏱ 150ms           📋 6     📄 24    🛠️ 1     🖥️ 1    🎯 24   ⚖  24 348 0 411608 411755 0
+ ├─ ⏱ 498ms           📋 7     📄 28    🛠️ 1     🖥️ 1    🎯 28   ⚖  28 2931 0 3006298 3006508 0
+ ├─ ⏱ 3" 429ms        📋 8     📄 32    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 8723766 8724049 0
+ ├─ ⏱ 13" 429ms       📋 9     📄 36    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 7550046 7550403 0
+ ├─ ⏱ 23" 429ms       📋 10    📄 40    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 6476857 6477321 0
+ ├─ ⏱ 33" 430ms       📋 11    📄 4     🛠️ 2     🖥️ 1    🎯 4    ⚖  4 38 0 8 8 0
+ ├─ ⏱ 33" 467ms       📋 12    📄 8     🛠️ 2     🖥️ 1    🎯 8    ⚖  8 7 0 113 120 0
+ ├─ ⏱ 33" 475ms       📋 13    📄 12    🛠️ 2     🖥️ 1    🎯 12   ⚖  12 8 0 261 289 0
+ ├─ ⏱ 33" 483ms       📋 14    📄 16    🛠️ 2     🖥️ 1    🎯 16   ⚖  16 19 0 2850 2896 0
+ ├─ ⏱ 33" 502ms       📋 15    📄 20    🛠️ 2     🖥️ 1    🎯 20   ⚖  20 302 0 112596 112672 0
+ ├─ ⏱ 33" 804ms       📋 16    📄 24    🛠️ 2     🖥️ 1    🎯 24   ⚖  24 1800 0 534849 534950 0
+ ├─ ⏱ 35" 604ms       📋 17    📄 28    🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10005 0 2223083 2223228 0
+ ├─ ⏱ 45" 608ms       📋 18    📄 32    🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10004 0 1531492 1531650 0
+ ├─ ⏱ 55" 612ms       📋 19    📄 36    🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10004 0 1215677 1215871 0
+ ├─ ⏱ 1' 5" 617ms     📋 20    📄 40    🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10006 0 1081955 1082181 0
+ ├─ 📑  Ficheiro Resultados/8damas_1.csv gravado.
+ │  ⏱  Tempo real: 1' 15" 623ms
+ │  ⏱  CPU total: 1' 15" 623ms
  │  📊  Utilização: 100.0%
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  8" 534ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1' 15" 623ms ) ═══
 ```
 
-As 40 tarefas foram realizadas em menos de 10 segundos.
+As 20 tarefas foram realizadas em pouco mais de 1 minuto, existindo instâncias não resolvidas por causa do limite de tempo.
 
-Soma de I2(Tempo(ms)):
-| Rótulos de Linha | 1:Largura Primeiro<br> 1:ignorar | 3:gerados | 3:Profundidade Primeiro <br>1:ignorar | 3:gerados |
-|:---:|---:|---:|---:|---:|
-| 4 | 0 | 10 | 0 | 3 |
-| 5 | 0 | 1 | 0 | 2 |
-| 6 | 0 | 1 | 0 | 2 |
-| 7 | 0 | 2 | 0 | 2 |
-| 8 | 1 | 6 | 0 | 2 |
-| 9 | 4 | 13 | 0 | 2 |
-| 10 | 22 | 39 | 0 | 3 |
-| 11 | 85 | 171 | 0 | 2 |
-| 12 | 485 | 685 | 0 | 3 |
-| 13 | 2984 | 3829 | 0 | 2 |
-| Total Geral | 3581 | 4757 | 0 | 23 |
+O output detalhado revela já que a configuração 1 resolve mais uma instância que a configuração 2.
+
+- **hardware**: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)
+- **Ficheiro de Análise**: 8damas.xlsx
+
+Vamos ver os resultados:
+- **Colunas**: P8
+- **Linhas**: Instância
+- **Valores**: I2(tempo(ms))
+
+Podemos ver a tabela com os resultados:
+
+| Rótulos de Linha | 1:ignorar | 3:gerados |
+|:---:|---:|---:|
+| 4 | 0 | 38 |
+| 8 | 0 | 7 |
+| 12 | 0 | 8 |
+| 16 | 8 | 19 |
+| 20 | 142 | 302 |
+| 24 | 348 | 1800 |
+| 28 | 2931 | 10005 |
+| 32 | 10000 | 10004 |
+| 36 | 10000 | 10004 |
+| 40 | 10000 | 10006 |
+| Total Geral | 33429 | 42193 |
 
 
-Podemos ver a clara superioridade da procura em profundidade ilimitada.
-Todas as instâncias são resolvidas, mas em termos de tempo, a última leva 2 e 4 segundos pela procura em largura, e 0 segundos na procura em profundidade.
+Esta análise aparenta não ser de todo compensador o uso dos estados gerados. No ponto de transição, a instância 28
+conseguiu ainda ser resolvida sem estados gerados, mas não com estados gerados. Os tempos aparentam ser sempre
+superiores com estados gerados.
 
-Soma de I4(Expansões):
-| Rótulos de Linha | 1:Largura Primeiro<br> 1:ignorar | 3:gerados | 3:Profundidade Primeiro <br>1:ignorar | 3:gerados |
-|:---:|---:|---:|---:|---:|
-| 4 | 13 | 8 | 8 | 8 |
-| 5 | 33 | 18 | 5 | 5 |
-| 6 | 114 | 60 | 31 | 31 |
-| 7 | 419 | 211 | 9 | 9 |
-| 8 | 1665 | 839 | 113 | 113 |
-| 9 | 6977 | 3490 | 41 | 41 |
-| 10 | 30779 | 15392 | 102 | 102 |
-| 11 | 149131 | 74567 | 52 | 52 |
-| 12 | 773731 | 386869 | 261 | 261 |
-| 13 | 4250877 | 2125440 | 111 | 111 |
-| Total Geral | 5213739 | 2606894 | 733 | 733 |
+Poder-se-ia fazer várias execuções para ter vários valores de tempo para as mesmas instâncis, para poder utilizar
+intervalos de confiança. Em todo o caso as diferenças são bastantes, e a não ser que se possa optimizar o algoritmo
+para normalizar o estado e verificar se é igual, com os tempos atuais, não aparenta trazer qualquer vantagem.
 
-Em termos de expansões, o máximo da procura em profundidade é algumas centenas, enquanto que a procur em largura tem na instância maior mais de um milhão de expansões.
-A remoção de estados gerados repetidos, podemos observar na procura em largura que reduz em metade o número de expansões, mas duplica o tempo.
+A versão com maior esforço, poderá dar com maior precisão o ponto de transição, entre instâncias simples para complexas.
 
-Não é possível com estas instâncias, observar diferença para a procura em profundidade. 
+### Teste: 8damas_2
 
-Vamos retirar as duas primeiras configurações do teste, para poder executar instâncias maiores.
+Vamos agora verificar se baralhar os sucessores influencia ou não o algoritmo. A ordem atual é a ordem de geração,
+que poderia ser trocada facilmente, caso exista alguma informação heurística nesse sentido, embora sem ser
+no contexto do Astar, com uma estimativa até à solução ótima, já que essa estimativa é conhecida. A existir uma
+heurística será para ordenar os sucessores por ordem de probabilidade de conter a solução ótima. Se tal for útil,
+a ordem aleatória poderá ter impacto na performance, e é isso que se pretende obter neste teste.
 
+Vamos utilizar o aleatório em 4 corridas, atendendo a que os sucessores são baralhados.
+
+- **Tipo de Teste / Objetivo**: Paramétrico (P11=0,1)
+- **Definição**: Instâncias: 4:40:4; Configurações: P1=3 P7=-1 P8=1 P11=0,1 x P3=1:4
+- **Esforço**: 4:40:4; 4:40
+- **Execução**: TProcura 4:40:4 -R Resultados/8damas_2 -P P1=3 P2=3 P7=-1 P8=1 P11=0,1 x P3=1:4
+
+Reduzimos o debug para 3, atendendo a que há 80 tarefas.
 
 ```entrada
-PS ...\Teste> TProcuraConstrutiva 14:23 -R Resultados/8Damast2 -P P2=3 P7=-1 P1=3 P8=1,3
-...
 Opção: 3
 
- ├─ 🛠️  ─ P1=3 P2=3 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)
+
+═╤═ Instâncias ═══ { 📄 4 📄 8 📄 12 📄 16 📄 20 📄 24 📄 28 📄 32 📄 36 📄 40 }
+ ├─ 🛠️  ─ P1=3 P2=3 P4=10 P5=0 P6=4 P7=-1 P8=1  (parâmetros comuns)
 ═╪═ Configurações ═══
- ├─ ⚙️ [1] ─ P8=1
- ├─ ⚙️ [2] ─ P8=3
+ ├─ ⚙  [1] ─ P3=1 P11=0
+ ├─ ⚙  [2] ─ P3=1 P11=1
+ ├─ ⚙  [3] ─ P3=2 P11=0
+ ├─ ⚙  [4] ─ P3=2 P11=1
+ ├─ ⚙  [5] ─ P3=3 P11=0
+ ├─ ⚙  [6] ─ P3=3 P11=1
+ ├─ ⚙  [7] ─ P3=4 P11=0
+ ├─ ⚙  [8] ─ P3=4 P11=1
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:20   ↻ Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 1.
- ├─ 📄  Ficheiro Resultados/8Damast2.csv gravado.
- │  ⏱  Tempo real: 3" 957ms
- │  ⏱  CPU total: 3" 957ms
+ ├─ 📋 Tarefas:80   📄 Instâncias: 10   🛠️ Configurações: 8   🖥️ Processos: 1.
+ ├─ ⏱ 13" 536ms       📋 9     📄 36    🛠️ 1     🖥️ 1
+ ├─ ⏱ 23" 536ms       📋 10    📄 40    🛠️ 1     🖥️ 1
+ ├─ ⏱ 33" 536ms       📋 11    📄 4     🛠️ 2     🖥️ 1
+ ├─ ⏱ 47" 343ms       📋 29    📄 36    🛠️ 3     🖥️ 1
+ ├─ ⏱ 57" 343ms       📋 30    📄 40    🛠️ 3     🖥️ 1
+ ├─ ⏱ 1' 7" 344ms     📋 31    📄 4     🛠️ 4     🖥️ 1
+ ├─ ⏱ 1' 21" 166ms    📋 49    📄 36    🛠️ 5     🖥️ 1
+ ├─ ⏱ 1' 31" 167ms    📋 50    📄 40    🛠️ 5     🖥️ 1
+ ├─ ⏱ 1' 41" 167ms    📋 51    📄 4     🛠️ 6     🖥️ 1
+ ├─ ⏱ 1' 54" 622ms    📋 69    📄 36    🛠️ 7     🖥️ 1
+ ├─ ⏱ 2' 4" 622ms     📋 70    📄 40    🛠️ 7     🖥️ 1
+ ├─ ⏱ 2' 14" 622ms    📋 71    📄 4     🛠️ 8     🖥️ 1
+ ├─ 📑  Ficheiro Resultados/8damas_2.csv gravado.
+ │  ⏱  Tempo real: 2' 14" 625ms
+ │  ⏱  CPU total: 2' 14" 625ms
  │  📊  Utilização: 100.0%
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  3" 957ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 14" 625ms ) ═══
 ```
 
-| Rótulos de Linha | Soma de I2(Tempo(ms))<br>1:ignorar | 3:gerados | Soma de I4(Expansões)<br>1:ignorar | 3:gerados |
-|:---:|---:|---:|---:|---:|
-| 14 | 1 | 16 | 1899 | 1899 |
-| 15 | 1 | 6 | 1359 | 1359 |
-| 16 | 8 | 9 | 10052 | 2850 |
-| 17 | 3 | 28 | 5374 | 5206 |
-| 18 | 25 | 82 | 41299 | 28605 |
-| 19 | 2 | 14 | 2545 | 4656 |
-| 20 | 136 | 290 | 199635 | 112596 |
-| 21 | 6 | 52 | 8562 | 20208 |
-| 22 | 1285 | 1172 | 1737188 | 425154 |
-| 23 | 18 | 802 | 25428 | 250250 |
-| Total Geral | 1485 | 2471 | 2033341 | 852783 |
+Vamos ver os resultados de forma idêntica, mas utilizando médias atendedo a que temos 4 corridas para cada célula:
+- **Colunas**: P11
+- **Linhas**: Instância
+- **Valores**: I2(tempo(ms))
+
+Vamos ver os resultados, são surpreendentes:
+
+| Rótulos de Linha | 0 | 1 |
+|:---:|---:|---:|
+| 4 | 0 | 0 |
+| 8 | 0 | 0 |
+| 12 | 0 | 0 |
+| 16 | 7 | 0 |
+| 20 | 151 | 0,25 |
+| 24 | 372 | 0,5 |
+| 28 | 3119,5 | 0,5 |
+| 32 | 10000,25 | 1,25 |
+| 36 | 10000 | 0,25 |
+| 40 | 10000 | 2,25 |
+| Total Geral | 3364,975 | 0,5 |
+
+A utilização de sucessores aleatórios resolve por completo todas as instâncias.
+Qualquer uma das 4 ordens aleatórias resolveu todas as instâncias.
+Significa portanto que a ordem fixa inicial, gera uma árvore de procura mais complexa, que uma ordem aleatória dos sucessores,
+sendo responsável pela complexidade do problema.
+
+Assim sendo, as instâncias atuais até 40, são muito simples para uma configuração com ordem aleatória de sucessores.
 
 
-Podemos ver que o tempo continua menor se não se eliminarem os estados repetidos.
-Na instância mais complexa, a 22, que levou 1.28 segundos, enquanto que com eliminação de repetidos foi 1,17 segundos.
-No entanto, para essa instância o número de expansões foi de 1737188 ignorando repetidos, e de 425154 eliminando repetidos.
-Em outras instâncias o tempo aparenta subir mais com os estados gerados, e só por sorte pode haver um resultado mais curto.
+### Teste: 8damas_3
 
-Confirma-se que neste problema, e também para o algoritmo em profundidade,
-a eliminação de repetidos reduz o número de expansões, mas aumenta o tempo, não sendo compensador neste caso.
+Vamos fazer um teste de performance final, com todas as instâncias, de modo a medir o aumento do tempo face ao tamanho da instância.
+Fazemos 10 execuções por instância para poder aferir a variabilidade dos resultados.
 
-As instâncias pares aparentam ser mais complexas que as ímpares.
-
-Qual é afinal a maior instância que se consegue resolver?
-<details>
-  <summary>Resposta:</summary>
-Vamos usar apenas as instâncias pares, e até ao limite de 40, que é o que temos implementado. 
-Utilizamos apenas a procura em profundidade ilimitada, sem eliminação de repetidos.
-Vamos colcoar o debug a 4, já que são poucas tarefas.
+- **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
+- **Definição**: Instâncias: 4:40; Configurações: P1=3 P7=-1 P8=1 P11=1 
+- **Esforço**: P3=1:10, P3=1:100, P3=1:1000
+- **Execução**: TProcura 4:40 -R Resultados/8damas_3 -P P1=3 P2=3 P7=-1 P8=1 P11=1 P3=1:10
 
 ```entrada
-PS ...\Teste> TProcuraConstrutiva 24:40:2 -R Resultados/8Damast3 -P P2=4 P7=-1 P1=3 P8=1
-...
 Opção: 3
 
- ├─ 🛠️  ─ P1=3 P2=4 P3=1 P4=10 P5=0 P6=4 P7=-1 P8=1 P11=0 (parâmetros comuns)
+
+═╤═ Instâncias ═══ { �4 �5 �6 … 📄 38 📄 39 📄 40 } #37
+ ├─ 🛠️  ─ P1=3 P2=3 P4=10 P5=0 P6=4 P7=-1 P8=1 P11=1 (parâmetros comuns)
 ═╪═ Configurações ═══
- ├─ ⚙️ [1] ─
+ ├─ ⚙  [1] ─ P3=1
+ ├─ ⚙  [2] ─ P3=2
+ ├─ ⚙  [3] ─ P3=3
+ ├─ ⚙  [4] ─ P3=4
+ ├─ ⚙  [5] ─ P3=5
+ ├─ ⚙  [6] ─ P3=6
+ ├─ ⚙  [7] ─ P3=7
+ ├─ ⚙  [8] ─ P3=8
+ ├─ ⚙  [9] ─ P3=9
+ ├─ ⚙  [10] ─ P3=10
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:9   ↻ Instâncias: 9   🛠️ Configurações: 1   🖥️ Processos: 1.
- ├─ ⏱                 📋 0     ↻ 24    🛠️ 0     🖥️ 1    🎯 24   ⚖  24 347 0 411608 411755 0
- ├─ ⏱ 347ms           📋 1     ↻ 26    🛠️ 0     🖥️ 1    🎯 26   ⚖  26 357 0 397699 397880 0
- ├─ ⏱ 704ms           📋 2     ↻ 28    🛠️ 0     🖥️ 1    🎯 28   ⚖  28 2787 0 3006298 3006508 0
- ├─ ⏱ 3" 491ms        📋 3     ↻ 30    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 10051598 10051835 0
- ├─ ⏱ 13" 491ms       📋 4     ↻ 32    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 9262352 9262634 0
- ├─ ⏱ 23" 491ms       📋 5     ↻ 34    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 8661432 8661748 0
- ├─ ⏱ 33" 491ms       📋 6     ↻ 36    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 8136140 8136498 0
- ├─ ⏱ 43" 492ms       📋 7     ↻ 38    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 7619227 7619631 0
- ├─ ⏱ 53" 492ms       📋 8     ↻ 40    🛠️ 0     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 7123911 7124371 0
- ├─ 📄  Ficheiro Resultados8Damast3.csv gravado.
- │  ⏱  Tempo real: 1' 3" 493ms
- │  ⏱  CPU total: 1' 3" 493ms
+ ├─ 📋 Tarefas:370   📄 Instâncias: 37   🛠️ Configurações: 10   🖥️ Processos: 1.
+ ├─ 📑  Ficheiro Resultados/8damas_3.csv gravado.
+ │  ⏱  Tempo real: 741ms
+ │  ⏱  CPU total: 741ms
  │  📊  Utilização: 100.0%
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  1' 3" 493ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 741ms ) ═══
 ```
 
-Podemos ver logo nos logs do teste que consegue-se resolver até à instância 28 em 2,7 segundos.
-Nas instâncias 30 a 40, não se consegue encontrar solução no limite de 10 segundos.
+Vamos ver os resultados:
+- **Colunas**: valores
+- **Linhas**: Instância
+- **Valores**: mínimo I2, média I2, máximo I2
 
-</details>
+| Rótulos de Linha | Mínimo de I2(Tempo(ms)) | Média de I2(Tempo(ms)) | Máximo de I2(Tempo(ms)) |
+|:---:|---:|---:|---:|
+| 4 | 0 | 0 | 0 |
+| 5 | 0 | 0 | 0 |
+| 6 | 0 | 0 | 0 |
+| 7 | 0 | 0 | 0 |
+| 8 | 0 | 0 | 0 |
+| 9 | 0 | 0 | 0 |
+| 10 | 0 | 0 | 0 |
+| 11 | 0 | 0,1 | 1 |
+| 12 | 0 | 0 | 0 |
+| 13 | 0 | 0 | 0 |
+| 14 | 0 | 0 | 0 |
+| 15 | 0 | 0 | 0 |
+| 16 | 0 | 0 | 0 |
+| 17 | 0 | 0,1 | 1 |
+| 18 | 0 | 0,3 | 2 |
+| 19 | 0 | 0,2 | 2 |
+| 20 | 0 | 0,1 | 1 |
+| 21 | 0 | 0,3 | 2 |
+| 22 | 0 | 0,1 | 1 |
+| 23 | 0 | 0,2 | 1 |
+| 24 | 0 | 0,4 | 1 |
+| 25 | 0 | 0,2 | 2 |
+| 26 | 0 | 0,2 | 1 |
+| 27 | 0 | 0,4 | 2 |
+| 28 | 0 | 1,4 | 10 |
+| 29 | 0 | 0,5 | 2 |
+| 30 | 0 | 1,9 | 10 |
+| 31 | 0 | 1,2 | 9 |
+| 32 | 0 | 0,8 | 6 |
+| 33 | 0 | 11,1 | 63 |
+| 34 | 0 | 1,2 | 7 |
+| 35 | 0 | 3 | 12 |
+| 36 | 0 | 0,6 | 2 |
+| 37 | 0 | 26,6 | 158 |
+| 38 | 0 | 1,9 | 6 |
+| 39 | 0 | 17,2 | 160 |
+| 40 | 0 | 1,3 | 7 |
+
+Podemos ver que até 40 o tempo é sempre muito baixo. Houve algumas instâncias a levarem 0.16 segundos, mas mesmo essas
+foram porque tivaram azar na ordem dos sucessores, outras ordens resolveram a instância menos de 1 milisegundo.
+Aparentam ser as instâncias ímpar as que podem ter um tempo máximo por vezes superior.
+
+A vantagem dos testes paramétricos permitiu identificar um ponto crítico não identificado inicialmente.
+A ordem dos sucessores é crítica, mas não é necessário para instâncias deste tamanho, a construção de uma heurística para as ordenar.
+A ordem aleatória é suficiente, juntamente com um algoritmo cego em produnfidade ilimitada.
+
+Caso o tamanho das instâncias aumente, a heurística que leve a resoluções mais rápidas, poderia ser uma mais valia.
+
+Naturalmente que se poderiam fazer melhorias na implementação, para além de uma heurística.
+Pode-se implementar testes que permitam podar a árvore
+de forma a que não elimine soluções. Existindo um teste para verificar se a solução parcial pode ou não ser completa, caso falhe, o ramo pode ser cortado.
+Um desses casos é verificar se há linhas/colunas, não forçosamente a próxima linha a ser processada, sem damas mas já totalmente atacada.
+Uma solução parcial deste tipo, não pode ser convertida numa solução completa, pelo que não é necessário gerar sucessores.
+Esta otimização poderia ser colocada em parametro, e verificar também se compensa o tempo de ser executada.
+
 
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [Artificial](teste_artificial.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |
