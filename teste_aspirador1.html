@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('teste_aspirador1.html',''); initResiza
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. No Linux na pasta <code>.../TProcura/Construtiva/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraConstrutiva</code></p>
 <p>Pode acompanhar o teste excutando as ações localmente.</p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md36"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_aspirador1.html#aspirador-a1">Ação 1 - Trocar de instância</a></li>
@@ -144,7 +144,7 @@ Aspirador - espaço de estados para 2 salas</div></div>
 <p>Após o estado temos o menu, com as opções de inicializar numa nova instância, explorar o espaço de estados, editar os parâmetros atuais, ver a solução atual, escolher os indicadors a calcular após execução, executar o algoritmo selecionado com os parametros atuais, editar configurações e executar um teste empírico com as configurações atuais.</p>
 <p>Tanto os parâmetros como o menu, repetem-se em cada interação. Para evitar repetição na documentação, o output é cortado sempre que não existam ambiguidades.</p>
 <p><a class="anchor" id="aspirador-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md37"></a>
+<h2><a class="anchor" id="autotoc_md40"></a>
 Ação 1 - Trocar de instância</h2>
 <p>Escreva os seguintes números separados por Enter: <b>1; 2</b></p>
 <p>Temos hipótese aqui de alterar o prefixo da instância, útil para situações em que se lê os dados da instância de um ficheiro. Este problema as instâncias são geradas aleatoriamente, e não lidas de ficheiros, pelo que escolhemos apenas o ID da instância.</p>
@@ -171,7 +171,7 @@ Ação 1 - Trocar de instância</h2>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda: A representação do estado é algo que é implementado na sub-classe (neste caso em <a class="el" href="classCAspirador.html#ab95fe625712f157e5836de7364a53cee" title="Mostra o estado no ecrã, para debug.">CAspirador::Debug()</a>), de modo a se poder visualizar o estado em que estamos. Ao chamar Inicializar() podemos trocar o ID da instância. Para este problema o ID é utilizado para definir a dimensão da instância, e assim podemos escolher em ter uma instância maior ou menor. A sujidade das casas é gerada aleatoriamente. No entanto a semente aleatória é um parâmetro (P3(SEMENTE): 1), sendo sempre a mesma caso não se altere, garantindo assim que podemos obter a mesma instância mais tarde.</p>
 <p><a class="anchor" id="aspirador-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Ação 2 - Explorar os sucessores</h2>
 <p>A partir do estado atual, introduza: <b>2; 1; 2.</b></p>
 <div class="fragment"><div class="line">Opção: 2</div>
@@ -219,7 +219,7 @@ Ação 2 - Explorar os sucessores</h2>
 </div><!-- fragment --><p>Ao receber as duas ações, estas foram executadas e indicado o número de ações executados com sucesso. Se fosse uma solução completa, todas as ações até ao estado final, esta operação seria uma verificação da solução. Caso exista alguma ação inválida, a ação é rejeitada e o estado atual fica na primeira ação inválida. Assim, é possível verificar ou identificar erros em soluções obtidas por métodos externos, sendo apresentada a evidência de falha.</p>
 <p>Para um problema novo, é sempre importante que explore os sucessores, nomeadamente procure resolver instâncias pequenas no modo manual. Tem duas vantagens: identifica bugs que tenha na sua implementação; ganha entendimento sobre o problema em questão, que lhe poderá levar a identificar optimizações que de outra forma lhe passariam desapercebidas.</p>
 <p><a class="anchor" id="aspirador-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Ação 3 - Ver a solução realizada manualmente</h2>
 <p>O resultado da resolução manual da ação anterior, é visualizar apenas o último estado. No entanto houve um caminho, que ficou guardado. Introduza: <b>4.</b></p>
 <div class="fragment"><div class="line">Opção: 4</div>
@@ -239,7 +239,7 @@ Ação 3 - Ver a solução realizada manualmente</h2>
 </div><!-- fragment --><p>Neste problema uma solução é um conjunto de ações, o caminho desde o estado inicial até ao estado final. É mostrado esse caminho visualizando as ações a partir do estado inicial. Foram 4 movimentos, mas houve um desperdício. No primeiro movimento, poderíamos ter logo aspirado. Em outros problemas, a solução pode ser apenas o estado final. Notar ainda na letra g, seguida de um número. Esta letra representa o custo g(n) no manual, e sempre que ocorra significa o custo desde o estado inicial até esse estado. Neste problema o custo não foi definido, pelo que é adoptado o valor de 1 unidade por cada movimento.</p>
 <p>A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os estados também. Para isso é preciso alterar o parâmetro P6(VER_ACOES).</p>
 <p><a class="anchor" id="aspirador-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 Ação 4 - Ver a alterar um parâmetro</h2>
 <p>Vamos editar o parâmetro P6(VER_ACOES). Introduza: <b>3</b></p>
 <div class="fragment"><div class="line">Opção: 3</div>
@@ -281,7 +281,7 @@ Ação 4 - Ver a alterar um parâmetro</h2>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.</p>
 <p><a class="anchor" id="aspirador-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Ação 5 - Efetuer uma procura em Largura</h2>
 <div class="image">
 <img src="aspirador_largura.png" alt=""/>
@@ -390,7 +390,7 @@ Procura em Largura - expande primeiro os estados menos profundos</div></div>
 <li>Verificar se o estado a ser gerado, não foi já gerado mesmo em outro ramo, desde que no mesmo nível ou anterior. Nesse caso o estado pode ser excluído, já que já terá sido tratado nesse outro ramo - para ter esta opção, é preciso implementar a função Codificar() que coloca o estado num vetor de bits - o código utiliza uma hashtable com perdas, para verificar se o estado já foi criado em tempo constante, não existindo problemas de memória mesmo em execuções longas devido às perdas.</li>
 </ul>
 <p><a class="anchor" id="aspirador-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Ação 6 - Editar opções A</h2>
 <p>Altere a opção para remover os repetidos com base nos ascendentes, e o debug para nível 3: <b>1; 2; 3; 8; 2; 2; 3; <em>ENTER</em>; 6.</b></p>
 <ul>
@@ -429,7 +429,7 @@ Ação 6 - Editar opções A</h2>
 </div><!-- fragment --><p> A interação de troca de parâmetro não é mais mostrada para não saturar o texto.</p>
 <p>Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados. Vemos no entanto a lista dos estados gerados não expandidos, confirmando que é claramente menor. Podemos também confirmar que o estado inicial não foi um dos gerados, caso contrário seria expandido na 4º ou 5º expansão.</p>
 <p><a class="anchor" id="aspirador-a7"></a></p>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md46"></a>
 Ação 7 - Editar opções B</h2>
 <p>Alterar a opção para remover os repetidos com base nos gerados, e alterar o debug para nível 2: <b>1; 2; 3; 8; 3; 2; 2; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -461,7 +461,7 @@ Ação 7 - Editar opções B</h2>
 <p>É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.</p>
 <p>O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.</p>
 <p><a class="anchor" id="aspirador-a8"></a></p>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md47"></a>
 Ação 8 - Resolver outra instância</h2>
 <p>Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar resolver uma instância maior: <b>1; 10; 3; 8; 1; 2; 1; <em>ENTER</em>; 6.</b></p>
 <p>Pode haver um problema de memória. A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados: <br  />
@@ -511,7 +511,7 @@ Ação 8 - Resolver outra instância</h2>
 <p>Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.</p>
 <p>A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.</p>
 <p><a class="anchor" id="aspirador-a9"></a></p>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md48"></a>
 Ação 9 - Desafio Procura em Largura</h2>
 <p>Com a procura em largura, até que tamanho consegue obter a solução ótima do aspirador?</p>
 <details >
