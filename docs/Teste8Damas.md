@@ -669,7 +669,7 @@ Fazemos 10 execuções por instância para poder aferir a variabilidade dos resu
 Opção: 3
 
 
-═╤═ Instâncias ═══ { �4 �5 �6 … 📄 38 📄 39 📄 40 } #37
+═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
  ├─ 🛠️  ─ P1=3 P2=3 P4=10 P5=0 P6=4 P7=-1 P8=1 P11=1 (parâmetros comuns)
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ P3=1

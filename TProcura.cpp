@@ -750,7 +750,7 @@ void TProcura::MostraConjunto(TVector<int> valores, const char* etiqueta) {
 	}
 	else {
 		for (int i = 0; i <= 2; i++)
-			printf("%.2s%d ", etiqueta, valores[i]);
+			printf("%-2s%d ", etiqueta, valores[i]);
 		printf("… ");
 		for (int i = valores.Count() - 3; i < valores.Count(); i++)
 			printf("%-2s%d ", etiqueta, valores[i]);
