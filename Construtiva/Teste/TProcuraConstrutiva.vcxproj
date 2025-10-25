@@ -34,7 +34,6 @@
     <ClCompile Include="Aspirador.cpp" />
     <ClCompile Include="OitoDamas.cpp" />
     <ClCompile Include="Particao.cpp" />
-    <ClCompile Include="ProblemaArtificial.cpp" />
     <ClCompile Include="Puzzle8.cpp" />
     <ClCompile Include="teste.cpp" />
   </ItemGroup>
@@ -47,7 +46,6 @@
     <ClInclude Include="Aspirador.h" />
     <ClInclude Include="OitoDamas.h" />
     <ClInclude Include="Particao.h" />
-    <ClInclude Include="ProblemaArtificial.h" />
     <ClInclude Include="Puzzle8.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
