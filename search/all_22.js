@@ -9,7 +9,7 @@ var searchData=
   ['_7ecoitodamascp_6',['~COitoDamasCP',['../classCOitoDamasCP.html#a765e2f4812a83d021934f88ffaa817c3',1,'COitoDamasCP']]],
   ['_7ecparticao_7',['~cparticao',['../classCParticao.html#a28e058d1acef74690ec638cc69e968d1',1,'CParticao::~CParticao(void)'],['../classCParticao.html#a28e058d1acef74690ec638cc69e968d1',1,'CParticao::~CParticao(void)']]],
   ['_7ecparticaocb_8',['~CParticaoCB',['../classCParticaoCB.html#ad019e65960e7787f1b76bdd09d25a15a',1,'CParticaoCB']]],
-  ['_7ecproblemaartificial_9',['~cproblemaartificial',['../classCProblemaArtificial.html#a5a3353d4f263cdaa090237fe245f532a',1,'CProblemaArtificial::~CProblemaArtificial(void)'],['../classCProblemaArtificial.html#a5a3353d4f263cdaa090237fe245f532a',1,'CProblemaArtificial::~CProblemaArtificial(void)']]],
+  ['_7ecproblemaartificial_9',['~CProblemaArtificial',['../classCProblemaArtificial.html#a5a3353d4f263cdaa090237fe245f532a',1,'CProblemaArtificial']]],
   ['_7ecpuzzle8_10',['~CPuzzle8',['../classCPuzzle8.html#a05a4b0712e7ff5cea28b6a76b5f9557f',1,'CPuzzle8']]],
   ['_7ectestetvector_11',['~CTesteTVector',['../classCTesteTVector.html#a4da32c26bbf817cc06f48569a19e1b90',1,'CTesteTVector']]],
   ['_7etcodificacaobinaria_12',['~TCodificacaoBinaria',['../classTCodificacaoBinaria.html#a39615f0d7252d78ef86b19b350008f63',1,'TCodificacaoBinaria']]],

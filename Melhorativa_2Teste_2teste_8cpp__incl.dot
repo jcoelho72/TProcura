@@ -59,6 +59,6 @@ digraph "Melhorativa/Teste/teste.cpp"
   Node24 [id="Node000024",label="../TCodificacaoBinaria.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TCodificacaoBinaria_8h.html",tooltip=" "];
   Node24 -> Node3 [id="edge30_Node000024_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node25 [id="edge31_Node000001_Node000025",color="steelblue1",style="solid",tooltip=" "];
-  Node25 [id="Node000025",label="ProblemaArtificial.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Melhorativa_2Teste_2ProblemaArtificial_8h.html",tooltip=" "];
+  Node25 [id="Node000025",label="ProblemaArtificial.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ProblemaArtificial_8h.html",tooltip=" "];
   Node25 -> Node3 [id="edge32_Node000025_Node000003",color="steelblue1",style="solid",tooltip=" "];
 }

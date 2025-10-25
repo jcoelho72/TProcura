@@ -69,9 +69,7 @@ digraph "TVector::Add"
   Node15 -> Node24 [id="edge39_Node000015_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node24 [id="Node000024",label="CParticao::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a5c6104354972acf2f6ed3d8ff7a8b98c",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node15 -> Node25 [id="edge40_Node000015_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node25 [id="Node000025",label="CProblemaArtificial\l::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#a8ecd3995c8ce751d5da10cc20709175c",tooltip="Coloca em sucessores a lista de estados sucessores."];
-  Node15 -> Node26 [id="edge41_Node000015_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node26 [id="Node000026",label="CPuzzle8::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a",tooltip="Coloca em sucessores a lista de estados sucessores."];
-  Node26 -> Node27 [id="edge42_Node000026_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node25 [id="Node000025",label="CPuzzle8::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a",tooltip="Coloca em sucessores a lista de estados sucessores."];
+  Node25 -> Node26 [id="edge41_Node000025_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node26 [id="Node000026",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
 }

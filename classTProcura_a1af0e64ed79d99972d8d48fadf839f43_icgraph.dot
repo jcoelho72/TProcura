@@ -41,11 +41,9 @@ digraph "TProcura::Inicializar"
   Node12 -> Node17 [id="edge18_Node000012_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="CParticao::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a9398d7eb5af933dd64c50bb09bba6400",tooltip="Coloca o objecto no estado inicial da procura."];
   Node12 -> Node18 [id="edge19_Node000012_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="CProblemaArtificial\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#ac823cf847edbe9f32fb4cd2e2c462d10",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node18 [id="Node000018",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
   Node12 -> Node19 [id="edge20_Node000012_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
-  Node12 -> Node20 [id="edge21_Node000012_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
-  Node1 -> Node3 [id="edge22_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node6 [id="edge23_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node1 -> Node3 [id="edge21_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge22_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -13,5 +13,7 @@ digraph "TProcuraMelhorativa::Inicializar"
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="CParticaoCB::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticaoCB.html#a9feb5f17582cdd0d70463072dc72d2ed",tooltip="Coloca o objecto no estado inicial da procura."];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="CParticao::NovaSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a82ac73218fe065f106b5b1d3162637a1",tooltip=" "];
+  Node5 [id="Node000005",label="CProblemaArtificial\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#ac823cf847edbe9f32fb4cd2e2c462d10",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="CParticao::NovaSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a82ac73218fe065f106b5b1d3162637a1",tooltip=" "];
 }

@@ -7,7 +7,9 @@ digraph "CProblemaArtificial::Duplicar"
   rankdir="LR";
   Node1 [id="Node000001",label="CProblemaArtificial\l::Duplicar",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Cria um objecto que é uma cópia deste."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CProblemaArtificial\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#aeaf471b3eb04012d800593df6a0c9e45",tooltip="Fica com uma cópia do objecto."];
-  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="CProblemaArtificial\l::CProblemaArtificial",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#a1af4e20c9e5ea2aa1ebbb63945b0d1a7",tooltip=" "];
+  Node2 [id="Node000002",label="CProblemaArtificial\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#ac98a0fece8bc458a83fc03457614f6c4",tooltip="Fica com uma cópia do objecto."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TProcuraMelhorativa\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a446cb701313bd16b9a6c5939b810d241",tooltip="Fica com uma cópia do objecto."];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="CProblemaArtificial\l::CProblemaArtificial",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#a1af4e20c9e5ea2aa1ebbb63945b0d1a7",tooltip=" "];
 }

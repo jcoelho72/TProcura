@@ -43,10 +43,8 @@ digraph "_TV"
   Node13 -> Node18 [id="edge19_Node000013_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="CParticao::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a7184defba91cfd68281cf63d0fee98c6",tooltip="Inicializa os parametros, indicadores e instâncias."];
   Node13 -> Node19 [id="edge20_Node000013_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="CProblemaArtificial\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d",tooltip="Inicializa os parametros, indicadores e instâncias."];
-  Node13 -> Node20 [id="edge21_Node000013_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="CPuzzle8::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3",tooltip="Inicializa os parametros, indicadores e instâncias."];
-  Node1 -> Node21 [id="edge22_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="TProcura::SolicitaInstancias",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6941386b767d6f0723c6eb9d27241d69",tooltip="Solicita ao utilizador uma lista de instâncias."];
-  Node21 -> Node5 [id="edge23_Node000021_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="CPuzzle8::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node1 -> Node20 [id="edge21_Node000001_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="TProcura::SolicitaInstancias",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6941386b767d6f0723c6eb9d27241d69",tooltip="Solicita ao utilizador uma lista de instâncias."];
+  Node20 -> Node5 [id="edge22_Node000020_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
