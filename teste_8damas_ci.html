@@ -118,7 +118,7 @@ Sumário</h2>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no problema 8 Damas Inteira, introduza: <b>1.</b></p>
 <div class="fragment"><div class="line">8 Damas (Inteira)</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
 <div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20</div>
 <div class="line">│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150</div>
@@ -135,10 +135,10 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">  ::  ::  ::♛ ::</div>
 <div class="line">::  ::  ♛   ::</div>
 <div class="line">  ::  ::  ::  ♛</div>
-<div class="line">┌─ ☰ Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
-<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
-<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │</div>
+<div class="line">│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
+<div class="line">└───────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Temos uma instância das 8 Damas como no exemplo da <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas que se atacam mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto transfoormam-se em custos, que pretendemos remover.</p>
 <p>Temos um número de parametros mais extenso, embora os 5 primeiros parametros sejam os mesmos que no exemplo do teste <a class="el" href="classTVector.html">TVector</a>. O último parametro é o P24, muito embora não estejam 24 parametros. O P11 por exemplo não é mostrado. Alguns parametros só são ativos devido a valores de outros parametros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parametros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
@@ -146,7 +146,7 @@ Ação 1 - Ver instâncias</h2>
 <p>Introduza: <b>1;4.</b></p>
 <div class="fragment"><div class="line">Opção: 1</div>
 <div class="line"> </div>
-<div class="line">┌─ ↻  Inicializar ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ 📄 Instância ───────────────────────────────────────────────────────</div>
 <div class="line">│ ID atual: 8  Intervalo: [4–40]</div>
 <div class="line">│ Prefixo atual: &#39;instancia_&#39;</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
@@ -165,9 +165,9 @@ Ação 1 - Ver instâncias</h2>
 <h2><a class="anchor" id="autotoc_md32"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos então resolver a instância manualmente. Introduza: <b>2.</b></p>
-<div class="fragment"><div class="line">pção: 2</div>
+<div class="fragment"><div class="line">Opção: 2</div>
 <div class="line"> </div>
-<div class="line"> │ 🏆 ⏱  💰 g:2</div>
+<div class="line"> │ 🏆  ⏱  💰 g:2</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
@@ -175,13 +175,13 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">  ::  ♛</div>
 <div class="line">─┬───────────────────</div>
 <div class="line"> ├─┬─ 📆 0 ⏱  ──── 💰 g2-4</div>
-<div class="line"> │ ├───── 👥 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   0 2 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 2   3 1 1 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 3   1 0 3 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 4   3 3 1 0  💰 g:4</div>
+<div class="line"> │ ├───── 👥  ─────</div>
+<div class="line"> │ │ ⚪ 1   0 2 0 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 2   3 1 1 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 3   1 0 3 0  💰 g:3</div>
+<div class="line"> │ │ ⚪ 4   3 3 1 0  💰 g:4</div>
 <div class="line"> │ ├───── 🌈  ─────</div>
-<div class="line"> │ │  🧑‍🔬 │1   │2   │3   │4   │</div>
+<div class="line"> │ │  ⚪  │1   │2   │3   │4   │</div>
 <div class="line"> │ │ ────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │ 1   │    │   4│   4│   4│</div>
 <div class="line"> │ │ 2   │   4│    │   3│   1│</div>
@@ -195,23 +195,23 @@ Ação 2 - Resolver manualmente</h2>
 <p>Temos um mapa de diversidade, com as distâncias entre os 4 elemnentos. A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parametro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elmentos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
 <p>Temos 3 operações para testar, a mutação, cruzamento e vizinhança. Vamos começar pela mutação, para mutar o indivíduo 4. Introduza: <b>1; 4.</b></p>
 <div class="fragment"><div class="line">│ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 1</div>
-<div class="line">│ ┌───── ✨ ─────</div>
-<div class="line">│ │ 🧑‍🔬 [1-4]: 4</div>
-<div class="line">│ │ 📍  3 3 1 0  mutar vizinho incDecValor (3,1)</div>
-<div class="line">│ │ ✨  3 3 1 1</div>
+<div class="line">│ ┌───── ✨  ─────</div>
+<div class="line">│ │ ⚪  [1-4]: 4</div>
+<div class="line">│ │ ⚪   3 3 1 0  mutar vizinho incDecValor (3,1)</div>
+<div class="line">│ │ ✨   3 3 1 1</div>
 <div class="line">│ │ ::  ::♛</div>
 <div class="line">│ │   ::  ♛</div>
 <div class="line">│ │ ::♛ ::</div>
 <div class="line">│ │   ♛   ::</div>
 <div class="line">│ └──────────────</div>
 <div class="line">├─┬─ 📆 1 ⏱  ──── 💰 g2-4</div>
-<div class="line">│ ├───── 👥 ─────</div>
-<div class="line">│ │ 🧑‍🔬 1   0 2 0 3  💰 g:2</div>
-<div class="line">│ │ 🧑‍🔬 2   3 1 1 0  💰 g:4</div>
-<div class="line">│ │ 🧑‍🔬 3   1 0 3 0  💰 g:3</div>
-<div class="line">│ │ 🧑‍🔬 4   3 3 1 1  💰 g:4</div>
+<div class="line">│ ├───── 👥  ─────</div>
+<div class="line">│ │ ⚪ 1   0 2 0 3  💰 g:2</div>
+<div class="line">│ │ ⚪ 2   3 1 1 0  💰 g:4</div>
+<div class="line">│ │ ⚪ 3   1 0 3 0  💰 g:3</div>
+<div class="line">│ │ ⚪ 4   3 3 1 1  💰 g:4</div>
 <div class="line">│ ├───── 🌈  ─────</div>
-<div class="line">│ │  🧑‍🔬 │1   │2   │3   │4   │</div>
+<div class="line">│ │  ⚪  │1   │2   │3   │4   │</div>
 <div class="line">│ │ ────┼────┼────┼────┼────┼</div>
 <div class="line">│ │ 1   │    │   4│   4│   4│</div>
 <div class="line">│ │ 2   │   4│    │   3│   2│</div>
@@ -222,13 +222,13 @@ Ação 2 - Resolver manualmente</h2>
 </div><!-- fragment --><p>A mutação acabou por trocar apenas um valor, o que se pode confirmar nas linhas Atual e Mutado, com as codificaçõe seguidas e alinhadas. Ficou uma solução igualmente má. Podemos alterar a mutação no parametro P21(TIPO_MUTAR). Existem também vários operadores de mutação disponíveis dependente do tipo de codificação.</p>
 <p>Vamos agora passar para o cruzamento, e cruzar o individuo 1 com o 3, os dois melhores na população, e substituir o individuo 4. Introduza: <b>2; 1; 3; 4.</b></p>
 <div class="fragment"><div class="line">│ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 2</div>
-<div class="line">│ ┌───── 🧬 ─────</div>
-<div class="line">│ │ 🧑‍🔬 Pai [1-4]: 1</div>
-<div class="line">│ │ 🧑‍🔬 Mãe [1-4]: 3</div>
-<div class="line">│ │ 🧑‍🔬 Filho [1-4]: 4</div>
+<div class="line">│ ┌───── 🧬  ─────</div>
+<div class="line">│ │ ⚪ Pai [1-4]: 1</div>
+<div class="line">│ │ ⚪ Mãe [1-4]: 3</div>
+<div class="line">│ │ ⚪ Filho [1-4]: 4</div>
 <div class="line">│ │</div>
-<div class="line">│ │ 📍 Pai   0 2 0 3</div>
-<div class="line">│ │ 📍 Mãe   1 0 3 0  cruzamento 1-ponto(s): 3</div>
+<div class="line">│ │ ⚪ Pai   0 2 0 3</div>
+<div class="line">│ │ ⚪ Mãe   1 0 3 0  cruzamento 1-ponto(s): 3</div>
 <div class="line">│ │ 🧬 Filho 0 2 0 0</div>
 <div class="line">│ │ ♛   ::</div>
 <div class="line">│ │   ::♛ ::</div>
@@ -236,13 +236,13 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">│ │ ♛ ::  ::</div>
 <div class="line">│ └──────────────</div>
 <div class="line">├─┬─ 📆 2 ⏱ 1ms  ──── 💰 g2-4</div>
-<div class="line">│ ├───── 👥 ─────</div>
-<div class="line">│ │ 🧑‍🔬 1   0 2 0 3  💰 g:2</div>
-<div class="line">│ │ 🧑‍🔬 2   3 1 1 0  💰 g:4</div>
-<div class="line">│ │ 🧑‍🔬 3   1 0 3 0  💰 g:3</div>
-<div class="line">│ │ 🧑‍🔬 4   0 2 0 0  💰 g:4</div>
+<div class="line">│ ├───── 👥  ─────</div>
+<div class="line">│ │ ⚪ 1   0 2 0 3  💰 g:2</div>
+<div class="line">│ │ ⚪ 2   3 1 1 0  💰 g:4</div>
+<div class="line">│ │ ⚪ 3   1 0 3 0  💰 g:3</div>
+<div class="line">│ │ ⚪ 4   0 2 0 0  💰 g:4</div>
 <div class="line">│ ├───── 🌈  ─────</div>
-<div class="line">│ │  🧑‍🔬 │1   │2   │3   │4   │</div>
+<div class="line">│ │  ⚪  │1   │2   │3   │4   │</div>
 <div class="line">│ │ ────┼────┼────┼────┼────┼</div>
 <div class="line">│ │ 1   │    │   4│   4│   1│</div>
 <div class="line">│ │ 2   │   4│    │   3│   3│</div>
@@ -253,18 +253,18 @@ Ação 2 - Resolver manualmente</h2>
 </div><!-- fragment --><p> O filho ficou quase igual ao pai, com os três primeiros elmentos da do pai, e o último da mãe. Existem vários tipos de operadores de cruzamento, controlados pelo parametro P20(TIPO_CRUZAR). Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.</p>
 <p>Falta-nos explorar o operador de vizinhança, pelo que vamos aplicar ao melhor individuo 1, e escolher o melhor vizinho. Introduza: <b>3; 1; 1.</b></p>
 <div class="fragment"><div class="line"> │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 3</div>
-<div class="line"> │ ┌───── 🔗 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 [1-4]: 1</div>
-<div class="line"> │ │ 📍  0 2 0 3  vizinhança incDecValor (limite 0)</div>
-<div class="line"> │ ├───── 🔗 Vizinhos ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   1 2 0 3  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 2   0 3 0 3  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 3   0 1 0 3  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 4   0 2 1 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 5   0 2 0 2  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 [1-5]: 1</div>
+<div class="line"> │ ┌───── 🔗  ─────</div>
+<div class="line"> │ │ ⚪ [1-4]: 1</div>
+<div class="line"> │ │ ⚪   0 2 0 3  vizinhança incDecValor (limite 0)</div>
+<div class="line"> │ ├───── Vizinhos ─────</div>
+<div class="line"> │ │ ⚪ 1   1 2 0 3  💰 g:1</div>
+<div class="line"> │ │ ⚪ 2   0 3 0 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 3   0 1 0 3  💰 g:5</div>
+<div class="line"> │ │ ⚪ 4   0 2 1 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 5   0 2 0 2  💰 g:2</div>
+<div class="line"> │ │ ⚪ [1-5]: 1</div>
 <div class="line"> │ │</div>
-<div class="line"> │ 🏆 ⏱ 1ms  💰 g:1</div>
+<div class="line"> │ 🏆  ⏱ 1ms  💰 g:1</div>
 <div class="line">─┴───────────────────</div>
 <div class="line"> │ │ ::♛ ::</div>
 <div class="line"> │ │   ::♛ ::</div>
@@ -273,13 +273,13 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">─┬───────────────────</div>
 <div class="line"> │ └──────────────</div>
 <div class="line"> ├─┬─ 📆 3 ⏱ 1ms  ──── 💰 g1-4</div>
-<div class="line"> │ ├───── 👥 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   1 2 0 3  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 2   3 1 1 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 3   1 0 3 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 4   0 2 0 0  💰 g:4</div>
+<div class="line"> │ ├───── 👥  ─────</div>
+<div class="line"> │ │ ⚪ 1   1 2 0 3  💰 g:1</div>
+<div class="line"> │ │ ⚪ 2   3 1 1 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 3   1 0 3 0  💰 g:3</div>
+<div class="line"> │ │ ⚪ 4   0 2 0 0  💰 g:4</div>
 <div class="line"> │ ├───── 🌈  ─────</div>
-<div class="line"> │ │  🧑‍🔬 │1   │2   │3   │4   │</div>
+<div class="line"> │ │  ⚪  │1   │2   │3   │4   │</div>
 <div class="line"> │ │ ────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │ 1   │    │   4│   3│   2│</div>
 <div class="line"> │ │ 2   │   4│    │   3│   3│</div>
@@ -290,17 +290,17 @@ Ação 2 - Resolver manualmente</h2>
 </div><!-- fragment --><p>O vizinho gerado tem custo 1, pelo que estamos mais perto. Foi feita a substituição da melhor solução. Notar que o tipo de vizinhança é descrito, neste caso apenas incrementamos ou decrementamos cada valor em uma unidade. Devido a esta opção, a vizinhança tem um número controlado de indivíduos.</p>
 <p>Vamos insistir e ver os vizinhos deste novo elemento, e novamente escolher o melhor destes. Introduza: <b>3; 1; 3.</b></p>
 <div class="fragment"><div class="line">│ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 3</div>
-<div class="line">│ ┌───── 🔗 ─────</div>
-<div class="line">│ │ 🧑‍🔬 [1-4]: 1</div>
-<div class="line">│ │ 📍  1 2 0 3  vizinhança incDecValor (limite 0)</div>
-<div class="line">│ ├───── 🔗 Vizinhos ─────</div>
-<div class="line">│ │ 🧑‍🔬 1   2 2 0 3  💰 g:2</div>
-<div class="line">│ │ 🧑‍🔬 2   0 2 0 3  💰 g:2</div>
-<div class="line">│ │ 🧑‍🔬 3   1 3 0 3  💰 g:1</div>
-<div class="line">│ │ 🧑‍🔬 4   1 1 0 3  💰 g:3</div>
-<div class="line">│ │ 🧑‍🔬 5   1 2 1 3  💰 g:3</div>
-<div class="line">│ │ 🧑‍🔬 6   1 2 0 2  💰 g:2</div>
-<div class="line">│ │ 🧑‍🔬 [1-6]: 3</div>
+<div class="line">│ ┌───── 🔗  ─────</div>
+<div class="line">│ │ ⚪ [1-4]: 1</div>
+<div class="line">│ │ ⚪   1 2 0 3  vizinhança incDecValor (limite 0)</div>
+<div class="line">│ ├───── Vizinhos ─────</div>
+<div class="line">│ │ ⚪ 1   2 2 0 3  💰 g:2</div>
+<div class="line">│ │ ⚪ 2   0 2 0 3  💰 g:2</div>
+<div class="line">│ │ ⚪ 3   1 3 0 3  💰 g:1</div>
+<div class="line">│ │ ⚪ 4   1 1 0 3  💰 g:3</div>
+<div class="line">│ │ ⚪ 5   1 2 1 3  💰 g:3</div>
+<div class="line">│ │ ⚪ 6   1 2 0 2  💰 g:2</div>
+<div class="line">│ │ ⚪ [1-6]: 3</div>
 <div class="line">│ │</div>
 <div class="line">│ │ ::♛ ::</div>
 <div class="line">│ │   ::  ♛</div>
@@ -308,13 +308,13 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">│ │   ::  ♛</div>
 <div class="line">│ └──────────────</div>
 <div class="line">├─┬─ 📆 4 ⏱ 2ms  ──── 💰 g1-4</div>
-<div class="line">│ ├───── 👥 ─────</div>
-<div class="line">│ │ 🧑‍🔬 1   1 3 0 3  💰 g:1</div>
-<div class="line">│ │ 🧑‍🔬 2   3 1 1 0  💰 g:4</div>
-<div class="line">│ │ 🧑‍🔬 3   1 0 3 0  💰 g:3</div>
-<div class="line">│ │ 🧑‍🔬 4   0 2 0 0  💰 g:4</div>
+<div class="line">│ ├───── 👥  ─────</div>
+<div class="line">│ │ ⚪ 1   1 3 0 3  💰 g:1</div>
+<div class="line">│ │ ⚪ 2   3 1 1 0  💰 g:4</div>
+<div class="line">│ │ ⚪ 3   1 0 3 0  💰 g:3</div>
+<div class="line">│ │ ⚪ 4   0 2 0 0  💰 g:4</div>
 <div class="line">│ ├───── 🌈  ─────</div>
-<div class="line">│ │  🧑‍🔬 │1   │2   │3   │4   │</div>
+<div class="line">│ │  ⚪  │1   │2   │3   │4   │</div>
 <div class="line">│ │ ────┼────┼────┼────┼────┼</div>
 <div class="line">│ │ 1   │    │   4│   3│   3│</div>
 <div class="line">│ │ 2   │   4│    │   3│   3│</div>
@@ -324,18 +324,18 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">│ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos):</div>
 </div><!-- fragment --><p>Neste caso o vizinho tem o mesmo custo, mas é outro vizinho, pelo que vale a pena ainda uma última vez, ver quais os seus vizinhos. Introduza: <b>3; 1; 5.</b></p>
 <div class="fragment"><div class="line"> │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 3</div>
-<div class="line"> │ ┌───── 🔗 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 [1-4]: 1</div>
-<div class="line"> │ │ 📍  1 3 0 3  vizinhança incDecValor (limite 0)</div>
-<div class="line"> │ ├───── 🔗 Vizinhos ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   2 3 0 3  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 2   0 3 0 3  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 3   1 2 0 3  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 4   1 3 1 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 5   1 3 0 2  💰 g:0</div>
-<div class="line"> │ │ 🧑‍🔬 [1-5]: 5</div>
+<div class="line"> │ ┌───── 🔗  ─────</div>
+<div class="line"> │ │ ⚪ [1-4]: 1</div>
+<div class="line"> │ │ ⚪   1 3 0 3  vizinhança incDecValor (limite 0)</div>
+<div class="line"> │ ├───── Vizinhos ─────</div>
+<div class="line"> │ │ ⚪ 1   2 3 0 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 2   0 3 0 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 3   1 2 0 3  💰 g:1</div>
+<div class="line"> │ │ ⚪ 4   1 3 1 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 5   1 3 0 2  💰 g:0</div>
+<div class="line"> │ │ ⚪ [1-5]: 5</div>
 <div class="line"> │ │</div>
-<div class="line"> │ 🏆 ⏱ 2ms  💰 g:0</div>
+<div class="line"> │ 🏆  ⏱ 2ms  💰 g:0</div>
 <div class="line">─┴───────────────────</div>
 <div class="line"> │ │ ::♛ ::</div>
 <div class="line"> │ │   ::  ♛</div>
@@ -344,23 +344,12 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">─┬───────────────────</div>
 <div class="line"> │ └──────────────  </div>
 <div class="line">8 Damas (Inteira)</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
-<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20</div>
-<div class="line">│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150</div>
-<div class="line">│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1</div>
-<div class="line">│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0</div>
-<div class="line">│ P20(TIPO_CRUZAR): 1-ponto | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): incDecValor</div>
-<div class="line">│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line">...</div>
 <div class="line">::♛ ::</div>
 <div class="line">  ::  ♛</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
-<div class="line">┌─ ☰ Menu ────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 ↻  Inicializar │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │</div>
-<div class="line">│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
-<div class="line">└──────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">...</div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem. Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, sendo a solução obitida é retornada.</p>
 <p><a class="anchor" id="invalid"></a></p>
@@ -370,11 +359,11 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
 <div class="line">═╤═ ►  Execução iniciada ═══</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=0 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
-<div class="line"> ├─ ⚙️  ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱   ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=0 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
+<div class="line"> ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱    ═══</div>
 <div class="line">8 Damas (Inteira)</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
 <div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20</div>
 <div class="line">│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150</div>
@@ -387,7 +376,7 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="line">♛ ::  ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
 <div class="line">│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 241 | I4(Épocas): 10 |</div>
 <div class="line">│ I5(Gerações): 250</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
@@ -401,37 +390,45 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
 <div class="line">═╤═ ►  Execução iniciada ═══.</div>
-<div class="line"> │ 🏆 ⏱  💰 g:2</div>
+<div class="line"> │ 🏆  ⏱  💰 g:2</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::  ♛</div>
 <div class="line">─┬───────────────────</div>
-<div class="line"> │ 🏆 ⏱  💰 g:1</div>
+<div class="line"> │ 🏆  ⏱  💰 g:1</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
 <div class="line">─┬───────────────────</div>
-<div class="line"> │ 🏆 ⏱  💰 g:0</div>
+<div class="line"> │ 🏆  ⏱  💰 g:0</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">::  ♛</div>
 <div class="line">♛ ::  ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
 <div class="line">─┬───────────────────</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=1 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
-<div class="line"> ├─ ⚙️  ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱   ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=1 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
+<div class="line"> ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱    ═══</div>
 <div class="line">8 Damas (Inteira)</div>
-<div class="line">...</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20</div>
+<div class="line">│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150</div>
+<div class="line">│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1</div>
+<div class="line">│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0</div>
+<div class="line">│ P20(TIPO_CRUZAR): 1-ponto | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): incDecValor</div>
+<div class="line">│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">::  ♛</div>
 <div class="line">♛ ::  ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
 <div class="line">│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 241 | I4(Épocas): 10 |</div>
 <div class="line">│ I5(Gerações): 250</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
@@ -444,7 +441,7 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
 <div class="line">═╤═ ►  Execução iniciada ═══</div>
-<div class="line"> │ 🏆 ⏱  💰 g:2</div>
+<div class="line"> │ 🏆  ⏱  💰 g:2</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
@@ -452,7 +449,7 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="line">  ::  ♛</div>
 <div class="line">─┬───────────────────</div>
 <div class="line"> ├─── 📆 0 ⏱  ──── 💰 g2-5</div>
-<div class="line"> │ 🏆 ⏱  💰 g:1</div>
+<div class="line"> │ 🏆  ⏱  💰 g:1</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
@@ -463,28 +460,36 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="line"> ├─── 📆 2 ⏱  ──── 💰 g1-5</div>
 <div class="line"> ├─── 📆 3 ⏱  ──── 💰 g1-5</div>
 <div class="line"> ├─── 📆 4 ⏱  ──── 💰 g1-5</div>
-<div class="line"> ├─── 📆 5 ⏱ 1ms  ──── 💰 g1-5</div>
-<div class="line"> ├─── 📆 6 ⏱ 1ms  ──── 💰 g1-4</div>
-<div class="line"> ├─── 📆 7 ⏱ 1ms  ──── 💰 g1-5</div>
-<div class="line"> ├─── 📆 8 ⏱ 1ms  ──── 💰 g1-5</div>
-<div class="line"> ├─── 📆 9 ⏱ 1ms  ──── 💰 g1-4</div>
-<div class="line"> │ 🏆 ⏱ 1ms  💰 g:0</div>
+<div class="line"> ├─── 📆 5 ⏱  ──── 💰 g1-5</div>
+<div class="line"> ├─── 📆 6 ⏱  ──── 💰 g1-4</div>
+<div class="line"> ├─── 📆 7 ⏱  ──── 💰 g1-5</div>
+<div class="line"> ├─── 📆 8 ⏱  ──── 💰 g1-5</div>
+<div class="line"> ├─── 📆 9 ⏱  ──── 💰 g1-4</div>
+<div class="line"> │ 🏆  ⏱  💰 g:0</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">::  ♛</div>
 <div class="line">♛ ::  ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
 <div class="line">─┬───────────────────</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=2 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
-<div class="line"> ├─ ⚙️  ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱  1ms  ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=2 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
+<div class="line"> ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱   1ms  ═══</div>
 <div class="line">8 Damas (Inteira)</div>
-<div class="line">...</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
+<div class="line">│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 1</div>
+<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20</div>
+<div class="line">│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150</div>
+<div class="line">│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1</div>
+<div class="line">│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0</div>
+<div class="line">│ P20(TIPO_CRUZAR): 1-ponto | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): incDecValor</div>
+<div class="line">│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">::  ♛</div>
 <div class="line">♛ ::  ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
 <div class="line">│ I1(Resultado): 0 | I2(Tempo(ms)): 1 | I3(Iterações): 241 | I4(Épocas): 10 |</div>
 <div class="line">│ I5(Gerações): 250</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
@@ -497,7 +502,7 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
 <div class="line">═╤═ ►  Execução iniciada ═══</div>
-<div class="line"> │ 🏆 ⏱  💰 g:2</div>
+<div class="line"> │ 🏆  ⏱  💰 g:2</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
@@ -505,84 +510,84 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="line">  ::  ♛</div>
 <div class="line">─┬───────────────────</div>
 <div class="line"> ├─┬─ 📆 0 ⏱  ──── 💰 g2-5 [📏 1-4 (μ=2, melhor/pior 3)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   2│   4│   3│   4│   4│   2│   3│   2│   4│   2│</div>
 <div class="line"> │ │  10│   2│   4│   2│   5│   3│   2│   5│   3│   5│   4│</div>
 <div class="line"> │ └────────────────────────────────────</div>
-<div class="line"> │ 🏆 ⏱  💰 g:1</div>
+<div class="line"> │ 🏆  ⏱  💰 g:1</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
 <div class="line">─┬───────────────────</div>
-<div class="line"> ├─┬─ 📆 1 ⏱ 1ms  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> ├─┬─ 📆 1 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   1│   4│   4│   4│   3│   2│   5│   4│   3│   2│</div>
 <div class="line"> │ │  10│   4│   4│   2│   3│   2│   2│   3│   4│   4│   3│</div>
 <div class="line"> │ └────────────────────────────────────</div>
-<div class="line"> ├─┬─ 📆 2 ⏱ 1ms  ──── 💰 g1-5 [📏 1-4 (μ=3, melhor/pior 3)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> ├─┬─ 📆 2 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=3, melhor/pior 3)]</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   2│   4│   3│   5│   2│   3│   4│   3│   3│   4│</div>
 <div class="line"> │ │  10│   4│   3│   2│   2│   4│   1│   3│   2│   4│   2│</div>
 <div class="line"> │ └────────────────────────────────────</div>
-<div class="line"> ├─┬─ 📆 3 ⏱ 1ms  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 3)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> ├─┬─ 📆 3 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 3)]</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   4│   3│   5│   3│   4│   2│   1│   4│   4│   3│</div>
 <div class="line"> │ │  10│   3│   1│   3│   3│   3│   3│   2│   4│   2│   4│</div>
 <div class="line"> │ └────────────────────────────────────</div>
 <div class="line"> ├─┬─ 📆 4 ⏱ 1ms  ──── 💰 g1-5 [📏 0-4 (μ=2, melhor/pior 2)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   4│   2│   1│   2│   3│   1│   4│   4│   3│   3│</div>
 <div class="line"> │ │  10│   4│   3│   3│   3│   1│   5│   3│   3│   2│   4│</div>
 <div class="line"> │ └────────────────────────────────────</div>
 <div class="line"> ├─┬─ 📆 5 ⏱ 1ms  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 3)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   1│   4│   1│   3│   3│   4│   2│   4│   4│   1│</div>
 <div class="line"> │ │  10│   4│   2│   4│   3│   3│   3│   5│   2│   3│   4│</div>
 <div class="line"> │ └────────────────────────────────────</div>
 <div class="line"> ├─┬─ 📆 6 ⏱ 1ms  ──── 💰 g1-4 [📏 1-4 (μ=2, melhor/pior 4)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   3│   4│   3│   2│   4│   2│   1│   4│   1│   2│</div>
 <div class="line"> │ │  10│   4│   3│   1│   3│   4│   3│   2│   3│   1│   3│</div>
 <div class="line"> │ └────────────────────────────────────</div>
 <div class="line"> ├─┬─ 📆 7 ⏱ 1ms  ──── 💰 g1-5 [📏 0-4 (μ=2, melhor/pior 4)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   3│   3│   4│   4│   2│   3│   3│   2│   1│   5│</div>
 <div class="line"> │ │  10│   4│   3│   4│   1│   2│   1│   1│   3│   5│   4│</div>
 <div class="line"> │ └────────────────────────────────────</div>
-<div class="line"> ├─┬─ 📆 8 ⏱ 2ms  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> ├─┬─ 📆 8 ⏱ 1ms  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   5│   2│   4│   4│   4│   3│   4│   1│   5│   1│</div>
 <div class="line"> │ │  10│   1│   4│   3│   3│   3│   1│   3│   4│   3│   4│</div>
 <div class="line"> │ └────────────────────────────────────</div>
-<div class="line"> ├─┬─ 📆 9 ⏱ 2ms  ──── 💰 g1-4 [📏 0-4 (μ=2, melhor/pior 2)]</div>
-<div class="line"> │ │🧑‍🔬💰│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> ├─┬─ 📆 9 ⏱ 1ms  ──── 💰 g1-4 [📏 0-4 (μ=2, melhor/pior 2)]</div>
+<div class="line"> │ │⚪ 💰 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
 <div class="line"> │ │   0│   2│   3│   2│   3│   2│   2│   1│   1│   2│   2│</div>
 <div class="line"> │ │  10│   4│   3│   2│   3│   4│   2│   2│   3│   2│   3│</div>
 <div class="line"> │ └────────────────────────────────────</div>
-<div class="line"> │ 🏆 ⏱ 2ms  💰 g:0</div>
+<div class="line"> │ 🏆  ⏱ 1ms  💰 g:0</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">::  ♛</div>
 <div class="line">♛ ::  ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
 <div class="line">─┬───────────────────</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=3 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
-<div class="line"> ├─ ⚙️  ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱  2ms  ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=3 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
+<div class="line"> ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱   1ms  ═══</div>
 <div class="line">8 Damas (Inteira)</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 1</div>
 <div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20</div>
 <div class="line">│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150</div>
@@ -595,8 +600,8 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="line">♛ ::  ::</div>
 <div class="line">::  ::♛</div>
 <div class="line">  ♛   ::</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I1(Resultado): 0 | I2(Tempo(ms)): 2 | I3(Iterações): 241 | I4(Épocas): 10 |</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(Resultado): 0 | I2(Tempo(ms)): 1 | I3(Iterações): 241 | I4(Épocas): 10 |</div>
 <div class="line">│ I5(Gerações): 250</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">...</div>
@@ -611,7 +616,7 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="fragment"><div class="line">Opção: 6</div>
 <div class="line"> </div>
 <div class="line">═╤═ ►  Execução iniciada ═══</div>
-<div class="line"> │ 🏆 ⏱  💰 g:2</div>
+<div class="line"> │ 🏆  ⏱  💰 g:2</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">♛   ::</div>
 <div class="line">  ::♛ ::</div>
@@ -619,42 +624,42 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="line">  ::  ♛</div>
 <div class="line">─┬───────────────────</div>
 <div class="line"> ├─┬─ 📆 0 ⏱  ──── 💰 g2-5</div>
-<div class="line"> │ ├───── 👥 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   0 2 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 2   3 1 1 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 3   1 0 3 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 4   3 3 1 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 5   3 1 2 3  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 6   3 0 2 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 7   3 0 3 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 8   2 0 2 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 9   0 0 0 3  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 10  3 0 0 2  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 11  0 3 1 1  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 12  1 2 3 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 13  2 3 3 0  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 14  0 0 1 0  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 15  0 3 0 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 16  3 0 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 17  1 2 1 2  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 18  3 0 1 1  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 19  1 2 1 0  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 20  0 0 2 2  💰 g:4</div>
+<div class="line"> │ ├───── 👥  ─────</div>
+<div class="line"> │ │ ⚪ 1   0 2 0 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 2   3 1 1 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 3   1 0 3 0  💰 g:3</div>
+<div class="line"> │ │ ⚪ 4   3 3 1 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 5   3 1 2 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 6   3 0 2 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 7   3 0 3 0  💰 g:3</div>
+<div class="line"> │ │ ⚪ 8   2 0 2 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 9   0 0 0 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 10  3 0 0 2  💰 g:2</div>
+<div class="line"> │ │ ⚪ 11  0 3 1 1  💰 g:2</div>
+<div class="line"> │ │ ⚪ 12  1 2 3 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 13  2 3 3 0  💰 g:2</div>
+<div class="line"> │ │ ⚪ 14  0 0 1 0  💰 g:5</div>
+<div class="line"> │ │ ⚪ 15  0 3 0 0  💰 g:3</div>
+<div class="line"> │ │ ⚪ 16  3 0 0 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 17  1 2 1 2  💰 g:5</div>
+<div class="line"> │ │ ⚪ 18  3 0 1 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 19  1 2 1 0  💰 g:5</div>
+<div class="line"> │ │ ⚪ 20  0 0 2 2  💰 g:4</div>
 <div class="line"> │ ├───── 🌈  ─────</div>
-<div class="line"> │ │  🧑‍🔬 │ 🧑‍🔬 │ 📏 │</div>
+<div class="line"> │ │  ⚪  │ ⚪  │ 📏  │</div>
 <div class="line"> │ │ ────┼────┼────┼</div>
-<div class="line"> │ │ 17  │13  │   4│</div>
-<div class="line"> │ │ 14  │18  │   2│</div>
-<div class="line"> │ │ 1   │19  │   3│</div>
-<div class="line"> │ │ 6   │15  │   4│</div>
-<div class="line"> │ │ 12  │3   │   1│</div>
-<div class="line"> │ │ 2   │9   │   4│</div>
-<div class="line"> │ │ 10  │8   │   3│</div>
-<div class="line"> │ │ 4   │20  │   4│</div>
-<div class="line"> │ │ 11  │7   │   4│</div>
-<div class="line"> │ │ 16  │5   │   2│</div>
+<div class="line"> │ │ 1   │2   │   4│</div>
+<div class="line"> │ │ 3   │4   │   3│</div>
+<div class="line"> │ │ 5   │6   │   1│</div>
+<div class="line"> │ │ 7   │8   │   3│</div>
+<div class="line"> │ │ 9   │10  │   2│</div>
+<div class="line"> │ │ 11  │12  │   4│</div>
+<div class="line"> │ │ 13  │14  │   3│</div>
+<div class="line"> │ │ 15  │16  │   3│</div>
+<div class="line"> │ │ 17  │18  │   3│</div>
+<div class="line"> │ │ 19  │20  │   4│</div>
 <div class="line"> │ │ ────┴────┴────┴</div>
-<div class="line"> │ ├─┬─── FASE 🎯 Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
+<div class="line"> │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
 <div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
 <div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
@@ -663,331 +668,331 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="line"> │ │ ├───── Número de seleções ─────</div>
 <div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   1│   1│   1│   1│   1│   1│   1│   1│   1│   1│</div>
-<div class="line"> │ │ │   10│   1│   1│   2│   0│   1│   2│   0│   1│   1│   1│</div>
+<div class="line"> │ │ │    0│   2│   1│   1│   0│   1│   1│   1│   2│   0│   2│</div>
+<div class="line"> │ │ │   10│   1│   1│   1│   1│   1│   1│   1│   1│   1│   0│</div>
 <div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE Reproduzir 20 pais ─────</div>
-<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑) ─────</div>
+<div class="line"> │ ├─┬─── FASE 🧬  Reproduzir 20 pais ─────</div>
+<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑 ) ─────</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│  10⇄  14│   6⇄   8│  16⇄   8│   5⇄   1│  15⇄  13│</div>
+<div class="line"> │ │ │   10│  11⇄  17│  10⇄  19│  18⇄   3│   2⇄   7│  12⇄   1│</div>
+<div class="line"> │ 🏆  ⏱ 1ms  💰 g:1</div>
+<div class="line">─┴───────────────────</div>
+<div class="line">♛   ::</div>
+<div class="line">  ::♛ ::</div>
+<div class="line">::  ::♛</div>
+<div class="line">  ♛   ::</div>
+<div class="line">─┬───────────────────</div>
+<div class="line"> │ │ ├───── Pais (💰 ) ─────</div>
 <div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│  12⇄  16│  15⇄  16│   9⇄   4│   6⇄  11│   3⇄  13│</div>
-<div class="line"> │ │ │   10│   5⇄   7│  18⇄  13│   2⇄  19│  10⇄   8│  20⇄   1│</div>
-<div class="line"> │ 🏆 ⏱ 1ms  💰 g:1</div>
+<div class="line"> │ │ │    0│   2⇄   5│   2⇄   2│   2⇄   2│   4⇄   2│   3⇄   2│</div>
+<div class="line"> │ │ │   10│   2⇄   5│   2⇄   5│   3⇄   3│   4⇄   3│   4⇄   2│</div>
+<div class="line"> │ │ ├───── Filhos (�) �10  �14 ───── �4 �10 �6</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   1⇄   4│   4⇄   4│   4⇄   3│   2⇄   5│   2⇄   4│</div>
+<div class="line"> │ │ │   10│   3⇄   2│   4⇄   4│   2⇄   3│   2⇄   2│   3⇄   4│</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ ├─┬─── FASE 🛡️  Sobrevivência ─────</div>
+<div class="line"> │ │ ├───── ⏳  Idade ─────</div>
+<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  9✖ →🆕 ─────</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ └───── FASE Diversidade - limpeza ─────  🧹 4</div>
+<div class="line"> ├─┬─ 📆 1 ⏱ 1ms  ──── 💰 g1-5</div>
+<div class="line"> │ ├───── 👥  ─────</div>
+<div class="line"> │ │ ⚪ 1   0 2 3 1  💰 g:1</div>
+<div class="line"> │ │ ⚪ 2   1 2 3 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 3   3 1 1 1  💰 g:4</div>
+<div class="line"> │ │ ⚪ 4   1 0 3 2  💰 g:4</div>
+<div class="line"> │ │ ⚪ 5   0 0 3 0  💰 g:3</div>
+<div class="line"> │ │ ⚪ 6   1 2 0 2  💰 g:2</div>
+<div class="line"> │ │ ⚪ 7   3 0 1 0  💰 g:5</div>
+<div class="line"> │ │ ⚪ 8   0 0 1 2  💰 g:4</div>
+<div class="line"> │ │ ⚪ 9   0 3 0 0  💰 g:3</div>
+<div class="line"> │ │ ⚪ 10  1 3 3 0  💰 g:2</div>
+<div class="line"> │ │ ⚪ 11  0 2 0 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 12  3 1 3 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 13  3 0 0 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 14  3 0 1 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 15  1 0 2 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 16  3 0 2 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 17  0 1 0 2  💰 g:3</div>
+<div class="line"> │ │ ⚪ 18  3 1 1 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 19  3 2 2 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 20  3 3 0 0  💰 g:3</div>
+<div class="line"> │ ├───── 🌈  ─────</div>
+<div class="line"> │ │  ⚪  │ ⚪  │ 📏  │</div>
+<div class="line"> │ │ ────┼────┼────┼</div>
+<div class="line"> │ │ 1   │2   │   2│</div>
+<div class="line"> │ │ 3   │4   │   4│</div>
+<div class="line"> │ │ 5   │6   │   4│</div>
+<div class="line"> │ │ 7   │8   │   2│</div>
+<div class="line"> │ │ 9   │10  │   2│</div>
+<div class="line"> │ │ 11  │12  │   4│</div>
+<div class="line"> │ │ 13  │14  │   1│</div>
+<div class="line"> │ │ 15  │16  │   1│</div>
+<div class="line"> │ │ 17  │18  │   3│</div>
+<div class="line"> │ │ 19  │20  │   3│</div>
+<div class="line"> │ │ ────┴────┴────┴</div>
+<div class="line"> │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
+<div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
+<div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│  75│  43│  46│  38│  57│  64│  25│  30│  49│  62│</div>
+<div class="line"> │ │ │   10│  36│  33│  72│  51│  70│  67│  54│  41│  28│  59│</div>
+<div class="line"> │ │ ├───── Número de seleções ─────</div>
+<div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   1│   1│   1│   1│   1│   1│   1│   0│   1│   2│</div>
+<div class="line"> │ │ │   10│   0│   1│   1│   1│   2│   1│   1│   1│   1│   1│</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ ├─┬─── FASE 🧬  Reproduzir 20 pais ─────</div>
+<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑 ) ─────</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│  13⇄   6│  10⇄   5│  17⇄  14│   9⇄  20│   1⇄   2│</div>
+<div class="line"> │ │ │   10│  18⇄  15│  19⇄  16│   7⇄   4│   3⇄  15│  10⇄  12│</div>
+<div class="line"> │ │ ├───── Pais (💰 ) ─────</div>
+<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   2⇄   2│   2⇄   3│   3⇄   3│   3⇄   3│   1⇄   4│</div>
+<div class="line"> │ │ │   10│   4⇄   2│   4⇄   2│   5⇄   4│   4⇄   2│   2⇄   4│</div>
+<div class="line"> │ │ ├───── Filhos (�) �10  �10 ───── �4 �13 �3</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   2⇄   4│   3⇄   5│   2⇄   3│   2⇄   4│   3⇄   3│</div>
+<div class="line"> │ │ │   10│   4⇄   4│   3⇄   2│   2⇄   4│   1⇄   3│   2⇄   4│</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ ├─┬─── FASE 🛡️  Sobrevivência ─────</div>
+<div class="line"> │ │ ├───── ⏳  Idade ─────</div>
+<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  7✖ →🆕 ─────</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ └───── FASE Diversidade - limpeza ─────</div>
+<div class="line"> ...</div>
+<div class="line">  ├─┬─ 📆 7 ⏱ 4ms  ──── 💰 g1-5</div>
+<div class="line"> │ ├───── 👥  ─────</div>
+<div class="line"> │ │ ⚪ 1   3 0 3 2  💰 g:3</div>
+<div class="line"> │ │ ⚪ 2   0 0 2 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 3   2 3 3 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 4   2 2 2 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 5   2 2 3 1  💰 g:2</div>
+<div class="line"> │ │ ⚪ 6   3 0 3 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 7   1 3 0 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 8   2 0 2 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 9   1 3 0 0  💰 g:1</div>
+<div class="line"> │ │ ⚪ 10  0 1 2 1  💰 g:5</div>
+<div class="line"> │ │ ⚪ 11  1 1 3 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 12  0 3 0 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 13  1 3 3 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 14  0 2 3 1  💰 g:1</div>
+<div class="line"> │ │ ⚪ 15  0 1 3 1  💰 g:2</div>
+<div class="line"> │ │ ⚪ 16  1 2 0 3  💰 g:1</div>
+<div class="line"> │ │ ⚪ 17  0 2 3 1  💰 g:1</div>
+<div class="line"> │ │ ⚪ 18  2 0 0 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 19  3 2 3 2  💰 g:5</div>
+<div class="line"> │ │ ⚪ 20  1 3 1 1  💰 g:4</div>
+<div class="line"> │ ├───── 🌈  ─────</div>
+<div class="line"> │ │  ⚪  │ ⚪  │ 📏  │</div>
+<div class="line"> │ │ ────┼────┼────┼</div>
+<div class="line"> │ │ 1   │2   │   3│</div>
+<div class="line"> │ │ 3   │4   │   3│</div>
+<div class="line"> │ │ 5   │6   │   3│</div>
+<div class="line"> │ │ 7   │8   │   4│</div>
+<div class="line"> │ │ 9   │10  │   4│</div>
+<div class="line"> │ │ 11  │12  │   4│</div>
+<div class="line"> │ │ 13  │14  │   3│</div>
+<div class="line"> │ │ 15  │16  │   4│</div>
+<div class="line"> │ │ 17  │18  │   3│</div>
+<div class="line"> │ │ 19  │20  │   4│</div>
+<div class="line"> │ │ ────┴────┴────┴</div>
+<div class="line"> │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
+<div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
+<div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│  43│  49│  36│  33│  62│  54│  57│  59│  72│  25│</div>
+<div class="line"> │ │ │   10│  38│  51│  30│  75│  64│  67│  70│  46│  28│  41│</div>
+<div class="line"> │ │ ├───── Número de seleções ─────</div>
+<div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   1│   1│   1│   1│   1│   1│   1│   1│   2│   0│</div>
+<div class="line"> │ │ │   10│   1│   1│   1│   1│   1│   2│   1│   1│   1│   0│</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ ├─┬─── FASE 🧬  Reproduzir 20 pais ─────</div>
+<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑 ) ─────</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│  12⇄   6│  13⇄  19│   7⇄   2│   9⇄  16│  16⇄  15│</div>
+<div class="line"> │ │ │   10│  17⇄  18│   1⇄   9│  14⇄   4│   5⇄  11│   8⇄   3│</div>
+<div class="line"> │ │ ├───── Pais (💰 ) ─────</div>
+<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   3⇄   3│   4⇄   5│   3⇄   3│   1⇄   1│   1⇄   2│</div>
+<div class="line"> │ │ │   10│   1⇄   3│   3⇄   1│   1⇄   4│   2⇄   4│   2⇄   4│</div>
+<div class="line"> │ │ ├───── Filhos (�) �10  �11 ───── �2 �11 �7</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   5⇄   5│   2⇄   4│   4⇄   4│   3⇄   4│   1⇄   1│</div>
+<div class="line"> │ │ │   10│   1⇄   5│   1⇄   1│   4⇄   3│   3⇄   3│   1⇄   3│</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ ├─┬─── FASE 🛡️  Sobrevivência ─────</div>
+<div class="line"> │ │ ├───── ⏳  Idade ─────</div>
+<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  11✖ →🆕 ─────</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ └───── FASE Diversidade - limpeza ─────  🧹 2 🧹 10</div>
+<div class="line"> ├─┬─ 📆 8 ⏱ 4ms  ──── 💰 g1-5</div>
+<div class="line"> │ ├───── 👥  ─────</div>
+<div class="line"> │ │ ⚪ 1   2 3 2 3  💰 g:5</div>
+<div class="line"> │ │ ⚪ 2   0 1 3 1  💰 g:2</div>
+<div class="line"> │ │ ⚪ 3   1 1 3 3  💰 g:4</div>
+<div class="line"> │ │ ⚪ 4   2 2 2 1  💰 g:4</div>
+<div class="line"> │ │ ⚪ 5   2 2 2 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 6   1 3 0 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 7   3 0 0 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 8   0 2 3 1  💰 g:1</div>
+<div class="line"> │ │ ⚪ 9   0 1 0 1  💰 g:5</div>
+<div class="line"> │ │ ⚪ 10  1 2 0 3  💰 g:1</div>
+<div class="line"> │ │ ⚪ 11  1 3 0 3  💰 g:1</div>
+<div class="line"> │ │ ⚪ 12  1 0 0 1  💰 g:4</div>
+<div class="line"> │ │ ⚪ 13  1 0 3 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 14  0 2 3 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 15  1 3 3 2  💰 g:3</div>
+<div class="line"> │ │ ⚪ 16  3 0 3 1  💰 g:1</div>
+<div class="line"> │ │ ⚪ 17  3 3 0 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 18  2 1 0 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 19  2 3 0 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 20  2 2 0 0  💰 g:4</div>
+<div class="line"> │ ├───── 🌈  ─────</div>
+<div class="line"> │ │  ⚪  │ ⚪  │ 📏  │</div>
+<div class="line"> │ │ ────┼────┼────┼</div>
+<div class="line"> │ │ 1   │2   │   4│</div>
+<div class="line"> │ │ 3   │4   │   4│</div>
+<div class="line"> │ │ 5   │6   │   4│</div>
+<div class="line"> │ │ 7   │8   │   4│</div>
+<div class="line"> │ │ 9   │10  │   3│</div>
+<div class="line"> │ │ 11  │12  │   2│</div>
+<div class="line"> │ │ 13  │14  │   3│</div>
+<div class="line"> │ │ 15  │16  │   3│</div>
+<div class="line"> │ │ 17  │18  │   3│</div>
+<div class="line"> │ │ 19  │20  │   2│</div>
+<div class="line"> │ │ ────┴────┴────┴</div>
+<div class="line"> │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
+<div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
+<div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│  25│  64│  30│  41│  36│  57│  33│  67│  28│  75│</div>
+<div class="line"> │ │ │   10│  70│  38│  51│  59│  49│  72│  54│  46│  62│  43│</div>
+<div class="line"> │ │ ├───── Número de seleções ─────</div>
+<div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   0│   2│   0│   1│   1│   1│   0│   2│   0│   2│</div>
+<div class="line"> │ │ │   10│   1│   1│   1│   1│   1│   2│   1│   1│   1│   1│</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ ├─┬─── FASE 🧬  Reproduzir 20 pais ─────</div>
+<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑 ) ─────</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   2⇄  19│   5⇄  20│  13⇄  12│  16⇄  10│   4⇄   6│</div>
+<div class="line"> │ │ │   10│  17⇄  15│  10⇄   8│  11⇄   2│  16⇄  18│   8⇄  14│</div>
+<div class="line"> │ │ ├───── Pais (💰 ) ─────</div>
+<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   2⇄   3│   4⇄   4│   3⇄   4│   1⇄   1│   4⇄   3│</div>
+<div class="line"> │ │ │   10│   3⇄   3│   1⇄   1│   1⇄   2│   1⇄   4│   1⇄   3│</div>
+<div class="line"> │ │ ├───── Filhos (�) �10  �12 ───── �7 �7 �6</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   2⇄   3│   2⇄   3│   2⇄   2│   2⇄   1│   1⇄   2│</div>
+<div class="line"> │ │ │   10│   2⇄   4│   3⇄   2│   3⇄   3│   4⇄   4│   2⇄   2│</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ ├─┬─── FASE 🛡️  Sobrevivência ─────</div>
+<div class="line"> │ │ ├───── ⏳  Idade ─────</div>
+<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  6✖ →🆕 ─────</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ └───── FASE Diversidade - limpeza ─────  🧹 15 🧹 17</div>
+<div class="line"> ├─┬─ 📆 9 ⏱ 5ms  ──── 💰 g1-4</div>
+<div class="line"> │ ├───── 👥  ─────</div>
+<div class="line"> │ │ ⚪ 1   0 3 3 1  💰 g:2</div>
+<div class="line"> │ │ ⚪ 2   0 2 3 0  💰 g:3</div>
+<div class="line"> │ │ ⚪ 3   2 0 2 1  💰 g:2</div>
+<div class="line"> │ │ ⚪ 4   3 1 0 3  💰 g:3</div>
+<div class="line"> │ │ ⚪ 5   0 3 1 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 6   0 2 0 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 7   0 2 3 1  💰 g:1</div>
+<div class="line"> │ │ ⚪ 8   1 3 0 3  💰 g:1</div>
+<div class="line"> │ │ ⚪ 9   0 3 3 2  💰 g:2</div>
+<div class="line"> │ │ ⚪ 10  2 2 3 1  💰 g:2</div>
+<div class="line"> │ │ ⚪ 11  1 3 3 1  💰 g:4</div>
+<div class="line"> │ │ ⚪ 12  1 2 0 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 13  3 0 0 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 14  1 0 3 1  💰 g:3</div>
+<div class="line"> │ │ ⚪ 15  2 2 2 0  💰 g:4</div>
+<div class="line"> │ │ ⚪ 16  0 1 3 1  💰 g:2</div>
+<div class="line"> │ │ ⚪ 17  2 2 0 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 18  0 3 2 2  💰 g:3</div>
+<div class="line"> │ │ ⚪ 19  3 2 0 3  💰 g:2</div>
+<div class="line"> │ │ ⚪ 20  1 2 0 1  💰 g:3</div>
+<div class="line"> │ ├───── 🌈  ─────</div>
+<div class="line"> │ │  ⚪  │ ⚪  │ 📏  │</div>
+<div class="line"> │ │ ────┼────┼────┼</div>
+<div class="line"> │ │ 1   │2   │   2│</div>
+<div class="line"> │ │ 3   │4   │   4│</div>
+<div class="line"> │ │ 5   │6   │   2│</div>
+<div class="line"> │ │ 7   │8   │   4│</div>
+<div class="line"> │ │ 9   │10  │   3│</div>
+<div class="line"> │ │ 11  │12  │   2│</div>
+<div class="line"> │ │ 13  │14  │   3│</div>
+<div class="line"> │ │ 15  │16  │   4│</div>
+<div class="line"> │ │ 17  │18  │   4│</div>
+<div class="line"> │ │ 19  │20  │   2│</div>
+<div class="line"> │ │ ────┴────┴────┴</div>
+<div class="line"> │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
+<div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
+<div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│  57│  41│  49│  36│  51│  46│  72│  75│  67│  54│</div>
+<div class="line"> │ │ │   10│  28│  33│  64│  30│  25│  59│  62│  43│  70│  38│</div>
+<div class="line"> │ │ ├───── Número de seleções ─────</div>
+<div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│   1│   1│   1│   0│   1│   1│   2│   1│   2│   1│</div>
+<div class="line"> │ │ │   10│   0│   1│   1│   1│   0│   1│   2│   0│   2│   1│</div>
+<div class="line"> │ │ └────────────────────────────────────</div>
+<div class="line"> │ ├─┬─── FASE 🧬  Reproduzir 20 pais ─────</div>
+<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑 ) ─────</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
+<div class="line"> │ │ │    0│  10⇄   1│  19⇄   3│   8⇄  17│  14⇄  12│   7⇄  16│</div>
+<div class="line"> │ │ │   10│  17⇄   7│   9⇄   9│  20⇄   6│   5⇄   2│  19⇄  13│</div>
+<div class="line"> │ 🏆  ⏱ 6ms  💰 g:0</div>
 <div class="line">─┴───────────────────</div>
 <div class="line">::  ♛</div>
 <div class="line">♛ ::  ::</div>
 <div class="line">::  ::♛</div>
-<div class="line">♛ ::  ::</div>
+<div class="line">  ♛   ::</div>
 <div class="line">─┬───────────────────</div>
-<div class="line"> │ │ ├───── Pais (💰) ─────</div>
+<div class="line"> │ │ ├───── Pais (💰 ) ─────</div>
 <div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   4⇄   2│   3⇄   2│   4⇄   4│   2⇄   2│   3⇄   2│</div>
-<div class="line"> │ │ │   10│   4⇄   3│   3⇄   2│   4⇄   5│   2⇄   2│   4⇄   2│</div>
-<div class="line"> │ │ ├───── Filhos (💰) 🧬10  ✨9 ───── 📈3 ➖12 📉5</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
+<div class="line"> │ │ │    0│   2⇄   2│   2⇄   2│   1⇄   2│   3⇄   3│   1⇄   2│</div>
+<div class="line"> │ │ │   10│   2⇄   1│   2⇄   2│   3⇄   2│   2⇄   3│   2⇄   2│</div>
+<div class="line"> │ │ ├───── Filhos (�) �10  �12 ───── �5 �9 �6</div>
+<div class="line"> │ │ │ ⚪ │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
 <div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   4⇄   2│   3⇄   2│   5⇄   4│   2⇄   4│   2⇄   2│</div>
-<div class="line"> │ │ │   10│   1⇄   2│   2⇄   4│   3⇄   5│   4⇄   4│   4⇄   2│</div>
+<div class="line"> │ │ │    0│   2⇄   2│   2⇄   3│   2⇄   2│   3⇄   2│   1⇄   2│</div>
+<div class="line"> │ │ │   10│   2⇄   4│   0⇄   4│   4⇄   1│   5⇄   1│   1⇄   3│</div>
 <div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE 🛡️ Sobrevivência ─────</div>
-<div class="line"> │ │ ├───── ⏳ Idade ─────</div>
-<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  12✖ →🆕 ─────</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ └───── FASE Diversidade - limpeza ─────  🧹✖ 18</div>
-<div class="line"> ├─┬─ 📆 1 ⏱ 1ms  ──── 💰 g1-5</div>
-<div class="line"> │ ├───── 👥 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   0 2 2 2  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 2   0 2 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 3   2 0 3 2  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 4   3 0 2 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 5   1 2 1 0  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 6   3 3 1 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 7   2 0 1 1  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 8   3 3 3 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 9   3 0 2 0  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 10  3 1 2 0  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 11  2 0 3 0  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 12  2 0 2 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 13  3 3 1 1  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 14  3 1 0 3  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 15  3 0 1 0  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 16  3 0 0 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 17  0 0 0 3  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 18  3 0 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 19  3 3 0 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 20  0 2 0 1  💰 g:2</div>
-<div class="line"> │ ├───── 🌈  ─────</div>
-<div class="line"> │ │  🧑‍🔬 │ 🧑‍🔬 │ 📏 │</div>
-<div class="line"> │ │ ────┼────┼────┼</div>
-<div class="line"> │ │ 10  │19  │   2│</div>
-<div class="line"> │ │ 6   │9   │   2│</div>
-<div class="line"> │ │ 7   │2   │   4│</div>
-<div class="line"> │ │ 3   │8   │   3│</div>
-<div class="line"> │ │ 11  │14  │   4│</div>
-<div class="line"> │ │ 20  │16  │   3│</div>
-<div class="line"> │ │ 17  │12  │   2│</div>
-<div class="line"> │ │ 1   │13  │   4│</div>
-<div class="line"> │ │ 15  │4   │   2│</div>
-<div class="line"> │ │ 5   │18  │   4│</div>
-<div class="line"> │ │ ────┴────┴────┴</div>
-<div class="line"> │ ├─┬─── FASE 🎯 Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
-<div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
-<div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│  33│  54│  51│  57│  25│  36│  62│  38│  64│  72│</div>
-<div class="line"> │ │ │   10│  75│  70│  30│  49│  28│  41│  43│  67│  46│  59│</div>
-<div class="line"> │ │ ├───── Número de seleções ─────</div>
-<div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   1│   1│   1│   1│   1│   0│   2│   0│   2│   1│</div>
-<div class="line"> │ │ │   10│   2│   1│   1│   1│   0│   1│   1│   1│   1│   1│</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE Reproduzir 20 pais ─────</div>
-<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑) ─────</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│  10⇄  12│  13⇄   4│  16⇄   5│   2⇄  17│  19⇄  20│</div>
-<div class="line"> │ │ │   10│  11⇄  11│  18⇄  14│   7⇄   7│   3⇄   9│   1⇄   9│</div>
-<div class="line"> │ │ ├───── Pais (💰) ─────</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   2⇄   2│   4⇄   2│   4⇄   5│   2⇄   4│   3⇄   2│</div>
-<div class="line"> │ │ │   10│   1⇄   1│   2⇄   3│   2⇄   2│   3⇄   2│   4⇄   2│</div>
-<div class="line"> │ │ ├───── Filhos (💰) 🧬10  ✨10 ───── 📈3 ➖10 📉7</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   4⇄   2│   2⇄   2│   2⇄   3│   2⇄   2│   4⇄   1│</div>
-<div class="line"> │ │ │   10│   3⇄   2│   2⇄   4│   4⇄   5│   3⇄   2│   2⇄   2│</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE 🛡️ Sobrevivência ─────</div>
-<div class="line"> │ │ ├───── ⏳ Idade ─────</div>
-<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  20✖ →🆕 ─────</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ └───── FASE Diversidade - limpeza ─────  🧹✖ 18 🧹✖ 8 🧹✖ 15</div>
-<div class="line"> ├─┬─ 📆 2 ⏱ 1ms  ──── 💰 g1-6</div>
-<div class="line"> │ ├───── 👥 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   0 2 2 3  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 2   3 0 2 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 3   3 0 2 2  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 4   3 0 2 0  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 5   2 0 1 1  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 6   2 0 0 1  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 7   3 0 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 8   2 0 0 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 9   2 0 3 0  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 10  0 3 0 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 11  0 2 1 1  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 12  0 2 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 13  0 0 0 3  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 14  1 2 1 1  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 15  2 3 1 1  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 16  2 0 2 0  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 17  0 3 2 1  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 18  0 1 1 1  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 19  2 3 3 2  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 20  3 2 1 0  💰 g:6</div>
-<div class="line"> │ ├───── 🌈  ─────</div>
-<div class="line"> │ │  🧑‍🔬 │ 🧑‍🔬 │ 📏 │</div>
-<div class="line"> │ │ ────┼────┼────┼</div>
-<div class="line"> │ │ 1   │16  │   3│</div>
-<div class="line"> │ │ 10  │18  │   3│</div>
-<div class="line"> │ │ 6   │17  │   3│</div>
-<div class="line"> │ │ 13  │20  │   4│</div>
-<div class="line"> │ │ 4   │11  │   4│</div>
-<div class="line"> │ │ 12  │7   │   2│</div>
-<div class="line"> │ │ 9   │14  │   4│</div>
-<div class="line"> │ │ 2   │19  │   4│</div>
-<div class="line"> │ │ 3   │5   │   3│</div>
-<div class="line"> │ │ 15  │8   │   3│</div>
-<div class="line"> │ │ ────┴────┴────┴</div>
-<div class="line"> │ ├─┬─── FASE 🎯 Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
-<div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
-<div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│  38│  59│  62│  57│  64│  49│  54│  33│  75│  51│</div>
-<div class="line"> │ │ │   10│  67│  70│  36│  28│  46│  72│  43│  41│  30│  25│</div>
-<div class="line"> │ │ ├───── Número de seleções ─────</div>
-<div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   1│   1│   2│   1│   1│   1│   1│   1│   1│   1│</div>
-<div class="line"> │ │ │   10│   2│   1│   1│   0│   1│   2│   1│   0│   1│   0│</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE Reproduzir 20 pais ─────</div>
-<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑) ─────</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│  12⇄   5│  15⇄   8│   9⇄  17│  11⇄  16│   1⇄  10│</div>
-<div class="line"> │ │ │   10│   6⇄  11│   3⇄   2│  16⇄   4│  13⇄   3│   7⇄  19│</div>
-<div class="line"> │ │ ├───── Pais (💰) ─────</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   2⇄   2│   3⇄   4│   1⇄   4│   2⇄   2│   4⇄   3│</div>
-<div class="line"> │ │ │   10│   3⇄   2│   2⇄   2│   2⇄   2│   4⇄   2│   2⇄   4│</div>
-<div class="line"> │ │ ├───── Filhos (💰) 🧬10  ✨13 ───── 📈0 ➖15 📉5</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   4⇄   5│   4⇄   3│   4⇄   2│   4⇄   5│   4⇄   3│</div>
-<div class="line"> │ │ │   10│   3⇄   3│   2⇄   5│   2⇄   2│   3⇄   4│   2⇄   3│</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE 🛡️ Sobrevivência ─────</div>
-<div class="line"> │ │ ├───── ⏳ Idade ─────</div>
-<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  1✖ →🆕 ─────</div>
-<div class="line"> │ │ ├───── 👑 Elite 9→5 ─────</div>
+<div class="line"> │ ├─┬─── FASE 🛡️  Sobrevivência ─────</div>
+<div class="line"> │ │ ├───── ⏳  Idade ─────</div>
+<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  10✖ →🆕 ─────</div>
 <div class="line"> │ │ └────────────────────────────────────</div>
 <div class="line"> │ └───── FASE Diversidade - limpeza ─────</div>
-<div class="line"> ├─┬─ 📆 3 ⏱ 2ms  ──── 💰 g1-5</div>
-<div class="line"> │ ├───── 👥 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   2 2 3 2  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 2   0 0 0 2  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 3   0 0 3 2  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 4   0 0 2 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 5   2 0 3 0  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 6   0 0 2 2  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 7   3 3 2 3  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 8   2 0 0 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 9   0 2 2 1  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 10  0 3 0 3  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 11  0 3 0 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 12  0 2 1 1  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 13  1 2 1 0  💰 g:5</div>
-<div class="line"> │ │ 🧑‍🔬 14  0 3 3 0  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 15  2 0 2 1  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 16  2 3 1 2  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 17  2 3 0 1  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 18  2 2 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 19  0 0 1 1  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 20  1 2 0 1  💰 g:3</div>
-<div class="line"> │ ├───── 🌈  ─────</div>
-<div class="line"> │ │  🧑‍🔬 │ 🧑‍🔬 │ 📏 │</div>
-<div class="line"> │ │ ────┼────┼────┼</div>
-<div class="line"> │ │ 3   │16  │   3│</div>
-<div class="line"> │ │ 2   │10  │   2│</div>
-<div class="line"> │ │ 14  │17  │   3│</div>
-<div class="line"> │ │ 7   │1   │   4│</div>
-<div class="line"> │ │ 15  │11  │   4│</div>
-<div class="line"> │ │ 9   │8   │   4│</div>
-<div class="line"> │ │ 20  │18  │   2│</div>
-<div class="line"> │ │ 19  │12  │   1│</div>
-<div class="line"> │ │ 6   │4   │   1│</div>
-<div class="line"> │ │ 13  │5   │   3│</div>
-<div class="line"> │ │ ────┴────┴────┴</div>
-<div class="line"> │ ├─┬─── FASE 🎯 Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
-<div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
-<div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│  25│  41│  46│  36│  75│  33│  28│  38│  49│  62│</div>
-<div class="line"> │ │ │   10│  57│  70│  30│  64│  72│  59│  43│  67│  54│  51│</div>
-<div class="line"> │ │ ├───── Número de seleções ─────</div>
-<div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   1│   1│   1│   0│   2│   1│   0│   1│   1│   1│</div>
-<div class="line"> │ │ │   10│   1│   2│   0│   2│   1│   1│   1│   1│   1│   1│</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE Reproduzir 20 pais ─────</div>
-<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑) ─────</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│  14⇄   8│  16⇄   5│   2⇄  19│  12⇄  18│  17⇄   5│</div>
-<div class="line"> │ │ │   10│  20⇄   9│  14⇄  11│   3⇄   6│  15⇄  12│   1⇄  10│</div>
-<div class="line"> │ │ ├───── Pais (💰) ─────</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   2⇄   4│   3⇄   1│   4⇄   3│   2⇄   2│   4⇄   1│</div>
-<div class="line"> │ │ │   10│   3⇄   3│   2⇄   3│   3⇄   4│   2⇄   2│   5⇄   3│</div>
-<div class="line"> │ │ ├───── Filhos (💰) 🧬10  ✨8 ───── 📈4 ➖13 📉3</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   2⇄   2│   3⇄   3│   4⇄   4│   2⇄   2│   2⇄   4│</div>
-<div class="line"> │ │ │   10│   4⇄   3│   4⇄   1│   4⇄   2│   4⇄   1│   1⇄   3│</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE 🛡️ Sobrevivência ─────</div>
-<div class="line"> │ │ ├───── ⏳ Idade ─────</div>
-<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  9✖ →🆕 ─────</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ └───── FASE Diversidade - limpeza ─────  🧹✖ 14 🧹✖ 8 🧹✖ 18</div>
-<div class="line"> ├─┬─ 📆 4 ⏱ 2ms  ──── 💰 g1-4</div>
-<div class="line"> │ ├───── 👥 ─────</div>
-<div class="line"> │ │ 🧑‍🔬 1   2 2 3 1  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 2   2 2 0 3  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 3   0 0 2 1  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 4   2 2 1 1  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 5   0 0 0 2  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 6   0 0 2 2  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 7   0 3 3 0  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 8   1 2 3 1  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 9   2 3 0 1  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 10  2 2 3 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 11  2 2 0 2  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 12  1 2 0 3  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 13  0 3 1 1  💰 g:2</div>
-<div class="line"> │ │ 🧑‍🔬 14  2 1 1 2  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 15  2 0 3 0  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 16  0 3 0 0  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 17  0 1 0 2  💰 g:3</div>
-<div class="line"> │ │ 🧑‍🔬 18  1 1 1 0  💰 g:4</div>
-<div class="line"> │ │ 🧑‍🔬 19  0 3 1 2  💰 g:1</div>
-<div class="line"> │ │ 🧑‍🔬 20  0 2 1 0  💰 g:4</div>
-<div class="line"> │ ├───── 🌈  ─────</div>
-<div class="line"> │ │  🧑‍🔬 │ 🧑‍🔬 │ 📏 │</div>
-<div class="line"> │ │ ────┼────┼────┼</div>
-<div class="line"> │ │ 7   │18  │   3│</div>
-<div class="line"> │ │ 2   │12  │   1│</div>
-<div class="line"> │ │ 16  │19  │   2│</div>
-<div class="line"> │ │ 9   │13  │   2│</div>
-<div class="line"> │ │ 4   │10  │   2│</div>
-<div class="line"> │ │ 17  │5   │   1│</div>
-<div class="line"> │ │ 8   │3   │   3│</div>
-<div class="line"> │ │ 20  │1   │   3│</div>
-<div class="line"> │ │ 11  │6   │   3│</div>
-<div class="line"> │ │ 14  │15  │   3│</div>
-<div class="line"> │ │ ────┴────┴────┴</div>
-<div class="line"> │ ├─┬─── FASE 🎯 Selecionar 20 🧑‍🤝‍🧑 pais ─────</div>
-<div class="line"> │ │ ├───── Roleta, pressão 150 ─────</div>
-<div class="line"> │ │ │ 100%│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│  62│  59│  46│  49│  38│  28│  64│  30│  33│  51│</div>
-<div class="line"> │ │ │   10│  41│  72│  67│  36│  75│  54│  57│  43│  70│  25│</div>
-<div class="line"> │ │ ├───── Número de seleções ─────</div>
-<div class="line"> │ │ │ #Pai│   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   1│   2│   0│   1│   1│   1│   1│   1│   0│   1│</div>
-<div class="line"> │ │ │   10│   1│   2│   1│   1│   1│   1│   1│   1│   2│   0│</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE Reproduzir 20 pais ─────</div>
-<div class="line"> │ │ ├───── Pais (🧑‍🤝‍🧑) ─────</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   2⇄  18│   5⇄  12│   1⇄   6│  14⇄  19│  12⇄  15│</div>
-<div class="line"> │ │ │   10│  19⇄   2│  17⇄  11│   8⇄  16│  13⇄   4│  10⇄   7│</div>
-<div class="line"> │ 🏆 ⏱ 3ms  💰 g:0</div>
-<div class="line">─┴───────────────────</div>
-<div class="line">::♛ ::</div>
-<div class="line">  ::  ♛</div>
-<div class="line">♛   ::</div>
-<div class="line">  ::♛ ::</div>
-<div class="line">─┬───────────────────</div>
-<div class="line"> │ │ ├───── Pais (💰) ─────</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   2⇄   4│   4⇄   1│   2⇄   4│   4⇄   1│   1⇄   1│</div>
-<div class="line"> │ │ │   10│   1⇄   2│   3⇄   4│   4⇄   3│   2⇄   3│   3⇄   2│</div>
-<div class="line"> │ │ ├───── Filhos (💰) 🧬10  ✨14 ───── 📈4 ➖9 📉7</div>
-<div class="line"> │ │ │  🧑‍🔬 │   1│   2│   3│   4│   5│   6│   7│   8│   9│  10│</div>
-<div class="line"> │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼</div>
-<div class="line"> │ │ │    0│   2⇄   2│   2⇄   3│   3⇄   3│   4⇄   3│   2⇄   3│</div>
-<div class="line"> │ │ │   10│   3⇄   3│   5⇄   2│   1⇄   4│   0⇄   5│   1⇄   4│</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ ├─┬─── FASE 🛡️ Sobrevivência ─────</div>
-<div class="line"> │ │ ├───── ⏳ Idade ─────</div>
-<div class="line"> │ │ ├───── 🚶‍♂️🌍 Imigrantes  11✖ →🆕 ─────</div>
-<div class="line"> │ │ └────────────────────────────────────</div>
-<div class="line"> │ └───── FASE Diversidade - limpeza ─────  🧹✖ 11 🧹✖ 13</div>
-<div class="line"> ├─ ⚙️  Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
-<div class="line"> ├─ ⚙️  ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
-<div class="line">═╧═ 🏁  Execução terminada ⏱  3ms  ═══</div>
+<div class="line"> ├─ Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
+<div class="line"> ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1</div>
+<div class="line">═╧═ 🏁  Execução terminada ⏱   6ms  ═══</div>
 <div class="line">8 Damas (Inteira)</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
 <div class="line">│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
 <div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20</div>
 <div class="line">│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150</div>
@@ -996,18 +1001,18 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <div class="line">│ P20(TIPO_CRUZAR): 1-ponto | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): incDecValor</div>
 <div class="line">│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">::♛ ::</div>
-<div class="line">  ::  ♛</div>
-<div class="line">♛   ::</div>
-<div class="line">  ::♛ ::</div>
-<div class="line">┌─ ⚖  Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I1(Resultado): 0 | I2(Tempo(ms)): 3 | I3(Iterações): 132 | I4(Épocas): 5 |</div>
-<div class="line">│ I5(Gerações): 136</div>
+<div class="line">::  ♛</div>
+<div class="line">♛ ::  ::</div>
+<div class="line">::  ::♛</div>
+<div class="line">  ♛   ::</div>
+<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
+<div class="line">│ I1(Resultado): 0 | I2(Tempo(ms)): 6 | I3(Iterações): 241 | I4(Épocas): 10 |</div>
+<div class="line">│ I5(Gerações): 250</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
 <div class="line">...</div>
 <div class="line">Opção:</div>
-</div><!-- fragment --><p>A informação é agora bastante extensa, mas houve apenas 5 épocas, ao contrário das 10 nos outros modos de debug. Neste modo de debug é utilizado o gerador aleatório para fazer uma amostra das distâncias entre elementos da população, conduzindo o este a outra execução.</p>
-<p>Em cada época temos agora toda a população, mostrando a codificação de cada elemento e o seu custo. Temos após a população um mapa de distâncias entre indivíduos, caso a população seja 10 ou menor, ou uma amostra de distâncias com um emparelhamento aleatório. Assim dá-se uma ideia mais completa da diversidade da população.</p>
+</div><!-- fragment --><p>A informação é agora bastante extensa, mas cortou-se a informação de debug, mostrando-se apenas as primeiras e últimas épocas.</p>
+<p>Em cada época temos agora toda a população, mostrando a codificação de cada elemento e o seu custo. Temos após a população um mapa de distâncias entre indivíduos, caso a população seja 10 ou menor, ou pares de distâncias entre elementos consecutivos. Assim dá-se uma ideia mais completa da diversidade da população.</p>
 <p>Mostra-se informação de todas as fases. A primeira fase é a seleção dos pais. Há informação na época 0 de que irão ser selecionados 20 pais pelo método Roleta, com pressão 150. Este valor corresponde a 1,5, sendo que o valor 1 todos os membros têm a mesma probabilidade, e com 2 os melhores têm muito mais possibildiades de ser escolhidos. A permilagem de cada indivíduo é colocada na tabela 100%.</p>
 <p>Podemos ver a diferença entre o 1 e o 2, tendo o indivíduo 1 custo 2 e o indivíduo 2 custo 4. A probabilidade de ser selecionado o indivíduo 1 é de 7,5% enquanto que o indivíduo 2 tem probabilidade de 3,8%.</p>
 <p>Como resultado destas probabilidades, a tabela seguinte, #Pai, tem o número de vezes que cada indivíduo foi escolhido para pai. O primeiro indivíduo foi escolhido 1 vez, mas tinha melhores possibilidades de ser escolhido duas vezes. Podemos ver alguns indivíduos que nem foram escolhidos, como o 14.</p>
@@ -1023,163 +1028,200 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <h2><a class="anchor" id="autotoc_md34"></a>
 Ação 4 - Testes Empíricos</h2>
 <p>O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter um número considerável de execuções.</p>
-<p>Vamos agora procurar saber qual a melhor parametrização dos algoritmos evolutivos para as 8 damas, codificação inteira.</p>
-<p>Começamos por executar a parametrização de omissão nas primeiras instâncias. Como o algoritmo é aleatório, é crítico fazer mais que uma execução. No entanto neste exemplo, sem processamento paralelo, vamos fazer apeans 1 execução. Colocamos o nível de debug a PASSO, para ter alguma informação durante execução.</p>
-<p>Notar que nos testes empíricos, o nível de debug destina-se à informação sobre o progresso da execução global, mas o algoritmo é executado sempre sem qualquer debug, de modo a obtermos a melhor performance.</p>
-<p>Linha de comando: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 4:40 -R damasCIt1 -P P2=3</p>
-<div class="fragment"><div class="line">/TProcura/Melhorativa/Teste$ ./bin/Release/TProcuraMelhorativa 4:40 -R Resultados/damasCIt1 -P P2=2</div>
+<h3><a class="anchor" id="autotoc_md35"></a>
+Teste: damasci_1</h3>
+<p>Vamos querer ter um ponto de referência com a configuração base, para depois procurar obter a melhor parametrização dos algoritmos evolutivos para as 8 damas, codificação inteira.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Performance (tempo vs tamanho)</li>
+<li><b>Definição</b>: Instâncias: 4:40:4; Configurações: P3=1:2</li>
+<li><b>Esforço</b>: 4:40:4 P3=1:2; 4:40 P3=1:5; 4:40 P3=1:100</li>
+<li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 4:40:4 -R Resultados/damasci_1 -P P2=4 P3=1:2</li>
+</ul>
+<p>O esforço do teste base é baixo, mas no modo B já utilizamos todas as instâncias e várias execuções. Como o algoritmo é aleatório, é importante várias execuções.</p>
+<p>Colocamos o nível de debug a COMPLETO, já que serão apenas 20 execuções.</p>
+<div class="fragment"><div class="line">/TProcura/Melhorativa/Teste$ ./bin/Release/TProcuraMelhorativa 4:40:4 -R Resultados/damasci_1 -P P2=4 P3=1:2</div>
 <div class="line">...</div>
 <div class="line">Opção: 1</div>
 <div class="line"> </div>
-<div class="line"> ├─ 🛠️  ─ P1=1 P2=3 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1</div>
-<div class="line"> ├─ ⚙️  ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1 (parâmetros comuns)</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 4 📄 8 📄 12 📄 16 📄 20 📄 24 📄 28 📄 32 📄 36 📄 40 }</div>
+<div class="line"> ├─ 🛠️  ─ P1=1 P2=4 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1 P14=100</div>
+<div class="line"> ├─ ⚙   ─ P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1 (parâmetros comuns)</div>
 <div class="line">═╪═ Configurações ═══</div>
-<div class="line"> ├─ ⚙️ [1] ─</div>
+<div class="line"> ├─ ⚙  [1] ─ P3=1</div>
+<div class="line"> ├─ ⚙  [2] ─ P3=2</div>
 <div class="line">═╧═══════════════════</div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
-<div class="line"> ├─ 📋 Tarefas:37   ↻ Instâncias: 37   🛠️ Configurações: 1   🖥️ Processos: 1.</div>
-<div class="line"> ├─ ⏱ 14&quot; 182ms       📋 18    ↻ 22    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 27&quot; 214ms       📋 21    ↻ 25    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 41&quot; 344ms       📋 24    ↻ 28    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 55&quot; 102ms       📋 26    ↻ 30    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 9&quot; 794ms     📋 28    ↻ 32    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 25&quot; 727ms    📋 30    ↻ 34    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 43&quot; 524ms    📋 32    ↻ 36    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 1&quot; 813ms     📋 34    ↻ 38    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 21&quot; 507ms    📋 36    ↻ 40    🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ 📄  Ficheiro Resultados/damasCIt1.csv gravado.</div>
-<div class="line"> │  ⏱  Tempo real: 2&#39; 31&quot; 507ms</div>
-<div class="line"> │  ⏱  CPU total: 2&#39; 31&quot; 507ms</div>
+<div class="line"> ├─ 📋 Tarefas:20   📄 Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱                 📋 1     📄 4     🛠️ 1     🖥️ 1    🎯 0    ⚖  0 1 241 10 250</div>
+<div class="line"> ├─ ⏱ 1ms             📋 2     📄 8     🛠️ 1     🖥️ 1    🎯 0    ⚖  0 3 2063 96 2158</div>
+<div class="line"> ├─ ⏱ 4ms             📋 3     📄 12    🛠️ 1     🖥️ 1    🎯 0    ⚖  0 74 34942 1641 36582</div>
+<div class="line"> ├─ ⏱ 78ms            📋 4     📄 16    🛠️ 1     🖥️ 1    🎯 0    ⚖  0 40 15886 748 16633</div>
+<div class="line"> ├─ ⏱ 118ms           📋 5     📄 20    🛠️ 1     🖥️ 1    🎯 0    ⚖  0 2287 676772 31860 708631</div>
+<div class="line"> ├─ ⏱ 2&quot; 405ms        📋 6     📄 24    🛠️ 1     🖥️ 1    🎯 1    ⚖  1 4275 1000002 47070 1047071</div>
+<div class="line"> ├─ ⏱ 6&quot; 680ms        📋 7     📄 28    🛠️ 1     🖥️ 1    🎯 2    ⚖  2 5322 1000015 47111 1047125</div>
+<div class="line"> ├─ ⏱ 12&quot; 2ms         📋 8     📄 32    🛠️ 1     🖥️ 1    🎯 1    ⚖  1 6642 1000013 47107 1047119</div>
+<div class="line"> ├─ ⏱ 18&quot; 644ms       📋 9     📄 36    🛠️ 1     🖥️ 1    🎯 1    ⚖  1 7888 1000019 47121 1047139</div>
+<div class="line"> ├─ ⏱ 26&quot; 532ms       📋 10    📄 40    🛠️ 1     🖥️ 1    🎯 2    ⚖  2 9181 1000008 47121 1047128</div>
+<div class="line"> ├─ ⏱ 35&quot; 713ms       📋 11    📄 4     🛠️ 2     🖥️ 1    🎯 0    ⚖  0 0 196 8 203</div>
+<div class="line"> ├─ ⏱ 35&quot; 714ms       📋 12    📄 8     🛠️ 2     🖥️ 1    🎯 0    ⚖  0 3 2194 102 2295</div>
+<div class="line"> ├─ ⏱ 35&quot; 717ms       📋 13    📄 12    🛠️ 2     🖥️ 1    🎯 0    ⚖  0 44 23699 1114 24812</div>
+<div class="line"> ├─ ⏱ 35&quot; 761ms       📋 14    📄 16    🛠️ 2     🖥️ 1    🎯 0    ⚖  0 531 208194 9791 217984</div>
+<div class="line"> ├─ ⏱ 36&quot; 292ms       📋 15    📄 20    🛠️ 2     🖥️ 1    🎯 0    ⚖  0 1168 340335 16012 356346</div>
+<div class="line"> ├─ ⏱ 37&quot; 460ms       📋 16    📄 24    🛠️ 2     🖥️ 1    🎯 1    ⚖  1 4273 1000015 47068 1047082</div>
+<div class="line"> ├─ ⏱ 41&quot; 733ms       📋 17    📄 28    🛠️ 2     🖥️ 1    🎯 1    ⚖  1 5316 1000004 47080 1047083</div>
+<div class="line"> ├─ ⏱ 47&quot; 49ms        📋 18    📄 32    🛠️ 2     🖥️ 1    🎯 2    ⚖  2 6649 1000015 47104 1047118</div>
+<div class="line"> ├─ ⏱ 53&quot; 698ms       📋 19    📄 36    🛠️ 2     🖥️ 1    🎯 3    ⚖  3 8092 1000012 47111 1047122</div>
+<div class="line"> ├─ ⏱ 1&#39; 1&quot; 790ms     📋 20    📄 40    🛠️ 2     🖥️ 1    🎯 2    ⚖  2 9249 1000020 47121 1047140</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/damasci_1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 1&#39; 11&quot; 39ms</div>
+<div class="line"> │  ⏱  CPU total: 1&#39; 11&quot; 39ms</div>
 <div class="line"> │  📊  Utilização: 100.0%</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  2&#39; 31&quot; 507ms ) ═══</div>
-</div><!-- fragment --><p>Houve reporte a cada 10 segundos, e a execução demorou menos de 3 minutos. Os tempos de execução não foram afetados por ter o nível de debug a 3, apenas é influenciada a informação sobre o progresso das execuções.</p>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1&#39; 11&quot; 39ms ) ═══</div>
+</div><!-- fragment --><p>Podemos ver logo pelos logs, que houve 4 instâncias que não se conseguiu encontrar a solução. As duas execuções realizadas, mostram que os resultados podem ser diferentes, como na instância 37, e em termos de tempo e outros indicadores pode haver também diferenças.</p>
+<ul>
+<li><b>Ficheiro de Análise</b>: damasci.xlsx</li>
+</ul>
 <p>Podemos agora ver a tabela de resultados:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadRight">I1(Resultado)   </th><th class="markdownTableHeadRight">I2(Tempo(ms))   </th><th class="markdownTableHeadRight">I3(Iterações)   </th><th class="markdownTableHeadRight">I4(Épocas)    </th></tr>
+<th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadRight">Soma de I1(Resultado)<br  />
+1   </th><th class="markdownTableHeadRight">2   </th><th class="markdownTableHeadRight">Soma de I4(Épocas)<br  />
+1   </th><th class="markdownTableHeadRight">2   </th><th class="markdownTableHeadRight">Soma de I3(Iterações)<br  />
+1   </th><th class="markdownTableHeadRight">2    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">241   </td><td class="markdownTableBodyRight">10    </td></tr>
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">210   </td><td class="markdownTableBodyRight">9    </td></tr>
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">210   </td><td class="markdownTableBodyRight">83    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">105   </td><td class="markdownTableBodyRight">4    </td></tr>
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">446   </td><td class="markdownTableBodyRight">1673   </td><td class="markdownTableBodyRight">9500   </td><td class="markdownTableBodyRight">35610    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2040   </td><td class="markdownTableBodyRight">95    </td></tr>
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">9467   </td><td class="markdownTableBodyRight">886   </td><td class="markdownTableBodyRight">201347   </td><td class="markdownTableBodyRight">18870    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">2063   </td><td class="markdownTableBodyRight">96    </td></tr>
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">32461   </td><td class="markdownTableBodyRight">2204   </td><td class="markdownTableBodyRight">689898   </td><td class="markdownTableBodyRight">46874    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">9500   </td><td class="markdownTableBodyRight">446    </td></tr>
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">47056   </td><td class="markdownTableBodyRight">47059   </td><td class="markdownTableBodyRight">1000002   </td><td class="markdownTableBodyRight">1000015    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">3066   </td><td class="markdownTableBodyRight">144    </td></tr>
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">16343   </td><td class="markdownTableBodyRight">18719   </td><td class="markdownTableBodyRight">347321   </td><td class="markdownTableBodyRight">397653    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">72   </td><td class="markdownTableBodyRight">40402   </td><td class="markdownTableBodyRight">1898    </td></tr>
+<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">47103   </td><td class="markdownTableBodyRight">47068   </td><td class="markdownTableBodyRight">1000020   </td><td class="markdownTableBodyRight">1000009    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">56   </td><td class="markdownTableBodyRight">34942   </td><td class="markdownTableBodyRight">1641    </td></tr>
+<td class="markdownTableBodyCenter">33   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">47096   </td><td class="markdownTableBodyRight">47104   </td><td class="markdownTableBodyRight">1000016   </td><td class="markdownTableBodyRight">1000001    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">365   </td><td class="markdownTableBodyRight">201347   </td><td class="markdownTableBodyRight">9467    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">277   </td><td class="markdownTableBodyRight">146253   </td><td class="markdownTableBodyRight">6879    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">397   </td><td class="markdownTableBodyRight">184587   </td><td class="markdownTableBodyRight">8681    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">15886   </td><td class="markdownTableBodyRight">748    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1812   </td><td class="markdownTableBodyRight">689898   </td><td class="markdownTableBodyRight">32461    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1082   </td><td class="markdownTableBodyRight">403174   </td><td class="markdownTableBodyRight">18973    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2052   </td><td class="markdownTableBodyRight">695640   </td><td class="markdownTableBodyRight">32722    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2171   </td><td class="markdownTableBodyRight">676772   </td><td class="markdownTableBodyRight">31860    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3581   </td><td class="markdownTableBodyRight">1000002   </td><td class="markdownTableBodyRight">47056    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3639   </td><td class="markdownTableBodyRight">1000013   </td><td class="markdownTableBodyRight">47060    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1697   </td><td class="markdownTableBodyRight">458090   </td><td class="markdownTableBodyRight">21565    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3907   </td><td class="markdownTableBodyRight">1000002   </td><td class="markdownTableBodyRight">47070    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1454   </td><td class="markdownTableBodyRight">347321   </td><td class="markdownTableBodyRight">16343    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4615   </td><td class="markdownTableBodyRight">1000014   </td><td class="markdownTableBodyRight">47080    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5288   </td><td class="markdownTableBodyRight">1000009   </td><td class="markdownTableBodyRight">47090    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">5479   </td><td class="markdownTableBodyRight">1000015   </td><td class="markdownTableBodyRight">47111    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5348   </td><td class="markdownTableBodyRight">1000020   </td><td class="markdownTableBodyRight">47103    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6400   </td><td class="markdownTableBodyRight">1000009   </td><td class="markdownTableBodyRight">47095    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">31   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6284   </td><td class="markdownTableBodyRight">1000021   </td><td class="markdownTableBodyRight">47090    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6431   </td><td class="markdownTableBodyRight">1000013   </td><td class="markdownTableBodyRight">47107    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">33   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6633   </td><td class="markdownTableBodyRight">1000016   </td><td class="markdownTableBodyRight">47096    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">34   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">7176   </td><td class="markdownTableBodyRight">1000006   </td><td class="markdownTableBodyRight">47117    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">35   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">7567   </td><td class="markdownTableBodyRight">1000004   </td><td class="markdownTableBodyRight">47105    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">36   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">7336   </td><td class="markdownTableBodyRight">1000019   </td><td class="markdownTableBodyRight">47121    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">37   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">7675   </td><td class="markdownTableBodyRight">1000002   </td><td class="markdownTableBodyRight">47122    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">38   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">7945   </td><td class="markdownTableBodyRight">1000002   </td><td class="markdownTableBodyRight">47122    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">39   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">8558   </td><td class="markdownTableBodyRight">1000014   </td><td class="markdownTableBodyRight">47116    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">8730   </td><td class="markdownTableBodyRight">1000008   </td><td class="markdownTableBodyRight">47121   </td></tr>
+<td class="markdownTableBodyCenter">37   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">47122   </td><td class="markdownTableBodyRight">47113   </td><td class="markdownTableBodyRight">1000002   </td><td class="markdownTableBodyRight">1000019   </td></tr>
 </table>
-<p>A parametrização de omissão consegue resolver até à instância 20, mas após essa instância, falha por número de iterações.</p>
-<p>Não interressa ter instâncias demasiado simples ou demasiado complicadas nos testes. Como estes testes não vão ser num cluster, convém ter um conjunto de teste reduzido. Pretendemos melhorar o algoritmo no ponto de transição. Assim, vamos escolher para conjunto de teste, as instâncias 17 a 26.</p>
-<p>O primeiro parametro a averiguar, é o tamanho da população.</p>
-<p>Linha de comando: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 17:26 -R Resultados/damasCIt2 -P P2=2 P6=10,20,30,50,100,200</p>
+<p>A configuração de omissão consegue resolver até à instância 17, mas após essa instância, falha por número de iterações.</p>
+<p>Vamos manter este conjunto de instâncias, e procurar estudar a parametrização.</p>
+<h3><a class="anchor" id="autotoc_md36"></a>
+Teste: damasci_2</h3>
+<p>Vamos agora estudar o impacto do tamanho da população.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Paramétrico (P6)</li>
+<li><b>Definição</b>: Instâncias: 4:40:4; Configurações: P3=1:2 P6=10,20,30,50,100,200</li>
+<li><b>Esforço</b>: 4:40:4 P3=1:2; 4:40 P3=1:5; 4:40 P3=1:100</li>
+<li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 4:40:4 -R Resultados/damasci_2 -P P2=3 P3=1:2 x P6=10,20,30,50,100,200</li>
+</ul>
 <p>Notar que repetimos a população 20, da qual já tinhamos resultados. Poderiamos aproveitar, mas não só é mais simples repetir, como repetindo garante-se condições de igualdade entre execuções.</p>
-<div class="fragment"><div class="line">Opção: 1</div>
+<div class="fragment"><div class="line">/TProcura/Melhorativa/Teste$ ./bin/Release/TProcuraMelhorativa 4:40:4 -R Resultados/damasci_2 -P P2=3 P3=1:2 x P6=10,20,30,50,100,200</div>
+<div class="line">...</div>
+<div class="line">Opção: 1</div>
 <div class="line"> </div>
-<div class="line"> ├─ 🛠️  ─ P1=1 P2=2 P3=1 P4=10 P5=1000000 P7=100 P8=50 P9=1 P10=150 P13=1 P14=100</div>
-<div class="line"> ├─ ⚙️  ─ P16=1 P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1 (parâmetros comuns)</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 4 📄 8 📄 12 📄 16 📄 20 📄 24 📄 28 📄 32 📄 36 📄 40 }</div>
+<div class="line"> ├─ 🛠️  ─ P1=1 P2=3 P4=10 P5=1000000 P7=100 P8=50 P9=1 P10=150 P13=1 P14=100 P16=1</div>
+<div class="line"> ├─ ⚙   ─ P17=1 P18=3 P19=0 P20=1 P21=0 P22=1 P23=0 P24=1 (parâmetros comuns)</div>
 <div class="line">═╪═ Configurações ═══</div>
-<div class="line"> ├─ ⚙️ [1] ─ P6=10</div>
-<div class="line"> ├─ ⚙️ [2] ─ P6=20</div>
-<div class="line"> ├─ ⚙️ [3] ─ P6=30</div>
-<div class="line"> ├─ ⚙️ [4] ─ P6=50</div>
-<div class="line"> ├─ ⚙️ [5] ─ P6=100</div>
-<div class="line"> ├─ ⚙️ [6] ─ P6=200</div>
+<div class="line"> ├─ ⚙  [1] ─ P3=1 P6=10</div>
+<div class="line"> ├─ ⚙  [2] ─ P3=2 P6=10</div>
+<div class="line"> ├─ ⚙  [3] ─ P3=1 P6=20</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [10] ─ P3=2 P6=100</div>
+<div class="line"> ├─ ⚙  [11] ─ P3=1 P6=200</div>
+<div class="line"> ├─ ⚙  [12] ─ P3=2 P6=200</div>
 <div class="line">═╧═══════════════════</div>
 <div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
-<div class="line"> ├─ 📋 Tarefas:60   ↻ Instâncias: 10   🛠️ Configurações: 6   🖥️ Processos: 1.</div>
-<div class="line"> ├─ ⏱ 1&#39; 376ms        📋 20    ↻ 17    🛠️ 3     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 4&quot; 425ms     📋 46    ↻ 23    🛠️ 5     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 3&#39; 5&quot; 996ms     📋 59    ↻ 26    🛠️ 6     🖥️ 1</div>
-<div class="line"> ├─ 📄  Ficheiro Resultados/damasCIt2.csv gravado.</div>
-<div class="line"> │  ⏱  Tempo real: 3&#39; 12&quot; 509ms</div>
-<div class="line"> │  ⏱  CPU total: 3&#39; 12&quot; 509ms</div>
+<div class="line"> ├─ 📋 Tarefas:120   📄 Instâncias: 10   🛠️ Configurações: 12   🖥️ Processos: 1.</div>
+<div class="line"> ├─ ⏱ 11&quot; 221ms       📋 8     📄 32    🛠️ 1     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 22&quot; 868ms       📋 10    📄 40    🛠️ 1     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 34&quot; 298ms       📋 16    📄 24    🛠️ 2     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 47&quot; 265ms       📋 19    📄 36    🛠️ 2     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 1&quot; 67ms      📋 21    📄 4     🛠️ 3     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 13&quot; 122ms    📋 28    📄 32    🛠️ 3     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 27&quot; 572ms    📋 30    📄 40    🛠️ 3     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 38&quot; 565ms    📋 36    📄 24    🛠️ 4     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 1&#39; 54&quot; 901ms    📋 39    📄 36    🛠️ 4     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 2&#39; 11&quot; 863ms    📋 41    📄 4     🛠️ 5     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 2&#39; 22&quot; 376ms    📋 48    📄 32    🛠️ 5     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 2&#39; 37&quot; 608ms    📋 50    📄 40    🛠️ 5     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 2&#39; 49&quot; 835ms    📋 56    📄 24    🛠️ 6     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 3&#39; 3&quot; 465ms     📋 59    📄 36    🛠️ 6     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 3&#39; 21&quot; 571ms    📋 61    📄 4     🛠️ 7     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 3&#39; 33&quot; 144ms    📋 68    📄 32    🛠️ 7     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 3&#39; 48&quot; 882ms    📋 70    📄 40    🛠️ 7     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 4&#39; 478ms        📋 75    📄 20    🛠️ 8     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 4&#39; 14&quot; 477ms    📋 78    📄 32    🛠️ 8     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 4&#39; 30&quot; 104ms    📋 80    📄 40    🛠️ 8     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 4&#39; 40&quot; 415ms    📋 84    📄 16    🛠️ 9     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 4&#39; 53&quot; 703ms    📋 88    📄 32    🛠️ 9     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 5&#39; 10&quot; 453ms    📋 90    📄 40    🛠️ 9     🖥️ 1</div>
+<div class="line"> ├─ ⏱ 5&#39; 20&quot; 454ms    📋 91    📄 4     🛠️ 10    🖥️ 1</div>
+<div class="line"> ├─ ⏱ 5&#39; 33&quot; 236ms    📋 97    📄 28    🛠️ 10    🖥️ 1</div>
+<div class="line"> ├─ ⏱ 5&#39; 47&quot; 50ms     📋 99    📄 36    🛠️ 10    🖥️ 1</div>
+<div class="line"> ├─ ⏱ 6&#39; 5&quot; 804ms     📋 101   📄 4     🛠️ 11    🖥️ 1</div>
+<div class="line"> ├─ ⏱ 6&#39; 15&quot; 927ms    📋 107   📄 28    🛠️ 11    🖥️ 1</div>
+<div class="line"> ├─ ⏱ 6&#39; 31&quot; 97ms     📋 109   📄 36    🛠️ 11    🖥️ 1</div>
+<div class="line"> ├─ ⏱ 6&#39; 50&quot; 687ms    📋 111   📄 4     🛠️ 12    🖥️ 1</div>
+<div class="line"> ├─ ⏱ 7&#39; 3&quot; 270ms     📋 117   📄 28    🛠️ 12    🖥️ 1</div>
+<div class="line"> ├─ ⏱ 7&#39; 18&quot; 204ms    📋 119   📄 36    🛠️ 12    🖥️ 1</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/damasci_2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 7&#39; 37&quot; 628ms</div>
+<div class="line"> │  ⏱  CPU total: 7&#39; 37&quot; 629ms</div>
 <div class="line"> │  📊  Utilização: 100.0%</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  3&#39; 12&quot; 509ms ) ═══</div>
-</div><!-- fragment --><p>Podemos agregar o somatório do resultado e a média do tempo.</p>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 7&#39; 37&quot; 629ms ) ═══</div>
+</div><!-- fragment --><p>Esta execução demorou mis de 7 minutos.</p>
+<ul>
+<li><b>linhas</b>: instâncias</li>
+<li><b>colunas</b>: P6</li>
+<li><b>valores</b>: média I1(Resultado)</li>
+</ul>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">Soma de I1(Resultado)   </th><th class="markdownTableHeadRight">Média de I2(Tempo(ms))    </th></tr>
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">10   </th><th class="markdownTableHeadRight">20   </th><th class="markdownTableHeadRight">30   </th><th class="markdownTableHeadRight">50   </th><th class="markdownTableHeadRight">100   </th><th class="markdownTableHeadRight">200    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">5026    </td></tr>
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">4339    </td></tr>
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">3044    </td></tr>
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">3331    </td></tr>
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">5830    </td></tr>
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">0,5    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">6329   </td></tr>
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">1,5   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">3,5   </td><td class="markdownTableBodyRight">1,5   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">3,5   </td><td class="markdownTableBodyRight">1,5   </td><td class="markdownTableBodyRight">1,5   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">1,5   </td><td class="markdownTableBodyRight">2,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">36   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">5,5   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">2,5   </td><td class="markdownTableBodyRight">2,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0,8   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,85   </td><td class="markdownTableBodyRight">0,9   </td><td class="markdownTableBodyRight">0,95   </td></tr>
 </table>
-<p>Tanto pelos resultados como pelo tempo, a população de 30 a 50 aparenta ser melhor, embora sem grande precisão dado que 10 instâncias mas apenas uma execução por cada configuração e instância.</p>
+<p>Podemos ver que a população a 30 poderá ser a melhor, tendo em conta ter o melhor valor global da média dos resultados.</p>
 <p>Parametro de omissão alterado: P6(POPULACAO)=30</p>
+<h3><a class="anchor" id="autotoc_md37"></a>
+Teste: damasci_3</h3>
 <p>Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.</p>
-<p>Linha de comando: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 17:26 -R Resultados/damasCIt3 -P P2=2 P6=30 P7=0:100:25 x P8=0:100:25</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Paramétrico (P7 vs P8)</li>
+<li><b>Definição</b>: Instâncias: 4:40:4; Configurações: P6=30 P3=1:2 x P7=0:100:25 x P8=0:100:25</li>
+<li><b>Esforço</b>: 4:40:4 P3=1:2; 4:40 P3=1:5; 4:40 P3=1:100</li>
+<li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 4:40:4 -R Resultados/damasci_3 -P P2=2 P3=1:2 x P7=0:100:25 x P8=0:100:25</li>
+</ul>
+<p>(este teste é já bastante demorado, mesmo o modo mais baixo)</p>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

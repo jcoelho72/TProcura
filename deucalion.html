@@ -99,16 +99,42 @@ $(document).ready(function(){initNavTree('deucalion.html',''); initResizable(); 
 <h2><a class="anchor" id="autotoc_md2"></a>
 Sumário</h2>
 <ul>
-<li><a class="el" href="deucalion.html#deucalion-a1">Ação 1: Acesso</a></li>
-<li><a class="el" href="deucalion.html#deucalion-a2">Ação 2: Submissão de trabalhos</a></li>
+<li><a class="el" href="deucalion.html#deucalion-a1">Ação 1: Documentação</a></li>
+<li><a class="el" href="deucalion.html#deucalion-a2">Ação 2: Estratégia de funcionamento</a></li>
 <li><a class="el" href="deucalion.html#deucalion-a3">Ação 3: Reprodução de Execuções</a></li>
 </ul>
 <p><a class="anchor" id="deucalion-a1"></a></p>
 <h2><a class="anchor" id="autotoc_md3"></a>
-Ação 1: Acesso</h2>
-<p><a class="anchor" id="deucalion-a2"></a></p>
+Ação 1: Documentação</h2>
+<p>Documentação do cluster Deucalion pode ser encontrada em: <a href="https://docs.deucalion.macc.fccn.pt/">https://docs.deucalion.macc.fccn.pt/</a></p>
+<p>Principais comandos:</p>
+<p>module load OpenMPI</p>
+<ul>
+<li>sbatch - submete um trabalho</li>
+<li>squeue - vê a fila de trabalhos<ul>
+<li>squeue &ndash;me - apenas os trabalhos do próprio</li>
+<li>squeue &ndash;me &ndash;start - vê quando os trabalhos do próprio vão começar</li>
+</ul>
+</li>
+<li>scancel &lt;jobid&gt; - cancela um trabalho</li>
+<li>sinfo - vê o estado dos nós do cluster</li>
+<li>mpirun - executa um programa paralelo</li>
+</ul>
+<p>#!/bin/bash #SBATCH &ndash;job-name=exampleJob #SBATCH &ndash;account=exampleAccount #SBATCH &ndash;partition=examplePartition #SBATCH &ndash;time=02:00:00 #SBATCH &ndash;nodes=1 #SBATCH &ndash;ntasks=1 #SBATCH &ndash;cpus-per-task=1 #SBATCH &ndash;mem=2G</p>
+<p>$ sbatch [options] job_script [job_script_arguments ...]</p>
+<p>Compilar (no nó de execução):</p><ul>
+<li>salloc -N1 -p dev-arm -A &lt;account&gt; -t 4:00:00 &gt;&gt;&gt; aloca um nó interativo onde se compila na arquitetura ARM <blockquote class="doxtable">
+<p>&zwj;executar "make mpi" (compilação recomendada: mpicc -O2 -ftree-vectorize -march=native -fno-math-errno sample.c ) </p>
+</blockquote>
+<a class="anchor" id="deucalion-a2"></a></li>
+</ul>
 <h2><a class="anchor" id="autotoc_md4"></a>
-Ação 1: Submissão de trabalhos</h2>
+Ação 2: Estratégia de funcionamento</h2>
+<ul>
+<li>no cluster fazer "git clone" para obter o código</li>
+<li>para adicionar ou editar um ficheiro, fazer localmente e atualizar o repositório</li>
+<li>no clusetr fazer apenas "git pull" para ficar com os ficheiros atualizados</li>
+</ul>
 <p><a class="anchor" id="deucalion-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Ação 1: Reprodução de Execuções</h2>
