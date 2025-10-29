@@ -33,9 +33,9 @@ module load OpenMPI
 #SBATCH --partition=examplePartition
 #SBATCH --time=02:00:00
 #SBATCH --nodes=1
-#SBATCH --ntasks=1
+#SBATCH --ntasks=48
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=2G
+#SBATCH --mem=32G
 
 $ sbatch [options] job_script [job_script_arguments ...]
 

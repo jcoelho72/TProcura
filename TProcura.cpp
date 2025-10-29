@@ -904,7 +904,6 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 
 	TVector<TResultado> resultados; // guarda as soluções obtidas
 	TVector<TResultado> tarefas; // guarda informação apenas das tarefas a realizar (sem resultados)
-	int backupID = instancia.valor;
 	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
 
 	// construir todas as tarefas
@@ -1027,7 +1026,6 @@ void TProcura::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 
 	TVector<TResultado> resultados; // guarda as soluções obtidas
 	TVector<int> atual;
-	int backupID = instancia.valor;
 
 	TesteInicio(instancias, atual);
 
