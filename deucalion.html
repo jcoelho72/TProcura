@@ -120,7 +120,7 @@ Ação 1: Documentação</h2>
 <li>sinfo - vê o estado dos nós do cluster</li>
 <li>mpirun - executa um programa paralelo</li>
 </ul>
-<p>#!/bin/bash #SBATCH &ndash;job-name=exampleJob #SBATCH &ndash;account=exampleAccount #SBATCH &ndash;partition=examplePartition #SBATCH &ndash;time=02:00:00 #SBATCH &ndash;nodes=1 #SBATCH &ndash;ntasks=1 #SBATCH &ndash;cpus-per-task=1 #SBATCH &ndash;mem=2G</p>
+<p>#!/bin/bash #SBATCH &ndash;job-name=exampleJob #SBATCH &ndash;account=exampleAccount #SBATCH &ndash;partition=examplePartition #SBATCH &ndash;time=02:00:00 #SBATCH &ndash;nodes=1 #SBATCH &ndash;ntasks=48 #SBATCH &ndash;cpus-per-task=1 #SBATCH &ndash;mem=32G</p>
 <p>$ sbatch [options] job_script [job_script_arguments ...]</p>
 <p>Compilar (no nó de execução):</p><ul>
 <li>salloc -N1 -p dev-arm -A &lt;account&gt; -t 4:00:00 &gt;&gt;&gt; aloca um nó interativo onde se compila na arquitetura ARM <blockquote class="doxtable">
