@@ -30,8 +30,8 @@ srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_1C -M 1 -P P1=2 P2=2 P3=1:100
 # Teste 2
 
 # esforço A
-srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2mo -M 0 -P P2=3 P1=1:12 x P6=1:3 x P3=1
-srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2 -M 1 -P P2=3 P1=1:12 x P6=1:3 x P3=1
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2mo -M 0 -P P2=3 P3=1 P1=1:12 x P6=1:3 
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2 -M 1 -P P2=3 P3=1 P1=1:12 x P6=1:3 
 
 # esforço B
 srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2Bmo -M 0 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10

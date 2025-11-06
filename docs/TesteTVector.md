@@ -1210,43 +1210,56 @@ Pretendemos agora, considerando todas as operações em teste, procurar saber se
 entre alguma das estruturas de dados em termos de tempo. Estamos portanto perante um teste paramétrico.
 
 - **Tipo de Teste / Objetivo**: Paramétrico (P6(ESTRUTURA_DADOS) vs P1(ALGORITMO) - irrelevante?)
-- **Definição**: Instâncias: 1; Configurações: P1=1:12 x P6=1:3 x P3=1:10
-- **Esforço**: 1; 1:4; 1:10
-- **Execução**: TProcura 1 -R Resultados/tvetor_2 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10
+- **Definição**: Instâncias: 1:10; Configurações: P1=1:12 x P6=1:3
+- **Esforço**: P3=1; P3=1:10; P3=1:100
+- **Execução**: TProcura 1 -R Resultados/tvetor_2 -P P2=3 P3=1 P1=1:12 x P6=1:3 
 
-Neste caso o esforço incide sobre as instâncias, com a versão A apenas com a instância 1.
-Coloca-se no entanto 10 sementes aleatórias.
+O aumento do esforço mantém-se sobre número de execuções variando P3.
+Podiamos colocar o esforço a incidir sobre as instâncias, usando apenas uma instância no esforço menor, até às 10.
+No entanto assim os resultados entre esforços não seriam comparáveis, e não podiamos observar o aumento de precisão ao aumentar o esforço.
 
 
 ```entrada
-/TProcura/Teste$ ./bin/Release/TProcura 1 -R Resultados/tvetor_2 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10
+/TProcura/Teste$ ./bin/Release/TProcura 1:10 -R Resultados/tvetor_2 -P P2=3 P3=1 P1=1:12 x P6=1:3
 
 
-═╤═ Instâncias ═══ { 📄1 }
- ├─ 🛠️ ─ P2=3 P4=10 P5=0 (parâmetros comuns)
+═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 }
+ ├─ 🛠️  ─ P2=3 P3=1 P4=10 P5=0 (parâmetros comuns)
 ═╪═ Configurações ═══
- ├─ ⚙️ [1] ─ P1=1 P3=1 P6=1
- ├─ ⚙️ [2] ─ P1=2 P3=1 P6=1
- ├─ ⚙️ [3] ─ P1=3 P3=1 P6=1
+ ├─ ⚙  [1] ─ P1=1 P6=1
+ ├─ ⚙  [2] ─ P1=2 P6=1
+ ├─ ⚙  [3] ─ P1=3 P6=1
  │ ...
- ├─ ⚙️ [358] ─ P1=10 P3=10 P6=3
- ├─ ⚙️ [359] ─ P1=11 P3=10 P6=3
- ├─ ⚙️ [360] ─ P1=12 P3=10 P6=3
+ ├─ ⚙  [34] ─ P1=10 P6=3
+ ├─ ⚙  [35] ─ P1=11 P6=3
+ ├─ ⚙  [36] ─ P1=12 P6=3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:360   📄 Instâncias: 1   🛠️ Configurações: 360   🖥️ Processos: 1.
- ├─ ⏱ 10" 41ms        📋 140   📄 1     🛠️ 140   🖥️ 1
- ├─ ⏱ 20" 53ms        📋 278   📄 1     🛠️ 278   🖥️ 1
- ├─ 🗎  Ficheiro Resultados/tvetor_2.csv gravado.
- │  ⏱  Tempo real: 25" 853ms
- │  ⏱  CPU total: 25" 853ms
+ ├─ 📋 Tarefas:360   📄 Instâncias: 10   🛠️ Configurações: 36   🖥️ Processos: 1.
+ ├─ ⏱ 10" 513ms       📋 50    📄 10    🛠️ 5     🖥️ 1
+ ├─ ⏱ 20" 529ms       📋 62    📄 2     🛠️ 7     🖥️ 1
+ ├─ ⏱ 31" 418ms       📋 70    📄 10    🛠️ 7     🖥️ 1
+ ├─ ⏱ 42" 357ms       📋 81    📄 1     🛠️ 9     🖥️ 1
+ ├─ ⏱ 52" 398ms       📋 117   📄 7     🛠️ 12    🖥️ 1
+ ├─ ⏱ 1' 2" 719ms     📋 171   📄 1     🛠️ 18    🖥️ 1
+ ├─ ⏱ 1' 12" 763ms    📋 185   📄 5     🛠️ 19    🖥️ 1
+ ├─ ⏱ 1' 23" 3ms      📋 197   📄 7     🛠️ 20    🖥️ 1
+ ├─ ⏱ 1' 33" 375ms    📋 209   📄 9     🛠️ 21    🖥️ 1
+ ├─ ⏱ 1' 43" 452ms    📋 271   📄 1     🛠️ 28    🖥️ 1
+ ├─ ⏱ 1' 53" 460ms    📋 299   📄 9     🛠️ 30    🖥️ 1
+ ├─ ⏱ 2' 4" 975ms     📋 309   📄 9     🛠️ 31    🖥️ 1
+ ├─ ⏱ 2' 15" 843ms    📋 320   📄 10    🛠️ 32    🖥️ 1
+ ├─ ⏱ 2' 25" 850ms    📋 331   📄 1     🛠️ 34    🖥️ 1
+ ├─ 📑  Ficheiro Resultados/tvetor_2.csv gravado.
+ │  ⏱  Tempo real: 2' 27" 20ms
+ │  ⏱  CPU total: 2' 27" 20ms
  │  📊  Utilização: 100.0%
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  25" 862ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 27" 31ms ) ═══
 ```
 
 Podemos ver que solicitá-mos muitas configurações. Se fosse engano, poderiamos ter abortado o teste.
 
-Vamos ficar com apenas o esforço base, atendendo a que foi já 25 segundos.
+Vamos ficar com apenas o esforço base, atendendo a que foi já 2 minutos e meio.
 
 #### Análise e Conclusões
 
@@ -1258,24 +1271,25 @@ Ficamos com nova consulta, tvetor_2, com 360 linhas carregadas.
 Podemos fazer desde logo o relatório dinâmico a partir do modelo de dados, colocando:
 - **linhas**: P1(ALGORITMO)
 - **colunas**: P6(ESTRUTURA_DADOS)
-- **valores**: Soma I2(Tempo(ms))
+- **valores**: Média I2(Tempo(ms))
 
-Obtemos a seguinte tabela da Soma de I2(tempo(ms)):
-| Rótulos de Linha | 1:TVector | 2:std::vector | 3:TVector/std::algorithm | Total Geral |
-|:---:|---:|---:|---:|---:|
-| 1:Add() | 63 | 38 | 71 | 172 |
-| 10:operator=() | 7 | 0 | 8 | 15 |
-| 11:operator+=() | 8 | 23 | 9 | 40 |
-| 12:nada | 0 | 0 | 0 | 0 |
-| 2:Sort() | 661 | 616 | 623 | 1900 |
-| 3:RandomOrder() | 63 | 32 | 33 | 128 |
-| 4:Invert() | 3 | 0 | 0 | 3 |
-| 5:BeASet() | 664 | 672 | 667 | 2003 |
-| 6:Difference() | 1467 | 1392 | 1479 | 4338 |
-| 7:Union() | 2497 | 1413 | 2273 | 6183 |
-| 8:Contained() | 1378 | 1252 | 1362 | 3992 |
-| 9:Intersection() | 1454 | 1347 | 1476 | 4277 |
-| Total Geral | 8265 | 6785 | 8001 | 23051 |
+Obtemos a seguinte tabela da Média de I2(tempo(ms)):
+| Rótulos de Linha | 1:TVector | 2:std::vector | 3:TVector/std::algorithm |
+|:---:|---:|---:|---:|
+| 1:Add() | 41,5 | 18 | 40,8 |
+| 10:operator=() | 2,6 | 1,3 | 2,5 |
+| 11:operator+=() | 3,1 | 8,8 | 2,9 |
+| 12:nada | 0 | 0 | 0 |
+| 2:Sort() | 404,4 | 371 | 368 |
+| 3:RandomOrder() | 77,5 | 50,5 | 54,7 |
+| 4:Invert() | 2,5 | 1,2 | 1,5 |
+| 5:BeASet() | 393,3 | 372 | 374,6 |
+| 6:Difference() | 856,3 | 809,6 | 799,6 |
+| 7:Union() | 1315,5 | 840,6 | 1264,8 |
+| 8:Contained() | 798,8 | 749,5 | 731,3 |
+| 9:Intersection() | 870,2 | 799,4 | 816 |
+| Total Geral | 397,1 | 335,1 | 371,3 |
+
 
 Podemos ver que os valores obtidos pelas estruturas são da mesma ordem de grandeza, mas o std::vetor
 aparenta ser mais rápido em algumas operações, nomeadamente na operação Union(), ficando com ligeira vantagem em outras.
@@ -1297,25 +1311,25 @@ Colocamos agora os limites nos valores
 
 | Rótulos de Linha | 1:TVector<br>IC_Inf2 | IC_Sup2 | 2:std::vector<br>IC_Inf2 | IC_Sup2 | 3:TVector/std::algorithm<br>IC_Inf2 | IC_Sup2 |
 |:---:|---:|---:|---:|---:|---:|---:|
-| 1:Add() | 5 | 7 | 3 | 5 | 5 | 9 |
-| 10:operator=() | 0 | 1 | 0 | 0 | 1 | 1 |
-| 11:operator+=() | 1 | 1 | 1 | 3 | 1 | 1 |
+| 1:Add() | 29 | 54 | 12 | 24 | 22 | 59 |
+| 10:operator=() | 2 | 3 | 1 | 2 | 2 | 3 |
+| 11:operator+=() | 2 | 4 | -3 | 21 | 2 | 4 |
 | 12:nada | 0 | 0 | 0 | 0 | 0 | 0 |
-| 2:Sort() | 63 | 69 | 58 | 65 | 60 | 65 |
-| 3:RandomOrder() | 5 | 8 | 3 | 4 | 3 | 4 |
-| 4:Invert() | 0 | 1 | 0 | 0 | 0 | 0 |
-| 5:BeASet() | 64 | 69 | 59 | 76 | 57 | 77 |
-| 6:Difference() | 138 | 155 | 127 | 151 | 127 | 169 |
-| 7:Union() | 227 | 272 | 128 | 154 | 214 | 240 |
-| 8:Contained() | 126 | 150 | 113 | 137 | 123 | 150 |
-| 9:Intersection() | 137 | 154 | 128 | 142 | 127 | 169 |
+| 2:Sort() | 257 | 551 | 236 | 506 | 235 | 501 |
+| 3:RandomOrder() | 40 | 115 | 27 | 74 | 29 | 80 |
+| 4:Invert() | 2 | 3 | 1 | 2 | 1 | 2 |
+| 5:BeASet() | 253 | 534 | 238 | 506 | 236 | 513 |
+| 6:Difference() | 551 | 1162 | 525 | 1094 | 513 | 1086 |
+| 7:Union() | 849 | 1782 | 540 | 1141 | 817 | 1712 |
+| 8:Contained() | 511 | 1086 | 479 | 1020 | 468 | 995 |
+| 9:Intersection() | 562 | 1179 | 511 | 1088 | 522 | 1110 |
 
-Podemos ver que a operação 7 de união, os intervalos de confiança não se intersectam, pelo que
-a diferença é real entre amboas as operações. Nos restantes casos os intervalos de confiança
-intersectam-se, pelo que este teste não permite saber se as médias são distintas.
+
+Podemos ver que mesmo na operação 7 de união, os intervalos de confiança intersectam-se, pelo que
+a diferença não é neste teste ainda suficiente para concluirmos que há diferença.
 
 A utilização de intervalos de confiança para saber se dois valores são distintos, é um teste conservador,
-significando que pode haver casos em que os intervalos se intersectem, e exista forma com os mesmos dados e um teste
+significando que pode haver casos em que os intervalos não se intersectem, e exista forma com os mesmos dados e um teste
 estatístico mais fino, de concluir a diferença.
 
 
@@ -1447,7 +1461,71 @@ Quanto maior os testes e maior o número de processadores, maior será o ganho d
 No entanto para isso precisamos de ter acesso a um cluster.
 Torna-se impraticável testes de volume utilizando computador próprio.
 
-A submissão de trabalhos num cluster, será alvo de um caso de estudo, para exemplificação.
+
+#### Submissão de Trabalhos em Cluster (Deucalion)
+
+Vamos então descrever como proceder à submissão de trabalhos num cluster.
+
+A documentação do cluster Deucalion pode ser encontrada em: https://docs.deucalion.macc.fccn.pt/
+A forma como se pode obter acesso ao cluster, bem como a submissão de trabalhos, está descrita nessa documentação.
+
+Vamos submeter o teste 1 e 2 com todos os esforços ao cluster.
+
+O script de submissão (tvetor.sh) é o seguinte:
+```
+#!/bin/bash
+#SBATCH --job-name=tvetor
+#SBATCH --output=Resultados/tvetor.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=dev-arm
+#SBATCH --time=01:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=32G
+
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+
+# Teste 1
+
+# esforço A
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_1m0 -M 0 -P P1=2 P2=3 P3=1
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_1 -M 1 -P P1=2 P2=3 P3=1
+
+# esforço B
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_1Bmo -M 0 -P P1=2 P2=3 P3=1:10
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_1B -M 1 -P P1=2 P2=3 P3=1:10
+
+# esforço C
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_1C -M 1 -P P1=2 P2=2 P3=1:100
+
+# Teste 2
+
+# esforço A
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2mo -M 0 -P P2=3 P3=1 P1=1:12 x P6=1:3 
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2 -M 1 -P P2=3 P3=1 P1=1:12 x P6=1:3 
+
+# esforço B
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2Bmo -M 0 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2B -M 1 -P P2=3 P1=1:12 x P6=1:3 x P3=1:10
+
+# esforço C
+srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2C -M 1 -P P2=3 P1=1:12 x P6=1:3 x P3=1:100
+```
+
+Simplesmente identificamos os recursos necessários, neste caso um nó completo do dev-arm, com 48 cores.
+Como neste cluster os 48 cores são cobrados, mesmo que se utilize um só, optámos por utilizar todos os cores disponíveis.
+
+"ml OpenMPI" carrega o módulo do OpenMPI, necessário para a execução de programas MPI.
+
+"make mpi" compila o programa em modo MPI, no nó de execução.
+Neste caso o nó de login é x86, enquanto que o nó de execução é ARM.
+
+De seguida colocamos todas as execuções anteriores, atendendo a que o cluster com 48 cores todos estes testes serão rápidos.
+
 
 
 

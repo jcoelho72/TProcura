@@ -252,19 +252,19 @@ void TProcura::MostraCaixa(const char* titulo, ECaixaParte parte, int largura,
 		printf("\n");
 	switch (parte) {
 	case ECaixaParte::Topo:
-		if(icon[0]!=0)
-			printf("%*s┌─ %-2s%s ─", identacao, "", icon, titulo); 
+		if (icon[0] != 0)
+			printf("%*s┌─ %-2s%s ─", identacao, "", icon, titulo);
 		else
 			printf("%*s┌─ %s ─", identacao, "", titulo);
 		break;
 	case ECaixaParte::Separador:
-		if(icon[0]!=0)
+		if (icon[0] != 0)
 			printf("%*s├─ %-2s%s ─", identacao, "", icon, titulo);
 		else
 			printf("%*s├─ %s ─", identacao, "", titulo);
 		break;
 	case ECaixaParte::Meio:
-		if(icon[0]!=0)
+		if (icon[0] != 0)
 			printf("%*s│ ^%-2s%s", identacao, "", icon, titulo);
 		else
 			printf("%*s│ %s", identacao, "", titulo);
@@ -272,7 +272,7 @@ void TProcura::MostraCaixa(const char* titulo, ECaixaParte parte, int largura,
 	case ECaixaParte::Fundo:
 		printf("%*s└", identacao, "");
 		if (titulo[0] != 0) { // texto a ser inserido no fundo
-			if(icon[0]!=0)
+			if (icon[0] != 0)
 				printf("─ %-2s%s ─", icon, titulo);
 			else
 				printf("─ %s ─", titulo);
@@ -357,7 +357,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 		titulo = "Parâmetros";
 	// detalhe 0 é só uma linha (separador)
 	if (detalhe) {
-		MostraCaixa(titulo, ECaixaParte::Topo, 70,true,0,Icon(EIcon::PARAM));
+		MostraCaixa(titulo, ECaixaParte::Topo, 70, true, 0, Icon(EIcon::PARAM));
 		MostraCaixa("", ECaixaParte::Meio, 1);
 	}
 	else {
@@ -776,16 +776,18 @@ void TProcura::TesteInicio(TVector<int>& instancias, TVector<int>& configAtual) 
 		MostraConjunto(instancias, Icon(EIcon::INST));
 		MostrarConfiguracoes(0);
 	}
-	printf("\n═╤═ %-2s Início do Teste (%-2s%d) ═══",
-		Icon(EIcon::TESTE), Icon(EIcon::PROCESSO), mpiID);
+	if (mpiCount < 10 || mpiID == 0)
+		printf("\n═╤═ %-2s Início do Teste (%-2s%d) ═══",
+			Icon(EIcon::TESTE), Icon(EIcon::PROCESSO), mpiID);
 	fflush(stdout);
 	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
 }
 
 void TProcura::TesteFim() {
-	printf("\n═╧═ %-2s Fim do Teste (%-2s%d  %-2s%s) ═══",
-		Icon(EIcon::FIM), Icon(EIcon::PROCESSO), mpiID, Icon(EIcon::TEMPO),
-		MostraTempo(Cronometro(CONT_TESTE)));
+	if (mpiCount < 10 || mpiID == 0)
+		printf("\n═╧═ %-2s Fim do Teste (%-2s%d  %-2s%s) ═══",
+			Icon(EIcon::FIM), Icon(EIcon::PROCESSO), mpiID, Icon(EIcon::TEMPO),
+			MostraTempo(Cronometro(CONT_TESTE)));
 	fflush(stdout);
 }
 
@@ -1260,7 +1262,7 @@ void TProcura::MostraRelatorio(TVector<TResultado>& resultados, bool ultimo)
 	if (ultimo) {
 		if (!resultados.Empty() && !indAtivo.Empty()) {
 			int col = 2;
-			MostraCaixa("Indicadores", ECaixaParte::Topo,70,true,0, Icon(EIcon::IND));
+			MostraCaixa("Indicadores", ECaixaParte::Topo, 70, true, 0, Icon(EIcon::IND));
 			MostraCaixa("", ECaixaParte::Meio, 1);
 			for (auto ind : indAtivo) {
 				if (col > 2)
