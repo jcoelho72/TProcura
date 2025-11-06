@@ -1,7 +1,7 @@
 var searchData=
 [
   ['1_202_0',['Teste Aspirador - Parte 1/2',['../teste_aspirador1.html',1,'']]],
-  ['1_20clonar_20o_20repositório_1',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md124',1,'']]],
+  ['1_20clonar_20o_20repositório_1',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md125',1,'']]],
   ['1_20instância_2',['Ação 1: Menu 1 - Instância',['../teste_tvector.html#autotoc_md92',1,'']]],
   ['1_20trocar_20de_20instância_3',['Ação 1 - Trocar de instância',['../teste_aspirador1.html#autotoc_md40',1,'']]],
   ['1_20ver_20instâncias_4',['1 ver instâncias',['../teste_8damas.html#autotoc_md21',1,'Ação 1 - Ver instâncias'],['../teste_8damas_ci.html#autotoc_md31',1,'Ação 1 - Ver instâncias'],['../teste_jogo_do_galo.html#autotoc_md57',1,'Ação 1 - Ver instâncias'],['../teste_jogo_em_linha.html#autotoc_md64',1,'Ação 1 - Ver instâncias'],['../teste_particao.html#autotoc_md71',1,'Ação 1 - Ver instâncias'],['../teste_puzzle8.html#autotoc_md79',1,'Ação 1 - Ver instâncias']]],

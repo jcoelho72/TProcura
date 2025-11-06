@@ -1190,12 +1190,12 @@ Submissão de Trabalhos em Cluster (Deucalion)</h4>
 <div class="line">#SBATCH --job-name=tvetor</div>
 <div class="line">#SBATCH --output=Resultados/tvetor.txt</div>
 <div class="line">#SBATCH --account=f202507959cpcaa0a</div>
-<div class="line">#SBATCH --partition=dev-arm</div>
+<div class="line">#SBATCH --partition=normal-arm</div>
 <div class="line">#SBATCH --time=01:00:00</div>
 <div class="line">#SBATCH --nodes=1</div>
 <div class="line">#SBATCH --ntasks=48</div>
 <div class="line">#SBATCH --cpus-per-task=1</div>
-<div class="line">#SBATCH --mem=32G</div>
+<div class="line">#SBATCH --mem=24G</div>
 <div class="line"> </div>
 <div class="line">ml OpenMPI</div>
 <div class="line"> </div>
@@ -1231,6 +1231,391 @@ Submissão de Trabalhos em Cluster (Deucalion)</h4>
 <p>"ml OpenMPI" carrega o módulo do OpenMPI, necessário para a execução de programas MPI.</p>
 <p>"make mpi" compila o programa em modo MPI, no nó de execução. Neste caso o nó de login é x86, enquanto que o nó de execução é ARM.</p>
 <p>De seguida colocamos todas as execuções anteriores, atendendo a que o cluster com 48 cores todos estes testes serão rápidos.</p>
+<p>No cluster submetemos o trabalho com o comando: </p><div class="fragment"><div class="line">sbatch tvetor.sh</div>
+</div><!-- fragment --><p>Podemos ver se o trabalho está em execução com: </p><div class="fragment"><div class="line">squeue --me</div>
+</div><!-- fragment --><p> Para verificar o output do trabalho, mesmo durante a execução, consultamos o ficheiro Resultados/tvetor.txt vendo o final do ficheiro </p><div class="fragment"><div class="line">tail -f Resultados/tvetor.txt</div>
+</div><!-- fragment --><p>Pode-se ver o conteúdo final do ficheiro de resultados:</p>
+<details >
+<summary >
+Ver conteúdo final de Resultados/tvetor.txt</summary>
+<p></p>
+<p>O conteúdo final do ficheiro é o seguinte: </p><div class="fragment"><div class="line">mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CTesteTVector.cpp teste.cpp</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ </div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:10   📄 Instâncias: 10   🛠️ Configurações: 1   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_1m0.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 2&quot; 182ms </div>
+<div class="line"> │  ⏱  CPU total: 1&#39; 44&quot; 732ms </div>
+<div class="line"> │  📊  Utilização: 11.3%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2&quot; 216ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ </div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:10   📄 Instâncias: 10   🛠️ Configurações: 1   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 2&quot; 142ms </div>
+<div class="line"> │  ⏱  CPU total: 1&#39; 40&quot; 689ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 2&quot; 140ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 1&#39; 29&quot; 37ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 11.3%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 11.5% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2&quot; 142ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [4] ─ &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [5] ─ &#x241B;[90mP3=&#x241B;[0m5</div>
+<div class="line"> ├─ ⚙  [6] ─ &#x241B;[90mP3=&#x241B;[0m6</div>
+<div class="line"> ├─ ⚙  [7] ─ &#x241B;[90mP3=&#x241B;[0m7</div>
+<div class="line"> ├─ ⚙  [8] ─ &#x241B;[90mP3=&#x241B;[0m8</div>
+<div class="line"> ├─ ⚙  [9] ─ &#x241B;[90mP3=&#x241B;[0m9</div>
+<div class="line"> ├─ ⚙  [10] ─ &#x241B;[90mP3=&#x241B;[0m10</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_1Bmo.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 4&quot; 291ms </div>
+<div class="line"> │  ⏱  CPU total: 3&#39; 25&quot; 989ms </div>
+<div class="line"> │  📊  Utilização: 56.7%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4&quot; 325ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [4] ─ &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [5] ─ &#x241B;[90mP3=&#x241B;[0m5</div>
+<div class="line"> ├─ ⚙  [6] ─ &#x241B;[90mP3=&#x241B;[0m6</div>
+<div class="line"> ├─ ⚙  [7] ─ &#x241B;[90mP3=&#x241B;[0m7</div>
+<div class="line"> ├─ ⚙  [8] ─ &#x241B;[90mP3=&#x241B;[0m8</div>
+<div class="line"> ├─ ⚙  [9] ─ &#x241B;[90mP3=&#x241B;[0m9</div>
+<div class="line"> ├─ ⚙  [10] ─ &#x241B;[90mP3=&#x241B;[0m10</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_1B.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 3&quot; 645ms </div>
+<div class="line"> │  ⏱  CPU total: 2&#39; 51&quot; 298ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 3&quot; 640ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 55&quot; 249ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 66.3%</div>
+<div class="line"> │  - Gestor: 0.1%</div>
+<div class="line"> │  - Trabalhadores: 67.7% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 3&quot; 645ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [98] ─ &#x241B;[90mP3=&#x241B;[0m98</div>
+<div class="line"> ├─ ⚙  [99] ─ &#x241B;[90mP3=&#x241B;[0m99</div>
+<div class="line"> ├─ ⚙  [100] ─ &#x241B;[90mP3=&#x241B;[0m100</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:1000   📄 Instâncias: 10   🛠️ Configurações: 100   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_1C.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 25&quot; 778ms </div>
+<div class="line"> │  ⏱  CPU total: 20&#39; 11&quot; 575ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 25&quot; 761ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 56&quot; 407ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 93.4%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 95.3% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 25&quot; 778ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [34] ─ &#x241B;[90mP1=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [35] ─ &#x241B;[90mP1=&#x241B;[0m11 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [36] ─ &#x241B;[90mP1=&#x241B;[0m12 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:360   📄 Instâncias: 10   🛠️ Configurações: 36   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_2mo.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 16&quot; 139ms </div>
+<div class="line"> │  ⏱  CPU total: 12&#39; 54&quot; 658ms </div>
+<div class="line"> │  📊  Utilização: 50.5%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 16&quot; 173ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [34] ─ &#x241B;[90mP1=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [35] ─ &#x241B;[90mP1=&#x241B;[0m11 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [36] ─ &#x241B;[90mP1=&#x241B;[0m12 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:360   📄 Instâncias: 10   🛠️ Configurações: 36   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 34ms        📋 360   📄 7     🛠️ 6     🖥️ 11    ⚖  1 4630 1 1 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 12&quot; 184ms </div>
+<div class="line"> │  ⏱  CPU total: 9&#39; 32&quot; 669ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 12&quot; 177ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 1&quot; 390ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 66.9%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 68.3% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 12&quot; 184ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [358] ─ &#x241B;[90mP1=&#x241B;[0m10 &#x241B;[90mP3=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [359] ─ &#x241B;[90mP1=&#x241B;[0m11 &#x241B;[90mP3=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [360] ─ &#x241B;[90mP1=&#x241B;[0m12 &#x241B;[90mP3=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:3600   📄 Instâncias: 10   🛠️ Configurações: 360   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 573ms       📋 721   📄 1     🛠️ 73    🖥️ 48   </div>
+<div class="line"> ├─ ⏱ 21&quot; 140ms       📋 1441  📄 1     🛠️ 145   🖥️ 48   </div>
+<div class="line"> ├─ ⏱ 31&quot; 731ms       📋 2161  📄 1     🛠️ 217   🖥️ 48   </div>
+<div class="line"> ├─ ⏱ 42&quot; 291ms       📋 2881  📄 1     🛠️ 289   🖥️ 48   </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_2Bmo.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 2&#39; 21&quot; 373ms </div>
+<div class="line"> │  ⏱  CPU total: 1h 53&#39; 5&quot; 910ms </div>
+<div class="line"> │  📊  Utilização: 57.3%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2&#39; 21&quot; 407ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [358] ─ &#x241B;[90mP1=&#x241B;[0m10 &#x241B;[90mP3=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [359] ─ &#x241B;[90mP1=&#x241B;[0m11 &#x241B;[90mP3=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [360] ─ &#x241B;[90mP1=&#x241B;[0m12 &#x241B;[90mP3=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:3600   📄 Instâncias: 10   🛠️ Configurações: 360   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 9ms         📋 471   📄 7     🛠️ 330   🖥️ 26    ⚖  1 4608 1 1 </div>
+<div class="line"> ├─ ⏱ 20&quot; 140ms       📋 919   📄 6     🛠️ 282   🖥️ 34    ⚖  1 3625 1 1 </div>
+<div class="line"> ├─ ⏱ 30&quot; 183ms       📋 1380  📄 1     🛠️ 224   🖥️ 43    ⚖  1 337 1 1 </div>
+<div class="line"> ├─ ⏱ 40&quot; 272ms       📋 1791  📄 5     🛠️ 182   🖥️ 43    ⚖  1 407 1 0 </div>
+<div class="line"> ├─ ⏱ 50&quot; 279ms       📋 2233  📄 3     🛠️ 140   🖥️ 47    ⚖  1 963 1 1 </div>
+<div class="line"> ├─ ⏱ 1&#39; 281ms        📋 2669  📄 10    🛠️ 95    🖥️ 18    ⚖  1 0 1 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 10&quot; 303ms    📋 3098  📄 9     🛠️ 51    🖥️ 35    ⚖  1 6 1 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 20&quot; 321ms    📋 3551  📄 2     🛠️ 7     🖥️ 2     ⚖  1 649 1 1 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_2B.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 1&#39; 26&quot; 683ms </div>
+<div class="line"> │  ⏱  CPU total: 1h 7&#39; 54&quot; 120ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 1&#39; 26&quot; 626ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 1&quot; 522ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 93.6%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 95.5% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1&#39; 26&quot; 683ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [3598] ─ &#x241B;[90mP1=&#x241B;[0m10 &#x241B;[90mP3=&#x241B;[0m100 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [3599] ─ &#x241B;[90mP1=&#x241B;[0m11 &#x241B;[90mP3=&#x241B;[0m100 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [3600] ─ &#x241B;[90mP1=&#x241B;[0m12 &#x241B;[90mP3=&#x241B;[0m100 &#x241B;[90mP6=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:36000   📄 Instâncias: 10   🛠️ Configurações: 3600   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 14ms        📋 471   📄 6     🛠️ 3556  🖥️ 47    ⚖  1 907 1 1 </div>
+<div class="line"> ├─ ⏱ 20&quot; 20ms        📋 917   📄 3     🛠️ 3511  🖥️ 5     ⚖  1 891 1 1 </div>
+<div class="line"> ├─ ⏱ 30&quot; 20ms        📋 1374  📄 9     🛠️ 3465  🖥️ 40    ⚖  1 11 1 0 </div>
+<div class="line"> ├─ ⏱ 40&quot; 24ms        📋 1785  📄 4     🛠️ 3424  🖥️ 30    ⚖  1 678 1 1 </div>
+<div class="line"> ├─ ⏱ 50&quot; 31ms        📋 2227  📄 9     🛠️ 3385  🖥️ 16    ⚖  1 1589 1 1 </div>
+<div class="line"> ├─ ⏱ 1&#39; 50ms         📋 2645  📄 2     🛠️ 3336  🖥️ 32    ⚖  1 59 1 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 10&quot; 66ms     📋 3086  📄 2     🛠️ 3292  🖥️ 1     ⚖  1 295 1 1 </div>
+<div class="line"> ├─ ⏱ 1&#39; 20&quot; 78ms     📋 3544  📄 7     🛠️ 3257  🖥️ 29    ⚖  1 2356 1 1 </div>
+<div class="line"> ├─ ⏱ 1&#39; 30&quot; 151ms    📋 3957  📄 6     🛠️ 3211  🖥️ 8     ⚖  1 2087 1 1 </div>
+<div class="line"> ├─ ⏱ 1&#39; 40&quot; 158ms    📋 4397  📄 10    🛠️ 3176  🖥️ 4     ⚖  1 3870 1 1 </div>
+<div class="line"> ├─ ⏱ 1&#39; 50&quot; 166ms    📋 4855  📄 10    🛠️ 3117  🖥️ 40    ⚖  1 4 1 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 195ms        📋 5268  📄 7     🛠️ 3090  🖥️ 32    ⚖  1 4294 1 1 </div>
+<div class="line"> ├─ ⏱ 2&#39; 10&quot; 251ms    📋 5716  📄 10    🛠️ 3037  🖥️ 14    ⚖  1 1608 1 1 </div>
+<div class="line"> ├─ ⏱ 2&#39; 20&quot; 258ms    📋 6156  📄 2     🛠️ 2985  🖥️ 19    ⚖  1 3 1 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 30&quot; 260ms    📋 6565  📄 10    🛠️ 2957  🖥️ 29    ⚖  1 3796 1 1 </div>
+<div class="line"> ├─ ⏱ 2&#39; 40&quot; 300ms    📋 7023  📄 5     🛠️ 2910  🖥️ 27    ⚖  1 3018 1 1 </div>
+<div class="line"> ├─ ⏱ 2&#39; 50&quot; 316ms    📋 7448  📄 5     🛠️ 2856  🖥️ 10    ⚖  1 88 1 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 348ms        📋 7886  📄 2     🛠️ 2812  🖥️ 43    ⚖  1 324 1 1 </div>
+<div class="line"> ├─ ⏱ 3&#39; 10&quot; 362ms    📋 8339  📄 8     🛠️ 2780  🖥️ 29    ⚖  1 3063 1 1 </div>
+<div class="line"> ├─ ⏱ 3&#39; 20&quot; 389ms    📋 8751  📄 6     🛠️ 2728  🖥️ 40    ⚖  1 913 1 1 </div>
+<div class="line"> ├─ ⏱ 3&#39; 30&quot; 547ms    📋 9199  📄 6     🛠️ 2694  🖥️ 33    ⚖  1 3651 1 1 </div>
+<div class="line"> ├─ ⏱ 3&#39; 40&quot; 603ms    📋 9661  📄 1     🛠️ 2635  🖥️ 7     ⚖  1 310 1 1 </div>
+<div class="line"> ├─ ⏱ 3&#39; 50&quot; 609ms    📋 10073 📄 6     🛠️ 2596  🖥️ 13    ⚖  1 1045 1 1 </div>
+<div class="line"> ├─ ⏱ 4&#39; 671ms        📋 10516 📄 1     🛠️ 2549  🖥️ 40    ⚖  1 293 1 1 </div>
+<div class="line"> ├─ ⏱ 4&#39; 10&quot; 673ms    📋 10967 📄 10    🛠️ 2512  🖥️ 27    ⚖  1 1577 1 1 </div>
+<div class="line"> ├─ ⏱ 4&#39; 20&quot; 678ms    📋 11383 📄 5     🛠️ 2468  🖥️ 37    ⚖  1 1654 1 1 </div>
+<div class="line"> ├─ ⏱ 4&#39; 30&quot; 742ms    📋 11834 📄 1     🛠️ 2418  🖥️ 1     ⚖  1 589 1 1 </div>
+<div class="line"> ├─ ⏱ 4&#39; 40&quot; 746ms    📋 12260 📄 9     🛠️ 2376  🖥️ 46    ⚖  1 246 1 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 50&quot; 753ms    📋 12684 📄 2     🛠️ 2334  🖥️ 41    ⚖  1 1170 1 1 </div>
+<div class="line"> ├─ ⏱ 5&#39; 901ms        📋 13143 📄 8     🛠️ 2293  🖥️ 27    ⚖  1 1240 1 1 </div>
+<div class="line"> ├─ ⏱ 5&#39; 10&quot; 924ms    📋 13569 📄 6     🛠️ 2250  🖥️ 25    ⚖  1 2027 1 1 </div>
+<div class="line"> ├─ ⏱ 5&#39; 20&quot; 944ms    📋 14006 📄 2     🛠️ 2200  🖥️ 14    ⚖  1 324 1 1 </div>
+<div class="line"> ├─ ⏱ 5&#39; 30&quot; 974ms    📋 14459 📄 8     🛠️ 2168  🖥️ 17    ⚖  1 3058 1 1 </div>
+<div class="line"> ├─ ⏱ 5&#39; 40&quot; 980ms    📋 14872 📄 6     🛠️ 2114  🖥️ 27    ⚖  1 200 1 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 51&quot; 159ms    📋 15319 📄 6     🛠️ 2082  🖥️ 26    ⚖  1 3690 1 1 </div>
+<div class="line"> ├─ ⏱ 6&#39; 1&quot; 254ms     📋 15781 📄 1     🛠️ 2023  🖥️ 5     ⚖  1 308 1 1 </div>
+<div class="line"> ├─ ⏱ 6&#39; 11&quot; 269ms    📋 16193 📄 1     🛠️ 1981  🖥️ 32    ⚖  1 153 1 1 </div>
+<div class="line"> ├─ ⏱ 6&#39; 21&quot; 273ms    📋 16635 📄 10    🛠️ 1951  🖥️ 19    ⚖  1 3577 1 1 </div>
+<div class="line"> ├─ ⏱ 6&#39; 31&quot; 278ms    📋 17078 📄 7     🛠️ 1894  🖥️ 11    ⚖  1 5 1 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 41&quot; 304ms    📋 17499 📄 4     🛠️ 1854  🖥️ 18    ⚖  1 1311 1 1 </div>
+<div class="line"> ├─ ⏱ 6&#39; 51&quot; 333ms    📋 17951 📄 8     🛠️ 1817  🖥️ 11    ⚖  1 2733 1 1 </div>
+<div class="line"> ├─ ⏱ 7&#39; 1&quot; 344ms     📋 18368 📄 3     🛠️ 1765  🖥️ 3     ⚖  1 497 1 1 </div>
+<div class="line"> ├─ ⏱ 7&#39; 11&quot; 395ms    📋 18801 📄 6     🛠️ 1734  🖥️ 21    ⚖  1 3939 1 1 </div>
+<div class="line"> ├─ ⏱ 7&#39; 21&quot; 414ms    📋 19260 📄 1     🛠️ 1675  🖥️ 36    ⚖  1 276 1 1 </div>
+<div class="line"> ├─ ⏱ 7&#39; 31&quot; 414ms    📋 19676 📄 6     🛠️ 1639  🖥️ 27    ⚖  1 1862 1 1 </div>
+<div class="line"> ├─ ⏱ 7&#39; 41&quot; 448ms    📋 20122 📄 10    🛠️ 1614  🖥️ 47    ⚖  1 6213 1 1 </div>
+<div class="line"> ├─ ⏱ 7&#39; 51&quot; 456ms    📋 20573 📄 6     🛠️ 1553  🖥️ 19    ⚖  1 2213 1 1 </div>
+<div class="line"> ├─ ⏱ 8&#39; 1&quot; 475ms     📋 20982 📄 4     🛠️ 1504  🖥️ 34    ⚖  1 593 1 1 </div>
+<div class="line"> ├─ ⏱ 8&#39; 11&quot; 480ms    📋 21430 📄 2     🛠️ 1459  🖥️ 12    ⚖  1 584 1 1 </div>
+<div class="line"> ├─ ⏱ 8&#39; 21&quot; 482ms    📋 21873 📄 1     🛠️ 1413  🖥️ 23    ⚖  1 1 1 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 31&quot; 535ms    📋 22301 📄 3     🛠️ 1372  🖥️ 15    ⚖  1 501 1 1 </div>
+<div class="line"> ├─ ⏱ 8&#39; 41&quot; 541ms    📋 22743 📄 8     🛠️ 1333  🖥️ 14    ⚖  1 1395 1 1 </div>
+<div class="line"> ├─ ⏱ 8&#39; 51&quot; 542ms    📋 23155 📄 7     🛠️ 1286  🖥️ 33    ⚖  1 251 1 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 1&quot; 599ms     📋 23599 📄 6     🛠️ 1254  🖥️ 43    ⚖  1 3658 1 1 </div>
+<div class="line"> ├─ ⏱ 9&#39; 11&quot; 687ms    📋 24061 📄 1     🛠️ 1195  🖥️ 36    ⚖  1 311 1 1 </div>
+<div class="line"> ├─ ⏱ 9&#39; 21&quot; 690ms    📋 24472 📄 1     🛠️ 1153  🖥️ 44    ⚖  1 153 1 1 </div>
+<div class="line"> ├─ ⏱ 9&#39; 31&quot; 700ms    📋 24915 📄 10    🛠️ 1123  🖥️ 46    ⚖  1 3589 1 1 </div>
+<div class="line"> ├─ ⏱ 9&#39; 41&quot; 704ms    📋 25366 📄 5     🛠️ 1065  🖥️ 43    ⚖  1 9 1 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 51&quot; 708ms    📋 25782 📄 2     🛠️ 1022  🖥️ 14    ⚖  1 49 1 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 1&quot; 734ms    📋 26233 📄 9     🛠️ 990   🖥️ 34    ⚖  1 3112 1 1 </div>
+<div class="line"> ├─ ⏱ 10&#39; 11&quot; 742ms   📋 26656 📄 3     🛠️ 935   🖥️ 3     ⚖  1 0 1 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 21&quot; 770ms   📋 27083 📄 2     🛠️ 894   🖥️ 22    ⚖  1 1157 1 1 </div>
+<div class="line"> ├─ ⏱ 10&#39; 31&quot; 773ms   📋 27542 📄 9     🛠️ 860   🖥️ 47    ⚖  1 3069 1 1 </div>
+<div class="line"> ├─ ⏱ 10&#39; 41&quot; 783ms   📋 27960 📄 9     🛠️ 806   🖥️ 9     ⚖  1 300 1 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 51&quot; 794ms   📋 28403 📄 10    🛠️ 786   🖥️ 23    ⚖  1 6227 1 1 </div>
+<div class="line"> ├─ ⏱ 11&#39; 1&quot; 811ms    📋 28855 📄 10    🛠️ 717   🖥️ 9     ⚖  1 13 1 0 </div>
+<div class="line"> ├─ ⏱ 11&#39; 11&quot; 815ms   📋 29262 📄 4     🛠️ 676   🖥️ 42    ⚖  1 594 1 1 </div>
+<div class="line"> ├─ ⏱ 11&#39; 21&quot; 873ms   📋 29711 📄 10    🛠️ 644   🖥️ 21    ⚖  1 3450 1 1 </div>
+<div class="line"> ├─ ⏱ 11&#39; 31&quot; 878ms   📋 30157 📄 9     🛠️ 592   🖥️ 41    ⚖  1 1462 1 1 </div>
+<div class="line"> ├─ ⏱ 11&#39; 41&quot; 921ms   📋 30581 📄 3     🛠️ 544   🖥️ 47    ⚖  1 499 1 1 </div>
+<div class="line"> ├─ ⏱ 11&#39; 52&quot; 8ms     📋 31024 📄 2     🛠️ 500   🖥️ 26    ⚖  1 629 1 1 </div>
+<div class="line"> ├─ ⏱ 12&#39; 2&quot; 38ms     📋 31440 📄 1     🛠️ 456   🖥️ 47    ⚖  1 25 1 0 </div>
+<div class="line"> ├─ ⏱ 12&#39; 12&quot; 80ms    📋 31881 📄 2     🛠️ 413   🖥️ 23    ⚖  1 626 1 1 </div>
+<div class="line"> ├─ ⏱ 12&#39; 22&quot; 80ms    📋 32341 📄 1     🛠️ 367   🖥️ 39    ⚖  1 311 1 1 </div>
+<div class="line"> ├─ ⏱ 12&#39; 32&quot; 102ms   📋 32753 📄 6     🛠️ 328   🖥️ 10    ⚖  1 1042 1 1 </div>
+<div class="line"> ├─ ⏱ 12&#39; 42&quot; 102ms   📋 33194 📄 3     🛠️ 283   🖥️ 19    ⚖  1 872 1 1 </div>
+<div class="line"> ├─ ⏱ 12&#39; 52&quot; 107ms   📋 33636 📄 4     🛠️ 241   🖥️ 47    ⚖  1 593 1 1 </div>
+<div class="line"> ├─ ⏱ 13&#39; 2&quot; 136ms    📋 34059 📄 5     🛠️ 199   🖥️ 35    ⚖  1 1533 1 1 </div>
+<div class="line"> ├─ ⏱ 13&#39; 12&quot; 159ms   📋 34510 📄 2     🛠️ 151   🖥️ 1     ⚖  1 653 1 1 </div>
+<div class="line"> ├─ ⏱ 13&#39; 22&quot; 167ms   📋 34937 📄 5     🛠️ 107   🖥️ 30    ⚖  1 0 1 0 </div>
+<div class="line"> ├─ ⏱ 13&#39; 32&quot; 169ms   📋 35363 📄 2     🛠️ 66    🖥️ 28    ⚖  1 1159 1 1 </div>
+<div class="line"> ├─ ⏱ 13&#39; 42&quot; 179ms   📋 35822 📄 9     🛠️ 32    🖥️ 7     ⚖  1 3076 1 1 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/tvetor_2C.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 13&#39; 51&quot; 680ms </div>
+<div class="line"> │  ⏱  CPU total: 10h 51&#39; 28&quot; 973ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 13&#39; 51&quot; 106ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 2&quot; 511ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 97.5%</div>
+<div class="line"> │  - Gestor: 0.1%</div>
+<div class="line"> │  - Trabalhadores: 99.5% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 13&#39; 51&quot; 680ms ) ═══</div>
+</div><!-- fragment --><p>Podemos ver que a última execução levou já 13 minutos, o que corresponde a um tempo de execução total de 10 horas de CPU.</p>
+<p>Podemos ver os tempos com a divisão estática do trabalho no teste 2Bmo vs 2B.</p>
+<p>Com a divisão estática do trabalho, obtivemos os seguintes tempos: </p><div class="fragment"><div class="line"> │  ⏱  Tempo real: 2&#39; 21&quot; 373ms </div>
+<div class="line"> │  ⏱  CPU total: 1h 53&#39; 5&quot; 910ms </div>
+<div class="line"> │  📊  Utilização: 57.3%</div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2&#39; 21&quot; 407ms ) ═══</div>
+</div><!-- fragment --><p>A utilização foi de 57% apenas, o que indica que a divisão estática do trabalho não é eficiente para este tipo de teste.</p>
+<div class="fragment"><div class="line"> │  ⏱  Tempo real: 1&#39; 26&quot; 683ms </div>
+<div class="line"> │  ⏱  CPU total: 1h 7&#39; 54&quot; 120ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 1&#39; 26&quot; 626ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 1&quot; 522ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 93.6%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 95.5% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1&#39; 26&quot; 683ms ) ═══</div>
+</div><!-- fragment --><p>A divisão dinâmica do trabalho, obteve uma utilização de 93%, o que é muito melhor. Em termos de tempo real, a divisão estática obteve 2 minutos e 21 segundos, enquanto a divisão dinâmica obteve 1 minuto e 26 segundos.</p>
+<p>Em termos de resultados é igual, pelo que iremos utilizar a divisão dinâmica do trabalho daqui para a frente.</p>
+<p></p>
+</details>
+<h4><a class="anchor" id="autotoc_md112"></a>
+Análise e Conclusões</h4>
+<p>O ficheiros produzidos de ambas as análises, foram colocados na pasta Resultados/tvetor_1 e Resultados/tvetor_2, tendo sido importados de forma idêntica mas por pasta em vez de por ficheiro, para o Excel. Colocamos uma coluna "Esforço" com o nome do ficheiro.</p>
+<ul>
+<li><b>Ficheiro de Análise</b>: tvetorDeucalion.xlsx</li>
+</ul>
+<p>Assim podemos fazer uma analise com intervalos de confiança, e observar a melhoria por aumento do esforço computacional.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadRight">1B<br  />
+ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">1Bmo<br  />
+ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">1C<br  />
+ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">153   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">153   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">153   </td><td class="markdownTableBodyRight">153    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">320   </td><td class="markdownTableBodyRight">322   </td><td class="markdownTableBodyRight">320   </td><td class="markdownTableBodyRight">322   </td><td class="markdownTableBodyRight">321   </td><td class="markdownTableBodyRight">321    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">494   </td><td class="markdownTableBodyRight">496   </td><td class="markdownTableBodyRight">494   </td><td class="markdownTableBodyRight">495   </td><td class="markdownTableBodyRight">494   </td><td class="markdownTableBodyRight">495    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">672   </td><td class="markdownTableBodyRight">674   </td><td class="markdownTableBodyRight">671   </td><td class="markdownTableBodyRight">674   </td><td class="markdownTableBodyRight">671   </td><td class="markdownTableBodyRight">672    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">850   </td><td class="markdownTableBodyRight">852   </td><td class="markdownTableBodyRight">849   </td><td class="markdownTableBodyRight">852   </td><td class="markdownTableBodyRight">851   </td><td class="markdownTableBodyRight">852    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">1033   </td><td class="markdownTableBodyRight">1036   </td><td class="markdownTableBodyRight">1032   </td><td class="markdownTableBodyRight">1037   </td><td class="markdownTableBodyRight">1032   </td><td class="markdownTableBodyRight">1034    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">1217   </td><td class="markdownTableBodyRight">1221   </td><td class="markdownTableBodyRight">1217   </td><td class="markdownTableBodyRight">1220   </td><td class="markdownTableBodyRight">1216   </td><td class="markdownTableBodyRight">1218    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">1399   </td><td class="markdownTableBodyRight">1406   </td><td class="markdownTableBodyRight">1399   </td><td class="markdownTableBodyRight">1404   </td><td class="markdownTableBodyRight">1400   </td><td class="markdownTableBodyRight">1402    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">1586   </td><td class="markdownTableBodyRight">1593   </td><td class="markdownTableBodyRight">1585   </td><td class="markdownTableBodyRight">1593   </td><td class="markdownTableBodyRight">1586   </td><td class="markdownTableBodyRight">1589    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">1770   </td><td class="markdownTableBodyRight">1777   </td><td class="markdownTableBodyRight">1771   </td><td class="markdownTableBodyRight">1776   </td><td class="markdownTableBodyRight">1775   </td><td class="markdownTableBodyRight">1778   </td></tr>
+</table>
+<p>Os dois níveis de esforço B e C que tendo mais que uma execução permitem calcular intervalos de confiança, consegue-se observar que o aumento do esforço computacional reduz o intervalo de confiança.</p>
+<p>Podemos ver que o tempo de execução aumenta mais que linearmente, já que na instância 1 com 1 milhão de valores, leva 0,153 segundos, e na instância 10 com 10 milhões de valores, leva cerca de 1,775 segundos, ou seja mais de 11 vezes mais tempo.</p>
+<p>Vamos ver agora o teste 2, com a eficiência de cada operação por estrutura de dados.</p>
+<p>| P1(ALGORITMO) | P6(ESTRUTURA_DADOS) | 2<br  />
+IC_Inf2 | IC_Sup2 | 2mo<br  />
+IC_Inf2 | IC_Sup2 | 2B<br  />
+IC_Inf2 | IC_Sup2 | 2Bmo<br  />
+IC_Inf2 | IC_Sup2 | 2C<br  />
+IC_Inf2 | IC_Sup2 | |:&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:| | 1:Add() | 1:<a class="el" href="classTVector.html">TVector</a> | 99 | 196 | 94 | 197 | 133 | 163 | 131 | 161 | 143 | 153 | | | 2:std::vector | 64 | 129 | 64 | 129 | 87 | 106 | 87 | 106 | 93 | 100 | | | 3:TVector/std::algorithm | 97 | 198 | 96 | 195 | 133 | 163 | 131 | 161 | 143 | 152 | | 10:operator=() | 1:<a class="el" href="classTVector.html">TVector</a> | 5 | 9 | 5 | 9 | 6 | 8 | 6 | 8 | 7 | 7 | | | 2:std::vector | 2 | 3 | 2 | 3 | 2 | 3 | 2 | 3 | 3 | 3 | | | 3:TVector/std::algorithm | 5 | 9 | 5 | 9 | 6 | 8 | 6 | 8 | 7 | 7 | | 11:operator+=() | 1:<a class="el" href="classTVector.html">TVector</a> | 7 | 21 | 6 | 20 | 11 | 15 | 7 | 10 | 11 | 13 | | | 2:std::vector | 7 | 17 | 10 | 18 | 8 | 11 | 10 | 13 | 9 | 10 | | | 3:TVector/std::algorithm | 10 | 22 | 5 | 10 | 12 | 15 | 6 | 8 | 12 | 13 | | 12:nada | 1:<a class="el" href="classTVector.html">TVector</a> | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | | | 2:std::vector | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | | | 3:TVector/std::algorithm | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | | 2:Sort() | 1:<a class="el" href="classTVector.html">TVector</a> | 612 | 1290 | 613 | 1290 | 849 | 1053 | 849 | 1054 | 919 | 983 | | | 2:std::vector | 554 | 1166 | 554 | 1166 | 768 | 953 | 768 | 953 | 831 | 889 | | | 3:TVector/std::algorithm | 539 | 1136 | 538 | 1134 | 746 | 926 | 746 | 926 | 808 | 864 | | 3:RandomOrder() | 1:<a class="el" href="classTVector.html">TVector</a> | 276 | 615 | 268 | 605 | 393 | 495 | 376 | 477 | 427 | 460 | | | 2:std::vector | 105 | 249 | 97 | 226 | 153 | 195 | 146 | 185 | 169 | 182 | | | 3:TVector/std::algorithm | 107 | 252 | 99 | 233 | 154 | 196 | 146 | 185 | 169 | 182 | | 4:Invert() | 1:<a class="el" href="classTVector.html">TVector</a> | 5 | 10 | 5 | 10 | 7 | 8 | 7 | 8 | 7 | 8 | | | 2:std::vector | 2 | 5 | 2 | 5 | 3 | 4 | 3 | 4 | 4 | 4 | | | 3:TVector/std::algorithm | 2 | 5 | 2 | 5 | 3 | 4 | 3 | 4 | 3 | 4 | | 5:BeASet() | 1:<a class="el" href="classTVector.html">TVector</a> | 618 | 1302 | 618 | 1303 | 857 | 1063 | 857 | 1064 | 927 | 992 | | | 2:std::vector | 560 | 1181 | 560 | 1180 | 777 | 964 | 777 | 965 | 841 | 900 | | | 3:TVector/std::algorithm | 542 | 1142 | 541 | 1142 | 750 | 931 | 750 | 931 | 812 | 869 | | 6:Difference() | 1:<a class="el" href="classTVector.html">TVector</a> | 1311 | 2756 | 1311 | 2758 | 1812 | 2248 | 1812 | 2248 | 1962 | 2099 | | | 2:std::vector | 1191 | 2501 | 1192 | 2501 | 1648 | 2043 | 1649 | 2044 | 1784 | 1909 | | | 3:TVector/std::algorithm | 1157 | 2430 | 1157 | 2428 | 1600 | 1984 | 1600 | 1984 | 1732 | 1853 | | 7:Union() | 1:<a class="el" href="classTVector.html">TVector</a> | 2356 | 4891 | 2359 | 4899 | 3216 | 3979 | 3213 | 3975 | 3479 | 3719 | | | 2:std::vector | 1199 | 2518 | 1200 | 2518 | 1660 | 2058 | 1659 | 2058 | 1797 | 1923 | | | 3:TVector/std::algorithm | 2200 | 4561 | 2190 | 4539 | 2997 | 3707 | 2992 | 3699 | 3242 | 3465 | | 8:Contained() | 1:<a class="el" href="classTVector.html">TVector</a> | 1238 | 2609 | 1238 | 2609 | 1713 | 2125 | 1713 | 2126 | 1855 | 1985 | | | 2:std::vector | 1107 | 2331 | 1107 | 2330 | 1534 | 1903 | 1534 | 1903 | 1661 | 1777 | | | 3:TVector/std::algorithm | 1076 | 2266 | 1076 | 2264 | 1490 | 1849 | 1490 | 1849 | 1614 | 1727 | | 9:Intersection() | 1:<a class="el" href="classTVector.html">TVector</a> | 1340 | 2818 | 1341 | 2819 | 1853 | 2298 | 1854 | 2299 | 2006 | 2146 | | | 2:std::vector | 1190 | 2496 | 1189 | 2495 | 1647 | 2042 | 1649 | 2043 | 1783 | 1907 | | | 3:TVector/std::algorithm | 1191 | 2499 | 1191 | 2497 | 1646 | 2040 | 1646 | 2040 | 1782 | 1906 |</p>
+<p>Podemos ver que não há diferença consideravel entre versões com a divisão estática do trabalho (mo) ou com a divisão dinâmica do trabalho.</p>
+<p>Vemos que os intervalos de confiança do tempo na operação de ordenação, intersectam-se excepto no esforço C, onde a estrutura std::vector é mais rápida que a <a class="el" href="classTVector.html">TVector</a>. Já com a operação de união, a partir do esforço B, os intervalos não se intersectam e <a class="el" href="classTVector.html">TVector</a> é mais lento que std::vector.</p>
+<p>As diferenças não são grandes, e opções de compiladores podem alterar estes resultados. Mas é importante aqui realçar que o esforço computacional extra, permitiu observar diferenças que de outra forma não seriam visíveis.</p>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
