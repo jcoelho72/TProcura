@@ -2,12 +2,12 @@
 #SBATCH --job-name=tvetor
 #SBATCH --output=Resultados/tvetor.txt
 #SBATCH --account=f202507959cpcaa0a
-#SBATCH --partition=dev-arm
+#SBATCH --partition=normal-arm
 #SBATCH --time=01:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=48
 #SBATCH --cpus-per-task=1
-#SBATCH --mem=32G
+#SBATCH --mem=24G
 
 ml OpenMPI
 
