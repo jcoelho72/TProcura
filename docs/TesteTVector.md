@@ -1517,8 +1517,8 @@ srun bin/MPI/TProcura 1:10 -R Resultados/tvetor_2C -M 1 -P P2=3 P1=1:12 x P6=1:3
 
 ```
 
-Simplesmente identificamos os recursos necessários, neste caso um nó completo do dev-arm, com 48 cores.
-Como neste cluster os 48 cores são cobrados, mesmo que se utilize um só, optámos por utilizar todos os cores disponíveis.
+Simplesmente identificamos os recursos necessários, neste caso um nó completo do normal-arm, com 48 cores.
+Como neste cluster os 48 cores são cobrados, mesmo que se utilize um só, pelo que optámos por utilizar todos os cores disponíveis.
 
 "ml OpenMPI" carrega o módulo do OpenMPI, necessário para a execução de programas MPI.
 
@@ -1529,16 +1529,16 @@ De seguida colocamos todas as execuções anteriores, atendendo a que o cluster 
 
 No cluster submetemos o trabalho com o comando:
 ```
-sbatch tvetor.sh
+/TProcura/Teste$ sbatch tvetor.sh
 ```
 
 Podemos ver se o trabalho está em execução com:
 ```
-squeue --me
+/TProcura/Teste$ squeue --me
 ```
 Para verificar o output do trabalho, mesmo durante a execução, consultamos o ficheiro Resultados/tvetor.txt vendo o final do ficheiro
 ```
-tail -f Resultados/tvetor.txt
+/TProcura/Teste$ tail -f Resultados/tvetor.txt
 ```
 
 Pode-se ver o conteúdo final do ficheiro de resultados:
@@ -1926,7 +1926,7 @@ leva cerca de 1,775 segundos, ou seja mais de 11 vezes mais tempo.
 Vamos ver agora o teste 2, com a eficiência de cada operação por estrutura de dados.
 
 | P1(ALGORITMO) | P6(ESTRUTURA_DADOS) | 2<br>IC_Inf2 | IC_Sup2 | 2mo<br>IC_Inf2 | IC_Sup2 | 2B<br>IC_Inf2 | IC_Sup2 | 2Bmo<br>IC_Inf2 | IC_Sup2 | 2C<br>IC_Inf2 | IC_Sup2 |
-|:---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+|:---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | 1:Add() | 1:TVector | 99 | 196 | 94 | 197 | 133 | 163 | 131 | 161 | 143 | 153 |
 |  | 2:std::vector | 64 | 129 | 64 | 129 | 87 | 106 | 87 | 106 | 93 | 100 |
 |  | 3:TVector/std::algorithm | 97 | 198 | 96 | 195 | 133 | 163 | 131 | 161 | 143 | 152 |
