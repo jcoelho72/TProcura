@@ -206,6 +206,7 @@ Problemas de exemplo da classe TProcuraConstrutiva:
 2. [Puzzle 8](teste_puzzle8.html)
 3. [8 Damas](teste_8damas.html)
 4. [Partição](teste_particao.html)
+-  [Resultdos Deucalion](construtiva__deucalion.html)
 
 Problemas de exemplo da classe TProcuraMelhorativa:
 1. [8 Damas CI](teste_8damas_ci.html) (TCodificacaoInteira)
