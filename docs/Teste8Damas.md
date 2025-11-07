@@ -13,12 +13,12 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 
 ## Sumário
 
-- [Ação 1 - Ver instâncias](#8damas-a1)
-- [Ação 2 - Resolver manualmente](#8damas-a2)
-- [Ação 3 - Procura em Largura](#8damas-a3)
-- [Ação 4 - Procura em Profundidade](#8damas-a4)
-- [Ação 5 - Heurística](#8damas-a5)
-- [Ação 6 - Testes Empíricos](#8damas-a6)
+- [Ação 1 - Ver instâncias](#damas-a1)
+- [Ação 2 - Resolver manualmente](#damas-a2)
+- [Ação 3 - Procura em Largura](#damas-a3)
+- [Ação 4 - Procura em Profundidade](#damas-a4)
+- [Ação 5 - Heurística](#damas-a5)
+- [Ação 6 - Testes Empíricos](#damas-a6)
 
 
 ```entrada
@@ -60,7 +60,7 @@ Opção:
 Este estado vazio é um tabuleiro de 8x8. 
 O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.
 
-\anchor 8damas-a1
+\anchor damas-a1
 ## Ação 1 - Ver instâncias
 
 Vamos ver que instâncias temos. Introduza: **1; 4.**
@@ -89,7 +89,7 @@ O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.
 
 
 
-\anchor 8damas-a2
+\anchor damas-a2
 ## Ação 2 - Resolver manualmente
 
 Há várias formas de se colocar damas no tabuleiro. 
@@ -166,7 +166,7 @@ A escolha na primeira ação por d2 (ou d3), é crítica para obter a solução.
 Neste problema a solução tem sempre o mesmo número de ações, igual a N.
 
 
-\anchor 8damas-a3
+\anchor damas-a3
 ## Ação 3 - Procura em Largura
 
 Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. 
@@ -288,7 +288,7 @@ Não só este algoritmo gasta muito tempo nos níveis inferiores, a explorar com
 como a procura em profundidade ilimitada não tem problema, já que não existem ciclos infinitos.
 
 
-\anchor 8damas-a4
+\anchor damas-a4
 ## Ação 4 - Procura em Profundidade
 
 Vamos executar a mesma instância com a procura em profundidade ilimitada.
@@ -386,7 +386,7 @@ Neste caso houve 8 expansões na procura em profundidade, contra 13 da procura e
 Mas evidentemente que não será esta pequena instância que irá suportar as nossas conclusões. 
 Temos um teste empírico na ação 6, com mais instâncias.
 
-\anchor 8damas-a5
+\anchor damas-a5
 ## Ação 5 - Heurística
 
 Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações
@@ -410,7 +410,7 @@ estejam totalmente atacadas. Ao colocar duas ou três damas, estas podem cobrir 
 da última linha, e essa linha só é analisada no último nível. 
 Esta implementação causa também mais peso, mas invalida estados antecipadamente. 
 
-\anchor 8damas-a6
+\anchor damas-a6
 ## Ação 6 - Testes Empíricos
 
 Nos testes empíricos vamos passar para a interface da linha de comando, por ser mais simples.

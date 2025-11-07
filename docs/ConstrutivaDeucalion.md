@@ -1,3 +1,14 @@
+@page construtiva__deucalion Deucalion - testes construtivos
+
+Testes da classe TProcuraConstrutiva no cluster Deucalion.
+
+A documentação do cluster Deucalion pode ser encontrada em: https://docs.deucalion.macc.fccn.pt/
+A forma como se pode obter acesso ao cluster, bem como a submissão de trabalhos, está descrita nessa documentação.
+
+Vamos submeter os testes com os exemplos do puzzle 8, as 8 damas e partição, com todos os níveis de esforço (A, B e C), em modo MPI.
+
+O script de submissão (construtiva.sh) é o seguinte:
+```
 #!/bin/bash
 #SBATCH --job-name=construtiva
 #SBATCH --output=Resultados/construtiva.txt
@@ -78,3 +89,43 @@ srun bin/MPI/TProcuraConstrutiva 2:1000:10 -R Resultados/particao_3B -M 1 -P P1=
 
 # esforço C
 srun bin/MPI/TProcuraConstrutiva 2:1000 -R Resultados/particao_3C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P11=1 P3=1:40
+```
+
+O script é idêntico ao realizado com o teste tvetor.sh, mas temos agora as execuções dos exemplos construtivos.
+
+No cluster submetemos o trabalho com o comando:
+```
+/TProcura/Construtiva/Teste$ sbatch construtiva.sh
+```
+
+Podemos ver se o trabalho está em execução com:
+```
+/TProcura/Construtiva/Teste$ squeue --me
+```
+Para verificar o output do trabalho, mesmo durante a execução, consultamos o ficheiro Resultados/tvetor.txt vendo o final do ficheiro
+```
+/TProcura/Teste$ tail -f Resultados/construtiva.txt
+```
+
+Pode-se ver o conteúdo final do ficheiro de resultados:
+
+<details>
+  <summary>Ver conteúdo final de Resultados/tvetor.txt</summary>
+
+O conteúdo final do ficheiro é o seguinte:
+```
+...(conteúdo do ficheiro)
+
+```
+
+....(comentários)
+
+
+</details>
+
+#### Análise e Conclusões
+
+
+
+
+
