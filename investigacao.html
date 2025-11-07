@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('investigacao.html',''); initResizable(
   <div class="headertitle"><div class="title">Testes de Algoritmos com o TProcura</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2><a class="anchor" id="autotoc_md6"></a>
+<div class="textblock"><h2><a class="anchor" id="autotoc_md3"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="investigacao.html#investigacao-a1">Importância dos Testes</a></li>
@@ -106,7 +106,7 @@ Sumário</h2>
 <li><a class="el" href="investigacao.html#investigacao-a6">Modelo para Testes</a></li>
 </ul>
 <p><a class="anchor" id="investigacao-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Importância dos Testes</h2>
 <p>A construção de novos e melhores algoritmos é um ponto crítico no desenvolvimento da sociedade, permitindo fazer mais, e de forma mais eficiente.</p>
 <p>Ao propor um novo algoritmo, o investigador deve suportar as afirmações que faz — nomeadamente que o algoritmo é melhor ou complementar a outros existentes. Só assim se convertem afirmações em conhecimento sólido, utilizável por outros.</p>
@@ -117,7 +117,7 @@ Importância dos Testes</h2>
 </ul>
 <p>No caso dos algoritmos, existe a particularidade de poderem ser testados de forma ilimitada, dependendo apenas do poder computacional disponível. Assim, estamos em melhores condições para suportar afirmações sobre o seu comportamento, desde que os testes sejam executados de forma ordenada e documentada.</p>
 <p><a class="anchor" id="investigacao-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 O Papel do TProcura</h2>
 <p>Uma das principais funções do projeto <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> é precisamente facilitar a execução de testes a algoritmos. Além disso, o <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> integra um conjunto de meta-algoritmos aplicáveis a problemas diversos de procura e otimização, incluindo:</p><ul>
 <li>Algoritmos construtivos</li>
@@ -126,7 +126,7 @@ O Papel do TProcura</h2>
 </ul>
 <p>O utilizador apenas precisa de implementar a parte específica do problema. Os algoritmos genéricos, juntamente com os parâmetros utilizados, ficam prontos para teste.</p>
 <p><a class="anchor" id="investigacao-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md6"></a>
 Características dos Testes no TProcura</h2>
 <p>Os testes realizados com o <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> visam garantir que:</p>
 <ul>
@@ -135,7 +135,7 @@ Características dos Testes no TProcura</h2>
 <li>Não existem parâmetros ocultos que possam influenciar o resultado (incluindo números aleatórios, se usados)</li>
 </ul>
 <p><a class="anchor" id="investigacao-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 O Ciclo do Investigador</h2>
 <p>O investigador que desenvolve um novo algoritmo passa por um ciclo típico:</p><ol type="1">
 <li>Ideia inicial</li>
@@ -146,7 +146,7 @@ O Ciclo do Investigador</h2>
 </ol>
 <p>Este ciclo é natural, mas pode tornar-se caótico: parâmetros espalhados no código, resultados guardados em locais diferentes, alterações de última hora que invalidam comparações. O <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> visa disciplinar e simplificar este processo.</p>
 <p><a class="anchor" id="investigacao-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Estrutura de um Teste</h2>
 <p>Para definir um teste, precisamos de três elementos fundamentais:</p><ul>
 <li>Instâncias: dados concretos do problema (ex.: rede de estradas para o problema do caminho mais curto). Devem ser diversas e representativas, para suportar conclusões generalizáveis.</li>
@@ -160,7 +160,7 @@ Estrutura de um Teste</h2>
 </ul>
 <p>Com esta estrutura, conseguimos separar a <b>análise do algoritmo</b> da <b>implementação</b> do código.</p>
 <p><a class="anchor" id="investigacao-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Tipos de Testes</h2>
 <ul>
 <li>Validação Verificar se os resultados são corretos (sem bugs).</li>
@@ -176,24 +176,24 @@ Tipos de Testes</h2>
 <li>Limites Determinar até que dimensão de instâncias o algoritmo é utilizável.</li>
 </ul>
 <p><a class="anchor" id="investigacao-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Modelo para Testes</h2>
 <p>Propõe-se esta estrutura para um teste, numa sequência de testes.</p>
-<h3><a class="anchor" id="autotoc_md14"></a>
+<h3><a class="anchor" id="autotoc_md11"></a>
 Identificação</h3>
 <ul>
 <li>Nome do problema ou sigla</li>
 <li>ID do teste sequencial</li>
 </ul>
 <p>Os testes são uma sequência de testes, podendo um teste utilizar resultados de testes anteriores Utilizar o nome_ID para identificar o ficheiro de resultados.</p>
-<h3><a class="anchor" id="autotoc_md15"></a>
+<h3><a class="anchor" id="autotoc_md12"></a>
 Tipo de Teste / Objetivo</h3>
 <ul>
 <li>[Validação / Paramétrico / Performance / Eficiência / Limites]</li>
 <li>Objetivo: [ex.: obter melhor valor de um parâmetro]</li>
 </ul>
 <p>A identificação do objetivo é importante para saber se se conseguiu, e compreender a sequência de testes realizada.</p>
-<h3><a class="anchor" id="autotoc_md16"></a>
+<h3><a class="anchor" id="autotoc_md13"></a>
 Definição do Teste</h3>
 <ul>
 <li>Instâncias: [lista ou referência a ficheiros]</li>
@@ -201,7 +201,7 @@ Definição do Teste</h3>
 <li>Indicadores: [solução, tempo, iterações, métricas específicas]</li>
 </ul>
 <p>Estas definições são realizadas no <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, utilizando a facilidade de definir várias configurações.</p>
-<h3><a class="anchor" id="autotoc_md17"></a>
+<h3><a class="anchor" id="autotoc_md14"></a>
 Esforço</h3>
 <ul>
 <li>Cargas de esforço: <br  />
@@ -215,14 +215,14 @@ Esforço</h3>
 </li>
 </ul>
 <p>O teste pode ter várias cargas de esforço, sendo a primeira a base. No caso de ter uma componente aleatória, o P3 com a semente é uma forma simples de se ter o mesmo teste em esforço maior. No caso de se utilizar uma carga de esforço superior, digamos que B, para maior precisão, o ficheiro de resultados fica com o nome nome_ID_B.</p>
-<h3><a class="anchor" id="autotoc_md18"></a>
+<h3><a class="anchor" id="autotoc_md15"></a>
 Execução</h3>
 <ul>
 <li>Linha de comando</li>
 <li>Output obtido</li>
 </ul>
 <p>Execução com todos os parametros, pronta a reproduzir, utilizando a menor carga de esforço.</p>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md16"></a>
 Análise e Conclusões</h3>
 <ul>
 <li>Gráficos: [ex.: tempo médio vs. dimensão]</li>

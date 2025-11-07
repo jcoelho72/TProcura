@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['jogodogalo_2ecpp_0',['JogoDoGalo.cpp',['../JogoDoGalo_8cpp.html',1,'']]],
-  ['jogodogalo_2eh_1',['JogoDoGalo.h',['../JogoDoGalo_8h.html',1,'']]],
-  ['jogoemlinha_2ecpp_2',['JogoEmLinha.cpp',['../JogoEmLinha_8cpp.html',1,'']]],
-  ['jogoemlinha_2eh_3',['JogoEmLinha.h',['../JogoEmLinha_8h.html',1,'']]]
+  ['oitodamas_2ecpp_0',['oitodamas.cpp',['../Construtiva_2Teste_2OitoDamas_8cpp.html',1,'(Global Namespace)'],['../Melhorativa_2Teste_2OitoDamas_8cpp.html',1,'(Global Namespace)']]],
+  ['oitodamas_2eh_1',['oitodamas.h',['../Construtiva_2Teste_2OitoDamas_8h.html',1,'(Global Namespace)'],['../Melhorativa_2Teste_2OitoDamas_8h.html',1,'(Global Namespace)']]]
 ];
