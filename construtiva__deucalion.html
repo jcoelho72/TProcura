@@ -187,13 +187,695 @@ $(document).ready(function(){initNavTree('construtiva__deucalion.html',''); init
 </div><!-- fragment --><p>Pode-se ver o conteúdo final do ficheiro de resultados:</p>
 <details >
 <summary >
-Ver conteúdo final de Resultados/tvetor.txt</summary>
+Ver conteúdo final de Resultados/construtiva.txt</summary>
 <p></p>
-<p>O conteúdo final do ficheiro é o seguinte: </p><div class="fragment"><div class="line">...(conteúdo do ficheiro)</div>
-</div><!-- fragment --><p>....(comentários)</p>
-<p></p>
-</details>
-<h4><a class="anchor" id="autotoc_md2"></a>
+<p>O conteúdo final do ficheiro é o seguinte: </p><div class="fragment"><div class="line">mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp ../../TRand.cpp ../CListaNo.cpp ../TProcuraConstrutiva.cpp Puzzle8.cpp OitoDamas.cpp teste.cpp Particao.cpp Aspirador.cpp</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 101 📄 201 📄 301 📄 401 📄 501 📄 601 📄 701 📄 801 📄 901 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m0 &#x241B;[90mP8=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m4 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [22] ─ &#x241B;[90mP1=&#x241B;[0m5 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [23] ─ &#x241B;[90mP1=&#x241B;[0m6 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [24] ─ &#x241B;[90mP1=&#x241B;[0m7 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:240   📄 Instâncias: 10   🛠️ Configurações: 24   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 1ms         📋 240   📄 401   🛠️ 19    🖥️ 2     ⚖  -2 10000 0 2741174 4695355 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/puzzle8_1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 11&quot; 165ms </div>
+<div class="line"> │  ⏱  CPU total: 8&#39; 44&quot; 777ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 11&quot; 160ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 5&#39; 36&quot; 881ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 35.0%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 35.8% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 11&quot; 165ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 11 📄 21 … 📄 971 📄 981 📄 991 } #100</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m0 &#x241B;[90mP8=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m4 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [22] ─ &#x241B;[90mP1=&#x241B;[0m5 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [23] ─ &#x241B;[90mP1=&#x241B;[0m6 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [24] ─ &#x241B;[90mP1=&#x241B;[0m7 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:2400   📄 Instâncias: 100   🛠️ Configurações: 24   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 7ms         📋 654   📄 221   🛠️ 18    🖥️ 38    ⚖  23 2617 0 570615 1000206 0 </div>
+<div class="line"> ├─ ⏱ 20&quot; 20ms        📋 1156  📄 691   🛠️ 12    🖥️ 12    ⚖  23 2652 0 582659 1024257 0 </div>
+<div class="line"> ├─ ⏱ 30&quot; 205ms       📋 1714  📄 931   🛠️ 6     🖥️ 40    ⚖  21 988 0 211421 375296 25 </div>
+<div class="line"> ├─ ⏱ 40&quot; 282ms       📋 2243  📄 761   🛠️ 1     🖥️ 7     ⚖  19 619 0 166486 289688 9 </div>
+<div class="line"> ├─ ⏱ 50&quot; 306ms       📋 2400  📄 551   🛠️ 1     🖥️ 41    ⚖  -2 10000 0 2601566 4464353 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/puzzle8_1B.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 57&quot; 372ms </div>
+<div class="line"> │  ⏱  CPU total: 44&#39; 56&quot; 502ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 57&quot; 334ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 4&#39; 30&quot; 813ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 88.1%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 90.0% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 57&quot; 372ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 … 📄 998 📄 999 📄 1000 } #1000</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m0 &#x241B;[90mP8=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m4 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [22] ─ &#x241B;[90mP1=&#x241B;[0m5 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [23] ─ &#x241B;[90mP1=&#x241B;[0m6 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [24] ─ &#x241B;[90mP1=&#x241B;[0m7 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:24000   📄 Instâncias: 1000   🛠️ Configurações: 24   🖥️ Processos: 48.</div>
+<div class="line">slurmstepd: error: Detected 1 oom_kill event in StepId=636184.2. Some of the step tasks have been OOM Killed.</div>
+<div class="line">srun: error: cna1632: task 27: Out Of Memory</div>
+<div class="line">slurmstepd: error:  mpi/pmix_v4: _errhandler: cna1632 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -61, source = [slurm.pmix.636184.2:27]</div>
+<div class="line">srun: Job step aborted: Waiting up to 32 seconds for job step to finish.</div>
+<div class="line">slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15 ***</div>
+<div class="line"> ├─ ⏱ 1&#39; 568ms        📋 4693  📄 350   🛠️ 19    🖥️ 43    ⚖  24 8259 0 2118081 3679711 1 </div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m4 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:74   📄 Instâncias: 37   🛠️ Configurações: 2   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 16ms            📋 47    📄 5     🛠️ 1     🖥️ 12    ⚖  5 15 0 5 9 0 </div>
+<div class="line"> ├─ ⏱ 16ms            📋 48    📄 6     🛠️ 1     🖥️ 13    ⚖  6 15 0 31 36 0 </div>
+<div class="line"> ├─ ⏱ 17ms            📋 49    📄 10    🛠️ 1     🖥️ 17    ⚖  10 16 0 102 119 0 </div>
+<div class="line"> ├─ ⏱ 17ms            📋 50    📄 7     🛠️ 1     🖥️ 14    ⚖  7 16 0 9 19 0 </div>
+<div class="line"> ├─ ⏱ 17ms            📋 51    📄 8     🛠️ 1     🖥️ 15    ⚖  8 16 0 113 120 0 </div>
+<div class="line"> ├─ ⏱ 17ms            📋 52    📄 4     🛠️ 1     🖥️ 11    ⚖  4 15 0 8 8 0 </div>
+<div class="line"> ├─ ⏱ 17ms            📋 53    📄 11    🛠️ 1     🖥️ 18    ⚖  11 17 0 52 78 0 </div>
+<div class="line"> ├─ ⏱ 17ms            📋 54    📄 9     🛠️ 1     🖥️ 16    ⚖  9 17 0 41 56 0 </div>
+<div class="line"> ├─ ⏱ 18ms            📋 55    📄 12    🛠️ 1     🖥️ 19    ⚖  12 17 0 261 289 0 </div>
+<div class="line"> ├─ ⏱ 27ms            📋 56    📄 15    🛠️ 1     🖥️ 22    ⚖  15 27 0 1359 1407 0 </div>
+<div class="line"> ├─ ⏱ 31ms            📋 57    📄 14    🛠️ 1     🖥️ 21    ⚖  14 30 0 1899 1937 0 </div>
+<div class="line"> ├─ ⏱ 32ms            📋 58    📄 13    🛠️ 1     🖥️ 20    ⚖  13 17 0 111 148 0 </div>
+<div class="line"> ├─ ⏱ 41ms            📋 59    📄 19    🛠️ 0     🖥️ 20    ⚖  19 9 0 2545 2642 0 </div>
+<div class="line"> ├─ ⏱ 45ms            📋 60    📄 16    🛠️ 1     🖥️ 23    ⚖  16 45 0 2850 2896 0 </div>
+<div class="line"> ├─ ⏱ 58ms            📋 61    📄 21    🛠️ 0     🖥️ 22    ⚖  21 32 0 8562 8676 0 </div>
+<div class="line"> ├─ ⏱ 62ms            📋 62    📄 17    🛠️ 0     🖥️ 23    ⚖  17 17 0 5374 5449 0 </div>
+<div class="line"> ├─ ⏱ 66ms            📋 63    📄 15    🛠️ 0     🖥️ 23    ⚖  15 4 0 1359 1414 0 </div>
+<div class="line"> ├─ ⏱ 72ms            📋 64    📄 14    🛠️ 0     🖥️ 23    ⚖  14 6 0 1899 1944 0 </div>
+<div class="line"> ├─ ⏱ 72ms            📋 65    📄 13    🛠️ 0     🖥️ 23    ⚖  13 0 0 111 154 0 </div>
+<div class="line"> ├─ ⏱ 73ms            📋 66    📄 12    🛠️ 0     🖥️ 23    ⚖  12 1 0 261 295 0 </div>
+<div class="line"> ├─ ⏱ 73ms            📋 67    📄 11    🛠️ 0     🖥️ 23    ⚖  11 0 0 52 83 0 </div>
+<div class="line"> ├─ ⏱ 73ms            📋 68    📄 10    🛠️ 0     🖥️ 23    ⚖  10 0 0 102 124 0 </div>
+<div class="line"> ├─ ⏱ 73ms            📋 69    📄 9     🛠️ 0     🖥️ 23    ⚖  9 0 0 41 60 0 </div>
+<div class="line"> ├─ ⏱ 74ms            📋 70    📄 8     🛠️ 0     🖥️ 23    ⚖  8 0 0 113 124 0 </div>
+<div class="line"> ├─ ⏱ 74ms            📋 71    📄 7     🛠️ 0     🖥️ 23    ⚖  7 0 0 9 22 0 </div>
+<div class="line"> ├─ ⏱ 74ms            📋 72    📄 6     🛠️ 0     🖥️ 23    ⚖  6 0 0 31 39 0 </div>
+<div class="line"> ├─ ⏱ 74ms            📋 73    📄 5     🛠️ 0     🖥️ 23    ⚖  5 0 0 5 11 0 </div>
+<div class="line"> ├─ ⏱ 74ms            📋 74    📄 4     🛠️ 0     🖥️ 23    ⚖  4 0 0 8 10 0 </div>
+<div class="line"> ├─ ⏱ 76ms            📋 74    📄 19    🛠️ 1     🖥️ 26    ⚖  19 77 0 4656 4733 0 </div>
+<div class="line"> ├─ ⏱ 76ms            📋 74    📄 17    🛠️ 1     🖥️ 24    ⚖  17 77 0 5206 5258 0 </div>
+<div class="line"> ├─ ⏱ 89ms            📋 74    📄 16    🛠️ 0     🖥️ 22    ⚖  16 32 0 10052 10112 0 </div>
+<div class="line"> ├─ ⏱ 115ms           📋 74    📄 23    🛠️ 0     🖥️ 16    ⚖  23 101 0 25428 25566 0 </div>
+<div class="line"> ├─ ⏱ 192ms           📋 74    📄 18    🛠️ 0     🖥️ 20    ⚖  18 140 0 41299 41377 0 </div>
+<div class="line"> ├─ ⏱ 216ms           📋 74    📄 25    🛠️ 0     🖥️ 11    ⚖  25 201 0 48683 48858 0 </div>
+<div class="line"> ├─ ⏱ 274ms           📋 74    📄 21    🛠️ 1     🖥️ 28    ⚖  21 276 0 20208 20295 0 </div>
+<div class="line"> ├─ ⏱ 345ms           📋 74    📄 18    🛠️ 1     🖥️ 25    ⚖  18 347 0 28605 28659 0 </div>
+<div class="line"> ├─ ⏱ 751ms           📋 74    📄 20    🛠️ 0     🖥️ 21    ⚖  20 724 0 199635 199733 0 </div>
+<div class="line"> ├─ ⏱ 1&quot; 366ms        📋 74    📄 20    🛠️ 1     🖥️ 27    ⚖  20 1370 0 112596 112672 0 </div>
+<div class="line"> ├─ ⏱ 1&quot; 718ms        📋 74    📄 24    🛠️ 0     🖥️ 18    ⚖  24 1705 0 411608 411755 0 </div>
+<div class="line"> ├─ ⏱ 1&quot; 725ms        📋 74    📄 26    🛠️ 0     🖥️ 15    ⚖  26 1712 0 397699 397880 0 </div>
+<div class="line"> ├─ ⏱ 2&quot; 58ms         📋 74    📄 27    🛠️ 0     🖥️ 14    ⚖  27 2046 0 454213 454418 0 </div>
+<div class="line"> ├─ ⏱ 3&quot; 626ms        📋 74    📄 23    🛠️ 1     🖥️ 30    ⚖  23 3629 0 250250 250347 0 </div>
+<div class="line"> ├─ ⏱ 5&quot; 751ms        📋 74    📄 22    🛠️ 1     🖥️ 29    ⚖  22 5758 0 425154 425243 0 </div>
+<div class="line"> ├─ ⏱ 6&quot; 562ms        📋 74    📄 22    🛠️ 0     🖥️ 19    ⚖  22 6553 0 1737188 1737308 0 </div>
+<div class="line"> ├─ ⏱ 7&quot; 253ms        📋 74    📄 29    🛠️ 0     🖥️ 13    ⚖  29 7278 0 1532239 1532471 0 </div>
+<div class="line"> ├─ ⏱ 7&quot; 899ms        📋 74    📄 24    🛠️ 1     🖥️ 31    ⚖  24 7941 0 534849 534950 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 675ms        📋 74    📄 25    🛠️ 1     🖥️ 32    ⚖  25 9718 0 602361 602468 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 957ms        📋 74    📄 32    🛠️ 0     🖥️ 2     ⚖  -2 10000 0 1951068 1951348 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 957ms        📋 74    📄 37    🛠️ 0     🖥️ 7     ⚖  -2 10001 0 1700753 1701139 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 957ms        📋 74    📄 36    🛠️ 0     🖥️ 6     ⚖  -2 10001 0 1752606 1752975 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 957ms        📋 74    📄 33    🛠️ 0     🖥️ 3     ⚖  -2 10000 0 1918643 1918944 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 957ms        📋 74    📄 35    🛠️ 0     🖥️ 5     ⚖  -2 10001 0 1791256 1791612 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 958ms        📋 74    📄 40    🛠️ 0     🖥️ 10    ⚖  -2 10001 0 1552370 1552827 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 958ms        📋 74    📄 39    🛠️ 0     🖥️ 9     ⚖  -2 10001 0 1599247 1599676 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 958ms        📋 74    📄 31    🛠️ 0     🖥️ 1     ⚖  -2 10001 0 2012270 2012533 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 958ms        📋 74    📄 38    🛠️ 0     🖥️ 8     ⚖  -2 10001 0 1637645 1638055 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 31    🛠️ 1     🖥️ 38    ⚖  -2 10011 0 411971 412136 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 30    🛠️ 1     🖥️ 37    ⚖  -2 10011 0 453089 453246 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 26    🛠️ 1     🖥️ 33    ⚖  -2 10011 0 569098 569221 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 34    🛠️ 1     🖥️ 41    ⚖  -2 10011 0 291318 291495 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 40    🛠️ 1     🖥️ 47    ⚖  -2 10012 0 254231 254457 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 39    🛠️ 1     🖥️ 46    ⚖  -2 10012 0 247505 247724 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 27    🛠️ 1     🖥️ 34    ⚖  -2 10011 0 528385 528519 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 35    🛠️ 1     🖥️ 42    ⚖  -2 10011 0 283279 283475 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 38    🛠️ 1     🖥️ 45    ⚖  -2 10011 0 254457 254660 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 28    🛠️ 1     🖥️ 35    ⚖  -2 10011 0 511602 511739 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 965ms        📋 74    📄 32    🛠️ 1     🖥️ 39    ⚖  -2 10011 0 333410 333572 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 966ms        📋 74    📄 29    🛠️ 1     🖥️ 36    ⚖  -2 10011 0 484125 484287 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 969ms        📋 74    📄 36    🛠️ 1     🖥️ 43    ⚖  -2 10011 0 286797 286989 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 970ms        📋 74    📄 28    🛠️ 0     🖥️ 17    ⚖  -2 10000 0 2148429 2148657 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 995ms        📋 74    📄 37    🛠️ 1     🖥️ 44    ⚖  -2 10012 0 274142 274346 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 8ms         📋 74    📄 30    🛠️ 0     🖥️ 12    ⚖  -2 10000 0 2065922 2066171 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 14ms        📋 74    📄 34    🛠️ 0     🖥️ 4     ⚖  -2 10001 0 1862992 1863308 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 27ms        📋 74    📄 33    🛠️ 1     🖥️ 40    ⚖  -2 10011 0 307425 307605 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/8damas_1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 10&quot; 29ms </div>
+<div class="line"> │  ⏱  CPU total: 7&#39; 51&quot; 340ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 10&quot; 24ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 2&#39; 32&quot; 272ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 66.3%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 67.7% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10&quot; 29ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m1 &#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [4] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [5] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [6] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [7] ─ &#x241B;[90mP3=&#x241B;[0m4 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [8] ─ &#x241B;[90mP3=&#x241B;[0m4 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:296   📄 Instâncias: 37   🛠️ Configurações: 8   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 1ms         📋 296   📄 19    🛠️ 0     🖥️ 7     ⚖  19 9 0 2545 2642 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/8damas_2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 19&quot; 992ms </div>
+<div class="line"> │  ⏱  CPU total: 15&#39; 39&quot; 619ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 19&quot; 986ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 6&#39; 16&quot; 517ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 58.7%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 59.9% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 19&quot; 992ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [4] ─ &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [5] ─ &#x241B;[90mP3=&#x241B;[0m5</div>
+<div class="line"> ├─ ⚙  [6] ─ &#x241B;[90mP3=&#x241B;[0m6</div>
+<div class="line"> ├─ ⚙  [7] ─ &#x241B;[90mP3=&#x241B;[0m7</div>
+<div class="line"> ├─ ⚙  [8] ─ &#x241B;[90mP3=&#x241B;[0m8</div>
+<div class="line"> ├─ ⚙  [9] ─ &#x241B;[90mP3=&#x241B;[0m9</div>
+<div class="line"> ├─ ⚙  [10] ─ &#x241B;[90mP3=&#x241B;[0m10</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:370   📄 Instâncias: 37   🛠️ Configurações: 10   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/8damas_3.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 690ms </div>
+<div class="line"> │  ⏱  CPU total: 32&quot; 438ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 684ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 29&quot; 90ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 9.7%</div>
+<div class="line"> │  - Gestor: 0.5%</div>
+<div class="line"> │  - Trabalhadores: 9.9% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 690ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [98] ─ &#x241B;[90mP3=&#x241B;[0m98</div>
+<div class="line"> ├─ ⚙  [99] ─ &#x241B;[90mP3=&#x241B;[0m99</div>
+<div class="line"> ├─ ⚙  [100] ─ &#x241B;[90mP3=&#x241B;[0m100</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/8damas_3B.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 8&quot; 537ms </div>
+<div class="line"> │  ⏱  CPU total: 6&#39; 41&quot; 237ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 8&quot; 488ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 5&#39; 55&quot; 484ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 10.9%</div>
+<div class="line"> │  - Gestor: 0.3%</div>
+<div class="line"> │  - Trabalhadores: 11.2% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 8&quot; 537ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [998] ─ &#x241B;[90mP3=&#x241B;[0m998</div>
+<div class="line"> ├─ ⚙  [999] ─ &#x241B;[90mP3=&#x241B;[0m999</div>
+<div class="line"> ├─ ⚙  [1000] ─ &#x241B;[90mP3=&#x241B;[0m1000</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:37000   📄 Instâncias: 37   🛠️ Configurações: 1000   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/8damas_3C.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 15&quot; 403ms </div>
+<div class="line"> │  ⏱  CPU total: 12&#39; 3&quot; 944ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 14&quot; 925ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 5&#39; 53&quot; 476ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 49.4%</div>
+<div class="line"> │  - Gestor: 1.6%</div>
+<div class="line"> │  - Trabalhadores: 50.4% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 15&quot; 403ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m4 &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:20   📄 Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1ms             📋 20    📄 2     🛠️ 0     🖥️ 28    ⚖  -1 0 0 3 2 0 </div>
+<div class="line"> ├─ ⏱ 22ms            📋 20    📄 2     🛠️ 1     🖥️ 38    ⚖  -1 21 0 2 1 0 </div>
+<div class="line"> ├─ ⏱ 36ms            📋 20    📄 22    🛠️ 1     🖥️ 39    ⚖  22 35 0 4189 4199 0 </div>
+<div class="line"> ├─ ⏱ 209ms           📋 20    📄 42    🛠️ 1     🖥️ 40    ⚖  42 208 0 51162 51182 0 </div>
+<div class="line"> ├─ ⏱ 210ms           📋 20    📄 22    🛠️ 0     🖥️ 29    ⚖  22 210 0 77893 77904 0 </div>
+<div class="line"> ├─ ⏱ 927ms           📋 20    📄 62    🛠️ 1     🖥️ 41    ⚖  62 926 0 230596 230626 0 </div>
+<div class="line"> ├─ ⏱ 3&quot; 180ms        📋 20    📄 82    🛠️ 1     🖥️ 42    ⚖  82 3180 0 732439 732479 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 999ms        📋 20    📄 42    🛠️ 0     🖥️ 30    ⚖  -2 10000 0 3552994 3553014 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 999ms        📋 20    📄 62    🛠️ 0     🖥️ 31    ⚖  -2 10000 0 3413876 3413906 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 999ms        📋 20    📄 102   🛠️ 0     🖥️ 33    ⚖  -2 10000 0 3161710 3161758 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 999ms        📋 20    📄 142   🛠️ 0     🖥️ 35    ⚖  -2 10000 0 2981903 2981972 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 999ms        📋 20    📄 82    🛠️ 0     🖥️ 32    ⚖  -2 10000 0 3284154 3284194 0 </div>
+<div class="line"> ├─ ⏱ 9&quot; 999ms        📋 20    📄 182   🛠️ 0     🖥️ 37    ⚖  -2 10000 0 2802476 2802566 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 1ms         📋 20    📄 122   🛠️ 0     🖥️ 34    ⚖  -2 10000 0 3078493 3078552 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 1ms         📋 20    📄 162   🛠️ 0     🖥️ 36    ⚖  -2 10000 0 2868931 2869012 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 10ms        📋 20    📄 122   🛠️ 1     🖥️ 44    ⚖  -2 10011 0 2222973 2223020 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 10ms        📋 20    📄 102   🛠️ 1     🖥️ 43    ⚖  -2 10011 0 2277855 2277893 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 10ms        📋 20    📄 162   🛠️ 1     🖥️ 46    ⚖  -2 10011 0 2186436 2186510 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 11ms        📋 20    📄 142   🛠️ 1     🖥️ 45    ⚖  -2 10011 0 2194619 2194672 0 </div>
+<div class="line"> ├─ ⏱ 10&quot; 11ms        📋 20    📄 182   🛠️ 1     🖥️ 47    ⚖  -2 10011 0 2126234 2126313 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 10&quot; 12ms </div>
+<div class="line"> │  ⏱  CPU total: 7&#39; 50&quot; 561ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 10&quot; 9ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 5&#39; 35&quot; 871ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 28.0%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 28.6% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10&quot; 12ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [18] ─ &#x241B;[90mP3=&#x241B;[0m8 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [19] ─ &#x241B;[90mP3=&#x241B;[0m9 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [20] ─ &#x241B;[90mP3=&#x241B;[0m10 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:200   📄 Instâncias: 10   🛠️ Configurações: 20   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 7ms         📋 94    📄 122   🛠️ 15    🖥️ 4     ⚖  -2 10011 0 2171625 2171676 0 </div>
+<div class="line"> ├─ ⏱ 20&quot; 11ms        📋 174   📄 102   🛠️ 10    🖥️ 4     ⚖  -2 10011 0 2169896 2169924 0 </div>
+<div class="line"> ├─ ⏱ 30&quot; 19ms        📋 200   📄 82    🛠️ 2     🖥️ 18    ⚖  -2 10000 0 3122145 3122186 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_1B.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 31&quot; 183ms </div>
+<div class="line"> │  ⏱  CPU total: 24&#39; 25&quot; 623ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 31&quot; 178ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 1&#39; 59&quot; 609ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 89.9%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 91.8% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 31&quot; 183ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m2 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [198] ─ &#x241B;[90mP3=&#x241B;[0m98 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [199] ─ &#x241B;[90mP3=&#x241B;[0m99 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [200] ─ &#x241B;[90mP3=&#x241B;[0m100 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line">slurmstepd: error: Detected 1 oom_kill event in StepId=636184.10. Some of the step tasks have been OOM Killed.</div>
+<div class="line">srun: error: cna1632: task 17: Out Of Memory</div>
+<div class="line">slurmstepd: error:  mpi/pmix_v4: _errhandler: cna1632 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -61, source = [slurm.pmix.636184.10:17]</div>
+<div class="line">srun: Job step aborted: Waiting up to 32 seconds for job step to finish.</div>
+<div class="line">slurmstepd: error: *** STEP 636184.10 ON cna1632 CANCELLED AT 2025-11-07T11:21:32 ***</div>
+<div class="line"> ├─ 📋 Tarefas:2000   📄 Instâncias: 10   🛠️ Configurações: 200   🖥️ Processos: 48.</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 📄 32 📄 42 📄 52 📄 62 📄 72 📄 82 📄 92 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m3 &#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [4] ─ &#x241B;[90mP3=&#x241B;[0m4 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [5] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [6] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [7] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [8] ─ &#x241B;[90mP3=&#x241B;[0m4 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:80   📄 Instâncias: 10   🛠️ Configurações: 8   🖥️ Processos: 48.</div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 6&quot; 345ms </div>
+<div class="line"> │  ⏱  CPU total: 4&#39; 58&quot; 239ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 6&quot; 342ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 4&#39; 2&quot; 10ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 18.4%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 18.8% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 6&quot; 346ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 📄 32 📄 42 📄 52 📄 62 📄 72 📄 82 📄 92 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m3 &#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [78] ─ &#x241B;[90mP3=&#x241B;[0m38 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [79] ─ &#x241B;[90mP3=&#x241B;[0m39 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [80] ─ &#x241B;[90mP3=&#x241B;[0m40 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:800   📄 Instâncias: 10   🛠️ Configurações: 80   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 59ms        📋 774   📄 42    🛠️ 3     🖥️ 41    ⚖  42 264 0 61405 61425 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_2B.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 16&quot; 825ms </div>
+<div class="line"> │  ⏱  CPU total: 13&#39; 10&quot; 767ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 16&quot; 810ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 15&quot; 900ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 73.7%</div>
+<div class="line"> │  - Gestor: 0.1%</div>
+<div class="line"> │  - Trabalhadores: 75.2% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 16&quot; 825ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 📄 32 📄 42 📄 52 📄 62 📄 72 📄 82 📄 92 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m3 &#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m0</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [798] ─ &#x241B;[90mP3=&#x241B;[0m398 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [799] ─ &#x241B;[90mP3=&#x241B;[0m399 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [800] ─ &#x241B;[90mP3=&#x241B;[0m400 &#x241B;[90mP11=&#x241B;[0m1</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:8000   📄 Instâncias: 10   🛠️ Configurações: 800   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 12ms         📋 5693  📄 82    🛠️ 245   🖥️ 34    ⚖  82 4199 0 941700 941740 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 14ms         📋 7819  📄 92    🛠️ 37    🖥️ 4     ⚖  92 5568 0 1290630 1290675 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_2C.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 2&#39; 10&quot; 871ms </div>
+<div class="line"> │  ⏱  CPU total: 1h 42&#39; 30&quot; 946ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 2&#39; 10&quot; 741ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 5&quot; 847ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 95.0%</div>
+<div class="line"> │  - Gestor: 0.1%</div>
+<div class="line"> │  - Trabalhadores: 97.0% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2&#39; 10&quot; 871ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 102 📄 202 📄 302 📄 402 📄 502 📄 602 📄 702 📄 802 📄 902 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [4] ─ &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:40   📄 Instâncias: 10   🛠️ Configurações: 4   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 11ms        📋 40    📄 202   🛠️ 2     🖥️ 30    ⚖  -2 10012 0 1978063 1978211 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_3.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 10&quot; 18ms </div>
+<div class="line"> │  ⏱  CPU total: 7&#39; 50&quot; 847ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 10&quot; 15ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 38&quot; 26ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 52.6%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 53.7% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10&quot; 18ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 … 📄 972 📄 982 📄 992 } #100</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m3 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [38] ─ &#x241B;[90mP3=&#x241B;[0m38</div>
+<div class="line"> ├─ ⚙  [39] ─ &#x241B;[90mP3=&#x241B;[0m39</div>
+<div class="line"> ├─ ⚙  [40] ─ &#x241B;[90mP3=&#x241B;[0m40</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:4000   📄 Instâncias: 100   🛠️ Configurações: 40   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 10&quot; 11ms        📋 51    📄 652   🛠️ 39    🖥️ 13    ⚖  -2 10014 0 1292126 1292725 0 </div>
+<div class="line"> ├─ ⏱ 20&quot; 16ms        📋 121   📄 222   🛠️ 39    🖥️ 27    ⚖  -2 10012 0 1921201 1921363 0 </div>
+<div class="line"> ├─ ⏱ 30&quot; 16ms        📋 193   📄 622   🛠️ 38    🖥️ 16    ⚖  -2 10014 0 1279736 1280331 0 </div>
+<div class="line"> ├─ ⏱ 40&quot; 29ms        📋 250   📄 992   🛠️ 37    🖥️ 15    ⚖  -2 10015 0 1141697 1142637 0 </div>
+<div class="line"> ├─ ⏱ 50&quot; 34ms        📋 323   📄 492   🛠️ 37    🖥️ 15    ⚖  -2 10013 0 1493175 1493606 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 45ms         📋 370   📄 752   🛠️ 36    🖥️ 16    ⚖  -2 10014 0 1235182 1235879 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 10&quot; 49ms     📋 438   📄 272   🛠️ 36    🖥️ 13    ⚖  -2 10012 0 1731451 1731676 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 20&quot; 76ms     📋 518   📄 592   🛠️ 35    🖥️ 38    ⚖  -2 10013 0 1304490 1305024 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 30&quot; 79ms     📋 566   📄 812   🛠️ 34    🖥️ 38    ⚖  -2 10014 0 1253632 1254385 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 40&quot; 229ms    📋 636   📄 322   🛠️ 34    🖥️ 9     ⚖  -2 10012 0 1633007 1633276 0 </div>
+<div class="line"> ├─ ⏱ 1&#39; 50&quot; 248ms    📋 693   📄 622   🛠️ 33    🖥️ 34    ⚖  -2 10014 0 1273140 1273702 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 381ms        📋 749   📄 992   🛠️ 32    🖥️ 18    ⚖  -2 10015 0 1126205 1127150 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 10&quot; 642ms    📋 828   📄 462   🛠️ 32    🖥️ 34    ⚖  -2 10013 0 1442137 1442538 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 20&quot; 644ms    📋 895   📄 62    🛠️ 31    🖥️ 33    ⚖  62 17 0 361 416 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 30&quot; 735ms    📋 948   📄 992   🛠️ 30    🖥️ 34    ⚖  -2 10015 0 1204298 1205210 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 40&quot; 739ms    📋 1019  📄 512   🛠️ 30    🖥️ 34    ⚖  -2 10013 0 1425019 1425474 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 50&quot; 745ms    📋 1068  📄 802   🛠️ 29    🖥️ 34    ⚖  -2 10014 0 1189131 1189875 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 748ms        📋 1143  📄 312   🛠️ 29    🖥️ 34    ⚖  -2 10012 0 1626041 1626284 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 10&quot; 753ms    📋 1212  📄 552   🛠️ 28    🖥️ 16    ⚖  -2 10013 0 1306116 1306621 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 20&quot; 759ms    📋 1262  📄 872   🛠️ 27    🖥️ 16    ⚖  -2 10015 0 1167873 1168693 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 30&quot; 785ms    📋 1342  📄 362   🛠️ 27    🖥️ 32    ⚖  -2 10013 0 1527380 1527685 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 40&quot; 790ms    📋 1392  📄 572   🛠️ 26    🖥️ 32    ⚖  -2 10013 0 1309123 1309654 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 51&quot; 365ms    📋 1450  📄 992   🛠️ 25    🖥️ 32    ⚖  -2 10015 0 1133258 1134209 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 1&quot; 421ms     📋 1517  📄 482   🛠️ 25    🖥️ 20    ⚖  -2 10013 0 1445026 1445455 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 11&quot; 428ms    📋 1570  📄 822   🛠️ 24    🖥️ 20    ⚖  -2 10015 0 1196019 1196792 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 22&quot; 90ms     📋 1644  📄 262   🛠️ 24    🖥️ 39    ⚖  -2 10012 0 1752419 1752625 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 32&quot; 96ms     📋 1711  📄 552   🛠️ 23    🖥️ 39    ⚖  -2 10013 0 1274648 1275138 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 42&quot; 102ms    📋 1760  📄 882   🛠️ 22    🖥️ 39    ⚖  -2 10015 0 1134073 1134900 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 52&quot; 213ms    📋 1845  📄 382   🛠️ 22    🖥️ 43    ⚖  -2 10013 0 1478564 1478894 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 2&quot; 214ms     📋 1912  📄 532   🛠️ 21    🖥️ 28    ⚖  -2 10013 0 1362411 1362884 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 12&quot; 223ms    📋 1962  📄 862   🛠️ 20    🖥️ 24    ⚖  -2 10015 0 1195018 1195812 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 22&quot; 889ms    📋 2039  📄 362   🛠️ 20    🖥️ 35    ⚖  -2 10013 0 1515561 1515863 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 32&quot; 948ms    📋 2105  📄 102   🛠️ 19    🖥️ 36    ⚖  102 963 0 205546 205630 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 42&quot; 954ms    📋 2153  📄 942   🛠️ 18    🖥️ 36    ⚖  -2 10015 0 1150463 1151351 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 52&quot; 957ms    📋 2216  📄 462   🛠️ 18    🖥️ 36    ⚖  -2 10013 0 1447790 1448199 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 2&quot; 959ms     📋 2269  📄 832   🛠️ 17    🖥️ 36    ⚖  -2 10015 0 1212731 1213499 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 13&quot; 269ms    📋 2340  📄 292   🛠️ 17    🖥️ 35    ⚖  -2 10012 0 1614445 1614672 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 23&quot; 296ms    📋 2394  📄 112   🛠️ 16    🖥️ 9     ⚖  112 400 0 85761 85848 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 33&quot; 349ms    📋 2447  📄 992   🛠️ 15    🖥️ 9     ⚖  -2 10015 0 1136604 1137557 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 43&quot; 355ms    📋 2535  📄 512   🛠️ 15    🖥️ 35    ⚖  -2 10013 0 1428767 1429231 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 53&quot; 371ms    📋 2588  📄 632   🛠️ 14    🖥️ 24    ⚖  -2 10014 0 1242454 1243030 0 </div>
+<div class="line"> ├─ ⏱ 7&#39; 3&quot; 741ms     📋 2649  📄 992   🛠️ 13    🖥️ 1     ⚖  -2 10015 0 1173356 1174279 0 </div>
+<div class="line"> ├─ ⏱ 7&#39; 13&quot; 791ms    📋 2720  📄 492   🛠️ 13    🖥️ 24    ⚖  -2 10013 0 1414417 1414849 0 </div>
+<div class="line"> ├─ ⏱ 7&#39; 23&quot; 897ms    📋 2772  📄 782   🛠️ 12    🖥️ 23    ⚖  -2 10015 0 1253706 1254440 0 </div>
+<div class="line"> ├─ ⏱ 7&#39; 33&quot; 898ms    📋 2840  📄 272   🛠️ 12    🖥️ 23    ⚖  -2 10012 0 1671500 1671720 0 </div>
+<div class="line"> ├─ ⏱ 7&#39; 43&quot; 901ms    📋 2915  📄 592   🛠️ 11    🖥️ 23    ⚖  -2 10014 0 1173600 1174135 0 </div>
+<div class="line"> ├─ ⏱ 7&#39; 53&quot; 909ms    📋 2966  📄 842   🛠️ 10    🖥️ 23    ⚖  -2 10015 0 1185816 1186610 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 3&quot; 913ms     📋 3034  📄 332   🛠️ 10    🖥️ 23    ⚖  -2 10013 0 1524193 1524474 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 13&quot; 919ms    📋 3094  📄 652   🛠️ 9     🖥️ 23    ⚖  -2 10014 0 1191897 1192503 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 24&quot; 114ms    📋 3153  📄 992   🛠️ 8     🖥️ 14    ⚖  -2 10015 0 1129141 1130081 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 34&quot; 117ms    📋 3225  📄 452   🛠️ 8     🖥️ 23    ⚖  -2 10013 0 1464912 1465296 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 44&quot; 212ms    📋 3285  📄 732   🛠️ 7     🖥️ 28    ⚖  -2 10014 0 1229881 1230563 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 54&quot; 879ms    📋 3349  📄 992   🛠️ 6     🖥️ 43    ⚖  -2 10015 0 1098558 1099503 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 4&quot; 915ms     📋 3417  📄 482   🛠️ 6     🖥️ 5     ⚖  -2 10013 0 1486805 1487222 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 14&quot; 924ms    📋 3470  📄 822   🛠️ 5     🖥️ 5     ⚖  -2 10015 0 1190371 1191143 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 24&quot; 931ms    📋 3536  📄 292   🛠️ 5     🖥️ 5     ⚖  -2 10012 0 1662451 1662686 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 34&quot; 938ms    📋 3589  📄 632   🛠️ 4     🖥️ 5     ⚖  -2 10014 0 1249524 1250101 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 45&quot; 153ms    📋 3652  📄 992   🛠️ 3     🖥️ 43    ⚖  -2 10015 0 1109910 1110852 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 55&quot; 177ms    📋 3729  📄 422   🛠️ 3     🖥️ 40    ⚖  -2 10013 0 1449645 1450016 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 5&quot; 184ms    📋 3790  📄 702   🛠️ 2     🖥️ 40    ⚖  -2 10014 0 1191416 1192069 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 15&quot; 342ms   📋 3858  📄 982   🛠️ 1     🖥️ 9     ⚖  -2 10015 0 1169659 1170577 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 25&quot; 343ms   📋 3930  📄 412   🛠️ 1     🖥️ 9     ⚖  -2 10013 0 1525188 1525545 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 35&quot; 349ms   📋 3987  📄 692   🛠️ 0     🖥️ 9     ⚖  -2 10014 0 1203879 1204518 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_3B.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 10&#39; 44&quot; 902ms </div>
+<div class="line"> │  ⏱  CPU total: 8h 25&#39; 10&quot; 411ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 10&#39; 44&quot; 820ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 4&#39; 57&quot; 650ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 97.0%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 99.0% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10&#39; 44&quot; 902ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 3 📄 4 … 📄 998 📄 999 📄 1000 } #999</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [38] ─ &#x241B;[90mP3=&#x241B;[0m38</div>
+<div class="line"> ├─ ⚙  [39] ─ &#x241B;[90mP3=&#x241B;[0m39</div>
+<div class="line"> ├─ ⚙  [40] ─ &#x241B;[90mP3=&#x241B;[0m40</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:39960   📄 Instâncias: 999   🛠️ Configurações: 40   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 52ms         📋 296   📄 749   🛠️ 39    🖥️ 38    ⚖  -2 10014 0 1220074 1220772 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 112ms        📋 578   📄 469   🛠️ 39    🖥️ 13    ⚖  -2 10013 0 1559215 1559633 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 118ms        📋 943   📄 143   🛠️ 39    🖥️ 27    ⚖  -2 10011 0 2002918 2002997 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 879ms        📋 1291  📄 761   🛠️ 38    🖥️ 40    ⚖  -2 10014 0 1210106 1210815 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 895ms        📋 1590  📄 462   🛠️ 38    🖥️ 40    ⚖  -2 10013 0 1489043 1489442 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 900ms        📋 2019  📄 127   🛠️ 38    🖥️ 26    ⚖  -2 10011 0 1985666 1985736 0 </div>
+<div class="line"> ├─ ⏱ 7&#39; 940ms        📋 2308  📄 742   🛠️ 37    🖥️ 29    ⚖  -2 10014 0 1255623 1256311 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 954ms        📋 2596  📄 449   🛠️ 37    🖥️ 29    ⚖  -2 10013 0 1568727 1569109 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 959ms        📋 3029  📄 107   🛠️ 37    🖥️ 15    ⚖  -2 10011 0 2036434 2036496 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 989ms       📋 3312  📄 732   🛠️ 36    🖥️ 15    ⚖  -2 10014 0 1237181 1237857 0 </div>
+<div class="line"> ├─ ⏱ 11&#39; 1&quot; 173ms    📋 3596  📄 449   🛠️ 36    🖥️ 24    ⚖  -2 10013 0 1535937 1536329 0 </div>
+<div class="line"> ├─ ⏱ 12&#39; 1&quot; 176ms    📋 3922  📄 144   🛠️ 36    🖥️ 46    ⚖  144 8286 0 1631193 1631297 0 </div>
+<div class="line"> ├─ ⏱ 13&#39; 1&quot; 691ms    📋 4280  📄 718   🛠️ 35    🖥️ 25    ⚖  718 1604 0 210717 211412 0 </div>
+<div class="line"> ├─ ⏱ 14&#39; 1&quot; 736ms    📋 4612  📄 439   🛠️ 35    🖥️ 35    ⚖  -2 10013 0 1532901 1533288 0 </div>
+<div class="line"> ├─ ⏱ 15&#39; 1&quot; 757ms    📋 5036  📄 89    🛠️ 35    🖥️ 34    ⚖  -2 10011 0 1970370 1970393 0 </div>
+<div class="line"> ├─ ⏱ 16&#39; 1&quot; 891ms    📋 5318  📄 724   🛠️ 34    🖥️ 34    ⚖  -2 10014 0 1226262 1226924 0 </div>
+<div class="line"> ├─ ⏱ 17&#39; 1&quot; 944ms    📋 5609  📄 439   🛠️ 34    🖥️ 35    ⚖  -2 10013 0 1523676 1524066 0 </div>
+<div class="line"> ├─ ⏱ 18&#39; 1&quot; 993ms    📋 6027  📄 95    🛠️ 34    🖥️ 40    ⚖  -2 10011 0 2006496 2006524 0 </div>
+<div class="line"> ├─ ⏱ 19&#39; 2&quot; 198ms    📋 6313  📄 728   🛠️ 33    🖥️ 43    ⚖  -2 10014 0 1243924 1244596 0 </div>
+<div class="line"> ├─ ⏱ 20&#39; 2&quot; 447ms    📋 6603  📄 438   🛠️ 33    🖥️ 2     ⚖  -2 10013 0 1548661 1549046 0 </div>
+<div class="line"> ├─ ⏱ 21&#39; 2&quot; 485ms    📋 7017  📄 119   🛠️ 33    🖥️ 2     ⚖  -2 10011 0 2026177 2026240 0 </div>
+<div class="line"> ├─ ⏱ 22&#39; 2&quot; 643ms    📋 7300  📄 740   🛠️ 32    🖥️ 27    ⚖  -2 10014 0 1226548 1227236 0 </div>
+<div class="line"> ├─ ⏱ 23&#39; 3&quot; 251ms    📋 7589  📄 451   🛠️ 32    🖥️ 26    ⚖  -2 10013 0 1497903 1498304 0 </div>
+<div class="line"> ├─ ⏱ 24&#39; 3&quot; 282ms    📋 8030  📄 97    🛠️ 32    🖥️ 31    ⚖  -2 10011 0 1951522 1951555 0 </div>
+<div class="line"> ├─ ⏱ 25&#39; 3&quot; 325ms    📋 8316  📄 727   🛠️ 31    🖥️ 31    ⚖  -2 10014 0 1204837 1205504 0 </div>
+<div class="line"> ├─ ⏱ 26&#39; 3&quot; 594ms    📋 8625  📄 420   🛠️ 31    🖥️ 44    ⚖  -2 10013 0 1551099 1551464 0 </div>
+<div class="line"> ├─ ⏱ 27&#39; 4&quot; 485ms    📋 9038  📄 999   🛠️ 30    🖥️ 8     ⚖  -2 10015 0 1177700 1178590 0 </div>
+<div class="line"> ├─ ⏱ 28&#39; 4&quot; 486ms    📋 9337  📄 701   🛠️ 30    🖥️ 36    ⚖  -2 10014 0 1245132 1245776 0 </div>
+<div class="line"> ├─ ⏱ 29&#39; 4&quot; 556ms    📋 9645  📄 393   🛠️ 30    🖥️ 42    ⚖  -2 10013 0 1507917 1508251 0 </div>
+<div class="line"> ├─ ⏱ 30&#39; 4&quot; 615ms    📋 10070 📄 968   🛠️ 29    🖥️ 7     ⚖  -2 10015 0 1153657 1154571 0 </div>
+<div class="line"> ├─ ⏱ 31&#39; 4&quot; 740ms    📋 10358 📄 684   🛠️ 29    🖥️ 21    ⚖  -2 10014 0 1242403 1243039 0 </div>
+<div class="line"> ├─ ⏱ 32&#39; 4&quot; 950ms    📋 10649 📄 388   🛠️ 29    🖥️ 31    ⚖  -2 10013 0 1482420 1482753 0 </div>
+<div class="line"> ├─ ⏱ 33&#39; 4&quot; 961ms    📋 11076 📄 960   🛠️ 28    🖥️ 18    ⚖  -2 10015 0 1193746 1194644 0 </div>
+<div class="line"> ├─ ⏱ 34&#39; 4&quot; 977ms    📋 11360 📄 677   🛠️ 28    🖥️ 30    ⚖  -2 10014 0 1263381 1263998 0 </div>
+<div class="line"> ├─ ⏱ 35&#39; 5&quot; 14ms     📋 11661 📄 391   🛠️ 28    🖥️ 30    ⚖  -2 10013 0 1508908 1509242 0 </div>
+<div class="line"> ├─ ⏱ 36&#39; 5&quot; 174ms    📋 12071 📄 964   🛠️ 27    🖥️ 16    ⚖  -2 10015 0 1155763 1156677 0 </div>
+<div class="line"> ├─ ⏱ 37&#39; 5&quot; 449ms    📋 12365 📄 675   🛠️ 27    🖥️ 19    ⚖  -2 10014 0 1241916 1242548 0 </div>
+<div class="line"> ├─ ⏱ 38&#39; 5&quot; 729ms    📋 12693 📄 361   🛠️ 27    🖥️ 22    ⚖  -2 10013 0 1491440 1491741 0 </div>
+<div class="line"> ├─ ⏱ 39&#39; 5&quot; 780ms    📋 13121 📄 913   🛠️ 26    🖥️ 40    ⚖  -2 10015 0 1167816 1168667 0 </div>
+<div class="line"> ├─ ⏱ 40&#39; 5&quot; 827ms    📋 13412 📄 622   🛠️ 26    🖥️ 40    ⚖  -2 10014 0 1235738 1236300 0 </div>
+<div class="line"> ├─ ⏱ 41&#39; 5&quot; 834ms    📋 13707 📄 327   🛠️ 26    🖥️ 40    ⚖  -2 10012 0 1566885 1567147 0 </div>
+<div class="line"> ├─ ⏱ 42&#39; 6&quot; 768ms    📋 14088 📄 945   🛠️ 25    🖥️ 18    ⚖  -2 10015 0 1120840 1121732 0 </div>
+<div class="line"> ├─ ⏱ 43&#39; 6&quot; 797ms    📋 14373 📄 660   🛠️ 25    🖥️ 39    ⚖  -2 10014 0 1263816 1264412 0 </div>
+<div class="line"> ├─ ⏱ 44&#39; 6&quot; 830ms    📋 14690 📄 351   🛠️ 25    🖥️ 19    ⚖  -2 10013 0 1533204 1533504 0 </div>
+<div class="line"> ├─ ⏱ 45&#39; 9&quot; 437ms    📋 15081 📄 952   🛠️ 24    🖥️ 21    ⚖  -2 10015 0 1146835 1147738 0 </div>
+<div class="line"> ├─ ⏱ 46&#39; 9&quot; 472ms    📋 15363 📄 669   🛠️ 24    🖥️ 21    ⚖  -2 10014 0 1266194 1266791 0 </div>
+<div class="line"> ├─ ⏱ 47&#39; 9&quot; 483ms    📋 15678 📄 357   🛠️ 24    🖥️ 21    ⚖  -2 10013 0 1546889 1547183 0 </div>
+<div class="line"> ├─ ⏱ 48&#39; 9&quot; 650ms    📋 16119 📄 912   🛠️ 23    🖥️ 2     ⚖  -2 10015 0 1134922 1135779 0 </div>
+<div class="line"> ├─ ⏱ 49&#39; 9&quot; 846ms    📋 16408 📄 629   🛠️ 23    🖥️ 7     ⚖  -2 10014 0 1297762 1298328 0 </div>
+<div class="line"> ├─ ⏱ 50&#39; 9&quot; 988ms    📋 16707 📄 330   🛠️ 23    🖥️ 21    ⚖  -2 10012 0 1564190 1564468 0 </div>
+<div class="line"> ├─ ⏱ 51&#39; 13&quot; 708ms   📋 17128 📄 905   🛠️ 22    🖥️ 47    ⚖  -2 10015 0 1146216 1147061 0 </div>
+<div class="line"> ├─ ⏱ 52&#39; 13&quot; 712ms   📋 17432 📄 598   🛠️ 22    🖥️ 4     ⚖  -2 10014 0 1288079 1288629 0 </div>
+<div class="line"> ├─ ⏱ 53&#39; 13&quot; 928ms   📋 17756 📄 293   🛠️ 22    🖥️ 27    ⚖  -2 10012 0 1581704 1581937 0 </div>
+<div class="line"> ├─ ⏱ 54&#39; 15&quot; 768ms   📋 18182 📄 848   🛠️ 21    🖥️ 25    ⚖  -2 10015 0 1160667 1161473 0 </div>
+<div class="line"> ├─ ⏱ 55&#39; 15&quot; 807ms   📋 18464 📄 565   🛠️ 21    🖥️ 16    ⚖  -2 10014 0 1343892 1344401 0 </div>
+<div class="line"> ├─ ⏱ 56&#39; 15&quot; 811ms   📋 18757 📄 272   🛠️ 21    🖥️ 36    ⚖  -2 10012 0 1710584 1710807 0 </div>
+<div class="line"> ├─ ⏱ 57&#39; 15&quot; 815ms   📋 19165 📄 863   🛠️ 20    🖥️ 36    ⚖  -2 10015 0 1206707 1207506 0 </div>
+<div class="line"> ├─ ⏱ 58&#39; 15&quot; 847ms   📋 19453 📄 575   🛠️ 20    🖥️ 2     ⚖  -2 10014 0 1288418 1288936 0 </div>
+<div class="line"> ├─ ⏱ 59&#39; 15&quot; 911ms   📋 19771 📄 269   🛠️ 20    🖥️ 13    ⚖  -2 10012 0 1733156 1733371 0 </div>
+<div class="line"> ├─ ⏱ 1h 18&quot; 189ms    📋 20170 📄 857   🛠️ 19    🖥️ 14    ⚖  -2 10015 0 1161713 1162516 0 </div>
+<div class="line"> ├─ ⏱ 1h 1&#39; 18&quot; 209ms  📋 20477 📄 563   🛠️ 19    🖥️ 9     ⚖  -2 10014 0 1295169 1295676 0 </div>
+<div class="line"> ├─ ⏱ 1h 2&#39; 18&quot; 259ms  📋 20789 📄 255   🛠️ 19    🖥️ 22    ⚖  -2 10012 0 1792190 1792389 0 </div>
+<div class="line"> ├─ ⏱ 1h 3&#39; 18&quot; 263ms  📋 21184 📄 843   🛠️ 18    🖥️ 22    ⚖  -2 10015 0 1148899 1149693 0 </div>
+<div class="line"> ├─ ⏱ 1h 4&#39; 18&quot; 385ms  📋 21486 📄 540   🛠️ 18    🖥️ 6     ⚖  -2 10013 0 1384636 1385128 0 </div>
+<div class="line"> ├─ ⏱ 1h 5&#39; 18&quot; 419ms  📋 21787 📄 248   🛠️ 18    🖥️ 6     ⚖  -2 10012 0 1907937 1908131 0 </div>
+<div class="line"> ├─ ⏱ 1h 6&#39; 20&quot; 917ms  📋 22166 📄 859   🛠️ 17    🖥️ 40    ⚖  -2 10015 0 1177367 1178156 0 </div>
+<div class="line"> ├─ ⏱ 1h 7&#39; 20&quot; 935ms  📋 22474 📄 553   🛠️ 17    🖥️ 40    ⚖  -2 10013 0 1310150 1310652 0 </div>
+<div class="line"> ├─ ⏱ 1h 8&#39; 20&quot; 948ms  📋 22767 📄 265   🛠️ 17    🖥️ 37    ⚖  -2 10012 0 1758410 1758614 0 </div>
+<div class="line"> ├─ ⏱ 1h 9&#39; 22&quot; 260ms  📋 23165 📄 859   🛠️ 16    🖥️ 40    ⚖  -2 10015 0 1140786 1141594 0 </div>
+<div class="line"> ├─ ⏱ 1h 10&#39; 22&quot; 279ms  📋 23463 📄 566   🛠️ 16    🖥️ 36    ⚖  -2 10014 0 1307809 1308321 0 </div>
+<div class="line"> ├─ ⏱ 1h 11&#39; 22&quot; 282ms  📋 23785 📄 257   🛠️ 16    🖥️ 36    ⚖  -2 10012 0 1857425 1857634 0 </div>
+<div class="line"> ├─ ⏱ 1h 12&#39; 22&quot; 433ms  📋 24182 📄 841   🛠️ 15    🖥️ 3     ⚖  -2 10015 0 1194656 1195438 0 </div>
+<div class="line"> ├─ ⏱ 1h 13&#39; 22&quot; 574ms  📋 24467 📄 558   🛠️ 15    🖥️ 2     ⚖  -2 10013 0 1347273 1347774 0 </div>
+<div class="line"> ├─ ⏱ 1h 14&#39; 22&quot; 637ms  📋 24849 📄 217   🛠️ 15    🖥️ 9     ⚖  -2 10012 0 1871467 1871642 0 </div>
+<div class="line"> ├─ ⏱ 1h 15&#39; 22&quot; 654ms  📋 25224 📄 798   🛠️ 14    🖥️ 21    ⚖  -2 10014 0 1235640 1236364 0 </div>
+<div class="line"> ├─ ⏱ 1h 16&#39; 22&quot; 666ms  📋 25530 📄 495   🛠️ 14    🖥️ 21    ⚖  -2 10013 0 1485532 1485966 0 </div>
+<div class="line"> ├─ ⏱ 1h 17&#39; 22&quot; 686ms  📋 25833 📄 199   🛠️ 14    🖥️ 21    ⚖  -2 10012 0 1934704 1934846 0 </div>
+<div class="line"> ├─ ⏱ 1h 18&#39; 22&quot; 906ms  📋 26214 📄 804   🛠️ 13    🖥️ 9     ⚖  804 7526 0 894546 895312 0 </div>
+<div class="line"> ├─ ⏱ 1h 19&#39; 23&quot; 18ms  📋 26503 📄 478   🛠️ 13    🖥️ 34    ⚖  478 2037 0 293509 293969 0 </div>
+<div class="line"> ├─ ⏱ 1h 20&#39; 23&quot; 119ms  📋 26816 📄 225   🛠️ 13    🖥️ 34    ⚖  -2 10012 0 1850040 1850209 0 </div>
+<div class="line"> ├─ ⏱ 1h 21&#39; 25&quot; 573ms  📋 27212 📄 808   🛠️ 12    🖥️ 7     ⚖  -2 10015 0 1189035 1189790 0 </div>
+<div class="line"> ├─ ⏱ 1h 22&#39; 25&quot; 594ms  📋 27516 📄 515   🛠️ 12    🖥️ 7     ⚖  -2 10013 0 1405903 1406367 0 </div>
+<div class="line"> ├─ ⏱ 1h 23&#39; 25&quot; 619ms  📋 27841 📄 195   🛠️ 12    🖥️ 7     ⚖  -2 10012 0 1920317 1920460 0 </div>
+<div class="line"> ├─ ⏱ 1h 24&#39; 25&quot; 711ms  📋 28231 📄 791   🛠️ 11    🖥️ 15    ⚖  -2 10015 0 1179165 1179899 0 </div>
+<div class="line"> ├─ ⏱ 1h 25&#39; 26&quot; 94ms  📋 28529 📄 486   🛠️ 11    🖥️ 36    ⚖  486 8727 0 1221880 1222342 0 </div>
+<div class="line"> ├─ ⏱ 1h 26&#39; 26&quot; 111ms  📋 28902 📄 155   🛠️ 11    🖥️ 15    ⚖  -2 10012 0 1947497 1947606 0 </div>
+<div class="line"> ├─ ⏱ 1h 27&#39; 26&quot; 181ms  📋 29262 📄 732   🛠️ 10    🖥️ 33    ⚖  732 5120 0 629691 630401 0 </div>
+<div class="line"> ├─ ⏱ 1h 28&#39; 27&quot; 658ms  📋 29563 📄 455   🛠️ 10    🖥️ 44    ⚖  -2 10013 0 1443519 1443913 0 </div>
+<div class="line"> ├─ ⏱ 1h 29&#39; 27&quot; 669ms  📋 29932 📄 40    🛠️ 10    🖥️ 28    ⚖  40 37 0 5803 5833 0 </div>
+<div class="line"> ├─ ⏱ 1h 30&#39; 28&quot; 253ms  📋 30257 📄 762   🛠️ 9     🖥️ 29    ⚖  -2 10014 0 1177339 1178047 0 </div>
+<div class="line"> ├─ ⏱ 1h 31&#39; 28&quot; 269ms  📋 30561 📄 464   🛠️ 9     🖥️ 10    ⚖  -2 10013 0 1479070 1479477 0 </div>
+<div class="line"> ├─ ⏱ 1h 32&#39; 28&quot; 449ms  📋 30986 📄 69    🛠️ 9     🖥️ 5     ⚖  -1 4131 0 866778 866777 0 </div>
+<div class="line"> ├─ ⏱ 1h 33&#39; 28&quot; 473ms  📋 31275 📄 741   🛠️ 8     🖥️ 5     ⚖  -2 10014 0 1236468 1237140 0 </div>
+<div class="line"> ├─ ⏱ 1h 34&#39; 28&quot; 642ms  📋 31573 📄 445   🛠️ 8     🖥️ 14    ⚖  -2 10013 0 1485580 1485968 0 </div>
+<div class="line"> ├─ ⏱ 1h 35&#39; 28&quot; 716ms  📋 32014 📄 81    🛠️ 8     🖥️ 28    ⚖  -2 10011 0 2007092 2007106 0 </div>
+<div class="line"> ├─ ⏱ 1h 36&#39; 28&quot; 789ms  📋 32312 📄 710   🛠️ 7     🖥️ 38    ⚖  -2 10014 0 1200388 1201037 0 </div>
+<div class="line"> ├─ ⏱ 1h 37&#39; 28&quot; 819ms  📋 32617 📄 356   🛠️ 7     🖥️ 19    ⚖  356 637 0 103956 104291 0 </div>
+<div class="line"> ├─ ⏱ 1h 38&#39; 29&quot; 57ms  📋 33033 📄 981   🛠️ 6     🖥️ 1     ⚖  -2 10015 0 1122399 1123329 0 </div>
+<div class="line">srun: Job step aborted: Waiting up to 32 seconds for job step to finish.</div>
+<div class="line">slurmstepd: error: *** STEP 636184.16 ON cna1632 CANCELLED AT 2025-11-07T13:15:37 DUE TO TIME LIMIT ***</div>
+<div class="line">slurmstepd: error: *** JOB 636184 ON cna1632 CANCELLED AT 2025-11-07T13:15:37 DUE TO TIME LIMIT ***</div>
+</div><!-- fragment --> </details>
+<p>Ocorreram 3 situações:</p><ul>
+<li>o teste puzzle8_1C foi abortado devido a problema de memória. Esta situação ocorre devido a estar o algoritmo em largura sem limite, e ter existindo uma instância que requer demasiada memória para executar o algoritmo</li>
+<li>o teste particao_1C foi abortado devido a erro de memória também, mas neste caso houve erro no parametro P1=2, o que é o custo uniforme, e não P1=3 como deveria, sendo a procura em profundidade.</li>
+<li>o teste particao_3C foi abortado devido a limite de tempo para todo o processo ser definido em 2 horas. Não ficou nada gravado dos resultados já obtidos, algo a alterar no futuro, de modo a permitir a continuação de onde se parou.</li>
+</ul>
+<p>O novo script de submissão (construtiva2.sh) é o seguinte: </p><div class="fragment"><div class="line">#!/bin/bash</div>
+<div class="line">#SBATCH --job-name=construtiva2</div>
+<div class="line">#SBATCH --output=Resultados/construtiva2.txt</div>
+<div class="line">#SBATCH --account=f202507959cpcaa0a</div>
+<div class="line">#SBATCH --partition=normal-arm</div>
+<div class="line">#SBATCH --time=04:00:00</div>
+<div class="line">#SBATCH --nodes=1</div>
+<div class="line">#SBATCH --ntasks=48</div>
+<div class="line">#SBATCH --cpus-per-task=1</div>
+<div class="line">#SBATCH --mem=24G</div>
+<div class="line"> </div>
+<div class="line">ml OpenMPI</div>
+<div class="line">make mpi || { echo &quot;Compilação falhou&quot;; exit 1; }</div>
+<div class="line"> </div>
+<div class="line"># Teste: puzzle8_1</div>
+<div class="line"># esforço C --- sem P1=1</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 2 1:1000 -R Resultados/puzzle8_1C -M 1 -P P2=2 P1=3:7 x P3=1:4</div>
+<div class="line"> </div>
+<div class="line"># Teste: particao_1</div>
+<div class="line"># esforço C --- P1=3 (corrigido)</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:200:20 -R Resultados/particao_1C -M 1 -P P1=3 P2=2 P7=-1 P3=1:100 x P8=1,3</div>
+<div class="line"> </div>
+<div class="line"># Teste: particao_3</div>
+<div class="line"># esforço C --- repetir já que não terminou</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:1000 -R Resultados/particao_3C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P11=1 P3=1:40</div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md2"></a>
 Análise e Conclusões</h4>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
