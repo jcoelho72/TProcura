@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('construtiva__deucalion.html',''); init
 <p>A documentação do cluster Deucalion pode ser encontrada em: <a href="https://docs.deucalion.macc.fccn.pt/">https://docs.deucalion.macc.fccn.pt/</a> A forma como se pode obter acesso ao cluster, bem como a submissão de trabalhos, está descrita nessa documentação.</p>
 <p>Vamos submeter os testes com os exemplos do puzzle 8, as 8 damas e partição, com todos os níveis de esforço (A, B e C), em modo MPI.</p>
 <p>O script de submissão (construtiva.sh) é o seguinte: </p><div class="fragment"><div class="line">#!/bin/bash</div>
+<div class="line">#!/bin/bash</div>
 <div class="line">#SBATCH --job-name=construtiva</div>
 <div class="line">#SBATCH --output=Resultados/construtiva.txt</div>
 <div class="line">#SBATCH --account=f202507959cpcaa0a</div>
@@ -117,71 +118,72 @@ $(document).ready(function(){initNavTree('construtiva__deucalion.html',''); init
 <div class="line"># Teste: puzzle8_1</div>
 <div class="line"> </div>
 <div class="line"># esforço A</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 1:1000:100 -R Resultados/puzzle8_1 -M 1 -P P2=3 P1=1,3:7 x P3=1:4</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 2 1:1000:100 -R Resultados/puzzle8_1 -M 1 -P P2=3 P1=1,3:7 x P3=1:4</div>
 <div class="line"> </div>
 <div class="line"># esforço B</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 1:1000:10 -R Resultados/puzzle8_1B -M 1 -P P2=3 P1=1,3:7 x P3=1:4</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 2 1:1000:10 -R Resultados/puzzle8_1B -M 1 -P P2=3 P1=1,3:7 x P3=1:4</div>
 <div class="line"> </div>
 <div class="line"># esforço C</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 1:1000 -R Resultados/puzzle8_1C -M 1 -P P2=2 P1=1,3:7 x P3=1:4</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 2 1:1000 -R Resultados/puzzle8_1C -M 1 -P P2=2 P1=1,3:7 x P3=1:4</div>
 <div class="line"> </div>
 <div class="line"># Teste: 8damas_1</div>
 <div class="line"> </div>
 <div class="line"># esforço A</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 4:40 -R Resultados/8damas_1 -M 1 -P P1=3 P2=4 P7=-1 P8=1,3</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 3 4:40 -R Resultados/8damas_1 -M 1 -P P1=3 P2=4 P7=-1 P8=1,3</div>
 <div class="line"> </div>
 <div class="line"># Teste: 8damas_2</div>
 <div class="line"> </div>
 <div class="line"># esforço A</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 4:40 -R Resultados/8damas_2 -M 1 -P P1=3 P2=3 P7=-1 P8=1 P11=0,1 x P3=1:4</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 3 4:40 -R Resultados/8damas_2 -M 1 -P P1=3 P2=3 P7=-1 P8=1 P11=0,1 x P3=1:4</div>
 <div class="line"> </div>
 <div class="line"># Teste: 8damas_3</div>
 <div class="line"> </div>
 <div class="line"># esforço A</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 4:40 -R Resultados/8damas_3 -M 1 -P P1=3 P2=3 P7=-1 P8=1 P11=1 P3=1:10</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 3 4:40 -R Resultados/8damas_3 -M 1 -P P1=3 P2=3 P7=-1 P8=1 P11=1 P3=1:10</div>
 <div class="line"> </div>
 <div class="line"># esforço B</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 4:40 -R Resultados/8damas_3B -M 1 -P P1=3 P2=3 P7=-1 P8=1 P11=1 P3=1:100</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 3 4:40 -R Resultados/8damas_3B -M 1 -P P1=3 P2=3 P7=-1 P8=1 P11=1 P3=1:100</div>
 <div class="line"> </div>
 <div class="line"># esforço C</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 4:40 -R Resultados/8damas_3C -M 1 -P P1=3 P2=2 P7=-1 P8=1 P11=1 P3=1:1000</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 3 4:40 -R Resultados/8damas_3C -M 1 -P P1=3 P2=2 P7=-1 P8=1 P11=1 P3=1:1000</div>
 <div class="line"> </div>
 <div class="line"># Teste: particao_1</div>
 <div class="line"> </div>
 <div class="line"># esforço A</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:200:20 -R Resultados/particao_1 -M 1 -P P1=3 P2=4 P7=-1 P3=1 P8=1,3</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:200:20 -R Resultados/particao_1 -M 1 -P P1=3 P2=4 P7=-1 P3=1 P8=1,3</div>
 <div class="line"> </div>
 <div class="line"># esforço B</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:200:20 -R Resultados/particao_1B -M 1 -P P1=3 P2=3 P7=-1 P3=1:10 x P8=1,3</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:200:20 -R Resultados/particao_1B -M 1 -P P1=3 P2=3 P7=-1 P3=1:10 x P8=1,3</div>
 <div class="line"> </div>
 <div class="line"># esforço C</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:200:20 -R Resultados/particao_1C -M 1 -P P1=2 P2=2 P7=-1 P3=1:100 x P8=1,3</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:200:20 -R Resultados/particao_1C -M 1 -P P1=2 P2=2 P7=-1 P3=1:100 x P8=1,3</div>
 <div class="line"> </div>
 <div class="line"># Teste: particao_2</div>
 <div class="line"> </div>
 <div class="line"># esforço A</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:100:10 -R Resultados/particao_2 -M 1 -P P1=3 P2=3 P7=-1 P8=3 P3=1:4 x P11=0,1</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:100:10 -R Resultados/particao_2 -M 1 -P P1=3 P2=3 P7=-1 P8=3 P3=1:4 x P11=0,1</div>
 <div class="line"> </div>
 <div class="line"># esforço B</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:100:10 -R Resultados/particao_2B -M 1 -P P1=3 P2=3 P7=-1 P8=3 P3=1:40 x P11=0,1</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:100:10 -R Resultados/particao_2B -M 1 -P P1=3 P2=3 P7=-1 P8=3 P3=1:40 x P11=0,1</div>
 <div class="line"> </div>
 <div class="line"># esforço C</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:100:10 -R Resultados/particao_2C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P3=1:400 x P11=0,1</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:100:10 -R Resultados/particao_2C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P3=1:400 x P11=0,1</div>
 <div class="line"> </div>
 <div class="line"># Teste: particao_3</div>
 <div class="line"> </div>
 <div class="line"># esforço A</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:1000:100 -R Resultados/particao_3 -M 1 -P P1=3 P2=3 P7=-1 P8=3 P11=1 P3=1:4</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:1000:100 -R Resultados/particao_3 -M 1 -P P1=3 P2=3 P7=-1 P8=3 P11=1 P3=1:4</div>
 <div class="line"> </div>
 <div class="line"># esforço B</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:1000:10 -R Resultados/particao_3B -M 1 -P P1=3 P2=3 P7=-1 P8=3 P11=1 P3=1:40</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:1000:10 -R Resultados/particao_3B -M 1 -P P1=3 P2=3 P7=-1 P8=3 P11=1 P3=1:40</div>
 <div class="line"> </div>
 <div class="line"># esforço C</div>
-<div class="line">srun bin/MPI/TProcuraConstrutiva 2:1000 -R Resultados/particao_3C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P11=1 P3=1:40</div>
+<div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:1000 -R Resultados/particao_3C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P11=1 P3=1:40</div>
 </div><!-- fragment --><p>O script é idêntico ao realizado com o teste tvetor.sh, mas temos agora as execuções dos exemplos construtivos.</p>
+<p>Como o executável tem vários problemas, a escolha do problema é colocada no primeiro argumento do programa, 2 para o puzzle8, 3 para as 8 damas e 4 para o problema da partição.</p>
 <p>No cluster submetemos o trabalho com o comando: </p><div class="fragment"><div class="line">/TProcura/Construtiva/Teste$ sbatch construtiva.sh</div>
 </div><!-- fragment --><p>Podemos ver se o trabalho está em execução com: </p><div class="fragment"><div class="line">/TProcura/Construtiva/Teste$ squeue --me</div>
-</div><!-- fragment --><p> Para verificar o output do trabalho, mesmo durante a execução, consultamos o ficheiro Resultados/tvetor.txt vendo o final do ficheiro </p><div class="fragment"><div class="line">/TProcura/Teste$ tail -f Resultados/construtiva.txt</div>
+</div><!-- fragment --><p> Para verificar o output do trabalho, mesmo durante a execução, consultamos o ficheiro Resultados/construtiva.txt vendo o final do ficheiro </p><div class="fragment"><div class="line">/TProcura/Teste$ tail -f Resultados/construtiva.txt</div>
 </div><!-- fragment --><p>Pode-se ver o conteúdo final do ficheiro de resultados:</p>
 <details >
 <summary >
