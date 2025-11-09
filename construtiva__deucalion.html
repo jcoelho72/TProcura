@@ -1201,13 +1201,13 @@ puzzle 8</h4>
 <p>Obtivemos neste esforço instâncias de todos os custos, mas tivemos de omitir a procura em largura, que crashava o processo devido a problemas de memória.</p>
 <p>Por volta do custo 23 a 25 tanto a procura em largura como a profundidade, deixam de conseguir resolver nos 10 segundos de tempo limite. A procura em largura tem um problema extra de memória.</p>
 <p>A versão da procura em profundidade é a iterativa, pelo que tem um comportamento idêntico à procura em largura, sem problema de memória, embora ligeiramente mais lento, como se pode observar no esforço B. No entanto pode ser mantido no esforço C por não estoirar a memória, ao contrário da procura em largura.</p>
-<p>Vemos que o melhor primeiro tem consistentemente melhroes tempos. No entanto não obtém a solução ótima, ao contrário dos restantes algoritmos. Entre os algoritmos que obtêm a solução ótima, o A* e o IDA* são os mais rápidosm seguido do Branch and Bound.</p>
+<p>Vemos que o melhor primeiro tem consistentemente melhores tempos. No entanto não obtém a solução ótima, ao contrário dos restantes algoritmos. Entre os algoritmos que obtêm a solução ótima, o A* e o IDA* são os mais rápidos seguido do Branch and Bound.</p>
 <p>Em problemas como o puzzle 8, em que a solução pode estar próximo, o A* e o IDA* são os mais aconselhados já que não há o risco de se explorar um ramo não ótimo primeiro, com uma solução ótima mesmo ao lado. Isso foi o que aconteceu com as instâncias de custo 5, em que o BnB gastou mais de 300 milisegundos, enquanto o A* e o IDA* resolveram em menos de 1 milisegundo.</p>
 <p>Nesta análise podemos também comcluir que a distância à solução, é um excelente indicador da dificuldade da instância para quase todos os algoritmos. A exceção o Branch and Bound que embora retorne a solução óptima em menos de um segundo, o tempo não aumenta com este indicador.</p>
 <p>A instância mais dificil obtida, em termos de distância à solução, foi a de custo 30 no esforço C.</p>
 <h4><a class="anchor" id="autotoc_md4"></a>
 8 damas</h4>
-<p>Temos neste problema 3 testes. O promeiro é reproduzido com todas as instâncias de 4 a 40 damas.</p>
+<p>Temos neste problema 3 testes. O primeiro é reproduzido com todas as instâncias de 4 a 40 damas.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
@@ -1286,7 +1286,7 @@ puzzle 8</h4>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10012   </td></tr>
 </table>
-<p>Vemos algo idêntico ao obtido com computador local. A instância 28 tinha sido resolvida e aqui não, devendo-se a diferenças entre os CPUs. A conclusão é a mesma, não é compensador utilizar o bloquei de estados gerados, pelo que justifica-se ignorar os estados repetidos.</p>
+<p>Vemos algo idêntico ao obtido com computador local. A instância 28 tinha sido resolvida e aqui não, devendo-se a diferenças entre os CPUs. A conclusão é a mesma, não é compensador utilizar o bloqueio de estados gerados repetidos, pelo que justifica-se ignorar os estados repetidos.</p>
 <p>No teste 2 vamos testar baralhar a ordem dos sucessores, para ver se há diferenças significativas.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1456,7 +1456,7 @@ Percentil10   </th><th class="markdownTableHeadRight">Mediana   </th><th class="
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">50   </td></tr>
 </table>
-<p>Podemos ver que apenas o esforço C tem informação mais estável.</p>
+<p>Podemos ver que o esforço C tem informação mais estável.</p>
 <p>O percentil de 90% sobe até 50 milisegundos para as 40 damas, mas o percentil de 10% mantém-se em 1 milisegundos.</p>
 <p>O valor da mediana é bastante baixo, mas naturalmente que o tempo é uma distribuição bastante assimétrica para este algoritmo e problema. Se a ordem aleatória não é favorável, o tempo pode ser muito elevado, mas na maior parte das vezes é baixo.</p>
 <h4><a class="anchor" id="autotoc_md5"></a>
@@ -1527,7 +1527,7 @@ partição</h4>
 particao 3C</div></div>
     <p>Podemos obserar que até à instância 80 todas são resolvidas, mas após esse valor as instâncias ímpares deixam de ser resolvidas, enquanto que as instâncias pares são todas resolvidas até 118, baixando a taxa de resolução gradualmente até valores residuais de 5% nas instâncias perto de 1000.</p>
 <p>São portanto geradas com este gerador de instâncias, desafios interessantes para as procuras construtivas, ao contrário do puzzle 8 e das 8 damas em que temos algoritmos construtivos a resolver a totalidade das instâncias propostas.</p>
-<p>Estes resultados não devem ser interpretados para qualquer instância com uma determinada quantidade de números, atendendo a que o gerador não gera essas instâncias com igual probabilidade. Foi desenhado para procurar as instâncias mais complexas, e por esse motivo para uma instância de N números nunca coloca números menores que NªN, evitando assim que alguns números funcionem como "trocos" que seriam utilizados no final para obter uma solução, após os números grandes estarem colocados. </p>
+<p>Estes resultados não devem ser interpretados para qualquer instância com uma determinada quantidade de números, atendendo a que o gerador não gera essas instâncias com igual probabilidade. Foi desenhado para procurar as instâncias mais complexas, e por esse motivo para uma instância de N números nunca tem números menores que NªN, evitando assim que alguns números funcionem como "trocos" que seriam utilizados no final para obter uma solução, após os números grandes estarem colocados, o que tornaria a instância mais simples. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
