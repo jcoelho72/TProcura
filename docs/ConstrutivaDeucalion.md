@@ -1025,9 +1025,9 @@ Esforço A:
 | 19 | 236 | 471 | 1 | 2 | 2 | 150 |
 | 21 | 781 | 1559 | 6 | 3 | 5 | 1196 |
 | 23 | 2381 | 4765 | 5 | 6 | 7 | 1505 |
-| 25 | 6797 | 2 | 8 | 14 | 552 |
-| 27 | 2 | 28 | 61 | 335 |
-| 29 | 5 | 53 | 49 | 678 |
+| 25 | | 6797 | 2 | 8 | 14 | 552 |
+| 27 | | | 2 | 28 | 61 | 335 |
+| 29 | | | 5 | 53 | 49 | 678 |
 
 Esta é o esforço que já tinhamos no exemplo do puzzle 8, mas aqui omitimos os resultados da procura em largura e profundidade que
 não foram resolvidos.
@@ -1048,9 +1048,9 @@ Esforço B:
 | 19 | 267 | 532 | 4 | 2 | 2 | 895 |
 | 21 | 804 | 1619 | 4 | 3 | 4 | 891 |
 | 23 | 2410 | 4908 | 3 | 6 | 8 | 640 |
-| 25 | 6885 | 2 | 13 | 13 | 373 |
-| 27 | 3 | 23 | 27 | 630 |
-| 29 | 5 | 54 | 50 | 658 |
+| 25 | | 6885 | 2 | 13 | 13 | 373 |
+| 27 | | | 3 | 23 | 27 | 630 |
+| 29 | | | 5 | 54 | 50 | 658 |
 
 Com a utilização de mais instâncias, conseguimos um detalhe maior, mas mesmo assim não há instâncias de custo 2, 4, etc.
 
@@ -1082,12 +1082,12 @@ Esforço C:
 | 22 | 2586 | 3 | 4 | 5 | 715 |
 | 23 | 4713 | 3 | 6 | 7 | 625 |
 | 24 | 7427 | 3 | 8 | 10 | 659 |
-| 25 | 3 | 11 | 14 | 550 |
-| 26 | 2 | 15 | 20 | 489 |
-| 27 | 4 | 21 | 26 | 785 |
-| 28 | 3 | 34 | 40 | 640 |
-| 29 | 3 | 34 | 35 | 484 |
-| 30 | 3 | 24 | 22 | 372 |
+| 25 | | 3 | 11 | 14 | 550 |
+| 26 | | 2 | 15 | 20 | 489 |
+| 27 | | 4 | 21 | 26 | 785 |
+| 28 | | 3 | 34 | 40 | 640 |
+| 29 | | 3 | 34 | 35 | 484 |
+| 30 | | 3 | 24 | 22 | 372 |
 
 Obtivemos neste esforço instâncias de todos os custos, mas tivemos de omitir a procura em largura,
 que crashava o processo devido a problemas de memória.
@@ -1256,7 +1256,7 @@ Colocamos também o nível de esforço para se ver o ganho de informação.
 | 40 | 1 | 3 | 10 | 1 | 5 | 40 | 1 | 4 | 50 |
 
 
-Podenmos ver que apenas o esforço C tem informação mais estável.
+Podemos ver que apenas o esforço C tem informação mais estável.
 
 O percentil de 90% sobe até 50 milisegundos para as 40 damas, mas o percentil de 10% mantém-se em 1 milisegundos.
 
@@ -1282,7 +1282,7 @@ Vamos desta vez colocar a taxa de instâncias resolvidas, mediante o esforço.
 | 182 | 0 | 0 | 0 | 0 | 0 | 0 |
 
 Podemos ver que bloquear os estados repetidos no modo gerados, é claramente vantajoso. No maior esforço vemos que mesmo
-numa instância de 102 números, naturalmente com o método de geração utilizado para procurar que a instâsncia seja complexa,
+numa instância de 102 números, naturalmente com o método de geração utilizado para procurar que a instância seja complexa,
 temos ainda  quase 50% de instâncias resolvidas, caso não se repita qualquer estado gerado. Já ignorando os estados repetidos,
 nenhuma instância com 42 ou mais números é resolvida.
 
@@ -1291,16 +1291,16 @@ As instâncias acabam por ser todas resolvidas, mas podemos observar diferenças
 
 | Rótulos de Linha | 2<br>0 | 1 | 2B<br>0 | 1 | 2C<br>0 | 1 |
 |:---:|---:|---:|---:|---:|---:|---:|
-| 2 | 15 | 21 | 15 | 15,65 | 15 | 15,065 |
-| 12 | 16 | 22,5 | 15,875 | 16,1 | 15,9025 | 15,4875 |
-| 22 | 27,25 | 24,25 | 29,2 | 19,05 | 29,265 | 18,6725 |
-| 32 | 74,75 | 29 | 82,675 | 25,65 | 86,095 | 29,655 |
-| 42 | 257,75 | 113,5 | 244,425 | 61,55 | 233,3725 | 49,945 |
-| 52 | 542 | 120,25 | 549,85 | 112,525 | 535,8425 | 93,225 |
-| 62 | 956 | 73,5 | 1103,975 | 156,4 | 1097,935 | 177,1325 |
-| 72 | 1859,25 | 278,75 | 2056,325 | 285,55 | 2043,3925 | 264,445 |
-| 82 | 3310 | 157,25 | 3641,15 | 439,275 | 3592,2 | 385,6975 |
-| 92 | 5929,5 | 226,75 | 5537,2 | 460,925 | 5673,45 | 539,3725 |
+| 2 | 15 | 21 | 15 | 16 | 15 | 15 |
+| 12 | 16 | 23 | 16 | 16 | 16 | 15 |
+| 22 | 27 | 24 | 29 | 19 | 29 | 19 |
+| 32 | 75 | 29 | 83 | 26 | 86 | 30 |
+| 42 | 258 | 114 | 244 | 62 | 233 | 50 |
+| 52 | 542 | 120 | 550 | 113 | 536 | 93 |
+| 62 | 956 | 74 | 1104 | 156 | 1098 | 177 |
+| 72 | 1859 | 279 | 2056 | 286 | 2043 | 264 |
+| 82 | 3310 | 157 | 3641 | 439 | 3592 | 386 |
+| 92 | 5930 | 227 | 5537 | 461 | 5673 | 539 |
 
 Verificamos que os tempos são bastante menores quando se baralha a ordem dos sucessores, uma ordem de grandeza.
 
