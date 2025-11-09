@@ -858,8 +858,655 @@ Ver conteúdo final de Resultados/construtiva.txt</summary>
 <div class="line"># Teste: particao_3</div>
 <div class="line"># esforço C --- repetir já que não terminou</div>
 <div class="line">srun bin/MPI/TProcuraConstrutiva 4 2:1000 -R Resultados/particao_3C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P11=1 P3=1:40</div>
-</div><!-- fragment --><h4><a class="anchor" id="autotoc_md2"></a>
-Análise e Conclusões</h4>
+</div><!-- fragment --><p>O conteúdo do ficheiro de resultados da segunda execução:</p>
+<details >
+<summary >
+Ver conteúdo final de Resultados/construtiva2.txt</summary>
+<p></p>
+<p>O conteúdo final do ficheiro é o seguinte: </p><div class="fragment"><div class="line">mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp ../../TRand.cpp ../CListaNo.cpp ../TProcuraConstrutiva.cpp Puzzle8.cpp OitoDamas.cpp teste.cpp Particao.cpp Aspirador.cpp</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 … 📄 998 📄 999 📄 1000 } #1000</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m0 &#x241B;[90mP8=&#x241B;[0m2 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP1=&#x241B;[0m4 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP1=&#x241B;[0m5 &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [18] ─ &#x241B;[90mP1=&#x241B;[0m5 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [19] ─ &#x241B;[90mP1=&#x241B;[0m6 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [20] ─ &#x241B;[90mP1=&#x241B;[0m7 &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:20000   📄 Instâncias: 1000   🛠️ Configurações: 20   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 233ms        📋 4694  📄 355   🛠️ 15    🖥️ 7     ⚖  -2 10000 0 2732243 4680449 5 </div>
+<div class="line"> ├─ ⏱ 2&#39; 384ms        📋 9412  📄 635   🛠️ 10    🖥️ 5     ⚖  23 6010 0 1591774 2775642 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 471ms        📋 14073 📄 955   🛠️ 5     🖥️ 11    ⚖  23 4238 0 1096340 1884837 9 </div>
+<div class="line"> ├─ ⏱ 4&#39; 644ms        📋 14883 📄 169   🛠️ 5     🖥️ 34    ⚖  -2 10000 0 2662873 4566379 1 </div>
+<div class="line"> ├─ ⏱ 5&#39; 646ms        📋 19458 📄 597   🛠️ 0     🖥️ 41    ⚖  23 6351 0 1615565 2817895 1 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/puzzle8_1C.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 5&#39; 36&quot; 154ms </div>
+<div class="line"> │  ⏱  CPU total: 4h 23&#39; 19&quot; 216ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 5&#39; 35&quot; 874ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 2&#39; 34&quot; 910ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 97.0%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 99.0% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 5&#39; 36&quot; 154ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP11=&#x241B;[0m0&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP8=&#x241B;[0m1</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [198] ─ &#x241B;[90mP3=&#x241B;[0m98 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [199] ─ &#x241B;[90mP3=&#x241B;[0m99 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [200] ─ &#x241B;[90mP3=&#x241B;[0m100 &#x241B;[90mP8=&#x241B;[0m3</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:2000   📄 Instâncias: 10   🛠️ Configurações: 200   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 30ms         📋 557   📄 62    🛠️ 145   🖥️ 46    ⚖  62 1322 0 317588 317618 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 355ms        📋 1057  📄 182   🛠️ 99    🖥️ 46    ⚖  -2 10000 0 2774593 2774684 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 508ms        📋 1413  📄 102   🛠️ 64    🖥️ 23    ⚖  -2 10000 0 3024480 3024530 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 709ms        📋 1767  📄 182   🛠️ 28    🖥️ 11    ⚖  -2 10000 0 2839378 2839468 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_1C.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 4&#39; 50&quot; 163ms </div>
+<div class="line"> │  ⏱  CPU total: 3h 47&#39; 17&quot; 676ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 4&#39; 50&quot; 125ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 4&#39; 15&quot; 101ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 96.1%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 98.1% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4&#39; 50&quot; 163ms ) ═══</div>
+<div class="line"> </div>
+<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 3 📄 4 … 📄 998 📄 999 📄 1000 } #999</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m3 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m0 &#x241B;[90mP6=&#x241B;[0m4 &#x241B;[90mP7=&#x241B;[0m-1 &#x241B;[90mP8=&#x241B;[0m3 &#x241B;[90mP11=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [38] ─ &#x241B;[90mP3=&#x241B;[0m38</div>
+<div class="line"> ├─ ⚙  [39] ─ &#x241B;[90mP3=&#x241B;[0m39</div>
+<div class="line"> ├─ ⚙  [40] ─ &#x241B;[90mP3=&#x241B;[0m40</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:39960   📄 Instâncias: 999   🛠️ Configurações: 40   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 7ms          📋 335   📄 712   🛠️ 39    🖥️ 7     ⚖  -2 10014 0 1257744 1258398 0 </div>
+<div class="line"> ├─ ⏱ 2&#39; 353ms        📋 621   📄 426   🛠️ 39    🖥️ 13    ⚖  -2 10013 0 1527552 1527933 0 </div>
+<div class="line"> ├─ ⏱ 3&#39; 367ms        📋 1010  📄 62    🛠️ 39    🖥️ 46    ⚖  62 999 0 224244 224284 0 </div>
+<div class="line"> ├─ ⏱ 4&#39; 396ms        📋 1304  📄 748   🛠️ 38    🖥️ 14    ⚖  -2 10014 0 1233117 1233825 0 </div>
+<div class="line"> ├─ ⏱ 5&#39; 502ms        📋 1604  📄 443   🛠️ 38    🖥️ 14    ⚖  -2 10013 0 1555067 1555454 0 </div>
+<div class="line"> ├─ ⏱ 6&#39; 520ms        📋 2031  📄 77    🛠️ 38    🖥️ 9     ⚖  -1 6603 0 1350510 1350509 0 </div>
+<div class="line"> ├─ ⏱ 7&#39; 745ms        📋 2321  📄 729   🛠️ 37    🖥️ 6     ⚖  -2 10014 0 1266276 1266957 0 </div>
+<div class="line"> ├─ ⏱ 8&#39; 767ms        📋 2608  📄 436   🛠️ 37    🖥️ 1     ⚖  -2 10013 0 1609490 1609869 0 </div>
+<div class="line"> ├─ ⏱ 9&#39; 802ms        📋 3038  📄 93    🛠️ 37    🖥️ 41    ⚖  -2 10011 0 1967277 1967312 0 </div>
+<div class="line"> ├─ ⏱ 10&#39; 947ms       📋 3322  📄 722   🛠️ 36    🖥️ 30    ⚖  -2 10014 0 1272329 1272983 0 </div>
+<div class="line"> ├─ ⏱ 11&#39; 998ms       📋 3606  📄 438   🛠️ 36    🖥️ 43    ⚖  -2 10013 0 1480469 1480853 0 </div>
+<div class="line"> ├─ ⏱ 12&#39; 1&quot; 30ms     📋 3951  📄 141   🛠️ 36    🖥️ 13    ⚖  -2 10012 0 1992931 1993017 0 </div>
+<div class="line"> ├─ ⏱ 13&#39; 1&quot; 452ms    📋 4284  📄 760   🛠️ 35    🖥️ 22    ⚖  -2 10014 0 1231516 1232225 0 </div>
+<div class="line"> ├─ ⏱ 14&#39; 1&quot; 461ms    📋 4627  📄 426   🛠️ 35    🖥️ 15    ⚖  -2 10013 0 1488615 1488991 0 </div>
+<div class="line"> ├─ ⏱ 15&#39; 3&quot; 501ms    📋 5042  📄 1000  🛠️ 34    🖥️ 40    ⚖  1000 8611 0 971425 972387 0 </div>
+<div class="line"> ├─ ⏱ 16&#39; 3&quot; 706ms    📋 5325  📄 717   🛠️ 34    🖥️ 2     ⚖  -2 10014 0 1248635 1249278 0 </div>
+<div class="line"> ├─ ⏱ 17&#39; 4&quot; 425ms    📋 5626  📄 378   🛠️ 34    🖥️ 42    ⚖  378 4780 0 765591 765935 0 </div>
+<div class="line"> ├─ ⏱ 18&#39; 6&quot; 313ms    📋 6041  📄 1000  🛠️ 33    🖥️ 32    ⚖  -2 10015 0 1122230 1123177 0 </div>
+<div class="line"> ├─ ⏱ 19&#39; 6&quot; 398ms    📋 6339  📄 704   🛠️ 33    🖥️ 13    ⚖  -2 10014 0 1253568 1254210 0 </div>
+<div class="line"> ├─ ⏱ 20&#39; 6&quot; 432ms    📋 6633  📄 408   🛠️ 33    🖥️ 44    ⚖  -2 10013 0 1567714 1568067 0 </div>
+<div class="line"> ├─ ⏱ 21&#39; 6&quot; 433ms    📋 7043  📄 998   🛠️ 32    🖥️ 11    ⚖  -2 10015 0 1137973 1138913 0 </div>
+<div class="line"> ├─ ⏱ 22&#39; 6&quot; 583ms    📋 7340  📄 700   🛠️ 32    🖥️ 37    ⚖  -2 10014 0 1227773 1228423 0 </div>
+<div class="line"> ├─ ⏱ 23&#39; 6&quot; 692ms    📋 7632  📄 408   🛠️ 32    🖥️ 45    ⚖  -2 10013 0 1500458 1500815 0 </div>
+<div class="line"> ├─ ⏱ 24&#39; 6&quot; 733ms    📋 8068  📄 971   🛠️ 31    🖥️ 36    ⚖  -2 10015 0 1157569 1158482 0 </div>
+<div class="line"> ├─ ⏱ 25&#39; 6&quot; 769ms    📋 8365  📄 681   🛠️ 31    🖥️ 31    ⚖  -2 10014 0 1232820 1233445 0 </div>
+<div class="line"> ├─ ⏱ 26&#39; 6&quot; 801ms    📋 8671  📄 342   🛠️ 31    🖥️ 8     ⚖  342 2096 0 349129 349448 0 </div>
+<div class="line"> ├─ ⏱ 27&#39; 8&quot; 143ms    📋 9085  📄 953   🛠️ 30    🖥️ 24    ⚖  -2 10015 0 1202933 1203805 0 </div>
+<div class="line"> ├─ ⏱ 28&#39; 8&quot; 180ms    📋 9392  📄 645   🛠️ 30    🖥️ 45    ⚖  -2 10014 0 1240004 1240606 0 </div>
+<div class="line"> ├─ ⏱ 29&#39; 8&quot; 188ms    📋 9703  📄 312   🛠️ 30    🖥️ 29    ⚖  312 2956 0 465789 466072 0 </div>
+<div class="line"> ├─ ⏱ 30&#39; 8&quot; 194ms    📋 10122 📄 915   🛠️ 29    🖥️ 20    ⚖  -2 10015 0 1162341 1163209 0 </div>
+<div class="line"> ├─ ⏱ 31&#39; 8&quot; 635ms    📋 10412 📄 625   🛠️ 29    🖥️ 2     ⚖  -2 10014 0 1267122 1267696 0 </div>
+<div class="line"> ├─ ⏱ 32&#39; 8&quot; 727ms    📋 10700 📄 337   🛠️ 29    🖥️ 2     ⚖  -2 10013 0 1569259 1569546 0 </div>
+<div class="line"> ├─ ⏱ 33&#39; 10&quot; 669ms   📋 11130 📄 906   🛠️ 28    🖥️ 37    ⚖  -2 10015 0 1199023 1199873 0 </div>
+<div class="line"> ├─ ⏱ 34&#39; 10&quot; 678ms   📋 11424 📄 612   🛠️ 28    🖥️ 35    ⚖  -2 10014 0 1293911 1294472 0 </div>
+<div class="line"> ├─ ⏱ 35&#39; 10&quot; 767ms   📋 11728 📄 309   🛠️ 28    🖥️ 10    ⚖  -2 10012 0 1652265 1652514 0 </div>
+<div class="line"> ├─ ⏱ 36&#39; 12&quot; 205ms   📋 12129 📄 906   🛠️ 27    🖥️ 8     ⚖  -2 10015 0 1192556 1193413 0 </div>
+<div class="line"> ├─ ⏱ 37&#39; 12&quot; 243ms   📋 12450 📄 595   🛠️ 27    🖥️ 46    ⚖  -2 10014 0 1256320 1256872 0 </div>
+<div class="line"> ├─ ⏱ 38&#39; 12&quot; 304ms   📋 12776 📄 259   🛠️ 27    🖥️ 21    ⚖  -2 10012 0 1842320 1842539 0 </div>
+<div class="line"> ├─ ⏱ 39&#39; 12&quot; 638ms   📋 13176 📄 859   🛠️ 26    🖥️ 13    ⚖  -2 10015 0 1191951 1192752 0 </div>
+<div class="line"> ├─ ⏱ 40&#39; 12&quot; 678ms   📋 13484 📄 551   🛠️ 26    🖥️ 46    ⚖  -2 10014 0 1306120 1306609 0 </div>
+<div class="line"> ├─ ⏱ 41&#39; 12&quot; 733ms   📋 13779 📄 255   🛠️ 26    🖥️ 33    ⚖  -2 10012 0 1837162 1837374 0 </div>
+<div class="line"> ├─ ⏱ 42&#39; 12&quot; 850ms   📋 14175 📄 858   🛠️ 25    🖥️ 38    ⚖  -2 10015 0 1140815 1141622 0 </div>
+<div class="line"> ├─ ⏱ 43&#39; 12&quot; 965ms   📋 14471 📄 567   🛠️ 25    🖥️ 27    ⚖  -2 10014 0 1315785 1316301 0 </div>
+<div class="line"> ├─ ⏱ 44&#39; 12&quot; 985ms   📋 14773 📄 260   🛠️ 25    🖥️ 16    ⚖  -2 10012 0 1834033 1834237 0 </div>
+<div class="line"> ├─ ⏱ 45&#39; 13&quot; 155ms   📋 15173 📄 859   🛠️ 24    🖥️ 38    ⚖  -2 10015 0 1154425 1155234 0 </div>
+<div class="line"> ├─ ⏱ 46&#39; 14&quot; 361ms   📋 15456 📄 576   🛠️ 24    🖥️ 18    ⚖  -2 10014 0 1244846 1245361 0 </div>
+<div class="line"> ├─ ⏱ 47&#39; 14&quot; 955ms   📋 15787 📄 255   🛠️ 24    🖥️ 29    ⚖  -2 10012 0 1870905 1871098 0 </div>
+<div class="line"> ├─ ⏱ 48&#39; 15&quot; 298ms   📋 16207 📄 824   🛠️ 23    🖥️ 10    ⚖  -2 10015 0 1202430 1203190 0 </div>
+<div class="line"> ├─ ⏱ 49&#39; 15&quot; 422ms   📋 16501 📄 530   🛠️ 23    🖥️ 31    ⚖  -2 10013 0 1404660 1405136 0 </div>
+<div class="line"> ├─ ⏱ 50&#39; 15&quot; 477ms   📋 16810 📄 228   🛠️ 23    🖥️ 46    ⚖  228 7644 0 1429815 1430007 0 </div>
+<div class="line"> ├─ ⏱ 51&#39; 15&quot; 490ms   📋 17218 📄 815   🛠️ 22    🖥️ 32    ⚖  -2 10014 0 1177721 1178494 0 </div>
+<div class="line"> ├─ ⏱ 52&#39; 15&quot; 611ms   📋 17514 📄 517   🛠️ 22    🖥️ 3     ⚖  -2 10013 0 1459940 1460408 0 </div>
+<div class="line"> ├─ ⏱ 53&#39; 15&quot; 742ms   📋 17874 📄 189   🛠️ 22    🖥️ 26    ⚖  -2 10012 0 1921554 1921680 0 </div>
+<div class="line"> ├─ ⏱ 54&#39; 15&quot; 979ms   📋 18256 📄 773   🛠️ 21    🖥️ 24    ⚖  -2 10014 0 1204349 1205064 0 </div>
+<div class="line"> ├─ ⏱ 55&#39; 16&quot; 131ms   📋 18540 📄 489   🛠️ 21    🖥️ 27    ⚖  -2 10013 0 1449858 1450285 0 </div>
+<div class="line"> ├─ ⏱ 56&#39; 16&quot; 283ms   📋 18855 📄 146   🛠️ 21    🖥️ 24    ⚖  146 2279 0 462909 463023 0 </div>
+<div class="line"> ├─ ⏱ 57&#39; 16&quot; 356ms   📋 19231 📄 797   🛠️ 20    🖥️ 26    ⚖  -2 10015 0 1196819 1197535 0 </div>
+<div class="line"> ├─ ⏱ 58&#39; 16&quot; 514ms   📋 19519 📄 509   🛠️ 20    🖥️ 15    ⚖  -2 10013 0 1418171 1418625 0 </div>
+<div class="line"> ├─ ⏱ 59&#39; 16&quot; 521ms   📋 19878 📄 178   🛠️ 20    🖥️ 28    ⚖  -2 10012 0 1905738 1905859 0 </div>
+<div class="line"> ├─ ⏱ 1h 16&quot; 693ms    📋 20252 📄 775   🛠️ 19    🖥️ 23    ⚖  -2 10014 0 1222317 1223028 0 </div>
+<div class="line"> ├─ ⏱ 1h 1&#39; 16&quot; 826ms  📋 20550 📄 477   🛠️ 19    🖥️ 1     ⚖  -2 10013 0 1538293 1538722 0 </div>
+<div class="line"> ├─ ⏱ 1h 2&#39; 16&quot; 992ms  📋 20888 📄 161   🛠️ 19    🖥️ 35    ⚖  -2 10012 0 1957582 1957683 0 </div>
+<div class="line"> ├─ ⏱ 1h 3&#39; 17&quot; 40ms  📋 21260 📄 768   🛠️ 18    🖥️ 35    ⚖  -2 10014 0 1181163 1181882 0 </div>
+<div class="line"> ├─ ⏱ 1h 4&#39; 17&quot; 443ms  📋 21562 📄 470   🛠️ 18    🖥️ 13    ⚖  -2 10013 0 1428823 1429237 0 </div>
+<div class="line"> ├─ ⏱ 1h 5&#39; 17&quot; 756ms  📋 21856 📄 130   🛠️ 18    🖥️ 37    ⚖  130 1874 0 392935 393037 0 </div>
+<div class="line"> ├─ ⏱ 1h 6&#39; 17&quot; 997ms  📋 22235 📄 790   🛠️ 17    🖥️ 17    ⚖  -2 10015 0 1215736 1216461 0 </div>
+<div class="line"> ├─ ⏱ 1h 7&#39; 18&quot; 266ms  📋 22541 📄 484   🛠️ 17    🖥️ 41    ⚖  -2 10013 0 1452766 1453187 0 </div>
+<div class="line"> ├─ ⏱ 1h 8&#39; 18&quot; 305ms  📋 22864 📄 126   🛠️ 17    🖥️ 46    ⚖  126 2764 0 563368 563468 0 </div>
+<div class="line"> ├─ ⏱ 1h 9&#39; 18&quot; 406ms  📋 23242 📄 782   🛠️ 16    🖥️ 27    ⚖  -2 10015 0 1179326 1180050 0 </div>
+<div class="line"> ├─ ⏱ 1h 10&#39; 18&quot; 595ms  📋 23542 📄 491   🛠️ 16    🖥️ 16    ⚖  -2 10013 0 1480065 1480501 0 </div>
+<div class="line"> ├─ ⏱ 1h 11&#39; 18&quot; 703ms  📋 23883 📄 96    🛠️ 16    🖥️ 30    ⚖  96 294 0 64334 64411 0 </div>
+<div class="line"> ├─ ⏱ 1h 12&#39; 18&quot; 933ms  📋 24252 📄 771   🛠️ 15    🖥️ 15    ⚖  -2 10015 0 1210825 1211541 0 </div>
+<div class="line"> ├─ ⏱ 1h 13&#39; 18&quot; 934ms  📋 24551 📄 434   🛠️ 15    🖥️ 36    ⚖  434 1430 0 219558 219970 0 </div>
+<div class="line"> ├─ ⏱ 1h 14&#39; 19&quot; 7ms  📋 25013 📄 97    🛠️ 15    🖥️ 2     ⚖  -2 10011 0 2018559 2018599 0 </div>
+<div class="line"> ├─ ⏱ 1h 15&#39; 19&quot; 261ms  📋 25307 📄 723   🛠️ 14    🖥️ 23    ⚖  -2 10014 0 1250837 1251504 0 </div>
+<div class="line"> ├─ ⏱ 1h 16&#39; 19&quot; 328ms  📋 25604 📄 418   🛠️ 14    🖥️ 22    ⚖  -2 10013 0 1516370 1516755 0 </div>
+<div class="line"> ├─ ⏱ 1h 17&#39; 19&quot; 634ms  📋 26001 📄 115   🛠️ 14    🖥️ 29    ⚖  -2 10011 0 1993591 1993643 0 </div>
+<div class="line"> ├─ ⏱ 1h 18&#39; 19&quot; 770ms  📋 26295 📄 726   🛠️ 13    🖥️ 14    ⚖  -2 10014 0 1241796 1242459 0 </div>
+<div class="line"> ├─ ⏱ 1h 19&#39; 19&quot; 885ms  📋 26587 📄 434   🛠️ 13    🖥️ 16    ⚖  -2 10013 0 1481648 1482031 0 </div>
+<div class="line"> ├─ ⏱ 1h 20&#39; 20&quot; 122ms  📋 27011 📄 97    🛠️ 13    🖥️ 30    ⚖  -2 10011 0 2012367 2012401 0 </div>
+<div class="line"> ├─ ⏱ 1h 21&#39; 20&quot; 135ms  📋 27297 📄 723   🛠️ 12    🖥️ 9     ⚖  -2 10014 0 1236733 1237391 0 </div>
+<div class="line"> ├─ ⏱ 1h 22&#39; 20&quot; 343ms  📋 27609 📄 378   🛠️ 12    🖥️ 35    ⚖  378 3180 0 503250 503602 0 </div>
+<div class="line"> ├─ ⏱ 1h 23&#39; 24&quot; 226ms  📋 28019 📄 1000  🛠️ 11    🖥️ 44    ⚖  -2 10015 0 1146935 1147886 0 </div>
+<div class="line"> ├─ ⏱ 1h 24&#39; 24&quot; 373ms  📋 28333 📄 691   🛠️ 11    🖥️ 2     ⚖  -2 10014 0 1255294 1255928 0 </div>
+<div class="line"> ├─ ⏱ 1h 25&#39; 24&quot; 400ms  📋 28644 📄 384   🛠️ 11    🖥️ 29    ⚖  -2 10013 0 1528754 1529097 0 </div>
+<div class="line"> ├─ ⏱ 1h 26&#39; 25&quot; 709ms  📋 29067 📄 916   🛠️ 10    🖥️ 30    ⚖  916 4067 0 464747 465636 0 </div>
+<div class="line"> ├─ ⏱ 1h 27&#39; 26&quot; 365ms  📋 29365 📄 655   🛠️ 10    🖥️ 18    ⚖  -2 10014 0 1224919 1225517 0 </div>
+<div class="line"> ├─ ⏱ 1h 28&#39; 26&quot; 513ms  📋 29668 📄 326   🛠️ 10    🖥️ 36    ⚖  326 6147 0 949367 949661 0 </div>
+<div class="line"> ├─ ⏱ 1h 29&#39; 26&quot; 598ms  📋 30078 📄 939   🛠️ 9     🖥️ 46    ⚖  -2 10015 0 1113626 1114511 0 </div>
+<div class="line"> ├─ ⏱ 1h 30&#39; 26&quot; 662ms  📋 30368 📄 649   🛠️ 9     🖥️ 40    ⚖  -2 10014 0 1267900 1268499 0 </div>
+<div class="line"> ├─ ⏱ 1h 31&#39; 26&quot; 740ms  📋 30669 📄 348   🛠️ 9     🖥️ 17    ⚖  -2 10013 0 1526823 1527118 0 </div>
+<div class="line"> ├─ ⏱ 1h 32&#39; 26&quot; 814ms  📋 31096 📄 919   🛠️ 8     🖥️ 30    ⚖  -2 10015 0 1113419 1114288 0 </div>
+<div class="line"> ├─ ⏱ 1h 33&#39; 26&quot; 979ms  📋 31384 📄 636   🛠️ 8     🖥️ 14    ⚖  -2 10014 0 1273287 1273867 0 </div>
+<div class="line"> ├─ ⏱ 1h 34&#39; 27&quot; 112ms  📋 31700 📄 327   🛠️ 8     🖥️ 28    ⚖  -2 10012 0 1546220 1546491 0 </div>
+<div class="line"> ├─ ⏱ 1h 35&#39; 27&quot; 128ms  📋 32111 📄 870   🛠️ 7     🖥️ 31    ⚖  870 4437 0 519053 519889 0 </div>
+<div class="line"> ├─ ⏱ 1h 36&#39; 27&quot; 340ms  📋 32409 📄 606   🛠️ 7     🖥️ 31    ⚖  -2 10014 0 1241858 1242412 0 </div>
+<div class="line"> ├─ ⏱ 1h 37&#39; 27&quot; 547ms  📋 32744 📄 291   🛠️ 7     🖥️ 38    ⚖  -2 10012 0 1584465 1584706 0 </div>
+<div class="line"> ├─ ⏱ 1h 38&#39; 27&quot; 616ms  📋 33148 📄 866   🛠️ 6     🖥️ 6     ⚖  -2 10015 0 1169699 1170512 0 </div>
+<div class="line"> ├─ ⏱ 1h 39&#39; 27&quot; 683ms  📋 33439 📄 582   🛠️ 6     🖥️ 12    ⚖  -2 10014 0 1312254 1312797 0 </div>
+<div class="line"> ├─ ⏱ 1h 40&#39; 27&quot; 736ms  📋 33731 📄 292   🛠️ 6     🖥️ 44    ⚖  -2 10012 0 1616535 1616775 0 </div>
+<div class="line"> ├─ ⏱ 1h 41&#39; 27&quot; 742ms  📋 34130 📄 883   🛠️ 5     🖥️ 46    ⚖  -2 10015 0 1134008 1134848 0 </div>
+<div class="line"> ├─ ⏱ 1h 42&#39; 27&quot; 909ms  📋 34422 📄 591   🛠️ 5     🖥️ 7     ⚖  -2 10014 0 1318703 1319239 0 </div>
+<div class="line"> ├─ ⏱ 1h 43&#39; 28&quot; 60ms  📋 34735 📄 240   🛠️ 5     🖥️ 41    ⚖  240 1844 0 362521 362732 0 </div>
+<div class="line"> ├─ ⏱ 1h 44&#39; 28&quot; 126ms  📋 35136 📄 876   🛠️ 4     🖥️ 11    ⚖  -2 10015 0 1135340 1136151 0 </div>
+<div class="line"> ├─ ⏱ 1h 45&#39; 28&quot; 266ms  📋 35429 📄 583   🛠️ 4     🖥️ 25    ⚖  -2 10014 0 1276980 1277516 0 </div>
+<div class="line"> ├─ ⏱ 1h 46&#39; 28&quot; 366ms  📋 35743 📄 279   🛠️ 4     🖥️ 5     ⚖  -2 10012 0 1664173 1664399 0 </div>
+<div class="line"> ├─ ⏱ 1h 47&#39; 28&quot; 381ms  📋 36158 📄 855   🛠️ 3     🖥️ 5     ⚖  -2 10015 0 1186334 1187135 0 </div>
+<div class="line"> ├─ ⏱ 1h 48&#39; 29&quot; 208ms  📋 36446 📄 565   🛠️ 3     🖥️ 30    ⚖  -2 10014 0 1292532 1293027 0 </div>
+<div class="line"> ├─ ⏱ 1h 49&#39; 29&quot; 278ms  📋 36762 📄 269   🛠️ 3     🖥️ 13    ⚖  -2 10012 0 1682673 1682878 0 </div>
+<div class="line"> ├─ ⏱ 1h 50&#39; 29&quot; 324ms  📋 37174 📄 837   🛠️ 2     🖥️ 12    ⚖  -2 10015 0 1161752 1162539 0 </div>
+<div class="line"> ├─ ⏱ 1h 51&#39; 29&quot; 354ms  📋 37469 📄 551   🛠️ 2     🖥️ 36    ⚖  -2 10013 0 1321603 1322094 0 </div>
+<div class="line"> ├─ ⏱ 1h 52&#39; 29&quot; 483ms  📋 37789 📄 237   🛠️ 2     🖥️ 33    ⚖  -2 10012 0 1869133 1869318 0 </div>
+<div class="line"> ├─ ⏱ 1h 53&#39; 29&quot; 620ms  📋 38208 📄 804   🛠️ 1     🖥️ 30    ⚖  -2 10015 0 1190097 1190846 0 </div>
+<div class="line"> ├─ ⏱ 1h 54&#39; 29&quot; 960ms  📋 38514 📄 495   🛠️ 1     🖥️ 35    ⚖  -2 10013 0 1421412 1421853 0 </div>
+<div class="line"> ├─ ⏱ 1h 55&#39; 29&quot; 964ms  📋 38834 📄 195   🛠️ 1     🖥️ 9     ⚖  -2 10012 0 1936171 1936311 0 </div>
+<div class="line"> ├─ ⏱ 1h 56&#39; 30&quot; 197ms  📋 39218 📄 795   🛠️ 0     🖥️ 44    ⚖  -2 10014 0 1173013 1173754 0 </div>
+<div class="line"> ├─ ⏱ 1h 57&#39; 30&quot; 242ms  📋 39503 📄 505   🛠️ 0     🖥️ 17    ⚖  -2 10013 0 1397752 1398201 0 </div>
+<div class="line"> ├─ ⏱ 1h 58&#39; 30&quot; 482ms  📋 39892 📄 161   🛠️ 0     🖥️ 33    ⚖  -2 10012 0 1940287 1940392 0 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particao_3C.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 1h 58&#39; 38&quot; 187ms </div>
+<div class="line"> │  ⏱  CPU total: 3d 20h 55&#39; 54&quot; 767ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 1h 58&#39; 37&quot; 353ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 2&#39; 16&quot; 27ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 97.9%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 100.0% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1h 58&#39; 38&quot; 187ms ) ═══</div>
+</div><!-- fragment --> </details>
+<p>Desta vez todos os testes correram até ao fim, e os ficheiros de resultados foram gerados corretamente. A última corrida particao_3C podemos ver que utilizou quase 2 horas, correspondendo a um tempo de CPU total de quase 4 dias.</p>
+<h3><a class="anchor" id="autotoc_md2"></a>
+Análise e Conclusões</h3>
+<h4><a class="anchor" id="autotoc_md3"></a>
+puzzle 8</h4>
+<p>No puzzle 8 podemos ver a diferença de informação conforme o esforço, no teste Performance (I2 (tempo) vs I1 (ótimo)):</p>
+<p>Esforço A:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:Largura Primeiro   </th><th class="markdownTableHeadRight">3:Profundidade Primeiro   </th><th class="markdownTableHeadRight">4:Melhor Primeiro   </th><th class="markdownTableHeadRight">5:A*   </th><th class="markdownTableHeadRight">6:IDA*   </th><th class="markdownTableHeadRight">7:Branch and Bound    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">115    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">34   </td><td class="markdownTableBodyRight">71   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">201    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">91   </td><td class="markdownTableBodyRight">183   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">603    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">236   </td><td class="markdownTableBodyRight">471   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">150    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">781   </td><td class="markdownTableBodyRight">1559   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">1196    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">2381   </td><td class="markdownTableBodyRight">4765   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">1505   </td></tr>
+</table>
+<p>| 25 | 6797 | 2 | 8 | 14 | 552 | | 27 | 2 | 28 | 61 | 335 | | 29 | 5 | 53 | 49 | 678 |</p>
+<p>Esta é o esforço que já tinhamos no exemplo do puzzle 8, mas aqui omitimos os resultados da procura em largura e profundidade que não foram resolvidos.</p>
+<p>Esforço B:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:Largura Primeiro   </th><th class="markdownTableHeadRight">3:Profundidade Primeiro   </th><th class="markdownTableHeadRight">4:Melhor Primeiro   </th><th class="markdownTableHeadRight">5:A*   </th><th class="markdownTableHeadRight">6:IDA*   </th><th class="markdownTableHeadRight">7:Branch and Bound    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">944    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">973    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">11   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1030    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">30   </td><td class="markdownTableBodyRight">61   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">420    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">98   </td><td class="markdownTableBodyRight">183   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">395    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">267   </td><td class="markdownTableBodyRight">532   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">895    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">804   </td><td class="markdownTableBodyRight">1619   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">891    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">2410   </td><td class="markdownTableBodyRight">4908   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">640   </td></tr>
+</table>
+<p>| 25 | 6885 | 2 | 13 | 13 | 373 | | 27 | 3 | 23 | 27 | 630 | | 29 | 5 | 54 | 50 | 658 |</p>
+<p>Com a utilização de mais instâncias, conseguimos um detalhe maior, mas mesmo assim não há instâncias de custo 2, 4, etc.</p>
+<p>Esforço C:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">3:Profundidade Primeiro   </th><th class="markdownTableHeadRight">4:Melhor Primeiro   </th><th class="markdownTableHeadRight">5:A*   </th><th class="markdownTableHeadRight">6:IDA*   </th><th class="markdownTableHeadRight">7:Branch and Bound    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">323    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">640    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1088    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">708    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">361    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">218    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">322    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">373    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">19   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">505    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">34   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">648    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">59   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">499    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">101   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">765    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">178   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">598    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">295   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1026    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">533   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">910    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">867   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">967    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">1565   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">745    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">2586   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">715    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">4713   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">625    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">7427   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">659   </td></tr>
+</table>
+<p>| 25 | 3 | 11 | 14 | 550 | | 26 | 2 | 15 | 20 | 489 | | 27 | 4 | 21 | 26 | 785 | | 28 | 3 | 34 | 40 | 640 | | 29 | 3 | 34 | 35 | 484 | | 30 | 3 | 24 | 22 | 372 |</p>
+<p>Obtivemos neste esforço instâncias de todos os custos, mas tivemos de omitir a procura em largura, que crashava o processo devido a problemas de memória.</p>
+<p>Por volta do custo 23 a 25 tanto a procura em largura como a profundidade, deixam de conseguir resolver nos 10 segundos de tempo limite. A procura em largura tem um problema extra de memória.</p>
+<p>A versão da procura em profundidade é a iterativa, pelo que tem um comportamento idêntico à procura em largura, sem problema de memória, embora ligeiramente mais lento, como se pode observar no esforço B. No entanto pode ser mantido no esforço C por não estoirar a memória, ao contrário da procura em largura.</p>
+<p>Vemos que o melhor primeiro tem consistentemente melhroes tempos. No entanto não obtém a solução ótima, ao contrário dos restantes algoritmos. Entre os algoritmos que obtêm a solução ótima, o A* e o IDA* são os mais rápidosm seguido do Branch and Bound.</p>
+<p>Em problemas como o puzzle 8, em que a solução pode estar próximo, o A* e o IDA* são os mais aconselhados já que não há o risco de se explorar um ramo não ótimo primeiro, com uma solução ótima mesmo ao lado. Isso foi o que aconteceu com as instâncias de custo 5, em que o BnB gastou mais de 300 milisegundos, enquanto o A* e o IDA* resolveram em menos de 1 milisegundo.</p>
+<p>Nesta análise podemos também comcluir que a distância à solução, é um excelente indicador da dificuldade da instância para quase todos os algoritmos. A exceção o Branch and Bound que embora retorne a solução óptima em menos de um segundo, o tempo não aumenta com este indicador.</p>
+<p>A instância mais dificil obtida, em termos de distância à solução, foi a de custo 30 no esforço C.</p>
+<h4><a class="anchor" id="autotoc_md4"></a>
+8 damas</h4>
+<p>Temos neste problema 3 testes. O promeiro é reproduzido com todas as instâncias de 4 a 40 damas.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">15    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">15    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">15    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">16    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">16    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">17    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">16    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">17    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">17    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">17    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">30    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">27    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">32   </td><td class="markdownTableBodyRight">45    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">77    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">140   </td><td class="markdownTableBodyRight">347    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">77    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">724   </td><td class="markdownTableBodyRight">1370    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">32   </td><td class="markdownTableBodyRight">276    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">6553   </td><td class="markdownTableBodyRight">5758    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">101   </td><td class="markdownTableBodyRight">3629    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">1705   </td><td class="markdownTableBodyRight">7941    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">201   </td><td class="markdownTableBodyRight">9718    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">1712   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight">2046   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">7278   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">31   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">33   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">34   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">35   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">36   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">37   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10012    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">38   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10011    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">39   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10012    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10012   </td></tr>
+</table>
+<p>Vemos algo idêntico ao obtido com computador local. A instância 28 tinha sido resolvida e aqui não, devendo-se a diferenças entre os CPUs. A conclusão é a mesma, não é compensador utilizar o bloquei de estados gerados, pelo que justifica-se ignorar os estados repetidos.</p>
+<p>No teste 2 vamos testar baralhar a ordem dos sucessores, para ver se há diferenças significativas.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">0   </th><th class="markdownTableHeadRight">1    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,25    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,25    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">0,25    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">32,5   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">18,25   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">141,75   </td><td class="markdownTableBodyRight">1,75    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">2,25    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">731,5   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">32   </td><td class="markdownTableBodyRight">2,25    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">6724,5   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">101,5   </td><td class="markdownTableBodyRight">1,25    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">1693,25   </td><td class="markdownTableBodyRight">2,75    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">203,75   </td><td class="markdownTableBodyRight">1,75    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">1736   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight">2034   </td><td class="markdownTableBodyRight">0,25    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">1,75    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">7296   </td><td class="markdownTableBodyRight">1,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">31   </td><td class="markdownTableBodyRight">10000,5   </td><td class="markdownTableBodyRight">1,25    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">10000,75   </td><td class="markdownTableBodyRight">7    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">33   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">34   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">2,25    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">35   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">3,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">36   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">37   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">38   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">12,25    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">39   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">6,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">8,75   </td></tr>
+</table>
+<p>Estes resultados confirmam o que já sabiamos do computador local, que baralhar a ordem dos sucessores melhora drásticamente o desempenho neste problema, permitindo assim resolver todas as instâncias previstas até 40 damas.</p>
+<p>Neste último teste vamos fazer o teste de performance, para procurar observar o aumento do tempo com o número de damas.</p>
+<p>Não vamos calcular os intervalos de confiança dado que por vezes o tempo é muito elevado, e na maior parte do tempo é perto de 0. Assim é mais interessante utilizar percentis para observar o crescimento do tempo de execução.</p>
+<ul>
+<li>Percentil10 = PERCENTILEX.INC('8damas'; [I2(Tempo(ms))]; 0.1)</li>
+<li>Mediana = PERCENTILEX.INC('8damas'; [I2(Tempo(ms))]; 0.5)</li>
+<li>Percentil90 = PERCENTILEX.INC('8damas'; [I2(Tempo(ms))]; 0.9)</li>
+</ul>
+<p>Colocamos também o nível de esforço para se ver o ganho de informação.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">3<br  />
+Percentil10   </th><th class="markdownTableHeadRight">Mediana   </th><th class="markdownTableHeadRight">Percentil90   </th><th class="markdownTableHeadRight">3B<br  />
+Percentil10   </th><th class="markdownTableHeadRight">Mediana   </th><th class="markdownTableHeadRight">Percentil90   </th><th class="markdownTableHeadRight">3C<br  />
+Percentil10   </th><th class="markdownTableHeadRight">Mediana   </th><th class="markdownTableHeadRight">Percentil90    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">7    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">11   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">13    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">10    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">15    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">31   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">16    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">18    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">33   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">213   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">52   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">19    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">34   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1,5   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">25    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">35   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">43   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">26    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">36   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">20   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">24    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">37   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">286   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">48   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">31    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">38   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3,5   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">63   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">39    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">39   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">89   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">37    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">50   </td></tr>
+</table>
+<p>Podenmos ver que apenas o esforço C tem informação mais estável.</p>
+<p>O percentil de 90% sobe até 50 milisegundos para as 40 damas, mas o percentil de 10% mantém-se em 1 milisegundos.</p>
+<p>O valor da mediana é bastante baixo, mas naturalmente que o tempo é uma distribuição bastante assimétrica para este algoritmo e problema. Se a ordem aleatória não é favorável, o tempo pode ser muito elevado, mas na maior parte das vezes é baixo.</p>
+<h4><a class="anchor" id="autotoc_md5"></a>
+partição</h4>
+<p>Vamos seguir os 3 testes realizados. O primeiro visa analisar a influência do bloqueio de estados repetidos. Vamos desta vez colocar a taxa de instâncias resolvidas, mediante o esforço.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">1<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">1B<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados   </th><th class="markdownTableHeadRight">1C<br  />
+1:ignorar   </th><th class="markdownTableHeadRight">3:gerados    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">42   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">62   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">82   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">102   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0,46    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">122   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">142   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">162   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">182   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0   </td></tr>
+</table>
+<p>Podemos ver que bloquear os estados repetidos no modo gerados, é claramente vantajoso. No maior esforço vemos que mesmo numa instância de 102 números, naturalmente com o método de geração utilizado para procurar que a instâsncia seja complexa, temos ainda quase 50% de instâncias resolvidas, caso não se repita qualquer estado gerado. Já ignorando os estados repetidos, nenhuma instância com 42 ou mais números é resolvida.</p>
+<p>O segundo teste verifica a influência da ordem dos sucessores, ordem original ou baralhada. As instâncias acabam por ser todas resolvidas, mas podemos observar diferenças nos tempos.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadRight">2<br  />
+0   </th><th class="markdownTableHeadRight">1   </th><th class="markdownTableHeadRight">2B<br  />
+0   </th><th class="markdownTableHeadRight">1   </th><th class="markdownTableHeadRight">2C<br  />
+0   </th><th class="markdownTableHeadRight">1    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">15,65   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">15,065    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">22,5   </td><td class="markdownTableBodyRight">15,875   </td><td class="markdownTableBodyRight">16,1   </td><td class="markdownTableBodyRight">15,9025   </td><td class="markdownTableBodyRight">15,4875    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">27,25   </td><td class="markdownTableBodyRight">24,25   </td><td class="markdownTableBodyRight">29,2   </td><td class="markdownTableBodyRight">19,05   </td><td class="markdownTableBodyRight">29,265   </td><td class="markdownTableBodyRight">18,6725    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">74,75   </td><td class="markdownTableBodyRight">29   </td><td class="markdownTableBodyRight">82,675   </td><td class="markdownTableBodyRight">25,65   </td><td class="markdownTableBodyRight">86,095   </td><td class="markdownTableBodyRight">29,655    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">42   </td><td class="markdownTableBodyRight">257,75   </td><td class="markdownTableBodyRight">113,5   </td><td class="markdownTableBodyRight">244,425   </td><td class="markdownTableBodyRight">61,55   </td><td class="markdownTableBodyRight">233,3725   </td><td class="markdownTableBodyRight">49,945    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">52   </td><td class="markdownTableBodyRight">542   </td><td class="markdownTableBodyRight">120,25   </td><td class="markdownTableBodyRight">549,85   </td><td class="markdownTableBodyRight">112,525   </td><td class="markdownTableBodyRight">535,8425   </td><td class="markdownTableBodyRight">93,225    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">62   </td><td class="markdownTableBodyRight">956   </td><td class="markdownTableBodyRight">73,5   </td><td class="markdownTableBodyRight">1103,975   </td><td class="markdownTableBodyRight">156,4   </td><td class="markdownTableBodyRight">1097,935   </td><td class="markdownTableBodyRight">177,1325    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">72   </td><td class="markdownTableBodyRight">1859,25   </td><td class="markdownTableBodyRight">278,75   </td><td class="markdownTableBodyRight">2056,325   </td><td class="markdownTableBodyRight">285,55   </td><td class="markdownTableBodyRight">2043,3925   </td><td class="markdownTableBodyRight">264,445    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">82   </td><td class="markdownTableBodyRight">3310   </td><td class="markdownTableBodyRight">157,25   </td><td class="markdownTableBodyRight">3641,15   </td><td class="markdownTableBodyRight">439,275   </td><td class="markdownTableBodyRight">3592,2   </td><td class="markdownTableBodyRight">385,6975    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">92   </td><td class="markdownTableBodyRight">5929,5   </td><td class="markdownTableBodyRight">226,75   </td><td class="markdownTableBodyRight">5537,2   </td><td class="markdownTableBodyRight">460,925   </td><td class="markdownTableBodyRight">5673,45   </td><td class="markdownTableBodyRight">539,3725   </td></tr>
+</table>
+<p>Verificamos que os tempos são bastante menores quando se baralha a ordem dos sucessores, uma ordem de grandeza.</p>
+<p>No terceiro teste vamos analisar o desempenho em função do esforço.</p>
+<p>O último teste foi realizado com instâncias de 1 a 1000, pelo que apresentamos o resultado em gráfico, com as instâncias nas abcissas, e com a percentagem de instâncias resolvidas no eixo das ordenadas:</p>
+<div class="image">
+<img src="particao3C.png" alt=""/>
+<div class="caption">
+particao 3C</div></div>
+    <p>Podemos obserar que até à instância 80 todas são resolvidas, mas após esse valor as instâncias ímpares deixam de ser resolvidas, enquanto que as instâncias pares são todas resolvidas até 118, baixando a taxa de resolução gradualmente até valores residuais de 5% nas instâncias perto de 1000.</p>
+<p>São portanto geradas com este gerador de instâncias, desafios interessantes para as procuras construtivas, ao contrário do puzzle 8 e das 8 damas em que temos algoritmos construtivos a resolver a totalidade das instâncias propostas.</p>
+<p>Estes resultados não devem ser interpretados para qualquer instância com uma determinada quantidade de números, atendendo a que o gerador não gera essas instâncias com igual probabilidade. Foi desenhado para procurar as instâncias mais complexas, e por esse motivo para uma instância de N números nunca coloca números menores que NªN, evitando assim que alguns números funcionem como "trocos" que seriam utilizados no final para obter uma solução, após os números grandes estarem colocados. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

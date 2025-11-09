@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('teste_8damas_ci.html',''); initResizab
 <p>Execução de exemplo com base no problema das 8 damas, com a codificação inteira. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. No Linux na pasta <code>.../TProcura/Melhorativa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md27"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Sumário</h2>
 <ul>
 <li>Ação 1 - Ver instâncias</li>
@@ -114,7 +114,7 @@ Sumário</h2>
 <div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 1</div>
 </div><!-- fragment --><p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md28"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no problema 8 Damas Inteira, introduza: <b>1.</b></p>
 <div class="fragment"><div class="line">8 Damas (Inteira)</div>
@@ -162,7 +162,7 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>Estavamos na instância 8 e agora estamos na instância 4. Temos um tabuleiro de 4x4 para colcoar 4 damas. Podiamos ter escolhido até tabuleiros de 40x40.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md29"></a>
+<h2><a class="anchor" id="autotoc_md32"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos então resolver a instância manualmente. Introduza: <b>2.</b></p>
 <div class="fragment"><div class="line">Opção: 2</div>
@@ -353,7 +353,7 @@ Ação 2 - Resolver manualmente</h2>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem. Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, sendo a solução obitida é retornada.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md30"></a>
+<h2><a class="anchor" id="autotoc_md33"></a>
 Ação 3 - Algoritmos Evolutivos</h2>
 <p>Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização de omissão. Introduza: <b>1; 4; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -1025,10 +1025,10 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <p>Esta é uma análise bastante completa, tendo muita informação. Pode ser utilizada em instâncias pequenas para compreender os algoritmos e diferentes opções, e também para um dado problema procurar entender porque algumas parametrizações resultam melhor que outras. Aumentando o entendimento no problema, é possível que apareçam oportunidades de melhoria que se possam explorar.</p>
 <p>Para identificar as melhores parametrizações, temos de ter testes empíricos, tal como nos restantes exemplos, e esse é o tema da próxima secção.</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md31"></a>
+<h2><a class="anchor" id="autotoc_md34"></a>
 Ação 4 - Testes Empíricos</h2>
 <p>O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter um número considerável de execuções.</p>
-<h3><a class="anchor" id="autotoc_md32"></a>
+<h3><a class="anchor" id="autotoc_md35"></a>
 Teste: damasci_1</h3>
 <p>Vamos querer ter um ponto de referência com a configuração base, para depois procurar obter a melhor parametrização dos algoritmos evolutivos para as 8 damas, codificação inteira.</p>
 <ul>
@@ -1112,7 +1112,7 @@ Teste: damasci_1</h3>
 </table>
 <p>A configuração de omissão consegue resolver até à instância 17, mas após essa instância, falha por número de iterações.</p>
 <p>Vamos manter este conjunto de instâncias, e procurar estudar a parametrização.</p>
-<h3><a class="anchor" id="autotoc_md33"></a>
+<h3><a class="anchor" id="autotoc_md36"></a>
 Teste: damasci_2</h3>
 <p>Vamos agora estudar o impacto do tamanho da população.</p>
 <ul>
@@ -1212,7 +1212,7 @@ Teste: damasci_2</h3>
 </table>
 <p>Podemos ver que a população a 30 poderá ser a melhor, tendo em conta ter o melhor valor global da média dos resultados.</p>
 <p>Parametro de omissão alterado: P6(POPULACAO)=30</p>
-<h3><a class="anchor" id="autotoc_md34"></a>
+<h3><a class="anchor" id="autotoc_md37"></a>
 Teste: damasci_3</h3>
 <p>Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.</p>
 <ul>
