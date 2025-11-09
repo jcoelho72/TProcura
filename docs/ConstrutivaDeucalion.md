@@ -1099,8 +1099,8 @@ A versão da procura em profundidade é a iterativa, pelo que tem um comportamen
 sem problema de memória, embora ligeiramente mais lento, como se pode observar no esforço B.
 No entanto pode ser mantido no esforço C por não estoirar a memória, ao contrário da procura em largura. 
 
-Vemos que o melhor primeiro tem consistentemente melhroes tempos. No entanto não obtém a solução ótima, ao contrário dos restantes algoritmos.
-Entre os algoritmos que obtêm a solução ótima, o A* e o IDA* são os mais rápidosm seguido do Branch and Bound.
+Vemos que o melhor primeiro tem consistentemente melhores tempos. No entanto não obtém a solução ótima, ao contrário dos restantes algoritmos.
+Entre os algoritmos que obtêm a solução ótima, o A* e o IDA* são os mais rápidos seguido do Branch and Bound.
 
 Em problemas como o puzzle 8, em que a solução pode estar próximo, o A* e o IDA* são os mais aconselhados já que não há o risco
 de se explorar um ramo não ótimo primeiro, com uma solução ótima mesmo ao lado. Isso foi o que aconteceu com as instâncias de custo 5,
@@ -1113,7 +1113,7 @@ A instância mais dificil obtida, em termos de distância à solução, foi a de
 
 #### 8 damas 
 
-Temos neste problema 3 testes. O promeiro é reproduzido com todas as instâncias de 4 a 40 damas.
+Temos neste problema 3 testes. O primeiro é reproduzido com todas as instâncias de 4 a 40 damas.
 
 | Rótulos de Linha | 1:ignorar | 3:gerados |
 |:---:|---:|---:|
@@ -1156,7 +1156,7 @@ Temos neste problema 3 testes. O promeiro é reproduzido com todas as instância
 | 40 | 10001 | 10012 |
 
 Vemos algo idêntico ao obtido com computador local. A instância 28 tinha sido resolvida e aqui não,
-devendo-se a diferenças entre os CPUs. A conclusão é a mesma, não é compensador utilizar o bloquei de estados gerados,
+devendo-se a diferenças entre os CPUs. A conclusão é a mesma, não é compensador utilizar o bloqueio de estados gerados repetidos,
 pelo que justifica-se ignorar os estados repetidos.
 
 No teste 2 vamos testar baralhar a ordem dos sucessores, para ver se há diferenças significativas.
@@ -1256,7 +1256,7 @@ Colocamos também o nível de esforço para se ver o ganho de informação.
 | 40 | 1 | 3 | 10 | 1 | 5 | 40 | 1 | 4 | 50 |
 
 
-Podemos ver que apenas o esforço C tem informação mais estável.
+Podemos ver que o esforço C tem informação mais estável.
 
 O percentil de 90% sobe até 50 milisegundos para as 40 damas, mas o percentil de 10% mantém-se em 1 milisegundos.
 
@@ -1320,5 +1320,5 @@ ao contrário do puzzle 8 e das 8 damas em que temos algoritmos construtivos a r
 
 Estes resultados não devem ser interpretados para qualquer instância com uma determinada quantidade de números, atendendo
 a que o gerador não gera essas instâncias com igual probabilidade. Foi desenhado para procurar as instâncias mais complexas,
-e por esse motivo para uma instância de N números nunca coloca números menores que NªN, evitando assim que alguns números funcionem como
-"trocos" que seriam utilizados no final para obter uma solução, após os números grandes estarem colocados.
+e por esse motivo para uma instância de N números nunca tem números menores que NªN, evitando assim que alguns números funcionem como
+"trocos" que seriam utilizados no final para obter uma solução, após os números grandes estarem colocados, o que tornaria a instância mais simples.
