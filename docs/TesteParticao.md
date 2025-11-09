@@ -470,7 +470,7 @@ Vamos ver os resultados:
 - **Valores**: Resolvido, mín I2, média I2, máximo I2
 
 | Rótulos de Linha | Média de Resolvido | Mínimo de I2(Tempo(ms)) | Média de I2(Tempo(ms)) | Máximo de I2(Tempo(ms)) |
-|:---:|---:|---:|
+|:---:|---:|---:|---:|---:|
 | 2 | 1 | 7 | 21 | 62 |
 | 102 | 1 | 35 | 130,75 | 277 |
 | 202 | 0,75 | 14 | 2790,75 | 10004 |
