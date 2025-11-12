@@ -14,11 +14,11 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: damasci_1
-srun bin/MPI/TProcuraMelhorativa 1 4:40 -R Resultados/damasci_1 -P P2=2 P3=1:100
+srun bin/MPI/TProcuraMelhorativa 1 4:40 -R Resultados/damasci_1 -M 1 -P P2=2 P3=1:100
 
 # Teste: damascp_1
-srun bin/MPI/TProcuraMelhorativa 2 4:40 -R Resultados/damascp_1 -P P2=2 P3=1:100
+srun bin/MPI/TProcuraMelhorativa 2 4:40 -R Resultados/damascp_1 -M 1 -P P2=2 P3=1:100
 
 # Teste: particaocb_1
-srun bin/MPI/TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -P P2=2 P3=1:10
+srun bin/MPI/TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
 

@@ -1154,7 +1154,7 @@ para as 8 damas, codificação inteira.
 - **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
 - **Definição**: Instâncias: 4:40; Configurações: (base)
 - **Esforço**: P3=1:100
-- **Execução**: TProcuraMelhorativa 1 4:40 -R Resultados/damasci_1 -P P2=2 P3=1:100
+- **Execução**: TProcuraMelhorativa 1 4:40 -R Resultados/damasci_1 -M 1 -P P2=2 P3=1:100
 
 
 

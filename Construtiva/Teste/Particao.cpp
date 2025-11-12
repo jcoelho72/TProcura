@@ -26,23 +26,15 @@ void CParticao::Inicializar(void)
 	totalDireita = totalEsquerda = 0;
 
 	// gerar uma instancia provavelmente possivel
-	int64_t soma1, soma2;
-	soma1 = soma2 = 0;
+	int64_t soma;
+	soma = 0;
 	for (int i = 0; i < instancia.valor; i++) {
 		numeros += (instancia.valor * instancia.valor + 4 * (TRand::rand() % instancia.valor + 1) + TRand::rand() % 4);
-		if (soma1 < soma2)
-			soma1 += numeros.Last();
-		else soma2 += numeros.Last();
+		soma += (int)numeros.Last();
 	}
 	// acertar a paridade, muito embora não se saiba se há ou não solução
-	if ((soma1 + soma2) % 2 == 1)
+	if (soma % 2 == 1)
 		numeros.Last() += 1;
-	// garantir que há uma solução, mas não há necessidade
-	// a esmagadora maioria das instâncias terá solução, excepto se os
-	// números forem de ordens de grandeza distintos
-	//if (soma1 != soma2)
-	//	numeros += abs(soma1 - soma2);
-	numeros -= 0;
 	numeros.Sort();
 	tamanhoCodificado = 3; // apenas três inteiro de 64 bits, para colocar 3 inteiros de 64 bits
 	TProcuraConstrutiva::Inicializar();

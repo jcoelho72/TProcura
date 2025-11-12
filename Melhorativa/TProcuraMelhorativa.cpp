@@ -841,10 +841,11 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		// 3. Adicionar novos elementos aleatórios
 		Debug(COMPLETO, false, "\n │ │ ├───── 🚶‍♂️🌍 Imigrantes ",
 			Icon(EIcon::IMIGRANTES));
-		for (int i = 0; i < imigrantes; i++) {
+		for (int i = 0; i < imigrantes && populacao.Count() - i > 0; i++) {
 			// remover um aleatório para dar lugar a um imigrante
 			int idx = TRand::rand() % populacao.Count();
-			delete populacao[idx];
+			if (populacao[idx] != NULL)
+				delete populacao[idx];
 			populacao[idx] = NULL;
 			Debug(COMPLETO, false, " %d✖ →🆕", idx + 1, Icon(EIcon::APAGADO), Icon(EIcon::IMIGRANTES));
 		}
@@ -856,12 +857,13 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 		// 2. Garantir que os elites estão presentes
 		//    (apenas se forem melhores que o melhor descendente)
 		bool primeiro = false;
-		for (int i = 0; i < elite.Count(); i++) {
+		for (int i = 0; i < elite.Count() && populacao.Count() - i > 0; i++) {
 			if (elite[i]->custo < melhorDescendente) {
 				// remover um aleatório para dar lugar ao elite
 				int idx = TRand::rand() % populacao.Count();
 				delete populacao[idx];
 				populacao[idx] = elite[i];
+				elite[i] = NULL;
 				if (!primeiro) {
 					Debug(COMPLETO, false, "\n │ │ ├───── %-2s Elite %d→%d",
 						Icon(EIcon::ELITE), idElite[i] + 1, idx + 1);
@@ -871,9 +873,8 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 					Debug(COMPLETO, false, " %d→%d",
 						idElite[i] + 1, idx + 1);
 			}
-			else
-				delete elite[i]; // já não é necessário
 		}
+		LibertarVector(elite);
 		if (primeiro)
 			Debug(COMPLETO, false, " ───── ");
 	}
@@ -913,6 +914,7 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 	}
 	else if (Parametro(DIVERSIDADE) == 3) { // limpeza
 		TVector<int> id, remover;
+		remover = {};
 		for (int i = 0; i < populacao.Count(); i++)
 			id += i;
 		Debug(COMPLETO, false, "\n │ └───── FASE Diversidade - limpeza ───── ");

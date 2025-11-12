@@ -41,7 +41,7 @@ para a partição cvom codificação binária.
 - **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
 - **Definição**: Instâncias: 2:1000; Configurações: (base)
 - **Esforço**: P3=1:10
-- **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -P P2=2 P3=1:10
+- **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
 
 
 ### Teste: particaocb_2

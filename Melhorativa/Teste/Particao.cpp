@@ -20,21 +20,15 @@ void CParticao::Inicializar(void)
 	solCompleta = {}; 
 
 	// gerar uma instancia provavelmente possivel
-	int soma1, soma2;
-	soma1 = soma2 = 0;
+	int64_t soma;
+	soma = 0;
 	for (int i = 0; i < instancia.valor; i++) {
-		numeros += (TRand::rand() % (3 * instancia.valor));
-		if (soma1 < soma2)
-			soma1 += numeros.Last();
-		else soma2 += numeros.Last();
+		numeros += (instancia.valor * instancia.valor + 4 * (TRand::rand() % instancia.valor + 1) + TRand::rand() % 4);
+		soma += (int)numeros.Last();
 	}
 	// acertar a paridade, muito embora não se saiba se há ou não solução
-	if ((soma1 + soma2) % 2 == 1)
+	if (soma % 2 == 1)
 		numeros.Last() += 1;
-	// garantir que há uma solução
-	//if (soma1 != soma2)
-	//	numeros += abs(soma1 - soma2);
-	numeros -= 0;
 	numeros.Sort();
 	NovaSolucao();
 }
@@ -168,41 +162,31 @@ int CParticao::Distancia(TPonto a) {
 void CParticaoCB::Inicializar(void) {
 	TProcuraMelhorativa::Inicializar();
 	nElementos = instancia.valor; // número de elementos a particionar
-
 	numeros = {}; 
 
 	// gerar uma instancia provavelmente possivel
-	int soma1, soma2;
-	soma1 = soma2 = 0;
+	int64_t soma;
+	soma = 0;
 	for (int i = 0; i < instancia.valor; i++) {
-		numeros += (TRand::rand() % (3 * instancia.valor));
-		if (soma1 < soma2)
-			soma1 += (int)estado.Last();
-		else soma2 += (int)estado.Last();
+		numeros += (instancia.valor * instancia.valor + 4 * (TRand::rand() % instancia.valor + 1) + TRand::rand() % 4);
+		soma += (int)numeros.Last();
 	}
 	// acertar a paridade, muito embora não se saiba se há ou não solução
-	if ((soma1 + soma2) % 2 == 1)
+	if (soma % 2 == 1)
 		numeros.Last() += 1;
-	// garantir que há uma solução
-	//if (soma1 != soma2)
-	//	estado += abs(soma1 - soma2);
-	numeros -= 0;
 	numeros.Sort();
 	nElementos = numeros.Count();
 	NovaSolucao();
 }
 
 int CParticaoCB::Avaliar(void) {
-	int totalEsquerda, totalDireita;
+	int64_t total[2];
 	custo = 0;
 	TProcuraMelhorativa::Avaliar();
-	totalEsquerda = totalDireita = 0;
+	total[0] = total[1] = 0;
 	for (int i = 0; i < nElementos; i++)
-		if (Bit(i))
-			totalEsquerda += numeros[i];
-		else
-			totalDireita += numeros[i];
-	return custo = abs(totalEsquerda - totalDireita);
+		total[Bit(i)] += numeros[i];
+	return custo = abs(total[0] - total[1]);
 }
 
 void CParticaoCB::Debug(bool completo)
