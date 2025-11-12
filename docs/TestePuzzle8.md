@@ -31,7 +31,6 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 │ 2 - Puzzle 8                 │
 │ 3 - 8 Damas                  │
 │ 4 - Partição                 │
-│ 5 - Artificial               │
 └──────────────────────────────┘
 Opção: 2
 ```

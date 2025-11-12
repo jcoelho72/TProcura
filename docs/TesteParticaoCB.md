@@ -16,6 +16,42 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 - [Ação 2 - Resolver manualmente](#particao-cb2)
 - [Ação 3 - Testes Empíricos](#particao-cb3)
 
+\anchor particao-cp1
+## Ação 1 - Ver instâncias
+
+(fazer)
+
+\anchor particao-cp2
+## Ação 2 - Resolver manualmente
+
+(fazer)
+
+
+\anchor particao-cb3
+## Ação 3 - Testes Empíricos
+
+Atendendo ao volume de parametros nos algoritmos evolutivos,
+estes testes vão utilizar desde logo um cluster (Deucalion).
+
+### Teste: particaocb_1
+
+Iniciamos o primeiro teste com um ponto de referência para a configuração base,
+para a partição cvom codificação binária.
+
+- **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
+- **Definição**: Instâncias: 2:1000; Configurações: (base)
+- **Esforço**: P3=1:10
+- **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -P P2=2 P3=1:10
+
+
+### Teste: particaocb_2
+
+Vamos agora estudar o impacto do tamanho da população.
+
+
+### Teste: particaocb_3
+
+Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.
 
 
 

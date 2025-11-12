@@ -20,7 +20,6 @@ Pode acompanhar o teste excutando as ações localmente.
 │ 2 - Puzzle 8                 │
 │ 3 - 8 Damas                  │
 │ 4 - Partição                 │
-│ 5 - Artificial               │
 └──────────────────────────────┘
 Opção: 1
 ```

@@ -1140,7 +1140,10 @@ Para identificar as melhores parametrizações, temos de ter testes empíricos, 
 ## Ação 4 - Testes Empíricos
 
 O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter 
-um número considerável de execuções. 
+um número considerável de execuções.
+
+Atendendo ao volume de parametros nos algoritmos evolutivos,
+estes testes vão utilizar desde logo um cluster (Deucalion).
 
 ### Teste: damasci_1
 
@@ -1149,9 +1152,20 @@ para depois procurar obter a melhor parametrização dos algoritmos evolutivos
 para as 8 damas, codificação inteira.
 
 - **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
-- **Definição**: Instâncias: 4:40:4; Configurações: P3=1:2
-- **Esforço**: 4:40:4 P3=1:2; 4:40 P3=1:5; 4:40 P3=1:100
-- **Execução**: TProcura 4:40:4 -R Resultados/damasci_1 -P P2=4 P3=1:2
+- **Definição**: Instâncias: 4:40; Configurações: (base)
+- **Esforço**: P3=1:100
+- **Execução**: TProcuraMelhorativa 1 4:40 -R Resultados/damasci_1 -P P2=2 P3=1:100
+
+
+
+
+
+
+
+------------------------------------
+(texto anterior)
+
+
 
 O esforço do teste base é baixo, mas no modo B já utilizamos todas as
 instâncias e várias execuções. Como o algoritmo é aleatório, é importante
