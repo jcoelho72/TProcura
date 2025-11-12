@@ -1028,15 +1028,18 @@ Ação 3 - Algoritmos Evolutivos</h2>
 <h2><a class="anchor" id="autotoc_md34"></a>
 Ação 4 - Testes Empíricos</h2>
 <p>O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter um número considerável de execuções.</p>
+<p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
 <h3><a class="anchor" id="autotoc_md35"></a>
 Teste: damasci_1</h3>
 <p>Vamos querer ter um ponto de referência com a configuração base, para depois procurar obter a melhor parametrização dos algoritmos evolutivos para as 8 damas, codificação inteira.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Performance (tempo vs tamanho)</li>
-<li><b>Definição</b>: Instâncias: 4:40:4; Configurações: P3=1:2</li>
-<li><b>Esforço</b>: 4:40:4 P3=1:2; 4:40 P3=1:5; 4:40 P3=1:100</li>
-<li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 4:40:4 -R Resultados/damasci_1 -P P2=4 P3=1:2</li>
+<li><b>Definição</b>: Instâncias: 4:40; Configurações: (base)</li>
+<li><b>Esforço</b>: P3=1:100</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 1 4:40 -R Resultados/damasci_1 -P P2=2 P3=1:100</li>
 </ul>
+<hr  />
+<p> (texto anterior)</p>
 <p>O esforço do teste base é baixo, mas no modo B já utilizamos todas as instâncias e várias execuções. Como o algoritmo é aleatório, é importante várias execuções.</p>
 <p>Colocamos o nível de debug a COMPLETO, já que serão apenas 20 execuções.</p>
 <div class="fragment"><div class="line">/TProcura/Melhorativa/Teste$ ./bin/Release/TProcuraMelhorativa 4:40:4 -R Resultados/damasci_1 -P P2=4 P3=1:2</div>
@@ -1112,7 +1115,7 @@ Teste: damasci_1</h3>
 </table>
 <p>A configuração de omissão consegue resolver até à instância 17, mas após essa instância, falha por número de iterações.</p>
 <p>Vamos manter este conjunto de instâncias, e procurar estudar a parametrização.</p>
-<h3><a class="anchor" id="autotoc_md36"></a>
+<h3><a class="anchor" id="autotoc_md37"></a>
 Teste: damasci_2</h3>
 <p>Vamos agora estudar o impacto do tamanho da população.</p>
 <ul>
@@ -1212,7 +1215,7 @@ Teste: damasci_2</h3>
 </table>
 <p>Podemos ver que a população a 30 poderá ser a melhor, tendo em conta ter o melhor valor global da média dos resultados.</p>
 <p>Parametro de omissão alterado: P6(POPULACAO)=30</p>
-<h3><a class="anchor" id="autotoc_md37"></a>
+<h3><a class="anchor" id="autotoc_md38"></a>
 Teste: damasci_3</h3>
 <p>Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.</p>
 <ul>

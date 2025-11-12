@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('teste_8damas_cp.html',''); initResizab
 <p>Execução de exemplo com base no problema das 8 damas, com codificação por permutação. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. No Linux na pasta <code>.../TProcura/Melhorativa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md38"></a>
+<h2><a class="anchor" id="autotoc_md39"></a>
 Sumário</h2>
 <ul>
 <li>Ação 1 - Ver instâncias</li>
@@ -107,6 +107,37 @@ Sumário</h2>
 <li>Ação 3 - Algoritmos Evolutivos</li>
 <li>Ação 4 - Testes Empíricos</li>
 </ul>
+<p><a class="anchor" id="invalid"></a></p>
+<h2><a class="anchor" id="autotoc_md40"></a>
+Ação 1 - Ver instâncias</h2>
+<p>(fazer)</p>
+<p><a class="anchor" id="invalid"></a></p>
+<h2><a class="anchor" id="autotoc_md41"></a>
+Ação 2 - Resolver manualmente</h2>
+<p>(fazer)</p>
+<p><a class="anchor" id="invalid"></a></p>
+<h2><a class="anchor" id="autotoc_md42"></a>
+Ação 3 - Algoritmos Evolutivos</h2>
+<p>(fazer)</p>
+<p><a class="anchor" id="invalid"></a></p>
+<h2><a class="anchor" id="autotoc_md43"></a>
+Ação 4 - Testes Empíricos</h2>
+<p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
+<h3><a class="anchor" id="autotoc_md44"></a>
+Teste: damascp_1</h3>
+<p>Este primeiro teste vamos querer ter um ponto de referência para a configuração base, para as 8 damas e codificação de permutação.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Performance (tempo vs tamanho)</li>
+<li><b>Definição</b>: Instâncias: 4:40; Configurações: (base)</li>
+<li><b>Esforço</b>: P3=1:100</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 2 4:40 -R Resultados/damascp_1 -P P2=2 P3=1:100</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md45"></a>
+Teste: damascp_2</h3>
+<p>Vamos agora estudar o impacto do tamanho da população.</p>
+<h3><a class="anchor" id="autotoc_md46"></a>
+Teste: damascp_3</h3>
+<p>Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.</p>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
