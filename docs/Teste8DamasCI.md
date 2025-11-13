@@ -1151,14 +1151,152 @@ Vamos querer ter um ponto de referência com a configuração base,
 para depois procurar obter a melhor parametrização dos algoritmos evolutivos
 para as 8 damas, codificação inteira.
 
-- **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
+- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
 - **Definição**: Instâncias: 4:40; Configurações: (base)
 - **Esforço**: P3=1:100
 - **Execução**: TProcuraMelhorativa 1 4:40 -R Resultados/damasci_1 -M 1 -P P2=2 P3=1:100
 
+Variáveis:
+- Resolvido=(I1=0)
+- Eficácia: Percentagem de instãncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))
+- Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))
+
+A eficácia pode ser medido desta forma, atendendo a que se conhece o valor das soluções óptimas, que são soluções de custo 0.
+Num problema de optimização esta solução não poderia ser adoptada.
+
+<details>
+  <summary>Ver execução:</summary>
+```
+═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100
+ ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2
+ ├─ ⚙  [3] ─ [90mP3=[0m3
+ │ ...
+ ├─ ⚙  [98] ─ [90mP3=[0m98
+ ├─ ⚙  [99] ─ [90mP3=[0m99
+ ├─ ⚙  [100] ─ [90mP3=[0m100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.
+ ├─ ⏱ 1' 17ms         📋 510   📄 14    🛠️ 86    🖥️ 19    ⚖  0 1110 110559 5198 115756 
+ ├─ ⏱ 2' 259ms        📋 1017  📄 30    🛠️ 74    🖥️ 45    ⚖  1 10000 390577 18393 408969 
+ ├─ ⏱ 3' 318ms        📋 1501  📄 25    🛠️ 59    🖥️ 18    ⚖  0 389 19454 916 20369 
+ ├─ ⏱ 4' 1" 288ms     📋 1988  📄 23    🛠️ 47    🖥️ 23    ⚖  0 6153 342982 16136 359117 
+ ├─ ⏱ 5' 1" 698ms     📋 2489  📄 15    🛠️ 33    🖥️ 14    ⚖  0 3123 289744 13630 303373 
+ ├─ ⏱ 6' 1" 796ms     📋 2974  📄 21    🛠️ 20    🖥️ 46    ⚖  0 3527 221558 10421 231978 
+ ├─ ⏱ 7' 1" 836ms     📋 3445  📄 37    🛠️ 8     🖥️ 13    ⚖  2 10001 288301 13589 301889 
+ ├─ 📑  Ficheiro Resultados/damasci_1.csv gravado.
+ │  ⏱  Tempo real: 7' 40" 920ms 
+ │  ⏱  CPU total: 6h 1' 3" 221ms 
+ │  ⏱  Espera do gestor: 7' 40" 842ms 
+ │  ⏱  Espera trabalhadores: 3' 19" 779ms 
+ │  📊  Utilização:
+ │  - Total: 97.0%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.1% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 7' 40" 920ms ) ═══
+```
+</details>
+
+| Instância | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 4 | 100 | 0 |
+| 5 | 100 | 1 |
+| 6 | 100 | 16 |
+| 7 | 100 | 15 |
+| 8 | 100 | 40 |
+| 9 | 100 | 66 |
+| 10 | 100 | 213 |
+| 11 | 100 | 358 |
+| 12 | 100 | 475 |
+| 13 | 100 | 779 |
+| 14 | 100 | 1073 |
+| 15 | 100 | 1688 |
+| 16 | 99 | 1980 |
+| 17 | 95 | 3455 |
+| 18 | 94 | 4102 |
+| 19 | 83 | 4985 |
+| 20 | 66 | 5545 |
+| 21 | 48 | 7279 |
+| 22 | 38 | 8247 |
+| 23 | 31 | 8365 |
+| 24 | 22 | 8830 |
+| 25 | 10 | 9514 |
+| 26 | 11 | 9582 |
+| 27 | 6 | 9690 |
+| 28 | 6 | 9631 |
+| 29 | 1 | 9965 |
+| 30 | 2 | 9889 |
+| 31 | 3 | 9976 |
+| 32 | 1 | 9953 |
+| 33 | 0 | 10000 |
+| 34 | 0 | 10000 |
+| 35 | 0 | 10000 |
+| 36 | 0 | 10000 |
+| 37 | 1 | 9966 |
+| 38 | 0 | 10000 |
+| 39 | 0 | 10000 |
+| 40 | 0 | 10000 |
+
+Os problemas são todos resolvidos até à instância 15, após o qual a eficácia desce
+ficando a baixo dos 10% na instância 27.
+A eficiência vai também subindo, na instância 15 onde ainda todas as instâncias são resolvidas,
+já leva 1,7 segundos em média.
+
+Vamos utilizar estes resultados para fixar o conjunto de teste para conter apenas
+instâncias na fase de transição entre complexo e simples, evitando assim instâncias
+demasiado simples que não ajudam a identificar a melhor parametrização, nem
+instâncias demasiado complexas que gastam o tempo limite e apenas atrasam os resultados.
+
+Vamos utilizar desde a instância 10, embora simples tem 0,2 segundos, até à instância 19,
+em que nem sempre a instância é resolvida, e tem tempo médio de quase 5 segundos.
+
+### Teste: damasci_2
+
+Vamos estudar o parâmetro da população do algoritmo evolutivo (P6). O valor de omissão é 20,
+vamos variar em valores baixos e altos. Vamos começar com o valor 5, embora valores mais baixos
+sejam possíveis, mas assim o algoritmo evolutivo assemelha-se a uma procura local e para funcionar
+tem de se alterar outros parametros. Iremos estudar esta vertente em outra altura.
+
+- **Tipo de Teste / Objetivo**: População vs Eficiência
+- **Definição**: Instâncias: 10:19; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200
+- **Esforço**: P3=1:100
+- **Execução**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200
+
+<details>
+  <summary>Ver execução:</summary>
+```
+```
+</details>
+
+| N | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 2 | 40 | 1265 |
+| 3 | 0 | 2200 |
 
 
+### Teste: damasci_3
 
+mutação e cruzamento, parametros P7 e P8.
+
+- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
+- **Definição**: Instâncias: 2:1000; Configurações: (base)
+- **Esforço**: P3=1:10
+- **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
+
+<details>
+  <summary>Ver execução:</summary>
+```
+```
+</details>
+
+| N | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 2 | 40 | 1265 |
+| 3 | 0 | 2200 |
 
 
 

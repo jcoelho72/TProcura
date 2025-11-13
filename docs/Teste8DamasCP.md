@@ -45,22 +45,153 @@ estes testes vão utilizar desde logo um cluster (Deucalion).
 Este primeiro teste vamos querer ter um ponto de referência para a configuração base,
 para as 8 damas e codificação de permutação.
 
-- **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
+- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
 - **Definição**: Instâncias: 4:40; Configurações: (base)
 - **Esforço**: P3=1:100
 - **Execução**: TProcuraMelhorativa 2 4:40 -R Resultados/damascp_1 -M 1 -P P2=2 P3=1:100
 
+Variáveis:
+- Resolvido=(I1=0)
+- Eficácia: Percentagem de instãncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))
+- Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))
 
+A eficácia pode ser medido desta forma, atendendo a que se conhece o valor das soluções óptimas, que são soluções de custo 0.
+Num problema de optimização esta solução não poderia ser adoptada.
+
+<details>
+  <summary>Ver execução:</summary>
+```
+═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100
+ ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2
+ ├─ ⚙  [3] ─ [90mP3=[0m3
+ │ ...
+ ├─ ⚙  [98] ─ [90mP3=[0m98
+ ├─ ⚙  [99] ─ [90mP3=[0m99
+ ├─ ⚙  [100] ─ [90mP3=[0m100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.
+ ├─ ⏱ 1' 37ms         📋 525   📄 37    🛠️ 87    🖥️ 19    ⚖  5 10000 376142 17882 394023 
+ ├─ ⏱ 2' 51ms         📋 1014  📄 32    🛠️ 74    🖥️ 14    ⚖  4 10000 449876 21389 471264 
+ ├─ ⏱ 3' 58ms         📋 1493  📄 33    🛠️ 61    🖥️ 41    ⚖  2 10000 430411 20463 450873 
+ ├─ ⏱ 4' 407ms        📋 1986  📄 17    🛠️ 46    🖥️ 28    ⚖  0 637 57312 2722 60033 
+ ├─ ⏱ 5' 1" 67ms      📋 2483  📄 18    🛠️ 34    🖥️ 18    ⚖  0 7161 608310 28915 637224 
+ ├─ ⏱ 6' 1" 561ms     📋 2977  📄 30    🛠️ 21    🖥️ 21    ⚖  3 10000 488738 23237 511974 
+ ├─ ⏱ 7' 1" 565ms     📋 3472  📄 10    🛠️ 6     🖥️ 3     ⚖  0 22 3090 146 3235 
+ ├─ 📑  Ficheiro Resultados/damascp_1.csv gravado.
+ │  ⏱  Tempo real: 7' 37" 19ms 
+ │  ⏱  CPU total: 5h 57' 59" 877ms 
+ │  ⏱  Espera do gestor: 7' 36" 942ms 
+ │  ⏱  Espera trabalhadores: 3' 3" 742ms 
+ │  📊  Utilização:
+ │  - Total: 97.1%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.1% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 7' 37" 19ms ) ═══
+```
+</details>
+
+| Instância | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 4 | 100 | 0 |
+| 5 | 100 | 0 |
+| 6 | 100 | 1 |
+| 7 | 100 | 1 |
+| 8 | 100 | 2 |
+| 9 | 100 | 5 |
+| 10 | 100 | 23 |
+| 11 | 100 | 48 |
+| 12 | 100 | 74 |
+| 13 | 100 | 155 |
+| 14 | 100 | 353 |
+| 15 | 100 | 518 |
+| 16 | 100 | 816 |
+| 17 | 100 | 2057 |
+| 18 | 97 | 2924 |
+| 19 | 77 | 4991 |
+| 20 | 68 | 6104 |
+| 21 | 35 | 8262 |
+| 22 | 20 | 9007 |
+| 23 | 9 | 9591 |
+| 24 | 7 | 9694 |
+| 25 | 5 | 9782 |
+| 26 | 5 | 9781 |
+| 27 | 2 | 9852 |
+| 28 | 2 | 9964 |
+| 29 | 1 | 9910 |
+| 30 | 1 | 9910 |
+| 31 | 0 | 10000 |
+| 32 | 0 | 10000 |
+| 33 | 0 | 10000 |
+| 34 | 0 | 10000 |
+| 35 | 0 | 10000 |
+| 36 | 0 | 10000 |
+| 37 | 0 | 10000 |
+| 38 | 0 | 10000 |
+| 39 | 0 | 10000 |
+| 40 | 0 | 10000 |
+
+Os problemas são todos resolvidos até à instância 17, após o qual a eficácia desce
+ficando a baixo dos 10% na instância 22.
+A eficiência vai também subindo, na instância 17 onde ainda todas as instâncias são resolvidas,
+já leva 2 segundos em média.
+
+Acaba por ter uma performance idêntica à codificação inteira, mas com tempos mais reduzidos.
+No entanto, aparenta ter mais dificuldades com instâncias maiores, naturalmente utilizando como
+referência a configuração base.
+
+Utilizando o mesmo racional que nas 8 damas com codificação inteira, e também para mantermos
+o conjunto de teste comparável entre as duas configurações, vamos utilizar as instâncias 10 a 19
+para os testes seguintes, de modo a apurar a melhor marametrização.
 
 
 ### Teste: damascp_2
 
-Vamos agora estudar o impacto do tamanho da população.
+Da mesma forma que na codificação inteira, vamos ver o população do algoritmo evolutivo (P6),
+utilizando exatamente os mesmos parametros, de modo a poder comparar diretamente codificações. 
+
+- **Tipo de Teste / Objetivo**: População vs Eficiência
+- **Definição**: Instâncias: 10:19; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200
+- **Esforço**: P3=1:100
+- **Execução**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200
+
+<details>
+  <summary>Ver execução:</summary>
+```
+```
+</details>
+
+| N | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 2 | 40 | 1265 |
+| 3 | 0 | 2200 |
 
 
 ### Teste: damascp_3
 
 Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.
+
+população
+
+- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
+- **Definição**: Instâncias: 2:1000; Configurações: (base)
+- **Esforço**: P3=1:10
+- **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
+
+<details>
+  <summary>Ver execução:</summary>
+```
+```
+</details>
+
+| N | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 2 | 40 | 1265 |
+| 3 | 0 | 2200 |
 
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |

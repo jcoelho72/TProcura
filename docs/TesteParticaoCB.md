@@ -38,21 +38,158 @@ estes testes vão utilizar desde logo um cluster (Deucalion).
 Iniciamos o primeiro teste com um ponto de referência para a configuração base,
 para a partição cvom codificação binária.
 
-- **Tipo de Teste / Objetivo**: Performance (tempo vs tamanho)
+- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
 - **Definição**: Instâncias: 2:1000; Configurações: (base)
 - **Esforço**: P3=1:10
 - **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
+
+Variáveis:
+- Resolvido=(I1=0)
+- Eficácia: Percentagem de instãncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))
+- Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))
+
+A eficácia pode ser definida desta forma, atendendo a que este algoritmo apenas pode detectar a isntância resolvida as que têm solução.
+Para as instância sem solução, irá procurar a solução com diferença mínima, não existindo forma de comprovar que é de facto a mínima pela natureza da abordagem melhorativa.
+
+<details>
+  <summary>Ver execução:</summary>
+```
+═╤═ Instâncias ═══ { 📄 2 📄 3 📄 4 … 📄 998 📄 999 📄 1000 } #999
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100
+ ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2
+ ├─ ⚙  [3] ─ [90mP3=[0m3
+ ├─ ⚙  [4] ─ [90mP3=[0m4
+ ├─ ⚙  [5] ─ [90mP3=[0m5
+ ├─ ⚙  [6] ─ [90mP3=[0m6
+ ├─ ⚙  [7] ─ [90mP3=[0m7
+ ├─ ⚙  [8] ─ [90mP3=[0m8
+ ├─ ⚙  [9] ─ [90mP3=[0m9
+ ├─ ⚙  [10] ─ [90mP3=[0m10
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:9990   📄 Instâncias: 999   🛠️ Configurações: 10   🖥️ Processos: 48.
+ ├─ ⏱ 1' 143ms        📋 459   📄 621   🛠️ 9     🖥️ 20    ⚖  64068 10001 129663 6145 135807 
+ ├─ ⏱ 2' 413ms        📋 999   📄 91    🛠️ 9     🖥️ 11    ⚖  426 10000 737334 34966 772299 
+ ├─ ⏱ 3' 419ms        📋 1436  📄 576   🛠️ 8     🖥️ 10    ⚖  0 1789 24421 1157 25577 
+ ├─ ⏱ 4' 470ms        📋 1971  📄 121   🛠️ 8     🖥️ 8     ⚖  436 10000 583891 27682 611572 
+ ├─ ⏱ 5' 586ms        📋 2410  📄 608   🛠️ 7     🖥️ 39    ⚖  0 1625 21033 997 22029 
+ ├─ ⏱ 6' 626ms        📋 2940  📄 151   🛠️ 7     🖥️ 13    ⚖  2264 10000 481535 22826 504360 
+ ├─ ⏱ 7' 668ms        📋 3384  📄 616   🛠️ 6     🖥️ 41    ⚖  0 496 6340 300 6639 
+ ├─ ⏱ 8' 844ms        📋 3909  📄 181   🛠️ 6     🖥️ 30    ⚖  4692 10000 410694 19465 430158 
+ ├─ ⏱ 9' 996ms        📋 4355  📄 711   🛠️ 5     🖥️ 4     ⚖  88054 10002 113099 5359 118457 
+ ├─ ⏱ 10' 1" 32ms     📋 4894  📄 197   🛠️ 5     🖥️ 3     ⚖  3670 10000 382721 18139 400859 
+ ├─ ⏱ 11' 1" 417ms    📋 5350  📄 721   🛠️ 4     🖥️ 33    ⚖  130592 10001 111615 5290 116904 
+ ├─ ⏱ 12' 1" 460ms    📋 5871  📄 217   🛠️ 4     🖥️ 41    ⚖  5510 10000 349454 16564 366017 
+ ├─ ⏱ 13' 1" 488ms    📋 6334  📄 731   🛠️ 3     🖥️ 42    ⚖  86224 10001 110777 5249 116025 
+ ├─ ⏱ 14' 1" 613ms    📋 6848  📄 239   🛠️ 3     🖥️ 42    ⚖  8774 10000 320768 15203 335970 
+ ├─ ⏱ 15' 1" 737ms    📋 7314  📄 747   🛠️ 2     🖥️ 9     ⚖  92892 10002 108338 5135 113472 
+ ├─ ⏱ 16' 1" 923ms    📋 7821  📄 263   🛠️ 2     🖥️ 39    ⚖  9098 10000 294446 13952 308397 
+ ├─ ⏱ 17' 1" 945ms    📋 8296  📄 770   🛠️ 1     🖥️ 45    ⚖  2 10000 103291 4893 108183 
+ ├─ ⏱ 18' 2" 217ms    📋 8794  📄 291   🛠️ 1     🖥️ 10    ⚖  15436 10001 266955 12654 279608 
+ ├─ ⏱ 19' 2" 320ms    📋 9269  📄 732   🛠️ 0     🖥️ 10    ⚖  0 1525 16535 783 17317 
+ ├─ ⏱ 20' 2" 368ms    📋 9779  📄 301   🛠️ 0     🖥️ 12    ⚖  16622 10001 259325 12289 271613 
+ ├─ 📑  Ficheiro Resultados/particaocb_1.csv gravado.
+ │  ⏱  Tempo real: 20' 28" 691ms 
+ │  ⏱  CPU total: 16h 2' 28" 500ms 
+ │  ⏱  Espera do gestor: 20' 28" 492ms 
+ │  ⏱  Espera trabalhadores: 53" 537ms 
+ │  📊  Utilização:
+ │  - Total: 97.8%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.9% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 20' 28" 692ms ) ═══
+```
+</details>
+
+| N | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 2 | 40 | 1265 |
+| 3 | 0 | 2200 |
+| 4 | 30 | 1687 |
+| 5 | 0 | 2721 |
+| 6 | 40 | 1794 |
+| 7 | 0 | 3239 |
+| 8 | 50 | 1726 |
+| 9 | 0 | 3624 |
+| 10 | 100 | 0 |
+| 11 | 0 | 3950 |
+| 12 | 100 | 1 |
+| 13 | 0 | 4269 |
+| 14 | 100 | 1 |
+| 994 | 80 | 4976 |
+| 995 | 0 | 10001 |
+| 996 | 70 | 4391 |
+| 997 | 0 | 10001 |
+| 998 | 90 | 2824 |
+| 999 | 0 | 10002 |
+| 1000 | 80 | 4548 |
+
+A tabela foi cortada devido à sua extensão, mas mantém o mesmo padrão.
+
+Cada instância é gerada com base no número aleatório, pelo que neste caso não temos apenas 999 instâncias.
+Como foram utilizadas 10 corridas com valores diferentes para P3 por cada tamanho, temos 9990 instâncias.
+
+As instâncias ímpares não são resolvidas, as pares a partir da instância 10 são todas resolvidas,
+e apenas exporadicamente há uma instância par não resolvida.
+
+Como a abordagem melhorativa não permite resolver instâncias sem solução, provavelemnente a razão para
+não se encontrar a solução é por não existir a solução. Em algumas instâncias é possível confirmar com base
+na execução das procuras construtivas, outras não.
+
+Assim vamos utilizar para conjunto de teste apenas instâncias pares, que tenham sido todas resolvidas (com os 10 valores de P3),
+com os maiores tempos.
+
+Teste: 948,864,930,922,764,692,806,926,904,870 
 
 
 ### Teste: particaocb_2
 
 Vamos agora estudar o impacto do tamanho da população.
 
+Embora este problema seja distinto do problema das 8 damas, vamos manter os mesmos valores de teste,
+de modo a apurar o impacto da população na eficiência, cobrindo assim populações desde 5 a 200.
+As instâncias que utilizamos sabemos terem todas solução, pelo que apenas a eficiência irá ser medida.
+
+- **Tipo de Teste / Objetivo**: População vs Eficiência
+- **Definição**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200
+- **Esforço**: P3=1:10
+- **Execução**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_2 -M 1 -P P2=2 P3=1:10 x P6=5,10,15,20,25,30,40,50,75,100,150,200
+
+
+<details>
+  <summary>Ver execução:</summary>
+```
+```
+</details>
+
+| N | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 2 | 40 | 1265 |
+| 3 | 0 | 2200 |
+
+
 
 ### Teste: particaocb_3
 
 Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.
 
+- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
+- **Definição**: Instâncias: 2:1000; Configurações: (base)
+- **Esforço**: P3=1:10
+- **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
 
+<details>
+  <summary>Ver execução:</summary>
+```
+```
+</details>
+
+| N | Eficácia | Eficiência |
+|:---:|---:|---:|
+| 2 | 40 | 1265 |
+| 3 | 0 | 2200 |
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |
