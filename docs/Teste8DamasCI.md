@@ -1164,6 +1164,7 @@ Variáveis:
 A eficácia pode ser medido desta forma, atendendo a que se conhece o valor das soluções óptimas, que são soluções de custo 0.
 Num problema de optimização esta solução não poderia ser adoptada.
 
+\htmlonly
 <details>
   <summary>Ver execução:</summary>
 <pre>
@@ -1200,6 +1201,7 @@ Num problema de optimização esta solução não poderia ser adoptada.
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 7' 40" 920ms ) ═══
 </pre>
 </details>
+\endhtmlonly
 
 | Instância | Eficácia | Eficiência |
 |:---:|---:|---:|
@@ -1266,6 +1268,7 @@ tem de se alterar outros parametros. Iremos estudar esta vertente em outra altur
 - **Esforço**: P3=1:100
 - **Execução**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200
 
+\htmlonly
 <details>
   <summary>Ver execução:</summary>
 <pre>
@@ -1311,6 +1314,7 @@ tem de se alterar outros parametros. Iremos estudar esta vertente em outra altur
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 16' 17" 581ms ) ═══
 </pre>
 </details>
+\endhtmlonly
 
 | P6(População) | Eficácia | Eficiência |
 |:---:|---:|---:|
@@ -1342,6 +1346,7 @@ Vamos agora estudar a probabilidade de cruzamento e mutação, parametros P7 e P
 - **Esforço**: P3=1:100
 - **Execução**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_3 -M 1 -P P2=2 P6=20 P3=1:100 x P7=0:100:25 x P8=0:100:25
 
+\htmlonly
 <details>
   <summary>Ver execução:</summary>
 <pre>
@@ -1404,7 +1409,7 @@ Vamos agora estudar a probabilidade de cruzamento e mutação, parametros P7 e P
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 33' 30" 97ms ) ═══
 </pre>
 </details>
-
+\endhtmlonly
 
 Eficiência
 
@@ -1442,13 +1447,14 @@ comparar a melhor versão de cada uma das estratégias de seleção dos pais.
 - **Esforço**: P3=1:100
 - **Execução**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_4 -M 1 -P P2=2 P6=20 P7=100 P8=0 P3=1:100 x P9=1:3
 
+\htmlonly
 <details>
   <summary>Ver execução:</summary>
 <pre>
 
 </pre>
 </details>
-
+\endhtmlonly
 
 Eficiência
 
