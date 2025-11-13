@@ -162,24 +162,64 @@ As instâncias que utilizamos sabemos terem todas solução, pelo que apenas a e
 <details>
   <summary>Ver execução:</summary>
 ```
+═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
+ ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP6=[0m5
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP6=[0m5
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP6=[0m5
+ │ ...
+ ├─ ⚙  [118] ─ [90mP3=[0m8 [90mP6=[0m200
+ ├─ ⚙  [119] ─ [90mP3=[0m9 [90mP6=[0m200
+ ├─ ⚙  [120] ─ [90mP3=[0m10 [90mP6=[0m200
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:1200   📄 Instâncias: 10   🛠️ Configurações: 120   🖥️ Processos: 48.
+ ├─ ⏱ 1' 104ms        📋 479   📄 692   🛠️ 77    🖥️ 19    ⚖  0 4513 48748 954 49701 
+ ├─ ⏱ 2' 117ms        📋 1172  📄 870   🛠️ 3     🖥️ 47    ⚖  0 895 27369 4530 31898 
+ ├─ 📑  Ficheiro Resultados/particaocb_2.csv gravado.
+ │  ⏱  Tempo real: 2' 12" 320ms 
+ │  ⏱  CPU total: 1h 43' 39" 43ms 
+ │  ⏱  Espera do gestor: 2' 12" 295ms 
+ │  ⏱  Espera trabalhadores: 4' 52" 925ms 
+ │  📊  Utilização:
+ │  - Total: 93.3%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 95.3% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 12" 320ms ) ═══
 ```
 </details>
 
-| N | Eficácia | Eficiência |
+| P6(População) | Eficácia | Eficiência |
 |:---:|---:|---:|
-| 2 | 40 | 1265 |
-| 3 | 0 | 2200 |
+| 5 | 73 | 5307 |
+| 10 | 93 | 3510 |
+| 15 | 94 | 3186 |
+| 20 | 100 | 4528 |
+| 25 | 91 | 4528 |
+| 30 | 94 | 3417 |
+| 40 | 86 | 4433 |
+| 50 | 92 | 3960 |
+| 75 | 80 | 5487 |
+| 100 | 75 | 5850 |
+| 150 | 61 | 7522 |
+| 200 | 49 | 7553 |
 
-
+O parametro P6(População) tem a eficácia a 100% apenas no valor de omissão 20.
+No entanto existem valores com melhor eficiência.
+Não se vê no entanto uma tendência clara, apenas uma zona que aparenta ser melhor, entre 10 e 50 elementos,
+em que o tempo médio é inferior a 5 segundos. Assim, considera-se que este parametro não é crítico, pelo menos na
+configuração atual dos restantes parametros, pelo que optou-se por manter o valor de omissão: P6=20.
 
 ### Teste: particaocb_3
 
-Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.
+Vamos estudar a probabilidade de cruzamento e mutação, parametros P7 e P8, com os valores de omissão de 100 e 50 respetivamente.
 
-- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
-- **Definição**: Instâncias: 2:1000; Configurações: (base)
+- **Tipo de Teste / Objetivo**: Paramétrico (P7 vs P8)
+- **Definição**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0:100:25 x P8=0:100:25
 - **Esforço**: P3=1:10
-- **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
+- **Execução**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_3 -M 1 -P P2=2 P6=20 P3=1:10 x P7=0:100:25 x P8=0:100:25
 
 <details>
   <summary>Ver execução:</summary>

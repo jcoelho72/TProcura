@@ -162,25 +162,71 @@ utilizando exatamente os mesmos parametros, de modo a poder comparar diretamente
 <details>
   <summary>Ver execução:</summary>
 ```
+═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
+ ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP6=[0m5
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP6=[0m5
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP6=[0m5
+ │ ...
+ ├─ ⚙  [1198] ─ [90mP3=[0m98 [90mP6=[0m200
+ ├─ ⚙  [1199] ─ [90mP3=[0m99 [90mP6=[0m200
+ ├─ ⚙  [1200] ─ [90mP3=[0m100 [90mP6=[0m200
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:12000   📄 Instâncias: 10   🛠️ Configurações: 1200   🖥️ Processos: 48.
+ ├─ ⏱ 1' 35ms         📋 918   📄 16    🛠️ 1121  🖥️ 8     ⚖  0 8873 575090 2860 577949 
+ ├─ ⏱ 2' 70ms         📋 1824  📄 12    🛠️ 1018  🖥️ 4     ⚖  0 303 25825 170 25994 
+ ├─ ⏱ 3' 132ms        📋 2907  📄 18    🛠️ 923   🖥️ 38    ⚖  0 8856 617724 6114 623837 
+ ├─ ⏱ 4' 177ms        📋 4226  📄 13    🛠️ 778   🖥️ 8     ⚖  0 251 25724 503 26226 
+ ├─ ⏱ 5' 181ms        📋 5912  📄 12    🛠️ 609   🖥️ 7     ⚖  0 147 16498 401 16898 
+ ├─ ⏱ 6' 211ms        📋 7895  📄 14    🛠️ 413   🖥️ 40    ⚖  0 1123 116682 4479 121160 
+ ├─ ⏱ 7' 217ms        📋 10545 📄 16    🛠️ 145   🖥️ 2     ⚖  0 134 18923 1714 20636 
+ ├─ 📑  Ficheiro Resultados/damascp_2.csv gravado.
+ │  ⏱  Tempo real: 7' 42" 303ms 
+ │  ⏱  CPU total: 6h 2' 8" 263ms 
+ │  ⏱  Espera do gestor: 7' 42" 60ms 
+ │  ⏱  Espera trabalhadores: 2' 56" 133ms 
+ │  📊  Utilização:
+ │  - Total: 97.1%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.2% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 7' 42" 303ms ) ═══
 ```
 </details>
 
-| N | Eficácia | Eficiência |
+| P6(População) | Eficácia | Eficiência |
 |:---:|---:|---:|
-| 2 | 40 | 1265 |
-| 3 | 0 | 2200 |
+| 5 | 91 | 1287 |
+| 10 | 98 | 826 |
+| 15 | 97 | 1148 |
+| 20 | 98 | 1138 |
+| 25 | 97 | 1389 |
+| 30 | 97 | 1360 |
+| 40 | 96 | 1582 |
+| 50 | 95 | 1752 |
+| 75 | 92 | 2201 |
+| 100 | 88 | 2557 |
+| 150 | 83 | 3051 |
+| 200 | 81 | 3271 |
+
+Na codificação permutação das 8 damas, ao contrário da codificação inteira, o valor da população mais eficiente é 10.
+Esta codificação não é tão sensivel a este parametro como a codificação inteira, mantendo no geral valores altos
+na eficácia e eficiência.
+
+Vamos alterar o valor de omissão para P6=10.
 
 
 ### Teste: damascp_3
 
-Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.
+Seguem-se agora os parametros da probabilidade de cruzamento e mutação, parametros P7 e P8, com os valores de omissão de 100 e 50 respetivamente.
 
-população
+- **Tipo de Teste / Objetivo**: Paramétrico (P7 vs P8)
+- **Definição**: Instâncias: 10:19; Configurações: P6=20 P7=0:100:25 x P8=0:100:25
+- **Esforço**: P3=1:100
+- **Execução**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_3 -M 1 -P P2=2 P6=10 P3=1:100 x P7=0:100:25 x P8=0:100:25
 
-- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
-- **Definição**: Instâncias: 2:1000; Configurações: (base)
-- **Esforço**: P3=1:10
-- **Execução**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
 
 <details>
   <summary>Ver execução:</summary>
