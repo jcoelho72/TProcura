@@ -1166,18 +1166,18 @@ Num problema de optimização esta solução não poderia ser adoptada.
 
 <details>
   <summary>Ver execução:</summary>
-```
+<pre>
 ═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100
- ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>50 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>150 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100
+ ├─ ⚙   ─ <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
  │ ...
- ├─ ⚙  [98] ─ [90mP3=[0m98
- ├─ ⚙  [99] ─ [90mP3=[0m99
- ├─ ⚙  [100] ─ [90mP3=[0m100
+ ├─ ⚙  [98] ─ <span style="color:gray">P3=</span>98
+ ├─ ⚙  [99] ─ <span style="color:gray">P3=</span>99
+ ├─ ⚙  [100] ─ <span style="color:gray">P3=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.
@@ -1198,7 +1198,7 @@ Num problema de optimização esta solução não poderia ser adoptada.
  │  - Gestor: 0.0%
  │  - Trabalhadores: 99.1% 
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 7' 40" 920ms ) ═══
-```
+</pre>
 </details>
 
 | Instância | Eficácia | Eficiência |
@@ -1268,18 +1268,18 @@ tem de se alterar outros parametros. Iremos estudar esta vertente em outra altur
 
 <details>
   <summary>Ver execução:</summary>
-```
+<pre>
 ═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>50 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>150 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP6=[0m5
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP6=[0m5
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP6=[0m5
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>5
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>5
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P6=</span>5
  │ ...
- ├─ ⚙  [1198] ─ [90mP3=[0m98 [90mP6=[0m200
- ├─ ⚙  [1199] ─ [90mP3=[0m99 [90mP6=[0m200
- ├─ ⚙  [1200] ─ [90mP3=[0m100 [90mP6=[0m200
+ ├─ ⚙  [1198] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P6=</span>200
+ ├─ ⚙  [1199] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P6=</span>200
+ ├─ ⚙  [1200] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P6=</span>200
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:12000   📄 Instâncias: 10   🛠️ Configurações: 1200   🖥️ Processos: 48.
@@ -1309,7 +1309,7 @@ tem de se alterar outros parametros. Iremos estudar esta vertente em outra altur
  │  - Gestor: 0.0%
  │  - Trabalhadores: 99.5% 
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 16' 17" 581ms ) ═══
-```
+</pre>
 </details>
 
 | P6(População) | Eficácia | Eficiência |
@@ -1344,17 +1344,117 @@ Vamos agora estudar a probabilidade de cruzamento e mutação, parametros P7 e P
 
 <details>
   <summary>Ver execução:</summary>
-```
-```
+<pre>
+═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1
+ ├─ ⚙   ─ [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP7=[0m0 [90mP8=[0m0
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP7=[0m0 [90mP8=[0m0
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP7=[0m0 [90mP8=[0m0
+ │ ...
+ ├─ ⚙  [2498] ─ [90mP3=[0m98 [90mP7=[0m100 [90mP8=[0m100
+ ├─ ⚙  [2499] ─ [90mP3=[0m99 [90mP7=[0m100 [90mP8=[0m100
+ ├─ ⚙  [2500] ─ [90mP3=[0m100 [90mP7=[0m100 [90mP8=[0m100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:25000   📄 Instâncias: 10   🛠️ Configurações: 2500   🖥️ Processos: 48.
+ ├─ ⏱ 1' 28ms         📋 889   📄 13    🛠️ 2413  🖥️ 5     ⚖  0 2043 222418 10576 232993 
+ ├─ ⏱ 2' 76ms         📋 1703  📄 17    🛠️ 2343  🖥️ 27    ⚖  1 10000 817038 38857 855894 
+ ├─ ⏱ 3' 83ms         📋 2507  📄 14    🛠️ 2251  🖥️ 23    ⚖  0 1218 124813 5926 130738 
+ ├─ ⏱ 4' 149ms        📋 3275  📄 13    🛠️ 2174  🖥️ 1     ⚖  0 1301 146932 6970 153901 
+ ├─ ⏱ 5' 185ms        📋 4011  📄 13    🛠️ 2102  🖥️ 8     ⚖  0 2032 229520 10889 240408 
+ ├─ ⏱ 6' 340ms        📋 4750  📄 18    🛠️ 2033  🖥️ 23    ⚖  0 8248 653587 31021 684607 
+ ├─ ⏱ 7' 348ms        📋 5682  📄 19    🛠️ 1937  🖥️ 24    ⚖  0 3537 253298 12019 265316 
+ ├─ ⏱ 8' 441ms        📋 6639  📄 18    🛠️ 1850  🖥️ 2     ⚖  1 10000 780185 36992 817176 
+ ├─ ⏱ 9' 768ms        📋 7466  📄 17    🛠️ 1753  🖥️ 44    ⚖  0 578 48667 2304 50970 
+ ├─ ⏱ 10' 778ms       📋 8225  📄 13    🛠️ 1682  🖥️ 6     ⚖  0 2951 340133 16059 356191 
+ ├─ ⏱ 11' 995ms       📋 8888  📄 13    🛠️ 1611  🖥️ 36    ⚖  0 774 89346 4215 93560 
+ ├─ ⏱ 12' 1" 22ms     📋 9486  📄 19    🛠️ 1559  🖥️ 32    ⚖  0 9075 679259 32026 711284 
+ ├─ ⏱ 13' 1" 22ms     📋 10177 📄 13    🛠️ 1482  🖥️ 1     ⚖  0 9 1078 50 1127 
+ ├─ ⏱ 14' 1" 86ms     📋 11526 📄 14    🛠️ 1348  🖥️ 27    ⚖  0 679 71741 3368 75108 
+ ├─ ⏱ 15' 1" 164ms    📋 12497 📄 12    🛠️ 1251  🖥️ 10    ⚖  0 1179 148732 6957 155688 
+ ├─ ⏱ 16' 1" 209ms    📋 13264 📄 19    🛠️ 1183  🖥️ 1     ⚖  1 10000 769816 35847 805662 
+ ├─ ⏱ 17' 1" 282ms    📋 13944 📄 12    🛠️ 1108  🖥️ 12    ⚖  0 2432 315866 14685 330550 
+ ├─ ⏱ 18' 1" 294ms    📋 14449 📄 11    🛠️ 1055  🖥️ 35    ⚖  0 46 6695 307 7001 
+ ├─ ⏱ 19' 1" 327ms    📋 14942 📄 16    🛠️ 1013  🖥️ 13    ⚖  1 10000 960370 44370 1004739 
+ ├─ ⏱ 20' 1" 333ms    📋 16557 📄 13    🛠️ 848   🖥️ 18    ⚖  0 1669 198531 9157 207687 
+ ├─ ⏱ 21' 1" 352ms    📋 17723 📄 17    🛠️ 728   🖥️ 25    ⚖  0 406 36264 1665 37928 
+ ├─ ⏱ 22' 1" 385ms    📋 18446 📄 13    🛠️ 656   🖥️ 20    ⚖  0 1023 127514 5785 133298 
+ ├─ ⏱ 23' 1" 429ms    📋 19034 📄 18    🛠️ 605   🖥️ 41    ⚖  1 10000 852515 38721 891235 
+ ├─ ⏱ 24' 1" 443ms    📋 19434 📄 15    🛠️ 562   🖥️ 8     ⚖  1 9102 1000019 44698 1044716 
+ ├─ ⏱ 25' 1" 493ms    📋 19835 📄 15    🛠️ 522   🖥️ 27    ⚖  1 9080 1000005 44711 1044715 
+ ├─ ⏱ 26' 1" 551ms    📋 21163 📄 16    🛠️ 386   🖥️ 26    ⚖  0 1062 105705 4754 110458 
+ ├─ ⏱ 27' 1" 587ms    📋 22332 📄 13    🛠️ 270   🖥️ 20    ⚖  0 2908 370317 16531 386847 
+ ├─ ⏱ 28' 1" 605ms    📋 23044 📄 14    🛠️ 202   🖥️ 32    ⚖  0 8443 996097 44469 1040565 
+ ├─ ⏱ 29' 1" 891ms    📋 23424 📄 15    🛠️ 160   🖥️ 41    ⚖  0 4840 544514 24042 568555 
+ ├─ ⏱ 30' 2" 151ms    📋 23820 📄 10    🛠️ 119   🖥️ 20    ⚖  0 2319 390676 17246 407921 
+ ├─ ⏱ 31' 2" 158ms    📋 24189 📄 19    🛠️ 86    🖥️ 47    ⚖  8 10000 882900 37781 920680 
+ ├─ ⏱ 32' 2" 265ms    📋 24538 📄 13    🛠️ 50    🖥️ 18    ⚖  3 7216 1000002 42794 1042795 
+ ├─ ⏱ 33' 2" 339ms    📋 24889 📄 17    🛠️ 16    🖥️ 19    ⚖  5 9841 1000019 42810 1042828 
+ ├─ 📑  Ficheiro Resultados/damasci_3.csv gravado.
+ │  ⏱  Tempo real: 33' 30" 97ms 
+ │  ⏱  CPU total: 1d 2h 14' 34" 540ms 
+ │  ⏱  Espera do gestor: 33' 29" 569ms 
+ │  ⏱  Espera trabalhadores: 3' 29" 152ms 
+ │  📊  Utilização:
+ │  - Total: 97.7%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.8% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 33' 30" 97ms ) ═══
+</pre>
 </details>
 
-| N | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 2 | 40 | 1265 |
-| 3 | 0 | 2200 |
+
+Eficiência
+
+| P7 vs P8 | 0 | 25 | 50 | 75 | 100 | Total Geral |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 0 | 8072 | 7043 | 5680 | 4749 | 3835 | 5876 |
+| 25 | 7293 | 4677 | 4256 | 4224 | 3840 | 4858 |
+| 50 | 3814 | 2814 | 3363 | 3653 | 3578 | 3444 |
+| 75 | 1854 | 1837 | 2507 | 3153 | 3452 | 2561 |
+| 100 | 1332 | 1465 | 1841 | 2673 | 3372 | 2136 |
+| Total Geral | 4473 | 3567 | 3529 | 3690 | 3616 | 3775 |
+
+A configuração que aparenta ser a melhor, é com P7=100 e P8=0, ou seja, sem mutação.
+Assim o valor original de P8=50 não é o melhor para a atual configuração.
+Colocar este parametro a 0 reduz a diversidade, mas não elimina, atendendo a que existe um elemento estrangeiro em cada geração
+que constantemente introduz diversidade na população.
+
+Assim sendo vamos manter o valor de P7=100 e alterar P8=0.
 
 
+### Teste: damasci_4
 
+Analisamos agora P9(SELECAO), existindo três valores:
+- 1: Roleta (omissão)
+- 2: Torneio
+- 3: Uniforme
+
+A roleta tem um parametro, o torneio 2, e o uniforme não tem paramertros.
+Neste teste usamos os parametros internos de omissão para apurar se há diferenças significativas na estratégia de seleção dos pais.
+Caso existam, cada método deve ser optimizado separadamente, variando os seus parametros internos, de modo a poder
+comparar a melhor versão de cada uma das estratégias de seleção dos pais.
+
+- **Tipo de Teste / Objetivo**: Paramétrico P9
+- **Definição**: Instâncias: 10:19; Configurações: P6=20 P7=100 P8=0 P9=1:3
+- **Esforço**: P3=1:100
+- **Execução**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_4 -M 1 -P P2=2 P6=20 P7=100 P8=0 P3=1:100 x P9=1:3
+
+<details>
+  <summary>Ver execução:</summary>
+<pre>
+
+</pre>
+</details>
+
+
+Eficiência
+
+| P7 vs P8 | 0 | 25 | 50 | 75 | 100 | Total Geral |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 0 | 8072 | 7043 | 5680 | 4749 | 3835 | 5876 |
 
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |

@@ -224,12 +224,79 @@ Vamos estudar a probabilidade de cruzamento e mutação, parametros P7 e P8, com
 <details>
   <summary>Ver execução:</summary>
 ```
+═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1
+ ├─ ⚙   ─ [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP7=[0m0 [90mP8=[0m0
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP7=[0m0 [90mP8=[0m0
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP7=[0m0 [90mP8=[0m0
+ │ ...
+ ├─ ⚙  [248] ─ [90mP3=[0m8 [90mP7=[0m100 [90mP8=[0m100
+ ├─ ⚙  [249] ─ [90mP3=[0m9 [90mP7=[0m100 [90mP8=[0m100
+ ├─ ⚙  [250] ─ [90mP3=[0m10 [90mP7=[0m100 [90mP8=[0m100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:2500   📄 Instâncias: 10   🛠️ Configurações: 250   🖥️ Processos: 48.
+ ├─ ⏱ 1' 42ms         📋 796   📄 806   🛠️ 184   🖥️ 28    ⚖  2 10000 110901 5271 116171 
+ ├─ ⏱ 2' 96ms         📋 1472  📄 806   🛠️ 112   🖥️ 4     ⚖  2 10002 130660 6108 136767 
+ ├─ ⏱ 3' 204ms        📋 1990  📄 864   🛠️ 56    🖥️ 38    ⚖  0 8788 128487 5760 134246 
+ ├─ ⏱ 4' 304ms        📋 2394  📄 870   🛠️ 15    🖥️ 17    ⚖  4 10000 138154 6152 144305 
+ ├─ 📑  Ficheiro Resultados/particaocb_3.csv gravado.
+ │  ⏱  Tempo real: 4' 31" 238ms 
+ │  ⏱  CPU total: 3h 32' 28" 181ms 
+ │  ⏱  Espera do gestor: 4' 31" 186ms 
+ │  ⏱  Espera trabalhadores: 3' 44" 479ms 
+ │  📊  Utilização:
+ │  - Total: 96.2%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 98.2% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4' 31" 238ms ) ═══
 ```
 </details>
 
-| N | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 2 | 40 | 1265 |
-| 3 | 0 | 2200 |
+| P7 vs P8 | 0 | 25 | 50 | 75 | 100 | Total Geral |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 0 | 9994 | 6911 | 4902 | 3660 | 2742 | 5642 |
+| 25 | 9788 | 7188 | 4779 | 3370 | 3288 | 5682 |
+| 50 | 8268 | 5411 | 4109 | 3166 | 3301 | 4851 |
+| 75 | 6097 | 4487 | 4106 | 4365 | 4213 | 4654 |
+| 100 | 3833 | 4069 | 4528 | 3993 | 4731 | 4231 |
+| Total Geral | 7596 | 5613 | 4485 | 3711 | 3655 | 5012 |
+
+A melhor parametrização é tal como nas 8 damas com a codificação de permutação, P7=0 e P8=100,
+o que significa que o cruzamento nunca é realizado, e é sempre aplicada a mutação.
+A diferença é de 4,5 segundos para a configuração de base, baixando para 2,7 segundos, o que é
+uma diferença considerável. Assim vamos mudar a configuração base para P7=0 e P8=100.
+
+### Teste: particaocb_4
+
+Mesmo sem operadores de cruzamento a estratégia de seleção de pais tem influência no algoritmo.
+
+P9(SELECAO) tem três valores possíveis:
+- 1: Roleta (omissão)
+- 2: Torneio
+- 3: Uniforme
+
+- **Tipo de Teste / Objetivo**: Paramétrico P9
+- **Definição**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=1:3
+- **Esforço**: P3=1:10
+- **Execução**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_4 -M 1 -P P2=2 P6=20 P7=0 P8=100 P3=1:10 x P9=1:3
+
+<details>
+  <summary>Ver execução:</summary>
+```
+```
+</details>
+
+Eficiência
+
+| P7 vs P8 | 0 | 25 | 50 | 75 | 100 | Total Geral |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 0 | 3574 | 1999 | 1225 | 545 | 175 | 1504 |
+
+
+
+
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |

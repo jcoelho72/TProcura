@@ -223,9 +223,83 @@ Vamos alterar o valor de omissão para P6=10.
 Seguem-se agora os parametros da probabilidade de cruzamento e mutação, parametros P7 e P8, com os valores de omissão de 100 e 50 respetivamente.
 
 - **Tipo de Teste / Objetivo**: Paramétrico (P7 vs P8)
-- **Definição**: Instâncias: 10:19; Configurações: P6=20 P7=0:100:25 x P8=0:100:25
+- **Definição**: Instâncias: 10:19; Configurações: P6=10 P7=0:100:25 x P8=0:100:25
 - **Esforço**: P3=1:100
 - **Execução**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_3 -M 1 -P P2=2 P6=10 P3=1:100 x P7=0:100:25 x P8=0:100:25
+
+
+<details>
+  <summary>Ver execução:</summary>
+```
+═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1
+ ├─ ⚙   ─ [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP7=[0m0 [90mP8=[0m0
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP7=[0m0 [90mP8=[0m0
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP7=[0m0 [90mP8=[0m0
+ │ ...
+ ├─ ⚙  [2498] ─ [90mP3=[0m98 [90mP7=[0m100 [90mP8=[0m100
+ ├─ ⚙  [2499] ─ [90mP3=[0m99 [90mP7=[0m100 [90mP8=[0m100
+ ├─ ⚙  [2500] ─ [90mP3=[0m100 [90mP7=[0m100 [90mP8=[0m100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:25000   📄 Instâncias: 10   🛠️ Configurações: 2500   🖥️ Processos: 48.
+ ├─ ⏱ 1' 104ms        📋 6456  📄 15    🛠️ 1856  🖥️ 45    ⚖  0 563 86598 7857 94454 
+ ├─ ⏱ 2' 113ms        📋 10547 📄 16    🛠️ 1445  🖥️ 1     ⚖  0 134 18923 1714 20636 
+ ├─ ⏱ 3' 115ms        📋 13113 📄 13    🛠️ 1189  🖥️ 29    ⚖  0 117 22293 1988 24280 
+ ├─ ⏱ 4' 123ms        📋 15586 📄 16    🛠️ 941   🖥️ 8     ⚖  0 117 16620 1500 18119 
+ ├─ ⏱ 5' 178ms        📋 17733 📄 15    🛠️ 727   🖥️ 30    ⚖  0 502 82422 7327 89748 
+ ├─ ⏱ 6' 180ms        📋 19281 📄 13    🛠️ 572   🖥️ 29    ⚖  0 377 78370 6727 85096 
+ ├─ ⏱ 7' 193ms        📋 21522 📄 14    🛠️ 353   🖥️ 35    ⚖  0 1526 257932 22953 280884 
+ ├─ ⏱ 8' 310ms        📋 23016 📄 17    🛠️ 201   🖥️ 4     ⚖  0 1850 275558 24150 299707 
+ ├─ ⏱ 9' 440ms        📋 24048 📄 17    🛠️ 103   🖥️ 35    ⚖  1 6430 1000003 85486 1085488 
+ ├─ ⏱ 10' 499ms       📋 24841 📄 11    🛠️ 16    🖥️ 19    ⚖  0 180 44295 3664 47958 
+ ├─ 📑  Ficheiro Resultados/damascp_3.csv gravado.
+ │  ⏱  Tempo real: 10' 18" 807ms 
+ │  ⏱  CPU total: 8h 4' 43" 915ms 
+ │  ⏱  Espera do gestor: 10' 18" 309ms 
+ │  ⏱  Espera trabalhadores: 2' 45" 830ms 
+ │  📊  Utilização:
+ │  - Total: 97.4%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.4% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10' 18" 807ms ) ═══
+```
+</details>
+
+Eficiência
+
+| P7 vs P8 | 0 | 25 | 50 | 75 | 100 | Total Geral |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 0 | 3574 | 1999 | 1225 | 545 | 175 | 1504 |
+| 25 | 2695 | 1843 | 1287 | 641 | 229 | 1339 |
+| 50 | 2062 | 1628 | 1212 | 771 | 295 | 1194 |
+| 75 | 1417 | 1313 | 1091 | 846 | 406 | 1014 |
+| 100 | 699 | 734 | 825 | 801 | 621 | 736 |
+| Total Geral | 2089 | 1503 | 1128 | 721 | 345 | 1157 |
+
+Estes resultados apontam para a melhor parametrização a colocação de P7=0 e P8=100, o inverso da codificação inteira.
+Com esta estratégia os operadores de cruzamento nem são utilizados.
+
+Vamos portanto alterar os valores para P7=0 e P8=100.
+O tempo médio de resolução está bastante baixo, 0,17 segundos, quase 10 vezes menos que a codificação inteira.
+No entanto vamos manter o conjunto de instâncias de teste para manter a eficiência comparável com os restantes testes
+e com a codificação inteira.
+
+### Teste: damascp_4
+
+Mesmo sem operadores de cruzamento a estratégia de seleção de pais tem influência no algoritmo.
+
+P9(SELECAO) tem três valores possíveis:
+- 1: Roleta (omissão)
+- 2: Torneio
+- 3: Uniforme
+
+- **Tipo de Teste / Objetivo**: Paramétrico P9
+- **Definição**: Instâncias: 10:19; Configurações: P6=10 P7=0 P8=100 P9=1:3
+- **Esforço**: P3=1:100
+- **Execução**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_4 -M 1 -P P2=2 P6=10 P7=0 P8=100 P3=1:100 x P9=1:3
 
 
 <details>
@@ -234,10 +308,12 @@ Seguem-se agora os parametros da probabilidade de cruzamento e mutação, parame
 ```
 </details>
 
-| N | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 2 | 40 | 1265 |
-| 3 | 0 | 2200 |
+Eficiência
+
+| P7 vs P8 | 0 | 25 | 50 | 75 | 100 | Total Geral |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 0 | 3574 | 1999 | 1225 | 545 | 175 | 1504 |
+
 
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |

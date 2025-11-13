@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=evolutivos2
-#SBATCH --output=Resultados/evolutivos2.txt
+#SBATCH --job-name=evolutivos3
+#SBATCH --output=Resultados/evolutivos3.txt
 #SBATCH --account=f202507959cpcaa0a
 #SBATCH --partition=normal-arm
 #SBATCH --time=10:00:00
