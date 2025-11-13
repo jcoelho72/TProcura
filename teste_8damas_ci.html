@@ -1033,11 +1033,175 @@ Ação 4 - Testes Empíricos</h2>
 Teste: damasci_1</h3>
 <p>Vamos querer ter um ponto de referência com a configuração base, para depois procurar obter a melhor parametrização dos algoritmos evolutivos para as 8 damas, codificação inteira.</p>
 <ul>
-<li><b>Tipo de Teste / Objetivo</b>: Performance (tempo vs tamanho)</li>
+<li><b>Tipo de Teste / Objetivo</b>: Performance (Eficácia / Eficiência vs tamanho)</li>
 <li><b>Definição</b>: Instâncias: 4:40; Configurações: (base)</li>
 <li><b>Esforço</b>: P3=1:100</li>
 <li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 1 4:40 -R Resultados/damasci_1 -M 1 -P P2=2 P3=1:100</li>
 </ul>
+<p>Variáveis:</p><ul>
+<li>Resolvido=(I1=0)</li>
+<li>Eficácia: Percentagem de instãncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))</li>
+<li>Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))</li>
+</ul>
+<p>A eficácia pode ser medido desta forma, atendendo a que se conhece o valor das soluções óptimas, que são soluções de custo 0. Num problema de optimização esta solução não poderia ser adoptada.</p>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"><div class="line">═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m1000000 &#x241B;[90mP6=&#x241B;[0m20 &#x241B;[90mP7=&#x241B;[0m100 &#x241B;[90mP8=&#x241B;[0m50 &#x241B;[90mP9=&#x241B;[0m1 &#x241B;[90mP10=&#x241B;[0m150 &#x241B;[90mP13=&#x241B;[0m1 &#x241B;[90mP14=&#x241B;[0m100</div>
+<div class="line"> ├─ ⚙   ─ &#x241B;[90mP16=&#x241B;[0m1 &#x241B;[90mP17=&#x241B;[0m1 &#x241B;[90mP18=&#x241B;[0m3 &#x241B;[90mP19=&#x241B;[0m0 &#x241B;[90mP20=&#x241B;[0m1 &#x241B;[90mP21=&#x241B;[0m0 &#x241B;[90mP22=&#x241B;[0m1 &#x241B;[90mP23=&#x241B;[0m0 &#x241B;[90mP24=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [98] ─ &#x241B;[90mP3=&#x241B;[0m98</div>
+<div class="line"> ├─ ⚙  [99] ─ &#x241B;[90mP3=&#x241B;[0m99</div>
+<div class="line"> ├─ ⚙  [100] ─ &#x241B;[90mP3=&#x241B;[0m100</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 17ms         📋 510   📄 14    🛠️ 86    🖥️ 19    ⚖  0 1110 110559 5198 115756 </div>
+<div class="line"> ├─ ⏱ 2&#39; 259ms        📋 1017  📄 30    🛠️ 74    🖥️ 45    ⚖  1 10000 390577 18393 408969 </div>
+<div class="line"> ├─ ⏱ 3&#39; 318ms        📋 1501  📄 25    🛠️ 59    🖥️ 18    ⚖  0 389 19454 916 20369 </div>
+<div class="line"> ├─ ⏱ 4&#39; 1&quot; 288ms     📋 1988  📄 23    🛠️ 47    🖥️ 23    ⚖  0 6153 342982 16136 359117 </div>
+<div class="line"> ├─ ⏱ 5&#39; 1&quot; 698ms     📋 2489  📄 15    🛠️ 33    🖥️ 14    ⚖  0 3123 289744 13630 303373 </div>
+<div class="line"> ├─ ⏱ 6&#39; 1&quot; 796ms     📋 2974  📄 21    🛠️ 20    🖥️ 46    ⚖  0 3527 221558 10421 231978 </div>
+<div class="line"> ├─ ⏱ 7&#39; 1&quot; 836ms     📋 3445  📄 37    🛠️ 8     🖥️ 13    ⚖  2 10001 288301 13589 301889 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/damasci_1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 7&#39; 40&quot; 920ms </div>
+<div class="line"> │  ⏱  CPU total: 6h 1&#39; 3&quot; 221ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 7&#39; 40&quot; 842ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 19&quot; 779ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 97.0%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 99.1% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 7&#39; 40&quot; 920ms ) ═══</div>
+</div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">16    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">15    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">40    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">66    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">213    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">358    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">475    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">779    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">1073    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">1688    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight">1980    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">3455    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">4102    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">83   </td><td class="markdownTableBodyRight">4985    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">66   </td><td class="markdownTableBodyRight">5545    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">48   </td><td class="markdownTableBodyRight">7279    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">38   </td><td class="markdownTableBodyRight">8247    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">31   </td><td class="markdownTableBodyRight">8365    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">8830    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">9514    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">11   </td><td class="markdownTableBodyRight">9582    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">9690    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">9631    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9965    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">9889    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">31   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">9976    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9953    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">33   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">34   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">35   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">36   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">37   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9966    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">38   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">39   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000   </td></tr>
+</table>
+<p>Os problemas são todos resolvidos até à instância 15, após o qual a eficácia desce ficando a baixo dos 10% na instância 27. A eficiência vai também subindo, na instância 15 onde ainda todas as instâncias são resolvidas, já leva 1,7 segundos em média.</p>
+<p>Vamos utilizar estes resultados para fixar o conjunto de teste para conter apenas instâncias na fase de transição entre complexo e simples, evitando assim instâncias demasiado simples que não ajudam a identificar a melhor parametrização, nem instâncias demasiado complexas que gastam o tempo limite e apenas atrasam os resultados.</p>
+<p>Vamos utilizar desde a instância 10, embora simples tem 0,2 segundos, até à instância 19, em que nem sempre a instância é resolvida, e tem tempo médio de quase 5 segundos.</p>
+<h3><a class="anchor" id="autotoc_md36"></a>
+Teste: damasci_2</h3>
+<p>Vamos estudar o parâmetro da população do algoritmo evolutivo (P6). O valor de omissão é 20, vamos variar em valores baixos e altos. Vamos começar com o valor 5, embora valores mais baixos sejam possíveis, mas assim o algoritmo evolutivo assemelha-se a uma procura local e para funcionar tem de se alterar outros parametros. Iremos estudar esta vertente em outra altura.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: População vs Eficiência</li>
+<li><b>Definição</b>: Instâncias: 10:19; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200</li>
+<li><b>Esforço</b>: P3=1:100</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 1 10:19 -R Resultados/damasci_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200</li>
+</ul>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"></div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">N   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2200   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md37"></a>
+Teste: damasci_3</h3>
+<p>mutação e cruzamento, parametros P7 e P8.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Performance (Eficácia / Eficiência vs tamanho)</li>
+<li><b>Definição</b>: Instâncias: 2:1000; Configurações: (base)</li>
+<li><b>Esforço</b>: P3=1:10</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10</li>
+</ul>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"></div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">N   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2200   </td></tr>
+</table>
 <hr  />
 <p> (texto anterior)</p>
 <p>O esforço do teste base é baixo, mas no modo B já utilizamos todas as instâncias e várias execuções. Como o algoritmo é aleatório, é importante várias execuções.</p>
@@ -1115,7 +1279,7 @@ Teste: damasci_1</h3>
 </table>
 <p>A configuração de omissão consegue resolver até à instância 17, mas após essa instância, falha por número de iterações.</p>
 <p>Vamos manter este conjunto de instâncias, e procurar estudar a parametrização.</p>
-<h3><a class="anchor" id="autotoc_md37"></a>
+<h3><a class="anchor" id="autotoc_md39"></a>
 Teste: damasci_2</h3>
 <p>Vamos agora estudar o impacto do tamanho da população.</p>
 <ul>
@@ -1215,7 +1379,7 @@ Teste: damasci_2</h3>
 </table>
 <p>Podemos ver que a população a 30 poderá ser a melhor, tendo em conta ter o melhor valor global da média dos resultados.</p>
 <p>Parametro de omissão alterado: P6(POPULACAO)=30</p>
-<h3><a class="anchor" id="autotoc_md38"></a>
+<h3><a class="anchor" id="autotoc_md40"></a>
 Teste: damasci_3</h3>
 <p>Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.</p>
 <ul>

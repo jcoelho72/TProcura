@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('teste_8damas_cp.html',''); initResizab
 <p>Execução de exemplo com base no problema das 8 damas, com codificação por permutação. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. No Linux na pasta <code>.../TProcura/Melhorativa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md39"></a>
+<h2><a class="anchor" id="autotoc_md41"></a>
 Sumário</h2>
 <ul>
 <li>Ação 1 - Ver instâncias</li>
@@ -108,36 +108,195 @@ Sumário</h2>
 <li>Ação 4 - Testes Empíricos</li>
 </ul>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md40"></a>
+<h2><a class="anchor" id="autotoc_md42"></a>
 Ação 1 - Ver instâncias</h2>
 <p>(fazer)</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md43"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>(fazer)</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md44"></a>
 Ação 3 - Algoritmos Evolutivos</h2>
 <p>(fazer)</p>
 <p><a class="anchor" id="invalid"></a></p>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md45"></a>
 Ação 4 - Testes Empíricos</h2>
 <p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
-<h3><a class="anchor" id="autotoc_md44"></a>
+<h3><a class="anchor" id="autotoc_md46"></a>
 Teste: damascp_1</h3>
 <p>Este primeiro teste vamos querer ter um ponto de referência para a configuração base, para as 8 damas e codificação de permutação.</p>
 <ul>
-<li><b>Tipo de Teste / Objetivo</b>: Performance (tempo vs tamanho)</li>
+<li><b>Tipo de Teste / Objetivo</b>: Performance (Eficácia / Eficiência vs tamanho)</li>
 <li><b>Definição</b>: Instâncias: 4:40; Configurações: (base)</li>
 <li><b>Esforço</b>: P3=1:100</li>
 <li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 2 4:40 -R Resultados/damascp_1 -M 1 -P P2=2 P3=1:100</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md45"></a>
+<p>Variáveis:</p><ul>
+<li>Resolvido=(I1=0)</li>
+<li>Eficácia: Percentagem de instãncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))</li>
+<li>Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))</li>
+</ul>
+<p>A eficácia pode ser medido desta forma, atendendo a que se conhece o valor das soluções óptimas, que são soluções de custo 0. Num problema de optimização esta solução não poderia ser adoptada.</p>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"><div class="line">═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m1000000 &#x241B;[90mP6=&#x241B;[0m20 &#x241B;[90mP7=&#x241B;[0m100 &#x241B;[90mP8=&#x241B;[0m50 &#x241B;[90mP9=&#x241B;[0m1 &#x241B;[90mP10=&#x241B;[0m150 &#x241B;[90mP13=&#x241B;[0m1 &#x241B;[90mP14=&#x241B;[0m100</div>
+<div class="line"> ├─ ⚙   ─ &#x241B;[90mP16=&#x241B;[0m1 &#x241B;[90mP17=&#x241B;[0m1 &#x241B;[90mP18=&#x241B;[0m3 &#x241B;[90mP19=&#x241B;[0m0 &#x241B;[90mP20=&#x241B;[0m3 &#x241B;[90mP21=&#x241B;[0m0 &#x241B;[90mP22=&#x241B;[0m1 &#x241B;[90mP23=&#x241B;[0m0 &#x241B;[90mP24=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [98] ─ &#x241B;[90mP3=&#x241B;[0m98</div>
+<div class="line"> ├─ ⚙  [99] ─ &#x241B;[90mP3=&#x241B;[0m99</div>
+<div class="line"> ├─ ⚙  [100] ─ &#x241B;[90mP3=&#x241B;[0m100</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 37ms         📋 525   📄 37    🛠️ 87    🖥️ 19    ⚖  5 10000 376142 17882 394023 </div>
+<div class="line"> ├─ ⏱ 2&#39; 51ms         📋 1014  📄 32    🛠️ 74    🖥️ 14    ⚖  4 10000 449876 21389 471264 </div>
+<div class="line"> ├─ ⏱ 3&#39; 58ms         📋 1493  📄 33    🛠️ 61    🖥️ 41    ⚖  2 10000 430411 20463 450873 </div>
+<div class="line"> ├─ ⏱ 4&#39; 407ms        📋 1986  📄 17    🛠️ 46    🖥️ 28    ⚖  0 637 57312 2722 60033 </div>
+<div class="line"> ├─ ⏱ 5&#39; 1&quot; 67ms      📋 2483  📄 18    🛠️ 34    🖥️ 18    ⚖  0 7161 608310 28915 637224 </div>
+<div class="line"> ├─ ⏱ 6&#39; 1&quot; 561ms     📋 2977  📄 30    🛠️ 21    🖥️ 21    ⚖  3 10000 488738 23237 511974 </div>
+<div class="line"> ├─ ⏱ 7&#39; 1&quot; 565ms     📋 3472  📄 10    🛠️ 6     🖥️ 3     ⚖  0 22 3090 146 3235 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/damascp_1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 7&#39; 37&quot; 19ms </div>
+<div class="line"> │  ⏱  CPU total: 5h 57&#39; 59&quot; 877ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 7&#39; 36&quot; 942ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 3&#39; 3&quot; 742ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 97.1%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 99.1% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 7&#39; 37&quot; 19ms ) ═══</div>
+</div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">23    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">48    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">74    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">155    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">353    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">518    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">816    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">17   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">2057    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight">2924    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">19   </td><td class="markdownTableBodyRight">77   </td><td class="markdownTableBodyRight">4991    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">68   </td><td class="markdownTableBodyRight">6104    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">21   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">8262    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyRight">20   </td><td class="markdownTableBodyRight">9007    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">9591    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">9694    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">9782    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">26   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">9781    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">9852    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">9964    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9910    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9910    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">31   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">33   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">34   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">35   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">36   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">37   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">38   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">39   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000   </td></tr>
+</table>
+<p>Os problemas são todos resolvidos até à instância 17, após o qual a eficácia desce ficando a baixo dos 10% na instância 22. A eficiência vai também subindo, na instância 17 onde ainda todas as instâncias são resolvidas, já leva 2 segundos em média.</p>
+<p>Acaba por ter uma performance idêntica à codificação inteira, mas com tempos mais reduzidos. No entanto, aparenta ter mais dificuldades com instâncias maiores, naturalmente utilizando como referência a configuração base.</p>
+<p>Utilizando o mesmo racional que nas 8 damas com codificação inteira, e também para mantermos o conjunto de teste comparável entre as duas configurações, vamos utilizar as instâncias 10 a 19 para os testes seguintes, de modo a apurar a melhor marametrização.</p>
+<h3><a class="anchor" id="autotoc_md47"></a>
 Teste: damascp_2</h3>
-<p>Vamos agora estudar o impacto do tamanho da população.</p>
-<h3><a class="anchor" id="autotoc_md46"></a>
+<p>Da mesma forma que na codificação inteira, vamos ver o população do algoritmo evolutivo (P6), utilizando exatamente os mesmos parametros, de modo a poder comparar diretamente codificações.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: População vs Eficiência</li>
+<li><b>Definição</b>: Instâncias: 10:19; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200</li>
+<li><b>Esforço</b>: P3=1:100</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 2 10:19 -R Resultados/damascp_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200</li>
+</ul>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"></div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">N   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2200   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md48"></a>
 Teste: damascp_3</h3>
 <p>Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.</p>
+<p>população</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Performance (Eficácia / Eficiência vs tamanho)</li>
+<li><b>Definição</b>: Instâncias: 2:1000; Configurações: (base)</li>
+<li><b>Esforço</b>: P3=1:10</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10</li>
+</ul>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"></div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">N   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2200   </td></tr>
+</table>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

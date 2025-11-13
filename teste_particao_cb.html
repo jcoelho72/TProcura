@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('teste_particao_cb.html',''); initResiz
 <p>Execução de exemplo com base no problema da Partição, com codificação binária. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. No Linux na pasta <code>.../TProcura/Melhorativa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md85"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 Sumário</h2>
 <ul>
 <li>Ação 1 - Ver instâncias</li>
@@ -107,32 +107,176 @@ Sumário</h2>
 <li><a class="el" href="teste_particao_cb.html#particao-cb3">Ação 3 - Testes Empíricos</a></li>
 </ul>
 <p><a class="anchor" id="particao-cp1"></a></p>
-<h2><a class="anchor" id="autotoc_md86"></a>
+<h2><a class="anchor" id="autotoc_md88"></a>
 Ação 1 - Ver instâncias</h2>
 <p>(fazer)</p>
 <p><a class="anchor" id="particao-cp2"></a></p>
-<h2><a class="anchor" id="autotoc_md87"></a>
+<h2><a class="anchor" id="autotoc_md89"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>(fazer)</p>
 <p><a class="anchor" id="particao-cb3"></a></p>
-<h2><a class="anchor" id="autotoc_md88"></a>
+<h2><a class="anchor" id="autotoc_md90"></a>
 Ação 3 - Testes Empíricos</h2>
 <p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
-<h3><a class="anchor" id="autotoc_md89"></a>
+<h3><a class="anchor" id="autotoc_md91"></a>
 Teste: particaocb_1</h3>
 <p>Iniciamos o primeiro teste com um ponto de referência para a configuração base, para a partição cvom codificação binária.</p>
 <ul>
-<li><b>Tipo de Teste / Objetivo</b>: Performance (tempo vs tamanho)</li>
+<li><b>Tipo de Teste / Objetivo</b>: Performance (Eficácia / Eficiência vs tamanho)</li>
 <li><b>Definição</b>: Instâncias: 2:1000; Configurações: (base)</li>
 <li><b>Esforço</b>: P3=1:10</li>
 <li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md90"></a>
+<p>Variáveis:</p><ul>
+<li>Resolvido=(I1=0)</li>
+<li>Eficácia: Percentagem de instãncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))</li>
+<li>Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))</li>
+</ul>
+<p>A eficácia pode ser definida desta forma, atendendo a que este algoritmo apenas pode detectar a isntância resolvida as que têm solução. Para as instância sem solução, irá procurar a solução com diferença mínima, não existindo forma de comprovar que é de facto a mínima pela natureza da abordagem melhorativa.</p>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"><div class="line">═╤═ Instâncias ═══ { 📄 2 📄 3 📄 4 … 📄 998 📄 999 📄 1000 } #999</div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m1000000 &#x241B;[90mP6=&#x241B;[0m20 &#x241B;[90mP7=&#x241B;[0m100 &#x241B;[90mP8=&#x241B;[0m50 &#x241B;[90mP9=&#x241B;[0m1 &#x241B;[90mP10=&#x241B;[0m150 &#x241B;[90mP13=&#x241B;[0m1 &#x241B;[90mP14=&#x241B;[0m100</div>
+<div class="line"> ├─ ⚙   ─ &#x241B;[90mP16=&#x241B;[0m1 &#x241B;[90mP17=&#x241B;[0m1 &#x241B;[90mP18=&#x241B;[0m3 &#x241B;[90mP19=&#x241B;[0m0 &#x241B;[90mP20=&#x241B;[0m1 &#x241B;[90mP21=&#x241B;[0m0 &#x241B;[90mP22=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3</div>
+<div class="line"> ├─ ⚙  [4] ─ &#x241B;[90mP3=&#x241B;[0m4</div>
+<div class="line"> ├─ ⚙  [5] ─ &#x241B;[90mP3=&#x241B;[0m5</div>
+<div class="line"> ├─ ⚙  [6] ─ &#x241B;[90mP3=&#x241B;[0m6</div>
+<div class="line"> ├─ ⚙  [7] ─ &#x241B;[90mP3=&#x241B;[0m7</div>
+<div class="line"> ├─ ⚙  [8] ─ &#x241B;[90mP3=&#x241B;[0m8</div>
+<div class="line"> ├─ ⚙  [9] ─ &#x241B;[90mP3=&#x241B;[0m9</div>
+<div class="line"> ├─ ⚙  [10] ─ &#x241B;[90mP3=&#x241B;[0m10</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:9990   📄 Instâncias: 999   🛠️ Configurações: 10   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 143ms        📋 459   📄 621   🛠️ 9     🖥️ 20    ⚖  64068 10001 129663 6145 135807 </div>
+<div class="line"> ├─ ⏱ 2&#39; 413ms        📋 999   📄 91    🛠️ 9     🖥️ 11    ⚖  426 10000 737334 34966 772299 </div>
+<div class="line"> ├─ ⏱ 3&#39; 419ms        📋 1436  📄 576   🛠️ 8     🖥️ 10    ⚖  0 1789 24421 1157 25577 </div>
+<div class="line"> ├─ ⏱ 4&#39; 470ms        📋 1971  📄 121   🛠️ 8     🖥️ 8     ⚖  436 10000 583891 27682 611572 </div>
+<div class="line"> ├─ ⏱ 5&#39; 586ms        📋 2410  📄 608   🛠️ 7     🖥️ 39    ⚖  0 1625 21033 997 22029 </div>
+<div class="line"> ├─ ⏱ 6&#39; 626ms        📋 2940  📄 151   🛠️ 7     🖥️ 13    ⚖  2264 10000 481535 22826 504360 </div>
+<div class="line"> ├─ ⏱ 7&#39; 668ms        📋 3384  📄 616   🛠️ 6     🖥️ 41    ⚖  0 496 6340 300 6639 </div>
+<div class="line"> ├─ ⏱ 8&#39; 844ms        📋 3909  📄 181   🛠️ 6     🖥️ 30    ⚖  4692 10000 410694 19465 430158 </div>
+<div class="line"> ├─ ⏱ 9&#39; 996ms        📋 4355  📄 711   🛠️ 5     🖥️ 4     ⚖  88054 10002 113099 5359 118457 </div>
+<div class="line"> ├─ ⏱ 10&#39; 1&quot; 32ms     📋 4894  📄 197   🛠️ 5     🖥️ 3     ⚖  3670 10000 382721 18139 400859 </div>
+<div class="line"> ├─ ⏱ 11&#39; 1&quot; 417ms    📋 5350  📄 721   🛠️ 4     🖥️ 33    ⚖  130592 10001 111615 5290 116904 </div>
+<div class="line"> ├─ ⏱ 12&#39; 1&quot; 460ms    📋 5871  📄 217   🛠️ 4     🖥️ 41    ⚖  5510 10000 349454 16564 366017 </div>
+<div class="line"> ├─ ⏱ 13&#39; 1&quot; 488ms    📋 6334  📄 731   🛠️ 3     🖥️ 42    ⚖  86224 10001 110777 5249 116025 </div>
+<div class="line"> ├─ ⏱ 14&#39; 1&quot; 613ms    📋 6848  📄 239   🛠️ 3     🖥️ 42    ⚖  8774 10000 320768 15203 335970 </div>
+<div class="line"> ├─ ⏱ 15&#39; 1&quot; 737ms    📋 7314  📄 747   🛠️ 2     🖥️ 9     ⚖  92892 10002 108338 5135 113472 </div>
+<div class="line"> ├─ ⏱ 16&#39; 1&quot; 923ms    📋 7821  📄 263   🛠️ 2     🖥️ 39    ⚖  9098 10000 294446 13952 308397 </div>
+<div class="line"> ├─ ⏱ 17&#39; 1&quot; 945ms    📋 8296  📄 770   🛠️ 1     🖥️ 45    ⚖  2 10000 103291 4893 108183 </div>
+<div class="line"> ├─ ⏱ 18&#39; 2&quot; 217ms    📋 8794  📄 291   🛠️ 1     🖥️ 10    ⚖  15436 10001 266955 12654 279608 </div>
+<div class="line"> ├─ ⏱ 19&#39; 2&quot; 320ms    📋 9269  📄 732   🛠️ 0     🖥️ 10    ⚖  0 1525 16535 783 17317 </div>
+<div class="line"> ├─ ⏱ 20&#39; 2&quot; 368ms    📋 9779  📄 301   🛠️ 0     🖥️ 12    ⚖  16622 10001 259325 12289 271613 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particaocb_1.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 20&#39; 28&quot; 691ms </div>
+<div class="line"> │  ⏱  CPU total: 16h 2&#39; 28&quot; 500ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 20&#39; 28&quot; 492ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 53&quot; 537ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 97.8%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 99.9% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 20&#39; 28&quot; 692ms ) ═══</div>
+</div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">N   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2200    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">30   </td><td class="markdownTableBodyRight">1687    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2721    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1794    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3239    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">50   </td><td class="markdownTableBodyRight">1726    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3624    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">3950    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">13   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">4269    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">14   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">994   </td><td class="markdownTableBodyRight">80   </td><td class="markdownTableBodyRight">4976    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">995   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10001    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">996   </td><td class="markdownTableBodyRight">70   </td><td class="markdownTableBodyRight">4391    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">997   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10001    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">998   </td><td class="markdownTableBodyRight">90   </td><td class="markdownTableBodyRight">2824    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">999   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10002    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1000   </td><td class="markdownTableBodyRight">80   </td><td class="markdownTableBodyRight">4548   </td></tr>
+</table>
+<p>A tabela foi cortada devido à sua extensão, mas mantém o mesmo padrão.</p>
+<p>Cada instância é gerada com base no número aleatório, pelo que neste caso não temos apenas 999 instâncias. Como foram utilizadas 10 corridas com valores diferentes para P3 por cada tamanho, temos 9990 instâncias.</p>
+<p>As instâncias ímpares não são resolvidas, as pares a partir da instância 10 são todas resolvidas, e apenas exporadicamente há uma instância par não resolvida.</p>
+<p>Como a abordagem melhorativa não permite resolver instâncias sem solução, provavelemnente a razão para não se encontrar a solução é por não existir a solução. Em algumas instâncias é possível confirmar com base na execução das procuras construtivas, outras não.</p>
+<p>Assim vamos utilizar para conjunto de teste apenas instâncias pares, que tenham sido todas resolvidas (com os 10 valores de P3), com os maiores tempos.</p>
+<p>Teste: 948,864,930,922,764,692,806,926,904,870</p>
+<h3><a class="anchor" id="autotoc_md92"></a>
 Teste: particaocb_2</h3>
 <p>Vamos agora estudar o impacto do tamanho da população.</p>
-<h3><a class="anchor" id="autotoc_md91"></a>
+<p>Embora este problema seja distinto do problema das 8 damas, vamos manter os mesmos valores de teste, de modo a apurar o impacto da população na eficiência, cobrindo assim populações desde 5 a 200. As instâncias que utilizamos sabemos terem todas solução, pelo que apenas a eficiência irá ser medida.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: População vs Eficiência</li>
+<li><b>Definição</b>: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200</li>
+<li><b>Esforço</b>: P3=1:10</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_2 -M 1 -P P2=2 P3=1:10 x P6=5,10,15,20,25,30,40,50,75,100,150,200</li>
+</ul>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"></div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">N   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2200   </td></tr>
+</table>
+<h3><a class="anchor" id="autotoc_md93"></a>
 Teste: particaocb_3</h3>
 <p>Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Performance (Eficácia / Eficiência vs tamanho)</li>
+<li><b>Definição</b>: Instâncias: 2:1000; Configurações: (base)</li>
+<li><b>Esforço</b>: P3=1:10</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10</li>
+</ul>
+<details >
+<summary >
+Ver execução:</summary>
+<div class="fragment"></div><!-- fragment --> </details>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">N   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2200   </td></tr>
+</table>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('teste_particao.html',''); initResizabl
 <p>Execução de exemplo com base no problema da Partição. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. No Linux na pasta <code>.../TProcura/Construtiva/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraConstrutiva</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md78"></a>
+<h2><a class="anchor" id="autotoc_md80"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_particao.html#particao-a1">Ação 1 - Ver instâncias</a></li>
@@ -146,7 +146,7 @@ Partição - separe os números em duas partes iguais</div></div>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Podemos agora ver os números a colocar. Somam no total 1192, e tem que se colocar cada número numa das linhas. A soma em cada linha tem de ser igual.</p>
 <p><a class="anchor" id="particao-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md79"></a>
+<h2><a class="anchor" id="autotoc_md81"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver as instâncias que temos. Introduza: <b>1; 10.</b></p>
 <div class="fragment"><div class="line">Opção: 1</div>
@@ -159,7 +159,7 @@ Ação 1 - Ver instâncias</h2>
 </div><!-- fragment --><p> Existem instâncias de 2 a 1000, correspondendo o ID à quantidade de números. As instâncias são geradas aleatoriamente, podendo existir instâncias impossíveis.</p>
 <p>Deixemos a instância 10 para resolução manual.</p>
 <p><a class="anchor" id="particao-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md80"></a>
+<h2><a class="anchor" id="autotoc_md82"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos procurar resolver manualmente a intância. Introduza: <b>2; esq dir esq dir; dir esq dir esq; esq; dir; esq.</b></p>
 <div class="fragment"><div class="line">Opção: 2</div>
@@ -256,7 +256,7 @@ Ação 2 - Resolver manualmente</h2>
 <p>No caso da partição, após um número estar num lado, apenas a soma interessa. Como se coloca os números por ordem, um estado fica igual a todos os que têm o montante igual das peças colocadas. Esquerda e direita é naturalmente irrelevante.</p>
 <p>Como o estado codificado fica pequeno, a expectativa para ganho por repetidos aumenta, face às 8 damas em que se tinham de considerar 3 simetrias, levando a um tempo computacional superior.</p>
 <p><a class="anchor" id="particao-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md81"></a>
+<h2><a class="anchor" id="autotoc_md83"></a>
 Ação 3 - Testes Empíricos</h2>
 <p>Vamos fazer testes empíricos na linha de comandos.</p>
 <p>Vamos obter primeiramente a lista de todos os parâmetros.</p>
@@ -307,7 +307,7 @@ Ação 3 - Testes Empíricos</h2>
 <div class="line">│ I6(IND_LOWER_BOUND): ✓ 6º lugar</div>
 <div class="line">│ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima</div>
 <div class="line">└──────────────────────────────────────────────────────────────────────</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md82"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md84"></a>
 Teste: particao_1</h3>
 <p>O primeiro ponto a testar é a geração de repetidos. Temos muitas instâncias de diferentes tamanhos. Como as instâncias sobem de tamanho com o ID, utilizamos apenas até à instância 200, de 20 em 20, e de cada tamanho aumentamos o esforço com diferentes números de instâncias.</p>
 <ul>
@@ -391,7 +391,7 @@ Teste: particao_1</h3>
 <td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">80036   </td><td class="markdownTableBodyRight">44660   </td></tr>
 </table>
 <p>Confirma-se que os estados gerados, é neste caso bastante compensador. Naturalmente que há apenas uma execução para cada dimensão, mas a execução de maior esforço neste teste, e utilização de intervalos de confiança, permitirá concluir com suporte estatístico que de facto é preferivel utilizar-se a eliminação de estados gerados. Num caso instâncias são resolvidas até 20, mas não com 40 elementos, enquanto que com eliminação de estados gerados resolvem-se instâncias até 102.</p>
-<h3><a class="anchor" id="autotoc_md83"></a>
+<h3><a class="anchor" id="autotoc_md85"></a>
 Teste: particao_2</h3>
 <p>Prosseguimos agora para o teste da ordem aleatória de sucessores. Como sabemos que as instâncias são resolvida até 100, vamos desta vez utilizar as instâncias de 2 a 100, para melhor observar se há ou não vantagem em ter os sucessores aleatórios. Como temos ordens aleatórias, vamos manter um P3 mínimo com 4 aleatórios gerados.</p>
 <ul>
@@ -457,7 +457,7 @@ Teste: particao_2</h3>
 <td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">258,425   </td><td class="markdownTableBodyRight">23,375   </td></tr>
 </table>
 <p>Toda as instâncias foram resolvidas, e surpresa ou não, a ordem aleatória é superior em média à ordem fixa, sendo a média de tempo na instância 92 apenas 46 milisegundos, contra mais de 1 segundo na ordem fixa.</p>
-<h3><a class="anchor" id="autotoc_md84"></a>
+<h3><a class="anchor" id="autotoc_md86"></a>
 Teste: particao_3</h3>
 <p>Pretendemos agora fazer um teste de performance para a melhor configuração, de modo a saber até que instância consegue resolver e com que tempo. Vamos colocar no esforço não apenas o número de 4 execuções para cada dimensão inicial, mas mudando para 40 nos esforços B e C de modo a ganhar precisão estatística, e também o número de instâncias.</p>
 <ul>
