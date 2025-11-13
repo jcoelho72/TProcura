@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('teste_particao_cb.html',''); initResiz
 <p>Execução de exemplo com base no problema da Partição, com codificação binária. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. No Linux na pasta <code>.../TProcura/Melhorativa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md87"></a>
+<h2><a class="anchor" id="autotoc_md84"></a>
 Sumário</h2>
 <ul>
 <li>Ação 1 - Ver instâncias</li>
@@ -107,18 +107,18 @@ Sumário</h2>
 <li><a class="el" href="teste_particao_cb.html#particao-cb3">Ação 3 - Testes Empíricos</a></li>
 </ul>
 <p><a class="anchor" id="particao-cp1"></a></p>
-<h2><a class="anchor" id="autotoc_md88"></a>
+<h2><a class="anchor" id="autotoc_md85"></a>
 Ação 1 - Ver instâncias</h2>
 <p>(fazer)</p>
 <p><a class="anchor" id="particao-cp2"></a></p>
-<h2><a class="anchor" id="autotoc_md89"></a>
+<h2><a class="anchor" id="autotoc_md86"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>(fazer)</p>
 <p><a class="anchor" id="particao-cb3"></a></p>
-<h2><a class="anchor" id="autotoc_md90"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 Ação 3 - Testes Empíricos</h2>
 <p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
-<h3><a class="anchor" id="autotoc_md91"></a>
+<h3><a class="anchor" id="autotoc_md88"></a>
 Teste: particaocb_1</h3>
 <p>Iniciamos o primeiro teste com um ponto de referência para a configuração base, para a partição cvom codificação binária.</p>
 <ul>
@@ -234,7 +234,7 @@ Ver execução:</summary>
 <p>Como a abordagem melhorativa não permite resolver instâncias sem solução, provavelemnente a razão para não se encontrar a solução é por não existir a solução. Em algumas instâncias é possível confirmar com base na execução das procuras construtivas, outras não.</p>
 <p>Assim vamos utilizar para conjunto de teste apenas instâncias pares, que tenham sido todas resolvidas (com os 10 valores de P3), com os maiores tempos.</p>
 <p>Teste: 948,864,930,922,764,692,806,926,904,870</p>
-<h3><a class="anchor" id="autotoc_md92"></a>
+<h3><a class="anchor" id="autotoc_md89"></a>
 Teste: particaocb_2</h3>
 <p>Vamos agora estudar o impacto do tamanho da população.</p>
 <p>Embora este problema seja distinto do problema das 8 damas, vamos manter os mesmos valores de teste, de modo a apurar o impacto da população na eficiência, cobrindo assim populações desde 5 a 200. As instâncias que utilizamos sabemos terem todas solução, pelo que apenas a eficiência irá ser medida.</p>
@@ -247,23 +247,70 @@ Teste: particaocb_2</h3>
 <details >
 <summary >
 Ver execução:</summary>
-<div class="fragment"></div><!-- fragment --> </details>
+<div class="fragment"><div class="line">═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } </div>
+<div class="line"> ├─ 🛠️  ─ &#x241B;[90mP1=&#x241B;[0m1 &#x241B;[90mP2=&#x241B;[0m2 &#x241B;[90mP4=&#x241B;[0m10 &#x241B;[90mP5=&#x241B;[0m1000000 &#x241B;[90mP7=&#x241B;[0m100 &#x241B;[90mP8=&#x241B;[0m50 &#x241B;[90mP9=&#x241B;[0m1 &#x241B;[90mP10=&#x241B;[0m150 &#x241B;[90mP13=&#x241B;[0m1 &#x241B;[90mP14=&#x241B;[0m100 &#x241B;[90mP16=&#x241B;[0m1</div>
+<div class="line"> ├─ ⚙   ─ &#x241B;[90mP17=&#x241B;[0m1 &#x241B;[90mP18=&#x241B;[0m3 &#x241B;[90mP19=&#x241B;[0m0 &#x241B;[90mP20=&#x241B;[0m1 &#x241B;[90mP21=&#x241B;[0m0 &#x241B;[90mP22=&#x241B;[0m1&#x241B;[90m (parâmetros comuns)&#x241B;[0m</div>
+<div class="line">═╪═ Configurações ═══</div>
+<div class="line"> ├─ ⚙  [1] ─ &#x241B;[90mP3=&#x241B;[0m1 &#x241B;[90mP6=&#x241B;[0m5</div>
+<div class="line"> ├─ ⚙  [2] ─ &#x241B;[90mP3=&#x241B;[0m2 &#x241B;[90mP6=&#x241B;[0m5</div>
+<div class="line"> ├─ ⚙  [3] ─ &#x241B;[90mP3=&#x241B;[0m3 &#x241B;[90mP6=&#x241B;[0m5</div>
+<div class="line"> │ ...</div>
+<div class="line"> ├─ ⚙  [118] ─ &#x241B;[90mP3=&#x241B;[0m8 &#x241B;[90mP6=&#x241B;[0m200</div>
+<div class="line"> ├─ ⚙  [119] ─ &#x241B;[90mP3=&#x241B;[0m9 &#x241B;[90mP6=&#x241B;[0m200</div>
+<div class="line"> ├─ ⚙  [120] ─ &#x241B;[90mP3=&#x241B;[0m10 &#x241B;[90mP6=&#x241B;[0m200</div>
+<div class="line">═╧═══════════════════</div>
+<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
+<div class="line"> ├─ 📋 Tarefas:1200   📄 Instâncias: 10   🛠️ Configurações: 120   🖥️ Processos: 48.</div>
+<div class="line"> ├─ ⏱ 1&#39; 104ms        📋 479   📄 692   🛠️ 77    🖥️ 19    ⚖  0 4513 48748 954 49701 </div>
+<div class="line"> ├─ ⏱ 2&#39; 117ms        📋 1172  📄 870   🛠️ 3     🖥️ 47    ⚖  0 895 27369 4530 31898 </div>
+<div class="line"> ├─ 📑  Ficheiro Resultados/particaocb_2.csv gravado.</div>
+<div class="line"> │  ⏱  Tempo real: 2&#39; 12&quot; 320ms </div>
+<div class="line"> │  ⏱  CPU total: 1h 43&#39; 39&quot; 43ms </div>
+<div class="line"> │  ⏱  Espera do gestor: 2&#39; 12&quot; 295ms </div>
+<div class="line"> │  ⏱  Espera trabalhadores: 4&#39; 52&quot; 925ms </div>
+<div class="line"> │  📊  Utilização:</div>
+<div class="line"> │  - Total: 93.3%</div>
+<div class="line"> │  - Gestor: 0.0%</div>
+<div class="line"> │  - Trabalhadores: 95.3% </div>
+<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2&#39; 12&quot; 320ms ) ═══</div>
+</div><!-- fragment --> </details>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">N   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
+<th class="markdownTableHeadCenter">P6(População)   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265    </td></tr>
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">73   </td><td class="markdownTableBodyRight">5307    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">2200   </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">93   </td><td class="markdownTableBodyRight">3510    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">3186    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">4528    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">91   </td><td class="markdownTableBodyRight">4528    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">3417    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">86   </td><td class="markdownTableBodyRight">4433    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">3960    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">75   </td><td class="markdownTableBodyRight">80   </td><td class="markdownTableBodyRight">5487    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">75   </td><td class="markdownTableBodyRight">5850    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">61   </td><td class="markdownTableBodyRight">7522    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">49   </td><td class="markdownTableBodyRight">7553   </td></tr>
 </table>
-<h3><a class="anchor" id="autotoc_md93"></a>
+<p>O parametro P6(População) tem a eficácia a 100% apenas no valor de omissão 20. No entanto existem valores com melhor eficiência. Não se vê no entanto uma tendência clara, apenas uma zona que aparenta ser melhor, entre 10 e 50 elementos, em que o tempo médio é inferior a 5 segundos. Assim, considera-se que este parametro não é crítico, pelo menos na configuração atual dos restantes parametros, pelo que optou-se por manter o valor de omissão: P6=20.</p>
+<h3><a class="anchor" id="autotoc_md90"></a>
 Teste: particaocb_3</h3>
-<p>Vamos agora estudar a probabilidade de mutação e cruzamento, parametros P7 e P8.</p>
+<p>Vamos estudar a probabilidade de cruzamento e mutação, parametros P7 e P8, com os valores de omissão de 100 e 50 respetivamente.</p>
 <ul>
-<li><b>Tipo de Teste / Objetivo</b>: Performance (Eficácia / Eficiência vs tamanho)</li>
-<li><b>Definição</b>: Instâncias: 2:1000; Configurações: (base)</li>
+<li><b>Tipo de Teste / Objetivo</b>: Paramétrico (P7 vs P8)</li>
+<li><b>Definição</b>: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0:100:25 x P8=0:100:25</li>
 <li><b>Esforço</b>: P3=1:10</li>
-<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_3 -M 1 -P P2=2 P6=20 P3=1:10 x P7=0:100:25 x P8=0:100:25</li>
 </ul>
 <details >
 <summary >
