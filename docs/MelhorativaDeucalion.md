@@ -1385,11 +1385,11 @@ Resultados para o torneio:
 
 | P11 vs P12 | 100 | 75 | 50 | 25 | 
 |:---:|---:|---:|---:|---:|
-| 2 | 2005 | 2899 | 4959 | 8776 | 4660 |
-| 3 | 2177 | 2117 | 2179 | 3467 | 2485 |
-| 4 | **1862** | 1960 | 2334 | 2514 | 2167 |
-| 6 | 3177 | 2411 | 2875 | 2942 | 2851 |
-| 10 | 4825 | 3989 | 3731 | 4018 | 4141 |
+| 2 | 2005 | 2899 | 4959 | 8776 | 
+| 3 | 2177 | 2117 | 2179 | 3467 | 
+| 4 | **1862** | 1960 | 2334 | 2514 | 
+| 6 | 3177 | 2411 | 2875 | 2942 | 
+| 10 | 4825 | 3989 | 3731 | 4018 | 
 
 Temos aqui um novo ganho relativamente à parametrização de base. O torneio de tamanho 4 reduz o tempo de forma visivel,
 relativamente ao torneio de tamanho 2. A probabilidade de escolher o melhor mantém-se como melhor opção o 100%.
@@ -1407,7 +1407,7 @@ Este parametro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo va
 Neste caso os descendentes são iguais à população, pelo que no método da idade são todos substituídos.
 
 Nos restantes dois métodos, qualquer que seja a percentagem, os decendentes são adicionados à população e
-no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elmeento com Q outros.
+no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elemento com Q outros.
 Os que perderem mais vezes, são removidos.
 
 O método round-robin tem portanto um parametro Q, que é o número de torneios:  P15(Q_ROUND_ROBIN).
@@ -1436,14 +1436,13 @@ de 20 a 29.
 	- **cp**: TProcuraMelhorativa 2 20:29 -R Resultados/damascp_6 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P3=1:100 x P13=1:3 x P14=0:100:25
 	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P3=1:10 x P13=1:3 x P14=0:100:25
 
-
 \htmlonly
 <details>
-  <summary>Ver script: evolutivos5.sh</summary>
+  <summary>Ver script: evolutivos6.sh</summary>
 <pre>
 #!/bin/bash
-#SBATCH --job-name=evolutivos5
-#SBATCH --output=Resultados/evolutivos5.txt
+#SBATCH --job-name=evolutivos6
+#SBATCH --output=Resultados/evolutivos6.txt
 #SBATCH --account=f202507959cpcaa0a
 #SBATCH --partition=normal-arm
 #SBATCH --time=10:00:00
@@ -1456,18 +1455,12 @@ ml OpenMPI
 
 make mpi || { echo "Compilação falhou"; exit 1; }
 
-# Teste: damasci_5A
-srun bin/MPI/TProcuraMelhorativa 1 10:19 -R Resultados/damasci_5A -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P3=1:100 x P10=100:200:25
-# Teste: damascp_5A
-srun bin/MPI/TProcuraMelhorativa 2 10:19 -R Resultados/damascp_5A -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=1 P3=1:100 x P10=100:200:25
-# Teste: particaocb_5A
-srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_5A -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=1 P3=1:10 x P10=100:200:25
-# Teste: damasci_5B
-srun bin/MPI/TProcuraMelhorativa 1 10:19 -R Resultados/damasci_5B -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=2 P3=1:100 x P11=2,3,4,6,10 x P12=25:100:25
-# Teste: damascp_5B
-srun bin/MPI/TProcuraMelhorativa 2 10:19 -R Resultados/damascp_5B -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P3=1:100 x P11=2,3,4,6,10 x P12=25:100:25
-# Teste: particaocb_5B
-srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_5B -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P3=1:10 x P11=2,3,4,6,10 x P12=25:100:25
+# Teste: damasci_6
+srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_6 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P3=1:100 x P13=1:3 x P14=0:100:25
+# Teste: damascp_6
+srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_6 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P3=1:100 x P13=1:3 x P14=0:100:25
+# Teste: particaocb_6
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P3=1:10 x P13=1:3 x P14=0:100:25
 </pre>
 </details>
 <details>
@@ -1478,3 +1471,34 @@ srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Re
 </pre>
 </details>
 \endhtmlonly
+
+### Resultados: damasci_6
+
+
+### Resultados: damascp_6
+
+
+### Resultados: particaocb_6
+
+
+## Teste 7
+
+P16(ELITISMO) + P17(IMIGRANTES)
+
+## Teste 8
+
+P18(DIVERSIDADE)
+
+## Teste 9
+
+P19(DIST_MINIMA) + P24(TIPO_DISTANCIA)
+
+## Teste 10
+
+P20(TIPO_CRUZAR) + P21(TIPO_MUTAR) +  P23(LIMITE_VIZINHOS)
+
+
+
+
+
+

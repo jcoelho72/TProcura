@@ -7,8 +7,10 @@ A forma como se pode obter acesso ao cluster, bem como a submissão de trabalhos
 
 Vamos submeter os testes com os exemplos do puzzle 8, as 8 damas e partição, com todos os níveis de esforço (A, B e C), em modo MPI.
 
-O script de submissão (construtiva.sh) é o seguinte:
-```
+\htmlonly
+<details>
+  <summary>Ver script: construtiva.sh</summary>
+<pre>
 #!/bin/bash
 #SBATCH --job-name=construtiva
 #SBATCH --output=Resultados/construtiva.txt
@@ -73,48 +75,39 @@ srun bin/MPI/TProcuraConstrutiva 4 2:1000:100 -R Resultados/particao_3 -M 1 -P P
 srun bin/MPI/TProcuraConstrutiva 4 2:1000:10 -R Resultados/particao_3B -M 1 -P P1=3 P2=3 P7=-1 P8=3 P11=1 P3=1:40
 # esforço C
 srun bin/MPI/TProcuraConstrutiva 4 2:1000 -R Resultados/particao_3C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P11=1 P3=1:40
-
-```
-
-O script é idêntico ao realizado com o teste tvetor.sh, mas temos agora as execuções dos exemplos construtivos.
-
-Como o executável tem vários problemas, a escolha do problema é colocada no primeiro argumento do programa,
-2 para o puzzle8, 3 para as 8 damas e 4 para o problema da partição.
-
-No cluster submetemos o trabalho com o comando:
-```
-/TProcura/Construtiva/Teste$ sbatch construtiva.sh
-```
-
-Podemos ver se o trabalho está em execução com:
-```
-/TProcura/Construtiva/Teste$ squeue --me
-```
-Para verificar o output do trabalho, mesmo durante a execução, consultamos o ficheiro Resultados/construtiva.txt vendo o final do ficheiro
-```
-/TProcura/Teste$ tail -f Resultados/construtiva.txt
-```
-
-Pode-se ver o conteúdo final do ficheiro de resultados:
-
+</pre>
+</details>
 <details>
-  <summary>Ver conteúdo final de Resultados/construtiva.txt</summary>
-
-O conteúdo final do ficheiro é o seguinte:
-```
+<summary>Ver comandos no cluster</summary>
+No cluster submetemos o trabalho com o comando:
+<pre>
+/TProcura/Construtiva/Teste$ sbatch evolutivos1.sh
+</pre>
+Podemos ver se o trabalho está em execução com:
+<pre>
+/TProcura/Construtiva/Teste$ squeue --me
+</pre>
+Para verificar o output do trabalho, mesmo durante a execução, consultamos o ficheiro Resultados/construtiva.txt vendo o final do ficheiro
+<pre>
+/TProcura/Teste$ tail -f Resultados/evolutivos1.txt
+</pre>
+</details>
+<details>
+  <summary>Ver execução:</summary>
+<pre>
 mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp ../../TRand.cpp ../CListaNo.cpp ../TProcuraConstrutiva.cpp Puzzle8.cpp OitoDamas.cpp teste.cpp Particao.cpp Aspirador.cpp
 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 101 📄 201 📄 301 📄 401 📄 501 📄 601 📄 701 📄 801 📄 901 } 
- ├─ 🛠️  ─ [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m0 [90mP8=[0m2 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>2 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m1 [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m3 [90mP3=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m4 [90mP3=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>4 <span style="color:gray">P3=</span>1
  │ ...
- ├─ ⚙  [22] ─ [90mP1=[0m5 [90mP3=[0m4
- ├─ ⚙  [23] ─ [90mP1=[0m6 [90mP3=[0m4
- ├─ ⚙  [24] ─ [90mP1=[0m7 [90mP3=[0m4
+ ├─ ⚙  [22] ─ <span style="color:gray">P1=</span>5 <span style="color:gray">P3=</span>4
+ ├─ ⚙  [23] ─ <span style="color:gray">P1=</span>6 <span style="color:gray">P3=</span>4
+ ├─ ⚙  [24] ─ <span style="color:gray">P1=</span>7 <span style="color:gray">P3=</span>4
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:240   📄 Instâncias: 10   🛠️ Configurações: 24   🖥️ Processos: 48.
@@ -131,15 +124,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 11" 165ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 11 📄 21 … 📄 971 📄 981 📄 991 } #100
- ├─ 🛠️  ─ [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m0 [90mP8=[0m2 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>2 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m1 [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m3 [90mP3=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m4 [90mP3=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>4 <span style="color:gray">P3=</span>1
  │ ...
- ├─ ⚙  [22] ─ [90mP1=[0m5 [90mP3=[0m4
- ├─ ⚙  [23] ─ [90mP1=[0m6 [90mP3=[0m4
- ├─ ⚙  [24] ─ [90mP1=[0m7 [90mP3=[0m4
+ ├─ ⚙  [22] ─ <span style="color:gray">P1=</span>5 <span style="color:gray">P3=</span>4
+ ├─ ⚙  [23] ─ <span style="color:gray">P1=</span>6 <span style="color:gray">P3=</span>4
+ ├─ ⚙  [24] ─ <span style="color:gray">P1=</span>7 <span style="color:gray">P3=</span>4
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:2400   📄 Instâncias: 100   🛠️ Configurações: 24   🖥️ Processos: 48.
@@ -160,15 +153,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 57" 372ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 … 📄 998 📄 999 📄 1000 } #1000
- ├─ 🛠️  ─ [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m0 [90mP8=[0m2 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>2 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m1 [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m3 [90mP3=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m4 [90mP3=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>4 <span style="color:gray">P3=</span>1
  │ ...
- ├─ ⚙  [22] ─ [90mP1=[0m5 [90mP3=[0m4
- ├─ ⚙  [23] ─ [90mP1=[0m6 [90mP3=[0m4
- ├─ ⚙  [24] ─ [90mP1=[0m7 [90mP3=[0m4
+ ├─ ⚙  [22] ─ <span style="color:gray">P1=</span>5 <span style="color:gray">P3=</span>4
+ ├─ ⚙  [23] ─ <span style="color:gray">P1=</span>6 <span style="color:gray">P3=</span>4
+ ├─ ⚙  [24] ─ <span style="color:gray">P1=</span>7 <span style="color:gray">P3=</span>4
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:24000   📄 Instâncias: 1000   🛠️ Configurações: 24   🖥️ Processos: 48.
@@ -180,10 +173,10 @@ slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15
  ├─ ⏱ 1' 568ms        📋 4693  📄 350   🛠️ 19    🖥️ 43    ⚖  24 8259 0 2118081 3679711 1 
 
 ═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m4 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP8=[0m1
- ├─ ⚙  [2] ─ [90mP8=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P8=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P8=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:74   📄 Instâncias: 37   🛠️ Configurações: 2   🖥️ Processos: 48.
@@ -273,16 +266,16 @@ slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10" 29ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m1 [90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>1 <span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m1 [90mP11=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m2 [90mP11=[0m0
- ├─ ⚙  [4] ─ [90mP3=[0m2 [90mP11=[0m1
- ├─ ⚙  [5] ─ [90mP3=[0m3 [90mP11=[0m0
- ├─ ⚙  [6] ─ [90mP3=[0m3 [90mP11=[0m1
- ├─ ⚙  [7] ─ [90mP3=[0m4 [90mP11=[0m0
- ├─ ⚙  [8] ─ [90mP3=[0m4 [90mP11=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [5] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [6] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [7] ─ <span style="color:gray">P3=</span>4 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [8] ─ <span style="color:gray">P3=</span>4 <span style="color:gray">P11=</span>1
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:296   📄 Instâncias: 37   🛠️ Configurações: 8   🖥️ Processos: 48.
@@ -299,18 +292,18 @@ slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 19" 992ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m1 [90mP11=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
- ├─ ⚙  [4] ─ [90mP3=[0m4
- ├─ ⚙  [5] ─ [90mP3=[0m5
- ├─ ⚙  [6] ─ [90mP3=[0m6
- ├─ ⚙  [7] ─ [90mP3=[0m7
- ├─ ⚙  [8] ─ [90mP3=[0m8
- ├─ ⚙  [9] ─ [90mP3=[0m9
- ├─ ⚙  [10] ─ [90mP3=[0m10
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>4
+ ├─ ⚙  [5] ─ <span style="color:gray">P3=</span>5
+ ├─ ⚙  [6] ─ <span style="color:gray">P3=</span>6
+ ├─ ⚙  [7] ─ <span style="color:gray">P3=</span>7
+ ├─ ⚙  [8] ─ <span style="color:gray">P3=</span>8
+ ├─ ⚙  [9] ─ <span style="color:gray">P3=</span>9
+ ├─ ⚙  [10] ─ <span style="color:gray">P3=</span>10
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:370   📄 Instâncias: 37   🛠️ Configurações: 10   🖥️ Processos: 48.
@@ -326,15 +319,15 @@ slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 690ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m1 [90mP11=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
  │ ...
- ├─ ⚙  [98] ─ [90mP3=[0m98
- ├─ ⚙  [99] ─ [90mP3=[0m99
- ├─ ⚙  [100] ─ [90mP3=[0m100
+ ├─ ⚙  [98] ─ <span style="color:gray">P3=</span>98
+ ├─ ⚙  [99] ─ <span style="color:gray">P3=</span>99
+ ├─ ⚙  [100] ─ <span style="color:gray">P3=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.
@@ -350,15 +343,15 @@ slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 8" 537ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m1 [90mP11=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
  │ ...
- ├─ ⚙  [998] ─ [90mP3=[0m998
- ├─ ⚙  [999] ─ [90mP3=[0m999
- ├─ ⚙  [1000] ─ [90mP3=[0m1000
+ ├─ ⚙  [998] ─ <span style="color:gray">P3=</span>998
+ ├─ ⚙  [999] ─ <span style="color:gray">P3=</span>999
+ ├─ ⚙  [1000] ─ <span style="color:gray">P3=</span>1000
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:37000   📄 Instâncias: 37   🛠️ Configurações: 1000   🖥️ Processos: 48.
@@ -374,10 +367,10 @@ slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 15" 403ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 } 
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m4 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP8=[0m1
- ├─ ⚙  [2] ─ [90mP8=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P8=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P8=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:20   📄 Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 48.
@@ -413,15 +406,15 @@ slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10" 12ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 } 
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP8=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP8=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP8=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P8=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P8=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P8=</span>1
  │ ...
- ├─ ⚙  [18] ─ [90mP3=[0m8 [90mP8=[0m3
- ├─ ⚙  [19] ─ [90mP3=[0m9 [90mP8=[0m3
- ├─ ⚙  [20] ─ [90mP3=[0m10 [90mP8=[0m3
+ ├─ ⚙  [18] ─ <span style="color:gray">P3=</span>8 <span style="color:gray">P8=</span>3
+ ├─ ⚙  [19] ─ <span style="color:gray">P3=</span>9 <span style="color:gray">P8=</span>3
+ ├─ ⚙  [20] ─ <span style="color:gray">P3=</span>10 <span style="color:gray">P8=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:200   📄 Instâncias: 10   🛠️ Configurações: 20   🖥️ Processos: 48.
@@ -440,15 +433,15 @@ slurmstepd: error: *** STEP 636184.2 ON cna1632 CANCELLED AT 2025-11-07T11:19:15
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 31" 183ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 } 
- ├─ 🛠️  ─ [90mP1=[0m2 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP8=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP8=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP8=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P8=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P8=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P8=</span>1
  │ ...
- ├─ ⚙  [198] ─ [90mP3=[0m98 [90mP8=[0m3
- ├─ ⚙  [199] ─ [90mP3=[0m99 [90mP8=[0m3
- ├─ ⚙  [200] ─ [90mP3=[0m100 [90mP8=[0m3
+ ├─ ⚙  [198] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P8=</span>3
+ ├─ ⚙  [199] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P8=</span>3
+ ├─ ⚙  [200] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P8=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
 slurmstepd: error: Detected 1 oom_kill event in StepId=636184.10. Some of the step tasks have been OOM Killed.
@@ -459,16 +452,16 @@ slurmstepd: error: *** STEP 636184.10 ON cna1632 CANCELLED AT 2025-11-07T11:21:3
  ├─ 📋 Tarefas:2000   📄 Instâncias: 10   🛠️ Configurações: 200   🖥️ Processos: 48.
 
 ═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 📄 32 📄 42 📄 52 📄 62 📄 72 📄 82 📄 92 } 
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m3 [90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>3 <span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m0
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m0
- ├─ ⚙  [4] ─ [90mP3=[0m4 [90mP11=[0m0
- ├─ ⚙  [5] ─ [90mP3=[0m1 [90mP11=[0m1
- ├─ ⚙  [6] ─ [90mP3=[0m2 [90mP11=[0m1
- ├─ ⚙  [7] ─ [90mP3=[0m3 [90mP11=[0m1
- ├─ ⚙  [8] ─ [90mP3=[0m4 [90mP11=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>4 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [5] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [6] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [7] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [8] ─ <span style="color:gray">P3=</span>4 <span style="color:gray">P11=</span>1
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:80   📄 Instâncias: 10   🛠️ Configurações: 8   🖥️ Processos: 48.
@@ -484,15 +477,15 @@ slurmstepd: error: *** STEP 636184.10 ON cna1632 CANCELLED AT 2025-11-07T11:21:3
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 6" 346ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 📄 32 📄 42 📄 52 📄 62 📄 72 📄 82 📄 92 } 
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m3 [90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>3 <span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m0
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m0
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>0
  │ ...
- ├─ ⚙  [78] ─ [90mP3=[0m38 [90mP11=[0m1
- ├─ ⚙  [79] ─ [90mP3=[0m39 [90mP11=[0m1
- ├─ ⚙  [80] ─ [90mP3=[0m40 [90mP11=[0m1
+ ├─ ⚙  [78] ─ <span style="color:gray">P3=</span>38 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [79] ─ <span style="color:gray">P3=</span>39 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [80] ─ <span style="color:gray">P3=</span>40 <span style="color:gray">P11=</span>1
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:800   📄 Instâncias: 10   🛠️ Configurações: 80   🖥️ Processos: 48.
@@ -509,15 +502,15 @@ slurmstepd: error: *** STEP 636184.10 ON cna1632 CANCELLED AT 2025-11-07T11:21:3
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 16" 825ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 📄 32 📄 42 📄 52 📄 62 📄 72 📄 82 📄 92 } 
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m3 [90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>3 <span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m0
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m0
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>0
  │ ...
- ├─ ⚙  [798] ─ [90mP3=[0m398 [90mP11=[0m1
- ├─ ⚙  [799] ─ [90mP3=[0m399 [90mP11=[0m1
- ├─ ⚙  [800] ─ [90mP3=[0m400 [90mP11=[0m1
+ ├─ ⚙  [798] ─ <span style="color:gray">P3=</span>398 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [799] ─ <span style="color:gray">P3=</span>399 <span style="color:gray">P11=</span>1
+ ├─ ⚙  [800] ─ <span style="color:gray">P3=</span>400 <span style="color:gray">P11=</span>1
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:8000   📄 Instâncias: 10   🛠️ Configurações: 800   🖥️ Processos: 48.
@@ -535,12 +528,12 @@ slurmstepd: error: *** STEP 636184.10 ON cna1632 CANCELLED AT 2025-11-07T11:21:3
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 10" 871ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 102 📄 202 📄 302 📄 402 📄 502 📄 602 📄 702 📄 802 📄 902 } 
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m3 [90mP11=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>3 <span style="color:gray">P11=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
- ├─ ⚙  [4] ─ [90mP3=[0m4
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>4
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:40   📄 Instâncias: 10   🛠️ Configurações: 4   🖥️ Processos: 48.
@@ -557,15 +550,15 @@ slurmstepd: error: *** STEP 636184.10 ON cna1632 CANCELLED AT 2025-11-07T11:21:3
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10" 18ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 … 📄 972 📄 982 📄 992 } #100
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m3 [90mP11=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>3 <span style="color:gray">P11=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
  │ ...
- ├─ ⚙  [38] ─ [90mP3=[0m38
- ├─ ⚙  [39] ─ [90mP3=[0m39
- ├─ ⚙  [40] ─ [90mP3=[0m40
+ ├─ ⚙  [38] ─ <span style="color:gray">P3=</span>38
+ ├─ ⚙  [39] ─ <span style="color:gray">P3=</span>39
+ ├─ ⚙  [40] ─ <span style="color:gray">P3=</span>40
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:4000   📄 Instâncias: 100   🛠️ Configurações: 40   🖥️ Processos: 48.
@@ -644,15 +637,15 @@ slurmstepd: error: *** STEP 636184.10 ON cna1632 CANCELLED AT 2025-11-07T11:21:3
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 10' 44" 902ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 3 📄 4 … 📄 998 📄 999 📄 1000 } #999
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m3 [90mP11=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>3 <span style="color:gray">P11=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
  │ ...
- ├─ ⚙  [38] ─ [90mP3=[0m38
- ├─ ⚙  [39] ─ [90mP3=[0m39
- ├─ ⚙  [40] ─ [90mP3=[0m40
+ ├─ ⚙  [38] ─ <span style="color:gray">P3=</span>38
+ ├─ ⚙  [39] ─ <span style="color:gray">P3=</span>39
+ ├─ ⚙  [40] ─ <span style="color:gray">P3=</span>40
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:39960   📄 Instâncias: 999   🛠️ Configurações: 40   🖥️ Processos: 48.
@@ -757,16 +750,19 @@ slurmstepd: error: *** STEP 636184.10 ON cna1632 CANCELLED AT 2025-11-07T11:21:3
 srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
 slurmstepd: error: *** STEP 636184.16 ON cna1632 CANCELLED AT 2025-11-07T13:15:37 DUE TO TIME LIMIT ***
 slurmstepd: error: *** JOB 636184 ON cna1632 CANCELLED AT 2025-11-07T13:15:37 DUE TO TIME LIMIT ***
-```
+</pre>
 </details>
+\endhtmlonly
 
 Ocorreram 3 situações:
 - o teste puzzle8_1C foi abortado devido a problema de memória. Esta situação ocorre devido a estar o algoritmo em largura sem limite, e ter existindo uma instância que requer demasiada memória para executar o algoritmo
 - o teste particao_1C foi abortado devido a erro de memória também, mas neste caso houve erro no parametro P1=2, o que é o custo uniforme, e não P1=3 como deveria, sendo a procura em profundidade.
 - o teste particao_3C foi abortado devido a limite de tempo para todo o processo ser definido em 2 horas. Não ficou nada gravado dos resultados já obtidos, algo a alterar no futuro, de modo a permitir a continuação de onde se parou.
 
-O novo script de submissão (construtiva2.sh) é o seguinte:
-```
+\htmlonly
+<details>
+  <summary>Ver novo script: construtiva2.sh</summary>
+<pre>
 #!/bin/bash
 #SBATCH --job-name=construtiva2
 #SBATCH --output=Resultados/construtiva2.txt
@@ -792,28 +788,24 @@ srun bin/MPI/TProcuraConstrutiva 4 2:200:20 -R Resultados/particao_1C -M 1 -P P1
 # Teste: particao_3
 # esforço C --- repetir já que não terminou
 srun bin/MPI/TProcuraConstrutiva 4 2:1000 -R Resultados/particao_3C -M 1 -P P1=3 P2=2 P7=-1 P8=3 P11=1 P3=1:40
-```
-
-O conteúdo do ficheiro de resultados da segunda execução:
-
+</pre>
+</details>
 <details>
-  <summary>Ver conteúdo final de Resultados/construtiva2.txt</summary>
-
-O conteúdo final do ficheiro é o seguinte:
-```
+  <summary>Ver execução:</summary>
+<pre>
 mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp ../../TRand.cpp ../CListaNo.cpp ../TProcuraConstrutiva.cpp Puzzle8.cpp OitoDamas.cpp teste.cpp Particao.cpp Aspirador.cpp
 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 … 📄 998 📄 999 📄 1000 } #1000
- ├─ 🛠️  ─ [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m0 [90mP8=[0m2 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>2 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m3 [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m4 [90mP3=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m5 [90mP3=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>4 <span style="color:gray">P3=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>5 <span style="color:gray">P3=</span>1
  │ ...
- ├─ ⚙  [18] ─ [90mP1=[0m5 [90mP3=[0m4
- ├─ ⚙  [19] ─ [90mP1=[0m6 [90mP3=[0m4
- ├─ ⚙  [20] ─ [90mP1=[0m7 [90mP3=[0m4
+ ├─ ⚙  [18] ─ <span style="color:gray">P1=</span>5 <span style="color:gray">P3=</span>4
+ ├─ ⚙  [19] ─ <span style="color:gray">P1=</span>6 <span style="color:gray">P3=</span>4
+ ├─ ⚙  [20] ─ <span style="color:gray">P1=</span>7 <span style="color:gray">P3=</span>4
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:20000   📄 Instâncias: 1000   🛠️ Configurações: 20   🖥️ Processos: 48.
@@ -834,15 +826,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 5' 36" 154ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 } 
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP11=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P11=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP8=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP8=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP8=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P8=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P8=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P8=</span>1
  │ ...
- ├─ ⚙  [198] ─ [90mP3=[0m98 [90mP8=[0m3
- ├─ ⚙  [199] ─ [90mP3=[0m99 [90mP8=[0m3
- ├─ ⚙  [200] ─ [90mP3=[0m100 [90mP8=[0m3
+ ├─ ⚙  [198] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P8=</span>3
+ ├─ ⚙  [199] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P8=</span>3
+ ├─ ⚙  [200] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P8=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:2000   📄 Instâncias: 10   🛠️ Configurações: 200   🖥️ Processos: 48.
@@ -862,15 +854,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4' 50" 163ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 2 📄 3 📄 4 … 📄 998 📄 999 📄 1000 } #999
- ├─ 🛠️  ─ [90mP1=[0m3 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m-1 [90mP8=[0m3 [90mP11=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>3 <span style="color:gray">P11=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
  │ ...
- ├─ ⚙  [38] ─ [90mP3=[0m38
- ├─ ⚙  [39] ─ [90mP3=[0m39
- ├─ ⚙  [40] ─ [90mP3=[0m40
+ ├─ ⚙  [38] ─ <span style="color:gray">P3=</span>38
+ ├─ ⚙  [39] ─ <span style="color:gray">P3=</span>39
+ ├─ ⚙  [40] ─ <span style="color:gray">P3=</span>40
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:39960   📄 Instâncias: 999   🛠️ Configurações: 40   🖥️ Processos: 48.
@@ -1002,8 +994,10 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraConstrutiva ../../TProcura.cpp .
  │  - Gestor: 0.0%
  │  - Trabalhadores: 100.0% 
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1h 58' 38" 187ms ) ═══
-```
+</pre>
 </details>
+\endhtmlonly
+
 
 Desta vez todos os testes correram até ao fim, e os ficheiros de resultados foram gerados corretamente.
 A última corrida particao_3C podemos ver que utilizou quase 2 horas, correspondendo a um tempo de CPU total de quase 4 dias.
@@ -1016,7 +1010,7 @@ No puzzle 8 podemos ver a diferença de informação conforme o esforço, no tes
 
 Esforço A:
 
-| Rótulos de Linha | 1:Largura Primeiro | 3:Profundidade Primeiro | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
+| I1 | 1:Largura Primeiro | 3:Profundidade Primeiro | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
 |:---:|---:|---:|---:|---:|---:|---:|
 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 13 | 10 | 21 | 1 | 0 | 0 | 115 |
@@ -1034,7 +1028,7 @@ não foram resolvidos.
 
 Esforço B:
 
-| Rótulos de Linha | 1:Largura Primeiro | 3:Profundidade Primeiro | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
+| I1 | 1:Largura Primeiro | 3:Profundidade Primeiro | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
 |:---:|---:|---:|---:|---:|---:|---:|
 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 3 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -1056,7 +1050,7 @@ Com a utilização de mais instâncias, conseguimos um detalhe maior, mas mesmo 
 
 Esforço C:
 
-| Rótulos de Linha | 3:Profundidade Primeiro | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
+| I1 | 3:Profundidade Primeiro | 4:Melhor Primeiro | 5:A* | 6:IDA* | 7:Branch and Bound |
 |:---:|---:|---:|---:|---:|---:|
 | 1 | 0 | 0 | 0 | 0 | 0 |
 | 2 | 0 | 0 | 0 | 0 | 0 |
@@ -1115,7 +1109,7 @@ A instância mais dificil obtida, em termos de distância à solução, foi a de
 
 Temos neste problema 3 testes. O primeiro é reproduzido com todas as instâncias de 4 a 40 damas.
 
-| Rótulos de Linha | 1:ignorar | 3:gerados |
+| Instância | 1:ignorar | 3:gerados |
 |:---:|---:|---:|
 | 4 | 0 | 15 |
 | 5 | 0 | 15 |
@@ -1161,7 +1155,7 @@ pelo que justifica-se ignorar os estados repetidos.
 
 No teste 2 vamos testar baralhar a ordem dos sucessores, para ver se há diferenças significativas.
 
-| Rótulos de Linha | 0 | 1 |
+| Instância | 0 | 1 |
 |:---:|---:|---:|
 | 4 | 0 | 0 |
 | 5 | 0 | 0 |
@@ -1215,7 +1209,7 @@ Assim é mais interessante utilizar percentis para observar o crescimento do tem
 
 Colocamos também o nível de esforço para se ver o ganho de informação.
 
-| Rótulos de Linha | 3<br>Percentil10 | Mediana | Percentil90 | 3B<br>Percentil10 | Mediana | Percentil90 | 3C<br>Percentil10 | Mediana | Percentil90 |
+| Instância | 3<br>Percentil10 | Mediana | Percentil90 | 3B<br>Percentil10 | Mediana | Percentil90 | 3C<br>Percentil10 | Mediana | Percentil90 |
 |:---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -1268,7 +1262,7 @@ Se a ordem aleatória não é favorável, o tempo pode ser muito elevado, mas na
 Vamos seguir os 3 testes realizados. O primeiro visa analisar a influência do bloqueio de estados repetidos.
 Vamos desta vez colocar a taxa de instâncias resolvidas, mediante o esforço.
 
-| Rótulos de Linha | 1<br>1:ignorar | 3:gerados | 1B<br>1:ignorar | 3:gerados | 1C<br>1:ignorar | 3:gerados |
+| N | 1<br>1:ignorar | 3:gerados | 1B<br>1:ignorar | 3:gerados | 1C<br>1:ignorar | 3:gerados |
 |:---:|---:|---:|---:|---:|---:|---:|
 | 2 | 1 | 1 | 1 | 1 | 1 | 1 |
 | 22 | 1 | 1 | 1 | 1 | 1 | 1 |
@@ -1289,7 +1283,7 @@ nenhuma instância com 42 ou mais números é resolvida.
 O segundo teste verifica a influência da ordem dos sucessores, ordem original ou baralhada.
 As instâncias acabam por ser todas resolvidas, mas podemos observar diferenças nos tempos.
 
-| Rótulos de Linha | 2<br>0 | 1 | 2B<br>0 | 1 | 2C<br>0 | 1 |
+| N | 2<br>0 | 1 | 2B<br>0 | 1 | 2C<br>0 | 1 |
 |:---:|---:|---:|---:|---:|---:|---:|
 | 2 | 15 | 21 | 15 | 16 | 15 | 15 |
 | 12 | 16 | 23 | 16 | 16 | 16 | 15 |
