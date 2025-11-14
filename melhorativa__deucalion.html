@@ -1845,11 +1845,11 @@ Teste - damascp_6B</h3>
 </ul>
 <p> 
 <details>
-  <summary>Ver script: evolutivos6.sh</summary>
+  <summary>Ver script: evolutivos6B.sh</summary>
 <pre>
 #!/bin/bash
-#SBATCH --job-name=evolutivos6
-#SBATCH --output=Resultados/evolutivos6.txt
+#SBATCH --job-name=evolutivos6B
+#SBATCH --output=Resultados/evolutivos6B.txt
 #SBATCH --account=f202507959cpcaa0a
 #SBATCH --partition=normal-arm
 #SBATCH --time=10:00:00
@@ -1869,25 +1869,172 @@ srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_6B -M 1 -P P2=2 P
 <details>
   <summary>Ver execução:</summary>
 <pre>
+mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp ../../TRand.cpp ../TProcuraMelhorativa.cpp ../TCodificacaoArvore.cpp ../TCodificacaoBinaria.cpp ../TCodificacaoInteira.cpp ../TCodificacaoReal.cpp ../TCodificacaoPermutacao.cpp ProblemaArtificial.cpp OitoDamas.cpp teste.cpp Particao.cpp
 
 
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP13=[0m3
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP15=[0m2
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP15=[0m2
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP15=[0m2
+ │ ...
+ ├─ ⚙  [498] ─ [90mP3=[0m98 [90mP15=[0m10
+ ├─ ⚙  [499] ─ [90mP3=[0m99 [90mP15=[0m10
+ ├─ ⚙  [500] ─ [90mP3=[0m100 [90mP15=[0m10
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:5000   📄 Instâncias: 10   🛠️ Configurações: 500   🖥️ Processos: 48.
+ ├─ ⏱ 1' 49ms         📋 1904  📄 20    🛠️ 310   🖥️ 40    ⚖  0 224 22644 1890 24533 
+ ├─ ⏱ 2' 114ms        📋 3796  📄 22    🛠️ 121   🖥️ 22    ⚖  0 282 26554 2223 28776 
+ ├─ 📑  Ficheiro Resultados/damascp_6B.csv gravado.
+ │  ⏱  Tempo real: 2' 43" 279ms 
+ │  ⏱  CPU total: 2h 7' 54" 131ms 
+ │  ⏱  Espera do gestor: 2' 43" 170ms 
+ │  ⏱  Espera trabalhadores: 4' 41" 546ms 
+ │  📊  Utilização:
+ │  - Total: 94.3%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 96.3% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 43" 279ms ) ═══
 </pre>
 </details>
 </p>
 <h3><a class="anchor" id="autotoc_md45"></a>
 Resultados: damascp_6B</h3>
+<p>| P15 | Eficiência | ICinf | ICsup | | 2 | <b>1300</b> | 1182 | 1419 | | 3 | 1441 | 1304 | 1579 | | 4 | 1544 | 1396 | 1691 | | 6 | 1575 | 1427 | 1724 | | 10 | 1552 | 1407 | 1697 |</p>
+<p>O melhor registo é com Q igual a 2, embora o intervalo de confiança intersecte o valor seguinte. Assim sendo vamos alterar o valor para P15=2, ficando os restantes dois valores com P13=3 P14=100.</p>
 <h2><a class="anchor" id="autotoc_md46"></a>
 Teste 7</h2>
-<p>P16(ELITISMO) + P17(IMIGRANTES)</p>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<p>Vamos agora ver a influência do P6 elitísmo e P17 imigrantes, cujo valor de omissão é 1. O elitísmo garante que se existirem K elementos da população antiga melhores que na nova população, esses elementos mantêm-se na nova população. Os imigrantes garantem um número de elementos estrangeiros na população, que são gerados aleatoriamente.</p>
+<p>Vamos ver possibilidades de números pequenos, já que valores demasiado altos bloqueiam a evolução: 0:5</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Paramétrico P16 vs P17</li>
+<li><b>Definição</b>:<ul>
+<li><b>ci</b>: Instâncias: 20:29; Configurações: P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=0:5 x P17=0:5</li>
+<li><b>cp</b>: Instâncias: 20:29; Configurações: P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=0:5 x P17=0:5</li>
+<li><b>cb</b>: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=0:5 x P17=0:5</li>
+</ul>
+</li>
+<li><b>Esforço</b>:<ul>
+<li><b>ci+cp</b>: P3=1:100</li>
+<li><b>cb</b>: P3=1:10</li>
+</ul>
+</li>
+<li><b>Execução</b>:<ul>
+<li><b>ci</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 1 20:29 -R Resultados/damasci_7 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P3=1:100 x P16=0:5 x P17=0:5</li>
+<li><b>cp</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 2 20:29 -R Resultados/damascp_7 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P3=1:100 x P16=0:5 x P17=0:5</li>
+<li><b>cb</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:5 x P17=0:5</li>
+</ul>
+</li>
+</ul>
+<p> 
+<details>
+  <summary>Ver script: evolutivos7.sh</summary>
+<pre>
+#!/bin/bash
+#SBATCH --job-name=evolutivos7
+#SBATCH --output=Resultados/evolutivos7.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
+
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: damasci_7
+srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_7 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P3=1:100 x P16=0:5 x P17=0:5
+# Teste: damascp_7
+srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_7 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P3=1:100 x P16=0:5 x P17=0:5
+# Teste: particaocb_7
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:5 x P17=0:5
+</pre>
+</details>
+<details>
+  <summary>Ver execução:</summary>
+<pre>
+
+</pre>
+</details>
+</p>
+<h3><a class="anchor" id="autotoc_md47"></a>
+Resultados: damasci_7</h3>
+<h3><a class="anchor" id="autotoc_md48"></a>
+Resultados: damascp_7</h3>
+<h3><a class="anchor" id="autotoc_md49"></a>
+Resultados: particaocb_7</h3>
+<h2><a class="anchor" id="autotoc_md50"></a>
 Teste 8</h2>
 <p>P18(DIVERSIDADE)</p>
-<h2><a class="anchor" id="autotoc_md48"></a>
+<p> 
+<details>
+  <summary>Ver script: evolutivos8.sh</summary>
+<pre>
+</pre>
+</details>
+<details>
+  <summary>Ver execução:</summary>
+<pre>
+
+</pre>
+</details>
+</p>
+<h3><a class="anchor" id="autotoc_md51"></a>
+Resultados: damasci_8</h3>
+<h3><a class="anchor" id="autotoc_md52"></a>
+Resultados: damascp_8</h3>
+<h3><a class="anchor" id="autotoc_md53"></a>
+Resultados: particaocb_8</h3>
+<h2><a class="anchor" id="autotoc_md54"></a>
 Teste 9</h2>
 <p>P19(DIST_MINIMA) + P24(TIPO_DISTANCIA)</p>
-<h2><a class="anchor" id="autotoc_md49"></a>
+<p> 
+<details>
+  <summary>Ver script: evolutivos9.sh</summary>
+<pre>
+</pre>
+</details>
+<details>
+  <summary>Ver execução:</summary>
+<pre>
+
+</pre>
+</details>
+</p>
+<h3><a class="anchor" id="autotoc_md55"></a>
+Resultados: damasci_9</h3>
+<h3><a class="anchor" id="autotoc_md56"></a>
+Resultados: damascp_9</h3>
+<h3><a class="anchor" id="autotoc_md57"></a>
+Resultados: particaocb_9</h3>
+<h2><a class="anchor" id="autotoc_md58"></a>
 Teste 10</h2>
-<p>P20(TIPO_CRUZAR) + P21(TIPO_MUTAR) + P23(LIMITE_VIZINHOS) </p>
+<p>P20(TIPO_CRUZAR) + P21(TIPO_MUTAR) + P23(LIMITE_VIZINHOS)</p>
+<p> 
+<details>
+  <summary>Ver script: evolutivos10.sh</summary>
+<pre>
+</pre>
+</details>
+<details>
+  <summary>Ver execução:</summary>
+<pre>
+
+</pre>
+</details>
+</p>
+<h3><a class="anchor" id="autotoc_md59"></a>
+Resultados: damasci_10</h3>
+<h3><a class="anchor" id="autotoc_md60"></a>
+Resultados: damascp_10</h3>
+<h3><a class="anchor" id="autotoc_md61"></a>
+Resultados: particaocb_10</h3>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

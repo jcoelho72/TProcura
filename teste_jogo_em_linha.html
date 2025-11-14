@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('teste_jogo_em_linha.html',''); initRes
 <div class="textblock"><p>Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>, e execute. No Linux na pasta <code>.../TProcura/Adversa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraAdversa</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md94"></a>
+<h2><a class="anchor" id="autotoc_md106"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a1">Ação 1 - Ver instâncias</a></li>
@@ -115,7 +115,7 @@ Sumário</h2>
 <div class="line">Opção: 2</div>
 </div><!-- fragment --><p>Este jogo tem várias instâncias, com as dimensões e tamanho da linha para ganhar. Existe ainda a variante em que as peças caem pela ação da gravidade.</p>
 <p><a class="anchor" id="jel-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md95"></a>
+<h2><a class="anchor" id="autotoc_md107"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no Jogo Em Linha, introduza: <b>2.</b></p>
 <div class="fragment"><div class="line">Jogo Em Linha</div>
@@ -247,7 +247,7 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p>Temos diferentes tabuleiros, resultando em ramificações distintas. A variante da gravidade, reduz consideravelmente a ramificação.</p>
 <p><a class="anchor" id="jel-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md96"></a>
+<h2><a class="anchor" id="autotoc_md108"></a>
 Ação 2 - Heurística</h2>
 <p>Vamos começar por verificar se a heurística implementada, tem atenção a aspetos mínimos, como bloquear ameaças de vitória a uma jogada.</p>
 <p>Para tal vamos fazer um jogo com profundidade 1, para que a heurística seja o fator predominante.</p>
@@ -298,7 +298,7 @@ Ação 2 - Heurística</h2>
 <div class="line">   A B C D E F G H I J K L</div>
 </div><!-- fragment --><p>Não temos portanto motivo para não considerar a heurística válida. Deixamos de forma a variante da gravidade, já que esta heurística foi feita com base na variante regular.</p>
 <p><a class="anchor" id="jel-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md97"></a>
+<h2><a class="anchor" id="autotoc_md109"></a>
 Ação 3 - Torneio Profundidade</h2>
 <p>Nos testes empíricos vamos utilizar a linha de comando, por ser mais simples a identificação do teste a realizar.</p>
 <p>Pretendemos verificar num torneio, que a profundidade maior resulta em força de jogo superior. Assim, como temos muitos jogos, vamos fazer apenas duas profundidades, nível 1 e 2, mas com várias opções.</p>
@@ -379,7 +379,7 @@ Ação 3 - Torneio Profundidade</h2>
 <p>| Total Geral | | | 12 | -12 | 0 |</p>
 <p>O jogador 4 e 5, com o nível máximo no teste e sem ordenar, aparenta ser superior. Como a profundidade é fixa, é natural que os cortes alfa/beta e ordenação não alterem o resultado de forma significativa. Reduzem o tempo, mas não alteram o resultado.</p>
 <p><a class="anchor" id="jel-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md98"></a>
+<h2><a class="anchor" id="autotoc_md110"></a>
 Ação 4 - Torneio Iterativo</h2>
 <p>Na ação anterior, após confirmação que quanto maior a profundidade melhor, podemos comparar procuras com a mesma profundidade, mas diferentes opções.</p>
 <p>Sabemos que o corte alfa/beta é benéfico neste jogos, bem como a ordenação dos sucessores, porque reduz o tempo, mantendo a árvore de procura com a mesma qualidade.</p>
@@ -442,7 +442,7 @@ Ação 4 - Torneio Iterativo</h2>
 <p>O MiniMax ao utilizar a ordenação 2, memoriza mais estados e pode assim ter maior vantagem que o ganho pelos cortes do alfa/beta. Ao utilizar o alfa/beta, a informação memorizada tem de ter informação se esteve um corte alfa ou beta ativo, para utilizar devidamente o valor registado, como um upper bound ou lower bound. Assim, o ganho da memorização perde-se.</p>
 <p>Estes resultados poderiam ser mais evidentes com mais tempo por jogada, o que permitiria maiores profundidades e maiores ganhos em algumas configurações. Por outro lado, para maior precisão, tem de se utilizar aleatoriedade e ruído, que é o que iremos fazer na próxima ação.</p>
 <p><a class="anchor" id="jel-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md99"></a>
+<h2><a class="anchor" id="autotoc_md111"></a>
 Ação 5 - Torneio Ruido</h2>
 <p>Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra, utilizando vários jogos, com diferentes sementes aleatórias.</p>
 <p>Pretendemos saber entre o MiniMax com e sem cortes alfa/beta, qual é o melhor, se ordenarmos com 2 (guarda estados analisados), e utilizarmos a procura iterativa.</p>
@@ -456,7 +456,7 @@ Ação 5 - Torneio Ruido</h2>
 <div class="line">Ficheiro resultadoRuido.csv gravado.</div>
 </div><!-- fragment --><p>... (estudar o efeito do ruído)</p>
 <p><a class="anchor" id="jel-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md100"></a>
+<h2><a class="anchor" id="autotoc_md112"></a>
 Ação 6 - Torneio Poda</h2>
 <p>... (estudar o efeito da poda) </p>
 </div></div><!-- contents -->
