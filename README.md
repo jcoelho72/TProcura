@@ -214,6 +214,7 @@ Problemas de exemplo da classe TProcuraMelhorativa:
 3. [Partição CB](teste_particao_cb.html) (TCodificacaoBinaria)
 4. ? (TCodificacaoReal)
 5. ? (TCodificacaoArvore)
+-  [Resultdos Deucalion](melhorativa__deucalion.html)
 
 Problemas de exemplo da classe TProcuraAdversa:
 1. [Jogo do Galo](teste_jogo_do_galo.html)
