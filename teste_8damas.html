@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('teste_8damas.html',''); initResizable(
 <p>Execução de exemplo com base no problema das 8 Damas. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. No Linux na pasta <code>.../TProcura/Construtiva/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraConstrutiva</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
-<h2><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md48"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_8damas.html#damas-a1">Ação 1 - Ver instâncias</a></li>
@@ -142,7 +142,7 @@ Sumário</h2>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p> Este estado vazio é um tabuleiro de 8x8. O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.</p>
 <p><a class="anchor" id="damas-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md49"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver que instâncias temos. Introduza: <b>1; 4.</b></p>
 <div class="fragment"><div class="line">Opção: 1</div>
@@ -163,7 +163,7 @@ Ação 1 - Ver instâncias</h2>
 <div class="line">Opção:</div>
 </div><!-- fragment --><p>O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.</p>
 <p><a class="anchor" id="damas-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md43"></a>
+<h2><a class="anchor" id="autotoc_md50"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Há várias formas de se colocar damas no tabuleiro. Está implementada a colocação de uma dama, na linha superior que não esteja atacada.</p>
 <p>Poder-se-ia permitir a colocação de uma dama em qualquer posição. No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia. Caso se tivessem implementado diferentes opções, seria adicionado um parametro, e os sucessores seria distinto conforme o valor desse parâmetro.</p>
@@ -224,7 +224,7 @@ Ação 2 - Resolver manualmente</h2>
 <p>A escolha na primeira ação por d2 (ou d3), é crítica para obter a solução.</p>
 <p>Neste problema a solução tem sempre o mesmo número de ações, igual a N.</p>
 <p><a class="anchor" id="damas-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md44"></a>
+<h2><a class="anchor" id="autotoc_md51"></a>
 Ação 3 - Procura em Largura</h2>
 <p>Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo. Vamos deixar desde já fixado o limite no número de iterações a 1000000. Introduza: <b>1; 4; 3; 2; 4; 5; 1000000; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -334,7 +334,7 @@ Ação 3 - Procura em Largura</h2>
 </div><!-- fragment --><p> A solução foi encontrada. No entanto, o algoritmo explora todos os estados do nível 3 antes de ver o primeiro do nível 4. Neste problema, como a solução está no nível 4, acaba por não ser muito interessante esta procura. Qualquer estado no nível 4 seria uma solução, e foram expandidos todos os estados do nível 3. Não podia ser pior.</p>
 <p>Não só este algoritmo gasta muito tempo nos níveis inferiores, a explorar completamente, como a procura em profundidade ilimitada não tem problema, já que não existem ciclos infinitos.</p>
 <p><a class="anchor" id="damas-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md45"></a>
+<h2><a class="anchor" id="autotoc_md52"></a>
 Ação 4 - Procura em Profundidade</h2>
 <p>Vamos executar a mesma instância com a procura em profundidade ilimitada. Introduza: <b>1; 4; 3; 1; 3; 7; -1; <em>ENTER</em>; 6.</b></p>
 <div class="fragment"><div class="line">Opção: 6</div>
@@ -417,14 +417,14 @@ Ação 4 - Procura em Profundidade</h2>
 <p>No final da procura, ainda havia um ramo para analisar, com dois estados pendentes. Esses estados eram as ações d3 e d4 inicial, que são ações simétricas a d1 e d2. Como temos P8(ESTADOS_REPETIDOS): ignorar, estas ações são geradas.</p>
 <p>Neste caso houve 8 expansões na procura em profundidade, contra 13 da procura em largura. Mas evidentemente que não será esta pequena instância que irá suportar as nossas conclusões. Temos um teste empírico na ação 6, com mais instâncias.</p>
 <p><a class="anchor" id="damas-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md46"></a>
+<h2><a class="anchor" id="autotoc_md53"></a>
 Ação 5 - Heurística</h2>
 <p>Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações tivessem custo variável, faria sentido uma heurística para estimar o custo até ao final. Sendo o custo fixo, apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas com a abordagem construtiva.</p>
 <p>Podemos sempre considerar a hipótese de ter uma heurística ignorando a admissibilidade, apenas para guiar a procura. No entanto neste problema não é claro que heurística possa ser.</p>
 <p>Podemos ter no entanto outras opções que melhoram a abordagem construtiva. Uma das possibilidades é considerar ou não os estados repetidos. Neste problema temos 3 eixos de simetria. Significa que a mesma posição pode ao ser refletida em cada eixo, transformar-se numa das outras, num total de 8 posições simétricas. Ao anular as simetrias por normalização do estado, e remoção de repetidos, o espaço de estados reduz-se. As simetrias estão implementadas, pelo que vamos testar na próxima ação.</p>
 <p>Outra possibilidade não implementada neste código, é a verificação se há linhas/colunas vazias, que estejam totalmente atacadas. Ao colocar duas ou três damas, estas podem cobrir a totalidade das casas da última linha, e essa linha só é analisada no último nível. Esta implementação causa também mais peso, mas invalida estados antecipadamente.</p>
 <p><a class="anchor" id="damas-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md47"></a>
+<h2><a class="anchor" id="autotoc_md54"></a>
 Ação 6 - Testes Empíricos</h2>
 <p>Nos testes empíricos vamos passar para a interface da linha de comando, por ser mais simples.</p>
 <p>Vamos obter primeiramente a lista de todos os parâmetros.</p>
@@ -479,7 +479,7 @@ Ação 6 - Testes Empíricos</h2>
 <p>Podemos ver se a remoção de estados repetidos ajuda ou prejudica, atendendo a que pode reduzir os estados analisados mas é também consumidora de tempo, pelo que fica em aberto P8=1,3. Não faz sentido os estados ascendentes dado que não há movimentos inversos.</p>
 <p>Vamos também ver se baralhar os sucessores tem algum impacto nos resultados, face à ordem fixa dos sucessores, P11=0,1. No caso de P11=1, podemos utilizar várias sementes aleatórias, P3 a variar, caso P11=0, não faz sentido já que não temos utilização para os valores aleatórios, e as instâncias são sempre as mesmas.</p>
 <p>Sobre a melhor configuração, procuraremos fazer um teste de performance final.</p>
-<h3><a class="anchor" id="autotoc_md48"></a>
+<h3><a class="anchor" id="autotoc_md55"></a>
 Teste: 8damas_1</h3>
 <p>Vamos primeiramente fazer um teste, para verificar se os estados repetidos são benéficos. Como temos poucas instâncias, de 4 a 40, e o algoritmo não é aleatório, o esforço não pode ser aumentando demasiado, pelo que utilizamos dois níveis.</p>
 <ul>
@@ -566,7 +566,7 @@ Teste: 8damas_1</h3>
 <p>Esta análise aparenta não ser de todo compensador o uso dos estados gerados. No ponto de transição, a instância 28 conseguiu ainda ser resolvida sem estados gerados, mas não com estados gerados. Os tempos aparentam ser sempre superiores com estados gerados.</p>
 <p>Poder-se-ia fazer várias execuções para ter vários valores de tempo para as mesmas instâncis, para poder utilizar intervalos de confiança. Em todo o caso as diferenças são bastantes, e a não ser que se possa optimizar o algoritmo para normalizar o estado e verificar se é igual, com os tempos atuais, não aparenta trazer qualquer vantagem.</p>
 <p>A versão com maior esforço, poderá dar com maior precisão o ponto de transição, entre instâncias simples para complexas.</p>
-<h3><a class="anchor" id="autotoc_md49"></a>
+<h3><a class="anchor" id="autotoc_md56"></a>
 Teste: 8damas_2</h3>
 <p>Vamos agora verificar se baralhar os sucessores influencia ou não o algoritmo. A ordem atual é a ordem de geração, que poderia ser trocada facilmente, caso exista alguma informação heurística nesse sentido, embora sem ser no contexto do Astar, com uma estimativa até à solução ótima, já que essa estimativa é conhecida. A existir uma heurística será para ordenar os sucessores por ordem de probabilidade de conter a solução ótima. Se tal for útil, a ordem aleatória poderá ter impacto na performance, e é isso que se pretende obter neste teste.</p>
 <p>Vamos utilizar o aleatório em 4 corridas, atendendo a que os sucessores são baralhados.</p>
@@ -645,7 +645,7 @@ Teste: 8damas_2</h3>
 </table>
 <p>A utilização de sucessores aleatórios resolve por completo todas as instâncias. Qualquer uma das 4 ordens aleatórias resolveu todas as instâncias. Significa portanto que a ordem fixa inicial, gera uma árvore de procura mais complexa, que uma ordem aleatória dos sucessores, sendo responsável pela complexidade do problema.</p>
 <p>Assim sendo, as instâncias atuais até 40, são muito simples para uma configuração com ordem aleatória de sucessores.</p>
-<h3><a class="anchor" id="autotoc_md50"></a>
+<h3><a class="anchor" id="autotoc_md57"></a>
 Teste: 8damas_3</h3>
 <p>Vamos fazer um teste de performance final, com todas as instâncias, de modo a medir o aumento do tempo face ao tamanho da instância. Fazemos 10 execuções por instância para poder aferir a variabilidade dos resultados.</p>
 <ul>

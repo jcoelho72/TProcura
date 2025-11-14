@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['9_20branch_20and_20bound_0',['Ação 9 - Branch-and-Bound',['../teste_puzzle8.html#autotoc_md112',1,'']]],
-  ['9_20desafio_20procura_20em_20largura_1',['Ação 9 - Desafio Procura em Largura',['../teste_aspirador1.html#autotoc_md70',1,'']]]
+  ['9_0',['Teste 9',['../melhorativa__deucalion.html#autotoc_md46',1,'']]],
+  ['9_20branch_20and_20bound_1',['Ação 9 - Branch-and-Bound',['../teste_puzzle8.html#autotoc_md119',1,'']]],
+  ['9_20desafio_20procura_20em_20largura_2',['Ação 9 - Desafio Procura em Largura',['../teste_aspirador1.html#autotoc_md77',1,'']]]
 ];

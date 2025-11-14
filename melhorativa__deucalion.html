@@ -1554,7 +1554,20 @@ Resultados: particaocb_5</h3>
 </table>
 <p>Temos neste caso o melhor valor para P10 também no 200, provavelmente pela mesma razão de ser utilizada a estratégia de mutação a 100%. No entanto aqui o intervalo de confiança do melhor valor intersecta vários outros, pelo que não há grande certeza.</p>
 <p>Resultados para o torneio:</p>
-<p>| P11 vs P12 | 100 | 75 | 50 | 25 | |:&mdash;:|&mdash;:|&mdash;:|&mdash;:|&mdash;:| | 2 | 2005 | 2899 | 4959 | 8776 | 4660 | | 3 | 2177 | 2117 | 2179 | 3467 | 2485 | | 4 | <b>1862</b> | 1960 | 2334 | 2514 | 2167 | | 6 | 3177 | 2411 | 2875 | 2942 | 2851 | | 10 | 4825 | 3989 | 3731 | 4018 | 4141 |</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P11 vs P12   </th><th class="markdownTableHeadRight">100   </th><th class="markdownTableHeadRight">75   </th><th class="markdownTableHeadRight">50   </th><th class="markdownTableHeadRight">25    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">2005   </td><td class="markdownTableBodyRight">2899   </td><td class="markdownTableBodyRight">4959   </td><td class="markdownTableBodyRight">8776    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">2177   </td><td class="markdownTableBodyRight">2117   </td><td class="markdownTableBodyRight">2179   </td><td class="markdownTableBodyRight">3467    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight"><b>1862</b>   </td><td class="markdownTableBodyRight">1960   </td><td class="markdownTableBodyRight">2334   </td><td class="markdownTableBodyRight">2514    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">3177   </td><td class="markdownTableBodyRight">2411   </td><td class="markdownTableBodyRight">2875   </td><td class="markdownTableBodyRight">2942    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">4825   </td><td class="markdownTableBodyRight">3989   </td><td class="markdownTableBodyRight">3731   </td><td class="markdownTableBodyRight">4018   </td></tr>
+</table>
 <p>Temos aqui um novo ganho relativamente à parametrização de base. O torneio de tamanho 4 reduz o tempo de forma visivel, relativamente ao torneio de tamanho 2. A probabilidade de escolher o melhor mantém-se como melhor opção o 100%.</p>
 <p>Assim sendo, entre a roleta e o torneio, é preferivel o torneio, com os parametros: P9=2 P11=4 P12=100</p>
 <h2><a class="anchor" id="autotoc_md40"></a>
@@ -1565,7 +1578,7 @@ Teste 6</h2>
 <li>3: round-robin</li>
 </ul>
 <p>Este parametro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo valor de omissão é 100%. Neste caso os descendentes são iguais à população, pelo que no método da idade são todos substituídos.</p>
-<p>Nos restantes dois métodos, qualquer que seja a percentagem, os decendentes são adicionados à população e no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elmeento com Q outros. Os que perderem mais vezes, são removidos.</p>
+<p>Nos restantes dois métodos, qualquer que seja a percentagem, os decendentes são adicionados à população e no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elemento com Q outros. Os que perderem mais vezes, são removidos.</p>
 <p>O método round-robin tem portanto um parametro Q, que é o número de torneios: P15(Q_ROUND_ROBIN). Tem o valor de omissão a 3, mas pode ser desde 2 até um valor alto como 100, mas não fará sentido ser superior à população.</p>
 <p>Vamos para já deixar este valor de omissão, e fazer um teste com P13 e P14, para apurar se a estratégia de sobrevivência é muito relevante ou não, e se a percentagem de descendentes é ou não relevante.</p>
 <p>Vamos variar P14 de 0 a 100 em passos de 25, tal como temos feito para as restantes percentagens. Quando P14=0 significa que haverá apenas um só descendente (e não 0) em cada geração.</p>
@@ -1592,11 +1605,11 @@ Teste 6</h2>
 </ul>
 <p> 
 <details>
-  <summary>Ver script: evolutivos5.sh</summary>
+  <summary>Ver script: evolutivos6.sh</summary>
 <pre>
 #!/bin/bash
-#SBATCH --job-name=evolutivos5
-#SBATCH --output=Resultados/evolutivos5.txt
+#SBATCH --job-name=evolutivos6
+#SBATCH --output=Resultados/evolutivos6.txt
 #SBATCH --account=f202507959cpcaa0a
 #SBATCH --partition=normal-arm
 #SBATCH --time=10:00:00
@@ -1609,18 +1622,12 @@ ml OpenMPI
 
 make mpi || { echo "Compilação falhou"; exit 1; }
 
-# Teste: damasci_5A
-srun bin/MPI/TProcuraMelhorativa 1 10:19 -R Resultados/damasci_5A -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P3=1:100 x P10=100:200:25
-# Teste: damascp_5A
-srun bin/MPI/TProcuraMelhorativa 2 10:19 -R Resultados/damascp_5A -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=1 P3=1:100 x P10=100:200:25
-# Teste: particaocb_5A
-srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_5A -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=1 P3=1:10 x P10=100:200:25
-# Teste: damasci_5B
-srun bin/MPI/TProcuraMelhorativa 1 10:19 -R Resultados/damasci_5B -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=2 P3=1:100 x P11=2,3,4,6,10 x P12=25:100:25
-# Teste: damascp_5B
-srun bin/MPI/TProcuraMelhorativa 2 10:19 -R Resultados/damascp_5B -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P3=1:100 x P11=2,3,4,6,10 x P12=25:100:25
-# Teste: particaocb_5B
-srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_5B -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P3=1:10 x P11=2,3,4,6,10 x P12=25:100:25
+# Teste: damasci_6
+srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_6 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P3=1:100 x P13=1:3 x P14=0:100:25
+# Teste: damascp_6
+srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_6 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P3=1:100 x P13=1:3 x P14=0:100:25
+# Teste: particaocb_6
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P3=1:10 x P13=1:3 x P14=0:100:25
 </pre>
 </details>
 <details>
@@ -1630,7 +1637,25 @@ srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Re
 
 </pre>
 </details>
- </p>
+</p>
+<h3><a class="anchor" id="autotoc_md41"></a>
+Resultados: damasci_6</h3>
+<h3><a class="anchor" id="autotoc_md42"></a>
+Resultados: damascp_6</h3>
+<h3><a class="anchor" id="autotoc_md43"></a>
+Resultados: particaocb_6</h3>
+<h2><a class="anchor" id="autotoc_md44"></a>
+Teste 7</h2>
+<p>P16(ELITISMO) + P17(IMIGRANTES)</p>
+<h2><a class="anchor" id="autotoc_md45"></a>
+Teste 8</h2>
+<p>P18(DIVERSIDADE)</p>
+<h2><a class="anchor" id="autotoc_md46"></a>
+Teste 9</h2>
+<p>P19(DIST_MINIMA) + P24(TIPO_DISTANCIA)</p>
+<h2><a class="anchor" id="autotoc_md47"></a>
+Teste 10</h2>
+<p>P20(TIPO_CRUZAR) + P21(TIPO_MUTAR) + P23(LIMITE_VIZINHOS) </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
