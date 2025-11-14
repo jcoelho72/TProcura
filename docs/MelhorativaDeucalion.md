@@ -1747,20 +1747,20 @@ O elitísmo garante que se existirem K elementos da população antiga melhores 
 esses elementos mantêm-se na nova população. Os imigrantes garantem um número de elementos estrangeiros
 na população, que são gerados aleatoriamente.
 
-Vamos ver possibilidades de números pequenos, já que valores demasiado altos bloqueiam a evolução: 0:5
+Vamos ver possibilidades de números pequenos, já que valores demasiado altos bloqueiam a evolução: 0:3
 
 - **Tipo de Teste / Objetivo**: Paramétrico P16 vs P17
 - **Definição**:
-	- **ci**: Instâncias: 20:29; Configurações: P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=0:5 x P17=0:5
-	- **cp**: Instâncias: 20:29; Configurações: P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=0:5 x P17=0:5
-	- **cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=0:5 x P17=0:5
+	- **ci**: Instâncias: 20:29; Configurações: P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=0:3 x P17=0:3
+	- **cp**: Instâncias: 20:29; Configurações: P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=0:3 x P17=0:3
+	- **cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=0:3 x P17=0:3
 - **Esforço**:
 	- **ci+cp**: P3=1:100
 	- **cb**: P3=1:10
 - **Execução**:
-	- **ci**: TProcuraMelhorativa 1 20:29 -R Resultados/damasci_7 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P3=1:100 x P16=0:5 x P17=0:5
-	- **cp**: TProcuraMelhorativa 2 20:29 -R Resultados/damascp_7 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P3=1:100 x P16=0:5 x P17=0:5
-	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:5 x P17=0:5
+	- **ci**: TProcuraMelhorativa 1 20:29 -R Resultados/damasci_7 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P3=1:100 x P16=0:3 x P17=0:3
+	- **cp**: TProcuraMelhorativa 2 20:29 -R Resultados/damascp_7 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P3=1:100 x P16=0:3 x P17=0:3
+	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:3 x P17=0:3
 
 
 \htmlonly
@@ -1783,11 +1783,11 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: damasci_7
-srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_7 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P3=1:100 x P16=0:5 x P17=0:5
+srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_7 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P3=1:100 x P16=0:3 x P17=0:3
 # Teste: damascp_7
-srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_7 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P3=1:100 x P16=0:5 x P17=0:5
+srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_7 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P3=1:100 x P16=0:3 x P17=0:3
 # Teste: particaocb_7
-srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:5 x P17=0:5
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:3 x P17=0:3
 </pre>
 </details>
 <details>
