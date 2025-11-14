@@ -548,7 +548,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 | 5 | 24 | 5815 | 5649 | 5981 |
 | 10 | 65 | 4301 | 4057 | 4545 |
 | 15 | 89 | 2674 | 2466 | 2882 |
-| 20 | 97 | 1840 | 1690 | 1989 |
+| 20 | 97 | **1840** | 1690 | 1989 |
 | 25 | 96 | 2031 | 1867 | 2195 |
 | 30 | 96 | 2272 | 2100 | 2444 |
 | 40 | 92 | 2642 | 2450 | 2834 |
@@ -570,7 +570,7 @@ Mantemos o valor de omissão P6=20.
 | P6(População) | Eficácia | Eficiência | ICinf | ICsup |
 |:---:|---:|---:|---:|---:|
 | 5 | 91 | 1287 | 1155 | 1420 |
-| 10 | 98 | 826 | 722 | 929 |
+| 10 | 98 | **826** | 722 | 929 |
 | 15 | 97 | 1148 | 1011 | 1286 |
 | 20 | 98 | 1138 | 1004 | 1272 |
 | 25 | 97 | 1389 | 1237 | 1540 |
@@ -802,7 +802,7 @@ Eficiência
 | 25 | 7293 | 4677 | 4256 | 4224 | 3840 |
 | 50 | 3814 | 2814 | 3363 | 3653 | 3578 |
 | 75 | 1854 | 1837 | 2507 | 3153 | 3452 |
-| 100 | 1332 | 1465 | 1841 | 2673 | 3372 |
+| 100 | **1332** | 1465 | 1841 | 2673 | 3372 |
 
 A configuração que aparenta ser a melhor, é com P7=100 e P8=0, ou seja, sem mutação.
 Assim o valor original de P8=50 não é o melhor para a atual configuração.
@@ -817,7 +817,7 @@ Eficiência
 
 | P7 vs P8 | 0 | 25 | 50 | 75 | 100 | 
 |:---:|---:|---:|---:|---:|---:|
-| 0 | 3574 | 1999 | 1225 | 545 | 175 | 
+| 0 | 3574 | 1999 | 1225 | 545 | **175** | 
 | 25 | 2695 | 1843 | 1287 | 641 | 229 |
 | 50 | 2062 | 1628 | 1212 | 771 | 295 |
 | 75 | 1417 | 1313 | 1091 | 846 | 406 |
@@ -835,7 +835,7 @@ e com a codificação inteira.
 
 | P7 vs P8 | 0 | 25 | 50 | 75 | 100 | 
 |:---:|---:|---:|---:|---:|---:|
-| 0 | 9994 | 6911 | 4902 | 3660 | 2742 | 
+| 0 | 9994 | 6911 | 4902 | 3660 | **2742** | 
 | 25 | 9788 | 7188 | 4779 | 3370 | 3288 |
 | 50 | 8268 | 5411 | 4109 | 3166 | 3301 |
 | 75 | 6097 | 4487 | 4106 | 4365 | 4213 |
@@ -991,7 +991,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 | P9 | Eficácia | Eficiência | ICinf | ICsup |
 |:---:|---:|---:|---:|---:|
-| 1:Roleta | 99 | 1332 | 1220 | 1443 |
+| 1:Roleta | 99 | **1332** | 1220 | 1443 |
 | 2:Torneio | 94 | 2173 | 1999 | 2348 |
 | 3:Uniforme | 27 | 7363 | 7154 | 7573 |
 
@@ -1005,7 +1005,7 @@ No entanto os métodos Roleta e Torneio têm parametros e precisam de ser explor
 | P9 | Eficácia | Eficiência | ICinf | ICsup |
 |:---:|---:|---:|---:|---:|
 | 1:Roleta | 100 | 175 | 154 | 196 |
-| 2:Torneio | 100 | 115 | 101 | 128 |
+| 2:Torneio | 100 | **115** | 101 | 128 |
 | 3:Uniforme | 100 | 342 | 301 | 382 |
 
 Podemos observar também diferenças grandes entre estratégias de seleção de pais.
@@ -1017,7 +1017,7 @@ Nas restantes duas estratégias temos de identificar a melhor parametrização, 
 | P9 | Eficácia | Eficiência | ICinf | ICsup |
 |:---:|---:|---:|---:|---:|
 | 1:Roleta | 95 | 2742 | 2239 | 3245 |
-| 2:Torneio | 100 | 2005 | 1646 | 2365 |
+| 2:Torneio | 100 | **2005** | 1646 | 2365 |
 | 3:Uniforme | 89 | 4589 | 3987 | 5192 |
 
 Na partição observamos o mesmo que nas 8 damas em ambas as codificações, que a estratégias de seleção de pais é um passo crítico.
@@ -1049,6 +1049,8 @@ Para a probabilidade, vamos deixar de fora o valor 0, caso contrário seria uma 
 
 Este teste será dividido em dois,um para cada parametro.
 
+Teste 5A para o método roleta:
+
 - **Tipo de Teste / Objetivo**: Paramétrico P10
 - **Definição**:
 	- **ci**: Instâncias: 10:19; Configurações: P6=20 P7=100 P8=0 P9=1 P10=100:200:25
@@ -1061,6 +1063,8 @@ Este teste será dividido em dois,um para cada parametro.
 	- **ci**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_5A -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P3=1:100 x P10=100:200:25
 	- **cp**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_5A -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=1 P3=1:100 x P10=100:200:25
 	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_5A -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=1 P3=1:10 x P10=100:200:25
+
+Teste 5B para o método torneio:
 
 - **Tipo de Teste / Objetivo**: Paramétrico P11 vs P12
 - **Definição**:
@@ -1077,7 +1081,365 @@ Este teste será dividido em dois,um para cada parametro.
 
 \htmlonly
 <details>
-  <summary>Ver script: evolutivos4.sh</summary>
+  <summary>Ver script: evolutivos5.sh</summary>
+<pre>
+#!/bin/bash
+#SBATCH --job-name=evolutivos5
+#SBATCH --output=Resultados/evolutivos5.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
+
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: damasci_5A
+srun bin/MPI/TProcuraMelhorativa 1 10:19 -R Resultados/damasci_5A -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P3=1:100 x P10=100:200:25
+# Teste: damascp_5A
+srun bin/MPI/TProcuraMelhorativa 2 10:19 -R Resultados/damascp_5A -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=1 P3=1:100 x P10=100:200:25
+# Teste: particaocb_5A
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_5A -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=1 P3=1:10 x P10=100:200:25
+# Teste: damasci_5B
+srun bin/MPI/TProcuraMelhorativa 1 10:19 -R Resultados/damasci_5B -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=2 P3=1:100 x P11=2,3,4,6,10 x P12=25:100:25
+# Teste: damascp_5B
+srun bin/MPI/TProcuraMelhorativa 2 10:19 -R Resultados/damascp_5B -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P3=1:100 x P11=2,3,4,6,10 x P12=25:100:25
+# Teste: particaocb_5B
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_5B -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P3=1:10 x P11=2,3,4,6,10 x P12=25:100:25
+</pre>
+</details>
+<details>
+  <summary>Ver execução:</summary>
+<pre>
+mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp ../../TRand.cpp ../TProcuraMelhorativa.cpp ../TCodificacaoArvore.cpp ../TCodificacaoBinaria.cpp ../TCodificacaoInteira.cpp ../TCodificacaoReal.cpp ../TCodificacaoPermutacao.cpp ProblemaArtificial.cpp OitoDamas.cpp teste.cpp Particao.cpp
+
+
+═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
+ ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP10=[0m100
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP10=[0m100
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP10=[0m100
+ │ ...
+ ├─ ⚙  [498] ─ [90mP3=[0m98 [90mP10=[0m200
+ ├─ ⚙  [499] ─ [90mP3=[0m99 [90mP10=[0m200
+ ├─ ⚙  [500] ─ [90mP3=[0m100 [90mP10=[0m200
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:5000   📄 Instâncias: 10   🛠️ Configurações: 500   🖥️ Processos: 48.
+ ├─ ⏱ 1' 64ms         📋 2432  📄 11    🛠️ 257   🖥️ 12    ⚖  0 147 21391 970 22360 
+ ├─ ⏱ 2' 189ms        📋 3548  📄 12    🛠️ 145   🖥️ 9     ⚖  0 141 18221 850 19070 
+ ├─ ⏱ 3' 303ms        📋 4153  📄 19    🛠️ 90    🖥️ 35    ⚖  1 10000 751461 35712 787172 
+ ├─ ⏱ 4' 432ms        📋 4551  📄 12    🛠️ 45    🖥️ 46    ⚖  0 669 84603 4015 88617 
+ ├─ ⏱ 5' 526ms        📋 4946  📄 13    🛠️ 6     🖥️ 24    ⚖  0 1762 204194 9692 213885 
+ ├─ 📑  Ficheiro Resultados/damasci_5A.csv gravado.
+ │  ⏱  Tempo real: 5' 18" 143ms 
+ │  ⏱  CPU total: 4h 9' 12" 706ms 
+ │  ⏱  Espera do gestor: 5' 18" 37ms 
+ │  ⏱  Espera trabalhadores: 3' 48" 652ms 
+ │  📊  Utilização:
+ │  - Total: 96.4%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 98.5% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 5' 18" 143ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m1 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
+ ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP10=[0m100
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP10=[0m100
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP10=[0m100
+ │ ...
+ ├─ ⚙  [498] ─ [90mP3=[0m98 [90mP10=[0m200
+ ├─ ⚙  [499] ─ [90mP3=[0m99 [90mP10=[0m200
+ ├─ ⚙  [500] ─ [90mP3=[0m100 [90mP10=[0m200
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:5000   📄 Instâncias: 10   🛠️ Configurações: 500   🖥️ Processos: 48.
+ ├─ 📑  Ficheiro Resultados/damascp_5A.csv gravado.
+ │  ⏱  Tempo real: 24" 923ms 
+ │  ⏱  CPU total: 19' 31" 389ms 
+ │  ⏱  Espera do gestor: 24" 824ms 
+ │  ⏱  Espera trabalhadores: 2' 27" 770ms 
+ │  📊  Utilização:
+ │  - Total: 85.5%
+ │  - Gestor: 0.2%
+ │  - Trabalhadores: 87.4% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 24" 923ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m1 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
+ ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP10=[0m100
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP10=[0m100
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP10=[0m100
+ │ ...
+ ├─ ⚙  [48] ─ [90mP3=[0m8 [90mP10=[0m200
+ ├─ ⚙  [49] ─ [90mP3=[0m9 [90mP10=[0m200
+ ├─ ⚙  [50] ─ [90mP3=[0m10 [90mP10=[0m200
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:500   📄 Instâncias: 10   🛠️ Configurações: 50   🖥️ Processos: 48.
+ ├─ 📑  Ficheiro Resultados/particaocb_5A.csv gravado.
+ │  ⏱  Tempo real: 39" 157ms 
+ │  ⏱  CPU total: 30' 40" 401ms 
+ │  ⏱  Espera do gestor: 39" 146ms 
+ │  ⏱  Espera trabalhadores: 4' 15" 19ms 
+ │  📊  Utilização:
+ │  - Total: 84.3%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 86.1% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 39" 157ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m2 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
+ ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m2 [90mP12=[0m25
+ │ ...
+ ├─ ⚙  [1998] ─ [90mP3=[0m98 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [1999] ─ [90mP3=[0m99 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [2000] ─ [90mP3=[0m100 [90mP11=[0m10 [90mP12=[0m100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:20000   📄 Instâncias: 10   🛠️ Configurações: 2000   🖥️ Processos: 48.
+ ├─ ⏱ 1' 13ms         📋 784   📄 18    🛠️ 1922  🖥️ 37    ⚖  0 870 92492 2789 95280 
+ ├─ ⏱ 2' 61ms         📋 1846  📄 10    🛠️ 1818  🖥️ 45    ⚖  0 1314 253765 8223 261987 
+ ├─ ⏱ 3' 67ms         📋 3747  📄 16    🛠️ 1626  🖥️ 9     ⚖  0 403 45449 1688 47136 
+ ├─ ⏱ 4' 132ms        📋 5106  📄 11    🛠️ 1496  🖥️ 32    ⚖  0 5201 857443 26618 884060 
+ ├─ ⏱ 5' 170ms        📋 5995  📄 12    🛠️ 1401  🖥️ 20    ⚖  0 840 129003 4007 133009 
+ ├─ ⏱ 6' 184ms        📋 7821  📄 16    🛠️ 1220  🖥️ 32    ⚖  0 1112 125096 4637 129732 
+ ├─ ⏱ 7' 231ms        📋 9195  📄 19    🛠️ 1088  🖥️ 25    ⚖  2 10000 797933 35284 833216 
+ ├─ ⏱ 8' 306ms        📋 9738  📄 19    🛠️ 1034  🖥️ 38    ⚖  1 10000 796720 35251 831970 
+ ├─ ⏱ 9' 340ms        📋 10500 📄 10    🛠️ 955   🖥️ 14    ⚖  0 2360 411612 13109 424720 
+ ├─ ⏱ 10' 350ms       📋 11852 📄 14    🛠️ 819   🖥️ 43    ⚖  0 1662 217662 7668 225329 
+ ├─ ⏱ 11' 523ms       📋 13234 📄 19    🛠️ 688   🖥️ 24    ⚖  1 10000 808693 34356 843048 
+ ├─ ⏱ 12' 612ms       📋 13953 📄 10    🛠️ 605   🖥️ 14    ⚖  0 410 64191 2726 66916 
+ ├─ ⏱ 13' 668ms       📋 14355 📄 17    🛠️ 570   🖥️ 17    ⚖  1 10000 881815 40299 922113 
+ ├─ ⏱ 14' 878ms       📋 14732 📄 11    🛠️ 528   🖥️ 34    ⚖  0 2373 330816 14996 345811 
+ ├─ ⏱ 15' 1" 69ms     📋 15256 📄 18    🛠️ 481   🖥️ 26    ⚖  0 4653 469851 15199 485049 
+ ├─ ⏱ 16' 1" 88ms     📋 16405 📄 12    🛠️ 360   🖥️ 1     ⚖  0 202 29954 1092 31045 
+ ├─ ⏱ 17' 1" 111ms    📋 17389 📄 10    🛠️ 262   🖥️ 47    ⚖  0 757 119457 4946 124402 
+ ├─ ⏱ 18' 1" 132ms    📋 18021 📄 10    🛠️ 198   🖥️ 10    ⚖  0 123 18199 805 19003 
+ ├─ ⏱ 19' 1" 226ms    📋 18410 📄 13    🛠️ 164   🖥️ 20    ⚖  1 8607 1000010 44552 1044561 
+ ├─ ⏱ 20' 1" 391ms    📋 18791 📄 14    🛠️ 126   🖥️ 5     ⚖  1 9235 1000018 44591 1044608 
+ ├─ ⏱ 21' 1" 554ms    📋 19148 📄 12    🛠️ 89    🖥️ 30    ⚖  1 7694 1000001 44900 1044900 
+ ├─ ⏱ 22' 1" 648ms    📋 19489 📄 12    🛠️ 55    🖥️ 30    ⚖  1 7716 1000006 44925 1044930 
+ ├─ ⏱ 23' 1" 779ms    📋 19829 📄 17    🛠️ 22    🖥️ 24    ⚖  2 10000 889921 40213 930133 
+ ├─ 📑  Ficheiro Resultados/damasci_5B.csv gravado.
+ │  ⏱  Tempo real: 23' 42" 70ms 
+ │  ⏱  CPU total: 18h 33' 57" 305ms 
+ │  ⏱  Espera do gestor: 23' 41" 649ms 
+ │  ⏱  Espera trabalhadores: 3' 37" 426ms 
+ │  📊  Utilização:
+ │  - Total: 97.6%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.7% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 23' 42" 70ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
+ ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m2 [90mP12=[0m25
+ │ ...
+ ├─ ⚙  [1998] ─ [90mP3=[0m98 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [1999] ─ [90mP3=[0m99 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [2000] ─ [90mP3=[0m100 [90mP11=[0m10 [90mP12=[0m100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:20000   📄 Instâncias: 10   🛠️ Configurações: 2000   🖥️ Processos: 48.
+ ├─ ⏱ 1' 10ms         📋 19939 📄 16    🛠️ 9     🖥️ 46    ⚖  0 610 94439 8566 103004 
+ ├─ 📑  Ficheiro Resultados/damascp_5B.csv gravado.
+ │  ⏱  Tempo real: 1' 8" 423ms 
+ │  ⏱  CPU total: 53' 35" 900ms 
+ │  ⏱  Espera do gestor: 1' 8" 38ms 
+ │  ⏱  Espera trabalhadores: 4' 41" 217ms 
+ │  📊  Utilização:
+ │  - Total: 89.3%
+ │  - Gestor: 0.2%
+ │  - Trabalhadores: 91.2% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1' 8" 423ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
+ ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m2 [90mP12=[0m25
+ │ ...
+ ├─ ⚙  [198] ─ [90mP3=[0m8 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [199] ─ [90mP3=[0m9 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [200] ─ [90mP3=[0m10 [90mP11=[0m10 [90mP12=[0m100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:2000   📄 Instâncias: 10   🛠️ Configurações: 200   🖥️ Processos: 48.
+ ├─ ⏱ 1' 31ms         📋 1059  📄 930   🛠️ 103   🖥️ 38    ⚖  0 6572 76215 3627 79841 
+ ├─ ⏱ 2' 354ms        📋 1932  📄 926   🛠️ 19    🖥️ 44    ⚖  2 10001 116012 5521 121532 
+ ├─ 📑  Ficheiro Resultados/particaocb_5B.csv gravado.
+ │  ⏱  Tempo real: 2' 24" 241ms 
+ │  ⏱  CPU total: 1h 52' 59" 336ms 
+ │  ⏱  Espera do gestor: 2' 24" 200ms 
+ │  ⏱  Espera trabalhadores: 4' 23" 250ms 
+ │  📊  Utilização:
+ │  - Total: 94.1%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 96.1% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 24" 241ms ) ═══
+</pre>
+</details>
+\endhtmlonly
+
+### Resultados: damasci_5
+
+Resultados para roleta:
+
+| P10 | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 100 | 35 | 7190 | 6962 | 7419 |
+| 125 | 79 | 3867 | 3627 | 4106 |
+| 150 | 99 | 1330 | 1219 | 1442 |
+| 175 | 100 | **1057** | 972 | 1141 |
+| 200 | 99 | 1282 | 1176 | 1389 |
+
+O melhor valor para P10 na roleta é 175. O intervalo de confiança não intersecta os restantes valores,
+o que significa que uma valorização ainda maior dos melhores é preferivel.
+
+Resultados para torneio:
+
+| P11 vs P12 | 100 | 75 | 50 | 25 | 
+|:---:|---:|---:|---:|---:|
+| 2 | 2171 | 5102 | 7567 | 8406 | 
+| 3 | **1315** | 1679 | 3938 | 7385 | 
+| 4 | 1496 | 1360 | 1750 | 4450 | 
+| 6 | 2311 | 1637 | 1618 | 1929 | 
+| 10 | 3794 | 3209 | 2930 | 2723 | 
+
+A melhor configuração é com P11=3, melhorando claramente relativamente ao torneio de 2.
+Para valores de torneio pequenos, P12 é melhor sempre com o valor de omissão a 100%.
+Apenas para torneios grandes é que P12 é melhor com valores menores, mas em termos globais
+a melhor configuração é com P11=3 e P12=100.
+
+Conjugando a roleta com o torneio, opta-se pela roleta dado que aprensenta valores melhores,
+com os seguintes parametros: P9=1 P10=175.
+
+### Resultados: damascp_5
+
+Resultados para roleta:
+
+| P10 | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 100 | 100 | 379 | 328 | 430 |
+| 125 | 100 | 228 | 202 | 254 |
+| 150 | 100 | 175 | 154 | 196 |
+| 175 | 100 | 138 | 123 | 154 |
+| 200 | 100 | **101** | 90 | 112 |
+
+Com a estratégia de mutação a 100%, o melhor valor para P10 na roleta é claramente o 200, dando importância máxima aos melhores.
+O intervalo de confiança não intersecta os restantes valores.
+
+Resultados para o torneio:
+
+| P11 vs P12 | 100 | 75 | 50 | 25 | 
+|:---:|---:|---:|---:|---:|
+| 2 | 114 | 180 | 344 | 705 | 
+| 3 | 76 | 118 | 169 | 355 | 
+| 4 | 62 | 77 | 110 | 162 | 
+| 6 | 48 | 50 | 72 | 96 | 
+| 10 | **41** | 45 | 48 | 54 | 
+
+Estes resultados voltam a surpreender ou talvez não, atendendo à estratégia da mutação a 100%.
+Um torneio grande com probabilidade do melhor ganhar leva a que quase sempre o melhor seja escolhido.
+
+Entre a roleta e o torneio, continua o torneio nesta nova parametrização a ser claramente melhor.
+Assim sendo escolhe-se o torneio com os seguintes parametros: P9=2 P11=10 P12=100
+
+### Resultados: particaocb_5
+
+Resultados para roleta:
+
+| P10 | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 100 | 81 | 5045 | 4359 | 5730 |
+| 125 | 92 | 3195 | 2614 | 3777 |
+| 150 | 95 | 2741 | 2238 | 3244 |
+| 175 | 96 | 2519 | 2030 | 3009 |
+| 200 | 99 | **2354** | 1922 | 2785 |
+
+Temos neste caso o melhor valor para P10 também no 200, provavelmente pela mesma razão de ser utilizada a estratégia de mutação a 100%.
+No entanto aqui o intervalo de confiança do melhor valor intersecta vários outros, pelo que não há grande certeza.
+
+Resultados para o torneio:
+
+| P11 vs P12 | 100 | 75 | 50 | 25 | 
+|:---:|---:|---:|---:|---:|
+| 2 | 2005 | 2899 | 4959 | 8776 | 4660 |
+| 3 | 2177 | 2117 | 2179 | 3467 | 2485 |
+| 4 | **1862** | 1960 | 2334 | 2514 | 2167 |
+| 6 | 3177 | 2411 | 2875 | 2942 | 2851 |
+| 10 | 4825 | 3989 | 3731 | 4018 | 4141 |
+
+Temos aqui um novo ganho relativamente à parametrização de base. O torneio de tamanho 4 reduz o tempo de forma visivel,
+relativamente ao torneio de tamanho 2. A probabilidade de escolher o melhor mantém-se como melhor opção o 100%.
+
+Assim sendo, entre a roleta e o torneio, é preferivel o torneio, com os parametros: P9=2 P11=4 P12=100
+
+## Teste 6
+
+Passamos para a fase da sobrevivência, em que o parametro base é P13. Existem 3 valores possíveis:
+- 1: Idade (valor de omissão)
+- 2: Substitui piores
+- 3: round-robin
+
+Este parametro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo valor de omissão é 100%.
+Neste caso os descendentes são iguais à população, pelo que no método da idade são todos substituídos.
+
+Nos restantes dois métodos, qualquer que seja a percentagem, os decendentes são adicionados à população e
+no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elmeento com Q outros.
+Os que perderem mais vezes, são removidos.
+
+O método round-robin tem portanto um parametro Q, que é o número de torneios:  P15(Q_ROUND_ROBIN).
+Tem o valor de omissão a 3, mas pode ser desde 2 até um valor alto como 100, mas não fará sentido ser superior à população.
+
+Vamos para já deixar este valor de omissão, e fazer um teste com P13 e P14, para apurar se a
+estratégia de sobrevivência é muito relevante ou não, e se a percentagem de descendentes é ou não relevante.
+
+Vamos variar P14 de 0 a 100 em passos de 25, tal como temos feito para as restantes percentagens.
+Quando P14=0 significa que haverá apenas um só descendente (e não 0) em cada geração.
+
+Vamos ainda alterar o conjunto de teste das 8 damas, atendendo a que os tempos de resolução são demasiado baixos
+para a codificação de permutação, com tempos médios a baixo de 0,05 segundos. Escolhemos as instâncias seguintes,
+de 20 a 29.
+
+- **Tipo de Teste / Objetivo**: Paramétrico P13 vs P14
+- **Definição**:
+	- **ci**: Instâncias: 20:29; Configurações: P6=20 P7=100 P8=0 P9=1 P10=175 P13=1:3 x P14=0:100:25
+	- **cp**: Instâncias: 20:29; Configurações: P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=1:3 x P14=0:100:25
+	- **cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1:3 x P14=0:100:25
+- **Esforço**:
+	- **ci+cp**: P3=1:100
+	- **cb**: P3=1:10
+- **Execução**:
+	- **ci**: TProcuraMelhorativa 1 20:29 -R Resultados/damasci_6 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P3=1:100 x P13=1:3 x P14=0:100:25
+	- **cp**: TProcuraMelhorativa 2 20:29 -R Resultados/damascp_6 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P3=1:100 x P13=1:3 x P14=0:100:25
+	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P3=1:10 x P13=1:3 x P14=0:100:25
+
+
+\htmlonly
+<details>
+  <summary>Ver script: evolutivos5.sh</summary>
 <pre>
 #!/bin/bash
 #SBATCH --job-name=evolutivos5
@@ -1112,9 +1474,7 @@ srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Re
   <summary>Ver execução:</summary>
 <pre>
 
+
 </pre>
 </details>
 \endhtmlonly
-
-
-
