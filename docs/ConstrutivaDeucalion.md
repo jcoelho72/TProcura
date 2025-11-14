@@ -81,7 +81,7 @@ srun bin/MPI/TProcuraConstrutiva 4 2:1000 -R Resultados/particao_3C -M 1 -P P1=3
 <summary>Ver comandos no cluster</summary>
 No cluster submetemos o trabalho com o comando:
 <pre>
-/TProcura/Construtiva/Teste$ sbatch evolutivos1.sh
+/TProcura/Construtiva/Teste$ sbatch construtiva.sh
 </pre>
 Podemos ver se o trabalho está em execução com:
 <pre>
@@ -89,7 +89,7 @@ Podemos ver se o trabalho está em execução com:
 </pre>
 Para verificar o output do trabalho, mesmo durante a execução, consultamos o ficheiro Resultados/construtiva.txt vendo o final do ficheiro
 <pre>
-/TProcura/Teste$ tail -f Resultados/evolutivos1.txt
+/TProcura/Construtiva/Teste$ tail -f Resultados/construtiva.txt
 </pre>
 </details>
 <details>
