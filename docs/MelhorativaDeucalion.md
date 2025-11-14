@@ -27,7 +27,13 @@ O indicador da eficácia não distingue entre duas instâncias resolvidas,
 mesmo que uma leve 0,1 segundos e a outra 5 segundos.
 
 Um problema em que se pretenda optimizar, ao contrário destes que são de procura, ou seja, se pretendessemos minimizar I1,
-teria de ter indicadores distintos, como distância relativa à solução óotima, ou a um valor mínimo conhecido.
+teria de ter indicadores distintos, como distância relativa à solução ótima, ou a um valor mínimo conhecido.
+
+Para averiguar se as diferenças obtidas na eficiência (tempo), são ou não relevantes, vamos calcular também o
+intervalo de confiança a 95% para a eficiência:
+
+- ICinf = round(AVERAGE([I2(Tempo(ms))]) - 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)
+- ICsup = round(AVERAGE([I2(Tempo(ms))]) + 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)
 
 
 ## Teste 1
@@ -37,23 +43,26 @@ valor de omissão. Pretendemos ter uma avaliação sobre um conjunto alargado de
 se o algoritmo foi bem sucedido, e eficiência, se foi rápido. Esta será uma referência que iremos repetir no final
 com a configuração encontrada, e assim quantificar o ganho da realização dos testes paramétricos.
 
-Como os três problemas utilizam codificações distintas, vamos identificar os problemas cor CI (8 damas codificação inteira),
+Como os três problemas utilizam codificações distintas, vamos identificar os problemas por CI (8 damas codificação inteira),
 CP (8 damas codificação permutação) e CB (partição codificação binária).
 
-As 8 damas com a codificação inteira e permutação, vamos utilizar o conjunto completo de instâncias. Como o algoritmo é aleatório,
+Para as 8 damas com a codificação inteira e permutação, vamos utilizar o conjunto completo de instâncias. Como o algoritmo é aleatório,
 vamos executar 100 execuções de modo a ganhar precisão sobre a capacidade da configuração base de resolver uma dada iostâsncia.
 
 No problema da partição tem instâncias de 2 a 1000 (quantidade de números), e a instância é gerada aleatoriamente, pelo que por cada valor de P3
 existe uma nova instância. Assim, para manter um volume razoável, variamos o esforço de P3 de 1 a 10.
 
 - **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
-- **Definição ci+cp**: Instâncias: 4:40; Configurações: (base)
-- **Definição cb**: Instâncias: 2:1000; Configurações: (base)
-- **Esforço ci+cp**: P3=1:100
-- **Esforço cb**: P3=1:10
-- **Execução ci**: TProcuraMelhorativa 1 4:40 -R Resultados/damasci_1 -M 1 -P P2=2 P3=1:100
-- **Execução cp**: TProcuraMelhorativa 2 4:40 -R Resultados/damascp_1 -M 1 -P P2=2 P3=1:100
-- **Execução cb**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
+- **Definição**:
+	- **ci+cp**: Instâncias: 4:40; Configurações: (base)
+	- **cb**: Instâncias: 2:1000; Configurações: (base)
+- **Esforço**:
+	- **ci+cp**: P3=1:100
+	- **cb**: P3=1:10
+- **Execução**:
+	- **ci**: TProcuraMelhorativa 1 4:40 -R Resultados/damasci_1 -M 1 -P P2=2 P3=1:100
+	- **cp**: TProcuraMelhorativa 2 4:40 -R Resultados/damascp_1 -M 1 -P P2=2 P3=1:100
+	- **cb**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_1 -M 1 -P P2=2 P3=1:10
 
 \htmlonly
 <details>
@@ -262,7 +271,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 Os problemas são todos resolvidos até à instância 15, após o qual a eficácia desce
 ficando a baixo dos 10% na instância 27.
-A eficiência vai também subindo, na instância 15 onde ainda todas as instâncias são resolvidas,
+A eficiência vai também piorando (subindo), na instância 15 onde ainda todas as instâncias são resolvidas,
 já leva 1,7 segundos em média.
 
 Vamos utilizar estes resultados para fixar o conjunto de teste para conter apenas
@@ -325,7 +334,7 @@ No entanto, aparenta ter mais dificuldades com instâncias maiores, naturalmente
 referência a configuração base.
 
 Utilizando o mesmo racional que nas 8 damas com codificação inteira, e também para mantermos
-o conjunto de teste comparável entre as duas configurações, vamos utilizar as instâncias 10 a 19
+o conjunto de teste comparável entre as duas codificações, vamos utilizar as instâncias 10 a 19
 para os testes seguintes, de modo a apurar a melhor marametrização.
 
 
@@ -362,19 +371,19 @@ Como foram utilizadas 10 corridas com valores diferentes para P3 por cada tamanh
 As instâncias ímpares não são resolvidas, as pares a partir da instância 10 são todas resolvidas,
 e apenas exporadicamente há uma instância par não resolvida.
 
-Como a abordagem melhorativa não permite resolver instâncias sem solução, provavelemnente nas instâncias ímparas, a razão para
+A abordagem melhorativa não permite resolver instâncias sem solução, e provavelemnente nas instâncias ímparas, a razão para
 não se encontrar a solução é por não existir a solução. Em algumas instâncias é possível confirmar com base
 na execução das procuras construtivas, outras não.
 
 Assim vamos utilizar para conjunto de teste apenas instâncias pares, que tenham sido todas resolvidas (com os 10 valores de P3),
 com os maiores tempos.
 
-Teste: 948,864,930,922,764,692,806,926,904,870 
+Conjunto de teste: 948,864,930,922,764,692,806,926,904,870 
 
 ## Teste 2
 
 Vamos agora iniciar o estudo dos parametros. Adoptamos a ordem com que estão definidos.
-Alguns parametros são dependentes do valor de outros, pelo são analisados em conjunto.
+Alguns parametros são dependentes do valor de outros, pelo que são analisados em conjunto.
 
 Arrancamos com o parametro P6 população. Este é um parametro determinante nos algoritmos evolutivos.
 
@@ -384,17 +393,20 @@ sejam possíveis, mas assim o algoritmo evolutivo assemelha-se a uma procura loc
 tem de se alterar outros parametros. Iremos estudar esta vertente numa fase posterior.
 
 - **Tipo de Teste / Objetivo**: População vs Eficiência
-- **Definição ci+cp**: Instâncias: 10:19; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200
-- **Definição cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200
-- **Esforço ci+cp**: P3=1:100
-- **Esforço cb**: P3=1:10
-- **Execução ci**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200
-- **Execução cp**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200
-- **Execução cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_2 -M 1 -P P2=2 P3=1:10 x P6=5,10,15,20,25,30,40,50,75,100,150,200
+- **Definição**:
+	- **ci+cp**: Instâncias: 10:19; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200
+	- **cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=5,10,15,20,25,30,40,50,75,100,150,200
+- **Esforço**:
+	- **ci+cp**: P3=1:100
+	- **cb**: P3=1:10
+- **Execução**:
+	- **ci**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200
+	- **cp**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_2 -M 1 -P P2=2 P3=1:100 x P6=5,10,15,20,25,30,40,50,75,100,150,200
+	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_2 -M 1 -P P2=2 P3=1:10 x P6=5,10,15,20,25,30,40,50,75,100,150,200
 
 \htmlonly
 <details>
-  <summary>Ver script: evolutivos1.sh</summary>
+  <summary>Ver script: evolutivos2.sh</summary>
 <pre>
 #!/bin/bash
 #SBATCH --job-name=evolutivos2
@@ -531,71 +543,76 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 ### Resultados: damasci_2
 
-| P6(População) | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 5 | 24 | 5815 |
-| 10 | 65 | 4301 |
-| 15 | 89 | 2674 |
-| 20 | 97 | 1840 |
-| 25 | 96 | 2031 |
-| 30 | 96 | 2272 |
-| 40 | 92 | 2642 |
-| 50 | 88 | 3209 |
-| 75 | 74 | 4336 |
-| 100 | 66 | 4960 |
-| 150 | 56 | 5728 |
-| 200 | 53 | 5973 |
+| P6(População) | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 5 | 24 | 5815 | 5649 | 5981 |
+| 10 | 65 | 4301 | 4057 | 4545 |
+| 15 | 89 | 2674 | 2466 | 2882 |
+| 20 | 97 | 1840 | 1690 | 1989 |
+| 25 | 96 | 2031 | 1867 | 2195 |
+| 30 | 96 | 2272 | 2100 | 2444 |
+| 40 | 92 | 2642 | 2450 | 2834 |
+| 50 | 88 | 3209 | 2995 | 3422 |
+| 75 | 74 | 4336 | 4088 | 4583 |
+| 100 | 66 | 4960 | 4699 | 5221 |
+| 150 | 56 | 5728 | 5464 | 5992 |
+| 200 | 53 | 5973 | 5710 | 6236 |
+
 
 Podemos observar que a população a 20, o valor de omissão, é nesta codificação o valor com melhores resultados.
-O valor 10 ou inferior, e 40 ou superior, aparenta danificar a eficácia e a eficiência.
+O intervalo de confiança a 95% no valor 20 intersecta o de 25, mas é claramente melhor que todos os restanes valores.
+O valor 10 ou inferior, e 40 ou superior, aparenta danificar consideravelmente a eficácia e a eficiência.
 
 Mantemos o valor de omissão P6=20.
 
 ### Resultados: damascp_2
 
-| P6(População) | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 5 | 91 | 1287 |
-| 10 | 98 | 826 |
-| 15 | 97 | 1148 |
-| 20 | 98 | 1138 |
-| 25 | 97 | 1389 |
-| 30 | 97 | 1360 |
-| 40 | 96 | 1582 |
-| 50 | 95 | 1752 |
-| 75 | 92 | 2201 |
-| 100 | 88 | 2557 |
-| 150 | 83 | 3051 |
-| 200 | 81 | 3271 |
+| P6(População) | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 5 | 91 | 1287 | 1155 | 1420 |
+| 10 | 98 | 826 | 722 | 929 |
+| 15 | 97 | 1148 | 1011 | 1286 |
+| 20 | 98 | 1138 | 1004 | 1272 |
+| 25 | 97 | 1389 | 1237 | 1540 |
+| 30 | 97 | 1360 | 1216 | 1505 |
+| 40 | 96 | 1582 | 1419 | 1744 |
+| 50 | 95 | 1752 | 1581 | 1924 |
+| 75 | 92 | 2201 | 2007 | 2395 |
+| 100 | 88 | 2557 | 2345 | 2769 |
+| 150 | 83 | 3051 | 2815 | 3286 |
+| 200 | 81 | 3271 | 3028 | 3513 |
 
 Na codificação permutação das 8 damas, ao contrário da codificação inteira, o valor da população mais eficiente é 10.
-Esta codificação não é tão sensivel a este parametro como a codificação inteira, mantendo no geral valores altos
+O intervalo de confiança nem intersecta qualquer um dos restantes valores.
+Esta codificação no entanto não é tão sensivel a este parametro como a codificação inteira, mantendo no geral bons valores 
 na eficácia e eficiência.
 
 Vamos alterar o valor de omissão para P6=10.
 
 ### Resultados: particaocb_2
 
-| P6(População) | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 5 | 73 | 5307 |
-| 10 | 93 | 3510 |
-| 15 | 94 | 3186 |
-| 20 | 100 | 4528 |
-| 25 | 91 | 4528 |
-| 30 | 94 | 3417 |
-| 40 | 86 | 4433 |
-| 50 | 92 | 3960 |
-| 75 | 80 | 5487 |
-| 100 | 75 | 5850 |
-| 150 | 61 | 7522 |
-| 200 | 49 | 7553 |
+| P6(População) | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 5 | 73 | 5307 | 4601 | 6014 |
+| 10 | 93 | 3510 | 2905 | 4115 |
+| 15 | 94 | 3186 | 2648 | 3723 |
+| 20 | 100 | 4528 | 3997 | 5059 |
+| 25 | 91 | 4528 | 3937 | 5118 |
+| 30 | 94 | 3417 | 2831 | 4002 |
+| 40 | 86 | 4433 | 3792 | 5075 |
+| 50 | 92 | 3960 | 3419 | 4502 |
+| 75 | 80 | 5487 | 4866 | 6108 |
+| 100 | 75 | 5850 | 5184 | 6517 |
+| 150 | 61 | 7522 | 6999 | 8045 |
+| 200 | 49 | 7553 | 6959 | 8147 |
 
 O parametro P6(População) tem a eficácia a 100% apenas no valor de omissão 20.
 No entanto existem valores com melhor eficiência.
 Não se vê no entanto uma tendência clara, apenas uma zona que aparenta ser melhor, entre 10 e 50 elementos,
-em que o tempo médio é inferior a 5 segundos. Assim, considera-se que este parametro não é crítico, pelo menos na
-configuração atual dos restantes parametros, pelo que optou-se por manter o valor de omissão: P6=20.
+em que o tempo médio é inferior a 5 segundos. Os intervalos de confiança intersectam-se quase todos.
+Assim, considera-se que este parametro não é crítico, e pelo menos na
+configuração atual dos restantes parametros não há um claro valor melhor,
+pelo que optou-se por manter o valor de omissão: P6=20.
 
 ## Teste 3
 
@@ -605,18 +622,21 @@ Existem estratégias que funcionam só com mutação ou só com cruzamento. Os o
 mas de momento vamos manter os operadores de omissão e estudar apenas a probabilidade de aplicação.
 
 - **Tipo de Teste / Objetivo**: Paramétrico (P7 vs P8)
-- **Definição ci**: Instâncias: 10:19; Configurações: P6=20 P7=0:100:25 x P8=0:100:25
-- **Definição cp**: Instâncias: 10:19; Configurações: P6=10 P7=0:100:25 x P8=0:100:25
-- **Definição cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0:100:25 x P8=0:100:25
-- **Esforço ci+cp**: P3=1:100
-- **Esforço cb**: P3=1:10
-- **Execução ci**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_3 -M 1 -P P2=2 P6=20 P3=1:100 x P7=0:100:25 x P8=0:100:25
-- **Execução cp**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_3 -M 1 -P P2=2 P6=10 P3=1:100 x P7=0:100:25 x P8=0:100:25
-- **Execução cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_3 -M 1 -P P2=2 P6=20 P3=1:10 x P7=0:100:25 x P8=0:100:25
+- **Definição**:
+	- **ci**: Instâncias: 10:19; Configurações: P6=20 P7=0:100:25 x P8=0:100:25
+	- **cp**: Instâncias: 10:19; Configurações: P6=10 P7=0:100:25 x P8=0:100:25
+	- **cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0:100:25 x P8=0:100:25
+- **Esforço**:
+	- **ci+cp**: P3=1:100
+	- **cb**: P3=1:10
+- **Execução**:
+	- **ci**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_3 -M 1 -P P2=2 P6=20 P3=1:100 x P7=0:100:25 x P8=0:100:25
+	- **cp**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_3 -M 1 -P P2=2 P6=10 P3=1:100 x P7=0:100:25 x P8=0:100:25
+	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_3 -M 1 -P P2=2 P6=20 P3=1:10 x P7=0:100:25 x P8=0:100:25
 
 \htmlonly
 <details>
-  <summary>Ver script: evolutivos1.sh</summary>
+  <summary>Ver script: evolutivos3.sh</summary>
 <pre>
 #!/bin/bash
 #SBATCH --job-name=evolutivos3
@@ -841,18 +861,21 @@ Caso existam, cada método deve ser optimizado separadamente, variando os seus p
 comparar a melhor versão de cada uma das estratégias de seleção dos pais. 
 
 - **Tipo de Teste / Objetivo**: Paramétrico P9
-- **Definição ci**: Instâncias: 10:19; Configurações: P6=20 P7=100 P8=0 P9=1:3
-- **Definição cp**: Instâncias: 10:19; Configurações: P6=10 P7=0 P8=100 P9=1:3
-- **Definição cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=1:3
-- **Esforço ci+cp**: P3=1:100
-- **Esforço cb**: P3=1:10
-- **Execução ci**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_4 -M 1 -P P2=2 P6=20 P7=100 P8=0 P3=1:100 x P9=1:3
-- **Execução cp**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_4 -M 1 -P P2=2 P6=10 P7=0 P8=100 P3=1:100 x P9=1:3
-- **Execução cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_4 -M 1 -P P2=2 P6=20 P7=0 P8=100 P3=1:10 x P9=1:3
+- **Definição**:
+	- **ci**: Instâncias: 10:19; Configurações: P6=20 P7=100 P8=0 P9=1:3
+	- **cp**: Instâncias: 10:19; Configurações: P6=10 P7=0 P8=100 P9=1:3
+	- **cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=1:3
+- **Esforço**:
+	- **ci+cp**: P3=1:100
+	- **cb**: P3=1:10
+- **Execução**:
+	- **ci**: TProcuraMelhorativa 1 10:19 -R Resultados/damasci_4 -M 1 -P P2=2 P6=20 P7=100 P8=0 P3=1:100 x P9=1:3
+	- **cp**: TProcuraMelhorativa 2 10:19 -R Resultados/damascp_4 -M 1 -P P2=2 P6=10 P7=0 P8=100 P3=1:100 x P9=1:3
+	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_4 -M 1 -P P2=2 P6=20 P7=0 P8=100 P3=1:10 x P9=1:3
 
 \htmlonly
 <details>
-  <summary>Ver script: evolutivos1.sh</summary>
+  <summary>Ver script: evolutivos4.sh</summary>
 <pre>
 #!/bin/bash
 #SBATCH --job-name=evolutivos4
@@ -966,22 +989,24 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 ### Resultados: damasci_4
 
-| P9 | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 1:Roleta | 99 | 1332 |
-| 2:Torneio | 94 | 2173 |
-| 3:Uniforme | 27 | 7363 |
+| P9 | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 1:Roleta | 99 | 1332 | 1220 | 1443 |
+| 2:Torneio | 94 | 2173 | 1999 | 2348 |
+| 3:Uniforme | 27 | 7363 | 7154 | 7573 |
 
 Podemos observar que é crítica a estratégia de seleção dos pais. O método uniforme é claramente pior e não tem parametros,
-pelo que descartamos. Já o método Roleta e Torneio têm parametros e precisam de ser explorados para identificar a melhor configuração.
+pelo que descartamos. Pelo intervalo de confiança, com os valores de omissão, o método roleta seria o escolhido.
+No entanto os métodos Roleta e Torneio têm parametros e precisam de ser explorados para identificar a melhor configuração.
+
 
 ### Resultados: damascp_4
 
-| P9 | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 1:Roleta | 100 | 175 |
-| 2:Torneio | 100 | 115 |
-| 3:Uniforme | 100 | 342 |
+| P9 | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 1:Roleta | 100 | 175 | 154 | 196 |
+| 2:Torneio | 100 | 115 | 101 | 128 |
+| 3:Uniforme | 100 | 342 | 301 | 382 |
 
 Podemos observar também diferenças grandes entre estratégias de seleção de pais.
 Descartamos a seleção uniforme, que não tem parametros e tem uma eficiência inferior.
@@ -989,11 +1014,11 @@ Nas restantes duas estratégias temos de identificar a melhor parametrização, 
 
 ### Resultados: particaocb_4
 
-| P9 | Eficácia | Eficiência |
-|:---:|---:|---:|
-| 1:Roleta | 95 | 2742 |
-| 2:Torneio | 100 | 2005 |
-| 3:Uniforme | 89 | 4589 |
+| P9 | Eficácia | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|---:|
+| 1:Roleta | 95 | 2742 | 2239 | 3245 |
+| 2:Torneio | 100 | 2005 | 1646 | 2365 |
+| 3:Uniforme | 89 | 4589 | 3987 | 5192 |
 
 Na partição observamos o mesmo que nas 8 damas em ambas as codificações, que a estratégias de seleção de pais é um passo crítico.
 Descartamos a seleção uniforme, que não tem parametros e tem uma eficiência inferior.
