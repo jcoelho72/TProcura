@@ -2027,27 +2027,188 @@ srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Re
 <details>
   <summary>Ver execução:</summary>
 <pre>
+mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp ../../TRand.cpp ../TProcuraMelhorativa.cpp ../TCodificacaoArvore.cpp ../TCodificacaoBinaria.cpp ../TCodificacaoInteira.cpp ../TCodificacaoReal.cpp ../TCodificacaoPermutacao.cpp ProblemaArtificial.cpp OitoDamas.cpp teste.cpp Particao.cpp
 
+
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP10=[0m175 [90mP13=[0m1 [90mP14=[0m100
+ ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m0 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP18=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP18=[0m1
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP18=[0m1
+ │ ...
+ ├─ ⚙  [298] ─ [90mP3=[0m98 [90mP18=[0m3
+ ├─ ⚙  [299] ─ [90mP3=[0m99 [90mP18=[0m3
+ ├─ ⚙  [300] ─ [90mP3=[0m100 [90mP18=[0m3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:3000   📄 Instâncias: 10   🛠️ Configurações: 300   🖥️ Processos: 48.
+ ├─ ⏱ 1' 259ms        📋 570   📄 20    🛠️ 244   🖥️ 31    ⚖  0 1077 81891 3608 85498 
+ ├─ ⏱ 2' 375ms        📋 1059  📄 27    🛠️ 198   🖥️ 8     ⚖  13 10000 433661 21682 455342 
+ ├─ ⏱ 3' 509ms        📋 1344  📄 22    🛠️ 170   🖥️ 35    ⚖  8 10000 559101 27954 587054 
+ ├─ ⏱ 4' 631ms        📋 1627  📄 29    🛠️ 141   🖥️ 14    ⚖  17 10000 394621 19730 414350 
+ ├─ ⏱ 5' 670ms        📋 1911  📄 25    🛠️ 113   🖥️ 5     ⚖  10 10000 478781 23938 502718 
+ ├─ ⏱ 6' 1" 153ms     📋 2207  📄 29    🛠️ 83    🖥️ 9     ⚖  13 10000 691881 34593 726473 
+ ├─ ⏱ 7' 1" 400ms     📋 2506  📄 22    🛠️ 54    🖥️ 32    ⚖  10 9108 1000001 49999 1049999 
+ ├─ ⏱ 8' 1" 587ms     📋 2806  📄 22    🛠️ 24    🖥️ 19    ⚖  9 9136 1000001 49999 1049999 
+ ├─ 📑  Ficheiro Resultados/damasci_8.csv gravado.
+ │  ⏱  Tempo real: 8' 50" 236ms 
+ │  ⏱  CPU total: 6h 55' 21" 85ms 
+ │  ⏱  Espera do gestor: 8' 50" 168ms 
+ │  ⏱  Espera trabalhadores: 3' 36" 609ms 
+ │  📊  Utilização:
+ │  - Total: 97.1%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.1% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 8' 50" 236ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP13=[0m3
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP15=[0m2 [90mP16=[0m3 [90mP17=[0m1 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP18=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP18=[0m1
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP18=[0m1
+ │ ...
+ ├─ ⚙  [298] ─ [90mP3=[0m98 [90mP18=[0m3
+ ├─ ⚙  [299] ─ [90mP3=[0m99 [90mP18=[0m3
+ ├─ ⚙  [300] ─ [90mP3=[0m100 [90mP18=[0m3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:3000   📄 Instâncias: 10   🛠️ Configurações: 300   🖥️ Processos: 48.
+ ├─ ⏱ 1' 291ms        📋 1516  📄 29    🛠️ 157   🖥️ 46    ⚖  1 10000 660164 60014 840205 
+ ├─ ⏱ 2' 451ms        📋 2073  📄 26    🛠️ 99    🖥️ 27    ⚖  1 10000 987898 89808 1257321 
+ ├─ ⏱ 3' 841ms        📋 2466  📄 27    🛠️ 59    🖥️ 6     ⚖  1 10000 952192 86562 1211877 
+ ├─ ⏱ 4' 935ms        📋 2863  📄 21    🛠️ 14    🖥️ 35    ⚖  0 1721 211793 19253 269551 
+ ├─ 📑  Ficheiro Resultados/damascp_8.csv gravado.
+ │  ⏱  Tempo real: 4' 30" 271ms 
+ │  ⏱  CPU total: 3h 31' 42" 760ms 
+ │  ⏱  Espera do gestor: 4' 30" 204ms 
+ │  ⏱  Espera trabalhadores: 4' 3" 39ms 
+ │  📊  Utilização:
+ │  - Total: 96.0%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 98.1% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4' 30" 272ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m4 [90mP12=[0m100 [90mP13=[0m1
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP18=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP18=[0m1
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP18=[0m1
+ │ ...
+ ├─ ⚙  [28] ─ [90mP3=[0m8 [90mP18=[0m3
+ ├─ ⚙  [29] ─ [90mP3=[0m9 [90mP18=[0m3
+ ├─ ⚙  [30] ─ [90mP3=[0m10 [90mP18=[0m3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:300   📄 Instâncias: 10   🛠️ Configurações: 30   🖥️ Processos: 48.
+ ├─ 📑  Ficheiro Resultados/particaocb_8.csv gravado.
+ │  ⏱  Tempo real: 15" 308ms 
+ │  ⏱  CPU total: 11' 59" 463ms 
+ │  ⏱  Espera do gestor: 15" 300ms 
+ │  ⏱  Espera trabalhadores: 4' 16" 369ms 
+ │  📊  Utilização:
+ │  - Total: 63.0%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 64.4% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 15" 308ms ) ═══
 </pre>
 </details>
 \endhtmlonly
 
 ### Resultados: damasci_8
 
+| P18 | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|
+| 1:Nenhuma | 9507 | 9459 | 9554 |
+| 2:Avaliação partilhada | 10000 | 10000 | 10000 |
+| 3:Limpeza | **5307** | 5103 | 5511 |
+
+A estratégia de diversidade de avaliação partihada, não é compatível com as restantes configurações.
+Podemos ver também que a não ulização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.
+
 ### Resultados: damascp_8
+
+| P18 | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|
+| 1:Nenhuma | 7107 | 6870 | 7344 |
+| 2:Avaliação partilhada | 4991 | 4733 | 5249 |
+| 3:Limpeza | **412** | 379 | 445 |
+
+Podemos ver neste caso que a avaliação partilhada tem algum impacto positivo, embora distante da
+estratégia de limpeza que é o valor de omissão.
+
 
 ### Resultados: particaocb_8
 
+| P18 | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|
+| 1:Nenhuma | **273** | 219 | 327 |
+| 2:Avaliação partilhada | 2507 | 2036 | 2979 |
+| 3:Limpeza | 1862 | 1460 | 2263 |
+
+Estes resultados mostram o surpreendente registo de não utilizar estratégia de limpeza para este problema,
+melhora consideravelmente a eficiência. Concluímos que esta estratégia estava a ser prejudicial para este problema.
+Assim, alteramos o valor de P18=1. 
 
 
 ## Teste 9
 
-P19(DIST_MINIMA) + P24(TIPO_DISTANCIA)
+Vamos agora estudar o impacto da distância mínima P19 e tipo de distância P24, apenas para as duas primeiras implementações,
+atendendo a que na terceira a não utilização de estratégia de limpeza revelou-se bastante melhor, a qual não utiliza
+distâncias.
+
+Para a codificação inteira temos os seguintes tipos de distâncias:
+- 1: Hamming (omissão)
+- 2: Euclidiana
+- 3: Manhattan
+
+Para a codificação permutação temos as seguintes distâncias:
+- 1: Hamming (omissão)
+- 2: Kendall tau
+- 3: Spearman footrule
+
+O parametro P19 vamos variar em valores pequenos e alguns grandes, já que depende da medida de distãncia: 0,1,2,4,8
+
+- **Tipo de Teste / Objetivo**: Paramétrico P19 vs P24
+- **Definição**:
+	- **ci**: Instâncias: 20:29; Configurações: P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0,1,2,4,8 x P24=1:3
+	- **cp**: Instâncias: 20:29; Configurações: P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0,1,2,4,8 x P24=1:3
+- **Esforço**:
+	- **ci+cp**: P3=1:100
+- **Execução**:
+	- **ci**: TProcuraMelhorativa 1 20:29 -R Resultados/damasci_9 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P3=1:100 x P19=0,1,2,4,8 x P24=1:3
+	- **cp**: TProcuraMelhorativa 2 20:29 -R Resultados/damascp_9 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P3=1:100 x P19=0,1,2,4,8 x P24=1:3
+
+
 
 \htmlonly
 <details>
   <summary>Ver script: evolutivos9.sh</summary>
 <pre>
+#!/bin/bash
+#SBATCH --job-name=evolutivos9
+#SBATCH --output=Resultados/evolutivos9.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
+
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: damasci_9
+srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_9 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P3=1:100 x P19=0,1,2,4,8 x P24=1:3
+# Teste: damascp_9
+srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_9 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P3=1:100 x P19=0,1,2,4,8 x P24=1:3
 </pre>
 </details>
 <details>
@@ -2062,7 +2223,6 @@ P19(DIST_MINIMA) + P24(TIPO_DISTANCIA)
 
 ### Resultados: damascp_9
 
-### Resultados: particaocb_9
 
 
 
