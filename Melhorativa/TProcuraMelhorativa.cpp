@@ -563,6 +563,9 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 	// selecionar os pais, de acordo com o método escolhido
 	int descendentes = (Parametro(PERC_DESCENDENTES) * populacao.Count()) / 100;
 	int pop = populacao.Count();
+	pais = {};
+	if (Parar())
+		return pais;
 	if (descendentes < 1)
 		descendentes = 1;
 	else if (descendentes > pop)
@@ -570,7 +573,6 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarPaisAE(TVector<TPonto>& populacao
 
 	Debug(COMPLETO, false, "\n │ ├─┬─── FASE %-2s Selecionar %d %-2spais ───── ",
 		Icon(EIcon::SEL_PAIS), descendentes, Icon(EIcon::PAIS));
-	pais = {};
 	if (Parametro(SELECAO) == 1) { // roleta
 		// roleta implementada como Stochastic Universal Sampling (SUS)
 		TVector<int> id, peso;
@@ -653,6 +655,9 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 	int cruzamentos = 0, mutacoes = 0;
 	int melhor, pior, igual; // estatística do avanço da nova geração
 	TVector<int> custoPais, custoFilhos;
+	descendentes = {};
+	if (Parar()) 
+		return descendentes;
 	Debug(COMPLETO, false, "\n │ ├─┬─── FASE %-2s Reproduzir %d pais ───── ", Icon(EIcon::CRUZAR), pais.Count());
 	Debug(COMPLETO, false, "\n │ │ ├───── Pais (%-2s) ───── ", Icon(EIcon::PAIS));
 	pais.RandomOrder();
@@ -751,6 +756,8 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 	int nElite = Parametro(ELITISMO);
 	int imigrantes = Parametro(IMIGRANTES);
 	int melhorDescendente = INT_MAX;
+	if(Parar()) 
+		return populacao;
 	Debug(COMPLETO, false, "\n │ ├─┬─── FASE %-2s Sobrevivência ───── ", Icon(EIcon::SOBREVIVENCIA));
 	if (nElite > 0) {
 		// 1. Copiar os N melhores da população atual
@@ -885,6 +892,8 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& populacao)
 {
 	int distMinima = Parametro(DIST_MINIMA);
+	if (Parar())
+		return populacao;
 	if (Parametro(DIVERSIDADE) == 2) { // avaliação partilhada
 		TVector<int> id, penalizados;
 		int count = 0;
