@@ -2399,21 +2399,229 @@ srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_9 -M 1 -P P2=2 P6
 <details>
   <summary>Ver execução:</summary>
 <pre>
+mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp ../../TRand.cpp ../TProcuraMelhorativa.cpp ../TCodificacaoArvore.cpp ../TCodificacaoBinaria.cpp ../TCodificacaoInteira.cpp ../TCodificacaoReal.cpp ../TCodificacaoPermutacao.cpp ProblemaArtificial.cpp OitoDamas.cpp teste.cpp Particao.cpp
 
+
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP10=[0m175 [90mP13=[0m1 [90mP14=[0m100
+ ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m0 [90mP18=[0m3 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP19=[0m0 [90mP24=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP19=[0m0 [90mP24=[0m1
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP19=[0m0 [90mP24=[0m1
+ │ ...
+ ├─ ⚙  [1498] ─ [90mP3=[0m98 [90mP19=[0m8 [90mP24=[0m3
+ ├─ ⚙  [1499] ─ [90mP3=[0m99 [90mP19=[0m8 [90mP24=[0m3
+ ├─ ⚙  [1500] ─ [90mP3=[0m100 [90mP19=[0m8 [90mP24=[0m3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:15000   📄 Instâncias: 10   🛠️ Configurações: 1500   🖥️ Processos: 48.
+ ├─ ⏱ 1' 94ms         📋 347   📄 21    🛠️ 1470  🖥️ 42    ⚖  1 10000 705919 30835 736753 
+ ├─ ⏱ 2' 395ms        📋 663   📄 28    🛠️ 1438  🖥️ 42    ⚖  1 10000 478842 20977 499818 
+ ├─ ⏱ 3' 688ms        📋 988   📄 24    🛠️ 1406  🖥️ 28    ⚖  1 10000 590700 25840 616539 
+ ├─ ⏱ 4' 797ms        📋 1416  📄 25    🛠️ 1363  🖥️ 3     ⚖  0 7089 398024 17485 415508 
+ ├─ ⏱ 5' 818ms        📋 1863  📄 29    🛠️ 1316  🖥️ 42    ⚖  0 4094 185610 8157 193766 
+ ├─ ⏱ 6' 829ms        📋 2332  📄 28    🛠️ 1274  🖥️ 35    ⚖  1 10000 477063 20984 498046 
+ ├─ ⏱ 7' 875ms        📋 2843  📄 27    🛠️ 1224  🖥️ 40    ⚖  1 10000 501807 22077 523883 
+ ├─ ⏱ 8' 986ms        📋 3336  📄 21    🛠️ 1168  🖥️ 10    ⚖  0 1744 123357 5430 128786 
+ ├─ ⏱ 9' 1" 78ms      📋 3852  📄 26    🛠️ 1118  🖥️ 12    ⚖  0 3422 178795 7872 186666 
+ ├─ ⏱ 10' 1" 200ms    📋 4367  📄 23    🛠️ 1071  🖥️ 2     ⚖  1 10000 626223 27587 653809 
+ ├─ ⏱ 11' 1" 201ms    📋 4895  📄 21    🛠️ 1012  🖥️ 22    ⚖  0 2109 149259 6577 155835 
+ ├─ ⏱ 12' 1" 469ms    📋 5414  📄 21    🛠️ 959   🖥️ 39    ⚖  0 1297 91802 4032 95833 
+ ├─ ⏱ 13' 1" 638ms    📋 5912  📄 29    🛠️ 916   🖥️ 26    ⚖  1 10000 452073 19907 471979 
+ ├─ ⏱ 14' 1" 660ms    📋 6404  📄 22    🛠️ 868   🖥️ 1     ⚖  1 10000 667855 29351 697205 
+ ├─ ⏱ 15' 1" 780ms    📋 6921  📄 25    🛠️ 810   🖥️ 47    ⚖  0 3842 211651 9313 220963 
+ ├─ ⏱ 16' 2" 79ms     📋 7429  📄 23    🛠️ 759   🖥️ 9     ⚖  0 2915 181956 8017 189972 
+ ├─ ⏱ 17' 2" 142ms    📋 7967  📄 26    🛠️ 709   🖥️ 21    ⚖  0 7163 380184 16745 396928 
+ ├─ ⏱ 18' 2" 319ms    📋 8474  📄 29    🛠️ 655   🖥️ 43    ⚖  0 4623 208723 9202 217924 
+ ├─ ⏱ 19' 2" 398ms    📋 8989  📄 26    🛠️ 608   🖥️ 7     ⚖  0 8472 449335 19782 469116 
+ ├─ ⏱ 20' 2" 469ms    📋 9518  📄 29    🛠️ 551   🖥️ 27    ⚖  0 3463 154462 6813 161274 
+ ├─ ⏱ 21' 3" 81ms     📋 10038 📄 29    🛠️ 503   🖥️ 9     ⚖  1 10000 452935 19961 472895 
+ ├─ ⏱ 22' 4" 106ms    📋 10322 📄 24    🛠️ 472   🖥️ 15    ⚖  8 10000 623554 26034 649587 
+ ├─ ⏱ 23' 4" 307ms    📋 10606 📄 20    🛠️ 444   🖥️ 5     ⚖  6 10000 829923 33480 863402 
+ ├─ ⏱ 24' 4" 405ms    📋 10889 📄 27    🛠️ 415   🖥️ 3     ⚖  8 10000 517656 21927 539582 
+ ├─ ⏱ 25' 5" 214ms    📋 11173 📄 23    🛠️ 387   🖥️ 44    ⚖  5 10000 640993 27799 668791 
+ ├─ ⏱ 26' 5" 688ms    📋 11457 📄 29    🛠️ 358   🖥️ 34    ⚖  7 10000 461800 20035 481834 
+ ├─ ⏱ 27' 6" 2ms      📋 11744 📄 22    🛠️ 330   🖥️ 14    ⚖  5 10000 672925 29195 702119 
+ ├─ ⏱ 28' 6" 103ms    📋 12027 📄 29    🛠️ 301   🖥️ 42    ⚖  5 10000 462287 20075 482361 
+ ├─ ⏱ 29' 6" 271ms    📋 12315 📄 21    🛠️ 273   🖥️ 18    ⚖  2 10000 717890 31237 749126 
+ ├─ ⏱ 30' 6" 549ms    📋 12599 📄 27    🛠️ 244   🖥️ 41    ⚖  3 10000 510429 22248 532676 
+ ├─ ⏱ 31' 6" 633ms    📋 12882 📄 24    🛠️ 216   🖥️ 20    ⚖  2 10000 603159 26263 629421 
+ ├─ ⏱ 32' 6" 878ms    📋 13180 📄 29    🛠️ 186   🖥️ 23    ⚖  1 10000 453922 19872 473793 
+ ├─ ⏱ 33' 6" 899ms    📋 13474 📄 25    🛠️ 157   🖥️ 5     ⚖  2 10000 568426 24874 593299 
+ ├─ ⏱ 34' 7" 124ms    📋 13773 📄 23    🛠️ 127   🖥️ 46    ⚖  1 10000 636605 27837 664441 
+ ├─ ⏱ 35' 7" 148ms    📋 14122 📄 25    🛠️ 96    🖥️ 20    ⚖  1 10000 561550 24750 586299 
+ ├─ ⏱ 36' 7" 470ms    📋 14656 📄 26    🛠️ 42    🖥️ 18    ⚖  1 10000 535710 23594 559303 
+ ├─ 📑  Ficheiro Resultados/damasci_9.csv gravado.
+ │  ⏱  Tempo real: 36' 55" 431ms 
+ │  ⏱  CPU total: 1d 4h 55' 25" 237ms 
+ │  ⏱  Espera do gestor: 36' 55" 97ms 
+ │  ⏱  Espera trabalhadores: 4' 45" 183ms 
+ │  📊  Utilização:
+ │  - Total: 97.6%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.7% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 36' 55" 431ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP13=[0m3
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP15=[0m2 [90mP16=[0m3 [90mP17=[0m1 [90mP18=[0m3 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP19=[0m0 [90mP24=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP19=[0m0 [90mP24=[0m1
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP19=[0m0 [90mP24=[0m1
+ │ ...
+ ├─ ⚙  [1498] ─ [90mP3=[0m98 [90mP19=[0m8 [90mP24=[0m3
+ ├─ ⚙  [1499] ─ [90mP3=[0m99 [90mP19=[0m8 [90mP24=[0m3
+ ├─ ⚙  [1500] ─ [90mP3=[0m100 [90mP19=[0m8 [90mP24=[0m3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:15000   📄 Instâncias: 10   🛠️ Configurações: 1500   🖥️ Processos: 48.
+ ├─ ⏱ 1' 227ms        📋 569   📄 28    🛠️ 1451  🖥️ 35    ⚖  0 9238 594766 45451 731118 
+ ├─ ⏱ 2' 254ms        📋 1143  📄 26    🛠️ 1388  🖥️ 45    ⚖  0 2922 198465 15660 245444 
+ ├─ ⏱ 3' 314ms        📋 1967  📄 29    🛠️ 1315  🖥️ 2     ⚖  1 10000 593543 46971 734455 
+ ├─ ⏱ 4' 320ms        📋 4467  📄 23    🛠️ 1054  🖥️ 29    ⚖  0 169 12617 1034 15718 
+ ├─ ⏱ 5' 682ms        📋 5311  📄 29    🛠️ 973   🖥️ 33    ⚖  2 10001 82288 5960 100167 
+ ├─ ⏱ 6' 771ms        📋 5625  📄 28    🛠️ 942   🖥️ 9     ⚖  2 10001 88993 6445 108327 
+ ├─ ⏱ 7' 1" 109ms     📋 5941  📄 29    🛠️ 910   🖥️ 31    ⚖  1 10002 82920 5995 100904 
+ ├─ ⏱ 8' 1" 565ms     📋 6290  📄 29    🛠️ 876   🖥️ 37    ⚖  1 10001 67305 5148 82748 
+ ├─ ⏱ 9' 1" 603ms     📋 6640  📄 22    🛠️ 839   🖥️ 21    ⚖  0 6053 84323 6325 103297 
+ ├─ ⏱ 10' 1" 701ms    📋 6982  📄 20    🛠️ 806   🖥️ 23    ⚖  0 8210 145155 10808 177578 
+ ├─ ⏱ 11' 2" 58ms     📋 7390  📄 22    🛠️ 762   🖥️ 19    ⚖  0 2540 30643 2399 37839 
+ ├─ ⏱ 12' 2" 136ms    📋 7799  📄 29    🛠️ 726   🖥️ 34    ⚖  1 10002 60308 4768 74611 
+ ├─ ⏱ 13' 2" 267ms    📋 8241  📄 28    🛠️ 683   🖥️ 38    ⚖  1 10000 61423 4951 76275 
+ ├─ ⏱ 14' 2" 488ms    📋 8725  📄 25    🛠️ 628   🖥️ 36    ⚖  0 1213 9789 788 12152 
+ ├─ ⏱ 15' 2" 517ms    📋 9339  📄 20    🛠️ 567   🖥️ 30    ⚖  0 389 5048 414 6289 
+ ├─ ⏱ 16' 2" 643ms    📋 10061 📄 23    🛠️ 497   🖥️ 22    ⚖  0 6665 685923 47068 827126 
+ ├─ ⏱ 17' 2" 698ms    📋 10449 📄 24    🛠️ 461   🖥️ 38    ⚖  1 10000 980948 67731 1184140 
+ ├─ ⏱ 18' 3" 60ms     📋 10838 📄 20    🛠️ 417   🖥️ 28    ⚖  0 1630 192833 13015 231877 
+ ├─ ⏱ 19' 3" 93ms     📋 11363 📄 20    🛠️ 364   🖥️ 38    ⚖  0 826 91503 6851 112055 
+ ├─ ⏱ 20' 3" 149ms    📋 12037 📄 28    🛠️ 296   🖥️ 47    ⚖  0 291 22061 1768 27364 
+ ├─ 📑  Ficheiro Resultados/damascp_9.csv gravado.
+ │  ⏱  Tempo real: 20' 59" 347ms 
+ │  ⏱  CPU total: 16h 26' 29" 294ms 
+ │  ⏱  Espera do gestor: 20' 59" 19ms 
+ │  ⏱  Espera trabalhadores: 1' 52" 998ms 
+ │  📊  Utilização:
+ │  - Total: 97.7%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.8% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 20' 59" 347ms ) ═══
 </pre>
 </details>
 </p>
 <h3><a class="anchor" id="autotoc_md55"></a>
 Resultados: damasci_9</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P19 vs P24   </th><th class="markdownTableHeadRight">1:Hamming   </th><th class="markdownTableHeadRight">2:Euclidiana   </th><th class="markdownTableHeadRight">3:Manhattan    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyRight"><b>5306</b>   </td><td class="markdownTableBodyRight">5339   </td><td class="markdownTableBodyRight">5343    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">9470   </td><td class="markdownTableBodyRight">5560   </td><td class="markdownTableBodyRight">5562    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">5350   </td><td class="markdownTableBodyRight">5678    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">5638   </td><td class="markdownTableBodyRight">6421    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">5714   </td><td class="markdownTableBodyRight">8855   </td></tr>
+</table>
+<p>O valor de omissão, com a distância mínima a 0 e utilizar a distância mais básica, a Hamming, é a que dá melhores resultados. Os restantes tipos de distâncias são também competitivos, e nesse caso a utilização de uma distância mínima superior a 0 pode ser uma alternativa. Mantemos os valores de omissão.</p>
 <h3><a class="anchor" id="autotoc_md56"></a>
 Resultados: damascp_9</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P19 vs P24   </th><th class="markdownTableHeadRight">1:Hamming   </th><th class="markdownTableHeadRight">2:Kendall tau   </th><th class="markdownTableHeadRight">3:Spearman footrule    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyRight"><b>413</b>   </td><td class="markdownTableBodyRight">3651   </td><td class="markdownTableBodyRight">513    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">413   </td><td class="markdownTableBodyRight">5799   </td><td class="markdownTableBodyRight">514    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">1624   </td><td class="markdownTableBodyRight">6990   </td><td class="markdownTableBodyRight">1840    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">4361   </td><td class="markdownTableBodyRight">8123   </td><td class="markdownTableBodyRight">3484    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">7335   </td><td class="markdownTableBodyRight">8948   </td><td class="markdownTableBodyRight">5300   </td></tr>
+</table>
+<p>Na codificação de permutação aparenta não existir grande vantagem em alterar o tipo de distância. A distância mínima 1 pode ser uma alternativa, mas não existindo vantagem clara, optamos por manter os valores de omissão.</p>
 <h2><a class="anchor" id="autotoc_md57"></a>
 Teste 10</h2>
-<p>P20(TIPO_CRUZAR) + P21(TIPO_MUTAR) + P23(LIMITE_VIZINHOS)</p>
+<p>Neste teste vamos ver se os tipos de operadores utilizados têm impacto no resultado.</p>
+<p>Parametro P20(TIPO_CRUZAR): (apenas em CI que utiliza cruzamento)</p><ul>
+<li>0: uniforme</li>
+<li>1: 1-ponto (omissão)</li>
+<li>2: 2-pontos</li>
+<li>...</li>
+<li>10: 10-pontos</li>
+</ul>
+<p>Vamos testar apenas alguns valores, já que se utilizar demasiados pontos acabará por ser igual ao operador uniforme: P20=0,1,2,3,4</p>
+<p>Parametro P21(TIPO_MUTAR): (apenas em CP e CB que utilizam mutação)</p><ul>
+<li>0 - aplica um vizinho aleatório (codificação CP e CB)</li>
+<li>1 a 100 - probabilidade de mutação para cada bit (codificação CB)</li>
+</ul>
+<p>Parametro P22(TIPO_VIZINHO): (codificação CP, que utiliza a mutação)</p><ul>
+<li>1: inserir (omissão)</li>
+<li>2: trocaPar</li>
+<li>3: inverterSegmento</li>
+</ul>
+<p>Parametro P22(TIPO_VIZINHO): (codificação CB)</p><ul>
+<li>1 a 1000 - troca um segmento de N bit (N=1 troca um bit de cada vez)</li>
+</ul>
+<p>Parametro P23(LIMITE_VIZINHOS):</p><ul>
+<li>0: não há limite (omissão)</li>
+<li>1 a 1000: limita a distância entre pares (para existirem menos vizinhos)</li>
+</ul>
+<p>Para CP, atendendo a que P21=0 temos P22=1:3 e podemos analisar o impacto do limite dos vizinhos com P23=0,1,2,4,8 Para CB, há dois modos, mutar com determinada probabilidade cada bit, ou aplicar um vizinho que troca um segmento de N bits. Vamos explorar ambas as possibilidades:</p><ul>
+<li>P21=0 P22=1,2,4,8</li>
+<li>P21=1,2,5,10,20,50</li>
+<li><b>Tipo de Teste / Objetivo</b>: Paramétrico P20/P21/P22/P23</li>
+<li><b>Definição</b>:<ul>
+<li><b>ci</b>: Instâncias: 20:29; Configurações: P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0,1,2,3,4</li>
+<li><b>cp</b>: Instâncias: 20:29; Configurações: P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P22=1:3 x P23=0,1,2,4,8</li>
+<li><b>cb</b>: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=0 P22=1,2,4,8</li>
+<li><b>cb**B: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=1,2,5,10,20,50</b></li>
+</ul>
+</li>
+<li><b>**Esforço</b>:<ul>
+<li><b>ci+cp</b>: P3=1:100</li>
+<li><b>cb</b>: P3=1:10</li>
+</ul>
+</li>
+<li><b>Execução</b>:<ul>
+<li><b>ci</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 1 20:29 -R Resultados/damasci_10 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P3=1:100 x P20=0,1,2,3,4</li>
+<li><b>cp</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 2 20:29 -R Resultados/damascp_10 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P3=1:100 x P22=1:3 x P23=0,1,2,4,8</li>
+<li><b>cb</b>: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_10 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=0 P3=1:10 x P22=1,2,4,8</li>
+<li>**cb**B: <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_10B -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P3=1:10 x P21=1,2,5,10,20,50</li>
+</ul>
+</li>
+</ul>
 <p> 
 <details>
   <summary>Ver script: evolutivos10.sh</summary>
 <pre>
+#!/bin/bash
+#SBATCH --job-name=evolutivos10
+#SBATCH --output=Resultados/evolutivos10.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
+
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: damasci_10
+srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_10 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P3=1:100 x P20=0,1,2,3,4
+# Teste: damascp_10
+srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_10 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P3=1:100 x P22=1:3 x P23=0,1,2,4,8
+# Teste: particaocb_10
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_10 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=0 P3=1:10 x P22=1,2,4,8
+# Teste: particaocb_10B
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_10B -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P3=1:10 x P21=1,2,5,10,20,50
 </pre>
 </details>
 <details>
