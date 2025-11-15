@@ -2031,16 +2031,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP10=[0m175 [90mP13=[0m1 [90mP14=[0m100
- ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m0 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>175 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100
+ ├─ ⚙   ─ <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>0 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP18=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP18=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP18=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P18=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P18=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P18=</span>1
  │ ...
- ├─ ⚙  [298] ─ [90mP3=[0m98 [90mP18=[0m3
- ├─ ⚙  [299] ─ [90mP3=[0m99 [90mP18=[0m3
- ├─ ⚙  [300] ─ [90mP3=[0m100 [90mP18=[0m3
+ ├─ ⚙  [298] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P18=</span>3
+ ├─ ⚙  [299] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P18=</span>3
+ ├─ ⚙  [300] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P18=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:3000   📄 Instâncias: 10   🛠️ Configurações: 300   🖥️ Processos: 48.
@@ -2064,16 +2064,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 8' 50" 236ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP13=[0m3
- ├─ ⚙   ─ [90mP14=[0m100 [90mP15=[0m2 [90mP16=[0m3 [90mP17=[0m1 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>3
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P15=</span>2 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>1 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP18=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP18=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP18=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P18=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P18=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P18=</span>1
  │ ...
- ├─ ⚙  [298] ─ [90mP3=[0m98 [90mP18=[0m3
- ├─ ⚙  [299] ─ [90mP3=[0m99 [90mP18=[0m3
- ├─ ⚙  [300] ─ [90mP3=[0m100 [90mP18=[0m3
+ ├─ ⚙  [298] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P18=</span>3
+ ├─ ⚙  [299] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P18=</span>3
+ ├─ ⚙  [300] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P18=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:3000   📄 Instâncias: 10   🛠️ Configurações: 300   🖥️ Processos: 48.
@@ -2093,16 +2093,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4' 30" 272ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m4 [90mP12=[0m100 [90mP13=[0m1
- ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>4 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP18=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP18=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP18=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P18=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P18=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P18=</span>1
  │ ...
- ├─ ⚙  [28] ─ [90mP3=[0m8 [90mP18=[0m3
- ├─ ⚙  [29] ─ [90mP3=[0m9 [90mP18=[0m3
- ├─ ⚙  [30] ─ [90mP3=[0m10 [90mP18=[0m3
+ ├─ ⚙  [28] ─ <span style="color:gray">P3=</span>8 <span style="color:gray">P18=</span>3
+ ├─ ⚙  [29] ─ <span style="color:gray">P3=</span>9 <span style="color:gray">P18=</span>3
+ ├─ ⚙  [30] ─ <span style="color:gray">P3=</span>10 <span style="color:gray">P18=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:300   📄 Instâncias: 10   🛠️ Configurações: 30   🖥️ Processos: 48.
@@ -2218,16 +2218,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP10=[0m175 [90mP13=[0m1 [90mP14=[0m100
- ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m0 [90mP18=[0m3 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>175 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100
+ ├─ ⚙   ─ <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>0 <span style="color:gray">P18=</span>3 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP19=[0m0 [90mP24=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP19=[0m0 [90mP24=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP19=[0m0 [90mP24=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P19=</span>0 <span style="color:gray">P24=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P19=</span>0 <span style="color:gray">P24=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P24=</span>1
  │ ...
- ├─ ⚙  [1498] ─ [90mP3=[0m98 [90mP19=[0m8 [90mP24=[0m3
- ├─ ⚙  [1499] ─ [90mP3=[0m99 [90mP19=[0m8 [90mP24=[0m3
- ├─ ⚙  [1500] ─ [90mP3=[0m100 [90mP19=[0m8 [90mP24=[0m3
+ ├─ ⚙  [1498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P19=</span>8 <span style="color:gray">P24=</span>3
+ ├─ ⚙  [1499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P19=</span>8 <span style="color:gray">P24=</span>3
+ ├─ ⚙  [1500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P19=</span>8 <span style="color:gray">P24=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:15000   📄 Instâncias: 10   🛠️ Configurações: 1500   🖥️ Processos: 48.
@@ -2279,16 +2279,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 36' 55" 431ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP13=[0m3
- ├─ ⚙   ─ [90mP14=[0m100 [90mP15=[0m2 [90mP16=[0m3 [90mP17=[0m1 [90mP18=[0m3 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>3
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P15=</span>2 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP19=[0m0 [90mP24=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP19=[0m0 [90mP24=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP19=[0m0 [90mP24=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P19=</span>0 <span style="color:gray">P24=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P19=</span>0 <span style="color:gray">P24=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P24=</span>1
  │ ...
- ├─ ⚙  [1498] ─ [90mP3=[0m98 [90mP19=[0m8 [90mP24=[0m3
- ├─ ⚙  [1499] ─ [90mP3=[0m99 [90mP19=[0m8 [90mP24=[0m3
- ├─ ⚙  [1500] ─ [90mP3=[0m100 [90mP19=[0m8 [90mP24=[0m3
+ ├─ ⚙  [1498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P19=</span>8 <span style="color:gray">P24=</span>3
+ ├─ ⚙  [1499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P19=</span>8 <span style="color:gray">P24=</span>3
+ ├─ ⚙  [1500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P19=</span>8 <span style="color:gray">P24=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:15000   📄 Instâncias: 10   🛠️ Configurações: 1500   🖥️ Processos: 48.
@@ -2443,16 +2443,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP10=[0m175 [90mP13=[0m1 [90mP14=[0m100
- ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m0 [90mP18=[0m3 [90mP19=[0m0 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>175 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100
+ ├─ ⚙   ─ <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>0 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP20=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP20=[0m0
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP20=[0m0
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P20=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P20=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P20=</span>0
  │ ...
- ├─ ⚙  [498] ─ [90mP3=[0m98 [90mP20=[0m4
- ├─ ⚙  [499] ─ [90mP3=[0m99 [90mP20=[0m4
- ├─ ⚙  [500] ─ [90mP3=[0m100 [90mP20=[0m4
+ ├─ ⚙  [498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P20=</span>4
+ ├─ ⚙  [499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P20=</span>4
+ ├─ ⚙  [500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P20=</span>4
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:5000   📄 Instâncias: 10   🛠️ Configurações: 500   🖥️ Processos: 48.
@@ -2474,16 +2474,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 6' 725ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP13=[0m3
- ├─ ⚙   ─ [90mP14=[0m100 [90mP15=[0m2 [90mP16=[0m3 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>3
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P15=</span>2 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP22=[0m1 [90mP23=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP22=[0m1 [90mP23=[0m0
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP22=[0m1 [90mP23=[0m0
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0
  │ ...
- ├─ ⚙  [1498] ─ [90mP3=[0m98 [90mP22=[0m3 [90mP23=[0m8
- ├─ ⚙  [1499] ─ [90mP3=[0m99 [90mP22=[0m3 [90mP23=[0m8
- ├─ ⚙  [1500] ─ [90mP3=[0m100 [90mP22=[0m3 [90mP23=[0m8
+ ├─ ⚙  [1498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P22=</span>3 <span style="color:gray">P23=</span>8
+ ├─ ⚙  [1499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P22=</span>3 <span style="color:gray">P23=</span>8
+ ├─ ⚙  [1500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P22=</span>3 <span style="color:gray">P23=</span>8
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:15000   📄 Instâncias: 10   🛠️ Configurações: 1500   🖥️ Processos: 48.
@@ -2513,16 +2513,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 14' 57" 912ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m4 [90mP12=[0m100 [90mP13=[0m1
- ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m1 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>4 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>1 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP22=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP22=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP22=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P22=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P22=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P22=</span>1
  │ ...
- ├─ ⚙  [38] ─ [90mP3=[0m8 [90mP22=[0m8
- ├─ ⚙  [39] ─ [90mP3=[0m9 [90mP22=[0m8
- ├─ ⚙  [40] ─ [90mP3=[0m10 [90mP22=[0m8
+ ├─ ⚙  [38] ─ <span style="color:gray">P3=</span>8 <span style="color:gray">P22=</span>8
+ ├─ ⚙  [39] ─ <span style="color:gray">P3=</span>9 <span style="color:gray">P22=</span>8
+ ├─ ⚙  [40] ─ <span style="color:gray">P3=</span>10 <span style="color:gray">P22=</span>8
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:400   📄 Instâncias: 10   🛠️ Configurações: 40   🖥️ Processos: 48.
@@ -2538,16 +2538,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1" 526ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m4 [90mP12=[0m100 [90mP13=[0m1
- ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m1 [90mP19=[0m0 [90mP20=[0m1 [90mP22=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>4 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>1 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P22=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP21=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP21=[0m1
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP21=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P21=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P21=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P21=</span>1
  │ ...
- ├─ ⚙  [58] ─ [90mP3=[0m8 [90mP21=[0m50
- ├─ ⚙  [59] ─ [90mP3=[0m9 [90mP21=[0m50
- ├─ ⚙  [60] ─ [90mP3=[0m10 [90mP21=[0m50
+ ├─ ⚙  [58] ─ <span style="color:gray">P3=</span>8 <span style="color:gray">P21=</span>50
+ ├─ ⚙  [59] ─ <span style="color:gray">P3=</span>9 <span style="color:gray">P21=</span>50
+ ├─ ⚙  [60] ─ <span style="color:gray">P3=</span>10 <span style="color:gray">P21=</span>50
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:600   📄 Instâncias: 10   🛠️ Configurações: 60   🖥️ Processos: 48.
@@ -2645,8 +2645,9 @@ o ganho no conjunto completo de instâncias.
 
 
 
+\htmlonly
 <details>
-  <summary>Ver script: evolutivos10.sh</summary>
+  <summary>Ver script: evolutivos11.sh</summary>
 <pre>
 #!/bin/bash
 #SBATCH --job-name=evolutivos11
@@ -2675,13 +2676,592 @@ srun bin/MPI/TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_11 -M 1 -P P2
 <details>
   <summary>Ver execução:</summary>
 <pre>
+mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp ../../TRand.cpp ../TProcuraMelhorativa.cpp ../TCodificacaoArvore.cpp ../TCodificacaoBinaria.cpp ../TCodificacaoInteira.cpp ../TCodificacaoReal.cpp ../TCodificacaoPermutacao.cpp ProblemaArtificial.cpp OitoDamas.cpp teste.cpp Particao.cpp
 
+
+═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>175 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100
+ ├─ ⚙   ─ <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>0 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>0 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ │ ...
+ ├─ ⚙  [98] ─ <span style="color:gray">P3=</span>98
+ ├─ ⚙  [99] ─ <span style="color:gray">P3=</span>99
+ ├─ ⚙  [100] ─ <span style="color:gray">P3=</span>100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.
+ ├─ ⏱ 1' 76ms         📋 1201  📄 27    🛠️ 67    🖥️ 19    ⚖  0 378 18416 830 19245 
+ ├─ ⏱ 2' 251ms        📋 2354  📄 18    🛠️ 36    🖥️ 5     ⚖  0 287 24221 1084 25304 
+ ├─ ⏱ 3' 417ms        📋 3483  📄 15    🛠️ 6     🖥️ 33    ⚖  0 799 83544 3716 87259 
+ ├─ 📑  Ficheiro Resultados/damasci_11.csv gravado.
+ │  ⏱  Tempo real: 3' 19" 438ms 
+ │  ⏱  CPU total: 2h 36' 13" 595ms 
+ │  ⏱  Espera do gestor: 3' 19" 359ms 
+ │  ⏱  Espera trabalhadores: 4' 34" 693ms 
+ │  📊  Utilização:
+ │  - Total: 95.0%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 97.1% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 3' 19" 438ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>3
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P15=</span>2 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>2 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ │ ...
+ ├─ ⚙  [98] ─ <span style="color:gray">P3=</span>98
+ ├─ ⚙  [99] ─ <span style="color:gray">P3=</span>99
+ ├─ ⚙  [100] ─ <span style="color:gray">P3=</span>100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+[cna1349:19422:0:19422] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x30616a46476400)
+[cna1349:19432:0:19432] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x470010)
+[cna1349:19398:0:19398] Caught signal 11 (Segmentation fault: address not mapped to object at address 0xfffffffdf0daad30)
+[cna1349:19402:0:19402] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x4)
+[cna1349:19413:0:19413] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7c042f9400800)
+[cna1349:19434:0:19434] Caught signal 11 (Segmentation fault: address not mapped to object at address 0xfffffffdf0daba60)
+==== backtrace (tid:  19432) ====
+=================================
+[cna1349:19414:0:19414] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x22e3677a6041a0)
+==== backtrace (tid:  19422) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+==== backtrace (tid:  19398) ====
+ 0 0x00000000004253f4 TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 1 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 2 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 3 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 4 0x0000000000401eb0 TProcura::main()  ???:0
+ 5 0x00000000004022e0 main()  ???:0
+ 6 0x0000000000020de4 __libc_start_main()  ???:0
+ 7 0x0000000000402418 _start()  ???:0
+=================================
+==== backtrace (tid:  19434) ====
+ 0 0x00000000004253f4 TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 1 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 2 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 3 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 4 0x0000000000401eb0 TProcura::main()  ???:0
+ 5 0x00000000004022e0 main()  ???:0
+ 6 0x0000000000020de4 __libc_start_main()  ???:0
+ 7 0x0000000000402418 _start()  ???:0
+=================================
+[cna1349:19437:0:19437] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x400000012)
+==== backtrace (tid:  19414) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+[cna1349:19394:0:19394] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x30616a46476400)
+[cna1349:19418:0:19418] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x1700000011)
+[cna1349:19423:0:19423] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x43b21c)
+[cna1349:19403:0:19403] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x8)
+[cna1349:19410:0:19410] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x61687420726566)
+==== backtrace (tid:  19437) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+[cna1349:19397:0:19397] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7c042f9400800)
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+[cna1349:19419:0:19419] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x1000000c8)
+==== backtrace (tid:  19394) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+==== backtrace (tid:  19418) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+==== backtrace (tid:  19423) ====
+ 0 0x0000000000413978 TVector<int>::operator[]()  ???:0
+ 1 0x000000000042c888 TCodificacaoPermutacao::Distancia()  ???:0
+ 2 0x000000000041ec78 TProcuraMelhorativa::AplicarDiversidadeAE()  ???:0
+ 3 0x0000000000426354 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 4 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 5 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 6 0x0000000000401eb0 TProcura::main()  ???:0
+ 7 0x00000000004022e0 main()  ???:0
+ 8 0x0000000000020de4 __libc_start_main()  ???:0
+ 9 0x0000000000402418 _start()  ???:0
+=================================
+==== backtrace (tid:  19403) ====
+ 0 0x0000000000417798 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+==== backtrace (tid:  19410) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+[cna1349:19435:0:19435] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x7c042f9400800)
+==== backtrace (tid:  19419) ====
+ 0 0x000000000041de80 TProcuraMelhorativa::AplicarDiversidadeAE()  ???:0
+ 1 0x0000000000426354 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 2 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 3 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 4 0x0000000000401eb0 TProcura::main()  ???:0
+ 5 0x00000000004022e0 main()  ???:0
+ 6 0x0000000000020de4 __libc_start_main()  ???:0
+ 7 0x0000000000402418 _start()  ???:0
+=================================
+[cna1349:19415:0:19415] Caught signal 11 (Segmentation fault: invalid permissions for mapped object at address 0x470010)
+[cna1349:19425:0:19425] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x500000003)
+[cna1349:19395:0:19395] Caught signal 11 (Segmentation fault: address not mapped to object at address 0xb)
+srun: error: cna1349: task 22: Segmentation fault (core dumped)
+==== backtrace (tid:  19415) ====
+=================================
+==== backtrace (tid:  19425) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+==== backtrace (tid:  19395) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+[cna1349:19411:0:19411] Caught signal 11 (Segmentation fault: address not mapped to object at address 0xffffffffffffffff)
+[cna1349:19416:0:19416] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x30616a46476400)
+srun: error: cna1349: tasks 4,6-7,11,23,27,31,34,41,43,46: Segmentation fault (core dumped)
+==== backtrace (tid:  19411) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+[cna1349:19405:0:19405] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x8)
+[cna1349:19399:0:19399] Caught signal 11 (Segmentation fault: address not mapped to object at address 0x800000008)
+==== backtrace (tid:  19416) ====
+ 0 0x0000000000417794 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+srun: error: cna1349: tasks 3,12,19,32,44: Segmentation fault (core dumped)
+==== backtrace (tid:  19405) ====
+ 0 0x0000000000417798 TProcuraMelhorativa::LibertarVector()  TProcuraMelhorativa.cpp:0
+ 1 0x00000000004257fc TProcuraMelhorativa::SelecionarSobreviventesAE()  ???:0
+ 2 0x0000000000426324 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x00000000004022e0 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+srun: error: cna1349: task 28: Segmentation fault (core dumped)
+srun: error: cna1349: task 24: Segmentation fault (core dumped)
+srun: error: cna1349: tasks 8,20: Segmentation fault (core dumped)
+srun: error: cna1349: task 25: Segmentation fault (core dumped)
+srun: error: cna1349: task 14: Segmentation fault (core dumped)
+slurmstepd: error:  mpi/pmix_v4: _errhandler: cna1349 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -61, source = [slurm.pmix.683947.1:22]
+slurmstepd: error: *** STEP 683947.1 ON cna1349 CANCELLED AT 2025-11-15T17:47:54 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+ ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.srun: error: cna1349: tasks 0-2,5,9-10,13,15-18,21,26,29-30,33,35-40,42,45,47: Killed
+
+
+═╤═ Instâncias ═══ { 📄 2 📄 3 📄 4 … 📄 998 📄 999 📄 1000 } #999
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>4 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>1 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>4<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>4
+ ├─ ⚙  [5] ─ <span style="color:gray">P3=</span>5
+ ├─ ⚙  [6] ─ <span style="color:gray">P3=</span>6
+ ├─ ⚙  [7] ─ <span style="color:gray">P3=</span>7
+ ├─ ⚙  [8] ─ <span style="color:gray">P3=</span>8
+ ├─ ⚙  [9] ─ <span style="color:gray">P3=</span>9
+ ├─ ⚙  [10] ─ <span style="color:gray">P3=</span>10
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:9990   📄 Instâncias: 999   🛠️ Configurações: 10   🖥️ Processos: 48.
+[cna1349:19860:0:19860] Caught signal 11 (Segmentation fault: address not mapped to object at address 0xffffffffff92b4f8)
+[cna1349:19858:0:19858] Caught signal 11 (Segmentation fault: address not mapped to object at address 0xffffffffffc76778)
+==== backtrace (tid:  19860) ====
+ 0 0x0000000000428d14 TCodificacaoBinaria::Mutar()  ???:0
+ 1 0x000000000041a824 TProcuraMelhorativa::ReproduzirAE()  ???:0
+ 2 0x00000000004262f0 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x0000000000402288 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+==== backtrace (tid:  19858) ====
+ 0 0x0000000000428d14 TCodificacaoBinaria::Mutar()  ???:0
+ 1 0x000000000041a824 TProcuraMelhorativa::ReproduzirAE()  ???:0
+ 2 0x00000000004262f0 TProcuraMelhorativa::AlgoritmoEvolutivo()  ???:0
+ 3 0x0000000000410940 TProcura::ExecutaTarefa()  ???:0
+ 4 0x0000000000410dd8 TProcura::TesteEmpiricoTrabalhador()  ???:0
+ 5 0x0000000000401eb0 TProcura::main()  ???:0
+ 6 0x0000000000402288 main()  ???:0
+ 7 0x0000000000020de4 __libc_start_main()  ???:0
+ 8 0x0000000000402418 _start()  ???:0
+=================================
+srun: error: cna1349: tasks 1,3: Segmentation fault (core dumped)
+slurmstepd: error:  mpi/pmix_v4: _errhandler: cna1349 [0]: pmixp_client_v2.c:212: Error handler invoked: status = -61, source = [slurm.pmix.683947.2:3]
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 683947.2 ON cna1349 CANCELLED AT 2025-11-15T17:49:03 ***
+ ├─ ⏱ 1' 14ms         📋 850   📄 161   🛠️ 9     🖥️ 35    ⚖  5716 3456 1000019 47619 1047637 srun: error: cna1349: tasks 0,2,4-47: Killed
+
+</pre>
+</details>
+Houve crash devido a dois bugs em damascp_11 e particaocb_11, pelo que submeteu-se nova corrida.
+<details>
+  <summary>Ver script: evolutivos11.sh</summary>
+<pre>
+#!/bin/bash
+#SBATCH --job-name=evolutivos11b
+#SBATCH --output=Resultados/evolutivos11b.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
+
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: damascp_11
+srun bin/MPI/TProcuraMelhorativa 2 4:40 -R Resultados/damascp_11 -M 1 -P P2=2 P3=1:100 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P22=2 P23=0
+# Teste: particaocb_11
+srun bin/MPI/TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_11 -M 1 -P P2=2 P3=1:10 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=0 P22=4
+</pre>
+</details>
+<details>
+  <summary>Ver execução B:</summary>
+<pre>
+mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp ../../TRand.cpp ../TProcuraMelhorativa.cpp ../TCodificacaoArvore.cpp ../TCodificacaoBinaria.cpp ../TCodificacaoInteira.cpp ../TCodificacaoReal.cpp ../TCodificacaoPermutacao.cpp ProblemaArtificial.cpp OitoDamas.cpp teste.cpp Particao.cpp
+
+
+═╤═ Instâncias ═══ { 📄 4 📄 5 📄 6 … 📄 38 📄 39 📄 40 } #37
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>3
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P15=</span>2 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>2 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ │ ...
+ ├─ ⚙  [98] ─ <span style="color:gray">P3=</span>98
+ ├─ ⚙  [99] ─ <span style="color:gray">P3=</span>99
+ ├─ ⚙  [100] ─ <span style="color:gray">P3=</span>100
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:3700   📄 Instâncias: 37   🛠️ Configurações: 100   🖥️ Processos: 48.
+ ├─ 📑  Ficheiro Resultados/damascp_11.csv gravado.
+ │  ⏱  Tempo real: 1" 833ms 
+ │  ⏱  CPU total: 1' 26" 143ms 
+ │  ⏱  Espera do gestor: 1" 758ms 
+ │  ⏱  Espera trabalhadores: 3" 386ms 
+ │  📊  Utilização:
+ │  - Total: 94.0%
+ │  - Gestor: 1.6%
+ │  - Trabalhadores: 96.0% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1" 833ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 2 📄 3 📄 4 … 📄 998 📄 999 📄 1000 } #999
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>4 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>1 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>4<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>4
+ ├─ ⚙  [5] ─ <span style="color:gray">P3=</span>5
+ ├─ ⚙  [6] ─ <span style="color:gray">P3=</span>6
+ ├─ ⚙  [7] ─ <span style="color:gray">P3=</span>7
+ ├─ ⚙  [8] ─ <span style="color:gray">P3=</span>8
+ ├─ ⚙  [9] ─ <span style="color:gray">P3=</span>9
+ ├─ ⚙  [10] ─ <span style="color:gray">P3=</span>10
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:9990   📄 Instâncias: 999   🛠️ Configurações: 10   🖥️ Processos: 48.
+ ├─ ⏱ 1' 676ms        📋 846   📄 159   🛠️ 9     🖥️ 29    ⚖  5672 3687 1000019 47619 1047636 
+ ├─ ⏱ 2' 4" 123ms     📋 1751  📄 249   🛠️ 8     🖥️ 32    ⚖  13236 4387 1000019 47619 1047636 
+ ├─ ⏱ 3' 6" 985ms     📋 2656  📄 347   🛠️ 7     🖥️ 21    ⚖  32022 5169 1000019 47619 1047636 
+ ├─ ⏱ 4' 8" 850ms     📋 3561  📄 501   🛠️ 6     🖥️ 29    ⚖  88160 6338 1000019 47619 1047636 
+ ├─ ⏱ 5' 9" 826ms     📋 4466  📄 613   🛠️ 5     🖥️ 27    ⚖  137466 7231 1000019 47619 1047636 
+ ├─ ⏱ 6' 9" 829ms     📋 5391  📄 693   🛠️ 4     🖥️ 2     ⚖  164094 7956 1000019 47619 1047636 
+ ├─ ⏱ 7' 10" 888ms    📋 6308  📄 723   🛠️ 3     🖥️ 23    ⚖  181844 8072 1000019 47619 1047636 
+ ├─ ⏱ 8' 17" 88ms     📋 7275  📄 791   🛠️ 2     🖥️ 29    ⚖  224468 8604 1000019 47619 1047636 
+ ├─ ⏱ 9' 17" 654ms    📋 8222  📄 829   🛠️ 1     🖥️ 26    ⚖  225412 8929 1000019 47619 1047636 
+ ├─ ⏱ 10' 22" 867ms   📋 9179  📄 881   🛠️ 0     🖥️ 36    ⚖  288522 9317 1000019 47619 1047636 
+ ├─ 📑  Ficheiro Resultados/particaocb_11.csv gravado.
+ │  ⏱  Tempo real: 11' 13" 728ms 
+ │  ⏱  CPU total: 8h 47' 45" 232ms 
+ │  ⏱  Espera do gestor: 11' 13" 537ms 
+ │  ⏱  Espera trabalhadores: 48" 197ms 
+ │  📊  Utilização:
+ │  - Total: 97.8%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.8% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 11' 13" 728ms ) ═══
 </pre>
 </details>
 \endhtmlonly
 
 ### Resultados: damasci_11
 
+| Instância | Eficácia<br>base | optimizado | Eficiência<br>base | optimizado |
+|:---:|---:|---:|---:|---:|
+| 4 | 100 | 100 | 0 | 0 |
+| 5 | 100 | 100 | 1 | 1 |
+| 6 | 100 | 100 | 16 | 14 |
+| 7 | 100 | 100 | 15 | 10 |
+| 8 | 100 | 100 | 40 | 29 |
+| 9 | 100 | 100 | 66 | 45 |
+| 10 | 100 | 100 | 213 | 136 |
+| 11 | 100 | 100 | 358 | 210 |
+| 12 | 100 | 100 | 475 | 292 |
+| 13 | 100 | 100 | 779 | 338 |
+| 14 | 100 | 100 | 1073 | 340 |
+| 15 | 100 | 100 | 1688 | 451 |
+| 16 | 99 | 100 | 1980 | 716 |
+| 17 | 95 | 100 | 3455 | 736 |
+| 18 | 94 | 100 | 4102 | 789 |
+| 19 | 83 | 100 | 4985 | 998 |
+| 20 | 66 | 100 | 5545 | 1300 |
+| 21 | 48 | 100 | 7279 | 1253 |
+| 22 | 38 | 99 | 8247 | 1495 |
+| 23 | 31 | 100 | 8365 | 1757 |
+| 24 | 22 | 100 | 8830 | 1959 |
+| 25 | 10 | 100 | 9514 | 2675 |
+| 26 | 11 | 98 | 9582 | 2683 |
+| 27 | 6 | 99 | 9690 | 2873 |
+| 28 | 6 | 96 | 9631 | 2991 |
+| 29 | 1 | 99 | 9965 | 3261 |
+| 30 | 2 | 90 | 9889 | 4164 |
+| 31 | 3 | 95 | 9976 | 4224 |
+| 32 | 1 | 89 | 9953 | 4499 |
+| 33 | 0 | 90 | 10000 | 4831 |
+| 34 | 0 | 77 | 10000 | 5812 |
+| 35 | 0 | 74 | 10000 | 6205 |
+| 36 | 0 | 79 | 10000 | 5871 |
+| 37 | 1 | 80 | 9966 | 6158 |
+| 38 | 0 | 72 | 10000 | 6732 |
+| 39 | 0 | 53 | 10000 | 7471 |
+| 40 | 0 | 55 | 10000 | 8029 |
+| Total Geral | 49 | 93 | 5829 | 2469 |
+
+Esta codificação inteira não é a mais aconselhada para as 8 damas.
+A codificação permutação é mais natural já que trata de duas restrições na própria codificação.
+No entanto podemos ver que a versão optimizada consegue mesmo nas instâncias maiores resolver mais de 50%,
+enquanto que a configuração de base só resolve esporadicamente.
+Em termos globais utilizando as 40 instâncias, a configuração base tem 49% de eficácia, contra 93% da versão optimizada.
+Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segundos da versão optimizada.
+
 ### Resultados: damascp_11
 
+| Instância | Eficácia<br>base | optimizado | Eficiência<br>base | optimizado |
+|:---:|---:|---:|---:|---:|
+| 4 | 100 | 100 | 0 | 0 |
+| 5 | 100 | 100 | 0 | 0 |
+| 6 | 100 | 100 | 1 | 3 |
+| 7 | 100 | 100 | 1 | 0 |
+| 8 | 100 | 100 | 2 | 1 |
+| 9 | 100 | 100 | 5 | 2 |
+| 10 | 100 | 100 | 23 | 3 |
+| 11 | 100 | 100 | 48 | 4 |
+| 12 | 100 | 100 | 74 | 4 |
+| 13 | 100 | 100 | 155 | 5 |
+| 14 | 100 | 100 | 353 | 6 |
+| 15 | 100 | 100 | 518 | 7 |
+| 16 | 100 | 100 | 816 | 8 |
+| 17 | 100 | 100 | 2057 | 9 |
+| 18 | 97 | 100 | 2924 | 11 |
+| 19 | 77 | 100 | 4991 | 12 |
+| 20 | 68 | 100 | 6104 | 12 |
+| 21 | 35 | 100 | 8262 | 14 |
+| 22 | 20 | 100 | 9007 | 16 |
+| 23 | 9 | 100 | 9591 | 17 |
+| 24 | 7 | 100 | 9694 | 22 |
+| 25 | 5 | 100 | 9782 | 19 |
+| 26 | 5 | 100 | 9781 | 22 |
+| 27 | 2 | 100 | 9852 | 24 |
+| 28 | 2 | 100 | 9964 | 27 |
+| 29 | 1 | 100 | 9910 | 28 |
+| 30 | 1 | 100 | 9910 | 33 |
+| 31 | 0 | 100 | 10000 | 37 |
+| 32 | 0 | 100 | 10000 | 36 |
+| 33 | 0 | 100 | 10000 | 44 |
+| 34 | 0 | 100 | 10000 | 48 |
+| 35 | 0 | 100 | 10000 | 48 |
+| 36 | 0 | 100 | 10000 | 53 |
+| 37 | 0 | 100 | 10000 | 49 |
+| 38 | 0 | 100 | 10000 | 60 |
+| 39 | 0 | 100 | 10000 | 61 |
+| 40 | 0 | 100 | 10000 | 66 |
+| Total Geral | 47 | 100 | 5779 | 22 |
+
+A versão base com a codificação em permutação tinha um comportamento comparável com a codificação inteira.
+Já a versão optimizada tem um resultado que nem se compara. Resolve todas as instâncias em algumas dezenas de milisegundos.
+
+Para continuar a optimizar esta versão teriamos de avançar para instâncias maiores, atendendo aos baixos tempos de resolução.
+
 ### Resultados: particaocb_11
+
+| Instância | Eficácia<br>base | optimizado | Eficiência<br>base | optimizado |
+|:---:|---:|---:|---:|---:|
+| 2 | 40 | 40 | 1265 | 1393 |
+| 3 | 0 | 0 | 2200 | 2398 |
+| 4 | 30 | 30 | 1687 | 1690 |
+| 5 | 0 | 0 | 2721 | 2446 |
+| 6 | 40 | 40 | 1794 | 1473 |
+| 7 | 0 | 0 | 3239 | 2481 |
+| 8 | 50 | 50 | 1726 | 1240 |
+| 9 | 0 | 0 | 3624 | 2522 |
+| 10 | 100 | 100 | 0 | 1 |
+| 11 | 0 | 0 | 3950 | 2534 |
+| 12 | 100 | 100 | 1 | 1 |
+| 13 | 0 | 0 | 4269 | 2564 |
+| 14 | 100 | 100 | 1 | 1 |
+| 15 | 0 | 0 | 4535 | 2568 |
+| 16 | 100 | 100 | 2 | 0 |
+| 17 | 10 | 10 | 4350 | 2365 |
+| 18 | 100 | 100 | 3 | 0 |
+| 19 | 0 | 0 | 5121 | 2606 |
+| 950 | 90 | 100 | 3651 | 10 |
+| 951 | 0 | 0 | 10001 | 9903 |
+| 952 | 90 | 100 | 5131 | 10 |
+| 953 | 0 | 0 | 10001 | 9901 |
+| 954 | 80 | 100 | 4655 | 15 |
+| 955 | 0 | 0 | 10001 | 9951 |
+| 956 | 80 | 100 | 4421 | 16 |
+| 957 | 0 | 0 | 10001 | 9960 |
+| 958 | 90 | 100 | 3990 | 14 |
+| 959 | 0 | 0 | 10002 | 9957 |
+| 960 | 100 | 100 | 3444 | 13 |
+| 961 | 0 | 0 | 10001 | 9986 |
+| 962 | 90 | 100 | 3098 | 12 |
+| 963 | 0 | 0 | 10001 | 9993 |
+| 964 | 60 | 100 | 6508 | 18 |
+| 965 | 0 | 0 | 10002 | 10000 |
+| 966 | 100 | 100 | 3765 | 11 |
+| 967 | 0 | 0 | 10001 | 10000 |
+| 968 | 80 | 100 | 5274 | 13 |
+| 969 | 0 | 0 | 10001 | 10000 |
+| 970 | 80 | 100 | 5751 | 15 |
+| 971 | 0 | 0 | 10001 | 10000 |
+| 972 | 80 | 100 | 4069 | 13 |
+| 973 | 0 | 0 | 10001 | 10000 |
+| 974 | 90 | 100 | 3872 | 14 |
+| 975 | 0 | 0 | 10002 | 10000 |
+| 976 | 100 | 100 | 2648 | 16 |
+| 977 | 0 | 0 | 10001 | 10000 |
+| 978 | 80 | 100 | 5548 | 15 |
+| 979 | 0 | 0 | 10001 | 10000 |
+| 980 | 90 | 100 | 3708 | 12 |
+| 981 | 0 | 0 | 10001 | 10000 |
+| 982 | 70 | 100 | 6540 | 10 |
+| 983 | 0 | 0 | 10002 | 10000 |
+| 984 | 100 | 100 | 3347 | 12 |
+| 985 | 0 | 0 | 10002 | 10000 |
+| 986 | 70 | 100 | 5319 | 12 |
+| 987 | 0 | 0 | 10001 | 10000 |
+| 988 | 40 | 100 | 7574 | 17 |
+| 989 | 0 | 0 | 10002 | 10000 |
+| 990 | 90 | 100 | 3824 | 17 |
+| 991 | 0 | 0 | 10001 | 10000 |
+| 992 | 100 | 100 | 4143 | 16 |
+| 993 | 0 | 0 | 10001 | 10000 |
+| 994 | 80 | 100 | 4976 | 17 |
+| 995 | 0 | 0 | 10001 | 10000 |
+| 996 | 70 | 100 | 4391 | 15 |
+| 997 | 0 | 0 | 10001 | 10000 |
+| 998 | 90 | 100 | 2824 | 12 |
+| 999 | 0 | 0 | 10002 | 10000 |
+| 1000 | 80 | 100 | 4548 | 14 |
+| Total Geral | 48 | 50 | 5802 | 3188 |
+
+Este problema temos a situação das instâncias impossíveis.
+Estas instâncias têm por vezes tempos de resolução distintos, dado que o critério de paragem do número de iterações é
+nas instâncias mais pequenas atingido antes do tempo limite.
+Mesmo assim podemos observar nas últimas instâncias que a eficiência sobe de 48% para 50%,
+sendo provavelmente os 50% o maior valor possível dado que há instâncias impossíveis.
+Nas instâncias resolvidas os tempos são consideravelmente inferiores, de 2 a 4 segundos por instância para apenas algumas
+dezenas de milisegundos para encontrar a solução.
+Como nesta tabela os resultados das instâncias possíveis são apresentados em conjunto com as instâncias impossíveis,
+a diferença na eficiência aparece diluida, mas mesmo assim melhora de 5,8 segundos para 3,1 segundos.
+
+Para instâncias possíveis a configuração optimiada é muito eficáz e eficiente para estas instâncias.
