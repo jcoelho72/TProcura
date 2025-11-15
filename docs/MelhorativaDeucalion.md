@@ -2439,18 +2439,249 @@ srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Re
 <details>
   <summary>Ver execução:</summary>
 <pre>
+mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp ../../TRand.cpp ../TProcuraMelhorativa.cpp ../TCodificacaoArvore.cpp ../TCodificacaoBinaria.cpp ../TCodificacaoInteira.cpp ../TCodificacaoReal.cpp ../TCodificacaoPermutacao.cpp ProblemaArtificial.cpp OitoDamas.cpp teste.cpp Particao.cpp
 
+
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP10=[0m175 [90mP13=[0m1 [90mP14=[0m100
+ ├─ ⚙   ─ [90mP16=[0m1 [90mP17=[0m0 [90mP18=[0m3 [90mP19=[0m0 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP20=[0m0
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP20=[0m0
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP20=[0m0
+ │ ...
+ ├─ ⚙  [498] ─ [90mP3=[0m98 [90mP20=[0m4
+ ├─ ⚙  [499] ─ [90mP3=[0m99 [90mP20=[0m4
+ ├─ ⚙  [500] ─ [90mP3=[0m100 [90mP20=[0m4
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:5000   📄 Instâncias: 10   🛠️ Configurações: 500   🖥️ Processos: 48.
+ ├─ ⏱ 1' 29ms         📋 1111  📄 23    🛠️ 396   🖥️ 6     ⚖  0 5029 306558 13663 320220 
+ ├─ ⏱ 2' 53ms         📋 2055  📄 21    🛠️ 295   🖥️ 2     ⚖  0 236 16393 726 17118 
+ ├─ ⏱ 3' 65ms         📋 2832  📄 24    🛠️ 217   🖥️ 47    ⚖  0 601 35029 1551 36579 
+ ├─ ⏱ 4' 265ms        📋 3426  📄 27    🛠️ 161   🖥️ 41    ⚖  0 4514 228252 10066 238317 
+ ├─ ⏱ 5' 272ms        📋 3957  📄 25    🛠️ 107   🖥️ 33    ⚖  0 4076 227530 10032 237561 
+ ├─ ⏱ 6' 406ms        📋 5000  📄 27    🛠️ 0     🖥️ 12    ⚖  0 7739 379261 17041 396301 
+ ├─ 📑  Ficheiro Resultados/damasci_10.csv gravado.
+ │  ⏱  Tempo real: 6' 725ms 
+ │  ⏱  CPU total: 4h 42' 34" 66ms 
+ │  ⏱  Espera do gestor: 6' 615ms 
+ │  ⏱  Espera trabalhadores: 4' 29" 88ms 
+ │  📊  Utilização:
+ │  - Total: 96.4%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 98.4% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 6' 725ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP13=[0m3
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP15=[0m2 [90mP16=[0m3 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP22=[0m1 [90mP23=[0m0
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP22=[0m1 [90mP23=[0m0
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP22=[0m1 [90mP23=[0m0
+ │ ...
+ ├─ ⚙  [1498] ─ [90mP3=[0m98 [90mP22=[0m3 [90mP23=[0m8
+ ├─ ⚙  [1499] ─ [90mP3=[0m99 [90mP22=[0m3 [90mP23=[0m8
+ ├─ ⚙  [1500] ─ [90mP3=[0m100 [90mP22=[0m3 [90mP23=[0m8
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:15000   📄 Instâncias: 10   🛠️ Configurações: 1500   🖥️ Processos: 48.
+ ├─ ⏱ 1' 50ms         📋 3831  📄 20    🛠️ 1117  🖥️ 24    ⚖  0 82 10046 663 12034 
+ ├─ ⏱ 2' 111ms        📋 6374  📄 29    🛠️ 871   🖥️ 25    ⚖  1 10000 840079 54097 1002369 
+ ├─ ⏱ 3' 232ms        📋 6919  📄 21    🛠️ 808   🖥️ 42    ⚖  0 170 20230 1302 24135 
+ ├─ ⏱ 4' 335ms        📋 8095  📄 25    🛠️ 692   🖥️ 32    ⚖  0 1864 164334 12773 202652 
+ ├─ ⏱ 5' 573ms        📋 8884  📄 21    🛠️ 613   🖥️ 31    ⚖  0 1184 124386 9645 153320 
+ ├─ ⏱ 6' 689ms        📋 9283  📄 21    🛠️ 576   🖥️ 46    ⚖  2 8400 1000008 64044 1192139 
+ ├─ ⏱ 7' 1" 127ms     📋 9602  📄 23    🛠️ 544   🖥️ 6     ⚖  2 9270 1000002 65119 1195358 
+ ├─ ⏱ 8' 1" 160ms     📋 9922  📄 22    🛠️ 512   🖥️ 39    ⚖  2 8694 1000001 62564 1187692 
+ ├─ ⏱ 9' 1" 176ms     📋 10244 📄 21    🛠️ 480   🖥️ 22    ⚖  1 8981 1000007 71328 1213990 
+ ├─ ⏱ 10' 1" 305ms    📋 10574 📄 29    🛠️ 447   🖥️ 11    ⚖  3 10000 792555 57248 964298 
+ ├─ ⏱ 11' 1" 402ms    📋 10899 📄 24    🛠️ 415   🖥️ 17    ⚖  1 10000 979630 70403 1190838 
+ ├─ ⏱ 12' 1" 509ms    📋 11247 📄 22    🛠️ 381   🖥️ 29    ⚖  2 9473 1000006 71977 1215936 
+ ├─ ⏱ 13' 1" 559ms    📋 11581 📄 29    🛠️ 347   🖥️ 13    ⚖  3 10000 789271 57177 960801 
+ ├─ ⏱ 14' 1" 683ms    📋 11926 📄 24    🛠️ 313   🖥️ 36    ⚖  1 10000 965579 69484 1174030 
+ ├─ 📑  Ficheiro Resultados/damascp_10.csv gravado.
+ │  ⏱  Tempo real: 14' 57" 912ms 
+ │  ⏱  CPU total: 11h 43' 21" 858ms 
+ │  ⏱  Espera do gestor: 14' 57" 593ms 
+ │  ⏱  Espera trabalhadores: 1' 53" 866ms 
+ │  📊  Utilização:
+ │  - Total: 97.7%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.7% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 14' 57" 912ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m4 [90mP12=[0m100 [90mP13=[0m1
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m1 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP22=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP22=[0m1
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP22=[0m1
+ │ ...
+ ├─ ⚙  [38] ─ [90mP3=[0m8 [90mP22=[0m8
+ ├─ ⚙  [39] ─ [90mP3=[0m9 [90mP22=[0m8
+ ├─ ⚙  [40] ─ [90mP3=[0m10 [90mP22=[0m8
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:400   📄 Instâncias: 10   🛠️ Configurações: 40   🖥️ Processos: 48.
+ ├─ 📑  Ficheiro Resultados/particaocb_10.csv gravado.
+ │  ⏱  Tempo real: 1" 526ms 
+ │  ⏱  CPU total: 1' 11" 717ms 
+ │  ⏱  Espera do gestor: 1" 517ms 
+ │  ⏱  Espera trabalhadores: 39" 728ms 
+ │  📊  Utilização:
+ │  - Total: 43.5%
+ │  - Gestor: 0.3%
+ │  - Trabalhadores: 44.4% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1" 526ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
+ ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m4 [90mP12=[0m100 [90mP13=[0m1
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m1 [90mP19=[0m0 [90mP20=[0m1 [90mP22=[0m1[90m (parâmetros comuns)[0m
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP21=[0m1
+ ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP21=[0m1
+ ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP21=[0m1
+ │ ...
+ ├─ ⚙  [58] ─ [90mP3=[0m8 [90mP21=[0m50
+ ├─ ⚙  [59] ─ [90mP3=[0m9 [90mP21=[0m50
+ ├─ ⚙  [60] ─ [90mP3=[0m10 [90mP21=[0m50
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:600   📄 Instâncias: 10   🛠️ Configurações: 60   🖥️ Processos: 48.
+ ├─ ⏱ 1' 39ms         📋 378   📄 692   🛠️ 25    🖥️ 13    ⚖  0 3965 192989 9189 202177 
+ ├─ 📑  Ficheiro Resultados/particaocb_10B.csv gravado.
+ │  ⏱  Tempo real: 1' 24" 629ms 
+ │  ⏱  CPU total: 1h 6' 17" 582ms 
+ │  ⏱  Espera do gestor: 1' 24" 615ms 
+ │  ⏱  Espera trabalhadores: 4' 22" 275ms 
+ │  📊  Utilização:
+ │  - Total: 91.5%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 93.4% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1' 24" 629ms ) ═══
 </pre>
 </details>
 \endhtmlonly
 
 ### Resultados: damasci_10
 
+| P20(TIPO_CRUZAR) | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|
+| 0:uniforme | **2224** | 2105 | 2343 |
+| 1:1-ponto | 5309 | 5104 | 5513 |
+| 2:2-pontos | 3617 | 3443 | 3791 |
+| 3:3-pontos | 2988 | 2832 | 3144 |
+| 4:4-pontos | 2617 | 2479 | 2756 |
+
+Este último teste é identificado uma grande melhoria, o operador de cruzamento uniforome tem clara vantagem
+sobre o operador de cruzamento 1-ponto, que era o valor de omissão. Este operador é até a pior opção entre as possíveis.
+Aparenta existir vantagem por fazer operadores com muitos pontos, e com este valor muito grande acaba por ser igual
+ao operador uniforme.
+Vamos portanto alterar P20=0.
+
+
 ### Resultados: damascp_10
+
+| P23 vs P22 | 1:inserir | 2:trocaPar | 3:inverterSegmento |
+|:---:|---:|---:|---:|
+| 0 | 413 | **19** | 1227 |
+| 1 | 8282 | 8704 | 8876 |
+| 2 | 3594 | 2042 | 5185 |
+| 4 | 529 | 65 | 1836 |
+| 8 | 350 | 23 | 1122 |
+
+Pudemos observar neste último teste um grande ganho no operador, mais de uma ordem de grandeza
+considerando o limimite de vizinhança 0 (inativo). Ativando o limite de vizinhança, se muito reduzido degrada,
+mas a partir de certo ponto melhora.
+Vamos assim manter P23=0 e alterar P22=2. Estes resultados baixam tanto o tempo médio de resolução que para continuar
+a analisar mais parametros, tinhamos de alterar o conjunto das instâncias de teste.
 
 ### Resultados: particaocb_10
 
+| P22 | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|
+| 1 | 274 | 220 | 328 |
+| 2 | 16 | 15 | 18 |
+| 4 | **13** | 12 | 14 |
+| 8 | 15 | 13 | 17 |
+
+| P21 | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|
+| 1 | **2198** | 1837 | 2559 |
+| 2 | 3779 | 3155 | 4403 |
+| 5 | 6185 | 5496 | 6873 |
+| 10 | 8043 | 7460 | 8626 |
+| 20 | 8255 | 7657 | 8854 |
+| 50 | 8825 | 8329 | 9321 |
+
+Estes resolutados até aparentam ser de problemas distintos ou indicadores distintos.
+Mas a diferença é a que a mutação utiliza um tipo vizinho P22 no primeiro caso, em que um segmento de N bits é trocado.
+Esta mutação dá clara vantagem, mais de uma ordem de grandeza,
+relativamente à alternativa com P21 de alterar a probabilidade de mutação de cada bit.
+Mesmo na melhor alternativa, o anterior valor de omissão com P22=1 revela-se pouco eficiente quando comparado com
+P22=4, baixando o tempo médio de resolução para 13 miléssimas de segundo.
+
+
+## Teste 11
+
+Vamos fazer agora um teste final idêntico ao teste 1 mas com a parametrização obtida, de modo a quantificar
+o ganho no conjunto completo de instâncias.
+
+- **Tipo de Teste / Objetivo**: Performance (Eficácia / Eficiência vs tamanho)
+- **Definição**:
+	- **ci**: Instâncias: 4:40; Configurações: P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0
+	- **cp**: Instâncias: 4:40; Configurações: P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P22=2 P23=0
+	- **cb**: Instâncias: 2:1000; Configurações: P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=0 P22=4
+- **Esforço**:
+	- **ci+cp**: P3=1:100
+	- **cb**: P3=1:10
+- **Execução**:
+	- **ci**: TProcuraMelhorativa 1 4:40 -R Resultados/damasci_11 -M 1 -P P2=2 P3=1:100 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0
+	- **cp**: TProcuraMelhorativa 2 4:40 -R Resultados/damascp_11 -M 1 -P P2=2 P3=1:100 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P22=2 P23=0
+	- **cb**: TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_11 -M 1 -P P2=2 P3=1:10 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=0 P22=4
 
 
 
+<details>
+  <summary>Ver script: evolutivos10.sh</summary>
+<pre>
+#!/bin/bash
+#SBATCH --job-name=evolutivos11
+#SBATCH --output=Resultados/evolutivos11.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
 
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: damasci_11
+srun bin/MPI/TProcuraMelhorativa 1 4:40 -R Resultados/damasci_11 -M 1 -P P2=2 P3=1:100 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0
+# Teste: damascp_11
+srun bin/MPI/TProcuraMelhorativa 2 4:40 -R Resultados/damascp_11 -M 1 -P P2=2 P3=1:100 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P22=2 P23=0
+# Teste: particaocb_11
+srun bin/MPI/TProcuraMelhorativa 3 2:1000 -R Resultados/particaocb_11 -M 1 -P P2=2 P3=1:10 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=0 P22=4
+
+</pre>
+</details>
+<details>
+  <summary>Ver execução:</summary>
+<pre>
+
+</pre>
+</details>
+\endhtmlonly
+
+### Resultados: damasci_11
+
+### Resultados: damascp_11
+
+### Resultados: particaocb_11
