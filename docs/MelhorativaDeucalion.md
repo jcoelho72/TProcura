@@ -1119,16 +1119,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 
 ═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>1 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP10=[0m100
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP10=[0m100
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP10=[0m100
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P10=</span>100
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P10=</span>100
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P10=</span>100
  │ ...
- ├─ ⚙  [498] ─ [90mP3=[0m98 [90mP10=[0m200
- ├─ ⚙  [499] ─ [90mP3=[0m99 [90mP10=[0m200
- ├─ ⚙  [500] ─ [90mP3=[0m100 [90mP10=[0m200
+ ├─ ⚙  [498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P10=</span>200
+ ├─ ⚙  [499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P10=</span>200
+ ├─ ⚙  [500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P10=</span>200
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:5000   📄 Instâncias: 10   🛠️ Configurações: 500   🖥️ Processos: 48.
@@ -1149,16 +1149,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 5' 18" 143ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m1 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>1 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP10=[0m100
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP10=[0m100
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP10=[0m100
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P10=</span>100
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P10=</span>100
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P10=</span>100
  │ ...
- ├─ ⚙  [498] ─ [90mP3=[0m98 [90mP10=[0m200
- ├─ ⚙  [499] ─ [90mP3=[0m99 [90mP10=[0m200
- ├─ ⚙  [500] ─ [90mP3=[0m100 [90mP10=[0m200
+ ├─ ⚙  [498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P10=</span>200
+ ├─ ⚙  [499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P10=</span>200
+ ├─ ⚙  [500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P10=</span>200
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:5000   📄 Instâncias: 10   🛠️ Configurações: 500   🖥️ Processos: 48.
@@ -1174,16 +1174,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 24" 923ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m1 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>1 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP10=[0m100
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP10=[0m100
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP10=[0m100
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P10=</span>100
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P10=</span>100
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P10=</span>100
  │ ...
- ├─ ⚙  [48] ─ [90mP3=[0m8 [90mP10=[0m200
- ├─ ⚙  [49] ─ [90mP3=[0m9 [90mP10=[0m200
- ├─ ⚙  [50] ─ [90mP3=[0m10 [90mP10=[0m200
+ ├─ ⚙  [48] ─ <span style="color:gray">P3=</span>8 <span style="color:gray">P10=</span>200
+ ├─ ⚙  [49] ─ <span style="color:gray">P3=</span>9 <span style="color:gray">P10=</span>200
+ ├─ ⚙  [50] ─ <span style="color:gray">P3=</span>10 <span style="color:gray">P10=</span>200
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:500   📄 Instâncias: 10   🛠️ Configurações: 50   🖥️ Processos: 48.
@@ -1199,16 +1199,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 39" 157ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m2 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>2 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m2 [90mP12=[0m25
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m2 [90mP12=[0m25
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
  │ ...
- ├─ ⚙  [1998] ─ [90mP3=[0m98 [90mP11=[0m10 [90mP12=[0m100
- ├─ ⚙  [1999] ─ [90mP3=[0m99 [90mP11=[0m10 [90mP12=[0m100
- ├─ ⚙  [2000] ─ [90mP3=[0m100 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [1998] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
+ ├─ ⚙  [1999] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
+ ├─ ⚙  [2000] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:20000   📄 Instâncias: 10   🛠️ Configurações: 2000   🖥️ Processos: 48.
@@ -1247,16 +1247,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 23' 42" 70ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 10 📄 11 📄 12 📄 13 📄 14 📄 15 📄 16 📄 17 📄 18 📄 19 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m2 [90mP12=[0m25
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m2 [90mP12=[0m25
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
  │ ...
- ├─ ⚙  [1998] ─ [90mP3=[0m98 [90mP11=[0m10 [90mP12=[0m100
- ├─ ⚙  [1999] ─ [90mP3=[0m99 [90mP11=[0m10 [90mP12=[0m100
- ├─ ⚙  [2000] ─ [90mP3=[0m100 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [1998] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
+ ├─ ⚙  [1999] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
+ ├─ ⚙  [2000] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:20000   📄 Instâncias: 10   🛠️ Configurações: 2000   🖥️ Processos: 48.
@@ -1273,16 +1273,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1' 8" 423ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP13=[0m1 [90mP14=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP11=[0m2 [90mP12=[0m25
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP11=[0m2 [90mP12=[0m25
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP11=[0m2 [90mP12=[0m25
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P11=</span>2 <span style="color:gray">P12=</span>25
  │ ...
- ├─ ⚙  [198] ─ [90mP3=[0m8 [90mP11=[0m10 [90mP12=[0m100
- ├─ ⚙  [199] ─ [90mP3=[0m9 [90mP11=[0m10 [90mP12=[0m100
- ├─ ⚙  [200] ─ [90mP3=[0m10 [90mP11=[0m10 [90mP12=[0m100
+ ├─ ⚙  [198] ─ <span style="color:gray">P3=</span>8 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
+ ├─ ⚙  [199] ─ <span style="color:gray">P3=</span>9 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
+ ├─ ⚙  [200] ─ <span style="color:gray">P3=</span>10 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:2000   📄 Instâncias: 10   🛠️ Configurações: 200   🖥️ Processos: 48.
@@ -1470,16 +1470,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m0 [90mP9=[0m1 [90mP10=[0m175 [90mP16=[0m1 [90mP17=[0m1
- ├─ ⚙   ─ [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>175 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP13=[0m1 [90mP14=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP13=[0m1 [90mP14=[0m0
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP13=[0m1 [90mP14=[0m0
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
  │ ...
- ├─ ⚙  [1498] ─ [90mP3=[0m98 [90mP13=[0m3 [90mP14=[0m100
- ├─ ⚙  [1499] ─ [90mP3=[0m99 [90mP13=[0m3 [90mP14=[0m100
- ├─ ⚙  [1500] ─ [90mP3=[0m100 [90mP13=[0m3 [90mP14=[0m100
+ ├─ ⚙  [1498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
+ ├─ ⚙  [1499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
+ ├─ ⚙  [1500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:15000   📄 Instâncias: 10   🛠️ Configurações: 1500   🖥️ Processos: 48.
@@ -1543,16 +1543,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 48' 18" 645ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP13=[0m1 [90mP14=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP13=[0m1 [90mP14=[0m0
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP13=[0m1 [90mP14=[0m0
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
  │ ...
- ├─ ⚙  [1498] ─ [90mP3=[0m98 [90mP13=[0m3 [90mP14=[0m100
- ├─ ⚙  [1499] ─ [90mP3=[0m99 [90mP13=[0m3 [90mP14=[0m100
- ├─ ⚙  [1500] ─ [90mP3=[0m100 [90mP13=[0m3 [90mP14=[0m100
+ ├─ ⚙  [1498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
+ ├─ ⚙  [1499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
+ ├─ ⚙  [1500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:15000   📄 Instâncias: 10   🛠️ Configurações: 1500   🖥️ Processos: 48.
@@ -1581,16 +1581,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 13' 29" 366ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m4 [90mP12=[0m100 [90mP16=[0m1
- ├─ ⚙   ─ [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>4 <span style="color:gray">P12=</span>100 <span style="color:gray">P16=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP13=[0m1 [90mP14=[0m0
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP13=[0m1 [90mP14=[0m0
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP13=[0m1 [90mP14=[0m0
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>0
  │ ...
- ├─ ⚙  [148] ─ [90mP3=[0m8 [90mP13=[0m3 [90mP14=[0m100
- ├─ ⚙  [149] ─ [90mP3=[0m9 [90mP13=[0m3 [90mP14=[0m100
- ├─ ⚙  [150] ─ [90mP3=[0m10 [90mP13=[0m3 [90mP14=[0m100
+ ├─ ⚙  [148] ─ <span style="color:gray">P3=</span>8 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
+ ├─ ⚙  [149] ─ <span style="color:gray">P3=</span>9 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
+ ├─ ⚙  [150] ─ <span style="color:gray">P3=</span>10 <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:1500   📄 Instâncias: 10   🛠️ Configurações: 150   🖥️ Processos: 48.
@@ -1699,16 +1699,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 
 ═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
- ├─ 🛠️  ─ [90mP1=[0m1 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m10 [90mP7=[0m0 [90mP8=[0m100 [90mP9=[0m2 [90mP11=[0m10 [90mP12=[0m100 [90mP13=[0m3
- ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m3 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>3
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1 [90mP15=[0m2
- ├─ ⚙  [2] ─ [90mP3=[0m2 [90mP15=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3 [90mP15=[0m2
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P15=</span>2
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P15=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P15=</span>2
  │ ...
- ├─ ⚙  [498] ─ [90mP3=[0m98 [90mP15=[0m10
- ├─ ⚙  [499] ─ [90mP3=[0m99 [90mP15=[0m10
- ├─ ⚙  [500] ─ [90mP3=[0m100 [90mP15=[0m10
+ ├─ ⚙  [498] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P15=</span>10
+ ├─ ⚙  [499] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P15=</span>10
+ ├─ ⚙  [500] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P15=</span>10
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:5000   📄 Instâncias: 10   🛠️ Configurações: 500   🖥️ Processos: 48.
@@ -1731,6 +1731,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 ### Resultados: damascp_6B
 
 | P15 | Eficiência | ICinf | ICsup |
+|:---:|---:|---:|---:|
 | 2 | **1300** | 1182 | 1419 |
 | 3 | 1441 | 1304 | 1579 |
 | 4 | 1544 | 1396 | 1691 |
@@ -1760,7 +1761,7 @@ Vamos ver possibilidades de números pequenos, já que valores demasiado altos b
 - **Execução**:
 	- **ci**: TProcuraMelhorativa 1 20:29 -R Resultados/damasci_7 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P3=1:100 x P16=0:3 x P17=0:3
 	- **cp**: TProcuraMelhorativa 2 20:29 -R Resultados/damascp_7 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P3=1:100 x P16=0:3 x P17=0:3
-	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:3 x P17=0:3
+	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_7 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:3 x P17=0:3
 
 
 \htmlonly
@@ -1787,32 +1788,240 @@ srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_7 -M 1 -P P2=2 P6
 # Teste: damascp_7
 srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_7 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P3=1:100 x P16=0:3 x P17=0:3
 # Teste: particaocb_7
-srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_6 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:3 x P17=0:3
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_7 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P3=1:10 x P16=0:3 x P17=0:3
 </pre>
 </details>
 <details>
   <summary>Ver execução:</summary>
 <pre>
+mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp ../../TRand.cpp ../TProcuraMelhorativa.cpp ../TCodificacaoArvore.cpp ../TCodificacaoBinaria.cpp ../TCodificacaoInteira.cpp ../TCodificacaoReal.cpp ../TCodificacaoPermutacao.cpp ProblemaArtificial.cpp OitoDamas.cpp teste.cpp Particao.cpp
 
+
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>175 <span style="color:gray">P13=</span>1 <span style="color:gray">P14=</span>100
+ ├─ ⚙   ─ <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ │ ...
+ ├─ ⚙  [1598] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+ ├─ ⚙  [1599] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+ ├─ ⚙  [1600] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:16000   📄 Instâncias: 10   🛠️ Configurações: 1600   🖥️ Processos: 48.
+ ├─ ⏱ 1' 19ms         📋 328   📄 28    🛠️ 1571  🖥️ 41    ⚖  2 10000 514420 21535 579024 
+ ├─ ⏱ 2' 436ms        📋 617   📄 29    🛠️ 1542  🖥️ 13    ⚖  3 10000 488152 20425 549426 
+ ├─ ⏱ 3' 578ms        📋 912   📄 23    🛠️ 1510  🖥️ 3     ⚖  0 2435 164175 6870 184784 
+ ├─ ⏱ 4' 1" 34ms      📋 1203  📄 24    🛠️ 1484  🖥️ 23    ⚖  1 10000 644570 26964 698497 
+ ├─ ⏱ 5' 1" 39ms      📋 1494  📄 23    🛠️ 1455  🖥️ 17    ⚖  1 10000 682831 28562 739954 
+ ├─ ⏱ 6' 1" 91ms      📋 1791  📄 27    🛠️ 1425  🖥️ 21    ⚖  1 10000 543704 22745 589193 
+ ├─ ⏱ 7' 1" 282ms     📋 2085  📄 21    🛠️ 1396  🖥️ 34    ⚖  1 10000 773707 32366 806072 
+ ├─ ⏱ 8' 1" 694ms     📋 2375  📄 23    🛠️ 1367  🖥️ 41    ⚖  1 10000 677929 28368 706296 
+ ├─ ⏱ 9' 1" 951ms     📋 2669  📄 27    🛠️ 1337  🖥️ 15    ⚖  2 10000 544480 22790 567269 
+ ├─ ⏱ 10' 2" 485ms    📋 2962  📄 25    🛠️ 1308  🖥️ 18    ⚖  2 10000 604672 25312 629983 
+ ├─ ⏱ 11' 2" 681ms    📋 3247  📄 29    🛠️ 1279  🖥️ 43    ⚖  5 10000 488871 20622 488870 
+ ├─ ⏱ 12' 2" 890ms    📋 3531  📄 25    🛠️ 1251  🖥️ 15    ⚖  2 10000 612147 25820 612146 
+ ├─ ⏱ 13' 2" 972ms    📋 3814  📄 22    🛠️ 1223  🖥️ 31    ⚖  2 10000 730611 30835 730610 
+ ├─ ⏱ 14' 3" 78ms     📋 4119  📄 21    🛠️ 1189  🖥️ 13    ⚖  0 2313 169731 7229 191417 
+ ├─ ⏱ 15' 3" 194ms    📋 4478  📄 27    🛠️ 1157  🖥️ 14    ⚖  2 10000 530217 22589 597983 
+ ├─ ⏱ 16' 3" 574ms    📋 4841  📄 29    🛠️ 1121  🖥️ 33    ⚖  1 10000 469206 19985 529160 
+ ├─ ⏱ 17' 3" 733ms    📋 5201  📄 24    🛠️ 1086  🖥️ 38    ⚖  1 10000 623959 26576 677110 
+ ├─ ⏱ 18' 3" 877ms    📋 5563  📄 25    🛠️ 1049  🖥️ 31    ⚖  1 10000 590733 25176 641084 
+ ├─ ⏱ 19' 4" 150ms    📋 5939  📄 21    🛠️ 1006  🖥️ 31    ⚖  0 452 33931 1445 36820 
+ ├─ ⏱ 20' 4" 191ms    📋 6314  📄 23    🛠️ 975   🖥️ 26    ⚖  1 10000 666225 28392 694616 
+ ├─ ⏱ 21' 4" 254ms    📋 6675  📄 28    🛠️ 938   🖥️ 7     ⚖  2 10000 503885 21488 525372 
+ ├─ ⏱ 22' 4" 295ms    📋 7031  📄 28    🛠️ 902   🖥️ 17    ⚖  1 10000 503209 21462 524670 
+ ├─ ⏱ 23' 4" 604ms    📋 7320  📄 26    🛠️ 872   🖥️ 21    ⚖  2 10000 564950 24229 564949 
+ ├─ ⏱ 24' 4" 776ms    📋 7610  📄 27    🛠️ 843   🖥️ 37    ⚖  2 10000 526269 22567 526268 
+ ├─ ⏱ 25' 5" 289ms    📋 7900  📄 27    🛠️ 814   🖥️ 11    ⚖  2 10000 534552 22922 534551 
+ ├─ ⏱ 26' 5" 313ms    📋 8306  📄 22    🛠️ 777   🖥️ 46    ⚖  1 10000 686766 29752 776021 
+ ├─ ⏱ 27' 5" 368ms    📋 8792  📄 28    🛠️ 726   🖥️ 22    ⚖  0 5955 289419 12549 327065 
+ ├─ ⏱ 28' 5" 408ms    📋 9291  📄 28    🛠️ 675   🖥️ 23    ⚖  0 6406 314820 13645 342109 
+ ├─ ⏱ 29' 5" 463ms    📋 9791  📄 24    🛠️ 625   🖥️ 23    ⚖  0 5121 313737 13597 340930 
+ ├─ ⏱ 30' 5" 555ms    📋 10265 📄 24    🛠️ 581   🖥️ 30    ⚖  1 10000 611392 26479 637870 
+ ├─ ⏱ 31' 5" 583ms    📋 10747 📄 22    🛠️ 526   🖥️ 44    ⚖  0 1153 79328 3437 82764 
+ ├─ ⏱ 32' 5" 954ms    📋 11160 📄 22    🛠️ 489   🖥️ 40    ⚖  1 10000 689557 29999 689556 
+ ├─ ⏱ 33' 6" 207ms    📋 11485 📄 29    🛠️ 456   🖥️ 5     ⚖  3 10000 469961 20473 469960 
+ ├─ ⏱ 34' 6" 506ms    📋 11815 📄 29    🛠️ 423   🖥️ 23    ⚖  2 10000 470784 20505 470783 
+ ├─ ⏱ 35' 6" 699ms    📋 12208 📄 26    🛠️ 381   🖥️ 19    ⚖  0 2867 152818 6730 173007 
+ ├─ ⏱ 36' 6" 975ms    📋 12735 📄 24    🛠️ 332   🖥️ 42    ⚖  0 8320 489753 21561 554435 
+ ├─ ⏱ 37' 7" 90ms     📋 13250 📄 27    🛠️ 282   🖥️ 3     ⚖  0 8755 438277 19317 476910 
+ ├─ ⏱ 38' 7" 153ms    📋 13780 📄 25    🛠️ 230   🖥️ 33    ⚖  1 10000 557252 24527 606305 
+ ├─ ⏱ 39' 7" 445ms    📋 14310 📄 25    🛠️ 176   🖥️ 9     ⚖  0 8274 467318 20579 487896 
+ ├─ ⏱ 40' 7" 459ms    📋 14831 📄 20    🛠️ 122   🖥️ 13    ⚖  0 6295 479068 21084 500151 
+ ├─ ⏱ 41' 7" 850ms    📋 15311 📄 21    🛠️ 69    🖥️ 7     ⚖  0 1008 72359 3197 72358 
+ ├─ ⏱ 42' 7" 930ms    📋 15730 📄 21    🛠️ 29    🖥️ 26    ⚖  0 3338 241243 10642 241242 
+ ├─ 📑  Ficheiro Resultados/damasci_7.csv gravado.
+ │  ⏱  Tempo real: 42' 55" 185ms 
+ │  ⏱  CPU total: 1d 9h 37' 13" 678ms 
+ │  ⏱  Espera do gestor: 42' 54" 843ms 
+ │  ⏱  Espera trabalhadores: 4' 5" 66ms 
+ │  📊  Utilização:
+ │  - Total: 97.7%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 99.8% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 42' 55" 185ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 20 📄 21 📄 22 📄 23 📄 24 📄 25 📄 26 📄 27 📄 28 📄 29 } 
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>3
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P15=</span>2 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ │ ...
+ ├─ ⚙  [1598] ─ <span style="color:gray">P3=</span>98 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+ ├─ ⚙  [1599] ─ <span style="color:gray">P3=</span>99 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+ ├─ ⚙  [1600] ─ <span style="color:gray">P3=</span>100 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:16000   📄 Instâncias: 10   🛠️ Configurações: 1600   🖥️ Processos: 48.
+ ├─ ⏱ 1' 2ms          📋 2363  📄 24    🛠️ 1367  🖥️ 14    ⚖  0 753 71670 5371 77040 
+ ├─ ⏱ 2' 29ms         📋 3514  📄 28    🛠️ 1256  🖥️ 9     ⚖  0 7853 631113 48942 631112 
+ ├─ ⏱ 3' 41ms         📋 4670  📄 22    🛠️ 1133  🖥️ 4     ⚖  0 43 4279 333 5277 
+ ├─ ⏱ 4' 124ms        📋 7562  📄 21    🛠️ 844   🖥️ 27    ⚖  0 377 39017 3192 39016 
+ ├─ ⏱ 5' 157ms        📋 10445 📄 29    🛠️ 555   🖥️ 19    ⚖  0 306 21710 1830 23539 
+ ├─ ⏱ 6' 184ms        📋 14011 📄 25    🛠️ 205   🖥️ 11    ⚖  0 1280 102542 9026 120593 
+ ├─ ⏱ 7' 566ms        📋 14645 📄 29    🛠️ 144   🖥️ 42    ⚖  1 10000 672767 60855 733621 
+ ├─ ⏱ 8' 610ms        📋 15338 📄 28    🛠️ 70    🖥️ 46    ⚖  0 3121 208662 20085 208661 
+ ├─ 📑  Ficheiro Resultados/damascp_7.csv gravado.
+ │  ⏱  Tempo real: 8' 57" 810ms 
+ │  ⏱  CPU total: 7h 1' 17" 92ms 
+ │  ⏱  Espera do gestor: 8' 57" 483ms 
+ │  ⏱  Espera trabalhadores: 5' 8" 338ms 
+ │  📊  Utilização:
+ │  - Total: 96.7%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 98.8% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 8' 57" 810ms ) ═══
+
+═╤═ Instâncias ═══ { 📄 692 📄 764 📄 806 📄 864 📄 870 📄 904 📄 922 📄 926 📄 930 📄 948 } 
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>4 <span style="color:gray">P12=</span>100 <span style="color:gray">P13=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3 <span style="color:gray">P16=</span>0 <span style="color:gray">P17=</span>0
+ │ ...
+ ├─ ⚙  [158] ─ <span style="color:gray">P3=</span>8 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+ ├─ ⚙  [159] ─ <span style="color:gray">P3=</span>9 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+ ├─ ⚙  [160] ─ <span style="color:gray">P3=</span>10 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:1600   📄 Instâncias: 10   🛠️ Configurações: 160   🖥️ Processos: 48.
+ ├─ ⏱ 1' 24ms         📋 920   📄 926   🛠️ 80    🖥️ 41    ⚖  2 10001 132738 6041 132737 
+ ├─ ⏱ 2' 193ms        📋 1600  📄 864   🛠️ 2     🖥️ 7     ⚖  4 10001 108258 5405 108257 
+ ├─ 📑  Ficheiro Resultados/particaocb_6.csv gravado.
+ │  ⏱  Tempo real: 2' 2" 868ms 
+ │  ⏱  CPU total: 1h 36' 14" 794ms 
+ │  ⏱  Espera do gestor: 2' 2" 834ms 
+ │  ⏱  Espera trabalhadores: 3' 51" 713ms 
+ │  📊  Utilização:
+ │  - Total: 94.0%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 96.0% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 2" 868ms ) ═══
 </pre>
 </details>
 \endhtmlonly
 
 ### Resultados: damasci_7
 
+| P16 vs P17 | 0 | 1 | 2 | 3 |
+|:---:|---:|---:|---:|---:|
+| 0 | 6647 | 8672 | 9813 | 10000 |
+| 1 | **5311** | 5883 | 7732 | 9720 |
+| 2 | 5363 | 5730 | 7732 | 9643 |
+| 3 | 5478 | 5816 | 7836 | 9572 |
+
+Os imigrantes não aparentam auxiliar, pelo contrário.
+Já o elitísmo de 1 ou 2 mostra-se melhor que não utilizar elitismo.
+Assim mantemos P16=1 e alteramos P17=0.
+
 ### Resultados: damascp_7
+
+| P16 vs P17 | 0 | 1 | 2 | 3 |
+|:---:|---:|---:|---:|---:|
+| 0 | 3344 | 800 | 2829 | 4534 |
+| 1 | 4657 | 1302 | 631 | 1019 |
+| 2 | 828 | 444 | 563 | 1140 |
+| 3 | 448 | **414** | 652 | 1374 |
+
+Neste caso, atendendo à estratégia de utilização da mutação, os valores atuais aparentam não ser os melhores.
+Ter um elitísmo alto, e alguns imigrantes, desde que não demasiado, mostra-se mais vantajoso.
+Relativamente à configuração atual reduz em um terço o tempo, o que é um registo considerável.
+Vamos portanto alterar P16=3 e mantemos P17=1.
+
 
 ### Resultados: particaocb_7
 
+| P16 vs P17 | 0 | 1 | 2 | 3 |
+|:---:|---:|---:|---:|---:|
+| 0 | 7055 | 7541 | 7149 | 6072 |
+| 1 | 2760 | **1862** | 2142 | 1902 |
+| 2 | 2258 | 2586 | 2429 | 2070 |
+| 3 | 2812 | 2478 | 2215 | 2109 |
+
+Neste problema a parametrização atual é a melhor.
+Podemos observar uma alta sensibilidade à utilização do elitísmo, caso seja 0 a eficiência degrada-se consideravalmente.
+A quantidade de imigrantes não tem tanto relevo neste caso.
 
 ## Teste 8
 
-P18(DIVERSIDADE)
+Vamos agora estudar o impacto da estratégia da diversidade.
+O P18(DIVERSIDADE) tem 3 possibilidades:
+- 1: Nenhuma
+- 2: Avaliação partilhada
+- 3: Limpeza (omissão)
+
+As opções 2 e 3 utilizam também P19(DIST_MINIMA), P24(TIPO_DISTANCIA).
+
+Vamos neste teste estudar o impacto da troca destas estratégias com os valores de omissão para as distâncias,
+de modo a identificar a sua relevância.
+
+
+- **Tipo de Teste / Objetivo**: Paramétrico P18
+- **Definição**:
+	- **ci**: Instâncias: 20:29; Configurações: P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=1:3
+	- **cp**: Instâncias: 20:29; Configurações: P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=1:3
+	- **cb**: Instâncias: 948,864,930,922,764,692,806,926,904,870; Configurações: P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1:3
+- **Esforço**:
+	- **ci+cp**: P3=1:100
+	- **cb**: P3=1:10
+- **Execução**:
+	- **ci**: TProcuraMelhorativa 1 20:29 -R Resultados/damasci_8 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P3=1:100 x P18=1:3
+	- **cp**: TProcuraMelhorativa 2 20:29 -R Resultados/damascp_8 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P3=1:100 x P18=1:3
+	- **cb**: TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_8 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P3=1:10 x P18=1:3
+
 
 \htmlonly
 <details>
   <summary>Ver script: evolutivos8.sh</summary>
 <pre>
+#!/bin/bash
+#SBATCH --job-name=evolutivos8
+#SBATCH --output=Resultados/evolutivos8.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=10:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
+
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: damasci_8
+srun bin/MPI/TProcuraMelhorativa 1 20:29 -R Resultados/damasci_8 -M 1 -P P2=2 P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P3=1:100 x P18=1:3
+# Teste: damascp_8
+srun bin/MPI/TProcuraMelhorativa 2 20:29 -R Resultados/damascp_8 -M 1 -P P2=2 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P3=1:100 x P18=1:3
+# Teste: particaocb_8
+srun bin/MPI/TProcuraMelhorativa 3 948,864,930,922,764,692,806,926,904,870 -R Resultados/particaocb_8 -M 1 -P P2=2 P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P3=1:10 x P18=1:3
+
 </pre>
 </details>
 <details>
