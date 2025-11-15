@@ -18,7 +18,7 @@ void TCodificacaoBinaria::NovaSolucao(void) {
 
 // métodos que podem ser redefinidos
 void TCodificacaoBinaria::Debug(bool completo) {
-	for (int i = 0; i < nElementos; i++) 
+	for (int i = 0; i < nElementos; i++)
 		printf("%d", Bit(i) ? 1 : 0);
 }
 
@@ -73,6 +73,8 @@ void TCodificacaoBinaria::Mutar(void) {
 		int tamanho = Parametro(TIPO_VIZINHO_CB);
 		if (tamanho < 1)
 			tamanho = 1;
+		if (tamanho > nElementos - 1)
+			tamanho = nElementos - 1;
 		int i = TRand::rand() % (nElementos - tamanho + 1);
 		Debug(EXTRA_DEBUG, false, " mutar vizinho #bits %d (%d)",
 			tamanho, i);
@@ -81,7 +83,7 @@ void TCodificacaoBinaria::Mutar(void) {
 		custo = -1;
 	}
 	else {
-		Debug(EXTRA_DEBUG, false, " mutar prob p(%d)",	p);
+		Debug(EXTRA_DEBUG, false, " mutar prob p(%d)", p);
 		// cada bit com probabilidade p
 		for (int i = 0; i < nElementos; i++)
 			if (TRand::rand() % 100 < (unsigned)p)
@@ -93,7 +95,7 @@ void TCodificacaoBinaria::Mutar(void) {
 void TCodificacaoBinaria::Cruzamento(TPonto a, TPonto b) {
 	int pontos = Parametro(TIPO_CRUZAR_CB);
 	TVector<int> divisoes;
-	if(pontos>nElementos/2)
+	if (pontos > nElementos / 2)
 		pontos = nElementos / 2;
 	while (divisoes.Count() < pontos) {
 		divisoes += (TRand::rand() % nElementos);
@@ -102,10 +104,10 @@ void TCodificacaoBinaria::Cruzamento(TPonto a, TPonto b) {
 	if (divisoes.Empty()) { // cruzamento uniforme
 		Debug(EXTRA_DEBUG, false, " cruzamento uniforme");
 		for (int i = 0; i < nElementos; i++)
-			Bit(i) = ((TCodificacaoBinaria*)(TRand::rand() % 2 == 0?a:b))->Bit(i);
+			Bit(i) = ((TCodificacaoBinaria*)(TRand::rand() % 2 == 0 ? a : b))->Bit(i);
 	}
 	else { // cruzamento em N pontos
-		int i=0;
+		int i = 0;
 		bool copiaPai = true;
 		if (Parametro(NIVEL_DEBUG) >= EXTRA_DEBUG) {
 			Debug(EXTRA_DEBUG, false, " cruzamento %d-ponto(s): ", divisoes.Count());
