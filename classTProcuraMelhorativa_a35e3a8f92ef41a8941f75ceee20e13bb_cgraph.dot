@@ -24,12 +24,21 @@ digraph "TProcuraMelhorativa::SelecionarPaisAE"
   Node8 -> Node2 [id="edge9_Node000008_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge10_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node9 [id="edge11_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
+  Node9 [id="Node000009",label="TProcuraMelhorativa\l::Parar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#add6b034d0b16d10ca85b2b42d956fae0",tooltip="Verifica se a procura deve ser interrompida."];
   Node9 -> Node10 [id="edge12_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
-  Node1 -> Node11 [id="edge13_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TVector::Random",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a769c6a55b72a463fd2313fbd638c7234",tooltip=" "];
-  Node11 -> Node9 [id="edge14_Node000011_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node12 [id="edge15_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TVector::Reset",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd",tooltip="Preenche todo o vetor com um mesmo valor."];
+  Node10 [id="Node000010",label="TProcura::Parar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7952e187e1b0ae0ca52edab157223179",tooltip="Verifica se a procura deve ser interrompida."];
+  Node10 -> Node11 [id="edge13_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="TProcura::IteracoesExcedido",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a73463e33b889e6053ee32220e0514a2c",tooltip=" "];
+  Node11 -> Node6 [id="edge14_Node000011_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node12 [id="edge15_Node000010_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="TProcura::TempoExcedido",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afa3015ac104b603930d3f60a34c09fff",tooltip=" "];
+  Node1 -> Node13 [id="edge16_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
+  Node13 -> Node14 [id="edge17_Node000013_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
+  Node1 -> Node15 [id="edge18_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TVector::Random",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a769c6a55b72a463fd2313fbd638c7234",tooltip=" "];
+  Node15 -> Node13 [id="edge19_Node000015_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node16 [id="edge20_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TVector::Reset",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd",tooltip="Preenche todo o vetor com um mesmo valor."];
 }
