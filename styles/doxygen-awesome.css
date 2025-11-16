@@ -2695,6 +2695,7 @@ pre {
 
 span.icon {
     display: inline-block;
-    width: 1ch; /* força largura de 1 carácter monoespaçado */
+    width: 2ch; /* força largura de 1 carácter monoespaçado */
     text-align: center;
+    line-height: 1.0; 
 }
