@@ -239,7 +239,8 @@ Avançamos para o parâmetro P3, "SEMENTE". Introduza: *ENTER*; 3; 2; *ENTER*.
 
 \htmlonly
 <pre>
-NIVEL_DEBUG (atual 0): 
+NIVEL_DEBUG (atual 0): <span class="entrada">↵</span>
+
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -262,7 +263,7 @@ SEMENTE (atual 1): <span class="entrada">2</span>
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parâmetro:
+Parâmetro: <span class="entrada">↵</span>
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 2 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -284,7 +285,7 @@ Opção: <span class="entrada">1</span>
 │ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto): 
+Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">↵</span>
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 2 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -458,7 +459,7 @@ Introduza: 1;2;3;2;*ENTER*;1;*ENTER*;6.
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 1º lugar 
 │ <span style="color:gray">verifica se o vetor está ordenado</span>
 └──────────────────────────────────────────────────────────────────────
-Alterar indicador: 
+Alterar indicador: <span class="entrada">↵</span>
 ...
 Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
@@ -594,7 +595,7 @@ Introduza: P3=1:2 x P6=1:3.
 │    Pk = &lt;conj.&gt; x Pw = &lt;conj.&gt; <span style="color:gray">- produto externo (gera NxM configs)</span>
 │  <span style="color:gray">Sintaxe de &lt;conj.&gt; :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
-✏️ Comando: 
+✏️ Comando: <span class="entrada">↵</span>
 </pre>
 \endhtmlonly
 
@@ -623,7 +624,7 @@ Opção: <span class="entrada">8</span>
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
 📄  IDs das instâncias (1 a 10): <span class="entrada">1:3</span>
-🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+🗎  Ficheiro resultados (nada para mostrar no ecrã): <span class="entrada">↵</span>
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 } 
  ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
@@ -842,7 +843,7 @@ Opção: <span class="entrada">7</span>
 │    Pk = &lt;conj.&gt; x Pw = &lt;conj.&gt; <span style="color:gray">- produto externo (gera NxM configs)</span>
 │  <span style="color:gray">Sintaxe de &lt;conj.&gt; :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
-✏️ Comando: 
+✏️ Comando: <span class="entrada">↵</span>
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -854,7 +855,7 @@ Opção: <span class="entrada">8</span>
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
 📄  IDs das instâncias (1 a 10): <span class="entrada">1:10</span>
-🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+🗎  Ficheiro resultados (nada para mostrar no ecrã): <span class="entrada">↵</span>
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
