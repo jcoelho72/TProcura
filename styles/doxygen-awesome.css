@@ -2693,3 +2693,9 @@ pre {
     overflow-x: auto;
 }
 
+span.entrada {
+    color: #00ff00; /* verde vivo, estilo "terminal" */
+    font-weight: bold; /* dá destaque */
+    background-color: #222222; /* fundo ligeiramente diferente do resto */
+    padding: 0 0.2em; /* pequeno espaçamento lateral */
+}
