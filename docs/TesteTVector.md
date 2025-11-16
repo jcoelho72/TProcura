@@ -508,9 +508,9 @@ Opção: <span class="entrada">7</span>
 ═╧═══════════════════
 ┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
 │    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
-│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
-│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
-│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+│    Pk = &lt;conj.&gt; <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = &lt;conj.&gt; x Pw = &lt;conj.&gt; <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de &lt;conj.&gt; :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
 </pre>
@@ -545,9 +545,9 @@ Introduza: P1=1:12
 ═╧═══════════════════
 ┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
 │    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
-│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
-│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
-│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+│    Pk = &lt;conj.&gt; <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = &lt;conj.&gt; x Pw = &lt;conj.&gt; <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de &lt;conj.&gt; :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando:
 </pre>
@@ -590,9 +590,9 @@ Introduza: P3=1:2 x P6=1:3.
 ═╧═══════════════════
 ┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
 │    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
-│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
-│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
-│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+│    Pk = &lt;conj.&gt; <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = &lt;conj.&gt; x Pw = &lt;conj.&gt; <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de &lt;conj.&gt; :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
 </pre>
@@ -827,9 +827,9 @@ Opção: <span class="entrada">7</span>
 ═╧═══════════════════
 ┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
 │    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
-│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
-│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
-│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+│    Pk = &lt;conj.&gt; <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = &lt;conj.&gt; x Pw = &lt;conj.&gt; <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de &lt;conj.&gt; :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: <span class="entrada">P1=2 P2=4</span>
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
@@ -838,9 +838,9 @@ Opção: <span class="entrada">7</span>
 ═╧═══════════════════
 ┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
 │    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
-│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
-│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
-│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+│    Pk = &lt;conj.&gt; <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = &lt;conj.&gt; x Pw = &lt;conj.&gt; <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de &lt;conj.&gt; :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
 TVector
