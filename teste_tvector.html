@@ -135,11 +135,12 @@ Ação 1: Menu 1 - Instância</h2>
 <p>Vamos ver o menu 1 instância. Introduza: 1; 2.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">1</span>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto): 
+Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">2</span>
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> Add() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -150,18 +151,18 @@ Dados #2000000: -498792314 -2114916689 -1334173636 ... 1289309513 1347067406 139
 │ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
 </pre>
 </p>
 <p>Este menu permite inicializar os dados utilizados no algoritmo. Esses dados iniciais são a instância, que pode ser gerada aleatoriamente ou fornecido um ficheiro. Temos a indicação do ID da instância atual, que é 1. Estão definidas instâncias de 1 a 10. Essas instâncias significam que o tamanho do vetor é 1 milhão vezes o ID da instância. Ao escolhermos a instância 2, vemos que o vetor fica com 2 milhões de dados. Fizemos a visualização apenas dos primeiros 3 e últimos 3 elementos, mas neste caso é suficiente para sabermos que trocamos de instância, já que os números são diferentes. São diferentes os últimos números, mas os primeiros são iguais, já que não alteramos a semente do gerador aleatório. Podiamos também ter introduzido um texto, para alterar o prefixo atual. Este texto é importante se os dados de teste estivessem em ficheiros. Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor, não é preciso o ficheiro.</p>
 <p>Vamos voltar para a instãncia 1, para confirmar que é a mesma, apenas assim se pode garantir que tudo o que se faz em <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, é reproduzivel. Introduza: 1; 1.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">1</span>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ <span style="color:gray">ID atual:</span> 2  <span style="color:gray">Intervalo:</span> [1–10]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto): 
+Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">1</span>
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> Add() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -172,7 +173,6 @@ Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -12
 │ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
 </pre>
 </p>
 <p>Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.</p>
