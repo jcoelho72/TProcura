@@ -44,8 +44,8 @@ Opção:
 Ao arrancar com o programa sem argumentos, entramos no modo interativo, com o teste manual. 
 Esta é a informação apresentada. 
 Na zona superior aparece o nome do problema (neste caso TVector),
-seguido de uma caixa com os parametros com os valores atuais.
-Iremos detalhar os parametrors mais adiante.
+seguido de uma caixa com os parâmetros com os valores atuais.
+Iremos detalhar os parâmetrors mais adiante.
 Segue-se uma zona com informação sobre os dados do problema concreto a resolver,
 a instância, neste caso é um vetor de números aleatórios, com 1 milhão de elementos.
 Temos vários algoritmos, em que cada um testa um método da classe TVector.
@@ -150,13 +150,13 @@ Opção: <span class="entrada">3</span>
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
+Parâmetro:
 </pre>
 \endhtmlonly
 
-Podemos ver os parametros que já tinhamos visto, mas agora com mais detalhe.
+Podemos ver os parâmetros que já tinhamos visto, mas agora com mais detalhe.
 Temos o ID do parâmetro, nome do parâmetro, e valor atribuído.
-O nome dos parametros é igual à macro no código.
+O nome dos parâmetros é igual à macro no código.
 Alguns parâmetros têm texto quando as opções são categóricas, outros têm números para valores quantitativos.
 Não existem números reais nos parâmetros, tendo de ser convertidos sempre para inteiros. 
 Mesmo os parâmetros categóricos, têm um número inteiro associado a cada valor.
@@ -166,7 +166,7 @@ Vamos ver as opções no parâmetro 1, que é o método a ser executado. Introdu
 
 \htmlonly
 <pre>
-Parametro: <span class="entrada">1</span>
+Parâmetro: <span class="entrada">1</span>
 ┌─ ⚙  P1(ALGORITMO) ───────────────────────────────────────────────────
 │ Método para teste.                                                   
 │ <span style="color:gray">1:</span> Add()
@@ -205,7 +205,7 @@ ALGORITMO (atual 1): <span class="entrada">2</span>
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro: <span class="entrada">2</span>
+Parâmetro: <span class="entrada">2</span>
 ┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
 │ Nível de debug, de reduzido a completo.                              
 │ <span style="color:gray">0:</span> NADA
@@ -248,7 +248,7 @@ NIVEL_DEBUG (atual 0):
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro: <span class="entrada">3</span>
+Parâmetro: <span class="entrada">3</span>
 ┌─ ⚙  P3(SEMENTE) ─────────────────────────────────────────────────────
 │ Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
 │ Intervalo: 1 a 1000000
@@ -262,7 +262,7 @@ SEMENTE (atual 1): <span class="entrada">2</span>
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
+Parâmetro:
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 2 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -315,7 +315,7 @@ Opção: <span class="entrada">3</span>
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro: <span class="entrada">6</span>
+Parâmetro: <span class="entrada">6</span>
 ┌─ ⚙  P6(ESTRUTURA_DADOS) ─────────────────────────────────────────────
 │ Estrutura de dados utilizada para vetor.                             
 │ <span style="color:gray">1:</span> TVector
@@ -478,7 +478,7 @@ Opção:
 </pre>
 \endhtmlonly
 
-Podemos ver que agora apenas I4 seguido de I2 são apresentados. O tempo é também distinto, não tendo sido alterados nenhuns parametros.
+Podemos ver que agora apenas I4 seguido de I2 são apresentados. O tempo é também distinto, não tendo sido alterados nenhuns parâmetros.
 
 ---
 
@@ -791,8 +791,8 @@ para clarificar o que vai ser executado no teste e poder identificar algum probl
 
 Podemos ver que durante a execução, nada é mostrado, sendo mostrados os resultados dos testes no final.
 
-O parametro P2(NIVEL_DEBUG) controla do debug do algoritrmo durante a execução simples, no comando 6.
-Num teste o debug do algoritmo é sempre colocado a 0, sendo este parametro utilizado para
+O parâmetro P2(NIVEL_DEBUG) controla do debug do algoritrmo durante a execução simples, no comando 6.
+Num teste o debug do algoritmo é sempre colocado a 0, sendo este parâmetro utilizado para
 mostrar informações do teste.
 
 Como o teste foi rápido, não havia muito a mostrar, mas ao executar um teste longo,
@@ -803,7 +803,7 @@ Como o custo não está nos indicadores calculados, ficou a zero, caso contrári
 
 Seguem-se os totais por configuração, e um torneio entre configurações, sendo contabilizada vitória para a configuração que tiver melhores resultados em mais instâncias.
 
-O detalhe dos parametros em cada configuração é replicado no final, para associar os resultados aos parametros utilizados.
+O detalhe dos parâmetros em cada configuração é replicado no final, para associar os resultados aos parâmetros utilizados.
 
 Infelizmente, pouco podemos concluir com este teste. 
 O motivo é que não tinhamos uma pergunta formulada, mas solicitamos simplesmente execuções com diversas configurações.
@@ -921,7 +921,7 @@ Opção: <span class="entrada">8</span>
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
 📄  IDs das instâncias (1 a 10): <span class="entrada">1:10</span>
-🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+🗎  Ficheiro resultados (nada para mostrar no ecrã): <span class="entrada">Resultados/tvetor_0</span>
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
@@ -973,7 +973,7 @@ pode ver exatamente o teste solicitado numa só linha, não estando dependente d
 
 Vamos neste e nos testes seguintes, utilizar o modelo de teste descrito em [Testes de Algoritmos com o TProcura](investigacao.html)
 
-Vamos recomeçar, sendo o primeiro passo conhecer os parametros e indicadores disponíveis.
+Vamos recomeçar, sendo o primeiro passo conhecer os parâmetros e indicadores disponíveis.
 
 Abra a linha de comando, localize o executável, e execute com argumento "-h".
 Vamos executar na pasta Teste, pelo que funcionará a linha (Windows usar x64 Linux bin): 
@@ -996,7 +996,7 @@ Opções:
   -h              Esta ajuda
   -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
 Exemplo: ./bin/Release/TProcura 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
-   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
+   Executar sem argumentos entra em modo interativo, para explorar todos os parâmetros e indicadores
 
 Lista de parâmetros:
 ┌─ ⚙️ Parâmetros ──────────────────────────────────────────────────────
@@ -1021,7 +1021,7 @@ Lista de indicadores:
 └──────────────────────────────────────────────────────────────────────
 ```
 
-Podemos ver os parametros específicos do programa, e também a lista completa de parametros e indicadores
+Podemos ver os parâmetros específicos do programa, e também a lista completa de parâmetros e indicadores
 do algoritmo. Assim podemos saber o que utilizar na definição das configurações de execução.
 
 
@@ -1055,7 +1055,7 @@ Um simples copy/paste garante que o teste irá ser reproduzido à risca. Nesta l
 
 Subimos o nível de debug (P2) de 1 para 3, já que o nível 2 apenas reporta de minuto a minuto.
 Tal como o modo teste, na execução via linha de comando, o algoritmo executa sempre com debug nível 0,
-de modo a obter os melhores tempos. O parametro de debug é apenas para visualizar o andamento do teste.
+de modo a obter os melhores tempos. O parâmetro de debug é apenas para visualizar o andamento do teste.
 
 
 ```entrada
@@ -1394,7 +1394,7 @@ Não esquecer de utilizar o binário MPI.
 
 Usamos como referência o teste tvetor_1B com 47 segundos.
 
-Chamamos agora à atenção para o parametro -M para especificar o modo:
+Chamamos agora à atenção para o parâmetro -M para especificar o modo:
 
 ```
  -M <modo>       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador

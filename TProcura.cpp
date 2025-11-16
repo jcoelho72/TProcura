@@ -443,7 +443,7 @@ void TProcura::EditarParametros() {
 	while (true) {
 		char str[256];
 		MostraParametros(2);
-		if ((opcao = NovoValor("\nParametro:")) == NAO_LIDO || opcao == 0)
+		if ((opcao = NovoValor("\nParâmetro:")) == NAO_LIDO || opcao == 0)
 			return;
 		opcao = Dominio(opcao, 1, parametro.Count());
 		if (!ParametroAtivo(opcao - 1)) {
@@ -1196,7 +1196,7 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 		"  -h              Esta ajuda\n"
 		"  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo\n"
 		"Exemplo: %s 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2 \n"
-		"   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores\n",
+		"   Executar sem argumentos entra em modo interativo, para explorar todos os parâmetros e indicadores\n",
 		programa, programa
 	);
 	ResetParametros();
