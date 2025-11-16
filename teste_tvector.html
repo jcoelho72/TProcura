@@ -151,6 +151,7 @@ Dados #2000000: -498792314 -2114916689 -1334173636 ... 1289309513 1347067406 139
 │ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
 </pre>
 </p>
 <p>Este menu permite inicializar os dados utilizados no algoritmo. Esses dados iniciais são a instância, que pode ser gerada aleatoriamente ou fornecido um ficheiro. Temos a indicação do ID da instância atual, que é 1. Estão definidas instâncias de 1 a 10. Essas instâncias significam que o tamanho do vetor é 1 milhão vezes o ID da instância. Ao escolhermos a instância 2, vemos que o vetor fica com 2 milhões de dados. Fizemos a visualização apenas dos primeiros 3 e últimos 3 elementos, mas neste caso é suficiente para sabermos que trocamos de instância, já que os números são diferentes. São diferentes os últimos números, mas os primeiros são iguais, já que não alteramos a semente do gerador aleatório. Podiamos também ter introduzido um texto, para alterar o prefixo atual. Este texto é importante se os dados de teste estivessem em ficheiros. Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor, não é preciso o ficheiro.</p>
@@ -173,6 +174,7 @@ Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -12
 │ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
 </pre>
 </p>
 <p>Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.</p>
@@ -185,6 +187,7 @@ Ação 2: Menu 3 - Parâmetros</h2>
 <p>Avançamos para o menu <b>3 ⚙️ Parâmetros</b>. Introduza: 3.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">3</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Add()      <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -200,6 +203,7 @@ Parametro:
 <p>Vamos ver as opções no parâmetro 1, que é o método a ser executado. Introduza: 1.</p>
 <p> 
 <pre>
+Parametro: <span class="entrada">1</span>
 ┌─ ⚙  P1(ALGORITMO) ───────────────────────────────────────────────────
 │ Método para teste.                                                   
 │ <span style="color:gray">1:</span> Add()
@@ -222,6 +226,7 @@ ALGORITMO (atual 1):
 <p>Caso não pretenda alterar um parâmetro, pode sempre carregar em ENTER para manter o valor atual. Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introduza: 2; 2.</p>
 <p> 
 <pre>
+ALGORITMO (atual 1): <span class="entrada">2</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -230,7 +235,7 @@ ALGORITMO (atual 1):
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
+Parametro: <span class="entrada">2</span>
 ┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
 │ Nível de debug, de reduzido a completo.                              
 │ <span style="color:gray">0:</span> NADA
@@ -249,6 +254,7 @@ NIVEL_DEBUG (atual 0):
 <p>Avançamos para o parâmetro P3, "SEMENTE". Introduza: <em>ENTER</em>; 3; 2; <em>ENTER</em>.</p>
 <p> 
 <pre>
+NIVEL_DEBUG (atual 0): 
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -257,12 +263,12 @@ NIVEL_DEBUG (atual 0):
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
+Parametro: <span class="entrada">3</span>
 ┌─ ⚙  P3(SEMENTE) ─────────────────────────────────────────────────────
 │ Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
 │ Intervalo: 1 a 1000000
 └──────────────────────────────────────────────────────────────────────
-SEMENTE (atual 1): 
+SEMENTE (atual 1): <span class="entrada">2</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -285,6 +291,7 @@ Opção:
 <p>O P3 tem a semente aleatória. No entanto, voltamos ao menu inicial e a instância é a mesma. É preciso inicializar e com esta nova semente, já irá ser criada uma nova instância. Introduza: 1; <em>ENTER</em>.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">1</span>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
@@ -305,6 +312,7 @@ Opção:
 <p>O P6 é um parâmetro definido na classe <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>, e tem a estrutura em teste. Introduza: 3; 6.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">3</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -313,7 +321,7 @@ Opção:
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
+Parametro: <span class="entrada">6</span>
 ┌─ ⚙  P6(ESTRUTURA_DADOS) ─────────────────────────────────────────────
 │ Estrutura de dados utilizada para vetor.                             
 │ <span style="color:gray">1:</span> TVector
@@ -333,6 +341,7 @@ Ação 3: Menu 6 - Executar</h2>
 <p>Avançamos para o menu <em>6 ► Executar</em>. Introduza: 6.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1
 ═╧═ 🏁  Execução terminada ⏱   71ms  ═══
@@ -355,6 +364,7 @@ Opção:
 <p>Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2; <em>ENTER</em>; 1; <em>ENTER</em>; 6.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2
 ═╧═ 🏁  Execução terminada ⏱   58ms  ═══
@@ -379,6 +389,7 @@ Ação 4: Menu 5 - Indicadores</h2>
 <p>Vamos agora ver o menu dos indicadores. Introduza: 5.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">5</span>
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ <span style="color:gray">I1(Resultado):</span> ✓ 1º lugar 
 │ <span style="color:gray">Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</span>
@@ -412,7 +423,7 @@ Alterar indicador:
 └──────────────────────────────────────────────────────────────────────
 Alterar indicador: 
 ...
-Opção: 
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2
 ═╧═ 🏁  Execução terminada ⏱   56ms  ═══
@@ -440,6 +451,7 @@ Ação 5: Menu 7 - Configurações</h2>
 <p>Introduza: 7.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">7</span>
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─  ⭐ atual
@@ -458,6 +470,7 @@ Ação 5: Menu 7 - Configurações</h2>
 <p>Introduza: P1=1:12</p>
 <p> 
 <pre>
+✏️ Comando: <span class="entrada">P1=1:12</span>
  ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>2 ⭐ atual
@@ -487,6 +500,7 @@ Ação 5: Menu 7 - Configurações</h2>
 <p>Vamos agora colocar dois parâmetros a variar em conjunto, ou seja, estamos interessados no produto externo. Introduza: P3=1:2 x P6=1:3.</p>
 <p> 
 <pre>
+✏️ Comando: <span class="entrada">P3=1:2 x P6=1:3</span>
  ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2 ⭐ atual
@@ -527,10 +541,12 @@ Ação 6: Menu 8 - Teste</h2>
 <p>A primeira pergunta é sobre quais as instâncias a excutar o teste, na qual pretendemos as 3 primeiras. A segunda pergunta é para colocar os resultados num ficheiro de texto, para já não estamos interesados.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">8</span>
 ┌─ 📖 Sintaxe comando ────────────────────
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
-📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+📄  IDs das instâncias (1 a 10): <span class="entrada">1:3</span>
+🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 } 
  ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
@@ -704,10 +720,41 @@ Opção:
 <p>Poderiamos estar a apagar as configurações uma a uma, mas vamos arrancar de novo, para não ter qualquer configuração. Vamos agora colocar a informação de debug no máximo. Introduza após arrancar: 7; P1=2 P2=4; <em>ENTER</em>; 8; 1:10; <em>ENTER</em>.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">7</span>
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─  ⭐ atual
+═╧═══════════════════
+┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
+│    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
+│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+└──────────────────────────────────────────────────────────────────────
+✏️ Comando: <span class="entrada">P1=2 P2=4</span>
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─  ⭐ atual
+═╧═══════════════════
+┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
+│    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
+│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+└──────────────────────────────────────────────────────────────────────
+✏️ Comando: 
+TVector
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> TVector
+└──────────────────────────────────────────────────────────────────────
+...
+Opção: <span class="entrada">8</span>
 ┌─ 📖 Sintaxe comando ────────────────────
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
-📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+📄  IDs das instâncias (1 a 10): <span class="entrada">1:10</span>
+🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
@@ -759,10 +806,12 @@ Opção:
 <p>Introduza: 7; P1=2; P2=1; P3=1:10; <em>ENTER</em>; 8; 1:10; Resultados/tvetor_0.</p>
 <p> 
 <pre>
+Opção: <span class="entrada">8</span>
 ┌─ 📖 Sintaxe comando ────────────────────
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
-📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+📄  IDs das instâncias (1 a 10): <span class="entrada">1:10</span>
+🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
