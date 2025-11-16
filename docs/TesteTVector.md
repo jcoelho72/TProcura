@@ -78,6 +78,7 @@ Dados #2000000: -498792314 -2114916689 -1334173636 ... 1289309513 1347067406 139
 │ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
 </pre>
 \endhtmlonly
 
@@ -117,6 +118,7 @@ Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -12
 │ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
 </pre>
 \endhtmlonly
 
@@ -139,6 +141,7 @@ Avançamos para o menu **3 ⚙️ Parâmetros**. Introduza: 3.
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">3</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Add()      <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -163,6 +166,7 @@ Vamos ver as opções no parâmetro 1, que é o método a ser executado. Introdu
 
 \htmlonly
 <pre>
+Parametro: <span class="entrada">1</span>
 ┌─ ⚙  P1(ALGORITMO) ───────────────────────────────────────────────────
 │ Método para teste.                                                   
 │ <span style="color:gray">1:</span> Add()
@@ -192,6 +196,7 @@ Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introdu
 
 \htmlonly
 <pre>
+ALGORITMO (atual 1): <span class="entrada">2</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -200,7 +205,7 @@ Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introdu
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
+Parametro: <span class="entrada">2</span>
 ┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
 │ Nível de debug, de reduzido a completo.                              
 │ <span style="color:gray">0:</span> NADA
@@ -234,6 +239,7 @@ Avançamos para o parâmetro P3, "SEMENTE". Introduza: *ENTER*; 3; 2; *ENTER*.
 
 \htmlonly
 <pre>
+NIVEL_DEBUG (atual 0): 
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -242,12 +248,12 @@ Avançamos para o parâmetro P3, "SEMENTE". Introduza: *ENTER*; 3; 2; *ENTER*.
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
+Parametro: <span class="entrada">3</span>
 ┌─ ⚙  P3(SEMENTE) ─────────────────────────────────────────────────────
 │ Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
 │ Intervalo: 1 a 1000000
 └──────────────────────────────────────────────────────────────────────
-SEMENTE (atual 1): 
+SEMENTE (atual 1): <span class="entrada">2</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -273,6 +279,7 @@ O P3 tem a semente aleatória. No entanto, voltamos ao menu inicial e a instânc
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">1</span>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
@@ -299,6 +306,7 @@ O P6 é um parâmetro definido na classe CTesteTVector, e tem a estrutura em tes
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">3</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -307,7 +315,7 @@ O P6 é um parâmetro definido na classe CTesteTVector, e tem a estrutura em tes
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
+Parametro: <span class="entrada">6</span>
 ┌─ ⚙  P6(ESTRUTURA_DADOS) ─────────────────────────────────────────────
 │ Estrutura de dados utilizada para vetor.                             
 │ <span style="color:gray">1:</span> TVector
@@ -336,6 +344,7 @@ Avançamos para o menu *6 ►  Executar*. Introduza: 6.
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1
 ═╧═ 🏁  Execução terminada ⏱   71ms  ═══
@@ -375,6 +384,7 @@ Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2
 ═╧═ 🏁  Execução terminada ⏱   58ms  ═══
@@ -405,6 +415,7 @@ Vamos agora ver o menu dos indicadores. Introduza: 5.
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">5</span>
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ <span style="color:gray">I1(Resultado):</span> ✓ 1º lugar 
 │ <span style="color:gray">Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</span>
@@ -449,7 +460,7 @@ Introduza: 1;2;3;2;*ENTER*;1;*ENTER*;6.
 └──────────────────────────────────────────────────────────────────────
 Alterar indicador: 
 ...
-Opção: 
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2
 ═╧═ 🏁  Execução terminada ⏱   56ms  ═══
@@ -490,6 +501,7 @@ Introduza: 7.
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">7</span>
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─  ⭐ atual
@@ -515,6 +527,7 @@ Introduza: P1=1:12
 
 \htmlonly
 <pre>
+✏️ Comando: <span class="entrada">P1=1:12</span>
  ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>2 ⭐ atual
@@ -554,6 +567,7 @@ Introduza: P3=1:2 x P6=1:3.
 
 \htmlonly
 <pre>
+✏️ Comando: <span class="entrada">P3=1:2 x P6=1:3</span>
  ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2 ⭐ atual
@@ -604,10 +618,12 @@ A segunda pergunta é para colocar os resultados num ficheiro de texto, para já
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">8</span>
 ┌─ 📖 Sintaxe comando ────────────────────
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
-📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+📄  IDs das instâncias (1 a 10): <span class="entrada">1:3</span>
+🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 } 
  ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
@@ -804,10 +820,41 @@ Introduza após arrancar: 7; P1=2 P2=4; *ENTER*; 8; 1:10; *ENTER*.
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">7</span>
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─  ⭐ atual
+═╧═══════════════════
+┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
+│    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
+│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+└──────────────────────────────────────────────────────────────────────
+✏️ Comando: <span class="entrada">P1=2 P2=4</span>
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─  ⭐ atual
+═╧═══════════════════
+┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
+│    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
+│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
+└──────────────────────────────────────────────────────────────────────
+✏️ Comando: 
+TVector
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> TVector
+└──────────────────────────────────────────────────────────────────────
+...
+Opção: <span class="entrada">8</span>
 ┌─ 📖 Sintaxe comando ────────────────────
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
-📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+📄  IDs das instâncias (1 a 10): <span class="entrada">1:10</span>
+🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
@@ -869,10 +916,12 @@ Introduza: 7; P1=2; P2=1; P3=1:10; *ENTER*; 8; 1:10; Resultados/tvetor_0.
 
 \htmlonly
 <pre>
+Opção: <span class="entrada">8</span>
 ┌─ 📖 Sintaxe comando ────────────────────
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
-📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+📄  IDs das instâncias (1 a 10): <span class="entrada">1:10</span>
+🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
  ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
