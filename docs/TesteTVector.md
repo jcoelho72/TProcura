@@ -337,16 +337,16 @@ Avançamos para o menu *6 ►  Executar*. Introduza: 6.
 \htmlonly
 <pre>
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m1
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1
 ═╧═ 🏁  Execução terminada ⏱   71ms  ═══
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m Sort() | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 2 | [90mP4(LIMITE_TEMPO):[0m 10
-│ [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(ESTRUTURA_DADOS):[0m TVector
+│ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 2 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> TVector
 └──────────────────────────────────────────────────────────────────────
 Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(Resultado):[0m 1 | [90mI2(Tempo(ms)):[0m 70 | [90mI3(Iterações):[0m 1 | [90mI4(IND_ORDENAR):[0m 1
+│ <span style="color:gray">I1(Resultado):</span> 1 | <span style="color:gray">I2(Tempo(ms)):</span> 70 | <span style="color:gray">I3(Iterações):</span> 1 | <span style="color:gray">I4(IND_ORDENAR):</span> 1
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção: 
@@ -376,16 +376,16 @@ Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2
 \htmlonly
 <pre>
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m2
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2
 ═╧═ 🏁  Execução terminada ⏱   58ms  ═══
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m Sort() | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 2 | [90mP4(LIMITE_TEMPO):[0m 10
-│ [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(ESTRUTURA_DADOS):[0m std::vector
+│ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 2 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> std::vector
 └──────────────────────────────────────────────────────────────────────
 Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(Resultado):[0m 1 | [90mI2(Tempo(ms)):[0m 57 | [90mI3(Iterações):[0m 1 | [90mI4(IND_ORDENAR):[0m 1
+│ <span style="color:gray">I1(Resultado):</span> 1 | <span style="color:gray">I2(Tempo(ms)):</span> 57 | <span style="color:gray">I3(Iterações):</span> 1 | <span style="color:gray">I4(IND_ORDENAR):</span> 1
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção: 
@@ -406,14 +406,14 @@ Vamos agora ver o menu dos indicadores. Introduza: 5.
 \htmlonly
 <pre>
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(Resultado):[0m ✓ 1º lugar 
-│ [90mResultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).[0m
-│ [90mI2(Tempo(ms)):[0m ✓ 2º lugar 
-│ [90mTempo em milisegundos da execução (medida de esforço computacional).[0m
-│ [90mI3(Iterações):[0m ✓ 3º lugar 
-│ [90mIterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).[0m
-│ [90mI4(IND_ORDENAR):[0m ✓ 4º lugar 
-│ [90mverifica se o vetor está ordenado[0m
+│ <span style="color:gray">I1(Resultado):</span> ✓ 1º lugar 
+│ <span style="color:gray">Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</span>
+│ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
+│ <span style="color:gray">Tempo em milisegundos da execução (medida de esforço computacional).</span>
+│ <span style="color:gray">I3(Iterações):</span> ✓ 3º lugar 
+│ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
+│ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 4º lugar 
+│ <span style="color:gray">verifica se o vetor está ordenado</span>
 └──────────────────────────────────────────────────────────────────────
 Alterar indicador: 
 </pre>
@@ -438,29 +438,29 @@ Introduza: 1;2;3;2;*ENTER*;1;*ENTER*;6.
 <pre>
 ...
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(Resultado):[0m ✗ inativo 
-│ [90mResultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).[0m
-│ [90mI2(Tempo(ms)):[0m ✓ 2º lugar 
-│ [90mTempo em milisegundos da execução (medida de esforço computacional).[0m
-│ [90mI3(Iterações):[0m ✗ inativo 
-│ [90mIterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).[0m
-│ [90mI4(IND_ORDENAR):[0m ✓ 1º lugar 
-│ [90mverifica se o vetor está ordenado[0m
+│ <span style="color:gray">I1(Resultado):</span> ✗ inativo 
+│ <span style="color:gray">Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</span>
+│ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
+│ <span style="color:gray">Tempo em milisegundos da execução (medida de esforço computacional).</span>
+│ <span style="color:gray">I3(Iterações):</span> ✗ inativo 
+│ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
+│ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 1º lugar 
+│ <span style="color:gray">verifica se o vetor está ordenado</span>
 └──────────────────────────────────────────────────────────────────────
 Alterar indicador: 
 ...
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m2
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2
 ═╧═ 🏁  Execução terminada ⏱   56ms  ═══
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m Sort() | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 2 | [90mP4(LIMITE_TEMPO):[0m 10
-│ [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(ESTRUTURA_DADOS):[0m std::vector
+│ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 2 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> std::vector
 └──────────────────────────────────────────────────────────────────────
 Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI4(IND_ORDENAR):[0m 1 | [90mI2(Tempo(ms)):[0m 55
+│ <span style="color:gray">I4(IND_ORDENAR):</span> 1 | <span style="color:gray">I2(Tempo(ms)):</span> 55
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção: 
@@ -490,15 +490,15 @@ Introduza: 7.
 
 \htmlonly
 <pre>
- ├─ 🛠️  ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m2[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─  ⭐ atual
 ═╧═══════════════════
 ┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
-│    id / -id [90m- Seleciona configuração como atual ou apaga 'id'[0m
-│    Pk = <conj.> [90m- Varia Pk na configuração atual (gera N configs)[0m
-│    Pk = <conj.> x Pw = <conj.> [90m- produto externo (gera NxM configs)[0m
-│  [90mSintaxe de <conj.> :[0m A,B,C | A:B | A:B:C                   
+│    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
+│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
 </pre>
@@ -515,26 +515,26 @@ Introduza: P1=1:12
 
 \htmlonly
 <pre>
- ├─ 🛠️  ─ [90mP2=[0m0 [90mP3=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m2[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>2<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m2 ⭐ atual
- ├─ ⚙  [2] ─ [90mP1=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m3
- ├─ ⚙  [4] ─ [90mP1=[0m4
- ├─ ⚙  [5] ─ [90mP1=[0m5
- ├─ ⚙  [6] ─ [90mP1=[0m6
- ├─ ⚙  [7] ─ [90mP1=[0m7
- ├─ ⚙  [8] ─ [90mP1=[0m8
- ├─ ⚙  [9] ─ [90mP1=[0m9
- ├─ ⚙  [10] ─ [90mP1=[0m10
- ├─ ⚙  [11] ─ [90mP1=[0m11
- ├─ ⚙  [12] ─ [90mP1=[0m12
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>2 ⭐ atual
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>3
+ ├─ ⚙  [4] ─ <span style="color:gray">P1=</span>4
+ ├─ ⚙  [5] ─ <span style="color:gray">P1=</span>5
+ ├─ ⚙  [6] ─ <span style="color:gray">P1=</span>6
+ ├─ ⚙  [7] ─ <span style="color:gray">P1=</span>7
+ ├─ ⚙  [8] ─ <span style="color:gray">P1=</span>8
+ ├─ ⚙  [9] ─ <span style="color:gray">P1=</span>9
+ ├─ ⚙  [10] ─ <span style="color:gray">P1=</span>10
+ ├─ ⚙  [11] ─ <span style="color:gray">P1=</span>11
+ ├─ ⚙  [12] ─ <span style="color:gray">P1=</span>12
 ═╧═══════════════════
 ┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
-│    id / -id [90m- Seleciona configuração como atual ou apaga 'id'[0m
-│    Pk = <conj.> [90m- Varia Pk na configuração atual (gera N configs)[0m
-│    Pk = <conj.> x Pw = <conj.> [90m- produto externo (gera NxM configs)[0m
-│  [90mSintaxe de <conj.> :[0m A,B,C | A:B | A:B:C                   
+│    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
+│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando:
 </pre>
@@ -554,31 +554,31 @@ Introduza: P3=1:2 x P6=1:3.
 
 \htmlonly
 <pre>
- ├─ 🛠️  ─ [90mP2=[0m0 [90mP4=[0m10 [90mP5=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m2 [90mP3=[0m2 [90mP6=[0m2 ⭐ atual
- ├─ ⚙  [2] ─ [90mP1=[0m1 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [3] ─ [90mP1=[0m3 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [4] ─ [90mP1=[0m4 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [5] ─ [90mP1=[0m5 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [6] ─ [90mP1=[0m6 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [7] ─ [90mP1=[0m7 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [8] ─ [90mP1=[0m8 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [9] ─ [90mP1=[0m9 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [10] ─ [90mP1=[0m10 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [11] ─ [90mP1=[0m11 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [12] ─ [90mP1=[0m12 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [13] ─ [90mP1=[0m2 [90mP3=[0m1 [90mP6=[0m1
- ├─ ⚙  [14] ─ [90mP1=[0m2 [90mP3=[0m2 [90mP6=[0m1
- ├─ ⚙  [15] ─ [90mP1=[0m2 [90mP3=[0m1 [90mP6=[0m2
- ├─ ⚙  [16] ─ [90mP1=[0m2 [90mP3=[0m1 [90mP6=[0m3
- ├─ ⚙  [17] ─ [90mP1=[0m2 [90mP3=[0m2 [90mP6=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2 ⭐ atual
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [4] ─ <span style="color:gray">P1=</span>4 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [5] ─ <span style="color:gray">P1=</span>5 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [6] ─ <span style="color:gray">P1=</span>6 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [7] ─ <span style="color:gray">P1=</span>7 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [8] ─ <span style="color:gray">P1=</span>8 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [9] ─ <span style="color:gray">P1=</span>9 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [10] ─ <span style="color:gray">P1=</span>10 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [11] ─ <span style="color:gray">P1=</span>11 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [12] ─ <span style="color:gray">P1=</span>12 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [13] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [14] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [15] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [16] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [17] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>3
 ═╧═══════════════════
 ┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
-│    id / -id [90m- Seleciona configuração como atual ou apaga 'id'[0m
-│    Pk = <conj.> [90m- Varia Pk na configuração atual (gera N configs)[0m
-│    Pk = <conj.> x Pw = <conj.> [90m- produto externo (gera NxM configs)[0m
-│  [90mSintaxe de <conj.> :[0m A,B,C | A:B | A:B:C                   
+│    id / -id <span style="color:gray">- Seleciona configuração como atual ou apaga 'id'</span>
+│    Pk = <conj.> <span style="color:gray">- Varia Pk na configuração atual (gera N configs)</span>
+│    Pk = <conj.> x Pw = <conj.> <span style="color:gray">- produto externo (gera NxM configs)</span>
+│  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
 </pre>
@@ -605,20 +605,20 @@ A segunda pergunta é para colocar os resultados num ficheiro de texto, para já
 \htmlonly
 <pre>
 ┌─ 📖 Sintaxe comando ────────────────────
-│  [90mInstâncias:[0m A,B,C | A:B | A : B : C
+│  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
 📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 } 
- ├─ 🛠️  ─ [90mP2=[0m0 [90mP4=[0m10 [90mP5=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>0 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m2 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [2] ─ [90mP1=[0m1 [90mP3=[0m2 [90mP6=[0m2
- ├─ ⚙  [3] ─ [90mP1=[0m3 [90mP3=[0m2 [90mP6=[0m2
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>2
  │ ...
- ├─ ⚙  [15] ─ [90mP1=[0m2 [90mP3=[0m1 [90mP6=[0m2
- ├─ ⚙  [16] ─ [90mP1=[0m2 [90mP3=[0m1 [90mP6=[0m3
- ├─ ⚙  [17] ─ [90mP1=[0m2 [90mP3=[0m2 [90mP6=[0m3
+ ├─ ⚙  [15] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>2
+ ├─ ⚙  [16] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [17] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>2 <span style="color:gray">P6=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
 ┌──────┬───────┬───────────┬───────────┐
@@ -677,55 +677,55 @@ A segunda pergunta é para colocar os resultados num ficheiro de texto, para já
 │ 3    │ 17    │ 0         │ 189       │
 └──────┴───────┴───────────┴───────────┘
 ┌─ 📊  Total 🛠️ 1 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 377 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 377 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 2 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 0 [90mTempo(ms):[0m 19 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 0 <span style="color:gray">Tempo(ms):</span> 19 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 3 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 0 [90mTempo(ms):[0m 25 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 0 <span style="color:gray">Tempo(ms):</span> 25 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 4 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 0 [90mTempo(ms):[0m 2 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 0 <span style="color:gray">Tempo(ms):</span> 2 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 5 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 369 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 369 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 6 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 836 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 836 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 7 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 811 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 811 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 8 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 733 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 733 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 9 ──────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 804 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 804 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 10 ─────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 0 [90mTempo(ms):[0m 2 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 0 <span style="color:gray">Tempo(ms):</span> 2 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 11 ─────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 0 [90mTempo(ms):[0m 13 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 0 <span style="color:gray">Tempo(ms):</span> 13 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 12 ─────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 0 [90mTempo(ms):[0m 0 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 0 <span style="color:gray">Tempo(ms):</span> 0 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 13 ─────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 427 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 427 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 14 ─────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 400 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 400 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 15 ─────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 360 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 360 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 16 ─────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 374 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 374 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 ┌─ 📊  Total 🛠️ 17 ─────────────────────────────────────────────────────
-│ [90mIND_ORDENAR:[0m 3 [90mTempo(ms):[0m 366 [90mInstâncias resolvidas:[0m 3
+│ <span style="color:gray">IND_ORDENAR:</span> 3 <span style="color:gray">Tempo(ms):</span> 366 <span style="color:gray">Instâncias resolvidas:</span> 3
 └──────────────────────────────────────────────────────────────────────
 🏆  Torneio (#instâncias melhores):
  |-01-|-02-|-03-|-04-|-05-|-06-|-07-|-08-|-09-|-10-|-11-|-12-|-13-|-14-|-15-|-16-|-17-|
@@ -802,60 +802,58 @@ Vamos agora colocar a informação de debug no máximo.
 Introduza após arrancar: 7; P1=2 P2=4; *ENTER*; 8; 1:10; *ENTER*.
 
 
-```entrada
-Opção: 8
-
+\htmlonly
+<pre>
 ┌─ 📖 Sintaxe comando ────────────────────
-│  Instâncias: A,B,C | A:B | A : B : C
+│  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
-📄 IDs das instâncias (1 a 10): 1:10
-🗎  Ficheiro resultados (nada para mostrar no ecrã):
+📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
-
-═╤═ Instâncias ═══ { 📄1 📄2 📄3 📄4 📄5 📄6 📄7 📄8 📄9 📄10 }
- ├─ 🛠️ ─ P1=2 P2=4 P3=1 P4=10 P5=0 P6=1 (parâmetros comuns)
+═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙️ [1] ─
+ ├─ ⚙  [1] ─ 
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:10   📄 Instâncias: 10   🛠️ Configurações: 1   🖥️ Processos: 1.
- ├─ ⏱                 📋 1     📄 1     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 62 1 1
- ├─ ⏱ 71ms            📋 2     📄 2     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 131 1 1
- ├─ ⏱ 225ms           📋 3     📄 3     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 224 1 1
- ├─ ⏱ 483ms           📋 4     📄 4     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 315 1 1
- ├─ ⏱ 845ms           📋 5     📄 5     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 518 1 1
- ├─ ⏱ 1" 444ms        📋 6     📄 6     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 452 1 1
- ├─ ⏱ 2" 6ms          📋 7     📄 7     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 513 1 1
- ├─ ⏱ 2" 603ms        📋 8     📄 8     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 660 1 1
- ├─ ⏱ 3" 372ms        📋 9     📄 9     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 686 1 1
- ├─ ⏱ 4" 160ms        📋 10    📄 10    🛠️ 1     🖥️ 1    🎯 1    ⚖  1 786 1 1
+ ├─ ⏱                 📋 1     📄 1     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 69 1 1 
+ ├─ ⏱ 77ms            📋 2     📄 2     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 142 1 1 
+ ├─ ⏱ 246ms           📋 3     📄 3     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 247 1 1 
+ ├─ ⏱ 527ms           📋 4     📄 4     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 283 1 1 
+ ├─ ⏱ 857ms           📋 5     📄 5     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 364 1 1 
+ ├─ ⏱ 1" 274ms        📋 6     📄 6     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 448 1 1 
+ ├─ ⏱ 1" 786ms        📋 7     📄 7     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 517 1 1 
+ ├─ ⏱ 2" 376ms        📋 8     📄 8     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 591 1 1 
+ ├─ ⏱ 3" 64ms         📋 9     📄 9     🛠️ 1     🖥️ 1    🎯 1    ⚖  1 680 1 1 
+ ├─ ⏱ 3" 853ms        📋 10    📄 10    🛠️ 1     🖥️ 1    🎯 1    ⚖  1 758 1 1 
 ┌──────┬───────┬───────────┬───────────┐
 │ 📄    │ 🛠️    │ 💰         │ ⏱         │
 ├──────┼───────┼───────────┼───────────┤
-│ 1    │ 1     │ 1         │ 62        │
-│ 2    │ 1     │ 1         │ 131       │
-│ 3    │ 1     │ 1         │ 224       │
-│ 4    │ 1     │ 1         │ 315       │
-│ 5    │ 1     │ 1         │ 518       │
-│ 6    │ 1     │ 1         │ 452       │
-│ 7    │ 1     │ 1         │ 513       │
-│ 8    │ 1     │ 1         │ 660       │
-│ 9    │ 1     │ 1         │ 686       │
-│ 10   │ 1     │ 1         │ 786       │
+│ 1    │ 1     │ 1         │ 69        │
+│ 2    │ 1     │ 1         │ 142       │
+│ 3    │ 1     │ 1         │ 247       │
+│ 4    │ 1     │ 1         │ 283       │
+│ 5    │ 1     │ 1         │ 364       │
+│ 6    │ 1     │ 1         │ 448       │
+│ 7    │ 1     │ 1         │ 517       │
+│ 8    │ 1     │ 1         │ 591       │
+│ 9    │ 1     │ 1         │ 680       │
+│ 10   │ 1     │ 1         │ 758       │
 └──────┴───────┴───────────┴───────────┘
 ┌─ 📊  Total 🛠️ 1 ──────────────────────────────────────────────────────
-│ Resultado: 10 Tempo(ms): 4347 Iterações: 10 IND_ORDENAR: 10 Instâncias resolvidas: 10
+│ <span style="color:gray">Resultado:</span> 10 <span style="color:gray">Tempo(ms):</span> 4099 <span style="color:gray">Iterações:</span> 10 <span style="color:gray">IND_ORDENAR:</span> 10 <span style="color:gray">Instâncias resolvidas:</span> 10
 └──────────────────────────────────────────────────────────────────────
 🏆  Torneio (#instâncias melhores):
  |-01-|
  1    |  0
  |----|
 
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  5" 79ms ) ═══
-TVector
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4" 741ms ) ═══
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 A informação debug completa mostra por cada execução uma linha.
 Em cada linha é identificado o instante, tarefa, instância, configuração, processo e finalmente os indicadores calculados.
 
@@ -869,40 +867,40 @@ Queremos desta vez ter os resultados no Excel (utilizando a pasta Resultados) e 
 
 Introduza: 7; P1=2; P2=1; P3=1:10; *ENTER*; 8; 1:10; Resultados/tvetor_0.
 
-```entrada
-Opção: 8
-
+\htmlonly
+<pre>
 ┌─ 📖 Sintaxe comando ────────────────────
-│  Instâncias: A,B,C | A:B | A : B : C
+│  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
-📄 IDs das instâncias (1 a 10): 1:10
-🗎  Ficheiro resultados (nada para mostrar no ecrã): Resultados/tvetor_0
+📄  IDs das instâncias (1 a 10): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
 
-
-═╤═ Instâncias ═══ { 📄1 📄2 📄3 📄4 📄5 📄6 📄7 📄8 📄9 📄10 }
- ├─ 🛠️ ─ P1=2 P2=1 P4=10 P5=0 P6=1 (parâmetros comuns)
+═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙️ [1] ─ P3=1
- ├─ ⚙️ [2] ─ P3=2
- ├─ ⚙️ [3] ─ P3=3
- ├─ ⚙️ [4] ─ P3=4
- ├─ ⚙️ [5] ─ P3=5
- ├─ ⚙️ [6] ─ P3=6
- ├─ ⚙️ [7] ─ P3=7
- ├─ ⚙️ [8] ─ P3=8
- ├─ ⚙️ [9] ─ P3=9
- ├─ ⚙️ [10] ─ P3=10
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>4
+ ├─ ⚙  [5] ─ <span style="color:gray">P3=</span>5
+ ├─ ⚙  [6] ─ <span style="color:gray">P3=</span>6
+ ├─ ⚙  [7] ─ <span style="color:gray">P3=</span>7
+ ├─ ⚙  [8] ─ <span style="color:gray">P3=</span>8
+ ├─ ⚙  [9] ─ <span style="color:gray">P3=</span>9
+ ├─ ⚙  [10] ─ <span style="color:gray">P3=</span>10
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 1.
- ├─ 🗎  Ficheiro Resultados/tvetor_0.csv gravado.
- │  ⏱  Tempo real: 46" 488ms
- │  ⏱  CPU total: 46" 488ms
+Erro ao gravar ficheiro Resultados/tvetor_0.csv.
+ ├─ 📑  Ficheiro Resultados/tvetor_0.csv gravado.
+ │  ⏱  Tempo real: 46" 257ms 
+ │  ⏱  CPU total: 46" 257ms 
  │  📊  Utilização: 100.0%
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  46" 498ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 46" 265ms ) ═══
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 
 Podemos ver uma primeira linha indicando que há 100 tarefas, 10 instâncias, 10 configurações e 1 processo, já que não estamos a executar em MPI.
 Existe a indicação que o ficheiro Resultados/tvetor_01.csv foi gravado, em vez da tabela de resultados final da execução anterior.
