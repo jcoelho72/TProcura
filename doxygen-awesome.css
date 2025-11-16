@@ -2697,5 +2697,6 @@ span.icon {
     display: inline-block;
     width: 2ch; /* força largura de 1 carácter monoespaçado */
     text-align: center;
-    line-height: 1.0; 
+    font-size: 0.9em; /* reduz ligeiramente o emoji */
+    vertical-align: middle;
 }
