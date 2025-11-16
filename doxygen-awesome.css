@@ -2683,7 +2683,7 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
 }
 
 pre {
-    background-color: #1a1a1a; /* cinzento muito escuro */
+    background-color: #f5f5f5; /* cinzento muito escuro */
     color: #ffffff; /* texto branco */
     padding: 0.75em;
     border-radius: 4px;
