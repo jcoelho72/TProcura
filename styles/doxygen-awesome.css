@@ -2683,11 +2683,12 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
 }
 
 pre {
-    background-color: #f5f5f5; /* cinzento muito escuro */
-    color: #ffffff; /* texto branco */
+    background-color: #000000; /* preto */
+    color: #ffffff; /* branco */
     padding: 0.75em;
     border-radius: 4px;
-    font-family: "Fira Code", "DejaVu Sans Mono", "Lucida Console", monospace;
+    font-family: "DejaVu Sans Mono", "Noto Sans Mono", "Fira Code", "Lucida Console", monospace;
     font-size: 0.9em; /* ligeiramente mais pequeno */
+    line-height: 1.0; /* altura mínima, evita espaços verticais */
     overflow-x: auto;
 }
