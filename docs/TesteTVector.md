@@ -25,7 +25,8 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 - [Ação 8: Execução MPI](#tvector-a8)
 
 
-```entrada
+\htmlonly
+<pre>
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> Add() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -37,7 +38,8 @@ Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -12
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
-```
+</pre>
+\endhtmlonly
 
 Ao arrancar com o programa sem argumentos, entramos no modo interativo, com o teste manual. 
 Esta é a informação apresentada. 
@@ -58,7 +60,8 @@ Iremos detalhar também estes indicadores.
 
 Vamos ver o menu 1 instância. Introduza: 1; 2.
 
-```entrada
+\htmlonly
+<pre>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
@@ -75,7 +78,9 @@ Dados #2000000: -498792314 -2114916689 -1334173636 ... 1289309513 1347067406 139
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
-```
+</pre>
+\endhtmlonly
+
 Este menu permite inicializar os dados utilizados no algoritmo.
 Esses dados iniciais são a instância, que pode ser gerada aleatoriamente ou fornecido um ficheiro.
 Temos a indicação do ID da instância atual, que é 1.
@@ -94,7 +99,8 @@ não é preciso o ficheiro.
 Vamos voltar para a instãncia 1, para confirmar que é a mesma,
 apenas assim se pode garantir que tudo o que se faz em TProcura, é reproduzivel. Introduza: 1; 1.
 
-```entrada
+\htmlonly
+<pre>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ <span style="color:gray">ID atual:</span> 2  <span style="color:gray">Intervalo:</span> [1–10]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
@@ -111,7 +117,8 @@ Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -12
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
-```
+</pre>
+\endhtmlonly
 
 Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.
 
@@ -130,7 +137,8 @@ Para evitar repetição, vamos omitar o menu no resto deste exemplo.
 
 Avançamos para o menu **3 ⚙️ Parâmetros**. Introduza: 3.
 
-```entrada
+\htmlonly
+<pre>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Add()      <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -140,7 +148,9 @@ Avançamos para o menu **3 ⚙️ Parâmetros**. Introduza: 3.
 │ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
 Parametro:
-```
+</pre>
+\endhtmlonly
+
 Podemos ver os parametros que já tinhamos visto, mas agora com mais detalhe.
 Temos o ID do parâmetro, nome do parâmetro, e valor atribuído.
 O nome dos parametros é igual à macro no código.
@@ -168,8 +178,8 @@ Vamos ver as opções no parâmetro 1, que é o método a ser executado. Introdu
 │ <span style="color:gray">12:</span> nada
 └──────────────────────────────────────────────────────────────────────
 ALGORITMO (atual 1): 
-
-```
+</pre>
+\endhtmlonly
 
 Como o parâmetro é categórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. 
 Este parâmetro foi povoado na classe CTesteTVector, onde foram definidos estes métodos.
@@ -179,7 +189,8 @@ Ao utilizar uma das subclasses genéricas de TProcura, esta já tem um conjunto 
 Caso não pretenda alterar um parâmetro, pode sempre carregar em ENTER para manter o valor atual. 
 Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introduza: 2; 2.
 
-```entrada
+\htmlonly
+<pre>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -198,7 +209,9 @@ Parametro:
 │ <span style="color:gray">4:</span> COMPLETO
 └──────────────────────────────────────────────────────────────────────
 NIVEL_DEBUG (atual 0): 
-```
+</pre>
+\endhtmlonly
+
 Notar que agora o valor associado a P1 é "Sort()".
 Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug.
 Este parâmetro é de TProcura, e não é necessário alterar, a não ser que se pretenda mais que 4 níveis de debug.
@@ -218,7 +231,8 @@ No caso do TVector, os algoritmos estão implementados sem debug, pelo que este 
 Avançamos para o parâmetro P3, "SEMENTE". Introduza: *ENTER*; 3; 2; *ENTER*.
 
 
-```entrada
+\htmlonly
+<pre>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -250,11 +264,14 @@ TVector
 Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237 
 ...
 Opção: 
-```
+</pre>
+\endhtmlonly
+
 O P3 tem a semente aleatória. No entanto, voltamos ao menu inicial e a instância é a mesma.
 É preciso inicializar e com esta nova semente, já irá ser criada uma nova instância. Introduza: 1; *ENTER*.
 
-```entrada
+\htmlonly
+<pre>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
@@ -268,7 +285,8 @@ TVector
 Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791 
 ...
 Opção: 
-```
+</pre>
+\endhtmlonly
 
 Agora sim, podemos ver que os três primeiros e últimos números são completamente distintos. 
 
@@ -278,7 +296,8 @@ Como não temos nestes algoritmos definidas iterações, não iremos utilizar.
 
 O P6 é um parâmetro definido na classe CTesteTVector, e tem a estrutura em teste. Introduza: 3; 6.
 
-```entrada
+\htmlonly
+<pre>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
 │ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
@@ -295,7 +314,8 @@ Parametro:
 │ <span style="color:gray">3:</span> TVector/std::algorithm
 └──────────────────────────────────────────────────────────────────────
 ESTRUTURA_DADOS (atual 1): 
-```
+</pre>
+\endhtmlonly
 
 Foram definidas 3 opções pela qual os métodos podem ser executados. 
 Utilizando exclusivamente a TVector, a opção atual.
