@@ -2692,3 +2692,9 @@ pre {
     line-height: 1.0; /* altura mínima, evita espaços verticais */
     overflow-x: auto;
 }
+
+span.icon {
+    display: inline-block;
+    width: 1ch; /* força largura de 1 carácter monoespaçado */
+    text-align: center;
+}
