@@ -26,7 +26,7 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 
 
 \htmlonly
-<pre>
+<pre><code>
 TVector
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> Add() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -38,7 +38,7 @@ Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -12
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
-</pre>
+</code></pre>
 \endhtmlonly
 
 Ao arrancar com o programa sem argumentos, entramos no modo interativo, com o teste manual. 
@@ -161,7 +161,8 @@ Cada parâmetro tem um intervalo mínimo e máximo em inteiros, que pode tomar.
 
 Vamos ver as opções no parâmetro 1, que é o método a ser executado. Introduza: 1.
 
-```entrada
+\htmlonly
+<pre>
 ┌─ ⚙  P1(ALGORITMO) ───────────────────────────────────────────────────
 │ Método para teste.                                                   
 │ <span style="color:gray">1:</span> Add()
@@ -334,22 +335,20 @@ O menu *4 ✔  Solução* será ilustrado com um problema de procura, já que ne
 Avançamos para o menu *6 ►  Executar*. Introduza: 6.
 
 ```entrada
-Opção: 6
-
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=2 P4=10 P5=0 P6=1
-═╧═ 🏁  Execução terminada ⏱  81ms  ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m1
+═╧═ 🏁  Execução terminada ⏱   71ms  ═══
 TVector
-┌─ ⚙️ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
-│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Sort() | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 2 | [90mP4(LIMITE_TEMPO):[0m 10
+│ [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(ESTRUTURA_DADOS):[0m TVector
 └──────────────────────────────────────────────────────────────────────
-Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808
+Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 2147475808 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(Resultado): 1 | I2(Tempo(ms)): 80 | I3(Iterações): 1 | I4(IND_ORDENAR): 1
+│ [90mI1(Resultado):[0m 1 | [90mI2(Tempo(ms)):[0m 70 | [90mI3(Iterações):[0m 1 | [90mI4(IND_ORDENAR):[0m 1
 └──────────────────────────────────────────────────────────────────────
 ...
-Opção:
+Opção: 
 ```
 A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada.
 Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milisegundos.
