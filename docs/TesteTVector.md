@@ -27,16 +27,16 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 
 ```entrada
 TVector
-┌─ ⚙️ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Add() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
-│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Add() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> TVector
 └──────────────────────────────────────────────────────────────────────
-Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237
-┌─ ☰ Menu ────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄  Instância  │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└──────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
+Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237 
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
 ```
 
 Ao arrancar com o programa sem argumentos, entramos no modo interativo, com o teste manual. 
@@ -59,25 +59,22 @@ Iremos detalhar também estes indicadores.
 Vamos ver o menu 1 instância. Introduza: 1; 2.
 
 ```entrada
-Opção: 1
-
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
-│ ID atual: 1  Intervalo: [1–10]
-│ Prefixo atual: 'instancia_'
+│ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
+│ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto): 2
-
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
 TVector
-┌─ ⚙️ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Add() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
-│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Add() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> TVector
 └──────────────────────────────────────────────────────────────────────
-Dados #2000000: -498792314 -2114916689 -1334173636 ... 1289309513 1347067406 1395724283
-┌─ ☰ Menu ────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄  Instância  │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└──────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
+Dados #2000000: -498792314 -2114916689 -1334173636 ... 1289309513 1347067406 1395724283 
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
 ```
 Este menu permite inicializar os dados utilizados no algoritmo.
 Esses dados iniciais são a instância, que pode ser gerada aleatoriamente ou fornecido um ficheiro.
@@ -98,25 +95,22 @@ Vamos voltar para a instãncia 1, para confirmar que é a mesma,
 apenas assim se pode garantir que tudo o que se faz em TProcura, é reproduzivel. Introduza: 1; 1.
 
 ```entrada
-Opção: 1
-
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
-│ ID atual: 2  Intervalo: [1–10]
-│ Prefixo atual: 'instancia_'
+│ <span style="color:gray">ID atual:</span> 2  <span style="color:gray">Intervalo:</span> [1–10]  
+│ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto): 1
-
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
 TVector
-┌─ ⚙️ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Add() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
-│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Add() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> TVector
 └──────────────────────────────────────────────────────────────────────
-Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237
-┌─ ☰ Menu ────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄  Instância  │ 2 🔍  Explorar │ 3 ⚙️  Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└──────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
+Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237 
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
 ```
 
 Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.
@@ -137,15 +131,13 @@ Para evitar repetição, vamos omitar o menu no resto deste exemplo.
 Avançamos para o menu **3 ⚙️ Parâmetros**. Introduza: 3.
 
 ```entrada
-Opção: 3
-
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
-│ P1(ALGORITMO):             Add()      (1 a 12)
-│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
-│ P3(SEMENTE):               1          (1 a 1000000)
-│ P4(LIMITE_TEMPO):          10         (1 a 3600)
-│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
-│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Add()      <span style="color:gray">(1 a 12)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
 Parametro:
 ```
@@ -160,24 +152,23 @@ Cada parâmetro tem um intervalo mínimo e máximo em inteiros, que pode tomar.
 Vamos ver as opções no parâmetro 1, que é o método a ser executado. Introduza: 1.
 
 ```entrada
-Parametro:1
-
-┌─ ⚙️  P1(ALGORITMO) ──────────────────────────────────────────────────
-│ Método para teste.
-│ 1: Add()
-│ 2: Sort()
-│ 3: RandomOrder()
-│ 4: Invert()
-│ 5: BeASet()
-│ 6: Difference()
-│ 7: Union()
-│ 8: Contained()
-│ 9: Intersection()
-│ 10: operator=()
-│ 11: operator+=()
-│ 12: nada
+┌─ ⚙  P1(ALGORITMO) ───────────────────────────────────────────────────
+│ Método para teste.                                                   
+│ <span style="color:gray">1:</span> Add()
+│ <span style="color:gray">2:</span> Sort()
+│ <span style="color:gray">3:</span> RandomOrder()
+│ <span style="color:gray">4:</span> Invert()
+│ <span style="color:gray">5:</span> BeASet()
+│ <span style="color:gray">6:</span> Difference()
+│ <span style="color:gray">7:</span> Union()
+│ <span style="color:gray">8:</span> Contained()
+│ <span style="color:gray">9:</span> Intersection()
+│ <span style="color:gray">10:</span> operator=()
+│ <span style="color:gray">11:</span> operator+=()
+│ <span style="color:gray">12:</span> nada
 └──────────────────────────────────────────────────────────────────────
-ALGORITMO (atual 1):
+ALGORITMO (atual 1): 
+
 ```
 
 Como o parâmetro é categórico, aparecem todos os valores que pode tomar, juntamente com os seus nomes. 
@@ -189,27 +180,24 @@ Caso não pretenda alterar um parâmetro, pode sempre carregar em ENTER para man
 Vamos alterar para a ordenação, e de seguida vamos ver o parâmetro 2. Introduza: 2; 2.
 
 ```entrada
-ALGORITMO (atual 1): 2
-
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
-│ P1(ALGORITMO):             Sort()     (1 a 12)
-│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
-│ P3(SEMENTE):               1          (1 a 1000000)
-│ P4(LIMITE_TEMPO):          10         (1 a 3600)
-│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
-│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:2
-
-┌─ ⚙️  P2(NIVEL_DEBUG) ────────────────────────────────────────────────
-│ Nível de debug, de reduzido a completo.
-│ 0: NADA
-│ 1: ATIVIDADE
-│ 2: PASSOS
-│ 3: DETALHE
-│ 4: COMPLETO
+Parametro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ <span style="color:gray">0:</span> NADA
+│ <span style="color:gray">1:</span> ATIVIDADE
+│ <span style="color:gray">2:</span> PASSOS
+│ <span style="color:gray">3:</span> DETALHE
+│ <span style="color:gray">4:</span> COMPLETO
 └──────────────────────────────────────────────────────────────────────
-NIVEL_DEBUG (atual 0):
+NIVEL_DEBUG (atual 0): 
 ```
 Notar que agora o valor associado a P1 é "Sort()".
 Ao escolhermos o parâmetro P2 vamos ver o parâmetro que define o nível de debug.
@@ -231,38 +219,35 @@ Avançamos para o parâmetro P3, "SEMENTE". Introduza: *ENTER*; 3; 2; *ENTER*.
 
 
 ```entrada
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
-│ P1(ALGORITMO):             Sort()     (1 a 12)
-│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
-│ P3(SEMENTE):               1          (1 a 1000000)
-│ P4(LIMITE_TEMPO):          10         (1 a 3600)
-│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
-│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:3
-
-┌─ ⚙️  P3(SEMENTE) ────────────────────────────────────────────────────
+Parametro:
+┌─ ⚙  P3(SEMENTE) ─────────────────────────────────────────────────────
 │ Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
 │ Intervalo: 1 a 1000000
 └──────────────────────────────────────────────────────────────────────
-SEMENTE (atual 1): 2
-
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
-│ P1(ALGORITMO):             Sort()     (1 a 12)
-│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
-│ P3(SEMENTE):               2          (1 a 1000000)
-│ P4(LIMITE_TEMPO):          10         (1 a 3600)
-│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
-│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+SEMENTE (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               2          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
 Parametro:
-
 TVector
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
-│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
-│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 2 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> TVector
 └──────────────────────────────────────────────────────────────────────
-Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237
+Dados #1000000: -498792314 -2114916689 -1334173636 ... 906240738 -1410932558 -1243737237 
 ...
 Opção: 
 ```
@@ -270,22 +255,19 @@ O P3 tem a semente aleatória. No entanto, voltamos ao menu inicial e a instânc
 É preciso inicializar e com esta nova semente, já irá ser criada uma nova instância. Introduza: 1; *ENTER*.
 
 ```entrada
-Opção: 1
-
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
-│ ID atual: 1  Intervalo: [1–10]
-│ Prefixo atual: 'instancia_'
+│ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
+│ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto):
-
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
 TVector
-┌─ ⚙️ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Sort() | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 2 | P4(LIMITE_TEMPO): 10
-│ P5(LIMITE_ITERACOES): 0 | P6(ESTRUTURA_DADOS): TVector
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Sort() | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 2 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(ESTRUTURA_DADOS):</span> TVector
 └──────────────────────────────────────────────────────────────────────
-Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791
+Dados #1000000: 277845151 613458960 -1719828728 ... -639822065 75868536 1051675791 
 ...
-Opção:
+Opção: 
 ```
 
 Agora sim, podemos ver que os três primeiros e últimos números são completamente distintos. 
@@ -297,25 +279,22 @@ Como não temos nestes algoritmos definidas iterações, não iremos utilizar.
 O P6 é um parâmetro definido na classe CTesteTVector, e tem a estrutura em teste. Introduza: 3; 6.
 
 ```entrada
-Opção: 3
-
-┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
-│ P1(ALGORITMO):             Sort()     (1 a 12)
-│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
-│ P3(SEMENTE):               2          (1 a 1000000)
-│ P4(LIMITE_TEMPO):          10         (1 a 3600)
-│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
-│ P6(ESTRUTURA_DADOS):       TVector    (1 a 3)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Sort()     <span style="color:gray">(1 a 12)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               2          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(ESTRUTURA_DADOS):</span>       TVector    <span style="color:gray">(1 a 3)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:6
-
-┌─ ⚙️  P6(ESTRUTURA_DADOS) ────────────────────────────────────────────
-│ Estrutura de dados utilizada para vetor.
-│ 1: TVector
-│ 2: std::vector
-│ 3: TVector/std::algorithm
+Parametro:
+┌─ ⚙  P6(ESTRUTURA_DADOS) ─────────────────────────────────────────────
+│ Estrutura de dados utilizada para vetor.                             
+│ <span style="color:gray">1:</span> TVector
+│ <span style="color:gray">2:</span> std::vector
+│ <span style="color:gray">3:</span> TVector/std::algorithm
 └──────────────────────────────────────────────────────────────────────
-ESTRUTURA_DADOS (atual 1):
+ESTRUTURA_DADOS (atual 1): 
 ```
 
 Foram definidas 3 opções pela qual os métodos podem ser executados. 
@@ -1552,7 +1531,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP1=[0m2 [90mP2=[0m3 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ 
 ═╧═══════════════════
@@ -1565,7 +1544,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2" 216ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP1=[0m2 [90mP2=[0m3 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ 
 ═╧═══════════════════
@@ -1583,18 +1562,18 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2" 142ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP1=[0m2 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
- ├─ ⚙  [4] ─ [90mP3=[0m4
- ├─ ⚙  [5] ─ [90mP3=[0m5
- ├─ ⚙  [6] ─ [90mP3=[0m6
- ├─ ⚙  [7] ─ [90mP3=[0m7
- ├─ ⚙  [8] ─ [90mP3=[0m8
- ├─ ⚙  [9] ─ [90mP3=[0m9
- ├─ ⚙  [10] ─ [90mP3=[0m10
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>4
+ ├─ ⚙  [5] ─ <span style="color:gray">P3=</span>5
+ ├─ ⚙  [6] ─ <span style="color:gray">P3=</span>6
+ ├─ ⚙  [7] ─ <span style="color:gray">P3=</span>7
+ ├─ ⚙  [8] ─ <span style="color:gray">P3=</span>8
+ ├─ ⚙  [9] ─ <span style="color:gray">P3=</span>9
+ ├─ ⚙  [10] ─ <span style="color:gray">P3=</span>10
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 48.
@@ -1605,18 +1584,18 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4" 325ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP1=[0m2 [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
- ├─ ⚙  [4] ─ [90mP3=[0m4
- ├─ ⚙  [5] ─ [90mP3=[0m5
- ├─ ⚙  [6] ─ [90mP3=[0m6
- ├─ ⚙  [7] ─ [90mP3=[0m7
- ├─ ⚙  [8] ─ [90mP3=[0m8
- ├─ ⚙  [9] ─ [90mP3=[0m9
- ├─ ⚙  [10] ─ [90mP3=[0m10
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
+ ├─ ⚙  [4] ─ <span style="color:gray">P3=</span>4
+ ├─ ⚙  [5] ─ <span style="color:gray">P3=</span>5
+ ├─ ⚙  [6] ─ <span style="color:gray">P3=</span>6
+ ├─ ⚙  [7] ─ <span style="color:gray">P3=</span>7
+ ├─ ⚙  [8] ─ <span style="color:gray">P3=</span>8
+ ├─ ⚙  [9] ─ <span style="color:gray">P3=</span>9
+ ├─ ⚙  [10] ─ <span style="color:gray">P3=</span>10
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:100   📄 Instâncias: 10   🛠️ Configurações: 10   🖥️ Processos: 48.
@@ -1632,15 +1611,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 3" 645ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP1=[0m2 [90mP2=[0m2 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m1[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>2 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP3=[0m1
- ├─ ⚙  [2] ─ [90mP3=[0m2
- ├─ ⚙  [3] ─ [90mP3=[0m3
+ ├─ ⚙  [1] ─ <span style="color:gray">P3=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P3=</span>2
+ ├─ ⚙  [3] ─ <span style="color:gray">P3=</span>3
  │ ...
- ├─ ⚙  [98] ─ [90mP3=[0m98
- ├─ ⚙  [99] ─ [90mP3=[0m99
- ├─ ⚙  [100] ─ [90mP3=[0m100
+ ├─ ⚙  [98] ─ <span style="color:gray">P3=</span>98
+ ├─ ⚙  [99] ─ <span style="color:gray">P3=</span>99
+ ├─ ⚙  [100] ─ <span style="color:gray">P3=</span>100
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:1000   📄 Instâncias: 10   🛠️ Configurações: 100   🖥️ Processos: 48.
@@ -1656,15 +1635,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 25" 778ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP2=[0m3 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m1 [90mP6=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m2 [90mP6=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m3 [90mP6=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P6=</span>1
  │ ...
- ├─ ⚙  [34] ─ [90mP1=[0m10 [90mP6=[0m3
- ├─ ⚙  [35] ─ [90mP1=[0m11 [90mP6=[0m3
- ├─ ⚙  [36] ─ [90mP1=[0m12 [90mP6=[0m3
+ ├─ ⚙  [34] ─ <span style="color:gray">P1=</span>10 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [35] ─ <span style="color:gray">P1=</span>11 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [36] ─ <span style="color:gray">P1=</span>12 <span style="color:gray">P6=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:360   📄 Instâncias: 10   🛠️ Configurações: 36   🖥️ Processos: 48.
@@ -1675,15 +1654,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 16" 173ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP2=[0m3 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m1 [90mP6=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m2 [90mP6=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m3 [90mP6=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P6=</span>1
  │ ...
- ├─ ⚙  [34] ─ [90mP1=[0m10 [90mP6=[0m3
- ├─ ⚙  [35] ─ [90mP1=[0m11 [90mP6=[0m3
- ├─ ⚙  [36] ─ [90mP1=[0m12 [90mP6=[0m3
+ ├─ ⚙  [34] ─ <span style="color:gray">P1=</span>10 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [35] ─ <span style="color:gray">P1=</span>11 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [36] ─ <span style="color:gray">P1=</span>12 <span style="color:gray">P6=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:360   📄 Instâncias: 10   🛠️ Configurações: 36   🖥️ Processos: 48.
@@ -1700,15 +1679,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 12" 184ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m1 [90mP3=[0m1 [90mP6=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m2 [90mP3=[0m1 [90mP6=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m3 [90mP3=[0m1 [90mP6=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
  │ ...
- ├─ ⚙  [358] ─ [90mP1=[0m10 [90mP3=[0m10 [90mP6=[0m3
- ├─ ⚙  [359] ─ [90mP1=[0m11 [90mP3=[0m10 [90mP6=[0m3
- ├─ ⚙  [360] ─ [90mP1=[0m12 [90mP3=[0m10 [90mP6=[0m3
+ ├─ ⚙  [358] ─ <span style="color:gray">P1=</span>10 <span style="color:gray">P3=</span>10 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [359] ─ <span style="color:gray">P1=</span>11 <span style="color:gray">P3=</span>10 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [360] ─ <span style="color:gray">P1=</span>12 <span style="color:gray">P3=</span>10 <span style="color:gray">P6=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:3600   📄 Instâncias: 10   🛠️ Configurações: 360   🖥️ Processos: 48.
@@ -1723,15 +1702,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 21" 407ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m1 [90mP3=[0m1 [90mP6=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m2 [90mP3=[0m1 [90mP6=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m3 [90mP3=[0m1 [90mP6=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
  │ ...
- ├─ ⚙  [358] ─ [90mP1=[0m10 [90mP3=[0m10 [90mP6=[0m3
- ├─ ⚙  [359] ─ [90mP1=[0m11 [90mP3=[0m10 [90mP6=[0m3
- ├─ ⚙  [360] ─ [90mP1=[0m12 [90mP3=[0m10 [90mP6=[0m3
+ ├─ ⚙  [358] ─ <span style="color:gray">P1=</span>10 <span style="color:gray">P3=</span>10 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [359] ─ <span style="color:gray">P1=</span>11 <span style="color:gray">P3=</span>10 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [360] ─ <span style="color:gray">P1=</span>12 <span style="color:gray">P3=</span>10 <span style="color:gray">P6=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:3600   📄 Instâncias: 10   🛠️ Configurações: 360   🖥️ Processos: 48.
@@ -1755,15 +1734,15 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcura ../TProcura.cpp ../TRand.cpp CT
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1' 26" 683ms ) ═══
 
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ [90mP2=[0m3 [90mP4=[0m10 [90mP5=[0m0[90m (parâmetros comuns)[0m
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>3 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ [90mP1=[0m1 [90mP3=[0m1 [90mP6=[0m1
- ├─ ⚙  [2] ─ [90mP1=[0m2 [90mP3=[0m1 [90mP6=[0m1
- ├─ ⚙  [3] ─ [90mP1=[0m3 [90mP3=[0m1 [90mP6=[0m1
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P6=</span>1
  │ ...
- ├─ ⚙  [3598] ─ [90mP1=[0m10 [90mP3=[0m100 [90mP6=[0m3
- ├─ ⚙  [3599] ─ [90mP1=[0m11 [90mP3=[0m100 [90mP6=[0m3
- ├─ ⚙  [3600] ─ [90mP1=[0m12 [90mP3=[0m100 [90mP6=[0m3
+ ├─ ⚙  [3598] ─ <span style="color:gray">P1=</span>10 <span style="color:gray">P3=</span>100 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [3599] ─ <span style="color:gray">P1=</span>11 <span style="color:gray">P3=</span>100 <span style="color:gray">P6=</span>3
+ ├─ ⚙  [3600] ─ <span style="color:gray">P1=</span>12 <span style="color:gray">P3=</span>100 <span style="color:gray">P6=</span>3
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:36000   📄 Instâncias: 10   🛠️ Configurações: 3600   🖥️ Processos: 48.
