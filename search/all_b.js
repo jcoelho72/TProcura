@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['b_0',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md92',1,'']]],
+  ['b_0',['b',['../teste_aspirador1.html#autotoc_md92',1,'Ação 7 - Editar opções B'],['../teste_tvector.html#autotoc_md150',1,'esforço B'],['../teste_tvector.html#autotoc_md146',1,'esforço B']]],
   ['baralhar_5fsucessores_1',['BARALHAR_SUCESSORES',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a7b1958972b4b5ea44f3e32d37a0539c9',1,'TProcuraConstrutiva.h']]],
   ['barratorneio_2',['BarraTorneio',['../classTProcura.html#a23c3fcc499f1a65d6ef973eb5fc2c094',1,'TProcura']]],
   ['beaset_3',['BeASet',['../classTVector.html#a084d0ab4f7ea5451716f734e649950f6',1,'TVector']]],
   ['begin_4',['begin',['../classTVector.html#ac03b333ddccac1382d0e36558713edc1',1,'TVector::begin() noexcept'],['../classTVector.html#a45c61335d31c86c63ca7868be655fd0d',1,'TVector::begin() const noexcept']]],
   ['beta_5',['Ação 4 - MiniMax com cortes Alfa/Beta',['../teste_jogo_do_galo.html#autotoc_md106',1,'']]],
-  ['bibliografia_6',['Bibliografia',['../index.html#autotoc_md182',1,'']]],
+  ['bibliografia_6',['Bibliografia',['../index.html#autotoc_md173',1,'']]],
   ['binária_7',['Teste Particao - Codificação Binária',['../teste_particao_cb.html',1,'']]],
   ['bit_8',['bit',['../classTCodificacaoBinaria.html#a82db1e906b249821c06f910742f42f46',1,'TCodificacaoBinaria::Bit(int i) const'],['../classTCodificacaoBinaria.html#a9f693a420b0569bf1102f1eb7a91bc43',1,'TCodificacaoBinaria::Bit(int i)']]],
   ['bitref_9',['bitref',['../classBitRef.html#aa95d691745cb584e6e7f1544802e6de6',1,'BitRef::BitRef()'],['../classBitRef.html',1,'BitRef']]],
