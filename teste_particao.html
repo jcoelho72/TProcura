@@ -106,151 +106,147 @@ Sumário</h2>
 <li><a class="el" href="teste_particao.html#particao-a2">Ação 2 - Resolver manualmente</a></li>
 <li><a class="el" href="teste_particao.html#particao-a3">Ação 6 - Testes Empíricos</a></li>
 </ul>
-<div class="fragment"><div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
-<div class="line">│ 1 - Aspirador                │</div>
-<div class="line">│ 2 - Puzzle 8                 │</div>
-<div class="line">│ 3 - 8 Damas                  │</div>
-<div class="line">│ 4 - Partição                 │</div>
-<div class="line">└──────────────────────────────┘</div>
-<div class="line">Opção: 4</div>
-</div><!-- fragment --><div class="image">
+<p> 
+<pre>
+┌─ Teste TProcuraConstrutiva ──┐
+│ 1 - Aspirador                │
+│ 2 - Puzzle 8                 │
+│ 3 - 8 Damas                  │
+│ 4 - Partição                 │
+└──────────────────────────────┘
+Opção: <span class="entrada">4</span>
+</pre>
+</p>
+<div class="image">
 <img src="particao.png" alt=""/>
 <div class="caption">
 Partição - separe os números em duas partes iguais</div></div>
     <p>Vamos escolher o problema da partição. Introduza: <b>4.</b></p>
-<div class="fragment"><div class="line">Partição</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1</div>
-<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
-<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦1192 → ◀️0 = ▶️0 ─</div>
-<div class="line">┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │</div>
-<div class="line">│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │</div>
-<div class="line">└───────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
-<div class="line">Opção:</div>
-</div><!-- fragment --><p> Este problema consiste em dividir os números em duas partes que somem exatamente o mesmo valor. Está no modo compato, vamos colocar no modo extendido para ver o conteúdo da instância. Introduza: <b>3; 2; 4; <em>ENTER</em>.</b></p>
-<div class="fragment"><div class="line">Partição</div>
-<div class="line">┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
-<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
-<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │  ┌─ 📦1192 → ◀️0 = ▶️0 ──────────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦 ─ 106 107 109 111 114 124 124 124 132 141</div>
-<div class="line"> │  ├─ ◀️ ─</div>
-<div class="line"> │  ├─ ▶️ ─</div>
-<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> ...</div>
-<div class="line">Opção:</div>
-</div><!-- fragment --><p> Podemos agora ver os números a colocar. Somam no total 1192, e tem que se colocar cada número numa das linhas. A soma em cada linha tem de ser igual.</p>
+<p> 
+<pre>
+Partição
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
+└──────────────────────────────────────────────────────────────────────
+ │  ├─ 📦1192 → ◀️0 = ▶️0 ─
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+</pre>
+</p>
+<p>Este problema consiste em dividir os números em duas partes que somem exatamente o mesmo valor. Está no modo compato, vamos colocar no modo extendido para ver o conteúdo da instância. Introduza: <b>3; 2; 4; <em>ENTER</em>.</b></p>
+<p> 
+<pre>
+...
+Partição
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
+└──────────────────────────────────────────────────────────────────────
+ │  ┌─ 📦1192 → ◀️0 = ▶️0 ──────────────────────────────────────────────────
+ │  ├─ 📦 ─ 106 107 109 111 114 124 124 124 132 141
+ │  ├─ ◀️ ─
+ │  ├─ ▶️ ─
+ │  └──────────────────────────────────────────────────────────────────────
+...
+Opção: 
+</pre>
+</p>
+<p>Podemos agora ver os números a colocar. Somam no total 1192, e tem que se colocar cada número numa das linhas. A soma em cada linha tem de ser igual.</p>
 <p><a class="anchor" id="particao-a1"></a></p>
 <h2><a class="anchor" id="autotoc_md117"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos ver as instâncias que temos. Introduza: <b>1; 10.</b></p>
-<div class="fragment"><div class="line">Opção: 1</div>
-<div class="line"> </div>
-<div class="line">┌─ 📄 Instância ───────────────────────────────────────────────────────</div>
-<div class="line">│ ID atual: 10  Intervalo: [2–1000]</div>
-<div class="line">│ Prefixo atual: &#39;instancia_&#39;</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">Novo ID (ENTER mantém) ou novo prefixo (texto): 10</div>
-</div><!-- fragment --><p> Existem instâncias de 2 a 1000, correspondendo o ID à quantidade de números. As instâncias são geradas aleatoriamente, podendo existir instâncias impossíveis.</p>
+<p> 
+<pre>
+Opção: <span class="entrada">1</span>
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ <span style="color:gray">ID atual:</span> 10  <span style="color:gray">Intervalo:</span> [2–1000]  
+│ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">10</span>
+</pre>
+</p>
+<p>Existem instâncias de 2 a 1000, correspondendo o ID à quantidade de números. As instâncias são geradas aleatoriamente, podendo existir instâncias impossíveis.</p>
 <p>Deixemos a instância 10 para resolução manual.</p>
 <p><a class="anchor" id="particao-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md118"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos procurar resolver manualmente a intância. Introduza: <b>2; esq dir esq dir; dir esq dir esq; esq; dir; esq.</b></p>
-<div class="fragment"><div class="line">Opção: 2</div>
-<div class="line"> </div>
-<div class="line">═╤═ 💰 g:0 ⚖  1|2|3 ═══</div>
-<div class="line"> │  ┌─ 📦1192 → ◀️0 = ▶️0 ──────────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦 ─ 106 107 109 111 114 124 124 124 132 141</div>
-<div class="line"> │  ├─ ◀️ ─</div>
-<div class="line"> │  ├─ ▶️ ─</div>
-<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │ └─ ⚡  ──── esq dir { 🔖 1 🔖 2 }</div>
-<div class="line">🔍 Sucessor [1-2, ação(ões), exe]: esq dir esq dir</div>
-<div class="line"> </div>
-<div class="line">┌─ ✔  ────────────────</div>
-<div class="line">│ Executadas 4 ações.</div>
-<div class="line">└─────────────────────</div>
-<div class="line">═╤═ 💰 g:0 ⚖  6|12|6 ═══</div>
-<div class="line"> │  ┌─ 📦671 → ◀️265 = ▶️256 ───────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦 ─ 106 107 109 111 114 124</div>
-<div class="line"> │  ├─ ◀️ ─ 141 124</div>
-<div class="line"> │  ├─ ▶️ ─ 132 124</div>
-<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │ └─ ⚡  ──── esq dir { 🔖 11 🔖 12 }</div>
-<div class="line">🔍 Sucessor [1-2, ação(ões), exe]: dir esq eidr esq</div>
-<div class="line"> </div>
-<div class="line">┌─ ⛔  ────────────────</div>
-<div class="line">│ Ação eidr inválida.</div>
-<div class="line">└─────────────────────</div>
-<div class="line">┌─ ✔  ────────────────</div>
-<div class="line">│ Executadas 2 ações.</div>
-<div class="line">└─────────────────────</div>
-<div class="line">═╤═ 💰 g:0 ⚖  10|20|9 ═══</div>
-<div class="line"> │  ┌─ 📦433 → ◀️379 = ▶️380 ───────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦 ─ 106 107 109 111</div>
-<div class="line"> │  ├─ ◀️ ─ 141 124 114</div>
-<div class="line"> │  ├─ ▶️ ─ 132 124 124</div>
-<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │ └─ ⚡  ──── esq dir { 🔖 19 🔖 20 }</div>
-<div class="line">🔍 Sucessor [1-2, ação(ões), exe]: esq</div>
-<div class="line"> </div>
-<div class="line">┌─ ✔  ────────────────</div>
-<div class="line">│ Executadas 1 ações.</div>
-<div class="line">└─────────────────────</div>
-<div class="line">═╤═ 💰 g:0 ⚖  12|24|12 ═══</div>
-<div class="line"> │  ┌─ 📦322 → ◀️490 = ▶️380 ───────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦 ─ 106 107 109</div>
-<div class="line"> │  ├─ ◀️ ─ 141 124 114 111</div>
-<div class="line"> │  ├─ ▶️ ─ 132 124 124</div>
-<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │ └─ ⚡  ──── esq dir { 🔖 23 🔖 24 }</div>
-<div class="line">🔍 Sucessor [1-2, ação(ões), exe]: dir</div>
-<div class="line"> </div>
-<div class="line">┌─ ✔  ────────────────</div>
-<div class="line">│ Executadas 1 ações.</div>
-<div class="line">└─────────────────────</div>
-<div class="line">═╤═ 💰 g:0 ⚖  14|28|15 ═══</div>
-<div class="line"> │  ┌─ 📦213 → ◀️490 = ▶️489 ───────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦 ─ 106 107</div>
-<div class="line"> │  ├─ ◀️ ─ 141 124 114 111</div>
-<div class="line"> │  ├─ ▶️ ─ 132 124 124 109</div>
-<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │ └─ ⚡  ──── esq dir { 🔖 27 🔖 28 }</div>
-<div class="line">🔍 Sucessor [1-2, ação(ões), exe]: esq</div>
-<div class="line"> </div>
-<div class="line">┌─ ✔  ────────────────</div>
-<div class="line">│ Executadas 1 ações.</div>
-<div class="line">└─────────────────────</div>
-<div class="line">═╤═ 💰 g:0 ⚖  16|30|16 ═══</div>
-<div class="line"> │  ┌─ 📦106 → ◀️597 = ▶️489 ───────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦 ─ 106</div>
-<div class="line"> │  ├─ ◀️ ─ 141 124 114 111 107</div>
-<div class="line"> │  ├─ ▶️ ─ 132 124 124 109</div>
-<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │ └─ ⚡  ────</div>
-<div class="line">┌─ ⛔  ───────────────</div>
-<div class="line">│ Sem sucessores.</div>
-<div class="line">└────────────────────</div>
-<div class="line">Partição</div>
-<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1</div>
-<div class="line">│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0</div>
-<div class="line">│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │  ┌─ 📦106 → ◀️597 = ▶️489 ───────────────────────────────────────────────</div>
-<div class="line"> │  ├─ 📦 ─ 106</div>
-<div class="line"> │  ├─ ◀️ ─ 141 124 114 111 107</div>
-<div class="line"> │  ├─ ▶️ ─ 132 124 124 109</div>
-<div class="line"> │  └──────────────────────────────────────────────────────────────────────</div>
-<div class="line">...</div>
-<div class="line">Opção:</div>
-</div><!-- fragment --><p> Foi uma boa tentativa, mas no final um lado soma 597 do outro 489, e há um elemento com 106 que não cobre esta diferença.</p>
+<p> 
+<pre>
+Opção: <span class="entrada">2</span>
+═╤═ 💰 g:0 ⚖  1|2|3 ═══
+ │  ┌─ 📦1192 → ◀️0 = ▶️0 ──────────────────────────────────────────────────
+ │  ├─ 📦 ─ 106 107 109 111 114 124 124 124 132 141
+ │  ├─ ◀️ ─
+ │  ├─ ▶️ ─
+ │  └──────────────────────────────────────────────────────────────────────
+ │ └─ ⚡  ──── esq dir { 🔖 1 🔖 2 } 
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">esq dir esq dir</span>
+┌─ ✔  ────────────────
+│ Executadas 4 ações. 
+└─────────────────────
+═╤═ 💰 g:0 ⚖  6|12|6 ═══
+ │  ┌─ 📦671 → ◀️265 = ▶️256 ───────────────────────────────────────────────
+ │  ├─ 📦 ─ 106 107 109 111 114 124
+ │  ├─ ◀️ ─ 141 124
+ │  ├─ ▶️ ─ 132 124
+ │  └──────────────────────────────────────────────────────────────────────
+ │ └─ ⚡  ──── esq dir { 🔖 11 🔖 12 } 
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">dir esq dir esq</span>
+┌─ ✔  ────────────────
+│ Executadas 4 ações. 
+└─────────────────────
+═╤═ 💰 g:0 ⚖  11|22|9 ═══
+ │  ┌─ 📦213 → ◀️488 = ▶️491 ───────────────────────────────────────────────
+ │  ├─ 📦 ─ 106 107
+ │  ├─ ◀️ ─ 141 124 114 109
+ │  ├─ ▶️ ─ 132 124 124 111
+ │  └──────────────────────────────────────────────────────────────────────
+ │ └─ ⚡  ──── esq dir { 🔖 21 🔖 22 } 
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">esq</span>
+┌─ ✔  ────────────────
+│ Executadas 1 ações. 
+└─────────────────────
+═╤═ 💰 g:0 ⚖  13|26|12 ═══
+ │  ┌─ 📦106 → ◀️595 = ▶️491 ───────────────────────────────────────────────
+ │  ├─ 📦 ─ 106
+ │  ├─ ◀️ ─ 141 124 114 109 107
+ │  ├─ ▶️ ─ 132 124 124 111
+ │  └──────────────────────────────────────────────────────────────────────
+ │ └─ ⚡  ──── esq dir { 🔖 25 🔖 26 } 
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">dir</span>
+┌─ ✔  ────────────────
+│ Executadas 1 ações. 
+└─────────────────────
+═╤═ 💰 g:0 ⚖  15|28|13 ═══
+ │  ┌─ 📦0 → ◀️595 = ▶️597 ─────────────────────────────────────────────────
+ │  ├─ 📦 ─
+ │  ├─ ◀️ ─ 141 124 114 109 107
+ │  ├─ ▶️ ─ 132 124 124 111 106
+ │  └──────────────────────────────────────────────────────────────────────
+ │ └─ ⚡  ────
+┌─ ⛔  ───────────────
+│ Sem sucessores.    
+└────────────────────
+Partição
+...
+ │  ┌─ 📦0 → ◀️595 = ▶️597 ─────────────────────────────────────────────────
+ │  ├─ 📦 ─
+ │  ├─ ◀️ ─ 141 124 114 109 107
+ │  ├─ ▶️ ─ 132 124 124 111 106
+ │  └──────────────────────────────────────────────────────────────────────
+...
+Opção: 
+</pre>
+</p>
+<p>Foi uma boa tentativa, mas no final um lado soma 595 do outro 597.</p>
 <p>Tal como as 8 damas, o número de ações de uma solução completa é fixo. É igual à quantidade de número a colocar. Sabemos que não faz sentido a procura em largura nestes problemas. Também pelos mesmos motivos que nas 8 damas, não se consegue uma heurística pelo que não faz sentido as procuras informadas.</p>
 <p>Naturalmente que se poderia efetuar mais cortes dos que estão a ser feitos nesta implementação. Vamos apenas comparar a remoção de repetidos gerados, relativamente a ignorar repetidos, e também os sucessores aleatórios, tal como no problema das 8 damas.</p>
 <p>No caso da partição, após um número estar num lado, apenas a soma interessa. Como se coloca os números por ordem, um estado fica igual a todos os que têm o montante igual das peças colocadas. Esquerda e direita é naturalmente irrelevante.</p>
@@ -260,54 +256,58 @@ Ação 2 - Resolver manualmente</h2>
 Ação 3 - Testes Empíricos</h2>
 <p>Vamos fazer testes empíricos na linha de comandos.</p>
 <p>Vamos obter primeiramente a lista de todos os parâmetros.</p>
-<div class="fragment"><div class="line">/TProcura/Construtiva/Teste$ ./bin/Release/TProcuraConstrutiva -h</div>
-<div class="line"> </div>
-<div class="line">┌─ Teste TProcuraConstrutiva ──┐</div>
-<div class="line">│ 1 - Aspirador                │</div>
-<div class="line">│ 2 - Puzzle 8                 │</div>
-<div class="line">│ 3 - 8 Damas                  │</div>
-<div class="line">│ 4 - Partição                 │</div>
-<div class="line">│ 5 - Artificial               │</div>
-<div class="line">└──────────────────────────────┘</div>
-<div class="line">Opção: 4</div>
-<div class="line">Uso: ./bin/Release/TProcuraConstrutiva &lt;instâncias&gt; [opções]</div>
-<div class="line">  &lt;instâncias&gt;    Conjunto de IDs: A | A,B,C | A:B[:C]</div>
-<div class="line">Opções:</div>
-<div class="line">  -R &lt;ficheiro&gt;   Nome do CSV de resultados (omissão: resultados.csv)</div>
-<div class="line">  -F &lt;prefixo&gt;    Prefixo dos ficheiros de instância (omissão: instancia_)</div>
-<div class="line">  -M &lt;modo&gt;       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador</div>
-<div class="line">  -I &lt;ind&gt;        Lista de indicadores (e.g. 2,1,3)</div>
-<div class="line">  -h              Esta ajuda</div>
-<div class="line">  -P &lt;expr&gt;       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo</div>
-<div class="line">Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2</div>
-<div class="line">   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores</div>
-<div class="line"> </div>
-<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
-<div class="line">│ P1(ALGORITMO):             Largura Primeiro (1 a 7)</div>
-<div class="line">│ P2(NIVEL_DEBUG):           NADA       (0 a 4)</div>
-<div class="line">│ P3(SEMENTE):               1          (1 a 1000000)</div>
-<div class="line">│ P4(LIMITE_TEMPO):          10         (1 a 3600)</div>
-<div class="line">│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)</div>
-<div class="line">│ P6(VER_ACOES):             4          (1 a 100)</div>
-<div class="line">│ P7(LIMITE):                0          (-1 a 1000000)</div>
-<div class="line">│ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)</div>
-<div class="line">│ P11(BARALHAR_SUCESSORES):  0          (0 a 1)</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line">┌─ ⚖ Indicadores ─────────────────────────────────────────────────────</div>
-<div class="line">│ I1(IND_CUSTO): ✓ 1º lugar</div>
-<div class="line">│ o resultado é o custo da solução atual</div>
-<div class="line">│ I2(Tempo(ms)): ✓ 2º lugar</div>
-<div class="line">│ Tempo em milisegundos da execução (medida de esforço computacional).</div>
-<div class="line">│ I3(Iterações): ✓ 3º lugar</div>
-<div class="line">│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</div>
-<div class="line">│ I4(IND_EXPANSOES): ✓ 4º lugar</div>
-<div class="line">│ número de expansões efetuadas</div>
-<div class="line">│ I5(IND_GERACOES): ✓ 5º lugar</div>
-<div class="line">│ número de estados gerados</div>
-<div class="line">│ I6(IND_LOWER_BOUND): ✓ 6º lugar</div>
-<div class="line">│ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md120"></a>
+<p> 
+<pre>
+/TProcura/Construtiva/Teste$ ./bin/Release/TProcuraConstrutiva -h
+
+┌─ Teste TProcuraConstrutiva ──┐
+│ 1 - Aspirador                │
+│ 2 - Puzzle 8                 │
+│ 3 - 8 Damas                  │
+│ 4 - Partição                 │
+│ 5 - Artificial               │
+└──────────────────────────────┘
+Opção: 4
+Uso: ./bin/Release/TProcuraConstrutiva <instâncias> [opções]
+  <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]
+Opções:
+  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)
+  -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)
+  -M <modo>       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador
+  -I <ind>        Lista de indicadores (e.g. 2,1,3)
+  -h              Esta ajuda
+  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
+Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
+   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
+
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Largura Primeiro (1 a 7)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
+│ P6(VER_ACOES):             4          (1 a 100)
+│ P7(LIMITE):                0          (-1 a 1000000)
+│ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+│ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+└──────────────────────────────────────────────────────────────────────
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): ✓ 1º lugar
+│ o resultado é o custo da solução atual
+│ I2(Tempo(ms)): ✓ 2º lugar
+│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ I3(Iterações): ✓ 3º lugar
+│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
+│ I4(IND_EXPANSOES): ✓ 4º lugar
+│ número de expansões efetuadas
+│ I5(IND_GERACOES): ✓ 5º lugar
+│ número de estados gerados
+│ I6(IND_LOWER_BOUND): ✓ 6º lugar
+│ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
+└──────────────────────────────────────────────────────────────────────
+</pre>
+</p>
+<h3><a class="anchor" id="autotoc_md120"></a>
 Teste: particao_1</h3>
 <p>O primeiro ponto a testar é a geração de repetidos. Temos muitas instâncias de diferentes tamanhos. Como as instâncias sobem de tamanho com o ID, utilizamos apenas até à instância 200, de 20 em 20, e de cada tamanho aumentamos o esforço com diferentes números de instâncias.</p>
 <ul>
@@ -317,43 +317,47 @@ Teste: particao_1</h3>
 <li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 2:200:20 -R Resultados/particao_1 -P P1=3 P2=4 P7=-1 P3=1 x P8=1,3</li>
 </ul>
 <p>Como temos 20 tarefas, utilizamos o debug completo.</p>
-<div class="fragment"><div class="line">Opção: 4</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 }</div>
-<div class="line"> ├─ 🛠️  ─ P1=3 P2=4 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)</div>
-<div class="line">═╪═ Configurações ═══</div>
-<div class="line"> ├─ ⚙  [1] ─ P8=1</div>
-<div class="line"> ├─ ⚙  [2] ─ P8=3</div>
-<div class="line">═╧═══════════════════</div>
-<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
-<div class="line"> ├─ 📋 Tarefas:20   📄 Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 1.</div>
-<div class="line"> ├─ ⏱                 📋 1     📄 2     🛠️ 1     🖥️ 1    🎯 ⛔ ⚖  -1 0 0 3 2 0</div>
-<div class="line"> ├─ ⏱                 📋 2     📄 22    🛠️ 1     🖥️ 1    🎯 22   ⚖  22 36 0 77893 77904 0</div>
-<div class="line"> ├─ ⏱ 37ms            📋 3     📄 42    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 24036915 24036934 0</div>
-<div class="line"> ├─ ⏱ 10&quot; 37ms        📋 4     📄 62    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 22859567 22859598 0</div>
-<div class="line"> ├─ ⏱ 20&quot; 37ms        📋 5     📄 82    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 20615188 20615228 0</div>
-<div class="line"> ├─ ⏱ 30&quot; 37ms        📋 6     📄 102   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 20034739 20034788 0</div>
-<div class="line"> ├─ ⏱ 40&quot; 37ms        📋 7     📄 122   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 19117816 19117876 0</div>
-<div class="line"> ├─ ⏱ 50&quot; 37ms        📋 8     📄 142   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 19118189 19118260 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 37ms         📋 9     📄 162   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 18281362 18281440 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 10&quot; 37ms     📋 10    📄 182   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 17633077 17633166 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 20&quot; 38ms     📋 11    📄 2     🛠️ 2     🖥️ 1    🎯 ⛔ ⚖  -1 60 0 2 1 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 20&quot; 97ms     📋 12    📄 22    🛠️ 2     🖥️ 1    🎯 22   ⚖  22 14 0 4189 4199 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 20&quot; 111ms    📋 13    📄 42    🛠️ 2     🖥️ 1    🎯 42   ⚖  42 56 0 51162 51182 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 20&quot; 167ms    📋 14    📄 62    🛠️ 2     🖥️ 1    🎯 62   ⚖  62 191 0 230596 230626 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 20&quot; 358ms    📋 15    📄 82    🛠️ 2     🖥️ 1    🎯 82   ⚖  82 670 0 732439 732479 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 21&quot; 28ms     📋 16    📄 102   🛠️ 2     🖥️ 1    🎯 102  ⚖  102 3652 0 4053100 4053150 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 24&quot; 680ms    📋 17    📄 122   🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10005 0 10992167 10992215 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 34&quot; 685ms    📋 18    📄 142   🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10004 0 10864256 10864314 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 44&quot; 690ms    📋 19    📄 162   🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10004 0 10825532 10825603 0</div>
-<div class="line"> ├─ ⏱ 1&#39; 54&quot; 694ms    📋 20    📄 182   🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10004 0 10665339 10665421 0</div>
-<div class="line"> ├─ 📑  Ficheiro Resultados/particao_1.csv gravado.</div>
-<div class="line"> │  ⏱  Tempo real: 2&#39; 4&quot; 698ms</div>
-<div class="line"> │  ⏱  CPU total: 2&#39; 4&quot; 698ms</div>
-<div class="line"> │  📊  Utilização: 100.0%</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2&#39; 4&quot; 698ms ) ═══</div>
-</div><!-- fragment --><p>Como podemos ver dos logs, a configuração 2 resolve mais instâncias, mas não resolveu a partir da instância 122.</p>
+<p> 
+<pre>
+Opção: 4
+
+
+═╤═ Instâncias ═══ { 📄 2 📄 22 📄 42 📄 62 📄 82 📄 102 📄 122 📄 142 📄 162 📄 182 }
+ ├─ 🛠️  ─ P1=3 P2=4 P3=1 P4=10 P5=0 P6=4 P7=-1 P11=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ P8=1
+ ├─ ⚙  [2] ─ P8=3
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:20   📄 Instâncias: 10   🛠️ Configurações: 2   🖥️ Processos: 1.
+ ├─ ⏱                 📋 1     📄 2     🛠️ 1     🖥️ 1    🎯 ⛔ ⚖  -1 0 0 3 2 0
+ ├─ ⏱                 📋 2     📄 22    🛠️ 1     🖥️ 1    🎯 22   ⚖  22 36 0 77893 77904 0
+ ├─ ⏱ 37ms            📋 3     📄 42    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 24036915 24036934 0
+ ├─ ⏱ 10" 37ms        📋 4     📄 62    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 22859567 22859598 0
+ ├─ ⏱ 20" 37ms        📋 5     📄 82    🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 20615188 20615228 0
+ ├─ ⏱ 30" 37ms        📋 6     📄 102   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 20034739 20034788 0
+ ├─ ⏱ 40" 37ms        📋 7     📄 122   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 19117816 19117876 0
+ ├─ ⏱ 50" 37ms        📋 8     📄 142   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 19118189 19118260 0
+ ├─ ⏱ 1' 37ms         📋 9     📄 162   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 18281362 18281440 0
+ ├─ ⏱ 1' 10" 37ms     📋 10    📄 182   🛠️ 1     🖥️ 1    🚫 ⏱ ⚖  -2 10000 0 17633077 17633166 0
+ ├─ ⏱ 1' 20" 38ms     📋 11    📄 2     🛠️ 2     🖥️ 1    🎯 ⛔ ⚖  -1 60 0 2 1 0
+ ├─ ⏱ 1' 20" 97ms     📋 12    📄 22    🛠️ 2     🖥️ 1    🎯 22   ⚖  22 14 0 4189 4199 0
+ ├─ ⏱ 1' 20" 111ms    📋 13    📄 42    🛠️ 2     🖥️ 1    🎯 42   ⚖  42 56 0 51162 51182 0
+ ├─ ⏱ 1' 20" 167ms    📋 14    📄 62    🛠️ 2     🖥️ 1    🎯 62   ⚖  62 191 0 230596 230626 0
+ ├─ ⏱ 1' 20" 358ms    📋 15    📄 82    🛠️ 2     🖥️ 1    🎯 82   ⚖  82 670 0 732439 732479 0
+ ├─ ⏱ 1' 21" 28ms     📋 16    📄 102   🛠️ 2     🖥️ 1    🎯 102  ⚖  102 3652 0 4053100 4053150 0
+ ├─ ⏱ 1' 24" 680ms    📋 17    📄 122   🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10005 0 10992167 10992215 0
+ ├─ ⏱ 1' 34" 685ms    📋 18    📄 142   🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10004 0 10864256 10864314 0
+ ├─ ⏱ 1' 44" 690ms    📋 19    📄 162   🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10004 0 10825532 10825603 0
+ ├─ ⏱ 1' 54" 694ms    📋 20    📄 182   🛠️ 2     🖥️ 1    🚫 ⏱ ⚖  -2 10004 0 10665339 10665421 0
+ ├─ 📑  Ficheiro Resultados/particao_1.csv gravado.
+ │  ⏱  Tempo real: 2' 4" 698ms
+ │  ⏱  CPU total: 2' 4" 698ms
+ │  📊  Utilização: 100.0%
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 4" 698ms ) ═══
+</pre>
+</p>
+<p>Como podemos ver dos logs, a configuração 2 resolve mais instâncias, mas não resolveu a partir da instância 122.</p>
 <ul>
 <li><b>hardware</b>: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)</li>
 <li><b>Ficheiro de Análise</b>: particao.xlsx</li>
@@ -401,30 +405,34 @@ Teste: particao_2</h3>
 <li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 2:100:10 -R Resultados/particao_2 -P P1=3 P2=3 P7=-1 P8=3 P3=1:4 x P11=0,1</li>
 </ul>
 <p>São mais tarefas, pelo que utilizamos o debug 3.</p>
-<div class="fragment"><div class="line">Opção: 4</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 📄 32 📄 42 📄 52 📄 62 📄 72 📄 82 📄 92 }</div>
-<div class="line"> ├─ 🛠️  ─ P1=3 P2=3 P4=10 P5=0 P6=4 P7=-1 P8=3  (parâmetros comuns)</div>
-<div class="line">═╪═ Configurações ═══</div>
-<div class="line"> ├─ ⚙  [1] ─ P3=1 P11=0</div>
-<div class="line"> ├─ ⚙  [2] ─ P3=2 P11=0</div>
-<div class="line"> ├─ ⚙  [3] ─ P3=3 P11=0</div>
-<div class="line"> ├─ ⚙  [4] ─ P3=4 P11=0</div>
-<div class="line"> ├─ ⚙  [5] ─ P3=1 P11=1</div>
-<div class="line"> ├─ ⚙  [6] ─ P3=2 P11=1</div>
-<div class="line"> ├─ ⚙  [7] ─ P3=3 P11=1</div>
-<div class="line"> ├─ ⚙  [8] ─ P3=4 P11=1</div>
-<div class="line">═╧═══════════════════</div>
-<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
-<div class="line"> ├─ 📋 Tarefas:80   📄 Instâncias: 10   🛠️ Configurações: 8   🖥️ Processos: 1.</div>
-<div class="line"> ├─ ⏱ 10&quot; 339ms       📋 41    📄 2     🛠️ 5     🖥️ 1</div>
-<div class="line"> ├─ 📑  Ficheiro Resultados/particao_2.csv gravado.</div>
-<div class="line"> │  ⏱  Tempo real: 11&quot; 272ms</div>
-<div class="line"> │  ⏱  CPU total: 11&quot; 272ms</div>
-<div class="line"> │  📊  Utilização: 100.0%</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 11&quot; 272ms ) ═══</div>
-</div><!-- fragment --><p>Vamos ver os resultados:</p><ul>
+<p> 
+<pre>
+Opção: 4
+
+
+═╤═ Instâncias ═══ { 📄 2 📄 12 📄 22 📄 32 📄 42 📄 52 📄 62 📄 72 📄 82 📄 92 }
+ ├─ 🛠️  ─ P1=3 P2=3 P4=10 P5=0 P6=4 P7=-1 P8=3  (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ P3=1 P11=0
+ ├─ ⚙  [2] ─ P3=2 P11=0
+ ├─ ⚙  [3] ─ P3=3 P11=0
+ ├─ ⚙  [4] ─ P3=4 P11=0
+ ├─ ⚙  [5] ─ P3=1 P11=1
+ ├─ ⚙  [6] ─ P3=2 P11=1
+ ├─ ⚙  [7] ─ P3=3 P11=1
+ ├─ ⚙  [8] ─ P3=4 P11=1
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:80   📄 Instâncias: 10   🛠️ Configurações: 8   🖥️ Processos: 1.
+ ├─ ⏱ 10" 339ms       📋 41    📄 2     🛠️ 5     🖥️ 1
+ ├─ 📑  Ficheiro Resultados/particao_2.csv gravado.
+ │  ⏱  Tempo real: 11" 272ms
+ │  ⏱  CPU total: 11" 272ms
+ │  📊  Utilização: 100.0%
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 11" 272ms ) ═══
+</pre>
+</p>
+<p>Vamos ver os resultados:</p><ul>
 <li><b>Colunas</b>: P11</li>
 <li><b>Linhas</b>: Instância</li>
 <li><b>Valores</b>: I2(tempo(ms))</li>
@@ -466,48 +474,52 @@ Teste: particao_3</h3>
 <li><b>Esforço</b>: 2:1000:100 P3=1:4; 2:1000:10 P3=1:40; 2:1000 P3=1:40</li>
 <li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 2:1000:100 -R Resultados/particao_3 -P P1=3 P2=3 P7=-1 P8=3 P11=1 P3=1:4</li>
 </ul>
-<div class="fragment"><div class="line"> Opção: 4</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">═╤═ Instâncias ═══ { 📄 2 📄 102 📄 202 📄 302 📄 402 📄 502 📄 602 📄 702 📄 802 📄 902 }</div>
-<div class="line"> ├─ 🛠️  ─ P1=3 P2=3 P4=10 P5=0 P6=4 P7=-1 P8=3 P11=1 (parâmetros comuns)</div>
-<div class="line">═╪═ Configurações ═══</div>
-<div class="line"> ├─ ⚙  [1] ─ P3=1</div>
-<div class="line"> ├─ ⚙  [2] ─ P3=2</div>
-<div class="line"> ├─ ⚙  [3] ─ P3=3</div>
-<div class="line"> ├─ ⚙  [4] ─ P3=4</div>
-<div class="line">═╧═══════════════════</div>
-<div class="line">═╤═ 🧪  Início do Teste (🖥️ 0) ═══</div>
-<div class="line"> ├─ 📋 Tarefas:40   📄 Instâncias: 10   🛠️ Configurações: 4   🖥️ Processos: 1.</div>
-<div class="line"> ├─ ⏱ 10&quot; 141ms       📋 5     📄 402   🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 20&quot; 193ms       📋 7     📄 602   🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 30&quot; 201ms       📋 8     📄 702   🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 40&quot; 206ms       📋 9     📄 802   🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 50&quot; 211ms       📋 10    📄 902   🛠️ 1     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 217ms        📋 11    📄 2     🛠️ 2     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 11&quot; 354ms    📋 15    📄 402   🛠️ 2     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 21&quot; 359ms    📋 16    📄 502   🛠️ 2     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 31&quot; 627ms    📋 19    📄 802   🛠️ 2     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 41&quot; 633ms    📋 20    📄 902   🛠️ 2     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 1&#39; 51&quot; 639ms    📋 21    📄 2     🛠️ 3     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 1&quot; 805ms     📋 24    📄 302   🛠️ 3     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 12&quot; 309ms    📋 27    📄 602   🛠️ 3     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 22&quot; 314ms    📋 28    📄 702   🛠️ 3     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 32&quot; 320ms    📋 29    📄 802   🛠️ 3     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 42&quot; 325ms    📋 30    📄 902   🛠️ 3     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 2&#39; 52&quot; 331ms    📋 31    📄 2     🛠️ 4     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 3&#39; 2&quot; 675ms     📋 35    📄 402   🛠️ 4     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 3&#39; 12&quot; 680ms    📋 36    📄 502   🛠️ 4     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 3&#39; 22&quot; 685ms    📋 37    📄 602   🛠️ 4     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 3&#39; 32&quot; 690ms    📋 38    📄 702   🛠️ 4     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 3&#39; 42&quot; 696ms    📋 39    📄 802   🛠️ 4     🖥️ 1</div>
-<div class="line"> ├─ ⏱ 3&#39; 52&quot; 702ms    📋 40    📄 902   🛠️ 4     🖥️ 1</div>
-<div class="line"> ├─ 📑  Ficheiro Resultados/particao_3.csv gravado.</div>
-<div class="line"> │  ⏱  Tempo real: 4&#39; 2&quot; 708ms</div>
-<div class="line"> │  ⏱  CPU total: 4&#39; 2&quot; 708ms</div>
-<div class="line"> │  📊  Utilização: 100.0%</div>
-<div class="line">═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4&#39; 2&quot; 708ms ) ═══</div>
-</div><!-- fragment --><p>Vamos ver os resultados:</p><ul>
+<p> 
+<pre>
+ Opção: 4
+
+
+═╤═ Instâncias ═══ { 📄 2 📄 102 📄 202 📄 302 📄 402 📄 502 📄 602 📄 702 📄 802 📄 902 }
+ ├─ 🛠️  ─ P1=3 P2=3 P4=10 P5=0 P6=4 P7=-1 P8=3 P11=1 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ P3=1
+ ├─ ⚙  [2] ─ P3=2
+ ├─ ⚙  [3] ─ P3=3
+ ├─ ⚙  [4] ─ P3=4
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:40   📄 Instâncias: 10   🛠️ Configurações: 4   🖥️ Processos: 1.
+ ├─ ⏱ 10" 141ms       📋 5     📄 402   🛠️ 1     🖥️ 1
+ ├─ ⏱ 20" 193ms       📋 7     📄 602   🛠️ 1     🖥️ 1
+ ├─ ⏱ 30" 201ms       📋 8     📄 702   🛠️ 1     🖥️ 1
+ ├─ ⏱ 40" 206ms       📋 9     📄 802   🛠️ 1     🖥️ 1
+ ├─ ⏱ 50" 211ms       📋 10    📄 902   🛠️ 1     🖥️ 1
+ ├─ ⏱ 1' 217ms        📋 11    📄 2     🛠️ 2     🖥️ 1
+ ├─ ⏱ 1' 11" 354ms    📋 15    📄 402   🛠️ 2     🖥️ 1
+ ├─ ⏱ 1' 21" 359ms    📋 16    📄 502   🛠️ 2     🖥️ 1
+ ├─ ⏱ 1' 31" 627ms    📋 19    📄 802   🛠️ 2     🖥️ 1
+ ├─ ⏱ 1' 41" 633ms    📋 20    📄 902   🛠️ 2     🖥️ 1
+ ├─ ⏱ 1' 51" 639ms    📋 21    📄 2     🛠️ 3     🖥️ 1
+ ├─ ⏱ 2' 1" 805ms     📋 24    📄 302   🛠️ 3     🖥️ 1
+ ├─ ⏱ 2' 12" 309ms    📋 27    📄 602   🛠️ 3     🖥️ 1
+ ├─ ⏱ 2' 22" 314ms    📋 28    📄 702   🛠️ 3     🖥️ 1
+ ├─ ⏱ 2' 32" 320ms    📋 29    📄 802   🛠️ 3     🖥️ 1
+ ├─ ⏱ 2' 42" 325ms    📋 30    📄 902   🛠️ 3     🖥️ 1
+ ├─ ⏱ 2' 52" 331ms    📋 31    📄 2     🛠️ 4     🖥️ 1
+ ├─ ⏱ 3' 2" 675ms     📋 35    📄 402   🛠️ 4     🖥️ 1
+ ├─ ⏱ 3' 12" 680ms    📋 36    📄 502   🛠️ 4     🖥️ 1
+ ├─ ⏱ 3' 22" 685ms    📋 37    📄 602   🛠️ 4     🖥️ 1
+ ├─ ⏱ 3' 32" 690ms    📋 38    📄 702   🛠️ 4     🖥️ 1
+ ├─ ⏱ 3' 42" 696ms    📋 39    📄 802   🛠️ 4     🖥️ 1
+ ├─ ⏱ 3' 52" 702ms    📋 40    📄 902   🛠️ 4     🖥️ 1
+ ├─ 📑  Ficheiro Resultados/particao_3.csv gravado.
+ │  ⏱  Tempo real: 4' 2" 708ms
+ │  ⏱  CPU total: 4' 2" 708ms
+ │  📊  Utilização: 100.0%
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 4' 2" 708ms ) ═══
+</pre>
+</p>
+<p>Vamos ver os resultados:</p><ul>
 <li><b>Colunas</b>: valores</li>
 <li><b>Linhas</b>: Instância</li>
 <li><b>Valores</b>: Resolvido, mín I2, média I2, máximo I2</li>

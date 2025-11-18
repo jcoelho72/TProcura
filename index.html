@@ -187,38 +187,43 @@ Funcionalidades</h1>
 <p><a class="anchor" id="s3"></a></p>
 <h1><a class="anchor" id="autotoc_md170"></a>
 📦 Estrutura do Repositório</h1>
-<p>O repositório inclui 4 projetos principais, cada um com uma superclasse base para implementação de novos problemas: </p><div class="fragment"><div class="line">TProcura</div>
-<div class="line">├─ TProcuraConstrutiva  </div>
-<div class="line">│  └─ TProcuraAdversa </div>
-<div class="line">└─ TProcuraMelhorativa  </div>
-</div><!-- fragment --><ul>
+<p>O repositório inclui 4 projetos principais, cada um com uma superclasse base para implementação de novos problemas:</p>
+<pre>
+<a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>
+├─ <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>  
+│  └─ <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 
+└─ <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>  
+</pre><ul>
 <li><a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>: modos de execução (interativo, linha de comandos, MPI), gestão de parâmetros e indicadores, execução de testes.</li>
 <li><a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a> / <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>: algoritmos construtivos e adversos, exigem implementação de sucessores e heurística.</li>
 <li><a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>: algoritmos melhorativos (solução inicial, vizinhança, mutação, cruzamento, avaliação).</li>
 </ul>
-<p>Subclasses já fornecem operadores para diferentes representações, restando apenas implementar a avaliação. </p><div class="fragment"><div class="line">── TProcuraMelhorativa    </div>
-<div class="line">   ├─ TRepresentacaoBinaria </div>
-<div class="line">   ├─ TRepresentacaoInteira </div>
-<div class="line">   ├─ TRepresentacaoPermutacao </div>
-<div class="line">   ├─ TRepresentacaoReal   </div>
-<div class="line">   └─ TRepresentacaoArvore </div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md171"></a>
+<p>Subclasses já fornecem operadores para diferentes representações, restando apenas implementar a avaliação. </p><pre>
+── <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>    
+   ├─ TRepresentacaoBinaria 
+   ├─ TRepresentacaoInteira 
+   ├─ TRepresentacaoPermutacao 
+   ├─ TRepresentacaoReal   
+   └─ TRepresentacaoArvore 
+</pre><h2><a class="anchor" id="autotoc_md171"></a>
 Estrutura de Pastas</h2>
-<p>A estrutura do repositório é a seguinte: </p><div class="fragment"><div class="line">TProcura</div>
-<div class="line">├─ Adversa/Construtiva/Melhorativa # pastas de projetos principais  </div>
-<div class="line">│  └─ Teste          # projeto de teste (não necessário para usar a biblioteca)</div>
-<div class="line">│     ├─ CasosTeste  # ficheiros para testes de validação de alterações ao código</div>
-<div class="line">│     ├─ Resultados  # ficheiros CSV de execução (não colocados no repositório)</div>
-<div class="line">│     └─ bin/x64     # (fora do repositório) pasta bin criada na compilação em linux ou x64 no Visual Studio</div>
-<div class="line">│        ├─ Debug</div>
-<div class="line">│        ├─ MPI</div>
-<div class="line">│        └─ Release</div>
-<div class="line">├─ Teste             # mesma estrutura em todos os projetos</div>
-<div class="line">│  └─ ...   </div>
-<div class="line">├─ docs              # documentação em Markdown</div>
-<div class="line">└─ styles            # estilos doxygen</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md172"></a>
-Compilação e Execução</h2>
+<p>A estrutura do repositório é a seguinte: </p><pre>
+<a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>
+├─ Adversa/Construtiva/Melhorativa # pastas de projetos principais  
+│  └─ Teste          # projeto de teste (não necessário para usar a biblioteca)
+│     ├─ CasosTeste  # ficheiros para testes de validação de alterações ao código
+│     ├─ Resultados  # ficheiros CSV de execução (não colocados no repositório)
+│     └─ bin/x64     # (fora do repositório) pasta bin criada na compilação em linux ou x64 no Visual Studio
+│        ├─ Debug
+│        ├─ MPI
+│        └─ Release
+├─ Teste             # mesma estrutura em todos os projetos
+│  └─ ...   
+├─ docs              # documentação em Markdown
+└─ styles            # estilos doxygen
+</pre><p>#</p>
+<h1><a class="anchor" id="autotoc_md172"></a>
+Compilação e Execução</h1>
 <p>Na pasta <code>&lt;projeto&gt;/Teste</code> do projeto respetivo:</p>
 <ul>
 <li><b>Linux</b>: <br  />
