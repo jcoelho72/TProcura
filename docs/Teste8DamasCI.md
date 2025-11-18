@@ -18,15 +18,16 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 - [Ação 3 - Algoritmos Evolutivos](#8damas-ci3)
 - [Ação 4 - Testes Empíricos](#8damas-ci6)
 
-
-```entrada
+\htmlonly
+<pre>
 ┌─ Teste TProcuraMelhorativa ──┐
 │ 1 - 8 Damas (Inteira)        │
 │ 2 - 8 Damas (Permutacao)     │
 │ 3 - Partição (Binária)       │
 └──────────────────────────────┘
 Opção: 1
-```
+</pre>
+\endhtmlonly
 
 
 \anchor 8damas-ci1
@@ -34,7 +35,8 @@ Opção: 1
 
 Vamos entrar no problema 8 Damas Inteira, introduza: **1.**
 
-```entrada
+\htmlonly
+<pre>
 8 Damas (Inteira)
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
@@ -58,7 +60,9 @@ Vamos entrar no problema 8 Damas Inteira, introduza: **1.**
 │ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção:
-```
+</pre>
+\endhtmlonly
+
 Temos uma instância das 8 Damas como no exemplo da TProcuraConstrutiva. 
 Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, 
 existem damas já colocadas mas que se atacam mutuamente.
@@ -78,7 +82,8 @@ Vamos trocar para uma instância menor antes de avançarmos, para simplificar a 
 
 Introduza: **1;4.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 1
 
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
@@ -95,7 +100,8 @@ Novo ID (ENTER mantém) ou novo prefixo (texto): 4
 ♛ ::  ::
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Estavamos na instância 8 e agora estamos na instância 4.
 Temos um tabuleiro de 4x4 para colcoar 4 damas.
@@ -107,7 +113,8 @@ Podiamos ter escolhido até tabuleiros de 40x40.
 
 Vamos então resolver a instância manualmente. Introduza: **2.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 2
 
  │ 🏆  ⏱  💰 g:2
@@ -132,7 +139,9 @@ Opção: 2
  │ │ 4   │   4│   1│   3│    │
  │ │ ────┴────┴────┴────┴────┴
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos):
-```
+</pre>
+\endhtmlonly
+
 Entramos num modo de expoloração manual, com as operações dos algoritmos melhorativos.
 No entanto a população foi fixada a 4, para podermos melhor gerir a exploração manual.
 Durante a geração da população de 4 elementos, foi encontrada uma solução de custo 2, mostrada.
@@ -154,7 +163,8 @@ Há dois elmentos à distância de 1 unidade, o 2 e 4. De facto, estes diferem a
 Temos 3 operações para testar, a mutação, cruzamento e vizinhança.
 Vamos começar pela mutação, para mutar o indivíduo 4. Introduza: **1; 4.**
 
-```entrada
+\htmlonly
+<pre>
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 1
  │ ┌───── ✨  ─────
  │ │ ⚪  [1-4]: 4
@@ -180,7 +190,8 @@ Vamos começar pela mutação, para mutar o indivíduo 4. Introduza: **1; 4.**
  │ │ 4   │   4│   2│   4│    │
  │ │ ────┴────┴────┴────┴────┴
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos):
-```
+</pre>
+\endhtmlonly
 
 A mutação acabou por trocar apenas um valor, o que se pode confirmar nas linhas Atual e Mutado,
 com as codificaçõe seguidas e alinhadas.
@@ -192,7 +203,8 @@ Vamos agora passar para o cruzamento, e cruzar o individuo 1 com o 3,
 os dois melhores na população, e substituir o individuo 4. 
 Introduza: **2; 1; 3; 4.**
 
-```entrada
+\htmlonly
+<pre>
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 2
  │ ┌───── 🧬  ─────
  │ │ ⚪ Pai [1-4]: 1
@@ -222,7 +234,9 @@ Introduza: **2; 1; 3; 4.**
  │ │ 4   │   1│   3│   3│    │
  │ │ ────┴────┴────┴────┴────┴
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos):
-```
+</pre>
+\endhtmlonly
+
 O filho ficou quase igual ao pai, com os três primeiros elmentos da do pai, e o último da mãe. 
 Existem vários tipos de operadores de cruzamento, controlados pelo parametro P20(TIPO_CRUZAR).
 Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.
@@ -230,7 +244,8 @@ Diferentes operadores estão disponíveis em diferentes codificações, podendo 
 Falta-nos explorar o operador de vizinhança, pelo que vamos aplicar ao melhor individuo 1, e escolher o melhor vizinho. 
 Introduza: **3; 1; 1.**
 
-```entrada
+\htmlonly
+<pre>
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 3
  │ ┌───── 🔗  ─────
  │ │ ⚪ [1-4]: 1
@@ -266,7 +281,8 @@ Introduza: **3; 1; 1.**
  │ │ 4   │   2│   3│   3│    │
  │ │ ────┴────┴────┴────┴────┴
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos):
-```
+</pre>
+\endhtmlonly
 
 O vizinho gerado tem custo 1, pelo que estamos mais perto. 
 Foi feita a substituição da melhor solução.
@@ -276,7 +292,8 @@ Devido a esta opção, a vizinhança tem um número controlado de indivíduos.
 Vamos insistir e ver os vizinhos deste novo elemento, e novamente escolher o melhor destes.
 Introduza: **3; 1; 3.**
 
-```entrada
+\htmlonly
+<pre>
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 3
  │ ┌───── 🔗  ─────
  │ │ ⚪ [1-4]: 1
@@ -310,13 +327,15 @@ Introduza: **3; 1; 3.**
  │ │ 4   │   3│   3│   3│    │
  │ │ ────┴────┴────┴────┴────┴
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos):
-```
+</pre>
+\endhtmlonly
 
 Neste caso o vizinho tem o mesmo custo, mas é outro vizinho,
 pelo que vale a pena ainda uma última vez, ver quais os seus vizinhos.
 Introduza: **3; 1; 5.**
 
-```entrada
+\htmlonly
+<pre>
  │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): 3
  │ ┌───── 🔗  ─────
  │ │ ⚪ [1-4]: 1
@@ -345,7 +364,9 @@ Introduza: **3; 1; 5.**
   ::♛ ::
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
+
 Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem.
 Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, 
 sendo a solução obitida é retornada. 
@@ -358,7 +379,8 @@ sendo a solução obitida é retornada.
 Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização de omissão.
 Introduza: **1; 4; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -385,7 +407,8 @@ Opção: 6
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Podemos ver que o primeiro indicador, I1(Resultado) é igual a 0. Este é o custo da solução.
 Podemos observar a solução e ver que as damas não se atacam, aliás, é exatamente a mesma solução obtida manualmente.
@@ -406,8 +429,8 @@ Como podemos repetir todas as execuções, podemos ver a mesma execução com di
 Vamos aproveitar esta execução que tem tamanho reduzido, para ir subindo o nível de debug.
 Introduza: **1; 4; 3; 2; 1; *ENTER*; 6.**
 
-
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══.
@@ -455,7 +478,9 @@ Opção: 6
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
+
 Nesta repetição vemos um ponto de quando em quando, para saber que há atividade. 
 No final são introduzidos 128 pontos, se o número de iterações for atingido.
 Como gastamos muito poucas iterações e o limite é muito alto, estes pontos nem são visiveis.
@@ -470,7 +495,8 @@ Sabemos mais alguma coisa do que se passou, mas não muito.
 Vamos ver agora o nível de debug PASSOS.
 Introduza: **1; 4; 3; 2; 2; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -528,7 +554,8 @@ Opção: 6
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Temos agora a informação das diferentes épocas. 
 Em cada época é registado o instante em que esta ocorre, neste caso apenas alguns milisegundos,
@@ -546,7 +573,8 @@ Fora o parametro do elitismo, nada mais pode ser observado ou verificada a sua u
 É tempo para aumentar o nível de debug para DETALHE.
 Introduza: **1; 4; 3; 2; 3; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -654,7 +682,8 @@ Opção: 6
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Temos agora uma tabela para cada época e informação sobre as distâncias.
 Na época 0 sabemos que as distâncias entre indivíduos vão de 1 a 4, a média das distâncias é 2,
@@ -682,7 +711,8 @@ Mas isso é interno aos algoritmos evolutivos, nada é visivel neste nível de d
 É portanto tempo para passarmos para o último nível de debug, COMPLETO.
 Introduza:  **1; 4; 3; 2; 4; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -1081,7 +1111,8 @@ Opção: 6
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 A informação é agora bastante extensa,
 mas cortou-se a informação de debug, mostrando-se apenas as primeiras e últimas épocas.

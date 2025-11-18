@@ -24,16 +24,18 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 - [Ação 8 - Resolver outra instância](#aspirador-a8)
 - [Ação 9 - Desafio Procura em Largura](#aspirador-a8)
 
-
-```entrada
+\htmlonly
+<pre>
 ┌─ Teste TProcuraConstrutiva ──┐
 │ 1 - Aspirador                │
 │ 2 - Puzzle 8                 │
 │ 3 - 8 Damas                  │
 │ 4 - Partição                 │
 └──────────────────────────────┘
-Opção: 1
-```
+Opção: <span class="entrada">1</span>
+</pre>
+\endhtmlonly
+
 
 ![Aspirador - espaço de estados para 2 salas](docs/images/aspirador.png)
 
@@ -43,20 +45,23 @@ A versão deste problema foi generalizada no código para poderem existir N sala
 uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.
 
 
-```entrada
+\htmlonly
+<pre>
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
- │ [*] *  .  *
+ │ [*] *  .  * 
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 
 Esta é a informação apresentada no teste manual. 
 Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais.
@@ -90,28 +95,29 @@ e não lidas de ficheiros, pelo que escolhemos apenas o ID da instância.
 Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na terceira sala, 
 estando as duas primeiras sujas:
 
-```entrada
-Opção: 1
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">1</span>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
-│ ID atual: 4  Intervalo: [2–50]
-│ Prefixo atual: 'instancia_'
+│ <span style="color:gray">ID atual:</span> 4  <span style="color:gray">Intervalo:</span> [2–50]  
+│ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto): 2
-
+Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">2</span>
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
  * [*]
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 
 Agora temos uma instância com 2 salas, estando ambas sujas, e o aspirador está na segunda:
 A representação do estado é algo que é implementado na sub-classe 
@@ -128,30 +134,30 @@ garantindo assim que podemos obter a mesma instância mais tarde.
 
 A partir do estado atual, introduza: **2; 1; 2.**
 
-```entrada
-Opção: 2
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">2</span>
 ═╤═ 💰 g:0 🎯 h:3 ⚖  1|2 ═══
  │  * [*]
  │ └─ ⚡  ──── esq asp
-🔍 Sucessor [1-2, ação(ões), exe]: 1
-
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">1</span>
 ┌─ ✔  ───────────────
-│ Ação executada.
+│ Ação executada.    
 └────────────────────
 ═╤═ 💰 g:0 🎯 h:3 ⚖  2|4 ═══
- │ [*] *
+ │ [*] * 
  │ └─ ⚡  ──── dir asp
-🔍 Sucessor [1-2, ação(ões), exe]: 2
-
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">2</span>
 ┌─ ✔  ───────────────
-│ Ação executada.
+│ Ação executada.    
 └────────────────────
 ═╤═ 💰 g:0 🎯 h:2 ⚖  3|6 ═══
- │ [.] *
+ │ [.] * 
  │ └─ ⚡  ──── dir asp
-🔍 Sucessor [1-2, ação(ões), exe]:
-```
+🔍 Sucessor [1-2, ação(ões), exe]: 
+</pre>
+\endhtmlonly
+
 
 Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda,
 ou aspirar a sala atual. 
@@ -167,26 +173,27 @@ Utilize desta vez o nome das ações e não número, introduzido duas ações de
 Introduza: **dir asp; *ENTER*.**
 Note que "dir asp" podem ser introduzidas de uma vez.
 
-```entrada
-🔍 Sucessor [1-2, ação(ões), exe]: dir asp
-
+\htmlonly
+<pre>
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">dir asp</span>
 ┌─ ✔  ────────────────
-│ Executadas 2 ações.
+│ Executadas 2 ações. 
 └─────────────────────
 ═╤═ 💰 g:0 ⚖  6|12 ═══
  │  . [.]
  │ └─ ⚡  ──── esq asp
-🔍 Sucessor [1-2, ação(ões), exe]:
-
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">↵</span>
 Aspirador
 ...
  │  . [.]
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 
 Ao receber as duas ações, estas foram executadas e indicado o número de ações executados com sucesso.
 Se fosse uma solução completa, todas as ações até ao estado final,
@@ -207,22 +214,24 @@ forma lhe passariam desapercebidas.
 O resultado da resolução manual da ação anterior, é visualizar apenas o último estado. 
 No entanto houve um caminho, que ficou guardado. Introduza: **4.**
 
-```entrada
-Opção: 4
-
-══ ✔   Solução ══
+\htmlonly
+<pre>
+Opção: <span class="entrada">4</span>
+══ ✔  Solução ══
  │  * [*] (💰 g:0) ⚡  → esq → asp → dir → asp
- │  . [.] (💰 g:4) 🎯
+ │  . [.] (💰 g:4) 🎯 
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
  │  . [.]
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 
 Neste problema uma solução é um conjunto de ações, o caminho desde o estado inicial até ao estado final. 
 É mostrado esse caminho visualizando as ações a partir do estado inicial. 
@@ -239,51 +248,54 @@ Para isso é preciso alterar o parâmetro P6(VER_ACOES).
 
 Vamos editar o parâmetro P6(VER_ACOES). Introduza: **3**
 
-```entrada
-Opção: 3
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">3</span>
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO):             Largura Primeiro (1 a 7)
-│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
-│ P3(SEMENTE):               1          (1 a 1000000)
-│ P4(LIMITE_TEMPO):          10         (1 a 3600)
-│ P5(LIMITE_ITERACOES):      0          (0 a 1000000000)
-│ P6(VER_ACOES):             4          (1 a 100)
-│ P7(LIMITE):                0          (-1 a 1000000)
-│ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
-│ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
+│ <span style="color:gray">P1(ALGORITMO):</span>             Largura Primeiro <span style="color:gray">(1 a 7)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
+│ <span style="color:gray">P7(LIMITE):</span>                0          <span style="color:gray">(-1 a 1000000)</span>
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
 └──────────────────────────────────────────────────────────────────────
-Parametro:
-```
+Parâmetro:
+</pre>
+\endhtmlonly
+
 Podemos ver todos os os parâmetros e valores mínimos e máximos.  
 Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 6, 
 tem o valor 4, e pretendemos colocar a 1.
 Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição.
 Introduza: **6; 1; *ENTER*; 4.**
 
-```entrada
-Parametro:6
-
-┌─ ⚙️  P6(VER_ACOES) ──────────────────────────────────────────────────
+\htmlonly
+<pre>
+Parâmetro: <span class="entrada">6</span>
+┌─ ⚙  P6(VER_ACOES) ───────────────────────────────────────────────────
 │ Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações.
 │ Intervalo: 1 a 100
 └──────────────────────────────────────────────────────────────────────
-VER_ACOES (atual 4): 1
+VER_ACOES (atual 4): <span class="entrada">1</span>
 ...
-Opção: 4
-
+Opção: <span class="entrada">4</span>
 ══ ✔  Solução ══
- │  * [*] (💰 g:0) ⚡
- │ [*] *  (💰 g:1) ⚡
- │ [.] *  (💰 g:2) ⚡
- │  . [*] (💰 g:3) ⚡
- │  . [.] (💰 g:4) 🎯
+ │  * [*] (💰 g:0) ⚡ 
+ │ [*] *  (💰 g:1) ⚡ 
+ │ [.] *  (💰 g:2) ⚡ 
+ │  . [*] (💰 g:3) ⚡ 
+ │  . [.] (💰 g:4) 🎯 
 Aspirador
 ...
  │  . [.]
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.
 
 \anchor aspirador-a5
@@ -297,86 +309,91 @@ A opção 1 já sabemos, inicia uma instância, neste caso 2.
 A opção 4 vamos alterar neste caso o parâmetro nível de debug. 
 Há vários níveis de debug, sendo o 4 o valor que mostra a informação mais completa, embora extensa. 
 
-```entrada
+\htmlonly
+<pre>
 ...
-Parametro:2
-
-┌─ ⚙️ P2(NIVEL_DEBUG) ────────────────────────────────────────────────
-│ Nível de debug, de reduzido a completo.
-│ 0: NADA
-│ 1: ATIVIDADE
-│ 2: PASSOS
-│ 3: DETALHE
-│ 4: COMPLETO
+Parâmetro: <span class="entrada">2</span>
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ <span style="color:gray">0:</span> NADA
+│ <span style="color:gray">1:</span> ATIVIDADE
+│ <span style="color:gray">2:</span> PASSOS
+│ <span style="color:gray">3:</span> DETALHE
+│ <span style="color:gray">4:</span> COMPLETO
 └──────────────────────────────────────────────────────────────────────
-NIVEL_DEBUG (atual 0): 4
+NIVEL_DEBUG (atual 0): <span class="entrada">4</span>
 ...
  * [*]
-____________________________________________________________________
-```
+...
+Opção: <span class="entrada">6</span>
+</pre>
+\endhtmlonly
+
 A opção 6 executa o algoritmo selecionado, que é a Largura Primeiro.
 
-```entrada
-Opção: 6
-
+\htmlonly
+<pre>
+Opção: 
 ═╤═ ►  Execução iniciada ═══
  ├■═╤═ 💰 g:0  ═══ { }
  │  * [*]
  │  ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ esq
- │  │ [*] *
+ │  │ [*] * 
  │  └■═╤═ 🔖 2 💰 g:1 ⚖  1|2 ═══ asp
  │     * [.]
- ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 }
- │ [*] *
+ ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 } 
+ │ [*] * 
  │  ├■═╤═ 🔖 3 💰 g:2 ⚖  2|4 ═══ dir
  │  │  * [*]
  │  └■═╤═ 🔖 4 💰 g:2 ⚖  2|4 ═══ asp
- │    [.] *
- ├■═╤═ 🔖 2 💰 g:1 ⚖  2|4 ═══ { 🔖 3 🔖 4 }
+ │    [.] * 
+ ├■═╤═ 🔖 2 💰 g:1 ⚖  2|4 ═══ { 🔖 3 🔖 4 } 
  │  * [.]
  │  ├■═╤═ 🔖 5 💰 g:2 ⚖  3|6 ═══ esq
- │  │ [*] .
+ │  │ [*] . 
  │  └■═╤═ 🔖 6 💰 g:2 ⚖  3|6 ═══ asp
  │     * [.]
- ├■═╤═ 🔖 3 💰 g:2 ⚖  3|6 ═══ { 🔖 4 🔖 5 🔖 6 }
+ ├■═╤═ 🔖 3 💰 g:2 ⚖  3|6 ═══ { 🔖 4 🔖 5 🔖 6 } 
  │  * [*]
  │  ├■═╤═ 🔖 7 💰 g:3 ⚖  4|8 ═══ esq
- │  │ [*] *
+ │  │ [*] * 
  │  └■═╤═ 🔖 8 💰 g:3 ⚖  4|8 ═══ asp
  │     * [.]
- ├■═╤═ 🔖 4 💰 g:2 ⚖  4|8 ═══ { 🔖 5 🔖 6 🔖 7 🔖 8 }
- │ [.] *
+ ├■═╤═ 🔖 4 💰 g:2 ⚖  4|8 ═══ { 🔖 5 🔖 6 🔖 7 🔖 8 } 
+ │ [.] * 
  │  ├■═╤═ 🔖 9 💰 g:3 ⚖  5|10 ═══ dir
  │  │  . [*]
  │  └■═╤═ 🔖 10 💰 g:3 ⚖  5|10 ═══ asp
- │    [.] *
- ├■═╤═ 🔖 5 💰 g:2 ⚖  5|10 ═══ { 🔖 6 🔖 7 🔖 8 🔖 9 🔖 10 }
- │ [*] .
+ │    [.] * 
+ ├■═╤═ 🔖 5 💰 g:2 ⚖  5|10 ═══ { 🔖 6 🔖 7 🔖 8 🔖 9 🔖 10 } 
+ │ [*] . 
  │  ├■═╤═ 🔖 11 💰 g:3 ⚖  6|12 ═══ dir
  │  │  * [.]
  │  └■═╤═ 🔖 12 💰 g:3 ⚖  6|12 ═══ asp
- │    [.] .
+ │    [.] . 
  │  🎯  Solução encontrada! 💰 g:3
- │ [.] .
- ├─ Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0
+ │ [.] . 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0
 ═╧═ 🏁  Execução terminada ⏱    ═══
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 1 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
-[.] .
+[.] . 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 6 |
-│ I5(IND_GERACOES): 12 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 3 | <span style="color:gray">I2(Tempo(ms)):</span> 0 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 12 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 
 Verificar que o número de expansões é 6 e gerações é 12. O resultado da procura é 3, sendo recolhido pelo I1(IND_CUSTO). 
 Significa que a procura encontrou uma solução de comprimento 3. Notar que o I3(Iterações) e I6(IND_LOWER_BOUND) ficaram a 0, já que 
@@ -386,16 +403,21 @@ No caso de não ter os resultados iguais, confirme se todos os parâmetros estã
 
 Podemos ver a solução, tendo ficado guardada, tal como na resolução manual. Introduza: **4.**
 
-```entrada
-Opção: 4
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">4</span>
 ══ ✔  Solução ══
- * [*] (💰 g:0) ⚡
- * [.] (💰 g:1) ⚡
-[*] .  (💰 g:2) ⚡
-[.] .  (💰 g:3) 🎯
+ * [*] (💰 g:0) ⚡ 
+ * [.] (💰 g:1) ⚡ 
+[*] .  (💰 g:2) ⚡ 
+[.] .  (💰 g:3) 🎯 
 ...
-```
+[.] . 
+...
+Opção: 
+</pre>
+\endhtmlonly
+
 Verifique que tem apenas 3 movimentos, ao contrário dos 4 obtidos na resolução manual.
 
 A árvore da procura em largura não é desenhada na visualização textual, apenas na procura em profundidade.
@@ -429,38 +451,41 @@ e o debug para nível 3: **1; 2; 3; 8; 2; 2; 3; *ENTER*; 6.**
 
 - Verificar que o número de expansões é 5 e gerações é 6, uma melhoria.  O resultado da procura mantém-se em 3.
 
-```entrada
-Opção: 6
-
+\htmlonly
+<pre>
+...
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├■═╤═ 💰 g:0  ═══ { }
  │  * [*]
- ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 }
- │ [*] *
- ├■═╤═ 🔖 2 💰 g:1 ⚖  2|3 ═══ { 🔖 3 }
+ ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 } 
+ │ [*] * 
+ ├■═╤═ 🔖 2 💰 g:1 ⚖  2|3 ═══ { 🔖 3 } 
  │  * [.]
- ├■═╤═ 🔖 3 💰 g:2 ⚖  3|4 ═══ { 🔖 4 }
- │ [.] *
- ├■═╤═ 🔖 4 💰 g:2 ⚖  4|5 ═══ { 🔖 5 }
- │ [*] .
+ ├■═╤═ 🔖 3 💰 g:2 ⚖  3|4 ═══ { 🔖 4 } 
+ │ [.] * 
+ ├■═╤═ 🔖 4 💰 g:2 ⚖  4|5 ═══ { 🔖 5 } 
+ │ [*] . 
  │  🎯  Solução encontrada! 💰 g:3
- │ [.] .
- ├─ Parâmetros ─ P1=1 P2=3 P3=1 P4=10 P5=0 P6=1 P7=0 P8=2 P11=0
+ │ [.] . 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>2 <span style="color:gray">P11=</span>0
 ═╧═ 🏁  Execução terminada ⏱    ═══
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ascendentes | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> DETALHE | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 1 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ascendentes | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
-[.] .
+[.] . 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |
-│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 3 | <span style="color:gray">I2(Tempo(ms)):</span> 0 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 5 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 6 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 A interação de troca de parâmetro não é mais mostrada para não saturar o texto. 
 
 Podemos ver o nível de debug a 3. Tem apenas os estados expandidos, mas não vemos os estados gerados.
@@ -473,33 +498,36 @@ Podemos também confirmar que o estado inicial não foi um dos gerados, caso con
 Alterar a  opção para remover os repetidos com base nos gerados, e alterar o debug para nível 2: 
 **1; 2; 3; 8; 3; 2; 2; *ENTER*; 6.**
 
-```entrada
-Opção: 6
-
+\htmlonly
+<pre>
+...
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├■═╤═ 💰 g:0  ═══ { }
- ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 }
- ├■═╤═ 🔖 2 💰 g:1 ⚖  2|3 ═══ { 🔖 3 }
- ├■═╤═ 🔖 3 💰 g:2 ⚖  3|4 ═══ { 🔖 4 }
- ├■═╤═ 🔖 4 💰 g:2 ⚖  4|5 ═══ { 🔖 5 }
+ ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ { 🔖 2 } 
+ ├■═╤═ 🔖 2 💰 g:1 ⚖  2|3 ═══ { 🔖 3 } 
+ ├■═╤═ 🔖 3 💰 g:2 ⚖  3|4 ═══ { 🔖 4 } 
+ ├■═╤═ 🔖 4 💰 g:2 ⚖  4|5 ═══ { 🔖 5 } 
  │  🎯  Solução encontrada! 💰 g:3
- │ [.] .
- ├─ Parâmetros ─ P1=1 P2=2 P3=1 P4=10 P5=0 P6=1 P7=0 P8=3 P11=0
-═╧═ 🏁  Execução terminada ⏱   8ms  ═══
+ │ [.] . 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>3 <span style="color:gray">P11=</span>0
+═╧═ 🏁  Execução terminada ⏱   9ms  ═══
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): gerados | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> PASSOS | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 1 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> gerados | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
-[.] .
+[.] . 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 8 | I3(Iterações): 0 | I4(IND_EXPANSOES): 5 |
-│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 3 | <span style="color:gray">I2(Tempo(ms)):</span> 9 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 5 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 6 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g) seguido de dois números: 
 expansões e gerações realizadas até ao momento.
 A lista com os estados gerados nãó expandidos, é ainda visualizada no final.
@@ -523,55 +551,58 @@ Repor a opção de ignorar os repetidos, colocar o debug no nível 1, e procurar
 Pode haver um problema de memória. 
 A instância é demasiado grande, e sem remover repetidos, rapidamente gera demasiados estados:  
 
-```entrada
+\htmlonly
+<pre>
 ...
- *  *  .  *  * [*] *  .  .  .
+ *  *  .  *  * [*] *  .  .  . 
 ...
-Opção: 6
-
-═╤═ ►  Execução iniciada ═══########...###############
+Opção: <span class="entrada">6</span>
+═╤═ ►  Execução iniciada ═══#######...#######
  │  🎯  Solução encontrada! 💰 g:13
- │ [.] .  .  .  .  .  .  .  .  .
- ├─ Parâmetros ─ P1=1 P2=1 P3=1 P4=10 P5=0 P6=1 P7=0 P8=1 P11=0
-═╧═ 🏁  Execução terminada ⏱   376ms  ═══
+ │ [.] .  .  .  .  .  .  .  .  . 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>1 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0
+═╧═ 🏁  Execução terminada ⏱   626ms  ═══
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> ATIVIDADE | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 1 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
-[.] .  .  .  .  .  .  .  .  .
+[.] .  .  .  .  .  .  .  .  . 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 13 | I2(Tempo(ms)): 376 | I3(Iterações): 0 | I4(IND_EXPANSOES): 516031 |
-│ I5(IND_GERACOES): 1513017 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 13 | <span style="color:gray">I2(Tempo(ms)):</span> 626 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 516031 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 1513017 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 São demasiados estados gerados, 1,5 milhões, em 0.4 segundos. 
 Há um # que é colocado no output a cada 1000 expansões. 
 Se desconfiamos que com tanto estado, dificilmente a solução pode ser óptima, podemos ver a solução.
 Introduza: **4**
 
-```entrada
-Opção: 4
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">4</span>
 ══ ✔  Solução ══
- *  *  .  *  * [*] *  .  .  .  (💰 g:0) ⚡
- *  *  .  *  *  * [*] .  .  .  (💰 g:1) ⚡
- *  *  .  *  *  * [.] .  .  .  (💰 g:2) ⚡
- *  *  .  *  * [*] .  .  .  .  (💰 g:3) ⚡
- *  *  .  *  * [.] .  .  .  .  (💰 g:4) ⚡
- *  *  .  * [*] .  .  .  .  .  (💰 g:5) ⚡
- *  *  .  * [.] .  .  .  .  .  (💰 g:6) ⚡
- *  *  . [*] .  .  .  .  .  .  (💰 g:7) ⚡
- *  *  . [.] .  .  .  .  .  .  (💰 g:8) ⚡
- *  * [.] .  .  .  .  .  .  .  (💰 g:9) ⚡
- * [*] .  .  .  .  .  .  .  .  (💰 g:10) ⚡
- * [.] .  .  .  .  .  .  .  .  (💰 g:11) ⚡
-[*] .  .  .  .  .  .  .  .  .  (💰 g:12) ⚡
-[.] .  .  .  .  .  .  .  .  .  (💰 g:13) 🎯
-```
+ *  *  .  *  * [*] *  .  .  .  (💰 g:0) ⚡ 
+ *  *  .  *  *  * [*] .  .  .  (💰 g:1) ⚡ 
+ *  *  .  *  *  * [.] .  .  .  (💰 g:2) ⚡ 
+ *  *  .  *  * [*] .  .  .  .  (💰 g:3) ⚡ 
+ *  *  .  *  * [.] .  .  .  .  (💰 g:4) ⚡ 
+ *  *  .  * [*] .  .  .  .  .  (💰 g:5) ⚡ 
+ *  *  .  * [.] .  .  .  .  .  (💰 g:6) ⚡ 
+ *  *  . [*] .  .  .  .  .  .  (💰 g:7) ⚡ 
+ *  *  . [.] .  .  .  .  .  .  (💰 g:8) ⚡ 
+ *  * [.] .  .  .  .  .  .  .  (💰 g:9) ⚡ 
+ * [*] .  .  .  .  .  .  .  .  (💰 g:10) ⚡ 
+ * [.] .  .  .  .  .  .  .  .  (💰 g:11) ⚡ 
+[*] .  .  .  .  .  .  .  .  .  (💰 g:12) ⚡ 
+[.] .  .  .  .  .  .  .  .  .  (💰 g:13) 🎯 
+</pre>
+\endhtmlonly
 
 Não houve desperdício visivel nesta solução. 
 O algoritmo procura em largura garante-nos que esta solução é ótima, dado que o custo de cada ação é unitário.

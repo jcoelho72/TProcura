@@ -14,15 +14,17 @@ Pode acompanhar o teste excutando as ações localmente.
 - [Ação 14 - Profundidade ilimitada](#aspirador-a14)
 - [Ação 15 - Desafio Procura Profundidade](#aspirador-a15)
 
-```entrada
+\htmlonly
+<pre>
 ┌─ Teste TProcuraConstrutiva ──┐
 │ 1 - Aspirador                │
 │ 2 - Puzzle 8                 │
 │ 3 - 8 Damas                  │
 │ 4 - Partição                 │
 └──────────────────────────────┘
-Opção: 1
-```
+Opção: <span class="entrada">1</span>
+</pre>
+\endhtmlonly
 
 Selecione o problema do Aspirador: **1.**
 
@@ -46,65 +48,68 @@ com limite de profundidade a 3, com nível de debug máximo, ignorando repetidos
 
 O parâmetro 1 é o algoritmo, em que o 3 é a profundidade primeiro.
 
-```entrada
-┌─ ⚙️  P1(ALGORITMO) ──────────────────────────────────────────────────
-│ Algoritmo base a executar.
-│ 1: Largura Primeiro
-│ 2: Custo Uniforme
-│ 3: Profundidade Primeiro
-│ 4: Melhor Primeiro
-│ 5: A*
-│ 6: IDA*
-│ 7: Branch and Bound
+\htmlonly
+<pre>
+┌─ ⚙  P1(ALGORITMO) ───────────────────────────────────────────────────
+│ Algoritmo base a executar.                                           
+│ <span style="color:gray">1:</span> Largura Primeiro
+│ <span style="color:gray">2:</span> Custo Uniforme
+│ <span style="color:gray">3:</span> Profundidade Primeiro
+│ <span style="color:gray">4:</span> Melhor Primeiro
+│ <span style="color:gray">5:</span> A*
+│ <span style="color:gray">6:</span> IDA*
+│ <span style="color:gray">7:</span> Branch and Bound
 └──────────────────────────────────────────────────────────────────────
-ALGORITMO (atual 1): 3
-```
+ALGORITMO (atual 1): <span class="entrada">3</span>
+</pre>
+\endhtmlonly
 
 O parâmetro 7 é o limite, com diferentes interpretações conforme o algoritmo.  
 Na procura em largura o limite servia para limitar o número de estados gerados mas não expandidos. 
 Aqui serve para limitar o nível de profundidade, que é fixado a 3. 
 
-```entrada
-Opção: 6
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├■═╤═ 💰 g:0  ═══
  │  * [*]
  │  ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ ⚡ esq
- │  │ [*] *
+ │  │ [*] * 
  │  │  ├■═╤═ 🔖 3 💰 g:2 ⚖  2|4 ═══ ⚡ dir
  │  │  │  * [*]
- │  │  │ 🍃 🪜
+ │  │  │ 🍃 🪜 
  │  │  └■═╤═ 🔖 4 💰 g:2 ⚖  2|4 ═══ ⚡ asp
- │  │    [.] *
- │  │    🍃 🪜
+ │  │    [.] * 
+ │  │    🍃 🪜 
  │  └■═╤═ 🔖 2 💰 g:1 ⚖  2|4 ═══ ⚡ asp
  │     * [.]
  │     ├■═╤═ 🔖 5 💰 g:2 ⚖  3|6 ═══ ⚡ esq
- │     │ [*] .
- │     │ 🍃 🪜
+ │     │ [*] . 
+ │     │ 🍃 🪜 
  │     └■═╤═ 🔖 6 💰 g:2 ⚖  3|6 ═══ ⚡ asp
  │        * [.]
- │       🍃 🪜
- ├─ Parâmetros ─ P1=3 P2=4 P3=1 P4=10 P5=0 P6=1 P7=3 P8=1 P11=0
+ │       🍃 🪜 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0
 ═╧═ 🏁  Execução terminada ⏱    ═══
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 1 | P7(LIMITE): 3
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Profundidade Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 1 | <span style="color:gray">P7(LIMITE):</span> 3
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
  * [*]
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): -1 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 3 |
-│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> -1 | <span style="color:gray">I2(Tempo(ms)):</span> 0 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 3 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 6 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
 
 Podemos ver todos os estados gerados. 
 A árvore tendo 3 níveis, permite dois movimentos, pelo que não foi descoberta a solução, retornando -1.
@@ -121,11 +126,12 @@ Podemos observar aqui que o estado inicial foi gerado novamente, com etiqueta 3,
 \anchor aspirador-a12
 ## Ação 12 - Ver uma árvore de procura maior
 
-Colocar a profundidade a 10, e o nível de debug a 3, ver ações a 4: **1; 2; 3; 7; 10; 2; 3; 6; 4; *ENTER*; 6.**
+Colocar a profundidade a 10, e o nível de debug a 3,
+ver ações a 4: **1; 2; 3; 7; 10; 2; 3; 6; 4; *ENTER*; 6.**
 
-```entrada
-Opção: 6
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├■═╤═ 💰 g:0  ═══
  │  ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ ⚡ esq
@@ -137,38 +143,40 @@ Opção: 6
  │  │  │  │  │  │  │  ├■═╤═ 🔖 13 💰 g:7 ⚖  7|14 ═══ ⚡ esq
  │  │  │  │  │  │  │  │  ├■═╤═ 🔖 15 💰 g:8 ⚖  8|16 ═══ ⚡ dir
  │  │  │  │  │  │  │  │  │  ├■═╤═ 🔖 17 💰 g:9 ⚖  9|18 ═══ ⚡ esq
- │  │  │  │  │  │  │  │  │  │ [*] *  ─── 🍃 🪜
+ │  │  │  │  │  │  │  │  │  │ [*] *  ─── 🍃 🪜 
  │  │  │  │  │  │  │  │  │  └■═╤═ 🔖 18 💰 g:9 ⚖  9|18 ═══ ⚡ asp
- │  │  │  │  │  │  │  │  │     * [.] ─── 🍃 🪜
+ │  │  │  │  │  │  │  │  │     * [.] ─── 🍃 🪜 
  │  │  │  │  │  │  │  │  └■═╤═ 🔖 16 💰 g:8 ⚖  9|18 ═══ ⚡ asp
  │  │  │  │  │  │  │  │     ├■═╤═ 🔖 19 💰 g:9 ⚖  10|20 ═══ ⚡ dir
- │  │  │  │  │  │  │  │     │  . [*] ─── 🍃 🪜
+ │  │  │  │  │  │  │  │     │  . [*] ─── 🍃 🪜 
  │  │  │  │  │  │  │  │     └■═╤═ 🔖 20 💰 g:9 ⚖  10|20 ═══ ⚡ asp
- │  │  │  │  │  │  │  │       [.] *  ─── 🍃 🪜
+ │  │  │  │  │  │  │  │       [.] *  ─── 🍃 🪜 
  │  │  │  │  │  │  │  └■═╤═ 🔖 14 💰 g:7 ⚖  10|20 ═══ ⚡ asp
  │  │  │  │  │  │  │     ├■═╤═ 🔖 21 💰 g:8 ⚖  11|22 ═══ ⚡ esq
  │  │  │  │  │  │  │     │  ├■═╤═ 🔖 23 💰 g:9 ⚖  12|24 ═══ ⚡ dir
- │  │  │  │  │  │  │     │  │  * [.] ─── 🍃 🪜
+ │  │  │  │  │  │  │     │  │  * [.] ─── 🍃 🪜 
  │  │  │  │  │  │  │     │  └■═╤═ 🔖 24 💰 g:9 ⚖  12|24 ═══ ⚡ asp
- │  │  │  │  │  │  │     │    [.] .
+ │  │  │  │  │  │  │     │    [.] . 
  │  │  │  │  │  │  │     │     🎯  Solução encontrada! 💰 g:9
- │  │  │  │  │  │  │     │  │ [.] .  ─── 🎯 9 → 📈  ───  { 🔖 22 }  ───  { 🔖 12 }  ───  { 🔖 10 }  ───  { 🔖 8 }  ───  { 🔖 6 }  ───  { 🔖 4 }  ───  { 🔖 2 }
- ├─ Parâmetros ─ P1=3 P2=3 P3=1 P4=10 P5=0 P6=4 P7=10 P8=1 P11=0
+ │  │  │  │  │  │  │     │  │ [.] .  ─── 🎯 9 → 📈  ───  { 🔖 22 }  ───  { 🔖 12 }  ───  { 🔖 10 }  ───  { 🔖 8 }  ───  { 🔖 6 }  ───  { 🔖 4 }  ───  { 🔖 2 } 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>10 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0
 ═╧═ 🏁  Execução terminada ⏱    ═══
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 10
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Profundidade Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> DETALHE | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 10
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
-[.] .
+[.] . 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 9 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 12 |
-│ I5(IND_GERACOES): 24 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 9 | <span style="color:gray">I2(Tempo(ms)):</span> 0 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 12 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 24 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 Com o nível debug a 3 evemos a árvore de procura sem os estados expandidos, mas vemos as ações.
 Vemos no entanto todos os estados folha, o que pode ser importante para conhecer os estados cortados.
 A informação é mais reduzida, e poderá ser uma boa forma de analisar e ver a árvore,
@@ -182,15 +190,16 @@ Assim, é possível confirmar a totalidade de estados gerados e quando foram exp
 
 A solução não é óptima, tem comprimento 9! Podemos visualizar a solução, introduza: **4.**
 
-```entrada
-Opção: 4
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">4</span>
 ══ ✔  Solução ══
  * [*] (💰 g:0) ⚡  → esq → dir → esq → dir
  * [*] (💰 g:4) ⚡  → esq → dir → asp → esq
 [*] .  (💰 g:8) ⚡  → asp
-[.] .  (💰 g:9) 🎯
-```
+[.] .  (💰 g:9) 🎯 
+</pre>
+\endhtmlonly
 
 Como o algoritmo é cego, segue a ordem dos sucessores. 
 Neste caso está sempre a trocar de posição antes de aspirar.
@@ -206,57 +215,59 @@ no caso deste código é executada com o limite=0.
 \anchor aspirador-a13
 ## Ação 13 - Profundidade Iterativa
 
-Colocar a profundidade iterativa (limite a 0), e o nível de debug a 2: **1; 2; 3; 7; 0; 2; 2; *ENTER*; 6.**
+Colocar a profundidade iterativa (limite a 0),
+e o nível de debug a 2: **1; 2; 3; 7; 0; 2; 2; *ENTER*; 6.**
 
-```entrada
-pção: 6
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
- ├─────────── 🌳 🪜 1 ⏱  ────────────
- ├■═╤═ 💰 g:0  ═══ ─── 🍃 🪜
- ├─────────── 🌳 🪜 2 ⏱  ────────────
+ ├─────────── 🌳 🪜 1 ⏱  ──────────── 
+ ├■═╤═ 💰 g:0  ═══ ─── 🍃 🪜 
+ ├─────────── 🌳 🪜 2 ⏱  ──────────── 
  ├■═╤═ 💰 g:0  ═══
- │  ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ ⚡ esq ─── 🍃 🪜
- │  └■═╤═ 🔖 2 💰 g:1 ⚖  1|2 ═══ ⚡ asp ─── 🍃 🪜
- ├─────────── 🌳 🪜 3 ⏱  ────────────
+ │  ├■═╤═ 🔖 1 💰 g:1 ⚖  1|2 ═══ ⚡ esq ─── 🍃 🪜 
+ │  └■═╤═ 🔖 2 💰 g:1 ⚖  1|2 ═══ ⚡ asp ─── 🍃 🪜 
+ ├─────────── 🌳 🪜 3 ⏱  ──────────── 
  ├■═╤═ 💰 g:0 ⚖  1|2 ═══
  │  ├■═╤═ 🔖 3 💰 g:1 ⚖  2|4 ═══ ⚡ esq
- │  │  ├■═╤═ 🔖 5 💰 g:2 ⚖  3|6 ═══ ⚡ dir ─── 🍃 🪜
- │  │  └■═╤═ 🔖 6 💰 g:2 ⚖  3|6 ═══ ⚡ asp ─── 🍃 🪜
+ │  │  ├■═╤═ 🔖 5 💰 g:2 ⚖  3|6 ═══ ⚡ dir ─── 🍃 🪜 
+ │  │  └■═╤═ 🔖 6 💰 g:2 ⚖  3|6 ═══ ⚡ asp ─── 🍃 🪜 
  │  └■═╤═ 🔖 4 💰 g:1 ⚖  3|6 ═══ ⚡ asp
- │     ├■═╤═ 🔖 7 💰 g:2 ⚖  4|8 ═══ ⚡ esq ─── 🍃 🪜
- │     └■═╤═ 🔖 8 💰 g:2 ⚖  4|8 ═══ ⚡ asp ─── 🍃 🪜
- ├─────────── 🌳 🪜 4 ⏱  ────────────
+ │     ├■═╤═ 🔖 7 💰 g:2 ⚖  4|8 ═══ ⚡ esq ─── 🍃 🪜 
+ │     └■═╤═ 🔖 8 💰 g:2 ⚖  4|8 ═══ ⚡ asp ─── 🍃 🪜 
+ ├─────────── 🌳 🪜 4 ⏱  ──────────── 
  ├■═╤═ 💰 g:0 ⚖  4|8 ═══
  │  ├■═╤═ 🔖 9 💰 g:1 ⚖  5|10 ═══ ⚡ esq
  │  │  ├■═╤═ 🔖 11 💰 g:2 ⚖  6|12 ═══ ⚡ dir
- │  │  │  ├■═╤═ 🔖 13 💰 g:3 ⚖  7|14 ═══ ⚡ esq ─── 🍃 🪜
- │  │  │  └■═╤═ 🔖 14 💰 g:3 ⚖  7|14 ═══ ⚡ asp ─── 🍃 🪜
+ │  │  │  ├■═╤═ 🔖 13 💰 g:3 ⚖  7|14 ═══ ⚡ esq ─── 🍃 🪜 
+ │  │  │  └■═╤═ 🔖 14 💰 g:3 ⚖  7|14 ═══ ⚡ asp ─── 🍃 🪜 
  │  │  └■═╤═ 🔖 12 💰 g:2 ⚖  7|14 ═══ ⚡ asp
- │  │     ├■═╤═ 🔖 15 💰 g:3 ⚖  8|16 ═══ ⚡ dir ─── 🍃 🪜
- │  │     └■═╤═ 🔖 16 💰 g:3 ⚖  8|16 ═══ ⚡ asp ─── 🍃 🪜
+ │  │     ├■═╤═ 🔖 15 💰 g:3 ⚖  8|16 ═══ ⚡ dir ─── 🍃 🪜 
+ │  │     └■═╤═ 🔖 16 💰 g:3 ⚖  8|16 ═══ ⚡ asp ─── 🍃 🪜 
  │  └■═╤═ 🔖 10 💰 g:1 ⚖  8|16 ═══ ⚡ asp
  │     ├■═╤═ 🔖 17 💰 g:2 ⚖  9|18 ═══ ⚡ esq
- │     │  ├■═╤═ 🔖 19 💰 g:3 ⚖  10|20 ═══ ⚡ dir ─── 🍃 🪜
+ │     │  ├■═╤═ 🔖 19 💰 g:3 ⚖  10|20 ═══ ⚡ dir ─── 🍃 🪜 
  │     │  └■═╤═ 🔖 20 💰 g:3 ⚖  10|20 ═══ ⚡ asp
  │     │     🎯  Solução encontrada! 💰 g:3
- │     │  │ [.] .  ─── 🎯 3 → 📈  ───  { 🔖 18 }
- ├─ Parâmetros ─ P1=3 P2=2 P3=1 P4=10 P5=0 P6=4 P7=0 P8=1 P11=0
+ │     │  │ [.] .  ─── 🎯 3 → 📈  ───  { 🔖 18 } 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0
 ═╧═ 🏁  Execução terminada ⏱    ═══
 Aspirador
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Profundidade Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> PASSOS | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
-[.] .
+[.] . 
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 3 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 10 |
-│ I5(IND_GERACOES): 20 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 3 | <span style="color:gray">I2(Tempo(ms)):</span> 0 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 10 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 20 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Podemos observar que o algoritmo encontrou a solução de comprimento 3, a solução ótima. 
 Fez várias iterações que não serviram para nada, antes de executar na iteração 4 com limite a 4.
@@ -285,11 +296,15 @@ Vamos agora ver o que acontece se não limitarmos a procura em profundidade, col
 Colocar a profundidade ilimitada (limite a -1), e o nível de debug a 1: 
 **1; 2; 3; 7; -1; 2; 1; *ENTER*; 6.**
 
-```entrada
-Opção: 6
+\htmlonly
+<pre>
+Opção: <span class="entrada">6</span>
 
 Segmentation fault (core dumped)
-```
+</pre>
+\endhtmlonly
+
+
 
 Temos um crash do programa, e bem cedo. 
 Como a procura em profundidade está implementada de forma recursiva, houve um problema no stack. 

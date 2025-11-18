@@ -20,42 +20,46 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 - [Ação 5 - Heurística](#damas-a5)
 - [Ação 6 - Testes Empíricos](#damas-a6)
 
-
-```entrada
+\htmlonly
+<pre>
 ┌─ Teste TProcuraConstrutiva ──┐
 │ 1 - Aspirador                │
 │ 2 - Puzzle 8                 │
 │ 3 - 8 Damas                  │
 │ 4 - Partição                 │
 └──────────────────────────────┘
-Opção: 3
-```
+Opção: <span class="entrada">3</span>
+</pre>
+\endhtmlonly
 
 ![8 Damas - colocar 8 damas no tabuleiro sem que se ataquem mutuamente](docs/images/8damas.png)
 
 Vamos entrar no problema das 8 damas. Introduza: **3.**
 
-```entrada
- Damas
+\htmlonly
+<pre>
+8 Damas
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
- │ ::  ::  ::  ::
+ │ ::  ::  ::  ::  
  │   ::  ::  ::  ::
- │ ::  ::  ::  ::
+ │ ::  ::  ::  ::  
  │   ::  ::  ::  ::
- │ ::  ::  ::  ::
+ │ ::  ::  ::  ::  
  │   ::  ::  ::  ::
- │ ::  ::  ::  ::
+ │ ::  ::  ::  ::  
  │   ::  ::  ::  ::
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 Este estado vazio é um tabuleiro de 8x8. 
 O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem mutuamente.
 
@@ -65,27 +69,26 @@ O objetivo é colocar damas no tabuleiro de xadrez, sem que as damas se ataquem 
 Vamos ver que instâncias temos. Introduza: **1; 4.**
 
 
-```entrada
-Opção: 1
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">1</span>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
-│ ID atual: 8  Intervalo: [4–40]
-│ Prefixo atual: 'instancia_'
+│ <span style="color:gray">ID atual:</span> 8  <span style="color:gray">Intervalo:</span> [4–40]  
+│ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto): 4
-
+Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">4</span>
 8 Damas
 ...
-::  ::
+::  ::  
   ::  ::
-::  ::
+::  ::  
   ::  ::
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
 
 O tabuleiro foi generalizado a largura N. Podemos escolher entre 4 e 40 colunas.
-
 
 
 \anchor damas-a2
@@ -103,60 +106,59 @@ Vamos resolver esta instância manualmente, para explorar o espaço de estados.
 Introduza: **2; d1; d4; d2.**
 
 
-```entrada
-Opção: 2
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">2</span>
 ═╤═ 💰 g:0 ⚖  1|4|5 ═══
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
  │ └─ ⚡  ──── d1 d2 d3 d4
-🔍 Sucessor [1-4, ação(ões), exe]: d1
-
+🔍 Sucessor [1-4, ação(ões), exe]: <span class="entrada">d1</span>
 ┌─ ✔  ────────────────
-│ Executadas 1 ações.
+│ Executadas 1 ações. 
 └─────────────────────
 ═╤═ 💰 g:0 ⚖  3|10|8 ═══
- │ ♛   ::
+ │ ♛   ::  
  │   ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
  │ └─ ⚡  ──── d3 d4
-🔍 Sucessor [1-2, ação(ões), exe]: d4
-
+🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">d4/span>
 ┌─ ✔  ────────────────
-│ Executadas 1 ações.
+│ Executadas 1 ações. 
 └─────────────────────
 ═╤═ 💰 g:0 ⚖  5|13|10 ═══
- │ ♛   ::
- │   ::  ♛
- │ ::  ::
+ │ ♛   ::  
+ │   ::  ♛ 
+ │ ::  ::  
  │   ::  ::
  │ └─ ⚡  ──── d2
-🔍 Sucessor [1-1, ação(ões), exe]: d2
-
+🔍 Sucessor [1-1, ação(ões), exe]: <span class="entrada">d2</span>
 ┌─ ✔  ────────────────
-│ Executadas 1 ações.
+│ Executadas 1 ações. 
 └─────────────────────
 ═╤═ 💰 g:0 ⚖  7|14|11 ═══
- │ ♛   ::
- │   ::  ♛
- │ ::♛ ::
+ │ ♛   ::  
+ │   ::  ♛ 
+ │ ::♛ ::  
  │   ::  ::
  │ └─ ⚡  ────
 ┌─ ⛔  ───────────────
-│ Sem sucessores.
+│ Sem sucessores.    
 └────────────────────
 8 Damas
 ...
- │ ♛   ::
- │   ::  ♛
- │ ::♛ ::
+ │ ♛   ::  
+ │   ::  ♛ 
+ │ ::♛ ::  
  │   ::  ::
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 Esta resolução correu mal e chegamos a um beco sem saida. 
 Não há nenhuma coluna onde possa ser colocada a quarta dama sem que esteja atacada.
 
@@ -172,112 +174,114 @@ Vamos fazer uma procura em largura, no tabuleiro de 4x4, debug completo.
 Vamos deixar desde já fixado o limite no número de iterações a 1000000. 
 Introduza: **1; 4; 3; 2; 4; 5; 1000000; *ENTER*; 6.**
 
-```entrada
-Opção: 6
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├■═╤═ 💰 g:0  ═══ { }
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d1 d2 d3 d4 { 🔖 1 🔖 2 🔖 3 🔖 4 }
- ├■═╤═ 🔖 1 💰 g:1 ⚖  1|4 ═══ { 🔖 2 🔖 3 🔖 4 }
- │ ♛   ::
+ │ └─ ⚡  ──── d1 d2 d3 d4 { 🔖 1 🔖 2 🔖 3 🔖 4 } 
+ ├■═╤═ 🔖 1 💰 g:1 ⚖  1|4 ═══ { 🔖 2 🔖 3 🔖 4 } 
+ │ ♛   ::  
  │   ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d3 d4 { 🔖 5 🔖 6 }
- ├■═╤═ 🔖 2 💰 g:1 ⚖  2|6 ═══ { 🔖 3 🔖 4 🔖 5 🔖 6 }
- │ ::♛ ::
+ │ └─ ⚡  ──── d3 d4 { 🔖 5 🔖 6 } 
+ ├■═╤═ 🔖 2 💰 g:1 ⚖  2|6 ═══ { 🔖 3 🔖 4 🔖 5 🔖 6 } 
+ │ ::♛ ::  
  │   ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d4 { 🔖 7 }
- ├■═╤═ 🔖 3 💰 g:1 ⚖  3|7 ═══ { 🔖 4 🔖 5 🔖 6 🔖 7 }
- │ ::  ♛
+ │ └─ ⚡  ──── d4 { 🔖 7 } 
+ ├■═╤═ 🔖 3 💰 g:1 ⚖  3|7 ═══ { 🔖 4 🔖 5 🔖 6 🔖 7 } 
+ │ ::  ♛   
  │   ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d1 { 🔖 8 }
- ├■═╤═ 🔖 4 💰 g:1 ⚖  4|8 ═══ { 🔖 5 🔖 6 🔖 7 🔖 8 }
- │ ::  ::♛
+ │ └─ ⚡  ──── d1 { 🔖 8 } 
+ ├■═╤═ 🔖 4 💰 g:1 ⚖  4|8 ═══ { 🔖 5 🔖 6 🔖 7 🔖 8 } 
+ │ ::  ::♛ 
  │   ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d1 d2 { 🔖 9 🔖 10 }
- ├■═╤═ 🔖 5 💰 g:2 ⚖  5|10 ═══ { 🔖 6 🔖 7 🔖 8 🔖 9 🔖 10 }
- │ ♛   ::
+ │ └─ ⚡  ──── d1 d2 { 🔖 9 🔖 10 } 
+ ├■═╤═ 🔖 5 💰 g:2 ⚖  5|10 ═══ { 🔖 6 🔖 7 🔖 8 🔖 9 🔖 10 } 
+ │ ♛   ::  
  │   ::♛ ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
  │ └─ ⚡  ────
- ├■═╤═ 🔖 6 💰 g:2 ⚖  6|10 ═══ { 🔖 7 🔖 8 🔖 9 🔖 10 }
- │ ♛   ::
- │   ::  ♛
- │ ::  ::
+ ├■═╤═ 🔖 6 💰 g:2 ⚖  6|10 ═══ { 🔖 7 🔖 8 🔖 9 🔖 10 } 
+ │ ♛   ::  
+ │   ::  ♛ 
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d2 { 🔖 11 }
- ├■═╤═ 🔖 7 💰 g:2 ⚖  7|11 ═══ { 🔖 8 🔖 9 🔖 10 🔖 11 }
- │ ::♛ ::
- │   ::  ♛
- │ ::  ::
+ │ └─ ⚡  ──── d2 { 🔖 11 } 
+ ├■═╤═ 🔖 7 💰 g:2 ⚖  7|11 ═══ { 🔖 8 🔖 9 🔖 10 🔖 11 } 
+ │ ::♛ ::  
+ │   ::  ♛ 
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d1 { 🔖 12 }
- ├■═╤═ 🔖 8 💰 g:2 ⚖  8|12 ═══ { 🔖 9 🔖 10 🔖 11 🔖 12 }
- │ ::  ♛
+ │ └─ ⚡  ──── d1 { 🔖 12 } 
+ ├■═╤═ 🔖 8 💰 g:2 ⚖  8|12 ═══ { 🔖 9 🔖 10 🔖 11 🔖 12 } 
+ │ ::  ♛   
  │ ♛ ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d4 { 🔖 13 }
- ├■═╤═ 🔖 9 💰 g:2 ⚖  9|13 ═══ { 🔖 10 🔖 11 🔖 12 🔖 13 }
- │ ::  ::♛
+ │ └─ ⚡  ──── d4 { 🔖 13 } 
+ ├■═╤═ 🔖 9 💰 g:2 ⚖  9|13 ═══ { 🔖 10 🔖 11 🔖 12 🔖 13 } 
+ │ ::  ::♛ 
  │ ♛ ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ └─ ⚡  ──── d3 { 🔖 14 }
- ├■═╤═ 🔖 10 💰 g:2 ⚖  10|14 ═══ { 🔖 11 🔖 12 🔖 13 🔖 14 }
- │ ::  ::♛
+ │ └─ ⚡  ──── d3 { 🔖 14 } 
+ ├■═╤═ 🔖 10 💰 g:2 ⚖  10|14 ═══ { 🔖 11 🔖 12 🔖 13 🔖 14 } 
+ │ ::  ::♛ 
  │   ♛   ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
  │ └─ ⚡  ────
- ├■═╤═ 🔖 11 💰 g:3 ⚖  11|14 ═══ { 🔖 12 🔖 13 🔖 14 }
- │ ♛   ::
- │   ::  ♛
- │ ::♛ ::
+ ├■═╤═ 🔖 11 💰 g:3 ⚖  11|14 ═══ { 🔖 12 🔖 13 🔖 14 } 
+ │ ♛   ::  
+ │   ::  ♛ 
+ │ ::♛ ::  
  │   ::  ::
  │ └─ ⚡  ────
- ├■═╤═ 🔖 12 💰 g:3 ⚖  12|14 ═══ { 🔖 13 🔖 14 }
- │ ::♛ ::
- │   ::  ♛
- │ ♛   ::
+ ├■═╤═ 🔖 12 💰 g:3 ⚖  12|14 ═══ { 🔖 13 🔖 14 } 
+ │ ::♛ ::  
+ │   ::  ♛ 
+ │ ♛   ::  
  │   ::  ::
- │ └─ ⚡  ──── d3 { 🔖 15 }
+ │ └─ ⚡  ──── d3 { 🔖 15 } 
  │  🎯  Solução encontrada! 💰 g:4
- │ ::♛ ::
- │   ::  ♛
- │ ♛   ::
+ │ ::♛ ::  
+ │   ::  ♛ 
+ │ ♛   ::  
  │   ::♛ ::
- ├─ Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=0 P8=1 P11=0
-═╧═ 🏁  Execução terminada ⏱   1ms  ═══
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0
+═╧═ 🏁  Execução terminada ⏱    ═══
 8 Damas
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Largura Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4
-│ P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Largura Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 1000000 | <span style="color:gray">P6(VER_ACOES):</span> 4
+│ <span style="color:gray">P7(LIMITE):</span> 0 | <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
-::♛ ::
-  ::  ♛
-♛   ::
+::♛ ::  
+  ::  ♛ 
+♛   ::  
   ::♛ ::
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 4 | I2(Tempo(ms)): 1 | I3(Iterações): 0 | I4(IND_EXPANSOES): 13 |
-│ I5(IND_GERACOES): 15 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 4 | <span style="color:gray">I2(Tempo(ms)):</span> 0 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 13 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 15 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
+
 A solução foi encontrada. No entanto, o algoritmo explora todos os estados do nível 3 antes de ver
 o primeiro do nível 4. Neste problema, como a solução está no nível 4, acaba por não ser muito
 interessante esta procura. Qualquer estado no nível 4 seria uma solução, e foram expandidos todos os
@@ -293,83 +297,84 @@ como a procura em profundidade ilimitada não tem problema, já que não existem
 Vamos executar a mesma instância com a procura em profundidade ilimitada.
 Introduza: **1; 4; 3; 1; 3; 7; -1; *ENTER*; 6.**
 
-```entrada
-Opção: 6
-
+\htmlonly
+<pre>
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├■═╤═ 💰 g:0  ═══
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
- │ ::  ::
+ │ ::  ::  
  │   ::  ::
  │  ├■═╤═ 🔖 1 💰 g:1 ⚖  1|4 ═══ ⚡ d1
- │  │ ♛   ::
+ │  │ ♛   ::  
  │  │   ::  ::
- │  │ ::  ::
+ │  │ ::  ::  
  │  │   ::  ::
  │  │  ├■═╤═ 🔖 5 💰 g:2 ⚖  2|6 ═══ ⚡ d3
- │  │  │ ♛   ::
+ │  │  │ ♛   ::  
  │  │  │   ::♛ ::
- │  │  │ ::  ::
+ │  │  │ ::  ::  
  │  │  │   ::  ::
- │  │  │ 🍃
+ │  │  │ 🍃 
  │  │  └■═╤═ 🔖 6 💰 g:2 ⚖  3|6 ═══ ⚡ d4
- │  │    ♛   ::
- │  │      ::  ♛
- │  │    ::  ::
+ │  │    ♛   ::  
+ │  │      ::  ♛ 
+ │  │    ::  ::  
  │  │      ::  ::
  │  │     └■═╤═ 🔖 7 💰 g:3 ⚖  4|7 ═══ ⚡ d2
- │  │       ♛   ::
- │  │         ::  ♛
- │  │       ::♛ ::
+ │  │       ♛   ::  
+ │  │         ::  ♛ 
+ │  │       ::♛ ::  
  │  │         ::  ::
- │  │       🍃
+ │  │       🍃 
  │  ├■═╤═ 🔖 2 💰 g:1 ⚖  5|7 ═══ ⚡ d2
- │  │ ::♛ ::
+ │  │ ::♛ ::  
  │  │   ::  ::
- │  │ ::  ::
+ │  │ ::  ::  
  │  │   ::  ::
  │  │  └■═╤═ 🔖 8 💰 g:2 ⚖  6|8 ═══ ⚡ d4
- │  │    ::♛ ::
- │  │      ::  ♛
- │  │    ::  ::
+ │  │    ::♛ ::  
+ │  │      ::  ♛ 
+ │  │    ::  ::  
  │  │      ::  ::
  │  │     └■═╤═ 🔖 9 💰 g:3 ⚖  7|9 ═══ ⚡ d1
- │  │       ::♛ ::
- │  │         ::  ♛
- │  │       ♛   ::
+ │  │       ::♛ ::  
+ │  │         ::  ♛ 
+ │  │       ♛   ::  
  │  │         ::  ::
  │  │        └■═╤═ 🔖 10 💰 g:4 ⚖  8|10 ═══ ⚡ d3
- │  │          ::♛ ::
- │  │            ::  ♛
- │  │          ♛   ::
+ │  │          ::♛ ::  
+ │  │            ::  ♛ 
+ │  │          ♛   ::  
  │  │            ::♛ ::
  │  │           🎯  Solução encontrada! 💰 g:4
- │  │        │ ::♛ ::
- │  │        │   ::  ♛
- │  │        │ ♛   ::
+ │  │        │ ::♛ ::  
+ │  │        │   ::  ♛ 
+ │  │        │ ♛   ::  
  │  │        │   ::♛ ::
- │  │        │ 🎯 4 → 📈
- │  └─ { 🔖 3 🔖 4 }
- ├─ Parâmetros ─ P1=3 P2=4 P3=1 P4=10 P5=1000000 P6=4 P7=-1 P8=1 P11=0
+ │  │        │ 🎯 4 → 📈 
+ │  └─ { 🔖 3 🔖 4 } 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>3 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>-1 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0
 ═╧═ 🏁  Execução terminada ⏱    ═══
 8 Damas
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): Profundidade Primeiro | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(VER_ACOES): 4
-│ P7(LIMITE): -1 | P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0
+│ <span style="color:gray">P1(ALGORITMO):</span> Profundidade Primeiro | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 1000000 | <span style="color:gray">P6(VER_ACOES):</span> 4
+│ <span style="color:gray">P7(LIMITE):</span> -1 | <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
 └──────────────────────────────────────────────────────────────────────
-::♛ ::
-  ::  ♛
-♛   ::
+::♛ ::  
+  ::  ♛ 
+♛   ::  
   ::♛ ::
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 4 | I2(Tempo(ms)): 0 | I3(Iterações): 0 | I4(IND_EXPANSOES): 8 |
-│ I5(IND_GERACOES): 10 | I6(IND_LOWER_BOUND): 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 4 | <span style="color:gray">I2(Tempo(ms)):</span> 0 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 8 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 10 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ...
-Opção:
-```
+Opção: 
+</pre>
+\endhtmlonly
 
 Podemos observar que o algoritmo em profundidade fez o mesmo erro que nós fizemos, foi escolher d1 na primeira ação.
 No entanto, após ver que não é possível, testa a opção de d2 e encontra a solução.
@@ -416,7 +421,8 @@ Nos testes empíricos vamos passar para a interface da linha de comando, por ser
 
 Vamos obter primeiramente a lista de todos os parâmetros.
 
-```entrada
+\htmlonly
+<pre>
 /TProcura/Construtiva/Teste$ ./bin/Release/TProcuraConstrutiva -h
 
 ┌─ Teste TProcuraConstrutiva ──┐
@@ -464,7 +470,8 @@ Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=
 │ I6(IND_LOWER_BOUND): ✓ 6º lugar
 │ valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
 └──────────────────────────────────────────────────────────────────────
-```
+</pre>
+\endhtmlonly
 
 Atendendo a que o algoritmo em profundidade primeiro é o único que faz sentido, atendendo a que os algoritmos informados
 não fazem sentido utilizar dado que não existe heurística, vamos estudar uma das opções disponíveis nesta implementação.
@@ -493,7 +500,8 @@ utilizamos dois níveis.
 
 Colocamos P2=4 atendendo a que são poucas tarefas:
 
-```entrada
+\htmlonly
+<pre>
 Opção: 3
 
 
@@ -530,7 +538,8 @@ Opção: 3
  │  ⏱  CPU total: 1' 15" 623ms
  │  📊  Utilização: 100.0%
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 1' 15" 623ms ) ═══
-```
+</pre>
+\endhtmlonly
 
 As 20 tarefas foram realizadas em pouco mais de 1 minuto, existindo instâncias não resolvidas por causa do limite de tempo.
 
@@ -588,7 +597,8 @@ Vamos utilizar o aleatório em 4 corridas, atendendo a que os sucessores são ba
 
 Reduzimos o debug para 3, atendendo a que há 80 tarefas.
 
-```entrada
+\htmlonly
+<pre>
 Opção: 3
 
 
@@ -623,7 +633,8 @@ Opção: 3
  │  ⏱  CPU total: 2' 14" 625ms
  │  📊  Utilização: 100.0%
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 2' 14" 625ms ) ═══
-```
+</pre>
+\endhtmlonly
 
 Vamos ver os resultados de forma idêntica, mas utilizando médias atendedo a que temos 4 corridas para cada célula:
 - **Colunas**: P11
@@ -664,7 +675,8 @@ Fazemos 10 execuções por instância para poder aferir a variabilidade dos resu
 - **Esforço**: P3=1:10, P3=1:100, P3=1:1000
 - **Execução**: TProcura 4:40 -R Resultados/8damas_3 -P P1=3 P2=3 P7=-1 P8=1 P11=1 P3=1:10
 
-```entrada
+\htmlonly
+<pre>
 Opção: 3
 
 
@@ -689,7 +701,8 @@ Opção: 3
  │  ⏱  CPU total: 741ms
  │  📊  Utilização: 100.0%
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 741ms ) ═══
-```
+</pre>
+\endhtmlonly
 
 Vamos ver os resultados:
 - **Colunas**: valores

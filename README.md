@@ -77,30 +77,32 @@ Este projeto é utilizado nas Unidades Curriculares:
 ## 📦 Estrutura do Repositório
 
 O repositório inclui 4 projetos principais, cada um com uma superclasse base para implementação de novos problemas:
-```text
+
+<pre>
 TProcura
 ├─ TProcuraConstrutiva  
 │  └─ TProcuraAdversa 
 └─ TProcuraMelhorativa  
-```
+</pre>
+
 - TProcura: modos de execução (interativo, linha de comandos, MPI), gestão de parâmetros e indicadores, execução de testes.
 - TProcuraConstrutiva / TProcuraAdversa: algoritmos construtivos e adversos, exigem implementação de sucessores e heurística.
 - TProcuraMelhorativa: algoritmos melhorativos (solução inicial, vizinhança, mutação, cruzamento, avaliação).
 
 Subclasses já fornecem operadores para diferentes representações, restando apenas implementar a avaliação.
-```text
+<pre>
 ── TProcuraMelhorativa    
    ├─ TRepresentacaoBinaria 
    ├─ TRepresentacaoInteira 
    ├─ TRepresentacaoPermutacao 
    ├─ TRepresentacaoReal   
    └─ TRepresentacaoArvore 
-```
+</pre>
  
 ### Estrutura de Pastas
 
 A estrutura do repositório é a seguinte:
-```text
+<pre>
 TProcura
 ├─ Adversa/Construtiva/Melhorativa # pastas de projetos principais  
 │  └─ Teste          # projeto de teste (não necessário para usar a biblioteca)
@@ -114,7 +116,8 @@ TProcura
 │  └─ ...   
 ├─ docs              # documentação em Markdown
 └─ styles            # estilos doxygen
-```
+</pre>
+
 ### Compilação e Execução
 
 Na pasta `<projeto>/Teste` do projeto respetivo:

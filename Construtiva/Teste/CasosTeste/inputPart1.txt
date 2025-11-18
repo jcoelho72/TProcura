@@ -1,0 +1,20 @@
+4
+3
+2
+4
+
+1
+10
+2
+esq dir esq dir
+dir esq dir esq
+esq
+dir
+esq
+
+
+
+
+
+
+

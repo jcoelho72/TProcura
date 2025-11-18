@@ -18,13 +18,15 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 - [Ação 6 - Testes Empíricos](#jdg-a6)
 
 
-```entrada
+\htmlonly
+<pre>
 ┌─ Teste TProcuraAdversa ──────┐
 │ 1 - Jogo do Galo             │
 │ 2 - Jogo Em Linha            │
 └──────────────────────────────┘
 Opção: 1
-```
+</pre>
+\endhtmlonly
 
 ![Jogo do Galo - cada jogador joga numa casa na sua vez, ganha quem faz 3 em linha](docs/images/jdg.png)
 
@@ -34,7 +36,8 @@ Opção: 1
 
 Vamos entrar no Jogo do Galo, introduza: **1.**
 
-```entrada
+\htmlonly
+<pre>
 Jogo do Galo
 ┌─ ⚙️  Parâmetros ─────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
@@ -52,7 +55,8 @@ Jogo do Galo
 │ 5 ⚖  Indicadores │ 6 ►  Executar  │ 7 🛠️  Configurações │ 8 🧪  Teste  │
 └──────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Este é o estado vazio do tabuleiro do Jogo do Galo. Temos um tabuleiro de 3x3, 
 e cada jogador ocupa uma casa livre na sua 
@@ -79,7 +83,8 @@ Temos por omissão o algoritmo MiniMax alfa/beta.
 Introduza: **1.** para inicialiar novo jogo.
 
 
-```entrada
+\htmlonly
+<pre>
 Jogo do Galo
 ...
   A B C
@@ -89,7 +94,8 @@ Jogo do Galo
   A B C
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Podemos ver que há apenas uma instância, com o tabuleiro inicial. 
 Podemos ver a borda do tabuleiro com indicação da coluna em letras, 
@@ -101,7 +107,8 @@ e linhas em números. Cada casa fica identificada de forma unívoca.
 
 Vamos entrar na exploração manual. Introduza: **2; a2; b2.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 2
 
 ═╤═ 💰 g:0 🔢 1|9|4 ═══
@@ -136,14 +143,16 @@ Opção: 2
  │   A B C
  │ └─ ⚡ ───── a1 b1 c1 c2 a3 b3 c3
 🔍  Sucessor [1-7, ação(ões), exe]:
-```
+</pre>
+\endhtmlonly
 
 A cada momento são mostradas as ações possíveis, correspondendo às casas livres para jogar.
 Cada jogador deixa a sua marca à vez. Vamos verificar se o jogo deteta vitória.
 Introduza: **a3 c1 a1.**
 
 
-```entrada
+\htmlonly
+<pre>
 🔍  Sucessor [1-7, ação(ões), exe]: a3 c3 a1
 
 ┌─ ✅  Sucesso ────────
@@ -173,14 +182,16 @@ Jogo do Galo
  │   A B C
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 O jogo terminou com sucesso, vitória X, pelo que não há mais sucessores.
 
 O jogo tem 3 simetrias, vamos agora ver como fica esta exploração com a remoção de estados repetidos.
 Introduza: **3; 8; 3; *ENTER*; 1; 2.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 2
 
 ═╤═ 💰 g:0 🔢 1|3|4 ═══
@@ -191,7 +202,8 @@ Opção: 2
  │   A B C
  │ └─ ⚡ ───── a1 b1 b2
 🔍  Sucessor [1-3, ação(ões), exe]:
-```
+</pre>
+\endhtmlonly
 
 Em vez das 9 possíveis ações, restam 3 ações, a1, b1 e b2. 
 Todas as outras ações conduzem a estados que podem ser convertidos nestes, com uma ou mais de 3 simetrias:
@@ -199,7 +211,8 @@ horizontal, vertical, diagonal. Assim, não é necessário explorá-los.
 
 Introduza: **2; *ENTER*.**
 
-```entrada
+\htmlonly
+<pre>
 🔍  Sucessor [1-3, ação(ões), exe]: 2
 
 ┌─ ✅  Sucesso ───────
@@ -213,7 +226,8 @@ Introduza: **2; *ENTER*.**
  │   A B C
  │ └─ ⚡ ───── a1 a2 b2 a3 b3
 🔍  Sucessor [1-5, ação(ões), exe]:
-```
+</pre>
+\endhtmlonly
 
 Temos agora a1, mas não c1 (obtido por simetria vertical). Do mesmmo modo temos a2, mas não c2, e a3 mas não c3.
 Já b2 e b3 não têm estados simétricos. 
@@ -239,7 +253,8 @@ com informação de debug completa, vendo todos os estados, e nível de profundi
 e com P12(Ordenar)=0.
 Introduza: **1; 3; 1; 1; 2; 4; 6; 1; 7; 2; 8; 1; 12; 0; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -333,7 +348,8 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Podemos ver a árvore de procura, que há 9 estados gerados, embora apenas 3 sejam distintos
 a menos das 3 simetrias. 
@@ -342,7 +358,8 @@ A heurística neste problema é a deteção de estado final, pelo que vemos 0 co
 
 Vamos agora colocar P14(Ordenar): 2, e repetir a procura. Introduza: **1; 3; 12; 2; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══ HT: reutilização 1.67 vezes
@@ -436,7 +453,8 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 A procura foi realizada, existindo agora apenas 3 avaliações, já que apenas 3 estados novos foram gerados. 
 Outros estados foram gerados, mas são iguais a menos de operações de simetria.
@@ -448,7 +466,8 @@ Assim aparecem na árvore como o icon da disquete, tendo o seu valor sido obtido
 Vamos continuar, mas reduzindo o nível de debug para detalhe, e ver ações para 4, e aumentando o nível da procura para 3. 
 Introduza: **3; 2; 3; 7; 3; 6; 4; *ENTER*; 6.**  
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══ HT: reutilização 1.69 vezes
@@ -565,7 +584,8 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Continuamos com avaliações todas com heurística nula, pelo que para o algoritmo é indiferente qualquer opção.
 Podemos ver que as disquetes aparecem, o que significa que poupam ramos da árvore.
@@ -575,7 +595,8 @@ Vamos agora executar mais algumas jogadas, e ver a execução final com debug a 
 
 Introduza: **6; 6; 3; 2; 4; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 ═╤═ ►  Execução iniciada ═══ HT: reutilização 0.35 vezes
  ├□═╤═ 💰 g:0  ═══
  │   A B C
@@ -746,7 +767,8 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Podemos ver que a árvore de procura já interseta posições em que há vitória de O, sendo o valor de +infinito. 
 O infinito é de omissão 1000. O X é o primeiro a jogar, e em SolucaoVazia() é indicado que o 
@@ -772,7 +794,8 @@ poupando assim uma execução do algoritmo para esse estado.
 Vamos agora ver como se comporta a procura da ação anterior, se ativarmos os cortes alfa/beta.
 Introduza: **1; 3; 1; 2; 2; 4; 6; 1; 7; 3; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -938,7 +961,8 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Temos na procura dois cortes beta. Vamos ver com atenção:
 - o primeiro ramo, estado 1, com X em a1 foi explorado por completo
@@ -961,7 +985,8 @@ não ter o alfa/beta de modo a que fiquem memorizados estado com o valor exato.
 Vamos avaçar para o momento em que há estados finais visiveis.
 Introduza: **6; 6; 6; 6; 6; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══ HT: reutilização 0.36 vezes
@@ -1058,7 +1083,9 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
+
 Neste caso não tivemos um corte alfa/beta, dado que o melhor ramo foi expandido no final.
 
 Assim, na procura iterativa é importante ordenar os estados por ordem de valor, de modo a que os melhoes estados sejam analisados primeiro
@@ -1075,7 +1102,8 @@ Para que a hashtable não poupe demasiados estados, vamos nesta ação arrancar 
 Vamos começar com o MiniMax, sem a ordenação. Vamos colocar o limite a 20, para não interferir
 Após reiniciar, introduza: **1; 3; 1; 1; 7; 20; 12; 0; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -1099,7 +1127,9 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
+
 Podemos ver que há 318517 estados gerados, um valor reduzido para os tempos atuais.
 O resultado do jogo é um empate.
 
@@ -1107,7 +1137,8 @@ Vamos agora ver o efeito da ordenação.
 Após arrancar, introduza:  **1; 3; 1; 1; 7; 20; 12; 2; *ENTER*; 6.**
 
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -1131,15 +1162,17 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 O número de estados gerados é consideravelmente inferior, ficando em apenas 2299 estados.
 
 Vamos agora procurar ver o impacto dos cortes alfa/beta, na versão sem ordenação.
 Após arrancar, introduza:  **1; 3; 1; 2; 7; 20; 12; 0; *ENTER*; 6.**
 
-```entrada
-pção: 6
+\htmlonly
+<pre>
+Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
  ├─ ⚙️  Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=20 P8=1 P11=0 P12=0 P13=0 P14=0
@@ -1162,12 +1195,15 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
+
 O número de estados gerados é de 27362, em vez de 318517 para o MiniMax sem cortes alfa/beta.
 Podemos observar um grande ganho. Vamos agora ver qual o resultado do alfa/beta com ordenação.
 Após arrancar, introduza:  **1; 3; 1; 2; 7; 20; 12; 2; *ENTER*; 6.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -1191,7 +1227,8 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Os estados gerados ficam em 1465, contra 2299 sem cortes alfa/beta, cerca de metade. 
 Em termos de avaliações temos 700, enquanto sem cortes alfa/beta temos 826.
@@ -1202,7 +1239,8 @@ Introduza após arrancar:  **1; 3; 1; 2; 2; 2; 7; 20; 12; 2; *ENTER*; 6.**
 <details>
   <summary>Ver árvore completa do Jogo do Galo (com cortes alfa/beta)</summary>
 
-```entrada
+\htmlonly
+<pre>
 Opção: 6
 
 ═╤═ ►  Execução iniciada ═══
@@ -2510,7 +2548,8 @@ Jogo do Galo
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 </details>
 
@@ -2534,7 +2573,8 @@ Introduza:
 
 Apagamos a configuração 1 dado que tinha o valor de omissão P7=0.
 
-```entrada
+\htmlonly
+<pre>
 Opção: 7
 
  ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=0 P8=1 P11=0 P12=2 P13=0 P14=0 (parâmetros comuns)
@@ -2568,7 +2608,8 @@ Opção: 7
  ├─ ⚙️ [4] ─ P7=20
 ═╧═══════════════════
 ...
-```
+</pre>
+\endhtmlonly
 
 Temos 4 configurações. Como a procura é adversa, é necessário duas configurações, ou seja, jogos entre configurações para avaliar.
 Assim, em vez da tabela com desempenho individual, há jogos entre todas as configurações, e reportado apenas a tabela de torneio final.
@@ -2580,7 +2621,8 @@ Se existissem vários tabuleiros iniciais, ou vários tamanhos, ou seja, instân
 
 Introduza: **8; 1; *ENTER*.**
 
-```entrada
+\htmlonly
+<pre>
 Opção: 8
 
 ┌─ 📖 Sintaxe comando ────────────────────
@@ -2656,7 +2698,8 @@ Jogo do Galo
   A B C
 ...
 Opção:
-```
+</pre>
+\endhtmlonly
 
 Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações com nível 20 e 7 
 são igualmente boas.
@@ -2755,7 +2798,8 @@ e se possa saber exatamente como os resultados foram obtgidos.
 
 Como seria de esperar, este ficheiro de resultados poderia ser obtido também em linha de comandos:
 
-```entrada
+\htmlonly
+<pre>
 PS ...\Teste> TProcuraAdversa 1 -R Resultados/Galo -P P1=1 P12=0 P7=20,7,5,3
 ...
 Opção: 1
@@ -2770,7 +2814,8 @@ Opção: 1
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  │ Erro ao gravar ficheiro Resultados/Galo.csv.
 ═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱  479ms ) ═══
-```
+</pre>
+\endhtmlonly
 
 A linha de comandos continua a ser o modo preferencial quando a implementação está finalizada e se pretende testes empíricos.
 
