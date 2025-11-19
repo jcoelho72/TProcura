@@ -2691,6 +2691,7 @@ pre {
     font-size: 0.9em; /* ligeiramente mais pequeno */
     line-height: 1.0; /* altura mínima, evita espaços verticais */
     overflow-x: auto;
+    margin: 0; /* remove margens verticais */
 }
 
 span.entrada {
