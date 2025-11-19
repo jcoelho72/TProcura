@@ -110,15 +110,35 @@ Sumário</h2>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md81"></a>
 Ação 1 - Ver instâncias</h2>
-<p>(fazer)</p>
+<p>Vamos entrar no problema 8 Damas Permutação, introduza: <b>2.</b></p>
+<p>Vamos seguir a mesma linha das 8 damas, codificação inteira. Vamos alterar para a instância de tamanho 4.</p>
+<p>Introduza: <b>1; 4.</b></p>
+<p>Notar que a instância é distinta da codificação inteira. De facto a instância incial da codificação inteira não tem representação na codificação permutação, já que neste caso apenas há permutação da posição das damas, enquanto que na solução inicial da codificação inteira há duas damas na mesma coluna.</p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md82"></a>
 Ação 2 - Resolver manualmente</h2>
-<p>(fazer)</p>
+<p>Vamos resolver a instância manualmente. Introduza: <b>2</b></p>
+<p>Apenas ao gerar a população inicial, temos logo uma solução de custo 0, pelo que nem se chegou a gerar 4 elementos.</p>
+<p>Assim, vamos sair e colocar uma dimensão maior para poder ver os operadores de cruzamento.</p>
+<p>Introduza: ** 0; 1; 6; 2.**</p>
+<p>Agora sim, temos uma população de 4 elementos com custos de 2 a 5. Vamos começar por testar o operador de mutação. Introduza: <b>1; 1.</b></p>
+<p>Neste caso o operador é um vizinho de inserção, mas o elemento retirado está na mesma posição em que é inserido, na posição 0. Vamos repetir. Introduza: <b>1; 1.</b></p>
+<p>Tal como na representação inteira, há vários operadores de mutação, sendo o mesmo verdade para os restantes operadores de cruzamento e vizinhança.</p>
+<p>Desta vez inserimos o elemento na posição 1 (segundo na ordem), na posição 3 (quarto na ordem). Todos os outros elmentos ficaram iguais. Em termos de custos ficou igual, continuam 4 pares de damas a atacarem-se, embora sejam pares distintos.</p>
+<p>Vamos agora ao operador de cruzamento, vamos cruzar os dois melhores elemenotos. Introduza: <b>2; 2; 3; 4.</b></p>
+<p>Nete caso o filho ficou com os 3 primeiros elementos da mãe, e o resto ficou pela ordem como que aparecem no pai. Há apenas 2 pares de damas que se atacam, tal como a mãe.</p>
+<p>Podemos agora testar o operador de vizinhança, tendo como ponto de partida o estado 4 com custo 2. Introduza: <b>3; 4.</b></p>
+<p>Há 30 vizinhos, existindo vários com custo 1. Vamos escolher um deles e repetir o processo. Introduza: <b>30; 3; 4;</b></p>
+<p>Neste caso temos novamente vários vizinhos de custo 1, mas nenhum de custo 0. Vamos escolher o primeiro e terminar.</p>
+<p>Introduza: <b>1; 0.</b></p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md83"></a>
 Ação 3 - Algoritmos Evolutivos</h2>
-<p>(fazer)</p>
+<p>Vamos agora ver os algoritmos evolutivos nos diferentes níveis de debug, para esta instância de tamanho 6.</p>
+<p>Introduza: <b>1; 6; 3; 2; 1; <em>ENTER</em>;6.</b></p>
+<p>Introduza: <b>1; 6; 3; 2; 2; <em>ENTER</em>;6.</b></p>
+<p>Introduza: <b>1; 6; 3; 2; 3; <em>ENTER</em>;6.</b></p>
+<p>Introduza: <b>1; 6; 3; 2; 4; <em>ENTER</em>;6.</b></p>
 <p><a class="anchor" id="invalid"></a></p>
 <h2><a class="anchor" id="autotoc_md84"></a>
 Ação 4 - Testes Empíricos</h2>
