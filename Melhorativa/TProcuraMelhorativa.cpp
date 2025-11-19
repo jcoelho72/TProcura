@@ -434,14 +434,12 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 				if (maiorCusto < individuo->custo)
 					maiorCusto = individuo->custo;
 			}
-			char str[256];
-			snprintf(str, sizeof(str), "%-2s%-2s", Icon(EIcon::ELEMENTO), Icon(EIcon::VALOR));
-			DebugTabela(DETALHE, custos, str, " │ │", 1000000 + maiorCusto);
+			DebugTabela(DETALHE, custos, Icon(EIcon::ELEMENTO), " │ │", 1000000 + maiorCusto);
 			Debug(DETALHE, false, "\n │ └──────────────────────────────────── ");
 		}
 		else if (Parametro(NIVEL_DEBUG) >= COMPLETO) { // mostrar diversidade da população
 			DebugPopulacaoAE(populacao, Icon(EIcon::POP));
-			DebugDiversidadeAE(populacao, Icon(EIcon::DIVERSIDADE));
+			DebugDiversidadeAE(populacao, Icon(EIcon::DIST));
 		}
 	}
 }
@@ -468,10 +466,10 @@ void TProcuraMelhorativa::DebugDiversidadeAE(TVector<TPonto>& populacao, const c
 {
 	printf("\n │ ├───── %s ───── ", titulo);
 	if (populacao.Count() <= 10) { // matriz de distâncias
-		printf("\n │ │  %-2s │", Icon(EIcon::ELEMENTO));
+		printf("\n │ │  %-2s ", Icon(EIcon::ELEMENTO));
 		for (int i = 0; i < populacao.Count(); i++) {
 			DebugID(i + 1, populacao.Count());
-			printf("│");
+			printf(" ");
 		}
 		printf("\n │ │ ────┼");
 		for (int i = 0; i < populacao.Count(); i++)
@@ -495,7 +493,7 @@ void TProcuraMelhorativa::DebugDiversidadeAE(TVector<TPonto>& populacao, const c
 		for (int i = 0; i < populacao.Count(); i++)
 			id += i;
 		//id.RandomOrder(); // não utilizar aleatório para não alterar a sequência para o algoritmo principal
-		printf("\n │ │  %-2s │ %-2s │ %-2s │\n │ │ ────┼────┼────┼",
+		printf("\n │ │ %-2s   %-2s  %-2s \n │ │ ────┼────┼────┼",
 			Icon(EIcon::ELEMENTO), Icon(EIcon::ELEMENTO), Icon(EIcon::DIST));
 		for (int i = 0; i < id.Count(); i += 2) {
 			printf("\n │ │ ");
@@ -737,8 +735,8 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 	}
 
 	Debug(COMPLETO, false, "\n │ │ ├───── Pais (%-2s) ───── ", Icon(EIcon::VALOR));
-	DebugTabela(COMPLETO, custoPais, " 🧑‍🔬 ", " │ │ │ ", 1000000 + maiorCusto, true);
-	Debug(COMPLETO, false, "\n │ │ ├───── Filhos (%.2s) %.2s%d  %.2s%d ───── %.2s%d %.2s%d %.2s%d",
+	DebugTabela(COMPLETO, custoPais, Icon(EIcon::ELEMENTO), " │ │ │ ", 1000000 + maiorCusto, true);
+	Debug(COMPLETO, false, "\n │ │ ├───── Filhos (%-2s) %-2s%d  %-2s%d ───── %-2s%d %-2s%d %-2s%d",
 		Icon(EIcon::VALOR),
 		Icon(EIcon::CRUZAR), cruzamentos,
 		Icon(EIcon::MUTAR), mutacoes,
@@ -926,7 +924,8 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 		remover = {};
 		for (int i = 0; i < populacao.Count(); i++)
 			id += i;
-		Debug(COMPLETO, false, "\n │ └───── FASE Diversidade - limpeza ───── ");
+		Debug(COMPLETO, false, "\n │ └───── FASE %-2s Diversidade - limpeza ───── ",
+			Icon(EIcon::DIVERSIDADE));
 		for (int j = 0; j < populacao.Count(); j++) {
 			if (id.Count() > 20)
 				id.RandomOrder();
@@ -1009,7 +1008,7 @@ void TProcuraMelhorativa::Explorar() {
 	populacao = CompletarPopulacaoAE(populacao);
 	do {
 		DebugGeracaoAE(epoca, populacao);
-		if ((opcao = NovoValor("\n │ └─■ ⚡ Operação (1 ✨ Mutar, 2 🧬 Cruzar, 3 🔗 Vizinhos): ")) == NAO_LIDO)
+		if ((opcao = NovoValor("\n │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): ")) == NAO_LIDO)
 			break;
 		Dominio(opcao, 0, 3);
 		debugPrefixo = " │ │ ";

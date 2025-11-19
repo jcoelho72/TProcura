@@ -1549,9 +1549,9 @@ void TProcura::DebugTabela(ENivelDebug nivel, TVector<int> tabela, const char* t
 {
 	if (Parametro(NIVEL_DEBUG) < nivel)
 		return;
-	printf("\n%s%-4s│", prefixo, tipo);
+	printf("\n%s%-4s ", prefixo, tipo);
 	for (int i = 0; i < 10 && i < tabela.Count(); i++)
-		printf("%4d│", i + 1);
+		printf("%4d ", i + 1);
 	printf("\n%s────┼", prefixo);
 	for (int i = 0; i < 10 && i < tabela.Count(); i++)
 		printf("────┼");

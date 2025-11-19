@@ -108,20 +108,20 @@ namespace compat {
     X(EMPATE, "🟰 ")       /* empate */ \
     X(EPOCA, "📆 ")       /* época */ \
     X(DIST, "📏 ")       /* distância entre dois elementos */ \
-    X(ELEMENTO, "⚪ ")       /* elemento, pessoa, indivíduo */ \
-    X(POP, "👥 ")       /* população */ \
+    X(ELEMENTO, "🧍 ")       /* elemento, pessoa, indivíduo */ \
+    X(POP, "🧍🧑‍🤝‍🧑🚶‍")       /* população */ \
     X(DIVERSIDADE, "🌈 ")       /* diversidade */ \
     X(SEL_PAIS, "🧩 ")       /* fase algoritmo evolutivo, selecionar pais */ \
     X(PAIS, "🧑‍🤝‍🧑 ")       /* pais, do operador de cruzamento */ \
     X(CRUZAR, "🧬 ")       /* cruzamento, reprodução */ \
-    X(MUTAR, "✨ ")       /* mutação */ \
-    X(SOBREVIVENCIA, "🛡️ ")       /* fase da sobrevivência algoritmo evolutivo */ \
+    X(MUTAR, "🦠 ")       /* mutação */ \
+    X(SOBREVIVENCIA, "⚔️ ")       /* fase da sobrevivência algoritmo evolutivo */ \
     X(IDADE, "⏳ ")       /* idade de um elemento/indivíduo */ \
     X(IMIGRANTES, "🚶‍ ")       /* elementos / indivíduos imigrantes, estrangeiros */ \
     X(APAGADO, "🧹 ")       /* removido / apagado / eliminado / limpo */ \
     X(ELITE,  "👑 ")      /* elite */ \
     X(TORNEIO,  "🏆 ")      /* torneio */ \
-    X(VIZINHO,  "🔗 ")      /* vizinho, operador de vizinhança */ \
+    X(VIZINHO,  "🧍🧍")      /* vizinho, operador de vizinhança */ \
 	X(MENU, "☰ ")      /* menu */
 
 	enum class EIcon {

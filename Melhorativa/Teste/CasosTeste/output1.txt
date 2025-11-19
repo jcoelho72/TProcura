@@ -1,0 +1,1662 @@
+
+┌─ Teste TProcuraMelhorativa ──┐
+│ 1 - 8 Damas (Inteira)        │
+│ 2 - 8 Damas (Permutacao)     │
+│ 3 - Partição (Binária)       │
+└──────────────────────────────┘
+Opção: 
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ::  ♛   
+  ::♛ ::  ::  ::
+::  ::  ::  ::♛ 
+♛ ::  ::  ::  ::
+::  ::  ♛   ::  
+  ::  ::  ::♛ ::
+::  ::  ♛   ::  
+  ::  ::  ::  ♛ 
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ [90mID atual:[0m 8  [90mIntervalo:[0m [4–40]  
+│ [90mPrefixo atual:[0m 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+ │ 🏆  ⏱  💰 g:2
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+♛   ::  
+  ::  ♛ 
+─┬───────────────────
+ ├─┬─ 📆 0 ⏱  ──── 💰 g2-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;51;101;0m1   [0m0 2 0 3  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;101m2   [0m3 1 1 0  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;51;0;101m3   [0m1 0 3 0  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;0m4   [0m3 3 1 0  💰 [38;2;223;31;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │  🧍  [48;2;51;101;0m1   [0m [48;2;0;101;101m2   [0m [48;2;51;0;101m3   [0m [48;2;101;0;0m4   [0m 
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ [48;2;51;101;0m1   [0m│    │   4│   4│   4│
+ │ │ [48;2;0;101;101m2   [0m│   4│    │   3│   1│
+ │ │ [48;2;51;0;101m3   [0m│   4│   3│    │   3│
+ │ │ [48;2;101;0;0m4   [0m│   4│   1│   3│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+ │ ┌───── 🦠  ───── 
+ │ │ 🧍  [1-4]:  │ │ 🧍   3 3 1 0  mutar vizinho incDecValor (3,1)
+ │ │ 🦠   3 3 1 1 
+ │ │ ::  ::♛ 
+ │ │   ::  ♛ 
+ │ │ ::♛ ::  
+ │ │   ♛   ::
+ │ └────────────── 
+ ├─┬─ 📆 1 ⏱  ──── 💰 g2-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;51;101;0m1   [0m0 2 0 3  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;101m2   [0m3 1 1 0  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;51;0;101m3   [0m1 0 3 0  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;0m4   [0m3 3 1 1  💰 [38;2;223;31;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │  🧍  [48;2;51;101;0m1   [0m [48;2;0;101;101m2   [0m [48;2;51;0;101m3   [0m [48;2;101;0;0m4   [0m 
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ [48;2;51;101;0m1   [0m│    │   4│   4│   4│
+ │ │ [48;2;0;101;101m2   [0m│   4│    │   3│   2│
+ │ │ [48;2;51;0;101m3   [0m│   4│   3│    │   4│
+ │ │ [48;2;101;0;0m4   [0m│   4│   2│   4│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+ │ ┌───── 🧬  ───── 
+ │ │ 🧍 Pai [1-4]:  │ │ 🧍 Mãe [1-4]:  │ │ 🧍 Filho [1-4]:  │ │ 
+ │ │ 🧍 Pai   0 2 0 3 
+ │ │ 🧍 Mãe   1 0 3 0  cruzamento 1-ponto(s): 3 
+ │ │ 🧬 Filho 0 2 0 0 
+ │ │ ♛   ::  
+ │ │   ::♛ ::
+ │ │ ♛   ::  
+ │ │ ♛ ::  ::
+ │ └────────────── 
+ ├─┬─ 📆 2 ⏱  ──── 💰 g2-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;51;101;0m1   [0m0 2 0 3  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;101m2   [0m3 1 1 0  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;51;0;101m3   [0m1 0 3 0  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;0m4   [0m0 2 0 0  💰 [38;2;223;31;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │  🧍  [48;2;51;101;0m1   [0m [48;2;0;101;101m2   [0m [48;2;51;0;101m3   [0m [48;2;101;0;0m4   [0m 
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ [48;2;51;101;0m1   [0m│    │   4│   4│   1│
+ │ │ [48;2;0;101;101m2   [0m│   4│    │   3│   3│
+ │ │ [48;2;51;0;101m3   [0m│   4│   3│    │   3│
+ │ │ [48;2;101;0;0m4   [0m│   1│   3│   3│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+ │ ┌───── 🧍🧍 ───── 
+ │ │ 🧍 [1-4]:  │ │ 🧍   0 2 0 3  vizinhança incDecValor (limite 0)
+ │ ├───── Vizinhos ───── 
+ │ │ 🧍 [48;2;81;101;0m1   [0m1 2 0 3  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;40m2   [0m0 3 0 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;40;101m3   [0m0 1 0 3  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;81;0;101m4   [0m0 2 1 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;0m5   [0m0 2 0 2  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [1-5]:  │ │ 
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+ │ │ ::♛ ::  
+ │ │   ::♛ ::
+ │ │ ♛   ::  
+ │ │   ::  ♛ 
+─┬───────────────────
+ │ └────────────── 
+ ├─┬─ 📆 3 ⏱  ──── 💰 g1-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;51;101;0m1   [0m1 2 0 3  💰 [38;2;127;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;101m2   [0m3 1 1 0  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;51;0;101m3   [0m1 0 3 0  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;0m4   [0m0 2 0 0  💰 [38;2;223;31;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │  🧍  [48;2;51;101;0m1   [0m [48;2;0;101;101m2   [0m [48;2;51;0;101m3   [0m [48;2;101;0;0m4   [0m 
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ [48;2;51;101;0m1   [0m│    │   4│   3│   2│
+ │ │ [48;2;0;101;101m2   [0m│   4│    │   3│   3│
+ │ │ [48;2;51;0;101m3   [0m│   3│   3│    │   3│
+ │ │ [48;2;101;0;0m4   [0m│   2│   3│   3│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+ │ ┌───── 🧍🧍 ───── 
+ │ │ 🧍 [1-4]:  │ │ 🧍   1 2 0 3  vizinhança incDecValor (limite 0)
+ │ ├───── Vizinhos ───── 
+ │ │ 🧍 [48;2;101;101;0m1   [0m2 2 0 3  💰 [38;2;223;159;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;0m2   [0m0 2 0 3  💰 [38;2;223;159;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;101m3   [0m1 3 0 3  💰 [38;2;159;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;0;101m4   [0m1 1 0 3  💰 [38;2;223;31;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;101m5   [0m1 2 1 3  💰 [38;2;223;31;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;0m6   [0m1 2 0 2  💰 [38;2;223;159;31mg:2[0m
+ │ │ 🧍 [1-6]:  │ │ 
+ │ │ ::♛ ::  
+ │ │   ::  ♛ 
+ │ │ ♛   ::  
+ │ │   ::  ♛ 
+ │ └────────────── 
+ ├─┬─ 📆 4 ⏱  ──── 💰 g1-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;51;101;0m1   [0m1 3 0 3  💰 [38;2;127;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;101m2   [0m3 1 1 0  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;51;0;101m3   [0m1 0 3 0  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;0m4   [0m0 2 0 0  💰 [38;2;223;31;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │  🧍  [48;2;51;101;0m1   [0m [48;2;0;101;101m2   [0m [48;2;51;0;101m3   [0m [48;2;101;0;0m4   [0m 
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ [48;2;51;101;0m1   [0m│    │   4│   3│   3│
+ │ │ [48;2;0;101;101m2   [0m│   4│    │   3│   3│
+ │ │ [48;2;51;0;101m3   [0m│   3│   3│    │   3│
+ │ │ [48;2;101;0;0m4   [0m│   3│   3│   3│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+ │ ┌───── 🧍🧍 ───── 
+ │ │ 🧍 [1-4]:  │ │ 🧍   1 3 0 3  vizinhança incDecValor (limite 0)
+ │ ├───── Vizinhos ───── 
+ │ │ 🧍 [48;2;81;101;0m1   [0m2 3 0 3  💰 [38;2;223;31;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;40m2   [0m0 3 0 3  💰 [38;2;223;31;31mg:3[0m
+ │ │ 🧍 [48;2;0;40;101m3   [0m1 2 0 3  💰 [38;2;159;223;31mg:1[0m
+ │ │ 🧍 [48;2;81;0;101m4   [0m1 3 1 3  💰 [38;2;223;159;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;0m5   [0m1 3 0 2  💰 [38;2;31;223;31mg:0[0m
+ │ │ 🧍 [1-5]:  │ │ 
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+ │ │ ::♛ ::  
+ │ │   ::  ♛ 
+ │ │ ♛   ::  
+ │ │   ::♛ ::
+─┬───────────────────
+ │ └──────────────  └──────────────── 
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::♛ ::  
+  ::  ♛ 
+♛   ::  
+  ::♛ ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ [90mID atual:[0m 4  [90mIntervalo:[0m [4–40]  
+│ [90mPrefixo atual:[0m 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m1 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ [90mID atual:[0m 4  [90mIntervalo:[0m [4–40]  
+│ [90mPrefixo atual:[0m 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m             Algoritmo Evolutivo [90m(1 a 1)[0m
+│ [90mP2(NIVEL_DEBUG):[0m           NADA       [90m(0 a 4)[0m
+│ [90mP3(SEMENTE):[0m               1          [90m(1 a 1000000)[0m
+│ [90mP4(LIMITE_TEMPO):[0m          10         [90m(1 a 3600)[0m
+│ [90mP5(LIMITE_ITERACOES):[0m      1000000    [90m(0 a 1000000000)[0m
+│ [90mP6(POPULACAO):[0m             20         [90m(2 a 1000000)[0m
+│ [90mP7(PROB_CRUZAR):[0m           100        [90m(0 a 100)[0m
+│ [90mP8(PROB_MUTAR):[0m            50         [90m(0 a 100)[0m
+│ [90mP9(SELECAO):[0m               Roleta     [90m(1 a 3)[0m
+│ [90mP10(PRESSAO):[0m              150        [90m(100 a 200)[0m
+│ [90mP13(SOBREVIVENCIA):[0m        Idade      [90m(1 a 3)[0m
+│ [90mP14(PERC_DESCENDENTES):[0m    100        [90m(0 a 100)[0m
+│ [90mP16(ELITISMO):[0m             1          [90m(0 a 100)[0m
+│ [90mP17(IMIGRANTES):[0m           1          [90m(0 a 100)[0m
+│ [90mP18(DIVERSIDADE):[0m          Limpeza    [90m(1 a 3)[0m
+│ [90mP19(DIST_MINIMA):[0m          0          [90m(0 a 1000)[0m
+│ [90mP20(TIPO_CRUZAR):[0m          1-ponto    [90m(0 a 10)[0m
+│ [90mP21(TIPO_MUTAR):[0m           0          [90m(0 a 100)[0m
+│ [90mP22(TIPO_VIZINHO):[0m         incDecValor [90m(1 a 6)[0m
+│ [90mP23(LIMITE_VIZINHOS):[0m      0          [90m(0 a 1000)[0m
+│ [90mP24(TIPO_DISTANCIA):[0m       Hamming    [90m(1 a 3)[0m
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ [90m0:[0m NADA
+│ [90m1:[0m ATIVIDADE
+│ [90m2:[0m PASSOS
+│ [90m3:[0m DETALHE
+│ [90m4:[0m COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m             Algoritmo Evolutivo [90m(1 a 1)[0m
+│ [90mP2(NIVEL_DEBUG):[0m           ATIVIDADE  [90m(0 a 4)[0m
+│ [90mP3(SEMENTE):[0m               1          [90m(1 a 1000000)[0m
+│ [90mP4(LIMITE_TEMPO):[0m          10         [90m(1 a 3600)[0m
+│ [90mP5(LIMITE_ITERACOES):[0m      1000000    [90m(0 a 1000000000)[0m
+│ [90mP6(POPULACAO):[0m             20         [90m(2 a 1000000)[0m
+│ [90mP7(PROB_CRUZAR):[0m           100        [90m(0 a 100)[0m
+│ [90mP8(PROB_MUTAR):[0m            50         [90m(0 a 100)[0m
+│ [90mP9(SELECAO):[0m               Roleta     [90m(1 a 3)[0m
+│ [90mP10(PRESSAO):[0m              150        [90m(100 a 200)[0m
+│ [90mP13(SOBREVIVENCIA):[0m        Idade      [90m(1 a 3)[0m
+│ [90mP14(PERC_DESCENDENTES):[0m    100        [90m(0 a 100)[0m
+│ [90mP16(ELITISMO):[0m             1          [90m(0 a 100)[0m
+│ [90mP17(IMIGRANTES):[0m           1          [90m(0 a 100)[0m
+│ [90mP18(DIVERSIDADE):[0m          Limpeza    [90m(1 a 3)[0m
+│ [90mP19(DIST_MINIMA):[0m          0          [90m(0 a 1000)[0m
+│ [90mP20(TIPO_CRUZAR):[0m          1-ponto    [90m(0 a 10)[0m
+│ [90mP21(TIPO_MUTAR):[0m           0          [90m(0 a 100)[0m
+│ [90mP22(TIPO_VIZINHO):[0m         incDecValor [90m(1 a 6)[0m
+│ [90mP23(LIMITE_VIZINHOS):[0m      0          [90m(0 a 1000)[0m
+│ [90mP24(TIPO_DISTANCIA):[0m       Hamming    [90m(1 a 3)[0m
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m ATIVIDADE | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══.
+ │ 🏆  ⏱  💰 g:2
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+♛   ::  
+  ::  ♛ 
+─┬───────────────────
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ ├─ Parâmetros ─ [90mP1=[0m1 [90mP2=[0m1 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m ATIVIDADE | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ [90mID atual:[0m 4  [90mIntervalo:[0m [4–40]  
+│ [90mPrefixo atual:[0m 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m ATIVIDADE | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m             Algoritmo Evolutivo [90m(1 a 1)[0m
+│ [90mP2(NIVEL_DEBUG):[0m           ATIVIDADE  [90m(0 a 4)[0m
+│ [90mP3(SEMENTE):[0m               1          [90m(1 a 1000000)[0m
+│ [90mP4(LIMITE_TEMPO):[0m          10         [90m(1 a 3600)[0m
+│ [90mP5(LIMITE_ITERACOES):[0m      1000000    [90m(0 a 1000000000)[0m
+│ [90mP6(POPULACAO):[0m             20         [90m(2 a 1000000)[0m
+│ [90mP7(PROB_CRUZAR):[0m           100        [90m(0 a 100)[0m
+│ [90mP8(PROB_MUTAR):[0m            50         [90m(0 a 100)[0m
+│ [90mP9(SELECAO):[0m               Roleta     [90m(1 a 3)[0m
+│ [90mP10(PRESSAO):[0m              150        [90m(100 a 200)[0m
+│ [90mP13(SOBREVIVENCIA):[0m        Idade      [90m(1 a 3)[0m
+│ [90mP14(PERC_DESCENDENTES):[0m    100        [90m(0 a 100)[0m
+│ [90mP16(ELITISMO):[0m             1          [90m(0 a 100)[0m
+│ [90mP17(IMIGRANTES):[0m           1          [90m(0 a 100)[0m
+│ [90mP18(DIVERSIDADE):[0m          Limpeza    [90m(1 a 3)[0m
+│ [90mP19(DIST_MINIMA):[0m          0          [90m(0 a 1000)[0m
+│ [90mP20(TIPO_CRUZAR):[0m          1-ponto    [90m(0 a 10)[0m
+│ [90mP21(TIPO_MUTAR):[0m           0          [90m(0 a 100)[0m
+│ [90mP22(TIPO_VIZINHO):[0m         incDecValor [90m(1 a 6)[0m
+│ [90mP23(LIMITE_VIZINHOS):[0m      0          [90m(0 a 1000)[0m
+│ [90mP24(TIPO_DISTANCIA):[0m       Hamming    [90m(1 a 3)[0m
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ [90m0:[0m NADA
+│ [90m1:[0m ATIVIDADE
+│ [90m2:[0m PASSOS
+│ [90m3:[0m DETALHE
+│ [90m4:[0m COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m             Algoritmo Evolutivo [90m(1 a 1)[0m
+│ [90mP2(NIVEL_DEBUG):[0m           PASSOS     [90m(0 a 4)[0m
+│ [90mP3(SEMENTE):[0m               1          [90m(1 a 1000000)[0m
+│ [90mP4(LIMITE_TEMPO):[0m          10         [90m(1 a 3600)[0m
+│ [90mP5(LIMITE_ITERACOES):[0m      1000000    [90m(0 a 1000000000)[0m
+│ [90mP6(POPULACAO):[0m             20         [90m(2 a 1000000)[0m
+│ [90mP7(PROB_CRUZAR):[0m           100        [90m(0 a 100)[0m
+│ [90mP8(PROB_MUTAR):[0m            50         [90m(0 a 100)[0m
+│ [90mP9(SELECAO):[0m               Roleta     [90m(1 a 3)[0m
+│ [90mP10(PRESSAO):[0m              150        [90m(100 a 200)[0m
+│ [90mP13(SOBREVIVENCIA):[0m        Idade      [90m(1 a 3)[0m
+│ [90mP14(PERC_DESCENDENTES):[0m    100        [90m(0 a 100)[0m
+│ [90mP16(ELITISMO):[0m             1          [90m(0 a 100)[0m
+│ [90mP17(IMIGRANTES):[0m           1          [90m(0 a 100)[0m
+│ [90mP18(DIVERSIDADE):[0m          Limpeza    [90m(1 a 3)[0m
+│ [90mP19(DIST_MINIMA):[0m          0          [90m(0 a 1000)[0m
+│ [90mP20(TIPO_CRUZAR):[0m          1-ponto    [90m(0 a 10)[0m
+│ [90mP21(TIPO_MUTAR):[0m           0          [90m(0 a 100)[0m
+│ [90mP22(TIPO_VIZINHO):[0m         incDecValor [90m(1 a 6)[0m
+│ [90mP23(LIMITE_VIZINHOS):[0m      0          [90m(0 a 1000)[0m
+│ [90mP24(TIPO_DISTANCIA):[0m       Hamming    [90m(1 a 3)[0m
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m PASSOS | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ │ 🏆  ⏱  💰 g:2
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+♛   ::  
+  ::  ♛ 
+─┬───────────────────
+ ├─── 📆 0 ⏱  ──── 💰 g2-5
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ ├─── 📆 1 ⏱  ──── 💰 g1-5
+ ├─── 📆 2 ⏱  ──── 💰 g1-5
+ ├─── 📆 3 ⏱  ──── 💰 g1-5
+ ├─── 📆 4 ⏱  ──── 💰 g1-5
+ ├─── 📆 5 ⏱  ──── 💰 g1-5
+ ├─── 📆 6 ⏱  ──── 💰 g1-4
+ ├─── 📆 7 ⏱  ──── 💰 g1-5
+ ├─── 📆 8 ⏱  ──── 💰 g1-5
+ ├─── 📆 9 ⏱  ──── 💰 g1-4
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ ├─ Parâmetros ─ [90mP1=[0m1 [90mP2=[0m2 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m PASSOS | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ [90mID atual:[0m 4  [90mIntervalo:[0m [4–40]  
+│ [90mPrefixo atual:[0m 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m PASSOS | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m             Algoritmo Evolutivo [90m(1 a 1)[0m
+│ [90mP2(NIVEL_DEBUG):[0m           PASSOS     [90m(0 a 4)[0m
+│ [90mP3(SEMENTE):[0m               1          [90m(1 a 1000000)[0m
+│ [90mP4(LIMITE_TEMPO):[0m          10         [90m(1 a 3600)[0m
+│ [90mP5(LIMITE_ITERACOES):[0m      1000000    [90m(0 a 1000000000)[0m
+│ [90mP6(POPULACAO):[0m             20         [90m(2 a 1000000)[0m
+│ [90mP7(PROB_CRUZAR):[0m           100        [90m(0 a 100)[0m
+│ [90mP8(PROB_MUTAR):[0m            50         [90m(0 a 100)[0m
+│ [90mP9(SELECAO):[0m               Roleta     [90m(1 a 3)[0m
+│ [90mP10(PRESSAO):[0m              150        [90m(100 a 200)[0m
+│ [90mP13(SOBREVIVENCIA):[0m        Idade      [90m(1 a 3)[0m
+│ [90mP14(PERC_DESCENDENTES):[0m    100        [90m(0 a 100)[0m
+│ [90mP16(ELITISMO):[0m             1          [90m(0 a 100)[0m
+│ [90mP17(IMIGRANTES):[0m           1          [90m(0 a 100)[0m
+│ [90mP18(DIVERSIDADE):[0m          Limpeza    [90m(1 a 3)[0m
+│ [90mP19(DIST_MINIMA):[0m          0          [90m(0 a 1000)[0m
+│ [90mP20(TIPO_CRUZAR):[0m          1-ponto    [90m(0 a 10)[0m
+│ [90mP21(TIPO_MUTAR):[0m           0          [90m(0 a 100)[0m
+│ [90mP22(TIPO_VIZINHO):[0m         incDecValor [90m(1 a 6)[0m
+│ [90mP23(LIMITE_VIZINHOS):[0m      0          [90m(0 a 1000)[0m
+│ [90mP24(TIPO_DISTANCIA):[0m       Hamming    [90m(1 a 3)[0m
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ [90m0:[0m NADA
+│ [90m1:[0m ATIVIDADE
+│ [90m2:[0m PASSOS
+│ [90m3:[0m DETALHE
+│ [90m4:[0m COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 2): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m             Algoritmo Evolutivo [90m(1 a 1)[0m
+│ [90mP2(NIVEL_DEBUG):[0m           DETALHE    [90m(0 a 4)[0m
+│ [90mP3(SEMENTE):[0m               1          [90m(1 a 1000000)[0m
+│ [90mP4(LIMITE_TEMPO):[0m          10         [90m(1 a 3600)[0m
+│ [90mP5(LIMITE_ITERACOES):[0m      1000000    [90m(0 a 1000000000)[0m
+│ [90mP6(POPULACAO):[0m             20         [90m(2 a 1000000)[0m
+│ [90mP7(PROB_CRUZAR):[0m           100        [90m(0 a 100)[0m
+│ [90mP8(PROB_MUTAR):[0m            50         [90m(0 a 100)[0m
+│ [90mP9(SELECAO):[0m               Roleta     [90m(1 a 3)[0m
+│ [90mP10(PRESSAO):[0m              150        [90m(100 a 200)[0m
+│ [90mP13(SOBREVIVENCIA):[0m        Idade      [90m(1 a 3)[0m
+│ [90mP14(PERC_DESCENDENTES):[0m    100        [90m(0 a 100)[0m
+│ [90mP16(ELITISMO):[0m             1          [90m(0 a 100)[0m
+│ [90mP17(IMIGRANTES):[0m           1          [90m(0 a 100)[0m
+│ [90mP18(DIVERSIDADE):[0m          Limpeza    [90m(1 a 3)[0m
+│ [90mP19(DIST_MINIMA):[0m          0          [90m(0 a 1000)[0m
+│ [90mP20(TIPO_CRUZAR):[0m          1-ponto    [90m(0 a 10)[0m
+│ [90mP21(TIPO_MUTAR):[0m           0          [90m(0 a 100)[0m
+│ [90mP22(TIPO_VIZINHO):[0m         incDecValor [90m(1 a 6)[0m
+│ [90mP23(LIMITE_VIZINHOS):[0m      0          [90m(0 a 1000)[0m
+│ [90mP24(TIPO_DISTANCIA):[0m       Hamming    [90m(1 a 3)[0m
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m DETALHE | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ │ 🏆  ⏱  💰 g:2
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+♛   ::  
+  ::  ♛ 
+─┬───────────────────
+ ├─┬─ 📆 0 ⏱  ──── 💰 g2-5 [📏 1-4 (μ=2, melhor/pior 3)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│
+ │ │  10│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;223;31;31m   5[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;223;31;31m   5[0m│[38;2;223;184;31m   3[0m│[38;2;223;31;31m   5[0m│[38;2;223;108;31m   4[0m│
+ │ └──────────────────────────────────── 
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ ├─┬─ 📆 1 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;108;223;31m   1[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;223;31;31m   5[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│
+ │ │  10│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 2 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=3, melhor/pior 3)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│
+ │ │  10│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 3 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 3)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;31;31m   5[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│
+ │ │  10│[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 4 ⏱  ──── 💰 g1-5 [📏 0-4 (μ=2, melhor/pior 2)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m│[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│
+ │ │  10│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m│[38;2;223;31;31m   5[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 5 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 3)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;108;223;31m   1[0m│[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m│
+ │ │  10│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 6 ⏱  ──── 💰 g1-4 [📏 1-4 (μ=2, melhor/pior 4)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;223;127;31m   3[0m│[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m│[38;2;223;31;31m   4[0m│[38;2;223;223;31m   2[0m│[38;2;127;223;31m   1[0m│[38;2;223;31;31m   4[0m│[38;2;127;223;31m   1[0m│[38;2;223;223;31m   2[0m│
+ │ │  10│[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m│[38;2;127;223;31m   1[0m│[38;2;223;127;31m   3[0m│[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m│[38;2;127;223;31m   1[0m│[38;2;223;127;31m   3[0m│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 7 ⏱  ──── 💰 g1-5 [📏 0-4 (μ=2, melhor/pior 4)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m│[38;2;223;31;31m   5[0m│
+ │ │  10│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m│[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m│[38;2;108;223;31m   1[0m│[38;2;223;184;31m   3[0m│[38;2;223;31;31m   5[0m│[38;2;223;108;31m   4[0m│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 8 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m│[38;2;223;31;31m   5[0m│[38;2;108;223;31m   1[0m│
+ │ │  10│[38;2;108;223;31m   1[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 9 ⏱  ──── 💰 g1-4 [📏 0-4 (μ=2, melhor/pior 2)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m│[38;2;223;223;31m   2[0m│[38;2;127;223;31m   1[0m│[38;2;127;223;31m   1[0m│[38;2;223;223;31m   2[0m│[38;2;223;223;31m   2[0m│
+ │ │  10│[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m│[38;2;223;31;31m   4[0m│[38;2;223;223;31m   2[0m│[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m│
+ │ └──────────────────────────────────── 
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ ├─ Parâmetros ─ [90mP1=[0m1 [90mP2=[0m3 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m DETALHE | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ [90mID atual:[0m 4  [90mIntervalo:[0m [4–40]  
+│ [90mPrefixo atual:[0m 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m DETALHE | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m             Algoritmo Evolutivo [90m(1 a 1)[0m
+│ [90mP2(NIVEL_DEBUG):[0m           DETALHE    [90m(0 a 4)[0m
+│ [90mP3(SEMENTE):[0m               1          [90m(1 a 1000000)[0m
+│ [90mP4(LIMITE_TEMPO):[0m          10         [90m(1 a 3600)[0m
+│ [90mP5(LIMITE_ITERACOES):[0m      1000000    [90m(0 a 1000000000)[0m
+│ [90mP6(POPULACAO):[0m             20         [90m(2 a 1000000)[0m
+│ [90mP7(PROB_CRUZAR):[0m           100        [90m(0 a 100)[0m
+│ [90mP8(PROB_MUTAR):[0m            50         [90m(0 a 100)[0m
+│ [90mP9(SELECAO):[0m               Roleta     [90m(1 a 3)[0m
+│ [90mP10(PRESSAO):[0m              150        [90m(100 a 200)[0m
+│ [90mP13(SOBREVIVENCIA):[0m        Idade      [90m(1 a 3)[0m
+│ [90mP14(PERC_DESCENDENTES):[0m    100        [90m(0 a 100)[0m
+│ [90mP16(ELITISMO):[0m             1          [90m(0 a 100)[0m
+│ [90mP17(IMIGRANTES):[0m           1          [90m(0 a 100)[0m
+│ [90mP18(DIVERSIDADE):[0m          Limpeza    [90m(1 a 3)[0m
+│ [90mP19(DIST_MINIMA):[0m          0          [90m(0 a 1000)[0m
+│ [90mP20(TIPO_CRUZAR):[0m          1-ponto    [90m(0 a 10)[0m
+│ [90mP21(TIPO_MUTAR):[0m           0          [90m(0 a 100)[0m
+│ [90mP22(TIPO_VIZINHO):[0m         incDecValor [90m(1 a 6)[0m
+│ [90mP23(LIMITE_VIZINHOS):[0m      0          [90m(0 a 1000)[0m
+│ [90mP24(TIPO_DISTANCIA):[0m       Hamming    [90m(1 a 3)[0m
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ [90m0:[0m NADA
+│ [90m1:[0m ATIVIDADE
+│ [90m2:[0m PASSOS
+│ [90m3:[0m DETALHE
+│ [90m4:[0m COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 3): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m             Algoritmo Evolutivo [90m(1 a 1)[0m
+│ [90mP2(NIVEL_DEBUG):[0m           COMPLETO   [90m(0 a 4)[0m
+│ [90mP3(SEMENTE):[0m               1          [90m(1 a 1000000)[0m
+│ [90mP4(LIMITE_TEMPO):[0m          10         [90m(1 a 3600)[0m
+│ [90mP5(LIMITE_ITERACOES):[0m      1000000    [90m(0 a 1000000000)[0m
+│ [90mP6(POPULACAO):[0m             20         [90m(2 a 1000000)[0m
+│ [90mP7(PROB_CRUZAR):[0m           100        [90m(0 a 100)[0m
+│ [90mP8(PROB_MUTAR):[0m            50         [90m(0 a 100)[0m
+│ [90mP9(SELECAO):[0m               Roleta     [90m(1 a 3)[0m
+│ [90mP10(PRESSAO):[0m              150        [90m(100 a 200)[0m
+│ [90mP13(SOBREVIVENCIA):[0m        Idade      [90m(1 a 3)[0m
+│ [90mP14(PERC_DESCENDENTES):[0m    100        [90m(0 a 100)[0m
+│ [90mP16(ELITISMO):[0m             1          [90m(0 a 100)[0m
+│ [90mP17(IMIGRANTES):[0m           1          [90m(0 a 100)[0m
+│ [90mP18(DIVERSIDADE):[0m          Limpeza    [90m(1 a 3)[0m
+│ [90mP19(DIST_MINIMA):[0m          0          [90m(0 a 1000)[0m
+│ [90mP20(TIPO_CRUZAR):[0m          1-ponto    [90m(0 a 10)[0m
+│ [90mP21(TIPO_MUTAR):[0m           0          [90m(0 a 100)[0m
+│ [90mP22(TIPO_VIZINHO):[0m         incDecValor [90m(1 a 6)[0m
+│ [90mP23(LIMITE_VIZINHOS):[0m      0          [90m(0 a 1000)[0m
+│ [90mP24(TIPO_DISTANCIA):[0m       Hamming    [90m(1 a 3)[0m
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m COMPLETO | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+  ::♛ ::
+::  ::♛ 
+♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 0 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ │ 🏆  ⏱  💰 g:2
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+♛   ::  
+  ::  ♛ 
+─┬───────────────────
+ ├─┬─ 📆 0 ⏱  ──── 💰 g2-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m0 2 0 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m3 1 1 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m1 0 3 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m3 3 1 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m3 1 2 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m3 0 2 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m3 0 3 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m2 0 2 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m0 0 0 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m3 0 0 2  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m0 3 1 1  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m1 2 3 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m2 3 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m0 0 1 0  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m0 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m3 0 0 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m1 2 1 2  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m3 0 1 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m1 2 1 0  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m0 0 2 2  💰 [38;2;223;108;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   4│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   3│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   1│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   3│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   2│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   4│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   3│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   3│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   3│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  75[0m│[48;2;101;61;0m  38[0m│[48;2;101;91;0m  49[0m│[48;2;81;101;0m  41[0m│[48;2;51;101;0m  43[0m│[48;2;20;101;0m  59[0m│[48;2;0;101;10m  51[0m│[48;2;0;101;40m  64[0m│[48;2;0;101;71m  33[0m│[48;2;0;101;101m  62[0m│
+ │ │ │   10│[48;2;0;71;101m  72[0m│[48;2;0;40;101m  46[0m│[48;2;0;10;101m  70[0m│[48;2;20;0;101m  25[0m│[48;2;51;0;101m  54[0m│[48;2;81;0;101m  67[0m│[48;2;101;0;91m  28[0m│[48;2;101;0;61m  57[0m│[48;2;101;0;30m  30[0m│[48;2;101;0;0m  36[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   2[0m│[48;2;101;61;0m   1[0m│[48;2;101;91;0m   1[0m│[48;2;81;101;0m   0[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   1[0m│[48;2;0;101;10m   1[0m│[48;2;0;101;40m   2[0m│[48;2;0;101;71m   0[0m│[48;2;0;101;101m   2[0m│
+ │ │ │   10│[48;2;0;71;101m   1[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   1[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   1[0m│[48;2;81;0;101m   1[0m│[48;2;101;0;91m   1[0m│[48;2;101;0;61m   1[0m│[48;2;101;0;30m   1[0m│[48;2;101;0;0m   0[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;0;101;101m  10[0m⇄[48;2;20;0;101m  14[0m│[48;2;20;101;0m   6[0m⇄[48;2;0;101;40m   8[0m│[48;2;81;0;101m  16[0m⇄[48;2;0;101;40m   8[0m│[48;2;51;101;0m   5[0m⇄[48;2;101;30;0m   1[0m│[48;2;51;0;101m  15[0m⇄[48;2;0;10;101m  13[0m│
+ │ │ │   10│[48;2;0;71;101m  11[0m⇄[48;2;101;0;91m  17[0m│[48;2;0;101;101m  10[0m⇄[48;2;101;0;30m  19[0m│[48;2;101;0;61m  18[0m⇄[48;2;101;91;0m   3[0m│[48;2;101;61;0m   2[0m⇄[48;2;0;101;10m   7[0m│[48;2;0;40;101m  12[0m⇄[48;2;101;30;0m   1[0m│
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;184;223;31m   2[0m⇄[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│
+ │ │ │   10│[38;2;184;223;31m   2[0m⇄[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;31;31m   5[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 14 ───── 📈 4 🟰 10 📉 6
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;108;223;31m   1[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│
+ │ │ │   10│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;108;31m   4[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  9✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 4
+ ├─┬─ 📆 1 ⏱  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m0 2 3 1  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m1 2 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m3 1 1 1  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m1 0 3 2  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m0 0 3 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m1 2 0 2  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m3 0 1 0  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m0 0 1 2  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m0 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m1 3 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m0 2 0 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m3 1 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m3 0 0 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m3 0 1 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m1 0 2 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m3 0 2 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m0 1 0 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m3 1 1 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m3 2 2 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m3 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   2│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   4│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   4│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   2│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   2│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   4│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   1│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   1│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   3│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   3│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  75[0m│[48;2;101;61;0m  43[0m│[48;2;101;91;0m  46[0m│[48;2;81;101;0m  38[0m│[48;2;51;101;0m  57[0m│[48;2;20;101;0m  64[0m│[48;2;0;101;10m  25[0m│[48;2;0;101;40m  30[0m│[48;2;0;101;71m  49[0m│[48;2;0;101;101m  62[0m│
+ │ │ │   10│[48;2;0;71;101m  36[0m│[48;2;0;40;101m  33[0m│[48;2;0;10;101m  72[0m│[48;2;20;0;101m  51[0m│[48;2;51;0;101m  70[0m│[48;2;81;0;101m  67[0m│[48;2;101;0;91m  54[0m│[48;2;101;0;61m  41[0m│[48;2;101;0;30m  28[0m│[48;2;101;0;0m  59[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   1[0m│[48;2;101;61;0m   1[0m│[48;2;101;91;0m   1[0m│[48;2;81;101;0m   1[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   1[0m│[48;2;0;101;10m   1[0m│[48;2;0;101;40m   0[0m│[48;2;0;101;71m   1[0m│[48;2;0;101;101m   2[0m│
+ │ │ │   10│[48;2;0;71;101m   0[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   1[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   2[0m│[48;2;81;0;101m   1[0m│[48;2;101;0;91m   1[0m│[48;2;101;0;61m   1[0m│[48;2;101;0;30m   1[0m│[48;2;101;0;0m   1[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;0;10;101m  13[0m⇄[48;2;20;101;0m   6[0m│[48;2;0;101;101m  10[0m⇄[48;2;51;101;0m   5[0m│[48;2;101;0;91m  17[0m⇄[48;2;20;0;101m  14[0m│[48;2;0;101;71m   9[0m⇄[48;2;101;0;0m  20[0m│[48;2;101;30;0m   1[0m⇄[48;2;101;61;0m   2[0m│
+ │ │ │   10│[48;2;101;0;61m  18[0m⇄[48;2;51;0;101m  15[0m│[48;2;101;0;30m  19[0m⇄[48;2;81;0;101m  16[0m│[48;2;0;101;10m   7[0m⇄[48;2;81;101;0m   4[0m│[48;2;101;91;0m   3[0m⇄[48;2;51;0;101m  15[0m│[48;2;0;101;101m  10[0m⇄[48;2;0;40;101m  12[0m│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;108;31m   4[0m│
+ │ │ │   10│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;31;31m   5[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 10 ───── 📈 4 🟰 13 📉 3
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ │   10│[38;2;223;108;31m   4[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  7✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ───── 
+ ├─┬─ 📆 2 ⏱  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m1 3 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m1 1 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m0 0 2 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m3 3 2 3  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m1 1 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m2 0 3 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m0 2 2 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m1 0 2 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m3 1 1 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m1 2 3 1  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m1 2 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m3 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m0 3 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m3 0 0 2  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m0 1 1 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m1 3 0 0  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m1 0 3 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m3 0 0 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m3 0 1 2  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m0 2 0 2  💰 [38;2;184;223;31mg:2[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   2│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   3│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   3│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   3│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   4│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   4│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   4│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   4│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   3│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   3│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  70[0m│[48;2;101;61;0m  41[0m│[48;2;101;91;0m  51[0m│[48;2;81;101;0m  25[0m│[48;2;51;101;0m  59[0m│[48;2;20;101;0m  43[0m│[48;2;0;101;10m  38[0m│[48;2;0;101;40m  46[0m│[48;2;0;101;71m  49[0m│[48;2;0;101;101m  30[0m│
+ │ │ │   10│[48;2;0;71;101m  28[0m│[48;2;0;40;101m  57[0m│[48;2;0;10;101m  64[0m│[48;2;20;0;101m  72[0m│[48;2;51;0;101m  33[0m│[48;2;81;0;101m  75[0m│[48;2;101;0;91m  54[0m│[48;2;101;0;61m  67[0m│[48;2;101;0;30m  36[0m│[48;2;101;0;0m  62[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   1[0m│[48;2;101;61;0m   1[0m│[48;2;101;91;0m   1[0m│[48;2;81;101;0m   1[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   1[0m│[48;2;0;101;10m   1[0m│[48;2;0;101;40m   0[0m│[48;2;0;101;71m   1[0m│[48;2;0;101;101m   1[0m│
+ │ │ │   10│[48;2;0;71;101m   1[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   1[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   1[0m│[48;2;81;0;101m   2[0m│[48;2;101;0;91m   1[0m│[48;2;101;0;61m   1[0m│[48;2;101;0;30m   1[0m│[48;2;101;0;0m   1[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;0;30m  19[0m⇄[48;2;0;101;71m   9[0m│[48;2;101;0;91m  17[0m⇄[48;2;101;0;0m  20[0m│[48;2;101;91;0m   3[0m⇄[48;2;51;0;101m  15[0m│[48;2;81;0;101m  16[0m⇄[48;2;101;30;0m   1[0m│[48;2;0;101;10m   7[0m⇄[48;2;81;0;101m  16[0m│
+ │ │ │   10│[48;2;101;0;61m  18[0m⇄[48;2;20;101;0m   6[0m│[48;2;0;71;101m  11[0m⇄[48;2;0;101;101m  10[0m│[48;2;101;61;0m   2[0m⇄[48;2;51;101;0m   5[0m│[48;2;0;10;101m  13[0m⇄[48;2;20;0;101m  14[0m│[48;2;81;101;0m   4[0m⇄[48;2;0;40;101m  12[0m│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m⇄[38;2;108;223;31m   1[0m│
+ │ │ │   10│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;31;31m   5[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 10 ───── 📈 5 🟰 12 📉 3
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;31;31m   5[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ │   10│[38;2;223;184;31m   3[0m⇄[38;2;108;223;31m   1[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  15✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ───── 
+ ├─┬─ 📆 3 ⏱  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m3 3 1 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m3 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m3 2 3 0  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m0 0 3 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m1 1 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m1 1 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m1 2 0 3  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m1 3 3 1  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m2 0 0 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m2 0 3 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m0 2 3 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m1 3 0 0  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m2 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m0 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m0 0 1 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m1 0 3 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m1 2 0 2  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m3 0 1 2  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m3 0 0 2  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m2 1 1 2  💰 [38;2;223;108;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   2│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   3│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   1│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   3│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   2│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   4│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   1│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   3│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   3│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   3│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  38[0m│[48;2;101;61;0m  51[0m│[48;2;101;91;0m  25[0m│[48;2;81;101;0m  46[0m│[48;2;51;101;0m  28[0m│[48;2;20;101;0m  64[0m│[48;2;0;101;10m  75[0m│[48;2;0;101;40m  36[0m│[48;2;0;101;71m  33[0m│[48;2;0;101;101m  57[0m│
+ │ │ │   10│[48;2;0;71;101m  62[0m│[48;2;0;40;101m  72[0m│[48;2;0;10;101m  54[0m│[48;2;20;0;101m  49[0m│[48;2;51;0;101m  59[0m│[48;2;81;0;101m  43[0m│[48;2;101;0;91m  70[0m│[48;2;101;0;61m  41[0m│[48;2;101;0;30m  67[0m│[48;2;101;0;0m  30[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   0[0m│[48;2;101;61;0m   1[0m│[48;2;101;91;0m   1[0m│[48;2;81;101;0m   1[0m│[48;2;51;101;0m   0[0m│[48;2;20;101;0m   2[0m│[48;2;0;101;10m   1[0m│[48;2;0;101;40m   1[0m│[48;2;0;101;71m   0[0m│[48;2;0;101;101m   2[0m│
+ │ │ │   10│[48;2;0;71;101m   1[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   1[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   1[0m│[48;2;81;0;101m   1[0m│[48;2;101;0;91m   2[0m│[48;2;101;0;61m   1[0m│[48;2;101;0;30m   1[0m│[48;2;101;0;0m   1[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;91;0m   3[0m⇄[48;2;81;101;0m   4[0m│[48;2;101;0;30m  19[0m⇄[48;2;0;101;101m  10[0m│[48;2;0;40;101m  12[0m⇄[48;2;20;101;0m   6[0m│[48;2;101;0;0m  20[0m⇄[48;2;0;71;101m  11[0m│[48;2;101;0;61m  18[0m⇄[48;2;101;61;0m   2[0m│
+ │ │ │   10│[48;2;81;0;101m  16[0m⇄[48;2;101;0;91m  17[0m│[48;2;51;0;101m  15[0m⇄[48;2;0;101;101m  10[0m│[48;2;0;101;40m   8[0m⇄[48;2;20;0;101m  14[0m│[48;2;20;101;0m   6[0m⇄[48;2;0;101;10m   7[0m│[48;2;101;0;91m  17[0m⇄[48;2;0;10;101m  13[0m│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;31;31m   5[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ │   10│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;108;223;31m   1[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 11 ───── 📈 5 🟰 9 📉 6
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;184;31m   3[0m⇄[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m⇄[38;2;108;223;31m   1[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;108;223;31m   1[0m│
+ │ │ │   10│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;31;31m   5[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  1✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 15 🧹 9 🧹 13
+ ├─┬─ 📆 4 ⏱  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m0 2 0 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m1 1 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m1 2 0 3  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m0 3 3 1  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m1 3 0 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m2 0 3 3  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m1 0 3 2  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m1 2 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m3 3 1 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m3 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m0 0 1 2  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m1 1 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m2 3 0 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m3 0 3 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m0 2 3 1  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m3 2 3 3  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m0 2 2 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m1 2 2 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m1 1 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m1 3 2 1  💰 [38;2;223;108;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   3│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   4│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   4│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   2│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   2│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   4│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   4│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   2│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   2│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   3│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  38[0m│[48;2;101;61;0m  62[0m│[48;2;101;91;0m  70[0m│[48;2;81;101;0m  67[0m│[48;2;51;101;0m  46[0m│[48;2;20;101;0m  75[0m│[48;2;0;101;10m  36[0m│[48;2;0;101;40m  28[0m│[48;2;0;101;71m  49[0m│[48;2;0;101;101m  57[0m│
+ │ │ │   10│[48;2;0;71;101m  33[0m│[48;2;0;40;101m  59[0m│[48;2;0;10;101m  43[0m│[48;2;20;0;101m  41[0m│[48;2;51;0;101m  72[0m│[48;2;81;0;101m  25[0m│[48;2;101;0;91m  51[0m│[48;2;101;0;61m  54[0m│[48;2;101;0;30m  64[0m│[48;2;101;0;0m  30[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   0[0m│[48;2;101;61;0m   2[0m│[48;2;101;91;0m   1[0m│[48;2;81;101;0m   1[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   2[0m│[48;2;0;101;10m   0[0m│[48;2;0;101;40m   1[0m│[48;2;0;101;71m   1[0m│[48;2;0;101;101m   1[0m│
+ │ │ │   10│[48;2;0;71;101m   1[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   1[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   1[0m│[48;2;81;0;101m   1[0m│[48;2;101;0;91m   1[0m│[48;2;101;0;61m   1[0m│[48;2;101;0;30m   1[0m│[48;2;101;0;0m   1[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;0;30m  19[0m⇄[48;2;20;101;0m   6[0m│[48;2;101;0;0m  20[0m⇄[48;2;81;0;101m  16[0m│[48;2;0;10;101m  13[0m⇄[48;2;0;101;101m  10[0m│[48;2;81;101;0m   4[0m⇄[48;2;101;0;91m  17[0m│[48;2;101;91;0m   3[0m⇄[48;2;20;0;101m  14[0m│
+ │ │ │   10│[48;2;51;101;0m   5[0m⇄[48;2;101;0;61m  18[0m│[48;2;101;61;0m   2[0m⇄[48;2;101;61;0m   2[0m│[48;2;20;101;0m   6[0m⇄[48;2;0;71;101m  11[0m│[48;2;51;0;101m  15[0m⇄[48;2;0;101;71m   9[0m│[48;2;0;40;101m  12[0m⇄[48;2;0;101;40m   8[0m│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;184;223;31m   2[0m⇄[38;2;108;223;31m   1[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;31;31m   5[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ │   10│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;108;31m   4[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 12 ───── 📈 4 🟰 9 📉 7
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;108;223;31m   1[0m⇄[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;108;223;31m   1[0m│
+ │ │ │   10│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  11✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ───── 
+ ├─┬─ 📆 5 ⏱ 1ms  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m1 3 0 0  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m1 2 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m0 2 3 1  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m0 2 1 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m3 0 3 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m0 0 1 2  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m1 1 3 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m1 2 3 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m1 3 2 1  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m1 3 2 0  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m3 1 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m0 3 3 2  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m0 3 2 1  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m2 3 0 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m2 3 0 0  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m3 2 3 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m1 2 3 2  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m1 1 2 0  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m1 0 3 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m1 3 1 1  💰 [38;2;223;108;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   3│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   2│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   3│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   1│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   1│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   3│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   3│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   4│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   3│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   3│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  75[0m│[48;2;101;61;0m  30[0m│[48;2;101;91;0m  72[0m│[48;2;81;101;0m  51[0m│[48;2;51;101;0m  49[0m│[48;2;20;101;0m  43[0m│[48;2;0;101;10m  62[0m│[48;2;0;101;40m  38[0m│[48;2;0;101;71m  33[0m│[48;2;0;101;101m  70[0m│
+ │ │ │   10│[48;2;0;71;101m  41[0m│[48;2;0;40;101m  67[0m│[48;2;0;10;101m  36[0m│[48;2;20;0;101m  54[0m│[48;2;51;0;101m  57[0m│[48;2;81;0;101m  59[0m│[48;2;101;0;91m  25[0m│[48;2;101;0;61m  64[0m│[48;2;101;0;30m  46[0m│[48;2;101;0;0m  28[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   2[0m│[48;2;101;61;0m   0[0m│[48;2;101;91;0m   2[0m│[48;2;81;101;0m   1[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   1[0m│[48;2;0;101;10m   1[0m│[48;2;0;101;40m   1[0m│[48;2;0;101;71m   0[0m│[48;2;0;101;101m   2[0m│
+ │ │ │   10│[48;2;0;71;101m   0[0m│[48;2;0;40;101m   2[0m│[48;2;0;10;101m   0[0m│[48;2;20;0;101m   2[0m│[48;2;51;0;101m   1[0m│[48;2;81;0;101m   1[0m│[48;2;101;0;91m   0[0m│[48;2;101;0;61m   2[0m│[48;2;101;0;30m   1[0m│[48;2;101;0;0m   0[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;51;101;0m   5[0m⇄[48;2;0;101;10m   7[0m│[48;2;101;0;30m  19[0m⇄[48;2;101;0;61m  18[0m│[48;2;101;91;0m   3[0m⇄[48;2;101;30;0m   1[0m│[48;2;81;101;0m   4[0m⇄[48;2;20;0;101m  14[0m│[48;2;101;91;0m   3[0m⇄[48;2;20;0;101m  14[0m│
+ │ │ │   10│[48;2;20;101;0m   6[0m⇄[48;2;81;0;101m  16[0m│[48;2;0;40;101m  12[0m⇄[48;2;0;101;40m   8[0m│[48;2;0;40;101m  12[0m⇄[48;2;0;101;101m  10[0m│[48;2;101;30;0m   1[0m⇄[48;2;0;101;101m  10[0m│[48;2;51;0;101m  15[0m⇄[48;2;101;0;61m  18[0m│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;127;31m   3[0m⇄[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;223;31m   2[0m│[38;2;127;223;31m   1[0m⇄[38;2;127;223;31m   1[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;127;31m   3[0m│[38;2;127;223;31m   1[0m⇄[38;2;223;127;31m   3[0m│
+ │ │ │   10│[38;2;223;31;31m   4[0m⇄[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m⇄[38;2;223;31;31m   4[0m│[38;2;223;223;31m   2[0m⇄[38;2;127;223;31m   1[0m│[38;2;127;223;31m   1[0m⇄[38;2;127;223;31m   1[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;223;31m   2[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 14 ───── 📈 4 🟰 7 📉 9
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;127;31m   3[0m⇄[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;223;31m   2[0m│[38;2;223;31;31m   4[0m⇄[38;2;223;223;31m   2[0m│[38;2;223;31;31m   4[0m⇄[38;2;127;223;31m   1[0m│[38;2;223;31;31m   4[0m⇄[38;2;127;223;31m   1[0m│
+ │ │ │   10│[38;2;223;223;31m   2[0m⇄[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m⇄[38;2;127;223;31m   1[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m⇄[38;2;127;223;31m   1[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  7✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ───── 
+ ├─┬─ 📆 6 ⏱ 1ms  ──── 💰 g1-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m2 3 0 0  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m1 1 1 0  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m1 3 0 1  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m1 0 2 0  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m1 3 3 3  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m0 3 3 0  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m0 2 3 1  💰 [38;2;127;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m3 0 1 2  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m0 0 3 1  💰 [38;2;127;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m2 2 3 1  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m0 0 0 3  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m2 3 1 2  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m1 3 0 3  💰 [38;2;127;223;31mg:1[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m1 0 3 1  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m0 2 2 0  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m1 0 3 3  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m1 1 2 0  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m2 1 3 3  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m3 0 3 1  💰 [38;2;127;223;31mg:1[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m0 0 1 3  💰 [38;2;223;127;31mg:3[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   3│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   3│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   2│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   4│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   2│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   4│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   3│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   4│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   3│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   3│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  46[0m│[48;2;101;61;0m  36[0m│[48;2;101;91;0m  38[0m│[48;2;81;101;0m  62[0m│[48;2;51;101;0m  33[0m│[48;2;20;101;0m  64[0m│[48;2;0;101;10m  70[0m│[48;2;0;101;40m  30[0m│[48;2;0;101;71m  72[0m│[48;2;0;101;101m  59[0m│
+ │ │ │   10│[48;2;0;71;101m  25[0m│[48;2;0;40;101m  41[0m│[48;2;0;10;101m  75[0m│[48;2;20;0;101m  49[0m│[48;2;51;0;101m  28[0m│[48;2;81;0;101m  54[0m│[48;2;101;0;91m  57[0m│[48;2;101;0;61m  51[0m│[48;2;101;0;30m  67[0m│[48;2;101;0;0m  43[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   1[0m│[48;2;101;61;0m   0[0m│[48;2;101;91;0m   1[0m│[48;2;81;101;0m   1[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   1[0m│[48;2;0;101;10m   2[0m│[48;2;0;101;40m   0[0m│[48;2;0;101;71m   2[0m│[48;2;0;101;101m   1[0m│
+ │ │ │   10│[48;2;0;71;101m   0[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   2[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   0[0m│[48;2;81;0;101m   1[0m│[48;2;101;0;91m   1[0m│[48;2;101;0;61m   1[0m│[48;2;101;0;30m   2[0m│[48;2;101;0;0m   1[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;20;0;101m  14[0m⇄[48;2;101;0;61m  18[0m│[48;2;0;101;71m   9[0m⇄[48;2;0;10;101m  13[0m│[48;2;0;101;10m   7[0m⇄[48;2;0;101;10m   7[0m│[48;2;101;91;0m   3[0m⇄[48;2;20;101;0m   6[0m│[48;2;101;0;91m  17[0m⇄[48;2;101;0;0m  20[0m│
+ │ │ │   10│[48;2;81;0;101m  16[0m⇄[48;2;101;30;0m   1[0m│[48;2;0;10;101m  13[0m⇄[48;2;101;0;30m  19[0m│[48;2;81;101;0m   4[0m⇄[48;2;0;101;101m  10[0m│[48;2;0;101;71m   9[0m⇄[48;2;51;101;0m   5[0m│[48;2;0;40;101m  12[0m⇄[48;2;101;0;30m  19[0m│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;108;223;31m   1[0m│[38;2;108;223;31m   1[0m⇄[38;2;108;223;31m   1[0m│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ │   10│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;108;223;31m   1[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m⇄[38;2;108;223;31m   1[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 13 ───── 📈 2 🟰 9 📉 9
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;108;223;31m   1[0m│
+ │ │ │   10│[38;2;223;31;31m   5[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;108;223;31m   1[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  2✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 18 🧹 19 🧹 16
+ ├─┬─ 📆 7 ⏱ 1ms  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m3 0 3 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m0 0 2 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m2 3 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m2 2 2 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m2 2 3 1  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m3 0 3 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m1 3 0 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m2 0 2 3  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m1 3 0 0  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m0 1 2 1  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m1 1 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m0 3 0 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m1 3 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m0 2 3 1  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m0 1 3 1  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m1 2 0 3  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m0 2 3 1  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m2 0 0 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m3 2 3 2  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m1 3 1 1  💰 [38;2;223;108;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   3│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   3│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   3│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   4│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   4│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   4│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   3│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   4│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   3│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  43[0m│[48;2;101;61;0m  49[0m│[48;2;101;91;0m  36[0m│[48;2;81;101;0m  33[0m│[48;2;51;101;0m  62[0m│[48;2;20;101;0m  54[0m│[48;2;0;101;10m  57[0m│[48;2;0;101;40m  59[0m│[48;2;0;101;71m  72[0m│[48;2;0;101;101m  25[0m│
+ │ │ │   10│[48;2;0;71;101m  38[0m│[48;2;0;40;101m  51[0m│[48;2;0;10;101m  30[0m│[48;2;20;0;101m  75[0m│[48;2;51;0;101m  64[0m│[48;2;81;0;101m  67[0m│[48;2;101;0;91m  70[0m│[48;2;101;0;61m  46[0m│[48;2;101;0;30m  28[0m│[48;2;101;0;0m  41[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   1[0m│[48;2;101;61;0m   1[0m│[48;2;101;91;0m   1[0m│[48;2;81;101;0m   1[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   1[0m│[48;2;0;101;10m   1[0m│[48;2;0;101;40m   1[0m│[48;2;0;101;71m   2[0m│[48;2;0;101;101m   0[0m│
+ │ │ │   10│[48;2;0;71;101m   1[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   1[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   1[0m│[48;2;81;0;101m   2[0m│[48;2;101;0;91m   1[0m│[48;2;101;0;61m   1[0m│[48;2;101;0;30m   1[0m│[48;2;101;0;0m   0[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;0;40;101m  12[0m⇄[48;2;20;101;0m   6[0m│[48;2;0;10;101m  13[0m⇄[48;2;101;0;30m  19[0m│[48;2;0;101;10m   7[0m⇄[48;2;101;61;0m   2[0m│[48;2;0;101;71m   9[0m⇄[48;2;81;0;101m  16[0m│[48;2;81;0;101m  16[0m⇄[48;2;51;0;101m  15[0m│
+ │ │ │   10│[48;2;101;0;91m  17[0m⇄[48;2;101;0;61m  18[0m│[48;2;101;30;0m   1[0m⇄[48;2;0;101;71m   9[0m│[48;2;20;0;101m  14[0m⇄[48;2;81;101;0m   4[0m│[48;2;51;101;0m   5[0m⇄[48;2;0;71;101m  11[0m│[48;2;0;101;40m   8[0m⇄[48;2;101;91;0m   3[0m│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;31;31m   5[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;108;223;31m   1[0m│[38;2;108;223;31m   1[0m⇄[38;2;184;223;31m   2[0m│
+ │ │ │   10│[38;2;108;223;31m   1[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;108;223;31m   1[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 11 ───── 📈 2 🟰 11 📉 7
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;31;31m   5[0m⇄[38;2;223;31;31m   5[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;108;31m   4[0m│[38;2;108;223;31m   1[0m⇄[38;2;108;223;31m   1[0m│
+ │ │ │   10│[38;2;108;223;31m   1[0m⇄[38;2;223;31;31m   5[0m│[38;2;108;223;31m   1[0m⇄[38;2;108;223;31m   1[0m│[38;2;223;108;31m   4[0m⇄[38;2;223;184;31m   3[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  11✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 2 🧹 10
+ ├─┬─ 📆 8 ⏱ 1ms  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m2 3 2 3  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m0 1 3 1  💰 [38;2;184;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m1 1 3 3  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m2 2 2 1  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m2 2 2 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m1 3 0 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m3 0 0 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m0 2 3 1  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m0 1 0 1  💰 [38;2;223;31;31mg:5[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m1 2 0 3  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m1 3 0 3  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m1 0 0 1  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m1 0 3 1  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m0 2 3 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m1 3 3 2  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m3 0 3 1  💰 [38;2;108;223;31mg:1[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m3 3 0 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m2 1 0 0  💰 [38;2;223;108;31mg:4[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m2 3 0 3  💰 [38;2;223;184;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m2 2 0 0  💰 [38;2;223;108;31mg:4[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   4│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   4│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   4│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   4│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   3│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   2│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   3│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   3│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   3│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   2│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  25[0m│[48;2;101;61;0m  64[0m│[48;2;101;91;0m  30[0m│[48;2;81;101;0m  41[0m│[48;2;51;101;0m  36[0m│[48;2;20;101;0m  57[0m│[48;2;0;101;10m  33[0m│[48;2;0;101;40m  67[0m│[48;2;0;101;71m  28[0m│[48;2;0;101;101m  75[0m│
+ │ │ │   10│[48;2;0;71;101m  70[0m│[48;2;0;40;101m  38[0m│[48;2;0;10;101m  51[0m│[48;2;20;0;101m  59[0m│[48;2;51;0;101m  49[0m│[48;2;81;0;101m  72[0m│[48;2;101;0;91m  54[0m│[48;2;101;0;61m  46[0m│[48;2;101;0;30m  62[0m│[48;2;101;0;0m  43[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   0[0m│[48;2;101;61;0m   2[0m│[48;2;101;91;0m   0[0m│[48;2;81;101;0m   1[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   1[0m│[48;2;0;101;10m   0[0m│[48;2;0;101;40m   2[0m│[48;2;0;101;71m   0[0m│[48;2;0;101;101m   2[0m│
+ │ │ │   10│[48;2;0;71;101m   1[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   1[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   1[0m│[48;2;81;0;101m   2[0m│[48;2;101;0;91m   1[0m│[48;2;101;0;61m   1[0m│[48;2;101;0;30m   1[0m│[48;2;101;0;0m   1[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;61;0m   2[0m⇄[48;2;101;0;30m  19[0m│[48;2;51;101;0m   5[0m⇄[48;2;101;0;0m  20[0m│[48;2;0;10;101m  13[0m⇄[48;2;0;40;101m  12[0m│[48;2;81;0;101m  16[0m⇄[48;2;0;101;101m  10[0m│[48;2;81;101;0m   4[0m⇄[48;2;20;101;0m   6[0m│
+ │ │ │   10│[48;2;101;0;91m  17[0m⇄[48;2;51;0;101m  15[0m│[48;2;0;101;101m  10[0m⇄[48;2;0;101;40m   8[0m│[48;2;0;71;101m  11[0m⇄[48;2;101;61;0m   2[0m│[48;2;81;0;101m  16[0m⇄[48;2;101;0;61m  18[0m│[48;2;0;101;40m   8[0m⇄[48;2;20;0;101m  14[0m│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;223;31m   2[0m⇄[38;2;223;127;31m   3[0m│[38;2;223;31;31m   4[0m⇄[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;31;31m   4[0m│[38;2;127;223;31m   1[0m⇄[38;2;127;223;31m   1[0m│[38;2;223;31;31m   4[0m⇄[38;2;223;127;31m   3[0m│
+ │ │ │   10│[38;2;223;127;31m   3[0m⇄[38;2;223;127;31m   3[0m│[38;2;127;223;31m   1[0m⇄[38;2;127;223;31m   1[0m│[38;2;127;223;31m   1[0m⇄[38;2;223;223;31m   2[0m│[38;2;127;223;31m   1[0m⇄[38;2;223;31;31m   4[0m│[38;2;127;223;31m   1[0m⇄[38;2;223;127;31m   3[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 12 ───── 📈 7 🟰 7 📉 6
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;223;223;31m   2[0m⇄[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m⇄[38;2;223;127;31m   3[0m│[38;2;223;223;31m   2[0m⇄[38;2;223;223;31m   2[0m│[38;2;223;223;31m   2[0m⇄[38;2;127;223;31m   1[0m│[38;2;127;223;31m   1[0m⇄[38;2;223;223;31m   2[0m│
+ │ │ │   10│[38;2;223;223;31m   2[0m⇄[38;2;223;31;31m   4[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;223;31m   2[0m│[38;2;223;127;31m   3[0m⇄[38;2;223;127;31m   3[0m│[38;2;223;31;31m   4[0m⇄[38;2;223;31;31m   4[0m│[38;2;223;223;31m   2[0m⇄[38;2;223;223;31m   2[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍♂️🌍 Imigrantes  6✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 15 🧹 17
+ ├─┬─ 📆 9 ⏱ 1ms  ──── 💰 g1-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 [48;2;101;30;0m1   [0m0 3 3 1  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;61;0m2   [0m0 2 3 0  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;91;0m3   [0m2 0 2 1  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;81;101;0m4   [0m3 1 0 3  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;51;101;0m5   [0m0 3 1 3  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;20;101;0m6   [0m0 2 0 3  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;10m7   [0m0 2 3 1  💰 [38;2;127;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;40m8   [0m1 3 0 3  💰 [38;2;127;223;31mg:1[0m
+ │ │ 🧍 [48;2;0;101;71m9   [0m0 3 3 2  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;101;101m10  [0m2 2 3 1  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;0;71;101m11  [0m1 3 3 1  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;0;40;101m12  [0m1 2 0 1  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;0;10;101m13  [0m3 0 0 3  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;20;0;101m14  [0m1 0 3 1  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;51;0;101m15  [0m2 2 2 0  💰 [38;2;223;31;31mg:4[0m
+ │ │ 🧍 [48;2;81;0;101m16  [0m0 1 3 1  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;91m17  [0m2 2 0 3  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;61m18  [0m0 3 2 2  💰 [38;2;223;127;31mg:3[0m
+ │ │ 🧍 [48;2;101;0;30m19  [0m3 2 0 3  💰 [38;2;223;223;31mg:2[0m
+ │ │ 🧍 [48;2;101;0;0m20  [0m1 2 0 1  💰 [38;2;223;127;31mg:3[0m
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ [48;2;101;30;0m1   [0m│[48;2;101;61;0m2   [0m│   2│
+ │ │ [48;2;101;91;0m3   [0m│[48;2;81;101;0m4   [0m│   4│
+ │ │ [48;2;51;101;0m5   [0m│[48;2;20;101;0m6   [0m│   2│
+ │ │ [48;2;0;101;10m7   [0m│[48;2;0;101;40m8   [0m│   4│
+ │ │ [48;2;0;101;71m9   [0m│[48;2;0;101;101m10  [0m│   3│
+ │ │ [48;2;0;71;101m11  [0m│[48;2;0;40;101m12  [0m│   2│
+ │ │ [48;2;0;10;101m13  [0m│[48;2;20;0;101m14  [0m│   3│
+ │ │ [48;2;51;0;101m15  [0m│[48;2;81;0;101m16  [0m│   4│
+ │ │ [48;2;101;0;91m17  [0m│[48;2;101;0;61m18  [0m│   4│
+ │ │ [48;2;101;0;30m19  [0m│[48;2;101;0;0m20  [0m│   2│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m  57[0m│[48;2;101;61;0m  41[0m│[48;2;101;91;0m  49[0m│[48;2;81;101;0m  36[0m│[48;2;51;101;0m  51[0m│[48;2;20;101;0m  46[0m│[48;2;0;101;10m  72[0m│[48;2;0;101;40m  75[0m│[48;2;0;101;71m  67[0m│[48;2;0;101;101m  54[0m│
+ │ │ │   10│[48;2;0;71;101m  28[0m│[48;2;0;40;101m  33[0m│[48;2;0;10;101m  64[0m│[48;2;20;0;101m  30[0m│[48;2;51;0;101m  25[0m│[48;2;81;0;101m  59[0m│[48;2;101;0;91m  62[0m│[48;2;101;0;61m  43[0m│[48;2;101;0;30m  70[0m│[48;2;101;0;0m  38[0m│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;101;30;0m   1[0m│[48;2;101;61;0m   1[0m│[48;2;101;91;0m   1[0m│[48;2;81;101;0m   0[0m│[48;2;51;101;0m   1[0m│[48;2;20;101;0m   1[0m│[48;2;0;101;10m   2[0m│[48;2;0;101;40m   1[0m│[48;2;0;101;71m   2[0m│[48;2;0;101;101m   1[0m│
+ │ │ │   10│[48;2;0;71;101m   0[0m│[48;2;0;40;101m   1[0m│[48;2;0;10;101m   1[0m│[48;2;20;0;101m   1[0m│[48;2;51;0;101m   0[0m│[48;2;81;0;101m   1[0m│[48;2;101;0;91m   2[0m│[48;2;101;0;61m   0[0m│[48;2;101;0;30m   2[0m│[48;2;101;0;0m   1[0m│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[48;2;0;101;101m  10[0m⇄[48;2;101;30;0m   1[0m│[48;2;101;0;30m  19[0m⇄[48;2;101;91;0m   3[0m│[48;2;0;101;40m   8[0m⇄[48;2;101;0;91m  17[0m│[48;2;20;0;101m  14[0m⇄[48;2;0;40;101m  12[0m│[48;2;0;101;10m   7[0m⇄[48;2;81;0;101m  16[0m│
+ │ │ │   10│[48;2;101;0;91m  17[0m⇄[48;2;0;101;10m   7[0m│[48;2;0;101;71m   9[0m⇄[48;2;0;101;71m   9[0m│[48;2;101;0;0m  20[0m⇄[48;2;20;101;0m   6[0m│[48;2;51;101;0m   5[0m⇄[48;2;101;61;0m   2[0m│[48;2;101;0;30m  19[0m⇄[48;2;0;10;101m  13[0m│
+ │ 🏆  ⏱ 1ms  💰 g:0
+─┴───────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;223;184;31m   3[0m│[38;2;108;223;31m   1[0m⇄[38;2;184;223;31m   2[0m│
+ │ │ │   10│[38;2;184;223;31m   2[0m⇄[38;2;108;223;31m   1[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 12 ───── 📈 5 🟰 9 📉 6
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;184;223;31m   2[0m⇄[38;2;223;184;31m   3[0m│[38;2;184;223;31m   2[0m⇄[38;2;184;223;31m   2[0m│[38;2;223;184;31m   3[0m⇄[38;2;184;223;31m   2[0m│[38;2;108;223;31m   1[0m⇄[38;2;184;223;31m   2[0m│
+ │ │ │   10│[38;2;184;223;31m   2[0m⇄[38;2;223;108;31m   4[0m│[38;2;31;223;31m   0[0m⇄[38;2;223;108;31m   4[0m│[38;2;223;108;31m   4[0m⇄[38;2;108;223;31m   1[0m│[38;2;223;31;31m   5[0m⇄[38;2;108;223;31m   1[0m│[38;2;108;223;31m   1[0m⇄[38;2;223;184;31m   3[0m│
+ │ │ └──────────────────────────────────── 
+ ├─ Parâmetros ─ [90mP1=[0m1 [90mP2=[0m4 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m1000000 [90mP6=[0m20 [90mP7=[0m100 [90mP8=[0m50 [90mP9=[0m1 [90mP10=[0m150 [90mP13=[0m1
+ ├─ ⚙   ─ [90mP14=[0m100 [90mP16=[0m1 [90mP17=[0m1 [90mP18=[0m3 [90mP19=[0m0 [90mP20=[0m1 [90mP21=[0m0 [90mP22=[0m1 [90mP23=[0m0 [90mP24=[0m1
+═╧═ 🏁  Execução terminada ⏱   1ms  ═══
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m Algoritmo Evolutivo | [90mP2(NIVEL_DEBUG):[0m COMPLETO | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 1000000 | [90mP6(POPULACAO):[0m 20
+│ [90mP7(PROB_CRUZAR):[0m 100 | [90mP8(PROB_MUTAR):[0m 50 | [90mP9(SELECAO):[0m Roleta | [90mP10(PRESSAO):[0m 150
+│ [90mP13(SOBREVIVENCIA):[0m Idade | [90mP14(PERC_DESCENDENTES):[0m 100 | [90mP16(ELITISMO):[0m 1
+│ [90mP17(IMIGRANTES):[0m 1 | [90mP18(DIVERSIDADE):[0m Limpeza | [90mP19(DIST_MINIMA):[0m 0
+│ [90mP20(TIPO_CRUZAR):[0m 1-ponto | [90mP21(TIPO_MUTAR):[0m 0 | [90mP22(TIPO_VIZINHO):[0m incDecValor
+│ [90mP23(LIMITE_VIZINHOS):[0m 0 | [90mP24(TIPO_DISTANCIA):[0m Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(Resultado):[0m 0 | [90mI2(Tempo(ms)):[0m 1 | [90mI3(Iterações):[0m 241 | [90mI4(Épocas):[0m 10 | 
+│ [90mI5(Gerações):[0m 249
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
