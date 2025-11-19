@@ -2694,6 +2694,18 @@ pre {
     margin: 0; /* remove margens verticais */
 }
 
+summary pre {
+    background-color: #000000; /* preto */
+    color: #ffffff; /* branco */
+    padding: 0.75em;
+    border-radius: 4px;
+    font-family: "DejaVu Sans Mono", "Noto Sans Mono", "Fira Code", "Lucida Console", monospace;
+    font-size: 0.9em; /* ligeiramente mais pequeno */
+    line-height: 1.0; /* altura mínima, evita espaços verticais */
+    overflow-x: auto;
+    margin: 0; /* remove margens verticais */
+}
+
 span.entrada {
     color: #00ff00; /* verde vivo, estilo "terminal" */
     font-weight: bold; /* dá destaque */
