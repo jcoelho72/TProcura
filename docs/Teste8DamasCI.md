@@ -25,7 +25,7 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 │ 2 - 8 Damas (Permutacao)     │
 │ 3 - Partição (Binária)       │
 └──────────────────────────────┘
-Opção: 
+Opção: <span class="entrada">1</span>
 </pre>
 \endhtmlonly
 
@@ -84,12 +84,12 @@ Introduza: **1;4.**
 
 \htmlonly
 <pre>
-Opção: 
+Opção: <span class="entrada">1</span>
 ┌─ 📄 Instância ───────────────────────────────────────────────────────
 │ <span style="color:gray">ID atual:</span> 8  <span style="color:gray">Intervalo:</span> [4–40]  
 │ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
 └──────────────────────────────────────────────────────────────────────
-Novo ID (ENTER mantém) ou novo prefixo (texto): 
+Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">4</span>
 8 Damas (Inteira)
 ...
 ::  ♛   
@@ -113,7 +113,7 @@ Vamos então resolver a instância manualmente. Introduza: **2.**
 
 \htmlonly
 <pre>
-Opção: 
+Opção: <span class="entrada">2</span>
  │ 🏆  ⏱  💰 g:2
 ─┴───────────────────
 ♛   ::  
@@ -161,9 +161,10 @@ Vamos começar pela mutação, para mutar o indivíduo 4. Introduza: **1; 4.**
 
 \htmlonly
 <pre>
- │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">1</span>
  │ ┌───── 🦠  ───── 
- │ │ 🧍  [1-4]:  │ │ 🧍   3 3 1 0  mutar vizinho incDecValor (3,1)
+ │ │ 🧍  [1-4]: <span class="entrada">4</span>
+ │ │ 🧍   3 3 1 0  mutar vizinho incDecValor (3,1)
  │ │ 🦠   3 3 1 1 
  │ │ ::  ::♛ 
  │ │   ::  ♛ 
@@ -200,9 +201,12 @@ Introduza: **2; 1; 3; 4.**
 
 \htmlonly
 <pre>
-│ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+│ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">2</span>
  │ ┌───── 🧬  ───── 
- │ │ 🧍 Pai [1-4]:  │ │ 🧍 Mãe [1-4]:  │ │ 🧍 Filho [1-4]:  │ │ 
+ │ │ 🧍 Pai [1-4]: <span class="entrada">1</span>
+ │ │ 🧍 Mãe [1-4]: <span class="entrada">3</span>
+ │ │ 🧍 Filho [1-4]: <span class="entrada">4</span>
+ │ │ 
  │ │ 🧍 Pai   0 2 0 3 
  │ │ 🧍 Mãe   1 0 3 0  cruzamento 1-ponto(s): 3 
  │ │ 🧬 Filho 0 2 0 0 
@@ -238,16 +242,18 @@ Introduza: **3; 1; 1.**
 
 \htmlonly
 <pre>
-│ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+│ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">3</span>
  │ ┌───── 🧍🧍 ───── 
- │ │ 🧍 [1-4]:  │ │ 🧍   0 2 0 3  vizinhança incDecValor (limite 0)
+ │ │ 🧍 [1-4]: <span class="entrada">1</span>
+ │ │ 🧍   0 2 0 3  vizinhança incDecValor (limite 0)
  │ ├───── Vizinhos ───── 
  │ │ 🧍 <span style="background-color:rgb(81,101,0)">1   </span>1 2 0 3  💰 <span style="color:rgb(108,223,31)">g:1</span>
  │ │ 🧍 <span style="background-color:rgb(0,101,40)">2   </span>0 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
  │ │ 🧍 <span style="background-color:rgb(0,40,101)">3   </span>0 1 0 3  💰 <span style="color:rgb(223,31,31)">g:5</span>
  │ │ 🧍 <span style="background-color:rgb(81,0,101)">4   </span>0 2 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
  │ │ 🧍 <span style="background-color:rgb(101,0,0)">5   </span>0 2 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
- │ │ 🧍 [1-5]:  │ │ 
+ │ │ 🧍 [1-5]: <span class="entrada">1</span>
+ │ │ 
  │ 🏆  ⏱  💰 g:1
 ─┴───────────────────
  │ │ ::♛ ::  
@@ -284,9 +290,10 @@ Introduza: **3; 1; 3.**
 
 \htmlonly
 <pre>
-│ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+│ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">3</span>
  │ ┌───── 🧍🧍 ───── 
- │ │ 🧍 [1-4]:  │ │ 🧍   1 2 0 3  vizinhança incDecValor (limite 0)
+ │ │ 🧍 [1-4]: <span class="entrada">1</span>
+ │ │ 🧍   1 2 0 3  vizinhança incDecValor (limite 0)
  │ ├───── Vizinhos ───── 
  │ │ 🧍 <span style="background-color:rgb(101,101,0)">1   </span>2 2 0 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
  │ │ 🧍 <span style="background-color:rgb(0,101,0)">2   </span>0 2 0 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
@@ -294,7 +301,8 @@ Introduza: **3; 1; 3.**
  │ │ 🧍 <span style="background-color:rgb(0,0,101)">4   </span>1 1 0 3  💰 <span style="color:rgb(223,31,31)">g:3</span>
  │ │ 🧍 <span style="background-color:rgb(101,0,101)">5   </span>1 2 1 3  💰 <span style="color:rgb(223,31,31)">g:3</span>
  │ │ 🧍 <span style="background-color:rgb(101,0,0)">6   </span>1 2 0 2  💰 <span style="color:rgb(223,159,31)">g:2</span>
- │ │ 🧍 [1-6]:  │ │ 
+ │ │ 🧍 [1-6]: <span class="entrada">3</span>
+ │ │ 
  │ │ ::♛ ::  
  │ │   ::  ♛ 
  │ │ ♛   ::  
@@ -324,16 +332,18 @@ Introduza: **3; 1; 5.**
 
 \htmlonly
 <pre>
-│ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
+│ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">3</span>
  │ ┌───── 🧍🧍 ───── 
- │ │ 🧍 [1-4]:  │ │ 🧍   1 3 0 3  vizinhança incDecValor (limite 0)
+ │ │ 🧍 [1-4]: <span class="entrada">1</span>
+ │ │ 🧍   1 3 0 3  vizinhança incDecValor (limite 0)
  │ ├───── Vizinhos ───── 
  │ │ 🧍 <span style="background-color:rgb(81,101,0)">1   </span>2 3 0 3  💰 <span style="color:rgb(223,31,31)"> g:3</span>
  │ │ 🧍 <span style="background-color:rgb(0,101,40)">2   </span>0 3 0 3  💰 <span style="color:rgb(223,31,31)"> g:3</span>
  │ │ 🧍 <span style="background-color:rgb(0,40,101)">3   </span>1 2 0 3  💰 <span style="color:rgb(159,223,31)"> g:1</span>
  │ │ 🧍 <span style="background-color:rgb(81,0,101)">4   </span>1 3 1 3  💰 <span style="color:rgb(223,159,31)"> g:2</span>
  │ │ 🧍 <span style="background-color:rgb(101,0,0)">5   </span>1 3 0 2  💰 <span style="color:rgb(31,223,31)"> g:0</span>
- │ │ 🧍 [1-5]:  │ │ 
+ │ │ 🧍 [1-5]: <span class="entrada">5</span>
+ │ │ 
  │ 🏆  ⏱  💰 g:0
 ─┴───────────────────
  │ │ ::♛ ::  
@@ -367,7 +377,7 @@ Introduza: **1; 4; 6.**
 
 \htmlonly
 <pre>
-Opção: 
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>50 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>150 <span style="color:gray">P13=</span>1
  ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1
@@ -416,7 +426,7 @@ Introduza: **1; 4; 3; 2; 1; *ENTER*; 6.**
 
 \htmlonly
 <pre>
-Opção: 
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══.
  │ 🏆  ⏱  💰 g:2
 ─┴───────────────────
@@ -481,7 +491,7 @@ Introduza: **1; 4; 3; 2; 2; *ENTER*; 6.**
 
 \htmlonly
 <pre>
-Opção: 
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  │ 🏆  ⏱  💰 g:2
 ─┴───────────────────
@@ -558,7 +568,7 @@ Introduza: **1; 4; 3; 2; 3; *ENTER*; 6.**
 
 \htmlonly
 <pre>
-Opção: 
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  │ 🏆  ⏱  💰 g:2
 ─┴───────────────────
@@ -580,54 +590,71 @@ Opção:
 ::  ::♛ 
   ♛   ::
 ─┬───────────────────
+</pre>
+<details><summary>├─┬─ 📆 1 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]</summary><pre>
  ├─┬─ 📆 1 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │   0│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>│
  │ │  10│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│
  │ └──────────────────────────────────── 
- ├─┬─ 📆 2 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=3, melhor/pior 3)]
+</pre></details>
+<details><summary>├─┬─ 📆 2 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=3, melhor/pior 3)]</summary><pre>
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │   0│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│
  │ │  10│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>│
  │ └──────────────────────────────────── 
+</pre></details>
+<pre>
  ├─┬─ 📆 3 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 3)]
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │   0│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│
  │ │  10│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│
  │ └──────────────────────────────────── 
+</pre>
+<pre>
  ├─┬─ 📆 4 ⏱  ──── 💰 g1-5 [📏 0-4 (μ=2, melhor/pior 2)]
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │   0│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│
  │ │  10│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│
  │ └──────────────────────────────────── 
+</pre>
+<pre>
  ├─┬─ 📆 5 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 3)]
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │   0│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(108,223,31)">   1</span>│
  │ │  10│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│
  │ └──────────────────────────────────── 
+</pre>
+<pre>
  ├─┬─ 📆 6 ⏱  ──── 💰 g1-4 [📏 1-4 (μ=2, melhor/pior 4)]
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │   0│<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,223,31)">   2</span>│
  │ │  10│<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,127,31)">   3</span>│
  │ └──────────────────────────────────── 
+</pre>
+<pre>
  ├─┬─ 📆 7 ⏱  ──── 💰 g1-5 [📏 0-4 (μ=2, melhor/pior 4)]
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │   0│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   5</span>│
  │ │  10│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(223,108,31)">   4</span>│
  │ └──────────────────────────────────── 
+</pre>
+<pre>
  ├─┬─ 📆 8 ⏱  ──── 💰 g1-5 [📏 1-4 (μ=2, melhor/pior 4)]
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │   0│<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(108,223,31)">   1</span>│
  │ │  10│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>│
  │ └──────────────────────────────────── 
+</pre>
+<pre>
  ├─┬─ 📆 9 ⏱  ──── 💰 g1-4 [📏 0-4 (μ=2, melhor/pior 2)]
  │ │🧍     1    2    3    4    5    6    7    8    9   10 
  │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
@@ -695,7 +722,7 @@ Introduza:  **1; 4; 3; 2; 4; *ENTER*; 6.**
 
 \htmlonly
 <pre>
-Opção: 
+Opção: <span class="entrada">6</span>
 ═╤═ ►  Execução iniciada ═══
  │ 🏆  ⏱  💰 g:2
 ─┴───────────────────
