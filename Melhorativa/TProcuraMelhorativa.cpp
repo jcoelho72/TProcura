@@ -668,6 +668,8 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 		}
 		DebugTabela(COMPLETO, paiID, Icon(EIcon::ELEMENTO), " │ │ │ ", popoulacao.Count(), true);
 	}
+	DebugPopulacaoAE(popoulacao,"pop"); ////
+	DebugPopulacaoAE(pais, "pais"); ////
 	while (!pais.Empty()) {
 		TPonto pai = pais.Pop();
 		custoPais += pai->custo;
@@ -709,6 +711,7 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 		custoFilhos += descendente->custo;
 		VerificaMelhor(descendente);
 	}
+	custoFilhos.Invert();
 	int maiorCusto = 0;
 	for (auto custo : custoPais)
 		if (maiorCusto < custo)
@@ -844,7 +847,7 @@ TVector<TPonto> TProcuraMelhorativa::SelecionarSobreviventesAE(TVector<TPonto>& 
 
 	if (imigrantes > 0) {
 		// 3. Adicionar novos elementos aleatórios
-		Debug(COMPLETO, false, "\n │ │ ├───── 🚶‍♂️🌍 Imigrantes ",
+		Debug(COMPLETO, false, "\n │ │ ├───── 🚶‍🌍 Imigrantes ",
 			Icon(EIcon::IMIGRANTES));
 		for (int i = 0; i < imigrantes && populacao.Count() - i > 0; i++) {
 			// remover um aleatório para dar lugar a um imigrante
