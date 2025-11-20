@@ -668,8 +668,6 @@ TVector<TPonto> TProcuraMelhorativa::ReproduzirAE(TVector<TPonto>& pais, TVector
 		}
 		DebugTabela(COMPLETO, paiID, Icon(EIcon::ELEMENTO), " │ │ │ ", popoulacao.Count(), true);
 	}
-	DebugPopulacaoAE(popoulacao,"pop"); ////
-	DebugPopulacaoAE(pais, "pais"); ////
 	while (!pais.Empty()) {
 		TPonto pai = pais.Pop();
 		custoPais += pai->custo;
