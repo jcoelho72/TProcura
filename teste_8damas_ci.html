@@ -98,13 +98,12 @@ $(document).ready(function(){initNavTree('teste_8damas_ci.html',''); initResizab
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
 <p>Execução de exemplo com base no problema das 8 damas, com a codificação inteira. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. No Linux na pasta <code>.../TProcura/Melhorativa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
-<p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
 <h2><a class="anchor" id="autotoc_md75"></a>
 Sumário</h2>
 <ul>
-<li>Ação 1 - Ver instâncias</li>
-<li>Ação 2 - Resolver manualmente</li>
-<li>Ação 3 - Algoritmos Evolutivos</li>
+<li><a class="el" href="teste_8damas_ci.html#damas-ci1">Ação 1 - Ver instâncias</a></li>
+<li><a class="el" href="teste_8damas_ci.html#damas-ci2">Ação 2 - Resolver manualmente</a></li>
+<li><a class="el" href="teste_8damas_ci.html#damas-ci3">Ação 3 - Algoritmos Evolutivos</a></li>
 <li>Ação 4 - Testes Empíricos</li>
 </ul>
 <p> 
@@ -117,7 +116,7 @@ Sumário</h2>
 Opção: <span class="entrada">1</span>
 </pre>
 </p>
-<p><a class="anchor" id="invalid"></a></p>
+<p><a class="anchor" id="damas-ci1"></a></p>
 <h2><a class="anchor" id="autotoc_md76"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no problema 8 Damas Inteira, introduza: <b>1.</b></p>
@@ -148,10 +147,10 @@ Ação 1 - Ver instâncias</h2>
 Opção: 
 </pre>
 </p>
-<p>Temos uma instância das 8 Damas como no exemplo da <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas que se atacam mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto transfoormam-se em custos, que pretendemos remover.</p>
-<p>Temos um número de parametros mais extenso, embora os 5 primeiros parametros sejam os mesmos que no exemplo do teste <a class="el" href="classTVector.html">TVector</a>. O último parametro é o P24, muito embora não estejam 24 parametros. O P11 por exemplo não é mostrado. Alguns parametros só são ativos devido a valores de outros parametros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parametros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
+<p>Temos uma instância das 8 Damas como no exemplo da <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas algumas atacam-se mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto convertem-se em custos, que pretendemos remover. Uma solução de custo 0 é prortanto uma solução válida.</p>
+<p>Temos um número de parametros mais extenso, embora os 5 primeiros parametros sejam os mesmos que no exemplo do teste <a class="el" href="classTVector.html">TVector</a>. O último parametro é o P24, muito embora não estejam 24 parâmetros. O P11 por exemplo não é mostrado. Alguns parâmetros só são ativos devido a valores de outros parametros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parametros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
 <p>Vamos trocar para uma instância menor antes de avançarmos, para simplificar a nossa exploração.</p>
-<p>Introduza: <b>1;4.</b></p>
+<p>Introduza: <b>1; 4.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">1</span>
@@ -170,11 +169,11 @@ Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">4</span>
 Opção: 
 </pre>
 </p>
-<p>Estavamos na instância 8 e agora estamos na instância 4. Temos um tabuleiro de 4x4 para colcoar 4 damas. Podiamos ter escolhido até tabuleiros de 40x40.</p>
-<p><a class="anchor" id="invalid"></a></p>
+<p>Estavamos na instância 8 e agora estamos na instância 4. Temos um tabuleiro de 4x4 para colocar 4 damas. Podiamos ter escolhido até tabuleiros de 40x40.</p>
+<p><a class="anchor" id="damas-ci2"></a></p>
 <h2><a class="anchor" id="autotoc_md77"></a>
 Ação 2 - Resolver manualmente</h2>
-<p>Vamos então resolver a instância manualmente. Introduza: <b>2.</b></p>
+<p>Vamos primeiro procurar resolver a instância manualmente, e ver a codificação inteira utilizada. Introduza: <b>2.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">2</span>
@@ -202,11 +201,13 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Entramos num modo de expoloração manual, com as operações dos algoritmos melhorativos. No entanto a população foi fixada a 4, para podermos melhor gerir a exploração manual. Durante a geração da população de 4 elementos, foi encontrada uma solução de custo 2, mostrada. Arranca a época 0 (linha: " ├─┬─ 📆 0 ⏱  ──── 💰 g2-4"), tal como os algoritmos evolutivos, mas neste caso cada época é o resultado de aplicar um operador.</p>
-<p>Podemos ver a população de 4 elementos, com custos de 2 a 4. É mostrado a codificação inteira, e não as soluções a que correspondem. Assim pretendemos focar no que os algoritmos vêm, e não na conversão na solução.</p>
-<p>Os 4 elementos têm cor de fundo para auxiliar a identificação, e os custos têm cor da letra para sinalizar os melhores elementos de forma visual.</p>
+<p>Entramos num modo de expoloração manual com as operações dos algoritmos melhorativos. No entanto a população foi fixada em 4, para melhor gerir a exploração manual. Durante a geração da população dos 4 elementos foi encontrada uma solução de custo 2, que foi mostrada de imediato. Arranca a época 0 (linha: " ├─┬─ 📆 0 ⏱  ──── 💰 g2-4"), tal como os algoritmos evolutivos, mas neste caso cada época é o resultado de aplicar um operador.</p>
+<p>Podemos ver a população de 4 elementos com custos de 2 a 4. É mostrado a codificação inteira e não as soluções a que correspondem. Assim pretendemos focar no que os algoritmos vêm, e não nas soluções.</p>
+<p>Temos neste caso a codificação inteira, com a coluna de cada dama, de 0 a 3. Como temos 4 damas temos 4 números de 0 a 3. Podemos utilizar outra codificação, desde que exista forma de codificar todas as soluções de interesse, ou seja, de uma solução converter na codificação única, e descodificar, de uma codificação reconstruir a solução a que corresponde.</p>
+<p>Há outras possibilidades de codificar o problema das 8 damas, estando implementado também com a codificação permutação em outro exemplo.</p>
+<p>Na população os 4 elementos têm cor de fundo para auxiliar a identificação, e os custos têm cor da letra para sinalizar os melhores elementos de forma visual.</p>
 <p>Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parametro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elmentos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
-<p>Temos 3 operações para testar, a mutação, cruzamento e vizinhança. Vamos começar pela mutação, para mutar o indivíduo 4. Introduza: <b>1; 4.</b></p>
+<p>Temos 3 operações para testar, a mutação, cruzamento e vizinhança. Vamos começar pela mutação, e mutar o indivíduo 4. Introduza: <b>1; 4.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">1</span>
@@ -236,7 +237,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>A mutação acabou por trocar apenas um valor, o que se pode confirmar nas linhas 🧍(atual) e 🦠 (mutado), com as codificaçõe seguidas e alinhadas. Ficou uma solução igualmente má. Podemos alterar a mutação no parametro P21(TIPO_MUTAR). Existem também vários operadores de mutação disponíveis dependente do tipo de codificação.</p>
+<p>A mutação acabou por trocar apenas um valor, o que se pode confirmar nas linhas 🧍(atual) e 🦠 (mutado), com as codificaçõe seguidas e alinhadas. Ficou uma solução igualmente má de custo 4. Podemos alterar a mutação no parâmetro P21(TIPO_MUTAR). Existem também vários operadores de mutação disponíveis dependente do tipo de codificação.</p>
 <p>Vamos agora passar para o cruzamento, e cruzar o individuo 1 com o 3, os dois melhores na população, e substituir o individuo 4. Introduza: <b>2; 1; 3; 4.</b></p>
 <p> 
 <pre>
@@ -271,7 +272,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>O filho ficou quase igual ao pai, com os três primeiros elmentos da do pai, e o último da mãe. Existem vários tipos de operadores de cruzamento, controlados pelo parametro P20(TIPO_CRUZAR). Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.</p>
+<p>O filho ficou quase igual ao pai, com os três primeiros elementos do pai, e o último da mãe. Existem vários tipos de operadores de cruzamento, controlados pelo parametro P20(TIPO_CRUZAR). Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.</p>
 <p>Falta-nos explorar o operador de vizinhança, pelo que vamos aplicar ao melhor individuo 1, e escolher o melhor vizinho. Introduza: <b>3; 1; 1.</b></p>
 <p> 
 <pre>
@@ -312,7 +313,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>O vizinho gerado tem custo 1, pelo que estamos mais perto. Foi feita a substituição da melhor solução. Notar que o tipo de vizinhança é descrito, neste caso apenas incrementamos ou decrementamos cada valor em uma unidade. Devido a esta opção, a vizinhança tem um número controlado de indivíduos.</p>
+<p>O melhor vizinho gerado tem custo 1, pelo que estamos mais perto. Foi feita a substituição da melhor solução. Notar que o tipo de vizinhança é descrito, neste caso apenas incrementamos ou decrementamos cada valor em uma unidade. Devido a esta opção, a vizinhança tem um número baixo de indivíduos.</p>
 <p>Vamos insistir e ver os vizinhos deste novo elemento, e novamente escolher o melhor destes. Introduza: <b>3; 1; 3.</b></p>
 <p> 
 <pre>
@@ -384,8 +385,8 @@ Opção: <span class="entrada">2</span>
 Opção: 
 </pre>
 </p>
-<p>Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem. Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, sendo a solução obitida é retornada.</p>
-<p><a class="anchor" id="invalid"></a></p>
+<p>Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem. Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, sendo a solução obitida retornada.</p>
+<p><a class="anchor" id="damas-ci3"></a></p>
 <h2><a class="anchor" id="autotoc_md78"></a>
 Ação 3 - Algoritmos Evolutivos</h2>
 <p>Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização de omissão. Introduza: <b>1; 4; 6.</b></p>
@@ -420,8 +421,8 @@ Opção:
 </p>
 <p>Podemos ver que o primeiro indicador, I1(Resultado) é igual a 0. Este é o custo da solução. Podemos observar a solução e ver que as damas não se atacam, aliás, é exatamente a mesma solução obtida manualmente.</p>
 <p>O segundo indicador I2(Tempo(ms)) é 0, o que significa que foi consumido menos de 1 milisegundo.</p>
-<p>Temos o número de iterações a 241, que corresponde às avaliações efetuadas, e 10 épocas, o que corresponde ao número de ciclos do algoritmo evolutivo. Finalmente, temos o número de estados gerados a 250.</p>
-<p>Há informação visivel nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. O que aconteceu nestas 10 épocas? Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções. Mas estaremos satisfeitos com esta informação? Não, precisamos de ver o que se passou, para saber o que correu bem e menos bem.</p>
+<p>Temos o número de iterações a 241, que corresponde às avaliações efetuadas, e 10 épocas, o que corresponde ao número de ciclos do algoritmo evolutivo. Finalmente, temos o número de estados gerados a 249.</p>
+<p>Há informação visivel nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. O que aconteceu nestas 10 épocas? Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções. Podemos obter na literatura qual a melhor parametrização para um dado problema ou tipo de problemas, e utilizar como parametrização base. Mas estaremos satisfeitos com esta informação? Não, precisamos de ver o que se passou em concreto, para saber o que correu bem e menos bem, sem dependências de terceiros. Queremos até mais tarde confirmar que a configuração base é a melhor parametrização possível, ou identificar qual é a mais adequada, pela via experimental.</p>
 <p>Como podemos repetir todas as execuções, podemos ver a mesma execução com diferentes níveis de detalhe. Vamos aproveitar esta execução que tem tamanho reduzido, para ir subindo o nível de debug. Introduza: <b>1; 4; 3; 2; 1; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
@@ -475,7 +476,7 @@ Opção:
 </p>
 <p>Nesta repetição vemos um ponto de quando em quando, para saber que há atividade. No final são introduzidos 128 pontos, se o número de iterações for atingido. Como gastamos muito poucas iterações e o limite é muito alto, estes pontos nem são visiveis.</p>
 <p>Mas vemos algo importante. Sempre que se encontra uma melhor solução global, é registado o tempo e a solução é mostrada ao utilizador. Podemos ver que primeiro foi encontrada uma solução de custo 2, de seguida outra de custo 1 e finalmente a de custo 0.</p>
-<p>Sabemos mais alguma coisa do que se passou, mas não muito.</p>
+<p>Sabemos mais alguma coisa do que se passou, mas não muito. Numa execução longa podemos ver quando as diferentes soluções são encontradas, e se são encontradas soluções de custos incrementais, ou diretamente a solução de custo 0.</p>
 <p>Vamos ver agora o nível de debug PASSOS. Introduza: <b>1; 4; 3; 2; 2; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
@@ -539,7 +540,7 @@ Opção:
 </p>
 <p>Temos agora a informação das diferentes épocas. Em cada época é registado o instante em que esta ocorre, neste caso apenas alguns milisegundos, o número da época, e o menor e maior custo na população.</p>
 <p>Aqui é possível observar que nesta procura, a melhor solução na população nunca piorou de uma época para a outra. Dependente da parametrização, nem sempre esta situação é garantida. A utilização de P16(ELITISMO)=1 garante que pelo menos um elemento da população antiga, irá manter-se caso na nova população não exista nenhum elemento com valor melhor ou igual.</p>
-<p>Aumentamos o conhecimento, mas ainda estamos um pouco às escuras. Fora o parametro do elitismo, nada mais pode ser observado ou verificada a sua utilidade.</p>
+<p>Aumentamos o conhecimento, mas ainda estamos um pouco às escuras. Sabemos em que as duas soluções intermédias foram encontradas logo ao gerar a população inicial, e na primeira geração. Fora o parâmetro do elitismo, nada mais pode ser observado ou verificada a sua utilidade.</p>
 <p>É tempo para aumentar o nível de debug para DETALHE. Introduza: <b>1; 4; 3; 2; 3; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
@@ -651,11 +652,11 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Temos agora uma tabela para cada época e informação sobre as distâncias. Na época 0 sabemos que as distâncias entre indivíduos vão de 1 a 4, a média das distâncias é 2, e a distância entre o melhor e o pior indivíduo é 3.</p>
-<p>A cada linha da época segue-se agora uma tabela "🧑‍🔬💰". Esta tabela tem para cada um dos 20 indivíduos na população o seu custo. Tem 10 colunas e tantas linhas quantas necessárias, uma por cada dezena de indivíduos. O indivíduo 14 está na linha com índice 10 e coluna com índice 4, que na época 0 tinha custo 5.</p>
+<p>Temos agora uma tabela para cada época e informação sobre as distâncias. Na época 0, devido à linha <code>[📏 1-4 (μ=2, melhor/pior 3)]</code> sabemos que as distâncias entre indivíduos vão de 1 a 4, a média das distâncias é 2, e a distância entre o melhor e o pior indivíduo é 3.</p>
+<p>A cada linha da época segue-se agora uma tabela <code>🧍</code>. Esta tabela tem para cada um dos 20 indivíduos na população o seu custo. Tem 10 colunas e tantas linhas quantas necessárias, uma por cada dezena de indivíduos. O indivíduo 14 está na linha com índice 10 e coluna com índice 4, que na época 0 tinha custo 5.</p>
 <p>Assim, podemos ter uma ideia mais detalhada dos custos dos indivíduos, e uma ideia da diversidade. Se a diversidade da população for muito baixa, podemos observar a média de distâncias com valor baixo. Se apenas alguns elementos tiverem um bom valor, e a maior parte tiver um valor mau, podemos também observar.</p>
-<p>Idealmente pretendemos uma diversidade alta e alto valor nos indivíduos, portanto baixo custo. Por vezes o que ocorre num problema mal afinado, é que todas as soluções ficam com o mesmo valor, e a diversidade seja muito baixa. Nesse caso o algoritmo fica estagnado, sendo essa a situação mais crítica a evitar.</p>
-<p>Embora possamos observar a situação mais indesejáveis que pode ocorrer num algoritmo evolutivo, a estagnação, nada sabemos sobre os indivíduos concretos, e o que se passa de uma população para a outra.</p>
+<p>Idealmente pretendemos uma diversidade alta e alto valor nos indivíduos, portanto baixo custo. Por vezes o que ocorre num problema mal afinado, é que todas as soluções ficam com o mesmo valor, e a diversidade é muito baixa. Nesse caso o algoritmo fica estagnado, sendo essa a situação mais crítica a evitar.</p>
+<p>Embora possamos observar a situação mais indesejável que pode ocorrer num algoritmo evolutivo, a estagnação, nada sabemos sobre os indivíduos concretos, e o que se passa de uma população para a outra.</p>
 <p>Há várias fases para passar de uma época para a outra, e muitos operadores são aplicados. Mas isso é interno aos algoritmos evolutivos, nada é visivel neste nível de debug.</p>
 <p>É portanto tempo para passarmos para o último nível de debug, COMPLETO. Introduza: <b>1; 4; 3; 2; 4; <em>ENTER</em>; 6.</b></p>
 <p> 
@@ -723,6 +724,48 @@ Opção: <span class="entrada">6</span>
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │ │    0│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│<span style="background-color:rgb(20,101,0)">   6</span>⇄<span style="background-color:rgb(0,101,40)">   8</span>│<span style="background-color:rgb(81,0,101)">  16</span>⇄<span style="background-color:rgb(0,101,40)">   8</span>│<span style="background-color:rgb(51,101,0)">   5</span>⇄<span style="background-color:rgb(101,30,0)">   1</span>│<span style="background-color:rgb(51,0,101)">  15</span>⇄<span style="background-color:rgb(0,10,101)">  13</span>│
  │ │ │   10│<span style="background-color:rgb(0,71,101)">  11</span>⇄<span style="background-color:rgb(101,0,91)">  17</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(101,0,30)">  19</span>│<span style="background-color:rgb(101,0,61)">  18</span>⇄<span style="background-color:rgb(101,91,0)">   3</span>│<span style="background-color:rgb(101,61,0)">   2</span>⇄<span style="background-color:rgb(0,101,10)">   7</span>│<span style="background-color:rgb(0,40,101)">  12</span>⇄<span style="background-color:rgb(101,30,0)">   1</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>1 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 3 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>3 1 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>2 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 0 0 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>3 0 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 3 1 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 2 3 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>2 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 0 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 0 1 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>1 2 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 0 2 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>3 0 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 0 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>2 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>2 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 1 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>2 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 3 1 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>3 0 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>1 2 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>3 0 1 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>1 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>1 2 3 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
  │ 🏆  ⏱  💰 g:1
 ─┴───────────────────
 ♛   ::  
@@ -735,15 +778,15 @@ Opção: <span class="entrada">6</span>
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │ │    0│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
  │ │ │   10│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
- │ │ ├───── Filhos (💰 ) 🧬 10  🦠 14 ───── 📈 4 🟰 10 📉 6
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 14 ───── 📈 1 🟰 17 📉 2
  │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
- │ │ │    0│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,108,31)">   4</span>│
- │ │ │   10│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,108,31)">   4</span>│
+ │ │ │    0│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│
+ │ │ │   10│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   5</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(108,223,31)">   1</span>│
  │ │ └──────────────────────────────────── 
  │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
  │ │ ├───── ⏳  Idade ───── 
- │ │ ├───── 🚶‍♂️🌍 Imigrantes  9✖ →🆕 ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  9✖ →🆕 ───── 
  │ │ └──────────────────────────────────── 
  │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 4
  ├─┬─ 📆 1 ⏱  ──── 💰 g1-5
@@ -800,20 +843,62 @@ Opção: <span class="entrada">6</span>
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │ │    0│<span style="background-color:rgb(0,10,101)">  13</span>⇄<span style="background-color:rgb(20,101,0)">   6</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(51,101,0)">   5</span>│<span style="background-color:rgb(101,0,91)">  17</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│<span style="background-color:rgb(0,101,71)">   9</span>⇄<span style="background-color:rgb(101,0,0)">  20</span>│<span style="background-color:rgb(101,30,0)">   1</span>⇄<span style="background-color:rgb(101,61,0)">   2</span>│
  │ │ │   10│<span style="background-color:rgb(101,0,61)">  18</span>⇄<span style="background-color:rgb(51,0,101)">  15</span>│<span style="background-color:rgb(101,0,30)">  19</span>⇄<span style="background-color:rgb(81,0,101)">  16</span>│<span style="background-color:rgb(0,101,10)">   7</span>⇄<span style="background-color:rgb(81,101,0)">   4</span>│<span style="background-color:rgb(101,91,0)">   3</span>⇄<span style="background-color:rgb(51,0,101)">  15</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(0,40,101)">  12</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 2 3 1  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>1 2 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 1 1 1  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>1 0 3 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>1 2 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 0 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 0 1 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>1 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 2 0 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>3 1 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>3 0 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>1 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>0 1 0 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>3 2 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>3 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>1 2 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>1 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>0 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 1 0 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>3 0 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>3 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 2 3 1  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>1 2 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>3 2 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>3 0 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>1 0 3 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>3 1 1 1  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>1 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>1 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>3 1 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
  │ │ ├───── Pais (💰 ) ───── 
  │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │ │    0│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(223,108,31)">   4</span>│
  │ │ │   10│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   5</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,108,31)">   4</span>│
- │ │ ├───── Filhos (💰 ) 🧬 10  🦠 10 ───── 📈 4 🟰 13 📉 3
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 10 ───── 📈 5 🟰 12 📉 3
  │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
- │ │ │    0│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,184,31)">   3</span>│
- │ │ │   10│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,108,31)">   4</span>│
+ │ │ │    0│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,108,31)">   4</span>│
+ │ │ │   10│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   5</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
  │ │ └──────────────────────────────────── 
  │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
  │ │ ├───── ⏳  Idade ───── 
- │ │ ├───── 🚶‍♂️🌍 Imigrantes  7✖ →🆕 ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  7✖ →🆕 ───── 
  │ │ └──────────────────────────────────── 
  │ └───── FASE 🌈  Diversidade - limpeza ───── 
  ├─┬─ 📆 2 ⏱  ──── 💰 g1-5
@@ -876,20 +961,62 @@ Opção: <span class="entrada">6</span>
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │ │    0│<span style="background-color:rgb(101,61,0)">   2</span>⇄<span style="background-color:rgb(101,0,30)">  19</span>│<span style="background-color:rgb(51,101,0)">   5</span>⇄<span style="background-color:rgb(101,0,0)">  20</span>│<span style="background-color:rgb(0,10,101)">  13</span>⇄<span style="background-color:rgb(0,40,101)">  12</span>│<span style="background-color:rgb(81,0,101)">  16</span>⇄<span style="background-color:rgb(0,101,101)">  10</span>│<span style="background-color:rgb(81,101,0)">   4</span>⇄<span style="background-color:rgb(20,101,0)">   6</span>│
  │ │ │   10│<span style="background-color:rgb(101,0,91)">  17</span>⇄<span style="background-color:rgb(51,0,101)">  15</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(0,101,40)">   8</span>│<span style="background-color:rgb(0,71,101)">  11</span>⇄<span style="background-color:rgb(101,61,0)">   2</span>│<span style="background-color:rgb(81,0,101)">  16</span>⇄<span style="background-color:rgb(101,0,61)">  18</span>│<span style="background-color:rgb(0,101,40)">   8</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>2 3 2 3  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 1 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>1 1 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>2 2 2 1  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>2 2 2 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>1 3 0 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 0 0 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 2 3 1  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 1 0 1  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>1 2 0 3  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>1 3 0 3  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 0 0 1  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>1 0 3 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 2 3 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>1 3 3 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 0 3 1  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>3 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>2 1 0 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>2 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>2 2 0 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 1 3 1  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>2 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>2 2 2 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>2 2 0 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>1 0 3 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>1 0 0 1  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 0 3 1  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>1 2 0 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>2 2 2 1  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>1 3 0 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>3 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 3 3 2  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>1 2 0 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 2 3 1  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>1 3 0 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>0 1 3 1  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>3 0 3 1  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>2 1 0 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 2 3 1  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 2 3 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
  │ │ ├───── Pais (💰 ) ───── 
  │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │ │    0│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,127,31)">   3</span>│
  │ │ │   10│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,127,31)">   3</span>│
- │ │ ├───── Filhos (💰 ) 🧬 10  🦠 12 ───── 📈 7 🟰 7 📉 6
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 12 ───── 📈 3 🟰 14 📉 3
  │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
- │ │ │    0│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,223,31)">   2</span>│
- │ │ │   10│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│
+ │ │ │    0│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,223,31)">   2</span>│
+ │ │ │   10│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,223,31)">   2</span>│
  │ │ └──────────────────────────────────── 
  │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
  │ │ ├───── ⏳  Idade ───── 
- │ │ ├───── 🚶‍♂️🌍 Imigrantes  6✖ →🆕 ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  6✖ →🆕 ───── 
  │ │ └──────────────────────────────────── 
  │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 15 🧹 17
  ├─┬─ 📆 9 ⏱ 1ms  ──── 💰 g1-4
@@ -946,6 +1073,48 @@ Opção: <span class="entrada">6</span>
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │ │    0│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(101,30,0)">   1</span>│<span style="background-color:rgb(101,0,30)">  19</span>⇄<span style="background-color:rgb(101,91,0)">   3</span>│<span style="background-color:rgb(0,101,40)">   8</span>⇄<span style="background-color:rgb(101,0,91)">  17</span>│<span style="background-color:rgb(20,0,101)">  14</span>⇄<span style="background-color:rgb(0,40,101)">  12</span>│<span style="background-color:rgb(0,101,10)">   7</span>⇄<span style="background-color:rgb(81,0,101)">  16</span>│
  │ │ │   10│<span style="background-color:rgb(101,0,91)">  17</span>⇄<span style="background-color:rgb(0,101,10)">   7</span>│<span style="background-color:rgb(0,101,71)">   9</span>⇄<span style="background-color:rgb(0,101,71)">   9</span>│<span style="background-color:rgb(101,0,0)">  20</span>⇄<span style="background-color:rgb(20,101,0)">   6</span>│<span style="background-color:rgb(51,101,0)">   5</span>⇄<span style="background-color:rgb(101,61,0)">   2</span>│<span style="background-color:rgb(101,0,30)">  19</span>⇄<span style="background-color:rgb(0,10,101)">  13</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 3 3 1  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 2 3 0  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>2 0 2 1  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 1 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 3 1 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>0 2 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>0 2 3 1  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>1 3 0 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 3 3 2  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>2 2 3 1  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>1 3 3 1  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 2 0 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>3 0 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>1 0 3 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>2 2 2 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>0 1 3 1  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>2 2 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>0 3 2 2  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>3 2 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>1 2 0 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>2 2 3 1  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 3 3 1  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 2 0 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>2 0 2 1  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>1 3 0 3  💰 <span style="color:rgb(159,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>2 2 0 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>1 0 3 1  💰 <span style="color:rgb(223,31,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>1 2 0 1  💰 <span style="color:rgb(223,31,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 2 3 1  💰 <span style="color:rgb(159,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>0 1 3 1  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>2 2 0 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>0 2 3 1  💰 <span style="color:rgb(159,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>0 3 3 2  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 3 3 2  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>1 2 0 1  💰 <span style="color:rgb(223,31,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>0 2 0 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>0 3 1 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>0 2 3 0  💰 <span style="color:rgb(223,31,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>3 2 0 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>3 0 0 3  💰 <span style="color:rgb(223,159,31)">g:2</span>
  │ 🏆  ⏱ 1ms  💰 g:0
 ─┴───────────────────
 ::  ♛   
@@ -958,11 +1127,11 @@ Opção: <span class="entrada">6</span>
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
  │ │ │    0│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
  │ │ │   10│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
- │ │ ├───── Filhos (💰 ) 🧬 10  🦠 12 ───── 📈 5 🟰 9 📉 6
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 12 ───── 📈 3 🟰 11 📉 6
  │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
  │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
- │ │ │    0│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
- │ │ │   10│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(31,223,31)">   0</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   5</span>⇄<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(223,184,31)">   3</span>│
+ │ │ │    0│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(31,223,31)">   0</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
+ │ │ │   10│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
  │ │ └──────────────────────────────────── 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>50 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>150 <span style="color:gray">P13=</span>1
  ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>1 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1
@@ -989,25 +1158,639 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>A informação é agora bastante extensa, mas cortou-se a informação de debug, mostrando-se apenas as primeiras e últimas épocas.</p>
-<p>Em cada época temos agora toda a população, mostrando a codificação de cada elemento e o seu custo. Temos após a população um mapa de distâncias entre indivíduos, caso a população seja 10 ou menor, ou pares de distâncias entre elementos consecutivos. Assim dá-se uma ideia mais completa da diversidade da população.</p>
-<p>Mostra-se informação de todas as fases. A primeira fase é a seleção dos pais. Há informação na época 0 de que irão ser selecionados 20 pais pelo método Roleta, com pressão 150. Este valor corresponde a 1,5, sendo que o valor 1 todos os membros têm a mesma probabilidade, e com 2 os melhores têm muito mais possibildiades de ser escolhidos. A permilagem de cada indivíduo é colocada na tabela 100%.</p>
+<p>A informação é agora bastante extensa, mas cortamos a informação de debug desde a época 2 <code>├─┬─ 📆 2 ⏱ ──── 💰 g1-5</code> até à época 7 <code>├─┬─ 📆 7 ⏱ 1ms ──── 💰 g1-5</code>. Mostramos apenas as primeiras e últimas épocas.</p>
+<p>Em cada época (vamos ver a época 0) temos agora toda a população (<code>├───── 🧍🧑‍🤝‍🧑🚶‍ ─────</code>), mostrando a codificação de cada elemento e o seu custo (<code>🧍 1 0 2 0 3 💰 g:2</code>). Temos após a população um mapa de distâncias entre indivíduos (<code>├───── 📏 ─────</code>), caso a população seja 10 ou menor, ou pares de distâncias entre elementos consecutivos. Assim ficamos com uma ideia mais completa da diversidade da população.</p>
+<p>Mostramos informação de todas as fases. A primeira fase é a seleção dos pais (<code>├─┬─── FASE 🧩 Selecionar 20 🧑‍🤝‍🧑 pais ─────</code>). <br  />
+ Há informação na época 0 de que irão ser selecionados 20 pais pelo método Roleta, com pressão 150 (<code>├───── Roleta, pressão 150 ─────</code>). Este valor corresponde a 1,5, sendo que o valor 1 todos os membros têm a mesma probabilidade, e com 2 os melhores têm muito mais possibildiades de ser escolhidos. A permilagem de cada indivíduo é colocada na tabela 100%.</p>
 <p>Podemos ver a diferença entre o 1 e o 2, tendo o indivíduo 1 custo 2 e o indivíduo 2 custo 4. A probabilidade de ser selecionado o indivíduo 1 é de 7,5% enquanto que o indivíduo 2 tem probabilidade de 3,8%.</p>
-<p>Como resultado destas probabilidades, a tabela seguinte, #Pai, tem o número de vezes que cada indivíduo foi escolhido para pai. O primeiro indivíduo foi escolhido 1 vez, mas tinha melhores possibilidades de ser escolhido duas vezes. Podemos ver alguns indivíduos que nem foram escolhidos, como o 14.</p>
-<p>Terminada a fase de seleção dos pais, arranca a fase de reprodução. Nesta fase temos os pais emparelhados. Na tabela IDs podemos ver os indivíduos da população original por uma ordem de reprodução. Podemos confirmar que o indivíduo 13 está duas vezes, na posição 10 e 14. Irá reproduzir com o indivíduo 3 e 18.</p>
+<p>Como resultado destas probabilidades, a tabela seguinte, #Pai, tem o número de vezes que cada indivíduo foi escolhido para pai. O primeiro indivíduo foi escolhido 2 vezes. Podemos ver alguns indivíduos que nem foram escolhidos, como o 4.</p>
+<p>Terminada a fase de seleção dos pais, arranca a fase de reprodução (<code>├─┬─── FASE 🧬 Reproduzir 20 pais ─────</code>). Nesta fase temos os pais emparelhados (<code>├───── Pais (🧑‍🤝‍🧑 ) ─────</code>). Na tabela IDs podemos ver os indivíduos da população original por uma ordem de reprodução. Podemos confirmar que o indivíduo 1 está duas vezes, na posição 8 e 20. Irá reproduzir com o indivíduo 5 e 12.</p>
 <p>Os filhos são gerados com base nestes pares, o primeiro com o segundo, o terceiro com o quarto e assim sucessivamente. Há sempre dois filhos por cada casal de pais. Durante a geração dos filhos, foi encontrado uma solução melhor que o registo global.</p>
-<p>As duas tabelas seguintes têm os custos dos pais e dos filhos, onde se pode ver o GAP geracional. Podemos ver por exemplo, o casal 11 e 12, tinham custo 4 e 3 e os seus filhos ficaram com custos 1 e 2. Neste caso ambos melhoraram o valor dos pais, mas na geração houve 3 melhoramentos, 5 que pioraram o valor de ambos os pais, e 10 que ficaram entre o valor dos pais.</p>
-<p>A fase de sobrevivência, atendendo a que o método é a idade, não há muito a mostrar, dado que a geração nova substitui a geração antiga. Há no entanto indicação sobre elite e imigrantes. Neste caso a Elite não foi necessária, já que o melhor elemento da nova geração até é melhor que o melhor da geração anterior.</p>
-<p>Ocorreu nesta época a fase de limpeza, tendo sido eliminado um elemento que estava duplicado, atendendo às configurações de omissão.</p>
-<p>Podemos ver na época 4, onde foi encontrada a melhor solução, que os pais dessa solução, tinham custo 2 e 3, e essa solução teve um "irmão" com custo 5. Podemos ainda ver na tabela de IDs que esses dois pais eram na verdade a solução 13 e 4, ambos seleciondados apenas 1 vez na seleção de pais. Por um acaso ficaram seguidos, tendo-se chegado a solução num caso, e piorrando no outro.</p>
-<p>Esta é uma análise bastante completa, tendo muita informação. Pode ser utilizada em instâncias pequenas para compreender os algoritmos e diferentes opções, e também para um dado problema procurar entender porque algumas parametrizações resultam melhor que outras. Aumentando o entendimento no problema, é possível que apareçam oportunidades de melhoria que se possam explorar.</p>
+<p>As duas tabelas seguintes têm os custos dos pais (<code>├───── Pais (💰 ) ─────</code>) e dos filhos (<code>├───── Filhos (💰 ) 🧬 10 🦠 14 ───── 📈 4 🟰 10 📉 6</code>), onde se pode ver o GAP geracional. Podemos ver por exemplo, o casal 11 e 12, tinham custo 2 e 5 e os seus filhos ficaram com custos 3 e 2. Neste caso um ficou entre os valores dos pais, o outro ficou com o melhor valor dos pais.</p>
+<p>Na geração houve 4 melhoramentos, 6 que pioraram o valor de ambos os pais, e 10 que ficaram entre o valor dos pais. Esta informação está na linha dos filhos: <code>📈 4 🟰 10 📉 6</code>.</p>
+<p>A fase de sobrevivência (<code>├─┬─── FASE ⚔️ Sobrevivência ─────</code>), atendendo a que o método é a idade, não há muito a mostrar, dado que a geração nova substitui a geração antiga. Há no entanto indicação sobre elite e imigrantes. Neste caso a Elite não foi necessária, já que o melhor elemento da nova geração até é melhor que o melhor da geração anterior. Nos imigrantes entrou 1, saindo o elemento 9: <code>├───── 🚶‍♂️🌍 Imigrantes 9✖ →🆕 ─────</code>.</p>
+<p>Ocorreu nesta época a fase de limpeza, tendo sido eliminado um elemento que estava duplicado, atendendo às configurações de omissão: <code>└───── FASE 🌈 Diversidade - limpeza ───── 🧹 4</code></p>
+<p>Esta análise permite ver a origem do elemento que tem a solução ótima. Focando agora na época 9, vemos que o filho com custo 0 é o 13. Esse elemento tem como irmão uma solução de custo 4, e ambos os pais têm custo 2. Por um acaso os pais eram complementares, e um dos filhos ficou com o melhor de cada pai, o outro terá ficado com o pior de cada pai. É até uma situação comum e normal. Diriamos então que os pais embora tendo ambos custo 2, eram complementares, já que na população</p>
+<p>Este seria um argumento plausível, mas podemos verificar se é mesmo assim, dado que temos informação de debug. Vamos ver quem são os pais na posição 13 e 14. Vemos na tabela anterior (<code>├───── Pais (🧑‍🤝‍🧑 ) ─────</code>), que afinal os pais são ambos o elemento 9 na população! Este elemento tinha 6,7% de probabilidade de ser gerado, e foi selecinado duas vezes como pai. A diferença entre filhos e pais, é afinal explicada pela mutação e não pelo cruzamento.</p>
+<p>Esta é uma análise bastante completa tendo muita informação. Pode ser utilizada em instâncias pequenas para compreender os algoritmos e diferentes opções, e também para um dado problema procurar entender porque algumas parametrizações resultam melhor que outras. Aumentando o entendimento no problema é possível que apareçam oportunidades de melhoria que se possam explorar.</p>
 <p>Para identificar as melhores parametrizações, temos de ter testes empíricos, tal como nos restantes exemplos, e esse é o tema da próxima secção.</p>
-<p><a class="anchor" id="invalid"></a></p>
+<p><a class="anchor" id="damas-ci4"></a></p>
 <h2><a class="anchor" id="autotoc_md79"></a>
 Ação 4 - Testes Empíricos</h2>
 <p>O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter um número considerável de execuções.</p>
 <p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
 <p><a href="melhorativa__deucalion.html">Resultdos Deucalion</a></p>
+<p>Neste estudo foi identificada a melhor parmetrização para este problema e codificação: <b>P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0.</b></p>
+<p>Podemos ver como a alteração da parametrização afeta este exemplo:</p>
+<p> 
+<pre>
+Opção: <span class="entrada">6</span>
+═╤═ ►  Execução iniciada ═══
+ │ 🏆  ⏱  💰 g:2
+─┴───────────────────
+♛   ::  
+  ::♛ ::
+♛   ::  
+  ::  ♛ 
+─┬───────────────────
+ ├─┬─ 📆 0 ⏱  ──── 💰 g2-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>1 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 3 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>3 1 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>2 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 0 0 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>3 0 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 3 1 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 2 3 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>2 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 0 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 0 1 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>1 2 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 0 2 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ <span style="background-color:rgb(101,30,0)">1   </span>│<span style="background-color:rgb(101,61,0)">2   </span>│   4│
+ │ │ <span style="background-color:rgb(101,91,0)">3   </span>│<span style="background-color:rgb(81,101,0)">4   </span>│   3│
+ │ │ <span style="background-color:rgb(51,101,0)">5   </span>│<span style="background-color:rgb(20,101,0)">6   </span>│   1│
+ │ │ <span style="background-color:rgb(0,101,10)">7   </span>│<span style="background-color:rgb(0,101,40)">8   </span>│   3│
+ │ │ <span style="background-color:rgb(0,101,71)">9   </span>│<span style="background-color:rgb(0,101,101)">10  </span>│   2│
+ │ │ <span style="background-color:rgb(0,71,101)">11  </span>│<span style="background-color:rgb(0,40,101)">12  </span>│   4│
+ │ │ <span style="background-color:rgb(0,10,101)">13  </span>│<span style="background-color:rgb(20,0,101)">14  </span>│   3│
+ │ │ <span style="background-color:rgb(51,0,101)">15  </span>│<span style="background-color:rgb(81,0,101)">16  </span>│   3│
+ │ │ <span style="background-color:rgb(101,0,91)">17  </span>│<span style="background-color:rgb(101,0,61)">18  </span>│   3│
+ │ │ <span style="background-color:rgb(101,0,30)">19  </span>│<span style="background-color:rgb(101,0,0)">20  </span>│   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 175 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">  88</span>│<span style="background-color:rgb(101,61,0)">  32</span>│<span style="background-color:rgb(101,91,0)">  48</span>│<span style="background-color:rgb(81,101,0)">  36</span>│<span style="background-color:rgb(51,101,0)">  40</span>│<span style="background-color:rgb(20,101,0)">  64</span>│<span style="background-color:rgb(0,101,10)">  52</span>│<span style="background-color:rgb(0,101,40)">  72</span>│<span style="background-color:rgb(0,101,71)">  24</span>│<span style="background-color:rgb(0,101,101)">  68</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">  84</span>│<span style="background-color:rgb(0,40,101)">  44</span>│<span style="background-color:rgb(0,10,101)">  80</span>│<span style="background-color:rgb(20,0,101)">  12</span>│<span style="background-color:rgb(51,0,101)">  56</span>│<span style="background-color:rgb(81,0,101)">  76</span>│<span style="background-color:rgb(101,0,91)">  16</span>│<span style="background-color:rgb(101,0,61)">  60</span>│<span style="background-color:rgb(101,0,30)">  20</span>│<span style="background-color:rgb(101,0,0)">  28</span>│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">   2</span>│<span style="background-color:rgb(101,61,0)">   1</span>│<span style="background-color:rgb(101,91,0)">   1</span>│<span style="background-color:rgb(81,101,0)">   0</span>│<span style="background-color:rgb(51,101,0)">   1</span>│<span style="background-color:rgb(20,101,0)">   1</span>│<span style="background-color:rgb(0,101,10)">   2</span>│<span style="background-color:rgb(0,101,40)">   1</span>│<span style="background-color:rgb(0,101,71)">   0</span>│<span style="background-color:rgb(0,101,101)">   2</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">   1</span>│<span style="background-color:rgb(0,40,101)">   1</span>│<span style="background-color:rgb(0,10,101)">   2</span>│<span style="background-color:rgb(20,0,101)">   0</span>│<span style="background-color:rgb(51,0,101)">   1</span>│<span style="background-color:rgb(81,0,101)">   2</span>│<span style="background-color:rgb(101,0,91)">   0</span>│<span style="background-color:rgb(101,0,61)">   1</span>│<span style="background-color:rgb(101,0,30)">   1</span>│<span style="background-color:rgb(101,0,0)">   0</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(0,10,101)">  13</span>│<span style="background-color:rgb(20,101,0)">   6</span>⇄<span style="background-color:rgb(0,101,40)">   8</span>│<span style="background-color:rgb(81,0,101)">  16</span>⇄<span style="background-color:rgb(0,101,10)">   7</span>│<span style="background-color:rgb(51,101,0)">   5</span>⇄<span style="background-color:rgb(101,30,0)">   1</span>│<span style="background-color:rgb(51,0,101)">  15</span>⇄<span style="background-color:rgb(0,10,101)">  13</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">  11</span>⇄<span style="background-color:rgb(81,0,101)">  16</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(101,0,30)">  19</span>│<span style="background-color:rgb(101,0,61)">  18</span>⇄<span style="background-color:rgb(101,91,0)">   3</span>│<span style="background-color:rgb(101,61,0)">   2</span>⇄<span style="background-color:rgb(0,101,10)">   7</span>│<span style="background-color:rgb(0,40,101)">  12</span>⇄<span style="background-color:rgb(101,30,0)">   1</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>1 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 3 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>3 1 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>2 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 0 0 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>3 0 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 3 1 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 2 3 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>2 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 0 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 0 1 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>1 2 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 0 2 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>3 0 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>2 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>2 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>3 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 1 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>2 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 3 1 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>3 0 0 2  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>1 2 1 0  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>3 0 1 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>1 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>1 2 3 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+::♛ ::  
+  ::♛ ::
+♛   ::  
+  ::  ♛ 
+─┬───────────────────
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
+ │ │ │   10│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   5</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 0 ───── 📈 2 🟰 14 📉 4
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(108,223,31)">   1</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
+ │ │ │   10│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,31,31)">   5</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(108,223,31)">   1</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 5 🧹 20 🧹 16 🧹 18
+ ├─┬─ 📆 1 ⏱  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>1 2 0 3  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 2 0 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>1 0 1 1  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>3 0 1 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 0 0 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 0 1 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>3 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>2 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>3 1 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>3 1 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 3 0 2  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>2 1 1 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>2 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 1 0 3  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ <span style="background-color:rgb(101,30,0)">1   </span>│<span style="background-color:rgb(101,61,0)">2   </span>│   2│
+ │ │ <span style="background-color:rgb(101,91,0)">3   </span>│<span style="background-color:rgb(81,101,0)">4   </span>│   2│
+ │ │ <span style="background-color:rgb(51,101,0)">5   </span>│<span style="background-color:rgb(20,101,0)">6   </span>│   2│
+ │ │ <span style="background-color:rgb(0,101,10)">7   </span>│<span style="background-color:rgb(0,101,40)">8   </span>│   3│
+ │ │ <span style="background-color:rgb(0,101,71)">9   </span>│<span style="background-color:rgb(0,101,101)">10  </span>│   3│
+ │ │ <span style="background-color:rgb(0,71,101)">11  </span>│<span style="background-color:rgb(0,40,101)">12  </span>│   4│
+ │ │ <span style="background-color:rgb(0,10,101)">13  </span>│<span style="background-color:rgb(20,0,101)">14  </span>│   1│
+ │ │ <span style="background-color:rgb(51,0,101)">15  </span>│<span style="background-color:rgb(81,0,101)">16  </span>│   3│
+ │ │ <span style="background-color:rgb(101,0,91)">17  </span>│<span style="background-color:rgb(101,0,61)">18  </span>│   4│
+ │ │ <span style="background-color:rgb(101,0,30)">19  </span>│<span style="background-color:rgb(101,0,0)">20  </span>│   2│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 175 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">  88</span>│<span style="background-color:rgb(101,61,0)">  36</span>│<span style="background-color:rgb(101,91,0)">  44</span>│<span style="background-color:rgb(81,101,0)">  20</span>│<span style="background-color:rgb(51,101,0)">  16</span>│<span style="background-color:rgb(20,101,0)">  24</span>│<span style="background-color:rgb(0,101,10)">  32</span>│<span style="background-color:rgb(0,101,40)">  48</span>│<span style="background-color:rgb(0,101,71)">  40</span>│<span style="background-color:rgb(0,101,101)">  68</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">  60</span>│<span style="background-color:rgb(0,40,101)">  28</span>│<span style="background-color:rgb(0,10,101)">  64</span>│<span style="background-color:rgb(20,0,101)">  72</span>│<span style="background-color:rgb(51,0,101)">  80</span>│<span style="background-color:rgb(81,0,101)">  84</span>│<span style="background-color:rgb(101,0,91)">  56</span>│<span style="background-color:rgb(101,0,61)">  76</span>│<span style="background-color:rgb(101,0,30)">  52</span>│<span style="background-color:rgb(101,0,0)">  12</span>│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">   2</span>│<span style="background-color:rgb(101,61,0)">   0</span>│<span style="background-color:rgb(101,91,0)">   1</span>│<span style="background-color:rgb(81,101,0)">   1</span>│<span style="background-color:rgb(51,101,0)">   0</span>│<span style="background-color:rgb(20,101,0)">   0</span>│<span style="background-color:rgb(0,101,10)">   1</span>│<span style="background-color:rgb(0,101,40)">   1</span>│<span style="background-color:rgb(0,101,71)">   1</span>│<span style="background-color:rgb(0,101,101)">   1</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">   1</span>│<span style="background-color:rgb(0,40,101)">   1</span>│<span style="background-color:rgb(0,10,101)">   1</span>│<span style="background-color:rgb(20,0,101)">   2</span>│<span style="background-color:rgb(51,0,101)">   1</span>│<span style="background-color:rgb(81,0,101)">   2</span>│<span style="background-color:rgb(101,0,91)">   1</span>│<span style="background-color:rgb(101,0,61)">   2</span>│<span style="background-color:rgb(101,0,30)">   1</span>│<span style="background-color:rgb(101,0,0)">   0</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">   1</span>⇄<span style="background-color:rgb(0,71,101)">  11</span>│<span style="background-color:rgb(101,0,91)">  17</span>⇄<span style="background-color:rgb(101,91,0)">   3</span>│<span style="background-color:rgb(0,10,101)">  13</span>⇄<span style="background-color:rgb(81,101,0)">   4</span>│<span style="background-color:rgb(0,101,40)">   8</span>⇄<span style="background-color:rgb(101,30,0)">   1</span>│<span style="background-color:rgb(0,40,101)">  12</span>⇄<span style="background-color:rgb(51,0,101)">  15</span>│
+ │ │ │   10│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(81,0,101)">  16</span>│<span style="background-color:rgb(101,0,61)">  18</span>⇄<span style="background-color:rgb(0,101,71)">   9</span>│<span style="background-color:rgb(81,0,101)">  16</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│<span style="background-color:rgb(0,101,10)">   7</span>⇄<span style="background-color:rgb(101,0,30)">  19</span>│<span style="background-color:rgb(101,0,61)">  18</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>1 2 0 3  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 2 0 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 0 3 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 1 1 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>1 0 1 1  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>3 0 1 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 0 0 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 0 1 1  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>3 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>2 3 3 0  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 3 0 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>3 1 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>3 1 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>3 0 2 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 3 0 2  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>2 1 1 0  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>2 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 1 0 3  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>1 2 0 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 3 0 0  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>2 1 1 0  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 0 3 0  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>3 1 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>3 1 1 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>0 0 1 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>1 2 0 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>3 1 2 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>3 0 2 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>2 3 3 0  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>3 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>3 2 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>3 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>3 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 0 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>3 0 0 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>2 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>3 2 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>3 0 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,223,31)">   2</span>│
+ │ │ │   10│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 0 ───── 📈 2 🟰 14 📉 4
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,31,31)">   4</span>│
+ │ │ │   10│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 2 🧹 7 🧹 8 🧹 12 🧹 17
+ ├─┬─ 📆 2 ⏱  ──── 💰 g1-4
+ ├─┬─ 📆 3 ⏱  ──── 💰 g1-4
+ ├─┬─ 📆 4 ⏱ 1ms  ──── 💰 g1-4
+ ├─┬─ 📆 5 ⏱ 1ms  ──── 💰 g1-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 0 2 2  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>1 3 1 2  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>0 3 2 1  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>0 2 2 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>3 0 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>0 3 3 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 3 3 2  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>3 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>2 0 3 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>0 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 0 0 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>2 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>0 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>1 3 1 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>3 0 0 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>0 1 1 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>0 0 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>1 2 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 0 1 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>2 2 3 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ <span style="background-color:rgb(101,30,0)">1   </span>│<span style="background-color:rgb(101,61,0)">2   </span>│   3│
+ │ │ <span style="background-color:rgb(101,91,0)">3   </span>│<span style="background-color:rgb(81,101,0)">4   </span>│   2│
+ │ │ <span style="background-color:rgb(51,101,0)">5   </span>│<span style="background-color:rgb(20,101,0)">6   </span>│   3│
+ │ │ <span style="background-color:rgb(0,101,10)">7   </span>│<span style="background-color:rgb(0,101,40)">8   </span>│   1│
+ │ │ <span style="background-color:rgb(0,101,71)">9   </span>│<span style="background-color:rgb(0,101,101)">10  </span>│   3│
+ │ │ <span style="background-color:rgb(0,71,101)">11  </span>│<span style="background-color:rgb(0,40,101)">12  </span>│   2│
+ │ │ <span style="background-color:rgb(0,10,101)">13  </span>│<span style="background-color:rgb(20,0,101)">14  </span>│   3│
+ │ │ <span style="background-color:rgb(51,0,101)">15  </span>│<span style="background-color:rgb(81,0,101)">16  </span>│   4│
+ │ │ <span style="background-color:rgb(101,0,91)">17  </span>│<span style="background-color:rgb(101,0,61)">18  </span>│   2│
+ │ │ <span style="background-color:rgb(101,0,30)">19  </span>│<span style="background-color:rgb(101,0,0)">20  </span>│   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 175 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">  13</span>│<span style="background-color:rgb(101,61,0)">  72</span>│<span style="background-color:rgb(101,91,0)">  36</span>│<span style="background-color:rgb(81,101,0)">  40</span>│<span style="background-color:rgb(51,101,0)">  44</span>│<span style="background-color:rgb(20,101,0)">  24</span>│<span style="background-color:rgb(0,101,10)">  20</span>│<span style="background-color:rgb(0,101,40)">  80</span>│<span style="background-color:rgb(0,101,71)">  88</span>│<span style="background-color:rgb(0,101,101)">  56</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">  32</span>│<span style="background-color:rgb(0,40,101)">  64</span>│<span style="background-color:rgb(0,10,101)">  84</span>│<span style="background-color:rgb(20,0,101)">  76</span>│<span style="background-color:rgb(51,0,101)">  28</span>│<span style="background-color:rgb(81,0,101)">  16</span>│<span style="background-color:rgb(101,0,91)">  60</span>│<span style="background-color:rgb(101,0,61)">  68</span>│<span style="background-color:rgb(101,0,30)">  48</span>│<span style="background-color:rgb(101,0,0)">  52</span>│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">   0</span>│<span style="background-color:rgb(101,61,0)">   1</span>│<span style="background-color:rgb(101,91,0)">   1</span>│<span style="background-color:rgb(81,101,0)">   1</span>│<span style="background-color:rgb(51,101,0)">   1</span>│<span style="background-color:rgb(20,101,0)">   0</span>│<span style="background-color:rgb(0,101,10)">   1</span>│<span style="background-color:rgb(0,101,40)">   1</span>│<span style="background-color:rgb(0,101,71)">   2</span>│<span style="background-color:rgb(0,101,101)">   1</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">   1</span>│<span style="background-color:rgb(0,40,101)">   1</span>│<span style="background-color:rgb(0,10,101)">   2</span>│<span style="background-color:rgb(20,0,101)">   1</span>│<span style="background-color:rgb(51,0,101)">   1</span>│<span style="background-color:rgb(81,0,101)">   0</span>│<span style="background-color:rgb(101,0,91)">   1</span>│<span style="background-color:rgb(101,0,61)">   2</span>│<span style="background-color:rgb(101,0,30)">   1</span>│<span style="background-color:rgb(101,0,0)">   1</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(51,101,0)">   5</span>⇄<span style="background-color:rgb(0,40,101)">  12</span>│<span style="background-color:rgb(101,91,0)">   3</span>⇄<span style="background-color:rgb(101,0,0)">  20</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(101,61,0)">   2</span>│<span style="background-color:rgb(101,0,30)">  19</span>⇄<span style="background-color:rgb(0,10,101)">  13</span>│<span style="background-color:rgb(0,101,71)">   9</span>⇄<span style="background-color:rgb(0,101,10)">   7</span>│
+ │ │ │   10│<span style="background-color:rgb(0,101,40)">   8</span>⇄<span style="background-color:rgb(101,0,61)">  18</span>│<span style="background-color:rgb(0,71,101)">  11</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│<span style="background-color:rgb(0,101,71)">   9</span>⇄<span style="background-color:rgb(81,101,0)">   4</span>│<span style="background-color:rgb(101,0,61)">  18</span>⇄<span style="background-color:rgb(51,0,101)">  15</span>│<span style="background-color:rgb(101,0,91)">  17</span>⇄<span style="background-color:rgb(0,10,101)">  13</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 0 2 2  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>1 3 1 2  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>0 3 2 1  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>0 2 2 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>3 0 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>0 3 3 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>3 3 3 2  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>3 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>2 0 3 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>0 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>0 0 0 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>2 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>0 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>1 3 1 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>3 0 0 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>0 1 1 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>0 0 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>1 2 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 0 1 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>2 2 3 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>3 0 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>2 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>0 3 2 1  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>2 2 3 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 3 0 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>1 3 1 2  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>0 0 1 1  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>2 0 3 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>3 3 3 2  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>3 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 2 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>0 0 0 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>1 3 1 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>2 0 3 3  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>0 2 2 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>1 2 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>3 0 0 0  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 0 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>0 3 0 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,31,31)">   4</span>│
+ │ │ │   10│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(127,223,31)">   1</span>│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 0 ───── 📈 5 🟰 12 📉 3
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,31,31)">   4</span>│
+ │ │ │   10│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(127,223,31)">   1</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(127,223,31)">   1</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 16 🧹 15 🧹 14
+ ├─┬─ 📆 6 ⏱ 1ms  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 3 1 2  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 0 0 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 0 3 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>2 2 2 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>1 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>1 3 0 3  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>1 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>2 3 3 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>2 0 3 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>0 0 1 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>2 2 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>2 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>3 0 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>1 2 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ <span style="background-color:rgb(101,30,0)">1   </span>│<span style="background-color:rgb(101,61,0)">2   </span>│   2│
+ │ │ <span style="background-color:rgb(101,91,0)">3   </span>│<span style="background-color:rgb(81,101,0)">4   </span>│   1│
+ │ │ <span style="background-color:rgb(51,101,0)">5   </span>│<span style="background-color:rgb(20,101,0)">6   </span>│   4│
+ │ │ <span style="background-color:rgb(0,101,10)">7   </span>│<span style="background-color:rgb(0,101,40)">8   </span>│   3│
+ │ │ <span style="background-color:rgb(0,101,71)">9   </span>│<span style="background-color:rgb(0,101,101)">10  </span>│   1│
+ │ │ <span style="background-color:rgb(0,71,101)">11  </span>│<span style="background-color:rgb(0,40,101)">12  </span>│   1│
+ │ │ <span style="background-color:rgb(0,10,101)">13  </span>│<span style="background-color:rgb(20,0,101)">14  </span>│   3│
+ │ │ <span style="background-color:rgb(51,0,101)">15  </span>│<span style="background-color:rgb(81,0,101)">16  </span>│   3│
+ │ │ <span style="background-color:rgb(101,0,91)">17  </span>│<span style="background-color:rgb(101,0,61)">18  </span>│   3│
+ │ │ <span style="background-color:rgb(101,0,30)">19  </span>│<span style="background-color:rgb(101,0,0)">20  </span>│   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 175 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">  88</span>│<span style="background-color:rgb(101,61,0)">  16</span>│<span style="background-color:rgb(101,91,0)">  60</span>│<span style="background-color:rgb(81,101,0)">  52</span>│<span style="background-color:rgb(51,101,0)">  40</span>│<span style="background-color:rgb(20,101,0)">  28</span>│<span style="background-color:rgb(0,101,10)">  56</span>│<span style="background-color:rgb(0,101,40)">  68</span>│<span style="background-color:rgb(0,101,71)">  84</span>│<span style="background-color:rgb(0,101,101)">  64</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">  20</span>│<span style="background-color:rgb(0,40,101)">  36</span>│<span style="background-color:rgb(0,10,101)">  24</span>│<span style="background-color:rgb(20,0,101)">  76</span>│<span style="background-color:rgb(51,0,101)">  72</span>│<span style="background-color:rgb(81,0,101)">  44</span>│<span style="background-color:rgb(101,0,91)">  48</span>│<span style="background-color:rgb(101,0,61)">  32</span>│<span style="background-color:rgb(101,0,30)">  80</span>│<span style="background-color:rgb(101,0,0)">  12</span>│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">   1</span>│<span style="background-color:rgb(101,61,0)">   1</span>│<span style="background-color:rgb(101,91,0)">   1</span>│<span style="background-color:rgb(81,101,0)">   1</span>│<span style="background-color:rgb(51,101,0)">   1</span>│<span style="background-color:rgb(20,101,0)">   0</span>│<span style="background-color:rgb(0,101,10)">   1</span>│<span style="background-color:rgb(0,101,40)">   2</span>│<span style="background-color:rgb(0,101,71)">   1</span>│<span style="background-color:rgb(0,101,101)">   2</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">   0</span>│<span style="background-color:rgb(0,40,101)">   1</span>│<span style="background-color:rgb(0,10,101)">   0</span>│<span style="background-color:rgb(20,0,101)">   2</span>│<span style="background-color:rgb(51,0,101)">   1</span>│<span style="background-color:rgb(81,0,101)">   1</span>│<span style="background-color:rgb(101,0,91)">   1</span>│<span style="background-color:rgb(101,0,61)">   1</span>│<span style="background-color:rgb(101,0,30)">   1</span>│<span style="background-color:rgb(101,0,0)">   1</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,0,0)">  20</span>⇄<span style="background-color:rgb(0,101,10)">   7</span>│<span style="background-color:rgb(101,0,91)">  17</span>⇄<span style="background-color:rgb(0,101,101)">  10</span>│<span style="background-color:rgb(101,61,0)">   2</span>⇄<span style="background-color:rgb(101,0,30)">  19</span>│<span style="background-color:rgb(51,0,101)">  15</span>⇄<span style="background-color:rgb(101,0,61)">  18</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(0,101,40)">   8</span>│
+ │ │ │   10│<span style="background-color:rgb(81,0,101)">  16</span>⇄<span style="background-color:rgb(101,91,0)">   3</span>│<span style="background-color:rgb(0,101,71)">   9</span>⇄<span style="background-color:rgb(0,40,101)">  12</span>│<span style="background-color:rgb(0,101,40)">   8</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│<span style="background-color:rgb(51,101,0)">   5</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│<span style="background-color:rgb(101,30,0)">   1</span>⇄<span style="background-color:rgb(81,101,0)">   4</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>0 3 1 2  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 0 0 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 0 3 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>2 2 2 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>1 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>0 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>1 3 0 3  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>1 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>2 3 3 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>2 0 3 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>0 0 1 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>2 2 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>2 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>3 0 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>1 2 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>1 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>3 0 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>1 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 0 0 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>2 2 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>1 2 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>1 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>0 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>2 3 0 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>3 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>1 3 0 3  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>2 0 3 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>0 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>0 0 3 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 3 1 2  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>3 0 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,31,31)">   5</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
+ │ │ │   10│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(108,223,31)">   1</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 0 ───── 📈 0 🟰 15 📉 5
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,31,31)">   5</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,184,31)">   3</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│
+ │ │ │   10│<span style="color:rgb(184,223,31)">   2</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(223,108,31)">   4</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,184,31)">   3</span>⇄<span style="color:rgb(184,223,31)">   2</span>│<span style="color:rgb(223,108,31)">   4</span>⇄<span style="color:rgb(223,184,31)">   3</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 👑  Elite 1→13 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 5 🧹 10 🧹 12
+ ├─┬─ 📆 7 ⏱ 1ms  ──── 💰 g1-5
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>3 3 1 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 0 0 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>0 0 3 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 3 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>2 3 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>1 0 0 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>2 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>1 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>0 3 1 2  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>1 2 3 1  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>0 0 3 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>0 0 0 1  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>3 3 1 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>1 0 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>1 2 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>2 2 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 1 2 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>1 2 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ <span style="background-color:rgb(101,30,0)">1   </span>│<span style="background-color:rgb(101,61,0)">2   </span>│   3│
+ │ │ <span style="background-color:rgb(101,91,0)">3   </span>│<span style="background-color:rgb(81,101,0)">4   </span>│   2│
+ │ │ <span style="background-color:rgb(51,101,0)">5   </span>│<span style="background-color:rgb(20,101,0)">6   </span>│   1│
+ │ │ <span style="background-color:rgb(0,101,10)">7   </span>│<span style="background-color:rgb(0,101,40)">8   </span>│   3│
+ │ │ <span style="background-color:rgb(0,101,71)">9   </span>│<span style="background-color:rgb(0,101,101)">10  </span>│   2│
+ │ │ <span style="background-color:rgb(0,71,101)">11  </span>│<span style="background-color:rgb(0,40,101)">12  </span>│   3│
+ │ │ <span style="background-color:rgb(0,10,101)">13  </span>│<span style="background-color:rgb(20,0,101)">14  </span>│   4│
+ │ │ <span style="background-color:rgb(51,0,101)">15  </span>│<span style="background-color:rgb(81,0,101)">16  </span>│   1│
+ │ │ <span style="background-color:rgb(101,0,91)">17  </span>│<span style="background-color:rgb(101,0,61)">18  </span>│   3│
+ │ │ <span style="background-color:rgb(101,0,30)">19  </span>│<span style="background-color:rgb(101,0,0)">20  </span>│   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 175 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">  60</span>│<span style="background-color:rgb(101,61,0)">  40</span>│<span style="background-color:rgb(101,91,0)">  76</span>│<span style="background-color:rgb(81,101,0)">  52</span>│<span style="background-color:rgb(51,101,0)">  32</span>│<span style="background-color:rgb(20,101,0)">  24</span>│<span style="background-color:rgb(0,101,10)">  48</span>│<span style="background-color:rgb(0,101,40)">  80</span>│<span style="background-color:rgb(0,101,71)">  84</span>│<span style="background-color:rgb(0,101,101)">  88</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">  20</span>│<span style="background-color:rgb(0,40,101)">  68</span>│<span style="background-color:rgb(0,10,101)">  16</span>│<span style="background-color:rgb(20,0,101)">  36</span>│<span style="background-color:rgb(51,0,101)">  64</span>│<span style="background-color:rgb(81,0,101)">  72</span>│<span style="background-color:rgb(101,0,91)">  12</span>│<span style="background-color:rgb(101,0,61)">  44</span>│<span style="background-color:rgb(101,0,30)">  28</span>│<span style="background-color:rgb(101,0,0)">  56</span>│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,30,0)">   1</span>│<span style="background-color:rgb(101,61,0)">   1</span>│<span style="background-color:rgb(101,91,0)">   1</span>│<span style="background-color:rgb(81,101,0)">   1</span>│<span style="background-color:rgb(51,101,0)">   1</span>│<span style="background-color:rgb(20,101,0)">   0</span>│<span style="background-color:rgb(0,101,10)">   1</span>│<span style="background-color:rgb(0,101,40)">   2</span>│<span style="background-color:rgb(0,101,71)">   1</span>│<span style="background-color:rgb(0,101,101)">   2</span>│
+ │ │ │   10│<span style="background-color:rgb(0,71,101)">   1</span>│<span style="background-color:rgb(0,40,101)">   1</span>│<span style="background-color:rgb(0,10,101)">   0</span>│<span style="background-color:rgb(20,0,101)">   1</span>│<span style="background-color:rgb(51,0,101)">   1</span>│<span style="background-color:rgb(81,0,101)">   2</span>│<span style="background-color:rgb(101,0,91)">   0</span>│<span style="background-color:rgb(101,0,61)">   1</span>│<span style="background-color:rgb(101,0,30)">   0</span>│<span style="background-color:rgb(101,0,0)">   2</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(0,101,40)">   8</span>⇄<span style="background-color:rgb(101,61,0)">   2</span>│<span style="background-color:rgb(81,101,0)">   4</span>⇄<span style="background-color:rgb(51,101,0)">   5</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(51,0,101)">  15</span>│<span style="background-color:rgb(101,0,0)">  20</span>⇄<span style="background-color:rgb(81,0,101)">  16</span>│<span style="background-color:rgb(101,0,61)">  18</span>⇄<span style="background-color:rgb(0,40,101)">  12</span>│
+ │ │ │   10│<span style="background-color:rgb(0,101,40)">   8</span>⇄<span style="background-color:rgb(0,71,101)">  11</span>│<span style="background-color:rgb(0,101,71)">   9</span>⇄<span style="background-color:rgb(101,91,0)">   3</span>│<span style="background-color:rgb(0,101,101)">  10</span>⇄<span style="background-color:rgb(101,30,0)">   1</span>│<span style="background-color:rgb(101,0,0)">  20</span>⇄<span style="background-color:rgb(81,0,101)">  16</span>│<span style="background-color:rgb(0,101,10)">   7</span>⇄<span style="background-color:rgb(20,0,101)">  14</span>│
+ │ ├───── pop ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>3 3 1 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 0 0 2  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>0 3 3 1  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>0 0 3 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 3 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>2 3 3 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>1 0 0 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>2 2 0 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>1 3 1 3  💰 <span style="color:rgb(184,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>0 3 1 2  💰 <span style="color:rgb(108,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>1 2 3 1  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>0 0 3 2  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>0 0 0 1  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>3 3 1 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>1 0 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>1 2 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>1 2 1 2  💰 <span style="color:rgb(223,31,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>2 2 2 3  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>0 1 2 0  💰 <span style="color:rgb(223,108,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>1 2 1 3  💰 <span style="color:rgb(223,184,31)">g:3</span>
+ │ ├───── pais ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,30,0)">1   </span>2 2 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">2   </span>0 0 0 2  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(101,91,0)">3   </span>0 0 3 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">4   </span>0 3 3 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(51,101,0)">5   </span>0 3 1 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">6   </span>1 0 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,10)">7   </span>1 2 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">8   </span>1 2 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,71)">9   </span>2 2 2 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">10  </span>0 0 3 2  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,71,101)">11  </span>2 2 0 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">12  </span>1 2 3 1  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,10,101)">13  </span>1 3 1 3  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">14  </span>0 3 3 1  💰 <span style="color:rgb(223,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(51,0,101)">15  </span>0 3 1 2  💰 <span style="color:rgb(127,223,31)">g:1</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">16  </span>3 3 1 2  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,91)">17  </span>1 2 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">18  </span>1 2 1 3  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,30)">19  </span>1 0 0 2  💰 <span style="color:rgb(223,127,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">20  </span>3 3 1 3  💰 <span style="color:rgb(223,31,31)">g:4</span>
+ │ 🏆  ⏱ 1ms  💰 g:0
+─┴───────────────────
+::♛ ::  
+  ::  ♛ 
+♛   ::  
+  ::♛ ::
+─┬───────────────────
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,127,31)">   3</span>│
+ │ │ │   10│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(127,223,31)">   1</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,31,31)">   4</span>│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 0 ───── 📈 1 🟰 18 📉 1
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,31,31)">   4</span>⇄<span style="color:rgb(223,223,31)">   2</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│
+ │ │ │   10│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,223,31)">   2</span>⇄<span style="color:rgb(223,31,31)">   4</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(223,127,31)">   3</span>│<span style="color:rgb(223,127,31)">   3</span>⇄<span style="color:rgb(31,223,31)">   0</span>│
+ │ │ └──────────────────────────────────── 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>20 <span style="color:gray">P7=</span>100 <span style="color:gray">P8=</span>0 <span style="color:gray">P9=</span>1 <span style="color:gray">P10=</span>175 <span style="color:gray">P13=</span>1
+ ├─ ⚙   ─ <span style="color:gray">P14=</span>100 <span style="color:gray">P16=</span>1 <span style="color:gray">P17=</span>0 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>0 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>1 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1
+═╧═ 🏁  Execução terminada ⏱   1ms  ═══
+8 Damas (Inteira)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Algoritmo Evolutivo | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 1000000 | <span style="color:gray">P6(POPULACAO):</span> 20
+│ <span style="color:gray">P7(PROB_CRUZAR):</span> 100 | <span style="color:gray">P8(PROB_MUTAR):</span> 0 | <span style="color:gray">P9(SELECAO):</span> Roleta | <span style="color:gray">P10(PRESSAO):</span> 175
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span> Idade | <span style="color:gray">P14(PERC_DESCENDENTES):</span> 100 | <span style="color:gray">P16(ELITISMO):</span> 1
+│ <span style="color:gray">P17(IMIGRANTES):</span> 0 | <span style="color:gray">P18(DIVERSIDADE):</span> Limpeza | <span style="color:gray">P19(DIST_MINIMA):</span> 0
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span> uniforme | <span style="color:gray">P21(TIPO_MUTAR):</span> 0 | <span style="color:gray">P22(TIPO_VIZINHO):</span> incDecValor
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span> 0 | <span style="color:gray">P24(TIPO_DISTANCIA):</span> Hamming
+└──────────────────────────────────────────────────────────────────────
+::♛ ::  
+  ::  ♛ 
+♛   ::  
+  ::♛ ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ <span style="color:gray">I1(Resultado):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 1 | <span style="color:gray">I3(Iterações):</span> 209 | <span style="color:gray">I4(Épocas):</span> 8 | 
+│ <span style="color:gray">I5(Gerações):</span> 215
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção:
+</pre>
+</p>
+<p>Podemos ver que foram utilizadas apenas 8 épocas. Neste caso a solução foi gerada de pais com custo 2 e 4, tendo um irmão com custo 3. ....</p>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

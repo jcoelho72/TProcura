@@ -20,4 +20,7 @@ digraph "TProcuraMelhorativa::DebugID"
   Node7 [id="Node000007",label="TProcuraMelhorativa\l::DebugPopulacaoAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a372f8a7498a27d2fb11c3791b1f26d61",tooltip=" "];
   Node7 -> Node3 [id="edge7_Node000007_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node6 [id="edge8_Node000007_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node8 [id="edge9_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="TProcuraMelhorativa\l::ReproduzirAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a63e8ac07e1d712645b9038cd72aa133b",tooltip=" "];
+  Node8 -> Node4 [id="edge10_Node000008_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
