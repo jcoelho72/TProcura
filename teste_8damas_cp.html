@@ -102,9 +102,9 @@ $(document).ready(function(){initNavTree('teste_8damas_cp.html',''); initResizab
 <h2><a class="anchor" id="autotoc_md80"></a>
 Sumário</h2>
 <ul>
-<li>Ação 1 - Ver instâncias</li>
-<li>Ação 2 - Resolver manualmente</li>
-<li>Ação 3 - Algoritmos Evolutivos</li>
+<li><a class="el" href="teste_8damas_cp.html#damas-cp1">Ação 1 - Ver instâncias</a></li>
+<li><a class="el" href="teste_8damas_cp.html#damas-cp2">Ação 2 - Resolver manualmente</a></li>
+<li><a class="el" href="teste_8damas_cp.html#damas-cp3">Ação 3 - Algoritmos Evolutivos</a></li>
 <li>Ação 4 - Testes Empíricos</li>
 </ul>
 <p> 
@@ -117,7 +117,7 @@ Sumário</h2>
 Opção: <span class="entrada">2</span>
 </pre>
 </p>
-<p><a class="anchor" id="invalid"></a></p>
+<p><a class="anchor" id="damas-cp1"></a></p>
 <h2><a class="anchor" id="autotoc_md81"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no problema 8 Damas Permutação, introduza: <b>2.</b></p>
@@ -168,7 +168,7 @@ Opção:
 </pre>
 </p>
 <p>Notar que a instância é distinta da codificação inteira. De facto a instância incial da codificação inteira não tem representação na codificação permutação, já que neste caso apenas há permutação da posição das damas, enquanto que na solução inicial da codificação inteira há duas damas na mesma coluna.</p>
-<p><a class="anchor" id="invalid"></a></p>
+<p><a class="anchor" id="damas-cp2"></a></p>
 <h2><a class="anchor" id="autotoc_md82"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos resolver a instância manualmente. Introduza: <b>2</b></p>
@@ -198,7 +198,7 @@ Opção: <span class="entrada">2</span>
 </pre>
 </p>
 <p>Apenas ao gerar a população inicial, temos logo uma solução de custo 0, pelo que nem se chegou a gerar 4 elementos.</p>
-<p>Assim, vamos sair e colocar uma dimensão maior para poder ver os operadores de cruzamento. Introduza: <b>0; 1; 6; 2.</b></p>
+<p>Assim, vamos sair e colocar uma dimensão maior para poder ver os operadores. Introduza: <b>0; 1; 6; 2.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">0</span>
@@ -243,7 +243,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Agora sim, temos uma população de 4 elementos com custos de 2 a 5. Vamos começar por testar o operador de mutação. Introduza: <b>1; 1.</b></p>
+<p>Agora sim, temos uma população de 4 elementos com custos de 2 a 4. Vamos começar por testar o operador de mutação. Introduza: <b>1; 1.</b></p>
 <p> 
 <pre>
 │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">1</span>
@@ -309,7 +309,7 @@ Opção: <span class="entrada">2</span>
 </p>
 <p>Tal como na representação inteira, há vários operadores de mutação, sendo o mesmo verdade para os restantes operadores de cruzamento e vizinhança.</p>
 <p>Desta vez inserimos o elemento na posição 1 (segundo na ordem), na posição 3 (quarto na ordem). Todos os outros elmentos ficaram iguais. Em termos de custos ficou igual, continuam 4 pares de damas a atacarem-se, embora sejam pares distintos.</p>
-<p>Vamos agora ao operador de cruzamento, vamos cruzar os dois melhores elemenotos. Introduza: <b>2; 2; 3; 4.</b></p>
+<p>Vamos agora ao operador de cruzamento, vamos cruzar os dois melhores elementos. Introduza: <b>2; 2; 3; 4.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">2</span>
@@ -345,7 +345,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Nete caso o filho ficou com os 3 primeiros elementos da mãe, e o resto ficou pela ordem como que aparecem no pai. Há apenas 2 pares de damas que se atacam, tal como a mãe.</p>
+<p>Nete caso o filho ficou com os 3 primeiros elementos da mãe, e o resto ficou pela ordem como que aparecem no pai. Há apenas 2 pares de damas que se atacam, tal como na mãe.</p>
 <p>Podemos agora testar o operador de vizinhança, tendo como ponto de partida o estado 4 com custo 2. Introduza: <b>3; 4.</b></p>
 <p> 
 <pre>
@@ -494,7 +494,7 @@ Opção: <span class="entrada">2</span>
 Opção: 
 </pre>
 </p>
-<p><a class="anchor" id="invalid"></a></p>
+<p><a class="anchor" id="damas-cp3"></a></p>
 <h2><a class="anchor" id="autotoc_md83"></a>
 Ação 3 - Algoritmos Evolutivos</h2>
 <p>Vamos agora ver os algoritmos evolutivos nos diferentes níveis de debug, para esta instância de tamanho 6.</p>
@@ -1025,15 +1025,13 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Podemos identificar o filho 10 com custo 0, gerado por pais de custo 2 e 3. Vamos colocar os pais, que são os elementos 10 e 12, junto com o filho com a solução:</p><ul>
+<p>Podemos identificar na última época o filho 10 com custo 0, gerado por pais de custo 2 e 3. Vamos colocar os pais, que são os elementos 10 e 12, junto com o filho com a solução:</p><ul>
 <li>Pai: <code>0 2 4 1 5 3</code></li>
 <li>Mãe: <code>3 0 5 4 2 1</code></li>
 <li>Filho: <code>3 0 4 1 5 2</code></li>
 </ul>
 <p>É visivel que os dois primeiros elementos vêm de um dos pais, e os restantes do outro pai. Nenhum dos pais tinha custo 1, pelo que se a população fosse dominada por elementos de custo 1, estes dois elementos tinham menos probabilidade de se encontrarem e gerarem um filho com a solução.</p>
-<ul>
-<li><a class="anchor" id="invalid"></a></li>
-</ul>
+<p><a class="anchor" id="damas-cp4"></a></p>
 <h2><a class="anchor" id="autotoc_md84"></a>
 Ação 4 - Testes Empíricos</h2>
 <p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
@@ -1127,7 +1125,7 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Com a configuração optimizada, bastou uma época para encontrar a solução para esta instância. O filho 2 foi gerado de dois pais de custo 2, e tem um irmão de custo 4. Os pais são os elementos 8 e 2. Estes pais têm ambos o melhor custo, e foram escolhidos como pais 4 e 5 vezes. Acabou por não serem vezes a mais, já que fizeram para também nos elementos 7 e 8, e tiveram filhos de custo 5 e 6.</p>
+<p>Com a configuração optimizada, bastou uma época para encontrar a solução para esta instância. O filho 2 foi gerado de dois pais de custo 2, e tem um irmão de custo 4. Os pais são os elementos 8 e 2. Estes pais têm ambos o melhor custo, e foram escolhidos como pais 4 e 5 vezes. Esta situação ocorre atendendo a que o método de seleção é um torneio de tamanho 10. Acabou por não serem vezes a mais, já que fizeram para também nos elementos 7 e 8, e tiveram filhos de custo 5 e 6.</p>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

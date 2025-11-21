@@ -104,7 +104,7 @@ Sumário</h2>
 <li><a class="el" href="teste_8damas_ci.html#damas-ci1">Ação 1 - Ver instâncias</a></li>
 <li><a class="el" href="teste_8damas_ci.html#damas-ci2">Ação 2 - Resolver manualmente</a></li>
 <li><a class="el" href="teste_8damas_ci.html#damas-ci3">Ação 3 - Algoritmos Evolutivos</a></li>
-<li>Ação 4 - Testes Empíricos</li>
+<li><a class="el" href="teste_8damas_ci.html#damas-ci4">Ação 4 - Testes Empíricos</a></li>
 </ul>
 <p> 
 <pre>
@@ -203,8 +203,11 @@ Opção: <span class="entrada">2</span>
 </p>
 <p>Entramos num modo de expoloração manual com as operações dos algoritmos melhorativos. No entanto a população foi fixada em 4, para melhor gerir a exploração manual. Durante a geração da população dos 4 elementos foi encontrada uma solução de custo 2, que foi mostrada de imediato. Arranca a época 0 (linha: " ├─┬─ 📆 0 ⏱  ──── 💰 g2-4"), tal como os algoritmos evolutivos, mas neste caso cada época é o resultado de aplicar um operador.</p>
 <p>Podemos ver a população de 4 elementos com custos de 2 a 4. É mostrado a codificação inteira e não as soluções a que correspondem. Assim pretendemos focar no que os algoritmos vêm, e não nas soluções.</p>
-<p>Temos neste caso a codificação inteira, com a coluna de cada dama, de 0 a 3. Como temos 4 damas temos 4 números de 0 a 3. Podemos utilizar outra codificação, desde que exista forma de codificar todas as soluções de interesse, ou seja, de uma solução converter na codificação única, e descodificar, de uma codificação reconstruir a solução a que corresponde.</p>
-<p>Há outras possibilidades de codificar o problema das 8 damas, estando implementado também com a codificação permutação em outro exemplo.</p>
+<p>A descodificação, ou seja, a conversão da codificação para uma solução, é neste caso simples: cada número na posição K corresponde à coluna em que a dama da linha K deve estar. A descodificação é normalmente necessária para avaliar o custo de uma solução, neste caso o número de pares de damas a atacarem-se mutuamente.</p>
+<p>A codificação de uma solução é também imediata. No entanto em problemas complexos estas duas operações, codificar/descodificar uma solução, podem ter custos computacionais consideráveis.</p>
+<p>Como temos 4 damas temos 4 números de 0 a 3.</p>
+<p>Podemos utilizar outra codificação, desde que exista forma de codificar todas as soluções de interesse, ou seja, de uma solução converter na codificação única, e descodificar, de uma codificação reconstruir a solução a que corresponde.</p>
+<p>Há outras possibilidades de codificar o problema das 8 damas, estando implementado a codificação com base na permutação, no próximo exemplo.</p>
 <p>Na população os 4 elementos têm cor de fundo para auxiliar a identificação, e os custos têm cor da letra para sinalizar os melhores elementos de forma visual.</p>
 <p>Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parametro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elmentos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
 <p>Temos 3 operações para testar, a mutação, cruzamento e vizinhança. Vamos começar pela mutação, e mutar o indivíduo 4. Introduza: <b>1; 4.</b></p>
@@ -385,7 +388,7 @@ Opção: <span class="entrada">2</span>
 Opção: 
 </pre>
 </p>
-<p>Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem. Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, sendo a solução obitida retornada.</p>
+<p>Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem. Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, sendo a solução obtida retornada.</p>
 <p><a class="anchor" id="damas-ci3"></a></p>
 <h2><a class="anchor" id="autotoc_md78"></a>
 Ação 3 - Algoritmos Evolutivos</h2>
@@ -422,7 +425,7 @@ Opção:
 <p>Podemos ver que o primeiro indicador, I1(Resultado) é igual a 0. Este é o custo da solução. Podemos observar a solução e ver que as damas não se atacam, aliás, é exatamente a mesma solução obtida manualmente.</p>
 <p>O segundo indicador I2(Tempo(ms)) é 0, o que significa que foi consumido menos de 1 milisegundo.</p>
 <p>Temos o número de iterações a 241, que corresponde às avaliações efetuadas, e 10 épocas, o que corresponde ao número de ciclos do algoritmo evolutivo. Finalmente, temos o número de estados gerados a 249.</p>
-<p>Há informação visivel nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. O que aconteceu nestas 10 épocas? Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções. Podemos obter na literatura qual a melhor parametrização para um dado problema ou tipo de problemas, e utilizar como parametrização base. Mas estaremos satisfeitos com esta informação? Não, precisamos de ver o que se passou em concreto, para saber o que correu bem e menos bem, sem dependências de terceiros. Queremos até mais tarde confirmar que a configuração base é a melhor parametrização possível, ou identificar qual é a mais adequada, pela via experimental.</p>
+<p>Há informação visivel nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. O que aconteceu nestas 10 épocas? Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções. Podemos obter na literatura qual a melhor parametrização para um dado problema ou tipo de problemas, e utilizar como parametrização base. Mas estaremos satisfeitos com esta informação? Não! Precisamos de ver o que se passou em concreto, para saber o que correu bem e menos bem, sem dependências de terceiros. Queremos até mais tarde confirmar que a configuração base é a melhor parametrização possível, ou identificar qual é a mais adequada, pela via experimental.</p>
 <p>Como podemos repetir todas as execuções, podemos ver a mesma execução com diferentes níveis de detalhe. Vamos aproveitar esta execução que tem tamanho reduzido, para ir subindo o nível de debug. Introduza: <b>1; 4; 3; 2; 1; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
@@ -474,7 +477,7 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Nesta repetição vemos um ponto de quando em quando, para saber que há atividade. No final são introduzidos 128 pontos, se o número de iterações for atingido. Como gastamos muito poucas iterações e o limite é muito alto, estes pontos nem são visiveis.</p>
+<p>Nesta repetição vemos um ponto de quando em quando, para saber que há atividade. No final são introduzidos 128 pontos, se o número de iterações for atingido. Como gastamos muito poucas iterações e o limite é muito alto, estes pontos nem chegam a ser impressos.</p>
 <p>Mas vemos algo importante. Sempre que se encontra uma melhor solução global, é registado o tempo e a solução é mostrada ao utilizador. Podemos ver que primeiro foi encontrada uma solução de custo 2, de seguida outra de custo 1 e finalmente a de custo 0.</p>
 <p>Sabemos mais alguma coisa do que se passou, mas não muito. Numa execução longa podemos ver quando as diferentes soluções são encontradas, e se são encontradas soluções de custos incrementais, ou diretamente a solução de custo 0.</p>
 <p>Vamos ver agora o nível de debug PASSOS. Introduza: <b>1; 4; 3; 2; 2; <em>ENTER</em>; 6.</b></p>
