@@ -109,15 +109,17 @@ $(document).ready(function(){initNavTree('melhorativa__deucalion.html',''); init
 <li>Eficácia: Percentagem de instâncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))</li>
 <li>Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))</li>
 </ul>
-<p>Estas serão as variáveis de performance que iremos monitorizar para identificar a melhor parametrização. O indicador de eficiência incorpora a eficácia de forma parcial: as instâncias não resolvidas são contabilizadas como tendo o tempo limite (10 s). Assim, instâncias que simplesmente não terminam dentro do limite não penalizam muito a eficiência, já que sem este limite iriam ser eventualmente resolvidas com um tempo maior. O indicador da eficácia não distingue entre duas instâncias resolvidas, mesmo que uma leve 0,1 segundos e a outra 5 segundos.</p>
+<p>Estas serão as variáveis de performance que iremos monitorizar para identificar a melhor parametrização.</p>
+<p>O indicador de eficiência conta as instâncias não resolvidas como tendo o tempo limite (10 s). Como muitas dessas instâncias exigiriam muito mais tempo se o limite fosse removido, a média de tempos reportada é otimista — subestima o tempo real necessário. Assim, a eficiência medida não pode exceder 10 s por instância e tende a mascarar a gravidade de instâncias que, sem limite, precisariam de muito mais tempo.</p>
+<p>Assim, instâncias que simplesmente não terminam dentro do limite não penalizam muito a eficiência, já que sem este limite iriam ser eventualmente resolvidas com um tempo maior. O indicador da eficácia não distingue entre duas instâncias resolvidas, mesmo que uma leve 0,1 segundos e a outra 5 segundos.</p>
 <p>Um problema em que se pretenda otimizar, ao contrário destes que são de procura, ou seja, se pretendessemos minimizar I1, teria de ter indicadores distintos, como distância relativa à solução ótima, ou a um valor mínimo conhecido.</p>
 <p>Para averiguar se as diferenças obtidas na eficiência (tempo), são ou não relevantes, vamos calcular também o intervalo de confiança a 95% para a eficiência, bem como o percentil de 10 e 90% e mediana:</p>
 <ul>
 <li>ICinf = round(AVERAGE([I2(Tempo(ms))]) - 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)</li>
 <li>ICsup = round(AVERAGE([I2(Tempo(ms))]) + 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)</li>
-<li>P10 = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,1);0)</li>
-<li>P90 = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,9);0)</li>
-<li>Med = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,5);0)</li>
+<li>P10 = round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,1);0)</li>
+<li>P90 = round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,9);0)</li>
+<li>Med = round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,5);0)</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md20"></a>
 Teste 1</h2>
@@ -471,7 +473,7 @@ Resultados: damascp_1</h3>
 </table>
 <p>Os problemas são todos resolvidos até à instância 17, após o qual a eficácia desce ficando a baixo dos 10% na instância 22. A eficiência vai também subindo, na instância 17 onde ainda todas as instâncias são resolvidas, já leva 2 segundos em média.</p>
 <p>Acaba por ter uma performance idêntica à codificação inteira, mas com tempos mais reduzidos. No entanto, aparenta ter mais dificuldades com instâncias maiores, naturalmente utilizando como referência a configuração base.</p>
-<p>Utilizando o mesmo racional que nas 8 damas com codificação inteira, e também para mantermos o conjunto de teste comparável entre as duas codificações, vamos utilizar as instâncias 10 a 19 para os testes seguintes, de modo a apurar a melhor marametrização.</p>
+<p>Utilizando o mesmo racional que nas 8 damas com codificação inteira, e também para mantermos o conjunto de teste comparável entre as duas codificações, vamos utilizar as instâncias 10 a 19 para os testes seguintes, de modo a apurar a melhor parametrização.</p>
 <h3><a class="anchor" id="autotoc_md23"></a>
 Resultados: particaocb_1</h3>
 <table class="markdownTable">
@@ -522,7 +524,7 @@ Resultados: particaocb_1</h3>
 <p>Cada instância é gerada com base no número aleatório, pelo que neste caso não temos apenas 999 instâncias. Como foram utilizadas 10 corridas com valores diferentes para P3 por cada tamanho, temos 9990 instâncias.</p>
 <p>As instâncias ímpares não são resolvidas, as pares a partir da instância 10 são todas resolvidas, e apenas esporadicamente há uma instância par não resolvida.</p>
 <p>A abordagem melhorativa não encontra soluções quando a instância não tem solução. Provavelmente as instâncias ímpares não têm solução; em alguns casos isso pode ser verificado por procura construtiva, noutras não.</p>
-<p>Assim vamos utilizar para conjunto de teste apenas instâncias pares, que tenham sido todas resolvidas (com os 10 valores de P3), com os maiores tempos.</p>
+<p>Por isso, o conjunto de teste para CB será constituído apenas por instâncias pares que foram todas resolvidas (10 valores de P3) e apresentam maiores tempos; isto maximiza a informação útil.</p>
 <p>Conjunto de teste: 948,864,930,922,764,692,806,926,904,870</p>
 <h2><a class="anchor" id="autotoc_md24"></a>
 Teste 2</h2>
@@ -714,7 +716,7 @@ Resultados: damasci_2</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">53   </td><td class="markdownTableBodyRight">5973   </td><td class="markdownTableBodyRight">5710   </td><td class="markdownTableBodyRight">6236   </td><td class="markdownTableBodyRight">418   </td><td class="markdownTableBodyRight">8336   </td><td class="markdownTableBodyRight">10003   </td></tr>
 </table>
-<p>Podemos observar que a população a 20, o valor por omissão, é nesta codificação o valor com melhores resultados. O intervalo de confiança a 95% no valor 20 intersecta o de 25, mas é claramente melhor que todos os restanes valores. Tem também claramente o melhor valor para o percentil de 90%. O valor 10 ou inferior, e 40 ou superior, aparenta danificar consideravelmente a eficácia e a eficiência.</p>
+<p>Podemos observar que a população a 20, o valor por omissão, é nesta codificação o valor com melhores resultados. O intervalo de confiança a 95% no valor 20 intersecta o de 25, mas é claramente melhor que todos os restantes valores. Tem também claramente o melhor valor para o percentil de 90%. O valor 10 ou inferior, e 40 ou superior, aparenta danificar consideravelmente a eficácia e a eficiência.</p>
 <p>Mantemos o valor por omissão P6=20.</p>
 <h3><a class="anchor" id="autotoc_md26"></a>
 Resultados: damascp_2</h3>
@@ -1589,7 +1591,7 @@ Teste 6</h2>
 <p>O método round-robin tem portanto um parâmetro Q, que é o número de torneios: P15(Q_ROUND_ROBIN). Tem o valor por omissão a 3, mas pode ser desde 2 até um valor alto como 100, mas não fará sentido ser superior à população.</p>
 <p>Vamos para já deixar este valor por omissão, e fazer um teste com P13 e P14, para apurar se a estratégia de sobrevivência é muito relevante ou não, e se a percentagem de descendentes é ou não relevante.</p>
 <p>Vamos variar P14 de 0 a 100 em passos de 25, tal como temos feito para as restantes percentagens. Quando P14=0 significa que haverá apenas um só descendente (e não 0) em cada geração.</p>
-<p>Vamos ainda alterar o conjunto de teste das 8 damas, atendendo a que os tempos de resolução são demasiado baixos para a codificação de permutação, com tempos médios a baixo de 0,05 segundos. Escolhemos as instâncias seguintes, de 20 a 29.</p>
+<p>Vamos ainda alterar o conjunto de teste das 8 damas, atendendo a que os tempos de resolução são demasiado baixos para a codificação de permutação, com tempos médios abaixo de 0,05 segundos. Escolhemos as instâncias seguintes, de 20 a 29.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico P13 vs P14</li>
 <li><b>Definição</b>:<ul>
