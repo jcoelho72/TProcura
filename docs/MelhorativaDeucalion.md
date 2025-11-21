@@ -23,8 +23,14 @@ Variáveis:
 - Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))
 
 Estas serão as variáveis de performance que iremos monitorizar para identificar a melhor parametrização.
-O indicador de eficiência incorpora a eficácia de forma parcial: as instâncias não resolvidas são contabilizadas
-como tendo o tempo limite (10 s).
+
+O indicador de eficiência conta as instâncias não resolvidas como tendo o tempo limite (10 s).
+Como muitas dessas instâncias exigiriam muito mais tempo se o limite fosse removido,
+a média de tempos reportada é otimista — subestima o tempo real necessário.
+Assim, a eficiência medida não pode exceder 10 s por instância
+e tende a mascarar a gravidade de instâncias que, sem limite, precisariam de muito mais tempo.
+
+
 Assim, instâncias que simplesmente não terminam dentro do limite não penalizam muito a eficiência,
 já que sem este limite iriam ser eventualmente resolvidas com um tempo maior.
 O indicador da eficácia não distingue entre duas instâncias resolvidas,
@@ -38,9 +44,9 @@ intervalo de confiança a 95% para a eficiência, bem como o percentil de 10 e 9
 
 - ICinf = round(AVERAGE([I2(Tempo(ms))]) - 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)
 - ICsup = round(AVERAGE([I2(Tempo(ms))]) + 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)
-- P10 = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,1);0)
-- P90 = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,9);0)
-- Med = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,5);0)
+- P10 = round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,1);0)
+- P90 = round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,9);0)
+- Med = round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,5);0)
 
 
 ## Teste 1
@@ -342,7 +348,7 @@ referência a configuração base.
 
 Utilizando o mesmo racional que nas 8 damas com codificação inteira, e também para mantermos
 o conjunto de teste comparável entre as duas codificações, vamos utilizar as instâncias 10 a 19
-para os testes seguintes, de modo a apurar a melhor marametrização.
+para os testes seguintes, de modo a apurar a melhor parametrização.
 
 
 ### Resultados: particaocb_1
@@ -382,8 +388,8 @@ A abordagem melhorativa não encontra soluções quando a instância não tem so
 Provavelmente as instâncias ímpares não têm solução; em alguns casos isso pode ser verificado por procura construtiva,
 noutras não.
 
-Assim vamos utilizar para conjunto de teste apenas instâncias pares, que tenham sido todas resolvidas (com os 10 valores de P3),
-com os maiores tempos.
+Por isso, o conjunto de teste para CB será constituído apenas por instâncias pares que foram todas resolvidas
+(10 valores de P3) e apresentam maiores tempos; isto maximiza a informação útil.
 
 Conjunto de teste: 948,864,930,922,764,692,806,926,904,870 
 
@@ -567,7 +573,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 
 Podemos observar que a população a 20, o valor por omissão, é nesta codificação o valor com melhores resultados.
-O intervalo de confiança a 95% no valor 20 intersecta o de 25, mas é claramente melhor que todos os restanes valores.
+O intervalo de confiança a 95% no valor 20 intersecta o de 25, mas é claramente melhor que todos os restantes valores.
 Tem também claramente o melhor valor para o percentil de 90%.
 O valor 10 ou inferior, e 40 ou superior, aparenta danificar consideravelmente a eficácia e a eficiência.
 
@@ -1429,7 +1435,7 @@ Vamos variar P14 de 0 a 100 em passos de 25, tal como temos feito para as restan
 Quando P14=0 significa que haverá apenas um só descendente (e não 0) em cada geração.
 
 Vamos ainda alterar o conjunto de teste das 8 damas, atendendo a que os tempos de resolução são demasiado baixos
-para a codificação de permutação, com tempos médios a baixo de 0,05 segundos. Escolhemos as instâncias seguintes,
+para a codificação de permutação, com tempos médios abaixo de 0,05 segundos. Escolhemos as instâncias seguintes,
 de 20 a 29.
 
 - **Tipo de Teste / Objetivo**: Paramétrico P13 vs P14
