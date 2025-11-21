@@ -5,17 +5,15 @@
 Execução de exemplo com base no problema da Partição, com codificação binária.
 Pode acompanhar o teste executando as ações localmente.
 
-No Visual Studio, selecione o projeto TProcuraMelhorativa, e execute.
-No Linux na pasta `.../TProcura/Melhorativa/Teste$` execute `make` seguido de `./bin/Release/TProcuraMelhorativa`
-
-Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
+No Visual Studio, selecione o projeto TProcuraMelhorativa, e execute-o.
+No Linux na pasta `.../TProcura/Melhorativa/Teste` execute `make` seguido de `./bin/Release/TProcuraMelhorativa`
 
 ## Sumário
 
 - [Ação 1 - Ver instâncias](#particao-cb1)
 - [Ação 2 - Resolver manualmente](#particao-cb2)
-- [Ação 3 - Algoritmos Evolutivos](#particao-cb3)
-- [Ação 4 - Testes Empíricos](#particao-cb4)
+- [Ação 3 - Algoritmos evolutivos](#particao-cb3)
+- [Ação 4 - Testes empíricos](#particao-cb4)
 
 \htmlonly
 <pre>
@@ -31,7 +29,7 @@ Opção: <span class="entrada">3</span>
 \anchor particao-cb1
 ## Ação 1 - Ver instâncias
 
-Vamos entrar no problema da Partição, com representação binária, introduza: **3.**
+Vamos entrar no problema da Partição, com representação binária, insira: **3.**
 
 \htmlonly
 <pre>
@@ -54,7 +52,7 @@ Opção:
 \endhtmlonly
 
 Temos inicialmente uma instância de 10 elementos, mas devido ao nível de debug não vemos o estado completo.
-Introduza: **3; 2; 4; *ENTER*.**
+Insira: **3; 2; 4; *ENTER*.**
 
 \htmlonly
 <pre>
@@ -88,7 +86,7 @@ de modo a que o somatório seja igual.
 \anchor particao-cb2
 ## Ação 2 - Resolver manualmente
 
-Vamos resolver a instância manualmente. Introduza: **2**
+Vamos resolver a instância manualmente. Insira: **2**
 
 \htmlonly
 <pre>
@@ -116,7 +114,7 @@ Como a codificação é binária, temos uma sequência de bits, 0/1, tantos quan
 O valor do custo é a diferença obtida após a divisão dos núemros. Pretende-se uma instância de custo 0, ou seja, ambos os
 lados com o mesmo somatório.
 
-Vamos testar a mutação. Introduza: **1; 1.**
+Vamos testar a mutação. Insira: **1; 1.**
 
 \htmlonly
 <pre>
@@ -154,7 +152,7 @@ Vamos testar a mutação. Introduza: **1; 1.**
 Foi mutado o bit na posição 9. O custo melhorou, sendo agora o melhor dos custos, mesmo assim 150, ainda distante de 0.
 
 Vamos testar o cruzamento nos dois melhores, elementos 1 e 4.
-Introduza: **2; 1; 4; 2.**
+Insira: **2; 1; 4; 2.**
 
 \htmlonly
 <pre>
@@ -193,7 +191,7 @@ Introduza: **2; 1; 4; 2.**
 Foi aplicado o cruzamento a 1 ponto, tendo o ponto sido na posição 8. Assim o filho ficou com 8 bits do pai, e os dois últimos bits da mãe.
 Ficou com um custo de 414, entre o pai e a mãe.
 
-Vamos agora testar a vizinhança, usando o melhor estado. Introduza: **3; 1.**
+Vamos agora testar a vizinhança, usando o melhor estado. Insira: **3; 1.**
 
 \htmlonly
 <pre>
@@ -218,7 +216,7 @@ Vamos agora testar a vizinhança, usando o melhor estado. Introduza: **3; 1.**
 
 
 Temos vários vizinhos com custo inferior, em que estes vizinhos é trocado um só bit. Vamos escolher o vizinho 1 e repetir.
-Introduza: **1; 3; 1.**
+Insira: **1; 3; 1.**
 
 \htmlonly
 <pre>
@@ -268,7 +266,7 @@ Introduza: **1; 3; 1.**
 Neste caso todos os vizinhos têm um custo superior ao próprio, sendo o vizinho de melhor custo o pai deste, portanto voltariamos
 ao mesmo estado se o escolhessemos. Estamos no óptimo local.
 
-Vamos escolher um vizinho e terminar. Introduza: **1; 0.**
+Vamos escolher um vizinho e terminar. Insira: **1; 0.**
 
 \htmlonly
 <pre>
@@ -315,11 +313,11 @@ Opção:
 
 
 \anchor particao-cb3
-## Ação 3 - Algoritmos Evolutivos
+## Ação 3 - Algoritmos evolutivos
 
 Vamos  ver os algoritmos evolutivos nos diferentes níveis de debug, para esta instância de tamanho 10.
 
-Introduza: **1; 10; 3; 2; 1; *ENTER*;6.**
+Insira: **1; 10; 3; 2; 1; *ENTER*;6.**
 
 \htmlonly
 <pre>
@@ -373,7 +371,7 @@ Opção:
 
 Podemos ver que há 10 épocas, pelo que é viável maior detalhe. Neste problema são encontradas muitas soluções não válidas, mas cada uma mais perto de uma solução válida.
 Vamos avançar para mais detalhe.
-Introduza: **1; 10; 3; 2; 2; *ENTER*;6.**
+Insira: **1; 10; 3; 2; 2; *ENTER*;6.**
 
 \htmlonly
 <pre>
@@ -440,7 +438,7 @@ Foi obtida uma de custo 2 na época 1, mas neste caso não há soluções de cus
 atendendo a que o somatório de números é sempre par por construção, pelo que esta solução é a mais perto de
 uma solução válida. Foi necessário várias épocas, com custos a variar de 2 a largas centenas.
 Avançamos para o detalhe  seguinte.
-Introduza: **1; 10; 3; 2; 3; *ENTER*;6.**
+Insira: **1; 10; 3; 2; 3; *ENTER*;6.**
 
 \htmlonly
 <pre>
@@ -555,7 +553,7 @@ Opção:
 Observamos que os custos têm uma distribuição bastante alargada, desde 2 unidades até quase um milhar. As distâncias entre elementos vão de 1 a 9.
 Esta diversidade é importante para evitar a convergência prematura.
 Vamos avançar para o detalhe máximo.
-Introduza: **1; 10; 3; 2; 4; *ENTER*;6.**
+Insira: **1; 10; 3; 2; 4; *ENTER*;6.**
 
 \htmlonly
 <pre>
@@ -1061,16 +1059,16 @@ Os pais nas posições 3 e 4 tinham nesta última época custos 2 e 10, valores 
 pelo que nem sempre dois elementos bons geram bons filhos.
 
 \anchor particao-cb4
-## Ação 3 - Testes Empíricos
+## Ação 3 - Testes empíricos
 
 Atendendo ao volume de parametros nos algoritmos evolutivos,
 estes testes vão utilizar desde logo um cluster (Deucalion).
 
-[Resultdos Deucalion](melhorativa__deucalion.html)
+[Resultados Deucalion](melhorativa__deucalion.html)
 
 
 
-Neste estudo foi identificada a melhor parmetrização para este problema e codificação:
+Neste estudo foi identificada a melhor parametrização para este problema e codificação:
 **P6=20 P7=0 P8=100 P9=2 P11=4 P12=100 P13=1 P14=100 P16=1 P17=1 P18=1 P21=0 P22=4.**
 
 Podemos ver como a alteração da parametrização afeta este exemplo: 
@@ -1534,7 +1532,7 @@ Com esta configuração, embora a população tenha elementos bons (da ordem das
 dado que o método de seleção dos pais é com um torneio de 4 elementos. Há possibilidade de um elemento mau ser pai, mas teriam de ser selecionados 4 maus,
 de modo a ser pai o menos mau. Essa situação ocorre em outras épocas, mas não na última época.
 
-Para esta configuração optimizada, nesta instância pequena, não é possível ver grande melhoria. No entanto, como se viu nos resultados do Deucalion,
+Para esta configuração otimizada, nesta instância pequena, não é possível ver grande melhoria. No entanto, como se viu nos resultados do Deucalion,
 as melhorias são claras em instâncias maiores.
 
 

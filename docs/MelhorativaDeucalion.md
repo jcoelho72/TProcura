@@ -5,41 +5,48 @@ Testes da classe TProcuraMelhorativa no cluster Deucalion.
 A documentação do cluster Deucalion pode ser encontrada em: https://docs.deucalion.macc.fccn.pt/
 A forma como se pode obter acesso ao cluster, bem como a submissão de trabalhos, está descrita nessa documentação.
 
-Vamos fazer testes paramétricos no sentido de identificar para as três implementações, qual a melhor parametrização
-no contexto dos algoritmos evolutivos. Pretendemos saber quais os parametros que têm impacto relevante na performance.
+Vamos realizar testes paramétricos para as três implementações (CI, CP e CB)
+com o objetivo de identificar a melhor parametrização, no contexto dos algoritmos evolutivos.
+Pretendemos determinar quais os parâmetros que têm impacto relevante na eficácia (resolução) e na eficiência (tempo).
 
-Os diversos testes irão ser feitos em paralelo nas três implementações, duas das 8 damas (codificação inteira e permutação),
-e uma da partição codificação binária.
+Os diversos testes irão ser feitos em paralelo nas três implementações:
+- 8 damas codificação inteira (CI)
+- 8 damas codificação por permutação (CP)
+- partição codificação binária (CB)
 
-Atendendo a que todos os problemas são de procura, ficando o indicador I1 com o número de violações, podemos definir as
-seguintes variáveis de análise.
+Como todos os problemas são de procura e o indicador I1 mede o número de violações,
+definimos as seguintes variáveis de análise:
 
 Variáveis:
 - Resolvido=(I1=0)
-- Eficácia: Percentagem de instãncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))
+- Eficácia: Percentagem de instâncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))
 - Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))
 
 Estas serão as variáveis de performance que iremos monitorizar para identificar a melhor parametrização.
-Atendendo a que o tempo de execução está limitado a 10 segundos, o indicador de eficiência contém o da eficácia
-mas apenas parcialmente, já que considera que as instâncias não resolvidas têm um custo de 10 segundos,
-quando seria necessário mais tempo para as resolver.
+O indicador de eficiência incorpora a eficácia de forma parcial: as instâncias não resolvidas são contabilizadas
+como tendo o tempo limite (10 s).
+Assim, instâncias que simplesmente não terminam dentro do limite não penalizam muito a eficiência,
+já que sem este limite iriam ser eventualmente resolvidas com um tempo maior.
 O indicador da eficácia não distingue entre duas instâncias resolvidas,
 mesmo que uma leve 0,1 segundos e a outra 5 segundos.
 
-Um problema em que se pretenda optimizar, ao contrário destes que são de procura, ou seja, se pretendessemos minimizar I1,
+Um problema em que se pretenda otimizar, ao contrário destes que são de procura, ou seja, se pretendessemos minimizar I1,
 teria de ter indicadores distintos, como distância relativa à solução ótima, ou a um valor mínimo conhecido.
 
 Para averiguar se as diferenças obtidas na eficiência (tempo), são ou não relevantes, vamos calcular também o
-intervalo de confiança a 95% para a eficiência:
+intervalo de confiança a 95% para a eficiência, bem como o percentil de 10 e 90% e mediana:
 
 - ICinf = round(AVERAGE([I2(Tempo(ms))]) - 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)
 - ICsup = round(AVERAGE([I2(Tempo(ms))]) + 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)
+- P10 = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,1);0)
+- P90 = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,9);0)
+- Med = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,5);0)
 
 
 ## Teste 1
 
-Vamos fazer um teste de performance inicial com a configuração base, ou seja, todos os parametros no seu
-valor de omissão. Pretendemos ter uma avaliação sobre um conjunto alargado de instâncias, em termos de eficácia,
+Vamos fazer um teste de performance inicial com a configuração base, ou seja, todos os parâmetros no seu
+valor por omissão. Pretendemos ter uma avaliação sobre um conjunto alargado de instâncias, em termos de eficácia,
 se o algoritmo foi bem sucedido, e eficiência, se foi rápido. Esta será uma referência que iremos repetir no final
 com a configuração encontrada, e assim quantificar o ganho da realização dos testes paramétricos.
 
@@ -47,7 +54,7 @@ Como os três problemas utilizam codificações distintas, vamos identificar os 
 CP (8 damas codificação permutação) e CB (partição codificação binária).
 
 Para as 8 damas com a codificação inteira e permutação, vamos utilizar o conjunto completo de instâncias. Como o algoritmo é aleatório,
-vamos executar 100 execuções de modo a ganhar precisão sobre a capacidade da configuração base de resolver uma dada iostâsncia.
+vamos executar 100 execuções de modo a ganhar precisão sobre a capacidade da configuração base de resolver uma dada instância.
 
 No problema da partição tem instâncias de 2 a 1000 (quantidade de números), e a instância é gerada aleatoriamente, pelo que por cada valor de P3
 existe uma nova instância. Assim, para manter um volume razoável, variamos o esforço de P3 de 1 a 10.
@@ -274,13 +281,13 @@ ficando a baixo dos 10% na instância 27.
 A eficiência vai também piorando (subindo), na instância 15 onde ainda todas as instâncias são resolvidas,
 já leva 1,7 segundos em média.
 
-Vamos utilizar estes resultados para fixar o conjunto de teste para conter apenas
-instâncias na fase de transição entre complexo e simples, evitando assim instâncias
-demasiado simples que não ajudam a identificar a melhor parametrização, nem
-instâncias demasiado complexas que gastam o tempo limite e apenas atrasam os resultados.
+Com base nesses resultados, definimos o conjunto de teste para a região de transição entre instâncias fáceis e difíceis.
+Isto evita incluir instâncias demasiado simples (que não diferenciam parametrizações) e instâncias muito difíceis
+(que consomem o tempo limite), concentrando o esforço em casos que evidenciam diferenças de desempenho.
 
-Vamos utilizar desde a instância 10, embora simples tem 0,2 segundos, até à instância 19,
-em que nem sempre a instância é resolvida, e tem tempo médio de quase 5 segundos.
+Escolhemos o intervalo de instâncias 10–19: a instância 10 é ainda relativamente rápida (≈0,2 s),
+e a instância 19 já apresenta casos não resolvidos (tempo médio ≈5 s), pelo que o intervalo
+é adequado para discriminar parametrizações.
 
 ### Resultados: damascp_1
 
@@ -369,11 +376,11 @@ Cada instância é gerada com base no número aleatório, pelo que neste caso n�
 Como foram utilizadas 10 corridas com valores diferentes para P3 por cada tamanho, temos 9990 instâncias.
 
 As instâncias ímpares não são resolvidas, as pares a partir da instância 10 são todas resolvidas,
-e apenas exporadicamente há uma instância par não resolvida.
+e apenas esporadicamente há uma instância par não resolvida.
 
-A abordagem melhorativa não permite resolver instâncias sem solução, e provavelemnente nas instâncias ímparas, a razão para
-não se encontrar a solução é por não existir a solução. Em algumas instâncias é possível confirmar com base
-na execução das procuras construtivas, outras não.
+A abordagem melhorativa não encontra soluções quando a instância não tem solução.
+Provavelmente as instâncias ímpares não têm solução; em alguns casos isso pode ser verificado por procura construtiva,
+noutras não.
 
 Assim vamos utilizar para conjunto de teste apenas instâncias pares, que tenham sido todas resolvidas (com os 10 valores de P3),
 com os maiores tempos.
@@ -382,15 +389,15 @@ Conjunto de teste: 948,864,930,922,764,692,806,926,904,870
 
 ## Teste 2
 
-Vamos agora iniciar o estudo dos parametros. Adoptamos a ordem com que estão definidos.
-Alguns parametros são dependentes do valor de outros, pelo que são analisados em conjunto.
+Vamos agora iniciar o estudo dos parâmetros. Adoptamos a ordem com que estão definidos.
+Alguns parâmetros são dependentes do valor de outros, pelo que são analisados em conjunto.
 
-Arrancamos com o parametro P6 população. Este é um parametro determinante nos algoritmos evolutivos.
+Arrancamos com o parâmetro P6 população. Este é um parâmetro determinante nos algoritmos evolutivos.
 
-O valor de omissão é 20, vamos variar em valores baixos e altos.
+O valor por omissão é 20, vamos variar em valores baixos e altos.
 Vamos começar com o valor 5, embora valores mais baixos
 sejam possíveis, mas assim o algoritmo evolutivo assemelha-se a uma procura local e para funcionar
-tem de se alterar outros parametros. Iremos estudar esta vertente numa fase posterior.
+tem de se alterar outros parâmetros. Iremos estudar esta vertente numa fase posterior.
 
 - **Tipo de Teste / Objetivo**: População vs Eficiência
 - **Definição**:
@@ -543,83 +550,85 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 ### Resultados: damasci_2
 
-| P6(População) | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 5 | 24 | 5815 | 5649 | 5981 |
-| 10 | 65 | 4301 | 4057 | 4545 |
-| 15 | 89 | 2674 | 2466 | 2882 |
-| 20 | 97 | **1840** | 1690 | 1989 |
-| 25 | 96 | 2031 | 1867 | 2195 |
-| 30 | 96 | 2272 | 2100 | 2444 |
-| 40 | 92 | 2642 | 2450 | 2834 |
-| 50 | 88 | 3209 | 2995 | 3422 |
-| 75 | 74 | 4336 | 4088 | 4583 |
-| 100 | 66 | 4960 | 4699 | 5221 |
-| 150 | 56 | 5728 | 5464 | 5992 |
-| 200 | 53 | 5973 | 5710 | 6236 |
+| P6(População) | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 5 | 24 | 5815 | 5649 | 5981 | 867 | 6384 | 8791 |
+| 10 | 65 | 4301 | 4057 | 4545 | 141 | 2643 | 9733 |
+| 15 | 89 | 2674 | 2466 | 2882 | 104 | 954 | 10000 |
+| 20 | 97 | **1840** | 1690 | 1989 | 102 | 815 | 5339 |
+| 25 | 96 | 2031 | 1867 | 2195 | 122 | 859 | 6386 |
+| 30 | 96 | 2272 | 2100 | 2444 | 118 | 1059 | 6860 |
+| 40 | 92 | 2642 | 2450 | 2834 | 108 | 1331 | 8919 |
+| 50 | 88 | 3209 | 2995 | 3422 | 125 | 1673 | 10000 |
+| 75 | 74 | 4336 | 4088 | 4583 | 217 | 2590 | 10001 |
+| 100 | 66 | 4960 | 4699 | 5221 | 172 | 3747 | 10001 |
+| 150 | 56 | 5728 | 5464 | 5992 | 270 | 6393 | 10002 |
+| 200 | 53 | 5973 | 5710 | 6236 | 418 | 8336 | 10003 |
 
 
-Podemos observar que a população a 20, o valor de omissão, é nesta codificação o valor com melhores resultados.
+Podemos observar que a população a 20, o valor por omissão, é nesta codificação o valor com melhores resultados.
 O intervalo de confiança a 95% no valor 20 intersecta o de 25, mas é claramente melhor que todos os restanes valores.
+Tem também claramente o melhor valor para o percentil de 90%.
 O valor 10 ou inferior, e 40 ou superior, aparenta danificar consideravelmente a eficácia e a eficiência.
 
-Mantemos o valor de omissão P6=20.
+Mantemos o valor por omissão P6=20.
 
 ### Resultados: damascp_2
 
-| P6(População) | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 5 | 91 | 1287 | 1155 | 1420 |
-| 10 | 98 | **826** | 722 | 929 |
-| 15 | 97 | 1148 | 1011 | 1286 |
-| 20 | 98 | 1138 | 1004 | 1272 |
-| 25 | 97 | 1389 | 1237 | 1540 |
-| 30 | 97 | 1360 | 1216 | 1505 |
-| 40 | 96 | 1582 | 1419 | 1744 |
-| 50 | 95 | 1752 | 1581 | 1924 |
-| 75 | 92 | 2201 | 2007 | 2395 |
-| 100 | 88 | 2557 | 2345 | 2769 |
-| 150 | 83 | 3051 | 2815 | 3286 |
-| 200 | 81 | 3271 | 3028 | 3513 |
+| P6(População) | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 5 | 91 | 1287 | 1155 | 1420 | 8 | 165 | 6077 |
+| 10 | 98 | **826** | 722 | 929 | 7 | 109 | 2424 |
+| 15 | 97 | 1148 | 1011 | 1286 | 10 | 190 | 3786 |
+| 20 | 98 | 1138 | 1004 | 1272 | 14 | 219 | 3405 |
+| 25 | 97 | 1389 | 1237 | 1540 | 14 | 257 | 4624 |
+| 30 | 97 | 1360 | 1216 | 1505 | 15 | 281 | 4323 |
+| 40 | 96 | 1582 | 1419 | 1744 | 21 | 336 | 5556 |
+| 50 | 95 | 1752 | 1581 | 1924 | 21 | 435 | 6119 |
+| 75 | 92 | 2201 | 2007 | 2395 | 25 | 605 | 8061 |
+| 100 | 88 | 2557 | 2345 | 2769 | 27 | 723 | 10000 |
+| 150 | 83 | 3051 | 2815 | 3286 | 27 | 891 | 10001 |
+| 200 | 81 | 3271 | 3028 | 3513 | 35 | 1046 | 10001 |
 
 Na codificação permutação das 8 damas, ao contrário da codificação inteira, o valor da população mais eficiente é 10.
 O intervalo de confiança nem intersecta qualquer um dos restantes valores.
-Esta codificação no entanto não é tão sensivel a este parametro como a codificação inteira, mantendo no geral bons valores 
+O percentil de 90% é claramente o melhor.
+Esta codificação no entanto não é tão sensivel a este parâmetro como a codificação inteira, mantendo no geral bons valores 
 na eficácia e eficiência.
 
-Vamos alterar o valor de omissão para P6=10.
+Vamos alterar o valor por omissão para P6=10.
 
 ### Resultados: particaocb_2
 
-| P6(População) | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 5 | 73 | 5307 | 4601 | 6014 |
-| 10 | 93 | 3510 | 2905 | 4115 |
-| 15 | 94 | 3186 | 2648 | 3723 |
-| 20 | 100 | 4528 | 3997 | 5059 |
-| 25 | 91 | 4528 | 3937 | 5118 |
-| 30 | 94 | 3417 | 2831 | 4002 |
-| 40 | 86 | 4433 | 3792 | 5075 |
-| 50 | 92 | 3960 | 3419 | 4502 |
-| 75 | 80 | 5487 | 4866 | 6108 |
-| 100 | 75 | 5850 | 5184 | 6517 |
-| 150 | 61 | 7522 | 6999 | 8045 |
-| 200 | 49 | 7553 | 6959 | 8147 |
+| P6(População) | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 5 | 73 | 5307 | 4601 | 6014 | 786 | 4227 | 10000 |
+| 10 | 93 | 3510 | 2905 | 4115 | 356 | 2487 | 9165 |
+| 15 | 94 | 3186 | 2648 | 3723 | 396 | 2674 | 6723 |
+| 20 | 100 | 4528 | 3997 | 5059 | 898 | 4752 | 8365 |
+| 25 | 91 | 4528 | 3937 | 5118 | 1130 | 4063 | 9560 |
+| 30 | 94 | 3417 | 2831 | 4002 | 442 | 2514 | 8439 |
+| 40 | 86 | 4433 | 3792 | 5075 | 873 | 3583 | 10001 |
+| 50 | 92 | 3960 | 3419 | 4502 | 655 | 3366 | 7933 |
+| 75 | 80 | 5487 | 4866 | 6108 | 1682 | 5343 | 10004 |
+| 100 | 75 | 5850 | 5184 | 6517 | 1347 | 5569 | 10006 |
+| 150 | 61 | 7522 | 6999 | 8045 | 3414 | 8132 | 10012 |
+| 200 | 49 | 7553 | 6959 | 8147 | 3073 | 10001 | 10023 |
 
-O parametro P6(População) tem a eficácia a 100% apenas no valor de omissão 20.
+O parâmetro P6(População) tem a eficácia a 100% apenas no valor por omissão 20.
 No entanto existem valores com melhor eficiência.
 Não se vê no entanto uma tendência clara, apenas uma zona que aparenta ser melhor, entre 10 e 50 elementos,
 em que o tempo médio é inferior a 5 segundos. Os intervalos de confiança intersectam-se quase todos.
-Assim, considera-se que este parametro não é crítico, e pelo menos na
-configuração atual dos restantes parametros não há um claro valor melhor,
-pelo que optou-se por manter o valor de omissão: P6=20.
+Assim, considera-se que este parâmetro não é crítico, e pelo menos na
+configuração atual dos restantes parâmetros não há um claro valor melhor,
+pelo que optou-se por manter o valor por omissão: P6=20.
 
 ## Teste 3
 
-Vamos agora estudar a probabilidade de cruzamento e mutação, parametros P7 e P8, com os valores de omissão de 100 e 50 respetivamente.
-Estes dois parametros são estudados em conjunto, já que se não existir cruzamento torna-se crítica a mutação, e vice-versa.
+Vamos agora estudar a probabilidade de cruzamento e mutação, parâmetros P7 e P8, com os valores por omissão de 100 e 50 respetivamente.
+Estes dois parâmetros são estudados em conjunto, já que se não existir cruzamento torna-se crítica a mutação, e vice-versa.
 Existem estratégias que funcionam só com mutação ou só com cruzamento. Os operadores utilizados poderiam ser alvo de estudo,
-mas de momento vamos manter os operadores de omissão e estudar apenas a probabilidade de aplicação.
+mas de momento vamos manter os operadores por omissão e estudar apenas a probabilidade de aplicação.
 
 - **Tipo de Teste / Objetivo**: Paramétrico (P7 vs P8)
 - **Definição**:
@@ -806,8 +815,8 @@ Eficiência
 
 A configuração que aparenta ser a melhor, é com P7=100 e P8=0, ou seja, sem mutação.
 Assim o valor original de P8=50 não é o melhor para a atual configuração.
-Colocar este parametro a 0 reduz a diversidade, mas não elimina, atendendo a que existe um elemento estrangeiro em cada geração
-que constantemente introduz diversidade na população.
+Colocar este parâmetro a 0 reduz a diversidade, mas não elimina, atendendo a que existe um elemento estrangeiro em cada geração
+que constantemente insere diversidade na população.
 
 Assim sendo vamos manter o valor de P7=100 e alterar P8=0.
 
@@ -851,13 +860,13 @@ uma diferença considerável. Assim vamos mudar a configuração base para P7=0 
 Analisamos agora P9(SELECAO). Este parâmetro escolhe a estratégia de seleção de pais.
 
 Existem três valores:
-- 1: Roleta (omissão)
+- 1: Roleta (valor por omissão)
 - 2: Torneio
 - 3: Uniforme
 
-A roleta tem um parametro, o torneio tem dois, e o uniforme não tem paramertros.
-Neste teste usamos os parametros internos de omissão para apurar se há diferenças significativas na estratégia de seleção dos pais.
-Caso existam, cada método deve ser optimizado separadamente, variando os seus parametros internos, de modo a poder
+A roleta tem um parâmetro, o torneio tem dois, e o uniforme não tem parâmetros.
+Neste teste usamos os parâmetros internos por omissão para apurar se há diferenças significativas na estratégia de seleção dos pais.
+Caso existam, cada método deve ser otimizado separadamente, variando os seus parâmetros internos, de modo a poder
 comparar a melhor versão de cada uma das estratégias de seleção dos pais. 
 
 - **Tipo de Teste / Objetivo**: Paramétrico P9
@@ -989,46 +998,46 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 ### Resultados: damasci_4
 
-| P9 | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 1:Roleta | 99 | **1332** | 1220 | 1443 |
-| 2:Torneio | 94 | 2173 | 1999 | 2348 |
-| 3:Uniforme | 27 | 7363 | 7154 | 7573 |
+| P9 | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 1:Roleta | 99 | **1332** | 1220 | 1443 | 94 | 661 | 3536 |
+| 2:Torneio | 94 | 2173 | 1999 | 2348 | 110 | 869 | 6906 |
+| 3:Uniforme | 27 | 7363 | 7154 | 7573 | 1123 | 8705 | 10000 |
 
-Podemos observar que é crítica a estratégia de seleção dos pais. O método uniforme é claramente pior e não tem parametros,
-pelo que descartamos. Pelo intervalo de confiança, com os valores de omissão, o método roleta seria o escolhido.
-No entanto os métodos Roleta e Torneio têm parametros e precisam de ser explorados para identificar a melhor configuração.
+Podemos observar que é crítica a estratégia de seleção dos pais. O método uniforme é claramente pior e não tem parâmetros,
+pelo que descartamos. Pelo intervalo de confiança, com os valores por omissão, o método roleta seria o escolhido.
+No entanto os métodos Roleta e Torneio têm parâmetros e precisam de ser explorados para identificar a melhor configuração.
 
 
 ### Resultados: damascp_4
 
-| P9 | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 1:Roleta | 100 | 175 | 154 | 196 |
-| 2:Torneio | 100 | **115** | 101 | 128 |
-| 3:Uniforme | 100 | 342 | 301 | 382 |
+| P9 | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 1:Roleta | 100 | 175 | 154 | 196 | 4 | 48 | 454 |
+| 2:Torneio | 100 | **115** | 101 | 128 | 3 | 31 | 307 |
+| 3:Uniforme | 100 | 342 | 301 | 382 | 6 | 80 | 1029 |
 
 Podemos observar também diferenças grandes entre estratégias de seleção de pais.
-Descartamos a seleção uniforme, que não tem parametros e tem uma eficiência inferior.
+Descartamos a seleção uniforme, que não tem parâmetros e tem uma eficiência inferior.
 Nas restantes duas estratégias temos de identificar a melhor parametrização, para poder fazer uma escolha informada.
 
 ### Resultados: particaocb_4
 
-| P9 | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 1:Roleta | 95 | 2742 | 2239 | 3245 |
-| 2:Torneio | 100 | **2005** | 1646 | 2365 |
-| 3:Uniforme | 89 | 4589 | 3987 | 5192 |
+| P9 | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 1:Roleta | 95 | 2742 | 2239 | 3245 | 292 | 2156 | 5882 |
+| 2:Torneio | 100 | **2005** | 1646 | 2365 | 241 | 1548 | 4343 |
+| 3:Uniforme | 89 | 4589 | 3987 | 5192 | 586 | 4087 | 10000 |
 
 Na partição observamos o mesmo que nas 8 damas em ambas as codificações, que a estratégias de seleção de pais é um passo crítico.
-Descartamos a seleção uniforme, que não tem parametros e tem uma eficiência inferior.
+Descartamos a seleção uniforme, que não tem parâmetros e tem uma eficiência inferior.
 Nas restantes duas estratégias temos de identificar a melhor parametrização, para poder fazer uma escolha informada.
 
 ## Teste 5
 
-Análise dos parametros dos métodos de seleção Roleta e Torneio
+Análise dos parâmetros dos métodos de seleção Roleta e Torneio
 
-O método da roleta tem o parametro P10(PRESSAO) com o valor de omissão de 150.
+O método da roleta tem o parâmetro P10(PRESSAO) com o valor por omissão de 150.
 Este valor é entre 100 e 200, correspondendo a 1,00 e 2,00 respetivamente.
 Este método irá escolher os pais com base no seu valor, cada um ficando com uma dada probabilidade na "roleta".
 Valores perto de 1 dão valores quase iguais, e valores perto de 2 os melhores são muito favorecidos.
@@ -1038,16 +1047,16 @@ Vamos testar valores de 100 a 200 em intervalos de 25.
 O método torneio seleciona um pai vencedor de um torneio. Faz-se quantos torneios forem necessários,
 escolhendo membros da população aleatoriamente para entrarem no torneio.
 
-Tem dois parametros:
-- P11(TAMANHO_TORNEIO) - valor mínimo 2, podendo ir a valores altos como 100 - valor de omissão 2
-- P12(PROB_MELHOR_TORNEIO) - probabilidade do participante com melhor valor, ganhar o torneio - valor de omissão 100%
+Tem dois parâmetros:
+- P11(TAMANHO_TORNEIO) - valor mínimo 2, podendo ir a valores altos como 100 - valor por omissão 2
+- P12(PROB_MELHOR_TORNEIO) - probabilidade do participante com melhor valor, ganhar o torneio - valor por omissão 100%
 
 Torneios grandes favorecem a que os melhores sejam sempre escolhidos, excepto se a probabilidade do melhor ganhar o torneio for baixa.
 
 Vamos variar P11 nos valores baixos, e alguns valores altos: 2,3,4,6,10. Como a população num caso é de 10, aumentar este valor para além da população não faz muito sentido.
 Para a probabilidade, vamos deixar de fora o valor 0, caso contrário seria uma escolha completamente aleatória, e variar em intervalos de 25.
 
-Este teste será dividido em dois,um para cada parametro.
+Este teste será dividido em dois,um para cada parâmetro.
 
 Teste 5A para o método roleta:
 
@@ -1306,16 +1315,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 Resultados para roleta:
 
-| P10 | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 100 | 35 | 7190 | 6962 | 7419 |
-| 125 | 79 | 3867 | 3627 | 4106 |
-| 150 | 99 | 1330 | 1219 | 1442 |
-| 175 | 100 | **1057** | 972 | 1141 |
-| 200 | 99 | 1282 | 1176 | 1389 |
+| P10 | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 100 | 35 | 7190 | 6962 | 7419 | 768 | 9357 | 10000 |
+| 125 | 79 | 3867 | 3627 | 4106 | 136 | 2120 | 10000 |
+| 150 | 99 | 1330 | 1219 | 1442 | 94 | 661 | 3557 |
+| 175 | 100 | **1057** | 972 | 1141 | 74 | 540 | 2695 |
+| 200 | 99 | 1282 | 1176 | 1389 | 81 | 699 | 3109 |
 
 O melhor valor para P10 na roleta é 175. O intervalo de confiança não intersecta os restantes valores,
-o que significa que uma valorização ainda maior dos melhores é preferivel.
+o que significa que uma valorização ainda maior dos melhores é preferivel. O percentil de 90% é claramente inferior.
 
 Resultados para torneio:
 
@@ -1328,24 +1337,24 @@ Resultados para torneio:
 | 10 | 3794 | 3209 | 2930 | 2723 | 
 
 A melhor configuração é com P11=3, melhorando claramente relativamente ao torneio de 2.
-Para valores de torneio pequenos, P12 é melhor sempre com o valor de omissão a 100%.
+Para valores de torneio pequenos, P12 é melhor sempre com o valor por omissão a 100%.
 Apenas para torneios grandes é que P12 é melhor com valores menores, mas em termos globais
 a melhor configuração é com P11=3 e P12=100.
 
 Conjugando a roleta com o torneio, opta-se pela roleta dado que aprensenta valores melhores,
-com os seguintes parametros: P9=1 P10=175.
+com os seguintes parâmetros: P9=1 P10=175.
 
 ### Resultados: damascp_5
 
 Resultados para roleta:
 
-| P10 | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 100 | 100 | 379 | 328 | 430 |
-| 125 | 100 | 228 | 202 | 254 |
-| 150 | 100 | 175 | 154 | 196 |
-| 175 | 100 | 138 | 123 | 154 |
-| 200 | 100 | **101** | 90 | 112 |
+| P10 | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 100 | 100 | 379 | 328 | 430 | 7 | 85 | 974 |
+| 125 | 100 | 228 | 202 | 254 | 6 | 71 | 658 |
+| 150 | 100 | 175 | 154 | 196 | 4 | 48 | 452 |
+| 175 | 100 | 138 | 123 | 154 | 3 | 36 | 386 |
+| 200 | 100 | **101** | 90 | 112 | 3 | 31 | 274 |
 
 Com a estratégia de mutação a 100%, o melhor valor para P10 na roleta é claramente o 200, dando importância máxima aos melhores.
 O intervalo de confiança não intersecta os restantes valores.
@@ -1364,19 +1373,19 @@ Estes resultados voltam a surpreender ou talvez não, atendendo à estratégia d
 Um torneio grande com probabilidade do melhor ganhar leva a que quase sempre o melhor seja escolhido.
 
 Entre a roleta e o torneio, continua o torneio nesta nova parametrização a ser claramente melhor.
-Assim sendo escolhe-se o torneio com os seguintes parametros: P9=2 P11=10 P12=100
+Assim sendo escolhe-se o torneio com os seguintes parâmetros: P9=2 P11=10 P12=100
 
 ### Resultados: particaocb_5
 
 Resultados para roleta:
 
-| P10 | Eficácia | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|---:|
-| 100 | 81 | 5045 | 4359 | 5730 |
-| 125 | 92 | 3195 | 2614 | 3777 |
-| 150 | 95 | 2741 | 2238 | 3244 |
-| 175 | 96 | 2519 | 2030 | 3009 |
-| 200 | 99 | **2354** | 1922 | 2785 |
+| P10 | Eficácia | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|---:|
+| 100 | 81 | 5045 | 4359 | 5730 | 730 | 4521 | 10001 |
+| 125 | 92 | 3195 | 2614 | 3777 | 437 | 2064 | 8099 |
+| 150 | 95 | 2741 | 2238 | 3244 | 291 | 2155 | 5882 |
+| 175 | 96 | 2519 | 2030 | 3009 | 230 | 1727 | 6060 |
+| 200 | 99 | **2354** | 1922 | 2785 | 416 | 1580 | 5303 |
 
 Temos neste caso o melhor valor para P10 também no 200, provavelmente pela mesma razão de ser utilizada a estratégia de mutação a 100%.
 No entanto aqui o intervalo de confiança do melhor valor intersecta vários outros, pelo que não há grande certeza.
@@ -1394,26 +1403,26 @@ Resultados para o torneio:
 Temos aqui um novo ganho relativamente à parametrização de base. O torneio de tamanho 4 reduz o tempo de forma visivel,
 relativamente ao torneio de tamanho 2. A probabilidade de escolher o melhor mantém-se como melhor opção o 100%.
 
-Assim sendo, entre a roleta e o torneio, é preferivel o torneio, com os parametros: P9=2 P11=4 P12=100
+Assim sendo, entre a roleta e o torneio, é preferivel o torneio, com os parâmetros: P9=2 P11=4 P12=100
 
 ## Teste 6
 
-Passamos para a fase da sobrevivência, em que o parametro base é P13. Existem 3 valores possíveis:
-- 1: Idade (valor de omissão)
+Passamos para a fase da sobrevivência, em que o parâmetro base é P13. Existem 3 valores possíveis:
+- 1: Idade (valor por omissão)
 - 2: Substitui piores
 - 3: round-robin
 
-Este parametro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo valor de omissão é 100%.
+Este parâmetro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo valor por omissão é 100%.
 Neste caso os descendentes são iguais à população, pelo que no método da idade são todos substituídos.
 
 Nos restantes dois métodos, qualquer que seja a percentagem, os decendentes são adicionados à população e
 no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elemento com Q outros.
 Os que perderem mais vezes, são removidos.
 
-O método round-robin tem portanto um parametro Q, que é o número de torneios:  P15(Q_ROUND_ROBIN).
-Tem o valor de omissão a 3, mas pode ser desde 2 até um valor alto como 100, mas não fará sentido ser superior à população.
+O método round-robin tem portanto um parâmetro Q, que é o número de torneios:  P15(Q_ROUND_ROBIN).
+Tem o valor por omissão a 3, mas pode ser desde 2 até um valor alto como 100, mas não fará sentido ser superior à população.
 
-Vamos para já deixar este valor de omissão, e fazer um teste com P13 e P14, para apurar se a
+Vamos para já deixar este valor por omissão, e fazer um teste com P13 e P14, para apurar se a
 estratégia de sobrevivência é muito relevante ou não, e se a percentagem de descendentes é ou não relevante.
 
 Vamos variar P14 de 0 a 100 em passos de 25, tal como temos feito para as restantes percentagens.
@@ -1641,7 +1650,7 @@ A substituição dos piores tem como melhor valor uma baixa precentagem de descn
 O método round-robin ficou com resultados melhores com P14=100.
 A estratégia de substituir os piores também melhora relativamente à idade.
 
-É portanto necessário um segundo teste para optimizar o parametro Q do round-robin.
+É portanto necessário um segundo teste para otimizar o parâmetro Q do round-robin.
 
 
 ### Resultados: particaocb_6
@@ -1657,7 +1666,7 @@ Neste problema são claramente prejudiciais outras opções que não a parametri
 
 ### Teste - damascp_6B
 
-Temos de investigar apenas para as damas com a codificação de permutação o parametro P15.
+Temos de investigar apenas para as damas com a codificação de permutação o parâmetro P15.
 Vamos variar da mesma forma que o tamanho do torneio: 2,3,4,6,10.
 
 - **Tipo de Teste / Objetivo**: Paramétrico P15
@@ -1730,20 +1739,21 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 ### Resultados: damascp_6B
 
-| P15 | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|
-| 2 | **1300** | 1182 | 1419 |
-| 3 | 1441 | 1304 | 1579 |
-| 4 | 1544 | 1396 | 1691 |
-| 6 | 1575 | 1427 | 1724 |
-| 10 | 1552 | 1407 | 1697 |
+| P15 | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 2 | **1300** | 1182 | 1419 | 61 | 535 | 3756 |
+| 3 | 1441 | 1304 | 1579 | 53 | 521 | 4210 |
+| 4 | 1544 | 1396 | 1691 | 57 | 561 | 4350 |
+| 6 | 1575 | 1427 | 1724 | 58 | 547 | 4707 |
+| 10 | 1552 | 1407 | 1697 | 58 | 640 | 4316 |
 
 O melhor registo é com Q igual a 2, embora o intervalo de confiança intersecte o valor seguinte.
+Temos também o percentil de 90% o melhor, embora não por muito.
 Assim sendo vamos alterar o valor para P15=2, ficando os restantes dois valores com P13=3 P14=100.
 
 ## Teste 7
 
-Vamos agora ver a influência do P6 elitísmo e P17 imigrantes, cujo valor de omissão é 1.
+Vamos agora ver a influência do P6 elitísmo e P17 imigrantes, cujo valor por omissão é 1.
 O elitísmo garante que se existirem K elementos da população antiga melhores que na nova população,
 esses elementos mantêm-se na nova população. Os imigrantes garantem um número de elementos estrangeiros
 na população, que são gerados aleatoriamente.
@@ -1974,11 +1984,11 @@ Vamos agora estudar o impacto da estratégia da diversidade.
 O P18(DIVERSIDADE) tem 3 possibilidades:
 - 1: Nenhuma
 - 2: Avaliação partilhada
-- 3: Limpeza (omissão)
+- 3: Limpeza (valor por omissão)
 
 As opções 2 e 3 utilizam também P19(DIST_MINIMA), P24(TIPO_DISTANCIA).
 
-Vamos neste teste estudar o impacto da troca destas estratégias com os valores de omissão para as distâncias,
+Vamos neste teste estudar o impacto da troca destas estratégias com os valores por omissão para as distâncias,
 de modo a identificar a sua relevância.
 
 
@@ -2122,37 +2132,38 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 ### Resultados: damasci_8
 
-| P18 | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|
-| 1:Nenhuma | 9507 | 9459 | 9554 |
-| 2:Avaliação partilhada | 10000 | 10000 | 10000 |
-| 3:Limpeza | **5307** | 5103 | 5511 |
+| P18 | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 1:Nenhuma | 9507 | 9459 | 9554 | 8255 | 10000 | 10000 |
+| 2:Avaliação partilhada | 10000 | 10000 | 10000 | 10000 | 10000 | 10000 |
+| 3:Limpeza | **5307** | 5103 | 5511 | 1269 | 4750 | 10000 |
 
 A estratégia de diversidade de avaliação partihada, não é compatível com as restantes configurações.
 Podemos ver também que a não ulização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.
 
 ### Resultados: damascp_8
 
-| P18 | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|
-| 1:Nenhuma | 7107 | 6870 | 7344 |
-| 2:Avaliação partilhada | 4991 | 4733 | 5249 |
-| 3:Limpeza | **412** | 379 | 445 |
+| P18 | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 1:Nenhuma | 7107 | 6870 | 7344 | 164 | 8869 | 10000 |
+| 2:Avaliação partilhada | 4991 | 4733 | 5249 | 274 | 3657 | 10000 |
+| 3:Limpeza | **412** | 379 | 445 | 46 | 225 | 1019 |
 
 Podemos ver neste caso que a avaliação partilhada tem algum impacto positivo, embora distante da
-estratégia de limpeza que é o valor de omissão.
+estratégia de limpeza que é o valor por omissão. Mesmo o percentil de 90% tem um valor relativamente baixo de 1 segundo.
 
 
 ### Resultados: particaocb_8
 
-| P18 | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|
-| 1:Nenhuma | **273** | 219 | 327 |
-| 2:Avaliação partilhada | 2507 | 2036 | 2979 |
-| 3:Limpeza | 1862 | 1460 | 2263 |
+| P18 | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 1:Nenhuma | **273** | 219 | 327 | 30 | 172 | 613 |
+| 2:Avaliação partilhada | 2507 | 2036 | 2979 | 281 | 1595 | 5819 |
+| 3:Limpeza | 1862 | 1460 | 2263 | 293 | 1354 | 4196 |
 
 Estes resultados mostram o surpreendente registo de não utilizar estratégia de limpeza para este problema,
-melhora consideravelmente a eficiência. Concluímos que esta estratégia estava a ser prejudicial para este problema.
+melhora consideravelmente a eficiência, e com o percentil de 90% a baixo de 1 segundo.
+Concluímos que esta estratégia estava a ser prejudicial para este problema.
 Assim, alteramos o valor de P18=1. 
 
 
@@ -2163,16 +2174,16 @@ atendendo a que na terceira a não utilização de estratégia de limpeza revelo
 distâncias.
 
 Para a codificação inteira temos os seguintes tipos de distâncias:
-- 1: Hamming (omissão)
+- 1: Hamming (valor por omissão)
 - 2: Euclidiana
 - 3: Manhattan
 
 Para a codificação permutação temos as seguintes distâncias:
-- 1: Hamming (omissão)
+- 1: Hamming (valor por omissão)
 - 2: Kendall tau
 - 3: Spearman footrule
 
-O parametro P19 vamos variar em valores pequenos e alguns grandes, já que depende da medida de distãncia: 0,1,2,4,8
+O parâmetro P19 vamos variar em valores pequenos e alguns grandes, já que depende da medida de distãncia: 0,1,2,4,8
 
 - **Tipo de Teste / Objetivo**: Paramétrico P19 vs P24
 - **Definição**:
@@ -2336,10 +2347,10 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 | 4 | 10000 | 5638 | 6421 |
 | 8 | 10000 | 5714 | 8855 |
 
-O valor de omissão, com a distância mínima a 0 e utilizar a distância mais básica, a Hamming,
+O valor por omissão, com a distância mínima a 0 e utilizar a distância mais básica, a Hamming,
 é a que dá melhores resultados.
 Os restantes tipos de distâncias são também competitivos, e nesse caso a utilização de uma distância mínima superior a 0
-pode ser uma alternativa. Mantemos os valores de omissão.
+pode ser uma alternativa. Mantemos os valores por omissão.
 
 ### Resultados: damascp_9
 
@@ -2353,35 +2364,35 @@ pode ser uma alternativa. Mantemos os valores de omissão.
 | 8 | 7335 | 8948 | 5300 |
 
 Na codificação de permutação aparenta não existir grande vantagem em alterar o tipo de distância.
-A distância mínima 1 pode ser uma alternativa, mas não existindo vantagem clara, optamos por manter os valores de omissão.
+A distância mínima 1 pode ser uma alternativa, mas não existindo vantagem clara, optamos por manter os valores por omissão.
 
 ## Teste 10
 
 Neste teste vamos ver se os tipos de operadores utilizados têm impacto no resultado.
 
-Parametro P20(TIPO_CRUZAR): (apenas em CI que utiliza cruzamento)
+Parâmetro P20(TIPO_CRUZAR): (apenas em CI que utiliza cruzamento)
 - 0: uniforme
-- 1: 1-ponto (omissão)
+- 1: 1-ponto (valor por omissão)
 - 2: 2-pontos
 - ...
 - 10: 10-pontos
 
 Vamos testar apenas alguns valores, já que se utilizar demasiados pontos acabará por ser igual ao operador uniforme: P20=0,1,2,3,4
 
-Parametro P21(TIPO_MUTAR): (apenas em CP e CB que utilizam mutação)
+Parâmetro P21(TIPO_MUTAR): (apenas em CP e CB que utilizam mutação)
 - 0 - aplica um vizinho aleatório (codificação CP e CB)
 - 1 a 100 - probabilidade de mutação para cada bit (codificação CB)
 
-Parametro P22(TIPO_VIZINHO): (codificação CP, que utiliza a mutação)
-- 1: inserir (omissão)
+Parâmetro P22(TIPO_VIZINHO): (codificação CP, que utiliza a mutação)
+- 1: inserir (valor por omissão)
 - 2: trocaPar
 - 3: inverterSegmento
 
-Parametro P22(TIPO_VIZINHO): (codificação CB)
+Parâmetro P22(TIPO_VIZINHO): (codificação CB)
 - 1 a 1000 - troca um segmento de N bit (N=1 troca um bit de cada vez)
 
-Parametro P23(LIMITE_VIZINHOS):
-- 0: não há limite (omissão)
+Parâmetro P23(LIMITE_VIZINHOS):
+- 0: não há limite (valor por omissão)
 - 1 a 1000: limita a distância entre pares (para existirem menos vizinhos)
 
 Para CP, atendendo a que P21=0 temos P22=1:3 e podemos analisar o impacto do limite dos vizinhos com P23=0,1,2,4,8
@@ -2568,16 +2579,16 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 ### Resultados: damasci_10
 
-| P20(TIPO_CRUZAR) | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|
-| 0:uniforme | **2224** | 2105 | 2343 |
-| 1:1-ponto | 5309 | 5104 | 5513 |
-| 2:2-pontos | 3617 | 3443 | 3791 |
-| 3:3-pontos | 2988 | 2832 | 3144 |
-| 4:4-pontos | 2617 | 2479 | 2756 |
+| P20(TIPO_CRUZAR) | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 0:uniforme | **2224** | 2105 | 2343 | 443 | 1626 | 4791 |
+| 1:1-ponto | 5309 | 5104 | 5513 | 1264 | 4778 | 10000 |
+| 2:2-pontos | 3617 | 3443 | 3791 | 688 | 2826 | 8168 |
+| 3:3-pontos | 2988 | 2832 | 3144 | 581 | 2209 | 6716 |
+| 4:4-pontos | 2617 | 2479 | 2756 | 506 | 1912 | 5724 |
 
 Este último teste é identificado uma grande melhoria, o operador de cruzamento uniforome tem clara vantagem
-sobre o operador de cruzamento 1-ponto, que era o valor de omissão. Este operador é até a pior opção entre as possíveis.
+sobre o operador de cruzamento 1-ponto, que era o valor por omissão. Este operador é até a pior opção entre as possíveis.
 Aparenta existir vantagem por fazer operadores com muitos pontos, e com este valor muito grande acaba por ser igual
 ao operador uniforme.
 Vamos portanto alterar P20=0.
@@ -2597,31 +2608,31 @@ Pudemos observar neste último teste um grande ganho no operador, mais de uma or
 considerando o limimite de vizinhança 0 (inativo). Ativando o limite de vizinhança, se muito reduzido degrada,
 mas a partir de certo ponto melhora.
 Vamos assim manter P23=0 e alterar P22=2. Estes resultados baixam tanto o tempo médio de resolução que para continuar
-a analisar mais parametros, tinhamos de alterar o conjunto das instâncias de teste.
+a analisar mais parâmetros, tinhamos de alterar o conjunto das instâncias de teste.
 
 ### Resultados: particaocb_10
 
-| P22 | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|
-| 1 | 274 | 220 | 328 |
-| 2 | 16 | 15 | 18 |
-| 4 | **13** | 12 | 14 |
-| 8 | 15 | 13 | 17 |
+| P22 | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 1 | 274 | 220 | 328 | 30 | 173 | 615 |
+| 2 | 16 | 15 | 18 | 7 | 15 | 27 |
+| 4 | **13** | 12 | 14 | 6 | 12 | 21 |
+| 8 | 15 | 13 | 17 | 7 | 14 | 25 |
 
-| P21 | Eficiência | ICinf | ICsup |
-|:---:|---:|---:|---:|
-| 1 | **2198** | 1837 | 2559 |
-| 2 | 3779 | 3155 | 4403 |
-| 5 | 6185 | 5496 | 6873 |
-| 10 | 8043 | 7460 | 8626 |
-| 20 | 8255 | 7657 | 8854 |
-| 50 | 8825 | 8329 | 9321 |
+| P21 | Eficiência (média) | ICinf | ICsup | P10 | Med | P90 |
+|:---:|---:|---:|---:|---:|---:|---:|
+| 1 | **2198** | 1837 | 2559 | 336 | 1867 | 4469 |
+| 2 | 3779 | 3155 | 4403 | 490 | 2816 | 10000 |
+| 5 | 6185 | 5496 | 6873 | 1306 | 6507 | 10000 |
+| 10 | 8043 | 7460 | 8626 | 3217 | 10000 | 10000 |
+| 20 | 8255 | 7657 | 8854 | 2079 | 10000 | 10001 |
+| 50 | 8825 | 8329 | 9321 | 3876 | 10000 | 10001 |
 
 Estes resolutados até aparentam ser de problemas distintos ou indicadores distintos.
 Mas a diferença é a que a mutação utiliza um tipo vizinho P22 no primeiro caso, em que um segmento de N bits é trocado.
 Esta mutação dá clara vantagem, mais de uma ordem de grandeza,
 relativamente à alternativa com P21 de alterar a probabilidade de mutação de cada bit.
-Mesmo na melhor alternativa, o anterior valor de omissão com P22=1 revela-se pouco eficiente quando comparado com
+Mesmo na melhor alternativa, o anterior valor por omissão com P22=1 revela-se pouco eficiente quando comparado com
 P22=4, baixando o tempo médio de resolução para 13 miléssimas de segundo.
 
 
@@ -3083,7 +3094,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 ### Resultados: damasci_11
 
-| Instância | Eficácia<br>base | optimizado | Eficiência<br>base | optimizado |
+| Instância | Eficácia<br>base | otimizado | Eficiência<br>base | otimizado |
 |:---:|---:|---:|---:|---:|
 | 4 | 100 | 100 | 0 | 0 |
 | 5 | 100 | 100 | 1 | 1 |
@@ -3126,14 +3137,14 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 
 Esta codificação inteira não é a mais aconselhada para as 8 damas.
 A codificação permutação é mais natural já que trata de duas restrições na própria codificação.
-No entanto podemos ver que a versão optimizada consegue mesmo nas instâncias maiores resolver mais de 50%,
+No entanto podemos ver que a versão otimizada consegue mesmo nas instâncias maiores resolver mais de 50%,
 enquanto que a configuração de base só resolve esporadicamente.
-Em termos globais utilizando as 40 instâncias, a configuração base tem 49% de eficácia, contra 93% da versão optimizada.
-Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segundos da versão optimizada.
+Em termos globais utilizando as 40 instâncias, a configuração base tem 49% de eficácia, contra 93% da versão otimizada.
+Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segundos da versão otimizada.
 
 ### Resultados: damascp_11
 
-| Instância | Eficácia<br>base | optimizado | Eficiência<br>base | optimizado |
+| Instância | Eficácia<br>base | otimizado | Eficiência<br>base | otimizado |
 |:---:|---:|---:|---:|---:|
 | 4 | 100 | 100 | 0 | 0 |
 | 5 | 100 | 100 | 0 | 0 |
@@ -3175,13 +3186,13 @@ Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segu
 | Total Geral | 47 | 100 | 5779 | 22 |
 
 A versão base com a codificação em permutação tinha um comportamento comparável com a codificação inteira.
-Já a versão optimizada tem um resultado que nem se compara. Resolve todas as instâncias em algumas dezenas de milisegundos.
+Já a versão otimizada tem um resultado que nem se compara. Resolve todas as instâncias em algumas dezenas de milisegundos.
 
-Para continuar a optimizar esta versão teriamos de avançar para instâncias maiores, atendendo aos baixos tempos de resolução.
+Para continuar a otimizar esta versão teriamos de avançar para instâncias maiores, atendendo aos baixos tempos de resolução.
 
 ### Resultados: particaocb_11
 
-| Instância | Eficácia<br>base | optimizado | Eficiência<br>base | optimizado |
+| Instância | Eficácia<br>base | otimizado | Eficiência<br>base | otimizado |
 |:---:|---:|---:|---:|---:|
 | 2 | 40 | 40 | 1265 | 1393 |
 | 3 | 0 | 0 | 2200 | 2398 |
@@ -3264,4 +3275,5 @@ dezenas de milisegundos para encontrar a solução.
 Como nesta tabela os resultados das instâncias possíveis são apresentados em conjunto com as instâncias impossíveis,
 a diferença na eficiência aparece diluida, mas mesmo assim melhora de 5,8 segundos para 3,1 segundos.
 
-Para instâncias possíveis a configuração optimiada é muito eficáz e eficiente para estas instâncias.
+Para instâncias possíveis a configuração optimiada é muito eficáz e eficiente.
+

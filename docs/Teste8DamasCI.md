@@ -2,19 +2,18 @@
 
 | [TesteTVector](teste_tvector.html) | [Aspirador 1](teste_aspirador1.html) | [Aspirador 2](teste_aspirador2.html) | [Puzzle 8](teste_puzzle8.html) | [8 Damas](teste_8damas.html) | [Partição](teste_particao.html) | [8 Damas CI](teste_8damas_ci.html) | [8 Damas CP](teste_8damas_cp.html) | [Partição CB](teste_particao_cb.html) |
 
-
 Execução de exemplo com base no problema das 8 damas, com a codificação inteira.
 Pode acompanhar o teste executando as ações localmente.
 
-No Visual Studio, selecione o projeto TProcuraMelhorativa, e execute.
-No Linux na pasta `.../TProcura/Melhorativa/Teste$` execute `make` seguido de `./bin/Release/TProcuraMelhorativa`
+No Visual Studio, selecione o projeto TProcuraMelhorativa, e execute-o.
+No Linux na pasta `.../TProcura/Melhorativa/Teste` execute `make` seguido de `./bin/Release/TProcuraMelhorativa`
 
 ## Sumário
 
 - [Ação 1 - Ver instâncias](#damas-ci1)
 - [Ação 2 - Resolver manualmente](#damas-ci2)
-- [Ação 3 - Algoritmos Evolutivos](#damas-ci3)
-- [Ação 4 - Testes Empíricos](#damas-ci4)
+- [Ação 3 - Algoritmos evolutivos](#damas-ci3)
+- [Ação 4 - Testes empíricos](#damas-ci4)
 
 \htmlonly
 <pre>
@@ -31,7 +30,7 @@ Opção: <span class="entrada">1</span>
 \anchor damas-ci1
 ## Ação 1 - Ver instâncias
 
-Vamos entrar no problema 8 Damas Inteira, introduza: **1.**
+Vamos entrar no problema 8 Damas Inteira, insira: **1.**
 
 \htmlonly
 <pre>
@@ -78,7 +77,7 @@ são mostrados bastantes. Iremos abordar cada um no momento próprio.
 
 Vamos trocar para uma instância menor antes de avançarmos, para simplificar a nossa exploração.
 
-Introduza: **1; 4.**
+Insira: **1; 4.**
 
 \htmlonly
 <pre>
@@ -107,7 +106,7 @@ Podiamos ter escolhido até tabuleiros de 40x40.
 \anchor damas-ci2
 ## Ação 2 - Resolver manualmente
 
-Vamos primeiro procurar resolver a instância manualmente, e ver a codificação inteira utilizada. Introduza: **2.**
+Vamos primeiro procurar resolver a instância manualmente, e ver a codificação inteira utilizada. Insira: **2.**
 
 \htmlonly
 <pre>
@@ -171,10 +170,10 @@ Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversid
 A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos.
 Podemos alterar através do parametro P24(TIPO_DISTANCIA):. 
 Há vários tipos de distâncias disponíveis dependendo da codificação.
-Há dois elmentos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.
+Há dois elementos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.
 
 Temos 3 operações para testar, a mutação, cruzamento e vizinhança.
-Vamos começar pela mutação, e mutar o indivíduo 4. Introduza: **1; 4.**
+Vamos começar pela mutação, e mutar o indivíduo 4. Insira: **1; 4.**
 
 \htmlonly
 <pre>
@@ -214,7 +213,7 @@ Existem também vários operadores de mutação disponíveis dependente do tipo 
 
 Vamos agora passar para o cruzamento, e cruzar o individuo 1 com o 3,
 os dois melhores na população, e substituir o individuo 4. 
-Introduza: **2; 1; 3; 4.**
+Insira: **2; 1; 3; 4.**
 
 \htmlonly
 <pre>
@@ -255,7 +254,7 @@ Existem vários tipos de operadores de cruzamento, controlados pelo parametro P2
 Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.
 
 Falta-nos explorar o operador de vizinhança, pelo que vamos aplicar ao melhor individuo 1, e escolher o melhor vizinho. 
-Introduza: **3; 1; 1.**
+Insira: **3; 1; 1.**
 
 \htmlonly
 <pre>
@@ -303,7 +302,7 @@ Notar que o tipo de vizinhança é descrito, neste caso apenas incrementamos ou 
 Devido a esta opção, a vizinhança tem um número baixo de indivíduos.
 
 Vamos insistir e ver os vizinhos deste novo elemento, e novamente escolher o melhor destes.
-Introduza: **3; 1; 3.**
+Insira: **3; 1; 3.**
 
 \htmlonly
 <pre>
@@ -345,7 +344,7 @@ Introduza: **3; 1; 3.**
 
 Neste caso o vizinho tem o mesmo custo, mas é outro vizinho,
 pelo que vale a pena ainda uma última vez, ver quais os seus vizinhos.
-Introduza: **3; 1; 5.**
+Insira: **3; 1; 5.**
 
 \htmlonly
 <pre>
@@ -387,10 +386,10 @@ sendo a solução obtida retornada.
 
 
 \anchor damas-ci3
-## Ação 3 - Algoritmos Evolutivos
+## Ação 3 - Algoritmos evolutivos
 
 Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização de omissão.
-Introduza: **1; 4; 6.**
+Insira: **1; 4; 6.**
 
 \htmlonly
 <pre>
@@ -431,7 +430,7 @@ Temos o número de iterações a 241, que corresponde às avaliações efetuadas
 o que corresponde ao número de ciclos do algoritmo evolutivo.
 Finalmente, temos o número de estados gerados a 249.
 
-Há informação visivel nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. 
+Há informação visível nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. 
 O que aconteceu nestas 10 épocas?
 Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções.
 Podemos obter na literatura qual a melhor parametrização para um dado problema ou tipo de problemas,
@@ -441,7 +440,7 @@ Queremos até mais tarde confirmar que a configuração base é a melhor paramet
 
 Como podemos repetir todas as execuções, podemos ver a mesma execução com diferentes níveis de detalhe.
 Vamos aproveitar esta execução que tem tamanho reduzido, para ir subindo o nível de debug.
-Introduza: **1; 4; 3; 2; 1; *ENTER*; 6.**
+Insira: **1; 4; 3; 2; 1; *ENTER*; 6.**
 
 \htmlonly
 <pre>
@@ -507,7 +506,7 @@ Sabemos mais alguma coisa do que se passou, mas não muito. Numa execução long
 e se são encontradas soluções de custos incrementais, ou diretamente a solução de custo 0.
 
 Vamos ver agora o nível de debug PASSOS.
-Introduza: **1; 4; 3; 2; 2; *ENTER*; 6.**
+Insira: **1; 4; 3; 2; 2; *ENTER*; 6.**
 
 \htmlonly
 <pre>
@@ -585,7 +584,7 @@ Sabemos em que as duas soluções intermédias foram encontradas logo ao gerar a
 Fora o parâmetro do elitismo, nada mais pode ser observado ou verificada a sua utilidade.
 
 É tempo para aumentar o nível de debug para DETALHE.
-Introduza: **1; 4; 3; 2; 3; *ENTER*; 6.**
+Insira: **1; 4; 3; 2; 3; *ENTER*; 6.**
 
 \htmlonly
 <pre>
@@ -719,10 +718,10 @@ Embora possamos observar a situação mais indesejável que pode ocorrer num alg
 nada sabemos sobre os indivíduos concretos, e o que se passa de uma população para a outra.
 
 Há várias fases para passar de uma época para a outra, e muitos operadores são aplicados. 
-Mas isso é interno aos algoritmos evolutivos, nada é visivel neste nível de debug.
+Mas isso é interno aos algoritmos evolutivos, nada é visível neste nível de debug.
 
 É portanto tempo para passarmos para o último nível de debug, COMPLETO.
-Introduza:  **1; 4; 3; 2; 4; *ENTER*; 6.**
+Insira:  **1; 4; 3; 2; 4; *ENTER*; 6.**
 
 \htmlonly
 <pre>
@@ -1120,7 +1119,7 @@ Aumentando o entendimento no problema é possível que apareçam oportunidades d
 Para identificar as melhores parametrizações, temos de ter testes empíricos, tal como nos restantes exemplos, e esse é o tema da próxima secção.
 
 \anchor damas-ci4
-## Ação 4 - Testes Empíricos
+## Ação 4 - Testes empíricos
 
 O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter 
 um número considerável de execuções.
@@ -1128,10 +1127,10 @@ um número considerável de execuções.
 Atendendo ao volume de parametros nos algoritmos evolutivos,
 estes testes vão utilizar desde logo um cluster (Deucalion).
 
-[Resultdos Deucalion](melhorativa__deucalion.html)
+[Resultados Deucalion](melhorativa__deucalion.html)
 
 
-Neste estudo foi identificada a melhor parmetrização para este problema e codificação:
+Neste estudo foi identificada a melhor parametrização para este problema e codificação:
 **P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0.**
 
 Podemos ver como a alteração da parametrização afeta este exemplo: 
