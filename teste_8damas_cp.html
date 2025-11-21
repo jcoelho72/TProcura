@@ -97,15 +97,14 @@ $(document).ready(function(){initNavTree('teste_8damas_cp.html',''); initResizab
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
 <p>Execução de exemplo com base no problema das 8 damas, com codificação por permutação. Pode acompanhar o teste executando as ações localmente.</p>
-<p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. No Linux na pasta <code>.../TProcura/Melhorativa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
-<p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
+<p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute-o. No Linux na pasta <code>.../TProcura/Melhorativa/Teste</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
 <h2><a class="anchor" id="autotoc_md80"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_8damas_cp.html#damas-cp1">Ação 1 - Ver instâncias</a></li>
 <li><a class="el" href="teste_8damas_cp.html#damas-cp2">Ação 2 - Resolver manualmente</a></li>
-<li><a class="el" href="teste_8damas_cp.html#damas-cp3">Ação 3 - Algoritmos Evolutivos</a></li>
-<li>Ação 4 - Testes Empíricos</li>
+<li><a class="el" href="teste_8damas_cp.html#damas-cp3">Ação 3 - Algoritmos evolutivos</a></li>
+<li>Ação 4 - Testes empíricos</li>
 </ul>
 <p> 
 <pre>
@@ -120,7 +119,7 @@ Opção: <span class="entrada">2</span>
 <p><a class="anchor" id="damas-cp1"></a></p>
 <h2><a class="anchor" id="autotoc_md81"></a>
 Ação 1 - Ver instâncias</h2>
-<p>Vamos entrar no problema 8 Damas Permutação, introduza: <b>2.</b></p>
+<p>Vamos entrar no problema 8 Damas Permutação, insira: <b>2.</b></p>
 <p> 
 <pre>
 8 Damas (Permutação)
@@ -148,7 +147,7 @@ Ação 1 - Ver instâncias</h2>
 Opção: 
 </pre>
 </p>
-<p>Vamos seguir a mesma linha das 8 damas, codificação inteira. Vamos alterar para a instância de tamanho 4. Introduza: <b>1; 4.</b></p>
+<p>Vamos seguir o exemplo das 8 damas, codificação inteira, e alterar para uma instância mais pequena, de tamanho 4. Insira: <b>1; 4.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">1</span>
@@ -167,11 +166,11 @@ Novo ID (ENTER mantém) ou novo prefixo (texto): <span class="entrada">4</span>
 Opção: 
 </pre>
 </p>
-<p>Notar que a instância é distinta da codificação inteira. De facto a instância incial da codificação inteira não tem representação na codificação permutação, já que neste caso apenas há permutação da posição das damas, enquanto que na solução inicial da codificação inteira há duas damas na mesma coluna.</p>
+<p>A solução inicial usada na codificação inteira (onde podem ocorrer duas damas na mesma coluna) não tem representação na codificação por permutação, em que apenas se permutam posições sem repetições</p>
 <p><a class="anchor" id="damas-cp2"></a></p>
 <h2><a class="anchor" id="autotoc_md82"></a>
 Ação 2 - Resolver manualmente</h2>
-<p>Vamos resolver a instância manualmente. Introduza: <b>2</b></p>
+<p>Vamos resolver a instância manualmente. Insira: <b>2</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">2</span>
@@ -197,8 +196,8 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Apenas ao gerar a população inicial, temos logo uma solução de custo 0, pelo que nem se chegou a gerar 4 elementos.</p>
-<p>Assim, vamos sair e colocar uma dimensão maior para poder ver os operadores. Introduza: <b>0; 1; 6; 2.</b></p>
+<p>Ao gerar a população inicial foi encontrada de imediato uma solução de custo 0; por isso não foi necessário gerar uma população de tamanho 4.</p>
+<p>Assim, vamos sair e colocar uma dimensão maior para poder ver os operadores. Insira: <b>0; 1; 6; 2.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">0</span>
@@ -243,7 +242,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Agora sim, temos uma população de 4 elementos com custos de 2 a 4. Vamos começar por testar o operador de mutação. Introduza: <b>1; 1.</b></p>
+<p>Agora sim, temos uma população de 4 elementos com custos de 2 a 4. Vamos começar por testar o operador de mutação. Insira: <b>1; 1.</b></p>
 <p> 
 <pre>
 │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">1</span>
@@ -275,7 +274,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Neste caso o operador é um vizinho de inserção, mas o elemento retirado está na mesma posição em que é inserido, na posição 0. Vamos repetir. Introduza: <b>1; 1.</b></p>
+<p>Aqui o operador de mutação é uma inserção: o elemento removido acabou por ser inserido na mesma posição (0), pelo que a permutação não sofreu alterações. Vamos repetir. Insira: <b>1; 1.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">1</span>
@@ -308,8 +307,8 @@ Opção: <span class="entrada">2</span>
 </pre>
 </p>
 <p>Tal como na representação inteira, há vários operadores de mutação, sendo o mesmo verdade para os restantes operadores de cruzamento e vizinhança.</p>
-<p>Desta vez inserimos o elemento na posição 1 (segundo na ordem), na posição 3 (quarto na ordem). Todos os outros elmentos ficaram iguais. Em termos de custos ficou igual, continuam 4 pares de damas a atacarem-se, embora sejam pares distintos.</p>
-<p>Vamos agora ao operador de cruzamento, vamos cruzar os dois melhores elementos. Introduza: <b>2; 2; 3; 4.</b></p>
+<p>Desta vez inserimos o elemento na posição 1 (segundo na ordem), na posição 3 (quarto na ordem). Todos os outros elementos ficaram iguais. Em termos de custos ficou igual, continuam 4 pares de damas a atacarem-se, embora sejam pares distintos.</p>
+<p>Vamos agora ao operador de cruzamento, vamos cruzar os dois melhores elementos. Insira: <b>2; 2; 3; 4.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">2</span>
@@ -345,8 +344,8 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Nete caso o filho ficou com os 3 primeiros elementos da mãe, e o resto ficou pela ordem como que aparecem no pai. Há apenas 2 pares de damas que se atacam, tal como na mãe.</p>
-<p>Podemos agora testar o operador de vizinhança, tendo como ponto de partida o estado 4 com custo 2. Introduza: <b>3; 4.</b></p>
+<p>Neste caso o filho herdou os três primeiros elementos da mãe; os restantes elementos mantiveram a ordem em que aparecem no pai. Há apenas 2 pares de damas que se atacam, tal como na mãe.</p>
+<p>Podemos agora testar o operador de vizinhança, tendo como ponto de partida o estado 4 com custo 2. Insira: <b>3; 4.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">3</span>
@@ -387,7 +386,7 @@ Opção: <span class="entrada">2</span>
  │ │ 🧍 [1-30]:
 </pre>
 </p>
-<p>Há 30 vizinhos, existindo vários com custo 1. Vamos escolher um deles e repetir o processo. Introduza: <b>30; 3; 4;</b></p>
+<p>Há 30 vizinhos, existindo vários com custo 1. Vamos escolher um deles e repetir o processo. Insira: <b>30; 3; 4;</b></p>
 <p> 
 <pre>
  │ │ 🧍 [1-30]: <span class="entrada">30</span>
@@ -454,7 +453,7 @@ Opção: <span class="entrada">2</span>
  │ │ 🧍 [1-30]: 
 </pre>
 </p>
-<p>Neste caso temos novamente vários vizinhos de custo 1, mas nenhum de custo 0. Vamos escolher o primeiro e terminar. Introduza: <b>1; 0.</b></p>
+<p>Neste caso temos novamente vários vizinhos de custo 1, mas nenhum de custo 0. Vamos escolher o primeiro e terminar. Insira: <b>1; 0.</b></p>
 <p> 
 <pre>
  │ │ 🧍 [1-30]: <span class="entrada">1</span>
@@ -496,9 +495,9 @@ Opção:
 </p>
 <p><a class="anchor" id="damas-cp3"></a></p>
 <h2><a class="anchor" id="autotoc_md83"></a>
-Ação 3 - Algoritmos Evolutivos</h2>
+Ação 3 - Algoritmos evolutivos</h2>
 <p>Vamos agora ver os algoritmos evolutivos nos diferentes níveis de debug, para esta instância de tamanho 6.</p>
-<p>Introduza: <b>1; 6; 3; 2; 1; <em>ENTER</em>;6.</b></p>
+<p>Insira: <b>1; 6; 3; 2; 1; <em>ENTER</em>;6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -548,7 +547,7 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Esta execução sabemos que há 7 épocas, pelo que este exemplo é bom para ser visto com maior detalhe. Vamos passar para o modo de detalhe seguinte. Introduza: <b>1; 6; 3; 2; 2; <em>ENTER</em>;6.</b></p>
+<p>Esta execução sabemos que há 7 épocas, pelo que este exemplo é bom para ser visto com maior detalhe. Vamos passar para o modo de detalhe seguinte. Insira: <b>1; 6; 3; 2; 2; <em>ENTER</em>;6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -605,7 +604,7 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Podemos observar que os custos vão de 1 até à volta de 10. Confirma-se que a melhor solução nunca é degradada com a atual configuração. Vamos avançar no nível de debug. Introduza: <b>1; 6; 3; 2; 3; <em>ENTER</em>;6.</b></p>
+<p>Podemos observar que os custos vão de 1 até à volta de 10. Confirma-se que a melhor solução nunca é degradada com a atual configuração. Vamos avançar no nível de debug. Insira: <b>1; 6; 3; 2; 3; <em>ENTER</em>;6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -697,7 +696,7 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Podemos observar que a diversidade mantém-se, sendo a distância média de 4 a 5 unidades. Já sabiamos a variação do melhor e pior custo, mas ao ver o mapa completo podemos ter a noção de que o pior custo é apenas de um ou outro elemento. A maior parte dos elementos têm um custo baixo. Há épocas que têm mais que um elemento com custo 1, mas a população não fica dominada por soluções todas do mesmo custo. Vamos ver agora o detalhe completo. Introduza: <b>1; 6; 3; 2; 4; <em>ENTER</em>; 6.</b></p>
+<p>Podemos observar que a diversidade mantém-se, sendo a distância média de 4 a 5 unidades. Já sabiamos a variação do melhor e pior custo, mas ao ver o mapa completo podemos ter a noção de que o pior custo é apenas de um ou outro elemento. A maior parte dos elementos têm um custo baixo. Há épocas que têm mais que um elemento com custo 1, mas a população não fica dominada por soluções todas do mesmo custo. Vamos ver agora o detalhe completo. Insira: <b>1; 6; 3; 2; 4; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -1030,13 +1029,13 @@ Opção:
 <li>Mãe: <code>3 0 5 4 2 1</code></li>
 <li>Filho: <code>3 0 4 1 5 2</code></li>
 </ul>
-<p>É visivel que os dois primeiros elementos vêm de um dos pais, e os restantes do outro pai. Nenhum dos pais tinha custo 1, pelo que se a população fosse dominada por elementos de custo 1, estes dois elementos tinham menos probabilidade de se encontrarem e gerarem um filho com a solução.</p>
+<p>É visível que os dois primeiros elementos do filho provêm de um dos pais, enquanto os restantes provêm do outro. Nenhum dos pais tinha custo 1. Se a população estivesse dominada por elementos de custo 1, a probabilidade de selecionar simultaneamente estes dois pais seria menor, reduzindo a hipótese de gerar a solução por cruzamento</p>
 <p><a class="anchor" id="damas-cp4"></a></p>
 <h2><a class="anchor" id="autotoc_md84"></a>
-Ação 4 - Testes Empíricos</h2>
+Ação 4 - Testes empíricos</h2>
 <p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
-<p><a href="melhorativa__deucalion.html">Resultdos Deucalion</a></p>
-<p>Neste estudo foi identificada a melhor parmetrização para este problema e codificação: <b>P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P22=2 P23=0.</b></p>
+<p><a href="melhorativa__deucalion.html">Resultados Deucalion</a></p>
+<p>Neste estudo foi identificada a melhor parametrização para este problema e codificação: <b>P6=10 P7=0 P8=100 P9=2 P11=10 P12=100 P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P24=1 P21=0 P22=2 P23=0.</b></p>
 <p>Podemos ver como a alteração da parametrização afeta este exemplo:</p>
 <p> 
 <pre>
@@ -1125,7 +1124,7 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Com a configuração optimizada, bastou uma época para encontrar a solução para esta instância. O filho 2 foi gerado de dois pais de custo 2, e tem um irmão de custo 4. Os pais são os elementos 8 e 2. Estes pais têm ambos o melhor custo, e foram escolhidos como pais 4 e 5 vezes. Esta situação ocorre atendendo a que o método de seleção é um torneio de tamanho 10. Acabou por não serem vezes a mais, já que fizeram para também nos elementos 7 e 8, e tiveram filhos de custo 5 e 6.</p>
+<p>Com a configuração otimizada, bastou uma época para encontrar a solução para esta instância. O filho 2 foi gerado de dois pais de custo 2, e tem um irmão de custo 4. Os pais são os elementos 8 e 2. Estes pais têm ambos o melhor custo, e foram escolhidos como pais 4 e 5 vezes. Esta situação ocorre atendendo a que o método de seleção é um torneio de tamanho 10. Acabou por não serem vezes a mais, já que fizeram para também nos elementos 7 e 8, e tiveram filhos de custo 5 e 6.</p>
 <p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

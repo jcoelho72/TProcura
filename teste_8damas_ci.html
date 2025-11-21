@@ -97,14 +97,14 @@ $(document).ready(function(){initNavTree('teste_8damas_ci.html',''); initResizab
 <div class="contents">
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
 <p>Execução de exemplo com base no problema das 8 damas, com a codificação inteira. Pode acompanhar o teste executando as ações localmente.</p>
-<p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute. No Linux na pasta <code>.../TProcura/Melhorativa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
+<p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute-o. No Linux na pasta <code>.../TProcura/Melhorativa/Teste</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
 <h2><a class="anchor" id="autotoc_md75"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_8damas_ci.html#damas-ci1">Ação 1 - Ver instâncias</a></li>
 <li><a class="el" href="teste_8damas_ci.html#damas-ci2">Ação 2 - Resolver manualmente</a></li>
-<li><a class="el" href="teste_8damas_ci.html#damas-ci3">Ação 3 - Algoritmos Evolutivos</a></li>
-<li><a class="el" href="teste_8damas_ci.html#damas-ci4">Ação 4 - Testes Empíricos</a></li>
+<li><a class="el" href="teste_8damas_ci.html#damas-ci3">Ação 3 - Algoritmos evolutivos</a></li>
+<li><a class="el" href="teste_8damas_ci.html#damas-ci4">Ação 4 - Testes empíricos</a></li>
 </ul>
 <p> 
 <pre>
@@ -119,7 +119,7 @@ Opção: <span class="entrada">1</span>
 <p><a class="anchor" id="damas-ci1"></a></p>
 <h2><a class="anchor" id="autotoc_md76"></a>
 Ação 1 - Ver instâncias</h2>
-<p>Vamos entrar no problema 8 Damas Inteira, introduza: <b>1.</b></p>
+<p>Vamos entrar no problema 8 Damas Inteira, insira: <b>1.</b></p>
 <p> 
 <pre>
 8 Damas (Inteira)
@@ -150,7 +150,7 @@ Opção:
 <p>Temos uma instância das 8 Damas como no exemplo da <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas algumas atacam-se mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto convertem-se em custos, que pretendemos remover. Uma solução de custo 0 é prortanto uma solução válida.</p>
 <p>Temos um número de parametros mais extenso, embora os 5 primeiros parametros sejam os mesmos que no exemplo do teste <a class="el" href="classTVector.html">TVector</a>. O último parametro é o P24, muito embora não estejam 24 parâmetros. O P11 por exemplo não é mostrado. Alguns parâmetros só são ativos devido a valores de outros parametros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parametros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
 <p>Vamos trocar para uma instância menor antes de avançarmos, para simplificar a nossa exploração.</p>
-<p>Introduza: <b>1; 4.</b></p>
+<p>Insira: <b>1; 4.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">1</span>
@@ -173,7 +173,7 @@ Opção:
 <p><a class="anchor" id="damas-ci2"></a></p>
 <h2><a class="anchor" id="autotoc_md77"></a>
 Ação 2 - Resolver manualmente</h2>
-<p>Vamos primeiro procurar resolver a instância manualmente, e ver a codificação inteira utilizada. Introduza: <b>2.</b></p>
+<p>Vamos primeiro procurar resolver a instância manualmente, e ver a codificação inteira utilizada. Insira: <b>2.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">2</span>
@@ -209,8 +209,8 @@ Opção: <span class="entrada">2</span>
 <p>Podemos utilizar outra codificação, desde que exista forma de codificar todas as soluções de interesse, ou seja, de uma solução converter na codificação única, e descodificar, de uma codificação reconstruir a solução a que corresponde.</p>
 <p>Há outras possibilidades de codificar o problema das 8 damas, estando implementado a codificação com base na permutação, no próximo exemplo.</p>
 <p>Na população os 4 elementos têm cor de fundo para auxiliar a identificação, e os custos têm cor da letra para sinalizar os melhores elementos de forma visual.</p>
-<p>Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parametro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elmentos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
-<p>Temos 3 operações para testar, a mutação, cruzamento e vizinhança. Vamos começar pela mutação, e mutar o indivíduo 4. Introduza: <b>1; 4.</b></p>
+<p>Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parametro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elementos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
+<p>Temos 3 operações para testar, a mutação, cruzamento e vizinhança. Vamos começar pela mutação, e mutar o indivíduo 4. Insira: <b>1; 4.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">1</span>
@@ -241,7 +241,7 @@ Opção: <span class="entrada">2</span>
 </pre>
 </p>
 <p>A mutação acabou por trocar apenas um valor, o que se pode confirmar nas linhas 🧍(atual) e 🦠 (mutado), com as codificaçõe seguidas e alinhadas. Ficou uma solução igualmente má de custo 4. Podemos alterar a mutação no parâmetro P21(TIPO_MUTAR). Existem também vários operadores de mutação disponíveis dependente do tipo de codificação.</p>
-<p>Vamos agora passar para o cruzamento, e cruzar o individuo 1 com o 3, os dois melhores na população, e substituir o individuo 4. Introduza: <b>2; 1; 3; 4.</b></p>
+<p>Vamos agora passar para o cruzamento, e cruzar o individuo 1 com o 3, os dois melhores na população, e substituir o individuo 4. Insira: <b>2; 1; 3; 4.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">2</span>
@@ -276,7 +276,7 @@ Opção: <span class="entrada">2</span>
 </pre>
 </p>
 <p>O filho ficou quase igual ao pai, com os três primeiros elementos do pai, e o último da mãe. Existem vários tipos de operadores de cruzamento, controlados pelo parametro P20(TIPO_CRUZAR). Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.</p>
-<p>Falta-nos explorar o operador de vizinhança, pelo que vamos aplicar ao melhor individuo 1, e escolher o melhor vizinho. Introduza: <b>3; 1; 1.</b></p>
+<p>Falta-nos explorar o operador de vizinhança, pelo que vamos aplicar ao melhor individuo 1, e escolher o melhor vizinho. Insira: <b>3; 1; 1.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">3</span>
@@ -317,7 +317,7 @@ Opção: <span class="entrada">2</span>
 </pre>
 </p>
 <p>O melhor vizinho gerado tem custo 1, pelo que estamos mais perto. Foi feita a substituição da melhor solução. Notar que o tipo de vizinhança é descrito, neste caso apenas incrementamos ou decrementamos cada valor em uma unidade. Devido a esta opção, a vizinhança tem um número baixo de indivíduos.</p>
-<p>Vamos insistir e ver os vizinhos deste novo elemento, e novamente escolher o melhor destes. Introduza: <b>3; 1; 3.</b></p>
+<p>Vamos insistir e ver os vizinhos deste novo elemento, e novamente escolher o melhor destes. Insira: <b>3; 1; 3.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">3</span>
@@ -355,7 +355,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Neste caso o vizinho tem o mesmo custo, mas é outro vizinho, pelo que vale a pena ainda uma última vez, ver quais os seus vizinhos. Introduza: <b>3; 1; 5.</b></p>
+<p>Neste caso o vizinho tem o mesmo custo, mas é outro vizinho, pelo que vale a pena ainda uma última vez, ver quais os seus vizinhos. Insira: <b>3; 1; 5.</b></p>
 <p> 
 <pre>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): <span class="entrada">3</span>
@@ -391,8 +391,8 @@ Opção:
 <p>Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem. Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, sendo a solução obtida retornada.</p>
 <p><a class="anchor" id="damas-ci3"></a></p>
 <h2><a class="anchor" id="autotoc_md78"></a>
-Ação 3 - Algoritmos Evolutivos</h2>
-<p>Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização de omissão. Introduza: <b>1; 4; 6.</b></p>
+Ação 3 - Algoritmos evolutivos</h2>
+<p>Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização de omissão. Insira: <b>1; 4; 6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -425,8 +425,8 @@ Opção:
 <p>Podemos ver que o primeiro indicador, I1(Resultado) é igual a 0. Este é o custo da solução. Podemos observar a solução e ver que as damas não se atacam, aliás, é exatamente a mesma solução obtida manualmente.</p>
 <p>O segundo indicador I2(Tempo(ms)) é 0, o que significa que foi consumido menos de 1 milisegundo.</p>
 <p>Temos o número de iterações a 241, que corresponde às avaliações efetuadas, e 10 épocas, o que corresponde ao número de ciclos do algoritmo evolutivo. Finalmente, temos o número de estados gerados a 249.</p>
-<p>Há informação visivel nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. O que aconteceu nestas 10 épocas? Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções. Podemos obter na literatura qual a melhor parametrização para um dado problema ou tipo de problemas, e utilizar como parametrização base. Mas estaremos satisfeitos com esta informação? Não! Precisamos de ver o que se passou em concreto, para saber o que correu bem e menos bem, sem dependências de terceiros. Queremos até mais tarde confirmar que a configuração base é a melhor parametrização possível, ou identificar qual é a mais adequada, pela via experimental.</p>
-<p>Como podemos repetir todas as execuções, podemos ver a mesma execução com diferentes níveis de detalhe. Vamos aproveitar esta execução que tem tamanho reduzido, para ir subindo o nível de debug. Introduza: <b>1; 4; 3; 2; 1; <em>ENTER</em>; 6.</b></p>
+<p>Há informação visível nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. O que aconteceu nestas 10 épocas? Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções. Podemos obter na literatura qual a melhor parametrização para um dado problema ou tipo de problemas, e utilizar como parametrização base. Mas estaremos satisfeitos com esta informação? Não! Precisamos de ver o que se passou em concreto, para saber o que correu bem e menos bem, sem dependências de terceiros. Queremos até mais tarde confirmar que a configuração base é a melhor parametrização possível, ou identificar qual é a mais adequada, pela via experimental.</p>
+<p>Como podemos repetir todas as execuções, podemos ver a mesma execução com diferentes níveis de detalhe. Vamos aproveitar esta execução que tem tamanho reduzido, para ir subindo o nível de debug. Insira: <b>1; 4; 3; 2; 1; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -480,7 +480,7 @@ Opção:
 <p>Nesta repetição vemos um ponto de quando em quando, para saber que há atividade. No final são introduzidos 128 pontos, se o número de iterações for atingido. Como gastamos muito poucas iterações e o limite é muito alto, estes pontos nem chegam a ser impressos.</p>
 <p>Mas vemos algo importante. Sempre que se encontra uma melhor solução global, é registado o tempo e a solução é mostrada ao utilizador. Podemos ver que primeiro foi encontrada uma solução de custo 2, de seguida outra de custo 1 e finalmente a de custo 0.</p>
 <p>Sabemos mais alguma coisa do que se passou, mas não muito. Numa execução longa podemos ver quando as diferentes soluções são encontradas, e se são encontradas soluções de custos incrementais, ou diretamente a solução de custo 0.</p>
-<p>Vamos ver agora o nível de debug PASSOS. Introduza: <b>1; 4; 3; 2; 2; <em>ENTER</em>; 6.</b></p>
+<p>Vamos ver agora o nível de debug PASSOS. Insira: <b>1; 4; 3; 2; 2; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -544,7 +544,7 @@ Opção:
 <p>Temos agora a informação das diferentes épocas. Em cada época é registado o instante em que esta ocorre, neste caso apenas alguns milisegundos, o número da época, e o menor e maior custo na população.</p>
 <p>Aqui é possível observar que nesta procura, a melhor solução na população nunca piorou de uma época para a outra. Dependente da parametrização, nem sempre esta situação é garantida. A utilização de P16(ELITISMO)=1 garante que pelo menos um elemento da população antiga, irá manter-se caso na nova população não exista nenhum elemento com valor melhor ou igual.</p>
 <p>Aumentamos o conhecimento, mas ainda estamos um pouco às escuras. Sabemos em que as duas soluções intermédias foram encontradas logo ao gerar a população inicial, e na primeira geração. Fora o parâmetro do elitismo, nada mais pode ser observado ou verificada a sua utilidade.</p>
-<p>É tempo para aumentar o nível de debug para DETALHE. Introduza: <b>1; 4; 3; 2; 3; <em>ENTER</em>; 6.</b></p>
+<p>É tempo para aumentar o nível de debug para DETALHE. Insira: <b>1; 4; 3; 2; 3; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -660,8 +660,8 @@ Opção:
 <p>Assim, podemos ter uma ideia mais detalhada dos custos dos indivíduos, e uma ideia da diversidade. Se a diversidade da população for muito baixa, podemos observar a média de distâncias com valor baixo. Se apenas alguns elementos tiverem um bom valor, e a maior parte tiver um valor mau, podemos também observar.</p>
 <p>Idealmente pretendemos uma diversidade alta e alto valor nos indivíduos, portanto baixo custo. Por vezes o que ocorre num problema mal afinado, é que todas as soluções ficam com o mesmo valor, e a diversidade é muito baixa. Nesse caso o algoritmo fica estagnado, sendo essa a situação mais crítica a evitar.</p>
 <p>Embora possamos observar a situação mais indesejável que pode ocorrer num algoritmo evolutivo, a estagnação, nada sabemos sobre os indivíduos concretos, e o que se passa de uma população para a outra.</p>
-<p>Há várias fases para passar de uma época para a outra, e muitos operadores são aplicados. Mas isso é interno aos algoritmos evolutivos, nada é visivel neste nível de debug.</p>
-<p>É portanto tempo para passarmos para o último nível de debug, COMPLETO. Introduza: <b>1; 4; 3; 2; 4; <em>ENTER</em>; 6.</b></p>
+<p>Há várias fases para passar de uma época para a outra, e muitos operadores são aplicados. Mas isso é interno aos algoritmos evolutivos, nada é visível neste nível de debug.</p>
+<p>É portanto tempo para passarmos para o último nível de debug, COMPLETO. Insira: <b>1; 4; 3; 2; 4; <em>ENTER</em>; 6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -1014,11 +1014,11 @@ Opção:
 <p>Para identificar as melhores parametrizações, temos de ter testes empíricos, tal como nos restantes exemplos, e esse é o tema da próxima secção.</p>
 <p><a class="anchor" id="damas-ci4"></a></p>
 <h2><a class="anchor" id="autotoc_md79"></a>
-Ação 4 - Testes Empíricos</h2>
+Ação 4 - Testes empíricos</h2>
 <p>O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter um número considerável de execuções.</p>
 <p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
-<p><a href="melhorativa__deucalion.html">Resultdos Deucalion</a></p>
-<p>Neste estudo foi identificada a melhor parmetrização para este problema e codificação: <b>P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0.</b></p>
+<p><a href="melhorativa__deucalion.html">Resultados Deucalion</a></p>
+<p>Neste estudo foi identificada a melhor parametrização para este problema e codificação: <b>P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0.</b></p>
 <p>Podemos ver como a alteração da parametrização afeta este exemplo:</p>
 <p> 
 <pre>

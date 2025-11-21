@@ -97,26 +97,33 @@ $(document).ready(function(){initNavTree('melhorativa__deucalion.html',''); init
 <div class="contents">
 <div class="textblock"><p>Testes da classe <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a> no cluster Deucalion.</p>
 <p>A documentação do cluster Deucalion pode ser encontrada em: <a href="https://docs.deucalion.macc.fccn.pt/">https://docs.deucalion.macc.fccn.pt/</a> A forma como se pode obter acesso ao cluster, bem como a submissão de trabalhos, está descrita nessa documentação.</p>
-<p>Vamos fazer testes paramétricos no sentido de identificar para as três implementações, qual a melhor parametrização no contexto dos algoritmos evolutivos. Pretendemos saber quais os parametros que têm impacto relevante na performance.</p>
-<p>Os diversos testes irão ser feitos em paralelo nas três implementações, duas das 8 damas (codificação inteira e permutação), e uma da partição codificação binária.</p>
-<p>Atendendo a que todos os problemas são de procura, ficando o indicador I1 com o número de violações, podemos definir as seguintes variáveis de análise.</p>
+<p>Vamos realizar testes paramétricos para as três implementações (CI, CP e CB) com o objetivo de identificar a melhor parametrização, no contexto dos algoritmos evolutivos. Pretendemos determinar quais os parâmetros que têm impacto relevante na eficácia (resolução) e na eficiência (tempo).</p>
+<p>Os diversos testes irão ser feitos em paralelo nas três implementações:</p><ul>
+<li>8 damas codificação inteira (CI)</li>
+<li>8 damas codificação por permutação (CP)</li>
+<li>partição codificação binária (CB)</li>
+</ul>
+<p>Como todos os problemas são de procura e o indicador I1 mede o número de violações, definimos as seguintes variáveis de análise:</p>
 <p>Variáveis:</p><ul>
 <li>Resolvido=(I1=0)</li>
-<li>Eficácia: Percentagem de instãncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))</li>
+<li>Eficácia: Percentagem de instâncias resolvidas (=round(AVERAGE(bruto[Resolvido])*100;0))</li>
 <li>Eficiência: Tempo médio utilizado (=round(AVERAGE([I2(Tempo(ms))]);0))</li>
 </ul>
-<p>Estas serão as variáveis de performance que iremos monitorizar para identificar a melhor parametrização. Atendendo a que o tempo de execução está limitado a 10 segundos, o indicador de eficiência contém o da eficácia mas apenas parcialmente, já que considera que as instâncias não resolvidas têm um custo de 10 segundos, quando seria necessário mais tempo para as resolver. O indicador da eficácia não distingue entre duas instâncias resolvidas, mesmo que uma leve 0,1 segundos e a outra 5 segundos.</p>
-<p>Um problema em que se pretenda optimizar, ao contrário destes que são de procura, ou seja, se pretendessemos minimizar I1, teria de ter indicadores distintos, como distância relativa à solução ótima, ou a um valor mínimo conhecido.</p>
-<p>Para averiguar se as diferenças obtidas na eficiência (tempo), são ou não relevantes, vamos calcular também o intervalo de confiança a 95% para a eficiência:</p>
+<p>Estas serão as variáveis de performance que iremos monitorizar para identificar a melhor parametrização. O indicador de eficiência incorpora a eficácia de forma parcial: as instâncias não resolvidas são contabilizadas como tendo o tempo limite (10 s). Assim, instâncias que simplesmente não terminam dentro do limite não penalizam muito a eficiência, já que sem este limite iriam ser eventualmente resolvidas com um tempo maior. O indicador da eficácia não distingue entre duas instâncias resolvidas, mesmo que uma leve 0,1 segundos e a outra 5 segundos.</p>
+<p>Um problema em que se pretenda otimizar, ao contrário destes que são de procura, ou seja, se pretendessemos minimizar I1, teria de ter indicadores distintos, como distância relativa à solução ótima, ou a um valor mínimo conhecido.</p>
+<p>Para averiguar se as diferenças obtidas na eficiência (tempo), são ou não relevantes, vamos calcular também o intervalo de confiança a 95% para a eficiência, bem como o percentil de 10 e 90% e mediana:</p>
 <ul>
 <li>ICinf = round(AVERAGE([I2(Tempo(ms))]) - 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)</li>
 <li>ICsup = round(AVERAGE([I2(Tempo(ms))]) + 1.96 * STDEV.S([I2(Tempo(ms))]) / SQRT(COUNTROWS(bruto));0)</li>
+<li>P10 = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,1);0)</li>
+<li>P90 = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,9);0)</li>
+<li>Med = =round(PERCENTILEX.INC('bruto'; [I2(Tempo(ms))]; 0,5);0)</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md20"></a>
 Teste 1</h2>
-<p>Vamos fazer um teste de performance inicial com a configuração base, ou seja, todos os parametros no seu valor de omissão. Pretendemos ter uma avaliação sobre um conjunto alargado de instâncias, em termos de eficácia, se o algoritmo foi bem sucedido, e eficiência, se foi rápido. Esta será uma referência que iremos repetir no final com a configuração encontrada, e assim quantificar o ganho da realização dos testes paramétricos.</p>
+<p>Vamos fazer um teste de performance inicial com a configuração base, ou seja, todos os parâmetros no seu valor por omissão. Pretendemos ter uma avaliação sobre um conjunto alargado de instâncias, em termos de eficácia, se o algoritmo foi bem sucedido, e eficiência, se foi rápido. Esta será uma referência que iremos repetir no final com a configuração encontrada, e assim quantificar o ganho da realização dos testes paramétricos.</p>
 <p>Como os três problemas utilizam codificações distintas, vamos identificar os problemas por CI (8 damas codificação inteira), CP (8 damas codificação permutação) e CB (partição codificação binária).</p>
-<p>Para as 8 damas com a codificação inteira e permutação, vamos utilizar o conjunto completo de instâncias. Como o algoritmo é aleatório, vamos executar 100 execuções de modo a ganhar precisão sobre a capacidade da configuração base de resolver uma dada iostâsncia.</p>
+<p>Para as 8 damas com a codificação inteira e permutação, vamos utilizar o conjunto completo de instâncias. Como o algoritmo é aleatório, vamos executar 100 execuções de modo a ganhar precisão sobre a capacidade da configuração base de resolver uma dada instância.</p>
 <p>No problema da partição tem instâncias de 2 a 1000 (quantidade de números), e a instância é gerada aleatoriamente, pelo que por cada valor de P3 existe uma nova instância. Assim, para manter um volume razoável, variamos o esforço de P3 de 1 a 10.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Performance (Eficácia / Eficiência vs tamanho)</li>
@@ -380,8 +387,8 @@ Resultados: damasci_1</h3>
 <td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">10000   </td></tr>
 </table>
 <p>Os problemas são todos resolvidos até à instância 15, após o qual a eficácia desce ficando a baixo dos 10% na instância 27. A eficiência vai também piorando (subindo), na instância 15 onde ainda todas as instâncias são resolvidas, já leva 1,7 segundos em média.</p>
-<p>Vamos utilizar estes resultados para fixar o conjunto de teste para conter apenas instâncias na fase de transição entre complexo e simples, evitando assim instâncias demasiado simples que não ajudam a identificar a melhor parametrização, nem instâncias demasiado complexas que gastam o tempo limite e apenas atrasam os resultados.</p>
-<p>Vamos utilizar desde a instância 10, embora simples tem 0,2 segundos, até à instância 19, em que nem sempre a instância é resolvida, e tem tempo médio de quase 5 segundos.</p>
+<p>Com base nesses resultados, definimos o conjunto de teste para a região de transição entre instâncias fáceis e difíceis. Isto evita incluir instâncias demasiado simples (que não diferenciam parametrizações) e instâncias muito difíceis (que consomem o tempo limite), concentrando o esforço em casos que evidenciam diferenças de desempenho.</p>
+<p>Escolhemos o intervalo de instâncias 10–19: a instância 10 é ainda relativamente rápida (≈0,2 s), e a instância 19 já apresenta casos não resolvidos (tempo médio ≈5 s), pelo que o intervalo é adequado para discriminar parametrizações.</p>
 <h3><a class="anchor" id="autotoc_md22"></a>
 Resultados: damascp_1</h3>
 <table class="markdownTable">
@@ -513,15 +520,15 @@ Resultados: particaocb_1</h3>
 </table>
 <p>A tabela foi cortada devido à sua extensão, mas mantém o mesmo padrão.</p>
 <p>Cada instância é gerada com base no número aleatório, pelo que neste caso não temos apenas 999 instâncias. Como foram utilizadas 10 corridas com valores diferentes para P3 por cada tamanho, temos 9990 instâncias.</p>
-<p>As instâncias ímpares não são resolvidas, as pares a partir da instância 10 são todas resolvidas, e apenas exporadicamente há uma instância par não resolvida.</p>
-<p>A abordagem melhorativa não permite resolver instâncias sem solução, e provavelemnente nas instâncias ímparas, a razão para não se encontrar a solução é por não existir a solução. Em algumas instâncias é possível confirmar com base na execução das procuras construtivas, outras não.</p>
+<p>As instâncias ímpares não são resolvidas, as pares a partir da instância 10 são todas resolvidas, e apenas esporadicamente há uma instância par não resolvida.</p>
+<p>A abordagem melhorativa não encontra soluções quando a instância não tem solução. Provavelmente as instâncias ímpares não têm solução; em alguns casos isso pode ser verificado por procura construtiva, noutras não.</p>
 <p>Assim vamos utilizar para conjunto de teste apenas instâncias pares, que tenham sido todas resolvidas (com os 10 valores de P3), com os maiores tempos.</p>
 <p>Conjunto de teste: 948,864,930,922,764,692,806,926,904,870</p>
 <h2><a class="anchor" id="autotoc_md24"></a>
 Teste 2</h2>
-<p>Vamos agora iniciar o estudo dos parametros. Adoptamos a ordem com que estão definidos. Alguns parametros são dependentes do valor de outros, pelo que são analisados em conjunto.</p>
-<p>Arrancamos com o parametro P6 população. Este é um parametro determinante nos algoritmos evolutivos.</p>
-<p>O valor de omissão é 20, vamos variar em valores baixos e altos. Vamos começar com o valor 5, embora valores mais baixos sejam possíveis, mas assim o algoritmo evolutivo assemelha-se a uma procura local e para funcionar tem de se alterar outros parametros. Iremos estudar esta vertente numa fase posterior.</p>
+<p>Vamos agora iniciar o estudo dos parâmetros. Adoptamos a ordem com que estão definidos. Alguns parâmetros são dependentes do valor de outros, pelo que são analisados em conjunto.</p>
+<p>Arrancamos com o parâmetro P6 população. Este é um parâmetro determinante nos algoritmos evolutivos.</p>
+<p>O valor por omissão é 20, vamos variar em valores baixos e altos. Vamos começar com o valor 5, embora valores mais baixos sejam possíveis, mas assim o algoritmo evolutivo assemelha-se a uma procura local e para funcionar tem de se alterar outros parâmetros. Iremos estudar esta vertente numa fase posterior.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: População vs Eficiência</li>
 <li><b>Definição</b>:<ul>
@@ -681,100 +688,100 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 Resultados: damasci_2</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P6(População)   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P6(População)   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">5815   </td><td class="markdownTableBodyRight">5649   </td><td class="markdownTableBodyRight">5981    </td></tr>
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">5815   </td><td class="markdownTableBodyRight">5649   </td><td class="markdownTableBodyRight">5981   </td><td class="markdownTableBodyRight">867   </td><td class="markdownTableBodyRight">6384   </td><td class="markdownTableBodyRight">8791    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">65   </td><td class="markdownTableBodyRight">4301   </td><td class="markdownTableBodyRight">4057   </td><td class="markdownTableBodyRight">4545    </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">65   </td><td class="markdownTableBodyRight">4301   </td><td class="markdownTableBodyRight">4057   </td><td class="markdownTableBodyRight">4545   </td><td class="markdownTableBodyRight">141   </td><td class="markdownTableBodyRight">2643   </td><td class="markdownTableBodyRight">9733    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">89   </td><td class="markdownTableBodyRight">2674   </td><td class="markdownTableBodyRight">2466   </td><td class="markdownTableBodyRight">2882    </td></tr>
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">89   </td><td class="markdownTableBodyRight">2674   </td><td class="markdownTableBodyRight">2466   </td><td class="markdownTableBodyRight">2882   </td><td class="markdownTableBodyRight">104   </td><td class="markdownTableBodyRight">954   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight"><b>1840</b>   </td><td class="markdownTableBodyRight">1690   </td><td class="markdownTableBodyRight">1989    </td></tr>
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight"><b>1840</b>   </td><td class="markdownTableBodyRight">1690   </td><td class="markdownTableBodyRight">1989   </td><td class="markdownTableBodyRight">102   </td><td class="markdownTableBodyRight">815   </td><td class="markdownTableBodyRight">5339    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">96   </td><td class="markdownTableBodyRight">2031   </td><td class="markdownTableBodyRight">1867   </td><td class="markdownTableBodyRight">2195    </td></tr>
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">96   </td><td class="markdownTableBodyRight">2031   </td><td class="markdownTableBodyRight">1867   </td><td class="markdownTableBodyRight">2195   </td><td class="markdownTableBodyRight">122   </td><td class="markdownTableBodyRight">859   </td><td class="markdownTableBodyRight">6386    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">96   </td><td class="markdownTableBodyRight">2272   </td><td class="markdownTableBodyRight">2100   </td><td class="markdownTableBodyRight">2444    </td></tr>
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">96   </td><td class="markdownTableBodyRight">2272   </td><td class="markdownTableBodyRight">2100   </td><td class="markdownTableBodyRight">2444   </td><td class="markdownTableBodyRight">118   </td><td class="markdownTableBodyRight">1059   </td><td class="markdownTableBodyRight">6860    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">2642   </td><td class="markdownTableBodyRight">2450   </td><td class="markdownTableBodyRight">2834    </td></tr>
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">2642   </td><td class="markdownTableBodyRight">2450   </td><td class="markdownTableBodyRight">2834   </td><td class="markdownTableBodyRight">108   </td><td class="markdownTableBodyRight">1331   </td><td class="markdownTableBodyRight">8919    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">88   </td><td class="markdownTableBodyRight">3209   </td><td class="markdownTableBodyRight">2995   </td><td class="markdownTableBodyRight">3422    </td></tr>
+<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">88   </td><td class="markdownTableBodyRight">3209   </td><td class="markdownTableBodyRight">2995   </td><td class="markdownTableBodyRight">3422   </td><td class="markdownTableBodyRight">125   </td><td class="markdownTableBodyRight">1673   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">75   </td><td class="markdownTableBodyRight">74   </td><td class="markdownTableBodyRight">4336   </td><td class="markdownTableBodyRight">4088   </td><td class="markdownTableBodyRight">4583    </td></tr>
+<td class="markdownTableBodyCenter">75   </td><td class="markdownTableBodyRight">74   </td><td class="markdownTableBodyRight">4336   </td><td class="markdownTableBodyRight">4088   </td><td class="markdownTableBodyRight">4583   </td><td class="markdownTableBodyRight">217   </td><td class="markdownTableBodyRight">2590   </td><td class="markdownTableBodyRight">10001    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">66   </td><td class="markdownTableBodyRight">4960   </td><td class="markdownTableBodyRight">4699   </td><td class="markdownTableBodyRight">5221    </td></tr>
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">66   </td><td class="markdownTableBodyRight">4960   </td><td class="markdownTableBodyRight">4699   </td><td class="markdownTableBodyRight">5221   </td><td class="markdownTableBodyRight">172   </td><td class="markdownTableBodyRight">3747   </td><td class="markdownTableBodyRight">10001    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">56   </td><td class="markdownTableBodyRight">5728   </td><td class="markdownTableBodyRight">5464   </td><td class="markdownTableBodyRight">5992    </td></tr>
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">56   </td><td class="markdownTableBodyRight">5728   </td><td class="markdownTableBodyRight">5464   </td><td class="markdownTableBodyRight">5992   </td><td class="markdownTableBodyRight">270   </td><td class="markdownTableBodyRight">6393   </td><td class="markdownTableBodyRight">10002    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">53   </td><td class="markdownTableBodyRight">5973   </td><td class="markdownTableBodyRight">5710   </td><td class="markdownTableBodyRight">6236   </td></tr>
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">53   </td><td class="markdownTableBodyRight">5973   </td><td class="markdownTableBodyRight">5710   </td><td class="markdownTableBodyRight">6236   </td><td class="markdownTableBodyRight">418   </td><td class="markdownTableBodyRight">8336   </td><td class="markdownTableBodyRight">10003   </td></tr>
 </table>
-<p>Podemos observar que a população a 20, o valor de omissão, é nesta codificação o valor com melhores resultados. O intervalo de confiança a 95% no valor 20 intersecta o de 25, mas é claramente melhor que todos os restanes valores. O valor 10 ou inferior, e 40 ou superior, aparenta danificar consideravelmente a eficácia e a eficiência.</p>
-<p>Mantemos o valor de omissão P6=20.</p>
+<p>Podemos observar que a população a 20, o valor por omissão, é nesta codificação o valor com melhores resultados. O intervalo de confiança a 95% no valor 20 intersecta o de 25, mas é claramente melhor que todos os restanes valores. Tem também claramente o melhor valor para o percentil de 90%. O valor 10 ou inferior, e 40 ou superior, aparenta danificar consideravelmente a eficácia e a eficiência.</p>
+<p>Mantemos o valor por omissão P6=20.</p>
 <h3><a class="anchor" id="autotoc_md26"></a>
 Resultados: damascp_2</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P6(População)   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P6(População)   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">91   </td><td class="markdownTableBodyRight">1287   </td><td class="markdownTableBodyRight">1155   </td><td class="markdownTableBodyRight">1420    </td></tr>
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">91   </td><td class="markdownTableBodyRight">1287   </td><td class="markdownTableBodyRight">1155   </td><td class="markdownTableBodyRight">1420   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">165   </td><td class="markdownTableBodyRight">6077    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">98   </td><td class="markdownTableBodyRight"><b>826</b>   </td><td class="markdownTableBodyRight">722   </td><td class="markdownTableBodyRight">929    </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">98   </td><td class="markdownTableBodyRight"><b>826</b>   </td><td class="markdownTableBodyRight">722   </td><td class="markdownTableBodyRight">929   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">109   </td><td class="markdownTableBodyRight">2424    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight">1148   </td><td class="markdownTableBodyRight">1011   </td><td class="markdownTableBodyRight">1286    </td></tr>
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight">1148   </td><td class="markdownTableBodyRight">1011   </td><td class="markdownTableBodyRight">1286   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">190   </td><td class="markdownTableBodyRight">3786    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">98   </td><td class="markdownTableBodyRight">1138   </td><td class="markdownTableBodyRight">1004   </td><td class="markdownTableBodyRight">1272    </td></tr>
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">98   </td><td class="markdownTableBodyRight">1138   </td><td class="markdownTableBodyRight">1004   </td><td class="markdownTableBodyRight">1272   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">219   </td><td class="markdownTableBodyRight">3405    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight">1389   </td><td class="markdownTableBodyRight">1237   </td><td class="markdownTableBodyRight">1540    </td></tr>
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight">1389   </td><td class="markdownTableBodyRight">1237   </td><td class="markdownTableBodyRight">1540   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">257   </td><td class="markdownTableBodyRight">4624    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight">1360   </td><td class="markdownTableBodyRight">1216   </td><td class="markdownTableBodyRight">1505    </td></tr>
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">97   </td><td class="markdownTableBodyRight">1360   </td><td class="markdownTableBodyRight">1216   </td><td class="markdownTableBodyRight">1505   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">281   </td><td class="markdownTableBodyRight">4323    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">96   </td><td class="markdownTableBodyRight">1582   </td><td class="markdownTableBodyRight">1419   </td><td class="markdownTableBodyRight">1744    </td></tr>
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">96   </td><td class="markdownTableBodyRight">1582   </td><td class="markdownTableBodyRight">1419   </td><td class="markdownTableBodyRight">1744   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">336   </td><td class="markdownTableBodyRight">5556    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">1752   </td><td class="markdownTableBodyRight">1581   </td><td class="markdownTableBodyRight">1924    </td></tr>
+<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">1752   </td><td class="markdownTableBodyRight">1581   </td><td class="markdownTableBodyRight">1924   </td><td class="markdownTableBodyRight">21   </td><td class="markdownTableBodyRight">435   </td><td class="markdownTableBodyRight">6119    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">75   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">2201   </td><td class="markdownTableBodyRight">2007   </td><td class="markdownTableBodyRight">2395    </td></tr>
+<td class="markdownTableBodyCenter">75   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">2201   </td><td class="markdownTableBodyRight">2007   </td><td class="markdownTableBodyRight">2395   </td><td class="markdownTableBodyRight">25   </td><td class="markdownTableBodyRight">605   </td><td class="markdownTableBodyRight">8061    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">88   </td><td class="markdownTableBodyRight">2557   </td><td class="markdownTableBodyRight">2345   </td><td class="markdownTableBodyRight">2769    </td></tr>
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">88   </td><td class="markdownTableBodyRight">2557   </td><td class="markdownTableBodyRight">2345   </td><td class="markdownTableBodyRight">2769   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">723   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">83   </td><td class="markdownTableBodyRight">3051   </td><td class="markdownTableBodyRight">2815   </td><td class="markdownTableBodyRight">3286    </td></tr>
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">83   </td><td class="markdownTableBodyRight">3051   </td><td class="markdownTableBodyRight">2815   </td><td class="markdownTableBodyRight">3286   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">891   </td><td class="markdownTableBodyRight">10001    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">81   </td><td class="markdownTableBodyRight">3271   </td><td class="markdownTableBodyRight">3028   </td><td class="markdownTableBodyRight">3513   </td></tr>
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">81   </td><td class="markdownTableBodyRight">3271   </td><td class="markdownTableBodyRight">3028   </td><td class="markdownTableBodyRight">3513   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">1046   </td><td class="markdownTableBodyRight">10001   </td></tr>
 </table>
-<p>Na codificação permutação das 8 damas, ao contrário da codificação inteira, o valor da população mais eficiente é 10. O intervalo de confiança nem intersecta qualquer um dos restantes valores. Esta codificação no entanto não é tão sensivel a este parametro como a codificação inteira, mantendo no geral bons valores na eficácia e eficiência.</p>
-<p>Vamos alterar o valor de omissão para P6=10.</p>
+<p>Na codificação permutação das 8 damas, ao contrário da codificação inteira, o valor da população mais eficiente é 10. O intervalo de confiança nem intersecta qualquer um dos restantes valores. O percentil de 90% é claramente o melhor. Esta codificação no entanto não é tão sensivel a este parâmetro como a codificação inteira, mantendo no geral bons valores na eficácia e eficiência.</p>
+<p>Vamos alterar o valor por omissão para P6=10.</p>
 <h3><a class="anchor" id="autotoc_md27"></a>
 Resultados: particaocb_2</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P6(População)   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P6(População)   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">73   </td><td class="markdownTableBodyRight">5307   </td><td class="markdownTableBodyRight">4601   </td><td class="markdownTableBodyRight">6014    </td></tr>
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">73   </td><td class="markdownTableBodyRight">5307   </td><td class="markdownTableBodyRight">4601   </td><td class="markdownTableBodyRight">6014   </td><td class="markdownTableBodyRight">786   </td><td class="markdownTableBodyRight">4227   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">93   </td><td class="markdownTableBodyRight">3510   </td><td class="markdownTableBodyRight">2905   </td><td class="markdownTableBodyRight">4115    </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">93   </td><td class="markdownTableBodyRight">3510   </td><td class="markdownTableBodyRight">2905   </td><td class="markdownTableBodyRight">4115   </td><td class="markdownTableBodyRight">356   </td><td class="markdownTableBodyRight">2487   </td><td class="markdownTableBodyRight">9165    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">3186   </td><td class="markdownTableBodyRight">2648   </td><td class="markdownTableBodyRight">3723    </td></tr>
+<td class="markdownTableBodyCenter">15   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">3186   </td><td class="markdownTableBodyRight">2648   </td><td class="markdownTableBodyRight">3723   </td><td class="markdownTableBodyRight">396   </td><td class="markdownTableBodyRight">2674   </td><td class="markdownTableBodyRight">6723    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">4528   </td><td class="markdownTableBodyRight">3997   </td><td class="markdownTableBodyRight">5059    </td></tr>
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">4528   </td><td class="markdownTableBodyRight">3997   </td><td class="markdownTableBodyRight">5059   </td><td class="markdownTableBodyRight">898   </td><td class="markdownTableBodyRight">4752   </td><td class="markdownTableBodyRight">8365    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">91   </td><td class="markdownTableBodyRight">4528   </td><td class="markdownTableBodyRight">3937   </td><td class="markdownTableBodyRight">5118    </td></tr>
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">91   </td><td class="markdownTableBodyRight">4528   </td><td class="markdownTableBodyRight">3937   </td><td class="markdownTableBodyRight">5118   </td><td class="markdownTableBodyRight">1130   </td><td class="markdownTableBodyRight">4063   </td><td class="markdownTableBodyRight">9560    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">3417   </td><td class="markdownTableBodyRight">2831   </td><td class="markdownTableBodyRight">4002    </td></tr>
+<td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">3417   </td><td class="markdownTableBodyRight">2831   </td><td class="markdownTableBodyRight">4002   </td><td class="markdownTableBodyRight">442   </td><td class="markdownTableBodyRight">2514   </td><td class="markdownTableBodyRight">8439    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">86   </td><td class="markdownTableBodyRight">4433   </td><td class="markdownTableBodyRight">3792   </td><td class="markdownTableBodyRight">5075    </td></tr>
+<td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">86   </td><td class="markdownTableBodyRight">4433   </td><td class="markdownTableBodyRight">3792   </td><td class="markdownTableBodyRight">5075   </td><td class="markdownTableBodyRight">873   </td><td class="markdownTableBodyRight">3583   </td><td class="markdownTableBodyRight">10001    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">3960   </td><td class="markdownTableBodyRight">3419   </td><td class="markdownTableBodyRight">4502    </td></tr>
+<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">3960   </td><td class="markdownTableBodyRight">3419   </td><td class="markdownTableBodyRight">4502   </td><td class="markdownTableBodyRight">655   </td><td class="markdownTableBodyRight">3366   </td><td class="markdownTableBodyRight">7933    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">75   </td><td class="markdownTableBodyRight">80   </td><td class="markdownTableBodyRight">5487   </td><td class="markdownTableBodyRight">4866   </td><td class="markdownTableBodyRight">6108    </td></tr>
+<td class="markdownTableBodyCenter">75   </td><td class="markdownTableBodyRight">80   </td><td class="markdownTableBodyRight">5487   </td><td class="markdownTableBodyRight">4866   </td><td class="markdownTableBodyRight">6108   </td><td class="markdownTableBodyRight">1682   </td><td class="markdownTableBodyRight">5343   </td><td class="markdownTableBodyRight">10004    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">75   </td><td class="markdownTableBodyRight">5850   </td><td class="markdownTableBodyRight">5184   </td><td class="markdownTableBodyRight">6517    </td></tr>
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">75   </td><td class="markdownTableBodyRight">5850   </td><td class="markdownTableBodyRight">5184   </td><td class="markdownTableBodyRight">6517   </td><td class="markdownTableBodyRight">1347   </td><td class="markdownTableBodyRight">5569   </td><td class="markdownTableBodyRight">10006    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">61   </td><td class="markdownTableBodyRight">7522   </td><td class="markdownTableBodyRight">6999   </td><td class="markdownTableBodyRight">8045    </td></tr>
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">61   </td><td class="markdownTableBodyRight">7522   </td><td class="markdownTableBodyRight">6999   </td><td class="markdownTableBodyRight">8045   </td><td class="markdownTableBodyRight">3414   </td><td class="markdownTableBodyRight">8132   </td><td class="markdownTableBodyRight">10012    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">49   </td><td class="markdownTableBodyRight">7553   </td><td class="markdownTableBodyRight">6959   </td><td class="markdownTableBodyRight">8147   </td></tr>
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">49   </td><td class="markdownTableBodyRight">7553   </td><td class="markdownTableBodyRight">6959   </td><td class="markdownTableBodyRight">8147   </td><td class="markdownTableBodyRight">3073   </td><td class="markdownTableBodyRight">10001   </td><td class="markdownTableBodyRight">10023   </td></tr>
 </table>
-<p>O parametro P6(População) tem a eficácia a 100% apenas no valor de omissão 20. No entanto existem valores com melhor eficiência. Não se vê no entanto uma tendência clara, apenas uma zona que aparenta ser melhor, entre 10 e 50 elementos, em que o tempo médio é inferior a 5 segundos. Os intervalos de confiança intersectam-se quase todos. Assim, considera-se que este parametro não é crítico, e pelo menos na configuração atual dos restantes parametros não há um claro valor melhor, pelo que optou-se por manter o valor de omissão: P6=20.</p>
+<p>O parâmetro P6(População) tem a eficácia a 100% apenas no valor por omissão 20. No entanto existem valores com melhor eficiência. Não se vê no entanto uma tendência clara, apenas uma zona que aparenta ser melhor, entre 10 e 50 elementos, em que o tempo médio é inferior a 5 segundos. Os intervalos de confiança intersectam-se quase todos. Assim, considera-se que este parâmetro não é crítico, e pelo menos na configuração atual dos restantes parâmetros não há um claro valor melhor, pelo que optou-se por manter o valor por omissão: P6=20.</p>
 <h2><a class="anchor" id="autotoc_md28"></a>
 Teste 3</h2>
-<p>Vamos agora estudar a probabilidade de cruzamento e mutação, parametros P7 e P8, com os valores de omissão de 100 e 50 respetivamente. Estes dois parametros são estudados em conjunto, já que se não existir cruzamento torna-se crítica a mutação, e vice-versa. Existem estratégias que funcionam só com mutação ou só com cruzamento. Os operadores utilizados poderiam ser alvo de estudo, mas de momento vamos manter os operadores de omissão e estudar apenas a probabilidade de aplicação.</p>
+<p>Vamos agora estudar a probabilidade de cruzamento e mutação, parâmetros P7 e P8, com os valores por omissão de 100 e 50 respetivamente. Estes dois parâmetros são estudados em conjunto, já que se não existir cruzamento torna-se crítica a mutação, e vice-versa. Existem estratégias que funcionam só com mutação ou só com cruzamento. Os operadores utilizados poderiam ser alvo de estudo, mas de momento vamos manter os operadores por omissão e estudar apenas a probabilidade de aplicação.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico (P7 vs P8)</li>
 <li><b>Definição</b>:<ul>
@@ -969,7 +976,7 @@ Resultados: damasci_3</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight"><b>1332</b>   </td><td class="markdownTableBodyRight">1465   </td><td class="markdownTableBodyRight">1841   </td><td class="markdownTableBodyRight">2673   </td><td class="markdownTableBodyRight">3372   </td></tr>
 </table>
-<p>A configuração que aparenta ser a melhor, é com P7=100 e P8=0, ou seja, sem mutação. Assim o valor original de P8=50 não é o melhor para a atual configuração. Colocar este parametro a 0 reduz a diversidade, mas não elimina, atendendo a que existe um elemento estrangeiro em cada geração que constantemente introduz diversidade na população.</p>
+<p>A configuração que aparenta ser a melhor, é com P7=100 e P8=0, ou seja, sem mutação. Assim o valor original de P8=50 não é o melhor para a atual configuração. Colocar este parâmetro a 0 reduz a diversidade, mas não elimina, atendendo a que existe um elemento estrangeiro em cada geração que constantemente insere diversidade na população.</p>
 <p>Assim sendo vamos manter o valor de P7=100 e alterar P8=0.</p>
 <h3><a class="anchor" id="autotoc_md30"></a>
 Resultados: damascp_3</h3>
@@ -1011,11 +1018,11 @@ Resultados: particaocb_3</h3>
 Teste 4</h2>
 <p>Analisamos agora P9(SELECAO). Este parâmetro escolhe a estratégia de seleção de pais.</p>
 <p>Existem três valores:</p><ul>
-<li>1: Roleta (omissão)</li>
+<li>1: Roleta (valor por omissão)</li>
 <li>2: Torneio</li>
 <li>3: Uniforme</li>
 </ul>
-<p>A roleta tem um parametro, o torneio tem dois, e o uniforme não tem paramertros. Neste teste usamos os parametros internos de omissão para apurar se há diferenças significativas na estratégia de seleção dos pais. Caso existam, cada método deve ser optimizado separadamente, variando os seus parametros internos, de modo a poder comparar a melhor versão de cada uma das estratégias de seleção dos pais.</p>
+<p>A roleta tem um parâmetro, o torneio tem dois, e o uniforme não tem parâmetros. Neste teste usamos os parâmetros internos por omissão para apurar se há diferenças significativas na estratégia de seleção dos pais. Caso existam, cada método deve ser otimizado separadamente, variando os seus parâmetros internos, de modo a poder comparar a melhor versão de cada uma das estratégias de seleção dos pais.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico P9</li>
 <li><b>Definição</b>:<ul>
@@ -1153,54 +1160,54 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 Resultados: damasci_4</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P9   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P9   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:Roleta   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight"><b>1332</b>   </td><td class="markdownTableBodyRight">1220   </td><td class="markdownTableBodyRight">1443    </td></tr>
+<td class="markdownTableBodyCenter">1:Roleta   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight"><b>1332</b>   </td><td class="markdownTableBodyRight">1220   </td><td class="markdownTableBodyRight">1443   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">661   </td><td class="markdownTableBodyRight">3536    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:Torneio   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">2173   </td><td class="markdownTableBodyRight">1999   </td><td class="markdownTableBodyRight">2348    </td></tr>
+<td class="markdownTableBodyCenter">2:Torneio   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">2173   </td><td class="markdownTableBodyRight">1999   </td><td class="markdownTableBodyRight">2348   </td><td class="markdownTableBodyRight">110   </td><td class="markdownTableBodyRight">869   </td><td class="markdownTableBodyRight">6906    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3:Uniforme   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">7363   </td><td class="markdownTableBodyRight">7154   </td><td class="markdownTableBodyRight">7573   </td></tr>
+<td class="markdownTableBodyCenter">3:Uniforme   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">7363   </td><td class="markdownTableBodyRight">7154   </td><td class="markdownTableBodyRight">7573   </td><td class="markdownTableBodyRight">1123   </td><td class="markdownTableBodyRight">8705   </td><td class="markdownTableBodyRight">10000   </td></tr>
 </table>
-<p>Podemos observar que é crítica a estratégia de seleção dos pais. O método uniforme é claramente pior e não tem parametros, pelo que descartamos. Pelo intervalo de confiança, com os valores de omissão, o método roleta seria o escolhido. No entanto os métodos Roleta e Torneio têm parametros e precisam de ser explorados para identificar a melhor configuração.</p>
+<p>Podemos observar que é crítica a estratégia de seleção dos pais. O método uniforme é claramente pior e não tem parâmetros, pelo que descartamos. Pelo intervalo de confiança, com os valores por omissão, o método roleta seria o escolhido. No entanto os métodos Roleta e Torneio têm parâmetros e precisam de ser explorados para identificar a melhor configuração.</p>
 <h3><a class="anchor" id="autotoc_md34"></a>
 Resultados: damascp_4</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P9   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P9   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:Roleta   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">175   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">196    </td></tr>
+<td class="markdownTableBodyCenter">1:Roleta   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">175   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">196   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">48   </td><td class="markdownTableBodyRight">454    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:Torneio   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight"><b>115</b>   </td><td class="markdownTableBodyRight">101   </td><td class="markdownTableBodyRight">128    </td></tr>
+<td class="markdownTableBodyCenter">2:Torneio   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight"><b>115</b>   </td><td class="markdownTableBodyRight">101   </td><td class="markdownTableBodyRight">128   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">31   </td><td class="markdownTableBodyRight">307    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3:Uniforme   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">342   </td><td class="markdownTableBodyRight">301   </td><td class="markdownTableBodyRight">382   </td></tr>
+<td class="markdownTableBodyCenter">3:Uniforme   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">342   </td><td class="markdownTableBodyRight">301   </td><td class="markdownTableBodyRight">382   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">80   </td><td class="markdownTableBodyRight">1029   </td></tr>
 </table>
-<p>Podemos observar também diferenças grandes entre estratégias de seleção de pais. Descartamos a seleção uniforme, que não tem parametros e tem uma eficiência inferior. Nas restantes duas estratégias temos de identificar a melhor parametrização, para poder fazer uma escolha informada.</p>
+<p>Podemos observar também diferenças grandes entre estratégias de seleção de pais. Descartamos a seleção uniforme, que não tem parâmetros e tem uma eficiência inferior. Nas restantes duas estratégias temos de identificar a melhor parametrização, para poder fazer uma escolha informada.</p>
 <h3><a class="anchor" id="autotoc_md35"></a>
 Resultados: particaocb_4</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P9   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P9   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:Roleta   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">2742   </td><td class="markdownTableBodyRight">2239   </td><td class="markdownTableBodyRight">3245    </td></tr>
+<td class="markdownTableBodyCenter">1:Roleta   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">2742   </td><td class="markdownTableBodyRight">2239   </td><td class="markdownTableBodyRight">3245   </td><td class="markdownTableBodyRight">292   </td><td class="markdownTableBodyRight">2156   </td><td class="markdownTableBodyRight">5882    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:Torneio   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight"><b>2005</b>   </td><td class="markdownTableBodyRight">1646   </td><td class="markdownTableBodyRight">2365    </td></tr>
+<td class="markdownTableBodyCenter">2:Torneio   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight"><b>2005</b>   </td><td class="markdownTableBodyRight">1646   </td><td class="markdownTableBodyRight">2365   </td><td class="markdownTableBodyRight">241   </td><td class="markdownTableBodyRight">1548   </td><td class="markdownTableBodyRight">4343    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3:Uniforme   </td><td class="markdownTableBodyRight">89   </td><td class="markdownTableBodyRight">4589   </td><td class="markdownTableBodyRight">3987   </td><td class="markdownTableBodyRight">5192   </td></tr>
+<td class="markdownTableBodyCenter">3:Uniforme   </td><td class="markdownTableBodyRight">89   </td><td class="markdownTableBodyRight">4589   </td><td class="markdownTableBodyRight">3987   </td><td class="markdownTableBodyRight">5192   </td><td class="markdownTableBodyRight">586   </td><td class="markdownTableBodyRight">4087   </td><td class="markdownTableBodyRight">10000   </td></tr>
 </table>
-<p>Na partição observamos o mesmo que nas 8 damas em ambas as codificações, que a estratégias de seleção de pais é um passo crítico. Descartamos a seleção uniforme, que não tem parametros e tem uma eficiência inferior. Nas restantes duas estratégias temos de identificar a melhor parametrização, para poder fazer uma escolha informada.</p>
+<p>Na partição observamos o mesmo que nas 8 damas em ambas as codificações, que a estratégias de seleção de pais é um passo crítico. Descartamos a seleção uniforme, que não tem parâmetros e tem uma eficiência inferior. Nas restantes duas estratégias temos de identificar a melhor parametrização, para poder fazer uma escolha informada.</p>
 <h2><a class="anchor" id="autotoc_md36"></a>
 Teste 5</h2>
-<p>Análise dos parametros dos métodos de seleção Roleta e Torneio</p>
-<p>O método da roleta tem o parametro P10(PRESSAO) com o valor de omissão de 150. Este valor é entre 100 e 200, correspondendo a 1,00 e 2,00 respetivamente. Este método irá escolher os pais com base no seu valor, cada um ficando com uma dada probabilidade na "roleta". Valores perto de 1 dão valores quase iguais, e valores perto de 2 os melhores são muito favorecidos.</p>
+<p>Análise dos parâmetros dos métodos de seleção Roleta e Torneio</p>
+<p>O método da roleta tem o parâmetro P10(PRESSAO) com o valor por omissão de 150. Este valor é entre 100 e 200, correspondendo a 1,00 e 2,00 respetivamente. Este método irá escolher os pais com base no seu valor, cada um ficando com uma dada probabilidade na "roleta". Valores perto de 1 dão valores quase iguais, e valores perto de 2 os melhores são muito favorecidos.</p>
 <p>Vamos testar valores de 100 a 200 em intervalos de 25.</p>
 <p>O método torneio seleciona um pai vencedor de um torneio. Faz-se quantos torneios forem necessários, escolhendo membros da população aleatoriamente para entrarem no torneio.</p>
-<p>Tem dois parametros:</p><ul>
-<li>P11(TAMANHO_TORNEIO) - valor mínimo 2, podendo ir a valores altos como 100 - valor de omissão 2</li>
-<li>P12(PROB_MELHOR_TORNEIO) - probabilidade do participante com melhor valor, ganhar o torneio - valor de omissão 100%</li>
+<p>Tem dois parâmetros:</p><ul>
+<li>P11(TAMANHO_TORNEIO) - valor mínimo 2, podendo ir a valores altos como 100 - valor por omissão 2</li>
+<li>P12(PROB_MELHOR_TORNEIO) - probabilidade do participante com melhor valor, ganhar o torneio - valor por omissão 100%</li>
 </ul>
 <p>Torneios grandes favorecem a que os melhores sejam sempre escolhidos, excepto se a probabilidade do melhor ganhar o torneio for baixa.</p>
 <p>Vamos variar P11 nos valores baixos, e alguns valores altos: 2,3,4,6,10. Como a população num caso é de 10, aumentar este valor para além da população não faz muito sentido. Para a probabilidade, vamos deixar de fora o valor 0, caso contrário seria uma escolha completamente aleatória, e variar em intervalos de 25.</p>
-<p>Este teste será dividido em dois,um para cada parametro.</p>
+<p>Este teste será dividido em dois,um para cada parâmetro.</p>
 <p>Teste 5A para o método roleta:</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico P10</li>
@@ -1470,19 +1477,19 @@ Resultados: damasci_5</h3>
 <p>Resultados para roleta:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P10   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P10   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">7190   </td><td class="markdownTableBodyRight">6962   </td><td class="markdownTableBodyRight">7419    </td></tr>
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">35   </td><td class="markdownTableBodyRight">7190   </td><td class="markdownTableBodyRight">6962   </td><td class="markdownTableBodyRight">7419   </td><td class="markdownTableBodyRight">768   </td><td class="markdownTableBodyRight">9357   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">125   </td><td class="markdownTableBodyRight">79   </td><td class="markdownTableBodyRight">3867   </td><td class="markdownTableBodyRight">3627   </td><td class="markdownTableBodyRight">4106    </td></tr>
+<td class="markdownTableBodyCenter">125   </td><td class="markdownTableBodyRight">79   </td><td class="markdownTableBodyRight">3867   </td><td class="markdownTableBodyRight">3627   </td><td class="markdownTableBodyRight">4106   </td><td class="markdownTableBodyRight">136   </td><td class="markdownTableBodyRight">2120   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight">1330   </td><td class="markdownTableBodyRight">1219   </td><td class="markdownTableBodyRight">1442    </td></tr>
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight">1330   </td><td class="markdownTableBodyRight">1219   </td><td class="markdownTableBodyRight">1442   </td><td class="markdownTableBodyRight">94   </td><td class="markdownTableBodyRight">661   </td><td class="markdownTableBodyRight">3557    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">175   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight"><b>1057</b>   </td><td class="markdownTableBodyRight">972   </td><td class="markdownTableBodyRight">1141    </td></tr>
+<td class="markdownTableBodyCenter">175   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight"><b>1057</b>   </td><td class="markdownTableBodyRight">972   </td><td class="markdownTableBodyRight">1141   </td><td class="markdownTableBodyRight">74   </td><td class="markdownTableBodyRight">540   </td><td class="markdownTableBodyRight">2695    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight">1282   </td><td class="markdownTableBodyRight">1176   </td><td class="markdownTableBodyRight">1389   </td></tr>
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight">1282   </td><td class="markdownTableBodyRight">1176   </td><td class="markdownTableBodyRight">1389   </td><td class="markdownTableBodyRight">81   </td><td class="markdownTableBodyRight">699   </td><td class="markdownTableBodyRight">3109   </td></tr>
 </table>
-<p>O melhor valor para P10 na roleta é 175. O intervalo de confiança não intersecta os restantes valores, o que significa que uma valorização ainda maior dos melhores é preferivel.</p>
+<p>O melhor valor para P10 na roleta é 175. O intervalo de confiança não intersecta os restantes valores, o que significa que uma valorização ainda maior dos melhores é preferivel. O percentil de 90% é claramente inferior.</p>
 <p>Resultados para torneio:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1498,24 +1505,24 @@ Resultados: damasci_5</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">3794   </td><td class="markdownTableBodyRight">3209   </td><td class="markdownTableBodyRight">2930   </td><td class="markdownTableBodyRight">2723   </td></tr>
 </table>
-<p>A melhor configuração é com P11=3, melhorando claramente relativamente ao torneio de 2. Para valores de torneio pequenos, P12 é melhor sempre com o valor de omissão a 100%. Apenas para torneios grandes é que P12 é melhor com valores menores, mas em termos globais a melhor configuração é com P11=3 e P12=100.</p>
-<p>Conjugando a roleta com o torneio, opta-se pela roleta dado que aprensenta valores melhores, com os seguintes parametros: P9=1 P10=175.</p>
+<p>A melhor configuração é com P11=3, melhorando claramente relativamente ao torneio de 2. Para valores de torneio pequenos, P12 é melhor sempre com o valor por omissão a 100%. Apenas para torneios grandes é que P12 é melhor com valores menores, mas em termos globais a melhor configuração é com P11=3 e P12=100.</p>
+<p>Conjugando a roleta com o torneio, opta-se pela roleta dado que aprensenta valores melhores, com os seguintes parâmetros: P9=1 P10=175.</p>
 <h3><a class="anchor" id="autotoc_md38"></a>
 Resultados: damascp_5</h3>
 <p>Resultados para roleta:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P10   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P10   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">379   </td><td class="markdownTableBodyRight">328   </td><td class="markdownTableBodyRight">430    </td></tr>
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">379   </td><td class="markdownTableBodyRight">328   </td><td class="markdownTableBodyRight">430   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">85   </td><td class="markdownTableBodyRight">974    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">125   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">228   </td><td class="markdownTableBodyRight">202   </td><td class="markdownTableBodyRight">254    </td></tr>
+<td class="markdownTableBodyCenter">125   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">228   </td><td class="markdownTableBodyRight">202   </td><td class="markdownTableBodyRight">254   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">71   </td><td class="markdownTableBodyRight">658    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">175   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">196    </td></tr>
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">175   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">196   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">48   </td><td class="markdownTableBodyRight">452    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">175   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">138   </td><td class="markdownTableBodyRight">123   </td><td class="markdownTableBodyRight">154    </td></tr>
+<td class="markdownTableBodyCenter">175   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">138   </td><td class="markdownTableBodyRight">123   </td><td class="markdownTableBodyRight">154   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">36   </td><td class="markdownTableBodyRight">386    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight"><b>101</b>   </td><td class="markdownTableBodyRight">90   </td><td class="markdownTableBodyRight">112   </td></tr>
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight"><b>101</b>   </td><td class="markdownTableBodyRight">90   </td><td class="markdownTableBodyRight">112   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">31   </td><td class="markdownTableBodyRight">274   </td></tr>
 </table>
 <p>Com a estratégia de mutação a 100%, o melhor valor para P10 na roleta é claramente o 200, dando importância máxima aos melhores. O intervalo de confiança não intersecta os restantes valores.</p>
 <p>Resultados para o torneio:</p>
@@ -1534,23 +1541,23 @@ Resultados: damascp_5</h3>
 <td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight"><b>41</b>   </td><td class="markdownTableBodyRight">45   </td><td class="markdownTableBodyRight">48   </td><td class="markdownTableBodyRight">54   </td></tr>
 </table>
 <p>Estes resultados voltam a surpreender ou talvez não, atendendo à estratégia da mutação a 100%. Um torneio grande com probabilidade do melhor ganhar leva a que quase sempre o melhor seja escolhido.</p>
-<p>Entre a roleta e o torneio, continua o torneio nesta nova parametrização a ser claramente melhor. Assim sendo escolhe-se o torneio com os seguintes parametros: P9=2 P11=10 P12=100</p>
+<p>Entre a roleta e o torneio, continua o torneio nesta nova parametrização a ser claramente melhor. Assim sendo escolhe-se o torneio com os seguintes parâmetros: P9=2 P11=10 P12=100</p>
 <h3><a class="anchor" id="autotoc_md39"></a>
 Resultados: particaocb_5</h3>
 <p>Resultados para roleta:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P10   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P10   </th><th class="markdownTableHeadRight">Eficácia   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">81   </td><td class="markdownTableBodyRight">5045   </td><td class="markdownTableBodyRight">4359   </td><td class="markdownTableBodyRight">5730    </td></tr>
+<td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyRight">81   </td><td class="markdownTableBodyRight">5045   </td><td class="markdownTableBodyRight">4359   </td><td class="markdownTableBodyRight">5730   </td><td class="markdownTableBodyRight">730   </td><td class="markdownTableBodyRight">4521   </td><td class="markdownTableBodyRight">10001    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">125   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">3195   </td><td class="markdownTableBodyRight">2614   </td><td class="markdownTableBodyRight">3777    </td></tr>
+<td class="markdownTableBodyCenter">125   </td><td class="markdownTableBodyRight">92   </td><td class="markdownTableBodyRight">3195   </td><td class="markdownTableBodyRight">2614   </td><td class="markdownTableBodyRight">3777   </td><td class="markdownTableBodyRight">437   </td><td class="markdownTableBodyRight">2064   </td><td class="markdownTableBodyRight">8099    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">2741   </td><td class="markdownTableBodyRight">2238   </td><td class="markdownTableBodyRight">3244    </td></tr>
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyRight">95   </td><td class="markdownTableBodyRight">2741   </td><td class="markdownTableBodyRight">2238   </td><td class="markdownTableBodyRight">3244   </td><td class="markdownTableBodyRight">291   </td><td class="markdownTableBodyRight">2155   </td><td class="markdownTableBodyRight">5882    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">175   </td><td class="markdownTableBodyRight">96   </td><td class="markdownTableBodyRight">2519   </td><td class="markdownTableBodyRight">2030   </td><td class="markdownTableBodyRight">3009    </td></tr>
+<td class="markdownTableBodyCenter">175   </td><td class="markdownTableBodyRight">96   </td><td class="markdownTableBodyRight">2519   </td><td class="markdownTableBodyRight">2030   </td><td class="markdownTableBodyRight">3009   </td><td class="markdownTableBodyRight">230   </td><td class="markdownTableBodyRight">1727   </td><td class="markdownTableBodyRight">6060    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight"><b>2354</b>   </td><td class="markdownTableBodyRight">1922   </td><td class="markdownTableBodyRight">2785   </td></tr>
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyRight">99   </td><td class="markdownTableBodyRight"><b>2354</b>   </td><td class="markdownTableBodyRight">1922   </td><td class="markdownTableBodyRight">2785   </td><td class="markdownTableBodyRight">416   </td><td class="markdownTableBodyRight">1580   </td><td class="markdownTableBodyRight">5303   </td></tr>
 </table>
 <p>Temos neste caso o melhor valor para P10 também no 200, provavelmente pela mesma razão de ser utilizada a estratégia de mutação a 100%. No entanto aqui o intervalo de confiança do melhor valor intersecta vários outros, pelo que não há grande certeza.</p>
 <p>Resultados para o torneio:</p>
@@ -1569,18 +1576,18 @@ Resultados: particaocb_5</h3>
 <td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">4825   </td><td class="markdownTableBodyRight">3989   </td><td class="markdownTableBodyRight">3731   </td><td class="markdownTableBodyRight">4018   </td></tr>
 </table>
 <p>Temos aqui um novo ganho relativamente à parametrização de base. O torneio de tamanho 4 reduz o tempo de forma visivel, relativamente ao torneio de tamanho 2. A probabilidade de escolher o melhor mantém-se como melhor opção o 100%.</p>
-<p>Assim sendo, entre a roleta e o torneio, é preferivel o torneio, com os parametros: P9=2 P11=4 P12=100</p>
+<p>Assim sendo, entre a roleta e o torneio, é preferivel o torneio, com os parâmetros: P9=2 P11=4 P12=100</p>
 <h2><a class="anchor" id="autotoc_md40"></a>
 Teste 6</h2>
-<p>Passamos para a fase da sobrevivência, em que o parametro base é P13. Existem 3 valores possíveis:</p><ul>
-<li>1: Idade (valor de omissão)</li>
+<p>Passamos para a fase da sobrevivência, em que o parâmetro base é P13. Existem 3 valores possíveis:</p><ul>
+<li>1: Idade (valor por omissão)</li>
 <li>2: Substitui piores</li>
 <li>3: round-robin</li>
 </ul>
-<p>Este parametro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo valor de omissão é 100%. Neste caso os descendentes são iguais à população, pelo que no método da idade são todos substituídos.</p>
+<p>Este parâmetro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo valor por omissão é 100%. Neste caso os descendentes são iguais à população, pelo que no método da idade são todos substituídos.</p>
 <p>Nos restantes dois métodos, qualquer que seja a percentagem, os decendentes são adicionados à população e no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elemento com Q outros. Os que perderem mais vezes, são removidos.</p>
-<p>O método round-robin tem portanto um parametro Q, que é o número de torneios: P15(Q_ROUND_ROBIN). Tem o valor de omissão a 3, mas pode ser desde 2 até um valor alto como 100, mas não fará sentido ser superior à população.</p>
-<p>Vamos para já deixar este valor de omissão, e fazer um teste com P13 e P14, para apurar se a estratégia de sobrevivência é muito relevante ou não, e se a percentagem de descendentes é ou não relevante.</p>
+<p>O método round-robin tem portanto um parâmetro Q, que é o número de torneios: P15(Q_ROUND_ROBIN). Tem o valor por omissão a 3, mas pode ser desde 2 até um valor alto como 100, mas não fará sentido ser superior à população.</p>
+<p>Vamos para já deixar este valor por omissão, e fazer um teste com P13 e P14, para apurar se a estratégia de sobrevivência é muito relevante ou não, e se a percentagem de descendentes é ou não relevante.</p>
 <p>Vamos variar P14 de 0 a 100 em passos de 25, tal como temos feito para as restantes percentagens. Quando P14=0 significa que haverá apenas um só descendente (e não 0) em cada geração.</p>
 <p>Vamos ainda alterar o conjunto de teste das 8 damas, atendendo a que os tempos de resolução são demasiado baixos para a codificação de permutação, com tempos médios a baixo de 0,05 segundos. Escolhemos as instâncias seguintes, de 20 a 29.</p>
 <ul>
@@ -1811,7 +1818,7 @@ Resultados: damascp_6</h3>
 <td class="markdownTableBodyCenter">3:round-robin   </td><td class="markdownTableBodyRight">4385   </td><td class="markdownTableBodyRight">2845   </td><td class="markdownTableBodyRight">1980   </td><td class="markdownTableBodyRight">1662   </td><td class="markdownTableBodyRight"><b>1440</b>   </td></tr>
 </table>
 <p>O método round-robin ficou com resultados melhores com P14=100. A estratégia de substituir os piores também melhora relativamente à idade.</p>
-<p>É portanto necessário um segundo teste para optimizar o parametro Q do round-robin.</p>
+<p>É portanto necessário um segundo teste para otimizar o parâmetro Q do round-robin.</p>
 <h3><a class="anchor" id="autotoc_md43"></a>
 Resultados: particaocb_6</h3>
 <table class="markdownTable">
@@ -1827,7 +1834,7 @@ Resultados: particaocb_6</h3>
 <p>Neste problema são claramente prejudiciais outras opções que não a parametrização base.</p>
 <h3><a class="anchor" id="autotoc_md44"></a>
 Teste - damascp_6B</h3>
-<p>Temos de investigar apenas para as damas com a codificação de permutação o parametro P15. Vamos variar da mesma forma que o tamanho do torneio: 2,3,4,6,10.</p>
+<p>Temos de investigar apenas para as damas com a codificação de permutação o parâmetro P15. Vamos variar da mesma forma que o tamanho do torneio: 2,3,4,6,10.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico P15</li>
 <li><b>Definição</b>:<ul>
@@ -1905,22 +1912,22 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 Resultados: damascp_6B</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P15   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P15   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight"><b>1300</b>   </td><td class="markdownTableBodyRight">1182   </td><td class="markdownTableBodyRight">1419    </td></tr>
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight"><b>1300</b>   </td><td class="markdownTableBodyRight">1182   </td><td class="markdownTableBodyRight">1419   </td><td class="markdownTableBodyRight">61   </td><td class="markdownTableBodyRight">535   </td><td class="markdownTableBodyRight">3756    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">1441   </td><td class="markdownTableBodyRight">1304   </td><td class="markdownTableBodyRight">1579    </td></tr>
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyRight">1441   </td><td class="markdownTableBodyRight">1304   </td><td class="markdownTableBodyRight">1579   </td><td class="markdownTableBodyRight">53   </td><td class="markdownTableBodyRight">521   </td><td class="markdownTableBodyRight">4210    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">1544   </td><td class="markdownTableBodyRight">1396   </td><td class="markdownTableBodyRight">1691    </td></tr>
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">1544   </td><td class="markdownTableBodyRight">1396   </td><td class="markdownTableBodyRight">1691   </td><td class="markdownTableBodyRight">57   </td><td class="markdownTableBodyRight">561   </td><td class="markdownTableBodyRight">4350    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">1575   </td><td class="markdownTableBodyRight">1427   </td><td class="markdownTableBodyRight">1724    </td></tr>
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyRight">1575   </td><td class="markdownTableBodyRight">1427   </td><td class="markdownTableBodyRight">1724   </td><td class="markdownTableBodyRight">58   </td><td class="markdownTableBodyRight">547   </td><td class="markdownTableBodyRight">4707    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">1552   </td><td class="markdownTableBodyRight">1407   </td><td class="markdownTableBodyRight">1697   </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">1552   </td><td class="markdownTableBodyRight">1407   </td><td class="markdownTableBodyRight">1697   </td><td class="markdownTableBodyRight">58   </td><td class="markdownTableBodyRight">640   </td><td class="markdownTableBodyRight">4316   </td></tr>
 </table>
-<p>O melhor registo é com Q igual a 2, embora o intervalo de confiança intersecte o valor seguinte. Assim sendo vamos alterar o valor para P15=2, ficando os restantes dois valores com P13=3 P14=100.</p>
+<p>O melhor registo é com Q igual a 2, embora o intervalo de confiança intersecte o valor seguinte. Temos também o percentil de 90% o melhor, embora não por muito. Assim sendo vamos alterar o valor para P15=2, ficando os restantes dois valores com P13=3 P14=100.</p>
 <h2><a class="anchor" id="autotoc_md46"></a>
 Teste 7</h2>
-<p>Vamos agora ver a influência do P6 elitísmo e P17 imigrantes, cujo valor de omissão é 1. O elitísmo garante que se existirem K elementos da população antiga melhores que na nova população, esses elementos mantêm-se na nova população. Os imigrantes garantem um número de elementos estrangeiros na população, que são gerados aleatoriamente.</p>
+<p>Vamos agora ver a influência do P6 elitísmo e P17 imigrantes, cujo valor por omissão é 1. O elitísmo garante que se existirem K elementos da população antiga melhores que na nova população, esses elementos mantêm-se na nova população. Os imigrantes garantem um número de elementos estrangeiros na população, que são gerados aleatoriamente.</p>
 <p>Vamos ver possibilidades de números pequenos, já que valores demasiado altos bloqueiam a evolução: 0:3</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico P16 vs P17</li>
@@ -2154,10 +2161,10 @@ Teste 8</h2>
 <p>Vamos agora estudar o impacto da estratégia da diversidade. O P18(DIVERSIDADE) tem 3 possibilidades:</p><ul>
 <li>1: Nenhuma</li>
 <li>2: Avaliação partilhada</li>
-<li>3: Limpeza (omissão)</li>
+<li>3: Limpeza (valor por omissão)</li>
 </ul>
 <p>As opções 2 e 3 utilizam também P19(DIST_MINIMA), P24(TIPO_DISTANCIA).</p>
-<p>Vamos neste teste estudar o impacto da troca destas estratégias com os valores de omissão para as distâncias, de modo a identificar a sua relevância.</p>
+<p>Vamos neste teste estudar o impacto da troca destas estratégias com os valores por omissão para as distâncias, de modo a identificar a sua relevância.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico P18</li>
 <li><b>Definição</b>:<ul>
@@ -2305,55 +2312,55 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 Resultados: damasci_8</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P18   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P18   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:Nenhuma   </td><td class="markdownTableBodyRight">9507   </td><td class="markdownTableBodyRight">9459   </td><td class="markdownTableBodyRight">9554    </td></tr>
+<td class="markdownTableBodyCenter">1:Nenhuma   </td><td class="markdownTableBodyRight">9507   </td><td class="markdownTableBodyRight">9459   </td><td class="markdownTableBodyRight">9554   </td><td class="markdownTableBodyRight">8255   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:Avaliação partilhada   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000    </td></tr>
+<td class="markdownTableBodyCenter">2:Avaliação partilhada   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3:Limpeza   </td><td class="markdownTableBodyRight"><b>5307</b>   </td><td class="markdownTableBodyRight">5103   </td><td class="markdownTableBodyRight">5511   </td></tr>
+<td class="markdownTableBodyCenter">3:Limpeza   </td><td class="markdownTableBodyRight"><b>5307</b>   </td><td class="markdownTableBodyRight">5103   </td><td class="markdownTableBodyRight">5511   </td><td class="markdownTableBodyRight">1269   </td><td class="markdownTableBodyRight">4750   </td><td class="markdownTableBodyRight">10000   </td></tr>
 </table>
 <p>A estratégia de diversidade de avaliação partihada, não é compatível com as restantes configurações. Podemos ver também que a não ulização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.</p>
 <h3><a class="anchor" id="autotoc_md52"></a>
 Resultados: damascp_8</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P18   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P18   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:Nenhuma   </td><td class="markdownTableBodyRight">7107   </td><td class="markdownTableBodyRight">6870   </td><td class="markdownTableBodyRight">7344    </td></tr>
+<td class="markdownTableBodyCenter">1:Nenhuma   </td><td class="markdownTableBodyRight">7107   </td><td class="markdownTableBodyRight">6870   </td><td class="markdownTableBodyRight">7344   </td><td class="markdownTableBodyRight">164   </td><td class="markdownTableBodyRight">8869   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:Avaliação partilhada   </td><td class="markdownTableBodyRight">4991   </td><td class="markdownTableBodyRight">4733   </td><td class="markdownTableBodyRight">5249    </td></tr>
+<td class="markdownTableBodyCenter">2:Avaliação partilhada   </td><td class="markdownTableBodyRight">4991   </td><td class="markdownTableBodyRight">4733   </td><td class="markdownTableBodyRight">5249   </td><td class="markdownTableBodyRight">274   </td><td class="markdownTableBodyRight">3657   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3:Limpeza   </td><td class="markdownTableBodyRight"><b>412</b>   </td><td class="markdownTableBodyRight">379   </td><td class="markdownTableBodyRight">445   </td></tr>
+<td class="markdownTableBodyCenter">3:Limpeza   </td><td class="markdownTableBodyRight"><b>412</b>   </td><td class="markdownTableBodyRight">379   </td><td class="markdownTableBodyRight">445   </td><td class="markdownTableBodyRight">46   </td><td class="markdownTableBodyRight">225   </td><td class="markdownTableBodyRight">1019   </td></tr>
 </table>
-<p>Podemos ver neste caso que a avaliação partilhada tem algum impacto positivo, embora distante da estratégia de limpeza que é o valor de omissão.</p>
+<p>Podemos ver neste caso que a avaliação partilhada tem algum impacto positivo, embora distante da estratégia de limpeza que é o valor por omissão. Mesmo o percentil de 90% tem um valor relativamente baixo de 1 segundo.</p>
 <h3><a class="anchor" id="autotoc_md53"></a>
 Resultados: particaocb_8</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P18   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P18   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:Nenhuma   </td><td class="markdownTableBodyRight"><b>273</b>   </td><td class="markdownTableBodyRight">219   </td><td class="markdownTableBodyRight">327    </td></tr>
+<td class="markdownTableBodyCenter">1:Nenhuma   </td><td class="markdownTableBodyRight"><b>273</b>   </td><td class="markdownTableBodyRight">219   </td><td class="markdownTableBodyRight">327   </td><td class="markdownTableBodyRight">30   </td><td class="markdownTableBodyRight">172   </td><td class="markdownTableBodyRight">613    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:Avaliação partilhada   </td><td class="markdownTableBodyRight">2507   </td><td class="markdownTableBodyRight">2036   </td><td class="markdownTableBodyRight">2979    </td></tr>
+<td class="markdownTableBodyCenter">2:Avaliação partilhada   </td><td class="markdownTableBodyRight">2507   </td><td class="markdownTableBodyRight">2036   </td><td class="markdownTableBodyRight">2979   </td><td class="markdownTableBodyRight">281   </td><td class="markdownTableBodyRight">1595   </td><td class="markdownTableBodyRight">5819    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3:Limpeza   </td><td class="markdownTableBodyRight">1862   </td><td class="markdownTableBodyRight">1460   </td><td class="markdownTableBodyRight">2263   </td></tr>
+<td class="markdownTableBodyCenter">3:Limpeza   </td><td class="markdownTableBodyRight">1862   </td><td class="markdownTableBodyRight">1460   </td><td class="markdownTableBodyRight">2263   </td><td class="markdownTableBodyRight">293   </td><td class="markdownTableBodyRight">1354   </td><td class="markdownTableBodyRight">4196   </td></tr>
 </table>
-<p>Estes resultados mostram o surpreendente registo de não utilizar estratégia de limpeza para este problema, melhora consideravelmente a eficiência. Concluímos que esta estratégia estava a ser prejudicial para este problema. Assim, alteramos o valor de P18=1.</p>
+<p>Estes resultados mostram o surpreendente registo de não utilizar estratégia de limpeza para este problema, melhora consideravelmente a eficiência, e com o percentil de 90% a baixo de 1 segundo. Concluímos que esta estratégia estava a ser prejudicial para este problema. Assim, alteramos o valor de P18=1.</p>
 <h2><a class="anchor" id="autotoc_md54"></a>
 Teste 9</h2>
 <p>Vamos agora estudar o impacto da distância mínima P19 e tipo de distância P24, apenas para as duas primeiras implementações, atendendo a que na terceira a não utilização de estratégia de limpeza revelou-se bastante melhor, a qual não utiliza distâncias.</p>
 <p>Para a codificação inteira temos os seguintes tipos de distâncias:</p><ul>
-<li>1: Hamming (omissão)</li>
+<li>1: Hamming (valor por omissão)</li>
 <li>2: Euclidiana</li>
 <li>3: Manhattan</li>
 </ul>
 <p>Para a codificação permutação temos as seguintes distâncias:</p><ul>
-<li>1: Hamming (omissão)</li>
+<li>1: Hamming (valor por omissão)</li>
 <li>2: Kendall tau</li>
 <li>3: Spearman footrule</li>
 </ul>
-<p>O parametro P19 vamos variar em valores pequenos e alguns grandes, já que depende da medida de distãncia: 0,1,2,4,8</p>
+<p>O parâmetro P19 vamos variar em valores pequenos e alguns grandes, já que depende da medida de distãncia: 0,1,2,4,8</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico P19 vs P24</li>
 <li><b>Definição</b>:<ul>
@@ -2526,7 +2533,7 @@ Resultados: damasci_9</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">5714   </td><td class="markdownTableBodyRight">8855   </td></tr>
 </table>
-<p>O valor de omissão, com a distância mínima a 0 e utilizar a distância mais básica, a Hamming, é a que dá melhores resultados. Os restantes tipos de distâncias são também competitivos, e nesse caso a utilização de uma distância mínima superior a 0 pode ser uma alternativa. Mantemos os valores de omissão.</p>
+<p>O valor por omissão, com a distância mínima a 0 e utilizar a distância mais básica, a Hamming, é a que dá melhores resultados. Os restantes tipos de distâncias são também competitivos, e nesse caso a utilização de uma distância mínima superior a 0 pode ser uma alternativa. Mantemos os valores por omissão.</p>
 <h3><a class="anchor" id="autotoc_md56"></a>
 Resultados: damascp_9</h3>
 <table class="markdownTable">
@@ -2543,32 +2550,32 @@ Resultados: damascp_9</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">7335   </td><td class="markdownTableBodyRight">8948   </td><td class="markdownTableBodyRight">5300   </td></tr>
 </table>
-<p>Na codificação de permutação aparenta não existir grande vantagem em alterar o tipo de distância. A distância mínima 1 pode ser uma alternativa, mas não existindo vantagem clara, optamos por manter os valores de omissão.</p>
+<p>Na codificação de permutação aparenta não existir grande vantagem em alterar o tipo de distância. A distância mínima 1 pode ser uma alternativa, mas não existindo vantagem clara, optamos por manter os valores por omissão.</p>
 <h2><a class="anchor" id="autotoc_md57"></a>
 Teste 10</h2>
 <p>Neste teste vamos ver se os tipos de operadores utilizados têm impacto no resultado.</p>
-<p>Parametro P20(TIPO_CRUZAR): (apenas em CI que utiliza cruzamento)</p><ul>
+<p>Parâmetro P20(TIPO_CRUZAR): (apenas em CI que utiliza cruzamento)</p><ul>
 <li>0: uniforme</li>
-<li>1: 1-ponto (omissão)</li>
+<li>1: 1-ponto (valor por omissão)</li>
 <li>2: 2-pontos</li>
 <li>...</li>
 <li>10: 10-pontos</li>
 </ul>
 <p>Vamos testar apenas alguns valores, já que se utilizar demasiados pontos acabará por ser igual ao operador uniforme: P20=0,1,2,3,4</p>
-<p>Parametro P21(TIPO_MUTAR): (apenas em CP e CB que utilizam mutação)</p><ul>
+<p>Parâmetro P21(TIPO_MUTAR): (apenas em CP e CB que utilizam mutação)</p><ul>
 <li>0 - aplica um vizinho aleatório (codificação CP e CB)</li>
 <li>1 a 100 - probabilidade de mutação para cada bit (codificação CB)</li>
 </ul>
-<p>Parametro P22(TIPO_VIZINHO): (codificação CP, que utiliza a mutação)</p><ul>
-<li>1: inserir (omissão)</li>
+<p>Parâmetro P22(TIPO_VIZINHO): (codificação CP, que utiliza a mutação)</p><ul>
+<li>1: inserir (valor por omissão)</li>
 <li>2: trocaPar</li>
 <li>3: inverterSegmento</li>
 </ul>
-<p>Parametro P22(TIPO_VIZINHO): (codificação CB)</p><ul>
+<p>Parâmetro P22(TIPO_VIZINHO): (codificação CB)</p><ul>
 <li>1 a 1000 - troca um segmento de N bit (N=1 troca um bit de cada vez)</li>
 </ul>
-<p>Parametro P23(LIMITE_VIZINHOS):</p><ul>
-<li>0: não há limite (omissão)</li>
+<p>Parâmetro P23(LIMITE_VIZINHOS):</p><ul>
+<li>0: não há limite (valor por omissão)</li>
 <li>1 a 1000: limita a distância entre pares (para existirem menos vizinhos)</li>
 </ul>
 <p>Para CP, atendendo a que P21=0 temos P22=1:3 e podemos analisar o impacto do limite dos vizinhos com P23=0,1,2,4,8 Para CB, há dois modos, mutar com determinada probabilidade cada bit, ou aplicar um vizinho que troca um segmento de N bits. Vamos explorar ambas as possibilidades:</p><ul>
@@ -2757,19 +2764,19 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 Resultados: damasci_10</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P20(TIPO_CRUZAR)   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P20(TIPO_CRUZAR)   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">0:uniforme   </td><td class="markdownTableBodyRight"><b>2224</b>   </td><td class="markdownTableBodyRight">2105   </td><td class="markdownTableBodyRight">2343    </td></tr>
+<td class="markdownTableBodyCenter">0:uniforme   </td><td class="markdownTableBodyRight"><b>2224</b>   </td><td class="markdownTableBodyRight">2105   </td><td class="markdownTableBodyRight">2343   </td><td class="markdownTableBodyRight">443   </td><td class="markdownTableBodyRight">1626   </td><td class="markdownTableBodyRight">4791    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">1:1-ponto   </td><td class="markdownTableBodyRight">5309   </td><td class="markdownTableBodyRight">5104   </td><td class="markdownTableBodyRight">5513    </td></tr>
+<td class="markdownTableBodyCenter">1:1-ponto   </td><td class="markdownTableBodyRight">5309   </td><td class="markdownTableBodyRight">5104   </td><td class="markdownTableBodyRight">5513   </td><td class="markdownTableBodyRight">1264   </td><td class="markdownTableBodyRight">4778   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">2:2-pontos   </td><td class="markdownTableBodyRight">3617   </td><td class="markdownTableBodyRight">3443   </td><td class="markdownTableBodyRight">3791    </td></tr>
+<td class="markdownTableBodyCenter">2:2-pontos   </td><td class="markdownTableBodyRight">3617   </td><td class="markdownTableBodyRight">3443   </td><td class="markdownTableBodyRight">3791   </td><td class="markdownTableBodyRight">688   </td><td class="markdownTableBodyRight">2826   </td><td class="markdownTableBodyRight">8168    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">3:3-pontos   </td><td class="markdownTableBodyRight">2988   </td><td class="markdownTableBodyRight">2832   </td><td class="markdownTableBodyRight">3144    </td></tr>
+<td class="markdownTableBodyCenter">3:3-pontos   </td><td class="markdownTableBodyRight">2988   </td><td class="markdownTableBodyRight">2832   </td><td class="markdownTableBodyRight">3144   </td><td class="markdownTableBodyRight">581   </td><td class="markdownTableBodyRight">2209   </td><td class="markdownTableBodyRight">6716    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">4:4-pontos   </td><td class="markdownTableBodyRight">2617   </td><td class="markdownTableBodyRight">2479   </td><td class="markdownTableBodyRight">2756   </td></tr>
+<td class="markdownTableBodyCenter">4:4-pontos   </td><td class="markdownTableBodyRight">2617   </td><td class="markdownTableBodyRight">2479   </td><td class="markdownTableBodyRight">2756   </td><td class="markdownTableBodyRight">506   </td><td class="markdownTableBodyRight">1912   </td><td class="markdownTableBodyRight">5724   </td></tr>
 </table>
-<p>Este último teste é identificado uma grande melhoria, o operador de cruzamento uniforome tem clara vantagem sobre o operador de cruzamento 1-ponto, que era o valor de omissão. Este operador é até a pior opção entre as possíveis. Aparenta existir vantagem por fazer operadores com muitos pontos, e com este valor muito grande acaba por ser igual ao operador uniforme. Vamos portanto alterar P20=0.</p>
+<p>Este último teste é identificado uma grande melhoria, o operador de cruzamento uniforome tem clara vantagem sobre o operador de cruzamento 1-ponto, que era o valor por omissão. Este operador é até a pior opção entre as possíveis. Aparenta existir vantagem por fazer operadores com muitos pontos, e com este valor muito grande acaba por ser igual ao operador uniforme. Vamos portanto alterar P20=0.</p>
 <h3><a class="anchor" id="autotoc_md59"></a>
 Resultados: damascp_10</h3>
 <table class="markdownTable">
@@ -2786,38 +2793,38 @@ Resultados: damascp_10</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">350   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">1122   </td></tr>
 </table>
-<p>Pudemos observar neste último teste um grande ganho no operador, mais de uma ordem de grandeza considerando o limimite de vizinhança 0 (inativo). Ativando o limite de vizinhança, se muito reduzido degrada, mas a partir de certo ponto melhora. Vamos assim manter P23=0 e alterar P22=2. Estes resultados baixam tanto o tempo médio de resolução que para continuar a analisar mais parametros, tinhamos de alterar o conjunto das instâncias de teste.</p>
+<p>Pudemos observar neste último teste um grande ganho no operador, mais de uma ordem de grandeza considerando o limimite de vizinhança 0 (inativo). Ativando o limite de vizinhança, se muito reduzido degrada, mas a partir de certo ponto melhora. Vamos assim manter P23=0 e alterar P22=2. Estes resultados baixam tanto o tempo médio de resolução que para continuar a analisar mais parâmetros, tinhamos de alterar o conjunto das instâncias de teste.</p>
 <h3><a class="anchor" id="autotoc_md60"></a>
 Resultados: particaocb_10</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P22   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P22   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">274   </td><td class="markdownTableBodyRight">220   </td><td class="markdownTableBodyRight">328    </td></tr>
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight">274   </td><td class="markdownTableBodyRight">220   </td><td class="markdownTableBodyRight">328   </td><td class="markdownTableBodyRight">30   </td><td class="markdownTableBodyRight">173   </td><td class="markdownTableBodyRight">615    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">18    </td></tr>
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">27    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight"><b>13</b>   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">14    </td></tr>
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight"><b>13</b>   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyRight">21    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">17   </td></tr>
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">25   </td></tr>
 </table>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P21   </th><th class="markdownTableHeadRight">Eficiência   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup    </th></tr>
+<th class="markdownTableHeadCenter">P21   </th><th class="markdownTableHeadRight">Eficiência (média)   </th><th class="markdownTableHeadRight">ICinf   </th><th class="markdownTableHeadRight">ICsup   </th><th class="markdownTableHeadRight">P10   </th><th class="markdownTableHeadRight">Med   </th><th class="markdownTableHeadRight">P90    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight"><b>2198</b>   </td><td class="markdownTableBodyRight">1837   </td><td class="markdownTableBodyRight">2559    </td></tr>
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyRight"><b>2198</b>   </td><td class="markdownTableBodyRight">1837   </td><td class="markdownTableBodyRight">2559   </td><td class="markdownTableBodyRight">336   </td><td class="markdownTableBodyRight">1867   </td><td class="markdownTableBodyRight">4469    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">3779   </td><td class="markdownTableBodyRight">3155   </td><td class="markdownTableBodyRight">4403    </td></tr>
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">3779   </td><td class="markdownTableBodyRight">3155   </td><td class="markdownTableBodyRight">4403   </td><td class="markdownTableBodyRight">490   </td><td class="markdownTableBodyRight">2816   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">6185   </td><td class="markdownTableBodyRight">5496   </td><td class="markdownTableBodyRight">6873    </td></tr>
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyRight">6185   </td><td class="markdownTableBodyRight">5496   </td><td class="markdownTableBodyRight">6873   </td><td class="markdownTableBodyRight">1306   </td><td class="markdownTableBodyRight">6507   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">8043   </td><td class="markdownTableBodyRight">7460   </td><td class="markdownTableBodyRight">8626    </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyRight">8043   </td><td class="markdownTableBodyRight">7460   </td><td class="markdownTableBodyRight">8626   </td><td class="markdownTableBodyRight">3217   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">8255   </td><td class="markdownTableBodyRight">7657   </td><td class="markdownTableBodyRight">8854    </td></tr>
+<td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyRight">8255   </td><td class="markdownTableBodyRight">7657   </td><td class="markdownTableBodyRight">8854   </td><td class="markdownTableBodyRight">2079   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10001    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">8825   </td><td class="markdownTableBodyRight">8329   </td><td class="markdownTableBodyRight">9321   </td></tr>
+<td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">8825   </td><td class="markdownTableBodyRight">8329   </td><td class="markdownTableBodyRight">9321   </td><td class="markdownTableBodyRight">3876   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10001   </td></tr>
 </table>
-<p>Estes resolutados até aparentam ser de problemas distintos ou indicadores distintos. Mas a diferença é a que a mutação utiliza um tipo vizinho P22 no primeiro caso, em que um segmento de N bits é trocado. Esta mutação dá clara vantagem, mais de uma ordem de grandeza, relativamente à alternativa com P21 de alterar a probabilidade de mutação de cada bit. Mesmo na melhor alternativa, o anterior valor de omissão com P22=1 revela-se pouco eficiente quando comparado com P22=4, baixando o tempo médio de resolução para 13 miléssimas de segundo.</p>
+<p>Estes resolutados até aparentam ser de problemas distintos ou indicadores distintos. Mas a diferença é a que a mutação utiliza um tipo vizinho P22 no primeiro caso, em que um segmento de N bits é trocado. Esta mutação dá clara vantagem, mais de uma ordem de grandeza, relativamente à alternativa com P21 de alterar a probabilidade de mutação de cada bit. Mesmo na melhor alternativa, o anterior valor por omissão com P22=1 revela-se pouco eficiente quando comparado com P22=4, baixando o tempo médio de resolução para 13 miléssimas de segundo.</p>
 <h2><a class="anchor" id="autotoc_md61"></a>
 Teste 11</h2>
 <p>Vamos fazer agora um teste final idêntico ao teste 1 mas com a parametrização obtida, de modo a quantificar o ganho no conjunto completo de instâncias.</p>
@@ -3281,8 +3288,8 @@ Resultados: damasci_11</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadRight">Eficácia<br  />
-base   </th><th class="markdownTableHeadRight">optimizado   </th><th class="markdownTableHeadRight">Eficiência<br  />
-base   </th><th class="markdownTableHeadRight">optimizado    </th></tr>
+base   </th><th class="markdownTableHeadRight">otimizado   </th><th class="markdownTableHeadRight">Eficiência<br  />
+base   </th><th class="markdownTableHeadRight">otimizado    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowEven">
@@ -3360,14 +3367,14 @@ base   </th><th class="markdownTableHeadRight">optimizado    </th></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">49   </td><td class="markdownTableBodyRight">93   </td><td class="markdownTableBodyRight">5829   </td><td class="markdownTableBodyRight">2469   </td></tr>
 </table>
-<p>Esta codificação inteira não é a mais aconselhada para as 8 damas. A codificação permutação é mais natural já que trata de duas restrições na própria codificação. No entanto podemos ver que a versão optimizada consegue mesmo nas instâncias maiores resolver mais de 50%, enquanto que a configuração de base só resolve esporadicamente. Em termos globais utilizando as 40 instâncias, a configuração base tem 49% de eficácia, contra 93% da versão optimizada. Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segundos da versão optimizada.</p>
+<p>Esta codificação inteira não é a mais aconselhada para as 8 damas. A codificação permutação é mais natural já que trata de duas restrições na própria codificação. No entanto podemos ver que a versão otimizada consegue mesmo nas instâncias maiores resolver mais de 50%, enquanto que a configuração de base só resolve esporadicamente. Em termos globais utilizando as 40 instâncias, a configuração base tem 49% de eficácia, contra 93% da versão otimizada. Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segundos da versão otimizada.</p>
 <h3><a class="anchor" id="autotoc_md63"></a>
 Resultados: damascp_11</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadRight">Eficácia<br  />
-base   </th><th class="markdownTableHeadRight">optimizado   </th><th class="markdownTableHeadRight">Eficiência<br  />
-base   </th><th class="markdownTableHeadRight">optimizado    </th></tr>
+base   </th><th class="markdownTableHeadRight">otimizado   </th><th class="markdownTableHeadRight">Eficiência<br  />
+base   </th><th class="markdownTableHeadRight">otimizado    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyRight">0    </td></tr>
 <tr class="markdownTableRowEven">
@@ -3445,15 +3452,15 @@ base   </th><th class="markdownTableHeadRight">optimizado    </th></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">47   </td><td class="markdownTableBodyRight">100   </td><td class="markdownTableBodyRight">5779   </td><td class="markdownTableBodyRight">22   </td></tr>
 </table>
-<p>A versão base com a codificação em permutação tinha um comportamento comparável com a codificação inteira. Já a versão optimizada tem um resultado que nem se compara. Resolve todas as instâncias em algumas dezenas de milisegundos.</p>
-<p>Para continuar a optimizar esta versão teriamos de avançar para instâncias maiores, atendendo aos baixos tempos de resolução.</p>
+<p>A versão base com a codificação em permutação tinha um comportamento comparável com a codificação inteira. Já a versão otimizada tem um resultado que nem se compara. Resolve todas as instâncias em algumas dezenas de milisegundos.</p>
+<p>Para continuar a otimizar esta versão teriamos de avançar para instâncias maiores, atendendo aos baixos tempos de resolução.</p>
 <h3><a class="anchor" id="autotoc_md64"></a>
 Resultados: particaocb_11</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadRight">Eficácia<br  />
-base   </th><th class="markdownTableHeadRight">optimizado   </th><th class="markdownTableHeadRight">Eficiência<br  />
-base   </th><th class="markdownTableHeadRight">optimizado    </th></tr>
+base   </th><th class="markdownTableHeadRight">otimizado   </th><th class="markdownTableHeadRight">Eficiência<br  />
+base   </th><th class="markdownTableHeadRight">otimizado    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1265   </td><td class="markdownTableBodyRight">1393    </td></tr>
 <tr class="markdownTableRowEven">
@@ -3596,7 +3603,7 @@ base   </th><th class="markdownTableHeadRight">optimizado    </th></tr>
 <td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">48   </td><td class="markdownTableBodyRight">50   </td><td class="markdownTableBodyRight">5802   </td><td class="markdownTableBodyRight">3188   </td></tr>
 </table>
 <p>Este problema temos a situação das instâncias impossíveis. Estas instâncias têm por vezes tempos de resolução distintos, dado que o critério de paragem do número de iterações é nas instâncias mais pequenas atingido antes do tempo limite. Mesmo assim podemos observar nas últimas instâncias que a eficiência sobe de 48% para 50%, sendo provavelmente os 50% o maior valor possível dado que há instâncias impossíveis. Nas instâncias resolvidas os tempos são consideravelmente inferiores, de 2 a 4 segundos por instância para apenas algumas dezenas de milisegundos para encontrar a solução. Como nesta tabela os resultados das instâncias possíveis são apresentados em conjunto com as instâncias impossíveis, a diferença na eficiência aparece diluida, mas mesmo assim melhora de 5,8 segundos para 3,1 segundos.</p>
-<p>Para instâncias possíveis a configuração optimiada é muito eficáz e eficiente para estas instâncias. </p>
+<p>Para instâncias possíveis a configuração optimiada é muito eficáz e eficiente. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
