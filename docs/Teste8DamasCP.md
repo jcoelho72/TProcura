@@ -13,10 +13,10 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 
 ## Sumário
 
-- [Ação 1 - Ver instâncias](#8damas-cp1)
-- [Ação 2 - Resolver manualmente](#8damas-cp2)
-- [Ação 3 - Algoritmos Evolutivos](#8damas-cp3)
-- [Ação 4 - Testes Empíricos](#8damas-cp6)
+- [Ação 1 - Ver instâncias](#damas-cp1)
+- [Ação 2 - Resolver manualmente](#damas-cp2)
+- [Ação 3 - Algoritmos Evolutivos](#damas-cp3)
+- [Ação 4 - Testes Empíricos](#damas-cp6)
 
 \htmlonly
 <pre>
@@ -30,7 +30,7 @@ Opção: <span class="entrada">2</span>
 \endhtmlonly
 
 
-\anchor 8damas-cp1
+\anchor damas-cp1
 ## Ação 1 - Ver instâncias
 
 Vamos entrar no problema 8 Damas Permutação, introduza: **2.**
@@ -89,7 +89,7 @@ Notar que a instância é distinta da codificação inteira. De facto a instânc
 representação na codificação permutação, já que neste caso apenas há permutação da posição das damas, enquanto que
 na solução inicial da codificação inteira há duas damas na mesma coluna.
 
-\anchor 8damas-cp2
+\anchor damas-cp2
 ## Ação 2 - Resolver manualmente
 
 Vamos resolver a instância manualmente. Introduza: **2**
@@ -122,7 +122,7 @@ Opção: <span class="entrada">2</span>
 
 Apenas ao gerar a população inicial, temos logo uma solução de custo 0, pelo que nem se chegou a gerar 4 elementos.
 
-Assim, vamos sair e colocar uma dimensão maior para poder ver os operadores de cruzamento.
+Assim, vamos sair e colocar uma dimensão maior para poder ver os operadores.
 Introduza: **0; 1; 6; 2.**
 
 \htmlonly
@@ -170,7 +170,7 @@ Opção: <span class="entrada">2</span>
 </pre>
 \endhtmlonly
 
-Agora sim, temos uma população de 4 elementos com custos de 2 a 5. Vamos começar por testar o operador de mutação.
+Agora sim, temos uma população de 4 elementos com custos de 2 a 4. Vamos começar por testar o operador de mutação.
 Introduza: **1; 1.**
 
 \htmlonly
@@ -245,7 +245,7 @@ Tal como na representação inteira, há vários operadores de mutação, sendo 
 Desta vez inserimos o elemento na posição 1 (segundo na ordem), na posição 3 (quarto na ordem). Todos os outros elmentos ficaram iguais.
 Em termos de custos ficou igual, continuam 4 pares de damas a atacarem-se, embora sejam pares distintos.
 
-Vamos agora ao operador de cruzamento, vamos cruzar os dois melhores elemenotos.
+Vamos agora ao operador de cruzamento, vamos cruzar os dois melhores elementos.
 Introduza: **2; 2; 3; 4.**
 
 \htmlonly
@@ -285,7 +285,7 @@ Introduza: **2; 2; 3; 4.**
 \endhtmlonly
 
 Nete caso o filho ficou com os 3 primeiros elementos da mãe, e o resto ficou pela ordem como que aparecem no pai.
-Há apenas 2 pares de damas que se atacam, tal como a mãe.
+Há apenas 2 pares de damas que se atacam, tal como na mãe.
 
 Podemos agora testar o operador de vizinhança, tendo como ponto de partida o estado 4 com custo 2.
 Introduza: **3; 4.**
@@ -444,7 +444,7 @@ Opção:
 </pre>
 \endhtmlonly
 
-\anchor 8damas-cp3
+\anchor damas-cp3
 ## Ação 3 - Algoritmos Evolutivos
 
 Vamos agora ver os algoritmos evolutivos nos diferentes níveis de debug, para esta instância de tamanho 6.
@@ -991,7 +991,7 @@ Opção:
 </pre>
 \endhtmlonly
 
-Podemos identificar o filho 10 com custo 0, gerado por pais de custo 2 e 3. Vamos colocar os pais, que são os elementos 10 e 12, junto com o filho com a solução:
+Podemos identificar na última época o filho 10 com custo 0, gerado por pais de custo 2 e 3. Vamos colocar os pais, que são os elementos 10 e 12, junto com o filho com a solução:
 - Pai: `0 2 4 1 5 3`
 - Mãe: `3 0 5 4 2 1`
 - Filho: `3 0 4 1 5 2`
@@ -1000,8 +1000,8 @@ Podemos identificar o filho 10 com custo 0, gerado por pais de custo 2 e 3. Vamo
 Nenhum dos pais tinha custo 1, pelo que se a população fosse dominada por elementos de custo 1, estes dois elementos tinham menos probabilidade de se encontrarem e gerarem um filho com a solução.
 
 
-- 
-\anchor 8damas-cp4
+
+\anchor damas-cp4
 ## Ação 4 - Testes Empíricos
 
 Atendendo ao volume de parametros nos algoritmos evolutivos,
@@ -1105,6 +1105,7 @@ Opção:
 Com a configuração optimizada, bastou uma época para encontrar a solução para esta instância.
 O filho 2 foi gerado de dois pais de custo 2, e tem um irmão de custo 4.
 Os pais são os elementos 8 e 2. Estes pais têm ambos o melhor custo, e foram escolhidos como pais 4 e 5 vezes.
+Esta situação ocorre atendendo a que o método de seleção é um torneio de tamanho 10.
 Acabou por não serem vezes a mais, já que fizeram para também nos elementos 7 e 8, e tiveram filhos de custo 5 e 6.
 
 

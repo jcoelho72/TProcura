@@ -435,8 +435,9 @@ Opção:
 </pre>
 \endhtmlonly
 
-Nesta vista podemos observar que a maior parte das soluções intermédias são obtidas logo na população inicial. Foi obtida uma de custo 2 na época 1,
-mas neste caso não há soluções de custo 2 atendendo a que o somatório de números é sempre par por construção, pelo que esta solução é a mais perto de
+Nesta vista podemos observar que a maior parte das soluções intermédias são obtidas logo na população inicial.
+Foi obtida uma de custo 2 na época 1, mas neste caso não há soluções de custo 1
+atendendo a que o somatório de números é sempre par por construção, pelo que esta solução é a mais perto de
 uma solução válida. Foi necessário várias épocas, com custos a variar de 2 a largas centenas.
 Avançamos para o detalhe  seguinte.
 Introduza: **1; 10; 3; 2; 3; *ENTER*;6.**
@@ -1052,8 +1053,8 @@ Opção:
 \endhtmlonly
 
 
-Podemos ver que a solução não foi obtida da instância de custo 2, mas sim da instância de custo 228 com outra de custo 30.
-Esta observação é importante para que não seja dado demasiada importância ao melhor elemento, descartando os restantes.
+Podemos ver que a solução não foi obtida da instância de custo 2, mas sim da instância de custo 220 com outra de custo 30.
+Esta observação é importante para que não seja dada demasiada importância ao melhor elemento, descartando os restantes.
 É sempre importante ter diversidade na população, e permitir que elementos piores se reproduzam.
 
 Os pais nas posições 3 e 4 tinham nesta última época custos 2 e 10, valores bastante bons. No entanto geraram filhos de custos 222 e 238,

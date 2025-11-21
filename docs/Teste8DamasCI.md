@@ -14,7 +14,7 @@ No Linux na pasta `.../TProcura/Melhorativa/Teste$` execute `make` seguido de `.
 - [Ação 1 - Ver instâncias](#damas-ci1)
 - [Ação 2 - Resolver manualmente](#damas-ci2)
 - [Ação 3 - Algoritmos Evolutivos](#damas-ci3)
-- [Ação 4 - Testes Empíricos](#damas-ci6)
+- [Ação 4 - Testes Empíricos](#damas-ci4)
 
 \htmlonly
 <pre>
@@ -146,11 +146,23 @@ Podemos ver a população de 4 elementos com custos de 2 a 4.
 É mostrado a codificação inteira e não as soluções a que correspondem. 
 Assim pretendemos focar no que os algoritmos vêm, e não nas soluções.
 
-Temos neste caso a codificação inteira, com a coluna de cada dama, de 0 a 3. Como temos 4 damas temos 4 números de 0 a 3.
-Podemos utilizar outra codificação, desde que exista forma de codificar todas as soluções de interesse, ou seja, de uma solução converter na codificação única,
+A descodificação, ou seja, a conversão da codificação para uma solução, é neste caso simples:
+cada número na posição K corresponde à coluna em que a dama da linha K deve estar.
+A descodificação é normalmente necessária para avaliar o custo de uma solução,
+neste caso o número de pares de damas a atacarem-se mutuamente.
+
+A codificação de uma solução é também imediata.
+No entanto em problemas complexos estas duas operações, codificar/descodificar uma solução,
+podem ter custos computacionais consideráveis.
+
+Como temos 4 damas temos 4 números de 0 a 3.
+
+Podemos utilizar outra codificação, desde que exista forma de codificar todas as soluções de interesse,
+ou seja, de uma solução converter na codificação única,
 e descodificar, de uma codificação reconstruir a solução a que corresponde.
 
-Há outras possibilidades de codificar o problema das 8 damas, estando implementado também com a codificação permutação em outro exemplo.
+Há outras possibilidades de codificar o problema das 8 damas,
+estando implementado a codificação com base na permutação, no próximo exemplo.
 
 Na população os 4 elementos têm cor de fundo para auxiliar a identificação,
 e os custos têm cor da letra para sinalizar os melhores elementos de forma visual.
@@ -370,7 +382,7 @@ Opção:
 
 Temos finalmente a solução de custo 0, o que pretendiamos. Uma solução com as 4 damas, sem se atacarem.
 Ao selecionar o vizinho com a solução ótima, a exploração é interrompida, tal como qualquer algoritmo, 
-sendo a solução obitida retornada. 
+sendo a solução obtida retornada. 
 
 
 
@@ -424,7 +436,7 @@ O que aconteceu nestas 10 épocas?
 Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções.
 Podemos obter na literatura qual a melhor parametrização para um dado problema ou tipo de problemas,
 e utilizar como parametrização base. Mas estaremos satisfeitos com esta informação?
-Não, precisamos de ver o que se passou em concreto, para saber o que correu bem e menos bem, sem dependências de terceiros.
+Não! Precisamos de ver o que se passou em concreto, para saber o que correu bem e menos bem, sem dependências de terceiros.
 Queremos até mais tarde confirmar que a configuração base é a melhor parametrização possível, ou identificar qual é a mais adequada, pela via experimental.
 
 Como podemos repetir todas as execuções, podemos ver a mesma execução com diferentes níveis de detalhe.
@@ -484,7 +496,7 @@ Opção:
 
 Nesta repetição vemos um ponto de quando em quando, para saber que há atividade. 
 No final são introduzidos 128 pontos, se o número de iterações for atingido.
-Como gastamos muito poucas iterações e o limite é muito alto, estes pontos nem são visiveis.
+Como gastamos muito poucas iterações e o limite é muito alto, estes pontos nem chegam a ser impressos.
 
 Mas vemos algo importante. Sempre que se encontra uma melhor solução global,
 é registado o tempo e a solução é mostrada ao utilizador.
