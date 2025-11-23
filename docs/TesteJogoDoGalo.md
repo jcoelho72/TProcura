@@ -61,9 +61,9 @@ e cada jogador ocupa uma casa livre na sua
 vez de jogar. O objetivo é colocar 3 marcas seguidas.
 
 Este problema é um jogo, pelo que requer a procura adversa. 
-Há no entanto muitos parametros comuns com as procuras construtivas
-de agente único. Temos aqui como parametro base, a ordenação, que tem o valor 2. 
-Este parametro permite que estados repetidos que já tenham sido analisados num nível igual ou superior ao requerido, 
+Há no entanto muitos parâmetros comuns com as procuras construtivas
+de agente único. Temos aqui como parâmetro base, a ordenação, que tem o valor 2. 
+Este parâmetro permite que estados repetidos que já tenham sido analisados num nível igual ou superior ao requerido, 
 possam ser reutilizados em vez de chamar novamente a procura. 
 Esta é a opção equivalente a ignorar estados repetidos, que não deve ser ativada no âmbito das procuras adversas, já que
 um movimento num dado estado tem de ser considerado, mesmo que tenha ocorrido em outro local.
@@ -72,7 +72,7 @@ profundidade realizadas, para reutilizar assim que o estado seja analisado novam
 
 Temos também a poda heurística, e poda cega, de modo a eliminar sucessores pelo seu 
 valor heurístico, ou simplesmente de forma aleatória (cega). 
-Estes parametros podem ser necessários em jogos cuja ramificação
+Estes parâmetros podem ser necessários em jogos cuja ramificação
 seja muito elevada, não fazendo tanto sentido para situações de procura não adversa.
 
 Em tudo o resto estamos em situação idêntica, embora os algoritmos sejam distintos. 
@@ -453,7 +453,7 @@ Outros estados foram gerados, mas são iguais a menos de operações de simetria
 
 Na árvore de procura esses estados não desaparecem, mas a árvore é podada.
 Se o estado já foi analisado nesse nível (ou com mais profundidade), reutiliza-se o valor em vez de expandir o estado.
-Assim aparecem na árvore como o icon da disquete, tendo o seu valor sido obtido da memória.
+Assim aparecem na árvore como o icon da disquete (`💾`), tendo o seu valor sido obtido da memória.
 
 Vamos continuar, mas reduzindo o nível de debug para detalhe, e ver ações para 4, e aumentando o nível da procura para 3. 
 Insira: **3; 2; 3; 7; 3; 6; 4; *ENTER*; 6.**  
@@ -670,11 +670,12 @@ Opção:
 </pre>
 \endhtmlonly
 
-((( nível de debug DETALHE alterou, refletir no texto, agora mostra os nós folha )))
+No nível de detalhe vemos os estados folha, mas não os estados intermédios.
 
 Continuamos com avaliações todas com heurística nula, pelo que para o algoritmo é indiferente qualquer opção.
 Podemos ver que as disquetes aparecem, o que significa que poupam ramos da árvore.
-Por exemplo, a ação c2 não foi explorada no estado 5, porque a ação b3 conduz ao mesmo estado e já tinha sido explorada no estado 7.
+Por exemplo, a ação a2 não foi explorada no estado 11,
+porque a ação b1 conduz ao mesmo estado e já tinha sido explorada no estado 9.
 
 Vamos agora executar mais algumas jogadas, e ver a execução final com debug a 4. 
 
@@ -856,21 +857,24 @@ Opção:
 </pre>
 \endhtmlonly
 
-Podemos ver que a árvore de procura já interseta posições em que há vitória de O, sendo o valor de +infinito. 
+Podemos ver que a árvore de procura já interseta posições em que há vitória de O, sendo o valor de +infinito
+(`🍃 998`). 
 O infinito é de omissão 1000. O X é o primeiro a jogar, e em SolucaoVazia() é indicado que o 
 primeiro a jogar procura minimizar o jogo.
 O valor dos estados em que O ganha é 998 e não 1000. 
 Ao valor do infinito é subtraído o número de jogadas desde a jogada atual.
-Esta ação tem o efeito de uma derrota de X que seja mais uma jogada, tenha valer 998. 
+Esta ação tem o efeito de uma derrota de X que seja mais uma jogada, tenha valor inferior a 998. 
 Como O pretende maximizar, prefere sempre as vitórias mais curtas, tal como o X, 
 e ambos preferem as derrotas mais longas.
 
-Após um valor destes ser identificado, existe um icon com uma indicação de vitória/derrota a determinado número de jogadas.
+Após um valor destes ser identificado, existe um icon com uma indicação de vitória/derrota a determinado número de jogadas
+(`☗ 1 { 🔖 8 🔖 9 }`).
 Os sucessores que ainda faltavam analisar são cortados, atendendo a que o jogador com a vez já ganhou neste ramo.
 
-Notar ainda para a frase inicial: "HT: reutilização 0,35 vezes". 
-Ao ser limpa a hashtable com o registo dos estados na procura anterior,
-é verificado quantas vezes em média, um estado guardado foi reutilizado, 
+Notar ainda para a frase final: "HT: reutilização 0.25 vezes". 
+Após terminar a execução a hashtable é limpa, e
+é verificado nessa altura quantas vezes em média,
+um estado guardado foi reutilizado, 
 poupando assim uma execução do algoritmo para esse estado.
 
 
@@ -1051,12 +1055,12 @@ Opção:
 
 Temos na procura dois cortes beta. Vamos ver com atenção:
 - o primeiro ramo, estado 1, com X em a1 foi explorado por completo
-- no entanto, mesmo nesse ramo houve estados obtidso por memória, os com simetria em diagonal (12, 15, 16)
-- logo após a primeira avlaiação aparece "├□ 0 → α". Significa que alfa, que tinha o valor -1000, fica atualizado com o valor 0
-- no final desse ramo aparece "├■ 0 → β". Significa que beta (que minimiza) tem uma alternativa explorada (o estado 1) que garante pelo menos 0.
+- no entanto, mesmo nesse ramo houve estados obtidos por memória (`💾`), os com simetria em diagonal (12, 15, 16)
+- logo após a primeira avaliação aparece `├□ 0 → α`. Significa que alfa, que tinha o valor -1000, fica atualizado com o valor 0
+- no final desse ramo aparece `├■ 0 → β`. Significa que beta (que minimiza) tem uma alternativa explorada (o estado 1) que garante pelo menos 0.
 - o estado 7 é igual ao estado 1, foi obtido por memória
 - O estado 6, o ramo com X em c2, vamos dar a um estado de valor 0 (estado 18). Assim, para c2, temos o adversário que pode obter 0, mas para isso X vai para o ramo anterior e obtém 0, pelo que este ramo pode ser cortado
-- Notar no corte do estado: "└─🪓 β(0) { 🔖19 🔖20 🔖21 🔖22 🔖23 🔖24 🔖25 }". Houve com este corte vários estados que nem chegam a ser analisados
+- Notar no corte do estado: `└─🪓 β(0) { 🔖19 🔖20 🔖21 🔖22 🔖23 🔖24 🔖25 }`. Houve com este corte vários estados que nem chegam a ser analisados
 - O estado 8 com X em b3 é obtido por memória, igual ao estado 6
 - o estado 5 com X em b2 é o único que falta explorar, e ocorre exatamente o mesmo que no estado 6, após se explorar um ramo, sabe-se que o adversário pode obter 0, pelo que não mais interessa.
 - assim, apenas o ramo do estado 1 é que foi explorado completamente
@@ -1172,7 +1176,7 @@ Opção:
 
 Neste caso não tivemos um corte alfa/beta, dado que o melhor ramo foi expandido no final.
 
-Assim, na procura iterativa é importante ordenar os estados por ordem de valor, de modo a que os melhoes estados sejam analisados primeiro
+Assim, na procura iterativa é importante ordenar os estados por ordem de valor, de modo a que os melhores estados sejam analisados primeiro
 e possam potenciar o número de cortes. 
 
 Naturalmente que estes cortes tornam-se mais significativos em árvores de procura maiores.
@@ -2638,9 +2642,9 @@ O problema sendo pequeno, não faz sentido fazer uma heurística.
 ## Ação 6 - Testes Empíricos
 
 Embora a estratégia de jogo seja fácil de obter, vamos simular um torneio para demonstrar a possibilidade de
-comparar parametros distintos.
+comparar parâmetros distintos.
 
-O único parametro que faz diferença, atendendo a que os tempos de execução são muito rápidos, é a profundidade da procura.
+O único parâmetro que faz diferença, atendendo a que os tempos de execução são muito rápidos, é a profundidade da procura.
 Vamos colocar em competição várias configurações a diferentes profundidades, e pretendemos conseguir observar
 maior desempenho nas procuras de maior profundidade.
 
@@ -2785,7 +2789,7 @@ são igualmente boas.
 Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. 
 As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.
 
-Notar na informação da linha com os tempos: "Tempos: 0.000s 0.005s 0.063s 0.412s"
+Notar na informação da linha com os tempos: "Tempos: 0.000s 0.006s 0.105s 0.469s"
 Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. 
 Profundidades maiores o tempo é superior.
 
@@ -2828,7 +2832,7 @@ Com esta tabela, pode-se fazer o relatório dinâmico com os resultados do torne
 - Filtro: Cor=Brancas
 
 | Rótulos de Linha | 0 | 1 | 2 | 3 | Total Geral |
-|:---:|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|:---:|
 |   | 0 | 0 | 0 | 0 | 0 |
 | 1 |   | 1 | 0 | 0 | 1 |
 | 2 | 1 |   | 1 | 0 | 2 |
@@ -2874,7 +2878,7 @@ A segunda tabela no ficheiro CSV tem as configurações de cada jogador.
 | 3 | 1:MiniMax | 0:nada | 1 | 10 | 0 | 4 | 20 | 1:ignorar | 100 | 0 | 0 | 0 | 0 | 0 |
 
 Assim, mantemos a informação completa no ficheiro de resultados, mesmo em torneios, para que se detecte algum erro na configuração, 
-e se possa saber exatamente como os resultados foram obtgidos.
+e se possa saber exatamente como os resultados foram obtidos.
 
 Como seria de esperar, este ficheiro de resultados poderia ser obtido também em linha de comandos:
 

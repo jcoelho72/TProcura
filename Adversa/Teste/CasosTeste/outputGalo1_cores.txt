@@ -626,7 +626,7 @@ Opção:
  │      A B C
  │    💾 0 HT: reutilização 3.00 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>2 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   2ms  ═══
+═╧═ 🏁  Execução terminada ⏱   3ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -640,7 +640,7 @@ Jogo do Galo
  │ 3 . . . 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 1 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 3 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 1 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 9 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -742,7 +742,7 @@ Jogo do Galo
  │ 3 . . . 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 1 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 3 | <span style="color:gray">I3(Iterações):</span> 0 | <span style="color:gray">I4(IND_EXPANSOES):</span> 1 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 9 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -1103,7 +1103,7 @@ Opção:
  │  ├■═╤═ 🔖 3 💰 g:1 ⚖  5|31|25 ═══ ⚡ a2 ─── 💾 0
  │  └■═╤═ 🔖 7 💰 g:1 ⚖  5|31|25 ═══ ⚡ b3 ─── 💾 0 HT: reutilização 0.50 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   2ms  ═══
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> DETALHE | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -1117,7 +1117,7 @@ Jogo do Galo
  │ 3 . . o 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 25 | <span style="color:gray">I4(IND_EXPANSOES):</span> 5 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 4 | <span style="color:gray">I3(Iterações):</span> 25 | <span style="color:gray">I4(IND_EXPANSOES):</span> 5 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 31 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -1202,7 +1202,7 @@ Opção:
  │         A B C ─── 🍃 0
  │  ├□ 0 HT: reutilização 0.35 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   2ms  ═══
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> DETALHE | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -1216,7 +1216,7 @@ Jogo do Galo
  │ 3 . . o 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 16 | <span style="color:gray">I4(IND_EXPANSOES):</span> 7 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 4 | <span style="color:gray">I3(Iterações):</span> 16 | <span style="color:gray">I4(IND_EXPANSOES):</span> 7 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 36 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -1276,7 +1276,7 @@ Jogo do Galo
  │ 3 . . o 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 16 | <span style="color:gray">I4(IND_EXPANSOES):</span> 7 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 4 | <span style="color:gray">I3(Iterações):</span> 16 | <span style="color:gray">I4(IND_EXPANSOES):</span> 7 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 36 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -1435,7 +1435,7 @@ Opção:
  │     ├□ 998
  │     └─ ☗ 1 { 🔖 25 }  HT: reutilização 0.25 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   2ms  ═══
+═╧═ 🏁  Execução terminada ⏱   5ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
@@ -1449,7 +1449,7 @@ Jogo do Galo
  │ 3 . . o 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 19 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 5 | <span style="color:gray">I3(Iterações):</span> 19 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 25 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -1470,7 +1470,7 @@ Jogo do Galo
 3 . . . 3 
   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 19 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 5 | <span style="color:gray">I3(Iterações):</span> 19 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 25 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -1593,7 +1593,7 @@ Jogo do Galo
 3 . . . 3 
   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 19 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 5 | <span style="color:gray">I3(Iterações):</span> 19 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 25 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -1745,7 +1745,7 @@ Opção:
  │      A B C
  │    💾 0 HT: reutilização 1.64 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   2ms  ═══
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
@@ -1759,7 +1759,7 @@ Jogo do Galo
  │ 3 . . . 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 10 | <span style="color:gray">I4(IND_EXPANSOES):</span> 4 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 4 | <span style="color:gray">I3(Iterações):</span> 10 | <span style="color:gray">I4(IND_EXPANSOES):</span> 4 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 33 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -1913,7 +1913,7 @@ Opção:
  │      A B C
  │    💾 0 HT: reutilização 1.00 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   2ms  ═══
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
@@ -1927,7 +1927,7 @@ Jogo do Galo
  │ 3 . . o 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 13 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 4 | <span style="color:gray">I3(Iterações):</span> 13 | <span style="color:gray">I4(IND_EXPANSOES):</span> 6 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 43 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -2059,7 +2059,7 @@ Opção:
  │      A B C
  │    💾 0 HT: reutilização 0.71 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   2ms  ═══
+═╧═ 🏁  Execução terminada ⏱   3ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
@@ -2073,7 +2073,7 @@ Jogo do Galo
  │ 3 . . o 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 13 | <span style="color:gray">I4(IND_EXPANSOES):</span> 5 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 3 | <span style="color:gray">I3(Iterações):</span> 13 | <span style="color:gray">I4(IND_EXPANSOES):</span> 5 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 31 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -2208,7 +2208,7 @@ Opção:
  │       🍃 0
  │  ├□ 0 HT: reutilização 0.35 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   2ms  ═══
+═╧═ 🏁  Execução terminada ⏱   3ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
@@ -2222,7 +2222,7 @@ Jogo do Galo
  │ 3 . . o 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 16 | <span style="color:gray">I4(IND_EXPANSOES):</span> 7 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 3 | <span style="color:gray">I3(Iterações):</span> 16 | <span style="color:gray">I4(IND_EXPANSOES):</span> 7 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 36 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -2559,7 +2559,7 @@ Opção:
  │       🍃 0
  │  ├■ 0 HT: reutilização 0.30 vezes 
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>1 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   3ms  ═══
+═╧═ 🏁  Execução terminada ⏱   2ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
@@ -2573,7 +2573,7 @@ Jogo do Galo
  │ 3 x o o 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 3 | <span style="color:gray">I3(Iterações):</span> 9 | <span style="color:gray">I4(IND_EXPANSOES):</span> 4 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 2 | <span style="color:gray">I3(Iterações):</span> 9 | <span style="color:gray">I4(IND_EXPANSOES):</span> 4 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 9 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐

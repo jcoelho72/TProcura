@@ -1426,7 +1426,7 @@ Opção:
  │  ├■═╤═ 🔖 4 💰 g:1 ⚖  425|1465|700 ═══ α=-1000 β=0 ═══ ⚡ a2 ─── 💾 0
  │  └■═╤═ 🔖 9 💰 g:1 ⚖  425|1465|700 ═══ α=-1000 β=0 ═══ ⚡ c3 ─── 💾 0
  ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>20 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
-═╧═ 🏁  Execução terminada ⏱   16ms  ═══
+═╧═ 🏁  Execução terminada ⏱   21ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> PASSOS | <span style="color:gray">P3(SEMENTE):</span> 1
@@ -1440,7 +1440,7 @@ Jogo do Galo
  │ 3 . . . 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 16 | <span style="color:gray">I3(Iterações):</span> 700 | <span style="color:gray">I4(IND_EXPANSOES):</span> 425 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 21 | <span style="color:gray">I3(Iterações):</span> 700 | <span style="color:gray">I4(IND_EXPANSOES):</span> 425 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 1465 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐

@@ -8,7 +8,7 @@ P1=1 P2=4 P12=0 P7=20,7,5,3
 
 8
 1
-Resultados/Galo
+../Resultados/Galo
 0
 
 

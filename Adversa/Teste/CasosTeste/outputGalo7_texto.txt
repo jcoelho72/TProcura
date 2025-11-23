@@ -93,16 +93,16 @@ Opção:
  ├─ 📋 Tarefas:12   📄 Instâncias: 1   🛠️ Configurações: 4   🖥️ Processos: 1.
  ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3🟰 
  ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 8ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 34ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
- ├─ ⏱ 35ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 42ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 64ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 96ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 138ms           📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 166ms           📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 323ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 450ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 4ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 19ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
+ ├─ ⏱ 20ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 24ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 38ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 52ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 66ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 92ms            📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 222ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 360ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
 🏆  Torneio (#instâncias melhores):
  |-01-|-02-|-03-|-04-|
  1    |  0 |  0 |  0 | -3
@@ -113,7 +113,7 @@ Opção:
  |----|----|----|----|
  4  1 |  1 |  0 |    |  2
  |----|----|----|----|
- │ Tempos: 0.000s 0.006s 0.105s 0.469s 
+ │ Tempos: 0.000s 0.004s 0.052s 0.433s 
 ┌─ ⚙ 🛠️  ─────────────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
 │ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P8(ESTADOS_REPETIDOS): ignorar
@@ -134,7 +134,7 @@ Opção:
 │ P7(LIMITE): 20
 └──────────────────────────────────────────────────────────────────────
 ═╧═══════════════════
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 581ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 490ms ) ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
@@ -171,14 +171,14 @@ Opção:
  ├─ ⏱ 17ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
  ├─ ⏱ 18ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
  ├─ ⏱ 23ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 36ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 50ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 66ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 92ms            📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 220ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 370ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- │ Erro ao gravar ficheiro Resultados/Galo.csv.
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 503ms ) ═══
+ ├─ ⏱ 38ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 54ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 69ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 120ms           📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 269ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 441ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ │ Ficheiro ../Resultados/Galo.csv gravado.
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 574ms ) ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
