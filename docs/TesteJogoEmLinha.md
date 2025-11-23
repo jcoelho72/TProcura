@@ -291,7 +291,9 @@ Vamos utilizar todas as instâncias, já que a heurística é igual.
 - **Tipo de Teste / Objetivo**: Performance (Profundidade, alfa/beta, ordenação)
 - **Definição**: Instâncias: 1:10; Configurações: P1=1,2 x P12=0,1 x P7=2:4
 - **Esforço**: (um só jogo, não há aleatoriedade)
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P1=1,2 x P12=0,1 x P7=2:4
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=2:4
+
+Nota: o tempo por jogada é 1 segundo, de modo a limitar o tempo total do torneio.
 
 \htmlonly
 <details>
@@ -313,7 +315,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: TorneioProfundidade
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P1=1,2 x P12=0,1 x P7=2:4
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=2:4
 </pre>
 </details>
 <details>

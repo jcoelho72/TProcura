@@ -14,5 +14,5 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: TorneioProfundidade
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -P P2=2 P1=1,2 x P12=0,1 x P7=2:4
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=2:4
 
