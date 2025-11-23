@@ -8,5 +8,6 @@ var searchData=
   ['tparametrosespaco_5',['TParametrosEspaco',['../ProblemaArtificial_8h.html#a165f5335ed3a7555912f3cc11f54d00d',1,'ProblemaArtificial.h']]],
   ['tponto_6',['TPonto',['../TProcuraMelhorativa_8h.html#a96cc31942cc33f2999974edd7caada2a',1,'TProcuraMelhorativa.h']]],
   ['tresultado_7',['TResultado',['../TProcura_8h.html#a4428af995799ff246df4a39dfb58d0e9',1,'TProcura.h']]],
-  ['tvalorestado_8',['TValorEstado',['../TProcuraAdversa_8h.html#a8d5dcc924e099ce86a559b21312a7f0c',1,'TProcuraAdversa.h']]]
+  ['tresultadojogo_8',['TResultadoJogo',['../TProcuraAdversa_8h.html#a17b085d523ab455ef172341c1e2b380e',1,'TProcuraAdversa.h']]],
+  ['tvalorestado_9',['TValorEstado',['../TProcuraAdversa_8h.html#a8d5dcc924e099ce86a559b21312a7f0c',1,'TProcuraAdversa.h']]]
 ];

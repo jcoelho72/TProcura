@@ -1,7 +1,9 @@
 var TProcuraAdversa_8h =
 [
     [ "SValorEstado", "structSValorEstado.html", "structSValorEstado" ],
+    [ "SResultadoJogo", "structSResultadoJogo.html", "structSResultadoJogo" ],
     [ "TProcuraAdversa", "classTProcuraAdversa.html", "classTProcuraAdversa" ],
+    [ "TResultadoJogo", "TProcuraAdversa_8h.html#a17b085d523ab455ef172341c1e2b380e", null ],
     [ "TValorEstado", "TProcuraAdversa_8h.html#a8d5dcc924e099ce86a559b21312a7f0c", null ],
     [ "EParametrosAdversa", "TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fd", [
       [ "ORDENAR_SUCESSORES", "TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdac6a7d07bb3f73205ead929aa8a682952", null ],

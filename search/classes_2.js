@@ -6,5 +6,6 @@ var searchData=
   ['sparametro_3',['SParametro',['../structSParametro.html',1,'']]],
   ['sparametrosespaco_4',['SParametrosEspaco',['../structSParametrosEspaco.html',1,'']]],
   ['sresultado_5',['SResultado',['../structSResultado.html',1,'']]],
-  ['svalorestado_6',['SValorEstado',['../structSValorEstado.html',1,'']]]
+  ['sresultadojogo_6',['SResultadoJogo',['../structSResultadoJogo.html',1,'']]],
+  ['svalorestado_7',['SValorEstado',['../structSValorEstado.html',1,'']]]
 ];

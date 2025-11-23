@@ -19,6 +19,7 @@ var annotated_dup =
     [ "SParametro", "structSParametro.html", "structSParametro" ],
     [ "SParametrosEspaco", "structSParametrosEspaco.html", "structSParametrosEspaco" ],
     [ "SResultado", "structSResultado.html", "structSResultado" ],
+    [ "SResultadoJogo", "structSResultadoJogo.html", "structSResultadoJogo" ],
     [ "SValorEstado", "structSValorEstado.html", "structSValorEstado" ],
     [ "TCodificacaoArvore", "classTCodificacaoArvore.html", null ],
     [ "TCodificacaoBinaria", "classTCodificacaoBinaria.html", "classTCodificacaoBinaria" ],

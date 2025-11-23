@@ -35,8 +35,12 @@ digraph "TProcura::LimparEstatisticas"
   Node1 -> Node14 [id="edge15_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node14 -> Node15 [id="edge16_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
-  Node14 -> Node16 [id="edge17_Node000014_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
+  Node15 -> Node16 [id="edge17_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
-  Node1 -> Node6 [id="edge18_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node17 [id="edge18_Node000015_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adf8ec64db235b7d293fbf5a632a57966",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node14 -> Node18 [id="edge19_Node000014_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node1 -> Node6 [id="edge20_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

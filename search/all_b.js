@@ -12,8 +12,9 @@ var searchData=
   ['bitref_9',['bitref',['../classBitRef.html#aa95d691745cb584e6e7f1544802e6de6',1,'BitRef::BitRef()'],['../classBitRef.html',1,'BitRef']]],
   ['bordasligadas_10',['bordasLigadas',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951ba61976f3a7b8be367db651ed4ba2dadcf',1,'JogoEmLinha.h']]],
   ['bound_11',['Ação 9 - Branch-and-Bound',['../teste_puzzle8.html#autotoc_md135',1,'']]],
-  ['branch_20and_20bound_12',['Ação 9 - Branch-and-Bound',['../teste_puzzle8.html#autotoc_md135',1,'']]],
-  ['branch_5fand_5fbound_13',['BRANCH_AND_BOUND',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6cade9a43acaeca87b8e53ce328a9000cd5',1,'TProcuraConstrutiva.h']]],
-  ['branchandbound_14',['BranchAndBound',['../group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd',1,'TProcuraConstrutiva']]],
-  ['buffer_5fsize_15',['buffer_size',['../TProcuraAdversa_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraAdversa.cpp'],['../TProcuraConstrutiva_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraConstrutiva.cpp'],['../TProcuraMelhorativa_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraMelhorativa.cpp'],['../TProcura_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcura.cpp']]]
+  ['brancas_12',['brancas',['../structSResultadoJogo.html#ae063140594a3f03ce7ee7291264aece6',1,'SResultadoJogo']]],
+  ['branch_20and_20bound_13',['Ação 9 - Branch-and-Bound',['../teste_puzzle8.html#autotoc_md135',1,'']]],
+  ['branch_5fand_5fbound_14',['BRANCH_AND_BOUND',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6cade9a43acaeca87b8e53ce328a9000cd5',1,'TProcuraConstrutiva.h']]],
+  ['branchandbound_15',['BranchAndBound',['../group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd',1,'TProcuraConstrutiva']]],
+  ['buffer_5fsize_16',['buffer_size',['../TProcuraAdversa_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraAdversa.cpp'],['../TProcuraConstrutiva_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraConstrutiva.cpp'],['../TProcuraMelhorativa_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraMelhorativa.cpp'],['../TProcura_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcura.cpp']]]
 ];

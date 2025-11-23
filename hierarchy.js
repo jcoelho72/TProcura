@@ -8,6 +8,7 @@ var hierarchy =
     [ "SParametro", "structSParametro.html", null ],
     [ "SParametrosEspaco", "structSParametrosEspaco.html", null ],
     [ "SResultado", "structSResultado.html", null ],
+    [ "SResultadoJogo", "structSResultadoJogo.html", null ],
     [ "SValorEstado", "structSValorEstado.html", null ],
     [ "TProcura", "classTProcura.html", [
       [ "CTesteTVector", "classCTesteTVector.html", null ],

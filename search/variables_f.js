@@ -9,6 +9,6 @@ var searchData=
   ['ramo_5ffim_6',['RAMO_FIM',['../group__VariaveisGlobais.html#gada55e3fa56125a6cb779ac683ef8e0c7',1,'TProcuraConstrutiva']]],
   ['ramo_5fnovo_7',['RAMO_NOVO',['../group__VariaveisGlobais.html#ga4e20df8a70f784cfb80db79a4d29c866',1,'TProcuraConstrutiva']]],
   ['ramo_5fvazio_8',['RAMO_VAZIO',['../group__VariaveisGlobais.html#gae056f5ea48dd523ccdf5853116866a25',1,'TProcuraConstrutiva']]],
-  ['resultado_9',['resultado',['../classTProcura.html#a224527229b795a4780e5faa61245a8e0',1,'TProcura']]],
+  ['resultado_9',['resultado',['../structSResultadoJogo.html#a7c06ecc0b6d50237c1eecf64eb6b59ef',1,'SResultadoJogo::resultado'],['../classTProcura.html#a224527229b795a4780e5faa61245a8e0',1,'TProcura::resultado']]],
   ['reutilizadoavaliacao_10',['reutilizadoAvaliacao',['../classTProcuraAdversa.html#abfa149e4beec8447ec67c05adeb6fedc',1,'TProcuraAdversa']]]
 ];
