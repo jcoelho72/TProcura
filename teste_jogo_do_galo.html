@@ -146,8 +146,8 @@ Opção:
 </pre>
 </p>
 <p>Este é o estado vazio do tabuleiro do Jogo do Galo. Temos um tabuleiro de 3x3, e cada jogador ocupa uma casa livre na sua vez de jogar. O objetivo é colocar 3 marcas seguidas.</p>
-<p>Este problema é um jogo, pelo que requer a procura adversa. Há no entanto muitos parametros comuns com as procuras construtivas de agente único. Temos aqui como parametro base, a ordenação, que tem o valor 2. Este parametro permite que estados repetidos que já tenham sido analisados num nível igual ou superior ao requerido, possam ser reutilizados em vez de chamar novamente a procura. Esta é a opção equivalente a ignorar estados repetidos, que não deve ser ativada no âmbito das procuras adversas, já que um movimento num dado estado tem de ser considerado, mesmo que tenha ocorrido em outro local. Podemos é não recalcular tudo novamente para o estado repetido, guardando o resultado e nível de profundidade realizadas, para reutilizar assim que o estado seja analisado novamente.</p>
-<p>Temos também a poda heurística, e poda cega, de modo a eliminar sucessores pelo seu valor heurístico, ou simplesmente de forma aleatória (cega). Estes parametros podem ser necessários em jogos cuja ramificação seja muito elevada, não fazendo tanto sentido para situações de procura não adversa.</p>
+<p>Este problema é um jogo, pelo que requer a procura adversa. Há no entanto muitos parâmetros comuns com as procuras construtivas de agente único. Temos aqui como parâmetro base, a ordenação, que tem o valor 2. Este parâmetro permite que estados repetidos que já tenham sido analisados num nível igual ou superior ao requerido, possam ser reutilizados em vez de chamar novamente a procura. Esta é a opção equivalente a ignorar estados repetidos, que não deve ser ativada no âmbito das procuras adversas, já que um movimento num dado estado tem de ser considerado, mesmo que tenha ocorrido em outro local. Podemos é não recalcular tudo novamente para o estado repetido, guardando o resultado e nível de profundidade realizadas, para reutilizar assim que o estado seja analisado novamente.</p>
+<p>Temos também a poda heurística, e poda cega, de modo a eliminar sucessores pelo seu valor heurístico, ou simplesmente de forma aleatória (cega). Estes parâmetros podem ser necessários em jogos cuja ramificação seja muito elevada, não fazendo tanto sentido para situações de procura não adversa.</p>
 <p>Em tudo o resto estamos em situação idêntica, embora os algoritmos sejam distintos. Temos por omissão o algoritmo MiniMax alfa/beta.</p>
 <p>Insira: <b>1.</b> para inicialiar novo jogo.</p>
 <p> 
@@ -476,7 +476,7 @@ Opção:
 </pre>
 </p>
 <p>A procura foi realizada, existindo agora apenas 3 avaliações, já que apenas 3 estados novos foram gerados. Outros estados foram gerados, mas são iguais a menos de operações de simetria.</p>
-<p>Na árvore de procura esses estados não desaparecem, mas a árvore é podada. Se o estado já foi analisado nesse nível (ou com mais profundidade), reutiliza-se o valor em vez de expandir o estado. Assim aparecem na árvore como o icon da disquete, tendo o seu valor sido obtido da memória.</p>
+<p>Na árvore de procura esses estados não desaparecem, mas a árvore é podada. Se o estado já foi analisado nesse nível (ou com mais profundidade), reutiliza-se o valor em vez de expandir o estado. Assim aparecem na árvore como o icon da disquete (<code>💾</code>), tendo o seu valor sido obtido da memória.</p>
 <p>Vamos continuar, mas reduzindo o nível de debug para detalhe, e ver ações para 4, e aumentando o nível da procura para 3. Insira: <b>3; 2; 3; 7; 3; 6; 4; <em>ENTER</em>; 6.</b> <br  />
 </p>
 <p> 
@@ -690,8 +690,8 @@ Jogo do Galo
 Opção: 
 </pre>
 </p>
-<p>((( nível de debug DETALHE alterou, refletir no texto, agora mostra os nós folha )))</p>
-<p>Continuamos com avaliações todas com heurística nula, pelo que para o algoritmo é indiferente qualquer opção. Podemos ver que as disquetes aparecem, o que significa que poupam ramos da árvore. Por exemplo, a ação c2 não foi explorada no estado 5, porque a ação b3 conduz ao mesmo estado e já tinha sido explorada no estado 7.</p>
+<p>No nível de detalhe vemos os estados folha, mas não os estados intermédios.</p>
+<p>Continuamos com avaliações todas com heurística nula, pelo que para o algoritmo é indiferente qualquer opção. Podemos ver que as disquetes aparecem, o que significa que poupam ramos da árvore. Por exemplo, a ação a2 não foi explorada no estado 11, porque a ação b1 conduz ao mesmo estado e já tinha sido explorada no estado 9.</p>
 <p>Vamos agora executar mais algumas jogadas, e ver a execução final com debug a 4.</p>
 <p>Insira: <b>6; 6; 3; 2; 4; <em>ENTER</em>; 6.</b></p>
 <p> 
@@ -869,9 +869,9 @@ Jogo do Galo
 Opção: 
 </pre>
 </p>
-<p>Podemos ver que a árvore de procura já interseta posições em que há vitória de O, sendo o valor de +infinito. O infinito é de omissão 1000. O X é o primeiro a jogar, e em SolucaoVazia() é indicado que o primeiro a jogar procura minimizar o jogo. O valor dos estados em que O ganha é 998 e não 1000. Ao valor do infinito é subtraído o número de jogadas desde a jogada atual. Esta ação tem o efeito de uma derrota de X que seja mais uma jogada, tenha valer 998. Como O pretende maximizar, prefere sempre as vitórias mais curtas, tal como o X, e ambos preferem as derrotas mais longas.</p>
-<p>Após um valor destes ser identificado, existe um icon com uma indicação de vitória/derrota a determinado número de jogadas. Os sucessores que ainda faltavam analisar são cortados, atendendo a que o jogador com a vez já ganhou neste ramo.</p>
-<p>Notar ainda para a frase inicial: "HT: reutilização 0,35 vezes". Ao ser limpa a hashtable com o registo dos estados na procura anterior, é verificado quantas vezes em média, um estado guardado foi reutilizado, poupando assim uma execução do algoritmo para esse estado.</p>
+<p>Podemos ver que a árvore de procura já interseta posições em que há vitória de O, sendo o valor de +infinito (<code>🍃 998</code>). O infinito é de omissão 1000. O X é o primeiro a jogar, e em SolucaoVazia() é indicado que o primeiro a jogar procura minimizar o jogo. O valor dos estados em que O ganha é 998 e não 1000. Ao valor do infinito é subtraído o número de jogadas desde a jogada atual. Esta ação tem o efeito de uma derrota de X que seja mais uma jogada, tenha valor inferior a 998. Como O pretende maximizar, prefere sempre as vitórias mais curtas, tal como o X, e ambos preferem as derrotas mais longas.</p>
+<p>Após um valor destes ser identificado, existe um icon com uma indicação de vitória/derrota a determinado número de jogadas (<code>☗ 1 { 🔖 8 🔖 9 }</code>). Os sucessores que ainda faltavam analisar são cortados, atendendo a que o jogador com a vez já ganhou neste ramo.</p>
+<p>Notar ainda para a frase final: "HT: reutilização 0.25 vezes". Após terminar a execução a hashtable é limpa, e é verificado nessa altura quantas vezes em média, um estado guardado foi reutilizado, poupando assim uma execução do algoritmo para esse estado.</p>
 <p><a class="anchor" id="jdg-a4"></a></p>
 <h2><a class="anchor" id="autotoc_md106"></a>
 Ação 4 - MiniMax com cortes Alfa/Beta</h2>
@@ -1046,12 +1046,12 @@ Opção:
 </p>
 <p>Temos na procura dois cortes beta. Vamos ver com atenção:</p><ul>
 <li>o primeiro ramo, estado 1, com X em a1 foi explorado por completo</li>
-<li>no entanto, mesmo nesse ramo houve estados obtidso por memória, os com simetria em diagonal (12, 15, 16)</li>
-<li>logo após a primeira avlaiação aparece "├□ 0 → α". Significa que alfa, que tinha o valor -1000, fica atualizado com o valor 0</li>
-<li>no final desse ramo aparece "├■ 0 → β". Significa que beta (que minimiza) tem uma alternativa explorada (o estado 1) que garante pelo menos 0.</li>
+<li>no entanto, mesmo nesse ramo houve estados obtidos por memória (<code>💾</code>), os com simetria em diagonal (12, 15, 16)</li>
+<li>logo após a primeira avaliação aparece <code>├□ 0 → α</code>. Significa que alfa, que tinha o valor -1000, fica atualizado com o valor 0</li>
+<li>no final desse ramo aparece <code>├■ 0 → β</code>. Significa que beta (que minimiza) tem uma alternativa explorada (o estado 1) que garante pelo menos 0.</li>
 <li>o estado 7 é igual ao estado 1, foi obtido por memória</li>
 <li>O estado 6, o ramo com X em c2, vamos dar a um estado de valor 0 (estado 18). Assim, para c2, temos o adversário que pode obter 0, mas para isso X vai para o ramo anterior e obtém 0, pelo que este ramo pode ser cortado</li>
-<li>Notar no corte do estado: "└─🪓 β(0) { 🔖19 🔖20 🔖21 🔖22 🔖23 🔖24 🔖25 }". Houve com este corte vários estados que nem chegam a ser analisados</li>
+<li>Notar no corte do estado: <code>└─🪓 β(0) { 🔖19 🔖20 🔖21 🔖22 🔖23 🔖24 🔖25 }</code>. Houve com este corte vários estados que nem chegam a ser analisados</li>
 <li>O estado 8 com X em b3 é obtido por memória, igual ao estado 6</li>
 <li>o estado 5 com X em b2 é o único que falta explorar, e ocorre exatamente o mesmo que no estado 6, após se explorar um ramo, sabe-se que o adversário pode obter 0, pelo que não mais interessa.</li>
 <li>assim, apenas o ramo do estado 1 é que foi explorado completamente</li>
@@ -1158,7 +1158,7 @@ Opção:
 </pre>
 </p>
 <p>Neste caso não tivemos um corte alfa/beta, dado que o melhor ramo foi expandido no final.</p>
-<p>Assim, na procura iterativa é importante ordenar os estados por ordem de valor, de modo a que os melhoes estados sejam analisados primeiro e possam potenciar o número de cortes.</p>
+<p>Assim, na procura iterativa é importante ordenar os estados por ordem de valor, de modo a que os melhores estados sejam analisados primeiro e possam potenciar o número de cortes.</p>
 <p>Naturalmente que estes cortes tornam-se mais significativos em árvores de procura maiores.</p>
 <p><a class="anchor" id="jdg-a5"></a></p>
 <h2><a class="anchor" id="autotoc_md107"></a>
@@ -2596,8 +2596,8 @@ Opção:
 <p><a class="anchor" id="jdg-a6"></a></p>
 <h2><a class="anchor" id="autotoc_md108"></a>
 Ação 6 - Testes Empíricos</h2>
-<p>Embora a estratégia de jogo seja fácil de obter, vamos simular um torneio para demonstrar a possibilidade de comparar parametros distintos.</p>
-<p>O único parametro que faz diferença, atendendo a que os tempos de execução são muito rápidos, é a profundidade da procura. Vamos colocar em competição várias configurações a diferentes profundidades, e pretendemos conseguir observar maior desempenho nas procuras de maior profundidade.</p>
+<p>Embora a estratégia de jogo seja fácil de obter, vamos simular um torneio para demonstrar a possibilidade de comparar parâmetros distintos.</p>
+<p>O único parâmetro que faz diferença, atendendo a que os tempos de execução são muito rápidos, é a profundidade da procura. Vamos colocar em competição várias configurações a diferentes profundidades, e pretendemos conseguir observar maior desempenho nas procuras de maior profundidade.</p>
 <p>Temos também de ter o cuidado de desligar a utilização das hashtables, para observer sem perturbações o ganho da profundidade.</p>
 <p>Insira:</p><ul>
 <li><b>1; 7; P1=1 P2=4 P12=0 P7=20,7,5,3; -1; <em>ENTER</em>.</b></li>
@@ -2723,7 +2723,7 @@ Opção:
 </pre>
 </p>
 <p>Podemos ver os resultados dos jogos, seguido do torneio, em que as duas primeiras configurações com nível 20 e 7 são igualmente boas. Assim, é suficiente procura em profundidade 7 para obter a estratégia vencedora. As restantes configurações, à medida que se reduz o nível de profundidade, a qualidade baixa, como seria de esperar.</p>
-<p>Notar na informação da linha com os tempos: "Tempos: 0.000s 0.005s 0.063s 0.412s" Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. Profundidades maiores o tempo é superior.</p>
+<p>Notar na informação da linha com os tempos: "Tempos: 0.000s 0.006s 0.105s 0.469s" Estes tempos são o tempo total de jogo de cada configuração, para todos os jogos. Profundidades maiores o tempo é superior.</p>
 <p>Vamos ver o resultado deste mesmo torneio em ficheiro CSV. Insira: <b>8; 1; Resultados/Galo; 0.</b></p>
 <p>O ficheiro fica com duas tabelas, a primeira com o resultado dos jogos, duas linhas por cada jogo:</p>
 <table class="markdownTable">
@@ -2784,7 +2784,20 @@ Opção:
 <li>valores: Resultado</li>
 <li>Filtro: Cor=Brancas</li>
 </ul>
-<p>| Rótulos de Linha | 0 | 1 | 2 | 3 | Total Geral | |:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:| | | 0 | 0 | 0 | 0 | 0 | | 1 | | 1 | 0 | 0 | 1 | | 2 | 1 | | 1 | 0 | 2 | | 3 | 1 | 1 | | 0 | 2 | | Total Geral | 3 | 2 | 0 | 0 | 5 |</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadCenter">0   </th><th class="markdownTableHeadCenter">1   </th><th class="markdownTableHeadCenter">2   </th><th class="markdownTableHeadCenter">3   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">2    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">5   </td></tr>
+</table>
 <p>O filtro é necessário para que cada jogo conte uma só vez. Cada jogo está em duas linhas. Existindo várias instâncias, haverá sempre duas linhas por cada confronto A vs B, com o somatório do resultado em todas as instâncias.</p>
 <p>Podemos fazer outras tabelas, como o resultado dos jogos por cor:</p>
 <table class="markdownTable">
@@ -2827,7 +2840,7 @@ Opção:
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0:nada   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">20   </td><td class="markdownTableBodyCenter">1:ignorar   </td><td class="markdownTableBodyCenter">100   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td></tr>
 </table>
-<p>Assim, mantemos a informação completa no ficheiro de resultados, mesmo em torneios, para que se detecte algum erro na configuração, e se possa saber exatamente como os resultados foram obtgidos.</p>
+<p>Assim, mantemos a informação completa no ficheiro de resultados, mesmo em torneios, para que se detecte algum erro na configuração, e se possa saber exatamente como os resultados foram obtidos.</p>
 <p>Como seria de esperar, este ficheiro de resultados poderia ser obtido também em linha de comandos:</p>
 <p> 
 <pre>
