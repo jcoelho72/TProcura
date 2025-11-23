@@ -499,7 +499,6 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 					// distribuir tarefas por MPI
 					if ((nTarefa++) % mpiCount != mpiID)
 						continue;
-					instancia.valor = inst;
 
 					resultados += {inst, brancas, pretas};
 
@@ -547,6 +546,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 {
 	int resultado = -1, njogada = 0;
 	// carregar instância
+	instancia.valor = inst;
 	Inicializar();
 	// jogar ora de brancas ora de pretas, até o jogo terminar
 	while (!SolucaoCompleta()) {
@@ -672,9 +672,9 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 		MPI_Recv(dadosD, 3, MPI_LONG_LONG,
 			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		// tempo de espera do trabalhador
-		esperaTrabalhadores += (double)((int64_t)dadosD[2]) / 1000.;
 		resultados.Last().tempoBrancas = (double)dadosD[0]/1000.;
 		resultados.Last().tempoPretas = (double)dadosD[1] / 1000.;
+		esperaTrabalhadores += (double)((int64_t)dadosD[2]) / 1000.;
 
 		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
 			// mostrar uma linha por cada execução
@@ -743,7 +743,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 {
 #ifdef MPI_ATIVO
-	int dados[5] = { 0, 0, 0, 4 }; // instância, brancas, pretas
+	int dados[5] = { 0, 0, 0, 0, 0 }; // instância, brancas, pretas
 	int64_t dadosD[3];
 	// Ciclo:
 	// 1. Solicitar tarefa ao mestre
@@ -762,6 +762,7 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* fi
 		if (dados[0] < 0)
 			break;
 
+		resultados += {dados[0], dados[1], dados[2]};
 		ExecutaTarefa(resultados, dados[0], dados[1], dados[2]);
 
 		// enviar registo para master, e apagar
@@ -773,7 +774,7 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* fi
 		// colocar a espera e tempos de brancas e pretas em milissegundos
 		dadosD[0] = (int64_t)(resultados.Last().tempoBrancas * 1000 + 0.5);
 		dadosD[1] = (int64_t)(resultados.Last().tempoPretas * 1000 + 0.5);
-		dadosD[1] = (int64_t)((Cronometro(CONT_TESTE) - inicioEspera) * 1000 + 0.5);
+		dadosD[2] = (int64_t)((Cronometro(CONT_TESTE) - inicioEspera) * 1000 + 0.5);
 		MPI_Send(dadosD, 3, MPI_LONG_LONG, 0, TAG_VALORES, MPI_COMM_WORLD);
 
 		resultados.Pop();
