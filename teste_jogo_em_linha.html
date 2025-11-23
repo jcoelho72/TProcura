@@ -331,8 +331,9 @@ Ação 4 - Torneio Profundidade</h2>
 <li><b>Tipo de Teste / Objetivo</b>: Performance (Profundidade, alfa/beta, ordenação)</li>
 <li><b>Definição</b>: Instâncias: 1:10; Configurações: P1=1,2 x P12=0,1 x P7=2:4</li>
 <li><b>Esforço</b>: (um só jogo, não há aleatoriedade)</li>
-<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P1=1,2 x P12=0,1 x P7=2:4</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=2:4</li>
 </ul>
+<p>Nota: o tempo por jogada é 1 segundo, de modo a limitar o tempo total do torneio.</p>
 <p> 
 <details>
   <summary>Ver script: evolutivos1.sh</summary>
@@ -353,7 +354,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: TorneioProfundidade
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P1=1,2 x P12=0,1 x P7=2:4
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=2:4
 </pre>
 </details>
 <details>
