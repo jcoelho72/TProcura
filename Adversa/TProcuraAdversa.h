@@ -39,6 +39,20 @@ typedef struct SValorEstado {
 } TValorEstado;
 
 /**
+ * @brief registo do valor de um estado, em procuras anteriores
+ */
+typedef struct SResultadoJogo {
+	int instancia = 0; // no caso no jogo ter instâncias
+	int brancas = 0; // configuração a jogar de brancas
+	int pretas = 0; // configuração a jogar de pretas
+	int resultado = 0; // -1 derrota, 0 empate, 1 vitória
+	int nJogadas = 0; // número de jogadas efetuadas
+	double tempoBrancas = 0.0; // tempo total de jogo das brancas
+	double tempoPretas = 0.0; // tempo total de jogo das pretas
+} TResultadoJogo;
+
+
+/**
  * @brief Representa um estado no espaço de estados. 
  *
  * Esta classe base deve ser redefinida com um problema concreto,
@@ -74,6 +88,11 @@ public:
 	// Utiliza as configurações existentes, ou parâmetros atuais
 	// Efetua um torneio entre configurações
 	void TesteEmpirico(TVector<int> instancias, char* ficheiro = NULL);
+	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
+	void TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro = NULL);
+	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
+	void TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro = NULL);
+
 
 	/// @brief Executa o algoritmo com os parametros atuais
 	int ExecutaAlgoritmo();
@@ -107,11 +126,21 @@ protected:
 	int MetodoIterativo(int alfaBeta);
 
 	/**
+	 * @brief Executa uma tarefa num teste empírico
+	 * @param resultados Vetor onde inserir o resultado.
+	 * @param inst ID da instância.
+	 * @param conf ID da brancas
+	 * @param conf ID da pretas
+	 */
+	void ExecutaTarefa(TVector<TResultadoJogo>& resultados,
+		int inst, int brancas, int pretas, TVector<TVector<int>> *torneio=NULL);
+
+	/**
 	 * @brief Gera um relatório CSV com os resultados.
 	 * @param resultados Vetor de resultados.
-	 * @param f Ponteiro para o ficheiro onde gravar.
+	 * @param ficheiro com o nome do ficheiro onde gravar.
 	 */
-	void RelatorioCSV(TVector<TVector<int>>& torneio, TVector<double>& tempoTotal, FILE* f);
+	bool RelatorioCSV(TVector<TResultadoJogo>& resultados, char *ficheiro);
 
 	void OrdenarSucessores(TVector<TNo>& sucessores, TVector<int>& id, int nivel);
 

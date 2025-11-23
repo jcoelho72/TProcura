@@ -3,6 +3,9 @@
 #include <time.h>
 #include <math.h>
 #include <string.h>
+#ifdef MPI_ATIVO
+#include <mpi.h>
+#endif
 
 constexpr int BUFFER_SIZE = 1024;
 
@@ -458,45 +461,26 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 // Utiliza as configurações existentes, ou parâmetros atuais
 // Efetua um torneio entre configurações
 void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
+	TVector<TResultadoJogo> resultados; // guarda resultado dos jogos (qualquer ordem)
 	TVector<int> atual;
 	double periodoReporte = 60;
 	int backupID = instancia.valor;
 	int nTarefa = 0;
-	for (auto item : instancias)
-		if (item<instancia.min || item>instancia.max)
-			item = -1;
-	instancias -= (-1);
-	ConfiguracaoAtual(atual, LER);
-	if (configuracoes.Empty()) {
-		// não foram feitas configurações, utilizar a atual 
-		configuracoes.Count(1);
-		configuracoes.Last() = atual;
-	}
-	if (configuracoes.Count() == 1) {
-		// apenas há uma configuração, utilizar a atual como segunda
-		configuracoes.Count(2);
-		configuracoes.Last() = atual;
-	}
-	if (mpiID == 0)
-		MostrarConfiguracoes(0);
-	printf("\n═╤═ %-2s Início do Teste (%-2s%d) ═══", Icon(EIcon::TESTE), Icon(EIcon::PROCESSO), mpiID);
-	fflush(stdout);
+
+	TesteInicio(instancias, atual);
+	
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
 	case COMPLETO: periodoReporte = 0; break; // reporte em todos os eventos
 	}
-	Cronometro(CONT_TESTE, true); // reiniciar cronómetro global
 	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
 
 	TVector<TVector<int>> torneio; // pares de configurações: 1 melhor, 0 igual -1 pior
-	TVector<double> tempoTotal; // tempo total de resposta, em todos os jogos
 	torneio.Count(configuracoes.Count());
 	for (int i = 0; i < configuracoes.Count(); i++) {
 		torneio[i].Count(configuracoes.Count());
 		torneio[i].Reset(0);
 	}
-	tempoTotal.Count(configuracoes.Count());
-	tempoTotal.Reset(0);
 
 	if (mpiID == 0)
 		Debug(ATIVIDADE, false,
@@ -517,6 +501,8 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 						continue;
 					instancia.valor = inst;
 
+					resultados += {inst, brancas, pretas};
+
 					if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
 						Debug(ATIVIDADE, false,
 							"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d",
@@ -529,70 +515,17 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 							fflush(stdout);
 						Cronometro(CONT_REPORTE, true);
 					}
-
-					int resultado = -1, njogada = 0;
-					// carregar instância
-					Inicializar();
-					// jogar ora de brancas ora de pretas, até o jogo terminar
-					while (!SolucaoCompleta()) {
-						ConfiguracaoAtual(configuracoes[njogada % 2 == 0 ? brancas : pretas], GRAVAR);
-						TRand::srand(Parametro(SEMENTE));
-						LimparEstatisticas();
-						int backupDebug = Parametro(NIVEL_DEBUG);
-						Parametro(NIVEL_DEBUG) = NADA;
-						resultado = ExecutaAlgoritmo();
-						Parametro(NIVEL_DEBUG) = backupDebug;
-						tempoTotal[njogada % 2 == 0 ? brancas : pretas] += Cronometro(CONT_ALGORITMO);
-						if (solucao != NULL) { // efetuado um lance
-							const char* strAcao = Acao(solucao);
-							Copiar(solucao);
-							if (Parametro(NIVEL_DEBUG) >= COMPLETO)
-								printf(" %s", strAcao);
-							njogada++;
-						}
-						else {
-							break; // não há lance efetuado
-							resultado = 0; // erro, mas considerar empatado
-						}
-					}
-					// jogo terminou, registar resultdo
-					if (resultado != 0) {
-						bool inverter;
-						// brancas e minimizar ou pretas e maximizar, inverter
-						inverter = ((njogada % 2 == 0) && minimizar) ||
-							((njogada % 2 == 1) && !minimizar);
-						// vitória/derrota branca/preta
-						torneio[brancas][pretas] += (resultado < 0 ? -1 : 1) * (inverter ? -1 : 1);
-						Debug(COMPLETO, false, " 🏆 %s", (inverter ? resultado < 0 : resultado > 0) ? Icon(EIcon::VIT_PRETA) : Icon(EIcon::VIT_BRANCA));
-					}
-					else
-						Debug(COMPLETO, false, Icon(EIcon::EMPATE));
+					ExecutaTarefa(resultados, inst, brancas, pretas, &torneio);
 				}
 			}
 
 	if (ficheiro == NULL || strlen(ficheiro) <= 1) {
 		MostrarTorneio(torneio, true);
-		printf("\n │ Tempos: ");
-		for (auto tempo : tempoTotal)
-			printf("%.3fs ", tempo);
 		MostrarConfiguracoes(1);
 	}
 	else {
-		char* contexto;
-		char* pt = compat::strtok(ficheiro, " \n\t\r", &contexto);
-		char str[BUFFER_SIZE];
-		if (mpiCount > 1) 
-			snprintf(str, sizeof(str), "%s_%d.csv", pt, mpiID);
-		else
-			snprintf(str, sizeof(str), "%s.csv", pt);
-		FILE* f = compat::fopen(str, "wb");
-		if (f != NULL) {
-			RelatorioCSV(torneio, tempoTotal, f);
-			printf("\n │ Ficheiro %s gravado.", str);
-			fclose(f);
-		}
-		else
-			printf("\n │ Erro ao gravar ficheiro %s.", str);
+		RelatorioCSV(resultados, ficheiro) &&
+			printf("\n │ Ficheiro %s gravado.", ficheiro);
 	}
 
 	if (mpiCount > 1 && modoMPI == 0)
@@ -609,24 +542,281 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	fflush(stdout);
 }
 
+void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
+	int inst, int brancas, int pretas, TVector<TVector<int>>* torneio)
+{
+	int resultado = -1, njogada = 0;
+	// carregar instância
+	Inicializar();
+	// jogar ora de brancas ora de pretas, até o jogo terminar
+	while (!SolucaoCompleta()) {
+		ConfiguracaoAtual(configuracoes[njogada % 2 == 0 ? brancas : pretas], GRAVAR);
+		TRand::srand(Parametro(SEMENTE));
+		LimparEstatisticas();
+		int backupDebug = Parametro(NIVEL_DEBUG);
+		Parametro(NIVEL_DEBUG) = NADA;
+		resultado = ExecutaAlgoritmo();
+		Parametro(NIVEL_DEBUG) = backupDebug;
+		if (njogada % 2 == 0)
+			resultados.Last().tempoBrancas += Cronometro(CONT_ALGORITMO);
+		else
+			resultados.Last().tempoPretas += Cronometro(CONT_ALGORITMO);
+		if (solucao != NULL) { // efetuado um lance
+			const char* strAcao = Acao(solucao);
+			Copiar(solucao);
+			if (Parametro(NIVEL_DEBUG) >= COMPLETO)
+				printf(" %s", strAcao);
+			njogada++;
+		}
+		else {
+			break; // não há lance efetuado
+			resultado = 0; // erro, mas considerar empatado
+		}
+	}
+	resultados.Last().resultado = resultado;
+	resultados.Last().nJogadas = njogada;
 
-void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, TVector<double> &tempoTotal, FILE* f) {
+	// jogo terminou, registar resultdo
+	if (resultado != 0) {
+		bool inverter;
+		// brancas e minimizar ou pretas e maximizar, inverter
+		inverter = ((njogada % 2 == 0) && minimizar) ||
+			((njogada % 2 == 1) && !minimizar);
+		// vitória/derrota branca/preta
+		if(torneio!=NULL) 
+			(*torneio)[brancas][pretas] += (resultado < 0 ? -1 : 1) * (inverter ? -1 : 1);
+		Debug(COMPLETO, false, " 🏆 %s", (inverter ? resultado < 0 : resultado > 0) ? Icon(EIcon::VIT_PRETA) : Icon(EIcon::VIT_BRANCA));
+	}
+	else
+		Debug(COMPLETO, false, Icon(EIcon::EMPATE));
+}
+
+
+void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
+{
+#ifdef MPI_ATIVO
+	int dados[5] = { 0, 0, 0, 4 }; // instância, brancas, pretas
+	int64_t dadosD[3];
+	double esperaTrabalhadores = 0, esperaGestor = 0;
+	TVector<double> terminou; // instante em que terminou cada trabalhador
+	TVector<int> trabalhador, trabalhar;
+	TVector<int> atual;
+	double periodoReporte = 60;
+
+	TesteInicio(instancias, atual);
+
+	switch (Parametro(NIVEL_DEBUG)) {
+	case DETALHE: periodoReporte = 10; break;
+	case COMPLETO: periodoReporte = 0; break;
+	}
+	for (int i = 1; i < mpiCount; i++)
+		trabalhador += i;
+
+	terminou.Count(mpiCount);
+	terminou.Reset(0);
+
+	// Ciclo:
+	// 1. Enviar trabalho para os escravos
+	// 2. Encerrar escravos a mais
+	// 3. Receber resultados e repetir 1 ou 2 conforme as necessidades
+
+	TVector<TResultadoJogo> resultados; // guarda as soluções obtidas
+	TVector<TResultadoJogo> tarefas; // guarda informação apenas das tarefas a realizar (sem resultados)
+	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
+
+	// construir todas as tarefas
+	// dois jogadores, brancas é o primeiro a jogar, pretas é o segundo
+	for (int brancas = 0; brancas < configuracoes.Count(); brancas++)
+		for (int pretas = 0; pretas < configuracoes.Count(); pretas++)
+			if (brancas != pretas) 
+				for (auto inst : instancias)
+					tarefas += { inst, brancas, pretas };
+
+
+	int totalTarefas = tarefas.Count();
+	Debug(ATIVIDADE, false, "\n ├─ %-2sTarefas:%d   %-2sInstâncias: %d   %-2sConfigurações: %d   %-2sProcessos: %d.",
+		Icon(EIcon::TAREFA), tarefas.Count(),
+		Icon(EIcon::INST), instancias.Count(),
+		Icon(EIcon::CONF), configuracoes.Count(),
+		Icon(EIcon::PROCESSO), trabalhador.Count() + 1) &&
+		fflush(stdout);
+
+	// dar uma tarefa a cada escravo
+	while (!tarefas.Empty() && !trabalhador.Empty()) {
+		auto tarefa = tarefas.Pop();
+		dados[0] = tarefa.instancia;
+		dados[1] = tarefa.brancas;
+		dados[2] = tarefa.pretas;
+		trabalhar += trabalhador.Last();
+		MPI_Send(dados, 3, MPI_INT, trabalhador.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+		esperaTrabalhadores += Cronometro(CONT_TESTE); // estava parado até esta altura
+	}
+	// caso existam escravos sem trabalho, mandar fechar todos, não há mais tarefas
+	dados[0] = dados[1] = -1;
+	while (!trabalhador.Empty()) {
+		auto trabalhadorID = trabalhador.Pop();
+		MPI_Send(dados, 3, MPI_INT, trabalhadorID, TAG_TRABALHO, MPI_COMM_WORLD);
+		terminou[trabalhadorID] = Cronometro(CONT_TESTE);
+	}
+
+	// receber resultados e continuar a dar trabalho caso exista
+	while (!trabalhar.Empty()) {
+		MPI_Status stat;
+
+		double inicioEspera = Cronometro(CONT_TESTE);
+		MPI_Recv(dados, 5, MPI_INT, MPI_ANY_SOURCE, TAG_CABECALHO, MPI_COMM_WORLD, &stat);
+		esperaGestor += Cronometro(CONT_TESTE) - inicioEspera;
+		resultados += {dados[0], dados[1], dados[2], dados[3], dados[4]};
+		trabalhar -= stat.MPI_SOURCE;
+		trabalhador += stat.MPI_SOURCE;
+		MPI_Recv(dadosD, 3, MPI_LONG_LONG,
+			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		// tempo de espera do trabalhador
+		esperaTrabalhadores += (double)((int64_t)dadosD[2]) / 1000.;
+		resultados.Last().tempoBrancas = (double)dadosD[0]/1000.;
+		resultados.Last().tempoPretas = (double)dadosD[1] / 1000.;
+
+		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
+			// mostrar uma linha por cada execução
+			Debug(ATIVIDADE, false,
+				"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s ",
+				Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
+				Icon(EIcon::TAREFA), totalTarefas - tarefas.Count(),
+				Icon(EIcon::INST), resultados.Last().instancia,
+				Icon(EIcon::CONF), resultados.Last().brancas,
+				Icon(EIcon::CONF), resultados.Last().pretas,
+				Icon(EIcon::PROCESSO), trabalhador.Last(),
+				Icon(EIcon::IND));
+			fflush(stdout);
+			Cronometro(CONT_REPORTE, true);
+		}
+
+		// ainda há tarefas
+		if (!tarefas.Empty()) {
+			auto tarefa = tarefas.Pop();
+			dados[0] = tarefa.instancia;
+			dados[1] = tarefa.brancas;
+			dados[2] = tarefa.pretas;
+			trabalhar += trabalhador.Last();
+			MPI_Send(dados, 3, MPI_INT, trabalhador.Pop(), TAG_TRABALHO, MPI_COMM_WORLD);
+		}
+		else { // tudo feito, mandar sair
+			dados[0] = dados[1] = -1;
+			auto trabalhadorID = trabalhador.Pop();
+			MPI_Send(dados, 3, MPI_INT, trabalhadorID, TAG_TRABALHO, MPI_COMM_WORLD);
+			terminou[trabalhadorID] = Cronometro(CONT_TESTE);
+		}
+	}
+
+	// contar a espera dos trabalhadores, após terminarem
+	for (int i = 1; i < mpiCount; i++)
+		esperaTrabalhadores += Cronometro(CONT_TESTE) - terminou[i];
+
+	// escrever o ficheiro de resultados
+	int backupCount = mpiCount;
+	double taxaUtilizacaoT = 1. - (esperaTrabalhadores / (Cronometro(CONT_TESTE) * (mpiCount - 1)));
+	double taxaUtilizacaoG = 1. - (esperaGestor / Cronometro(CONT_TESTE));
+	double taxaUtilizacao = 1. - ((esperaTrabalhadores + esperaGestor) / (Cronometro(CONT_TESTE) * mpiCount));
+	mpiCount = 1; // forçar a escrita do ficheiro apenas neste processo
+	RelatorioCSV(resultados, ficheiro) &&
+		Debug(ATIVIDADE, false,
+			"\n ├─ %-2s Ficheiro %s.csv gravado.\n"
+			" │  %-2s Tempo real: %s",
+			Icon(EIcon::RESULT), ficheiro,
+			Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE))) &&
+		Debug(ATIVIDADE, false, "\n │  %-2s CPU total: %s",
+			Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE) * (backupCount - 1))) &&
+		Debug(ATIVIDADE, false, "\n │  %-2s Espera do gestor: %s",
+			Icon(EIcon::TEMPO), MostraTempo(esperaGestor)) &&
+		Debug(ATIVIDADE, false, "\n │  %-2s Espera trabalhadores: %s",
+			Icon(EIcon::TEMPO), MostraTempo(esperaTrabalhadores)) &&
+		Debug(ATIVIDADE, false, "\n │  %-2s Utilização:\n │  - Total: %.1f%%\n │  - Gestor: %.1f%%\n │  - Trabalhadores: %.1f%% ",
+			Icon(EIcon::TAXA), taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
+	mpiCount = backupCount;
+
+	TesteFim();
+
+
+#endif
+}
+
+void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
+{
+#ifdef MPI_ATIVO
+	int dados[5] = { 0, 0, 0, 4 }; // instância, brancas, pretas
+	int64_t dadosD[3];
+	// Ciclo:
+	// 1. Solicitar tarefa ao mestre
+	// 2. Executar tarefa
+	// 3. Enviar resultados ao mestre
+	// 4. Repetir até receber ordem de paragem
+
+	TVector<TResultadoJogo> resultados; // guarda resultados dos jogos
+	TVector<int> atual;
+
+	TesteInicio(instancias, atual);
+
+	for (;;) {
+		// receber nova tarefa
+		MPI_Recv(dados, 3, MPI_INT, 0, TAG_TRABALHO, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		if (dados[0] < 0)
+			break;
+
+		ExecutaTarefa(resultados, dados[0], dados[1], dados[2]);
+
+		// enviar registo para master, e apagar
+		// dados[0], dados[1] e dados[2] já têm as configurações e instância
+		dados[3] = resultados.Last().resultado;
+		dados[4] = resultados.Last().nJogadas;
+		double inicioEspera = Cronometro(CONT_TESTE);
+		MPI_Send(dados, 5, MPI_INT, 0, TAG_CABECALHO, MPI_COMM_WORLD);
+		// colocar a espera e tempos de brancas e pretas em milissegundos
+		dadosD[0] = (int64_t)(resultados.Last().tempoBrancas * 1000 + 0.5);
+		dadosD[1] = (int64_t)(resultados.Last().tempoPretas * 1000 + 0.5);
+		dadosD[1] = (int64_t)((Cronometro(CONT_TESTE) - inicioEspera) * 1000 + 0.5);
+		MPI_Send(dadosD, 3, MPI_LONG_LONG, 0, TAG_VALORES, MPI_COMM_WORLD);
+
+		resultados.Pop();
+	}
+	TesteFim();
+#endif
+}
+
+
+
+bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo> &resultados, char *ficheiro) {
+	char* contexto;
+	char* pt = compat::strtok(ficheiro, " \n\t\r", &contexto);
+	char str[BUFFER_SIZE];
+	if (mpiCount > 1)
+		snprintf(str, sizeof(str), "%s_%d.csv", pt, mpiID);
+	else
+		snprintf(str, sizeof(str), "%s.csv", pt);
+	FILE* f = compat::fopen(str, "wb");
+
+	if(f == NULL) {
+		printf("\nErro ao gravar ficheiro %s.", str);
+		return false;
+	}
+
 	// Jogador, Adversário, cor, resultado (positivo caso o jogador ganhe, negativo c.c.) 
 	// Nota: cada confronto fica com 2 entradas; se existir várias instâncias, o resultado do confronto é somado
-	fprintf(f, "Jogador;Adversário;Cor;Resultado\n");
-	for (int jogador = 0; jogador < torneio.Count(); jogador++)
-		for (int adversario = 0; adversario < torneio[jogador].Count(); adversario++)
-			if (jogador != adversario) {
-				fprintf(f, "%d;%d;%s;%d\n", jogador, adversario, "Brancas", torneio[jogador][adversario]);
-				fprintf(f, "%d;%d;%s;%d\n", adversario, jogador, "Pretas", -torneio[jogador][adversario]);
-			}
-	if (configuracoes.Count() != torneio.Count())
-		return;
+	fprintf(f, "Instância;Brancas;Pretas;Resultado;Jogadas;TempoBranco;TempoPreto\n");
+	for (auto &resultado : resultados)
+		fprintf(f,"%d;%d;%d;%d;%d;%.3f;%.3f\n",
+			resultado.instancia,
+			resultado.brancas + 1,
+			resultado.pretas + 1,
+			resultado.resultado,
+			resultado.nJogadas,
+			resultado.tempoBrancas,
+			resultado.tempoPretas);
+			
 	// No final, mostrar as configurações
 	fprintf(f, "\nJogador;");
 	for (int i = 0; i < parametro.Count(); i++)
 		fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
-	fprintf(f, "TempoTotal(ms);\n");
+	fprintf(f, "\n");
 	for (int jogador = 0; jogador < configuracoes.Count(); jogador++) {
 		fprintf(f, "%d;", jogador);
 		for (int j = 0; j < parametro.Count(); j++)
@@ -636,8 +826,10 @@ void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, TVector<doubl
 				fprintf(f, "%d:%s;",
 					configuracoes[jogador][j],
 					parametro[j].nomeValores[configuracoes[jogador][j] - parametro[j].min]);
-		fprintf(f, "%d\n", (int)(1000*tempoTotal[jogador]));
+		fprintf(f, "\n");
 	}
+	fclose(f);
+	return true;
 }
 
 
