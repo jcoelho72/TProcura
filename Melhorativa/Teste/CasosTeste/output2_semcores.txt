@@ -1,0 +1,1504 @@
+
+┌─ Teste TProcuraMelhorativa ──┐
+│ 1 - 8 Damas (Inteira)        │
+│ 2 - 8 Damas (Permutacao)     │
+│ 3 - Partição (Binária)       │
+└──────────────────────────────┘
+Opção: 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ::  ::♛ 
+  ::  ::♛ ::  ::
+::  ::♛ ::  ::  
+♛ ::  ::  ::  ::
+::  ♛   ::  ::  
+  ::  ::  ♛   ::
+::♛ ::  ::  ::  
+  ::  ::  ::♛ ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ ID atual: 8  Intervalo: [4–40]  
+│ Prefixo atual: 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+♛   ::  
+  ::  ♛ 
+::♛ ::  
+  ::♛ ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+─┬───────────────────
+ ├─┬─ 📆 0 ⏱  ──── 💰 g0-6
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   1 2 3 0  💰 g:4
+ │ │ 🧍 2   3 2 1 0  💰 g:6
+ │ │ 🧍 3   2 0 3 1  💰 g:0
+ │ ├───── 📏  ───── 
+ │ │  🧍  1    2    3    
+ │ │ ────┼────┼────┼────┼
+ │ │ 1   │    │   2│   3│
+ │ │ 2   │   2│    │   4│
+ │ │ 3   │   3│   4│    │
+ │ │ ────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):  └──────────────── 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ♛   
+♛ ::  ::
+::  ::♛ 
+  ♛   ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ ID atual: 4  Intervalo: [4–40]  
+│ Prefixo atual: 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+ ├─┬─ 📆 0 ⏱  ──── 💰 g2-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 1 4 3 5 0  💰 g:4
+ │ │ 🧍 2   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 3   5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 4   0 4 5 2 3 1  💰 g:4
+ │ ├───── 📏  ───── 
+ │ │  🧍  1    2    3    4    
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ 1   │    │   5│   5│   6│
+ │ │ 2   │   5│    │   6│   3│
+ │ │ 3   │   5│   6│    │   6│
+ │ │ 4   │   6│   3│   6│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):  │ ┌───── 🦠  ───── 
+ │ │ 🧍  [1-4]:  │ │ 🧍   2 1 4 3 5 0  mutar vizinho inserir (0,0)
+ │ │ 🦠   2 1 4 3 5 0 
+ │ │ ::  ♛   ::  
+ │ │   ♛   ::  ::
+ │ │ ::  ::  ♛   
+ │ │   ::  ♛   ::
+ │ │ ::  ::  ::♛ 
+ │ │ ♛ ::  ::  ::
+ │ └────────────── 
+ ├─┬─ 📆 1 ⏱  ──── 💰 g2-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 1 4 3 5 0  💰 g:4
+ │ │ 🧍 2   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 3   5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 4   0 4 5 2 3 1  💰 g:4
+ │ ├───── 📏  ───── 
+ │ │  🧍  1    2    3    4    
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ 1   │    │   5│   5│   6│
+ │ │ 2   │   5│    │   6│   3│
+ │ │ 3   │   5│   6│    │   6│
+ │ │ 4   │   6│   3│   6│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):  │ ┌───── 🦠  ───── 
+ │ │ 🧍  [1-4]:  │ │ 🧍   2 1 4 3 5 0  mutar vizinho inserir (1,3)
+ │ │ 🦠   2 4 3 1 5 0 
+ │ │ ::  ♛   ::  
+ │ │   ::  ::♛ ::
+ │ │ ::  ::♛ ::  
+ │ │   ♛   ::  ::
+ │ │ ::  ::  ::♛ 
+ │ │ ♛ ::  ::  ::
+ │ └────────────── 
+ ├─┬─ 📆 2 ⏱  ──── 💰 g2-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 4 3 1 5 0  💰 g:4
+ │ │ 🧍 2   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 3   5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 4   0 4 5 2 3 1  💰 g:4
+ │ ├───── 📏  ───── 
+ │ │  🧍  1    2    3    4    
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ 1   │    │   6│   6│   5│
+ │ │ 2   │   6│    │   6│   3│
+ │ │ 3   │   6│   6│    │   6│
+ │ │ 4   │   5│   3│   6│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):  │ ┌───── 🧬  ───── 
+ │ │ 🧍 Pai [1-4]:  │ │ 🧍 Mãe [1-4]:  │ │ 🧍 Filho [1-4]:  │ │ 
+ │ │ 🧍 Pai   0 2 4 5 3 1 
+ │ │ 🧍 Mãe   5 0 2 3 1 4  cruzamento OX 4 - 5
+ │ │ 🧬 Filho 5 0 2 4 3 1 
+ │ │ ::  ::  ::♛ 
+ │ │ ♛ ::  ::  ::
+ │ │ ::  ♛   ::  
+ │ │   ::  ::♛ ::
+ │ │ ::  ::♛ ::  
+ │ │   ♛   ::  ::
+ │ └────────────── 
+ ├─┬─ 📆 3 ⏱  ──── 💰 g2-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 4 3 1 5 0  💰 g:4
+ │ │ 🧍 2   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 3   5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 4   5 0 2 4 3 1  💰 g:2
+ │ ├───── 📏  ───── 
+ │ │  🧍  1    2    3    4    
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ 1   │    │   6│   6│   6│
+ │ │ 2   │   6│    │   6│   4│
+ │ │ 3   │   6│   6│    │   3│
+ │ │ 4   │   6│   4│   3│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):  │ ┌───── 🧍🧍 ───── 
+ │ │ 🧍 [1-4]:  │ │ 🧍   5 0 2 4 3 1  vizinhança inserir (limite 0)
+ │ ├───── Vizinhos ───── 
+ │ │ 🧍 1   0 5 2 4 3 1  💰 g:3
+ │ │ 🧍 2   0 2 5 4 3 1  💰 g:4
+ │ │ 🧍 3   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 4   0 2 4 3 5 1  💰 g:5
+ │ │ 🧍 5   0 2 4 3 1 5  💰 g:4
+ │ │ 🧍 6   0 5 2 4 3 1  💰 g:3
+ │ │ 🧍 7   5 2 0 4 3 1  💰 g:2
+ │ │ 🧍 8   5 2 4 0 3 1  💰 g:2
+ │ │ 🧍 9   5 2 4 3 0 1  💰 g:4
+ │ │ 🧍 10  5 2 4 3 1 0  💰 g:4
+ │ │ 🧍 11  2 5 0 4 3 1  💰 g:3
+ │ │ 🧍 12  5 2 0 4 3 1  💰 g:2
+ │ │ 🧍 13  5 0 4 2 3 1  💰 g:5
+ │ │ 🧍 14  5 0 4 3 2 1  💰 g:6
+ │ │ 🧍 15  5 0 4 3 1 2  💰 g:3
+ │ │ 🧍 16  4 5 0 2 3 1  💰 g:3
+ │ │ 🧍 17  5 4 0 2 3 1  💰 g:4
+ │ │ 🧍 18  5 0 4 2 3 1  💰 g:5
+ │ │ 🧍 19  5 0 2 3 4 1  💰 g:4
+ │ │ 🧍 20  5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 21  3 5 0 2 4 1  💰 g:1
+ │ │ 🧍 22  5 3 0 2 4 1  💰 g:1
+ │ │ 🧍 23  5 0 3 2 4 1  💰 g:4
+ │ │ 🧍 24  5 0 2 3 4 1  💰 g:4
+ │ │ 🧍 25  5 0 2 4 1 3  💰 g:1
+ │ │ 🧍 26  1 5 0 2 4 3  💰 g:2
+ │ │ 🧍 27  5 1 0 2 4 3  💰 g:5
+ │ │ 🧍 28  5 0 1 2 4 3  💰 g:5
+ │ │ 🧍 29  5 0 2 1 4 3  💰 g:4
+ │ │ 🧍 30  5 0 2 4 1 3  💰 g:1
+ │ │ 🧍 [1-30]:  │ │ 
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+ │ │ ::  ::  ::♛ 
+ │ │ ♛ ::  ::  ::
+ │ │ ::  ♛   ::  
+ │ │   ::  ::♛ ::
+ │ │ ::♛ ::  ::  
+ │ │   ::  ♛   ::
+─┬───────────────────
+ │ └────────────── 
+ ├─┬─ 📆 4 ⏱  ──── 💰 g1-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 4 3 1 5 0  💰 g:4
+ │ │ 🧍 2   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 3   5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 4   5 0 2 4 1 3  💰 g:1
+ │ ├───── 📏  ───── 
+ │ │  🧍  1    2    3    4    
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ 1   │    │   6│   6│   6│
+ │ │ 2   │   6│    │   6│   6│
+ │ │ 3   │   6│   6│    │   2│
+ │ │ 4   │   6│   6│   2│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):  │ ┌───── 🧍🧍 ───── 
+ │ │ 🧍 [1-4]:  │ │ 🧍   5 0 2 4 1 3  vizinhança inserir (limite 0)
+ │ ├───── Vizinhos ───── 
+ │ │ 🧍 1   0 5 2 4 1 3  💰 g:1
+ │ │ 🧍 2   0 2 5 4 1 3  💰 g:2
+ │ │ 🧍 3   0 2 4 5 1 3  💰 g:2
+ │ │ 🧍 4   0 2 4 1 5 3  💰 g:2
+ │ │ 🧍 5   0 2 4 1 3 5  💰 g:1
+ │ │ 🧍 6   0 5 2 4 1 3  💰 g:1
+ │ │ 🧍 7   5 2 0 4 1 3  💰 g:3
+ │ │ 🧍 8   5 2 4 0 1 3  💰 g:3
+ │ │ 🧍 9   5 2 4 1 0 3  💰 g:2
+ │ │ 🧍 10  5 2 4 1 3 0  💰 g:1
+ │ │ 🧍 11  2 5 0 4 1 3  💰 g:2
+ │ │ 🧍 12  5 2 0 4 1 3  💰 g:3
+ │ │ 🧍 13  5 0 4 2 1 3  💰 g:4
+ │ │ 🧍 14  5 0 4 1 2 3  💰 g:4
+ │ │ 🧍 15  5 0 4 1 3 2  💰 g:2
+ │ │ 🧍 16  4 5 0 2 1 3  💰 g:3
+ │ │ 🧍 17  5 4 0 2 1 3  💰 g:7
+ │ │ 🧍 18  5 0 4 2 1 3  💰 g:4
+ │ │ 🧍 19  5 0 2 1 4 3  💰 g:4
+ │ │ 🧍 20  5 0 2 1 3 4  💰 g:4
+ │ │ 🧍 21  1 5 0 2 4 3  💰 g:2
+ │ │ 🧍 22  5 1 0 2 4 3  💰 g:5
+ │ │ 🧍 23  5 0 1 2 4 3  💰 g:5
+ │ │ 🧍 24  5 0 2 1 4 3  💰 g:4
+ │ │ 🧍 25  5 0 2 4 3 1  💰 g:2
+ │ │ 🧍 26  3 5 0 2 4 1  💰 g:1
+ │ │ 🧍 27  5 3 0 2 4 1  💰 g:1
+ │ │ 🧍 28  5 0 3 2 4 1  💰 g:4
+ │ │ 🧍 29  5 0 2 3 4 1  💰 g:4
+ │ │ 🧍 30  5 0 2 4 3 1  💰 g:2
+ │ │ 🧍 [1-30]:  │ │ 
+ │ │ ♛   ::  ::  
+ │ │   ::  ::  ♛ 
+ │ │ ::  ♛   ::  
+ │ │   ::  ::♛ ::
+ │ │ ::♛ ::  ::  
+ │ │   ::  ♛   ::
+ │ └────────────── 
+ ├─┬─ 📆 5 ⏱  ──── 💰 g1-4
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 4 3 1 5 0  💰 g:4
+ │ │ 🧍 2   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 3   5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 4   0 5 2 4 1 3  💰 g:1
+ │ ├───── 📏  ───── 
+ │ │  🧍  1    2    3    4    
+ │ │ ────┼────┼────┼────┼────┼
+ │ │ 1   │    │   6│   6│   6│
+ │ │ 2   │   6│    │   6│   5│
+ │ │ 3   │   6│   6│    │   4│
+ │ │ 4   │   6│   5│   4│    │
+ │ │ ────┴────┴────┴────┴────┴
+ │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):  └──────────────── 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ::♛ 
+♛ ::  ::  ::
+::  ♛   ::  
+  ::  ::♛ ::
+::♛ ::  ::  
+  ::  ♛   ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ ID atual: 6  Intervalo: [4–40]  
+│ Prefixo atual: 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ 0: NADA
+│ 1: ATIVIDADE
+│ 2: PASSOS
+│ 3: DETALHE
+│ 4: COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           ATIVIDADE  (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══.
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+♛   ::  ::  
+  ::  ::  ♛ 
+::  ::♛ ::  
+  ♛   ::  ::
+::  ::  ♛   
+  ::♛ ::  ::
+─┬───────────────────
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ::♛ ::  
+♛ ::  ::  ::
+::  ::  ♛   
+  ♛   ::  ::
+::  ::  ::♛ 
+  ::♛ ::  ::
+─┬───────────────────
+ ├─ Parâmetros ─ P1=1 P2=1 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1
+ ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=3 P21=0 P22=1 P23=0 P24=1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::♛ ::  
+♛ ::  ::  ::
+::  ::  ♛   
+  ♛   ::  ::
+::  ::  ::♛ 
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ ID atual: 6  Intervalo: [4–40]  
+│ Prefixo atual: 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): ATIVIDADE | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           ATIVIDADE  (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ 0: NADA
+│ 1: ATIVIDADE
+│ 2: PASSOS
+│ 3: DETALHE
+│ 4: COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           PASSOS     (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+♛   ::  ::  
+  ::  ::  ♛ 
+::  ::♛ ::  
+  ♛   ::  ::
+::  ::  ♛   
+  ::♛ ::  ::
+─┬───────────────────
+ ├─── 📆 0 ⏱  ──── 💰 g1-8
+ ├─── 📆 1 ⏱  ──── 💰 g1-6
+ ├─── 📆 2 ⏱  ──── 💰 g1-9
+ ├─── 📆 3 ⏱  ──── 💰 g1-9
+ ├─── 📆 4 ⏱  ──── 💰 g1-8
+ ├─── 📆 5 ⏱  ──── 💰 g1-7
+ ├─── 📆 6 ⏱  ──── 💰 g1-11
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ::♛ ::  
+♛ ::  ::  ::
+::  ::  ♛   
+  ♛   ::  ::
+::  ::  ::♛ 
+  ::♛ ::  ::
+─┬───────────────────
+ ├─ Parâmetros ─ P1=1 P2=2 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1
+ ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=3 P21=0 P22=1 P23=0 P24=1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::♛ ::  
+♛ ::  ::  ::
+::  ::  ♛   
+  ♛   ::  ::
+::  ::  ::♛ 
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ ID atual: 6  Intervalo: [4–40]  
+│ Prefixo atual: 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): PASSOS | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           PASSOS     (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ 0: NADA
+│ 1: ATIVIDADE
+│ 2: PASSOS
+│ 3: DETALHE
+│ 4: COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 2): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           DETALHE    (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+♛   ::  ::  
+  ::  ::  ♛ 
+::  ::♛ ::  
+  ♛   ::  ::
+::  ::  ♛   
+  ::♛ ::  ::
+─┬───────────────────
+ ├─┬─ 📆 0 ⏱  ──── 💰 g1-8 [📏 0-6 (μ=4, melhor/pior 4)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│   4│   2│   3│   4│   6│   6│   4│   2│   5│   4│
+ │ │  10│   2│   3│   2│   5│   6│   8│   2│   2│   1│   3│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 1 ⏱  ──── 💰 g1-6 [📏 2-6 (μ=5, melhor/pior 6)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│   4│   2│   2│   6│   1│   2│   3│   5│   4│   2│
+ │ │  10│   4│   2│   4│   4│   2│   5│   1│   3│   6│   5│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 2 ⏱  ──── 💰 g1-9 [📏 2-6 (μ=4, melhor/pior 4)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│   4│   4│   9│   3│   5│   4│   3│   1│   3│   3│
+ │ │  10│   9│   3│   4│   7│   1│   1│   3│   4│   4│   2│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 3 ⏱  ──── 💰 g1-9 [📏 2-6 (μ=5, melhor/pior 6)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│   1│   1│   3│   2│   3│   3│   2│   9│   2│   2│
+ │ │  10│   7│   7│   3│   2│   7│   3│   4│   3│   3│   4│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 4 ⏱  ──── 💰 g1-8 [📏 2-6 (μ=4, melhor/pior 3)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│   8│   3│   3│   1│   2│   2│   1│   1│   7│   3│
+ │ │  10│   3│   4│   5│   6│   3│   3│   2│   7│   1│   5│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 5 ⏱  ──── 💰 g1-7 [📏 2-6 (μ=5, melhor/pior 6)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│   5│   1│   5│   4│   2│   2│   1│   2│   3│   4│
+ │ │  10│   2│   5│   2│   6│   7│   5│   4│   4│   4│   2│
+ │ └──────────────────────────────────── 
+ ├─┬─ 📆 6 ⏱  ──── 💰 g1-11 [📏 2-6 (μ=5, melhor/pior 5)]
+ │ │🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │   0│   7│   5│   1│   4│   2│   5│   2│   5│   3│   2│
+ │ │  10│   3│   3│   2│  11│   2│   7│   4│   2│   7│   3│
+ │ └──────────────────────────────────── 
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ::♛ ::  
+♛ ::  ::  ::
+::  ::  ♛   
+  ♛   ::  ::
+::  ::  ::♛ 
+  ::♛ ::  ::
+─┬───────────────────
+ ├─ Parâmetros ─ P1=1 P2=3 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1
+ ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=3 P21=0 P22=1 P23=0 P24=1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::♛ ::  
+♛ ::  ::  ::
+::  ::  ♛   
+  ♛   ::  ::
+::  ::  ::♛ 
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ ID atual: 6  Intervalo: [4–40]  
+│ Prefixo atual: 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): DETALHE | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           DETALHE    (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ 0: NADA
+│ 1: ATIVIDADE
+│ 2: PASSOS
+│ 3: DETALHE
+│ 4: COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 3): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ │ 🏆  ⏱  💰 g:1
+─┴───────────────────
+♛   ::  ::  
+  ::  ::  ♛ 
+::  ::♛ ::  
+  ♛   ::  ::
+::  ::  ♛   
+  ::♛ ::  ::
+─┬───────────────────
+ ├─┬─ 📆 0 ⏱  ──── 💰 g1-8
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 1 4 3 5 0  💰 g:4
+ │ │ 🧍 2   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 3   5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 4   0 4 5 2 3 1  💰 g:4
+ │ │ 🧍 5   1 2 5 4 3 0  💰 g:6
+ │ │ 🧍 6   4 0 1 2 3 5  💰 g:6
+ │ │ 🧍 7   2 5 4 0 3 1  💰 g:4
+ │ │ 🧍 8   2 4 1 0 3 5  💰 g:2
+ │ │ 🧍 9   4 0 2 1 3 5  💰 g:5
+ │ │ 🧍 10  0 5 4 2 3 1  💰 g:4
+ │ │ 🧍 11  1 5 3 0 4 2  💰 g:2
+ │ │ 🧍 12  2 1 3 0 5 4  💰 g:3
+ │ │ 🧍 13  1 2 0 5 3 4  💰 g:2
+ │ │ 🧍 14  0 2 4 3 5 1  💰 g:5
+ │ │ 🧍 15  4 0 1 2 3 5  💰 g:6
+ │ │ 🧍 16  1 0 3 4 5 2  💰 g:8
+ │ │ 🧍 17  4 2 1 5 3 0  💰 g:2
+ │ │ 🧍 18  1 4 5 0 2 3  💰 g:2
+ │ │ 🧍 19  0 5 3 1 4 2  💰 g:1
+ │ │ 🧍 20  4 3 0 5 1 2  💰 g:3
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ 1   │2   │   5│
+ │ │ 3   │4   │   6│
+ │ │ 5   │6   │   5│
+ │ │ 7   │8   │   3│
+ │ │ 9   │10  │   5│
+ │ │ 11  │12  │   4│
+ │ │ 13  │14  │   5│
+ │ │ 15  │16  │   5│
+ │ │ 17  │18  │   6│
+ │ │ 19  │20  │   5│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  41│  62│  57│  43│  30│  28│  46│  72│  38│  49│
+ │ │ │   10│  67│  54│  70│  36│  33│  25│  64│  59│  75│  51│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   1│   2│   1│   1│   0│   1│   1│   1│   1│   1│
+ │ │ │   10│   1│   1│   2│   0│   1│   0│   2│   1│   1│   1│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2⇄  17│  19⇄   4│   3⇄  17│   7⇄  20│   2⇄  13│
+ │ │ │   10│   1⇄  13│  12⇄   9│  10⇄  11│   6⇄  15│  18⇄   8│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2⇄   2│   1⇄   4│   3⇄   2│   4⇄   3│   2⇄   2│
+ │ │ │   10│   4⇄   2│   3⇄   5│   4⇄   2│   6⇄   6│   2⇄   2│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 10 ───── 📈 3 🟰 10 📉 7
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   6⇄   3│   1⇄   5│   2⇄   4│   4⇄   2│   4⇄   2│
+ │ │ │   10│   4⇄   5│   3⇄   5│   2⇄   1│   6⇄   2│   2⇄   4│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  7✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ───── 
+ ├─┬─ 📆 1 ⏱  ──── 💰 g1-6
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   0 4 5 2 3 1  💰 g:4
+ │ │ 🧍 2   4 0 5 2 1 3  💰 g:2
+ │ │ 🧍 3   2 4 0 1 3 5  💰 g:2
+ │ │ 🧍 4   4 0 1 2 3 5  💰 g:6
+ │ │ 🧍 5   0 2 5 3 1 4  💰 g:1
+ │ │ 🧍 6   0 5 4 2 1 3  💰 g:2
+ │ │ 🧍 7   2 1 3 0 5 4  💰 g:3
+ │ │ 🧍 8   2 1 0 5 3 4  💰 g:5
+ │ │ 🧍 9   1 2 4 3 5 0  💰 g:4
+ │ │ 🧍 10  1 2 0 5 3 4  💰 g:2
+ │ │ 🧍 11  1 0 2 4 5 3  💰 g:4
+ │ │ 🧍 12  4 0 3 5 1 2  💰 g:2
+ │ │ 🧍 13  4 0 5 1 2 3  💰 g:4
+ │ │ 🧍 14  3 2 1 5 4 0  💰 g:4
+ │ │ 🧍 15  5 0 2 4 3 1  💰 g:2
+ │ │ 🧍 16  5 3 4 1 2 0  💰 g:5
+ │ │ 🧍 17  0 5 3 1 4 2  💰 g:1
+ │ │ 🧍 18  4 1 5 3 0 2  💰 g:3
+ │ │ 🧍 19  1 4 5 2 3 0  💰 g:6
+ │ │ 🧍 20  0 4 5 3 2 1  💰 g:5
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ 1   │2   │   4│
+ │ │ 3   │4   │   4│
+ │ │ 5   │6   │   4│
+ │ │ 7   │8   │   3│
+ │ │ 9   │10  │   4│
+ │ │ 11  │12  │   5│
+ │ │ 13  │14  │   6│
+ │ │ 15  │16  │   5│
+ │ │ 17  │18  │   5│
+ │ │ 19  │20  │   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  43│  62│  59│  28│  75│  64│  51│  36│  41│  67│
+ │ │ │   10│  38│  57│  46│  49│  70│  30│  72│  54│  25│  33│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   1│   1│   2│   0│   2│   1│   1│   1│   0│   2│
+ │ │ │   10│   1│   1│   1│   1│   1│   1│   1│   1│   1│   0│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  10⇄  12│  13⇄   3│  15⇄   5│   2⇄  16│  18⇄  19│
+ │ │ │   10│  11⇄  10│  17⇄  14│   5⇄   6│   3⇄   8│   1⇄   7│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2⇄   2│   4⇄   2│   2⇄   1│   2⇄   5│   3⇄   6│
+ │ │ │   10│   4⇄   2│   1⇄   4│   1⇄   2│   2⇄   5│   4⇄   3│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 14 ───── 📈 1 🟰 12 📉 7
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   4⇄   4│   1⇄   3│   1⇄   1│   7⇄   4│   3⇄   9│
+ │ │ │   10│   3⇄   3│   1⇄   3│   4⇄   5│   3⇄   9│   4⇄   4│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  18✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ───── 
+ ├─┬─ 📆 2 ⏱  ──── 💰 g1-9
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 1 3 0 4 5  💰 g:4
+ │ │ 🧍 2   5 0 4 2 1 3  💰 g:4
+ │ │ 🧍 3   2 1 0 3 4 5  💰 g:9
+ │ │ 🧍 4   2 5 0 1 3 4  💰 g:3
+ │ │ 🧍 5   5 4 2 1 0 3  💰 g:5
+ │ │ 🧍 6   4 2 5 1 0 3  💰 g:4
+ │ │ 🧍 7   4 3 1 2 5 0  💰 g:3
+ │ │ 🧍 8   2 5 3 1 4 0  💰 g:1
+ │ │ 🧍 9   1 0 5 3 4 2  💰 g:3
+ │ │ 🧍 10  1 2 4 5 0 3  💰 g:3
+ │ │ 🧍 11  4 1 2 3 0 5  💰 g:9
+ │ │ 🧍 12  4 1 5 3 0 2  💰 g:3
+ │ │ 🧍 13  4 3 5 1 2 0  💰 g:4
+ │ │ 🧍 14  5 3 4 2 1 0  💰 g:7
+ │ │ 🧍 15  0 2 5 3 1 4  💰 g:1
+ │ │ 🧍 16  3 0 2 4 5 1  💰 g:1
+ │ │ 🧍 17  4 0 1 3 2 5  💰 g:3
+ │ │ 🧍 18  0 1 4 3 5 2  💰 g:4
+ │ │ 🧍 19  5 1 2 0 4 3  💰 g:4
+ │ │ 🧍 20  2 5 1 3 0 4  💰 g:2
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ 1   │2   │   6│
+ │ │ 3   │4   │   4│
+ │ │ 5   │6   │   3│
+ │ │ 7   │8   │   5│
+ │ │ 9   │10  │   5│
+ │ │ 11  │12  │   2│
+ │ │ 13  │14  │   4│
+ │ │ 15  │16  │   6│
+ │ │ 17  │18  │   5│
+ │ │ 19  │20  │   6│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  41│  49│  28│  51│  33│  43│  54│  70│  59│  57│
+ │ │ │   10│  25│  64│  36│  30│  75│  72│  62│  46│  38│  67│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   1│   1│   0│   1│   1│   1│   1│   1│   1│   2│
+ │ │ │   10│   0│   1│   1│   1│   1│   2│   1│   1│   1│   1│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  10⇄  12│  13⇄   7│  17⇄   8│   4⇄   9│  14⇄   2│
+ │ │ │   10│  20⇄  18│  10⇄   6│   1⇄   5│  16⇄  15│  16⇄  19│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   3⇄   3│   4⇄   3│   3⇄   1│   3⇄   3│   7⇄   4│
+ │ │ │   10│   2⇄   4│   3⇄   4│   4⇄   5│   1⇄   1│   1⇄   4│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 10 ───── 📈 4 🟰 12 📉 4
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   3⇄   3│   4⇄   3│   7⇄   2│   3⇄   7│   7⇄   2│
+ │ │ │   10│   2⇄   9│   2⇄   3│   3⇄   2│   3⇄   1│   1⇄   2│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  1✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ───── 
+ ├─┬─ 📆 3 ⏱  ──── 💰 g1-9
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   3 0 2 4 5 1  💰 g:1
+ │ │ 🧍 2   0 2 5 3 1 4  💰 g:1
+ │ │ 🧍 3   0 3 2 4 5 1  💰 g:3
+ │ │ 🧍 4   4 3 0 2 1 5  💰 g:2
+ │ │ 🧍 5   2 1 3 0 5 4  💰 g:3
+ │ │ 🧍 6   1 2 4 5 0 3  💰 g:3
+ │ │ 🧍 7   1 4 5 0 2 3  💰 g:2
+ │ │ 🧍 8   5 4 3 0 1 2  💰 g:9
+ │ │ 🧍 9   2 5 1 3 0 4  💰 g:2
+ │ │ 🧍 10  5 3 0 4 2 1  💰 g:2
+ │ │ 🧍 11  5 3 4 2 1 0  💰 g:7
+ │ │ 🧍 12  0 1 5 3 4 2  💰 g:7
+ │ │ 🧍 13  5 0 3 4 2 1  💰 g:3
+ │ │ 🧍 14  2 3 5 1 4 0  💰 g:2
+ │ │ 🧍 15  5 1 3 2 4 0  💰 g:7
+ │ │ 🧍 16  4 3 1 2 5 0  💰 g:3
+ │ │ 🧍 17  4 3 5 1 2 0  💰 g:4
+ │ │ 🧍 18  2 4 5 3 0 1  💰 g:3
+ │ │ 🧍 19  1 2 4 3 0 5  💰 g:3
+ │ │ 🧍 20  0 3 1 2 4 5  💰 g:4
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ 1   │2   │   6│
+ │ │ 3   │4   │   5│
+ │ │ 5   │6   │   6│
+ │ │ 7   │8   │   4│
+ │ │ 9   │10  │   6│
+ │ │ 11  │12  │   6│
+ │ │ 13  │14  │   6│
+ │ │ 15  │16  │   4│
+ │ │ 17  │18  │   5│
+ │ │ 19  │20  │   5│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  75│  72│  49│  59│  54│  46│  64│  25│  67│  62│
+ │ │ │   10│  30│  33│  43│  70│  28│  57│  38│  51│  41│  36│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2│   1│   1│   2│   1│   1│   1│   0│   2│   1│
+ │ │ │   10│   0│   1│   1│   1│   1│   1│   1│   1│   1│   0│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   1⇄  14│   7⇄  15│   5⇄   3│  13⇄   4│  17⇄   6│
+ │ │ │   10│  16⇄  12│   1⇄  19│   9⇄  10│   2⇄   4│   9⇄  18│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   1⇄   2│   2⇄   7│   3⇄   3│   3⇄   2│   4⇄   3│
+ │ │ │   10│   3⇄   7│   1⇄   3│   2⇄   2│   1⇄   2│   2⇄   3│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 6 ───── 📈 0 🟰 15 📉 5
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   1⇄   7│   2⇄   3│   3⇄   3│   6⇄   5│   4⇄   3│
+ │ │ │   10│   3⇄   7│   1⇄   1│   2⇄   2│   1⇄   3│   3⇄   8│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  16✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ───── 
+ ├─┬─ 📆 4 ⏱ 1ms  ──── 💰 g1-8
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 5 4 3 0 1  💰 g:8
+ │ │ 🧍 2   4 5 1 3 0 2  💰 g:3
+ │ │ 🧍 3   0 3 4 2 1 5  💰 g:3
+ │ │ 🧍 4   2 5 3 1 0 4  💰 g:1
+ │ │ 🧍 5   1 3 0 4 2 5  💰 g:2
+ │ │ 🧍 6   2 5 1 3 0 4  💰 g:2
+ │ │ 🧍 7   2 4 1 3 0 5  💰 g:1
+ │ │ 🧍 8   3 0 2 5 1 4  💰 g:1
+ │ │ 🧍 9   0 1 5 3 4 2  💰 g:7
+ │ │ 🧍 10  0 4 3 1 2 5  💰 g:3
+ │ │ 🧍 11  1 2 4 5 0 3  💰 g:3
+ │ │ 🧍 12  4 3 5 1 2 0  💰 g:4
+ │ │ 🧍 13  4 0 2 1 3 5  💰 g:5
+ │ │ 🧍 14  4 1 0 3 2 5  💰 g:6
+ │ │ 🧍 15  1 3 2 0 5 4  💰 g:3
+ │ │ 🧍 16  1 3 0 2 5 4  💰 g:3
+ │ │ 🧍 17  1 4 5 0 2 3  💰 g:2
+ │ │ 🧍 18  4 3 5 1 0 2  💰 g:7
+ │ │ 🧍 19  3 0 2 4 5 1  💰 g:1
+ │ │ 🧍 20  0 3 2 1 5 4  💰 g:5
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ 1   │2   │   3│
+ │ │ 3   │4   │   6│
+ │ │ 5   │6   │   6│
+ │ │ 7   │8   │   6│
+ │ │ 9   │10  │   5│
+ │ │ 11  │12  │   6│
+ │ │ 13  │14  │   4│
+ │ │ 15  │16  │   2│
+ │ │ 17  │18  │   5│
+ │ │ 19  │20  │   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  25│  43│  51│  70│  62│  64│  75│  67│  28│  54│
+ │ │ │   10│  57│  41│  36│  33│  46│  49│  59│  30│  72│  38│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   0│   1│   1│   2│   1│   1│   2│   1│   0│   2│
+ │ │ │   10│   1│   0│   1│   1│   1│   1│   1│   1│   1│   1│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   5⇄  15│  19⇄   7│  17⇄  16│  10⇄  11│  10⇄   2│
+ │ │ │   10│   3⇄   6│   4⇄   7│   4⇄   8│  18⇄  20│  14⇄  13│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2⇄   3│   1⇄   1│   2⇄   3│   3⇄   3│   3⇄   3│
+ │ │ │   10│   3⇄   2│   1⇄   1│   1⇄   1│   7⇄   5│   6⇄   5│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 14 ───── 📈 3 🟰 6 📉 11
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   4⇄   4│   5⇄   7│   6⇄   2│   4⇄   5│   2⇄   4│
+ │ │ │   10│   3⇄   2│   4⇄   1│   2⇄   2│   4⇄   5│   1⇄   5│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  8✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 13
+ ├─┬─ 📆 5 ⏱ 1ms  ──── 💰 g1-7
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   4 0 2 1 3 5  💰 g:5
+ │ │ 🧍 2   4 0 1 3 5 2  💰 g:1
+ │ │ 🧍 3   0 3 2 1 5 4  💰 g:5
+ │ │ 🧍 4   5 4 3 1 0 2  💰 g:4
+ │ │ 🧍 5   3 2 5 1 4 0  💰 g:2
+ │ │ 🧍 6   2 1 5 3 0 4  💰 g:2
+ │ │ 🧍 7   5 4 1 3 0 2  💰 g:1
+ │ │ 🧍 8   0 2 5 1 3 4  💰 g:2
+ │ │ 🧍 9   0 3 4 2 1 5  💰 g:3
+ │ │ 🧍 10  4 5 1 3 2 0  💰 g:4
+ │ │ 🧍 11  0 5 3 1 2 4  💰 g:2
+ │ │ 🧍 12  4 1 2 5 0 3  💰 g:5
+ │ │ 🧍 13  1 4 2 5 0 3  💰 g:2
+ │ │ 🧍 14  1 4 5 2 3 0  💰 g:6
+ │ │ 🧍 15  2 3 4 5 1 0  💰 g:7
+ │ │ 🧍 16  3 2 4 0 5 1  💰 g:5
+ │ │ 🧍 17  1 3 2 5 0 4  💰 g:4
+ │ │ 🧍 18  1 3 0 4 5 2  💰 g:4
+ │ │ 🧍 19  4 2 1 0 5 3  💰 g:4
+ │ │ 🧍 20  4 3 5 0 2 1  💰 g:2
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ 1   │2   │   4│
+ │ │ 3   │4   │   5│
+ │ │ 5   │6   │   5│
+ │ │ 7   │8   │   6│
+ │ │ 9   │10  │   6│
+ │ │ 11  │12  │   6│
+ │ │ 13  │14  │   4│
+ │ │ 15  │16  │   5│
+ │ │ 17  │18  │   4│
+ │ │ 19  │20  │   4│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  33│  75│  38│  41│  57│  62│  72│  67│  54│  46│
+ │ │ │   10│  59│  30│  64│  28│  25│  36│  49│  51│  43│  70│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   0│   2│   1│   0│   1│   2│   1│   2│   1│   1│
+ │ │ │   10│   1│   0│   2│   0│   1│   0│   1│   1│   1│   2│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2⇄  17│  15⇄  13│   2⇄   8│  11⇄   6│   8⇄   9│
+ │ │ │   10│  10⇄  13│   5⇄  20│  18⇄   7│  19⇄   3│   6⇄  20│
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   1⇄   4│   7⇄   2│   1⇄   2│   2⇄   2│   2⇄   3│
+ │ │ │   10│   4⇄   2│   2⇄   2│   4⇄   1│   4⇄   5│   2⇄   2│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 10 ───── 📈 0 🟰 14 📉 6
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2⇄   4│   7⇄   2│  11⇄   2│   3⇄   3│   2⇄   3│
+ │ │ │   10│   5⇄   2│   5⇄   2│   4⇄   1│   5⇄   5│   7⇄   2│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE ⚔️  Sobrevivência ───── 
+ │ │ ├───── ⏳  Idade ───── 
+ │ │ ├───── 🚶‍🌍 Imigrantes  1✖ →🆕 ───── 
+ │ │ └──────────────────────────────────── 
+ │ └───── FASE 🌈  Diversidade - limpeza ─────  🧹 3
+ ├─┬─ 📆 6 ⏱ 1ms  ──── 💰 g1-11
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   4 5 3 2 1 0  💰 g:7
+ │ │ 🧍 2   0 3 2 1 5 4  💰 g:5
+ │ │ 🧍 3   0 4 1 3 5 2  💰 g:1
+ │ │ 🧍 4   1 3 0 4 5 2  💰 g:4
+ │ │ 🧍 5   4 3 5 0 2 1  💰 g:2
+ │ │ 🧍 6   5 3 2 1 4 0  💰 g:5
+ │ │ 🧍 7   4 2 5 0 3 1  💰 g:2
+ │ │ 🧍 8   4 5 3 1 2 0  💰 g:5
+ │ │ 🧍 9   4 0 3 2 5 1  💰 g:3
+ │ │ 🧍 10  0 2 4 1 5 3  💰 g:2
+ │ │ 🧍 11  1 2 3 5 0 4  💰 g:3
+ │ │ 🧍 12  3 0 5 4 2 1  💰 g:3
+ │ │ 🧍 13  0 2 5 1 3 4  💰 g:2
+ │ │ 🧍 14  5 0 1 2 3 4  💰 g:11
+ │ │ 🧍 15  1 4 2 5 0 3  💰 g:2
+ │ │ 🧍 16  2 3 4 5 1 0  💰 g:7
+ │ │ 🧍 17  3 1 2 5 4 0  💰 g:4
+ │ │ 🧍 18  2 5 1 3 0 4  💰 g:2
+ │ │ 🧍 19  4 3 5 1 0 2  💰 g:7
+ │ │ 🧍 20  0 4 2 5 1 3  💰 g:3
+ │ ├───── 📏  ───── 
+ │ │ 🧍    🧍   📏  
+ │ │ ────┼────┼────┼
+ │ │ 1   │2   │   6│
+ │ │ 3   │4   │   4│
+ │ │ 5   │6   │   5│
+ │ │ 7   │8   │   5│
+ │ │ 9   │10  │   5│
+ │ │ 11  │12  │   6│
+ │ │ 13  │14  │   4│
+ │ │ 15  │16  │   5│
+ │ │ 17  │18  │   6│
+ │ │ 19  │20  │   6│
+ │ │ ────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Roleta, pressão 150 ───── 
+ │ │ │ 100%    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  33│  38│  75│  43│  64│  36│  70│  41│  49│  72│
+ │ │ │   10│  54│  57│  67│  25│  62│  28│  46│  59│  30│  51│
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   1│   1│   1│   1│   1│   1│   2│   0│   1│   2│
+ │ │ │   10│   1│   1│   1│   1│   1│   1│   1│   1│   0│   1│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 20 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│  15⇄   6│   5⇄  14│   3⇄   2│  10⇄   1│  10⇄  12│
+ │ │ │   10│   9⇄  20│   7⇄  16│  13⇄  18│   7⇄  11│   4⇄  17│
+ │ 🏆  ⏱ 1ms  💰 g:0
+─┴───────────────────
+::  ::♛ ::  
+♛ ::  ::  ::
+::  ::  ♛   
+  ♛   ::  ::
+::  ::  ::♛ 
+  ::♛ ::  ::
+─┬───────────────────
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2⇄   5│   2⇄  11│   1⇄   5│   2⇄   7│   2⇄   3│
+ │ │ │   10│   3⇄   3│   2⇄   7│   2⇄   2│   2⇄   3│   4⇄   4│
+ │ │ ├───── Filhos (💰 ) 🧬 10  🦠 9 ───── 📈 4 🟰 13 📉 3
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   4⇄   6│   4⇄  11│   2⇄   3│   5⇄   5│   2⇄   0│
+ │ │ │   10│   2⇄   1│   2⇄   7│   3⇄   2│   2⇄   5│   3⇄   4│
+ │ │ └──────────────────────────────────── 
+ ├─ Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=20 P7=100 P8=50 P9=1 P10=150 P13=1
+ ├─ ⚙   ─ P14=100 P16=1 P17=1 P18=3 P19=0 P20=3 P21=0 P22=1 P23=0 P24=1
+═╧═ 🏁  Execução terminada ⏱   1ms  ═══
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::♛ ::  
+♛ ::  ::  ::
+::  ::  ♛   
+  ♛   ::  ::
+::  ::  ::♛ 
+  ::♛ ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 1 | I3(Iterações): 169 | I4(Épocas): 7 | 
+│ I5(Gerações): 174
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 

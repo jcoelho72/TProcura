@@ -1,0 +1,748 @@
+
+┌─ Teste TProcuraMelhorativa ──┐
+│ 1 - 8 Damas (Inteira)        │
+│ 2 - 8 Damas (Permutacao)     │
+│ 3 - Partição (Binária)       │
+└──────────────────────────────┘
+Opção: 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ::  ::♛ 
+  ::  ::♛ ::  ::
+::  ::♛ ::  ::  
+♛ ::  ::  ::  ::
+::  ♛   ::  ::  
+  ::  ::  ♛   ::
+::♛ ::  ::  ::  
+  ::  ::  ::♛ ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ ID atual: 8  Intervalo: [4–40]  
+│ Prefixo atual: 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 20
+│ P7(PROB_CRUZAR): 100 | P8(PROB_MUTAR): 50 | P9(SELECAO): Roleta | P10(PRESSAO): 150
+│ P13(SOBREVIVENCIA): Idade | P14(PERC_DESCENDENTES): 100 | P16(ELITISMO): 1
+│ P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza | P19(DIST_MINIMA): 0
+│ P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): inserir
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           NADA       (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ 0: NADA
+│ 1: ATIVIDADE
+│ 2: PASSOS
+│ 3: DETALHE
+│ 4: COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             20         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P6(POPULACAO) ───────────────────────────────────────────────────
+│ Número de elementos em cada geração                                  
+│ Intervalo: 2 a 1000000
+└──────────────────────────────────────────────────────────────────────
+POPULACAO (atual 20): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           100        (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P7(PROB_CRUZAR) ─────────────────────────────────────────────────
+│ Probabilidade de um estado ser cruzado                               
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+PROB_CRUZAR (atual 100): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            50         (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P8(PROB_MUTAR) ──────────────────────────────────────────────────
+│ Probabilidade de um estado sofrer uma mutação após gerado            
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+PROB_MUTAR (atual 50): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Roleta     (1 a 3)
+│ P10(PRESSAO):              150        (100 a 200)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P9(SELECAO) ─────────────────────────────────────────────────────
+│ Método de seleção dos pais para cruzamento                           
+│ 1: Roleta
+│ 2: Torneio
+│ 3: Uniforme
+└──────────────────────────────────────────────────────────────────────
+SELECAO (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      2          (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P11(TAMANHO_TORNEIO) ────────────────────────────────────────────
+│ Tamanho do torneio, caso a sobrevivência seja do tipo torneio.       
+│ Intervalo: 2 a 100
+└──────────────────────────────────────────────────────────────────────
+TAMANHO_TORNEIO (atual 2): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P12(PROB_MELHOR_TORNEIO) ────────────────────────────────────────
+│ Probabilidade do melhor ganhar o torneio.                            
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+PROB_MELHOR_TORNEIO (atual 100): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        Idade      (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P13(SOBREVIVENCIA) ──────────────────────────────────────────────
+│ Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos
+│ 1: Idade
+│ 2: Substitui piores
+│ 3: round-robin
+└──────────────────────────────────────────────────────────────────────
+SOBREVIVENCIA (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        3          (2 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P14(PERC_DESCENDENTES) ──────────────────────────────────────────
+│ Número de descendentes a substituirem elementos na população, em percentagem (100 toda a população é substituída, 0 apenas um elemento)
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+PERC_DESCENDENTES (atual 100): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        3          (2 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P15(Q_ROUND_ROBIN) ──────────────────────────────────────────────
+│ Número de elementos no round-robin (valor de q)                      
+│ Intervalo: 2 a 100
+└──────────────────────────────────────────────────────────────────────
+Q_ROUND_ROBIN (atual 3): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             1          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P16(ELITISMO) ───────────────────────────────────────────────────
+│ Número absoluto de indivíduos melhores, que se mantêm na geração seguinte, excepto se há descendência com valor igual ou superior
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+ELITISMO (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             3          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P17(IMIGRANTES) ─────────────────────────────────────────────────
+│ Número absoluto de indivíduos imigrantes, substituindo quaisquer outros na população.
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+IMIGRANTES (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             3          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P18(DIVERSIDADE) ────────────────────────────────────────────────
+│ Estratégia de diversidade.                                           
+│ 1: Nenhuma
+│ 2: Avaliação partilhada
+│ 3: Limpeza
+└──────────────────────────────────────────────────────────────────────
+DIVERSIDADE (atual 3): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             3          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P19(DIST_MINIMA) ────────────────────────────────────────────────
+│ Distância mínima imposta entre elementos da população                
+│ Intervalo: 0 a 1000
+└──────────────────────────────────────────────────────────────────────
+DIST_MINIMA (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             3          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P21(TIPO_MUTAR) ─────────────────────────────────────────────────
+│ TIPO_MUTAR: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)
+│ Intervalo: 0 a 0
+└──────────────────────────────────────────────────────────────────────
+TIPO_MUTAR (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             3          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         inserir    (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P22(TIPO_VIZINHO) ───────────────────────────────────────────────
+│ TIPO_VIZINHO: vários métodso para vizinhanças de inteiros            
+│ 1: inserir
+│ 2: trocaPar
+│ 3: inverterSegmento
+└──────────────────────────────────────────────────────────────────────
+TIPO_VIZINHO (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             3          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         trocaPar   (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P23(LIMITE_VIZINHOS) ────────────────────────────────────────────
+│ LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite
+- inserir + trocaPar + inverterSegmento - limita a distância entre pares
+│ Intervalo: 0 a 1000
+└──────────────────────────────────────────────────────────────────────
+LIMITE_VIZINHOS (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             3          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         trocaPar   (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P24(TIPO_DISTANCIA) ─────────────────────────────────────────────
+│ Distância: vários métodso para distâncias de permutações             
+│ 1: Hamming
+│ 2: Kendall tau
+│ 3: Spearman footrule
+└──────────────────────────────────────────────────────────────────────
+TIPO_DISTANCIA (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO):             Algoritmo Evolutivo (1 a 1)
+│ P2(NIVEL_DEBUG):           COMPLETO   (0 a 4)
+│ P3(SEMENTE):               1          (1 a 1000000)
+│ P4(LIMITE_TEMPO):          10         (1 a 3600)
+│ P5(LIMITE_ITERACOES):      1000000    (0 a 1000000000)
+│ P6(POPULACAO):             10         (2 a 1000000)
+│ P7(PROB_CRUZAR):           0          (0 a 100)
+│ P8(PROB_MUTAR):            100        (0 a 100)
+│ P9(SELECAO):               Torneio    (1 a 3)
+│ P11(TAMANHO_TORNEIO):      10         (2 a 100)
+│ P12(PROB_MELHOR_TORNEIO):  100        (0 a 100)
+│ P13(SOBREVIVENCIA):        round-robin (1 a 3)
+│ P14(PERC_DESCENDENTES):    100        (0 a 100)
+│ P15(Q_ROUND_ROBIN):        2          (2 a 100)
+│ P16(ELITISMO):             3          (0 a 100)
+│ P17(IMIGRANTES):           1          (0 a 100)
+│ P18(DIVERSIDADE):          Limpeza    (1 a 3)
+│ P19(DIST_MINIMA):          0          (0 a 1000)
+│ P20(TIPO_CRUZAR):          Order      (1 a 4)
+│ P21(TIPO_MUTAR):           0          (0 a 0)
+│ P22(TIPO_VIZINHO):         trocaPar   (1 a 3)
+│ P23(LIMITE_VIZINHOS):      0          (0 a 1000)
+│ P24(TIPO_DISTANCIA):       Hamming    (1 a 3)
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 10
+│ P7(PROB_CRUZAR): 0 | P8(PROB_MUTAR): 100 | P9(SELECAO): Torneio | P11(TAMANHO_TORNEIO): 10
+│ P12(PROB_MELHOR_TORNEIO): 100 | P13(SOBREVIVENCIA): round-robin | P14(PERC_DESCENDENTES): 100
+│ P15(Q_ROUND_ROBIN): 2 | P16(ELITISMO): 3 | P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza
+│ P19(DIST_MINIMA): 0 | P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): trocaPar
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─┬─ 📆 0 ⏱  ──── 💰 g2-6
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 1   2 1 4 3 5 0  💰 g:4
+ │ │ 🧍 2   0 2 4 5 3 1  💰 g:2
+ │ │ 🧍 3   5 0 2 3 1 4  💰 g:3
+ │ │ 🧍 4   0 4 5 2 3 1  💰 g:4
+ │ │ 🧍 5   1 2 5 4 3 0  💰 g:6
+ │ │ 🧍 6   4 0 1 2 3 5  💰 g:6
+ │ │ 🧍 7   2 5 4 0 3 1  💰 g:4
+ │ │ 🧍 8   2 4 1 0 3 5  💰 g:2
+ │ │ 🧍 9   4 0 2 1 3 5  💰 g:5
+ │ │ 🧍 10  0 5 4 2 3 1  💰 g:4
+ │ ├───── 📏  ───── 
+ │ │  🧍  1    2    3    4    5    6    7    8    9    10   
+ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ 1   │    │   5│   5│   6│   5│   6│   4│   5│   6│   5│
+ │ │ 2   │   5│    │   6│   3│   4│   5│   3│   5│   5│   2│
+ │ │ 3   │   5│   6│    │   6│   6│   5│   6│   6│   4│   6│
+ │ │ 4   │   6│   3│   6│    │   4│   4│   4│   4│   5│   2│
+ │ │ 5   │   5│   4│   6│   4│    │   5│   5│   5│   5│   5│
+ │ │ 6   │   6│   5│   5│   4│   5│    │   5│   3│   2│   4│
+ │ │ 7   │   4│   3│   6│   4│   5│   5│    │   3│   5│   2│
+ │ │ 8   │   5│   5│   6│   4│   5│   3│   3│    │   4│   5│
+ │ │ 9   │   6│   5│   4│   5│   5│   2│   5│   4│    │   5│
+ │ │ 10  │   5│   2│   6│   2│   5│   4│   2│   5│   5│    │
+ │ │ ────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 10 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Torneio, tamanho 10, probabilidade melhor 100 ───── 
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   0│   5│   1│   0│   0│   0│   0│   4│   0│   0│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 10 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   8⇄   2│   3⇄   2│   8⇄   8│   8⇄   2│   2⇄   2│
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ::  ♛   
+  ::♛ ::  ::
+♛   ::  ::  
+  ::  ::  ♛ 
+::  ::♛ ::  
+  ♛   ::  ::
+─┬───────────────────
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   2⇄   2│   3⇄   2│   2⇄   2│   2⇄   2│   2⇄   2│
+ │ │ ├───── Filhos (💰 ) 🧬 0  🦠 10 ───── 📈 1 🟰 4 📉 5
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│   4⇄   0│   3⇄   2│   4⇄   2│   5⇄   6│   2⇄   3│
+ │ │ └──────────────────────────────────── 
+ ├─ Parâmetros ─ P1=1 P2=4 P3=1 P4=10 P5=1000000 P6=10 P7=0 P8=100 P9=2 P11=10 P12=100
+ ├─ ⚙   ─ P13=3 P14=100 P15=2 P16=3 P17=1 P18=3 P19=0 P20=3 P21=0 P22=2 P23=0 P24=1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): Algoritmo Evolutivo | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 1000000 | P6(POPULACAO): 10
+│ P7(PROB_CRUZAR): 0 | P8(PROB_MUTAR): 100 | P9(SELECAO): Torneio | P11(TAMANHO_TORNEIO): 10
+│ P12(PROB_MELHOR_TORNEIO): 100 | P13(SOBREVIVENCIA): round-robin | P14(PERC_DESCENDENTES): 100
+│ P15(Q_ROUND_ROBIN): 2 | P16(ELITISMO): 3 | P17(IMIGRANTES): 1 | P18(DIVERSIDADE): Limpeza
+│ P19(DIST_MINIMA): 0 | P20(TIPO_CRUZAR): Order | P21(TIPO_MUTAR): 0 | P22(TIPO_VIZINHO): trocaPar
+│ P23(LIMITE_VIZINHOS): 0 | P24(TIPO_DISTANCIA): Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+  ::♛ ::  ::
+♛   ::  ::  
+  ::  ::  ♛ 
+::  ::♛ ::  
+  ♛   ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(Resultado): 0 | I2(Tempo(ms)): 0 | I3(Iterações): 21 | I4(Épocas): 1 | 
+│ I5(Gerações): 20
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 

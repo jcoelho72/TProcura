@@ -7,3 +7,5 @@ cd CasosTeste
 ../bin/Release/TProcuraMelhorativa < input1opt.txt > output1opt.txt
 ../bin/Release/TProcuraMelhorativa < input2opt.txt > output2opt.txt
 ../bin/Release/TProcuraMelhorativa < input3opt.txt > output3opt.txt
+
+./converter_cores.sh

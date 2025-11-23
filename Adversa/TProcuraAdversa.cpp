@@ -54,9 +54,9 @@ void TProcuraAdversa::Sucessores(TVector<TNo>& sucessores) {
 	TProcuraConstrutiva::Sucessores(sucessores);
 	if (Parametro(NIVEL_DEBUG) >= PASSOS && !sucessores.Empty()) {
 		if (minimizar)
-			ramo.Push(" ├□");
+			ramo.Push(RAMO_ESTADO2);
 		else
-			ramo.Push(" ├■");
+			ramo.Push(RAMO_ESTADO);
 	}
 }
 
@@ -139,7 +139,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 			resultado = valor;
 			melhor = id[i];
 			if (nivel > 1 && Parametro(NIVEL_DEBUG) >= PASSOS) { // colocar valor actual alterado
-				ramo.Last() = (minimizar ? " ├■" : " ├□");
+				ramo.Last() = (minimizar ? RAMO_ESTADO : RAMO_ESTADO2);
 				NovaLinha();
 				printf(" %d", resultado);
 			}
@@ -376,7 +376,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 			resultado = valor;
 			melhor = id[i];
 			if (nivel > 1 && Parametro(NIVEL_DEBUG) >= PASSOS) {
-				ramo.Last() = (minimizar ? " ├■" : " ├□");
+				ramo.Last() = (minimizar ? RAMO_ESTADO : RAMO_ESTADO2);
 				NovaLinha();
 				printf(" %d", resultado);
 			}
@@ -645,6 +645,7 @@ int TProcuraAdversa::ExecutaAlgoritmo() {
 	case 1: resultado = MiniMax(Dominio(Parametro(LIMITE), 0)); break;
 	case 2: resultado = MiniMaxAlfaBeta(Dominio(Parametro(LIMITE), 0)); break;
 	}
+	ramo.Last() = RAMO_CONTINUA;
 	if (Parametro(ORDENAR_SUCESSORES) == 2) {
 		Parametro(ESTADOS_REPETIDOS) = GERADOS;
 		if (reutilizadoAvaliacao > 0 && Parametro(NIVEL_DEBUG) >= DETALHE) {

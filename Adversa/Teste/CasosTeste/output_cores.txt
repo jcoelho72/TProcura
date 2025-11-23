@@ -1,0 +1,117 @@
+﻿
+Teste TProcuraAdversa
+Problema:
+  1 - Jogo do Galo
+  2 - Jogo Em Linha
+OpÃ§Ã£o: 
+Jogo do Galo
+ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - ParÃ¢metros    | 4 - SoluÃ§Ã£o |
+| 5 - Indicadores | 6 - Executar | 7 - ConfiguraÃ§Ãµes | 8 - Teste   |
+OpÃ§Ã£o: 
+Jogo do Galo
+ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - ParÃ¢metros    | 4 - SoluÃ§Ã£o |
+| 5 - Indicadores | 6 - Executar | 7 - ConfiguraÃ§Ãµes | 8 - Teste   |
+OpÃ§Ã£o: g:0 1|9|4
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+Ações: a1 b1 c1 a2 b2 c2 a3 b3 c3 
+Sucessor [1-9, ação(ões), exe]:Executadas 1 ações com sucesso.
+g:0 3|26|9
+  A B C
+1 . . . 1 
+2 x . . 2 
+3 . . . 3 
+  A B C
+Ações: a1 b1 c1 b2 c2 a3 b3 c3 
+Sucessor [1-8, ação(ões), exe]:Executadas 1 ações com sucesso.
+g:0 5|41|13
+  A B C
+1 . . . 1 
+2 x o . 2 
+3 . . . 3 
+  A B C
+Ações: a1 b1 c1 c2 a3 b3 c3 
+Sucessor [1-7, ação(ões), exe]:Executadas 3 ações com sucesso.
+g:0 h:-1000 8|59|14
+  A B C
+1 x . o 1 
+2 x o . 2 
+3 x . . 3 
+  A B C
+Ações: 
+Sem sucessores.
+Jogo do Galo
+ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+  A B C
+1 x . o 1 
+2 x o . 2 
+3 x . . 3 
+  A B C
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - ParÃ¢metros    | 4 - SoluÃ§Ã£o |
+| 5 - Indicadores | 6 - Executar | 7 - ConfiguraÃ§Ãµes | 8 - Teste   |
+OpÃ§Ã£o: 
+Jogo do Galo
+ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - ParÃ¢metros    | 4 - SoluÃ§Ã£o |
+| 5 - Indicadores | 6 - Executar | 7 - ConfiguraÃ§Ãµes | 8 - Teste   |
+OpÃ§Ã£o: 
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C (g:0)  a2 b2 a3 c1
+  A B C
+1 . . o 1 
+2 x o . 2 
+3 x . . 3 
+  A B C (g:4)  a1
+  A B C
+1 x . o 1 
+2 x o . 2 
+3 x . . 3 
+  A B C (g:5) 
+Jogo do Galo
+ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+____________________________________________________________________
+| 1 - Inicializar | 2 - Explorar | 3 - ParÃ¢metros    | 4 - SoluÃ§Ã£o |
+| 5 - Indicadores | 6 - Executar | 7 - ConfiguraÃ§Ãµes | 8 - Teste   |
+OpÃ§Ã£o: 

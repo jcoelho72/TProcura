@@ -1,0 +1,142 @@
+
+┌─ Teste TProcuraAdversa ──────┐
+│ 1 - Jogo do Galo             │
+│ 2 - Jogo Em Linha            │
+└──────────────────────────────┘
+Opção: 
+Jogo do Galo
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0
+└──────────────────────────────────────────────────────────────────────
+ │   A B C
+ │ 1 . . . 1 
+ │ 2 . . . 2 
+ │ 3 . . . 3 
+ │   A B C
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             MiniMax alfa/beta <span style="color:gray">(1 a 2)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
+│ <span style="color:gray">P7(LIMITE):</span>                0          <span style="color:gray">(-1 a 1000000)</span>
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P1(ALGORITMO) ───────────────────────────────────────────────────
+│ Seleção do algoritmo de procura adversa base.                        
+│ <span style="color:gray">1:</span> MiniMax
+│ <span style="color:gray">2:</span> MiniMax alfa/beta
+└──────────────────────────────────────────────────────────────────────
+ALGORITMO (atual 2): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             MiniMax    <span style="color:gray">(1 a 2)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
+│ <span style="color:gray">P7(LIMITE):</span>                0          <span style="color:gray">(-1 a 1000000)</span>
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P7(LIMITE) ──────────────────────────────────────────────────────
+│ Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+│ Intervalo: -1 a 1000000
+└──────────────────────────────────────────────────────────────────────
+LIMITE (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             MiniMax    <span style="color:gray">(1 a 2)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
+│ <span style="color:gray">P7(LIMITE):</span>                20         <span style="color:gray">(-1 a 1000000)</span>
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P12(ORDENAR_SUCESSORES) ─────────────────────────────────────────
+│ 0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores.
+│ Intervalo: 0 a 2
+└──────────────────────────────────────────────────────────────────────
+ORDENAR_SUCESSORES (atual 2): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             MiniMax    <span style="color:gray">(1 a 2)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
+│ <span style="color:gray">P7(LIMITE):</span>                20         <span style="color:gray">(-1 a 1000000)</span>
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   0          <span style="color:gray">(0 a 2)</span>
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+Jogo do Galo
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 20 | <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0
+│ <span style="color:gray">P14(PODA_CEGA):</span> 0
+└──────────────────────────────────────────────────────────────────────
+ │   A B C
+ │ 1 . . . 1 
+ │ 2 . . . 2 
+ │ 3 . . . 3 
+ │   A B C
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>20 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
+═╧═ 🏁  Execução terminada ⏱   139ms  ═══
+Jogo do Galo
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 20 | <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0
+│ <span style="color:gray">P14(PODA_CEGA):</span> 0
+└──────────────────────────────────────────────────────────────────────
+ │   A B C
+ │ 1 x . . 1 
+ │ 2 . . . 2 
+ │ 3 . . . 3 
+ │   A B C
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 139 | <span style="color:gray">I3(Iterações):</span> 113416 | <span style="color:gray">I4(IND_EXPANSOES):</span> 155758 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 318517 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 

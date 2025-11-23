@@ -1,0 +1,198 @@
+
+┌─ Teste TProcuraAdversa ──────┐
+│ 1 - Jogo do Galo             │
+│ 2 - Jogo Em Linha            │
+└──────────────────────────────┘
+Opção: 
+Jogo do Galo
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
+│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
+│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+└──────────────────────────────────────────────────────────────────────
+ │   A B C
+ │ 1 . . . 1 
+ │ 2 . . . 2 
+ │ 3 . . . 3 
+ │   A B C
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+ ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=0 P8=1 P11=0 P12=2 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─  ⭐ atual
+═╧═══════════════════
+┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
+│    id / -id - Seleciona configuração como atual ou apaga 'id'
+│    Pk = <conj.> - Varia Pk na configuração atual (gera N configs)
+│    Pk = <conj.> x Pw = <conj.> - produto externo (gera NxM configs)
+│  Sintaxe de <conj.> : A,B,C | A:B | A:B:C                   
+└──────────────────────────────────────────────────────────────────────
+✏️ Comando: 
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ P7=0 ⭐ atual
+ ├─ ⚙  [2] ─ P7=3
+ ├─ ⚙  [3] ─ P7=5
+ ├─ ⚙  [4] ─ P7=7
+ ├─ ⚙  [5] ─ P7=20
+═╧═══════════════════
+┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
+│    id / -id - Seleciona configuração como atual ou apaga 'id'
+│    Pk = <conj.> - Varia Pk na configuração atual (gera N configs)
+│    Pk = <conj.> x Pw = <conj.> - produto externo (gera NxM configs)
+│  Sintaxe de <conj.> : A,B,C | A:B | A:B:C                   
+└──────────────────────────────────────────────────────────────────────
+✏️ Comando: 
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ P7=3 ⭐ atual
+ ├─ ⚙  [2] ─ P7=5
+ ├─ ⚙  [3] ─ P7=7
+ ├─ ⚙  [4] ─ P7=20
+═╧═══════════════════
+┌─ 📖 Sintaxe comando ──────────────────────────────────────────────────
+│    id / -id - Seleciona configuração como atual ou apaga 'id'
+│    Pk = <conj.> - Varia Pk na configuração atual (gera N configs)
+│    Pk = <conj.> x Pw = <conj.> - produto externo (gera NxM configs)
+│  Sintaxe de <conj.> : A,B,C | A:B | A:B:C                   
+└──────────────────────────────────────────────────────────────────────
+✏️ Comando: 
+Jogo do Galo
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+│ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
+│ P14(PODA_CEGA): 0
+└──────────────────────────────────────────────────────────────────────
+ │   A B C
+ │ 1 . . . 1 
+ │ 2 . . . 2 
+ │ 3 . . . 3 
+ │   A B C
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📖 Sintaxe comando ────────────────────
+│  Instâncias: A,B,C | A:B | A : B : C
+└────────────────────────────────────────
+📄  IDs das instâncias (1 a 1): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ P7=3
+ ├─ ⚙  [2] ─ P7=5
+ ├─ ⚙  [3] ─ P7=7
+ ├─ ⚙  [4] ─ P7=20
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:12   📄 Instâncias: 1   🛠️ Configurações: 4   🖥️ Processos: 1.
+ ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3🟰 
+ ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 8ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 34ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
+ ├─ ⏱ 35ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 42ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 64ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 96ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 138ms           📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 166ms           📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 323ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 450ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+🏆  Torneio (#instâncias melhores):
+ |-01-|-02-|-03-|-04-|
+ 1    |  0 |  0 |  0 | -3
+ |----|----|----|----|
+ 2  1 |    |  0 |  0 | -1
+ |----|----|----|----|
+ 3  1 |  1 |    |  0 |  2
+ |----|----|----|----|
+ 4  1 |  1 |  0 |    |  2
+ |----|----|----|----|
+ │ Tempos: 0.000s 0.006s 0.105s 0.469s 
+┌─ ⚙ 🛠️  ─────────────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P8(ESTADOS_REPETIDOS): ignorar
+│ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
+│ P14(PODA_CEGA): 0
+└────────────────────────────────────────────────────────────────────── (parâmetros comuns)
+═╪═ Configurações ═══
+┌─ ⚙ ⚙  [1] ──────────────────────────────────────────────────────────
+│ P7(LIMITE): 3
+└──────────────────────────────────────────────────────────────────────
+┌─ ⚙ ⚙  [2] ──────────────────────────────────────────────────────────
+│ P7(LIMITE): 5
+└──────────────────────────────────────────────────────────────────────
+┌─ ⚙ ⚙  [3] ──────────────────────────────────────────────────────────
+│ P7(LIMITE): 7
+└──────────────────────────────────────────────────────────────────────
+┌─ ⚙ ⚙  [4] ──────────────────────────────────────────────────────────
+│ P7(LIMITE): 20
+└──────────────────────────────────────────────────────────────────────
+═╧═══════════════════
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 581ms ) ═══
+Jogo do Galo
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+│ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
+│ P14(PODA_CEGA): 0
+└──────────────────────────────────────────────────────────────────────
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📖 Sintaxe comando ────────────────────
+│  Instâncias: A,B,C | A:B | A : B : C
+└────────────────────────────────────────
+📄  IDs das instâncias (1 a 1): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ P7=3
+ ├─ ⚙  [2] ─ P7=5
+ ├─ ⚙  [3] ─ P7=7
+ ├─ ⚙  [4] ─ P7=20
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:12   📄 Instâncias: 1   🛠️ Configurações: 4   🖥️ Processos: 1.
+ ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3🟰 
+ ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 5ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 17ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
+ ├─ ⏱ 18ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 23ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 36ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 50ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 66ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 92ms            📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 220ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 370ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ │ Erro ao gravar ficheiro Resultados/Galo.csv.
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 503ms ) ═══
+Jogo do Galo
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
+│ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
+│ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
+│ P14(PODA_CEGA): 0
+└──────────────────────────────────────────────────────────────────────
+  A B C
+1 . . . 1 
+2 . . . 2 
+3 . . . 3 
+  A B C
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 

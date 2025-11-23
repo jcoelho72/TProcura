@@ -7,3 +7,5 @@ cd CasosTeste
 ../bin/Release/TProcuraConstrutiva < inputPuzzle2.txt > outputPuzzle2.txt
 ../bin/Release/TProcuraConstrutiva < inputDamas1.txt > outputDamas1.txt
 ../bin/Release/TProcuraConstrutiva < inputPart1.txt > outputPart1.txt
+
+./converter_cores.sh

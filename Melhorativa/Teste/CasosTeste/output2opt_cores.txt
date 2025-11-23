@@ -1,0 +1,748 @@
+
+┌─ Teste TProcuraMelhorativa ──┐
+│ 1 - 8 Damas (Inteira)        │
+│ 2 - 8 Damas (Permutacao)     │
+│ 3 - Partição (Binária)       │
+└──────────────────────────────┘
+Opção: 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Algoritmo Evolutivo | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 1000000 | <span style="color:gray">P6(POPULACAO):</span> 20
+│ <span style="color:gray">P7(PROB_CRUZAR):</span> 100 | <span style="color:gray">P8(PROB_MUTAR):</span> 50 | <span style="color:gray">P9(SELECAO):</span> Roleta | <span style="color:gray">P10(PRESSAO):</span> 150
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span> Idade | <span style="color:gray">P14(PERC_DESCENDENTES):</span> 100 | <span style="color:gray">P16(ELITISMO):</span> 1
+│ <span style="color:gray">P17(IMIGRANTES):</span> 1 | <span style="color:gray">P18(DIVERSIDADE):</span> Limpeza | <span style="color:gray">P19(DIST_MINIMA):</span> 0
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span> Order | <span style="color:gray">P21(TIPO_MUTAR):</span> 0 | <span style="color:gray">P22(TIPO_VIZINHO):</span> inserir
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span> 0 | <span style="color:gray">P24(TIPO_DISTANCIA):</span> Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ::  ::♛ 
+  ::  ::♛ ::  ::
+::  ::♛ ::  ::  
+♛ ::  ::  ::  ::
+::  ♛   ::  ::  
+  ::  ::  ♛   ::
+::♛ ::  ::  ::  
+  ::  ::  ::♛ ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ <span style="color:gray">ID atual:</span> 8  <span style="color:gray">Intervalo:</span> [4–40]  
+│ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Algoritmo Evolutivo | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 1000000 | <span style="color:gray">P6(POPULACAO):</span> 20
+│ <span style="color:gray">P7(PROB_CRUZAR):</span> 100 | <span style="color:gray">P8(PROB_MUTAR):</span> 50 | <span style="color:gray">P9(SELECAO):</span> Roleta | <span style="color:gray">P10(PRESSAO):</span> 150
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span> Idade | <span style="color:gray">P14(PERC_DESCENDENTES):</span> 100 | <span style="color:gray">P16(ELITISMO):</span> 1
+│ <span style="color:gray">P17(IMIGRANTES):</span> 1 | <span style="color:gray">P18(DIVERSIDADE):</span> Limpeza | <span style="color:gray">P19(DIST_MINIMA):</span> 0
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span> Order | <span style="color:gray">P21(TIPO_MUTAR):</span> 0 | <span style="color:gray">P22(TIPO_VIZINHO):</span> inserir
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span> 0 | <span style="color:gray">P24(TIPO_DISTANCIA):</span> Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             20         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            50         <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Roleta     <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(PRESSAO):</span>              150        <span style="color:gray">(100 a 200)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        Idade      <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ <span style="color:gray">0:</span> NADA
+│ <span style="color:gray">1:</span> ATIVIDADE
+│ <span style="color:gray">2:</span> PASSOS
+│ <span style="color:gray">3:</span> DETALHE
+│ <span style="color:gray">4:</span> COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             20         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            50         <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Roleta     <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(PRESSAO):</span>              150        <span style="color:gray">(100 a 200)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        Idade      <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P6(POPULACAO) ───────────────────────────────────────────────────
+│ Número de elementos em cada geração                                  
+│ Intervalo: 2 a 1000000
+└──────────────────────────────────────────────────────────────────────
+POPULACAO (atual 20): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            50         <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Roleta     <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(PRESSAO):</span>              150        <span style="color:gray">(100 a 200)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        Idade      <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P7(PROB_CRUZAR) ─────────────────────────────────────────────────
+│ Probabilidade de um estado ser cruzado                               
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+PROB_CRUZAR (atual 100): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            50         <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Roleta     <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(PRESSAO):</span>              150        <span style="color:gray">(100 a 200)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        Idade      <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P8(PROB_MUTAR) ──────────────────────────────────────────────────
+│ Probabilidade de um estado sofrer uma mutação após gerado            
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+PROB_MUTAR (atual 50): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Roleta     <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(PRESSAO):</span>              150        <span style="color:gray">(100 a 200)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        Idade      <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P9(SELECAO) ─────────────────────────────────────────────────────
+│ Método de seleção dos pais para cruzamento                           
+│ <span style="color:gray">1:</span> Roleta
+│ <span style="color:gray">2:</span> Torneio
+│ <span style="color:gray">3:</span> Uniforme
+└──────────────────────────────────────────────────────────────────────
+SELECAO (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        Idade      <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P11(TAMANHO_TORNEIO) ────────────────────────────────────────────
+│ Tamanho do torneio, caso a sobrevivência seja do tipo torneio.       
+│ Intervalo: 2 a 100
+└──────────────────────────────────────────────────────────────────────
+TAMANHO_TORNEIO (atual 2): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        Idade      <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P12(PROB_MELHOR_TORNEIO) ────────────────────────────────────────
+│ Probabilidade do melhor ganhar o torneio.                            
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+PROB_MELHOR_TORNEIO (atual 100): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        Idade      <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P13(SOBREVIVENCIA) ──────────────────────────────────────────────
+│ Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos
+│ <span style="color:gray">1:</span> Idade
+│ <span style="color:gray">2:</span> Substitui piores
+│ <span style="color:gray">3:</span> round-robin
+└──────────────────────────────────────────────────────────────────────
+SOBREVIVENCIA (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        3          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P14(PERC_DESCENDENTES) ──────────────────────────────────────────
+│ Número de descendentes a substituirem elementos na população, em percentagem (100 toda a população é substituída, 0 apenas um elemento)
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+PERC_DESCENDENTES (atual 100): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        3          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P15(Q_ROUND_ROBIN) ──────────────────────────────────────────────
+│ Número de elementos no round-robin (valor de q)                      
+│ Intervalo: 2 a 100
+└──────────────────────────────────────────────────────────────────────
+Q_ROUND_ROBIN (atual 3): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P16(ELITISMO) ───────────────────────────────────────────────────
+│ Número absoluto de indivíduos melhores, que se mantêm na geração seguinte, excepto se há descendência com valor igual ou superior
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+ELITISMO (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             3          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P17(IMIGRANTES) ─────────────────────────────────────────────────
+│ Número absoluto de indivíduos imigrantes, substituindo quaisquer outros na população.
+│ Intervalo: 0 a 100
+└──────────────────────────────────────────────────────────────────────
+IMIGRANTES (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             3          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P18(DIVERSIDADE) ────────────────────────────────────────────────
+│ Estratégia de diversidade.                                           
+│ <span style="color:gray">1:</span> Nenhuma
+│ <span style="color:gray">2:</span> Avaliação partilhada
+│ <span style="color:gray">3:</span> Limpeza
+└──────────────────────────────────────────────────────────────────────
+DIVERSIDADE (atual 3): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             3          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P19(DIST_MINIMA) ────────────────────────────────────────────────
+│ Distância mínima imposta entre elementos da população                
+│ Intervalo: 0 a 1000
+└──────────────────────────────────────────────────────────────────────
+DIST_MINIMA (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             3          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P21(TIPO_MUTAR) ─────────────────────────────────────────────────
+│ TIPO_MUTAR: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)
+│ Intervalo: 0 a 0
+└──────────────────────────────────────────────────────────────────────
+TIPO_MUTAR (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             3          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         inserir    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P22(TIPO_VIZINHO) ───────────────────────────────────────────────
+│ TIPO_VIZINHO: vários métodso para vizinhanças de inteiros            
+│ <span style="color:gray">1:</span> inserir
+│ <span style="color:gray">2:</span> trocaPar
+│ <span style="color:gray">3:</span> inverterSegmento
+└──────────────────────────────────────────────────────────────────────
+TIPO_VIZINHO (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             3          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         trocaPar   <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P23(LIMITE_VIZINHOS) ────────────────────────────────────────────
+│ LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite
+- inserir + trocaPar + inverterSegmento - limita a distância entre pares
+│ Intervalo: 0 a 1000
+└──────────────────────────────────────────────────────────────────────
+LIMITE_VIZINHOS (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             3          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         trocaPar   <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P24(TIPO_DISTANCIA) ─────────────────────────────────────────────
+│ Distância: vários métodso para distâncias de permutações             
+│ <span style="color:gray">1:</span> Hamming
+│ <span style="color:gray">2:</span> Kendall tau
+│ <span style="color:gray">3:</span> Spearman footrule
+└──────────────────────────────────────────────────────────────────────
+TIPO_DISTANCIA (atual 1): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             Algoritmo Evolutivo <span style="color:gray">(1 a 1)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           COMPLETO   <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      1000000    <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(POPULACAO):</span>             10         <span style="color:gray">(2 a 1000000)</span>
+│ <span style="color:gray">P7(PROB_CRUZAR):</span>           0          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P8(PROB_MUTAR):</span>            100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P9(SELECAO):</span>               Torneio    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(TAMANHO_TORNEIO):</span>      10         <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span>  100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P13(SOBREVIVENCIA):</span>        round-robin <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P14(PERC_DESCENDENTES):</span>    100        <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span>        2          <span style="color:gray">(2 a 100)</span>
+│ <span style="color:gray">P16(ELITISMO):</span>             3          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P17(IMIGRANTES):</span>           1          <span style="color:gray">(0 a 100)</span>
+│ <span style="color:gray">P18(DIVERSIDADE):</span>          Limpeza    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P19(DIST_MINIMA):</span>          0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P20(TIPO_CRUZAR):</span>          Order      <span style="color:gray">(1 a 4)</span>
+│ <span style="color:gray">P21(TIPO_MUTAR):</span>           0          <span style="color:gray">(0 a 0)</span>
+│ <span style="color:gray">P22(TIPO_VIZINHO):</span>         trocaPar   <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P24(TIPO_DISTANCIA):</span>       Hamming    <span style="color:gray">(1 a 3)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Algoritmo Evolutivo | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 1000000 | <span style="color:gray">P6(POPULACAO):</span> 10
+│ <span style="color:gray">P7(PROB_CRUZAR):</span> 0 | <span style="color:gray">P8(PROB_MUTAR):</span> 100 | <span style="color:gray">P9(SELECAO):</span> Torneio | <span style="color:gray">P11(TAMANHO_TORNEIO):</span> 10
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span> 100 | <span style="color:gray">P13(SOBREVIVENCIA):</span> round-robin | <span style="color:gray">P14(PERC_DESCENDENTES):</span> 100
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span> 2 | <span style="color:gray">P16(ELITISMO):</span> 3 | <span style="color:gray">P17(IMIGRANTES):</span> 1 | <span style="color:gray">P18(DIVERSIDADE):</span> Limpeza
+│ <span style="color:gray">P19(DIST_MINIMA):</span> 0 | <span style="color:gray">P20(TIPO_CRUZAR):</span> Order | <span style="color:gray">P21(TIPO_MUTAR):</span> 0 | <span style="color:gray">P22(TIPO_VIZINHO):</span> trocaPar
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span> 0 | <span style="color:gray">P24(TIPO_DISTANCIA):</span> Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+♛ ::  ::  ::
+::  ::  ::♛ 
+  ::  ♛   ::
+::♛ ::  ::  
+  ::♛ ::  ::
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─┬─ 📆 0 ⏱  ──── 💰 g2-6
+ │ ├───── 🧍🧑‍🤝‍🧑🚶‍ ───── 
+ │ │ 🧍 <span style="background-color:rgb(101,61,0)">1   </span>2 1 4 3 5 0  💰 <span style="color:rgb(223,159,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,101,0)">2   </span>0 2 4 5 3 1  💰 <span style="color:rgb(159,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(20,101,0)">3   </span>5 0 2 3 1 4  💰 <span style="color:rgb(223,223,31)">g:3</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,40)">4   </span>0 4 5 2 3 1  💰 <span style="color:rgb(223,159,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(0,101,101)">5   </span>1 2 5 4 3 0  💰 <span style="color:rgb(223,31,31)">g:6</span>
+ │ │ 🧍 <span style="background-color:rgb(0,40,101)">6   </span>4 0 1 2 3 5  💰 <span style="color:rgb(223,31,31)">g:6</span>
+ │ │ 🧍 <span style="background-color:rgb(20,0,101)">7   </span>2 5 4 0 3 1  💰 <span style="color:rgb(223,159,31)">g:4</span>
+ │ │ 🧍 <span style="background-color:rgb(81,0,101)">8   </span>2 4 1 0 3 5  💰 <span style="color:rgb(159,223,31)">g:2</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,61)">9   </span>4 0 2 1 3 5  💰 <span style="color:rgb(223,95,31)">g:5</span>
+ │ │ 🧍 <span style="background-color:rgb(101,0,0)">10  </span>0 5 4 2 3 1  💰 <span style="color:rgb(223,159,31)">g:4</span>
+ │ ├───── 📏  ───── 
+ │ │  🧍  <span style="background-color:rgb(101,61,0)">1   </span> <span style="background-color:rgb(81,101,0)">2   </span> <span style="background-color:rgb(20,101,0)">3   </span> <span style="background-color:rgb(0,101,40)">4   </span> <span style="background-color:rgb(0,101,101)">5   </span> <span style="background-color:rgb(0,40,101)">6   </span> <span style="background-color:rgb(20,0,101)">7   </span> <span style="background-color:rgb(81,0,101)">8   </span> <span style="background-color:rgb(101,0,61)">9   </span> <span style="background-color:rgb(101,0,0)">10  </span> 
+ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ <span style="background-color:rgb(101,61,0)">1   </span>│    │   5│   5│   6│   5│   6│   4│   5│   6│   5│
+ │ │ <span style="background-color:rgb(81,101,0)">2   </span>│   5│    │   6│   3│   4│   5│   3│   5│   5│   2│
+ │ │ <span style="background-color:rgb(20,101,0)">3   </span>│   5│   6│    │   6│   6│   5│   6│   6│   4│   6│
+ │ │ <span style="background-color:rgb(0,101,40)">4   </span>│   6│   3│   6│    │   4│   4│   4│   4│   5│   2│
+ │ │ <span style="background-color:rgb(0,101,101)">5   </span>│   5│   4│   6│   4│    │   5│   5│   5│   5│   5│
+ │ │ <span style="background-color:rgb(0,40,101)">6   </span>│   6│   5│   5│   4│   5│    │   5│   3│   2│   4│
+ │ │ <span style="background-color:rgb(20,0,101)">7   </span>│   4│   3│   6│   4│   5│   5│    │   3│   5│   2│
+ │ │ <span style="background-color:rgb(81,0,101)">8   </span>│   5│   5│   6│   4│   5│   3│   3│    │   4│   5│
+ │ │ <span style="background-color:rgb(101,0,61)">9   </span>│   6│   5│   4│   5│   5│   2│   5│   4│    │   5│
+ │ │ <span style="background-color:rgb(101,0,0)">10  </span>│   5│   2│   6│   2│   5│   4│   2│   5│   5│    │
+ │ │ ────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴
+ │ ├─┬─── FASE 🧩  Selecionar 10 🧑‍🤝‍🧑 pais ───── 
+ │ │ ├───── Torneio, tamanho 10, probabilidade melhor 100 ───── 
+ │ │ ├───── Número de seleções ───── 
+ │ │ │ #Pai    1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(101,61,0)">   0</span>│<span style="background-color:rgb(81,101,0)">   5</span>│<span style="background-color:rgb(20,101,0)">   1</span>│<span style="background-color:rgb(0,101,40)">   0</span>│<span style="background-color:rgb(0,101,101)">   0</span>│<span style="background-color:rgb(0,40,101)">   0</span>│<span style="background-color:rgb(20,0,101)">   0</span>│<span style="background-color:rgb(81,0,101)">   4</span>│<span style="background-color:rgb(101,0,61)">   0</span>│<span style="background-color:rgb(101,0,0)">   0</span>│
+ │ │ └──────────────────────────────────── 
+ │ ├─┬─── FASE 🧬  Reproduzir 10 pais ───── 
+ │ │ ├───── Pais (🧑‍🤝‍🧑 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="background-color:rgb(81,0,101)">   8</span>⇄<span style="background-color:rgb(81,101,0)">   2</span>│<span style="background-color:rgb(20,101,0)">   3</span>⇄<span style="background-color:rgb(81,101,0)">   2</span>│<span style="background-color:rgb(81,0,101)">   8</span>⇄<span style="background-color:rgb(81,0,101)">   8</span>│<span style="background-color:rgb(81,0,101)">   8</span>⇄<span style="background-color:rgb(81,101,0)">   2</span>│<span style="background-color:rgb(81,101,0)">   2</span>⇄<span style="background-color:rgb(81,101,0)">   2</span>│
+ │ 🏆  ⏱  💰 g:0
+─┴───────────────────
+::  ::  ♛   
+  ::♛ ::  ::
+♛   ::  ::  
+  ::  ::  ♛ 
+::  ::♛ ::  
+  ♛   ::  ::
+─┬───────────────────
+ │ │ ├───── Pais (💰 ) ───── 
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(159,223,31)">   2</span>⇄<span style="color:rgb(159,223,31)">   2</span>│<span style="color:rgb(223,223,31)">   3</span>⇄<span style="color:rgb(159,223,31)">   2</span>│<span style="color:rgb(159,223,31)">   2</span>⇄<span style="color:rgb(159,223,31)">   2</span>│<span style="color:rgb(159,223,31)">   2</span>⇄<span style="color:rgb(159,223,31)">   2</span>│<span style="color:rgb(159,223,31)">   2</span>⇄<span style="color:rgb(159,223,31)">   2</span>│
+ │ │ ├───── Filhos (💰 ) 🧬 0  🦠 10 ───── 📈 1 🟰 4 📉 5
+ │ │ │ 🧍     1    2    3    4    5    6    7    8    9   10 
+ │ │ │ ────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼
+ │ │ │    0│<span style="color:rgb(223,159,31)">   4</span>⇄<span style="color:rgb(31,223,31)">   0</span>│<span style="color:rgb(223,223,31)">   3</span>⇄<span style="color:rgb(159,223,31)">   2</span>│<span style="color:rgb(223,159,31)">   4</span>⇄<span style="color:rgb(159,223,31)">   2</span>│<span style="color:rgb(223,95,31)">   5</span>⇄<span style="color:rgb(223,31,31)">   6</span>│<span style="color:rgb(159,223,31)">   2</span>⇄<span style="color:rgb(223,223,31)">   3</span>│
+ │ │ └──────────────────────────────────── 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>1000000 <span style="color:gray">P6=</span>10 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>100 <span style="color:gray">P9=</span>2 <span style="color:gray">P11=</span>10 <span style="color:gray">P12=</span>100
+ ├─ ⚙   ─ <span style="color:gray">P13=</span>3 <span style="color:gray">P14=</span>100 <span style="color:gray">P15=</span>2 <span style="color:gray">P16=</span>3 <span style="color:gray">P17=</span>1 <span style="color:gray">P18=</span>3 <span style="color:gray">P19=</span>0 <span style="color:gray">P20=</span>3 <span style="color:gray">P21=</span>0 <span style="color:gray">P22=</span>2 <span style="color:gray">P23=</span>0 <span style="color:gray">P24=</span>1
+═╧═ 🏁  Execução terminada ⏱    ═══
+8 Damas (Permutação)
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> Algoritmo Evolutivo | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 1000000 | <span style="color:gray">P6(POPULACAO):</span> 10
+│ <span style="color:gray">P7(PROB_CRUZAR):</span> 0 | <span style="color:gray">P8(PROB_MUTAR):</span> 100 | <span style="color:gray">P9(SELECAO):</span> Torneio | <span style="color:gray">P11(TAMANHO_TORNEIO):</span> 10
+│ <span style="color:gray">P12(PROB_MELHOR_TORNEIO):</span> 100 | <span style="color:gray">P13(SOBREVIVENCIA):</span> round-robin | <span style="color:gray">P14(PERC_DESCENDENTES):</span> 100
+│ <span style="color:gray">P15(Q_ROUND_ROBIN):</span> 2 | <span style="color:gray">P16(ELITISMO):</span> 3 | <span style="color:gray">P17(IMIGRANTES):</span> 1 | <span style="color:gray">P18(DIVERSIDADE):</span> Limpeza
+│ <span style="color:gray">P19(DIST_MINIMA):</span> 0 | <span style="color:gray">P20(TIPO_CRUZAR):</span> Order | <span style="color:gray">P21(TIPO_MUTAR):</span> 0 | <span style="color:gray">P22(TIPO_VIZINHO):</span> trocaPar
+│ <span style="color:gray">P23(LIMITE_VIZINHOS):</span> 0 | <span style="color:gray">P24(TIPO_DISTANCIA):</span> Hamming
+└──────────────────────────────────────────────────────────────────────
+::  ::  ♛   
+  ::♛ ::  ::
+♛   ::  ::  
+  ::  ::  ♛ 
+::  ::♛ ::  
+  ♛   ::  ::
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ <span style="color:gray">I1(Resultado):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 0 | <span style="color:gray">I3(Iterações):</span> 21 | <span style="color:gray">I4(Épocas):</span> 1 | 
+│ <span style="color:gray">I5(Gerações):</span> 20
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
