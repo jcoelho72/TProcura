@@ -854,7 +854,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 		MPI_Reduce(&tempoLocal, &tempoMaximo, 1, MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD);
 #endif
 
-		if (mpiCount > 1 && mpiID == 0)
+		if (mpiCount > 1 && modoMPI == 0)
 			// tenta juntar ficheiros, caso existam os ficheiros dos outros processos
 			JuntarCSV(ficheiro);
 		if (mpiID == 0)
@@ -1215,14 +1215,6 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
 		snprintf(str, sizeof(str), "%s.csv", pt);
 	FILE* f = compat::fopen(str, "wb");
 	if (f != NULL) {
-		// escrever BOM UTF-8 (apenas no mpiID 0)
-		//const unsigned char bom[] = { 0xEF,0xBB,0xBF };
-		if (mpiID == 0) {
-			// não assinar já que o Excel não abre direto de qualquer forma
-			//fwrite(bom, 1, sizeof(bom), f);
-			//fprintf(f, "sep=;\n");
-		}
-
 		// cabeçalho: instância, parametros, indicadores
 		fprintf(f, "Instância;");
 		for (int i = 0; i < parametro.Count(); i++)

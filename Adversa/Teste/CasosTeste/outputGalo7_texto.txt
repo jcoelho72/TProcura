@@ -9,7 +9,7 @@ Jogo do Galo
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
 │ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
 └──────────────────────────────────────────────────────────────────────
  │   A B C
  │ 1 . . . 1 
@@ -21,7 +21,8 @@ Jogo do Galo
 │ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
- ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=0 P8=1 P11=0 P12=2 P13=0 P14=0 (parâmetros comuns)
+ ├─ 🛠️  ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=0 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
+ ├─ ⚙   ─ P16=100 (parâmetros comuns)
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─  ⭐ atual
 ═╧═══════════════════
@@ -32,7 +33,7 @@ Opção:
 │  Sintaxe de <conj.> : A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
- ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 P15=200 P16=100 (parâmetros comuns)
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ P7=0 ⭐ atual
  ├─ ⚙  [2] ─ P7=3
@@ -47,7 +48,7 @@ Opção:
 │  Sintaxe de <conj.> : A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
- ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 P15=200 P16=100 (parâmetros comuns)
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ P7=3 ⭐ atual
  ├─ ⚙  [2] ─ P7=5
@@ -66,7 +67,7 @@ Jogo do Galo
 │ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
 │ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
 │ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
-│ P14(PODA_CEGA): 0
+│ P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
 └──────────────────────────────────────────────────────────────────────
  │   A B C
  │ 1 . . . 1 
@@ -82,7 +83,7 @@ Opção:
 │  Instâncias: A,B,C | A:B | A : B : C
 └────────────────────────────────────────
 📄  IDs das instâncias (1 a 1): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
- ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 P15=200 P16=100 (parâmetros comuns)
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ P7=3
  ├─ ⚙  [2] ─ P7=5
@@ -93,16 +94,16 @@ Opção:
  ├─ 📋 Tarefas:12   📄 Instâncias: 1   🛠️ Configurações: 4   🖥️ Processos: 1.
  ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3🟰 
  ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 4ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 19ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
- ├─ ⏱ 20ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 5ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 18ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
+ ├─ ⏱ 19ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
  ├─ ⏱ 24ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 38ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 37ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
  ├─ ⏱ 52ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 66ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 67ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
  ├─ ⏱ 92ms            📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 222ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 360ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 217ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 355ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
 🏆  Torneio (#instâncias melhores):
  |-01-|-02-|-03-|-04-|
  1    |  0 |  0 |  0 | -3
@@ -113,12 +114,12 @@ Opção:
  |----|----|----|----|
  4  1 |  1 |  0 |    |  2
  |----|----|----|----|
- │ Tempos: 0.000s 0.004s 0.052s 0.433s 
+ │ Tempos: 0.000s 0.005s 0.054s 0.428s 
 ┌─ ⚙ 🛠️  ─────────────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
 │ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P8(ESTADOS_REPETIDOS): ignorar
 │ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
-│ P14(PODA_CEGA): 0
+│ P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
 └────────────────────────────────────────────────────────────────────── (parâmetros comuns)
 ═╪═ Configurações ═══
 ┌─ ⚙ ⚙  [1] ──────────────────────────────────────────────────────────
@@ -134,13 +135,13 @@ Opção:
 │ P7(LIMITE): 20
 └──────────────────────────────────────────────────────────────────────
 ═╧═══════════════════
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 490ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 488ms ) ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
 │ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
 │ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
-│ P14(PODA_CEGA): 0
+│ P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
 └──────────────────────────────────────────────────────────────────────
   A B C
 1 . . . 1 
@@ -156,7 +157,7 @@ Opção:
 │  Instâncias: A,B,C | A:B | A : B : C
 └────────────────────────────────────────
 📄  IDs das instâncias (1 a 1): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
- ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 (parâmetros comuns)
+ ├─ 🛠️  ─ P1=1 P2=4 P3=1 P4=10 P5=0 P6=4 P8=1 P11=0 P12=0 P13=0 P14=0 P15=200 P16=100 (parâmetros comuns)
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ P7=3
  ├─ ⚙  [2] ─ P7=5
@@ -168,23 +169,23 @@ Opção:
  ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3🟰 
  ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
  ├─ ⏱ 5ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 17ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
- ├─ ⏱ 18ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 23ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 38ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 54ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 69ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 120ms           📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 269ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 441ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- │ Ficheiro ../Resultados/Galo.csv gravado.
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 574ms ) ═══
+ ├─ ⏱ 21ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
+ ├─ ⏱ 22ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 27ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 42ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 56ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 73ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱ 101ms           📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 224ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
+ ├─ ⏱ 346ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ │ Erro ao gravar ficheiro ../Resultados/Galo.csv.
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 476ms ) ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax | P2(NIVEL_DEBUG): COMPLETO | P3(SEMENTE): 1 | P4(LIMITE_TEMPO): 10
 │ P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0 | P8(ESTADOS_REPETIDOS): ignorar
 │ P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 0 | P13(PODA_HEURISTICA): 0
-│ P14(PODA_CEGA): 0
+│ P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
 └──────────────────────────────────────────────────────────────────────
   A B C
 1 . . . 1 

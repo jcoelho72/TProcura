@@ -6,16 +6,16 @@ Pode acompanhar o teste executando as ações localmente.
 No Visual Studio, selecione o projeto TProcuraAdversa, e execute.
 No Linux na pasta `.../TProcura/Adversa/Teste$` execute `make` seguido de `./bin/Release/TProcuraAdversa`
 
-Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
-
 ## Sumário
 
 - [Ação 1 - Ver instâncias](#jel-a1)
 - [Ação 2 - Heurística](#jel-a2)
-- [Ação 3 - Torneio Profundidade](#jel-a3)
-- [Ação 4 - Torneio Iterativo](#jel-a4)
-- [Ação 5 - Torneio Ruido](#jel-a5)
-- [Ação 6 - Torneio Poda](#jel-a6)
+- [Ação 3 - MiniMax com cortes Alfa/Beta](#jel-a3)
+- [Ação 4 - Torneio Profundidade](#jel-a4)
+- [Ação 5 - Torneio Iterativo](#jel-a5)
+- [Ação 6 - Torneio Heurística](#jel-a6)
+- [Ação 7 - Torneio Ruido](#jel-a7)
+- [Ação 8 - Torneio Poda](#jel-a8)
 
 
 ```entrada
@@ -33,7 +33,7 @@ a variante em que as peças caem pela ação da gravidade.
 \anchor jel-a1
 ## Ação 1 - Ver instâncias
 
-Vamos entrar no Jogo Em Linha, introduza: **2.**
+Vamos entrar no Jogo Em Linha, insira: **2.**
 
 ```entrada
 Jogo Em Linha
@@ -54,7 +54,7 @@ ____________________________________________________________________
 O primeiro jogo é o Jogo do Galo, em que se tem de fazer 3 em linha, num tabuleiro de 3x3. 
 Vamos ver outras instâncias. 
 
-Introduza: 
+Insira: 
 - **1; 2.** jogo 4 em Linha (4x4)
 - **1; 3.** jogo 4 em Linha (6x4)
 - **1; 4.** jogo 4 em Linha (7x6) gravidade
@@ -179,7 +179,7 @@ A variante da gravidade, reduz consideravelmente a ramificação.
 ## Ação 2 - Heurística
 
 Vamos começar por verificar se a heurística implementada, 
-tem atenção a aspetos mínimos, como bloquear ameaças de vitória a uma jogada.
+que tem em atenção aspetos mínimos, como bloquear ameaças de vitória a uma jogada.
 
 Para tal vamos fazer um jogo com profundidade 1, para que a heurística seja o fator predominante.
 
@@ -243,26 +243,89 @@ Não temos portanto motivo para não considerar a heurística válida.
 Deixamos de forma a variante da gravidade, já que esta heurística foi feita com base na variante regular.
 
 \anchor jel-a3
-## Ação 3 - Torneio Profundidade
+## Ação 3 - MiniMax com cortes Alfa/Beta
+
+Vamos fazer um jogo com o MiniMax com cortes alfa/beta no 4 em linha, de modo a
+observar o MiniMax com cortes Alfa/Beta num jogo com heurística.
+
+Insira: **2; 1; 2; 3; 2; 3; 7; 3; *ENTER*; 6.**
+
+\htmlonly
+<pre>
+</pre>
+\endhtmlonly
+
+Realçamos os seguintes pontos:
+- alfa que inicialmente é -10000 é atualizado para para -49 no estado 17 (`├□ -49 → α`),
+- logo no estado 19 ocorre nova atualização para 0 (`├□ 0 → α`)
+- o estado 20 é igual ao estado 17 (eixo diagonal), no entanto não é removido devido a não existir simetrias implementadas.
+- o segundo ramo com c3, estado 10, expande para o estado 32 com custo 0, é imediatamente cortado (`├□ 0 ─── 🪓 β(0) { 🔖 33 🔖 34 🔖 35 … 🔖 44 🔖 45 🔖 46 } #14`).
+- o mesmo ocorre nos restantes lances, poupando a análise de inúmeros estados
+
+O motivo para não se implementar simetrias, é que em tabuleiros grandes acabam por ocorrer apenas no início do jogo.
+Todo o resto do tempo a normalizar o estado, é tempo que é desperdiçado sem que exista real vantagem.
+No entanto se o mesmo estado ocorrer exatamente no mesmo formato, a hashtable está ligada e o estado é reutilizado.
+
+A qualidade da heurística é aqui crítico.
+
+Temos dois parâmetros que influenciam a heurística:
+- HEUR_BASE - Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao doubro e é o valor de omissão)
+- HEUR_MAX_PONTOS - Pontos de amaeaças máximos, para colocar a função sigmoide a saturar por essa altura (ficando perto do +/-infinito)
+
+Esta heurística é genérica, e pode ser utilizada em problemas que se possam calcular ameaças a K jogadas, como é o caso dos jogos em que se pretende fazer K marcas em linha.
+No entanto os valores de omissão podem não ser os melhores, pelo que serão alvo de teste.
+
+
+\anchor jel-a4
+## Ação 4 - Torneio Profundidade
 
 Nos testes empíricos vamos utilizar a linha de comando, por ser mais simples a identificação do teste a realizar.
 
-Pretendemos verificar num torneio, que a profundidade maior resulta em força de jogo superior. Assim, 
-como temos muitos jogos, vamos fazer apenas duas profundidades, nível 1 e 2, mas com várias opções.
+Pretendemos verificar em torneio, que a profundidade maior resulta em força de jogo superior.
+Por outro lado pretendemos confirmar que os cortes alfa/beta e a ordenação dos sucessores, não alteram a força de jogo,
+mas reduz o tempo de execução (P1=1,2 x P12=0,1).
 
-Pretendemos também comparar: 
-- MiniMax alfa/beta vs MiniMax
-- Com / sem ordenação
-
+Vamos variar apenas três profundidades, nível 1 a 3 (P7=2:4).
 Vamos utilizar todas as instâncias, já que a heurística é igual.
 
-```entrada
-PS ...\Teste> TProcuraAdversa 1:10 -R resultadoEmLinha -P P1=1,2 x P12=0,1 x P7=2,3
-...
-Opção: 2
-...
-Ficheiro resultadoEmLinha.csv gravado.
-```
+- **Tipo de Teste / Objetivo**: Performance (Profundidade, alfa/beta, ordenação)
+- **Definição**: Instâncias: 1:10; Configurações: P1=1,2 x P12=0,1 x P7=2:4
+- **Esforço**: (um só jogo, não há aleatoriedade)
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P1=1,2 x P12=0,1 x P7=2:4
+
+\htmlonly
+<details>
+  <summary>Ver script: evolutivos1.sh</summary>
+<pre>
+#!/bin/bash
+#SBATCH --job-name=torneioProfundidade
+#SBATCH --output=Resultados/torneioProfundidade.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
+
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: TorneioProfundidade
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P1=1,2 x P12=0,1 x P7=2:4
+</pre>
+</details>
+<details>
+  <summary>Ver execução:</summary>
+<pre>
+</pre>
+</details>
+
+
+
+
+
 
 Podemos com os resultados fazer um relatório dinâmico em que soma todos os resultados e separa por cada 
 indicador em estudo:
@@ -328,8 +391,8 @@ O jogador 4 e 5, com o nível máximo no teste e sem ordenar, aparenta ser super
 Como a profundidade é fixa, é natural que os cortes alfa/beta e ordenação não alterem o resultado de forma significativa.
 Reduzem o tempo, mas não alteram o resultado.
 
-\anchor jel-a4
-## Ação 4 - Torneio Iterativo
+\anchor jel-a5
+## Ação 5 - Torneio Iterativo
 
 Na ação anterior, após confirmação que quanto maior a profundidade melhor, podemos comparar
 procuras com a mesma profundidade, mas diferentes opções. 
@@ -424,8 +487,12 @@ Assim, o ganho da memorização perde-se.
 Estes resultados poderiam ser mais evidentes com mais tempo por jogada, o que permitiria maiores profundidades e maiores ganhos em algumas configurações.
 Por outro lado, para maior precisão, tem de se utilizar aleatoriedade e ruído, que é o que iremos fazer na próxima ação.
 
-\anchor jel-a5
-## Ação 5 - Torneio Ruido
+\anchor jel-a6
+## Ação 6 - Torneio Heurística
+
+
+\anchor jel-a7
+## Ação 7 - Torneio Ruido
 
 Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra,
 utilizando vários jogos, com diferentes sementes aleatórias.

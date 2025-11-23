@@ -1,0 +1,436 @@
+
+┌─ Teste TProcuraAdversa ──────┐
+│ 1 - Jogo do Galo             │
+│ 2 - Jogo Em Linha            │
+└──────────────────────────────┘
+Opção: 
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+└──────────────────────────────────────────────────────────────────────
+ │ 3 em Linha (3x3)
+ │    A B C
+ │  1 . . . 1 
+ │  2 . . . 2 
+ │  3 . . . 3 
+ │    A B C
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ 📄 Instância ───────────────────────────────────────────────────────
+│ <span style="color:gray">ID atual:</span> 1  <span style="color:gray">Intervalo:</span> [1–10]  
+│ <span style="color:gray">Prefixo atual:</span> 'instancia_' 
+└──────────────────────────────────────────────────────────────────────
+Novo ID (ENTER mantém) ou novo prefixo (texto): 
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+└──────────────────────────────────────────────────────────────────────
+4 em Linha (4x4)
+   A B C D
+ 1 . . . . 1 
+ 2 . . . . 2 
+ 3 . . . . 3 
+ 4 . . . . 4 
+   A B C D
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             MiniMax alfa/beta <span style="color:gray">(1 a 2)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           NADA       <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
+│ <span style="color:gray">P7(LIMITE):</span>                0          <span style="color:gray">(-1 a 1000000)</span>
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
+│ <span style="color:gray">P15(HEUR_BASE):</span>            200        <span style="color:gray">(100 a 1000)</span>
+│ <span style="color:gray">P16(HEUR_MAX_PONTOS):</span>      100        <span style="color:gray">(2 a 1000000)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
+│ Nível de debug, de reduzido a completo.                              
+│ <span style="color:gray">0:</span> NADA
+│ <span style="color:gray">1:</span> ATIVIDADE
+│ <span style="color:gray">2:</span> PASSOS
+│ <span style="color:gray">3:</span> DETALHE
+│ <span style="color:gray">4:</span> COMPLETO
+└──────────────────────────────────────────────────────────────────────
+NIVEL_DEBUG (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             MiniMax alfa/beta <span style="color:gray">(1 a 2)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           DETALHE    <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
+│ <span style="color:gray">P7(LIMITE):</span>                0          <span style="color:gray">(-1 a 1000000)</span>
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
+│ <span style="color:gray">P15(HEUR_BASE):</span>            200        <span style="color:gray">(100 a 1000)</span>
+│ <span style="color:gray">P16(HEUR_MAX_PONTOS):</span>      100        <span style="color:gray">(2 a 1000000)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+┌─ ⚙  P7(LIMITE) ──────────────────────────────────────────────────────
+│ Valor dependente do algoritmo. 
+Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. 
+Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite.
+│ Intervalo: -1 a 1000000
+└──────────────────────────────────────────────────────────────────────
+LIMITE (atual 0): 
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span>             MiniMax alfa/beta <span style="color:gray">(1 a 2)</span>
+│ <span style="color:gray">P2(NIVEL_DEBUG):</span>           DETALHE    <span style="color:gray">(0 a 4)</span>
+│ <span style="color:gray">P3(SEMENTE):</span>               1          <span style="color:gray">(1 a 1000000)</span>
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span>          10         <span style="color:gray">(1 a 3600)</span>
+│ <span style="color:gray">P5(LIMITE_ITERACOES):</span>      0          <span style="color:gray">(0 a 1000000000)</span>
+│ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
+│ <span style="color:gray">P7(LIMITE):</span>                3          <span style="color:gray">(-1 a 1000000)</span>
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
+│ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
+│ <span style="color:gray">P15(HEUR_BASE):</span>            200        <span style="color:gray">(100 a 1000)</span>
+│ <span style="color:gray">P16(HEUR_MAX_PONTOS):</span>      100        <span style="color:gray">(2 a 1000000)</span>
+└──────────────────────────────────────────────────────────────────────
+Parâmetro:
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> DETALHE | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 3
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+└──────────────────────────────────────────────────────────────────────
+4 em Linha (4x4)
+   A B C D
+ 1 . . . . 1 
+ 2 . . . . 2 
+ 3 . . . . 3 
+ 4 . . . . 4 
+   A B C D
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├□═╤═ 💰 g:0  ═══ α=-10000 β=10000 ═══
+ │  ├■═╤═ 🔖 1 💰 g:1 🎯 h:-149 ⚖  1|16|16 ═══ α=-10000 β=10000 ═══ ⚡ a4
+ │  │  ├□═╤═ 🔖 17 💰 g:2 ⚖  2|31|16 ═══ α=-10000 β=10000 ═══ ⚡ a3
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 o . . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 -49
+ │  │  ├□ -49 → α
+ │  │  ├□═╤═ 🔖 18 💰 g:2 ⚖  2|31|17 ═══ α=-49 β=10000 ═══ ⚡ a2
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 o . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 -49
+ │  │  ├□═╤═ 🔖 19 💰 g:2 ⚖  2|31|18 ═══ α=-49 β=10000 ═══ ⚡ a1
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 o . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□ 0 → α
+ │  │  ├□═╤═ 🔖 20 💰 g:2 ⚖  2|31|19 ═══ α=0 β=10000 ═══ ⚡ b4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x o . . 4 
+ │  │  │    A B C D ─── 🍃 -49
+ │  │  ├□═╤═ 🔖 21 💰 g:2 ⚖  2|31|20 ═══ α=0 β=10000 ═══ ⚡ b3
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . o . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□═╤═ 🔖 22 💰 g:2 ⚖  2|31|21 ═══ α=0 β=10000 ═══ ⚡ b2
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . o . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□═╤═ 🔖 23 💰 g:2 ⚖  2|31|22 ═══ α=0 β=10000 ═══ ⚡ b1
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . o . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 -49
+ │  │  ├□═╤═ 🔖 24 💰 g:2 ⚖  2|31|23 ═══ α=0 β=10000 ═══ ⚡ c4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . o . 4 
+ │  │  │    A B C D ─── 🍃 -49
+ │  │  ├□═╤═ 🔖 25 💰 g:2 ⚖  2|31|24 ═══ α=0 β=10000 ═══ ⚡ c3
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . o . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□═╤═ 🔖 26 💰 g:2 ⚖  2|31|25 ═══ α=0 β=10000 ═══ ⚡ c2
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . o . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□═╤═ 🔖 27 💰 g:2 ⚖  2|31|26 ═══ α=0 β=10000 ═══ ⚡ c1
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . o . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 -49
+ │  │  ├□═╤═ 🔖 28 💰 g:2 ⚖  2|31|27 ═══ α=0 β=10000 ═══ ⚡ d4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . . o 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□═╤═ 🔖 29 💰 g:2 ⚖  2|31|28 ═══ α=0 β=10000 ═══ ⚡ d3
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . o 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 -49
+ │  │  ├□═╤═ 🔖 30 💰 g:2 ⚖  2|31|29 ═══ α=0 β=10000 ═══ ⚡ d2
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . o 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 x . . . 4 
+ │  │  │    A B C D ─── 🍃 -49
+ │  │  └□═╤═ 🔖 31 💰 g:2 ⚖  2|31|30 ═══ α=0 β=10000 ═══ ⚡ d1
+ │  │    4 em Linha (4x4)
+ │  │       A B C D
+ │  │     1 . . . o 1 
+ │  │     2 . . . . 2 
+ │  │     3 . . . . 3 
+ │  │     4 x . . . 4 
+ │  │       A B C D ─── 🍃 0
+ │  ├■ 0 → β
+ │  ├■═╤═ 🔖 10 💰 g:1 🎯 h:-149 ⚖  2|31|31 ═══ α=-10000 β=0 ═══ ⚡ c3
+ │  │  ├□═╤═ 🔖 32 💰 g:2 ⚖  3|46|31 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . x . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(0) { 🔖 33 🔖 34 🔖 35 … 🔖 44 🔖 45 🔖 46 } #14
+ │  ├■═╤═ 🔖 11 💰 g:1 🎯 h:-149 ⚖  3|46|32 ═══ α=-10000 β=0 ═══ ⚡ c2
+ │  │  ├□═╤═ 🔖 47 💰 g:2 ⚖  4|61|32 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . x . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(0) { 🔖 48 🔖 49 🔖 50 … 🔖 59 🔖 60 🔖 61 } #14
+ │  ├■═╤═ 🔖 13 💰 g:1 🎯 h:-149 ⚖  4|61|33 ═══ α=-10000 β=0 ═══ ⚡ d4
+ │  │  ├□═╤═ 🔖 62 💰 g:2 ⚖  5|76|33 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . . x 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(0) { 🔖 63 🔖 64 🔖 65 … 🔖 74 🔖 75 🔖 76 } #14
+ │  ├■═╤═ 🔖 7 💰 g:1 🎯 h:-149 ⚖  5|76|34 ═══ α=-10000 β=0 ═══ ⚡ b2
+ │  │  ├□═╤═ 🔖 77 💰 g:2 ⚖  6|91|34 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . x . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(0) { 🔖 78 🔖 79 🔖 80 … 🔖 89 🔖 90 🔖 91 } #14
+ │  ├■═╤═ 🔖 16 💰 g:1 🎯 h:-149 ⚖  6|91|35 ═══ α=-10000 β=0 ═══ ⚡ d1
+ │  │  ├□═╤═ 🔖 92 💰 g:2 ⚖  7|106|35 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . x 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(0) { 🔖 93 🔖 94 🔖 95 … 🔖 104 🔖 105 🔖 106 } #14
+ │  ├■═╤═ 🔖 6 💰 g:1 🎯 h:-149 ⚖  7|106|36 ═══ α=-10000 β=0 ═══ ⚡ b3
+ │  │  ├□═╤═ 🔖 107 💰 g:2 ⚖  8|121|36 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . x . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(0) { 🔖 108 🔖 109 🔖 110 … 🔖 119 🔖 120 🔖 121 } #14
+ │  ├■═╤═ 🔖 4 💰 g:1 🎯 h:-149 ⚖  8|121|37 ═══ α=-10000 β=0 ═══ ⚡ a1
+ │  │  ├□═╤═ 🔖 122 💰 g:2 ⚖  9|136|37 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 x . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(0) { 🔖 123 🔖 124 🔖 125 … 🔖 134 🔖 135 🔖 136 } #14
+ │  ├■═╤═ 🔖 2 💰 g:1 🎯 h:-99 ⚖  9|136|38 ═══ α=-10000 β=0 ═══ ⚡ a3
+ │  │  ├□═╤═ 🔖 137 💰 g:2 ⚖  10|151|38 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 x . . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 49
+ │  │  ├□ 49 ─── 🪓 β(0) { 🔖 138 🔖 139 🔖 140 … 🔖 149 🔖 150 🔖 151 } #14
+ │  ├■═╤═ 🔖 14 💰 g:1 🎯 h:-99 ⚖  10|151|39 ═══ α=-10000 β=0 ═══ ⚡ d3
+ │  │  ├□═╤═ 🔖 152 💰 g:2 ⚖  11|166|39 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . x 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 49
+ │  │  ├□ 49 ─── 🪓 β(0) { 🔖 153 🔖 154 🔖 155 … 🔖 164 🔖 165 🔖 166 } #14
+ │  ├■═╤═ 🔖 5 💰 g:1 🎯 h:-99 ⚖  11|166|40 ═══ α=-10000 β=0 ═══ ⚡ b4
+ │  │  ├□═╤═ 🔖 167 💰 g:2 ⚖  12|181|40 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o x . . 4 
+ │  │  │    A B C D ─── 🍃 49
+ │  │  ├□ 49 ─── 🪓 β(0) { 🔖 168 🔖 169 🔖 170 … 🔖 179 🔖 180 🔖 181 } #14
+ │  ├■═╤═ 🔖 3 💰 g:1 🎯 h:-99 ⚖  12|181|41 ═══ α=-10000 β=0 ═══ ⚡ a2
+ │  │  ├□═╤═ 🔖 182 💰 g:2 ⚖  13|196|41 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 x . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 49
+ │  │  ├□ 49 ─── 🪓 β(0) { 🔖 183 🔖 184 🔖 185 … 🔖 194 🔖 195 🔖 196 } #14
+ │  ├■═╤═ 🔖 9 💰 g:1 🎯 h:-99 ⚖  13|196|42 ═══ α=-10000 β=0 ═══ ⚡ c4
+ │  │  ├□═╤═ 🔖 197 💰 g:2 ⚖  14|211|42 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . x . 4 
+ │  │  │    A B C D ─── 🍃 49
+ │  │  ├□ 49 ─── 🪓 β(0) { 🔖 198 🔖 199 🔖 200 … 🔖 209 🔖 210 🔖 211 } #14
+ │  ├■═╤═ 🔖 15 💰 g:1 🎯 h:-99 ⚖  14|211|43 ═══ α=-10000 β=0 ═══ ⚡ d2
+ │  │  ├□═╤═ 🔖 212 💰 g:2 ⚖  15|226|43 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . . . 1 
+ │  │  │  2 . . . x 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 49
+ │  │  ├□ 49 ─── 🪓 β(0) { 🔖 213 🔖 214 🔖 215 … 🔖 224 🔖 225 🔖 226 } #14
+ │  ├■═╤═ 🔖 12 💰 g:1 🎯 h:-99 ⚖  15|226|44 ═══ α=-10000 β=0 ═══ ⚡ c1
+ │  │  ├□═╤═ 🔖 227 💰 g:2 ⚖  16|241|44 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │  │  │ 4 em Linha (4x4)
+ │  │  │    A B C D
+ │  │  │  1 . . x . 1 
+ │  │  │  2 . . . . 2 
+ │  │  │  3 . . . . 3 
+ │  │  │  4 o . . . 4 
+ │  │  │    A B C D ─── 🍃 49
+ │  │  ├□ 49 ─── 🪓 β(0) { 🔖 228 🔖 229 🔖 230 … 🔖 239 🔖 240 🔖 241 } #14
+ │  └■═╤═ 🔖 8 💰 g:1 🎯 h:-99 ⚖  16|241|45 ═══ α=-10000 β=0 ═══ ⚡ b1
+ │     ├□═╤═ 🔖 242 💰 g:2 ⚖  17|256|45 ═══ α=-10000 β=0 ═══ ⚡ a4
+ │     │ 4 em Linha (4x4)
+ │     │    A B C D
+ │     │  1 . x . . 1 
+ │     │  2 . . . . 2 
+ │     │  3 . . . . 3 
+ │     │  4 o . . . 4 
+ │     │    A B C D ─── 🍃 49
+ │     ├□ 49 ─── 🪓 β(0) { 🔖 243 🔖 244 🔖 245 … 🔖 254 🔖 255 🔖 256 } #14 HT: reutilização 0.35 vezes 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200
+ ├─ ⚙   ─ <span style="color:gray">P16=</span>100
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> DETALHE | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 3
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (4x4)
+ │    A B C D
+ │  1 . . . . 1 
+ │  2 . . . . 2 
+ │  3 . . . . 3 
+ │  4 x . . . 4 
+ │    A B C D
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 6 | <span style="color:gray">I3(Iterações):</span> 46 | <span style="color:gray">I4(IND_EXPANSOES):</span> 17 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 256 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 

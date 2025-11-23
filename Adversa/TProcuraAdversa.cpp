@@ -45,7 +45,9 @@ void TProcuraAdversa::ResetParametros()
 	parametro += {
 		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores." },
 		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores)." },
-		{ "PODA_CEGA",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " }
+		{ "PODA_CEGA",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " },
+		{ "HEUR_BASE", 200, 100, 1000, "Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao doubro e é o valor de omissão)" },
+		{ "HEUR_MAX_PONTOS", 100, 2, 1000000, "Pontos de amaeaças máximos, para colocar a função sigmoide a saturar por essa altura (ficando perto do +/-infinito)" }
 	};
 }
 
@@ -145,7 +147,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 			}
 			// caso de vitória/derrota
 			if (minimizar ? resultado <= custo + 1 - infinito : resultado >= infinito - custo - 1) {
-				DebugFolha(true, " %-2s%d", Icon(resultado < 0 ? EIcon::VIT_PRETA: EIcon::VIT_BRANCA), custo);
+				DebugFolha(true, " %-2s%d", Icon(resultado < 0 ? EIcon::VIT_PRETA : EIcon::VIT_BRANCA), custo);
 				// listar os nós não explorados
 				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
 					TVector<int> valores;
@@ -249,7 +251,7 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 			nivelOK = nivel;
 			if (Parametro(NIVEL_DEBUG) > NADA && solOK != NULL)
 				printf("\n │ %-2s%-2s %d %-2s%s %-2s%d ",
-					Icon(EIcon::ARVORE), Icon(EIcon::LIMITE),nivel,
+					Icon(EIcon::ARVORE), Icon(EIcon::LIMITE), nivel,
 					Icon(EIcon::ACCAO), Acao(solOK), Icon(EIcon::SUCESSO), resultado);
 		}
 		else
@@ -267,7 +269,9 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 //   - qMax - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente; 
 int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int maxAmeaca) const
 {
-	int pontos = 0, peso = 1;
+	double pontos = 0;
+	double base = Parametro(HEUR_BASE) / 100.0;
+	double peso = 1;
 
 	// verificar situações de ganho imediato
 	if (!minimizar && qMax.First() > 0)
@@ -275,24 +279,21 @@ int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int max
 	if (minimizar && qMin.First() > 0)
 		return -infinito; // Vitória imediata para o min 
 
-	// Ameaças iguais a maxAmeaca ou superior, valem 1, todas as outras valem conforme 
-	if (maxAmeaca > qMin.Count())
-		peso <<= (maxAmeaca - qMin.Count());
-	for (int i = qMin.Count() - 1, peso = 1; i >= 0; i--) {
+	// Ameaças iguais a maxAmeaca ou superior, valem 1, todas as outras valem conforme
+	peso = 1;
+	for (int i = qMin.Count() - 1; i >= 0; i--) {
 		pontos -= qMin[i] * peso;
-		if (i < maxAmeaca) // peço começa a duplicar
-			peso <<= 1;
+		if (i < maxAmeaca) // peço começa a aumentar
+			peso *= base;
 	}
 	peso = 1;
-	if (maxAmeaca > qMax.Count())
-		peso <<= (maxAmeaca - qMin.Count());
-	for (int i = qMax.Count() - 1, peso = 1; i >= 0; i--) {
+	for (int i = qMax.Count() - 1; i >= 0; i--) {
 		pontos += qMax[i] * peso;
-		if (i < maxAmeaca) // peço começa a duplicar
-			peso <<= 1;
+		if (i < maxAmeaca) // peço começa a aumentar
+			peso *= base;
 	}
 
-	return (int)(infinito * (2 / (1 + exp(-0.01 * pontos)) - 1));
+	return (int)(infinito * (2 / (1 + exp(-pontos / Parametro(HEUR_MAX_PONTOS))) - 1));
 }
 
 // fim da procura, por corte de nível (ou não haver sucessores), retornar heurística
@@ -326,7 +327,7 @@ int TProcuraAdversa::NoFolha(bool nivel) {
 // idêntico a MiniMax
 int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 {
-	bool noFolha= (nivel == 1 || Parar());
+	bool noFolha = (nivel == 1 || Parar());
 
 	if (nivel == 0)
 		return MetodoIterativo(true);
@@ -577,24 +578,26 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 		MostrarConfiguracoes(1);
 	}
 	else {
-		char* pt = strtok(ficheiro, " \n\t\r");
+		char* contexto;
+		char* pt = compat::strtok(ficheiro, " \n\t\r", &contexto);
 		char str[BUFFER_SIZE];
-		strcpy(str, pt);
-		strcat(str, ".csv");
-		FILE* f = fopen(str, "wt");
+		if (mpiCount > 1) 
+			snprintf(str, sizeof(str), "%s_%d.csv", pt, mpiID);
+		else
+			snprintf(str, sizeof(str), "%s.csv", pt);
+		FILE* f = compat::fopen(str, "wb");
 		if (f != NULL) {
-			// escrever BOM UTF-8
-			const unsigned char bom[] = { 0xEF,0xBB,0xBF };
-			fwrite(bom, 1, sizeof(bom), f);
-			fprintf(f, "sep=;\n");
-			RelatorioCSV(torneio, f);
+			RelatorioCSV(torneio, tempoTotal, f);
 			printf("\n │ Ficheiro %s gravado.", str);
 			fclose(f);
 		}
 		else
 			printf("\n │ Erro ao gravar ficheiro %s.", str);
-
 	}
+
+	if (mpiCount > 1 && modoMPI == 0)
+		// tenta juntar ficheiros, caso existam os ficheiros dos outros processos
+		JuntarCSV(ficheiro);
 
 	ConfiguracaoAtual(atual, GRAVAR);
 	instancia.valor = backupID;
@@ -607,7 +610,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 }
 
 
-void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, FILE* f) {
+void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, TVector<double> &tempoTotal, FILE* f) {
 	// Jogador, Adversário, cor, resultado (positivo caso o jogador ganhe, negativo c.c.) 
 	// Nota: cada confronto fica com 2 entradas; se existir várias instâncias, o resultado do confronto é somado
 	fprintf(f, "Jogador;Adversário;Cor;Resultado\n");
@@ -623,7 +626,7 @@ void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, FILE* f) {
 	fprintf(f, "\nJogador;");
 	for (int i = 0; i < parametro.Count(); i++)
 		fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
-	fprintf(f, "\n");
+	fprintf(f, "TempoTotal(ms);\n");
 	for (int jogador = 0; jogador < configuracoes.Count(); jogador++) {
 		fprintf(f, "%d;", jogador);
 		for (int j = 0; j < parametro.Count(); j++)
@@ -633,7 +636,7 @@ void TProcuraAdversa::RelatorioCSV(TVector<TVector<int>>& torneio, FILE* f) {
 				fprintf(f, "%d:%s;",
 					configuracoes[jogador][j],
 					parametro[j].nomeValores[configuracoes[jogador][j] - parametro[j].min]);
-		fprintf(f, "\n");
+		fprintf(f, "%d\n", (int)(1000*tempoTotal[jogador]));
 	}
 }
 
