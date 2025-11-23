@@ -130,10 +130,15 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a51a3aae81d501993316ddaa211d5e9fd" id="r_a51a3aae81d501993316ddaa211d5e9fd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fd">EParametrosAdversa</a> { <a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdac6a7d07bb3f73205ead929aa8a682952">ORDENAR_SUCESSORES</a> = PARAMETROS_CONSTRUTIVA
+<tr class="memitem:a51a3aae81d501993316ddaa211d5e9fd" id="r_a51a3aae81d501993316ddaa211d5e9fd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fd">EParametrosAdversa</a> { <br />
+&#160;&#160;<a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdac6a7d07bb3f73205ead929aa8a682952">ORDENAR_SUCESSORES</a> = PARAMETROS_CONSTRUTIVA
 , <a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda2ecf1246acabbde99b63054784d07383">PODA_HEURISTICA</a>
 , <a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdad2278b01c38aea2891b0a462b49d1b32">PODA_CEGA</a>
+, <a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda293052cbc4e6226e47e17591a8bc53e0">HEUR_BASE</a>
+, <br />
+&#160;&#160;<a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdac15a2c054b1288bc245e8b28e0faeea7">HEUR_MAX_PONTOS</a>
 , <a class="el" href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda249f74324f820516784c8721a5d59303">PARAMETROS_ADVERSA</a>
+<br />
  }</td></tr>
 <tr class="memdesc:a51a3aae81d501993316ddaa211d5e9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifica um parâmetro específico no código.  <a href="TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fd">More...</a><br /></td></tr>
 <tr class="separator:a51a3aae81d501993316ddaa211d5e9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,6 +189,10 @@ Enumerations</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a51a3aae81d501993316ddaa211d5e9fdad2278b01c38aea2891b0a462b49d1b32" name="a51a3aae81d501993316ddaa211d5e9fdad2278b01c38aea2891b0a462b49d1b32"></a>PODA_CEGA&#160;</td><td class="fielddoc"><p>corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória </p>
 </td></tr>
+<tr><td class="fieldname"><a id="a51a3aae81d501993316ddaa211d5e9fda293052cbc4e6226e47e17591a8bc53e0" name="a51a3aae81d501993316ddaa211d5e9fda293052cbc4e6226e47e17591a8bc53e0"></a>HEUR_BASE&#160;</td><td class="fielddoc"><p>valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 é o valor de omissão) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a51a3aae81d501993316ddaa211d5e9fdac15a2c054b1288bc245e8b28e0faeea7" name="a51a3aae81d501993316ddaa211d5e9fdac15a2c054b1288bc245e8b28e0faeea7"></a>HEUR_MAX_PONTOS&#160;</td><td class="fielddoc"><p>pontos de amaeaças máximos, para colocar a função sigmoide a saturar por essa altura (ficando perto do +/-infinito) </p>
+</td></tr>
 <tr><td class="fieldname"><a id="a51a3aae81d501993316ddaa211d5e9fda249f74324f820516784c8721a5d59303" name="a51a3aae81d501993316ddaa211d5e9fda249f74324f820516784c8721a5d59303"></a>PARAMETROS_ADVERSA&#160;</td><td class="fielddoc"><p>marcador para permitir a extensão do enum em subclasses. </p>
 </td></tr>
 </table>
@@ -214,7 +223,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraAdversa_8h_source.html#l00024">24</a> of file <a class="el" href="TProcuraAdversa_8h_source.html">TProcuraAdversa.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraAdversa_8h_source.html#l00026">26</a> of file <a class="el" href="TProcuraAdversa_8h_source.html">TProcuraAdversa.h</a>.</p>
 
 </div>
 </div>

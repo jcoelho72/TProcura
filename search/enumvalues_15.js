@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zonasocupadas_0',['zonasOcupadas',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951ba4eaf8c7f11a3156e70ca43787e08f77d',1,'JogoEmLinha.h']]]
+  ['x_0',['X',['../namespacecompat.html#a7166732d82ec7b436da550dd36f0401ca3da35179ca5c4d1526e05913abab9003',1,'compat']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['selecao_0',['SELECAO',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da75528aee9266db0e60395786fd4af79b',1,'TProcuraMelhorativa.h']]],
-  ['semente_1',['SEMENTE',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a950d9177aa4b7541b78cbc2bb1657b90',1,'TProcura.h']]],
-  ['separador_2',['Separador',['../TProcura_8h.html#ae6a51f7b959057a9cb6ec668ce717d1fa529ef5cc6d32f61ffa1b624d2a62b082',1,'TProcura.h']]],
-  ['sobrevivencia_3',['SOBREVIVENCIA',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13dad3ac03b0f4cc5ab5c4ab110ba4b2282a',1,'TProcuraMelhorativa.h']]]
+  ['regular_0',['regular',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951ba040a9ec6d2966f099fd3214b8ac4fef3',1,'JogoEmLinha.h']]],
+  ['ruido_5fheuristica_1',['RUIDO_HEURISTICA',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058aad9519a49fe0df299e6bf5d1fcb32c04',1,'TProcuraConstrutiva.h']]]
 ];
