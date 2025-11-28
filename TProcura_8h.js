@@ -53,7 +53,8 @@ var TProcura_8h =
     [ "ETagMPI", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202ef", [
       [ "TAG_TRABALHO", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efa28b61c2fd0e2b5ad28a91a15f503a661", null ],
       [ "TAG_CABECALHO", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efaa4285a66acf9e6100e8a7d5e00890a59", null ],
-      [ "TAG_VALORES", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efaa130054e33910954a32bedfadba58d25", null ]
+      [ "TAG_VALORES", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efaa130054e33910954a32bedfadba58d25", null ],
+      [ "TAG_JOGO", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efa72a37fad23091f34df76a06c06d882b4", null ]
     ] ],
     [ "CINZ_TAM", "TProcura_8h.html#a5b68e23357bb5aef0c73d262ebfa0d3c", null ],
     [ "NAO_LIDO", "TProcura_8h.html#a59f9d6e2b09717823299d60a0e6f2efc", null ]
