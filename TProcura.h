@@ -101,7 +101,8 @@ enum ECronometro {
 enum ETagMPI {
 	TAG_TRABALHO = 0,
 	TAG_CABECALHO,
-	TAG_VALORES
+	TAG_VALORES,
+	TAG_JOGO
 };
 
 /**

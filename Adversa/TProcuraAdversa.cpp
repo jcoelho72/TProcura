@@ -632,7 +632,7 @@ char* TProcuraAdversa::AdicionaLance(char* jogo, const char* lance) {
 void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 {
 #ifdef MPI_ATIVO
-	int dados[5] = { 0, 0, 0, 4 }; // instância, brancas, pretas
+	int dados[6] = { 0, 0, 0, 4,0,0 }; // instância, brancas, pretas
 	int64_t dadosD[3];
 	double esperaTrabalhadores = 0, esperaGestor = 0;
 	TVector<double> terminou; // instante em que terminou cada trabalhador
@@ -701,11 +701,14 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 		MPI_Status stat;
 
 		double inicioEspera = Cronometro(CONT_TESTE);
-		MPI_Recv(dados, 5, MPI_INT, MPI_ANY_SOURCE, TAG_CABECALHO, MPI_COMM_WORLD, &stat);
+		MPI_Recv(dados, 6, MPI_INT, MPI_ANY_SOURCE, TAG_CABECALHO, MPI_COMM_WORLD, &stat);
 		esperaGestor += Cronometro(CONT_TESTE) - inicioEspera;
 		resultados += {dados[0], dados[1], dados[2], dados[3], dados[4]};
 		trabalhar -= stat.MPI_SOURCE;
 		trabalhador += stat.MPI_SOURCE;
+		resultados.Last().jogo = new char[dados[5] + 1];
+		MPI_Recv(resultados.Last().jogo, dados[5], MPI_CHAR,
+			stat.MPI_SOURCE, TAG_JOGO, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		MPI_Recv(dadosD, 3, MPI_LONG_LONG,
 			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		// tempo de espera do trabalhador
@@ -771,8 +774,10 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 			Icon(EIcon::TAXA), taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
 	mpiCount = backupCount;
 
-	TesteFim();
+	for(auto resultado : resultados)
+		delete resultado.jogo;
 
+	TesteFim();
 
 #endif
 }
@@ -780,7 +785,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
 {
 #ifdef MPI_ATIVO
-	int dados[5] = { 0, 0, 0, 0, 0 }; // instância, brancas, pretas
+	int dados[6] = { 0, 0, 0, 0, 0, 0 }; // instância, brancas, pretas
 	int64_t dadosD[3];
 	// Ciclo:
 	// 1. Solicitar tarefa ao mestre
@@ -806,8 +811,10 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* fi
 		// dados[0], dados[1] e dados[2] já têm as configurações e instância
 		dados[3] = resultados.Last().resultado;
 		dados[4] = resultados.Last().nJogadas;
+		dados[5] = strlen(resultados.Last().jogo) + 1;
 		double inicioEspera = Cronometro(CONT_TESTE);
-		MPI_Send(dados, 5, MPI_INT, 0, TAG_CABECALHO, MPI_COMM_WORLD);
+		MPI_Send(dados, 6, MPI_INT, 0, TAG_CABECALHO, MPI_COMM_WORLD);
+		MPI_Send(resultados.Last().jogo, dados[5], MPI_CHAR, 0, TAG_JOGO, MPI_COMM_WORLD);
 		// colocar a espera e tempos de brancas e pretas em milissegundos
 		dadosD[0] = (int64_t)(resultados.Last().tempoBrancas * 1000 + 0.5);
 		dadosD[1] = (int64_t)(resultados.Last().tempoPretas * 1000 + 0.5);
