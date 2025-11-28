@@ -574,7 +574,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 				printf(" %s", strAcao);
 			njogada++;
 			if (njogada % 2 == 1) // jogada de brancas, colocar o número de jogada (njogada é meia jogada)
-				snprintf(buffer, sizeof(buffer), "%d. %s", (njogada / 2) + 1, strAcao);
+				snprintf(buffer, sizeof(buffer), " %d. %s", (njogada / 2) + 1, strAcao);
 			else // jogada de pretas
 				snprintf(buffer, sizeof(buffer), ", %s", strAcao);
 			// concatenar ao registo do jogo
