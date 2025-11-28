@@ -2,7 +2,7 @@ var searchData=
 [
   ['acao_0',['acao',['../classCJogoEmLinha.html#a25eb875c5fb35543ab74161e94a75ad4',1,'CJogoEmLinha::Acao()'],['../classCAspirador.html#a602bee168dd45c680b2a10bdef57a5a4',1,'CAspirador::Acao()'],['../classCOitoDamas.html#a220a570b326344f1bce4f4cb4cde2ed9',1,'COitoDamas::Acao()'],['../classCParticao.html#a1cd10748ebedbe43fc5e18969a112448',1,'CParticao::Acao()'],['../classCPuzzle8.html#a6e6634ceac73ff4eb3ffa10978eb1126',1,'CPuzzle8::Acao()'],['../group__RedefinicaoSugerida.html#gacbc6e34f3a403d26d806f37b5cd739f6',1,'TProcuraConstrutiva::Acao(TNo sucessor)'],['../group__RedefinicaoOpcional.html#gacccf4fbb52126ba19bfc456c0c6d5214',1,'TProcuraConstrutiva::Acao(const char *acao)'],['../classTCodificacaoPermutacao.html#a80dd16def1407adab90b348ad5931c50',1,'TCodificacaoPermutacao::Acao()'],['../classTProcuraMelhorativa.html#a115e9579ba7af129923b869b4c90ccec',1,'TProcuraMelhorativa::Acao()'],['../classCJogoDoGalo.html#ad83a5e5ee76941ffabc95893828a768e',1,'CJogoDoGalo::Acao()']]],
   ['add_1',['Add',['../classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6',1,'TVector']]],
-  ['adicionalance_2',['AdicionaLance',['../classTProcuraAdversa.html#a8a70cf23c3063b7769034d0dc5c03ec9',1,'TProcuraAdversa']]],
+  ['adicionalance_2',['AdicionaLance',['../classTProcuraAdversa.html#a351c0d0b24932396cd995eca1f74b9ac',1,'TProcuraAdversa']]],
   ['ajudautilizacao_3',['AjudaUtilizacao',['../classTProcura.html#adc4d653fe0feb6033083adc5d19e7fb5',1,'TProcura']]],
   ['algoritmoevolutivo_4',['AlgoritmoEvolutivo',['../classTProcuraMelhorativa.html#a6e7a1d0f1281eae6bf3fbbc7fa5f4026',1,'TProcuraMelhorativa']]],
   ['algoritmogenetico_5',['AlgoritmoGenetico',['../classTProcuraMelhorativa.html#a574d0ec15c8c1d3ded8db605def50616',1,'TProcuraMelhorativa']]],

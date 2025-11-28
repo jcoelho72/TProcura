@@ -13,7 +13,7 @@ digraph "TProcuraAdversa::TesteEmpiricoTrabalhador"
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#gacbc6e34f3a403d26d806f37b5cd739f6",tooltip="Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor."];
   Node3 -> Node5 [id="edge4_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraAdversa::Adiciona\lLance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a8a70cf23c3063b7769034d0dc5c03ec9",tooltip=" "];
+  Node5 [id="Node000005",label="TProcuraAdversa::Adiciona\lLance",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a351c0d0b24932396cd995eca1f74b9ac",tooltip=" "];
   Node3 -> Node6 [id="edge5_Node000003_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcura::ConfiguracaoAtual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac1d9f06b12765a02290050af15463186",tooltip="Grava ou lê a configuração atual."];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];

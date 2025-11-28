@@ -2,7 +2,7 @@ var classTProcuraAdversa =
 [
     [ "TProcuraAdversa", "classTProcuraAdversa.html#afe356b79fccb94b6fd2e416bc653fc17", null ],
     [ "~TProcuraAdversa", "classTProcuraAdversa.html#af519ba133593f289a454495ce72972fd", null ],
-    [ "AdicionaLance", "classTProcuraAdversa.html#a8a70cf23c3063b7769034d0dc5c03ec9", null ],
+    [ "AdicionaLance", "classTProcuraAdversa.html#a351c0d0b24932396cd995eca1f74b9ac", null ],
     [ "CorteAlfaBeta", "classTProcuraAdversa.html#a816a0a735f6f4379338a330e0ff19fa5", null ],
     [ "DebugChamada", "classTProcuraAdversa.html#ad88cb2a2f894ceda4c8ed67e775a96e0", null ],
     [ "ExecutaAlgoritmo", "classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b", null ],
