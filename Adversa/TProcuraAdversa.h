@@ -125,6 +125,9 @@ protected:
 	/// @brief  iteração, aumentando o nível progressivamente
 	int MetodoIterativo(int alfaBeta);
 
+	/// @brief converte -infinito, 0, +infinito em -1 (vitória preta), 1 (vitória branca), 0 empate
+	int Pontos(int resultado) { return resultado < 0 ? -1 : 1; }
+
 	/**
 	 * @brief Executa uma tarefa num teste empírico
 	 * @param resultados Vetor onde inserir o resultado.

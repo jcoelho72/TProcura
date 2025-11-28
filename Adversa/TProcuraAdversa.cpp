@@ -468,7 +468,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	int nTarefa = 0;
 
 	TesteInicio(instancias, atual);
-	
+
 	switch (Parametro(NIVEL_DEBUG)) {
 	case DETALHE: periodoReporte = 10; break;
 	case COMPLETO: periodoReporte = 0; break; // reporte em todos os eventos
@@ -573,24 +573,23 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 			resultado = 0; // erro, mas considerar empatado
 		}
 	}
-	resultados.Last().resultado = resultado;
+	resultados.Last().resultado = Pontos(resultado);
 	resultados.Last().nJogadas = njogada;
 
-	// jogo terminou, registar resultdo
-	if (resultado != 0) {
-		bool inverter;
-		// brancas e minimizar ou pretas e maximizar, inverter
-		inverter = ((njogada % 2 == 0) && minimizar) ||
-			((njogada % 2 == 1) && !minimizar);
-		// vitória/derrota branca/preta
-		if(torneio!=NULL) 
-			(*torneio)[brancas][pretas] += (resultado < 0 ? -1 : 1) * (inverter ? -1 : 1);
-		Debug(COMPLETO, false, " 🏆 %s", (inverter ? resultado < 0 : resultado > 0) ? Icon(EIcon::VIT_PRETA) : Icon(EIcon::VIT_BRANCA));
-	}
-	else
-		Debug(COMPLETO, false, Icon(EIcon::EMPATE));
-}
+	// caso o primeiro a jogar pretenda minimizar, então inverter,
+	// já que o positivo/primeiro a jogar é para as brancas a nível de torneio
+	// mesmo que no jogo o primeiro jogador minimize
+	if ((njogada % 2 == 0) == minimizar)
+		resultados.Last().resultado *= -1;
 
+	// jogo terminou, registar resultado
+	if (torneio != NULL)
+		(*torneio)[brancas][pretas] += resultados.Last().resultado;
+	Debug(COMPLETO, false, " 🏆 %s",
+		(resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
+			(resultados.Last().resultado > 0 ? Icon(EIcon::VIT_BRANCA) :
+				Icon(EIcon::EMPATE))));
+}
 
 void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 {
@@ -628,7 +627,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 	// dois jogadores, brancas é o primeiro a jogar, pretas é o segundo
 	for (int brancas = 0; brancas < configuracoes.Count(); brancas++)
 		for (int pretas = 0; pretas < configuracoes.Count(); pretas++)
-			if (brancas != pretas) 
+			if (brancas != pretas)
 				for (auto inst : instancias)
 					tarefas += { inst, brancas, pretas };
 
@@ -672,7 +671,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 		MPI_Recv(dadosD, 3, MPI_LONG_LONG,
 			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		// tempo de espera do trabalhador
-		resultados.Last().tempoBrancas = (double)dadosD[0]/1000.;
+		resultados.Last().tempoBrancas = (double)dadosD[0] / 1000.;
 		resultados.Last().tempoPretas = (double)dadosD[1] / 1000.;
 		esperaTrabalhadores += (double)((int64_t)dadosD[2]) / 1000.;
 
@@ -785,7 +784,7 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* fi
 
 
 
-bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo> &resultados, char *ficheiro) {
+bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, char* ficheiro) {
 	char* contexto;
 	char* pt = compat::strtok(ficheiro, " \n\t\r", &contexto);
 	char str[BUFFER_SIZE];
@@ -795,7 +794,7 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo> &resultados, char *fi
 		snprintf(str, sizeof(str), "%s.csv", pt);
 	FILE* f = compat::fopen(str, "wb");
 
-	if(f == NULL) {
+	if (f == NULL) {
 		printf("\nErro ao gravar ficheiro %s.", str);
 		return false;
 	}
@@ -803,8 +802,8 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo> &resultados, char *fi
 	// Jogador, Adversário, cor, resultado (positivo caso o jogador ganhe, negativo c.c.) 
 	// Nota: cada confronto fica com 2 entradas; se existir várias instâncias, o resultado do confronto é somado
 	fprintf(f, "Instância;Brancas;Pretas;Resultado;Jogadas;TempoBranco;TempoPreto\n");
-	for (auto &resultado : resultados)
-		fprintf(f,"%d;%d;%d;%d;%d;%.3f;%.3f\n",
+	for (auto& resultado : resultados)
+		fprintf(f, "%d;%d;%d;%d;%d;%.3f;%.3f\n",
 			resultado.instancia,
 			resultado.brancas + 1,
 			resultado.pretas + 1,
@@ -812,14 +811,14 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo> &resultados, char *fi
 			resultado.nJogadas,
 			resultado.tempoBrancas,
 			resultado.tempoPretas);
-			
+
 	// No final, mostrar as configurações
 	fprintf(f, "\nJogador;");
 	for (int i = 0; i < parametro.Count(); i++)
 		fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
 	fprintf(f, "\n");
 	for (int jogador = 0; jogador < configuracoes.Count(); jogador++) {
-		fprintf(f, "%d;", jogador);
+		fprintf(f, "%d;", jogador + 1);
 		for (int j = 0; j < parametro.Count(); j++)
 			if (parametro[j].nomeValores == NULL)
 				fprintf(f, "%d;", configuracoes[jogador][j]);
