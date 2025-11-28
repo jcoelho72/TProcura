@@ -49,6 +49,7 @@ typedef struct SResultadoJogo {
 	int nJogadas = 0; // número de jogadas efetuadas
 	double tempoBrancas = 0.0; // tempo total de jogo das brancas
 	double tempoPretas = 0.0; // tempo total de jogo das pretas
+	char *jogo = NULL; // todos os lances do jogo
 } TResultadoJogo;
 
 
@@ -161,4 +162,6 @@ protected:
 	static int reutilizadoAvaliacao; // número de vezes que uma avaliação é reutilizada
 
 	void DebugChamada(bool noFolha, int alfa = 0, int beta = 0);
+
+	void AdicionaLance(char*& jogo, const char* lance);
 };

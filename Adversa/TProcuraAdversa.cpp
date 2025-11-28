@@ -527,6 +527,10 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 			printf("\n │ Ficheiro %s gravado.", ficheiro);
 	}
 
+	// libertar as strings alocadas para registo do jogo
+	for(auto resultado : resultados)
+		delete resultado.jogo;
+
 	if (mpiCount > 1 && modoMPI == 0)
 		// tenta juntar ficheiros, caso existam os ficheiros dos outros processos
 		JuntarCSV(ficheiro);
@@ -545,6 +549,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 	int inst, int brancas, int pretas, TVector<TVector<int>>* torneio)
 {
 	int resultado = -1, njogada = 0;
+	static char buffer[BUFFER_SIZE];
 	// carregar instância
 	instancia.valor = inst;
 	Inicializar();
@@ -561,12 +566,19 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 			resultados.Last().tempoBrancas += Cronometro(CONT_ALGORITMO);
 		else
 			resultados.Last().tempoPretas += Cronometro(CONT_ALGORITMO);
+
 		if (solucao != NULL) { // efetuado um lance
 			const char* strAcao = Acao(solucao);
 			Copiar(solucao);
 			if (Parametro(NIVEL_DEBUG) >= COMPLETO)
 				printf(" %s", strAcao);
 			njogada++;
+			if (njogada % 2 == 1) // jogada de brancas, colocar o número de jogada (njogada é meia jogada)
+				snprintf(buffer, sizeof(buffer), "%d. %s", (njogada / 2) + 1, strAcao);
+			else // jogada de pretas
+				snprintf(buffer, sizeof(buffer), ", %s", strAcao);
+			// concatenar ao registo do jogo
+			AdicionaLance(resultados.Last().jogo, buffer);
 		}
 		else {
 			break; // não há lance efetuado
@@ -589,7 +601,32 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 		(resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
 			(resultados.Last().resultado > 0 ? Icon(EIcon::VIT_BRANCA) :
 				Icon(EIcon::EMPATE))));
+
+	// colocar resultado do jogo no final
+	if(resultados.Last().jogo!=NULL) {
+		snprintf(buffer, sizeof(buffer), " 🏆 %s", (resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
+			(resultados.Last().resultado > 0 ? Icon(EIcon::VIT_BRANCA) :
+				Icon(EIcon::EMPATE))));
+		AdicionaLance(resultados.Last().jogo, buffer);
+	}
 }
+
+void TProcuraAdversa::AdicionaLance(char*& jogo, const char* lance) {
+	if (jogo == NULL) {
+		jogo = new char[strlen(lance) + 1];
+		strcpy(jogo, lance);
+	}
+	else {
+		int lenAntigo = strlen(jogo);
+		int lenNovo = strlen(lance);
+		char* novoJogo = new char[lenAntigo + lenNovo + 1];
+		strcpy(novoJogo, jogo);
+		strcpy(novoJogo + lenAntigo, lance);
+		delete jogo;
+		jogo = novoJogo;
+	}
+}
+
 
 void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
 {
@@ -801,16 +838,17 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, char* fi
 
 	// Jogador, Adversário, cor, resultado (positivo caso o jogador ganhe, negativo c.c.) 
 	// Nota: cada confronto fica com 2 entradas; se existir várias instâncias, o resultado do confronto é somado
-	fprintf(f, "Instância;Brancas;Pretas;Resultado;Jogadas;TempoBranco;TempoPreto\n");
+	fprintf(f, "Instância;Brancas;Pretas;Resultado;Jogadas;TempoBranco;TempoPreto;Jogo\n");
 	for (auto& resultado : resultados)
-		fprintf(f, "%d;%d;%d;%d;%d;%.3f;%.3f\n",
+		fprintf(f, "%d;%d;%d;%d;%d;%.3f;%.3f;%s\n",
 			resultado.instancia,
 			resultado.brancas + 1,
 			resultado.pretas + 1,
 			resultado.resultado,
 			resultado.nJogadas,
 			resultado.tempoBrancas,
-			resultado.tempoPretas);
+			resultado.tempoPretas,
+			resultado.jogo);
 
 	// No final, mostrar as configurações
 	fprintf(f, "\nJogador;");
