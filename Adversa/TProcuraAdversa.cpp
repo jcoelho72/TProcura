@@ -576,7 +576,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 			if (njogada % 2 == 1) // jogada de brancas, colocar o número de jogada (njogada é meia jogada)
 				snprintf(buffer, sizeof(buffer), " %d. %s", (njogada / 2) + 1, strAcao);
 			else // jogada de pretas
-				snprintf(buffer, sizeof(buffer), ", %s", strAcao);
+				snprintf(buffer, sizeof(buffer), " %s", strAcao);
 			// concatenar ao registo do jogo
 			resultados.Last().jogo = AdicionaLance(resultados.Last().jogo, buffer);
 		}
