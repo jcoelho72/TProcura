@@ -1,9 +1,14 @@
 var searchData=
 [
-  ['salas_0',['salas',['../classCAspirador.html#ac118e781b7b1296f09d5aec94560b00e',1,'CAspirador']]],
-  ['sementealeatoria_1',['sementeAleatoria',['../structSParametrosEspaco.html#a81f440d64e50396bdd359e516b91075c',1,'SParametrosEspaco']]],
-  ['solcompleta_2',['solCompleta',['../classCParticao.html#a10a1cc5253c3f2d3e7c7cc8b54dab99e',1,'CParticao']]],
-  ['solucao_3',['solucao',['../group__VariaveisGlobais.html#gadb0d41114016ec069543b3494b0e0196',1,'TProcuraConstrutiva']]],
-  ['stda_4',['stdA',['../classCTesteTVector.html#a97289f00e4f142034782703fb9227fd7',1,'CTesteTVector']]],
-  ['stdb_5',['stdB',['../classCTesteTVector.html#a4259d236668ba2ad0bceb6bb3fc54a19',1,'CTesteTVector']]]
+  ['ramo_0',['ramo',['../group__VariaveisGlobais.html#gaac97e0931e93f82c5c2f8f148d3772ca',1,'TProcuraConstrutiva']]],
+  ['ramo_5fcontinua_1',['RAMO_CONTINUA',['../group__VariaveisGlobais.html#gadc75cb067255d2faf1889d958d592c68',1,'TProcuraConstrutiva']]],
+  ['ramo_5festado_2',['RAMO_ESTADO',['../group__VariaveisGlobais.html#ga0e84a091132bd2b767efce84aa7b9de0',1,'TProcuraConstrutiva']]],
+  ['ramo_5festado2_3',['RAMO_ESTADO2',['../group__VariaveisGlobais.html#ga9c29e966f9adba119a6f60fd66932445',1,'TProcuraConstrutiva']]],
+  ['ramo_5festado2_5ffim_4',['RAMO_ESTADO2_FIM',['../group__VariaveisGlobais.html#gaef115b68c84c034570aa2b2f805cdb02',1,'TProcuraConstrutiva']]],
+  ['ramo_5festado_5ffim_5',['RAMO_ESTADO_FIM',['../group__VariaveisGlobais.html#ga5b7429226b938aba18b19e154962f538',1,'TProcuraConstrutiva']]],
+  ['ramo_5ffim_6',['RAMO_FIM',['../group__VariaveisGlobais.html#gada55e3fa56125a6cb779ac683ef8e0c7',1,'TProcuraConstrutiva']]],
+  ['ramo_5fnovo_7',['RAMO_NOVO',['../group__VariaveisGlobais.html#ga4e20df8a70f784cfb80db79a4d29c866',1,'TProcuraConstrutiva']]],
+  ['ramo_5fvazio_8',['RAMO_VAZIO',['../group__VariaveisGlobais.html#gae056f5ea48dd523ccdf5853116866a25',1,'TProcuraConstrutiva']]],
+  ['resultado_9',['resultado',['../structSResultadoJogo.html#a7c06ecc0b6d50237c1eecf64eb6b59ef',1,'SResultadoJogo::resultado'],['../classTProcura.html#a224527229b795a4780e5faa61245a8e0',1,'TProcura::resultado']]],
+  ['reutilizadoavaliacao_10',['reutilizadoAvaliacao',['../classTProcuraAdversa.html#abfa149e4beec8447ec67c05adeb6fedc',1,'TProcuraAdversa']]]
 ];

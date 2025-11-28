@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['tabuleiro_0',['tabuleiro',['../classCJogoDoGalo.html#a4a45abc068aac13338f18d18c8bd235d',1,'CJogoDoGalo::tabuleiro'],['../classCJogoEmLinha.html#a8cba76145d91e14fa042258a7da7b938',1,'CJogoEmLinha::tabuleiro']]],
-  ['tamanho_5fhashtable_1',['TAMANHO_HASHTABLE',['../TProcuraConstrutiva_8h.html#adee3945eff4acfc542f2730380c8f74f',1,'TProcuraConstrutiva.h']]],
-  ['tamanhocodificado_2',['tamanhoCodificado',['../group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b',1,'TProcuraConstrutiva']]],
-  ['tempo_3',['tempo',['../classTProcura.html#af7735671436a99def475aba1fdb42435',1,'TProcura']]],
-  ['tempobrancas_4',['tempoBrancas',['../structSResultadoJogo.html#af361d6a58b5698c4fd15bae4124496e4',1,'SResultadoJogo']]],
-  ['tempopretas_5',['tempoPretas',['../structSResultadoJogo.html#aa3a6c2a2c77ae65468a30b164161c60c',1,'SResultadoJogo']]],
-  ['tipo_6',['tipo',['../structSValorEstado.html#a50ab452ee030441b761efc29dd223eaa',1,'SValorEstado']]],
-  ['totaldireita_7',['totaldireita',['../classCParticao.html#a0a9b8c1d6dd73cbd4a4597aaf7c0a75d',1,'CParticao::totalDireita'],['../classCParticao.html#a8c4d8befbbe3703930b6922b7182b30c',1,'CParticao::totalDireita']]],
-  ['totalesquerda_8',['totalesquerda',['../classCParticao.html#a2f7c54e73bdc18b30067e65027da4d6f',1,'CParticao::totalEsquerda'],['../classCParticao.html#ac8e1d8b71df06957820ecde534d22bd9',1,'CParticao::totalEsquerda']]]
+  ['salas_0',['salas',['../classCAspirador.html#ac118e781b7b1296f09d5aec94560b00e',1,'CAspirador']]],
+  ['sementealeatoria_1',['sementeAleatoria',['../structSParametrosEspaco.html#a81f440d64e50396bdd359e516b91075c',1,'SParametrosEspaco']]],
+  ['solcompleta_2',['solCompleta',['../classCParticao.html#a10a1cc5253c3f2d3e7c7cc8b54dab99e',1,'CParticao']]],
+  ['solucao_3',['solucao',['../group__VariaveisGlobais.html#gadb0d41114016ec069543b3494b0e0196',1,'TProcuraConstrutiva']]],
+  ['stda_4',['stdA',['../classCTesteTVector.html#a97289f00e4f142034782703fb9227fd7',1,'CTesteTVector']]],
+  ['stdb_5',['stdB',['../classCTesteTVector.html#a4259d236668ba2ad0bceb6bb3fc54a19',1,'CTesteTVector']]]
 ];

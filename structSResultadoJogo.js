@@ -2,6 +2,7 @@ var structSResultadoJogo =
 [
     [ "brancas", "structSResultadoJogo.html#ae063140594a3f03ce7ee7291264aece6", null ],
     [ "instancia", "structSResultadoJogo.html#abd6e08b3c8da859100e6e999490ba794", null ],
+    [ "jogo", "structSResultadoJogo.html#a9d8ee6f22d63eb29cca0b658110fa8c1", null ],
     [ "nJogadas", "structSResultadoJogo.html#a291913206f8c46a4ea3a395925592349", null ],
     [ "pretas", "structSResultadoJogo.html#a28672d33d57ab64bff971a7f248622cf", null ],
     [ "resultado", "structSResultadoJogo.html#a7c06ecc0b6d50237c1eecf64eb6b59ef", null ],

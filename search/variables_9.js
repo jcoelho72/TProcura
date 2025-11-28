@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['k_0',['K',['../structSJogoEmLinha.html#afcb76423b2f50c69cfbf29f406632512',1,'SJogoEmLinha']]]
+  ['jogo_0',['jogo',['../structSResultadoJogo.html#a9d8ee6f22d63eb29cca0b658110fa8c1',1,'SResultadoJogo']]]
 ];
