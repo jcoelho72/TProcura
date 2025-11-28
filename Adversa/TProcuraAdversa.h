@@ -163,5 +163,5 @@ protected:
 
 	void DebugChamada(bool noFolha, int alfa = 0, int beta = 0);
 
-	void AdicionaLance(char*& jogo, const char* lance);
+	char* AdicionaLance(char* jogo, const char* lance);
 };

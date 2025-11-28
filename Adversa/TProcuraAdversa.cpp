@@ -578,7 +578,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 			else // jogada de pretas
 				snprintf(buffer, sizeof(buffer), ", %s", strAcao);
 			// concatenar ao registo do jogo
-			AdicionaLance(resultados.Last().jogo, buffer);
+			resultados.Last().jogo = AdicionaLance(resultados.Last().jogo, buffer);
 		}
 		else {
 			break; // não há lance efetuado
@@ -607,11 +607,11 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 		snprintf(buffer, sizeof(buffer), " 🏆 %s", (resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
 			(resultados.Last().resultado > 0 ? Icon(EIcon::VIT_BRANCA) :
 				Icon(EIcon::EMPATE))));
-		AdicionaLance(resultados.Last().jogo, buffer);
+		resultados.Last().jogo = AdicionaLance(resultados.Last().jogo, buffer);
 	}
 }
 
-void TProcuraAdversa::AdicionaLance(char*& jogo, const char* lance) {
+char* TProcuraAdversa::AdicionaLance(char* jogo, const char* lance) {
 	if (jogo == NULL) {
 		jogo = new char[strlen(lance) + 1];
 		strcpy(jogo, lance);
@@ -625,6 +625,7 @@ void TProcuraAdversa::AdicionaLance(char*& jogo, const char* lance) {
 		delete jogo;
 		jogo = novoJogo;
 	}
+	return jogo;
 }
 
 
