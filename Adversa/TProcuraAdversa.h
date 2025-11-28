@@ -7,11 +7,11 @@
 *
 * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
 * Esta enumeração continua de EParametrosConstrutiva
-* 
+*
 * @see EParametrosConstrutiva
 *
-*/	
-enum EParametrosAdversa { 
+*/
+enum EParametrosAdversa {
 	ORDENAR_SUCESSORES = PARAMETROS_CONSTRUTIVA, ///< opção de ordenar sucessores por heurística, ou por último valor registado
 	PODA_HEURISTICA,      ///< permite cortar sucessores, mas calcula a heurística a todos, de modo a mantendo os melhores
 	PODA_CEGA,		     ///< corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória
@@ -23,19 +23,19 @@ enum EParametrosAdversa {
 /**
 * @brief tipo de valor resultante do minimax com cortes alfa/beta
 */
-enum ETipoValor { 
+enum ETipoValor {
 	EXATO,      ///< o valor foi calculado sem cortes, ou seja, não sofreu influência de alfa ou beta;
 	LOWER_BOUND, ///< o valor foi afetado por um corte de beta (ou seja, ele é pelo menos esse valor, mas pode ser maior);
 	UPPER_BOUND  ///< o valor foi afetado por um corte de alfa (ou seja, ele é no máximo esse valor, mas pode ser menor).
 };
 
 /**
- * @brief registo do valor de um estado, em procuras anteriores 
+ * @brief registo do valor de um estado, em procuras anteriores
  */
 typedef struct SValorEstado {
 	int valor;
 	int nivel; // 0 - valor heurístico, -1 - inválido
-	ETipoValor tipo; 
+	ETipoValor tipo;
 } TValorEstado;
 
 /**
@@ -53,7 +53,7 @@ typedef struct SResultadoJogo {
 
 
 /**
- * @brief Representa um estado no espaço de estados. 
+ * @brief Representa um estado no espaço de estados.
  *
  * Esta classe base deve ser redefinida com um problema concreto,
  * permitindo a execução de procuras adversas.
@@ -110,14 +110,14 @@ public:
 	 * @brief Utilitário para calculo de uma heurística standard em jogos simples
 	 *
 	 * calcular o número de ameaças de vitória, para cada lado, de menor comprimento:
-	 * - qMin - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente; 
-	 * - qMax - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente; 
+	 * - qMin - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente;
+	 * - qMax - vetor com número de ameaças (1 ou mais) a 1 jogada (na primeira posição), a 2 (na segunda posição), e assim sucessivamente;
 	 */
 	int MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int maxAmeaca) const;
 
 protected:
 	/// @brief fim da procura, por corte de nível (ou não haver sucessores), retornar heurística
-	int NoFolha(bool nivel); 
+	int NoFolha(bool nivel);
 
 	/// @brief  verifica se há um corte alfa/beta, atualizando alfa e beta
 	bool CorteAlfaBeta(int valor, int& alfa, int& beta);
@@ -126,7 +126,7 @@ protected:
 	int MetodoIterativo(int alfaBeta);
 
 	/// @brief converte -infinito, 0, +infinito em -1 (vitória preta), 1 (vitória branca), 0 empate
-	int Pontos(int resultado) { return resultado < 0 ? -1 : 1; }
+	int Pontos(int resultado) { return resultado < 0 ? -1 : (resultado > 0 ? 1 : 0); }
 
 	/**
 	 * @brief Executa uma tarefa num teste empírico
@@ -136,14 +136,14 @@ protected:
 	 * @param conf ID da pretas
 	 */
 	void ExecutaTarefa(TVector<TResultadoJogo>& resultados,
-		int inst, int brancas, int pretas, TVector<TVector<int>> *torneio=NULL);
+		int inst, int brancas, int pretas, TVector<TVector<int>>* torneio = NULL);
 
 	/**
 	 * @brief Gera um relatório CSV com os resultados.
 	 * @param resultados Vetor de resultados.
 	 * @param ficheiro com o nome do ficheiro onde gravar.
 	 */
-	bool RelatorioCSV(TVector<TResultadoJogo>& resultados, char *ficheiro);
+	bool RelatorioCSV(TVector<TResultadoJogo>& resultados, char* ficheiro);
 
 	void OrdenarSucessores(TVector<TNo>& sucessores, TVector<int>& id, int nivel);
 
@@ -160,5 +160,5 @@ protected:
 
 	static int reutilizadoAvaliacao; // número de vezes que uma avaliação é reutilizada
 
-	void DebugChamada(bool noFolha, int alfa=0, int beta=0);
+	void DebugChamada(bool noFolha, int alfa = 0, int beta = 0);
 };

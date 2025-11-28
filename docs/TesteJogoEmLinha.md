@@ -16,6 +16,7 @@ No Linux na pasta `.../TProcura/Adversa/Teste$` execute `make` seguido de `./bin
 - [Ação 6 - Torneio Heurística](#jel-a6)
 - [Ação 7 - Torneio Ruido](#jel-a7)
 - [Ação 8 - Torneio Poda](#jel-a8)
+- [Ação 9 - Torneio Niveis](#jel-a9)
 
 
 ```entrada
@@ -525,8 +526,26 @@ Ficheiro resultadoRuido.csv gravado.
 
 
 
-\anchor jel-a6
-## Ação 6 - Torneio Poda
+\anchor jel-a8
+## Ação 8 - Torneio Poda
 
 ... (estudar o efeito da poda)
+
+
+
+\anchor jel-a9
+## Ação 9 - Torneio Níveis
+
+Estando identificadas as variáveis críticas de desempenho estamos em condições de identificar configurações com diferentes níveis de força de jogo.
+
+Pretendemos que a diferença de força de jogo entre níveis consecutivos, seja significativa e constante,
+idealmente com 3 pontos em 4 jogos, ou seja, 75%.
+
+Desta forma podemos ter diferentes níveis de jogo para diferentes dificuldades que o jogador humano pretender enfrentar,
+podendo optar por um adversário artificial adequado à sua força de jogo atual. 
+
+Um torneio entre os diferentes níveis deve portanto confirmar esta hipótese 75% de vitórias contra o nível imediatamente inferior.
+
+O número de níveis tem de ir desde o jogador aleatório até à configuração mais forte encontrada nas ações anteriores.
+
 
