@@ -178,6 +178,7 @@ typedef struct SParametro {
 typedef struct SResultado {
 	int instancia = 0, configuracao = 0;
 	TVector<int64_t> valor; // valor para cada indicador selecionado (fixos os EIndicadoresProcura, resultado, tempo, iterações)
+	char* solucao = NULL; // todas as ações da solução, se aplicável
 } TResultado;
 
 
@@ -523,6 +524,9 @@ public:
 	/// @brief Modo MPI
 	/// @note 0 = divisão estática, 1 = mestre-escravo
 	static int modoMPI;
+	/// @brief Gravar solução CSV (todas as ações)
+	/// @note 0 = não grava, 1 = grava
+	static int gravarSolucao;
 
 
 

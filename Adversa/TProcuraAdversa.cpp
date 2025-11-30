@@ -528,7 +528,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
 	}
 
 	// libertar as strings alocadas para registo do jogo
-	for(auto resultado : resultados)
+	for (auto resultado : resultados)
 		delete resultado.jogo;
 
 	if (mpiCount > 1 && modoMPI == 0)
@@ -603,7 +603,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 				Icon(EIcon::EMPATE))));
 
 	// colocar resultado do jogo no final
-	if(resultados.Last().jogo!=NULL) {
+	if (resultados.Last().jogo != NULL) {
 		snprintf(buffer, sizeof(buffer), " 🏆 %s", (resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
 			(resultados.Last().resultado > 0 ? Icon(EIcon::VIT_BRANCA) :
 				Icon(EIcon::EMPATE))));
@@ -774,7 +774,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 			Icon(EIcon::TAXA), taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
 	mpiCount = backupCount;
 
-	for(auto resultado : resultados)
+	for (auto resultado : resultados)
 		delete resultado.jogo;
 
 	TesteFim();
@@ -856,7 +856,7 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, char* fi
 			resultado.nJogadas,
 			resultado.tempoBrancas,
 			resultado.tempoPretas,
-			resultado.jogo);
+			(gravarSolucao && resultado.jogo != NULL ? resultado.jogo : ""));
 
 	// No final, mostrar as configurações
 	fprintf(f, "\nJogador;");

@@ -283,18 +283,22 @@ No entanto os valores de omissão podem não ser os melhores, pelo que serão al
 Nos testes empíricos vamos utilizar a linha de comando, por ser mais simples a identificação do teste a realizar.
 
 Pretendemos verificar em torneio, que a profundidade maior resulta em força de jogo superior.
-Por outro lado pretendemos confirmar que os cortes alfa/beta e a ordenação dos sucessores, não alteram a força de jogo,
+Por outro lado pretendemos confirmar que os cortes alfa/beta e a ordenação dos sucessores,
+não alteram de forma significativa a força de jogo,
 mas reduz o tempo de execução (P1=1,2 x P12=0,1).
 
-Vamos variar apenas três profundidades, nível 1 a 3 (P7=2:4).
+Vamos variar apenas quatro profundidades, nível 1 a 4 (P7=2:5).
 Vamos utilizar todas as instâncias, já que a heurística é igual.
 
 - **Tipo de Teste / Objetivo**: Performance (Profundidade, alfa/beta, ordenação)
-- **Definição**: Instâncias: 1:10; Configurações: P1=1,2 x P12=0,1 x P7=2:4
+- **Definição**: Instâncias: 1:10; Configurações: P1=1,2 x P12=0,1 x P7=2:5
 - **Esforço**: (um só jogo, não há aleatoriedade)
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=2:4
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -G 1 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=2:5
 
-Nota: o tempo por jogada é 1 segundo, de modo a limitar o tempo total do torneio.
+Nota 1: o tempo por jogada é 1 segundo, de modo a limitar o tempo total do torneio.
+
+Nota 2: Vamos neste torneio gravar os jogos (-G 1), para mostrar essa possibilidade, mas como não iremos analisar os jogos,
+não iremos manter esta configuração nos torneios seguintes.
 
 \htmlonly
 <details>

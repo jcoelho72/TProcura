@@ -38,6 +38,9 @@ int TProcura::mpiID = 0;
 int TProcura::mpiCount = 1;
 // Modo MPI : 0 = divisão estática, 1 = mestre-escravo
 int TProcura::modoMPI = 0;
+// Gravar solução CSV (todas as ações): 0 = não grava, 1 = grava
+int TProcura::gravarSolucao = 0;
+
 
 
 // conjuntos de valores de parâmetros, para teste
@@ -1142,6 +1145,10 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 			if ((modoMPI = atoi(argv[i + 1])) != 1)
 				modoMPI = 0; // apenas 0 ou 1
 		}
+		else if (strcmp(argv[i], "-G") == 0 && i + 1 < argc) {
+			if ((gravarSolucao = atoi(argv[i + 1])) != 1)
+				gravarSolucao = 0; // apenas 0 ou 1
+		}
 		else if (strcmp(argv[i], "-I") == 0 && i + 1 < argc) {
 			char* contexto;
 			char* pt = compat::strtok(argv[i + 1], ",", &contexto);
@@ -1192,6 +1199,7 @@ void TProcura::AjudaUtilizacao(const char* programa) {
 		"  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)\n"
 		"  -F <prefixo>    Prefixo dos ficheiros de instância (omissão: instancia_)\n"
 		"  -M <modo>       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador\n"
+		"  -G <1/0>        Gravar solução (sequência de ações): 0 = não grava, 1 = grava\n"
 		"  -I <ind>        Lista de indicadores (e.g. 2,1,3)\n"
 		"  -h              Esta ajuda\n"
 		"  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo\n"
@@ -1221,7 +1229,7 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
 			fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
 		for (auto item : indAtivo)
 			fprintf(f, "I%d(%s);", item + 1, indicador[item].nome);
-		fprintf(f, "\n");
+		fprintf(f, "Solução\n");
 
 		for (auto& res : resultados) {
 			fprintf(f, "%d;", res.instancia);
@@ -1237,7 +1245,8 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro) {
 						parametro[j].nomeValores[configuracoes[res.configuracao][j] - parametro[j].min]);
 			for (auto ind : indAtivo)
 				fprintf(f, "%" PRId64 ";", Registo(res, ind));
-			fprintf(f, "\n");
+
+			fprintf(f, "%s\n", (gravarSolucao && res.solucao != NULL) ? res.solucao : "");
 		}
 
 		fclose(f);
