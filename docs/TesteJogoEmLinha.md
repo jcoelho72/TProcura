@@ -287,15 +287,15 @@ Por outro lado pretendemos confirmar que os cortes alfa/beta e a ordenação dos
 não alteram de forma significativa a força de jogo,
 mas reduz o tempo de execução (P1=1,2 x P12=0,1).
 
-Vamos variar apenas quatro profundidades, nível 1 a 4 e iterativo (P7=0.2:5).
-O nível iterativo utiliza o tempo disponível e vai aumentando a profundidade até o tempo acabar.
+Vamos variar apenas quatro profundidades, nível 1 a 3 e iterativo (P7=2:4).
 A profundidade com nível fixo se o tempo acabar irá retornar um resultado que pode não ser o melhor possível.
+Para procurar ver o ganho de profundidade sem perturbação do limite de tempo, vamos colocar neste teste um tempo por jogada de 60 segundos (P4=60).
 Vamos utilizar todas as instâncias, já que a heurística é igual.
 
 - **Tipo de Teste / Objetivo**: Performance (Profundidade, alfa/beta, ordenação)
-- **Definição**: Instâncias: 1:10; Configurações: P1=1,2 x P12=0,1 x P7=2:5
+- **Definição**: Instâncias: 1:10; Configurações: P1=1,2 x P12=0,1 x P7=2:4
 - **Esforço**: (um só jogo, não há aleatoriedade)
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -G 1 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=0,2:5
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -G 1 -P P2=2 P4=60 P1=1,2 x P12=0,1 x P7=2:4
 
 Nota 1: o tempo por jogada é 1 segundo, de modo a limitar o tempo total do torneio, e limitar o modo iterativo.
 
@@ -322,7 +322,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: TorneioProfundidade
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -G 1 -P P2=2 P4=1 P1=1,2 x P12=0,1 x P7=0,2:5
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -G 1 -P P2=2 P4=60 P1=1,2 x P12=0,1 x P7=2:4
 </pre>
 </details>
 <details>
