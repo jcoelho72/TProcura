@@ -570,7 +570,7 @@ A qualidade da heurística é aqui crítico.
 
 Temos dois parâmetros que influenciam a heurística:
 - HEUR_BASE - Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao doubro e é o valor de omissão)
-- HEUR_MAX_PONTOS - Pontos de amaeaças máximos, para colocar a função sigmoide a saturar por essa altura (ficando perto do +/-infinito)
+- HEUR_MAX_PONTOS - Pontos de ameaças máximos, para colocar a função sigmoide a saturar por essa altura (ficando perto do +/-infinito)
 
 Esta heurística é genérica, e pode ser utilizada em problemas que se possam calcular ameaças a K jogadas,
 como é o caso dos jogos em que se pretende fazer K marcas em linha.
@@ -792,7 +792,8 @@ caso o mesmo estado apareça várias vezes por ordens distintas de movimentos.
 
 Vamos limitar o tempo a 1 segundo (P4=1). Vamos estudar também a influênica de baralhar os sucessores com P11=0,1.
 Notar que esta ação pode ser feita em conjunto com a ordenação, ou seja, primeiro baralha-se e depois ordena-se,
-ficando os estados com o mesmo valor por ordem aleatória.
+ficando os estados com o mesmo valor por ordem aleatória. Caso não atrapalhe, a baralhação dos sucessores é importante
+para permitir realizar vários jogos distintos entre duas configurações iguais, e assim ter um resultado mais preciso.
 
 - **Tipo de Teste / Objetivo**: Eficácia (alfa/beta, ordenação, baralhação)
 - **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=1,2 x P12=0:2 x P11=0,1
@@ -827,33 +828,52 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioIterativo -M 1 -P P2=2 
 \htmlonly
 <pre>
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>1 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>1 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
- ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P12=</span>0
- ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P12=</span>0
- ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P12=</span>1
- ├─ ⚙  [4] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P12=</span>1
- ├─ ⚙  [5] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P12=</span>2
- ├─ ⚙  [6] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P12=</span>2
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>1
+ │ ...
+ ├─ ⚙  [10] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P11=</span>1 <span style="color:gray">P12=</span>1
+ ├─ ⚙  [11] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P11=</span>1 <span style="color:gray">P12=</span>2
+ ├─ ⚙  [12] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P11=</span>1 <span style="color:gray">P12=</span>2
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:300   📄 Instâncias: 10   🛠️ Configurações: 6   🖥️ Processos: 48.
- ├─ ⏱ 1' 1" 668ms     📋 95    📄 6     🛠️ 4     🛠️ 5     🖥️ 9     ⚖  
- ├─ ⏱ 2' 3" 290ms     📋 151   📄 5     🛠️ 3     🛠️ 4     🖥️ 24    ⚖  
- ├─ ⏱ 3' 4" 199ms     📋 207   📄 6     🛠️ 2     🛠️ 5     🖥️ 13    ⚖  
- ├─ ⏱ 4' 4" 505ms     📋 261   📄 3     🛠️ 1     🛠️ 0     🖥️ 26    ⚖  
- ├─ ⏱ 5' 5" 966ms     📋 300   📄 8     🛠️ 0     🛠️ 5     🖥️ 3     ⚖  
- ├─ ⏱ 6' 6" 8ms       📋 300   📄 10    🛠️ 0     🛠️ 5     🖥️ 7     ⚖  
+ ├─ 📋 Tarefas:1320   📄 Instâncias: 10   🛠️ Configurações: 12   🖥️ Processos: 48.
+ ├─ ⏱ 1' 848ms        📋 101   📄 6     🛠️ 11    🛠️ 5     🖥️ 39    ⚖  
+ ├─ ⏱ 2' 934ms        📋 149   📄 3     🛠️ 10    🛠️ 8     🖥️ 30    ⚖  
+ ├─ ⏱ 3' 1" 593ms     📋 207   📄 6     🛠️ 10    🛠️ 6     🖥️ 6     ⚖  
+ ├─ ⏱ 4' 2" 56ms      📋 266   📄 9     🛠️ 10    🛠️ 3     🖥️ 3     ⚖  
+ ├─ ⏱ 5' 2" 907ms     📋 319   📄 4     🛠️ 9     🛠️ 3     🖥️ 32    ⚖  
+ ├─ ⏱ 6' 3" 259ms     📋 374   📄 7     🛠️ 9     🛠️ 3     🖥️ 18    ⚖  
+ ├─ ⏱ 7' 5" 715ms     📋 429   📄 4     🛠️ 8     🛠️ 3     🖥️ 23    ⚖  
+ ├─ ⏱ 8' 5" 787ms     📋 486   📄 7     🛠️ 8     🛠️ 3     🖥️ 9     ⚖  
+ ├─ ⏱ 9' 7" 282ms     📋 553   📄 6     🛠️ 7     🛠️ 5     🖥️ 3     ⚖  
+ ├─ ⏱ 10' 7" 362ms    📋 605   📄 10    🛠️ 7     🛠️ 8     🖥️ 46    ⚖  
+ ├─ ⏱ 11' 7" 593ms    📋 662   📄 1     🛠️ 6     🛠️ 0     🖥️ 18    ⚖  
+ ├─ ⏱ 12' 8" 229ms    📋 714   📄 5     🛠️ 5     🛠️ 10    🖥️ 1     ⚖  
+ ├─ ⏱ 13' 10" 414ms   📋 772   📄 4     🛠️ 5     🛠️ 2     🖥️ 25    ⚖  
+ ├─ ⏱ 14' 11" 501ms   📋 827   📄 8     🛠️ 5     🛠️ 0     🖥️ 45    ⚖  
+ ├─ ⏱ 15' 11" 638ms   📋 882   📄 9     🛠️ 4     🛠️ 8     🖥️ 32    ⚖  
+ ├─ ⏱ 16' 12" 32ms    📋 936   📄 5     🛠️ 3     🛠️ 11    🖥️ 37    ⚖  
+ ├─ ⏱ 17' 12" 726ms   📋 995   📄 9     🛠️ 3     🛠️ 8     🖥️ 36    ⚖  
+ ├─ ⏱ 18' 13" 108ms   📋 1051  📄 5     🛠️ 2     🛠️ 10    🖥️ 1     ⚖  
+ ├─ ⏱ 19' 14" 429ms   📋 1103  📄 3     🛠️ 2     🛠️ 1     🖥️ 15    ⚖  
+ ├─ ⏱ 20' 14" 501ms   📋 1158  📄 5     🛠️ 1     🛠️ 8     🖥️ 36    ⚖  
+ ├─ ⏱ 21' 14" 568ms   📋 1215  📄 9     🛠️ 1     🛠️ 8     🖥️ 5     ⚖  
+ ├─ ⏱ 22' 15" 594ms   📋 1275  📄 9     🛠️ 1     🛠️ 2     🖥️ 13    ⚖  
+ ├─ ⏱ 23' 16" 347ms   📋 1320  📄 8     🛠️ 0     🛠️ 6     🖥️ 47    ⚖  
+ ├─ ⏱ 24' 18" 274ms   📋 1320  📄 10    🛠️ 0     🛠️ 6     🖥️ 11    ⚖  
  ├─ 📑  Ficheiro Resultados/TorneioIterativo.csv gravado.
- │  ⏱  Tempo real: 6' 50" 667ms 
- │  ⏱  CPU total: 5h 21' 41" 357ms 
- │  ⏱  Espera do gestor: 6' 50" 640ms 
- │  ⏱  Espera trabalhadores: 1h 7' 23" 529ms 
+ │  ⏱  Tempo real: 25' 16" 76ms 
+ │  ⏱  CPU total: 19h 47' 35" 578ms 
+ │  ⏱  Espera do gestor: 25' 16" 23ms 
+ │  ⏱  Espera trabalhadores: 1h 8' 44" 222ms 
  │  📊  Utilização:
- │  - Total: 77.4%
+ │  - Total: 92.2%
  │  - Gestor: 0.0%
- │  - Trabalhadores: 79.1% 
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 6' 50" 667ms ) ═══
+ │  - Trabalhadores: 94.2% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 25' 16" 76ms ) ═══
 </pre>
 \endhtmlonly
 </details>
@@ -861,41 +881,53 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioIterativo -M 1 -P P2=2 
 
 Podemos ver agora a eficácia do jogador das brancas:
 
-| P1(ALGORITMO) | P12(ORDENAR_SUCESSORES)<br>ID | Heurística | Memória |
+| P11(BARALHAR_SUCESSORES) | P12(ORDENAR_SUCESSORES) | 1:MiniMax | 2:MiniMax alfa/beta |
 |:---:|:---:|:---:|:---:|
-| 1:MiniMax | 0,5 | 0,45 | 0,49 |
-| 2:MiniMax alfa/beta | 0,48 | 0,62 | 0,56 |
-| Total Geral | 0,49 | 0,54 | 0,53 |
+| ID | ID | 0,48 | 0,49 |
+| | Heurística | 0,45 | 0,55 |
+| | Memória | 0,46 | 0,53 |
+| Baralhar | ID | 0,46 | 0,47 |
+| | Heurística | 0,52 | 0,58 |
+| | Memória | 0,51 | 0,55 |
+| Total Geral | | 0,48 | 0,53 |
+
 
 E do jogador das pretas:
 
-| P1(ALGORITMO) | P12(ORDENAR_SUCESSORES)<br>ID | Heurística | Memória |
+| P11(BARALHAR_SUCESSORES) | P12(ORDENAR_SUCESSORES) | 1:MiniMax | 2:MiniMax alfa/beta |
 |:---:|:---:|:---:|:---:|
-| 1:MiniMax | 0,48 | 0,37 | 0,45 |
-| 2:MiniMax alfa/beta | 0,45 | 0,59 | 0,56 |
-| Total Geral | 0,47 | 0,48 | 0,51 |
+| ID | ID | 0,44 | 0,42 |
+| | Heurística | 0,43 | 0,53 |
+| | Memória | 0,49 | 0,57 |
+| Baralhar | ID | 0,48 | 0,48 |
+| | Heurística | 0,47 | 0,58 |
+| | Memória | 0,5 | 0,55 |
+| Total Geral | | 0,47 | 0,52 |
+
 
 Em ambos os casos o MiniMax com cortes alfa/beta é mais eficaz, e a ordenação dos sucessores por heurística também traz vantagens.
 A utilização de memória traz vantagens, mas menores que a ordenação por heurística.
-Esta situação pode ser devida ao facto de utilizarmos apenas 1 segundo por jogada, e a vantagem de recuperar uma posição já vista é menos vincada,
+Esta situação pode ser devida ao facto de utilizarmos apenas 1 segundo por jogada, e a vantagem de recuperar uma posição já vista é menos vincada.
+A baralhação dos sucessores traz ligeira vantagem quando combinada com a ordenação por heurística,
+e principalmente não piora, pelo que passamos a utilizar para poder fazer vários jogos entre duas configurações. 
 
 Na tabela de resultados por instância, podemos ver o seguinte:
 
 | Instância | Vitória Preta | Empate | Vitória Branca |
 |:---:|:---:|:---:|:---:|
-| 1 | | 30 | |
-| 2 | | 30 | |
-| 3 | | 28 | 2 |
-| 4 | 11 | 2 | 17 |
-| 5 | 18 | 1 | 11 |
-| 6 | | 30 | |
-| 7 | | 23 | 7 |
-| 8 | 2 | 24 | 4 |
-| 9 | | 30 | |
-| 10 | | 30 | |
-| Total Geral | 31 | 228 | 41 |
+| 1 | | 132 | |
+| 2 | | 132 | |
+| 3 | | 122 | 10 |
+| 4 | 65 | 9 | 58 |
+| 5 | 69 | 1 | 62 |
+| 6 ||  132 | |
+| 7 | 9 | 109 | 14 |
+| 8 | 11 | 98 | 23 |
+| 9 | | 132 | |
+| 10 | | 132 | |
+| Total Geral | 154 | 999 | 167 |
 
-Temos neste caso menos jogos, mas vemos as instâncias 4 e 5 como mais decisivas.
+Vê-se aqui claramente as instâncias 4 e 5 como mais decisivas, quase sem empates e bastante equilíbrio entre vitórias brancas e pretas.
 Nestas instâncias existe uma menor ramificação, devido à gravidade, o que permite maior profundidade e maior eficácia dos algoritmos.
 Por outro lado, as restantes instâncias podem não estar equilibradas e ser fácil defender contra qualquer tentativa de vitória. 
 
@@ -905,6 +937,18 @@ Naturalmente que mais tempo por jogada os resultados podem ser diferentes.
 \anchor jel-a6
 ## Ação 6 - Torneio Heurística
 
+Vamos agora estudar o impacto da heurística na eficácia do jogador.
+
+Temos os seguintes parâmetros:
+- HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).
+	- Valores testados: P15=100,150,200,300,400,800 
+- HEUR_MAX_PONTOS - Pontos de ameaças máximos, para colocar a função sigmoide a saturar por essa altura.
+	- Valores testados: P16=10,20,50,100,200,500
+
+- **Tipo de Teste / Objetivo**: Eficácia (HEUR_BASE, HEUR_MAX_PONTOS)
+- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=100,150,200,300,400,800 x P16=10,20,50,100,200,500
+- **Esforço**: (um só jogo)
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,150,200,300,400,800 x P16=10,20,50,100,200,500
 
 
 
