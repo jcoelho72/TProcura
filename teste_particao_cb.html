@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('teste_particao_cb.html',''); initResiz
 <div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
 <p>Execução de exemplo com base no problema da Partição, com codificação binária. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, e execute-o. No Linux na pasta <code>.../TProcura/Melhorativa/Teste</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraMelhorativa</code></p>
-<h2><a class="anchor" id="autotoc_md121"></a>
+<h2><a class="anchor" id="autotoc_md126"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_particao_cb.html#particao-cb1">Ação 1 - Ver instâncias</a></li>
@@ -117,7 +117,7 @@ Opção: <span class="entrada">3</span>
 </pre>
 </p>
 <p><a class="anchor" id="particao-cb1"></a></p>
-<h2><a class="anchor" id="autotoc_md122"></a>
+<h2><a class="anchor" id="autotoc_md127"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no problema da Partição, com representação binária, insira: <b>3.</b></p>
 <p> 
@@ -165,7 +165,7 @@ Opção:
 <p>Agora podemos ver os números todos, já num dos lados (esquerda ou direita).</p>
 <p>Vamos deixar esta instância. Significa que temos de decidir para cada um dos 10 elementos, em que lado fica, esquerda ou direita, de modo a que o somatório seja igual.</p>
 <p><a class="anchor" id="particao-cb2"></a></p>
-<h2><a class="anchor" id="autotoc_md123"></a>
+<h2><a class="anchor" id="autotoc_md128"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Vamos resolver a instância manualmente. Insira: <b>2</b></p>
 <p> 
@@ -370,7 +370,7 @@ Opção:
 </pre>
 </p>
 <p><a class="anchor" id="particao-cb3"></a></p>
-<h2><a class="anchor" id="autotoc_md124"></a>
+<h2><a class="anchor" id="autotoc_md129"></a>
 Ação 3 - Algoritmos evolutivos</h2>
 <p>Vamos ver os algoritmos evolutivos nos diferentes níveis de debug, para esta instância de tamanho 10.</p>
 <p>Insira: <b>1; 10; 3; 2; 1; <em>ENTER</em>;6.</b></p>
@@ -1091,7 +1091,7 @@ Opção:
 <p>Podemos ver que a solução não foi obtida da instância de custo 2, mas sim da instância de custo 220 com outra de custo 30. Esta observação é importante para que não seja dada demasiada importância ao melhor elemento, descartando os restantes. É sempre importante ter diversidade na população, e permitir que elementos piores se reproduzam.</p>
 <p>Os pais nas posições 3 e 4 tinham nesta última época custos 2 e 10, valores bastante bons. No entanto geraram filhos de custos 222 e 238, pelo que nem sempre dois elementos bons geram bons filhos.</p>
 <p><a class="anchor" id="particao-cb4"></a></p>
-<h2><a class="anchor" id="autotoc_md125"></a>
+<h2><a class="anchor" id="autotoc_md130"></a>
 Ação 3 - Testes empíricos</h2>
 <p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
 <p><a href="melhorativa__deucalion.html">Resultados Deucalion</a></p>
