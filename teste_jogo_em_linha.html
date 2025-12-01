@@ -830,12 +830,12 @@ Ação 5 - Torneio Iterativo</h2>
 <p>Vamos agora utilizar a profundidade iterativa, e dando exatamente o mesmo tempo por jogada, procurar ver se a eficácia dos coertes alfa/beta e ordenação dos sucessores se mantém.</p>
 <p>Com o método iterativo a profundidade vai iterativamente sendo aumentada. Esta estratégia tem a vantagem de ter sempre um movemento pronto a jogar quando o tempo acaba. Por outro lado, utiliza o tempo existente, se der para explorar mais um nível, esse é explorado.</p>
 <p>Temos mais uma opção na ordennação, que é o valor 2 (omissão). Este valor, para além de ordenar os sucessores, guarda em memória cada estado, e resultado de análises anteriores. Quando o estado ocorre novamnete, se estiver em memória, o seu valor é utilizado em vez de ser executada a heurítica ou uma procura e determinada profundidade. Para tal é guardada alguma informação sobre o estado de modo a sabermos se podemos utilizar o valor assim que exista possibilidade de reutilização. Esta opção tem naturalmente mais impacto na procura iterativa, em que os estados iniciais são re-expandidos, mas pode ter influencia mesmo sem ser na procura iterativa, caso o mesmo estado apareça várias vezes por ordens distintas de movimentos.</p>
-<p>Vamos limitar o tempo a 1 segundo (P4=1).</p>
+<p>Vamos limitar o tempo a 1 segundo (P4=1). Vamos estudar também a influênica de baralhar os sucessores com P11=0,1. Notar que esta ação pode ser feita em conjunto com a ordenação, ou seja, primeiro baralha-se e depois ordena-se, ficando os estados com o mesmo valor por ordem aleatória.</p>
 <ul>
-<li><b>Tipo de Teste / Objetivo</b>: Eficácia (alfa/beta, ordenação)</li>
-<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=1,2 x P12=0:2</li>
+<li><b>Tipo de Teste / Objetivo</b>: Eficácia (alfa/beta, ordenação, baralhação)</li>
+<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=1,2 x P12=0:2 x P11=0,1</li>
 <li><b>Esforço</b>: (um só jogo, não há aleatoriedade)</li>
-<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioIterativo -M 1 -P P2=2 P4=1 P7=0 P1=1,2 x P12=0:2</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioIterativo -M 1 -P P2=2 P4=1 P7=0 P1=1,2 x P12=0:2 x P11=0,1</li>
 </ul>
 <p> 
 <details>
@@ -857,69 +857,97 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioIterativo
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioIterativo -M 1 -P P2=2 P4=1 P7=0 P1=1,2 x P12=0:2 
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioIterativo -M 1 -P P2=2 P4=1 P7=0 P1=1,2 x P12=0:2 x P11=0,1
 </pre>
 </details>
 <details>
   <summary>Ver execução:</summary>
 \htmlonly
 <pre>
+═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>1 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P12=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P12=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P12=</span>1
+ ├─ ⚙  [4] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P12=</span>1
+ ├─ ⚙  [5] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P12=</span>2
+ ├─ ⚙  [6] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P12=</span>2
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:300   📄 Instâncias: 10   🛠️ Configurações: 6   🖥️ Processos: 48.
+ ├─ ⏱ 1' 1" 668ms     📋 95    📄 6     🛠️ 4     🛠️ 5     🖥️ 9     ⚖  
+ ├─ ⏱ 2' 3" 290ms     📋 151   📄 5     🛠️ 3     🛠️ 4     🖥️ 24    ⚖  
+ ├─ ⏱ 3' 4" 199ms     📋 207   📄 6     🛠️ 2     🛠️ 5     🖥️ 13    ⚖  
+ ├─ ⏱ 4' 4" 505ms     📋 261   📄 3     🛠️ 1     🛠️ 0     🖥️ 26    ⚖  
+ ├─ ⏱ 5' 5" 966ms     📋 300   📄 8     🛠️ 0     🛠️ 5     🖥️ 3     ⚖  
+ ├─ ⏱ 6' 6" 8ms       📋 300   📄 10    🛠️ 0     🛠️ 5     🖥️ 7     ⚖  
+ ├─ 📑  Ficheiro Resultados/TorneioIterativo.csv gravado.
+ │  ⏱  Tempo real: 6' 50" 667ms 
+ │  ⏱  CPU total: 5h 21' 41" 357ms 
+ │  ⏱  Espera do gestor: 6' 50" 640ms 
+ │  ⏱  Espera trabalhadores: 1h 7' 23" 529ms 
+ │  📊  Utilização:
+ │  - Total: 77.4%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 79.1% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 6' 50" 667ms ) ═══
 </pre>
  </p>
-<p>Vamos utilizar 1 segundo por lance. O valor de omissão de P7 é 0, mas vamos colocar P7=0 para realçar que estamos na procura iterativa. Utilizamos apenas a instãncia 3 para que o torneio não leve muito tempo, já que cada lance levará 1 segundo.</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 3 -R resultadoIterativo -P P4=1 P7=0 P1=1,2 x P12=0:2</div>
-<div class="line">...</div>
-<div class="line">Opção: 2</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultadoIterativo.csv gravado.</div>
-</div><!-- fragment --><p>| P1(Algoritmo) | P12(Ordenar) | Rótulos de Linha | 0 | 1 | 2 | 3 | 4 | 5 | Total Geral | |:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:| | 1:MiniMax | 0 | |0 | 0 | 0 | 0 | 0 | 0 | 0 | | 2:MiniMax alfa/beta | 0 | 1 | | 1 | 1 | 0 | 1 | 0 | 3 | | 1:MiniMax | 1 | 2 | 0 | 0 | | 0 | 0 | 1 | 1 | | 2:MiniMax alfa/beta | 1 | 3 | 0 | 0 | 0 | | 0 | 1 | 1 | | 1:MiniMax | 2 | 4 | 0 | 0 | 0 | 0 | | 0 | 0 | | 2:MiniMax alfa/beta | 2 | 5 | 0 | 0 | 0 | 0 | 0 | | 0 | | Total Geral | | 1 | 0 | 1 | 0 | 1 | 2 | 5 |</p>
-<p>Estes resultados apontam para vantagem do MiniMax com cortes alfa/beta, sem ordenação.</p>
-<p>Os resultados por jogador:</p>
+<p>Podemos ver agora a eficácia do jogador das brancas:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P1(Algoritmo)   </th><th class="markdownTableHeadCenter">P12(Ordenar)   </th><th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadCenter">Brancas   </th><th class="markdownTableHeadCenter">Pretas   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<th class="markdownTableHeadCenter">P1(ALGORITMO)   </th><th class="markdownTableHeadCenter">P12(ORDENAR_SUCESSORES)<br  />
+ID   </th><th class="markdownTableHeadCenter">Heurística   </th><th class="markdownTableHeadCenter">Memória    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">-1    </td></tr>
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,45   </td><td class="markdownTableBodyCenter">0,49    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">3    </td></tr>
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0,48   </td><td class="markdownTableBodyCenter">0,62   </td><td class="markdownTableBodyCenter">0,56    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">0    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">-1    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-2   </td><td class="markdownTableBodyCenter">-2   </td></tr>
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">0,49   </td><td class="markdownTableBodyCenter">0,54   </td><td class="markdownTableBodyCenter">0,53   </td></tr>
 </table>
-<p>| Total Geral | 5 | -5 | 0 |</p>
-<p>Esta tabela confirma a tabela anterior, e permite observar que nesta instância as brancas ganham com maior facilidade.</p>
-<p>Vamos agora utilizar uma instância maior, mas com a gravidade, a instância 5, em que os sucessores são mais limitados.</p>
-<div class="fragment"><div class="line">PS ...\Teste&gt; TProcuraAdversa 5 -R resultadoIterativo5 -P P4=1 P7=0 P1=1,2 x P12=0:2</div>
-<div class="line">...</div>
-<div class="line">Opção: 2</div>
-<div class="line">...</div>
-<div class="line">Ficheiro resultadoIterativo5.csv gravado.</div>
-</div><!-- fragment --><p>Resultados por jogador:</p>
+<p>E do jogador das pretas:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">P1(Algoritmo)   </th><th class="markdownTableHeadCenter">P12(Ordenar)   </th><th class="markdownTableHeadCenter">Rótulos de Linha   </th><th class="markdownTableHeadCenter">Brancas   </th><th class="markdownTableHeadCenter">Pretas   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<th class="markdownTableHeadCenter">P1(ALGORITMO)   </th><th class="markdownTableHeadCenter">P12(ORDENAR_SUCESSORES)<br  />
+ID   </th><th class="markdownTableHeadCenter">Heurística   </th><th class="markdownTableHeadCenter">Memória    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">2    </td></tr>
+<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">0,48   </td><td class="markdownTableBodyCenter">0,37   </td><td class="markdownTableBodyCenter">0,45    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-2    </td></tr>
+<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">0,45   </td><td class="markdownTableBodyCenter">0,59   </td><td class="markdownTableBodyCenter">0,56    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">-2    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">-3   </td><td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">0    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1:MiniMax   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">4    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2:MiniMax alfa/beta   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">-3   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">-2   </td></tr>
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">0,47   </td><td class="markdownTableBodyCenter">0,48   </td><td class="markdownTableBodyCenter">0,51   </td></tr>
 </table>
-<p>| Total Geral | | -12 | 12 | 0 |</p>
-<p>Podemos observar que o MiniMax com ordenação 2 é o algoritmo mais forte neste jogo. O jogo aparenta não permitir empates, e as pretas têm mais facilidade em ganhar.</p>
-<p>O MiniMax ao utilizar a ordenação 2, memoriza mais estados e pode assim ter maior vantagem que o ganho pelos cortes do alfa/beta. Ao utilizar o alfa/beta, a informação memorizada tem de ter informação se esteve um corte alfa ou beta ativo, para utilizar devidamente o valor registado, como um upper bound ou lower bound. Assim, o ganho da memorização perde-se.</p>
-<p>Estes resultados poderiam ser mais evidentes com mais tempo por jogada, o que permitiria maiores profundidades e maiores ganhos em algumas configurações. Por outro lado, para maior precisão, tem de se utilizar aleatoriedade e ruído, que é o que iremos fazer na próxima ação.</p>
+<p>Em ambos os casos o MiniMax com cortes alfa/beta é mais eficaz, e a ordenação dos sucessores por heurística também traz vantagens. A utilização de memória traz vantagens, mas menores que a ordenação por heurística. Esta situação pode ser devida ao facto de utilizarmos apenas 1 segundo por jogada, e a vantagem de recuperar uma posição já vista é menos vincada,</p>
+<p>Na tabela de resultados por instância, podemos ver o seguinte:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadCenter">Vitória Preta   </th><th class="markdownTableHeadCenter">Empate   </th><th class="markdownTableHeadCenter">Vitória Branca    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyCenter"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyCenter"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyCenter">2    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">11   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">17    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">11    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyCenter"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyCenter">7    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">24   </td><td class="markdownTableBodyCenter">4    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyCenter"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyCenter"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">31   </td><td class="markdownTableBodyCenter">228   </td><td class="markdownTableBodyCenter">41   </td></tr>
+</table>
+<p>Temos neste caso menos jogos, mas vemos as instâncias 4 e 5 como mais decisivas. Nestas instâncias existe uma menor ramificação, devido à gravidade, o que permite maior profundidade e maior eficácia dos algoritmos. Por outro lado, as restantes instâncias podem não estar equilibradas e ser fácil defender contra qualquer tentativa de vitória.</p>
+<p>Naturalmente que mais tempo por jogada os resultados podem ser diferentes.</p>
 <p><a class="anchor" id="jel-a6"></a></p>
 <h2><a class="anchor" id="autotoc_md115"></a>
 Ação 6 - Torneio Heurística</h2>
