@@ -711,7 +711,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 			stat.MPI_SOURCE, TAG_JOGO, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		MPI_Recv(dadosD, 3, MPI_LONG_LONG,
 			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-		// tempo de espera do trabalhador
+		// tempo de brancas e pretas e de espera do trabalhador (em segundos) 
 		resultados.Last().tempoBrancas = (double)dadosD[0] / 1000.;
 		resultados.Last().tempoPretas = (double)dadosD[1] / 1000.;
 		esperaTrabalhadores += (double)((int64_t)dadosD[2]) / 1000.;
