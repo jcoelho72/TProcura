@@ -1250,13 +1250,14 @@ poda em que cada instância tem por base a melhor configuração obtida neste to
 ## Ação 7 - Torneio Poda
 
 Temos dois parâmetros para a poda da árvore de procura. A poda heurística (PODA_HEURISTICA) e a poda cega (PODA_CEGA).
-A poda cega é útil para quando há demasiados sucessores, mas neste caso na maior instância de 12 de lado, o maior número de sucessores é 121.
+A poda cega é útil para quando há demasiados sucessores poder remover de forma aleatória, de modo a poder existir exploração.
+Mas neste caso na maior instância tem 12 de lado, sendo o maior número de sucessores é 121.
 Assim vamos testar apenas a poda heurística.
 
 - **Tipo de Teste / Objetivo**: Eficácia (PODA_HEURISTICA)
 - **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
 - **Esforço**: (um só jogo)
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
 
 
 <details>
@@ -1278,7 +1279,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioPoda
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
 </pre>
 </details>
 <details>
