@@ -56,6 +56,32 @@ void CJogoEmLinha::Inicializar(void)
 		tabuleiro[i] = '.';
 
 	tamanhoCodificado = (inst.N * inst.M * 2) / 64 + 1;
+
+	// configuração base para cada instância:
+	// caso o valor seja o máximo -> melhor configuração para brancas
+	// caso o valor seja o mínimo -> melhor configuração para pretas
+	if (Parametro(HEUR_BASE) == parametro[HEUR_BASE].max) 
+		switch (instancia.valor) {
+		case 3: Parametro(HEUR_BASE) = 300; break;
+		case 4: Parametro(HEUR_BASE) = 400; break;
+		case 5: Parametro(HEUR_BASE) = 300; Parametro(HEUR_MAX_PONTOS) = 10; break;
+		case 6: Parametro(HEUR_BASE) = 800; Parametro(HEUR_MAX_PONTOS) = 100; break;
+		case 7: Parametro(HEUR_BASE) = 400; break;
+		case 8: Parametro(HEUR_BASE) = 300; break;
+		case 9: Parametro(HEUR_BASE) = 200; break;
+		case 10: Parametro(HEUR_BASE) = 800; Parametro(HEUR_MAX_PONTOS)= 500; break;
+		}
+	else if(Parametro(HEUR_BASE) == parametro[HEUR_BASE].min)
+		switch (instancia.valor) {
+		case 3: Parametro(HEUR_BASE) = 200; break;
+		case 4: Parametro(HEUR_BASE) = 150; Parametro(HEUR_MAX_PONTOS) = 20; break;
+		case 5: Parametro(HEUR_BASE) = 150; break;
+		case 6: Parametro(HEUR_BASE) = 300; break;
+		case 7: Parametro(HEUR_BASE) = 300; break;
+		case 8: Parametro(HEUR_BASE) = 300; break;
+		case 9: Parametro(HEUR_BASE) = 150; break;
+		case 10: Parametro(HEUR_BASE) = 300; Parametro(HEUR_MAX_PONTOS) = 10; break;
+		}
 }
 
 void CJogoEmLinha::Sucessores(TVector<TNo>&sucessores)
