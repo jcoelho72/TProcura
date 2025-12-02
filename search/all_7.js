@@ -7,7 +7,7 @@ var searchData=
   ['8_20idastar_4',['Ação 8 - IDAStar',['../teste_puzzle8.html#autotoc_md139',1,'']]],
   ['8_20resolver_20outra_20instância_5',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md93',1,'']]],
   ['8_20teste_6',['Ação 6: Menu 8 - Teste',['../teste_tvector.html#autotoc_md155',1,'']]],
-  ['8_20torneio_20poda_7',['Ação 8 - Torneio Poda',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
+  ['8_20torneio_20ruido_7',['Ação 8 - Torneio Ruido',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
   ['8_3a_20execução_20mpi_8',['Ação 8: Execução MPI',['../teste_tvector.html#autotoc_md163',1,'']]],
   ['8damas_5f1_9',['Teste: 8damas_1',['../teste_8damas.html#autotoc_md72',1,'']]],
   ['8damas_5f2_10',['Teste: 8damas_2',['../teste_8damas.html#autotoc_md73',1,'']]],

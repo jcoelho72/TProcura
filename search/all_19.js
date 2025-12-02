@@ -43,7 +43,7 @@ var searchData=
   ['perc_5fdescendentes_40',['PERC_DESCENDENTES',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13dacce7ffe756caffff4894aac6acb7d584',1,'TProcuraMelhorativa.h']]],
   ['permutação_41',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],
   ['peso_5fastar_42',['PESO_ASTAR',['../TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058a7bef2c97e0e4af99a8425706c254e98e',1,'TProcuraConstrutiva.h']]],
-  ['poda_43',['Ação 8 - Torneio Poda',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
+  ['poda_43',['Ação 7 - Torneio Poda',['../teste_jogo_em_linha.html#autotoc_md116',1,'']]],
   ['poda_5fcega_44',['PODA_CEGA',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdad2278b01c38aea2891b0a462b49d1b32',1,'TProcuraAdversa.h']]],
   ['poda_5fheuristica_45',['PODA_HEURISTICA',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda2ecf1246acabbde99b63054784d07383',1,'TProcuraAdversa.h']]],
   ['pontos_46',['Pontos',['../classTProcuraAdversa.html#a33c402687525b54049c143102248ddb4',1,'TProcuraAdversa']]],
