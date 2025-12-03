@@ -931,7 +931,7 @@ Ver execução:</summary>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">Memória   </td><td class="markdownTableBodyCenter">0,51   </td><td class="markdownTableBodyCenter">0,55    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">0,48   </td><td class="markdownTableBodyCenter">0,53   </td></tr>
+<td class="markdownTableBodyCenter" colspan="2">Total Geral   </td><td class="markdownTableBodyCenter">0,48   </td><td class="markdownTableBodyCenter">0,53   </td></tr>
 </table>
 <p>E do jogador das pretas:</p>
 <table class="markdownTable">
@@ -950,7 +950,7 @@ Ver execução:</summary>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">Memória   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,55    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">0,47   </td><td class="markdownTableBodyCenter">0,52   </td></tr>
+<td class="markdownTableBodyCenter" colspan="2">Total Geral   </td><td class="markdownTableBodyCenter">0,47   </td><td class="markdownTableBodyCenter">0,52   </td></tr>
 </table>
 <p>Em ambos os casos o MiniMax com cortes alfa/beta é mais eficaz, e a ordenação dos sucessores por heurística também traz vantagens. A utilização de memória traz vantagens, mas menores que a ordenação por heurística. Esta situação pode ser devida ao facto de utilizarmos apenas 1 segundo por jogada, e a vantagem de recuperar uma posição já vista é menos vincada. A baralhação dos sucessores traz ligeira vantagem quando combinada com a ordenação por heurística, e principalmente não piora, pelo que passamos a utilizar para poder fazer vários jogos entre duas configurações.</p>
 <p>Na tabela de resultados por instância, podemos ver o seguinte:</p>
@@ -968,7 +968,7 @@ Ver execução:</summary>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">69   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">62    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter" colspan="2">6   </td><td class="markdownTableBodyCenter">132   </td><td class="markdownTableBodyCenter"></td></tr>
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">132   </td><td class="markdownTableBodyCenter"></td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyCenter">109   </td><td class="markdownTableBodyCenter">14    </td></tr>
 <tr class="markdownTableRowEven">
@@ -1244,7 +1244,32 @@ Ver execução:</summary>
 </details>
 <p>Temos resultados de várias instâncias, a variar pelos dois parâmetros que afetam as heurísticas.</p>
 <p>Cada instância tem neste caso parâmetros ideais, pelo que vamos primeiro apresentar os resultados por instância:</p>
-<p>| Instância | Vitória Preta | Empate | Vitória Branca | |:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:| | 1 | 1260 | | 2 | 1260 | | 3 | 1224 | 36 | | 4 | 593 | 110 | 557 | | 5 | 595 | 665 | | 6 | 18 | 1161 | 81 | | 7 | 214 | 529 | 517 | | 8 | 168 | 782 | 310 | | 9 | 84 | 1079 | 97 | | 10 | 195 | 798 | 267 | | Total Geral | 1867 | 8203 | 2530 |</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadCenter">Vitória Preta   </th><th class="markdownTableHeadCenter">Empate   </th><th class="markdownTableHeadCenter">Vitória Branca    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">1260   </td><td class="markdownTableBodyCenter"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">1260   </td><td class="markdownTableBodyCenter"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">1224   </td><td class="markdownTableBodyCenter">36    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">593   </td><td class="markdownTableBodyCenter">110   </td><td class="markdownTableBodyCenter">557    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">595   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">665    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyCenter">1161   </td><td class="markdownTableBodyCenter">81    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">214   </td><td class="markdownTableBodyCenter">529   </td><td class="markdownTableBodyCenter">517    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyCenter">168   </td><td class="markdownTableBodyCenter">782   </td><td class="markdownTableBodyCenter">310    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyCenter">84   </td><td class="markdownTableBodyCenter">1079   </td><td class="markdownTableBodyCenter">97    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">195   </td><td class="markdownTableBodyCenter">798   </td><td class="markdownTableBodyCenter">267    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">1867   </td><td class="markdownTableBodyCenter">8203   </td><td class="markdownTableBodyCenter">2530   </td></tr>
+</table>
 <p>Podemos agora observar que apenas os dois primeiros jogos aparentam atualmente estar empatados, mesmo assumindo uma heurística fraca contra uma forte. No entanto as duas últimas instâncias que até aqui aparentavam acabar sempre em empates, mostram agora vários jogos que não terminaram em empate.</p>
 <p>Nas instâncias 3 a 10 temos a melhor configuração para cada instância, a jogar de brancas e de pretas, bem como a sua eficácia no torneio:</p>
 <table class="markdownTable">
@@ -1276,16 +1301,18 @@ Ver execução:</summary>
 </ul>
 <p>O facto da configuração de pretas ser mais modesta na valorização das ameaças imediatas, ficando por vezes com 150, quando as brancas utilizam sempre valores de 200 para cima, pode significar que a vantagem de jogar de brancas, de modo a ter mais hipóteses de converter em vitória, tem que se dar maior importância às ameaças curtas, mas para a defesa é preferivel algo mais modesto.</p>
 <p>A eficácia foi utilizada com base nas outras configurações. Para afinar este valor podemos fazer novo torneio, com apenas configujrações boas, ou com os parâmetros a variarem ligeiramente do melhor valor encontrado. Nesse caso a eficácia reduz-se, mas é possível apurar com mais detalhe a melhor configuração para cada instância, eventualmente executando vários jogos e não apenas um, entre cada par de instâncias.</p>
-<p>Vamos no entanto ficar por aqui, já que estas configurações são já suficientes para ilustrar este processo, e avançamos para o torneio poda em que cada instância tem por base a melhor configuração obtida neste torneio, para cada cor respetiva (brancas/pretas).</p>
+<p>Vamos no entanto ficar por aqui, já que estas configurações são já suficientes para ilustrar este processo, e avançamos para o torneio poda.</p>
+<p>Para simplicidade, em vez de uma configuração por instância, vamos optar por utilizar P15=300 e P16=100 já que é uma configuração que se comportou bem na maior parte das instâncias.</p>
 <p><a class="anchor" id="jel-a7"></a></p>
 <h2><a class="anchor" id="autotoc_md116"></a>
 Ação 7 - Torneio Poda</h2>
 <p>Temos dois parâmetros para a poda da árvore de procura. A poda heurística (PODA_HEURISTICA) e a poda cega (PODA_CEGA). A poda cega é útil para quando há demasiados sucessores poder remover de forma aleatória, de modo a poder existir exploração. Mas neste caso na maior instância tem 12 de lado, sendo o maior número de sucessores é 121. Assim vamos testar apenas a poda heurística.</p>
+<p>Vamos utilizar duas sementes, de modo a aumentar o número de jogos e reduzir o impacto da aleatoriedade.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Eficácia (PODA_HEURISTICA)</li>
-<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32</li>
-<li><b>Esforço</b>: (um só jogo)</li>
-<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32</li>
+<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P13=0,4,8,16,32</li>
+<li><b>Esforço</b>: P3=1:2</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P13=0,4,8,16,32</li>
 </ul>
 <details >
 <summary >
@@ -1307,7 +1334,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioPoda
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P13=0,4,8,16,32
 </pre> </details>
 <details >
 <summary >
@@ -1315,13 +1342,56 @@ Ver execução:</summary>
 <p> 
 <pre>
 
+
 </pre>
  </p>
 </details>
+<p>(refazer) Os resultados do torneio são os seguintes:</p>
+<p>EficáciaBranco</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P13   </th><th class="markdownTableHeadRight">-   </th><th class="markdownTableHeadRight">4   </th><th class="markdownTableHeadRight">8   </th><th class="markdownTableHeadRight">16   </th><th class="markdownTableHeadRight">32    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyRight">0,45   </td><td class="markdownTableBodyRight">0,59   </td><td class="markdownTableBodyRight">0,45   </td><td class="markdownTableBodyRight">0,53   </td><td class="markdownTableBodyRight">0,51    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0,46   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,55   </td><td class="markdownTableBodyRight">0,4   </td><td class="markdownTableBodyRight">0,46    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">0,41   </td><td class="markdownTableBodyRight">0,61   </td><td class="markdownTableBodyRight">0,45   </td><td class="markdownTableBodyRight">0,43   </td><td class="markdownTableBodyRight">0,45    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">0,63   </td><td class="markdownTableBodyRight">0,43   </td><td class="markdownTableBodyRight">0,4   </td><td class="markdownTableBodyRight">0,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">0,44   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,43   </td><td class="markdownTableBodyRight">0,51   </td><td class="markdownTableBodyRight">0,48   </td></tr>
+</table>
+<p>EficáciaPreto</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P13   </th><th class="markdownTableHeadRight">-   </th><th class="markdownTableHeadRight">4   </th><th class="markdownTableHeadRight">8   </th><th class="markdownTableHeadRight">16   </th><th class="markdownTableHeadRight">32    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-   </td><td class="markdownTableBodyRight">0,55   </td><td class="markdownTableBodyRight">0,41   </td><td class="markdownTableBodyRight">0,55   </td><td class="markdownTableBodyRight">0,48   </td><td class="markdownTableBodyRight">0,49    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyRight">0,54   </td><td class="markdownTableBodyRight">0,4   </td><td class="markdownTableBodyRight">0,45   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,54    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">0,59   </td><td class="markdownTableBodyRight">0,39   </td><td class="markdownTableBodyRight">0,55   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,55    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">16   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">0,38   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,5    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">32   </td><td class="markdownTableBodyRight">0,56   </td><td class="markdownTableBodyRight">0,43   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,49   </td><td class="markdownTableBodyRight">0,53   </td></tr>
+</table>
+<p>Nas linhas está o valor da poda branca, nas colunas o valor da poda preta. O conteúdo das tabelas é a eficácia do jogador branco e preto respetivamente.</p>
+<p>Embora para as brancas o valor 16 pareça ser o melhor, face a jogador preto sem poda, é apenas 5%, e para as pretas o valor sem poda é o melhor contra branco sem poda.</p>
+<p>No global as alterações são pequenas, e não parecem justificar o uso da poda heurística. Mesmo considerando apenas instâncias maiores, o impacto é superior mas oscilante, o que pode signicificar que as diferenças são devido à aleatoriedade dos jogos, e não da variaçáo do parâmetro P13.</p>
+<p>Assim sendo, vamos manter o valor da poda heurística a 0, ou seja, sem poda.</p>
 <p><a class="anchor" id="jel-a8"></a></p>
 <h2><a class="anchor" id="autotoc_md117"></a>
 Ação 8 - Torneio Ruido</h2>
-<p>Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra, utilizando vários jogos, com diferentes sementes aleatórias.</p>
+<p>Vamos agora estudar o efeito do ruído na heurística. Esperamos uma degradação da força de jogo, à medida que o ruído aumenta. É importante quantificar este efeito, para podermos escolher valores adequados a diferentes níveis de jogo.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Eficácia (RUÍDO)</li>
+<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32</li>
+<li><b>Esforço</b>: (um só jogo)</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32</li>
+<li>Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra, utilizando vários jogos, com diferentes sementes aleatórias.</li>
+</ul>
 <p>Pretendemos saber entre o MiniMax com e sem cortes alfa/beta, qual é o melhor, se ordenarmos com 2 (guarda estados analisados), e utilizarmos a procura iterativa.</p>
 <p>No entanto, se executarmos um teste a variar apenas a semente, como a semente aleatória apenas tem efeito se forem gerados números aleatórios, iriamos apenas gerar jogadores iguais.</p>
 <p>Assim, vamos primeiramente estudar o uso do ruído na heurística, com o efeito de variar a jogada.</p>
