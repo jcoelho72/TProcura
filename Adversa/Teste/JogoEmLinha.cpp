@@ -57,6 +57,7 @@ void CJogoEmLinha::Inicializar(void)
 
 	tamanhoCodificado = (inst.N * inst.M * 2) / 64 + 1;
 
+	/* //// ideia de configurações específicas descontinuada, para simplificidade dos testes
 	// configuração base para cada instância:
 	// caso o valor seja o máximo -> melhor configuração para brancas
 	// caso o valor seja o mínimo -> melhor configuração para pretas
@@ -81,7 +82,7 @@ void CJogoEmLinha::Inicializar(void)
 		case 8: Parametro(HEUR_BASE) = 300; break;
 		case 9: Parametro(HEUR_BASE) = 150; break;
 		case 10: Parametro(HEUR_BASE) = 300; Parametro(HEUR_MAX_PONTOS) = 10; break;
-		}
+		}*/
 }
 
 void CJogoEmLinha::Sucessores(TVector<TNo>&sucessores)

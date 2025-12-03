@@ -888,7 +888,7 @@ Podemos ver agora a eficácia do jogador das brancas:
 | Baralhar | ID | 0,46 | 0,47 |
 | | Heurística | 0,52 | 0,58 |
 | | Memória | 0,51 | 0,55 |
-| Total Geral | | 0,48 | 0,53 |
+| Total Geral || 0,48 | 0,53 |
 
 
 E do jogador das pretas:
@@ -901,7 +901,7 @@ E do jogador das pretas:
 | Baralhar | ID | 0,48 | 0,48 |
 | | Heurística | 0,47 | 0,58 |
 | | Memória | 0,5 | 0,55 |
-| Total Geral | | 0,47 | 0,52 |
+| Total Geral || 0,47 | 0,52 |
 
 
 Em ambos os casos o MiniMax com cortes alfa/beta é mais eficaz, e a ordenação dos sucessores por heurística também traz vantagens.
@@ -919,7 +919,7 @@ Na tabela de resultados por instância, podemos ver o seguinte:
 | 3 | | 122 | 10 |
 | 4 | 65 | 9 | 58 |
 | 5 | 69 | 1 | 62 |
-| 6 ||  132 | |
+| 6 | |  132 | |
 | 7 | 9 | 109 | 14 |
 | 8 | 11 | 98 | 23 |
 | 9 | | 132 | |
@@ -1197,11 +1197,11 @@ Cada instância tem neste caso parâmetros ideais, pelo que vamos primeiro apres
 
 | Instância | Vitória Preta | Empate | Vitória Branca |
 |:---:|:---:|:---:|:---:|
-| 1 | 1260 |
-| 2 | 1260 |
-| 3 | 1224 | 36 |
+| 1 | |  1260 | | 
+| 2 | |  1260 | | 
+| 3 | |  1224 | 36 |
 | 4 | 593 | 110 | 557 |
-| 5 | 595 | 665 |
+| 5 | 595 | |  665 |
 | 6 | 18 | 1161 | 81 |
 | 7 | 214 | 529 | 517 |
 | 8 | 168 | 782 | 310 |
@@ -1244,7 +1244,10 @@ Nesse caso a eficácia reduz-se, mas é possível apurar com mais detalhe a melh
 executando vários jogos e não apenas um, entre cada par de instâncias.
 
 Vamos no entanto ficar por aqui, já que estas configurações são já suficientes para ilustrar este processo, e avançamos para o torneio
-poda em que cada instância tem por base a melhor configuração obtida neste torneio, para cada cor respetiva (brancas/pretas).
+poda.
+
+Para simplicidade, em vez de uma configuração por instância, vamos optar por utilizar P15=300 e P16=100 já que é uma configuração que se comportou bem na maior parte das instâncias.
+
 
 \anchor jel-a7
 ## Ação 7 - Torneio Poda
@@ -1254,11 +1257,12 @@ A poda cega é útil para quando há demasiados sucessores poder remover de form
 Mas neste caso na maior instância tem 12 de lado, sendo o maior número de sucessores é 121.
 Assim vamos testar apenas a poda heurística.
 
-- **Tipo de Teste / Objetivo**: Eficácia (PODA_HEURISTICA)
-- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
-- **Esforço**: (um só jogo)
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
+Vamos utilizar duas sementes, de modo a aumentar o número de jogos e reduzir o impacto da aleatoriedade.
 
+- **Tipo de Teste / Objetivo**: Eficácia (PODA_HEURISTICA)
+- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P13=0,4,8,16,32
+- **Esforço**: P3=1:2
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P13=0,4,8,16,32
 
 <details>
   <summary>Ver script: torneioPoda.sh</summary>
@@ -1279,7 +1283,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioPoda
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P13=0,4,8,16,32
 </pre>
 </details>
 <details>
@@ -1287,13 +1291,59 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 
 \htmlonly
 <pre>
 
+
 </pre>
 \endhtmlonly
 </details>
 
+(refazer)
+Os resultados do torneio são os seguintes:
+
+EficáciaBranco 
+
+| P13  | - | 4 | 8 | 16 | 32 |
+|:---:|---:|---:|---:|---:|---:|
+| - | 0,45 | 0,59 | 0,45 | 0,53 | 0,51 |
+| 4 | 0,46 | 0,6 | 0,55 | 0,4 | 0,46 |
+| 8 | 0,41 | 0,61 | 0,45 | 0,43 | 0,45 |
+| 16 | 0,5 | 0,63 | 0,43 | 0,4 | 0,5 |
+| 32 | 0,44 | 0,58 | 0,43 | 0,51 | 0,48 |
+
+EficáciaPreto
+
+| P13  | - | 4 | 8 | 16 | 32 |
+|:---:|---:|---:|---:|---:|---:|
+| - | 0,55 | 0,41 | 0,55 | 0,48 | 0,49 |
+| 4 | 0,54 | 0,4 | 0,45 | 0,6 | 0,54 |
+| 8 | 0,59 | 0,39 | 0,55 | 0,58 | 0,55 |
+| 16 | 0,5 | 0,38 | 0,58 | 0,6 | 0,5 |
+| 32 | 0,56 | 0,43 | 0,58 | 0,49 | 0,53 |
+
+Nas linhas está o valor da poda branca, nas colunas o valor da poda preta.
+O conteúdo das tabelas é a eficácia do jogador branco e preto respetivamente.
+
+Embora para as brancas o valor 16 pareça ser o melhor, face a jogador preto sem poda,
+é apenas 5%, e para as pretas o valor sem poda é o melhor contra branco sem poda.
+
+No global as alterações são pequenas, e não parecem justificar o uso da poda heurística.
+Mesmo considerando apenas instâncias maiores, o impacto é superior mas oscilante, o que pode signicificar que
+as diferenças são devido à aleatoriedade dos jogos, e não da variaçáo do parâmetro P13.
+
+Assim sendo, vamos manter o valor da poda heurística a 0, ou seja, sem poda.
+
 
 \anchor jel-a8
 ## Ação 8 - Torneio Ruido
+
+Vamos agora estudar o efeito do ruído na heurística. Esperamos uma degradação da força de jogo, à medida que o ruído aumenta.
+É importante quantificar este efeito, para podermos escolher valores adequados a diferentes níveis de jogo.
+
+
+- **Tipo de Teste / Objetivo**: Eficácia (RUÍDO)
+- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
+- **Esforço**: (um só jogo)
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,1000 x P13=0,4,8,16,32
+-
 
 Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra,
 utilizando vários jogos, com diferentes sementes aleatórias.
