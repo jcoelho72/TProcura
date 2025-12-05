@@ -110,36 +110,44 @@ Sumário</h2>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a8">Ação 8 - Torneio Ruido</a></li>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a9">Ação 9 - Torneio Niveis</a></li>
 </ul>
-<div class="fragment"><div class="line">┌─ Teste TProcuraAdversa ──────┐</div>
-<div class="line">│ 1 - Jogo do Galo             │</div>
-<div class="line">│ 2 - Jogo Em Linha            │</div>
-<div class="line">└──────────────────────────────┘</div>
-<div class="line">Opção: 2</div>
-</div><!-- fragment --><p>Este jogo tem várias instâncias, com as dimensões e tamanho da linha para ganhar. Existe ainda a variante em que as peças caem pela ação da gravidade.</p>
+<p> 
+<pre>
+┌─ Teste TProcuraAdversa ──────┐
+│ 1 - Jogo do Galo             │
+│ 2 - Jogo Em Linha            │
+└──────────────────────────────┘
+Opção:  <span class="entrada">2</span>
+</pre>
+</p>
+<p>Este jogo tem várias instâncias, com as dimensões e tamanho da linha para ganhar. Existe ainda a variante em que as peças caem pela ação da gravidade.</p>
 <p><a class="anchor" id="jel-a1"></a></p>
 <h2><a class="anchor" id="autotoc_md110"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no Jogo Em Linha, insira: <b>2.</b></p>
-<div class="fragment"><div class="line">Jogo Em Linha</div>
-<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
-<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P1(ALGORITMO):&lt;/span&gt; MiniMax alfa/beta | &lt;span style=&quot;color:gray&quot;&gt;P2(NIVEL_DEBUG):&lt;/span&gt; NADA | &lt;span style=&quot;color:gray&quot;&gt;P3(SEMENTE):&lt;/span&gt; 1</div>
-<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P4(LIMITE_TEMPO):&lt;/span&gt; 10 | &lt;span style=&quot;color:gray&quot;&gt;P5(LIMITE_ITERACOES):&lt;/span&gt; 0 | &lt;span style=&quot;color:gray&quot;&gt;P6(VER_ACOES):&lt;/span&gt; 4 | &lt;span style=&quot;color:gray&quot;&gt;P7(LIMITE):&lt;/span&gt; 0</div>
-<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P8(ESTADOS_REPETIDOS):&lt;/span&gt; ignorar | &lt;span style=&quot;color:gray&quot;&gt;P10(RUIDO_HEURISTICA):&lt;/span&gt; 0 | &lt;span style=&quot;color:gray&quot;&gt;P11(BARALHAR_SUCESSORES):&lt;/span&gt; 0</div>
-<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P12(ORDENAR_SUCESSORES):&lt;/span&gt; 2 | &lt;span style=&quot;color:gray&quot;&gt;P13(PODA_HEURISTICA):&lt;/span&gt; 0 | &lt;span style=&quot;color:gray&quot;&gt;P14(PODA_CEGA):&lt;/span&gt; 0</div>
-<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P15(HEUR_BASE):&lt;/span&gt; 200</div>
-<div class="line">└──────────────────────────────────────────────────────────────────────</div>
-<div class="line"> │ 3 em Linha (3x3)</div>
-<div class="line"> │    A B C</div>
-<div class="line"> │  1 . . . 1 </div>
-<div class="line"> │  2 . . . 2 </div>
-<div class="line"> │  3 . . . 3 </div>
-<div class="line"> │    A B C</div>
-<div class="line">┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐</div>
-<div class="line">│ 1 📄   &lt;span style=&quot;color:gray&quot;&gt;Instância&lt;/span&gt;  │ 2 🔍  &lt;span style=&quot;color:gray&quot;&gt;Explorar&lt;/span&gt; │ 3 ⚙   &lt;span style=&quot;color:gray&quot;&gt;Parâmetros&lt;/span&gt;    │ 4 ✔  &lt;span style=&quot;color:gray&quot;&gt;Solução&lt;/span&gt; │</div>
-<div class="line">│ 5 ⚖   &lt;span style=&quot;color:gray&quot;&gt;Indicadores&lt;/span&gt; │ 6 ►   &lt;span style=&quot;color:gray&quot;&gt;Executar&lt;/span&gt; │ 7 🛠️  &lt;span style=&quot;color:gray&quot;&gt;Configurações&lt;/span&gt; │ 8 🧪  &lt;span style=&quot;color:gray&quot;&gt;Teste&lt;/span&gt;  │</div>
-<div class="line">└───────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
-<div class="line">Opção: </div>
-</div><!-- fragment --><p>O primeiro jogo é o Jogo do Galo, em que se tem de fazer 3 em linha, num tabuleiro de 3x3. Vamos ver outras instâncias.</p>
+<p> 
+<pre>
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
+│ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0
+│ <span style="color:gray">P15(HEUR_BASE):</span> 200
+└──────────────────────────────────────────────────────────────────────
+ │ 3 em Linha (3x3)
+ │    A B C
+ │  1 . . . 1 
+ │  2 . . . 2 
+ │  3 . . . 3 
+ │    A B C
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   <span style="color:gray">Instância</span>  │ 2 🔍  <span style="color:gray">Explorar</span> │ 3 ⚙   <span style="color:gray">Parâmetros</span>    │ 4 ✔  <span style="color:gray">Solução</span> │
+│ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+</pre>
+</p>
+<p>O primeiro jogo é o Jogo do Galo, em que se tem de fazer 3 em linha, num tabuleiro de 3x3. Vamos ver outras instâncias.</p>
 <p>Insira:</p><ul>
 <li><b>1; 2.</b> jogo 4 em Linha (4x4)</li>
 <li><b>1; 3.</b> jogo 4 em Linha (6x4)</li>
@@ -151,111 +159,115 @@ Ação 1 - Ver instâncias</h2>
 <li><b>1; 9.</b> jogo 6 em Linha (11x9)</li>
 <li><b>1; 10.</b> jogo 6 em Linha (12x12)</li>
 </ul>
-<div class="fragment"><div class="line">4 em Linha (5x5)</div>
-<div class="line">   A B C D E</div>
-<div class="line"> 1 . . . . . 1 </div>
-<div class="line"> 2 . . . . . 2 </div>
-<div class="line"> 3 . . . . . 3 </div>
-<div class="line"> 4 . . . . . 4 </div>
-<div class="line"> 5 . . . . . 5 </div>
-<div class="line">   A B C D E</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">4 em Linha (6x5)</div>
-<div class="line">   A B C D E F</div>
-<div class="line"> 1 . . . . . . 1 </div>
-<div class="line"> 2 . . . . . . 2 </div>
-<div class="line"> 3 . . . . . . 3 </div>
-<div class="line"> 4 . . . . . . 4 </div>
-<div class="line"> 5 . . . . . . 5 </div>
-<div class="line">   A B C D E F</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">4 em Linha (7x6) gravidade</div>
-<div class="line">   A B C D E F G</div>
-<div class="line"> 1 . . . . . . . 1 </div>
-<div class="line"> 2 . . . . . . . 2 </div>
-<div class="line"> 3 . . . . . . . 3 </div>
-<div class="line"> 4 . . . . . . . 4 </div>
-<div class="line"> 5 . . . . . . . 5 </div>
-<div class="line"> 6 . . . . . . . 6 </div>
-<div class="line">   A B C D E F G</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">4 em Linha (14x6) gravidade</div>
-<div class="line">   A B C D E F G H I J K L M N</div>
-<div class="line"> 1 . . . . . . . . . . . . . . 1 </div>
-<div class="line"> 2 . . . . . . . . . . . . . . 2 </div>
-<div class="line"> 3 . . . . . . . . . . . . . . 3 </div>
-<div class="line"> 4 . . . . . . . . . . . . . . 4 </div>
-<div class="line"> 5 . . . . . . . . . . . . . . 5 </div>
-<div class="line"> 6 . . . . . . . . . . . . . . 6 </div>
-<div class="line">   A B C D E F G H I J K L M N</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">5 em Linha (12x8) gravidade</div>
-<div class="line">   A B C D E F G H I J K L</div>
-<div class="line"> 1 . . . . . . . . . . . . 1 </div>
-<div class="line"> 2 . . . . . . . . . . . . 2 </div>
-<div class="line"> 3 . . . . . . . . . . . . 3 </div>
-<div class="line"> 4 . . . . . . . . . . . . 4 </div>
-<div class="line"> 5 . . . . . . . . . . . . 5 </div>
-<div class="line"> 6 . . . . . . . . . . . . 6 </div>
-<div class="line"> 7 . . . . . . . . . . . . 7 </div>
-<div class="line"> 8 . . . . . . . . . . . . 8 </div>
-<div class="line">   A B C D E F G H I J K L</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">5 em Linha (12x8)</div>
-<div class="line">   A B C D E F G H I J K L</div>
-<div class="line"> 1 . . . . . . . . . . . . 1 </div>
-<div class="line"> 2 . . . . . . . . . . . . 2 </div>
-<div class="line"> 3 . . . . . . . . . . . . 3 </div>
-<div class="line"> 4 . . . . . . . . . . . . 4 </div>
-<div class="line"> 5 . . . . . . . . . . . . 5 </div>
-<div class="line"> 6 . . . . . . . . . . . . 6 </div>
-<div class="line"> 7 . . . . . . . . . . . . 7 </div>
-<div class="line"> 8 . . . . . . . . . . . . 8 </div>
-<div class="line">   A B C D E F G H I J K L</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">5 em Linha (9x9)</div>
-<div class="line">   A B C D E F G H I</div>
-<div class="line"> 1 . . . . . . . . . 1 </div>
-<div class="line"> 2 . . . . . . . . . 2 </div>
-<div class="line"> 3 . . . . . . . . . 3 </div>
-<div class="line"> 4 . . . . . . . . . 4 </div>
-<div class="line"> 5 . . . . . . . . . 5 </div>
-<div class="line"> 6 . . . . . . . . . 6 </div>
-<div class="line"> 7 . . . . . . . . . 7 </div>
-<div class="line"> 8 . . . . . . . . . 8 </div>
-<div class="line"> 9 . . . . . . . . . 9 </div>
-<div class="line">   A B C D E F G H I</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">6 em Linha (11x9)</div>
-<div class="line">   A B C D E F G H I J K</div>
-<div class="line"> 1 . . . . . . . . . . . 1 </div>
-<div class="line"> 2 . . . . . . . . . . . 2 </div>
-<div class="line"> 3 . . . . . . . . . . . 3 </div>
-<div class="line"> 4 . . . . . . . . . . . 4 </div>
-<div class="line"> 5 . . . . . . . . . . . 5 </div>
-<div class="line"> 6 . . . . . . . . . . . 6 </div>
-<div class="line"> 7 . . . . . . . . . . . 7 </div>
-<div class="line"> 8 . . . . . . . . . . . 8 </div>
-<div class="line"> 9 . . . . . . . . . . . 9 </div>
-<div class="line">   A B C D E F G H I J K</div>
-<div class="line">_______________________________________________________________________________</div>
-<div class="line">6 em Linha (12x12)</div>
-<div class="line">   A B C D E F G H I J K L</div>
-<div class="line"> 1 . . . . . . . . . . . . 1 </div>
-<div class="line"> 2 . . . . . . . . . . . . 2 </div>
-<div class="line"> 3 . . . . . . . . . . . . 3 </div>
-<div class="line"> 4 . . . . . . . . . . . . 4 </div>
-<div class="line"> 5 . . . . . . . . . . . . 5 </div>
-<div class="line"> 6 . . . . . . . . . . . . 6 </div>
-<div class="line"> 7 . . . . . . . . . . . . 7 </div>
-<div class="line"> 8 . . . . . . . . . . . . 8 </div>
-<div class="line"> 9 . . . . . . . . . . . . 9 </div>
-<div class="line">10 . . . . . . . . . . . . 10 </div>
-<div class="line">11 . . . . . . . . . . . . 11 </div>
-<div class="line">12 . . . . . . . . . . . . 12 </div>
-<div class="line">   A B C D E F G H I J K L</div>
-<div class="line">_______________________________________________________________________________</div>
-</div><!-- fragment --><p>Temos diferentes tabuleiros, resultando em ramificações distintas. A variante da gravidade, reduz consideravelmente a ramificação.</p>
+<p> 
+<pre>
+4 em Linha (5x5)
+   A B C D E
+ 1 . . . . . 1 
+ 2 . . . . . 2 
+ 3 . . . . . 3 
+ 4 . . . . . 4 
+ 5 . . . . . 5 
+   A B C D E
+_______________________________________________________________________________
+4 em Linha (6x5)
+   A B C D E F
+ 1 . . . . . . 1 
+ 2 . . . . . . 2 
+ 3 . . . . . . 3 
+ 4 . . . . . . 4 
+ 5 . . . . . . 5 
+   A B C D E F
+_______________________________________________________________________________
+4 em Linha (7x6) gravidade
+   A B C D E F G
+ 1 . . . . . . . 1 
+ 2 . . . . . . . 2 
+ 3 . . . . . . . 3 
+ 4 . . . . . . . 4 
+ 5 . . . . . . . 5 
+ 6 . . . . . . . 6 
+   A B C D E F G
+_______________________________________________________________________________
+4 em Linha (14x6) gravidade
+   A B C D E F G H I J K L M N
+ 1 . . . . . . . . . . . . . . 1 
+ 2 . . . . . . . . . . . . . . 2 
+ 3 . . . . . . . . . . . . . . 3 
+ 4 . . . . . . . . . . . . . . 4 
+ 5 . . . . . . . . . . . . . . 5 
+ 6 . . . . . . . . . . . . . . 6 
+   A B C D E F G H I J K L M N
+_______________________________________________________________________________
+5 em Linha (12x8) gravidade
+   A B C D E F G H I J K L
+ 1 . . . . . . . . . . . . 1 
+ 2 . . . . . . . . . . . . 2 
+ 3 . . . . . . . . . . . . 3 
+ 4 . . . . . . . . . . . . 4 
+ 5 . . . . . . . . . . . . 5 
+ 6 . . . . . . . . . . . . 6 
+ 7 . . . . . . . . . . . . 7 
+ 8 . . . . . . . . . . . . 8 
+   A B C D E F G H I J K L
+_______________________________________________________________________________
+5 em Linha (12x8)
+   A B C D E F G H I J K L
+ 1 . . . . . . . . . . . . 1 
+ 2 . . . . . . . . . . . . 2 
+ 3 . . . . . . . . . . . . 3 
+ 4 . . . . . . . . . . . . 4 
+ 5 . . . . . . . . . . . . 5 
+ 6 . . . . . . . . . . . . 6 
+ 7 . . . . . . . . . . . . 7 
+ 8 . . . . . . . . . . . . 8 
+   A B C D E F G H I J K L
+_______________________________________________________________________________
+5 em Linha (9x9)
+   A B C D E F G H I
+ 1 . . . . . . . . . 1 
+ 2 . . . . . . . . . 2 
+ 3 . . . . . . . . . 3 
+ 4 . . . . . . . . . 4 
+ 5 . . . . . . . . . 5 
+ 6 . . . . . . . . . 6 
+ 7 . . . . . . . . . 7 
+ 8 . . . . . . . . . 8 
+ 9 . . . . . . . . . 9 
+   A B C D E F G H I
+_______________________________________________________________________________
+6 em Linha (11x9)
+   A B C D E F G H I J K
+ 1 . . . . . . . . . . . 1 
+ 2 . . . . . . . . . . . 2 
+ 3 . . . . . . . . . . . 3 
+ 4 . . . . . . . . . . . 4 
+ 5 . . . . . . . . . . . 5 
+ 6 . . . . . . . . . . . 6 
+ 7 . . . . . . . . . . . 7 
+ 8 . . . . . . . . . . . 8 
+ 9 . . . . . . . . . . . 9 
+   A B C D E F G H I J K
+_______________________________________________________________________________
+6 em Linha (12x12)
+   A B C D E F G H I J K L
+ 1 . . . . . . . . . . . . 1 
+ 2 . . . . . . . . . . . . 2 
+ 3 . . . . . . . . . . . . 3 
+ 4 . . . . . . . . . . . . 4 
+ 5 . . . . . . . . . . . . 5 
+ 6 . . . . . . . . . . . . 6 
+ 7 . . . . . . . . . . . . 7 
+ 8 . . . . . . . . . . . . 8 
+ 9 . . . . . . . . . . . . 9 
+10 . . . . . . . . . . . . 10 
+11 . . . . . . . . . . . . 11 
+12 . . . . . . . . . . . . 12 
+   A B C D E F G H I J K L
+_______________________________________________________________________________
+</pre>
+</p>
+<p>Temos diferentes tabuleiros, resultando em ramificações distintas. A variante da gravidade, reduz consideravelmente a ramificação.</p>
 <p><a class="anchor" id="jel-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md111"></a>
 Ação 2 - Heurística</h2>
@@ -267,57 +279,65 @@ Ação 2 - Heurística</h2>
 <li><b>6.</b> duas das ameaças passa a 2 jogadas, e anula simultaneamente 2 ameaças adversárias a 3 jogadas</li>
 <li><b>6; 6; 6; ....</b> termine o jogo, verificando que todas as ameaças são respondidas</li>
 </ul>
-<div class="fragment"><div class="line">│ 4 em Linha (5x5)</div>
-<div class="line">│    A B C D E</div>
-<div class="line">│  1 . . . . . 1 </div>
-<div class="line">│  2 . . . . . 2 </div>
-<div class="line">│  3 . . x . . 3 </div>
-<div class="line">│  4 . . . . . 4 </div>
-<div class="line">│  5 . . . . . 5 </div>
-<div class="line">│    A B C D E</div>
-<div class="line">│ 4 em Linha (5x5)</div>
-<div class="line">│    A B C D E</div>
-<div class="line">│  1 . . . . . 1 </div>
-<div class="line">│  2 . . . . . 2 </div>
-<div class="line">│  3 . . x . . 3 </div>
-<div class="line">│  4 . o . . . 4 </div>
-<div class="line">│  5 . . . . . 5 </div>
-<div class="line">│    A B C D E</div>
-<div class="line">│ 4 em Linha (5x5)</div>
-<div class="line">│    A B C D E</div>
-<div class="line">│  1 . . . . . 1 </div>
-<div class="line">│  2 . . . . . 2 </div>
-<div class="line">│  3 . x x . . 3 </div>
-<div class="line">│  4 . o . . . 4 </div>
-<div class="line">│  5 . . . . . 5 </div>
-<div class="line">│    A B C D E</div>
-<div class="line">│ 4 em Linha (5x5)</div>
-<div class="line">│    A B C D E</div>
-<div class="line">│  1 o x x . . 1 </div>
-<div class="line">│  2 x . o x . 2 </div>
-<div class="line">│  3 . x x o o 3 </div>
-<div class="line">│  4 . o x o x 4 </div>
-<div class="line">│  5 o x . o . 5 </div>
-<div class="line">│    A B C D E</div>
-</div><!-- fragment --><p>Este teste é importante para despistar algum erro na heurística.</p>
+<p> 
+<pre>
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . . x . . 3 
+ │  4 . . . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . . x . . 3 
+ │  4 . o . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . x x . . 3 
+ │  4 . o . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x x . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o o 3 
+ │  4 . o x o x 4 
+ │  5 o x . o . 5 
+ │    A B C D E
+</pre>
+</p>
+<p>Este teste é importante para despistar algum erro na heurística.</p>
 <p>Podemos fazer o mesmo para um tabuleiro maior. Introduza: <b>1; 10; 6.</b> O lance inicial vai para o meio do tabuleiro, onde há mais ameaças em simultâneo, ou seja, vai para a jogada que maximiza o valor da heurística. Execute também um jogo, verificando que as ameaças vão sendo respondidas: <b>6; 6; ...</b></p>
 <p>Se conseguir chegar ao final, verifica que há empate:</p>
-<div class="fragment"><div class="line">│ 6 em Linha (12x12)</div>
-<div class="line">│    A B C D E F G H I J K L</div>
-<div class="line">│  1 x x x o o o o x x o o o 1 </div>
-<div class="line">│  2 o o o x x x o x x x x x 2 </div>
-<div class="line">│  3 x o x x o o x o o x o o 3 </div>
-<div class="line">│  4 o o o x x x x o o o o o 4 </div>
-<div class="line">│  5 o x x o o o x o x x x x 5 </div>
-<div class="line">│  6 x x x x x o o o x o x x 6 </div>
-<div class="line">│  7 o o o x o x x x o x o o 7 </div>
-<div class="line">│  8 x x o o o x o x o o x x 8 </div>
-<div class="line">│  9 o o x o x o x o x x o o 9 </div>
-<div class="line">│ 10 x x o x o o x o o o x x 10 </div>
-<div class="line">│ 11 x o o x x x x x o o o x 11 </div>
-<div class="line">│ 12 o x x o o x x o x o x o 12 </div>
-<div class="line">│    A B C D E F G H I J K L</div>
-</div><!-- fragment --><p>Não temos portanto motivo para não considerar a heurística válida.</p>
+<p> 
+<pre>
+ │ 6 em Linha (12x12)
+ │    A B C D E F G H I J K L
+ │  1 x x x o o o o x x o o o 1 
+ │  2 o o o x x x o x x x x x 2 
+ │  3 x o x x o o x o o x o o 3 
+ │  4 o o o x x x x o o o o o 4 
+ │  5 o x x o o o x o x x x x 5 
+ │  6 x x x x x o o o x o x x 6 
+ │  7 o o o x o x x x o x o o 7 
+ │  8 x x o o o x o x o o x x 8 
+ │  9 o o x o x o x o x x o o 9 
+ │ 10 x x o x o o x o o o x x 10 
+ │ 11 x o o x x x x x o o o x 11 
+ │ 12 o x x o o x x o x o x o 12 
+ │    A B C D E F G H I J K L
+</pre>
+</p>
+<p>Não temos portanto motivo para não considerar a heurística válida.</p>
 <p>Na variante da gravidade as ameaças a W jogadas são também as jogadas necessárias de jogar, se fosse o jogador sempre a jogar, para ganhar o jogo. Mas neste caso, numa linha em que exista um espaço suspenso, tem que se adicionar as casas em baixo do espaço suspenso como distância para o objetivo. Se essa ameaça for mais de K jogadas, ou seja, o número de marcas em linha, então não é contabilizada.</p>
 <p>Esta heurística está implementada a nível global em <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>, tendo de ser específico o calculo do número de ameaças e distância. Acaba por ser muito parecido com uma heurística, estimando a distância até ao estado final, mas neste caso temos várias vias para o jogador e adversário, já que a procura é adversa, e assim beneficia-se os estados em que estamos mais perto de chegar ao estado final que o adversário.</p>
 <p><a class="anchor" id="jel-a3"></a></p>
@@ -972,71 +992,11 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -G 1 
 </details>
 <details>
   <summary>Ver execução:</summary>
-\htmlonly
 <pre>
-═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>60 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
-═╪═ Configurações ═══
- ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>0
- ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>0
- ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>1
- │ ...
- ├─ ⚙  [10] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>0
- ├─ ⚙  [11] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>1
- ├─ ⚙  [12] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>1
-═╧═══════════════════
-═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:1320   📄 Instâncias: 10   🛠️ Configurações: 12   🖥️ Processos: 48.
- ├─ ⏱ 1' 1" 704ms     📋 201   📄 6     🛠️ 10    🛠️ 4     🖥️ 29    ⚖  
- ├─ ⏱ 2' 4" 994ms     📋 215   📄 8     🛠️ 10    🛠️ 4     🖥️ 30    ⚖  
- ├─ ⏱ 3' 10" 498ms    📋 242   📄 8     🛠️ 10    🛠️ 0     🖥️ 45    ⚖  
- ├─ ⏱ 4' 13" 454ms    📋 294   📄 8     🛠️ 9     🛠️ 4     🖥️ 24    ⚖  
- ├─ ⏱ 5' 15" 392ms    📋 362   📄 7     🛠️ 9     🛠️ 10    🖥️ 39    ⚖  
- ├─ ⏱ 6' 29" 324ms    📋 375   📄 6     🛠️ 8     🛠️ 6     🖥️ 31    ⚖  
- ├─ ⏱ 7' 35" 427ms    📋 405   📄 10    🛠️ 9     🛠️ 1     🖥️ 40    ⚖  
- ├─ ⏱ 8' 45" 254ms    📋 431   📄 8     🛠️ 8     🛠️ 3     🖥️ 13    ⚖  
- ├─ ⏱ 9' 49" 841ms    📋 464   📄 8     🛠️ 7     🛠️ 9     🖥️ 24    ⚖  
- ├─ ⏱ 10' 50" 191ms   📋 565   📄 7     🛠️ 8     🛠️ 4     🖥️ 7     ⚖  
- ├─ ⏱ 11' 51" 493ms   📋 594   📄 7     🛠️ 6     🛠️ 7     🖥️ 30    ⚖  
- ├─ ⏱ 12' 59" 993ms   📋 683   📄 6     🛠️ 5     🛠️ 10    🖥️ 3     ⚖  
- ├─ ⏱ 14' 132ms       📋 773   📄 10    🛠️ 5     🛠️ 0     🖥️ 7     ⚖  
- ├─ ⏱ 15' 6" 472ms    📋 803   📄 9     🛠️ 4     🛠️ 9     🖥️ 25    ⚖  
- ├─ ⏱ 16' 6" 642ms    📋 845   📄 6     🛠️ 4     🛠️ 3     🖥️ 30    ⚖  
- ├─ ⏱ 17' 10" 734ms   📋 911   📄 9     🛠️ 3     🛠️ 9     🖥️ 40    ⚖  
- ├─ ⏱ 18' 12" 131ms   📋 992   📄 9     🛠️ 2     🛠️ 11    🖥️ 7     ⚖  
- ├─ ⏱ 19' 33" 27ms    📋 1012  📄 9     🛠️ 2     🛠️ 9     🖥️ 22    ⚖  
- ├─ ⏱ 20' 38" 269ms   📋 1025  📄 6     🛠️ 2     🛠️ 8     🖥️ 1     ⚖  
- ├─ ⏱ 21' 44" 254ms   📋 1115  📄 9     🛠️ 2     🛠️ 10    🖥️ 7     ⚖  
- ├─ ⏱ 22' 46" 778ms   📋 1132  📄 7     🛠️ 1     🛠️ 9     🖥️ 42    ⚖  
- ├─ ⏱ 23' 55" 191ms   📋 1151  📄 10    🛠️ 1     🛠️ 6     🖥️ 24    ⚖  
- ├─ ⏱ 24' 56" 915ms   📋 1232  📄 6     🛠️ 0     🛠️ 10    🖥️ 7     ⚖  
- ├─ ⏱ 25' 58" 606ms   📋 1320  📄 10    🛠️ 0     🛠️ 6     🖥️ 41    ⚖  
- ├─ ⏱ 27' 44" 826ms   📋 1320  📄 7     🛠️ 0     🛠️ 10    🖥️ 25    ⚖  
- ├─ ⏱ 29' 24" 327ms   📋 1320  📄 10    🛠️ 10    🛠️ 9     🖥️ 21    ⚖  
- ├─ ⏱ 30' 34" 472ms   📋 1320  📄 10    🛠️ 8     🛠️ 11    🖥️ 17    ⚖  
- ├─ ⏱ 31' 45" 230ms   📋 1320  📄 10    🛠️ 8     🛠️ 5     🖥️ 31    ⚖  
- ├─ ⏱ 32' 50" 813ms   📋 1320  📄 10    🛠️ 8     🛠️ 1     🖥️ 29    ⚖  
- ├─ ⏱ 34' 646ms       📋 1320  📄 10    🛠️ 7     🛠️ 10    🖥️ 6     ⚖  
- ├─ ⏱ 35' 13" 216ms   📋 1320  📄 10    🛠️ 8     🛠️ 9     🖥️ 2     ⚖  
- ├─ ⏱ 37' 16" 785ms   📋 1320  📄 10    🛠️ 5     🛠️ 10    🖥️ 37    ⚖  
- ├─ ⏱ 39' 2" 43ms     📋 1320  📄 10    🛠️ 4     🛠️ 10    🖥️ 19    ⚖  
- ├─ ⏱ 40' 49" 649ms   📋 1320  📄 10    🛠️ 3     🛠️ 10    🖥️ 30    ⚖  
- ├─ ⏱ 42' 40" 370ms   📋 1320  📄 10    🛠️ 2     🛠️ 10    🖥️ 28    ⚖  
- ├─ ⏱ 45' 35" 733ms   📋 1320  📄 10    🛠️ 1     🛠️ 10    🖥️ 3     ⚖  
- ├─ ⏱ 48' 57" 490ms   📋 1320  📄 10    🛠️ 0     🛠️ 10    🖥️ 47    ⚖  
- ├─ ⏱ 54' 51" 376ms   📋 1320  📄 10    🛠️ 8     🛠️ 10    🖥️ 45    ⚖  
- ├─ 📑  Ficheiro Resultados/TorneioProfundidade.csv gravado.
- │  ⏱  Tempo real: 54' 51" 381ms 
- │  ⏱  CPU total: 1d 18h 58' 14" 920ms 
- │  ⏱  Espera do gestor: 54' 51" 338ms 
- │  ⏱  Espera trabalhadores: 16h 16' 26" 181ms 
- │  📊  Utilização:
- │  - Total: 60.8%
- │  - Gestor: 0.0%
- │  - Trabalhadores: 62.1% 
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 54' 51" 381ms ) ═══
+
 </pre>
- </p>
+</details>
+</p>
 <p>Nesta execução podemos ver que a taxa de utilização foi de 60%. Este facto deve-se a que houve jogos que levaram muito mais tempo que outros. A última tarefa (jogo) foi colocada no minuto 25, tendo os processadores que ficaram livres após esse instante ficado sem trabalho até ao final.</p>
 <p>Para medir a performance de cada configuração e lado (branco/preto), vamos analisar o desempenho e eficácia:</p><ul>
 <li>Desempenho: Tempo médio por jogada em segundos</li>
