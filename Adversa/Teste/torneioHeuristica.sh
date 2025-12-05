@@ -14,4 +14,4 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioHeuristica
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P3=1,2 x P15=101,110,125,150,200,250,300,400,600,800

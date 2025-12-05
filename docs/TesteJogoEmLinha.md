@@ -1278,14 +1278,14 @@ Naturalmente que mais tempo por jogada os resultados podem ser diferentes.
 
 Vamos agora estudar o impacto da heurística na eficácia do jogador.
 
-Temos o seguinte parâmetro:
-- HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).
-	- Valores testados: P15=101,110,125,150,200,250,300,400,600,800 
+Temos o parâmetro HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).
+
+Valores testados: P15=101,110,125,150,200,250,300,400,600,800 
 
 - **Tipo de Teste / Objetivo**: Eficácia (HEUR_BASE)
 - **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800 
-- **Esforço**: (um só jogo)
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800 
+- **Esforço**: P3=1,2
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P3=1,2 x P15=101,110,125,150,200,250,300,400,600,800 
 
 <details>
   <summary>Ver script: torneioHeuristica.sh</summary>
@@ -1306,7 +1306,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioHeuristica
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P3=1,2 x P15=101,110,125,150,200,250,300,400,600,800
 </pre>
 </details>
 <details>
