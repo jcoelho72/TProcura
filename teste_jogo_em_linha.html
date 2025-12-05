@@ -1326,15 +1326,13 @@ Ver execução:</summary>
 <h2><a class="anchor" id="autotoc_md115"></a>
 Ação 6 - Torneio Heurística</h2>
 <p>Vamos agora estudar o impacto da heurística na eficácia do jogador.</p>
-<p>Temos o seguinte parâmetro:</p><ul>
-<li>HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).<ul>
-<li>Valores testados: P15=101,110,125,150,200,250,300,400,600,800</li>
-</ul>
-</li>
+<p>Temos o parâmetro HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).</p>
+<p>Valores testados: P15=101,110,125,150,200,250,300,400,600,800</p>
+<ul>
 <li><b>Tipo de Teste / Objetivo</b>: Eficácia (HEUR_BASE)</li>
 <li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800</li>
-<li><b>Esforço</b>: (um só jogo)</li>
-<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800</li>
+<li><b>Esforço</b>: P3=1,2</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P3=1,2 x P15=101,110,125,150,200,250,300,400,600,800</li>
 </ul>
 <details >
 <summary >
@@ -1356,7 +1354,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioHeuristica
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P3=1,2 x P15=101,110,125,150,200,250,300,400,600,800
 </pre> </details>
 <details >
 <summary >
