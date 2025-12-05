@@ -44,13 +44,14 @@ void TProcuraAdversa::ResetParametros()
 
 	// O "infinito" é dependente do problema, não faz sentido alterar senão no código
 
+	parametro[RUIDO_HEURISTICA].dependencia = {}; // faz sentido com qualquer algoritmo de procura adversa, ao contrário das procuras construtivas
+
 	// adicionar parametros da procura adversa
 	parametro += {
 		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores." },
 		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores)." },
 		{ "PODA_CEGA",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " },
-		{ "HEUR_BASE", 200, 100, 1000, "Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao doubro e é o valor de omissão)" },
-		{ "HEUR_MAX_PONTOS", 100, 2, 1000000, "Pontos de amaeaças máximos, para colocar a função sigmoide a saturar por essa altura (ficando perto do +/-infinito)" }
+		{ "HEUR_BASE", 200, 100, 1000, "Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao doubro e é o valor de omissão)" }
 	};
 }
 
@@ -277,10 +278,12 @@ int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int max
 	double peso = 1;
 
 	// verificar situações de ganho imediato
-	if (!minimizar && qMax.First() > 0)
+	if (!minimizar && qMax.First() > 0) {
 		return infinito;  // Vitória imediata para o max
-	if (minimizar && qMin.First() > 0)
+	}
+	if (minimizar && qMin.First() > 0) {
 		return -infinito; // Vitória imediata para o min 
+	}
 
 	// Ameaças iguais a maxAmeaca ou superior, valem 1, todas as outras valem conforme
 	peso = 1;
@@ -296,7 +299,7 @@ int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int max
 			peso *= base;
 	}
 
-	return (int)(infinito * (2 / (1 + exp(-pontos / Parametro(HEUR_MAX_PONTOS))) - 1));
+	return (int)(0.5 + infinito * (2.0 / (1.0 + exp(-pontos * 2.0 / infinito)) - 1.0));
 }
 
 // fim da procura, por corte de nível (ou não haver sucessores), retornar heurística

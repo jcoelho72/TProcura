@@ -8,8 +8,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
  │ 3 em Linha (3x3)
  │    A B C
@@ -31,16 +32,18 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
-4 em Linha (4x4)
-   A B C D
- 1 . . . . 1 
- 2 . . . . 2 
- 3 . . . . 3 
- 4 . . . . 4 
-   A B C D
+4 em Linha (5x5)
+   A B C D E
+ 1 . . . . . 1 
+ 2 . . . . . 2 
+ 3 . . . . . 3 
+ 4 . . . . . 4 
+ 5 . . . . . 5 
+   A B C D E
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
 │ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
@@ -55,15 +58,17 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
-4 em Linha (6x4)
+4 em Linha (6x5)
    A B C D E F
  1 . . . . . . 1 
  2 . . . . . . 2 
  3 . . . . . . 3 
  4 . . . . . . 4 
+ 5 . . . . . . 5 
    A B C D E F
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
@@ -79,8 +84,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
 4 em Linha (7x6) gravidade
    A B C D E F G
@@ -105,8 +111,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
 4 em Linha (14x6) gravidade
    A B C D E F G H I J K L M N
@@ -131,20 +138,21 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
-5 em Linha (8x8)
-   A B C D E F G H
- 1 . . . . . . . . 1 
- 2 . . . . . . . . 2 
- 3 . . . . . . . . 3 
- 4 . . . . . . . . 4 
- 5 . . . . . . . . 5 
- 6 . . . . . . . . 6 
- 7 . . . . . . . . 7 
- 8 . . . . . . . . 8 
-   A B C D E F G H
+5 em Linha (12x8) gravidade
+   A B C D E F G H I J K L
+ 1 . . . . . . . . . . . . 1 
+ 2 . . . . . . . . . . . . 2 
+ 3 . . . . . . . . . . . . 3 
+ 4 . . . . . . . . . . . . 4 
+ 5 . . . . . . . . . . . . 5 
+ 6 . . . . . . . . . . . . 6 
+ 7 . . . . . . . . . . . . 7 
+ 8 . . . . . . . . . . . . 8 
+   A B C D E F G H I J K L
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
 │ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
@@ -159,8 +167,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
 5 em Linha (12x8)
    A B C D E F G H I J K L
@@ -187,8 +196,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
 5 em Linha (9x9)
    A B C D E F G H I
@@ -216,8 +226,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
 6 em Linha (11x9)
    A B C D E F G H I J K
@@ -245,8 +256,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
 6 em Linha (12x12)
    A B C D E F G H I J K L
@@ -277,16 +289,18 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 0
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
-4 em Linha (4x4)
-   A B C D
- 1 . . . . 1 
- 2 . . . . 2 
- 3 . . . . 3 
- 4 . . . . 4 
-   A B C D
+4 em Linha (5x5)
+   A B C D E
+ 1 . . . . . 1 
+ 2 . . . . . 2 
+ 3 . . . . . 3 
+ 4 . . . . . 4 
+ 5 . . . . . 5 
+   A B C D E
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
 │ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
@@ -301,12 +315,12 @@ Opção:
 │ [90mP6(VER_ACOES):[0m             4          [90m(1 a 100)[0m
 │ [90mP7(LIMITE):[0m                0          [90m(-1 a 1000000)[0m
 │ [90mP8(ESTADOS_REPETIDOS):[0m     ignorar    [90m(1 a 3)[0m
+│ [90mP10(RUIDO_HEURISTICA):[0m     0          [90m(-100 a 100)[0m
 │ [90mP11(BARALHAR_SUCESSORES):[0m  0          [90m(0 a 1)[0m
 │ [90mP12(ORDENAR_SUCESSORES):[0m   2          [90m(0 a 2)[0m
 │ [90mP13(PODA_HEURISTICA):[0m      0          [90m(0 a 1000)[0m
 │ [90mP14(PODA_CEGA):[0m            0          [90m(0 a 10000)[0m
 │ [90mP15(HEUR_BASE):[0m            200        [90m(100 a 1000)[0m
-│ [90mP16(HEUR_MAX_PONTOS):[0m      100        [90m(2 a 1000000)[0m
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 ┌─ ⚙  P7(LIMITE) ──────────────────────────────────────────────────────
@@ -325,53 +339,318 @@ LIMITE (atual 0):
 │ [90mP6(VER_ACOES):[0m             4          [90m(1 a 100)[0m
 │ [90mP7(LIMITE):[0m                2          [90m(-1 a 1000000)[0m
 │ [90mP8(ESTADOS_REPETIDOS):[0m     ignorar    [90m(1 a 3)[0m
+│ [90mP10(RUIDO_HEURISTICA):[0m     0          [90m(-100 a 100)[0m
 │ [90mP11(BARALHAR_SUCESSORES):[0m  0          [90m(0 a 1)[0m
 │ [90mP12(ORDENAR_SUCESSORES):[0m   2          [90m(0 a 2)[0m
 │ [90mP13(PODA_HEURISTICA):[0m      0          [90m(0 a 1000)[0m
 │ [90mP14(PODA_CEGA):[0m            0          [90m(0 a 10000)[0m
 │ [90mP15(HEUR_BASE):[0m            200        [90m(100 a 1000)[0m
-│ [90mP16(HEUR_MAX_PONTOS):[0m      100        [90m(2 a 1000000)[0m
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
-4 em Linha (4x4)
-   A B C D
- 1 . . . . 1 
- 2 . . . . 2 
- 3 . . . . 3 
- 4 . . . . 4 
-   A B C D
+4 em Linha (5x5)
+   A B C D E
+ 1 . . . . . 1 
+ 2 . . . . . 2 
+ 3 . . . . . 3 
+ 4 . . . . . 4 
+ 5 . . . . . 5 
+   A B C D E
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
 │ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   21ms  ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   16ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 . . . . 1 
- │  2 . . . . 2 
- │  3 . . . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . . x . . 3 
+ │  4 . . . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 21 | [90mI3(Iterações):[0m 16 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 16 | [90mI3(Iterações):[0m 25 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 25 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . . x . . 3 
+ │  4 . o . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 24 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 24 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . x x . . 3 
+ │  4 . o . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 23 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 23 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . x x o . 3 
+ │  4 . o . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 6 | [90mI3(Iterações):[0m 22 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 22 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   5ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 5 | [90mI3(Iterações):[0m 21 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 21 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 6 | [90mI3(Iterações):[0m 20 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 20 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   7ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 x . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 7 | [90mI3(Iterações):[0m 19 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 19 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 x . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . o . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 6 | [90mI3(Iterações):[0m 18 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 18 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . o . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 6 | [90mI3(Iterações):[0m 17 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI5(IND_GERACOES):[0m 17 | [90mI6(IND_LOWER_BOUND):[0m 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
+│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
+│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 . . . o . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 16 | [90mI4(IND_EXPANSOES):[0m 1 | 
 │ [90mI5(IND_GERACOES):[0m 16 | [90mI6(IND_LOWER_BOUND):[0m 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -380,23 +659,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . . . . 2 
- │  3 . . . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 . . . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 15 | [90mI4(IND_EXPANSOES):[0m 1 | 
 │ [90mI5(IND_GERACOES):[0m 15 | [90mI6(IND_LOWER_BOUND):[0m 0
@@ -407,25 +688,27 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   5ms  ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . . . . 2 
- │  3 . x . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 o . . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 5 | [90mI3(Iterações):[0m 14 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 14 | [90mI4(IND_EXPANSOES):[0m 1 | 
 │ [90mI5(IND_GERACOES):[0m 14 | [90mI6(IND_LOWER_BOUND):[0m 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -434,23 +717,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . . o . 2 
- │  3 . x . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 13 | [90mI4(IND_EXPANSOES):[0m 1 | 
 │ [90mI5(IND_GERACOES):[0m 13 | [90mI6(IND_LOWER_BOUND):[0m 0
@@ -461,23 +746,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . x o . 2 
- │  3 . x . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 12 | [90mI4(IND_EXPANSOES):[0m 1 | 
 │ [90mI5(IND_GERACOES):[0m 12 | [90mI6(IND_LOWER_BOUND):[0m 0
@@ -488,23 +775,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . x o . 2 
- │  3 . x . . 3 
- │  4 x o . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o x 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 11 | [90mI4(IND_EXPANSOES):[0m 1 | 
 │ [90mI5(IND_GERACOES):[0m 11 | [90mI6(IND_LOWER_BOUND):[0m 0
@@ -515,23 +804,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . x o . 2 
- │  3 . x x . 3 
- │  4 x o . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o o 3 
+ │  4 . o x o x 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 10 | [90mI4(IND_EXPANSOES):[0m 1 | 
 │ [90mI5(IND_GERACOES):[0m 10 | [90mI6(IND_LOWER_BOUND):[0m 0
@@ -542,269 +833,28 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   5ms  ═══
+ ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP10=[0m0 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0
+ ├─ ⚙   ─ [90mP15=[0m200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
 │ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
+│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP10(RUIDO_HEURISTICA):[0m 0 | [90mP11(BARALHAR_SUCESSORES):[0m 0
+│ [90mP12(ORDENAR_SUCESSORES):[0m 2 | [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0
+│ [90mP15(HEUR_BASE):[0m 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . x o . 2 
- │  3 . x x o 3 
- │  4 x o . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x x . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o o 3 
+ │  4 . o x o x 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 5 | [90mI3(Iterações):[0m 9 | [90mI4(IND_EXPANSOES):[0m 1 | 
+│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 9 | [90mI4(IND_EXPANSOES):[0m 1 | 
 │ [90mI5(IND_GERACOES):[0m 9 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   9ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . x 1 
- │  2 . x o . 2 
- │  3 . x x o 3 
- │  4 x o . . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 9 | [90mI3(Iterações):[0m 8 | [90mI4(IND_EXPANSOES):[0m 1 | 
-│ [90mI5(IND_GERACOES):[0m 8 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . x 1 
- │  2 . x o . 2 
- │  3 o x x o 3 
- │  4 x o . . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 7 | [90mI4(IND_EXPANSOES):[0m 1 | 
-│ [90mI5(IND_GERACOES):[0m 7 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o . . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 6 | [90mI4(IND_EXPANSOES):[0m 1 | 
-│ [90mI5(IND_GERACOES):[0m 6 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o . x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o . . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 5 | [90mI4(IND_EXPANSOES):[0m 1 | 
-│ [90mI5(IND_GERACOES):[0m 5 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o . x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o x . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 4 | [90mI4(IND_EXPANSOES):[0m 1 | 
-│ [90mI5(IND_GERACOES):[0m 4 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o o x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o x . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 3 | [90mI4(IND_EXPANSOES):[0m 1 | 
-│ [90mI5(IND_GERACOES):[0m 3 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o o x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o x x 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 2 | [90mI4(IND_EXPANSOES):[0m 1 | 
-│ [90mI5(IND_GERACOES):[0m 2 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o o x 1 
- │  2 x x o o 2 
- │  3 o x x o 3 
- │  4 x o x x 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 1 | [90mI4(IND_EXPANSOES):[0m 1 | 
-│ [90mI5(IND_GERACOES):[0m 1 | [90mI6(IND_LOWER_BOUND):[0m 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │
-│ 5 ⚖   [90mIndicadores[0m │ 6 ►   [90mExecutar[0m │ 7 🛠️  [90mConfigurações[0m │ 8 🧪  [90mTeste[0m  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ [90mP1=[0m2 [90mP2=[0m0 [90mP3=[0m1 [90mP4=[0m10 [90mP5=[0m0 [90mP6=[0m4 [90mP7=[0m2 [90mP8=[0m1 [90mP11=[0m0 [90mP12=[0m2 [90mP13=[0m0 [90mP14=[0m0 [90mP15=[0m200
- ├─ ⚙   ─ [90mP16=[0m100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ [90mP1(ALGORITMO):[0m MiniMax alfa/beta | [90mP2(NIVEL_DEBUG):[0m NADA | [90mP3(SEMENTE):[0m 1
-│ [90mP4(LIMITE_TEMPO):[0m 10 | [90mP5(LIMITE_ITERACOES):[0m 0 | [90mP6(VER_ACOES):[0m 4 | [90mP7(LIMITE):[0m 2
-│ [90mP8(ESTADOS_REPETIDOS):[0m ignorar | [90mP11(BARALHAR_SUCESSORES):[0m 0 | [90mP12(ORDENAR_SUCESSORES):[0m 2
-│ [90mP13(PODA_HEURISTICA):[0m 0 | [90mP14(PODA_CEGA):[0m 0 | [90mP15(HEUR_BASE):[0m 200 | [90mP16(HEUR_MAX_PONTOS):[0m 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o o x 1 
- │  2 x x o o 2 
- │  3 o x x o 3 
- │  4 x o x x 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ [90mI1(IND_CUSTO):[0m 0 | [90mI2(Tempo(ms)):[0m 4 | [90mI3(Iterações):[0m 1 | [90mI4(IND_EXPANSOES):[0m 0 | 
-│ [90mI5(IND_GERACOES):[0m 0 | [90mI6(IND_LOWER_BOUND):[0m 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   [90mInstância[0m  │ 2 🔍  [90mExplorar[0m │ 3 ⚙   [90mParâmetros[0m    │ 4 ✔  [90mSolução[0m │

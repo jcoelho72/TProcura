@@ -8,8 +8,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
  │ 3 em Linha (3x3)
  │    A B C
@@ -31,16 +32,18 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
-4 em Linha (4x4)
-   A B C D
- 1 . . . . 1 
- 2 . . . . 2 
- 3 . . . . 3 
- 4 . . . . 4 
-   A B C D
+4 em Linha (5x5)
+   A B C D E
+ 1 . . . . . 1 
+ 2 . . . . . 2 
+ 3 . . . . . 3 
+ 4 . . . . . 4 
+ 5 . . . . . 5 
+   A B C D E
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
 │ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
@@ -55,15 +58,17 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
-4 em Linha (6x4)
+4 em Linha (6x5)
    A B C D E F
  1 . . . . . . 1 
  2 . . . . . . 2 
  3 . . . . . . 3 
  4 . . . . . . 4 
+ 5 . . . . . . 5 
    A B C D E F
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
@@ -79,8 +84,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
 4 em Linha (7x6) gravidade
    A B C D E F G
@@ -105,8 +111,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
 4 em Linha (14x6) gravidade
    A B C D E F G H I J K L M N
@@ -131,20 +138,21 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
-5 em Linha (8x8)
-   A B C D E F G H
- 1 . . . . . . . . 1 
- 2 . . . . . . . . 2 
- 3 . . . . . . . . 3 
- 4 . . . . . . . . 4 
- 5 . . . . . . . . 5 
- 6 . . . . . . . . 6 
- 7 . . . . . . . . 7 
- 8 . . . . . . . . 8 
-   A B C D E F G H
+5 em Linha (12x8) gravidade
+   A B C D E F G H I J K L
+ 1 . . . . . . . . . . . . 1 
+ 2 . . . . . . . . . . . . 2 
+ 3 . . . . . . . . . . . . 3 
+ 4 . . . . . . . . . . . . 4 
+ 5 . . . . . . . . . . . . 5 
+ 6 . . . . . . . . . . . . 6 
+ 7 . . . . . . . . . . . . 7 
+ 8 . . . . . . . . . . . . 8 
+   A B C D E F G H I J K L
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
 │ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
@@ -159,8 +167,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
 5 em Linha (12x8)
    A B C D E F G H I J K L
@@ -187,8 +196,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
 5 em Linha (9x9)
    A B C D E F G H I
@@ -216,8 +226,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
 6 em Linha (11x9)
    A B C D E F G H I J K
@@ -245,8 +256,9 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
 6 em Linha (12x12)
    A B C D E F G H I J K L
@@ -277,16 +289,18 @@ Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 0
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
-4 em Linha (4x4)
-   A B C D
- 1 . . . . 1 
- 2 . . . . 2 
- 3 . . . . 3 
- 4 . . . . 4 
-   A B C D
+4 em Linha (5x5)
+   A B C D E
+ 1 . . . . . 1 
+ 2 . . . . . 2 
+ 3 . . . . . 3 
+ 4 . . . . . 4 
+ 5 . . . . . 5 
+   A B C D E
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
 │ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
@@ -301,12 +315,12 @@ Opção:
 │ P6(VER_ACOES):             4          (1 a 100)
 │ P7(LIMITE):                0          (-1 a 1000000)
 │ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+│ P10(RUIDO_HEURISTICA):     0          (-100 a 100)
 │ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
 │ P12(ORDENAR_SUCESSORES):   2          (0 a 2)
 │ P13(PODA_HEURISTICA):      0          (0 a 1000)
 │ P14(PODA_CEGA):            0          (0 a 10000)
 │ P15(HEUR_BASE):            200        (100 a 1000)
-│ P16(HEUR_MAX_PONTOS):      100        (2 a 1000000)
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 ┌─ ⚙  P7(LIMITE) ──────────────────────────────────────────────────────
@@ -325,53 +339,318 @@ LIMITE (atual 0):
 │ P6(VER_ACOES):             4          (1 a 100)
 │ P7(LIMITE):                2          (-1 a 1000000)
 │ P8(ESTADOS_REPETIDOS):     ignorar    (1 a 3)
+│ P10(RUIDO_HEURISTICA):     0          (-100 a 100)
 │ P11(BARALHAR_SUCESSORES):  0          (0 a 1)
 │ P12(ORDENAR_SUCESSORES):   2          (0 a 2)
 │ P13(PODA_HEURISTICA):      0          (0 a 1000)
 │ P14(PODA_CEGA):            0          (0 a 10000)
 │ P15(HEUR_BASE):            200        (100 a 1000)
-│ P16(HEUR_MAX_PONTOS):      100        (2 a 1000000)
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
-4 em Linha (4x4)
-   A B C D
- 1 . . . . 1 
- 2 . . . . 2 
- 3 . . . . 3 
- 4 . . . . 4 
-   A B C D
+4 em Linha (5x5)
+   A B C D E
+ 1 . . . . . 1 
+ 2 . . . . . 2 
+ 3 . . . . . 3 
+ 4 . . . . . 4 
+ 5 . . . . . 5 
+   A B C D E
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
 │ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   21ms  ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   16ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 . . . . 1 
- │  2 . . . . 2 
- │  3 . . . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . . x . . 3 
+ │  4 . . . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 21 | I3(Iterações): 16 | I4(IND_EXPANSOES): 1 | 
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 16 | I3(Iterações): 25 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 25 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . . x . . 3 
+ │  4 . o . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 24 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 24 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . x x . . 3 
+ │  4 . o . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 23 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 23 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . x x o . 3 
+ │  4 . o . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 6 | I3(Iterações): 22 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 22 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   5ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 5 | I3(Iterações): 21 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 21 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 6 | I3(Iterações): 20 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 20 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   7ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 x . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 7 | I3(Iterações): 19 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 19 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 x . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . o . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 6 | I3(Iterações): 18 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 18 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x . . 4 
+ │  5 . . . o . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 6 | I3(Iterações): 17 | I4(IND_EXPANSOES): 1 | 
+│ I5(IND_GERACOES): 17 | I6(IND_LOWER_BOUND): 0
+└──────────────────────────────────────────────────────────────────────
+┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
+│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
+│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
+└───────────────────┴────────────────┴─────────────────────┴──────────────┘
+Opção: 
+═╤═ ►  Execução iniciada ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
+Jogo Em Linha
+┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
+│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
+│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
+└──────────────────────────────────────────────────────────────────────
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o . . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 . . . o . 5 
+ │    A B C D E
+┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 16 | I4(IND_EXPANSOES): 1 | 
 │ I5(IND_GERACOES): 16 | I6(IND_LOWER_BOUND): 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -380,23 +659,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . . . . 2 
- │  3 . . . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 . . . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 15 | I4(IND_EXPANSOES): 1 | 
 │ I5(IND_GERACOES): 15 | I6(IND_LOWER_BOUND): 0
@@ -407,25 +688,27 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   5ms  ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . . . . 2 
- │  3 . x . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 o . . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 5 | I3(Iterações): 14 | I4(IND_EXPANSOES): 1 | 
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 14 | I4(IND_EXPANSOES): 1 | 
 │ I5(IND_GERACOES): 14 | I6(IND_LOWER_BOUND): 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
@@ -434,23 +717,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . . o . 2 
- │  3 . x . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 13 | I4(IND_EXPANSOES): 1 | 
 │ I5(IND_GERACOES): 13 | I6(IND_LOWER_BOUND): 0
@@ -461,23 +746,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . x o . 2 
- │  3 . x . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o . 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 12 | I4(IND_EXPANSOES): 1 | 
 │ I5(IND_GERACOES): 12 | I6(IND_LOWER_BOUND): 0
@@ -488,23 +775,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . x o . 2 
- │  3 . x . . 3 
- │  4 x o . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o . 3 
+ │  4 . o x o x 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 11 | I4(IND_EXPANSOES): 1 | 
 │ I5(IND_GERACOES): 11 | I6(IND_LOWER_BOUND): 0
@@ -515,23 +804,25 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
 ═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . x o . 2 
- │  3 . x x . 3 
- │  4 x o . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x . . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o o 3 
+ │  4 . o x o x 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
 │ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 10 | I4(IND_EXPANSOES): 1 | 
 │ I5(IND_GERACOES): 10 | I6(IND_LOWER_BOUND): 0
@@ -542,269 +833,28 @@ Jogo Em Linha
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
 ═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   5ms  ═══
+ ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P10=0 P11=0 P12=2 P13=0 P14=0
+ ├─ ⚙   ─ P15=200
+═╧═ 🏁  Execução terminada ⏱   4ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
 │ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
+│ P8(ESTADOS_REPETIDOS): ignorar | P10(RUIDO_HEURISTICA): 0 | P11(BARALHAR_SUCESSORES): 0
+│ P12(ORDENAR_SUCESSORES): 2 | P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0
+│ P15(HEUR_BASE): 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . . 1 
- │  2 . x o . 2 
- │  3 . x x o 3 
- │  4 x o . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 o x x . . 1 
+ │  2 x . o x . 2 
+ │  3 . x x o o 3 
+ │  4 . o x o x 4 
+ │  5 o x . o . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 5 | I3(Iterações): 9 | I4(IND_EXPANSOES): 1 | 
+│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 9 | I4(IND_EXPANSOES): 1 | 
 │ I5(IND_GERACOES): 9 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   9ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . x 1 
- │  2 . x o . 2 
- │  3 . x x o 3 
- │  4 x o . . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 9 | I3(Iterações): 8 | I4(IND_EXPANSOES): 1 | 
-│ I5(IND_GERACOES): 8 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . x 1 
- │  2 . x o . 2 
- │  3 o x x o 3 
- │  4 x o . . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 7 | I4(IND_EXPANSOES): 1 | 
-│ I5(IND_GERACOES): 7 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o . . x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o . . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 6 | I4(IND_EXPANSOES): 1 | 
-│ I5(IND_GERACOES): 6 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o . x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o . . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 5 | I4(IND_EXPANSOES): 1 | 
-│ I5(IND_GERACOES): 5 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o . x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o x . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 4 | I4(IND_EXPANSOES): 1 | 
-│ I5(IND_GERACOES): 4 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o o x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o x . 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 3 | I4(IND_EXPANSOES): 1 | 
-│ I5(IND_GERACOES): 3 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o o x 1 
- │  2 x x o . 2 
- │  3 o x x o 3 
- │  4 x o x x 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 2 | I4(IND_EXPANSOES): 1 | 
-│ I5(IND_GERACOES): 2 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o o x 1 
- │  2 x x o o 2 
- │  3 o x x o 3 
- │  4 x o x x 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 1 | I4(IND_EXPANSOES): 1 | 
-│ I5(IND_GERACOES): 1 | I6(IND_LOWER_BOUND): 0
-└──────────────────────────────────────────────────────────────────────
-┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
-│ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │
-│ 5 ⚖   Indicadores │ 6 ►   Executar │ 7 🛠️  Configurações │ 8 🧪  Teste  │
-└───────────────────┴────────────────┴─────────────────────┴──────────────┘
-Opção: 
-═╤═ ►  Execução iniciada ═══
- ├─ Parâmetros ─ P1=2 P2=0 P3=1 P4=10 P5=0 P6=4 P7=2 P8=1 P11=0 P12=2 P13=0 P14=0 P15=200
- ├─ ⚙   ─ P16=100
-═╧═ 🏁  Execução terminada ⏱   4ms  ═══
-Jogo Em Linha
-┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
-│ P1(ALGORITMO): MiniMax alfa/beta | P2(NIVEL_DEBUG): NADA | P3(SEMENTE): 1
-│ P4(LIMITE_TEMPO): 10 | P5(LIMITE_ITERACOES): 0 | P6(VER_ACOES): 4 | P7(LIMITE): 2
-│ P8(ESTADOS_REPETIDOS): ignorar | P11(BARALHAR_SUCESSORES): 0 | P12(ORDENAR_SUCESSORES): 2
-│ P13(PODA_HEURISTICA): 0 | P14(PODA_CEGA): 0 | P15(HEUR_BASE): 200 | P16(HEUR_MAX_PONTOS): 100
-└──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 o o o x 1 
- │  2 x x o o 2 
- │  3 o x x o 3 
- │  4 x o x x 4 
- │    A B C D
-┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ I1(IND_CUSTO): 0 | I2(Tempo(ms)): 4 | I3(Iterações): 1 | I4(IND_EXPANSOES): 0 | 
-│ I5(IND_GERACOES): 0 | I6(IND_LOWER_BOUND): 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐
 │ 1 📄   Instância  │ 2 🔍  Explorar │ 3 ⚙   Parâmetros    │ 4 ✔  Solução │

@@ -8,8 +8,9 @@ Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
 │ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
-│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
-│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0
+│ <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────
  │   A B C
  │ 1 . . . 1 
@@ -30,12 +31,12 @@ Opção:
 │ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
 │ <span style="color:gray">P7(LIMITE):</span>                0          <span style="color:gray">(-1 a 1000000)</span>
 │ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span>     0          <span style="color:gray">(-100 a 100)</span>
 │ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
 │ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
 │ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
 │ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
 │ <span style="color:gray">P15(HEUR_BASE):</span>            200        <span style="color:gray">(100 a 1000)</span>
-│ <span style="color:gray">P16(HEUR_MAX_PONTOS):</span>      100        <span style="color:gray">(2 a 1000000)</span>
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 ┌─ ⚙  P1(ALGORITMO) ───────────────────────────────────────────────────
@@ -53,12 +54,12 @@ ALGORITMO (atual 2):
 │ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
 │ <span style="color:gray">P7(LIMITE):</span>                0          <span style="color:gray">(-1 a 1000000)</span>
 │ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span>     0          <span style="color:gray">(-100 a 100)</span>
 │ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
 │ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
 │ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
 │ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
 │ <span style="color:gray">P15(HEUR_BASE):</span>            200        <span style="color:gray">(100 a 1000)</span>
-│ <span style="color:gray">P16(HEUR_MAX_PONTOS):</span>      100        <span style="color:gray">(2 a 1000000)</span>
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 ┌─ ⚙  P2(NIVEL_DEBUG) ─────────────────────────────────────────────────
@@ -79,12 +80,12 @@ NIVEL_DEBUG (atual 0):
 │ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
 │ <span style="color:gray">P7(LIMITE):</span>                0          <span style="color:gray">(-1 a 1000000)</span>
 │ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span>     0          <span style="color:gray">(-100 a 100)</span>
 │ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
 │ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
 │ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
 │ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
 │ <span style="color:gray">P15(HEUR_BASE):</span>            200        <span style="color:gray">(100 a 1000)</span>
-│ <span style="color:gray">P16(HEUR_MAX_PONTOS):</span>      100        <span style="color:gray">(2 a 1000000)</span>
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 ┌─ ⚙  P7(LIMITE) ──────────────────────────────────────────────────────
@@ -103,12 +104,12 @@ LIMITE (atual 0):
 │ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
 │ <span style="color:gray">P7(LIMITE):</span>                20         <span style="color:gray">(-1 a 1000000)</span>
 │ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span>     0          <span style="color:gray">(-100 a 100)</span>
 │ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
 │ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
 │ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
 │ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
 │ <span style="color:gray">P15(HEUR_BASE):</span>            200        <span style="color:gray">(100 a 1000)</span>
-│ <span style="color:gray">P16(HEUR_MAX_PONTOS):</span>      100        <span style="color:gray">(2 a 1000000)</span>
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 ┌─ ⚙  P12(ORDENAR_SUCESSORES) ─────────────────────────────────────────
@@ -125,20 +126,21 @@ ORDENAR_SUCESSORES (atual 2):
 │ <span style="color:gray">P6(VER_ACOES):</span>             4          <span style="color:gray">(1 a 100)</span>
 │ <span style="color:gray">P7(LIMITE):</span>                20         <span style="color:gray">(-1 a 1000000)</span>
 │ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span>     ignorar    <span style="color:gray">(1 a 3)</span>
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span>     0          <span style="color:gray">(-100 a 100)</span>
 │ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span>  0          <span style="color:gray">(0 a 1)</span>
 │ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span>   2          <span style="color:gray">(0 a 2)</span>
 │ <span style="color:gray">P13(PODA_HEURISTICA):</span>      0          <span style="color:gray">(0 a 1000)</span>
 │ <span style="color:gray">P14(PODA_CEGA):</span>            0          <span style="color:gray">(0 a 10000)</span>
 │ <span style="color:gray">P15(HEUR_BASE):</span>            200        <span style="color:gray">(100 a 1000)</span>
-│ <span style="color:gray">P16(HEUR_MAX_PONTOS):</span>      100        <span style="color:gray">(2 a 1000000)</span>
 └──────────────────────────────────────────────────────────────────────
 Parâmetro:
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> PASSOS | <span style="color:gray">P3(SEMENTE):</span> 1
 │ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 20
-│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
-│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0
+│ <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────
  │   A B C
  │ 1 . . . 1 
@@ -1435,15 +1437,16 @@ Opção:
  │  ├■═╤═ 🔖 2 💰 g:1 ⚖  425|1465|700 ═══ α=-1000 β=0 ═══ ⚡ b1 ─── 💾 0
  │  ├■═╤═ 🔖 4 💰 g:1 ⚖  425|1465|700 ═══ α=-1000 β=0 ═══ ⚡ a2 ─── 💾 0
  │  └■═╤═ 🔖 9 💰 g:1 ⚖  425|1465|700 ═══ α=-1000 β=0 ═══ ⚡ c3 ─── 💾 0
- ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>20 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200
- ├─ ⚙   ─ <span style="color:gray">P16=</span>100
-═╧═ 🏁  Execução terminada ⏱   16ms  ═══
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>20 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
+ ├─ ⚙   ─ <span style="color:gray">P15=</span>200
+═╧═ 🏁  Execução terminada ⏱   15ms  ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> PASSOS | <span style="color:gray">P3(SEMENTE):</span> 1
 │ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 20
-│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
-│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0
+│ <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────
  │   A B C
  │ 1 x . . 1 
@@ -1451,7 +1454,7 @@ Jogo do Galo
  │ 3 . . . 3 
  │   A B C
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 16 | <span style="color:gray">I3(Iterações):</span> 700 | <span style="color:gray">I4(IND_EXPANSOES):</span> 425 | 
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 15 | <span style="color:gray">I3(Iterações):</span> 700 | <span style="color:gray">I4(IND_EXPANSOES):</span> 425 | 
 │ <span style="color:gray">I5(IND_GERACOES):</span> 1465 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐

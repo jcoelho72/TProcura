@@ -8,8 +8,9 @@ Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
 │ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0
-│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
-│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0
+│ <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────
  │   A B C
  │ 1 . . . 1 
@@ -21,8 +22,8 @@ Jogo do Galo
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
- ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200
- ├─ ⚙   ─ <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>0 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
+ ├─ ⚙   ─ <span style="color:gray">P15=</span>200<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─  ⭐ atual
 ═╧═══════════════════
@@ -33,7 +34,7 @@ Opção:
 │  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
- ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P7=</span>0 ⭐ atual
  ├─ ⚙  [2] ─ <span style="color:gray">P7=</span>3
@@ -48,7 +49,7 @@ Opção:
 │  <span style="color:gray">Sintaxe de <conj.> :</span> A,B,C | A:B | A:B:C                   
 └──────────────────────────────────────────────────────────────────────
 ✏️ Comando: 
- ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P7=</span>3 ⭐ atual
  ├─ ⚙  [2] ─ <span style="color:gray">P7=</span>5
@@ -66,8 +67,8 @@ Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0 | <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar
-│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0
-│ <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────
  │   A B C
  │ 1 . . . 1 
@@ -83,7 +84,9 @@ Opção:
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
 📄  IDs das instâncias (1 a 1): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
- ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
+
+═╤═ Instâncias ═══ { 📄 1 } 
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P7=</span>3
  ├─ ⚙  [2] ─ <span style="color:gray">P7=</span>5
@@ -92,18 +95,18 @@ Opção:
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:12   📄 Instâncias: 1   🛠️ Configurações: 4   🖥️ Processos: 1.
- ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3🟰 
- ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 5ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 18ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
- ├─ ⏱ 19ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 24ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 37ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 52ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 67ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 92ms            📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 217ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 355ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
+ ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3 🏆 🟰 
+ ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 5ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 22ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☗ 
+ ├─ ⏱ 23ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 32ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 46ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☗ 
+ ├─ ⏱ 62ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☗ 
+ ├─ ⏱ 81ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 110ms           📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☗ 
+ ├─ ⏱ 263ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☗ 
+ ├─ ⏱ 387ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
 🏆  Torneio (#instâncias melhores):
  |-01-|-02-|-03-|-04-|
  1    |  0 |  0 |  0 | -3
@@ -114,12 +117,11 @@ Opção:
  |----|----|----|----|
  4  1 |  1 |  0 |    |  2
  |----|----|----|----|
- │ Tempos: 0.000s 0.005s 0.054s 0.428s 
 ┌─ ⚙ 🛠️  ─────────────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar
-│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0
-│ <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
 ┌─ ⚙ ⚙  [1] ──────────────────────────────────────────────────────────
@@ -135,13 +137,13 @@ Opção:
 │ <span style="color:gray">P7(LIMITE):</span> 20
 └──────────────────────────────────────────────────────────────────────
 ═╧═══════════════════
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 488ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 515ms ) ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0 | <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar
-│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0
-│ <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────
   A B C
 1 . . . 1 
@@ -157,7 +159,9 @@ Opção:
 │  <span style="color:gray">Instâncias:</span> A,B,C | A:B | A : B : C
 └────────────────────────────────────────
 📄  IDs das instâncias (1 a 1): 🗎  Ficheiro resultados (nada para mostrar no ecrã): 
- ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
+
+═╤═ Instâncias ═══ { 📄 1 } 
+ ├─ 🛠️  ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P2=</span>4 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P7=</span>3
  ├─ ⚙  [2] ─ <span style="color:gray">P7=</span>5
@@ -166,26 +170,26 @@ Opção:
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:12   📄 Instâncias: 1   🛠️ Configurações: 4   🖥️ Processos: 1.
- ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3🟰 
- ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 5ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 21ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☖ 
- ├─ ⏱ 22ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 27ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 42ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 56ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 73ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- ├─ ⏱ 101ms           📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 224ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☖ 
- ├─ ⏱ 346ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3🟰 
- │ Erro ao gravar ficheiro ../Resultados/Galo.csv.
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 476ms ) ═══
+ ├─ ⏱                 📋 1     📄 1     🛠️ 1     🛠️ 2     🖥️ 1     a1 b1 c1 b2 b3 a2 c2 c3 a3 🏆 🟰 
+ ├─ ⏱ 1ms             📋 2     📄 1     🛠️ 1     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 5ms             📋 3     📄 1     🛠️ 1     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 17ms            📋 4     📄 1     🛠️ 2     🛠️ 1     🖥️ 1     a1 b1 c1 a2 b2 c2 a3 🏆 ☗ 
+ ├─ ⏱ 19ms            📋 5     📄 1     🛠️ 2     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 25ms            📋 6     📄 1     🛠️ 2     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 43ms            📋 7     📄 1     🛠️ 3     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☗ 
+ ├─ ⏱ 62ms            📋 8     📄 1     🛠️ 3     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☗ 
+ ├─ ⏱ 81ms            📋 9     📄 1     🛠️ 3     🛠️ 4     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ ├─ ⏱ 122ms           📋 10    📄 1     🛠️ 4     🛠️ 1     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☗ 
+ ├─ ⏱ 256ms           📋 11    📄 1     🛠️ 4     🛠️ 2     🖥️ 1     a1 b1 a2 a3 b2 c1 c2 🏆 ☗ 
+ ├─ ⏱ 382ms           📋 12    📄 1     🛠️ 4     🛠️ 3     🖥️ 1     a1 b2 b1 c1 a3 a2 c2 b3 c3 🏆 🟰 
+ │ Ficheiro ../Resultados/Galo gravado.
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 509ms ) ═══
 Jogo do Galo
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax | <span style="color:gray">P2(NIVEL_DEBUG):</span> COMPLETO | <span style="color:gray">P3(SEMENTE):</span> 1 | <span style="color:gray">P4(LIMITE_TEMPO):</span> 10
 │ <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 0 | <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar
-│ <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0
-│ <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────
   A B C
 1 . . . 1 
