@@ -10,7 +10,6 @@ var TProcuraAdversa_8h =
       [ "PODA_HEURISTICA", "TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda2ecf1246acabbde99b63054784d07383", null ],
       [ "PODA_CEGA", "TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdad2278b01c38aea2891b0a462b49d1b32", null ],
       [ "HEUR_BASE", "TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda293052cbc4e6226e47e17591a8bc53e0", null ],
-      [ "HEUR_MAX_PONTOS", "TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdac15a2c054b1288bc245e8b28e0faeea7", null ],
       [ "PARAMETROS_ADVERSA", "TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fda249f74324f820516784c8721a5d59303", null ]
     ] ],
     [ "ETipoValor", "TProcuraAdversa_8h.html#af2d8f3ce278d837a36ee4d610662b204", [

@@ -110,10 +110,10 @@ Sumário</h2>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a8">Ação 8 - Torneio Ruido</a></li>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a9">Ação 9 - Torneio Niveis</a></li>
 </ul>
-<div class="fragment"><div class="line">Teste TProcuraAdversa</div>
-<div class="line">Problema:</div>
-<div class="line">  1 - Jogo do Galo</div>
-<div class="line">  2 - Jogo Em Linha</div>
+<div class="fragment"><div class="line">┌─ Teste TProcuraAdversa ──────┐</div>
+<div class="line">│ 1 - Jogo do Galo             │</div>
+<div class="line">│ 2 - Jogo Em Linha            │</div>
+<div class="line">└──────────────────────────────┘</div>
 <div class="line">Opção: 2</div>
 </div><!-- fragment --><p>Este jogo tem várias instâncias, com as dimensões e tamanho da linha para ganhar. Existe ainda a variante em que as peças caem pela ação da gravidade.</p>
 <p><a class="anchor" id="jel-a1"></a></p>
@@ -121,18 +121,24 @@ Sumário</h2>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no Jogo Em Linha, insira: <b>2.</b></p>
 <div class="fragment"><div class="line">Jogo Em Linha</div>
-<div class="line"> P1(Algoritmo): MiniMax alfa/beta | P2(Debug): nada | P3(Seed): 1 | P4(Tempo): 10 | P5(Iterações): 0</div>
-<div class="line"> P6(Ver): 4 | P7(Limite): 0 | P8(Repetidos): ignorar | P9(pesoAStar): 100 | P10(ruido): 0</div>
-<div class="line"> P11(baralhar): 0 | P12(Ordenar): 2 | P13(PodaHeuristica): 0 | P14(PodaCega): 0</div>
-<div class="line">3 em Linha (3x3)</div>
-<div class="line">   A B C</div>
-<div class="line"> 1 . . . 1</div>
-<div class="line"> 2 . . . 2</div>
-<div class="line"> 3 . . . 3</div>
-<div class="line">   A B C</div>
-<div class="line">____________________________________________________________________</div>
-<div class="line">| 1 - Inicializar | 2 - Explorar | 3 - Parâmetros    | 4 - Solução |</div>
-<div class="line">| 5 - Indicadores | 6 - Executar | 7 - Configurações | 8 - Teste   |</div>
+<div class="line">┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────</div>
+<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P1(ALGORITMO):&lt;/span&gt; MiniMax alfa/beta | &lt;span style=&quot;color:gray&quot;&gt;P2(NIVEL_DEBUG):&lt;/span&gt; NADA | &lt;span style=&quot;color:gray&quot;&gt;P3(SEMENTE):&lt;/span&gt; 1</div>
+<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P4(LIMITE_TEMPO):&lt;/span&gt; 10 | &lt;span style=&quot;color:gray&quot;&gt;P5(LIMITE_ITERACOES):&lt;/span&gt; 0 | &lt;span style=&quot;color:gray&quot;&gt;P6(VER_ACOES):&lt;/span&gt; 4 | &lt;span style=&quot;color:gray&quot;&gt;P7(LIMITE):&lt;/span&gt; 0</div>
+<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P8(ESTADOS_REPETIDOS):&lt;/span&gt; ignorar | &lt;span style=&quot;color:gray&quot;&gt;P10(RUIDO_HEURISTICA):&lt;/span&gt; 0 | &lt;span style=&quot;color:gray&quot;&gt;P11(BARALHAR_SUCESSORES):&lt;/span&gt; 0</div>
+<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P12(ORDENAR_SUCESSORES):&lt;/span&gt; 2 | &lt;span style=&quot;color:gray&quot;&gt;P13(PODA_HEURISTICA):&lt;/span&gt; 0 | &lt;span style=&quot;color:gray&quot;&gt;P14(PODA_CEGA):&lt;/span&gt; 0</div>
+<div class="line">│ &lt;span style=&quot;color:gray&quot;&gt;P15(HEUR_BASE):&lt;/span&gt; 200</div>
+<div class="line">└──────────────────────────────────────────────────────────────────────</div>
+<div class="line"> │ 3 em Linha (3x3)</div>
+<div class="line"> │    A B C</div>
+<div class="line"> │  1 . . . 1 </div>
+<div class="line"> │  2 . . . 2 </div>
+<div class="line"> │  3 . . . 3 </div>
+<div class="line"> │    A B C</div>
+<div class="line">┌─ ☰ Menu ─────────┬────────────────┬─────────────────────┬──────────────┐</div>
+<div class="line">│ 1 📄   &lt;span style=&quot;color:gray&quot;&gt;Instância&lt;/span&gt;  │ 2 🔍  &lt;span style=&quot;color:gray&quot;&gt;Explorar&lt;/span&gt; │ 3 ⚙   &lt;span style=&quot;color:gray&quot;&gt;Parâmetros&lt;/span&gt;    │ 4 ✔  &lt;span style=&quot;color:gray&quot;&gt;Solução&lt;/span&gt; │</div>
+<div class="line">│ 5 ⚖   &lt;span style=&quot;color:gray&quot;&gt;Indicadores&lt;/span&gt; │ 6 ►   &lt;span style=&quot;color:gray&quot;&gt;Executar&lt;/span&gt; │ 7 🛠️  &lt;span style=&quot;color:gray&quot;&gt;Configurações&lt;/span&gt; │ 8 🧪  &lt;span style=&quot;color:gray&quot;&gt;Teste&lt;/span&gt;  │</div>
+<div class="line">└───────────────────┴────────────────┴─────────────────────┴──────────────┘</div>
+<div class="line">Opção: </div>
 </div><!-- fragment --><p>O primeiro jogo é o Jogo do Galo, em que se tem de fazer 3 em linha, num tabuleiro de 3x3. Vamos ver outras instâncias.</p>
 <p>Insira:</p><ul>
 <li><b>1; 2.</b> jogo 4 em Linha (4x4)</li>
@@ -145,160 +151,175 @@ Ação 1 - Ver instâncias</h2>
 <li><b>1; 9.</b> jogo 6 em Linha (11x9)</li>
 <li><b>1; 10.</b> jogo 6 em Linha (12x12)</li>
 </ul>
-<div class="fragment"><div class="line">4 em Linha (4x4)</div>
-<div class="line">   A B C D</div>
-<div class="line"> 1 . . . . 1</div>
-<div class="line"> 2 . . . . 2</div>
-<div class="line"> 3 . . . . 3</div>
-<div class="line"> 4 . . . . 4</div>
-<div class="line">   A B C D</div>
+<div class="fragment"><div class="line">4 em Linha (5x5)</div>
+<div class="line">   A B C D E</div>
+<div class="line"> 1 . . . . . 1 </div>
+<div class="line"> 2 . . . . . 2 </div>
+<div class="line"> 3 . . . . . 3 </div>
+<div class="line"> 4 . . . . . 4 </div>
+<div class="line"> 5 . . . . . 5 </div>
+<div class="line">   A B C D E</div>
 <div class="line">_______________________________________________________________________________</div>
-<div class="line">4 em Linha (6x4)</div>
+<div class="line">4 em Linha (6x5)</div>
 <div class="line">   A B C D E F</div>
-<div class="line"> 1 . . . . . . 1</div>
-<div class="line"> 2 . . . . . . 2</div>
-<div class="line"> 3 . . . . . . 3</div>
-<div class="line"> 4 . . . . . . 4</div>
+<div class="line"> 1 . . . . . . 1 </div>
+<div class="line"> 2 . . . . . . 2 </div>
+<div class="line"> 3 . . . . . . 3 </div>
+<div class="line"> 4 . . . . . . 4 </div>
+<div class="line"> 5 . . . . . . 5 </div>
 <div class="line">   A B C D E F</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">4 em Linha (7x6) gravidade</div>
 <div class="line">   A B C D E F G</div>
-<div class="line"> 1 . . . . . . . 1</div>
-<div class="line"> 2 . . . . . . . 2</div>
-<div class="line"> 3 . . . . . . . 3</div>
-<div class="line"> 4 . . . . . . . 4</div>
-<div class="line"> 5 . . . . . . . 5</div>
-<div class="line"> 6 . . . . . . . 6</div>
+<div class="line"> 1 . . . . . . . 1 </div>
+<div class="line"> 2 . . . . . . . 2 </div>
+<div class="line"> 3 . . . . . . . 3 </div>
+<div class="line"> 4 . . . . . . . 4 </div>
+<div class="line"> 5 . . . . . . . 5 </div>
+<div class="line"> 6 . . . . . . . 6 </div>
 <div class="line">   A B C D E F G</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">4 em Linha (14x6) gravidade</div>
 <div class="line">   A B C D E F G H I J K L M N</div>
-<div class="line"> 1 . . . . . . . . . . . . . . 1</div>
-<div class="line"> 2 . . . . . . . . . . . . . . 2</div>
-<div class="line"> 3 . . . . . . . . . . . . . . 3</div>
-<div class="line"> 4 . . . . . . . . . . . . . . 4</div>
-<div class="line"> 5 . . . . . . . . . . . . . . 5</div>
-<div class="line"> 6 . . . . . . . . . . . . . . 6</div>
+<div class="line"> 1 . . . . . . . . . . . . . . 1 </div>
+<div class="line"> 2 . . . . . . . . . . . . . . 2 </div>
+<div class="line"> 3 . . . . . . . . . . . . . . 3 </div>
+<div class="line"> 4 . . . . . . . . . . . . . . 4 </div>
+<div class="line"> 5 . . . . . . . . . . . . . . 5 </div>
+<div class="line"> 6 . . . . . . . . . . . . . . 6 </div>
 <div class="line">   A B C D E F G H I J K L M N</div>
 <div class="line">_______________________________________________________________________________</div>
-<div class="line">5 em Linha (8x8)</div>
-<div class="line">   A B C D E F G H</div>
-<div class="line"> 1 . . . . . . . . 1</div>
-<div class="line"> 2 . . . . . . . . 2</div>
-<div class="line"> 3 . . . . . . . . 3</div>
-<div class="line"> 4 . . . . . . . . 4</div>
-<div class="line"> 5 . . . . . . . . 5</div>
-<div class="line"> 6 . . . . . . . . 6</div>
-<div class="line"> 7 . . . . . . . . 7</div>
-<div class="line"> 8 . . . . . . . . 8</div>
-<div class="line">   A B C D E F G H</div>
+<div class="line">5 em Linha (12x8) gravidade</div>
+<div class="line">   A B C D E F G H I J K L</div>
+<div class="line"> 1 . . . . . . . . . . . . 1 </div>
+<div class="line"> 2 . . . . . . . . . . . . 2 </div>
+<div class="line"> 3 . . . . . . . . . . . . 3 </div>
+<div class="line"> 4 . . . . . . . . . . . . 4 </div>
+<div class="line"> 5 . . . . . . . . . . . . 5 </div>
+<div class="line"> 6 . . . . . . . . . . . . 6 </div>
+<div class="line"> 7 . . . . . . . . . . . . 7 </div>
+<div class="line"> 8 . . . . . . . . . . . . 8 </div>
+<div class="line">   A B C D E F G H I J K L</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">5 em Linha (12x8)</div>
 <div class="line">   A B C D E F G H I J K L</div>
-<div class="line"> 1 . . . . . . . . . . . . 1</div>
-<div class="line"> 2 . . . . . . . . . . . . 2</div>
-<div class="line"> 3 . . . . . . . . . . . . 3</div>
-<div class="line"> 4 . . . . . . . . . . . . 4</div>
-<div class="line"> 5 . . . . . . . . . . . . 5</div>
-<div class="line"> 6 . . . . . . . . . . . . 6</div>
-<div class="line"> 7 . . . . . . . . . . . . 7</div>
-<div class="line"> 8 . . . . . . . . . . . . 8</div>
+<div class="line"> 1 . . . . . . . . . . . . 1 </div>
+<div class="line"> 2 . . . . . . . . . . . . 2 </div>
+<div class="line"> 3 . . . . . . . . . . . . 3 </div>
+<div class="line"> 4 . . . . . . . . . . . . 4 </div>
+<div class="line"> 5 . . . . . . . . . . . . 5 </div>
+<div class="line"> 6 . . . . . . . . . . . . 6 </div>
+<div class="line"> 7 . . . . . . . . . . . . 7 </div>
+<div class="line"> 8 . . . . . . . . . . . . 8 </div>
 <div class="line">   A B C D E F G H I J K L</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">5 em Linha (9x9)</div>
 <div class="line">   A B C D E F G H I</div>
-<div class="line"> 1 . . . . . . . . . 1</div>
-<div class="line"> 2 . . . . . . . . . 2</div>
-<div class="line"> 3 . . . . . . . . . 3</div>
-<div class="line"> 4 . . . . . . . . . 4</div>
-<div class="line"> 5 . . . . . . . . . 5</div>
-<div class="line"> 6 . . . . . . . . . 6</div>
-<div class="line"> 7 . . . . . . . . . 7</div>
-<div class="line"> 8 . . . . . . . . . 8</div>
-<div class="line"> 9 . . . . . . . . . 9</div>
+<div class="line"> 1 . . . . . . . . . 1 </div>
+<div class="line"> 2 . . . . . . . . . 2 </div>
+<div class="line"> 3 . . . . . . . . . 3 </div>
+<div class="line"> 4 . . . . . . . . . 4 </div>
+<div class="line"> 5 . . . . . . . . . 5 </div>
+<div class="line"> 6 . . . . . . . . . 6 </div>
+<div class="line"> 7 . . . . . . . . . 7 </div>
+<div class="line"> 8 . . . . . . . . . 8 </div>
+<div class="line"> 9 . . . . . . . . . 9 </div>
 <div class="line">   A B C D E F G H I</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">6 em Linha (11x9)</div>
 <div class="line">   A B C D E F G H I J K</div>
-<div class="line"> 1 . . . . . . . . . . . 1</div>
-<div class="line"> 2 . . . . . . . . . . . 2</div>
-<div class="line"> 3 . . . . . . . . . . . 3</div>
-<div class="line"> 4 . . . . . . . . . . . 4</div>
-<div class="line"> 5 . . . . . . . . . . . 5</div>
-<div class="line"> 6 . . . . . . . . . . . 6</div>
-<div class="line"> 7 . . . . . . . . . . . 7</div>
-<div class="line"> 8 . . . . . . . . . . . 8</div>
-<div class="line"> 9 . . . . . . . . . . . 9</div>
+<div class="line"> 1 . . . . . . . . . . . 1 </div>
+<div class="line"> 2 . . . . . . . . . . . 2 </div>
+<div class="line"> 3 . . . . . . . . . . . 3 </div>
+<div class="line"> 4 . . . . . . . . . . . 4 </div>
+<div class="line"> 5 . . . . . . . . . . . 5 </div>
+<div class="line"> 6 . . . . . . . . . . . 6 </div>
+<div class="line"> 7 . . . . . . . . . . . 7 </div>
+<div class="line"> 8 . . . . . . . . . . . 8 </div>
+<div class="line"> 9 . . . . . . . . . . . 9 </div>
 <div class="line">   A B C D E F G H I J K</div>
 <div class="line">_______________________________________________________________________________</div>
 <div class="line">6 em Linha (12x12)</div>
 <div class="line">   A B C D E F G H I J K L</div>
-<div class="line"> 1 . . . . . . . . . . . . 1</div>
-<div class="line"> 2 . . . . . . . . . . . . 2</div>
-<div class="line"> 3 . . . . . . . . . . . . 3</div>
-<div class="line"> 4 . . . . . . . . . . . . 4</div>
-<div class="line"> 5 . . . . . . . . . . . . 5</div>
-<div class="line"> 6 . . . . . . . . . . . . 6</div>
-<div class="line"> 7 . . . . . . . . . . . . 7</div>
-<div class="line"> 8 . . . . . . . . . . . . 8</div>
-<div class="line"> 9 . . . . . . . . . . . . 9</div>
-<div class="line">10 . . . . . . . . . . . . 10</div>
-<div class="line">11 . . . . . . . . . . . . 11</div>
-<div class="line">12 . . . . . . . . . . . . 12</div>
+<div class="line"> 1 . . . . . . . . . . . . 1 </div>
+<div class="line"> 2 . . . . . . . . . . . . 2 </div>
+<div class="line"> 3 . . . . . . . . . . . . 3 </div>
+<div class="line"> 4 . . . . . . . . . . . . 4 </div>
+<div class="line"> 5 . . . . . . . . . . . . 5 </div>
+<div class="line"> 6 . . . . . . . . . . . . 6 </div>
+<div class="line"> 7 . . . . . . . . . . . . 7 </div>
+<div class="line"> 8 . . . . . . . . . . . . 8 </div>
+<div class="line"> 9 . . . . . . . . . . . . 9 </div>
+<div class="line">10 . . . . . . . . . . . . 10 </div>
+<div class="line">11 . . . . . . . . . . . . 11 </div>
+<div class="line">12 . . . . . . . . . . . . 12 </div>
 <div class="line">   A B C D E F G H I J K L</div>
 <div class="line">_______________________________________________________________________________</div>
 </div><!-- fragment --><p>Temos diferentes tabuleiros, resultando em ramificações distintas. A variante da gravidade, reduz consideravelmente a ramificação.</p>
 <p><a class="anchor" id="jel-a2"></a></p>
 <h2><a class="anchor" id="autotoc_md111"></a>
 Ação 2 - Heurística</h2>
-<p>Vamos começar por verificar se a heurística implementada, que tem em atenção aspetos mínimos, como bloquear ameaças de vitória a uma jogada.</p>
-<p>Para tal vamos fazer um jogo com profundidade 1, para que a heurística seja o fator predominante.</p>
+<p>Vamos começar por verificar se a heurística implementada, que tem em atenção aspetos mínimos, como bloquear ameaças de vitória a uma jogada. Assim procura maximizar as ameaças a 1 de vitória, e minimizar as mesmas ameaças a 1 de derrota. O mesmo ocorre para ameaças a 2, e 3, até ao valor K da instância. Mas por cada maior valor, a penalização é diluída pelo fator HEUR_BASE / 100.</p>
+<p>Para conseguir obserar a heurística em funcionamento vamos fazer um jogo com profundidade 1, para que a heurística seja o fator predominante.</p>
 <p>Introduza:</p><ul>
-<li><b>1; 2; 3; 7; 2; <em>ENTER</em>; 6.</b> executa um lance, fica com 3 ameaças a 3 jogadas</li>
-<li><b>6.</b> responde anulando uma das ameaças, e faz 2 ameaças a 3 jogadas</li>
-<li><b>6.</b> uma das ameaças passa a 2 jogadas</li>
-<li><b>6; 6; 6; ....</b> termine o jogo, verificando que todas as ameaças são resondidas</li>
+<li><b>1; 2; 3; 7; 2; <em>ENTER</em>; 6.</b> executa um lance, fica com 8 ameaças a 3 jogadas (duas por cada direção)</li>
+<li><b>6.</b> responde anulando duas das ameaças, e faz 4 ameaças a 3 jogadas</li>
+<li><b>6.</b> duas das ameaças passa a 2 jogadas, e anula simultaneamente 2 ameaças adversárias a 3 jogadas</li>
+<li><b>6; 6; 6; ....</b> termine o jogo, verificando que todas as ameaças são respondidas</li>
 </ul>
-<div class="fragment"><div class="line">4 em Linha (4x4)</div>
-<div class="line">   A B C D</div>
-<div class="line"> 1 . . . . 1</div>
-<div class="line"> 2 . . . . 2</div>
-<div class="line"> 3 . . . . 3</div>
-<div class="line"> 4 x . . . 4</div>
-<div class="line">   A B C D</div>
-<div class="line">4 em Linha (4x4)</div>
-<div class="line">   A B C D</div>
-<div class="line"> 1 o . . . 1</div>
-<div class="line"> 2 . . . . 2</div>
-<div class="line"> 3 . . . . 3</div>
-<div class="line"> 4 x . . . 4</div>
-<div class="line">   A B C D</div>
-<div class="line">4 em Linha (4x4)</div>
-<div class="line">   A B C D</div>
-<div class="line"> 1 o . . . 1</div>
-<div class="line"> 2 . . . . 2</div>
-<div class="line"> 3 . x . . 3</div>
-<div class="line"> 4 x . . . 4</div>
-<div class="line">   A B C D</div>
+<div class="fragment"><div class="line">│ 4 em Linha (5x5)</div>
+<div class="line">│    A B C D E</div>
+<div class="line">│  1 . . . . . 1 </div>
+<div class="line">│  2 . . . . . 2 </div>
+<div class="line">│  3 . . x . . 3 </div>
+<div class="line">│  4 . . . . . 4 </div>
+<div class="line">│  5 . . . . . 5 </div>
+<div class="line">│    A B C D E</div>
+<div class="line">│ 4 em Linha (5x5)</div>
+<div class="line">│    A B C D E</div>
+<div class="line">│  1 . . . . . 1 </div>
+<div class="line">│  2 . . . . . 2 </div>
+<div class="line">│  3 . . x . . 3 </div>
+<div class="line">│  4 . o . . . 4 </div>
+<div class="line">│  5 . . . . . 5 </div>
+<div class="line">│    A B C D E</div>
+<div class="line">│ 4 em Linha (5x5)</div>
+<div class="line">│    A B C D E</div>
+<div class="line">│  1 . . . . . 1 </div>
+<div class="line">│  2 . . . . . 2 </div>
+<div class="line">│  3 . x x . . 3 </div>
+<div class="line">│  4 . o . . . 4 </div>
+<div class="line">│  5 . . . . . 5 </div>
+<div class="line">│    A B C D E</div>
+<div class="line">│ 4 em Linha (5x5)</div>
+<div class="line">│    A B C D E</div>
+<div class="line">│  1 o x x . . 1 </div>
+<div class="line">│  2 x . o x . 2 </div>
+<div class="line">│  3 . x x o o 3 </div>
+<div class="line">│  4 . o x o x 4 </div>
+<div class="line">│  5 o x . o . 5 </div>
+<div class="line">│    A B C D E</div>
 </div><!-- fragment --><p>Este teste é importante para despistar algum erro na heurística.</p>
 <p>Podemos fazer o mesmo para um tabuleiro maior. Introduza: <b>1; 10; 6.</b> O lance inicial vai para o meio do tabuleiro, onde há mais ameaças em simultâneo, ou seja, vai para a jogada que maximiza o valor da heurística. Execute também um jogo, verificando que as ameaças vão sendo respondidas: <b>6; 6; ...</b></p>
 <p>Se conseguir chegar ao final, verifica que há empate:</p>
-<div class="fragment"><div class="line">6 em Linha (12x12)</div>
-<div class="line">   A B C D E F G H I J K L</div>
-<div class="line"> 1 o o o o x o o o o x x o 1</div>
-<div class="line"> 2 o x x x o o o x x o x x 2</div>
-<div class="line"> 3 x x x o x x x x o o o o 3</div>
-<div class="line"> 4 o o o x o o o o x x o x 4</div>
-<div class="line"> 5 x o x x o x x x o o x x 5</div>
-<div class="line"> 6 x x o o x o o o x x o o 6</div>
-<div class="line"> 7 x o x o o x x x o o o o 7</div>
-<div class="line"> 8 o x o x x x o o o x x o 8</div>
-<div class="line"> 9 o x o o x x x o x o x x 9</div>
-<div class="line">10 x x x x o o x x x x o o 10</div>
-<div class="line">11 x o o x o o x o o o x x 11</div>
-<div class="line">12 x o x o x o x x x x o o 12</div>
-<div class="line">   A B C D E F G H I J K L</div>
-</div><!-- fragment --><p>Não temos portanto motivo para não considerar a heurística válida. Deixamos de forma a variante da gravidade, já que esta heurística foi feita com base na variante regular.</p>
+<div class="fragment"><div class="line">│ 6 em Linha (12x12)</div>
+<div class="line">│    A B C D E F G H I J K L</div>
+<div class="line">│  1 x x x o o o o x x o o o 1 </div>
+<div class="line">│  2 o o o x x x o x x x x x 2 </div>
+<div class="line">│  3 x o x x o o x o o x o o 3 </div>
+<div class="line">│  4 o o o x x x x o o o o o 4 </div>
+<div class="line">│  5 o x x o o o x o x x x x 5 </div>
+<div class="line">│  6 x x x x x o o o x o x x 6 </div>
+<div class="line">│  7 o o o x o x x x o x o o 7 </div>
+<div class="line">│  8 x x o o o x o x o o x x 8 </div>
+<div class="line">│  9 o o x o x o x o x x o o 9 </div>
+<div class="line">│ 10 x x o x o o x o o o x x 10 </div>
+<div class="line">│ 11 x o o x x x x x o o o x 11 </div>
+<div class="line">│ 12 o x x o o x x o x o x o 12 </div>
+<div class="line">│    A B C D E F G H I J K L</div>
+</div><!-- fragment --><p>Não temos portanto motivo para não considerar a heurística válida.</p>
+<p>Na variante da gravidade as ameaças a W jogadas são também as jogadas necessárias de jogar, se fosse o jogador sempre a jogar, para ganhar o jogo. Mas neste caso, numa linha em que exista um espaço suspenso, tem que se adicionar as casas em baixo do espaço suspenso como distância para o objetivo. Se essa ameaça for mais de K jogadas, ou seja, o número de marcas em linha, então não é contabilizada.</p>
+<p>Esta heurística está implementada a nível global em <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>, tendo de ser específico o calculo do número de ameaças e distância. Acaba por ser muito parecido com uma heurística, estimando a distância até ao estado final, mas neste caso temos várias vias para o jogador e adversário, já que a procura é adversa, e assim beneficia-se os estados em que estamos mais perto de chegar ao estado final que o adversário.</p>
 <p><a class="anchor" id="jel-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md112"></a>
 Ação 3 - MiniMax com cortes Alfa/Beta</h2>
@@ -308,319 +329,611 @@ Ação 3 - MiniMax com cortes Alfa/Beta</h2>
 <pre>
 ═╤═ ►  Execução iniciada ═══
  ├□═╤═ 💰 g:0  ═══ α=-10000 β=10000 ═══
- │  ├■═╤═ 🔖 1 💰 g:1 🎯 h:-149 ⚖  1|16|16 ═══ α=-10000 β=10000 ═══ ⚡ a4
- │  │  ├□═╤═ 🔖 17 💰 g:2 ⚖  2|31|16 ═══ α=-10000 β=10000 ═══ ⚡ a3
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 o . . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 -49
- │  │  ├□ -49 → α
- │  │  ├□═╤═ 🔖 18 💰 g:2 ⚖  2|31|17 ═══ α=-49 β=10000 ═══ ⚡ a2
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 o . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 -49
- │  │  ├□═╤═ 🔖 19 💰 g:2 ⚖  2|31|18 ═══ α=-49 β=10000 ═══ ⚡ a1
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 o . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□ 0 → α
- │  │  ├□═╤═ 🔖 20 💰 g:2 ⚖  2|31|19 ═══ α=0 β=10000 ═══ ⚡ b4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x o . . 4 
- │  │  │    A B C D ─── 🍃 -49
- │  │  ├□═╤═ 🔖 21 💰 g:2 ⚖  2|31|20 ═══ α=0 β=10000 ═══ ⚡ b3
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . o . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□═╤═ 🔖 22 💰 g:2 ⚖  2|31|21 ═══ α=0 β=10000 ═══ ⚡ b2
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . o . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□═╤═ 🔖 23 💰 g:2 ⚖  2|31|22 ═══ α=0 β=10000 ═══ ⚡ b1
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . o . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 -49
- │  │  ├□═╤═ 🔖 24 💰 g:2 ⚖  2|31|23 ═══ α=0 β=10000 ═══ ⚡ c4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . o . 4 
- │  │  │    A B C D ─── 🍃 -49
- │  │  ├□═╤═ 🔖 25 💰 g:2 ⚖  2|31|24 ═══ α=0 β=10000 ═══ ⚡ c3
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . o . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□═╤═ 🔖 26 💰 g:2 ⚖  2|31|25 ═══ α=0 β=10000 ═══ ⚡ c2
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . o . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□═╤═ 🔖 27 💰 g:2 ⚖  2|31|26 ═══ α=0 β=10000 ═══ ⚡ c1
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . o . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 -49
- │  │  ├□═╤═ 🔖 28 💰 g:2 ⚖  2|31|27 ═══ α=0 β=10000 ═══ ⚡ d4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . . o 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□═╤═ 🔖 29 💰 g:2 ⚖  2|31|28 ═══ α=0 β=10000 ═══ ⚡ d3
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . o 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 -49
- │  │  ├□═╤═ 🔖 30 💰 g:2 ⚖  2|31|29 ═══ α=0 β=10000 ═══ ⚡ d2
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . o 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 x . . . 4 
- │  │  │    A B C D ─── 🍃 -49
- │  │  └□═╤═ 🔖 31 💰 g:2 ⚖  2|31|30 ═══ α=0 β=10000 ═══ ⚡ d1
- │  │    4 em Linha (4x4)
- │  │       A B C D
- │  │     1 . . . o 1 
- │  │     2 . . . . 2 
- │  │     3 . . . . 3 
- │  │     4 x . . . 4 
- │  │       A B C D ─── 🍃 0
- │  ├■ 0 → β
- │  ├■═╤═ 🔖 10 💰 g:1 🎯 h:-149 ⚖  2|31|31 ═══ α=-10000 β=0 ═══ ⚡ c3
- │  │  ├□═╤═ 🔖 32 💰 g:2 ⚖  3|46|31 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . x . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□ 0 ─── 🪓 β(0) { 🔖 33 🔖 34 🔖 35 … 🔖 44 🔖 45 🔖 46 } #14
- │  ├■═╤═ 🔖 11 💰 g:1 🎯 h:-149 ⚖  3|46|32 ═══ α=-10000 β=0 ═══ ⚡ c2
- │  │  ├□═╤═ 🔖 47 💰 g:2 ⚖  4|61|32 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . x . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□ 0 ─── 🪓 β(0) { 🔖 48 🔖 49 🔖 50 … 🔖 59 🔖 60 🔖 61 } #14
- │  ├■═╤═ 🔖 13 💰 g:1 🎯 h:-149 ⚖  4|61|33 ═══ α=-10000 β=0 ═══ ⚡ d4
- │  │  ├□═╤═ 🔖 62 💰 g:2 ⚖  5|76|33 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . . x 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□ 0 ─── 🪓 β(0) { 🔖 63 🔖 64 🔖 65 … 🔖 74 🔖 75 🔖 76 } #14
- │  ├■═╤═ 🔖 7 💰 g:1 🎯 h:-149 ⚖  5|76|34 ═══ α=-10000 β=0 ═══ ⚡ b2
- │  │  ├□═╤═ 🔖 77 💰 g:2 ⚖  6|91|34 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . x . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□ 0 ─── 🪓 β(0) { 🔖 78 🔖 79 🔖 80 … 🔖 89 🔖 90 🔖 91 } #14
- │  ├■═╤═ 🔖 16 💰 g:1 🎯 h:-149 ⚖  6|91|35 ═══ α=-10000 β=0 ═══ ⚡ d1
- │  │  ├□═╤═ 🔖 92 💰 g:2 ⚖  7|106|35 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . x 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□ 0 ─── 🪓 β(0) { 🔖 93 🔖 94 🔖 95 … 🔖 104 🔖 105 🔖 106 } #14
- │  ├■═╤═ 🔖 6 💰 g:1 🎯 h:-149 ⚖  7|106|36 ═══ α=-10000 β=0 ═══ ⚡ b3
- │  │  ├□═╤═ 🔖 107 💰 g:2 ⚖  8|121|36 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . x . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□ 0 ─── 🪓 β(0) { 🔖 108 🔖 109 🔖 110 … 🔖 119 🔖 120 🔖 121 } #14
- │  ├■═╤═ 🔖 4 💰 g:1 🎯 h:-149 ⚖  8|121|37 ═══ α=-10000 β=0 ═══ ⚡ a1
- │  │  ├□═╤═ 🔖 122 💰 g:2 ⚖  9|136|37 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 x . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 0
- │  │  ├□ 0 ─── 🪓 β(0) { 🔖 123 🔖 124 🔖 125 … 🔖 134 🔖 135 🔖 136 } #14
- │  ├■═╤═ 🔖 2 💰 g:1 🎯 h:-99 ⚖  9|136|38 ═══ α=-10000 β=0 ═══ ⚡ a3
- │  │  ├□═╤═ 🔖 137 💰 g:2 ⚖  10|151|38 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 x . . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 49
- │  │  ├□ 49 ─── 🪓 β(0) { 🔖 138 🔖 139 🔖 140 … 🔖 149 🔖 150 🔖 151 } #14
- │  ├■═╤═ 🔖 14 💰 g:1 🎯 h:-99 ⚖  10|151|39 ═══ α=-10000 β=0 ═══ ⚡ d3
- │  │  ├□═╤═ 🔖 152 💰 g:2 ⚖  11|166|39 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . x 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 49
- │  │  ├□ 49 ─── 🪓 β(0) { 🔖 153 🔖 154 🔖 155 … 🔖 164 🔖 165 🔖 166 } #14
- │  ├■═╤═ 🔖 5 💰 g:1 🎯 h:-99 ⚖  11|166|40 ═══ α=-10000 β=0 ═══ ⚡ b4
- │  │  ├□═╤═ 🔖 167 💰 g:2 ⚖  12|181|40 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o x . . 4 
- │  │  │    A B C D ─── 🍃 49
- │  │  ├□ 49 ─── 🪓 β(0) { 🔖 168 🔖 169 🔖 170 … 🔖 179 🔖 180 🔖 181 } #14
- │  ├■═╤═ 🔖 3 💰 g:1 🎯 h:-99 ⚖  12|181|41 ═══ α=-10000 β=0 ═══ ⚡ a2
- │  │  ├□═╤═ 🔖 182 💰 g:2 ⚖  13|196|41 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 x . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 49
- │  │  ├□ 49 ─── 🪓 β(0) { 🔖 183 🔖 184 🔖 185 … 🔖 194 🔖 195 🔖 196 } #14
- │  ├■═╤═ 🔖 9 💰 g:1 🎯 h:-99 ⚖  13|196|42 ═══ α=-10000 β=0 ═══ ⚡ c4
- │  │  ├□═╤═ 🔖 197 💰 g:2 ⚖  14|211|42 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . x . 4 
- │  │  │    A B C D ─── 🍃 49
- │  │  ├□ 49 ─── 🪓 β(0) { 🔖 198 🔖 199 🔖 200 … 🔖 209 🔖 210 🔖 211 } #14
- │  ├■═╤═ 🔖 15 💰 g:1 🎯 h:-99 ⚖  14|211|43 ═══ α=-10000 β=0 ═══ ⚡ d2
- │  │  ├□═╤═ 🔖 212 💰 g:2 ⚖  15|226|43 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . . . 1 
- │  │  │  2 . . . x 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 49
- │  │  ├□ 49 ─── 🪓 β(0) { 🔖 213 🔖 214 🔖 215 … 🔖 224 🔖 225 🔖 226 } #14
- │  ├■═╤═ 🔖 12 💰 g:1 🎯 h:-99 ⚖  15|226|44 ═══ α=-10000 β=0 ═══ ⚡ c1
- │  │  ├□═╤═ 🔖 227 💰 g:2 ⚖  16|241|44 ═══ α=-10000 β=0 ═══ ⚡ a4
- │  │  │ 4 em Linha (4x4)
- │  │  │    A B C D
- │  │  │  1 . . x . 1 
- │  │  │  2 . . . . 2 
- │  │  │  3 . . . . 3 
- │  │  │  4 o . . . 4 
- │  │  │    A B C D ─── 🍃 49
- │  │  ├□ 49 ─── 🪓 β(0) { 🔖 228 🔖 229 🔖 230 … 🔖 239 🔖 240 🔖 241 } #14
- │  └■═╤═ 🔖 8 💰 g:1 🎯 h:-99 ⚖  16|241|45 ═══ α=-10000 β=0 ═══ ⚡ b1
- │     ├□═╤═ 🔖 242 💰 g:2 ⚖  17|256|45 ═══ α=-10000 β=0 ═══ ⚡ a4
- │     │ 4 em Linha (4x4)
- │     │    A B C D
- │     │  1 . x . . 1 
- │     │  2 . . . . 2 
- │     │  3 . . . . 3 
- │     │  4 o . . . 4 
- │     │    A B C D ─── 🍃 49
- │     ├□ 49 ─── 🪓 β(0) { 🔖 243 🔖 244 🔖 245 … 🔖 254 🔖 255 🔖 256 } #14 HT: reutilização 0.35 vezes 
- ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200
- ├─ ⚙   ─ <span style="color:gray">P16=</span>100
-═╧═ 🏁  Execução terminada ⏱   6ms  ═══
+ │  ├■═╤═ 🔖 13 💰 g:1 🎯 h:-7 ⚖  1|25|25 ═══ α=-10000 β=10000 ═══ ⚡ c3
+ │  │  ├□═╤═ 🔖 26 💰 g:2 ⚖  2|49|25 ═══ α=-10000 β=10000 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -4
+ │  │  ├□ -4 → α
+ │  │  ├□═╤═ 🔖 27 💰 g:2 ⚖  2|49|26 ═══ α=-4 β=10000 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 o . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -3
+ │  │  ├□ -3 → α
+ │  │  ├□═╤═ 🔖 28 💰 g:2 ⚖  2|49|27 ═══ α=-3 β=10000 ═══ ⚡ a3
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 o . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -4
+ │  │  ├□═╤═ 🔖 29 💰 g:2 ⚖  2|49|28 ═══ α=-3 β=10000 ═══ ⚡ a2
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 o . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -3
+ │  │  ├□═╤═ 🔖 30 💰 g:2 ⚖  2|49|29 ═══ α=-3 β=10000 ═══ ⚡ a1
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 o . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -4
+ │  │  ├□═╤═ 🔖 31 💰 g:2 ⚖  2|49|30 ═══ α=-3 β=10000 ═══ ⚡ b5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . o . . . 5 
+ │  │  │    A B C D E ─── 🍃 -3
+ │  │  ├□═╤═ 🔖 32 💰 g:2 ⚖  2|49|31 ═══ α=-3 β=10000 ═══ ⚡ b4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . o . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 → α
+ │  │  ├□═╤═ 🔖 33 💰 g:2 ⚖  2|49|32 ═══ α=-1 β=10000 ═══ ⚡ b3
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . o x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□═╤═ 🔖 34 💰 g:2 ⚖  2|49|33 ═══ α=-1 β=10000 ═══ ⚡ b2
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . o . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□═╤═ 🔖 35 💰 g:2 ⚖  2|49|34 ═══ α=-1 β=10000 ═══ ⚡ b1
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . o . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -3
+ │  │  ├□═╤═ 🔖 36 💰 g:2 ⚖  2|49|35 ═══ α=-1 β=10000 ═══ ⚡ c5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . o . . 5 
+ │  │  │    A B C D E ─── 🍃 -4
+ │  │  ├□═╤═ 🔖 37 💰 g:2 ⚖  2|49|36 ═══ α=-1 β=10000 ═══ ⚡ c4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . o . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□═╤═ 🔖 38 💰 g:2 ⚖  2|49|37 ═══ α=-1 β=10000 ═══ ⚡ c2
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . o . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□═╤═ 🔖 39 💰 g:2 ⚖  2|49|38 ═══ α=-1 β=10000 ═══ ⚡ c1
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . o . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -4
+ │  │  ├□═╤═ 🔖 40 💰 g:2 ⚖  2|49|39 ═══ α=-1 β=10000 ═══ ⚡ d5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . o . 5 
+ │  │  │    A B C D E ─── 🍃 -3
+ │  │  ├□═╤═ 🔖 41 💰 g:2 ⚖  2|49|40 ═══ α=-1 β=10000 ═══ ⚡ d4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . o . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□═╤═ 🔖 42 💰 g:2 ⚖  2|49|41 ═══ α=-1 β=10000 ═══ ⚡ d3
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x o . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□═╤═ 🔖 43 💰 g:2 ⚖  2|49|42 ═══ α=-1 β=10000 ═══ ⚡ d2
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . o . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□═╤═ 🔖 44 💰 g:2 ⚖  2|49|43 ═══ α=-1 β=10000 ═══ ⚡ d1
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . o . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -3
+ │  │  ├□═╤═ 🔖 45 💰 g:2 ⚖  2|49|44 ═══ α=-1 β=10000 ═══ ⚡ e5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . o 5 
+ │  │  │    A B C D E ─── 🍃 -4
+ │  │  ├□═╤═ 🔖 46 💰 g:2 ⚖  2|49|45 ═══ α=-1 β=10000 ═══ ⚡ e4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . o 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -3
+ │  │  ├□═╤═ 🔖 47 💰 g:2 ⚖  2|49|46 ═══ α=-1 β=10000 ═══ ⚡ e3
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . x . o 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -4
+ │  │  ├□═╤═ 🔖 48 💰 g:2 ⚖  2|49|47 ═══ α=-1 β=10000 ═══ ⚡ e2
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . o 2 
+ │  │  │  3 . . x . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -3
+ │  │  └□═╤═ 🔖 49 💰 g:2 ⚖  2|49|48 ═══ α=-1 β=10000 ═══ ⚡ e1
+ │  │    4 em Linha (5x5)
+ │  │       A B C D E
+ │  │     1 . . . . o 1 
+ │  │     2 . . . . . 2 
+ │  │     3 . . x . . 3 
+ │  │     4 . . . . . 4 
+ │  │     5 . . . . . 5 
+ │  │       A B C D E ─── 🍃 -4
+ │  ├■ -1 → β
+ │  ├■═╤═ 🔖 18 💰 g:1 🎯 h:-5 ⚖  2|49|49 ═══ α=-10000 β=-1 ═══ ⚡ d3
+ │  │  ├□═╤═ 🔖 50 💰 g:2 ⚖  3|73|49 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . x . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -2
+ │  │  ├□ -2 → α
+ │  │  ├□═╤═ 🔖 51 💰 g:2 ⚖  3|73|50 ═══ α=-2 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . x . 3 
+ │  │  │  4 o . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 ─── 🪓 β(-1) { 🔖 52 🔖 53 🔖 54 … 🔖 71 🔖 72 🔖 73 } #22
+ │  ├■═╤═ 🔖 9 💰 g:1 🎯 h:-5 ⚖  3|73|51 ═══ α=-10000 β=-1 ═══ ⚡ b2
+ │  │  ├□═╤═ 🔖 74 💰 g:2 ⚖  4|97|51 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . x . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -2
+ │  │  ├□ -2 → α
+ │  │  ├□═╤═ 🔖 75 💰 g:2 ⚖  4|97|52 ═══ α=-2 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . x . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 o . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 ─── 🪓 β(-1) { 🔖 76 🔖 77 🔖 78 … 🔖 95 🔖 96 🔖 97 } #22
+ │  ├■═╤═ 🔖 12 💰 g:1 🎯 h:-5 ⚖  4|97|53 ═══ α=-10000 β=-1 ═══ ⚡ c4
+ │  │  ├□═╤═ 🔖 98 💰 g:2 ⚖  5|121|53 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . x . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -2
+ │  │  ├□ -2 → α
+ │  │  ├□═╤═ 🔖 99 💰 g:2 ⚖  5|121|54 ═══ α=-2 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 o . x . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 ─── 🪓 β(-1) { 🔖 100 🔖 101 🔖 102 … 🔖 119 🔖 120 🔖 121 } #22
+ │  ├■═╤═ 🔖 17 💰 g:1 🎯 h:-5 ⚖  5|121|55 ═══ α=-10000 β=-1 ═══ ⚡ d4
+ │  │  ├□═╤═ 🔖 122 💰 g:2 ⚖  6|145|55 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . x . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -2
+ │  │  ├□ -2 → α
+ │  │  ├□═╤═ 🔖 123 💰 g:2 ⚖  6|145|56 ═══ α=-2 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 o . . x . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 ─── 🪓 β(-1) { 🔖 124 🔖 125 🔖 126 … 🔖 143 🔖 144 🔖 145 } #22
+ │  ├■═╤═ 🔖 14 💰 g:1 🎯 h:-5 ⚖  6|145|57 ═══ α=-10000 β=-1 ═══ ⚡ c2
+ │  │  ├□═╤═ 🔖 146 💰 g:2 ⚖  7|169|57 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . x . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -2
+ │  │  ├□ -2 → α
+ │  │  ├□═╤═ 🔖 147 💰 g:2 ⚖  7|169|58 ═══ α=-2 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . x . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 o . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 ─── 🪓 β(-1) { 🔖 148 🔖 149 🔖 150 … 🔖 167 🔖 168 🔖 169 } #22
+ │  ├■═╤═ 🔖 8 💰 g:1 🎯 h:-5 ⚖  7|169|59 ═══ α=-10000 β=-1 ═══ ⚡ b3
+ │  │  ├□═╤═ 🔖 170 💰 g:2 ⚖  8|193|59 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . x . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -2
+ │  │  ├□ -2 → α
+ │  │  ├□═╤═ 🔖 171 💰 g:2 ⚖  8|193|60 ═══ α=-2 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . x . . . 3 
+ │  │  │  4 o . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 ─── 🪓 β(-1) { 🔖 172 🔖 173 🔖 174 … 🔖 191 🔖 192 🔖 193 } #22
+ │  ├■═╤═ 🔖 19 💰 g:1 🎯 h:-5 ⚖  8|193|61 ═══ α=-10000 β=-1 ═══ ⚡ d2
+ │  │  ├□═╤═ 🔖 194 💰 g:2 ⚖  9|217|61 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . x . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -2
+ │  │  ├□ -2 → α
+ │  │  ├□═╤═ 🔖 195 💰 g:2 ⚖  9|217|62 ═══ α=-2 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . x . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 o . . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 ─── 🪓 β(-1) { 🔖 196 🔖 197 🔖 198 … 🔖 215 🔖 216 🔖 217 } #22
+ │  ├■═╤═ 🔖 7 💰 g:1 🎯 h:-5 ⚖  9|217|63 ═══ α=-10000 β=-1 ═══ ⚡ b4
+ │  │  ├□═╤═ 🔖 218 💰 g:2 ⚖  10|241|63 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . x . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -2
+ │  │  ├□ -2 → α
+ │  │  ├□═╤═ 🔖 219 💰 g:2 ⚖  10|241|64 ═══ α=-2 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 o x . . . 4 
+ │  │  │  5 . . . . . 5 
+ │  │  │    A B C D E ─── 🍃 -1
+ │  │  ├□ -1 ─── 🪓 β(-1) { 🔖 220 🔖 221 🔖 222 … 🔖 239 🔖 240 🔖 241 } #22
+ │  ├■═╤═ 🔖 20 💰 g:1 🎯 h:-3 ⚖  10|241|65 ═══ α=-10000 β=-1 ═══ ⚡ d1
+ │  │  ├□═╤═ 🔖 242 💰 g:2 ⚖  11|265|65 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . x . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 243 🔖 244 🔖 245 … 🔖 263 🔖 264 🔖 265 } #23
+ │  ├■═╤═ 🔖 16 💰 g:1 🎯 h:-3 ⚖  11|265|66 ═══ α=-10000 β=-1 ═══ ⚡ d5
+ │  │  ├□═╤═ 🔖 266 💰 g:2 ⚖  12|289|66 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . x . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 267 🔖 268 🔖 269 … 🔖 287 🔖 288 🔖 289 } #23
+ │  ├■═╤═ 🔖 2 💰 g:1 🎯 h:-3 ⚖  12|289|67 ═══ α=-10000 β=-1 ═══ ⚡ a4
+ │  │  ├□═╤═ 🔖 290 💰 g:2 ⚖  13|313|67 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 x . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 291 🔖 292 🔖 293 … 🔖 311 🔖 312 🔖 313 } #23
+ │  ├■═╤═ 🔖 6 💰 g:1 🎯 h:-3 ⚖  13|313|68 ═══ α=-10000 β=-1 ═══ ⚡ b5
+ │  │  ├□═╤═ 🔖 314 💰 g:2 ⚖  14|337|68 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o x . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 315 🔖 316 🔖 317 … 🔖 335 🔖 336 🔖 337 } #23
+ │  ├■═╤═ 🔖 10 💰 g:1 🎯 h:-3 ⚖  14|337|69 ═══ α=-10000 β=-1 ═══ ⚡ b1
+ │  │  ├□═╤═ 🔖 338 💰 g:2 ⚖  15|361|69 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . x . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 339 🔖 340 🔖 341 … 🔖 359 🔖 360 🔖 361 } #23
+ │  ├■═╤═ 🔖 4 💰 g:1 🎯 h:-3 ⚖  15|361|70 ═══ α=-10000 β=-1 ═══ ⚡ a2
+ │  │  ├□═╤═ 🔖 362 💰 g:2 ⚖  16|385|70 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 x . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 363 🔖 364 🔖 365 … 🔖 383 🔖 384 🔖 385 } #23
+ │  ├■═╤═ 🔖 24 💰 g:1 🎯 h:-3 ⚖  16|385|71 ═══ α=-10000 β=-1 ═══ ⚡ e2
+ │  │  ├□═╤═ 🔖 386 💰 g:2 ⚖  17|409|71 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . x 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 387 🔖 388 🔖 389 … 🔖 407 🔖 408 🔖 409 } #23
+ │  ├■═╤═ 🔖 22 💰 g:1 🎯 h:-3 ⚖  17|409|72 ═══ α=-10000 β=-1 ═══ ⚡ e4
+ │  │  ├□═╤═ 🔖 410 💰 g:2 ⚖  18|433|72 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . x 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 411 🔖 412 🔖 413 … 🔖 431 🔖 432 🔖 433 } #23
+ │  ├■═╤═ 🔖 21 💰 g:1 🎯 h:-2 ⚖  18|433|73 ═══ α=-10000 β=-1 ═══ ⚡ e5
+ │  │  ├□═╤═ 🔖 434 💰 g:2 ⚖  19|457|73 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . x 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 435 🔖 436 🔖 437 … 🔖 455 🔖 456 🔖 457 } #23
+ │  ├■═╤═ 🔖 23 💰 g:1 🎯 h:-2 ⚖  19|457|74 ═══ α=-10000 β=-1 ═══ ⚡ e3
+ │  │  ├□═╤═ 🔖 458 💰 g:2 ⚖  20|481|74 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . x 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 459 🔖 460 🔖 461 … 🔖 479 🔖 480 🔖 481 } #23
+ │  ├■═╤═ 🔖 1 💰 g:1 🎯 h:-2 ⚖  20|481|75 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  ├□═╤═ 🔖 482 💰 g:2 ⚖  21|505|75 ═══ α=-10000 β=-1 ═══ ⚡ a4
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 o . . . . 4 
+ │  │  │  5 x . . . . 5 
+ │  │  │    A B C D E ─── 🍃 1
+ │  │  ├□ 1 ─── 🪓 β(-1) { 🔖 483 🔖 484 🔖 485 … 🔖 503 🔖 504 🔖 505 } #23
+ │  ├■═╤═ 🔖 11 💰 g:1 🎯 h:-2 ⚖  21|505|76 ═══ α=-10000 β=-1 ═══ ⚡ c5
+ │  │  ├□═╤═ 🔖 506 💰 g:2 ⚖  22|529|76 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . x . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 507 🔖 508 🔖 509 … 🔖 527 🔖 528 🔖 529 } #23
+ │  ├■═╤═ 🔖 15 💰 g:1 🎯 h:-2 ⚖  22|529|77 ═══ α=-10000 β=-1 ═══ ⚡ c1
+ │  │  ├□═╤═ 🔖 530 💰 g:2 ⚖  23|553|77 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . x . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 531 🔖 532 🔖 533 … 🔖 551 🔖 552 🔖 553 } #23
+ │  ├■═╤═ 🔖 3 💰 g:1 🎯 h:-2 ⚖  23|553|78 ═══ α=-10000 β=-1 ═══ ⚡ a3
+ │  │  ├□═╤═ 🔖 554 💰 g:2 ⚖  24|577|78 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 . . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 x . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 555 🔖 556 🔖 557 … 🔖 575 🔖 576 🔖 577 } #23
+ │  ├■═╤═ 🔖 5 💰 g:1 🎯 h:-2 ⚖  24|577|79 ═══ α=-10000 β=-1 ═══ ⚡ a1
+ │  │  ├□═╤═ 🔖 578 💰 g:2 ⚖  25|601|79 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │  │  │ 4 em Linha (5x5)
+ │  │  │    A B C D E
+ │  │  │  1 x . . . . 1 
+ │  │  │  2 . . . . . 2 
+ │  │  │  3 . . . . . 3 
+ │  │  │  4 . . . . . 4 
+ │  │  │  5 o . . . . 5 
+ │  │  │    A B C D E ─── 🍃 0
+ │  │  ├□ 0 ─── 🪓 β(-1) { 🔖 579 🔖 580 🔖 581 … 🔖 599 🔖 600 🔖 601 } #23
+ │  └■═╤═ 🔖 25 💰 g:1 🎯 h:-2 ⚖  25|601|80 ═══ α=-10000 β=-1 ═══ ⚡ e1
+ │     ├□═╤═ 🔖 602 💰 g:2 ⚖  26|625|80 ═══ α=-10000 β=-1 ═══ ⚡ a5
+ │     │ 4 em Linha (5x5)
+ │     │    A B C D E
+ │     │  1 . . . . x 1 
+ │     │  2 . . . . . 2 
+ │     │  3 . . . . . 3 
+ │     │  4 . . . . . 4 
+ │     │  5 o . . . . 5 
+ │     │    A B C D E ─── 🍃 0
+ │     ├□ 0 ─── 🪓 β(-1) { 🔖 603 🔖 604 🔖 605 … 🔖 623 🔖 624 🔖 625 } #23 HT: reutilização 0.31 vezes 
+ ├─ Parâmetros ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>3 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>10 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>3 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>2 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0
+ ├─ ⚙   ─ <span style="color:gray">P15=</span>200
+═╧═ 🏁  Execução terminada ⏱   8ms  ═══
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> DETALHE | <span style="color:gray">P3(SEMENTE):</span> 1
 │ <span style="color:gray">P4(LIMITE_TEMPO):</span> 10 | <span style="color:gray">P5(LIMITE_ITERACOES):</span> 0 | <span style="color:gray">P6(VER_ACOES):</span> 4 | <span style="color:gray">P7(LIMITE):</span> 3
-│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0 | <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2
-│ <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0 | <span style="color:gray">P15(HEUR_BASE):</span> 200 | <span style="color:gray">P16(HEUR_MAX_PONTOS):</span> 100
+│ <span style="color:gray">P8(ESTADOS_REPETIDOS):</span> ignorar | <span style="color:gray">P10(RUIDO_HEURISTICA):</span> 0 | <span style="color:gray">P11(BARALHAR_SUCESSORES):</span> 0
+│ <span style="color:gray">P12(ORDENAR_SUCESSORES):</span> 2 | <span style="color:gray">P13(PODA_HEURISTICA):</span> 0 | <span style="color:gray">P14(PODA_CEGA):</span> 0
+│ <span style="color:gray">P15(HEUR_BASE):</span> 200
 └──────────────────────────────────────────────────────────────────────
- │ 4 em Linha (4x4)
- │    A B C D
- │  1 . . . . 1 
- │  2 . . . . 2 
- │  3 . . . . 3 
- │  4 x . . . 4 
- │    A B C D
+ │ 4 em Linha (5x5)
+ │    A B C D E
+ │  1 . . . . . 1 
+ │  2 . . . . . 2 
+ │  3 . . x . . 3 
+ │  4 . . . . . 4 
+ │  5 . . . . . 5 
+ │    A B C D E
 ┌─ ⚖ Indicadores ─────────────────────────────────────────────────────
-│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 6 | <span style="color:gray">I3(Iterações):</span> 46 | <span style="color:gray">I4(IND_EXPANSOES):</span> 17 | 
-│ <span style="color:gray">I5(IND_GERACOES):</span> 256 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
+│ <span style="color:gray">I1(IND_CUSTO):</span> 0 | <span style="color:gray">I2(Tempo(ms)):</span> 8 | <span style="color:gray">I3(Iterações):</span> 81 | <span style="color:gray">I4(IND_EXPANSOES):</span> 26 | 
+│ <span style="color:gray">I5(IND_GERACOES):</span> 625 | <span style="color:gray">I6(IND_LOWER_BOUND):</span> 0
 └──────────────────────────────────────────────────────────────────────
 ...
 Opção: 
 </pre>
 </p>
 <p>Realçamos os seguintes pontos:</p><ul>
-<li>alfa que inicialmente é -10000 é atualizado para para -49 no estado 17 (<code>├□ -49 → α</code>),</li>
-<li>logo no estado 19 ocorre nova atualização para 0 (<code>├□ 0 → α</code>)</li>
-<li>o estado 20 é igual ao estado 17 (eixo diagonal), no entanto não é removido devido a não existir simetrias implementadas.</li>
-<li>o segundo ramo com c3, estado 10, expande para o estado 32 com custo 0, é imediatamente cortado (<code>├□ 0 ─── 🪓 β(0) { 🔖 33 🔖 34 🔖 35 … 🔖 44 🔖 45 🔖 46 } #14</code>).</li>
-<li>o mesmo ocorre nos restantes lances, poupando a análise de inúmeros estados</li>
+<li>alfa que inicialmente é -10000 é atualizado para para -4 no estado 26 (<code>├□ -4 → α</code>),</li>
+<li>logo no estado 27 ocorre nova atualização para -3 (<code>├□ -3 → α</code>)</li>
+<li>o estado 29 é igual ao estado 27 (eixo horizontal), no entanto não é removido devido a não existir simetrias implementadas.</li>
+<li>o segundo ramo com d3, estado 18, expande para o estado 50 e depois 51 com custo -1, é imediatamente cortado (<code>├□ -1 ─── 🪓 β(-1) { 🔖 52 🔖 53 🔖 54 … 🔖 71 🔖 72 🔖 73 } #22</code>).</li>
+<li>o mesmo ocorre em muitos outros lances, poupando a análise de inúmeros estados</li>
 </ul>
 <p>O motivo para não se implementar simetrias, é que em tabuleiros grandes acabam por ocorrer apenas no início do jogo. Todo o resto do tempo a normalizar o estado, é tempo que é desperdiçado sem que exista real vantagem. No entanto se o mesmo estado ocorrer exatamente no mesmo formato, a hashtable está ligada e o estado é reutilizado.</p>
 <p>A qualidade da heurística é aqui crítico.</p>
-<p>Temos dois parâmetros que influenciam a heurística:</p><ul>
+<p>Temos um parâmetro que influencia a heurística:</p><ul>
 <li>HEUR_BASE - Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao doubro e é o valor de omissão)</li>
-<li>HEUR_MAX_PONTOS - Pontos de ameaças máximos, para colocar a função sigmoide a saturar por essa altura (ficando perto do +/-infinito)</li>
 </ul>
-<p>Esta heurística é genérica, e pode ser utilizada em problemas que se possam calcular ameaças a K jogadas, como é o caso dos jogos em que se pretende fazer K marcas em linha. No entanto os valores de omissão podem não ser os melhores, pelo que serão alvo de teste.</p>
+<p>Esta heurística é genérica, e pode ser utilizada em problemas que se possam calcular ameaças a K jogadas, como é o caso dos jogos em que se pretende fazer K marcas em linha. As ameaças a K jogadas é idêntico a uma medida de distância até um estado objetivo, relaxando o facto de se ter um adversário, ou seja, imaginando que apenas um jogador joga. O valores de omissão pode não ser o melhor, pelo que será alvo de teste.</p>
 <p><a class="anchor" id="jel-a4"></a></p>
 <h2><a class="anchor" id="autotoc_md113"></a>
 Ação 4 - Torneio Profundidade</h2>
