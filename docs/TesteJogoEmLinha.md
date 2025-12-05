@@ -19,13 +19,15 @@ No Linux na pasta `.../TProcura/Adversa/Teste$` execute `make` seguido de `./bin
 - [Ação 9 - Torneio Niveis](#jel-a9)
 
 
-```entrada
+\htmlonly
+<pre>
 ┌─ Teste TProcuraAdversa ──────┐
 │ 1 - Jogo do Galo             │
 │ 2 - Jogo Em Linha            │
 └──────────────────────────────┘
-Opção: 2
-```
+Opção:  <span class="entrada">2</span>
+</pre>
+\endhtmlonly
 
 Este jogo tem várias instâncias, com as dimensões e tamanho da linha para ganhar. Existe ainda 
 a variante em que as peças caem pela ação da gravidade.
@@ -36,7 +38,8 @@ a variante em que as peças caem pela ação da gravidade.
 
 Vamos entrar no Jogo Em Linha, insira: **2.**
 
-```entrada
+\htmlonly
+<pre>
 Jogo Em Linha
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ <span style="color:gray">P1(ALGORITMO):</span> MiniMax alfa/beta | <span style="color:gray">P2(NIVEL_DEBUG):</span> NADA | <span style="color:gray">P3(SEMENTE):</span> 1
@@ -56,7 +59,8 @@ Jogo Em Linha
 │ 5 ⚖   <span style="color:gray">Indicadores</span> │ 6 ►   <span style="color:gray">Executar</span> │ 7 🛠️  <span style="color:gray">Configurações</span> │ 8 🧪  <span style="color:gray">Teste</span>  │
 └───────────────────┴────────────────┴─────────────────────┴──────────────┘
 Opção: 
-```
+</pre>
+\endhtmlonly
 
 O primeiro jogo é o Jogo do Galo, em que se tem de fazer 3 em linha, num tabuleiro de 3x3. 
 Vamos ver outras instâncias. 
@@ -72,8 +76,8 @@ Insira:
 - **1; 9.** jogo 6 em Linha (11x9)
 - **1; 10.** jogo 6 em Linha (12x12)
 
-
-```entrada
+\htmlonly
+<pre>
 4 em Linha (5x5)
    A B C D E
  1 . . . . . 1 
@@ -178,8 +182,8 @@ _______________________________________________________________________________
 12 . . . . . . . . . . . . 12 
    A B C D E F G H I J K L
 _______________________________________________________________________________
-
-```
+</pre>
+\endhtmlonly
 
 Temos diferentes tabuleiros, resultando em ramificações distintas. 
 A variante da gravidade, reduz consideravelmente a ramificação.
@@ -201,7 +205,8 @@ Introduza:
 - **6.** duas das ameaças passa a 2 jogadas, e anula simultaneamente 2 ameaças adversárias a 3 jogadas
 - **6; 6; 6; ....** termine o jogo, verificando que todas as ameaças são respondidas
 
-```entrada
+\htmlonly
+<pre>
  │ 4 em Linha (5x5)
  │    A B C D E
  │  1 . . . . . 1 
@@ -234,7 +239,8 @@ Introduza:
  │  4 . o x o x 4 
  │  5 o x . o . 5 
  │    A B C D E
-```
+</pre>
+\endhtmlonly
 
 Este teste é importante para despistar algum erro na heurística. 
 
@@ -244,7 +250,8 @@ Execute também um jogo, verificando que as ameaças vão sendo respondidas: **6
 
 Se conseguir chegar ao final, verifica que há empate:
 
-```entrada
+\htmlonly
+<pre>
  │ 6 em Linha (12x12)
  │    A B C D E F G H I J K L
  │  1 x x x o o o o x x o o o 1 
@@ -260,7 +267,8 @@ Se conseguir chegar ao final, verifica que há empate:
  │ 11 x o o x x x x x o o o x 11 
  │ 12 o x x o o x x o x o x o 12 
  │    A B C D E F G H I J K L
-```
+</pre>
+\endhtmlonly
 
 Não temos portanto motivo para não considerar a heurística válida.
 
@@ -952,72 +960,11 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -G 1 
 </details>
 <details>
   <summary>Ver execução:</summary>
-\htmlonly
 <pre>
-═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>60 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
-═╪═ Configurações ═══
- ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>0
- ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>0
- ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>1
- │ ...
- ├─ ⚙  [10] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>0
- ├─ ⚙  [11] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>1
- ├─ ⚙  [12] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>1
-═╧═══════════════════
-═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:1320   📄 Instâncias: 10   🛠️ Configurações: 12   🖥️ Processos: 48.
- ├─ ⏱ 1' 1" 704ms     📋 201   📄 6     🛠️ 10    🛠️ 4     🖥️ 29    ⚖  
- ├─ ⏱ 2' 4" 994ms     📋 215   📄 8     🛠️ 10    🛠️ 4     🖥️ 30    ⚖  
- ├─ ⏱ 3' 10" 498ms    📋 242   📄 8     🛠️ 10    🛠️ 0     🖥️ 45    ⚖  
- ├─ ⏱ 4' 13" 454ms    📋 294   📄 8     🛠️ 9     🛠️ 4     🖥️ 24    ⚖  
- ├─ ⏱ 5' 15" 392ms    📋 362   📄 7     🛠️ 9     🛠️ 10    🖥️ 39    ⚖  
- ├─ ⏱ 6' 29" 324ms    📋 375   📄 6     🛠️ 8     🛠️ 6     🖥️ 31    ⚖  
- ├─ ⏱ 7' 35" 427ms    📋 405   📄 10    🛠️ 9     🛠️ 1     🖥️ 40    ⚖  
- ├─ ⏱ 8' 45" 254ms    📋 431   📄 8     🛠️ 8     🛠️ 3     🖥️ 13    ⚖  
- ├─ ⏱ 9' 49" 841ms    📋 464   📄 8     🛠️ 7     🛠️ 9     🖥️ 24    ⚖  
- ├─ ⏱ 10' 50" 191ms   📋 565   📄 7     🛠️ 8     🛠️ 4     🖥️ 7     ⚖  
- ├─ ⏱ 11' 51" 493ms   📋 594   📄 7     🛠️ 6     🛠️ 7     🖥️ 30    ⚖  
- ├─ ⏱ 12' 59" 993ms   📋 683   📄 6     🛠️ 5     🛠️ 10    🖥️ 3     ⚖  
- ├─ ⏱ 14' 132ms       📋 773   📄 10    🛠️ 5     🛠️ 0     🖥️ 7     ⚖  
- ├─ ⏱ 15' 6" 472ms    📋 803   📄 9     🛠️ 4     🛠️ 9     🖥️ 25    ⚖  
- ├─ ⏱ 16' 6" 642ms    📋 845   📄 6     🛠️ 4     🛠️ 3     🖥️ 30    ⚖  
- ├─ ⏱ 17' 10" 734ms   📋 911   📄 9     🛠️ 3     🛠️ 9     🖥️ 40    ⚖  
- ├─ ⏱ 18' 12" 131ms   📋 992   📄 9     🛠️ 2     🛠️ 11    🖥️ 7     ⚖  
- ├─ ⏱ 19' 33" 27ms    📋 1012  📄 9     🛠️ 2     🛠️ 9     🖥️ 22    ⚖  
- ├─ ⏱ 20' 38" 269ms   📋 1025  📄 6     🛠️ 2     🛠️ 8     🖥️ 1     ⚖  
- ├─ ⏱ 21' 44" 254ms   📋 1115  📄 9     🛠️ 2     🛠️ 10    🖥️ 7     ⚖  
- ├─ ⏱ 22' 46" 778ms   📋 1132  📄 7     🛠️ 1     🛠️ 9     🖥️ 42    ⚖  
- ├─ ⏱ 23' 55" 191ms   📋 1151  📄 10    🛠️ 1     🛠️ 6     🖥️ 24    ⚖  
- ├─ ⏱ 24' 56" 915ms   📋 1232  📄 6     🛠️ 0     🛠️ 10    🖥️ 7     ⚖  
- ├─ ⏱ 25' 58" 606ms   📋 1320  📄 10    🛠️ 0     🛠️ 6     🖥️ 41    ⚖  
- ├─ ⏱ 27' 44" 826ms   📋 1320  📄 7     🛠️ 0     🛠️ 10    🖥️ 25    ⚖  
- ├─ ⏱ 29' 24" 327ms   📋 1320  📄 10    🛠️ 10    🛠️ 9     🖥️ 21    ⚖  
- ├─ ⏱ 30' 34" 472ms   📋 1320  📄 10    🛠️ 8     🛠️ 11    🖥️ 17    ⚖  
- ├─ ⏱ 31' 45" 230ms   📋 1320  📄 10    🛠️ 8     🛠️ 5     🖥️ 31    ⚖  
- ├─ ⏱ 32' 50" 813ms   📋 1320  📄 10    🛠️ 8     🛠️ 1     🖥️ 29    ⚖  
- ├─ ⏱ 34' 646ms       📋 1320  📄 10    🛠️ 7     🛠️ 10    🖥️ 6     ⚖  
- ├─ ⏱ 35' 13" 216ms   📋 1320  📄 10    🛠️ 8     🛠️ 9     🖥️ 2     ⚖  
- ├─ ⏱ 37' 16" 785ms   📋 1320  📄 10    🛠️ 5     🛠️ 10    🖥️ 37    ⚖  
- ├─ ⏱ 39' 2" 43ms     📋 1320  📄 10    🛠️ 4     🛠️ 10    🖥️ 19    ⚖  
- ├─ ⏱ 40' 49" 649ms   📋 1320  📄 10    🛠️ 3     🛠️ 10    🖥️ 30    ⚖  
- ├─ ⏱ 42' 40" 370ms   📋 1320  📄 10    🛠️ 2     🛠️ 10    🖥️ 28    ⚖  
- ├─ ⏱ 45' 35" 733ms   📋 1320  📄 10    🛠️ 1     🛠️ 10    🖥️ 3     ⚖  
- ├─ ⏱ 48' 57" 490ms   📋 1320  📄 10    🛠️ 0     🛠️ 10    🖥️ 47    ⚖  
- ├─ ⏱ 54' 51" 376ms   📋 1320  📄 10    🛠️ 8     🛠️ 10    🖥️ 45    ⚖  
- ├─ 📑  Ficheiro Resultados/TorneioProfundidade.csv gravado.
- │  ⏱  Tempo real: 54' 51" 381ms 
- │  ⏱  CPU total: 1d 18h 58' 14" 920ms 
- │  ⏱  Espera do gestor: 54' 51" 338ms 
- │  ⏱  Espera trabalhadores: 16h 16' 26" 181ms 
- │  📊  Utilização:
- │  - Total: 60.8%
- │  - Gestor: 0.0%
- │  - Trabalhadores: 62.1% 
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 54' 51" 381ms ) ═══
+
 </pre>
-\endhtmlonly
 </details>
+\endhtmlonly
 
 Nesta execução podemos ver que a taxa de utilização foi de 60%.
 Este facto deve-se a que houve jogos que levaram muito mais tempo que outros.
