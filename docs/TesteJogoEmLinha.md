@@ -927,7 +927,7 @@ A utilização da procura em profundidade iterativa, permite que quando o tempo 
 Para procurar ver o ganho de profundidade sem perturbação do limite de tempo, vamos colocar neste teste um tempo por jogada de 60 segundos (P4=60).
 Vamos utilizar todas as instâncias, já que a heurística é igual.
 
-- **Tipo de Teste / Objetivo**: Performance (Profundidade, alfa/beta, ordenação)
+- **Tipo de Teste / Objetivo**: Desempenho (Profundidade, alfa/beta, ordenação)
 - **Definição**: Instâncias: 1:10; Configurações: P1=1,2 x P12=0,1 x P7=2:4
 - **Esforço**: (um só jogo, não há aleatoriedade)
 - **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 0 -G 1 -P P2=2 P4=60 P1=1,2 x P12=0,1 x P7=2:4
@@ -961,7 +961,69 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -G 1 
 <details>
   <summary>Ver execução:</summary>
 <pre>
-
+═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>60 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P11=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200<span style="color:gray"> (parâmetros comuns)</span>
+═╪═ Configurações ═══
+ ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>0
+ ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>0
+ ├─ ⚙  [3] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>2 <span style="color:gray">P12=</span>1
+ │ ...
+ ├─ ⚙  [10] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>0
+ ├─ ⚙  [11] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>1
+ ├─ ⚙  [12] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P7=</span>4 <span style="color:gray">P12=</span>1
+═╧═══════════════════
+═╤═ 🧪  Início do Teste (🖥️ 0) ═══
+ ├─ 📋 Tarefas:1320   📄 Instâncias: 10   🛠️ Configurações: 12   🖥️ Processos: 48.
+ ├─ ⏱ 1' 17" 101ms    📋 204   📄 8     🛠️ 11    🛠️ 10    🖥️ 45    ⚖  
+ ├─ ⏱ 2' 19" 706ms    📋 224   📄 7     🛠️ 10    🛠️ 5     🖥️ 33    ⚖  
+ ├─ ⏱ 3' 21" 726ms    📋 245   📄 6     🛠️ 9     🛠️ 8     🖥️ 30    ⚖  
+ ├─ ⏱ 4' 23" 222ms    📋 313   📄 7     🛠️ 10    🛠️ 9     🖥️ 31    ⚖  
+ ├─ ⏱ 5' 34" 532ms    📋 371   📄 8     🛠️ 8     🛠️ 7     🖥️ 24    ⚖  
+ ├─ ⏱ 6' 36" 117ms    📋 383   📄 8     🛠️ 8     🛠️ 9     🖥️ 42    ⚖  
+ ├─ ⏱ 7' 37" 350ms    📋 411   📄 8     🛠️ 8     🛠️ 5     🖥️ 23    ⚖  
+ ├─ ⏱ 8' 38" 728ms    📋 431   📄 9     🛠️ 8     🛠️ 11    🖥️ 19    ⚖  
+ ├─ ⏱ 9' 41" 649ms    📋 463   📄 9     🛠️ 8     🛠️ 9     🖥️ 46    ⚖  
+ ├─ ⏱ 10' 41" 870ms   📋 544   📄 8     🛠️ 7     🛠️ 0     🖥️ 35    ⚖  
+ ├─ ⏱ 11' 45" 128ms   📋 592   📄 9     🛠️ 8     🛠️ 1     🖥️ 44    ⚖  
+ ├─ ⏱ 12' 57" 326ms   📋 683   📄 8     🛠️ 5     🛠️ 9     🖥️ 44    ⚖  
+ ├─ ⏱ 13' 57" 883ms   📋 742   📄 9     🛠️ 5     🛠️ 2     🖥️ 5     ⚖  
+ ├─ ⏱ 14' 58" 249ms   📋 795   📄 6     🛠️ 4     🛠️ 9     🖥️ 44    ⚖  
+ ├─ ⏱ 16' 704ms       📋 832   📄 9     🛠️ 4     🛠️ 5     🖥️ 23    ⚖  
+ ├─ ⏱ 17' 6" 250ms    📋 903   📄 8     🛠️ 3     🛠️ 9     🖥️ 34    ⚖  
+ ├─ ⏱ 18' 6" 436ms    📋 941   📄 7     🛠️ 3     🛠️ 6     🖥️ 46    ⚖  
+ ├─ ⏱ 19' 16" 489ms   📋 1011  📄 8     🛠️ 3     🛠️ 8     🖥️ 34    ⚖  
+ ├─ ⏱ 20' 17" 24ms    📋 1022  📄 9     🛠️ 3     🛠️ 10    🖥️ 6     ⚖  
+ ├─ ⏱ 21' 18" 920ms   📋 1064  📄 7     🛠️ 2     🛠️ 4     🖥️ 5     ⚖  
+ ├─ ⏱ 22' 40" 653ms   📋 1122  📄 10    🛠️ 2     🛠️ 9     🖥️ 23    ⚖  
+ ├─ ⏱ 23' 48" 363ms   📋 1133  📄 9     🛠️ 2     🛠️ 8     🖥️ 34    ⚖  
+ ├─ ⏱ 24' 51" 376ms   📋 1172  📄 9     🛠️ 1     🛠️ 4     🖥️ 37    ⚖  
+ ├─ ⏱ 25' 52" 792ms   📋 1226  📄 5     🛠️ 0     🛠️ 10    🖥️ 35    ⚖  
+ ├─ ⏱ 26' 54" 996ms   📋 1320  📄 10    🛠️ 0     🛠️ 6     🖥️ 15    ⚖  
+ ├─ ⏱ 27' 57" 507ms   📋 1320  📄 8     🛠️ 0     🛠️ 8     🖥️ 36    ⚖  
+ ├─ ⏱ 29' 33" 968ms   📋 1320  📄 10    🛠️ 0     🛠️ 9     🖥️ 35    ⚖  
+ ├─ ⏱ 31' 54" 511ms   📋 1320  📄 10    🛠️ 8     🛠️ 7     🖥️ 21    ⚖  
+ ├─ ⏱ 33' 36" 621ms   📋 1320  📄 10    🛠️ 8     🛠️ 4     🖥️ 28    ⚖  
+ ├─ ⏱ 34' 46" 728ms   📋 1320  📄 10    🛠️ 8     🛠️ 0     🖥️ 2     ⚖  
+ ├─ ⏱ 35' 52" 699ms   📋 1320  📄 10    🛠️ 7     🛠️ 8     🖥️ 24    ⚖  
+ ├─ ⏱ 36' 55" 59ms    📋 1320  📄 10    🛠️ 8     🛠️ 9     🖥️ 40    ⚖  
+ ├─ ⏱ 38' 59" 499ms   📋 1320  📄 10    🛠️ 5     🛠️ 8     🖥️ 26    ⚖  
+ ├─ ⏱ 40' 49" 510ms   📋 1320  📄 10    🛠️ 4     🛠️ 10    🖥️ 13    ⚖  
+ ├─ ⏱ 42' 29" 988ms   📋 1320  📄 10    🛠️ 3     🛠️ 8     🖥️ 1     ⚖  
+ ├─ ⏱ 44' 34" 183ms   📋 1320  📄 10    🛠️ 2     🛠️ 10    🖥️ 7     ⚖  
+ ├─ ⏱ 47' 37" 400ms   📋 1320  📄 10    🛠️ 1     🛠️ 10    🖥️ 18    ⚖  
+ ├─ ⏱ 51' 16" 550ms   📋 1320  📄 10    🛠️ 0     🛠️ 10    🖥️ 5     ⚖  
+ ├─ ⏱ 52' 51" 632ms   📋 1320  📄 10    🛠️ 10    🛠️ 8     🖥️ 32    ⚖  
+ ├─ ⏱ 57' 43" 975ms   📋 1320  📄 10    🛠️ 8     🛠️ 10    🖥️ 31    ⚖  
+ ├─ 📑  Ficheiro Resultados/TorneioProfundidade.csv gravado.
+ │  ⏱  Tempo real: 57' 43" 981ms 
+ │  ⏱  CPU total: 1d 21h 13' 27" 97ms 
+ │  ⏱  Espera do gestor: 57' 43" 937ms 
+ │  ⏱  Espera trabalhadores: 17h 23' 35" 384ms 
+ │  📊  Utilização:
+ │  - Total: 60.3%
+ │  - Gestor: 0.0%
+ │  - Trabalhadores: 61.5% 
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 57' 43" 981ms ) ═══
 </pre>
 </details>
 \endhtmlonly
@@ -970,72 +1032,77 @@ Nesta execução podemos ver que a taxa de utilização foi de 60%.
 Este facto deve-se a que houve jogos que levaram muito mais tempo que outros.
 A última tarefa (jogo) foi colocada no minuto 25, tendo os processadores que ficaram livres após esse instante ficado sem trabalho até ao final.
 
-Para medir a performance de cada configuração e lado (branco/preto), vamos analisar o desempenho e eficácia:
-- Desempenho: Tempo médio por jogada em segundos
+Para medir a performance de cada configuração e lado (branco/preto), vamos analisar a eficiência e eficácia:
+- Eficiência: Tempo médio por jogada em segundos
 - Eficácia: Média de pontos (vitória 1 ponto, empate 0.5 pontos, derrota 0 pontos)
 
-Desta forma mantemos a ligação de desempenho à performance temporal, e eficácia à taxa de sucesso, sendo de certa forma uma probabilidade de vitória.
+Desta forma a eficiência avalia o custo temporal da jogada, ou seja, recursos computacionais (assumindo o tempo o principoal),
+enquanto eficácia avalia a qualidade do resultado obtido, ou taxa de suceesso, podendo ser interpretado como uma probabilidade de vitória.
 
 Vamos ver neste primeiro relatório a performance do jogador branco: 
 
 |  | P1(ALGORITMO) | P12(ORDENAR_SUCESSORES) | P7(LIMITE)<br>2 | 3 | 4 |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| DesempenhoBranco | 1:MiniMax | ID | 0,001 | 0,04 | 3,852 |
-| | | Heurística | 0,001 | 0,04 | 3,732 |
-| | 2:MiniMax alfa/beta | ID | 0,001 | 0,01 | 0,607 |
-| | | Heurística | 0,001 | 0,006 | 0,093 |
-| EficáciaBranco | 1:MiniMax | ID | 0,45 | 0,53 | 0,6 |
-| | | Heurística | 0,45 | 0,55 | 0,63 |
-| | 2:MiniMax alfa/beta | ID | 0,45 | 0,53 | 0,6 |
-| | | Heurística | 0,45 | 0,55 | 0,63 |
-| Total TempoBrancoJog  | | | 0,001 | 0,024 | 2,068 |
-| Total DesempenhoBranco | | | 0,45 | 0,54 | 0,62 |
+| EficiênciaBranco | 1:MiniMax | ID | 0,001 | 0,041 | 3,982 |
+| | | Heurística | 0,001 | 0,041 | 3,853 |
+| | 2:MiniMax alfa/beta | ID | 0,001 | 0,011 | 0,603 |
+| | | Heurística | 0,001 | 0,006 | 0,098 |
+| EficáciaBranco | 1:MiniMax | ID | 0,41 | 0,55 | 0,64 |
+| | | Heurística | 0,41 | 0,6 | 0,65 |
+| | 2:MiniMax alfa/beta | ID | 0,41 | 0,55 | 0,64 |
+| | | Heurística | 0,41 | 0,6 | 0,65 |
+| Total EficiênciaBranco | | | 0,001 | 0,025 | 2,131 |
+| Total EficáciaBranco | | | 0,41 | 0,57 | 0,64 |
 
 Podemos neste ponto concluir que:
-- A profundidade tem um impacto muito grande no desempenho, aumentando exponencialmente, para mais de 2 segundos por jogada no nível 4. Naturalmente que estes resultados são médias de 10 instâncias, sendo as instâncias maiores as responsáveis por estes tempos.
-- Maior profundidade resulta em melhor eficácia, confirmando a hipótese inicial, embora não sejam ganhos elevados.
-- As diferenças de eficácia entre alfa/beta e sem cortes, não são observáveis, nem com a ordenação.
-- Em termos de desempenho registamos um grande ganho para os cortes alfa/beta, e a ordenação dos sucessores por heurística, que se torna mais evidente com o aumento da profundidade.
+- A profundidade tem um impacto muito grande na eficiência, aumentando o tempo exponencialmente, para mais de 3 segundos por jogada no nível 4. Naturalmente que estes resultados são médias de 10 instâncias, sendo as instâncias maiores as responsáveis por estes tempos.
+- Maior profundidade resulta em melhor eficácia, confirmando a hipótese inicial. Neste torneio cada nível aumenta em cerca de 10%.
+- As diferenças de eficácia entre alfa/beta e sem cortes, não são observáveis, e a ordenação aparenta ter ligeira vantagem.
+- Em termos de eficiência registamos um grande ganho para os cortes alfa/beta, e ainda mais se estiver com a ordenação dos sucessores por heurística. Quanto maior a profundidade maior o ganho.
 
 Vamos agora ver a mesma tabela para o jogador a preto:
 
 |  | P1(ALGORITMO) | P12(ORDENAR_SUCESSORES) | P7(LIMITE)<br> 2 | 3 | 4 |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| DesempenhoPreto | 1:MiniMax | ID | 0 | 0,039 | 3,35 |
-| | | Heurística | 0 | 0,043 | 3,546 |
-| | 2:MiniMax alfa/beta | ID | 0 | 0,01 | 0,486 |
-| | | Heurística | 0 | 0,006 | 0,092 |
-| EficáciaPreto | 1:MiniMax | ID | 0,38 | 0,5 | 0,49 |
-| | | Heurística | 0,38 | 0,52 | 0,52 |
-| | 2:MiniMax alfa/beta | ID | 0,38 | 0,5 | 0,49 |
-| | | Heurística | 0,38 | 0,52 | 0,52 |
-| Total TempoPretoJog | | | 0 | 0,024 | 1,87 |
-| Total DesempenhoPreto | | | 0,38 | 0,51 | 0,51 |
+| EficiênciaPreto | 1:MiniMax | ID | 0,001 | 0,041 | 3,447 |
+| | | Heurística | 0,001 | 0,047 | 3,446 |
+| | 2:MiniMax alfa/beta | ID | 0,001 | 0,011 | 0,489 |
+| | | Heurística | 0,001 | 0,007 | 0,09 |
+| EficáciaPreto | 1:MiniMax | ID | 0,36 | 0,5 | 0,6 |
+| | | Heurística | 0,36 | 0,45 | 0,48 |
+| | 2:MiniMax alfa/beta | ID | 0,36 | 0,5 | 0,6 |
+| | | Heurística | 0,36 | 0,45 | 0,48 |
+| Total EficiênciaPreto | | | 0,001 | 0,026 | 1,867 |
+| Total EficáciaPreto | | | 0,36 | 0,48 | 0,54 |
 
-As conclusões são semelhantes, tendo que se registar que a eficácia do jogador a preto é ligeiramente inferior ao do jogador a branco.
+As conclusões são semelhantes, tendo que se registar que a eficácia do jogador a preto
+é ligeiramente inferior ao do jogador a branco.
 
 Podemose ver também do lado das instâncias, o número de vitórias, empates e derrotas:
 
 | Instância | Vitória Preta | Empate | Vitória Branca |
 |:---:|:---:|:---:|:---:|
 | 1 | | 132 | |
-| 2 | | 132 | |
-| 3 | 4 | 126 | 2 |
-| 4 | 42 | 12 | 78 |
-| 5 | 48 | 8 | 76 |
-| 6 | 16 | 116 | |
-| 7 | 2 | 100 | 30 |
-| 8 | | 116 | 16 |
+| 2 | | 88 | 44 |
+| 3 | 40 | 14 | 78 |
+| 4 | 66 | 24 | 42 |
+| 5 | 52 | | 80 |
+| 6 | 60 | 18 | 54 |
+| 7 | 10 | 96 | 26 |
+| 8 | 4 | 112 | 16 |
 | 9 | | 132 | |
 | 10 | | 132 | |
-| Total Geral | 112 | 1006 | 202 |
+| Total Geral | 232 | 748 | 340 |
 
-Algumas instâncias têm apenas empates, outras têm poucos empates, existindo ainda instâncias só com empates e vitórias brancas / pretas.
+Podemos observar:
+- Na instância 1, o jogo do Galo, apenas houve empates.
+- A segunda instância houve apenas dois resultados, empates e vitória branca, pelo que o jogo não se encontra equilibrado.
+- A terceira instância aumenta apenas uma coluna à instância 2 mas o jogo fica já com bastantes vitórias e derrotas.
+- As instâncias de gravidade, da 4 à 6, podemos ver que quase não há empates, sendo todas bastante disputadas neste torneio.
+- Nas instâncias maiores, da 7 à 10, impera o empate, podendo significar que é simples defender contra ameaças do adversário
 
-As instâncias correspondem a jogos diferentes, tanto no tamanho como no aspeto da gravidade que limita o número de movimentos possíveis.
-
-Pretendemos optimizar cada instância, mas de momento temos conclusões gerais:
-- Os cortes alfa/beta, bem como a ordenação dos sucessores, são benéficos em termos de desempenho, sem impacto na eficácia.
+Temos ainda bastantes parâmetros por optimizar, mas de momento temos as seguintes conclusões gerais:
+- Os cortes alfa/beta, bem como a ordenação dos sucessores, são benéficos em termos de eficiência, sem grande impacto na eficácia.
 - A profundidade aumenta a força de jogo, mas o tempo aumenta exponencialmente.
 
 Tempos elevados por jogada não são viáveis nem para testes empíricos, nem para jogar contra jogadores humanos.
@@ -1045,17 +1112,17 @@ Tempos elevados por jogada não são viáveis nem para testes empíricos, nem pa
 ## Ação 5 - Torneio Iterativo
 
 Na ação anterior, tem um torneio que compara configurações, utilizando tempos distintos.
-Assim a comparação não é justa, embora tenha permitido observar vantagens nos cortes alfa/beta e ordenação dos sucessores. 
+Assim a comparação não é justa, embora tenha permitido observar vantagens nos cortes alfa/beta e ordenação dos sucessores.
 
-Vamos agora utilizar a profundidade iterativa, e dando exatamente o mesmo tempo por jogada, procurar ver se a eficácia
+Vamos agora utilizar a profundidade iterativa, e dar exatamente o mesmo tempo por jogada, para procurar ver se a eficácia
 dos coertes alfa/beta e ordenação dos sucessores se mantém. 
 
 Com o método iterativo a profundidade vai iterativamente sendo aumentada.
 Esta estratégia tem a vantagem de ter sempre um movemento pronto a jogar quando o tempo acaba.
-Por outro lado, utiliza o tempo existente, se der para explorar mais um nível, esse é explorado.
+Por outro lado utiliza o tempo existente, se der para explorar mais um nível, esse é explorado.
 
 Temos mais uma opção na ordennação, que é o valor 2 (omissão). Este valor, para além de ordenar os sucessores,
-guarda em memória cada estado, e resultado de análises anteriores. Quando o estado ocorre novamnete, se estiver 
+guarda em memória cada estado, o resultado de análises anteriores. Quando o estado ocorre novamnete, se estiver 
 em memória, o seu valor é utilizado em vez de ser executada a heurítica ou uma procura e determinada profundidade.
 Para tal é guardada alguma informação sobre o estado de modo a sabermos se podemos utilizar o valor assim que exista
 possibilidade de reutilização. Esta opção tem naturalmente mais impacto na procura iterativa, em que os estados
@@ -1099,7 +1166,7 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioIterativo -M 1 -P P2=2 
 \htmlonly
 <pre>
 ═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>1 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>100<span style="color:gray"> (parâmetros comuns)</span>
+ ├─ 🛠️  ─ <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>1 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P10=</span>0 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0 <span style="color:gray">P15=</span>200<span style="color:gray"> (parâmetros comuns)</span>
 ═╪═ Configurações ═══
  ├─ ⚙  [1] ─ <span style="color:gray">P1=</span>1 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0
  ├─ ⚙  [2] ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P11=</span>0 <span style="color:gray">P12=</span>0
@@ -1111,40 +1178,40 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioIterativo -M 1 -P P2=2 
 ═╧═══════════════════
 ═╤═ 🧪  Início do Teste (🖥️ 0) ═══
  ├─ 📋 Tarefas:1320   📄 Instâncias: 10   🛠️ Configurações: 12   🖥️ Processos: 48.
- ├─ ⏱ 1' 848ms        📋 101   📄 6     🛠️ 11    🛠️ 5     🖥️ 39    ⚖  
- ├─ ⏱ 2' 934ms        📋 149   📄 3     🛠️ 10    🛠️ 8     🖥️ 30    ⚖  
- ├─ ⏱ 3' 1" 593ms     📋 207   📄 6     🛠️ 10    🛠️ 6     🖥️ 6     ⚖  
- ├─ ⏱ 4' 2" 56ms      📋 266   📄 9     🛠️ 10    🛠️ 3     🖥️ 3     ⚖  
- ├─ ⏱ 5' 2" 907ms     📋 319   📄 4     🛠️ 9     🛠️ 3     🖥️ 32    ⚖  
- ├─ ⏱ 6' 3" 259ms     📋 374   📄 7     🛠️ 9     🛠️ 3     🖥️ 18    ⚖  
- ├─ ⏱ 7' 5" 715ms     📋 429   📄 4     🛠️ 8     🛠️ 3     🖥️ 23    ⚖  
- ├─ ⏱ 8' 5" 787ms     📋 486   📄 7     🛠️ 8     🛠️ 3     🖥️ 9     ⚖  
- ├─ ⏱ 9' 7" 282ms     📋 553   📄 6     🛠️ 7     🛠️ 5     🖥️ 3     ⚖  
- ├─ ⏱ 10' 7" 362ms    📋 605   📄 10    🛠️ 7     🛠️ 8     🖥️ 46    ⚖  
- ├─ ⏱ 11' 7" 593ms    📋 662   📄 1     🛠️ 6     🛠️ 0     🖥️ 18    ⚖  
- ├─ ⏱ 12' 8" 229ms    📋 714   📄 5     🛠️ 5     🛠️ 10    🖥️ 1     ⚖  
- ├─ ⏱ 13' 10" 414ms   📋 772   📄 4     🛠️ 5     🛠️ 2     🖥️ 25    ⚖  
- ├─ ⏱ 14' 11" 501ms   📋 827   📄 8     🛠️ 5     🛠️ 0     🖥️ 45    ⚖  
- ├─ ⏱ 15' 11" 638ms   📋 882   📄 9     🛠️ 4     🛠️ 8     🖥️ 32    ⚖  
- ├─ ⏱ 16' 12" 32ms    📋 936   📄 5     🛠️ 3     🛠️ 11    🖥️ 37    ⚖  
- ├─ ⏱ 17' 12" 726ms   📋 995   📄 9     🛠️ 3     🛠️ 8     🖥️ 36    ⚖  
- ├─ ⏱ 18' 13" 108ms   📋 1051  📄 5     🛠️ 2     🛠️ 10    🖥️ 1     ⚖  
- ├─ ⏱ 19' 14" 429ms   📋 1103  📄 3     🛠️ 2     🛠️ 1     🖥️ 15    ⚖  
- ├─ ⏱ 20' 14" 501ms   📋 1158  📄 5     🛠️ 1     🛠️ 8     🖥️ 36    ⚖  
- ├─ ⏱ 21' 14" 568ms   📋 1215  📄 9     🛠️ 1     🛠️ 8     🖥️ 5     ⚖  
- ├─ ⏱ 22' 15" 594ms   📋 1275  📄 9     🛠️ 1     🛠️ 2     🖥️ 13    ⚖  
- ├─ ⏱ 23' 16" 347ms   📋 1320  📄 8     🛠️ 0     🛠️ 6     🖥️ 47    ⚖  
- ├─ ⏱ 24' 18" 274ms   📋 1320  📄 10    🛠️ 0     🛠️ 6     🖥️ 11    ⚖  
+ ├─ ⏱ 1' 4" 439ms     📋 95    📄 6     🛠️ 11    🛠️ 8     🖥️ 23    ⚖  
+ ├─ ⏱ 2' 6" 701ms     📋 156   📄 2     🛠️ 10    🛠️ 7     🖥️ 6     ⚖  
+ ├─ ⏱ 3' 7" 662ms     📋 212   📄 9     🛠️ 10    🛠️ 8     🖥️ 8     ⚖  
+ ├─ ⏱ 4' 8" 32ms      📋 268   📄 2     🛠️ 9     🛠️ 7     🖥️ 5     ⚖  
+ ├─ ⏱ 5' 9" 119ms     📋 322   📄 5     🛠️ 9     🛠️ 3     🖥️ 1     ⚖  
+ ├─ ⏱ 6' 11" 942ms    📋 382   📄 8     🛠️ 9     🛠️ 1     🖥️ 45    ⚖  
+ ├─ ⏱ 7' 11" 981ms    📋 436   📄 2     🛠️ 8     🛠️ 1     🖥️ 38    ⚖  
+ ├─ ⏱ 8' 13" 330ms    📋 486   📄 4     🛠️ 7     🛠️ 9     🖥️ 31    ⚖  
+ ├─ ⏱ 9' 14" 573ms    📋 554   📄 4     🛠️ 7     🛠️ 1     🖥️ 47    ⚖  
+ ├─ ⏱ 10' 17" 570ms   📋 607   📄 4     🛠️ 6     🛠️ 8     🖥️ 10    ⚖  
+ ├─ ⏱ 11' 17" 930ms   📋 661   📄 1     🛠️ 6     🛠️ 0     🖥️ 46    ⚖  
+ ├─ ⏱ 12' 17" 936ms   📋 722   📄 7     🛠️ 5     🛠️ 8     🖥️ 2     ⚖  
+ ├─ ⏱ 13' 18" 771ms   📋 782   📄 2     🛠️ 5     🛠️ 0     🖥️ 17    ⚖  
+ ├─ ⏱ 14' 21" 670ms   📋 838   📄 10    🛠️ 5     🛠️ 6     🖥️ 29    ⚖  
+ ├─ ⏱ 15' 22" 116ms   📋 895   📄 2     🛠️ 4     🛠️ 0     🖥️ 15    ⚖  
+ ├─ ⏱ 16' 22" 180ms   📋 948   📄 5     🛠️ 3     🛠️ 9     🖥️ 4     ⚖  
+ ├─ ⏱ 17' 22" 594ms   📋 1009  📄 4     🛠️ 3     🛠️ 0     🖥️ 36    ⚖  
+ ├─ ⏱ 18' 22" 736ms   📋 1067  📄 9     🛠️ 3     🛠️ 0     🖥️ 13    ⚖  
+ ├─ ⏱ 19' 26" 915ms   📋 1116  📄 4     🛠️ 2     🛠️ 0     🖥️ 31    ⚖  
+ ├─ ⏱ 20' 33" 623ms   📋 1177  📄 5     🛠️ 1     🛠️ 7     🖥️ 31    ⚖  
+ ├─ ⏱ 21' 36" 409ms   📋 1239  📄 4     🛠️ 0     🛠️ 11    🖥️ 43    ⚖  
+ ├─ ⏱ 22' 36" 483ms   📋 1291  📄 1     🛠️ 0     🛠️ 4     🖥️ 14    ⚖  
+ ├─ ⏱ 23' 38" 402ms   📋 1320  📄 10    🛠️ 0     🛠️ 10    🖥️ 6     ⚖  
+ ├─ ⏱ 24' 39" 199ms   📋 1320  📄 10    🛠️ 0     🛠️ 4     🖥️ 3     ⚖  
  ├─ 📑  Ficheiro Resultados/TorneioIterativo.csv gravado.
- │  ⏱  Tempo real: 25' 16" 76ms 
- │  ⏱  CPU total: 19h 47' 35" 578ms 
- │  ⏱  Espera do gestor: 25' 16" 23ms 
- │  ⏱  Espera trabalhadores: 1h 8' 44" 222ms 
+ │  ⏱  Tempo real: 25' 16" 730ms 
+ │  ⏱  CPU total: 19h 48' 6" 292ms 
+ │  ⏱  Espera do gestor: 25' 16" 675ms 
+ │  ⏱  Espera trabalhadores: 1h 8' 22" 444ms 
  │  📊  Utilização:
- │  - Total: 92.2%
+ │  - Total: 92.3%
  │  - Gestor: 0.0%
  │  - Trabalhadores: 94.2% 
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 25' 16" 76ms ) ═══
+═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 25' 16" 730ms ) ═══
 </pre>
 \endhtmlonly
 </details>
@@ -1154,72 +1221,71 @@ Podemos ver agora a eficácia do jogador das brancas:
 
 | P11(BARALHAR_SUCESSORES) | P12(ORDENAR_SUCESSORES) | 1:MiniMax | 2:MiniMax alfa/beta |
 |:---:|:---:|:---:|:---:|
-| ID | ID | 0,48 | 0,49 |
-| | Heurística | 0,45 | 0,55 |
-| | Memória | 0,46 | 0,53 |
-| Baralhar | ID | 0,46 | 0,47 |
-| | Heurística | 0,52 | 0,58 |
-| | Memória | 0,51 | 0,55 |
-| Total Geral || 0,48 | 0,53 |
+| ID | ID | 0,5 | 0,64 |
+| | Heurística | 0,55 | 0,68 |
+| | Memória | 0,51 | 0,7 |
+| Baralhar | ID | 0,51 | 0,65 |
+| | Heurística | 0,55 | 0,64 |
+| | Memória | 0,62 | 0,64 |
+| Total Geral || 0,54 | 0,66 |
 
 
 E do jogador das pretas:
 
 | P11(BARALHAR_SUCESSORES) | P12(ORDENAR_SUCESSORES) | 1:MiniMax | 2:MiniMax alfa/beta |
 |:---:|:---:|:---:|:---:|
-| ID | ID | 0,44 | 0,42 |
-| | Heurística | 0,43 | 0,53 |
-| | Memória | 0,49 | 0,57 |
-| Baralhar | ID | 0,48 | 0,48 |
-| | Heurística | 0,47 | 0,58 |
-| | Memória | 0,5 | 0,55 |
-| Total Geral || 0,47 | 0,52 |
+| ID | ID | 0,41 | 0,39 |
+| | Heurística | 0,28 | 0,45 |
+| | Memória | 0,36 | 0,44 |
+| Baralhar | ID | 0,32 | 0,46 |
+| | Heurística | 0,36 | 0,49 |
+| | Memória | 0,36 | 0,49 |
+| Total Geral || 0,35 | 0,45 |
 
 
-Em ambos os casos o MiniMax com cortes alfa/beta é mais eficaz, e a ordenação dos sucessores por heurística também traz vantagens.
-A utilização de memória traz vantagens, mas menores que a ordenação por heurística.
+Em ambos os casos o MiniMax com cortes alfa/beta é mais eficaz em cerca de 10%.
+A ordenação dos sucessores por heurística ou memória traz vantagens embora não tão evidentes.
+A utilização de memória vs ordenação por heurística, não aparenta existir vantagens.
 Esta situação pode ser devida ao facto de utilizarmos apenas 1 segundo por jogada, e a vantagem de recuperar uma posição já vista é menos vincada.
-A baralhação dos sucessores traz ligeira vantagem quando combinada com a ordenação por heurística,
-e principalmente não piora, pelo que passamos a utilizar para poder fazer vários jogos entre duas configurações. 
+A baralhação dos sucessores não aparenta trazer vantagem, mas também não prejudica grandemente,
+pelo que passamos a utilizar para poder fazer vários jogos entre duas configurações. 
 
 Na tabela de resultados por instância, podemos ver o seguinte:
 
 | Instância | Vitória Preta | Empate | Vitória Branca |
 |:---:|:---:|:---:|:---:|
 | 1 | | 132 | |
-| 2 | | 132 | |
-| 3 | | 122 | 10 |
-| 4 | 65 | 9 | 58 |
-| 5 | 69 | 1 | 62 |
-| 6 | |  132 | |
-| 7 | 9 | 109 | 14 |
-| 8 | 11 | 98 | 23 |
+| 2 | 1 | 40 | 91 |
+| 3 | 1 | 12 | 119 |
+| 4 | 53 | 18 | 61 |
+| 5 | 49 | | 83 |
+| 6 | 67 | 2 | 63 |
+| 7 | 11 | 104 | 17 |
+| 8 | 13 | 95 | 24 |
 | 9 | | 132 | |
 | 10 | | 132 | |
-| Total Geral | 154 | 999 | 167 |
+| Total Geral | 195 | 667 | 458 |
 
-Vê-se aqui claramente as instâncias 4 e 5 como mais decisivas, quase sem empates e bastante equilíbrio entre vitórias brancas e pretas.
-Nestas instâncias existe uma menor ramificação, devido à gravidade, o que permite maior profundidade e maior eficácia dos algoritmos.
-Por outro lado, as restantes instâncias podem não estar equilibradas e ser fácil defender contra qualquer tentativa de vitória. 
+
+As instâncias iniciais, apenas a 1 tem apenas empates, as restantes têm agora mais vitórias brancas que empates.
+As instâncias de gravidade mantêm-se equilibradas e com empates raros.
+As instâncias maiores mantêm o empate como resultado mais provável.
 
 Naturalmente que mais tempo por jogada os resultados podem ser diferentes.
-
 
 \anchor jel-a6
 ## Ação 6 - Torneio Heurística
 
 Vamos agora estudar o impacto da heurística na eficácia do jogador.
 
-Temos os seguintes parâmetros:
+Temos o seguinte parâmetro:
 - HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).
-	- Valores testados: P15=100,150,200,300,400,800 
-- HEUR_MAX_PONTOS - Pontos de ameaças máximos, para colocar a função sigmoide a saturar por essa altura.
-	- Valores testados: P16=10,20,50,100,200,500
+	- Valores testados: P15=101,110,125,150,200,250,300,400,600,800 
 
-- **Tipo de Teste / Objetivo**: Eficácia (HEUR_BASE, HEUR_MAX_PONTOS)
-- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=100,150,200,300,400,800 x P16=10,20,50,100,200,500
+- **Tipo de Teste / Objetivo**: Eficácia (HEUR_BASE)
+- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800 
 - **Esforço**: (um só jogo)
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,150,200,300,400,800 x P16=10,20,50,100,200,500
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800 
 
 <details>
   <summary>Ver script: torneioHeuristica.sh</summary>
@@ -1240,225 +1306,14 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioHeuristica
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=100,150,200,300,400,800 x P16=10,20,50,100,200,500
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800
 </pre>
 </details>
 <details>
   <summary>Ver execução:</summary>
 \htmlonly
 <pre>
-═╤═ Instâncias ═══ { 📄 1 📄 2 📄 3 📄 4 📄 5 📄 6 📄 7 📄 8 📄 9 📄 10 } 
- ├─ 🛠️  ─ <span style="color:gray">P1=</span>2 <span style="color:gray">P2=</span>2 <span style="color:gray">P3=</span>1 <span style="color:gray">P4=</span>1 <span style="color:gray">P5=</span>0 <span style="color:gray">P6=</span>4 <span style="color:gray">P7=</span>0 <span style="color:gray">P8=</span>1 <span style="color:gray">P11=</span>1 <span style="color:gray">P12=</span>1 <span style="color:gray">P13=</span>0 <span style="color:gray">P14=</span>0<span style="color:gray"> (parâmetros comuns)</span>
-═╪═ Configurações ═══
- ├─ ⚙  [1] ─ <span style="color:gray">P15=</span>100 <span style="color:gray">P16=</span>10
- ├─ ⚙  [2] ─ <span style="color:gray">P15=</span>150 <span style="color:gray">P16=</span>10
- ├─ ⚙  [3] ─ <span style="color:gray">P15=</span>200 <span style="color:gray">P16=</span>10
- │ ...
- ├─ ⚙  [34] ─ <span style="color:gray">P15=</span>300 <span style="color:gray">P16=</span>500
- ├─ ⚙  [35] ─ <span style="color:gray">P15=</span>400 <span style="color:gray">P16=</span>500
- ├─ ⚙  [36] ─ <span style="color:gray">P15=</span>800 <span style="color:gray">P16=</span>500
-═╧═══════════════════
-═╤═ 🧪  Início do Teste (🖥️ 0) ═══
- ├─ 📋 Tarefas:12600   📄 Instâncias: 10   🛠️ Configurações: 36   🖥️ Processos: 48.
- ├─ ⏱ 1' 313ms        📋 113   📄 6     🛠️ 35    🛠️ 29    🖥️ 19    ⚖  
- ├─ ⏱ 2' 323ms        📋 186   📄 3     🛠️ 35    🛠️ 18    🖥️ 4     ⚖  
- ├─ ⏱ 3' 973ms        📋 266   📄 9     🛠️ 35    🛠️ 19    🖥️ 36    ⚖  
- ├─ ⏱ 4' 1" 777ms     📋 342   📄 8     🛠️ 35    🛠️ 9     🖥️ 29    ⚖  
- ├─ ⏱ 5' 2" 351ms     📋 415   📄 7     🛠️ 34    🛠️ 30    🖥️ 40    ⚖  
- ├─ ⏱ 6' 3" 566ms     📋 489   📄 6     🛠️ 34    🛠️ 27    🖥️ 37    ⚖  
- ├─ ⏱ 7' 3" 654ms     📋 558   📄 5     🛠️ 34    🛠️ 17    🖥️ 34    ⚖  
- ├─ ⏱ 8' 4" 668ms     📋 633   📄 9     🛠️ 34    🛠️ 17    🖥️ 18    ⚖  
- ├─ ⏱ 9' 4" 981ms     📋 713   📄 8     🛠️ 34    🛠️ 0     🖥️ 38    ⚖  
- ├─ ⏱ 10' 5" 150ms    📋 778   📄 3     🛠️ 33    🛠️ 28    🖥️ 22    ⚖  
- ├─ ⏱ 11' 6" 135ms    📋 841   📄 10    🛠️ 33    🛠️ 23    🖥️ 24    ⚖  
- ├─ ⏱ 12' 8" 111ms    📋 908   📄 5     🛠️ 33    🛠️ 17    🖥️ 30    ⚖  
- ├─ ⏱ 13' 8" 162ms    📋 976   📄 8     🛠️ 33    🛠️ 11    🖥️ 44    ⚖  
- ├─ ⏱ 14' 8" 297ms    📋 1046  📄 3     🛠️ 33    🛠️ 2     🖥️ 1     ⚖  
- ├─ ⏱ 15' 10" 579ms   📋 1106  📄 9     🛠️ 33    🛠️ 3     🖥️ 45    ⚖  
- ├─ ⏱ 16' 11" 725ms   📋 1167  📄 9     🛠️ 32    🛠️ 31    🖥️ 41    ⚖  
- ├─ ⏱ 17' 11" 749ms   📋 1227  📄 6     🛠️ 32    🛠️ 22    🖥️ 33    ⚖  
- ├─ ⏱ 18' 12" 621ms   📋 1292  📄 6     🛠️ 32    🛠️ 16    🖥️ 14    ⚖  
- ├─ ⏱ 19' 12" 645ms   📋 1360  📄 1     🛠️ 32    🛠️ 4     🖥️ 15    ⚖  
- ├─ ⏱ 20' 13" 103ms   📋 1423  📄 5     🛠️ 31    🛠️ 35    🖥️ 35    ⚖  
- ├─ ⏱ 21' 14" 323ms   📋 1478  📄 8     🛠️ 31    🛠️ 34    🖥️ 47    ⚖  
- ├─ ⏱ 22' 14" 878ms   📋 1536  📄 10    🛠️ 31    🛠️ 34    🖥️ 43    ⚖  
- ├─ ⏱ 23' 15" 389ms   📋 1591  📄 8     🛠️ 31    🛠️ 22    🖥️ 29    ⚖  
- ├─ ⏱ 24' 15" 667ms   📋 1646  📄 9     🛠️ 31    🛠️ 18    🖥️ 38    ⚖  
- ├─ ⏱ 25' 17" 517ms   📋 1704  📄 9     🛠️ 31    🛠️ 12    🖥️ 23    ⚖  
- ├─ ⏱ 26' 19" 105ms   📋 1766  📄 6     🛠️ 31    🛠️ 3     🖥️ 44    ⚖  
- ├─ ⏱ 27' 19" 837ms   📋 1835  📄 7     🛠️ 31    🛠️ 0     🖥️ 40    ⚖  
- ├─ ⏱ 28' 21" 559ms   📋 1903  📄 2     🛠️ 30    🛠️ 20    🖥️ 20    ⚖  
- ├─ ⏱ 29' 21" 677ms   📋 1962  📄 7     🛠️ 30    🛠️ 22    🖥️ 9     ⚖  
- ├─ ⏱ 30' 21" 981ms   📋 2028  📄 8     🛠️ 30    🛠️ 9     🖥️ 12    ⚖  
- ├─ ⏱ 31' 22" 926ms   📋 2096  📄 2     🛠️ 30    🛠️ 1     🖥️ 21    ⚖  
- ├─ ⏱ 32' 23" 10ms    📋 2159  📄 4     🛠️ 29    🛠️ 32    🖥️ 16    ⚖  
- ├─ ⏱ 33' 23" 387ms   📋 2235  📄 9     🛠️ 29    🛠️ 25    🖥️ 7     ⚖  
- ├─ ⏱ 34' 25" 16ms    📋 2311  📄 7     🛠️ 29    🛠️ 17    🖥️ 21    ⚖  
- ├─ ⏱ 35' 25" 127ms   📋 2386  📄 2     🛠️ 29    🛠️ 7     🖥️ 19    ⚖  
- ├─ ⏱ 36' 25" 532ms   📋 2463  📄 8     🛠️ 29    🛠️ 1     🖥️ 26    ⚖  
- ├─ ⏱ 37' 26" 403ms   📋 2535  📄 2     🛠️ 28    🛠️ 27    🖥️ 34    ⚖  
- ├─ ⏱ 38' 27" 848ms   📋 2601  📄 2     🛠️ 28    🛠️ 20    🖥️ 35    ⚖  
- ├─ ⏱ 39' 28" 778ms   📋 2676  📄 2     🛠️ 28    🛠️ 13    🖥️ 32    ⚖  
- ├─ ⏱ 40' 29" 852ms   📋 2756  📄 10    🛠️ 28    🛠️ 20    🖥️ 1     ⚖  
- ├─ ⏱ 41' 31" 670ms   📋 2835  📄 7     🛠️ 27    🛠️ 35    🖥️ 23    ⚖  
- ├─ ⏱ 42' 32" 210ms   📋 2895  📄 8     🛠️ 27    🛠️ 33    🖥️ 31    ⚖  
- ├─ ⏱ 43' 33" 117ms   📋 2959  📄 3     🛠️ 27    🛠️ 20    🖥️ 20    ⚖  
- ├─ ⏱ 44' 34" 31ms    📋 3026  📄 3     🛠️ 27    🛠️ 13    🖥️ 45    ⚖  
- ├─ ⏱ 45' 34" 113ms   📋 3094  📄 6     🛠️ 27    🛠️ 11    🖥️ 2     ⚖  
- ├─ ⏱ 46' 34" 338ms   📋 3164  📄 2     🛠️ 26    🛠️ 35    🖥️ 11    ⚖  
- ├─ ⏱ 47' 35" 185ms   📋 3222  📄 4     🛠️ 26    🛠️ 31    🖥️ 42    ⚖  
- ├─ ⏱ 48' 36" 649ms   📋 3282  📄 9     🛠️ 26    🛠️ 31    🖥️ 43    ⚖  
- ├─ ⏱ 49' 36" 981ms   📋 3348  📄 4     🛠️ 26    🛠️ 18    🖥️ 6     ⚖  
- ├─ ⏱ 50' 37" 384ms   📋 3411  📄 5     🛠️ 26    🛠️ 13    🖥️ 36    ⚖  
- ├─ ⏱ 51' 38" 731ms   📋 3479  📄 10    🛠️ 26    🛠️ 16    🖥️ 22    ⚖  
- ├─ ⏱ 52' 39" 176ms   📋 3537  📄 6     🛠️ 26    🛠️ 1     🖥️ 23    ⚖  
- ├─ ⏱ 53' 40" 33ms    📋 3594  📄 9     🛠️ 25    🛠️ 34    🖥️ 1     ⚖  
- ├─ ⏱ 54' 40" 65ms    📋 3649  📄 8     🛠️ 25    🛠️ 27    🖥️ 12    ⚖  
- ├─ ⏱ 55' 40" 512ms   📋 3702  📄 4     🛠️ 25    🛠️ 17    🖥️ 31    ⚖  
- ├─ ⏱ 56' 41" 547ms   📋 3763  📄 5     🛠️ 25    🛠️ 10    🖥️ 1     ⚖  
- ├─ ⏱ 57' 42" 406ms   📋 3823  📄 8     🛠️ 25    🛠️ 9     🖥️ 27    ⚖  
- ├─ ⏱ 58' 43" 398ms   📋 3882  📄 3     🛠️ 24    🛠️ 34    🖥️ 9     ⚖  
- ├─ ⏱ 59' 44" 125ms   📋 3948  📄 4     🛠️ 24    🛠️ 28    🖥️ 3     ⚖  
- ├─ ⏱ 1h 45" 204ms    📋 4017  📄 4     🛠️ 24    🛠️ 21    🖥️ 11    ⚖  
- ├─ ⏱ 1h 1' 46" 193ms  📋 4078  📄 4     🛠️ 24    🛠️ 14    🖥️ 43    ⚖  
- ├─ ⏱ 1h 2' 46" 568ms  📋 4147  📄 6     🛠️ 24    🛠️ 11    🖥️ 25    ⚖  
- ├─ ⏱ 1h 3' 47" 702ms  📋 4212  📄 3     🛠️ 24    🛠️ 0     🖥️ 13    ⚖  
- ├─ ⏱ 1h 4' 48" 504ms  📋 4283  📄 10    🛠️ 24    🛠️ 6     🖥️ 20    ⚖  
- ├─ ⏱ 1h 5' 49" 437ms  📋 4353  📄 2     🛠️ 23    🛠️ 20    🖥️ 47    ⚖  
- ├─ ⏱ 1h 6' 49" 613ms  📋 4426  📄 4     🛠️ 23    🛠️ 15    🖥️ 23    ⚖  
- ├─ ⏱ 1h 7' 50" 176ms  📋 4501  📄 9     🛠️ 23    🛠️ 15    🖥️ 9     ⚖  
- ├─ ⏱ 1h 8' 51" 855ms  📋 4578  📄 4     🛠️ 22    🛠️ 35    🖥️ 23    ⚖  
- ├─ ⏱ 1h 9' 53" 631ms  📋 4648  📄 3     🛠️ 22    🛠️ 27    🖥️ 29    ⚖  
- ├─ ⏱ 1h 10' 54" 403ms  📋 4718  📄 5     🛠️ 22    🛠️ 24    🖥️ 47    ⚖  
- ├─ ⏱ 1h 11' 56" 48ms  📋 4795  📄 2     🛠️ 22    🛠️ 11    🖥️ 36    ⚖  
- ├─ ⏱ 1h 12' 56" 92ms  📋 4877  📄 6     🛠️ 22    🛠️ 9     🖥️ 24    ⚖  
- ├─ ⏱ 1h 13' 56" 266ms  📋 4945  📄 5     🛠️ 21    🛠️ 35    🖥️ 40    ⚖  
- ├─ ⏱ 1h 15' 204ms    📋 5009  📄 3     🛠️ 21    🛠️ 26    🖥️ 2     ⚖  
- ├─ ⏱ 1h 16' 1" 268ms  📋 5078  📄 8     🛠️ 21    🛠️ 20    🖥️ 29    ⚖  
- ├─ ⏱ 1h 17' 1" 426ms  📋 5144  📄 3     🛠️ 21    🛠️ 12    🖥️ 4     ⚖  
- ├─ ⏱ 1h 18' 1" 673ms  📋 5207  📄 7     🛠️ 21    🛠️ 13    🖥️ 47    ⚖  
- ├─ ⏱ 1h 19' 2" 457ms  📋 5276  📄 5     🛠️ 20    🛠️ 35    🖥️ 4     ⚖  
- ├─ ⏱ 1h 20' 2" 602ms  📋 5332  📄 4     🛠️ 20    🛠️ 30    🖥️ 26    ⚖  
- ├─ ⏱ 1h 21' 2" 734ms  📋 5395  📄 2     🛠️ 20    🛠️ 22    🖥️ 4     ⚖  
- ├─ ⏱ 1h 22' 2" 776ms  📋 5459  📄 8     🛠️ 20    🛠️ 22    🖥️ 6     ⚖  
- ├─ ⏱ 1h 23' 2" 874ms  📋 5524  📄 6     🛠️ 20    🛠️ 13    🖥️ 18    ⚖  
- ├─ ⏱ 1h 24' 4" 191ms  📋 5589  📄 5     🛠️ 20    🛠️ 6     🖥️ 41    ⚖  
- ├─ ⏱ 1h 25' 7" 293ms  📋 5646  📄 8     🛠️ 20    🛠️ 1     🖥️ 19    ⚖  
- ├─ ⏱ 1h 26' 7" 434ms  📋 5706  📄 6     🛠️ 19    🛠️ 30    🖥️ 2     ⚖  
- ├─ ⏱ 1h 27' 10" 752ms  📋 5762  📄 6     🛠️ 19    🛠️ 24    🖥️ 34    ⚖  
- ├─ ⏱ 1h 28' 12" 446ms  📋 5818  📄 8     🛠️ 19    🛠️ 20    🖥️ 25    ⚖  
- ├─ ⏱ 1h 29' 16" 282ms  📋 5879  📄 3     🛠️ 19    🛠️ 8     🖥️ 35    ⚖  
- ├─ ⏱ 1h 30' 16" 349ms  📋 5942  📄 6     🛠️ 19    🛠️ 6     🖥️ 20    ⚖  
- ├─ ⏱ 1h 31' 16" 579ms  📋 6002  📄 7     🛠️ 19    🛠️ 3     🖥️ 39    ⚖  
- ├─ ⏱ 1h 32' 17" 150ms  📋 6069  📄 9     🛠️ 18    🛠️ 33    🖥️ 46    ⚖  
- ├─ ⏱ 1h 33' 18" 42ms  📋 6134  📄 3     🛠️ 18    🛠️ 19    🖥️ 14    ⚖  
- ├─ ⏱ 1h 34' 18" 185ms  📋 6199  📄 8     🛠️ 18    🛠️ 17    🖥️ 28    ⚖  
- ├─ ⏱ 1h 35' 18" 644ms  📋 6264  📄 4     🛠️ 18    🛠️ 6     🖥️ 30    ⚖  
- ├─ ⏱ 1h 36' 19" 226ms  📋 6328  📄 8     🛠️ 18    🛠️ 4     🖥️ 37    ⚖  
- ├─ ⏱ 1h 37' 20" 692ms  📋 6414  📄 5     🛠️ 17    🛠️ 33    🖥️ 29    ⚖  
- ├─ ⏱ 1h 38' 20" 771ms  📋 6494  📄 6     🛠️ 17    🛠️ 18    🖥️ 34    ⚖  
- ├─ ⏱ 1h 39' 21" 69ms  📋 6576  📄 2     🛠️ 17    🛠️ 8     🖥️ 34    ⚖  
- ├─ ⏱ 1h 40' 21" 581ms  📋 6658  📄 9     🛠️ 17    🛠️ 3     🖥️ 31    ⚖  
- ├─ ⏱ 1h 41' 22" 349ms  📋 6729  📄 3     🛠️ 16    🛠️ 29    🖥️ 29    ⚖  
- ├─ ⏱ 1h 42' 23" 842ms  📋 6799  📄 4     🛠️ 16    🛠️ 23    🖥️ 21    ⚖  
- ├─ ⏱ 1h 43' 23" 896ms  📋 6870  📄 1     🛠️ 16    🛠️ 13    🖥️ 36    ⚖  
- ├─ ⏱ 1h 44' 24" 179ms  📋 6945  📄 6     🛠️ 16    🛠️ 12    🖥️ 12    ⚖  
- ├─ ⏱ 1h 45' 24" 357ms  📋 7028  📄 2     🛠️ 15    🛠️ 34    🖥️ 21    ⚖  
- ├─ ⏱ 1h 46' 24" 973ms  📋 7084  📄 7     🛠️ 15    🛠️ 29    🖥️ 15    ⚖  
- ├─ ⏱ 1h 47' 25" 770ms  📋 7148  📄 4     🛠️ 15    🛠️ 23    🖥️ 39    ⚖  
- ├─ ⏱ 1h 48' 25" 913ms  📋 7215  📄 5     🛠️ 15    🛠️ 18    🖥️ 17    ⚖  
- ├─ ⏱ 1h 49' 27" 462ms  📋 7283  📄 2     🛠️ 15    🛠️ 7     🖥️ 17    ⚖  
- ├─ ⏱ 1h 50' 27" 550ms  📋 7353  📄 10    🛠️ 15    🛠️ 0     🖥️ 20    ⚖  
- ├─ ⏱ 1h 51' 30" 881ms  📋 7416  📄 10    🛠️ 15    🛠️ 7     🖥️ 24    ⚖  
- ├─ ⏱ 1h 52' 33" 520ms  📋 7477  📄 6     🛠️ 14    🛠️ 28    🖥️ 33    ⚖  
- ├─ ⏱ 1h 53' 34" 149ms  📋 7538  📄 3     🛠️ 14    🛠️ 18    🖥️ 42    ⚖  
- ├─ ⏱ 1h 54' 34" 179ms  📋 7605  📄 8     🛠️ 14    🛠️ 11    🖥️ 38    ⚖  
- ├─ ⏱ 1h 55' 34" 190ms  📋 7676  📄 2     🛠️ 14    🛠️ 3     🖥️ 3     ⚖  
- ├─ ⏱ 1h 56' 35" 77ms  📋 7735  📄 2     🛠️ 13    🛠️ 33    🖥️ 24    ⚖  
- ├─ ⏱ 1h 57' 36" 831ms  📋 7788  📄 8     🛠️ 13    🛠️ 33    🖥️ 15    ⚖  
- ├─ ⏱ 1h 58' 36" 889ms  📋 7845  📄 7     🛠️ 13    🛠️ 29    🖥️ 4     ⚖  
- ├─ ⏱ 1h 59' 37" 280ms  📋 7899  📄 8     🛠️ 13    🛠️ 22    🖥️ 44    ⚖  
- ├─ ⏱ 2h 37" 509ms    📋 7957  📄 6     🛠️ 13    🛠️ 15    🖥️ 36    ⚖  
- ├─ ⏱ 2h 1' 37" 557ms  📋 8018  📄 2     🛠️ 13    🛠️ 4     🖥️ 2     ⚖  
- ├─ ⏱ 2h 2' 37" 681ms  📋 8075  📄 2     🛠️ 12    🛠️ 34    🖥️ 23    ⚖  
- ├─ ⏱ 2h 3' 38" 478ms  📋 8143  📄 8     🛠️ 12    🛠️ 34    🖥️ 28    ⚖  
- ├─ ⏱ 2h 4' 41" 110ms  📋 8208  📄 9     🛠️ 12    🛠️ 29    🖥️ 17    ⚖  
- ├─ ⏱ 2h 5' 42" 366ms  📋 8271  📄 6     🛠️ 12    🛠️ 19    🖥️ 17    ⚖  
- ├─ ⏱ 2h 6' 42" 597ms  📋 8343  📄 8     🛠️ 12    🛠️ 14    🖥️ 2     ⚖  
- ├─ ⏱ 2h 7' 42" 842ms  📋 8405  📄 10    🛠️ 12    🛠️ 14    🖥️ 39    ⚖  
- ├─ ⏱ 2h 8' 42" 921ms  📋 8477  📄 5     🛠️ 12    🛠️ 0     🖥️ 25    ⚖  
- ├─ ⏱ 2h 9' 43" 469ms  📋 8562  📄 8     🛠️ 11    🛠️ 21    🖥️ 31    ⚖  
- ├─ ⏱ 2h 10' 44" 249ms  📋 8654  📄 2     🛠️ 11    🛠️ 10    🖥️ 32    ⚖  
- ├─ ⏱ 2h 11' 44" 988ms  📋 8733  📄 3     🛠️ 11    🛠️ 3     🖥️ 11    ⚖  
- ├─ ⏱ 2h 12' 46" 490ms  📋 8813  📄 5     🛠️ 10    🛠️ 34    🖥️ 2     ⚖  
- ├─ ⏱ 2h 13' 46" 956ms  📋 8888  📄 10    🛠️ 10    🛠️ 26    🖥️ 8     ⚖  
- ├─ ⏱ 2h 14' 47" 464ms  📋 8964  📄 3     🛠️ 10    🛠️ 16    🖥️ 5     ⚖  
- ├─ ⏱ 2h 15' 48" 27ms  📋 9039  📄 10    🛠️ 10    🛠️ 23    🖥️ 2     ⚖  
- ├─ ⏱ 2h 16' 48" 892ms  📋 9124  📄 4     🛠️ 10    🛠️ 1     🖥️ 38    ⚖  
- ├─ ⏱ 2h 17' 49" 311ms  📋 9185  📄 7     🛠️ 9     🛠️ 29    🖥️ 43    ⚖  
- ├─ ⏱ 2h 18' 49" 509ms  📋 9248  📄 4     🛠️ 9     🛠️ 23    🖥️ 1     ⚖  
- ├─ ⏱ 2h 19' 49" 698ms  📋 9314  📄 5     🛠️ 9     🛠️ 18    🖥️ 15    ⚖  
- ├─ ⏱ 2h 20' 50" 382ms  📋 9379  📄 8     🛠️ 9     🛠️ 15    🖥️ 13    ⚖  
- ├─ ⏱ 2h 21' 50" 882ms  📋 9454  📄 5     🛠️ 9     🛠️ 4     🖥️ 22    ⚖  
- ├─ ⏱ 2h 22' 53" 984ms  📋 9516  📄 9     🛠️ 9     🛠️ 2     🖥️ 46    ⚖  
- ├─ ⏱ 2h 23' 56" 984ms  📋 9577  📄 6     🛠️ 8     🛠️ 28    🖥️ 13    ⚖  
- ├─ ⏱ 2h 24' 57" 363ms  📋 9638  📄 3     🛠️ 8     🛠️ 18    🖥️ 27    ⚖  
- ├─ ⏱ 2h 25' 57" 630ms  📋 9703  📄 2     🛠️ 8     🛠️ 11    🖥️ 27    ⚖  
- ├─ ⏱ 2h 26' 58" 831ms  📋 9776  📄 2     🛠️ 8     🛠️ 3     🖥️ 17    ⚖  
- ├─ ⏱ 2h 28' 2" 113ms  📋 9836  📄 8     🛠️ 8     🛠️ 3     🖥️ 34    ⚖  
- ├─ ⏱ 2h 29' 2" 482ms  📋 9891  📄 3     🛠️ 7     🛠️ 28    🖥️ 19    ⚖  
- ├─ ⏱ 2h 30' 3" 510ms  📋 9947  📄 5     🛠️ 7     🛠️ 23    🖥️ 41    ⚖  
- ├─ ⏱ 2h 31' 5" 956ms  📋 10002 📄 6     🛠️ 7     🛠️ 20    🖥️ 39    ⚖  
- ├─ ⏱ 2h 32' 9" 516ms  📋 10064 📄 2     🛠️ 7     🛠️ 10    🖥️ 4     ⚖  
- ├─ ⏱ 2h 33' 9" 608ms  📋 10125 📄 2     🛠️ 7     🛠️ 3     🖥️ 35    ⚖  
- ├─ ⏱ 2h 34' 9" 664ms  📋 10186 📄 8     🛠️ 7     🛠️ 3     🖥️ 43    ⚖  
- ├─ ⏱ 2h 35' 10" 294ms  📋 10249 📄 3     🛠️ 6     🛠️ 27    🖥️ 40    ⚖  
- ├─ ⏱ 2h 36' 10" 599ms  📋 10313 📄 6     🛠️ 6     🛠️ 25    🖥️ 2     ⚖  
- ├─ ⏱ 2h 37' 10" 751ms  📋 10377 📄 7     🛠️ 6     🛠️ 15    🖥️ 8     ⚖  
- ├─ ⏱ 2h 38' 11" 385ms  📋 10442 📄 10    🛠️ 6     🛠️ 20    🖥️ 41    ⚖  
- ├─ ⏱ 2h 39' 12" 468ms  📋 10509 📄 3     🛠️ 6     🛠️ 0     🖥️ 34    ⚖  
- ├─ ⏱ 2h 40' 13" 182ms  📋 10591 📄 3     🛠️ 5     🛠️ 29    🖥️ 4     ⚖  
- ├─ ⏱ 2h 41' 14" 833ms  📋 10682 📄 2     🛠️ 5     🛠️ 18    🖥️ 30    ⚖  
- ├─ ⏱ 2h 42' 15" 131ms  📋 10784 📄 2     🛠️ 5     🛠️ 8     🖥️ 16    ⚖  
- ├─ ⏱ 2h 43' 15" 906ms  📋 10886 📄 2     🛠️ 4     🛠️ 33    🖥️ 28    ⚖  
- ├─ ⏱ 2h 44' 16" 202ms  📋 10963 📄 8     🛠️ 4     🛠️ 34    🖥️ 17    ⚖  
- ├─ ⏱ 2h 45' 17" 378ms  📋 11039 📄 8     🛠️ 4     🛠️ 25    🖥️ 11    ⚖  
- ├─ ⏱ 2h 46' 18" 553ms  📋 11121 📄 10    🛠️ 4     🛠️ 16    🖥️ 11    ⚖  
- ├─ ⏱ 2h 47' 18" 609ms  📋 11198 📄 8     🛠️ 4     🛠️ 10    🖥️ 25    ⚖  
- ├─ ⏱ 2h 48' 21" 122ms  📋 11269 📄 10    🛠️ 4     🛠️ 10    🖥️ 41    ⚖  
- ├─ ⏱ 2h 49' 21" 622ms  📋 11331 📄 3     🛠️ 3     🛠️ 24    🖥️ 43    ⚖  
- ├─ ⏱ 2h 50' 23" 187ms  📋 11396 📄 9     🛠️ 3     🛠️ 25    🖥️ 16    ⚖  
- ├─ ⏱ 2h 51' 26" 896ms  📋 11459 📄 2     🛠️ 3     🛠️ 10    🖥️ 47    ⚖  
- ├─ ⏱ 2h 52' 27" 897ms  📋 11526 📄 8     🛠️ 3     🛠️ 10    🖥️ 34    ⚖  
- ├─ ⏱ 2h 53' 28" 16ms  📋 11594 📄 7     🛠️ 2     🛠️ 35    🖥️ 21    ⚖  
- ├─ ⏱ 2h 54' 30" 530ms  📋 11655 📄 2     🛠️ 2     🛠️ 26    🖥️ 47    ⚖  
- ├─ ⏱ 2h 55' 30" 815ms  📋 11716 📄 9     🛠️ 2     🛠️ 22    🖥️ 25    ⚖  
- ├─ ⏱ 2h 56' 30" 990ms  📋 11779 📄 3     🛠️ 2     🛠️ 14    🖥️ 22    ⚖  
- ├─ ⏱ 2h 57' 31" 714ms  📋 11849 📄 5     🛠️ 2     🛠️ 10    🖥️ 22    ⚖  
- ├─ ⏱ 2h 58' 32" 999ms  📋 11914 📄 10    🛠️ 2     🛠️ 0     🖥️ 15    ⚖  
- ├─ ⏱ 2h 59' 33" 450ms  📋 11969 📄 4     🛠️ 1     🛠️ 31    🖥️ 44    ⚖  
- ├─ ⏱ 3h 33" 717ms    📋 12023 📄 2     🛠️ 1     🛠️ 24    🖥️ 9     ⚖  
- ├─ ⏱ 3h 1' 34" 713ms  📋 12079 📄 3     🛠️ 1     🛠️ 19    🖥️ 26    ⚖  
- ├─ ⏱ 3h 2' 34" 820ms  📋 12139 📄 6     🛠️ 1     🛠️ 17    🖥️ 38    ⚖  
- ├─ ⏱ 3h 3' 35" 856ms  📋 12194 📄 6     🛠️ 1     🛠️ 11    🖥️ 37    ⚖  
- ├─ ⏱ 3h 4' 40" 564ms  📋 12258 📄 7     🛠️ 1     🛠️ 8     🖥️ 22    ⚖  
- ├─ ⏱ 3h 5' 40" 786ms  📋 12324 📄 7     🛠️ 1     🛠️ 2     🖥️ 1     ⚖  
- ├─ ⏱ 3h 6' 42" 349ms  📋 12389 📄 8     🛠️ 0     🛠️ 29    🖥️ 32    ⚖  
- ├─ ⏱ 3h 7' 42" 787ms  📋 12456 📄 4     🛠️ 0     🛠️ 17    🖥️ 30    ⚖  
- ├─ ⏱ 3h 8' 42" 955ms  📋 12519 📄 4     🛠️ 0     🛠️ 11    🖥️ 14    ⚖  
- ├─ ⏱ 3h 9' 43" 56ms  📋 12586 📄 2     🛠️ 0     🛠️ 3     🖥️ 26    ⚖  
- ├─ ⏱ 3h 10' 50" 755ms  📋 12600 📄 6     🛠️ 0     🛠️ 1     🖥️ 39    ⚖  
- ├─ ⏱ 3h 11' 54" 997ms  📋 12600 📄 10    🛠️ 0     🛠️ 2     🖥️ 2     ⚖  
- ├─ 📑  Ficheiro Resultados/TorneioHeuristica.csv gravado.
- │  ⏱  Tempo real: 3h 12' 6" 246ms 
- │  ⏱  CPU total: 6d 6h 28' 53" 564ms 
- │  ⏱  Espera do gestor: 3h 12' 6" 3ms 
- │  ⏱  Espera trabalhadores: 1h 11' 22" 830ms 
- │  📊  Utilização:
- │  - Total: 97.1%
- │  - Gestor: 0.0%
- │  - Trabalhadores: 99.2% 
-═╧═ 🏁  Fim do Teste (🖥️ 0  ⏱ 3h 12' 6" 249ms ) ═══
+
 </pre>
 \endhtmlonly
 </details>
