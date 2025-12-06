@@ -1428,38 +1428,33 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 
 \endhtmlonly
 </details>
 
-(refazer)
 Os resultados do torneio são os seguintes:
 
 EficáciaBranco 
 
 | P13  | - | 4 | 8 | 16 | 32 |
 |:---:|---:|---:|---:|---:|---:|
-| - | 0,55 | 0,51 | 0,55 | 0,53 | 0,53 |
-| 4 | 0,5 | 0,65 | 0,61 | 0,51 | 0,51 |
-| 8 | 0,55 | 0,53 | 0,58 | 0,5 | 0,5 |
-| 16 | 0,53 | 0,51 | 0,55 | 0,5 | 0,53 |
-| 32 | 0,56 | 0,53 | 0,55 | 0,53 | 0,5 |
+| - | 0,65 | 0,6 | 0,63 | 0,63 | 0,63 |
+| 4 | 0,59 | 0,58 | 0,68 | 0,65 | 0,65 |
+| 8 | 0,63 | 0,54 | 0,53 | 0,58 | 0,58 |
+| 16 | 0,63 | 0,61 | 0,63 | 0,6 | 0,63 |
+| 32 | 0,65 | 0,6 | 0,63 | 0,63 | 0,6 |
+
 
 EficáciaPreto
 
 | P13  | - | 4 | 8 | 16 | 32 |
 |:---:|---:|---:|---:|---:|---:|
-| - | 0,45 | 0,49 | 0,45 | 0,48 | 0,48 |
-| 4 | 0,5 | 0,35 | 0,39 | 0,49 | 0,49 |
-| 8 | 0,45 | 0,48 | 0,43 | 0,5 | 0,5 |
-| 16 | 0,48 | 0,49 | 0,45 | 0,5 | 0,48 |
-| 32 | 0,44 | 0,48 | 0,45 | 0,48 | 0,5 |
+| - | 0,35 | 0,4 | 0,38 | 0,38 | 0,38 |
+| 4 | 0,41 | 0,43 | 0,33 | 0,35 | 0,35 |
+| 8 | 0,38 | 0,46 | 0,48 | 0,43 | 0,43 |
+| 16 | 0,38 | 0,39 | 0,38 | 0,4 | 0,38 |
+| 32 | 0,35 | 0,4 | 0,38 | 0,38 | 0,4 |
 
 Nas linhas está o valor da poda branca, nas colunas o valor da poda preta.
 O conteúdo das tabelas é a eficácia do jogador branco e preto respetivamente.
 
-Embora para as brancas o valor 32 pareça ser o melhor, face a jogador preto sem poda,
-é apenas 1%, e para as pretas o valor 4 até seria o melhor contra branco sem poda com ganho de 4%.
-
-No global as alterações são pequenas, e não parecem justificar o uso da poda heurística.
-
-A principal razão será que nas instâncias maiores, onde se justificaria, o empate é muito frequente.
+Existem oscilações, mas pequenas. Assim não se parece que justifique o uso da poda heurística.
 
 Assim sendo, vamos manter o valor da poda heurística a 0, ou seja, sem poda.
 
@@ -1473,12 +1468,13 @@ Vamos agora estudar o efeito do ruído na heurística. Esperamos uma degradaçã
 Este parâmetro define o valor K a adicionar à heurística, para testes de robustez.
 Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.
 
-Vamos utilizar valores de ruído simétricos, ou seja, negativos, para não introduzir um viés positivo, de -100 a 0, de 10 em 10.
+Vamos utilizar valores de ruído simétricos, ou seja, negativos, para não introduzir um viés positivo, de -100 a 0,
+com 8 valores possíveis. Vamos aumentar para 3 sementes para termos mais jogos por cada par de configurações.
 
 - **Tipo de Teste / Objetivo**: Eficácia (RUÍDO)
-- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P10=-100:0:10
-- **Esforço**: P3=1:2
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioRuido -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P10=-100:0:10
+- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P10=0,-1,-2,-5,-10,-20,-50,-100
+- **Esforço**: P3=1:3
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioRuido -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P3=1:3 x P10=0,-1,-2,-5,-10,-20,-50,-100
 
 <details>
   <summary>Ver script: torneioRuido.sh</summary>
@@ -1499,7 +1495,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioRuido
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioRuido -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P10=-100:0:10
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioRuido -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P3=1:3 x P10=0,-1,-2,-5,-10,-20,-50,-100
 </pre>
 </details>
 <details>
