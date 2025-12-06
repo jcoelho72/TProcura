@@ -1327,7 +1327,7 @@ Ver execução:</summary>
 Ação 6 - Torneio Heurística</h2>
 <p>Vamos agora estudar o impacto da heurística na eficácia do jogador.</p>
 <p>Temos o parâmetro HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).</p>
-<p>Valores testados: P15=101,110,125,150,200,250,300,400,600,800</p>
+<p>Valores testados: P15=101,110,125,150,200,250,300,400,600,800 São 10 valores para o peso, desde não ter praticamente aumento até 8 vezes em cada nível. Colocamos o número de sementes a 2, com P5=1,2 o que duplica todas as configurações. Assim existem 4 jogos entre cada duas configurações em cada instância.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Eficácia (HEUR_BASE)</li>
 <li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800</li>
@@ -1365,67 +1365,95 @@ Ver execução:</summary>
 </pre>
  </p>
 </details>
-<p>Temos resultados de várias instâncias, a variar pelos dois parâmetros que afetam as heurísticas.</p>
-<p>Cada instância tem neste caso parâmetros ideais, pelo que vamos primeiro apresentar os resultados por instância:</p>
+<p>Temos resultados de várias instâncias.</p>
+<p>Vamos primeiro apresentar os resultados por instância:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadCenter">Vitória Preta   </th><th class="markdownTableHeadCenter">Empate   </th><th class="markdownTableHeadCenter">Vitória Branca    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">1260   </td><td class="markdownTableBodyCenter"></td></tr>
+<td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">380   </td><td class="markdownTableBodyCenter"></td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">1260   </td><td class="markdownTableBodyCenter"></td></tr>
+<td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">2   </td><td class="markdownTableBodyCenter">260   </td><td class="markdownTableBodyCenter">118    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">1224   </td><td class="markdownTableBodyCenter">36    </td></tr>
+<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">74   </td><td class="markdownTableBodyCenter">306    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">593   </td><td class="markdownTableBodyCenter">110   </td><td class="markdownTableBodyCenter">557    </td></tr>
+<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">120   </td><td class="markdownTableBodyCenter">28   </td><td class="markdownTableBodyCenter">232    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">595   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">665    </td></tr>
+<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">128   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">252    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter">18   </td><td class="markdownTableBodyCenter">1161   </td><td class="markdownTableBodyCenter">81    </td></tr>
+<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter">203   </td><td class="markdownTableBodyCenter">12   </td><td class="markdownTableBodyCenter">165    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">214   </td><td class="markdownTableBodyCenter">529   </td><td class="markdownTableBodyCenter">517    </td></tr>
+<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">51   </td><td class="markdownTableBodyCenter">198   </td><td class="markdownTableBodyCenter">131    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyCenter">168   </td><td class="markdownTableBodyCenter">782   </td><td class="markdownTableBodyCenter">310    </td></tr>
+<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyCenter">22   </td><td class="markdownTableBodyCenter">250   </td><td class="markdownTableBodyCenter">108    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyCenter">84   </td><td class="markdownTableBodyCenter">1079   </td><td class="markdownTableBodyCenter">97    </td></tr>
+<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">364   </td><td class="markdownTableBodyCenter">16    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">195   </td><td class="markdownTableBodyCenter">798   </td><td class="markdownTableBodyCenter">267    </td></tr>
+<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">71   </td><td class="markdownTableBodyCenter">233   </td><td class="markdownTableBodyCenter">76    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">1867   </td><td class="markdownTableBodyCenter">8203   </td><td class="markdownTableBodyCenter">2530   </td></tr>
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">597   </td><td class="markdownTableBodyCenter">1799   </td><td class="markdownTableBodyCenter">1404   </td></tr>
 </table>
-<p>Podemos agora observar que apenas os dois primeiros jogos aparentam atualmente estar empatados, mesmo assumindo uma heurística fraca contra uma forte. No entanto as duas últimas instâncias que até aqui aparentavam acabar sempre em empates, mostram agora vários jogos que não terminaram em empate.</p>
-<p>Nas instâncias 3 a 10 temos a melhor configuração para cada instância, a jogar de brancas e de pretas, bem como a sua eficácia no torneio:</p>
+<p>Podemos agora observar nas instâncias maiores que embora ainda existam muitos empates, mesmo assim há vitórias e derrotas das brancas.</p>
+<p>Vamos ver agora a eficácia por instância, para todas as configurações de brancas:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadCenter">melhor Brancas   </th><th class="markdownTableHeadCenter">melhor Pretas   </th><th class="markdownTableHeadCenter">Eficácia Branca   </th><th class="markdownTableHeadCenter">Eficácia Preta    </th></tr>
+<th class="markdownTableHeadCenter">P15   </th><th class="markdownTableHeadCenter">1   </th><th class="markdownTableHeadCenter">2   </th><th class="markdownTableHeadCenter">3   </th><th class="markdownTableHeadCenter">4   </th><th class="markdownTableHeadCenter">5   </th><th class="markdownTableHeadCenter">6   </th><th class="markdownTableHeadCenter">7   </th><th class="markdownTableHeadCenter">8   </th><th class="markdownTableHeadCenter">9   </th><th class="markdownTableHeadCenter">10   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">3   </td><td class="markdownTableBodyCenter">P15=300   </td><td class="markdownTableBodyCenter">P15!=150   </td><td class="markdownTableBodyCenter">59%   </td><td class="markdownTableBodyCenter">50%    </td></tr>
+<td class="markdownTableBodyCenter">101   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,64   </td><td class="markdownTableBodyCenter">0,78   </td><td class="markdownTableBodyCenter">0,67   </td><td class="markdownTableBodyCenter">0,61   </td><td class="markdownTableBodyCenter">0,34   </td><td class="markdownTableBodyCenter">0,36   </td><td class="markdownTableBodyCenter">0,43   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,21   </td><td class="markdownTableBodyCenter">0,5    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">4   </td><td class="markdownTableBodyCenter">P15=400   </td><td class="markdownTableBodyCenter">P15=150 P16=20   </td><td class="markdownTableBodyCenter">83%   </td><td class="markdownTableBodyCenter">94%    </td></tr>
+<td class="markdownTableBodyCenter">110   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,62   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">0,63   </td><td class="markdownTableBodyCenter">0,36   </td><td class="markdownTableBodyCenter">0,49   </td><td class="markdownTableBodyCenter">0,47   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,21   </td><td class="markdownTableBodyCenter">0,49    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">5   </td><td class="markdownTableBodyCenter">P15=300 P16=10   </td><td class="markdownTableBodyCenter">P15=150   </td><td class="markdownTableBodyCenter">83%   </td><td class="markdownTableBodyCenter">83%    </td></tr>
+<td class="markdownTableBodyCenter">125   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,67   </td><td class="markdownTableBodyCenter">0,75   </td><td class="markdownTableBodyCenter">0,63   </td><td class="markdownTableBodyCenter">0,74   </td><td class="markdownTableBodyCenter">0,39   </td><td class="markdownTableBodyCenter">0,36   </td><td class="markdownTableBodyCenter">0,49   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,32   </td><td class="markdownTableBodyCenter">0,53    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">6   </td><td class="markdownTableBodyCenter">P15=800 P16=100   </td><td class="markdownTableBodyCenter">P15=300   </td><td class="markdownTableBodyCenter">63%   </td><td class="markdownTableBodyCenter">53%    </td></tr>
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,63   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0,54   </td><td class="markdownTableBodyCenter">0,74   </td><td class="markdownTableBodyCenter">0,33   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,49   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,34   </td><td class="markdownTableBodyCenter">0,56    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">7   </td><td class="markdownTableBodyCenter">P15=400   </td><td class="markdownTableBodyCenter">P15=300   </td><td class="markdownTableBodyCenter">100%   </td><td class="markdownTableBodyCenter">51%    </td></tr>
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,64   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0,83   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">0,42   </td><td class="markdownTableBodyCenter">0,61   </td><td class="markdownTableBodyCenter">0,57   </td><td class="markdownTableBodyCenter">0,55   </td><td class="markdownTableBodyCenter">0,61   </td><td class="markdownTableBodyCenter">0,64    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyCenter">P15=300   </td><td class="markdownTableBodyCenter">P15=300   </td><td class="markdownTableBodyCenter">73%   </td><td class="markdownTableBodyCenter">63%    </td></tr>
+<td class="markdownTableBodyCenter">250   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0,63   </td><td class="markdownTableBodyCenter">0,58   </td><td class="markdownTableBodyCenter">0,54   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">0,7   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">0,66    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">9   </td><td class="markdownTableBodyCenter">P15=200   </td><td class="markdownTableBodyCenter">P15=150   </td><td class="markdownTableBodyCenter">66%   </td><td class="markdownTableBodyCenter">57%    </td></tr>
+<td class="markdownTableBodyCenter">300   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0,47   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">0,62   </td><td class="markdownTableBodyCenter">0,79   </td><td class="markdownTableBodyCenter">0,75   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">0,67    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">10   </td><td class="markdownTableBodyCenter">P15=800 P16=500   </td><td class="markdownTableBodyCenter">P15=300 P16=10   </td><td class="markdownTableBodyCenter">73%   </td><td class="markdownTableBodyCenter">64%   </td></tr>
+<td class="markdownTableBodyCenter">400   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">0,55   </td><td class="markdownTableBodyCenter">0,61   </td><td class="markdownTableBodyCenter">0,92   </td><td class="markdownTableBodyCenter">0,8   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,67   </td><td class="markdownTableBodyCenter">0,69    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">600   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">0,71   </td><td class="markdownTableBodyCenter">0,43   </td><td class="markdownTableBodyCenter">0,67   </td><td class="markdownTableBodyCenter">0,8   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,71   </td><td class="markdownTableBodyCenter">0,67    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">800   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">1   </td><td class="markdownTableBodyCenter">0,7   </td><td class="markdownTableBodyCenter">0,71   </td><td class="markdownTableBodyCenter">0,46   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">0,63   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">0,65    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,65   </td><td class="markdownTableBodyCenter">0,9   </td><td class="markdownTableBodyCenter">0,65   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">0,45   </td><td class="markdownTableBodyCenter">0,61   </td><td class="markdownTableBodyCenter">0,61   </td><td class="markdownTableBodyCenter">0,52   </td><td class="markdownTableBodyCenter">0,51   </td><td class="markdownTableBodyCenter">0,61   </td></tr>
+</table>
+<p>Eficácia de pretas:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P15   </th><th class="markdownTableHeadCenter">1   </th><th class="markdownTableHeadCenter">2   </th><th class="markdownTableHeadCenter">3   </th><th class="markdownTableHeadCenter">4   </th><th class="markdownTableHeadCenter">5   </th><th class="markdownTableHeadCenter">6   </th><th class="markdownTableHeadCenter">7   </th><th class="markdownTableHeadCenter">8   </th><th class="markdownTableHeadCenter">9   </th><th class="markdownTableHeadCenter">10   </th><th class="markdownTableHeadCenter">Total Geral    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">101   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,43   </td><td class="markdownTableBodyCenter">0,09   </td><td class="markdownTableBodyCenter">0,41   </td><td class="markdownTableBodyCenter">0,34   </td><td class="markdownTableBodyCenter">0,38   </td><td class="markdownTableBodyCenter">0,25   </td><td class="markdownTableBodyCenter">0,29   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,18   </td><td class="markdownTableBodyCenter">0,34    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">110   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,04   </td><td class="markdownTableBodyCenter">0,08   </td><td class="markdownTableBodyCenter">0,43   </td><td class="markdownTableBodyCenter">0,37   </td><td class="markdownTableBodyCenter">0,49   </td><td class="markdownTableBodyCenter">0,33   </td><td class="markdownTableBodyCenter">0,22   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,18   </td><td class="markdownTableBodyCenter">0,31    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">125   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,24   </td><td class="markdownTableBodyCenter">0,08   </td><td class="markdownTableBodyCenter">0,53   </td><td class="markdownTableBodyCenter">0,16   </td><td class="markdownTableBodyCenter">0,63   </td><td class="markdownTableBodyCenter">0,36   </td><td class="markdownTableBodyCenter">0,26   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,26   </td><td class="markdownTableBodyCenter">0,35    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">150   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyCenter">0,09   </td><td class="markdownTableBodyCenter">0,25   </td><td class="markdownTableBodyCenter">0,34   </td><td class="markdownTableBodyCenter">0,64   </td><td class="markdownTableBodyCenter">0,43   </td><td class="markdownTableBodyCenter">0,29   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,42   </td><td class="markdownTableBodyCenter">0,35    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">200   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,25   </td><td class="markdownTableBodyCenter">0,11   </td><td class="markdownTableBodyCenter">0,58   </td><td class="markdownTableBodyCenter">0,37   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,36   </td><td class="markdownTableBodyCenter">0,37   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,51   </td><td class="markdownTableBodyCenter">0,4    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">250   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,51   </td><td class="markdownTableBodyCenter">0,11   </td><td class="markdownTableBodyCenter">0,42   </td><td class="markdownTableBodyCenter">0,32   </td><td class="markdownTableBodyCenter">0,59   </td><td class="markdownTableBodyCenter">0,47   </td><td class="markdownTableBodyCenter">0,46   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">0,46    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">300   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,11   </td><td class="markdownTableBodyCenter">0,51   </td><td class="markdownTableBodyCenter">0,24   </td><td class="markdownTableBodyCenter">0,53   </td><td class="markdownTableBodyCenter">0,62   </td><td class="markdownTableBodyCenter">0,58   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,71   </td><td class="markdownTableBodyCenter">0,48    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">400   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,11   </td><td class="markdownTableBodyCenter">0,26   </td><td class="markdownTableBodyCenter">0,34   </td><td class="markdownTableBodyCenter">0,58   </td><td class="markdownTableBodyCenter">0,55   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,39   </td><td class="markdownTableBodyCenter">0,68   </td><td class="markdownTableBodyCenter">0,44    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">600   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,11   </td><td class="markdownTableBodyCenter">0,08   </td><td class="markdownTableBodyCenter">0,42   </td><td class="markdownTableBodyCenter">0,58   </td><td class="markdownTableBodyCenter">0,29   </td><td class="markdownTableBodyCenter">0,47   </td><td class="markdownTableBodyCenter">0,45   </td><td class="markdownTableBodyCenter">0,66   </td><td class="markdownTableBodyCenter">0,41    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">800   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,11   </td><td class="markdownTableBodyCenter">0,05   </td><td class="markdownTableBodyCenter">0,47   </td><td class="markdownTableBodyCenter">0,58   </td><td class="markdownTableBodyCenter">0,29   </td><td class="markdownTableBodyCenter">0,42   </td><td class="markdownTableBodyCenter">0,45   </td><td class="markdownTableBodyCenter">0,63   </td><td class="markdownTableBodyCenter">0,4    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyCenter">0,5   </td><td class="markdownTableBodyCenter">0,35   </td><td class="markdownTableBodyCenter">0,1   </td><td class="markdownTableBodyCenter">0,35   </td><td class="markdownTableBodyCenter">0,34   </td><td class="markdownTableBodyCenter">0,55   </td><td class="markdownTableBodyCenter">0,39   </td><td class="markdownTableBodyCenter">0,39   </td><td class="markdownTableBodyCenter">0,48   </td><td class="markdownTableBodyCenter">0,49   </td><td class="markdownTableBodyCenter">0,39   </td></tr>
 </table>
 <p>Podemos observar que:</p><ul>
-<li>a heurística e principalmente o parâmetro P15, tem forte impacto na eficácia, caso contrário existiriam apenas valores a rondar os 50%</li>
-<li>a melhor configuração de brancas e pretas nem sempre coincide, é até raro que coincida</li>
-<li>na instância 7 uma das configurações ganha todos os jogos de brancas contra qualquer outra configuração de pretas</li>
-<li>nem sempre o jogador de brancas tem a melhor configuração, por vezes é igual às pretas, outras vezes as pretas são melhores, como é o caso da instância 4</li>
-<li>alguns jogos a melhor configuração tem uma eficácia baixa, como é o caso da instância 3</li>
+<li>a heurística tem forte impacto na eficácia, caso contrário existiriam apenas valores a rondar os 50%</li>
+<li>na instância 10, a maior, pode-se ver uma eficiência a variar de 21% a 71% para as brancas, e de 18% a 71% para as pretas</li>
+<li>a melhor configuração de brancas e pretas nem sempre coincide em cada instância</li>
 </ul>
-<p>O facto da configuração de pretas ser mais modesta na valorização das ameaças imediatas, ficando por vezes com 150, quando as brancas utilizam sempre valores de 200 para cima, pode significar que a vantagem de jogar de brancas, de modo a ter mais hipóteses de converter em vitória, tem que se dar maior importância às ameaças curtas, mas para a defesa é preferivel algo mais modesto.</p>
-<p>A eficácia foi utilizada com base nas outras configurações. Para afinar este valor podemos fazer novo torneio, com apenas configujrações boas, ou com os parâmetros a variarem ligeiramente do melhor valor encontrado. Nesse caso a eficácia reduz-se, mas é possível apurar com mais detalhe a melhor configuração para cada instância, eventualmente executando vários jogos e não apenas um, entre cada par de instâncias.</p>
-<p>Vamos no entanto ficar por aqui, já que estas configurações são já suficientes para ilustrar este processo, e avançamos para o torneio poda.</p>
-<p>Para simplicidade, em vez de uma configuração por instância, vamos optar por utilizar P15=300 e P16=100 já que é uma configuração que se comportou bem na maior parte das instâncias.</p>
+<p>Vamos optar por P15=300, que tem boa eficácia em quase todas as instâncias, e é a que tem melhor eficácia global.</p>
 <p><a class="anchor" id="jel-a7"></a></p>
 <h2><a class="anchor" id="autotoc_md116"></a>
 Ação 7 - Torneio Poda</h2>
@@ -1433,9 +1461,9 @@ Ação 7 - Torneio Poda</h2>
 <p>Vamos utilizar duas sementes, de modo a aumentar o número de jogos e reduzir o impacto da aleatoriedade.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Eficácia (PODA_HEURISTICA)</li>
-<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P13=0,4,8,16,32</li>
+<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P13=0,4,8,16,32</li>
 <li><b>Esforço</b>: P3=1:2</li>
-<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P13=0,4,8,16,32</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P3=1:2 x P13=0,4,8,16,32</li>
 </ul>
 <details >
 <summary >
@@ -1457,7 +1485,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioPoda
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P13=0,4,8,16,32
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P3=1:2 x P13=0,4,8,16,32
 </pre> </details>
 <details >
 <summary >
