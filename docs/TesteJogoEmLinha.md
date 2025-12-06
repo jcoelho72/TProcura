@@ -1280,7 +1280,10 @@ Vamos agora estudar o impacto da heurística na eficácia do jogador.
 
 Temos o parâmetro HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).
 
-Valores testados: P15=101,110,125,150,200,250,300,400,600,800 
+Valores testados: P15=101,110,125,150,200,250,300,400,600,800
+São 10 valores para o peso, desde não ter praticamente aumento até 8 vezes em cada nível.
+Colocamos o número de sementes a 2, com P5=1,2 o que duplica todas as configurações.
+Assim existem 4 jogos entre cada duas configurações em cada instância.
 
 - **Tipo de Teste / Objetivo**: Eficácia (HEUR_BASE)
 - **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=101,110,125,150,200,250,300,400,600,800 
@@ -1318,63 +1321,65 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioHeuristica -M 1 -P P2=2
 \endhtmlonly
 </details>
 
-Temos resultados de várias instâncias, a variar pelos dois parâmetros que afetam as heurísticas.
+Temos resultados de várias instâncias.
 
-Cada instância tem neste caso parâmetros ideais, pelo que vamos primeiro apresentar os resultados por instância:
+Vamos primeiro apresentar os resultados por instância:
 
 | Instância | Vitória Preta | Empate | Vitória Branca |
 |:---:|:---:|:---:|:---:|
-| 1 | |  1260 | | 
-| 2 | |  1260 | | 
-| 3 | |  1224 | 36 |
-| 4 | 593 | 110 | 557 |
-| 5 | 595 | |  665 |
-| 6 | 18 | 1161 | 81 |
-| 7 | 214 | 529 | 517 |
-| 8 | 168 | 782 | 310 |
-| 9 | 84 | 1079 | 97 |
-| 10 | 195 | 798 | 267 |
-| Total Geral | 1867 | 8203 | 2530 |
+| 1 | | 380 | |
+| 2 | 2 | 260 | 118 |
+| 3 | | 74 | 306 |
+| 4 | 120 | 28 | 232 |
+| 5 | 128 | | 252 |
+| 6 | 203 | 12 | 165 |
+| 7 | 51 | 198 | 131 |
+| 8 | 22 | 250 | 108 |
+| 9 | | 364 | 16 |
+| 10 | 71 | 233 | 76 |
+| Total Geral | 597 | 1799 | 1404 |
 
-Podemos agora observar que apenas os dois primeiros jogos aparentam atualmente estar empatados, mesmo assumindo
-uma heurística fraca contra uma forte. No entanto as duas últimas instâncias que até aqui aparentavam acabar sempre em empates,
-mostram agora vários jogos que não terminaram em empate.
+Podemos agora observar nas instâncias maiores que embora ainda existam muitos empates,
+mesmo assim há vitórias e derrotas das brancas.
 
-Nas instâncias 3 a 10 temos a melhor configuração para cada instância, a jogar de brancas e de pretas, bem como a sua eficácia no torneio:
+Vamos ver agora a eficácia por instância, para todas as configurações de brancas:
 
-| Instância | melhor Brancas | melhor Pretas | Eficácia Branca | Eficácia Preta |
-|:---:|:---:|:---:|:---:|:---:|
-| 3 | P15=300 | P15!=150 | 59% | 50% |
-| 4 |  P15=400  |  P15=150 P16=20  |  83%  |  94% |
-| 5 |  P15=300 P16=10  |  P15=150  |  83%  |  83% |
-| 6 |  P15=800 P16=100  |  P15=300  |  63%  |  53% |
-| 7 |  P15=400  |  P15=300  |  100%  |  51% |
-| 8 |  P15=300  |  P15=300  |  73%  |  63% |
-| 9 |  P15=200  |  P15=150  |  66%  |  57% |
-| 10 |  P15=800 P16=500  |  P15=300 P16=10  |  73%  |  64% |
+| P15 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Total Geral |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 101 | 0,5 | 0,64 | 0,78 | 0,67 | 0,61 | 0,34 | 0,36 | 0,43 | 0,5 | 0,21 | 0,5 |
+| 110 | 0,5 | 0,62 | 0,5 | 0,66 | 0,63 | 0,36 | 0,49 | 0,47 | 0,5 | 0,21 | 0,49 |
+| 125 | 0,5 | 0,67 | 0,75 | 0,63 | 0,74 | 0,39 | 0,36 | 0,49 | 0,5 | 0,32 | 0,53 |
+| 150 | 0,5 | 0,63 | 1 | 0,54 | 0,74 | 0,33 | 0,5 | 0,49 | 0,5 | 0,34 | 0,56 |
+| 200 | 0,5 | 0,64 | 1 | 0,83 | 0,68 | 0,42 | 0,61 | 0,57 | 0,55 | 0,61 | 0,64 |
+| 250 | 0,5 | 0,66 | 1 | 0,63 | 0,58 | 0,54 | 0,68 | 0,7 | 0,66 | 0,66 | 0,66 |
+| 300 | 0,5 | 0,68 | 1 | 0,47 | 0,68 | 0,62 | 0,79 | 0,75 | 0,5 | 0,68 | 0,67 |
+| 400 | 0,5 | 0,66 | 1 | 0,66 | 0,55 | 0,61 | 0,92 | 0,8 | 0,5 | 0,67 | 0,69 |
+| 600 | 0,5 | 0,66 | 1 | 0,68 | 0,71 | 0,43 | 0,67 | 0,8 | 0,5 | 0,71 | 0,67 |
+| 800 | 0,5 | 0,66 | 1 | 0,7 | 0,71 | 0,46 | 0,68 | 0,63 | 0,5 | 0,66 | 0,65 |
+| Total Geral | 0,5 | 0,65 | 0,9 | 0,65 | 0,66 | 0,45 | 0,61 | 0,61 | 0,52 | 0,51 | 0,61 |
+
+Eficácia de pretas:
+
+| P15 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | Total Geral |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 101 | 0,5 | 0,43 | 0,09 | 0,41 | 0,34 | 0,38 | 0,25 | 0,29 | 0,5 | 0,18 | 0,34 |
+| 110 | 0,5 | 0,04 | 0,08 | 0,43 | 0,37 | 0,49 | 0,33 | 0,22 | 0,5 | 0,18 | 0,31 |
+| 125 | 0,5 | 0,24 | 0,08 | 0,53 | 0,16 | 0,63 | 0,36 | 0,26 | 0,5 | 0,26 | 0,35 |
+| 150 | 0,5 | 0 | 0,09 | 0,25 | 0,34 | 0,64 | 0,43 | 0,29 | 0,5 | 0,42 | 0,35 |
+| 200 | 0,5 | 0,25 | 0,11 | 0,58 | 0,37 | 0,5 | 0,36 | 0,37 | 0,5 | 0,51 | 0,4 |
+| 250 | 0,5 | 0,51 | 0,11 | 0,42 | 0,32 | 0,59 | 0,47 | 0,46 | 0,5 | 0,68 | 0,46 |
+| 300 | 0,5 | 0,5 | 0,11 | 0,51 | 0,24 | 0,53 | 0,62 | 0,58 | 0,5 | 0,71 | 0,48 |
+| 400 | 0,5 | 0,5 | 0,11 | 0,26 | 0,34 | 0,58 | 0,55 | 0,5 | 0,39 | 0,68 | 0,44 |
+| 600 | 0,5 | 0,5 | 0,11 | 0,08 | 0,42 | 0,58 | 0,29 | 0,47 | 0,45 | 0,66 | 0,41 |
+| 800 | 0,5 | 0,5 | 0,11 | 0,05 | 0,47 | 0,58 | 0,29 | 0,42 | 0,45 | 0,63 | 0,4 |
+| Total Geral | 0,5 | 0,35 | 0,1 | 0,35 | 0,34 | 0,55 | 0,39 | 0,39 | 0,48 | 0,49 | 0,39 |
 
 Podemos observar que:
-- a heurística e principalmente o parâmetro P15, tem forte impacto na eficácia, caso contrário existiriam apenas valores a rondar os 50%
-- a melhor configuração de brancas e pretas nem sempre coincide, é até raro que coincida
-- na instância 7 uma das configurações ganha todos os jogos de brancas contra qualquer outra configuração de pretas
-- nem sempre o jogador de brancas tem a melhor configuração, por vezes é igual às pretas, outras vezes as pretas são melhores, como é o caso da instância 4
-- alguns jogos a melhor configuração tem uma eficácia baixa, como é o caso da instância 3
+- a heurística tem forte impacto na eficácia, caso contrário existiriam apenas valores a rondar os 50%
+- na instância 10, a maior, pode-se ver uma eficiência a variar de 21% a 71% para as brancas, e de 18% a 71% para as pretas
+- a melhor configuração de brancas e pretas nem sempre coincide em cada instância
 
-O facto da configuração de pretas ser mais modesta na valorização das ameaças imediatas, ficando por vezes com 150,
-quando as brancas utilizam sempre valores de 200 para cima, pode significar que a vantagem de jogar de brancas, de modo
-a ter mais hipóteses de converter em vitória, tem que se dar maior importância às ameaças curtas, mas para a defesa
-é preferivel algo mais modesto. 
-
-A eficácia foi utilizada com base nas outras configurações. Para afinar este valor podemos fazer novo torneio, com apenas configujrações boas,
-ou com os parâmetros a variarem ligeiramente do melhor valor encontrado.
-Nesse caso a eficácia reduz-se, mas é possível apurar com mais detalhe a melhor configuração para cada instância, eventualmente
-executando vários jogos e não apenas um, entre cada par de instâncias.
-
-Vamos no entanto ficar por aqui, já que estas configurações são já suficientes para ilustrar este processo, e avançamos para o torneio
-poda.
-
-Para simplicidade, em vez de uma configuração por instância, vamos optar por utilizar P15=300 e P16=100 já que é uma configuração que se comportou bem na maior parte das instâncias.
-
+Vamos optar por P15=300, que tem boa eficácia em quase todas as instâncias, e é a que tem melhor eficácia global.
 
 \anchor jel-a7
 ## Ação 7 - Torneio Poda
@@ -1387,9 +1392,9 @@ Assim vamos testar apenas a poda heurística.
 Vamos utilizar duas sementes, de modo a aumentar o número de jogos e reduzir o impacto da aleatoriedade.
 
 - **Tipo de Teste / Objetivo**: Eficácia (PODA_HEURISTICA)
-- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P13=0,4,8,16,32
+- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P13=0,4,8,16,32
 - **Esforço**: P3=1:2
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P13=0,4,8,16,32
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P3=1:2 x P13=0,4,8,16,32
 
 <details>
   <summary>Ver script: torneioPoda.sh</summary>
@@ -1410,7 +1415,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioPoda
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P16=100 P3=1:2 x P13=0,4,8,16,32
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioPoda -M 1 -P P2=2 P4=1 P7=0 P1=2 P12=1 P11=1 P15=300 P3=1:2 x P13=0,4,8,16,32
 </pre>
 </details>
 <details>
