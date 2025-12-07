@@ -659,7 +659,7 @@ void TProcura::InserirConfiguracoes(char* str, TVector<int>& base) {
 					valores.Last() += _TV(pt2 + 1); // valores para o parâmetro tomar
 					if (valores.Last().Count() == 2) {
 						// apenas um elemento, altera a configuração atual 
-						// (se fosse para alternar, colocava o valor base masi o valor a alternar)
+						// (se fosse para alternar, colocava o valor base mais o valor a alternar)
 						int valor = valores.Last().Last();
 						if (valor >= parametro[param - 1].min &&
 							valor <= parametro[param - 1].max)
@@ -1161,15 +1161,21 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		}
 		else if (strcmp(argv[i], "-P") == 0 && i + 1 < argc) {
 			TVector<int> base;
-			// o resto é para concatenar e enviar
+			// o resto é para concatenar e enviar, até outro "-P" ou fim
 			int len = 0;
 			argParametros[0] = 0;
-			while (++i < argc)
+			while (++i < argc && strcmp(argv[i], "-P") != 0)
 				len += snprintf(argParametros + len, sizeof(argParametros) - len, " %s", argv[i]);
+			printf("\nConfigurações: %s (%d,%d).",argParametros,i,argc);
 			ConfiguracaoAtual(base, LER);
 			InserirConfiguracoes(argParametros, base);
 			ConfiguracaoAtual(base, GRAVAR);
-			break;
+			NovaConfiguracao(base);
+
+			if(i >= argc) // era o último conjunto de argumentos
+				break;
+			else 
+				i -= 2; // recuar para processar o -P seguinte
 		}
 	}
 

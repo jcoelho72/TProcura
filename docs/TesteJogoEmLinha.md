@@ -1571,9 +1571,32 @@ idealmente com 3 pontos em 4 jogos, ou seja, 75%.
 Desta forma podemos ter diferentes níveis de jogo para diferentes dificuldades que o jogador humano pretender enfrentar,
 podendo optar por um adversário artificial adequado à sua força de jogo atual. 
 
-Um torneio entre os diferentes níveis deve portanto confirmar esta hipótese 75% de vitórias contra o nível imediatamente inferior.
+Configuração base: P7=0 P1=2 P4=1 P12=1 P11=1 P15=300 P10=0
 
-O número de níveis tem de ir desde o jogador aleatório até à configuração mais forte encontrada nas ações anteriores.
+Vamos utilizar a seguinte estratégia para reduzir/aumentar a força de jogo:
+- Aumentar o tempo por jogada (P4>1)
+- Configuração base (P4=1)
+- Adicionar ruído à heurística (P10<>0)
+- Ameaças mais curtas menos relevantes (P15<300)
+- Fixar a profundidade de procura (P7>0)
+- Utilizar poda cega (P14>0)
+
+Para afinar os níveis temos de fazer torneios entre níveis consecutivos,
+para encontrar os valores que levem a ter uma diferença de força de jogo em 75% (ambos os lados).
+
+Nível Base: -
+Nível +1: P4=2 
+Nível -1: P10=-1 
+Nível -2: P10=-10 P15=150 
+Nível -3: P10=-100 P15=110 
+Nível -4: P7=2 P10=-1 
+Nível -5: P7=2 P10=-10 P15=150 
+Nível -6: P7=2 P10=-100 P15=110 P14=4
+
+
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioNiveis -M 1 -P P2=2 P7=0 P4=1 P1=2 P12=1 P11=1 P15=300 P10=0 -P P4=2 -P P4=1 P10=-1 -P P10=-10 P15=150 -P P10=-100 P15=110 -P P7=2 P10=-1 P15=300 -P P7=2 P10=-10 P15=150 -P P7=2 P10=-100 P15=110 P14=4 
+
+
 
 <details>
   <summary>Ver script: torneioNiveis.sh</summary>
