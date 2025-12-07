@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['níveis_0',['Ação 9 - Torneio Níveis',['../teste_jogo_em_linha.html#autotoc_md118',1,'']]],
+  ['níveis_0',['Ação 9 - Torneio Níveis',['../teste_jogo_em_linha.html#autotoc_md119',1,'']]],
   ['n_1',['N',['../structSJogoEmLinha.html#a965df6adca0616dc382be363f19485e5',1,'SJogoEmLinha']]],
   ['nada_2',['NADA',['../TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e',1,'TProcura.h']]],
   ['nao_5flido_3',['NAO_LIDO',['../TProcura_8h.html#a59f9d6e2b09717823299d60a0e6f2efc',1,'TProcura.h']]],

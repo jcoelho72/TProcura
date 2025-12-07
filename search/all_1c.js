@@ -10,7 +10,7 @@ var searchData=
   ['sindicador_7',['SIndicador',['../structSIndicador.html',1,'']]],
   ['sindice_8',['SIndice',['../structSIndice.html',1,'']]],
   ['sjogoemlinha_9',['SJogoEmLinha',['../structSJogoEmLinha.html',1,'']]],
-  ['sobre_20o_20projeto_10',['Sobre o Projeto',['../index.html#autotoc_md170',1,'']]],
+  ['sobre_20o_20projeto_10',['Sobre o Projeto',['../index.html#autotoc_md171',1,'']]],
   ['sobrevivencia_11',['SOBREVIVENCIA',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13dad3ac03b0f4cc5ab5c4ab110ba4b2282a',1,'TProcuraMelhorativa.h']]],
   ['solcompleta_12',['solCompleta',['../classCParticao.html#a10a1cc5253c3f2d3e7c7cc8b54dab99e',1,'CParticao']]],
   ['solicitainstancia_13',['SolicitaInstancia',['../classTProcura.html#ae9f0b921a171a110e6a6fcc209332635',1,'TProcura']]],
@@ -29,11 +29,11 @@ var searchData=
   ['stda_26',['stdA',['../classCTesteTVector.html#a97289f00e4f142034782703fb9227fd7',1,'CTesteTVector']]],
   ['stdb_27',['stdB',['../classCTesteTVector.html#a4259d236668ba2ad0bceb6bb3fc54a19',1,'CTesteTVector']]],
   ['strtok_28',['strtok',['../namespacecompat.html#a342aea1a38c4383aedcc7fea5e68048a',1,'compat']]],
-  ['submódulo_29',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md180',1,'']]],
-  ['submissão_20de_20trabalhos_20em_20cluster_20deucalion_30',['Submissão de Trabalhos em Cluster (Deucalion)',['../teste_tvector.html#autotoc_md164',1,'']]],
+  ['submódulo_29',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md181',1,'']]],
+  ['submissão_20de_20trabalhos_20em_20cluster_20deucalion_30',['Submissão de Trabalhos em Cluster (Deucalion)',['../teste_tvector.html#autotoc_md165',1,'']]],
   ['substituirht_31',['substituirht',['../classTProcuraAdversa.html#ab13f514d86e599dc15a682e6a6199987',1,'TProcuraAdversa::SubstituirHT()'],['../classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057',1,'TProcuraConstrutiva::SubstituirHT()']]],
   ['sucessores_32',['sucessores',['../teste_aspirador1.html#autotoc_md87',1,'Ação 2 - Explorar os sucessores'],['../teste_jogo_do_galo.html#autotoc_md104',1,'Ação 2 - Explorar sucessores'],['../group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c',1,'TProcuraConstrutiva::Sucessores()'],['../classCJogoDoGalo.html#a00004ccf1fa3974c67e655291db65cfb',1,'CJogoDoGalo::Sucessores()'],['../classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a',1,'CPuzzle8::Sucessores()'],['../classCParticao.html#a5c6104354972acf2f6ed3d8ff7a8b98c',1,'CParticao::Sucessores()'],['../classTProcuraAdversa.html#a6870779a8413eb398f9037514f8936aa',1,'TProcuraAdversa::Sucessores()'],['../classCAspirador.html#ac28dba7dd58b76f9d16f44ebac66fab8',1,'CAspirador::Sucessores()'],['../classCJogoEmLinha.html#a0fbafadc8f5d1b1ed8aa3ddde563285b',1,'CJogoEmLinha::Sucessores()'],['../classCOitoDamas.html#ab384df7572c5a6e34ffe28b346aaf517',1,'COitoDamas::Sucessores()']]],
   ['sugeridos_33',['Métodos para redefinir, sugeridos',['../group__RedefinicaoSugerida.html',1,'']]],
-  ['sumário_34',['sumário',['../index.html#autotoc_md168',1,'📑 Sumário'],['../teste_jogo_do_galo.html#autotoc_md102',1,'Sumário'],['../teste_tvector.html#autotoc_md143',1,'Sumário'],['../teste_puzzle8.html#autotoc_md131',1,'Sumário'],['../teste_particao_cb.html#autotoc_md126',1,'Sumário'],['../teste_particao.html#autotoc_md119',1,'Sumário'],['../teste_jogo_em_linha.html#autotoc_md109',1,'Sumário'],['../teste_aspirador2.html#autotoc_md95',1,'Sumário'],['../teste_aspirador1.html#autotoc_md85',1,'Sumário'],['../teste_8damas_cp.html#autotoc_md80',1,'Sumário'],['../teste_8damas_ci.html#autotoc_md75',1,'Sumário'],['../teste_8damas.html#autotoc_md65',1,'Sumário'],['../investigacao.html#autotoc_md6',1,'Sumário']]],
+  ['sumário_34',['sumário',['../index.html#autotoc_md169',1,'📑 Sumário'],['../teste_jogo_do_galo.html#autotoc_md102',1,'Sumário'],['../teste_tvector.html#autotoc_md144',1,'Sumário'],['../teste_puzzle8.html#autotoc_md132',1,'Sumário'],['../teste_particao_cb.html#autotoc_md127',1,'Sumário'],['../teste_particao.html#autotoc_md120',1,'Sumário'],['../teste_jogo_em_linha.html#autotoc_md109',1,'Sumário'],['../teste_aspirador2.html#autotoc_md95',1,'Sumário'],['../teste_aspirador1.html#autotoc_md85',1,'Sumário'],['../teste_8damas_cp.html#autotoc_md80',1,'Sumário'],['../teste_8damas_ci.html#autotoc_md75',1,'Sumário'],['../teste_8damas.html#autotoc_md65',1,'Sumário'],['../investigacao.html#autotoc_md6',1,'Sumário']]],
   ['svalorestado_35',['SValorEstado',['../structSValorEstado.html',1,'']]]
 ];
