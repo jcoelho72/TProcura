@@ -24,4 +24,5 @@ digraph "TProcura::NovaConfiguracao"
   Node9 [id="Node000009",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
   Node1 -> Node10 [id="edge9_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcura::InserirConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a50d54c6e69c4659017373d4c25ff1207",tooltip="Insere configurações gerando o produto cartesiano de valores."];
+  Node1 -> Node4 [id="edge10_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
