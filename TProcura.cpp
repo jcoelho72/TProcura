@@ -1166,7 +1166,6 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 			argParametros[0] = 0;
 			while (++i < argc && strcmp(argv[i], "-P") != 0)
 				len += snprintf(argParametros + len, sizeof(argParametros) - len, " %s", argv[i]);
-			printf("\nConfigurações: %s (%d,%d).",argParametros,i,argc);
 			ConfiguracaoAtual(base, LER);
 			InserirConfiguracoes(argParametros, base);
 			ConfiguracaoAtual(base, GRAVAR);
