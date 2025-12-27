@@ -45,6 +45,23 @@ digraph "_TV"
   Node13 -> Node19 [id="edge20_Node000013_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="CPuzzle8::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3",tooltip="Inicializa os parametros, indicadores e instâncias."];
   Node1 -> Node20 [id="edge21_Node000001_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="TProcura::SolicitaInstancias",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6941386b767d6f0723c6eb9d27241d69",tooltip="Solicita ao utilizador uma lista de instâncias."];
-  Node20 -> Node5 [id="edge22_Node000020_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="TProcuraMelhorativa\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#ad52a9ac59f07587d70dc696c0648fe62",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node20 -> Node21 [id="edge22_Node000020_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="TCodificacaoBinaria\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoBinaria.html#a2fac1dbb30a1e109803559213001267b",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node21 -> Node22 [id="edge23_Node000021_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="CParticaoCB::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticaoCB.html#a41dc438c16b823fd1b20cbd61a7396ed",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node20 -> Node23 [id="edge24_Node000020_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="TCodificacaoInteira\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoInteira.html#a5100a41aeaae385245b0cf8f493615a3",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node23 -> Node24 [id="edge25_Node000023_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node24 [id="Node000024",label="COitoDamasCI::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamasCI.html#ac8954b7751c740cb0489b98a74142827",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node20 -> Node25 [id="edge26_Node000020_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node25 [id="Node000025",label="TCodificacaoPermutacao\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoPermutacao.html#adc0c8bcf59133f55ff83efca45c6f79d",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node25 -> Node26 [id="edge27_Node000025_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node26 [id="Node000026",label="COitoDamasCP::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamasCP.html#a9eba2f6a84513cd1b62021362241d3fc",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node20 -> Node17 [id="edge28_Node000020_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node20 -> Node27 [id="edge29_Node000020_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node27 [id="Node000027",label="CProblemaArtificial\l::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node1 -> Node28 [id="edge30_Node000001_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node28 [id="Node000028",label="TProcura::SolicitaInstancias",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6941386b767d6f0723c6eb9d27241d69",tooltip="Solicita ao utilizador uma lista de instâncias."];
+  Node28 -> Node5 [id="edge31_Node000028_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
