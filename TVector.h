@@ -1160,3 +1160,8 @@ inline TVector<int>& TVector<int>::operator+=(const char* str) {
 inline TVector<int> _TV(const char* str) {
 	return TVector<int>(str);
 }
+
+// permite fazer _TV({1,2,3,4,5}) para definir o vetor de inteiros
+inline TVector<int> _TV(std::initializer_list<int> lista) {
+	return TVector<int>(lista);
+}

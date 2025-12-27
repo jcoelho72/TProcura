@@ -67,17 +67,16 @@ void TProcuraMelhorativa::ResetParametros()
 		{ "PRESSAO",150,100,200,
 "Pressão da seleção (1.0 a 2.0 > 100 a 200). \
 Controla a diferença de probabilidade entre o melhor e o pior indivíduo no método Ranking Selection.\n\
-Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", NULL, TVector<int>({8,1}) },
-		{ "TAMANHO_TORNEIO",2,2,100, "Tamanho do torneio, caso a sobrevivência seja do tipo torneio.", NULL, TVector<int>({8,2}) },
-		{ "PROB_MELHOR_TORNEIO",100,0,100, "Probabilidade do melhor ganhar o torneio.", NULL, TVector<int>({8,2}) },
+Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", NULL, _TV({SELECAO,1}) },
+		{ "TAMANHO_TORNEIO",2,2,100, "Tamanho do torneio, caso a sobrevivência seja do tipo torneio.", NULL, _TV({SELECAO,2}) },
+		{ "PROB_MELHOR_TORNEIO",100,0,100, "Probabilidade do melhor ganhar o torneio.", NULL, _TV({SELECAO,2}) },
 		{ "SOBREVIVENCIA",1,1,3, "Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos", nomesSobrevivencia },
 		{ "PERC_DESCENDENTES",100,0,100, "Número de descendentes a substituirem elementos na população, em percentagem (100 toda a população é substituída, 0 apenas um elemento)" },
-		{ "Q_ROUND_ROBIN",3,2,100, "Número de elementos no round-robin (valor de q)", NULL, TVector<int>({12,3}) },
+		{ "Q_ROUND_ROBIN",3,2,100, "Número de elementos no round-robin (valor de q)", NULL, _TV({SOBREVIVENCIA,3}) },
 		{ "ELITISMO",1,0,100, "Número absoluto de indivíduos melhores, que se mantêm na geração seguinte, excepto se há descendência com valor igual ou superior" },
 		{ "IMIGRANTES",1,0,100, "Número absoluto de indivíduos imigrantes, substituindo quaisquer outros na população." },
 		{ "DIVERSIDADE",3,1,3, "Estratégia de diversidade. ", nomesDiversidade },
 		{ "DIST_MINIMA",0,0,1000, "Distância mínima imposta entre elementos da população" }
-			//,{ "MOVE_PRIMEIRO",1,1,2, "Utilizado na Escalada do Monte", nomesMovePrimeiro, _TV("0,1") }
 	};
 
 	// adicionar indicadores da procura melhorativa
