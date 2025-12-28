@@ -16,6 +16,6 @@ var searchData=
   ['tprocuraconstrutiva_13',['TProcuraConstrutiva',['../classTProcuraConstrutiva.html#a13799910c11d9ab8585bec576becc8a5',1,'TProcuraConstrutiva']]],
   ['tprocuramelhorativa_14',['TProcuraMelhorativa',['../classTProcuraMelhorativa.html#aba98f98071199b2fb5c16b830a2875a2',1,'TProcuraMelhorativa']]],
   ['troca_15',['Troca',['../classTCodificacaoBinaria.html#af0633fcdb3d410738061a8470c5e0780',1,'TCodificacaoBinaria']]],
-  ['tstring_16',['TString',['../classTString.html#ab39cb66adb0f47604abae4c5a6a24a27',1,'TString']]],
+  ['tstring_16',['tstring',['../classTString.html#a2fb70d94c8fdba6d90145a01aec1ce3f',1,'TString::TString()'],['../classTString.html#ab39cb66adb0f47604abae4c5a6a24a27',1,'TString::TString(const char *s)']]],
   ['tvector_17',['tvector',['../classTVector.html#af101f2c096078779fb2569bb82303216',1,'TVector::TVector(int size=0)'],['../classTVector.html#ae7c66dcf639a5f1c65ca4cfe4c7786f1',1,'TVector::TVector(int size, Item const *init)'],['../classTVector.html#a0fd57ce860d22f425cbb01d87dd0a064',1,'TVector::TVector(const TVector &amp;o)'],['../classTVector.html#aa6623d3565cd1addfbd181f1c57dab09',1,'TVector::TVector(TVector &amp;&amp;o) noexcept'],['../classTVector.html#ab207d23b5ccb0f5830d9b1f8e4c9acdf',1,'TVector::TVector(std::initializer_list&lt; Item &gt; init)'],['../classTVector.html#a8497010f3b4e85691a4e49970dddd77b',1,'TVector::TVector(const char *str)']]]
 ];

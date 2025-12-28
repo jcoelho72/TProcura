@@ -18,7 +18,7 @@ var searchData=
   ['opções_20a_15',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md91',1,'']]],
   ['opções_20b_16',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md92',1,'']]],
   ['operator_20bool_17',['operator bool',['../classBitRef.html#a58f696de677b3d584677f69636a828ab',1,'BitRef']]],
-  ['operator_20const_20char_20_2a_18',['operator const char *',['../classTString.html#a58d6744a8da98ac00c160809a15645ba',1,'TString']]],
+  ['operator_20const_20char_20_2a_18',['operator const char *',['../classTString.html#a0ca00be865ebc173288fc8fc18f2079a',1,'TString']]],
   ['operator_21_3d_19',['operator!=',['../classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b',1,'TVector']]],
   ['operator_2b_20',['operator+',['../classTVector.html#a279d251a53063355259e29f34e884d69',1,'TVector']]],
   ['operator_2b_3d_21',['operator+=',['../classTVector.html#a691ddcb0df46ab21a687356c6a0cd9a6',1,'TVector::operator+=(const Item &amp;x)'],['../classTVector.html#a7c69ceeac2bef2bf161e5e6aab440468',1,'TVector::operator+=(const TVector &amp;o)'],['../classTVector.html#a886f6e482b2fb8bbac5b611eca1ee468',1,'TVector::operator+=(std::initializer_list&lt; Item &gt; init)'],['../classTVector.html#a4398e630739eb6fba638249cf899c204',1,'TVector::operator+=(const char *str)'],['../classTString.html#a19eb81646194430534b412129e50779e',1,'TString::operator+=()']]],
