@@ -1172,6 +1172,11 @@ class TString : public TVector<char> {
 public:
 	using TVector<char>::TVector; // herdar construtores
 
+	TString() {
+		Count(1);
+		Data()[0] = 0;
+	}
+
 	// construtor a partir de const char*
 	TString(const char* s) {
 		if (!s) {
@@ -1179,13 +1184,13 @@ public:
 			Data()[0] = 0;
 			return;
 		}
-		int n = (int) strlen(s);
+		int n = (int)strlen(s);
 		Count(n + 1);
 		memcpy(Data(), s, n + 1);
 	}
 
 	// conversão implícita para const char*
-	operator const char* () const {
+	operator const char* () const noexcept {
 		return Data();
 	}
 
@@ -1215,25 +1220,30 @@ public:
 
 	// append formatado
 	void appendf(const char* fmt, ...) {
+		// calcular tamanho necessário
 		va_list args;
 		va_start(args, fmt);
-
 		int needed = vsnprintf(nullptr, 0, fmt, args);
 		va_end(args);
 
 		if (needed < 0) return;
 
+		// remover o '\0' anterior
+		Pop();
 		int old = Count();
-		Count(old + needed + 1);
 
+		// expandir para conter o novo texto + '\0'
+		Count(Count() + needed + 1);
+
+		// escrever no fim
 		va_start(args, fmt);
-		vsnprintf(Data() + old - 1, needed + 1, fmt, args);
+		vsnprintf(Data() + old, needed + 1, fmt, args);
 		va_end(args);
 	}
 
 	// concatenação com outra TString
 	TString& operator+=(const TString& other) {
-		if (Count() > 0) Pop(); // remover '\0'
+		Pop(); // remover '\0'
 		TVector<char>::operator+=(other);
 		ensureNull();
 		return *this;
