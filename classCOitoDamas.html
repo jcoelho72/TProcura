@@ -1051,7 +1051,7 @@ A exibição do estado pode variar conforme o nível de debug definido em <code>
 <div class="line">       <a class="code hl_function" href="classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32">NovaLinha</a>();</div>
 <div class="line">    <span class="comment">// neste exemplo o estado é apenas um número</span></div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code hl_function" href="classTProcura.html#a0e9e692f29af8a5d5279a8647c800437">Parametro</a>(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &lt;= <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378">ATIVIDADE</a>)</div>
-<div class="line">           <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">printf</a>(<span class="stringliteral">&quot;--&lt;([%d])&gt;--&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a>); <span class="comment">// versão compacta do estado</span></div>
+<div class="line">           printf(<span class="stringliteral">&quot;--&lt;([%d])&gt;--&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a>); <span class="comment">// versão compacta do estado</span></div>
 <div class="line">    <span class="keywordflow">else</span> {</div>
 <div class="line">        <span class="comment">// versão mais elaborada do estado</span></div>
 <div class="line">    }</div>
@@ -1113,7 +1113,7 @@ A exibição do estado pode variar conforme o nível de debug definido em <code>
 <div class="line">       <a class="code hl_function" href="classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32">NovaLinha</a>();</div>
 <div class="line">    <span class="comment">// neste exemplo o estado é apenas um número</span></div>
 <div class="line">    <span class="keywordflow">if</span>(<a class="code hl_function" href="classTProcura.html#a0e9e692f29af8a5d5279a8647c800437">Parametro</a>(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &lt;= <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378">ATIVIDADE</a>)</div>
-<div class="line">           <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">printf</a>(<span class="stringliteral">&quot;--&lt;([%d])&gt;--&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a>); <span class="comment">// versão compacta do estado</span></div>
+<div class="line">           printf(<span class="stringliteral">&quot;--&lt;([%d])&gt;--&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a>); <span class="comment">// versão compacta do estado</span></div>
 <div class="line">    <span class="keywordflow">else</span> {</div>
 <div class="line">        <span class="comment">// versão mais elaborada do estado</span></div>
 <div class="line">    }</div>
@@ -1786,7 +1786,7 @@ Não é preciso considerar estados repetidos, a verificação será feita na sup
 <div class="line">    <a class="code hl_function" href="group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c">TProcuraConstrutiva::Sucessores</a>(<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">sucessores</a>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassCOitoDamas_html_ad9ce9bd26af98392515937e9aff10e5a"><div class="ttname"><a href="classCOitoDamas.html#ad9ce9bd26af98392515937e9aff10e5a">COitoDamas::Duplicar</a></div><div class="ttdeci">TProcuraConstrutiva * Duplicar(void)</div><div class="ttdoc">Cria um objecto que é uma cópia deste.</div><div class="ttdef"><b>Definition</b> <a href="Construtiva_2Teste_2OitoDamas_8cpp_source.html#l00014">OitoDamas.cpp:14</a></div></div>
-<div class="ttc" id="aclassTVector_html"><div class="ttname"><a href="classTVector.html">TVector</a></div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l00026">TVector.h:27</a></div></div>
+<div class="ttc" id="aclassTVector_html"><div class="ttname"><a href="classTVector.html">TVector</a></div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l00027">TVector.h:28</a></div></div>
 <div class="ttc" id="agroup__RedefinicaoMandatoria_html_ga0a13570d2f5a21296e3c10c2780e170c"><div class="ttname"><a href="group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c">TProcuraConstrutiva::Sucessores</a></div><div class="ttdeci">virtual void Sucessores(TVector&lt; TNo &gt; &amp;sucessores)</div><div class="ttdoc">Coloca em sucessores a lista de estados sucessores.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00100">TProcuraConstrutiva.cpp:100</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented from <a class="el" href="group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c">TProcuraConstrutiva</a>.</p>

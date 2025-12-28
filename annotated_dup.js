@@ -30,5 +30,6 @@ var annotated_dup =
     [ "TProcuraAdversa", "classTProcuraAdversa.html", "classTProcuraAdversa" ],
     [ "TProcuraConstrutiva", "classTProcuraConstrutiva.html", "classTProcuraConstrutiva" ],
     [ "TProcuraMelhorativa", "classTProcuraMelhorativa.html", "classTProcuraMelhorativa" ],
+    [ "TString", "classTString.html", "classTString" ],
     [ "TVector", "classTVector.html", "classTVector" ]
 ];

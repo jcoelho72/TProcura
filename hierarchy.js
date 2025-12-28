@@ -41,7 +41,9 @@ var hierarchy =
     ] ],
     [ "TVector< Item >", "classTVector.html", null ],
     [ "TVector< bool >", "classTVector.html", null ],
-    [ "TVector< char >", "classTVector.html", null ],
+    [ "TVector< char >", "classTVector.html", [
+      [ "TString", "classTString.html", null ]
+    ] ],
     [ "TVector< const char * >", "classTVector.html", null ],
     [ "TVector< double >", "classTVector.html", null ],
     [ "TVector< int >", "classTVector.html", null ],

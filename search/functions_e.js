@@ -5,8 +5,9 @@ var searchData=
   ['parar_2',['parar',['../classTProcuraMelhorativa.html#add6b034d0b16d10ca85b2b42d956fae0',1,'TProcuraMelhorativa::Parar()'],['../classTProcura.html#a7952e187e1b0ae0ca52edab157223179',1,'TProcura::Parar()']]],
   ['pontos_3',['Pontos',['../classTProcuraAdversa.html#a33c402687525b54049c143102248ddb4',1,'TProcuraAdversa']]],
   ['pop_4',['Pop',['../classTVector.html#a3249913626d54e46b07e168ce1f05d87',1,'TVector']]],
-  ['profundidadeprimeiro_5',['ProfundidadePrimeiro',['../group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228',1,'TProcuraConstrutiva']]],
-  ['proximo_6',['Proximo',['../classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa',1,'CListaNo']]],
-  ['proximodistinto_7',['ProximoDistinto',['../classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273',1,'CListaNo']]],
-  ['push_8',['Push',['../classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64',1,'TVector']]]
+  ['printf_5',['printf',['../classTString.html#a0d6300cb5369e33aaf43d2e5778b4f83',1,'TString']]],
+  ['profundidadeprimeiro_6',['ProfundidadePrimeiro',['../group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228',1,'TProcuraConstrutiva']]],
+  ['proximo_7',['Proximo',['../classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa',1,'CListaNo']]],
+  ['proximodistinto_8',['ProximoDistinto',['../classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273',1,'CListaNo']]],
+  ['push_9',['Push',['../classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64',1,'TVector']]]
 ];
