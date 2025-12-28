@@ -16,6 +16,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <initializer_list>
+#include <cstdarg>   
 #include "TRand.h"
 
  ///////////////////////////////////////////////////////////////////////////////
@@ -1165,3 +1166,77 @@ inline TVector<int> _TV(const char* str) {
 inline TVector<int> _TV(std::initializer_list<int> lista) {
 	return TVector<int>(lista);
 }
+
+
+class TString : public TVector<char> {
+public:
+	using TVector<char>::TVector; // herdar construtores
+
+	// construtor a partir de const char*
+	TString(const char* s) {
+		if (!s) {
+			Count(1);
+			Data()[0] = 0;
+			return;
+		}
+		int n = (int) strlen(s);
+		Count(n + 1);
+		memcpy(Data(), s, n + 1);
+	}
+
+	// conversão implícita para const char*
+	operator const char* () const {
+		return Data();
+	}
+
+	// garante que a string termina em 0
+	void ensureNull() {
+		if (Count() == 0) Count(1);
+		Data()[Count() - 1] = 0;
+	}
+
+	// printf interno com realocação automática
+	void printf(const char* fmt, ...) {
+		va_list args;
+		va_start(args, fmt);
+
+		// tentativa inicial
+		int needed = vsnprintf(nullptr, 0, fmt, args);
+		va_end(args);
+
+		if (needed < 0) return;
+
+		Count(needed + 1); // espaço para '\0'
+
+		va_start(args, fmt);
+		vsnprintf(Data(), Count(), fmt, args);
+		va_end(args);
+	}
+
+	// append formatado
+	void appendf(const char* fmt, ...) {
+		va_list args;
+		va_start(args, fmt);
+
+		int needed = vsnprintf(nullptr, 0, fmt, args);
+		va_end(args);
+
+		if (needed < 0) return;
+
+		int old = Count();
+		Count(old + needed + 1);
+
+		va_start(args, fmt);
+		vsnprintf(Data() + old - 1, needed + 1, fmt, args);
+		va_end(args);
+	}
+
+	// concatenação com outra TString
+	TString& operator+=(const TString& other) {
+		if (Count() > 0) Pop(); // remover '\0'
+		TVector<char>::operator+=(other);
+		ensureNull();
+		return *this;
+	}
+};
+

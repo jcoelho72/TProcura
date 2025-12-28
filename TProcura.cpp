@@ -315,11 +315,11 @@ void TProcura::Mensagem(const char* titulo, const char* fmt, ...) {
 	int64_t len = vsnprintf(nullptr, 0, fmt, args_copy);
 	va_end(args_copy);
 
-	TVector<char> texto(len + 1);
+	TVector<char> texto((int)len + 1);
 	if (texto.Data()) {
 		vsnprintf(texto.Data(), len + 1, fmt, args);
 		len = compat::ContaUTF8(texto.Data()) + 2;
-		MostraCaixa({ titulo, texto.Data() }, len < 20 ? 20 : len);
+		MostraCaixa({ titulo, texto.Data() }, len < 20 ? 20 : (int)len);
 	}
 	va_end(args);
 }
