@@ -1048,63 +1048,44 @@ $(document).ready(function(){initNavTree('TVector_8h_source.html',''); initResiz
 <div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>    }</div>
 </div>
 <div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span> </div>
-<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>    <span class="comment">// printf interno com realocação automática</span></div>
+<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>    <span class="comment">// printf, adiciona o texto formatado à string atual</span></div>
 <div class="foldopen" id="foldopen01204" data-start="{" data-end="}">
 <div class="line"><a id="l01204" name="l01204"></a><span class="lineno"><a class="line" href="classTString.html#a0d6300cb5369e33aaf43d2e5778b4f83"> 1204</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTString.html#a0d6300cb5369e33aaf43d2e5778b4f83">printf</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...) {</div>
-<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>        va_list args;</div>
-<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>        va_start(args, fmt);</div>
-<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span> </div>
-<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>        <span class="comment">// tentativa inicial</span></div>
-<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>        <span class="keywordtype">int</span> needed = vsnprintf(<span class="keyword">nullptr</span>, 0, fmt, args);</div>
-<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span>        va_end(args);</div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span> </div>
-<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>        <span class="keywordflow">if</span> (needed &lt; 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>        <span class="comment">// calcular tamanho necessário</span></div>
+<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>        va_list args;</div>
+<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>        va_start(args, fmt);</div>
+<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>        <span class="keywordtype">int</span> needed = vsnprintf(<span class="keyword">nullptr</span>, 0, fmt, args);</div>
+<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>        va_end(args);</div>
+<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span> </div>
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>        <span class="keywordflow">if</span> (needed &lt; 0)</div>
+<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span> </div>
-<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>        <a class="code hl_function" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a>(needed + 1); <span class="comment">// espaço para &#39;\0&#39;</span></div>
-<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span> </div>
-<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>        va_start(args, fmt);</div>
-<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>        vsnprintf(<a class="code hl_function" href="classTVector.html#addd572d70b587092fddc21a8b0f53120">Data</a>(), <a class="code hl_function" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a>(), fmt, args);</div>
-<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>        va_end(args);</div>
-<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>    }</div>
-</div>
+<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>        <span class="comment">// remover o &#39;\0&#39; anterior</span></div>
+<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>        <a class="code hl_function" href="classTVector.html#a3249913626d54e46b07e168ce1f05d87">Pop</a>();</div>
+<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>        <span class="keywordtype">int</span> old = <a class="code hl_function" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a>();</div>
+<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span> </div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>        <span class="comment">// expandir para conter o novo texto + &#39;\0&#39;</span></div>
+<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>        <a class="code hl_function" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a>(<a class="code hl_function" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a>() + needed + 1);</div>
 <div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span> </div>
-<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>    <span class="comment">// append formatado</span></div>
-<div class="foldopen" id="foldopen01222" data-start="{" data-end="}">
-<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"><a class="line" href="classTString.html#ac3f613d7f1fb70b01fc274d9bd7df08f"> 1222</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTString.html#ac3f613d7f1fb70b01fc274d9bd7df08f">appendf</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* fmt, ...) {</div>
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>        <span class="comment">// calcular tamanho necessário</span></div>
-<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>        va_list args;</div>
-<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>        va_start(args, fmt);</div>
-<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>        <span class="keywordtype">int</span> needed = vsnprintf(<span class="keyword">nullptr</span>, 0, fmt, args);</div>
-<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>        va_end(args);</div>
-<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span> </div>
-<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>        <span class="keywordflow">if</span> (needed &lt; 0) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span> </div>
-<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>        <span class="comment">// remover o &#39;\0&#39; anterior</span></div>
-<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>        <a class="code hl_function" href="classTVector.html#a3249913626d54e46b07e168ce1f05d87">Pop</a>();</div>
-<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>        <span class="keywordtype">int</span> old = <a class="code hl_function" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a>();</div>
-<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span> </div>
-<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span>        <span class="comment">// expandir para conter o novo texto + &#39;\0&#39;</span></div>
-<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span>        <a class="code hl_function" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a>(<a class="code hl_function" href="classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef">Count</a>() + needed + 1);</div>
-<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span> </div>
-<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span>        <span class="comment">// escrever no fim</span></div>
-<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span>        va_start(args, fmt);</div>
-<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span>        vsnprintf(<a class="code hl_function" href="classTVector.html#addd572d70b587092fddc21a8b0f53120">Data</a>() + old, needed + 1, fmt, args);</div>
-<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span>        va_end(args);</div>
-<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>    }</div>
+<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>        <span class="comment">// escrever no fim</span></div>
+<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>        va_start(args, fmt);</div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>        vsnprintf(<a class="code hl_function" href="classTVector.html#addd572d70b587092fddc21a8b0f53120">Data</a>() + old, needed + 1, fmt, args);</div>
+<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>        va_end(args);</div>
+<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>    }</div>
 </div>
-<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span> </div>
-<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span>    <span class="comment">// concatenação com outra TString</span></div>
-<div class="foldopen" id="foldopen01245" data-start="{" data-end="}">
-<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"><a class="line" href="classTString.html#a19eb81646194430534b412129e50779e"> 1245</a></span>    <a class="code hl_class" href="classTString.html">TString</a>&amp; <a class="code hl_function" href="classTString.html#a19eb81646194430534b412129e50779e">operator+=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classTString.html">TString</a>&amp; other) {</div>
-<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>        <a class="code hl_function" href="classTVector.html#a3249913626d54e46b07e168ce1f05d87">Pop</a>(); <span class="comment">// remover &#39;\0&#39;</span></div>
-<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span>        <a class="code hl_function" href="classTVector.html#a7c69ceeac2bef2bf161e5e6aab440468">TVector&lt;char&gt;::operator+=</a>(other);</div>
-<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>        <a class="code hl_function" href="classTString.html#a1ac9dbf8759ece8e2148c2579e6dc651">ensureNull</a>();</div>
-<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>    }</div>
+<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span> </div>
+<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>    <span class="comment">// concatenação com outra TString</span></div>
+<div class="foldopen" id="foldopen01228" data-start="{" data-end="}">
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"><a class="line" href="classTString.html#a19eb81646194430534b412129e50779e"> 1228</a></span>    <a class="code hl_class" href="classTString.html">TString</a>&amp; <a class="code hl_function" href="classTString.html#a19eb81646194430534b412129e50779e">operator+=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classTString.html">TString</a>&amp; other) {</div>
+<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>        <a class="code hl_function" href="classTVector.html#a3249913626d54e46b07e168ce1f05d87">Pop</a>(); <span class="comment">// remover &#39;\0&#39;</span></div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>        <a class="code hl_function" href="classTVector.html#a7c69ceeac2bef2bf161e5e6aab440468">TVector&lt;char&gt;::operator+=</a>(other);</div>
+<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>        <a class="code hl_function" href="classTString.html#a1ac9dbf8759ece8e2148c2579e6dc651">ensureNull</a>();</div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>    }</div>
 </div>
-<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>};</div>
+<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>};</div>
 </div>
-<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span> </div>
+<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span> </div>
 </div>
 </div>
 </div>
@@ -1137,11 +1118,10 @@ $(document).ready(function(){initNavTree('TVector_8h_source.html',''); initResiz
 <div class="ttc" id="aTVector_8h_html_a442726d787e600d83bb1f358840dcb3a"><div class="ttname"><a href="TVector_8h.html#a442726d787e600d83bb1f358840dcb3a">_TV</a></div><div class="ttdeci">TVector&lt; int &gt; _TV(const char *str)</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01161">TVector.h:1161</a></div></div>
 <div class="ttc" id="aclassTString_html"><div class="ttname"><a href="classTString.html">TString</a></div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01171">TVector.h:1171</a></div></div>
 <div class="ttc" id="aclassTString_html_a0d6300cb5369e33aaf43d2e5778b4f83"><div class="ttname"><a href="classTString.html#a0d6300cb5369e33aaf43d2e5778b4f83">TString::printf</a></div><div class="ttdeci">void printf(const char *fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01204">TVector.h:1204</a></div></div>
-<div class="ttc" id="aclassTString_html_a19eb81646194430534b412129e50779e"><div class="ttname"><a href="classTString.html#a19eb81646194430534b412129e50779e">TString::operator+=</a></div><div class="ttdeci">TString &amp; operator+=(const TString &amp;other)</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01245">TVector.h:1245</a></div></div>
+<div class="ttc" id="aclassTString_html_a19eb81646194430534b412129e50779e"><div class="ttname"><a href="classTString.html#a19eb81646194430534b412129e50779e">TString::operator+=</a></div><div class="ttdeci">TString &amp; operator+=(const TString &amp;other)</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01228">TVector.h:1228</a></div></div>
 <div class="ttc" id="aclassTString_html_a1ac9dbf8759ece8e2148c2579e6dc651"><div class="ttname"><a href="classTString.html#a1ac9dbf8759ece8e2148c2579e6dc651">TString::ensureNull</a></div><div class="ttdeci">void ensureNull()</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01198">TVector.h:1198</a></div></div>
 <div class="ttc" id="aclassTString_html_a2fb70d94c8fdba6d90145a01aec1ce3f"><div class="ttname"><a href="classTString.html#a2fb70d94c8fdba6d90145a01aec1ce3f">TString::TString</a></div><div class="ttdeci">TString()</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01175">TVector.h:1175</a></div></div>
 <div class="ttc" id="aclassTString_html_ab39cb66adb0f47604abae4c5a6a24a27"><div class="ttname"><a href="classTString.html#ab39cb66adb0f47604abae4c5a6a24a27">TString::TString</a></div><div class="ttdeci">TString(const char *s)</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01181">TVector.h:1181</a></div></div>
-<div class="ttc" id="aclassTString_html_ac3f613d7f1fb70b01fc274d9bd7df08f"><div class="ttname"><a href="classTString.html#ac3f613d7f1fb70b01fc274d9bd7df08f">TString::appendf</a></div><div class="ttdeci">void appendf(const char *fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01222">TVector.h:1222</a></div></div>
 <div class="ttc" id="aclassTVector_html"><div class="ttname"><a href="classTVector.html">TVector</a></div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l00027">TVector.h:28</a></div></div>
 <div class="ttc" id="aclassTVector_html_a00d0bef89a8f0e527eb72e8c5ef30c7b"><div class="ttname"><a href="classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b">TVector::operator!=</a></div><div class="ttdeci">friend bool operator!=(const TVector&lt; Item &gt; &amp;a, const TVector&lt; Item &gt; &amp;b)</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l00338">TVector.h:338</a></div></div>
 <div class="ttc" id="aclassTVector_html_a0321e02f28a957bf9ab65102a420e6fc"><div class="ttname"><a href="classTVector.html#a0321e02f28a957bf9ab65102a420e6fc">TVector::end</a></div><div class="ttdeci">Item * end() noexcept</div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l00318">TVector.h:318</a></div></div>
