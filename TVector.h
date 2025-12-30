@@ -1200,33 +1200,16 @@ public:
 		Data()[Count() - 1] = 0;
 	}
 
-	// printf interno com realocação automática
+	// printf, adiciona o texto formatado à string atual
 	void printf(const char* fmt, ...) {
-		va_list args;
-		va_start(args, fmt);
-
-		// tentativa inicial
-		int needed = vsnprintf(nullptr, 0, fmt, args);
-		va_end(args);
-
-		if (needed < 0) return;
-
-		Count(needed + 1); // espaço para '\0'
-
-		va_start(args, fmt);
-		vsnprintf(Data(), Count(), fmt, args);
-		va_end(args);
-	}
-
-	// append formatado
-	void appendf(const char* fmt, ...) {
 		// calcular tamanho necessário
 		va_list args;
 		va_start(args, fmt);
 		int needed = vsnprintf(nullptr, 0, fmt, args);
 		va_end(args);
 
-		if (needed < 0) return;
+		if (needed < 0)
+			return;
 
 		// remover o '\0' anterior
 		Pop();
