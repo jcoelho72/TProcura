@@ -14,8 +14,8 @@
 constexpr int NAO_LIDO = 1024;
 
 // macros para ativar/desativar cinzento (ANSI)
-#define CINZ   "\x1b[90m"
-#define NCINZ  "\x1b[0m"
+#define CINZ "\x1b[90m"
+#define NCINZ "\x1b[0m"
 constexpr int CINZ_TAM = 9;   // bytes invisíveis (5 + 4), útil para alinhamento
 
 enum EIndicadoresProcura {
@@ -440,12 +440,12 @@ public:
 	 *
 	 * @see TesteManual()
 	 */
-	virtual void TesteEmpirico(TVector<int> instancias, char* ficheiro = NULL);
+	virtual void TesteEmpirico(TVector<int> instancias, const char* ficheiro = NULL);
 
 	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
-	virtual void TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro = NULL);
+	virtual void TesteEmpiricoGestor(TVector<int> instancias, const char* ficheiro = NULL);
 	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
-	virtual void TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro = NULL);
+	virtual void TesteEmpiricoTrabalhador(TVector<int> instancias, const char* ficheiro = NULL);
 
 	/**
 	* @brief Inicializa a interação com o utilizador
@@ -497,7 +497,7 @@ public:
 	///        que é chamado após a execução (pode gravar a solução para ficheiro também, mas essa é mais facilmente
 	///        gravada em CVS codificada em inteiros, onde fica associada à configuração utilizada para a gerar)
 	/// @see Inicializar()
-	static char ficheiroInstancia[256];
+	static TString ficheiroInstancia;
 	/// @brief Parâmetros a serem utilizados na configuração atual.
 	/// @see EParametrosConstrutiva
 	static TVector<TParametro> parametro;
@@ -580,11 +580,11 @@ public:
 	}
 
 	/// @brief Mostra tempo num formato humano.
-	static char* MostraTempo(double segundos);
+	static const char* MostraTempo(double segundos);
 
-	static void MostraCaixa(TVector<const char*> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
+	static void MostraCaixa(TVector<TString> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
 	static void MostraCaixa(const char* titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0, const char* icon = "");
-	static void MostraCaixa(TVector<const char*> textos, int largura = 70, bool aberta = true, int identacao = 0);
+	static void MostraCaixa(TVector<TString> textos, int largura = 70, bool aberta = true, int identacao = 0);
 	static void Mensagem(const char* titulo, const char* fmt, ...);
 
 	static void MostraConjunto(TVector<int> valores, const char* etiqueta);
@@ -742,7 +742,7 @@ protected:
 	 * @param resultados Vetor de resultados.
 	 * @param f Ponteiro para o ficheiro onde gravar.
 	 */
-	bool RelatorioCSV(TVector<TResultado>& resultados, char* ficheiro);
+	bool RelatorioCSV(TVector<TResultado>& resultados, const char* ficheiro);
 
 	/**
 	 * @brief Insere configurações a partir de uma string.

@@ -77,12 +77,12 @@ const char* CParticao::Acao(TProcuraConstrutiva* sucessor) {
 
 void CParticao::Debug(bool completo)
 {
-	char str[256];
+	TString str;
 	int i, col;
 	int64_t total = 0;
 	for (auto numero : numeros)
 		total += numero;
-	snprintf(str, sizeof(str), "📦%" PRId64 " → ◀️%" PRId64 " = ▶️%" PRId64,
+	str.printf("📦%" PRId64 " → ◀️%" PRId64 " = ▶️%" PRId64,
 		total, totalEsquerda, totalDireita);
 	NovaLinha();
 	// apenas no modo completo mostra tudo

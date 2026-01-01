@@ -228,7 +228,7 @@ public:
 	int Count() const { return count; }
 
 	/** Verifica se o vetor está vazio. */
-	bool Empty() const { return (count == 0); }
+	virtual bool Empty() const { return (count == 0); }
 
 	/**
 	 * @brief Ajusta o tamanho lógico do vetor para @p value.
@@ -1093,23 +1093,85 @@ int TVector<Item>::Distance(TVector<Item>& other, int type)
 	return result;
 }
 
+
+class TString : public TVector<char> {
+public:
+	using TVector<char>::TVector; // herdar construtores
+
+	TString() {
+		Count(1);
+		Data()[0] = 0;
+	}
+
+	// construtor a partir de const char*
+	TString(const char* s) {
+		if (!s) {
+			Count(1);
+			Data()[0] = 0;
+			return;
+		}
+		int n = (int)strlen(s);
+		Count(n + 1);
+		memcpy(Data(), s, n + 1);
+	}
+
+	// conversão implícita para const char*
+	operator const char* () const noexcept {
+		return Data();
+	}
+
+	// garante que a string termina em 0
+	void ensureNull() {
+		if (Count() == 0) Count(1);
+		Data()[Count() - 1] = 0;
+	}
+
+	// printf, adiciona o texto formatado à string atual
+	TString& printf(const char* fmt, ...) {
+		// calcular tamanho necessário
+		va_list args;
+		va_start(args, fmt);
+		int needed = vsnprintf(nullptr, 0, fmt, args);
+		va_end(args);
+
+		if (needed < 0)
+			return *this;
+
+		// remover o '\0' anterior
+		Pop();
+		int old = Count();
+
+		// expandir para conter o novo texto + '\0'
+		Count(Count() + needed + 1);
+
+		// escrever no fim
+		va_start(args, fmt);
+		vsnprintf(Data() + old, needed + 1, fmt, args);
+		va_end(args);
+
+		return *this;
+	}
+
+	// concatenação com outra TString
+	TString& operator+=(const TString& other) {
+		Pop(); // remover '\0'
+		TVector<char>::operator+=(other);
+		ensureNull();
+		return *this;
+	}
+
+	/** Verifica se a string é vazia. */
+	bool Empty() const { return (Count() <= 1); }
+
+};
+
 template<>
 inline TVector<int>::TVector(const char* str) {
-	char buf[256] = "", * bufferGrande = nullptr;
-	char* token = buf;
+	TString buffer(str);
+	char* token = buffer.Data();
 	char* pt;
-	size_t tamanho = 0;
 	if (!str || *str == '\0')
 		return;
-
-	if ((tamanho = (int)strlen(str)) < 256)
-		snprintf(buf, sizeof(buf), "%s", str);
-	else {
-		if ((bufferGrande = new char[tamanho + 1]) == nullptr)
-			return;
-		snprintf(bufferGrande, tamanho + 1, "%s", str);
-		token = bufferGrande;
-	}
 
 	// separar por vírgulas
 	if ((pt = strchr(token, ','))) {
@@ -1147,8 +1209,6 @@ inline TVector<int>::TVector(const char* str) {
 			*this += atoi(token);
 	}
 	BeASet();
-	if (bufferGrande)
-		delete[] bufferGrande;
 }
 
 template<>
@@ -1161,75 +1221,4 @@ inline TVector<int>& TVector<int>::operator+=(const char* str) {
 inline TVector<int> _TV(const char* str) {
 	return TVector<int>(str);
 }
-
-// permite fazer _TV({1,2,3,4,5}) para definir o vetor de inteiros
-inline TVector<int> _TV(std::initializer_list<int> lista) {
-	return TVector<int>(lista);
-}
-
-
-class TString : public TVector<char> {
-public:
-	using TVector<char>::TVector; // herdar construtores
-
-	TString() {
-		Count(1);
-		Data()[0] = 0;
-	}
-
-	// construtor a partir de const char*
-	TString(const char* s) {
-		if (!s) {
-			Count(1);
-			Data()[0] = 0;
-			return;
-		}
-		int n = (int)strlen(s);
-		Count(n + 1);
-		memcpy(Data(), s, n + 1);
-	}
-
-	// conversão implícita para const char*
-	operator const char* () const noexcept {
-		return Data();
-	}
-
-	// garante que a string termina em 0
-	void ensureNull() {
-		if (Count() == 0) Count(1);
-		Data()[Count() - 1] = 0;
-	}
-
-	// printf, adiciona o texto formatado à string atual
-	void printf(const char* fmt, ...) {
-		// calcular tamanho necessário
-		va_list args;
-		va_start(args, fmt);
-		int needed = vsnprintf(nullptr, 0, fmt, args);
-		va_end(args);
-
-		if (needed < 0)
-			return;
-
-		// remover o '\0' anterior
-		Pop();
-		int old = Count();
-
-		// expandir para conter o novo texto + '\0'
-		Count(Count() + needed + 1);
-
-		// escrever no fim
-		va_start(args, fmt);
-		vsnprintf(Data() + old, needed + 1, fmt, args);
-		va_end(args);
-	}
-
-	// concatenação com outra TString
-	TString& operator+=(const TString& other) {
-		Pop(); // remover '\0'
-		TVector<char>::operator+=(other);
-		ensureNull();
-		return *this;
-	}
-};
 

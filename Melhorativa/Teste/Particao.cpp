@@ -180,10 +180,9 @@ void CParticaoCB::Inicializar(void) {
 }
 
 int CParticaoCB::Avaliar(void) {
-	int64_t total[2];
+	int64_t total[2] = {0,0};
 	custo = 0;
 	TProcuraMelhorativa::Avaliar();
-	total[0] = total[1] = 0;
 	for (int i = 0; i < nElementos; i++)
 		total[Bit(i)] += numeros[i];
 	return custo = abs(total[0] - total[1]);
@@ -231,10 +230,9 @@ void CParticaoCB::Debug(bool completo)
 	printf("\n-------------------||-------------------");
 	printf("\n            %3d  <<||>> %3d \n", esq, dir);
 */
-	char str[256];
+	TString str;
 	int col, total = esq+dir;
-	snprintf(str, sizeof(str), "📦%d → ◀️%d = ▶️%d",
-		total, esq, dir);
+	str.printf("📦%d → ◀️%d = ▶️%d", total, esq, dir);
 	printf("\n%s", debugPrefixo);
 	// apenas no modo completo mostra tudo
 	if (Parametro(NIVEL_DEBUG) < COMPLETO) {

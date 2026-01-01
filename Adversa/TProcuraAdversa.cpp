@@ -552,7 +552,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 	int inst, int brancas, int pretas, TVector<TVector<int>>* torneio)
 {
 	int resultado = -1, njogada = 0;
-	static char buffer[BUFFER_SIZE];
+	static TString buffer;
 	// carregar instância
 	instancia.valor = inst;
 	Inicializar();
@@ -577,9 +577,9 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 				printf(" %s", strAcao);
 			njogada++;
 			if (njogada % 2 == 1) // jogada de brancas, colocar o número de jogada (njogada é meia jogada)
-				snprintf(buffer, sizeof(buffer), " %d. %s", (njogada / 2) + 1, strAcao);
+				(buffer = "").printf(" %d. %s", (njogada / 2) + 1, strAcao);
 			else // jogada de pretas
-				snprintf(buffer, sizeof(buffer), " %s", strAcao);
+				(buffer = "").printf(" %s", strAcao);
 			// concatenar ao registo do jogo
 			resultados.Last().jogo = AdicionaLance(resultados.Last().jogo, buffer);
 		}
@@ -607,7 +607,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 
 	// colocar resultado do jogo no final
 	if (resultados.Last().jogo != NULL) {
-		snprintf(buffer, sizeof(buffer), " 🏆 %s", (resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
+		(buffer="").printf(" 🏆 %s", (resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
 			(resultados.Last().resultado > 0 ? Icon(EIcon::VIT_BRANCA) :
 				Icon(EIcon::EMPATE))));
 		resultados.Last().jogo = AdicionaLance(resultados.Last().jogo, buffer);
@@ -625,7 +625,7 @@ char* TProcuraAdversa::AdicionaLance(char* jogo, const char* lance) {
 		char* novoJogo = new char[lenAntigo + lenNovo + 1];
 		strcpy(novoJogo, jogo);
 		strcpy(novoJogo + lenAntigo, lance);
-		delete jogo;
+		delete [] jogo;
 		jogo = novoJogo;
 	}
 	return jogo;
@@ -835,15 +835,15 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* fi
 bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, char* ficheiro) {
 	char* contexto;
 	char* pt = compat::strtok(ficheiro, " \n\t\r", &contexto);
-	char str[BUFFER_SIZE];
+	TString str;
 	if (mpiCount > 1)
-		snprintf(str, sizeof(str), "%s_%d.csv", pt, mpiID);
+		str.printf("%s_%d.csv", pt, mpiID);
 	else
-		snprintf(str, sizeof(str), "%s.csv", pt);
+		str.printf("%s.csv", pt);
 	FILE* f = compat::fopen(str, "wb");
 
 	if (f == NULL) {
-		printf("\nErro ao gravar ficheiro %s.", str);
+		printf("\nErro ao gravar ficheiro %s.", (const char *)str);
 		return false;
 	}
 

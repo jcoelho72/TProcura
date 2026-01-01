@@ -683,14 +683,14 @@ void TProcuraConstrutiva::DebugPasso(CListaNo* lista)
 	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
 		printf("#");
 	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
-		char str[256];
+		TString str;
 		ramo.First() = RAMO_ESTADO;
 		NovaLinha(true);
 		ramo.First() = RAMO_CONTINUA;
 		DebugEstado(false);
 		if (lista == NULL) {
 			if (expansoes < geracoes) {
-				snprintf(str, sizeof(str), "%d:%d", expansoes + 1, geracoes);
+				str.printf("%d:%d", expansoes + 1, geracoes);
 				MostraConjunto(_TV(str), Icon(EIcon::ID));
 			}
 			else
