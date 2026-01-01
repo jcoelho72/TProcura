@@ -24,10 +24,17 @@ digraph "TProcura::MostraRelatorio"
   Node7 -> Node3 [id="edge9_Node000007_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node3 [id="edge10_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node9 [id="edge11_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TVector::Empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a4f242a23bca606a1d0c8f75115b1fde9",tooltip=" "];
+  Node9 [id="Node000009",label="TVector::Empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ae1e7bc1d53267cfee35d7a1459f91f51",tooltip=" "];
   Node1 -> Node10 [id="edge12_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3496857ee1a91785fbb6ad45f5e9ddea",tooltip=" "];
+  Node10 [id="Node000010",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a07ef3e2896824e87650013dfefb3d665",tooltip=" "];
   Node10 -> Node11 [id="edge13_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="compat::ContaUTF8",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5",tooltip=" "];
-  Node1 -> Node6 [id="edge14_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node12 [id="edge14_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="TString::printf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a4b9a718839325a0e057bc6e2483d3f17",tooltip=" "];
+  Node12 -> Node3 [id="edge15_Node000012_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node13 [id="edge16_Node000012_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="TVector\< char \>::Data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#addd572d70b587092fddc21a8b0f53120",tooltip="Acesso direto."];
+  Node12 -> Node14 [id="edge17_Node000012_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TVector\< char \>::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
+  Node1 -> Node6 [id="edge18_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -69,7 +69,7 @@ digraph "TProcuraAdversa::TesteEmpiricoTrabalhador"
   Node27 -> Node12 [id="edge39_Node000027_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node20 -> Node25 [id="edge40_Node000020_Node000025",color="steelblue1",style="solid",tooltip=" "];
   Node20 -> Node28 [id="edge41_Node000020_Node000028",color="steelblue1",style="solid",tooltip=" "];
-  Node28 [id="Node000028",label="TVector::Empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a4f242a23bca606a1d0c8f75115b1fde9",tooltip=" "];
+  Node28 [id="Node000028",label="TVector::Empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ae1e7bc1d53267cfee35d7a1459f91f51",tooltip=" "];
   Node20 -> Node12 [id="edge42_Node000020_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node20 -> Node29 [id="edge43_Node000020_Node000029",color="steelblue1",style="solid",tooltip=" "];
   Node29 [id="Node000029",label="TProcuraConstrutiva\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df",tooltip=" "];
@@ -150,7 +150,7 @@ digraph "TProcuraAdversa::TesteEmpiricoTrabalhador"
   Node62 [id="Node000062",label="TProcura::TesteFim",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aacb98ca4aa5bbc4db469bb5329e58434",tooltip=" "];
   Node62 -> Node2 [id="edge99_Node000062_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node62 -> Node32 [id="edge100_Node000062_Node000032",color="steelblue1",style="solid",tooltip=" "];
-  Node32 [id="Node000032",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];
+  Node32 [id="Node000032",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
   Node1 -> Node63 [id="edge101_Node000001_Node000063",color="steelblue1",style="solid",tooltip=" "];
   Node63 [id="Node000063",label="TProcura::TesteInicio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a577697338460038138738e87157166af",tooltip="arranque de teste, auxiliar aos Testes Empíricos"];
   Node63 -> Node6 [id="edge102_Node000063_Node000006",color="steelblue1",style="solid",tooltip=" "];
@@ -166,7 +166,9 @@ digraph "TProcuraAdversa::TesteEmpiricoTrabalhador"
   Node64 -> Node23 [id="edge111_Node000064_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node64 -> Node65 [id="edge112_Node000064_Node000065",color="steelblue1",style="solid",tooltip=" "];
   Node65 [id="Node000065",label="TProcura::MostraParametros",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#ae7fa07f03b8e5a201e35023ba7724b82",tooltip="Mostra os parâmetros atuais."];
-  Node65 -> Node66 [id="edge113_Node000065_Node000066",color="steelblue1",style="solid",tooltip=" "];
-  Node66 [id="Node000066",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a3496857ee1a91785fbb6ad45f5e9ddea",tooltip=" "];
-  Node65 -> Node7 [id="edge114_Node000065_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node65 -> Node7 [id="edge113_Node000065_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node64 -> Node69 [id="edge114_Node000064_Node000069",color="steelblue1",style="solid",tooltip=" "];
+  Node69 [id="Node000069",label="TString::printf",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTString.html#a4b9a718839325a0e057bc6e2483d3f17",tooltip=" "];
+  Node69 -> Node19 [id="edge115_Node000069_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node69 -> Node26 [id="edge116_Node000069_Node000026",color="steelblue1",style="solid",tooltip=" "];
 }

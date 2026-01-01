@@ -9,9 +9,9 @@ digraph "compat::fopen"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcura::JuntarCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa47aff45144b528adaecdb654c498844",tooltip="Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node3 [id="Node000003",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip=" "];
   Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node4 [id="Node000004",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a06d687ffe4ca142fe2da3a0a508da547",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip="Inicializa a interação com o utilizador."];
   Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -28,10 +28,10 @@ digraph "compat::fopen"
   Node7 -> Node11 [id="edge11_Node000007_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
   Node1 -> Node12 [id="edge12_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcura::RelatorioCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab29731e4c9c1d57ccf72740d7d96ec32",tooltip="Gera um relatório CSV com os resultados."];
+  Node12 [id="Node000012",label="TProcura::RelatorioCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a35298fa3fcb0709f4c6b47f9a6d693c9",tooltip="Gera um relatório CSV com os resultados."];
   Node12 -> Node4 [id="edge13_Node000012_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 -> Node13 [id="edge14_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afd7217164b5ffce15f1949138f469fdb",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
+  Node13 [id="Node000013",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a67aba86c04ae341071ff03a02ef2651a",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node13 -> Node5 [id="edge15_Node000013_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node14 [id="edge16_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcuraAdversa::RelatorioCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb367986ee2d88de1b47e3d31a224ab7",tooltip="Gera um relatório CSV com os resultados."];

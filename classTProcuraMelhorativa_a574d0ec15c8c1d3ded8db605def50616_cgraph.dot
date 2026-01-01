@@ -50,5 +50,5 @@ digraph "TProcuraMelhorativa::AlgoritmoGenetico"
   Node20 [id="Node000020",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node19 -> Node2 [id="edge24_Node000019_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node21 [id="edge25_Node000019_Node000021",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];
+  Node21 [id="Node000021",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
 }

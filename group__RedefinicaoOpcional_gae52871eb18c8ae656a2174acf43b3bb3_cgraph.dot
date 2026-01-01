@@ -118,7 +118,7 @@ digraph "TProcuraConstrutiva::ExecutaAlgoritmo"
   Node42 [id="Node000042",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node41 -> Node13 [id="edge73_Node000041_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node41 -> Node43 [id="edge74_Node000041_Node000043",color="steelblue1",style="solid",tooltip=" "];
-  Node43 [id="Node000043",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];
+  Node43 [id="Node000043",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
   Node1 -> Node44 [id="edge75_Node000001_Node000044",color="steelblue1",style="solid",tooltip=" "];
   Node44 [id="Node000044",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domínio de um parâmetro inteiro."];
   Node1 -> Node45 [id="edge76_Node000001_Node000045",color="steelblue1",style="solid",tooltip=" "];

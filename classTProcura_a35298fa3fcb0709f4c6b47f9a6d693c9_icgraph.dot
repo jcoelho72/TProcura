@@ -7,7 +7,7 @@ digraph "TProcura::RelatorioCSV"
   rankdir="RL";
   Node1 [id="Node000001",label="TProcura::RelatorioCSV",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Gera um relatório CSV com os resultados."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node2 [id="Node000002",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a06d687ffe4ca142fe2da3a0a508da547",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip="Inicializa a interação com o utilizador."];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -24,6 +24,6 @@ digraph "TProcura::RelatorioCSV"
   Node5 -> Node9 [id="edge9_Node000005_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
   Node1 -> Node10 [id="edge10_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afd7217164b5ffce15f1949138f469fdb",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
+  Node10 [id="Node000010",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a67aba86c04ae341071ff03a02ef2651a",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node10 -> Node3 [id="edge11_Node000010_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

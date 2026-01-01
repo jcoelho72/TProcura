@@ -9,7 +9,7 @@ digraph "TProcura::InserirRegisto"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcura::ExecutaTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a2c3c5fdff8277b04a219156dec0f068b",tooltip="Executa uma tarefa num teste empírico."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae98922e2f7f8bb6e487af0a1e4f84336",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node3 [id="Node000003",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a06d687ffe4ca142fe2da3a0a508da547",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip="Inicializa a interação com o utilizador."];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -26,7 +26,7 @@ digraph "TProcura::InserirRegisto"
   Node6 -> Node10 [id="edge10_Node000006_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
   Node2 -> Node11 [id="edge11_Node000002_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1b444fbb9aa1d6bf3df277df3f289587",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node11 [id="Node000011",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7bf4b2dc4cbcf19cc6f5868a5071e726",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node11 -> Node4 [id="edge12_Node000011_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge13_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -16,7 +16,7 @@ digraph "TProcuraAdversa::MetodoIterativo"
   Node5 [id="Node000005",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrã, para debug."];
   Node5 -> Node5 [id="edge5_Node000005_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node3 -> Node6 [id="edge6_Node000003_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];
+  Node6 [id="Node000006",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
   Node1 -> Node7 [id="edge7_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TProcuraAdversa::MiniMax",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4d8542bcb03f17da8aa3038384104f24",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel"];
   Node7 -> Node8 [id="edge8_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
@@ -54,7 +54,7 @@ digraph "TProcuraAdversa::MetodoIterativo"
   Node18 -> Node12 [id="edge29_Node000018_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node16 [id="edge30_Node000007_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node19 [id="edge31_Node000007_Node000019",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="TVector::Empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a4f242a23bca606a1d0c8f75115b1fde9",tooltip=" "];
+  Node19 [id="Node000019",label="TVector::Empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ae1e7bc1d53267cfee35d7a1459f91f51",tooltip=" "];
   Node7 -> Node12 [id="edge32_Node000007_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node20 [id="edge33_Node000007_Node000020",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="TProcuraConstrutiva\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df",tooltip=" "];

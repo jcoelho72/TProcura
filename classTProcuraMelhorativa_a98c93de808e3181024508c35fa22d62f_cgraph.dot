@@ -31,7 +31,7 @@ digraph "TProcuraMelhorativa::DebugGeracaoAE"
   Node1 -> Node11 [id="edge14_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TProcuraMelhorativa\l::DiversidadeAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6680888f6064501586d740cab891d0cd",tooltip=" "];
   Node1 -> Node12 [id="edge15_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];
+  Node12 [id="Node000012",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
   Node1 -> Node13 [id="edge16_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraMelhorativa\l::ObterExtremos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a1205807eb7d011896ddd38dc5675ab44",tooltip=" "];
   Node1 -> Node10 [id="edge17_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];

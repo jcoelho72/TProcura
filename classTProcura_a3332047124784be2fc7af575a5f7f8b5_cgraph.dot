@@ -17,11 +17,18 @@ digraph "TProcura::MostrarConfiguracoes"
   Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fa07f03b8e5a201e35023ba7724b82",tooltip="Mostra os parâmetros atuais."];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3496857ee1a91785fbb6ad45f5e9ddea",tooltip=" "];
+  Node7 [id="Node000007",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a07ef3e2896824e87650013dfefb3d665",tooltip=" "];
   Node7 -> Node8 [id="edge7_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="compat::ContaUTF8",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5",tooltip=" "];
   Node6 -> Node3 [id="edge8_Node000006_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node6 -> Node9 [id="edge9_Node000006_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="TProcura::ParametroAtivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e",tooltip=" "];
   Node9 -> Node3 [id="edge10_Node000009_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node10 [id="edge11_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="TString::printf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a4b9a718839325a0e057bc6e2483d3f17",tooltip=" "];
+  Node10 -> Node4 [id="edge12_Node000010_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node11 [id="edge13_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="TVector\< char \>::Data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#addd572d70b587092fddc21a8b0f53120",tooltip="Acesso direto."];
+  Node10 -> Node12 [id="edge14_Node000010_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="TVector\< char \>::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
 }

@@ -49,7 +49,7 @@ digraph "TProcuraConstrutiva::ProfundidadePrimeiro"
   Node16 [id="Node000016",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node15 -> Node5 [id="edge27_Node000015_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node17 [id="edge28_Node000015_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];
+  Node17 [id="Node000017",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
   Node1 -> Node18 [id="edge29_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="TProcuraConstrutiva\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df",tooltip=" "];
   Node1 -> Node19 [id="edge30_Node000001_Node000019",color="steelblue1",style="solid",tooltip=" "];

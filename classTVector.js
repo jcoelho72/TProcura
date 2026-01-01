@@ -19,7 +19,7 @@ var classTVector =
     [ "Delete", "classTVector.html#aba2fb6d977b1309f3e884369c5f43bba", null ],
     [ "Difference", "classTVector.html#a5744462d2c7efd035cf0ec50326f43be", null ],
     [ "Distance", "classTVector.html#a8cbf0dc0b674640bda4e81e6d6be0f55", null ],
-    [ "Empty", "classTVector.html#a4f242a23bca606a1d0c8f75115b1fde9", null ],
+    [ "Empty", "classTVector.html#ae1e7bc1d53267cfee35d7a1459f91f51", null ],
     [ "end", "classTVector.html#af7079cb7944ea88caf10b7574915858b", null ],
     [ "end", "classTVector.html#a0321e02f28a957bf9ab65102a420e6fc", null ],
     [ "Equal", "classTVector.html#a192a9255de9926fd252d028871d16f8f", null ],

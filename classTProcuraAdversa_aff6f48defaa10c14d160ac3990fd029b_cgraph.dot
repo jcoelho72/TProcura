@@ -61,7 +61,7 @@ digraph "TProcuraAdversa::ExecutaAlgoritmo"
   Node21 -> Node3 [id="edge33_Node000021_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node12 -> Node19 [id="edge34_Node000012_Node000019",color="steelblue1",style="solid",tooltip=" "];
   Node12 -> Node22 [id="edge35_Node000012_Node000022",color="steelblue1",style="solid",tooltip=" "];
-  Node22 [id="Node000022",label="TVector::Empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a4f242a23bca606a1d0c8f75115b1fde9",tooltip=" "];
+  Node22 [id="Node000022",label="TVector::Empty",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ae1e7bc1d53267cfee35d7a1459f91f51",tooltip=" "];
   Node12 -> Node3 [id="edge36_Node000012_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node12 -> Node23 [id="edge37_Node000012_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="TProcuraConstrutiva\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a976f17b2b53ce9ffc7d1795d291262df",tooltip=" "];
@@ -74,7 +74,7 @@ digraph "TProcuraAdversa::ExecutaAlgoritmo"
   Node26 [id="Node000026",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node25 -> Node15 [id="edge42_Node000025_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node25 -> Node27 [id="edge43_Node000025_Node000027",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3bfb17b3b826cc2f593f950a227c3049",tooltip="Mostra tempo num formato humano."];
+  Node27 [id="Node000027",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
   Node24 -> Node12 [id="edge44_Node000024_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node28 [id="edge45_Node000024_Node000028",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="TProcuraAdversa::MiniMax\lAlfaBeta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb3f857b1c8b3ee26682e335dc6ed601",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel. Idêntico a MiniMax"];
