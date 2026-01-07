@@ -1113,7 +1113,7 @@ public:
 		int n = (int)strlen(s);
 		Count(n + 1);
 		memcpy(Data(), s, n + 1);
-		Data()[Count() - 1] = 0;
+		Last() = 0;
 	}
 
 	// conversão implícita para const char*
@@ -1151,7 +1151,7 @@ public:
 	TString& operator+=(const TString& other) {
 		Pop(); // remover '\0'
 		TVector<char>::operator+=(other);
-		ensureNull();
+		Last() = 0;
 		return *this;
 	}
 
