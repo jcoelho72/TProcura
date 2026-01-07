@@ -1113,17 +1113,12 @@ public:
 		int n = (int)strlen(s);
 		Count(n + 1);
 		memcpy(Data(), s, n + 1);
+		Data()[Count() - 1] = 0;
 	}
 
 	// conversão implícita para const char*
 	operator const char* () const noexcept {
 		return Data();
-	}
-
-	// garante que a string termina em 0
-	void ensureNull() {
-		if (Count() == 0) Count(1);
-		Data()[Count() - 1] = 0;
 	}
 
 	// printf, adiciona o texto formatado à string atual
