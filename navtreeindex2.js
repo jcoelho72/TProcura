@@ -189,11 +189,10 @@ var NAVTREEINDEX2 =
 "classTProcuraMelhorativa.html#af101526489df420431d22477e317fb33":[2,0,29,25],
 "classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582":[2,0,29,23],
 "classTString.html":[2,0,30],
-"classTString.html#a0ca00be865ebc173288fc8fc18f2079a":[2,0,30,4],
-"classTString.html#a19eb81646194430534b412129e50779e":[2,0,30,5],
-"classTString.html#a1ac9dbf8759ece8e2148c2579e6dc651":[2,0,30,3],
+"classTString.html#a0ca00be865ebc173288fc8fc18f2079a":[2,0,30,3],
+"classTString.html#a19eb81646194430534b412129e50779e":[2,0,30,4],
 "classTString.html#a2fb70d94c8fdba6d90145a01aec1ce3f":[2,0,30,0],
-"classTString.html#a4b9a718839325a0e057bc6e2483d3f17":[2,0,30,6],
+"classTString.html#a4b9a718839325a0e057bc6e2483d3f17":[2,0,30,5],
 "classTString.html#a8c4d6fec2dd3afac9a4f3442b786af33":[2,0,30,2],
 "classTString.html#ab39cb66adb0f47604abae4c5a6a24a27":[2,0,30,1],
 "classTVector.html":[2,0,31],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "classTVector.html#af101f2c096078779fb2569bb82303216":[2,0,31,0],
 "classTVector.html#af7079cb7944ea88caf10b7574915858b":[2,0,31,20],
 "classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64":[2,0,31,40],
-"classes.html":[2,1]
+"classes.html":[2,1],
+"compact_8h.html":[3,0,5]
 };
