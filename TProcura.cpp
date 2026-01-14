@@ -1249,7 +1249,18 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, const char* ficheir
 			for (auto ind : indAtivo)
 				fprintf(f, "%" PRId64 ";", Registo(res, ind));
 
-			fprintf(f, "%s\n", (gravarSolucao && res.solucao != NULL) ? res.solucao : "");
+			if (gravarSolucao) {
+				if (res.solucao != NULL)
+					fprintf(f, "%s\n", res.solucao);
+				else {
+					// imprimir todos os valores após os indicadores
+					for (int i = indicador.Count(); i < res.valor.Count(); i++)
+						fprintf(f, "%d ", res.valor[i]);
+					fprintf(f, "\n");
+				}
+			}
+			else
+				fprintf(f, "\n");
 		}
 
 		fclose(f);
