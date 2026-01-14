@@ -1255,7 +1255,7 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, const char* ficheir
 				else {
 					// imprimir todos os valores após os indicadores
 					for (int i = indicador.Count(); i < res.valor.Count(); i++)
-						fprintf(f, "%" PRId64 " ", res.valor[i]);
+						fprintf(f, "%" PRId64 ";", res.valor[i]);
 					fprintf(f, "\n");
 				}
 			}
