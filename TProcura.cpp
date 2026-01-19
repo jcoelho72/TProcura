@@ -357,6 +357,7 @@ void TProcura::DebugHSL(float h, float s, float l, bool fundo) {
 void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const char* titulo) {
 	int nElementos = (idParametros == NULL ? parametro.Count() : idParametros->Count());
 	int count = 0, col = 2;
+	bool parBin = false;
 	if (titulo == nullptr || titulo[0] == 0)
 		titulo = "Parâmetros";
 	// detalhe 0 é só uma linha (separador)
@@ -375,23 +376,42 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 		if (!ParametroAtivo(parID))
 			continue;
 		count++;
-		// identificação do parâmetro
-		if (detalhe == 0 || parametro[parID].nome == NULL ||
-			(detalhe == 1 && !parametro[parID].dependencia.Empty()))
-			col += printf(CINZ "P%d=" NCINZ, parID + 1) - CINZ_TAM;
-		else {
-			if (detalhe == 2 && !parametro[parID].dependencia.Empty())
-				col += printf("  ");
-			col += printf(CINZ "P%d(%s):" NCINZ " ", parID + 1, parametro[parID].nome) - CINZ_TAM;
+		// caso o parâmetro seja 0/1 mostrar o valor em cor 0=vermelho 1=verde
+		if ((parBin = (parametro[parID].min == 0 && parametro[parID].max == 1)) == true) {
+			// identificação do parâmetro e valor com cor 
+			if (detalhe == 0 || parametro[parID].nome == NULL ||
+				(detalhe == 1 && !parametro[parID].dependencia.Empty()))
+				col += printf("%sP%d" NCINZ,
+					(const char*)((Parametro(parID) == 1) ? "\x1b[32m" : "\x1b[31m"),
+					parID + 1) - CINZ_TAM;
+			else {
+				if (detalhe == 2 && !parametro[parID].dependencia.Empty())
+					col += printf("  ");
+				col += printf("%sP%d(%s)" NCINZ " ",
+					(const char*)((Parametro(parID) == 1) ? "\x1b[32m" : "\x1b[31m"),
+					parID + 1, parametro[parID].nome) - CINZ_TAM;
+			}
 		}
-		// valor do parâmetro
-		if (detalhe > 1 && col < 30)
-			col += printf("%*s", (30 - col), "");
-		if (detalhe == 0 || parametro[parID].nomeValores == NULL ||
-			(detalhe == 1 && !parametro[parID].dependencia.Empty()))
-			col += printf("%d", Parametro(parID));
-		else
-			col += printf("%s", parametro[parID].nomeValores[Parametro(parID) - parametro[parID].min]);
+		else {
+			// identificação do parâmetro
+			if (detalhe == 0 || parametro[parID].nome == NULL ||
+				(detalhe == 1 && !parametro[parID].dependencia.Empty()))
+				col += printf(CINZ "P%d=" NCINZ, parID + 1) - CINZ_TAM;
+			else {
+				if (detalhe == 2 && !parametro[parID].dependencia.Empty())
+					col += printf("  ");
+				col += printf(CINZ "P%d(%s):" NCINZ " ", parID + 1, parametro[parID].nome) - CINZ_TAM;
+			}
+			// valor do parâmetro
+			if (detalhe > 1 && col < 30)
+				col += printf("%*s", (30 - col), "");
+			if (detalhe == 0 || parametro[parID].nomeValores == NULL ||
+				(detalhe == 1 && !parametro[parID].dependencia.Empty()))
+				col += printf("%d", Parametro(parID));
+			else
+				col += printf("%s", parametro[parID].nomeValores[Parametro(parID) - parametro[parID].min]);
+		}
+
 		// mostrar intervalo permitido
 		if (detalhe > 1) {
 			if (col < 40)
