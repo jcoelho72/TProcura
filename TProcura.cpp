@@ -377,15 +377,18 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 		count++;
 		// identificação do parâmetro
 		if (detalhe == 0 || parametro[parID].nome == NULL ||
-			detalhe == 1 && !parametro[parID].dependencia.Empty())
+			(detalhe == 1 && !parametro[parID].dependencia.Empty()))
 			col += printf(CINZ "P%d=" NCINZ, parID + 1) - CINZ_TAM;
-		else
+		else {
+			if (detalhe == 2 && !parametro[parID].dependencia.Empty())
+				col += printf("  ");
 			col += printf(CINZ "P%d(%s):" NCINZ " ", parID + 1, parametro[parID].nome) - CINZ_TAM;
+		}
 		// valor do parâmetro
 		if (detalhe > 1 && col < 30)
 			col += printf("%*s", (30 - col), "");
 		if (detalhe == 0 || parametro[parID].nomeValores == NULL ||
-			detalhe == 1 && !parametro[parID].dependencia.Empty())
+			(detalhe == 1 && !parametro[parID].dependencia.Empty()))
 			col += printf("%d", Parametro(parID));
 		else
 			col += printf("%s", parametro[parID].nomeValores[Parametro(parID) - parametro[parID].min]);
@@ -394,6 +397,11 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 			if (col < 40)
 				col += printf("%*s", (40 - col), "");
 			col += printf(" " CINZ "(%d a %d)" NCINZ, parametro[parID].min, parametro[parID].max) - CINZ_TAM;
+		}
+		if (detalhe == 2 && !parametro[parID].dependencia.Empty()) {
+			// mostrar variável dependente
+			int dependente = parametro[parID].dependencia.First();
+			col += printf(CINZ " [P%d(%s)]" NCINZ " ", dependente + 1, parametro[dependente].nome) - CINZ_TAM;
 		}
 		// separador/mudança de linha
 		if (i < nElementos - 1) {
