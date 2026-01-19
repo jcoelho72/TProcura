@@ -376,14 +376,16 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 			continue;
 		count++;
 		// identificação do parâmetro
-		if (detalhe == 0 || parametro[parID].nome == NULL)
+		if (detalhe == 0 || parametro[parID].nome == NULL ||
+			detalhe == 1 && parametro[parID].dependencia != NULL)
 			col += printf(CINZ "P%d=" NCINZ, parID + 1) - CINZ_TAM;
 		else
 			col += printf(CINZ "P%d(%s):" NCINZ " ", parID + 1, parametro[parID].nome) - CINZ_TAM;
 		// valor do parâmetro
 		if (detalhe > 1 && col < 30)
 			col += printf("%*s", (30 - col), "");
-		if (detalhe == 0 || parametro[parID].nomeValores == NULL)
+		if (detalhe == 0 || parametro[parID].nomeValores == NULL ||
+			detalhe == 1 && parametro[parID].dependencia != NULL)
 			col += printf("%d", Parametro(parID));
 		else
 			col += printf("%s", parametro[parID].nomeValores[Parametro(parID) - parametro[parID].min]);
