@@ -382,17 +382,17 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 			if (detalhe == 0 || parametro[parID].nome == NULL ||
 				(detalhe == 1 && !parametro[parID].dependencia.Empty()))
 				col += printf("%sP%d%s%s" NCINZ,
-					(const char*)(Parametro(parID) == 1 ? "\x1b[92m" : "\x1b[91m"),
-					parID + 1,
 					(const char*)(Parametro(parID) == 1 ? "\x1b[32m" : "\x1b[31m"),
+					parID + 1,
+					(const char*)(Parametro(parID) == 1 ? "\x1b[92m" : "\x1b[91m"),
 					Icon(Parametro(parID) == 1 ? EIcon::SEL: EIcon::NSEL)) - CINZ_TAM;
 			else {
 				if (detalhe == 2 && !parametro[parID].dependencia.Empty())
 					col += printf("  ");
 				col += printf("%sP%d(%s)%s%s" NCINZ " ",
-					(const char*)(Parametro(parID) == 1 ? "\x1b[92m" : "\x1b[91m"),
-					parID + 1, parametro[parID].nome,
 					(const char*)(Parametro(parID) == 1 ? "\x1b[32m" : "\x1b[31m"),
+					parID + 1, parametro[parID].nome,
+					(const char*)(Parametro(parID) == 1 ? "\x1b[92m" : "\x1b[91m"),
 					Icon(Parametro(parID) == 1 ? EIcon::SEL : EIcon::NSEL)) - CINZ_TAM;
 			}
 		}
