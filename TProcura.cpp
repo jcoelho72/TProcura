@@ -381,15 +381,17 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 			// identificação do parâmetro e valor com cor 
 			if (detalhe == 0 || parametro[parID].nome == NULL ||
 				(detalhe == 1 && !parametro[parID].dependencia.Empty()))
-				col += printf("%sP%d" NCINZ,
+				col += printf("%sP%d%s" NCINZ,
 					(const char*)((Parametro(parID) == 1) ? "\x1b[32m" : "\x1b[31m"),
-					parID + 1) - CINZ_TAM;
+					parID + 1,
+					Icon(Parametro(parID) == 1 ? EIcon::SEL: EIcon::NSEL)) - CINZ_TAM;
 			else {
 				if (detalhe == 2 && !parametro[parID].dependencia.Empty())
 					col += printf("  ");
-				col += printf("%sP%d(%s)" NCINZ " ",
+				col += printf("%sP%d(%s)%s" NCINZ " ",
 					(const char*)((Parametro(parID) == 1) ? "\x1b[32m" : "\x1b[31m"),
-					parID + 1, parametro[parID].nome) - CINZ_TAM;
+					parID + 1, parametro[parID].nome,
+					Icon(Parametro(parID) == 1 ? EIcon::SEL : EIcon::NSEL)) - CINZ_TAM;
 			}
 		}
 		else {
