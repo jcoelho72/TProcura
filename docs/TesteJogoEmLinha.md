@@ -1602,7 +1602,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioTempo
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P4=1,2,4
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1:2 x P4=1,2,4
 </pre>
 </details>
 <details>
@@ -1633,6 +1633,7 @@ Vamos utilizar a seguinte estratégia para reduzir/aumentar a força de jogo:
 - Adicionar ruído à heurística (P10<0)
 - Ameaças mais curtas menos relevantes (P15<300)
 - Fixar a profundidade de procura (P7>0)
+- Utilizar a poda cega (P14>0)
 
 Para afinar os níveis temos de fazer torneios entre níveis consecutivos,
 para encontrar os valores que levem a ter uma diferença de força de jogo em 75% (ambos os lados).
@@ -1641,14 +1642,14 @@ Nível +2: P4=4
 Nível +1: P4=2 
 Nível Base: -
 Nível -1: P10=-1 
-Nível -2: P10=-4 P15=150 
-Nível -3: P7=2 P10=-1 P15=150 
-Nível -4: P7=2 P10=-4 P15=150 
-Nível -5: P7=2 P10=-16 P15=110 P14=10
-Nível -6: P7=2 P10=-64 P15=101 P14=4
+Nível -2: P10=-5 P15=150 
+Nível -3: P7=2 P10=-1 P15=120 
+Nível -4: P7=2 P10=-5 P15=120 
+Nível -5: P7=2 P10=-20 P15=110 P14=10
+Nível -6: P7=2 P10=-100 P15=101 P14=4
 
 
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioNiveis -M 1 -P P2=2 P7=0 P4=1 P1=2 P12=1 P11=1 P15=300 P10=0 -P P4=2 -P P4=1 P10=-1 -P P10=-10 P15=150 -P P10=-100 P15=110 -P P7=2 P10=-1 P15=300 -P P7=2 P10=-10 P15=150 -P P7=2 P10=-100 P15=110 P14=4 
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioNiveis -M 1 -P P2=2 P7=0 P4=1 P1=2 P12=1 P11=1 P15=300 P10=0 -P P4=4 -P P4=2 -P P4=1 P10=-1 -P P10=-5 P15=150 -P P7=2 P10=-1 P15=120 -P P7=2 P10=-5 P15=120 -P P7=2 P10=-20 P15=110 P14=10 -P P7=2 P10=-100 P15=101 P14=4
 
 
 
