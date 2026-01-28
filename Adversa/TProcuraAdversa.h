@@ -87,11 +87,11 @@ public:
 	// Utilizar para executar testes empíricos
 	// Utiliza as configurações existentes, ou parâmetros atuais
 	// Efetua um torneio entre configurações
-	void TesteEmpirico(TVector<int> instancias, char* ficheiro = NULL);
+	void TesteEmpirico(TVector<int> instancias, const char* ficheiro = NULL);
 	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
-	void TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro = NULL);
+	void TesteEmpiricoGestor(TVector<int> instancias, const char* ficheiro = NULL);
 	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
-	void TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro = NULL);
+	void TesteEmpiricoTrabalhador(TVector<int> instancias, const char* ficheiro = NULL);
 
 
 	/// @brief Executa o algoritmo com os parametros atuais
@@ -143,7 +143,7 @@ protected:
 	 * @param resultados Vetor de resultados.
 	 * @param ficheiro com o nome do ficheiro onde gravar.
 	 */
-	bool RelatorioCSV(TVector<TResultadoJogo>& resultados, char* ficheiro);
+	bool RelatorioCSV(TVector<TResultadoJogo>& resultados, const char* ficheiro);
 
 	void OrdenarSucessores(TVector<TNo>& sucessores, TVector<int>& id, int nivel);
 

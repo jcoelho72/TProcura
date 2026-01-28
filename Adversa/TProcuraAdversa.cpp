@@ -463,7 +463,7 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 // utilizar para executar testes empíricos, utilizando todas as instâncias,
 // Utiliza as configurações existentes, ou parâmetros atuais
 // Efetua um torneio entre configurações
-void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, char* ficheiro) {
+void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, const char* ficheiro) {
 	TVector<TResultadoJogo> resultados; // guarda resultado dos jogos (qualquer ordem)
 	TVector<int> atual;
 	double periodoReporte = 60;
@@ -632,7 +632,7 @@ char* TProcuraAdversa::AdicionaLance(char* jogo, const char* lance) {
 }
 
 
-void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheiro)
+void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, const char* ficheiro)
 {
 #ifdef MPI_ATIVO
 	int dados[6] = { 0, 0, 0, 4,0,0 }; // instância, brancas, pretas
@@ -785,7 +785,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, char* ficheir
 #endif
 }
 
-void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* ficheiro)
+void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, const char* ficheiro)
 {
 #ifdef MPI_ATIVO
 	int dados[6] = { 0, 0, 0, 0, 0, 0 }; // instância, brancas, pretas
@@ -832,9 +832,10 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, char* fi
 
 
 
-bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, char* ficheiro) {
+bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, const char* ficheiro) {
 	char* contexto;
-	char* pt = compat::strtok(ficheiro, " \n\t\r", &contexto);
+	TString ficheiroCpy = ficheiro;
+	char* pt = compat::strtok(ficheiroCpy.Data(), " \n\t\r", &contexto);
 	TString str;
 	if (mpiCount > 1)
 		str.printf("%s_%d.csv", pt, mpiID);
