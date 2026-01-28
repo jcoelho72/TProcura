@@ -31,7 +31,7 @@ digraph "TProcura::MostraParametros"
   Node12 [id="Node000012",label="TProcura::EditarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae559b54c7ff363280df914fec988794f",tooltip="Permite ao utilizador editar as configurações."];
   Node12 -> Node6 [id="edge13_Node000012_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 -> Node13 [id="edge14_Node000011_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#abe15e86c2a11e584764a2b80ddab10cb",tooltip=" "];
+  Node13 [id="Node000013",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3608bb3fe75f237911f210151fc6345e",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node11 -> Node14 [id="edge15_Node000011_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcura::TesteInicio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a577697338460038138738e87157166af",tooltip="arranque de teste, auxiliar aos Testes Empíricos"];
   Node14 -> Node13 [id="edge16_Node000014_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -40,12 +40,12 @@ digraph "TProcura::MostraParametros"
   Node15 -> Node3 [id="edge18_Node000015_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node6 [id="edge19_Node000015_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node16 [id="edge20_Node000014_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TProcuraAdversa::TesteEmpirico\lGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a6d7b94a381a8a02e1792b094c6317a34",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
+  Node16 [id="Node000016",label="TProcuraAdversa::TesteEmpirico\lGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ac83ea89e9911b0375755b1dc2360d492",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node14 -> Node17 [id="edge21_Node000014_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a67aba86c04ae341071ff03a02ef2651a",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node17 -> Node3 [id="edge22_Node000017_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node18 [id="edge23_Node000014_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adf8ec64db235b7d293fbf5a632a57966",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a902c5dd8e74b1a44e8a38f96733ff211",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node14 -> Node19 [id="edge24_Node000014_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7bf4b2dc4cbcf19cc6f5868a5071e726",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node19 -> Node3 [id="edge25_Node000019_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];

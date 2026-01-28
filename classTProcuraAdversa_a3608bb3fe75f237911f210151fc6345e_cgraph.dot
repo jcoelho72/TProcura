@@ -5,7 +5,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [id="Node000001",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [id="Node000001",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcura::ConfiguracaoAtual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac1d9f06b12765a02290050af15463186",tooltip="Grava ou lê a configuração atual."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
@@ -155,7 +155,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node32 [id="Node000032",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
   Node1 -> Node3 [id="edge102_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node73 [id="edge103_Node000001_Node000073",color="steelblue1",style="solid",tooltip=" "];
-  Node73 [id="Node000073",label="TProcuraAdversa::RelatorioCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb367986ee2d88de1b47e3d31a224ab7",tooltip="Gera um relatório CSV com os resultados."];
+  Node73 [id="Node000073",label="TProcuraAdversa::RelatorioCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a33f8c1f132947424cf52690d37ca90d4",tooltip="Gera um relatório CSV com os resultados."];
   Node73 -> Node4 [id="edge104_Node000073_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node73 -> Node63 [id="edge105_Node000073_Node000063",color="steelblue1",style="solid",tooltip=" "];
   Node73 -> Node69 [id="edge106_Node000073_Node000069",color="steelblue1",style="solid",tooltip=" "];
