@@ -1575,17 +1575,95 @@ Ver execução:</summary>
 </pre>
  </p>
 </details>
-<p>Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra, utilizando vários jogos, com diferentes sementes aleatórias.</p>
-<p>Pretendemos saber entre o MiniMax com e sem cortes alfa/beta, qual é o melhor, se ordenarmos com 2 (guarda estados analisados), e utilizarmos a procura iterativa.</p>
-<p>No entanto, se executarmos um teste a variar apenas a semente, como a semente aleatória apenas tem efeito se forem gerados números aleatórios, iriamos apenas gerar jogadores iguais.</p>
-<p>Assim, vamos primeiramente estudar o uso do ruído na heurística, com o efeito de variar a jogada.</p>
-<p>O ruído é especificado no parâmetro 10, e o seu valor pode ser positivo ou negativo. Se for negativo pode oscilar positiva ou negativamente, se positivo será sempre um ruído positivo. Vamos variar entre valores negativos, já que pretendemos que o ruído seja simétrico. Esperamos que ruído baixo, não altere a força de jogo, mas ruído alto degrade consideravelmente a força de jogo.</p>
-<p>... (estudar o efeito do ruído)</p>
+<p>Os resultados do torneio são os seguintes:</p>
+<p>EficáciaBranco</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P10   </th><th class="markdownTableHeadRight">-100   </th><th class="markdownTableHeadRight">-50   </th><th class="markdownTableHeadRight">-20   </th><th class="markdownTableHeadRight">-10   </th><th class="markdownTableHeadRight">-5   </th><th class="markdownTableHeadRight">-2   </th><th class="markdownTableHeadRight">-1   </th><th class="markdownTableHeadRight">0   </th><th class="markdownTableHeadRight">Total    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-100   </td><td class="markdownTableBodyRight">0,27   </td><td class="markdownTableBodyRight">0,26   </td><td class="markdownTableBodyRight">0,18   </td><td class="markdownTableBodyRight">0,12   </td><td class="markdownTableBodyRight">0,17   </td><td class="markdownTableBodyRight">0,06   </td><td class="markdownTableBodyRight">0,1   </td><td class="markdownTableBodyRight">0,19   </td><td class="markdownTableBodyRight">0,16    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-50   </td><td class="markdownTableBodyRight">0,41   </td><td class="markdownTableBodyRight">0,47   </td><td class="markdownTableBodyRight">0,23   </td><td class="markdownTableBodyRight">0,28   </td><td class="markdownTableBodyRight">0,16   </td><td class="markdownTableBodyRight">0,14   </td><td class="markdownTableBodyRight">0,13   </td><td class="markdownTableBodyRight">0,2   </td><td class="markdownTableBodyRight">0,24    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-20   </td><td class="markdownTableBodyRight">0,51   </td><td class="markdownTableBodyRight">0,52   </td><td class="markdownTableBodyRight">0,28   </td><td class="markdownTableBodyRight">0,37   </td><td class="markdownTableBodyRight">0,22   </td><td class="markdownTableBodyRight">0,21   </td><td class="markdownTableBodyRight">0,14   </td><td class="markdownTableBodyRight">0,28   </td><td class="markdownTableBodyRight">0,32    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-10   </td><td class="markdownTableBodyRight">0,63   </td><td class="markdownTableBodyRight">0,56   </td><td class="markdownTableBodyRight">0,44   </td><td class="markdownTableBodyRight">0,42   </td><td class="markdownTableBodyRight">0,36   </td><td class="markdownTableBodyRight">0,3   </td><td class="markdownTableBodyRight">0,29   </td><td class="markdownTableBodyRight">0,33   </td><td class="markdownTableBodyRight">0,42    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-5   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,59   </td><td class="markdownTableBodyRight">0,49   </td><td class="markdownTableBodyRight">0,46   </td><td class="markdownTableBodyRight">0,42   </td><td class="markdownTableBodyRight">0,36   </td><td class="markdownTableBodyRight">0,31   </td><td class="markdownTableBodyRight">0,39   </td><td class="markdownTableBodyRight">0,45    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-2   </td><td class="markdownTableBodyRight">0,62   </td><td class="markdownTableBodyRight">0,64   </td><td class="markdownTableBodyRight">0,51   </td><td class="markdownTableBodyRight">0,48   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">0,37   </td><td class="markdownTableBodyRight">0,3   </td><td class="markdownTableBodyRight">0,39   </td><td class="markdownTableBodyRight">0,48    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,62   </td><td class="markdownTableBodyRight">0,52   </td><td class="markdownTableBodyRight">0,49   </td><td class="markdownTableBodyRight">0,46   </td><td class="markdownTableBodyRight">0,44   </td><td class="markdownTableBodyRight">0,42   </td><td class="markdownTableBodyRight">0,42   </td><td class="markdownTableBodyRight">0,5    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyRight">0,75   </td><td class="markdownTableBodyRight">0,75   </td><td class="markdownTableBodyRight">0,69   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,61   </td><td class="markdownTableBodyRight">0,53   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,64   </td><td class="markdownTableBodyRight">0,64    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total   </td><td class="markdownTableBodyRight">0,56   </td><td class="markdownTableBodyRight">0,55   </td><td class="markdownTableBodyRight">0,43   </td><td class="markdownTableBodyRight">0,4   </td><td class="markdownTableBodyRight">0,36   </td><td class="markdownTableBodyRight">0,3   </td><td class="markdownTableBodyRight">0,28   </td><td class="markdownTableBodyRight">0,34   </td><td class="markdownTableBodyRight">0,4   </td></tr>
+</table>
+<p>EficáciaPreto</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">P10   </th><th class="markdownTableHeadRight">-100   </th><th class="markdownTableHeadRight">-50   </th><th class="markdownTableHeadRight">-20   </th><th class="markdownTableHeadRight">-10   </th><th class="markdownTableHeadRight">-5   </th><th class="markdownTableHeadRight">-2   </th><th class="markdownTableHeadRight">-1   </th><th class="markdownTableHeadRight">0   </th><th class="markdownTableHeadRight">Total    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-100   </td><td class="markdownTableBodyRight">0,73   </td><td class="markdownTableBodyRight">0,74   </td><td class="markdownTableBodyRight">0,82   </td><td class="markdownTableBodyRight">0,88   </td><td class="markdownTableBodyRight">0,83   </td><td class="markdownTableBodyRight">0,94   </td><td class="markdownTableBodyRight">0,9   </td><td class="markdownTableBodyRight">0,81   </td><td class="markdownTableBodyRight">0,84    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-50   </td><td class="markdownTableBodyRight">0,59   </td><td class="markdownTableBodyRight">0,53   </td><td class="markdownTableBodyRight">0,77   </td><td class="markdownTableBodyRight">0,72   </td><td class="markdownTableBodyRight">0,84   </td><td class="markdownTableBodyRight">0,86   </td><td class="markdownTableBodyRight">0,87   </td><td class="markdownTableBodyRight">0,8   </td><td class="markdownTableBodyRight">0,76    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-20   </td><td class="markdownTableBodyRight">0,49   </td><td class="markdownTableBodyRight">0,48   </td><td class="markdownTableBodyRight">0,72   </td><td class="markdownTableBodyRight">0,63   </td><td class="markdownTableBodyRight">0,78   </td><td class="markdownTableBodyRight">0,79   </td><td class="markdownTableBodyRight">0,86   </td><td class="markdownTableBodyRight">0,72   </td><td class="markdownTableBodyRight">0,68    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-10   </td><td class="markdownTableBodyRight">0,37   </td><td class="markdownTableBodyRight">0,44   </td><td class="markdownTableBodyRight">0,56   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,64   </td><td class="markdownTableBodyRight">0,7   </td><td class="markdownTableBodyRight">0,71   </td><td class="markdownTableBodyRight">0,67   </td><td class="markdownTableBodyRight">0,58    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-5   </td><td class="markdownTableBodyRight">0,4   </td><td class="markdownTableBodyRight">0,41   </td><td class="markdownTableBodyRight">0,51   </td><td class="markdownTableBodyRight">0,54   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,64   </td><td class="markdownTableBodyRight">0,69   </td><td class="markdownTableBodyRight">0,61   </td><td class="markdownTableBodyRight">0,55    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">-2   </td><td class="markdownTableBodyRight">0,38   </td><td class="markdownTableBodyRight">0,36   </td><td class="markdownTableBodyRight">0,49   </td><td class="markdownTableBodyRight">0,52   </td><td class="markdownTableBodyRight">0,5   </td><td class="markdownTableBodyRight">0,63   </td><td class="markdownTableBodyRight">0,7   </td><td class="markdownTableBodyRight">0,61   </td><td class="markdownTableBodyRight">0,52    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">-1   </td><td class="markdownTableBodyRight">0,4   </td><td class="markdownTableBodyRight">0,38   </td><td class="markdownTableBodyRight">0,48   </td><td class="markdownTableBodyRight">0,51   </td><td class="markdownTableBodyRight">0,54   </td><td class="markdownTableBodyRight">0,56   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,58   </td><td class="markdownTableBodyRight">0,5    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">0   </td><td class="markdownTableBodyRight">0,25   </td><td class="markdownTableBodyRight">0,25   </td><td class="markdownTableBodyRight">0,31   </td><td class="markdownTableBodyRight">0,42   </td><td class="markdownTableBodyRight">0,39   </td><td class="markdownTableBodyRight">0,47   </td><td class="markdownTableBodyRight">0,4   </td><td class="markdownTableBodyRight">0,36   </td><td class="markdownTableBodyRight">0,36    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">Total   </td><td class="markdownTableBodyRight">0,44   </td><td class="markdownTableBodyRight">0,45   </td><td class="markdownTableBodyRight">0,57   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,64   </td><td class="markdownTableBodyRight">0,7   </td><td class="markdownTableBodyRight">0,72   </td><td class="markdownTableBodyRight">0,66   </td><td class="markdownTableBodyRight">0,6   </td></tr>
+</table>
+<p>Podemos observar que:</p><ul>
+<li>quando o ruído do branco é 0 (última linha na tabela EficáciaBranco), a eficácia do branco é 75% caso o preto tenha ruído a -100, descendo para 64% há medida que o ruído do preto é reduzido.</li>
+<li>quando o ruído do branco é -100 (primeira linha na tabela EficáciaBranco), a eficácia é 27% quando preto tem também -100, descendo para 19% há medida que o ruído do preto é reduzido.</li>
+<li>quando o ruído do preto é 0 (última coluna na tabela EficáciaPreto), a eficácia do preto é 81% caso o branco tenha ruído a -100, descendo para 36% há medida que o ruído do branco é reduzido.</li>
+<li>quando o ruído do preto é -100 (primeira coluna na tabela Eficácia), a eficácia é 73% quando branco tem também -100, descendo para 25% há medida que o ruído do branco é reduzido.</li>
+</ul>
+<p>Não valores com precisão, já que foram poucos jogos e pode-se observar oscilações na eficácia. MAs podemos observar uma tendência em que o ruído afeta significativamente a eficácia do jogador.</p>
+<p>Podemos ver oos resultados por instância:</p>
+<p>| Instância | Vitória Preta | Empate | Vitória Branca | |:&mdash;:|:&mdash;:|:&mdash;:|:&mdash;:| | 1 | 483 | 69 | | 2 | 336 | 44 | 172 | | 3 | 50 | 9 | 493 | | 4 | 266 | 7 | 279 | | 5 | 226 | 326 | | 6 | 284 | 2 | 266 | | 7 | 236 | 20 | 296 | | 8 | 312 | 28 | 212 | | 9 | 482 | 69 | 1 | | 10 | 467 | 68 | 17 | | Total Geral | 3142 | 316 | 2062 |</p>
+<p>Podemos ver que um torneio com ruído tem muitos mais resultados decisivos, com poucas partidas a terminar em empate.</p>
+<p>Considera-se assim que o ruído é um parâmetro importante para ajustar a força de jogo do jogador artificial.</p>
+<p><a class="anchor" id="jel-a8"></a></p>
+<h2><a class="anchor" id="autotoc_md118"></a>
+Ação 8 - Torneio Tempo</h2>
+<p>Vamos agora estudar o efeito do tempo por jogada na eficácia do jogador. Como temos jogos com tamanhos grandes, vamos manter um só jogo por cada configuração, e variar de 1, 2 e 4 segundos por jogada. São apenas 3 configurações (jogadores), resultando em 6 jogos por instância. Mantemos o ruído a 0, reservando para utilização na definição dos níveis de jogo mais baixos.</p>
+<ul>
+<li><b>Tipo de Teste / Objetivo</b>: Eficácia (Tempo)</li>
+<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P4=1,2,4</li>
+<li><b>Esforço</b>: P3=1</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P4=1,2,4</li>
+</ul>
 <details >
 <summary >
-Ver script: torneioRuido.sh</summary>
+Ver script: torneioTempo.sh</summary>
 <pre>
+#!/bin/bash
+#SBATCH --job-name=torneioTempo
+#SBATCH --output=Resultados/torneioTempo.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
 
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: torneioTempo
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P4=1,2,4
 </pre> </details>
 <details >
 <summary >
@@ -1596,15 +1674,6 @@ Ver execução:</summary>
 </pre>
  </p>
 </details>
-<p><a class="anchor" id="jel-a8"></a></p>
-<h2><a class="anchor" id="autotoc_md118"></a>
-Ação 8 - Torneio Tempo</h2>
-<ul>
-<li><b>Tipo de Teste / Objetivo</b>: Eficácia (Tempo)</li>
-<li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P4=1:5</li>
-<li><b>Esforço</b>: P3=1</li>
-<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P4=1:5</li>
-</ul>
 <p><a class="anchor" id="jel-a9"></a></p>
 <h2><a class="anchor" id="autotoc_md119"></a>
 Ação 9 - Torneio Níveis</h2>
