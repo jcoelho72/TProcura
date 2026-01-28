@@ -1509,34 +1509,100 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioRuido -M 1 -P P2=2 P4=1
 </details>
 
 
+Os resultados do torneio são os seguintes:
+
+EficáciaBranco
+
+| P10 | -100 | -50 | -20 | -10 | -5 | -2 | -1 | 0 | Total |
+|:---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| -100 | 0,27 | 0,26 | 0,18 | 0,12 | 0,17 | 0,06 | 0,1 | 0,19 | 0,16 |
+| -50 | 0,41 | 0,47 | 0,23 | 0,28 | 0,16 | 0,14 | 0,13 | 0,2 | 0,24 |
+| -20 | 0,51 | 0,52 | 0,28 | 0,37 | 0,22 | 0,21 | 0,14 | 0,28 | 0,32 |
+| -10 | 0,63 | 0,56 | 0,44 | 0,42 | 0,36 | 0,3 | 0,29 | 0,33 | 0,42 |
+| -5 | 0,6 | 0,59 | 0,49 | 0,46 | 0,42 | 0,36 | 0,31 | 0,39 | 0,45 |
+| -2 | 0,62 | 0,64 | 0,51 | 0,48 | 0,5 | 0,37 | 0,3 | 0,39 | 0,48 |
+| -1 | 0,6 | 0,62 | 0,52 | 0,49 | 0,46 | 0,44 | 0,42 | 0,42 | 0,5 |
+| 0 | 0,75 | 0,75 | 0,69 | 0,58 | 0,61 | 0,53 | 0,6 | 0,64 | 0,64 |
+| Total | 0,56 | 0,55 | 0,43 | 0,4 | 0,36 | 0,3 | 0,28 | 0,34 | 0,4 |
 
 
+EficáciaPreto
 
-Um jogo isolado pode não significar muito. Vamos ver entre duas configurações, se uma é de facto melhor que a outra,
-utilizando vários jogos, com diferentes sementes aleatórias.
+| P10 | -100 | -50 | -20 | -10 | -5 | -2 | -1 | 0 | Total |
+|:---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| -100 | 0,73 | 0,74 | 0,82 | 0,88 | 0,83 | 0,94 | 0,9 | 0,81 | 0,84 |
+| -50 | 0,59 | 0,53 | 0,77 | 0,72 | 0,84 | 0,86 | 0,87 | 0,8 | 0,76 |
+| -20 | 0,49 | 0,48 | 0,72 | 0,63 | 0,78 | 0,79 | 0,86 | 0,72 | 0,68 |
+| -10 | 0,37 | 0,44 | 0,56 | 0,58 | 0,64 | 0,7 | 0,71 | 0,67 | 0,58 |
+| -5 | 0,4 | 0,41 | 0,51 | 0,54 | 0,58 | 0,64 | 0,69 | 0,61 | 0,55 |
+| -2 | 0,38 | 0,36 | 0,49 | 0,52 | 0,5 | 0,63 | 0,7 | 0,61 | 0,52 |
+| -1 | 0,4 | 0,38 | 0,48 | 0,51 | 0,54 | 0,56 | 0,58 | 0,58 | 0,5 |
+| 0 | 0,25 | 0,25 | 0,31 | 0,42 | 0,39 | 0,47 | 0,4 | 0,36 | 0,36 |
+| Total | 0,44 | 0,45 | 0,57 | 0,6 | 0,64 | 0,7 | 0,72 | 0,66 | 0,6 |
 
-Pretendemos saber entre o MiniMax com e sem cortes alfa/beta, qual é o melhor, se ordenarmos com 2 (guarda estados analisados), 
-e utilizarmos a procura iterativa.
+Podemos observar que:
+- quando o ruído do branco é 0 (última linha na tabela EficáciaBranco), a eficácia do branco é 75% caso o preto tenha ruído a -100, descendo para 64% há medida que o ruído do preto é reduzido. 
+- quando o ruído do branco é -100 (primeira linha na tabela EficáciaBranco), a eficácia é 27% quando preto tem também -100, descendo para 19% há medida que o ruído do preto é reduzido.
+- quando o ruído do preto é 0 (última coluna na tabela EficáciaPreto), a eficácia do preto é 81% caso o branco tenha ruído a -100, descendo para 36% há medida que o ruído do branco é reduzido.
+- quando o ruído do preto é -100 (primeira coluna na tabela Eficácia), a eficácia é 73% quando branco tem também -100, descendo para 25% há medida que o ruído do branco é reduzido.
 
-No entanto, se executarmos um teste a variar apenas a semente, 
-como a semente aleatória apenas tem efeito se forem gerados números aleatórios,
-iriamos apenas gerar jogadores iguais.
+Não valores com precisão, já que foram poucos jogos e pode-se observar oscilações na eficácia.
+MAs podemos observar uma tendência em que o ruído afeta significativamente a eficácia do jogador.
 
-Assim, vamos primeiramente estudar o uso do ruído na heurística, com o efeito de variar a jogada.
+Podemos ver oos resultados por instância:
 
-O ruído é especificado no parâmetro 10, e o seu valor pode ser positivo ou negativo. 
-Se for negativo pode oscilar positiva ou negativamente, se positivo será sempre um ruído positivo.
-Vamos variar entre valores negativos, já que pretendemos que o ruído seja simétrico. 
-Esperamos que ruído baixo, não altere a força de jogo, mas ruído alto degrade consideravelmente a força de jogo.
+| Instância | Vitória Preta | Empate | Vitória Branca |
+|:---:|:---:|:---:|:---:|
+| 1 | 483 | 69 |
+| 2 | 336 | 44 | 172 |
+| 3 | 50 | 9 | 493 |
+| 4 | 266 | 7 | 279 |
+| 5 | 226 | 326 |
+| 6 | 284 | 2 | 266 |
+| 7 | 236 | 20 | 296 |
+| 8 | 312 | 28 | 212 |
+| 9 | 482 | 69 | 1 |
+| 10 | 467 | 68 | 17 |
+| Total Geral | 3142 | 316 | 2062 |
+
+Podemos ver que um torneio com ruído tem muitos mais resultados decisivos, com poucas partidas a terminar em empate.
+
+Considera-se assim que o ruído é um parâmetro importante para ajustar a força de jogo do jogador artificial.
 
 
-... (estudar o efeito do ruído)
+\anchor jel-a8
+## Ação 8 - Torneio Tempo
 
+Vamos agora estudar o efeito do tempo por jogada na eficácia do jogador.
+Como temos jogos com tamanhos grandes, vamos manter um só jogo por cada configuração, e variar de 1, 2 e 4 segundos por jogada.
+São apenas 3 configurações (jogadores), resultando em 6 jogos por instância.
+Mantemos o ruído a 0, reservando para utilização na definição dos níveis de jogo mais baixos.
+
+- **Tipo de Teste / Objetivo**: Eficácia (Tempo)
+- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P4=1,2,4
+- **Esforço**: P3=1
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P4=1,2,4
 
 <details>
-  <summary>Ver script: torneioRuido.sh</summary>
+  <summary>Ver script: torneioTempo.sh</summary>
 <pre>
+#!/bin/bash
+#SBATCH --job-name=torneioTempo
+#SBATCH --output=Resultados/torneioTempo.txt
+#SBATCH --account=f202507959cpcaa0a
+#SBATCH --partition=normal-arm
+#SBATCH --time=04:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=48
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=24G
 
+ml OpenMPI
+
+make mpi || { echo "Compilação falhou"; exit 1; }
+
+# Teste: torneioTempo
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P4=1,2,4
 </pre>
 </details>
 <details>
@@ -1547,17 +1613,6 @@ Esperamos que ruído baixo, não altere a força de jogo, mas ruído alto degrad
 </pre>
 \endhtmlonly
 </details>
-
-
-
-\anchor jel-a8
-## Ação 8 - Torneio Tempo
-
-- **Tipo de Teste / Objetivo**: Eficácia (Tempo)
-- **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P4=1:5
-- **Esforço**: P3=1
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P4=1:5
-
 
 
 \anchor jel-a9

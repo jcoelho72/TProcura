@@ -389,7 +389,7 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, const c
 			else {
 				if (detalhe == 2 && !parametro[parID].dependencia.Empty())
 					col += printf("  ");
-				col += printf("%sP%d(%s)%s%s" NCINZ " ",
+				col += printf("%sP%d(%s)%s%s" NCINZ,
 					(const char*)(Parametro(parID) == 1 ? "\x1b[38;5;108m" : "\x1b[38;5;131m"),
 					parID + 1, parametro[parID].nome,
 					(const char*)(Parametro(parID) == 1 ? "\x1b[92m" : "\x1b[91m"),
