@@ -1580,8 +1580,8 @@ Mantemos o ruído a 0, reservando para utilização na definição dos níveis d
 
 - **Tipo de Teste / Objetivo**: Eficácia (Tempo)
 - **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P4=1,2,4
-- **Esforço**: P3=1
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P4=1,2,4
+- **Esforço**: P3=1:2
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1:2 x P4=1,2,4
 
 <details>
   <summary>Ver script: torneioTempo.sh</summary>
@@ -1630,22 +1630,21 @@ Configuração base: P7=0 P1=2 P4=1 P12=1 P11=1 P15=300 P10=0
 
 Vamos utilizar a seguinte estratégia para reduzir/aumentar a força de jogo:
 - Aumentar o tempo por jogada (P4>1)
-- Configuração base (P4=1)
-- Adicionar ruído à heurística (P10<>0)
+- Adicionar ruído à heurística (P10<0)
 - Ameaças mais curtas menos relevantes (P15<300)
 - Fixar a profundidade de procura (P7>0)
-- Utilizar poda cega (P14>0)
 
 Para afinar os níveis temos de fazer torneios entre níveis consecutivos,
 para encontrar os valores que levem a ter uma diferença de força de jogo em 75% (ambos os lados).
 
-Nível +1: P4=4 
+Nível +2: P4=4 
+Nível +1: P4=2 
 Nível Base: -
 Nível -1: P10=-1 
 Nível -2: P10=-4 P15=150 
-Nível -4: P7=2 P10=-1 P15=200 
-Nível -5: P7=2 P10=-4 P15=150 
-Nível -6: P7=2 P10=-16 P15=110 P14=10
+Nível -3: P7=2 P10=-1 P15=150 
+Nível -4: P7=2 P10=-4 P15=150 
+Nível -5: P7=2 P10=-16 P15=110 P14=10
 Nível -6: P7=2 P10=-64 P15=101 P14=4
 
 
