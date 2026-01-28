@@ -1614,6 +1614,28 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0
 \endhtmlonly
 </details>
 
+Os resultados do torneio são os seguintes:
+
+EficáciaBranco
+
+| P4 | 1 | 2 | 4 | Total |
+|:---:|:---:|:---:|:---:|
+| 1 | 0,65 | 0,46 | 0,58 | 0,55 |
+| 2 | 0,59 | 0,55 | 0,58 | 0,58 |
+| 4 | 0,56 | 0,58 | 0,6 | 0,58 |
+| Total | 0,59 | 0,53 | 0,58 | 0,57 |
+
+EficáciaPreto
+
+| P4 | 1 | 2 | 4 | Total |
+|:---:|:---:|:---:|:---:|
+| 1 | 0,35 | 0,54 | 0,43 | 0,46 |
+| 2 | 0,41 | 0,45 | 0,43 | 0,43 |
+| 4 | 0,44 | 0,43 | 0,4 | 0,43 |
+| Total | 0,41 | 0,48 | 0,42 | 0,44 |
+
+Podemos observar que o tempo influencia a eficácia do jogador, embora não de forma muito acentuada.
+
 
 \anchor jel-a9
 ## Ação 9 - Torneio Níveis
@@ -1668,5 +1690,23 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioNiveis -M 1 -P P2=2 P7=
 \endhtmlonly
 </details>
 
+Vamos neste caso colocar o total de pontos obtidos entre todos os níveis:
 
+| Nível | +2 | +1 | Base | -1 | -2 | -3 | -4 | -5 | -6 | Total Geral |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| +2 | 3 | 3 | 2 | 8 | 9 | 8 | 10 | 10 | 53 |
+| +1 | 3 | 4 | 0 | 4 | 9 | 10 | 10 | 10 | 50 |
+| Base | 0 | 1 | 5 | 6 | 9 | 8 | 10 | 10 | 49 |
+| -1 | -4 | -1 | 0 | 2 | 8 | 8 | 8 | 10 | 31 |
+| -2 | -4 | -6 | -5 | -6 | 0 | 4 | 10 | 10 | 3 |
+| -3 | -9 | -9 | -10 | -10 | -10 | -4 | 4 | 10 | -38 |
+| -4 | -10 | -10 | -10 | -10 | -10 | -8 | 4 | 8 | -46 |
+| -5 | -10 | -10 | -10 | -10 | -10 | -10 | -10 | 6 | -64 |
+| -6 | -10 | -10 | -10 | -10 | -10 | -10 | -10 | -8 | -78 |
+| Total Geral | -44 | -42 | -38 | -39 | -20 | 7 | 14 | 48 | 74 | -40 |
 
+Neste torneio entre todos os níveis, podemos ver que os níveis mais altos ganham consistentemente aos níveis mais baixos.
+
+As diferenças entre níveis mais altos, apenas com o tempo relativamente à configuração de base, não é tão acentuada
+quanto as diferenças nos níveis mais baixos, tal como o torneio tempo já vinha a revelar.
+Seria necessário aumentar bastante o tempo para que a força de jogo suba mais.
