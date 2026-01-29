@@ -48,7 +48,7 @@ typedef struct SResultadoJogo {
 	int nJogadas = 0; // número de jogadas efetuadas
 	double tempoBrancas = 0.0; // tempo total de jogo das brancas
 	double tempoPretas = 0.0; // tempo total de jogo das pretas
-	char *jogo = NULL; // todos os lances do jogo
+	TString jogo = ""; // todos os lances do jogo
 } TResultadoJogo;
 
 
@@ -87,11 +87,11 @@ public:
 	// Utilizar para executar testes empíricos
 	// Utiliza as configurações existentes, ou parâmetros atuais
 	// Efetua um torneio entre configurações
-	void TesteEmpirico(TVector<int> instancias, const char* ficheiro = NULL);
+	void TesteEmpirico(TVector<int> instancias, const char* ficheiro = NULL) override;
 	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
-	void TesteEmpiricoGestor(TVector<int> instancias, const char* ficheiro = NULL);
+	void TesteEmpiricoGestor(TVector<int> instancias, const char* ficheiro = NULL) override;
 	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
-	void TesteEmpiricoTrabalhador(TVector<int> instancias, const char* ficheiro = NULL);
+	void TesteEmpiricoTrabalhador(TVector<int> instancias, const char* ficheiro = NULL) override;
 
 
 	/// @brief Executa o algoritmo com os parametros atuais
@@ -162,5 +162,4 @@ protected:
 
 	void DebugChamada(bool noFolha, int alfa = 0, int beta = 0);
 
-	char* AdicionaLance(char* jogo, const char* lance);
 };

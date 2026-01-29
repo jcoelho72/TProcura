@@ -154,7 +154,62 @@ void CJogoEmLinha::Debug(bool completo)
 
 void CJogoEmLinha::ResetParametros()
 {
+	TVector<int> base;
 	TProcuraAdversa::ResetParametros();
+
+	// configuração base
+	Parametro(ALGORITMO) = 2;
+	Parametro(LIMITE) = 0;
+	Parametro(LIMITE_TEMPO) = 1;
+	Parametro(ORDENAR_SUCESSORES) = 1;
+	Parametro(BARALHAR_SUCESSORES) = 1;
+	Parametro(HEUR_BASE) = 300;
+	Parametro(RUIDO_HEURISTICA) = 0;
+
+
+	for (auto& parm : parametro)
+		base += parm.valor;
+	// colocar as configurações correspondentes aos níveis
+	// Nível + 2: P4 = 4
+	configuracoes += base;
+	configuracoes.Last()[LIMITE_TEMPO] = 4;
+	configuracoes.Last()[ORDENAR_SUCESSORES] = 2;
+	// Nível + 1 : P4 = 2
+	configuracoes += base;
+	configuracoes.Last()[LIMITE_TEMPO] = 2;
+	configuracoes.Last()[RUIDO_HEURISTICA] = -1;
+	configuracoes.Last()[ORDENAR_SUCESSORES] = 2;
+	// Nível Base : -
+	configuracoes += base;
+	// Nível - 1 : P10 = -1
+	configuracoes += base;
+	configuracoes.Last()[RUIDO_HEURISTICA] = -1;
+	// Nível - 2 : P10 = -5 P15 = 150
+	configuracoes += base;
+	configuracoes.Last()[RUIDO_HEURISTICA] = -5;
+	configuracoes.Last()[HEUR_BASE] = 150;
+	// Nível - 3 : P7 = 2 P10 = -1 P15 = 120
+	configuracoes += base;
+	configuracoes.Last()[RUIDO_HEURISTICA] = -1;
+	configuracoes.Last()[HEUR_BASE] = 120;
+	configuracoes.Last()[LIMITE] = 2;
+	// Nível - 4 : P7 = 2 P10 = -5 P15 = 120
+	configuracoes += base;
+	configuracoes.Last()[RUIDO_HEURISTICA] = -5;
+	configuracoes.Last()[HEUR_BASE] = 120;
+	configuracoes.Last()[LIMITE] = 2;
+	// Nível - 5 : P7 = 2 P10 = -20 P15 = 110 P14 = 10
+	configuracoes += base;
+	configuracoes.Last()[RUIDO_HEURISTICA] = -20;
+	configuracoes.Last()[HEUR_BASE] = 110;
+	configuracoes.Last()[LIMITE] = 2;
+	configuracoes.Last()[PODA_CEGA] = 10;
+	// Nível - 6 : P7 = 2 P10 = -100 P15 = 101 P14 = 4	// configuração base:
+	configuracoes += base;
+	configuracoes.Last()[RUIDO_HEURISTICA] = -100;
+	configuracoes.Last()[HEUR_BASE] = 101;
+	configuracoes.Last()[LIMITE] = 2;
+	configuracoes.Last()[PODA_CEGA] = 4;
 }
 
 const char* CJogoEmLinha::Acao(TNo sucessor)
@@ -221,9 +276,9 @@ int CJogoEmLinha::Heuristica()
 							int l = linha + i * index[dir][0];
 							while (l < inst.N - 1 &&
 								Casa(l + 1, coluna + i * index[dir][1]) == '.') {
-									l++;
-									suspensas++;
-								}
+								l++;
+								suspensas++;
+							}
 						}
 
 					// verificar resultado exato
@@ -238,12 +293,12 @@ int CJogoEmLinha::Heuristica()
 
 					if (suspensas > 0) {
 						// contar como jogadas necessárias para ativar a ameaça
-						if(nMax>0)
-							nMax-=suspensas;
-						if(nMin>0)
-							nMin-=suspensas;
+						if (nMax > 0)
+							nMax -= suspensas;
+						if (nMin > 0)
+							nMin -= suspensas;
 
-						if(nMin<0 || nMax<0)
+						if (nMin < 0 || nMax < 0)
 							continue; // não contar ameaças muito distantes, a cima de K
 					}
 
