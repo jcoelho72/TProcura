@@ -687,8 +687,8 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, const char* f
 		resultados += {dados[0], dados[1], dados[2], dados[3], dados[4]};
 		trabalhar -= stat.MPI_SOURCE;
 		trabalhador += stat.MPI_SOURCE;
-		resultados.Last().jogo = new char[dados[5] + 1];
-		MPI_Recv(resultados.Last().jogo, dados[5], MPI_CHAR,
+		resultados.Last().jogo.Count(dados[5] + 1);
+		MPI_Recv(resultados.Last().jogo.Data(), dados[5], MPI_CHAR,
 			stat.MPI_SOURCE, TAG_JOGO, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 		MPI_Recv(dadosD, 3, MPI_LONG_LONG,
 			stat.MPI_SOURCE, TAG_VALORES, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
@@ -754,9 +754,6 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, const char* f
 		Debug(ATIVIDADE, false, "\n │  %-2s Utilização:\n │  - Total: %.1f%%\n │  - Gestor: %.1f%%\n │  - Trabalhadores: %.1f%% ",
 			Icon(EIcon::TAXA), taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
 	mpiCount = backupCount;
-
-	for (auto resultado : resultados)
-		delete resultado.jogo;
 
 	TesteFim();
 
