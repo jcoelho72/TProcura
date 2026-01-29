@@ -1577,13 +1577,14 @@ Vamos agora estudar o efeito do tempo por jogada na eficácia do jogador.
 Como temos jogos com tamanhos grandes, vamos manter um só jogo por cada configuração, e variar de 1, 2 e 4 segundos por jogada.
 São apenas 3 configurações (jogadores), resultando em 6 jogos por instância.
 Vamos reavaliar a ordenação de sucessores, em utilizar apenas a heurística ou valores analisados anteriormente.
-Como há mais tempo, poderá esta opção revelar-se vantajosa.
+Como há mais tempo, poderá esta opção revelar-se vantajosa, mas passamos a 6 configurações (jogadores).
 Mantemos o ruído a 0, reservando para utilização na definição dos níveis de jogo mais baixos.
+Finalmente, para ter resultados robustos, colocamos o esforço em 2, o que nos dupplica as configurações passando a 12 (jogadores).
 
 - **Tipo de Teste / Objetivo**: Eficácia (Tempo)
 - **Definição**: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P12=1,2 x P4=1,2,4
-- **Esforço**: P3=1
-- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P12=1,2 x P4=1,2,4
+- **Esforço**: P3=1:2
+- **Execução**: TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1:2 x P12=1,2 x P4=1,2,4
 
 <details>
   <summary>Ver script: torneioTempo.sh</summary>
@@ -1604,7 +1605,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioTempo
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P12=1,2 x P4=1,2,4
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1:2 x P12=1,2 x P4=1,2,4
 </pre>
 </details>
 <details>

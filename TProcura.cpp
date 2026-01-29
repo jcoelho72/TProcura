@@ -1138,6 +1138,7 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 	TVector<int> instancias;
 	TString fichResultados;
 	TString argParametros;
+	bool configIntroduzido = false; // caso sejam dadas configurações, remover as existentes
 
 	compat::init_io();
 
@@ -1193,6 +1194,10 @@ void TProcura::main(int argc, char* argv[], const char* nome) {
 		}
 		else if (strcmp(argv[i], "-P") == 0 && i + 1 < argc) {
 			TVector<int> base;
+			if (!configIntroduzido) { // limpa configurações anteriores ou de omissão
+				configIntroduzido=true;
+				configuracoes = {};
+			}
 			// o resto é para concatenar e enviar, até outro "-P" ou fim
 			argParametros = "";
 			while (++i < argc && strcmp(argv[i], "-P") != 0)
