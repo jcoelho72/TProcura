@@ -1665,8 +1665,8 @@ Ação 8 - Torneio Tempo</h2>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Eficácia (Tempo)</li>
 <li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P12=1,2 x P4=1,2,4</li>
-<li><b>Esforço</b>: P3=1:2</li>
-<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1:2 x P12=1,2 x P4=1,2,4</li>
+<li><b>Esforço</b>: P3=1</li>
+<li><b>Execução</b>: <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a> 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P12=1,2 x P4=1,2,4</li>
 </ul>
 <details >
 <summary >
@@ -1688,7 +1688,7 @@ ml OpenMPI
 make mpi || { echo "Compilação falhou"; exit 1; }
 
 # Teste: torneioTempo
-srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1:2 x P12=1,2 x P4=1,2,4
+srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioTempo -M 1 -P P2=2 P7=0 P1=2 P12=1 P11=1 P15=300 P10=0 P3=1 P12=1,2 x P4=1,2,4
 </pre> </details>
 <details >
 <summary >
