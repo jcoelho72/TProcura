@@ -7,7 +7,7 @@ digraph "TProcuraAdversa::ExecutaTarefa"
   rankdir="RL";
   Node1 [id="Node000001",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Executa uma tarefa num teste empírico."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3608bb3fe75f237911f210151fc6345e",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node2 [id="Node000002",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a181494095e78d803175e81b39012783f",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a902c5dd8e74b1a44e8a38f96733ff211",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node3 [id="Node000003",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ab83a55b786a1c3726f0afdb4075cbeba",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
 }

@@ -34,9 +34,9 @@ digraph "TProcura::ConfiguracaoAtual"
   Node1 -> Node13 [id="edge15_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
   Node13 -> Node14 [id="edge16_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3608bb3fe75f237911f210151fc6345e",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node14 [id="Node000014",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a181494095e78d803175e81b39012783f",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node13 -> Node15 [id="edge17_Node000013_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a902c5dd8e74b1a44e8a38f96733ff211",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node15 [id="Node000015",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ab83a55b786a1c3726f0afdb4075cbeba",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node1 -> Node4 [id="edge18_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node16 [id="edge19_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="TProcura::MostrarConfiguracoes",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3332047124784be2fc7af575a5f7f8b5",tooltip="Mostra as configurações disponíveis."];
@@ -44,16 +44,16 @@ digraph "TProcura::ConfiguracaoAtual"
   Node16 -> Node14 [id="edge21_Node000016_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 -> Node17 [id="edge22_Node000016_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcura::TesteInicio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a577697338460038138738e87157166af",tooltip="arranque de teste, auxiliar aos Testes Empíricos"];
-  Node17 -> Node14 [id="edge23_Node000017_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 -> Node11 [id="edge24_Node000017_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node11 [id="edge23_Node000017_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node14 [id="edge24_Node000017_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 -> Node18 [id="edge25_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico\lGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ac83ea89e9911b0375755b1dc2360d492",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
-  Node17 -> Node19 [id="edge26_Node000017_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a67aba86c04ae341071ff03a02ef2651a",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
-  Node19 -> Node4 [id="edge27_Node000019_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 -> Node15 [id="edge28_Node000017_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 -> Node12 [id="edge29_Node000017_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node14 [id="edge30_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node11 [id="edge31_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a67aba86c04ae341071ff03a02ef2651a",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
+  Node18 -> Node4 [id="edge26_Node000018_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node19 [id="edge27_Node000017_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="TProcuraAdversa::TesteEmpirico\lGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a166d061a79247ccd2e9da1c9e7a5fcef",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
+  Node17 -> Node12 [id="edge28_Node000017_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 -> Node15 [id="edge29_Node000017_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node11 [id="edge30_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node14 [id="edge31_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node17 [id="edge32_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

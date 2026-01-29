@@ -29,9 +29,9 @@ digraph "TRand::srand"
   Node1 -> Node12 [id="edge12_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
   Node12 -> Node13 [id="edge13_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3608bb3fe75f237911f210151fc6345e",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node13 [id="Node000013",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a181494095e78d803175e81b39012783f",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node12 -> Node14 [id="edge14_Node000012_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a902c5dd8e74b1a44e8a38f96733ff211",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node14 [id="Node000014",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ab83a55b786a1c3726f0afdb4075cbeba",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node1 -> Node15 [id="edge15_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];
   Node15 -> Node16 [id="edge16_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -113,7 +113,7 @@ digraph "TRand::srand"
   Node15 -> Node52 [id="edge57_Node000015_Node000052",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node60 [id="edge58_Node000015_Node000060",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node60 [id="Node000060",label="TProcuraMelhorativa\l::SelecionarSobreviventesAE",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcuraMelhorativa.html#a083b961ed7ed1483625559d068755a7f",tooltip=" "];
-  Node1 -> Node13 [id="edge59_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node3 [id="edge60_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge59_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node13 [id="edge60_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge61_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

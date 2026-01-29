@@ -52,7 +52,7 @@ var searchData=
   ['debugfolha_49',['DebugFolha',['../classTProcuraConstrutiva.html#a2916a3eba76527ca857dfddd67429dfd',1,'TProcuraConstrutiva']]],
   ['debuggeracaoae_50',['DebugGeracaoAE',['../classTProcuraMelhorativa.html#a98c93de808e3181024508c35fa22d62f',1,'TProcuraMelhorativa']]],
   ['debughsl_51',['DebugHSL',['../classTProcura.html#abdba8f413a66966127c3ca50086fb987',1,'TProcura']]],
-  ['debugid_52',['debugid',['../classTProcuraMelhorativa.html#a4be07e151d9b0e52c5a70d5fc5ba2cf5',1,'TProcuraMelhorativa::DebugID()'],['../group__VariaveisEstado.html#ga993fd59fadf76bee0a074e3570a7e2a7',1,'TProcuraConstrutiva::debugID']]],
+  ['debugid_52',['debugid',['../group__VariaveisEstado.html#ga993fd59fadf76bee0a074e3570a7e2a7',1,'TProcuraConstrutiva::debugID'],['../classTProcuraMelhorativa.html#a4be07e151d9b0e52c5a70d5fc5ba2cf5',1,'TProcuraMelhorativa::DebugID(int id, int pop)']]],
   ['debuginicioem_53',['DebugInicioEM',['../classTProcuraMelhorativa.html#aa57d370e5ae543707424b8bc9f404b09',1,'TProcuraMelhorativa']]],
   ['debugiteracao_54',['DebugIteracao',['../classTProcuraConstrutiva.html#ad94d8a7e8f5ed88723951ed5feaf65cb',1,'TProcuraConstrutiva']]],
   ['debugmelhorencontrado_55',['DebugMelhorEncontrado',['../classTProcuraMelhorativa.html#a6fc03fc9e9379496303354d2b46b8bc8',1,'TProcuraMelhorativa']]],

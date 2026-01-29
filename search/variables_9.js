@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jogo_0',['jogo',['../structSResultadoJogo.html#a9d8ee6f22d63eb29cca0b658110fa8c1',1,'SResultadoJogo']]]
+  ['jogo_0',['jogo',['../structSResultadoJogo.html#a504ca78cc9a50f09bee359ab0c0e4ffe',1,'SResultadoJogo']]]
 ];
