@@ -5,6 +5,5 @@ var searchData=
   ['problemaartificial_2ecpp_2',['ProblemaArtificial.cpp',['../ProblemaArtificial_8cpp.html',1,'']]],
   ['problemaartificial_2eh_3',['ProblemaArtificial.h',['../ProblemaArtificial_8h.html',1,'']]],
   ['puzzle8_2ecpp_4',['Puzzle8.cpp',['../Puzzle8_8cpp.html',1,'']]],
-  ['puzzle8_2eh_5',['Puzzle8.h',['../Puzzle8_8h.html',1,'']]],
-  ['puzzle8prof_2emd_6',['puzzle8prof.md',['../puzzle8prof_8md.html',1,'']]]
+  ['puzzle8_2eh_5',['Puzzle8.h',['../Puzzle8_8h.html',1,'']]]
 ];

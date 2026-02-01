@@ -7,8 +7,8 @@ var searchData=
   ['pasta_20resultados_4',['pasta resultados',['../md_Adversa_2Teste_2Resultados_2README-Resultados.html',1,'Pasta Resultados'],['../md_Construtiva_2Teste_2Resultados_2README-Resultados.html',1,'Pasta Resultados'],['../md_Melhorativa_2Teste_2Resultados_2README-Resultados.html',1,'Pasta Resultados'],['../md_Teste_2Resultados_2README-Resultados.html',1,'Pasta Resultados']]],
   ['permutação_5',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],
   ['por_20permutação_6',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],
-  ['procura_20em_20profundidade_20nível_203_7',['Puzzle8, procura em profundidade nível 3',['../md_docs_2puzzle8prof.html',1,'']]],
-  ['profundidade_20nível_203_8',['Puzzle8, procura em profundidade nível 3',['../md_docs_2puzzle8prof.html',1,'']]],
+  ['procura_20em_20profundidade_20nível_203_7',['Puzzle8, procura em profundidade nível 3',['../md_docs_2tutorial__puzzle8prof.html',1,'']]],
+  ['profundidade_20nível_203_8',['Puzzle8, procura em profundidade nível 3',['../md_docs_2tutorial__puzzle8prof.html',1,'']]],
   ['puzzle_208_9',['Teste Puzzle 8',['../teste_puzzle8.html',1,'']]],
-  ['puzzle8_20procura_20em_20profundidade_20nível_203_10',['Puzzle8, procura em profundidade nível 3',['../md_docs_2puzzle8prof.html',1,'']]]
+  ['puzzle8_20procura_20em_20profundidade_20nível_203_10',['Puzzle8, procura em profundidade nível 3',['../md_docs_2tutorial__puzzle8prof.html',1,'']]]
 ];

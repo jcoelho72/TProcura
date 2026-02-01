@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('teste_jogo_do_galo.html',''); initResi
 <div class="contents">
 <div class="textblock"><p>Execução de exemplo com base no problema do Jogo do Galo. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>, e execute. No Linux na pasta <code>.../TProcura/Adversa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraAdversa</code></p>
-<h2><a class="anchor" id="autotoc_md103"></a>
+<h2><a class="anchor" id="autotoc_md102"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_jogo_do_galo.html#jdg-a1">Ação 1 - Ver instâncias</a></li>
@@ -121,7 +121,7 @@ Opção: <span class="entrada">1</span>
 <div class="caption">
 Jogo do Galo - cada jogador joga numa casa na sua vez, ganha quem faz 3 em linha</div></div>
     <p><a class="anchor" id="jdg-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md104"></a>
+<h2><a class="anchor" id="autotoc_md103"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no Jogo do Galo, insira: <b>1.</b></p>
 <p> 
@@ -166,7 +166,7 @@ Opção:
 </p>
 <p>Podemos ver que há apenas uma instância, com o tabuleiro inicial. Podemos ver a borda do tabuleiro com indicação da coluna em letras, e linhas em números. Cada casa fica identificada de forma unívoca.</p>
 <p><a class="anchor" id="jdg-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md105"></a>
+<h2><a class="anchor" id="autotoc_md104"></a>
 Ação 2 - Explorar sucessores</h2>
 <p>Vamos entrar na exploração manual. Insira: <b>2; a2; b2.</b></p>
 <p> 
@@ -277,7 +277,7 @@ Opção: <span class="entrada">2</span>
 <p>O parâmetro de estados repetidos deve ficar nas procuras adversas em igonrar, e o de ordenação em 2.</p>
 <p>Note que se quisermos jogar contra o computador, podemos utilizar a ação "exe" para que o computador jogue com o algoritmo atual.</p>
 <p><a class="anchor" id="jdg-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md106"></a>
+<h2><a class="anchor" id="autotoc_md105"></a>
 Ação 3 - MiniMax</h2>
 <p>Vamos começar por ver o MiniMax neste formato, ignorando estados repetidos, com informação de debug completa, vendo todos os estados, e nível de profundidade 2, e com P12(Ordenar)=0. Insira: <b>1; 3; 1; 1; 2; 4; 6; 1; 7; 2; 8; 1; 12; 0; <em>ENTER</em>; 6.</b></p>
 <p> 
@@ -873,7 +873,7 @@ Opção:
 <p>Após um valor destes ser identificado, existe um icon com uma indicação de vitória/derrota a determinado número de jogadas (<code>☗ 1 { 🔖 8 🔖 9 }</code>). Os sucessores que ainda faltavam analisar são cortados, atendendo a que o jogador com a vez já ganhou neste ramo.</p>
 <p>Notar ainda para a frase final: "HT: reutilização 0.25 vezes". Após terminar a execução a hashtable é limpa, e é verificado nessa altura quantas vezes em média, um estado guardado foi reutilizado, poupando assim uma execução do algoritmo para esse estado.</p>
 <p><a class="anchor" id="jdg-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md107"></a>
+<h2><a class="anchor" id="autotoc_md106"></a>
 Ação 4 - MiniMax com cortes Alfa/Beta</h2>
 <p>Vamos agora ver como se comporta a procura da ação anterior, se ativarmos os cortes alfa/beta. Insira: <b>1; 3; 1; 2; 2; 4; 6; 1; 7; 3; <em>ENTER</em>; 6.</b></p>
 <p> 
@@ -1161,7 +1161,7 @@ Opção:
 <p>Assim, na procura iterativa é importante ordenar os estados por ordem de valor, de modo a que os melhores estados sejam analisados primeiro e possam potenciar o número de cortes.</p>
 <p>Naturalmente que estes cortes tornam-se mais significativos em árvores de procura maiores.</p>
 <p><a class="anchor" id="jdg-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md108"></a>
+<h2><a class="anchor" id="autotoc_md107"></a>
 Ação 5 - Explorar todo o espaço de estados</h2>
 <p>Vamos agora procurar explorar todo o espaço de estados, o que é possível apenas porque este jogo tem dimensões reduzidas. Para que a hashtable não poupe demasiados estados, vamos nesta ação arrancar com o programa em cada teste.</p>
 <p>Vamos começar com o MiniMax, sem a ordenação. Vamos colocar o limite a 20, para não interferir Após reiniciar, insira: <b>1; 3; 1; 1; 7; 20; 12; 0; <em>ENTER</em>; 6.</b></p>
@@ -2594,7 +2594,7 @@ Opção:
 </details>
 <p>O problema sendo pequeno, não faz sentido fazer uma heurística.</p>
 <p><a class="anchor" id="jdg-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md109"></a>
+<h2><a class="anchor" id="autotoc_md108"></a>
 Ação 6 - Testes Empíricos</h2>
 <p>Embora a estratégia de jogo seja fácil de obter, vamos simular um torneio para demonstrar a possibilidade de comparar parâmetros distintos.</p>
 <p>O único parâmetro que faz diferença, atendendo a que os tempos de execução são muito rápidos, é a profundidade da procura. Vamos colocar em competição várias configurações a diferentes profundidades, e pretendemos conseguir observar maior desempenho nas procuras de maior profundidade.</p>

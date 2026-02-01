@@ -1,7 +1,7 @@
 var searchData=
 [
   ['o_20ciclo_20do_20investigador_0',['O Ciclo do Investigador',['../investigacao.html#autotoc_md10',1,'']]],
-  ['o_20espaço_20de_20estados_1',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md108',1,'']]],
+  ['o_20espaço_20de_20estados_1',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md107',1,'']]],
   ['o_20papel_20do_20tprocura_2',['O Papel do TProcura',['../investigacao.html#autotoc_md8',1,'']]],
   ['o_20projeto_3',['Sobre o Projeto',['../index.html#autotoc_md172',1,'']]],
   ['o_20repositório_4',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md180',1,'']]],
@@ -15,8 +15,8 @@ var searchData=
   ['opção_201_20clonar_20o_20repositório_12',['Opção 1 - Clonar o Repositório',['../index.html#autotoc_md180',1,'']]],
   ['opção_202_20download_20manual_13',['Opção 2 - Download Manual',['../index.html#autotoc_md181',1,'']]],
   ['opção_203_20utilizar_20como_20submódulo_14',['Opção 3 - Utilizar como Submódulo',['../index.html#autotoc_md182',1,'']]],
-  ['opções_20a_15',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md92',1,'']]],
-  ['opções_20b_16',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md93',1,'']]],
+  ['opções_20a_15',['Ação 6 - Editar opções A',['../teste_aspirador1.html#autotoc_md91',1,'']]],
+  ['opções_20b_16',['Ação 7 - Editar opções B',['../teste_aspirador1.html#autotoc_md92',1,'']]],
   ['operator_20bool_17',['operator bool',['../classBitRef.html#a58f696de677b3d584677f69636a828ab',1,'BitRef']]],
   ['operator_20const_20char_20_2a_18',['operator const char *',['../classTString.html#a0ca00be865ebc173288fc8fc18f2079a',1,'TString']]],
   ['operator_21_3d_19',['operator!=',['../classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b',1,'TVector']]],
@@ -29,6 +29,6 @@ var searchData=
   ['ordemvalor_26',['OrdemValor',['../classTProcuraMelhorativa.html#aec9c9187221f37a37f71bee878a577ae',1,'TProcuraMelhorativa']]],
   ['ordenar_5fsucessores_27',['ORDENAR_SUCESSORES',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdac6a7d07bb3f73205ead929aa8a682952',1,'TProcuraAdversa.h']]],
   ['ordenarsucessores_28',['OrdenarSucessores',['../classTProcuraAdversa.html#a369a3b5182150b22fd6deb0d46916d49',1,'TProcuraAdversa']]],
-  ['os_20sucessores_29',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md88',1,'']]],
-  ['outra_20instância_30',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md94',1,'']]]
+  ['os_20sucessores_29',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md87',1,'']]],
+  ['outra_20instância_30',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md93',1,'']]]
 ];

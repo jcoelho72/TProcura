@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['largura_0',['largura',['../teste_puzzle8.html#autotoc_md136',1,'Ação 3 - Procura em Largura'],['../teste_8damas.html#autotoc_md69',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md91',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md95',1,'Ação 9 - Desafio Procura em Largura']]],
+  ['largura_0',['largura',['../teste_puzzle8.html#autotoc_md135',1,'Ação 3 - Procura em Largura'],['../teste_8damas.html#autotoc_md68',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md90',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md94',1,'Ação 9 - Desafio Procura em Largura']]],
   ['largura_5fprimeiro_1',['LARGURA_PRIMEIRO',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6ca4bdb9cfb386855ab9d6bc3e2a369f6ed',1,'TProcuraConstrutiva.h']]],
   ['larguraprimeiro_2',['LarguraPrimeiro',['../group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0',1,'TProcuraConstrutiva']]],
   ['last_3',['Last',['../classTVector.html#aa304d639c79ef2842f9951846c6292e3',1,'TVector']]],
@@ -15,7 +15,7 @@ var searchData=
   ['limparestatisticas_12',['limparestatisticas',['../classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f',1,'TProcura::LimparEstatisticas()'],['../classTProcuraMelhorativa.html#a6c7163b20ace9bebdf3c073cd475dec9',1,'TProcuraMelhorativa::LimparEstatisticas()'],['../classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828',1,'TProcuraConstrutiva::LimparEstatisticas() override']]],
   ['limparht_13',['LimparHT',['../classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c',1,'TProcuraConstrutiva']]],
   ['linha_14',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
-  ['linha_20de_20comando_15',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md159',1,'']]],
+  ['linha_20de_20comando_15',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md158',1,'']]],
   ['lower_5fbound_16',['LOWER_BOUND',['../TProcuraAdversa_8h.html#af2d8f3ce278d837a36ee4d610662b204a7b49753da05e5513632fc19383072793',1,'TProcuraAdversa.h']]],
   ['lowerbound_17',['lowerbound',['../classTProcuraConstrutiva.html#a5f021041a7dfe1b68890d9e5f5f0e6f4',1,'TProcuraConstrutiva::LowerBound()'],['../classTProcuraMelhorativa.html#ab1191e46286698e517e2d5bf3cd18ff0',1,'TProcuraMelhorativa::lowerBound'],['../group__VariaveisGlobais.html#ga1af840b6ec9c04ce7d4c8849346441bd',1,'TProcuraConstrutiva::lowerBound']]]
 ];
