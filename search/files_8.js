@@ -32,6 +32,5 @@ var searchData=
   ['tprocuramelhorativa_2eh_29',['TProcuraMelhorativa.h',['../TProcuraMelhorativa_8h.html',1,'']]],
   ['trand_2ecpp_30',['TRand.cpp',['../TRand_8cpp.html',1,'']]],
   ['trand_2eh_31',['TRand.h',['../TRand_8h.html',1,'']]],
-  ['tutorial_5fpuzzle8prof_2emd_32',['tutorial_puzzle8prof.md',['../tutorial__puzzle8prof_8md.html',1,'']]],
-  ['tvector_2eh_33',['TVector.h',['../TVector_8h.html',1,'']]]
+  ['tvector_2eh_32',['TVector.h',['../TVector_8h.html',1,'']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['algoritmos_20com_20o_20tprocura_0',['Testes de Algoritmos com o TProcura',['../investigacao.html',1,'']]],
-  ['aspirador_20parte_201_202_1',['Teste Aspirador - Parte 1/2',['../teste_aspirador1.html',1,'']]],
-  ['aspirador_20parte_202_202_2',['Teste Aspirador - Parte 2/2',['../teste_aspirador2.html',1,'']]]
+  ['binária_0',['Teste Particao - Codificação Binária',['../teste_particao_cb.html',1,'']]]
 ];
