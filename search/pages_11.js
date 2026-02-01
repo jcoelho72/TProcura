@@ -13,11 +13,12 @@ var searchData=
   ['procura_20em_20largura_10',['Puzzle8, procura em largura',['../tutorial_puzzle8largura.html',1,'']]],
   ['procura_20em_20profundidade_20iterativa_11',['Puzzle8, procura em profundidade iterativa',['../tutorial_puzzle8iterativa.html',1,'']]],
   ['procura_20em_20profundidade_20nível_203_12',['Puzzle8, procura em profundidade nível 3',['../tutorial_puzzle8prof.html',1,'']]],
-  ['profundidade_20iterativa_13',['Puzzle8, procura em profundidade iterativa',['../tutorial_puzzle8iterativa.html',1,'']]],
-  ['profundidade_20nível_203_14',['Puzzle8, procura em profundidade nível 3',['../tutorial_puzzle8prof.html',1,'']]],
-  ['profundidade_20primeiro_15',['profundidade primeiro',['../tutorial_4damasprof.html',1,'4 Damas, profundidade primeiro'],['../tutorial_particaoprof.html',1,'Partição, profundidade primeiro']]],
-  ['puzzle_208_16',['Teste Puzzle 8',['../teste_puzzle8.html',1,'']]],
-  ['puzzle8_20procura_20em_20largura_17',['Puzzle8, procura em largura',['../tutorial_puzzle8largura.html',1,'']]],
-  ['puzzle8_20procura_20em_20profundidade_20iterativa_18',['Puzzle8, procura em profundidade iterativa',['../tutorial_puzzle8iterativa.html',1,'']]],
-  ['puzzle8_20procura_20em_20profundidade_20nível_203_19',['Puzzle8, procura em profundidade nível 3',['../tutorial_puzzle8prof.html',1,'']]]
+  ['procuras_20construtivas_13',['Tutorial das procuras Construtivas',['../tutorial_construtivas.html',1,'']]],
+  ['profundidade_20iterativa_14',['Puzzle8, procura em profundidade iterativa',['../tutorial_puzzle8iterativa.html',1,'']]],
+  ['profundidade_20nível_203_15',['Puzzle8, procura em profundidade nível 3',['../tutorial_puzzle8prof.html',1,'']]],
+  ['profundidade_20primeiro_16',['profundidade primeiro',['../tutorial_4damasprof.html',1,'4 Damas, profundidade primeiro'],['../tutorial_particaoprof.html',1,'Partição, profundidade primeiro']]],
+  ['puzzle_208_17',['Teste Puzzle 8',['../teste_puzzle8.html',1,'']]],
+  ['puzzle8_20procura_20em_20largura_18',['Puzzle8, procura em largura',['../tutorial_puzzle8largura.html',1,'']]],
+  ['puzzle8_20procura_20em_20profundidade_20iterativa_19',['Puzzle8, procura em profundidade iterativa',['../tutorial_puzzle8iterativa.html',1,'']]],
+  ['puzzle8_20procura_20em_20profundidade_20nível_203_20',['Puzzle8, procura em profundidade nível 3',['../tutorial_puzzle8prof.html',1,'']]]
 ];
