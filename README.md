@@ -227,7 +227,7 @@ Esses exemplos servem tanto para testar o repositório quanto para servir de bas
 
 ### Tutoriais
 
-[Puzzle 8 — Procura em Profundidade](tutorial/puzzle8prof.html)
+[Puzzle 8 — Procura em Profundidade](puzzle8prof.html)
 
 ---
 
