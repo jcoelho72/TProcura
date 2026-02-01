@@ -744,8 +744,7 @@
 <hr>
 
 <details>
-<summary><strong style="font-size: 0.9375rem;"><img
-      src="https://elearning.uab.pt/pluginfile.php/2671301/mod_quiz/intro/image.png"> Atenção</strong><span
+<summary><strong style="font-size: 0.9375rem;"> Atenção</strong><span
     style="font-size: 0.9375rem;">: Quantos estados foram gerados mas não
     expandidos?</span></summary>
 
