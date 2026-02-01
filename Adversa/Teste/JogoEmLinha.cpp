@@ -170,46 +170,26 @@ void CJogoEmLinha::ResetParametros()
 	for (auto& parm : parametro)
 		base += parm.valor;
 	// colocar as configurações correspondentes aos níveis
-	// Nível + 2: P4 = 4
+	// - +1: P4=4 P12=2
 	configuracoes += base;
 	configuracoes.Last()[LIMITE_TEMPO] = 4;
 	configuracoes.Last()[ORDENAR_SUCESSORES] = 2;
-	// Nível + 1 : P4 = 2
-	configuracoes += base;
-	configuracoes.Last()[LIMITE_TEMPO] = 2;
-	configuracoes.Last()[RUIDO_HEURISTICA] = -1;
-	configuracoes.Last()[ORDENAR_SUCESSORES] = 2;
 	// Nível Base : -
 	configuracoes += base;
-	// Nível - 1 : P10 = -1
-	configuracoes += base;
-	configuracoes.Last()[RUIDO_HEURISTICA] = -1;
-	// Nível - 2 : P10 = -5 P15 = 150
+	//	- -1 : P10 = -5 P15 = 150
 	configuracoes += base;
 	configuracoes.Last()[RUIDO_HEURISTICA] = -5;
 	configuracoes.Last()[HEUR_BASE] = 150;
-	// Nível - 3 : P7 = 2 P10 = -1 P15 = 120
-	configuracoes += base;
-	configuracoes.Last()[RUIDO_HEURISTICA] = -1;
-	configuracoes.Last()[HEUR_BASE] = 120;
-	configuracoes.Last()[LIMITE] = 2;
-	// Nível - 4 : P7 = 2 P10 = -5 P15 = 120
+	//	- -2 : P7 = 2 P10 = -5 P15 = 150
 	configuracoes += base;
 	configuracoes.Last()[RUIDO_HEURISTICA] = -5;
-	configuracoes.Last()[HEUR_BASE] = 120;
+	configuracoes.Last()[HEUR_BASE] = 150;
 	configuracoes.Last()[LIMITE] = 2;
-	// Nível - 5 : P7 = 2 P10 = -20 P15 = 110 P14 = 10
+	//	- -3 : P7 = 2 P10 = -20 P15 = 120
 	configuracoes += base;
 	configuracoes.Last()[RUIDO_HEURISTICA] = -20;
-	configuracoes.Last()[HEUR_BASE] = 110;
+	configuracoes.Last()[HEUR_BASE] = 120;
 	configuracoes.Last()[LIMITE] = 2;
-	configuracoes.Last()[PODA_CEGA] = 10;
-	// Nível - 6 : P7 = 2 P10 = -100 P15 = 101 P14 = 4	// configuração base:
-	configuracoes += base;
-	configuracoes.Last()[RUIDO_HEURISTICA] = -100;
-	configuracoes.Last()[HEUR_BASE] = 101;
-	configuracoes.Last()[LIMITE] = 2;
-	configuracoes.Last()[PODA_CEGA] = 4;
 }
 
 const char* CJogoEmLinha::Acao(TNo sucessor)

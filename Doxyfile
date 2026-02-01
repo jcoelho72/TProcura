@@ -6,7 +6,7 @@ HTML_OUTPUT            = html
 
 
 # Definir diretórios de entrada
-INPUT = ./ ./docs
+INPUT = ./ ./docs ./docs/tutorial
 FILE_PATTERNS = *.cpp *.h *.md
 RECURSIVE = YES
 EXCLUDE += */Resultados/README.md

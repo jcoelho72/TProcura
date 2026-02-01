@@ -225,6 +225,10 @@ Problemas de exemplo da classe TProcuraAdversa:
 
 Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações. 
 
+### Tutoriais
+
+[Puzzle 8 — Procura em Profundidade](tutorial/puzzle8prof.md)
+
 ---
 
 \anchor s7
