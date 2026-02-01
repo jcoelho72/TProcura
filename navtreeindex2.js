@@ -248,6 +248,6 @@ var NAVTREEINDEX2 =
 "classTVector.html#af7079cb7944ea88caf10b7574915858b":[2,0,31,20],
 "classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64":[2,0,31,40],
 "classes.html":[2,1],
-"compact_8h.html":[3,0,6],
-"compact_8h.html#a00b22acc72899dbcb64f43ad8ec8b41d":[3,0,6,5]
+"compact_8h.html":[3,0,5],
+"compact_8h.html#a00b22acc72899dbcb64f43ad8ec8b41d":[3,0,5,5]
 };

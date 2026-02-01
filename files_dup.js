@@ -5,7 +5,6 @@ var files_dup =
     [ "docs", "dir_49e56c817e5e54854c35e136979f97ca.html", null ],
     [ "Melhorativa", "dir_7dcf99b4abe914fa9da2d067d7a4a0dc.html", "dir_7dcf99b4abe914fa9da2d067d7a4a0dc" ],
     [ "Teste", "dir_267a6dbd51c8b0430c0130d887946ad8.html", "dir_267a6dbd51c8b0430c0130d887946ad8" ],
-    [ "tutorial", "dir_07c2df013bb20677b8e65a9f18968d2c.html", null ],
     [ "compact.h", "compact_8h.html", "compact_8h" ],
     [ "TProcura.cpp", "TProcura_8cpp.html", "TProcura_8cpp" ],
     [ "TProcura.h", "TProcura_8h.html", "TProcura_8h" ],

@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('teste_jogo_em_linha.html',''); initRes
 <div class="contents">
 <div class="textblock"><p>Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>, e execute. No Linux na pasta <code>.../TProcura/Adversa/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraAdversa</code></p>
-<h2><a class="anchor" id="autotoc_md109"></a>
+<h2><a class="anchor" id="autotoc_md110"></a>
 Sumário</h2>
 <ul>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a1">Ação 1 - Ver instâncias</a></li>
@@ -121,7 +121,7 @@ Opção:  <span class="entrada">2</span>
 </p>
 <p>Este jogo tem várias instâncias, com as dimensões e tamanho da linha para ganhar. Existe ainda a variante em que as peças caem pela ação da gravidade.</p>
 <p><a class="anchor" id="jel-a1"></a></p>
-<h2><a class="anchor" id="autotoc_md110"></a>
+<h2><a class="anchor" id="autotoc_md111"></a>
 Ação 1 - Ver instâncias</h2>
 <p>Vamos entrar no Jogo Em Linha, insira: <b>2.</b></p>
 <p> 
@@ -269,7 +269,7 @@ _______________________________________________________________________________
 </p>
 <p>Temos diferentes tabuleiros, resultando em ramificações distintas. A variante da gravidade, reduz consideravelmente a ramificação.</p>
 <p><a class="anchor" id="jel-a2"></a></p>
-<h2><a class="anchor" id="autotoc_md111"></a>
+<h2><a class="anchor" id="autotoc_md112"></a>
 Ação 2 - Heurística</h2>
 <p>Vamos começar por verificar se a heurística implementada, que tem em atenção aspetos mínimos, como bloquear ameaças de vitória a uma jogada. Assim procura maximizar as ameaças a 1 de vitória, e minimizar as mesmas ameaças a 1 de derrota. O mesmo ocorre para ameaças a 2, e 3, até ao valor K da instância. Mas por cada maior valor, a penalização é diluída pelo fator HEUR_BASE / 100.</p>
 <p>Para conseguir obserar a heurística em funcionamento vamos fazer um jogo com profundidade 1, para que a heurística seja o fator predominante.</p>
@@ -341,7 +341,7 @@ Ação 2 - Heurística</h2>
 <p>Na variante da gravidade as ameaças a W jogadas são também as jogadas necessárias de jogar, se fosse o jogador sempre a jogar, para ganhar o jogo. Mas neste caso, numa linha em que exista um espaço suspenso, tem que se adicionar as casas em baixo do espaço suspenso como distância para o objetivo. Se essa ameaça for mais de K jogadas, ou seja, o número de marcas em linha, então não é contabilizada.</p>
 <p>Esta heurística está implementada a nível global em <a class="el" href="classTProcuraAdversa.html" title="Representa um estado no espaço de estados.">TProcuraAdversa</a>, tendo de ser específico o calculo do número de ameaças e distância. Acaba por ser muito parecido com uma heurística, estimando a distância até ao estado final, mas neste caso temos várias vias para o jogador e adversário, já que a procura é adversa, e assim beneficia-se os estados em que estamos mais perto de chegar ao estado final que o adversário.</p>
 <p><a class="anchor" id="jel-a3"></a></p>
-<h2><a class="anchor" id="autotoc_md112"></a>
+<h2><a class="anchor" id="autotoc_md113"></a>
 Ação 3 - MiniMax com cortes Alfa/Beta</h2>
 <p>Vamos fazer um jogo com o MiniMax com cortes alfa/beta no 4 em linha, de modo a observar o MiniMax com cortes Alfa/Beta num jogo com heurística.</p>
 <p>Insira: <b>2; 1; 2; 3; 2; 3; 7; 3; <em>ENTER</em>; 6.</b></p>
@@ -955,7 +955,7 @@ Opção:
 </ul>
 <p>Esta heurística é genérica, e pode ser utilizada em problemas que se possam calcular ameaças a K jogadas, como é o caso dos jogos em que se pretende fazer K marcas em linha. As ameaças a K jogadas é idêntico a uma medida de distância até um estado objetivo, relaxando o facto de se ter um adversário, ou seja, imaginando que apenas um jogador joga. O valores de omissão pode não ser o melhor, pelo que será alvo de teste.</p>
 <p><a class="anchor" id="jel-a4"></a></p>
-<h2><a class="anchor" id="autotoc_md113"></a>
+<h2><a class="anchor" id="autotoc_md114"></a>
 Ação 4 - Torneio Profundidade</h2>
 <p>Nos testes empíricos vamos utilizar a linha de comando, por ser mais simples a identificação do teste a realizar.</p>
 <p>Pretendemos verificar em torneio, que a profundidade maior resulta em força de jogo superior. Por outro lado pretendemos confirmar que os cortes alfa/beta e a ordenação dos sucessores, não alteram de forma significativa a força de jogo, mas reduzem o tempo de execução (P1=1,2 x P12=0,1).</p>
@@ -1164,7 +1164,7 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -G 1 
 </ul>
 <p>Tempos elevados por jogada não são viáveis nem para testes empíricos, nem para jogar contra jogadores humanos.</p>
 <p><a class="anchor" id="jel-a5"></a></p>
-<h2><a class="anchor" id="autotoc_md114"></a>
+<h2><a class="anchor" id="autotoc_md115"></a>
 Ação 5 - Torneio Iterativo</h2>
 <p>Na ação anterior, tem um torneio que compara configurações, utilizando tempos distintos. Assim a comparação não é justa, embora tenha permitido observar vantagens nos cortes alfa/beta e ordenação dos sucessores.</p>
 <p>Vamos agora utilizar a profundidade iterativa, e dar exatamente o mesmo tempo por jogada, para procurar ver se a eficácia dos coertes alfa/beta e ordenação dos sucessores se mantém.</p>
@@ -1323,7 +1323,7 @@ Ver execução:</summary>
 <p>As instâncias iniciais, apenas a 1 tem apenas empates, as restantes têm agora mais vitórias brancas que empates. As instâncias de gravidade mantêm-se equilibradas e com empates raros. As instâncias maiores mantêm o empate como resultado mais provável.</p>
 <p>Naturalmente que mais tempo por jogada os resultados podem ser diferentes.</p>
 <p><a class="anchor" id="jel-a6"></a></p>
-<h2><a class="anchor" id="autotoc_md115"></a>
+<h2><a class="anchor" id="autotoc_md116"></a>
 Ação 6 - Torneio Heurística</h2>
 <p>Vamos agora estudar o impacto da heurística na eficácia do jogador.</p>
 <p>Temos o parâmetro HEUR_BASE - Valor base para diferença entre ameaças de K e K-1, em que 100 corresponde a 1 (não há diferença).</p>
@@ -1455,7 +1455,7 @@ Ver execução:</summary>
 </ul>
 <p>Vamos optar por P15=300, que tem boa eficácia em quase todas as instâncias, e é a que tem melhor eficácia global.</p>
 <p><a class="anchor" id="jel-a7"></a></p>
-<h2><a class="anchor" id="autotoc_md116"></a>
+<h2><a class="anchor" id="autotoc_md117"></a>
 Ação 7 - Torneio Poda</h2>
 <p>Temos dois parâmetros para a poda da árvore de procura. A poda heurística (PODA_HEURISTICA) e a poda cega (PODA_CEGA). A poda cega é útil para quando há demasiados sucessores poder remover de forma aleatória, de modo a poder existir exploração. Mas neste caso na maior instância tem 12 de lado, sendo o maior número de sucessores é 121. Assim vamos testar apenas a poda heurística.</p>
 <p>Vamos utilizar duas sementes, de modo a aumentar o número de jogos e reduzir o impacto da aleatoriedade.</p>
@@ -1532,7 +1532,7 @@ Ver execução:</summary>
 <p>Existem oscilações, mas pequenas. Assim não se parece que justifique o uso da poda heurística.</p>
 <p>Assim sendo, vamos manter o valor da poda heurística a 0, ou seja, sem poda.</p>
 <p><a class="anchor" id="jel-a8"></a></p>
-<h2><a class="anchor" id="autotoc_md117"></a>
+<h2><a class="anchor" id="autotoc_md118"></a>
 Ação 8 - Torneio Ruido</h2>
 <p>Vamos agora estudar o efeito do ruído na heurística. Esperamos uma degradação da força de jogo, à medida que o ruído aumenta. É importante quantificar este efeito, para podermos escolher valores adequados a diferentes níveis de jogo.</p>
 <p>Este parâmetro define o valor K a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.</p>
@@ -1659,7 +1659,7 @@ Ver execução:</summary>
 <p>Podemos ver que um torneio com ruído tem muitos mais resultados decisivos, com poucas partidas a terminar em empate.</p>
 <p>Considera-se assim que o ruído é um parâmetro importante para ajustar a força de jogo do jogador artificial.</p>
 <p><a class="anchor" id="jel-a8"></a></p>
-<h2><a class="anchor" id="autotoc_md118"></a>
+<h2><a class="anchor" id="autotoc_md119"></a>
 Ação 8 - Torneio Tempo</h2>
 <p>Vamos agora estudar o efeito do tempo por jogada na eficácia do jogador. Como temos jogos com tamanhos grandes, vamos manter um só jogo por cada configuração, e variar de 1, 2 e 4 segundos por jogada. São apenas 3 configurações (jogadores), resultando em 6 jogos por instância. Vamos reavaliar a ordenação de sucessores, em utilizar apenas a heurística ou valores analisados anteriormente. Como há mais tempo, poderá esta opção revelar-se vantajosa, mas passamos a 6 configurações (jogadores). Mantemos o ruído a 0, reservando para utilização na definição dos níveis de jogo mais baixos. Finalmente, para ter resultados robustos, colocamos o esforço em 2, o que nos duplica as configurações passando a 12 configurações (jogadores).</p>
 <ul>
@@ -1728,7 +1728,7 @@ Ver execução:</summary>
 </table>
 <p>Podemos observar que o tempo influencia a eficácia do jogador, embora não de forma muito acentuada.</p>
 <p><a class="anchor" id="jel-a9"></a></p>
-<h2><a class="anchor" id="autotoc_md119"></a>
+<h2><a class="anchor" id="autotoc_md120"></a>
 Ação 9 - Torneio Níveis</h2>
 <p>Estando identificadas as variáveis críticas de desempenho estamos em condições de identificar configurações com diferentes níveis de força de jogo.</p>
 <p>Pretendemos que a diferença de força de jogo entre níveis consecutivos, seja significativa e constante, idealmente com 3 pontos em 4 jogos, ou seja, 75%.</p>
