@@ -34,7 +34,7 @@ var searchData=
   ['de_20estado_31',['Variáveis de estado',['../group__VariaveisEstado.html',1,'']]],
   ['de_20estados_32',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md107',1,'']]],
   ['de_20instância_33',['Ação 1 - Trocar de instância',['../teste_aspirador1.html#autotoc_md86',1,'']]],
-  ['de_20pastas_34',['Estrutura de Pastas',['../index.html#autotoc_md176',1,'']]],
+  ['de_20pastas_34',['Estrutura de Pastas',['../index.html#autotoc_md177',1,'']]],
   ['de_20procura_20cega_35',['Algoritmos de Procura Cega',['../group__ProcurasCegas.html',1,'']]],
   ['de_20procura_20informada_36',['Algoritmos de Procura Informada',['../group__ProcurasInformadas.html',1,'']]],
   ['de_20procura_20maior_37',['Ação 12 - Ver uma árvore de procura maior',['../teste_aspirador2.html#autotoc_md98',1,'']]],
@@ -93,12 +93,12 @@ var searchData=
   ['diversidadeae_90',['DiversidadeAE',['../classTProcuraMelhorativa.html#a6680888f6064501586d740cab891d0cd',1,'TProcuraMelhorativa']]],
   ['do_20galo_91',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
   ['do_20investigador_92',['O Ciclo do Investigador',['../investigacao.html#autotoc_md10',1,'']]],
-  ['do_20repositório_93',['📦 Estrutura do Repositório',['../index.html#autotoc_md175',1,'']]],
+  ['do_20repositório_93',['📦 Estrutura do Repositório',['../index.html#autotoc_md176',1,'']]],
   ['do_20teste_94',['Definição do Teste',['../investigacao.html#autotoc_md16',1,'']]],
   ['do_20tprocura_95',['O Papel do TProcura',['../investigacao.html#autotoc_md8',1,'']]],
   ['dominio_96',['Dominio',['../classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf',1,'TProcura']]],
   ['dos_20testes_97',['Importância dos Testes',['../investigacao.html#autotoc_md7',1,'']]],
   ['dos_20testes_20no_20tprocura_98',['Características dos Testes no TProcura',['../investigacao.html#autotoc_md9',1,'']]],
-  ['download_20manual_99',['Opção 2 - Download Manual',['../index.html#autotoc_md180',1,'']]],
+  ['download_20manual_99',['Opção 2 - Download Manual',['../index.html#autotoc_md181',1,'']]],
   ['duplicar_100',['duplicar',['../classTCodificacaoInteira.html#aae6c2a9186d72721b44d91b240711b89',1,'TCodificacaoInteira::Duplicar()'],['../classCJogoDoGalo.html#a0ffe5148e0dad4e325c1840d0569f508',1,'CJogoDoGalo::Duplicar()'],['../classCJogoEmLinha.html#af9b87594a26c4230c7c0f59efc8e013a',1,'CJogoEmLinha::Duplicar()'],['../classCAspirador.html#a3c9571f17ca0cbb074943ddd9bd27587',1,'CAspirador::Duplicar()'],['../classCOitoDamas.html#ad9ce9bd26af98392515937e9aff10e5a',1,'COitoDamas::Duplicar()'],['../classCParticao.html#aa50c7d31c22b1baa8ecb15b2841e2854',1,'CParticao::Duplicar()'],['../classCPuzzle8.html#ad0638a270ace9056ffba040d2479fd5a',1,'CPuzzle8::Duplicar()'],['../group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623',1,'TProcuraConstrutiva::Duplicar()'],['../classTCodificacaoBinaria.html#af86710c3e68600bbdf4fd649011a4463',1,'TCodificacaoBinaria::Duplicar()'],['../classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582',1,'TProcuraMelhorativa::Duplicar()'],['../classTCodificacaoPermutacao.html#acc26f6577f8f43d59b1bd4f17fe8b659',1,'TCodificacaoPermutacao::Duplicar()'],['../classCOitoDamas.html#a36a173575d8f6bd1815989a7a26b7440',1,'COitoDamas::Duplicar()'],['../classCOitoDamasCI.html#a1d35285a7fbb9104e6db5587c8db5924',1,'COitoDamasCI::Duplicar()'],['../classCOitoDamasCP.html#a6f0835407b0f84be61f0c9d04fe71417',1,'COitoDamasCP::Duplicar()'],['../classCParticao.html#a124783fa742619a5839649b83f3b93bc',1,'CParticao::Duplicar()'],['../classCParticaoCB.html#af24fe3e275e519a96fcb657c204b5cc5',1,'CParticaoCB::Duplicar()'],['../classCProblemaArtificial.html#a15bc8f02957607a1ce184975b34465da',1,'CProblemaArtificial::Duplicar()']]]
 ];

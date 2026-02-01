@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inteira_0',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]]
+  ['galo_0',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]]
 ];
