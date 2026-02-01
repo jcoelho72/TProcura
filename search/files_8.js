@@ -34,11 +34,14 @@ var searchData=
   ['trand_2eh_31',['TRand.h',['../TRand_8h.html',1,'']]],
   ['tutorial4damaslargura_2emd_32',['tutorial4damaslargura.md',['../tutorial4damaslargura_8md.html',1,'']]],
   ['tutorial4damasprof_2emd_33',['tutorial4damasprof.md',['../tutorial4damasprof_8md.html',1,'']]],
-  ['tutorialconstrutivas_2emd_34',['tutorialConstrutivas.md',['../tutorialConstrutivas_8md.html',1,'']]],
-  ['tutorialparticaolargura_2emd_35',['tutorialParticaolargura.md',['../tutorialParticaolargura_8md.html',1,'']]],
-  ['tutorialparticaoprof_2emd_36',['tutorialParticaoprof.md',['../tutorialParticaoprof_8md.html',1,'']]],
-  ['tutorialpuzzle8iterativa_2emd_37',['tutorialPuzzle8iterativa.md',['../tutorialPuzzle8iterativa_8md.html',1,'']]],
-  ['tutorialpuzzle8largura_2emd_38',['tutorialPuzzle8largura.md',['../tutorialPuzzle8largura_8md.html',1,'']]],
-  ['tutorialpuzzle8prof_2emd_39',['tutorialPuzzle8prof.md',['../tutorialPuzzle8prof_8md.html',1,'']]],
-  ['tvector_2eh_40',['TVector.h',['../TVector_8h.html',1,'']]]
+  ['tutorialadversas_2emd_34',['tutorialAdversas.md',['../tutorialAdversas_8md.html',1,'']]],
+  ['tutorialconstrutivas_2emd_35',['tutorialConstrutivas.md',['../tutorialConstrutivas_8md.html',1,'']]],
+  ['tutorialmelhorativas_2emd_36',['tutorialMelhorativas.md',['../tutorialMelhorativas_8md.html',1,'']]],
+  ['tutorialparticaolargura_2emd_37',['tutorialParticaolargura.md',['../tutorialParticaolargura_8md.html',1,'']]],
+  ['tutorialparticaoprof_2emd_38',['tutorialParticaoprof.md',['../tutorialParticaoprof_8md.html',1,'']]],
+  ['tutorialpuzzle8iterativa_2emd_39',['tutorialPuzzle8iterativa.md',['../tutorialPuzzle8iterativa_8md.html',1,'']]],
+  ['tutorialpuzzle8largura_2emd_40',['tutorialPuzzle8largura.md',['../tutorialPuzzle8largura_8md.html',1,'']]],
+  ['tutorialpuzzle8melhor_2emd_41',['tutorialPuzzle8melhor.md',['../tutorialPuzzle8melhor_8md.html',1,'']]],
+  ['tutorialpuzzle8prof_2emd_42',['tutorialPuzzle8prof.md',['../tutorialPuzzle8prof_8md.html',1,'']]],
+  ['tvector_2eh_43',['TVector.h',['../TVector_8h.html',1,'']]]
 ];

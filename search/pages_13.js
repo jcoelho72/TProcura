@@ -15,6 +15,8 @@ var searchData=
   ['testes_20de_20algoritmos_20com_20o_20tprocura_12',['Testes de Algoritmos com o TProcura',['../investigacao.html',1,'']]],
   ['testes_20melhorativos_13',['Deucalion - testes melhorativos',['../melhorativa__deucalion.html',1,'']]],
   ['tprocura_14',['tprocura',['../investigacao.html',1,'Testes de Algoritmos com o TProcura'],['../index.html',1,'TProcura']]],
-  ['tutorial_20das_20procuras_20construtivas_15',['Tutorial das procuras Construtivas',['../tutorial_construtivas.html',1,'']]],
-  ['tvector_16',['Teste TVector',['../teste_tvector.html',1,'']]]
+  ['tutorial_20das_20procuras_20adversas_15',['Tutorial das procuras Adversas',['../tutorial_adversas.html',1,'']]],
+  ['tutorial_20das_20procuras_20construtivas_16',['Tutorial das procuras Construtivas',['../tutorial_construtivas.html',1,'']]],
+  ['tutorial_20das_20procuras_20melhorativas_17',['Tutorial das procuras Melhorativas',['../tutorial_melhorativas.html',1,'']]],
+  ['tvector_18',['Teste TVector',['../teste_tvector.html',1,'']]]
 ];
