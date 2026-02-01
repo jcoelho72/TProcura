@@ -1,19 +1,14 @@
 var searchData=
 [
-  ['teste_208_20damas_0',['Teste 8 Damas',['../teste_8damas.html',1,'']]],
-  ['teste_208_20damas_20codificação_20inteira_1',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]],
-  ['teste_208_20damas_20codificação_20por_20permutação_2',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],
-  ['teste_20aspirador_20parte_201_202_3',['Teste Aspirador - Parte 1/2',['../teste_aspirador1.html',1,'']]],
-  ['teste_20aspirador_20parte_202_202_4',['Teste Aspirador - Parte 2/2',['../teste_aspirador2.html',1,'']]],
-  ['teste_20jogo_20do_20galo_5',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
-  ['teste_20jogo_20em_20linha_6',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
-  ['teste_20particao_7',['Teste Particao',['../teste_particao.html',1,'']]],
-  ['teste_20particao_20codificação_20binária_8',['Teste Particao - Codificação Binária',['../teste_particao_cb.html',1,'']]],
-  ['teste_20puzzle_208_9',['Teste Puzzle 8',['../teste_puzzle8.html',1,'']]],
-  ['teste_20tvector_10',['Teste TVector',['../teste_tvector.html',1,'']]],
-  ['testes_20construtivos_11',['Deucalion - testes construtivos',['../construtiva__deucalion.html',1,'']]],
-  ['testes_20de_20algoritmos_20com_20o_20tprocura_12',['Testes de Algoritmos com o TProcura',['../investigacao.html',1,'']]],
-  ['testes_20melhorativos_13',['Deucalion - testes melhorativos',['../melhorativa__deucalion.html',1,'']]],
-  ['tprocura_14',['tprocura',['../investigacao.html',1,'Testes de Algoritmos com o TProcura'],['../index.html',1,'TProcura']]],
-  ['tvector_15',['Teste TVector',['../teste_tvector.html',1,'']]]
+  ['parte_201_202_0',['Teste Aspirador - Parte 1/2',['../teste_aspirador1.html',1,'']]],
+  ['parte_202_202_1',['Teste Aspirador - Parte 2/2',['../teste_aspirador2.html',1,'']]],
+  ['particao_2',['Teste Particao',['../teste_particao.html',1,'']]],
+  ['particao_20codificação_20binária_3',['Teste Particao - Codificação Binária',['../teste_particao_cb.html',1,'']]],
+  ['pasta_20resultados_4',['pasta resultados',['../md_Adversa_2Teste_2Resultados_2README-Resultados.html',1,'Pasta Resultados'],['../md_Construtiva_2Teste_2Resultados_2README-Resultados.html',1,'Pasta Resultados'],['../md_Melhorativa_2Teste_2Resultados_2README-Resultados.html',1,'Pasta Resultados'],['../md_Teste_2Resultados_2README-Resultados.html',1,'Pasta Resultados']]],
+  ['permutação_5',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],
+  ['por_20permutação_6',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],
+  ['procura_20em_20profundidade_20nível_203_7',['Puzzle8, procura em profundidade nível 3',['../md_docs_2tutorial_2puzzle8prof.html',1,'']]],
+  ['profundidade_20nível_203_8',['Puzzle8, procura em profundidade nível 3',['../md_docs_2tutorial_2puzzle8prof.html',1,'']]],
+  ['puzzle_208_9',['Teste Puzzle 8',['../teste_puzzle8.html',1,'']]],
+  ['puzzle8_20procura_20em_20profundidade_20nível_203_10',['Puzzle8, procura em profundidade nível 3',['../md_docs_2tutorial_2puzzle8prof.html',1,'']]]
 ];
