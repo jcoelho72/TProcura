@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['o_20tprocura_0',['Testes de Algoritmos com o TProcura',['../investigacao.html',1,'']]]
+  ['nível_203_0',['Puzzle8, procura em profundidade nível 3',['../tutorial_puzzle8prof.html',1,'']]]
 ];
