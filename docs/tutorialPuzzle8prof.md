@@ -1,7 +1,6 @@
 @page tutorial_puzzle8prof Puzzle8, procura em profundidade nível 3
 
 \htmlonly
-<h1 align="left">Puzzle8, procura em profundidade nível 3</h1>
 <p><strong>Puzzle8</strong> é um jogo num tabuleiro de 3x3, em que uma das casas
   está vazia. Os movimentos possíveis a cada momento é mover para a casa vazia,
   o conteúdo de uma das casas ao lado. O objetivo é colocar o tabuleiro numa
@@ -691,7 +690,7 @@
 <p></p>
 <p style="margin-right: 0px;" dir="ltr">Ficheiro de Excel, passo a passo:</p>
 <p><iframe
-    src="https://onedrive.live.com/embed?resid=CB9D74B9743B54E1%21339598&amp;authkey=%21AIR_77DokuNpbLo&amp;em=2&amp;wdAllowInteractivity=False&amp;AllowTyping=True&amp;ActiveCell='exp0'!A1&amp;wdHideGridlines=True&amp;wdHideHeaders=True&amp;wdDownloadButton=True&amp;wdInConfigurator=True&amp;wdInConfigurator=True"
+    src="https://onedrive.live.com/embed?resid=CB9D74B9743B54E1!339598&authkey=!AIR_77DokuNpbLo&em=2"
     width="1050" height="500" frameborder="0" scrolling="no"></iframe></p>
 <p style="margin-right: 0px;" dir="ltr">Nesta procura houve 12 estados gerados,
   e 8 estados expandidos. Foi encontrada a solução que passa pelos estados 12,
