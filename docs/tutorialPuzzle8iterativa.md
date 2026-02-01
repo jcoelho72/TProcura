@@ -1,6 +1,6 @@
 @page tutorial_puzzle8iterativa Puzzle8, procura em profundidade iterativa
 
-| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | 
+| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | [Partição profundidade](tutorial_particaoprof.html) | [Partição largura](tutorial_particaolargura.html) | [4 damas profundidade](tutorial_4damasprof.html) | [4 damas largura](tutorial_4damaslargura.html) | 
 
 \htmlonly
 <p>Mantém-se o problema Puzzle8, com os mesmos 3 movimentos de exemplo desde a
@@ -1379,8 +1379,8 @@
 
 <details>
 <summary>
-<p><strong> Ação:</strong>
-  Execute este mesmo algoritmo para o seguinte estado inicial:</p>
+<strong> Ação:</strong>
+  Execute este mesmo algoritmo para o seguinte estado inicial:
 <table border="3" width="100" cellspacing="3" cellpadding="3" align="middle">
   <tbody>
     <tr>
@@ -1753,4 +1753,4 @@
 
 \endhtmlonly
 
-| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | 
+| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | [Partição profundidade](tutorial_particaoprof.html) | [Partição largura](tutorial_particaolargura.html) | [4 damas profundidade](tutorial_4damasprof.html) | [4 damas largura](tutorial_4damaslargura.html) | 

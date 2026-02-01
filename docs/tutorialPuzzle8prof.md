@@ -1,6 +1,6 @@
 @page tutorial_puzzle8prof Puzzle8, procura em profundidade nível 3
 
-| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | 
+| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | [Partição profundidade](tutorial_particaoprof.html) | [Partição largura](tutorial_particaolargura.html) | [4 damas profundidade](tutorial_4damasprof.html) | [4 damas largura](tutorial_4damaslargura.html) | 
 
 \htmlonly
 <p><strong>Puzzle8</strong> é um jogo num tabuleiro de 3x3, em que uma das casas
@@ -754,4 +754,4 @@ Foram 4 estados gerados mas não expandidos. Correspondem às linhas que estão 
 
 \endhtmlonly
 
-| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | 
+| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | [Partição profundidade](tutorial_particaoprof.html) | [Partição largura](tutorial_particaolargura.html) | [4 damas profundidade](tutorial_4damasprof.html) | [4 damas largura](tutorial_4damaslargura.html) | 

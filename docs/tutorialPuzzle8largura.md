@@ -1,6 +1,6 @@
 @page tutorial_puzzle8largura Puzzle8, procura em largura
 
-| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | 
+| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | [Partição profundidade](tutorial_particaoprof.html) | [Partição largura](tutorial_particaolargura.html) | [4 damas profundidade](tutorial_4damasprof.html) | [4 damas largura](tutorial_4damaslargura.html) | 
 
 \htmlonly
 <p style="margin-right: 0px;" dir="ltr">Agora analisamos a procura em largura,
@@ -761,10 +761,9 @@
 <hr>
 <details>
 <summary>
-<p style="margin-right: 0px;" dir="ltr"><strong> Ação:</strong>
+<strong> Ação:</strong>
   Refaça esta procura mas utilizando o mesmo estado de partida que nos exemplos
-  anteriores:</p>
-<p style="margin-right: 0px;" dir="ltr"></p>
+  anteriores:
 <table border="3" width="100" cellspacing="3" cellpadding="3" align="middle">
   <tbody>
     <tr>
@@ -1277,4 +1276,4 @@
 
 \endhtmlonly
 
-| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | 
+| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | [Partição profundidade](tutorial_particaoprof.html) | [Partição largura](tutorial_particaolargura.html) | [4 damas profundidade](tutorial_4damasprof.html) | [4 damas largura](tutorial_4damaslargura.html) | 
