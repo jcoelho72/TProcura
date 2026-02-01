@@ -32,6 +32,8 @@ var searchData=
   ['tprocuramelhorativa_2eh_29',['TProcuraMelhorativa.h',['../TProcuraMelhorativa_8h.html',1,'']]],
   ['trand_2ecpp_30',['TRand.cpp',['../TRand_8cpp.html',1,'']]],
   ['trand_2eh_31',['TRand.h',['../TRand_8h.html',1,'']]],
-  ['tutorialpuzzle8prof_2emd_32',['tutorialPuzzle8prof.md',['../tutorialPuzzle8prof_8md.html',1,'']]],
-  ['tvector_2eh_33',['TVector.h',['../TVector_8h.html',1,'']]]
+  ['tutorialpuzzle8iterativa_2emd_32',['tutorialPuzzle8iterativa.md',['../tutorialPuzzle8iterativa_8md.html',1,'']]],
+  ['tutorialpuzzle8largura_2emd_33',['tutorialPuzzle8largura.md',['../tutorialPuzzle8largura_8md.html',1,'']]],
+  ['tutorialpuzzle8prof_2emd_34',['tutorialPuzzle8prof.md',['../tutorialPuzzle8prof_8md.html',1,'']]],
+  ['tvector_2eh_35',['TVector.h',['../TVector_8h.html',1,'']]]
 ];

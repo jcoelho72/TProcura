@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['largura_0',['largura',['../teste_puzzle8.html#autotoc_md135',1,'Ação 3 - Procura em Largura'],['../teste_8damas.html#autotoc_md68',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md90',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md94',1,'Ação 9 - Desafio Procura em Largura']]],
+  ['largura_0',['largura',['../teste_puzzle8.html#autotoc_md135',1,'Ação 3 - Procura em Largura'],['../teste_8damas.html#autotoc_md68',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md90',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md94',1,'Ação 9 - Desafio Procura em Largura'],['../tutorial_puzzle8largura.html',1,'Puzzle8, procura em largura']]],
   ['largura_5fprimeiro_1',['LARGURA_PRIMEIRO',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6ca4bdb9cfb386855ab9d6bc3e2a369f6ed',1,'TProcuraConstrutiva.h']]],
   ['larguraprimeiro_2',['LarguraPrimeiro',['../group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0',1,'TProcuraConstrutiva']]],
   ['last_3',['Last',['../classTVector.html#aa304d639c79ef2842f9951846c6292e3',1,'TVector']]],
