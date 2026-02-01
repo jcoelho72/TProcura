@@ -1,5 +1,7 @@
 @page tutorial_puzzle8prof Puzzle8, procura em profundidade nível 3
 
+| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | 
+
 \htmlonly
 <p><strong>Puzzle8</strong> é um jogo num tabuleiro de 3x3, em que uma das casas
   está vazia. Os movimentos possíveis a cada momento é mover para a casa vazia,
@@ -740,9 +742,17 @@
 </ul>
 <p></p>
 <hr>
-<p><strong style="font-size: 0.9375rem;"><img
+
+<details>
+<summary><strong style="font-size: 0.9375rem;"><img
       src="https://elearning.uab.pt/pluginfile.php/2671301/mod_quiz/intro/image.png"> Atenção</strong><span
     style="font-size: 0.9375rem;">: Quantos estados foram gerados mas não
-    expandidos?</span></p>
+    expandidos?</span></summary>
+
+Foram 4 estados gerados mas não expandidos. Correspondem às linhas que estão vazias, na coluna expansão.
+
+</details>
 
 \endhtmlonly
+
+| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | 
