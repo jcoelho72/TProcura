@@ -793,8 +793,7 @@
   consideráveis.</p>
 <hr>
 <details>
-<summary><strong><img
-      src="https://elearning.uab.pt/pluginfile.php/2671301/mod_quiz/intro/image.png"> Ação:</strong>
+<summary><strong> Ação:</strong>
   Refaça a procura em profundidade considerando as simetrias, mas para o
   problema das 5 damas. </summary>
 

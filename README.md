@@ -228,6 +228,8 @@ Esses exemplos servem tanto para testar o repositório quanto para servir de bas
 ### Tutoriais
 
 - [Procuras Construtivas](tutorial_construtivas.html)
+- [Procuras Nelhorativas](tutorial_melhorativas.html)
+- [Procuras Adversas](tutorial_adversas.html)
 
 ---
 

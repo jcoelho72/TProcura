@@ -2,17 +2,22 @@
 
 Este tutorial cobre os algoritmos de procura construtivos.
 O nome "construtivo" significa que a solução vai sendo construida, passo a passo (ou ação a ação).
-No final temos uma solução completa, constituída por todos os passos (ações),
-mas o nosso espaço de procura é no espaço das soluções parciais.
-Em cada ponto do espaço existe um conjunto de ações realizadas, mas não temos uma solução completa, pelo que é uma solução parcial.
+Antes de atingirmos o objetivo temos uma solução parcial, constituída pelos passos (ações) dados até ao momento.
+Ao antigirmos o objetivo ficamos com uma solução completa.
 
 Estes algoritmos estão divididos em cegos e informados. Os algoritmos cegos não utilizam informação heurística, apenas informação exata.
 Os algoritmos informados, embora mais úteis, constroiem-se sobre estes, pelo que vamos primeiramente analisar
 os algoritmos cegos, e de seguida os informados.
 
+Propõe-se que faça este tutorial da seguinte forma:
+- Veja o material existente, tanto na bibliografia como nos vídeos se disponível;
+- Veja os exemplos passo a passo e procure responder às questões antes de ver as respostas;
+- Continue com os exemplos de execução, para mais testes práticos e consolidação da matéria.
+
 # Procuras Construtivas Cegas
 
 Algoritmos cegos: largura-primeiro; profundidade-primeiro; iterativos;
+
 Leituras (Russel & Norvig): Capítulo 3 (2ª edição) | Secções 3.1 a 3.4 (3ª e 4ª edição),
 
 Vídeos (PVP 3A e 3B):
@@ -34,9 +39,12 @@ Exemplos passo a passo:
 6. [4 damas profundidade](tutorial_4damasprof.html)
 7. [4 damas largura](tutorial_4damaslargura.html) 
 
+
+
 # Procuras Construtivas Informadas
 
 Algoritmos informados: melhor primeiro; A*;
+
 Leituras (Russel & Norvig): Capítulo 4 (2ª edição) | Secções 3.5 (3ª e 4ª edição)
 
 Vídeos (PVP 4A):
@@ -50,7 +58,7 @@ Vídeos (PVP 4A):
 
 Exemplos de Papel-e-Lápis:
 
-
+(falta colocar)
 
 
 # Exemplos de execução
@@ -59,5 +67,7 @@ Exemplos de Papel-e-Lápis:
 2. [Puzzle 8](teste_puzzle8.html)
 3. [8 Damas](teste_8damas.html)
 4. [Partição](teste_particao.html)
+
+
 
 
