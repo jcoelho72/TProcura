@@ -39,7 +39,7 @@ var searchData=
   ['instância_36',['instância',['../teste_aspirador1.html#autotoc_md86',1,'Ação 1 - Trocar de instância'],['../teste_tvector.html#autotoc_md146',1,'Ação 1: Menu 1 - Instância'],['../teste_aspirador1.html#autotoc_md93',1,'Ação 8 - Resolver outra instância']]],
   ['instâncias_37',['instâncias',['../teste_jogo_do_galo.html#autotoc_md103',1,'Ação 1 - Ver instâncias'],['../teste_jogo_em_linha.html#autotoc_md110',1,'Ação 1 - Ver instâncias'],['../teste_particao.html#autotoc_md121',1,'Ação 1 - Ver instâncias'],['../teste_particao_cb.html#autotoc_md128',1,'Ação 1 - Ver instâncias'],['../teste_puzzle8.html#autotoc_md133',1,'Ação 1 - Ver instâncias'],['../teste_8damas.html#autotoc_md66',1,'Ação 1 - Ver instâncias'],['../teste_8damas_ci.html#autotoc_md76',1,'Ação 1 - Ver instâncias'],['../teste_8damas_cp.html#autotoc_md81',1,'Ação 1 - Ver instâncias']]],
   ['inst_38',['inst',['../classCJogoEmLinha.html#aa3e49a13635e4e3fef66e5644594ad5c',1,'CJogoEmLinha']]],
-  ['instalação_39',['Instalação',['../index.html#autotoc_md179',1,'']]],
+  ['instalação_39',['Instalação',['../index.html#autotoc_md178',1,'']]],
   ['instancia_40',['instancia',['../classTProcura.html#ac54b5d632d3efd448b51bfca6cb6a238',1,'TProcura::instancia'],['../structSResultado.html#abcf1163e39d1d92069afb8b6063114f9',1,'SResultado::instancia'],['../structSResultadoJogo.html#abd6e08b3c8da859100e6e999490ba794',1,'SResultadoJogo::instancia']]],
   ['instantefinal_41',['instanteFinal',['../classTProcura.html#aad1d62f5db16f77742bb291b6ef342f6',1,'TProcura']]],
   ['inteira_42',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]],

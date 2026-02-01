@@ -1,7 +1,7 @@
 var searchData=
 [
   ['níveis_0',['Ação 9 - Torneio Níveis',['../teste_jogo_em_linha.html#autotoc_md119',1,'']]],
-  ['nível_203_1',['Puzzle8, procura em profundidade nível 3',['../md_docs_2tutorial_2puzzle8prof.html',1,'']]],
+  ['nível_203_1',['Puzzle8, procura em profundidade nível 3',['../md_tutorial_2puzzle8prof.html',1,'']]],
   ['n_2',['N',['../structSJogoEmLinha.html#a965df6adca0616dc382be363f19485e5',1,'SJogoEmLinha']]],
   ['nada_3',['NADA',['../TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e',1,'TProcura.h']]],
   ['nao_5flido_4',['NAO_LIDO',['../TProcura_8h.html#a59f9d6e2b09717823299d60a0e6f2efc',1,'TProcura.h']]],
