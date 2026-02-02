@@ -1,7 +1,7 @@
 var searchData=
 [
   ['adversas_0',['Tutorial das procuras Adversas',['../tutorial_adversas.html',1,'']]],
-  ['adversas_20literatura_1',['Procuras Adversas - Literatura',['../tutorial_adversaslit.html',1,'']]],
+  ['adversas_20literatura_1',['adversas literatura',['../tutorial_adversas5a.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversas5b.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversas5c.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversaslit.html',1,'Procuras Adversas - Literatura']]],
   ['adversas_20minimax_20com_20cortes_20alfa_20beta_2',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],
   ['alfa_20beta_3',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],
   ['algoritmos_20com_20o_20tprocura_4',['Testes de Algoritmos com o TProcura',['../investigacao.html',1,'']]],

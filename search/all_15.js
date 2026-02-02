@@ -14,11 +14,11 @@ var searchData=
   ['limite_5ftempo_11',['LIMITE_TEMPO',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ad4d1ad2d967b020f5527e13a8db8a1bc',1,'TProcura.h']]],
   ['limite_5fvizinhos_5fci_12',['LIMITE_VIZINHOS_CI',['../TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba3dba8315a07a2a8afac2f3a9eddcd66d',1,'TCodificacaoInteira.h']]],
   ['limite_5fvizinhos_5fcp_13',['LIMITE_VIZINHOS_CP',['../TCodificacaoPermutacao_8h.html#a68243105d12f0f951dcae9fdb9c15b2aa1915512e9152f6dfbac22aec1fdb1975',1,'TCodificacaoPermutacao.h']]],
-  ['limparestatisticas_14',['limparestatisticas',['../classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f',1,'TProcura::LimparEstatisticas()'],['../classTProcuraMelhorativa.html#a6c7163b20ace9bebdf3c073cd475dec9',1,'TProcuraMelhorativa::LimparEstatisticas()'],['../classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828',1,'TProcuraConstrutiva::LimparEstatisticas() override']]],
+  ['limparestatisticas_14',['limparestatisticas',['../classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828',1,'TProcuraConstrutiva::LimparEstatisticas()'],['../classTProcuraMelhorativa.html#a6c7163b20ace9bebdf3c073cd475dec9',1,'TProcuraMelhorativa::LimparEstatisticas()'],['../classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f',1,'TProcura::LimparEstatisticas()']]],
   ['limparht_15',['LimparHT',['../classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c',1,'TProcuraConstrutiva']]],
   ['linha_16',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
   ['linha_20de_20comando_17',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md158',1,'']]],
-  ['literatura_18',['Procuras Adversas - Literatura',['../tutorial_adversaslit.html',1,'']]],
+  ['literatura_18',['literatura',['../tutorial_adversas5c.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversaslit.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversas5b.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversas5a.html',1,'Procuras Adversas - Literatura']]],
   ['lower_5fbound_19',['LOWER_BOUND',['../TProcuraAdversa_8h.html#af2d8f3ce278d837a36ee4d610662b204a7b49753da05e5513632fc19383072793',1,'TProcuraAdversa.h']]],
   ['lowerbound_20',['lowerbound',['../classTProcuraConstrutiva.html#a5f021041a7dfe1b68890d9e5f5f0e6f4',1,'TProcuraConstrutiva::LowerBound()'],['../classTProcuraMelhorativa.html#ab1191e46286698e517e2d5bf3cd18ff0',1,'TProcuraMelhorativa::lowerBound'],['../group__VariaveisGlobais.html#ga1af840b6ec9c04ce7d4c8849346441bd',1,'TProcuraConstrutiva::lowerBound']]]
 ];
