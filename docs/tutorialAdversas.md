@@ -13,54 +13,16 @@ Propõe-se que faça este tutorial da seguinte forma:
 - Veja os exemplos passo a passo e procure responder às questões antes de ver as respostas;
 - Continue com os exemplos de execução, para mais testes práticos e consolidação da matéria.
 
-# Procuras Adversas
+Passos do tutorial:
 
-Algoritmos adversos: MiniMax; Monte Carlo;
-
-Leituras (Russel & Norvig): Capítulo 5 (1ª edição) | Capítulo 6 (2ª e 4ª edição) | Capítulo 5 (3ª edição)
-
-Vídeos (PVP 5A, 5B e 5C):
-
-\htmlonly
-
-<div style="width:320px; margin:10px;">
-  <iframe 
-    src="https://player.vimeo.com/video/803548145?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-<div style="width:320px; margin:10px;">
-  <iframe 
-    src="https://player.vimeo.com/video/827644802?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-<div style="width:320px; margin:10px;">
-  <iframe 
-    src="https://player.vimeo.com/video/827645296?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-\endhtmlonly
-
-
-Exemplos passo a passo (PnP):
-
-- [Galo MiniMax](tutorial_galominimax.html)
-- [Galo alfa/beta](tutorial_galoalfabeta.html)
-
-Nota: falta Monte Carlo no PnP e na exeucção, em TProcuraAdversa.
-
-# Exemplos de execução
-
-1. [Jogo do Galo](teste_jogo_do_galo.html)
-2. [Jogo em Linha](teste_jogo_em_linha.html)
+- [📖 Literatura](tutorial_adversaslit.html)
+- [👓 Introdução](tutorial_adversas5b.html)
+- [👓 MiniMax](tutorial_adversas5b.html)
+- [👓 Monte Carlo](tutorial_adversas5c.html)
+- [✏️ Galo MiniMax](tutorial_galominimax.html)
+- [✏️ Galo alfa/beta](tutorial_galoalfabeta.html)
+- [💻 Jogo do Galo](teste_jogo_do_galo.html)
+- [💻 Jogo em Linha](teste_jogo_em_linha.html) 
 
 
 
