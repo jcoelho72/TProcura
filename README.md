@@ -22,7 +22,7 @@ Biblioteca em C++ para **testes paramétricos** de algoritmos, e coleção de al
 - [Estrutura do Repositório](#s3)
 - [Instalação](#s4)
 - [Uso](#s5)
-- [Exemplos](#s6)
+- [Tutoriais](#s6)
 - [Bibliografia](#s7)
 - [Licença](#s8)
 
@@ -199,7 +199,15 @@ Superclasses:
 ---
 
 \anchor s6
-## Exemplos
+### Tutoriais 
+
+- [Procuras Construtivas](tutorial_construtivas.html)
+- [Procuras Nelhorativas](tutorial_melhorativas.html)
+- [Procuras Adversas](tutorial_adversas.html)
+- [Testes Computacionais](tutorial_testes.html)
+
+Listam-se de seguida exemplos de utilização de cada classe.
+Estes exemlos fazem parte dos tutoriais, mas caso pretenda pode ver apenas os exemplos sem necessidade de fazer o tutorial.
 
 Problemas de exemplo da classe TProcura:
 1. [TesteTVetor](teste_tvector.html)
@@ -209,7 +217,6 @@ Problemas de exemplo da classe TProcuraConstrutiva:
 2. [Puzzle 8](teste_puzzle8.html)
 3. [8 Damas](teste_8damas.html)
 4. [Partição](teste_particao.html)
--  [Resultados Deucalion](construtiva__deucalion.html)
 
 Problemas de exemplo da classe TProcuraMelhorativa:
 1. [8 Damas CI](teste_8damas_ci.html) (TCodificacaoInteira)
@@ -217,20 +224,12 @@ Problemas de exemplo da classe TProcuraMelhorativa:
 3. [Partição CB](teste_particao_cb.html) (TCodificacaoBinaria)
 4. ? (TCodificacaoReal)
 5. ? (TCodificacaoArvore)
--  [Resultados Deucalion](melhorativa__deucalion.html)
 
 Problemas de exemplo da classe TProcuraAdversa:
 1. [Jogo do Galo](teste_jogo_do_galo.html)
 2. [Jogo em Linha](teste_jogo_em_linha.html)
 
-Esses exemplos servem tanto para testar o repositório quanto para servir de base para novas implementações. 
 
-### Tutoriais
-
-- [Procuras Construtivas](tutorial_construtivas.html)
-- [Procuras Nelhorativas](tutorial_melhorativas.html)
-- [Procuras Adversas](tutorial_adversas.html)
-- [Testes Computacionais](tutorial_testes.html)
 
 ---
 

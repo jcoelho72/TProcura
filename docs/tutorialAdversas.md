@@ -17,7 +17,7 @@ Propõe-se que faça este tutorial da seguinte forma:
 
 Algoritmos adversos: MiniMax; Monte Carlo;
 
-Leituras (Russel & Norvig): Capítulo 5 (1ª edição) | Capítulo 6 (2ª e 4ª edição) | Capítulo 5* (3ª edição)
+Leituras (Russel & Norvig): Capítulo 5 (1ª edição) | Capítulo 6 (2ª e 4ª edição) | Capítulo 5 (3ª edição)
 
 Vídeos (PVP 5A, 5B e 5C):
 
