@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['📦_20estrutura_20do_20repositório_0',['📦 Estrutura do Repositório',['../index.html#autotoc_md183',1,'']]]
+  ['📖_20leituras_0',['📖 Leituras',['../tutorial_adversaslit.html#autotoc_md167',1,'']]]
 ];
