@@ -435,7 +435,7 @@
   ultrapassa metade da soma de todos os números.</p>
 <hr>
 <details>
-<summary><strong> Ação:
+<summary><strong>⚡ Ação:
   </strong>Refaça esta procura já com o novo sucessor.</summary>
 <table border="2" cellspacing="2" cellpadding="2">
   <tbody>

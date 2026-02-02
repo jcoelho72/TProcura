@@ -663,7 +663,7 @@
   de papel, enquanto que no computador poderá não haver memória suficiente.</p>
 <hr>
 <details>
-<summary><strong>Ação</strong>:
+<summary><strong>⚡ Ação</strong>:
   Faça a mesma procura, para as 5 damas.</summary>
   
 A resposta é 23. Atenção que na expansão

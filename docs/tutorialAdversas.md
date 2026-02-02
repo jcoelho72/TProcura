@@ -30,10 +30,12 @@ Vídeos (PVP 5A, 5B e 5C):
 \endhtmlonly
 
 
-Exemplos de Papel-e-Lápis:
+Exemplos passo a passo (PnP):
 
-(falta colocar)
+- [Galo MiniMax](tutorial_galominimax.html)
+- [Galo alfa/beta](tutorial_galoalfabeta.html)
 
+Nota: falta Monte Carlo no PnP e na exeucção, em TProcuraAdversa.
 
 # Exemplos de execução
 

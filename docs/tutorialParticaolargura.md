@@ -244,7 +244,7 @@
   teste em tempo constante.</p>
 <hr>
 <details>
-<summary><strong> Ação:</strong>
+<summary><strong>⚡ Ação:</strong>
   Aplique este algoritmo para este problema, com esta regra, de apenas gerar os
   estados que ainda não estiverem sido gerados, e ordenando os grupos por total
   somado. </summary>

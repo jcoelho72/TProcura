@@ -761,7 +761,7 @@
 <hr>
 <details>
 <summary>
-<strong> Ação:</strong>
+<strong>⚡ Ação:</strong>
   Refaça esta procura mas utilizando o mesmo estado de partida que nos exemplos
   anteriores:
 <table border="3" width="100" cellspacing="3" cellpadding="3" align="middle">

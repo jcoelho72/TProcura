@@ -29,8 +29,7 @@ Vídeos (PVP 3A e 3B):
 
 \endhtmlonly
 
-
-Exemplos passo a passo:
+Exemplos passo a passo (PnP - Papel-e-Lápis):
 1. [Puzzle 8 profundidade](tutorial_puzzle8prof.html)
 2. [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html)
 3. [Puzzle 8 largura](tutorial_puzzle8largura.html)
@@ -40,10 +39,9 @@ Exemplos passo a passo:
 7. [4 damas largura](tutorial_4damaslargura.html) 
 
 
-
 # Procuras Construtivas Informadas
 
-Algoritmos informados: melhor primeiro; A*;
+Algoritmos informados: melhor primeiro; A*; BnB.
 
 Leituras (Russel & Norvig): Capítulo 4 (2ª edição) | Secções 3.5 (3ª e 4ª edição)
 
@@ -55,11 +53,11 @@ Vídeos (PVP 4A):
 
 \endhtmlonly
 
+Exemplos passo a passo (PnP):
 
-Exemplos de Papel-e-Lápis:
-
-(falta colocar)
-
+- [Puzzle 8 melhor](tutorial_puzzle8melhor.html) 
+- [Puzzle 8 Astar](tutorial_puzzle8astar.html)
+- [Puzzle 8 BnB](tutorial_puzzle8bnb.html)
 
 # Exemplos de execução
 

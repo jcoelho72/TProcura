@@ -1,0 +1,1180 @@
+@page tutorial_4damasgenetico 4 Damas, Algoritmos Genéticos
+
+| [4 damas escalada](tutorial_4damasescalada.html) | [4 damas genético](tutorial_4damasgenetico.html) |
+
+\htmlonly
+
+<p style="margin-right: 0px;" dir="ltr">Até este momento, a procura
+  desenvolve-se apenas num estado de cada vez. Os <strong>algoritmos
+    genéticos</strong> utilizam uma população de estados, em vez de um só
+  estado, cruzando informação dos diferentes estados para obter novos estados.
+  Baseia-se do paradigma da seleção natural, em que cada solução do problema é
+  um indivíduo, que tem um determinado valor. Os melhores indivíduos têm mais
+  probabilidade de se reproduzirem, e passarem à geração seguinte, existindo
+  também mutações, a que correspondem a alterações aleatórias nas soluções, de
+  forma a permitir que a população adquira características que não possui, sendo
+  essas características mantidas se forem boas.</p>
+<p style="margin-right: 0px;" dir="ltr">A base para este algoritmo funcionar
+  assenta em mais funções, parâmetros e opções que os algoritmos anteriores, mas
+  nem todas elas inteiramente novas:</p>
+<ul dir="ltr">
+  <li>
+    <div style="margin-right: 0px;">Gerador de soluções aleatório (necessário
+      também para a escalada do monte);</div>
+  </li>
+  <li>
+    <div style="margin-right: 0px;">Operador de cruzamento (dadas duas soluções
+      constrói uma nova baseada nas duas);</div>
+  </li>
+  <li>
+    <div style="margin-right: 0px;">Operador de mutação (dada uma solução,
+      altera a solução aleatoriamente, o que pode ser considerado como sendo um
+      vizinho aleatório);</div>
+  </li>
+  <li>
+    <div style="margin-right: 0px;">População (quantos indivíduos fazem parte de
+      uma geração);</div>
+  </li>
+  <li>
+    <div style="margin-right: 0px;">Estratégia de seleção.</div>
+  </li>
+</ul>
+<p style="margin-right: 0px;" dir="ltr">Mantendo o problema nas 4 damas, o
+  gerador aleatório já foi utilizado no algoritmo da escalada do monte. No
+  operador de cruzamento pode-se utilizar qualquer ideia que permita fazer uma
+  nova solução com base em duas. Um operador conhecido, é o
+  "one-point-crossover", que corresponde em considerar um ponto na solução
+  aleatório, e a zona da esquerda ser obtida através de uma das soluções, e a
+  zona da direita através da outra solução. Este operador é simples e pode ser
+  implementado numa grande variedade de estados. A mutação pode ser a escolha de
+  uma coluna e de uma linha aleatoriamente. Como população vamos considerar com
+  a técnica PnP uma população de 4 indivíduos.</p>
+<p style="margin-right: 0px;" dir="ltr">A estratégia de seleção define como se
+  passa de uma geração para a outra. O algoritmo genético começa por gerar uma
+  primeira geração aleatória, e de seguida aplica a estratégia de seleção para
+  passar de uma geração para outra até que o critério de paragem seja atingido.
+</p>
+<p style="margin-right: 0px;" dir="ltr">Uma estratégia de seleção simples, para
+  PnP, pode ser o seguinte (para população = 4):</p>
+<ul dir="ltr">
+  <li>
+    <div style="margin-right: 0px;">Ordenar os indivíduos por valor;</div>
+  </li>
+  <li>
+    <div style="margin-right: 0px;">Cruzar os indivíduos: (1º,2º);
+      (1º,3º); (1º,4º); (2º,3º).</div>
+  </li>
+  <li>
+    <div style="margin-right: 0px;">Mutar todos os indivíduos gerados;</div>
+  </li>
+  <li>
+    <div style="margin-right: 0px;">Da geração seguinte, pertencem os
+      melhores indivíduos cruzados (mutados ou não), sendo o desempate favorável
+      aos indivíduos mutados.</div>
+  </li>
+</ul>
+<p style="margin-right: 0px;">É normal que a mutação seja feita apenas a alguns
+  indivíduos, e que os indivíduos para cruzar sejam escolhidos aleatoriamente,
+  dando mais probabilidade de escolha aos melhores indivíduos. É comum
+  incluírem-se a elite da geração anterior na geração seguinte (para não perder
+  os melhores), e entre gerações gerar-se mais indivíduos que os permitidos numa
+  geração, escolhendo os melhores para ficar na geração. Há ainda outras
+  variantes, como assegurar uma distância mínima entre indivíduos, de forma a
+  permitir que a procura percorra espaços distintos, fazer alguma optimização
+  local aos indivíduos de uma geração (chamar o algoritmo de escalada do
+  monte), e por vezes utilizar mais que uma população, de forma a simular
+  evoluções em zonas distintas, que mais tarde se vêm a cruzar, de forma a
+  aumentar a diversidade, e simular a organização da sociedade em cidades. Podem
+  também ser introduzidos numa geração, indivíduos estrangeiros, gerados
+  aleatoriamente.</p>
+<p>As variantes não são muito relevantes para a aprendizagem, a estratégia acima
+  descrita, já dá mais hipótese à melhor solução para se manter na geração, e de
+  seguida à 2ª e 3ª solução. Vamos correr o algoritmo com a seguinte sequência
+  aleatória (conjuntos de 4 números): 4322, 3132, 3222, 1412, 1333, 4214, 3344,
+  3421, 2331, 2342, 3242, 4443, 1343, 1212.</p>
+<p></p>
+<table border="2" cellspacing="2" cellpadding="2">
+  <tbody>
+    <tr>
+      <td valign="top" width="11%">Geração</td>
+      <td valign="top" width="11%">Estado</td>
+      <td valign="top" width="11%">Valor</td>
+      <td valign="top" width="11%">Estado</td>
+      <td valign="top" width="11%">Valor</td>
+      <td valign="top" width="11%">Estado</td>
+      <td valign="top" width="11%">Valor</td>
+      <td valign="top" width="11%">Estado</td>
+      <td valign="top" width="11%">Valor</td>
+    </tr>
+    <tr>
+      <td valign="top" width="11%">0</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">4 <br>(3º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">2 <br>(1º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">  </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">4 <br>(4º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">3 <br>(2º)</td>
+    </tr>
+    <tr>
+      <td valign="top" width="11%">1</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-2 (1)<br>4</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-3 (3)<br>2</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-4 (3)<br>2</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">2-3(3)<br>3<br>(4º)</td>
+    </tr>
+    <tr>
+      <td valign="top" width="11%">(mutação)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">4,2<br>4</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1,4<br>1<br>(1º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">3,3<br>2<br>(2º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">
+        <p>4,4<br>3<br>(3º)</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="11%">2</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-2 (3)<br>1<br>(1º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">
+        <p>1-3 (3)<br>2<br>(4º)</p>
+      </td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-4 (2)<br>2</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">2-3 (1)<br>3</td>
+    </tr>
+    <tr>
+      <td valign="top" width="11%">(mutação)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">2,3<br>3</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">3,1<br>2<br>(2º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">2,3<br>2<br>(3º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">4,2<br>4</td>
+    </tr>
+    <tr>
+      <td valign="top" width="11%">3</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-2 (3)<br>2<br> </td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-3 (2)<br>2</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-4 (4)<br>1<br>(1º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">2-3 (2)<br>2</td>
+    </tr>
+    <tr>
+      <td valign="top" width="11%">(mutação)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">4,4<br>2<br>(2º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">4,3<br>2<br>(3º)</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1,3<br>2<br>(4º) </td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">
+        <p>4,3<br>2</p>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" width="11%">4</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-2 (1)<br>2</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-3 (2)<br>2</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">1-4 (1)<br>1</td>
+      <td valign="top" width="11%">
+        <table border="3" cellspacing="3" cellpadding="3">
+          <tbody>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+            <tr>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%">X</td>
+              <td style="text-align: center;" valign="top" width="25%"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+      <td valign="top" width="11%">2-3 (2)<br>2</td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin-right: 0px;" dir="ltr">Ficheiro de Excel, passo a passo:</p>
+<p><iframe
+    src="https://onedrive.live.com/embed?resid=CB9D74B9743B54E1%21339646&amp;authkey=%21ALsvwzhSQ07KcM8&amp;em=2&amp;wdAllowInteractivity=False&amp;ActiveCell='Vazio'!A1&amp;wdHideGridlines=True&amp;wdHideHeaders=True&amp;wdDownloadButton=True&amp;wdInConfigurator=True&amp;wdInConfigurator=True"
+    width="1600" height="700" frameborder="0" scrolling="no"></iframe></p>
+<p style="margin-right: 0px;" dir="ltr">Para explicar o funcionamento, vamos
+  identificar os estados com o número da linha e coluna. A geração 0 foi
+  completamente gerada utilizando os números aleatórios. De seguida, a geração 1
+  resultou primeiramente de 4 operações de cruzamento. O estado 2,1 (primeiro
+  estado da geração 1), resultou da primeira coluna do 1º indivíduo da geração 0
+  (estado 1,2), e das 3 colunas restantes do 2º indivíduo da geração 0 (estado
+  1,4). Isto porque o número aleatório para o operador foi 1. Já o segundo
+  (estado 2,2) foi resultado das 3 primeiras colunas do 1º indivíduo da geração
+  0, e a última coluna do 3º indivíduo da geração 0.</p>
+<p>A terceira linha foi feita com base nos indivíduos resultantes dos
+  cruzamentos, tendo o primeiro sofrido uma mutação 4,2, portanto a quarta
+  coluna ficou na linha 2. No entanto, como essa dama já estava nessa posição, o
+  estado ficou igual. Já o estado 3,2, tem uma mutação 1,4, o que significa que
+  a dama na 1ª coluna deve passar para a linha 4, estando anteriormente na linha
+  2. Neste caso, esta mutação melhorou a anterior solução, ficando com apenas
+  duas damas a atacarem-se mutuamente.</p>
+<p>Para a geração 2, passam os 4 melhores indivíduos da geração 1, incluindo
+  antes e depois da mutação, e que são diferentes. Neste caso a geração 1 ficou:
+  (3,2);(3,3);(3,4);(2,4).</p>
+<p>A segunda geração teve um procedimento idêntico, sempre utilizando os valores
+  aleatórios para o operador cruzamento.</p>
+<p>Embora o algoritmo genético não tenha chegado em 4 gerações à solução, estes
+  resultados não significam que não seja um algoritmo potente, mas apenas que em
+  problemas pequenos poderá não ser indicado, e que necessita de afinação para
+  poder funcionar corretamente.</p>
+<hr>
+<details>
+<summary><p><strong>⚡ Ação: </strong><span
+    style="font-size: 0.9375rem;">Imprima uma folha para resolução manual, em
+    que atualize as fórmulas de modo a ter nova sequência de números aleatórios,
+    e execute este mesmo algoritmo. Apenas com algumas corridas poderá analisar
+    os seus pontos fortes e fracos, que é essencial conhecer de forma a poder
+    configurar o algoritmo corretamente.</span></p>
+<p>Indique na resposta, com a mesma notação utilizada para a geração 1, isto é:
+  "(3,2);(3,3);(3,4);(2,4).", os estados que fazem parte a geração 3.</p></summary>
+
+<p><strong>Resposta: </strong>(6,3);(7,1);(7,2);(7,3).<br><br>Antes de avançar,
+  resolva este problema à mão, imprimindo a folha de resolução manual.</p>
+
+</details>
+
+\endhtmlonly
+
+| [4 damas escalada](tutorial_4damasescalada.html) | [4 damas genético](tutorial_4damasgenetico.html) |

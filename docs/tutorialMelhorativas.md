@@ -15,7 +15,14 @@ Propõe-se que faça este tutorial da seguinte forma:
 
 # Procuras Melhorativas (Algoritmos Evolutivos)
 
-Leituras ....
+Leituras:
+- Russel & Norvig: Capítulo 4 (secção 1)
+- Eiben & Smith: Capítulos 2 a 6
+- Bruke & Kendall: Capítulos: 5, 7 a 13
+
+Nota: este tutorial tem de ser melhorado nos exemplos passo-a-passo, tendo apenas a escalada do monte e uma versão limitada do algoritmo genético.
+Na execução (TProcuraMelhorativa) é preciso mais algoritmos.
+Atualmente os algoritmos evolutivos têm uma boa implementação, tendo naturalmente ainda espaço para evoluir.
 
 Vídeos (PVP 4B):
 
@@ -26,10 +33,16 @@ Vídeos (PVP 4B):
 \endhtmlonly
 
 
-Exemplos passo a passo:
+Exemplos passo a passo (PnP):
 
-- [Puzzle 8 melhor](tutorial_puzzle8melhor.html) 
+- [4 damas genético](tutorial_4damasgenetico.html)
 
+
+# Procuras Melhorativas (Algoritmos alternativos)
+
+Exemplos passo a passo (PnP):
+
+- [4 damas escalada](tutorial_4damasescalada.html)
 
 
 # Exemplos de execução
