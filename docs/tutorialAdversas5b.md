@@ -1,13 +1,11 @@
 @page tutorial_adversaslit Procuras Adversas - Literatura
 
-\htmlonly
-
 <div style="padding:10px; border:1px solid #ccc; border-radius:6px; background:#f8f8f8; margin:20px 0;">
   <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
 
-    <span style="font-weight:bold; text-decoration:underline;">📖 Literatura</span>
+    <a href="tutorial_adversaslit.html">📖 Literatura</a>
     <a href="tutorial_adversas5a.html">👓 Introdução</a>
-    <a href="tutorial_adversas5b.html">👓 MiniMax</a>
+    <span style="font-weight:bold; text-decoration:underline;">👓 MiniMax</span>
     <a href="tutorial_adversas5c.html">👓 Monte Carlo</a>
     <a href="tutorial_galominimax.html">✏️ Galo MiniMax</a>
     <a href="tutorial_galoalfabeta.html">✏️ Galo alfa/beta</a>
@@ -17,17 +15,11 @@
   </div>
 </div>
 
+\htmlonly
+<div style="display:flex; gap:20px;">
+<iframe src="https://player.vimeo.com/video/827644802" width="300" height="169" frameborder="0" allow="fullscreen"></iframe>
+</div>
+
 \endhtmlonly
-
-
-Algoritmos: MiniMax; Monte Carlo;
-
-## 📖 Leituras
-
-- (Russel & Norvig): Capítulo 5 (1ª edição) | Capítulo 6 (2ª e 4ª edição) | Capítulo 5 (3ª edição)
-
-## Bibliografia
-
--	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. https://elibrary.pearson.de/book/99.150005/9781292401171
 
 Tutorial procuras Adversas: | Anterior | Próximo | 
