@@ -1,7 +1,4 @@
-@page tutorial_adversaslit Procuras Adversas - Literatura
-
-| [📖 Literatura](tutorial_adversaslit.html) | [👓 Introdução](tutorial_adversas5a.html) | [👓 MiniMax](tutorial_adversas5b.html) | [👓 Monte Carlo](tutorial_adversas5c.html) | [✏️ Galo MiniMax](tutorial_galominimax.html) | [✏️ Galo alfa/beta](tutorial_galoalfabeta.html) | [💻 Jogo do Galo](teste_jogo_do_galo.html) | [💻 Jogo em Linha](teste_jogo_em_linha.html) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+@page tutorial_adversas5a Procuras Adversas - Literatura
 
 \htmlonly
 
@@ -29,5 +26,7 @@
 </div>
 
 \endhtmlonly
+
+
 
 Tutorial procuras Adversas: | Anterior | Próximo | 

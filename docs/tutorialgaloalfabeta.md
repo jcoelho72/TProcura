@@ -1,7 +1,23 @@
 @page tutorial_galoalfabeta Procuras Adversas, MiniMax com cortes alfa/beta
 
-| [Galo MiniMax](tutorial_galominimax.html) | [Galo alfa/beta](tutorial_galoalfabeta.html) | 
+\htmlonly
 
+<div style="padding:10px; border:1px solid #ccc; border-radius:6px; background:#f8f8f8; margin:20px 0;">
+  <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+
+    <a href="tutorial_adversaslit.html">📖 Literatura</a>
+    <a href="tutorial_adversas5a.html">👓 Introdução</a>
+    <a href="tutorial_adversas5b.html">👓 MiniMax</a>
+    <a href="tutorial_adversas5c.html">👓 Monte Carlo</a>
+    <a href="tutorial_galominimax.html">✏️ Galo MiniMax</a>
+    <span style="font-weight:bold; text-decoration:underline;">✏️ Galo alfa/beta</span>
+    <a href="teste_jogo_do_galo.html">💻 Jogo do Galo</a>
+    <a href="teste_jogo_em_linha.html">💻 Jogo em Linha</a>
+
+  </div>
+</div>
+
+\endhtmlonly
 \htmlonly
 
 <p>A procura efetuada anteriormente, explora todas as possibilidades,

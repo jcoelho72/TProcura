@@ -1,5 +1,25 @@
 @page teste_jogo_em_linha Teste Jogo Em Linha
 
+\htmlonly
+
+<div style="padding:10px; border:1px solid #ccc; border-radius:6px; background:#f8f8f8; margin:20px 0;">
+  <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+
+    <a href="tutorial_adversaslit.html">📖 Literatura</a>
+    <a href="tutorial_adversas5a.html">👓 Introdução</a>
+    <a href="tutorial_adversas5b.html">👓 MiniMax</a>
+    <a href="tutorial_adversas5c.html">👓 Monte Carlo</a>
+    <a href="tutorial_galominimax.html">✏️ Galo MiniMax</a>
+    <a href="tutorial_galoalfabeta.html">✏️ Galo alfa/beta</a>
+    <a href="teste_jogo_do_galo.html">💻 Jogo do Galo</a>
+    <span style="font-weight:bold; text-decoration:underline;">💻 Jogo em Linha</span>
+
+  </div>
+</div>
+
+\endhtmlonly
+
+
 Execução de exemplo com base no problema do Jogo Em Linha, uma generalização do Jogo do Galo.
 Pode acompanhar o teste executando as ações localmente.
 

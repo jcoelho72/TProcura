@@ -1,4 +1,6 @@
-@page tutorial_adversaslit Procuras Adversas - Literatura
+@page tutorial_adversas5b Procuras Adversas - Literatura
+
+\htmlonly
 
 <div style="padding:10px; border:1px solid #ccc; border-radius:6px; background:#f8f8f8; margin:20px 0;">
   <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
@@ -14,6 +16,8 @@
 
   </div>
 </div>
+
+\endhtmlonly
 
 \htmlonly
 <div style="display:flex; gap:20px;">
