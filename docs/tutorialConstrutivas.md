@@ -24,10 +24,24 @@ Vídeos (PVP 3A e 3B):
 
 \htmlonly
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/803549264?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="PVP 3A - Procura Cega | Introdução à Inteligência Artificial"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/807295853?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="PVP 3B - Procura Cega, Algoritmos | Introdução à Inteligência Artificial"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="width:320px; margin:10px 0;">
+  <iframe 
+    src="https://player.vimeo.com/video/803549264?title=0&byline=0&portrait=0"
+    width="320" height="180" frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture">
+  </iframe>
+</div>
+
+<div style="width:320px; margin:10px 0;">
+  <iframe 
+    src="https://player.vimeo.com/video/807295853?title=0&byline=0&portrait=0"
+    width="320" height="180" frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture">
+  </iframe>
+</div>
 
 \endhtmlonly
+
 
 Exemplos passo a passo (PnP - Papel-e-Lápis):
 1. [Puzzle 8 profundidade](tutorial_puzzle8prof.html)
@@ -49,9 +63,16 @@ Vídeos (PVP 4A):
 
 \htmlonly
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/803548744?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="PVP 4A - Procura Informada | Introdução à Inteligência Artificial"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="width:320px; margin:10px 0;">
+  <iframe 
+    src="https://player.vimeo.com/video/803548744?title=0&byline=0&portrait=0"
+    width="320" height="180" frameborder="0"
+    allow="autoplay; fullscreen; picture-in-picture">
+  </iframe>
+</div>
 
 \endhtmlonly
+
 
 Exemplos passo a passo (PnP):
 

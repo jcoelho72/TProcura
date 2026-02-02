@@ -202,7 +202,7 @@ Superclasses:
 ### Tutoriais 
 
 - [Procuras Construtivas](tutorial_construtivas.html)
-- [Procuras Nelhorativas](tutorial_melhorativas.html)
+- [Procuras Melhorativas](tutorial_melhorativas.html)
 - [Procuras Adversas](tutorial_adversas.html)
 - [Testes Computacionais](tutorial_testes.html)
 
