@@ -139,7 +139,7 @@ var searchData=
   ['troca_136',['Troca',['../classTCodificacaoBinaria.html#af0633fcdb3d410738061a8470c5e0780',1,'TCodificacaoBinaria']]],
   ['trocar_20de_20instância_137',['Ação 1 - Trocar de instância',['../teste_aspirador1.html#autotoc_md86',1,'']]],
   ['tstring_138',['tstring',['../classTString.html#a2fb70d94c8fdba6d90145a01aec1ce3f',1,'TString::TString()'],['../classTString.html',1,'TString'],['../classTString.html#ab39cb66adb0f47604abae4c5a6a24a27',1,'TString::TString()']]],
-  ['tutoriais_139',['Tutoriais',['../index.html#autotoc_md194',1,'']]],
+  ['tutoriais_139',['Tutoriais',['../index.html#autotoc_md193',1,'']]],
   ['tutorial_20das_20procuras_20adversas_140',['Tutorial das procuras Adversas',['../tutorial_adversas.html',1,'']]],
   ['tutorial_20das_20procuras_20construtivas_141',['Tutorial das procuras Construtivas',['../tutorial_construtivas.html',1,'']]],
   ['tutorial_20das_20procuras_20melhorativas_142',['Tutorial das procuras Melhorativas',['../tutorial_melhorativas.html',1,'']]],
