@@ -24,7 +24,7 @@
 
 \endhtmlonly
 
-[📄 Ver slides (PDF)](pdfs/PVP5A.pdf)
+[📄 Ver slides (PDF)](PVP5A.pdf)
 
 
 \htmlonly
