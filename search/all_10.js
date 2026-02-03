@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['galo_0',['Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
-  ['galo_20minmax_1',['Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
+  ['galo_0',['Procuras Adversas, Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
+  ['galo_20minmax_1',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
   ['genéticos_2',['4 Damas, Algoritmos Genéticos',['../tutorial_4damasgenetico.html',1,'']]],
   ['geracoes_3',['geracoes',['../group__VariaveisGlobais.html#ga6185647765b723a3581b5541722e496f',1,'TProcuraConstrutiva::geracoes'],['../classTProcuraMelhorativa.html#af8e5dc608467eccc7569361cde5db236',1,'TProcuraMelhorativa::geracoes']]],
   ['gerados_4',['GERADOS',['../TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88af9a80f1ccfd2448a2cc7c7a244baf0fb',1,'TProcuraConstrutiva.h']]],

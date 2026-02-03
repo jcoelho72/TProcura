@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcura: Procuras Adversas - Literatura</title>
+<title>TProcura: Procuras Adversas - Introdução</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('tutorial_adversas5a.html',''); initRes
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Procuras Adversas - Literatura</div></div>
+  <div class="headertitle"><div class="title">Procuras Adversas - Introdução</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p> 
@@ -121,34 +121,36 @@ $(document).ready(function(){initNavTree('tutorial_adversas5a.html',''); initRes
 <p><a href="PVP5A.pdf">📄 Ver slides (PDF)</a></p>
 <p> 
 
-<p><strong>⚡ Ação : </strong> responda a estas três perguntas de atenção sobre o vídeo (de entre 20)</p>
-
-
 <div id="todas-perguntas" style="display:none;">
 
   <details class="pergunta">
     <summary><strong>⚡ Ação: </strong> Pergunta 1...</summary>
     Resposta 1...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
   <details class="pergunta">
-    <summary>Pergunta 2...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 2...</summary>
     Resposta 2...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
   <details class="pergunta">
-    <summary>Pergunta 3...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 3...</summary>
     Resposta 3...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
   <details class="pergunta">
-    <summary>Pergunta 4...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 4...</summary>
     Resposta 4...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
   <details class="pergunta">
-    <summary>Pergunta 5...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 5...</summary>
     Resposta 5...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
 </div>
@@ -167,17 +169,12 @@ $(document).ready(function(){initNavTree('tutorial_adversas5a.html',''); initRes
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const todas = Array.from(document.querySelectorAll("#todas-perguntas .pergunta"));
-  const escolhidas = [];
-
-  while (escolhidas.length < 3 && todas.length > 0) {
-    const idx = Math.floor(Math.random() * todas.length);
-    escolhidas.push(todas.splice(idx, 1)[0]);
-  }
-
+  const idx = Math.floor(Math.random() * todas.length);
   const destino = document.getElementById("perguntas-escolhidas");
-  escolhidas.forEach(p => destino.appendChild(p));
+  destino.appendChild(todas[idx]);
 });
 </script>
+
 
 
  </p>

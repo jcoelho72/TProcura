@@ -45,11 +45,12 @@ var searchData=
   ['instantefinal_42',['instanteFinal',['../classTProcura.html#aad1d62f5db16f77742bb291b6ef342f6',1,'TProcura']]],
   ['inteira_43',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]],
   ['intersection_44',['Intersection',['../classTVector.html#a8e04072080158c780aef25ca1b4a3fbd',1,'TVector']]],
-  ['invert_45',['Invert',['../classTVector.html#ab45b219aaec44aad6e6c37a806d80025',1,'TVector']]],
-  ['investigacao_2emd_46',['Investigacao.md',['../Investigacao_8md.html',1,'']]],
-  ['investigador_47',['O Ciclo do Investigador',['../investigacao.html#autotoc_md10',1,'']]],
-  ['iteracoes_48',['iteracoes',['../classTProcura.html#a5cb8dad7e3cdda780c22a3893f3d5ad9',1,'TProcura']]],
-  ['iteracoesexcedido_49',['IteracoesExcedido',['../classTProcura.html#a73463e33b889e6053ee32220e0514a2c',1,'TProcura']]],
-  ['iterativa_50',['iterativa',['../teste_aspirador2.html#autotoc_md99',1,'Ação 13 - Profundidade Iterativa'],['../tutorial_puzzle8iterativa.html',1,'Puzzle8, procura em profundidade iterativa']]],
-  ['iterativo_51',['Ação 5 - Torneio Iterativo',['../teste_jogo_em_linha.html#autotoc_md114',1,'']]]
+  ['introdução_45',['Procuras Adversas - Introdução',['../tutorial_adversas5a.html',1,'']]],
+  ['invert_46',['Invert',['../classTVector.html#ab45b219aaec44aad6e6c37a806d80025',1,'TVector']]],
+  ['investigacao_2emd_47',['Investigacao.md',['../Investigacao_8md.html',1,'']]],
+  ['investigador_48',['O Ciclo do Investigador',['../investigacao.html#autotoc_md10',1,'']]],
+  ['iteracoes_49',['iteracoes',['../classTProcura.html#a5cb8dad7e3cdda780c22a3893f3d5ad9',1,'TProcura']]],
+  ['iteracoesexcedido_50',['IteracoesExcedido',['../classTProcura.html#a73463e33b889e6053ee32220e0514a2c',1,'TProcura']]],
+  ['iterativa_51',['iterativa',['../teste_aspirador2.html#autotoc_md99',1,'Ação 13 - Profundidade Iterativa'],['../tutorial_puzzle8iterativa.html',1,'Puzzle8, procura em profundidade iterativa']]],
+  ['iterativo_52',['Ação 5 - Torneio Iterativo',['../teste_jogo_em_linha.html#autotoc_md114',1,'']]]
 ];

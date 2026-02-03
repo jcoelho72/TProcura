@@ -1,12 +1,18 @@
 var searchData=
 [
   ['adversas_0',['Tutorial das procuras Adversas',['../tutorial_adversas.html',1,'']]],
-  ['adversas_20literatura_1',['adversas literatura',['../tutorial_adversas5a.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversas5b.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversas5c.html',1,'Procuras Adversas - Literatura'],['../tutorial_adversaslit.html',1,'Procuras Adversas - Literatura']]],
-  ['adversas_20minimax_20com_20cortes_20alfa_20beta_2',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],
-  ['alfa_20beta_3',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],
-  ['algoritmos_20com_20o_20tprocura_4',['Testes de Algoritmos com o TProcura',['../investigacao.html',1,'']]],
-  ['algoritmos_20genéticos_5',['4 Damas, Algoritmos Genéticos',['../tutorial_4damasgenetico.html',1,'']]],
-  ['aspirador_20parte_201_202_6',['Teste Aspirador - Parte 1/2',['../teste_aspirador1.html',1,'']]],
-  ['aspirador_20parte_202_202_7',['Teste Aspirador - Parte 2/2',['../teste_aspirador2.html',1,'']]],
-  ['astar_8',['Puzzle8, AStar',['../tutorial_puzzle8astar.html',1,'']]]
+  ['adversas_20introdução_1',['Procuras Adversas - Introdução',['../tutorial_adversas5a.html',1,'']]],
+  ['adversas_20jogo_20do_20galo_20minmax_2',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
+  ['adversas_20literatura_3',['Procuras Adversas - Literatura',['../tutorial_adversaslit.html',1,'']]],
+  ['adversas_20minimax_4',['Procuras Adversas - MiniMax',['../tutorial_adversas5b.html',1,'']]],
+  ['adversas_20minimax_20com_20cortes_20alfa_20beta_5',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],
+  ['adversas_20monte_20carlo_6',['Procuras Adversas - Monte Carlo',['../tutorial_adversas5c.html',1,'']]],
+  ['adversas_20teste_20jogo_20do_20galo_7',['Procuras Adversas, Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
+  ['adversas_20teste_20jogo_20em_20linha_8',['Procuras Adversas, Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
+  ['alfa_20beta_9',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],
+  ['algoritmos_20com_20o_20tprocura_10',['Testes de Algoritmos com o TProcura',['../investigacao.html',1,'']]],
+  ['algoritmos_20genéticos_11',['4 Damas, Algoritmos Genéticos',['../tutorial_4damasgenetico.html',1,'']]],
+  ['aspirador_20parte_201_202_12',['Teste Aspirador - Parte 1/2',['../teste_aspirador1.html',1,'']]],
+  ['aspirador_20parte_202_202_13',['Teste Aspirador - Parte 2/2',['../teste_aspirador2.html',1,'']]],
+  ['astar_14',['Puzzle8, AStar',['../tutorial_puzzle8astar.html',1,'']]]
 ];

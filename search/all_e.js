@@ -24,7 +24,7 @@ var searchData=
   ['elitismo_21',['ELITISMO',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da0575bbc8e4e15a92809b397e1ea17db7',1,'TProcuraMelhorativa.h']]],
   ['em_20cluster_20deucalion_22',['Submissão de Trabalhos em Cluster (Deucalion)',['../teste_tvector.html#autotoc_md165',1,'']]],
   ['em_20largura_23',['em largura',['../teste_puzzle8.html#autotoc_md135',1,'Ação 3 - Procura em Largura'],['../teste_8damas.html#autotoc_md68',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md90',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md94',1,'Ação 9 - Desafio Procura em Largura'],['../tutorial_puzzle8largura.html',1,'Puzzle8, procura em largura']]],
-  ['em_20linha_24',['Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
+  ['em_20linha_24',['Procuras Adversas, Teste Jogo Em Linha',['../teste_jogo_em_linha.html',1,'']]],
   ['em_20profundidade_25',['em profundidade',['../teste_aspirador2.html#autotoc_md96',1,'Ação 10 - Procura em Profundidade'],['../teste_8damas.html#autotoc_md69',1,'Ação 4 - Procura em Profundidade'],['../teste_puzzle8.html#autotoc_md136',1,'Ação 4 - Procura em Profundidade']]],
   ['em_20profundidade_20iterativa_26',['Puzzle8, procura em profundidade iterativa',['../tutorial_puzzle8iterativa.html',1,'']]],
   ['em_20profundidade_20nível_203_27',['Puzzle8, procura em profundidade nível 3',['../tutorial_puzzle8prof.html',1,'']]],
