@@ -144,7 +144,6 @@ Porque o número de estados cresce exponencialmente com a profundidade,
 tornando inviável explorar todas as possibilidades num jogo realista.
 </details>
 
-
 </div>
 
 <div id="perguntas-escolhidas"></div>
