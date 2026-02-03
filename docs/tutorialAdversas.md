@@ -13,12 +13,12 @@ onde existam objetivos conflituosos entre agentes.
 Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
 
 1. Consultar a literatura — uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos.
-A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.
+   A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.
 
 2. Ver os vídeos pedagógicos — cada vídeo introduz um método específico:
-- Introdução às procuras adversas
-- MiniMax e variantes
-- Monte Carlo e jogos com acaso / informação parcial
+   - Introdução às procuras adversas
+   - MiniMax e variantes
+   - Monte Carlo e jogos com acaso / informação parcial
 
 3. Explorar os exemplos passo a passo — cada exemplo inclui perguntas para reflexão antes de revelar a resposta.
 
