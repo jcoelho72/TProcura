@@ -120,12 +120,33 @@ $(document).ready(function(){initNavTree('tutorial_adversas5c.html',''); initRes
 <iframe src="https://player.vimeo.com/video/827645296" width="300" height="169" frameborder="0" allow="fullscreen"></iframe>
 </div>
 
+<div id="todas-perguntas" style="display:none;">
+
+</div>
+
+
+<div id="perguntas-escolhidas"></div>
+
+<p>Nova pergunta: <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a></p>
+
+
 <div style="margin:30px 0; display:flex; justify-content:space-between;">
   <a href="tutorial_adversas5b.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
      ◀ Passo anterior </a>
   <a href="tutorial_galominimax.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
      Próximo passo ▶ </a>
 </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const todas = Array.from(document.querySelectorAll("#todas-perguntas .pergunta"));
+  const idx = Math.floor(Math.random() * todas.length);
+  const destino = document.getElementById("perguntas-escolhidas");
+  destino.appendChild(todas[idx]);
+});
+</script>
+
 
  </p>
 </div></div><!-- contents -->
