@@ -13,7 +13,7 @@ Propõe-se que faça este tutorial da seguinte forma:
 - Veja os exemplos passo a passo e procure responder às questões antes de ver as respostas;
 - Continue com os exemplos de execução, para mais testes práticos e consolidação da matéria.
 
-Passos do tutorial:
+Tutorial Adversas:
 
 - [📖 Literatura](tutorial_adversaslit.html)
 - [👓 Introdução](tutorial_adversas5a.html)
