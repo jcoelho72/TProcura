@@ -12,7 +12,6 @@ RECURSIVE = YES
 EXCLUDE += */Resultados/README.md
 IMAGE_PATH             = docs/images
 LAYOUT_FILE            = layout.xml
-HTML_EXTRA_FILES = ./docs/pdfs/*
 
 # Gerar documentação em diferentes formatos
 GENERATE_HTML          = YES
@@ -49,6 +48,7 @@ FULL_SIDEBAR           = NO
 HTML_EXTRA_STYLESHEET  = styles/doxygen-awesome.css \
                          styles/doxygen-awesome-sidebar-only.css
 HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
-HTML_EXTRA_FILES       = styles/doxygen-awesome-darkmode-toggle.js \
+HTML_EXTRA_FILES       = ./docs/pdfs/* \
+                         styles/doxygen-awesome-darkmode-toggle.js \
                          styles/doxygen-awesome-fragment-copy-button.js \
                          styles/doxygen-awesome-interactive-toc.js
