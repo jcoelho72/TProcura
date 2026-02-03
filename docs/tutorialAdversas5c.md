@@ -20,6 +20,8 @@
 
 \endhtmlonly
 
+[📄 Ver slides (PDF)](pdfs/PVP5C.pdf)
+
 \htmlonly
 <div style="display:flex; gap:20px;">
 <iframe src="https://player.vimeo.com/video/827645296" width="300" height="169" frameborder="0" allow="fullscreen"></iframe>
