@@ -1,4 +1,4 @@
-@page tutorial_adversas5a Procuras Adversas - Literatura
+@page tutorial_adversas5a Procuras Adversas - Introdução
 
 \htmlonly
 
@@ -29,34 +29,36 @@
 
 \htmlonly
 
-<p><strong>⚡ Ação : </strong> responda a estas três perguntas de atenção sobre o vídeo (de entre 20)</p>
-
-
 <div id="todas-perguntas" style="display:none;">
 
   <details class="pergunta">
     <summary><strong>⚡ Ação: </strong> Pergunta 1...</summary>
     Resposta 1...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
   <details class="pergunta">
-    <summary>Pergunta 2...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 2...</summary>
     Resposta 2...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
   <details class="pergunta">
-    <summary>Pergunta 3...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 3...</summary>
     Resposta 3...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
   <details class="pergunta">
-    <summary>Pergunta 4...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 4...</summary>
     Resposta 4...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
   <details class="pergunta">
-    <summary>Pergunta 5...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 5...</summary>
     Resposta 5...
+    <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a>
   </details>
 
 </div>
@@ -75,17 +77,12 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const todas = Array.from(document.querySelectorAll("#todas-perguntas .pergunta"));
-  const escolhidas = [];
-
-  while (escolhidas.length < 3 && todas.length > 0) {
-    const idx = Math.floor(Math.random() * todas.length);
-    escolhidas.push(todas.splice(idx, 1)[0]);
-  }
-
+  const idx = Math.floor(Math.random() * todas.length);
   const destino = document.getElementById("perguntas-escolhidas");
-  escolhidas.forEach(p => destino.appendChild(p));
+  destino.appendChild(todas[idx]);
 });
 </script>
+
 
 
 \endhtmlonly

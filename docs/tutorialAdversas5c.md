@@ -1,4 +1,4 @@
-@page tutorial_adversas5c Procuras Adversas - Literatura
+@page tutorial_adversas5c Procuras Adversas - Monte Carlo
 
 \htmlonly
 

@@ -1,4 +1,4 @@
-@page tutorial_galominimax Jogo do Galo, MinMax
+@page tutorial_galominimax Procuras Adversas, Jogo do Galo, MinMax
 
 \htmlonly
 

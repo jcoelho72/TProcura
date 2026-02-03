@@ -1,4 +1,4 @@
-@page tutorial_adversas5b Procuras Adversas - Literatura
+@page tutorial_adversas5b Procuras Adversas - MiniMax
 
 \htmlonly
 

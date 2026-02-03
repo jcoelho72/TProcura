@@ -1,4 +1,4 @@
-@page teste_jogo_do_galo Teste Jogo do Galo
+@page teste_jogo_do_galo Procuras Adversas, Teste Jogo do Galo
 
 \htmlonly
 
