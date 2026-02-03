@@ -22,12 +22,6 @@
 <iframe src="https://player.vimeo.com/video/803548145" width="300" height="169" frameborder="0" allow="fullscreen"></iframe>
 </div>
 
-\endhtmlonly
-
-[📄 Ver slides (PDF)](PVP5A.pdf)
-
-
-\htmlonly
 
 <div id="todas-perguntas" style="display:none;">
 
@@ -233,6 +227,12 @@ tornando inviável explorar todas as possibilidades num jogo realista.
 </details>
 
 </div>
+
+\endhtmlonly
+
+[📄 Ver slides (PDF)](PVP5A.pdf)
+
+\htmlonly
 
 <div id="perguntas-escolhidas"></div>
 
