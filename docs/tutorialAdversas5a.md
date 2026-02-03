@@ -29,7 +29,7 @@
 
 \htmlonly
 
-<p><strong>⚡ Ação: </strong> responda a estas três perguntas de atenção sobre o vídeo (de entre 20)</p>
+<p><strong>⚡ Ação : </strong> responda a estas três perguntas de atenção sobre o vídeo (de entre 20)</p>
 
 
 <div id="todas-perguntas" style="display:none;">
