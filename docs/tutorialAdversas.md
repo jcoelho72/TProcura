@@ -1,19 +1,30 @@
-@page tutorial_adversas Tutorial das procuras Adversas
+@page tutorial_adversas Tutorial das Procuras Adversas
 
-Este tutorial cobre os algoritmos de procura adversas.
-O nome "adverso" significa que a solução vai sendo construida mas num ambiente adeverso.
-Não depende apenas de nós. Tal como as procuras construtivas, é analizado um passo de cada vez (uma ação)
-mas antes de se decidir o passo seguinte, outras ações ou eventos podem ocorrer que podem ser contrários
-ao nosso objetivo, daí o nome adverso.
+Este tutorial apresenta os principais algoritmos de procura adversa,
+utilizados quando a construção de uma solução ocorre num ambiente onde outros agentes podem agir contra nós.
+Ao contrário das procuras clássicas, aqui não controlamos totalmente o próximo passo:
+cada ação pode ser contrariada por um adversário ou influenciada por eventos aleatórios.
 
-Este tipo de algoritmos é utilizado em jogos.
+Este tipo de procura é fundamental em jogos, mas aplica‑se também a qualquer situação
+onde existam objetivos conflituosos entre agentes.
 
-Propõe-se que faça este tutorial da seguinte forma:
-- Veja o material existente, tanto na bibliografia como nos vídeos se disponível;
-- Veja os exemplos passo a passo e procure responder às questões antes de ver as respostas;
-- Continue com os exemplos de execução, para mais testes práticos e consolidação da matéria.
+## Como seguir este tutorial
 
-Tutorial procuras Adversas:
+Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
+
+1. Consultar a literatura — uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos.
+A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.
+
+2. Ver os vídeos pedagógicos — cada vídeo introduz um método específico:
+- Introdução às procuras adversas
+- MiniMax e variantes
+- Monte Carlo e jogos com acaso / informação parcial
+
+3. Explorar os exemplos passo a passo — cada exemplo inclui perguntas para reflexão antes de revelar a resposta.
+
+4. Experimentar os exemplos de execução — observar o comportamento dos algoritmos na prática consolida a intuição.
+
+## Conteúdos do tutorial
 
 - [📖 Literatura](tutorial_adversaslit.html)
 - [👓 Introdução](tutorial_adversas5a.html)
@@ -24,6 +35,10 @@ Tutorial procuras Adversas:
 - [💻 Jogo do Galo](teste_jogo_do_galo.html)
 - [💻 Jogo em Linha](teste_jogo_em_linha.html) 
 
+##  Nota final
 
+Este tutorial foi concebido para permitir um estudo progressivo, autónomo e interativo.
+As perguntas aleatórias ajudam a manter o foco e a transformar a leitura — por vezes densa — em algo mais dinâmico.
 
+Bons estudos!
 
