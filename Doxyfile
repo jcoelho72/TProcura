@@ -12,7 +12,7 @@ RECURSIVE = YES
 EXCLUDE += */Resultados/README.md
 IMAGE_PATH             = docs/images
 LAYOUT_FILE            = layout.xml
-HTML_EXTRA_FILES = docs/pdfs/*
+HTML_EXTRA_FILES = ./docs/pdfs/*
 
 # Gerar documentação em diferentes formatos
 GENERATE_HTML          = YES
