@@ -18,14 +18,48 @@
   </div>
 </div>
 
-\endhtmlonly
-
-[📄 Ver slides (PDF)](pdfs/PVP5A.pdf)
-
-\htmlonly
 <div style="display:flex; gap:20px;">
 <iframe src="https://player.vimeo.com/video/803548145" width="300" height="169" frameborder="0" allow="fullscreen"></iframe>
 </div>
+
+\endhtmlonly
+
+[📄 Ver slides (PDF)](images/PVP5A.pdf)
+
+\htmlonly
+
+<div id="todas-perguntas" style="display:none;">
+
+  <details class="pergunta">
+    <summary>Pergunta 1...</summary>
+    Resposta 1...
+  </details>
+
+  <details class="pergunta">
+    <summary>Pergunta 2...</summary>
+    Resposta 2...
+  </details>
+
+  <details class="pergunta">
+    <summary>Pergunta 3...</summary>
+    Resposta 3...
+  </details>
+
+  <details class="pergunta">
+    <summary>Pergunta 4...</summary>
+    Resposta 4...
+  </details>
+
+  <details class="pergunta">
+    <summary>Pergunta 5...</summary>
+    Resposta 5...
+  </details>
+
+</div>
+
+<div id="perguntas-escolhidas"></div>
+
+
 
 <div style="margin:30px 0; display:flex; justify-content:space-between;">
   <a href="tutorial_adversaslit.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
@@ -33,6 +67,22 @@
   <a href="tutorial_adversas5b.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
      Próximo passo ▶ </a>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const todas = Array.from(document.querySelectorAll("#todas-perguntas .pergunta"));
+  const escolhidas = [];
+
+  while (escolhidas.length < 3 && todas.length > 0) {
+    const idx = Math.floor(Math.random() * todas.length);
+    escolhidas.push(todas.splice(idx, 1)[0]);
+  }
+
+  const destino = document.getElementById("perguntas-escolhidas");
+  escolhidas.forEach(p => destino.appendChild(p));
+});
+</script>
+
 
 \endhtmlonly
 

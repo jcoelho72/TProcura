@@ -20,7 +20,7 @@
 
 \endhtmlonly
 
-[📄 Ver slides (PDF)](pdfs/PVP5C.pdf)
+[📄 Ver slides (PDF)](images/PVP5C.pdf)
 
 \htmlonly
 <div style="display:flex; gap:20px;">
