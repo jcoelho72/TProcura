@@ -35,7 +35,7 @@
 <div id="todas-perguntas" style="display:none;">
 
   <details class="pergunta">
-    <summary>Pergunta 1...</summary>
+    <summary><strong>⚡ Ação: </strong> Pergunta 1...</summary>
     Resposta 1...
   </details>
 

@@ -20,7 +20,6 @@
 
 \endhtmlonly
 
-
 [📄 Ver slides (PDF)](pdfs/PVP5B.pdf)
 
 \htmlonly
