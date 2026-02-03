@@ -14,7 +14,7 @@ var searchData=
   ['procura_20em_20profundidade_20iterativa_11',['Puzzle8, procura em profundidade iterativa',['../tutorial_puzzle8iterativa.html',1,'']]],
   ['procura_20em_20profundidade_20nível_203_12',['Puzzle8, procura em profundidade nível 3',['../tutorial_puzzle8prof.html',1,'']]],
   ['procura_20melhor_20primeiro_13',['Puzzle8, procura melhor primeiro',['../tutorial_puzzle8melhor.html',1,'']]],
-  ['procuras_20adversas_14',['Tutorial das procuras Adversas',['../tutorial_adversas.html',1,'']]],
+  ['procuras_20adversas_14',['Tutorial das Procuras Adversas',['../tutorial_adversas.html',1,'']]],
   ['procuras_20adversas_20introdução_15',['Procuras Adversas - Introdução',['../tutorial_adversas5a.html',1,'']]],
   ['procuras_20adversas_20jogo_20do_20galo_20minmax_16',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
   ['procuras_20adversas_20literatura_17',['Procuras Adversas - Literatura',['../tutorial_adversaslit.html',1,'']]],

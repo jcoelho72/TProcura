@@ -7,7 +7,7 @@ var searchData=
   ['damas_20escalada_20do_20monte_4',['4 Damas, Escalada do Monte',['../tutorial_4damasescalada.html',1,'']]],
   ['damas_20largura_20primeiro_5',['4 Damas, largura primeiro',['../tutorial_4damaslargura.html',1,'']]],
   ['damas_20profundidade_20primeiro_6',['4 Damas, profundidade primeiro',['../tutorial_4damasprof.html',1,'']]],
-  ['das_20procuras_20adversas_7',['Tutorial das procuras Adversas',['../tutorial_adversas.html',1,'']]],
+  ['das_20procuras_20adversas_7',['Tutorial das Procuras Adversas',['../tutorial_adversas.html',1,'']]],
   ['das_20procuras_20construtivas_8',['Tutorial das procuras Construtivas',['../tutorial_construtivas.html',1,'']]],
   ['das_20procuras_20melhorativas_9',['Tutorial das procuras Melhorativas',['../tutorial_melhorativas.html',1,'']]],
   ['de_20algoritmos_20com_20o_20tprocura_10',['Testes de Algoritmos com o TProcura',['../investigacao.html',1,'']]],

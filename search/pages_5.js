@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['adversas_0',['Tutorial das procuras Adversas',['../tutorial_adversas.html',1,'']]],
+  ['adversas_0',['Tutorial das Procuras Adversas',['../tutorial_adversas.html',1,'']]],
   ['adversas_20introdução_1',['Procuras Adversas - Introdução',['../tutorial_adversas5a.html',1,'']]],
   ['adversas_20jogo_20do_20galo_20minmax_2',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
   ['adversas_20literatura_3',['Procuras Adversas - Literatura',['../tutorial_adversaslit.html',1,'']]],
