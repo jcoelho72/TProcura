@@ -2,18 +2,19 @@
 
 \htmlonly
 
-<div style="padding:10px; border:1px solid #ccc; border-radius:6px; background:#f8f8f8; margin:20px 0;">
+<div style="padding:12px; border:1px solid #444; border-radius:6px; background:#222; margin:20px 0; color:#ddd;">
+  <div style="font-size:12px; opacity:0.8; margin-bottom:6px;">
+    <a href="tutorial_adversas.html" style="color:#9cf; text-decoration:none;">Tutorial: Procuras Adversas</a>
+  </div>
   <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-
-    <a href="tutorial_adversaslit.html">📖 Literatura</a>
-    <a href="tutorial_adversas5a.html">👓 Introdução</a>
-    <a href="tutorial_adversas5b.html">👓 MiniMax</a>
-    <a href="tutorial_adversas5c.html">👓 Monte Carlo</a>
-    <a href="tutorial_galominimax.html">✏️ Galo MiniMax</a>
-    <a href="tutorial_galoalfabeta.html">✏️ Galo alfa/beta</a>
-    <a href="teste_jogo_do_galo.html">💻 Jogo do Galo</a>
-    <span style="font-weight:bold; text-decoration:underline;">💻 Jogo em Linha</span>
-
+    <a href="tutorial_adversaslit.html" style="color:#9cf;">📖 Literatura</a>
+    <a href="tutorial_adversas5a.html" style="color:#9cf;">👓 Introdução</a>
+    <a href="tutorial_adversas5b.html" style="color:#9cf;">👓 MiniMax</a>
+    <a href="tutorial_adversas5c.html" style="color:#9cf;">👓 Monte Carlo</a>
+    <a href="tutorial_galominimax.html" style="color:#9cf;">✏️ Galo MiniMax</a>
+    <a href="tutorial_galoalfabeta.html" style="color:#9cf;">✏️ Galo alfa/beta</a>
+    <a href="teste_jogo_do_galo.html" style="color:#9cf;">💻 Jogo do Galo</a>
+    <span style="font-weight:bold; text-decoration:underline; color:#fff;">💻 Jogo em Linha</span>
   </div>
 </div>
 
@@ -1727,3 +1728,14 @@ Neste torneio entre todos os níveis, podemos ver que os níveis mais altos ganh
 As diferenças entre níveis mais altos, apenas com o tempo relativamente à configuração de base, não é tão acentuada
 quanto as diferenças nos níveis mais baixos, tal como o torneio tempo já vinha a revelar.
 Seria necessário aumentar bastante o tempo para que a força de jogo suba mais.
+
+\htmlonly
+
+<div style="margin:30px 0; display:flex; justify-content:space-between;">
+  <a href="teste_jogo_do_galo.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     ◀ Passo anterior </a>
+  <a href="tutorial_adversas.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     Próximo passo ▶ </a>
+</div>
+
+\endhtmlonly

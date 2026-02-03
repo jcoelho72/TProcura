@@ -2,20 +2,22 @@
 
 \htmlonly
 
-<div style="padding:10px; border:1px solid #ccc; border-radius:6px; background:#f8f8f8; margin:20px 0;">
+<div style="padding:12px; border:1px solid #444; border-radius:6px; background:#222; margin:20px 0; color:#ddd;">
+  <div style="font-size:12px; opacity:0.8; margin-bottom:6px;">
+    <a href="tutorial_adversas.html" style="color:#9cf; text-decoration:none;">Tutorial: Procuras Adversas</a>
+  </div>
   <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-
-    <a href="tutorial_adversaslit.html">📖 Literatura</a>
-    <a href="tutorial_adversas5a.html">👓 Introdução</a>
-    <a href="tutorial_adversas5b.html">👓 MiniMax</a>
-    <a href="tutorial_adversas5c.html">👓 Monte Carlo</a>
-    <a href="tutorial_galominimax.html">✏️ Galo MiniMax</a>
-    <span style="font-weight:bold; text-decoration:underline;">✏️ Galo alfa/beta</span>
-    <a href="teste_jogo_do_galo.html">💻 Jogo do Galo</a>
-    <a href="teste_jogo_em_linha.html">💻 Jogo em Linha</a>
-
+    <a href="tutorial_adversaslit.html" style="color:#9cf;">📖 Literatura</a>
+    <a href="tutorial_adversas5a.html" style="color:#9cf;">👓 Introdução</a>
+    <a href="tutorial_adversas5b.html" style="color:#9cf;">👓 MiniMax</a>
+    <a href="tutorial_adversas5c.html" style="color:#9cf;">👓 Monte Carlo</a>
+    <a href="tutorial_galominimax.html" style="color:#9cf;">✏️ Galo MiniMax</a>
+    <span style="font-weight:bold; text-decoration:underline; color:#fff;">✏️ Galo alfa/beta</span>
+    <a href="teste_jogo_do_galo.html" style="color:#9cf;">💻 Jogo do Galo</a>
+    <a href="teste_jogo_em_linha.html" style="color:#9cf;">💻 Jogo em Linha</a>
   </div>
 </div>
+
 
 \endhtmlonly
 \htmlonly
@@ -316,7 +318,12 @@ Resposta:
 
 </details>
 
+<div style="margin:30px 0; display:flex; justify-content:space-between;">
+  <a href="tutorial_galominimax.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     ◀ Passo anterior </a>
+  <a href="teste_jogo_do_galo.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     Próximo passo ▶ </a>
+</div>
 
 \endhtmlonly
 
-| [Galo MiniMax](tutorial_galominimax.html) | [Galo alfa/beta](tutorial_galoalfabeta.html) | 

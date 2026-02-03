@@ -16,7 +16,7 @@ Propõe-se que faça este tutorial da seguinte forma:
 Passos do tutorial:
 
 - [📖 Literatura](tutorial_adversaslit.html)
-- [👓 Introdução](tutorial_adversas5b.html)
+- [👓 Introdução](tutorial_adversas5a.html)
 - [👓 MiniMax](tutorial_adversas5b.html)
 - [👓 Monte Carlo](tutorial_adversas5c.html)
 - [✏️ Galo MiniMax](tutorial_galominimax.html)
