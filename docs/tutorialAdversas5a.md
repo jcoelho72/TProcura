@@ -24,9 +24,13 @@
 
 \endhtmlonly
 
-[📄 Ver slides (PDF)](images/PVP5A.pdf)
+[📄 Ver slides (PDF)](pdfs/PVP5A.pdf)
+
 
 \htmlonly
+
+<p><strong>⚡ Ação: </strong> responda a estas três perguntas de atenção sobre o vídeo (de entre 20)</p>
+
 
 <div id="todas-perguntas" style="display:none;">
 
