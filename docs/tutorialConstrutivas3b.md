@@ -62,6 +62,53 @@
 
 <!-- perguntas sobre o recurso em estudo -->
 
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que é a fronteira numa árvore de procura?</summary> 👉 É o conjunto de estados gerados mas ainda não expandidos. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que significa expandir um estado?</summary> 👉 Aplicar todas as ações possíveis ao estado atual para gerar os seus sucessores. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que distingue a procura em árvore da procura em grafo?</summary> 👉 A procura em grafo testa se um estado já foi gerado antes de o adicionar à fronteira, evitando repetições. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que caminhos redundantes podem ser removidos?</summary> 👉 Porque não pioram a solução e reduzem o espaço de procura. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como se evita gerar estados iguais ao pai ou avô?</summary> 👉 Verificando se o sucessor coincide com um ascendente e removendo-o. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a vantagem de usar uma hash table na procura em grafo?</summary> 👉 Permite testar rapidamente se um estado já foi gerado. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que acontece se a hash table “esquecer” estados antigos?</summary> 👉 Alguns estados podem ser revisitados, aumentando o tempo, mas sem alterar o resultado final. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Que problema surge em espaços de estados com ações reversíveis?</summary> 👉 A existência de muitos ciclos e caminhos redundantes. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como se evita ciclos de tamanho 2?</summary> 👉 Impedindo movimentos que retornem imediatamente ao estado anterior. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que verificar todos os ascendentes evita ciclos no mesmo ramo?</summary> 👉 Porque garante que nenhum estado já visitado nesse caminho é repetido. </details>
+
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que significa um algoritmo ser completo?</summary> 👉 Significa que encontra uma solução sempre que ela existir. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que significa um algoritmo ser ótimo?</summary> 👉 Que retorna sempre a solução de menor custo. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como se mede a complexidade temporal?</summary> 👉 Em número de nós gerados. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como se mede a complexidade espacial?</summary> 👉 Em número de estados mantidos em memória. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que representa o parâmetro b?</summary> 👉 A ramificação máxima, ou seja, o número máximo de sucessores de um nó. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que representa o parâmetro d?</summary> 👉 A profundidade da solução mais próxima. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que representa o parâmetro m?</summary> 👉 A profundidade máxima da árvore de procura. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que medir tempo em segundos não é adequado?</summary> 👉 Porque depende do computador e da linguagem usada; o número de nós gerados é independente dessas variáveis. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a profundidade máxima pode ser infinita?</summary> 👉 Porque ações reversíveis podem gerar caminhos arbitrariamente longos. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é útil estimar b, d e m?</summary> 👉 Para prever a ordem de grandeza da complexidade dos algoritmos. </details>
+
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que caracteriza a procura em largura?</summary> 👉 Expande primeiro os estados gerados há mais tempo, nível a nível. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Que estrutura de dados usa a procura em largura?</summary> 👉 Uma fila FIFO. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Quando é feito o teste de objetivo na procura em largura?</summary> 👉 Normalmente no momento da geração. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a procura em largura é completa?</summary> 👉 Porque explora todos os estados por ordem crescente de profundidade. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Em que condições a procura em largura é ótima?</summary> 👉 Quando todas as ações têm o mesmo custo. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a complexidade espacial da procura em largura?</summary> 👉 O(b^d), que é normalmente proibitiva. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que acontece se limitarmos o tamanho da fronteira?</summary> 👉 O algoritmo deixa de ser completo. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que distingue o custo uniforme da largura?</summary> 👉 O custo uniforme expande o estado com menor custo acumulado. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o custo uniforme garante otimalidade?</summary> 👉 Porque expande sempre o estado mais barato na fronteira. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o custo uniforme sofre dos mesmos problemas de memória que a largura?</summary> 👉 Porque mantém todos os estados gerados na fronteira. </details>
+
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que caracteriza a procura em profundidade?</summary> 👉 Expande o estado gerado mais recentemente, o mais profundo na fronteira. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Que estrutura de dados usa a profundidade?</summary> 👉 Uma pilha LIFO. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a profundidade pode não ser completa?</summary> 👉 Porque pode ficar presa em ramos infinitos ou ciclos. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a grande vantagem da profundidade?</summary> 👉 A complexidade espacial baixa, apenas O(b·m). </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que faz a profundidade limitada?</summary> 👉 Impede gerar sucessores para além de um limite pré-definido. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a profundidade limitada pode falhar?</summary> 👉 Porque a solução pode estar para além do limite escolhido. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como funciona a procura iterativa?</summary> 👉 Executa profundidade limitada com limites crescentes até encontrar solução. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a procura iterativa é completa?</summary> 👉 Porque eventualmente testa todos os níveis até à profundidade da solução. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a procura iterativa repete trabalho?</summary> 👉 Porque os estados dos níveis intermédios são gerados várias vezes. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como funciona a procura bidirecional?</summary> 👉 Realiza duas procuras, uma a partir do estado inicial e outra a partir do estado final, parando quando se encontram. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a grande vantagem da procura bidirecional?</summary> 👉 Reduz a complexidade temporal para O(b^(d/2)). </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a procura bidirecional exige mais memória?</summary> 👉 Porque precisa de manter ambas as árvores de procura em memória. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Em que problemas a procura bidirecional não é aplicável?</summary> 👉 Nos problemas em que o estado final não é conhecido, como 8 damas e partição. </details>
+
 </div>
 
 <div id="perguntas-escolhidas"></div>

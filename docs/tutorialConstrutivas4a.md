@@ -43,12 +43,6 @@
 <iframe src="https://player.vimeo.com/video/803548744" width="300" height="169" frameborder="0" allow="fullscreen"></iframe>
 </div>
 
-<div id="todas-perguntas" style="display:none;">
-
-<!-- perguntas sobre o recurso  -->
-
-
-</div>
 
 \endhtmlonly
 
@@ -61,6 +55,53 @@
 <div id="todas-perguntas" style="display:none;">
 
 <!-- perguntas sobre o recurso em estudo -->
+
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que distingue uma procura informada de uma procura cega?</summary> 👉 A procura informada utiliza informação heurística adicional para orientar a procura, enquanto a procura cega usa apenas a definição exata do problema. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que representa a heurística h(n)?</summary> 👉 Uma estimativa da distância do estado atual até à solução mais próxima. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a heurística não pertence à definição do problema?</summary> 👉 Porque é informação adicional usada apenas para guiar a procura, não faz parte da especificação formal do problema. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que significa uma heurística ser otimista?</summary> 👉 Significa que nunca sobrestima o custo real até à solução. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é importante que a heurística seja otimista?</summary> 👉 Para garantir que algoritmos como o A* retornam soluções ótimas. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a heurística sugerida para o problema do aspirador?</summary> 👉 O número de casas sujas. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a heurística sugerida para o Puzzle 8?</summary> 👉 O número de peças fora da posição final. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a heurística das 8 damas não é útil?</summary> 👉 Porque dá o mesmo valor para qualquer estado com o mesmo número de damas colocadas, não distinguindo estados promissores. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a heurística da partição também não é útil?</summary> 👉 Porque não distingue estados que podem ou não conduzir à solução, apesar de ser admissível. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que têm em comum os problemas das 8 damas e da partição relativamente às heurísticas?</summary> 👉 Não têm um estado final conhecido, dificultando a construção de heurísticas eficazes. </details>
+
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a regra de expansão do algoritmo melhor‑primeiro?</summary> 👉 Expande o estado com menor valor heurístico h(n). </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o melhor‑primeiro pode falhar?</summary> 👉 Porque apenas vê o custo da próxima ação. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que acontece no melhor‑primeiro quando vários estados têm o mesmo valor heurístico?</summary> 👉 O algoritmo pode expandir qualquer um deles, sem critério adicional. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o melhor‑primeiro funciona melhor em procura em grafo do que em árvore?</summary> 👉 Porque evita gerar repetidamente estados já vistos. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> No exemplo do Puzzle 8, qual foi o primeiro estado escolhido após a expansão inicial?</summary> 👉 O estado com heurística igual a 1, por ser o menor valor na fronteira. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a principal limitação do melhor‑primeiro?</summary> 👉 Não considera o custo acumulado g(n), apenas a heurística. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o melhor‑primeiro é considerado ganancioso?</summary> 👉 Porque vê o que melhora no curto prazo, tenta sempre aproximar‑se do objetivo, mesmo que isso não leve à solução ótima. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que acontece no exemplo do aspirador quando se usa melhor‑primeiro em árvore?</summary> 👉 São gerados muitos estados repetidos, porque não há controlo de duplicados. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o melhor‑primeiro pode gerar muitos estados iguais?</summary> 👉 Porque não distingue entre estados com poucas ou muitas ações já realizadas. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Qual é a vantagem do melhor‑primeiro quando a heurística é muito boa?</summary> 👉 Consegue orientar a procura rapidamente para a solução. </details>
+
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que define o valor f(n) no A*?</summary> 👉 f(n) = g(n) + h(n), combinando custo percorrido e heurística. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que significa a heurística ser admissível?</summary> 👉 Nunca sobrestima o custo real até à solução. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que significa a heurística ser consistente?</summary> 👉 Que a diferença entre heurísticas de estados vizinhos não excede o custo da ação entre eles. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a admissibilidade é essencial para o A*?</summary> 👉 Porque garante que o algoritmo encontra a solução ótima. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o A* tem problemas de memória?</summary> 👉 Porque mantém todos os estados gerados na fronteira. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que faz o A* pesado?</summary> 👉 Multiplica a heurística por um peso W, alterando a prioridade dos estados. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que acontece quando W=0 no A* pesado?</summary> 👉 O algoritmo torna‑se equivalente ao custo uniforme. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que acontece quando W é muito elevado?</summary> 👉 O algoritmo aproxima‑se do melhor‑primeiro. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o A* pesado perde otimalidade?</summary> 👉 Porque a heurística multiplicada pode ultrapassar o valor real. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como funciona o A* limitado?</summary> 👉 Mantém apenas um número máximo de estados na fronteira, apagando os de pior valor. </details>
+
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que limita cada iteração do IDA*?</summary> 👉 O valor máximo permitido para f(n). </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como é escolhido o limite seguinte no IDA*?</summary> 👉 É o menor valor de f(n) que ultrapassou o limite anterior. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o IDA* não tem problemas de memória?</summary> 👉 Porque utiliza procura em profundidade iterativa. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que é o lower bound no BnB?</summary> 👉 O valor f(n) = g(n) + h(n), assumindo heurística admissível. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que é o upper bound no BnB?</summary> 👉 O custo da melhor solução encontrada até ao momento. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Quando é feito um corte no BnB?</summary> 👉 Quando o lower bound de um estado é maior ou igual ao upper bound. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o BnB pode entrar em ramos infinitos?</summary> 👉 Porque usa profundidade e pode processar um estado pior, quando tinha em estados superiores melhores alternativas. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como evitar ramos infinitos no BnB?</summary> 👉 Usando uma versão iterativa com limites crescentes no upper bound. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que significa relaxar um problema?</summary> 👉 Criar uma versão mais simples do problema original, cuja solução serve como heurística. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como é relaxado o problema do aspirador?</summary> 👉 Ignorando a necessidade de o aspirador estar na casa suja para a limpar. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Como é relaxado o Puzzle 8 na heurística alternativa?</summary> 👉 Permitindo que as peças se movam livremente na horizontal e vertical até ao destino final. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que heurísticas não admissíveis podem ser úteis?</summary> 👉 Porque podem guiar a procura mesmo sem garantir otimalidade. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Que característica pode ser usada como heurística não admissível nas 8 damas?</summary> 👉 O número de casas não atacadas nas colunas ainda sem damas. </details>
 
 </div>
 
