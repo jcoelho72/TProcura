@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcura: Tutorial das procuras Construtivas</title>
+<title>TProcura: Tutorial das Procuras Construtivas</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,79 +92,48 @@ $(document).ready(function(){initNavTree('tutorial_construtivas.html',''); initR
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Tutorial das procuras Construtivas</div></div>
+  <div class="headertitle"><div class="title">Tutorial das Procuras Construtivas</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Este tutorial cobre os algoritmos de procura construtivos. O nome "construtivo" significa que a solução vai sendo construida, passo a passo (ou ação a ação). Antes de atingirmos o objetivo temos uma solução parcial, constituída pelos passos (ações) dados até ao momento. Ao antigirmos o objetivo ficamos com uma solução completa.</p>
 <p>Estes algoritmos estão divididos em cegos e informados. Os algoritmos cegos não utilizam informação heurística, apenas informação exata. Os algoritmos informados, embora mais úteis, constroiem-se sobre estes, pelo que vamos primeiramente analisar os algoritmos cegos, e de seguida os informados.</p>
-<p>Propõe-se que faça este tutorial da seguinte forma:</p><ul>
-<li>Veja o material existente, tanto na bibliografia como nos vídeos se disponível;</li>
-<li>Veja os exemplos passo a passo e procure responder às questões antes de ver as respostas;</li>
-<li>Continue com os exemplos de execução, para mais testes práticos e consolidação da matéria.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md172"></a>
-Procuras Construtivas Cegas</h1>
-<p>Algoritmos cegos: largura-primeiro; profundidade-primeiro; iterativos;</p>
-<p>Leituras (Russel &amp; Norvig): Capítulo 3 (2ª edição) | Secções 3.1 a 3.4 (3ª e 4ª edição),</p>
-<p>Vídeos (PVP 3A e 3B):</p>
-<p> 
-
-<div style="width:320px; margin:10px 0;">
-  <iframe 
-    src="https://player.vimeo.com/video/803549264?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-<div style="width:320px; margin:10px 0;">
-  <iframe 
-    src="https://player.vimeo.com/video/807295853?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-</p>
-<p>Exemplos passo a passo (PnP - Papel-e-Lápis):</p><ol type="1">
-<li><a href="tutorial_puzzle8prof.html">Puzzle 8 profundidade</a></li>
-<li><a href="tutorial_puzzle8iterativa.html">Puzzle 8 iterativa</a></li>
-<li><a href="tutorial_puzzle8largura.html">Puzzle 8 largura</a></li>
-<li><a href="tutorial_particaoprof.html">Partição profundidade</a></li>
-<li><a href="tutorial_particaolargura.html">Partição largura</a></li>
-<li><a href="tutorial_4damasprof.html">4 damas profundidade</a></li>
-<li><a href="tutorial_4damaslargura.html">4 damas largura</a></li>
+<h2><a class="anchor" id="autotoc_md172"></a>
+Como seguir este tutorial</h2>
+<p>Para tirar o máximo proveito, recomenda‑se a seguinte sequência:</p>
+<ol type="1">
+<li>📖 Consultar a literatura — uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos. A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.</li>
+<li>👓 Ver os vídeos pedagógicos — cada vídeo introduz um método específico</li>
+<li>✏️ Explorar os exemplos passo a passo — cada exemplo resolvido manualmente, inclui o estado da árvore de procura em cada expansão.</li>
+<li>💻 Experimentar os exemplos de execução — observar o comportamento dos algoritmos na prática consolida a intuição.</li>
 </ol>
 <h1><a class="anchor" id="autotoc_md173"></a>
-Procuras Construtivas Informadas</h1>
-<p>Algoritmos informados: melhor primeiro; A*; BnB.</p>
-<p>Leituras (Russel &amp; Norvig): Capítulo 4 (2ª edição) | Secções 3.5 (3ª e 4ª edição)</p>
-<p>Vídeos (PVP 4A):</p>
-<p> 
-
-<div style="width:320px; margin:10px 0;">
-  <iframe 
-    src="https://player.vimeo.com/video/803548744?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-</p>
-<p>Exemplos passo a passo (PnP):</p>
+Conteúdos do Tutorial</h1>
 <ul>
-<li><a href="tutorial_puzzle8melhor.html">Puzzle 8 melhor</a></li>
-<li><a href="tutorial_puzzle8astar.html">Puzzle 8 Astar</a></li>
-<li><a href="tutorial_puzzle8bnb.html">Puzzle 8 BnB</a></li>
+<li><a href="tutorial_construtivaslit.html">📖 Algoritmos Cegos</a></li>
+<li><a href="tutorial_construtivas3a.html">👓 Procura Cega</a></li>
+<li><a href="tutorial_construtivas3b.html">👓 Algoritmos</a></li>
+<li><a href="tutorial_puzzle8prof.html">✏️ Puzzle 8 profundidade</a></li>
+<li><a href="tutorial_puzzle8iterativa.html">✏️ Puzzle 8 iterativa</a></li>
+<li><a href="tutorial_puzzle8largura.html">✏️ Puzzle 8 largura</a></li>
+<li><a href="tutorial_particaoprof.html">✏️ Partição profundidade</a></li>
+<li><a href="tutorial_particaolargura.html">✏️ Partição largura</a></li>
+<li><a href="tutorial_4damasprof.html">✏️ 4 damas profundidade</a></li>
+<li><a href="tutorial_4damaslargura.html">✏️ 4 damas largura</a></li>
+<li><a href="tutorial_construtivaslit2.html">📖 Algoritmos Informados</a></li>
+<li><a href="tutorial_construtivas4a.html">👓 Procura Informada</a></li>
+<li><a href="tutorial_puzzle8melhor.html">✏️ Puzzle 8 melhor</a></li>
+<li><a href="tutorial_puzzle8astar.html">✏️ Puzzle 8 Astar</a></li>
+<li><a href="tutorial_puzzle8bnb.html">✏️ Puzzle 8 BnB</a></li>
+<li><a href="teste_aspirador1.html">💻 Execução Aspirador 1</a></li>
+<li><a href="teste_aspirador2.html">💻 Aspirador 2</a>)</li>
+<li><a href="teste_puzzle8.html">💻 Puzzle 8</a></li>
+<li><a href="teste_8damas.html">💻 8 Damas</a></li>
+<li><a href="teste_particao.html">💻 Partição</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md174"></a>
-Exemplos de execução</h1>
-<ol type="1">
-<li>Aspirador (<a href="teste_aspirador1.html">parte 1</a>, <a href="teste_aspirador2.html">parte 2</a>)</li>
-<li><a href="teste_puzzle8.html">Puzzle 8</a></li>
-<li><a href="teste_8damas.html">8 Damas</a></li>
-<li><a href="teste_particao.html">Partição</a> </li>
-</ol>
+<h2><a class="anchor" id="autotoc_md174"></a>
+Nota final</h2>
+<p>Este tutorial foi concebido para permitir um estudo progressivo, autónomo e interativo. As perguntas aleatórias ajudam a manter o foco e a transformar a leitura — por vezes densa — em algo mais dinâmico.</p>
+<p>Bons estudos! </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

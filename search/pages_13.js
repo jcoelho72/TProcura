@@ -17,7 +17,7 @@ var searchData=
   ['testes_20melhorativos_14',['Deucalion - testes melhorativos',['../melhorativa__deucalion.html',1,'']]],
   ['tprocura_15',['tprocura',['../investigacao.html',1,'Testes de Algoritmos com o TProcura'],['../index.html',1,'TProcura']]],
   ['tutorial_20das_20procuras_20adversas_16',['Tutorial das Procuras Adversas',['../tutorial_adversas.html',1,'']]],
-  ['tutorial_20das_20procuras_20construtivas_17',['Tutorial das procuras Construtivas',['../tutorial_construtivas.html',1,'']]],
+  ['tutorial_20das_20procuras_20construtivas_17',['Tutorial das Procuras Construtivas',['../tutorial_construtivas.html',1,'']]],
   ['tutorial_20das_20procuras_20melhorativas_18',['Tutorial das procuras Melhorativas',['../tutorial_melhorativas.html',1,'']]],
   ['tutorial_20testes_20computacionais_19',['Tutorial Testes Computacionais',['../tutorial_testes.html',1,'']]],
   ['tvector_20',['Teste TVector',['../teste_tvector.html',1,'']]]

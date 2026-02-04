@@ -16,7 +16,7 @@ var searchData=
   ['nofolha_13',['NoFolha',['../classTProcuraAdversa.html#a01ed7d4718647eb52723ecffaf68aa4b',1,'TProcuraAdversa']]],
   ['nome_14',['nome',['../structSIndicador.html#a553a717c601fb7060688a3c7bbeb6d19',1,'SIndicador::nome'],['../structSParametro.html#aa25ae60ffa1acbaeb51bdf0e5312c349',1,'SParametro::nome']]],
   ['nomevalores_15',['nomeValores',['../structSParametro.html#aae8aa852643edec8af4d1c3c42ede0b2',1,'SParametro']]],
-  ['nota_20final_16',['Nota final',['../tutorial_adversas.html#autotoc_md169',1,'']]],
+  ['nota_20final_16',['nota final',['../tutorial_adversas.html#autotoc_md169',1,'Nota final'],['../tutorial_construtivas.html#autotoc_md174',1,'Nota final']]],
   ['novaconfiguracao_17',['NovaConfiguracao',['../classTProcura.html#a62cd10354f0fbe5ccc45bbd0c0d7f121',1,'TProcura']]],
   ['novalinha_18',['NovaLinha',['../classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32',1,'TProcuraConstrutiva']]],
   ['novasolucao_19',['novasolucao',['../classTProcuraMelhorativa.html#a50bf29ddd183e8e4678ceb2247b9cf58',1,'TProcuraMelhorativa::NovaSolucao()'],['../classCParticao.html#a82ac73218fe065f106b5b1d3162637a1',1,'CParticao::NovaSolucao()'],['../classCOitoDamas.html#a76a6cfab4d66232a84d6cb9dc73b7fcf',1,'COitoDamas::NovaSolucao()'],['../classTCodificacaoPermutacao.html#a16f609d10fde3c8dbbbeeba584f3c619',1,'TCodificacaoPermutacao::NovaSolucao()'],['../classTCodificacaoInteira.html#a7d2dc5819367ddacdbcf1b3e30a67d4c',1,'TCodificacaoInteira::NovaSolucao()'],['../classTCodificacaoBinaria.html#aa46563911320bf89456b47fb4767ded6',1,'TCodificacaoBinaria::NovaSolucao()']]],
