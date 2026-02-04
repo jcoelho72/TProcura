@@ -48,7 +48,7 @@
   <tbody>
     <tr>
       <td valign="top" width="14%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -71,7 +71,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">esquerda</td>
       <td valign="top" width="14%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -94,7 +94,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">cima</td>
       <td valign="top" width="14%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -117,7 +117,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">direita</td>
       <td valign="top" width="14%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -142,7 +142,7 @@
     <tr>
       <td style="text-align: center;" valign="top" width="14%">cima</td>
       <td valign="top" width="14%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -165,7 +165,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">esquerda</td>
       <td valign="top" width="14%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -188,7 +188,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">baixo</td>
       <td valign="top" width="14%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -258,7 +258,7 @@
           style="color: rgb(239, 69, 64);">1 </span><br><span class=""
           style="color: rgb(239, 69, 64);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -311,7 +311,7 @@
           style="color: rgb(152, 202, 62);">2 </span><br><span class=""
           style="color: rgb(152, 202, 62);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -364,7 +364,7 @@
           style="color: rgb(152, 202, 62);">3 </span><br><span class=""
           style="color: rgb(152, 202, 62);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -416,7 +416,7 @@
           style="color: rgb(152, 202, 62);">4  </span><br><span class=""
           style="color: rgb(152, 202, 62);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -468,7 +468,7 @@
           style="color: rgb(152, 202, 62);">5  </span><br><span class=""
           style="color: rgb(152, 202, 62);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -522,7 +522,7 @@
           style="color: rgb(125, 159, 211);">6  </span><br><span class=""
           style="color: rgb(125, 159, 211);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -574,7 +574,7 @@
           style="color: rgb(125, 159, 211);">7  </span><br><span class=""
           style="color: rgb(125, 159, 211);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -627,7 +627,7 @@
           style="color: rgb(239, 69, 64);">8  </span><br><span class=""
           style="color: rgb(239, 69, 64);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -679,7 +679,7 @@
           style="color: rgb(239, 69, 64);">9  </span><br><span class=""
           style="color: rgb(239, 69, 64);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -732,7 +732,7 @@
           style="color: rgb(152, 202, 62);">10  </span><br><span class=""
           style="color: rgb(152, 202, 62);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -785,7 +785,7 @@
           style="color: rgb(125, 159, 211);">11 </span><br><span class=""
           style="color: rgb(125, 159, 211);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -839,7 +839,7 @@
           style="color: rgb(239, 69, 64);">12 </span><br><span class=""
           style="color: rgb(239, 69, 64);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -892,7 +892,7 @@
           style="color: rgb(239, 69, 64);">13 </span><br><span class=""
           style="color: rgb(239, 69, 64);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -944,7 +944,7 @@
           style="color: rgb(152, 202, 62);">14 </span><br><span class=""
           style="color: rgb(152, 202, 62);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -996,7 +996,7 @@
           style="color: rgb(152, 202, 62);">15 </span><br><span class=""
           style="color: rgb(152, 202, 62);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -1048,7 +1048,7 @@
           style="color: rgb(152, 202, 62);">16 </span><br><span class=""
           style="color: rgb(152, 202, 62);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -1101,7 +1101,7 @@
           style="color: rgb(125, 159, 211);">17 </span><br><span class=""
           style="color: rgb(125, 159, 211);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -1153,7 +1153,7 @@
           style="color: rgb(125, 159, 211);">18 </span><br><span class=""
           style="color: rgb(125, 159, 211);"> </span></td>
       <td valign="top" width="17%">
-        <table border="3" width="100" cellspacing="3" cellpadding="3"
+        <table border="3"  cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>

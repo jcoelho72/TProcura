@@ -53,8 +53,7 @@
   <tbody>
     <tr>
       <td valign="top" width="14%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
-          align="middle">
+        <table>
           <tbody>
             <tr>
               <td style="text-align: center;" valign="top">1</td>
@@ -77,8 +76,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">esquerda</td>
       <td valign="top" width="14%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
-          align="middle">
+        <table>
           <tbody>
             <tr>
               <td style="text-align: center;" valign="top">1</td>
@@ -102,8 +100,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">cima</td>
       <td valign="top" width="14%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
-          align="middle">
+        <table>
           <tbody>
             <tr>
               <td style="text-align: center;" valign="top">1</td>
@@ -127,8 +124,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">direita</td>
       <td valign="top" width="14%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
-          align="middle">
+        <table>
           <tbody>
             <tr>
               <td style="text-align: center;" valign="top">1</td>
@@ -170,7 +166,7 @@
       <td valign="top" width="20%"><span style="color: #ef4540;">1
         </span><br><span style="color: #ef4540;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -217,7 +213,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">2
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -263,7 +259,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">3
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -310,7 +306,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">4
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -357,7 +353,7 @@
       <td valign="top" width="20%"><span style="color: #7d9fd3;">5
         </span><br><span style="color: #7d9fd3;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -404,7 +400,7 @@
       <td valign="top" width="20%"><span style="color: #ef4540;">6
         </span><br><span style="color: #ef4540;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -450,7 +446,7 @@
       <td valign="top" width="20%"><span style="color: #ef4540;">7
         </span><br><span style="color: #ef4540;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -496,7 +492,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">8
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -542,7 +538,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">9
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -588,7 +584,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">10
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -637,7 +633,7 @@
       <td valign="top" width="20%"><span style="color: #7d9fd3;">11
         </span><br><span style="color: #7d9fd3;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
@@ -683,7 +679,7 @@
       <td valign="top" width="20%"><span style="color: #7d9fd3;">12
         </span><br><span style="color: #7d9fd3;"> </span></td>
       <td valign="top" width="20%">
-        <table style="width: 100px;" border="3" cellspacing="3" cellpadding="3"
+        <table  border="3" cellspacing="3" cellpadding="3"
           align="middle">
           <tbody>
             <tr>
