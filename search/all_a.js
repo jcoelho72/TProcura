@@ -85,7 +85,7 @@ var searchData=
   ['and_20bound_82',['Ação 9 - Branch-and-Bound',['../teste_puzzle8b.html#autotoc_md142',1,'']]],
   ['aplicardiversidadeae_83',['AplicarDiversidadeAE',['../classTProcuraMelhorativa.html#a5e51812d311d976a002f6c7ec0fcd555',1,'TProcuraMelhorativa']]],
   ['ascendentes_84',['ASCENDENTES',['../TProcuraConstrutiva_8h.html#a72cc367d2463c44be31f085f2ff5fa88ab21d4aff88cdf199c6a3dc512f1ddbb2',1,'TProcuraConstrutiva.h']]],
-  ['aspirador_85',['aspirador',['../tutorial_construtivas.html#autotoc_md176',1,'💻 Explorar Aspirador'],['../classCAspirador.html#a6b4d9d1a1657ada0d888d23392c9826b',1,'CAspirador::aspirador']]],
+  ['aspirador_85',['aspirador',['../classCAspirador.html#a6b4d9d1a1657ada0d888d23392c9826b',1,'CAspirador::aspirador'],['../tutorial_construtivas.html#autotoc_md176',1,'Explorar Aspirador']]],
   ['aspirador_20parte_201_202_86',['Teste Aspirador - Parte 1/2',['../teste_aspirador1.html',1,'']]],
   ['aspirador_20parte_202_202_87',['Teste Aspirador - Parte 2/2',['../teste_aspirador2.html',1,'']]],
   ['aspirador_2ecpp_88',['Aspirador.cpp',['../Aspirador_8cpp.html',1,'']]],

@@ -77,7 +77,7 @@ var searchData=
   ['existeht_74',['existeht',['../classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac',1,'TProcuraConstrutiva::ExisteHT()'],['../classTProcuraAdversa.html#ad01434aae577cafdb636f82ba2815215',1,'TProcuraAdversa::ExisteHT()']]],
   ['expansoes_75',['expansoes',['../group__VariaveisGlobais.html#ga198a1f8ed90785a1c3f112a3468a2d74',1,'TProcuraConstrutiva']]],
   ['explorar_76',['explorar',['../classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f',1,'TProcuraConstrutiva::Explorar()'],['../classTProcura.html#abd93e2ba1f58d3ee7bef74845cee99fb',1,'TProcura::Explorar()'],['../classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0',1,'TProcuraMelhorativa::Explorar()']]],
-  ['explorar_20aspirador_77',['💻 Explorar Aspirador',['../tutorial_construtivas.html#autotoc_md176',1,'']]],
+  ['explorar_20aspirador_77',['Explorar Aspirador',['../tutorial_construtivas.html#autotoc_md176',1,'']]],
   ['explorar_20os_20sucessores_78',['Ação 2 - Explorar os sucessores',['../teste_aspirador1.html#autotoc_md87',1,'']]],
   ['explorar_20sucessores_79',['Ação 2 - Explorar sucessores',['../teste_jogo_do_galo.html#autotoc_md104',1,'']]],
   ['explorar_20todo_20o_20espaço_20de_20estados_80',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md107',1,'']]],

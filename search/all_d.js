@@ -2,7 +2,7 @@ var searchData=
 [
   ['dadosa_0',['dadosA',['../classCTesteTVector.html#a2c8d3c4e4f2630bea3eee94f3dc03ff8',1,'CTesteTVector']]],
   ['dadosb_1',['dadosB',['../classCTesteTVector.html#a709b13b333477be354b5fe53e2b3fd09',1,'CTesteTVector']]],
-  ['damas_2',['damas',['../tutorial_construtivas.html#autotoc_md179',1,'✏️/💻 Damas'],['../construtiva__deucalion.html#autotoc_md4',1,'8 damas'],['../classCOitoDamas.html#acb2ccabe2ec11815db2eccb59bb07ca7',1,'COitoDamas::damas'],['../teste_8damas.html',1,'Teste 8 Damas']]],
+  ['damas_2',['damas',['../construtiva__deucalion.html#autotoc_md4',1,'8 damas'],['../classCOitoDamas.html#acb2ccabe2ec11815db2eccb59bb07ca7',1,'COitoDamas::damas'],['../tutorial_construtivas.html#autotoc_md179',1,'Damas'],['../teste_8damas.html',1,'Teste 8 Damas']]],
   ['damas_20algoritmos_20genéticos_3',['4 Damas, Algoritmos Genéticos',['../tutorial_4damasgenetico.html',1,'']]],
   ['damas_20codificação_20inteira_4',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]],
   ['damas_20codificação_20por_20permutação_5',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],
