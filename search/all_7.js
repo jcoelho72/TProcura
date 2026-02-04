@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['8_0',['8',['../construtiva__deucalion.html#autotoc_md3',1,'puzzle 8'],['../melhorativa__deucalion.html#autotoc_md50',1,'Teste 8']]],
+  ['8_0',['8',['../tutorial_construtivas.html#autotoc_md181',1,'✏️/💻 Puzzle 8'],['../tutorial_construtivas.html#autotoc_md177',1,'✏️/💻 Puzzle 8'],['../construtiva__deucalion.html#autotoc_md3',1,'puzzle 8'],['../melhorativa__deucalion.html#autotoc_md50',1,'Teste 8']]],
   ['8_20damas_1',['8 damas',['../construtiva__deucalion.html#autotoc_md4',1,'8 damas'],['../teste_8damas.html',1,'Teste 8 Damas']]],
   ['8_20damas_20codificação_20inteira_2',['Teste 8 Damas - Codificação Inteira',['../teste_8damas_ci.html',1,'']]],
   ['8_20damas_20codificação_20por_20permutação_3',['Teste 8 Damas - Codificação por Permutação',['../teste_8damas_cp.html',1,'']]],

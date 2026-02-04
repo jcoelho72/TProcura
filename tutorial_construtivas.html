@@ -95,43 +95,70 @@ $(document).ready(function(){initNavTree('tutorial_construtivas.html',''); initR
   <div class="headertitle"><div class="title">Tutorial das Procuras Construtivas</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Este tutorial cobre os algoritmos de procura construtivos. O nome "construtivo" significa que a solução vai sendo construida, passo a passo (ou ação a ação). Antes de atingirmos o objetivo temos uma solução parcial, constituída pelos passos (ações) dados até ao momento. Ao antigirmos o objetivo ficamos com uma solução completa.</p>
-<p>Estes algoritmos estão divididos em cegos e informados. Os algoritmos cegos não utilizam informação heurística, apenas informação exata. Os algoritmos informados, embora mais úteis, constroiem-se sobre estes, pelo que vamos primeiramente analisar os algoritmos cegos, e de seguida os informados.</p>
+<div class="textblock"><p>Este tutorial cobre os algoritmos de procura construtivos. O nome “construtivo” significa que a solução vai sendo construída passo a passo: antes de atingir o objetivo temos uma solução parcial; ao atingir o objetivo temos a solução completa.</p>
+<p>Os algoritmos dividem‑se em cegos e informados. Os informados constroem‑se sobre os cegos, por isso começamos pelos cegos.</p>
 <h2><a class="anchor" id="autotoc_md173"></a>
 Como seguir este tutorial</h2>
 <p>Para tirar o máximo proveito, recomenda‑se a seguinte sequência:</p>
 <ol type="1">
-<li>📖 Consultar a literatura — uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos. A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.</li>
-<li>👓 Ver os vídeos pedagógicos — cada vídeo introduz um método específico</li>
-<li>✏️ Explorar os exemplos passo a passo — cada exemplo resolvido manualmente, inclui o estado da árvore de procura em cada expansão.</li>
-<li>💻 Experimentar os exemplos de execução — observar o comportamento dos algoritmos na prática consolida a intuição.</li>
+<li>📖 Consultar a literatura Uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos. A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.</li>
+<li>👓 Ver os vídeos pedagógicos Cada vídeo introduz um método específico</li>
+<li>💻 Explorar um primeiro exemplo simples (Aspirador) Este exemplo é usado no manual e vídeos e serve de ponte para os restantes problemas.</li>
+<li>✏️ Resolver manualmente os exemplos Cada exemplo mostra a árvore de procura passo a passo.</li>
+<li>💻 Executar os algoritmos nos mesmos exemplos A execução permite comparar o comportamento real com a resolução manual.</li>
 </ol>
 <h1><a class="anchor" id="autotoc_md174"></a>
 Conteúdos do Tutorial</h1>
+<h2><a class="anchor" id="autotoc_md175"></a>
+Algoritmos Cegos</h2>
 <ul>
 <li><a href="tutorial_construtivaslit.html">📖 Algoritmos Cegos</a></li>
 <li><a href="tutorial_construtivas3a.html">👓 Procura Cega</a></li>
 <li><a href="tutorial_construtivas3b.html">👓 Algoritmos</a></li>
-<li><a href="teste_aspirador1.html">💻 Aspirador 1</a></li>
-<li><a href="teste_aspirador2.html">💻 Aspirador 2</a></li>
-<li><a href="tutorial_puzzle8prof.html">✏️ Puzzle 8 profundidade</a></li>
-<li><a href="tutorial_puzzle8iterativa.html">✏️ Puzzle 8 iterativa</a></li>
-<li><a href="tutorial_puzzle8largura.html">✏️ Puzzle 8 largura</a></li>
-<li><a href="teste_puzzle8.html">💻 Puzzle 8</a></li>
-<li><a href="tutorial_particaoprof.html">✏️ Partição profundidade</a></li>
-<li><a href="tutorial_particaolargura.html">✏️ Partição largura</a></li>
-<li><a href="teste_particao.html">💻 Partição</a></li>
-<li><a href="tutorial_4damasprof.html">✏️ 4 damas profundidade</a></li>
-<li><a href="tutorial_4damaslargura.html">✏️ 4 damas largura</a></li>
-<li><a href="teste_8damas.html">💻 8 Damas</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md176"></a>
+💻 Explorar Aspirador</h3>
+<ul>
+<li><a href="teste_aspirador1.html">💻 Parte 1</a></li>
+<li><a href="teste_aspirador2.html">💻 Parte 2</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md177"></a>
+✏️/💻 Puzzle 8</h3>
+<ul>
+<li><a href="tutorial_puzzle8prof.html">✏️ Profundidade</a></li>
+<li><a href="tutorial_puzzle8iterativa.html">✏️ Iterativa</a></li>
+<li><a href="tutorial_puzzle8largura.html">✏️ Largura</a></li>
+<li><a href="teste_puzzle8.html">💻 Executar</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md178"></a>
+✏️/💻 Partição</h3>
+<ul>
+<li><a href="tutorial_particaoprof.html">✏️ Profundidade</a></li>
+<li><a href="tutorial_particaolargura.html">✏️ Çargura</a></li>
+<li><a href="teste_particao.html">💻 Executar</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md179"></a>
+✏️/💻 Damas</h3>
+<ul>
+<li><a href="tutorial_4damasprof.html">✏️ Profundidade</a></li>
+<li><a href="tutorial_4damaslargura.html">✏️ Largura</a></li>
+<li><a href="teste_8damas.html">💻 Executar</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md180"></a>
+Algoritmos Informados</h2>
+<ul>
 <li><a href="tutorial_construtivaslit2.html">📖 Algoritmos Informados</a></li>
 <li><a href="tutorial_construtivas4a.html">👓 Procura Informada</a></li>
-<li><a href="tutorial_puzzle8melhor.html">✏️ Puzzle 8 melhor</a></li>
-<li><a href="tutorial_puzzle8astar.html">✏️ Puzzle 8 Astar</a></li>
-<li><a href="tutorial_puzzle8bnb.html">✏️ Puzzle 8 BnB</a></li>
-<li><a href="teste_puzzle8b.html">💻 Puzzle 8</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md175"></a>
+<h3><a class="anchor" id="autotoc_md181"></a>
+✏️/💻 Puzzle 8</h3>
+<ul>
+<li><a href="tutorial_puzzle8melhor.html">✏️ Melhor Primeiro</a></li>
+<li><a href="tutorial_puzzle8astar.html">✏️ A-star</a></li>
+<li><a href="tutorial_puzzle8bnb.html">✏️ BnB</a></li>
+<li><a href="teste_puzzle8b.html">💻 Executar</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md182"></a>
 Nota final</h2>
 <p>Este tutorial foi concebido para permitir um estudo progressivo, autónomo e interativo. As perguntas aleatórias ajudam a manter o foco e a transformar a leitura — por vezes densa — em algo mais dinâmico.</p>
 <p>Bons estudos! </p>

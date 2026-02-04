@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['👓_20procuras_20construtivas_20procura_20cega_0',['👓 Procuras Construtivas - Procura Cega',['../tutorial_construtivas3a.html',1,'']]],
-  ['👓_20procuras_20construtivas_20procura_20cega_20algoritmos_1',['👓 Procuras Construtivas - Procura Cega - Algoritmos',['../tutorial_construtivas3b.html',1,'']]],
-  ['👓_20procuras_20construtivas_20procura_20informada_2',['👓 Procuras Construtivas - Procura Informada',['../tutorial_construtivas4a.html',1,'']]]
+  ['✏️_20💻_20damas_0',['✏️/💻 Damas',['../tutorial_construtivas.html#autotoc_md179',1,'']]],
+  ['✏️_20💻_20partição_1',['✏️/💻 Partição',['../tutorial_construtivas.html#autotoc_md178',1,'']]],
+  ['✏️_20💻_20puzzle_208_2',['✏️ 💻 puzzle 8',['../tutorial_construtivas.html#autotoc_md177',1,'✏️/💻 Puzzle 8'],['../tutorial_construtivas.html#autotoc_md181',1,'✏️/💻 Puzzle 8']]]
 ];
