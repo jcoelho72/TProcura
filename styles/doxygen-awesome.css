@@ -2720,8 +2720,8 @@ table {
 table td, table th {
     min-width: 40px; /* largura mínima */
     min-height: 40px; /* altura mínima igual → células quadradas */
-    width: 40px; /* opcional: força quadrado mais consistente */
-    height: 40px; /* opcional */
+    /*width: 40px;  opcional: força quadrado mais consistente */
+    /*height: 40px;  opcional */
     text-align: center; /* centra horizontalmente */
     vertical-align: middle; /* centra verticalmente */
     padding: 0; /* evita aumentar a célula */

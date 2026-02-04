@@ -49,6 +49,7 @@ HTML_EXTRA_STYLESHEET  = styles/doxygen-awesome.css \
                          styles/doxygen-awesome-sidebar-only.css
 HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
 HTML_EXTRA_FILES       = ./docs/pdfs/PVP5A.pdf ./docs/pdfs/PVP5B.pdf ./docs/pdfs/PVP5C.pdf \
+                         ./docs/pdfs/PVP3A.pdf ./docs/pdfs/PVP3B.pdf ./docs/pdfs/PVP4A.pdf ./docs/pdfs/PVP4B.pdf \
                          styles/doxygen-awesome-darkmode-toggle.js \
                          styles/doxygen-awesome-fragment-copy-button.js \
                          styles/doxygen-awesome-interactive-toc.js

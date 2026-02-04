@@ -1,4 +1,4 @@
-@page tutorial_construtivas Tutorial das procuras Construtivas
+@page tutorial_construtivas Tutorial das Procuras Construtivas
 
 Este tutorial cobre os algoritmos de procura construtivos.
 O nome "construtivo" significa que a solução vai sendo construida, passo a passo (ou ação a ação).
@@ -9,83 +9,51 @@ Estes algoritmos estão divididos em cegos e informados. Os algoritmos cegos nã
 Os algoritmos informados, embora mais úteis, constroiem-se sobre estes, pelo que vamos primeiramente analisar
 os algoritmos cegos, e de seguida os informados.
 
-Propõe-se que faça este tutorial da seguinte forma:
-- Veja o material existente, tanto na bibliografia como nos vídeos se disponível;
-- Veja os exemplos passo a passo e procure responder às questões antes de ver as respostas;
-- Continue com os exemplos de execução, para mais testes práticos e consolidação da matéria.
 
-# Procuras Construtivas Cegas
+## Como seguir este tutorial
 
-Algoritmos cegos: largura-primeiro; profundidade-primeiro; iterativos;
+Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
 
-Leituras (Russel & Norvig): Capítulo 3 (2ª edição) | Secções 3.1 a 3.4 (3ª e 4ª edição),
+1. 📖 Consultar a literatura — uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos.
+   A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.
 
-Vídeos (PVP 3A e 3B):
+2. 👓 Ver os vídeos pedagógicos — cada vídeo introduz um método específico
 
-\htmlonly
+3. ✏️ Explorar os exemplos passo a passo — cada exemplo resolvido manualmente, inclui o estado da árvore de procura em cada expansão.
 
-<div style="width:320px; margin:10px 0;">
-  <iframe 
-    src="https://player.vimeo.com/video/803549264?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-<div style="width:320px; margin:10px 0;">
-  <iframe 
-    src="https://player.vimeo.com/video/807295853?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-\endhtmlonly
+4. 💻 Experimentar os exemplos de execução — observar o comportamento dos algoritmos na prática consolida a intuição.
 
 
-Exemplos passo a passo (PnP - Papel-e-Lápis):
-1. [Puzzle 8 profundidade](tutorial_puzzle8prof.html)
-2. [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html)
-3. [Puzzle 8 largura](tutorial_puzzle8largura.html)
-4. [Partição profundidade](tutorial_particaoprof.html)
-5. [Partição largura](tutorial_particaolargura.html)
-6. [4 damas profundidade](tutorial_4damasprof.html)
-7. [4 damas largura](tutorial_4damaslargura.html) 
+# Conteúdos do Tutorial
+
+- [📖 Algoritmos Cegos](tutorial_construtivaslit.html)
+- [👓 Procura Cega](tutorial_construtivas3a.html)
+- [👓 Algoritmos](tutorial_construtivas3b.html)
+- [✏️ Puzzle 8 profundidade](tutorial_puzzle8prof.html)
+- [✏️ Puzzle 8 iterativa](tutorial_puzzle8iterativa.html)
+- [✏️ Puzzle 8 largura](tutorial_puzzle8largura.html)
+- [✏️ Partição profundidade](tutorial_particaoprof.html)
+- [✏️ Partição largura](tutorial_particaolargura.html)
+- [✏️ 4 damas profundidade](tutorial_4damasprof.html)
+- [✏️ 4 damas largura](tutorial_4damaslargura.html) 
+- [📖 Algoritmos Informados](tutorial_construtivaslit2.html)
+- [👓 Procura Informada](tutorial_construtivas4a.html)
+- [✏️ Puzzle 8 melhor](tutorial_puzzle8melhor.html) 
+- [✏️ Puzzle 8 Astar](tutorial_puzzle8astar.html)
+- [✏️ Puzzle 8 BnB](tutorial_puzzle8bnb.html)
+- [💻 Execução Aspirador 1](teste_aspirador1.html)
+- [💻 Aspirador 2](teste_aspirador2.html))
+- [💻 Puzzle 8](teste_puzzle8.html)
+- [💻 8 Damas](teste_8damas.html)
+- [💻 Partição](teste_particao.html)
 
 
-# Procuras Construtivas Informadas
+##  Nota final
 
-Algoritmos informados: melhor primeiro; A*; BnB.
+Este tutorial foi concebido para permitir um estudo progressivo, autónomo e interativo.
+As perguntas aleatórias ajudam a manter o foco e a transformar a leitura — por vezes densa — em algo mais dinâmico.
 
-Leituras (Russel & Norvig): Capítulo 4 (2ª edição) | Secções 3.5 (3ª e 4ª edição)
-
-Vídeos (PVP 4A):
-
-\htmlonly
-
-<div style="width:320px; margin:10px 0;">
-  <iframe 
-    src="https://player.vimeo.com/video/803548744?title=0&byline=0&portrait=0"
-    width="320" height="180" frameborder="0"
-    allow="autoplay; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-\endhtmlonly
-
-
-Exemplos passo a passo (PnP):
-
-- [Puzzle 8 melhor](tutorial_puzzle8melhor.html) 
-- [Puzzle 8 Astar](tutorial_puzzle8astar.html)
-- [Puzzle 8 BnB](tutorial_puzzle8bnb.html)
-
-# Exemplos de execução
-
-1. Aspirador ([parte 1](teste_aspirador1.html), [parte 2](teste_aspirador2.html))
-2. [Puzzle 8](teste_puzzle8.html)
-3. [8 Damas](teste_8damas.html)
-4. [Partição](teste_particao.html)
+Bons estudos!
 
 
 
