@@ -105,7 +105,7 @@ O total será 3 + 6 + 3 = 12.
 
 Vamos ver como esta heurística guia os diferentes algoritmos informados.
 
-\anchor puzzle8-a6
+\anchor puzzle8b-a6
 ## Ação 6 - Melhor Primeiro
 
 Vamos executar o primeiro algoritmo informado, o melhor primeiro, que segue sempre pelo ramo 
