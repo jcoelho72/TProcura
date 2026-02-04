@@ -17,15 +17,16 @@
     <a href="tutorial_particaolargura.html" style="color:#9cf;">✏️ Largura</a>
     <a href="tutorial_4damasprof.html" style="color:#9cf;">✏️ 4 Damas - Profundidade</a>
     <a href="tutorial_4damaslargura.html" style="color:#9cf;">✏️ Largura</a>
-    <a href="tutorial_construtivaslit2.html" style="color:#9cf;">📖 Algoritmos Informados</a>
-    <a href="tutorial_construtivas4a.html" style="color:#9cf;">👓 Procura Informada</a>
-    <a href="tutorial_puzzle8melhor.html" style="color:#9cf;">✏️ Melhor Primeiro</a>
-    <a href="tutorial_puzzle8astar.html" style="color:#9cf;">✏️ A-atar</a>
     <a href="teste_aspirador1.html" style="color:#9cf;">💻 Execução Aspirador 1</a>
     <a href="teste_aspirador2.html" style="color:#9cf;">💻 Aspirador 2</a>
     <a href="teste_puzzle8.html" style="color:#9cf;">💻 Puzzle 8</a>
     <a href="teste_8damas.html" style="color:#9cf;">💻 8 Damas</a>
     <a href="teste_particao.html" style="color:#9cf;">💻 Partição</a>
+    <a href="tutorial_construtivaslit2.html" style="color:#9cf;">📖 Algoritmos Informados</a>
+    <a href="tutorial_construtivas4a.html" style="color:#9cf;">👓 Procura Informada</a>
+    <a href="tutorial_puzzle8melhor.html" style="color:#9cf;">✏️ Melhor Primeiro</a>
+    <a href="tutorial_puzzle8astar.html" style="color:#9cf;">✏️ A-atar</a>
+    <a href="teste_puzzle8b.html" style="color:#9cf;">💻 Puzzle 8</a>
   </div>
 </div>
 

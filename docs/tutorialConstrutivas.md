@@ -36,16 +36,17 @@ Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
 - [✏️ Partição largura](tutorial_particaolargura.html)
 - [✏️ 4 damas profundidade](tutorial_4damasprof.html)
 - [✏️ 4 damas largura](tutorial_4damaslargura.html) 
+- [💻 Aspirador 1](teste_aspirador1.html)
+- [💻 Aspirador 2](teste_aspirador2.html)
+- [💻 Puzzle 8](teste_puzzle8.html)
+- [💻 8 Damas](teste_8damas.html)
+- [💻 Partição](teste_particao.html)
 - [📖 Algoritmos Informados](tutorial_construtivaslit2.html)
 - [👓 Procura Informada](tutorial_construtivas4a.html)
 - [✏️ Puzzle 8 melhor](tutorial_puzzle8melhor.html) 
 - [✏️ Puzzle 8 Astar](tutorial_puzzle8astar.html)
 - [✏️ Puzzle 8 BnB](tutorial_puzzle8bnb.html)
-- [💻 Execução Aspirador 1](teste_aspirador1.html)
-- [💻 Aspirador 2](teste_aspirador2.html))
-- [💻 Puzzle 8](teste_puzzle8.html)
-- [💻 8 Damas](teste_8damas.html)
-- [💻 Partição](teste_particao.html)
+- [💻 Puzzle 8](teste_puzzle8b.html)
 
 
 ##  Nota final
