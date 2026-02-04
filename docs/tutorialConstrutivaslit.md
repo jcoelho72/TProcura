@@ -1,10 +1,10 @@
-@page tutorial_construtivaslit Procuras Construtivas - Literatura
+@page tutorial_construtivaslit 📖 Procuras Construtivas - Algoritmos Cegos
 
 \htmlonly
 
 <div style="padding:12px; border:1px solid #444; border-radius:6px; background:#222; margin:20px 0; color:#ddd;">
   <div style="font-size:12px; opacity:0.8; margin-bottom:6px;">
-    <a href="tutorial_adversas.html" style="color:#9cf; text-decoration:none;">Tutorial: Procuras Adversas</a>
+    <a href="tutorial_construtivas.html" style="color:#9cf; text-decoration:none;">Tutorial: Procuras Construtivas</a>
   </div>
   <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
     <span style="font-weight:bold; text-decoration:underline; color:#fff;">📖 Algoritmos Cegos</span>
