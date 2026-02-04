@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['💻_20puzzle_208_20procuras_20cegas_0',['💻 Puzzle 8 - Procuras Cegas',['../teste_puzzle8.html',1,'']]],
-  ['💻_20puzzle_208_20procuras_20informadas_1',['💻 Puzzle 8 - Procuras Informadas',['../teste_puzzle8b.html',1,'']]]
+  ['👓_20procuras_20construtivas_20procura_20cega_0',['👓 Procuras Construtivas - Procura Cega',['../tutorial_construtivas3a.html',1,'']]],
+  ['👓_20procuras_20construtivas_20procura_20cega_20algoritmos_1',['👓 Procuras Construtivas - Procura Cega - Algoritmos',['../tutorial_construtivas3b.html',1,'']]],
+  ['👓_20procuras_20construtivas_20procura_20informada_2',['👓 Procuras Construtivas - Procura Informada',['../tutorial_construtivas4a.html',1,'']]]
 ];

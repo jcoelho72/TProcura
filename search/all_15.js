@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['largura_0',['largura',['../teste_8damas.html#autotoc_md68',1,'Ação 3 - Procura em Largura'],['../teste_puzzle8.html#autotoc_md135',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md90',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md94',1,'Ação 9 - Desafio Procura em Largura'],['../tutorial_puzzle8largura.html',1,'Puzzle8, procura em largura']]],
-  ['largura_20primeiro_1',['largura primeiro',['../tutorial_4damaslargura.html',1,'4 Damas, largura primeiro'],['../tutorial_particaolargura.html',1,'Partição, largura primeiro']]],
+  ['largura_0',['largura',['../tutorial_puzzle8largura.html',1,'✏️ Puzzle 8, procura em largura'],['../teste_8damas.html#autotoc_md68',1,'Ação 3 - Procura em Largura'],['../teste_puzzle8.html#autotoc_md135',1,'Ação 3 - Procura em Largura'],['../teste_aspirador1.html#autotoc_md90',1,'Ação 5 - Efetuer uma procura em Largura'],['../teste_aspirador1.html#autotoc_md94',1,'Ação 9 - Desafio Procura em Largura']]],
+  ['largura_20primeiro_1',['largura primeiro',['../tutorial_4damaslargura.html',1,'✏️ 4 Damas, largura primeiro'],['../tutorial_particaolargura.html',1,'✏️ Partição, largura primeiro']]],
   ['largura_5fprimeiro_2',['LARGURA_PRIMEIRO',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6ca4bdb9cfb386855ab9d6bc3e2a369f6ed',1,'TProcuraConstrutiva.h']]],
   ['larguraprimeiro_3',['LarguraPrimeiro',['../group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0',1,'TProcuraConstrutiva']]],
   ['last_4',['Last',['../classTVector.html#aa304d639c79ef2842f9951846c6292e3',1,'TVector']]],

@@ -10,7 +10,7 @@ var searchData=
   ['binária_7',['Teste Particao - Codificação Binária',['../teste_particao_cb.html',1,'']]],
   ['bit_8',['bit',['../classTCodificacaoBinaria.html#a82db1e906b249821c06f910742f42f46',1,'TCodificacaoBinaria::Bit(int i) const'],['../classTCodificacaoBinaria.html#a9f693a420b0569bf1102f1eb7a91bc43',1,'TCodificacaoBinaria::Bit(int i)']]],
   ['bitref_9',['bitref',['../classBitRef.html#aa95d691745cb584e6e7f1544802e6de6',1,'BitRef::BitRef()'],['../classBitRef.html',1,'BitRef']]],
-  ['bnb_10',['Puzzle8, BnB',['../tutorial_puzzle8bnb.html',1,'']]],
+  ['bnb_10',['✏️ Puzzle 8, BnB',['../tutorial_puzzle8bnb.html',1,'']]],
   ['bordasligadas_11',['bordasLigadas',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951ba61976f3a7b8be367db651ed4ba2dadcf',1,'JogoEmLinha.h']]],
   ['bound_12',['Ação 9 - Branch-and-Bound',['../teste_puzzle8b.html#autotoc_md142',1,'']]],
   ['brancas_13',['brancas',['../structSResultadoJogo.html#ae063140594a3f03ce7ee7291264aece6',1,'SResultadoJogo']]],

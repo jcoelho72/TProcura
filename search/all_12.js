@@ -52,6 +52,6 @@ var searchData=
   ['investigador_49',['O Ciclo do Investigador',['../investigacao.html#autotoc_md10',1,'']]],
   ['iteracoes_50',['iteracoes',['../classTProcura.html#a5cb8dad7e3cdda780c22a3893f3d5ad9',1,'TProcura']]],
   ['iteracoesexcedido_51',['IteracoesExcedido',['../classTProcura.html#a73463e33b889e6053ee32220e0514a2c',1,'TProcura']]],
-  ['iterativa_52',['iterativa',['../teste_aspirador2.html#autotoc_md99',1,'Ação 13 - Profundidade Iterativa'],['../tutorial_puzzle8iterativa.html',1,'Puzzle8, procura em profundidade iterativa']]],
+  ['iterativa_52',['iterativa',['../tutorial_puzzle8iterativa.html',1,'✏️ Puzzle 8, procura em profundidade iterativa'],['../teste_aspirador2.html#autotoc_md99',1,'Ação 13 - Profundidade Iterativa']]],
   ['iterativo_53',['Ação 5 - Torneio Iterativo',['../teste_jogo_em_linha.html#autotoc_md114',1,'']]]
 ];

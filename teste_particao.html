@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TProcura: Teste Particao</title>
+<title>TProcura: 💻 Teste Particao</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,10 +92,48 @@ $(document).ready(function(){initNavTree('teste_particao.html',''); initResizabl
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Teste Particao</div></div>
+  <div class="headertitle"><div class="title">💻 Teste Particao</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> |</p>
+<div class="textblock"><p> 
+
+<div style="padding:12px; border:1px solid #444; border-radius:6px; background:#222; margin:20px 0; color:#ddd;">
+  <div style="font-size:12px; opacity:0.8; margin-bottom:6px;">
+    <a href="tutorial_construtivas.html" style="color:#9cf; text-decoration:none;">Tutorial: Procuras Construtivas</a>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+    <span style="opacity:0.7;">Algoritmos Cegos ›</span>
+    <a href="tutorial_construtivaslit.html" style="color:#9cf;">📖 Leitura</a>
+    <a href="tutorial_construtivas3a.html" style="color:#9cf;">👓 Procura Cega</a>
+    <a href="tutorial_construtivas3b.html" style="color:#9cf;">👓 Algoritmos</a>
+    <span style="opacity:0.7;">Aspirador ›</span>
+    <a href="teste_aspirador1.html" style="color:#9cf;">💻 Parte 1</a>
+    <a href="teste_aspirador2.html" style="color:#9cf;">💻 Parte 2</a>
+    <span style="opacity:0.7;">Puzzle 8 ›</span>
+    <a href="tutorial_puzzle8prof.html" style="color:#9cf;">✏️ Profundidade</a>
+    <a href="tutorial_puzzle8iterativa.html" style="color:#9cf;">✏️ Iterativa</a>
+    <a href="tutorial_puzzle8largura.html" style="color:#9cf;">✏️ Largura</a>
+    <a href="teste_puzzle8.html" style="color:#9cf;">💻 Testar</a>
+    <span style="opacity:0.7;">Partição ›</span>
+    <a href="tutorial_particaoprof.html" style="color:#9cf;">✏️ Profundidade</a>
+    <a href="tutorial_particaolargura.html" style="color:#9cf;">✏️ Largura</a>
+    <span style="font-weight:bold; text-decoration:underline; color:#fff;">💻 Testar</span>
+    <span style="opacity:0.7;">Damas ›</span>
+    <a href="tutorial_4damasprof.html" style="color:#9cf;">✏️ Profundidade</a>
+    <a href="tutorial_4damaslargura.html" style="color:#9cf;">✏️ Largura</a>
+    <a href="teste_8damas.html" style="color:#9cf;">💻 Testar</a>
+    <span style="opacity:0.7;">Algoritmos Informados ›</span>
+    <a href="tutorial_construtivaslit2.html" style="color:#9cf;">📖 Leitura</a>
+    <a href="tutorial_construtivas4a.html" style="color:#9cf;">👓 Procura Informada</a>
+    <span style="opacity:0.7;">Puzzle 8 ›</span>
+    <a href="tutorial_puzzle8melhor.html" style="color:#9cf;">✏️ Melhor Primeiro</a>
+    <a href="tutorial_puzzle8astar.html" style="color:#9cf;">✏️ A-star</a>
+    <a href="tutorial_puzzle8bnb.html" style="color:#9cf;">✏️ BnB</a>
+    <a href="teste_puzzle8b.html" style="color:#9cf;">💻 Testar</a>
+  </div>
+</div>
+
+</p>
 <p>Execução de exemplo com base no problema da Partição. Pode acompanhar o teste executando as ações localmente.</p>
 <p>No Visual Studio, selecione o projeto <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>, e execute. No Linux na pasta <code>.../TProcura/Construtiva/Teste$</code> execute <code>make</code> seguido de <code>./bin/Release/TProcuraConstrutiva</code></p>
 <p>Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.</p>
@@ -552,7 +590,16 @@ Teste: particao_3</h3>
 <p>Podemos considerar portanto que as instâncias geradas de 700 a 1000 são desafiantes para esta implementação.</p>
 <p>Note-se no entanto que o gerador de instâncias não é um conjunto de números aleatórios puro. Essas instâncias são normalmente simples. O gerador foi construído para procurar instâncias complexas para um dado tamanho, pelo que esta tabela não representa uma instância arbitrária da partição, nem os resultados são generalizáveis a qualquer instância.</p>
 <p>Uma instância completamente aleatória é muito simples de resolver. Na investigação as instâncias complexas deste problema têm de ter inteiros muito grandes, tendo de serem utilizadas representações de inteiros maiores que 64 bits para guardar e somar números desses tamanhos.</p>
-<p>| <a href="teste_tvector.html">TesteTVector</a> | <a href="teste_aspirador1.html">Aspirador 1</a> | <a href="teste_aspirador2.html">Aspirador 2</a> | <a href="teste_puzzle8.html">Puzzle 8</a> | <a href="teste_8damas.html">8 Damas</a> | <a href="teste_particao.html">Partição</a> | <a href="teste_8damas_ci.html">8 Damas CI</a> | <a href="teste_8damas_cp.html">8 Damas CP</a> | <a href="teste_particao_cb.html">Partição CB</a> | </p>
+<p> 
+
+<div style="margin:30px 0; display:flex; justify-content:space-between;">
+  <a href="tutorial_particaolargura.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     ◀ Passo anterior </a>
+  <a href="tutorial_4damasprof.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     Próximo passo ▶ </a>
+</div>
+
+ </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

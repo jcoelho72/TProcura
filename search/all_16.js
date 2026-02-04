@@ -19,7 +19,7 @@ var searchData=
   ['maxramificacao_16',['maxRamificacao',['../structSParametrosEspaco.html#a350f905e7dae470a2e6bda8841c05d3b',1,'SParametrosEspaco']]],
   ['maxvalor_17',['maxvalor',['../classTCodificacaoInteira.html#a428656cbca99d29e4b3f6860167e9e91',1,'TCodificacaoInteira::maxValor'],['../classTCodificacaoReal.html#a09c910fcc5f67baf54f27ab90ca73bf9',1,'TCodificacaoReal::maxValor']]],
   ['meio_18',['Meio',['../TProcura_8h.html#ae6a51f7b959057a9cb6ec668ce717d1faf30d58f2fc9eb6500992df5b7b558d6e',1,'TProcura.h']]],
-  ['melhor_20primeiro_19',['melhor primeiro',['../teste_puzzle8b.html#autotoc_md139',1,'Ação 6 - Melhor Primeiro'],['../tutorial_puzzle8melhor.html',1,'Puzzle8, procura melhor primeiro']]],
+  ['melhor_20primeiro_19',['melhor primeiro',['../tutorial_puzzle8melhor.html',1,'✏️ Puzzle 8, procura melhor primeiro'],['../teste_puzzle8b.html#autotoc_md139',1,'Ação 6 - Melhor Primeiro']]],
   ['melhor_5fprimeiro_20',['MELHOR_PRIMEIRO',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6ca502c1556ccc6c1cce01be3258df6048d',1,'TProcuraConstrutiva.h']]],
   ['melhorativadeucalion_2emd_21',['MelhorativaDeucalion.md',['../MelhorativaDeucalion_8md.html',1,'']]],
   ['melhorativas_22',['Tutorial das procuras Melhorativas',['../tutorial_melhorativas.html',1,'']]],
