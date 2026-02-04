@@ -16,7 +16,7 @@
     <a href="teste_aspirador2.html" style="color:#9cf;">💻 Parte 2</a>
     <span style="opacity:0.7;">Puzzle 8 ›</span>
     <a href="tutorial_puzzle8prof.html" style="color:#9cf;">✏️ Profundidade</a>
-    <span style="font-weight:bold; text-decoration:underline; color:#fff;">✏️ Iterativa</soan>
+    <span style="font-weight:bold; text-decoration:underline; color:#fff;">✏️ Iterativa</span>
     <a href="tutorial_puzzle8largura.html" style="color:#9cf;">✏️ Largura</a>
     <a href="teste_puzzle8.html" style="color:#9cf;">💻 Testar</a>
     <span style="opacity:0.7;">Partição ›</span>
