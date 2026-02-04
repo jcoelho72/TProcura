@@ -32,45 +32,45 @@ Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
 
 ## Algoritmos Cegos
 
-- [📖 Algoritmos Cegos](tutorial_construtivaslit.html)
+- [📖 Leitura](tutorial_construtivaslit.html)
 - [👓 Procura Cega](tutorial_construtivas3a.html)
 - [👓 Algoritmos](tutorial_construtivas3b.html)
 
-### 💻 Explorar Aspirador
+### Explorar Aspirador
 
 - [💻 Parte 1](teste_aspirador1.html)
 - [💻 Parte 2](teste_aspirador2.html)
 
-### ✏️/💻 Puzzle 8
+### Puzzle 8
 
 - [✏️ Profundidade](tutorial_puzzle8prof.html)
 - [✏️ Iterativa](tutorial_puzzle8iterativa.html)
 - [✏️ Largura](tutorial_puzzle8largura.html)
-- [💻 Executar](teste_puzzle8.html)
+- [💻 Testar](teste_puzzle8.html)
 
-### ✏️/💻 Partição
+### Partição
 
 - [✏️ Profundidade](tutorial_particaoprof.html)
-- [✏️ Çargura](tutorial_particaolargura.html)
-- [💻 Executar](teste_particao.html)
+- [✏️ Largura](tutorial_particaolargura.html)
+- [💻 Testar](teste_particao.html)
 
-### ✏️/💻 Damas
+### Damas
 
 - [✏️ Profundidade](tutorial_4damasprof.html)
 - [✏️ Largura](tutorial_4damaslargura.html) 
-- [💻 Executar](teste_8damas.html)
+- [💻 Testar](teste_8damas.html)
 
 ## Algoritmos Informados
 
-- [📖 Algoritmos Informados](tutorial_construtivaslit2.html)
+- [📖 Leitura](tutorial_construtivaslit2.html)
 - [👓 Procura Informada](tutorial_construtivas4a.html)
 
-### ✏️/💻 Puzzle 8
+### Puzzle 8
 
 - [✏️ Melhor Primeiro](tutorial_puzzle8melhor.html) 
 - [✏️ A-star](tutorial_puzzle8astar.html)
 - [✏️ BnB](tutorial_puzzle8bnb.html)
-- [💻 Executar](teste_puzzle8b.html)
+- [💻 Testar](teste_puzzle8b.html)
 
 
 ##  Nota final
