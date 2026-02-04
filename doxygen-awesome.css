@@ -2724,5 +2724,5 @@ table td, table th {
     min-height: 40px; /* altura mínima igual → células quadradas */
     text-align: center; /* centra horizontalmente */
     vertical-align: middle; /* centra verticalmente */
-    padding: 4px; /* aumentar a célula */
+    padding: 1px; /* aumentar a célula */
 }
