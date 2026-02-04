@@ -53,7 +53,7 @@
   <tbody>
     <tr>
       <td valign="top" width="14%">
-        <table>
+        <table class="tabuleiro">
           <tbody>
             <tr>
               <td style="text-align: center;" valign="top">1</td>
@@ -76,7 +76,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">esquerda</td>
       <td valign="top" width="14%">
-        <table>
+        <table class="tabuleiro">
           <tbody>
             <tr>
               <td style="text-align: center;" valign="top">1</td>
@@ -100,7 +100,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">cima</td>
       <td valign="top" width="14%">
-        <table>
+        <table class="tabuleiro">
           <tbody>
             <tr>
               <td style="text-align: center;" valign="top">1</td>
@@ -124,7 +124,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">direita</td>
       <td valign="top" width="14%">
-        <table>
+        <table class="tabuleiro">
           <tbody>
             <tr>
               <td style="text-align: center;" valign="top">1</td>
