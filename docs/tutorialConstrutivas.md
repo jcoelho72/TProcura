@@ -1,52 +1,76 @@
 @page tutorial_construtivas Tutorial das Procuras Construtivas
 
 Este tutorial cobre os algoritmos de procura construtivos.
-O nome "construtivo" significa que a solução vai sendo construida, passo a passo (ou ação a ação).
-Antes de atingirmos o objetivo temos uma solução parcial, constituída pelos passos (ações) dados até ao momento.
-Ao antigirmos o objetivo ficamos com uma solução completa.
+O nome “construtivo” significa que a solução vai sendo construída passo a passo:
+antes de atingir o objetivo temos uma solução parcial; ao atingir o objetivo temos a solução completa.
 
-Estes algoritmos estão divididos em cegos e informados. Os algoritmos cegos não utilizam informação heurística, apenas informação exata.
-Os algoritmos informados, embora mais úteis, constroiem-se sobre estes, pelo que vamos primeiramente analisar
-os algoritmos cegos, e de seguida os informados.
-
+Os algoritmos dividem‑se em cegos e informados.
+Os informados constroem‑se sobre os cegos, por isso começamos pelos cegos.
 
 ## Como seguir este tutorial
 
 Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
 
-1. 📖 Consultar a literatura — uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos.
+1. 📖 Consultar a literatura
+   Uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos.
    A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.
 
-2. 👓 Ver os vídeos pedagógicos — cada vídeo introduz um método específico
+2. 👓 Ver os vídeos pedagógicos
+   Cada vídeo introduz um método específico
 
-3. ✏️ Explorar os exemplos passo a passo — cada exemplo resolvido manualmente, inclui o estado da árvore de procura em cada expansão.
+3. 💻 Explorar um primeiro exemplo simples (Aspirador)
+   Este exemplo é usado no manual e vídeos e serve de ponte para os restantes problemas.
 
-4. 💻 Experimentar os exemplos de execução — observar o comportamento dos algoritmos na prática consolida a intuição.
+4. ✏️ Resolver manualmente os exemplos
+   Cada exemplo mostra a árvore de procura passo a passo.
+
+5. 💻 Executar os algoritmos nos mesmos exemplos
+   A execução permite comparar o comportamento real com a resolução manual.
 
 
 # Conteúdos do Tutorial
 
+## Algoritmos Cegos
+
 - [📖 Algoritmos Cegos](tutorial_construtivaslit.html)
 - [👓 Procura Cega](tutorial_construtivas3a.html)
 - [👓 Algoritmos](tutorial_construtivas3b.html)
-- [💻 Aspirador 1](teste_aspirador1.html)
-- [💻 Aspirador 2](teste_aspirador2.html)
-- [✏️ Puzzle 8 profundidade](tutorial_puzzle8prof.html)
-- [✏️ Puzzle 8 iterativa](tutorial_puzzle8iterativa.html)
-- [✏️ Puzzle 8 largura](tutorial_puzzle8largura.html)
-- [💻 Puzzle 8](teste_puzzle8.html)
-- [✏️ Partição profundidade](tutorial_particaoprof.html)
-- [✏️ Partição largura](tutorial_particaolargura.html)
-- [💻 Partição](teste_particao.html)
-- [✏️ 4 damas profundidade](tutorial_4damasprof.html)
-- [✏️ 4 damas largura](tutorial_4damaslargura.html) 
-- [💻 8 Damas](teste_8damas.html)
+
+### 💻 Explorar Aspirador
+
+- [💻 Parte 1](teste_aspirador1.html)
+- [💻 Parte 2](teste_aspirador2.html)
+
+### ✏️/💻 Puzzle 8
+
+- [✏️ Profundidade](tutorial_puzzle8prof.html)
+- [✏️ Iterativa](tutorial_puzzle8iterativa.html)
+- [✏️ Largura](tutorial_puzzle8largura.html)
+- [💻 Executar](teste_puzzle8.html)
+
+### ✏️/💻 Partição
+
+- [✏️ Profundidade](tutorial_particaoprof.html)
+- [✏️ Çargura](tutorial_particaolargura.html)
+- [💻 Executar](teste_particao.html)
+
+### ✏️/💻 Damas
+
+- [✏️ Profundidade](tutorial_4damasprof.html)
+- [✏️ Largura](tutorial_4damaslargura.html) 
+- [💻 Executar](teste_8damas.html)
+
+## Algoritmos Informados
+
 - [📖 Algoritmos Informados](tutorial_construtivaslit2.html)
 - [👓 Procura Informada](tutorial_construtivas4a.html)
-- [✏️ Puzzle 8 melhor](tutorial_puzzle8melhor.html) 
-- [✏️ Puzzle 8 Astar](tutorial_puzzle8astar.html)
-- [✏️ Puzzle 8 BnB](tutorial_puzzle8bnb.html)
-- [💻 Puzzle 8](teste_puzzle8b.html)
+
+### ✏️/💻 Puzzle 8
+
+- [✏️ Melhor Primeiro](tutorial_puzzle8melhor.html) 
+- [✏️ A-star](tutorial_puzzle8astar.html)
+- [✏️ BnB](tutorial_puzzle8bnb.html)
+- [💻 Executar](teste_puzzle8b.html)
 
 
 ##  Nota final
