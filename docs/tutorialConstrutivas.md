@@ -11,21 +11,10 @@ Os informados constroem‑se sobre os cegos, por isso começamos pelos cegos.
 
 Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
 
-1. 📖 Consultar a literatura
-   Uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos.
-   A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.
-
-2. 👓 Ver os vídeos pedagógicos
-   Cada vídeo introduz um método específico
-
-3. 💻 Explorar um primeiro exemplo simples (Aspirador)
-   Este exemplo é usado no manual e vídeos e serve de ponte para os restantes problemas.
-
-4. ✏️ Resolver manualmente os exemplos
-   Cada exemplo mostra a árvore de procura passo a passo.
-
-5. 💻 Executar os algoritmos nos mesmos exemplos
-   A execução permite comparar o comportamento real com a resolução manual.
+- 📖 Ler a literatura - enquadramento teórico e teste de conhecimentos.
+- 👓 Ver os vídeos - introdução aos métodos e teste de conhecimentos
+- ✏️ Resolver manualmente - construção da árvore de procura passo a passo
+- 💻 Testar os algoritmos - observar o comportamento real
 
 
 # Conteúdos do Tutorial

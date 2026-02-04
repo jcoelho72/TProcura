@@ -1,6 +1,44 @@
-@page tutorial_4damaslargura 4 Damas, largura primeiro
+@page tutorial_4damaslargura ✏️ 4 Damas, largura primeiro
 
-| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | [Partição profundidade](tutorial_particaoprof.html) | [Partição largura](tutorial_particaolargura.html) | [4 damas profundidade](tutorial_4damasprof.html) | [4 damas largura](tutorial_4damaslargura.html) | 
+\htmlonly
+
+<div style="padding:12px; border:1px solid #444; border-radius:6px; background:#222; margin:20px 0; color:#ddd;">
+  <div style="font-size:12px; opacity:0.8; margin-bottom:6px;">
+    <a href="tutorial_construtivas.html" style="color:#9cf; text-decoration:none;">Tutorial: Procuras Construtivas</a>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+    <span style="opacity:0.7;">Algoritmos Cegos ›</span>
+    <a href="tutorial_construtivaslit.html" style="color:#9cf;">📖 Leitura</a>
+    <a href="tutorial_construtivas3a.html" style="color:#9cf;">👓 Procura Cega</a>
+    <a href="tutorial_construtivas3b.html" style="color:#9cf;">👓 Algoritmos</a>
+    <span style="opacity:0.7;">Aspirador ›</span>
+    <a href="teste_aspirador1.html" style="color:#9cf;">💻 Parte 1</a>
+    <a href="teste_aspirador2.html" style="color:#9cf;">💻 Parte 2</a>
+    <span style="opacity:0.7;">Puzzle 8 ›</span>
+    <a href="tutorial_puzzle8prof.html" style="color:#9cf;">✏️ Profundidade</a>
+    <a href="tutorial_puzzle8iterativa.html" style="color:#9cf;">✏️ Iterativa</a>
+    <a href="tutorial_puzzle8largura.html" style="color:#9cf;">✏️ Largura</a>
+    <a href="teste_puzzle8.html" style="color:#9cf;">💻 Testar</a>
+    <span style="opacity:0.7;">Partição ›</span>
+    <a href="tutorial_particaoprof.html" style="color:#9cf;">✏️ Profundidade</a>
+    <a href="tutorial_particaolargura.html" style="color:#9cf;">✏️ Largura</a>
+    <a href="teste_particao.html" style="color:#9cf;">💻 Testar</a>
+    <span style="opacity:0.7;">Damas ›</span>
+    <a href="tutorial_4damasprof.html" style="color:#9cf;">✏️ Profundidade</a>
+    <span style="font-weight:bold; text-decoration:underline; color:#fff;">✏️ Largura</span>
+    <a href="teste_8damas.html" style="color:#9cf;">💻 Testar</a>
+    <span style="opacity:0.7;">Algoritmos Informados ›</span>
+    <a href="tutorial_construtivaslit2.html" style="color:#9cf;">📖 Leitura</a>
+    <a href="tutorial_construtivas4a.html" style="color:#9cf;">👓 Procura Informada</a>
+    <span style="opacity:0.7;">Puzzle 8 ›</span>
+    <a href="tutorial_puzzle8melhor.html" style="color:#9cf;">✏️ Melhor Primeiro</a>
+    <a href="tutorial_puzzle8astar.html" style="color:#9cf;">✏️ A-star</a>
+    <a href="tutorial_puzzle8bnb.html" style="color:#9cf;">✏️ BnB</a>
+    <a href="teste_puzzle8b.html" style="color:#9cf;">💻 Testar</a>
+  </div>
+</div>
+
+\endhtmlonly
 
 \htmlonly
 <h1>4 Damas, largura primeiro</h1>
@@ -674,4 +712,13 @@ A resposta é 23. Atenção que na expansão
 
 \endhtmlonly
 
-| [Puzzle 8 profundidade](tutorial_puzzle8prof.html) | [Puzzle 8 iterativa](tutorial_puzzle8iterativa.html) | [Puzzle 8 largura](tutorial_puzzle8largura.html) | [Partição profundidade](tutorial_particaoprof.html) | [Partição largura](tutorial_particaolargura.html) | [4 damas profundidade](tutorial_4damasprof.html) | [4 damas largura](tutorial_4damaslargura.html) | 
+\htmlonly
+
+<div style="margin:30px 0; display:flex; justify-content:space-between;">
+  <a href="tutorial_4damasprof.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     ◀ Passo anterior </a>
+  <a href="teste_8damas.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     Próximo passo ▶ </a>
+</div>
+
+\endhtmlonly

@@ -12,14 +12,10 @@ onde existam objetivos conflituosos entre agentes.
 
 Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
 
-1. 📖 Consultar a literatura — uma leitura breve do enquadramento teórico ajuda a perceber o “porquê” dos algoritmos.
-   A página inclui agora perguntas aleatórias para apoiar a leitura e manter o estudo leve.
-
-2. 👓 Ver os vídeos pedagógicos — cada vídeo introduz um método específico
-
-3. ✏️ Explorar os exemplos passo a passo — cada exemplo resolvido manualmente, inclui o estado da árvore de procura em cada expansão.
-
-4. 💻 Experimentar os exemplos de execução — observar o comportamento dos algoritmos na prática consolida a intuição.
+- 📖 Ler a literatura - enquadramento teórico e teste de conhecimentos.
+- 👓 Ver os vídeos - introdução aos métodos e teste de conhecimentos
+- ✏️ Resolver manualmente - construção da árvore de procura passo a passo
+- 💻 Testar os algoritmos - observar o comportamento real
 
 ## Conteúdos do tutorial
 
