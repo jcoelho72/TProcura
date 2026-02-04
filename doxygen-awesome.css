@@ -2713,16 +2713,20 @@ span.entrada {
     padding: 0 0.2em; /* pequeno espaçamento lateral */
 }
 
-table {
+table.tabuleiro {
     border-collapse: collapse;
     max-width: 100%;
     width: auto;
+    background: #111; /* fundo do tabuleiro */
+    border: 2px solid #666; /* borda exterior */
 }
 
-table td, table th {
-    min-width: 40px; /* largura mínima */
-    min-height: 40px; /* altura mínima igual → células quadradas */
-    text-align: center; /* centra horizontalmente */
-    vertical-align: middle; /* centra verticalmente */
-    padding: 1px; /* aumentar a célula */
+table.tabuleiro td, table.tabuleiro th {
+    min-width: 40px;
+    min-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1px;
+    border: 1px solid #555; /* bordas internas das células */
+    background: #222; /* fundo das casas */
 }
