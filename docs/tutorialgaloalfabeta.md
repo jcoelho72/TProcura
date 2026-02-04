@@ -60,7 +60,7 @@
     <tr>
       <td valign="top" width="20%">1</td>
       <td valign="top" width="20%">
-        <table border="3" cellspacing="3" cellpadding="3">
+        <table class="tabuleiro"  >
           <tbody>
             <tr>
               <td valign="top" width="33%"> </td>
@@ -87,7 +87,7 @@
     <tr>
       <td valign="top" width="20%">2</td>
       <td valign="top" width="20%">
-        <table border="3" cellspacing="3" cellpadding="3">
+        <table class="tabuleiro"  >
           <tbody>
             <tr>
               <td valign="top" width="33%">X</td>
@@ -114,7 +114,7 @@
     <tr>
       <td valign="top" width="20%">3</td>
       <td valign="top" width="20%">
-        <table border="3" cellspacing="3" cellpadding="3">
+        <table class="tabuleiro"  >
           <tbody>
             <tr>
               <td valign="top" width="33%"> </td>
@@ -141,7 +141,7 @@
     <tr>
       <td valign="top" width="20%">4</td>
       <td valign="top" width="20%">
-        <table border="3" cellspacing="3" cellpadding="3">
+        <table class="tabuleiro"  >
           <tbody>
             <tr>
               <td valign="top" width="33%"> </td>
@@ -168,7 +168,7 @@
     <tr>
       <td valign="top" width="20%">5</td>
       <td valign="top" width="20%">
-        <table border="3" cellspacing="3" cellpadding="3">
+        <table class="tabuleiro"  >
           <tbody>
             <tr>
               <td valign="top" width="33%">O</td>
@@ -195,7 +195,7 @@
     <tr>
       <td valign="top" width="20%">6</td>
       <td valign="top" width="20%">
-        <table border="3" cellspacing="3" cellpadding="3">
+        <table class="tabuleiro"  >
           <tbody>
             <tr>
               <td valign="top" width="33%"> </td>
@@ -222,7 +222,7 @@
     <tr>
       <td valign="top" width="20%">7</td>
       <td valign="top" width="20%">
-        <table border="3" cellspacing="3" cellpadding="3">
+        <table class="tabuleiro"  >
           <tbody>
             <tr>
               <td valign="top" width="33%">O</td>
@@ -249,7 +249,7 @@
     <tr>
       <td valign="top" width="20%">8 </td>
       <td valign="top" width="20%">
-        <table border="3" cellspacing="3" cellpadding="3">
+        <table class="tabuleiro"  >
           <tbody>
             <tr>
               <td valign="top" width="33%">X</td>
