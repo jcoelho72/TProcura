@@ -166,7 +166,7 @@
       <td valign="top" width="20%"><span style="color: #ef4540;">1
         </span><br><span style="color: #ef4540;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -213,7 +213,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">2
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -259,7 +259,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">3
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -306,7 +306,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">4
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -353,7 +353,7 @@
       <td valign="top" width="20%"><span style="color: #7d9fd3;">5
         </span><br><span style="color: #7d9fd3;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -400,7 +400,7 @@
       <td valign="top" width="20%"><span style="color: #ef4540;">6
         </span><br><span style="color: #ef4540;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -446,7 +446,7 @@
       <td valign="top" width="20%"><span style="color: #ef4540;">7
         </span><br><span style="color: #ef4540;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -492,7 +492,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">8
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -538,7 +538,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">9
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -584,7 +584,7 @@
       <td valign="top" width="20%"><span style="color: #98ca3e;">10
         </span><br><span style="color: #98ca3e;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -633,7 +633,7 @@
       <td valign="top" width="20%"><span style="color: #7d9fd3;">11
         </span><br><span style="color: #7d9fd3;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>
@@ -679,7 +679,7 @@
       <td valign="top" width="20%"><span style="color: #7d9fd3;">12
         </span><br><span style="color: #7d9fd3;"> </span></td>
       <td valign="top" width="20%">
-        <table    
+        <table  class="tabuleiro"  
           align="middle">
           <tbody>
             <tr>

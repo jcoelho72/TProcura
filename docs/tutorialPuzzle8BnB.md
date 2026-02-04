@@ -48,7 +48,7 @@
   <tbody>
     <tr>
       <td valign="top" width="14%">
-        <table border="3"  cellspacing="3" cellpadding="3"
+        <table class="tabuleiro"   
           align="middle">
           <tbody>
             <tr>
@@ -71,7 +71,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">esquerda</td>
       <td valign="top" width="14%">
-        <table border="3"  cellspacing="3" cellpadding="3"
+        <table class="tabuleiro"   
           align="middle">
           <tbody>
             <tr>
@@ -94,7 +94,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">cima</td>
       <td valign="top" width="14%">
-        <table border="3"  cellspacing="3" cellpadding="3"
+        <table class="tabuleiro"   
           align="middle">
           <tbody>
             <tr>
@@ -117,7 +117,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">direita</td>
       <td valign="top" width="14%">
-        <table border="3"  cellspacing="3" cellpadding="3"
+        <table class="tabuleiro"   
           align="middle">
           <tbody>
             <tr>
@@ -142,7 +142,7 @@
     <tr>
       <td style="text-align: center;" valign="top" width="14%">cima</td>
       <td valign="top" width="14%">
-        <table border="3"  cellspacing="3" cellpadding="3"
+        <table class="tabuleiro"   
           align="middle">
           <tbody>
             <tr>
@@ -165,7 +165,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">esquerda</td>
       <td valign="top" width="14%">
-        <table border="3"  cellspacing="3" cellpadding="3"
+        <table class="tabuleiro"   
           align="middle">
           <tbody>
             <tr>
@@ -188,7 +188,7 @@
       </td>
       <td style="text-align: center;" valign="top" width="14%">baixo</td>
       <td valign="top" width="14%">
-        <table border="3"  cellspacing="3" cellpadding="3"
+        <table class="tabuleiro"   
           align="middle">
           <tbody>
             <tr>
