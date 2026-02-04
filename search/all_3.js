@@ -10,5 +10,5 @@ var searchData=
   ['4_20testes_20empíricos_7',['4 testes empíricos',['../teste_8damas_ci.html#autotoc_md79',1,'Ação 4 - Testes empíricos'],['../teste_8damas_cp.html#autotoc_md84',1,'Ação 4 - Testes empíricos']]],
   ['4_20torneio_20profundidade_8',['Ação 4 - Torneio Profundidade',['../teste_jogo_em_linha.html#autotoc_md113',1,'']]],
   ['4_20ver_20a_20alterar_20um_20parâmetro_9',['Ação 4 - Ver a alterar um parâmetro',['../teste_aspirador1.html#autotoc_md89',1,'']]],
-  ['4_3a_20menu_205_20indicadores_10',['Ação 4: Menu 5 - Indicadores',['../teste_tvector.html#autotoc_md152',1,'']]]
+  ['4_3a_20menu_205_20indicadores_10',['Ação 4: Menu 5 - Indicadores',['../teste_tvector.html#autotoc_md153',1,'']]]
 ];
