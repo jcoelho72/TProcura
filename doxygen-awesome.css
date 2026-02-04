@@ -2715,13 +2715,13 @@ span.entrada {
 
 table {
     border-collapse: collapse;
+    max-width: 100%;
 }
 
 table td, table th {
-    min-width: 30px; /* largura mínima */
-    min-height: 30px; /* altura mínima igual → células quadradas */
-    width: 30px; /* opcional: força quadrado mais consistente */
-    height: 30px; /* opcional */
+    min-width: 40px; /* largura mínima */
+    min-height: 40px; /* altura mínima igual → células quadradas */
+    aspect-ratio: 1 / 1;
     text-align: center; /* centra horizontalmente */
     vertical-align: middle; /* centra verticalmente */
     /*padding: 0;  evita aumentar a célula */
