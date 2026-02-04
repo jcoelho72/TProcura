@@ -10,18 +10,22 @@
     <a href="tutorial_construtivaslit.html" style="color:#9cf;">📖 Algoritmos Cegos</a>
     <a href="tutorial_construtivas3a.html" style="color:#9cf;">👓 Procura Cega</a>
     <a href="tutorial_construtivas3b.html" style="color:#9cf;">👓 Algoritmos</a>
-    [Puzzle 8<a href="tutorial_puzzle8prof.html" style="color:#9cf;">✏️ Profundidade</a>
+    <span style="opacity:0.7;">Puzzle 8 ›</span>
+    <a href="tutorial_puzzle8prof.html" style="color:#9cf;">✏️ Profundidade</a>
     <a href="tutorial_puzzle8iterativa.html" style="color:#9cf;">✏️ Iterativa</a>
-    <a href="tutorial_puzzle8largura.html" style="color:#9cf;">✏️ Largura</a>]
-    [Partição<a href="tutorial_particaoprof.html" style="color:#9cf;">✏️ Profundidaded</a>
-    <a href="tutorial_particaolargura.html" style="color:#9cf;">✏️ Largura</a>]
-    [4 Damas <a href="tutorial_4damasprof.html" style="color:#9cf;">✏️ Profundidade</a>
-    <a href="tutorial_4damaslargura.html" style="color:#9cf;">✏️ Largura</a>]
+    <a href="tutorial_puzzle8largura.html" style="color:#9cf;">✏️ Largura</a>
+    <span style="opacity:0.7;">Partição ›</span>
+    <a href="tutorial_particaoprof.html" style="color:#9cf;">✏️ Profundidaded</a>
+    <a href="tutorial_particaolargura.html" style="color:#9cf;">✏️ Largura</a>
+    <span style="opacity:0.7;">4 Damas ›</span>
+    <a href="tutorial_4damasprof.html" style="color:#9cf;">✏️ Profundidade</a>
+    <a href="tutorial_4damaslargura.html" style="color:#9cf;">✏️ Largura</a>
     <a href="tutorial_construtivaslit2.html" style="color:#9cf;">📖 Algoritmos Informados</a>
     <a href="tutorial_construtivas4a.html" style="color:#9cf;">👓 Procura Informada</a>
-    [Puzzle 8<a href="tutorial_puzzle8melhor.html" style="color:#9cf;">✏️ Melhor Primeiro</a>
+    <span style="opacity:0.7;">Puzzle 8 ›</span>
+    <a href="tutorial_puzzle8melhor.html" style="color:#9cf;">✏️ Melhor Primeiro</a>
     <a href="tutorial_puzzle8astar.html" style="color:#9cf;">✏️ A-star</a>
-    <a href="tutorial_puzzle8bnb.html" style="color:#9cf;">✏️ BnB</a>]
+    <a href="tutorial_puzzle8bnb.html" style="color:#9cf;">✏️ BnB</a>
     <a href="teste_aspirador1.html" style="color:#9cf;">💻 Aspirador 1</a>
     <a href="teste_aspirador2.html" style="color:#9cf;">💻 Aspirador 2</a>
     <a href="teste_puzzle8.html" style="color:#9cf;">💻 Puzzle 8</a>
