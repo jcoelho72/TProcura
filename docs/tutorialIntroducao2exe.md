@@ -47,8 +47,10 @@ Análise de agentes.
 <p>O indicador de desempenho é definido como: <strong>[Maximizar/Minimizar]</strong> <strong>[unidade]</strong> de acerto (se existir uma pessoa da lista, o alerta é gerado, não sendo gerado c.c.).
 Período de medição: <strong>[período]</strong>.</p>
 
+<ul>
+
 <!-- Pergunta 1 -->
-<h2>[Maximizar/Minimizar]</h2>
+<li>[Maximizar/Minimizar]
 <details>
   <summary>◉ Maximizar</summary>
   ✔️ Correto — o objetivo é maximizar a percentagem de acerto.
@@ -60,7 +62,7 @@ Período de medição: <strong>[período]</strong>.</p>
 </details>
 
 <!-- Pergunta 2 -->
-<h2>[unidade]</h2>
+</li><li>[unidade]
 <details>
   <summary>◉ os metros</summary>
   ✖️ Incorreto — não mede desempenho.
@@ -92,7 +94,7 @@ Período de medição: <strong>[período]</strong>.</p>
 </details>
 
 <!-- Pergunta 3 (período de medição) -->
-<h2>[período]</h2>
+</li><li>[período]
 <details>
   <summary>◉ um assunto</summary>
   ✖️ Incorreto.
@@ -132,6 +134,7 @@ Período de medição: <strong>[período]</strong>.</p>
   <summary>◉ um ficheiro</summary>
   ✔️ Correto — o agente processa um ficheiro de imagens.
 </details>
+</li></ul>
 
 <hr>
 
@@ -139,7 +142,7 @@ Período de medição: <strong>[período]</strong>.</p>
 
 <p>O ambiente tem dimensão <strong>[dimensões]</strong>, correspondendo a imagens capturadas em vários locais ao longo do tempo.</p>
 
-<h2>[dimensões]</h2>
+<ul><li>[dimensões]
 <details>
   <summary>◉ 1D</summary>
   ✖️ Incorreto.
@@ -164,14 +167,15 @@ Período de medição: <strong>[período]</strong>.</p>
   <summary>◉ 3D+1D</summary>
   ✖️ Incorreto.
 </details>
-
+</li></ul>
 <hr>
 
 <h3>Atuadores</h3>
 
 <p>Os atuadores são <strong>[atuadores]</strong>, usados para obter as imagens capturadas. </p>
 
-<h2>[atuadores]</h2>
+<ul>
+<li>[atuadores]
 <details>
   <summary>◉ Interface da aplicação</summary>
   ✔️ Correto — o agente emite alertas via interface.
@@ -206,14 +210,15 @@ Período de medição: <strong>[período]</strong>.</p>
   <summary>◉ Movimentação aérea</summary>
   ✖️ Incorreto.
 </details>
-
+</li></ul>
 <hr>
 
 <h3>Sensores</h3>
 
 <p>Os sensores são <strong>[sensores]</strong>, usados para emitir o alerta da presença de uma pessoa na lista, e respetivo local. </p>
 
-<h2>[sensores]</h2>
+<ul>
+<li>[sensores]
 <details>
   <summary>◉ Visão</summary>
   ✖️ Incorreto — o agente não “vê”, recebe ficheiros.
@@ -233,33 +238,34 @@ Período de medição: <strong>[período]</strong>.</p>
   <summary>◉ Interface da aplicação</summary>
   ✔️ Correto — recebe as imagens via interface.
 </details>
+</li></ul>
 
 <hr>
 
 <h3>Classificação do ambiente</h3>
 
 <ul>
-    <li>
-      <details><summary>◉ Observável completamente</summary>✔️ Correto.</details>
-      <details><summary>◉ Observável parcialmente</summary>✖️ Incorreto.</details>
+    <li>Observável 
+      <details><summary>◉ Completamente</summary>✔️ Correto.</details>
+      <details><summary>◉ Parcialmente</summary>✖️ Incorreto.</details>
     </li>
-    <li>
+    <li>Determinismo
       <details><summary>◉ Determinístico</summary>✔️ Correto.</details>
       <details><summary>◉ Estocástico</summary>✖️ Incorreto.</details>
     </li>
-    <li>
+    <li>Episódico / Sequencial
       <details><summary>◉ Episódico</summary>✔️ Correto.</details>
       <details><summary>◉ Sequencial</summary>✖️ Incorreto.</details>
     </li>
-    <li>
+    <li>Estático / Dinâmico
       <details><summary>◉ Estático</summary>✖️ Incorreto.</details>
       <details><summary>◉ Dinâmico</summary>✔️ Correto.</details>
     </li>
-    <li>
+    <li>Discreto / Contínuo
       <details><summary>◉ Discreto</summary>✖️ Incorreto.</details>
       <details><summary>◉ Contínuo</summary>✔️ Correto.</details>
     </li>
-    <li>
+    <li>Agentes
       <details><summary>◉ Uni‑Agente</summary>✔️ Correto.</details>
       <details><summary>◉ Multi‑Agente</summary>✖️ Incorreto.</details>
     </li>
