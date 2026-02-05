@@ -201,6 +201,7 @@ Superclasses:
 \anchor s6
 ### Tutoriais 
 
+- [Introdução](tutorial_introducao.html)
 - [Procuras Construtivas](tutorial_construtivas.html)
 - [Procuras Melhorativas](tutorial_melhorativas.html)
 - [Procuras Adversas](tutorial_adversas.html)
