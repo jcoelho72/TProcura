@@ -42,17 +42,13 @@ Análise de agentes.
 
 <hr>
 
+<p>Complete as seguintes frases para descrever o agente:</p>
+
 <ul>
 <li>O <b>indicador de desempenho</b> é definido como: <strong>[Maximizar/Minimizar]</strong> <strong>[unidade]</strong> de acerto (se existir uma pessoa da lista, o alerta é gerado, não sendo gerado c.c.).
-Período de medição: <strong>[período]</strong>.</li>
-<li>O ambiente tem dimensão <strong>[dimensões]</strong>, correspondendo a imagens capturadas em vários locais ao longo do tempo.</li>
-<li>Os atuadores são <strong>[atuadores]</strong>, usados para obter as imagens capturadas. </li>
-<li>Os sensores são <strong>[sensores]</strong>, usados para emitir o alerta da presença de uma pessoa na lista, e respetivo local. </li>
-</ul>
+Período de medição: <strong>[período]</strong>.
 
-<table style="width:100%; border-collapse:collapse; text-align:center;">
-<tr> <th>[Maximizar/Minimizar]</th> <th>[unidade]</th> <th>[período]</th></tr>
-<tr> <td>
+<ul><li>[Maximizar/Minimizar]
 
 <!-- Pergunta [Maximizar/Minimizar] -->
 <details>
@@ -65,6 +61,8 @@ Período de medição: <strong>[período]</strong>.</li>
   ✖️ Incorreto — não se pretende reduzir acertos.
 </details>
 </td><td>
+
+</li><li>[unidade]
 
 <!-- Pergunta [unidade] -->
 <details>
@@ -97,6 +95,8 @@ Período de medição: <strong>[período]</strong>.</li>
   ✖️ Incorreto — não expressa qualidade.
 </details>
 </td><td>
+
+</li><li>[período]
 
 <!-- Pergunta [período] -->
 <details>
@@ -140,11 +140,9 @@ Período de medição: <strong>[período]</strong>.</li>
 </details>
 </li></ul>
 
-</td></tr>
-
-<tr> <th>[dimensões]</th> <th>[atuadores]</th> <th>[sensores]</th></tr>
-
-<tr><td>
+</li>
+<li>O ambiente tem dimensão <strong>[dimensões]</strong>, correspondendo a imagens capturadas em vários locais ao longo do tempo.
+<ul><li>[dimensões]
 
 <!-- Pergunta [dimensões] -->
 <details>
@@ -172,7 +170,10 @@ Período de medição: <strong>[período]</strong>.</li>
   ✖️ Incorreto.
 </details>
 
-</td><td>
+</li></ul>
+</li>
+<li>Os atuadores são <strong>[atuadores]</strong>, usados para obter as imagens capturadas.
+<ul><li>[atuadores]
 
 <!-- Pergunta [atuadores] -->
 <details>
@@ -210,7 +211,10 @@ Período de medição: <strong>[período]</strong>.</li>
   ✖️ Incorreto.
 </details>
 
-</td><td>
+</li></ul>
+</li>
+<li>Os sensores são <strong>[sensores]</strong>, usados para emitir o alerta da presença de uma pessoa na lista, e respetivo local.
+<ul><li>[sensores]
 
 <!-- Pergunta [sensores] -->
 <details>
@@ -233,37 +237,34 @@ Período de medição: <strong>[período]</strong>.</li>
   ✔️ Correto — recebe as imagens via interface.
 </details>
 
-</td></tr>
-</table>
+</li></ul>
+</li>
+</ul>
+
 
 <hr>
 
 <h3>Classificação do ambiente</h3>
 
-<table style="width:100%; border-collapse:collapse; text-align:center;">
-<tr> <th>Observável</th> <th>Determinismo</th> <th>Episódico / Sequencial</th></tr>
-<tr><td>
+<ul><li>Observável
       <details><summary>◉ Completamente</summary>✔️ Correto.</details>
       <details><summary>◉ Parcialmente</summary>✖️ Incorreto.</details>
-</td><td>
+</li><li>Determinismo
       <details><summary>◉ Determinístico</summary>✔️ Correto.</details>
       <details><summary>◉ Estocástico</summary>✖️ Incorreto.</details>
-</td><td>
+</li><li>>Episódico / Sequencial
       <details><summary>◉ Episódico</summary>✔️ Correto.</details>
       <details><summary>◉ Sequencial</summary>✖️ Incorreto.</details>
-</td></tr>
-<tr> <th>Estático / Dinâmico</th> <th>Discreto / Contínuo</th> <th>Agentes</th></tr>
-<tr><td>
+<li><li>Estático / Dinâmico
       <details><summary>◉ Estático</summary>✖️ Incorreto.</details>
       <details><summary>◉ Dinâmico</summary>✔️ Correto.</details>
-</td><td>
+</li><li>Discreto / Contínuo
       <details><summary>◉ Discreto</summary>✖️ Incorreto.</details>
       <details><summary>◉ Contínuo</summary>✔️ Correto.</details>
-</td><td>
+</li><li>Agentes
       <details><summary>◉ Uni‑Agente</summary>✔️ Correto.</details>
       <details><summary>◉ Multi‑Agente</summary>✖️ Incorreto.</details>
-</td></tr>
-</table>
+</li></ul>
 
 </div>
 
