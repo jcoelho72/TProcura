@@ -135,161 +135,220 @@ Exercícios</h2>
 <p>Complete as seguintes frases para descrever o agente:</p>
 
 <ul>
-<li>O <b>indicador de desempenho</b> é definido como: <strong>[Maximizar/Minimizar]</strong> <strong>[unidade]</strong> de acerto (se existir uma pessoa da lista, o alerta é gerado, não sendo gerado c.c.).
+
+<!-- INDICADOR DE DESEMPENHO -->
+<li>O <b>indicador de desempenho</b> é definido como: <strong>[Maximizar/Minimizar]</strong> <strong>[unidade]</strong> de acerto (se existir uma pessoa da lista, o alerta é gerado, não sendo gerado caso contrário).  
 Período de medição: <strong>[período]</strong>.
 
-<ul><li>[Maximizar/Minimizar]
+<ul>
 
-<!-- Pergunta [Maximizar/Minimizar] -->
-<details> <summary> Maximizar</summary>
-  ✔️ Correto — o objetivo é maximizar a percentagem de acerto.
-</details>
-<details> <summary> Minimizar</summary>
-  ✖️ Incorreto — não se pretende reduzir acertos.
-</details>
-</td><td>
+<!-- Max/Min -->
+<li>[Maximizar/Minimizar]
 
-</li><li>[unidade]
+<details><summary>Maximizar</summary>
+✔️ Correto — o objetivo é aumentar a taxa de acerto, ou seja, gerar alertas corretos sempre que uma pessoa da lista aparece.
+</details>
 
-<!-- Pergunta [unidade] -->
-<details> <summary> os metros</summary>
-  ✖️ Incorreto — não mede desempenho.
+<details><summary>Minimizar</summary>
+✖️ Incorreto — minimizar acertos não faz sentido para um agente de deteção.
 </details>
-<details> <summary> as horas</summary>
-  ✖️ Incorreto — não expressa qualidade de deteção.
-</details>
-<details> <summary> a percentagem</summary>
-  ✔️ Correto — a taxa de acerto é naturalmente expressa em percentagem.
-</details>
-<details> <summary> as horas vezes a área</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> os metros quadrados</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> o número</summary>
-  ✖️ Incorreto — não expressa qualidade.
-</details>
-</td><td>
-
-</li><li>[período]
-
-<!-- Pergunta [período] -->
-<details> <summary> um assunto</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> uma viagem</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> um dia</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> um torneio</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> uma zona</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> uma corrida/jogo</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> um incêndio</summary>
-  ✖️ Incorreto.
-</details>
-<details> <summary> um ficheiro</summary>
-  ✔️ Correto — o agente processa um ficheiro de imagens.
-</details>
-</li></ul>
-
 </li>
+
+<!-- Unidade -->
+<li>[unidade]
+
+<details><summary>os metros</summary>
+✖️ Incorreto — metros não medem qualidade de deteção.
+</details>
+
+<details><summary>as horas</summary>
+✖️ Incorreto — tempo não expressa precisão do agente.
+</details>
+
+<details><summary>a percentagem</summary>
+✔️ Correto — a taxa de acerto é naturalmente expressa em percentagem.
+</details>
+
+<details><summary>as horas vezes a área</summary>
+✖️ Incorreto — não tem relação com deteção de pessoas.
+</details>
+
+<details><summary>os metros quadrados</summary>
+✖️ Incorreto — área não mede desempenho.
+</details>
+
+<details><summary>o número</summary>
+✖️ Incorreto — um número absoluto não expressa qualidade.
+</details>
+</li>
+
+<!-- Período -->
+<li>[período]
+
+<details><summary>um assunto</summary>
+✖️ Incorreto — não representa um período de medição.
+</details>
+
+<details><summary>uma viagem</summary>
+✖️ Incorreto — não corresponde ao processamento de imagens.
+</details>
+
+<details><summary>um dia</summary>
+✖️ Incorreto — possível, mas não é o período adequado para um ficheiro de imagens.
+</details>
+
+<details><summary>um torneio</summary>
+✖️ Incorreto.
+</details>
+
+<details><summary>uma zona</summary>
+✖️ Incorreto — zona não é um período.
+</details>
+
+<details><summary>uma corrida/jogo</summary>
+✖️ Incorreto.
+</details>
+
+<details><summary>um incêndio</summary>
+✖️ Incorreto.
+</details>
+
+<details><summary>um ficheiro</summary>
+✔️ Correto — o agente processa um ficheiro de imagens como unidade de trabalho.
+</details>
+</li>
+
+</ul>
+</li>
+
+<!-- AMBIENTE -->
 <li>O ambiente tem dimensão <strong>[dimensões]</strong>, correspondendo a imagens capturadas em vários locais ao longo do tempo.
+
 <ul><li>[dimensões]
 
-<!-- Pergunta [dimensões] -->
-<details> <summary> 1D</summary>
-  ✖️ Incorreto.
+<details><summary>1D</summary>
+✖️ Incorreto — não representa imagens.
 </details>
-<details> <summary> 2D</summary>
-  ✖️ Incorreto — falta a componente temporal.
+
+<details><summary>2D</summary>
+✖️ Incorreto — falta a componente temporal.
 </details>
-<details> <summary> 3D</summary>
-  ✖️ Incorreto — não há perceção volumétrica.
+
+<details><summary>3D</summary>
+✖️ Incorreto — não há perceção volumétrica.
 </details>
-<details> <summary> 2D+1D</summary>
-  ✔️ Correto — imagens (2D) ao longo do tempo (1D).
+
+<details><summary>2D+1D</summary>
+✔️ Correto — imagens (2D) capturadas ao longo do tempo (1D).
 </details>
-<details> <summary> 3D+1D</summary>
-  ✖️ Incorreto.
+
+<details><summary>3D+1D</summary>
+✖️ Incorreto — não há dados tridimensionais.
 </details>
+
 </li></ul>
 </li>
-<li>Os atuadores são <strong>[atuadores]</strong>, usados para obter as imagens capturadas.
+
+<!-- ATUADORES -->
+<li>Os atuadores são <strong>[atuadores]</strong>, usados para emitir os alertas gerados pelo agente.
+
 <ul><li>[atuadores]
 
-<!-- Pergunta [atuadores] -->
-<details> <summary> Interface da aplicação</summary>
-  ✔️ Correto — o agente emite alertas via interface.
+<details><summary>Interface da aplicação</summary>
+✔️ Correto — o agente comunica alertas através da interface.
 </details>
-<details> <summary> Movimentação terrestre</summary>
-  ✖️ Incorreto — o agente não se move fisicamente.
+
+<details><summary>Movimentação terrestre</summary>
+✖️ Incorreto — o agente não se desloca fisicamente.
 </details>
-<details> <summary> Movimentação linear</summary>
-  ✖️ Incorreto.
+
+<details><summary>Movimentação linear</summary>
+✖️ Incorreto.
 </details>
-<details> <summary> Movimentação estrada</summary>
-  ✖️ Incorreto.
+
+<details><summary>Movimentação estrada</summary>
+✖️ Incorreto.
 </details>
-<details> <summary> Movimentação em espaço controlado</summary>
-  ✖️ Incorreto.
+
+<details><summary>Movimentação em espaço controlado</summary>
+✖️ Incorreto.
 </details>
-<details> <summary> Atuador específico</summary>
-  ✖️ Incorreto.
+
+<details><summary>Atuador específico</summary>
+✖️ Incorreto — não existe atuador físico dedicado.
 </details>
-<details> <summary> Movimentação aérea</summary>
-  ✖️ Incorreto.
+
+<details><summary>Movimentação aérea</summary>
+✖️ Incorreto.
 </details>
+
 </li></ul>
 </li>
-<li>Os sensores são <strong>[sensores]</strong>, usados para emitir o alerta da presença de uma pessoa na lista, e respetivo local.
+
+<!-- SENSORES -->
+<li>Os sensores são <strong>[sensores]</strong>, usados para carregar as imagens capturadas.
+
 <ul><li>[sensores]
 
-<!-- Pergunta [sensores] -->
-<details> <summary> Visão</summary>
-  ✖️ Incorreto — o agente não “vê”, recebe ficheiros.
+<details><summary>Visão</summary>
+✖️ Incorreto — o agente não “vê”, recebe ficheiros.
 </details>
-<details> <summary> Sensores de presença</summary>
-  ✖️ Incorreto.
+
+<details><summary>Sensores de presença</summary>
+✖️ Incorreto.
 </details>
-<details> <summary> GPS</summary>
-  ✖️ Incorreto.
+
+<details><summary>GPS</summary>
+✖️ Incorreto.
 </details>
-<details> <summary> Interface da aplicação</summary>
-  ✔️ Correto — recebe as imagens via interface.
+
+<details><summary>Interface da aplicação</summary>
+✔️ Correto — as imagens são carregadas via interface.
 </details>
+
 </li></ul>
-</li></ul>
+</li>
+
+</ul>
 
 <hr>
+
 <h3>Classificação do ambiente</h3>
-<ul><li>Observável
-      <details><summary> Completamente</summary>✔️ Correto.</details>
-      <details><summary> Parcialmente</summary>✖️ Incorreto.</details>
-</li><li>Determinismo
-      <details><summary> Determinístico</summary>✔️ Correto.</details>
-      <details><summary> Estocástico</summary>✖️ Incorreto.</details>
-</li><li>>Episódico / Sequencial
-      <details><summary> Episódico</summary>✔️ Correto.</details>
-      <details><summary> Sequencial</summary>✖️ Incorreto.</details>
-</li><li>Estático / Dinâmico
-      <details><summary> Estático</summary>✖️ Incorreto.</details>
-      <details><summary> Dinâmico</summary>✔️ Correto.</details>
-</li><li>Discreto / Contínuo
-      <details><summary> Discreto</summary>✖️ Incorreto.</details>
-      <details><summary> Contínuo</summary>✔️ Correto.</details>
-</li><li>Agentes
-      <details><summary> Uni‑Agente</summary>✔️ Correto.</details>
-      <details><summary> Multi‑Agente</summary>✖️ Incorreto.</details>
-</li></ul>
+
+<ul>
+
+<li>Observável
+  <details><summary>Completamente</summary>✔️ Correto — o agente recebe todas as imagens necessárias.</details>
+  <details><summary>Parcialmente</summary>✖️ Incorreto.</details>
+</li>
+
+<li>Determinismo
+  <details><summary>Determinístico</summary>✔️ Correto — o processamento é determinístico.</details>
+  <details><summary>Estocástico</summary>✖️ Incorreto.</details>
+</li>
+
+<li>Episódico / Sequencial
+  <details><summary>Episódico</summary>✔️ Correto — cada ficheiro é tratado como episódio independente.</details>
+  <details><summary>Sequencial</summary>✖️ Incorreto.</details>
+</li>
+
+<li>Estático / Dinâmico
+  <details><summary>Estático</summary>✖️ Incorreto.</details>
+  <details><summary>Dinâmico</summary>✔️ Correto — as imagens representam eventos que evoluem no tempo.</details>
+</li>
+
+<li>Discreto / Contínuo
+  <details><summary>Discreto</summary>✖️ Incorreto.</details>
+  <details><summary>Contínuo</summary>✔️ Correto — o fluxo temporal das imagens é contínuo.</details>
+</li>
+
+<li>Agentes
+  <details><summary>Uni‑Agente</summary>✔️ Correto — apenas um agente atua.</details>
+  <details><summary>Multi‑Agente</summary>✖️ Incorreto.</details>
+</li>
+
+</ul>
+
 </div>
 
 
