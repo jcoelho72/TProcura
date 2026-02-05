@@ -1,0 +1,489 @@
+@page tutorial_introducao1exe ✏️ Introdução - Exercícios
+
+\htmlonly
+
+<div style="padding:12px; border:1px solid #444; border-radius:6px; background:#222; margin:20px 0; color:#ddd;">
+  <div style="font-size:12px; opacity:0.8; margin-bottom:6px;">
+    <a href="tutorial_introducao.html" style="color:#9cf; text-decoration:none;">Tutorial: Introdução</a>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+    <span style="opacity:0.7;">Inteligência Artificial ›</span>
+    <a href="tutorial_introducao1lit.html" style="color:#9cf;">📖 Leitura</a>
+    <a href="tutorial_introducao1.html" style="color:#9cf;">👓 Introdução</a>
+    <a href="tutorial_introducao1exe.html" style="color:#9cf;">✏️ Exercícios</a>
+    <span style="opacity:0.7;">Conceito de Agente ›</span>
+    <a href="tutorial_introducao2lit.html" style="color:#9cf;">📖 Leitura</a>
+    <a href="tutorial_introducao2.html" style="color:#9cf;">👓 Conceito de Agente</a>
+    <a href="tutorial_introducao2exe.html" style="color:#9cf;">✏️ Exercícios</a>
+  </div>
+</div>
+
+\endhtmlonly
+
+
+## Exercícios
+
+Responda à pergunta ou comente a frase sobre a Inteligência Artificial.
+
+\htmlonly
+
+<p></p>
+
+<div id="todas-perguntas" style="display:none;">
+
+<!-- perguntas sobre o recurso em estudo -->
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Certamente os computadores não podem ser inteligentes; apenas fazem o que os programadores lhes dizem para fazer.” Comente.</summary>
+👉 Esta afirmação parte de uma visão limitada do que é “inteligência”.  
+Embora os computadores executem instruções, **os agentes inteligentes não são apenas listas de comandos**: percecionam o ambiente, tomam decisões, aprendem padrões e adaptam o comportamento.  
+A inteligência artificial não é “seguir ordens”, mas sim **maximizar um indicador de desempenho num ambiente complexo**, muitas vezes de formas que o programador não antecipou explicitamente.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Como podemos definir inteligência num agente artificial?”</summary>
+👉 Uma definição funcional e amplamente aceite é: **um agente é inteligente se escolhe ações que maximizam o seu desempenho, dadas as perceções disponíveis**.  
+Não exige consciência, emoções ou criatividade humana — apenas comportamento racional orientado a objetivos.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Existem humanos inteligentes? Como comparamos inteligência humana com artificial?”</summary>
+👉 A inteligência humana é multifacetada: envolve raciocínio, criatividade, emoção, intuição, linguagem e consciência.  
+A inteligência artificial é **especializada**: excelente em tarefas específicas, mas sem compreensão geral.  
+Comparar ambas só faz sentido dentro de tarefas concretas — e aí a IA pode superar humanos, mas não substitui a amplitude da inteligência humana.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Quando um sistema pode ser considerado autónomo?”</summary>
+👉 Um sistema é autónomo quando **toma decisões sem intervenção humana direta**, usando perceções, objetivos e um modelo interno.  
+A autonomia não implica perfeição — implica apenas que o comportamento resulta do próprio agente, não de comandos externos contínuos.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “São as ações de um agente sempre previsíveis?”</summary>
+👉 Não.  
+Mesmo agentes determinísticos podem ter comportamentos difíceis de prever devido à complexidade do ambiente, à quantidade de dados ou ao uso de modelos de aprendizagem.  
+Em agentes estocásticos, a imprevisibilidade faz parte do próprio modelo.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “A inteligência artificial pode ser criativa?”</summary>
+👉 Depende do que entendemos por criatividade.  
+A IA pode **gerar soluções novas**, recombinar informação, produzir arte ou encontrar padrões inesperados.  
+Mas não tem intenção, emoção ou consciência — a criatividade é funcional, não experiencial.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “As mudanças recentes na IA alteram a forma como definimos inteligência?”</summary>
+👉 Sim.  
+Modelos modernos mostram que comportamentos inteligentes podem surgir de **aprendizagem estatística em larga escala**, sem raciocínio simbólico explícito.  
+Isso levou a redefinir inteligência como **capacidade de agir eficazmente**, não como capacidade de “pensar como humanos”.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Com os avanços atuais, será que a IA pode substituir humanos?”</summary>
+👉 A IA substitui tarefas, não pessoas.  
+É excelente em tarefas repetitivas, previsíveis ou baseadas em padrões.  
+Mas falha em tarefas que exigem empatia, julgamento ético, compreensão profunda ou criatividade humana genuína.  
+A substituição é **parcial e contextual**, não total.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Será que a IA pode tomar decisões éticas?”</summary>
+👉 A IA não tem valores próprios; apenas segue regras e otimiza métricas definidas por humanos.  
+Pode aplicar princípios éticos programados, mas **não compreende moralidade**.  
+A responsabilidade ética permanece sempre com os humanos que a projetam e utilizam.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Como pode a introspeção (dizer o que se está a pensar) ser incorreta? Será possível estar errado sobre o que se está a pensar?</summary>
+👉 A introspeção é limitada: nem sempre temos acesso consciente aos processos mentais que originam os nossos pensamentos.  
+Podemos racionalizar decisões tomadas de forma automática, atribuir motivos errados às nossas ações ou interpretar mal emoções e impulsos.  
+Assim, é possível estar errado sobre “o que se está a pensar”, porque a mente humana não é totalmente transparente para si própria.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Certamente os computadores não podem ser inteligentes, apenas podem fazer o que os seus programadores lhes disseram para fazer.” Comente.</summary>
+👉 Esta visão ignora que sistemas inteligentes podem **aprender padrões**, **adaptar-se ao ambiente** e **tomar decisões não previstas explicitamente** pelo programador.  
+O programador define regras gerais e objetivos, mas o comportamento emergente pode ser complexo e não antecipado.  
+A inteligência artificial não é “seguir instruções”, mas sim **maximizar desempenho num ambiente complexo**.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Existem hoje em dia máquinas que pensam, aprendem e criam. A capacidade destas máquinas aumenta rapidamente, pelo que num futuro próximo ultrapassarão as capacidades da mente humana.” Comente.</summary>
+👉 As máquinas já superam humanos em tarefas específicas (xadrez, reconhecimento de padrões, cálculo).  
+Mas inteligência geral envolve criatividade profunda, consciência, emoção, intuição e compreensão contextual — áreas onde a IA ainda é limitada.  
+Ultrapassar “a mente humana” depende do que entendemos por inteligência; em tarefas específicas, sim; em inteligência geral, ainda não.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Quando uma máquina passar o teste completo de Turing, a investigação científica torna-se desnecessária.” Concorda?</summary>
+👉 Não.  
+O teste de Turing avalia apenas **comportamento linguístico indistinguível de um humano**, não compreensão, criatividade científica ou capacidade de descoberta.  
+Mesmo que uma máquina passe o teste, isso não implica que compreenda ciência, que formule teorias ou que substitua investigação humana.  
+O teste é um marco, não um fim.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> São as ações de reflexo (como retirar a mão de um objeto quente) racionais? São inteligentes?</summary>
+👉 Não são racionais nem inteligentes: são respostas automáticas mediadas pela medula espinhal, sem deliberação.  
+São úteis e adaptativas, mas não envolvem raciocínio, planeamento ou escolha consciente.  
+Logo, não são consideradas ações inteligentes.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> A inteligência artificial pode ser considerada uma forma de expressão cultural moderna?</summary>
+👉 Sim, em certo sentido.  
+A IA reflete valores, prioridades e tensões sociais: desde arte gerada por IA até algoritmos que moldam comportamentos.  
+Também influencia cultura ao alterar comunicação, trabalho e criatividade.  
+É simultaneamente produto e agente transformador da cultura contemporânea.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> A inteligência artificial poderá libertar o ser humano da necessidade de pensar?</summary>
+👉 A IA pode automatizar tarefas cognitivas, mas não substitui pensamento crítico, criatividade, ética ou julgamento humano.  
+Delegar totalmente o pensamento seria perigoso: perderíamos autonomia, compreensão e capacidade de decisão.  
+A IA deve complementar, não substituir, o pensamento humano.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Além do teste de Turing, que outros critérios podem avaliar se uma máquina “pensa”?</summary>
+👉 Podem incluir:  
+- **Criatividade** (capacidade de gerar ideias novas)  
+- **Empatia simulada** (responder adequadamente a emoções humanas)  
+- **Raciocínio moral**  
+- **Consciência situacional**  
+- **Capacidade de aprendizagem autónoma**  
+Nenhum critério isolado é suficiente; pensar é multidimensional.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> As mudanças trazidas pela IA são diferentes das de outras tecnologias?</summary>
+👉 Sim e não.  
+Como outras tecnologias, a IA aumenta eficiência e altera profissões.  
+Mas distingue-se por **automatizar tarefas cognitivas**, não apenas físicas, e por influenciar decisões, cultura e relações sociais.  
+O impacto é mais profundo e transversal.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Animais, humanos e computadores não podem ser inteligentes; apenas seguem leis físicas.” Comente.</summary>
+👉 Tudo no universo segue leis físicas, mas isso não impede comportamentos inteligentes.  
+A inteligência é definida funcionalmente: **agir de forma eficaz num ambiente**.  
+Se um sistema — biológico ou artificial — toma decisões adaptativas, é inteligente, independentemente da base física.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Com os avanços da IA, os cargos técnicos serão substituídos por agentes artificiais?</summary>
+👉 Muitos cargos técnicos podem ser automatizados, mas isso cria novas funções humanas: supervisão, ética, design, validação, interpretação.  
+A IA desloca competências, mas não elimina a necessidade de humanos — especialmente em decisões complexas e estratégicas.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Como a abordagem determinística dos algoritmos se relaciona com o livre-arbítrio humano?</summary>
+👉 Algoritmos seguem regras determinísticas ou probabilísticas; humanos combinam biologia, experiência e contexto.  
+A tensão surge porque decisões humanas parecem livres, mas podem ser influenciadas por fatores inconscientes.  
+A discussão envolve filosofia, neurociência e ética — não apenas computação.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> A ausência de emoções na IA é vantagem ou limitação?</summary>
+👉 Vantagem: decisões consistentes, sem enviesamentos emocionais.  
+Limitação: falta de empatia, criatividade profunda e compreensão social.  
+A emoção humana é parte essencial da inteligência; a IA é racional mas não compreende significado emocional.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Compare aprendizagem baseada em dados (IA) com aprendizagem experiencial humana.</summary>
+👉 Semelhanças: ambas identificam padrões e ajustam comportamento.  
+Diferenças: humanos aprendem com contexto, emoção, motivação e significado; IA aprende estatisticamente.  
+Cada abordagem pode inspirar a outra: IA pode aprender com menos dados; humanos podem aprender com mais rigor.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Considera importante o teste de Turing? Justifique.</summary>
+👉 É importante historicamente: introduziu a ideia de avaliar inteligência pelo comportamento.  
+Hoje, é limitado: não mede compreensão, criatividade ou raciocínio.  
+Continua útil como reflexão filosófica, mas não como medida completa de inteligência.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> A IA pode tornar-se mais inteligente do que os humanos?</summary>
+👉 Em tarefas específicas, já é.  
+Em inteligência geral, ainda não.  
+Se ultrapassar humanos, surgem questões éticas: controlo, alinhamento, impacto social e responsabilidade.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Os computadores podem pensar?</summary>
+👉 Depende da definição de “pensar”.  
+Se pensar = raciocinar e resolver problemas, então sim.  
+Se pensar = ter consciência, intenção e subjetividade, então não.  
+A resposta depende da perspetiva filosófica adotada.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> A criatividade é essencial para a IA? Pode a IA criar arte?</summary>
+👉 A IA pode gerar arte combinando padrões, mas não tem intenção estética.  
+A criatividade humana envolve emoção, contexto e significado.  
+A IA pode ser criativa funcionalmente, mas não experiencialmente.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Como garantir imparcialidade e responsabilidade em IA aplicada à justiça e saúde?</summary>
+👉 É necessário:  
+- auditoria de algoritmos  
+- transparência  
+- supervisão humana  
+- métricas de equidade  
+- responsabilidade legal clara  
+A IA deve apoiar decisões, não substituí-las totalmente.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Defina Inteligência e Inteligência Artificial.</summary>
+👉 Inteligência: capacidade de agir eficazmente num ambiente, aprendendo e adaptando-se.  
+IA: estudo e construção de agentes que maximizam desempenho com base em perceções.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Expectativas iniciais da IA nos anos 50/60.</summary>
+👉 Acreditava-se que problemas difíceis seriam resolvidos rapidamente.  
+Havia otimismo excessivo sobre linguagem natural, visão e raciocínio.  
+A realidade mostrou que inteligência é muito mais complexa.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Descreva o teste de Turing. É importante?</summary>
+👉 O teste avalia se uma máquina pode manter uma conversa indistinguível de um humano.  
+É importante historicamente, mas limitado como medida de inteligência real.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Qual é o principal objetivo da IA?</summary>
+👉 Construir agentes capazes de agir racionalmente.  
+As consequências incluem automação, novas profissões, desafios éticos e transformação social profunda.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> É possível criar um sistema de IA totalmente autónomo?</summary>
+👉 Tecnicamente possível em alguns domínios, mas eticamente complexo.  
+A responsabilidade por decisões autónomas permanece humana.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Existe limite para a evolução da IA?</summary>
+👉 Pode haver limites computacionais, físicos ou teóricos.  
+Mas não sabemos ainda.  
+A IA pode ultrapassar capacidades humanas em áreas que não compreendemos totalmente.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Diferenças entre inteligência artificial, animal e humana.</summary>
+👉 IA: especializada, rápida, sem consciência.  
+Animal: instintiva, adaptativa.  
+Humana: simbólica, emocional, criativa, consciente.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Identifique uma limitação atual da IA e um método para a colmatar.</summary>
+👉 Limitação: falta de compreensão semântica.  
+Método: modelos multimodais, aprendizagem por reforço, raciocínio simbólico híbrido.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> É suficiente que um ser artificial saiba aprender?</summary>
+👉 Não.  
+Aprender não implica compreender, raciocinar, ter objetivos ou agir autonomamente.  
+A inteligência exige múltiplas capacidades integradas.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> É suficiente que um ser artificial saiba programar-se a si próprio?</summary>
+👉 Não.  
+Auto-modificação não garante inteligência geral.  
+É necessário raciocínio, objetivos, perceção e alinhamento com o ambiente.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Será que a criatividade pode ser reduzida a padrões e cálculos?</summary>
+👉 A IA pode gerar combinações novas, mas não tem intenção estética ou significado subjetivo.  
+A criatividade humana envolve emoção, contexto e propósito — dimensões ausentes na IA.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Supondo que tem um agente artificial que conduz um automóvel e replica perfeitamente o estilo de condução humano. Seria prudente aprovar uma lei que proibisse condutores humanos?</summary>
+👉 Mesmo que um agente artificial conduza melhor do que humanos, a decisão de proibir condutores humanos envolve ética, autonomia individual, responsabilidade legal e impacto social.  
+A segurança é importante, mas retirar totalmente o controlo humano levanta questões profundas sobre liberdade, confiança na tecnologia e aceitação social.  
+A prudência exige equilíbrio entre segurança, autonomia e responsabilidade.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> “Supondo que um ser é racional se toma as ações corretas dado o conhecimento que tem, então os seres humanos não são racionais.” Comente.</summary>
+👉 Humanos têm limitações cognitivas, enviesamentos, emoções e informação incompleta.  
+Frequentemente tomam decisões subótimas, impulsivas ou contraditórias.  
+Se definirmos racionalidade como “agir sempre da melhor forma possível”, então os humanos são apenas **limitadamente racionais**.  
+A racionalidade humana é prática, não perfeita.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Um sistema de IA que supera humanos em tarefas específicas pode ser considerado consciente?</summary>
+👉 Não.  
+Desempenho elevado não implica consciência, subjetividade ou experiência interna.  
+Consciência envolve qualidades fenomenológicas — algo que a IA não possui.  
+Falta-lhe intenção, autoconsciência e vivência subjetiva.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Hoje em dia é possível distinguir diversos tipos de inteligência: humana, artificial e animal. Comente esta distinção.</summary>
+👉 A inteligência humana é simbólica, emocional e criativa; a animal é instintiva e adaptativa; a artificial é estatística e orientada a tarefas.  
+Cada tipo tem forças e limitações próprias.  
+A IA supera humanos em tarefas exaustivas, mas não possui compreensão profunda ou consciência.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Para construir um ser inteligente, basta que ele tenha capacidade de aprendizagem?</summary>
+👉 Não.  
+Aprender é essencial, mas não suficiente.  
+Inteligência exige objetivos, perceção, raciocínio, planeamento, adaptação e interação com o ambiente.  
+Aprendizagem isolada não cria inteligência geral.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Para fazer um ser artificial realmente inteligente, basta que ele saiba programar-se a si próprio?</summary>
+👉 Não.  
+Auto-modificação é poderosa, mas não garante compreensão, raciocínio ou alinhamento com objetivos.  
+A inteligência exige integração de múltiplas capacidades, não apenas reescrever código.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Supondo que um agente artificial conduz tão bem quanto um humano, seria racional substituir todos os condutores humanos?</summary>
+👉 A decisão envolve segurança, ética, autonomia e impacto social.  
+Mesmo que a IA seja mais segura, retirar o controlo humano levanta questões de liberdade, responsabilidade e confiança.  
+A racionalidade técnica não é suficiente para justificar uma decisão política ou social tão profunda.
+</details>
+</div>
+
+<div class="pergunta">
+<details>
+<summary><strong>🧠 Pergunta:</strong> Um sistema de IA que supera humanos em tarefas específicas pode ser considerado consciente? O que falta?</summary>
+👉 Falta-lhe subjetividade, experiência interna, autoconsciência e intenção.  
+Desempenho não implica consciência.  
+A IA processa informação; não “experiencia” o mundo.
+</details>
+</div>
+
+
+</div>
+
+<div id="perguntas-escolhidas"></div>
+
+<p>Nova pergunta: <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a></p>
+
+<div style="margin:30px 0; display:flex; justify-content:space-between;">
+  <a href="tutorial_construtivas.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     ◀ Passo anterior </a>
+  <a href="tutorial_construtivas3a.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+     Próximo passo ▶ </a>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const todas = Array.from(document.querySelectorAll("#todas-perguntas .pergunta"));
+  const idx = Math.floor(Math.random() * todas.length);
+  const destino = document.getElementById("perguntas-escolhidas");
+  destino.appendChild(todas[idx]);
+});
+</script>
+
+\endhtmlonly

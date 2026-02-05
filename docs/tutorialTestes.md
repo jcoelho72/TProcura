@@ -25,5 +25,42 @@ Resultados no Deucalion:
 - [Resultdos Adversa](teste_jogo_em_linha.html) - separar do Jogo em Linha?
 
 
+# esboço Copilot
+
+## Testes Computacionais em IA — Estrutura sugerida
+
+1. Porque testar?
+- variabilidade
+- reprodutibilidade
+- significância estatística
+- volume de testes
+
+2. Tipos de testes computacionais
+- testes determinísticos vs estocásticos
+- testes paramétricos vs não paramétricos
+- comparação de algoritmos
+- comparação de parâmetros
+- análise de sensibilidade
+
+3. Estatística mínima necessária
+- média, variância, desvio padrão
+- intervalos de confiança
+- teste t (paramétrico)
+- Wilcoxon/Mann‑Whitney (não paramétrico)
+- tamanho de amostra
+
+4. Ferramentas de análise
+- PowerPivot/DAX - Excel avançado
+- Python (opcional)
+- alternativas (R, pandas)
+
+5. Execução distribuída
+- porque clusters são essenciais
+- volume de testes vs significância
+- como o TProcura abstrai MPI
+- boas práticas
+
+6. Exemplo completo com os teus dados
+- problema, algoritmos, parâmetros, resultados, análise, conclusões
 
 

@@ -214,7 +214,7 @@ Problemas de exemplo da classe TProcura:
 
 Problemas de exemplo da classe TProcuraConstrutiva:
 1. Aspirador ([parte 1](teste_aspirador1.html), [parte 2](teste_aspirador2.html))
-2. [Puzzle 8](teste_puzzle8.html)
+2. Puzzle 8 ([parte 1](teste_puzzle8.html), [parte 2](teste_puzzle8b.html))
 3. [8 Damas](teste_8damas.html)
 4. [Partição](teste_particao.html)
 
