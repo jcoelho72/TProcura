@@ -125,6 +125,210 @@ Exercícios</h2>
 
 <!-- perguntas sobre o recurso em estudo -->
 
+<div class="pergunta">
+
+<p><strong>🧩 Exercício:</strong> Suponha que tem um agente que processa imagens obtidas através de webcams num centro comercial, e procura a identificação de uma lista pré‑determinada de pessoas, gerando alertas para a segurança quando encontra alguém da lista.</p>
+
+<hr>
+
+<h4>1. Indicador de desempenho</h4>
+
+<details>
+  <summary>Minimizar</summary>
+  ✖️ <strong>Incorreto.</strong> O objetivo não é reduzir algo, mas sim aumentar a taxa de acerto do sistema.
+</details>
+
+<details>
+  <summary>Maximizar</summary>
+  ✔️ <strong>Correto.</strong> O agente deve maximizar a percentagem de acerto na identificação das pessoas da lista.
+</details>
+
+<hr>
+
+<h4>2. Unidade / período de medição</h4>
+
+<details>
+  <summary>os metros</summary>
+  ✖️ <strong>Incorreto.</strong> A distância não é relevante para medir desempenho.
+</details>
+
+<details>
+  <summary>as horas</summary>
+  ✖️ <strong>Incorreto.</strong> O tempo pode ser útil para estatísticas, mas não mede diretamente o desempenho.
+</details>
+
+<details>
+  <summary>a percentagem</summary>
+  ✔️ <strong>Correto.</strong> A taxa de acerto é naturalmente expressa em percentagem.
+</details>
+
+<details>
+  <summary>as horas vezes a área</summary>
+  ✖️ <strong>Incorreto.</strong> Não é uma métrica significativa para este agente.
+</details>
+
+<details>
+  <summary>os metros quadrados</summary>
+  ✖️ <strong>Incorreto.</strong> A área monitorizada não mede desempenho.
+</details>
+
+<details>
+  <summary>o número</summary>
+  ✖️ <strong>Incorreto.</strong> Um número absoluto não expressa qualidade de deteção.
+</details>
+
+<hr>
+
+<h4>3. Ambiente — dimensão</h4>
+
+<details>
+  <summary>2D</summary>
+  ✖️ <strong>Incorreto.</strong> As imagens têm dimensão espacial, mas falta a componente temporal.
+</details>
+
+<details>
+  <summary>3D</summary>
+  ✖️ <strong>Incorreto.</strong> O agente não recebe informação volumétrica, apenas imagens.
+</details>
+
+<details>
+  <summary>2D+1D</summary>
+  ✔️ <strong>Correto.</strong> As imagens são 2D e chegam ao longo do tempo (1D temporal).
+</details>
+
+<details>
+  <summary>1D</summary>
+  ✖️ <strong>Incorreto.</strong> Não corresponde ao tipo de perceção do agente.
+</details>
+
+<hr>
+
+<h4>4. Atuadores</h4>
+
+<details>
+  <summary>Interface da aplicação</summary>
+  ✔️ <strong>Correto.</strong> O agente atua emitindo alertas através da interface.
+</details>
+
+<details>
+  <summary>Movimentação terrestre</summary>
+  ✖️ <strong>Incorreto.</strong> O agente não se desloca fisicamente.
+</details>
+
+<details>
+  <summary>Movimentação linear</summary>
+  ✖️ <strong>Incorreto.</strong> Não existe movimento físico.
+</details>
+
+<details>
+  <summary>Movimentação estrada</summary>
+  ✖️ <strong>Incorreto.</strong> Não é um agente móvel.
+</details>
+
+<details>
+  <summary>Movimentação em espaço controlado</summary>
+  ✖️ <strong>Incorreto.</strong> Não se aplica.
+</details>
+
+<details>
+  <summary>Atuador específico</summary>
+  ✖️ <strong>Incorreto.</strong> Não existe um atuador físico dedicado.
+</details>
+
+<details>
+  <summary>Movimentação aérea</summary>
+  ✖️ <strong>Incorreto.</strong> O agente não voa nem se move.
+</details>
+
+<hr>
+
+<h4>5. Sensores</h4>
+
+<details>
+  <summary>Visão</summary>
+  ✖️ <strong>Incorreto.</strong> O agente não “vê” diretamente — recebe imagens via interface.
+</details>
+
+<details>
+  <summary>Sensores de presença</summary>
+  ✖️ <strong>Incorreto.</strong> Não utiliza sensores físicos de presença.
+</details>
+
+<details>
+  <summary>GPS</summary>
+  ✖️ <strong>Incorreto.</strong> Não há localização geográfica envolvida.
+</details>
+
+<details>
+  <summary>Interface da aplicação</summary>
+  ✔️ <strong>Correto.</strong> O agente recebe as imagens através da interface.
+</details>
+
+<hr>
+
+<h4>6. Classificação do ambiente</h4>
+
+<details>
+  <summary>Observável completamente</summary>
+  ✔️ <strong>Correto.</strong> O agente recebe todas as imagens disponíveis; não há estado oculto relevante.
+</details>
+
+<details>
+  <summary>Observável parcialmente</summary>
+  ✖️ <strong>Incorreto.</strong> Embora existam ângulos mortos no mundo real, no modelo do problema o agente recebe toda a informação necessária.
+</details>
+
+<details>
+  <summary>Determinístico</summary>
+  ✔️ <strong>Correto.</strong> Dado o estado (imagem) e o algoritmo, o resultado é sempre o mesmo.
+</details>
+
+<details>
+  <summary>Estocástico</summary>
+  ✖️ <strong>Incorreto.</strong> Não há aleatoriedade no modelo.
+</details>
+
+<details>
+  <summary>Episódico</summary>
+  ✔️ <strong>Correto.</strong> Cada imagem pode ser tratada como um episódio independente.
+</details>
+
+<details>
+  <summary>Sequencial</summary>
+  ✖️ <strong>Incorreto.</strong> O agente não depende de estados anteriores para decidir.
+</details>
+
+<details>
+  <summary>Dinâmico</summary>
+  ✔️ <strong>Correto.</strong> O ambiente muda enquanto o agente processa (pessoas movem-se).
+</details>
+
+<details>
+  <summary>Estático</summary>
+  ✖️ <strong>Incorreto.</strong> O ambiente não permanece fixo.
+</details>
+
+<details>
+  <summary>Contínuo</summary>
+  ✔️ <strong>Correto.</strong> As imagens chegam continuamente ao longo do tempo.
+</details>
+
+<details>
+  <summary>Discreto</summary>
+  ✖️ <strong>Incorreto.</strong> Não há estados discretos bem definidos.
+</details>
+
+<details>
+  <summary>Uni‑Agente</summary>
+  ✔️ <strong>Correto.</strong> Apenas um agente está a atuar.
+</details>
+
+<details>
+  <summary>Multi‑Agente</summary>
+  ✖️ <strong>Incorreto.</strong> Não há outros agentes a interagir.
+</details>
+
+</div>
 
 
 
