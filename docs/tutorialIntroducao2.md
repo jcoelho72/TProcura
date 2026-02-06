@@ -13,7 +13,7 @@
     <a href="tutorial_introducao1exe.html" style="color:#9cf;">✏️ Exercícios</a>
     <span style="opacity:0.7;">Conceito de Agente ›</span>
     <a href="tutorial_introducao2lit.html" style="color:#9cf;">📖 Leitura</a>
-    <a href="tutorial_introducao2.html" style="color:#9cf;">👓 Conceito de Agente</a>
+    <span style="font-weight:bold; text-decoration:underline; color:#fff;">👓 Conceito de Agente</span>
     <a href="tutorial_introducao2exe.html" style="color:#9cf;">✏️ Exercícios</a>
   </div>
 </div>
@@ -98,9 +98,9 @@
 <p>Nova pergunta: <a href="" style="color:#9cf; font-weight:bold; margin-left:10px;">🎲</a></p>
 
 <div style="margin:30px 0; display:flex; justify-content:space-between;">
-  <a href="tutorial_construtivaslit.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+  <a href="tutorial_introducao2lit.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
      ◀ Passo anterior </a>
-  <a href="tutorial_construtivas3b.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
+  <a href="tutorial_introducao2exe.html" style="padding:6px 12px; background:#222; border:1px solid #444; border-radius:4px; color:#9cf;">
      Próximo passo ▶ </a>
 </div>
 
