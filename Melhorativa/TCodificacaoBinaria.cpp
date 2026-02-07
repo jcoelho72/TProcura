@@ -23,22 +23,13 @@ void TCodificacaoBinaria::Debug(bool completo) {
 }
 
 void TCodificacaoBinaria::ResetParametros() {
-	static const char* nomesCruzamento[] = {
-			"uniforme",
-			"2-pontos",
-			"3-pontos",
-			"4-pontos",
-			"5-pontos",
-			"6-pontos",
-			"7-pontos",
-			"8-pontos",
-			"9-pontos",
-			"10-pontos" };
 	TProcuraMelhorativa::ResetParametros();
 
 	// parametros da codificação binária
 	parametro += {
-		{ "TIPO_CRUZAR", 1, 0, 10, "TIPO_CRUZAR: 1 - um ponto, >=2 N-pontos, 0 - uniforme", nomesCruzamento },
+		{ "TIPO_CRUZAR", 1, 0, 10, "TIPO_CRUZAR: 1 - um ponto, >=2 N-pontos, 0 - uniforme", {
+			"uniforme", "2-pontos", "3-pontos", "4-pontos", "5-pontos",
+			"6-pontos", "7-pontos", "8-pontos", "9-pontos", "10-pontos" }},
 		{ "TIPO_MUTAR", 0,0,100, "TIPO_MUTAR: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada bit, em percentagem (1 a 100)" },
 		{ "TIPO_VIZINHO", 1,1,1000, "Troca segmento: 1 - apenas 1 bit de cada vez, >=2 troca um segmento de N bits" }
 	};

@@ -50,7 +50,7 @@ public:
 	void MostrarSolucao(void) { Debug(); }
 	void ResetParametros() {
 		TProcuraMelhorativa::ResetParametros();
-		instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
+		instancia = { "", 8,4,MAX_DAMAS};
 	}
 
 	// metodos virtuais redefinidos de TProcuraMelhorativa
@@ -91,7 +91,7 @@ public:
 
 	void ResetParametros() {
 		TCodificacaoInteira::ResetParametros();
-		instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
+		instancia = { "", 8,4,MAX_DAMAS};
 	}
 
 	TPonto Duplicar(void) {
@@ -169,7 +169,7 @@ public:
 
 	void ResetParametros() {
 		TCodificacaoPermutacao::ResetParametros();
-		instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
+		instancia = { "", 8,4,MAX_DAMAS};
 	}
 
 	void Debug(bool completo) {

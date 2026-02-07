@@ -31,12 +31,12 @@ TProcuraAdversa::~TProcuraAdversa(void)
 
 void TProcuraAdversa::ResetParametros()
 {
-	static const char* nomesAlgoritmos[] = { "MiniMax",	"MiniMax alfa/beta" };
 	TProcuraConstrutiva::ResetParametros();
 
 	// adicionar parâmetros da procura adversa
 	// alterar algoritmos
-	parametro[ALGORITMO] = { "ALGORITMO",2,1,2,"Seleção do algoritmo de procura adversa base.", nomesAlgoritmos };
+	parametro[ALGORITMO] = { "ALGORITMO",2,1,2,"Seleção do algoritmo de procura adversa base.",
+		{ "MiniMax", "MiniMax alfa/beta" } };
 
 	Parametro(LIMITE) = 0; // procura iterativa preferencial
 	Parametro(ESTADOS_REPETIDOS) = 1; // nas procuras adversas, não utilizar este parametro (utilizar ordenar=2)
@@ -81,7 +81,7 @@ void TProcuraAdversa::DebugChamada(bool noFolha, int alfa, int beta) {
 		if (alfa || beta)
 			printf(" α=%d β=%d ═══", alfa, beta);
 		if (pai != NULL)
-			printf(" %-2s%s", Icon(EIcon::ACCAO), pai->Acao(this)); // mostra sempre a ação
+			printf(" %-2s%s", Icon(EIcon::ACCAO), *pai->Acao(this)); // mostra sempre a ação
 		if ((noFolha && Parametro(NIVEL_DEBUG) >= DETALHE) ||
 			Parametro(NIVEL_DEBUG) >= COMPLETO)
 			Debug();
@@ -256,7 +256,7 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 			if (Parametro(NIVEL_DEBUG) > NADA && solOK != NULL)
 				printf("\n │ %-2s%-2s %d %-2s%s %-2s%d ",
 					Icon(EIcon::ARVORE), Icon(EIcon::LIMITE), nivel,
-					Icon(EIcon::ACCAO), Acao(solOK), Icon(EIcon::SUCESSO), resultado);
+					Icon(EIcon::ACCAO), *Acao(solOK), Icon(EIcon::SUCESSO), resultado);
 		}
 		else
 			completo = false;
@@ -463,7 +463,7 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 // utilizar para executar testes empíricos, utilizando todas as instâncias,
 // Utiliza as configurações existentes, ou parâmetros atuais
 // Efetua um torneio entre configurações
-void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, const char* ficheiro) {
+void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 	TVector<TResultadoJogo> resultados; // guarda resultado dos jogos (qualquer ordem)
 	TVector<int> atual;
 	double periodoReporte = 60;
@@ -521,13 +521,13 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, const char* ficheir
 				}
 			}
 
-	if (ficheiro == NULL || strlen(ficheiro) <= 1) {
+	if (ficheiro.Empty()) {
 		MostrarTorneio(torneio, true);
 		MostrarConfiguracoes(1);
 	}
 	else {
 		RelatorioCSV(resultados, ficheiro) &&
-			printf("\n │ Ficheiro %s gravado.", ficheiro);
+			printf("\n │ Ficheiro %s gravado.", *ficheiro);
 	}
 
 	if (mpiCount > 1 && modoMPI == 0)
@@ -540,7 +540,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, const char* ficheir
 	Inicializar();
 	printf("\n═╧═ %-2s Fim do Teste (%-2s%d  %-2s%s) ═══",
 		Icon(EIcon::FIM), Icon(EIcon::PROCESSO), mpiID,
-		Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)));
+		Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE)));
 	fflush(stdout);
 }
 
@@ -610,7 +610,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 	}
 }
 
-void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, const char* ficheiro)
+void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro)
 {
 #ifdef MPI_ATIVO
 	int dados[6] = { 0, 0, 0, 4,0,0 }; // instância, brancas, pretas
@@ -701,7 +701,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, const char* f
 			// mostrar uma linha por cada execução
 			Debug(ATIVIDADE, false,
 				"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s ",
-				Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
+				Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE)),
 				Icon(EIcon::TAREFA), totalTarefas - tarefas.Count(),
 				Icon(EIcon::INST), resultados.Last().instancia,
 				Icon(EIcon::CONF), resultados.Last().brancas,
@@ -743,14 +743,14 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, const char* f
 		Debug(ATIVIDADE, false,
 			"\n ├─ %-2s Ficheiro %s.csv gravado.\n"
 			" │  %-2s Tempo real: %s",
-			Icon(EIcon::RESULT), ficheiro,
-			Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE))) &&
+			Icon(EIcon::RESULT), *ficheiro,
+			Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE))) &&
 		Debug(ATIVIDADE, false, "\n │  %-2s CPU total: %s",
-			Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE) * (backupCount - 1))) &&
+			Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE) * (backupCount - 1))) &&
 		Debug(ATIVIDADE, false, "\n │  %-2s Espera do gestor: %s",
-			Icon(EIcon::TEMPO), MostraTempo(esperaGestor)) &&
+			Icon(EIcon::TEMPO), *MostraTempo(esperaGestor)) &&
 		Debug(ATIVIDADE, false, "\n │  %-2s Espera trabalhadores: %s",
-			Icon(EIcon::TEMPO), MostraTempo(esperaTrabalhadores)) &&
+			Icon(EIcon::TEMPO), *MostraTempo(esperaTrabalhadores)) &&
 		Debug(ATIVIDADE, false, "\n │  %-2s Utilização:\n │  - Total: %.1f%%\n │  - Gestor: %.1f%%\n │  - Trabalhadores: %.1f%% ",
 			Icon(EIcon::TAXA), taxaUtilizacao * 100, taxaUtilizacaoG * 100, taxaUtilizacaoT * 100);
 	mpiCount = backupCount;
@@ -760,7 +760,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, const char* f
 #endif
 }
 
-void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, const char* ficheiro)
+void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, TString ficheiro)
 {
 #ifdef MPI_ATIVO
 	int dados[6] = { 0, 0, 0, 0, 0, 0 }; // instância, brancas, pretas
@@ -807,15 +807,12 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, const ch
 
 
 
-bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, const char* ficheiro) {
-	char* contexto;
-	TString ficheiroCpy = ficheiro;
-	char* pt = compat::strtok(ficheiroCpy.Data(), " \n\t\r", &contexto);
+bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString ficheiro) {
 	TString str;
 	if (mpiCount > 1)
-		str.printf("%s_%d.csv", pt, mpiID);
+		str.printf("%s_%d.csv", ficheiro.tok().First(), mpiID);
 	else
-		str.printf("%s.csv", pt);
+		str.printf("%s.csv", ficheiro.tok().First());
 	FILE* f = compat::fopen(str, "wb");
 
 	if (f == NULL) {
@@ -835,22 +832,22 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, const ch
 			resultado.nJogadas,
 			resultado.tempoBrancas,
 			resultado.tempoPretas,
-			(gravarSolucao ? (const char *) resultado.jogo : ""));
+			(gravarSolucao ? *resultado.jogo : ""));
 
 	// No final, mostrar as configurações
 	fprintf(f, "\nJogador;");
 	for (int i = 0; i < parametro.Count(); i++)
-		fprintf(f, "P%d(%s);", i + 1, parametro[i].nome);
+		fprintf(f, "P%d(%s);", i + 1, *parametro[i].nome);
 	fprintf(f, "\n");
 	for (int jogador = 0; jogador < configuracoes.Count(); jogador++) {
 		fprintf(f, "%d;", jogador + 1);
 		for (int j = 0; j < parametro.Count(); j++)
-			if (parametro[j].nomeValores == NULL)
+			if (parametro[j].nomeValores.Empty())
 				fprintf(f, "%d;", configuracoes[jogador][j]);
 			else
 				fprintf(f, "%d:%s;",
 					configuracoes[jogador][j],
-					parametro[j].nomeValores[configuracoes[jogador][j] - parametro[j].min]);
+					*parametro[j].nomeValores[configuracoes[jogador][j] - parametro[j].min]);
 		fprintf(f, "\n");
 	}
 	fclose(f);

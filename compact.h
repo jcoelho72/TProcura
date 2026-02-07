@@ -21,14 +21,6 @@ namespace compat {
 #endif
 	}
 
-	inline char* strtok(char* str, const char* delim, char** context) {
-#ifdef _MSC_VER
-		return strtok_s(str, delim, context);
-#else
-		return strtok_r(str, delim, context);
-#endif
-	}
-
 	inline void init_io() {
 #ifdef _WIN32
 		// Windows: locale ".UTF-8" é válido

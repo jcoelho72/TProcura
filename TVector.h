@@ -1121,6 +1121,12 @@ public:
 		return Data();
 	}
 
+	// devolve const char* de forma curta:
+	// em vez de printf("%s",(const char*)nome); basta printf("%s",*nome);
+	const char* operator*() const noexcept {
+		return Data();
+	}
+
 	// printf, adiciona o texto formatado à string atual
 	TString& printf(const char* fmt, ...) {
 		// calcular tamanho necessário
@@ -1157,6 +1163,39 @@ public:
 
 	/** Verifica se a string é vazia. */
 	bool Empty() const { return (Count() <= 1); }
+
+	// tokenização: divide a string em partes usando os delimitadores fornecidos
+	TVector<TString> tok(const char* delim = " \t\n\r") const {
+		TVector<TString> out;
+		const char* s = Data();
+		int n = Count();
+		int i = 0;
+		while (i < n) {
+			// saltar delimitadores
+			while (i < n && strchr(delim, s[i]))
+				i++;
+
+			if (i >= n || s[i] == 0)
+				break;
+
+			int start = i;
+
+			// avançar até próximo delimitador
+			while (i < n && s[i] != 0 && !strchr(delim, s[i]))
+				i++;
+
+			// extrair token
+			int len = i - start;
+			TString tok(len + 1);
+			memcpy(tok.Data(), s + start, len);
+			tok.Data()[len] = 0;
+
+			out += tok;
+		}
+
+		return out;
+	}
+
 
 };
 

@@ -61,7 +61,7 @@ public:
 	// chamar para actualiação de avaliacoes
 	int Heuristica(void);
 
-	const char* Acao(TNo sucessor);
+	TString Acao(TNo sucessor);
 	void TesteManual(const char* nome);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
 	int Codigo(char peca) { return peca == 'x' ? 1 : (peca == 'o' ? 2 : 3); }

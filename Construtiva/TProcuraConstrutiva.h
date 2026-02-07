@@ -348,7 +348,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual const char* Acao(TNo sucessor) { return "ação inválida"; }
+	virtual TString Acao(TNo sucessor) { return "ação inválida"; }
 
 	/**
 	 * @brief Codifica o estado para um vetor de inteiros de 64 bits
@@ -452,7 +452,7 @@ public:
 	 * Caso exista um motivo para que seja eficiente, deve ser implementada uma versão mais eficiente
 	 * para cada problema, tendo em atenção a sua coerência com a função Sucessores().
 	 */
-	virtual bool Acao(const char* acao);
+	virtual bool Acao(TString acao);
 
 
 

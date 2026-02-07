@@ -33,7 +33,7 @@ void COitoDamas::Inicializar(void)
 void COitoDamas::ResetParametros()
 {
 	TProcuraConstrutiva::ResetParametros();
-	instancia = { NULL, 8,4,MAX_DAMAS, NULL, NULL };
+	instancia = { "", 8,4,MAX_DAMAS};
 }
 
 void COitoDamas::Sucessores(TVector<TNo>& sucessores)
@@ -57,13 +57,10 @@ void COitoDamas::Sucessores(TVector<TNo>& sucessores)
 	TProcuraConstrutiva::Sucessores(sucessores);
 }
 
-const char* COitoDamas::Acao(TProcuraConstrutiva* sucessor) {
-	static char str[20];
+TString COitoDamas::Acao(TProcuraConstrutiva* sucessor) {
 	COitoDamas* suc = (COitoDamas*)sucessor;
-	if (damas.Count() + 1 == suc->damas.Count()) {
-		sprintf(str, "d%d", suc->damas.Last() + 1);
-		return str;
-	}
+	if (damas.Count() + 1 == suc->damas.Count()) 
+		return TString().printf("d%d", suc->damas.Last() + 1);
 	return "Inv";
 }
 

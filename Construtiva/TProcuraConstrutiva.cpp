@@ -35,23 +35,19 @@ TProcuraConstrutiva::TProcuraConstrutiva(void) {
 
 void TProcuraConstrutiva::ResetParametros()
 {
-	static const char* nomesAlgoritmos[] = {
+	TProcura::ResetParametros();
+
+	// definir parametros base
+	// algoritmos, alterar
+	parametro[ALGORITMO] = { "ALGORITMO",1,1,7,"Algoritmo base a executar.", {
 		"Largura Primeiro",
 		"Custo Uniforme",
 		"Profundidade Primeiro",
 		"Melhor Primeiro",
 		"A*",
 		"IDA*",
-		"Branch and Bound" };
-	static const char* nomesRepetidos[] = {
-		"ignorar",
-		"ascendentes",
-		"gerados" };
-	TProcura::ResetParametros();
-
-	// definir parametros base
-	// algoritmos, alterar
-	parametro[ALGORITMO] = { "ALGORITMO",1,1,7,"Algoritmo base a executar.", nomesAlgoritmos };
+		"Branch and Bound" }
+	};
 	// parametros adicionados
 	parametro += {
 		{ "VER_ACOES", 4, 1, 100, "Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações." },
@@ -59,12 +55,15 @@ void TProcuraConstrutiva::ResetParametros()
 "Valor dependente do algoritmo. \n\
 Largura: 0 sem limite, >0 número máximo de estados gerados não expandidos. \n\
 Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite." },
-		{ "ESTADOS_REPETIDOS", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).", nomesRepetidos },
+		{ "ESTADOS_REPETIDOS", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).", {
+			"ignorar",
+			"ascendentes",
+			"gerados" }	},
 		{ "PESO_ASTAR", 100, 0, 10000,
 		  "Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.",
-		  NULL, _TV("0,5:7") },
+		  "", _TV("0,5:7")},
 		{ "RUIDO_HEURISTICA",0,-100,100, "Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",
-		  NULL, _TV("0,5:7") },
+		  "", _TV("0,5:7")},
 		{ "BARALHAR_SUCESSORES",0,0,1, "Baralhar os sucessores ao expandir." }
 	};
 
@@ -81,11 +80,11 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite." },
 }
 
 // Executa uma ação (movimento, passo, jogada, lance, etc.) no estado atual. Caso não seja feito nada, retornar falso.
-bool TProcuraConstrutiva::Acao(const char* acao) {
+bool TProcuraConstrutiva::Acao(TString acao) {
 	TVector<TNo> sucessores;
 	Sucessores(sucessores);
 	for (int i = 0; i < sucessores.Count(); i++)
-		if (strcmp(acao, Acao(sucessores[i])) == 0) {
+		if (acao == Acao(sucessores[i])) {
 			Copiar(sucessores[i]);
 			TProcuraConstrutiva::LibertarVector(sucessores);
 			return true;
@@ -373,7 +372,7 @@ void TProcuraConstrutiva::MostrarCaminho() {
 			}
 			// mostrar a ação
 			if (i < caminho.Count() - 1)
-				printf(" → %s", caminho[i]->Acao(caminho[i + 1]));
+				printf(" → %s", *caminho[i]->Acao(caminho[i + 1]));
 		}
 		else {
 			caminho[i]->Debug();
@@ -662,7 +661,7 @@ void TProcuraConstrutiva::DebugChamada(bool noFolha)
 		ramo.First() = RAMO_CONTINUA;
 		DebugEstado(false);
 		if (pai != NULL)
-			printf(" %-2s%s", Icon(EIcon::ACCAO), pai->Acao(this)); // mostra sempre a ação
+			printf(" %-2s%s", Icon(EIcon::ACCAO), *pai->Acao(this)); // mostra sempre a ação
 		if ((noFolha && Parametro(NIVEL_DEBUG) >= DETALHE) ||
 			Parametro(NIVEL_DEBUG) >= COMPLETO)
 			Debug();
@@ -716,7 +715,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 		NovaLinha(true);
 		TProcura::MostraCaixa(Icon(EIcon::ACCAO), ECaixaParte::Fundo, 1, true, -1);
 		for (int i = 0; i < sucessores.Count(); i++) {
-			printf(" %s", Acao(sucessores[i]));
+			printf(" %s", *Acao(sucessores[i]));
 			if (i == 2 && sucessores.Count() > 10) {
 				printf(" …");
 				i = sucessores.Count() - 4;
@@ -735,7 +734,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 		for (int i = 0; i < sucessores.Count(); i++) {
 			NovaLinha(true);
 			sucessores[i]->DebugEstado(false);
-			printf(" %s", Acao(sucessores[i])); // mostra sempre a ação
+			printf(" %s", *Acao(sucessores[i])); // mostra sempre a ação
 			ramo.Last() = (i < sucessores.Count() - 1 ? RAMO_CONTINUA : RAMO_VAZIO);
 			if (Parametro(VER_ACOES) == 1)
 				sucessores[i]->Debug();

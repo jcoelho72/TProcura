@@ -29,7 +29,7 @@ public:
 	void Sucessores(TVector<TNo>&sucessores);
 	bool SolucaoCompleta(void);
 	void Debug(bool completo = true) override;
-	const char* Acao(TProcuraConstrutiva* sucessor);
+	TString Acao(TProcuraConstrutiva* sucessor);
 	void TesteManual(const char* nome);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
 	int Heuristica(void);

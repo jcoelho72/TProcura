@@ -34,7 +34,7 @@ void CAspirador::Inicializar(void)
 void CAspirador::ResetParametros()
 {
 	TProcuraConstrutiva::ResetParametros();
-	instancia = { NULL, 4,2,50, NULL, NULL };
+	instancia = { "", 4,2,50};
 }
 
 void CAspirador::Sucessores(TVector<TNo>&sucessores)
@@ -56,7 +56,7 @@ void CAspirador::Sucessores(TVector<TNo>&sucessores)
 	TProcuraConstrutiva::Sucessores(sucessores);
 }
 
-const char* CAspirador::Acao(TProcuraConstrutiva* sucessor) {
+TString CAspirador::Acao(TProcuraConstrutiva* sucessor) {
 	CAspirador* suc = (CAspirador*)sucessor;
 	if (aspirador == suc->aspirador && suc->salas[aspirador] == '.')
 		return "asp";

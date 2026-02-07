@@ -120,11 +120,11 @@ enum class ECaixaParte {
 // identificação de todos os indicadores definidos
 typedef struct SIndicador {
 	/// @brief nome do indicador
-	const char* nome;
+	TString nome;
 	/// @brief descrição do indicador, opcional 
-	const char* descricao;
+	TString descricao = "";
 	/// @brief indice onde aparece o indicador nos resultados, c.c. -1 para não aparecer 
-	int indice;
+	int indice = -1;
 } TIndicador;
 
 /**
@@ -151,7 +151,7 @@ typedef struct SIndicador {
  */
 typedef struct SParametro {
 	/// @brief nome do parametro, opcional mas aconselhado nos parâmetros específicos
-	const char* nome = "Indefinido";
+	TString nome = "Indefinido";
 	/// @brief valor do parametro
 	int valor = 0;
 	/// @brief valor mínimo que o parametro pode tomar
@@ -159,10 +159,10 @@ typedef struct SParametro {
 	/// @brief valor máximo que o parametro pode tomar
 	int max = 0;
 	/// @brief descrição do parametro, opcional 
-	const char* descricao = nullptr;
+	TString descricao = "";
 	/// @brief Nome associado a cada valor do parâmetro, útil para variáveis categóricas.
 	/// @note Especialmente relevante quando os valores não seguem uma sequência ordenada.
-	const char** nomeValores = nullptr;
+	TVector<TString> nomeValores;
 	/// @brief dependência (indice do parametro, seguido de valores permitidos) - vazio não tem dependência
 	TVector<int> dependencia;
 } TParametro;
@@ -178,7 +178,7 @@ typedef struct SParametro {
 typedef struct SResultado {
 	int instancia = 0, configuracao = 0;
 	TVector<int64_t> valor; // valor para cada indicador selecionado (fixos os EIndicadoresProcura, resultado, tempo, iterações)
-	char* solucao = NULL; // todas as ações da solução, se aplicável
+	TVector<TString> solucao; // todas as ações da solução, se aplicável
 } TResultado;
 
 
@@ -417,7 +417,27 @@ public:
 	* }
 	* @endcode
 	*/
-	virtual void TesteManual(const char* nome);
+	virtual void TesteManual(TString nome);
+
+	/**
+	 * @brief Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua validadade bem como características
+	 * @note Redefinição opcional, caso seja necessário um processo de validação específico.
+	 *
+	 * Esta função carrega a instância e solução (conjunto de ações),
+	 * as quais são executadas passo a passo, verificando a validade de cada ação
+	 * sendo calculados indicadores do resultado final.
+	 * 
+	 * Caso existam ações inválidas, ou a solução não seja completa, o resultado é considerado inválido,
+	 * sendo retornado o número de ações corretamente executadas.
+	 * (isto faz sentido apenas em TProcurasConstrutivas.... nesta classe pode ser algo genérico, sendo redefinida em TProcurasConstrutivas...)
+	 * (fazer uma função validação geral, a redefinir em TProcurasConstrutivas?)
+	 * (deixar o formato da solução em aberto, o ficheiro recebe ID da instância, seguido da solução. 
+	 *
+	 * @param instancias - IDs das instâncias a serem validadas.
+	 * @param fichSolucoes - nome do arquivo contendo as soluções a validar para as instâncias.
+	 * @param fichResultados - nome do arquivo onde os resultados da validação serão gravados (opcional).
+	 */
+	virtual void TesteValidacao(TVector<int> instancias, TString fichSolucoes, TString fichResultados = "");
 
 	/**
 	 * @brief Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas
@@ -440,12 +460,12 @@ public:
 	 *
 	 * @see TesteManual()
 	 */
-	virtual void TesteEmpirico(TVector<int> instancias, const char* ficheiro = NULL);
+	virtual void TesteEmpirico(TVector<int> instancias, TString ficheiro = "");
 
 	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
-	virtual void TesteEmpiricoGestor(TVector<int> instancias, const char* ficheiro = NULL);
+	virtual void TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro = "");
 	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
-	virtual void TesteEmpiricoTrabalhador(TVector<int> instancias, const char* ficheiro = NULL);
+	virtual void TesteEmpiricoTrabalhador(TVector<int> instancias, TString ficheiro = "");
 
 	/**
 	* @brief Inicializa a interação com o utilizador
@@ -476,7 +496,7 @@ public:
 	* }
 	* @endcode
 	*/
-	virtual void main(int argc, char* argv[], const char* nome);
+	virtual void main(int argc, char* argv[], TString nome);
 
 	/// @brief Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução
 	virtual void LimparEstatisticas();
@@ -535,9 +555,9 @@ public:
 		return Parametro(LIMITE_ITERACOES) > 0 && Parametro(LIMITE_ITERACOES) < iteracoes;
 	}
 	// ler um número, ou retorna NAO_LIDO
-	static int NovoValor(const char* prompt);
+	static int NovoValor(TString prompt);
 	// ler uma string
-	static char* NovoTexto(const char* prompt);
+	static TString NovoTexto(TString prompt);
 
 	// retorna o valor do parametro, para facilidade de uso (leitura e escrita)
 	int Parametro(int id) const { return parametro[id].valor; }
@@ -580,12 +600,12 @@ public:
 	}
 
 	/// @brief Mostra tempo num formato humano.
-	static const char* MostraTempo(double segundos);
+	static TString MostraTempo(double segundos);
 
 	static void MostraCaixa(TVector<TString> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
-	static void MostraCaixa(const char* titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0, const char* icon = "");
+	static void MostraCaixa(TString titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0, const char* icon = "");
 	static void MostraCaixa(TVector<TString> textos, int largura = 70, bool aberta = true, int identacao = 0);
-	static void Mensagem(const char* titulo, const char* fmt, ...);
+	static void Mensagem(TString titulo, const char* fmt, ...);
 
 	static void MostraConjunto(TVector<int> valores, const char* etiqueta);
 
@@ -640,7 +660,7 @@ protected:
 	 * @param idParametros Vetor de IDs de parâmetros a mostrar (opcional).
 	 */
 	void MostraParametros(int detalhe = 1, TVector<int>* idParametros = NULL,
-		const char* titulo = "");
+		TString titulo = "");
 
 	/**
 	 * @brief Mostra os indicadores definidos.
@@ -742,14 +762,14 @@ protected:
 	 * @param resultados Vetor de resultados.
 	 * @param f Ponteiro para o ficheiro onde gravar.
 	 */
-	bool RelatorioCSV(TVector<TResultado>& resultados, const char* ficheiro);
+	bool RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro);
 
 	/**
 	 * @brief Insere configurações a partir de uma string.
 	 * @param str String com as configurações.
 	 * @param base Vetor base para inserção.
 	 */
-	void InserirConfiguracoes(char* str, TVector<int>& base);
+	void InserirConfiguracoes(TString str, TVector<int>& base);
 
 	/**
 	 * @brief Insere configurações gerando o produto cartesiano de valores.
@@ -763,7 +783,7 @@ protected:
 	 * @brief Mostra ajuda de utilização do programa.
 	 * @param programa Nome do programa.
 	 */
-	void AjudaUtilizacao(const char* programa);
+	void AjudaUtilizacao(TString programa);
 
 	/**
 	 * @brief Limita o domínio de um parâmetro inteiro.
@@ -780,11 +800,11 @@ protected:
 	static void FinalizaMPI();
 
 	/// @brief Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior
-	void DebugTabela(ENivelDebug nivel, TVector<int>tabela, const char* tipo = "",
-			const char* prefixo="", int modoCor=0, bool duplaColuna=false);
+	void DebugTabela(ENivelDebug nivel, TVector<int>tabela, TString tipo = "",
+			TString prefixo="", int modoCor=0, bool duplaColuna=false);
 
 	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro.
-	bool JuntarCSV(const char* ficheiro);
+	bool JuntarCSV(TString ficheiro);
 
 	/// @brief retorna o tempo em segundos desde que o cronómetro foi inicializado
 	static double Cronometro(enum ECronometro id = CONT_ALGORITMO, bool inicialiar = false) {

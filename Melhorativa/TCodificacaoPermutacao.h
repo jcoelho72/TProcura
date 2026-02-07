@@ -44,7 +44,7 @@ public:
 	// métodos que não se prevê que sejam redefinidos
 	void Copiar(TPonto objecto);
 	void NovaSolucao(void);
-	bool Acao(const char* acao);
+	bool Acao(TString acao);
 	void ResetParametros();
 	// operadores melhorativos
 	void Vizinhanca(TVector<TPonto>& vizinhos);
@@ -53,7 +53,5 @@ public:
 	int Distancia(TPonto a);
 
 	using TProcura::Debug;
-private:
-	static const char* nomesVizinhanca[];
 };
 

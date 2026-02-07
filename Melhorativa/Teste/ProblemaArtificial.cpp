@@ -34,7 +34,7 @@ void CProblemaArtificial::Debug(bool completo)
 void CProblemaArtificial::TesteManual(const char* nome)
 {
 	// definir as instâncias
-	instancia = { "Problema", 1,1,10, "Caracteristicas dos problemas", NULL };
+	instancia = { "Problema", 1,1,10, "Caracteristicas dos problemas" };
 	TProcuraMelhorativa::TesteManual(nome);
 }
 

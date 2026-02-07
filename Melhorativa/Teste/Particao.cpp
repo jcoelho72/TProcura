@@ -101,7 +101,7 @@ void CParticao::Debug(bool completo)
 
 void CParticao::TesteManual(const char* nome)
 {
-	instancia = { NULL, 10,2,1000, NULL, NULL };
+	instancia = { "", 10,2,1000};
 	TProcuraMelhorativa::TesteManual(nome);
 }
 

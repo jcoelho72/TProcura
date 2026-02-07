@@ -80,8 +80,7 @@ bool CJogoDoGalo::SolucaoCompleta(void)
 	return true; // nao ha hipotese de mais jogadas
 }
 
-const char* CJogoDoGalo::Acao(TProcuraConstrutiva* sucessor) {
-	static char str[20];
+TString CJogoDoGalo::Acao(TProcuraConstrutiva* sucessor) {
 	CJogoDoGalo* suc = (CJogoDoGalo*)sucessor;
 	int diferenca = -1;
 	// verificar que há uma só diferença
@@ -92,8 +91,7 @@ const char* CJogoDoGalo::Acao(TProcuraConstrutiva* sucessor) {
 			else // duas diferenças
 				return "Inv"; 
 		}
-	sprintf(str, "%c%d", 'a' + diferenca % 3, 1 + diferenca / 3);
-	return str;
+	return TString().printf("%c%d", 'a' + diferenca % 3, 1 + diferenca / 3);
 }
 
 void CJogoDoGalo::Debug(bool completo)
@@ -117,7 +115,7 @@ void CJogoDoGalo::Debug(bool completo)
 
 void CJogoDoGalo::TesteManual(const char* nome)
 {
-	instancia = { NULL, 1,1,1, NULL, NULL };
+	instancia = { "", 1,1,1};
 	TProcuraAdversa::TesteManual(nome);
 }
 

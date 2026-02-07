@@ -73,7 +73,7 @@ public:
 
 	void ResetParametros() {
 		TCodificacaoBinaria::ResetParametros();
-		instancia = { NULL, 10,2,1000, NULL, NULL };
+		instancia = { "", 10,2,1000};
 	}
 
 	TPonto Duplicar(void) {

@@ -1,10 +1,6 @@
 #include "TCodificacaoPermutacao.h"
 
 int TCodificacaoPermutacao::nElementos = 0; // número de elementos na permutação 
-const char* TCodificacaoPermutacao::nomesVizinhanca[] = {
-	"inserir",
-	"trocaPar",
-	"inverterSegmento" };
 
 void TCodificacaoPermutacao::Copiar(TPonto objecto) {
 	TCodificacaoPermutacao& obj = *((TCodificacaoPermutacao*)objecto);
@@ -25,27 +21,25 @@ void TCodificacaoPermutacao::Debug(bool completo) {
 }
 
 void TCodificacaoPermutacao::ResetParametros() {
-	static const char* nomesCruzamento[] = {
-		"PMX",
-		"Edge",
-		"Order",
-		"Cycle"};
-	static const char* nomesDistancias[] = {
-		"Hamming", // número de posições com valores diferentes
-		"Kendall tau", // número de pares fora de ordem
-		"Spearman footrule" }; // soma das diferenças absolutas das posições
-
 	TProcuraMelhorativa::ResetParametros();
 
 	// parametros da codificação inteira
 	parametro += {
-		{ "TIPO_CRUZAR", 3, 1, 4, "TIPO_CRUZAR: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", nomesCruzamento },
+		{ "TIPO_CRUZAR", 3, 1, 4, "TIPO_CRUZAR: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", {
+			"PMX","Edge","Order","Cycle" } },
 		{ "TIPO_MUTAR", 0,0,0, "TIPO_MUTAR: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento)" },
-		{ "TIPO_VIZINHO", 1,1,3, "TIPO_VIZINHO: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
+		{ "TIPO_VIZINHO", 1,1,3, "TIPO_VIZINHO: vários métodso para vizinhanças de inteiros", {
+			"inserir",
+			"trocaPar",
+			"inverterSegmento" } },
 		{ "LIMITE_VIZINHOS", 0,0,1000,
 "LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite\n\
 - inserir + trocaPar + inverterSegmento - limita a distância entre pares" },
-		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de permutações", nomesDistancias }
+		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de permutações", {
+			"Hamming", // número de posições com valores diferentes
+			"Kendall tau", // número de pares fora de ordem
+			"Spearman footrule" } // soma das diferenças absolutas das posições0
+		}
 	};
 }
 
@@ -230,7 +224,7 @@ void TCodificacaoPermutacao::Vizinhanca(TVector<TPonto>& vizinhos) {
 	ETiposVizinhancaPermutacao tipo = (ETiposVizinhancaPermutacao)Parametro(TIPO_VIZINHO_CP);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CP);
 	Debug(EXTRA_DEBUG, false, " vizinhança %s (limite %d)",
-		nomesVizinhanca[tipo - 1], limiteVizinhanca);
+		parametro[TIPO_VIZINHO_CP].nomeValores[tipo - 1], limiteVizinhanca);
 	// alterar posição de elementos
 	for (int i = 0; i < nElementos; i++) // elemento i
 		for (int j = 0; j < nElementos; j++) // elemento j ou local j
@@ -281,7 +275,7 @@ void TCodificacaoPermutacao::Mutar(void) {
 		if(abs(i-j)>limiteVizinhanca && limiteVizinhanca>0)
 			j = (i + (TRand::rand() % (2 * limiteVizinhanca + 1)) - limiteVizinhanca + nElementos) % nElementos;
 		Debug(EXTRA_DEBUG, false, " mutar vizinho %s (%d,%d)",
-			nomesVizinhanca[tipo - 1], i, j);
+			parametro[TIPO_VIZINHO_CP].nomeValores[tipo - 1], i, j);
 		if (tipo == vizInserirCP) {
 			int valor = estado[i];
 			for (int k = i; k != j; (i < j ? k++ : k--))

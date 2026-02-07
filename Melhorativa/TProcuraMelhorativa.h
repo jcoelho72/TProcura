@@ -117,7 +117,7 @@ public:
 	// Retorna o valor da solução completa actual. Atribuir o valor a custo
 	virtual int Avaliar(void);
 	// redefinir, para aceitar ações que sejam operadores
-	bool Acao(const char* acao) { return false; }
+	bool Acao(TString acao) { return false; }
 	// Método para inicializar os parâmetros (redefinir se forem adicionados parâmetros específicos)
 	void ResetParametros() override;
 
@@ -214,8 +214,8 @@ protected:
 	TVector<TPonto> SelecionarSobreviventesAE(TVector<TPonto>& populacao, TVector<TPonto>& descendentes);
 	TVector<TPonto> AplicarDiversidadeAE(TVector<TPonto>& populacao);
 	void DebugGeracaoAE(int epoca, TVector<TPonto>& populacao);
-	void DebugPopulacaoAE(TVector<TPonto>& populacao, const char* titulo); // mostrar toda a população
-	void DebugDiversidadeAE(TVector<TPonto>& populacao, const char* titulo); // diversidade da população
+	void DebugPopulacaoAE(TVector<TPonto>& populacao, TString titulo); // mostrar toda a população
+	void DebugDiversidadeAE(TVector<TPonto>& populacao, TString titulo); // diversidade da população
 	void DebugID(int id, int pop); // mostra indivíduo ID com cor única, se elemento da população
 	void DiversidadeAE(TVector<TPonto>& populacao,
 		int& minDist, int& maxDist, int& avgDist, int& melhorPior);

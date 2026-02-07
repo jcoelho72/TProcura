@@ -56,7 +56,5 @@ public:
 	int Distancia(TPonto a);
 
 	using TProcura::Debug;
-private:
-	static const char* nomesVizinhanca[];
 };
 

@@ -2,13 +2,6 @@
 
 int TCodificacaoInteira::nElementos = 0; // número de elementos na permutação
 TVector<int> TCodificacaoInteira::maxValor; // valor máximo para cada elemento 
-const char* TCodificacaoInteira::nomesVizinhanca[] = {
-	"incDecValor",
-	"incDecPot2",
-	"trocaValor",
-	"inserir",
-	"trocaPar",
-	"inverterSegmento" };
 
 void TCodificacaoInteira::Copiar(TPonto objecto) {
 	TCodificacaoInteira& obj = *((TCodificacaoInteira*)objecto);
@@ -28,34 +21,30 @@ void TCodificacaoInteira::Debug(bool completo) {
 }
 
 void TCodificacaoInteira::ResetParametros() {
-	static const char* nomesCruzamento[] = {
-		"uniforme",
-		"1-ponto",
-		"2-pontos",
-		"3-pontos",
-		"4-pontos",
-		"5-pontos",
-		"6-pontos",
-		"7-pontos",
-		"8-pontos",
-		"9-pontos",
-		"10-pontos" };
-	static const char* nomesDistancias[] = {
-		"Hamming", // número de posições com valores diferentes
-		"Euclidiana", // distância euclidiana (raiz quadrada da soma dos quadrados das diferenças)
-		"Manhattan" }; // distância Manhattan (soma das diferenças absolutas)
 
 	TProcuraMelhorativa::ResetParametros();
 	// parametros da codificação inteira
 	parametro += {
-		{ "TIPO_CRUZAR", 1, 0, 10, "Cruzamento: N - N-pontos, 0 - uniforme", nomesCruzamento },
+		{ "TIPO_CRUZAR", 1, 0, 10, "Cruzamento: N - N-pontos, 0 - uniforme", {
+			"uniforme","1-ponto","2-pontos","3-pontos","4-pontos",
+			"5-pontos","6-pontos","7-pontos","8-pontos","9-pontos","10-pontos" } },
 		{ "TIPO_MUTAR", 0,0,100, "Mutação: 0 - aplica um vizinho aleatório (seja 1 só elemento ou segmento), 1 a 100, probabilidade de mutação de cada elemento, em percentagem (1 a 100)" },
-		{ "TIPO_VIZINHO", 1,1,6, "Vizinhança: vários métodso para vizinhanças de inteiros", nomesVizinhanca },
+		{ "TIPO_VIZINHO", 1,1,6, "Vizinhança: vários métodos para vizinhanças de inteiros", {
+			"incDecValor",
+			"incDecPot2",
+			"trocaValor",
+			"inserir",
+			"trocaPar",
+			"inverterSegmento" } },
 		{ "LIMITE_VIZINHOS", 0,0,1000,
 "LIMITE_VIZINHOS, conforme a vizinhança, se 0 não há limite\n\
 - incDecPot2 + trocaValor - limita a diferença máxima de valores\n\
 - inserir + trocaPar + inverterSegmento - limita a distância entre pares" },
-		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de inteiros", nomesDistancias }
+		{ "TIPO_DISTANCIA", 1,1,3, "Distância: vários métodso para distâncias de inteiros", {
+			"Hamming", // número de posições com valores diferentes
+			"Euclidiana", // distância euclidiana (raiz quadrada da soma dos quadrados das diferenças)
+			"Manhattan" // distância Manhattan (soma das diferenças absolutas)
+		} }
 	};
 }
 
@@ -101,7 +90,7 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 	ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CI);
 	Debug(EXTRA_DEBUG, false, " vizinhança %s (limite %d)",
-		nomesVizinhanca[tipo - 1], limiteVizinhanca);
+		parametro[TIPO_VIZINHO_CI].nomeValores[tipo - 1], limiteVizinhanca);
 
 	if (tipo >= vizIncDecValorCI && tipo <= vizTrocaValorCI) {
 		// alterar valor de um elemento
@@ -191,7 +180,7 @@ void TCodificacaoInteira::Mutar(void) {
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
 		Debug(EXTRA_DEBUG, false, " mutar vizinho %s (%d,%d)",
-			nomesVizinhanca[tipo - 1], i, j);
+			parametro[TIPO_VIZINHO_CI].nomeValores[tipo - 1], i, j);
 		if (tipo == vizIncDecValorCI) {
 			estado[i] += (TRand::rand() % 2 == 0 ? 1 : -1);
 		}

@@ -16,37 +16,23 @@ enum EIndicadoresVector {
 
 void CTesteTVector::ResetParametros()
 {
-	static const char* nomesMetodo[] = {
-		"Add()",
-		"Sort()",
-		"RandomOrder()",
-		"Invert()",
-		"BeASet()",
-		"Difference()",
-		"Union()",
-		"Contained()",
-		"Intersection()",
-		"operator=()",
-		"operator+=()",
-		"nada"
-	};
-	static const char* nomesEstrutura[] = {
-			"TVector",
-			"std::vector",
-			"TVector/std::algorithm",
-	};
-
 	TProcura::ResetParametros();
 
-	parametro[ALGORITMO] = { "ALGORITMO",1,1,12,"Método para teste.", nomesMetodo };
+	parametro[ALGORITMO] = { "ALGORITMO",1,1,12,"Método para teste.", {
+		"Add()", "Sort()", "RandomOrder()", "Invert()", "BeASet()",
+		"Difference()", "Union()", "Contained()", "Intersection()",
+		"operator=()", "operator+=()", "nada" }
+	};
 
 	// estrutura de dados
-	parametro += { "ESTRUTURA_DADOS",1,1,3,"Estrutura de dados utilizada para vetor.",nomesEstrutura };
+	parametro += { "ESTRUTURA_DADOS", 1, 1, 3, "Estrutura de dados utilizada para vetor.", {
+		"TVector", "std::vector", "TVector/std::algorithm" }
+	};
 
-	indicador += { "IND_ORDENAR","verifica se o vetor está ordenado", IND_ORDENAR };
+	indicador += { "IND_ORDENAR", "verifica se o vetor está ordenado", IND_ORDENAR };
 	indAtivo += IND_ORDENAR;
 
-	instancia = { "Dados", 1,1,10, "Vetores aleatórios de K milhões", NULL };
+	instancia = { "Dados", 1,1,10, "Vetores aleatórios de K milhões"};
 }
 
 void CTesteTVector::Inicializar(void)
@@ -103,7 +89,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 		if (Parametro(ESTRUTURA_DADOS) == 1) { // TVector
 			switch (Parametro(ALGORITMO)) {
 			case 1: // add
-				dadosA = {}; 
+				dadosA = {};
 				for (int i = 0; i < instancia.valor * 1000000; i++)
 					dadosA += TRand::rand();
 				break;
@@ -150,7 +136,7 @@ int CTesteTVector::ExecutaAlgoritmo()
 						stdA.push_back(TRand::rand());
 				}
 				else {
-					dadosA = {}; 
+					dadosA = {};
 					for (int i = 0; i < instancia.valor * 1000000; i++)
 						dadosA += TRand::rand();
 				}
@@ -255,18 +241,18 @@ int CTesteTVector::ExecutaAlgoritmo()
 				if (Parametro(ESTRUTURA_DADOS) == 2) {
 					std::sort(stdA.begin(), stdA.end());
 					std::sort(stdB.begin(), stdB.end());
-					(void) std::includes(
-							stdB.begin(), stdB.end(),
-							stdA.begin(), stdA.end()
-						);
+					(void)std::includes(
+						stdB.begin(), stdB.end(),
+						stdA.begin(), stdA.end()
+					);
 				}
 				else {
 					std::sort(dadosA.begin(), dadosA.end());
 					std::sort(dadosB.begin(), dadosB.end());
-					(void) std::includes(
-							dadosB.begin(), dadosB.end(),
-							dadosA.begin(), dadosA.end()
-						);
+					(void)std::includes(
+						dadosB.begin(), dadosB.end(),
+						dadosA.begin(), dadosA.end()
+					);
 				}
 				break;
 			case 9: // Intersection
@@ -337,7 +323,7 @@ int64_t CTesteTVector::Indicador(int id)
 			for (int i = 0; i < dadosA.Count() - 1; i++)
 				if (dadosA[i] > dadosA[i + 1]) {
 					Debug(COMPLETO, false, "\nordem %d > %d (%d,%d)",
-							i, i + 1, dadosA[i], dadosA[i + 1]);
+						i, i + 1, dadosA[i], dadosA[i + 1]);
 					return 0;
 				}
 		}
@@ -345,7 +331,7 @@ int64_t CTesteTVector::Indicador(int id)
 			for (std::size_t i = 0; i < stdA.size() - 1; i++)
 				if (stdA[i] > stdA[i + 1]) {
 					Debug(COMPLETO, false, "\nordem %d > %d (%d,%d)",
-							i, i + 1, stdA[i], stdA[i + 1]);
+						i, i + 1, stdA[i], stdA[i + 1]);
 					return 0;
 				}
 		}

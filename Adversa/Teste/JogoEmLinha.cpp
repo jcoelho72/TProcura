@@ -192,9 +192,8 @@ void CJogoEmLinha::ResetParametros()
 	configuracoes.Last()[LIMITE] = 2;
 }
 
-const char* CJogoEmLinha::Acao(TNo sucessor)
+TString CJogoEmLinha::Acao(TNo sucessor)
 {
-	static char str[20];
 	CJogoEmLinha* suc = (CJogoEmLinha*)sucessor;
 	int diferenca = -1;
 	// verificar que há uma só diferença
@@ -205,13 +204,12 @@ const char* CJogoEmLinha::Acao(TNo sucessor)
 			else // duas diferenças
 				return "Inv";
 		}
-	sprintf(str, "%c%d", 'a' + diferenca % inst.M, 1 + diferenca / inst.M);
-	return str;
+	return TString().printf("%c%d", 'a' + diferenca % inst.M, 1 + diferenca / inst.M);
 }
 
 void CJogoEmLinha::TesteManual(const char* nome)
 {
-	instancia = { NULL, 1,1,10, NULL, NULL };
+	instancia = { "", 1,1,10};
 	TProcuraAdversa::TesteManual(nome);
 }
 

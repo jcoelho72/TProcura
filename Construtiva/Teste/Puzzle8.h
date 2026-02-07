@@ -31,7 +31,7 @@ public:
 	bool SolucaoCompleta(void);	
 	void Debug(bool completo = true) override;
 	void MostrarSolucao(void);
-	const char* Acao(TProcuraConstrutiva* sucessor);
+	TString Acao(TProcuraConstrutiva* sucessor);
 	void ResetParametros();
 
 	int Heuristica(void);

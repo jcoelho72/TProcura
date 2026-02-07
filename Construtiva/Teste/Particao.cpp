@@ -64,7 +64,7 @@ void CParticao::Sucessores(TVector<TNo>& sucessores)
 	}
 }
 
-const char* CParticao::Acao(TProcuraConstrutiva* sucessor) {
+TString CParticao::Acao(TProcuraConstrutiva* sucessor) {
 	CParticao* suc = (CParticao*)sucessor;
 	if (totalEsquerda == suc->totalEsquerda &&
 		totalDireita != suc->totalDireita)
@@ -153,6 +153,6 @@ void CParticao::Codifica(uint64_t estado[OBJETO_HASHTABLE])
 void CParticao::ResetParametros()
 {
 	TProcuraConstrutiva::ResetParametros();
-	instancia = { NULL, 10,2,1000, NULL, NULL };
+	instancia = { "", 10,2,1000};
 }
 

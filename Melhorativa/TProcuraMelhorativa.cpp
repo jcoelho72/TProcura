@@ -29,53 +29,43 @@ TProcuraMelhorativa::~TProcuraMelhorativa(void)
 
 void TProcuraMelhorativa::ResetParametros()
 {
-	// ativo apenas Algoritmo Evolutivo
-	static const char* nomesAlgoritmos[] = {
-		//		"Escalada do Monte",
-		//		"Algoritmo Genético",
-				"Algoritmo Evolutivo" };
-	//static const char* nomesMovePrimeiro[] = { "Primeiro","Melhor" };
-	static const char* nomesSelecao[] = {
-		"Roleta", // roleta implementada com Stochastic Universal Sampling (SUS)
-		"Torneio", // requere tamanho do torneio, se é determinístico, se é com reposição
-		"Uniforme" // todos com igual probabilidade
-	};
-	static const char* nomesSobrevivencia[] = {
-		"Idade",
-		"Substitui piores",
-		"round-robin"   // cada elemento compete com q outros, os que perdem mais são eliminados
-	};
-	static const char* nomesDiversidade[] = {
-		"Nenhuma",
-		"Avaliação partilhada",
-		"Limpeza"
-	};
-
 	TProcura::ResetParametros();
 
 	// alterar parametros base
 	Parametro(LIMITE_ITERACOES) = 1000000;
 	//	parametro[ALGORITMO] = { "ALGORITMO",3,1,3,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
-	parametro[ALGORITMO] = { "ALGORITMO",1,1,1,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
+	parametro[ALGORITMO] = { "ALGORITMO",1,1,1,"Escolha do algoritmo base a executar.",{"Algoritmo Evolutivo" }};
 
 	// adicionar parâmetros da procura melhorativa
 	parametro += {
 		{ "POPULACAO", 20, 2, 1000000, "Número de elementos em cada geração" },
 		{ "PROB_CRUZAR",100,0,100, "Probabilidade de um estado ser cruzado" },
 		{ "PROB_MUTAR",50,0,100, "Probabilidade de um estado sofrer uma mutação após gerado" },
-		{ "SELECAO",1,1,3, "Método de seleção dos pais para cruzamento", nomesSelecao },
+		{ "SELECAO",1,1,3, "Método de seleção dos pais para cruzamento", {
+			"Roleta", // roleta implementada com Stochastic Universal Sampling (SUS)
+			"Torneio", // requere tamanho do torneio, se é determinístico, se é com reposição
+			"Uniforme" // todos com igual probabilidade
+			} },
 		{ "PRESSAO",150,100,200,
 "Pressão da seleção (1.0 a 2.0 > 100 a 200). \
 Controla a diferença de probabilidade entre o melhor e o pior indivíduo no método Ranking Selection.\n\
-Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", NULL, {SELECAO,1} },
-		{ "TAMANHO_TORNEIO",2,2,100, "Tamanho do torneio, caso a sobrevivência seja do tipo torneio.", NULL, {SELECAO,2} },
-		{ "PROB_MELHOR_TORNEIO",100,0,100, "Probabilidade do melhor ganhar o torneio.", NULL, {SELECAO,2} },
-		{ "SOBREVIVENCIA",1,1,3, "Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos", nomesSobrevivencia },
+Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos de 2 (200) favorecem fortemente os melhores.", "", {SELECAO,1}},
+		{ "TAMANHO_TORNEIO",2,2,100, "Tamanho do torneio, caso a sobrevivência seja do tipo torneio.", "", {SELECAO,2}},
+		{ "PROB_MELHOR_TORNEIO",100,0,100, "Probabilidade do melhor ganhar o torneio.", "", {SELECAO,2}},
+		{ "SOBREVIVENCIA",1,1,3, "Método de seleção dos elementos que sobrevivem à nova geração, utilizado nos Algoritmos Genéticos", {
+			"Idade",
+			"Substitui piores",
+			"round-robin"   // cada elemento compete com q outros, os que perdem mais são eliminados
+			} },
 		{ "PERC_DESCENDENTES",100,0,100, "Número de descendentes a substituirem elementos na população, em percentagem (100 toda a população é substituída, 0 apenas um elemento)" },
-		{ "Q_ROUND_ROBIN",3,2,100, "Número de elementos no round-robin (valor de q)", NULL, {SOBREVIVENCIA,3} },
+		{ "Q_ROUND_ROBIN",3,2,100, "Número de elementos no round-robin (valor de q)", "", {SOBREVIVENCIA,3}},
 		{ "ELITISMO",1,0,100, "Número absoluto de indivíduos melhores, que se mantêm na geração seguinte, excepto se há descendência com valor igual ou superior" },
 		{ "IMIGRANTES",1,0,100, "Número absoluto de indivíduos imigrantes, substituindo quaisquer outros na população." },
-		{ "DIVERSIDADE",3,1,3, "Estratégia de diversidade. ", nomesDiversidade },
+		{ "DIVERSIDADE",3,1,3, "Estratégia de diversidade. ", {
+			"Nenhuma",
+			"Avaliação partilhada",
+			"Limpeza"
+			} },
 		{ "DIST_MINIMA",0,0,1000, "Distância mínima imposta entre elementos da população" }
 	};
 
@@ -443,13 +433,13 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 	}
 }
 
-void TProcuraMelhorativa::DebugPopulacaoAE(TVector<TPonto>& populacao, const char* titulo)
+void TProcuraMelhorativa::DebugPopulacaoAE(TVector<TPonto>& populacao, TString titulo)
 {
 	int maiorCusto = 0;
 	for (auto ind : populacao)
 		if (maiorCusto < ind->custo)
 			maiorCusto = ind->custo;
-	printf("\n │ ├───── %s ───── ", titulo);
+	printf("\n │ ├───── %s ───── ", *titulo);
 	for (int i = 0; i < populacao.Count(); i++) {
 		printf("\n │ │ %-2s", Icon(EIcon::ELEMENTO));
 		DebugID(i + 1, populacao.Count());
@@ -461,9 +451,9 @@ void TProcuraMelhorativa::DebugPopulacaoAE(TVector<TPonto>& populacao, const cha
 	}
 }
 
-void TProcuraMelhorativa::DebugDiversidadeAE(TVector<TPonto>& populacao, const char* titulo)
+void TProcuraMelhorativa::DebugDiversidadeAE(TVector<TPonto>& populacao, TString titulo)
 {
-	printf("\n │ ├───── %s ───── ", titulo);
+	printf("\n │ ├───── %s ───── ", *titulo);
 	if (populacao.Count() <= 10) { // matriz de distâncias
 		printf("\n │ │  %-2s ", Icon(EIcon::ELEMENTO));
 		for (int i = 0; i < populacao.Count(); i++) {

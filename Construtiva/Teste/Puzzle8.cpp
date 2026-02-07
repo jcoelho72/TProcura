@@ -86,7 +86,7 @@ int CPuzzle8::Heuristica(void)
 	return resultado;
 }
 
-const char* CPuzzle8::Acao(TProcuraConstrutiva* sucessor) {
+TString CPuzzle8::Acao(TProcuraConstrutiva* sucessor) {
 	CPuzzle8* suc = (CPuzzle8*)sucessor;
 	if (zero == suc->zero - 1)
 		return "esq";
@@ -128,7 +128,7 @@ void CPuzzle8::MostrarSolucao(void) {
 			printf("\nParte %d, ações:", parte);
 			// mostrar ações
 			for (int j = i - passos; j < i; j++)
-				printf(" %s", caminho[j]->Acao(caminho[j + 1]));
+				printf(" %s", *(caminho[j]->Acao(caminho[j + 1])));
 
 			for (int i = 0; i < 3; i++) {
 				printf("\n");
@@ -162,7 +162,7 @@ void CPuzzle8::ResetParametros() {
 	// opções de omissão:
 	Parametro(ESTADOS_REPETIDOS) = ASCENDENTES;
 	// instâncias
-	instancia = { NULL, 40,1,1000, NULL, NULL };
+	instancia = { "", 40,1,1000};
 }
 
 
