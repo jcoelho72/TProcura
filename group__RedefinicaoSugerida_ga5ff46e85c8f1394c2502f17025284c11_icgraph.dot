@@ -41,9 +41,9 @@ digraph "TProcuraConstrutiva::Codifica"
   Node16 -> Node17 [id="edge18_Node000016_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
   Node17 -> Node18 [id="edge19_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a181494095e78d803175e81b39012783f",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a80cd0f481e853ad9ef5625c6ff4dcc66",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node17 -> Node19 [id="edge20_Node000017_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ab83a55b786a1c3726f0afdb4075cbeba",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node19 [id="Node000019",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node15 -> Node20 [id="edge21_Node000015_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="TProcuraAdversa::MetodoIterativo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a7c4153974c32753901326271fee90197",tooltip="iteração, aumentando o nível progressivamente"];
   Node20 -> Node15 [id="edge22_Node000020_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -78,7 +78,7 @@ digraph "TProcuraConstrutiva::Codifica"
   Node22 -> Node29 [id="edge43_Node000022_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node29 [id="Node000029",label="TProcuraConstrutiva\l::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node29 -> Node30 [id="edge44_Node000029_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node30 [id="Node000030",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gacccf4fbb52126ba19bfc456c0c6d5214",tooltip="Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual."];
+  Node30 [id="Node000030",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gad3f57f04fb178e48e4cd2d7dc0af1a54",tooltip="Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual."];
   Node29 -> Node31 [id="edge45_Node000029_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node31 [id="Node000031",label="TProcuraConstrutiva\l::BranchAndBound",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd",tooltip="Executa o algoritmo Branch-and-Bound, um algoritmo informado."];
   Node31 -> Node24 [id="edge46_Node000031_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];

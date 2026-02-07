@@ -2,7 +2,7 @@ var classCJogoEmLinha =
 [
     [ "CJogoEmLinha", "classCJogoEmLinha.html#a88abc2e2195a32ac1b78db2f8733c923", null ],
     [ "~CJogoEmLinha", "classCJogoEmLinha.html#ad8cb03c6bbbbd49b3eb0993f602adc01", null ],
-    [ "Acao", "classCJogoEmLinha.html#a25eb875c5fb35543ab74161e94a75ad4", null ],
+    [ "Acao", "classCJogoEmLinha.html#a4b40cc0da3a6ad2b1d1604e86a728416", null ],
     [ "Casa", "classCJogoEmLinha.html#a72fb49a4c59c54834e9bd5a936e1da14", null ],
     [ "Casa", "classCJogoEmLinha.html#ab07e98f06d80629870f010e9e234da81", null ],
     [ "Codifica", "classCJogoEmLinha.html#a9c604cfb7ca0500e9f165a3a2b9b7a9d", null ],

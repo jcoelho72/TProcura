@@ -7,17 +7,17 @@ digraph "TProcura::EditarIndicadores"
   rankdir="RL";
   Node1 [id="Node000001",label="TProcura::EditarIndicadores",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Permite ao utilizador editar os indicadores a utilizar."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a5fdf4e8f76e59eb83fbc274fa61e34af",tooltip="Inicializa a interação com o utilizador."];
+  Node2 [id="Node000002",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8331059908495f9a915ada39424ca27c",tooltip="Inicializa a interação com o utilizador."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aad1499e49cf6757569aeabd9c3fb2a8c",tooltip="Inicializa a interação com o utilizador."];
+  Node3 [id="Node000003",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8efd6f9c08b28effd32ab3ed07b4f70e",tooltip="Inicializa a interação com o utilizador."];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$Adversa_2Teste_2teste_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97",tooltip=" "];
   Node2 -> Node5 [id="edge4_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="CJogoDoGalo::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoDoGalo.html#a113984a3801a93ebce61e0a700a413ab",tooltip="Inicializa a interação com o utilizador."];
+  Node5 [id="Node000005",label="CJogoDoGalo::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoDoGalo.html#a113984a3801a93ebce61e0a700a413ab",tooltip=" "];
   Node2 -> Node6 [id="edge5_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#ad289e94136b44c9e3e942acf64ff0449",tooltip="Inicializa a interação com o utilizador."];
+  Node6 [id="Node000006",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#ad289e94136b44c9e3e942acf64ff0449",tooltip=" "];
   Node2 -> Node7 [id="edge6_Node000002_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip="Inicializa a interação com o utilizador."];
+  Node7 [id="Node000007",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip=" "];
   Node2 -> Node8 [id="edge7_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip="Inicializa a interação com o utilizador."];
+  Node8 [id="Node000008",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip=" "];
 }

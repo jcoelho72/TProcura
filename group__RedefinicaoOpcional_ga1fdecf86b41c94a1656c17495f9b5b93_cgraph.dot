@@ -9,7 +9,7 @@ digraph "TProcuraConstrutiva::MostrarSolucao"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraConstrutiva\l::MostrarCaminho",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a51a3757ad4f4041833c7957276d76ab9",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#gacbc6e34f3a403d26d806f37b5cd739f6",tooltip="Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor."];
+  Node3 [id="Node000003",label="TProcuraConstrutiva\l::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#gad59a1afebfef92316c92920f125ea45e",tooltip="Retorna a ação (movimento, passo, jogada, lance, etc.) que gerou o sucessor."];
   Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
 }

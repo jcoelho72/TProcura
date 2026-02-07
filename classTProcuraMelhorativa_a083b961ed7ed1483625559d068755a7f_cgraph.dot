@@ -10,7 +10,7 @@ digraph "TProcuraMelhorativa::SelecionarSobreviventesAE"
   Node2 [id="Node000002",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrã, para debug."];
   Node2 -> Node2 [id="edge2_Node000002_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node3 [id="edge3_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcura::DebugTabela",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6e6d07072c8a33c8355145009a17ef6c",tooltip="Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superi..."];
+  Node3 [id="Node000003",label="TProcura::DebugTabela",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa7dbc3305d21f4fcf112ea0eb4786425",tooltip="Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superi..."];
   Node3 -> Node4 [id="edge4_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcura::DebugHSL",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#abdba8f413a66966127c3ca50086fb987",tooltip="Muda a cor (fundo/letra) com HSL."];
   Node3 -> Node5 [id="edge5_Node000003_Node000005",color="steelblue1",style="solid",tooltip=" "];

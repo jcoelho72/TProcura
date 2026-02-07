@@ -50,5 +50,12 @@ digraph "TProcuraMelhorativa::AlgoritmoGenetico"
   Node20 [id="Node000020",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node19 -> Node2 [id="edge24_Node000019_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node21 [id="edge25_Node000019_Node000021",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a55be4bacef75d055a55cf604cc5817f6",tooltip="Mostra tempo num formato humano."];
+  Node21 [id="Node000021",label="TProcura::MostraTempo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a84cbaa6dbb49a0f79ae5c33f81cde1a1",tooltip="Mostra tempo num formato humano."];
+  Node21 -> Node22 [id="edge26_Node000021_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="TString::printf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a4b9a718839325a0e057bc6e2483d3f17",tooltip=" "];
+  Node22 -> Node12 [id="edge27_Node000022_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node22 -> Node23 [id="edge28_Node000022_Node000023",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="TVector\< char \>::Data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#addd572d70b587092fddc21a8b0f53120",tooltip="Acesso direto."];
+  Node22 -> Node24 [id="edge29_Node000022_Node000024",color="steelblue1",style="solid",tooltip=" "];
+  Node24 [id="Node000024",label="TVector\< char \>::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
 }

@@ -29,9 +29,9 @@ digraph "TVector::Pop"
   Node9 -> Node10 [id="edge13_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
   Node10 -> Node11 [id="edge14_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a181494095e78d803175e81b39012783f",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node11 [id="Node000011",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a80cd0f481e853ad9ef5625c6ff4dcc66",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node10 -> Node12 [id="edge15_Node000010_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ab83a55b786a1c3726f0afdb4075cbeba",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node12 [id="Node000012",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node8 -> Node13 [id="edge16_Node000008_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraAdversa::MetodoIterativo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a7c4153974c32753901326271fee90197",tooltip="iteração, aumentando o nível progressivamente"];
   Node13 -> Node8 [id="edge17_Node000013_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];

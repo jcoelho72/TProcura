@@ -8,8 +8,7 @@ var namespaces_dup =
       [ "ContaUTF8", "namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5", null ],
       [ "fopen", "namespacecompat.html#a00b22acc72899dbcb64f43ad8ec8b41d", null ],
       [ "Icon", "namespacecompat.html#a22c741ec366392367813311aa7170851", null ],
-      [ "init_io", "namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc", null ],
-      [ "strtok", "namespacecompat.html#a342aea1a38c4383aedcc7fea5e68048a", null ]
+      [ "init_io", "namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc", null ]
     ] ],
     [ "TRand", "namespaceTRand.html", [
       [ "rand", "namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f", null ],

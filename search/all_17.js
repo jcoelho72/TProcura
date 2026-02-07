@@ -14,13 +14,13 @@ var searchData=
   ['njogadas_11',['nJogadas',['../structSResultadoJogo.html#a291913206f8c46a4ea3a395925592349',1,'SResultadoJogo']]],
   ['no_20tprocura_12',['Características dos Testes no TProcura',['../investigacao.html#autotoc_md9',1,'']]],
   ['nofolha_13',['NoFolha',['../classTProcuraAdversa.html#a01ed7d4718647eb52723ecffaf68aa4b',1,'TProcuraAdversa']]],
-  ['nome_14',['nome',['../structSIndicador.html#a553a717c601fb7060688a3c7bbeb6d19',1,'SIndicador::nome'],['../structSParametro.html#aa25ae60ffa1acbaeb51bdf0e5312c349',1,'SParametro::nome']]],
-  ['nomevalores_15',['nomeValores',['../structSParametro.html#aae8aa852643edec8af4d1c3c42ede0b2',1,'SParametro']]],
+  ['nome_14',['nome',['../structSIndicador.html#a9edd8e7d4ed58ac71f6be3d6a4b0af3d',1,'SIndicador::nome'],['../structSParametro.html#acf3b18e14507674e5c24d0fd16afbbf2',1,'SParametro::nome']]],
+  ['nomevalores_15',['nomeValores',['../structSParametro.html#ad728cb6ec18a69e5d0add55f8cc02a11',1,'SParametro']]],
   ['nota_20final_16',['nota final',['../tutorial_adversas.html#autotoc_md170',1,'Nota final'],['../tutorial_construtivas.html#autotoc_md182',1,'Nota final']]],
   ['novaconfiguracao_17',['NovaConfiguracao',['../classTProcura.html#a62cd10354f0fbe5ccc45bbd0c0d7f121',1,'TProcura']]],
   ['novalinha_18',['NovaLinha',['../classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32',1,'TProcuraConstrutiva']]],
   ['novasolucao_19',['novasolucao',['../classTProcuraMelhorativa.html#a50bf29ddd183e8e4678ceb2247b9cf58',1,'TProcuraMelhorativa::NovaSolucao()'],['../classCParticao.html#a82ac73218fe065f106b5b1d3162637a1',1,'CParticao::NovaSolucao()'],['../classCOitoDamas.html#a76a6cfab4d66232a84d6cb9dc73b7fcf',1,'COitoDamas::NovaSolucao()'],['../classTCodificacaoPermutacao.html#a16f609d10fde3c8dbbbeeba584f3c619',1,'TCodificacaoPermutacao::NovaSolucao()'],['../classTCodificacaoInteira.html#a7d2dc5819367ddacdbcf1b3e30a67d4c',1,'TCodificacaoInteira::NovaSolucao()'],['../classTCodificacaoBinaria.html#aa46563911320bf89456b47fb4767ded6',1,'TCodificacaoBinaria::NovaSolucao()']]],
-  ['novotexto_20',['NovoTexto',['../classTProcura.html#a17fa21564876d313f79b4376ce7366a1',1,'TProcura']]],
-  ['novovalor_21',['NovoValor',['../classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e',1,'TProcura']]],
+  ['novotexto_20',['NovoTexto',['../classTProcura.html#a3e46f5e78c7e12b92f67ffc64c9744ad',1,'TProcura']]],
+  ['novovalor_21',['NovoValor',['../classTProcura.html#a7d6b6baca763cf0dd9f5fd8c373415a5',1,'TProcura']]],
   ['numeros_22',['numeros',['../classCParticao.html#a66f8ebeadfe83528094ae545015452f5',1,'CParticao::numeros'],['../classCParticaoCB.html#a2d37bd2e1874d582c31f74485daa251e',1,'CParticaoCB::numeros']]]
 ];

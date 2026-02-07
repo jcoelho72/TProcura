@@ -4,7 +4,7 @@ var classCParticao =
     [ "~CParticao", "classCParticao.html#a28e058d1acef74690ec638cc69e968d1", null ],
     [ "CParticao", "classCParticao.html#acf81ec08aa6e2c81adbc6e8c3c8ecf79", null ],
     [ "~CParticao", "classCParticao.html#a28e058d1acef74690ec638cc69e968d1", null ],
-    [ "Acao", "classCParticao.html#a1cd10748ebedbe43fc5e18969a112448", null ],
+    [ "Acao", "classCParticao.html#ab27e261af87b0ed866d78d10549a12b6", null ],
     [ "Avaliar", "classCParticao.html#a41fdcf6d83bc489ebc03d2548bfc5152", null ],
     [ "Codifica", "classCParticao.html#a51dc6a3cb2696010714aec34a42df97d", null ],
     [ "Copiar", "classCParticao.html#a4a20dec42b77ae88235e915744fc391a", null ],

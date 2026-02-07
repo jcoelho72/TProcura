@@ -13,7 +13,7 @@ digraph "TProcura::EditarParametros"
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="compat::ContaUTF8",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5",tooltip=" "];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fa07f03b8e5a201e35023ba7724b82",tooltip="Mostra os parâmetros atuais."];
+  Node5 [id="Node000005",label="TProcura::MostraParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a366679225ae040ff96bdbf0465dcd66e",tooltip="Mostra os parâmetros atuais."];
   Node5 -> Node3 [id="edge5_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node6 [id="edge6_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
@@ -21,7 +21,7 @@ digraph "TProcura::EditarParametros"
   Node7 [id="Node000007",label="TProcura::ParametroAtivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e",tooltip=" "];
   Node7 -> Node6 [id="edge8_Node000007_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node8 [id="edge9_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="TProcura::NovoValor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a9918a19f3cead7c9c6bd28f19ff31b0e",tooltip=" "];
+  Node8 [id="Node000008",label="TProcura::NovoValor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7d6b6baca763cf0dd9f5fd8c373415a5",tooltip=" "];
   Node1 -> Node6 [id="edge10_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node7 [id="edge11_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
 }

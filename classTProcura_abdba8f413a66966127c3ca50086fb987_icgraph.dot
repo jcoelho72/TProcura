@@ -9,7 +9,7 @@ digraph "TProcura::DebugHSL"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcuraMelhorativa\l::DebugID",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a4be07e151d9b0e52c5a70d5fc5ba2cf5",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcuraMelhorativa\l::DebugDiversidadeAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a1b0b94a780435032d07e56cbfe6f0f2f",tooltip=" "];
+  Node3 [id="Node000003",label="TProcuraMelhorativa\l::DebugDiversidadeAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#ac874b108cf4d18501500aef4d15354af",tooltip=" "];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcuraMelhorativa\l::DebugGeracaoAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a98c93de808e3181024508c35fa22d62f",tooltip=" "];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -19,12 +19,12 @@ digraph "TProcura::DebugHSL"
   Node4 -> Node7 [id="edge6_Node000004_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node2 -> Node8 [id="edge7_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="TProcuraMelhorativa\l::DebugPopulacaoAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a372f8a7498a27d2fb11c3791b1f26d61",tooltip=" "];
+  Node8 [id="Node000008",label="TProcuraMelhorativa\l::DebugPopulacaoAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a851e4c8b8eebcba2d58c34ba0c32f2c1",tooltip=" "];
   Node8 -> Node4 [id="edge8_Node000008_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 -> Node7 [id="edge9_Node000008_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node8 [id="edge10_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node9 [id="edge11_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TProcura::DebugTabela",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6e6d07072c8a33c8355145009a17ef6c",tooltip="Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superi..."];
+  Node9 [id="Node000009",label="TProcura::DebugTabela",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa7dbc3305d21f4fcf112ea0eb4786425",tooltip="Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superi..."];
   Node9 -> Node10 [id="edge12_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraMelhorativa\l::AplicarDiversidadeAE",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a5e51812d311d976a002f6c7ec0fcd555",tooltip=" "];
   Node10 -> Node5 [id="edge13_Node000010_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];

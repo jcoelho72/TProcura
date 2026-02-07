@@ -21,6 +21,7 @@ var searchData=
   ['tvector_3c_20sindice_20_3e_18',['TVector&lt; SIndice &gt;',['../classTVector.html',1,'']]],
   ['tvector_3c_20sparametro_20_3e_19',['TVector&lt; SParametro &gt;',['../classTVector.html',1,'']]],
   ['tvector_3c_20tprocuraconstrutiva_20_3e_20',['TVector&lt; TProcuraConstrutiva &gt;',['../classTVector.html',1,'']]],
-  ['tvector_3c_20tvector_3c_20int_20_3e_20_3e_21',['TVector&lt; TVector&lt; int &gt; &gt;',['../classTVector.html',1,'']]],
-  ['tvector_3c_20uint64_5ft_20_3e_22',['TVector&lt; uint64_t &gt;',['../classTVector.html',1,'']]]
+  ['tvector_3c_20tstring_20_3e_21',['TVector&lt; TString &gt;',['../classTVector.html',1,'']]],
+  ['tvector_3c_20tvector_3c_20int_20_3e_20_3e_22',['TVector&lt; TVector&lt; int &gt; &gt;',['../classTVector.html',1,'']]],
+  ['tvector_3c_20uint64_5ft_20_3e_23',['TVector&lt; uint64_t &gt;',['../classTVector.html',1,'']]]
 ];

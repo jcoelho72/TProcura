@@ -7,5 +7,5 @@ digraph "CPuzzle8::MostrarSolucao"
   rankdir="LR";
   Node1 [id="Node000001",label="CPuzzle8::MostrarSolucao",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="definir para visualizar a solução"];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="CPuzzle8::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a6e6634ceac73ff4eb3ffa10978eb1126",tooltip=" "];
+  Node2 [id="Node000002",label="CPuzzle8::Acao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a17bae87193200e355fa7124b9e005141",tooltip=" "];
 }

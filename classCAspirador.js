@@ -2,7 +2,7 @@ var classCAspirador =
 [
     [ "CAspirador", "classCAspirador.html#a52673724fb2175563cc6838e6ec8f0a5", null ],
     [ "~CAspirador", "classCAspirador.html#aa2b3375bd71b340d7834978e8c8ed951", null ],
-    [ "Acao", "classCAspirador.html#a602bee168dd45c680b2a10bdef57a5a4", null ],
+    [ "Acao", "classCAspirador.html#a2f036fb3fbbcb906b999847b66879946", null ],
     [ "Codifica", "classCAspirador.html#a856e23c30c70be5345f56979b27fdc1d", null ],
     [ "Copiar", "classCAspirador.html#a3785ad3b80ecc08711a70d9920e0bcb9", null ],
     [ "Debug", "classCAspirador.html#ab95fe625712f157e5836de7364a53cee", null ],

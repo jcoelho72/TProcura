@@ -2,8 +2,8 @@ var classTProcuraConstrutiva =
 [
     [ "TProcuraConstrutiva", "classTProcuraConstrutiva.html#a13799910c11d9ab8585bec576becc8a5", null ],
     [ "~TProcuraConstrutiva", "classTProcuraConstrutiva.html#aa19cbee6023bd0ff01c61c6d6db2e2ae", null ],
-    [ "Acao", "group__RedefinicaoOpcional.html#gacccf4fbb52126ba19bfc456c0c6d5214", null ],
-    [ "Acao", "group__RedefinicaoSugerida.html#gacbc6e34f3a403d26d806f37b5cd739f6", null ],
+    [ "Acao", "group__RedefinicaoSugerida.html#gad59a1afebfef92316c92920f125ea45e", null ],
+    [ "Acao", "group__RedefinicaoOpcional.html#gad3f57f04fb178e48e4cd2d7dc0af1a54", null ],
     [ "AStar", "group__ProcurasInformadas.html#ga37dd78e1a9a6742700728135f81964b4", null ],
     [ "BranchAndBound", "group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd", null ],
     [ "CalculaCaminho", "classTProcuraConstrutiva.html#ab3d3ef92421595428a27deef2c3bb668", null ],
