@@ -224,7 +224,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void Inicializar(void) {}
+	virtual void Inicializar(void) { TRand::srand(Parametro(SEMENTE)); }
 
 
 	/**
@@ -440,6 +440,19 @@ public:
 	virtual void TesteValidacao(TVector<int> instancias, TString fichSolucoes, TString fichResultados = "");
 
 	/**
+	 * @brief Verifica a validade de uma solução para a instância atual.
+	 * @note Redefinição necessária, caso seja necessário um processo de validação específico.
+	 *
+	 * Esta função é chamada para verificar a validade de cada ação durante a execução da solução,
+	 * bem como para calcular indicadores do resultado final. O formato da solução é genérico,
+	 * podendo ser adaptado conforme as necessidades específicas do problema.
+	 *
+	 * @param solucao - representação da solução a ser validada (formato específico a ser definido na subclasse).
+	 * @return Retorna verdadeiro se a solução for válida, ou falso caso contrário.
+	 */
+	virtual bool Validar(TVector<TString> solucao) { return false; }
+
+	/**
 	 * @brief Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas
 	 * @note Redefinição não é necessária
 	 * @param instancias - IDs das instâncias a serem utilizadas
@@ -508,6 +521,8 @@ public:
 	virtual void MostrarSolucao();
 	/// @brief  retorna um vetor de inteiros com a codificação da solução (esta codificação será adicionada aos indicadores, no ficheiro CSV de resultados)
 	virtual TVector<int64_t> CodificarSolucao() { return TVector<int64_t>(); }
+	/// @brief  retorna uma solução no formato do TResultado, para ser gravada em ficheiro de soluções, ou visualizada (pode ser utilizada para mostrar a solução, ou para gravar a solução num formato mais legível)
+	virtual TVector<TString> Solucao() { return {}; }
 
 	/// @brief ID da instância atual, a ser utilizado em SolucaoVazia().
 	static TParametro instancia;
@@ -762,7 +777,7 @@ protected:
 	 * @param resultados Vetor de resultados.
 	 * @param f Ponteiro para o ficheiro onde gravar.
 	 */
-	bool RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro);
+	bool RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, bool parametros = true);
 
 	/**
 	 * @brief Insere configurações a partir de uma string.

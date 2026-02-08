@@ -22,6 +22,7 @@ TProcuraConstrutiva* CParticao::Duplicar(void)
 
 void CParticao::Inicializar(void)
 {
+	TProcuraConstrutiva::Inicializar();
 	direita = esquerda = numeros = {};
 	totalDireita = totalEsquerda = 0;
 
@@ -37,7 +38,6 @@ void CParticao::Inicializar(void)
 		numeros.Last() += 1;
 	numeros.Sort();
 	tamanhoCodificado = 3; // apenas três inteiro de 64 bits, para colocar 3 inteiros de 64 bits
-	TProcuraConstrutiva::Inicializar();
 }
 
 void CParticao::Sucessores(TVector<TNo>& sucessores)

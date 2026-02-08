@@ -38,6 +38,7 @@ void CTesteTVector::ResetParametros()
 void CTesteTVector::Inicializar(void)
 {
 	int tamanho = instancia.valor * 1000000;
+	TProcura::Inicializar();
 	if (Parametro(ESTRUTURA_DADOS) != 2) { // TVector
 		dadosA.Count(tamanho);
 		dadosB.Count(tamanho);

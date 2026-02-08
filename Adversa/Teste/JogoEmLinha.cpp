@@ -46,7 +46,7 @@ void CJogoEmLinha::Inicializar(void)
 		{6,12,12,regular}, // 6 em linha 12x12
 	};
 
-	TProcuraConstrutiva::Inicializar();
+	TProcuraAdversa::Inicializar();
 	infinito = 10000;
 	minimizar = true;
 	inst = instancias[instancia.valor - 1];

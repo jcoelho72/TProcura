@@ -21,7 +21,7 @@ clock_t TProcura::instanteFinal = 0;
 // flag de problemas de memória esgotada
 bool TProcura::memoriaEsgotada = false;
 // ID da instância atual (problemas com várias instâncias, a utilizar em SolucaoVazia())
-TParametro TProcura::instancia = { "",1,1,1};
+TParametro TProcura::instancia = { "",1,1,1 };
 // nome do ficheiro de uma instância (utilizar como prefixo, concatenando com ID da instância)
 TString TProcura::ficheiroInstancia = "instancia_";
 
@@ -107,7 +107,6 @@ void TProcura::TesteManual(TString nome)
 	int selecao;
 	TVector<TResultado> resultados;
 	ResetParametros();
-	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
 	LimparEstatisticas();
 	while (true) {
@@ -127,7 +126,7 @@ void TProcura::TesteManual(TString nome)
 			return;
 		switch (Dominio(selecao, 0, 9)) {
 		case 0: return;
-		case 1: TRand::srand(Parametro(SEMENTE)); SolicitaInstancia(); Inicializar(); break;
+		case 1: SolicitaInstancia(); break;
 		case 2: Explorar(); break;
 		case 3: EditarParametros(); break;
 		case 4: MostrarSolucao(); break;
@@ -162,8 +161,77 @@ void TProcura::TesteManual(TString nome)
 // Idêntico ao teste empírico, mas utiliza a configuração atual e verifica se uma solução é válida para cada instância
 void TProcura::TesteValidacao(TVector<int> instancias, TString fichSolucoes, TString fichResultados)
 {
-//	for (auto inst : instancias) {
-//	}
+	TVector<TResultado> solucoes; // guarda soluções para valiação
+	TVector<TResultado> resultados; // guarda resultados da validação para gravação
+	TVector<int> atual;
+	TVector<TVector<int>> instSolucoes; // para cada instância, os IDs dos resultados
+	int backupID = instancia.valor;
+	TString str, buffer(BUFFER_SIZE);
+
+	TesteInicio(instancias, atual);
+	instSolucoes.Count(instancias.Count());
+
+	// ler ficheiro de soluções, formato: id; (qualquer número de parâmetros); solução
+	str.printf("%s.csv", *fichSolucoes.tok().First());
+	FILE* f = compat::fopen(str, "rb");
+	if (f != NULL) {
+		while (fgets(buffer.Data(), BUFFER_SIZE, f) != NULL) {
+			buffer.Count(strlen(buffer.Data())+1);
+			TVector<TString> tokens = buffer.tok(";\n");
+			int id = atoi(tokens.First());
+			int indice = instancias.Find(id);
+			if (tokens.Count() < 2 || indice < 0)
+				continue;
+			instSolucoes[indice] += solucoes.Count(); // registar o índice do resultado para a instância correspondente
+			solucoes += { id, 0, { }, tokens.Last().tok()}; // registar a instância, solução e indicadores (a preencher após validação)
+		}
+		fclose(f);
+	}
+	else {
+		Mensagem(Icon(EIcon::IMP), "Não foi possível abrir o ficheiro de soluções %s.", *str);
+		return;
+	}
+	Debug(ATIVIDADE, false,
+		"\n ├─ %-2sSoluções:%d   %-2sInstâncias: %d.",
+		Icon(EIcon::SUCESSO), solucoes.Count(),
+		Icon(EIcon::INST), instancias.Count()) &&
+		fflush(stdout);
+
+	// verificar cada instância, para as soluções existentes
+	for (auto inst : instancias) {
+		int validas = 0, invalidas = 0, melhor = -1, pior = -1;
+		int indice = instancias.Find(inst);
+		for (auto solucao : instSolucoes[indice]) {
+			// gravar o ID da instância atual
+			instancia.valor = inst;
+			Inicializar();
+			LimparEstatisticas();
+			// validar a solução para a instância atual
+			if (Validar(solucoes[solucao].solucao))
+				validas++;
+			else
+				invalidas++;
+
+			// agregar apenas o resultado, a melhor e pior solução válida
+			int resultado = Indicador(IND_RESULTADO);
+			if (resultado >= 0) {
+				if (melhor<0 || melhor>resultado)
+					melhor = resultado;
+				if (pior < 0 || pior < resultado)
+					pior = resultado;
+			}
+		}
+		// registar a instância e resultados (válidas, inválids, melhor e pior valores) para gravação 
+		resultados += { inst, 0, { validas, invalidas, melhor, pior }, { }};
+	}
+
+	// gravar resultados, um por instância
+	RelatorioCSV(resultados, fichResultados, false);
+
+	// repor a instância atual
+	instancia.valor = backupID;
+	Inicializar();
+	TesteFim();
 }
 
 void TProcura::MostraCaixa(TVector<TString> titulo, ECaixaParte parte, TVector<int> largura, bool aberta, int identacao) {
@@ -584,6 +652,7 @@ void TProcura::InserirRegisto(TVector<TResultado>& resultados, int inst, int con
 		Registo(resultados.Last(), ind, Indicador(ind));
 	// adicionar no final a solução codificada em inteíros
 	resultados.Last().valor += CodificarSolucao();
+	resultados.Last().solucao = Solucao();
 }
 
 int64_t TProcura::Registo(TResultado& resultado, int id)
@@ -748,18 +817,20 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 	MostraParametros(detalhe, &comum, Icon(EIcon::CONF));
 	printf(CINZ " (parâmetros comuns)" NCINZ);
 
-	// visualizar configurações atuais, assinalando a atualmente escolhida
-	printf("\n═╪═ Configurações ═══");
-	for (int i = 0; i < configuracoes.Count(); i++) {
-		TString str;
-		str.printf("%-2s [%d]", Icon(EIcon::PARAM), i + 1);
-		ConfiguracaoAtual(configuracoes[i], GRAVAR);
-		MostraParametros(detalhe, &distinto, str);
-		if (i == atual)
-			printf(" ⭐ atual");
-		if (atual < 0 && i == 2 && configuracoes.Count() > 10) {
-			printf("\n │ ...");
-			i = configuracoes.Count() - 4;
+	if (configuracoes.Count() > 1) {
+		// visualizar configurações atuais, assinalando a atualmente escolhida
+		printf("\n═╪═ Configurações ═══");
+		for (int i = 0; i < configuracoes.Count(); i++) {
+			TString str;
+			str.printf("%-2s [%d]", Icon(EIcon::PARAM), i + 1);
+			ConfiguracaoAtual(configuracoes[i], GRAVAR);
+			MostraParametros(detalhe, &distinto, str);
+			if (i == atual)
+				printf(" ⭐ atual");
+			if (atual < 0 && i == 2 && configuracoes.Count() > 10) {
+				printf("\n │ ...");
+				i = configuracoes.Count() - 4;
+			}
 		}
 	}
 	printf("\n═╧═══════════════════");
@@ -884,7 +955,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 			Debug(ATIVIDADE, false,
 				"\n ├─ %-2s Ficheiro %s.csv gravado.\n"
 				" │  %-2s Tempo real: %s",
-				Icon(EIcon::RESULT), ficheiro,
+				Icon(EIcon::RESULT), *ficheiro,
 				Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE))) &&
 			Debug(ATIVIDADE, false, "\n │  %-2s CPU total: %s",
 				Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE) * mpiCount)) &&
@@ -894,9 +965,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 
 	ConfiguracaoAtual(atual, GRAVAR);
 	instancia.valor = backupID;
-	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
-
 	TesteFim();
 }
 
@@ -1085,7 +1154,6 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	// carregar a configuração
 	ConfiguracaoAtual(configuracoes[conf], GRAVAR);
 	instancia.valor = inst;
-	TRand::srand(Parametro(SEMENTE));
 	// carregar instância
 	Inicializar();
 	// executar um algoritmo 
@@ -1194,7 +1262,7 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 			while (++i < argc && strcmp(argv[i], "-P") != 0)
 				argParametros.printf(" %s", argv[i]);
 			ConfiguracaoAtual(base, LER);
-			InserirConfiguracoes(argParametros.Data(), base);
+			InserirConfiguracoes(argParametros, base);
 			ConfiguracaoAtual(base, GRAVAR);
 			NovaConfiguracao(base);
 
@@ -1252,7 +1320,7 @@ void TProcura::AjudaUtilizacao(TString programa) {
 }
 
 
-bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro) {
+bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, bool parametros) {
 	TString str;
 	if (mpiCount > 1)
 		str.printf("%s_%d.csv", *ficheiro.tok().First(), mpiID);
@@ -1262,42 +1330,56 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro) {
 	if (f != NULL) {
 		// cabeçalho: instância, parametros, indicadores
 		fprintf(f, "Instância;");
-		for (int i = 0; i < parametro.Count(); i++)
-			fprintf(f, "P%d(%s);", i + 1, *parametro[i].nome);
-		for (auto item : indAtivo)
-			fprintf(f, "I%d(%s);", item + 1, *indicador[item].nome);
-		fprintf(f, "Solução\n");
+		if (parametros) {
+			for (int i = 0; i < parametro.Count(); i++)
+				fprintf(f, "P%d(%s);", i + 1, *parametro[i].nome);
+			for (auto item : indAtivo)
+				fprintf(f, "I%d(%s);", item + 1, *indicador[item].nome);
+			fprintf(f, "Solução\n");
+		}
+		else {
+			// apenas soluções: válidas, inválidas, melhor, pior
+			fprintf(f, "Válidas;Inválidas;Melhor;Pior\n");
+		}
 
 		for (auto& res : resultados) {
 			fprintf(f, "%d;", res.instancia);
-			for (int j = 0; j < parametro.Count(); j++)
-				// ver se parametro j está ativo na configuração configuracoes[res.configuracao]
-				if (!ParametroAtivo(j, &(configuracoes[res.configuracao])))
-					fprintf(f, ";"); // parametro inativo, não mostrar
-				else if (parametro[j].nomeValores.Empty())
-					fprintf(f, "%d;", configuracoes[res.configuracao][j]); // mostrar valor
-				else
-					fprintf(f, "%d:%s;", // mostrar valor e texto
-						configuracoes[res.configuracao][j],
-						*parametro[j].nomeValores[configuracoes[res.configuracao][j] - parametro[j].min]);
-			for (auto ind : indAtivo)
-				fprintf(f, "%" PRId64 ";", Registo(res, ind));
+			if (parametros) {
+				for (int j = 0; j < parametro.Count(); j++)
+					// ver se parametro j está ativo na configuração configuracoes[res.configuracao]
+					if (!ParametroAtivo(j, &(configuracoes[res.configuracao])))
+						fprintf(f, ";"); // parametro inativo, não mostrar
+					else if (parametro[j].nomeValores.Empty())
+						fprintf(f, "%d;", configuracoes[res.configuracao][j]); // mostrar valor
+					else
+						fprintf(f, "%d:%s;", // mostrar valor e texto
+							configuracoes[res.configuracao][j],
+							*parametro[j].nomeValores[configuracoes[res.configuracao][j] - parametro[j].min]);
+				for (auto ind : indAtivo)
+					fprintf(f, "%" PRId64 ";", Registo(res, ind));
 
-			if (gravarSolucao) {
-				if (!res.solucao.Empty()) {
-					for (auto& acao : res.solucao)
-						fprintf(f, "%s ", *acao);
-					fprintf(f, "\n");
+				if (gravarSolucao) {
+					if (!res.solucao.Empty()) {
+						for (auto& acao : res.solucao)
+							fprintf(f, "%s ", *acao);
+						fprintf(f, "\n");
+					}
+					else {
+						// imprimir todos os valores após os indicadores
+						for (int i = indicador.Count(); i < res.valor.Count(); i++)
+							fprintf(f, "%" PRId64 ";", res.valor[i]);
+						fprintf(f, "\n");
+					}
 				}
-				else {
-					// imprimir todos os valores após os indicadores
-					for (int i = indicador.Count(); i < res.valor.Count(); i++)
-						fprintf(f, "%" PRId64 ";", res.valor[i]);
+				else
 					fprintf(f, "\n");
-				}
 			}
-			else
+			else {
+				// apenas soluções: válidas, inválidas, melhor, pior
+				for (auto item : res.valor)
+					fprintf(f, "%" PRId64 ";", item);
 				fprintf(f, "\n");
+			}
 		}
 
 		fclose(f);
@@ -1545,7 +1627,7 @@ TString TProcura::NovoTexto(TString prompt) {
 		return TString("");
 
 	// remover o '\n' do final
-	int len = (int) strlen(str);
+	int len = (int)strlen(str);
 	if (len > 0 && str[len - 1] == '\n')
 		str[len - 1] = 0;
 
@@ -1567,16 +1649,17 @@ void TProcura::SolicitaInstancia() {
 		MostraCaixa("", ECaixaParte::Fundo);
 		texto = NovoTexto("\nNovo ID (ENTER mantém) ou novo prefixo (texto): ");
 		resultado = atoi(texto);
-		if (resultado != 0 || strlen(texto) <= 1) {
+		if (resultado != 0 || texto.Empty()) {
 			if (resultado != 0)
 				instancia.valor = resultado;
 			Dominio(instancia.valor, instancia.min, instancia.max);
 		}
-		else if (strlen(texto) < 256) 
+		else if (texto.Count() < 256)
 			ficheiroInstancia = texto.tok().First();
 	}
 	else
 		instancia.valor = instancia.min;
+	Inicializar();
 }
 
 
@@ -1661,7 +1744,7 @@ bool TProcura::JuntarCSV(TString ficheiro)
 		(nome = "").printf("%s_%d.csv", *ficheiro, i);
 		fLer = compat::fopen(nome, "rt");
 		if (fLer == NULL) {
-			printf("\nErro ao ler ficheiro %s.", (const char*)nome);
+			printf("\nErro ao ler ficheiro %s.", *nome);
 			continue;
 		}
 		while (!feof(fLer)) {

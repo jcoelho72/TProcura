@@ -179,7 +179,7 @@ public:
 	/**
 	 * @brief Inicializar a instância. No final, chamar NovaSolucao() para inicializar o estado.
 	 */
-	void Inicializar(void) {}
+	void Inicializar(void) { TProcura::Inicializar(); }
 
 	void LimparEstatisticas();
 

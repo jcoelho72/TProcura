@@ -19,6 +19,8 @@ int TProcuraConstrutiva::lowerBound = 0;
 int TProcuraConstrutiva::expansoes = 0;
 /// @brief Número de estados gerados.
 int TProcuraConstrutiva::geracoes = 0;
+/// @brief custo da última ação realizada (Acao(TString))
+int TProcuraConstrutiva::custoAcao = 0;
 
 
 // tamanho em inteiros de 64 bits de um objeto (inferior ou igual a OBJETO_HASHTABLE)
@@ -85,6 +87,7 @@ bool TProcuraConstrutiva::Acao(TString acao) {
 	Sucessores(sucessores);
 	for (int i = 0; i < sucessores.Count(); i++)
 		if (acao == Acao(sucessores[i])) {
+			custoAcao = sucessores[i]->custo - custo;
 			Copiar(sucessores[i]);
 			TProcuraConstrutiva::LibertarVector(sucessores);
 			return true;
@@ -157,6 +160,33 @@ void TProcuraConstrutiva::LibertarVector(TVector<TNo>& vector, int excepto, int 
 			delete vector[i];
 	vector = {};
 }
+
+
+bool TProcuraConstrutiva::Validar(TVector<TString> solucao) {
+	int custoTotal = 0, nAcoes=0;
+	// aplicar todas as ações
+	for (auto acao : solucao) {
+		if (!Acao(acao)) {
+			if(Debug(PASSOS, false, "\n │ Ação inválida: %s (custo atual: %d de %d ações válidas)",
+					*acao, custoTotal, nAcoes))
+				Debug();
+			resultado = -1; // ação inválida
+			return false;
+		}
+		custoTotal += custoAcao;
+		nAcoes++;
+	}
+	if (SolucaoCompleta()) {
+		resultado = custo = custoTotal; // custo da solução encontrada
+		return true;
+	}
+	if (Debug(PASSOS, false, "\n │ Solução não completa (custo atual: %d de %d ações válidas)",
+		custoTotal, nAcoes)) 
+		Debug();
+	resultado = -2; // solução incompleta
+	return false;
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // Procura em Largura Primeiro: expande primeiro o estado gerado não expandido mais antigo
@@ -358,6 +388,13 @@ int TProcuraConstrutiva::SolucaoParcial(int i, TVector<TNo>& sucessores, int iAu
 
 	LibertarVector(sucessores, i);
 	return solucao->custo;
+}
+
+TVector<TString> TProcuraConstrutiva::Solucao() {
+	TVector<TString> resultado;
+	for (int i = 0; i < caminho.Count() - 1; i++) 
+		resultado += caminho[i]->Acao(caminho[i + 1]);
+	return resultado;
 }
 
 void TProcuraConstrutiva::MostrarCaminho() {

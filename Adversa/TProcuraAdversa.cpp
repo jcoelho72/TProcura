@@ -536,7 +536,6 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 
 	ConfiguracaoAtual(atual, GRAVAR);
 	instancia.valor = backupID;
-	TRand::srand(Parametro(SEMENTE));
 	Inicializar();
 	printf("\n═╧═ %-2s Fim do Teste (%-2s%d  %-2s%s) ═══",
 		Icon(EIcon::FIM), Icon(EIcon::PROCESSO), mpiID,

@@ -1186,9 +1186,10 @@ public:
 
 			// extrair token
 			int len = i - start;
-			TString tok(len + 1);
+			TString tok;
+			tok.Count(len + 1);
 			memcpy(tok.Data(), s + start, len);
-			tok.Data()[len] = 0;
+			tok[len] = 0;
 
 			out += tok;
 		}

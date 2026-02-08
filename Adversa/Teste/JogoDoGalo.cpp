@@ -27,7 +27,7 @@ void CJogoDoGalo::Copiar(TProcuraConstrutiva*objecto)
 
 void CJogoDoGalo::Inicializar(void)
 {
-	TProcuraConstrutiva::Inicializar();
+	TProcuraAdversa::Inicializar();
 	minimizar = true;
 	tabuleiro.Count(9);
 	for (int i = 0; i < 9; i++)

@@ -305,6 +305,9 @@ public:
 	 */
 	virtual bool SolucaoCompleta(void) { return false; }
 
+
+	virtual bool Validar(TVector<TString> solucao);
+
 	/**
 	 * @brief Redefinição. Ver TProcura::ResetParametros().
 	 */
@@ -507,6 +510,9 @@ public:
 	 */
 	void MostrarSolucao(void) { MostrarCaminho(); }
 
+	/// @brief  retorna uma solução no formato do TResultado, para ser gravada em ficheiro de soluções, ou visualizada (pode ser utilizada para mostrar a solução, ou para gravar a solução num formato mais legível)
+	TVector<TString> Solucao();
+
 	/**
 	 * @brief Executa o algoritmo com os parametros atuais
 	 * @note Redefinição necessária no caso de se alterar os algoritmos disponíveis.
@@ -691,6 +697,8 @@ public:
 	static int expansoes;
 	/// @brief Número de estados gerados.
 	static int geracoes;
+	/// @brief custo da última ação realizada (Acao(TString))
+	static int custoAcao;
 
 	/// @internal Auxiliar para a construção da árvore de procura.
 	static TVector<const char*> ramo;

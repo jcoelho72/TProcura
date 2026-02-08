@@ -1,0 +1,7 @@
+Instância;P1(ALGORITMO);P2(NIVEL_DEBUG);P3(SEMENTE);P4(LIMITE_TEMPO);P5(LIMITE_ITERACOES);P6(VER_ACOES);P7(LIMITE);P8(ESTADOS_REPETIDOS);P9(PESO_ASTAR);P10(RUIDO_HEURISTICA);P11(BARALHAR_SUCESSORES);I1(IND_CUSTO);I2(Tempo(ms));I3(Iterações);I4(IND_EXPANSOES);I5(IND_GERACOES);I6(IND_LOWER_BOUND);Solução
+10;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;10;1;0;423;594;0;esq dir esq dir dir esq dir dir esq esq 
+11;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;-1;2;0;1847;1846;0;
+12;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;12;1;0;1533;2232;0;esq esq dir dir dir dir dir esq esq esq dir esq 
+13;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;-1;8;0;6863;6862;0;
+14;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;14;5;0;5230;7338;0;esq esq esq dir dir dir dir esq esq dir dir dir esq esq 
+15;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;-1;26;0;25739;25738;0;

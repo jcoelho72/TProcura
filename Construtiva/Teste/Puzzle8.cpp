@@ -23,6 +23,7 @@ TProcuraConstrutiva* CPuzzle8::Duplicar(void)
 void CPuzzle8::Inicializar(void)
 {
 	int backup = Parametro(ESTADOS_REPETIDOS);
+	TProcuraConstrutiva::Inicializar();
 	// colocar a posição final
 	puzzle.Count(9);
 	for (int i = 0; i < 9; i++)
@@ -40,7 +41,6 @@ void CPuzzle8::Inicializar(void)
 	}
 	Parametro(ESTADOS_REPETIDOS) = backup;
 	tamanhoCodificado = 1; // apenas um inteiro de 64 bits é suficiente para 4*9 bits
-	TProcuraConstrutiva::Inicializar();
 }
 
 void CPuzzle8::Sucessores(TVector<TNo>&sucessores)
