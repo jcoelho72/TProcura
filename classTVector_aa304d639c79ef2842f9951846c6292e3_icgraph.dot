@@ -154,4 +154,7 @@ digraph "TVector::Last"
   Node47 [id="Node000047",label="TProcuraAdversa::TesteEmpirico\lGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ac578f2a2b01d400231f85bfc79f5ae28",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node45 -> Node39 [id="edge101_Node000045_Node000039",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node45 -> Node14 [id="edge102_Node000045_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 -> Node48 [id="edge103_Node000045_Node000048",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node48 [id="Node000048",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a2a03781f9ba05ff583c9e335ecd34e09",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node48 -> Node32 [id="edge104_Node000048_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

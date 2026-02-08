@@ -68,4 +68,7 @@ digraph "TVector::Empty"
   Node26 [id="Node000026",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a79047083f0756a123a7e489027d48c3a",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node26 -> Node11 [id="edge36_Node000026_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node6 [id="edge37_Node000023_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node23 -> Node27 [id="edge38_Node000023_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node27 [id="Node000027",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a2a03781f9ba05ff583c9e335ecd34e09",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node27 -> Node11 [id="edge39_Node000027_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

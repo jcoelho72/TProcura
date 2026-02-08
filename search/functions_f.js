@@ -4,7 +4,7 @@ var searchData=
   ['random_1',['Random',['../classTVector.html#a769c6a55b72a463fd2313fbd638c7234',1,'TVector']]],
   ['randomorder_2',['RandomOrder',['../classTVector.html#a528c30196e28424fcac4386b873a6e11',1,'TVector']]],
   ['registo_3',['registo',['../classTProcura.html#ad9142d2a01abb01dfb939c23bf478de2',1,'TProcura::Registo(TResultado &amp;resultado, int id, int64_t valor)'],['../classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77',1,'TProcura::Registo(TResultado &amp;resultado, int id)']]],
-  ['relatoriocsv_4',['relatoriocsv',['../classTProcuraAdversa.html#a849320e339149a4f83809b6565321005',1,'TProcuraAdversa::RelatorioCSV()'],['../classTProcura.html#aca8d0a645032927df1367067107e94df',1,'TProcura::RelatorioCSV()']]],
+  ['relatoriocsv_4',['relatoriocsv',['../classTProcuraAdversa.html#a849320e339149a4f83809b6565321005',1,'TProcuraAdversa::RelatorioCSV()'],['../classTProcura.html#aa86b96b672310c9e4a01806ff264e3ab',1,'TProcura::RelatorioCSV()']]],
   ['remove_5',['Remove',['../classTVector.html#a85673895d405c09b5b9155f78b67d71b',1,'TVector']]],
   ['replace_6',['Replace',['../classTVector.html#a35217d9779ea1c7608dac2ffd677c30b',1,'TVector']]],
   ['reproduzirae_7',['ReproduzirAE',['../classTProcuraMelhorativa.html#a63e8ac07e1d712645b9038cd72aa133b',1,'TProcuraMelhorativa']]],

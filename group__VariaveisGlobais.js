@@ -1,6 +1,7 @@
 var group__VariaveisGlobais =
 [
     [ "TProcuraConstrutiva::caminho", "group__VariaveisGlobais.html#ga6dad497973fb467e2b2224f134b90443", null ],
+    [ "TProcuraConstrutiva::custoAcao", "group__VariaveisGlobais.html#gacde578e123ab30a8bf8928cfda1bf8fe", null ],
     [ "TProcuraConstrutiva::expansoes", "group__VariaveisGlobais.html#ga198a1f8ed90785a1c3f112a3468a2d74", null ],
     [ "TProcuraConstrutiva::geracoes", "group__VariaveisGlobais.html#ga6185647765b723a3581b5541722e496f", null ],
     [ "TProcuraConstrutiva::lowerBound", "group__VariaveisGlobais.html#ga1af840b6ec9c04ce7d4c8849346441bd", null ],

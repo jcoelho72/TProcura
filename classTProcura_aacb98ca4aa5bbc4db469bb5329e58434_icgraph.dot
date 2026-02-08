@@ -33,4 +33,7 @@ digraph "TProcura::TesteFim"
   Node12 -> Node3 [id="edge14_Node000012_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge15_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
+  Node1 -> Node14 [id="edge16_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a2a03781f9ba05ff583c9e335ecd34e09",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node14 -> Node3 [id="edge17_Node000014_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

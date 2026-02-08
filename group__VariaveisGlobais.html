@@ -118,6 +118,9 @@ Variables</h2></td></tr>
 <tr class="memitem:ga6185647765b723a3581b5541722e496f" id="r_ga6185647765b723a3581b5541722e496f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">static</a> <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VariaveisGlobais.html#ga6185647765b723a3581b5541722e496f">TProcuraConstrutiva::geracoes</a> = 0</td></tr>
 <tr class="memdesc:ga6185647765b723a3581b5541722e496f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Número de estados gerados.  <br /></td></tr>
 <tr class="separator:ga6185647765b723a3581b5541722e496f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacde578e123ab30a8bf8928cfda1bf8fe" id="r_gacde578e123ab30a8bf8928cfda1bf8fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">static</a> <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VariaveisGlobais.html#gacde578e123ab30a8bf8928cfda1bf8fe">TProcuraConstrutiva::custoAcao</a> = 0</td></tr>
+<tr class="memdesc:gacde578e123ab30a8bf8928cfda1bf8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">custo da última ação realizada (<a class="el" href="group__RedefinicaoOpcional.html#gad3f57f04fb178e48e4cd2d7dc0af1a54" title="Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual.">Acao(TString)</a>)  <br /></td></tr>
+<tr class="separator:gacde578e123ab30a8bf8928cfda1bf8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaac97e0931e93f82c5c2f8f148d3772ca" id="r_gaac97e0931e93f82c5c2f8f148d3772ca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">static</a> <a class="el" href="classTVector.html">TVector</a>&lt; <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">const</a> <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">char</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VariaveisGlobais.html#gaac97e0931e93f82c5c2f8f148d3772ca">TProcuraConstrutiva::ramo</a></td></tr>
 <tr class="separator:gaac97e0931e93f82c5c2f8f148d3772ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0e84a091132bd2b767efce84aa7b9de0" id="r_ga0e84a091132bd2b767efce84aa7b9de0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">static</a> <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">constexpr</a> <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">const</a> <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">char</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__VariaveisGlobais.html#ga0e84a091132bd2b767efce84aa7b9de0">TProcuraConstrutiva::RAMO_ESTADO</a> = &quot; ├■&quot;</td></tr>
@@ -162,7 +165,33 @@ Variables</h2></td></tr>
 
 <p>Solução retornada pela procura (os estados devem ser libertados). </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00683">683</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00689">689</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+
+</div>
+</div>
+<a id="gacde578e123ab30a8bf8928cfda1bf8fe" name="gacde578e123ab30a8bf8928cfda1bf8fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacde578e123ab30a8bf8928cfda1bf8fe">&#9670;&#160;</a></span>custoAcao</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int</a> TProcuraConstrutiva::custoAcao = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>custo da última ação realizada (<a class="el" href="group__RedefinicaoOpcional.html#gad3f57f04fb178e48e4cd2d7dc0af1a54" title="Executa a ação (movimento, passo, jogada, lance, etc.) no estado atual.">Acao(TString)</a>) </p>
+
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00701">701</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -188,7 +217,7 @@ Variables</h2></td></tr>
 
 <p>Número de expansões efetuadas. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00691">691</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00697">697</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -214,7 +243,7 @@ Variables</h2></td></tr>
 
 <p>Número de estados gerados. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00693">693</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00699">699</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -240,7 +269,7 @@ Variables</h2></td></tr>
 
 <p>Valor mínimo que a solução pode apresentar, obtido pela procura. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00687">687</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00693">693</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -264,7 +293,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00696">696</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00704">704</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -288,7 +317,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00704">704</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00712">712</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -312,7 +341,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00698">698</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00706">706</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -336,7 +365,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00699">699</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00707">707</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -360,7 +389,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00701">701</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00709">709</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -384,7 +413,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00700">700</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00708">708</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -408,7 +437,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00703">703</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00711">711</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -432,7 +461,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00702">702</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00710">710</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -456,7 +485,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00705">705</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00713">713</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -482,7 +511,7 @@ Variables</h2></td></tr>
 
 <p>Estado objetivo encontrado, retornado pela procura (deve ser libertado). </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00685">685</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00691">691</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -508,7 +537,7 @@ Variables</h2></td></tr>
 
 <p>Número de inteiros de 64 bits utilizados para codificar um objeto (≤ OBJETO_HASHTABLE). </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00689">689</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00695">695</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>

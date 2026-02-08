@@ -14,4 +14,6 @@ digraph "TProcura::InserirRegisto"
   Node4 [id="Node000004",label="TVector::Last",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa304d639c79ef2842f9951846c6292e3",tooltip=" "];
   Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcura::Registo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77",tooltip="Procura um registo com determinado id."];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="TProcura::Solucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3c6c463d3ad9c23dc74b5e5039f8d1e6",tooltip="retorna uma solução no formato do TResultado, para ser gravada em ficheiro de soluções,..."];
 }

@@ -40,4 +40,6 @@ digraph "TProcuraConstrutiva::SolucaoCompleta"
   Node1 -> Node8 [id="edge20_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node9 [id="edge21_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node10 [id="edge22_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node14 [id="edge23_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TProcuraConstrutiva\l::Validar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gad7547823186766e4fc1b9af84845626c",tooltip="Verifica a validade de uma solução para a instância atual."];
 }

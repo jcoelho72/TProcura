@@ -40,10 +40,11 @@ var classTProcura =
     [ "Parar", "classTProcura.html#a7952e187e1b0ae0ca52edab157223179", null ],
     [ "Registo", "classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77", null ],
     [ "Registo", "classTProcura.html#ad9142d2a01abb01dfb939c23bf478de2", null ],
-    [ "RelatorioCSV", "classTProcura.html#aca8d0a645032927df1367067107e94df", null ],
+    [ "RelatorioCSV", "classTProcura.html#aa86b96b672310c9e4a01806ff264e3ab", null ],
     [ "ResetParametros", "classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871", null ],
     [ "SolicitaInstancia", "classTProcura.html#ae9f0b921a171a110e6a6fcc209332635", null ],
     [ "SolicitaInstancias", "classTProcura.html#a6941386b767d6f0723c6eb9d27241d69", null ],
+    [ "Solucao", "classTProcura.html#a3c6c463d3ad9c23dc74b5e5039f8d1e6", null ],
     [ "TempoExcedido", "classTProcura.html#afa3015ac104b603930d3f60a34c09fff", null ],
     [ "TesteEmpirico", "classTProcura.html#acee9af6bb96ce1557fbec912f9ada9ce", null ],
     [ "TesteEmpiricoGestor", "classTProcura.html#aa7d1a1397fba6a7fe5446f7a8d94e276", null ],
@@ -51,5 +52,6 @@ var classTProcura =
     [ "TesteFim", "classTProcura.html#aacb98ca4aa5bbc4db469bb5329e58434", null ],
     [ "TesteInicio", "classTProcura.html#a577697338460038138738e87157166af", null ],
     [ "TesteManual", "classTProcura.html#a8331059908495f9a915ada39424ca27c", null ],
-    [ "TesteValidacao", "classTProcura.html#a2a03781f9ba05ff583c9e335ecd34e09", null ]
+    [ "TesteValidacao", "classTProcura.html#a2a03781f9ba05ff583c9e335ecd34e09", null ],
+    [ "Validar", "classTProcura.html#aa8d8105f1eab506f9d2064d4ac27d477", null ]
 ];

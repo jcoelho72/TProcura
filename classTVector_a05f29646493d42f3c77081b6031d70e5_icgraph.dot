@@ -85,7 +85,10 @@ digraph "TVector::First"
   Node32 [id="Node000032",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a79047083f0756a123a7e489027d48c3a",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node32 -> Node22 [id="edge47_Node000032_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node28 -> Node14 [id="edge48_Node000028_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node33 [id="edge49_Node000001_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node33 [id="Node000033",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
-  Node33 -> Node21 [id="edge50_Node000033_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node28 -> Node33 [id="edge49_Node000028_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node33 [id="Node000033",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a2a03781f9ba05ff583c9e335ecd34e09",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node33 -> Node22 [id="edge50_Node000033_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node34 [id="edge51_Node000001_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node34 [id="Node000034",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
+  Node34 -> Node21 [id="edge52_Node000034_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
