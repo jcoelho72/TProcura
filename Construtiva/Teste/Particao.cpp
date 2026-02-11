@@ -26,18 +26,35 @@ void CParticao::Inicializar(void)
 	direita = esquerda = numeros = {};
 	totalDireita = totalEsquerda = 0;
 
-	// gerar uma instancia provavelmente possivel
-	int64_t soma;
-	soma = 0;
-	for (int i = 0; i < instancia.valor; i++) {
-		numeros += (instancia.valor * instancia.valor + 4 * (TRand::rand() % instancia.valor + 1) + TRand::rand() % 4);
-		soma += (int)numeros.Last();
+	if (ficheiroInstancia.Empty()) {
+		// gerador de instância
+		// gerar uma instancia provavelmente possivel
+		int64_t soma;
+		soma = 0;
+		for (int i = 0; i < instancia.valor; i++) {
+			numeros += (instancia.valor * instancia.valor + 4 * (TRand::rand() % instancia.valor + 1) + TRand::rand() % 4);
+			soma += (int)numeros.Last();
+		}
+		// acertar a paridade, muito embora não se saiba se há ou não solução
+		if (soma % 2 == 1)
+			numeros.Last() += 1;
+
 	}
-	// acertar a paridade, muito embora não se saiba se há ou não solução
-	if (soma % 2 == 1)
-		numeros.Last() += 1;
+	else {
+		for (auto& linha : TString().printf("%s%d.txt", *ficheiroInstancia, instancia.valor).readLines())
+			numeros += atoi(linha);
+	}
+
 	numeros.Sort();
 	tamanhoCodificado = 3; // apenas três inteiro de 64 bits, para colocar 3 inteiros de 64 bits
+}
+
+void CParticao::Gravar(void)
+{
+	TVector<TString> linhas;
+	for (auto& valor : numeros)
+		linhas += TString(valor);
+	TString().printf("%s%d.txt", *ficheiroGravar, instancia.valor).writeLines(linhas);
 }
 
 void CParticao::Sucessores(TVector<TNo>& sucessores)

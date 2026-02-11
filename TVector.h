@@ -16,7 +16,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <initializer_list>
-#include <cstdarg>   
+#include <cstdarg>
+#include <locale>
 #include "TRand.h"
 
  ///////////////////////////////////////////////////////////////////////////////
@@ -169,7 +170,7 @@ public:
 	 *   dentro da string, não no vetor final.
 	 * - Os elementos são adicionados no final, preservando os já existentes.
 	 */
-	TVector<Item>& operator+=(const char* str) {}
+	TVector<Item>& operator+=(const char* str) = delete; // desabilitado para tipos genéricos; implementado para TVector<int>
 
 	///@}
 
@@ -178,11 +179,11 @@ public:
 	/** Adiciona @p a no final do vetor. */
 	inline TVector<Item>& Add(Item a) { operator[](count) = a; return *this; }
 
-	/** Insere um elemento @p a na posição @p index, deslocando os seguintes. */
-	TVector<Item>& Insert(Item a, int index = 0);
-
 	/** Insere todos os elementos de @p v começando na posição @p index. */
 	TVector<Item>& Insert(TVector<Item>& v, int index = 0);
+
+	/** Insere um elemento @p a na posição @p index, deslocando os seguintes. */
+	TVector<Item>& Insert(Item a, int index = 0);
 
 	/** Alias de Add. */
 	inline TVector<Item>& Push(Item a) { return Add(a); }
@@ -998,7 +999,6 @@ TVector<Item>& TVector<Item>::Insert(TVector<Item>& src, int index)
 	return *this;
 }
 
-
 /**
  * @brief Insere um único elemento na posição indicada.
  * @param a     Elemento a inserir.
@@ -1095,6 +1095,19 @@ int TVector<Item>::Distance(TVector<Item>& other, int type)
 
 
 class TString : public TVector<char> {
+private:
+	// Função auxiliar para fopen compatível com MSVC
+	// usado em readLines e writeLines
+	static FILE* fopen_compat(const char* filename, const char* mode) {
+#ifdef _MSC_VER
+		FILE* f = nullptr;
+		fopen_s(&f, filename, mode);
+		return f;
+#else
+		return std::fopen(filename, mode);
+#endif
+	}
+
 public:
 	using TVector<char>::TVector; // herdar construtores
 
@@ -1114,6 +1127,11 @@ public:
 		Count(n + 1);
 		memcpy(Data(), s, n + 1);
 		Last() = 0;
+	}
+
+	// permite converter int direto: TString(valorInt)
+	TString(int v) {
+		printf("%d", v);
 	}
 
 	// conversão implícita para const char*
@@ -1195,6 +1213,26 @@ public:
 		}
 
 		return out;
+	}
+
+	// métodos de conveniência (leitura/gravação em ficheiros de texto)
+	TVector<TString> readLines() {
+		TVector<TString> lines;
+		char buffer[4096];
+		FILE* f = fopen_compat(Data(), "r");
+		if (!f) return lines;
+		while (fgets(buffer, sizeof(buffer), f))
+			lines += TString(buffer).tok("\n\r").First();
+		fclose(f);
+		return lines;
+	}
+	TString& writeLines(const TVector<TString>& lines, bool append = false) {
+		FILE* f = fopen_compat(Data(), append ? "ab" : "wb");
+		if (!f) return *this;
+		for (const auto& line : lines)
+			fprintf(f, "%s\n", *line);
+		fclose(f);
+		return *this;
 	}
 
 

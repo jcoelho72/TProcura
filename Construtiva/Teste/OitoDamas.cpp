@@ -25,15 +25,30 @@ void COitoDamas::Inicializar(void)
 {
 	TProcuraConstrutiva::Inicializar();
 	damas = {};
-	nDamas = instancia.valor;
+	if (ficheiroInstancia.Empty())
+		nDamas = instancia.valor;
+	else {
+		TVector<TString> linhas =
+			TString().printf("%s%d.txt", *ficheiroInstancia, instancia.valor)
+				.readLines();
+		if (linhas.Count() > 0)
+			nDamas = atoi(*linhas.First());
+	}
+
 	// 4 bits por dama, com 40 damas no máximo dá 3 inteiros de 64 bits
 	tamanhoCodificado = (nDamas - 1) * 4 / 64 + 1;
+}
+
+void COitoDamas::Gravar(void)
+{
+	TString().printf("%s%d.txt", *ficheiroGravar, instancia.valor).writeLines(
+		{ TString(nDamas) });
 }
 
 void COitoDamas::ResetParametros()
 {
 	TProcuraConstrutiva::ResetParametros();
-	instancia = { "", 8,4,MAX_DAMAS};
+	instancia = { "", 8,4,MAX_DAMAS };
 }
 
 void COitoDamas::Sucessores(TVector<TNo>& sucessores)
@@ -59,7 +74,7 @@ void COitoDamas::Sucessores(TVector<TNo>& sucessores)
 
 TString COitoDamas::Acao(TProcuraConstrutiva* sucessor) {
 	COitoDamas* suc = (COitoDamas*)sucessor;
-	if (damas.Count() + 1 == suc->damas.Count()) 
+	if (damas.Count() + 1 == suc->damas.Count())
 		return TString().printf("d%d", suc->damas.Last() + 1);
 	return "Inv";
 }

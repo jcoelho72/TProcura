@@ -24,23 +24,49 @@ void CPuzzle8::Inicializar(void)
 {
 	int backup = Parametro(ESTADOS_REPETIDOS);
 	TProcuraConstrutiva::Inicializar();
+
 	// colocar a posição final
 	puzzle.Count(9);
 	for (int i = 0; i < 9; i++)
 		puzzle[i] = i;
-	zero=0;
-	// efectuar trocas ao acaso
-	Parametro(ESTADOS_REPETIDOS) = IGNORADOS;
-	for (int i = 0; i < instancia.valor; i++) { // utilizar o ID da instância
-		TVector<TNo> sucessores;
-		Sucessores(sucessores);
-		TNo filho = sucessores.Random();
-		puzzle = ((CPuzzle8*)filho)->puzzle;
-		zero = ((CPuzzle8*)filho)->zero;
-		LibertarVector(sucessores);
+	zero = 0;
+
+	if (ficheiroInstancia.Empty()) {
+		// gerador de instância
+		// efectuar trocas ao acaso
+		Parametro(ESTADOS_REPETIDOS) = IGNORADOS;
+		for (int i = 0; i < instancia.valor; i++) { // utilizar o ID da instância
+			TVector<TNo> sucessores;
+			Sucessores(sucessores);
+			TNo filho = sucessores.Random();
+			puzzle = ((CPuzzle8*)filho)->puzzle;
+			zero = ((CPuzzle8*)filho)->zero;
+			LibertarVector(sucessores);
+		}
 	}
+	else { // ler instância de ficheiro
+		TVector<TString> linhas =
+			TString().printf("%s%d.txt", *ficheiroInstancia, instancia.valor)
+				.readLines();
+		if (linhas.Count() >= 9) {
+			for (int i = 0; i < 9; i++) {
+				puzzle[i] = atoi(*linhas[i]);
+				if (puzzle[i] == 0)
+					zero = i;
+			}
+		}
+	}
+
 	Parametro(ESTADOS_REPETIDOS) = backup;
 	tamanhoCodificado = 1; // apenas um inteiro de 64 bits é suficiente para 4*9 bits
+}
+
+void CPuzzle8::Gravar(void)
+{
+	TVector<TString> linhas;
+	for (auto& valor : puzzle)
+		linhas += TString(valor);
+	TString().printf("%s%d.txt", *ficheiroGravar, instancia.valor).writeLines(linhas);
 }
 
 void CPuzzle8::Sucessores(TVector<TNo>&sucessores)

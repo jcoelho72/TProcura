@@ -27,6 +27,7 @@ public:
 		zero = ((CPuzzle8*)objecto)->zero;
 	}
 	void Inicializar(void);
+	void Gravar(void);
 	void Sucessores(TVector<TNo>&sucessores);
 	bool SolucaoCompleta(void);	
 	void Debug(bool completo = true) override;

@@ -11,16 +11,6 @@
 
 namespace compat {
 
-	inline FILE* fopen(const char* filename, const char* mode) {
-#ifdef _MSC_VER
-		FILE* f = nullptr;
-		fopen_s(&f, filename, mode);
-		return f;
-#else
-		return std::fopen(filename, mode);
-#endif
-	}
-
 	inline void init_io() {
 #ifdef _WIN32
 		// Windows: locale ".UTF-8" é válido

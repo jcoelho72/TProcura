@@ -13,16 +13,7 @@ int main(int argc, char* argv[])
 {
 	compat::init_io();
 
-#ifndef MPI_ATIVO
-	TProcura::MostraCaixa({
-		"Teste TProcuraConstrutiva",
-		"1 - Aspirador",
-		"2 - Puzzle 8",
-		"3 - 8 Damas",
-		"4 - Partição"
-		}, 30, false);
-	int caso = TProcura::NovoValor("\nOpção: ");
-#else
+#if defined(MPI_ATIVO) || defined(VPL_ATIVO)
 	// não utilizar o stdin em programas MPI
 	if (argc < 2) {
 		printf("Utilizar o primeiro argumento para identificar o problema:\n\
@@ -32,6 +23,15 @@ int main(int argc, char* argv[])
 	int caso = atoi(argv[1]);
 	argc--;
 	argv++;
+#else
+	TProcura::MostraCaixa({
+		"Teste TProcuraConstrutiva",
+		"1 - Aspirador",
+		"2 - Puzzle 8",
+		"3 - 8 Damas",
+		"4 - Partição"
+		}, 30, false);
+	int caso = TProcura::NovoValor("\nOpção: ");
 #endif
 
 	switch (caso) {

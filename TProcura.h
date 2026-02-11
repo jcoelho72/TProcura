@@ -13,13 +13,36 @@
 // código para número não lido (não deve ser utilizado num parâmetro)
 constexpr int NAO_LIDO = 1024;
 
+// códigos de resultados inválidos, para o indicador de resultado (custo, qualidade, etc.)
+constexpr int RES_IMPOSSIVEL = -1; // resultado impossível (prova de que não existe solução)
+constexpr int RES_NAO_RESOLVIDO = -2; // resultado não resolvido (e.g. tempo esgotado, ou limite de iterações atingido)
+constexpr int RES_INVALIDO = -3; // resultado do algoritmo inválido 
+constexpr int RES_VAZIO = -4; // não existe resultado registado
+
 // macros para ativar/desativar cinzento (ANSI)
-#define CINZ "\x1b[90m"
-#define NCINZ "\x1b[0m"
-constexpr int CINZ_TAM = 9;   // bytes invisíveis (5 + 4), útil para alinhamento
+#ifdef VPL_ATIVO
+
+#define COR_LEVE ""
+#define COR_RESET ""
+#define COR_ATIVO ""
+#define COR_INATIVO ""
+#define COR_ATIVO_LEVE ""
+#define COR_INATIVO_LEVE ""
+
+#else
+
+#define COR_LEVE "\x1b[90m"
+#define COR_RESET "\x1b[0m"
+#define COR_ATIVO "\x1b[92m"
+#define COR_INATIVO "\x1b[91m"
+#define COR_ATIVO_LEVE "\x1b[38;5;108m"
+#define COR_INATIVO_LEVE "\x1b[38;5;131m"
+
+#endif
+constexpr int COR_LEVE_TAM = 9;   // bytes invisíveis (5 + 4), útil para alinhamento
 
 enum EIndicadoresProcura {
-	IND_RESULTADO = 0, ///< resultado do algoritmo
+	IND_RESULTADO = 0, ///< resultado do algoritmo (>=0 custo da solução, -1 impossível, -2 não resolvido)
 	IND_TEMPO,         ///< tempo em milisegundos consumidos
 	IND_ITERACOES,     ///< número de iterações consumidas
 	IND_PROCURA        ///< Marcador para permitir a extensão do enum em subclasses.
@@ -225,6 +248,9 @@ public:
 	 * @endcode
 	 */
 	virtual void Inicializar(void) { TRand::srand(Parametro(SEMENTE)); }
+
+	// chamado se -FG definido, para gravar a instância
+	virtual void Gravar(void) {}
 
 
 	/**
@@ -434,10 +460,12 @@ public:
 	 * (deixar o formato da solução em aberto, o ficheiro recebe ID da instância, seguido da solução. 
 	 *
 	 * @param instancias - IDs das instâncias a serem validadas.
+	 * @param impossiveis - IDs das instâncias impossíveis, de entre as instâncias dadas.
 	 * @param fichSolucoes - nome do arquivo contendo as soluções a validar para as instâncias.
 	 * @param fichResultados - nome do arquivo onde os resultados da validação serão gravados (opcional).
 	 */
-	virtual void TesteValidacao(TVector<int> instancias, TString fichSolucoes, TString fichResultados = "");
+	virtual void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, int custoMinimo, TString fichSolucoes, TString fichResultados = "");
+	virtual void RelatorioValidacao(TVector<TResultado> resultados, int custoMinimo, bool vpl=false);
 
 	/**
 	 * @brief Verifica a validade de uma solução para a instância atual.
@@ -526,13 +554,14 @@ public:
 
 	/// @brief ID da instância atual, a ser utilizado em SolucaoVazia().
 	static TParametro instancia;
-	/// @brief nome do ficheiro de uma instância - editado pelo utilizador 
-	///        (utilizar como prefixo, concatenando com ID da instância)
-	///        pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo 
-	///        que é chamado após a execução (pode gravar a solução para ficheiro também, mas essa é mais facilmente
-	///        gravada em CVS codificada em inteiros, onde fica associada à configuração utilizada para a gerar)
+	/// @brief prefixo do nome ficheiro de uma instância - editado pelo utilizador 
+	///        Caso não seja nulo, utilizar como prefixo, concatenando com ID da instância, para obter o ficheiro da instância
+	///        Pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo 
+	///        que é chamado após a execução
 	/// @see Inicializar()
 	static TString ficheiroInstancia;
+	/// @brief prefixo do nome do ficheiro para gravar a instância para ficheiro (terá sido gerada)
+	static TString ficheiroGravar;
 	/// @brief Parâmetros a serem utilizados na configuração atual.
 	/// @see EParametrosConstrutiva
 	static TVector<TParametro> parametro;

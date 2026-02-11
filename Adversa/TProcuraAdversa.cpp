@@ -807,23 +807,18 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, TString 
 
 
 bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString ficheiro) {
-	TString str;
+	TString nome;
+	TVector<TString> linhas; 
 	if (mpiCount > 1)
-		str.printf("%s_%d.csv", ficheiro.tok().First(), mpiID);
+		nome.printf("%s_%d.csv", ficheiro.tok().First(), mpiID);
 	else
-		str.printf("%s.csv", ficheiro.tok().First());
-	FILE* f = compat::fopen(str, "wb");
-
-	if (f == NULL) {
-		printf("\nErro ao gravar ficheiro %s.", (const char *)str);
-		return false;
-	}
+		nome.printf("%s.csv", ficheiro.tok().First());
 
 	// Jogador, Adversário, cor, resultado (positivo caso o jogador ganhe, negativo c.c.) 
 	// Nota: cada confronto fica com 2 entradas; se existir várias instâncias, o resultado do confronto é somado
-	fprintf(f, "Instância;Brancas;Pretas;Resultado;Jogadas;TempoBranco;TempoPreto;Jogo\n");
+	linhas += TString("Instância;Brancas;Pretas;Resultado;Jogadas;TempoBranco;TempoPreto;Jogo");
 	for (auto& resultado : resultados)
-		fprintf(f, "%d;%d;%d;%d;%d;%.3f;%.3f;%s\n",
+		linhas += TString().printf("%d;%d;%d;%d;%d;%.3f;%.3f;%s",
 			resultado.instancia,
 			resultado.brancas + 1,
 			resultado.pretas + 1,
@@ -833,23 +828,22 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString 
 			resultado.tempoPretas,
 			(gravarSolucao ? *resultado.jogo : ""));
 
+	linhas += TString(""); 
 	// No final, mostrar as configurações
-	fprintf(f, "\nJogador;");
+	linhas += TString("Jogador;");
 	for (int i = 0; i < parametro.Count(); i++)
-		fprintf(f, "P%d(%s);", i + 1, *parametro[i].nome);
-	fprintf(f, "\n");
+		linhas.Last().printf("P%d(%s);", i + 1, *parametro[i].nome);
 	for (int jogador = 0; jogador < configuracoes.Count(); jogador++) {
-		fprintf(f, "%d;", jogador + 1);
+		linhas += TString().printf("%d;", jogador + 1);
 		for (int j = 0; j < parametro.Count(); j++)
 			if (parametro[j].nomeValores.Empty())
-				fprintf(f, "%d;", configuracoes[jogador][j]);
+				linhas.Last().printf("%d;", configuracoes[jogador][j]);
 			else
-				fprintf(f, "%d:%s;",
+				linhas.Last().printf("%d:%s;",
 					configuracoes[jogador][j],
 					*parametro[j].nomeValores[configuracoes[jogador][j] - parametro[j].min]);
-		fprintf(f, "\n");
 	}
-	fclose(f);
+	nome.writeLines(linhas);
 	return true;
 }
 

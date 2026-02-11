@@ -30,6 +30,7 @@ public:
 		totalDireita = ((CParticao*)objecto)->totalDireita;
 	}
 	void Inicializar(void);
+	void Gravar(void);
 	void Sucessores(TVector<TNo>& sucessores);
 	bool SolucaoCompleta(void) { 
 		return numeros.Empty() && totalEsquerda == totalDireita;

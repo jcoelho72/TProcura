@@ -1,7 +1,11 @@
-Instância;P1(ALGORITMO);P2(NIVEL_DEBUG);P3(SEMENTE);P4(LIMITE_TEMPO);P5(LIMITE_ITERACOES);P6(VER_ACOES);P7(LIMITE);P8(ESTADOS_REPETIDOS);P9(PESO_ASTAR);P10(RUIDO_HEURISTICA);P11(BARALHAR_SUCESSORES);I1(IND_CUSTO);I2(Tempo(ms));I3(Iterações);I4(IND_EXPANSOES);I5(IND_GERACOES);I6(IND_LOWER_BOUND);Solução
-10;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;10;1;0;423;594;0;esq dir esq dir dir esq dir dir esq esq 
-11;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;-1;2;0;1847;1846;0;
-12;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;12;1;0;1533;2232;0;esq esq dir dir dir dir dir esq esq esq dir esq 
-13;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;-1;8;0;6863;6862;0;
-14;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;14;5;0;5230;7338;0;esq esq esq dir dir dir dir esq esq dir dir dir esq esq 
-15;1:Largura Primeiro;4:COMPLETO;1;10;0;4;0;1:ignorar;;;0;-1;26;0;25739;25738;0;
+Instância;P1(ALGORITMO);P2(NIVEL_DEBUG);P3(SEMENTE);P4(LIMITE_TEMPO);P5(LIMITE_ITERACOES);P6(VER_ACOES);P7(LIMITE);P8(ESTADOS_REPETIDOS);P9(PESO_ASTAR);P10(RUIDO_HEURISTICA);P11(BARALHAR_SUCESSORES);I2(Tempo(ms));Solução
+4;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;0;d2 d4 d1 d3 
+5;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;0;d1 d3 d5 d2 d4 
+6;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;0;d2 d4 d6 d1 d3 d5 
+7;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;0;d1 d3 d5 d7 d2 d4 d6 
+8;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;1;d1 d5 d8 d6 d3 d7 d2 d4 
+9;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;4;d1 d3 d6 d8 d2 d4 d9 d7 d5 
+10;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;24;d1 d3 d6 d8 d10 d5  d4 d7  d9 d2
+11;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;92;d1 d3 d5 d7 d10 d9 d2 d4 d6 d11 d8  
+12;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;556;d1 d3 d5 d8 d10 d12 d6 d11 d7 d9 d4 d2 
+13;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;3173;d1 d3 d5 d2 d9 d12 d10 d13 d6 d11 d8 d4 d7 

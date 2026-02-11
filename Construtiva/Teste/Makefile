@@ -36,6 +36,11 @@ mpi: $(SRC)
 	@mkdir -p $(MPIDIR)
 	$(MPICC) $(CFLAGS_MPI) -o $(MPIDIR)/$(TARGET) $^
 
+# Compilação VPL
+vpl: $(SRC)
+	@mkdir -p $(BINDIR)/VPL
+	$(CC) $(CFLAGS_RELEASE) -DVPL_ATIVO -o $(BINDIR)/VPL/$(TARGET) $^
+
 # Testes (usando Release por omissão)
 check: release
 	@echo "Executando testes..."
