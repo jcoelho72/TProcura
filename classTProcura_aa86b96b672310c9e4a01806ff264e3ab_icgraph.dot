@@ -27,6 +27,6 @@ digraph "TProcura::RelatorioCSV"
   Node10 [id="Node000010",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa7d1a1397fba6a7fe5446f7a8d94e276",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node10 -> Node3 [id="edge11_Node000010_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node11 [id="edge12_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a2a03781f9ba05ff583c9e335ecd34e09",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node11 [id="Node000011",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node11 -> Node3 [id="edge13_Node000011_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

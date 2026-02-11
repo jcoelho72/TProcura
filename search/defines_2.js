@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ncinz_0',['NCINZ',['../TProcura_8h.html#aa026ed6cee15b6482301335ff132b242',1,'TProcura.h']]]
+  ['x_0',['x',['../compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83',1,'X:&#160;compact.h'],['../compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83',1,'X:&#160;compact.h']]]
 ];

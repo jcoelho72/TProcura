@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['zero_0',['zero',['../classCPuzzle8.html#a14497d80db7f4b3d599924721481a9a0',1,'CPuzzle8']]],
-  ['zonasocupadas_1',['zonasOcupadas',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951ba4eaf8c7f11a3156e70ca43787e08f77d',1,'JogoEmLinha.h']]]
+  ['x_0',['x',['../compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83',1,'X:&#160;compact.h'],['../compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83',1,'X:&#160;compact.h'],['../namespacecompat.html#a7166732d82ec7b436da550dd36f0401ca3da35179ca5c4d1526e05913abab9003',1,'compat::X']]]
 ];

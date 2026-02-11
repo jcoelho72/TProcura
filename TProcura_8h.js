@@ -4,8 +4,12 @@ var TProcura_8h =
     [ "SParametro", "structSParametro.html", "structSParametro" ],
     [ "SResultado", "structSResultado.html", "structSResultado" ],
     [ "TProcura", "classTProcura.html", "classTProcura" ],
-    [ "CINZ", "TProcura_8h.html#a0dc38cd03bd6399815ccf316508cb83a", null ],
-    [ "NCINZ", "TProcura_8h.html#aa026ed6cee15b6482301335ff132b242", null ],
+    [ "COR_ATIVO", "TProcura_8h.html#af75ea40857e683fce28a4b7460d4d10d", null ],
+    [ "COR_ATIVO_LEVE", "TProcura_8h.html#acd3686fbff542f708cd941c98c4e8a13", null ],
+    [ "COR_INATIVO", "TProcura_8h.html#ae7978d595e9f5ba1a35239f917b2c232", null ],
+    [ "COR_INATIVO_LEVE", "TProcura_8h.html#a76529633d876815a6ec0b36aed987b1a", null ],
+    [ "COR_LEVE", "TProcura_8h.html#a0b188984deeadfbe24dbd2e8a4a1f968", null ],
+    [ "COR_RESET", "TProcura_8h.html#a641268c7761d910c7a9fb18c31c712f2", null ],
     [ "TIndicador", "TProcura_8h.html#ad4fc32e65c5226aa62a959b4402a857c", null ],
     [ "TParametro", "TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0", null ],
     [ "TResultado", "TProcura_8h.html#a4428af995799ff246df4a39dfb58d0e9", null ],
@@ -56,6 +60,10 @@ var TProcura_8h =
       [ "TAG_VALORES", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efaa130054e33910954a32bedfadba58d25", null ],
       [ "TAG_JOGO", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efa72a37fad23091f34df76a06c06d882b4", null ]
     ] ],
-    [ "CINZ_TAM", "TProcura_8h.html#a5b68e23357bb5aef0c73d262ebfa0d3c", null ],
-    [ "NAO_LIDO", "TProcura_8h.html#a59f9d6e2b09717823299d60a0e6f2efc", null ]
+    [ "COR_LEVE_TAM", "TProcura_8h.html#a55354182015758cff0d278c007deebbb", null ],
+    [ "NAO_LIDO", "TProcura_8h.html#a59f9d6e2b09717823299d60a0e6f2efc", null ],
+    [ "RES_IMPOSSIVEL", "TProcura_8h.html#aab7fbbbd1d6b75abc670fe8c4e9465d6", null ],
+    [ "RES_INVALIDO", "TProcura_8h.html#a11388bb5c1ffd4129e18e1b7175b2b3e", null ],
+    [ "RES_NAO_RESOLVIDO", "TProcura_8h.html#a7a2c6287998f834fbae43ca9ca043eed", null ],
+    [ "RES_VAZIO", "TProcura_8h.html#a8f33dd7262b24388d1e03da7920d3f14", null ]
 ];

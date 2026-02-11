@@ -30,7 +30,7 @@ var classTVector =
     [ "Intersection", "classTVector.html#a8e04072080158c780aef25ca1b4a3fbd", null ],
     [ "Invert", "classTVector.html#ab45b219aaec44aad6e6c37a806d80025", null ],
     [ "Last", "classTVector.html#aa304d639c79ef2842f9951846c6292e3", null ],
-    [ "operator+=", "classTVector.html#a4398e630739eb6fba638249cf899c204", null ],
+    [ "operator+=", "classTVector.html#acbded577fe91285bedad87fde4628757", null ],
     [ "operator+=", "classTVector.html#a691ddcb0df46ab21a687356c6a0cd9a6", null ],
     [ "operator+=", "classTVector.html#a7c69ceeac2bef2bf161e5e6aab440468", null ],
     [ "operator+=", "classTVector.html#a886f6e482b2fb8bbac5b611eca1ee468", null ],

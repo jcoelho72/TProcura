@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['rand_0',['rand',['../namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f',1,'TRand']]],
-  ['random_1',['Random',['../classTVector.html#a769c6a55b72a463fd2313fbd638c7234',1,'TVector']]],
-  ['randomorder_2',['RandomOrder',['../classTVector.html#a528c30196e28424fcac4386b873a6e11',1,'TVector']]],
-  ['registo_3',['registo',['../classTProcura.html#ad9142d2a01abb01dfb939c23bf478de2',1,'TProcura::Registo(TResultado &amp;resultado, int id, int64_t valor)'],['../classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77',1,'TProcura::Registo(TResultado &amp;resultado, int id)']]],
-  ['relatoriocsv_4',['relatoriocsv',['../classTProcuraAdversa.html#a849320e339149a4f83809b6565321005',1,'TProcuraAdversa::RelatorioCSV()'],['../classTProcura.html#aa86b96b672310c9e4a01806ff264e3ab',1,'TProcura::RelatorioCSV()']]],
-  ['remove_5',['Remove',['../classTVector.html#a85673895d405c09b5b9155f78b67d71b',1,'TVector']]],
-  ['replace_6',['Replace',['../classTVector.html#a35217d9779ea1c7608dac2ffd677c30b',1,'TVector']]],
-  ['reproduzirae_7',['ReproduzirAE',['../classTProcuraMelhorativa.html#a63e8ac07e1d712645b9038cd72aa133b',1,'TProcuraMelhorativa']]],
-  ['reset_8',['Reset',['../classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd',1,'TVector']]],
-  ['resetparametros_9',['resetparametros',['../classTCodificacaoPermutacao.html#adc0c8bcf59133f55ff83efca45c6f79d',1,'TCodificacaoPermutacao::ResetParametros()'],['../classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871',1,'TProcura::ResetParametros()'],['../classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94',1,'CTesteTVector::ResetParametros()'],['../classTProcuraMelhorativa.html#ad52a9ac59f07587d70dc696c0648fe62',1,'TProcuraMelhorativa::ResetParametros()'],['../classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d',1,'CProblemaArtificial::ResetParametros()'],['../classCParticaoCB.html#a41dc438c16b823fd1b20cbd61a7396ed',1,'CParticaoCB::ResetParametros()'],['../classCOitoDamasCP.html#a9eba2f6a84513cd1b62021362241d3fc',1,'COitoDamasCP::ResetParametros()'],['../classCOitoDamasCI.html#ac8954b7751c740cb0489b98a74142827',1,'COitoDamasCI::ResetParametros()'],['../classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf',1,'COitoDamas::ResetParametros()'],['../classTCodificacaoInteira.html#a5100a41aeaae385245b0cf8f493615a3',1,'TCodificacaoInteira::ResetParametros()'],['../classTCodificacaoBinaria.html#a2fac1dbb30a1e109803559213001267b',1,'TCodificacaoBinaria::ResetParametros()'],['../group__RedefinicaoMandatoria.html#ga65671e37d7c8da81c6a2143027166dd8',1,'TProcuraConstrutiva::ResetParametros()'],['../classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3',1,'CPuzzle8::ResetParametros()'],['../classCParticao.html#a7184defba91cfd68281cf63d0fee98c6',1,'CParticao::ResetParametros()'],['../classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf',1,'COitoDamas::ResetParametros()'],['../classCAspirador.html#a7a0d35ab38ae4c5d9a941ca9b3845e4b',1,'CAspirador::ResetParametros()'],['../classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1',1,'TProcuraAdversa::ResetParametros()'],['../classCJogoEmLinha.html#a855791b2e19731340976157991d79293',1,'CJogoEmLinha::ResetParametros()']]]
+  ['parametro_0',['parametro',['../classTProcura.html#a0e9e692f29af8a5d5279a8647c800437',1,'TProcura::Parametro(int id) const'],['../classTProcura.html#ab0442a86569fcc589eb3dee11ce33603',1,'TProcura::Parametro(int id)']]],
+  ['parametroativo_1',['ParametroAtivo',['../classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e',1,'TProcura']]],
+  ['parar_2',['parar',['../classTProcuraMelhorativa.html#add6b034d0b16d10ca85b2b42d956fae0',1,'TProcuraMelhorativa::Parar()'],['../classTProcura.html#a7952e187e1b0ae0ca52edab157223179',1,'TProcura::Parar()']]],
+  ['pontos_3',['Pontos',['../classTProcuraAdversa.html#a33c402687525b54049c143102248ddb4',1,'TProcuraAdversa']]],
+  ['pop_4',['Pop',['../classTVector.html#a3249913626d54e46b07e168ce1f05d87',1,'TVector']]],
+  ['printf_5',['printf',['../classTString.html#a4b9a718839325a0e057bc6e2483d3f17',1,'TString']]],
+  ['profundidadeprimeiro_6',['ProfundidadePrimeiro',['../group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228',1,'TProcuraConstrutiva']]],
+  ['proximo_7',['Proximo',['../classCListaNo.html#ac0247e41530a14c23afb3279fa15bbfa',1,'CListaNo']]],
+  ['proximodistinto_8',['ProximoDistinto',['../classCListaNo.html#a9f8eef005ec0d5fae8d5075892d19273',1,'CListaNo']]],
+  ['push_9',['Push',['../classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64',1,'TVector']]]
 ];

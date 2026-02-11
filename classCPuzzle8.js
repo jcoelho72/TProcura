@@ -8,6 +8,7 @@ var classCPuzzle8 =
     [ "Debug", "classCPuzzle8.html#acb9a55050da99ad64e2dc1b32c98d0a1", null ],
     [ "Distinto", "classCPuzzle8.html#aa66512563951c5f94b6b0dcf7d7ea86b", null ],
     [ "Duplicar", "classCPuzzle8.html#ad0638a270ace9056ffba040d2479fd5a", null ],
+    [ "Gravar", "classCPuzzle8.html#a1c7feb381572f4b6ff146272ea0a8898", null ],
     [ "Heuristica", "classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27", null ],
     [ "Inicializar", "classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed", null ],
     [ "MostrarSolucao", "classCPuzzle8.html#a251d6029c7b33366a000ce84aee4d2ed", null ],

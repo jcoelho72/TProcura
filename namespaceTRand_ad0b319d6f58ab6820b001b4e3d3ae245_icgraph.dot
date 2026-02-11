@@ -64,7 +64,7 @@ digraph "TRand::srand"
   Node5 -> Node7 [id="edge31_Node000005_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node10 [id="edge32_Node000005_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node32 [id="edge33_Node000005_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node32 [id="Node000032",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a2a03781f9ba05ff583c9e335ecd34e09",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node32 [id="Node000032",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node32 -> Node8 [id="edge34_Node000032_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node33 [id="edge35_Node000001_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node33 [id="Node000033",label="TRand::rand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#a8f8ec155d796c5586198ac75eb966d4f",tooltip="Retorna o próximo valor pseudo-aleatório."];

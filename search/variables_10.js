@@ -9,6 +9,10 @@ var searchData=
   ['ramo_5ffim_6',['RAMO_FIM',['../group__VariaveisGlobais.html#gada55e3fa56125a6cb779ac683ef8e0c7',1,'TProcuraConstrutiva']]],
   ['ramo_5fnovo_7',['RAMO_NOVO',['../group__VariaveisGlobais.html#ga4e20df8a70f784cfb80db79a4d29c866',1,'TProcuraConstrutiva']]],
   ['ramo_5fvazio_8',['RAMO_VAZIO',['../group__VariaveisGlobais.html#gae056f5ea48dd523ccdf5853116866a25',1,'TProcuraConstrutiva']]],
-  ['resultado_9',['resultado',['../structSResultadoJogo.html#a7c06ecc0b6d50237c1eecf64eb6b59ef',1,'SResultadoJogo::resultado'],['../classTProcura.html#a224527229b795a4780e5faa61245a8e0',1,'TProcura::resultado']]],
-  ['reutilizadoavaliacao_10',['reutilizadoAvaliacao',['../classTProcuraAdversa.html#abfa149e4beec8447ec67c05adeb6fedc',1,'TProcuraAdversa']]]
+  ['res_5fimpossivel_9',['RES_IMPOSSIVEL',['../TProcura_8h.html#aab7fbbbd1d6b75abc670fe8c4e9465d6',1,'TProcura.h']]],
+  ['res_5finvalido_10',['RES_INVALIDO',['../TProcura_8h.html#a11388bb5c1ffd4129e18e1b7175b2b3e',1,'TProcura.h']]],
+  ['res_5fnao_5fresolvido_11',['RES_NAO_RESOLVIDO',['../TProcura_8h.html#a7a2c6287998f834fbae43ca9ca043eed',1,'TProcura.h']]],
+  ['res_5fvazio_12',['RES_VAZIO',['../TProcura_8h.html#a8f33dd7262b24388d1e03da7920d3f14',1,'TProcura.h']]],
+  ['resultado_13',['resultado',['../structSResultadoJogo.html#a7c06ecc0b6d50237c1eecf64eb6b59ef',1,'SResultadoJogo::resultado'],['../classTProcura.html#a224527229b795a4780e5faa61245a8e0',1,'TProcura::resultado']]],
+  ['reutilizadoavaliacao_14',['reutilizadoAvaliacao',['../classTProcuraAdversa.html#abfa149e4beec8447ec67c05adeb6fedc',1,'TProcuraAdversa']]]
 ];

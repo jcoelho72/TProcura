@@ -15,6 +15,7 @@ var classCOitoDamas =
     [ "Distancia", "classCOitoDamas.html#a95896a9158166e8c14011a7830ee14a7", null ],
     [ "Duplicar", "classCOitoDamas.html#ad9ce9bd26af98392515937e9aff10e5a", null ],
     [ "Duplicar", "classCOitoDamas.html#a36a173575d8f6bd1815989a7a26b7440", null ],
+    [ "Gravar", "classCOitoDamas.html#acb32f8140d9a26034d745757b54dfe7b", null ],
     [ "Inicializar", "classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214", null ],
     [ "Inicializar", "classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214", null ],
     [ "MostrarSolucao", "classCOitoDamas.html#acda7651f84323201b3a57699daf55646", null ],
