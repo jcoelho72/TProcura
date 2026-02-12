@@ -166,6 +166,10 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 	TVector<TVector<int>> instSolucoes; // para cada instância, os IDs dos resultados
 	int backupID = instancia.valor;
 
+#ifdef VPL_ATIVO
+	Debug(ATIVIDADE, false, "\n<|--\n");
+#endif
+
 	TesteInicio(instancias, atual);
 	instSolucoes.Count(instancias.Count());
 
@@ -193,7 +197,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		int indice = instancias.Find(inst);
 		bool impossivel = impossiveis.Find(inst) >= 0;
 		for (auto solucao : instSolucoes[indice]) {
-			tempo += (int) solucoes[solucao].valor.First(); // acumular tempo das soluções para a instância atual
+			tempo += (int)solucoes[solucao].valor.First(); // acumular tempo das soluções para a instância atual
 			if (impossivel) {
 				// se a instância é conhecida por ser impossível, falha no caso de existir solução
 				if (solucoes[solucao].solucao.Empty()) {
@@ -219,7 +223,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 			// validar a solução para a instância atual
 			if (Validar(solucoes[solucao].solucao)) {
 				validas++;
-				int resultado = (int) Indicador(IND_RESULTADO);
+				int resultado = (int)Indicador(IND_RESULTADO);
 				if (resultado >= 0) {
 					if (melhor == RES_VAZIO || melhor > resultado)
 						melhor = resultado;
@@ -249,12 +253,8 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		resultados += { inst, 0, { validas, invalidas, melhor, pior, tempo }, { }};
 	}
 
-#ifdef VPL_ATIVO
-	RelatorioValidacao(resultados, custoMinimo, true);
-#else
 	if (Parametro(NIVEL_DEBUG) >= ATIVIDADE)
 		RelatorioValidacao(resultados, custoMinimo);
-#endif
 
 	// gravar resultados, um por instância
 	RelatorioCSV(resultados, fichResultados, false);
@@ -263,9 +263,13 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 	instancia.valor = backupID;
 	Inicializar();
 	TesteFim();
+#ifdef VPL_ATIVO
+	Debug(ATIVIDADE, false, "\n--|>\n");
+#endif
+
 }
 
-void TProcura::RelatorioValidacao(TVector<TResultado> resultados, int custoMinimo, bool vpl) {
+void TProcura::RelatorioValidacao(TVector<TResultado> resultados, int custoMinimo) {
 	int validas = 0, naoResolvidas = 0, melhorCusto = 0, piorCusto = 0, tempoTotal = 0;
 	double desempenho = 0;
 	for (auto res : resultados) {
@@ -273,7 +277,7 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, int custoMinim
 		if (res.valor[0] > 0 && res.valor[1] == 0) {
 			validas++;
 			if (res.valor[2] >= 0)
-				melhorCusto += (int) res.valor[2];
+				melhorCusto += (int)res.valor[2];
 			if (res.valor[3] >= 0)
 				piorCusto += (int)res.valor[3];
 		}
@@ -314,14 +318,10 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, int custoMinim
 	Debug(ATIVIDADE, false, "%.1f%% %-2s.", desempenho * 100, Icon(EIcon::TEMPO)) &&
 		fflush(stdout);
 
-	if (vpl) {
-		// relatório para feedback no VPL
-		printf("\nComment :=>> %-2sInstâncias: %d", Icon(EIcon::INST), resultados.Count());
-		printf("\nComment :=>> %-2sVálidas: %d", Icon(EIcon::SUCESSO), validas);
-		printf("\nComment :=>> %-2sCusto: %d", Icon(EIcon::VALOR), piorCusto);
-		printf("\nComment :=>> %-2sTempo(ms): %d", Icon(EIcon::TEMPO), tempoTotal);
-		printf("\nGrade :=>> %d", (int)(desempenho * 100 + 0.5));
-	}
+#ifdef VPL_ATIVO
+	// nota no VPL
+	Debug(ATIVIDADE, false, "\n--|>\nGrade :=>> %d\n<|--\n", (int)(desempenho * 100 + 0.5));
+#endif
 }
 
 
@@ -1252,14 +1252,17 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	{
 		ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
 		Parametro(NIVEL_DEBUG) = NADA; // remover informação de debug do algoritmo, já que é um teste empírico
-		resultado = ExecutaAlgoritmo();
+		if (!ficheiroGravar.Empty()) {
+			Gravar();
+			resultado = RES_VAZIO;
+		}
+		else
+			resultado = ExecutaAlgoritmo();
 		Parametro(NIVEL_DEBUG) = backupDebug;
 	}
 	tempo = Cronometro(CONT_ALGORITMO);
 	InserirRegisto(resultados, instancia.valor, conf);
 
-	if (!ficheiroGravar.Empty())
-		Gravar();
 
 	if (resultado >= 0) {
 		mpiID == 0 && Debug(COMPLETO, false, "%-2s%-5d", Icon(EIcon::SUCESSO), resultado);
@@ -1336,6 +1339,9 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 		}
 		else if (strcmp(argv[i], "-F") == 0 && i + 1 < argc) {
 			(ficheiroInstancia = "").printf("%s", argv[i + 1]);
+		}
+		else if (strcmp(argv[i], "-FG") == 0 && i + 1 < argc) {
+			(ficheiroGravar = "").printf("%s", argv[i + 1]);
 		}
 		else if (strcmp(argv[i], "-M") == 0 && i + 1 < argc) {
 			if ((modoMPI = atoi(argv[i + 1])) != 1)

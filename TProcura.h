@@ -465,7 +465,7 @@ public:
 	 * @param fichResultados - nome do arquivo onde os resultados da validação serão gravados (opcional).
 	 */
 	virtual void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, int custoMinimo, TString fichSolucoes, TString fichResultados = "");
-	virtual void RelatorioValidacao(TVector<TResultado> resultados, int custoMinimo, bool vpl=false);
+	virtual void RelatorioValidacao(TVector<TResultado> resultados, int custoMinimo);
 
 	/**
 	 * @brief Verifica a validade de uma solução para a instância atual.

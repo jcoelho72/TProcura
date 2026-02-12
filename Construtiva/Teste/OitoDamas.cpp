@@ -41,8 +41,8 @@ void COitoDamas::Inicializar(void)
 
 void COitoDamas::Gravar(void)
 {
-	TString().printf("%s%d.txt", *ficheiroGravar, instancia.valor).writeLines(
-		{ TString(nDamas) });
+	TString().printf("%s%d.txt", *ficheiroGravar, instancia.valor)
+		.writeLines({ TString(nDamas) });
 }
 
 void COitoDamas::ResetParametros()

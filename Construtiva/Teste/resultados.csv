@@ -1,11 +1,11 @@
 Instância;P1(ALGORITMO);P2(NIVEL_DEBUG);P3(SEMENTE);P4(LIMITE_TEMPO);P5(LIMITE_ITERACOES);P6(VER_ACOES);P7(LIMITE);P8(ESTADOS_REPETIDOS);P9(PESO_ASTAR);P10(RUIDO_HEURISTICA);P11(BARALHAR_SUCESSORES);I2(Tempo(ms));Solução
-4;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;0;d2 d4 d1 d3 
-5;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;0;d1 d3 d5 d2 d4 
-6;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;0;d2 d4 d6 d1 d3 d5 
-7;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;0;d1 d3 d5 d7 d2 d4 d6 
-8;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;1;d1 d5 d8 d6 d3 d7 d2 d4 
-9;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;4;d1 d3 d6 d8 d2 d4 d9 d7 d5 
-10;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;24;d1 d3 d6 d8 d10 d5  d4 d7  d9 d2
-11;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;92;d1 d3 d5 d7 d10 d9 d2 d4 d6 d11 d8  
-12;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;556;d1 d3 d5 d8 d10 d12 d6 d11 d7 d9 d4 d2 
-13;1:Largura Primeiro;0:NADA;1;10;0;4;0;1:ignorar;;;0;3173;d1 d3 d5 d2 d9 d12 d10 d13 d6 d11 d8 d4 d7 
+10;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;cima dir baixo baixo 
+110;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;6;baixo baixo dir dir cima cima esq esq baixo dir dir cima esq baixo dir baixo 
+210;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;21;cima esq baixo dir cima cima esq baixo baixo dir cima cima esq esq baixo dir baixo dir 
+310;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;83;baixo esq cima dir baixo dir cima esq baixo esq cima cima dir dir baixo baixo esq cima dir baixo 
+410;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;60;cima dir baixo esq cima dir dir baixo esq esq cima cima dir baixo dir cima esq baixo baixo dir 
+510;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;742;baixo esq cima cima dir dir baixo esq baixo esq cima cima dir dir baixo esq baixo esq cima cima dir dir baixo baixo 
+610;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;17;cima dir baixo dir cima esq cima dir baixo esq esq cima dir baixo esq baixo dir dir 
+710;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;182;cima cima dir dir baixo esq cima esq baixo baixo dir dir cima cima esq baixo esq cima dir dir baixo baixo 
+810;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;6;cima dir cima dir baixo esq esq cima dir baixo baixo esq cima dir baixo dir 
+910;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;1483;cima cima esq baixo dir baixo esq cima esq baixo dir cima esq cima dir baixo dir cima esq baixo esq cima dir baixo dir baixo 

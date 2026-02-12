@@ -1,0 +1,11 @@
+Instância;P1(ALGORITMO);P2(NIVEL_DEBUG);P3(SEMENTE);P4(LIMITE_TEMPO);P5(LIMITE_ITERACOES);P6(VER_ACOES);P7(LIMITE);P8(ESTADOS_REPETIDOS);P9(PESO_ASTAR);P10(RUIDO_HEURISTICA);P11(BARALHAR_SUCESSORES);I1(IND_CUSTO);I2(Tempo(ms));I3(Iterações);I4(IND_EXPANSOES);I5(IND_GERACOES);I6(IND_LOWER_BOUND);Solução
+10;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;1;0;0;0;0;
+110;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
+210;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
+310;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
+410;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
+510;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
+610;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
+710;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
+810;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
+910;1:Largura Primeiro;0:NADA;1;10;0;4;0;2:ascendentes;;;0;0;0;0;0;0;0;
