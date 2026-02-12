@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p zip/Construtiva/TProcura/Construtiva/Teste
           cp *.cpp *.h zip/Construtiva/TProcura/ 
-          cp Construtiva/*.cpp TProcura/Construtiva/*.h zip/Construtiva/TProcura/Construtiva/ 
+          cp Construtiva/*.cpp Construtiva/*.h zip/Construtiva/TProcura/Construtiva/ 
           cp Construtiva/Teste/*.cpp Construtiva/Teste/*.h zip/Construtiva/TProcura/Construtiva/Teste/ 
           cd zip/Construtiva && zip -r ../../Construtiva.zip . && cd ../..
 
