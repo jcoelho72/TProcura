@@ -14,34 +14,34 @@ jobs:
       - name: Package Teste
         run: |
           mkdir -p zip/Teste/TProcura/Teste
-          cp TProcura/*.cpp TProcura/*.h zip/Teste/TProcura/ 
-          cp TProcura/Teste/*.cpp TProcura/Teste/*.h zip/Teste/TProcura/Teste/ 
+          cp *.cpp *.h zip/Teste/TProcura/ 
+          cp Teste/*.cpp Teste/*.h zip/Teste/TProcura/Teste/ 
           cd zip/Teste && zip -r ../../Teste.zip . && cd ../..
 
       - name: Package Construtiva
         run: |
           mkdir -p zip/Construtiva/TProcura/Construtiva/Teste
-          cp TProcura/*.cpp TProcura/*.h zip/Construtiva/TProcura/ 
-          cp TProcura/Construtiva/*.cpp TProcura/Construtiva/*.h zip/Construtiva/TProcura/Construtiva/ 
-          cp TProcura/Construtiva/Teste/*.cpp TProcura/Construtiva/Teste/*.h zip/Construtiva/TProcura/Construtiva/Teste/ 
+          cp *.cpp *.h zip/Construtiva/TProcura/ 
+          cp Construtiva/*.cpp TProcura/Construtiva/*.h zip/Construtiva/TProcura/Construtiva/ 
+          cp Construtiva/Teste/*.cpp Construtiva/Teste/*.h zip/Construtiva/TProcura/Construtiva/Teste/ 
           cd zip/Construtiva && zip -r ../../Construtiva.zip . && cd ../..
 
       - name: Package Melhorativa
         run: |
           mkdir -p zip/Melhorativa/TProcura/Melhorativa/Teste
-          cp TProcura/*.cpp TProcura/*.h zip/Melhorativa/TProcura/ 
-          cp TProcura/Melhorativa/*.cpp TProcura/Melhorativa/*.h zip/Melhorativa/TProcura/Melhorativa/ 
-          cp TProcura/Melhorativa/Teste/*.cpp TProcura/Melhorativa/Teste/*.h zip/Melhorativa/TProcura/Melhorativa/Teste/ 
+          cp *.cpp *.h zip/Melhorativa/TProcura/ 
+          cp Melhorativa/*.cpp Melhorativa/*.h zip/Melhorativa/TProcura/Melhorativa/ 
+          cp Melhorativa/Teste/*.cpp Melhorativa/Teste/*.h zip/Melhorativa/TProcura/Melhorativa/Teste/ 
           cd zip/Melhorativa && zip -r ../../Melhorativa.zip . && cd ../..
 
       - name: Package Adversa
         run: |
           mkdir -p zip/Adversa/TProcura/Adversa/Teste
-          mkdir -p zip/Adversa/TProcura/Construtiva/Teste
-          cp TProcura/*.cpp TProcura/*.h zip/Adversa/TProcura/ 
-          cp TProcura/Adversa/*.cpp TProcura/Adversa/*.h zip/Adversa/TProcura/Adversa/ 
-          cp TProcura/Adversa/Teste/*.cpp TProcura/Adversa/Teste/*.h zip/Adversa/TProcura/Adversa/Teste/ 
-          cp TProcura/Construtiva/*.cpp TProcura/Construtiva/*.h zip/Adversa/TProcura/Construtiva/ 
+          mkdir -p zip/Adversa/TProcura/Construtiva
+          cp *.cpp *.h zip/Adversa/TProcura/ 
+          cp Adversa/*.cpp Adversa/*.h zip/Adversa/TProcura/Adversa/ 
+          cp Adversa/Teste/*.cpp Adversa/Teste/*.h zip/Adversa/TProcura/Adversa/Teste/ 
+          cp Construtiva/*.cpp Construtiva/*.h zip/Adversa/TProcura/Construtiva/ 
           cd zip/Adversa && zip -r ../../Adversa.zip . && cd ../..
 
       - name: Upload zips to Release
