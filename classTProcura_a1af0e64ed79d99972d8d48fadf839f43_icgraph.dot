@@ -71,6 +71,6 @@ digraph "TProcura::Inicializar"
   Node1 -> Node3 [id="edge34_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge35_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node31 [id="edge36_Node000001_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node31 [id="Node000031",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node31 -> Node4 [id="edge37_Node000031_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -87,7 +87,7 @@ digraph "compat::ContaUTF8"
   Node28 -> Node33 [id="edge48_Node000028_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node33 [id="Node000033",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node28 -> Node34 [id="edge49_Node000028_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node34 [id="Node000034",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node34 [id="Node000034",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node34 -> Node6 [id="edge50_Node000034_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node25 -> Node5 [id="edge51_Node000025_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node35 [id="edge52_Node000014_Node000035",dir="back",color="steelblue1",style="solid",tooltip=" "];

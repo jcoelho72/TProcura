@@ -42,7 +42,7 @@ var classTProcura =
     [ "Registo", "classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77", null ],
     [ "Registo", "classTProcura.html#ad9142d2a01abb01dfb939c23bf478de2", null ],
     [ "RelatorioCSV", "classTProcura.html#aa86b96b672310c9e4a01806ff264e3ab", null ],
-    [ "RelatorioValidacao", "classTProcura.html#ac09a0816be5cf6719ffbc925b132a886", null ],
+    [ "RelatorioValidacao", "classTProcura.html#a15aa084559d3d2d330df71502d0f3089", null ],
     [ "ResetParametros", "classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871", null ],
     [ "SolicitaInstancia", "classTProcura.html#ae9f0b921a171a110e6a6fcc209332635", null ],
     [ "SolicitaInstancias", "classTProcura.html#a6941386b767d6f0723c6eb9d27241d69", null ],
@@ -54,6 +54,6 @@ var classTProcura =
     [ "TesteFim", "classTProcura.html#aacb98ca4aa5bbc4db469bb5329e58434", null ],
     [ "TesteInicio", "classTProcura.html#a577697338460038138738e87157166af", null ],
     [ "TesteManual", "classTProcura.html#a8331059908495f9a915ada39424ca27c", null ],
-    [ "TesteValidacao", "classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936", null ],
+    [ "TesteValidacao", "classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e", null ],
     [ "Validar", "classTProcura.html#aa8d8105f1eab506f9d2064d4ac27d477", null ]
 ];

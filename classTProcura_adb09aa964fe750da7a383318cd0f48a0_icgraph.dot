@@ -103,7 +103,7 @@ digraph "TProcura::Cronometro"
   Node38 -> Node8 [id="edge58_Node000038_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node36 -> Node30 [id="edge59_Node000036_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node36 -> Node39 [id="edge60_Node000036_Node000039",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node39 [id="Node000039",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node39 [id="Node000039",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node39 -> Node28 [id="edge61_Node000039_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node27 [id="edge62_Node000001_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node15 [id="edge63_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];

@@ -86,7 +86,7 @@ digraph "TVector::First"
   Node32 -> Node22 [id="edge47_Node000032_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node28 -> Node14 [id="edge48_Node000028_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node28 -> Node33 [id="edge49_Node000028_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node33 [id="Node000033",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node33 [id="Node000033",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node33 -> Node22 [id="edge50_Node000033_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node34 [id="edge51_Node000001_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node34 [id="Node000034",label="TString::readLines",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#ae7b848f7e090aae31886c8fd535e1055",tooltip=" "];

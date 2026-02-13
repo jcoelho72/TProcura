@@ -31,8 +31,9 @@ digraph "TVector::Data"
   Node2 -> Node5 [id="edge12_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge13_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TString::tok",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a1c97cb769a9101f4bf899f527adceea6",tooltip=" "];
-  Node13 -> Node14 [id="edge14_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 -> Node6 [id="edge14_Node000013_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 -> Node14 [id="edge15_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
-  Node14 -> Node5 [id="edge15_Node000014_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 -> Node13 [id="edge16_Node000013_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node5 [id="edge16_Node000014_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 -> Node13 [id="edge17_Node000013_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

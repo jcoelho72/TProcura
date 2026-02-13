@@ -69,6 +69,6 @@ digraph "TVector::Empty"
   Node26 -> Node11 [id="edge36_Node000026_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node6 [id="edge37_Node000023_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node27 [id="edge38_Node000023_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node27 [id="Node000027",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node27 -> Node11 [id="edge39_Node000027_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -22,7 +22,7 @@ var searchData=
   ['registo_19',['registo',['../classTProcura.html#ae7fda59c4090bfd47b63d2d227122b77',1,'TProcura::Registo(TResultado &amp;resultado, int id)'],['../classTProcura.html#ad9142d2a01abb01dfb939c23bf478de2',1,'TProcura::Registo(TResultado &amp;resultado, int id, int64_t valor)']]],
   ['regular_20',['regular',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951ba040a9ec6d2966f099fd3214b8ac4fef3',1,'JogoEmLinha.h']]],
   ['relatoriocsv_21',['relatoriocsv',['../classTProcuraAdversa.html#a849320e339149a4f83809b6565321005',1,'TProcuraAdversa::RelatorioCSV()'],['../classTProcura.html#aa86b96b672310c9e4a01806ff264e3ab',1,'TProcura::RelatorioCSV(TVector&lt; TResultado &gt; &amp;resultados, TString ficheiro, bool parametros=true)']]],
-  ['relatoriovalidacao_22',['RelatorioValidacao',['../classTProcura.html#ac09a0816be5cf6719ffbc925b132a886',1,'TProcura']]],
+  ['relatoriovalidacao_22',['RelatorioValidacao',['../classTProcura.html#a15aa084559d3d2d330df71502d0f3089',1,'TProcura']]],
   ['remove_23',['Remove',['../classTVector.html#a85673895d405c09b5b9155f78b67d71b',1,'TVector']]],
   ['replace_24',['Replace',['../classTVector.html#a35217d9779ea1c7608dac2ffd677c30b',1,'TVector']]],
   ['repositório_25',['repositório',['../index.html#autotoc_md209',1,'📦 Estrutura do Repositório'],['../index.html#autotoc_md213',1,'Opção 1 - Clonar o Repositório']]],

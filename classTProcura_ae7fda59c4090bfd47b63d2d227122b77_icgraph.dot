@@ -47,6 +47,6 @@ digraph "TProcura::Registo"
   Node17 [id="Node000017",label="TProcura::TesteEmpiricoGestor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa7d1a1397fba6a7fe5446f7a8d94e276",tooltip="Teste empírico com modo mestre-escravo (este é o mestre)"];
   Node17 -> Node5 [id="edge24_Node000017_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 -> Node18 [id="edge25_Node000016_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a20e77a01a3bc3a11e14d2075817eb936",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node18 [id="Node000018",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node18 -> Node5 [id="edge26_Node000018_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
