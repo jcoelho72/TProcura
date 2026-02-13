@@ -461,11 +461,13 @@ public:
 	 *
 	 * @param instancias - IDs das instâncias a serem validadas.
 	 * @param impossiveis - IDs das instâncias impossíveis, de entre as instâncias dadas.
+	 * @param referencias - custo mínimo, custo máximo, tempo mínimo, tempo máximo.
 	 * @param fichSolucoes - nome do arquivo contendo as soluções a validar para as instâncias.
 	 * @param fichResultados - nome do arquivo onde os resultados da validação serão gravados (opcional).
 	 */
-	virtual void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, int custoMinimo, TString fichSolucoes, TString fichResultados = "");
-	virtual void RelatorioValidacao(TVector<TResultado> resultados, int custoMinimo);
+	virtual void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, TVector<int> referencias, TString fichSolucoes, TString fichResultados = "");
+
+	virtual void RelatorioValidacao(TVector<TResultado> resultados, TVector<int> referencias);
 
 	/**
 	 * @brief Verifica a validade de uma solução para a instância atual.

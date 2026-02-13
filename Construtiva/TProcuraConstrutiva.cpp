@@ -912,8 +912,8 @@ void TProcuraConstrutiva::Explorar() {
 					LimparEstatisticas();
 					int resultado = 0;
 					switch (resultado = ExecutaAlgoritmo()) {
-					case -1: TProcura::Mensagem(Icon(EIcon::IMP), "Impossível"); break;
-					case -2: TProcura::Mensagem(Icon(EIcon::INSUC), "Não resolvido"); break;
+					case RES_IMPOSSIVEL: TProcura::Mensagem(Icon(EIcon::IMP), "Impossível"); break;
+					case RES_NAO_RESOLVIDO: TProcura::Mensagem(Icon(EIcon::INSUC), "Não resolvido"); break;
 					default: TProcura::Mensagem(Icon(EIcon::SOL), "Resolvido (%d)", resultado); break;
 					}
 					tempo = Cronometro(CONT_ALGORITMO);

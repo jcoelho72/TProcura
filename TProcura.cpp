@@ -158,7 +158,7 @@ void TProcura::TesteManual(TString nome)
 }
 
 // Idêntico ao teste empírico, mas utiliza a configuração atual e verifica se uma solução é válida para cada instância
-void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, int custoMinimo, TString fichSolucoes, TString fichResultados)
+void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, TVector<int> referencias, TString fichSolucoes, TString fichResultados)
 {
 	TVector<TResultado> solucoes; // guarda soluções para valiação
 	TVector<TResultado> resultados; // guarda resultados da validação para gravação
@@ -199,8 +199,10 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		for (auto solucao : instSolucoes[indice]) {
 			tempo += (int)solucoes[solucao].valor.First(); // acumular tempo das soluções para a instância atual
 			if (impossivel) {
-				// se a instância é conhecida por ser impossível, falha no caso de existir solução
-				if (solucoes[solucao].solucao.Empty()) {
+				// se a instância é conhecida por ser impossível, a solução tem de ser vazia e o tempo dentro do permitido
+				if (solucoes[solucao].solucao.Empty() &&
+					solucoes[solucao].valor.First() < referencias[3] / instancias.Count())
+				{
 					validas++;
 					melhor = RES_IMPOSSIVEL;
 					if (pior == RES_VAZIO)
@@ -254,7 +256,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 	}
 
 	if (Parametro(NIVEL_DEBUG) >= ATIVIDADE)
-		RelatorioValidacao(resultados, custoMinimo);
+		RelatorioValidacao(resultados, referencias);
 
 	// gravar resultados, um por instância
 	RelatorioCSV(resultados, fichResultados, false);
@@ -269,9 +271,10 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 
 }
 
-void TProcura::RelatorioValidacao(TVector<TResultado> resultados, int custoMinimo) {
+void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> referencias) {
 	int validas = 0, naoResolvidas = 0, melhorCusto = 0, piorCusto = 0, tempoTotal = 0;
-	double desempenho = 0;
+	double taxaEficacia = 0, taxaQualidade = 0, taxaEficiencia = 0, desempenho = 0;
+	bool considerarQualidade = (referencias[1] > referencias[0]); // custoMin < custoMax (se iguais, o custo não é considerado para o indicador global)
 	for (auto res : resultados) {
 		// instância válida apenas se todas as soluções para a instância forem válidas
 		if (res.valor[0] > 0 && res.valor[1] == 0) {
@@ -280,12 +283,16 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, int custoMinim
 				melhorCusto += (int)res.valor[2];
 			if (res.valor[3] >= 0)
 				piorCusto += (int)res.valor[3];
+			tempoTotal += (int)res.valor[4];
 		}
 		// não resolvidas se existirem resultados inválidos
-		if (res.valor[1] > 0)
+		if (res.valor[1] > 0) {
 			naoResolvidas++;
-		// tempo soma mesmo para instâncias não resolvidas
-		tempoTotal += (int)res.valor[4];
+			// custo máximo por instância
+			piorCusto = referencias[1] / resultados.Count();
+			// tempo máximo por instância
+			tempoTotal += referencias[3] / resultados.Count();
+		}
 	}
 	Debug(ATIVIDADE, false,
 		"\n ├─ %-2sVálidas:%d   %-2sInstâncias: %d.",
@@ -303,20 +310,35 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, int custoMinim
 		fflush(stdout);
 
 	// indicador de desempenho global:
-	// - base do indicador: taxa de sucesso
-	desempenho = 1.0 * validas / resultados.Count();
-	Debug(ATIVIDADE, false,
-		"\n ├─ %-2sDesempenho:%.1f%% %-2s ",
-		Icon(EIcon::IND), desempenho * 100, Icon(EIcon::SUCESSO));
-	// - ajuste pela qualidade das soluções (penalizar até 1 instância válida)
-	if (validas == resultados.Count()) // acertar custo caso sejam todas válidas
-		piorCusto -= custoMinimo;
-	desempenho -= (1.0 - exp(-piorCusto / 30)) / resultados.Count();
-	Debug(ATIVIDADE, false, "%.1f%% %-2s ", desempenho * 100, Icon(EIcon::VALOR));
-	// - ajuste pelo tempo (penalizar até 1 instância válida)
-	desempenho -= (1.0 - exp(-tempoTotal / 10000)) / resultados.Count();
-	Debug(ATIVIDADE, false, "%.1f%% %-2s.", desempenho * 100, Icon(EIcon::TEMPO)) &&
-		fflush(stdout);
+	// - taxaEficacia * taxaQualidade * taxaEficiencia (todos entre 0 e 1)
+	// - resultado final na escala entre 0 e 100 pontos.
+	// eficácia: percentagem de instâncias resolvidas
+	taxaEficacia = 1.0 * validas / resultados.Count();
+	// qualidade: (custoMax - custoTotal) / (custoMax - custoMin)
+	if (considerarQualidade)
+		taxaQualidade = 1.0 * (referencias[1] - piorCusto) / (referencias[1] - referencias[0]);
+	// eficiência: (tempoMax - tempoTotal) / (tempoMax - tempoMin)
+	taxaEficiencia = 1.0 * (referencias[3] - tempoTotal) / (referencias[3] - referencias[2]);
+	// ajuste de limites
+	if (considerarQualidade)
+		taxaQualidade = (taxaQualidade > 1 ? 1 : (taxaQualidade < 0 ? 0 : taxaQualidade));
+	taxaEficiencia = (taxaEficiencia > 1 ? 1 : (taxaEficiencia < 0 ? 0 : taxaEficiencia));
+	// calculo do indicador global
+	desempenho = (taxaEficacia + taxaQualidade + taxaEficiencia) / (considerarQualidade ? 3 : 2);
+	if (considerarQualidade)
+		Debug(ATIVIDADE, false,
+			"\n ├─ %-2s %.1f%% (%-2s %.1f%% %-2s %.1f%% %-2s %.1f%%)",
+			Icon(EIcon::IND), desempenho * 100,
+			Icon(EIcon::SUCESSO), taxaEficacia,
+			Icon(EIcon::VALOR), taxaQualidade,
+			Icon(EIcon::TEMPO), taxaEficiencia);
+	else
+		Debug(ATIVIDADE, false,
+			"\n ├─ %-2s %.1f%% (%-2s %.1f%% %-2s %.1f%%)",
+			Icon(EIcon::IND), desempenho * 100,
+			Icon(EIcon::SUCESSO), taxaEficacia,
+			Icon(EIcon::TEMPO), taxaEficiencia);
+	fflush(stdout);
 
 #ifdef VPL_ATIVO
 	// nota no VPL
@@ -1277,7 +1299,7 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 		if (resultado < 0 && !Parar()) //Instância Impossível! (se algoritmo completo) ");
 			mpiID == 0 && Debug(COMPLETO, false, "%-2s%-2s", Icon(EIcon::SUCESSO), Icon(EIcon::IMP));
 		else // não resolvido, cancelar resultados 
-			resultados.Last().valor.First() = -2;
+			resultados.Last().valor.First() = RES_NAO_RESOLVIDO;
 	}
 	if (mpiID == 0 && Parametro(NIVEL_DEBUG) >= COMPLETO) {
 		printf("%-2s ", Icon(EIcon::IND));
@@ -1292,7 +1314,7 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 	TString fichResultados, fichSolucoes;
 	TString argParametros;
 	bool configIntroduzido = false; // caso sejam dadas configurações, remover as existentes
-	int custoMinimo = 0;
+	TVector<int> referencias = { 0,100,0,100000 }; // custoMin, custoMax, tempoMin, tempoMax
 
 	compat::init_io();
 
@@ -1318,30 +1340,33 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 
 	// opcionais:
 	// -R resultados --- ficheiro de resultados em CSV (adicionada extensão .csv)
-	// -S solucoes [custoMinimo [<ids>]] --- ficheiro de solucoes em CSV
-	//    (caso exista, pretende-se apenas validação) e soma do custo mínimo de todas as soluções\n"
-	//    <ids> - instâncias impossíveis\n"
+	// -S solucoes [custoMin custoMax tempoMin tempoMax [<ids>]] --- ficheiro de solucoes em CSV
 	// -F instancia_ --- prefixo dos ficheiros de instâncias
 	// -I 2,1,3 --- indicadores selecionados por ordem 
 	// -P P1=1:3 x P2=0:2 --- formatação de parâmetros (idêntico ao interativo)
 	for (int i = 2; i < argc; i++) {
 		if (strcmp(argv[i], "-R") == 0 && i + 1 < argc) {
-			(fichResultados = "").printf("%s", argv[i + 1]);
+			(fichResultados = "").printf("%s", argv[++i]);
 		}
 		else if (strcmp(argv[i], "-S") == 0 && i + 1 < argc) {
-			(fichSolucoes = "").printf("%s", argv[i + 1]);
-			if (i + 2 < argc) {
-				custoMinimo = atoi(argv[i + 2]);
-				if (i + 3 < argc) {
-					impossiveis = argv[i + 3];
-				}
+			(fichSolucoes = "").printf("%s", argv[++i]);
+			// carregar as 4 referências, caso existam
+			if (i + 1 < argc && isdigit(argv[i + 1][0])) {
+				referencias = {};
+				for (auto& token : TString(argv[++i]).tok(","))
+					referencias += atoi(token);
+				if (referencias.Count() != 4) // usar valores de omissão se não forem dadas as 4 referências
+					referencias = { 0,100,0,100000 };
 			}
+			// e os ids de instâncias impossíveis, caso existam
+			if (i + 1 < argc && isdigit(argv[i + 1][0]))
+				impossiveis = argv[++i];
 		}
 		else if (strcmp(argv[i], "-F") == 0 && i + 1 < argc) {
-			(ficheiroInstancia = "").printf("%s", argv[i + 1]);
+			(ficheiroInstancia = "").printf("%s", argv[++i]);
 		}
 		else if (strcmp(argv[i], "-FG") == 0 && i + 1 < argc) {
-			(ficheiroGravar = "").printf("%s", argv[i + 1]);
+			(ficheiroGravar = "").printf("%s", argv[++i]);
 		}
 		else if (strcmp(argv[i], "-M") == 0 && i + 1 < argc) {
 			if ((modoMPI = atoi(argv[i + 1])) != 1)
@@ -1352,10 +1377,8 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 				gravarSolucao = 0; // apenas 0 ou 1
 		}
 		else if (strcmp(argv[i], "-I") == 0 && i + 1 < argc) {
-			TString str(argv[i + 1]);
-			auto tokens = str.tok(",");
 			indAtivo = {};
-			for (auto& token : tokens) {
+			for (auto& token : TString(argv[i + 1]).tok(",")) {
 				indAtivo += (atoi(token) - 1);
 				indicador[indAtivo.Last()].indice = indAtivo.Count() - 1;
 			}
@@ -1384,7 +1407,7 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 
 	if (!fichSolucoes.Empty()) {
 		// dado ficheiro de soluções, apenas validar as soluções, não executar o teste empírico
-		TesteValidacao(instancias, impossiveis, custoMinimo, fichSolucoes, fichResultados);
+		TesteValidacao(instancias, impossiveis, referencias, fichSolucoes, fichResultados);
 	}
 	else {
 		// arrancar MPI apenas após processar os argumentos
@@ -1412,9 +1435,10 @@ void TProcura::AjudaUtilizacao(TString programa) {
 		"  <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]\n"
 		"Opções:\n"
 		"  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)\n"
-		"  -S solucoes [custoMinimo [<ids>]] --- ficheiro de solucoes em CSV \n"
-		"     (caso exista, pretende-se apenas validação) e soma do custo mínimo de todas as soluções\n"
-		"     <ids> - instâncias impossíveis\n"
+		"  -S solucoes [custoMin,custoMax,tempoMin,tempoMax [<ids>]]\n"
+		"     caso exista ficheiro de soluções, pretende-se apenas validação\n"
+		"     pode-se dar referências de custo min/max e tempo min/max para indicador de desempenho\n"
+		"     <ids> - identificação das instâncias impossíveis\n"
 		"  -F <prefixo>    Prefixo para leitura da instância por ficheiro (omissão: vazio)\n"
 		"  -FG <prefixo>    Prefixo para gravação da instância em ficheiro (omissão: vazio)\n"
 		"  -M <modo>       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador\n"
