@@ -195,61 +195,62 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		int validas = 0, invalidas = 0, melhor = RES_VAZIO, pior = RES_VAZIO, tempo = 0;
 		int indice = instancias.Find(inst);
 		bool impossivel = impossiveis.Find(inst) >= 0;
-		for (auto solucao : instSolucoes[indice]) {
-			tempo += (int)solucoes[solucao].valor.First(); // acumular tempo das soluções para a instância atual
-			if (impossivel) {
-				// se a instância é conhecida por ser impossível, a solução tem de ser vazia e o tempo dentro do permitido
-				if (solucoes[solucao].solucao.Empty() &&
-					solucoes[solucao].valor.First() < referencias[3] / instancias.Count())
-				{
+		if(indice >= 0)
+			for (auto solucao : instSolucoes[indice]) {
+				tempo += (int)solucoes[solucao].valor.First(); // acumular tempo das soluções para a instância atual
+				if (impossivel) {
+					// se a instância é conhecida por ser impossível, a solução tem de ser vazia e o tempo dentro do permitido
+					if (solucoes[solucao].solucao.Empty() &&
+						solucoes[solucao].valor.First() < referencias[3] / instancias.Count())
+					{
+						validas++;
+						melhor = RES_IMPOSSIVEL;
+						if (pior == RES_VAZIO)
+							pior = RES_IMPOSSIVEL;
+					}
+					else {
+						// se existe solução para uma instância impossível, é inválida
+						invalidas++;
+						if (melhor == RES_VAZIO)
+							melhor = RES_INVALIDO;
+						pior = RES_INVALIDO;
+					}
+					continue;
+				}
+				// validar solução para a instância atual, e calcular indicadores
+				// gravar o ID da instância atual
+				instancia.valor = inst;
+				Inicializar();
+				LimparEstatisticas();
+				// validar a solução para a instância atual
+				if (Validar(solucoes[solucao].solucao)) {
 					validas++;
-					melhor = RES_IMPOSSIVEL;
-					if (pior == RES_VAZIO)
-						pior = RES_IMPOSSIVEL;
+					int resultado = (int)Indicador(IND_RESULTADO);
+					if (resultado >= 0) {
+						if (melhor == RES_VAZIO || melhor > resultado)
+							melhor = resultado;
+						if (pior == RES_VAZIO || (pior >= 0 && pior < resultado))
+							pior = resultado;
+					}
+					Debug(COMPLETO, false,
+						"\n ├─ %-2s:%d %-2s %-2s %d %-2s %d",
+						Icon(EIcon::INST), inst,
+						Icon(EIcon::SUCESSO),
+						Icon(EIcon::VALOR), resultado,
+						Icon(EIcon::TEMPO), tempo);
 				}
 				else {
-					// se existe solução para uma instância impossível, é inválida
 					invalidas++;
 					if (melhor == RES_VAZIO)
 						melhor = RES_INVALIDO;
 					pior = RES_INVALIDO;
+					Debug(COMPLETO, false,
+						"\n ├─ %-2s:%d %-2s %-2s %d",
+						Icon(EIcon::INST), inst,
+						Icon(EIcon::INSUC),
+						Icon(EIcon::TEMPO), tempo);
 				}
-				continue;
 			}
-			// validar solução para a instância atual, e calcular indicadores
-			// gravar o ID da instância atual
-			instancia.valor = inst;
-			Inicializar();
-			LimparEstatisticas();
-			// validar a solução para a instância atual
-			if (Validar(solucoes[solucao].solucao)) {
-				validas++;
-				int resultado = (int)Indicador(IND_RESULTADO);
-				if (resultado >= 0) {
-					if (melhor == RES_VAZIO || melhor > resultado)
-						melhor = resultado;
-					if (pior == RES_VAZIO || (pior >= 0 && pior < resultado))
-						pior = resultado;
-				}
-				Debug(COMPLETO, false,
-					"\n ├─ %-2s:%d %-2s %-2s %d %-2s %d",
-					Icon(EIcon::INST), inst,
-					Icon(EIcon::SUCESSO),
-					Icon(EIcon::VALOR), resultado,
-					Icon(EIcon::TEMPO), tempo);
-			}
-			else {
-				invalidas++;
-				if (melhor == RES_VAZIO)
-					melhor = RES_INVALIDO;
-				pior = RES_INVALIDO;
-				Debug(COMPLETO, false,
-					"\n ├─ %-2s:%d %-2s %-2s %d",
-					Icon(EIcon::INST), inst,
-					Icon(EIcon::INSUC),
-					Icon(EIcon::TEMPO), tempo);
-			}
-		}
 		if (validas + invalidas == 0) {
 			// se não existem soluções para a instância, considerar como não resolvida
 			invalidas++;
@@ -293,7 +294,7 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 		if (res.valor[1] > 0) {
 			naoResolvidas++;
 			// custo máximo por instância
-			piorCusto = referencias[1] / resultados.Count();
+			piorCusto += referencias[1] / resultados.Count();
 			// tempo máximo por instância
 			tempoTotal += referencias[3] / resultados.Count();
 		}
