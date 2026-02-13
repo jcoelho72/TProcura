@@ -250,6 +250,11 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 					Icon(EIcon::TEMPO), tempo);
 			}
 		}
+		if (validas + invalidas == 0) {
+			// se não existem soluções para a instância, considerar como não resolvida
+			invalidas++;
+			melhor = pior = RES_INVALIDO;
+		}
 		// registar a instância e resultados (válidas, inválids, melhor e pior valores), e tempo para gravação 
 		resultados += { inst, 0, { validas, invalidas, melhor, pior, tempo }, { }};
 	}
