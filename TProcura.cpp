@@ -166,11 +166,10 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 	TVector<TVector<int>> instSolucoes; // para cada instância, os IDs dos resultados
 	int backupID = instancia.valor;
 
+	TesteInicio(instancias, atual);
 #ifdef VPL_ATIVO
 	Debug(ATIVIDADE, false, "\n<|--\n");
 #endif
-
-	TesteInicio(instancias, atual);
 	instSolucoes.Count(instancias.Count());
 
 	// ler ficheiro de soluções, formato: id; (qualquer número de parâmetros); solução
@@ -264,10 +263,10 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 	// repor a instância atual
 	instancia.valor = backupID;
 	Inicializar();
-	TesteFim();
 #ifdef VPL_ATIVO
 	Debug(ATIVIDADE, false, "\n--|>\n");
 #endif
+	TesteFim();
 
 }
 
@@ -313,36 +312,36 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 	// - taxaEficacia * taxaQualidade * taxaEficiencia (todos entre 0 e 1)
 	// - resultado final na escala entre 0 e 100 pontos.
 	// eficácia: percentagem de instâncias resolvidas
-	taxaEficacia = 1.0 * validas / resultados.Count();
+	taxaEficacia = 100.0 * validas / resultados.Count();
 	// qualidade: (custoMax - custoTotal) / (custoMax - custoMin)
 	if (considerarQualidade)
-		taxaQualidade = 1.0 * (referencias[1] - piorCusto) / (referencias[1] - referencias[0]);
+		taxaQualidade = 100.0 * (referencias[1] - piorCusto) / (referencias[1] - referencias[0]);
 	// eficiência: (tempoMax - tempoTotal) / (tempoMax - tempoMin)
-	taxaEficiencia = 1.0 * (referencias[3] - tempoTotal) / (referencias[3] - referencias[2]);
+	taxaEficiencia = 100.0 * (referencias[3] - tempoTotal) / (referencias[3] - referencias[2]);
 	// ajuste de limites
 	if (considerarQualidade)
-		taxaQualidade = (taxaQualidade > 1 ? 1 : (taxaQualidade < 0 ? 0 : taxaQualidade));
-	taxaEficiencia = (taxaEficiencia > 1 ? 1 : (taxaEficiencia < 0 ? 0 : taxaEficiencia));
+		taxaQualidade = (taxaQualidade > 100 ? 100 : (taxaQualidade < 0 ? 0 : taxaQualidade));
+	taxaEficiencia = (taxaEficiencia > 100 ? 100 : (taxaEficiencia < 0 ? 0 : taxaEficiencia));
 	// calculo do indicador global
 	desempenho = (taxaEficacia + taxaQualidade + taxaEficiencia) / (considerarQualidade ? 3 : 2);
 	if (considerarQualidade)
 		Debug(ATIVIDADE, false,
 			"\n ├─ %-2s %.1f%% (%-2s %.1f%% %-2s %.1f%% %-2s %.1f%%)",
-			Icon(EIcon::IND), desempenho * 100,
+			Icon(EIcon::IND), desempenho,
 			Icon(EIcon::SUCESSO), taxaEficacia,
 			Icon(EIcon::VALOR), taxaQualidade,
 			Icon(EIcon::TEMPO), taxaEficiencia);
 	else
 		Debug(ATIVIDADE, false,
 			"\n ├─ %-2s %.1f%% (%-2s %.1f%% %-2s %.1f%%)",
-			Icon(EIcon::IND), desempenho * 100,
+			Icon(EIcon::IND), desempenho,
 			Icon(EIcon::SUCESSO), taxaEficacia,
 			Icon(EIcon::TEMPO), taxaEficiencia);
 	fflush(stdout);
 
 #ifdef VPL_ATIVO
 	// nota no VPL
-	Debug(ATIVIDADE, false, "\n--|>\nGrade :=>> %d\n<|--\n", (int)(desempenho * 100 + 0.5));
+	Debug(ATIVIDADE, false, "\n--|>\nGrade :=>> %d\n<|--\n", (int)(desempenho + 0.5));
 #endif
 }
 
