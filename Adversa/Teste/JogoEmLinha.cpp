@@ -52,8 +52,7 @@ void CJogoEmLinha::Inicializar(void)
 	inst = instancias[instancia.valor - 1];
 
 	tabuleiro.Count(inst.N * inst.M);
-	for (int i = 0; i < inst.N * inst.M; i++)
-		tabuleiro[i] = '.';
+	tabuleiro.Reset('.');
 
 	tamanhoCodificado = (inst.N * inst.M * 2) / 64 + 1;
 
@@ -207,7 +206,7 @@ TString CJogoEmLinha::Acao(TNo sucessor)
 	return TString().printf("%c%d", 'a' + diferenca % inst.M, 1 + diferenca / inst.M);
 }
 
-void CJogoEmLinha::TesteManual(const char* nome)
+void CJogoEmLinha::TesteManual(TString nome)
 {
 	instancia = { "", 1,1,10};
 	TProcuraAdversa::TesteManual(nome);

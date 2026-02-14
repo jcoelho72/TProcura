@@ -93,6 +93,9 @@ public:
 	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
 	void TesteEmpiricoTrabalhador(TVector<int> instancias, TString ficheiro = "") override;
 
+	void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, TVector<int> referencias, TString fichSolucoes, TString fichResultados = "") override;
+	bool Validar(TVector<TString> solucao) override;
+	TString Jogar(TString jogo, int configID);
 
 	/// @brief Executa o algoritmo com os parametros atuais
 	int ExecutaAlgoritmo();

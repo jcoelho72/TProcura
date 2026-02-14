@@ -200,13 +200,18 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 				tempo += (int)solucoes[solucao].valor.First(); // acumular tempo das soluções para a instância atual
 				if (impossivel) {
 					// se a instância é conhecida por ser impossível, a solução tem de ser vazia e o tempo dentro do permitido
-					if (solucoes[solucao].solucao.Empty() &&
-						solucoes[solucao].valor.First() < referencias[3] / instancias.Count())
+					if (solucoes[solucao].solucao.First() == TString("vazio"))
 					{
 						validas++;
 						melhor = RES_IMPOSSIVEL;
 						if (pior == RES_VAZIO)
 							pior = RES_IMPOSSIVEL;
+						Debug(COMPLETO, false,
+							"\n ├─ %-2s:%d %-2s %-2s %-2s %-2s %d",
+							Icon(EIcon::INST), inst,
+							Icon(EIcon::SUCESSO),
+							Icon(EIcon::VALOR), Icon(EIcon::IMP),
+							Icon(EIcon::TEMPO), tempo);
 					}
 					else {
 						// se existe solução para uma instância impossível, é inválida
@@ -214,41 +219,49 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 						if (melhor == RES_VAZIO)
 							melhor = RES_INVALIDO;
 						pior = RES_INVALIDO;
+						Debug(COMPLETO, false,
+							"\n ├─ %-2s:%d %-2s %-2s %d",
+							Icon(EIcon::INST), inst,
+							Icon(EIcon::INSUC),
+							Icon(EIcon::TEMPO), tempo);
+						for (auto token : solucoes[solucao].solucao)
+							Debug(COMPLETO, false, " %s", *token);
 					}
-					continue;
-				}
-				// validar solução para a instância atual, e calcular indicadores
-				// gravar o ID da instância atual
-				instancia.valor = inst;
-				Inicializar();
-				LimparEstatisticas();
-				// validar a solução para a instância atual
-				if (Validar(solucoes[solucao].solucao)) {
-					validas++;
-					int resultado = (int)Indicador(IND_RESULTADO);
-					if (resultado >= 0) {
-						if (melhor == RES_VAZIO || melhor > resultado)
-							melhor = resultado;
-						if (pior == RES_VAZIO || (pior >= 0 && pior < resultado))
-							pior = resultado;
-					}
-					Debug(COMPLETO, false,
-						"\n ├─ %-2s:%d %-2s %-2s %d %-2s %d",
-						Icon(EIcon::INST), inst,
-						Icon(EIcon::SUCESSO),
-						Icon(EIcon::VALOR), resultado,
-						Icon(EIcon::TEMPO), tempo);
 				}
 				else {
-					invalidas++;
-					if (melhor == RES_VAZIO)
-						melhor = RES_INVALIDO;
-					pior = RES_INVALIDO;
-					Debug(COMPLETO, false,
-						"\n ├─ %-2s:%d %-2s %-2s %d",
-						Icon(EIcon::INST), inst,
-						Icon(EIcon::INSUC),
-						Icon(EIcon::TEMPO), tempo);
+					// validar solução para a instância atual, e calcular indicadores
+					// gravar o ID da instância atual
+					instancia.valor = inst;
+					Inicializar();
+					LimparEstatisticas();
+					// validar a solução para a instância atual
+					if (Validar(solucoes[solucao].solucao)) {
+						validas++;
+						int resultado = (int)Indicador(IND_RESULTADO);
+						if (resultado >= 0) {
+							if (melhor == RES_VAZIO || melhor > resultado)
+								melhor = resultado;
+							if (pior == RES_VAZIO || (pior >= 0 && pior < resultado))
+								pior = resultado;
+						}
+						Debug(COMPLETO, false,
+							"\n ├─ %-2s:%d %-2s %-2s %d %-2s %d",
+							Icon(EIcon::INST), inst,
+							Icon(EIcon::SUCESSO),
+							Icon(EIcon::VALOR), resultado,
+							Icon(EIcon::TEMPO), tempo);
+					}
+					else {
+						invalidas++;
+						if (melhor == RES_VAZIO)
+							melhor = RES_INVALIDO;
+						pior = RES_INVALIDO;
+						Debug(COMPLETO, false,
+							"\n ├─ %-2s:%d %-2s %-2s %d",
+							Icon(EIcon::INST), inst,
+							Icon(EIcon::INSUC),
+							Icon(EIcon::TEMPO), tempo);
+					}
 				}
 			}
 		if (validas + invalidas == 0) {

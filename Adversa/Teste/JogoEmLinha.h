@@ -62,7 +62,7 @@ public:
 	int Heuristica(void);
 
 	TString Acao(TNo sucessor);
-	void TesteManual(const char* nome);
+	void TesteManual(TString nome);
 	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
 	int Codigo(char peca) { return peca == 'x' ? 1 : (peca == 'o' ? 2 : 3); }
 	int Indice(int i, int j) { return i * inst.M + j; }

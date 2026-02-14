@@ -39,7 +39,7 @@ void TProcuraAdversa::ResetParametros()
 		{ "MiniMax", "MiniMax alfa/beta" } };
 
 	Parametro(LIMITE) = 0; // procura iterativa preferencial
-	Parametro(ESTADOS_REPETIDOS) = 1; // nas procuras adversas, não utilizar este parametro (utilizar ordenar=2)
+	Parametro(ESTADOS_REPETIDOS) = IGNORADOS; // nas procuras adversas, não utilizar este parametro (utilizar ordenar=2)
 	Parametro(BARALHAR_SUCESSORES) = 0; // de omissão está com valor 0, para facilitar nos testes, mas deve ficar com 1 para obter jogos distintos
 
 	// O "infinito" é dependente do problema, não faz sentido alterar senão no código
@@ -58,12 +58,8 @@ void TProcuraAdversa::ResetParametros()
 
 void TProcuraAdversa::Sucessores(TVector<TNo>& sucessores) {
 	TProcuraConstrutiva::Sucessores(sucessores);
-	if (Parametro(NIVEL_DEBUG) >= PASSOS && !sucessores.Empty()) {
-		if (minimizar)
-			ramo.Push(RAMO_ESTADO2);
-		else
-			ramo.Push(RAMO_ESTADO);
-	}
+	if (Parametro(NIVEL_DEBUG) >= PASSOS && !sucessores.Empty())
+		ramo.Push(minimizar ? RAMO_ESTADO2 : RAMO_ESTADO);
 }
 
 void TProcuraAdversa::DebugChamada(bool noFolha, int alfa, int beta) {
@@ -602,7 +598,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 
 	// colocar resultado do jogo no final
 	if (!resultados.Last().jogo.Empty()) {
-		(lance="").printf(" 🏆 %s", (resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
+		(lance = "").printf(" 🏆 %s", (resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
 			(resultados.Last().resultado > 0 ? Icon(EIcon::VIT_BRANCA) :
 				Icon(EIcon::EMPATE))));
 		resultados.Last().jogo += lance;
@@ -804,11 +800,121 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, TString 
 #endif
 }
 
+void TProcuraAdversa::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
+	TVector<int> referencias, TString fichSolucoes, TString fichResultados)
+{
+	TVector<TString> jogosAnterior, jogosAtual;
+	TVector<int> confActual;
+	ConfiguracaoAtual(confActual, LER);
+	// ler conteúdo dos ficheiros
+	jogosAtual = fichResultados.readLines();
+	jogosAnterior = fichSolucoes.readLines(); // utilizar para validação
+	// em cada linha está um jogo, com a sequência de jogadas e se terminado o resultado final
+	if (jogosAtual.Empty()) {
+		// ainda não há jogos, criar match
+		for (int i = 0; i < configuracoes.Count(); i++) {
+			// inicia jogo de brancas com configuração i
+			jogosAtual += Jogar("", i);
+			// inicia jogo de pretas com configuração i
+			jogosAtual += TString("");
+		}
+	}
+	else {
+		// jogar em todos os jogos, com as configurações existentes (dois jogos por configuração)
+		for (int i = 0; i < jogosAtual.Count(); i++)
+			jogosAtual[i] = Jogar(jogosAtual[i], (i / 2) % (configuracoes.Count()));
+	}
+		/*
+	// se ambos os ficheiros não existirem (conteúdo vazio), iniciar match
+	// - todas as configurações de brancas e pretas
+	// se existirem confirmar a fichSolucoes foi adicionado apenas 1 só lance em cada jogo em curso, e os jogos terminados não foram alterados
+	// executar um lance por cada jogo em curso e gravar ficheiros
+	// se todos os jogos terminaram, fazer relatório final com avaliação, e gravar o match igual para ambos os ficheiros (sinal para o script terminar)
 
+		// verificar se os jogos não foram alterados por mais que uma jogada
+		if (jogosAnterior.Count() == jogosAtual.Count()) {
+			for (int i = 0; i < jogosAnterior.Count(); i++) {
+				bool jogadasVioladas = false;
+				TVector<TString> jogadasAnterior = jogosAnterior[i].tok();
+				TVector<TString> jogadasAtual = jogosAtual[i].tok();
+				if (jogadasAnterior.Count() == jogadasAtual.Count() - 1) {
+					for (int j = 0; j < jogadasAnterior.Count(); j++)
+						jogadasVioladas = (!(jogadasAnterior[j] == jogadasAtual[j]));
+				}
+				else
+					jogadasVioladas = true;
+				if (jogadasVioladas) {
+					// tratar a excepção de jogo terminado (pode ser +2 ou +0 relativamente ao anterior)
+					if ((jogadasAnterior.Count() == jogadasAtual.Count() ||
+						jogadasAnterior.Count() == jogadasAtual.Count() - 2)) {
+						jogadasVioladas = !(
+							jogadasAtual.Last() == TString("Vitória") ||
+							jogadasAtual.Last() == TString("Derrota") ||
+							jogadasAtual.Last() == TString("Empate"));
+					}
+				}
+				if (jogadasVioladas) {
+					// marcar o jogo como derrota do adeversário
+					jogosAtual[i] = jogosAnterior[i];
+					jogosAtual[i].printf(" %s", (i % 2 == 0 ? "Vitória" : "Derrota"));
+				}
+			}
+			// os jogos estão consistentes, executar um lance em cada jogo com a configuração correta
+
+		}*/
+	ConfiguracaoAtual(confActual, GRAVAR);
+
+}
+
+bool TProcuraAdversa::Validar(TVector<TString> solucao)
+{
+	// procurar executar o jogo, se todas as jogadas forem válidas, validar
+	int nAcoes = 0;
+	// carregar instância
+	Inicializar();
+	// aplicar todas as ações
+	for (auto acao : solucao) {
+		if (!Acao(acao)) {
+			if (Debug(PASSOS, false,
+				"\n │ Ação inválida: %s (%d ações válidas)", *acao, nAcoes))
+				Debug();
+			return false;
+		}
+		nAcoes++;
+		// jogo terminado
+		if (SolucaoCompleta())
+			return true;
+	}
+	return true;
+}
+
+TString TProcuraAdversa::Jogar(TString jogo, int configID)
+{
+	// carregar a configuração correta
+	ConfiguracaoAtual(configuracoes[configID], GRAVAR);
+	Parametro(NIVEL_DEBUG) = NADA;
+	if (Validar(jogo.tok())) {
+		// jogo já terminou
+		if(SolucaoCompleta())
+			return jogo;
+		printf("\nJogo atual: ");
+		Debug();
+		// executa um lance
+		resultado = ExecutaAlgoritmo();
+		printf("\nJogada: %s", *Acao(solucao));
+		if (solucao != NULL)
+			jogo.printf(" %s", *Acao(solucao));
+		else
+			jogo.printf(" %s", (resultado == 0 ? "Empate" : resultado > 0 ? "Vitória" : "Derrota"));
+	}
+	else
+		jogo.printf(" Vitória");
+	return jogo;
+}
 
 bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString ficheiro) {
 	TString nome;
-	TVector<TString> linhas; 
+	TVector<TString> linhas;
 	if (mpiCount > 1)
 		nome.printf("%s_%d.csv", ficheiro.tok().First(), mpiID);
 	else
@@ -828,7 +934,7 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString 
 			resultado.tempoPretas,
 			(gravarSolucao ? *resultado.jogo : ""));
 
-	linhas += TString(""); 
+	linhas += TString("");
 	// No final, mostrar as configurações
 	linhas += TString("Jogador;");
 	for (int i = 0; i < parametro.Count(); i++)

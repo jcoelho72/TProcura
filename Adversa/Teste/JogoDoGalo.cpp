@@ -30,8 +30,7 @@ void CJogoDoGalo::Inicializar(void)
 	TProcuraAdversa::Inicializar();
 	minimizar = true;
 	tabuleiro.Count(9);
-	for (int i = 0; i < 9; i++)
-		tabuleiro[i] = '.';
+	tabuleiro.Reset('.');
 	tamanhoCodificado = 1; // 9 posições, 2 bits cada, 18 bits cabe em 64 bits
 }
 

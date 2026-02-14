@@ -11,6 +11,11 @@ int main(int argc, char* argv[])
 {
 	compat::init_io();
 
+#ifdef VPL_ATIVO
+	CJogoEmLinha().main(argc, argv, "Jogo Em Linha");
+	return 0;
+#endif
+
 #ifndef MPI_ATIVO
 	TProcura::MostraCaixa({
 		"Teste TProcuraAdversa",
