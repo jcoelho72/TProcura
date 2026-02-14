@@ -10,5 +10,6 @@ var searchData=
   ['jogodogalo_2eh_7',['JogoDoGalo.h',['../JogoDoGalo_8h.html',1,'']]],
   ['jogoemlinha_2ecpp_8',['JogoEmLinha.cpp',['../JogoEmLinha_8cpp.html',1,'']]],
   ['jogoemlinha_2eh_9',['JogoEmLinha.h',['../JogoEmLinha_8h.html',1,'']]],
-  ['juntarcsv_10',['JuntarCSV',['../classTProcura.html#a7a323608db4326cb4f9901e324881035',1,'TProcura']]]
+  ['jogoterminado_10',['JogoTerminado',['../classTProcuraAdversa.html#a84fb2c84c73e0d4310c143dbba1b6e2b',1,'TProcuraAdversa']]],
+  ['juntarcsv_11',['JuntarCSV',['../classTProcura.html#a7a323608db4326cb4f9901e324881035',1,'TProcura']]]
 ];

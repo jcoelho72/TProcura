@@ -42,8 +42,12 @@ digraph "TProcura::LimparEstatisticas"
   Node17 [id="Node000017",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node14 -> Node18 [id="edge19_Node000014_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
-  Node1 -> Node6 [id="edge20_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node19 [id="edge21_Node000001_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
-  Node19 -> Node4 [id="edge22_Node000019_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node19 [id="edge20_Node000014_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
+  Node19 -> Node20 [id="edge21_Node000019_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node1 -> Node6 [id="edge22_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node21 [id="edge23_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node21 -> Node4 [id="edge24_Node000021_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

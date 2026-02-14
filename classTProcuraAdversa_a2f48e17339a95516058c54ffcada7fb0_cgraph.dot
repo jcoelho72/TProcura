@@ -20,5 +20,5 @@ digraph "TProcuraAdversa::Validar"
   Node5 -> Node7 [id="edge7_Node000005_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node1 -> Node8 [id="edge8_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node8 [id="Node000008",label="TProcuraAdversa::Solucao\lCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a304bb508abcc5440fc9c5389546da360",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
 }

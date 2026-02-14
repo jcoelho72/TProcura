@@ -30,8 +30,9 @@ digraph "TProcuraConstrutiva::LimparHT"
   Node11 [id="Node000011",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node11 -> Node3 [id="edge13_Node000011_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 -> Node9 [id="edge14_Node000011_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node12 [id="edge15_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node6 [id="edge15_Node000011_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node12 [id="edge16_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TProcuraConstrutiva\l::ProfundidadePrimeiro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228",tooltip="Executa a procura em profundidade primeiro, algoritmo cego."];
-  Node12 -> Node8 [id="edge16_Node000012_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 -> Node12 [id="edge17_Node000012_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node8 [id="edge17_Node000012_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node12 [id="edge18_Node000012_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

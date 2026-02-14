@@ -47,7 +47,10 @@ digraph "TProcura::Dominio"
   Node1 -> Node20 [id="edge21_Node000001_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="TProcuraMelhorativa\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node1 -> Node21 [id="edge22_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
-  Node21 -> Node3 [id="edge23_Node000021_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node3 [id="edge24_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="TProcuraAdversa::Pontuacao\lJogos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a13a9c894823df5ffd2f43a7961d2190c",tooltip=" "];
+  Node21 -> Node17 [id="edge23_Node000021_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node22 [id="edge24_Node000001_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
+  Node22 -> Node3 [id="edge25_Node000022_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node3 [id="edge26_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

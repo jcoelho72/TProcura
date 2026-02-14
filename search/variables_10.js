@@ -14,5 +14,6 @@ var searchData=
   ['res_5fnao_5fresolvido_11',['RES_NAO_RESOLVIDO',['../TProcura_8h.html#a7a2c6287998f834fbae43ca9ca043eed',1,'TProcura.h']]],
   ['res_5fvazio_12',['RES_VAZIO',['../TProcura_8h.html#a8f33dd7262b24388d1e03da7920d3f14',1,'TProcura.h']]],
   ['resultado_13',['resultado',['../structSResultadoJogo.html#a7c06ecc0b6d50237c1eecf64eb6b59ef',1,'SResultadoJogo::resultado'],['../classTProcura.html#a224527229b795a4780e5faa61245a8e0',1,'TProcura::resultado']]],
-  ['reutilizadoavaliacao_14',['reutilizadoAvaliacao',['../classTProcuraAdversa.html#abfa149e4beec8447ec67c05adeb6fedc',1,'TProcuraAdversa']]]
+  ['resultadocompleto_14',['resultadoCompleto',['../classTProcuraAdversa.html#ae20b5e75b319e93205f0fa37bba68eb3',1,'TProcuraAdversa']]],
+  ['reutilizadoavaliacao_15',['reutilizadoAvaliacao',['../classTProcuraAdversa.html#abfa149e4beec8447ec67c05adeb6fedc',1,'TProcuraAdversa']]]
 ];

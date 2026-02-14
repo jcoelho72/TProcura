@@ -118,7 +118,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node7 -> Node61 [id="edge78_Node000007_Node000061",color="steelblue1",style="solid",tooltip=" "];
   Node61 [id="Node000061",label="TProcuraAdversa::Pontos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a33c402687525b54049c143102248ddb4",tooltip="converte -infinito, 0, +infinito em -1 (vitória preta), 1 (vitória branca), 0 empate"];
   Node7 -> Node62 [id="edge79_Node000007_Node000062",color="steelblue1",style="solid",tooltip=" "];
-  Node62 [id="Node000062",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node62 [id="Node000062",label="TProcuraAdversa::Solucao\lCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a304bb508abcc5440fc9c5389546da360",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
   Node7 -> Node41 [id="edge80_Node000007_Node000041",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node57 [id="edge81_Node000001_Node000057",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node63 [id="edge82_Node000001_Node000063",color="steelblue1",style="solid",tooltip=" "];

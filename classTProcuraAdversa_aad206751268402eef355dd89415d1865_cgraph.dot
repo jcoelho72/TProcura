@@ -162,6 +162,6 @@ digraph "TProcuraAdversa::ExecutaTarefa"
   Node1 -> Node60 [id="edge107_Node000001_Node000060",color="steelblue1",style="solid",tooltip=" "];
   Node60 [id="Node000060",label="TProcuraAdversa::Pontos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a33c402687525b54049c143102248ddb4",tooltip="converte -infinito, 0, +infinito em -1 (vitória preta), 1 (vitória branca), 0 empate"];
   Node1 -> Node61 [id="edge108_Node000001_Node000061",color="steelblue1",style="solid",tooltip=" "];
-  Node61 [id="Node000061",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node61 [id="Node000061",label="TProcuraAdversa::Solucao\lCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a304bb508abcc5440fc9c5389546da360",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
   Node1 -> Node40 [id="edge109_Node000001_Node000040",color="steelblue1",style="solid",tooltip=" "];
 }
