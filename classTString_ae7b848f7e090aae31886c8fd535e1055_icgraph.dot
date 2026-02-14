@@ -26,11 +26,11 @@ digraph "TString::readLines"
   Node9 -> Node10 [id="edge10_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="CJogoDoGalo::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoDoGalo.html#a113984a3801a93ebce61e0a700a413ab",tooltip=" "];
   Node9 -> Node11 [id="edge11_Node000009_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#ad289e94136b44c9e3e942acf64ff0449",tooltip=" "];
+  Node11 [id="Node000011",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip=" "];
   Node9 -> Node12 [id="edge12_Node000009_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip=" "];
+  Node12 [id="Node000012",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip=" "];
   Node9 -> Node13 [id="edge13_Node000009_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip=" "];
+  Node13 [id="Node000013",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a605b4293eeaed3fd542afe36edcc8d51",tooltip="Inicializa a interação com o utilizador."];
   Node5 -> Node14 [id="edge14_Node000005_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a80cd0f481e853ad9ef5625c6ff4dcc66",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node1 -> Node15 [id="edge15_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];

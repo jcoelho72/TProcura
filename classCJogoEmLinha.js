@@ -16,7 +16,7 @@ var classCJogoEmLinha =
     [ "ResetParametros", "classCJogoEmLinha.html#a855791b2e19731340976157991d79293", null ],
     [ "SolucaoCompleta", "classCJogoEmLinha.html#a82679821a4ac5334b580de65f9e3441a", null ],
     [ "Sucessores", "classCJogoEmLinha.html#a0fbafadc8f5d1b1ed8aa3ddde563285b", null ],
-    [ "TesteManual", "classCJogoEmLinha.html#ad289e94136b44c9e3e942acf64ff0449", null ],
+    [ "TesteManual", "classCJogoEmLinha.html#a605b4293eeaed3fd542afe36edcc8d51", null ],
     [ "VerLinha", "classCJogoEmLinha.html#ab7f482497b6ffa4823327474f1b822ed", null ],
     [ "tabuleiro", "classCJogoEmLinha.html#a8cba76145d91e14fa042258a7da7b938", null ]
 ];

@@ -30,13 +30,17 @@ digraph "TProcuraConstrutiva::DebugIteracao"
   Node10 [id="Node000010",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a80cd0f481e853ad9ef5625c6ff4dcc66",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node9 -> Node11 [id="edge14_Node000009_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
-  Node7 -> Node6 [id="edge15_Node000007_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 -> Node12 [id="edge16_Node000006_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcuraAdversa::MiniMax\lAlfaBeta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb3f857b1c8b3ee26682e335dc6ed601",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel. Idêntico a MiniMax"];
-  Node12 -> Node8 [id="edge17_Node000012_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 -> Node6 [id="edge18_Node000012_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node13 [id="edge19_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcuraConstrutiva\l::ProfundidadePrimeiro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228",tooltip="Executa a procura em profundidade primeiro, algoritmo cego."];
-  Node13 -> Node2 [id="edge20_Node000013_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 -> Node13 [id="edge21_Node000013_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 -> Node12 [id="edge15_Node000008_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
+  Node12 -> Node13 [id="edge16_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node7 -> Node6 [id="edge17_Node000007_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 -> Node14 [id="edge18_Node000006_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TProcuraAdversa::MiniMax\lAlfaBeta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb3f857b1c8b3ee26682e335dc6ed601",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel. Idêntico a MiniMax"];
+  Node14 -> Node8 [id="edge19_Node000014_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node6 [id="edge20_Node000014_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node15 [id="edge21_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TProcuraConstrutiva\l::ProfundidadePrimeiro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228",tooltip="Executa a procura em profundidade primeiro, algoritmo cego."];
+  Node15 -> Node2 [id="edge22_Node000015_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node15 [id="edge23_Node000015_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

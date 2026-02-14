@@ -52,9 +52,9 @@ digraph "TProcura::ResetParametros"
   Node21 -> Node22 [id="edge24_Node000021_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 [id="Node000022",label="CJogoDoGalo::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoDoGalo.html#a113984a3801a93ebce61e0a700a413ab",tooltip=" "];
   Node21 -> Node23 [id="edge25_Node000021_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#ad289e94136b44c9e3e942acf64ff0449",tooltip=" "];
+  Node23 [id="Node000023",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip=" "];
   Node21 -> Node24 [id="edge26_Node000021_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node24 [id="Node000024",label="CParticao::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#aa4d328b9944991f3fc52ce0726111865",tooltip=" "];
+  Node24 [id="Node000024",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip=" "];
   Node21 -> Node25 [id="edge27_Node000021_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node25 [id="Node000025",label="CProblemaArtificial\l::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCProblemaArtificial.html#abaad629eb538177261df40e1e27e92ed",tooltip=" "];
+  Node25 [id="Node000025",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a605b4293eeaed3fd542afe36edcc8d51",tooltip="Inicializa a interação com o utilizador."];
 }

@@ -30,14 +30,18 @@ digraph "TProcuraAdversa::ExisteHT"
   Node11 [id="Node000011",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a80cd0f481e853ad9ef5625c6ff4dcc66",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node10 -> Node12 [id="edge13_Node000010_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
-  Node8 -> Node13 [id="edge14_Node000008_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcuraAdversa::MetodoIterativo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a7c4153974c32753901326271fee90197",tooltip="iteração, aumentando o nível progressivamente"];
-  Node13 -> Node8 [id="edge15_Node000013_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 -> Node14 [id="edge16_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcuraAdversa::MiniMax\lAlfaBeta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb3f857b1c8b3ee26682e335dc6ed601",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel. Idêntico a MiniMax"];
-  Node14 -> Node9 [id="edge17_Node000014_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 -> Node13 [id="edge18_Node000014_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 -> Node14 [id="edge19_Node000007_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 -> Node8 [id="edge20_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 -> Node14 [id="edge21_Node000002_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 -> Node13 [id="edge14_Node000009_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
+  Node13 -> Node14 [id="edge15_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node8 -> Node15 [id="edge16_Node000008_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TProcuraAdversa::MetodoIterativo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a7c4153974c32753901326271fee90197",tooltip="iteração, aumentando o nível progressivamente"];
+  Node15 -> Node8 [id="edge17_Node000015_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node16 [id="edge18_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TProcuraAdversa::MiniMax\lAlfaBeta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#adb3f857b1c8b3ee26682e335dc6ed601",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel. Idêntico a MiniMax"];
+  Node16 -> Node9 [id="edge19_Node000016_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 -> Node15 [id="edge20_Node000016_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node16 [id="edge21_Node000007_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node8 [id="edge22_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node16 [id="edge23_Node000002_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

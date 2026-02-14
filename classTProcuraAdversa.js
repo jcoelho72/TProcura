@@ -9,6 +9,7 @@ var classTProcuraAdversa =
     [ "ExisteHeuritica", "classTProcuraAdversa.html#aab0860dd7b025e71049e204adb25df25", null ],
     [ "ExisteHT", "classTProcuraAdversa.html#ad01434aae577cafdb636f82ba2815215", null ],
     [ "Heuristica", "classTProcuraAdversa.html#a75e148ba0a922339333940828366aed6", null ],
+    [ "Jogar", "classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8", null ],
     [ "MaiorAmeaca", "classTProcuraAdversa.html#a5af95be0d4ae37a72eab750aa5f0db45", null ],
     [ "MetodoIterativo", "classTProcuraAdversa.html#a7c4153974c32753901326271fee90197", null ],
     [ "MiniMax", "classTProcuraAdversa.html#a4d8542bcb03f17da8aa3038384104f24", null ],
@@ -23,7 +24,9 @@ var classTProcuraAdversa =
     [ "TesteEmpirico", "classTProcuraAdversa.html#a80cd0f481e853ad9ef5625c6ff4dcc66", null ],
     [ "TesteEmpiricoGestor", "classTProcuraAdversa.html#ac578f2a2b01d400231f85bfc79f5ae28", null ],
     [ "TesteEmpiricoTrabalhador", "classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8", null ],
+    [ "TesteValidacao", "classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58", null ],
     [ "Utilizavel", "classTProcuraAdversa.html#ac419ad4d242b6789e5ed03431f0cbc4a", null ],
+    [ "Validar", "classTProcuraAdversa.html#a2f48e17339a95516058c54ffcada7fb0", null ],
     [ "ValorEstado", "classTProcuraAdversa.html#a9c95c246b28345f0d515a9083ffd646d", null ],
     [ "indiceHT", "classTProcuraAdversa.html#a04c82c175bea1a911cdb5077d2ec1c02", null ],
     [ "minimizar", "classTProcuraAdversa.html#a72aaad862bedca505689513bec233c2a", null ]

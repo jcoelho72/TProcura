@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"classTVector.html#a9a593e793d4d3a6b122b593906a18543":[2,0,31,11],
+"classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6":[2,0,31,7],
+"classTVector.html#aa304d639c79ef2842f9951846c6292e3":[2,0,31,29],
 "classTVector.html#aa6623d3565cd1addfbd181f1c57dab09":[2,0,31,4],
 "classTVector.html#ab207d23b5ccb0f5830d9b1f8e4c9acdf":[2,0,31,5],
 "classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd":[2,0,31,45],
@@ -50,8 +53,8 @@ var NAVTREEINDEX3 =
 "functions_d.html":[2,3,0,3],
 "functions_e.html":[2,3,0,4],
 "functions_f.html":[2,3,0,5],
-"functions_func.html":[2,3,1],
 "functions_func.html":[2,3,1,0],
+"functions_func.html":[2,3,1],
 "functions_func_b.html":[2,3,1,1],
 "functions_func_c.html":[2,3,1,2],
 "functions_func_d.html":[2,3,1,3],

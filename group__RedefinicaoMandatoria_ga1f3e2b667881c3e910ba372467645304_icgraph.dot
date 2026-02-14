@@ -38,8 +38,15 @@ digraph "TProcuraConstrutiva::SolucaoCompleta"
   Node11 -> Node13 [id="edge19_Node000011_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node1 -> Node8 [id="edge20_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node9 [id="edge21_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node10 [id="edge22_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node14 [id="edge23_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcuraConstrutiva\l::Validar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gad7547823186766e4fc1b9af84845626c",tooltip="Verifica a validade de uma solução para a instância atual."];
+  Node1 -> Node14 [id="edge21_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
+  Node14 -> Node15 [id="edge22_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node1 -> Node9 [id="edge23_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node10 [id="edge24_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node16 [id="edge25_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TProcuraConstrutiva\l::Validar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gad7547823186766e4fc1b9af84845626c",tooltip="Verifica a validade de uma solução para a instância atual."];
+  Node1 -> Node17 [id="edge26_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="TProcuraAdversa::Validar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a2f48e17339a95516058c54ffcada7fb0",tooltip="Verifica a validade de uma solução para a instância atual."];
+  Node17 -> Node14 [id="edge27_Node000017_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
