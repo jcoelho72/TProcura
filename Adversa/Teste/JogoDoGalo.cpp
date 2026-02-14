@@ -56,26 +56,35 @@ bool CJogoDoGalo::SolucaoCompleta(void)
 	for (int i = 0; i < 3; i++) // verificar todas as linhas
 		if (tabuleiro[Indice(i, 0)] != '.' &&
 			tabuleiro[Indice(i, 0)] == tabuleiro[Indice(i, 1)] &&
-			tabuleiro[Indice(i, 2)] == tabuleiro[Indice(i, 1)])
+			tabuleiro[Indice(i, 2)] == tabuleiro[Indice(i, 1)]) {
+			resultadoCompleto = tabuleiro[Indice(i, 0)] == 'x' ? -1 : 1;
 			return true;
+		}
 	for (int i = 0; i < 3; i++) // verificar todas as colunas
 		if (tabuleiro[Indice(0, i)] != '.' &&
 			tabuleiro[Indice(0, i)] == tabuleiro[Indice(1, i)] &&
-			tabuleiro[Indice(2, i)] == tabuleiro[Indice(1, i)])
+			tabuleiro[Indice(2, i)] == tabuleiro[Indice(1, i)]) {
+			resultadoCompleto = tabuleiro[Indice(i, 0)] == 'x' ? -1 : 1;
 			return true;
+		}
 	// verificar diagonais
 	if (tabuleiro[Indice(0,0)] != '.' && 
 		tabuleiro[Indice(0, 0)] == tabuleiro[Indice(1, 1)] && 
-		tabuleiro[Indice(1, 1)] == tabuleiro[Indice(2, 2)])
+		tabuleiro[Indice(1, 1)] == tabuleiro[Indice(2, 2)]) {
+		resultadoCompleto = tabuleiro[Indice(0, 0)] == 'x' ? -1 : 1;
 		return true;
+	}
 	if (tabuleiro[Indice(0, 2)] != '.' &&
 		tabuleiro[Indice(0, 2)] == tabuleiro[Indice(1, 1)] &&
-		tabuleiro[Indice(1, 1)] == tabuleiro[Indice(2, 0)])
+		tabuleiro[Indice(1, 1)] == tabuleiro[Indice(2, 0)]) {
+		resultadoCompleto = tabuleiro[Indice(0, 1)] == 'x' ? -1 : 1;
 		return true;
+	}
 	// verificar se há espaço para mais jogadas
 	for (int i = 0; i < 9; i++)
 		if (tabuleiro[i] == '.')
 			return false; // podem ser feitas mais jogadas
+	resultadoCompleto = 0;
 	return true; // nao ha hipotese de mais jogadas
 }
 

@@ -73,10 +73,15 @@ public:
 	static bool completo;
 	/// @brief profundidade máxima no método iterativo
 	static int nivelOK;
+	/// @brief resultado após SolucaoCompleta() retornar true (-1 vitória minimizar, 0 empate, 1 vitória maximizar)
+	static int resultadoCompleto;
 
 
 	/// @brief Método para inicializar os parâmetros (redefinir se forem adicionados parâmetros específicos)
 	void ResetParametros();
+
+	// Retorna verdade caso o estado actual seja um estado objectivo, ou seja, jogo final (atualizar resultadoCompleto)
+	bool SolucaoCompleta(void) = 0;
 
 	/// @brief retorna o valor do estado actual, apos procura de profundidade nivel
 	int MiniMax(int nivel = 4);
@@ -96,6 +101,9 @@ public:
 	void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, TVector<int> referencias, TString fichSolucoes, TString fichResultados = "") override;
 	bool Validar(TVector<TString> solucao) override;
 	TString Jogar(TString jogo, int configID);
+	void PontuacaoJogos(TVector<TString> &jogos);
+	bool CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& anterior);
+	void JogoTerminado(TString &jogo);
 
 	/// @brief Executa o algoritmo com os parametros atuais
 	int ExecutaAlgoritmo();

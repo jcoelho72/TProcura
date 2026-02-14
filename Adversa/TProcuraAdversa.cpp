@@ -19,6 +19,8 @@ TValorEstado TProcuraAdversa::valorHT[TAMANHO_HASHTABLE];
 int TProcuraAdversa::nivelOK = 0;
 // número de vezes que uma avaliação é reutilizada
 int TProcuraAdversa::reutilizadoAvaliacao;
+/// resultado após SolucaoCompleta() retornar true (-1 vitória minimizar, 0 empate, 1 vitória maximizar)
+int TProcuraAdversa::resultadoCompleto = 0;
 
 TProcuraAdversa::TProcuraAdversa(void) : minimizar(true), indiceHT(-1)
 {
@@ -562,15 +564,15 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 			resultados.Last().tempoPretas += Cronometro(CONT_ALGORITMO);
 
 		if (solucao != NULL) { // efetuado um lance
-			const char* strAcao = Acao(solucao);
+			TString strAcao = Acao(solucao);
 			Copiar(solucao);
 			if (Parametro(NIVEL_DEBUG) >= COMPLETO)
-				printf(" %s", strAcao);
+				printf(" %s", *strAcao);
 			njogada++;
 			if (njogada % 2 == 1) // jogada de brancas, colocar o número de jogada (njogada é meia jogada)
-				(lance = "").printf(" %d. %s", (njogada / 2) + 1, strAcao);
+				(lance = "").printf(" %d. %s", (njogada / 2) + 1, *strAcao);
 			else // jogada de pretas
-				(lance = "").printf(" %s", strAcao);
+				(lance = "").printf(" %s", *strAcao);
 			// concatenar ao registo do jogo
 			resultados.Last().jogo += lance;
 		}
@@ -805,6 +807,10 @@ void TProcuraAdversa::TesteValidacao(TVector<int> instancias, TVector<int> impos
 {
 	TVector<TString> jogosAnterior, jogosAtual;
 	TVector<int> confActual;
+	fichSolucoes.printf(".csv");
+	fichResultados.printf(".csv");
+	instancia.valor = instancias.First(); // utilizar uma única instância
+	Inicializar();
 	ConfiguracaoAtual(confActual, LER);
 	// ler conteúdo dos ficheiros
 	jogosAtual = fichResultados.readLines();
@@ -820,50 +826,27 @@ void TProcuraAdversa::TesteValidacao(TVector<int> instancias, TVector<int> impos
 		}
 	}
 	else {
-		// jogar em todos os jogos, com as configurações existentes (dois jogos por configuração)
-		for (int i = 0; i < jogosAtual.Count(); i++)
-			jogosAtual[i] = Jogar(jogosAtual[i], (i / 2) % (configuracoes.Count()));
+		if (!jogosAnterior.Empty() && !CoerenciaJogo(jogosAtual, jogosAnterior)) {
+			// Parar o teste e dar pontuação 0
+#ifdef VPL_ATIVO
+			printf("\nComment :=>> histórico do jogo alterado.\nGrade :=>> 0\n");
+#endif
+			fichResultados.writeLines(jogosAnterior); // parar o script global, anterior e atual ficam iguais
+		}
+		else {
+			// jogar em todos os jogos, com as configurações existentes (dois jogos por configuração)
+			for (int i = 0; i < jogosAtual.Count(); i++)
+				jogosAtual[i] = Jogar(jogosAtual[i], (i / 2) % (configuracoes.Count()));
+		}
 	}
-		/*
-	// se ambos os ficheiros não existirem (conteúdo vazio), iniciar match
-	// - todas as configurações de brancas e pretas
-	// se existirem confirmar a fichSolucoes foi adicionado apenas 1 só lance em cada jogo em curso, e os jogos terminados não foram alterados
-	// executar um lance por cada jogo em curso e gravar ficheiros
-	// se todos os jogos terminaram, fazer relatório final com avaliação, e gravar o match igual para ambos os ficheiros (sinal para o script terminar)
-
-		// verificar se os jogos não foram alterados por mais que uma jogada
-		if (jogosAnterior.Count() == jogosAtual.Count()) {
-			for (int i = 0; i < jogosAnterior.Count(); i++) {
-				bool jogadasVioladas = false;
-				TVector<TString> jogadasAnterior = jogosAnterior[i].tok();
-				TVector<TString> jogadasAtual = jogosAtual[i].tok();
-				if (jogadasAnterior.Count() == jogadasAtual.Count() - 1) {
-					for (int j = 0; j < jogadasAnterior.Count(); j++)
-						jogadasVioladas = (!(jogadasAnterior[j] == jogadasAtual[j]));
-				}
-				else
-					jogadasVioladas = true;
-				if (jogadasVioladas) {
-					// tratar a excepção de jogo terminado (pode ser +2 ou +0 relativamente ao anterior)
-					if ((jogadasAnterior.Count() == jogadasAtual.Count() ||
-						jogadasAnterior.Count() == jogadasAtual.Count() - 2)) {
-						jogadasVioladas = !(
-							jogadasAtual.Last() == TString("Vitória") ||
-							jogadasAtual.Last() == TString("Derrota") ||
-							jogadasAtual.Last() == TString("Empate"));
-					}
-				}
-				if (jogadasVioladas) {
-					// marcar o jogo como derrota do adeversário
-					jogosAtual[i] = jogosAnterior[i];
-					jogosAtual[i].printf(" %s", (i % 2 == 0 ? "Vitória" : "Derrota"));
-				}
-			}
-			// os jogos estão consistentes, executar um lance em cada jogo com a configuração correta
-
-		}*/
+	if (jogosAtual == jogosAnterior) {
+#ifdef VPL_ATIVO
+		PontuacaoJogos(jogosAtual);
+#endif
+	}
+	else
+		fichResultados.writeLines(jogosAtual);
 	ConfiguracaoAtual(confActual, GRAVAR);
-
 }
 
 bool TProcuraAdversa::Validar(TVector<TString> solucao)
@@ -890,27 +873,168 @@ bool TProcuraAdversa::Validar(TVector<TString> solucao)
 
 TString TProcuraAdversa::Jogar(TString jogo, int configID)
 {
+	TVector<TString> lances = jogo.tok();
+	// não processar jogos terminados
+	if (!lances.Empty()) {
+		TString ultimo = lances.Last();
+		for (auto fim : TVector<TString>{ "Empate", "Brancas", "Pretas", "Inválido", "Erro" })
+			if (ultimo == fim)
+				return jogo;
+	}
 	// carregar a configuração correta
 	ConfiguracaoAtual(configuracoes[configID], GRAVAR);
 	Parametro(NIVEL_DEBUG) = NADA;
-	if (Validar(jogo.tok())) {
+	if (Validar(lances)) {
 		// jogo já terminou
-		if(SolucaoCompleta())
+		if (SolucaoCompleta()) {
+			JogoTerminado(jogo);
 			return jogo;
-		printf("\nJogo atual: ");
-		Debug();
+		}
 		// executa um lance
+		LimparEstatisticas();
 		resultado = ExecutaAlgoritmo();
-		printf("\nJogada: %s", *Acao(solucao));
-		if (solucao != NULL)
+		if (solucao != NULL) { // efetuado um lance
 			jogo.printf(" %s", *Acao(solucao));
+			if (solucao->SolucaoCompleta())
+				JogoTerminado(jogo);
+		}
 		else
-			jogo.printf(" %s", (resultado == 0 ? "Empate" : resultado > 0 ? "Vitória" : "Derrota"));
+			jogo += TString(" Erro");
 	}
 	else
-		jogo.printf(" Vitória");
+		jogo += TString(" Inválido");
 	return jogo;
 }
+
+void TProcuraAdversa::JogoTerminado(TString& jogo)
+{
+	switch (resultadoCompleto) {
+	case 0: jogo += TString(" Empate"); break;
+	case 1: jogo += TString(" Brancas"); break;
+	case -1: jogo += TString(" Pretas"); break;
+	}
+}
+
+/* VPL_ATIVO
+Critérios de correção (0-100 pontos):
+
+A - resultados - somar para cada jogo o resultado: vitória=2, empate=1, derrota=0, inválido=-1: Intervalo: 0-20 pontos 
+B - número de jogadas no jogo mais longo
+C - número de jogadas no jogo mais rápido
+D - vitórias em jogos rápidos (levam menos de (B+C)/2) - vitória esmagadora  (+1%)
+E - derrotas em jogos rápidos - derrota humilhante (-1%)
+F - vitórias em jogos longos (levam menos de (B+C)/2) - vitória suada (-1%)
+G - derrotas em jogos longos - derrota cobrada caro  (+1%)
+
+Pontuação (0-100): A*5 + D - E - F + G 
+
+Caso a pontuação saia do intervalo 0 a 100, utilizar o extremo mais próximo.
+*/
+void TProcuraAdversa::PontuacaoJogos(TVector<TString>& jogos)
+{
+	int resultados = 0, maxJogadas = 0, minJogadas = 0, jogoMedio = 0, delta = 0, pontos = 0;
+	// processar jogos
+	Inicializar(); // coloca minimizar no início, se true, Pretas é primeiro a jogar, c.c. é Brancas
+
+	for (auto& jogo : jogos) {
+		int jogadas = jogo.tok().Count();
+		if (maxJogadas == 0 || jogadas < maxJogadas)
+			maxJogadas = jogadas;
+		if (minJogadas == 0 || jogadas > minJogadas)
+			minJogadas = jogadas;
+	}
+	jogoMedio = (maxJogadas + minJogadas) / 2;
+
+	for (int i = 0; i < jogos.Count(); i++) {
+		TString resultado = jogos[i].tok().Last();
+		bool deBrancas = (i % 2 == 0); // configurações pares de brancas
+		printf("\nComment :=>> Jogo %d: %s", i, *jogos[i]);
+		if (resultado == TString("Empate")) {
+			resultados++; // um ponto por cada empate
+			printf(" Empate");
+		}
+		else if (resultado == TString(minimizar == deBrancas ? "Brancas" : "Pretas")) {
+			resultados += 2; // dois pontos por cada vitória
+			if (jogos[i].tok().Count() < jogoMedio)
+				delta++; // vitória em jogo rápido
+			else
+				delta--; // vitória em jogo longo
+			printf(" Vitória");
+		}
+		else if (resultado == TString(minimizar == deBrancas ? "Pretas" : "Brancas")) {
+			resultados += 0; // 0 pontos por cada derrota
+			if (jogos[i].tok().Count() < jogoMedio)
+				delta--; // derrota em jogo rápido
+			else
+				delta++; // derrota em jogo longo
+			printf(" Derrota");
+		}
+		else { // inválido ou erro, descontar pontos
+			resultados--; // -1 pontos por jogo com lances inválidos
+		}
+	}
+	;
+	pontos = Dominio(resultados, 0, 20) * 5 + delta;
+	printf("\nComment :=>> A: %d\nComment :=>> D-E-F+G %d\nComment :=>> Pontuação (0-100): %d\nGrade :=>> %d",
+		resultados, delta, Dominio(pontos, 0, 100), pontos);
+
+}
+
+bool TProcuraAdversa::CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& anterior)
+{
+	TVector<int> jogosTerminados;
+	// verificar se os jogos terminados foram alterados
+	for (int i = 0; i < anterior.Count(); i++) {
+		TVector<TString> lances = anterior[i].tok();
+		// não processar jogos terminados
+		if (!lances.Empty()) {
+			TString ultimo = lances.Last();
+			for (auto fim : TVector<TString>{ "Empate", "Brancas", "Pretas", "Inválido", "Erro" })
+				if (ultimo == fim) {
+					// jogo terminado, não pode ser alterado
+					if (jogos[i] != anterior[i]) {
+#ifdef VPL_ATIVO
+						printf("\nComment :=>> jogo %d, tendo terminado foi alterado '%s'!='%s'.", i, *anterior[i], *jogos[i]);
+#endif
+						return false;
+					}
+					jogosTerminados += i;
+					break;
+				}
+		}
+	}
+	// jogos não terminados, apenas podem ter mais uma jogada
+	for (int i = 0; i < anterior.Count(); i++)
+		if (jogosTerminados.Find(i) < 0) {
+			int diff = 0;
+			TVector<TString> lancesAnt = anterior[i].tok();
+			TVector<TString> lances = jogos[i].tok();
+			// verificar se a parte inicial é igual
+			while (lancesAnt.Count() < lances.Count()) {
+				lances.Pop();
+				diff++;
+			}
+			if (lancesAnt != lances) {
+#ifdef VPL_ATIVO
+				printf("\nComment :=>> alterado lances no jogo %d: '%s'!='%s'.", i, *anterior[i], *jogos[i]);
+#endif
+				return false; // não é admissível esta situação de troca de jogadas passadas
+			}
+			// diferença deve ser 1 ou 2 (neste caso o jogo terá terminado)
+			if (diff == 0 || diff > 2) {
+				// não fez uma jogada, colocar inválido
+				jogos[i] += TString(" Inválido");
+			}
+			else if (diff == 2) { // remover o segundo token para garantir que o resultado é colocado por este engine 
+				lances = jogos[i].tok();
+				jogos[i] = anterior[i];
+				jogos[i].printf(" %s", *lances[lances.Count() - 2]);
+			}
+		}
+
+	return true;
+}
+
 
 bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString ficheiro) {
 	TString nome;

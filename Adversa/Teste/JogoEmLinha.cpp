@@ -90,8 +90,10 @@ bool CJogoEmLinha::VerLinha(int i, int j, int di, int dj)
 		case 'o': nMax++; break;
 		}
 		if (k >= inst.K - 1) {
-			if (nMax == inst.K || nMin == inst.K)
+			if (nMax == inst.K || nMin == inst.K) {
+				resultadoCompleto = (nMax == inst.K ? 1 : -1);
 				return true;
+			}
 			switch (Casa(i - di * (inst.K - 1), j - dj * (inst.K - 1))) {
 			case 'x': nMin--; break;
 			case 'o': nMax--; break;
@@ -122,6 +124,7 @@ bool CJogoEmLinha::SolucaoCompleta(void)
 	for (int i = 0; i < inst.N * inst.M; i++)
 		if (tabuleiro[i] == '.')
 			return false; // podem ser feitas mais jogadas
+	resultadoCompleto = 0;
 	return true; // não há hipótese de mais jogadas
 }
 
@@ -208,7 +211,7 @@ TString CJogoEmLinha::Acao(TNo sucessor)
 
 void CJogoEmLinha::TesteManual(TString nome)
 {
-	instancia = { "", 1,1,10};
+	instancia = { "", 1,1,10 };
 	TProcuraAdversa::TesteManual(nome);
 }
 
