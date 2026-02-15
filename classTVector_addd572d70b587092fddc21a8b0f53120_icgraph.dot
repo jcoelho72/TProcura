@@ -32,13 +32,13 @@ digraph "TVector::Data"
   Node1 -> Node13 [id="edge13_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TString::tok",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a1c97cb769a9101f4bf899f527adceea6",tooltip=" "];
   Node13 -> Node14 [id="edge14_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
+  Node14 [id="Node000014",label="TProcuraAdversa::CoerenciaJogo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#af9d8298dba39d1b1341acdc7eed5e840",tooltip=" "];
   Node14 -> Node15 [id="edge15_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
-  Node13 -> Node6 [id="edge16_Node000013_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 -> Node16 [id="edge17_Node000013_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TProcuraAdversa::Pontuacao\lJogos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a13a9c894823df5ffd2f43a7961d2190c",tooltip=" "];
-  Node16 -> Node15 [id="edge18_Node000016_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 -> Node16 [id="edge16_Node000013_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
+  Node16 -> Node15 [id="edge17_Node000016_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 -> Node6 [id="edge18_Node000013_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node17 [id="edge19_Node000013_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
   Node17 -> Node5 [id="edge20_Node000017_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
