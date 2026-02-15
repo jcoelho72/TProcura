@@ -53,7 +53,7 @@ void TProcura::ResetParametros()
 		{ "ALGORITMO", 1, 1, 1, "Algoritmo base a executar.", {"Algoritmo base"} },
 		{ "NIVEL_DEBUG", 0, 0, 4, "Nível de debug, de reduzido a completo.",
 			{ "NADA", "ATIVIDADE", "PASSOS", "DETALHE", "COMPLETO" } },
-		{ "SEMENTE", 1, 1, 1000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios." },
+		{ "SEMENTE", 1, 1, 1000000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios." },
 		{ "LIMITE_TEMPO", 10, 1, 3600, "Limnite de tempo em segundos. " },
 		{ "LIMITE_ITERACOES", 0, 0, 1000000000, "Limite de número de iterações (0 não há limite). " }
 	};

@@ -933,6 +933,7 @@ Caso a pontuação saia do intervalo 0 a 100, utilizar o extremo mais próximo.
 void TProcuraAdversa::PontuacaoJogos(TVector<TString>& jogos)
 {
 	int resultados = 0, maxJogadas = 0, minJogadas = 0, jogoMedio = 0, delta = 0, pontos = 0;
+	TVector<TString> bullets = { "①","②","③","④","⑤","⑥","⑦","⑧","⑨","⑩" };
 	// processar jogos
 	Inicializar(); // coloca minimizar no início, se true, Pretas é primeiro a jogar, c.c. é Brancas
 
@@ -945,37 +946,59 @@ void TProcuraAdversa::PontuacaoJogos(TVector<TString>& jogos)
 	}
 	jogoMedio = (maxJogadas + minJogadas) / 2;
 
+	printf("\nComment :=>> Jogos:");
+
 	for (int i = 0; i < jogos.Count(); i++) {
-		TString resultado = jogos[i].tok().Last();
+		TVector<TString> lances = jogos[i].tok();
+		TString resultado = lances.Last();
 		bool deBrancas = (i % 2 == 0); // configurações pares de brancas
-		printf("\nComment :=>> Jogo %d: %s", i, *jogos[i]);
+		lances.Pop(); // retirar o resultado, ficam apenas lances
+		printf("\nComment :=>> %s ", *bullets[i]);
+		printf(deBrancas ? "%d🖥️ vs 🧍 — " : "🧍 vs %d🖥️ — ", i / 2 + 1);
+
+		for (auto& lance : lances)
+			printf("%s ", *lance);
+		// colocar o resultado da vitória (cor que ganha)
+		if (resultado == TString("Empate"))
+			printf("→ 🟰 ");
+		else if (resultado == TString("Brancas"))
+			printf("→ ☗ ");
+		else if (resultado == TString("Pretas"))
+			printf("→ ☖ ");
+		else if (resultado == TString("Inválido"))
+			printf("→ ⛔ ");
+		else
+			printf("→ ✗ ");
+
+		// colocar o resultado de empate/derrota/vitória do ponto de vista do engine
 		if (resultado == TString("Empate")) {
 			resultados++; // um ponto por cada empate
-			printf(" Empate");
+			printf("🟨 ");
 		}
 		else if (resultado == TString(minimizar == deBrancas ? "Brancas" : "Pretas")) {
 			resultados += 2; // dois pontos por cada vitória
-			if (jogos[i].tok().Count() < jogoMedio)
+			if (lances.Count() < jogoMedio)
 				delta++; // vitória em jogo rápido
 			else
 				delta--; // vitória em jogo longo
-			printf(" Vitória");
+			printf("🟩 ");
 		}
 		else if (resultado == TString(minimizar == deBrancas ? "Pretas" : "Brancas")) {
 			resultados += 0; // 0 pontos por cada derrota
-			if (jogos[i].tok().Count() < jogoMedio)
+			if (lances.Count() < jogoMedio)
 				delta--; // derrota em jogo rápido
 			else
 				delta++; // derrota em jogo longo
-			printf(" Derrota");
+			printf("🟥 ");
 		}
 		else { // inválido ou erro, descontar pontos
 			resultados--; // -1 pontos por jogo com lances inválidos
 		}
 	}
-	;
+
 	pontos = Dominio(resultados, 0, 20) * 5 + delta;
-	printf("\nComment :=>> A: %d\nComment :=>> D-E-F+G %d\nComment :=>> Pontuação (0-100): %d\nGrade :=>> %d",
+	printf("\nComment :=>> \nComment :=>> Resultados:\nComment :=>> ➤ 🏆 A: %d pontos\nComment :=>> ➤ ⚔️ DEFG: %d\n"
+		"Comment :=>> ➤ 💰 Pontuação (0-100): %d\nGrade :=>> %d\n",
 		resultados, delta, Dominio(pontos, 0, 100), pontos);
 
 }
@@ -1029,6 +1052,17 @@ bool TProcuraAdversa::CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& a
 				lances = jogos[i].tok();
 				jogos[i] = anterior[i];
 				jogos[i].printf(" %s", *lances[lances.Count() - 2]);
+			}
+			else {
+				// diferença de um, mas garantir que não é um fim-de-jogo
+				TString ultimo = jogos[i].tok().Last();
+				for (auto &fim : TVector<TString>{ "Empate", "Brancas", "Pretas", "Inválido", "Erro" })
+					if (ultimo == fim) {
+						// jogo terminado de forma inválida (sem lance extra)
+						jogos[i] = anterior[i];
+						jogos[i] += TString(" Inválido");
+						break;
+					}
 			}
 		}
 
