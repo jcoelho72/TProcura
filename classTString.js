@@ -4,6 +4,7 @@ var classTString =
     [ "TString", "classTString.html#ab39cb66adb0f47604abae4c5a6a24a27", null ],
     [ "TString", "classTString.html#a2531c9c2286fde71205eda0a4a5c084f", null ],
     [ "Empty", "classTString.html#a8c4d6fec2dd3afac9a4f3442b786af33", null ],
+    [ "Hash", "classTString.html#ab4127a5615547a40f8eaf2e2fea693fd", null ],
     [ "operator const char *", "classTString.html#a0ca00be865ebc173288fc8fc18f2079a", null ],
     [ "operator*", "classTString.html#a87c7ea52441e299e039a44847ac85ea8", null ],
     [ "operator+=", "classTString.html#a19eb81646194430534b412129e50779e", null ],
