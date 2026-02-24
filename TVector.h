@@ -1182,6 +1182,15 @@ public:
 	/** Verifica se a string é vazia. */
 	bool Empty() const { return (Count() <= 1); }
 
+	// hash da string usando o algoritmo djb2
+	uint32_t Hash() const
+	{
+		uint32_t hash = 5381;
+		for (unsigned char c : *this)
+			hash = ((hash << 5) + hash) + c; // hash * 33 + c
+		return hash;
+	}
+
 	// tokenização: divide a string em partes usando os delimitadores fornecidos
 	TVector<TString> tok(const char* delim = " \t\n\r") const {
 		TVector<TString> out;
