@@ -1183,9 +1183,9 @@ public:
 	bool Empty() const { return (Count() <= 1); }
 
 	// hash da string usando o algoritmo djb2
-	uint32_t Hash() const
+	unsigned int Hash() const
 	{
-		uint32_t hash = 5381;
+		unsigned int hash = 5381;
 		for (unsigned char c : *this)
 			hash = ((hash << 5) + hash) + c; // hash * 33 + c
 		return hash;
