@@ -25,6 +25,8 @@ digraph "TProcura::Mensagem"
   Node4 -> Node10 [id="edge9_Node000004_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a605b4293eeaed3fd542afe36edcc8d51",tooltip="Inicializa a interação com o utilizador."];
   Node1 -> Node11 [id="edge10_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
-  Node1 -> Node4 [id="edge11_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="TProcuraExecutavel\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraExecutavel.html#a4a5bfffa3469b7827316d59fea6796c1",tooltip="Executa o algoritmo e extrai os indicadores."];
+  Node1 -> Node12 [id="edge11_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
+  Node1 -> Node4 [id="edge12_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

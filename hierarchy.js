@@ -22,6 +22,7 @@ var hierarchy =
           [ "CJogoEmLinha", "classCJogoEmLinha.html", null ]
         ] ]
       ] ],
+      [ "TProcuraExecutavel", "classTProcuraExecutavel.html", null ],
       [ "TProcuraMelhorativa", "classTProcuraMelhorativa.html", [
         [ "COitoDamas", "classCOitoDamas.html", null ],
         [ "CParticao", "classCParticao.html", null ],

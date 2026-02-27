@@ -4,6 +4,7 @@ var TProcura_8h =
     [ "SParametro", "structSParametro.html", "structSParametro" ],
     [ "SResultado", "structSResultado.html", "structSResultado" ],
     [ "TProcura", "classTProcura.html", "classTProcura" ],
+    [ "TProcuraExecutavel", "classTProcuraExecutavel.html", "classTProcuraExecutavel" ],
     [ "COR_ATIVO", "TProcura_8h.html#af75ea40857e683fce28a4b7460d4d10d", null ],
     [ "COR_ATIVO_LEVE", "TProcura_8h.html#acd3686fbff542f708cd941c98c4e8a13", null ],
     [ "COR_INATIVO", "TProcura_8h.html#ae7978d595e9f5ba1a35239f917b2c232", null ],

@@ -375,10 +375,10 @@ Static Protected Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Classe base para todas as procuras. </p>
-<p>Esta classe base para procuras... (separação de TProcurasConstrutivas, em curso). pretende-se que depois as sub-classes tipo <a class="el" href="classTProcuraMelhorativa.html">TProcuraMelhorativa</a>, possa herdar de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, não ficando com partes da procura construtiva que são desnecessárias</p>
+<p>Esta classe base para procuras, permitindo a gestão de parâmetros, indicadores, instâncias e execução de algoritmos.</p>
 <p><b>Observação:</b> Alguns métodos e parâmetros terão efeito apenas se determinados métodos forem redefinidos na subclasse. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00219">219</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00217">217</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a72975c17835fa9ce5783db63221b0637" name="a72975c17835fa9ce5783db63221b0637"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a72975c17835fa9ce5783db63221b0637">&#9670;&#160;</a></span>TProcura()</h2>
@@ -404,7 +404,7 @@ Static Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00222">222</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00220">220</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -432,7 +432,7 @@ Static Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00223">223</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00221">221</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -600,7 +600,7 @@ Here is the caller graph for this function:</div>
 
 <p>retorna um vetor de inteiros com a codificação da solução (esta codificação será adicionada aos indicadores, no ficheiro CSV de resultados) </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00553">553</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00551">551</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -702,7 +702,7 @@ Here is the caller graph for this function:</div>
 
 <p>retorna o tempo em segundos desde que o cronómetro foi inicializado </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00856">856</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00854">854</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -754,10 +754,10 @@ A exibição do estado pode variar conforme o nível de debug definido em <code>
 <div class="line">}</div>
 <div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378">ATIVIDADE</a></div><div class="ttdeci">@ ATIVIDADE</div><div class="ttdoc">Apenas eventos principais.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00092">TProcura.h:92</a></div></div>
 <div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a></div><div class="ttdeci">@ NIVEL_DEBUG</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00071">TProcura.h:71</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a0e9e692f29af8a5d5279a8647c800437"><div class="ttname"><a href="classTProcura.html#a0e9e692f29af8a5d5279a8647c800437">TProcura::Parametro</a></div><div class="ttdeci">int Parametro(int id) const</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00609">TProcura.h:609</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00577">TProcura.h:577</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a0e9e692f29af8a5d5279a8647c800437"><div class="ttname"><a href="classTProcura.html#a0e9e692f29af8a5d5279a8647c800437">TProcura::Parametro</a></div><div class="ttdeci">int Parametro(int id) const</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00607">TProcura.h:607</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00575">TProcura.h:575</a></div></div>
 </div><!-- fragment --> 
-<p>Reimplemented in <a class="el" href="classCOitoDamasCI.html#a180258204d77113a1b38497bbb0e5317">COitoDamasCI</a>, <a class="el" href="classCOitoDamasCP.html#a8f78d413428985c5e4b1a3e2bfcbe2bf">COitoDamasCP</a>, <a class="el" href="classCParticaoCB.html#ad57dca2c8424e91d6ef3769adcddd46b">CParticaoCB</a>, <a class="el" href="classTCodificacaoBinaria.html#a0c5676c1b54ab6bdc1045b98aeafe456">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a0c5676c1b54ab6bdc1045b98aeafe456">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#a0c5676c1b54ab6bdc1045b98aeafe456">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html#a0c5676c1b54ab6bdc1045b98aeafe456">TCodificacaoReal</a>, <a class="el" href="classCTesteTVector.html#a0c5676c1b54ab6bdc1045b98aeafe456">CTesteTVector</a>, <a class="el" href="classCJogoDoGalo.html#a7ccc3f62401cbc7c8b45c8c453fd0ba7">CJogoDoGalo</a>, <a class="el" href="classCJogoEmLinha.html#a2ee665ea0e0e9f23c4a8eb7cf8b0b12c">CJogoEmLinha</a>, <a class="el" href="classCAspirador.html#ab95fe625712f157e5836de7364a53cee">CAspirador</a>, <a class="el" href="classCOitoDamas.html#a2be756ac6a3293f587ad8603c6ce1a26">COitoDamas</a>, <a class="el" href="classCParticao.html#ab4ae8a64ecfa771df00a6977409863ee">CParticao</a>, <a class="el" href="classCPuzzle8.html#acb9a55050da99ad64e2dc1b32c98d0a1">CPuzzle8</a>, <a class="el" href="classTCodificacaoBinaria.html#a7560b318948bf6a98d21ed79befe6719">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a2a849dc7fe5bacff0f625cd6cec2e47e">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#a1bf5de3b783a2f106b974b42620a7964">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html#a5fa4679d254ad80dd6e6905c9bba3af1">TCodificacaoReal</a>, <a class="el" href="classCOitoDamas.html#a2be756ac6a3293f587ad8603c6ce1a26">COitoDamas</a>, <a class="el" href="classCParticao.html#ab4ae8a64ecfa771df00a6977409863ee">CParticao</a>, <a class="el" href="classCProblemaArtificial.html#aed61188cb7e4ad383c94ff239f116327">CProblemaArtificial</a>, and <a class="el" href="classCTesteTVector.html#a8ec1ac319d1625515c64c6fcafab72b8">CTesteTVector</a>.</p>
+<p>Reimplemented in <a class="el" href="classCOitoDamasCI.html#a180258204d77113a1b38497bbb0e5317">COitoDamasCI</a>, <a class="el" href="classCOitoDamasCP.html#a8f78d413428985c5e4b1a3e2bfcbe2bf">COitoDamasCP</a>, <a class="el" href="classTProcuraExecutavel.html#a514b5ccc452e35c022bbd537fecf4535">TProcuraExecutavel</a>, <a class="el" href="classCParticaoCB.html#ad57dca2c8424e91d6ef3769adcddd46b">CParticaoCB</a>, <a class="el" href="classTCodificacaoBinaria.html#a0c5676c1b54ab6bdc1045b98aeafe456">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a0c5676c1b54ab6bdc1045b98aeafe456">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#a0c5676c1b54ab6bdc1045b98aeafe456">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html#a0c5676c1b54ab6bdc1045b98aeafe456">TCodificacaoReal</a>, <a class="el" href="classCTesteTVector.html#a0c5676c1b54ab6bdc1045b98aeafe456">CTesteTVector</a>, <a class="el" href="classCJogoDoGalo.html#a7ccc3f62401cbc7c8b45c8c453fd0ba7">CJogoDoGalo</a>, <a class="el" href="classCJogoEmLinha.html#a2ee665ea0e0e9f23c4a8eb7cf8b0b12c">CJogoEmLinha</a>, <a class="el" href="classCAspirador.html#ab95fe625712f157e5836de7364a53cee">CAspirador</a>, <a class="el" href="classCOitoDamas.html#a2be756ac6a3293f587ad8603c6ce1a26">COitoDamas</a>, <a class="el" href="classCParticao.html#ab4ae8a64ecfa771df00a6977409863ee">CParticao</a>, <a class="el" href="classCPuzzle8.html#acb9a55050da99ad64e2dc1b32c98d0a1">CPuzzle8</a>, <a class="el" href="classTCodificacaoBinaria.html#a7560b318948bf6a98d21ed79befe6719">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a2a849dc7fe5bacff0f625cd6cec2e47e">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#a1bf5de3b783a2f106b974b42620a7964">TCodificacaoPermutacao</a>, <a class="el" href="classTCodificacaoReal.html#a5fa4679d254ad80dd6e6905c9bba3af1">TCodificacaoReal</a>, <a class="el" href="classCOitoDamas.html#a2be756ac6a3293f587ad8603c6ce1a26">COitoDamas</a>, <a class="el" href="classCParticao.html#ab4ae8a64ecfa771df00a6977409863ee">CParticao</a>, <a class="el" href="classCProblemaArtificial.html#aed61188cb7e4ad383c94ff239f116327">CProblemaArtificial</a>, and <a class="el" href="classCTesteTVector.html#a8ec1ac319d1625515c64c6fcafab72b8">CTesteTVector</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="TProcura_8cpp_source.html#l00087">87</a> of file <a class="el" href="TProcura_8cpp_source.html">TProcura.cpp</a>.</p>
 <div class="dynheader">
@@ -835,9 +835,9 @@ Here is the caller graph for this function:</div>
 <div class="line"><a class="code hl_function" href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">Debug</a>(<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">passos</a>, <span class="keyword">true</span>,  <span class="stringliteral">&quot;\nPasso %d&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a5cb8dad7e3cdda780c22a3893f3d5ad9">iteracoes</a>) ||</div>
 <div class="line"><a class="code hl_function" href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">Debug</a>(<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">detalhe</a>, <span class="keyword">false</span>, <span class="stringliteral">&quot;\nPasso %d | Melhor custo: %d&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a5cb8dad7e3cdda780c22a3893f3d5ad9">iteracoes</a>, custo) ||</div>
 <div class="ttc" id="aclassTProcura_html_a0c5676c1b54ab6bdc1045b98aeafe456"><div class="ttname"><a href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(bool completo=true)</div><div class="ttdoc">Mostra o estado no ecrã, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00087">TProcura.cpp:87</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a5cb8dad7e3cdda780c22a3893f3d5ad9"><div class="ttname"><a href="classTProcura.html#a5cb8dad7e3cdda780c22a3893f3d5ad9">TProcura::iteracoes</a></div><div class="ttdeci">static int iteracoes</div><div class="ttdoc">Número total de iterações realizadas na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00581">TProcura.h:581</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a5cb8dad7e3cdda780c22a3893f3d5ad9"><div class="ttname"><a href="classTProcura.html#a5cb8dad7e3cdda780c22a3893f3d5ad9">TProcura::iteracoes</a></div><div class="ttdeci">static int iteracoes</div><div class="ttdoc">Número total de iterações realizadas na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00579">TProcura.h:579</a></div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00637">637</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00635">635</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -1228,9 +1228,9 @@ Here is the caller graph for this function:</div>
 <dl class="section note"><dt>Note</dt><dd>Redefinição necessária</dd></dl>
 <p>No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO) Se <code><a class="el" href="classTProcura.html#a8331059908495f9a915ada39424ca27c" title="Inicializa a interação com o utilizador.">TesteManual()</a></code> não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente. </p>
 
-<p>Reimplemented in <a class="el" href="classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b">TProcuraAdversa</a>, <a class="el" href="group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3">TProcuraConstrutiva</a>, <a class="el" href="classTProcuraMelhorativa.html#af101526489df420431d22477e317fb33">TProcuraMelhorativa</a>, and <a class="el" href="classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c">CTesteTVector</a>.</p>
+<p>Reimplemented in <a class="el" href="classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b">TProcuraAdversa</a>, <a class="el" href="group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3">TProcuraConstrutiva</a>, <a class="el" href="classTProcuraMelhorativa.html#af101526489df420431d22477e317fb33">TProcuraMelhorativa</a>, <a class="el" href="classCTesteTVector.html#ad9d55d9cd9298196409a915b642f342c">CTesteTVector</a>, and <a class="el" href="classTProcuraExecutavel.html#a4a5bfffa3469b7827316d59fea6796c1">TProcuraExecutavel</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00264">264</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00262">262</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1330,7 +1330,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f">TProcuraConstrutiva</a>, and <a class="el" href="classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0">TProcuraMelhorativa</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00549">549</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00547">547</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1452,7 +1452,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classCOitoDamas.html#acb32f8140d9a26034d745757b54dfe7b">COitoDamas</a>, <a class="el" href="classCParticao.html#a86ee0d70bce35ae6ea4ab9dd3ccb6667">CParticao</a>, and <a class="el" href="classCPuzzle8.html#a1c7feb381572f4b6ff146272ea0a8898">CPuzzle8</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00253">253</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00251">251</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1499,9 +1499,9 @@ Here is the caller graph for this function:</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2">TProcura::Indicador</a>(<span class="keywordtype">id</span>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassTProcura_html_a39f8ec3e0c97c7bc1bcd45e685168da2"><div class="ttname"><a href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2">TProcura::Indicador</a></div><div class="ttdeci">virtual int64_t Indicador(int id)</div><div class="ttdoc">Retorna um indicador, após a execução do algoritmo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00074">TProcura.cpp:74</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a9b75c5c41b6e1b9e3a3390d9fd836417"><div class="ttname"><a href="classTProcura.html#a9b75c5c41b6e1b9e3a3390d9fd836417">TProcura::indicador</a></div><div class="ttdeci">static TVector&lt; TIndicador &gt; indicador</div><div class="ttdoc">Indicadores que podem ser calculados após a execução, quer com informação da instãncia,...</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00572">TProcura.h:572</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a9b75c5c41b6e1b9e3a3390d9fd836417"><div class="ttname"><a href="classTProcura.html#a9b75c5c41b6e1b9e3a3390d9fd836417">TProcura::indicador</a></div><div class="ttdeci">static TVector&lt; TIndicador &gt; indicador</div><div class="ttdoc">Indicadores que podem ser calculados após a execução, quer com informação da instãncia,...</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00570">TProcura.h:570</a></div></div>
 </div><!-- fragment --> 
-<p>Reimplemented in <a class="el" href="classCTesteTVector.html#a9b2fa997b10ef80c88262c9e1463b767">CTesteTVector</a>, <a class="el" href="group__RedefinicaoOpcional.html#ga98059503024d1ffc1c8ddaaec1b5a116">TProcuraConstrutiva</a>, and <a class="el" href="classTProcuraMelhorativa.html#a9fb583268291334ec7da02e2216bc7e8">TProcuraMelhorativa</a>.</p>
+<p>Reimplemented in <a class="el" href="classCTesteTVector.html#a9b2fa997b10ef80c88262c9e1463b767">CTesteTVector</a>, <a class="el" href="classTProcuraExecutavel.html#a7a3115baed2f65520c9f709f3865daff">TProcuraExecutavel</a>, <a class="el" href="group__RedefinicaoOpcional.html#ga98059503024d1ffc1c8ddaaec1b5a116">TProcuraConstrutiva</a>, and <a class="el" href="classTProcuraMelhorativa.html#a9fb583268291334ec7da02e2216bc7e8">TProcuraMelhorativa</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="TProcura_8cpp_source.html#l00074">74</a> of file <a class="el" href="TProcura_8cpp_source.html">TProcura.cpp</a>.</p>
 <div class="dynheader">
@@ -1596,11 +1596,11 @@ Here is the caller graph for this function:</div>
 <div class="line">    <span class="comment">// Determinar o tamanho máximo do estado codificado, se aplicável</span></div>
 <div class="line">       tamanhoCodificado = 1;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcura_html_a1af0e64ed79d99972d8d48fadf839f43"><div class="ttname"><a href="classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43">TProcura::Inicializar</a></div><div class="ttdeci">virtual void Inicializar(void)</div><div class="ttdoc">Coloca o objecto no estado inicial da procura.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00250">TProcura.h:250</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a1af0e64ed79d99972d8d48fadf839f43"><div class="ttname"><a href="classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43">TProcura::Inicializar</a></div><div class="ttdeci">virtual void Inicializar(void)</div><div class="ttdoc">Coloca o objecto no estado inicial da procura.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00248">TProcura.h:248</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCJogoDoGalo.html#a7e865ab71c12b6fa618c83448283fda5">CJogoDoGalo</a>, <a class="el" href="classCJogoEmLinha.html#acc2b5079f36c1853c0f16283a70b1450">CJogoEmLinha</a>, <a class="el" href="classCAspirador.html#af6547f44fce58ab6cac2387ea6e5a7a4">CAspirador</a>, <a class="el" href="classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214">COitoDamas</a>, <a class="el" href="classCParticao.html#a9398d7eb5af933dd64c50bb09bba6400">CParticao</a>, <a class="el" href="classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed">CPuzzle8</a>, <a class="el" href="classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214">COitoDamas</a>, <a class="el" href="classCOitoDamasCI.html#a5c4340c008bd04f699951906166d19f2">COitoDamasCI</a>, <a class="el" href="classCOitoDamasCP.html#a2a92076021aec98b8780677316c0a05b">COitoDamasCP</a>, <a class="el" href="classCParticao.html#a9398d7eb5af933dd64c50bb09bba6400">CParticao</a>, <a class="el" href="classCParticaoCB.html#a9feb5f17582cdd0d70463072dc72d2ed">CParticaoCB</a>, <a class="el" href="classCProblemaArtificial.html#ac823cf847edbe9f32fb4cd2e2c462d10">CProblemaArtificial</a>, <a class="el" href="classTProcuraMelhorativa.html#a72a59b4afbcd7b1f7ea65e4d2cff1a1b">TProcuraMelhorativa</a>, <a class="el" href="classCTesteTVector.html#ac0189d925fb44fbc3b2d0aad7660f528">CTesteTVector</a>, <a class="el" href="group__RedefinicaoMandatoria.html#ga2eabd047192d429686aeadf549136d44">TProcuraConstrutiva</a>, <a class="el" href="classTCodificacaoBinaria.html#a1aade08ed07e69e5b14b8357f04a4619">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#aa2dfae2e53fd614a7ab31fb424ba888a">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#aa209162e1b26bd9eca69d6cc0671cf8a">TCodificacaoPermutacao</a>, and <a class="el" href="classTCodificacaoReal.html#a0652383ada0c9ac2016e8846bceb54f3">TCodificacaoReal</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00250">250</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00248">248</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1817,7 +1817,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00600">600</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00598">598</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2824,7 +2824,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00610">610</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00608">608</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -2852,7 +2852,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00609">609</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00607">607</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -2890,7 +2890,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00611">611</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00609">609</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2938,11 +2938,11 @@ Esta função deve manter a eficiência elevada, dado que é chamada em ciclos i
 <div class="fragment"><div class="line"><span class="keywordtype">bool</span> CSubProblema::Parar(<span class="keywordtype">void</span>) {</div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="classTProcura.html#a7952e187e1b0ae0ca52edab157223179">TProcura::Parar</a>() || <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">CriterioParagem</a>(); <span class="comment">// critério de paragem definido em CSubProblema</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcura_html_a7952e187e1b0ae0ca52edab157223179"><div class="ttname"><a href="classTProcura.html#a7952e187e1b0ae0ca52edab157223179">TProcura::Parar</a></div><div class="ttdeci">virtual bool Parar(void)</div><div class="ttdoc">Verifica se a procura deve ser interrompida.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00407">TProcura.h:407</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a7952e187e1b0ae0ca52edab157223179"><div class="ttname"><a href="classTProcura.html#a7952e187e1b0ae0ca52edab157223179">TProcura::Parar</a></div><div class="ttdeci">virtual bool Parar(void)</div><div class="ttdoc">Verifica se a procura deve ser interrompida.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00405">TProcura.h:405</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classTProcuraMelhorativa.html#add6b034d0b16d10ca85b2b42d956fae0">TProcuraMelhorativa</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00407">407</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00405">405</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3235,11 +3235,11 @@ A instância selecionada irá ser carregada em <a class="el" href="classTProcura
 <div class="line">       <a class="code hl_variable" href="classTProcura.html#ac54b5d632d3efd448b51bfca6cb6a238">instancia</a> = { <span class="stringliteral">&quot;Problema&quot;</span>, 1,1,10, <span class="stringliteral">&quot;Características dos problemas&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">NULL</a> };</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassTProcura_html_a6b870a79b10bf2523bdb37c4b06bb871"><div class="ttname"><a href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871">TProcura::ResetParametros</a></div><div class="ttdeci">virtual void ResetParametros()</div><div class="ttdoc">Inicializa os parametros, indicadores e instâncias.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00049">TProcura.cpp:49</a></div></div>
-<div class="ttc" id="aclassTProcura_html_ac4344a896fc02c79e34d5fafaf595d9f"><div class="ttname"><a href="classTProcura.html#ac4344a896fc02c79e34d5fafaf595d9f">TProcura::indAtivo</a></div><div class="ttdeci">static TVector&lt; int &gt; indAtivo</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00573">TProcura.h:573</a></div></div>
+<div class="ttc" id="aclassTProcura_html_ac4344a896fc02c79e34d5fafaf595d9f"><div class="ttname"><a href="classTProcura.html#ac4344a896fc02c79e34d5fafaf595d9f">TProcura::indAtivo</a></div><div class="ttdeci">static TVector&lt; int &gt; indAtivo</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00571">TProcura.h:571</a></div></div>
 <div class="ttc" id="aclassTProcura_html_ac54b5d632d3efd448b51bfca6cb6a238"><div class="ttname"><a href="classTProcura.html#ac54b5d632d3efd448b51bfca6cb6a238">TProcura::instancia</a></div><div class="ttdeci">static TParametro instancia</div><div class="ttdoc">ID da instância atual, a ser utilizado em SolucaoVazia().</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00023">TProcura.h:23</a></div></div>
-<div class="ttc" id="aclassTProcura_html_ad60c9c327ddddd054d9ff499ef53532f"><div class="ttname"><a href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">TProcura::parametro</a></div><div class="ttdeci">static TVector&lt; TParametro &gt; parametro</div><div class="ttdoc">Parâmetros a serem utilizados na configuração atual.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00569">TProcura.h:569</a></div></div>
+<div class="ttc" id="aclassTProcura_html_ad60c9c327ddddd054d9ff499ef53532f"><div class="ttname"><a href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">TProcura::parametro</a></div><div class="ttdeci">static TVector&lt; TParametro &gt; parametro</div><div class="ttdoc">Parâmetros a serem utilizados na configuração atual.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00567">TProcura.h:567</a></div></div>
 </div><!-- fragment --> 
-<p>Reimplemented in <a class="el" href="classCJogoEmLinha.html#a855791b2e19731340976157991d79293">CJogoEmLinha</a>, <a class="el" href="classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1">TProcuraAdversa</a>, <a class="el" href="classCAspirador.html#a7a0d35ab38ae4c5d9a941ca9b3845e4b">CAspirador</a>, <a class="el" href="classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf">COitoDamas</a>, <a class="el" href="classCParticao.html#a7184defba91cfd68281cf63d0fee98c6">CParticao</a>, <a class="el" href="classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3">CPuzzle8</a>, <a class="el" href="classTCodificacaoBinaria.html#a2fac1dbb30a1e109803559213001267b">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a5100a41aeaae385245b0cf8f493615a3">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#adc0c8bcf59133f55ff83efca45c6f79d">TCodificacaoPermutacao</a>, <a class="el" href="classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf">COitoDamas</a>, <a class="el" href="classCOitoDamasCI.html#ac8954b7751c740cb0489b98a74142827">COitoDamasCI</a>, <a class="el" href="classCOitoDamasCP.html#a9eba2f6a84513cd1b62021362241d3fc">COitoDamasCP</a>, <a class="el" href="classCParticaoCB.html#a41dc438c16b823fd1b20cbd61a7396ed">CParticaoCB</a>, <a class="el" href="classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d">CProblemaArtificial</a>, <a class="el" href="classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94">CTesteTVector</a>, <a class="el" href="group__RedefinicaoMandatoria.html#ga65671e37d7c8da81c6a2143027166dd8">TProcuraConstrutiva</a>, and <a class="el" href="classTProcuraMelhorativa.html#ad52a9ac59f07587d70dc696c0648fe62">TProcuraMelhorativa</a>.</p>
+<p>Reimplemented in <a class="el" href="classCJogoEmLinha.html#a855791b2e19731340976157991d79293">CJogoEmLinha</a>, <a class="el" href="classTProcuraAdversa.html#aadc7ba5e844159862998d94e37a59bd1">TProcuraAdversa</a>, <a class="el" href="classCAspirador.html#a7a0d35ab38ae4c5d9a941ca9b3845e4b">CAspirador</a>, <a class="el" href="classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf">COitoDamas</a>, <a class="el" href="classCParticao.html#a7184defba91cfd68281cf63d0fee98c6">CParticao</a>, <a class="el" href="classCPuzzle8.html#acb9cf571531e2ac8581bfe407b6a01b3">CPuzzle8</a>, <a class="el" href="classTCodificacaoBinaria.html#a2fac1dbb30a1e109803559213001267b">TCodificacaoBinaria</a>, <a class="el" href="classTCodificacaoInteira.html#a5100a41aeaae385245b0cf8f493615a3">TCodificacaoInteira</a>, <a class="el" href="classTCodificacaoPermutacao.html#adc0c8bcf59133f55ff83efca45c6f79d">TCodificacaoPermutacao</a>, <a class="el" href="classCOitoDamas.html#ae488eaff0a5ffaed4b98b5b730cbccdf">COitoDamas</a>, <a class="el" href="classCOitoDamasCI.html#ac8954b7751c740cb0489b98a74142827">COitoDamasCI</a>, <a class="el" href="classCOitoDamasCP.html#a9eba2f6a84513cd1b62021362241d3fc">COitoDamasCP</a>, <a class="el" href="classCParticaoCB.html#a41dc438c16b823fd1b20cbd61a7396ed">CParticaoCB</a>, <a class="el" href="classCProblemaArtificial.html#ae1921242498265e8700ef8ae3b49dc5d">CProblemaArtificial</a>, <a class="el" href="classCTesteTVector.html#a043254ea1e70bf15e54d53cfd0043b94">CTesteTVector</a>, <a class="el" href="classTProcuraExecutavel.html#a38b4268e4b17468abd7447d2e157ce2e">TProcuraExecutavel</a>, <a class="el" href="group__RedefinicaoMandatoria.html#ga65671e37d7c8da81c6a2143027166dd8">TProcuraConstrutiva</a>, and <a class="el" href="classTProcuraMelhorativa.html#ad52a9ac59f07587d70dc696c0648fe62">TProcuraMelhorativa</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="TProcura_8cpp_source.html#l00049">49</a> of file <a class="el" href="TProcura_8cpp_source.html">TProcura.cpp</a>.</p>
 <div class="dynheader">
@@ -3356,7 +3356,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="group__RedefinicaoOpcional.html#gab388bfa9b664b18be620f2b7a42fc71b">TProcuraConstrutiva</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00555">555</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00553">553</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3388,7 +3388,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00599">599</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00597">597</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3842,7 +3842,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="group__RedefinicaoMandatoria.html#gad7547823186766e4fc1b9af84845626c">TProcuraConstrutiva</a>, and <a class="el" href="classTProcuraAdversa.html#a2f48e17339a95516058c54ffcada7fb0">TProcuraAdversa</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00483">483</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00481">481</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -3874,7 +3874,7 @@ Here is the caller graph for this function:</div>
 
 <p>Conjuntos de configurações para teste empírico. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00575">575</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00573">573</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -3900,7 +3900,7 @@ Here is the caller graph for this function:</div>
 
 <p>prefixo do nome do ficheiro para gravar a instância para ficheiro (terá sido gerada) </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00566">566</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00564">564</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -3927,7 +3927,7 @@ Here is the caller graph for this function:</div>
 <p>prefixo do nome ficheiro de uma instância - editado pelo utilizador Caso não seja nulo, utilizar como prefixo, concatenando com ID da instância, para obter o ficheiro da instância Pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo que é chamado após a execução </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43" title="Coloca o objecto no estado inicial da procura.">Inicializar()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00564">564</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00562">562</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -3954,7 +3954,7 @@ Here is the caller graph for this function:</div>
 <p>Gravar solução CSV (todas as ações) </p>
 <dl class="section note"><dt>Note</dt><dd>0 = não grava, 1 = grava </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00595">595</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00593">593</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -3978,7 +3978,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00573">573</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00571">571</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4005,7 +4005,7 @@ Here is the caller graph for this function:</div>
 <p>Indicadores que podem ser calculados após a execução, quer com informação da instãncia, quer com resultado da última corrida. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2" title="Retorna um indicador, após a execução do algoritmo.">Indicador()</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00572">572</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00570">570</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4057,7 +4057,7 @@ Here is the caller graph for this function:</div>
 
 <p>Instante final (deadline) da corrida atual. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00583">583</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00581">581</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4083,7 +4083,7 @@ Here is the caller graph for this function:</div>
 
 <p>Número total de iterações realizadas na última execução. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00581">581</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00579">579</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4109,7 +4109,7 @@ Here is the caller graph for this function:</div>
 
 <p>Flag indicando problemas de memória esgotada. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00585">585</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00583">583</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4136,7 +4136,7 @@ Here is the caller graph for this function:</div>
 <p>Modo MPI. </p>
 <dl class="section note"><dt>Note</dt><dd>0 = divisão estática, 1 = mestre-escravo </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00592">592</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00590">590</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4162,7 +4162,7 @@ Here is the caller graph for this function:</div>
 
 <p>MPI - número de processos. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00589">589</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00587">587</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4188,7 +4188,7 @@ Here is the caller graph for this function:</div>
 
 <p>MPI - rank do processo. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00587">587</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00585">585</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4215,7 +4215,7 @@ Here is the caller graph for this function:</div>
 <p>Parâmetros a serem utilizados na configuração atual. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058" title="Identifica um parâmetro específico no código.">EParametrosConstrutiva</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00569">569</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00567">567</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4241,7 +4241,7 @@ Here is the caller graph for this function:</div>
 
 <p>Resultado retornado pelo algoritmo na última execução. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00577">577</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00575">575</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -4267,7 +4267,7 @@ Here is the caller graph for this function:</div>
 
 <p>tempo consumido na última execução. </p>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00579">579</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00577">577</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
