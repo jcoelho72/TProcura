@@ -208,9 +208,7 @@ typedef struct SResultado {
 /**
  * @brief Classe base para todas as procuras.
  *
- * Esta classe base para procuras... (separação de TProcurasConstrutivas, em curso).
- *   pretende-se que depois as sub-classes tipo TProcuraMelhorativa, possa herdar de
- *   TProcura, não ficando com partes da procura construtiva que são desnecessárias
+ * Esta classe base para procuras, permitindo a gestão de parâmetros, indicadores, instâncias e execução de algoritmos.
  *
  * **Observação:** Alguns métodos e parâmetros terão efeito apenas se determinados métodos forem
  * redefinidos na subclasse.
@@ -864,4 +862,45 @@ protected:
 	void TesteInicio(TVector<int> &instancias, TVector<int> &configAtual);
 	void TesteFim();
 
+};
+
+
+/**
+ * @brief Classe para utilizar TProcura em binários externos
+ *
+ */
+class TProcuraExecutavel : public TProcura
+{
+public:
+
+	// variáveis necessárias redefinir após a construção
+	TString solver; // caminho para o executável
+	TParametro inst; // definição de instâncias existentes
+	TVector<TIndicador> ind; // indicadores específicos, a calcular após a execução do executável, com base na saída do executável
+	TVector<TString> indPrefixo = {"", "", ""}; // prefixo existente no output do programa, para cada indicador, de modo a extrair o valor do indicador
+	// considerar também os indicadores em TProcura (IND_RESULTADO, IND_TEMPO, IND_ITERACOES), que podem ser extraídos do output do programa
+	// string vazia para não extração desse indicador
+	TVector<TParametro> par; // parâmetros específicos, para configurar a execução
+	TVector<TString> parPrefixo = {"", "", "", "", ""}; // prefixo a dar nos argumentos do programa, para cada parâmetro, de modo a configurar a execução
+	// considerar também os parâmetros em TProcura (ALGORITMO, NIVEL_DEBUG, SEMENTE, LIMITE_TEMPO, LIMITE_ITERACOES)
+	// string vazia para não utilização desse parâmetro (se não há prefixo, apenas valor por ordem, utilizar um espaço)
+	// Nota: o parâmetro é colocado nos argumentos do programa, apenas se não for igual ao valor de omissão
+
+	// variáveis internas: 
+	TVector<int64_t> indValores; // guarda os indicadores extraídos da última execução
+	TVector<int> omissao; // valores de todos os parâmetros de omissão
+
+	TProcuraExecutavel() : TProcura() {}
+	~TProcuraExecutavel(void) {}
+
+	/// Reset parâmetros, assumindo variáveis da classe definidas
+	void ResetParametros();
+
+	/// Executa o algoritmo e extrai os indicadores
+	int ExecutaAlgoritmo();
+
+	/// retorna indicadores após execução
+	int64_t Indicador(int id);
+
+	void Debug(bool completo) {}
 };

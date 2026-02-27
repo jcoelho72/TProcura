@@ -1885,3 +1885,76 @@ bool TProcura::JuntarCSV(TString ficheiro)
 	TString().printf("%s.csv", *ficheiro).writeLines(todasLinhas);
 	return true;
 }
+
+void TProcuraExecutavel::ResetParametros()
+{
+	TProcura::ResetParametros();
+
+	// adicionar os indicadores e parâmetros específicos
+	indicador += ind;
+	parametro += par;
+
+	// atualizar os valores de omissão
+	omissao.Count(parametro.Count());
+	for (int i = 0; i < parametro.Count(); i++)
+		omissao[i] = parametro[i].valor;
+
+	instancia = inst;
+
+	indValores.Count(indicador.Count()).Reset(0);
+
+	// colocar todos os indicadores ativos por ordem de ID
+	indAtivo = {};
+	for (int i = 0; i < indicador.Count(); i++)
+		indAtivo += i;
+
+	// corrigir prefixos ineixistentes
+	while(parPrefixo.Count() < parametro.Count())
+		parPrefixo += TString("");
+	while (indPrefixo.Count() < indicador.Count())
+		indPrefixo += TString("");
+}
+
+int TProcuraExecutavel::ExecutaAlgoritmo()
+{
+	TString resultFile, opcoes;
+	int error;
+
+	resultFile.printf("%s%d.txt", *ficheiroInstancia, instancia.valor);
+
+	// construir as opções que são distintas dos valores de omissão
+	for (int i=0; i<parametro.Count(); i++)
+		if (Parametro(i) != omissao[i])
+			opcoes.printf("%s%d ", *parPrefixo[i], Parametro(i));
+
+	error = system(TString().printf("%s %s %s%d > %s",
+		*solver, *opcoes, *ficheiroInstancia, instancia.valor, *resultFile));
+	if (error == -1) {
+		Mensagem(Icon(EIcon::INSUC), " Erro ao executar o comando.");
+		return RES_NAO_RESOLVIDO;
+	}
+	else if (error != 0) {
+		Mensagem(Icon(EIcon::INSUC), " O comando retornou um código de erro: %d", error);
+		return RES_NAO_RESOLVIDO;
+	}
+
+	// extrair indicadores com base no indPrefixo
+	for (auto& linha : resultFile.readLines())
+		for (int i = 0; i < indPrefixo.Count(); i++) 
+			if (!indPrefixo[i].Empty()) {
+				const char* ptr = strstr(linha, indPrefixo[i]);
+				if (ptr) 
+					indValores[i] = (int)(atof(ptr + indPrefixo[i].Count() - 1) + 0.5);
+			}
+
+	if(Parametro(NIVEL_DEBUG) < DETALHE)
+		remove(resultFile); // apagar ficheiro de resultados intermédio
+	return 0;
+}
+
+int64_t TProcuraExecutavel::Indicador(int id)
+{
+	if (id < indValores.Count())
+		return indValores[id];
+	return TProcura::Indicador(id);
+}
