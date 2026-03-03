@@ -2,8 +2,6 @@ name: Build corpus from website
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ gh-pages ]
 
 jobs:
   build:
@@ -24,9 +22,9 @@ jobs:
     - name: Run crawler
       run: python crawler.py
 
-    - name: Commit corpus file
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "actions@github.com"
-        git add tprocura_corpus.txt
-        git commit -m "Update corpus" || echo 
+    - name: Upload corpus as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: tprocura-corpus
+        path: tprocura_corpus.txt
+        retention-days: 30
