@@ -34,12 +34,10 @@ digraph "CParticao::Inicializar"
   Node13 [id="Node000013",label="TString::readLines",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#ae7b848f7e090aae31886c8fd535e1055",tooltip=" "];
   Node13 -> Node10 [id="edge15_Node000013_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node14 [id="edge16_Node000013_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TVector::First",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a05f29646493d42f3c77081b6031d70e5",tooltip=" "];
-  Node13 -> Node15 [id="edge17_Node000013_Node000015",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TString::TString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a2fb70d94c8fdba6d90145a01aec1ce3f",tooltip=" "];
-  Node15 -> Node3 [id="edge18_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node15 -> Node10 [id="edge19_Node000015_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node16 [id="edge20_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TVector::Sort",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a6006a477a6794ac80c97cc35c8925699",tooltip="Ordena todo o vetor, opcionalmente devolvendo índices ordenados."];
-  Node16 -> Node3 [id="edge21_Node000016_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TString::TString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a2fb70d94c8fdba6d90145a01aec1ce3f",tooltip=" "];
+  Node14 -> Node3 [id="edge17_Node000014_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node10 [id="edge18_Node000014_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node15 [id="edge19_Node000001_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TVector::Sort",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a6006a477a6794ac80c97cc35c8925699",tooltip="Ordena todo o vetor, opcionalmente devolvendo índices ordenados."];
+  Node15 -> Node3 [id="edge20_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
 }

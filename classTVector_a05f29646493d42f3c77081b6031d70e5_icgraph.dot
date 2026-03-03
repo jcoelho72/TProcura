@@ -93,19 +93,6 @@ digraph "TVector::First"
   Node35 [id="Node000035",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node35 -> Node24 [id="edge52_Node000035_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node36 [id="edge53_Node000001_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node36 [id="Node000036",label="TString::readLines",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#ae7b848f7e090aae31886c8fd535e1055",tooltip=" "];
-  Node36 -> Node37 [id="edge54_Node000036_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node37 [id="Node000037",label="COitoDamas::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214",tooltip="Coloca o objecto no estado inicial da procura."];
-  Node36 -> Node38 [id="edge55_Node000036_Node000038",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node38 [id="Node000038",label="CParticao::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a9398d7eb5af933dd64c50bb09bba6400",tooltip="Coloca o objecto no estado inicial da procura."];
-  Node36 -> Node39 [id="edge56_Node000036_Node000039",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node39 [id="Node000039",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
-  Node36 -> Node40 [id="edge57_Node000036_Node000040",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node40 [id="Node000040",label="TProcura::JuntarCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7a323608db4326cb4f9901e324881035",tooltip="Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro."];
-  Node40 -> Node31 [id="edge58_Node000040_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node40 -> Node13 [id="edge59_Node000040_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node36 -> Node35 [id="edge60_Node000036_Node000035",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node41 [id="edge61_Node000001_Node000041",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node41 [id="Node000041",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
-  Node41 -> Node23 [id="edge62_Node000041_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node36 [id="Node000036",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
+  Node36 -> Node23 [id="edge54_Node000036_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
