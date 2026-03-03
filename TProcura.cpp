@@ -1920,7 +1920,7 @@ int TProcuraExecutavel::ExecutaAlgoritmo()
 	TString resultFile, opcoes;
 	int error;
 
-	resultFile.printf("%s%d.txt", *ficheiroInstancia, instancia.valor);
+	resultFile.printf("%s%d.txt", *ficheiroInstancia, mpiID);
 
 	// construir as opções que são distintas dos valores de omissão
 	for (int i=0; i<parametro.Count(); i++)

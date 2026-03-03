@@ -1227,11 +1227,22 @@ public:
 	// métodos de conveniência (leitura/gravação em ficheiros de texto)
 	TVector<TString> readLines() {
 		TVector<TString> lines;
-		char buffer[4096];
+		TString line;
+		int c;
 		FILE* f = fopen_compat(Data(), "r");
 		if (!f) return lines;
-		while (fgets(buffer, sizeof(buffer), f))
-			lines += TString(buffer).tok("\n\r").First();
+		while ((c = fgetc(f)) != EOF) {
+			if (c == '\n' || c == '\r') {
+				int next = fgetc(f);
+				if (next != '\n' && next !='\r' && next != EOF)
+					ungetc(next, f);
+				lines += line;
+				line = TString();
+			}
+			else
+				line += c;
+		}
+		lines += line;
 		fclose(f);
 		return lines;
 	}
