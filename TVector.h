@@ -1240,7 +1240,7 @@ public:
 				line = TString();
 			}
 			else
-				line += c;
+				line.printf("%c", c);
 		}
 		lines += line;
 		fclose(f);
