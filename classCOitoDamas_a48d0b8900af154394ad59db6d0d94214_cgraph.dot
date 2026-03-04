@@ -28,8 +28,9 @@ digraph "COitoDamas::Inicializar"
   Node1 -> Node11 [id="edge11_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TString::readLines",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#ae7b848f7e090aae31886c8fd535e1055",tooltip=" "];
   Node11 -> Node9 [id="edge12_Node000011_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node11 -> Node12 [id="edge13_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node8 [id="edge13_Node000011_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node12 [id="edge14_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TString::TString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a2fb70d94c8fdba6d90145a01aec1ce3f",tooltip=" "];
-  Node12 -> Node3 [id="edge14_Node000012_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node12 -> Node9 [id="edge15_Node000012_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node3 [id="edge15_Node000012_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node9 [id="edge16_Node000012_Node000009",color="steelblue1",style="solid",tooltip=" "];
 }
