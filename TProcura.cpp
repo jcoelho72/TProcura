@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
-#include <cmath>
 #ifdef MPI_ATIVO
 #include <mpi.h>
 #endif
@@ -224,7 +223,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 							Icon(EIcon::INST), inst,
 							Icon(EIcon::INSUC),
 							Icon(EIcon::TEMPO), tempo);
-						for (auto token : solucoes[solucao].solucao)
+						for (auto &token : solucoes[solucao].solucao)
 							Debug(COMPLETO, false, " %s", *token);
 					}
 				}
@@ -293,7 +292,7 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 	int validas = 0, naoResolvidas = 0, melhorCusto = 0, piorCusto = 0, tempoTotal = 0;
 	double taxaEficacia = 0, taxaQualidade = 0, taxaEficiencia = 0, desempenho = 0;
 	bool considerarQualidade = (referencias[1] > referencias[0]); // custoMin < custoMax (se iguais, o custo não é considerado para o indicador global)
-	for (auto res : resultados) {
+	for (auto &res : resultados) {
 		// instância válida apenas se todas as soluções para a instância forem válidas
 		if (res.valor[0] > 0 && res.valor[1] == 0) {
 			validas++;

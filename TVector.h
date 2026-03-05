@@ -1231,17 +1231,15 @@ public:
 		int c;
 		FILE* f = fopen_compat(Data(), "r");
 		if (!f) return lines;
-		while ((c = fgetc(f)) != EOF) {
-			if (c == '\n' || c == '\r') {
-				int next = fgetc(f);
-				if (next != '\n' && next !='\r' && next != EOF)
-					ungetc(next, f);
+		while ((c = fgetc(f)) != EOF)
+			if (c == '\n') { // tratar apenas \n como quebra de linha
 				lines += line;
 				line = TString();
 			}
-			else
-				line.printf("%c", c);
-		}
+			else if (c != '\r') { // ignorar sempre \r
+				line.Last() = c;
+				line.Add(0);
+			}
 		lines += line;
 		fclose(f);
 		return lines;
