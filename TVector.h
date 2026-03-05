@@ -1113,14 +1113,14 @@ public:
 
 	TString() {
 		Count(1);
-		Data()[0] = 0;
+		Last() = 0;
 	}
 
 	// construtor a partir de const char*
 	TString(const char* s) {
 		if (!s) {
 			Count(1);
-			Data()[0] = 0;
+			Last() = 0;
 			return;
 		}
 		int n = (int)strlen(s);
