@@ -29,7 +29,7 @@
 
 ## Bibliografia
 
--	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. https://elibrary.pearson.de/book/99.150005/9781292401171
+-	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. http://aima.cs.berkeley.edu/
 
 
 \htmlonly

@@ -2660,7 +2660,7 @@ Período de medição: <strong>[período]</strong>.
 </li>
 
 <!-- AMBIENTE -->
-<li>O ambiente tem dimensão <strong>[dimensões]</strong>, com os andares em que o elevador pode parar.
+<li>O ambiente tem dimensão <strong>[dimensões]</strong>, com o nó rodoviário, contendo as vias e ramais, bem como todas as ligações e sentidos de circulação.
 
 <ul><li>[dimensões]
 
