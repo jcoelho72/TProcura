@@ -52,4 +52,5 @@ digraph "TProcura::EditarConfiguracoes"
   Node19 [id="Node000019",label="TVector::Last",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa304d639c79ef2842f9951846c6292e3",tooltip=" "];
   Node1 -> Node20 [id="edge27_Node000001_Node000020",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="TProcura::NovoTexto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3e46f5e78c7e12b92f67ffc64c9744ad",tooltip=" "];
+  Node20 -> Node4 [id="edge28_Node000020_Node000004",color="steelblue1",style="solid",tooltip=" "];
 }
