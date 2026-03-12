@@ -1763,7 +1763,8 @@ int TProcura::NovoValor(TString prompt) {
 
 // ler uma string
 TString TProcura::NovoTexto(TString prompt) {
-	TString str(BUFFER_SIZE);
+	TString str;
+	str.Count(BUFFER_SIZE);
 	printf("%s", *prompt);
 
 	if (fgets(str.Data(), BUFFER_SIZE, stdin) == nullptr)
