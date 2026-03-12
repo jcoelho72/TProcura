@@ -1798,7 +1798,7 @@ void TProcura::SolicitaInstancia() {
 			Dominio(instancia.valor, instancia.min, instancia.max);
 		}
 		else if (texto.Count() < 256)
-			ficheiroInstancia = texto.tok().First();
+			ficheiroInstancia = texto;
 	}
 	else
 		instancia.valor = instancia.min;
