@@ -41,8 +41,5 @@ digraph "TVector::Data"
   Node17 [id="Node000017",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
   Node17 -> Node16 [id="edge18_Node000017_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node6 [id="edge19_Node000014_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 -> Node18 [id="edge20_Node000014_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
-  Node18 -> Node5 [id="edge21_Node000018_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 -> Node14 [id="edge22_Node000014_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 -> Node14 [id="edge20_Node000014_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

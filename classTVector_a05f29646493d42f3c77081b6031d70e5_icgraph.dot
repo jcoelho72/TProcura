@@ -92,7 +92,4 @@ digraph "TVector::First"
   Node30 -> Node35 [id="edge51_Node000030_Node000035",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node35 [id="Node000035",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node35 -> Node24 [id="edge52_Node000035_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node36 [id="edge53_Node000001_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node36 [id="Node000036",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
-  Node36 -> Node23 [id="edge54_Node000036_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
