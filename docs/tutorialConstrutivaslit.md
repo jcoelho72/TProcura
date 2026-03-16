@@ -45,11 +45,11 @@ Algoritmos cegos: largura-primeiro; profundidade-primeiro; iterativos;
 
 ## 📖 Leituras
 
-- (Russel & Norvig): Capítulo 4 (2ª edição) | Secções 3.1 a 3.5 (3ª e 4ª edição)
+- (Russel & Norvig): Secções 3.1 a 3.4 (3ª e 4ª edição) | Capítulo 3 (2ª edição) 
 
 ## Bibliografia
 
--	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. https://elibrary.pearson.de/book/99.150005/9781292401171
+-	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. http://aima.cs.berkeley.edu/
 
 
 \htmlonly

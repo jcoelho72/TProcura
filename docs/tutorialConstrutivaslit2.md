@@ -45,11 +45,11 @@ Algoritmos informados: melhor primeiro; A*; BnB.
 
 ## 📖 Leituras
 
-- (Russel & Norvig): Capítulo 4 (2ª edição) | Secções 3.5 e 3.6 (3ª e 4ª edição)
+- (Russel & Norvig): Secções 3.5 e 3.6 (3ª e 4ª edição) | Capítulo 4 (2ª edição) 
 
 ## Bibliografia
 
--	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. https://elibrary.pearson.de/book/99.150005/9781292401171
+-	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. http://aima.cs.berkeley.edu/
 
 
 \htmlonly

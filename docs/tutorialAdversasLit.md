@@ -25,11 +25,11 @@ Algoritmos: MiniMax; Monte Carlo;
 
 ## 📖 Leituras
 
-- (Russel & Norvig): Capítulo 5 (1ª edição) | Capítulo 6 (2ª e 4ª edição) | Capítulo 5 (3ª edição)
+- (Russel & Norvig): Capítulo 5 ou 6, conforme edição (Procura Adversa)
 
 ## Bibliografia
 
--	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. https://elibrary.pearson.de/book/99.150005/9781292401171
+-	Russell, S. J., & Norvig, P. (2021). Artificial intelligence: A modern approach (4th ed.). Pearson. http://aima.cs.berkeley.edu/
 
 
 \htmlonly
