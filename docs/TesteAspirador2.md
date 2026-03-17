@@ -42,7 +42,7 @@
 
 
 Execução de exemplo com base no problema do Aspirador. 
-Pode acompanhar o teste excutando as ações localmente.
+Pode acompanhar o teste executando as ações localmente.
 
 ## Sumário
 

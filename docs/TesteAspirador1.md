@@ -47,7 +47,7 @@ Execução de exemplo com base no problema do Aspirador.
 No Visual Studio, selecione o projeto TProcuraConstrutiva, e execute.
 No Linux na pasta `.../TProcura/Construtiva/Teste$` execute `make` seguido de `./bin/Release/TProcuraConstrutiva`
 
-Pode acompanhar o teste excutando as ações localmente.
+Pode acompanhar o teste executando as ações localmente.
 
 Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, aparecem com realce de cor para facilitar a leitura.
 
