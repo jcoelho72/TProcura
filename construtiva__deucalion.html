@@ -1112,13 +1112,17 @@ puzzle 8</h4>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">2381   </td><td class="markdownTableBodyRight">4765   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">7   </td><td class="markdownTableBodyRight">1505    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">6797   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">552    </td></tr>
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">6797   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">14   </td><td class="markdownTableBodyRight">552    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">28   </td><td class="markdownTableBodyRight">61   </td><td class="markdownTableBodyRight">335    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">53   </td><td class="markdownTableBodyRight">49   </td><td class="markdownTableBodyRight">678   </td></tr>
 </table>
-<p>Esta é o esforço que já tinhamos no exemplo do puzzle 8, mas aqui omitimos os resultados da procura em largura e profundidade que não foram resolvidos.</p>
+<div class="image">
+<img src="puzzle8_esforcoA.png" alt=""/>
+<div class="caption">
+Gráfico do Puzzle 8 – Esforço A</div></div>
+    <p>Esta é o esforço que já tinhamos no exemplo do puzzle 8, mas aqui omitimos os resultados da procura em largura e profundidade que não foram resolvidos.</p>
 <p>Esforço B:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1148,13 +1152,17 @@ puzzle 8</h4>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">23   </td><td class="markdownTableBodyRight">2410   </td><td class="markdownTableBodyRight">4908   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">640    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">6885   </td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">373    </td></tr>
+<td class="markdownTableBodyCenter">25   </td><td class="markdownTableBodyRight">6885   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">2   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">13   </td><td class="markdownTableBodyRight">373    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">27   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">27   </td><td class="markdownTableBodyRight">630    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">54   </td><td class="markdownTableBodyRight">50   </td><td class="markdownTableBodyRight">658   </td></tr>
 </table>
-<p>Com a utilização de mais instâncias, conseguimos um detalhe maior, mas mesmo assim não há instâncias de custo 2, 4, etc.</p>
+<div class="image">
+<img src="puzzle8_esforcoB.png" alt=""/>
+<div class="caption">
+Gráfico do Puzzle 8 – Esforço B</div></div>
+    <p>Com a utilização de mais instâncias, conseguimos um detalhe maior, mas mesmo assim não há instâncias de custo 2, 4, etc.</p>
 <p>Esforço C:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1220,7 +1228,11 @@ puzzle 8</h4>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">30   </td><td class="markdownTableBodyRight"></td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">24   </td><td class="markdownTableBodyRight">22   </td><td class="markdownTableBodyRight">372   </td></tr>
 </table>
-<p>Obtivemos neste esforço instâncias de todos os custos, mas tivemos de omitir a procura em largura, que crashava o processo devido a problemas de memória.</p>
+<div class="image">
+<img src="puzzle8_esforcoC.png" alt=""/>
+<div class="caption">
+Gráfico do Puzzle 8 – Esforço C</div></div>
+    <p>Obtivemos neste esforço instâncias de todos os custos, mas tivemos de omitir a procura em largura, que crashava o processo devido a problemas de memória.</p>
 <p>Por volta do custo 23 a 25 tanto a procura em largura como a profundidade, deixam de conseguir resolver nos 10 segundos de tempo limite. A procura em largura tem um problema extra de memória.</p>
 <p>A versão da procura em profundidade é a iterativa, pelo que tem um comportamento idêntico à procura em largura, sem problema de memória, embora ligeiramente mais lento, como se pode observar no esforço B. No entanto pode ser mantido no esforço C por não estoirar a memória, ao contrário da procura em largura.</p>
 <p>Vemos que o melhor primeiro tem consistentemente melhores tempos. No entanto não obtém a solução ótima, ao contrário dos restantes algoritmos. Entre os algoritmos que obtêm a solução ótima, o A* e o IDA* são os mais rápidos seguido do Branch and Bound.</p>
