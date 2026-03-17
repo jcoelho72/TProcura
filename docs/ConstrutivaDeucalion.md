@@ -1019,9 +1019,11 @@ Esforço A:
 | 19 | 236 | 471 | 1 | 2 | 2 | 150 |
 | 21 | 781 | 1559 | 6 | 3 | 5 | 1196 |
 | 23 | 2381 | 4765 | 5 | 6 | 7 | 1505 |
-| 25 | | 6797 | 2 | 8 | 14 | 552 |
+| 25 | 6797 | | 2 | 8 | 14 | 552 |
 | 27 | | | 2 | 28 | 61 | 335 |
 | 29 | | | 5 | 53 | 49 | 678 |
+
+![Gráfico do Puzzle 8 – Esforço A](images/puzzle8_esforcoA.png)
 
 Esta é o esforço que já tinhamos no exemplo do puzzle 8, mas aqui omitimos os resultados da procura em largura e profundidade que
 não foram resolvidos.
@@ -1042,9 +1044,11 @@ Esforço B:
 | 19 | 267 | 532 | 4 | 2 | 2 | 895 |
 | 21 | 804 | 1619 | 4 | 3 | 4 | 891 |
 | 23 | 2410 | 4908 | 3 | 6 | 8 | 640 |
-| 25 | | 6885 | 2 | 13 | 13 | 373 |
+| 25 | 6885 | | 2 | 13 | 13 | 373 |
 | 27 | | | 3 | 23 | 27 | 630 |
 | 29 | | | 5 | 54 | 50 | 658 |
+
+![Gráfico do Puzzle 8 – Esforço B](images/puzzle8_esforcoB.png)
 
 Com a utilização de mais instâncias, conseguimos um detalhe maior, mas mesmo assim não há instâncias de custo 2, 4, etc.
 
@@ -1082,6 +1086,8 @@ Esforço C:
 | 28 | | 3 | 34 | 40 | 640 |
 | 29 | | 3 | 34 | 35 | 484 |
 | 30 | | 3 | 24 | 22 | 372 |
+
+![Gráfico do Puzzle 8 – Esforço C](images/puzzle8_esforcoC.png)
 
 Obtivemos neste esforço instâncias de todos os custos, mas tivemos de omitir a procura em largura,
 que crashava o processo devido a problemas de memória.
