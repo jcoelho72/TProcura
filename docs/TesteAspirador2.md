@@ -216,7 +216,7 @@ Opção:
 </pre>
 \endhtmlonly
 
-Com o nível debug a 3 evemos a árvore de procura sem os estados expandidos, mas vemos as ações.
+Com o nível debug a 3 vemos a árvore de procura sem os estados expandidos, mas vemos as ações.
 Vemos no entanto todos os estados folha, o que pode ser importante para conhecer os estados cortados.
 A informação é mais reduzida, e poderá ser uma boa forma de analisar e ver a árvore,
 o que com a informação completa dos estados poderia já não ser possível.
@@ -314,10 +314,10 @@ Cada iteração fica marcada com a sinalética de árvore, e com a escada com o 
 Essas árvores de procura a mais, são muito mais pequenas que a árvore final,
 pelo que o peso de executar essas procuras extra não é muito relevante.
 
-As iterações que não serviram para nada, é na verdade uma afimrmação pouco precisa.
+As iterações que não serviram para nada, é na verdade uma afirmação pouco precisa.
 Serviram para saber que não há solução nesse nível.
 Apenas assim é que se pode concluir na iteração 4 que a solução é óptima.
-Executando a procura em profundidade com limite 4, obtinhamos a solução ótima, mas sem saber que é ótima.
+Executando a procura em profundidade com limite 4, obtínhamos a solução ótima, mas sem saber que é ótima.
 
 Podemos ver também a versão compactada da árvore de procura, contendo apenas informação do estado, 
 tal como na procura em largura, mas desta vez com informação de onde o estado veio.

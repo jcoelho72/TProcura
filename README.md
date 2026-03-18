@@ -208,7 +208,7 @@ Superclasses:
 - [Testes Computacionais](tutorial_testes.html)
 
 Listam-se de seguida exemplos de utilização de cada classe.
-Estes exemlos fazem parte dos tutoriais, mas caso pretenda pode ver apenas os exemplos sem necessidade de fazer o tutorial.
+Estes exemplos fazem parte dos tutoriais, mas caso pretenda pode ver apenas os exemplos sem necessidade de fazer o tutorial.
 
 Problemas de exemplo da classe TProcura:
 1. [TesteTVetor](teste_tvector.html)

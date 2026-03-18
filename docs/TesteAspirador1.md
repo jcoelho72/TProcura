@@ -58,7 +58,7 @@ Nota: ao executar no terminal, os parâmetros, indicadores e outros elementos, a
 - [Ação 2 - Explorar os sucessores](#aspirador-a2)
 - [Ação 3 - Ver a solução/caminho realizada manualmente](#aspirador-a3)
 - [Ação 4 - Ver a alterar um parâmetro](#aspirador-a4)
-- [Ação 5 - Efetuer uma procura em Largura](#aspirador-a5)
+- [Ação 5 - Efetuar uma procura em Largura](#aspirador-a5)
 - [Ação 6 - Editar opções A](#aspirador-a6)
 - [Ação 7 - Editar opções B](#aspirador-a7)
 - [Ação 8 - Resolver outra instância](#aspirador-a8)
@@ -82,7 +82,7 @@ Opção: <span class="entrada">1</span>
 Selecione o problema do Aspirador: **1.**
 
 A versão deste problema foi generalizada no código para poderem existir N salas, 
-uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.
+umas ao lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.
 
 
 \htmlonly
@@ -209,7 +209,7 @@ No entanto, as ações são unívocas. Podemos indicar várias ações de uma s�
 
 Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. 
 Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores.
-Utilize desta vez o nome das ações e não número, introduzido duas ações de uma vez. 
+Utilize desta vez o nome das ações e não número, introduzindo duas ações de uma vez. 
 Introduza: **dir asp; *ENTER*.**
 Note que "dir asp" podem ser introduzidas de uma vez.
 
@@ -280,7 +280,7 @@ Em outros problemas, a solução pode ser apenas o estado final. Notar ainda na 
 Esta letra representa o custo g(n) no manual, e sempre que ocorra significa o custo desde o estado inicial até esse estado. 
 Neste problema o custo não foi definido, pelo que é adoptado o valor de 1 unidade por cada movimento. 
 
-A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os estados também.
+A visualização de ações é mais curta e simples, mas podemos ver todos os estados também.
 Para isso é preciso alterar o parâmetro P6(VER_ACOES).
 
 \anchor aspirador-a4
@@ -339,7 +339,7 @@ Opção:
 Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.
 
 \anchor aspirador-a5
-## Ação 5 - Efetuer uma procura em Largura
+## Ação 5 - Efetuar uma procura em Largura
 
 ![Procura em Largura - expande primeiro os estados menos profundos](docs/images/aspirador_largura.png)
 
@@ -570,7 +570,7 @@ Opção:
 
 Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g) seguido de dois números: 
 expansões e gerações realizadas até ao momento.
-A lista com os estados gerados nãó expandidos, é ainda visualizada no final.
+A lista com os estados gerados não expandidos, é ainda visualizada no final.
 No caso deste problema o estado é visualizado numa só linha, 
 mas em outros problemas estes dois níveis de debug podem fazer diferença. 
 Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para 
