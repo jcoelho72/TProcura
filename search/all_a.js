@@ -28,7 +28,7 @@ var searchData=
   ['ação_204_20torneio_20profundidade_25',['Ação 4 - Torneio Profundidade',['../teste_jogo_em_linha.html#autotoc_md113',1,'']]],
   ['ação_204_20ver_20a_20alterar_20um_20parâmetro_26',['Ação 4 - Ver a alterar um parâmetro',['../teste_aspirador1.html#autotoc_md89',1,'']]],
   ['ação_204_3a_20menu_205_20indicadores_27',['Ação 4: Menu 5 - Indicadores',['../teste_tvector.html#autotoc_md153',1,'']]],
-  ['ação_205_20efetuer_20uma_20procura_20em_20largura_28',['Ação 5 - Efetuer uma procura em Largura',['../teste_aspirador1.html#autotoc_md90',1,'']]],
+  ['ação_205_20efetuar_20uma_20procura_20em_20largura_28',['Ação 5 - Efetuar uma procura em Largura',['../teste_aspirador1.html#autotoc_md90',1,'']]],
   ['ação_205_20explorar_20todo_20o_20espaço_20de_20estados_29',['Ação 5 - Explorar todo o espaço de estados',['../teste_jogo_do_galo.html#autotoc_md107',1,'']]],
   ['ação_205_20heurística_30',['ação 5 heurística',['../teste_puzzle8b.html#autotoc_md138',1,'Ação 5 - Heurística'],['../teste_8damas.html#autotoc_md70',1,'Ação 5 - Heurística']]],
   ['ação_205_20torneio_20iterativo_31',['Ação 5 - Torneio Iterativo',['../teste_jogo_em_linha.html#autotoc_md114',1,'']]],

@@ -145,7 +145,7 @@ Sumário</h2>
 <li><a class="el" href="teste_aspirador1.html#aspirador-a2">Ação 2 - Explorar os sucessores</a></li>
 <li><a class="el" href="teste_aspirador1.html#aspirador-a3">Ação 3 - Ver a solução/caminho realizada manualmente</a></li>
 <li><a class="el" href="teste_aspirador1.html#aspirador-a4">Ação 4 - Ver a alterar um parâmetro</a></li>
-<li><a class="el" href="teste_aspirador1.html#aspirador-a5">Ação 5 - Efetuer uma procura em Largura</a></li>
+<li><a class="el" href="teste_aspirador1.html#aspirador-a5">Ação 5 - Efetuar uma procura em Largura</a></li>
 <li><a class="el" href="teste_aspirador1.html#aspirador-a6">Ação 6 - Editar opções A</a></li>
 <li><a class="el" href="teste_aspirador1.html#aspirador-a7">Ação 7 - Editar opções B</a></li>
 <li><a class="el" href="teste_aspirador1.html#aspirador-a8">Ação 8 - Resolver outra instância</a></li>
@@ -167,7 +167,7 @@ Opção: <span class="entrada">1</span>
 <div class="caption">
 Aspirador - espaço de estados para 2 salas</div></div>
     <p>Selecione o problema do Aspirador: <b>1.</b></p>
-<p>A versão deste problema foi generalizada no código para poderem existir N salas, uma ou lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.</p>
+<p>A versão deste problema foi generalizada no código para poderem existir N salas, umas ao lado das outras, e não apenas 2 como no manual, sendo em tudo o resto igual.</p>
 <p> 
 <pre>
 Aspirador
@@ -245,7 +245,7 @@ Opção: <span class="entrada">2</span>
 </pre>
 </p>
 <p>Podemos ver que o estado atual tem dois sucessores, o aspirador pode ir para a sala da esquerda, ou aspirar a sala atual. Escolhemos o primeiro estado, e depois escolhemos o segundo, aspirar. Os sucessores são visualizados pelas suas ações, existindo três possíveis ações: esq, dir, asp. Para indicar o número do sucessor, é preciso ver, já que o número 1 é para a primeira ação válida, na lista de sucessores. No entanto, as ações são unívocas. Podemos indicar várias ações de uma só vez.</p>
-<p>Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número, introduzido duas ações de uma vez. Introduza: <b>dir asp; <em>ENTER</em>.</b> Note que "dir asp" podem ser introduzidas de uma vez.</p>
+<p>Neste momento estamos na sala da esquerda, com a sala limpa, mas a sala da direita está suja. Complete os movimentos necessários para limpar ambas as salas, e saia da exploração dos sucessores. Utilize desta vez o nome das ações e não número, introduzindo duas ações de uma vez. Introduza: <b>dir asp; <em>ENTER</em>.</b> Note que "dir asp" podem ser introduzidas de uma vez.</p>
 <p> 
 <pre>
 🔍 Sucessor [1-2, ação(ões), exe]: <span class="entrada">dir asp</span>
@@ -290,7 +290,7 @@ Opção:
 </pre>
 </p>
 <p>Neste problema uma solução é um conjunto de ações, o caminho desde o estado inicial até ao estado final. É mostrado esse caminho visualizando as ações a partir do estado inicial. Foram 4 movimentos, mas houve um desperdício. No primeiro movimento, poderíamos ter logo aspirado. Em outros problemas, a solução pode ser apenas o estado final. Notar ainda na letra g, seguida de um número. Esta letra representa o custo g(n) no manual, e sempre que ocorra significa o custo desde o estado inicial até esse estado. Neste problema o custo não foi definido, pelo que é adoptado o valor de 1 unidade por cada movimento.</p>
-<p>A visualizaçãop de ações é mais curta e simples, mas podemos ver todos os estados também. Para isso é preciso alterar o parâmetro P6(VER_ACOES).</p>
+<p>A visualização de ações é mais curta e simples, mas podemos ver todos os estados também. Para isso é preciso alterar o parâmetro P6(VER_ACOES).</p>
 <p><a class="anchor" id="aspirador-a4"></a></p>
 <h2><a class="anchor" id="autotoc_md89"></a>
 Ação 4 - Ver a alterar um parâmetro</h2>
@@ -340,7 +340,7 @@ Opção:
 <p>Vemos agora a solução, o caminho com todos os estados intermédios do estado inicial até ao estado final.</p>
 <p><a class="anchor" id="aspirador-a5"></a></p>
 <h2><a class="anchor" id="autotoc_md90"></a>
-Ação 5 - Efetuer uma procura em Largura</h2>
+Ação 5 - Efetuar uma procura em Largura</h2>
 <div class="image">
 <img src="aspirador_largura.png" alt=""/>
 <div class="caption">
@@ -536,7 +536,7 @@ Aspirador
 Opção: 
 </pre>
 </p>
-<p>Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g) seguido de dois números: expansões e gerações realizadas até ao momento. A lista com os estados gerados nãó expandidos, é ainda visualizada no final. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.</p>
+<p>Podemos ver que o estado já não é mostrado. Em cada expansão é mostrado o custo (g) seguido de dois números: expansões e gerações realizadas até ao momento. A lista com os estados gerados não expandidos, é ainda visualizada no final. No caso deste problema o estado é visualizado numa só linha, mas em outros problemas estes dois níveis de debug podem fazer diferença. Notar que não houve alteração no número de expansões e gerações, muito embora a técnica para lidar com os estados repetidos seja distinta.</p>
 <p>É importante observar a procura em instâncias pequenas, para poder observar ineficiências, como os estados repetidos, ou mesmo bugs.</p>
 <p>O nível de debug 1 insere um # por cada 1000 expansões, de modo a dar alguma noção de como vai a procura, e o nível 0 não dá qualquer informação.</p>
 <p><a class="anchor" id="aspirador-a8"></a></p>
