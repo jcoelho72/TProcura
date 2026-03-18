@@ -38,7 +38,7 @@ public:
 	int Heuristica(void);
 
 	bool Distinto(TProcuraConstrutiva* estado);
-	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
+	void Codifica(TBits &estado);
 
 private:
 	void Trocar(int a, int b) {

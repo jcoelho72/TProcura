@@ -7,8 +7,6 @@
 #include <mpi.h>
 #endif
 
-constexpr int BUFFER_SIZE = 1024;
-
 // valor de infinito (vitoria/derrota), omissao 1000 
 int TProcuraAdversa::infinito = 1000;
 // controlo para indicar se a procura foi realizada de forma completa (c.c. foi cortada)
@@ -1148,12 +1146,10 @@ bool TProcuraAdversa::ExisteHT() {
 	unsigned int original = Hash();
 	unsigned int indice = original % TAMANHO_HASHTABLE;
 	indiceHT = indice;
-	for (int i = 0; i < tamanhoCodificado; i++) {
-		if (elementosHT[indice][i] != estadoCodHT[i]) {
-			SubstituirHT(indice);
-			colocadosHT++;
-			return false; // não existia
-		}
+	if (elementosHT[indice] != estadoCodHT) {
+		SubstituirHT(indice);
+		colocadosHT++;
+		return false; // não existia
 	}
 	return false; // é como se não existisse, mas está lá
 }

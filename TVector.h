@@ -1256,6 +1256,137 @@ public:
 
 };
 
+class TBits : public TVector<uint64_t> {
+public:
+	// Construtores herdados
+	TBits(int words = 0) : TVector<uint64_t>(words) { Count(words); }
+
+	inline unsigned int Hash() const;
+
+	// --- Operações binárias entre TBits ---
+	inline TBits operator&(const TBits& other) const;
+	inline TBits operator|(const TBits& other) const;
+	inline TBits operator^(const TBits& other) const;
+	inline TBits operator~() const;
+
+	TBits& operator&=(const TBits& other) { return *this = *this & other; }
+	TBits& operator|=(const TBits& other) { return *this = *this | other; }
+	TBits& operator^=(const TBits& other) { return *this = *this ^ other; }
+
+	// --- Bits individuais ---
+	inline bool GetBit(int index) const;
+	inline void SetBit(int index, bool value);
+
+	// --- Inserir / extrair inteiros pequenos ---
+	inline void SetBits(uint64_t value, int bitIndex, int bitCount);
+	inline uint64_t GetBits(int bitIndex, int bitCount) const;
+};
+
+unsigned int TBits::Hash() const {
+	// utilizando FNV-1 hash (http://www.isthe.com/chongo/tech/comp/fnv/)
+	uint32_t h = 2166136261;
+	for (uint64_t word : *this) {
+		// processar cada octeto 
+		// quando o valor fica 0, já não interessa
+		// já que existindo dados, são distintos de 0
+		for (int i = 0; i < 8 && word; i++) {
+			unsigned char octeto = word & 255;
+			word >>= 8;
+			h *= 16777619;
+			h ^= octeto;
+		}
+	}
+	return h;
+}
+
+TBits TBits::operator&(const TBits& other) const {
+	int n = (Count() < other.Count() ? Count() : other.Count());
+	TBits r(n);
+	for (int i = 0; i < n; i++)
+		r[i] = Data()[i] & other[i];
+	return r;
+}
+
+TBits TBits::operator|(const TBits& other) const {
+	int n = (Count() > other.Count() ? Count() : other.Count());
+	TBits r(n);
+	for (int i = 0; i < n; i++) {
+		uint64_t a = (i < Count()) ? Data()[i] : 0;
+		uint64_t b = (i < other.Count()) ? other[i] : 0;
+		r[i] = a | b;
+	}
+	return r;
+}
+
+TBits TBits::operator^(const TBits& other) const {
+	int n = (Count() > other.Count() ? Count() : other.Count());
+	TBits r(n);
+	for (int i = 0; i < n; i++) {
+		uint64_t a = (i < Count()) ? Data()[i] : 0;
+		uint64_t b = (i < other.Count()) ? other[i] : 0;
+		r[i] = a ^ b;
+	}
+	return r;
+}
+
+TBits TBits::operator~() const {
+	TBits r(Count());
+	for (int i = 0; i < Count(); i++)
+		r[i] = ~Data()[i];
+	return r;
+}
+
+bool TBits::GetBit(int index) const {
+	int w = index >> 6;
+	int o = index & 63;
+	if (w >= Count()) return false;
+	return (Data()[w] >> o) & 1ULL;
+}
+
+void TBits::SetBit(int index, bool value) {
+	int w = index >> 6;
+	int o = index & 63;
+	if (w >= Count())
+		Count(w + 1);
+
+	uint64_t& word = (*this)[w];
+	if (value)
+		word |= (1ULL << o);
+	else
+		word &= ~(1ULL << o);
+}
+
+void TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
+	int w = bitIndex >> 6;
+	int o = bitIndex & 63;
+
+	if (w + 1 >= Count())
+		Count(w + 2);
+
+	uint64_t mask = ((1ULL << bitCount) - 1) << o;
+	Data()[w] = (Data()[w] & ~mask) | ((value << o) & mask);
+
+	if (o + bitCount > 64) {
+		int spill = (o + bitCount) - 64;
+		uint64_t mask2 = (1ULL << spill) - 1;
+		Data()[w + 1] = (Data()[w + 1] & ~mask2) | (value >> (64 - o));
+	}
+}
+
+uint64_t TBits::GetBits(int bitIndex, int bitCount) const {
+	int w = bitIndex >> 6;
+	int o = bitIndex & 63;
+
+	uint64_t v = (w < Count()) ? (Data()[w] >> o) : 0;
+
+	if (o + bitCount > 64 && w + 1 < Count()) {
+		int spill = (o + bitCount) - 64;
+		v |= Data()[w + 1] << (64 - o);
+	}
+
+	return v & ((1ULL << bitCount) - 1);
+}
+
 template<>
 inline TVector<int>::TVector(const char* str) {
 	TString buffer(str);

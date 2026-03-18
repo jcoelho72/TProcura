@@ -46,7 +46,6 @@ void CParticao::Inicializar(void)
 	}
 
 	numeros.Sort();
-	tamanhoCodificado = 3; // apenas três inteiro de 64 bits, para colocar 3 inteiros de 64 bits
 }
 
 void CParticao::Gravar(void)
@@ -147,9 +146,10 @@ void CParticao::Debug(bool completo)
 
 
 // método para lidar com estados repetidos
-void CParticao::Codifica(uint64_t estado[OBJETO_HASHTABLE])
+void CParticao::Codifica(TBits &estado)
 {
 	int64_t valorMaior, valorMenor, porColocar;
+	estado.Count(3);
 	// como a ordem é fixa, um estado fica definido por:
 	// - números que faltam colocar
 	// - valor atual num lado, o menor

@@ -58,7 +58,6 @@ void CPuzzle8::Inicializar(void)
 	}
 
 	Parametro(ESTADOS_REPETIDOS) = backup;
-	tamanhoCodificado = 1; // apenas um inteiro de 64 bits é suficiente para 4*9 bits
 }
 
 void CPuzzle8::Gravar(void)
@@ -203,10 +202,10 @@ bool CPuzzle8::Distinto(TProcuraConstrutiva *estado)
 	return false;
 }
 
-void CPuzzle8::Codifica(uint64_t estado[OBJETO_HASHTABLE]) 
+void CPuzzle8::Codifica(TBits &estado) 
 {
 	TProcuraConstrutiva::Codifica(estado);
 	// não há simetrias, simplesmente codificar números de 4 bits (0 a 8)
 	for (int i = 0, index = 0; i < 9; i++, index += 4)
-		estado[index >> 6] |= (uint64_t)puzzle[i] << (index & 63);
+		estado.SetBits(puzzle[i], index, 4);
 }

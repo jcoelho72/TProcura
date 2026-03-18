@@ -4,17 +4,15 @@
 
 
 CAspirador::CAspirador(void) : aspirador(0)
-{
-}
+{}
 
 CAspirador::~CAspirador(void)
-{
-}
+{}
 
 TProcuraConstrutiva* CAspirador::Duplicar(void)
 {
 	CAspirador* clone = new CAspirador;
-	if(clone!=NULL)
+	if (clone != NULL)
 		clone->Copiar(this);
 	else
 		memoriaEsgotada = true;
@@ -25,19 +23,18 @@ void CAspirador::Inicializar(void)
 {
 	TProcuraConstrutiva::Inicializar();
 	salas.Count(instancia.valor);
-	for (int i = 0; i < salas.Count(); i++) 
+	for (int i = 0; i < salas.Count(); i++)
 		salas[i] = (TRand::rand() % 2 ? '.' : '*');
 	aspirador = TRand::rand() % salas.Count();
-	tamanhoCodificado = 1; // dá já para bastantes salas
 }
 
 void CAspirador::ResetParametros()
 {
 	TProcuraConstrutiva::ResetParametros();
-	instancia = { "", 4,2,50};
+	instancia = { "", 4,2,50 };
 }
 
-void CAspirador::Sucessores(TVector<TNo>&sucessores)
+void CAspirador::Sucessores(TVector<TNo>& sucessores)
 {
 	CAspirador* sucessor;
 	if (aspirador > 0) { // esquerda
@@ -109,22 +106,22 @@ int CAspirador::Heuristica(void) {
 	if (sujas == 0)
 		return heuristica = 0;
 	return heuristica = sujas + // movimentos a aspirar as casas sujas
-		(abs(aspirador - min) < abs(aspirador-max) ? // ver qual o extermo mais próximo
+		(abs(aspirador - min) < abs(aspirador - max) ? // ver qual o extermo mais próximo
 			abs(aspirador - min) :   // movimentos a ir para o extermo mais próximo
-			abs(aspirador-max)) + 
+			abs(aspirador - max)) +
 		max - min; // após estar nesse extremo, ainda vai ao outro extremo
 }
 
 
 // método para lidar com estados repetidos
-void CAspirador::Codifica(uint64_t estado[OBJETO_HASHTABLE])
+void CAspirador::Codifica(TBits &estado)
 {
 	int i, index;
 	TProcuraConstrutiva::Codifica(estado);
 	// não há simetrias, simplesmente codificar as salas, seguida do aspirador
 	for (i = 0, index = 0; i < salas.Count(); i++, index++)
-		estado[index >> 6] |= (uint64_t)(salas[i] == '*' ? 1 : 0) << (index & 63);
+		estado.SetBit(index, salas[i] == '*');
 	// assumir que o aspirador cabe no resto dos elementos (número de salas pequeno)
-	estado[index >> 6] |= (uint64_t)(aspirador + 1) << (index & 63); 
+	estado.SetBits(aspirador + 1, index, 8);
 	// aspirador+1 para evitar o estado com tudo a zero
 }

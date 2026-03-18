@@ -23,16 +23,12 @@ int TProcuraConstrutiva::geracoes = 0;
 int TProcuraConstrutiva::custoAcao = 0;
 
 
-// tamanho em inteiros de 64 bits de um objeto (inferior ou igual a OBJETO_HASHTABLE)
-int TProcuraConstrutiva::tamanhoCodificado = OBJETO_HASHTABLE;
-
-uint64_t TProcuraConstrutiva::elementosHT[TAMANHO_HASHTABLE][OBJETO_HASHTABLE]; // hashtable0
+TBits TProcuraConstrutiva::elementosHT[TAMANHO_HASHTABLE]; // hashtable0
 int TProcuraConstrutiva::custoHT[TAMANHO_HASHTABLE]; // hashtable / custo do estado que foi gerado
-uint64_t TProcuraConstrutiva::estadoCodHT[OBJETO_HASHTABLE]; // elemento codificado
+TBits TProcuraConstrutiva::estadoCodHT; // elemento codificado
 int TProcuraConstrutiva::colocadosHT = 0; // número de elementos colocados na HT
 
-TProcuraConstrutiva::TProcuraConstrutiva(void) {
-}
+TProcuraConstrutiva::TProcuraConstrutiva(void) {}
 
 
 void TProcuraConstrutiva::ResetParametros()
@@ -60,12 +56,12 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite." },
 		{ "ESTADOS_REPETIDOS", 1,1,3, "Forma de lidar com os estados repetidos (ignorá-los, ascendentes, gerados).", {
 			"ignorar",
 			"ascendentes",
-			"gerados" }	},
+			"gerados" } },
 		{ "PESO_ASTAR", 100, 0, 10000,
 		  "Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. No A*, se peso 0, fica custo uniforme, h(n) não conta, se peso 100 fica A* normal, se superior a 100 aproxima-se do melhor primeiro.",
-		  "", _TV("0,5:7")},
+		  "", _TV("0,5:7") },
 		{ "RUIDO_HEURISTICA",0,-100,100, "Ruído a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.",
-		  "", _TV("0,5:7")},
+		  "", _TV("0,5:7") },
 		{ "BARALHAR_SUCESSORES",0,0,1, "Baralhar os sucessores ao expandir." }
 	};
 
@@ -163,12 +159,12 @@ void TProcuraConstrutiva::LibertarVector(TVector<TNo>& vector, int excepto, int 
 
 
 bool TProcuraConstrutiva::Validar(TVector<TString> solucao) {
-	int custoTotal = 0, nAcoes=0;
+	int custoTotal = 0, nAcoes = 0;
 	// aplicar todas as ações
 	for (auto acao : solucao) {
 		if (!Acao(acao)) {
-			if(Debug(PASSOS, false, "\n │ Ação inválida: %s (custo atual: %d de %d ações válidas)",
-					*acao, custoTotal, nAcoes))
+			if (Debug(PASSOS, false, "\n │ Ação inválida: %s (custo atual: %d de %d ações válidas)",
+				*acao, custoTotal, nAcoes))
 				Debug();
 			resultado = -1; // ação inválida
 			return false;
@@ -181,7 +177,7 @@ bool TProcuraConstrutiva::Validar(TVector<TString> solucao) {
 		return true;
 	}
 	if (Debug(PASSOS, false, "\n │ Solução não completa (custo atual: %d de %d ações válidas)",
-		custoTotal, nAcoes)) 
+		custoTotal, nAcoes))
 		Debug();
 	resultado = -2; // solução incompleta
 	return false;
@@ -392,7 +388,7 @@ int TProcuraConstrutiva::SolucaoParcial(int i, TVector<TNo>& sucessores, int iAu
 
 TVector<TString> TProcuraConstrutiva::Solucao() {
 	TVector<TString> resultado;
-	for (int i = 0; i < caminho.Count() - 1; i++) 
+	for (int i = 0; i < caminho.Count() - 1; i++)
 		resultado += caminho[i]->Acao(caminho[i + 1]);
 	if (resultado.Empty())
 		resultado += TString("vazio"); // para garantir que o resultado não é vazio, para efeitos de validação
@@ -897,17 +893,14 @@ void TProcuraConstrutiva::Explorar() {
 			opcao = 0;
 		}
 		else {
-			char str[BUFFER_SIZE];
+			TString str;
 			printf("\n%-2sSucessor [1-%d, ação(ões), exe]: ", Icon(EIcon::EXP), sucessores.Count());
-			if (!fgets(str, BUFFER_SIZE, stdin))
-				str[0] = 0;
-			opcao = atoi(str);
+			opcao = atoi(str = NovoTexto(""));
 			if (opcao == 0 && strlen(str) > 1) {
-				char* token;
+				TVector<TString> acoes = str.tok();
 				opcao = sucessores.Count() + 1;
-				token = strtok(str, " \t\n\r");
 				// executar algoritmo
-				if (strcmp(token, "exe") == 0) {
+				if (strcmp(acoes.First(), "exe") == 0) {
 					TVector<TNo> backup;
 					backup = caminho;
 					caminho = {};
@@ -931,17 +924,16 @@ void TProcuraConstrutiva::Explorar() {
 				}
 				else {
 					int nAcoes = 0;
-					do {
+					for (int i = 0; i < acoes.Count(); i++) {
 						// executar a ação
-						if (Acao(token))
+						if (Acao(acoes[i]))
 							nAcoes++;
 						else {
-							TProcura::Mensagem(Icon(EIcon::IMP), "Ação %s inválida.", token);
+							TProcura::Mensagem(Icon(EIcon::IMP), "Ação %s inválida.", *acoes[i]);
 							break;
 						}
-						token = strtok(NULL, " \t\n\r");
 
-						if (token != NULL) {
+						if (i < acoes.Count() - 1) {
 							// há outra ação, é preciso atualizar o caminho
 							caminho += Duplicar();
 							if (caminho.Count() > 1)
@@ -949,8 +941,7 @@ void TProcuraConstrutiva::Explorar() {
 							else
 								caminho.Last()->custo = 0;
 						}
-
-					} while (token != NULL);
+					}
 					if (nAcoes > 0)
 						TProcura::Mensagem(Icon(EIcon::SOL), "Executadas %d ações.", nAcoes);
 				}
@@ -965,38 +956,19 @@ void TProcuraConstrutiva::Explorar() {
 }
 
 unsigned int TProcuraConstrutiva::Hash() {
-	// utilizando FNV-1 hash (http://www.isthe.com/chongo/tech/comp/fnv/)
-	uint32_t h = 2166136261;
 	Codifica(estadoCodHT);
-	for (int i = 0; i < OBJETO_HASHTABLE && estadoCodHT[i]; i++) {
-		uint64_t valor = estadoCodHT[i];
-		// processar cada octeto 
-		// quando o valor fica 0, já não interessa
-		// já que existindo dados, são distintos de 0
-		for (int i = 0; i < 8 && valor; i++) {
-			unsigned char octeto = valor & 255;
-			valor >>= 8;
-			h *= 16777619;
-			h ^= octeto;
-		}
-	}
-	return h % TAMANHO_HASHTABLE;
+	return estadoCodHT.Hash() % TAMANHO_HASHTABLE;
 }
 
 void TProcuraConstrutiva::LimparHT() {
 	if (Parametro(ESTADOS_REPETIDOS) == GERADOS) {
 		if (Parametro(NIVEL_DEBUG) >= ATIVIDADE) {
 			int usado = 0; // contar para calcular taxa de ocupação
-			for (int i = 0; i < TAMANHO_HASHTABLE; i++) {
-				bool limpo = true;
-				for (int j = 0; j < tamanhoCodificado; j++)
-					if (elementosHT[i][j] != 0) {
-						limpo = false;
-						elementosHT[i][j] = 0;
-					}
-				if (!limpo)
+			for (int i = 0; i < TAMANHO_HASHTABLE; i++) 
+				if (elementosHT[i].Count() > 0) {
 					usado++;
-			}
+					elementosHT[i].Count(0);
+				}
 			// reportar estatísticas se existir muito reuso
 			if (Parametro(NIVEL_DEBUG) >= DETALHE && usado > 0 && usado * 2 <= colocadosHT) {
 				NovaLinha();
@@ -1007,8 +979,7 @@ void TProcuraConstrutiva::LimparHT() {
 		}
 		else
 			for (int i = 0; i < TAMANHO_HASHTABLE; i++)
-				for (int j = 0; j < tamanhoCodificado; j++)
-					elementosHT[i][j] = 0;
+				elementosHT[i].Count(0);
 		colocadosHT = 0;
 		// coloca o estado atual na hasttable, para não ser gerado
 		ExisteHT();
@@ -1020,12 +991,11 @@ bool TProcuraConstrutiva::ExisteHT() {
 	// se existe retorna verdade, e estiver lá outro elemento, substitui
 	unsigned int original = Hash();
 	unsigned int indice = original % TAMANHO_HASHTABLE;
-	for (int i = 0; i < tamanhoCodificado; i++)
-		if (elementosHT[indice][i] != estadoCodHT[i]) {
-			SubstituirHT(indice);
-			colocadosHT++;
-			return false; // não existia
-		}
+	if (elementosHT[indice] != estadoCodHT) {
+		SubstituirHT(indice);
+		colocadosHT++;
+		return false; // não existia
+	}
 	// elemento é igual, mas se o custo for mais alto, não conta
 	// já que este elemento com custo mais baixo, pode conduzir à solução ou melhores soluções
 	// neste caso substitui e retorna que o estado não existe
@@ -1039,8 +1009,7 @@ bool TProcuraConstrutiva::ExisteHT() {
 void TProcuraConstrutiva::SubstituirHT(int indice)
 {
 	// substituir elemento
-	for (int i = 0; i < tamanhoCodificado; i++)
-		elementosHT[indice][i] = estadoCodHT[i];
+	elementosHT[indice]=estadoCodHT;
 	custoHT[indice] = custo;
 }
 
@@ -1048,9 +1017,8 @@ void TProcuraConstrutiva::SubstituirHT(int indice)
 // implementar para utilizar hashtables com perdas
 // converte o estado atual para a variável estado, utilizando o menor espaço possível
 // caso existam simetrias, normalizar o estado antes de codificar, para considerar exploradas todas as versões
-void TProcuraConstrutiva::Codifica(uint64_t estado[OBJETO_HASHTABLE]) {
-	for (int i = 0; i < tamanhoCodificado; i++)
-		estado[i] = 0;
+void TProcuraConstrutiva::Codifica(TBits &estado) {
+	estado.Count(0);
 }
 
 int64_t TProcuraConstrutiva::Indicador(int id)

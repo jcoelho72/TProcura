@@ -38,7 +38,7 @@ public:
 	void Debug(bool completo = true) override;
 	void MostrarSolucao(void) { Debug(); }
 	TString Acao(TProcuraConstrutiva* sucessor);
-	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
+	void Codifica(TBits &estado);
 	void ResetParametros();
 };
 

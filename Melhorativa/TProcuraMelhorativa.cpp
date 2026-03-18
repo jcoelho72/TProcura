@@ -4,8 +4,6 @@
 #include <time.h>
 #include <string.h>
 
-constexpr int BUFFER_SIZE = 1024;
-
 /// @brief Lower Bound, se existir 
 int TProcuraMelhorativa::lowerBound = 0;
 /// @brief Número de estados gerados 

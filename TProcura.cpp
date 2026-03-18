@@ -1753,9 +1753,10 @@ void TProcura::MostrarSolucao() {
 
 
 int TProcura::NovoValor(TString prompt) {
-	char str[BUFFER_SIZE];
+	TString str;
+	str.Count(BUFFER_SIZE);
 	printf("%s", *prompt);
-	if (fgets(str, BUFFER_SIZE, stdin))
+	if (fgets(str.Data(), BUFFER_SIZE, stdin))
 		if (strlen(str) > 1)
 			return atoi(str);
 	return NAO_LIDO;

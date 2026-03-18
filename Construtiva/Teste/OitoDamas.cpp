@@ -34,9 +34,6 @@ void COitoDamas::Inicializar(void)
 		if (linhas.Count() > 0)
 			nDamas = atoi(*linhas.First());
 	}
-
-	// 4 bits por dama, com 40 damas no máximo dá 3 inteiros de 64 bits
-	tamanhoCodificado = (nDamas - 1) * 4 / 64 + 1;
 }
 
 void COitoDamas::Gravar(void)
@@ -100,7 +97,7 @@ void COitoDamas::Debug(bool completo)
 }
 
 
-void COitoDamas::Codifica(uint64_t estado[OBJETO_HASHTABLE])
+void COitoDamas::Codifica(TBits &estado)
 {
 	TVector<int> damas;
 	// obter o estado normalizado, para que os estados fiquem iguais a menos de operações de simetria
@@ -109,7 +106,7 @@ void COitoDamas::Codifica(uint64_t estado[OBJETO_HASHTABLE])
 	// codificar números de 4 bits 
 	// (0 a 7 daria 3 bits, mas para ser múltiplo de 64 usa-se 4 bits)
 	for (int i = 0, index = 0; i < damas.Count(); i++, index += 4)
-		estado[index >> 6] |= (uint64_t)damas[i] << (index & 63);
+		estado.SetBits(damas[i], index, 4);
 }
 
 // coloca em damas o estado normalizado segundo as 3 simetrias

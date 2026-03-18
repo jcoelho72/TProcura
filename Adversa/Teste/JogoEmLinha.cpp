@@ -54,8 +54,6 @@ void CJogoEmLinha::Inicializar(void)
 	tabuleiro.Count(inst.N * inst.M);
 	tabuleiro.Reset('.');
 
-	tamanhoCodificado = (inst.N * inst.M * 2) / 64 + 1;
-
 }
 
 void CJogoEmLinha::Sucessores(TVector<TNo>& sucessores)
@@ -215,12 +213,12 @@ void CJogoEmLinha::TesteManual(TString nome)
 	TProcuraAdversa::TesteManual(nome);
 }
 
-void CJogoEmLinha::Codifica(uint64_t estado[OBJETO_HASHTABLE])
+void CJogoEmLinha::Codifica(TBits &estado)
 {
 	TProcuraConstrutiva::Codifica(estado);
 	// codificar números de 2 bits: ".xo"
 	for (int i = 0, index = 0; i < inst.N * inst.M; i++, index += 2)
-		estado[index >> 6] |= ((uint64_t)Codigo(tabuleiro[i])) << (index & 63);
+		estado.SetBits(Codigo(tabuleiro[i]), index, 2);
 }
 
 int CJogoEmLinha::Heuristica()

@@ -32,7 +32,7 @@ public:
 	void Debug(bool completo = true) override;
 	TString Acao(TProcuraConstrutiva* sucessor);
 	bool Distinto(TNo estado);
-	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
+	void Codifica(TBits &estado);
 	int Heuristica(void);
 };
 

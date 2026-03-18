@@ -31,7 +31,7 @@ public:
 	void Debug(bool completo = true) override;
 	TString Acao(TProcuraConstrutiva* sucessor);
 	void TesteManual(const char* nome);
-	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
+	void Codifica(TBits &estado);
 	int Heuristica(void);
 
 private:

@@ -63,7 +63,7 @@ public:
 
 	TString Acao(TNo sucessor);
 	void TesteManual(TString nome);
-	void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
+	void Codifica(TBits &estado);
 	int Codigo(char peca) { return peca == 'x' ? 1 : (peca == 'o' ? 2 : 3); }
 	int Indice(int i, int j) { return i * inst.M + j; }
 	char Casa(int i, int j) { return tabuleiro[Indice(i, j)]; }

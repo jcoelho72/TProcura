@@ -5,8 +5,6 @@
 
 // número de elementos na hashtable com perdas 
 constexpr int TAMANHO_HASHTABLE = 1000000;
-// tamanho máximo de um objecto, em unidades de 64 bits
-constexpr int OBJETO_HASHTABLE = 5;
 
 class TProcuraConstrutiva;
 class CListaNo;
@@ -381,7 +379,7 @@ public:
 	 * @see Inicializar()
 	 *
 	 * @code
-	 * void CSubProblema::Codifica(uint64_t estado[OBJETO_HASHTABLE])
+	 * void CSubProblema::Codifica(TBits estado)
 	 * {
 	 *     Vector<int> vetor; // assumindo neste exemplo que o estado é um vetor de inteiros pequenos
 	 *     Normalizar(vetor); // o vetor tem várias formas, e agora é normalizado por uma função de CSubProblema
@@ -392,7 +390,7 @@ public:
 	 * }
 	 * @endcode
 	 */
-	virtual void Codifica(uint64_t estado[OBJETO_HASHTABLE]);
+	virtual void Codifica(TBits &estado);
 
 	/**
 	 * @brief Função para calcular quanto falta para o final, o valor da heurística.
@@ -691,8 +689,6 @@ public:
 	static TNo solucao;
 	/// @brief Valor mínimo que a solução pode apresentar, obtido pela procura.
 	static int lowerBound;
-	/// @brief Número de inteiros de 64 bits utilizados para codificar um objeto (≤ OBJETO_HASHTABLE).
-	static int tamanhoCodificado;
 	/// @brief Número de expansões efetuadas.
 	static int expansoes;
 	/// @brief Número de estados gerados.
@@ -773,9 +769,9 @@ protected:
 	void MostrarCaminho();
 
 	// variáveis da hashtable com perdas, se existir uma colisão, substitui
-	static uint64_t elementosHT[TAMANHO_HASHTABLE][OBJETO_HASHTABLE]; // hashtable
+	static TBits elementosHT[TAMANHO_HASHTABLE]; // hashtable
 	static int custoHT[TAMANHO_HASHTABLE]; // hashtable / custo do estado que foi gerado
-	static uint64_t estadoCodHT[OBJETO_HASHTABLE]; // elemento codificado
+	static TBits estadoCodHT; // elemento codificado
 	static int colocadosHT; // número de elementos colocados na HT
 	unsigned int Hash(); // retorna um valor hash do estado atual, após codificado
 	void LimparHT();
