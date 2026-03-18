@@ -88,7 +88,8 @@ digraph "TProcuraMelhorativa::Explorar"
   Node33 -> Node4 [id="edge48_Node000033_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node34 [id="edge49_Node000001_Node000034",color="steelblue1",style="solid",tooltip=" "];
   Node34 [id="Node000034",label="TProcura::NovoValor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7d6b6baca763cf0dd9f5fd8c373415a5",tooltip=" "];
-  Node1 -> Node4 [id="edge50_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node8 [id="edge51_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node12 [id="edge52_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node34 -> Node18 [id="edge50_Node000034_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge51_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node8 [id="edge52_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node12 [id="edge53_Node000001_Node000012",color="steelblue1",style="solid",tooltip=" "];
 }

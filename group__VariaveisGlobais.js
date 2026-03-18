@@ -14,6 +14,5 @@ var group__VariaveisGlobais =
     [ "TProcuraConstrutiva::RAMO_FIM", "group__VariaveisGlobais.html#gada55e3fa56125a6cb779ac683ef8e0c7", null ],
     [ "TProcuraConstrutiva::RAMO_NOVO", "group__VariaveisGlobais.html#ga4e20df8a70f784cfb80db79a4d29c866", null ],
     [ "TProcuraConstrutiva::RAMO_VAZIO", "group__VariaveisGlobais.html#gae056f5ea48dd523ccdf5853116866a25", null ],
-    [ "TProcuraConstrutiva::solucao", "group__VariaveisGlobais.html#gadb0d41114016ec069543b3494b0e0196", null ],
-    [ "TProcuraConstrutiva::tamanhoCodificado", "group__VariaveisGlobais.html#ga514dd29e1b8b06e0ecdf054c992c716b", null ]
+    [ "TProcuraConstrutiva::solucao", "group__VariaveisGlobais.html#gadb0d41114016ec069543b3494b0e0196", null ]
 ];

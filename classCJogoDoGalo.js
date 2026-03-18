@@ -3,7 +3,7 @@ var classCJogoDoGalo =
     [ "CJogoDoGalo", "classCJogoDoGalo.html#ae89ee9625b01e078ebcb0596f8edd989", null ],
     [ "~CJogoDoGalo", "classCJogoDoGalo.html#aa508dab7958912db59fa2d37def8d678", null ],
     [ "Acao", "classCJogoDoGalo.html#ada2a46db2392d43d7e9e6cb956ab2c14", null ],
-    [ "Codifica", "classCJogoDoGalo.html#a64044d4cc95bb6795f37c94e04f23d98", null ],
+    [ "Codifica", "classCJogoDoGalo.html#a0f7ce4a28543ecf008178eaef50763bb", null ],
     [ "Copiar", "classCJogoDoGalo.html#ae674e5a8774f6c0eb2533c68342e185f", null ],
     [ "Debug", "classCJogoDoGalo.html#a7ccc3f62401cbc7c8b45c8c453fd0ba7", null ],
     [ "Duplicar", "classCJogoDoGalo.html#a0ffe5148e0dad4e325c1840d0569f508", null ],

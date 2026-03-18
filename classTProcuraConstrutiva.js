@@ -8,7 +8,7 @@ var classTProcuraConstrutiva =
     [ "BranchAndBound", "group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd", null ],
     [ "CalculaCaminho", "classTProcuraConstrutiva.html#ab3d3ef92421595428a27deef2c3bb668", null ],
     [ "CalcularHeuristicas", "classTProcuraConstrutiva.html#a640e74c9b6cd340761db671438ad679e", null ],
-    [ "Codifica", "group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11", null ],
+    [ "Codifica", "group__RedefinicaoSugerida.html#ga3b3873fa9df6753fd408a8e11e932f9f", null ],
     [ "Copiar", "group__RedefinicaoMandatoria.html#ga92eb7af76e68a20fe542afb459e7d642", null ],
     [ "CustoUniforme", "group__ProcurasCegas.html#ga2343fafdecfd55b69c0ffb71e8f9426b", null ],
     [ "DebugChamada", "classTProcuraConstrutiva.html#ad3d219762fe6430b44b6d7b9e53c3df3", null ],

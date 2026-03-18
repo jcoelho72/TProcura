@@ -17,5 +17,5 @@ var searchData=
   ['branch_20and_20bound_14',['Ação 9 - Branch-and-Bound',['../teste_puzzle8b.html#autotoc_md142',1,'']]],
   ['branch_5fand_5fbound_15',['BRANCH_AND_BOUND',['../TProcuraConstrutiva_8h.html#a80645d45a22bcc4a9a5a384051349d6cade9a43acaeca87b8e53ce328a9000cd5',1,'TProcuraConstrutiva.h']]],
   ['branchandbound_16',['BranchAndBound',['../group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd',1,'TProcuraConstrutiva']]],
-  ['buffer_5fsize_17',['buffer_size',['../TProcuraMelhorativa_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraMelhorativa.cpp'],['../TProcura_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcura.cpp'],['../TProcuraConstrutiva_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraConstrutiva.cpp'],['../TProcuraAdversa_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraAdversa.cpp']]]
+  ['buffer_5fsize_17',['buffer_size',['../TProcura_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcura.cpp'],['../TProcuraConstrutiva_8cpp.html#adf261954779e694ad997533c5da9ad5a',1,'BUFFER_SIZE:&#160;TProcuraConstrutiva.cpp']]]
 ];

@@ -63,9 +63,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Adversa_2Teste_2teste_8cpp.html",
-"TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3",
-"classTCodificacaoInteira.html#a0c5676c1b54ab6bdc1045b98aeafe456",
-"classTVector.html#a35217d9779ea1c7608dac2ffd677c30b"
+"TProcura_8h.html#acd3686fbff542f708cd941c98c4e8a13",
+"classTCodificacaoBinaria.html#a6f922717bd9de7f4c8adae5342f9c047",
+"classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b",
+"structSValorEstado.html#a50ab452ee030441b761efc29dd223eaa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

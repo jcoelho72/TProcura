@@ -3,7 +3,7 @@ var classCPuzzle8 =
     [ "CPuzzle8", "classCPuzzle8.html#affc83c1c8d36cf1bad6fb48b3d5a7dab", null ],
     [ "~CPuzzle8", "classCPuzzle8.html#a05a4b0712e7ff5cea28b6a76b5f9557f", null ],
     [ "Acao", "classCPuzzle8.html#a17bae87193200e355fa7124b9e005141", null ],
-    [ "Codifica", "classCPuzzle8.html#a611b043ab56407d684e27508ef9287fa", null ],
+    [ "Codifica", "classCPuzzle8.html#a0a3733f868f56e1f80a40d7fe5bae27e", null ],
     [ "Copiar", "classCPuzzle8.html#aeff7640f4f77cbc742d751185954bce4", null ],
     [ "Debug", "classCPuzzle8.html#acb9a55050da99ad64e2dc1b32c98d0a1", null ],
     [ "Distinto", "classCPuzzle8.html#aa66512563951c5f94b6b0dcf7d7ea86b", null ],

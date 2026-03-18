@@ -6,7 +6,7 @@ var classCOitoDamas =
     [ "~COitoDamas", "classCOitoDamas.html#ab77af0c222eed335045cf1cc4cbc8ff6", null ],
     [ "Acao", "classCOitoDamas.html#a51f2f9392071f729eaf204211f8febbe", null ],
     [ "Avaliar", "classCOitoDamas.html#ae23eb62823fd90b67fd1292cd6b739e1", null ],
-    [ "Codifica", "classCOitoDamas.html#a0e4d6e25bdbccb703b39604d286e62bf", null ],
+    [ "Codifica", "classCOitoDamas.html#af0a8cab93356541245ab11eba09afb80", null ],
     [ "Copiar", "classCOitoDamas.html#a2249a5984a16e9648370eec2c5034182", null ],
     [ "Copiar", "classCOitoDamas.html#aea4719bda6b412974fc584abf073aef9", null ],
     [ "Cruzamento", "classCOitoDamas.html#a1d576da54373b82c1eb9c3a34c056079", null ],

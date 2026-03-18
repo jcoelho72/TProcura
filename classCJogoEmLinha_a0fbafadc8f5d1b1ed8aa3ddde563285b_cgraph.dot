@@ -42,9 +42,12 @@ digraph "CJogoEmLinha::Sucessores"
   Node17 -> Node18 [id="edge18_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="TProcuraConstrutiva\l::Hash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c",tooltip=" "];
   Node18 -> Node19 [id="edge19_Node000018_Node000019",color="steelblue1",style="solid",tooltip=" "];
-  Node19 [id="Node000019",label="TProcuraConstrutiva\l::Codifica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11",tooltip="Codifica o estado para um vetor de inteiros de 64 bits."];
-  Node17 -> Node20 [id="edge20_Node000017_Node000020",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="TProcuraConstrutiva\l::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057",tooltip=" "];
-  Node15 -> Node11 [id="edge21_Node000015_Node000011",color="steelblue1",style="solid",tooltip=" "];
-  Node15 -> Node12 [id="edge22_Node000015_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="TProcuraConstrutiva\l::Codifica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga3b3873fa9df6753fd408a8e11e932f9f",tooltip="Codifica o estado para um vetor de inteiros de 64 bits."];
+  Node19 -> Node16 [id="edge20_Node000019_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node18 -> Node20 [id="edge21_Node000018_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="TBits::Hash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTBits.html#ae982ae13568bb4c4f3b61cc104761a3e",tooltip=" "];
+  Node17 -> Node21 [id="edge22_Node000017_Node000021",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="TProcuraConstrutiva\l::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057",tooltip=" "];
+  Node15 -> Node11 [id="edge23_Node000015_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node12 [id="edge24_Node000015_Node000012",color="steelblue1",style="solid",tooltip=" "];
 }

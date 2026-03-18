@@ -58,11 +58,14 @@ digraph "CPuzzle8::Inicializar"
   Node22 -> Node23 [id="edge29_Node000022_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="TProcuraConstrutiva\l::Hash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c",tooltip=" "];
   Node23 -> Node24 [id="edge30_Node000023_Node000024",color="steelblue1",style="solid",tooltip=" "];
-  Node24 [id="Node000024",label="TProcuraConstrutiva\l::Codifica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11",tooltip="Codifica o estado para um vetor de inteiros de 64 bits."];
-  Node22 -> Node25 [id="edge31_Node000022_Node000025",color="steelblue1",style="solid",tooltip=" "];
-  Node25 [id="Node000025",label="TProcuraConstrutiva\l::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057",tooltip=" "];
-  Node21 -> Node6 [id="edge32_Node000021_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node21 -> Node26 [id="edge33_Node000021_Node000026",color="steelblue1",style="solid",tooltip=" "];
-  Node26 [id="Node000026",label="TVector::Push",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64",tooltip=" "];
-  Node26 -> Node13 [id="edge34_Node000026_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node24 [id="Node000024",label="TProcuraConstrutiva\l::Codifica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga3b3873fa9df6753fd408a8e11e932f9f",tooltip="Codifica o estado para um vetor de inteiros de 64 bits."];
+  Node24 -> Node2 [id="edge31_Node000024_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node23 -> Node25 [id="edge32_Node000023_Node000025",color="steelblue1",style="solid",tooltip=" "];
+  Node25 [id="Node000025",label="TBits::Hash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTBits.html#ae982ae13568bb4c4f3b61cc104761a3e",tooltip=" "];
+  Node22 -> Node26 [id="edge33_Node000022_Node000026",color="steelblue1",style="solid",tooltip=" "];
+  Node26 [id="Node000026",label="TProcuraConstrutiva\l::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057",tooltip=" "];
+  Node21 -> Node6 [id="edge34_Node000021_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node21 -> Node27 [id="edge35_Node000021_Node000027",color="steelblue1",style="solid",tooltip=" "];
+  Node27 [id="Node000027",label="TVector::Push",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64",tooltip=" "];
+  Node27 -> Node13 [id="edge36_Node000027_Node000013",color="steelblue1",style="solid",tooltip=" "];
 }

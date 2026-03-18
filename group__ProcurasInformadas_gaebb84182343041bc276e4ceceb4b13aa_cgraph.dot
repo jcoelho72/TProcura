@@ -108,14 +108,17 @@ digraph "TProcuraConstrutiva::MelhorPrimeiro"
   Node35 -> Node36 [id="edge66_Node000035_Node000036",color="steelblue1",style="solid",tooltip=" "];
   Node36 [id="Node000036",label="TProcuraConstrutiva\l::Hash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a70375188a6ee7775bc842a3e64f8e35c",tooltip=" "];
   Node36 -> Node37 [id="edge67_Node000036_Node000037",color="steelblue1",style="solid",tooltip=" "];
-  Node37 [id="Node000037",label="TProcuraConstrutiva\l::Codifica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga5ff46e85c8f1394c2502f17025284c11",tooltip="Codifica o estado para um vetor de inteiros de 64 bits."];
-  Node35 -> Node38 [id="edge68_Node000035_Node000038",color="steelblue1",style="solid",tooltip=" "];
-  Node38 [id="Node000038",label="TProcuraConstrutiva\l::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057",tooltip=" "];
-  Node34 -> Node12 [id="edge69_Node000034_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node34 -> Node39 [id="edge70_Node000034_Node000039",color="steelblue1",style="solid",tooltip=" "];
-  Node39 [id="Node000039",label="TVector::Push",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64",tooltip=" "];
-  Node39 -> Node40 [id="edge71_Node000039_Node000040",color="steelblue1",style="solid",tooltip=" "];
-  Node40 [id="Node000040",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
-  Node40 -> Node41 [id="edge72_Node000040_Node000041",color="steelblue1",style="solid",tooltip=" "];
-  Node41 [id="Node000041",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
+  Node37 [id="Node000037",label="TProcuraConstrutiva\l::Codifica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoSugerida.html#ga3b3873fa9df6753fd408a8e11e932f9f",tooltip="Codifica o estado para um vetor de inteiros de 64 bits."];
+  Node37 -> Node4 [id="edge68_Node000037_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node36 -> Node38 [id="edge69_Node000036_Node000038",color="steelblue1",style="solid",tooltip=" "];
+  Node38 [id="Node000038",label="TBits::Hash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTBits.html#ae982ae13568bb4c4f3b61cc104761a3e",tooltip=" "];
+  Node35 -> Node39 [id="edge70_Node000035_Node000039",color="steelblue1",style="solid",tooltip=" "];
+  Node39 [id="Node000039",label="TProcuraConstrutiva\l::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a99b7a74f16f5a1b63b12bf629b902057",tooltip=" "];
+  Node34 -> Node12 [id="edge71_Node000034_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node34 -> Node40 [id="edge72_Node000034_Node000040",color="steelblue1",style="solid",tooltip=" "];
+  Node40 [id="Node000040",label="TVector::Push",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#afd25458f77157e6e8aa4ba0e6be3fb64",tooltip=" "];
+  Node40 -> Node41 [id="edge73_Node000040_Node000041",color="steelblue1",style="solid",tooltip=" "];
+  Node41 [id="Node000041",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
+  Node41 -> Node42 [id="edge74_Node000041_Node000042",color="steelblue1",style="solid",tooltip=" "];
+  Node42 [id="Node000042",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
 }
