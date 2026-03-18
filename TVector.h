@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <initializer_list>
 #include <cstdarg>
+#include <cstdint>
 #include <locale>
 #include "TRand.h"
 
@@ -1363,7 +1364,7 @@ void TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
 	if (w + 1 >= Count())
 		Count(w + 2);
 
-	uint64_t mask = ((1ULL << bitCount) - 1) << o;
+	uint64_t mask = (bitCount == 64 ? ~0ULL : ((1ULL << bitCount) - 1)) << o;
 	Data()[w] = (Data()[w] & ~mask) | ((value << o) & mask);
 
 	if (o + bitCount > 64) {
@@ -1379,12 +1380,10 @@ uint64_t TBits::GetBits(int bitIndex, int bitCount) const {
 
 	uint64_t v = (w < Count()) ? (Data()[w] >> o) : 0;
 
-	if (o + bitCount > 64 && w + 1 < Count()) {
-		int spill = (o + bitCount) - 64;
+	if (o + bitCount > 64 && w + 1 < Count()) 
 		v |= Data()[w + 1] << (64 - o);
-	}
 
-	return v & ((1ULL << bitCount) - 1);
+	return v & (bitCount == 64 ? ~0ULL : ((1ULL << bitCount) - 1));
 }
 
 template<>
