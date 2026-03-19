@@ -148,7 +148,7 @@ Opção:
 </pre>
 </p>
 <p>Temos uma instância das 8 Damas como no exemplo da <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas algumas atacam-se mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto convertem-se em custos, que pretendemos remover. Uma solução de custo 0 é prortanto uma solução válida.</p>
-<p>Temos um número de parametros mais extenso, embora os 5 primeiros parametros sejam os mesmos que no exemplo do teste <a class="el" href="classTVector.html">TVector</a>. O último parametro é o P24, muito embora não estejam 24 parâmetros. O P11 por exemplo não é mostrado. Alguns parâmetros só são ativos devido a valores de outros parametros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parametros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
+<p>Temos um número de parâmetros mais extenso, embora os 5 primeiros parâmetros sejam os mesmos que no exemplo do teste <a class="el" href="classTVector.html">TVector</a>. O último parâmetro é o P24, muito embora não estejam 24 parâmetros. O P11 por exemplo não é mostrado. Alguns parâmetros só são ativos devido a valores de outros parâmetros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parâmetros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
 <p>Vamos trocar para uma instância menor antes de avançarmos, para simplificar a nossa exploração.</p>
 <p>Insira: <b>1; 4.</b></p>
 <p> 
@@ -209,7 +209,7 @@ Opção: <span class="entrada">2</span>
 <p>Podemos utilizar outra codificação, desde que exista forma de codificar todas as soluções de interesse, ou seja, de uma solução converter na codificação única, e descodificar, de uma codificação reconstruir a solução a que corresponde.</p>
 <p>Há outras possibilidades de codificar o problema das 8 damas, estando implementado a codificação com base na permutação, no próximo exemplo.</p>
 <p>Na população os 4 elementos têm cor de fundo para auxiliar a identificação, e os custos têm cor da letra para sinalizar os melhores elementos de forma visual.</p>
-<p>Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parametro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elementos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
+<p>Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parâmetro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elementos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
 <p>Temos 3 operações para testar, a mutação, cruzamento e vizinhança. Vamos começar pela mutação, e mutar o indivíduo 4. Insira: <b>1; 4.</b></p>
 <p> 
 <pre>
@@ -275,7 +275,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>O filho ficou quase igual ao pai, com os três primeiros elementos do pai, e o último da mãe. Existem vários tipos de operadores de cruzamento, controlados pelo parametro P20(TIPO_CRUZAR). Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.</p>
+<p>O filho ficou quase igual ao pai, com os três primeiros elementos do pai, e o último da mãe. Existem vários tipos de operadores de cruzamento, controlados pelo parâmetro P20(TIPO_CRUZAR). Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.</p>
 <p>Falta-nos explorar o operador de vizinhança, pelo que vamos aplicar ao melhor individuo 1, e escolher o melhor vizinho. Insira: <b>3; 1; 1.</b></p>
 <p> 
 <pre>
@@ -1016,7 +1016,7 @@ Opção:
 <h2><a class="anchor" id="autotoc_md79"></a>
 Ação 4 - Testes empíricos</h2>
 <p>O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter um número considerável de execuções.</p>
-<p>Atendendo ao volume de parametros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
+<p>Atendendo ao volume de parâmetros nos algoritmos evolutivos, estes testes vão utilizar desde logo um cluster (Deucalion).</p>
 <p><a href="melhorativa__deucalion.html">Resultados Deucalion</a></p>
 <p>Neste estudo foi identificada a melhor parametrização para este problema e codificação: <b>P6=20 P7=100 P8=0 P9=1 P10=175 P13=1 P14=100 P16=1 P17=0 P18=3 P19=0 P24=1 P20=0.</b></p>
 <p>Podemos ver como a alteração da parametrização afeta este exemplo:</p>

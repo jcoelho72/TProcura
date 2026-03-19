@@ -214,7 +214,7 @@ Opção:
 <h2><a class="anchor" id="autotoc_md67"></a>
 Ação 2 - Resolver manualmente</h2>
 <p>Há várias formas de se colocar damas no tabuleiro. Está implementada a colocação de uma dama, na linha superior que não esteja atacada.</p>
-<p>Poder-se-ia permitir a colocação de uma dama em qualquer posição. No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia. Caso se tivessem implementado diferentes opções, seria adicionado um parametro, e os sucessores seria distinto conforme o valor desse parâmetro.</p>
+<p>Poder-se-ia permitir a colocação de uma dama em qualquer posição. No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia. Caso se tivessem implementado diferentes opções, seria adicionado um parâmetro, e os sucessores seria distinto conforme o valor desse parâmetro.</p>
 <p>Vamos resolver esta instância manualmente, para explorar o espaço de estados. Introduza: <b>2; d1; d4; d2.</b></p>
 <p> 
 <pre>
@@ -504,7 +504,7 @@ Opções:
   -h              Esta ajuda
   -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
 Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
-   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
+   Executar sem argumentos entra em modo interativo, para explorar todos os parâmetros e indicadores
 
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO):             Largura Primeiro (1 a 7)
@@ -834,7 +834,7 @@ Opção: 3
 <p>Podemos ver que até 40 o tempo é sempre muito baixo. Houve algumas instâncias a levarem 0.16 segundos, mas mesmo essas foram porque tivaram azar na ordem dos sucessores, outras ordens resolveram a instância menos de 1 milisegundo. Aparentam ser as instâncias ímpar as que podem ter um tempo máximo por vezes superior.</p>
 <p>A vantagem dos testes paramétricos permitiu identificar um ponto crítico não identificado inicialmente. A ordem dos sucessores é crítica, mas não é necessário para instâncias deste tamanho, a construção de uma heurística para as ordenar. A ordem aleatória é suficiente, juntamente com um algoritmo cego em produnfidade ilimitada.</p>
 <p>Caso o tamanho das instâncias aumente, a heurística que leve a resoluções mais rápidas, poderia ser uma mais valia.</p>
-<p>Naturalmente que se poderiam fazer melhorias na implementação, para além de uma heurística. Pode-se implementar testes que permitam podar a árvore de forma a que não elimine soluções. Existindo um teste para verificar se a solução parcial pode ou não ser completa, caso falhe, o ramo pode ser cortado. Um desses casos é verificar se há linhas/colunas, não forçosamente a próxima linha a ser processada, sem damas mas já totalmente atacada. Uma solução parcial deste tipo, não pode ser convertida numa solução completa, pelo que não é necessário gerar sucessores. Esta otimização poderia ser colocada em parametro, e verificar também se compensa o tempo de ser executada.</p>
+<p>Naturalmente que se poderiam fazer melhorias na implementação, para além de uma heurística. Pode-se implementar testes que permitam podar a árvore de forma a que não elimine soluções. Existindo um teste para verificar se a solução parcial pode ou não ser completa, caso falhe, o ramo pode ser cortado. Um desses casos é verificar se há linhas/colunas, não forçosamente a próxima linha a ser processada, sem damas mas já totalmente atacada. Uma solução parcial deste tipo, não pode ser convertida numa solução completa, pelo que não é necessário gerar sucessores. Esta otimização poderia ser colocada em parâmetro, e verificar também se compensa o tempo de ser executada.</p>
 <p> 
 
 <div style="margin:30px 0; display:flex; justify-content:space-between;">
