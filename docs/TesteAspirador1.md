@@ -104,19 +104,19 @@ Opção:
 
 
 Esta é a informação apresentada no teste manual. 
-Na zona superior aparece o nome do problema, seguido dos parametros e valores atuais.
-Podemos ver que o primeiro parametro é o ALGORITMO, e está selecionado de omissão a Largura Primeiro.
+Na zona superior aparece o nome do problema, seguido dos parâmetros e valores atuais.
+Podemos ver que o primeiro parâmetro é o ALGORITMO, e está selecionado de omissão a Largura Primeiro.
 Em termos de NIVEL_DEBUG está selecionado o valor NADA, ou seja, não é mostrada informação de debug.
-Seguem-se outros parametros, os quais alguns serão apresentados ao longo desta execução.
-Os nomes dos parametros e valores, são os mesmos utilizados no código,
+Seguem-se outros parâmetros, os quais alguns serão apresentados ao longo desta execução.
+Os nomes dos parâmetros e valores, são os mesmos utilizados no código,
 e por esse motivo não é utilizada acentuação.
 
-Temos o estado atual após a caixa dos parametros, que tem uma visualização dependente do problema.
+Temos o estado atual após a caixa dos parâmetros, que tem uma visualização dependente do problema.
 
 Após o estado temos o menu, com as opções de inicializar numa nova instância, 
 explorar o espaço de estados, editar os parâmetros atuais, ver a solução atual,
 escolher os indicadors a calcular após execução, 
-executar o algoritmo selecionado com os parametros atuais, editar configurações
+executar o algoritmo selecionado com os parâmetros atuais, editar configurações
 e executar um teste empírico com as configurações atuais.
 
 Tanto os parâmetros como o menu, repetem-se em cada interação.
@@ -668,7 +668,7 @@ Com a procura em largura, até que tamanho consegue obter a solução ótima do 
 Depende das condições de execução, vamos colocar na resposta o VPL com a 512MB.
 Consegue resolver com P8(Repetidos)=gerados, até à instância 19, existindo problema de memória na instância 20. 
 Num computador pessoal pode variar, e o limite de tempo pode ocorrer antes do problema de memória. 
-Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instancia 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução
+Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instância 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução
 A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos.
 </details>
 

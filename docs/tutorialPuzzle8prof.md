@@ -758,7 +758,7 @@
   <li>Começamos por expandir o primeiro estado, na linha 1, dando origem aos
     estados das linhas 2 a 4. O algoritmo prossegue expandindo não a linha 2,
     mas a última linha, a linha 4, daí o número de expansão da linha 4,
-    resultando da linhas 5. Notar que o movimento inverso, que levava à posição
+    resultando na linha 5. Notar que o movimento inverso, que levava à posição
     inicial, não foi gerado, dado que se assume essa optimização, que evita
     alguns ciclos. A implementação desse teste é simples, dado que existe um
     campo em cada estado indicando o pai, pelo que se se gerar um filho igual ao
@@ -772,7 +772,7 @@
     agora, em 6º lugar, gerando as linhas 8 a 10. Expande-se agora a linha 10,
     gerando as linhas 11 e 12, e ao expandir a linha 12 verifica-se que esta é
     um estado solução. O algoritmo pára, podendo reconstruir o caminho desde
-    estado inicial ao estado final através da indicação dos estados pai.</li>
+    o estado inicial até ao estado final através da indicação dos estados pai.</li>
 </ul>
 <p></p>
 <hr>

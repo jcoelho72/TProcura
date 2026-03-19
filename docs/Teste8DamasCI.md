@@ -67,12 +67,12 @@ Esta é uma solução completa aleatória, que pretendemos melhorar.
 Tem ainda violações, que são damas a atacarem-se, que neste contexto convertem-se em custos,
 que pretendemos remover. Uma solução de custo 0 é prortanto uma solução válida.
 
-Temos um número de parametros mais extenso,
-embora os 5 primeiros parametros sejam os mesmos que no exemplo do teste TVector.
-O último parametro é o P24, muito embora não estejam 24 parâmetros. 
+Temos um número de parâmetros mais extenso,
+embora os 5 primeiros parâmetros sejam os mesmos que no exemplo do teste TVector.
+O último parâmetro é o P24, muito embora não estejam 24 parâmetros. 
 O P11 por exemplo não é mostrado.
-Alguns parâmetros só são ativos devido a valores de outros parametros.
-Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parametros, e por esse motivo
+Alguns parâmetros só são ativos devido a valores de outros parâmetros.
+Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parâmetros, e por esse motivo
 são mostrados bastantes. Iremos abordar cada um no momento próprio.
 
 Vamos trocar para uma instância menor antes de avançarmos, para simplificar a nossa exploração.
@@ -168,7 +168,7 @@ e os custos têm cor da letra para sinalizar os melhores elementos de forma visu
 
 Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. 
 A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos.
-Podemos alterar através do parametro P24(TIPO_DISTANCIA):. 
+Podemos alterar através do parâmetro P24(TIPO_DISTANCIA):. 
 Há vários tipos de distâncias disponíveis dependendo da codificação.
 Há dois elementos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.
 
@@ -250,7 +250,7 @@ Insira: **2; 1; 3; 4.**
 \endhtmlonly
 
 O filho ficou quase igual ao pai, com os três primeiros elementos do pai, e o último da mãe. 
-Existem vários tipos de operadores de cruzamento, controlados pelo parametro P20(TIPO_CRUZAR).
+Existem vários tipos de operadores de cruzamento, controlados pelo parâmetro P20(TIPO_CRUZAR).
 Diferentes operadores estão disponíveis em diferentes codificações, podendo cada operador ter também parâmetros próprios.
 
 Falta-nos explorar o operador de vizinhança, pelo que vamos aplicar ao melhor individuo 1, e escolher o melhor vizinho. 
@@ -1124,7 +1124,7 @@ Para identificar as melhores parametrizações, temos de ter testes empíricos, 
 O modo interativo é importante para compreender e aprender, mas para se poder tirar conclusões temos de ter 
 um número considerável de execuções.
 
-Atendendo ao volume de parametros nos algoritmos evolutivos,
+Atendendo ao volume de parâmetros nos algoritmos evolutivos,
 estes testes vão utilizar desde logo um cluster (Deucalion).
 
 [Resultados Deucalion](melhorativa__deucalion.html)

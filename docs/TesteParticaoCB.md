@@ -1061,7 +1061,7 @@ pelo que nem sempre dois elementos bons geram bons filhos.
 \anchor particao-cb4
 ## Ação 3 - Testes empíricos
 
-Atendendo ao volume de parametros nos algoritmos evolutivos,
+Atendendo ao volume de parâmetros nos algoritmos evolutivos,
 estes testes vão utilizar desde logo um cluster (Deucalion).
 
 [Resultados Deucalion](melhorativa__deucalion.html)

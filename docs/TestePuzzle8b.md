@@ -564,7 +564,7 @@ Opções:
   -h              Esta ajuda
   -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
 Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
-   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
+   Executar sem argumentos entra em modo interativo, para explorar todos os parâmetros e indicadores
 
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO):             Largura Primeiro (1 a 7)
@@ -679,7 +679,7 @@ Obtemos a seguinte tabela:
 | Máximo de I1(IND_CUSTO)2 | 29 | 27 | 815 | 29 | 29 | 29 |
 | Soma de Resolvido | 40 | 39 | 40 | 40 | 40 | 40 |
 
-A versão da procura em profundidade, é a versão iterativa, com o parametro P7=0, sendo esse o valor de omissão.
+A versão da procura em profundidade, é a versão iterativa, com o parâmetro P7=0, sendo esse o valor de omissão.
 
 Podemos agora confirmar que:
 - procuras informadas são no geral mais eficientes em termos de tempo;

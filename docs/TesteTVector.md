@@ -97,7 +97,7 @@ Este texto é importante se os dados de teste estivessem em ficheiros.
 Neste caso fizemos um gerador de dados, geramos os dados aleatoriamente e colocamos no vetor,
 não é preciso o ficheiro.
 
-Vamos voltar para a instãncia 1, para confirmar que é a mesma,
+Vamos voltar para a instância 1, para confirmar que é a mesma,
 apenas assim se pode garantir que tudo o que se faz em TProcura, é reproduzivel. Introduza: 1; 1.
 
 \htmlonly

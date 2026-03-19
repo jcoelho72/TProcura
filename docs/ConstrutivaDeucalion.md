@@ -756,7 +756,7 @@ slurmstepd: error: *** JOB 636184 ON cna1632 CANCELLED AT 2025-11-07T13:15:37 DU
 
 Ocorreram 3 situações:
 - o teste puzzle8_1C foi abortado devido a problema de memória. Esta situação ocorre devido a estar o algoritmo em largura sem limite, e ter existindo uma instância que requer demasiada memória para executar o algoritmo
-- o teste particao_1C foi abortado devido a erro de memória também, mas neste caso houve erro no parametro P1=2, o que é o custo uniforme, e não P1=3 como deveria, sendo a procura em profundidade.
+- o teste particao_1C foi abortado devido a erro de memória também, mas neste caso houve erro no parâmetro P1=2, o que é o custo uniforme, e não P1=3 como deveria, sendo a procura em profundidade.
 - o teste particao_3C foi abortado devido a limite de tempo para todo o processo ser definido em 2 horas. Não ficou nada gravado dos resultados já obtidos, algo a alterar no futuro, de modo a permitir a continuação de onde se parou.
 
 \htmlonly

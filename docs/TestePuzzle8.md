@@ -193,7 +193,7 @@ Assim temos uma forma compacta mais cómuda de ver soluções.
 \anchor puzzle8-a3
 ## Ação 3 - Procura em Largura
 
-Começamos pela procura em largura nesta instãncia, colocando debug a 4.
+Começamos pela procura em largura nesta instância, colocando debug a 4.
 Introduza: **1; 4; 3; 2; 4; *ENTER*; 6**
 
 \htmlonly
@@ -692,7 +692,7 @@ Opção:
 Podemos ver que o número de expansões e gerações é consideravelmente superior. 
 O tempo foi idêntico mesmo com mais gerações, mas isso deve-se ao nível de debug utilizado.
 
-A verificação dos estados repetidos, é portanto um parametro bastante importante neste problema, em que
+A verificação dos estados repetidos, é portanto um parâmetro bastante importante neste problema, em que
 o mesmo estado pode surgir várias vezes. Vamos então testar a eliminação de todos os estados repetidos gerados.
 Introduza: **1; 40; 3; 8; 3; *ENTER*; 6.**
 

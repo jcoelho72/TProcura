@@ -136,7 +136,7 @@ Está implementada a colocação de uma dama, na linha superior que não esteja 
 
 Poder-se-ia permitir a colocação de uma dama em qualquer posição. 
 No entanto, como em cada linha tem de estar uma dama, optamos por colocar sempre na primeira linha vazia.
-Caso se tivessem implementado diferentes opções, seria adicionado um parametro,
+Caso se tivessem implementado diferentes opções, seria adicionado um parâmetro,
 e os sucessores seria distinto conforme o valor desse parâmetro.
 
 Vamos resolver esta instância manualmente, para explorar o espaço de estados.
@@ -480,7 +480,7 @@ Opções:
   -h              Esta ajuda
   -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - último campo
 Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2
-   Executar sem argumentos entra em modo interativo, para explorar todos os parametros e indicadores
+   Executar sem argumentos entra em modo interativo, para explorar todos os parâmetros e indicadores
 
 ┌─ ⚙ Parâmetros ──────────────────────────────────────────────────────
 │ P1(ALGORITMO):             Largura Primeiro (1 a 7)
@@ -801,7 +801,7 @@ Pode-se implementar testes que permitam podar a árvore
 de forma a que não elimine soluções. Existindo um teste para verificar se a solução parcial pode ou não ser completa, caso falhe, o ramo pode ser cortado.
 Um desses casos é verificar se há linhas/colunas, não forçosamente a próxima linha a ser processada, sem damas mas já totalmente atacada.
 Uma solução parcial deste tipo, não pode ser convertida numa solução completa, pelo que não é necessário gerar sucessores.
-Esta otimização poderia ser colocada em parametro, e verificar também se compensa o tempo de ser executada.
+Esta otimização poderia ser colocada em parâmetro, e verificar também se compensa o tempo de ser executada.
 
 
 \htmlonly

@@ -143,12 +143,12 @@ o ficheiro de resultados fica com o nome nome_ID_B.
 - Linha de comando
 - Output obtido
 
-Execução com todos os parametros, pronta a reproduzir, utilizando a menor carga de esforço.
+Execução com todos os parâmetros, pronta a reproduzir, utilizando a menor carga de esforço.
 
 ### Análise e Conclusões
 - Gráficos: [ex.: tempo médio vs. dimensão]
 - Estatísticas: [médias, desvios, testes de significância]
-- Conclusões: [ex.: melhor valor para o parametro é K] 
+- Conclusões: [ex.: melhor valor para o parâmetro é K] 
 
 
 

@@ -1002,7 +1002,7 @@ reduzindo a hipótese de gerar a solução por cruzamento
 \anchor damas-cp4
 ## Ação 4 - Testes empíricos
 
-Atendendo ao volume de parametros nos algoritmos evolutivos,
+Atendendo ao volume de parâmetros nos algoritmos evolutivos,
 estes testes vão utilizar desde logo um cluster (Deucalion).
 
 [Resultados Deucalion](melhorativa__deucalion.html)
