@@ -1260,7 +1260,7 @@ public:
 class TBits : public TVector<uint64_t> {
 public:
 	// Construtores herdados
-	TBits(int words = 0) : TVector<uint64_t>(words) { Count(words); }
+	TBits(int words = 0) : TVector<uint64_t>(words) { Count(words); Reset(0ULL); }
 
 	inline unsigned int Hash() const;
 
@@ -1273,6 +1273,14 @@ public:
 	TBits& operator&=(const TBits& other) { return *this = *this & other; }
 	TBits& operator|=(const TBits& other) { return *this = *this | other; }
 	TBits& operator^=(const TBits& other) { return *this = *this ^ other; }
+
+	// permite usar if (a & b) em que a e b são TBits, para verificar se há algum bit em comum
+	explicit operator bool() const {
+		for (int i = 0; i < Count(); i++)
+			if (Data()[i] != 0ULL)
+				return true;
+		return false;
+	}
 
 	// --- Bits individuais ---
 	inline bool GetBit(int index) const;
@@ -1344,11 +1352,28 @@ bool TBits::GetBit(int index) const {
 	return (Data()[w] >> o) & 1ULL;
 }
 
+uint64_t TBits::GetBits(int bitIndex, int bitCount) const {
+	int w = bitIndex >> 6;
+	int o = bitIndex & 63;
+
+	uint64_t v = (w < Count()) ? (Data()[w] >> o) : 0;
+
+	if (o + bitCount > 64 && w + 1 < Count())
+		v |= Data()[w + 1] << (64 - o);
+
+	return v & (bitCount == 64 ? ~0ULL : ((1ULL << bitCount) - 1));
+}
+
+
 void TBits::SetBit(int index, bool value) {
 	int w = index >> 6;
 	int o = index & 63;
-	if (w >= Count())
+	if (w >= Count()) {
+		int currentWords = Count();
 		Count(w + 1);
+		while (currentWords < Count()) 
+			Data()[currentWords++] = 0ULL;
+	}
 
 	uint64_t& word = (*this)[w];
 	if (value)
@@ -1361,8 +1386,12 @@ void TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
 	int w = bitIndex >> 6;
 	int o = bitIndex & 63;
 
-	if (w + 1 >= Count())
+	if (w + 1 >= Count()) {
+		int currentWords = Count();
 		Count(w + 2);
+		while (currentWords < Count())
+			Data()[currentWords++] = 0ULL;
+	}
 
 	uint64_t mask = (bitCount == 64 ? ~0ULL : ((1ULL << bitCount) - 1)) << o;
 	Data()[w] = (Data()[w] & ~mask) | ((value << o) & mask);
@@ -1374,17 +1403,6 @@ void TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
 	}
 }
 
-uint64_t TBits::GetBits(int bitIndex, int bitCount) const {
-	int w = bitIndex >> 6;
-	int o = bitIndex & 63;
-
-	uint64_t v = (w < Count()) ? (Data()[w] >> o) : 0;
-
-	if (o + bitCount > 64 && w + 1 < Count()) 
-		v |= Data()[w + 1] << (64 - o);
-
-	return v & (bitCount == 64 ? ~0ULL : ((1ULL << bitCount) - 1));
-}
 
 template<>
 inline TVector<int>::TVector(const char* str) {
