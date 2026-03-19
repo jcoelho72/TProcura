@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classTVector.html":[2,0,33],
 "classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b":[2,0,33,49],
 "classTVector.html#a0321e02f28a957bf9ab65102a420e6fc":[2,0,33,21],
 "classTVector.html#a05f29646493d42f3c77081b6031d70e5":[2,0,33,24],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "structSResultadoJogo.html#abd6e08b3c8da859100e6e999490ba794":[2,0,19,1],
 "structSResultadoJogo.html#ae063140594a3f03ce7ee7291264aece6":[2,0,19,0],
 "structSResultadoJogo.html#af361d6a58b5698c4fd15bae4124496e4":[2,0,19,6],
-"structSValorEstado.html":[2,0,20],
-"structSValorEstado.html#a3374e50c2a88a710ddc82d198b48b4c2":[2,0,20,2]
+"structSValorEstado.html":[2,0,20]
 };

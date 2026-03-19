@@ -2,7 +2,7 @@ var searchData=
 [
   ['objetivoalcancado_0',['objetivoalcancado',['../classTProcuraConstrutiva.html#a18331ff4fccaf78df8bd3656357e9e75',1,'TProcuraConstrutiva::ObjetivoAlcancado(TNo estado, bool completa=true)'],['../classTProcuraConstrutiva.html#a8e7879e0ac12522e0eedf3d3d365e51c',1,'TProcuraConstrutiva::ObjetivoAlcancado(int item, TVector&lt; TNo &gt; &amp;lista)']]],
   ['obterextremos_1',['ObterExtremos',['../classTProcuraMelhorativa.html#a1205807eb7d011896ddd38dc5675ab44',1,'TProcuraMelhorativa']]],
-  ['operator_20bool_2',['operator bool',['../classBitRef.html#a58f696de677b3d584677f69636a828ab',1,'BitRef']]],
+  ['operator_20bool_2',['operator bool',['../classBitRef.html#a58f696de677b3d584677f69636a828ab',1,'BitRef::operator bool()'],['../classTBits.html#afcb125acbc7b7527f9ef367dd5ea77f4',1,'TBits::operator bool()']]],
   ['operator_20const_20char_20_2a_3',['operator const char *',['../classTString.html#a0ca00be865ebc173288fc8fc18f2079a',1,'TString']]],
   ['operator_26_4',['operator&amp;',['../classTBits.html#a4684ff5531c165d853483b3097ef635b',1,'TBits']]],
   ['operator_26_3d_5',['operator&amp;=',['../classTBits.html#af12cf77d5d0be21c51ce5bfef36cff91',1,'TBits']]],

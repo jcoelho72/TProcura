@@ -8,4 +8,6 @@ digraph "TBits::TBits"
   Node1 [id="Node000001",label="TBits::TBits",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector\< uint64_t \>\l::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="TVector\< uint64_t \>\l::Reset",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ab36bc3093e75aa4d710d7c9b9c1ca7bd",tooltip="Preenche todo o vetor com um mesmo valor."];
 }
