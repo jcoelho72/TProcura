@@ -475,7 +475,7 @@ Outros estados foram gerados, mas são iguais a menos de operações de simetria
 
 Na árvore de procura esses estados não desaparecem, mas a árvore é podada.
 Se o estado já foi analisado nesse nível (ou com mais profundidade), reutiliza-se o valor em vez de expandir o estado.
-Assim aparecem na árvore como o icon da disquete (`💾`), tendo o seu valor sido obtido da memória.
+Assim aparecem na árvore como o ícon da disquete (`💾`), tendo o seu valor sido obtido da memória.
 
 Vamos continuar, mas reduzindo o nível de debug para detalhe, e ver ações para 4, e aumentando o nível da procura para 3. 
 Insira: **3; 2; 3; 7; 3; 6; 4; *ENTER*; 6.**  
@@ -881,7 +881,7 @@ Opção:
 
 Podemos ver que a árvore de procura já interseta posições em que há vitória de O, sendo o valor de +infinito
 (`🍃 998`). 
-O infinito é de omissão 1000. O X é o primeiro a jogar, e em SolucaoVazia() é indicado que o 
+O infinito é por omissão 1000. O X é o primeiro a jogar, e em SolucaoVazia() é indicado que o 
 primeiro a jogar procura minimizar o jogo.
 O valor dos estados em que O ganha é 998 e não 1000. 
 Ao valor do infinito é subtraído o número de jogadas desde a jogada atual.
@@ -889,7 +889,7 @@ Esta ação tem o efeito de uma derrota de X que seja mais uma jogada, tenha val
 Como O pretende maximizar, prefere sempre as vitórias mais curtas, tal como o X, 
 e ambos preferem as derrotas mais longas.
 
-Após um valor destes ser identificado, existe um icon com uma indicação de vitória/derrota a determinado número de jogadas
+Após um valor destes ser identificado, existe um ícon com uma indicação de vitória/derrota a determinado número de jogadas
 (`☗ 1 { 🔖 8 🔖 9 }`).
 Os sucessores que ainda faltavam analisar são cortados, atendendo a que o jogador com a vez já ganhou neste ramo.
 

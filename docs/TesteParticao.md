@@ -275,7 +275,7 @@ Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=
 │ I1(IND_CUSTO): ✓ 1º lugar
 │ o resultado é o custo da solução atual
 │ I2(Tempo(ms)): ✓ 2º lugar
-│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ✓ 3º lugar
 │ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_EXPANSOES): ✓ 4º lugar
@@ -436,7 +436,7 @@ Podemos ver a tabela resultante:
 | Total Geral | 258,425 | 23,375 |
 
 Toda as instâncias foram resolvidas, e surpresa ou não, a ordem aleatória é superior em média à ordem fixa,
-sendo a média de tempo na instância 92 apenas 46 milisegundos, contra mais de 1 segundo na ordem fixa.
+sendo a média de tempo na instância 92 apenas 46 milissegundos, contra mais de 1 segundo na ordem fixa.
 
 ### Teste: particao_3
 

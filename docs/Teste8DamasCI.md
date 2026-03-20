@@ -167,7 +167,7 @@ Na população os 4 elementos têm cor de fundo para auxiliar a identificação,
 e os custos têm cor da letra para sinalizar os melhores elementos de forma visual.
 
 Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. 
-A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos.
+A medida de distancia por omissão é Hamming, significando que conta simplesmente os valores distintos.
 Podemos alterar através do parâmetro P24(TIPO_DISTANCIA):. 
 Há vários tipos de distâncias disponíveis dependendo da codificação.
 Há dois elementos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.
@@ -388,7 +388,7 @@ sendo a solução obtida retornada.
 \anchor damas-ci3
 ## Ação 3 - Algoritmos evolutivos
 
-Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização de omissão.
+Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização por omissão.
 Insira: **1; 4; 6.**
 
 \htmlonly
@@ -424,7 +424,7 @@ Opção:
 Podemos ver que o primeiro indicador, I1(Resultado) é igual a 0. Este é o custo da solução.
 Podemos observar a solução e ver que as damas não se atacam, aliás, é exatamente a mesma solução obtida manualmente.
 
-O segundo indicador I2(Tempo(ms)) é 0, o que significa que foi consumido menos de 1 milisegundo.
+O segundo indicador I2(Tempo(ms)) é 0, o que significa que foi consumido menos de 1 milissegundo.
 
 Temos o número de iterações a 241, que corresponde às avaliações efetuadas, e 10 épocas,
 o que corresponde ao número de ciclos do algoritmo evolutivo.
@@ -570,7 +570,7 @@ Opção:
 \endhtmlonly
 
 Temos agora a informação das diferentes épocas. 
-Em cada época é registado o instante em que esta ocorre, neste caso apenas alguns milisegundos,
+Em cada época é registado o instante em que esta ocorre, neste caso apenas alguns milissegundos,
 o número da época, e o menor e maior custo na população.
 
 Aqui é possível observar que nesta procura, a melhor solução na população nunca piorou de uma época para a outra.
@@ -1100,7 +1100,7 @@ Há no entanto indicação sobre elite e imigrantes.
 Neste caso a Elite não foi necessária, já que o melhor elemento da nova geração até é melhor que o melhor da geração anterior.
 Nos imigrantes entrou 1, saindo o elemento 9: `├───── 🚶‍🌍 Imigrantes  9✖ →🆕 ─────`.
 
-Ocorreu nesta época a fase de limpeza, tendo sido eliminado um elemento que estava duplicado, atendendo às configurações de omissão: `└───── FASE 🌈  Diversidade - limpeza ─────  🧹 4`
+Ocorreu nesta época a fase de limpeza, tendo sido eliminado um elemento que estava duplicado, atendendo às configurações por omissão: `└───── FASE 🌈  Diversidade - limpeza ─────  🧹 4`
 
 Esta análise permite ver a origem do elemento que tem a solução ótima. Focando agora na época 9, vemos que o filho com custo 0 é o 8.
 Esse elemento tem como irmão uma solução de custo 4, e ambos os pais têm custo 3. Os pais sãos os elementos 12 e 14, vamos ver a sua codificação:

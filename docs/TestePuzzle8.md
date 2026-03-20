@@ -536,7 +536,7 @@ Opção:
 \endhtmlonly
 
 Foram vistos todos os estados, e não se encontrou uma solução.
-No entanto todos os nós folha foram cortados devido ao limite, motivo pelo qual têm o icon da escada.
+No entanto todos os nós folha foram cortados devido ao limite, motivo pelo qual têm o ícon da escada.
 Vamos agora colocar o limite a 0, de modo a executar a iterativa, e debug no nível 2.
 Introduza: **1; 40; 3; 7; 0; 2; 2; *ENTER*; 6.**
 
@@ -655,7 +655,7 @@ A procura em profundidade iterativa encontrou também a solução ótima, com 12
 Foram realizadas 2955 expansões e 5084 gerações, um valor superior à procura em largura.
 
 Notar no entanto no parâmetro P8(ESTADOS_REPETIDOS): ascendentes. Significa que não foram gerados estados, 
-que num dado ramo, já tinham ocorrido anteriormente. Esta é a opção de omissão para este problema, 
+que num dado ramo, já tinham ocorrido anteriormente. Esta é a opção por omissão para este problema, 
 já que foi redefinido CPuzzle8::ResetParametros().
 
 Vamos repetir esta execução, com debug no nível 1, e ignorando repetidos. 
@@ -727,7 +727,7 @@ Opção:
 Podemos ver que o número de exapansões e gerações é ligeiramente inferior à configuração inicial,
 de remover repetidos ascendentes.
 
-Pergunta: o que acontecia se executar-mos a procura em profundidade ilimitada, ao deixar limite com -1, 
+Pergunta: o que acontecia se executarmos a procura em profundidade ilimitada, ao deixar limite com -1, 
 e sem verificar estados repetidos?
 <details>
   <summary>Resposta</summary>

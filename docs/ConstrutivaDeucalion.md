@@ -1104,7 +1104,7 @@ Entre os algoritmos que obtêm a solução ótima, o A* e o IDA* são os mais r�
 
 Em problemas como o puzzle 8, em que a solução pode estar próximo, o A* e o IDA* são os mais aconselhados já que não há o risco
 de se explorar um ramo não ótimo primeiro, com uma solução ótima mesmo ao lado. Isso foi o que aconteceu com as instâncias de custo 5,
-em que o BnB gastou mais de 300 milisegundos, enquanto o A* e o IDA* resolveram em menos de 1 milisegundo.
+em que o BnB gastou mais de 300 milissegundos, enquanto o A* e o IDA* resolveram em menos de 1 milissegundo.
 
 Nesta análise podemos também comcluir que a distância à solução, é um excelente indicador da dificuldade da instância para quase todos os algoritmos.
 A exceção o Branch and Bound que embora retorne a solução óptima em menos de um segundo, o tempo não aumenta com este indicador.
@@ -1258,7 +1258,7 @@ Colocamos também o nível de esforço para se ver o ganho de informação.
 
 Podemos ver que o esforço C tem informação mais estável.
 
-O percentil de 90% sobe até 50 milisegundos para as 40 damas, mas o percentil de 10% mantém-se em 1 milisegundos.
+O percentil de 90% sobe até 50 milissegundos para as 40 damas, mas o percentil de 10% mantém-se em 1 milissegundos.
 
 O valor da mediana é bastante baixo, mas naturalmente que o tempo é uma distribuição bastante assimétrica para este algoritmo e problema.
 Se a ordem aleatória não é favorável, o tempo pode ser muito elevado, mas na maior parte das vezes é baixo.

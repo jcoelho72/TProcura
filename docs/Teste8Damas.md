@@ -497,7 +497,7 @@ Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=
 │ I1(IND_CUSTO): ✓ 1º lugar
 │ o resultado é o custo da solução atual
 │ I2(Tempo(ms)): ✓ 2º lugar
-│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ✓ 3º lugar
 │ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_EXPANSOES): ✓ 4º lugar
@@ -787,12 +787,12 @@ Vamos ver os resultados:
 | 40 | 0 | 1,3 | 7 |
 
 Podemos ver que até 40 o tempo é sempre muito baixo. Houve algumas instâncias a levarem 0.16 segundos, mas mesmo essas
-foram porque tivaram azar na ordem dos sucessores, outras ordens resolveram a instância menos de 1 milisegundo.
+foram porque tiveram azar na ordem dos sucessores, outras ordens resolveram a instância menos de 1 milissegundo.
 Aparentam ser as instâncias ímpar as que podem ter um tempo máximo por vezes superior.
 
 A vantagem dos testes paramétricos permitiu identificar um ponto crítico não identificado inicialmente.
 A ordem dos sucessores é crítica, mas não é necessário para instâncias deste tamanho, a construção de uma heurística para as ordenar.
-A ordem aleatória é suficiente, juntamente com um algoritmo cego em produnfidade ilimitada.
+A ordem aleatória é suficiente, juntamente com um algoritmo cego em profundidade ilimitada.
 
 Caso o tamanho das instâncias aumente, a heurística que leve a resoluções mais rápidas, poderia ser uma mais valia.
 

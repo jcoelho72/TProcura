@@ -105,7 +105,7 @@ Opção:
 
 Esta é a informação apresentada no teste manual. 
 Na zona superior aparece o nome do problema, seguido dos parâmetros e valores atuais.
-Podemos ver que o primeiro parâmetro é o ALGORITMO, e está selecionado de omissão a Largura Primeiro.
+Podemos ver que o primeiro parâmetro é o ALGORITMO, e está selecionado por omissão a Largura Primeiro.
 Em termos de NIVEL_DEBUG está selecionado o valor NADA, ou seja, não é mostrada informação de debug.
 Seguem-se outros parâmetros, os quais alguns serão apresentados ao longo desta execução.
 Os nomes dos parâmetros e valores, são os mesmos utilizados no código,
@@ -115,7 +115,7 @@ Temos o estado atual após a caixa dos parâmetros, que tem uma visualização d
 
 Após o estado temos o menu, com as opções de inicializar numa nova instância, 
 explorar o espaço de estados, editar os parâmetros atuais, ver a solução atual,
-escolher os indicadors a calcular após execução, 
+escolher os indicadores a calcular após execução, 
 executar o algoritmo selecionado com os parâmetros atuais, editar configurações
 e executar um teste empírico com as configurações atuais.
 
@@ -306,7 +306,7 @@ Parâmetro:
 </pre>
 \endhtmlonly
 
-Podemos ver todos os os parâmetros e valores mínimos e máximos.  
+Podemos ver todos os parâmetros e valores mínimos e máximos.  
 Podemos também editar qualquer parâmetro, como é o caso, o parâmetro 6, 
 tem o valor 4, e pretendemos colocar a 1.
 Caso seja definido no problema novos parâmetros, ficariam aqui também expostos ao utilizador para edição.

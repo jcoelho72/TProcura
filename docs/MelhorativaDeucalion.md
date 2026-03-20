@@ -3193,7 +3193,7 @@ Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segu
 | Total Geral | 47 | 100 | 5779 | 22 |
 
 A versão base com a codificação em permutação tinha um comportamento comparável com a codificação inteira.
-Já a versão otimizada tem um resultado que nem se compara. Resolve todas as instâncias em algumas dezenas de milisegundos.
+Já a versão otimizada tem um resultado que nem se compara. Resolve todas as instâncias em algumas dezenas de milissegundos.
 
 Para continuar a otimizar esta versão teriamos de avançar para instâncias maiores, atendendo aos baixos tempos de resolução.
 
@@ -3278,7 +3278,7 @@ nas instâncias mais pequenas atingido antes do tempo limite.
 Mesmo assim podemos observar nas últimas instâncias que a eficiência sobe de 48% para 50%,
 sendo provavelmente os 50% o maior valor possível dado que há instâncias impossíveis.
 Nas instâncias resolvidas os tempos são consideravelmente inferiores, de 2 a 4 segundos por instância para apenas algumas
-dezenas de milisegundos para encontrar a solução.
+dezenas de milissegundos para encontrar a solução.
 Como nesta tabela os resultados das instâncias possíveis são apresentados em conjunto com as instâncias impossíveis,
 a diferença na eficiência aparece diluida, mas mesmo assim melhora de 5,8 segundos para 3,1 segundos.
 

@@ -364,15 +364,15 @@ Opção:
 \endhtmlonly
 
 A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada.
-Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milisegundos.
+Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milissegundos.
 Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura TVector.
 O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.
 
-Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadors, I1 a I4.
+Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadores, I1 a I4.
 
 Os três primeiros indicadores são de TProcura, o quarto indicador é definido em CTesteTVector.
 O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema.
-O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 80. 
+O indicador I2 tem o tempo consumido pelo algoritmo, em milissegundos, neste caso 80. 
 Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância).
 O tempo de calcular os indicadores não é também comtabilizado.
 O indicador I3 tem o número de iterações realizadas. 
@@ -421,7 +421,7 @@ Opção: <span class="entrada">5</span>
 │ <span style="color:gray">I1(Resultado):</span> ✓ 1º lugar 
 │ <span style="color:gray">Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</span>
 │ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
-│ <span style="color:gray">Tempo em milisegundos da execução (medida de esforço computacional).</span>
+│ <span style="color:gray">Tempo em milissegundos da execução (medida de esforço computacional).</span>
 │ <span style="color:gray">I3(Iterações):</span> ✓ 3º lugar 
 │ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 4º lugar 
@@ -431,7 +431,7 @@ Alterar indicador:
 </pre>
 \endhtmlonly
 
-De omissão estão todos os indicadores ligados, e são chamados por ordem de ID. 
+Por omissão estão todos os indicadores ligados, e são chamados por ordem de ID. 
 No entanto, por vezes pretende-se verificar a solução, executando verificações/validações. 
 Outras vezes pretende-se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo.
 Pode-se ainda querer fazer ações após o algoritmo, de transformação da solução, ou gravação da solução para ficheiro.
@@ -453,7 +453,7 @@ Introduza: 1;2;3;2;*ENTER*;1;*ENTER*;6.
 │ <span style="color:gray">I1(Resultado):</span> ✗ inativo 
 │ <span style="color:gray">Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</span>
 │ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
-│ <span style="color:gray">Tempo em milisegundos da execução (medida de esforço computacional).</span>
+│ <span style="color:gray">Tempo em milissegundos da execução (medida de esforço computacional).</span>
 │ <span style="color:gray">I3(Iterações):</span> ✗ inativo 
 │ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 1º lugar 
@@ -518,7 +518,7 @@ Opção: <span class="entrada">7</span>
 \endhtmlonly
 
 Temos aqui a lista dos parâmetros atuais. Há apenas uma configuração, com os parâmetros que alteramos.
-Se não alterarmos parâmetros, estes tomam o valor de omissão, nunca existindo um parâmetro sem valor definido.
+Se não alterarmos parâmetros, estes tomam o valor por omissão, nunca existindo um parâmetro sem valor definido.
 Os parâmetros apenas podem ser alterados para valores dentro dos seus limites.
 
 Existe atualmente apenas uma configuração, em que todos os parâmetros são comuns.
@@ -906,8 +906,8 @@ A informação debug completa mostra por cada execução uma linha.
 Em cada linha é identificado o instante, tarefa, instância, configuração, processo e finalmente os indicadores calculados.
 
 Sobre os resultados mostrados em tabela, podemos ver que o tempo sobe, mas não de forma linear. 
-A instância 1 tem 1 milhão de valores, leva 62 milisegundos.
-A instância 10 tem 10 vezes mais tamanho, mas leva 786 milisegundos.
+A instância 1 tem 1 milhão de valores, leva 62 milissegundos.
+A instância 10 tem 10 vezes mais tamanho, mas leva 786 milissegundos.
 Foram execuções únicas, os valores podem variar demasiado.
 
 Vamos colocar 10 instâncias de cada tipo, variando a semente, para assim ter mais precisão. 
@@ -1014,7 +1014,7 @@ Lista de indicadores:
 │ I1(Resultado): ☑  1º lugar
 │ Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).
 │ I2(Tempo(ms)): ☑  2º lugar
-│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ☑  3º lugar
 │ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_ORDENAR): ☑  4º lugar
@@ -1401,7 +1401,7 @@ Chamamos agora à atenção para o parâmetro -M para especificar o modo:
  -M <modo>       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador
 ```
 
-Na divisão estática, o modo de omissão, as tarefas são previamente divididas pelos processadores.
+Na divisão estática, o modo por omissão, as tarefas são previamente divididas pelos processadores.
 Este modo é excelente se todas as tarefas tiverem duração idêntica.
 
 No modo gestor-trabalhador, a divisão das tarefas é gerida por um dos processos, o processo gestor, que distribui trabalho.

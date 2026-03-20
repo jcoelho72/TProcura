@@ -581,7 +581,7 @@ Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=
 │ I1(IND_CUSTO): ✓ 1º lugar
 │ o resultado é o custo da solução atual
 │ I2(Tempo(ms)): ✓ 2º lugar
-│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ✓ 3º lugar
 │ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_EXPANSOES): ✓ 4º lugar
@@ -600,7 +600,7 @@ A forma como temos o programa, requer interação do utilizador, pelo que tivemo
 
 Pretendemos comparar os algoritmos construtivos para este problema, P1=1,3:7.
 Retiramos o custo uniforme atendendo a que é igual à procura em largura se as ações tiverem todas custo 1,
-e utilizamos o valor de omissão da procura em profundidade, P7=0, para obter a profundidade iterativa.
+e utilizamos o valor por omissão da procura em profundidade, P7=0, para obter a profundidade iterativa.
 
 Precisamos de selecionar instâncias, de simples a complexas.
 Como tempos bastantes instâncias, vamos fixar a semente com 4 valores,
@@ -679,7 +679,7 @@ Obtemos a seguinte tabela:
 | Máximo de I1(IND_CUSTO)2 | 29 | 27 | 815 | 29 | 29 | 29 |
 | Soma de Resolvido | 40 | 39 | 40 | 40 | 40 | 40 |
 
-A versão da procura em profundidade, é a versão iterativa, com o parâmetro P7=0, sendo esse o valor de omissão.
+A versão da procura em profundidade, é a versão iterativa, com o parâmetro P7=0, sendo esse o valor por omissão.
 
 Podemos agora confirmar que:
 - procuras informadas são no geral mais eficientes em termos de tempo;
@@ -724,7 +724,7 @@ Com o esforço atual, existem apenas 40 instâncias. Não temos assim uma amostr
 Para melhorar estes resultados é preciso mais instâncias, utilizando este mesmo teste mas com maior esforço.
 
 Podemos no entanto observar o auemnto gradual do tempo nos algoritmos cegos.
-Pelo contrário, os algoritmos informados têm um tempo muito reduzido, na ordem dos milisegundos.
+Pelo contrário, os algoritmos informados têm um tempo muito reduzido, na ordem dos milissegundos.
 Apenas o BnB tem algum tempo superior, mas que aparenta não ser dependnete da dificuldade da instância,
 será mais relacionado com a sorte ou azar da primeira solução encontrada estar perto ou longe do ótimo.
 
