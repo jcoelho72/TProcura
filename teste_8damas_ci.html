@@ -209,7 +209,7 @@ Opção: <span class="entrada">2</span>
 <p>Podemos utilizar outra codificação, desde que exista forma de codificar todas as soluções de interesse, ou seja, de uma solução converter na codificação única, e descodificar, de uma codificação reconstruir a solução a que corresponde.</p>
 <p>Há outras possibilidades de codificar o problema das 8 damas, estando implementado a codificação com base na permutação, no próximo exemplo.</p>
 <p>Na população os 4 elementos têm cor de fundo para auxiliar a identificação, e os custos têm cor da letra para sinalizar os melhores elementos de forma visual.</p>
-<p>Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. A medida de distancia de omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parâmetro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elementos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
+<p>Temos um mapa de distâncias entre os 4 elementos para dar uma ideia da diversidade da população. A medida de distancia por omissão é Hamming, significando que conta simplesmente os valores distintos. Podemos alterar através do parâmetro P24(TIPO_DISTANCIA):. Há vários tipos de distâncias disponíveis dependendo da codificação. Há dois elementos à distância de 1 unidade, o 2 e 4. De facto, estes diferem apenas no valor do segundo inteiro.</p>
 <p>Temos 3 operações para testar, a mutação, cruzamento e vizinhança. Vamos começar pela mutação, e mutar o indivíduo 4. Insira: <b>1; 4.</b></p>
 <p> 
 <pre>
@@ -392,7 +392,7 @@ Opção:
 <p><a class="anchor" id="damas-ci3"></a></p>
 <h2><a class="anchor" id="autotoc_md78"></a>
 Ação 3 - Algoritmos evolutivos</h2>
-<p>Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização de omissão. Insira: <b>1; 4; 6.</b></p>
+<p>Vamos agora ver como o algoritmo evolutivo poderia obter esta solução de forma automática, com a parametrização por omissão. Insira: <b>1; 4; 6.</b></p>
 <p> 
 <pre>
 Opção: <span class="entrada">6</span>
@@ -423,7 +423,7 @@ Opção:
 </pre>
 </p>
 <p>Podemos ver que o primeiro indicador, I1(Resultado) é igual a 0. Este é o custo da solução. Podemos observar a solução e ver que as damas não se atacam, aliás, é exatamente a mesma solução obtida manualmente.</p>
-<p>O segundo indicador I2(Tempo(ms)) é 0, o que significa que foi consumido menos de 1 milisegundo.</p>
+<p>O segundo indicador I2(Tempo(ms)) é 0, o que significa que foi consumido menos de 1 milissegundo.</p>
 <p>Temos o número de iterações a 241, que corresponde às avaliações efetuadas, e 10 épocas, o que corresponde ao número de ciclos do algoritmo evolutivo. Finalmente, temos o número de estados gerados a 249.</p>
 <p>Há informação visível nos indicadores, mas não vemos nada em termos de funcionamento do algoritmo. O que aconteceu nestas 10 épocas? Vendo a parametrização podemos ver que há população de 20, e toda a informação de operadores e opções. Podemos obter na literatura qual a melhor parametrização para um dado problema ou tipo de problemas, e utilizar como parametrização base. Mas estaremos satisfeitos com esta informação? Não! Precisamos de ver o que se passou em concreto, para saber o que correu bem e menos bem, sem dependências de terceiros. Queremos até mais tarde confirmar que a configuração base é a melhor parametrização possível, ou identificar qual é a mais adequada, pela via experimental.</p>
 <p>Como podemos repetir todas as execuções, podemos ver a mesma execução com diferentes níveis de detalhe. Vamos aproveitar esta execução que tem tamanho reduzido, para ir subindo o nível de debug. Insira: <b>1; 4; 3; 2; 1; <em>ENTER</em>; 6.</b></p>
@@ -541,7 +541,7 @@ Opção: <span class="entrada">6</span>
 Opção: 
 </pre>
 </p>
-<p>Temos agora a informação das diferentes épocas. Em cada época é registado o instante em que esta ocorre, neste caso apenas alguns milisegundos, o número da época, e o menor e maior custo na população.</p>
+<p>Temos agora a informação das diferentes épocas. Em cada época é registado o instante em que esta ocorre, neste caso apenas alguns milissegundos, o número da época, e o menor e maior custo na população.</p>
 <p>Aqui é possível observar que nesta procura, a melhor solução na população nunca piorou de uma época para a outra. Dependente da parametrização, nem sempre esta situação é garantida. A utilização de P16(ELITISMO)=1 garante que pelo menos um elemento da população antiga, irá manter-se caso na nova população não exista nenhum elemento com valor melhor ou igual.</p>
 <p>Aumentamos o conhecimento, mas ainda estamos um pouco às escuras. Sabemos em que as duas soluções intermédias foram encontradas logo ao gerar a população inicial, e na primeira geração. Fora o parâmetro do elitismo, nada mais pode ser observado ou verificada a sua utilidade.</p>
 <p>É tempo para aumentar o nível de debug para DETALHE. Insira: <b>1; 4; 3; 2; 3; <em>ENTER</em>; 6.</b></p>
@@ -1004,7 +1004,7 @@ Opção:
 <p>As duas tabelas seguintes têm os custos dos pais (<code>├───── Pais (💰 ) ─────</code>) e dos filhos (<code>├───── Filhos (💰 ) 🧬 10 🦠 14 ───── 📈 1 🟰 17 📉 2</code>), onde se pode ver o GAP geracional. Podemos ver por exemplo, o casal 11 e 12, tinham custo 2 e 5 e os seus filhos ficaram com custos 4 e 2. Neste caso um ficou entre os valores dos pais, o outro ficou com o melhor valor dos pais.</p>
 <p>Na geração houve 1 melhoramento, 2 que pioraram o valor de ambos os pais, e 17 que ficaram entre o valor dos pais. Esta informação está na linha dos filhos: <code>📈 1 🟰 17 📉 2</code>.</p>
 <p>A fase de sobrevivência (<code>├─┬─── FASE ⚔️ Sobrevivência ─────</code>), atendendo a que o método é a idade, não há muito a mostrar, dado que a geração nova substitui a geração antiga. Há no entanto indicação sobre elite e imigrantes. Neste caso a Elite não foi necessária, já que o melhor elemento da nova geração até é melhor que o melhor da geração anterior. Nos imigrantes entrou 1, saindo o elemento 9: <code>├───── 🚶‍🌍 Imigrantes 9✖ →🆕 ─────</code>.</p>
-<p>Ocorreu nesta época a fase de limpeza, tendo sido eliminado um elemento que estava duplicado, atendendo às configurações de omissão: <code>└───── FASE 🌈 Diversidade - limpeza ───── 🧹 4</code></p>
+<p>Ocorreu nesta época a fase de limpeza, tendo sido eliminado um elemento que estava duplicado, atendendo às configurações por omissão: <code>└───── FASE 🌈 Diversidade - limpeza ───── 🧹 4</code></p>
 <p>Esta análise permite ver a origem do elemento que tem a solução ótima. Focando agora na época 9, vemos que o filho com custo 0 é o 8. Esse elemento tem como irmão uma solução de custo 4, e ambos os pais têm custo 3. Os pais sãos os elementos 12 e 14, vamos ver a sua codificação:</p><ul>
 <li><code>🧍 12 1 2 0 1 💰 g:3</code></li>
 <li><code>🧍 14 1 0 3 1 💰 g:3</code></li>

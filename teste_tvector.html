@@ -359,9 +359,9 @@ Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 21
 Opção: 
 </pre>
 </p>
-<p>A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada. Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milisegundos. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
-<p>Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadors, I1 a I4.</p>
-<p>Os três primeiros indicadores são de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, o quarto indicador é definido em <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>. O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema. O indicador I2 tem o tempo consumido pelo algoritmo, em milisegundos, neste caso 80. Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância). O tempo de calcular os indicadores não é também comtabilizado. O indicador I3 tem o número de iterações realizadas. O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez. Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado. Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. Em outros métodos que não ordenem o vetor, naturalmente que este indicador nesses casos, ao ser chamado irá retornar 0.</p>
+<p>A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada. Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milissegundos. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
+<p>Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadores, I1 a I4.</p>
+<p>Os três primeiros indicadores são de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, o quarto indicador é definido em <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>. O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema. O indicador I2 tem o tempo consumido pelo algoritmo, em milissegundos, neste caso 80. Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância). O tempo de calcular os indicadores não é também comtabilizado. O indicador I3 tem o número de iterações realizadas. O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez. Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado. Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. Em outros métodos que não ordenem o vetor, naturalmente que este indicador nesses casos, ao ser chamado irá retornar 0.</p>
 <p>Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2; <em>ENTER</em>; 1; <em>ENTER</em>; 6.</p>
 <p> 
 <pre>
@@ -395,7 +395,7 @@ Opção: <span class="entrada">5</span>
 │ <span style="color:gray">I1(Resultado):</span> ✓ 1º lugar 
 │ <span style="color:gray">Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</span>
 │ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
-│ <span style="color:gray">Tempo em milisegundos da execução (medida de esforço computacional).</span>
+│ <span style="color:gray">Tempo em milissegundos da execução (medida de esforço computacional).</span>
 │ <span style="color:gray">I3(Iterações):</span> ✓ 3º lugar 
 │ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 4º lugar 
@@ -404,7 +404,7 @@ Opção: <span class="entrada">5</span>
 Alterar indicador: 
 </pre>
 </p>
-<p>De omissão estão todos os indicadores ligados, e são chamados por ordem de ID. No entanto, por vezes pretende-se verificar a solução, executando verificações/validações. Outras vezes pretende-se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo. Pode-se ainda querer fazer ações após o algoritmo, de transformação da solução, ou gravação da solução para ficheiro.</p>
+<p>Por omissão estão todos os indicadores ligados, e são chamados por ordem de ID. No entanto, por vezes pretende-se verificar a solução, executando verificações/validações. Outras vezes pretende-se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo. Pode-se ainda querer fazer ações após o algoritmo, de transformação da solução, ou gravação da solução para ficheiro.</p>
 <p>Com os indicadores é possível definir as ações a executar após o algoritmo, por uma dada ordem, ou se uma dada ação irá ser executada ou não.</p>
 <p>Neste caso temos apenas um indicador definido, que é um indicador de verificação, testando se o vetor ficou ordenado.</p>
 <p>Com esta interface podemos remover e adicionar indicadores existentes por outra ordem. Vamos por exemplo colocar visivel primeiro I4 e depois I2, não mostrando os restanes.</p>
@@ -416,7 +416,7 @@ Alterar indicador:
 │ <span style="color:gray">I1(Resultado):</span> ✗ inativo 
 │ <span style="color:gray">Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</span>
 │ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
-│ <span style="color:gray">Tempo em milisegundos da execução (medida de esforço computacional).</span>
+│ <span style="color:gray">Tempo em milissegundos da execução (medida de esforço computacional).</span>
 │ <span style="color:gray">I3(Iterações):</span> ✗ inativo 
 │ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 1º lugar 
@@ -466,7 +466,7 @@ Opção: <span class="entrada">7</span>
 ✏️ Comando: 
 </pre>
 </p>
-<p>Temos aqui a lista dos parâmetros atuais. Há apenas uma configuração, com os parâmetros que alteramos. Se não alterarmos parâmetros, estes tomam o valor de omissão, nunca existindo um parâmetro sem valor definido. Os parâmetros apenas podem ser alterados para valores dentro dos seus limites.</p>
+<p>Temos aqui a lista dos parâmetros atuais. Há apenas uma configuração, com os parâmetros que alteramos. Se não alterarmos parâmetros, estes tomam o valor por omissão, nunca existindo um parâmetro sem valor definido. Os parâmetros apenas podem ser alterados para valores dentro dos seus limites.</p>
 <p>Existe atualmente apenas uma configuração, em que todos os parâmetros são comuns. Vamos colocar o parâmetro P1, com o método, a variar de 1 a 12, para testar todos os métodos.</p>
 <p>Introduza: P1=1:12</p>
 <p> 
@@ -802,7 +802,7 @@ Opção:
 </pre>
 </p>
 <p>A informação debug completa mostra por cada execução uma linha. Em cada linha é identificado o instante, tarefa, instância, configuração, processo e finalmente os indicadores calculados.</p>
-<p>Sobre os resultados mostrados em tabela, podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 62 milisegundos. A instância 10 tem 10 vezes mais tamanho, mas leva 786 milisegundos. Foram execuções únicas, os valores podem variar demasiado.</p>
+<p>Sobre os resultados mostrados em tabela, podemos ver que o tempo sobe, mas não de forma linear. A instância 1 tem 1 milhão de valores, leva 62 milissegundos. A instância 10 tem 10 vezes mais tamanho, mas leva 786 milissegundos. Foram execuções únicas, os valores podem variar demasiado.</p>
 <p>Vamos colocar 10 instâncias de cada tipo, variando a semente, para assim ter mais precisão. Queremos desta vez ter os resultados no Excel (utilizando a pasta Resultados) e vamos colocar o debug a 1.</p>
 <p>Introduza: 7; P1=2; P2=1; P3=1:10; <em>ENTER</em>; 8; 1:10; Resultados/tvetor_0.</p>
 <p> 
@@ -885,7 +885,7 @@ Ação 7: Linha de comando</h2>
 <div class="line">│ I1(Resultado): ☑  1º lugar</div>
 <div class="line">│ Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).</div>
 <div class="line">│ I2(Tempo(ms)): ☑  2º lugar</div>
-<div class="line">│ Tempo em milisegundos da execução (medida de esforço computacional).</div>
+<div class="line">│ Tempo em milissegundos da execução (medida de esforço computacional).</div>
 <div class="line">│ I3(Iterações): ☑  3º lugar</div>
 <div class="line">│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</div>
 <div class="line">│ I4(IND_ORDENAR): ☑  4º lugar</div>
@@ -1181,7 +1181,7 @@ Ação 8: Execução MPI</h2>
 <p>Usamos como referência o teste tvetor_1B com 47 segundos.</p>
 <p>Chamamos agora à atenção para o parâmetro -M para especificar o modo:</p>
 <div class="fragment"><div class="line">-M &lt;modo&gt;       Modo MPI: 0 = divisão estática, 1 = gestor-trabalhador</div>
-</div><!-- fragment --><p>Na divisão estática, o modo de omissão, as tarefas são previamente divididas pelos processadores. Este modo é excelente se todas as tarefas tiverem duração idêntica.</p>
+</div><!-- fragment --><p>Na divisão estática, o modo por omissão, as tarefas são previamente divididas pelos processadores. Este modo é excelente se todas as tarefas tiverem duração idêntica.</p>
 <p>No modo gestor-trabalhador, a divisão das tarefas é gerida por um dos processos, o processo gestor, que distribui trabalho. Assim, não há o risco de um processo já ter terminado, e outro ter ainda muitas tarefas para executar, tirando-se melhor partido do CPU disponível caso as tarefas tenham tempo de realização distinto.</p>
 <p>Vamos fazer dois testes, um com cada modo, e com 4 processadores.</p>
 <p>Linha de comando: mpiexec -n 4 <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1:10 -R Resultados/tvetor_1Bm0 -P P1=2 P2=3 P3=1:10</p>

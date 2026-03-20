@@ -1236,7 +1236,7 @@ Gráfico do Puzzle 8 – Esforço C</div></div>
 <p>Por volta do custo 23 a 25 tanto a procura em largura como a profundidade, deixam de conseguir resolver nos 10 segundos de tempo limite. A procura em largura tem um problema extra de memória.</p>
 <p>A versão da procura em profundidade é a iterativa, pelo que tem um comportamento idêntico à procura em largura, sem problema de memória, embora ligeiramente mais lento, como se pode observar no esforço B. No entanto pode ser mantido no esforço C por não estoirar a memória, ao contrário da procura em largura.</p>
 <p>Vemos que o melhor primeiro tem consistentemente melhores tempos. No entanto não obtém a solução ótima, ao contrário dos restantes algoritmos. Entre os algoritmos que obtêm a solução ótima, o A* e o IDA* são os mais rápidos seguido do Branch and Bound.</p>
-<p>Em problemas como o puzzle 8, em que a solução pode estar próximo, o A* e o IDA* são os mais aconselhados já que não há o risco de se explorar um ramo não ótimo primeiro, com uma solução ótima mesmo ao lado. Isso foi o que aconteceu com as instâncias de custo 5, em que o BnB gastou mais de 300 milisegundos, enquanto o A* e o IDA* resolveram em menos de 1 milisegundo.</p>
+<p>Em problemas como o puzzle 8, em que a solução pode estar próximo, o A* e o IDA* são os mais aconselhados já que não há o risco de se explorar um ramo não ótimo primeiro, com uma solução ótima mesmo ao lado. Isso foi o que aconteceu com as instâncias de custo 5, em que o BnB gastou mais de 300 milissegundos, enquanto o A* e o IDA* resolveram em menos de 1 milissegundo.</p>
 <p>Nesta análise podemos também comcluir que a distância à solução, é um excelente indicador da dificuldade da instância para quase todos os algoritmos. A exceção o Branch and Bound que embora retorne a solução óptima em menos de um segundo, o tempo não aumenta com este indicador.</p>
 <p>A instância mais dificil obtida, em termos de distância à solução, foi a de custo 30 no esforço C.</p>
 <h4><a class="anchor" id="autotoc_md4"></a>
@@ -1491,7 +1491,7 @@ Percentil10   </th><th class="markdownTableHeadRight">Mediana   </th><th class="
 <td class="markdownTableBodyCenter">40   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">3   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">4   </td><td class="markdownTableBodyRight">50   </td></tr>
 </table>
 <p>Podemos ver que o esforço C tem informação mais estável.</p>
-<p>O percentil de 90% sobe até 50 milisegundos para as 40 damas, mas o percentil de 10% mantém-se em 1 milisegundos.</p>
+<p>O percentil de 90% sobe até 50 milissegundos para as 40 damas, mas o percentil de 10% mantém-se em 1 milissegundos.</p>
 <p>O valor da mediana é bastante baixo, mas naturalmente que o tempo é uma distribuição bastante assimétrica para este algoritmo e problema. Se a ordem aleatória não é favorável, o tempo pode ser muito elevado, mas na maior parte das vezes é baixo.</p>
 <h4><a class="anchor" id="autotoc_md5"></a>
 partição</h4>

@@ -602,7 +602,7 @@ Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=
 │ I1(IND_CUSTO): ✓ 1º lugar
 │ o resultado é o custo da solução atual
 │ I2(Tempo(ms)): ✓ 2º lugar
-│ Tempo em milisegundos da execução (medida de esforço computacional).
+│ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ✓ 3º lugar
 │ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_EXPANSOES): ✓ 4º lugar
@@ -617,7 +617,7 @@ Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=
 <p>A forma como temos o programa, requer interação do utilizador, pelo que tivemos que escolher a opção 2 para o Puzzle 8.</p>
 <h3><a class="anchor" id="autotoc_md144"></a>
 Teste: puzzle8_1</h3>
-<p>Pretendemos comparar os algoritmos construtivos para este problema, P1=1,3:7. Retiramos o custo uniforme atendendo a que é igual à procura em largura se as ações tiverem todas custo 1, e utilizamos o valor de omissão da procura em profundidade, P7=0, para obter a profundidade iterativa.</p>
+<p>Pretendemos comparar os algoritmos construtivos para este problema, P1=1,3:7. Retiramos o custo uniforme atendendo a que é igual à procura em largura se as ações tiverem todas custo 1, e utilizamos o valor por omissão da procura em profundidade, P7=0, para obter a profundidade iterativa.</p>
 <p>Precisamos de selecionar instâncias, de simples a complexas. Como tempos bastantes instâncias, vamos fixar a semente com 4 valores, e alteramos o esforço do teste com o número de instâncias.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Paramétrico (P1=1,3:7)</li>
@@ -690,7 +690,7 @@ Opção: 2
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">Soma de Resolvido   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">39   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">40   </td><td class="markdownTableBodyRight">40   </td></tr>
 </table>
-<p>A versão da procura em profundidade, é a versão iterativa, com o parâmetro P7=0, sendo esse o valor de omissão.</p>
+<p>A versão da procura em profundidade, é a versão iterativa, com o parâmetro P7=0, sendo esse o valor por omissão.</p>
 <p>Podemos agora confirmar que:</p><ul>
 <li>procuras informadas são no geral mais eficientes em termos de tempo;</li>
 <li>a procura em profundidade primeiro iterativa foi o único a não conseguir resolver uma das instâncias, no limite dos 10 segundos;</li>
@@ -730,7 +730,7 @@ Opção: 2
 <td class="markdownTableBodyCenter">29   </td><td class="markdownTableBodyRight">9389   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">1   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyRight">8   </td><td class="markdownTableBodyRight">119   </td></tr>
 </table>
 <p>Com o esforço atual, existem apenas 40 instâncias. Não temos assim uma amostra de instâncias linear na dificuldade. Para melhorar estes resultados é preciso mais instâncias, utilizando este mesmo teste mas com maior esforço.</p>
-<p>Podemos no entanto observar o auemnto gradual do tempo nos algoritmos cegos. Pelo contrário, os algoritmos informados têm um tempo muito reduzido, na ordem dos milisegundos. Apenas o BnB tem algum tempo superior, mas que aparenta não ser dependnete da dificuldade da instância, será mais relacionado com a sorte ou azar da primeira solução encontrada estar perto ou longe do ótimo.</p>
+<p>Podemos no entanto observar o auemnto gradual do tempo nos algoritmos cegos. Pelo contrário, os algoritmos informados têm um tempo muito reduzido, na ordem dos milissegundos. Apenas o BnB tem algum tempo superior, mas que aparenta não ser dependnete da dificuldade da instância, será mais relacionado com a sorte ou azar da primeira solução encontrada estar perto ou longe do ótimo.</p>
 <p>Um maior volume de testes permitirá aferir que provavelmente o Melhor Primeiro é mais rápido principalmente em instâncias complicadas.</p>
 <p>Como o Melhor Primeiro não obtém todas as soluções óptimas, poderiamos calcular a percentagem de desvio da qualidade da solução até ao valor óptimo: desvio = (ValorObtido - óptimo)/óptimo. Este indicador seria útil para comparar dos algoritmos não exatos, de modo a aferir a qualidade das suas soluções. Temos neste caso um só algoritmo, com soluções de muito má qualidade, pelo que não utilizaremos para já este indicador.</p>
 <p> 
