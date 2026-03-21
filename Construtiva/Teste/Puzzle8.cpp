@@ -97,18 +97,17 @@ bool CPuzzle8::SolucaoCompleta(void)
 
 int CPuzzle8::Heuristica(void)
 {
-	int resultado = 0;
-	TProcuraConstrutiva::Heuristica();
+	heuristica = 0;
 
 	// distância de manhatan de cada posição à sua possição final
 	for (int i = 1; i < 9; i++) {
 		int posicaoI = 0;
 		while (puzzle[posicaoI] != i)
 			posicaoI++;
-		resultado += abs(posicaoI % 3 - i % 3) + abs(posicaoI / 3 - i / 3);
+		heuristica += abs(posicaoI % 3 - i % 3) + abs(posicaoI / 3 - i / 3);
 	}
 
-	return resultado;
+	return TProcuraConstrutiva::Heuristica();
 }
 
 TString CPuzzle8::Acao(TProcuraConstrutiva* sucessor) {

@@ -104,12 +104,14 @@ int CAspirador::Heuristica(void) {
 				max = i;
 		}
 	if (sujas == 0)
-		return heuristica = 0;
-	return heuristica = sujas + // movimentos a aspirar as casas sujas
-		(abs(aspirador - min) < abs(aspirador - max) ? // ver qual o extermo mais próximo
-			abs(aspirador - min) :   // movimentos a ir para o extermo mais próximo
-			abs(aspirador - max)) +
-		max - min; // após estar nesse extremo, ainda vai ao outro extremo
+		heuristica = 0;
+	else
+		heuristica = sujas + // movimentos a aspirar as casas sujas
+			(abs(aspirador - min) < abs(aspirador - max) ? // ver qual o extermo mais próximo
+				abs(aspirador - min) :   // movimentos a ir para o extermo mais próximo
+				abs(aspirador - max)) +
+			max - min; // após estar nesse extremo, ainda vai ao outro extremo
+	return TProcuraConstrutiva::Heuristica();
 }
 
 
