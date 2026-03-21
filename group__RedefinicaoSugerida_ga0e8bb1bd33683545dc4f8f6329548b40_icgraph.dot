@@ -39,11 +39,13 @@ digraph "TProcuraConstrutiva::Heuristica"
   Node15 -> Node14 [id="edge17_Node000015_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 -> Node15 [id="edge18_Node000006_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node16 [id="edge19_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="CPuzzle8::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
+  Node16 [id="Node000016",label="CAspirador::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCAspirador.html#ada888731b2cca0a8bfa410e9bf4d188a",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node1 -> Node17 [id="edge20_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcuraConstrutiva\l::IDAStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8",tooltip="Executa a procura IDA*, algoritmo informado."];
-  Node17 -> Node18 [id="edge21_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
-  Node18 -> Node2 [id="edge22_Node000018_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 -> Node17 [id="edge23_Node000017_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="CPuzzle8::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
+  Node1 -> Node18 [id="edge21_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="TProcuraConstrutiva\l::IDAStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8",tooltip="Executa a procura IDA*, algoritmo informado."];
+  Node18 -> Node19 [id="edge22_Node000018_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node19 -> Node2 [id="edge23_Node000019_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 -> Node18 [id="edge24_Node000018_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
