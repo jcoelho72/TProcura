@@ -188,7 +188,7 @@ Existe uma só parte, com as ações que demos manualmente.
 Caso o caminho intersecte, existiriam mais partes.
 
 Esta forma de ver soluções é específica do Puzzle 8 porque foi redefinido o método MostrarSolucao().
-Assim temos uma forma compacta mais cómuda de ver soluções.
+Assim temos uma forma compacta mais cómoda de ver soluções.
 
 \anchor puzzle8-a3
 ## Ação 3 - Procura em Largura
@@ -406,7 +406,7 @@ Opção:
 Nesta instância foram precisas 4 partes para mostrar a solução com 12 ações. 
 
 Embora o estado inicial tenha sido obtido por 40 movimentos aleatórios desde o estado objetivo,
-alguns dos movimentos acabaram por se inverter resultando numa instância à distãncia 12 do objetivo.
+alguns dos movimentos acabaram por se inverter resultando numa instância à distância 12 do objetivo.
 
 Utilizamos P3(SEMENTE)=2, naturalmente que outra semente aleatória poderia gerar um puzzle de 0 a 40 movimentos da solução.
 

@@ -2189,7 +2189,7 @@ Para a codificação permutação temos as seguintes distâncias:
 - 2: Kendall tau
 - 3: Spearman footrule
 
-O parâmetro P19 vamos variar em valores pequenos e alguns grandes, já que depende da medida de distãncia: 0,1,2,4,8
+O parâmetro P19 vamos variar em valores pequenos e alguns grandes, já que depende da medida de distância: 0,1,2,4,8
 
 - **Tipo de Teste / Objetivo**: Paramétrico P19 vs P24
 - **Definição**:
