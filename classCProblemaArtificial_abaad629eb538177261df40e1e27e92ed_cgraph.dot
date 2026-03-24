@@ -131,7 +131,7 @@ digraph "CProblemaArtificial::TesteManual"
   Node2 -> Node24 [id="edge80_Node000002_Node000024",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node27 [id="edge81_Node000002_Node000027",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node51 [id="edge82_Node000002_Node000051",color="steelblue1",style="solid",tooltip=" "];
-  Node51 [id="Node000051",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node51 [id="Node000051",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parâmetros, indicadores e instâncias."];
   Node2 -> Node52 [id="edge83_Node000002_Node000052",color="steelblue1",style="solid",tooltip=" "];
   Node52 [id="Node000052",label="TProcura::SolicitaInstancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae9f0b921a171a110e6a6fcc209332635",tooltip="Solicita ao utilizador o ID da instância a utilizar, permitindo alterar também o prefixo do ficheiro."];
   Node52 -> Node5 [id="edge84_Node000052_Node000005",color="steelblue1",style="solid",tooltip=" "];

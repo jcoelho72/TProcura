@@ -57,7 +57,7 @@ digraph "TRand::rand"
   Node9 -> Node26 [id="edge27_Node000009_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node26 [id="Node000026",label="TProcuraConstrutiva\l::IDAStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8",tooltip="Executa a procura IDA*, algoritmo informado."];
   Node26 -> Node27 [id="edge28_Node000026_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node27 [id="Node000027",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node27 -> Node10 [id="edge29_Node000027_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node26 -> Node26 [id="edge30_Node000026_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node28 [id="edge31_Node000001_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];

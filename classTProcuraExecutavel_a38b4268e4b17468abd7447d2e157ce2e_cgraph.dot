@@ -9,5 +9,5 @@ digraph "TProcuraExecutavel::ResetParametros"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node3 [id="Node000003",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parâmetros, indicadores e instâncias."];
 }

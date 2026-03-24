@@ -15,7 +15,7 @@ digraph "TVector::Last"
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcuraConstrutiva\l::BranchAndBound",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd",tooltip="Executa o algoritmo Branch-and-Bound, um algoritmo informado."];
   Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node6 [id="Node000006",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node4 -> Node8 [id="edge7_Node000004_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -158,7 +158,7 @@ digraph "TVector::Last"
   Node1 -> Node54 [id="edge105_Node000001_Node000054",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node54 [id="Node000054",label="TProcuraAdversa::RelatorioCSV",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcuraAdversa.html#a849320e339149a4f83809b6565321005",tooltip="Gera um relatório CSV com os resultados."];
   Node1 -> Node56 [id="edge106_Node000001_Node000056",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node56 [id="Node000056",label="CJogoEmLinha::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a855791b2e19731340976157991d79293",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node56 [id="Node000056",label="CJogoEmLinha::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a855791b2e19731340976157991d79293",tooltip="Inicializa os parâmetros, indicadores e instâncias."];
   Node1 -> Node57 [id="edge107_Node000001_Node000057",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node57 [id="Node000057",label="CParticao::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a5c6104354972acf2f6ed3d8ff7a8b98c",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node1 -> Node58 [id="edge108_Node000001_Node000058",dir="back",color="steelblue1",style="solid",tooltip=" "];

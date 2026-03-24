@@ -52,7 +52,7 @@ digraph "TProcuraConstrutiva::Hash"
   Node19 [id="Node000019",label="TProcuraConstrutiva\l::LimparHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a8b500987c88352d27a68200454cc3c8c",tooltip=" "];
   Node19 -> Node10 [id="edge27_Node000019_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node20 [id="edge28_Node000019_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node20 [id="Node000020",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node20 -> Node21 [id="edge29_Node000020_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node19 -> Node22 [id="edge30_Node000019_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];

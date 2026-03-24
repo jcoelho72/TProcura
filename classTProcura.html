@@ -139,7 +139,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0c5676c1b54ab6bdc1045b98aeafe456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostra o estado no ecrã, para debug.  <br /></td></tr>
 <tr class="separator:a0c5676c1b54ab6bdc1045b98aeafe456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b870a79b10bf2523bdb37c4b06bb871" id="r_a6b870a79b10bf2523bdb37c4b06bb871"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">virtual</a> <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871">ResetParametros</a> ()</td></tr>
-<tr class="memdesc:a6b870a79b10bf2523bdb37c4b06bb871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa os parametros, indicadores e instâncias.  <br /></td></tr>
+<tr class="memdesc:a6b870a79b10bf2523bdb37c4b06bb871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa os parâmetros, indicadores e instâncias.  <br /></td></tr>
 <tr class="separator:a6b870a79b10bf2523bdb37c4b06bb871"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7952e187e1b0ae0ca52edab157223179" id="r_a7952e187e1b0ae0ca52edab157223179"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">virtual</a> <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTProcura.html#a7952e187e1b0ae0ca52edab157223179">Parar</a> (<a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">void</a>)</td></tr>
 <tr class="memdesc:a7952e187e1b0ae0ca52edab157223179"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se a procura deve ser interrompida.  <br /></td></tr>
@@ -1489,7 +1489,7 @@ Here is the caller graph for this function:</div>
 <dl class="section note"><dt>Note</dt><dd>Obrigatória a redefinição no caso de serem definidos indicadores na subclasse</dd></dl>
 <p>Este método é chamado após a execução do algoritmo, para cada indicador, pela ordem definida pelo utilizador. Caso tenham sido definidos outros indicadorews na subclasse, deve redefinir, e caso seja um indicador da subclasse, calcular, caso contrário deve chamar o método da superclasse.</p>
 <dl class="section note"><dt>Note</dt><dd>Um indicador pode ser uma verificação da solução, ou qualquer outro procedimento que executa após o algoritmo, não sendo o tempo de execução contabgilizado no algoritmo.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871" title="Inicializa os parametros, indicadores e instâncias.">ResetParametros()</a></dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871" title="Inicializa os parâmetros, indicadores e instâncias.">ResetParametros()</a></dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">int64_t</a> CSubProblema::Indicador(<span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordflow">if</span>(<span class="keywordtype">id</span> == <a class="code hl_variable" href="classTProcura.html#a9b75c5c41b6e1b9e3a3390d9fd836417">indicador</a>-<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">da</a>-<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">subclasse</a>) {</div>
@@ -3207,44 +3207,44 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Inicializa os parametros, indicadores e instâncias. </p>
+<p>Inicializa os parâmetros, indicadores e instâncias. </p>
 <dl class="section note"><dt>Note</dt><dd>Redefinição necessária, para pelo menos indicar as instâncias existentes</dd></dl>
-<p>Nesta função, a primeira instrução deverá ser a chamada da função da superclasse, para que sejam criados os parametros da superclasse antes de qualquer outra instrução.</p>
-<p>Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos. Nesta função, podem ser definidos estes valores de omissão.</p>
-<p>Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema. Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.</p>
-<p>Nesta função deve ser redefinida a variável com informação dos IDs das instâncias disponíveis. Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.</p>
+<p>Nesta função, a primeira instrução deverá ser a chamada da função da superclasse, para que sejam criados os parÂmetros da superclasse antes de qualquer outra instrução.</p>
+<p>Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos. Nesta função, podem ser definidos estes valores por omissão.</p>
+<p>Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema. Estes parâmetros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.</p>
+<p>Nesta função deve ser redefinida a variável com informação dos IDs das instâncias disponíveis. Essa variável é do tipo TParametro, mas não está na lista de parÂmetros, devendo ser inicializada aqui.</p>
 <p>Existindo novos indicadores, devem ser adicionados aqui, e redefinida a função <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2" title="Retorna um indicador, após a execução do algoritmo.">Indicador()</a> para calcular o valor.</p>
-<dl class="section note"><dt>Note</dt><dd>Na criação de um novo parametro, dar uma estrutura TParametro.</dd>
+<dl class="section note"><dt>Note</dt><dd>Na criação de um novo parâmetro, dar uma estrutura TParametro.</dd>
 <dd>
 Ao adicionar novos parâmetros, é recomendável manter a enumeração sincronizada com a da superclasse. O primeiro elemento deve ser <code>parametrosConstrutivos</code>, garantindo que novas adições na superclasse sejam automaticamente refletidas aqui.</dd>
 <dd>
 A instância selecionada irá ser carregada em <a class="el" href="classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43" title="Coloca o objecto no estado inicial da procura.">Inicializar()</a>, utilizando o valor atual.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0" title="Estrutura para registo de um parâmetro.">TParametro</a></dd></dl>
-<p>Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros. </p><div class="fragment"><div class="line"><span class="comment">// continuação da enumeração EParametrosProcujra</span></div>
+<p>Exemplo com a alteração do valor por omissão de um parâmetro, e adição de dois novos parametros. </p><div class="fragment"><div class="line"><span class="comment">// continuação da enumeração EParametrosProcujra</span></div>
 <div class="line"><span class="keyword">enum</span> <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">ESubProblema</a> { <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">opcaoHeur</a> = <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">parametrosProcura</a>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">opcaoSuc</a> };</div>
 <div class="line"><span class="keywordtype">void</span> CSubProblema::ResetParametros(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">nomesSuc</a>[] = { <span class="stringliteral">&quot;todas&quot;</span>, <span class="stringliteral">&quot;contributo&quot;</span> }; <span class="comment">// nomes para os valores de opcaoSuc</span></div>
 <div class="line">    <span class="comment">// chamar primeiro o método na superclasse</span></div>
 <div class="line">    <a class="code hl_function" href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871">TProcura::ResetParametros</a>();</div>
-<div class="line">    <span class="comment">// neste exemplo considerou-se que se pretende ver algum debug, de omissão</span></div>
+<div class="line">    <span class="comment">// neste exemplo considerou-se que se pretende ver algum debug, por omissão</span></div>
 <div class="line">    <a class="code hl_function" href="classTProcura.html#a0e9e692f29af8a5d5279a8647c800437">Parametro</a>(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) = <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378">ATIVIDADE</a>;</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// novo parametro para utilizar na função Heuristica()</span></div>
+<div class="line">    <span class="comment">// novo parâmetro para utilizar na função Heuristica()</span></div>
 <div class="line">    <a class="code hl_variable" href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">parametro</a> += { <span class="stringliteral">&quot;Opção Heurística&quot;</span>, 0,0,10,</div>
 <div class="line">        <span class="stringliteral">&quot;explicação do que acontece na heuristica, com este parametro entre 0 e 10&quot;</span>,<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">NULL</a> };</div>
-<div class="line">    <span class="comment">// novo parametro para utilizar na função Sucessores()</span></div>
+<div class="line">    <span class="comment">// novo parâmetro para utilizar na função Sucessores()</span></div>
 <div class="line">    <a class="code hl_variable" href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">parametro</a> += { <span class="stringliteral">&quot;Opção Sucessores&quot;</span>, 0,0,1,</div>
 <div class="line">        <span class="stringliteral">&quot;0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.&quot;</span>,<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">nomesSuc</a> };</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// novo indicador</span></div>
 <div class="line">    <a class="code hl_variable" href="classTProcura.html#a9b75c5c41b6e1b9e3a3390d9fd836417">indicador</a> += { <span class="stringliteral">&quot;Ordenado&quot;</span>,<span class="stringliteral">&quot;verifica se um vetor está ordenado&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">indOrdenar</a> };</div>
-<div class="line">    <a class="code hl_variable" href="classTProcura.html#ac4344a896fc02c79e34d5fafaf595d9f">indAtivo</a> += <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">indOrdenar</a>; <span class="comment">// adicionar aos indicadores ativos de omissão</span></div>
+<div class="line">    <a class="code hl_variable" href="classTProcura.html#ac4344a896fc02c79e34d5fafaf595d9f">indAtivo</a> += <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">indOrdenar</a>; <span class="comment">// adicionar aos indicadores ativos por omissão</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// indicar que há 10 instâncias, sendo a instância inicial a 1</span></div>
 <div class="line">       <a class="code hl_variable" href="classTProcura.html#ac54b5d632d3efd448b51bfca6cb6a238">instancia</a> = { <span class="stringliteral">&quot;Problema&quot;</span>, 1,1,10, <span class="stringliteral">&quot;Características dos problemas&quot;</span>, <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">NULL</a> };</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcura_html_a6b870a79b10bf2523bdb37c4b06bb871"><div class="ttname"><a href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871">TProcura::ResetParametros</a></div><div class="ttdeci">virtual void ResetParametros()</div><div class="ttdoc">Inicializa os parametros, indicadores e instâncias.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00048">TProcura.cpp:48</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a6b870a79b10bf2523bdb37c4b06bb871"><div class="ttname"><a href="classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871">TProcura::ResetParametros</a></div><div class="ttdeci">virtual void ResetParametros()</div><div class="ttdoc">Inicializa os parâmetros, indicadores e instâncias.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00048">TProcura.cpp:48</a></div></div>
 <div class="ttc" id="aclassTProcura_html_ac4344a896fc02c79e34d5fafaf595d9f"><div class="ttname"><a href="classTProcura.html#ac4344a896fc02c79e34d5fafaf595d9f">TProcura::indAtivo</a></div><div class="ttdeci">static TVector&lt; int &gt; indAtivo</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00571">TProcura.h:571</a></div></div>
 <div class="ttc" id="aclassTProcura_html_ac54b5d632d3efd448b51bfca6cb6a238"><div class="ttname"><a href="classTProcura.html#ac54b5d632d3efd448b51bfca6cb6a238">TProcura::instancia</a></div><div class="ttdeci">static TParametro instancia</div><div class="ttdoc">ID da instância atual, a ser utilizado em SolucaoVazia().</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00022">TProcura.h:22</a></div></div>
 <div class="ttc" id="aclassTProcura_html_ad60c9c327ddddd054d9ff499ef53532f"><div class="ttname"><a href="classTProcura.html#ad60c9c327ddddd054d9ff499ef53532f">TProcura::parametro</a></div><div class="ttdeci">static TVector&lt; TParametro &gt; parametro</div><div class="ttdoc">Parâmetros a serem utilizados na configuração atual.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00567">TProcura.h:567</a></div></div>
@@ -3451,7 +3451,7 @@ Here is the caller graph for this function:</div>
   </dd>
 </dl>
 <p>Esta função é chamada de <a class="el" href="classTProcura.html#a8331059908495f9a915ada39424ca27c" title="Inicializa a interação com o utilizador.">TesteManual()</a> para executar testes empíricos. A função apresenta-se como método virtual, atendendo a que é redefinida nas procuras adversas. É genérica e não se prevê outras situações que seja necessário redefini-la.</p>
-<dl class="section note"><dt>Note</dt><dd>o parametro NIVEL_DEBUG controla a quantidade de informação que é mostrada relativamente às tarefas, sendo colocado com o valor NADA para a execução do algoritmo</dd>
+<dl class="section note"><dt>Note</dt><dd>o parâmetro NIVEL_DEBUG controla a quantidade de informação que é mostrada relativamente às tarefas, sendo colocado com o valor NADA para a execução do algoritmo</dd>
 <dd>
 Pode ser chamada diretamente do código, e nesse caso é necessário que a variável estática 'configuracoes' tenha as configurações em teste. Se <code>configuracoes</code> estiver vazia, o teste empírico será executado apenas com a configuração atual, avaliando seu desempenho isoladamente, sem comparação com outras configurações.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a8331059908495f9a915ada39424ca27c" title="Inicializa a interação com o utilizador.">TesteManual()</a> </dd></dl>
@@ -3693,9 +3693,9 @@ Here is the caller graph for this function:</div>
 <li>visualizar e trocar de instância</li>
 <li>explorar o espaço de estados nessa instancia, executando ações</li>
 <li>ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)</li>
-<li>ver e editar qualquer parametro de execução</li>
-<li>o algoritmo é também um parametro, podendo naturalmente ser alterado</li>
-<li>há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos</li>
+<li>ver e editar qualquer parâmetro de execução</li>
+<li>o algoritmo é também um parâmetro, podendo naturalmente ser alterado</li>
+<li>há parâmetros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos</li>
 <li>executar o algoritmo com a configuração atual</li>
 <li>adicionar a configuração atual a um conjunto de configurações de teste</li>
 <li>executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas</li>

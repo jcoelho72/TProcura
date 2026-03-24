@@ -50,7 +50,7 @@ digraph "TProcuraConstrutiva::Explorar"
   Node1 -> Node21 [id="edge24_Node000001_Node000021",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="TProcuraConstrutiva\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623",tooltip="Cria um objecto que é uma cópia deste."];
   Node1 -> Node22 [id="edge25_Node000001_Node000022",color="steelblue1",style="solid",tooltip=" "];
-  Node22 [id="Node000022",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node22 [id="Node000022",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node22 -> Node23 [id="edge26_Node000022_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="TProcuraConstrutiva\l::AStar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#ga37dd78e1a9a6742700728135f81964b4",tooltip="Executa a procura A*, algoritmo informado."];
   Node23 -> Node3 [id="edge27_Node000023_Node000003",color="steelblue1",style="solid",tooltip=" "];

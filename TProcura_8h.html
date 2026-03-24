@@ -369,7 +369,7 @@ Variables</h2></td></tr>
 
 <p>Estrutura para registo de um parâmetro. </p>
 <p>Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.</p>
-<dl class="section note"><dt>Note</dt><dd>Existe uma vetor de parametros declarada de forma estática, de modo a aceder a qualquer parametro de forma global no código. A ordem dos parametros estão de acordo com o tipo enumerado EParametrosConstrutiva</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Existe um vetor de parâmetros declarado de forma estática, de modo a aceder a qualquer parâmetro de forma global no código. A ordem dos parâmetros estão de acordo com o tipo enumerado EParametrosConstrutiva</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6" title="Identifica um parâmetro específico no código.">EParametrosProcura</a> e ResetParametros()</dd></dl>
 <p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
 <div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
@@ -475,7 +475,7 @@ Variables</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29bae0a2fcc9529e9f164d57ad46c224812e" name="a2b2b75cdcabfc0008a130fb49597e29bae0a2fcc9529e9f164d57ad46c224812e"></a>IND_RESULTADO&#160;</td><td class="fielddoc"><p>resultado do algoritmo (&gt;=0 custo da solução, -1 impossível, -2 não resolvido) </p>
 </td></tr>
-<tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff" name="a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff"></a>IND_TEMPO&#160;</td><td class="fielddoc"><p>tempo em milisegundos consumidos </p>
+<tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff" name="a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff"></a>IND_TEMPO&#160;</td><td class="fielddoc"><p>tempo em milissegundos consumidos </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29ba97d29cd7ac74f317aa24647078b74c58" name="a2b2b75cdcabfc0008a130fb49597e29ba97d29cd7ac74f317aa24647078b74c58"></a>IND_ITERACOES&#160;</td><td class="fielddoc"><p>número de iterações consumidas </p>
 </td></tr>
@@ -559,7 +559,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Identifica um parâmetro específico no código. </p>
-<p>Permite aceder a cada parâmetro sem precisar saber seu código numérico. Índice do vetor de parametros, na classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>.</p>
+<p>Permite aceder a cada parâmetro sem precisar saber seu código numérico. Índice do vetor de parâmetros, na classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>O último elemento (<code>parametrosProcura</code>) não representa um parâmetro real. Existe para permitir a criação de uma enumeração adicional em subclasses, caso seja necessário adicionar parâmetros específicos.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0" title="Estrutura para registo de um parâmetro.">TParametro</a>, ExecutaAlgoritmo()</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>

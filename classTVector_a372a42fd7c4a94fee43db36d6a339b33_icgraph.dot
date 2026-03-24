@@ -57,7 +57,7 @@ digraph "TVector::operator[]"
   Node20 -> Node22 [id="edge29_Node000020_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 [id="Node000022",label="TProcuraConstrutiva\l::BranchAndBound",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd",tooltip="Executa o algoritmo Branch-and-Bound, um algoritmo informado."];
   Node22 -> Node23 [id="edge30_Node000022_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node23 [id="Node000023",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node23 -> Node7 [id="edge31_Node000023_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node20 -> Node7 [id="edge32_Node000020_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node20 -> Node24 [id="edge33_Node000020_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];

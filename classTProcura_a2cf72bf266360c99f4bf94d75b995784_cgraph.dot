@@ -21,5 +21,5 @@ digraph "TProcura::AjudaUtilizacao"
   Node7 [id="Node000007",label="TProcura::ParametroAtivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e",tooltip=" "];
   Node7 -> Node6 [id="edge8_Node000007_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node8 [id="edge9_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parametros, indicadores e instâncias."];
+  Node8 [id="Node000008",label="TProcura::ResetParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a6b870a79b10bf2523bdb37c4b06bb871",tooltip="Inicializa os parâmetros, indicadores e instâncias."];
 }
