@@ -25,7 +25,7 @@ void TCodificacaoBinaria::Debug(bool completo) {
 void TCodificacaoBinaria::ResetParametros() {
 	TProcuraMelhorativa::ResetParametros();
 
-	// parametros da codificação binária
+	// parâmetros da codificação binária
 	parametro += {
 		{ "TIPO_CRUZAR", 1, 0, 10, "TIPO_CRUZAR: 1 - um ponto, >=2 N-pontos, 0 - uniforme", {
 			"uniforme", "2-pontos", "3-pontos", "4-pontos", "5-pontos",

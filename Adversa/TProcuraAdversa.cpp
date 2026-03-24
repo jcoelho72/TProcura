@@ -40,7 +40,7 @@ void TProcuraAdversa::ResetParametros()
 
 	Parametro(LIMITE) = 0; // procura iterativa preferencial
 	Parametro(ESTADOS_REPETIDOS) = IGNORADOS; // nas procuras adversas, não utilizar este parametro (utilizar ordenar=2)
-	Parametro(BARALHAR_SUCESSORES) = 0; // de omissão está com valor 0, para facilitar nos testes, mas deve ficar com 1 para obter jogos distintos
+	Parametro(BARALHAR_SUCESSORES) = 0; // por omissão está com valor 0, para facilitar nos testes, mas deve ficar com 1 para obter jogos distintos
 
 	// O "infinito" é dependente do problema, não faz sentido alterar senão no código
 
@@ -50,8 +50,8 @@ void TProcuraAdversa::ResetParametros()
 	parametro += {
 		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores." },
 		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores)." },
-		{ "PODA_CEGA",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleátoria, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " },
-		{ "HEUR_BASE", 200, 100, 1000, "Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao doubro e é o valor de omissão)" }
+		{ "PODA_CEGA",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleatória, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " },
+		{ "HEUR_BASE", 200, 100, 1000, "Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao dobro e é o valor por omissão)" }
 	};
 }
 

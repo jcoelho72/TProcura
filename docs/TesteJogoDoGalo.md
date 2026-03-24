@@ -2676,7 +2676,7 @@ para observer sem perturbações o ganho da profundidade.
 Insira: 
 - **1; 7; P1=1 P2=4 P12=0 P7=20,7,5,3; -1; *ENTER*.**
 
-Apagamos a configuração 1 dado que tinha o valor de omissão P7=0.
+Apagamos a configuração 1 dado que tinha o valor por omissão P7=0.
 
 \htmlonly
 <pre>

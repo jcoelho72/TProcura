@@ -9,8 +9,8 @@ int main(int argc, char* argv[]) {
 	proc.solver = "./exTProcuraExecutavel.sh";
 	proc.inst = { "Instâncias", 1, 1, 10, "IDs das instâncias a serem testadas" }; // definição de instâncias existentes
 
-	proc.par += { "param1", 0, 0, 10, "explicação do que acontece com este parametro entre 0 e 10" };
-	proc.par += { "param2", 0, 0, 10, "explicação do que acontece com este parametro entre 0 e 10" };
+	proc.par += { "param1", 0, 0, 10, "explicação do que acontece com este parÂmetro entre 0 e 10" };
+	proc.par += { "param2", 0, 0, 10, "explicação do que acontece com este parÂmetro entre 0 e 10" };
 	proc.parPrefixo += { "-p1 ", "-p2 " }; // prefixo a dar nos argumentos do programa, para cada parâmetro
 
 	// adicionar indicadores específicos, para extrair do output do programa

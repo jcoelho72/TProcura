@@ -922,7 +922,7 @@ No entanto, se o mesmo estado ocorrer exatamente no mesmo formato, a hashtable e
 A qualidade da heurística é aqui crítica.
 
 Temos um parâmetro que influencia a heurística:
-- HEUR_BASE - Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao doubro e é o valor por omissão)
+- HEUR_BASE - Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao dobro e é o valor por omissão)
 
 Esta heurística é genérica, e pode ser utilizada em problemas que se possam calcular ameaças a K jogadas,
 como é o caso dos jogos em que se pretende fazer K marcas em linha.

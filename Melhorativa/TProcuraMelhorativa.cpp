@@ -29,7 +29,7 @@ void TProcuraMelhorativa::ResetParametros()
 {
 	TProcura::ResetParametros();
 
-	// alterar parametros base
+	// alterar parâmetros base
 	Parametro(LIMITE_ITERACOES) = 1000000;
 	//	parametro[ALGORITMO] = { "ALGORITMO",3,1,3,"Escolha do algoritmo base a executar.", nomesAlgoritmos };
 	parametro[ALGORITMO] = { "ALGORITMO",1,1,1,"Escolha do algoritmo base a executar.",{"Algoritmo Evolutivo" }};
@@ -239,7 +239,7 @@ void TProcuraMelhorativa::CalcularAvaliacoes(TVector<TPonto>& vizinhos, int& mel
 // Algoritmo de procura local: Algoritmos Geneticos
 ///////////////////////////////////////////////////////////////////////////////
 // retorna a avaliacao do resultado final
-// parametros para a mutacao e cruzamento podem ser dados em variaveis globais
+// parâmetros para a mutacao e cruzamento podem ser dados em variaveis globais
 int TProcuraMelhorativa::AlgoritmoGenetico()
 {
 	int populacao = Parametro(POPULACAO);
@@ -277,7 +277,7 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 			probabilidade += (maximo - geracaoAntiga[i]->custo + 1);
 			total += probabilidade.Last();
 		}
-		// gerar novos elementos. gera-se o doubro para poder seleccionar os melhores
+		// gerar novos elementos. gera-se o dobro para poder seleccionar os melhores
 		while (geracaoNova.Count() < 2 * populacao) {
 			// escolher dois individuos aleatoriamente de acordo com as probabilidades
 			int pai, mae, mutou = 0;

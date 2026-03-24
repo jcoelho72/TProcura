@@ -23,7 +23,7 @@ void TCodificacaoInteira::Debug(bool completo) {
 void TCodificacaoInteira::ResetParametros() {
 
 	TProcuraMelhorativa::ResetParametros();
-	// parametros da codificação inteira
+	// parâmetros da codificação inteira
 	parametro += {
 		{ "TIPO_CRUZAR", 1, 0, 10, "Cruzamento: N - N-pontos, 0 - uniforme", {
 			"uniforme","1-ponto","2-pontos","3-pontos","4-pontos",

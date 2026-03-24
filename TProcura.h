@@ -43,7 +43,7 @@ constexpr int COR_LEVE_TAM = 9;   // bytes invisíveis (5 + 4), útil para alinh
 
 enum EIndicadoresProcura {
 	IND_RESULTADO = 0, ///< resultado do algoritmo (>=0 custo da solução, -1 impossível, -2 não resolvido)
-	IND_TEMPO,         ///< tempo em milisegundos consumidos
+	IND_TEMPO,         ///< tempo em milissegundos consumidos
 	IND_ITERACOES,     ///< número de iterações consumidas
 	IND_PROCURA        ///< Marcador para permitir a extensão do enum em subclasses.
 };
@@ -53,7 +53,7 @@ enum EIndicadoresProcura {
  * @brief Identifica um parâmetro específico no código.
  *
  * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
- * Índice do vetor de parametros, na classe TProcura.
+ * Índice do vetor de parâmetros, na classe TProcura.
  *
  * @note O último elemento (`parametrosProcura`) não representa um parâmetro real.
  * Existe para permitir a criação de uma enumeração adicional em subclasses, caso
@@ -160,9 +160,9 @@ typedef struct SIndicador {
  * de modo a poderem ser testados no teste empírico.
  *
  * @note
- * Existe uma vetor de parametros declarada de forma estática,
- * de modo a aceder a qualquer parametro de forma global no código.
- * A ordem dos parametros estão de acordo com o tipo enumerado EParametrosConstrutiva
+ * Existe um vetor de parâmetros declarado de forma estática,
+ * de modo a aceder a qualquer parâmetro de forma global no código.
+ * A ordem dos parâmetros estão de acordo com o tipo enumerado EParametrosConstrutiva
  *
  * @see EParametrosProcura e ResetParametros()
  *
@@ -173,20 +173,20 @@ typedef struct SIndicador {
  * @endcode
  */
 typedef struct SParametro {
-	/// @brief nome do parametro, opcional mas aconselhado nos parâmetros específicos
+	/// @brief nome do parâmetro, opcional mas aconselhado nos parâmetros específicos
 	TString nome = "Indefinido";
-	/// @brief valor do parametro
+	/// @brief valor do parâmetro
 	int valor = 0;
-	/// @brief valor mínimo que o parametro pode tomar
+	/// @brief valor mínimo que o parÂmetro pode tomar
 	int min = 0;
-	/// @brief valor máximo que o parametro pode tomar
+	/// @brief valor máximo que o parâmetro pode tomar
 	int max = 0;
-	/// @brief descrição do parametro, opcional 
+	/// @brief descrição do parÂmetro, opcional 
 	TString descricao = "";
 	/// @brief Nome associado a cada valor do parâmetro, útil para variáveis categóricas.
 	/// @note Especialmente relevante quando os valores não seguem uma sequência ordenada.
 	TVector<TString> nomeValores;
-	/// @brief dependência (indice do parametro, seguido de valores permitidos) - vazio não tem dependência
+	/// @brief dependência (indice do parâmetro, seguido de valores permitidos) - vazio não tem dependência
 	TVector<int> dependencia;
 } TParametro;
 
@@ -325,25 +325,25 @@ public:
 	virtual void Debug(bool completo = true);
 
 	/**
-	 * @brief Inicializa os parametros, indicadores e instâncias
+	 * @brief Inicializa os parâmetros, indicadores e instâncias
 	 * @note Redefinição necessária, para pelo menos indicar as instâncias existentes
 	 *
 	 * Nesta função, a primeira instrução deverá ser a chamada da função da superclasse,
-	 * para que sejam criados os parametros da superclasse antes de qualquer outra instrução.
+	 * para que sejam criados os parÂmetros da superclasse antes de qualquer outra instrução.
 	 *
 	 * Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos.
-	 * Nesta função, podem ser definidos estes valores de omissão.
+	 * Nesta função, podem ser definidos estes valores por omissão.
 	 *
 	 * Novos parâmetros podem ser adicionados conforme necessário para atender às particularidades do problema.
-	 * Estes parametros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar
+	 * Estes parâmetros podem depois ser selecionados ou incluídos num teste empírico, de modo a averiguar
 	 * em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
 	 *
 	 * Nesta função deve ser redefinida a variável com informação dos IDs das instâncias disponíveis.
-	 * Essa variável é do tipo TParametro, mas não está na lista de parametros, devendo ser inicializada aqui.
+	 * Essa variável é do tipo TParametro, mas não está na lista de parÂmetros, devendo ser inicializada aqui.
 	 *
 	 * Existindo novos indicadores, devem ser adicionados aqui, e redefinida a função Indicador() para calcular o valor.
 	 *
-	 * @note Na criação de um novo parametro, dar uma estrutura TParametro.
+	 * @note Na criação de um novo parâmetro, dar uma estrutura TParametro.
 	 *
 	 * @note Ao adicionar novos parâmetros, é recomendável manter a enumeração sincronizada
 	 * com a da superclasse. O primeiro elemento deve ser `parametrosConstrutivos`,
@@ -353,7 +353,7 @@ public:
 	 *
 	 * @see TParametro
 	 *
-	 * Exemplo com a alteração do valor de omissão de um parametro, e adição de dois novos parametros.
+	 * Exemplo com a alteração do valor por omissão de um parâmetro, e adição de dois novos parametros.
 	 * @code
 	 * // continuação da enumeração EParametrosProcujra
 	 * enum ESubProblema { opcaoHeur = parametrosProcura, opcaoSuc };
@@ -362,19 +362,19 @@ public:
 	 *     static const char* nomesSuc[] = { "todas", "contributo" }; // nomes para os valores de opcaoSuc
 	 *     // chamar primeiro o método na superclasse
 	 *     TProcura::ResetParametros();
-	 *     // neste exemplo considerou-se que se pretende ver algum debug, de omissão
+	 *     // neste exemplo considerou-se que se pretende ver algum debug, por omissão
 	 *     Parametro(NIVEL_DEBUG) = ATIVIDADE;
 	 *
-	 *     // novo parametro para utilizar na função Heuristica()
+	 *     // novo parâmetro para utilizar na função Heuristica()
 	 *     parametro += { "Opção Heurística", 0,0,10,
 	 *         "explicação do que acontece na heuristica, com este parametro entre 0 e 10",NULL };
-	 *     // novo parametro para utilizar na função Sucessores()
+	 *     // novo parâmetro para utilizar na função Sucessores()
 	 *     parametro += { "Opção Sucessores", 0,0,1,
 	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc };
 	 *
 	 *     // novo indicador
 	 *	   indicador += { "Ordenado","verifica se um vetor está ordenado", indOrdenar };
-	 *     indAtivo += indOrdenar; // adicionar aos indicadores ativos de omissão
+	 *     indAtivo += indOrdenar; // adicionar aos indicadores ativos por omissão
 	 *
 	 *     // indicar que há 10 instâncias, sendo a instância inicial a 1
 	 * 	   instancia = { "Problema", 1,1,10, "Características dos problemas", NULL };
@@ -415,9 +415,9 @@ public:
 	* - visualizar e trocar de instância
 	* - explorar o espaço de estados nessa instancia, executando ações
 	* - ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)
-	* - ver e editar qualquer parametro de execução
-	* - o algoritmo é também um parametro, podendo naturalmente ser alterado
-	* - há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
+	* - ver e editar qualquer parâmetro de execução
+	* - o algoritmo é também um parâmetro, podendo naturalmente ser alterado
+	* - há parâmetros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
 	* - executar o algoritmo com a configuração atual
 	* - adicionar a configuração atual a um conjunto de configurações de teste
 	* - executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas
@@ -491,7 +491,7 @@ public:
 	 * procuras adversas. É genérica e não se prevê outras situações que seja necessário
 	 * redefini-la.
 	 *
-	 * @note o parametro NIVEL_DEBUG controla a quantidade de informação que é mostrada relativamente às tarefas,
+	 * @note o parâmetro NIVEL_DEBUG controla a quantidade de informação que é mostrada relativamente às tarefas,
 	 *       sendo colocado com o valor NADA para a execução do algoritmo
 	 *
 	 * @note Pode ser chamada diretamente do código, e nesse caso é necessário que a variável
@@ -603,7 +603,7 @@ public:
 	// ler uma string
 	static TString NovoTexto(TString prompt);
 
-	// retorna o valor do parametro, para facilidade de uso (leitura e escrita)
+	// retorna o valor do parâmetro, para facilidade de uso (leitura e escrita)
 	int Parametro(int id) const { return parametro[id].valor; }
 	int& Parametro(int id) { return parametro[id].valor; }
 	bool ParametroAtivo(int id, TVector<int>* valores = NULL) const {
@@ -884,11 +884,11 @@ public:
 	TVector<TString> parPrefixo = {"", "", "", "", ""}; // prefixo a dar nos argumentos do programa, para cada parâmetro, de modo a configurar a execução
 	// considerar também os parâmetros em TProcura (ALGORITMO, NIVEL_DEBUG, SEMENTE, LIMITE_TEMPO, LIMITE_ITERACOES)
 	// string vazia para não utilização desse parâmetro (se não há prefixo, apenas valor por ordem, utilizar um espaço)
-	// Nota: o parâmetro é colocado nos argumentos do programa, apenas se não for igual ao valor de omissão
+	// Nota: o parâmetro é colocado nos argumentos do programa, apenas se não for igual ao valor por omissão
 
 	// variáveis internas: 
 	TVector<int64_t> indValores; // guarda os indicadores extraídos da última execução
-	TVector<int> omissao; // valores de todos os parâmetros de omissão
+	TVector<int> omissao; // valores de todos os parâmetros por omissão
 
 	TProcuraExecutavel() : TProcura() {}
 	~TProcuraExecutavel(void) {}

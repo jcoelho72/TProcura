@@ -122,7 +122,7 @@ public:
 	void ResetParametros() override;
 
 	// critrio de paragem adicionado para procuras melhorativas:
-	// - custo nulo, significa obter o ótimo (lowerBound pode ser atualizado, caso exista, de omissão é 0)
+	// - custo nulo, significa obter o ótimo (lowerBound pode ser atualizado, caso exista, por omissão é 0)
 	// - número gerações (ou épocas) sem melhoria - futuro
 	// - diversidade da população - futuro
 	bool Parar(void) { return TProcura::Parar() || custo <= lowerBound; }

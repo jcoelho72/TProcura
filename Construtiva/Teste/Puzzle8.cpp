@@ -183,7 +183,7 @@ void CPuzzle8::MostrarSolucao(void) {
 
 void CPuzzle8::ResetParametros() {
 	TProcuraConstrutiva::ResetParametros();
-	// opções de omissão:
+	// opções por omissão:
 	Parametro(ESTADOS_REPETIDOS) = ASCENDENTES;
 	// instâncias
 	instancia = { "", 40,1,1000};

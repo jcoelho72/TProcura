@@ -23,7 +23,7 @@ void TCodificacaoPermutacao::Debug(bool completo) {
 void TCodificacaoPermutacao::ResetParametros() {
 	TProcuraMelhorativa::ResetParametros();
 
-	// parametros da codificação inteira
+	// parâmetros da codificação inteira
 	parametro += {
 		{ "TIPO_CRUZAR", 3, 1, 4, "TIPO_CRUZAR: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", {
 			"PMX","Edge","Order","Cycle" } },

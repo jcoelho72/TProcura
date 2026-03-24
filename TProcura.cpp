@@ -53,19 +53,19 @@ void TProcura::ResetParametros()
 		{ "NIVEL_DEBUG", 0, 0, 4, "Nível de debug, de reduzido a completo.",
 			{ "NADA", "ATIVIDADE", "PASSOS", "DETALHE", "COMPLETO" } },
 		{ "SEMENTE", 1, 1, 1000000000, "Semente aleatória para inicializar a sequência de números pseudo-aleatórios." },
-		{ "LIMITE_TEMPO", 10, 1, 3600, "Limnite de tempo em segundos. " },
+		{ "LIMITE_TEMPO", 10, 1, 3600, "Limite de tempo em segundos. " },
 		{ "LIMITE_ITERACOES", 0, 0, 1000000000, "Limite de número de iterações (0 não há limite). " }
 	};
 
 	// definir indicadores base
 	indicador = {
 		{ "Resultado", "Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", IND_RESULTADO },
-		{ "Tempo(ms)", "Tempo em milisegundos da execução (medida de esforço computacional).", IND_TEMPO },
+		{ "Tempo(ms)", "Tempo em milissegundos da execução (medida de esforço computacional).", IND_TEMPO },
 		{ "Iterações", "Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).", IND_ITERACOES }
 	};
 	indAtivo = { IND_RESULTADO, IND_TEMPO, IND_ITERACOES };
 
-	// colocar as configurações vazias (podem ser inicializadas se existirem configurações de omissão)
+	// colocar as configurações vazias (podem ser inicializadas se existirem configurações por omissão)
 	configuracoes = {};
 }
 
@@ -1372,7 +1372,7 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 				referencias = {};
 				for (auto& token : TString(argv[++i]).tok(","))
 					referencias += atoi(token);
-				if (referencias.Count() != 4) // usar valores de omissão se não forem dadas as 4 referências
+				if (referencias.Count() != 4) // usar valores por omissão se não forem dadas as 4 referências
 					referencias = { 0,100,0,100000 };
 			}
 			// e os ids de instâncias impossíveis, caso existam
@@ -1402,7 +1402,7 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 		}
 		else if (strcmp(argv[i], "-P") == 0 && i + 1 < argc) {
 			TVector<int> base;
-			if (!configIntroduzido) { // limpa configurações anteriores ou de omissão
+			if (!configIntroduzido) { // limpa configurações anteriores ou por omissão
 				configIntroduzido = true;
 				configuracoes = {};
 			}
@@ -1462,7 +1462,7 @@ void TProcura::AjudaUtilizacao(TString programa) {
 		"  -G <0/1>        Gravar solução (sequência de ações): 0 = não grava, 1 = grava\n"
 		"  -I <ind>        Lista de indicadores (e.g. 2,1,3)\n"
 		"  -h              Esta ajuda\n"
-		"  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - valores para cada parâmetro, distintos dos de omissão\n"
+		"  -P <expr>       Parâmetros (e.g. P1=1:3 x P2=0:2) - valores para cada parâmetro, distintos dos por omissão\n"
 		"Exemplo: %s 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=1:5 x P6=1,2 \n"
 		"   Executar sem argumentos entra em modo interativo, para explorar todos os parâmetros e indicadores\n",
 		*programa, *programa
@@ -1895,7 +1895,7 @@ void TProcuraExecutavel::ResetParametros()
 	indicador += ind;
 	parametro += par;
 
-	// atualizar os valores de omissão
+	// atualizar os valores por omissão
 	omissao.Count(parametro.Count());
 	for (int i = 0; i < parametro.Count(); i++)
 		omissao[i] = parametro[i].valor;
@@ -1923,7 +1923,7 @@ int TProcuraExecutavel::ExecutaAlgoritmo()
 
 	resultFile.printf("%s%d.txt", *ficheiroInstancia, mpiID);
 
-	// construir as opções que são distintas dos valores de omissão
+	// construir as opções que são distintas dos valores por omissão
 	for (int i=0; i<parametro.Count(); i++)
 		if (Parametro(i) != omissao[i])
 			opcoes.printf("%s%d ", *parPrefixo[i], Parametro(i));

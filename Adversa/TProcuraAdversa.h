@@ -15,7 +15,7 @@ enum EParametrosAdversa {
 	ORDENAR_SUCESSORES = PARAMETROS_CONSTRUTIVA, ///< opção de ordenar sucessores por heurística, ou por último valor registado
 	PODA_HEURISTICA,      ///< permite cortar sucessores, mas calcula a heurística a todos, de modo a mantendo os melhores
 	PODA_CEGA,		     ///< corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória
-	HEUR_BASE,		     ///< valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 é o valor de omissão)
+	HEUR_BASE,		     ///< valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 é o valor por omissão)
 	PARAMETROS_ADVERSA   ///< marcador para permitir a extensão do enum em subclasses.
 };
 

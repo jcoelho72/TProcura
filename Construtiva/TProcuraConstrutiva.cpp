@@ -92,7 +92,7 @@ bool TProcuraConstrutiva::Acao(TString acao) {
 }
 
 // Coloca em sucessores a lista de objectos sucessores (sao alocados neste metodo e tem de ser apagados)
-// O custo se não existir, deixar a 1 (valor de omissão)
+// O custo se não existir, deixar a 1 (valor por omissão)
 // chamar o metodo desta classe apos adicionar os sucessores para actualizar geracoes e expansoes,
 // bem como verificar a existência de estados repetidos
 void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {

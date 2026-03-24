@@ -29,7 +29,7 @@ enum EIndicadoresConstrutiva {
  * @brief Identifica um parâmetro específico no código.
  *
  * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
- * Índice do vetor de parametros, na classe TProcuraConstrutiva.
+ * Índice do vetor de parâmetros, na classe TProcuraConstrutiva.
  *
  * @note O último elemento (`parametrosConstrutivas`) não representa um parâmetro real.
  * Existe para permitir a criação de uma enumeração adicional em subclasses, caso
@@ -73,7 +73,7 @@ enum EAlgoritmo {
 
 
 /**
- * @brief Enumerado com os valores possíveis do parametro estadosRepetidos
+ * @brief Enumerado com os valores possíveis do parâmetro estadosRepetidos
  *
  * Os estados gerados que sejam repetidos, podem não ser removidos, ou podem ser
  * removidos se existir um ascendente igual, ou ainda serem guardados numa hashtable
@@ -411,8 +411,8 @@ public:
 	 * Esta função pretende-se rápida, e o mais próxima possível do valor real, sem ultrapassar.
 	 *
 	 * @note Num problema, existindo alternativas, umas mais rápidas menos precisas,
-	 * outras mais lentas mais precisas, é aconselhada a criação de um ou mais parametros
-	 * para que a heurística possa ser calculada de acordo com o parametro definido.
+	 * outras mais lentas mais precisas, é aconselhada a criação de um ou mais parâmetros
+	 * para que a heurística possa ser calculada de acordo com o parâmetro definido.
 	 * Em fase de testes logo se averigua qual a versão que adiciona mais vantagem à procura.
 	 *
 	 * @note Uma heurística pode resultar de um relaxamento do problema. Verifique se
@@ -512,7 +512,7 @@ public:
 	TVector<TString> Solucao();
 
 	/**
-	 * @brief Executa o algoritmo com os parametros atuais
+	 * @brief Executa o algoritmo com os parâmetros atuais
 	 * @note Redefinição necessária no caso de se alterar os algoritmos disponíveis.
 	 *
 	 * No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO)

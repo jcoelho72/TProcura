@@ -24,7 +24,7 @@ namespace compat {
 	}
 
 	inline int ContaUTF8(const char* str) {
-		// contagem de caracteres (mas icons podem ocupar mais espaço)
+		// contagem de caracteres (mas ícons podem ocupar mais espaço)
 		unsigned int count = 0;
 		if (!str)
 			return 0;
@@ -35,7 +35,7 @@ namespace compat {
 		}
 		return count;
 
-		// possibilidade de contar com tamanho dos icons, a explorar no futuro:
+		// possibilidade de contar com tamanho dos ícons, a explorar no futuro:
 		int colunas = 0;
 		mbstate_t state{};
 		wchar_t wc;
