@@ -176,6 +176,8 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		TVector<TString> tokens = linha.tok(";");
 		int id = atoi(tokens.First());
 		int indice = instancias.Find(id);
+		if (linha[linha.Count() - 2] == ';')
+			tokens += TString("vazio");
 		if (tokens.Count() < 3 || indice < 0)
 			continue;
 		instSolucoes[indice] += solucoes.Count(); // registar o índice do resultado para a instância correspondente
@@ -194,7 +196,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		int validas = 0, invalidas = 0, melhor = RES_VAZIO, pior = RES_VAZIO, tempo = 0;
 		int indice = instancias.Find(inst);
 		bool impossivel = impossiveis.Find(inst) >= 0;
-		if(indice >= 0)
+		if (indice >= 0)
 			for (auto solucao : instSolucoes[indice]) {
 				tempo += (int)solucoes[solucao].valor.First(); // acumular tempo das soluções para a instância atual
 				if (impossivel) {
@@ -223,7 +225,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 							Icon(EIcon::INST), inst,
 							Icon(EIcon::INSUC),
 							Icon(EIcon::TEMPO), tempo);
-						for (auto &token : solucoes[solucao].solucao)
+						for (auto& token : solucoes[solucao].solucao)
 							Debug(COMPLETO, false, " %s", *token);
 					}
 				}
@@ -292,7 +294,7 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 	int validas = 0, naoResolvidas = 0, melhorCusto = 0, piorCusto = 0, tempoTotal = 0;
 	double taxaEficacia = 0, taxaQualidade = 0, taxaEficiencia = 0, desempenho = 0;
 	bool considerarQualidade = (referencias[1] > referencias[0]); // custoMin < custoMax (se iguais, o custo não é considerado para o indicador global)
-	for (auto &res : resultados) {
+	for (auto& res : resultados) {
 		// instância válida apenas se todas as soluções para a instância forem válidas
 		if (res.valor[0] > 0 && res.valor[1] == 0) {
 			validas++;
@@ -1313,8 +1315,10 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 			mpiID == 0 && Debug(COMPLETO, false, "%-2s", Icon(EIcon::TEMPO));
 		if (memoriaEsgotada)
 			mpiID == 0 && Debug(COMPLETO, false, "%-2s", Icon(EIcon::MEMORIA));
-		if (resultado < 0 && !Parar()) //Instância Impossível! (se algoritmo completo) ");
+		if (resultado < 0 && !Parar()) { //Instância Impossível! (se algoritmo completo) ");
 			mpiID == 0 && Debug(COMPLETO, false, "%-2s%-2s", Icon(EIcon::SUCESSO), Icon(EIcon::IMP));
+			resultados.Last().solucao = "vazio";
+		}
 		else // não resolvido, cancelar resultados 
 			resultados.Last().valor.First() = RES_NAO_RESOLVIDO;
 	}
@@ -1910,7 +1914,7 @@ void TProcuraExecutavel::ResetParametros()
 		indAtivo += i;
 
 	// corrigir prefixos ineixistentes
-	while(parPrefixo.Count() < parametro.Count())
+	while (parPrefixo.Count() < parametro.Count())
 		parPrefixo += TString("");
 	while (indPrefixo.Count() < indicador.Count())
 		indPrefixo += TString("");
@@ -1924,7 +1928,7 @@ int TProcuraExecutavel::ExecutaAlgoritmo()
 	resultFile.printf("%s%d.txt", *ficheiroInstancia, mpiID);
 
 	// construir as opções que são distintas dos valores por omissão
-	for (int i=0; i<parametro.Count(); i++)
+	for (int i = 0; i < parametro.Count(); i++)
 		if (Parametro(i) != omissao[i])
 			opcoes.printf("%s%d ", *parPrefixo[i], Parametro(i));
 
@@ -1941,14 +1945,14 @@ int TProcuraExecutavel::ExecutaAlgoritmo()
 
 	// extrair indicadores com base no indPrefixo
 	for (auto& linha : resultFile.readLines())
-		for (int i = 0; i < indPrefixo.Count(); i++) 
+		for (int i = 0; i < indPrefixo.Count(); i++)
 			if (!indPrefixo[i].Empty()) {
 				const char* ptr = strstr(linha, indPrefixo[i]);
-				if (ptr) 
+				if (ptr)
 					indValores[i] = (int)(atof(ptr + indPrefixo[i].Count() - 1) + 0.5);
 			}
 
-	if(Parametro(NIVEL_DEBUG) < DETALHE)
+	if (Parametro(NIVEL_DEBUG) < DETALHE)
 		remove(resultFile); // apagar ficheiro de resultados intermédio
 	return 0;
 }
