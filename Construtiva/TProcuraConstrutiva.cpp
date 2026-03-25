@@ -924,6 +924,9 @@ void TProcuraConstrutiva::Explorar() {
 				}
 				else {
 					int nAcoes = 0;
+					// evitar bloqueio de ações por estado repetidos
+					int backupRepetidos = Parametro(ESTADOS_REPETIDOS); 
+					Parametro(ESTADOS_REPETIDOS) = IGNORADOS;
 					for (int i = 0; i < acoes.Count(); i++) {
 						// executar a ação
 						if (Acao(acoes[i]))
@@ -942,6 +945,7 @@ void TProcuraConstrutiva::Explorar() {
 								caminho.Last()->custo = 0;
 						}
 					}
+					Parametro(ESTADOS_REPETIDOS) = backupRepetidos;
 					if (nAcoes > 0)
 						TProcura::Mensagem(Icon(EIcon::SOL), "Executadas %d ações.", nAcoes);
 				}
