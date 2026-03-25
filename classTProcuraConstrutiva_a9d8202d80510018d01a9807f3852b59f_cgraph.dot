@@ -209,6 +209,7 @@ digraph "TProcuraConstrutiva::Explorar"
   Node1 -> Node65 [id="edge153_Node000001_Node000065",color="steelblue1",style="solid",tooltip=" "];
   Node65 [id="Node000065",label="TProcura::NovoTexto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3e46f5e78c7e12b92f67ffc64c9744ad",tooltip=" "];
   Node65 -> Node5 [id="edge154_Node000065_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node18 [id="edge155_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node40 [id="edge156_Node000001_Node000040",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node16 [id="edge155_Node000001_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node18 [id="edge156_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node40 [id="edge157_Node000001_Node000040",color="steelblue1",style="solid",tooltip=" "];
 }
