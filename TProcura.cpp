@@ -61,7 +61,7 @@ void TProcura::ResetParametros()
 	indicador = {
 		{ "Resultado", "Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", IND_RESULTADO },
 		{ "Tempo(ms)", "Tempo em milissegundos da execução (medida de esforço computacional).", IND_TEMPO },
-		{ "Iterações", "Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).", IND_ITERACOES }
+		{ "Iterações", "Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).", IND_ITERACOES }
 	};
 	indAtivo = { IND_RESULTADO, IND_TEMPO, IND_ITERACOES };
 
@@ -860,7 +860,7 @@ void TProcura::EditarConfiguracoes() {
 }
 
 void TProcura::InserirConfiguracoes(TString str, TVector<int>& base) {
-	TVector<int> currente, produto;
+	TVector<int> produto;
 	TVector<TVector<int>> valores;
 	auto tokens = str.tok();
 
@@ -1016,7 +1016,7 @@ void TProcura::TesteFim() {
 }
 
 
-// utilizar para executar testes empíricos, utilizando todas as instãncias,
+// utilizar para executar testes empíricos, utilizando todas as instâncias,
 // com o último algoritmo executado e configurações existentes
 void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 	TVector<TResultado> resultados; // guarda as soluções obtidas

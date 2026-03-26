@@ -48,7 +48,7 @@ public:
 	void Sucessores(TVector<TNo>&sucessores);
 	// Retorna verdade caso o estado actual seja um estado objectivo
 	bool SolucaoCompleta(void);
-	// Escrever informação de debug sobre o objecto currente 
+	// Escrever informação de debug sobre o objecto corrente 
 	// (utilizar variável TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
 	void Debug(bool completo = true) override;
 

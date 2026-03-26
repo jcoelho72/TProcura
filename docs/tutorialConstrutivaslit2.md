@@ -45,7 +45,7 @@ Algoritmos informados: melhor primeiro; A*; BnB.
 
 ## 📖 Leituras
 
-- (Russel & Norvig): Secções 3.5 e 3.6 (3ª e 4ª edição) | Capítulo 4 (2ª edição) 
+- (Russell & Norvig): Secções 3.5 e 3.6 (3ª e 4ª edição) | Capítulo 4 (2ª edição) 
 
 ## Bibliografia
 

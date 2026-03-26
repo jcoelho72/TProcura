@@ -583,7 +583,7 @@ Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=
 │ I2(Tempo(ms)): ✓ 2º lugar
 │ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ✓ 3º lugar
-│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
+│ Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_EXPANSOES): ✓ 4º lugar
 │ número de expansões efetuadas
 │ I5(IND_GERACOES): ✓ 5º lugar

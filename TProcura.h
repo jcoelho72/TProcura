@@ -444,7 +444,7 @@ public:
 	virtual void TesteManual(TString nome);
 
 	/**
-	 * @brief Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua validadade bem como características
+	 * @brief Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua validade bem como características
 	 * @note Redefinição opcional, caso seja necessário um processo de validação específico.
 	 *
 	 * Esta função carrega a instância e solução (conjunto de ações),
@@ -539,7 +539,7 @@ public:
 	*/
 	virtual void main(int argc, char* argv[], TString nome);
 
-	/// @brief Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução
+	/// @brief Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução
 	virtual void LimparEstatisticas();
 	/// @brief Chamar após a execução do algoritmo. Grava o tempo consumido.
 	virtual void ExecucaoTerminada();
@@ -851,9 +851,9 @@ protected:
 	bool JuntarCSV(TString ficheiro);
 
 	/// @brief retorna o tempo em segundos desde que o cronómetro foi inicializado
-	static double Cronometro(enum ECronometro id = CONT_ALGORITMO, bool inicialiar = false) {
+	static double Cronometro(enum ECronometro id = CONT_ALGORITMO, bool inicializar = false) {
 		static clock_t inicio[CONT_NUMERO] = { 0 }; // até 10 cronómetros
-		if (inicialiar)
+		if (inicializar)
 			inicio[id] = clock();
 		return (double)(clock() - inicio[id]) / CLOCKS_PER_SEC;
 	}

@@ -129,7 +129,7 @@ Escreva os seguintes números separados por Enter: **1; 2**
 
 Temos hipótese aqui de alterar o prefixo da instância,
 útil para situações em que se lê os dados da instância de um ficheiro.
-Este problema as instâncias são geradas aleatoriamente,
+Neste problema as instâncias são geradas aleatoriamente,
 e não lidas de ficheiros, pelo que escolhemos apenas o ID da instância.
 
 Tínhamos inicialmente uma instância com 4 salas, estando o aspirador na terceira sala, 

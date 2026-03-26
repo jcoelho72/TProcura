@@ -423,7 +423,7 @@ Opção: <span class="entrada">5</span>
 │ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
 │ <span style="color:gray">Tempo em milissegundos da execução (medida de esforço computacional).</span>
 │ <span style="color:gray">I3(Iterações):</span> ✓ 3º lugar 
-│ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
+│ <span style="color:gray">Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 4º lugar 
 │ <span style="color:gray">verifica se o vetor está ordenado</span>
 └──────────────────────────────────────────────────────────────────────
@@ -455,7 +455,7 @@ Introduza: 1;2;3;2;*ENTER*;1;*ENTER*;6.
 │ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
 │ <span style="color:gray">Tempo em milissegundos da execução (medida de esforço computacional).</span>
 │ <span style="color:gray">I3(Iterações):</span> ✗ inativo 
-│ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
+│ <span style="color:gray">Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 1º lugar 
 │ <span style="color:gray">verifica se o vetor está ordenado</span>
 └──────────────────────────────────────────────────────────────────────
@@ -1016,7 +1016,7 @@ Lista de indicadores:
 │ I2(Tempo(ms)): ☑  2º lugar
 │ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ☑  3º lugar
-│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
+│ Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_ORDENAR): ☑  4º lugar
 │ verifica se o vetor está ordenado
 └──────────────────────────────────────────────────────────────────────

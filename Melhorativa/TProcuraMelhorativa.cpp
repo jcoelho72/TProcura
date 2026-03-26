@@ -147,7 +147,7 @@ int TProcuraMelhorativa::EscaladaDoMonte()
 			}
 			// final da análise da vizinhança, ver se se subiu alguma coisa
 			if (!alterado) {
-				// significa que estamos num óptimo local, no topo do moonte
+				// significa que estamos num óptimo local, no topo do monte
 				DebugOptimoLocal(solucao);
 				break; // recomeçar nova escalada
 			}

@@ -25,7 +25,7 @@ Algoritmos: MiniMax; Monte Carlo;
 
 ## 📖 Leituras
 
-- (Russel & Norvig): Capítulo 5 ou 6, conforme edição (Procura Adversa)
+- (Russell & Norvig): Capítulo 5 ou 6, conforme edição (Procura Adversa)
 
 ## Bibliografia
 

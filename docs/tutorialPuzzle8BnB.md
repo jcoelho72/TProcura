@@ -42,7 +42,7 @@
 \htmlonly
 
 <p>Vamos agora manter o mesmo estado, e utilizar o Branch-and-Bound em vez do
-  A-Start:</p>
+  A-Star:</p>
 <p></p>
 <table border="1" cellspacing="1" cellpadding="1">
   <tbody>

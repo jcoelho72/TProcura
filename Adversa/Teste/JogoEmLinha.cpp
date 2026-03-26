@@ -126,7 +126,7 @@ bool CJogoEmLinha::SolucaoCompleta(void)
 	return true; // não há hipótese de mais jogadas
 }
 
-// Escrever informação de debug sobre o objecto currente 
+// Escrever informação de debug sobre o objecto corrente 
 // (utilizar variável TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
 void CJogoEmLinha::Debug(bool completo)
 {
@@ -283,7 +283,7 @@ int CJogoEmLinha::Heuristica()
 					// verificar se quem joga tem ameaça a 1, para ganhar na sua vez de jogar
 					if (minimizar ? nMin == inst.K - 1 && nMax == 0 : nMax == inst.K - 1 && nMin == 0)
 						heuristica = (minimizar ? -infinito : infinito); // vitória em 1, é igual a posição terminal
-					// não reteornar de imediato, já que o jogo pode ter sido já ganho pelo adversário
+					// não retornar de imediato, já que o jogo pode ter sido já ganho pelo adversário
 
 					// registar resultado
 					if (nMax > 0 && nMin == 0)

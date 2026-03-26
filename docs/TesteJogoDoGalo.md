@@ -100,7 +100,7 @@ seja muito elevada, não fazendo tanto sentido para situações de procura não 
 Em tudo o resto estamos em situação idêntica, embora os algoritmos sejam distintos. 
 Temos por omissão o algoritmo MiniMax alfa/beta.
 
-Insira: **1.** para inicialiar novo jogo.
+Insira: **1.** para inicializar novo jogo.
 
 
 \htmlonly
