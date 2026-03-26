@@ -790,7 +790,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 void TProcuraConstrutiva::DebugIteracao(int iteracao, const char* simbolo) {
 	Debug(PASSOS, false, "\n ├─────────── %-2s%s %d %-2s%s ──────────── ",
 		Icon(EIcon::ARVORE), simbolo, iteracao, Icon(EIcon::TEMPO),
-		MostraTempo(Cronometro(CONT_ALGORITMO)));
+		*MostraTempo(Cronometro(CONT_ALGORITMO)));
 }
 
 // informação geral sobre o estado 

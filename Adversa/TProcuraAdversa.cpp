@@ -504,7 +504,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 					if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
 						Debug(ATIVIDADE, false,
 							"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d",
-							Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_TESTE)),
+							Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE)),
 							Icon(EIcon::TAREFA), nTarefa,
 							Icon(EIcon::INST), inst,
 							Icon(EIcon::CONF), brancas + 1,

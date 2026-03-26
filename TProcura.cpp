@@ -291,7 +291,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 }
 
 void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> referencias) {
-	int validas = 0, naoResolvidas = 0, melhorCusto = 0, piorCusto = 0, tempoTotal = 0;
+	int validas = 0, melhorCusto = 0, piorCusto = 0, tempoTotal = 0;
 	double taxaEficacia = 0, taxaQualidade = 0, taxaEficiencia = 0, desempenho = 0;
 	bool considerarQualidade = (referencias[1] > referencias[0]); // custoMin < custoMax (se iguais, o custo não é considerado para o indicador global)
 	for (auto& res : resultados) {
@@ -306,7 +306,6 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 		}
 		// não resolvidas se existirem resultados inválidos
 		if (res.valor[1] > 0) {
-			naoResolvidas++;
 			// custo máximo por instância
 			piorCusto += referencias[1] / resultados.Count();
 			// tempo máximo por instância
@@ -553,7 +552,7 @@ void TProcura::DebugHSL(float h, float s, float l, bool fundo) {
 
 void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, TString titulo) {
 	int nElementos = (idParametros == NULL ? parametro.Count() : idParametros->Count());
-	int count = 0, col = 2;
+	int col = 2;
 	bool parBin = false;
 	if (titulo.Empty())
 		titulo = "Parâmetros";
@@ -572,7 +571,6 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, TString
 		int parID = (idParametros == NULL ? i : (*idParametros)[i]);
 		if (!ParametroAtivo(parID))
 			continue;
-		count++;
 		// caso o parâmetro seja 0/1 mostrar o valor em cor 0=vermelho 1=verde
 		if ((parBin = (parametro[parID].min == 0 && parametro[parID].max == 1)) == true) {
 			// identificação do parâmetro e valor com cor 

@@ -404,7 +404,7 @@ void TProcuraMelhorativa::DebugGeracaoAE(int epoca, TVector<TPonto>& populacao) 
 		int minimo, maximo;
 		Debug(PASSOS, true, "─") || Debug(DETALHE, false, "┬");
 		Debug(PASSOS, false, "─ %-2s%d %-2s%s ────",
-			Icon(EIcon::EPOCA), epoca, Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_ALGORITMO)));
+			Icon(EIcon::EPOCA), epoca, Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_ALGORITMO)));
 		if (populacao.Empty())
 			return;
 		ObterExtremos(populacao, minimo, maximo);
@@ -943,7 +943,7 @@ TVector<TPonto> TProcuraMelhorativa::AplicarDiversidadeAE(TVector<TPonto>& popul
 void TProcuraMelhorativa::DebugMelhorEncontrado(TPonto ponto)
 {
 	if (Debug(ATIVIDADE, false, "\n │ %-2s %-2s%s %-2sg:%d\n─┴───────────────────",
-		Icon(EIcon::TORNEIO), Icon(EIcon::TEMPO), MostraTempo(Cronometro(CONT_ALGORITMO)),
+		Icon(EIcon::TORNEIO), Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_ALGORITMO)),
 		Icon(EIcon::VALOR), custo))
 	{
 		Debug();
