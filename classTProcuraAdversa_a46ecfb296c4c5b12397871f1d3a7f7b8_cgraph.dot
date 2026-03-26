@@ -7,7 +7,7 @@ digraph "TProcuraAdversa::TesteEmpiricoTrabalhador"
   rankdir="LR";
   Node1 [id="Node000001",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
+  Node2 [id="Node000002",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac7c1d95788d63f85e60f1b4c00e68f65",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
@@ -130,13 +130,13 @@ digraph "TProcuraAdversa::TesteEmpiricoTrabalhador"
   Node59 -> Node42 [id="edge87_Node000059_Node000042",color="steelblue1",style="solid",tooltip=" "];
   Node42 [id="Node000042",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
   Node3 -> Node60 [id="edge88_Node000003_Node000060",color="steelblue1",style="solid",tooltip=" "];
-  Node60 [id="Node000060",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node60 [id="Node000060",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node60 -> Node54 [id="edge89_Node000060_Node000054",color="steelblue1",style="solid",tooltip=" "];
   Node54 [id="Node000054",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node54 -> Node55 [id="edge90_Node000054_Node000055",color="steelblue1",style="solid",tooltip=" "];
   Node55 [id="Node000055",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
   Node60 -> Node61 [id="edge91_Node000060_Node000061",color="steelblue1",style="solid",tooltip=" "];
-  Node61 [id="Node000061",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node61 [id="Node000061",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node61 -> Node2 [id="edge92_Node000061_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node61 -> Node6 [id="edge93_Node000061_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node60 -> Node12 [id="edge94_Node000060_Node000012",color="steelblue1",style="solid",tooltip=" "];

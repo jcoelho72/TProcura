@@ -96,13 +96,13 @@ digraph "TProcura::Cronometro"
   Node1 -> Node14 [id="edge52_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node8 [id="edge53_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node38 [id="edge54_Node000001_Node000038",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node38 [id="Node000038",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node38 [id="Node000038",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node38 -> Node28 [id="edge55_Node000038_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node38 -> Node39 [id="edge56_Node000038_Node000039",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node39 [id="Node000039",label="TProcuraMelhorativa\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6c7163b20ace9bebdf3c073cd475dec9",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node39 [id="Node000039",label="TProcuraMelhorativa\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6c7163b20ace9bebdf3c073cd475dec9",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node39 -> Node5 [id="edge57_Node000039_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node38 -> Node40 [id="edge58_Node000038_Node000040",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node40 [id="Node000040",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node40 [id="Node000040",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node40 -> Node14 [id="edge59_Node000040_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node40 -> Node8 [id="edge60_Node000040_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node40 -> Node17 [id="edge61_Node000040_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];

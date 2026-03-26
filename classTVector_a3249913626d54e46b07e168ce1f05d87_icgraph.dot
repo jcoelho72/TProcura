@@ -65,7 +65,7 @@ digraph "TVector::Pop"
   Node22 [id="Node000022",label="TProcuraConstrutiva\l::DebugSucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a08aa14ddc895426b2ce3df4d763cbbd7",tooltip=" "];
   Node22 -> Node7 [id="edge37_Node000022_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node23 [id="edge38_Node000001_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node23 [id="Node000023",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node23 -> Node12 [id="edge39_Node000023_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node7 [id="edge40_Node000023_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node15 [id="edge41_Node000023_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];

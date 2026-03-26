@@ -60,7 +60,7 @@ digraph "TProcuraConstrutiva::Hash"
   Node22 -> Node20 [id="edge31_Node000022_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 -> Node22 [id="edge32_Node000022_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 -> Node23 [id="edge33_Node000019_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node23 [id="Node000023",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node23 -> Node11 [id="edge34_Node000023_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node21 [id="edge35_Node000023_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node14 [id="edge36_Node000023_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];

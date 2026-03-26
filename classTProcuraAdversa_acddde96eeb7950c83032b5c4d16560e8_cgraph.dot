@@ -76,7 +76,7 @@ digraph "TProcuraAdversa::Jogar"
   Node27 -> Node28 [id="edge44_Node000027_Node000028",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="TProcuraConstrutiva\l::DebugIteracao",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcuraConstrutiva.html#ad94d8a7e8f5ed88723951ed5feaf65cb",tooltip=" "];
   Node28 -> Node29 [id="edge45_Node000028_Node000029",color="steelblue1",style="solid",tooltip=" "];
-  Node29 [id="Node000029",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
+  Node29 [id="Node000029",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac7c1d95788d63f85e60f1b4c00e68f65",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node28 -> Node18 [id="edge46_Node000028_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node27 -> Node16 [id="edge47_Node000027_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node27 -> Node33 [id="edge48_Node000027_Node000033",color="steelblue1",style="solid",tooltip=" "];
@@ -132,13 +132,13 @@ digraph "TProcuraAdversa::Jogar"
   Node56 [id="Node000056",label="TProcuraAdversa::JogoTerminado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a84fb2c84c73e0d4310c143dbba1b6e2b",tooltip=" "];
   Node1 -> Node7 [id="edge88_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node57 [id="edge89_Node000001_Node000057",color="steelblue1",style="solid",tooltip=" "];
-  Node57 [id="Node000057",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node57 [id="Node000057",label="TProcuraConstrutiva\l::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#adaefadabea2eb225ed28c3927feb6828",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node57 -> Node52 [id="edge90_Node000057_Node000052",color="steelblue1",style="solid",tooltip=" "];
   Node52 [id="Node000052",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node52 -> Node53 [id="edge91_Node000052_Node000053",color="steelblue1",style="solid",tooltip=" "];
   Node53 [id="Node000053",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
   Node57 -> Node58 [id="edge92_Node000057_Node000058",color="steelblue1",style="solid",tooltip=" "];
-  Node58 [id="Node000058",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node58 [id="Node000058",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node58 -> Node29 [id="edge93_Node000058_Node000029",color="steelblue1",style="solid",tooltip=" "];
   Node58 -> Node4 [id="edge94_Node000058_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node57 -> Node8 [id="edge95_Node000057_Node000008",color="steelblue1",style="solid",tooltip=" "];

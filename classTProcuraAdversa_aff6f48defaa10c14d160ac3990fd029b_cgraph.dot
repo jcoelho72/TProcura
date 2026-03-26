@@ -75,7 +75,7 @@ digraph "TProcuraAdversa::ExecutaAlgoritmo"
   Node25 -> Node26 [id="edge43_Node000025_Node000026",color="steelblue1",style="solid",tooltip=" "];
   Node26 [id="Node000026",label="TProcuraConstrutiva\l::DebugIteracao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ad94d8a7e8f5ed88723951ed5feaf65cb",tooltip=" "];
   Node26 -> Node27 [id="edge44_Node000026_Node000027",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
+  Node27 [id="Node000027",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac7c1d95788d63f85e60f1b4c00e68f65",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node26 -> Node16 [id="edge45_Node000026_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node26 -> Node28 [id="edge46_Node000026_Node000028",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="TProcura::MostraTempo",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a84cbaa6dbb49a0f79ae5c33f81cde1a1",tooltip="Mostra tempo num formato humano."];

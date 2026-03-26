@@ -9,7 +9,7 @@ digraph "CParticao::TesteManual"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TProcura::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8331059908495f9a915ada39424ca27c",tooltip="Inicializa a interação com o utilizador."];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#adb09aa964fe750da7a383318cd0f48a0",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
+  Node3 [id="Node000003",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac7c1d95788d63f85e60f1b4c00e68f65",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
   Node2 -> Node4 [id="edge3_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcura::Debug",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456",tooltip="Mostra o estado no ecrã, para debug."];
   Node4 -> Node4 [id="edge4_Node000004_Node000004",color="steelblue1",style="solid",tooltip=" "];
@@ -106,7 +106,7 @@ digraph "CParticao::TesteManual"
   Node36 -> Node40 [id="edge62_Node000036_Node000040",color="steelblue1",style="solid",tooltip=" "];
   Node40 [id="Node000040",label="TProcura::Solucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a3c6c463d3ad9c23dc74b5e5039f8d1e6",tooltip="retorna uma solução no formato do TResultado, para ser gravada em ficheiro de soluções,..."];
   Node2 -> Node41 [id="edge63_Node000002_Node000041",color="steelblue1",style="solid",tooltip=" "];
-  Node41 [id="Node000041",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
+  Node41 [id="Node000041",label="TProcura::LimparEstatisticas",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ae82e7be02923531e7ead26b1b25cec0f",tooltip="Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo ..."];
   Node41 -> Node3 [id="edge64_Node000041_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node41 -> Node8 [id="edge65_Node000041_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node30 [id="edge66_Node000002_Node000030",color="steelblue1",style="solid",tooltip=" "];
