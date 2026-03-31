@@ -270,7 +270,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 			invalidas++;
 			melhor = pior = RES_INVALIDO;
 		}
-		// registar a instância e resultados (válidas, inválids, melhor e pior valores), e tempo para gravação 
+		// registar a instância e resultados (válidas, inválidas, melhor e pior valores), e tempo para gravação 
 		resultados += { inst, 0, { validas, invalidas, melhor, pior, tempo }, { }};
 	}
 
@@ -464,7 +464,7 @@ void TProcura::MostraCaixa(TString titulo, ECaixaParte parte, int largura,
 		break;
 	case ECaixaParte::Meio:
 		if (icon[0] != 0)
-			printf("%*s│ ^%-2s%s", identacao, "", icon, *titulo);
+			printf("%*s│ %-2s%s", identacao, "", icon, *titulo);
 		else
 			printf("%*s│ %s", identacao, "", *titulo);
 		break;
@@ -780,7 +780,7 @@ void TProcura::InserirRegisto(TVector<TResultado>& resultados, int inst, int con
 	resultados += { inst, conf };
 	for (auto ind : indAtivo)
 		Registo(resultados.Last(), ind, Indicador(ind));
-	// adicionar no final a solução codificada em inteíros
+	// adicionar no final a solução codificada em inteiros
 	resultados.Last().valor += CodificarSolucao();
 	resultados.Last().solucao = Solucao();
 }

@@ -285,13 +285,13 @@ int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int max
 	peso = 1;
 	for (int i = qMin.Count() - 1; i >= 0; i--) {
 		pontos -= qMin[i] * peso;
-		if (i < maxAmeaca) // peço começa a aumentar
+		if (i < maxAmeaca) // peso começa a aumentar
 			peso *= base;
 	}
 	peso = 1;
 	for (int i = qMax.Count() - 1; i >= 0; i--) {
 		pontos += qMax[i] * peso;
-		if (i < maxAmeaca) // peço começa a aumentar
+		if (i < maxAmeaca) // peso começa a aumentar
 			peso *= base;
 	}
 

@@ -355,7 +355,7 @@ public:
 	 *
 	 * Exemplo com a alteração do valor por omissão de um parâmetro, e adição de dois novos parametros.
 	 * @code
-	 * // continuação da enumeração EParametrosProcujra
+	 * // continuação da enumeração EParametrosProcura
 	 * enum ESubProblema { opcaoHeur = parametrosProcura, opcaoSuc };
 	 * void CSubProblema::ResetParametros(void)
 	 * {
