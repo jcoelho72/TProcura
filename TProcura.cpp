@@ -648,8 +648,15 @@ bool TProcura::EditarIndicadores() {
 	bool editado = false;
 	while (true) {
 		MostraIndicadores();
-		if ((opcao = NovoValor("\nAlterar indicador: ")) == NAO_LIDO || opcao == 0)
-			return editado;
+		do {
+			if (opcao < 0) {
+				opcao = -opcao;
+				opcao = Dominio(opcao, 1, indicador.Count());
+				printf(COR_LEVE "I%d(%s):" COR_RESET " %d", opcao, *indicador[opcao - 1].nome, (int)Indicador(opcao - 1));
+			}
+			if ((opcao = NovoValor("\nIndicador (positivo ativa/desativa; negativo calcula): ")) == NAO_LIDO || opcao == 0)
+				return editado;
+		} while(opcao < 0);
 		opcao = Dominio(opcao, 1, indicador.Count());
 		if (indicador[opcao - 1].indice >= 0) {
 			for (int i = 0; i < indicador.Count(); i++)
