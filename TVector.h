@@ -1289,7 +1289,54 @@ public:
 	// --- Inserir / extrair inteiros pequenos ---
 	inline void SetBits(uint64_t value, int bitIndex, int bitCount);
 	inline uint64_t GetBits(int bitIndex, int bitCount) const;
+
+	// --- Conversão:
+	// Modo: 0 - binário "00110101" (palavra 64bits / linha),
+	//       1 - hexadecimal "3AD2.53C0" (4 palavras 64 bits / linha)
+	//       2 - mapa "  ✓ ✓✓ ✓" 100 bits / linha + régua
+	inline TString String(int modo = 0);
 };
+
+TString TBits::String(int modo) {
+	TString res;
+	int totalBits = Count() * 64;
+	switch (modo) {
+	case 0:
+		// processar bits mais altos primeiro
+		for (int i = totalBits - 1; i >= 0; i--) {
+			res += GetBit(i) ? "1" : "0";
+			if (i % 64 == 0)
+				res += "\n";
+		}
+		break;
+	case 1:
+		// processar palavras mais altas primeiro
+		for (int i = (Count() - 1); i >= 0; i--) {
+			res.printf("%016llX", (unsigned long long) Data()[i]);
+			if (i % 4 == 0)
+				res += "\n";
+			else
+				res += ".";
+		}
+		break;
+	case 2:
+		// régua
+		res += "\n               1         2         3         4         5         6         7         8         9        10";
+		res += "\n     01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
+		// mapa de 100 bits de largura
+		for (int i = 0; i < (totalBits + 99) / 100; i++) {
+			res.printf("\n%4d ", i * 100);
+			for (int j = 0; j < 100; j++)
+				if (i * 100 + j < totalBits && GetBit(i * 100 + j))
+					res += "✓";
+				else
+					res += " ";
+		}
+		break;
+	}
+	return res;
+}
+
 
 unsigned int TBits::Hash() const {
 	// utilizando FNV-1 hash (http://www.isthe.com/chongo/tech/comp/fnv/)
@@ -1371,7 +1418,7 @@ void TBits::SetBit(int index, bool value) {
 	if (w >= Count()) {
 		int currentWords = Count();
 		Count(w + 1);
-		while (currentWords < Count()) 
+		while (currentWords < Count())
 			Data()[currentWords++] = 0ULL;
 	}
 
