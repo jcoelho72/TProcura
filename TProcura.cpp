@@ -1304,11 +1304,10 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 		}
 		else
 			resultado = ExecutaAlgoritmo();
+		tempo = Cronometro(CONT_ALGORITMO);
+		InserirRegisto(resultados, instancia.valor, conf);
 		Parametro(NIVEL_DEBUG) = backupDebug;
 	}
-	tempo = Cronometro(CONT_ALGORITMO);
-	InserirRegisto(resultados, instancia.valor, conf);
-
 
 	if (resultado >= 0) {
 		mpiID == 0 && Debug(COMPLETO, false, "%-2s%-5d", Icon(EIcon::SUCESSO), resultado);
