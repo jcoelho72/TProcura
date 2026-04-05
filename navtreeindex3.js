@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"classTString.html#af95d76252021ef33b1ff8748b73b236d":[2,0,32,11],
 "classTVector.html":[2,0,33],
 "classTVector.html#a00d0bef89a8f0e527eb72e8c5ef30c7b":[2,0,33,49],
 "classTVector.html#a0321e02f28a957bf9ab65102a420e6fc":[2,0,33,21],
@@ -62,8 +63,8 @@ var NAVTREEINDEX3 =
 "compact_8h.html#a7166732d82ec7b436da550dd36f0401c":[3,0,5,3],
 "compact_8h.html#a7166732d82ec7b436da550dd36f0401ca3da35179ca5c4d1526e05913abab9003":[3,0,5,3,0],
 "compact_8h.html#a7166732d82ec7b436da550dd36f0401ca6b1c79f084dec216cc83177672fef26f":[3,0,5,3,1],
-"compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83":[3,0,5,2],
 "compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83":[3,0,5,1],
+"compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83":[3,0,5,2],
 "compact_8h_source.html":[3,0,5],
 "dir_114aa71efa62e0f2f4756db1d63d8801.html":[3,0,4,0],
 "dir_1d159169ffaaf33cf19acf7cabbcc614.html":[3,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "structSResultadoJogo.html#aa3a6c2a2c77ae65468a30b164161c60c":[2,0,19,7],
 "structSResultadoJogo.html#abd6e08b3c8da859100e6e999490ba794":[2,0,19,1],
 "structSResultadoJogo.html#ae063140594a3f03ce7ee7291264aece6":[2,0,19,0],
-"structSResultadoJogo.html#af361d6a58b5698c4fd15bae4124496e4":[2,0,19,6],
-"structSValorEstado.html":[2,0,20]
+"structSResultadoJogo.html#af361d6a58b5698c4fd15bae4124496e4":[2,0,19,6]
 };

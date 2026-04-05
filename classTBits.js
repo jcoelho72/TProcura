@@ -13,5 +13,6 @@ var classTBits =
     [ "operator|=", "classTBits.html#ab899492ee67ee4420b754ceae1aea84a", null ],
     [ "operator~", "classTBits.html#a46167a9ac08cb0a6ebdc746fc2e6534f", null ],
     [ "SetBit", "classTBits.html#a56f27216c04bd7c4087178c197ad14b2", null ],
-    [ "SetBits", "classTBits.html#a366d282c72debc57cc7e8ee33ae31095", null ]
+    [ "SetBits", "classTBits.html#a366d282c72debc57cc7e8ee33ae31095", null ],
+    [ "String", "classTBits.html#a7db09b3eda950ac310f85dd54f35287c", null ]
 ];
