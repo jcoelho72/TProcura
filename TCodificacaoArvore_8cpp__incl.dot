@@ -48,4 +48,8 @@ digraph "Melhorativa/TCodificacaoArvore.cpp"
   Node18 -> Node21 [id="edge22_Node000018_Node000021",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node18 -> Node12 [id="edge23_Node000018_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node18 -> Node22 [id="edge24_Node000018_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="termios.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node18 -> Node23 [id="edge25_Node000018_Node000023",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="unistd.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }

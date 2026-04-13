@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "compat", "namespacecompat.html", [
+      [ "ModoNativo", "classcompat_1_1ModoNativo.html", "classcompat_1_1ModoNativo" ]
+    ] ],
     [ "BitRef", "classBitRef.html", "classBitRef" ],
     [ "CAspirador", "classCAspirador.html", "classCAspirador" ],
     [ "CJogoDoGalo", "classCJogoDoGalo.html", "classCJogoDoGalo" ],

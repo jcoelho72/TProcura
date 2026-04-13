@@ -1,5 +1,6 @@
 var compact_8h =
 [
+    [ "compat::ModoNativo", "classcompat_1_1ModoNativo.html", "classcompat_1_1ModoNativo" ],
     [ "ICON_LISTA", "compact_8h.html#a02151536abbc2ecc7399c1634aed16bb", null ],
     [ "X", "compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83", null ],
     [ "X", "compact_8h.html#aa1f1528675cbc4a1c9780b805392ae83", null ],

@@ -66,7 +66,7 @@ var NAVTREEINDEX =
 "TProcura_8h.html#acd3686fbff542f708cd941c98c4e8a13",
 "classTCodificacaoBinaria.html#a39615f0d7252d78ef86b19b350008f63",
 "classTString.html#af95d76252021ef33b1ff8748b73b236d",
-"structSValorEstado.html"
+"structSResultadoJogo.html#a504ca78cc9a50f09bee359ab0c0e4ffe"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

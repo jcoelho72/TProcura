@@ -48,9 +48,13 @@ digraph "Melhorativa/Teste/Particao.cpp"
   Node18 -> Node21 [id="edge22_Node000018_Node000021",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node18 -> Node12 [id="edge23_Node000018_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node2 -> Node22 [id="edge24_Node000002_Node000022",color="steelblue1",style="solid",tooltip=" "];
-  Node22 [id="Node000022",label="../TCodificacaoBinaria.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TCodificacaoBinaria_8h.html",tooltip=" "];
-  Node22 -> Node3 [id="edge25_Node000022_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node8 [id="edge26_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node7 [id="edge27_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node18 -> Node22 [id="edge24_Node000018_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="termios.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node18 -> Node23 [id="edge25_Node000018_Node000023",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="unistd.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 -> Node24 [id="edge26_Node000002_Node000024",color="steelblue1",style="solid",tooltip=" "];
+  Node24 [id="Node000024",label="../TCodificacaoBinaria.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$TCodificacaoBinaria_8h.html",tooltip=" "];
+  Node24 -> Node3 [id="edge27_Node000024_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node8 [id="edge28_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge29_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
 }

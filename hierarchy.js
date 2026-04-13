@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "BitRef", "classBitRef.html", null ],
     [ "CListaNo", "classCListaNo.html", null ],
+    [ "compat::ModoNativo", "classcompat_1_1ModoNativo.html", null ],
     [ "SIndicador", "structSIndicador.html", null ],
     [ "SIndice", "structSIndice.html", null ],
     [ "SJogoEmLinha", "structSJogoEmLinha.html", null ],

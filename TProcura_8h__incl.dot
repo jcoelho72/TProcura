@@ -42,4 +42,8 @@ digraph "TProcura.h"
   Node15 -> Node18 [id="edge19_Node000015_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="iostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node15 -> Node9 [id="edge20_Node000015_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node19 [id="edge21_Node000015_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="termios.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node15 -> Node20 [id="edge22_Node000015_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="unistd.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
 }
