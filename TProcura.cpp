@@ -656,7 +656,7 @@ bool TProcura::EditarIndicadores() {
 			}
 			if ((opcao = NovoValor("\nIndicador (positivo ativa/desativa; negativo calcula): ")) == NAO_LIDO || opcao == 0)
 				return editado;
-		} while(opcao < 0);
+		} while (opcao < 0);
 		opcao = Dominio(opcao, 1, indicador.Count());
 		if (indicador[opcao - 1].indice >= 0) {
 			for (int i = 0; i < indicador.Count(); i++)
@@ -1772,6 +1772,7 @@ int TProcura::NovoValor(TString prompt) {
 
 // ler uma string
 TString TProcura::NovoTexto(TString prompt) {
+#ifdef _WIN32
 	TString str;
 	str.Count(BUFFER_SIZE);
 	printf("%s", *prompt);
@@ -1786,6 +1787,71 @@ TString TProcura::NovoTexto(TString prompt) {
 
 	// retorna nova TString, com o tamanho certo
 	return TString(*str);
+
+#else
+	// código para funcionar no Linux, no Windoss já isto é feito de omissõa
+	// permite editar e recuperar textos
+	static TVector<TString> historico;
+	TString buffer;
+	int histIndex = historico.Count();
+	compat::ModoNativo modo;   // ativa raw mode até sair do escopo
+	printf("%s", *prompt);
+
+	while (true) {
+		int c = getchar();
+
+		if (c == '\n' || c == '\r') { // Enter
+			printf("\n");
+			if (!buffer.Empty())
+				historico += buffer;
+			return TString(*buffer);
+		}
+
+		if (c == 127 || c == 8) { // Backspace
+			if (!buffer.Empty()) {
+				buffer.Pop();
+				buffer.Last() = 0;
+				printf("\b \b");
+			}
+			continue;
+		}
+
+		if (c == 27) { // ESC sequence
+			if (getchar() == '[') {
+				switch (getchar()) {
+				case 'A': // ↑
+					if (histIndex > 0) {
+						--histIndex;
+						while (!buffer.Empty()) {
+							buffer.Pop();
+							buffer.Last() = 0;
+							printf("\b \b");
+						}
+						printf("%s", *(buffer = historico[histIndex]));
+					}
+					break;
+				case 'B': // ↓
+					if (histIndex < historico.Count() - 1) {
+						++histIndex;
+						while (!buffer.Empty()) {
+							buffer.Pop();
+							buffer.Last() = 0;
+							printf("\b \b");
+						}
+						printf("%s", *(buffer = historico[histIndex]));
+					}
+					break;
+				}
+			}
+			continue;
+		}
+
+		// caracteres normais
+		buffer.printf("%c", c);
+		putchar(c);
+	}
+	return TString(*buffer);
+#endif
 }
 
 void TProcura::SolicitaInstancia() {
