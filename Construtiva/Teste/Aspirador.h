@@ -5,7 +5,7 @@
 /**
  * @brief Representa um estado no problema do Aspirador. 
  *
- * Este problema consiste ter salas vizinhas, que podem estar sujas ou limpas. 
+ * Este problema consiste em ter salas vizinhas, que podem estar sujas ou limpas. 
  * Pretende-se ter todas as salas limpas, sendo as ações de mover para a sala do lado, ou aspirar. 
  */
 class CAspirador :
