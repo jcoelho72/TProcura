@@ -22,12 +22,12 @@ constexpr int RES_VAZIO = -4; // não existe resultado registado
 // macros para ativar/desativar cinzento (ANSI)
 #ifdef VPL_ATIVO
 
-#define COR_LEVE ""
-#define COR_RESET ""
-#define COR_ATIVO ""
-#define COR_INATIVO ""
-#define COR_ATIVO_LEVE ""
-#define COR_INATIVO_LEVE ""
+#define COR_LEVE " "
+#define COR_RESET " "
+#define COR_ATIVO " "
+#define COR_INATIVO " "
+#define COR_ATIVO_LEVE " "
+#define COR_INATIVO_LEVE " "
 
 #else
 
