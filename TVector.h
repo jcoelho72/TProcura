@@ -1284,11 +1284,11 @@ public:
 
 	// --- Bits individuais ---
 	inline bool GetBit(int index) const;
-	inline void SetBit(int index, bool value);
+	inline TBits& SetBit(int index, bool value);
 
 	// --- Inserir / extrair inteiros pequenos ---
-	inline void SetBits(uint64_t value, int bitIndex, int bitCount);
 	inline uint64_t GetBits(int bitIndex, int bitCount) const;
+	inline TBits& SetBits(uint64_t value, int bitIndex, int bitCount);
 
 	// --- Conversão:
 	// Modo: 0 - binário "00110101" (palavra 64bits / linha),
@@ -1412,7 +1412,7 @@ uint64_t TBits::GetBits(int bitIndex, int bitCount) const {
 }
 
 
-void TBits::SetBit(int index, bool value) {
+TBits& TBits::SetBit(int index, bool value) {
 	int w = index >> 6;
 	int o = index & 63;
 	if (w >= Count()) {
@@ -1427,9 +1427,11 @@ void TBits::SetBit(int index, bool value) {
 		word |= (1ULL << o);
 	else
 		word &= ~(1ULL << o);
+
+	return *this;
 }
 
-void TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
+TBits& TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
 	int w = bitIndex >> 6;
 	int o = bitIndex & 63;
 
@@ -1448,6 +1450,8 @@ void TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
 		uint64_t mask2 = (1ULL << spill) - 1;
 		Data()[w + 1] = (Data()[w + 1] & ~mask2) | (value >> (64 - o));
 	}
+
+	return *this;
 }
 
 
