@@ -38,6 +38,7 @@ public:
 	int Heuristica(void);
 
 	bool Distinto(TProcuraConstrutiva* estado);
+
 	void Codifica(TBits &estado);
 
 private:

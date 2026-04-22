@@ -295,6 +295,7 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 	double taxaEficacia = 0, taxaQualidade = 0, taxaEficiencia = 0, desempenho = 0;
 	bool considerarQualidade = (referencias[1] > referencias[0]); // custoMin < custoMax (se iguais, o custo não é considerado para o indicador global)
 	for (auto& res : resultados) {
+		// res.valor = { validas, invalidas, melhor, pior, tempo }
 		// instância válida apenas se todas as soluções para a instância forem válidas
 		if (res.valor[0] > 0 && res.valor[1] == 0) {
 			validas++;
@@ -306,8 +307,8 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 		}
 		// não resolvidas se existirem resultados inválidos
 		if (res.valor[1] > 0) {
-			// custo máximo por instância
-			piorCusto += referencias[1] / resultados.Count();
+			// custo máximo médio por instância (a dobrar)
+			piorCusto += 2 * referencias[1] / resultados.Count();
 			// tempo máximo por instância
 			tempoTotal += referencias[3] / resultados.Count();
 		}

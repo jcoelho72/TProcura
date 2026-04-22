@@ -204,7 +204,7 @@ bool CPuzzle8::Distinto(TProcuraConstrutiva *estado)
 void CPuzzle8::Codifica(TBits &estado) 
 {
 	TProcuraConstrutiva::Codifica(estado);
-	// não há simetrias, simplesmente codificar números de 4 bits (0 a 8)
+	// não há simetrias, simplesmente codificar números de 4 bits  (0 a 8)
 	for (int i = 0, index = 0; i < 9; i++, index += 4)
 		estado.SetBits(puzzle[i], index, 4);
 }
