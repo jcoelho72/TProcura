@@ -416,7 +416,7 @@ Utilizamos P3(SEMENTE)=2, naturalmente que outra semente aleatória poderia gera
 
 Vamos ver a procura em profundidade na instância 40, que sabemos ter uma solução de 12. 
 Vamos alterar o algoritmo, colocar a profundidade a 4, debug a completo e visualização de ações a 1, 
-para ser ver todos os estados. 
+para se ver todos os estados. 
 Introduza: **1; 40; 3; 1; 3; 7; 4; 2; 4; 6; 1; *ENTER*; 6.**
 
 \htmlonly

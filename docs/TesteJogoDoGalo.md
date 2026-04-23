@@ -245,7 +245,7 @@ Insira: **2; *ENTER*.**
 </pre>
 \endhtmlonly
 
-Temos agora a1, mas não c1 (obtido por simetria vertical). Do mesmmo modo temos a2, mas não c2, e a3 mas não c3.
+Temos agora a1, mas não c1 (obtido por simetria vertical). Do mesmo modo temos a2, mas não c2, e a3 mas não c3.
 Já b2 e b3 não têm estados simétricos. 
 
 Assim, reduzimos consideravelmente a ramificação inicial, bem como os estados existentes no geral.
@@ -255,7 +255,7 @@ já que podemos estar a eliminar alternativas importantes
 num estado, apenas porque ocorrem em outro. 
 Mas com este teste podemos ver a importância das simetrias.
 
-O parâmetro de estados repetidos deve ficar nas procuras adversas em igonrar, e o de ordenação em 2.
+O parâmetro de estados repetidos deve ficar nas procuras adversas em ignorar, e o de ordenação em 2.
 
 Note que se quisermos jogar contra o computador, 
 podemos utilizar a ação "exe" para que o computador jogue com o algoritmo atual.
@@ -2671,7 +2671,7 @@ Vamos colocar em competição várias configurações a diferentes profundidades
 maior desempenho nas procuras de maior profundidade.
 
 Temos também de ter o cuidado de desligar a utilização das hashtables, 
-para observer sem perturbações o ganho da profundidade.
+para observar sem perturbações o ganho da profundidade.
 
 Insira: 
 - **1; 7; P1=1 P2=4 P12=0 P7=20,7,5,3; -1; *ENTER*.**

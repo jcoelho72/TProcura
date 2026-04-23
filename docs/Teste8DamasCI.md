@@ -65,7 +65,7 @@ Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando d
 existem damas já colocadas mas algumas atacam-se mutuamente.
 Esta é uma solução completa aleatória, que pretendemos melhorar. 
 Tem ainda violações, que são damas a atacarem-se, que neste contexto convertem-se em custos,
-que pretendemos remover. Uma solução de custo 0 é prortanto uma solução válida.
+que pretendemos remover. Uma solução de custo 0 é portanto uma solução válida.
 
 Temos um número de parâmetros mais extenso,
 embora os 5 primeiros parâmetros sejam os mesmos que no exemplo do teste TVector.
@@ -136,7 +136,7 @@ Opção: <span class="entrada">2</span>
 </pre>
 \endhtmlonly
 
-Entramos num modo de expoloração manual com as operações dos algoritmos melhorativos.
+Entramos num modo de exploração manual com as operações dos algoritmos melhorativos.
 No entanto a população foi fixada em 4, para melhor gerir a exploração manual.
 Durante a geração da população dos 4 elementos foi encontrada uma solução de custo 2, que foi mostrada de imediato.
 Arranca a época 0 (linha: " ├─┬─ 📆 0 ⏱  ──── 💰 g2-4"), tal como os algoritmos evolutivos, mas neste caso cada época é o resultado de aplicar um operador.
@@ -206,7 +206,7 @@ Vamos começar pela mutação, e mutar o indivíduo 4. Insira: **1; 4.**
 \endhtmlonly
 
 A mutação acabou por trocar apenas um valor, o que se pode confirmar nas linhas 🧍(atual) e 🦠 (mutado),
-com as codificaçõe seguidas e alinhadas.
+com as codificações seguidas e alinhadas.
 Ficou uma solução igualmente má de custo 4. 
 Podemos alterar a mutação no parâmetro P21(TIPO_MUTAR). 
 Existem também vários operadores de mutação disponíveis dependente do tipo de codificação.
@@ -1068,7 +1068,7 @@ Assim ficamos com uma ideia mais completa da diversidade da população.
 Mostramos informação de todas as fases. A primeira fase é a seleção dos pais (`├─┬─── FASE 🧩  Selecionar 20 🧑‍🤝‍🧑 pais ─────`).  
 Há informação na época 0 de que irão ser selecionados 20 pais pelo método Roleta, com pressão 150 (`├───── Roleta, pressão 150 ─────`).
 Este valor corresponde a 1,5, sendo que o valor 1 todos os membros têm a mesma probabilidade, e com 2
-os melhores têm muito mais possibildiades de ser escolhidos.
+os melhores têm muito mais possibilidades de ser escolhidos.
 A permilagem de cada indivíduo é colocada na tabela 100%.
 
 Podemos ver a diferença entre o 1 e o 2, tendo o indivíduo 1 custo 2 e o indivíduo 2 custo 4.

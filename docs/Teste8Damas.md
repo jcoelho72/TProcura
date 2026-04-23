@@ -433,7 +433,7 @@ Temos um teste empírico na ação 6, com mais instâncias.
 Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações
 tivessem custo variável, faria sentido uma heurística para estimar o custo até ao final. Sendo o custo fixo, 
 apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados 
-num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas
+num determinado nível. Assim, não faz sentido construir uma heurística, nem ter procuras informadas
 com a abordagem construtiva.
 
 Podemos sempre considerar a hipótese de ter uma heurística ignorando a admissibilidade, apenas para guiar a procura.
