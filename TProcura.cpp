@@ -1291,24 +1291,24 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 {
 	// carregar a configuração
 	ConfiguracaoAtual(configuracoes[conf], GRAVAR);
+	ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
+	Parametro(NIVEL_DEBUG) = NADA; // remover informação de debug do algoritmo, já que é um teste empírico
 	instancia.valor = inst;
 	// carregar instância
 	Inicializar();
 	// executar um algoritmo 
 	LimparEstatisticas();
-	{
-		ENivelDebug backupDebug = (ENivelDebug)Parametro(NIVEL_DEBUG);
-		Parametro(NIVEL_DEBUG) = NADA; // remover informação de debug do algoritmo, já que é um teste empírico
-		if (!ficheiroGravar.Empty()) {
-			Gravar();
-			resultado = RES_VAZIO;
-		}
-		else
-			resultado = ExecutaAlgoritmo();
-		tempo = Cronometro(CONT_ALGORITMO);
-		InserirRegisto(resultados, instancia.valor, conf);
-		Parametro(NIVEL_DEBUG) = backupDebug;
+
+	if (!ficheiroGravar.Empty()) {
+		Gravar();
+		resultado = RES_VAZIO;
 	}
+	else
+		resultado = ExecutaAlgoritmo();
+	tempo = Cronometro(CONT_ALGORITMO);
+	InserirRegisto(resultados, instancia.valor, conf);
+
+	Parametro(NIVEL_DEBUG) = backupDebug;
 
 	if (resultado >= 0) {
 		mpiID == 0 && Debug(COMPLETO, false, "%-2s%-5d", Icon(EIcon::SUCESSO), resultado);
