@@ -291,10 +291,10 @@ Opção: <span class="entrada">2</span>
 🔍 Sucessor [1-5, ação(ões), exe]: <span class="entrada">↵</span>
 </pre>
 </p>
-<p>Temos agora a1, mas não c1 (obtido por simetria vertical). Do mesmmo modo temos a2, mas não c2, e a3 mas não c3. Já b2 e b3 não têm estados simétricos.</p>
+<p>Temos agora a1, mas não c1 (obtido por simetria vertical). Do mesmo modo temos a2, mas não c2, e a3 mas não c3. Já b2 e b3 não têm estados simétricos.</p>
 <p>Assim, reduzimos consideravelmente a ramificação inicial, bem como os estados existentes no geral.</p>
 <p>No entanto, tal como referido na ação 1, não podemos ignorar repetidos, já que podemos estar a eliminar alternativas importantes num estado, apenas porque ocorrem em outro. Mas com este teste podemos ver a importância das simetrias.</p>
-<p>O parâmetro de estados repetidos deve ficar nas procuras adversas em igonrar, e o de ordenação em 2.</p>
+<p>O parâmetro de estados repetidos deve ficar nas procuras adversas em ignorar, e o de ordenação em 2.</p>
 <p>Note que se quisermos jogar contra o computador, podemos utilizar a ação "exe" para que o computador jogue com o algoritmo atual.</p>
 <p><a class="anchor" id="jdg-a3"></a></p>
 <h2><a class="anchor" id="autotoc_md105"></a>
@@ -2618,7 +2618,7 @@ Opção:
 Ação 6 - Testes Empíricos</h2>
 <p>Embora a estratégia de jogo seja fácil de obter, vamos simular um torneio para demonstrar a possibilidade de comparar parâmetros distintos.</p>
 <p>O único parâmetro que faz diferença, atendendo a que os tempos de execução são muito rápidos, é a profundidade da procura. Vamos colocar em competição várias configurações a diferentes profundidades, e pretendemos conseguir observar maior desempenho nas procuras de maior profundidade.</p>
-<p>Temos também de ter o cuidado de desligar a utilização das hashtables, para observer sem perturbações o ganho da profundidade.</p>
+<p>Temos também de ter o cuidado de desligar a utilização das hashtables, para observar sem perturbações o ganho da profundidade.</p>
 <p>Insira:</p><ul>
 <li><b>1; 7; P1=1 P2=4 P12=0 P7=20,7,5,3; -1; <em>ENTER</em>.</b></li>
 </ul>

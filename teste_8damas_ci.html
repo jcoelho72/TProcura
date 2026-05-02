@@ -147,7 +147,7 @@ Ação 1 - Ver instâncias</h2>
 Opção: 
 </pre>
 </p>
-<p>Temos uma instância das 8 Damas como no exemplo da <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas algumas atacam-se mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto convertem-se em custos, que pretendemos remover. Uma solução de custo 0 é prortanto uma solução válida.</p>
+<p>Temos uma instância das 8 Damas como no exemplo da <a class="el" href="classTProcuraConstrutiva.html" title="Representa um estado no espaço de estados.">TProcuraConstrutiva</a>. Em vez de um tabuleiro vazio, em que iamos construindo a solução adicionando damas, existem damas já colocadas mas algumas atacam-se mutuamente. Esta é uma solução completa aleatória, que pretendemos melhorar. Tem ainda violações, que são damas a atacarem-se, que neste contexto convertem-se em custos, que pretendemos remover. Uma solução de custo 0 é portanto uma solução válida.</p>
 <p>Temos um número de parâmetros mais extenso, embora os 5 primeiros parâmetros sejam os mesmos que no exemplo do teste <a class="el" href="classTVector.html">TVector</a>. O último parâmetro é o P24, muito embora não estejam 24 parâmetros. O P11 por exemplo não é mostrado. Alguns parâmetros só são ativos devido a valores de outros parâmetros. Como temos o P1(ALGORITMO) em Algoritmos Evolutivos, este algoritmo tem muitos parâmetros, e por esse motivo são mostrados bastantes. Iremos abordar cada um no momento próprio.</p>
 <p>Vamos trocar para uma instância menor antes de avançarmos, para simplificar a nossa exploração.</p>
 <p>Insira: <b>1; 4.</b></p>
@@ -201,7 +201,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>Entramos num modo de expoloração manual com as operações dos algoritmos melhorativos. No entanto a população foi fixada em 4, para melhor gerir a exploração manual. Durante a geração da população dos 4 elementos foi encontrada uma solução de custo 2, que foi mostrada de imediato. Arranca a época 0 (linha: " ├─┬─ 📆 0 ⏱  ──── 💰 g2-4"), tal como os algoritmos evolutivos, mas neste caso cada época é o resultado de aplicar um operador.</p>
+<p>Entramos num modo de exploração manual com as operações dos algoritmos melhorativos. No entanto a população foi fixada em 4, para melhor gerir a exploração manual. Durante a geração da população dos 4 elementos foi encontrada uma solução de custo 2, que foi mostrada de imediato. Arranca a época 0 (linha: " ├─┬─ 📆 0 ⏱  ──── 💰 g2-4"), tal como os algoritmos evolutivos, mas neste caso cada época é o resultado de aplicar um operador.</p>
 <p>Podemos ver a população de 4 elementos com custos de 2 a 4. É mostrado a codificação inteira e não as soluções a que correspondem. Assim pretendemos focar no que os algoritmos vêm, e não nas soluções.</p>
 <p>A descodificação, ou seja, a conversão da codificação para uma solução, é neste caso simples: cada número na posição K corresponde à coluna em que a dama da linha K deve estar. A descodificação é normalmente necessária para avaliar o custo de uma solução, neste caso o número de pares de damas a atacarem-se mutuamente.</p>
 <p>A codificação de uma solução é também imediata. No entanto em problemas complexos estas duas operações, codificar/descodificar uma solução, podem ter custos computacionais consideráveis.</p>
@@ -240,7 +240,7 @@ Opção: <span class="entrada">2</span>
  │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos):
 </pre>
 </p>
-<p>A mutação acabou por trocar apenas um valor, o que se pode confirmar nas linhas 🧍(atual) e 🦠 (mutado), com as codificaçõe seguidas e alinhadas. Ficou uma solução igualmente má de custo 4. Podemos alterar a mutação no parâmetro P21(TIPO_MUTAR). Existem também vários operadores de mutação disponíveis dependente do tipo de codificação.</p>
+<p>A mutação acabou por trocar apenas um valor, o que se pode confirmar nas linhas 🧍(atual) e 🦠 (mutado), com as codificações seguidas e alinhadas. Ficou uma solução igualmente má de custo 4. Podemos alterar a mutação no parâmetro P21(TIPO_MUTAR). Existem também vários operadores de mutação disponíveis dependente do tipo de codificação.</p>
 <p>Vamos agora passar para o cruzamento, e cruzar o individuo 1 com o 3, os dois melhores na população, e substituir o individuo 4. Insira: <b>2; 1; 3; 4.</b></p>
 <p> 
 <pre>
@@ -996,7 +996,7 @@ Opção:
 <p>A informação é agora bastante extensa, mas cortamos a informação de debug desde a época 2 <code>├─┬─ 📆 2 ⏱ ──── 💰 g1-5</code> até à época 7 <code>├─┬─ 📆 7 ⏱ 1ms ──── 💰 g1-5</code>. Mostramos apenas as primeiras e últimas épocas.</p>
 <p>Em cada época (vamos ver a época 0) temos agora toda a população (<code>├───── 🧍🧑‍🤝‍🧑🚶‍ ─────</code>), mostrando a codificação de cada elemento e o seu custo (<code>🧍 1 0 2 0 3 💰 g:2</code>). Temos após a população um mapa de distâncias entre indivíduos (<code>├───── 📏 ─────</code>), caso a população seja 10 ou menor, ou pares de distâncias entre elementos consecutivos. Assim ficamos com uma ideia mais completa da diversidade da população.</p>
 <p>Mostramos informação de todas as fases. A primeira fase é a seleção dos pais (<code>├─┬─── FASE 🧩 Selecionar 20 🧑‍🤝‍🧑 pais ─────</code>). <br  />
- Há informação na época 0 de que irão ser selecionados 20 pais pelo método Roleta, com pressão 150 (<code>├───── Roleta, pressão 150 ─────</code>). Este valor corresponde a 1,5, sendo que o valor 1 todos os membros têm a mesma probabilidade, e com 2 os melhores têm muito mais possibildiades de ser escolhidos. A permilagem de cada indivíduo é colocada na tabela 100%.</p>
+ Há informação na época 0 de que irão ser selecionados 20 pais pelo método Roleta, com pressão 150 (<code>├───── Roleta, pressão 150 ─────</code>). Este valor corresponde a 1,5, sendo que o valor 1 todos os membros têm a mesma probabilidade, e com 2 os melhores têm muito mais possibilidades de ser escolhidos. A permilagem de cada indivíduo é colocada na tabela 100%.</p>
 <p>Podemos ver a diferença entre o 1 e o 2, tendo o indivíduo 1 custo 2 e o indivíduo 2 custo 4. A probabilidade de ser selecionado o indivíduo 1 é de 7,5% enquanto que o indivíduo 2 tem probabilidade de 3,8%.</p>
 <p>Como resultado destas probabilidades, a tabela seguinte, #Pai, tem o número de vezes que cada indivíduo foi escolhido para pai. O primeiro indivíduo foi escolhido 2 vezes. Podemos ver alguns indivíduos que nem foram escolhidos, como o 4.</p>
 <p>Terminada a fase de seleção dos pais, arranca a fase de reprodução (<code>├─┬─── FASE 🧬 Reproduzir 20 pais ─────</code>). Nesta fase temos os pais emparelhados (<code>├───── Pais (🧑‍🤝‍🧑 ) ─────</code>). Na tabela IDs podemos ver os indivíduos da população original por uma ordem de reprodução. Podemos confirmar que o indivíduo 1 está duas vezes, na posição 8 e 20. Irá reproduzir com o indivíduo 5 e 12.</p>
