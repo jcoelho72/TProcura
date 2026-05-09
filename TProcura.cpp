@@ -1094,13 +1094,22 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 
 			if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
 				Debug(ATIVIDADE, false,
-					"\n ├─ %-2s%-15s %-2s%-5s %-2s%-5s %-2s%-5s %-2s%-5s",
+					"\n ├─ %-2s%-15s %-2s%-5s %-2s%-5s %-2s%-5s %-2s%-5s %-2s",
 					Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE)),
 					Icon(EIcon::TAREFA), *MostraInt(nTarefa),
 					Icon(EIcon::INST), *MostraInt(inst),
 					Icon(EIcon::CONF), *MostraInt(configuracao + 1),
-					Icon(EIcon::PROCESSO), *MostraInt(mpiCount)) &&
-					fflush(stdout);
+					Icon(EIcon::PROCESSO), *MostraInt(mpiCount),
+					Icon(EIcon::IND));
+				int maxInd = 10;
+				for (auto ind : resultados.Last().valor) {
+					if (maxInd-- < 0) {
+						printf("… ");
+						break;
+					}
+					printf("%s ", *MostraInt(ind));
+				}
+				fflush(stdout);
 				Cronometro(CONT_REPORTE, true);
 			}
 			ExecutaTarefa(resultados, inst, configuracao);
@@ -1229,8 +1238,14 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro)
 				Icon(EIcon::CONF), *MostraInt(resultados.Last().configuracao),
 				Icon(EIcon::PROCESSO), *MostraInt(trabalhador.Last()),
 				Icon(EIcon::IND));
-			for (auto ind : resultados.Last().valor)
+			int maxInd = 10;
+			for (auto ind : resultados.Last().valor) {
+				if (maxInd-- < 0) {
+					printf("… ");
+					break;
+				}
 				printf("%s ", *MostraInt(ind));
+			}
 			fflush(stdout);
 			Cronometro(CONT_REPORTE, true);
 		}
