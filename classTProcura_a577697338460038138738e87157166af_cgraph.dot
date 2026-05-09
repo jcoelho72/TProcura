@@ -32,15 +32,17 @@ digraph "TProcura::TesteInicio"
   Node12 [id="Node000012",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a07ef3e2896824e87650013dfefb3d665",tooltip=" "];
   Node12 -> Node13 [id="edge14_Node000012_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="compat::ContaUTF8",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5",tooltip=" "];
-  Node11 -> Node3 [id="edge15_Node000011_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node11 -> Node14 [id="edge16_Node000011_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TProcura::ParametroAtivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e",tooltip=" "];
-  Node14 -> Node3 [id="edge17_Node000014_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node9 -> Node15 [id="edge18_Node000009_Node000015",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TString::printf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a4b9a718839325a0e057bc6e2483d3f17",tooltip=" "];
-  Node15 -> Node4 [id="edge19_Node000015_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node15 -> Node16 [id="edge20_Node000015_Node000016",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TVector\< char \>::Data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#addd572d70b587092fddc21a8b0f53120",tooltip="Acesso direto."];
-  Node15 -> Node17 [id="edge21_Node000015_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TVector\< char \>::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
+  Node11 -> Node14 [id="edge15_Node000011_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TProcura::MostraInt",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a671ecaefea9e2bf641075f9a718483bd",tooltip="Mostra inteiro grande num formato humano."];
+  Node11 -> Node3 [id="edge16_Node000011_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node15 [id="edge17_Node000011_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TProcura::ParametroAtivo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a816897a3f52c463e9ba30df3fd41dd6e",tooltip=" "];
+  Node15 -> Node3 [id="edge18_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node9 -> Node16 [id="edge19_Node000009_Node000016",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TString::printf",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a4b9a718839325a0e057bc6e2483d3f17",tooltip=" "];
+  Node16 -> Node4 [id="edge20_Node000016_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node16 -> Node17 [id="edge21_Node000016_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="TVector\< char \>::Data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#addd572d70b587092fddc21a8b0f53120",tooltip="Acesso direto."];
+  Node16 -> Node18 [id="edge22_Node000016_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="TVector\< char \>::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
 }

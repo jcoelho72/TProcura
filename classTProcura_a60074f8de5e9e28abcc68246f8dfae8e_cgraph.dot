@@ -89,9 +89,11 @@ digraph "TProcura::TesteValidacao"
   Node32 [id="Node000032",label="TProcura::MostraCaixa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a07ef3e2896824e87650013dfefb3d665",tooltip=" "];
   Node32 -> Node33 [id="edge51_Node000032_Node000033",color="steelblue1",style="solid",tooltip=" "];
   Node33 [id="Node000033",label="compat::ContaUTF8",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5",tooltip=" "];
-  Node31 -> Node5 [id="edge52_Node000031_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node31 -> Node19 [id="edge53_Node000031_Node000019",color="steelblue1",style="solid",tooltip=" "];
-  Node29 -> Node9 [id="edge54_Node000029_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node34 [id="edge55_Node000001_Node000034",color="steelblue1",style="solid",tooltip=" "];
-  Node34 [id="Node000034",label="TProcura::Validar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa8d8105f1eab506f9d2064d4ac27d477",tooltip="Verifica a validade de uma solução para a instância atual."];
+  Node31 -> Node34 [id="edge52_Node000031_Node000034",color="steelblue1",style="solid",tooltip=" "];
+  Node34 [id="Node000034",label="TProcura::MostraInt",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a671ecaefea9e2bf641075f9a718483bd",tooltip="Mostra inteiro grande num formato humano."];
+  Node31 -> Node5 [id="edge53_Node000031_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node31 -> Node19 [id="edge54_Node000031_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node29 -> Node9 [id="edge55_Node000029_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node35 [id="edge56_Node000001_Node000035",color="steelblue1",style="solid",tooltip=" "];
+  Node35 [id="Node000035",label="TProcura::Validar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa8d8105f1eab506f9d2064d4ac27d477",tooltip="Verifica a validade de uma solução para a instância atual."];
 }
