@@ -591,6 +591,9 @@ public:
 	/// @brief Gravar solução CSV (todas as ações)
 	/// @note 0 = não grava, 1 = grava
 	static int gravarSolucao;
+	/// @brief Modo KMGT - Kilo, Mega, Giga, Tera
+	/// @note 0 = desativado, 1 = ativado
+	static int modoKMGT;
 
 
 
@@ -645,6 +648,8 @@ public:
 
 	/// @brief Mostra tempo num formato humano.
 	static TString MostraTempo(double segundos);
+	/// @brief Mostra inteiro grande num formato humano.
+	static TString MostraInt(int64_t valor, bool cor = true);
 
 	static void MostraCaixa(TVector<TString> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
 	static void MostraCaixa(TString titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0, const char* icon = "");
