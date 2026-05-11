@@ -91,7 +91,7 @@ bool TProcuraConstrutiva::Acao(TString acao) {
 	return false;
 }
 
-// Coloca em sucessores a lista de objectos sucessores (sao alocados neste metodo e tem de ser apagados)
+// Coloca em sucessores a lista de objetos sucessores (sao alocados neste metodo e tem de ser apagados)
 // O custo se não existir, deixar a 1 (valor por omissão)
 // chamar o metodo desta classe apos adicionar os sucessores para actualizar geracoes e expansoes,
 // bem como verificar a existência de estados repetidos
@@ -148,7 +148,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 }
 
 
-// metodo interno para libertar objectos nao necessarios
+// metodo interno para libertar objetos nao necessarios
 void TProcuraConstrutiva::LibertarVector(TVector<TNo>& vector, int excepto, int maiorQue)
 {
 	for (int i = 0; i < vector.Count(); i++)
@@ -457,7 +457,7 @@ int TProcuraConstrutiva::MelhorPrimeiro(int nivel)
 		LibertarVector(sucessores);
 	}
 	else
-		DebugFolha(false, "%-2s&-2s", Icon(EIcon::FOLHA), Icon(EIcon::LIMITE));
+		DebugFolha(false, "%-2s%-2s", Icon(EIcon::FOLHA), Icon(EIcon::LIMITE));
 	return -1;
 }
 

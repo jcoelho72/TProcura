@@ -36,14 +36,14 @@ public:
 		return clone;
 	}
 
-	void Copiar(TPonto objecto) {
-		TProcuraMelhorativa::Copiar(objecto);
-		numeros = ((CParticao*)objecto)->numeros;
-		esquerda = ((CParticao*)objecto)->esquerda;
-		direita = ((CParticao*)objecto)->direita;
-		totalEsquerda = ((CParticao*)objecto)->totalEsquerda;
-		totalDireita = ((CParticao*)objecto)->totalDireita;
-		solCompleta = ((CParticao*)objecto)->solCompleta;
+	void Copiar(TPonto objeto) {
+		TProcuraMelhorativa::Copiar(objeto);
+		numeros = ((CParticao*)objeto)->numeros;
+		esquerda = ((CParticao*)objeto)->esquerda;
+		direita = ((CParticao*)objeto)->direita;
+		totalEsquerda = ((CParticao*)objeto)->totalEsquerda;
+		totalDireita = ((CParticao*)objeto)->totalDireita;
+		solCompleta = ((CParticao*)objeto)->solCompleta;
 	}
 	void Inicializar(void);
 	void Debug(bool completo = true) override;

@@ -51,7 +51,7 @@ A arquitetura baseia-se em superclasses que já implementam algoritmos de procur
 Este projeto é utilizado nas Unidades Curriculares:
 
 - [Introdução à Inteligência Artificial](https://guiadoscursos.uab.pt/ucs/introducao-a-inteligencia-artificial/) da Universidade Aberta.
-- [Heurísticas Modernas](https://guiadoscursos.uab.pt/ucs/heuristicas-modernas-2/) da Universidade Aberta e Universidade de Tras-os-Montes e Alto Douro.
+- [Heurísticas Modernas](https://guiadoscursos.uab.pt/ucs/heuristicas-modernas-2/) da Universidade Aberta e Universidade de Trás-os-Montes e Alto Douro.
 
 ---
 
@@ -170,7 +170,7 @@ Aceder a [página do repositório](https://github.com/jcoelho72/TProcura/) e cli
 
 Aceder a [página do repositório](https://github.com/jcoelho72/TProcura/) e clique em **"Code" → "Download ZIP"**.
 
-Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme seu ambiente).
+Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme o seu ambiente).
 
 ### Opção 3 - Utilizar como Submódulo
 
@@ -191,10 +191,10 @@ Para implementar um novo problema utilizando uma das superclasses pode:
 
 Superclasses:
 - TProcura  - caso o problema não seja de procura, poderá utilizar esta classe para fazer testes paramétricos
-- TProcuraConstrutiva - indicado caso tenha um problema de procura, e adopte a abordagem construtiva
+- TProcuraConstrutiva - indicado caso tenha um problema de procura, e adote a abordagem construtiva
 - TProcuraMelhorativa  - indicado caso tenha um problema de procura ou muito grande, e opte pela abordagem melhorativa
 - TCodificacaoBinaria, TCodificacaoInteira, TCodificacaoPermutacao, TCodificacaoReal, TCodificacaoArvore - na abordagem melhorativa, caso a representação do seu problema encaixe numa destas (as mais comuns), utilize estas classes de modo a ter os operadores já disponíveis, basta implementar a avaliação.
-- TProcuraAdversa - indicado para procuras adversas, ou seja jogos
+- TProcuraAdversa - indicado para procuras adversas, ou seja, jogos
 
 ---
 

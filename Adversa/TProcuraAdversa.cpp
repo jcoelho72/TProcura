@@ -50,7 +50,7 @@ void TProcuraAdversa::ResetParametros()
 	parametro += {
 		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores." },
 		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores)." },
-		{ "PODA_CEGA",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleatória, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " },
+		{ "PODA_CEGA",0,0,10000, "Igual a PODA_HEURISTICA, mas é efetuado de forma aleatória, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " },
 		{ "HEUR_BASE", 200, 100, 1000, "Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao dobro e é o valor por omissão)" }
 	};
 }
@@ -180,7 +180,7 @@ int TProcuraAdversa::Heuristica(void) {
 }
 
 // chamar em CSubProblema::Heuristica() para verificar se a heurística já existe, ou precisa de ser calculada
-bool TProcuraAdversa::ExisteHeuritica(void) {
+bool TProcuraAdversa::ExisteHeuristica(void) {
 	TValorEstado calculado;
 	if (ValorEstado(calculado, LER)) {
 		heuristica = calculado.valor;

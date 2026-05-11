@@ -221,7 +221,7 @@ public:
 	virtual ~TProcura(void) {}
 
 	/**
-	 * @brief Coloca o objecto no estado inicial da procura.
+	 * @brief Coloca o objeto no estado inicial da procura.
 	 * @note Obrigatória a redefinição.
 	 *
 	 * Este método inicializa as variáveis de estado no estado inicial vazio.
@@ -554,9 +554,9 @@ public:
 
 	/// @brief ID da instância atual, a ser utilizado em SolucaoVazia().
 	static TParametro instancia;
-	/// @brief prefixo do nome ficheiro de uma instância - editado pelo utilizador 
+	/// @brief prefixo do nome do ficheiro de uma instância - editado pelo utilizador 
 	///        Caso não seja nulo, utilizar como prefixo, concatenando com ID da instância, para obter o ficheiro da instância
-	///        Pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo 
+	///        Pode ser utilizado para gravar a instância num novo formato, colocando um indicador ativo 
 	///        que é chamado após a execução
 	/// @see Inicializar()
 	static TString ficheiroInstancia;
@@ -565,7 +565,7 @@ public:
 	/// @brief Parâmetros a serem utilizados na configuração atual.
 	/// @see EParametrosConstrutiva
 	static TVector<TParametro> parametro;
-	/// @brief Indicadores que podem ser calculados após a execução, quer com informação da instãncia, quer com resultado da última corrida.
+	/// @brief Indicadores que podem ser calculados após a execução, quer com informação da instância, quer com resultado da última corrida.
 	/// @see Indicador()
 	static TVector<TIndicador> indicador;
 	static TVector<int> indAtivo; // lista por ordem dos indicadores a utilizar

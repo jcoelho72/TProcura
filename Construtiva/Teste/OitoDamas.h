@@ -24,9 +24,9 @@ public:
 	// metodos virtuais redefinidos de TProcuraConstrutiva
 
 	TProcuraConstrutiva* Duplicar(void);
-	void Copiar(TProcuraConstrutiva*objecto) {
-		TProcuraConstrutiva::Copiar(objecto);
-		damas=((COitoDamas*)objecto)->damas;
+	void Copiar(TProcuraConstrutiva*objeto) {
+		TProcuraConstrutiva::Copiar(objeto);
+		damas=((COitoDamas*)objeto)->damas;
 	}
 	void Inicializar(void);
 	void Gravar(void);

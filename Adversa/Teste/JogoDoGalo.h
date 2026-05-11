@@ -24,7 +24,7 @@ public:
 	// métodos virtuais redefinidos
 
 	TProcuraConstrutiva* Duplicar(void);
-	void Copiar(TProcuraConstrutiva* objecto);
+	void Copiar(TProcuraConstrutiva* objeto);
 	void Inicializar(void);
 	void Sucessores(TVector<TNo>&sucessores);
 	bool SolucaoCompleta(void);

@@ -17,10 +17,10 @@ TProcuraConstrutiva* CJogoDoGalo::Duplicar(void)
 	return clone;
 }
 
-void CJogoDoGalo::Copiar(TProcuraConstrutiva* objecto)
+void CJogoDoGalo::Copiar(TProcuraConstrutiva* objeto)
 {
-	tabuleiro = ((CJogoDoGalo*)objecto)->tabuleiro;
-	minimizar = ((CJogoDoGalo*)objecto)->minimizar;
+	tabuleiro = ((CJogoDoGalo*)objeto)->tabuleiro;
+	minimizar = ((CJogoDoGalo*)objeto)->minimizar;
 }
 
 void CJogoDoGalo::Inicializar(void)
@@ -128,7 +128,7 @@ int CJogoDoGalo::Heuristica(void)
 {
 	heuristica = 0;
 
-	if (ExisteHeuritica())
+	if (ExisteHeuristica())
 		return heuristica;
 
 	// jogo muito pequeno, fazer so o obrigatorio

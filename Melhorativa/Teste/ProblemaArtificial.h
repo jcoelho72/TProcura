@@ -52,11 +52,11 @@ public:
 		return clone;
 	}
 
-	void Copiar(TPonto objecto) {
-		TProcuraMelhorativa::Copiar(objecto);
-		id = ((CProblemaArtificial*)objecto)->id;
-		nivel = ((CProblemaArtificial*)objecto)->nivel;
-		heur = ((CProblemaArtificial*)objecto)->heur;
+	void Copiar(TPonto objeto) {
+		TProcuraMelhorativa::Copiar(objeto);
+		id = ((CProblemaArtificial*)objeto)->id;
+		nivel = ((CProblemaArtificial*)objeto)->nivel;
+		heur = ((CProblemaArtificial*)objeto)->heur;
 	}
 	void Inicializar(void);
 	void Debug(bool completo = true) override;

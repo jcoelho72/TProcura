@@ -46,7 +46,7 @@ public:
 	void Debug(bool completo = true) override;
 
 	// métodos que não se prevê que sejam redefinidos
-	void Copiar(TPonto objecto);
+	void Copiar(TPonto objeto);
 	void NovaSolucao(void);
 	void ResetParametros();
 	// operadores melhorativos

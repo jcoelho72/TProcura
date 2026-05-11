@@ -22,9 +22,9 @@ public:
 
 	// Métodos virtuais redefinidos
 	TProcuraConstrutiva* Duplicar(void);
-	void Copiar(TProcuraConstrutiva*objecto) {  
-		puzzle = ((CPuzzle8*)objecto)->puzzle;
-		zero = ((CPuzzle8*)objecto)->zero;
+	void Copiar(TProcuraConstrutiva*objeto) {  
+		puzzle = ((CPuzzle8*)objeto)->puzzle;
+		zero = ((CPuzzle8*)objeto)->zero;
 	}
 	void Inicializar(void);
 	void Gravar(void);

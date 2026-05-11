@@ -644,7 +644,7 @@ Opção: <span class="entrada">4</span>
 </pre>
 \endhtmlonly
 
-Não houve desperdício visivel nesta solução. 
+Não houve desperdício visível nesta solução. 
 O algoritmo procura em largura garante-nos que esta solução é ótima, dado que o custo de cada ação é unitário.
 
 Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, 

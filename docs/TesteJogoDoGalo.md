@@ -475,7 +475,7 @@ Outros estados foram gerados, mas são iguais a menos de operações de simetria
 
 Na árvore de procura esses estados não desaparecem, mas a árvore é podada.
 Se o estado já foi analisado nesse nível (ou com mais profundidade), reutiliza-se o valor em vez de expandir o estado.
-Assim aparecem na árvore como o ícon da disquete (`💾`), tendo o seu valor sido obtido da memória.
+Assim aparecem na árvore como o ícone da disquete (`💾`), tendo o seu valor sido obtido da memória.
 
 Vamos continuar, mas reduzindo o nível de debug para detalhe, e ver ações para 4, e aumentando o nível da procura para 3. 
 Insira: **3; 2; 3; 7; 3; 6; 4; *ENTER*; 6.**  
@@ -889,7 +889,7 @@ Esta ação tem o efeito de uma derrota de X que seja mais uma jogada, tenha val
 Como O pretende maximizar, prefere sempre as vitórias mais curtas, tal como o X, 
 e ambos preferem as derrotas mais longas.
 
-Após um valor destes ser identificado, existe um ícon com uma indicação de vitória/derrota a determinado número de jogadas
+Após um valor destes ser identificado, existe um ícone com uma indicação de vitória/derrota a determinado número de jogadas
 (`☗ 1 { 🔖 8 🔖 9 }`).
 Os sucessores que ainda faltavam analisar são cortados, atendendo a que o jogador com a vez já ganhou neste ramo.
 
@@ -1093,7 +1093,7 @@ ser compensador não ter o alfa/beta para memorizar os valores exatos. De um mod
 deverá ser sempre vantajoso ter os cortes alfa/beta, se a ramificação é baixa, pode ser compensador
 não ter o alfa/beta de modo a que fiquem memorizados estado com o valor exato.
 
-Vamos avaçar para o momento em que há estados finais visiveis.
+Vamos avançar para o momento em que há estados finais visíveis.
 Insira: **6; 6; 6; 6; 6; 6.**
 
 \htmlonly
@@ -1209,7 +1209,7 @@ Naturalmente que estes cortes tornam-se mais significativos em árvores de procu
 Vamos agora procurar explorar todo o espaço de estados, o que é possível apenas porque este jogo tem dimensões reduzidas.
 Para que a hashtable não poupe demasiados estados, vamos nesta ação arrancar com o programa em cada teste.
 
-Vamos começar com o MiniMax, sem a ordenação. Vamos colocar o limite a 20, para não interferir
+Vamos começar com o MiniMax, sem a ordenação. Vamos colocar o limite a 20, para não interferir.
 Após reiniciar, insira: **1; 3; 1; 1; 7; 20; 12; 0; *ENTER*; 6.**
 
 \htmlonly

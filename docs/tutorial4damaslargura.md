@@ -695,7 +695,7 @@
 <p>As mesmas dificuldades da resolução manual tem também o computador em outra
   escala. A dificuldade de a partir de um estado gerar os sucessores. Se for
   muito complicado, poderá tornar-se uma operação muito relevante. Por outro
-  lado, se o teste de estado objectivo for complexo, pode também tornar-se num
+  lado, se o teste de estado objetivo for complexo, pode também tornar-se num
   fator demasiado relevante. Finalmente, o número de estados gerados mas ainda
   não expandidos, se for muito elevado, na resolução manual requer muitas folhas
   de papel, enquanto que no computador poderá não haver memória suficiente.</p>

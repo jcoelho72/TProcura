@@ -85,7 +85,7 @@ int64_t TProcura::Indicador(int id) {
 	return 0;
 }
 
-// Escrever informacao de debug sobre o objecto atual
+// Escrever informacao de debug sobre o objeto atual
 void TProcura::Debug(bool completo)
 {
 	Debug(ATIVIDADE, false, "\nTProcura::Debug() método não redefinido.");
@@ -101,7 +101,7 @@ void TProcura::LimparEstatisticas()
 	Cronometro(CONT_ALGORITMO, true);
 }
 
-// Metodo para teste manual do objecto (chamadas aos algoritmos, construcao de uma solucao manual)
+// Metodo para teste manual do objeto (chamadas aos algoritmos, construcao de uma solucao manual)
 // Este metodo destina-se a testes preliminares, e deve ser redefinido apenas se forem definidos novos algoritmos
 void TProcura::TesteManual(TString nome)
 {
@@ -1099,7 +1099,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 					Icon(EIcon::TAREFA), *MostraInt(nTarefa),
 					Icon(EIcon::INST), *MostraInt(inst),
 					Icon(EIcon::CONF), *MostraInt(configuracao + 1),
-					Icon(EIcon::PROCESSO), *MostraInt(mpiCount),
+					Icon(EIcon::PROCESSO), *MostraInt(mpiID),
 					Icon(EIcon::IND));
 				int maxInd = 10;
 				for (auto ind : resultados.Last().valor) {

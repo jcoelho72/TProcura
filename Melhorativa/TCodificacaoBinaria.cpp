@@ -3,8 +3,8 @@
 // número de elementos binários na codificação 
 int TCodificacaoBinaria::nElementos = 0;
 
-void TCodificacaoBinaria::Copiar(TPonto objecto) {
-	TCodificacaoBinaria& obj = *((TCodificacaoBinaria*)objecto);
+void TCodificacaoBinaria::Copiar(TPonto objeto) {
+	TCodificacaoBinaria& obj = *((TCodificacaoBinaria*)objeto);
 	estado = obj.estado;
 }
 

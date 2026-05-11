@@ -223,7 +223,7 @@ Para conseguir observar a heurística em funcionamento vamos fazer um jogo com p
 Introduza: 
 - **1; 2; 3; 7; 2; *ENTER*; 6.** executa um lance, fica com 8 ameaças a 3 jogadas (duas por cada direção)
 - **6.** responde anulando duas das ameaças, e faz 4 ameaças a 3 jogadas
-- **6.** duas das ameaças passa a 2 jogadas, e anula simultaneamente 2 ameaças adversárias a 3 jogadas
+- **6.** duas das ameaças passam a 2 jogadas, e anula simultaneamente 2 ameaças adversárias a 3 jogadas
 - **6; 6; 6; ....** termine o jogo, verificando que todas as ameaças são respondidas
 
 \htmlonly
@@ -909,7 +909,7 @@ Opção:
 \endhtmlonly
 
 Realçamos os seguintes pontos:
-- alfa que inicialmente é -10000 é atualizado para para -4 no estado 26 (`├□ -4 → α`),
+- alfa que inicialmente é -10000 é atualizado para -4 no estado 26 (`├□ -4 → α`),
 - logo no estado 27 ocorre nova atualização para -3 (`├□ -3 → α`)
 - o estado 29 é igual ao estado 27 (eixo horizontal), no entanto não é removido devido a não existir simetrias implementadas.
 - o segundo ramo com d3, estado 18, expande para o estado 50 e depois 51 com custo -1, é imediatamente cortado (`├□ -1 ─── 🪓 β(-1) { 🔖 52 🔖 53 🔖 54 … 🔖 71 🔖 72 🔖 73 } #22`).
@@ -1058,8 +1058,8 @@ Para medir a performance de cada configuração e lado (branco/preto), vamos ana
 - Eficiência: Tempo médio por jogada em segundos
 - Eficácia: Média de pontos (vitória 1 ponto, empate 0.5 pontos, derrota 0 pontos)
 
-Desta forma a eficiência avalia o custo temporal da jogada, ou seja, recursos computacionais (assumindo o tempo o principoal),
-enquanto eficácia avalia a qualidade do resultado obtido, ou taxa de suceesso, podendo ser interpretado como uma probabilidade de vitória.
+Desta forma a eficiência avalia o custo temporal da jogada, ou seja, recursos computacionais (assumindo o tempo como o principal),
+enquanto eficácia avalia a qualidade do resultado obtido, ou a taxa de sucesso, podendo ser interpretado como uma probabilidade de vitória.
 
 Vamos ver neste primeiro relatório a performance do jogador branco: 
 
@@ -1100,7 +1100,7 @@ Vamos agora ver a mesma tabela para o jogador a preto:
 As conclusões são semelhantes, tendo que se registar que a eficácia do jogador a preto
 é ligeiramente inferior ao do jogador a branco.
 
-Podemose ver também do lado das instâncias, o número de vitórias, empates e derrotas:
+Podemos ver também do lado das instâncias, o número de vitórias, empates e derrotas:
 
 | Instância | Vitória Preta | Empate | Vitória Branca |
 |:---:|:---:|:---:|:---:|
@@ -1144,14 +1144,14 @@ Esta estratégia tem a vantagem de ter sempre um movimento pronto a jogar quando
 Por outro lado utiliza o tempo existente, se der para explorar mais um nível, esse é explorado.
 
 Temos mais uma opção na ordenação, que é o valor 2 (omissão). Este valor, para além de ordenar os sucessores,
-guarda em memória cada estado, o resultado de análises anteriores. Quando o estado ocorre novamnete, se estiver 
-em memória, o seu valor é utilizado em vez de ser executada a heurítica ou uma procura de determinada profundidade.
+guarda em memória cada estado, o resultado de análises anteriores. Quando o estado ocorre novamente, se estiver 
+em memória, o seu valor é utilizado em vez de ser executada a heurística ou uma procura de determinada profundidade.
 Para tal é guardada alguma informação sobre o estado de modo a sabermos se podemos utilizar o valor assim que exista
 possibilidade de reutilização. Esta opção tem naturalmente mais impacto na procura iterativa, em que os estados
-iniciais são re-expandidos, mas pode ter influencia mesmo sem ser na procura iterativa, 
+iniciais são re-expandidos, mas pode ter influência mesmo sem ser na procura iterativa, 
 caso o mesmo estado apareça várias vezes por ordens distintas de movimentos.
 
-Vamos limitar o tempo a 1 segundo (P4=1). Vamos estudar também a influênica de baralhar os sucessores com P11=0,1.
+Vamos limitar o tempo a 1 segundo (P4=1). Vamos estudar também a influência de baralhar os sucessores com P11=0,1.
 Notar que esta ação pode ser feita em conjunto com a ordenação, ou seja, primeiro baralha-se e depois ordena-se,
 ficando os estados com o mesmo valor por ordem aleatória. Caso não atrapalhe, a baralhação dos sucessores é importante
 para permitir realizar vários jogos distintos entre duas configurações iguais, e assim ter um resultado mais preciso.
@@ -1914,10 +1914,10 @@ EficáciaPreto
 | Total | 0,44 | 0,45 | 0,57 | 0,6 | 0,64 | 0,7 | 0,72 | 0,66 | 0,6 |
 
 Podemos observar que:
-- quando o ruído do branco é 0 (última linha na tabela EficáciaBranco), a eficácia do branco é 75% caso o preto tenha ruído a -100, descendo para 64% há medida que o ruído do preto é reduzido. 
-- quando o ruído do branco é -100 (primeira linha na tabela EficáciaBranco), a eficácia é 27% quando preto tem também -100, descendo para 19% há medida que o ruído do preto é reduzido.
-- quando o ruído do preto é 0 (última coluna na tabela EficáciaPreto), a eficácia do preto é 81% caso o branco tenha ruído a -100, descendo para 36% há medida que o ruído do branco é reduzido.
-- quando o ruído do preto é -100 (primeira coluna na tabela Eficácia), a eficácia é 73% quando branco tem também -100, descendo para 25% há medida que o ruído do branco é reduzido.
+- quando o ruído do branco é 0 (última linha na tabela EficáciaBranco), a eficácia do branco é 75% caso o preto tenha ruído a -100, descendo para 64% à medida que o ruído do preto é reduzido. 
+- quando o ruído do branco é -100 (primeira linha na tabela EficáciaBranco), a eficácia é 27% quando preto tem também -100, descendo para 19% à medida que o ruído do preto é reduzido.
+- quando o ruído do preto é 0 (última coluna na tabela EficáciaPreto), a eficácia do preto é 81% caso o branco tenha ruído a -100, descendo para 36% à medida que o ruído do branco é reduzido.
+- quando o ruído do preto é -100 (primeira coluna na tabela Eficácia), a eficácia é 73% quando branco tem também -100, descendo para 25% à medida que o ruído do branco é reduzido.
 
 Não são valores com precisão, já que foram poucos jogos e pode-se observar oscilações na eficácia.
 Mas podemos observar uma tendência em que o ruído afeta significativamente a eficácia do jogador.

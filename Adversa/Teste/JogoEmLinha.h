@@ -36,19 +36,19 @@ public:
 	// dados da instância
 	static TJogoEmLinha inst; 
 
-	// Cria um objecto que é uma cópia deste
+	// Cria um objeto que é uma cópia deste
 	TProcuraConstrutiva* Duplicar(void);
-	// Fica com uma cópia de objecto
-	void Copiar(TProcuraConstrutiva*objecto);
-	// Coloca o objecto no estado inicial da procura
+	// Fica com uma cópia de objeto
+	void Copiar(TProcuraConstrutiva*objeto);
+	// Coloca o objeto no estado inicial da procura
 	void Inicializar(void);
-	// Coloca em sucessores a lista de objectos sucessores (são alocados neste método e têm de ser apagados)
+	// Coloca em sucessores a lista de objetos sucessores (são alocados neste método e têm de ser apagados)
 	// O custo não necessita de ser preenchido, caso seja sempre unitário
 	// chamar o método desta classe após adicionar os sucessores para actualizar geracoes e expansoes
 	void Sucessores(TVector<TNo>&sucessores);
-	// Retorna verdade caso o estado actual seja um estado objectivo
+	// Retorna verdade caso o estado actual seja um estado objetivo
 	bool SolucaoCompleta(void);
-	// Escrever informação de debug sobre o objecto corrente 
+	// Escrever informação de debug sobre o objeto corrente 
 	// (utilizar variável TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
 	void Debug(bool completo = true) override;
 

@@ -78,7 +78,7 @@ Algoritmos informados: melhor primeiro; A*; BnB.
 <details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que a consistência evita reintroduzir estados na fronteira?</summary> 👉 Porque garante que a primeira vez que um estado é alcançado corresponde ao caminho ótimo até ele. </details>
 <details class="pergunta"> <summary><strong>⚡ Ação:</strong> O que são “contornos” numa procura A*?</summary> 👉 Regiões do espaço de estados onde todos os nós têm f(n) ≤ um certo valor. </details>
 <details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que os contornos do A* se alongam na direção do objetivo?</summary> 👉 Porque a heurística orienta a expansão para estados mais promissores. </details>
-<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Que nós são certamente expandidos pelo A?</summary> 👉 Todos os nós com f(n) < C, onde C* é o custo da solução ótima. </details>
+<details class="pergunta"> <summary><strong>⚡ Ação:</strong> Que nós são certamente expandidos pelo A*?</summary> 👉 Todos os nós com f(n) < C*, onde C* é o custo da solução ótima. </details>
 <details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o A* é considerado “otimamente eficiente”?</summary> 👉 Porque nenhum algoritmo que use a mesma heurística pode expandir menos nós sem perder otimalidade. </details>
 <details class="pergunta"> <summary><strong>⚡ Ação:</strong> Porque é que o A* pode expandir muitos nós mesmo com heurísticas boas?</summary> 👉 Porque o número de estados com f(n) < C* pode ser exponencial. </details>
 

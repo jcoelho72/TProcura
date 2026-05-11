@@ -1,4 +1,4 @@
-@page tutorial_galominimax Procuras Adversas, Jogo do Galo, MinMax
+@page tutorial_galominimax Procuras Adversas, Jogo do Galo, MiniMax
 
 \htmlonly
 
@@ -25,13 +25,13 @@
 \htmlonly
 
 <p>As procuras anteriores consideram que se está a tentar realizar um
-  determinado objectivo, sem qualquer oposição. No caso dos jogos, tenta-se
-  também realizar um objectivo, no entanto há outros agentes a tentar realizar
+  determinado objetivo, sem qualquer oposição. No caso dos jogos, tenta-se
+  também realizar um objetivo, no entanto há outros agentes a tentar realizar
   os seus próprios objetivos. O caso mais simples, é quando há apenas dois
   agentes, com objetivos opostos, um jogo entre dois adversários.</p>
 <p></p>
 <p>O <strong>jogo do galo</strong> joga-se num tabuleiro de 3x3, em que cada
-  jogador coloca à vez a sua marca num quadrado vazio. O objectivo do jogo é
+  jogador coloca à vez a sua marca num quadrado vazio. O objetivo do jogo é
   obter 3 marcas em linha reta (horizontal, vertical ou diagonal).</p>
 <p>O <strong>MiniMax</strong> funciona de modo idêntico ao algoritmo de
   profundidade primeiro, mas em cada estado final tem o valor de

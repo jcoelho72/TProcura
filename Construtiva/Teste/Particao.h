@@ -21,13 +21,13 @@ public:
 
 	// Metodos virtuais redefinidos
 	TProcuraConstrutiva* Duplicar(void);
-	void Copiar(TProcuraConstrutiva*objecto) {
-		TProcuraConstrutiva::Copiar(objecto);
-		numeros = ((CParticao*)objecto)->numeros;
-		esquerda = ((CParticao*)objecto)->esquerda;
-		direita = ((CParticao*)objecto)->direita;
-		totalEsquerda = ((CParticao*)objecto)->totalEsquerda;
-		totalDireita = ((CParticao*)objecto)->totalDireita;
+	void Copiar(TProcuraConstrutiva*objeto) {
+		TProcuraConstrutiva::Copiar(objeto);
+		numeros = ((CParticao*)objeto)->numeros;
+		esquerda = ((CParticao*)objeto)->esquerda;
+		direita = ((CParticao*)objeto)->direita;
+		totalEsquerda = ((CParticao*)objeto)->totalEsquerda;
+		totalDireita = ((CParticao*)objeto)->totalDireita;
 	}
 	void Inicializar(void);
 	void Gravar(void);

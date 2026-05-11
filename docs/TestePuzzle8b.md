@@ -660,7 +660,7 @@ demasiado já que há 240 tarefas. O nível 2 dá um report a cada minuto.
 - **hardware**: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz, RAM 16.0 GB (4267 MT/s)
 - **Ficheiro de Análise**: puzzle8.xlsx
 
-Vamos ver os resultados em bruto, para saber toais de P1 face a diversos indicadores:
+Vamos ver os resultados em bruto, para saber totais de P1 face a diversos indicadores:
 - **Colunas**: Instância (usar a coluna de tvetor_1)
 - **Linhas**: valores
 - **Valores**: I1, I2, I4, máximo I1, Resolvido

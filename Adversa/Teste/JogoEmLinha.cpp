@@ -12,7 +12,7 @@ CJogoEmLinha::~CJogoEmLinha(void)
 {
 }
 
-// Cria um objecto que é uma cópia deste
+// Cria um objeto que é uma cópia deste
 TProcuraConstrutiva* CJogoEmLinha::Duplicar(void)
 {
 	CJogoEmLinha* clone = new CJogoEmLinha;
@@ -23,14 +23,14 @@ TProcuraConstrutiva* CJogoEmLinha::Duplicar(void)
 	return clone;
 }
 
-// Fica com uma cópia de objecto
-void CJogoEmLinha::Copiar(TProcuraConstrutiva* objecto)
+// Fica com uma cópia de objeto
+void CJogoEmLinha::Copiar(TProcuraConstrutiva* objeto)
 {
-	tabuleiro = ((CJogoEmLinha*)objecto)->tabuleiro;
-	minimizar = ((CJogoEmLinha*)objecto)->minimizar;
+	tabuleiro = ((CJogoEmLinha*)objeto)->tabuleiro;
+	minimizar = ((CJogoEmLinha*)objeto)->minimizar;
 }
 
-// Coloca o objecto no estado inicial da procura
+// Coloca o objeto no estado inicial da procura
 void CJogoEmLinha::Inicializar(void)
 {
 	TJogoEmLinha instancias[] = {
@@ -101,7 +101,7 @@ bool CJogoEmLinha::VerLinha(int i, int j, int di, int dj)
 	return false;
 }
 
-// Retorna verdade caso o estado actual seja um estado objectivo
+// Retorna verdade caso o estado actual seja um estado objetivo
 bool CJogoEmLinha::SolucaoCompleta(void)
 {
 	// Processar linhas e diagonais
@@ -126,7 +126,7 @@ bool CJogoEmLinha::SolucaoCompleta(void)
 	return true; // não há hipótese de mais jogadas
 }
 
-// Escrever informação de debug sobre o objecto corrente 
+// Escrever informação de debug sobre o objeto corrente 
 // (utilizar variável TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
 void CJogoEmLinha::Debug(bool completo)
 {
@@ -229,7 +229,7 @@ int CJogoEmLinha::Heuristica()
 
 	heuristica = 0;
 
-	if (ExisteHeuritica())
+	if (ExisteHeuristica())
 		return heuristica;
 
 	qMin.Count(inst.K - 1); // contabilizar ameaças a 1, 2 e 3 (até K-1)

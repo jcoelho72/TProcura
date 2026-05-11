@@ -21,9 +21,9 @@ public:
 
 	// Metodos virtuais redefinidos
 	TProcuraConstrutiva* Duplicar(void);
-	void Copiar(TProcuraConstrutiva*objecto) {
-		aspirador = ((CAspirador*)objecto)->aspirador;
-		salas = ((CAspirador*)objecto)->salas;
+	void Copiar(TProcuraConstrutiva*objeto) {
+		aspirador = ((CAspirador*)objeto)->aspirador;
+		salas = ((CAspirador*)objeto)->salas;
 	}
 	void Inicializar(void);
 	void ResetParametros();

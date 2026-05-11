@@ -1347,7 +1347,7 @@ Para valores de torneio pequenos, P12 é melhor sempre com o valor por omissão 
 Apenas para torneios grandes é que P12 é melhor com valores menores, mas em termos globais
 a melhor configuração é com P11=3 e P12=100.
 
-Conjugando a roleta com o torneio, opta-se pela roleta dado que aprensenta valores melhores,
+Conjugando a roleta com o torneio, opta-se pela roleta dado que apresenta valores melhores,
 com os seguintes parâmetros: P9=1 P10=175.
 
 ### Resultados: damascp_5
@@ -1406,10 +1406,10 @@ Resultados para o torneio:
 | 6 | 3177 | 2411 | 2875 | 2942 | 
 | 10 | 4825 | 3989 | 3731 | 4018 | 
 
-Temos aqui um novo ganho relativamente à parametrização de base. O torneio de tamanho 4 reduz o tempo de forma visivel,
+Temos aqui um novo ganho relativamente à parametrização de base. O torneio de tamanho 4 reduz o tempo de forma visível,
 relativamente ao torneio de tamanho 2. A probabilidade de escolher o melhor mantém-se como melhor opção o 100%.
 
-Assim sendo, entre a roleta e o torneio, é preferivel o torneio, com os parâmetros: P9=2 P11=4 P12=100
+Assim sendo, entre a roleta e o torneio, é preferível o torneio, com os parâmetros: P9=2 P11=4 P12=100
 
 ## Teste 6
 
@@ -1638,12 +1638,11 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 | | 2:Substitui piores | 10000 | 8973 | 9592 | 9730 | 9709 |
 | | 3:round-robin | 10000 | 8745 | 7875 | 8110 | 7880 |
 
-Podemos ver o registo das 8 damas com codificação inteira da configuração atual, mas no novo conjuunto de instâncias.
+Podemos ver o registo das 8 damas com codificação inteira da configuração atual, mas no novo conjunto de instâncias.
 A eficiência ficou com um tempo médio nos 5,8 segundos, e eficácia nos 72% de instâncias resolvidas.
 Nenhuma das alternativas consideradas melhorou, pelo contrário.
 
-A substituição dos piores tem como melhor valor uma baixa precentagem de descnedentes, e o round-robin é incerto.
-
+A substituição dos piores tem como melhor valor uma baixa percentagem de descendentes, e o round-robin é incerto.
 
 ### Resultados: damascp_6
 
@@ -2144,8 +2143,8 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 | 2:Avaliação partilhada | 10000 | 10000 | 10000 | 10000 | 10000 | 10000 |
 | 3:Limpeza | **5307** | 5103 | 5511 | 1269 | 4750 | 10000 |
 
-A estratégia de diversidade de avaliação partihada, não é compatível com as restantes configurações.
-Podemos ver também que a não ulização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.
+A estratégia de diversidade de avaliação partilhada, não é compatível com as restantes configurações.
+Podemos ver também que a não utlização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.
 
 ### Resultados: damascp_8
 

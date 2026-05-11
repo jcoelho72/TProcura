@@ -536,7 +536,7 @@ Opção:
 \endhtmlonly
 
 Foram vistos todos os estados, e não se encontrou uma solução.
-No entanto todos os nós folha foram cortados devido ao limite, motivo pelo qual têm o ícon da escada.
+No entanto todos os nós folha foram cortados devido ao limite, motivo pelo qual têm o ícone da escada.
 Vamos agora colocar o limite a 0, de modo a executar a iterativa, e debug no nível 2.
 Introduza: **1; 40; 3; 7; 0; 2; 2; *ENTER*; 6.**
 
