@@ -65,15 +65,15 @@ digraph "TProcuraConstrutiva::BranchAndBound"
   Node20 -> Node22 [id="edge37_Node000020_Node000022",color="steelblue1",style="solid",tooltip=" "];
   Node22 [id="Node000022",label="TProcura::TempoExcedido",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#afa3015ac104b603930d3f60a34c09fff",tooltip=" "];
   Node1 -> Node23 [id="edge38_Node000001_Node000023",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node23 [id="Node000023",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
   Node1 -> Node24 [id="edge39_Node000001_Node000024",color="steelblue1",style="solid",tooltip=" "];
   Node24 [id="Node000024",label="TProcuraConstrutiva\l::SolucaoEncontrada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a2f648df694a20e7fcb688c9979f763fd",tooltip=" "];
   Node24 -> Node25 [id="edge40_Node000024_Node000025",color="steelblue1",style="solid",tooltip=" "];
   Node25 [id="Node000025",label="TProcuraConstrutiva\l::CalculaCaminho",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#ab3d3ef92421595428a27deef2c3bb668",tooltip=" "];
   Node25 -> Node26 [id="edge41_Node000025_Node000026",color="steelblue1",style="solid",tooltip=" "];
-  Node26 [id="Node000026",label="TProcuraConstrutiva\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623",tooltip="Cria um objecto que é uma cópia deste."];
+  Node26 [id="Node000026",label="TProcuraConstrutiva\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623",tooltip="Cria um objeto que é uma cópia deste."];
   Node24 -> Node27 [id="edge42_Node000024_Node000027",color="steelblue1",style="solid",tooltip=" "];
-  Node27 [id="Node000027",label="TProcuraConstrutiva\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga92eb7af76e68a20fe542afb459e7d642",tooltip="Fica com uma cópia do objecto."];
+  Node27 [id="Node000027",label="TProcuraConstrutiva\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga62e59c75c9aec8ca65a817459adf1190",tooltip="Fica com uma cópia do objeto."];
   Node24 -> Node14 [id="edge43_Node000024_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node28 [id="edge44_Node000024_Node000028",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="TProcuraConstrutiva\l::DebugSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a3cb063790a46d8fac87044c7c68c53b3",tooltip=" "];

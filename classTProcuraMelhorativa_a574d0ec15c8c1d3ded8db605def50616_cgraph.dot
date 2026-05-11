@@ -18,7 +18,7 @@ digraph "TProcuraMelhorativa::AlgoritmoGenetico"
   Node1 -> Node5 [id="edge7_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TProcuraMelhorativa\l::Distancia",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#ab870165cba9b9832946f9bbe26862c0f",tooltip=" "];
   Node1 -> Node6 [id="edge8_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcuraMelhorativa\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582",tooltip="Cria um objecto que é uma cópia deste."];
+  Node6 [id="Node000006",label="TProcuraMelhorativa\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582",tooltip="Cria um objeto que é uma cópia deste."];
   Node1 -> Node7 [id="edge9_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TProcuraMelhorativa\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a28993c2953d882b21f3c456e5d1b7e47",tooltip=" "];
   Node1 -> Node8 [id="edge10_Node000001_Node000008",color="steelblue1",style="solid",tooltip=" "];
@@ -43,7 +43,7 @@ digraph "TProcuraMelhorativa::AlgoritmoGenetico"
   Node1 -> Node17 [id="edge20_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcuraMelhorativa\l::VerificaMelhor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#aeb435694084a626e3d52f3a489d9a93d",tooltip=" "];
   Node17 -> Node18 [id="edge21_Node000017_Node000018",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraMelhorativa\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a446cb701313bd16b9a6c5939b810d241",tooltip="Fica com uma cópia do objecto."];
+  Node18 [id="Node000018",label="TProcuraMelhorativa\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#ac0f69111bdbe6b61dfa2bf885d68d5c7",tooltip="Fica com uma cópia do objeto."];
   Node17 -> Node19 [id="edge22_Node000017_Node000019",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="TProcuraMelhorativa\l::DebugMelhorEncontrado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a6fc03fc9e9379496303354d2b46b8bc8",tooltip=" "];
   Node19 -> Node20 [id="edge23_Node000019_Node000020",color="steelblue1",style="solid",tooltip=" "];

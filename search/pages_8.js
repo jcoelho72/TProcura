@@ -16,6 +16,6 @@ var searchData=
   ['deucalion_20testes_20construtivos_13',['Deucalion - testes construtivos',['../construtiva__deucalion.html',1,'']]],
   ['deucalion_20testes_20melhorativos_14',['Deucalion - testes melhorativos',['../melhorativa__deucalion.html',1,'']]],
   ['do_20galo_15',['Procuras Adversas, Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
-  ['do_20galo_20minmax_16',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
+  ['do_20galo_20minimax_16',['Procuras Adversas, Jogo do Galo, MiniMax',['../tutorial_galominimax.html',1,'']]],
   ['do_20monte_17',['4 Damas, Escalada do Monte',['../tutorial_4damasescalada.html',1,'']]]
 ];

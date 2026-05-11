@@ -28,13 +28,13 @@ digraph "TProcuraMelhorativa::EscaladaDoMonte"
   Node8 -> Node3 [id="edge13_Node000008_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node8 -> Node4 [id="edge14_Node000008_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node9 [id="edge15_Node000001_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TProcuraMelhorativa\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582",tooltip="Cria um objecto que é uma cópia deste."];
+  Node9 [id="Node000009",label="TProcuraMelhorativa\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#af38c70a1e83290851c52a2cc85e19582",tooltip="Cria um objeto que é uma cópia deste."];
   Node1 -> Node10 [id="edge16_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraMelhorativa\l::LibertarVector",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a28993c2953d882b21f3c456e5d1b7e47",tooltip=" "];
   Node1 -> Node11 [id="edge17_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TProcuraMelhorativa\l::MelhorAtual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a55ff18ec36fc46b793b0ee20085388a1",tooltip=" "];
   Node11 -> Node12 [id="edge18_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcuraMelhorativa\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a446cb701313bd16b9a6c5939b810d241",tooltip="Fica com uma cópia do objecto."];
+  Node12 [id="Node000012",label="TProcuraMelhorativa\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#ac0f69111bdbe6b61dfa2bf885d68d5c7",tooltip="Fica com uma cópia do objeto."];
   Node11 -> Node10 [id="edge19_Node000011_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge20_Node000001_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraMelhorativa\l::NovaSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a50bf29ddd183e8e4678ceb2247b9cf58",tooltip=" "];

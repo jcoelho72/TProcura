@@ -9,11 +9,11 @@ digraph "TString::TString"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="TString::readLines",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#ae7b848f7e090aae31886c8fd535e1055",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="COitoDamas::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node3 [id="Node000003",label="COitoDamas::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214",tooltip="Coloca o objeto no estado inicial da procura."];
   Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="CParticao::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a9398d7eb5af933dd64c50bb09bba6400",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node4 [id="Node000004",label="CParticao::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a9398d7eb5af933dd64c50bb09bba6400",tooltip="Coloca o objeto no estado inicial da procura."];
   Node2 -> Node5 [id="edge4_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node5 [id="Node000005",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objeto no estado inicial da procura."];
   Node2 -> Node6 [id="edge5_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="TProcura::JuntarCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7a323608db4326cb4f9901e324881035",tooltip="Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro."];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];

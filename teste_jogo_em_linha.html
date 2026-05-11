@@ -295,7 +295,7 @@ Ação 2 - Heurística</h2>
 <p>Introduza:</p><ul>
 <li><b>1; 2; 3; 7; 2; <em>ENTER</em>; 6.</b> executa um lance, fica com 8 ameaças a 3 jogadas (duas por cada direção)</li>
 <li><b>6.</b> responde anulando duas das ameaças, e faz 4 ameaças a 3 jogadas</li>
-<li><b>6.</b> duas das ameaças passa a 2 jogadas, e anula simultaneamente 2 ameaças adversárias a 3 jogadas</li>
+<li><b>6.</b> duas das ameaças passam a 2 jogadas, e anula simultaneamente 2 ameaças adversárias a 3 jogadas</li>
 <li><b>6; 6; 6; ....</b> termine o jogo, verificando que todas as ameaças são respondidas</li>
 </ul>
 <p> 
@@ -961,7 +961,7 @@ Opção:
 </pre>
 </p>
 <p>Realçamos os seguintes pontos:</p><ul>
-<li>alfa que inicialmente é -10000 é atualizado para para -4 no estado 26 (<code>├□ -4 → α</code>),</li>
+<li>alfa que inicialmente é -10000 é atualizado para -4 no estado 26 (<code>├□ -4 → α</code>),</li>
 <li>logo no estado 27 ocorre nova atualização para -3 (<code>├□ -3 → α</code>)</li>
 <li>o estado 29 é igual ao estado 27 (eixo horizontal), no entanto não é removido devido a não existir simetrias implementadas.</li>
 <li>o segundo ramo com d3, estado 18, expande para o estado 50 e depois 51 com custo -1, é imediatamente cortado (<code>├□ -1 ─── 🪓 β(-1) { 🔖 52 🔖 53 🔖 54 … 🔖 71 🔖 72 🔖 73 } #22</code>).</li>
@@ -1084,7 +1084,7 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -G 1 
 <li>Eficiência: Tempo médio por jogada em segundos</li>
 <li>Eficácia: Média de pontos (vitória 1 ponto, empate 0.5 pontos, derrota 0 pontos)</li>
 </ul>
-<p>Desta forma a eficiência avalia o custo temporal da jogada, ou seja, recursos computacionais (assumindo o tempo o principoal), enquanto eficácia avalia a qualidade do resultado obtido, ou taxa de suceesso, podendo ser interpretado como uma probabilidade de vitória.</p>
+<p>Desta forma a eficiência avalia o custo temporal da jogada, ou seja, recursos computacionais (assumindo o tempo como o principal), enquanto eficácia avalia a qualidade do resultado obtido, ou a taxa de sucesso, podendo ser interpretado como uma probabilidade de vitória.</p>
 <p>Vamos ver neste primeiro relatório a performance do jogador branco:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1144,7 +1144,7 @@ srun bin/MPI/TProcuraAdversa 2 1:10 -R Resultados/TorneioProfundidade -M 1 -G 1 
 <td class="markdownTableBodyCenter">Total EficáciaPreto   </td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter"></td><td class="markdownTableBodyCenter">0,36   </td><td class="markdownTableBodyCenter">0,48   </td><td class="markdownTableBodyCenter">0,54   </td></tr>
 </table>
 <p>As conclusões são semelhantes, tendo que se registar que a eficácia do jogador a preto é ligeiramente inferior ao do jogador a branco.</p>
-<p>Podemose ver também do lado das instâncias, o número de vitórias, empates e derrotas:</p>
+<p>Podemos ver também do lado das instâncias, o número de vitórias, empates e derrotas:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadCenter">Instância   </th><th class="markdownTableHeadCenter">Vitória Preta   </th><th class="markdownTableHeadCenter">Empate   </th><th class="markdownTableHeadCenter">Vitória Branca    </th></tr>
@@ -1189,8 +1189,8 @@ Ação 5 - Torneio Iterativo</h2>
 <p>Na ação anterior o torneio compara configurações, utilizando tempos distintos. Assim a comparação não é justa, embora tenha permitido observar vantagens nos cortes alfa/beta e ordenação dos sucessores.</p>
 <p>Vamos agora utilizar a profundidade iterativa e dar exatamente o mesmo tempo por jogada, para procurar ver se a eficácia dos cortes alfa/beta e ordenação dos sucessores se mantém.</p>
 <p>Com o método iterativo a profundidade vai iterativamente sendo aumentada. Esta estratégia tem a vantagem de ter sempre um movimento pronto a jogar quando o tempo acaba. Por outro lado utiliza o tempo existente, se der para explorar mais um nível, esse é explorado.</p>
-<p>Temos mais uma opção na ordenação, que é o valor 2 (omissão). Este valor, para além de ordenar os sucessores, guarda em memória cada estado, o resultado de análises anteriores. Quando o estado ocorre novamnete, se estiver em memória, o seu valor é utilizado em vez de ser executada a heurítica ou uma procura de determinada profundidade. Para tal é guardada alguma informação sobre o estado de modo a sabermos se podemos utilizar o valor assim que exista possibilidade de reutilização. Esta opção tem naturalmente mais impacto na procura iterativa, em que os estados iniciais são re-expandidos, mas pode ter influencia mesmo sem ser na procura iterativa, caso o mesmo estado apareça várias vezes por ordens distintas de movimentos.</p>
-<p>Vamos limitar o tempo a 1 segundo (P4=1). Vamos estudar também a influênica de baralhar os sucessores com P11=0,1. Notar que esta ação pode ser feita em conjunto com a ordenação, ou seja, primeiro baralha-se e depois ordena-se, ficando os estados com o mesmo valor por ordem aleatória. Caso não atrapalhe, a baralhação dos sucessores é importante para permitir realizar vários jogos distintos entre duas configurações iguais, e assim ter um resultado mais preciso.</p>
+<p>Temos mais uma opção na ordenação, que é o valor 2 (omissão). Este valor, para além de ordenar os sucessores, guarda em memória cada estado, o resultado de análises anteriores. Quando o estado ocorre novamente, se estiver em memória, o seu valor é utilizado em vez de ser executada a heurística ou uma procura de determinada profundidade. Para tal é guardada alguma informação sobre o estado de modo a sabermos se podemos utilizar o valor assim que exista possibilidade de reutilização. Esta opção tem naturalmente mais impacto na procura iterativa, em que os estados iniciais são re-expandidos, mas pode ter influência mesmo sem ser na procura iterativa, caso o mesmo estado apareça várias vezes por ordens distintas de movimentos.</p>
+<p>Vamos limitar o tempo a 1 segundo (P4=1). Vamos estudar também a influência de baralhar os sucessores com P11=0,1. Notar que esta ação pode ser feita em conjunto com a ordenação, ou seja, primeiro baralha-se e depois ordena-se, ficando os estados com o mesmo valor por ordem aleatória. Caso não atrapalhe, a baralhação dos sucessores é importante para permitir realizar vários jogos distintos entre duas configurações iguais, e assim ter um resultado mais preciso.</p>
 <ul>
 <li><b>Tipo de Teste / Objetivo</b>: Eficácia (alfa/beta, ordenação, baralhação)</li>
 <li><b>Definição</b>: Instâncias: 1:10; Configurações: P7=0 P1=1,2 x P12=0:2 x P11=0,1</li>
@@ -1994,10 +1994,10 @@ Ver execução:</summary>
 <td class="markdownTableBodyCenter">Total   </td><td class="markdownTableBodyRight">0,44   </td><td class="markdownTableBodyRight">0,45   </td><td class="markdownTableBodyRight">0,57   </td><td class="markdownTableBodyRight">0,6   </td><td class="markdownTableBodyRight">0,64   </td><td class="markdownTableBodyRight">0,7   </td><td class="markdownTableBodyRight">0,72   </td><td class="markdownTableBodyRight">0,66   </td><td class="markdownTableBodyRight">0,6   </td></tr>
 </table>
 <p>Podemos observar que:</p><ul>
-<li>quando o ruído do branco é 0 (última linha na tabela EficáciaBranco), a eficácia do branco é 75% caso o preto tenha ruído a -100, descendo para 64% há medida que o ruído do preto é reduzido.</li>
-<li>quando o ruído do branco é -100 (primeira linha na tabela EficáciaBranco), a eficácia é 27% quando preto tem também -100, descendo para 19% há medida que o ruído do preto é reduzido.</li>
-<li>quando o ruído do preto é 0 (última coluna na tabela EficáciaPreto), a eficácia do preto é 81% caso o branco tenha ruído a -100, descendo para 36% há medida que o ruído do branco é reduzido.</li>
-<li>quando o ruído do preto é -100 (primeira coluna na tabela Eficácia), a eficácia é 73% quando branco tem também -100, descendo para 25% há medida que o ruído do branco é reduzido.</li>
+<li>quando o ruído do branco é 0 (última linha na tabela EficáciaBranco), a eficácia do branco é 75% caso o preto tenha ruído a -100, descendo para 64% à medida que o ruído do preto é reduzido.</li>
+<li>quando o ruído do branco é -100 (primeira linha na tabela EficáciaBranco), a eficácia é 27% quando preto tem também -100, descendo para 19% à medida que o ruído do preto é reduzido.</li>
+<li>quando o ruído do preto é 0 (última coluna na tabela EficáciaPreto), a eficácia do preto é 81% caso o branco tenha ruído a -100, descendo para 36% à medida que o ruído do branco é reduzido.</li>
+<li>quando o ruído do preto é -100 (primeira coluna na tabela Eficácia), a eficácia é 73% quando branco tem também -100, descendo para 25% à medida que o ruído do branco é reduzido.</li>
 </ul>
 <p>Não são valores com precisão, já que foram poucos jogos e pode-se observar oscilações na eficácia. Mas podemos observar uma tendência em que o ruído afeta significativamente a eficácia do jogador.</p>
 <p>Podemos ver oos resultados por instância:</p>

@@ -7,7 +7,7 @@ digraph "TProcuraConstrutiva::ExecucaoTerminada"
   rankdir="LR";
   Node1 [id="Node000001",label="TProcuraConstrutiva\l::ExecucaoTerminada",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="TProcuraConstrutiva\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga92eb7af76e68a20fe542afb459e7d642",tooltip="Fica com uma cópia do objecto."];
+  Node2 [id="Node000002",label="TProcuraConstrutiva\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga62e59c75c9aec8ca65a817459adf1190",tooltip="Fica com uma cópia do objeto."];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TProcura::ExecucaoTerminada",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a86985c8dc9a0e0bd375a4148f6ea6de7",tooltip="Chamar após a execução do algoritmo. Grava o tempo consumido."];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];

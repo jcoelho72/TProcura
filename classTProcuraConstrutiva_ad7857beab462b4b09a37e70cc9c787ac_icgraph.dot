@@ -77,5 +77,5 @@ digraph "TProcuraConstrutiva::ExisteHT"
   Node14 -> Node27 [id="edge44_Node000014_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node27 [id="Node000027",label="CPuzzle8::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node27 -> Node28 [id="edge45_Node000027_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node28 [id="Node000028",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node28 [id="Node000028",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objeto no estado inicial da procura."];
 }

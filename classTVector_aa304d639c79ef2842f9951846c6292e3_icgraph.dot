@@ -105,9 +105,9 @@ digraph "TVector::Last"
   Node1 -> Node13 [id="edge70_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node8 [id="edge71_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node30 [id="edge72_Node000001_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node30 [id="Node000030",label="CParticao::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a9398d7eb5af933dd64c50bb09bba6400",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node30 [id="Node000030",label="CParticao::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a9398d7eb5af933dd64c50bb09bba6400",tooltip="Coloca o objeto no estado inicial da procura."];
   Node1 -> Node31 [id="edge73_Node000001_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="CParticaoCB::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticaoCB.html#a9feb5f17582cdd0d70463072dc72d2ed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node31 [id="Node000031",label="CParticaoCB::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticaoCB.html#a9feb5f17582cdd0d70463072dc72d2ed",tooltip="Coloca o objeto no estado inicial da procura."];
   Node1 -> Node17 [id="edge74_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node32 [id="edge75_Node000001_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node32 [id="Node000032",label="TProcura::main",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8efd6f9c08b28effd32ab3ed07b4f70e",tooltip="Inicializa a interação com o utilizador."];
@@ -128,10 +128,10 @@ digraph "TVector::Last"
   Node1 -> Node43 [id="edge85_Node000001_Node000043",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node43 [id="Node000043",label="TString::readLines",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#ae7b848f7e090aae31886c8fd535e1055",tooltip=" "];
   Node43 -> Node44 [id="edge86_Node000043_Node000044",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node44 [id="Node000044",label="COitoDamas::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node44 [id="Node000044",label="COitoDamas::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamas.html#a48d0b8900af154394ad59db6d0d94214",tooltip="Coloca o objeto no estado inicial da procura."];
   Node43 -> Node30 [id="edge87_Node000043_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node43 -> Node45 [id="edge88_Node000043_Node000045",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node45 [id="Node000045",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node45 [id="Node000045",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objeto no estado inicial da procura."];
   Node43 -> Node46 [id="edge89_Node000043_Node000046",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node46 [id="Node000046",label="TProcura::JuntarCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a7a323608db4326cb4f9901e324881035",tooltip="Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro."];
   Node46 -> Node47 [id="edge90_Node000046_Node000047",dir="back",color="steelblue1",style="solid",tooltip=" "];

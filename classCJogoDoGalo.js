@@ -4,7 +4,7 @@ var classCJogoDoGalo =
     [ "~CJogoDoGalo", "classCJogoDoGalo.html#aa508dab7958912db59fa2d37def8d678", null ],
     [ "Acao", "classCJogoDoGalo.html#ada2a46db2392d43d7e9e6cb956ab2c14", null ],
     [ "Codifica", "classCJogoDoGalo.html#a0f7ce4a28543ecf008178eaef50763bb", null ],
-    [ "Copiar", "classCJogoDoGalo.html#ae674e5a8774f6c0eb2533c68342e185f", null ],
+    [ "Copiar", "classCJogoDoGalo.html#a08acb7c3bb3cc8c05c0f84140fb1622d", null ],
     [ "Debug", "classCJogoDoGalo.html#a7ccc3f62401cbc7c8b45c8c453fd0ba7", null ],
     [ "Duplicar", "classCJogoDoGalo.html#a0ffe5148e0dad4e325c1840d0569f508", null ],
     [ "Heuristica", "classCJogoDoGalo.html#a3563839d5ffc94973acee1a1783e3527", null ],

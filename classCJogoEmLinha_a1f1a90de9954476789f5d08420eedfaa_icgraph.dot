@@ -17,7 +17,7 @@ digraph "CJogoEmLinha::Indice"
   Node2 -> Node6 [id="edge5_Node000002_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="CJogoEmLinha::VerLinha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#ab7f482497b6ffa4823327474f1b822ed",tooltip=" "];
   Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="CJogoEmLinha::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a82679821a4ac5334b580de65f9e3441a",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node7 [id="Node000007",label="CJogoEmLinha::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a82679821a4ac5334b580de65f9e3441a",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
   Node7 -> Node5 [id="edge7_Node000007_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node8 [id="edge8_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="CJogoEmLinha::Casa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#ab07e98f06d80629870f010e9e234da81",tooltip=" "];

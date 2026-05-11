@@ -59,7 +59,7 @@ var searchData=
   ['add_56',['Add',['../classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6',1,'TVector']]],
   ['adversas_57',['Tutorial das Procuras Adversas',['../tutorial_adversas.html',1,'']]],
   ['adversas_20introdução_58',['Procuras Adversas - Introdução',['../tutorial_adversas5a.html',1,'']]],
-  ['adversas_20jogo_20do_20galo_20minmax_59',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
+  ['adversas_20jogo_20do_20galo_20minimax_59',['Procuras Adversas, Jogo do Galo, MiniMax',['../tutorial_galominimax.html',1,'']]],
   ['adversas_20literatura_60',['Procuras Adversas - Literatura',['../tutorial_adversaslit.html',1,'']]],
   ['adversas_20minimax_61',['Procuras Adversas - MiniMax',['../tutorial_adversas5b.html',1,'']]],
   ['adversas_20minimax_20com_20cortes_20alfa_20beta_62',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],

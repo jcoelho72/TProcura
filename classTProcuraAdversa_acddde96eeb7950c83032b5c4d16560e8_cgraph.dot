@@ -151,9 +151,9 @@ digraph "TProcuraAdversa::Jogar"
   Node32 [id="Node000032",label="TVector\< char \>::Data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#addd572d70b587092fddc21a8b0f53120",tooltip="Acesso direto."];
   Node31 -> Node23 [id="edge101_Node000031_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node59 [id="edge102_Node000001_Node000059",color="steelblue1",style="solid",tooltip=" "];
-  Node59 [id="Node000059",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node59 [id="Node000059",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
   Node1 -> Node60 [id="edge103_Node000001_Node000060",color="steelblue1",style="solid",tooltip=" "];
-  Node60 [id="Node000060",label="TProcuraAdversa::Solucao\lCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a304bb508abcc5440fc9c5389546da360",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node60 [id="Node000060",label="TProcuraAdversa::Solucao\lCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a304bb508abcc5440fc9c5389546da360",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
   Node1 -> Node61 [id="edge104_Node000001_Node000061",color="steelblue1",style="solid",tooltip=" "];
   Node61 [id="Node000061",label="TString::tok",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a1c97cb769a9101f4bf899f527adceea6",tooltip=" "];
   Node61 -> Node9 [id="edge105_Node000061_Node000009",color="steelblue1",style="solid",tooltip=" "];
@@ -166,9 +166,9 @@ digraph "TProcuraAdversa::Jogar"
   Node62 -> Node2 [id="edge111_Node000062_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node62 -> Node18 [id="edge112_Node000062_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node62 -> Node63 [id="edge113_Node000062_Node000063",color="steelblue1",style="solid",tooltip=" "];
-  Node63 [id="Node000063",label="TProcuraConstrutiva\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga2eabd047192d429686aeadf549136d44",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node63 [id="Node000063",label="TProcuraConstrutiva\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga2eabd047192d429686aeadf549136d44",tooltip="Coloca o objeto no estado inicial da procura."];
   Node63 -> Node64 [id="edge114_Node000063_Node000064",color="steelblue1",style="solid",tooltip=" "];
-  Node64 [id="Node000064",label="TProcura::Inicializar",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node64 [id="Node000064",label="TProcura::Inicializar",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objeto no estado inicial da procura."];
   Node64 -> Node4 [id="edge115_Node000064_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node62 -> Node60 [id="edge116_Node000062_Node000060",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -592,7 +592,7 @@ Opção: <span class="entrada">4</span>
 [.] .  .  .  .  .  .  .  .  .  (💰 g:13) 🎯 
 </pre>
 </p>
-<p>Não houve desperdício visivel nesta solução. O algoritmo procura em largura garante-nos que esta solução é ótima, dado que o custo de cada ação é unitário.</p>
+<p>Não houve desperdício visível nesta solução. O algoritmo procura em largura garante-nos que esta solução é ótima, dado que o custo de cada ação é unitário.</p>
 <p>Para lidar com o problema de memória, podíamos limitar a procura em largura com o parâmetro limite, fixando a 100 ou 1000 estados, mas perdendo a optimalidade.</p>
 <p>A melhor solução para lidar com este problema é eliminar estados repetidos, idealmente todos os gerados. Mas se mesmo assim a procura em largura resultar num problema de memória, a utilização de um limite, poderá ser uma opção, mantendo-se apenas um determinado número limitado de estados gerados não expandidos. Esta abordagem perde a optimalidade, e também a garantia de construir um caminho do estado inicial ao final, o que poderá não ser problemático em alguns problemas.</p>
 <p><a class="anchor" id="aspirador-a9"></a></p>

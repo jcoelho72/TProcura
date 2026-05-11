@@ -2,7 +2,7 @@ var classCProblemaArtificial =
 [
     [ "CProblemaArtificial", "classCProblemaArtificial.html#a1af4e20c9e5ea2aa1ebbb63945b0d1a7", null ],
     [ "~CProblemaArtificial", "classCProblemaArtificial.html#a5a3353d4f263cdaa090237fe245f532a", null ],
-    [ "Copiar", "classCProblemaArtificial.html#ac98a0fece8bc458a83fc03457614f6c4", null ],
+    [ "Copiar", "classCProblemaArtificial.html#aa62248b80d02d0d10ce684fb91f29ac8", null ],
     [ "Debug", "classCProblemaArtificial.html#aed61188cb7e4ad383c94ff239f116327", null ],
     [ "Distinto", "classCProblemaArtificial.html#a3ce5871f01df205781ef06fb596d812e", null ],
     [ "Duplicar", "classCProblemaArtificial.html#a15bc8f02957607a1ce184975b34465da", null ],

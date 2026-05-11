@@ -359,7 +359,7 @@ Dados #1000000: -2147476511 -2147469585 -2147464842 ... 2147468823 2147468881 21
 Opção: 
 </pre>
 </p>
-<p>A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada. Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milissegundos. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
+<p>A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada. Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milissegundos. Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura <a class="el" href="classTVector.html">TVector</a>. O estado do vetor é visível os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.</p>
 <p>Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadores, I1 a I4.</p>
 <p>Os três primeiros indicadores são de <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>, o quarto indicador é definido em <a class="el" href="classCTesteTVector.html" title="Classe de teste para TVector, integrada na framework TProcura.">CTesteTVector</a>. O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema. O indicador I2 tem o tempo consumido pelo algoritmo, em milissegundos, neste caso 80. Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância). O tempo de calcular os indicadores não é também comtabilizado. O indicador I3 tem o número de iterações realizadas. O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez. Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado. Esse indicador é chamado após o algoritmo, e aqui retorna 1, confirmando que está ordenado. Em outros métodos que não ordenem o vetor, naturalmente que este indicador nesses casos, ao ser chamado irá retornar 0.</p>
 <p>Vamos trocar um parâmetro, inicializar e executar novamente. Introduza: 3; 6; 2; <em>ENTER</em>; 1; <em>ENTER</em>; 6.</p>
@@ -407,7 +407,7 @@ Alterar indicador:
 <p>Por omissão estão todos os indicadores ligados, e são chamados por ordem de ID. No entanto, por vezes pretende-se verificar a solução, executando verificações/validações. Outras vezes pretende-se obter informação sobre a instância, que nem está relacionada com a execução do algoritmo. Pode-se ainda querer fazer ações após o algoritmo, de transformação da solução, ou gravação da solução para ficheiro.</p>
 <p>Com os indicadores é possível definir as ações a executar após o algoritmo, por uma dada ordem, ou se uma dada ação irá ser executada ou não.</p>
 <p>Neste caso temos apenas um indicador definido, que é um indicador de verificação, testando se o vetor ficou ordenado.</p>
-<p>Com esta interface podemos remover e adicionar indicadores existentes por outra ordem. Vamos por exemplo colocar visivel primeiro I4 e depois I2, não mostrando os restanes.</p>
+<p>Com esta interface podemos remover e adicionar indicadores existentes por outra ordem. Vamos por exemplo colocar visível primeiro I4 e depois I2, não mostrando os restantes.</p>
 <p>Introduza: 1;2;3;2;<em>ENTER</em>;1;<em>ENTER</em>;6.</p>
 <p> 
 <pre>
@@ -841,7 +841,7 @@ Opção:
 </pre>
 </p>
 <p>Podemos ver uma primeira linha indicando que há 100 tarefas, 10 instâncias, 10 configurações e 1 processo, já que não estamos a executar em MPI. Existe a indicação que o ficheiro Resultados/tvetor_01.csv foi gravado, em vez da tabela de resultados final da execução anterior. No final é dado o tempo real, o tempo total de CPU e a utilização, que neste caso é 100% já que é um programa em série.</p>
-<p>O ficheiro está pronto para fazermos uma análise com os relatórios dinâmicos. Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visivel o tempo crescente de forma estável, um pouco acima de linear.</p>
+<p>O ficheiro está pronto para fazermos uma análise com os relatórios dinâmicos. Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visível o tempo crescente de forma estável, um pouco acima de linear.</p>
 <div class="image">
 <img src="tvetor1.png" alt=""/>
 <div class="caption">

@@ -27,9 +27,9 @@ digraph "TProcuraAdversa::TesteValidacao"
   Node9 [id="Node000009",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
   Node1 -> Node6 [id="edge12_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node10 [id="edge13_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="TProcuraConstrutiva\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga2eabd047192d429686aeadf549136d44",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node10 [id="Node000010",label="TProcuraConstrutiva\l::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga2eabd047192d429686aeadf549136d44",tooltip="Coloca o objeto no estado inicial da procura."];
   Node10 -> Node11 [id="edge14_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcura::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node11 [id="Node000011",label="TProcura::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objeto no estado inicial da procura."];
   Node11 -> Node9 [id="edge15_Node000011_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node11 -> Node12 [id="edge16_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];
@@ -162,9 +162,9 @@ digraph "TProcuraAdversa::TesteValidacao"
   Node38 -> Node7 [id="edge109_Node000038_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node38 -> Node4 [id="edge110_Node000038_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node64 [id="edge111_Node000013_Node000064",color="steelblue1",style="solid",tooltip=" "];
-  Node64 [id="Node000064",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node64 [id="Node000064",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
   Node13 -> Node65 [id="edge112_Node000013_Node000065",color="steelblue1",style="solid",tooltip=" "];
-  Node65 [id="Node000065",label="TProcuraAdversa::Solucao\lCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a304bb508abcc5440fc9c5389546da360",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node65 [id="Node000065",label="TProcuraAdversa::Solucao\lCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a304bb508abcc5440fc9c5389546da360",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
   Node13 -> Node5 [id="edge113_Node000013_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node13 -> Node66 [id="edge114_Node000013_Node000066",color="steelblue1",style="solid",tooltip=" "];
   Node66 [id="Node000066",label="TProcuraAdversa::Validar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a2f48e17339a95516058c54ffcada7fb0",tooltip="Verifica a validade de uma solução para a instância atual."];

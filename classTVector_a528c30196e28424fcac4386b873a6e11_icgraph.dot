@@ -11,5 +11,5 @@ digraph "TVector::RandomOrder"
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="TCodificacaoPermutacao\l::NovaSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTCodificacaoPermutacao.html#a16f609d10fde3c8dbbbeeba584f3c619",tooltip=" "];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="COitoDamasCP::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamasCP.html#a2a92076021aec98b8780677316c0a05b",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node4 [id="Node000004",label="COitoDamasCP::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCOitoDamasCP.html#a2a92076021aec98b8780677316c0a05b",tooltip="Coloca o objeto no estado inicial da procura."];
 }

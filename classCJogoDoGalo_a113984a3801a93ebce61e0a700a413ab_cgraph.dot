@@ -93,7 +93,7 @@ digraph "CJogoDoGalo::TesteManual"
   Node2 -> Node35 [id="edge55_Node000002_Node000035",color="steelblue1",style="solid",tooltip=" "];
   Node35 [id="Node000035",label="TProcura::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#abd93e2ba1f58d3ee7bef74845cee99fb",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node2 -> Node36 [id="edge56_Node000002_Node000036",color="steelblue1",style="solid",tooltip=" "];
-  Node36 [id="Node000036",label="TProcura::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node36 [id="Node000036",label="TProcura::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objeto no estado inicial da procura."];
   Node36 -> Node8 [id="edge57_Node000036_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node36 -> Node37 [id="edge58_Node000036_Node000037",color="steelblue1",style="solid",tooltip=" "];
   Node37 [id="Node000037",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];

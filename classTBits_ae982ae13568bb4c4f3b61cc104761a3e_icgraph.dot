@@ -13,7 +13,7 @@ digraph "TBits::Hash"
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="TProcuraAdversa::ValorEstado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a9c95c246b28345f0d515a9083ffd646d",tooltip="ler ou gravar o melhor valor conhecido"];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="TProcuraAdversa::ExisteHeuritica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aab0860dd7b025e71049e204adb25df25",tooltip=" "];
+  Node5 [id="Node000005",label="TProcuraAdversa::ExisteHeuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a70572cfe77db5ca267771673482811b1",tooltip=" "];
   Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="CJogoDoGalo::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoDoGalo.html#a3563839d5ffc94973acee1a1783e3527",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node5 -> Node7 [id="edge6_Node000005_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -101,5 +101,5 @@ digraph "TBits::Hash"
   Node26 -> Node36 [id="edge59_Node000026_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node36 [id="Node000036",label="CPuzzle8::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node36 -> Node37 [id="edge60_Node000036_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node37 [id="Node000037",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node37 [id="Node000037",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objeto no estado inicial da procura."];
 }

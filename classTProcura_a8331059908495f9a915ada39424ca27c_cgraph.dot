@@ -91,7 +91,7 @@ digraph "TProcura::TesteManual"
   Node1 -> Node34 [id="edge54_Node000001_Node000034",color="steelblue1",style="solid",tooltip=" "];
   Node34 [id="Node000034",label="TProcura::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#abd93e2ba1f58d3ee7bef74845cee99fb",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node1 -> Node35 [id="edge55_Node000001_Node000035",color="steelblue1",style="solid",tooltip=" "];
-  Node35 [id="Node000035",label="TProcura::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node35 [id="Node000035",label="TProcura::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objeto no estado inicial da procura."];
   Node35 -> Node7 [id="edge56_Node000035_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node35 -> Node36 [id="edge57_Node000035_Node000036",color="steelblue1",style="solid",tooltip=" "];
   Node36 [id="Node000036",label="TRand::srand",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$namespaceTRand.html#ad0b319d6f58ab6820b001b4e3d3ae245",tooltip="Inicializa a semente da geração pseudo-aleatória."];

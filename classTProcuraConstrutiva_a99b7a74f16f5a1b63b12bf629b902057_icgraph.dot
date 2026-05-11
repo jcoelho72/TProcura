@@ -79,7 +79,7 @@ digraph "TProcuraConstrutiva::SubstituirHT"
   Node15 -> Node28 [id="edge45_Node000015_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="CPuzzle8::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#a65dd2ff8c163c5542a12b2213c2fd12a",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node28 -> Node29 [id="edge46_Node000028_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node29 [id="Node000029",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node29 [id="Node000029",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objeto no estado inicial da procura."];
   Node1 -> Node30 [id="edge47_Node000001_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node30 [id="Node000030",label="TProcuraAdversa::SubstituirHT",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ab13f514d86e599dc15a682e6a6199987",tooltip=" "];
   Node30 -> Node31 [id="edge48_Node000030_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -87,7 +87,7 @@ digraph "TProcuraConstrutiva::SubstituirHT"
   Node31 -> Node32 [id="edge49_Node000031_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node32 [id="Node000032",label="TProcuraAdversa::ValorEstado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a9c95c246b28345f0d515a9083ffd646d",tooltip="ler ou gravar o melhor valor conhecido"];
   Node32 -> Node33 [id="edge50_Node000032_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node33 [id="Node000033",label="TProcuraAdversa::ExisteHeuritica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aab0860dd7b025e71049e204adb25df25",tooltip=" "];
+  Node33 [id="Node000033",label="TProcuraAdversa::ExisteHeuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a70572cfe77db5ca267771673482811b1",tooltip=" "];
   Node33 -> Node34 [id="edge51_Node000033_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node34 [id="Node000034",label="CJogoDoGalo::Heuristica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoDoGalo.html#a3563839d5ffc94973acee1a1783e3527",tooltip="Função para calcular quanto falta para o final, o valor da heurística."];
   Node33 -> Node35 [id="edge52_Node000033_Node000035",dir="back",color="steelblue1",style="solid",tooltip=" "];

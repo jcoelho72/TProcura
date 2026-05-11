@@ -20,7 +20,7 @@ digraph "TProcuraConstrutiva::LibertarVector"
   Node6 -> Node4 [id="edge7_Node000006_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 -> Node6 [id="edge8_Node000006_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node7 [id="edge9_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objecto no estado inicial da procura."];
+  Node7 [id="Node000007",label="CPuzzle8::Inicializar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCPuzzle8.html#ab69d1a9a91d91b918ef43b102f78e5ed",tooltip="Coloca o objeto no estado inicial da procura."];
   Node1 -> Node8 [id="edge10_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TProcuraConstrutiva\l::LarguraPrimeiro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0",tooltip="Executa a procura em largura primeiro, algoritmo cego."];
   Node8 -> Node4 [id="edge11_Node000008_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];

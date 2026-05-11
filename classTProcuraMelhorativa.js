@@ -9,7 +9,7 @@ var classTProcuraMelhorativa =
     [ "Avaliar", "classTProcuraMelhorativa.html#a98b5a07fe3813de112f603c8fdb0bc43", null ],
     [ "CalcularAvaliacoes", "classTProcuraMelhorativa.html#a4eb294616d6fd3d9a12a074b659db863", null ],
     [ "CompletarPopulacaoAE", "classTProcuraMelhorativa.html#a5f0aa5bd919d038c2e1d3903188ba0c1", null ],
-    [ "Copiar", "classTProcuraMelhorativa.html#a446cb701313bd16b9a6c5939b810d241", null ],
+    [ "Copiar", "classTProcuraMelhorativa.html#ac0f69111bdbe6b61dfa2bf885d68d5c7", null ],
     [ "Cruzamento", "classTProcuraMelhorativa.html#a36607136095d36b87357cce021eeab29", null ],
     [ "DebugCruzamentoAG", "classTProcuraMelhorativa.html#ac0273cf661acd96f0c1c2e2fa5661ca6", null ],
     [ "DebugDiversidadeAE", "classTProcuraMelhorativa.html#ac874b108cf4d18501500aef4d15354af", null ],

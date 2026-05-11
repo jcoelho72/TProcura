@@ -48,7 +48,7 @@ digraph "TVector::Empty"
   Node19 [id="Node000019",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a605b4293eeaed3fd542afe36edcc8d51",tooltip="Inicializa a interação com o utilizador."];
   Node11 -> Node15 [id="edge23_Node000011_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node20 [id="edge24_Node000001_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node20 [id="Node000020",label="CParticao::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a8f49dd653c0b56e3da7ec3664611cd5f",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node20 [id="Node000020",label="CParticao::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCParticao.html#a8f49dd653c0b56e3da7ec3664611cd5f",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
   Node1 -> Node21 [id="edge25_Node000001_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node21 [id="Node000021",label="TProcuraAdversa::Sucessores",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a6870779a8413eb398f9037514f8936aa",tooltip="Coloca em sucessores a lista de estados sucessores."];
   Node21 -> Node2 [id="edge26_Node000021_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];

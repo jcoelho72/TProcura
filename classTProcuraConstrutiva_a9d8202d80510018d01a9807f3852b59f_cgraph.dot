@@ -15,7 +15,7 @@ digraph "TProcuraConstrutiva::Explorar"
   Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
   Node1 -> Node6 [id="edge5_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcuraConstrutiva\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga92eb7af76e68a20fe542afb459e7d642",tooltip="Fica com uma cópia do objecto."];
+  Node6 [id="Node000006",label="TProcuraConstrutiva\l::Copiar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga62e59c75c9aec8ca65a817459adf1190",tooltip="Fica com uma cópia do objeto."];
   Node1 -> Node5 [id="edge6_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node7 [id="edge7_Node000001_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="TProcura::Cronometro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ac7c1d95788d63f85e60f1b4c00e68f65",tooltip="retorna o tempo em segundos desde que o cronómetro foi inicializado"];
@@ -48,7 +48,7 @@ digraph "TProcuraConstrutiva::Explorar"
   Node18 -> Node19 [id="edge23_Node000018_Node000019",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="TVector::Add",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node1 -> Node21 [id="edge24_Node000001_Node000021",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="TProcuraConstrutiva\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623",tooltip="Cria um objecto que é uma cópia deste."];
+  Node21 [id="Node000021",label="TProcuraConstrutiva\l::Duplicar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#gaf7c2483f38d11825c220b7a8d538a623",tooltip="Cria um objeto que é uma cópia deste."];
   Node1 -> Node22 [id="edge25_Node000001_Node000022",color="steelblue1",style="solid",tooltip=" "];
   Node22 [id="Node000022",label="TProcuraConstrutiva\l::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoOpcional.html#gae52871eb18c8ae656a2174acf43b3bb3",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node22 -> Node23 [id="edge26_Node000022_Node000023",color="steelblue1",style="solid",tooltip=" "];
@@ -99,7 +99,7 @@ digraph "TProcuraConstrutiva::Explorar"
   Node29 -> Node16 [id="edge61_Node000029_Node000016",color="steelblue1",style="solid",tooltip=" "];
   Node29 -> Node26 [id="edge62_Node000029_Node000026",color="steelblue1",style="solid",tooltip=" "];
   Node29 -> Node36 [id="edge63_Node000029_Node000036",color="steelblue1",style="solid",tooltip=" "];
-  Node36 [id="Node000036",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objectivo (é uma solução completa)"];
+  Node36 [id="Node000036",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
   Node29 -> Node37 [id="edge64_Node000029_Node000037",color="steelblue1",style="solid",tooltip=" "];
   Node37 [id="Node000037",label="TProcuraConstrutiva\l::SolucaoEncontrada",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcuraConstrutiva.html#a2f648df694a20e7fcb688c9979f763fd",tooltip=" "];
   Node37 -> Node6 [id="edge65_Node000037_Node000006",color="steelblue1",style="solid",tooltip=" "];

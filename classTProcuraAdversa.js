@@ -7,7 +7,7 @@ var classTProcuraAdversa =
     [ "DebugChamada", "classTProcuraAdversa.html#ad88cb2a2f894ceda4c8ed67e775a96e0", null ],
     [ "ExecutaAlgoritmo", "classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b", null ],
     [ "ExecutaTarefa", "classTProcuraAdversa.html#aad206751268402eef355dd89415d1865", null ],
-    [ "ExisteHeuritica", "classTProcuraAdversa.html#aab0860dd7b025e71049e204adb25df25", null ],
+    [ "ExisteHeuristica", "classTProcuraAdversa.html#a70572cfe77db5ca267771673482811b1", null ],
     [ "ExisteHT", "classTProcuraAdversa.html#ad01434aae577cafdb636f82ba2815215", null ],
     [ "Heuristica", "classTProcuraAdversa.html#a75e148ba0a922339333940828366aed6", null ],
     [ "Jogar", "classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8", null ],

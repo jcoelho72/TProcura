@@ -102,7 +102,7 @@ var searchData=
   ['diversidade_99',['DIVERSIDADE',['../TProcuraMelhorativa_8h.html#a590d0affde11aafe26e2619bf4f2e13da0ac70ab8cb784bc9936f3c140fd7e36c',1,'TProcuraMelhorativa.h']]],
   ['diversidadeae_100',['DiversidadeAE',['../classTProcuraMelhorativa.html#a6680888f6064501586d740cab891d0cd',1,'TProcuraMelhorativa']]],
   ['do_20galo_101',['Procuras Adversas, Teste Jogo do Galo',['../teste_jogo_do_galo.html',1,'']]],
-  ['do_20galo_20minmax_102',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
+  ['do_20galo_20minimax_102',['Procuras Adversas, Jogo do Galo, MiniMax',['../tutorial_galominimax.html',1,'']]],
   ['do_20investigador_103',['O Ciclo do Investigador',['../investigacao.html#autotoc_md10',1,'']]],
   ['do_20monte_104',['4 Damas, Escalada do Monte',['../tutorial_4damasescalada.html',1,'']]],
   ['do_20repositório_105',['📦 Estrutura do Repositório',['../index.html#autotoc_md209',1,'']]],

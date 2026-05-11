@@ -77,7 +77,7 @@ var searchData=
   ['executatarefa_74',['executatarefa',['../classTProcura.html#a2c3c5fdff8277b04a219156dec0f068b',1,'TProcura::ExecutaTarefa()'],['../classTProcuraAdversa.html#aad206751268402eef355dd89415d1865',1,'TProcuraAdversa::ExecutaTarefa()']]],
   ['exemplos_20de_20execução_75',['Exemplos de execução',['../tutorial_melhorativas.html#autotoc_md198',1,'']]],
   ['exercícios_76',['exercícios',['../tutorial_introducao1exe.html',1,'✏️ Introdução - Exercícios'],['../tutorial_introducao2exe.html#autotoc_md193',1,'Exercícios'],['../tutorial_introducao1exe.html#autotoc_md190',1,'Exercícios']]],
-  ['existeheuritica_77',['ExisteHeuritica',['../classTProcuraAdversa.html#aab0860dd7b025e71049e204adb25df25',1,'TProcuraAdversa']]],
+  ['existeheuristica_77',['ExisteHeuristica',['../classTProcuraAdversa.html#a70572cfe77db5ca267771673482811b1',1,'TProcuraAdversa']]],
   ['existeht_78',['existeht',['../classTProcuraConstrutiva.html#ad7857beab462b4b09a37e70cc9c787ac',1,'TProcuraConstrutiva::ExisteHT()'],['../classTProcuraAdversa.html#ad01434aae577cafdb636f82ba2815215',1,'TProcuraAdversa::ExisteHT()']]],
   ['expansoes_79',['expansoes',['../group__VariaveisGlobais.html#ga198a1f8ed90785a1c3f112a3468a2d74',1,'TProcuraConstrutiva']]],
   ['explorar_80',['explorar',['../classTProcuraMelhorativa.html#a76355a263331719abacf13d40a6613d0',1,'TProcuraMelhorativa::Explorar()'],['../classTProcura.html#abd93e2ba1f58d3ee7bef74845cee99fb',1,'TProcura::Explorar()'],['../classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f',1,'TProcuraConstrutiva::Explorar()']]],

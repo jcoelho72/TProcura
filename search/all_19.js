@@ -77,7 +77,7 @@ var searchData=
   ['procura_20profundidade_74',['Ação 15 - Desafio Procura Profundidade',['../teste_aspirador2.html#autotoc_md101',1,'']]],
   ['procuras_20adversas_75',['Tutorial das Procuras Adversas',['../tutorial_adversas.html',1,'']]],
   ['procuras_20adversas_20introdução_76',['Procuras Adversas - Introdução',['../tutorial_adversas5a.html',1,'']]],
-  ['procuras_20adversas_20jogo_20do_20galo_20minmax_77',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
+  ['procuras_20adversas_20jogo_20do_20galo_20minimax_77',['Procuras Adversas, Jogo do Galo, MiniMax',['../tutorial_galominimax.html',1,'']]],
   ['procuras_20adversas_20literatura_78',['Procuras Adversas - Literatura',['../tutorial_adversaslit.html',1,'']]],
   ['procuras_20adversas_20minimax_79',['Procuras Adversas - MiniMax',['../tutorial_adversas5b.html',1,'']]],
   ['procuras_20adversas_20minimax_20com_20cortes_20alfa_20beta_80',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],

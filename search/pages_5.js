@@ -3,7 +3,7 @@ var searchData=
   ['a_20star_0',['✏️ Puzzle 8, A-star',['../tutorial_puzzle8astar.html',1,'']]],
   ['adversas_1',['Tutorial das Procuras Adversas',['../tutorial_adversas.html',1,'']]],
   ['adversas_20introdução_2',['Procuras Adversas - Introdução',['../tutorial_adversas5a.html',1,'']]],
-  ['adversas_20jogo_20do_20galo_20minmax_3',['Procuras Adversas, Jogo do Galo, MinMax',['../tutorial_galominimax.html',1,'']]],
+  ['adversas_20jogo_20do_20galo_20minimax_3',['Procuras Adversas, Jogo do Galo, MiniMax',['../tutorial_galominimax.html',1,'']]],
   ['adversas_20literatura_4',['Procuras Adversas - Literatura',['../tutorial_adversaslit.html',1,'']]],
   ['adversas_20minimax_5',['Procuras Adversas - MiniMax',['../tutorial_adversas5b.html',1,'']]],
   ['adversas_20minimax_20com_20cortes_20alfa_20beta_6',['Procuras Adversas, MiniMax com cortes alfa/beta',['../tutorial_galoalfabeta.html',1,'']]],
