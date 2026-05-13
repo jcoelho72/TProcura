@@ -1072,9 +1072,9 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString 
 	TString nome;
 	TVector<TString> linhas;
 	if (mpiCount > 1)
-		nome.printf("%s_%d.csv", ficheiro.tok().First(), mpiID);
+		nome.printf("%s_%d.csv", *ficheiro.tok().First(), mpiID);
 	else
-		nome.printf("%s.csv", ficheiro.tok().First());
+		nome.printf("%s.csv", *ficheiro.tok().First());
 
 	// Jogador, Adversário, cor, resultado (positivo caso o jogador ganhe, negativo c.c.) 
 	// Nota: cada confronto fica com 2 entradas; se existir várias instâncias, o resultado do confronto é somado
