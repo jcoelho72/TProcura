@@ -112,7 +112,7 @@ public:
 	int Heuristica(void);
 
 	// @brief chamar em CSubProblema::Heuristica() para verificar se a heurística já existe, ou precisa de ser calculada
-	bool ExisteHeuritica(void);
+	bool ExisteHeuristica(void);
 
 	void Sucessores(TVector<TNo>& sucessores);
 
@@ -172,5 +172,4 @@ protected:
 	static int reutilizadoAvaliacao; // número de vezes que uma avaliação é reutilizada
 
 	void DebugChamada(bool noFolha, int alfa = 0, int beta = 0);
-
 };
