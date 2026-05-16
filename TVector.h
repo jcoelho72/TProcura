@@ -1343,9 +1343,7 @@ unsigned int TBits::Hash() const {
 	uint32_t h = 2166136261;
 	for (uint64_t word : *this) {
 		// processar cada octeto 
-		// quando o valor fica 0, já não interessa
-		// já que existindo dados, são distintos de 0
-		for (int i = 0; i < 8 && word; i++) {
+		for (int i = 0; i < 8; i++) {
 			unsigned char octeto = word & 255;
 			word >>= 8;
 			h *= 16777619;
