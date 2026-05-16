@@ -7,9 +7,33 @@
 
 #ifdef _WIN32
 #include <windows.h>
+#else
+#include <termios.h>
+#include <unistd.h>
 #endif
 
 namespace compat {
+
+#ifndef _WIN32
+    // Classe RAII para ativar/desativar modo nativo (raw mode)
+    class ModoNativo {
+    public:
+        ModoNativo() {
+            tcgetattr(STDIN_FILENO, &orig);
+            termios raw = orig;
+            raw.c_lflag &= ~(ICANON | ECHO);
+            tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
+        }
+
+        ~ModoNativo() {
+            tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig);
+        }
+
+    private:
+        termios orig;
+    };
+#endif
+
 
 	inline void init_io() {
 #ifdef _WIN32

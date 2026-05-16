@@ -16,7 +16,7 @@ Propõe-se que faça este tutorial da seguinte forma:
 # Procuras Melhorativas (Algoritmos Evolutivos)
 
 Leituras:
-- Russel & Norvig: Capítulo 4 (secção 1)
+- Russell & Norvig: Capítulo 4 (secção 1)
 - Eiben & Smith: Capítulos 2 a 6
 - Bruke & Kendall: Capítulos: 5, 7 a 13
 

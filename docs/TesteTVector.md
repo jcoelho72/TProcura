@@ -366,7 +366,7 @@ Opção:
 A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada.
 Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milissegundos.
 Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura TVector.
-O estado do vetor é visivel os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.
+O estado do vetor é visível os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.
 
 Como já houve uma execução, existe agora mais uma linha antes do menu, com os indicadores, I1 a I4.
 
@@ -423,7 +423,7 @@ Opção: <span class="entrada">5</span>
 │ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
 │ <span style="color:gray">Tempo em milissegundos da execução (medida de esforço computacional).</span>
 │ <span style="color:gray">I3(Iterações):</span> ✓ 3º lugar 
-│ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
+│ <span style="color:gray">Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 4º lugar 
 │ <span style="color:gray">verifica se o vetor está ordenado</span>
 └──────────────────────────────────────────────────────────────────────
@@ -442,7 +442,7 @@ executada ou não.
 Neste caso temos apenas um indicador definido, que é um indicador de verificação, testando se o vetor ficou ordenado.
 
 Com esta interface podemos remover e adicionar indicadores existentes por outra ordem. 
-Vamos por exemplo colocar visivel primeiro I4 e depois I2, não mostrando os restanes.
+Vamos por exemplo colocar visível primeiro I4 e depois I2, não mostrando os restantes.
 
 Introduza: 1;2;3;2;*ENTER*;1;*ENTER*;6.
 
@@ -455,7 +455,7 @@ Introduza: 1;2;3;2;*ENTER*;1;*ENTER*;6.
 │ <span style="color:gray">I2(Tempo(ms)):</span> ✓ 2º lugar 
 │ <span style="color:gray">Tempo em milissegundos da execução (medida de esforço computacional).</span>
 │ <span style="color:gray">I3(Iterações):</span> ✗ inativo 
-│ <span style="color:gray">Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
+│ <span style="color:gray">Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).</span>
 │ <span style="color:gray">I4(IND_ORDENAR):</span> ✓ 1º lugar 
 │ <span style="color:gray">verifica se o vetor está ordenado</span>
 └──────────────────────────────────────────────────────────────────────
@@ -957,7 +957,7 @@ Existe a indicação que o ficheiro Resultados/tvetor_01.csv foi gravado, em vez
 No final é dado o tempo real, o tempo total de CPU e a utilização, que neste caso é 100% já que é um programa em série.
 
 O ficheiro está pronto para fazermos uma análise com os relatórios dinâmicos. 
-Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visivel o tempo crescente de forma estável, um pouco acima de linear.
+Colocando a instância nas linhas, e o tempo no conteúdo, deverá ser visível o tempo crescente de forma estável, um pouco acima de linear.
 
 ![resultados](docs/images/tvetor1.png)
 
@@ -1016,7 +1016,7 @@ Lista de indicadores:
 │ I2(Tempo(ms)): ☑  2º lugar
 │ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ☑  3º lugar
-│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
+│ Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_ORDENAR): ☑  4º lugar
 │ verifica se o vetor está ordenado
 └──────────────────────────────────────────────────────────────────────

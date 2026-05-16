@@ -130,7 +130,7 @@
 </details>
 
 <details class="pergunta">
-<summary><strong>⚡ Ação:</strong> No exmeplo MiniMaxAB, porque é que alguns estados do nível 3 são cortados imediatamente?</summary>
+<summary><strong>⚡ Ação:</strong> No exemplo MiniMaxAB, porque é que alguns estados do nível 3 são cortados imediatamente?</summary>
 👉 Porque o valor encontrado é pior do que a melhor alternativa do adversário, ativando a condição de corte.
 </details>
 

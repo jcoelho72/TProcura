@@ -41,7 +41,7 @@ typedef struct SValorEstado {
  * @brief registo do valor de um estado, em procuras anteriores
  */
 typedef struct SResultadoJogo {
-	int instancia = 0; // no caso no jogo ter instâncias
+	int instancia = 0; // no caso do jogo ter instâncias
 	int brancas = 0; // configuração a jogar de brancas
 	int pretas = 0; // configuração a jogar de pretas
 	int resultado = 0; // -1 derrota, 0 empate, 1 vitória
@@ -80,7 +80,7 @@ public:
 	/// @brief Método para inicializar os parâmetros (redefinir se forem adicionados parâmetros específicos)
 	void ResetParametros();
 
-	// Retorna verdade caso o estado actual seja um estado objectivo, ou seja, jogo final (atualizar resultadoCompleto)
+	// Retorna verdade caso o estado actual seja um estado objetivo, ou seja, jogo final (atualizar resultadoCompleto)
 	bool SolucaoCompleta(void) = 0;
 
 	/// @brief retorna o valor do estado actual, apos procura de profundidade nivel

@@ -5,7 +5,7 @@
 /**
  * @brief Representa um estado no problema do Aspirador. 
  *
- * Este problema consiste ter salas vizinhas, que podem estar sujas ou limpas. 
+ * Este problema consiste em ter salas vizinhas, que podem estar sujas ou limpas. 
  * Pretende-se ter todas as salas limpas, sendo as ações de mover para a sala do lado, ou aspirar. 
  */
 class CAspirador :
@@ -21,9 +21,9 @@ public:
 
 	// Metodos virtuais redefinidos
 	TProcuraConstrutiva* Duplicar(void);
-	void Copiar(TProcuraConstrutiva*objecto) {
-		aspirador = ((CAspirador*)objecto)->aspirador;
-		salas = ((CAspirador*)objecto)->salas;
+	void Copiar(TProcuraConstrutiva*objeto) {
+		aspirador = ((CAspirador*)objeto)->aspirador;
+		salas = ((CAspirador*)objeto)->salas;
 	}
 	void Inicializar(void);
 	void ResetParametros();

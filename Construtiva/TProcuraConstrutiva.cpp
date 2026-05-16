@@ -91,7 +91,7 @@ bool TProcuraConstrutiva::Acao(TString acao) {
 	return false;
 }
 
-// Coloca em sucessores a lista de objectos sucessores (sao alocados neste metodo e tem de ser apagados)
+// Coloca em sucessores a lista de objetos sucessores (sao alocados neste metodo e tem de ser apagados)
 // O custo se não existir, deixar a 1 (valor por omissão)
 // chamar o metodo desta classe apos adicionar os sucessores para actualizar geracoes e expansoes,
 // bem como verificar a existência de estados repetidos
@@ -148,7 +148,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 }
 
 
-// metodo interno para libertar objectos nao necessarios
+// metodo interno para libertar objetos nao necessarios
 void TProcuraConstrutiva::LibertarVector(TVector<TNo>& vector, int excepto, int maiorQue)
 {
 	for (int i = 0; i < vector.Count(); i++)
@@ -457,7 +457,7 @@ int TProcuraConstrutiva::MelhorPrimeiro(int nivel)
 		LibertarVector(sucessores);
 	}
 	else
-		DebugFolha(false, "%-2s&-2s", Icon(EIcon::FOLHA), Icon(EIcon::LIMITE));
+		DebugFolha(false, "%-2s%-2s", Icon(EIcon::FOLHA), Icon(EIcon::LIMITE));
 	return -1;
 }
 
@@ -618,7 +618,7 @@ int TProcuraConstrutiva::AStar(int limite)
 // Esta função deve devolver o custo estimado por baixo, 
 // desde este estado até ao estado final mais proximo (é um valor minimo),
 // colocando esse valor na variável heuristica
-// chamar este método para actualiacao de avaliacoes
+// chamar este método para actualização de avaliações
 int TProcuraConstrutiva::Heuristica(void) {
 	iteracoes++;
 	if (Parametro(RUIDO_HEURISTICA) > 0)
@@ -985,7 +985,7 @@ void TProcuraConstrutiva::LimparHT() {
 			for (int i = 0; i < TAMANHO_HASHTABLE; i++)
 				elementosHT[i].Count(0);
 		colocadosHT = 0;
-		// coloca o estado atual na hasttable, para não ser gerado
+		// coloca o estado atual na hashtable, para não ser gerado
 		ExisteHT();
 	}
 }

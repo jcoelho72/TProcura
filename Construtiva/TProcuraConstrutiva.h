@@ -139,7 +139,7 @@ public:
 	 */
 
 	 /**
-	  * @brief Cria um objecto que é uma cópia deste.
+	  * @brief Cria um objeto que é uma cópia deste.
 	  * @note Obrigatória a redefinição.
 	  *
 	  * Este método tem de ser criado na subclasse, de modo a criar uma cópia
@@ -168,7 +168,7 @@ public:
 	virtual TNo Duplicar(void) = 0;
 
 	/**
-	 * @brief Fica com uma cópia do objecto.
+	 * @brief Fica com uma cópia do objeto.
 	 * @note Obrigatória a redefinição.
 	 *
 	 * Este método tem de ser criado na subclasse, de modo a um estado poder ficar
@@ -186,17 +186,17 @@ public:
 	 * @see Sucessores() e Heuristica()
 	 *
 	 * @code
-	 * void CSubClasse::Copiar(TNo objecto) {
-	 * 		CSubProblema& obj = *((CSubProblema*)objecto);
+	 * void CSubClasse::Copiar(TNo objeto) {
+	 * 		CSubProblema& obj = *((CSubProblema*)objeto);
 	 * 		// copiar todas as variáveis do estado
 	 * 		variavel = obj.variavel;
 	 * }
 	 * @endcode
 	 */
-	virtual void Copiar(TNo objecto) {}
+	virtual void Copiar(TNo objeto) {}
 
 	/**
-	 * @brief Coloca o objecto no estado inicial da procura.
+	 * @brief Coloca o objeto no estado inicial da procura.
 	 * @note Obrigatória a redefinição.
 	 *
 	 * Este método inicializa as variáveis de estado no estado inicial vazio.
@@ -280,7 +280,7 @@ public:
 	virtual void Sucessores(TVector<TNo>& sucessores);
 
 	/**
-	 * @brief Verifica se o estado actual é objectivo (é uma solução completa)
+	 * @brief Verifica se o estado actual é objetivo (é uma solução completa)
 	 * @note Obrigatória a redefinição.
 	 * @return Retorna verdadeiro se é um estado objetivo, ou falso caso contrário.
 	 *

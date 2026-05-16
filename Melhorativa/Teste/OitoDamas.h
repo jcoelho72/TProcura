@@ -38,10 +38,10 @@ public:
 		return clone;
 	}
 
-	void Copiar(TPonto objecto) {
-		TProcuraMelhorativa::Copiar(objecto);
-		damas = ((COitoDamas*)objecto)->damas;
-		nDamas = ((COitoDamas*)objecto)->nDamas;
+	void Copiar(TPonto objeto) {
+		TProcuraMelhorativa::Copiar(objeto);
+		damas = ((COitoDamas*)objeto)->damas;
+		nDamas = ((COitoDamas*)objeto)->nDamas;
 	}
 
 	void Inicializar(void);

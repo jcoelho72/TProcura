@@ -38,6 +38,9 @@ public:
 	TVector<uint64_t> estado; // codificação binária (em números de 64 bits)
 	static int nElementos; // número de elementos binários na codificação
 
+	// TODO:
+	// - reformular para utilizar TBits (em TVetor.h), removendo BitRef
+
 	// troca o bit i
 	void Troca(int i) { estado[i >> 6] ^= ((uint64_t)1 << (i & 63)); }
 	// acesso a um bit para atribuir 
@@ -57,7 +60,7 @@ public:
 	void Debug(bool completo = true) override;
 
 	// métodos que não se prevê que sejam redefinidos
-	void Copiar(TPonto objecto);
+	void Copiar(TPonto objeto);
 	void NovaSolucao(void);
 	void ResetParametros();
 	// operadores melhorativos

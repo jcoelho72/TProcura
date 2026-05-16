@@ -25,7 +25,7 @@
 
 ## 📖 Leituras
 
-- (Russel & Norvig): Capítulo 2
+- (Russell & Norvig): Capítulo 2
 
 ## Bibliografia
 

@@ -23,7 +23,7 @@ public:
 
 	// métodos que não se prevê que sejam redefinidos
 	//TPonto Duplicar(void);
-	//void Copiar(TPonto objecto);
+	//void Copiar(TPonto objeto);
 	//void NovaSolucao(void);
 	//bool Acao(const char* acao);
 	//void ResetParametros();

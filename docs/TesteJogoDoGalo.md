@@ -100,7 +100,7 @@ seja muito elevada, não fazendo tanto sentido para situações de procura não 
 Em tudo o resto estamos em situação idêntica, embora os algoritmos sejam distintos. 
 Temos por omissão o algoritmo MiniMax alfa/beta.
 
-Insira: **1.** para inicialiar novo jogo.
+Insira: **1.** para inicializar novo jogo.
 
 
 \htmlonly
@@ -245,7 +245,7 @@ Insira: **2; *ENTER*.**
 </pre>
 \endhtmlonly
 
-Temos agora a1, mas não c1 (obtido por simetria vertical). Do mesmmo modo temos a2, mas não c2, e a3 mas não c3.
+Temos agora a1, mas não c1 (obtido por simetria vertical). Do mesmo modo temos a2, mas não c2, e a3 mas não c3.
 Já b2 e b3 não têm estados simétricos. 
 
 Assim, reduzimos consideravelmente a ramificação inicial, bem como os estados existentes no geral.
@@ -255,7 +255,7 @@ já que podemos estar a eliminar alternativas importantes
 num estado, apenas porque ocorrem em outro. 
 Mas com este teste podemos ver a importância das simetrias.
 
-O parâmetro de estados repetidos deve ficar nas procuras adversas em igonrar, e o de ordenação em 2.
+O parâmetro de estados repetidos deve ficar nas procuras adversas em ignorar, e o de ordenação em 2.
 
 Note que se quisermos jogar contra o computador, 
 podemos utilizar a ação "exe" para que o computador jogue com o algoritmo atual.
@@ -475,7 +475,7 @@ Outros estados foram gerados, mas são iguais a menos de operações de simetria
 
 Na árvore de procura esses estados não desaparecem, mas a árvore é podada.
 Se o estado já foi analisado nesse nível (ou com mais profundidade), reutiliza-se o valor em vez de expandir o estado.
-Assim aparecem na árvore como o ícon da disquete (`💾`), tendo o seu valor sido obtido da memória.
+Assim aparecem na árvore como o ícone da disquete (`💾`), tendo o seu valor sido obtido da memória.
 
 Vamos continuar, mas reduzindo o nível de debug para detalhe, e ver ações para 4, e aumentando o nível da procura para 3. 
 Insira: **3; 2; 3; 7; 3; 6; 4; *ENTER*; 6.**  
@@ -889,7 +889,7 @@ Esta ação tem o efeito de uma derrota de X que seja mais uma jogada, tenha val
 Como O pretende maximizar, prefere sempre as vitórias mais curtas, tal como o X, 
 e ambos preferem as derrotas mais longas.
 
-Após um valor destes ser identificado, existe um ícon com uma indicação de vitória/derrota a determinado número de jogadas
+Após um valor destes ser identificado, existe um ícone com uma indicação de vitória/derrota a determinado número de jogadas
 (`☗ 1 { 🔖 8 🔖 9 }`).
 Os sucessores que ainda faltavam analisar são cortados, atendendo a que o jogador com a vez já ganhou neste ramo.
 
@@ -1093,7 +1093,7 @@ ser compensador não ter o alfa/beta para memorizar os valores exatos. De um mod
 deverá ser sempre vantajoso ter os cortes alfa/beta, se a ramificação é baixa, pode ser compensador
 não ter o alfa/beta de modo a que fiquem memorizados estado com o valor exato.
 
-Vamos avaçar para o momento em que há estados finais visiveis.
+Vamos avançar para o momento em que há estados finais visíveis.
 Insira: **6; 6; 6; 6; 6; 6.**
 
 \htmlonly
@@ -1209,7 +1209,7 @@ Naturalmente que estes cortes tornam-se mais significativos em árvores de procu
 Vamos agora procurar explorar todo o espaço de estados, o que é possível apenas porque este jogo tem dimensões reduzidas.
 Para que a hashtable não poupe demasiados estados, vamos nesta ação arrancar com o programa em cada teste.
 
-Vamos começar com o MiniMax, sem a ordenação. Vamos colocar o limite a 20, para não interferir
+Vamos começar com o MiniMax, sem a ordenação. Vamos colocar o limite a 20, para não interferir.
 Após reiniciar, insira: **1; 3; 1; 1; 7; 20; 12; 0; *ENTER*; 6.**
 
 \htmlonly
@@ -2671,7 +2671,7 @@ Vamos colocar em competição várias configurações a diferentes profundidades
 maior desempenho nas procuras de maior profundidade.
 
 Temos também de ter o cuidado de desligar a utilização das hashtables, 
-para observer sem perturbações o ganho da profundidade.
+para observar sem perturbações o ganho da profundidade.
 
 Insira: 
 - **1; 7; P1=1 P2=4 P12=0 P7=20,7,5,3; -1; *ENTER*.**

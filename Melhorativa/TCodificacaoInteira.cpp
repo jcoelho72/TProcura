@@ -3,8 +3,8 @@
 int TCodificacaoInteira::nElementos = 0; // número de elementos na permutação
 TVector<int> TCodificacaoInteira::maxValor; // valor máximo para cada elemento 
 
-void TCodificacaoInteira::Copiar(TPonto objecto) {
-	TCodificacaoInteira& obj = *((TCodificacaoInteira*)objecto);
+void TCodificacaoInteira::Copiar(TPonto objeto) {
+	TCodificacaoInteira& obj = *((TCodificacaoInteira*)objeto);
 	estado = obj.estado;
 }
 

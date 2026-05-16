@@ -50,7 +50,7 @@ void TProcuraAdversa::ResetParametros()
 	parametro += {
 		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores." },
 		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores)." },
-		{ "PODA_CEGA",0,0,10000, "Igual a PodaHeuristica, mas é efetuado de forma aleatória, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " },
+		{ "PODA_CEGA",0,0,10000, "Igual a PODA_HEURISTICA, mas é efetuado de forma aleatória, sem calcular a heurística. Utilizar um valor sempre maior que Poda. " },
 		{ "HEUR_BASE", 200, 100, 1000, "Valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 corresponde ao dobro e é o valor por omissão)" }
 	};
 }
@@ -285,13 +285,13 @@ int TProcuraAdversa::MaiorAmeaca(TVector<int>& qMin, TVector<int>& qMax, int max
 	peso = 1;
 	for (int i = qMin.Count() - 1; i >= 0; i--) {
 		pontos -= qMin[i] * peso;
-		if (i < maxAmeaca) // peço começa a aumentar
+		if (i < maxAmeaca) // peso começa a aumentar
 			peso *= base;
 	}
 	peso = 1;
 	for (int i = qMax.Count() - 1; i >= 0; i--) {
 		pontos += qMax[i] * peso;
-		if (i < maxAmeaca) // peço começa a aumentar
+		if (i < maxAmeaca) // peso começa a aumentar
 			peso *= base;
 	}
 

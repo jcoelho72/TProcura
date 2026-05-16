@@ -1284,21 +1284,66 @@ public:
 
 	// --- Bits individuais ---
 	inline bool GetBit(int index) const;
-	inline void SetBit(int index, bool value);
+	inline TBits& SetBit(int index, bool value);
 
 	// --- Inserir / extrair inteiros pequenos ---
-	inline void SetBits(uint64_t value, int bitIndex, int bitCount);
 	inline uint64_t GetBits(int bitIndex, int bitCount) const;
+	inline TBits& SetBits(uint64_t value, int bitIndex, int bitCount);
+
+	// --- Conversão:
+	// Modo: 0 - binário "00110101" (palavra 64bits / linha),
+	//       1 - hexadecimal "3AD2.53C0" (4 palavras 64 bits / linha)
+	//       2 - mapa "  ✓ ✓✓ ✓" 100 bits / linha + régua
+	inline TString String(int modo = 0);
 };
+
+TString TBits::String(int modo) {
+	TString res;
+	int totalBits = Count() * 64;
+	switch (modo) {
+	case 0:
+		// processar bits mais altos primeiro
+		for (int i = totalBits - 1; i >= 0; i--) {
+			res += GetBit(i) ? "1" : "0";
+			if (i % 64 == 0)
+				res += "\n";
+		}
+		break;
+	case 1:
+		// processar palavras mais altas primeiro
+		for (int i = (Count() - 1); i >= 0; i--) {
+			res.printf("%016llX", (unsigned long long) Data()[i]);
+			if (i % 4 == 0)
+				res += "\n";
+			else
+				res += ".";
+		}
+		break;
+	case 2:
+		// régua
+		res += "\n               1         2         3         4         5         6         7         8         9        10";
+		res += "\n     01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
+		// mapa de 100 bits de largura
+		for (int i = 0; i < (totalBits + 99) / 100; i++) {
+			res.printf("\n%4d ", i * 100);
+			for (int j = 0; j < 100; j++)
+				if (i * 100 + j < totalBits && GetBit(i * 100 + j))
+					res += "✓";
+				else
+					res += " ";
+		}
+		break;
+	}
+	return res;
+}
+
 
 unsigned int TBits::Hash() const {
 	// utilizando FNV-1 hash (http://www.isthe.com/chongo/tech/comp/fnv/)
 	uint32_t h = 2166136261;
 	for (uint64_t word : *this) {
 		// processar cada octeto 
-		// quando o valor fica 0, já não interessa
-		// já que existindo dados, são distintos de 0
-		for (int i = 0; i < 8 && word; i++) {
+		for (int i = 0; i < 8; i++) {
 			unsigned char octeto = word & 255;
 			word >>= 8;
 			h *= 16777619;
@@ -1365,13 +1410,13 @@ uint64_t TBits::GetBits(int bitIndex, int bitCount) const {
 }
 
 
-void TBits::SetBit(int index, bool value) {
+TBits& TBits::SetBit(int index, bool value) {
 	int w = index >> 6;
 	int o = index & 63;
 	if (w >= Count()) {
 		int currentWords = Count();
 		Count(w + 1);
-		while (currentWords < Count()) 
+		while (currentWords < Count())
 			Data()[currentWords++] = 0ULL;
 	}
 
@@ -1380,9 +1425,11 @@ void TBits::SetBit(int index, bool value) {
 		word |= (1ULL << o);
 	else
 		word &= ~(1ULL << o);
+
+	return *this;
 }
 
-void TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
+TBits& TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
 	int w = bitIndex >> 6;
 	int o = bitIndex & 63;
 
@@ -1401,6 +1448,8 @@ void TBits::SetBits(uint64_t value, int bitIndex, int bitCount) {
 		uint64_t mask2 = (1ULL << spill) - 1;
 		Data()[w + 1] = (Data()[w + 1] & ~mask2) | (value >> (64 - o));
 	}
+
+	return *this;
 }
 
 

@@ -3,8 +3,8 @@
 // número de elementos binários na codificação 
 int TCodificacaoBinaria::nElementos = 0;
 
-void TCodificacaoBinaria::Copiar(TPonto objecto) {
-	TCodificacaoBinaria& obj = *((TCodificacaoBinaria*)objecto);
+void TCodificacaoBinaria::Copiar(TPonto objeto) {
+	TCodificacaoBinaria& obj = *((TCodificacaoBinaria*)objeto);
 	estado = obj.estado;
 }
 
@@ -20,6 +20,15 @@ void TCodificacaoBinaria::NovaSolucao(void) {
 void TCodificacaoBinaria::Debug(bool completo) {
 	for (int i = 0; i < nElementos; i++)
 		printf("%d", Bit(i) ? 1 : 0);
+
+		// utilização de TBits (experimental):
+	//TBits novoEstado;
+	//for (auto& palavra : estado)
+	//	novoEstado += palavra;
+
+	// mostrar todos os modos
+	//for (int modo = 0; modo <= 2; modo++)
+	//	printf("%s", *novoEstado.String(modo));
 }
 
 void TCodificacaoBinaria::ResetParametros() {

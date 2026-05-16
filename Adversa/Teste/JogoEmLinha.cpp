@@ -12,7 +12,7 @@ CJogoEmLinha::~CJogoEmLinha(void)
 {
 }
 
-// Cria um objecto que é uma cópia deste
+// Cria um objeto que é uma cópia deste
 TProcuraConstrutiva* CJogoEmLinha::Duplicar(void)
 {
 	CJogoEmLinha* clone = new CJogoEmLinha;
@@ -23,14 +23,14 @@ TProcuraConstrutiva* CJogoEmLinha::Duplicar(void)
 	return clone;
 }
 
-// Fica com uma cópia de objecto
-void CJogoEmLinha::Copiar(TProcuraConstrutiva* objecto)
+// Fica com uma cópia de objeto
+void CJogoEmLinha::Copiar(TProcuraConstrutiva* objeto)
 {
-	tabuleiro = ((CJogoEmLinha*)objecto)->tabuleiro;
-	minimizar = ((CJogoEmLinha*)objecto)->minimizar;
+	tabuleiro = ((CJogoEmLinha*)objeto)->tabuleiro;
+	minimizar = ((CJogoEmLinha*)objeto)->minimizar;
 }
 
-// Coloca o objecto no estado inicial da procura
+// Coloca o objeto no estado inicial da procura
 void CJogoEmLinha::Inicializar(void)
 {
 	TJogoEmLinha instancias[] = {
@@ -101,7 +101,7 @@ bool CJogoEmLinha::VerLinha(int i, int j, int di, int dj)
 	return false;
 }
 
-// Retorna verdade caso o estado actual seja um estado objectivo
+// Retorna verdade caso o estado actual seja um estado objetivo
 bool CJogoEmLinha::SolucaoCompleta(void)
 {
 	// Processar linhas e diagonais
@@ -126,7 +126,7 @@ bool CJogoEmLinha::SolucaoCompleta(void)
 	return true; // não há hipótese de mais jogadas
 }
 
-// Escrever informação de debug sobre o objecto currente 
+// Escrever informação de debug sobre o objeto corrente 
 // (utilizar variável TProcuraConstrutiva::debug para seleccionar o detalhe pretendido)
 void CJogoEmLinha::Debug(bool completo)
 {
@@ -229,7 +229,7 @@ int CJogoEmLinha::Heuristica()
 
 	heuristica = 0;
 
-	if (ExisteHeuritica())
+	if (ExisteHeuristica())
 		return heuristica;
 
 	qMin.Count(inst.K - 1); // contabilizar ameaças a 1, 2 e 3 (até K-1)
@@ -283,7 +283,7 @@ int CJogoEmLinha::Heuristica()
 					// verificar se quem joga tem ameaça a 1, para ganhar na sua vez de jogar
 					if (minimizar ? nMin == inst.K - 1 && nMax == 0 : nMax == inst.K - 1 && nMin == 0)
 						heuristica = (minimizar ? -infinito : infinito); // vitória em 1, é igual a posição terminal
-					// não reteornar de imediato, já que o jogo pode ter sido já ganho pelo adversário
+					// não retornar de imediato, já que o jogo pode ter sido já ganho pelo adversário
 
 					// registar resultado
 					if (nMax > 0 && nMin == 0)

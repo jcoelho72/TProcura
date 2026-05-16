@@ -2,8 +2,8 @@
 
 int TCodificacaoPermutacao::nElementos = 0; // número de elementos na permutação 
 
-void TCodificacaoPermutacao::Copiar(TPonto objecto) {
-	TCodificacaoPermutacao& obj = *((TCodificacaoPermutacao*)objecto);
+void TCodificacaoPermutacao::Copiar(TPonto objeto) {
+	TCodificacaoPermutacao& obj = *((TCodificacaoPermutacao*)objeto);
 	estado = obj.estado;
 }
 

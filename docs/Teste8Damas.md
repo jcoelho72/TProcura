@@ -433,7 +433,7 @@ Temos um teste empírico na ação 6, com mais instâncias.
 Na abordagem construtiva, atendendo a que este problema tem o número de ações fixas, se as ações
 tivessem custo variável, faria sentido uma heurística para estimar o custo até ao final. Sendo o custo fixo, 
 apenas sabemos que se existir solução, a distância é conhecida e igual para todos os estados 
-num determinado nível. Assim, não faz sentido construir uma heurítsica, nem ter procuras informadas
+num determinado nível. Assim, não faz sentido construir uma heurística, nem ter procuras informadas
 com a abordagem construtiva.
 
 Podemos sempre considerar a hipótese de ter uma heurística ignorando a admissibilidade, apenas para guiar a procura.
@@ -499,7 +499,7 @@ Exemplo: ./bin/Release/TProcuraConstrutiva 1:5 -R out -F fich_ -I 3,1,4,2 -P P1=
 │ I2(Tempo(ms)): ✓ 2º lugar
 │ Tempo em milissegundos da execução (medida de esforço computacional).
 │ I3(Iterações): ✓ 3º lugar
-│ Iterações do algoritmo, intrepretadas conforme o algoritmo (medida de esforço independente do hardware).
+│ Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).
 │ I4(IND_EXPANSOES): ✓ 4º lugar
 │ número de expansões efetuadas
 │ I5(IND_GERACOES): ✓ 5º lugar
@@ -611,7 +611,7 @@ Esta análise aparenta não ser de todo compensador o uso dos estados gerados. N
 conseguiu ainda ser resolvida sem estados gerados, mas não com estados gerados. Os tempos aparentam ser sempre
 superiores com estados gerados.
 
-Poder-se-ia fazer várias execuções para ter vários valores de tempo para as mesmas instâncis, para poder utilizar
+Poder-se-ia fazer várias execuções para ter vários valores de tempo para as mesmas instâncias, para poder utilizar
 intervalos de confiança. Em todo o caso as diferenças são bastantes, e a não ser que se possa optimizar o algoritmo
 para normalizar o estado e verificar se é igual, com os tempos atuais, não aparenta trazer qualquer vantagem.
 

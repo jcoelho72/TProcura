@@ -416,7 +416,7 @@ Utilizamos P3(SEMENTE)=2, naturalmente que outra semente aleatória poderia gera
 
 Vamos ver a procura em profundidade na instância 40, que sabemos ter uma solução de 12. 
 Vamos alterar o algoritmo, colocar a profundidade a 4, debug a completo e visualização de ações a 1, 
-para ser ver todos os estados. 
+para se ver todos os estados. 
 Introduza: **1; 40; 3; 1; 3; 7; 4; 2; 4; 6; 1; *ENTER*; 6.**
 
 \htmlonly
@@ -536,7 +536,7 @@ Opção:
 \endhtmlonly
 
 Foram vistos todos os estados, e não se encontrou uma solução.
-No entanto todos os nós folha foram cortados devido ao limite, motivo pelo qual têm o ícon da escada.
+No entanto todos os nós folha foram cortados devido ao limite, motivo pelo qual têm o ícone da escada.
 Vamos agora colocar o limite a 0, de modo a executar a iterativa, e debug no nível 2.
 Introduza: **1; 40; 3; 7; 0; 2; 2; *ENTER*; 6.**
 

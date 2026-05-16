@@ -221,7 +221,7 @@ public:
 	virtual ~TProcura(void) {}
 
 	/**
-	 * @brief Coloca o objecto no estado inicial da procura.
+	 * @brief Coloca o objeto no estado inicial da procura.
 	 * @note Obrigatória a redefinição.
 	 *
 	 * Este método inicializa as variáveis de estado no estado inicial vazio.
@@ -355,7 +355,7 @@ public:
 	 *
 	 * Exemplo com a alteração do valor por omissão de um parâmetro, e adição de dois novos parametros.
 	 * @code
-	 * // continuação da enumeração EParametrosProcujra
+	 * // continuação da enumeração EParametrosProcura
 	 * enum ESubProblema { opcaoHeur = parametrosProcura, opcaoSuc };
 	 * void CSubProblema::ResetParametros(void)
 	 * {
@@ -444,7 +444,7 @@ public:
 	virtual void TesteManual(TString nome);
 
 	/**
-	 * @brief Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua validadade bem como características
+	 * @brief Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua validade bem como características
 	 * @note Redefinição opcional, caso seja necessário um processo de validação específico.
 	 *
 	 * Esta função carrega a instância e solução (conjunto de ações),
@@ -539,7 +539,7 @@ public:
 	*/
 	virtual void main(int argc, char* argv[], TString nome);
 
-	/// @brief Chapar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução
+	/// @brief Chamar antes da execução do algoritmo. Limpa valores estatísticos, e fixa o instante limite de tempo para a execução
 	virtual void LimparEstatisticas();
 	/// @brief Chamar após a execução do algoritmo. Grava o tempo consumido.
 	virtual void ExecucaoTerminada();
@@ -554,9 +554,9 @@ public:
 
 	/// @brief ID da instância atual, a ser utilizado em SolucaoVazia().
 	static TParametro instancia;
-	/// @brief prefixo do nome ficheiro de uma instância - editado pelo utilizador 
+	/// @brief prefixo do nome do ficheiro de uma instância - editado pelo utilizador 
 	///        Caso não seja nulo, utilizar como prefixo, concatenando com ID da instância, para obter o ficheiro da instância
-	///        Pode ser utilizado para gravar a instãncia num novo formato, colocando um indicador ativo 
+	///        Pode ser utilizado para gravar a instância num novo formato, colocando um indicador ativo 
 	///        que é chamado após a execução
 	/// @see Inicializar()
 	static TString ficheiroInstancia;
@@ -565,7 +565,7 @@ public:
 	/// @brief Parâmetros a serem utilizados na configuração atual.
 	/// @see EParametrosConstrutiva
 	static TVector<TParametro> parametro;
-	/// @brief Indicadores que podem ser calculados após a execução, quer com informação da instãncia, quer com resultado da última corrida.
+	/// @brief Indicadores que podem ser calculados após a execução, quer com informação da instância, quer com resultado da última corrida.
 	/// @see Indicador()
 	static TVector<TIndicador> indicador;
 	static TVector<int> indAtivo; // lista por ordem dos indicadores a utilizar
@@ -591,6 +591,9 @@ public:
 	/// @brief Gravar solução CSV (todas as ações)
 	/// @note 0 = não grava, 1 = grava
 	static int gravarSolucao;
+	/// @brief Modo KMGT - Kilo, Mega, Giga, Tera
+	/// @note 0 = desativado, 1 = ativado
+	static int modoKMGT;
 
 
 
@@ -645,6 +648,8 @@ public:
 
 	/// @brief Mostra tempo num formato humano.
 	static TString MostraTempo(double segundos);
+	/// @brief Mostra inteiro grande num formato humano.
+	static TString MostraInt(int64_t valor, bool cor = true);
 
 	static void MostraCaixa(TVector<TString> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
 	static void MostraCaixa(TString titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0, const char* icon = "");
@@ -851,9 +856,9 @@ protected:
 	bool JuntarCSV(TString ficheiro);
 
 	/// @brief retorna o tempo em segundos desde que o cronómetro foi inicializado
-	static double Cronometro(enum ECronometro id = CONT_ALGORITMO, bool inicialiar = false) {
+	static double Cronometro(enum ECronometro id = CONT_ALGORITMO, bool inicializar = false) {
 		static clock_t inicio[CONT_NUMERO] = { 0 }; // até 10 cronómetros
-		if (inicialiar)
+		if (inicializar)
 			inicio[id] = clock();
 		return (double)(clock() - inicio[id]) / CLOCKS_PER_SEC;
 	}

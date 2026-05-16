@@ -45,7 +45,7 @@ Algoritmos cegos: largura-primeiro; profundidade-primeiro; iterativos;
 
 ## 📖 Leituras
 
-- (Russel & Norvig): Secções 3.1 a 3.4 (3ª e 4ª edição) | Capítulo 3 (2ª edição) 
+- (Russell & Norvig): Secções 3.1 a 3.4 (3ª e 4ª edição) | Capítulo 3 (2ª edição) 
 
 ## Bibliografia
 

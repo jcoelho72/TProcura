@@ -57,7 +57,7 @@ public:
 	///////////////////////////////////////////////////////////////////////////////
 
 	/**
-	  * @brief Cria um objecto que é uma cópia deste.
+	  * @brief Cria um objeto que é uma cópia deste.
 	  * @note Obrigatória a redefinição.
 	  *
 	  * Este método tem de ser criado na subclasse, de modo a criar uma cópia
@@ -86,7 +86,7 @@ public:
 	virtual TPonto Duplicar(void) = 0;
 
 	/**
-	 * @brief Fica com uma cópia do objecto.
+	 * @brief Fica com uma cópia do objeto.
 	 * @note Obrigatória a redefinição.
 	 *
 	 * Este método tem de ser criado na subclasse, de modo a um estado poder ficar
@@ -104,14 +104,14 @@ public:
 	 * @see Sucessores() e Heuristica()
 	 *
 	 * @code
-	 * void CSubClasse::Copiar(TPonto objecto) {
-	 * 		CSubProblema& obj = *((CSubProblema*)objecto);
+	 * void CSubClasse::Copiar(TPonto objeto) {
+	 * 		CSubProblema& obj = *((CSubProblema*)objeto);
 	 * 		// copiar todas as variáveis do estado
 	 * 		variavel = obj.variavel;
 	 * }
 	 * @endcode
 	 */
-	virtual void Copiar(TPonto objecto) {}
+	virtual void Copiar(TPonto objeto) {}
 
 	virtual void NovaSolucao(void) {}
 	// Retorna o valor da solução completa actual. Atribuir o valor a custo
