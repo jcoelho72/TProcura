@@ -31,11 +31,12 @@ digraph "COitoDamas::Inicializar"
   Node12 [id="Node000012",label="TVector::Add",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa28afdd47b27c5e004fc75b86d6f66a6",tooltip=" "];
   Node12 -> Node13 [id="edge13_Node000012_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TVector::operator[]",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a372a42fd7c4a94fee43db36d6a339b33",tooltip="Acesso por índice com auto-expansão."];
-  Node11 -> Node9 [id="edge14_Node000011_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node11 -> Node14 [id="edge15_Node000011_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node3 [id="edge14_Node000011_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node9 [id="edge15_Node000011_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node14 [id="edge16_Node000011_Node000014",color="steelblue1",style="solid",tooltip=" "];
   Node14 [id="Node000014",label="TVector::Last",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#aa304d639c79ef2842f9951846c6292e3",tooltip=" "];
-  Node11 -> Node15 [id="edge16_Node000011_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node15 [id="edge17_Node000011_Node000015",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TString::TString",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a2fb70d94c8fdba6d90145a01aec1ce3f",tooltip=" "];
-  Node15 -> Node3 [id="edge17_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node15 -> Node14 [id="edge18_Node000015_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node3 [id="edge18_Node000015_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node15 -> Node14 [id="edge19_Node000015_Node000014",color="steelblue1",style="solid",tooltip=" "];
 }
