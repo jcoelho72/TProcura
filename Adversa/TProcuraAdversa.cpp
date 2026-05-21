@@ -155,11 +155,11 @@ int TProcuraAdversa::MiniMax(int nivel)
 						valores += sucessores[id[j]]->debugID;
 					MostraConjunto(valores, Icon(EIcon::ID));
 				}
-				break; // nao e possivel melhorar
+				break; // não é possível melhorar
 			}
 		}
 	}
-	// todos os sucessores analizados, se houver uma solução melhor, retornar
+	// todos os sucessores analisados, se houver uma solução melhor, retornar
 	if (melhor >= 0) {
 		if (solucao != NULL)
 			delete solucao;
@@ -385,7 +385,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 			}
 		}
 		// corte alfa/beta bem como atualização
-		if (i < sucessores.Count() - 1) { // nao interessa cortar quando não há mais nada para cortar
+		if (i < sucessores.Count() - 1) { // não interessa cortar quando não há mais nada para cortar
 			if (CorteAlfaBeta(resultado, alfa, beta)) {
 				// listar os nós não explorados
 				if (Parametro(NIVEL_DEBUG) >= PASSOS) {

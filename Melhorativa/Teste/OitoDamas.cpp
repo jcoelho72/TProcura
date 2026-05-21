@@ -58,7 +58,7 @@ int COitoDamas::Avaliar(void)
 
 void COitoDamas::Vizinhanca(TVector<TPonto>& vizinhos)
 {
-	// trocar a posicao de cada dama
+	// trocar a posição de cada dama
 	for (int i = 0; i < nDamas; i++)
 		for (int j = 0; j < nDamas; j++)
 			if (j != damas[i]) {
@@ -71,7 +71,7 @@ void COitoDamas::Vizinhanca(TVector<TPonto>& vizinhos)
 
 void COitoDamas::Mutar(void)
 {
-	// trocar a posicao de uma das damas (50%)
+	// trocar a posição de uma das damas (50%)
 	damas[TRand::rand() % nDamas] = TRand::rand() % nDamas;
 }
 

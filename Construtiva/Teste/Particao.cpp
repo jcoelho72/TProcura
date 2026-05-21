@@ -28,7 +28,7 @@ void CParticao::Inicializar(void)
 
 	if (ficheiroInstancia.Empty()) {
 		// gerador de instância
-		// gerar uma instancia provavelmente possivel
+		// gerar uma instância provavelmente possível
 		int64_t soma;
 		soma = 0;
 		for (int i = 0; i < instancia.valor; i++) {
@@ -61,7 +61,7 @@ void CParticao::Sucessores(TVector<TNo>& sucessores)
 	int64_t faltaDistribuir = 0;
 	for (int i = 0; i < numeros.Count(); i++)
 		faltaDistribuir += numeros[i];
-	if (faltaDistribuir < abs(totalEsquerda - totalDireita)) { // ja nao ha hipotese
+	if (faltaDistribuir < abs(totalEsquerda - totalDireita)) { // ja não há hipótese
 		TProcuraConstrutiva::Sucessores(sucessores);
 		return;
 	}

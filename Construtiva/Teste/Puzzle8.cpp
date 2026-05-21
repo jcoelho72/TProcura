@@ -99,7 +99,7 @@ int CPuzzle8::Heuristica(void)
 {
 	heuristica = 0;
 
-	// distância de manhatan de cada posição à sua possição final
+	// distância de manhatan de cada posição à sua posição final
 	for (int i = 1; i < 9; i++) {
 		int posicaoI = 0;
 		while (puzzle[posicaoI] != i)

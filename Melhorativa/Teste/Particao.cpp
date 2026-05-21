@@ -19,7 +19,7 @@ void CParticao::Inicializar(void)
 	totalDireita = totalEsquerda = 0;
 	solCompleta = {}; 
 
-	// gerar uma instancia provavelmente possivel
+	// gerar uma instância provavelmente possível
 	int64_t soma;
 	soma = 0;
 	for (int i = 0; i < instancia.valor; i++) {
@@ -164,7 +164,7 @@ void CParticaoCB::Inicializar(void) {
 	nElementos = instancia.valor; // número de elementos a particionar
 	numeros = {}; 
 
-	// gerar uma instancia provavelmente possivel
+	// gerar uma instância provavelmente possível
 	int64_t soma;
 	soma = 0;
 	for (int i = 0; i < instancia.valor; i++) {

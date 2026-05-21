@@ -28,7 +28,7 @@
   valor de 10, e atualmente está-se a ver uma linha em que as pretas já têm
   hipótese de optar por uma linha com 10 ou menos, então é completamente
   indiferente continuar a explorar as restantes alternativas, já que as brancas
-  não irão escolher esta linha quando podem optar por uma que lhe garante um
+  não irão escolher esta linha quando podem optar por uma que lhes garante um
   valor final de 10. Pode-se portanto cortar o resto da linha. Este corte
   chama-se corte alfa, dado que o valor de alfa é a melhor alternativa das
   brancas, e foi esse valor que foi utilizado de forma a suportar o corte. Se o

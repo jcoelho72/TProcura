@@ -50,7 +50,7 @@ Segue-se uma zona com informação sobre os dados do problema concreto a resolve
 a instância, neste caso é um vetor de números aleatórios, com 1 milhão de elementos.
 Temos vários algoritmos, em que cada um testa um método da classe TVector.
 Segue-se uma outra caixa com o menu e os seus 8 comandos, os quais iremos cobrir neste exemplo. 
-Entre os dados e o menu, após ter exsitido uma execução, são apresentados os indicadores relativos à última execução.
+Entre os dados e o menu, após ter existido uma execução, são apresentados os indicadores relativos à última execução.
 Iremos detalhar também estes indicadores.
 
 ---
@@ -125,12 +125,12 @@ Opção:
 Notar que a instância é exatamente a mesma, como se pode confirmar pelos números iniciais e finais do vetor.
 
 O menu **2 Explorar**, serve para explorar o problema manualmente, mas neste caso não definimos nenhuma função para
-expplorar os dados. Esta função está definida para as subclasses de TProcura, para os métodos construtivos e melhorativos.
+explorar os dados. Esta função está definida para as subclasses de TProcura, para os métodos construtivos e melhorativos.
 Não é necessário definir função nenhuma, e o utilizador pode sempre explorar manualmente o problema, porque não, tentar resolvê-lo,
 e assim ganhar sensibilidade. Vamos deixar esta exploração para os exemplos das subclasses.
 
 Notar que o menu no modo interativo, é sempre visualizado, colocando-se o prompt "Opção:".
-Para evitar repetição, vamos omitar o menu no resto deste exemplo.
+Para evitar repetição, vamos omitir o menu no resto deste exemplo.
 
 ---
 
@@ -364,7 +364,7 @@ Opção:
 \endhtmlonly
 
 A execução arranca, os valores dos parâmetros em modo curto são mostrados, e de seguida a execução é terminada.
-Ao teminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milissegundos.
+Ao terminar a execução é mostrado o tempo bruto utilizado, neste caso 80 milissegundos.
 Podemos ver novamente os parâmetros utilizados, tendo sido executado o método Sort(), com a estrutura TVector.
 O estado do vetor é visível os três primeiros e últimos elementos, podendo-se confirmar que estes estão por ordem.
 
@@ -374,7 +374,7 @@ Os três primeiros indicadores são de TProcura, o quarto indicador é definido 
 O indicador I1 tem o resultado do algoritmo, normalmente ao valor / qualidade da solução, que aqui é sempre 1 a não ser que exista algum problema.
 O indicador I2 tem o tempo consumido pelo algoritmo, em milissegundos, neste caso 80. 
 Notar que este tempo é apenas de execução, não é contabilizado o tempo de inicialização (ao criar a instância).
-O tempo de calcular os indicadores não é também comtabilizado.
+O tempo de calcular os indicadores não é também contabilizado.
 O indicador I3 tem o número de iterações realizadas. 
 O algoritmo deve atualizar as iterações, neste caso ordenou apenas uma vez.
 Como queremos saber se a operação foi bem sucedida, definiu-se um indicador para testar se o vetor está ordenado.

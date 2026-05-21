@@ -82,7 +82,7 @@ bool CJogoDoGalo::SolucaoCompleta(void)
 		if (tabuleiro[i] == '.')
 			return false; // podem ser feitas mais jogadas
 	resultadoCompleto = 0;
-	return true; // nao ha hipotese de mais jogadas
+	return true; // não há hipótese de mais jogadas
 }
 
 TString CJogoDoGalo::Acao(TProcuraConstrutiva* sucessor) {
@@ -131,7 +131,7 @@ int CJogoDoGalo::Heuristica(void)
 	if (ExisteHeuristica())
 		return heuristica;
 
-	// jogo muito pequeno, fazer so o obrigatorio
+	// jogo muito pequeno, fazer só o obrigatório
 	// ver quem ganhou
 	for (int i = 0; i < 3; i++) // verificar todas as linhas
 		if (tabuleiro[i * 3] != '.' &&

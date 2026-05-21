@@ -42,7 +42,7 @@
   derrota no caso da posição estar favorável às pretas. Em cada estado, o
   MiniMax retorna o valor máximo dos seus sucessores, no caso de ser as brancas
   a jogar, e o valor mínimo dos seus sucessores, no caso de ser as pretas a
-  jogar. Após correr, obtêm-se uma estratégia de jogo com base nos sucessores
+  jogar. Após correr, obtém-se uma estratégia de jogo com base nos sucessores
   que determinaram o valor de cada estado.</p>
 <p>No jogo do galo, pode-se remover estados simétricos, considerando a simetria
   horizontal, vertical e diagonal. Relativamente à função com a estimativa do

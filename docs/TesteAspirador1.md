@@ -665,10 +665,10 @@ Com a procura em largura, até que tamanho consegue obter a solução ótima do 
 
 <details>
   <summary>Resposta:</summary>
-Depende das condições de execução, vamos colocar na resposta o VPL com a 512MB.
+Depende das condições de execução, vamos colocar na resposta o VPL com 512MB de memória.
 Consegue resolver com P8(Repetidos)=gerados, até à instância 19, existindo problema de memória na instância 20. 
 Num computador pessoal pode variar, e o limite de tempo pode ocorrer antes do problema de memória. 
-Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instância 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução
+Limitando a 1000 e mantendo os replicados gerados, a procura em largura consegue resolver até à instância 50, a maior considerada no código. A utilização do limite não permite garantir a otimalidade da solução.
 A utilização de repetidos com base nos ascendentes, permite também resolver o problema de memória, mas ganha-se o problema de tempo, sendo uma solução viável até à instância 44, mantendo o tempo limite em 10 segundos.
 </details>
 

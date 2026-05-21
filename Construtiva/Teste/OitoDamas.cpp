@@ -54,11 +54,11 @@ void COitoDamas::Sucessores(TVector<TNo>& sucessores)
 	// tentar colocar damas em todas as colunas
 	for (int i = 0; i < nDamas; i++) {
 		int j = 0;
-		// verificar se ha uma dama a atacar esta posicao
+		// verificar se há uma dama a atacar esta posição
 		for (; j < novaLinha; j++)
 			if (i == damas[j] || i == damas[j] + (novaLinha - j) || i == damas[j] - (novaLinha - j))
 				break;
-		if (j == novaLinha) { // e possivel, adicionar sucessor
+		if (j == novaLinha) { // é possível, adicionar sucessor
 			COitoDamas* sucessor = (COitoDamas*)Duplicar();
 			if (memoriaEsgotada)
 				return;

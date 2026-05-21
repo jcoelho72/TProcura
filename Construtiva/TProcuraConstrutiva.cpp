@@ -7,7 +7,7 @@
 
 constexpr int BUFFER_SIZE = 1024;
 
-// auxiliar para construcao da arvore de procura 
+// auxiliar para construção da árvore de procura 
 TVector<const char*> TProcuraConstrutiva::ramo;
 // valor retornado pela procura (tem de ser libertado)
 TVector<TNo> TProcuraConstrutiva::caminho;
@@ -91,9 +91,9 @@ bool TProcuraConstrutiva::Acao(TString acao) {
 	return false;
 }
 
-// Coloca em sucessores a lista de objetos sucessores (sao alocados neste metodo e tem de ser apagados)
+// Coloca em sucessores a lista de objetos sucessores (são alocados neste método e tem de ser apagados)
 // O custo se não existir, deixar a 1 (valor por omissão)
-// chamar o metodo desta classe apos adicionar os sucessores para actualizar geracoes e expansoes,
+// chamar o método desta classe apos adicionar os sucessores para actualizar geracoes e expansoes,
 // bem como verificar a existência de estados repetidos
 void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 	if (memoriaEsgotada)
@@ -148,7 +148,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 }
 
 
-// metodo interno para libertar objetos nao necessarios
+// método interno para libertar objetos não necessários
 void TProcuraConstrutiva::LibertarVector(TVector<TNo>& vector, int excepto, int maiorQue)
 {
 	for (int i = 0; i < vector.Count(); i++)
@@ -186,7 +186,7 @@ bool TProcuraConstrutiva::Validar(TVector<TString> solucao) {
 
 ///////////////////////////////////////////////////////////////////////////////
 // Procura em Largura Primeiro: expande primeiro o estado gerado não expandido mais antigo
-// retorna o valor da solução e coloca o caminho no vector (se calcularCaminho=true), ou -1 caso não encontre solucao
+// retorna o valor da solução e coloca o caminho no vector (se calcularCaminho=true), ou -1 caso não encontre solução
 // limite é o número de estados gerados não expandidos, que não pode ultrapassar esse limite
 // os que ultrapassarem são deitados fora (se 0 este limite não importa, podendo haver problemas de memória)
 int TProcuraConstrutiva::LarguraPrimeiro(int limite)
@@ -216,8 +216,8 @@ int TProcuraConstrutiva::LarguraPrimeiro(int limite)
 			}
 		}
 
-		// Nao se pode libertar estados ja expandidos porque nao se sabe se
-		// os pais sao necessarios ou nao.
+		// Não se pode libertar estados já expandidos porque não se sabe se
+		// os pais são necessários ou não.
 		// todos os estados antes de i, são os estados gerados e expandidos (fechados)
 		// todos os estados após i são estados gerados mas não expandidos (abertos)
 	}
@@ -252,7 +252,7 @@ void TProcuraConstrutiva::CalculaCaminho(bool completa) {
 
 	// apenas se a lista estiver completa, há a garantia dos pais não terem sido apagados
 	if (completa) {
-		// obter caminho para a solucao
+		// obter caminho para a solução
 		while (atual->pai != NULL) {
 			atual = atual->pai;
 			caminho += atual->Duplicar();
@@ -311,7 +311,7 @@ int TProcuraConstrutiva::CustoUniforme(int limite)
 // versão recursiva
 int TProcuraConstrutiva::ProfundidadePrimeiro(int nivel)
 {
-	if (nivel == 0) { // metodo iterativo
+	if (nivel == 0) { // método iterativo
 		int resultado = -1;
 		do {
 			// limpar hashtable: estados gerados no nível anterior não devem impedir nova geração
@@ -325,7 +325,7 @@ int TProcuraConstrutiva::ProfundidadePrimeiro(int nivel)
 	bool noFolha = !((nivel > 1 || nivel < 0) && !Parar());
 	DebugChamada(noFolha);
 
-	// metodo normal
+	// método normal
 	// verificar se o estado atual é objetivo, ou seja, a solução parcial é já completa
 	if (SolucaoCompleta())
 		return SolucaoEncontrada(true);
@@ -629,7 +629,7 @@ int TProcuraConstrutiva::Heuristica(void) {
 }
 
 
-// Metodo para ser chamado antes de analisar cada sucessor
+// Método para ser chamado antes de analisar cada sucessor
 void TProcuraConstrutiva::DebugExpansao(int sucessor, int sucessores, bool minimizar)
 {
 	if (minimizar)
@@ -644,7 +644,7 @@ void TProcuraConstrutiva::DebugRamo(const char* ramo, const char* folha) {
 }
 
 
-// Metodo para ser chamado quando nao ha sucessores ou ha um corte de profundidade
+// Método para ser chamado quando não há sucessores ou há um corte de profundidade
 void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 {
 	if (Parametro(NIVEL_DEBUG) >= PASSOS && sucessores >= 0) {
@@ -661,7 +661,7 @@ void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 	}
 }
 
-// Encontrou uma solucao
+// Encontrou uma solução
 void TProcuraConstrutiva::DebugSolucao(bool continuar)
 {
 	if (Parametro(NIVEL_DEBUG) > NADA && SolucaoCompleta()) {
@@ -681,7 +681,7 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 	}
 }
 
-// Informacao de debug na chamada ao metodo recursivo
+// Informacao de debug na chamada ao método recursivo
 void TProcuraConstrutiva::DebugChamada(bool noFolha)
 {
 	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
@@ -703,7 +703,7 @@ void TProcuraConstrutiva::DebugChamada(bool noFolha)
 	}
 }
 
-// Chamar sempre que se quer uma nova linha com a arvore em baixo
+// Chamar sempre que se quer uma nova linha com a árvore em baixo
 void TProcuraConstrutiva::NovaLinha(bool tudo)
 {
 	printf("\n");

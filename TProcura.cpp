@@ -101,8 +101,8 @@ void TProcura::LimparEstatisticas()
 	Cronometro(CONT_ALGORITMO, true);
 }
 
-// Metodo para teste manual do objeto (chamadas aos algoritmos, construcao de uma solucao manual)
-// Este metodo destina-se a testes preliminares, e deve ser redefinido apenas se forem definidos novos algoritmos
+// Método para teste manual do objeto (chamadas aos algoritmos, construção de uma solução manual)
+// Este método destina-se a testes preliminares, e deve ser redefinido apenas se forem definidos novos algoritmos
 void TProcura::TesteManual(TString nome)
 {
 	int selecao;

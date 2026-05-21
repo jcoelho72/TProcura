@@ -24,7 +24,7 @@ public:
 	COitoDamas(void);
 	~COitoDamas(void);
 
-	// estrutura de dados: posicao de cada dama
+	// estrutura de dados: posição de cada dama
 	TVector<int> damas;
 	static int nDamas; // número de damas desta instância
 

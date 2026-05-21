@@ -306,7 +306,7 @@ int TProcuraMelhorativa::AlgoritmoGenetico()
 		OrdemValor(geracaoNova, id);
 		// remover os elementos que são muito parecidos
 		for (int i = 0; i < populacao && i < geracaoNova.Count(); i++) {
-			// verificar se ha outro elemento muito parecido la
+			// verificar se há outro elemento muito parecido la
 			if (i > 0 && distanciaMinima > 0) {
 				bool diferente = true;
 				for (int j = 0; j < geracaoAntiga.Count(); j++)
