@@ -1241,7 +1241,8 @@ public:
 				line.Last() = c;
 				line.Add(0);
 			}
-		lines += line;
+		if (line.Count() > 1)
+			lines += line;
 		fclose(f);
 		return lines;
 	}
