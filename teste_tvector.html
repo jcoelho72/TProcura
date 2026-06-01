@@ -539,7 +539,7 @@ Opção: <span class="entrada">7</span>
 <h2><a class="anchor" id="autotoc_md157"></a>
 Ação 6: Menu 8 - Teste</h2>
 <p>Tendo configurações introduzidas, vamos agora executar um teste com estas configurações. Introduza: 8; 1:3; <em>ENTER</em>.</p>
-<p>A primeira pergunta é sobre quais as instâncias a excutar o teste, na qual pretendemos as 3 primeiras. A segunda pergunta é para colocar os resultados num ficheiro de texto, para já não estamos interesados.</p>
+<p>A primeira pergunta é sobre quais as instâncias a executar o teste, na qual pretendemos as 3 primeiras. A segunda pergunta é para colocar os resultados num ficheiro de texto, para já não estamos interessados.</p>
 <p> 
 <pre>
 Opção: <span class="entrada">8</span>
@@ -711,7 +711,7 @@ Opção:
 </p>
 <p>As instâncias utilizadas e as configurações atuais são mostradas logo de início, para clarificar o que vai ser executado no teste e poder identificar algum problema.</p>
 <p>Podemos ver que durante a execução, nada é mostrado, sendo mostrados os resultados dos testes no final.</p>
-<p>O parâmetro P2(NIVEL_DEBUG) controla do debug do algoritrmo durante a execução simples, no comando 6. Num teste o debug do algoritmo é sempre colocado a 0, sendo este parâmetro utilizado para mostrar informações do teste.</p>
+<p>O parâmetro P2(NIVEL_DEBUG) controla do debug do algoritmo durante a execução simples, no comando 6. Num teste o debug do algoritmo é sempre colocado a 0, sendo este parâmetro utilizado para mostrar informações do teste.</p>
 <p>Como o teste foi rápido, não havia muito a mostrar, mas ao executar um teste longo, é importante que saiba o estado atual do teste.</p>
 <p>No final é mostrada primeiramente uma tabela de resultados, com apenas o custo e tempo, por cada instância e configuração em teste. Como o custo não está nos indicadores calculados, ficou a zero, caso contrário ficaria a 1 já que foi assim que definimos nesta instância para sucesso.</p>
 <p>Seguem-se os totais por configuração, e um torneio entre configurações, sendo contabilizada vitória para a configuração que tiver melhores resultados em mais instâncias.</p>
@@ -901,7 +901,7 @@ Teste: tvetor_1</h3>
 <li><b>Esforço</b>: P3=1; P3=1:10; P3=1:100</li>
 <li><b>Execução</b>: <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a> 1:10 -R Resultados/tvetor_1 -P P1=2 P2=3 P3=1</li>
 </ul>
-<p>Vamos explicar estes pontos. Temos primeiramente o teste identificado pelo nome do problema, seguido pelo ID do teste: tvetor_1. Existindo outros testes, têm ID incremental e não colidem com este nome. É identificado que se pretende um teste de performance, e estamos interesados em medir o tempo pelo tamanho. Como o tamanho é dado pelo ID da instância, basta variar a instância e temos os resultados para o teste de Performance. Na definição do teste, para além das instâncias, fixamos a operação definida em P1 para 2, que é a ordenação. Define-se ainda como repetir o teste com esforços distintos, para maior precisão.</p>
+<p>Vamos explicar estes pontos. Temos primeiramente o teste identificado pelo nome do problema, seguido pelo ID do teste: tvetor_1. Existindo outros testes, têm ID incremental e não colidem com este nome. É identificado que se pretende um teste de performance, e estamos interessados em medir o tempo pelo tamanho. Como o tamanho é dado pelo ID da instância, basta variar a instância e temos os resultados para o teste de Performance. Na definição do teste, para além das instâncias, fixamos a operação definida em P1 para 2, que é a ordenação. Define-se ainda como repetir o teste com esforços distintos, para maior precisão.</p>
 <p>Este teste foi já realizado duas vezes, uma com 1 execução em cada instância, outra com 10. Mas basicamente foram o mesmo teste. Aqui considera-se que são versões distintas (A, B, C) do mesmo teste. É simples e suficiente alterar P3 para aumentar o esforço, dado que as instâncias são geradas aleatoriamente, alterando a semente altera-se a instância.</p>
 <p>Finalmente a execução tem os argumentos a colocar na linha de comando, não ficando o teste dependente da correta interação com o programa para que este seja bem introduzido. Um simples copy/paste garante que o teste irá ser reproduzido à risca. Nesta linha apenas P2 é livre.</p>
 <p>Subimos o nível de debug (P2) de 1 para 3, já que o nível 2 apenas reporta de minuto a minuto. Tal como o modo teste, na execução via linha de comando, o algoritmo executa sempre com debug nível 0, de modo a obter os melhores tempos. O parâmetro de debug é apenas para visualizar o andamento do teste.</p>
