@@ -240,8 +240,6 @@ public:
 	 *     // pode/deve utilizar variável "ficheiroInstancia" concatenado com instancia.valor, com o ID da instância
 	 *     // inicializar todas as variáveis de estado
 	 * 	   variavel = 0;
-	 *     // Determinar o tamanho máximo do estado codificado, se aplicável
-	 * 	   tamanhoCodificado = 1;
 	 * }
 	 * @endcode
 	 */
@@ -329,7 +327,7 @@ public:
 	 * @note Redefinição necessária, para pelo menos indicar as instâncias existentes
 	 *
 	 * Nesta função, a primeira instrução deverá ser a chamada da função da superclasse,
-	 * para que sejam criados os parÂmetros da superclasse antes de qualquer outra instrução.
+	 * para que sejam criados os parâmetros da superclasse antes de qualquer outra instrução.
 	 *
 	 * Cada problema pode ter um algoritmo e configurações padrão que funcionam bem na maioria dos casos.
 	 * Nesta função, podem ser definidos estes valores por omissão.
@@ -339,7 +337,7 @@ public:
 	 * em fase de testes, qual a melhor configuração, evitando escolhas arbitrárias ou não fundamentadas.
 	 *
 	 * Nesta função deve ser redefinida a variável com informação dos IDs das instâncias disponíveis.
-	 * Essa variável é do tipo TParametro, mas não está na lista de parÂmetros, devendo ser inicializada aqui.
+	 * Essa variável é do tipo TParametro, mas não está na lista de parâmetros, devendo ser inicializada aqui.
 	 *
 	 * Existindo novos indicadores, devem ser adicionados aqui, e redefinida a função Indicador() para calcular o valor.
 	 *

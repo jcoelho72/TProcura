@@ -2041,7 +2041,7 @@ void TProcuraExecutavel::ResetParametros()
 	for (int i = 0; i < indicador.Count(); i++)
 		indAtivo += i;
 
-	// corrigir prefixos ineixistentes
+	// corrigir prefixos inexistentes
 	while (parPrefixo.Count() < parametro.Count())
 		parPrefixo += TString("");
 	while (indPrefixo.Count() < indicador.Count())

@@ -164,11 +164,11 @@ git clone https://github.com/jcoelho72/TProcura.git
 ```
 ou 
 
-Aceder a [página do repositório](https://github.com/jcoelho72/TProcura/) e clique em **"Code" → "Open with Visual Studio"**.
+Aceder à [página do repositório](https://github.com/jcoelho72/TProcura/) e clique em **"Code" → "Open with Visual Studio"**.
 
 ### Opção 2 - Download Manual
 
-Aceder a [página do repositório](https://github.com/jcoelho72/TProcura/) e clique em **"Code" → "Download ZIP"**.
+Aceder à [página do repositório](https://github.com/jcoelho72/TProcura/) e clique em **"Code" → "Download ZIP"**.
 
 Extraia os arquivos e siga as instruções de compilação (por exemplo, via Makefile, Visual Studio etc., conforme o seu ambiente).
 

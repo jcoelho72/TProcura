@@ -614,8 +614,8 @@ Avance para a próxima ação.
 Tendo configurações introduzidas, vamos agora executar um teste com estas configurações.
 Introduza: 8; 1:3; *ENTER*.
 
-A primeira pergunta é sobre quais as instâncias a excutar o teste, na qual pretendemos as 3 primeiras.
-A segunda pergunta é para colocar os resultados num ficheiro de texto, para já não estamos interesados.
+A primeira pergunta é sobre quais as instâncias a executar o teste, na qual pretendemos as 3 primeiras.
+A segunda pergunta é para colocar os resultados num ficheiro de texto, para já não estamos interessados.
 
 \htmlonly
 <pre>
@@ -792,7 +792,7 @@ para clarificar o que vai ser executado no teste e poder identificar algum probl
 
 Podemos ver que durante a execução, nada é mostrado, sendo mostrados os resultados dos testes no final.
 
-O parâmetro P2(NIVEL_DEBUG) controla do debug do algoritrmo durante a execução simples, no comando 6.
+O parâmetro P2(NIVEL_DEBUG) controla do debug do algoritmo durante a execução simples, no comando 6.
 Num teste o debug do algoritmo é sempre colocado a 0, sendo este parâmetro utilizado para
 mostrar informações do teste.
 
@@ -1039,7 +1039,7 @@ ou seja, pretendemos um teste de performance.
 
 Vamos explicar estes pontos. Temos primeiramente o teste identificado pelo nome do problema,
 seguido pelo ID do teste: tvetor_1. Existindo outros testes, têm ID incremental e não colidem com este nome.
-É identificado que se pretende um teste de performance, e estamos interesados em medir o tempo
+É identificado que se pretende um teste de performance, e estamos interessados em medir o tempo
 pelo tamanho. Como o tamanho é dado pelo ID da instância, basta variar a instância e temos
 os resultados para o teste de Performance.
 Na definição do teste, para além das instâncias, fixamos a operação definida em P1 para 2, que é a ordenação.

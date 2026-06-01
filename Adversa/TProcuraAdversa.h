@@ -160,7 +160,7 @@ protected:
 
 	// hashtable
 	void SubstituirHT(int indice); // necessário redefinir para invalidar valorHT 
-	bool ExisteHT(); // necessário redefinir par não remover estados (reutilizar o valor)
+	bool ExisteHT(); // necessário redefinir para não remover estados (reutilizar o valor)
 	static TValorEstado valorHT[TAMANHO_HASHTABLE]; // hashtable / valor e nível obtido
 	// índice obtido na HT, se positivo
 	int indiceHT;

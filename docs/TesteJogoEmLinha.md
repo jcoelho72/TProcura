@@ -1922,7 +1922,7 @@ Podemos observar que:
 Não são valores com precisão, já que foram poucos jogos e pode-se observar oscilações na eficácia.
 Mas podemos observar uma tendência em que o ruído afeta significativamente a eficácia do jogador.
 
-Podemos ver oos resultados por instância:
+Podemos ver os resultados por instância:
 
 | Instância | Vitória Preta | Empate | Vitória Branca |
 |:---:|:---:|:---:|:---:|

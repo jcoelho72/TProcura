@@ -576,7 +576,6 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 		}
 		else {
 			break; // não há lance efetuado
-			resultado = 0; // erro, mas considerar empatado
 		}
 	}
 	resultados.Last().resultado = Pontos(resultado);
@@ -1037,7 +1036,7 @@ bool TProcuraAdversa::CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& a
 			}
 			if (lancesAnt != lances) {
 #ifdef VPL_ATIVO
-				printf("\nComment :=>> alterado lances no jogo %d: '%s'!='%s'.", i, *anterior[i], *jogos[i]);
+				printf("\nComment :=>> alterados lances no jogo %d: '%s'!='%s'.", i, *anterior[i], *jogos[i]);
 #endif
 				return false; // não é admissível esta situação de troca de jogadas passadas
 			}

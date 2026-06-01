@@ -219,8 +219,6 @@ public:
 	 * 	   CarregaInstancia(); // exemplo de método em CSubProblema para carregar uma instância
 	 *     // inicializar todas as variáveis de estado
 	 * 	   variavel = 0;
-	 *     // Determinar o tamanho máximo do estado codificado, se aplicável
-	 * 	   tamanhoCodificado = 1;
 	 * }
 	 * @endcode
 	 */
@@ -373,8 +371,6 @@ public:
 	 * a superclasse chama este método dentro de `Sucessores()`.
 	 * @note Para otimizar o consumo de memória, são utilizadas hashtables com perdas.
 	 * Se necessário pode alterar o tamanho da hashtable editando a macro TAMANHO_HASHTABLE
-	 * @note a variável tamanhoCodificado tem de ter o número de variáveis de 64 bits utilizadas,
-	 * garantindo que o vetor estado[] não é acedido na posição tamanhoCodificado ou superior.
 	 *
 	 * @see Inicializar()
 	 *
