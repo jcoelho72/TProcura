@@ -1258,6 +1258,171 @@ public:
 
 };
 
+class TBigInt : public TVector<uint32_t> {
+private:
+	void Normalize() { // remove zeros à direita
+		while (Count() > 1 && Last() == 0)
+			Pop();
+	}
+public:
+	// Construtores 
+	TBigInt() : TVector<uint32_t>(1) { Count(1).Reset(0U); }
+	TBigInt(uint64_t value) : TVector<uint32_t>(2) {
+		Count(2);
+		Data()[0] = (uint32_t)(value & 0xFFFFFFFF);
+		Data()[1] = (uint32_t)(value >> 32);
+		Normalize();
+	}
+	inline TBigInt(const TString& str); // construtor a partir de string 
+	// --- Operações aritméticas entre TBigInt ---
+	inline TBigInt& operator+=(const TBigInt& other);
+	TBigInt operator+(const TBigInt& other) const { TBigInt res = *this;	return res += other; }
+	inline TBigInt& operator-=(const TBigInt& other);
+	TBigInt operator-(const TBigInt& other) const { TBigInt res = *this;	return res -= other; }
+	inline TBigInt& operator*=(const TBigInt& other);
+	TBigInt operator*(const TBigInt& other) const { TBigInt res = *this;	return res *= other; }
+	inline TBigInt& operator/=(const uint32_t& other);
+	TBigInt operator/(const uint32_t& other) const { TBigInt res = *this; return res /= other; }
+	inline uint32_t operator%(const uint32_t& other) const;
+	// --- Operações de comparação ---
+	inline bool operator==(const TBigInt& other) const;
+	bool operator!=(const TBigInt& other) const { return !(*this == other); }
+	inline bool operator<(const TBigInt& other) const;
+	bool operator<=(const TBigInt& other) const { return *this < other || *this == other; }
+	inline bool operator>(const TBigInt& other) const;
+	bool operator>=(const TBigInt& other) const { return *this > other || *this == other; }
+	// --- Conversão para string ---
+	inline TString String() const;
+};
+
+TBigInt::TBigInt(const TString& str) : TVector<uint32_t>(1) {
+	Count(1).Reset(0U);
+	for (char c : str)
+		if (c >= '0' && c <= '9')
+			(*this *= 10) += (c - '0');
+		else
+			break; // parar ao encontrar um caractere não numérico
+}
+
+TBigInt& TBigInt::operator+=(const TBigInt& other) {
+	uint64_t carry = 0;
+	while (Count() < other.Count())
+		Add(0); // garantir que este tem pelo menos tantas palavras quanto o outro
+	for (int i = 0; i < Count(); i++) {
+		uint64_t sum = carry + Data()[i];
+		if (i < other.Count())
+			sum += other[i];
+		Data()[i] = (uint32_t)(sum & 0xFFFFFFFF);
+		carry = sum >> 32;
+	}
+	if (carry > 0)
+		Add((uint32_t)carry);
+	return *this;
+}
+
+TBigInt& TBigInt::operator-=(const TBigInt& other) {
+	uint64_t borrow = 0;
+	if (*this < other) {
+		Count(1).Data()[0] = 0;
+		return *this;
+	}
+	for (int i = 0; i < Count(); i++) {
+		uint64_t ai = Data()[i];
+		uint64_t bi = (i < other.Count() ? other[i] : 0);
+		uint64_t tmp = ai - bi - borrow;
+		borrow = (ai < bi + borrow);
+		Data()[i] = (uint32_t)tmp;
+	}
+	Normalize();
+	return *this;
+}
+
+TBigInt& TBigInt::operator*=(const TBigInt& other) {
+	TBigInt res;
+	res.Count(Count() + other.Count()).Reset(0);
+	for (int i = 0; i < Count(); i++) {
+		uint64_t carry = 0;
+		for (int j = 0; j < other.Count(); j++) {
+			uint64_t prod = (uint64_t)Data()[i] * other[j] + res[i + j] + carry;
+			res[i + j] = (uint32_t)(prod & 0xFFFFFFFF);
+			carry = prod >> 32;
+		}
+		if (carry > 0) {
+			res[i + other.Count()] += (uint32_t)carry;
+		}
+	}
+	res.Normalize();
+	return *this = res;
+}
+
+TBigInt& TBigInt::operator/=(const uint32_t& other) {
+	uint64_t remainder = 0;
+	if (other == 0) {
+		Count(1).Data()[0] = 0;
+		return *this;
+	}
+	for (int i = Count() - 1; i >= 0; i--) {
+		uint64_t dividend = (remainder << 32) | Data()[i];
+		Data()[i] = (uint32_t)(dividend / other);
+		remainder = dividend % other;
+	}
+	Normalize();
+	return *this;
+}
+
+uint32_t TBigInt::operator%(const uint32_t& other) const {
+	uint64_t remainder = 0;
+	if (other == 0)
+		return 0;
+	for (int i = Count() - 1; i >= 0; i--) {
+		uint64_t dividend = (remainder << 32) | Data()[i];
+		remainder = dividend % other;
+	}
+	return (uint32_t)remainder;
+}
+
+bool TBigInt::operator==(const TBigInt& other) const {
+	if (Count() != other.Count())
+		return false;
+	for (int i = 0; i < Count(); i++)
+		if (Data()[i] != other[i])
+			return false;
+	return true;
+}
+
+bool TBigInt::operator<(const TBigInt& other) const {
+	if (Count() != other.Count())
+		return Count() < other.Count();
+	for (int i = Count() - 1; i >= 0; i--)
+		if (Data()[i] != other[i])
+			return Data()[i] < other[i];
+	return false; // são iguais
+}
+
+bool TBigInt::operator>(const TBigInt& other) const {
+	if (Count() != other.Count())
+		return Count() > other.Count();
+	for (int i = Count() - 1; i >= 0; i--)
+		if (Data()[i] != other[i])
+			return Data()[i] > other[i];
+	return false; // são iguais
+}
+
+TString TBigInt::String() const { // converter para decimal por divisões sucessivas por 10
+	TString res;
+	TBigInt temp = *this;
+	if (temp.Count() == 1 && temp[0] == 0)
+		return "0";
+	while (temp.Count() > 1 || temp[0] != 0) {
+		uint32_t digit = temp % 10;
+		res.Add('0' + digit);
+		temp /= 10;
+	}
+	res.Invert(); // os dígitos foram gerados em ordem reversa
+	return res;
+}
+
+
 class TBits : public TVector<uint64_t> {
 public:
 	// Construtores herdados
