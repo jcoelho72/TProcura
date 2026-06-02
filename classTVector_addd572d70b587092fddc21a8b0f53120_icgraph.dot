@@ -32,14 +32,18 @@ digraph "TVector::Data"
   Node13 [id="Node000013",label="TProcuraConstrutiva\l::Explorar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a9d8202d80510018d01a9807f3852b59f",tooltip="definir para explorar manualmente os dados (não definido em TProcura, apenas em TProcuraConstrutiva)"];
   Node2 -> Node5 [id="edge13_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node14 [id="edge14_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="TString::tok",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a1c97cb769a9101f4bf899f527adceea6",tooltip=" "];
-  Node14 -> Node15 [id="edge15_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node15 [id="Node000015",label="TProcuraAdversa::CoerenciaJogo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#af9d8298dba39d1b1341acdc7eed5e840",tooltip=" "];
-  Node15 -> Node16 [id="edge16_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
-  Node14 -> Node17 [id="edge17_Node000014_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node17 [id="Node000017",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
-  Node17 -> Node16 [id="edge18_Node000017_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 -> Node6 [id="edge19_Node000014_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node14 -> Node14 [id="edge20_Node000014_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="TBigInt::operator-=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTBigInt.html#abac6a58c6be7e0d8e021fcd162e832c1",tooltip=" "];
+  Node1 -> Node15 [id="edge15_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="TBigInt::operator/=",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTBigInt.html#a19d2f2a2c863dbc4344b9e18f3d38c21",tooltip=" "];
+  Node1 -> Node16 [id="edge16_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="TString::tok",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTString.html#a1c97cb769a9101f4bf899f527adceea6",tooltip=" "];
+  Node16 -> Node17 [id="edge17_Node000016_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="TProcuraAdversa::CoerenciaJogo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#af9d8298dba39d1b1341acdc7eed5e840",tooltip=" "];
+  Node17 -> Node18 [id="edge18_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node16 -> Node19 [id="edge19_Node000016_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
+  Node19 -> Node18 [id="edge20_Node000019_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 -> Node6 [id="edge21_Node000016_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 -> Node16 [id="edge22_Node000016_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

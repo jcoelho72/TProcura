@@ -111,4 +111,6 @@ digraph "TVector::Add"
   Node31 -> Node43 [id="edge62_Node000031_Node000043",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node43 [id="Node000043",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node43 -> Node36 [id="edge63_Node000043_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node44 [id="edge64_Node000001_Node000044",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node44 [id="Node000044",label="TBigInt::String",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTBigInt.html#a36bb6a18e37f33b43900ee3bbcbaaa76",tooltip=" "];
 }

@@ -24,6 +24,7 @@ var annotated_dup =
     [ "SResultado", "structSResultado.html", "structSResultado" ],
     [ "SResultadoJogo", "structSResultadoJogo.html", "structSResultadoJogo" ],
     [ "SValorEstado", "structSValorEstado.html", "structSValorEstado" ],
+    [ "TBigInt", "classTBigInt.html", "classTBigInt" ],
     [ "TBits", "classTBits.html", "classTBits" ],
     [ "TCodificacaoArvore", "classTCodificacaoArvore.html", null ],
     [ "TCodificacaoBinaria", "classTCodificacaoBinaria.html", "classTCodificacaoBinaria" ],

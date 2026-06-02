@@ -56,6 +56,9 @@ var hierarchy =
     [ "TVector< TProcuraConstrutiva >", "classTVector.html", null ],
     [ "TVector< TString >", "classTVector.html", null ],
     [ "TVector< TVector< int > >", "classTVector.html", null ],
+    [ "TVector< uint32_t >", "classTVector.html", [
+      [ "TBigInt", "classTBigInt.html", null ]
+    ] ],
     [ "TVector< uint64_t >", "classTVector.html", [
       [ "TBits", "classTBits.html", null ]
     ] ]

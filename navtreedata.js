@@ -64,9 +64,9 @@ var NAVTREEINDEX =
 [
 "Adversa_2Teste_2teste_8cpp.html",
 "TProcura_8h.html#acd3686fbff542f708cd941c98c4e8a13",
-"classTCodificacaoBinaria.html#a39615f0d7252d78ef86b19b350008f63",
-"classTString.html#af95d76252021ef33b1ff8748b73b236d",
-"structSResultadoJogo.html#a504ca78cc9a50f09bee359ab0c0e4ffe"
+"classTBits.html#a46167a9ac08cb0a6ebdc746fc2e6534f",
+"classTProcuraMelhorativa.html#ad268f3d892d6a912f632369e1c9be878",
+"structSParametro.html#acf3b18e14507674e5c24d0fd16afbbf2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
