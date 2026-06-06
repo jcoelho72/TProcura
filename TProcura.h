@@ -644,10 +644,6 @@ public:
 		return true;
 	}
 
-	/// @brief Mostra tempo num formato humano.
-	static TString MostraTempo(double segundos);
-	/// @brief Mostra inteiro grande num formato humano.
-	static TString MostraInt(int64_t valor, bool cor = true);
 
 	static void MostraCaixa(TVector<TString> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
 	static void MostraCaixa(TString titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0, const char* icon = "");
@@ -853,6 +849,11 @@ protected:
 	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro.
 	bool JuntarCSV(TString ficheiro);
 
+	/// @brief arranque de teste, auxiliar aos Testes Empíricos
+	void TesteInicio(TVector<int>& instancias, TVector<int>& configAtual);
+	void TesteFim();
+
+public:
 	/// @brief retorna o tempo em segundos desde que o cronómetro foi inicializado
 	static double Cronometro(enum ECronometro id = CONT_ALGORITMO, bool inicializar = false) {
 		static clock_t inicio[CONT_NUMERO] = { 0 }; // até 10 cronómetros
@@ -860,10 +861,10 @@ protected:
 			inicio[id] = clock();
 		return (double)(clock() - inicio[id]) / CLOCKS_PER_SEC;
 	}
-
-	/// @brief arranque de teste, auxiliar aos Testes Empíricos
-	void TesteInicio(TVector<int> &instancias, TVector<int> &configAtual);
-	void TesteFim();
+	/// @brief Mostra tempo num formato humano.
+	static TString MostraTempo(double segundos);
+	/// @brief Mostra inteiro grande num formato humano.
+	static TString MostraInt(int64_t valor, bool cor = true);
 
 };
 
