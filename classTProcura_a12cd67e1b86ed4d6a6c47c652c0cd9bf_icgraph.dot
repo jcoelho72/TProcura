@@ -29,7 +29,7 @@ digraph "TProcura::Dominio"
   Node11 [id="Node000011",label="TProcura::EditarParametros",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#ab044dca559e3c04e5cec68647af2c7c4",tooltip="Permite ao utilizador editar os parâmetros."];
   Node11 -> Node3 [id="edge12_Node000011_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node12 [id="edge13_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node12 [id="Node000012",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node12 -> Node13 [id="edge14_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node13 [id="Node000013",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
   Node13 -> Node14 [id="edge15_Node000013_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];

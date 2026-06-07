@@ -58,7 +58,7 @@ digraph "main"
   Node24 -> Node22 [id="edge30_Node000024_Node000022",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node23 [id="edge31_Node000024_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node24 -> Node26 [id="edge32_Node000024_Node000026",color="steelblue1",style="solid",tooltip=" "];
-  Node26 [id="Node000026",label="TProcura::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1297806db02da2a44794883a6f427965",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node26 [id="Node000026",label="TProcura::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1297806db02da2a44794883a6f427965",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node24 -> Node28 [id="edge33_Node000024_Node000028",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="TProcura::Inicializar",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a1af0e64ed79d99972d8d48fadf839f43",tooltip="Coloca o objeto no estado inicial da procura."];
   Node28 -> Node9 [id="edge34_Node000028_Node000009",color="steelblue1",style="solid",tooltip=" "];

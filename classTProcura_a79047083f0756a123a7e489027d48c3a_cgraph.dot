@@ -23,7 +23,7 @@ digraph "TProcura::TesteEmpiricoTrabalhador"
   Node7 -> Node8 [id="edge9_Node000007_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TVector\< char \>::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
   Node3 -> Node9 [id="edge10_Node000003_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TProcura::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1297806db02da2a44794883a6f427965",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node9 [id="Node000009",label="TProcura::ExecutaAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a1297806db02da2a44794883a6f427965",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node3 -> Node10 [id="edge11_Node000003_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcura::Gravar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a56beff8b823673f91c4e450510e01015",tooltip=" "];
   Node3 -> Node11 [id="edge12_Node000003_Node000011",color="steelblue1",style="solid",tooltip=" "];

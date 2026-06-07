@@ -23,7 +23,7 @@ digraph "TProcuraAdversa::ExisteHT"
   Node7 -> Node8 [id="edge9_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="TProcuraAdversa::MiniMax",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a4d8542bcb03f17da8aa3038384104f24",tooltip="retorna o valor do estado actual, apos procura de profundidade nivel"];
   Node8 -> Node9 [id="edge10_Node000008_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node9 [id="Node000009",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node9 -> Node10 [id="edge11_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node10 [id="Node000010",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
   Node10 -> Node11 [id="edge12_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];

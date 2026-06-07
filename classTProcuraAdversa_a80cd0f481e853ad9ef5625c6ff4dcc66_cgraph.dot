@@ -27,7 +27,7 @@ digraph "TProcuraAdversa::TesteEmpirico"
   Node7 -> Node5 [id="edge11_Node000007_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node6 [id="edge12_Node000007_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node7 -> Node10 [id="edge13_Node000007_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parametros atuais."];
+  Node10 [id="Node000010",label="TProcuraAdversa::Executa\lAlgoritmo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aff6f48defaa10c14d160ac3990fd029b",tooltip="Executa o algoritmo com os parâmetros atuais."];
   Node10 -> Node11 [id="edge14_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="TProcura::Dominio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a12cd67e1b86ed4d6a6c47c652c0cd9bf",tooltip="Limita o domínio de um parâmetro inteiro."];
   Node10 -> Node12 [id="edge15_Node000010_Node000012",color="steelblue1",style="solid",tooltip=" "];

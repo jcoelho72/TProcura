@@ -1587,7 +1587,7 @@ Teste 6</h2>
 <li>3: round-robin</li>
 </ul>
 <p>Este parâmetro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo valor por omissão é 100%. Neste caso os descendentes são iguais à população, pelo que no método da idade são todos substituídos.</p>
-<p>Nos restantes dois métodos, qualquer que seja a percentagem, os decendentes são adicionados à população e no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elemento com Q outros. Os que perderem mais vezes, são removidos.</p>
+<p>Nos restantes dois métodos, qualquer que seja a percentagem, os descendentes são adicionados à população e no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elemento com Q outros. Os que perderem mais vezes, são removidos.</p>
 <p>O método round-robin tem portanto um parâmetro Q, que é o número de torneios: P15(Q_ROUND_ROBIN). Tem o valor por omissão a 3, mas pode ser desde 2 até um valor alto como 100, mas não fará sentido ser superior à população.</p>
 <p>Vamos para já deixar este valor por omissão, e fazer um teste com P13 e P14, para apurar se a estratégia de sobrevivência é muito relevante ou não, e se a percentagem de descendentes é ou não relevante.</p>
 <p>Vamos variar P14 de 0 a 100 em passos de 25, tal como temos feito para as restantes percentagens. Quando P14=0 significa que haverá apenas um só descendente (e não 0) em cada geração.</p>
@@ -2322,7 +2322,7 @@ Resultados: damasci_8</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">3:Limpeza   </td><td class="markdownTableBodyRight"><b>5307</b>   </td><td class="markdownTableBodyRight">5103   </td><td class="markdownTableBodyRight">5511   </td><td class="markdownTableBodyRight">1269   </td><td class="markdownTableBodyRight">4750   </td><td class="markdownTableBodyRight">10000   </td></tr>
 </table>
-<p>A estratégia de diversidade de avaliação partilhada, não é compatível com as restantes configurações. Podemos ver também que a não utlização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.</p>
+<p>A estratégia de diversidade de avaliação partilhada, não é compatível com as restantes configurações. Podemos ver também que a não utilização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.</p>
 <h3><a class="anchor" id="autotoc_md52"></a>
 Resultados: damascp_8</h3>
 <table class="markdownTable">
@@ -2778,7 +2778,7 @@ Resultados: damasci_10</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">4:4-pontos   </td><td class="markdownTableBodyRight">2617   </td><td class="markdownTableBodyRight">2479   </td><td class="markdownTableBodyRight">2756   </td><td class="markdownTableBodyRight">506   </td><td class="markdownTableBodyRight">1912   </td><td class="markdownTableBodyRight">5724   </td></tr>
 </table>
-<p>Este último teste é identificado uma grande melhoria, o operador de cruzamento uniforome tem clara vantagem sobre o operador de cruzamento 1-ponto, que era o valor por omissão. Este operador é até a pior opção entre as possíveis. Aparenta existir vantagem por fazer operadores com muitos pontos, e com este valor muito grande acaba por ser igual ao operador uniforme. Vamos portanto alterar P20=0.</p>
+<p>Este último teste é identificado uma grande melhoria, o operador de cruzamento uniforme tem clara vantagem sobre o operador de cruzamento 1-ponto, que era o valor por omissão. Este operador é até a pior opção entre as possíveis. Aparenta existir vantagem por fazer operadores com muitos pontos, e com este valor muito grande acaba por ser igual ao operador uniforme. Vamos portanto alterar P20=0.</p>
 <h3><a class="anchor" id="autotoc_md59"></a>
 Resultados: damascp_10</h3>
 <table class="markdownTable">
@@ -2795,7 +2795,7 @@ Resultados: damascp_10</h3>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyCenter">8   </td><td class="markdownTableBodyRight">350   </td><td class="markdownTableBodyRight">23   </td><td class="markdownTableBodyRight">1122   </td></tr>
 </table>
-<p>Pudemos observar neste último teste um grande ganho no operador, mais de uma ordem de grandeza considerando o limimite de vizinhança 0 (inativo). Ativando o limite de vizinhança, se muito reduzido degrada, mas a partir de certo ponto melhora. Vamos assim manter P23=0 e alterar P22=2. Estes resultados baixam tanto o tempo médio de resolução que para continuar a analisar mais parâmetros, tinhamos de alterar o conjunto das instâncias de teste.</p>
+<p>Pudemos observar neste último teste um grande ganho no operador, mais de uma ordem de grandeza considerando o limite de vizinhança 0 (inativo). Ativando o limite de vizinhança, se muito reduzido degrada, mas a partir de certo ponto melhora. Vamos assim manter P23=0 e alterar P22=2. Estes resultados baixam tanto o tempo médio de resolução que para continuar a analisar mais parâmetros, tinhamos de alterar o conjunto das instâncias de teste.</p>
 <h3><a class="anchor" id="autotoc_md60"></a>
 Resultados: particaocb_10</h3>
 <table class="markdownTable">
@@ -2826,7 +2826,7 @@ Resultados: particaocb_10</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">50   </td><td class="markdownTableBodyRight">8825   </td><td class="markdownTableBodyRight">8329   </td><td class="markdownTableBodyRight">9321   </td><td class="markdownTableBodyRight">3876   </td><td class="markdownTableBodyRight">10000   </td><td class="markdownTableBodyRight">10001   </td></tr>
 </table>
-<p>Estes resolutados até aparentam ser de problemas distintos ou indicadores distintos. Mas a diferença é a que a mutação utiliza um tipo vizinho P22 no primeiro caso, em que um segmento de N bits é trocado. Esta mutação dá clara vantagem, mais de uma ordem de grandeza, relativamente à alternativa com P21 de alterar a probabilidade de mutação de cada bit. Mesmo na melhor alternativa, o anterior valor por omissão com P22=1 revela-se pouco eficiente quando comparado com P22=4, baixando o tempo médio de resolução para 13 miléssimas de segundo.</p>
+<p>Estes resultados até aparentam ser de problemas distintos ou indicadores distintos. Mas a diferença é a que a mutação utiliza um tipo vizinho P22 no primeiro caso, em que um segmento de N bits é trocado. Esta mutação dá clara vantagem, mais de uma ordem de grandeza, relativamente à alternativa com P21 de alterar a probabilidade de mutação de cada bit. Mesmo na melhor alternativa, o anterior valor por omissão com P22=1 revela-se pouco eficiente quando comparado com P22=4, baixando o tempo médio de resolução para 13 milésimas de segundo.</p>
 <h2><a class="anchor" id="autotoc_md61"></a>
 Teste 11</h2>
 <p>Vamos fazer agora um teste final idêntico ao teste 1 mas com a parametrização obtida, de modo a quantificar o ganho no conjunto completo de instâncias.</p>
@@ -3370,7 +3370,7 @@ base   </th><th class="markdownTableHeadRight">otimizado    </th></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter">Total Geral   </td><td class="markdownTableBodyRight">49   </td><td class="markdownTableBodyRight">93   </td><td class="markdownTableBodyRight">5829   </td><td class="markdownTableBodyRight">2469   </td></tr>
 </table>
-<p>Esta codificação inteira não é a mais aconselhada para as 8 damas. A codificação permutação é mais natural já que trata de duas restrições na própria codificação. No entanto podemos ver que a versão otimizada consegue mesmo nas instâncias maiores resolver mais de 50%, enquanto que a configuração de base só resolve esporadicamente. Em termos globais utilizando as 40 instâncias, a configuração base tem 49% de eficácia, contra 93% da versão otimizada. Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segundos da versão otimizada.</p>
+<p>Esta codificação inteira não é a mais aconselhada para as 8 damas. A codificação permutação é mais natural já que trata de duas restrições na própria codificação. No entanto podemos ver que a versão otimizada consegue mesmo nas instâncias maiores resolver mais de 50%, enquanto que a configuração de base só resolve esporadicamente. Em termos globais utilizando as 40 instâncias, a configuração base tem 49% de eficácia, contra 93% da versão otimizada. Por outro lado a eficiência é também mais baixa, 5,8 segundos contra 2,4 segundos da versão otimizada.</p>
 <h3><a class="anchor" id="autotoc_md63"></a>
 Resultados: damascp_11</h3>
 <table class="markdownTable">
