@@ -1076,22 +1076,22 @@ Opção:
 \endhtmlonly
 
 Temos na procura dois cortes beta. Vamos ver com atenção:
-- o primeiro ramo, estado 1, com X em a1 foi explorado por completo
-- no entanto, mesmo nesse ramo houve estados obtidos por memória (`💾`), os com simetria em diagonal (12, 15, 16)
-- logo após a primeira avaliação aparece `├□ 0 → α`. Significa que alfa, que tinha o valor -1000, fica atualizado com o valor 0
-- no final desse ramo aparece `├■ 0 → β`. Significa que beta (que minimiza) tem uma alternativa explorada (o estado 1) que garante pelo menos 0.
-- o estado 7 é igual ao estado 1, foi obtido por memória
-- O estado 6, o ramo com X em c2, vamos dar a um estado de valor 0 (estado 18). Assim, para c2, temos o adversário que pode obter 0, mas para isso X vai para o ramo anterior e obtém 0, pelo que este ramo pode ser cortado
-- Notar no corte do estado: `└─🪓 β(0) { 🔖19 🔖20 🔖21 🔖22 🔖23 🔖24 🔖25 }`. Houve com este corte vários estados que nem chegam a ser analisados
-- O estado 8 com X em b3 é obtido por memória, igual ao estado 6
-- o estado 5 com X em b2 é o único que falta explorar, e ocorre exatamente o mesmo que no estado 6, após se explorar um ramo, sabe-se que o adversário pode obter 0, pelo que não mais interessa.
-- assim, apenas o ramo do estado 1 é que foi explorado completamente
+- O primeiro ramo, estado 1, com X em a1 foi explorado por completo;
+- No entanto, mesmo nesse ramo houve estados obtidos por memória (`💾`), os com simetria em diagonal (12, 15, 16);
+- Logo após a primeira avaliação aparece `├□ 0 → α`. Significa que alfa, que tinha o valor -1000, fica atualizado com o valor 0;
+- No final desse ramo aparece `├■ 0 → β`. Significa que beta (que minimiza) tem uma alternativa explorada (o estado 1) que garante pelo menos 0;
+- O estado 7 é igual ao estado 1, foi obtido por memória;
+- O estado 6, o ramo com X em c2, vamos dar a um estado de valor 0 (estado 18). Assim, para c2, temos o adversário que pode obter 0, mas para isso X vai para o ramo anterior e obtém 0, pelo que este ramo pode ser cortado;
+- Notar no corte do estado: `└─🪓 β(0) { 🔖19 🔖20 🔖21 🔖22 🔖23 🔖24 🔖25 }`. Houve com este corte vários estados que nem chegam a ser analisados;
+- O estado 8 com X em b3 é obtido por memória, igual ao estado 6;
+- O estado 5 com X em b2 é o único que falta explorar, e ocorre exatamente o mesmo que no estado 6, após se explorar um ramo, sabe-se que o adversário pode obter 0, pelo que não mais interessa;
+- Assim, apenas o ramo do estado 1 é que foi explorado completamente.
 
 Como resultado dos cortes, temos menos avaliações. No entanto, no caso da avaliação ser obtida através de corte, é registado que o valor é
 um valor máximo ou mínimo, mas não exato. Por vezes não pode ser utilizado devido ao corte. Assim, poderá por vezes
 ser compensador não ter o alfa/beta para memorizar os valores exatos. De um modo geral, se a ramificação é alta,
 deverá ser sempre vantajoso ter os cortes alfa/beta, se a ramificação é baixa, pode ser compensador
-não ter o alfa/beta de modo a que fiquem memorizados estado com o valor exato.
+não ter o alfa/beta de modo a que fiquem memorizados estados com o valor exato.
 
 Vamos avançar para o momento em que há estados finais visíveis.
 Insira: **6; 6; 6; 6; 6; 6.**

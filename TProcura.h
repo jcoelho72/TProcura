@@ -250,7 +250,7 @@ public:
 
 
 	/**
-	 * @brief Executa o algoritmo com os parametros atuais
+	 * @brief Executa o algoritmo com os parâmetros atuais
 	 * @note Redefinição necessária
 	 *
 	 * No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO)
@@ -351,7 +351,7 @@ public:
 	 *
 	 * @see TParametro
 	 *
-	 * Exemplo com a alteração do valor por omissão de um parâmetro, e adição de dois novos parametros.
+	 * Exemplo com a alteração do valor por omissão de um parâmetro, e adição de dois novos parâmetros.
 	 * @code
 	 * // continuação da enumeração EParametrosProcura
 	 * enum ESubProblema { opcaoHeur = parametrosProcura, opcaoSuc };
@@ -365,7 +365,7 @@ public:
 	 *
 	 *     // novo parâmetro para utilizar na função Heuristica()
 	 *     parametro += { "Opção Heurística", 0,0,10,
-	 *         "explicação do que acontece na heuristica, com este parametro entre 0 e 10",NULL };
+	 *         "explicação do que acontece na heuristica, com este parâmetro entre 0 e 10",NULL };
 	 *     // novo parâmetro para utilizar na função Sucessores()
 	 *     parametro += { "Opção Sucessores", 0,0,1,
 	 *         "0 gera todas as ações; 1 gera apenas ações que tenham um contributo para a solução.",nomesSuc };
@@ -515,9 +515,9 @@ public:
 	* - visualizar e trocar de instância
 	* - explorar o espaço de estados nessa instancia, executando ações
 	* - ver um caminho que esteja gravado (por exploração manual ou por execução de um algoritmo)
-	* - ver e editar qualquer parametro de execução
-	* - o algoritmo é também um parametro, podendo naturalmente ser alterado
-	* - há parametros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
+	* - ver e editar qualquer parâmetro de execução
+	* - o algoritmo é também um parâmetro, podendo naturalmente ser alterado
+	* - há parâmetros sobre limites de execução, informação de debug, opções de implementação e opções de algoritmos
 	* - executar o algoritmo com a configuração atual
 	* - adicionar a configuração atual a um conjunto de configurações de teste
 	* - executar um teste empírico, executando todas as configurações de teste, no conjunto de instâncias selecionadas

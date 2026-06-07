@@ -7,7 +7,7 @@
 #include <mpi.h>
 #endif
 
-// valor de infinito (vitoria/derrota), omissao 1000 
+// valor de infinito (vitória/derrota), omissão 1000 
 int TProcuraAdversa::infinito = 1000;
 // controlo para indicar se a procura foi realizada de forma completa (c.c. foi cortada)
 bool TProcuraAdversa::completo;
@@ -39,14 +39,14 @@ void TProcuraAdversa::ResetParametros()
 		{ "MiniMax", "MiniMax alfa/beta" } };
 
 	Parametro(LIMITE) = 0; // procura iterativa preferencial
-	Parametro(ESTADOS_REPETIDOS) = IGNORADOS; // nas procuras adversas, não utilizar este parametro (utilizar ordenar=2)
+	Parametro(ESTADOS_REPETIDOS) = IGNORADOS; // nas procuras adversas, não utilizar este parâmetro (utilizar ordenar=2)
 	Parametro(BARALHAR_SUCESSORES) = 0; // por omissão está com valor 0, para facilitar nos testes, mas deve ficar com 1 para obter jogos distintos
 
 	// O "infinito" é dependente do problema, não faz sentido alterar senão no código
 
 	parametro[RUIDO_HEURISTICA].dependencia = {}; // faz sentido com qualquer algoritmo de procura adversa, ao contrário das procuras construtivas
 
-	// adicionar parametros da procura adversa
+	// adicionar parâmetros da procura adversa
 	parametro += {
 		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores." },
 		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores)." },

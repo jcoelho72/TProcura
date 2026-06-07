@@ -35,7 +35,7 @@ void TProcuraConstrutiva::ResetParametros()
 {
 	TProcura::ResetParametros();
 
-	// definir parametros base
+	// definir parâmetros base
 	// algoritmos, alterar
 	parametro[ALGORITMO] = { "ALGORITMO",1,1,7,"Algoritmo base a executar.", {
 		"Largura Primeiro",
@@ -46,7 +46,7 @@ void TProcuraConstrutiva::ResetParametros()
 		"IDA*",
 		"Branch and Bound" }
 	};
-	// parametros adicionados
+	// parâmetros adicionados
 	parametro += {
 		{ "VER_ACOES", 4, 1, 100, "Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações." },
 		{ "LIMITE",0,-1,1000000,

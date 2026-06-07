@@ -50,7 +50,7 @@ TVector<TVector<int>> TProcura::configuracoes;
 
 void TProcura::ResetParametros()
 {
-	// definir parametros base
+	// definir parâmetros base
 	parametro = {
 		{ "ALGORITMO", 1, 1, 1, "Algoritmo base a executar.", {"Algoritmo base"} },
 		{ "NIVEL_DEBUG", 0, 0, 4, "Nível de debug, de reduzido a completo.",
@@ -695,7 +695,7 @@ void TProcura::EditarParametros() {
 			printf("\nParâmetro inativo.");
 			continue;
 		}
-		// iniciar caixa com nome do parametro
+		// iniciar caixa com nome do parâmetro
 		MostraCaixa(
 			TString().printf("%-2s P%d(%s)", Icon(EIcon::PARAM), opcao, *parametro[opcao - 1].nome),
 			ECaixaParte::Topo);
@@ -976,7 +976,7 @@ void TProcura::InserirConfiguracoes(TVector<int>& base, TVector<int>& produto, T
 
 void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 	TVector<int> comum, distinto;
-	// identificar parametros comuns e distintos entre as parametrizações
+	// identificar parâmetros comuns e distintos entre as parametrizações
 	for (int i = 0; i < configuracoes.First().Count(); i++) {
 		bool igual = true;
 		for (int j = 1; j < configuracoes.Count() && igual; j++)
@@ -986,7 +986,7 @@ void TProcura::MostrarConfiguracoes(int detalhe, int atual) {
 		else
 			distinto += i;
 	}
-	// mostra parametros comuns, evitando repetição em cada configuração
+	// mostra parâmetros comuns, evitando repetição em cada configuração
 	MostraParametros(detalhe, &comum, Icon(EIcon::CONF));
 	printf(COR_LEVE " (parâmetros comuns)" COR_RESET);
 
@@ -1547,7 +1547,7 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, b
 	else
 		nome.printf("%s.csv", *ficheiro.tok().First());
 
-	// cabeçalho: instância, parametros, indicadores
+	// cabeçalho: instância, parâmetros, indicadores
 	linhas += TString("Instância;");
 	if (parametros) {
 		for (int i = 0; i < parametro.Count(); i++)
@@ -1564,9 +1564,9 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, b
 		linhas += TString().printf("%d;", res.instancia);
 		if (parametros) {
 			for (int j = 0; j < parametro.Count(); j++)
-				// ver se parametro j está ativo na configuração configuracoes[res.configuracao]
+				// ver se parâmetro j está ativo na configuração configuracoes[res.configuracao]
 				if (!ParametroAtivo(j, &(configuracoes[res.configuracao])))
-					linhas.Last().printf(";"); // parametro inativo, não mostrar
+					linhas.Last().printf(";"); // parâmetro inativo, não mostrar
 				else if (parametro[j].nomeValores.Empty())
 					linhas.Last().printf("%d;", configuracoes[res.configuracao][j]); // mostrar valor
 				else

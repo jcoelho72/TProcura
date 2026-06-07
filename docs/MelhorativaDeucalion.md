@@ -1421,7 +1421,7 @@ Passamos para a fase da sobrevivência, em que o parâmetro base é P13. Existem
 Este parâmetro é utilizado em conjunção com o P14(PERC_DESCENDENTES), cujo valor por omissão é 100%.
 Neste caso os descendentes são iguais à população, pelo que no método da idade são todos substituídos.
 
-Nos restantes dois métodos, qualquer que seja a percentagem, os decendentes são adicionados à população e
+Nos restantes dois métodos, qualquer que seja a percentagem, os descendentes são adicionados à população e
 no segundo caso são removidos os piores, no terceiro round-robin existe um torneio de cada elemento com Q outros.
 Os que perderem mais vezes, são removidos.
 
@@ -2144,7 +2144,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 | 3:Limpeza | **5307** | 5103 | 5511 | 1269 | 4750 | 10000 |
 
 A estratégia de diversidade de avaliação partilhada, não é compatível com as restantes configurações.
-Podemos ver também que a não utlização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.
+Podemos ver também que a não utilização de nenhuma estratégia de diversidade, é claramente inferior à estratégia de limpeza.
 
 ### Resultados: damascp_8
 
@@ -2592,7 +2592,7 @@ mpic++ -Wall -O3 -DMPI_ATIVO -o bin/MPI/TProcuraMelhorativa ../../TProcura.cpp .
 | 3:3-pontos | 2988 | 2832 | 3144 | 581 | 2209 | 6716 |
 | 4:4-pontos | 2617 | 2479 | 2756 | 506 | 1912 | 5724 |
 
-Este último teste é identificado uma grande melhoria, o operador de cruzamento uniforome tem clara vantagem
+Este último teste é identificado uma grande melhoria, o operador de cruzamento uniforme tem clara vantagem
 sobre o operador de cruzamento 1-ponto, que era o valor por omissão. Este operador é até a pior opção entre as possíveis.
 Aparenta existir vantagem por fazer operadores com muitos pontos, e com este valor muito grande acaba por ser igual
 ao operador uniforme.
@@ -2610,7 +2610,7 @@ Vamos portanto alterar P20=0.
 | 8 | 350 | 23 | 1122 |
 
 Pudemos observar neste último teste um grande ganho no operador, mais de uma ordem de grandeza
-considerando o limimite de vizinhança 0 (inativo). Ativando o limite de vizinhança, se muito reduzido degrada,
+considerando o limite de vizinhança 0 (inativo). Ativando o limite de vizinhança, se muito reduzido degrada,
 mas a partir de certo ponto melhora.
 Vamos assim manter P23=0 e alterar P22=2. Estes resultados baixam tanto o tempo médio de resolução que para continuar
 a analisar mais parâmetros, tinhamos de alterar o conjunto das instâncias de teste.
@@ -2633,12 +2633,12 @@ a analisar mais parâmetros, tinhamos de alterar o conjunto das instâncias de t
 | 20 | 8255 | 7657 | 8854 | 2079 | 10000 | 10001 |
 | 50 | 8825 | 8329 | 9321 | 3876 | 10000 | 10001 |
 
-Estes resolutados até aparentam ser de problemas distintos ou indicadores distintos.
+Estes resultados até aparentam ser de problemas distintos ou indicadores distintos.
 Mas a diferença é a que a mutação utiliza um tipo vizinho P22 no primeiro caso, em que um segmento de N bits é trocado.
 Esta mutação dá clara vantagem, mais de uma ordem de grandeza,
 relativamente à alternativa com P21 de alterar a probabilidade de mutação de cada bit.
 Mesmo na melhor alternativa, o anterior valor por omissão com P22=1 revela-se pouco eficiente quando comparado com
-P22=4, baixando o tempo médio de resolução para 13 miléssimas de segundo.
+P22=4, baixando o tempo médio de resolução para 13 milésimas de segundo.
 
 
 ## Teste 11
@@ -3146,7 +3146,7 @@ A codificação permutação é mais natural já que trata de duas restrições 
 No entanto podemos ver que a versão otimizada consegue mesmo nas instâncias maiores resolver mais de 50%,
 enquanto que a configuração de base só resolve esporadicamente.
 Em termos globais utilizando as 40 instâncias, a configuração base tem 49% de eficácia, contra 93% da versão otimizada.
-Por outro lado a eficiênica é também mais baixa, 5,8 segundos contra 2,4 segundos da versão otimizada.
+Por outro lado a eficiência é também mais baixa, 5,8 segundos contra 2,4 segundos da versão otimizada.
 
 ### Resultados: damascp_11
 

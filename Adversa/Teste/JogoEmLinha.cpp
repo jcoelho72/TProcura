@@ -236,7 +236,7 @@ int CJogoEmLinha::Heuristica()
 	qMax.Count(inst.K - 1);
 	qMin.Reset(0);
 	qMax.Reset(0);
-	// processar todas as sequências de 4 
+	// processar todas as sequências de inst.K 
 	for (int linha = 0; linha < inst.N; linha++) {
 		for (int coluna = 0; coluna < inst.M; coluna++) {
 			for (int dir = 0; dir < 4; dir++) { // 4 direções (horizontal, vertical, duas diagonais)

@@ -673,7 +673,7 @@ Opção: 3
 </pre>
 \endhtmlonly
 
-Vamos ver os resultados de forma idêntica, mas utilizando médias atendedo a que temos 4 corridas para cada célula:
+Vamos ver os resultados de forma idêntica, mas utilizando médias atendendo a que temos 4 corridas para cada célula:
 - **Colunas**: P11
 - **Linhas**: Instância
 - **Valores**: I2(tempo(ms))

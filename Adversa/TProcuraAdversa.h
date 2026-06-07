@@ -67,7 +67,7 @@ public:
 
 	/// @brief o jogador actual deve minimizar o custo (ou maximizar caso tenha o valor falso)
 	bool minimizar;
-	/// @brief valor de infinito (vitoria/derrota), omissao 1000
+	/// @brief valor de infinito (vitória/derrota), omissão 1000
 	static int infinito;
 	/// @brief controlo para indicar se a procura foi realizada de forma completa (c.c. foi cortada)
 	static bool completo;
@@ -105,7 +105,7 @@ public:
 	bool CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& anterior);
 	void JogoTerminado(TString &jogo);
 
-	/// @brief Executa o algoritmo com os parametros atuais
+	/// @brief Executa o algoritmo com os parâmetros atuais
 	int ExecutaAlgoritmo();
 
 	/// @brief chamar após calcular a heurística (grava o valor, dependendo da parametrização)
