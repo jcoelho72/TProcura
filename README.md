@@ -186,8 +186,9 @@ git submodule add https://github.com/jcoelho72/TProcura.git
 ## Uso
 
 Para implementar um novo problema utilizando uma das superclasses pode:
-- identificar a superclasse mais adequada, e redefinir, criando uma subclasse;
-- readaptar um problema similar já implementado.
+- Identificar a superclasse mais adequada e criar uma subclasse.
+- Readaptar um problema similar já implementado.
+
 
 Superclasses:
 - TProcura  - caso o problema não seja de procura, poderá utilizar esta classe para fazer testes paramétricos

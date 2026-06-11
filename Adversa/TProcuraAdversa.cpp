@@ -829,6 +829,7 @@ void TProcuraAdversa::TesteValidacao(TVector<int> instancias, TVector<int> impos
 			printf("\nComment :=>> histórico do jogo alterado.\nGrade :=>> 0\n");
 #endif
 			fichResultados.writeLines(jogosAnterior); // parar o script global, anterior e atual ficam iguais
+			jogosAtual = jogosAnterior;
 		}
 		else {
 			// jogar em todos os jogos, com as configurações existentes (dois jogos por configuração)
@@ -1014,7 +1015,7 @@ bool TProcuraAdversa::CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& a
 					// jogo terminado, não pode ser alterado
 					if (jogos[i] != anterior[i]) {
 #ifdef VPL_ATIVO
-						printf("\nComment :=>> jogo %d, tendo terminado foi alterado '%s'!='%s'.", i, *anterior[i], *jogos[i]);
+						printf("\nComment :=>> jogo %d, tendo terminado foi alterado '%s'!='%s'.", i + 1, *anterior[i], *jogos[i]);
 #endif
 						return false;
 					}
@@ -1036,7 +1037,7 @@ bool TProcuraAdversa::CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& a
 			}
 			if (lancesAnt != lances) {
 #ifdef VPL_ATIVO
-				printf("\nComment :=>> alterados lances no jogo %d: '%s'!='%s'.", i, *anterior[i], *jogos[i]);
+				printf("\nComment :=>> alterados lances no jogo %d: '%s'!='%s'.", i + 1, *anterior[i], *jogos[i]);
 #endif
 				return false; // não é admissível esta situação de troca de jogadas passadas
 			}

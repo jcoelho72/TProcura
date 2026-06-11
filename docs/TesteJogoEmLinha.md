@@ -36,8 +36,8 @@ No Linux na pasta `.../TProcura/Adversa/Teste$` execute `make` seguido de `./bin
 - [Ação 5 - Torneio Iterativo](#jel-a5)
 - [Ação 6 - Torneio Heurística](#jel-a6)
 - [Ação 7 - Torneio Poda](#jel-a7)
-- [Ação 8 - Torneio Ruido](#jel-a8)
-- [Ação 9 - Torneio Niveis](#jel-a9)
+- [Ação 8 - Torneio Ruído](#jel-a8)
+- [Ação 9 - Torneio Níveis](#jel-a9)
 
 
 \htmlonly
@@ -1736,7 +1736,7 @@ Assim sendo vamos manter o valor da poda heurística a 0, ou seja, sem poda.
 
 
 \anchor jel-a8
-## Ação 8 - Torneio Ruido
+## Ação 8 - Torneio Ruído
 
 Vamos agora estudar o efeito do ruído na heurística. Esperamos uma degradação da força de jogo, à medida que o ruído aumenta.
 É importante quantificar este efeito para podermos escolher valores adequados a diferentes níveis de jogo.
@@ -2203,8 +2203,10 @@ As diferenças entre níveis mais altos, apenas com o tempo relativamente à con
 quanto as diferenças nos níveis mais baixos, tal como o torneio tempo já vinha a revelar.
 Seria necessário aumentar bastante o tempo para que a força de jogo suba mais.
 
-Esta análise realizada apenas num só jogo, e não das 10 instâncias de jogos, poderá ter resultados mais precisos,
-mas mesmo assim considera-se que esta definição de níveis adequado.
+A análise baseia‑se apenas num único jogo, em vez das 10 instâncias implementadas,
+o que naturalmente reduz a fiabilidade estatística.
+Ainda assim, os resultados obtidos são consistentes com o esperado e considera‑se que a definição de níveis permanece adequada.
+
 
 \htmlonly
 

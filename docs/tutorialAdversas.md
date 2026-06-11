@@ -12,7 +12,7 @@ onde existam objetivos conflituosos entre agentes.
 
 Para tirar o máximo proveito, recomenda‑se a seguinte sequência:
 
-- 📖 Ler a literatura - enquadramento teórico e teste de conhecimentos.
+- 📖 Ler a literatura - enquadramento teórico e teste de conhecimentos
 - 👓 Ver os vídeos - introdução aos métodos e teste de conhecimentos
 - ✏️ Resolver manualmente - construção da árvore de procura passo a passo
 - 💻 Testar os algoritmos - observar o comportamento real
