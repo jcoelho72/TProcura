@@ -115,7 +115,7 @@ var searchData=
   ['torneio_20níveis_112',['Ação 9 - Torneio Níveis',['../teste_jogo_em_linha.html#autotoc_md119',1,'']]],
   ['torneio_20poda_113',['Ação 7 - Torneio Poda',['../teste_jogo_em_linha.html#autotoc_md116',1,'']]],
   ['torneio_20profundidade_114',['Ação 4 - Torneio Profundidade',['../teste_jogo_em_linha.html#autotoc_md113',1,'']]],
-  ['torneio_20ruido_115',['Ação 8 - Torneio Ruido',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
+  ['torneio_20ruído_115',['Ação 8 - Torneio Ruído',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
   ['torneio_20tempo_116',['Ação 8 - Torneio Tempo',['../teste_jogo_em_linha.html#autotoc_md118',1,'']]],
   ['totaldireita_117',['totaldireita',['../classCParticao.html#a0a9b8c1d6dd73cbd4a4597aaf7c0a75d',1,'CParticao::totalDireita'],['../classCParticao.html#a8c4d8befbbe3703930b6922b7182b30c',1,'CParticao::totalDireita']]],
   ['totalesquerda_118',['totalesquerda',['../classCParticao.html#ac8e1d8b71df06957820ecde534d22bd9',1,'CParticao::totalEsquerda'],['../classCParticao.html#a2f7c54e73bdc18b30067e65027da4d6f',1,'CParticao::totalEsquerda']]],

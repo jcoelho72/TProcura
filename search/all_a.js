@@ -44,7 +44,7 @@ var searchData=
   ['ação_207_3a_20linha_20de_20comando_41',['Ação 7: Linha de comando',['../teste_tvector.html#autotoc_md159',1,'']]],
   ['ação_208_20idastar_42',['Ação 8 - IDAStar',['../teste_puzzle8b.html#autotoc_md141',1,'']]],
   ['ação_208_20resolver_20outra_20instância_43',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md93',1,'']]],
-  ['ação_208_20torneio_20ruido_44',['Ação 8 - Torneio Ruido',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
+  ['ação_208_20torneio_20ruído_44',['Ação 8 - Torneio Ruído',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
   ['ação_208_20torneio_20tempo_45',['Ação 8 - Torneio Tempo',['../teste_jogo_em_linha.html#autotoc_md118',1,'']]],
   ['ação_208_3a_20execução_20mpi_46',['Ação 8: Execução MPI',['../teste_tvector.html#autotoc_md165',1,'']]],
   ['ação_209_20branch_20and_20bound_47',['Ação 9 - Branch-and-Bound',['../teste_puzzle8b.html#autotoc_md142',1,'']]],

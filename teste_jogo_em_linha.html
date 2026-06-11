@@ -126,8 +126,8 @@ Sumário</h2>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a5">Ação 5 - Torneio Iterativo</a></li>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a6">Ação 6 - Torneio Heurística</a></li>
 <li><a class="el" href="teste_jogo_em_linha.html#jel-a7">Ação 7 - Torneio Poda</a></li>
-<li><a class="el" href="teste_jogo_em_linha.html#jel-a8">Ação 8 - Torneio Ruido</a></li>
-<li><a class="el" href="teste_jogo_em_linha.html#jel-a9">Ação 9 - Torneio Niveis</a></li>
+<li><a class="el" href="teste_jogo_em_linha.html#jel-a8">Ação 8 - Torneio Ruído</a></li>
+<li><a class="el" href="teste_jogo_em_linha.html#jel-a9">Ação 9 - Torneio Níveis</a></li>
 </ul>
 <p> 
 <pre>
@@ -1807,7 +1807,7 @@ Ver execução:</summary>
 <p>Assim sendo vamos manter o valor da poda heurística a 0, ou seja, sem poda.</p>
 <p><a class="anchor" id="jel-a8"></a></p>
 <h2><a class="anchor" id="autotoc_md117"></a>
-Ação 8 - Torneio Ruido</h2>
+Ação 8 - Torneio Ruído</h2>
 <p>Vamos agora estudar o efeito do ruído na heurística. Esperamos uma degradação da força de jogo, à medida que o ruído aumenta. É importante quantificar este efeito para podermos escolher valores adequados a diferentes níveis de jogo.</p>
 <p>Este parâmetro define o valor K a adicionar à heurística, para testes de robustez. Se K positivo, adicionar entre 0 e K-1, se negativo, o valor a adicionar pode ser positivo ou negativo.</p>
 <p>Vamos utilizar valores de ruído simétricos, ou seja, negativos, para não introduzir um viés positivo, de -100 a 0, com 8 valores possíveis. Vamos aumentar para 3 sementes para termos mais jogos por cada par de configurações.</p>
@@ -2275,7 +2275,7 @@ Ver execução:</summary>
 </table>
 <p>Neste torneio entre todos os níveis, podemos ver que os níveis mais altos ganham consistentemente aos níveis mais baixos.</p>
 <p>As diferenças entre níveis mais altos, apenas com o tempo relativamente à configuração de base, não é tão acentuada quanto as diferenças nos níveis mais baixos, tal como o torneio tempo já vinha a revelar. Seria necessário aumentar bastante o tempo para que a força de jogo suba mais.</p>
-<p>Esta análise realizada apenas num só jogo, e não das 10 instâncias de jogos, poderá ter resultados mais precisos, mas mesmo assim considera-se que esta definição de níveis adequado.</p>
+<p>A análise baseia‑se apenas num único jogo, em vez das 10 instâncias implementadas, o que naturalmente reduz a fiabilidade estatística. Ainda assim, os resultados obtidos são consistentes com o esperado e considera‑se que a definição de níveis permanece adequada.</p>
 <p> 
 
 <div style="margin:30px 0; display:flex; justify-content:space-between;">

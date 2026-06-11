@@ -15,7 +15,7 @@ var searchData=
   ['8_20procuras_20informadas_12',['💻 Puzzle 8 - Procuras Informadas',['../teste_puzzle8b.html',1,'']]],
   ['8_20resolver_20outra_20instância_13',['Ação 8 - Resolver outra instância',['../teste_aspirador1.html#autotoc_md93',1,'']]],
   ['8_20teste_14',['Ação 6: Menu 8 - Teste',['../teste_tvector.html#autotoc_md157',1,'']]],
-  ['8_20torneio_20ruido_15',['Ação 8 - Torneio Ruido',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
+  ['8_20torneio_20ruído_15',['Ação 8 - Torneio Ruído',['../teste_jogo_em_linha.html#autotoc_md117',1,'']]],
   ['8_20torneio_20tempo_16',['Ação 8 - Torneio Tempo',['../teste_jogo_em_linha.html#autotoc_md118',1,'']]],
   ['8_3a_20execução_20mpi_17',['Ação 8: Execução MPI',['../teste_tvector.html#autotoc_md165',1,'']]],
   ['8damas_5f1_18',['Teste: 8damas_1',['../teste_8damas.html#autotoc_md72',1,'']]],
