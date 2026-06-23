@@ -173,7 +173,8 @@ void TProcura::TesteManual(TString nome)
 }
 
 // Idêntico ao teste empírico, mas utiliza a configuração atual e verifica se uma solução é válida para cada instância
-void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, TVector<int> referencias, TString fichSolucoes, TString fichResultados)
+void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
+	TVector<int> referencias, TString fichSolucoes, TString fichResultados, TVector<int> parCSV)
 {
 	TVector<TResultado> solucoes; // guarda soluções para valiação
 	TVector<TResultado> resultados; // guarda resultados da validação para gravação
@@ -294,7 +295,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		RelatorioValidacao(resultados, referencias);
 
 	// gravar resultados, um por instância
-	RelatorioCSV(resultados, fichResultados, false);
+	RelatorioCSV(resultados, fichResultados, false, parCSV);
 
 	// repor a instância atual
 	instancia.valor = backupID;
@@ -1074,7 +1075,7 @@ void TProcura::TesteFim() {
 
 // utilizar para executar testes empíricos, utilizando todas as instâncias,
 // com o último algoritmo executado e configurações existentes
-void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
+void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro, TVector<int> parCSV) {
 	TVector<TResultado> resultados; // guarda as soluções obtidas
 	TVector<int> atual;
 	int backupID = instancia.valor;
@@ -1133,7 +1134,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 		MostraRelatorio(resultados);
 	else {
 		// gravar resultados em ficheiro CSV
-		RelatorioCSV(resultados, ficheiro);
+		RelatorioCSV(resultados, ficheiro, true, parCSV);
 
 		double tempoLocal = Cronometro(CONT_TESTE);
 		double tempoTotal = tempoLocal;
@@ -1164,7 +1165,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 	TesteFim();
 }
 
-void TProcura::TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro)
+void TProcura::TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro, TVector<int> parCSV)
 {
 #ifdef MPI_ATIVO
 	int dados[3] = { 0, 0, 0 }; // instância, configuração
@@ -1289,7 +1290,7 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro)
 	double taxaUtilizacaoG = 1. - (esperaGestor / Cronometro(CONT_TESTE));
 	double taxaUtilizacao = 1. - ((esperaTrabalhadores + esperaGestor) / (Cronometro(CONT_TESTE) * mpiCount));
 	mpiCount = 1; // forçar a escrita do ficheiro apenas neste processo
-	RelatorioCSV(resultados, ficheiro) &&
+	RelatorioCSV(resultados, ficheiro, true, parCSV) &&
 		Debug(ATIVIDADE, false,
 			"\n ├─ %-2s Ficheiro %s.csv gravado.\n"
 			" │  %-2s Tempo real: %s",
@@ -1399,7 +1400,7 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 
 // processa os argumentos da função main
 void TProcura::main(int argc, char* argv[], TString nome) {
-	TVector<int> instancias, impossiveis;
+	TVector<int> instancias, impossiveis, parCVS = {};
 	TString fichResultados, fichSolucoes;
 	TString argParametros;
 	bool configIntroduzido = false; // caso sejam dadas configurações, remover as existentes
@@ -1438,6 +1439,9 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 	for (int i = 2; i < argc; i++) {
 		if (strcmp(argv[i], "-R") == 0 && i + 1 < argc) {
 			(fichResultados = "").printf("%s", argv[++i]);
+		}
+		else if (strcmp(argv[i], "-RP") == 0 && i + 1 < argc) {
+			(parCVS = {}) = argv[++i];
 		}
 		else if (strcmp(argv[i], "-S") == 0 && i + 1 < argc) {
 			(fichSolucoes = "").printf("%s", argv[++i]);
@@ -1502,7 +1506,7 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 
 	if (!fichSolucoes.Empty()) {
 		// dado ficheiro de soluções, apenas validar as soluções, não executar o teste empírico
-		TesteValidacao(instancias, impossiveis, referencias, fichSolucoes, fichResultados);
+		TesteValidacao(instancias, impossiveis, referencias, fichSolucoes, fichResultados, parCVS);
 	}
 	else {
 		// arrancar MPI apenas após processar os argumentos
@@ -1510,11 +1514,11 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 
 		if (modoMPI == 0 || mpiCount == 1)
 			// divisão estática ou execução em série
-			TesteEmpirico(instancias, fichResultados);
+			TesteEmpirico(instancias, fichResultados, parCVS);
 		else {
 			if (mpiID == 0)
 				// processo mestre
-				TesteEmpiricoGestor(instancias, fichResultados);
+				TesteEmpiricoGestor(instancias, fichResultados, parCVS);
 			else
 				// processos escravos
 				TesteEmpiricoTrabalhador(instancias, fichResultados);
@@ -1530,6 +1534,7 @@ void TProcura::AjudaUtilizacao(TString programa) {
 		"  <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]\n"
 		"Opções:\n"
 		"  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)\n"
+		"  -RP <expr>      Conjunot de IDs dos parâmetros a gravar no CSV (omissão: todos)\n"
 		"  -S solucoes [custoMin,custoMax,tempoMin,tempoMax [<ids>]]\n"
 		"     caso exista ficheiro de soluções, pretende-se apenas validação\n"
 		"     pode-se dar referências de custo min/max e tempo min/max para indicador de desempenho\n"
@@ -1552,7 +1557,7 @@ void TProcura::AjudaUtilizacao(TString programa) {
 }
 
 
-bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, bool parametros) {
+bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, bool parametros, TVector<int> parCSV) {
 	TString nome;
 	TVector<TString> linhas;
 	if (mpiCount > 1)
@@ -1563,8 +1568,11 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, b
 	// cabeçalho: instância, parâmetros, indicadores
 	linhas += TString("Instância;");
 	if (parametros) {
-		for (int i = 0; i < parametro.Count(); i++)
-			linhas.Last().printf("P%d(%s);", i + 1, *parametro[i].nome);
+		if (parCSV.Empty())
+			for (int i = 0; i < parametro.Count(); i++)
+				parCSV += i + 1;
+		for (auto id : parCSV)
+			linhas.Last().printf("P%d(%s);", id, *parametro[id - 1].nome);
 		for (auto item : indAtivo)
 			linhas.Last().printf("I%d(%s);", item + 1, *indicador[item].nome);
 		linhas.Last().printf("Solução");
@@ -1576,16 +1584,16 @@ bool TProcura::RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, b
 	for (auto& res : resultados) {
 		linhas += TString().printf("%d;", res.instancia);
 		if (parametros) {
-			for (int j = 0; j < parametro.Count(); j++)
+			for (auto id : parCSV)
 				// ver se parâmetro j está ativo na configuração configuracoes[res.configuracao]
-				if (!ParametroAtivo(j, &(configuracoes[res.configuracao])))
+				if (!ParametroAtivo(id - 1, &(configuracoes[res.configuracao])))
 					linhas.Last().printf(";"); // parâmetro inativo, não mostrar
-				else if (parametro[j].nomeValores.Empty())
-					linhas.Last().printf("%d;", configuracoes[res.configuracao][j]); // mostrar valor
+				else if (parametro[id - 1].nomeValores.Empty())
+					linhas.Last().printf("%d;", configuracoes[res.configuracao][id - 1]); // mostrar valor
 				else
 					linhas.Last().printf("%d:%s;", // mostrar valor e texto
-						configuracoes[res.configuracao][j],
-						*parametro[j].nomeValores[configuracoes[res.configuracao][j] - parametro[j].min]);
+						configuracoes[res.configuracao][id - 1],
+						*parametro[id - 1].nomeValores[configuracoes[res.configuracao][id - 1] - parametro[id - 1].min]);
 			for (auto ind : indAtivo)
 				linhas.Last().printf("%" PRId64 ";", Registo(res, ind));
 

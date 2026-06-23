@@ -428,7 +428,8 @@ public:
 	 * @param fichSolucoes - nome do arquivo contendo as soluções a validar para as instâncias.
 	 * @param fichResultados - nome do arquivo onde os resultados da validação serão gravados (opcional).
 	 */
-	virtual void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, TVector<int> referencias, TString fichSolucoes, TString fichResultados = "");
+	virtual void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
+		TVector<int> referencias, TString fichSolucoes, TString fichResultados = "", TVector<int> parCSV = {});
 
 	virtual void RelatorioValidacao(TVector<TResultado> resultados, TVector<int> referencias);
 
@@ -466,10 +467,10 @@ public:
 	 *
 	 * @see TesteManual()
 	 */
-	virtual void TesteEmpirico(TVector<int> instancias, TString ficheiro = "");
+	virtual void TesteEmpirico(TVector<int> instancias, TString ficheiro = "", TVector<int> parCSV = {});
 
 	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
-	virtual void TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro = "");
+	virtual void TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro = "", TVector<int> parCSV = {});
 	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
 	virtual void TesteEmpiricoTrabalhador(TVector<int> instancias, TString ficheiro = "");
 
@@ -772,7 +773,7 @@ protected:
 	 * @param resultados Vetor de resultados.
 	 * @param f Ponteiro para o ficheiro onde gravar.
 	 */
-	bool RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, bool parametros = true);
+	bool RelatorioCSV(TVector<TResultado>& resultados, TString ficheiro, bool parametros = true, TVector<int> parCSV = {});
 
 	/**
 	 * @brief Insere configurações a partir de uma string.
