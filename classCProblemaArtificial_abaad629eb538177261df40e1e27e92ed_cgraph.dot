@@ -146,7 +146,7 @@ digraph "CProblemaArtificial::TesteManual"
   Node54 -> Node13 [id="edge92_Node000054_Node000013",color="steelblue1",style="solid",tooltip=" "];
   Node54 -> Node25 [id="edge93_Node000054_Node000025",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node55 [id="edge94_Node000002_Node000055",color="steelblue1",style="solid",tooltip=" "];
-  Node55 [id="Node000055",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#acee9af6bb96ce1557fbec912f9ada9ce",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node55 [id="Node000055",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a8c1c5953b4f1a6425840194f6e849b37",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node55 -> Node7 [id="edge95_Node000055_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node55 -> Node9 [id="edge96_Node000055_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node55 -> Node3 [id="edge97_Node000055_Node000003",color="steelblue1",style="solid",tooltip=" "];

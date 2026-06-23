@@ -144,7 +144,7 @@ digraph "TProcura::TesteManual"
   Node53 -> Node12 [id="edge91_Node000053_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node53 -> Node24 [id="edge92_Node000053_Node000024",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node54 [id="edge93_Node000001_Node000054",color="steelblue1",style="solid",tooltip=" "];
-  Node54 [id="Node000054",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#acee9af6bb96ce1557fbec912f9ada9ce",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node54 [id="Node000054",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a8c1c5953b4f1a6425840194f6e849b37",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node54 -> Node6 [id="edge94_Node000054_Node000006",color="steelblue1",style="solid",tooltip=" "];
   Node54 -> Node8 [id="edge95_Node000054_Node000008",color="steelblue1",style="solid",tooltip=" "];
   Node54 -> Node2 [id="edge96_Node000054_Node000002",color="steelblue1",style="solid",tooltip=" "];
@@ -169,7 +169,7 @@ digraph "TProcura::TesteManual"
   Node54 -> Node50 [id="edge113_Node000054_Node000050",color="steelblue1",style="solid",tooltip=" "];
   Node54 -> Node7 [id="edge114_Node000054_Node000007",color="steelblue1",style="solid",tooltip=" "];
   Node54 -> Node66 [id="edge115_Node000054_Node000066",color="steelblue1",style="solid",tooltip=" "];
-  Node66 [id="Node000066",label="TProcura::RelatorioCSV",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#aa86b96b672310c9e4a01806ff264e3ab",tooltip="Gera um relatório CSV com os resultados."];
+  Node66 [id="Node000066",label="TProcura::RelatorioCSV",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTProcura.html#a07c185abf9fd61390235a904912e76f8",tooltip="Gera um relatório CSV com os resultados."];
   Node66 -> Node18 [id="edge116_Node000066_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node66 -> Node19 [id="edge117_Node000066_Node000019",color="steelblue1",style="solid",tooltip=" "];
   Node66 -> Node39 [id="edge118_Node000066_Node000039",color="steelblue1",style="solid",tooltip=" "];

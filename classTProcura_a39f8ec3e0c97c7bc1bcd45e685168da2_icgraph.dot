@@ -35,7 +35,7 @@ digraph "TProcura::Indicador"
   Node14 -> Node15 [id="edge14_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="TProcura::ExecutaTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a2c3c5fdff8277b04a219156dec0f068b",tooltip="Executa uma tarefa num teste empírico."];
   Node15 -> Node16 [id="edge15_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node16 [id="Node000016",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#acee9af6bb96ce1557fbec912f9ada9ce",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
+  Node16 [id="Node000016",label="TProcura::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a8c1c5953b4f1a6425840194f6e849b37",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node16 -> Node4 [id="edge16_Node000016_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 -> Node3 [id="edge17_Node000016_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 -> Node17 [id="edge18_Node000015_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -43,6 +43,6 @@ digraph "TProcura::Indicador"
   Node17 -> Node4 [id="edge19_Node000017_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node14 -> Node3 [id="edge20_Node000014_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node18 [id="edge21_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
+  Node18 [id="Node000018",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a34d0a5920b76709c27d7138b02c4e239",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node18 -> Node4 [id="edge22_Node000018_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }
