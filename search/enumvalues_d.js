@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ordenar_5fsucessores_0',['ORDENAR_SUCESSORES',['../TProcuraAdversa_8h.html#a51a3aae81d501993316ddaa211d5e9fdac6a7d07bb3f73205ead929aa8a682952',1,'TProcuraAdversa.h']]]
+  ['regular_0',['regular',['../JogoEmLinha_8h.html#a57c2c559900aabd8461562fd4a75951ba040a9ec6d2966f099fd3214b8ac4fef3',1,'JogoEmLinha.h']]]
 ];

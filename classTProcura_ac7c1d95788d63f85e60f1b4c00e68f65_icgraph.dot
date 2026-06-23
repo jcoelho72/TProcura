@@ -126,15 +126,14 @@ digraph "TProcura::Cronometro"
   Node44 -> Node43 [id="edge75_Node000044_Node000043",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node44 -> Node37 [id="edge76_Node000044_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node44 -> Node16 [id="edge77_Node000044_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node44 -> Node41 [id="edge78_Node000044_Node000041",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node45 [id="edge79_Node000001_Node000045",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node45 [id="edge78_Node000001_Node000045",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node45 [id="Node000045",label="TProcura::TesteInicio",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a577697338460038138738e87157166af",tooltip="arranque de teste, auxiliar aos Testes Empíricos"];
-  Node45 -> Node29 [id="edge80_Node000045_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node45 -> Node15 [id="edge81_Node000045_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node45 -> Node42 [id="edge82_Node000045_Node000042",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node45 -> Node43 [id="edge83_Node000045_Node000043",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node45 -> Node37 [id="edge84_Node000045_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node45 -> Node16 [id="edge85_Node000045_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node45 -> Node41 [id="edge86_Node000045_Node000041",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node32 [id="edge87_Node000001_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 -> Node29 [id="edge79_Node000045_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 -> Node15 [id="edge80_Node000045_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 -> Node42 [id="edge81_Node000045_Node000042",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 -> Node43 [id="edge82_Node000045_Node000043",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 -> Node37 [id="edge83_Node000045_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 -> Node16 [id="edge84_Node000045_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node45 -> Node41 [id="edge85_Node000045_Node000041",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node32 [id="edge86_Node000001_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

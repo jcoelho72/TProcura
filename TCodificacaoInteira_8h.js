@@ -1,14 +1,6 @@
 var TCodificacaoInteira_8h =
 [
     [ "TCodificacaoInteira", "classTCodificacaoInteira.html", "classTCodificacaoInteira" ],
-    [ "ECodificacaoInteira", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26b", [
-      [ "TIPO_CRUZAR_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26badb05429040639597458eccef17972080", null ],
-      [ "TIPO_MUTAR_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26baea692e0cf56446eb7b8c778238083f7c", null ],
-      [ "TIPO_VIZINHO_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26bac07b276a7a2153b64704964e6ffed9f6", null ],
-      [ "LIMITE_VIZINHOS_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba3dba8315a07a2a8afac2f3a9eddcd66d", null ],
-      [ "TIPO_DISTANCIA_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba5d90152887d49524c47c416a82c9bf96", null ],
-      [ "PARAMETROS_CI", "TCodificacaoInteira_8h.html#a6441bc17f6acdec5f44e16aded36c26ba9cdf11110d20c309723329466ca8cda2", null ]
-    ] ],
     [ "ETiposDistanciaInteira", "TCodificacaoInteira_8h.html#a8da2d437f7442ad25916239a13ebe93e", [
       [ "distHammingCI", "TCodificacaoInteira_8h.html#a8da2d437f7442ad25916239a13ebe93eaa8ce3e9479e83655ba01af5d4a987021", null ],
       [ "distEuclidianaCI", "TCodificacaoInteira_8h.html#a8da2d437f7442ad25916239a13ebe93eafe789667a3f061b5f6dc39312d496166", null ],

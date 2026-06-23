@@ -7,5 +7,7 @@ var searchData=
   ['debugprefixo_4',['debugPrefixo',['../classTProcuraMelhorativa.html#adca5b4de8e889cdb5d11e5b799d2fe49',1,'TProcuraMelhorativa']]],
   ['dependencia_5',['dependencia',['../structSParametro.html#a599032a07da5a46584c5304445b6ca00',1,'SParametro']]],
   ['descricao_6',['descricao',['../structSIndicador.html#ade8ff91fd34ed9deabf39cd48c345a93',1,'SIndicador::descricao'],['../structSParametro.html#a28945896975732ba4f38b7bc8b5eb27b',1,'SParametro::descricao']]],
-  ['direita_7',['direita',['../classCParticao.html#a5a2ae80155615c023490f0ab89da2d35',1,'CParticao']]]
+  ['direita_7',['direita',['../classCParticao.html#a5a2ae80155615c023490f0ab89da2d35',1,'CParticao']]],
+  ['dist_5fminima_8',['DIST_MINIMA',['../classTProcuraMelhorativa.html#a77c75dda836c8c552799e71c18e3eed0',1,'TProcuraMelhorativa']]],
+  ['diversidade_9',['DIVERSIDADE',['../classTProcuraMelhorativa.html#a593a8389fa8c4094d9a73c3aa35c8fe1',1,'TProcuraMelhorativa']]]
 ];

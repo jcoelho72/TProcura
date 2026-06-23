@@ -157,7 +157,7 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Retorna verdadeiro, mas caso não seja feito uma ação, devido a ser impossível, retornar falso.</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>A implementação gera os sucessores, e vê qual o que corresponde à ação fornecida. Copia o estado correspondente para o atual, ou retorna falso caso a ação não seja possível. O método não é eficiente, mas também não utilizado pelos algoritmos, apenas na interface. Caso exista um motivo para que seja eficiente, deve ser implementada uma versão mais eficiente para cada problema, tendo em atenção a sua coerência com a função <a class="el" href="group__RedefinicaoMandatoria.html#ga0a13570d2f5a21296e3c10c2780e170c" title="Coloca em sucessores a lista de estados sucessores.">Sucessores()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00081">81</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00100">100</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -200,12 +200,12 @@ Here is the call graph for this function:</div>
 <div class="line">    <span class="comment">// verificar todas as variáveis de estado</span></div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">variavel</a> != <a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">outro</a>.variavel;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00110">TProcuraConstrutiva.h:111</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00573">TProcura.h:573</a></div></div>
+<div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00074">TProcuraConstrutiva.h:75</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00540">TProcura.h:540</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCAspirador.html#a9279c18880569e58bc26932979d58058">CAspirador</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00474">474</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00438">438</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 
 </div>
 </div>
@@ -235,13 +235,13 @@ Here is the call graph for this function:</div>
 <p>Executa o algoritmo com os parâmetros atuais. </p>
 <dl class="section note"><dt>Note</dt><dd>Redefinição necessária no caso de se alterar os algoritmos disponíveis.</dd></dl>
 <p>No caso de adicionar algum algoritmo, chame o algoritmo com base em Parametro(ALGORITMO) Se <code><a class="el" href="classTProcura.html#a8331059908495f9a915ada39424ca27c" title="Inicializa a interação com o utilizador.">TesteManual()</a></code> não for utilizado, esta função pode ser chamada diretamente, desde que os parâmetros necessários já estejam configurados corretamente.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a8331059908495f9a915ada39424ca27c" title="Inicializa a interação com o utilizador.">TesteManual()</a>, <a class="el" href="TProcuraConstrutiva_8h.html#a3c6c902bf1e6a69c702caca172718058" title="Identifica um parâmetro específico no código.">EParametrosConstrutiva</a>, <a class="el" href="group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0" title="Executa a procura em largura primeiro, algoritmo cego.">LarguraPrimeiro()</a>, <a class="el" href="group__ProcurasCegas.html#ga2343fafdecfd55b69c0ffb71e8f9426b" title="Executa a procura por custo uniforme, algoritmo cego.">CustoUniforme()</a>, <a class="el" href="group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228" title="Executa a procura em profundidade primeiro, algoritmo cego.">ProfundidadePrimeiro()</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classTProcura.html#a8331059908495f9a915ada39424ca27c" title="Inicializa a interação com o utilizador.">TesteManual()</a>, <a class="el" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0" title="Resultado retornado pelo algoritmo na última execução.">EParametrosConstrutiva</a>, <a class="el" href="group__ProcurasCegas.html#gafe656922894d8a27b4cfb70128793af0" title="Executa a procura em largura primeiro, algoritmo cego.">LarguraPrimeiro()</a>, <a class="el" href="group__ProcurasCegas.html#ga2343fafdecfd55b69c0ffb71e8f9426b" title="Executa a procura por custo uniforme, algoritmo cego.">CustoUniforme()</a>, <a class="el" href="group__ProcurasCegas.html#gaf00d9776f6b25d56138efb6725b86228" title="Executa a procura em profundidade primeiro, algoritmo cego.">ProfundidadePrimeiro()</a> </dd>
 <dd>
 <a class="el" href="group__ProcurasInformadas.html#gaebb84182343041bc276e4ceceb4b13aa" title="Executa a procura melhor primeiro, algoritmo informado.">MelhorPrimeiro()</a>, <a class="el" href="group__ProcurasInformadas.html#ga37dd78e1a9a6742700728135f81964b4" title="Executa a procura A*, algoritmo informado.">AStar()</a>, <a class="el" href="group__ProcurasInformadas.html#gae77f9608e7988052377d7025bee7c4e8" title="Executa a procura IDA*, algoritmo informado.">IDAStar()</a>, <a class="el" href="group__ProcurasInformadas.html#gafe804dbf6cabda9e627500c2d4f8aafd" title="Executa o algoritmo Branch-and-Bound, um algoritmo informado.">BranchAndBound()</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a1297806db02da2a44794883a6f427965">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00839">839</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00858">858</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -283,7 +283,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a39f8ec3e0c97c7bc1bcd45e685168da2">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l01028">1028</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l01047">1047</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -330,11 +330,11 @@ Em situações particulares, poderá ser possível construir a solução de form
 <div class="line">    <a class="code hl_function" href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">Debug</a>();</div>
 <div class="line">    <span class="comment">// caso seja um caminho do estado inicial ao final, não redefinir</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcura_html_a0c5676c1b54ab6bdc1045b98aeafe456"><div class="ttname"><a href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(bool completo=true)</div><div class="ttdoc">Mostra o estado no ecrã, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00089">TProcura.cpp:89</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a0c5676c1b54ab6bdc1045b98aeafe456"><div class="ttname"><a href="classTProcura.html#a0c5676c1b54ab6bdc1045b98aeafe456">TProcura::Debug</a></div><div class="ttdeci">virtual void Debug(bool completo=true)</div><div class="ttdoc">Mostra o estado no ecrã, para debug.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8cpp_source.html#l00102">TProcura.cpp:102</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a014a294d094430b113ffb36e64a74d97">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00505">505</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00469">469</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -370,7 +370,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classTProcura.html#a3c6c463d3ad9c23dc74b5e5039f8d1e6">TProcura</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00389">389</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00408">408</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

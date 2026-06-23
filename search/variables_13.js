@@ -1,6 +1,23 @@
 var searchData=
 [
-  ['valor_0',['valor',['../structSValorEstado.html#a3374e50c2a88a710ddc82d198b48b4c2',1,'SValorEstado::valor'],['../structSParametro.html#a6e6c4623e2bbfac2be3ec7a9d39e4d33',1,'SParametro::valor'],['../structSResultado.html#adce8636ee5bdd2586c0c106cc4b6571d',1,'SResultado::valor']]],
-  ['valorht_1',['valorHT',['../classTProcuraAdversa.html#adf778e7e00379e60276305c569b4cbc4',1,'TProcuraAdversa']]],
-  ['variante_2',['variante',['../structSJogoEmLinha.html#a990c0928abbfb2a493437355f80a91a5',1,'SJogoEmLinha']]]
+  ['tabuleiro_0',['tabuleiro',['../classCJogoEmLinha.html#a8cba76145d91e14fa042258a7da7b938',1,'CJogoEmLinha::tabuleiro'],['../classCJogoDoGalo.html#a4a45abc068aac13338f18d18c8bd235d',1,'CJogoDoGalo::tabuleiro']]],
+  ['tamanho_5fhashtable_1',['TAMANHO_HASHTABLE',['../TProcuraConstrutiva_8h.html#adee3945eff4acfc542f2730380c8f74f',1,'TProcuraConstrutiva.h']]],
+  ['tamanho_5ftorneio_2',['TAMANHO_TORNEIO',['../classTProcuraMelhorativa.html#aeb35083975db72efb8969c3f387f90d9',1,'TProcuraMelhorativa']]],
+  ['tempo_3',['tempo',['../classTProcura.html#af7735671436a99def475aba1fdb42435',1,'TProcura']]],
+  ['tempobrancas_4',['tempoBrancas',['../structSResultadoJogo.html#af361d6a58b5698c4fd15bae4124496e4',1,'SResultadoJogo']]],
+  ['tempopretas_5',['tempoPretas',['../structSResultadoJogo.html#aa3a6c2a2c77ae65468a30b164161c60c',1,'SResultadoJogo']]],
+  ['tipo_6',['tipo',['../structSValorEstado.html#a50ab452ee030441b761efc29dd223eaa',1,'SValorEstado']]],
+  ['tipo_5fcruzar_5fcb_7',['TIPO_CRUZAR_CB',['../classTCodificacaoBinaria.html#adef22ce478fae3d393533827ef4b8150',1,'TCodificacaoBinaria']]],
+  ['tipo_5fcruzar_5fci_8',['TIPO_CRUZAR_CI',['../classTCodificacaoInteira.html#aab91efd581a7d608c3d21ceb3b67de79',1,'TCodificacaoInteira']]],
+  ['tipo_5fcruzar_5fcp_9',['TIPO_CRUZAR_CP',['../classTCodificacaoPermutacao.html#a0c3a685705d0709893dc192b9e15ce32',1,'TCodificacaoPermutacao']]],
+  ['tipo_5fdistancia_5fci_10',['TIPO_DISTANCIA_CI',['../classTCodificacaoInteira.html#a79867f069adce65a6e13a3591ec0866b',1,'TCodificacaoInteira']]],
+  ['tipo_5fdistancia_5fcp_11',['TIPO_DISTANCIA_CP',['../classTCodificacaoPermutacao.html#a1ec7401e6f29507237610be2846868ee',1,'TCodificacaoPermutacao']]],
+  ['tipo_5fmutar_5fcb_12',['TIPO_MUTAR_CB',['../classTCodificacaoBinaria.html#a88a5799298017459d8778525ec1c15c0',1,'TCodificacaoBinaria']]],
+  ['tipo_5fmutar_5fci_13',['TIPO_MUTAR_CI',['../classTCodificacaoInteira.html#a91a2424048ecb9279ef090450f3a5c0b',1,'TCodificacaoInteira']]],
+  ['tipo_5fmutar_5fcp_14',['TIPO_MUTAR_CP',['../classTCodificacaoPermutacao.html#aa3c8fe50b880359f56b846db93b39989',1,'TCodificacaoPermutacao']]],
+  ['tipo_5fvizinho_5fcb_15',['TIPO_VIZINHO_CB',['../classTCodificacaoBinaria.html#a83b0c83ce70ac517e44b18b2c29fee78',1,'TCodificacaoBinaria']]],
+  ['tipo_5fvizinho_5fci_16',['TIPO_VIZINHO_CI',['../classTCodificacaoInteira.html#a524046911d97b7c63c446dab748f31ad',1,'TCodificacaoInteira']]],
+  ['tipo_5fvizinho_5fcp_17',['TIPO_VIZINHO_CP',['../classTCodificacaoPermutacao.html#a7e72e5db34329c347283dd88eb94cf10',1,'TCodificacaoPermutacao']]],
+  ['totaldireita_18',['totaldireita',['../classCParticao.html#a0a9b8c1d6dd73cbd4a4597aaf7c0a75d',1,'CParticao::totalDireita'],['../classCParticao.html#a8c4d8befbbe3703930b6922b7182b30c',1,'CParticao::totalDireita']]],
+  ['totalesquerda_19',['totalesquerda',['../classCParticao.html#a2f7c54e73bdc18b30067e65027da4d6f',1,'CParticao::totalEsquerda'],['../classCParticao.html#ac8e1d8b71df06957820ecde534d22bd9',1,'CParticao::totalEsquerda']]]
 ];

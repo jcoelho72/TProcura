@@ -160,12 +160,12 @@ Functions</h2></td></tr>
 <div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;dec&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Inválida&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00110">TProcuraConstrutiva.h:111</a></div></div>
-<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00573">TProcura.h:573</a></div></div>
+<div class="ttc" id="aclassTProcuraConstrutiva_html"><div class="ttname"><a href="classTProcuraConstrutiva.html">TProcuraConstrutiva</a></div><div class="ttdoc">Representa um estado no espaço de estados.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00074">TProcuraConstrutiva.h:75</a></div></div>
+<div class="ttc" id="aclassTProcura_html_a224527229b795a4780e5faa61245a8e0"><div class="ttname"><a href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">TProcura::resultado</a></div><div class="ttdeci">static int resultado</div><div class="ttdoc">Resultado retornado pelo algoritmo na última execução.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00540">TProcura.h:540</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCJogoEmLinha.html#a4b40cc0da3a6ad2b1d1604e86a728416">CJogoEmLinha</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00350">350</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8h_source.html#l00314">314</a> of file <a class="el" href="TProcuraConstrutiva_8h_source.html">TProcuraConstrutiva.h</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -216,11 +216,11 @@ Para otimizar o consumo de memória, são utilizadas hashtables com perdas. Se n
 <div class="line">        estado[index &gt;&gt; 6] |= (<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">uint64_t</a>)<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">vetor</a>[<a class="code hl_variable" href="classTProcura.html#a224527229b795a4780e5faa61245a8e0">i</a>] &lt;&lt; (index &amp; 63);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassTBits_html"><div class="ttname"><a href="classTBits.html">TBits</a></div><div class="ttdef"><b>Definition</b> <a href="TVector_8h_source.html#l01426">TVector.h:1426</a></div></div>
-<div class="ttc" id="agroup__RedefinicaoSugerida_html_ga3b3873fa9df6753fd408a8e11e932f9f"><div class="ttname"><a href="group__RedefinicaoSugerida.html#ga3b3873fa9df6753fd408a8e11e932f9f">TProcuraConstrutiva::Codifica</a></div><div class="ttdeci">virtual void Codifica(TBits &amp;estado)</div><div class="ttdoc">Codifica o estado para um vetor de inteiros de 64 bits.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01024">TProcuraConstrutiva.cpp:1024</a></div></div>
+<div class="ttc" id="agroup__RedefinicaoSugerida_html_ga3b3873fa9df6753fd408a8e11e932f9f"><div class="ttname"><a href="group__RedefinicaoSugerida.html#ga3b3873fa9df6753fd408a8e11e932f9f">TProcuraConstrutiva::Codifica</a></div><div class="ttdeci">virtual void Codifica(TBits &amp;estado)</div><div class="ttdoc">Codifica o estado para um vetor de inteiros de 64 bits.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l01043">TProcuraConstrutiva.cpp:1043</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCJogoDoGalo.html#a0f7ce4a28543ecf008178eaef50763bb">CJogoDoGalo</a>, <a class="el" href="classCJogoEmLinha.html#ab9857d1686186e7a82aed8a04212c096">CJogoEmLinha</a>, <a class="el" href="classCAspirador.html#ad7297465671c94a4311fdf79c83df9f7">CAspirador</a>, <a class="el" href="classCOitoDamas.html#af0a8cab93356541245ab11eba09afb80">COitoDamas</a>, <a class="el" href="classCParticao.html#a3f4478d3c34bb3027470560be24d42fa">CParticao</a>, and <a class="el" href="classCPuzzle8.html#a0a3733f868f56e1f80a40d7fe5bae27e">CPuzzle8</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l01024">1024</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l01043">1043</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -275,12 +275,12 @@ Uma heurística pode resultar de um relaxamento do problema. Verifique se o prob
 <div class="line">    <span class="comment">// chamar a função heurística da superclass</span></div>
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40">TProcuraConstrutiva::Heuristica</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__RedefinicaoSugerida_html_ga0e8bb1bd33683545dc4f8f6329548b40"><div class="ttname"><a href="group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40">TProcuraConstrutiva::Heuristica</a></div><div class="ttdeci">virtual int Heuristica(void)</div><div class="ttdoc">Função para calcular quanto falta para o final, o valor da heurística.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00622">TProcuraConstrutiva.cpp:622</a></div></div>
-<div class="ttc" id="agroup__VariaveisEstado_html_ga1703a3b3ed01aa7742846d296aad112d"><div class="ttname"><a href="group__VariaveisEstado.html#ga1703a3b3ed01aa7742846d296aad112d">TProcuraConstrutiva::heuristica</a></div><div class="ttdeci">int heuristica</div><div class="ttdoc">Estimativa para o custo até um estado objetivo, se disponível.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00128">TProcuraConstrutiva.h:128</a></div></div>
+<div class="ttc" id="agroup__RedefinicaoSugerida_html_ga0e8bb1bd33683545dc4f8f6329548b40"><div class="ttname"><a href="group__RedefinicaoSugerida.html#ga0e8bb1bd33683545dc4f8f6329548b40">TProcuraConstrutiva::Heuristica</a></div><div class="ttdeci">virtual int Heuristica(void)</div><div class="ttdoc">Função para calcular quanto falta para o final, o valor da heurística.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8cpp_source.html#l00641">TProcuraConstrutiva.cpp:641</a></div></div>
+<div class="ttc" id="agroup__VariaveisEstado_html_ga1703a3b3ed01aa7742846d296aad112d"><div class="ttname"><a href="group__VariaveisEstado.html#ga1703a3b3ed01aa7742846d296aad112d">TProcuraConstrutiva::heuristica</a></div><div class="ttdeci">int heuristica</div><div class="ttdoc">Estimativa para o custo até um estado objetivo, se disponível.</div><div class="ttdef"><b>Definition</b> <a href="TProcuraConstrutiva_8h_source.html#l00092">TProcuraConstrutiva.h:92</a></div></div>
 </div><!-- fragment --> 
 <p>Reimplemented in <a class="el" href="classCJogoDoGalo.html#a3563839d5ffc94973acee1a1783e3527">CJogoDoGalo</a>, <a class="el" href="classCJogoEmLinha.html#afe8d4a92e1840c1436c295c5a13760db">CJogoEmLinha</a>, <a class="el" href="classTProcuraAdversa.html#a75e148ba0a922339333940828366aed6">TProcuraAdversa</a>, <a class="el" href="classCAspirador.html#ada888731b2cca0a8bfa410e9bf4d188a">CAspirador</a>, and <a class="el" href="classCPuzzle8.html#a273bc37daab41bce1aab45517e800d27">CPuzzle8</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00622">622</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcuraConstrutiva_8cpp_source.html#l00641">641</a> of file <a class="el" href="TProcuraConstrutiva_8cpp_source.html">TProcuraConstrutiva.cpp</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

@@ -60,5 +60,4 @@ digraph "TProcura::ParametroAtivo"
   Node22 [id="Node000022",label="TProcura::RelatorioCSV",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#aa86b96b672310c9e4a01806ff264e3ab",tooltip="Gera um relatório CSV com os resultados."];
   Node22 -> Node16 [id="edge32_Node000022_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 -> Node17 [id="edge33_Node000022_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node22 -> Node21 [id="edge34_Node000022_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

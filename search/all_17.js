@@ -8,7 +8,7 @@ var searchData=
   ['ndamas_5',['nDamas',['../classCOitoDamas.html#a3714dcd7f610c067ee86593390c3d45b',1,'COitoDamas']]],
   ['nelementos_6',['nelementos',['../classTCodificacaoReal.html#aca148f3ecab608c81ae28dd4fb5ae85a',1,'TCodificacaoReal::nElementos'],['../classTCodificacaoPermutacao.html#a6db3a625cc78d662fa1f1f516a9cd0b1',1,'TCodificacaoPermutacao::nElementos'],['../classTCodificacaoInteira.html#a5b16dd4be6c560df11cf15a824d0eaad',1,'TCodificacaoInteira::nElementos'],['../classTCodificacaoBinaria.html#a89ced05839a59a91748ca6b4ae0fbc4c',1,'TCodificacaoBinaria::nElementos']]],
   ['nivel_7',['nivel',['../structSValorEstado.html#aacc79a74672b452d6939ee17b987560c',1,'SValorEstado::nivel'],['../classCProblemaArtificial.html#a43f8923ae24ecd1e2349e2379e66d51f',1,'CProblemaArtificial::nivel']]],
-  ['nivel_5fdebug_8',['NIVEL_DEBUG',['../TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3',1,'TProcura.h']]],
+  ['nivel_5fdebug_8',['NIVEL_DEBUG',['../classTProcura.html#ab5027f444b7f50560683092a2c4c36c4',1,'TProcura']]],
   ['nivelok_9',['nivelOK',['../classTProcuraAdversa.html#ad3c1d255519bd00ea9adc042720b17cf',1,'TProcuraAdversa']]],
   ['njogadas_10',['nJogadas',['../structSResultadoJogo.html#a291913206f8c46a4ea3a395925592349',1,'SResultadoJogo']]],
   ['no_20tprocura_11',['Características dos Testes no TProcura',['../investigacao.html#autotoc_md9',1,'']]],

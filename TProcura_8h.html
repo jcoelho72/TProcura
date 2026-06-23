@@ -165,24 +165,6 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a2b2b75cdcabfc0008a130fb49597e29b" id="r_a2b2b75cdcabfc0008a130fb49597e29b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29b">EIndicadoresProcura</a> { <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29bae0a2fcc9529e9f164d57ad46c224812e">IND_RESULTADO</a> = 0
-, <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff">IND_TEMPO</a>
-, <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba97d29cd7ac74f317aa24647078b74c58">IND_ITERACOES</a>
-, <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29bac172e855e17f9858284ee80b5040d9ce">IND_PROCURA</a>
- }</td></tr>
-<tr class="separator:a2b2b75cdcabfc0008a130fb49597e29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9850fa0e8c4a6f8112bf071778c1dc6" id="r_ab9850fa0e8c4a6f8112bf071778c1dc6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6">EParametrosProcura</a> { <br />
-&#160;&#160;<a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a3b2430b904112624118081fcfe160812">ALGORITMO</a> = 0
-, <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>
-, <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a950d9177aa4b7541b78cbc2bb1657b90">SEMENTE</a>
-, <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ad4d1ad2d967b020f5527e13a8db8a1bc">LIMITE_TEMPO</a>
-, <br />
-&#160;&#160;<a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a59eb50b8b96453c7ff04c538a27b52bd">LIMITE_ITERACOES</a>
-, <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa552224ca253c2e061d55a1a50557c5c">PARAMETROS_PROCURA</a>
-<br />
- }</td></tr>
-<tr class="memdesc:ab9850fa0e8c4a6f8112bf071778c1dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifica um parâmetro específico no código.  <a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6">More...</a><br /></td></tr>
-<tr class="separator:ab9850fa0e8c4a6f8112bf071778c1dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f2d53e364b23f725c2b357d0fd5eaf8" id="r_a9f2d53e364b23f725c2b357d0fd5eaf8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8">ENivelDebug</a> { <br />
 &#160;&#160;<a class="el" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e">NADA</a> = 0
 , <a class="el" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378">ATIVIDADE</a>
@@ -370,11 +352,10 @@ Variables</h2></td></tr>
 <p>Estrutura para registo de um parâmetro. </p>
 <p>Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.</p>
 <dl class="section note"><dt>Note</dt><dd>Existe um vetor de parâmetros declarado de forma estática, de modo a aceder a qualquer parâmetro de forma global no código. A ordem dos parâmetros estão de acordo com o tipo enumerado EParametrosConstrutiva</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6" title="Identifica um parâmetro específico no código.">EParametrosProcura</a> e ResetParametros()</dd></dl>
-<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
+<dl class="section see"><dt>See also</dt><dd>EParametrosProcura e ResetParametros()</dd></dl>
+<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(NIVEL_DEBUG) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
 <div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
-<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a></div><div class="ttdeci">@ PASSOS</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00093">TProcura.h:93</a></div></div>
-<div class="ttc" id="aTProcura_8h_html_ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3"><div class="ttname"><a href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a></div><div class="ttdeci">@ NIVEL_DEBUG</div><div class="ttdoc">Nível de debug, de reduzido a completo.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00071">TProcura.h:71</a></div></div>
+<div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a></div><div class="ttdeci">@ PASSOS</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00060">TProcura.h:60</a></div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -422,7 +403,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="ae6a51f7b959057a9cb6ec668ce717d1faeee9a0da38f61101e8073ca6117164c1" name="ae6a51f7b959057a9cb6ec668ce717d1faeee9a0da38f61101e8073ca6117164c1"></a>Fundo&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00136">136</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00103">103</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -457,33 +438,7 @@ Variables</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00111">111</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
-
-</div>
-</div>
-<a id="a2b2b75cdcabfc0008a130fb49597e29b" name="a2b2b75cdcabfc0008a130fb49597e29b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b2b75cdcabfc0008a130fb49597e29b">&#9670;&#160;</a></span>EIndicadoresProcura</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29b">EIndicadoresProcura</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29bae0a2fcc9529e9f164d57ad46c224812e" name="a2b2b75cdcabfc0008a130fb49597e29bae0a2fcc9529e9f164d57ad46c224812e"></a>IND_RESULTADO&#160;</td><td class="fielddoc"><p>resultado do algoritmo (&gt;=0 custo da solução, -1 impossível, -2 não resolvido) </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff" name="a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff"></a>IND_TEMPO&#160;</td><td class="fielddoc"><p>tempo em milissegundos consumidos </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29ba97d29cd7ac74f317aa24647078b74c58" name="a2b2b75cdcabfc0008a130fb49597e29ba97d29cd7ac74f317aa24647078b74c58"></a>IND_ITERACOES&#160;</td><td class="fielddoc"><p>número de iterações consumidas </p>
-</td></tr>
-<tr><td class="fieldname"><a id="a2b2b75cdcabfc0008a130fb49597e29bac172e855e17f9858284ee80b5040d9ce" name="a2b2b75cdcabfc0008a130fb49597e29bac172e855e17f9858284ee80b5040d9ce"></a>IND_PROCURA&#160;</td><td class="fielddoc"><p>Marcador para permitir a extensão do enum em subclasses. </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00044">44</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00078">78</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -502,7 +457,7 @@ Variables</h2></td></tr>
 <p>Níveis de detalhamento para debug. </p>
 <p>Controla a quantidade de informações exibidas durante a execução do algoritmo.</p>
 <dl class="section see"><dt>See also</dt><dd>nivelDebug</dd></dl>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(NIVEL_DEBUG) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
 <div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
 </div><!-- fragment --> <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e" name="a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e"></a>NADA&#160;</td><td class="fielddoc"><p>Sem informações de debug. </p>
@@ -519,7 +474,7 @@ Variables</h2></td></tr>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00090">90</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00057">57</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -542,44 +497,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a10f5ddbb9232fda16b29e31829ac51d3ae6fe9228f4939ae8277bb49921020a46" name="a10f5ddbb9232fda16b29e31829ac51d3ae6fe9228f4939ae8277bb49921020a46"></a>LER&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00104">104</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
-
-</div>
-</div>
-<a id="ab9850fa0e8c4a6f8112bf071778c1dc6" name="ab9850fa0e8c4a6f8112bf071778c1dc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9850fa0e8c4a6f8112bf071778c1dc6">&#9670;&#160;</a></span>EParametrosProcura</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6">EParametrosProcura</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Identifica um parâmetro específico no código. </p>
-<p>Permite aceder a cada parâmetro sem precisar saber seu código numérico. Índice do vetor de parâmetros, na classe <a class="el" href="classTProcura.html" title="Classe base para todas as procuras.">TProcura</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>O último elemento (<code>parametrosProcura</code>) não representa um parâmetro real. Existe para permitir a criação de uma enumeração adicional em subclasses, caso seja necessário adicionar parâmetros específicos.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="TProcura_8h.html#aac9b452041c04268ab8dafdc7542dbf0" title="Estrutura para registo de um parâmetro.">TParametro</a>, ExecutaAlgoritmo()</dd></dl>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(<a class="code hl_enumvalue" href="TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3">NIVEL_DEBUG</a>) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
-<div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
-</div><!-- fragment --> <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6a3b2430b904112624118081fcfe160812" name="ab9850fa0e8c4a6f8112bf071778c1dc6a3b2430b904112624118081fcfe160812"></a>ALGORITMO&#160;</td><td class="fielddoc"><p>Algoritmo base a executar. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3" name="ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3"></a>NIVEL_DEBUG&#160;</td><td class="fielddoc"><p>Nível de debug, de reduzido a completo. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6a950d9177aa4b7541b78cbc2bb1657b90" name="ab9850fa0e8c4a6f8112bf071778c1dc6a950d9177aa4b7541b78cbc2bb1657b90"></a>SEMENTE&#160;</td><td class="fielddoc"><p>Semente aleatória para inicializar a sequência de números pseudo-aleatórios. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6ad4d1ad2d967b020f5527e13a8db8a1bc" name="ab9850fa0e8c4a6f8112bf071778c1dc6ad4d1ad2d967b020f5527e13a8db8a1bc"></a>LIMITE_TEMPO&#160;</td><td class="fielddoc"><p>Tempo limite em segundos. </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6a59eb50b8b96453c7ff04c538a27b52bd" name="ab9850fa0e8c4a6f8112bf071778c1dc6a59eb50b8b96453c7ff04c538a27b52bd"></a>LIMITE_ITERACOES&#160;</td><td class="fielddoc"><p>Número máximo de iterações (0 significa sem limite). </p>
-</td></tr>
-<tr><td class="fieldname"><a id="ab9850fa0e8c4a6f8112bf071778c1dc6aa552224ca253c2e061d55a1a50557c5c" name="ab9850fa0e8c4a6f8112bf071778c1dc6aa552224ca253c2e061d55a1a50557c5c"></a>PARAMETROS_PROCURA&#160;</td><td class="fielddoc"><p>Marcador para permitir a extensão do enum em subclasses. </p>
-</td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00069">69</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00071">71</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>
@@ -603,7 +521,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a084a356cffd72e2407083ceb2a3202efa72a37fad23091f34df76a06c06d882b4" name="a084a356cffd72e2407083ceb2a3202efa72a37fad23091f34df76a06c06d882b4"></a>TAG_JOGO&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00124">124</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TProcura_8h_source.html#l00091">91</a> of file <a class="el" href="TProcura_8h_source.html">TProcura.h</a>.</p>
 
 </div>
 </div>

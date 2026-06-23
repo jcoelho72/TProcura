@@ -186,15 +186,12 @@ digraph "TProcura::main"
   Node77 -> Node31 [id="edge130_Node000077_Node000031",color="steelblue1",style="solid",tooltip=" "];
   Node77 -> Node27 [id="edge131_Node000077_Node000027",color="steelblue1",style="solid",tooltip=" "];
   Node77 -> Node34 [id="edge132_Node000077_Node000034",color="steelblue1",style="solid",tooltip=" "];
-  Node77 -> Node8 [id="edge133_Node000077_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node77 -> Node39 [id="edge134_Node000077_Node000039",color="steelblue1",style="solid",tooltip=" "];
-  Node77 -> Node42 [id="edge135_Node000077_Node000042",color="steelblue1",style="solid",tooltip=" "];
-  Node77 -> Node55 [id="edge136_Node000077_Node000055",color="steelblue1",style="solid",tooltip=" "];
-  Node77 -> Node56 [id="edge137_Node000077_Node000056",color="steelblue1",style="solid",tooltip=" "];
-  Node77 -> Node57 [id="edge138_Node000077_Node000057",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node80 [id="edge139_Node000001_Node000080",color="steelblue1",style="solid",tooltip=" "];
-  Node80 [id="Node000080",label="TString::tok",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTString.html#a1c97cb769a9101f4bf899f527adceea6",tooltip=" "];
-  Node80 -> Node12 [id="edge140_Node000080_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node80 -> Node12 [id="edge141_Node000080_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node80 -> Node80 [id="edge142_Node000080_Node000080",color="steelblue1",style="solid",tooltip=" "];
+  Node77 -> Node39 [id="edge133_Node000077_Node000039",color="steelblue1",style="solid",tooltip=" "];
+  Node77 -> Node42 [id="edge134_Node000077_Node000042",color="steelblue1",style="solid",tooltip=" "];
+  Node77 -> Node57 [id="edge135_Node000077_Node000057",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node79 [id="edge136_Node000001_Node000079",color="steelblue1",style="solid",tooltip=" "];
+  Node79 [id="Node000079",label="TString::tok",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$classTString.html#a1c97cb769a9101f4bf899f527adceea6",tooltip=" "];
+  Node79 -> Node12 [id="edge137_Node000079_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node79 -> Node12 [id="edge138_Node000079_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node79 -> Node79 [id="edge139_Node000079_Node000079",color="steelblue1",style="solid",tooltip=" "];
 }

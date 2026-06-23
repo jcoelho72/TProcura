@@ -103,8 +103,5 @@ digraph "TProcura::MostraTempo"
   Node39 [id="Node000039",label="TProcura::TesteEmpiricoTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a79047083f0756a123a7e489027d48c3a",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node39 -> Node29 [id="edge58_Node000039_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node38 -> Node16 [id="edge59_Node000038_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node38 -> Node40 [id="edge60_Node000038_Node000040",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node40 [id="Node000040",label="TProcura::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a60074f8de5e9e28abcc68246f8dfae8e",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
-  Node40 -> Node29 [id="edge61_Node000040_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node31 [id="edge62_Node000001_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node31 [id="edge60_Node000001_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

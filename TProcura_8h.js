@@ -29,12 +29,6 @@ var TProcura_8h =
       [ "CONT_CHECKPOINT", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501a7870afaea840c9f32e29d18841b23ac2", null ],
       [ "CONT_NUMERO", "TProcura_8h.html#ab79dbb572a75555ba44a86b6605a2501a4b8d8613b11a48b4adfbabf70ed21813", null ]
     ] ],
-    [ "EIndicadoresProcura", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29b", [
-      [ "IND_RESULTADO", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29bae0a2fcc9529e9f164d57ad46c224812e", null ],
-      [ "IND_TEMPO", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba35218b4adbad198890064c0e243dd4ff", null ],
-      [ "IND_ITERACOES", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29ba97d29cd7ac74f317aa24647078b74c58", null ],
-      [ "IND_PROCURA", "TProcura_8h.html#a2b2b75cdcabfc0008a130fb49597e29bac172e855e17f9858284ee80b5040d9ce", null ]
-    ] ],
     [ "ENivelDebug", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8", [
       [ "NADA", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e", null ],
       [ "ATIVIDADE", "TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a8673d373e54cb1adafe5a91f8bb44378", null ],
@@ -46,14 +40,6 @@ var TProcura_8h =
     [ "EOperacao", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3", [
       [ "GRAVAR", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3a5f2b018e9e5b8b220fe8a17ac39ff042", null ],
       [ "LER", "TProcura_8h.html#a10f5ddbb9232fda16b29e31829ac51d3ae6fe9228f4939ae8277bb49921020a46", null ]
-    ] ],
-    [ "EParametrosProcura", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6", [
-      [ "ALGORITMO", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a3b2430b904112624118081fcfe160812", null ],
-      [ "NIVEL_DEBUG", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa13404a7e94fc9c266d9689d5bc9ddf3", null ],
-      [ "SEMENTE", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a950d9177aa4b7541b78cbc2bb1657b90", null ],
-      [ "LIMITE_TEMPO", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6ad4d1ad2d967b020f5527e13a8db8a1bc", null ],
-      [ "LIMITE_ITERACOES", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6a59eb50b8b96453c7ff04c538a27b52bd", null ],
-      [ "PARAMETROS_PROCURA", "TProcura_8h.html#ab9850fa0e8c4a6f8112bf071778c1dc6aa552224ca253c2e061d55a1a50557c5c", null ]
     ] ],
     [ "ETagMPI", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202ef", [
       [ "TAG_TRABALHO", "TProcura_8h.html#a084a356cffd72e2407083ceb2a3202efa28b61c2fd0e2b5ad28a91a15f503a661", null ],
