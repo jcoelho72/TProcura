@@ -1,6 +1,14 @@
 #include "TCodificacaoPermutacao.h"
 
-int TCodificacaoPermutacao::nElementos = 0; // número de elementos na permutação 
+int TCodificacaoPermutacao::nElementos = 0; // número de elementos na permutação
+
+// nomes dos parâmetros fixos na codificação binária
+int TCodificacaoPermutacao::TIPO_CRUZAR_CP;
+int TCodificacaoPermutacao::TIPO_MUTAR_CP;
+int TCodificacaoPermutacao::TIPO_VIZINHO_CP;
+int TCodificacaoPermutacao::LIMITE_VIZINHOS_CP;
+int TCodificacaoPermutacao::TIPO_DISTANCIA_CP;
+
 
 void TCodificacaoPermutacao::Copiar(TPonto objeto) {
 	TCodificacaoPermutacao& obj = *((TCodificacaoPermutacao*)objeto);
@@ -24,6 +32,7 @@ void TCodificacaoPermutacao::ResetParametros() {
 	TProcuraMelhorativa::ResetParametros();
 
 	// parâmetros da codificação inteira
+	TIPO_DISTANCIA_CP = (LIMITE_VIZINHOS_CP = (TIPO_VIZINHO_CP = (TIPO_MUTAR_CP = (TIPO_CRUZAR_CP = parametro.Count()) + 1) + 1) + 1) + 1;
 	parametro += {
 		{ "TIPO_CRUZAR", 3, 1, 4, "TIPO_CRUZAR: 1 - PMX, 2 - Edge, 3 - Order; 4 - Cycle", {
 			"PMX","Edge","Order","Cycle" } },

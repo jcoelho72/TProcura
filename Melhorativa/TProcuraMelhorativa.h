@@ -6,21 +6,6 @@
 class TProcuraMelhorativa;
 typedef TProcuraMelhorativa* TPonto;
 
-// nomes dos parâmetros fixos na procura melhorativa
-enum EMelhorativas {
-	POPULACAO = PARAMETROS_PROCURA, PROB_CRUZAR,
-	PROB_MUTAR, SELECAO, PRESSAO, TAMANHO_TORNEIO, 
-	PROB_MELHOR_TORNEIO, SOBREVIVENCIA, PERC_DESCENDENTES, 
-	Q_ROUND_ROBIN, ELITISMO, IMIGRANTES, 
-	DIVERSIDADE, DIST_MINIMA, //MOVE_PRIMEIRO,
-	PARAMETROS_MELHORATIVA
-};
-
-enum EIndicadoresConstrutiva {
-	IND_EPOCAS = IND_PROCURA,    ///< Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
-	IND_GERACOES,               ///< número de estados gerados durante a procura
-	IND_MELHORATIVA             ///< Marcador para permitir a extensão do enum em subclasses.
-};
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -219,4 +204,28 @@ protected:
 	void DebugID(int id, int pop); // mostra indivíduo ID com cor única, se elemento da população
 	void DiversidadeAE(TVector<TPonto>& populacao,
 		int& minDist, int& maxDist, int& avgDist, int& melhorPior);
+
+public:
+	/// Indicadores (variáveis estáticas)
+	static int IND_EPOCAS;    ///< Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
+	static int IND_GERACOES;  ///< número de estados gerados durante a procura
+
+	// nomes dos parâmetros fixos na procura melhorativa
+	static int POPULACAO;
+	static int PROB_CRUZAR;
+	static int PROB_MUTAR;
+	static int SELECAO;
+	static int PRESSAO;
+	static int TAMANHO_TORNEIO;
+	static int PROB_MELHOR_TORNEIO;
+	static int SOBREVIVENCIA;
+	static int PERC_DESCENDENTES;
+	static int Q_ROUND_ROBIN;
+	static int ELITISMO;
+	static int IMIGRANTES;
+	static int DIVERSIDADE;
+	static int DIST_MINIMA;
+	//MOVE_PRIMEIRO,
+
+
 };

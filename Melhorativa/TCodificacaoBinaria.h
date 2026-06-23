@@ -1,11 +1,6 @@
 #pragma once
 #include "TProcuraMelhorativa.h"
 
-// nomes dos parâmetros fixos na codificação binária
-enum ECodificacaoBinaria {
-	TIPO_CRUZAR_CB = PARAMETROS_MELHORATIVA, 
-	TIPO_MUTAR_CB, TIPO_VIZINHO_CB, PARAMETROS_CB
-};
 
 // classe para permitir referência a um bit, para leitura e escrita 
 class BitRef {
@@ -70,5 +65,11 @@ public:
 	int Distancia(TPonto a);
 
 	using TProcura::Debug;
+
+
+	// nomes dos parâmetros fixos na codificação binária
+	static int TIPO_CRUZAR_CB;
+	static int TIPO_MUTAR_CB;
+	static int TIPO_VIZINHO_CB;
 };
 

@@ -6,18 +6,15 @@
 
 static std::mt19937_64 rng{ std::random_device{}() };
 
-enum EParametrosVector {
-	ESTRUTURA_DADOS = PARAMETROS_PROCURA         ///< estrutura base a utilizar
-};
+// parametro local
+int ESTRUTURA_DADOS;         ///< estrutura base a utilizar
 
-enum EIndicadoresVector {
-	IND_ORDENAR = IND_PROCURA, ///< verifica se está ordenado
-};
+// indicador local
+int IND_ORDENAR; ///< verifica se está ordenado
 
 void CTesteTVector::ResetParametros()
 {
 	TProcura::ResetParametros();
-
 	parametro[ALGORITMO] = { "ALGORITMO",1,1,12,"Método para teste.", {
 		"Add()", "Sort()", "RandomOrder()", "Invert()", "BeASet()",
 		"Difference()", "Union()", "Contained()", "Intersection()",
@@ -25,11 +22,13 @@ void CTesteTVector::ResetParametros()
 	};
 
 	// estrutura de dados
+	ESTRUTURA_DADOS = parametro.Count();
 	parametro += { "ESTRUTURA_DADOS", 1, 1, 3, "Estrutura de dados utilizada para vetor.", {
 		"TVector", "std::vector", "TVector/std::algorithm" }
 	};
 
-	indicador += { "IND_ORDENAR", "verifica se o vetor está ordenado", IND_ORDENAR };
+	int indBase = indicador.Count();
+	indicador += { "IND_ORDENAR", "verifica se o vetor está ordenado", IND_ORDENAR = indBase };
 	indAtivo += IND_ORDENAR;
 
 	instancia = { "Dados", 1,1,10, "Vetores aleatórios de K milhões"};

@@ -3,6 +3,13 @@
 // número de elementos binários na codificação 
 int TCodificacaoBinaria::nElementos = 0;
 
+
+// nomes dos parâmetros fixos na codificação binária
+int TCodificacaoBinaria::TIPO_CRUZAR_CB;
+int TCodificacaoBinaria::TIPO_MUTAR_CB;
+int TCodificacaoBinaria::TIPO_VIZINHO_CB;
+
+
 void TCodificacaoBinaria::Copiar(TPonto objeto) {
 	TCodificacaoBinaria& obj = *((TCodificacaoBinaria*)objeto);
 	estado = obj.estado;
@@ -35,6 +42,7 @@ void TCodificacaoBinaria::ResetParametros() {
 	TProcuraMelhorativa::ResetParametros();
 
 	// parâmetros da codificação binária
+	TIPO_VIZINHO_CB = (TIPO_MUTAR_CB = (TIPO_CRUZAR_CB = parametro.Count()) + 1) + 1;
 	parametro += {
 		{ "TIPO_CRUZAR", 1, 0, 10, "TIPO_CRUZAR: 1 - um ponto, >=2 N-pontos, 0 - uniforme", {
 			"uniforme", "2-pontos", "3-pontos", "4-pontos", "5-pontos",

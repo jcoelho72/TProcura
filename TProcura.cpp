@@ -48,9 +48,23 @@ int TProcura::modoKMGT = 0;
 // conjuntos de valores de parâmetros, para teste
 TVector<TVector<int>> TProcura::configuracoes;
 
+/// Indicadores (variáveis estáticas)
+int TProcura::IND_RESULTADO = 0;     ///< resultado do algoritmo (>=0 custo da solução, -1 impossível, -2 não resolvido)
+int TProcura::IND_TEMPO = 1;         ///< tempo em milissegundos consumidos
+int TProcura::IND_ITERACOES = 2;     ///< número de iterações consumidas
+
+int TProcura::ALGORITMO = 0;        ///< Algoritmo base a executar.
+int TProcura::NIVEL_DEBUG = 1;          ///< Nível de debug, de reduzido a completo.
+int TProcura::SEMENTE = 2;              ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
+int TProcura::LIMITE_TEMPO = 3;         ///< Tempo limite em segundos. 
+int TProcura::LIMITE_ITERACOES = 4;     ///< Número máximo de iterações (0 significa sem limite).
+
+
+
 void TProcura::ResetParametros()
 {
 	// definir parâmetros base
+	LIMITE_ITERACOES = (LIMITE_TEMPO = (SEMENTE = (NIVEL_DEBUG = (ALGORITMO = parametro.Count()) + 1) + 1) + 1) + 1;
 	parametro = {
 		{ "ALGORITMO", 1, 1, 1, "Algoritmo base a executar.", {"Algoritmo base"} },
 		{ "NIVEL_DEBUG", 0, 0, 4, "Nível de debug, de reduzido a completo.",
@@ -61,10 +75,11 @@ void TProcura::ResetParametros()
 	};
 
 	// definir indicadores base
+	IND_ITERACOES = (IND_TEMPO = (IND_RESULTADO = indicador.Count()) + 1) + 1;
 	indicador = {
-		{ "Resultado", "Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", IND_RESULTADO },
-		{ "Tempo(ms)", "Tempo em milissegundos da execução (medida de esforço computacional).", IND_TEMPO },
-		{ "Iterações", "Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).", IND_ITERACOES }
+		{ "IND_RESULTADO", "Resultado do algoritmo, interpretado conforme o algoritmo (sucesso/insucesso, custo, qualidade, valor, etc.).", IND_RESULTADO },
+		{ "IND_TEMPO", "Tempo em milissegundos da execução (medida de esforço computacional).", IND_TEMPO },
+		{ "IND_ITERACOES", "Iterações do algoritmo, interpretadas conforme o algoritmo (medida de esforço independente do hardware).", IND_ITERACOES }
 	};
 	indAtivo = { IND_RESULTADO, IND_TEMPO, IND_ITERACOES };
 
@@ -74,14 +89,12 @@ void TProcura::ResetParametros()
 
 // retorna o valor do indicador[id]
 int64_t TProcura::Indicador(int id) {
-	switch (id) {
-	case IND_RESULTADO:
+	if (id == IND_RESULTADO)
 		return resultado;
-	case IND_TEMPO:
+	else if (id == IND_TEMPO)
 		return (int64_t)(1000 * tempo + 0.5);
-	case IND_ITERACOES:
+	else if (id == IND_ITERACOES)
 		return iteracoes;
-	}
 	return 0;
 }
 

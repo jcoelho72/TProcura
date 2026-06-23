@@ -2,24 +2,6 @@
 #include "../Construtiva/TProcuraConstrutiva.h"
 
 /**
-* @enum EParametrosAdversa
-* @brief Identifica um parâmetro específico no código.
-*
-* Permite aceder a cada parâmetro sem precisar saber seu código numérico.
-* Esta enumeração continua de EParametrosConstrutiva
-*
-* @see EParametrosConstrutiva
-*
-*/
-enum EParametrosAdversa {
-	ORDENAR_SUCESSORES = PARAMETROS_CONSTRUTIVA, ///< opção de ordenar sucessores por heurística, ou por último valor registado
-	PODA_HEURISTICA,      ///< permite cortar sucessores, mas calcula a heurística a todos, de modo a mantendo os melhores
-	PODA_CEGA,		     ///< corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória
-	HEUR_BASE,		     ///< valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 é o valor por omissão)
-	PARAMETROS_ADVERSA   ///< marcador para permitir a extensão do enum em subclasses.
-};
-
-/**
 * @brief tipo de valor resultante do minimax com cortes alfa/beta
 */
 enum ETipoValor {
@@ -172,4 +154,15 @@ protected:
 	static int reutilizadoAvaliacao; // número de vezes que uma avaliação é reutilizada
 
 	void DebugChamada(bool noFolha, int alfa = 0, int beta = 0);
+
+public:
+	/**
+	* @brief Parâmetros (variáveis estáticas) - Identifica um parâmetro específico no código.
+	*
+	* Permite aceder a cada parâmetro sem precisar saber seu código numérico.
+	*/
+	static int ORDENAR_SUCESSORES;   ///< opção de ordenar sucessores por heurística, ou por último valor registado
+	static int PODA_HEURISTICA;      ///< permite cortar sucessores, mas calcula a heurística a todos, de modo a mantendo os melhores
+	static int PODA_CEGA;		     ///< corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória
+	static int HEUR_BASE;		     ///< valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 é o valor por omissão)
 };

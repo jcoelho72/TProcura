@@ -28,6 +28,23 @@ int TProcuraConstrutiva::custoHT[TAMANHO_HASHTABLE]; // hashtable / custo do est
 TBits TProcuraConstrutiva::estadoCodHT; // elemento codificado
 int TProcuraConstrutiva::colocadosHT = 0; // número de elementos colocados na HT
 
+/// Indicadores (variáveis estáticas)
+int TProcuraConstrutiva::IND_CUSTO = TProcura::IND_RESULTADO; ///< o resultado é o custo da solução atual, sendo um upper bound (IND_CUSTO = IND_RESULTADO)
+int TProcuraConstrutiva::IND_EXPANSOES;     ///< número de expansões efetuadas durante a procura (primeiro ID)
+int TProcuraConstrutiva::IND_GERACOES;      ///< número de estados gerados durante a procura
+int TProcuraConstrutiva::IND_LOWER_BOUND;   ///< valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
+int TProcuraConstrutiva::IND_CONSTRUTIVA;   ///< Marcador para permitir a extensão do enum em subclasses.
+
+int TProcuraConstrutiva::VER_ACOES;				///< Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações.
+int TProcuraConstrutiva::LIMITE;					///< Valor dependente do algoritmo. Exemplo: Profundidade limitada.
+int TProcuraConstrutiva::ESTADOS_REPETIDOS;		///< Forma de lidar com estados repetidos (ignorá-los, ascendentes, gerados).
+int TProcuraConstrutiva::PESO_ASTAR;				///< Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. 
+int TProcuraConstrutiva::RUIDO_HEURISTICA;        ///< Ruído a adicionar à heurística para testes de robustez.
+int TProcuraConstrutiva::BARALHAR_SUCESSORES;     ///< Baralhar os sucessores ao expandir.
+
+
+
+
 TProcuraConstrutiva::TProcuraConstrutiva(void) {}
 
 
@@ -47,6 +64,7 @@ void TProcuraConstrutiva::ResetParametros()
 		"Branch and Bound" }
 	};
 	// parâmetros adicionados
+	BARALHAR_SUCESSORES = (RUIDO_HEURISTICA = (PESO_ASTAR = (ESTADOS_REPETIDOS = (LIMITE = (VER_ACOES = parametro.Count()) + 1) + 1) + 1) + 1) + 1;
 	parametro += {
 		{ "VER_ACOES", 4, 1, 100, "Mostra estado a cada K ações. Se 1 mostra sempre estados e nunca ações." },
 		{ "LIMITE",0,-1,1000000,
@@ -66,6 +84,7 @@ Profundidade: >0 limite de profundidade, =0 iterativo, <0 sem limite." },
 	};
 
 	// indicadores, alterar
+	IND_LOWER_BOUND = (IND_GERACOES = (IND_EXPANSOES = indicador.Count()) + 1) + 1;
 	indicador[IND_CUSTO].nome = "IND_CUSTO";
 	indicador[IND_CUSTO].descricao = "o resultado é o custo da solução atual";
 	// indicadores adicionados

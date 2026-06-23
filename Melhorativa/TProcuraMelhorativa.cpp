@@ -15,6 +15,26 @@ int TProcuraMelhorativa::epocas = 0;
  */
 const char* TProcuraMelhorativa::debugPrefixo = "";
 
+/// Indicadores (variáveis estáticas)
+int TProcuraMelhorativa::IND_EPOCAS;    ///< Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única. 
+int TProcuraMelhorativa::IND_GERACOES;  ///< número de estados gerados durante a procura
+
+// nomes dos parâmetros fixos na procura melhorativa
+int TProcuraMelhorativa::POPULACAO;
+int TProcuraMelhorativa::PROB_CRUZAR;
+int TProcuraMelhorativa::PROB_MUTAR;
+int TProcuraMelhorativa::SELECAO;
+int TProcuraMelhorativa::PRESSAO;
+int TProcuraMelhorativa::TAMANHO_TORNEIO;
+int TProcuraMelhorativa::PROB_MELHOR_TORNEIO;
+int TProcuraMelhorativa::SOBREVIVENCIA;
+int TProcuraMelhorativa::PERC_DESCENDENTES;
+int TProcuraMelhorativa::Q_ROUND_ROBIN;
+int TProcuraMelhorativa::ELITISMO;
+int TProcuraMelhorativa::IMIGRANTES;
+int TProcuraMelhorativa::DIVERSIDADE;
+int TProcuraMelhorativa::DIST_MINIMA;
+
 
 TProcuraMelhorativa::TProcuraMelhorativa(void)
 {
@@ -35,6 +55,10 @@ void TProcuraMelhorativa::ResetParametros()
 	parametro[ALGORITMO] = { "ALGORITMO",1,1,1,"Escolha do algoritmo base a executar.",{"Algoritmo Evolutivo" }};
 
 	// adicionar parâmetros da procura melhorativa
+	DIST_MINIMA = (DIVERSIDADE = (IMIGRANTES = (ELITISMO = (Q_ROUND_ROBIN =
+		(PERC_DESCENDENTES = (SOBREVIVENCIA = (PROB_MELHOR_TORNEIO = (TAMANHO_TORNEIO = 
+		(PRESSAO = (SELECAO = (PROB_MUTAR = (PROB_CRUZAR = (POPULACAO = parametro.Count()) + 1)
+			+ 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1) + 1;
 	parametro += {
 		{ "POPULACAO", 20, 2, 1000000, "Número de elementos em cada geração" },
 		{ "PROB_CRUZAR",100,0,100, "Probabilidade de um estado ser cruzado" },
@@ -68,9 +92,10 @@ Valores próximos de 1 (100) dão probabilidades quase iguais; valores próximos
 	};
 
 	// adicionar indicadores da procura melhorativa
+	int indBase = indicador.Count();
 	indicador += {
-		{ "Épocas", "Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", IND_EPOCAS },
-		{ "Gerações","número de estados gerados", IND_GERACOES }
+		{ "IND_EPOCAS", "Número de épocas decorridas num algoritmo evolutivo. Uma época é uma geração única.", IND_EPOCAS = indBase },
+		{ "IND_GERACOES","número de estados gerados", IND_GERACOES = indBase + 1}
 	};
 	indAtivo += {IND_EPOCAS, IND_GERACOES};
 }

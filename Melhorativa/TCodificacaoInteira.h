@@ -1,12 +1,6 @@
 #pragma once
 #include "TProcuraMelhorativa.h"
 
-// nomes dos parâmetros fixos na codificação binária
-enum ECodificacaoInteira {
-	TIPO_CRUZAR_CI = PARAMETROS_MELHORATIVA,
-	TIPO_MUTAR_CI, TIPO_VIZINHO_CI, LIMITE_VIZINHOS_CI, TIPO_DISTANCIA_CI,
-	PARAMETROS_CI
-};
 
 enum ETiposVizinhancaInteira {
 	vizIncDecValorCI = 1,    // incrementa/decrementa valor 
@@ -56,5 +50,13 @@ public:
 	int Distancia(TPonto a);
 
 	using TProcura::Debug;
+
+	// nomes dos parâmetros fixos na codificação binária
+	static int TIPO_CRUZAR_CI;
+	static int TIPO_MUTAR_CI;
+	static int TIPO_VIZINHO_CI;
+	static int LIMITE_VIZINHOS_CI;
+	static int TIPO_DISTANCIA_CI;
+
 };
 

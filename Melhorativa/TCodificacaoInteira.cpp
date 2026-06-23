@@ -1,7 +1,14 @@
 #include "TCodificacaoInteira.h"
 
 int TCodificacaoInteira::nElementos = 0; // número de elementos na permutação
-TVector<int> TCodificacaoInteira::maxValor; // valor máximo para cada elemento 
+TVector<int> TCodificacaoInteira::maxValor; // valor máximo para cada elemento
+
+// nomes dos parâmetros fixos na codificação binária
+int TCodificacaoInteira::TIPO_CRUZAR_CI;
+int TCodificacaoInteira::TIPO_MUTAR_CI;
+int TCodificacaoInteira::TIPO_VIZINHO_CI;
+int TCodificacaoInteira::LIMITE_VIZINHOS_CI;
+int TCodificacaoInteira::TIPO_DISTANCIA_CI;
 
 void TCodificacaoInteira::Copiar(TPonto objeto) {
 	TCodificacaoInteira& obj = *((TCodificacaoInteira*)objeto);
@@ -24,6 +31,7 @@ void TCodificacaoInteira::ResetParametros() {
 
 	TProcuraMelhorativa::ResetParametros();
 	// parâmetros da codificação inteira
+	TIPO_DISTANCIA_CI = (LIMITE_VIZINHOS_CI = (TIPO_VIZINHO_CI = (TIPO_MUTAR_CI = (TIPO_CRUZAR_CI = parametro.Count()) + 1) + 1) + 1) + 1;
 	parametro += {
 		{ "TIPO_CRUZAR", 1, 0, 10, "Cruzamento: N - N-pontos, 0 - uniforme", {
 			"uniforme","1-ponto","2-pontos","3-pontos","4-pontos",

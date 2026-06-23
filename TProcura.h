@@ -41,39 +41,6 @@ constexpr int RES_VAZIO = -4; // não existe resultado registado
 #endif
 constexpr int COR_LEVE_TAM = 9;   // bytes invisíveis (5 + 4), útil para alinhamento
 
-enum EIndicadoresProcura {
-	IND_RESULTADO = 0, ///< resultado do algoritmo (>=0 custo da solução, -1 impossível, -2 não resolvido)
-	IND_TEMPO,         ///< tempo em milissegundos consumidos
-	IND_ITERACOES,     ///< número de iterações consumidas
-	IND_PROCURA        ///< Marcador para permitir a extensão do enum em subclasses.
-};
-
-/**
- * @enum EParametrosProcura
- * @brief Identifica um parâmetro específico no código.
- *
- * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
- * Índice do vetor de parâmetros, na classe TProcura.
- *
- * @note O último elemento (`parametrosProcura`) não representa um parâmetro real.
- * Existe para permitir a criação de uma enumeração adicional em subclasses, caso
- * seja necessário adicionar parâmetros específicos.
- *
- * @see TParametro, ExecutaAlgoritmo()
- *
- * @code
- * if(Parametro(NIVEL_DEBUG) > PASSOS)
- *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
- * @endcode
- */
-enum EParametrosProcura {
-	ALGORITMO = 0,        ///< Algoritmo base a executar.
-	NIVEL_DEBUG,          ///< Nível de debug, de reduzido a completo.
-	SEMENTE,              ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
-	LIMITE_TEMPO,         ///< Tempo limite em segundos. 
-	LIMITE_ITERACOES,     ///< Número máximo de iterações (0 significa sem limite).
-	PARAMETROS_PROCURA    ///< Marcador para permitir a extensão do enum em subclasses.
-};
 
 /**
  * @brief Níveis de detalhamento para debug.
@@ -866,6 +833,30 @@ public:
 	/// @brief Mostra inteiro grande num formato humano.
 	static TString MostraInt(int64_t valor, bool cor = true);
 
+
+	/// Indicadores (variáveis estáticas)
+	static int IND_RESULTADO; ///< resultado do algoritmo (>=0 custo da solução, -1 impossível, -2 não resolvido)
+	static int IND_TEMPO;         ///< tempo em milissegundos consumidos
+	static int IND_ITERACOES;     ///< número de iterações consumidas
+
+	/**
+	 * @brief Parâmetros (variáveis estáticas)  
+	 *
+	 * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
+	 * Índice do vetor de parâmetros, na classe TProcura.
+	 *
+	 * @see TParametro, ExecutaAlgoritmo()
+	 *
+	 * @code
+	 * if(Parametro(NIVEL_DEBUG) > PASSOS)
+	 *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
+	 * @endcode
+	 */
+	static int ALGORITMO;        ///< Algoritmo base a executar.
+	static int NIVEL_DEBUG;          ///< Nível de debug, de reduzido a completo.
+	static int SEMENTE;              ///< Semente aleatória para inicializar a sequência de números pseudo-aleatórios.
+	static int LIMITE_TEMPO;         ///< Tempo limite em segundos. 
+	static int LIMITE_ITERACOES;     ///< Número máximo de iterações (0 significa sem limite).
 };
 
 

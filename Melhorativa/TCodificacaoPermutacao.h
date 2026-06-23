@@ -1,13 +1,6 @@
 #pragma once
 #include "TProcuraMelhorativa.h"
 
-// nomes dos parâmetros fixos na codificação binária
-enum ECodificacaoPermutacao {
-	TIPO_CRUZAR_CP = PARAMETROS_MELHORATIVA,
-	TIPO_MUTAR_CP, TIPO_VIZINHO_CP, LIMITE_VIZINHOS_CP, TIPO_DISTANCIA_CP,
-	PARAMETROS_CP
-};
-
 enum ETiposVizinhancaPermutacao {
 	vizInserirCP = 1,        // insere um elemento noutro local (deslocando os outros)
 	vizTrocaParCP,           // troca dois elementos (permuta)
@@ -53,5 +46,13 @@ public:
 	int Distancia(TPonto a);
 
 	using TProcura::Debug;
+
+	// nomes dos parâmetros fixos na codificação binária
+	static int TIPO_CRUZAR_CP;
+	static int TIPO_MUTAR_CP;
+	static int TIPO_VIZINHO_CP;
+	static int LIMITE_VIZINHOS_CP;
+	static int TIPO_DISTANCIA_CP;
+
 };
 

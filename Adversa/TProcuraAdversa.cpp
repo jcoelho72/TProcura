@@ -20,6 +20,13 @@ int TProcuraAdversa::reutilizadoAvaliacao;
 /// resultado após SolucaoCompleta() retornar true (-1 vitória minimizar, 0 empate, 1 vitória maximizar)
 int TProcuraAdversa::resultadoCompleto = 0;
 
+int TProcuraAdversa::ORDENAR_SUCESSORES;   ///< opção de ordenar sucessores por heurística, ou por último valor registado
+int TProcuraAdversa::PODA_HEURISTICA;      ///< permite cortar sucessores, mas calcula a heurística a todos, de modo a mantendo os melhores
+int TProcuraAdversa::PODA_CEGA;		     ///< corta os sucessores, mesmo sem calcular a heurística, por ordem aleatória
+int TProcuraAdversa::HEUR_BASE;		     ///< valor base para diferença entre ameaças de K e K-1 (100 não há diferença, 200 é o valor por omissão)
+
+
+
 TProcuraAdversa::TProcuraAdversa(void) : minimizar(true), indiceHT(-1)
 {
 
@@ -47,6 +54,7 @@ void TProcuraAdversa::ResetParametros()
 	parametro[RUIDO_HEURISTICA].dependencia = {}; // faz sentido com qualquer algoritmo de procura adversa, ao contrário das procuras construtivas
 
 	// adicionar parâmetros da procura adversa
+	HEUR_BASE = (PODA_CEGA = (PODA_HEURISTICA = (ORDENAR_SUCESSORES = parametro.Count()) + 1) + 1) +1;
 	parametro += {
 		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores." },
 		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores)." },

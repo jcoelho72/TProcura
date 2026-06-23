@@ -16,42 +16,6 @@ class CListaNo;
  */
 typedef TProcuraConstrutiva* TNo;
 
-enum EIndicadoresConstrutiva {
-	IND_CUSTO = IND_RESULTADO,	  ///< o resultado é o custo da solução atual, sendo um upper bound 
-	IND_EXPANSOES = IND_PROCURA,    ///< número de expansões efetuadas durante a procura
-	IND_GERACOES,                  ///< número de estados gerados durante a procura
-	IND_LOWER_BOUND,			      ///< valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
-	IND_CONSTRUTIVA                ///< Marcador para permitir a extensão do enum em subclasses.
-};
-
-/**
- * @enum EParametrosConstrutiva
- * @brief Identifica um parâmetro específico no código.
- *
- * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
- * Índice do vetor de parâmetros, na classe TProcuraConstrutiva.
- *
- * @note O último elemento (`parametrosConstrutivas`) não representa um parâmetro real.
- * Existe para permitir a criação de uma enumeração adicional em subclasses, caso
- * seja necessário adicionar parâmetros específicos.
- *
- * @see TParametro, ExecutaAlgoritmo()
- *
- * @code
- * if(Parametro(nivelDebug) > passos)
- *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
- * @endcode
- */
-enum EParametrosConstrutiva {
-	VER_ACOES = PARAMETROS_PROCURA, ///< Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações.
-	LIMITE,                ///< Valor dependente do algoritmo. Exemplo: Profundidade limitada.
-	ESTADOS_REPETIDOS,      ///< Forma de lidar com estados repetidos (ignorá-los, ascendentes, gerados).
-	PESO_ASTAR,             ///< Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. 
-	RUIDO_HEURISTICA,             ///< Ruído a adicionar à heurística para testes de robustez.
-	BARALHAR_SUCESSORES,           ///< Baralhar os sucessores ao expandir.
-	PARAMETROS_CONSTRUTIVA ///< Marcador para permitir a extensão do enum em subclasses.
-};
-
 
 /**
  * @brief Algoritmos disponíveis para procura construtiva.
@@ -776,5 +740,35 @@ protected:
 	// se existe retorna true 
 	bool ExisteHT();
 	virtual void SubstituirHT(int indice);
+
+public:
+	/// Indicadores (variáveis estáticas)
+	static int IND_CUSTO;	      ///< o resultado é o custo da solução atual, sendo um upper bound (IND_CUSTO = IND_RESULTADO)
+	static int IND_EXPANSOES;     ///< número de expansões efetuadas durante a procura (primeiro ID)
+	static int IND_GERACOES;      ///< número de estados gerados durante a procura
+	static int IND_LOWER_BOUND;   ///< valor mínimo para a melhor solução, se igual ao custo da solução obtida, então esta é ótima
+	static int IND_CONSTRUTIVA;   ///< Marcador para permitir a extensão do enum em subclasses.
+
+
+	/**
+	 * @brief Parâmetros (variáveis estátiacas) 
+	 *
+	 * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
+	 * Índice do vetor de parâmetros, na classe TProcuraConstrutiva.
+	 *
+	 * @see TParametro, ExecutaAlgoritmo()
+	 *
+	 * @code
+	 * if(Parametro(nivelDebug) > passos)
+	 *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
+	 * @endcode
+	 */
+	static int VER_ACOES;				///< Mostra estado a cada K ações. Se 1, mostra sempre estados e nunca ações.
+	static int LIMITE;					///< Valor dependente do algoritmo. Exemplo: Profundidade limitada.
+	static int ESTADOS_REPETIDOS;		///< Forma de lidar com estados repetidos (ignorá-los, ascendentes, gerados).
+	static int PESO_ASTAR;				///< Peso aplicado à heuristica, na soma com o custo para calculo do lower bound. 
+	static int RUIDO_HEURISTICA;        ///< Ruído a adicionar à heurística para testes de robustez.
+	static int BARALHAR_SUCESSORES;     ///< Baralhar os sucessores ao expandir.
+
 };
 
