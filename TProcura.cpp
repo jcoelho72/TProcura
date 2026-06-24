@@ -1400,7 +1400,7 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 
 // processa os argumentos da função main
 void TProcura::main(int argc, char* argv[], TString nome) {
-	TVector<int> instancias, impossiveis, parCVS = {};
+	TVector<int> instancias, impossiveis, parCSV = {};
 	TString fichResultados, fichSolucoes;
 	TString argParametros;
 	bool configIntroduzido = false; // caso sejam dadas configurações, remover as existentes
@@ -1441,7 +1441,7 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 			(fichResultados = "").printf("%s", argv[++i]);
 		}
 		else if (strcmp(argv[i], "-RP") == 0 && i + 1 < argc) {
-			(parCVS = {}) = argv[++i];
+			(parCSV = {}) = argv[++i];
 		}
 		else if (strcmp(argv[i], "-S") == 0 && i + 1 < argc) {
 			(fichSolucoes = "").printf("%s", argv[++i]);
@@ -1506,7 +1506,7 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 
 	if (!fichSolucoes.Empty()) {
 		// dado ficheiro de soluções, apenas validar as soluções, não executar o teste empírico
-		TesteValidacao(instancias, impossiveis, referencias, fichSolucoes, fichResultados, parCVS);
+		TesteValidacao(instancias, impossiveis, referencias, fichSolucoes, fichResultados, parCSV);
 	}
 	else {
 		// arrancar MPI apenas após processar os argumentos
@@ -1514,11 +1514,11 @@ void TProcura::main(int argc, char* argv[], TString nome) {
 
 		if (modoMPI == 0 || mpiCount == 1)
 			// divisão estática ou execução em série
-			TesteEmpirico(instancias, fichResultados, parCVS);
+			TesteEmpirico(instancias, fichResultados, parCSV);
 		else {
 			if (mpiID == 0)
 				// processo mestre
-				TesteEmpiricoGestor(instancias, fichResultados, parCVS);
+				TesteEmpiricoGestor(instancias, fichResultados, parCSV);
 			else
 				// processos escravos
 				TesteEmpiricoTrabalhador(instancias, fichResultados);
@@ -1534,7 +1534,7 @@ void TProcura::AjudaUtilizacao(TString programa) {
 		"  <instâncias>    Conjunto de IDs: A | A,B,C | A:B[:C]\n"
 		"Opções:\n"
 		"  -R <ficheiro>   Nome do CSV de resultados (omissão: resultados.csv)\n"
-		"  -RP <expr>      Conjunot de IDs dos parâmetros a gravar no CSV (omissão: todos)\n"
+		"  -RP <expr>      Conjunto de IDs dos parâmetros a gravar no CSV (omissão: todos)\n"
 		"  -S solucoes [custoMin,custoMax,tempoMin,tempoMax [<ids>]]\n"
 		"     caso exista ficheiro de soluções, pretende-se apenas validação\n"
 		"     pode-se dar referências de custo min/max e tempo min/max para indicador de desempenho\n"
