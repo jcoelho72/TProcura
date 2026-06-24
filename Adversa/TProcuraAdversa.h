@@ -74,13 +74,14 @@ public:
 	// Utilizar para executar testes empíricos
 	// Utiliza as configurações existentes, ou parâmetros atuais
 	// Efetua um torneio entre configurações
-	void TesteEmpirico(TVector<int> instancias, TString ficheiro = "") override;
+	void TesteEmpirico(TVector<int> instancias, TString ficheiro = "", TVector<int> parCSV = {}) override;
 	/// @brief Teste empírico com modo mestre-escravo (este é o mestre)
-	void TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro = "") override;
+	void TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro = "", TVector<int> parCSV = {}) override;
 	/// @brief Teste empírico com modo mestre-escravo (este é o escravo)
 	void TesteEmpiricoTrabalhador(TVector<int> instancias, TString ficheiro = "") override;
 
-	void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, TVector<int> referencias, TString fichSolucoes, TString fichResultados = "") override;
+	void TesteValidacao(TVector<int> instancias, TVector<int> impossiveis, TVector<int> referencias,
+		TString fichSolucoes, TString fichResultados = "", TVector<int> parCSV = {}) override;
 	bool Validar(TVector<TString> solucao) override;
 	TString Jogar(TString jogo, int configID);
 	void PontuacaoJogos(TVector<TString> &jogos);
@@ -136,7 +137,7 @@ protected:
 	 * @param resultados Vetor de resultados.
 	 * @param ficheiro com o nome do ficheiro onde gravar.
 	 */
-	bool RelatorioCSV(TVector<TResultadoJogo>& resultados, TString ficheiro);
+	bool RelatorioCSV(TVector<TResultadoJogo>& resultados, TString ficheiro, bool parametros = true, TVector<int> parCSV = {});
 
 	void OrdenarSucessores(TVector<TNo>& sucessores, TVector<int>& id, int nivel);
 

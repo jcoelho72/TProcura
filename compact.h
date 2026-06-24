@@ -145,8 +145,20 @@ namespace compat {
 		return "";
 	}
 
+    template <class T>
+    inline void operator|=(T& x, const T& y) {
+        if (x < y) x = y;
+    }
+
+    template <class T>
+    inline void operator&=(T& x, const T& y) {
+        if (y < x) x = y;
+    }
+
 } // namespace compat
 
 // este tipo e função ficam disponíveis sem necessidade de colocar compact::
 using compat::EIcon;
 using compat::Icon;
+using compat::operator&=;
+using compat::operator|=;

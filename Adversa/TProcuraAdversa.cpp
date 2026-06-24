@@ -33,8 +33,7 @@ TProcuraAdversa::TProcuraAdversa(void) : minimizar(true), indiceHT(-1)
 }
 
 TProcuraAdversa::~TProcuraAdversa(void)
-{
-}
+{}
 
 void TProcuraAdversa::ResetParametros()
 {
@@ -54,7 +53,7 @@ void TProcuraAdversa::ResetParametros()
 	parametro[RUIDO_HEURISTICA].dependencia = {}; // faz sentido com qualquer algoritmo de procura adversa, ao contrário das procuras construtivas
 
 	// adicionar parâmetros da procura adversa
-	HEUR_BASE = (PODA_CEGA = (PODA_HEURISTICA = (ORDENAR_SUCESSORES = parametro.Count()) + 1) + 1) +1;
+	HEUR_BASE = (PODA_CEGA = (PODA_HEURISTICA = (ORDENAR_SUCESSORES = parametro.Count()) + 1) + 1) + 1;
 	parametro += {
 		{ "ORDENAR_SUCESSORES", 2, 0, 2, "0 não ordena sucessores, 1 ordena por heurística, 2 usa o melhor valor de procuras anteriores." },
 		{ "PODA_HEURISTICA",0,0,1000, "0 não existe poda, caso contrário é o número máximo de sucessores a considerar (tem de se ordenar sucessores)." },
@@ -467,7 +466,7 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 // utilizar para executar testes empíricos, utilizando todas as instâncias,
 // Utiliza as configurações existentes, ou parâmetros atuais
 // Efetua um torneio entre configurações
-void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
+void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, TString ficheiro, TVector<int> parCSV) {
 	TVector<TResultadoJogo> resultados; // guarda resultado dos jogos (qualquer ordem)
 	TVector<int> atual;
 	double periodoReporte = 60;
@@ -530,7 +529,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, TString ficheiro) {
 		MostrarConfiguracoes(1);
 	}
 	else {
-		RelatorioCSV(resultados, ficheiro) &&
+		RelatorioCSV(resultados, ficheiro, true, parCSV) &&
 			printf("\n │ Ficheiro %s gravado.", *ficheiro);
 	}
 
@@ -612,7 +611,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 	}
 }
 
-void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro)
+void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro, TVector<int> parCSV)
 {
 #ifdef MPI_ATIVO
 	int dados[6] = { 0, 0, 0, 4,0,0 }; // instância, brancas, pretas
@@ -741,7 +740,7 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, TString fiche
 	double taxaUtilizacaoG = 1. - (esperaGestor / Cronometro(CONT_TESTE));
 	double taxaUtilizacao = 1. - ((esperaTrabalhadores + esperaGestor) / (Cronometro(CONT_TESTE) * mpiCount));
 	mpiCount = 1; // forçar a escrita do ficheiro apenas neste processo
-	RelatorioCSV(resultados, ficheiro) &&
+	RelatorioCSV(resultados, ficheiro, true, parCSV) &&
 		Debug(ATIVIDADE, false,
 			"\n ├─ %-2s Ficheiro %s.csv gravado.\n"
 			" │  %-2s Tempo real: %s",
@@ -808,7 +807,7 @@ void TProcuraAdversa::TesteEmpiricoTrabalhador(TVector<int> instancias, TString 
 }
 
 void TProcuraAdversa::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
-	TVector<int> referencias, TString fichSolucoes, TString fichResultados)
+	TVector<int> referencias, TString fichSolucoes, TString fichResultados, TVector<int> parCSV)
 {
 	TVector<TString> jogosAnterior, jogosAtual;
 	TVector<int> confActual;
@@ -1002,10 +1001,10 @@ void TProcuraAdversa::PontuacaoJogos(TVector<TString>& jogos)
 		}
 	}
 
-	pontos = Dominio(resultados, 0, 20) * 5 + delta;
+	pontos = ((resultados |= 0) &= 20) * 5 + delta; // resultados -> [0;20]
 	printf("\nComment :=>> \nComment :=>> Resultados:\nComment :=>> ➤ 🏆 A: %d pontos\nComment :=>> ➤ ⚔️ DEFG: %d\n"
 		"Comment :=>> ➤ 💰 Pontuação (0-100): %d\nGrade :=>> %d\n",
-		resultados, delta, Dominio(pontos, 0, 100), pontos);
+		resultados, delta, (pontos |= 0) &= 100, pontos);
 
 }
 
@@ -1062,7 +1061,7 @@ bool TProcuraAdversa::CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& a
 			else {
 				// diferença de um, mas garantir que não é um fim-de-jogo
 				TString ultimo = jogos[i].tok().Last();
-				for (auto &fim : TVector<TString>{ "Empate", "Brancas", "Pretas", "Inválido", "Erro" })
+				for (auto& fim : TVector<TString>{ "Empate", "Brancas", "Pretas", "Inválido", "Erro" })
 					if (ultimo == fim) {
 						// jogo terminado de forma inválida (sem lance extra)
 						jogos[i] = anterior[i];
@@ -1076,7 +1075,8 @@ bool TProcuraAdversa::CoerenciaJogo(TVector<TString>& jogos, TVector<TString>& a
 }
 
 
-bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString ficheiro) {
+bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString ficheiro,
+	bool parametros, TVector<int> parCSV) {
 	TString nome;
 	TVector<TString> linhas;
 	if (mpiCount > 1)
@@ -1101,17 +1101,20 @@ bool TProcuraAdversa::RelatorioCSV(TVector<TResultadoJogo>& resultados, TString 
 	linhas += TString("");
 	// No final, mostrar as configurações
 	linhas += TString("Jogador;");
-	for (int i = 0; i < parametro.Count(); i++)
-		linhas.Last().printf("P%d(%s);", i + 1, *parametro[i].nome);
+	if (parCSV.Empty())
+		for (int i = 0; i < parametro.Count(); i++)
+			parCSV += i + 1;
+	for (auto& id : parCSV)
+		linhas.Last().printf("P%d(%s);", id, *parametro[id - 1].nome);
 	for (int jogador = 0; jogador < configuracoes.Count(); jogador++) {
 		linhas += TString().printf("%d;", jogador + 1);
-		for (int j = 0; j < parametro.Count(); j++)
-			if (parametro[j].nomeValores.Empty())
-				linhas.Last().printf("%d;", configuracoes[jogador][j]);
+		for (auto& id : parCSV)
+			if (parametro[id - 1].nomeValores.Empty())
+				linhas.Last().printf("%d;", configuracoes[jogador][id - 1]);
 			else
 				linhas.Last().printf("%d:%s;",
-					configuracoes[jogador][j],
-					*parametro[j].nomeValores[configuracoes[jogador][j] - parametro[j].min]);
+					configuracoes[jogador][id - 1],
+					*parametro[id - 1].nomeValores[configuracoes[jogador][id - 1] - parametro[id - 1].min]);
 	}
 	nome.writeLines(linhas);
 	return true;
@@ -1122,8 +1125,8 @@ int TProcuraAdversa::ExecutaAlgoritmo() {
 	int resultado = -1;
 
 	switch (Parametro(ALGORITMO)) {
-	case 1: resultado = MiniMax(Dominio(Parametro(LIMITE), 0)); break;
-	case 2: resultado = MiniMaxAlfaBeta(Dominio(Parametro(LIMITE), 0)); break;
+	case 1: resultado = MiniMax(Parametro(LIMITE) |= 0); break; // limite min 0
+	case 2: resultado = MiniMaxAlfaBeta(Parametro(LIMITE) |= 0); break;
 	}
 	ramo.Last() = RAMO_CONTINUA;
 	if (Parametro(ORDENAR_SUCESSORES) == 2) {

@@ -138,7 +138,7 @@ void TProcura::TesteManual(TString nome)
 			Icon(EIcon::TESTE));
 		if ((selecao = NovoValor("\nOpção: ")) == NAO_LIDO)
 			return;
-		switch (Dominio(selecao, 0, 9)) {
+		switch ((selecao |= 0) &= 9) { // selecao fica entre 0 e 9
 		case 0: return;
 		case 1: SolicitaInstancia(); break;
 		case 2: Explorar(); break;
@@ -671,13 +671,13 @@ bool TProcura::EditarIndicadores() {
 		do {
 			if (opcao < 0) {
 				opcao = -opcao;
-				opcao = Dominio(opcao, 1, indicador.Count());
+				(opcao |= 1) &= indicador.Count(); // opção entre 1 e número de indicadores
 				printf(COR_LEVE "I%d(%s):" COR_RESET " %d", opcao, *indicador[opcao - 1].nome, (int)Indicador(opcao - 1));
 			}
 			if ((opcao = NovoValor("\nIndicador (positivo ativa/desativa; negativo calcula): ")) == NAO_LIDO || opcao == 0)
 				return editado;
 		} while (opcao < 0);
-		opcao = Dominio(opcao, 1, indicador.Count());
+		(opcao |= 1) &= indicador.Count();
 		if (indicador[opcao - 1].indice >= 0) {
 			for (int i = 0; i < indicador.Count(); i++)
 				if (i != opcao - 1 && indicador[i].indice > indicador[opcao - 1].indice)
@@ -704,7 +704,7 @@ void TProcura::EditarParametros() {
 		MostraParametros(2);
 		if ((opcao = NovoValor("\nParâmetro:")) == NAO_LIDO || opcao == 0)
 			return;
-		opcao = Dominio(opcao, 1, parametro.Count());
+		(opcao |= 1) &= parametro.Count(); // opção entre 1 e número de parâmetros
 		if (!ParametroAtivo(opcao - 1)) {
 			printf("\nParâmetro inativo.");
 			continue;
@@ -741,9 +741,8 @@ void TProcura::EditarParametros() {
 		valor = NovoValor("");
 		if (valor != NAO_LIDO || valor == 0)
 			Parametro(opcao - 1) =
-			Dominio(valor,
-				parametro[opcao - 1].min,
-				parametro[opcao - 1].max);
+				(valor |= parametro[opcao - 1].min)	&= parametro[opcao - 1].max;
+				// valor entre min e max
 	}
 }
 
@@ -897,7 +896,7 @@ void TProcura::EditarConfiguracoes() {
 
 		if ((auxID = atoi(str)) != 0) {
 			id = auxID;
-			id = Dominio(id, -configuracoes.Count(), configuracoes.Count());
+			(id |= -configuracoes.Count()) &= configuracoes.Count(); // entre - #configurações e + #configurações
 			if (id < 0) {
 				id++;
 				configuracoes.Delete(-id);
@@ -1950,7 +1949,8 @@ void TProcura::SolicitaInstancia() {
 		if (resultado != 0 || texto.Empty()) {
 			if (resultado != 0)
 				instancia.valor = resultado;
-			Dominio(instancia.valor, instancia.min, instancia.max);
+			(instancia.valor |= instancia.min) &= instancia.max;
+			// valor entre min e max
 		}
 		else if (texto.Count() < 256)
 			ficheiroInstancia = texto;
@@ -1958,15 +1958,6 @@ void TProcura::SolicitaInstancia() {
 	else
 		instancia.valor = instancia.min;
 	Inicializar();
-}
-
-
-int TProcura::Dominio(int& variavel, int min, int max) {
-	if (variavel < min)
-		variavel = min;
-	if (variavel > max)
-		variavel = max;
-	return variavel;
 }
 
 void TProcura::InicializaMPI(int argc, char* argv[])

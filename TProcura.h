@@ -796,15 +796,6 @@ protected:
 	 */
 	void AjudaUtilizacao(TString programa);
 
-	/**
-	 * @brief Limita o domínio de um parâmetro inteiro.
-	 * @param variavel Variável a limitar.
-	 * @param min Valor mínimo permitido.
-	 * @param max Valor máximo permitido.
-	 * @return Valor ajustado dentro do domínio.
-	 */
-	static int Dominio(int& variavel, int min = INT_MIN, int max = INT_MAX);
-
 	/// @brief Inicializa o ambiente MPI, se aplicável.
 	static void InicializaMPI(int argc, char* argv[]);
 	/// @brief Finaliza o ambiente MPI, se aplicável.
