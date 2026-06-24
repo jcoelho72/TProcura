@@ -15,23 +15,23 @@
 namespace compat {
 
 #ifndef _WIN32
-    // Classe RAII para ativar/desativar modo nativo (raw mode)
-    class ModoNativo {
-    public:
-        ModoNativo() {
-            tcgetattr(STDIN_FILENO, &orig);
-            termios raw = orig;
-            raw.c_lflag &= ~(ICANON | ECHO);
-            tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
-        }
+	// Classe RAII para ativar/desativar modo nativo (raw mode)
+	class ModoNativo {
+	public:
+		ModoNativo() {
+			tcgetattr(STDIN_FILENO, &orig);
+			termios raw = orig;
+			raw.c_lflag &= ~(ICANON | ECHO);
+			tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
+		}
 
-        ~ModoNativo() {
-            tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig);
-        }
+		~ModoNativo() {
+			tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig);
+		}
 
-    private:
-        termios orig;
-    };
+	private:
+		termios orig;
+	};
 #endif
 
 
@@ -53,7 +53,7 @@ namespace compat {
 		if (!str)
 			return 0;
 		while (*str) {
-			if ((*str & 0xC0) != 0x80) 
+			if ((*str & 0xC0) != 0x80)
 				count++;
 			str++;
 		}
@@ -145,20 +145,17 @@ namespace compat {
 		return "";
 	}
 
-    template <class T>
-    inline void operator|=(T& x, const T& y) {
-        if (x < y) x = y;
-    }
-
-    template <class T>
-    inline void operator&=(T& x, const T& y) {
-        if (y < x) x = y;
-    }
+	inline int& Dominio(int& valor, const int min = INT_MIN, const int max = INT_MAX) {
+		if (valor < min)
+			valor = min;
+		if (valor > max)
+			valor = max;
+		return valor;
+	}
 
 } // namespace compat
 
 // este tipo e função ficam disponíveis sem necessidade de colocar compact::
 using compat::EIcon;
 using compat::Icon;
-using compat::operator&=;
-using compat::operator|=;
+using compat::Dominio;

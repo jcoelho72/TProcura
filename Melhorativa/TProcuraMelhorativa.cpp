@@ -1023,13 +1023,13 @@ void TProcuraMelhorativa::Explorar() {
 		DebugGeracaoAE(epoca, populacao);
 		if ((opcao = NovoValor("\n │ └─■ ⚡ Operação (1 🦠 Mutar, 2 🧬 Cruzar, 3 🧍🧍Vizinhos): ")) == NAO_LIDO)
 			break;
-		(opcao |= 0) &= 3; // opcao em [0;3]
+		Dominio(opcao, 0, 3); // opcao em [0;3]
 		debugPrefixo = " │ │ ";
 		if (opcao == 1) { // mutar
 			printf(" │ ┌───── %-2s ───── ", Icon(EIcon::MUTAR));
 			printf("\n │ │ %-2s [1-%d]: ", Icon(EIcon::ELEMENTO), populacao.Count());
 			indA = NovoValor("") - 1;
-			(indA |= 0) &= populacao.Count();
+			Dominio(indA, 0, populacao.Count());
 			printf(" │ │ %-2s  ", Icon(EIcon::ELEMENTO));
 			populacao[indA]->Debug(false);
 			populacao[indA]->Mutar();
@@ -1049,9 +1049,9 @@ void TProcuraMelhorativa::Explorar() {
 			printf(" │ │ %-2sFilho [1-%d]: ", Icon(EIcon::ELEMENTO), populacao.Count());
 			indC = NovoValor("") - 1;
 			printf(" │ │ ");
-			(indA |= 0) &= populacao.Count();
-			(indB |= 0) &= populacao.Count();
-			(indC |= 0) &= populacao.Count();
+			Dominio(indA, 0, populacao.Count());
+			Dominio(indB, 0, populacao.Count());
+			Dominio(indC, 0, populacao.Count());
 			printf("\n │ │ %-2sPai   ", Icon(EIcon::ELEMENTO));
 			populacao[indA]->Debug(false);
 			printf("\n │ │ %-2sMãe   ", Icon(EIcon::ELEMENTO));
@@ -1068,7 +1068,7 @@ void TProcuraMelhorativa::Explorar() {
 			printf(" │ ┌───── %-2s ───── ", Icon(EIcon::VIZINHO));
 			printf("\n │ │ %-2s[1-%d]: ", Icon(EIcon::ELEMENTO), populacao.Count());
 			indA = NovoValor("") - 1;
-			(indA |= 0) &= populacao.Count() - 1;
+			Dominio(indA, 0, populacao.Count() - 1);
 			printf(" │ │ %-2s  ", Icon(EIcon::ELEMENTO));
 			populacao[indA]->Debug(false);
 			populacao[indA]->Vizinhanca(vizinhos);
@@ -1077,7 +1077,7 @@ void TProcuraMelhorativa::Explorar() {
 			printf("\n │ │ %-2s[1-%d]: ", Icon(EIcon::ELEMENTO), vizinhos.Count());
 			indB = NovoValor("") - 1;
 			printf(" │ │ ");
-			(indA |= 0) &= vizinhos.Count() - 1;
+			Dominio(indA, 0, vizinhos.Count() - 1);
 			delete populacao[indA];
 			populacao[indA] = vizinhos[indB];
 			vizinhos[indB] = NULL;

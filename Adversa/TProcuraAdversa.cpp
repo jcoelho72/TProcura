@@ -1001,10 +1001,10 @@ void TProcuraAdversa::PontuacaoJogos(TVector<TString>& jogos)
 		}
 	}
 
-	pontos = ((resultados |= 0) &= 20) * 5 + delta; // resultados -> [0;20]
+	pontos = Dominio(resultados, 0, 20) * 5 + delta; // resultados -> [0;20]
 	printf("\nComment :=>> \nComment :=>> Resultados:\nComment :=>> ➤ 🏆 A: %d pontos\nComment :=>> ➤ ⚔️ DEFG: %d\n"
 		"Comment :=>> ➤ 💰 Pontuação (0-100): %d\nGrade :=>> %d\n",
-		resultados, delta, (pontos |= 0) &= 100, pontos);
+		resultados, delta, Dominio(pontos, 0, 100), pontos);
 
 }
 
@@ -1125,8 +1125,8 @@ int TProcuraAdversa::ExecutaAlgoritmo() {
 	int resultado = -1;
 
 	switch (Parametro(ALGORITMO)) {
-	case 1: resultado = MiniMax(Parametro(LIMITE) |= 0); break; // limite min 0
-	case 2: resultado = MiniMaxAlfaBeta(Parametro(LIMITE) |= 0); break;
+	case 1: resultado = MiniMax(Dominio(Parametro(LIMITE), 0)); break; // limite min 0
+	case 2: resultado = MiniMaxAlfaBeta(Dominio(Parametro(LIMITE), 0)); break;
 	}
 	ramo.Last() = RAMO_CONTINUA;
 	if (Parametro(ORDENAR_SUCESSORES) == 2) {

@@ -858,16 +858,16 @@ void TProcuraConstrutiva::LimparEstatisticas()
 int TProcuraConstrutiva::ExecutaAlgoritmo() {
 	int resultado = -1;
 	switch (Parametro(ALGORITMO)) {
-	case 1: resultado = LarguraPrimeiro(Parametro(LIMITE) |= 0); break; // limite fica com mínimo 0
-	case 2: resultado = CustoUniforme(Parametro(LIMITE) |= 0); break;
+	case 1: resultado = LarguraPrimeiro(Dominio(Parametro(LIMITE), 0)); break; // limite fica com mínimo 0
+	case 2: resultado = CustoUniforme(Dominio(Parametro(LIMITE), 0)); break;
 	case 3: resultado = ProfundidadePrimeiro(Parametro(LIMITE)); break;
 	case 4: resultado = MelhorPrimeiro(Parametro(LIMITE)); break;
-	case 5: resultado = AStar(Parametro(LIMITE) |= 0); break;
-	case 6: resultado = IDAStar(Parametro(LIMITE) |= 0); break;
+	case 5: resultado = AStar(Dominio(Parametro(LIMITE), 0)); break;
+	case 6: resultado = IDAStar(Dominio(Parametro(LIMITE), 0)); break;
 	case 7:
 		if (Parametro(LIMITE) > 0)
 			DebugIteracao(Parametro(LIMITE), Icon(EIcon::UB));
-		resultado = BranchAndBound(Parametro(LIMITE) |= 0);
+		resultado = BranchAndBound(Dominio(Parametro(LIMITE), 0));
 		break;
 	}
 	ramo = {};
