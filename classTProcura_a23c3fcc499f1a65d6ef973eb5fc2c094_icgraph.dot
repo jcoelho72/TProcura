@@ -31,5 +31,5 @@ digraph "TProcura::BarraTorneio"
   Node12 [id="Node000012",label="CJogoEmLinha::TesteManual",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classCJogoEmLinha.html#a605b4293eeaed3fd542afe36edcc8d51",tooltip="Inicializa a interação com o utilizador."];
   Node4 -> Node8 [id="edge13_Node000004_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node13 [id="edge14_Node000002_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a80cd0f481e853ad9ef5625c6ff4dcc66",tooltip=" "];
+  Node13 [id="Node000013",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a28a5f137a2b5aa8d783646d2fbbff511",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
 }

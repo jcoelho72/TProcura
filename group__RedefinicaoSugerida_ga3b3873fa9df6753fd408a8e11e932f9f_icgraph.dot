@@ -41,13 +41,13 @@ digraph "TProcuraConstrutiva::Codifica"
   Node16 -> Node17 [id="edge18_Node000016_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcuraAdversa::Executa\lTarefa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#aad206751268402eef355dd89415d1865",tooltip="Executa uma tarefa num teste empírico."];
   Node17 -> Node18 [id="edge19_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a80cd0f481e853ad9ef5625c6ff4dcc66",tooltip=" "];
+  Node18 [id="Node000018",label="TProcuraAdversa::TesteEmpirico",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a28a5f137a2b5aa8d783646d2fbbff511",tooltip="Executa testes empíricos, em todas as configurações guardadas, nas instâncias selecionadas."];
   Node17 -> Node19 [id="edge20_Node000017_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="TProcuraAdversa::TesteEmpirico\lTrabalhador",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a46ecfb296c4c5b12397871f1d3a7f7b8",tooltip="Teste empírico com modo mestre-escravo (este é o escravo)"];
   Node16 -> Node20 [id="edge21_Node000016_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node20 [id="Node000020",label="TProcuraAdversa::Jogar",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#acddde96eeb7950c83032b5c4d16560e8",tooltip=" "];
   Node20 -> Node21 [id="edge22_Node000020_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node21 [id="Node000021",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a3ed3f97aa1c4881d7e4275b86317fd58",tooltip=" "];
+  Node21 [id="Node000021",label="TProcuraAdversa::TesteValidacao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#ae09c5a915a0617a27978ab2254a59417",tooltip="Executa testes de validação, executando cada solução na instância respetiva, e verificando a sua vali..."];
   Node15 -> Node22 [id="edge23_Node000015_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node22 [id="Node000022",label="TProcuraAdversa::MetodoIterativo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraAdversa.html#a7c4153974c32753901326271fee90197",tooltip="iteração, aumentando o nível progressivamente"];
   Node22 -> Node15 [id="edge24_Node000022_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];

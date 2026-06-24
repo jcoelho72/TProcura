@@ -7,5 +7,7 @@ var namespacecompat =
     ] ],
     [ "ContaUTF8", "namespacecompat.html#a2cc00022a29bc0fc08165228956a10f5", null ],
     [ "Icon", "namespacecompat.html#a22c741ec366392367813311aa7170851", null ],
-    [ "init_io", "namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc", null ]
+    [ "init_io", "namespacecompat.html#a4458d9a13083e2a6ae1b6c659c4043cc", null ],
+    [ "operator&=", "namespacecompat.html#a606bb22132ee478eaa91cbcacc387d41", null ],
+    [ "operator|=", "namespacecompat.html#a52a2696d326630951e5944745664f6a4", null ]
 ];

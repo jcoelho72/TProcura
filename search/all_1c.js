@@ -2,7 +2,7 @@ var searchData=
 [
   ['salas_0',['salas',['../classCAspirador.html#ac118e781b7b1296f09d5aec94560b00e',1,'CAspirador']]],
   ['seguir_20este_20tutorial_1',['seguir este tutorial',['../tutorial_adversas.html#autotoc_md168',1,'Como seguir este tutorial'],['../tutorial_construtivas.html#autotoc_md173',1,'Como seguir este tutorial']]],
-  ['selecao_2',['selecao',['../classTProcuraMelhorativa.html#ae7b41fa7fedbd32d42c4a93020e174cf',1,'TProcuraMelhorativa::SELECAO'],['../classTProcuraMelhorativa.html#abc3412ac90e57f6c25b3c609fcc93d62',1,'TProcuraMelhorativa::Selecao(int &amp;pai, int &amp;mae, TVector&lt; int &gt; &amp;pesos, int total)']]],
+  ['selecao_2',['selecao',['../classTProcuraMelhorativa.html#abc3412ac90e57f6c25b3c609fcc93d62',1,'TProcuraMelhorativa::Selecao(int &amp;pai, int &amp;mae, TVector&lt; int &gt; &amp;pesos, int total)'],['../classTProcuraMelhorativa.html#ae7b41fa7fedbd32d42c4a93020e174cf',1,'TProcuraMelhorativa::SELECAO']]],
   ['selecionarpaisae_3',['SelecionarPaisAE',['../classTProcuraMelhorativa.html#a35e3a8f92ef41a8941f75ceee20e13bb',1,'TProcuraMelhorativa']]],
   ['selecionarsobreviventesae_4',['SelecionarSobreviventesAE',['../classTProcuraMelhorativa.html#a083b961ed7ed1483625559d068755a7f',1,'TProcuraMelhorativa']]],
   ['semente_5',['SEMENTE',['../classTProcura.html#ae239ab4492f2355bb7acfcf8a426de24',1,'TProcura']]],
