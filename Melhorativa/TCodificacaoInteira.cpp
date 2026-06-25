@@ -66,17 +66,17 @@ void TCodificacaoInteira::Cruzamento(TPonto a, TPonto b) {
 		divisoes.BeASet();
 	}
 	if (divisoes.Empty()) { // cruzamento uniforme
-		Debug(EXTRA_DEBUG, false, " cruzamento uniforme");
+		Debug(EXTRA_DEBUG) && printf(" cruzamento uniforme");
 		for (int i = 0; i < nElementos; i++)
 			estado[i] = ((TCodificacaoInteira*)(TRand::rand() % 2 == 0 ? a : b))->estado[i];
 	}
 	else { // cruzamento em N pontos
 		bool copiaPai = true;
 		int i = 0;
-		if (Parametro(NIVEL_DEBUG) >= EXTRA_DEBUG) {
-			Debug(EXTRA_DEBUG, false, " cruzamento %d-ponto(s): ", divisoes.Count());
+		if (Debug(EXTRA_DEBUG)) {
+			Debug(EXTRA_DEBUG) && printf(" cruzamento %d-ponto(s): ", divisoes.Count());
 			for (auto ponto : divisoes)
-				Debug(EXTRA_DEBUG, false, "%d ", ponto);
+				Debug(EXTRA_DEBUG) && printf("%d ", ponto);
 		}
 		divisoes += nElementos; // ponto final
 		for(auto ponto : divisoes) {
@@ -97,8 +97,8 @@ void TCodificacaoInteira::Vizinhanca(TVector<TPonto>& vizinhos) {
 	// inverter segmento de N bits
 	ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
 	int limiteVizinhanca = Parametro(LIMITE_VIZINHOS_CI);
-	Debug(EXTRA_DEBUG, false, " vizinhança %s (limite %d)",
-		parametro[TIPO_VIZINHO_CI].nomeValores[tipo - 1], limiteVizinhanca);
+	Debug(EXTRA_DEBUG) && printf(" vizinhança %s (limite %d)",
+		*(parametro[TIPO_VIZINHO_CI].nomeValores[tipo - 1]), limiteVizinhanca);
 
 	if (tipo >= vizIncDecValorCI && tipo <= vizTrocaValorCI) {
 		// alterar valor de um elemento
@@ -187,8 +187,8 @@ void TCodificacaoInteira::Mutar(void) {
 		ETiposVizinhancaInteira tipo = (ETiposVizinhancaInteira)Parametro(TIPO_VIZINHO_CI);
 		int i = TRand::rand() % nElementos;
 		int j = TRand::rand() % nElementos;
-		Debug(EXTRA_DEBUG, false, " mutar vizinho %s (%d,%d)",
-			parametro[TIPO_VIZINHO_CI].nomeValores[tipo - 1], i, j);
+		Debug(EXTRA_DEBUG) && printf(" mutar vizinho %s (%d,%d)",
+			*parametro[TIPO_VIZINHO_CI].nomeValores[tipo - 1], i, j);
 		if (tipo == vizIncDecValorCI) {
 			estado[i] += (TRand::rand() % 2 == 0 ? 1 : -1);
 		}
@@ -226,7 +226,7 @@ void TCodificacaoInteira::Mutar(void) {
 		custo = -1;
 	}
 	else {
-		Debug(EXTRA_DEBUG, false, " mutar prob p(%d) limiteVizinhanca %d",
+		Debug(EXTRA_DEBUG) && printf(" mutar prob p(%d) limiteVizinhanca %d",
 			p, limiteVizinhanca);
 		// cada elemento com probabilidade p
 		for (int i = 0; i < nElementos; i++)

@@ -101,7 +101,7 @@ int64_t TProcura::Indicador(int id) {
 // Escrever informacao de debug sobre o objeto atual
 void TProcura::Debug(bool completo)
 {
-	Debug(ATIVIDADE, false, "\nTProcura::Debug() método não redefinido.");
+	Debug(ATIVIDADE) && printf("\nTProcura::Debug() método não redefinido.");
 }
 
 // Chamar antes de iniciar uma procura
@@ -202,8 +202,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		solucoes += { id, 0, { tempo }, tokens.Last().tok()}; // registar a instância, solução e indicadores (a preencher após validação)
 	}
 
-	Debug(ATIVIDADE, false,
-		"\n ├─ %-2sSoluções:%d   %-2sInstâncias: %d.",
+	Debug(ATIVIDADE) && printf("\n ├─ %-2sSoluções:%d   %-2sInstâncias: %d.",
 		Icon(EIcon::SUCESSO), solucoes.Count(),
 		Icon(EIcon::INST), instancias.Count()) &&
 		fflush(stdout);
@@ -224,8 +223,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 						melhor = RES_IMPOSSIVEL;
 						if (pior == RES_VAZIO)
 							pior = RES_IMPOSSIVEL;
-						Debug(COMPLETO, false,
-							"\n ├─ %-2s:%d %-2s %-2s %-2s %-2s %d",
+						Debug(COMPLETO) && printf("\n ├─ %-2s:%d %-2s %-2s %-2s %-2s %d",
 							Icon(EIcon::INST), inst,
 							Icon(EIcon::SUCESSO),
 							Icon(EIcon::VALOR), Icon(EIcon::IMP),
@@ -237,13 +235,12 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 						if (melhor == RES_VAZIO)
 							melhor = RES_INVALIDO;
 						pior = RES_INVALIDO;
-						Debug(COMPLETO, false,
-							"\n ├─ %-2s:%d %-2s %-2s %d",
+						Debug(COMPLETO) && printf("\n ├─ %-2s:%d %-2s %-2s %d",
 							Icon(EIcon::INST), inst,
 							Icon(EIcon::INSUC),
 							Icon(EIcon::TEMPO), tempo);
 						for (auto& token : solucoes[solucao].solucao)
-							Debug(COMPLETO, false, " %s", *token);
+							Debug(COMPLETO) && printf(" %s", *token);
 					}
 				}
 				else {
@@ -262,8 +259,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 							if (pior == RES_VAZIO || (pior >= 0 && pior < resultado))
 								pior = resultado;
 						}
-						Debug(COMPLETO, false,
-							"\n ├─ %-2s:%d %-2s %-2s %d %-2s %d",
+						Debug(COMPLETO) && printf("\n ├─ %-2s:%d %-2s %-2s %d %-2s %d",
 							Icon(EIcon::INST), inst,
 							Icon(EIcon::SUCESSO),
 							Icon(EIcon::VALOR), resultado,
@@ -274,8 +270,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 						if (melhor == RES_VAZIO)
 							melhor = RES_INVALIDO;
 						pior = RES_INVALIDO;
-						Debug(COMPLETO, false,
-							"\n ├─ %-2s:%d %-2s %-2s %d",
+						Debug(COMPLETO) && printf("\n ├─ %-2s:%d %-2s %-2s %d",
 							Icon(EIcon::INST), inst,
 							Icon(EIcon::INSUC),
 							Icon(EIcon::TEMPO), tempo);
@@ -291,7 +286,7 @@ void TProcura::TesteValidacao(TVector<int> instancias, TVector<int> impossiveis,
 		resultados += { inst, 0, { validas, invalidas, melhor, pior, tempo }, { }};
 	}
 
-	if (Parametro(NIVEL_DEBUG) >= ATIVIDADE)
+	if (Debug(ATIVIDADE))
 		RelatorioValidacao(resultados, referencias);
 
 	// gravar resultados, um por instância
@@ -330,18 +325,15 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 			tempoTotal += referencias[3] / resultados.Count();
 		}
 	}
-	Debug(ATIVIDADE, false,
-		"\n ├─ %-2sVálidas:%d   %-2sInstâncias: %d.",
+	Debug(ATIVIDADE) && printf("\n ├─ %-2sVálidas:%d   %-2sInstâncias: %d.",
 		Icon(EIcon::SUCESSO), validas,
 		Icon(EIcon::INST), resultados.Count()) &&
 		fflush(stdout);
-	Debug(ATIVIDADE, false,
-		"\n ├─ %-2sMelhor:%d   %-2sPior: %d.",
+	Debug(ATIVIDADE) && printf("\n ├─ %-2sMelhor:%d   %-2sPior: %d.",
 		Icon(EIcon::VALOR), melhorCusto,
 		Icon(EIcon::VALOR), piorCusto) &&
 		fflush(stdout);
-	Debug(ATIVIDADE, false,
-		"\n ├─ %-2sTempo(ms):%d.",
+	Debug(ATIVIDADE) && printf("\n ├─ %-2sTempo(ms):%d.",
 		Icon(EIcon::TEMPO), tempoTotal) &&
 		fflush(stdout);
 
@@ -362,15 +354,13 @@ void TProcura::RelatorioValidacao(TVector<TResultado> resultados, TVector<int> r
 	// calculo do indicador global
 	desempenho = (taxaEficacia + taxaQualidade + taxaEficiencia) / (considerarQualidade ? 3 : 2);
 	if (considerarQualidade)
-		Debug(ATIVIDADE, false,
-			"\n ├─ %-2s %.1f%% (%-2s %.1f%% %-2s %.1f%% %-2s %.1f%%)",
+		Debug(ATIVIDADE) && printf("\n ├─ %-2s %.1f%% (%-2s %.1f%% %-2s %.1f%% %-2s %.1f%%)",
 			Icon(EIcon::IND), desempenho,
 			Icon(EIcon::SUCESSO), taxaEficacia,
 			Icon(EIcon::VALOR), taxaQualidade,
 			Icon(EIcon::TEMPO), taxaEficiencia);
 	else
-		Debug(ATIVIDADE, false,
-			"\n ├─ %-2s %.1f%% (%-2s %.1f%% %-2s %.1f%%)",
+		Debug(ATIVIDADE) && printf("\n ├─ %-2s %.1f%% (%-2s %.1f%% %-2s %.1f%%)",
 			Icon(EIcon::IND), desempenho,
 			Icon(EIcon::SUCESSO), taxaEficacia,
 			Icon(EIcon::TEMPO), taxaEficiencia);
@@ -572,8 +562,25 @@ void TProcura::MostraParametros(int detalhe, TVector<int>* idParametros, TString
 	int nElementos = (idParametros == NULL ? parametro.Count() : idParametros->Count());
 	int col = 2;
 	bool parBin = false;
+
 	if (titulo.Empty())
 		titulo = "Parâmetros";
+
+	// experimental: uma tabela com parâmetros (para ter menos linhas)
+	if (modoKMGT) {
+		MostraCaixa(titulo, ECaixaParte::Topo, 70, true, 0, Icon(EIcon::PARAM));
+		MostraCaixa("     ", ECaixaParte::Meio, 1);
+		for (int i = 1; i <= 10; i++)
+			printf(COR_LEVE "%9s " COR_RESET, *TString().printf("P%d", i));
+		for (int i = 0; i < parametro.Count(); i++) {
+			if (i % 10 == 0)
+				MostraCaixa(TString().printf(COR_LEVE "%4s " COR_RESET, *TString().printf("P%d", i)), ECaixaParte::Meio, 1);
+			printf("%9s ", *MostraInt(Parametro(i), false));
+		}
+		MostraCaixa("", ECaixaParte::Fundo, 70);
+		return;
+	}
+
 	// detalhe 0 é só uma linha (separador)
 	if (detalhe) {
 		MostraCaixa(titulo, ECaixaParte::Topo, 70, true, 0, Icon(EIcon::PARAM));
@@ -671,7 +678,7 @@ bool TProcura::EditarIndicadores() {
 		do {
 			if (opcao < 0) {
 				opcao = -opcao;
-				Dominio(opcao, 1, indicador.Count()); 
+				Dominio(opcao, 1, indicador.Count());
 				printf(COR_LEVE "I%d(%s):" COR_RESET " %d", opcao, *indicador[opcao - 1].nome, (int)Indicador(opcao - 1));
 			}
 			if ((opcao = NovoValor("\nIndicador (positivo ativa/desativa; negativo calcula): ")) == NAO_LIDO || opcao == 0)
@@ -741,7 +748,7 @@ void TProcura::EditarParametros() {
 		valor = NovoValor("");
 		if (valor != NAO_LIDO || valor == 0)
 			Parametro(opcao - 1) =
-				Dominio(valor, parametro[opcao - 1].min, parametro[opcao - 1].max);
+			Dominio(valor, parametro[opcao - 1].min, parametro[opcao - 1].max);
 		// valor entre min e max
 	}
 }
@@ -1089,8 +1096,7 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro, TVector<
 	}
 	Cronometro(CONT_REPORTE, true); // reiniciar cronómetro evento
 	if (mpiID == 0)
-		Debug(ATIVIDADE, false,
-			"\n ├─ %-2sTarefas:%s   %-2sInstâncias: %s   %-2sConfigurações: %s   %-2sProcessos: %s.",
+		Debug(ATIVIDADE) && printf("\n ├─ %-2sTarefas:%s   %-2sInstâncias: %s   %-2sConfigurações: %s   %-2sProcessos: %s.",
 			Icon(EIcon::TAREFA), *MostraInt(instancias.Count() * configuracoes.Count()),
 			Icon(EIcon::INST), *MostraInt(instancias.Count()),
 			Icon(EIcon::CONF), *MostraInt(configuracoes.Count()),
@@ -1105,9 +1111,8 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro, TVector<
 			if ((nTarefa++) % mpiCount != mpiID)
 				continue;
 
-			if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
-				Debug(ATIVIDADE, false,
-					"\n ├─ %-2s%-15s %-2s%-5s %-2s%-5s %-2s%-5s %-2s%-5s %-2s",
+			if (Debug(ATIVIDADE) && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
+				Debug(ATIVIDADE) && printf("\n ├─ %-2s%-15s %-2s%-5s %-2s%-5s %-2s%-5s %-2s%-5s %-2s",
 					Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE)),
 					Icon(EIcon::TAREFA), *MostraInt(nTarefa),
 					Icon(EIcon::INST), *MostraInt(inst),
@@ -1147,14 +1152,13 @@ void TProcura::TesteEmpirico(TVector<int> instancias, TString ficheiro, TVector<
 			// tenta juntar ficheiros, caso existam os ficheiros dos outros processos
 			JuntarCSV(ficheiro);
 		if (mpiID == 0)
-			Debug(ATIVIDADE, false,
-				"\n ├─ %-2s Ficheiro %s.csv gravado.\n"
+			Debug(ATIVIDADE) && printf("\n ├─ %-2s Ficheiro %s.csv gravado.\n"
 				" │  %-2s Tempo real: %s",
 				Icon(EIcon::RESULT), *ficheiro,
 				Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE))) &&
-			Debug(ATIVIDADE, false, "\n │  %-2s CPU total: %s",
+			Debug(ATIVIDADE) && printf("\n │  %-2s CPU total: %s",
 				Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE) * mpiCount)) &&
-			Debug(ATIVIDADE, false, "\n │  %-2s Utilização: %.1f%%",
+			Debug(ATIVIDADE) && printf("\n │  %-2s Utilização: %.1f%%",
 				Icon(EIcon::TAXA), 100. * tempoTotal / (tempoMaximo * mpiCount));
 	}
 
@@ -1241,10 +1245,9 @@ void TProcura::TesteEmpiricoGestor(TVector<int> instancias, TString ficheiro, TV
 		// tempo de espera do trabalhador
 		esperaTrabalhadores += (double)((int64_t)resultados.Last().valor.Pop()) / 1000.;
 
-		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
+		if (Debug(ATIVIDADE) && Cronometro(CONT_REPORTE) > periodoReporte) {
 			// mostrar uma linha por cada execução
-			Debug(ATIVIDADE, false,
-				"\n ├─ %-2s%-15s %-2s%-5s %-2s%-5s %-2s%-5s %-2s%-5s %-2s ",
+			Debug(ATIVIDADE) && printf("\n ├─ %-2s%-15s %-2s%-5s %-2s%-5s %-2s%-5s %-2s%-5s %-2s ",
 				Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE)),
 				Icon(EIcon::TAREFA), *MostraInt(totalTarefas - tarefas.Count()),
 				Icon(EIcon::INST), *MostraInt(resultados.Last().instancia),
@@ -1374,23 +1377,23 @@ void TProcura::ExecutaTarefa(TVector<TResultado>& resultados, int inst, int conf
 	Parametro(NIVEL_DEBUG) = backupDebug;
 
 	if (resultado >= 0) {
-		mpiID == 0 && Debug(COMPLETO, false, "%-2s%-5d", Icon(EIcon::SUCESSO), resultado);
+		mpiID == 0 && Debug(COMPLETO) && printf("%-2s%-5d", Icon(EIcon::SUCESSO), resultado);
 	}
 	else {
 		if (Parar())
-			mpiID == 0 && Debug(COMPLETO, false, "%-2s", Icon(EIcon::INSUC));
+			mpiID == 0 && Debug(COMPLETO) && printf("%-2s", Icon(EIcon::INSUC));
 		if (TempoExcedido())
-			mpiID == 0 && Debug(COMPLETO, false, "%-2s", Icon(EIcon::TEMPO));
+			mpiID == 0 && Debug(COMPLETO) && printf("%-2s", Icon(EIcon::TEMPO));
 		if (memoriaEsgotada)
-			mpiID == 0 && Debug(COMPLETO, false, "%-2s", Icon(EIcon::MEMORIA));
+			mpiID == 0 && Debug(COMPLETO) && printf("%-2s", Icon(EIcon::MEMORIA));
 		if (resultado < 0 && !Parar()) { //Instância Impossível! (se algoritmo completo) ");
-			mpiID == 0 && Debug(COMPLETO, false, "%-2s%-2s", Icon(EIcon::SUCESSO), Icon(EIcon::IMP));
+			mpiID == 0 && Debug(COMPLETO) && printf("%-2s%-2s", Icon(EIcon::SUCESSO), Icon(EIcon::IMP));
 			resultados.Last().solucao = "vazio";
 		}
 		else // não resolvido, cancelar resultados 
 			resultados.Last().valor.First() = RES_NAO_RESOLVIDO;
 	}
-	if (mpiID == 0 && Parametro(NIVEL_DEBUG) >= COMPLETO) {
+	if (mpiID == 0 && Debug(COMPLETO)) {
 		printf("%-2s ", Icon(EIcon::IND));
 		for (auto ind : resultados.Last().valor)
 			printf("%" PRId64 " ", ind);
@@ -2092,7 +2095,7 @@ int TProcuraExecutavel::ExecutaAlgoritmo()
 					indValores[i] = (int)(atof(ptr + indPrefixo[i].Count() - 1) + 0.5);
 			}
 
-	if (Parametro(NIVEL_DEBUG) < DETALHE)
+	if (!TProcura::Debug(DETALHE))
 		remove(resultFile); // apagar ficheiro de resultados intermédio
 	return 0;
 }

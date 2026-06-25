@@ -65,16 +65,16 @@ void TProcuraAdversa::ResetParametros()
 
 void TProcuraAdversa::Sucessores(TVector<TNo>& sucessores) {
 	TProcuraConstrutiva::Sucessores(sucessores);
-	if (Parametro(NIVEL_DEBUG) >= PASSOS && !sucessores.Empty())
+	if (Debug(PASSOS) && !sucessores.Empty())
 		ramo.Push(minimizar ? RAMO_ESTADO2 : RAMO_ESTADO);
 }
 
 void TProcuraAdversa::DebugChamada(bool noFolha, int alfa, int beta) {
 	bool raiz = (ramo.Count() <= 1);
 
-	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
+	if (Debug(ATIVIDADE, true) && expansoes % 1000 == 0)
 		printf("#");
-	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+	if (Debug(PASSOS)) {
 		if (raiz)
 			ramo.First() = (minimizar ? RAMO_ESTADO2 : RAMO_ESTADO);
 		NovaLinha(true);
@@ -85,8 +85,7 @@ void TProcuraAdversa::DebugChamada(bool noFolha, int alfa, int beta) {
 			printf(" α=%d β=%d ═══", alfa, beta);
 		if (pai != NULL)
 			printf(" %-2s%s", Icon(EIcon::ACCAO), *pai->Acao(this)); // mostra sempre a ação
-		if ((noFolha && Parametro(NIVEL_DEBUG) >= DETALHE) ||
-			Parametro(NIVEL_DEBUG) >= COMPLETO)
+		if ((noFolha && Debug(DETALHE)) || Debug(COMPLETO))
 			Debug();
 	}
 }
@@ -131,7 +130,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 			valorConhecido.nivel >= nivel)
 		{
 			valor = valorConhecido.valor;
-			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+			if (Debug(PASSOS)) {
 				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(false);
 				DebugFolha(false, "%-2s%d", Icon(EIcon::MEMORIA), valor);
 			}
@@ -147,7 +146,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 		if (i == 0 || (minimizar ? resultado > valor : resultado < valor)) {
 			resultado = valor;
 			melhor = id[i];
-			if (nivel > 1 && Parametro(NIVEL_DEBUG) >= PASSOS) { // colocar valor actual alterado
+			if (nivel > 1 && Debug(PASSOS)) { // colocar valor actual alterado
 				ramo.Last() = (minimizar ? RAMO_ESTADO : RAMO_ESTADO2);
 				NovaLinha();
 				printf(" %d", resultado);
@@ -156,7 +155,7 @@ int TProcuraAdversa::MiniMax(int nivel)
 			if (minimizar ? resultado <= custo + 1 - infinito : resultado >= infinito - custo - 1) {
 				DebugFolha(true, " %-2s%d", Icon(resultado < 0 ? EIcon::VIT_PRETA : EIcon::VIT_BRANCA), custo);
 				// listar os nós não explorados
-				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+				if (Debug(PASSOS)) {
 					TVector<int> valores;
 					for (int j = i + 1; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
@@ -256,7 +255,7 @@ int TProcuraAdversa::MetodoIterativo(int alfaBeta) {
 			solucao = NULL;
 			resOK = resultado;
 			nivelOK = nivel;
-			if (Parametro(NIVEL_DEBUG) > NADA && solOK != NULL)
+			if (Debug(ATIVIDADE) && solOK != NULL)
 				printf("\n │ %-2s%-2s %d %-2s%s %-2s%d ",
 					Icon(EIcon::ARVORE), Icon(EIcon::LIMITE), nivel,
 					Icon(EIcon::ACCAO), *Acao(solOK), Icon(EIcon::SUCESSO), resultado);
@@ -365,7 +364,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 			Utilizavel(valorConhecido, nivel, alfa, beta))
 		{
 			valor = valorConhecido.valor;
-			if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+			if (Debug(PASSOS)) {
 				((TProcuraAdversa*)sucessores[id[i]])->DebugChamada(false, alfa, beta);
 				DebugFolha(false, "%-2s%d", Icon(EIcon::MEMORIA), valor);
 			}
@@ -385,7 +384,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 		if (i == 0 || (minimizar ? resultado > valor : resultado < valor)) {
 			resultado = valor;
 			melhor = id[i];
-			if (nivel > 1 && Parametro(NIVEL_DEBUG) >= PASSOS) {
+			if (nivel > 1 && Debug(PASSOS)) {
 				ramo.Last() = (minimizar ? RAMO_ESTADO : RAMO_ESTADO2);
 				NovaLinha();
 				printf(" %d", resultado);
@@ -395,7 +394,7 @@ int TProcuraAdversa::MiniMaxAlfaBeta(int nivel, int alfa, int beta)
 		if (i < sucessores.Count() - 1) { // não interessa cortar quando não há mais nada para cortar
 			if (CorteAlfaBeta(resultado, alfa, beta)) {
 				// listar os nós não explorados
-				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+				if (Debug(PASSOS)) {
 					TVector<int> valores;
 					for (int j = i + 1; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
@@ -439,7 +438,7 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 		// atualização beta
 		if (beta > valor) {
 			beta = valor;
-			Debug(PASSOS, false, " → β");
+			Debug(PASSOS) && printf(" → β");
 		}
 	}
 	else { // brancas
@@ -456,7 +455,7 @@ bool TProcuraAdversa::CorteAlfaBeta(int valor, int& alfa, int& beta) {
 		// atualização alfa
 		if (alfa < valor) {
 			alfa = valor;
-			Debug(PASSOS, false, " → α");
+			Debug(PASSOS) && printf(" → α");
 		}
 	}
 	// não há corte
@@ -489,8 +488,7 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, TString ficheiro, T
 	}
 
 	if (mpiID == 0)
-		Debug(ATIVIDADE, false,
-			"\n ├─ %-2sTarefas:%d   %-2sInstâncias: %d   %-2sConfigurações: %d   %-2sProcessos: %d.",
+		Debug(ATIVIDADE) && printf("\n ├─ %-2sTarefas:%d   %-2sInstâncias: %d   %-2sConfigurações: %d   %-2sProcessos: %d.",
 			Icon(EIcon::TAREFA), instancias.Count() * configuracoes.Count() * (configuracoes.Count() - 1),
 			Icon(EIcon::INST), instancias.Count(),
 			Icon(EIcon::CONF), configuracoes.Count(),
@@ -508,9 +506,8 @@ void TProcuraAdversa::TesteEmpirico(TVector<int> instancias, TString ficheiro, T
 
 					resultados += {inst, brancas, pretas};
 
-					if (Parametro(NIVEL_DEBUG) > NADA && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
-						Debug(ATIVIDADE, false,
-							"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d",
+					if (Debug(ATIVIDADE) && mpiID == 0 && Cronometro(CONT_REPORTE) > periodoReporte) {
+						Debug(ATIVIDADE) && printf("\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d",
 							Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE)),
 							Icon(EIcon::TAREFA), nTarefa,
 							Icon(EIcon::INST), inst,
@@ -571,8 +568,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 		if (solucao != NULL) { // efetuado um lance
 			TString strAcao = Acao(solucao);
 			Copiar(solucao);
-			if (Parametro(NIVEL_DEBUG) >= COMPLETO)
-				printf(" %s", *strAcao);
+			Debug(COMPLETO) && printf(" %s", *strAcao);
 			njogada++;
 			if (njogada % 2 == 1) // jogada de brancas, colocar o número de jogada (njogada é meia jogada)
 				(lance = "").printf(" %d. %s", (njogada / 2) + 1, *strAcao);
@@ -597,7 +593,7 @@ void TProcuraAdversa::ExecutaTarefa(TVector<TResultadoJogo>& resultados,
 	// jogo terminou, registar resultado
 	if (torneio != NULL)
 		(*torneio)[brancas][pretas] += resultados.Last().resultado;
-	Debug(COMPLETO, false, " 🏆 %s",
+	Debug(COMPLETO) && printf(" 🏆 %s",
 		(resultados.Last().resultado < 0 ? Icon(EIcon::VIT_PRETA) :
 			(resultados.Last().resultado > 0 ? Icon(EIcon::VIT_BRANCA) :
 				Icon(EIcon::EMPATE))));
@@ -698,10 +694,9 @@ void TProcuraAdversa::TesteEmpiricoGestor(TVector<int> instancias, TString fiche
 		resultados.Last().tempoPretas = (double)dadosD[1] / 1000.;
 		esperaTrabalhadores += (double)((int64_t)dadosD[2]) / 1000.;
 
-		if (Parametro(NIVEL_DEBUG) > NADA && Cronometro(CONT_REPORTE) > periodoReporte) {
+		if (Debug(ATIVIDADE) && Cronometro(CONT_REPORTE) > periodoReporte) {
 			// mostrar uma linha por cada execução
-			Debug(ATIVIDADE, false,
-				"\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s ",
+			Debug(ATIVIDADE) && printf("\n ├─ %-2s%-15s %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s%-5d %-2s ",
 				Icon(EIcon::TEMPO), *MostraTempo(Cronometro(CONT_TESTE)),
 				Icon(EIcon::TAREFA), totalTarefas - tarefas.Count(),
 				Icon(EIcon::INST), resultados.Last().instancia,
@@ -863,8 +858,7 @@ bool TProcuraAdversa::Validar(TVector<TString> solucao)
 	// aplicar todas as ações
 	for (auto acao : solucao) {
 		if (!Acao(acao)) {
-			if (Debug(PASSOS, false,
-				"\n │ Ação inválida: %s (%d ações válidas)", *acao, nAcoes))
+			if (Debug(PASSOS) && printf("\n │ Ação inválida: %s (%d ações válidas)", *acao, nAcoes))
 				Debug();
 			return false;
 		}
@@ -1131,7 +1125,7 @@ int TProcuraAdversa::ExecutaAlgoritmo() {
 	ramo.Last() = RAMO_CONTINUA;
 	if (Parametro(ORDENAR_SUCESSORES) == 2) {
 		Parametro(ESTADOS_REPETIDOS) = GERADOS;
-		if (reutilizadoAvaliacao > 0 && Parametro(NIVEL_DEBUG) >= DETALHE) {
+		if (reutilizadoAvaliacao > 0 && Debug(DETALHE)) {
 			float taxa = (float)(1.0 * reutilizadoAvaliacao / colocadosHT);
 			LimparHT();
 			printf(" HT: reutilização %.2f vezes ", taxa);

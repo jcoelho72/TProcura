@@ -50,8 +50,8 @@ constexpr int COR_LEVE_TAM = 9;   // bytes invisíveis (5 + 4), útil para alinh
  * @see nivelDebug
  *
  * @code
- * if(Parametro(NIVEL_DEBUG) > PASSOS)
- *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
+ * if(Debug(PASSOS))
+ *     // mostrar informação de debug correspondendo ao nível passos ou superior
  * @endcode
  */
 enum ENivelDebug {
@@ -135,8 +135,8 @@ typedef struct SIndicador {
  *
  * Exemplo:
  * @code
- * if(Parametro(NIVEL_DEBUG) > PASSOS)
- *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
+ * if(Debug(PASSOS))
+ *     // mostrar informação de debug correspondendo ao nível passos ou superior
  * @endcode
  */
 typedef struct SParametro {
@@ -279,7 +279,7 @@ public:
 	 * {
 	 * 	   NovaLinha();
 	 *     // neste exemplo o estado é apenas um número
-	 *     if(Parametro(NIVEL_DEBUG) <= ATIVIDADE)
+	 *     if(!Debug(PASSOS))
 	 * 	       printf("--<([%d])>--", variavel); // versão compacta do estado
 	 *     else {
 	 *         // versão mais elaborada do estado
@@ -415,12 +415,12 @@ public:
 	 * Esta função carrega a instância e solução (conjunto de ações),
 	 * as quais são executadas passo a passo, verificando a validade de cada ação
 	 * sendo calculados indicadores do resultado final.
-	 * 
+	 *
 	 * Caso existam ações inválidas, ou a solução não seja completa, o resultado é considerado inválido,
 	 * sendo retornado o número de ações corretamente executadas.
 	 * (isto faz sentido apenas em TProcurasConstrutivas.... nesta classe pode ser algo genérico, sendo redefinida em TProcurasConstrutivas...)
 	 * (fazer uma função validação geral, a redefinir em TProcurasConstrutivas?)
-	 * (deixar o formato da solução em aberto, o ficheiro recebe ID da instância, seguido da solução. 
+	 * (deixar o formato da solução em aberto, o ficheiro recebe ID da instância, seguido da solução.
 	 *
 	 * @param instancias - IDs das instâncias a serem validadas.
 	 * @param impossiveis - IDs das instâncias impossíveis, de entre as instâncias dadas.
@@ -586,32 +586,20 @@ public:
 		return parametro[id].dependencia.Find(valor, true, 1) >= 0;
 	}
 
-	/// @brief Mostra uma informação de debug, se o nível de debug for suficiente.
+	/// @brief Devolve true se se devem mostrar informação de Debug
 	/// @param tipo Nível de detalhe necessário para exibir a mensagem.
 	/// @param exato Se true, só imprime se o nível de debug for exatamente igual a `tipo`.
 	///              Se false, imprime se for >= `tipo`.
-	/// @param fmt Formato da mensagem, como no printf.
-	/// @return true se a mensagem foi impressa, false caso contrário.
-	/// 
-	/// @note Pode ser usado com || para encadear mensagens de diferentes níveis, 
-	/// imprimindo apenas a primeira que corresponda ao nível de debug atual.	
 	/// 
 	/// @code
 	/// // Exemplo: tenta imprimir no nível passos, senão no detalhe
-	/// Debug(passos, true,  "\nPasso %d", iteracoes) ||
-	/// Debug(detalhe, false, "\nPasso %d | Melhor custo: %d", iteracoes, custo) ||
+	/// Debug(PASSOS, true) && printf("\nPasso %d", iteracoes) ||
+	/// Debug(DETALHE) && printf("\nPasso %d | Melhor custo: %d", iteracoes, custo);
 	/// @endcode
-	static bool Debug(ENivelDebug tipo, bool exato, const char* fmt, ...) {
+	static bool Debug(ENivelDebug tipo, bool exato = false) {
 		int nivel = parametro[NIVEL_DEBUG].valor;
-		if (exato ? nivel != tipo : nivel < tipo)
-			return false;
-		va_list args;
-		va_start(args, fmt); // último parâmetro fixo é 'fmt'
-		vprintf(fmt, args);
-		va_end(args);
-		return true;
+		return exato ? nivel == tipo : nivel >= tipo;
 	}
-
 
 	static void MostraCaixa(TVector<TString> titulo, ECaixaParte parte, TVector<int> largura, bool aberta = true, int identacao = 0);
 	static void MostraCaixa(TString titulo, ECaixaParte parte, int largura = 70, bool aberta = true, int identacao = 0, const char* icon = "");
@@ -803,7 +791,7 @@ protected:
 
 	/// @brief Mostra uma tabela de inteiros, 10 elementos por linha, apenas se o nível de debug for igual ou superior
 	void DebugTabela(ENivelDebug nivel, TVector<int>tabela, TString tipo = "",
-			TString prefixo="", int modoCor=0, bool duplaColuna=false);
+		TString prefixo = "", int modoCor = 0, bool duplaColuna = false);
 
 	/// @brief Juntar ficheiros CSV gerados por diferentes processos MPI em um único ficheiro.
 	bool JuntarCSV(TString ficheiro);
@@ -832,7 +820,7 @@ public:
 	static int IND_ITERACOES;     ///< número de iterações consumidas
 
 	/**
-	 * @brief Parâmetros (variáveis estáticas)  
+	 * @brief Parâmetros (variáveis estáticas)
 	 *
 	 * Permite aceder a cada parâmetro sem precisar saber seu código numérico.
 	 * Índice do vetor de parâmetros, na classe TProcura.
@@ -840,8 +828,8 @@ public:
 	 * @see TParametro, ExecutaAlgoritmo()
 	 *
 	 * @code
-	 * if(Parametro(NIVEL_DEBUG) > PASSOS)
-	 *     // mostrar informação de debug correspondendo ao nível detalhe ou superior
+	 * if(Debug(PASSOS))
+	 *     // mostrar informação de debug correspondendo ao nível passos ou superior
 	 * @endcode
 	 */
 	static int ALGORITMO;        ///< Algoritmo base a executar.
@@ -864,11 +852,11 @@ public:
 	TString solver; // caminho para o executável
 	TParametro inst; // definição de instâncias existentes
 	TVector<TIndicador> ind; // indicadores específicos, a calcular após a execução do executável, com base na saída do executável
-	TVector<TString> indPrefixo = {"", "", ""}; // prefixo existente no output do programa, para cada indicador, de modo a extrair o valor do indicador
+	TVector<TString> indPrefixo = { "", "", "" }; // prefixo existente no output do programa, para cada indicador, de modo a extrair o valor do indicador
 	// considerar também os indicadores em TProcura (IND_RESULTADO, IND_TEMPO, IND_ITERACOES), que podem ser extraídos do output do programa
 	// string vazia para não extração desse indicador
 	TVector<TParametro> par; // parâmetros específicos, para configurar a execução
-	TVector<TString> parPrefixo = {"", "", "", "", ""}; // prefixo a dar nos argumentos do programa, para cada parâmetro, de modo a configurar a execução
+	TVector<TString> parPrefixo = { "", "", "", "", "" }; // prefixo a dar nos argumentos do programa, para cada parâmetro, de modo a configurar a execução
 	// considerar também os parâmetros em TProcura (ALGORITMO, NIVEL_DEBUG, SEMENTE, LIMITE_TEMPO, LIMITE_ITERACOES)
 	// string vazia para não utilização desse parâmetro (se não há prefixo, apenas valor por ordem, utilizar um espaço)
 	// Nota: o parâmetro é colocado nos argumentos do programa, apenas se não for igual ao valor por omissão

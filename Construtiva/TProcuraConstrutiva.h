@@ -702,14 +702,14 @@ protected:
 	void DebugEstado(bool novaLinha = true) const;
 	void DebugRamo(const char* ramo, const char* folha);
 	void DebugFolha(bool fimLinha, const char* fmt, ...) {
-		if (Parametro(NIVEL_DEBUG) >= COMPLETO) {
+		if (Debug(COMPLETO)) {
 			if (fimLinha)
 				ramo.Last() = " └─";
 			NovaLinha();
 		}
 		else
-			Debug(PASSOS, false, " ─── ");
-		if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+			Debug(PASSOS) && printf(" ─── ");
+		if (Debug(PASSOS)) {
 			va_list args;
 			va_start(args, fmt);
 			vprintf(fmt, args);

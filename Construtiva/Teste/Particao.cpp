@@ -102,7 +102,7 @@ void CParticao::Debug(bool completo)
 		total, totalEsquerda, totalDireita);
 	NovaLinha();
 	// apenas no modo completo mostra tudo
-	if (Parametro(NIVEL_DEBUG) < COMPLETO) {
+	if (!TProcura::Debug(COMPLETO)) {
 		MostraCaixa(str, ECaixaParte::Separador, 1, true, -2);
 		return;
 	}

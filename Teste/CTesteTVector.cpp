@@ -322,7 +322,7 @@ int64_t CTesteTVector::Indicador(int id)
 		if (Parametro(ESTRUTURA_DADOS) != 2) {
 			for (int i = 0; i < dadosA.Count() - 1; i++)
 				if (dadosA[i] > dadosA[i + 1]) {
-					Debug(COMPLETO, false, "\nordem %d > %d (%d,%d)",
+					Debug(COMPLETO) && printf("\nordem %d > %d (%d,%d)",
 						i, i + 1, dadosA[i], dadosA[i + 1]);
 					return 0;
 				}
@@ -330,7 +330,7 @@ int64_t CTesteTVector::Indicador(int id)
 		else {
 			for (std::size_t i = 0; i < stdA.size() - 1; i++)
 				if (stdA[i] > stdA[i + 1]) {
-					Debug(COMPLETO, false, "\nordem %d > %d (%d,%d)",
+					Debug(COMPLETO) && printf("\nordem %d > %d (%d,%d)",
 						i, i + 1, stdA[i], stdA[i + 1]);
 					return 0;
 				}

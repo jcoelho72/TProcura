@@ -235,7 +235,7 @@ void CParticaoCB::Debug(bool completo)
 	str.printf("📦%d → ◀️%d = ▶️%d", total, esq, dir);
 	printf("\n%s", debugPrefixo);
 	// apenas no modo completo mostra tudo
-	if (Parametro(NIVEL_DEBUG) < COMPLETO) {
+	if (!TProcura::Debug(COMPLETO)) {
 		MostraCaixa(str, ECaixaParte::Separador, 1, true, -2);
 		return;
 	}

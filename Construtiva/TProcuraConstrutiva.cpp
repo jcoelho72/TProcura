@@ -150,7 +150,7 @@ void TProcuraConstrutiva::Sucessores(TVector<TNo>& sucessores) {
 	if (Parametro(BARALHAR_SUCESSORES) == 1)
 		sucessores.RandomOrder();
 	expansoes++;
-	if (Parametro(NIVEL_DEBUG) >= PASSOS && !sucessores.Empty()) {
+	if (Debug(PASSOS) && !sucessores.Empty()) {
 		for (auto suc : sucessores)
 			suc->debugID = ++geracoes;
 		// avançar se for algoritmo em profundidade
@@ -182,7 +182,7 @@ bool TProcuraConstrutiva::Validar(TVector<TString> solucao) {
 	// aplicar todas as ações
 	for (auto acao : solucao) {
 		if (!Acao(acao)) {
-			if (Debug(PASSOS, false, "\n │ Ação inválida: %s (custo atual: %d de %d ações válidas)",
+			if (Debug(PASSOS) && printf("\n │ Ação inválida: %s (custo atual: %d de %d ações válidas)",
 				*acao, custoTotal, nAcoes))
 				Debug();
 			resultado = -1; // ação inválida
@@ -195,7 +195,7 @@ bool TProcuraConstrutiva::Validar(TVector<TString> solucao) {
 		resultado = custo = custoTotal; // custo da solução encontrada
 		return true;
 	}
-	if (Debug(PASSOS, false, "\n │ Solução não completa (custo atual: %d de %d ações válidas)",
+	if (Debug(PASSOS) && printf("\n │ Solução não completa (custo atual: %d de %d ações válidas)",
 		custoTotal, nAcoes))
 		Debug();
 	resultado = -2; // solução incompleta
@@ -221,7 +221,7 @@ int TProcuraConstrutiva::LarguraPrimeiro(int limite)
 		// garantir que os limites são respeitados, para evitar problemas de memória
 		VerificaLimites(limite, lista.Count() - i, sucessores);
 
-		if (Parametro(NIVEL_DEBUG) > DETALHE)
+		if (Debug(COMPLETO))
 			lista[i]->DebugSucessores(sucessores);
 
 		// inserir tudo no final da lista
@@ -316,7 +316,7 @@ int TProcuraConstrutiva::CustoUniforme(int limite)
 		lista.Estado()->Sucessores(sucessores);
 		// insere por ordem de custo, e não apenas no final
 		lista.Inserir(sucessores);
-		if (Parametro(NIVEL_DEBUG) > DETALHE)
+		if (Debug(COMPLETO))
 			lista.Estado()->DebugSucessores(sucessores);
 	}
 	return -1; // falhou
@@ -389,7 +389,7 @@ int TProcuraConstrutiva::SolucaoEncontrada(bool continuar) {
 int TProcuraConstrutiva::SolucaoParcial(int i, TVector<TNo>& sucessores, int iAux, TVector<int>* id)
 {
 	// solução parcial já registada, adicionar este nó e retornar o custo até ao momento
-	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+	if (Debug(PASSOS)) {
 		TVector<int> valores;
 		for (int j = (iAux >= 0 ? iAux + 1 : i + 1);
 			j < (iAux >= 0 ? id->Count() : sucessores.Count()); j++)
@@ -519,7 +519,7 @@ int TProcuraConstrutiva::IDAStar(int upperBound)
 			DebugExpansao(i, id.Count());
 			if (atual > upperBound) {
 				// Nó folha, não identificado antes. Mostrar o estado no caso do detalhe
-				if (Parametro(NIVEL_DEBUG) == DETALHE)
+				if (Debug(DETALHE, true))
 					Debug();
 				// acima do permitido nesta iteração
 				ramo.Last() = (i < id.Count() - 1 ? RAMO_NOVO : RAMO_FIM);
@@ -530,7 +530,7 @@ int TProcuraConstrutiva::IDAStar(int upperBound)
 				else
 					DebugFolha(false, Icon(EIcon::FOLHA));
 				// listar os nós não explorados
-				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+				if (Debug(PASSOS)) {
 					TVector<int> valores;
 					// apenas o atual, já que continua
 					valores += sucessores[id[i]]->debugID;
@@ -569,11 +569,11 @@ int TProcuraConstrutiva::BranchAndBound(int upperBound)
 			DebugExpansao(i, id.Count());
 			if (upperBound && sucessores[id[i]]->LowerBound() >= upperBound) {
 				// Nó folha, não identificado antes. Mostrar o estado no caso do detalhe
-				if (Parametro(NIVEL_DEBUG) == DETALHE)
+				if (Debug(DETALHE, true))
 					Debug();
 				DebugFolha(true, "%-2s%-2s", Icon(EIcon::FOLHA), Icon(EIcon::UB));
 				// listar os nós não explorados
-				if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+				if (Debug(PASSOS)) {
 					TVector<int> valores;
 					for (int j = i; j < id.Count(); j++)
 						valores += sucessores[id[j]]->debugID;
@@ -626,7 +626,7 @@ int TProcuraConstrutiva::AStar(int limite)
 		CalcularHeuristicas(sucessores);
 		// insere por ordem de custo, e não apenas no final
 		lista.Inserir(sucessores);
-		if (Parametro(NIVEL_DEBUG) > DETALHE)
+		if (Debug(COMPLETO))
 			lista.Estado()->DebugSucessores(sucessores);
 	}
 
@@ -666,14 +666,14 @@ void TProcuraConstrutiva::DebugRamo(const char* ramo, const char* folha) {
 // Método para ser chamado quando não há sucessores ou há um corte de profundidade
 void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 {
-	if (Parametro(NIVEL_DEBUG) >= PASSOS && sucessores >= 0) {
+	if (Debug(PASSOS) && sucessores >= 0) {
 		if (sucessores == 0)
 			DebugFolha(false, Icon(EIcon::FOLHA));
 		else
 			ramo.Pop();
 	}
 
-	if (Parametro(NIVEL_DEBUG) >= PASSOS && sucessores < 0) {
+	if (Debug(PASSOS) && sucessores < 0) {
 		ramo.Last() = RAMO_FIM;
 		NovaLinha();
 		printf("%-2s%-2s %d ", Icon(EIcon::CORTE), Icon(EIcon::ID), debugID);
@@ -683,7 +683,7 @@ void TProcuraConstrutiva::DebugCorte(int sucessores, bool duplo)
 // Encontrou uma solução
 void TProcuraConstrutiva::DebugSolucao(bool continuar)
 {
-	if (Parametro(NIVEL_DEBUG) > NADA && SolucaoCompleta()) {
+	if (Debug(ATIVIDADE) && SolucaoCompleta()) {
 		NovaLinha();
 		printf(" %-2s Solução encontrada! %-2sg:%d",
 			Icon(EIcon::SUCESSO), Icon(EIcon::VALOR), custo);
@@ -693,9 +693,9 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 			ramo = {};
 	}
 	else {
-		if (Parametro(NIVEL_DEBUG) > ATIVIDADE)
+		if (Debug(PASSOS))
 			Debug();
-		if (Parametro(NIVEL_DEBUG) >= PASSOS && !continuar)
+		if (Debug(PASSOS) && !continuar)
 			ramo.Pop();
 	}
 }
@@ -703,9 +703,9 @@ void TProcuraConstrutiva::DebugSolucao(bool continuar)
 // Informacao de debug na chamada ao método recursivo
 void TProcuraConstrutiva::DebugChamada(bool noFolha)
 {
-	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
+	if (Debug(ATIVIDADE, true) && expansoes % 1000 == 0)
 		printf("#");
-	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+	if (Debug(PASSOS)) {
 		bool raiz = (ramo.Count() <= 1);
 		// neste nível, cada estado expandido é visualizado, não apenas os estados folha
 		if (raiz)
@@ -716,8 +716,7 @@ void TProcuraConstrutiva::DebugChamada(bool noFolha)
 		DebugEstado(false);
 		if (pai != NULL)
 			printf(" %-2s%s", Icon(EIcon::ACCAO), *pai->Acao(this)); // mostra sempre a ação
-		if ((noFolha && Parametro(NIVEL_DEBUG) >= DETALHE) ||
-			Parametro(NIVEL_DEBUG) >= COMPLETO)
+		if ((noFolha && Debug(DETALHE)) || Debug(COMPLETO))
 			Debug();
 	}
 }
@@ -733,9 +732,9 @@ void TProcuraConstrutiva::NovaLinha(bool tudo)
 // Passo no algoritmo em largura
 void TProcuraConstrutiva::DebugPasso(CListaNo* lista)
 {
-	if (Parametro(NIVEL_DEBUG) == ATIVIDADE && expansoes % 1000 == 0)
+	if (Debug(ATIVIDADE, true) && expansoes % 1000 == 0)
 		printf("#");
-	if (Parametro(NIVEL_DEBUG) >= PASSOS) {
+	if (Debug(PASSOS)) {
 		TString str;
 		ramo.First() = RAMO_ESTADO;
 		NovaLinha(true);
@@ -759,7 +758,7 @@ void TProcuraConstrutiva::DebugPasso(CListaNo* lista)
 			MostraConjunto(valores, Icon(EIcon::ID));
 		}
 	}
-	if (Parametro(NIVEL_DEBUG) > PASSOS)
+	if (Debug(DETALHE))
 		Debug();
 }
 // Mostrar sucessores
@@ -807,7 +806,7 @@ void TProcuraConstrutiva::DebugSucessores(TVector<TNo>& sucessores) {
 
 // uma nova iteração de um algoritmo iterativo
 void TProcuraConstrutiva::DebugIteracao(int iteracao, const char* simbolo) {
-	Debug(PASSOS, false, "\n ├─────────── %-2s%s %d %-2s%s ──────────── ",
+	Debug(PASSOS) && printf("\n ├─────────── %-2s%s %d %-2s%s ──────────── ",
 		Icon(EIcon::ARVORE), simbolo, iteracao, Icon(EIcon::TEMPO),
 		*MostraTempo(Cronometro(CONT_ALGORITMO)));
 }
@@ -985,7 +984,7 @@ unsigned int TProcuraConstrutiva::Hash() {
 
 void TProcuraConstrutiva::LimparHT() {
 	if (Parametro(ESTADOS_REPETIDOS) == GERADOS) {
-		if (Parametro(NIVEL_DEBUG) >= ATIVIDADE) {
+		if (Debug(ATIVIDADE)) {
 			int usado = 0; // contar para calcular taxa de ocupação
 			for (int i = 0; i < TAMANHO_HASHTABLE; i++) 
 				if (elementosHT[i].Count() > 0) {
@@ -993,7 +992,7 @@ void TProcuraConstrutiva::LimparHT() {
 					elementosHT[i].Count(0);
 				}
 			// reportar estatísticas se existir muito reuso
-			if (Parametro(NIVEL_DEBUG) >= DETALHE && usado > 0 && usado * 2 <= colocadosHT) {
+			if (Debug(DETALHE) && usado > 0 && usado * 2 <= colocadosHT) {
 				NovaLinha();
 				printf("HT: utilização %d%%, reuso: %.2f vezes",
 					usado * 100 / TAMANHO_HASHTABLE,
