@@ -15,6 +15,4 @@ digraph "TProcuraConstrutiva::DebugFolha"
   Node4 [id="Node000004",label="TProcuraConstrutiva\l::NovaLinha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32",tooltip=" "];
   Node4 -> Node5 [id="edge5_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
-  Node1 -> Node6 [id="edge6_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
 }

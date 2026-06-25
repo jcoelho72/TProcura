@@ -23,17 +23,14 @@ digraph "TProcuraConstrutiva::SolucaoEncontrada"
   Node8 [id="Node000008",label="TProcuraConstrutiva\l::NovaLinha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a7426b2abb333f77ef5d00ae46d5f2d32",tooltip=" "];
   Node8 -> Node9 [id="edge9_Node000008_Node000009",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="TVector::Count",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#ac3c744d84543ca6e32859eb7dfccfeef",tooltip=" "];
-  Node5 -> Node10 [id="edge10_Node000005_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="TProcura::Parametro",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcura.html#a0e9e692f29af8a5d5279a8647c800437",tooltip=" "];
-  Node1 -> Node11 [id="edge11_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="TProcuraConstrutiva\l::DebugSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a3cb063790a46d8fac87044c7c68c53b3",tooltip=" "];
-  Node11 -> Node6 [id="edge12_Node000011_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node11 -> Node7 [id="edge13_Node000011_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node11 -> Node8 [id="edge14_Node000011_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node11 -> Node10 [id="edge15_Node000011_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node11 -> Node12 [id="edge16_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="TVector::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
-  Node11 -> Node13 [id="edge17_Node000011_Node000013",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
-  Node1 -> Node3 [id="edge18_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node10 [id="edge10_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="TProcuraConstrutiva\l::DebugSolucao",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraConstrutiva.html#a3cb063790a46d8fac87044c7c68c53b3",tooltip=" "];
+  Node10 -> Node6 [id="edge11_Node000010_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node7 [id="edge12_Node000010_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node8 [id="edge13_Node000010_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node11 [id="edge14_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="TVector::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
+  Node10 -> Node12 [id="edge15_Node000010_Node000012",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="TProcuraConstrutiva\l::SolucaoCompleta",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$group__RedefinicaoMandatoria.html#ga1f3e2b667881c3e910ba372467645304",tooltip="Verifica se o estado actual é objetivo (é uma solução completa)"];
+  Node1 -> Node3 [id="edge16_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
 }

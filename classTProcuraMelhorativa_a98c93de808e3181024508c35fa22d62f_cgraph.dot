@@ -42,5 +42,4 @@ digraph "TProcuraMelhorativa::DebugGeracaoAE"
   Node16 [id="Node000016",label="TVector\< char \>::Pop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTVector.html#a3249913626d54e46b07e168ce1f05d87",tooltip=" "];
   Node1 -> Node17 [id="edge20_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
   Node17 [id="Node000017",label="TProcuraMelhorativa\l::ObterExtremos",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classTProcuraMelhorativa.html#a1205807eb7d011896ddd38dc5675ab44",tooltip=" "];
-  Node1 -> Node10 [id="edge21_Node000001_Node000010",color="steelblue1",style="solid",tooltip=" "];
 }

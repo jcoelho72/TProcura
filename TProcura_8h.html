@@ -353,8 +353,8 @@ Variables</h2></td></tr>
 <p>Permite registrar um parâmetro, armazenando seu valor, limites máximo e mínimo, além de nome e descrição. Cada valor pode ter também um nome, em vez de ser um número. Podem e devem ser adicionados parâmetros específicos de cada problema, de modo a poderem ser testados no teste empírico.</p>
 <dl class="section note"><dt>Note</dt><dd>Existe um vetor de parâmetros declarado de forma estática, de modo a aceder a qualquer parâmetro de forma global no código. A ordem dos parâmetros estão de acordo com o tipo enumerado EParametrosConstrutiva</dd></dl>
 <dl class="section see"><dt>See also</dt><dd>EParametrosProcura e ResetParametros()</dd></dl>
-<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(NIVEL_DEBUG) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
-<div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
+<p>Exemplo: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span>(Debug(<a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>))</div>
+<div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível passos ou superior</span></div>
 <div class="ttc" id="aTProcura_8h_html_a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a"><div class="ttname"><a href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a></div><div class="ttdeci">@ PASSOS</div><div class="ttdoc">Exibe passos intermediários.</div><div class="ttdef"><b>Definition</b> <a href="TProcura_8h_source.html#l00060">TProcura.h:60</a></div></div>
 </div><!-- fragment --> 
 </div>
@@ -457,8 +457,8 @@ Variables</h2></td></tr>
 <p>Níveis de detalhamento para debug. </p>
 <p>Controla a quantidade de informações exibidas durante a execução do algoritmo.</p>
 <dl class="section see"><dt>See also</dt><dd>nivelDebug</dd></dl>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span>(Parametro(NIVEL_DEBUG) &gt; <a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>)</div>
-<div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível detalhe ou superior</span></div>
+<div class="fragment"><div class="line"><span class="keywordflow">if</span>(Debug(<a class="code hl_enumvalue" href="TProcura_8h.html#a9f2d53e364b23f725c2b357d0fd5eaf8a0b27bd3581b77d194e638da5495b316a">PASSOS</a>))</div>
+<div class="line">    <span class="comment">// mostrar informação de debug correspondendo ao nível passos ou superior</span></div>
 </div><!-- fragment --> <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e" name="a9f2d53e364b23f725c2b357d0fd5eaf8ad1d2451ca0baf8d8f1b45fca03166f0e"></a>NADA&#160;</td><td class="fielddoc"><p>Sem informações de debug. </p>
 </td></tr>
